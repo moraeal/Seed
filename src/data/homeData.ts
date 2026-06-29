@@ -99,6 +99,9 @@ export const trendingProposals = [
 export const issueSections = [
   {
     kicker: "SPORTS & PUBLIC",
+    heroImage: "images/issues/seed-issue-banners.png",
+    heroPosition: "bottom",
+    heroAlt: "홍명보호 침몰과 축구협회 책임성, 팬 시민의 권리를 다룬 스포츠 공공성 이슈 배너",
     title: "홍명보호 침몰, 무엇이 문제인가",
     description: "성적 부진을 단순한 분노로 소비하지 않고, 선임 과정의 공정성과 축구협회 책임성, 팬 시민의 권리를 다시 묻습니다.",
     accent: "#D6E6DD",
@@ -111,6 +114,9 @@ export const issueSections = [
   },
   {
     kicker: "REGION & ENTERPRISE",
+    heroImage: "images/issues/seed-issue-banners.png",
+    heroPosition: "top",
+    heroAlt: "삼성 지방이전과 기업의 자유, 지역균형발전 쟁점을 다룬 이슈 배너",
     title: "삼성 지방이전, 국가가 강제할 수 있나",
     description: "균형발전은 필요합니다. 그러나 산업생태계와 기업의 투자 판단을 국가가 어디까지 설계할 수 있는지 시민의 관점에서 따져봅니다.",
     accent: "#DDE4EC",
@@ -123,6 +129,9 @@ export const issueSections = [
   },
   {
     kicker: "FREEDOM & RESPONSIBILITY",
+    heroImage: "images/issues/seed-issue-banners.png",
+    heroPosition: "middle",
+    heroAlt: "스타벅스 역사교육 논란과 기업의 자유, 사회적 압박 쟁점을 다룬 이슈 배너",
     title: "스타벅스 역사교육 논란, 기업의 자유와 사회적 압박",
     description: "기업의 실수는 비판받을 수 있습니다. 그러나 사과와 교육, 영업 중단이 어디까지 정당한지 시민적 기준이 필요합니다.",
     accent: "#EEE3C8",
