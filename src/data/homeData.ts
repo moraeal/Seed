@@ -16,26 +16,38 @@ export const heroSlides = [
     category: "시민토론",
     title: "대기업 지방이전, 국가가 강제할 수 있나?",
     description:
-      "균형발전은 중요한 공공의제입니다. 기업의 입지와 투자 결정에 국가는 어디까지 개입할 수 있을까요? 지역균형, 기업자유, 산업생태계의 균형을 시민의 언어로 토론합니다.",
-    button: "토론 참여하기",
+      "지역균형발전을 위한 해법을 시민의 목소리로 함께 찾습니다.",
+    button: "지금 토론 참여하기",
     tone: "green",
+    image: "./images/slider/slide1_corporate_move.jpg",
   },
   {
-    category: "팩트체크",
-    title: "AI 국민배당, 기업수익을 나누자는 말인가?",
+    category: "시민투표",
+    title: "기업수익 국민배당 투표",
     description:
-      "AI와 반도체 시대의 초과이익, 초과세수, 국민배당 논란을 사실관계와 제도적 쟁점으로 나누어 살펴봅니다.",
-    button: "팩트체크 보기",
+      "기업의 이익을 사회에 어떻게 환원할 것인지 시민이 함께 결정합니다.",
+    button: "투표 참여하기",
     tone: "navy",
+    image: "./images/slider/slide2_profit_dividend.jpg",
   },
   {
     category: "시민제안",
     title: "시민제안 프로젝트 공개 오디션을 시작합니다",
     description:
       "2분 제안 영상으로 생활 속 문제를 올리고, 동료시민의 평가와 토론을 거쳐 작은 시민실험으로 연결합니다.",
-    button: "제안 오디션 보기",
+    button: "지금 제안하기",
     tone: "gold",
+    image: "./images/slider/slide3_citizen_audition.jpg",
     href: AUDITION_URL,
+  },
+  {
+    category: "씨앗캠페인",
+    title: "기후위기 시대, 우리의 선택이 미래를 바꿉니다",
+    description:
+      "탄소중립, 에너지 전환, 지속가능한 사회를 위한 씨앗시민의 작은 실천이 큰 변화를 만듭니다.",
+    button: "함께 행동하기",
+    tone: "green",
+    image: "./images/slider/slide4_climate_action.jpg",
   },
 ];
 

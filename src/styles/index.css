@@ -32,7 +32,10 @@ button, input, textarea { font: inherit; }
 .hero-green { background: linear-gradient(130deg, #174c3a 0%, #28644d 68%, #587b68 100%); }
 .hero-navy { background: linear-gradient(130deg, #172b40 0%, #294a65 70%, #47687b 100%); }
 .hero-gold { background: linear-gradient(130deg, #4b4431 0%, #7c6940 70%, #a98b4d 100%); }
+.hero-art-slide { min-height: 0; aspect-ratio: 756 / 331; align-self: start; background: #eef1e8; }
+.hero-art-slide::before { display: none; }
 
 @media (max-width: 640px) {
-  .hero-slide { min-height: 560px; }
+  .hero-slide:not(.hero-art-slide) { min-height: 560px; }
+  .hero-art-slide { min-height: 440px; aspect-ratio: auto; }
 }
