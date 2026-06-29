@@ -1,4 +1,5 @@
 export const AUDITION_URL = "https://moraeal.github.io/moraeal/";
+export const MAGAZINE_URL = "https://jimd.kr/magazine";
 
 export const navItems = [
   "씨앗연대 소개",
