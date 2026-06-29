@@ -1,3 +1,5 @@
+export const AUDITION_URL = "https://moraeal.github.io/moraeal/";
+
 export const navItems = [
   "씨앗연대 소개",
   "시민제안",
@@ -33,6 +35,7 @@ export const heroSlides = [
       "2분 제안 영상으로 생활 속 문제를 올리고, 동료시민의 평가와 토론을 거쳐 작은 시민실험으로 연결합니다.",
     button: "제안 오디션 보기",
     tone: "gold",
+    href: AUDITION_URL,
   },
 ];
 
@@ -73,7 +76,13 @@ export const trendingProposals = [
   ["브리핑 준비중", "공익기관은 시민에게 성과를 설명하고 있을까?", "공익의 이름으로 운영되는 기관과 예산이 실제 시민에게 어떤 결과를 주는지 묻습니다.", 63],
   ["토론중", "스타벅스 논란, 기업은 어디까지 사과해야 하나?", "기업의 실수, 역사 감수성, 정치적 압박, 소비자 자유의 경계를 토론합니다.", 52],
   ["시민브리핑", "홍명보호 침몰, 축구협회 책임은 어떻게 물어야 하나?", "스포츠 행정의 공정성, 책임성, 팬 시민의 권리를 함께 살펴봅니다.", 141],
-].map(([label, title, description, comments]) => ({ label, title, description, comments }));
+].map(([label, title, description, comments], index) => ({
+  label,
+  title,
+  description,
+  comments,
+  href: index === 2 ? AUDITION_URL : undefined,
+}));
 
 export const issueSections = [
   {
