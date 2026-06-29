@@ -1,66 +1,31 @@
-import PillarCard from "../components/PillarCard";
-import SectionTitle from "../components/SectionTitle";
+import { ArrowRight, BarChart3, BookOpenCheck, Check, FlaskConical, Heart, Lightbulb, MessageCircle, Network, SearchCheck, ShieldCheck, Sprout, Users } from "lucide-react";
+import { Link } from "react-router-dom";
+import ProcessTimeline from "../components/ProcessTimeline";
+import { activities, differences, organizationUnits, participationTypes, seedPrinciples, whyCards } from "../data/aboutData";
 
-const pillars = [
-  ["주체성", "Subject", "시민이 스스로 말하고 제안하는 구조를 만듭니다."],
-  ["윤리성", "Ethics", "자유와 책임이 함께 작동하는 태도를 지향합니다."],
-  ["진화성", "Evolution", "현장의 경험에서 배우며 계속 수정하고 확장합니다."],
-  ["책임성", "Duty", "대안, 실행, 후속 점검까지 책임지는 문화를 세웁니다."],
-];
-
-const sections = [
-  ["운영 원칙", "투명한 후원 관리, 공개 가능한 사업 목적, 책임 있는 공론장 운영을 기본 원칙으로 삼습니다."],
-  ["조직 구조", "시민언어센터, 오늘의 프레임 편집팀, 제안소 운영팀, 후원자 신뢰 파트로 구성합니다."],
-  ["자문위원회 예정 구조", "법치, 교육, 기업, 지역, 청년 분야의 전문가 자문 구조를 단계적으로 마련합니다."],
-  ["청년 씨앗위원회", "청년을 수혜자가 아니라 시민언어와 공론장의 공동 설계자로 세웁니다."],
-  ["지역 씨앗모임", "지역의 생활 의제를 자유와 책임의 언어로 정리하고 제안하는 모임을 만듭니다."],
-];
+const activityIcons = [Lightbulb, BookOpenCheck, MessageCircle, FlaskConical, BarChart3, Network];
+const organizationIcons = [BookOpenCheck, SearchCheck, FlaskConical, BarChart3, Users, ShieldCheck];
 
 export default function About() {
-  return (
-    <section className="section-band">
-      <div className="container-page">
-        <SectionTitle
-          eyebrow="About"
-          title="씨앗연대 소개"
-          description="씨앗연대는 진영의 언어가 아니라 시민의 언어로 공공성을 다시 세우려는 플랫폼입니다."
-        />
-        <div className="mt-10 grid gap-5 lg:grid-cols-2">
-          <div className="card p-6">
-            <h3 className="text-2xl font-bold text-green-deep">비전</h3>
-            <p className="mt-4 leading-8 text-charcoal/75">
-              자유롭게 판단하고 책임 있게 참여하는 시민이 공공성의 주체로 자라나는
-              시민사회를 만듭니다.
-            </p>
-          </div>
-          <div className="card p-6">
-            <h3 className="text-2xl font-bold text-green-deep">미션</h3>
-            <p className="mt-4 leading-8 text-charcoal/75">
-              시민언어 사전, 오늘의 프레임, 제안소, 공론장을 통해 자유와 책임의
-              시민사회 인프라를 구축합니다.
-            </p>
-          </div>
-        </div>
-        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {pillars.map(([title, english, description], index) => (
-            <PillarCard
-              key={title}
-              title={title}
-              english={english}
-              description={description}
-              index={index + 1}
-            />
-          ))}
-        </div>
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
-          {sections.map(([title, text]) => (
-            <article key={title} className="card p-6">
-              <h3 className="text-xl font-bold text-green-deep">{title}</h3>
-              <p className="mt-4 leading-8 text-charcoal/74">{text}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+  return <>
+    <section className="overflow-hidden bg-ivory py-16 sm:py-20 lg:py-24"><div className="container-page grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]"><div><span className="section-kicker">ABOUT SEED CIVIC PARTNERS</span><h1 className="mt-5 max-w-3xl text-4xl font-extrabold leading-[1.22] text-navy sm:text-5xl">씨앗연대는 시민의 작은 질문을 공공성의 씨앗으로 키우는 시민운동 플랫폼입니다.</h1><p className="mt-6 max-w-2xl text-base leading-8 text-charcoal/70">시민 한 사람의 문제의식이 혼자 사라지지 않도록 동료시민, 전문가, 시민단체, 기업과 재단을 연결합니다. 생활 속 불편과 사회적 쟁점을 시민의 언어로 다시 묻고, 공론과 브리핑, 시민실험을 통해 공익을 시민의 삶으로 되돌리고자 합니다.</p><div className="mt-8 flex flex-wrap gap-3"><a href="#" className="button-primary">시민제안 보기 <ArrowRight size={16} /></a><a href="#" className="button-secondary"><Heart size={16} />후원으로 함께하기</a></div></div><div className="relative min-h-[430px] rounded-lg bg-green-deep p-7 shadow-soft sm:p-10"><Sprout className="absolute right-8 top-8 text-gold/30" size={78} strokeWidth={1.2} /><p className="text-xs font-extrabold tracking-[0.14em] text-gold">HOW SEED GROWS</p><div className="relative mt-16 grid grid-cols-2 gap-3">{["시민질문", "시민브리핑", "씨앗공론장", "시민실험"].map((word, index) => <div key={word} className={`grid min-h-28 place-items-center rounded-lg border p-4 text-center text-lg font-extrabold ${index === 3 ? "border-gold bg-gold text-navy" : "border-white/15 bg-white/[0.06] text-white"}`}>{word}</div>)}</div><p className="mt-8 border-t border-white/10 pt-6 text-sm leading-7 text-white/60">진영의 언어를 넘어, 시민의 언어로 공공성을 다시 세웁니다.</p></div></div></section>
+
+    <section className="section-band bg-paper"><div className="container-page"><div className="max-w-3xl"><span className="section-kicker">WHY NOW</span><h2 className="mt-3 text-3xl font-extrabold text-navy">왜 지금 씨앗연대가 필요한가</h2><p className="mt-5 text-sm leading-7 text-charcoal/70">한국 시민사회는 많은 성과를 만들었지만 진영화, 정치화, 제도화 이후의 성찰 부족이라는 한계도 드러냈습니다. 씨앗연대는 시민이 다시 공공성의 주체로 서는 새로운 운동 방식을 제안합니다.</p></div><div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">{whyCards.map((item) => <article key={item.title} className="content-card"><span className="font-serif text-2xl text-gold">{item.number}</span><h3 className="mt-5 text-xl font-extrabold text-navy">{item.title}</h3><p className="mt-3 text-sm leading-7 text-charcoal/60">{item.description}</p></article>)}</div></div></section>
+
+    <section className="section-band bg-[#F4F5F2]"><div className="container-page"><div className="text-center"><span className="section-kicker">MISSION & VISION</span><h2 className="mt-3 text-3xl font-extrabold text-navy">씨앗연대의 비전과 미션</h2></div><div className="mt-10 grid gap-5 lg:grid-cols-2"><article className="rounded-lg bg-navy p-8 text-white sm:p-10"><span className="text-xs font-bold tracking-[0.14em] text-gold">VISION</span><h3 className="mt-4 text-2xl font-extrabold">건강한 시민영역</h3><p className="mt-5 leading-8 text-white/70">자유롭게 판단하고 책임 있게 참여하는 시민이 공공성의 주체로 자라나는 건강한 시민영역을 만듭니다.</p></article><article className="rounded-lg bg-green-deep p-8 text-white sm:p-10"><span className="text-xs font-bold tracking-[0.14em] text-gold">MISSION</span><h3 className="mt-4 text-2xl font-extrabold">질문에서 사회적 변화까지</h3><p className="mt-5 leading-8 text-white/70">시민질문, 시민브리핑, 씨앗공론장, 시민실험, 공익감시 데이터를 통해 문제의식이 변화로 이어지는 플랫폼을 구축합니다.</p></article></div><p className="mt-5 rounded-lg border border-gold/30 bg-[#EEE5CC] px-6 py-6 text-center text-lg font-extrabold leading-8 text-navy">정당의 바깥에서, 시민의 삶 안에서, 자유와 책임의 시민 생태계를 다시 세웁니다.</p></div></section>
+
+    <section className="section-band bg-paper"><div className="container-page"><span className="section-kicker">THE SEED PRINCIPLES</span><h2 className="mt-3 text-3xl font-extrabold text-navy">씨드(SEED)의 네 가지 원리</h2><div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">{seedPrinciples.map((principle, index) => <article key={principle.english} className="content-card"><div className="flex items-start justify-between"><span className="grid size-12 place-items-center rounded-md bg-green-deep text-xl font-extrabold text-gold">{principle.code}</span><span className="text-xs font-bold text-charcoal/40">0{index + 1}</span></div><p className="mt-6 text-xs font-extrabold tracking-[0.1em] text-green-mid">{principle.english}</p><h3 className="mt-2 text-xl font-extrabold text-navy">{principle.title}</h3><p className="mt-3 text-sm leading-7 text-charcoal/60">{principle.description}</p></article>)}</div></div></section>
+
+    <section className="section-band bg-ivory"><div className="container-page"><span className="section-kicker">WHAT WE DO</span><h2 className="mt-3 text-3xl font-extrabold text-navy">씨앗연대가 하는 일</h2><div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{activities.map((activity, index) => { const Icon = activityIcons[index]; return <article key={activity.title} className="content-card flex gap-5"><span className="grid size-12 shrink-0 place-items-center rounded-md bg-green-pale text-green-deep"><Icon size={22} /></span><div><h3 className="text-lg font-extrabold text-navy">{activity.title}</h3><p className="mt-2 text-sm leading-6 text-charcoal/60">{activity.description}</p></div></article>; })}</div></div></section>
+
+    <section className="section-band bg-navy"><div className="container-page"><div className="mb-10 max-w-2xl"><span className="text-xs font-bold tracking-[0.14em] text-gold">FROM QUESTION TO IMPACT</span><h2 className="mt-3 text-3xl font-extrabold text-white">씨앗운동의 작동 방식</h2><p className="mt-4 text-sm leading-7 text-white/60">질문이 기록되고, 공론을 거쳐, 실제 시민적 영향력으로 이어지는 다섯 단계입니다.</p></div><ProcessTimeline /></div></section>
+
+    <section className="section-band bg-paper"><div className="container-page"><span className="section-kicker">OUR DIFFERENCE</span><h2 className="mt-3 text-3xl font-extrabold text-navy">씨앗연대는 기존 시민운동과 무엇이 다른가</h2><div className="mt-10 grid gap-4 lg:grid-cols-2">{differences.map((item) => <article key={item.title} className="content-card"><h3 className="text-lg font-extrabold text-navy">{item.title}</h3><div className="mt-5 grid gap-3 sm:grid-cols-2"><div className="rounded-md bg-[#F0F1EF] p-4"><span className="text-[10px] font-bold tracking-[0.12em] text-charcoal/40">BEFORE</span><p className="mt-2 text-sm leading-6 text-charcoal/60">{item.before}</p></div><div className="rounded-md bg-green-pale p-4"><span className="text-[10px] font-bold tracking-[0.12em] text-green-mid">SEED WAY</span><p className="mt-2 text-sm font-bold leading-6 text-green-deep">{item.after}</p></div></div></article>)}</div></div></section>
+
+    <section className="section-band bg-[#F4F5F2]"><div className="container-page"><div className="max-w-3xl"><span className="section-kicker">ORGANIZATION</span><h2 className="mt-3 text-3xl font-extrabold text-navy">씨앗연대의 운영 구조</h2><p className="mt-4 text-sm leading-7 text-charcoal/60">시민의 제안과 공론이 실제 활동으로 이어지도록 다음 운영 단위를 단계적으로 구축합니다.</p></div><div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{organizationUnits.map((unit, index) => { const Icon = organizationIcons[index]; return <article key={unit.title} className="content-card"><Icon className="text-green-mid" size={25} /><h3 className="mt-5 text-lg font-extrabold text-navy">{unit.title}</h3><p className="mt-3 text-sm leading-7 text-charcoal/60">{unit.description}</p></article>; })}</div></div></section>
+
+    <section className="section-band bg-paper"><div className="container-page"><span className="section-kicker">PARTICIPATE</span><h2 className="mt-3 text-3xl font-extrabold text-navy">함께하는 방법</h2><div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">{participationTypes.map((type) => <article key={type.title} className="content-card flex flex-col"><Check className="text-gold" size={22} /><h3 className="mt-5 text-lg font-extrabold text-navy">{type.title}</h3><p className="mt-3 flex-1 text-sm leading-6 text-charcoal/60">{type.description}</p><a href="#" className="mt-6 text-sm font-bold text-green-deep">{type.action} →</a></article>)}</div></div></section>
+
+    <section className="bg-green-deep py-16 text-white sm:py-20"><div className="container-page text-center"><Sprout className="mx-auto text-gold" size={36} /><h2 className="mx-auto mt-6 max-w-4xl text-3xl font-extrabold leading-tight sm:text-4xl">시민의 작은 질문이 사라지지 않도록, 씨앗연대가 함께하겠습니다.</h2><p className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-white/70">우리가 만들고자 하는 것은 하나의 홈페이지가 아니라 시민이 다시 공공성의 주체로 자라나는 토양입니다. 후원과 참여는 건강한 시민영역을 다시 세우는 일입니다.</p><div className="mt-8 flex flex-wrap justify-center gap-3"><a href="#" className="button-light">시민제안 올리기</a><a href="#" className="button-outline-light">후원으로 함께하기</a><Link to="/" className="button-outline-light">메인으로 돌아가기</Link></div></div></section>
+  </>;
 }
