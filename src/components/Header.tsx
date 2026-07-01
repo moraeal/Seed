@@ -1,4 +1,4 @@
-import { Heart, Menu, Plus, Sprout, X } from "lucide-react";
+import { Heart, Menu, Plus, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AUDITION_URL, navItems } from "../data/homeData";
@@ -37,9 +37,12 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-green-deep/10 bg-ivory/95 backdrop-blur-xl">
       <div className="container-page flex h-[72px] items-center gap-5">
-        <Link to="/" className="flex shrink-0 items-center gap-2.5 text-green-deep" aria-label="씨앗연대 홈">
-          <span className="grid size-10 place-items-center rounded-full bg-green-deep text-ivory"><Sprout size={21} /></span>
-          <span><strong className="block text-lg leading-none">씨앗연대</strong><span className="mt-1 block text-[10px] font-bold tracking-[0.12em] text-charcoal/50">SEED CIVIC PARTNERS</span></span>
+        <Link to="/" className="shrink-0" aria-label="씨앗연대 홈">
+          <img
+            src={`${import.meta.env.BASE_URL}images/brand/seed-civic-partners-logo.svg`}
+            alt=""
+            className="h-12 w-auto"
+          />
         </Link>
         <nav className="ml-auto hidden items-center gap-4 xl:flex" aria-label="주요 메뉴">
           {navItems.map((item) => renderNavItem(item))}
