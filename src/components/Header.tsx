@@ -39,7 +39,7 @@ export default function Header() {
       <div className="container-page flex h-[72px] items-center gap-5">
         <Link to="/" className="shrink-0" aria-label="씨앗연대 홈">
           <img
-            src={`${import.meta.env.BASE_URL}images/brand/seed-civic-partners-logo.svg`}
+            src={`${import.meta.env.BASE_URL}images/brand/seed-civic-partners-logo-animated.gif`}
             alt=""
             className="h-12 w-auto"
           />

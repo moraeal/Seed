@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="title desc">
+  <title id="title">그려지는 씨앗 새싹</title>
+  <desc id="desc">오른쪽 잎과 왼쪽 잎, 휘어진 줄기와 바닥이 순서대로 그려지는 새싹 심볼</desc>
+  <rect width="180" height="180" fill="#FAF7EF"/>
+  <path
+    transform="translate(10 15) scale(7)"
+    d="M13 10c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2a7 7 0 0 0-1.1 4C12.6 11.1 12.2 12.2 11.8 13.1c-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8 1.1.8 1.8 2.2 2.3 3.7.4-.9.8-2 1.2-3.1-2.2 3.6 2.5 7.5-3 10H7h10"
+    fill="none"
+    stroke="#2F6B55"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
