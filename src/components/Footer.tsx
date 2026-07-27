@@ -17,7 +17,8 @@ export default function Footer() {
           />
           <h2 className="mt-5 text-lg font-extrabold text-navy">{t.footer.title}</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-charcoal/60">{t.footer.description}</p>
-          <p className="mt-3 text-sm font-semibold text-green-deep">{t.footer.contact}</p>
+          <p className="mt-3 text-sm font-semibold text-green-deep">{t.footer.profile}</p>
+          <p className="mt-2 text-sm font-semibold text-green-deep">{t.footer.contact}</p>
         </div>
         <div className="flex flex-wrap gap-3 text-sm font-bold text-charcoal/60">
           <Link to="/about" className="hover:text-green-deep">
@@ -27,7 +28,7 @@ export default function Footer() {
             {language === "en" ? "Roadmap" : "로드맵"}
           </Link>
           <Link to="/support" className="hover:text-green-deep">
-            {language === "en" ? "Support" : "후원"}
+            {language === "en" ? "Partnership & Support" : "협력 및 후원"}
           </Link>
         </div>
       </div>

@@ -36,7 +36,7 @@ export default function Home() {
               <div>
                 <p className="text-xs font-extrabold tracking-[0.16em] text-gold">SEED</p>
                 <h2 className="mt-3 text-2xl font-extrabold">
-                  {language === "en" ? "Subject, Ethics, Evolution, Duty" : "Subject, Ethics, Evolution, Duty"}
+                  Subject, Ethics, Evolution, Duty
                 </h2>
               </div>
               <img
@@ -45,6 +45,7 @@ export default function Home() {
                 className="size-20 rounded-full bg-white/10 object-contain p-2"
               />
             </div>
+            <p className="mt-8 text-xs font-extrabold tracking-[0.16em] text-gold">{t.goalsLabel}</p>
             <div className="mt-10 grid gap-3 sm:grid-cols-3">
               {t.stats.map(([value, label]) => (
                 <div key={label} className="rounded-lg border border-white/15 bg-white/[0.07] p-4">
