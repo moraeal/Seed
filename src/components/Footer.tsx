@@ -1,7 +1,36 @@
-import { Mail, MapPin, Sprout } from "lucide-react";
 import { Link } from "react-router-dom";
-import { AUDITION_URL } from "../data/homeData";
-const links = ["씨앗연대 소개", "시민제안", "씨앗공론장", "시민브리핑", "후원하기", "개인정보처리방침", "이용약관", "문의하기"];
+import { getContent } from "../data/siteContent";
+import { useLanguage } from "../i18n";
+
 export default function Footer() {
-  return <footer className="bg-[#112D25] text-white"><div className="container-page grid gap-10 py-14 lg:grid-cols-[1.25fr_1fr_0.8fr]"><div><Link to="/" className="flex w-fit items-center gap-3"><span className="grid size-10 place-items-center rounded-full bg-gold text-green-deep"><Sprout size={21} /></span><div><strong className="block text-xl">씨앗연대</strong><span className="text-[10px] font-bold tracking-[0.14em] text-white/50">SEED CIVIC PARTNERS</span></div></Link><h2 className="mt-6 text-xl font-extrabold">시민의 작은 질문이 공공성을 깨웁니다.</h2><p className="mt-3 max-w-lg text-sm leading-7 text-white/60">자유와 책임의 시민 생태계를 세우기 위한 시민공론장, 시민실험, 공익감시 플랫폼입니다.</p></div><div><h3 className="text-xs font-bold tracking-[0.12em] text-gold">QUICK LINKS</h3><nav className="mt-5 grid grid-cols-2 gap-3">{links.map((link) => link === "씨앗연대 소개" ? <Link key={link} to="/about" className="text-sm text-white/60 hover:text-white">{link}</Link> : <a key={link} href={link === "시민제안" ? AUDITION_URL : "#"} target={link === "시민제안" ? "_blank" : undefined} rel={link === "시민제안" ? "noopener noreferrer" : undefined} className="text-sm text-white/60 hover:text-white">{link}</a>)}</nav></div><div><h3 className="text-xs font-bold tracking-[0.12em] text-gold">CONTACT</h3><p className="mt-5 flex items-center gap-2 text-sm text-white/60"><Mail size={15} />contact@seedpartners.kr</p><p className="mt-3 flex items-start gap-2 text-sm text-white/60"><MapPin className="mt-0.5" size={15} />서울특별시 ○○구 ○○로 00</p></div></div><div className="border-t border-white/10"><div className="container-page flex flex-col gap-2 py-5 text-xs text-white/40 sm:flex-row sm:justify-between"><span>© 2026 SEED Civic Partners</span><span>자유와 책임 · 시민의 언어 · 공공성의 회복</span></div></div></footer>;
+  const { language } = useLanguage();
+  const t = getContent(language);
+
+  return (
+    <footer className="border-t border-green-deep/10 bg-ivory py-10">
+      <div className="container-page grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+        <div>
+          <img
+            src={`${import.meta.env.BASE_URL}images/brand/seed-civic-partners-logo.svg`}
+            alt="SEED Civic Partners"
+            className="h-12 w-auto"
+          />
+          <h2 className="mt-5 text-lg font-extrabold text-navy">{t.footer.title}</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-charcoal/60">{t.footer.description}</p>
+          <p className="mt-3 text-sm font-semibold text-green-deep">{t.footer.contact}</p>
+        </div>
+        <div className="flex flex-wrap gap-3 text-sm font-bold text-charcoal/60">
+          <Link to="/about" className="hover:text-green-deep">
+            {language === "en" ? "About" : "소개"}
+          </Link>
+          <Link to="/roadmap" className="hover:text-green-deep">
+            {language === "en" ? "Roadmap" : "로드맵"}
+          </Link>
+          <Link to="/support" className="hover:text-green-deep">
+            {language === "en" ? "Support" : "후원"}
+          </Link>
+        </div>
+      </div>
+    </footer>
+  );
 }
