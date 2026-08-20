@@ -18,6 +18,7 @@ export const content = {
       description:
         "씨앗연대는 시민의 작은 문제의식과 제안을 자유, 법치, 시장, 책임의 언어로 키우는 독립 시민 플랫폼입니다.",
       contact: "Contact: hello@seedcivicpartners.org",
+      location: "Seoul, South Korea",
     },
     home: {
       kicker: "CITIZENSHIP IN ACTION",
@@ -31,6 +32,7 @@ export const content = {
         ["5", "시민실험"],
         ["30", "Seed Citizen Fellows"],
       ],
+      statsLabel: "주요 프로그램",
       pillarsTitle: "우리가 지키는 가치",
       pillars: [
         ["Freedom", "개인의 자유와 선택을 시민 삶의 언어로 설명합니다."],
@@ -80,6 +82,9 @@ export const content = {
       leadershipTitle: "Leadership",
       leadership:
         "씨앗연대의 리더십은 정당 조직의 청년부나 선거 동원 구조가 아니라, 시민사회 안에서 자유의 가치를 설명하고 실험하는 독립 시민 리더십을 지향합니다.",
+      founderTitle: "Founder & President",
+      founderName: "Park Kyung-seuk",
+      founderBio: "",
       contactTitle: "Contact",
       contact:
         "파트너십, 멘토십, 교육, 후원, 공동 프로젝트 제안은 hello@seedcivicpartners.org 로 연락해 주세요.",
@@ -121,7 +126,7 @@ export const content = {
     nav: [
       { label: "About SEED", path: "/about" },
       { label: "Citizen Proposals", url: AUDITION_URL },
-      { label: "Public Forum", path: "/forum" },
+      { label: "Insights", path: "/forum" },
       { label: "Roadmap", path: "/roadmap" },
       { label: "Support", path: "/support" },
     ],
@@ -129,14 +134,15 @@ export const content = {
     footer: {
       title: "SEED Civic Partners",
       description:
-        "A nonpartisan civic platform in South Korea building pro-liberty civic infrastructure through proposals, briefings, experiments, and public records.",
+        "An independent, nonpartisan civic platform advancing citizen agency, civic responsibility, and an open civil society in South Korea.",
       contact: "Contact: hello@seedcivicpartners.org",
+      location: "Seoul, South Korea",
     },
     home: {
-      kicker: "BUILDING PRO-LIBERTY CIVIC INFRASTRUCTURE",
-      title: "Planting new civic soil for liberty in South Korea.",
+      kicker: "CITIZEN AGENCY · CIVIC RESPONSIBILITY · OPEN CIVIL SOCIETY",
+      title: "Helping citizens turn everyday concerns into constructive civic action.",
       description:
-        "SEED Civic Partners translates freedom, rule of law, free markets, and civic responsibility into the everyday language of citizens.",
+        "SEED Civic Partners is an independent, nonpartisan platform in South Korea. We help citizens understand public issues, develop practical proposals, and test solutions grounded in freedom, the rule of law, open markets, and civic responsibility.",
       primary: "About SEED",
       secondary: "Join Citizen Proposals",
       stats: [
@@ -144,19 +150,20 @@ export const content = {
         ["5", "Civic experiments"],
         ["30", "Seed Citizen Fellows"],
       ],
-      pillarsTitle: "Values We Stand For",
+      statsLabel: "2026 PILOT GOALS",
+      pillarsTitle: "Our Core Values",
       pillars: [
-        ["Freedom", "We explain liberty as a practical civic value for ordinary citizens."],
-        ["Rule of Law", "Public power must be limited by law, procedure, and accountability."],
-        ["Free Markets", "Enterprise and markets expand choice, jobs, innovation, and prosperity."],
-        ["Civic Responsibility", "A free society requires citizens who respect the freedom of others."],
+        ["Freedom", "People should have the space and confidence to make choices, voice concerns, and shape their communities."],
+        ["Rule of Law", "Public authority should be constrained by clear rules, fair procedures, and meaningful accountability."],
+        ["Open and Free Markets", "Open exchange, enterprise, and innovation can widen opportunity and improve everyday life."],
+        ["Civic Responsibility", "Freedom is sustained when citizens respect others, contribute to their communities, and take responsibility for shared institutions."],
       ],
       programsTitle: "Core Programs",
       programs: [
-        ["Citizen Proposals", "Citizens identify daily burdens, excessive administration, regulations, and tensions between markets and citizens."],
-        ["Civic Freedom Briefings", "Complex institutions and policies are explained in citizen-friendly language."],
-        ["Civic Experiments", "SEED begins with small solution models in one community, one profession, or one daily-life problem."],
-        ["Public Records", "Proposals and experiments become civic assets that help civil society learn and grow."],
+        ["Citizen Proposals", "Citizens surface everyday problems and develop focused, constructive proposals for public consideration."],
+        ["Civic Briefings", "We make complex institutions and policy questions accessible without sacrificing accuracy or context."],
+        ["Civic Experiments", "Small, testable projects allow communities to learn what works before pursuing solutions at a larger scale."],
+        ["Public Records", "We document proposals, decisions, and outcomes so that civil society can learn from experience."],
       ],
       issueTitle: "Current Civic Agendas",
       issues: [
@@ -164,38 +171,42 @@ export const content = {
         ["Data Administration", "Digital administration and algorithms must be explained in citizens' language and checked against rights."],
         ["Public-Interest Accountability", "We ask whether public-interest institutions truly return value to citizens' lives."],
       ],
-      ctaTitle: "Nonpartisan in politics, clear in values.",
+      ctaTitle: "Independent in politics, open to cooperation.",
       ctaDescription:
-        "SEED is not an auxiliary organization of any political party. It is an independent civic platform designed to defend a free society.",
+        "We welcome dialogue and practical collaboration with civic organizations, researchers, foundations, companies, and international partners who share an interest in capable citizens and an open civil society.",
     },
     about: {
       kicker: "ABOUT SEED",
-      title: "SEED Civic Partners is an independent civic platform reviving the language of liberty in Korean civil society.",
+      title: "SEED Civic Partners strengthens citizen agency and civic responsibility in South Korea.",
       description:
-        "We do not see citizens as passive beneficiaries of state policy or objects of political mobilization. Citizens are free and responsible agents who can discover public problems, ask questions, make proposals, and test solutions.",
+        "We see citizens as active participants in public life: people who can identify problems, ask informed questions, develop proposals, and test practical solutions. Our work supports an open civil society in which disagreement is handled through evidence, dialogue, and responsible action.",
       missionTitle: "Mission",
       mission:
-        "Our mission is to translate citizens' daily problems into the language of freedom, rule of law, limited government, market autonomy, and civic responsibility, then connect them to citizen proposals, civic briefings, forums, small experiments, and public records.",
+        "Our mission is to turn everyday civic concerns into informed questions, practical proposals, accessible briefings, small-scale experiments, and public records. This work is guided by freedom, the rule of law, open and free markets, and civic responsibility.",
       independenceTitle: "Political and Organizational Independence",
       independence:
-        "SEED Civic Partners is not a campaign organization or an auxiliary body of any political party. We remain nonpartisan in politics, transparent in finance and partnerships, and independent in organization.",
-      valuesTitle: "Freedom, Rule of Law, Free Markets, and Civic Responsibility",
+        "SEED Civic Partners is an independent, nonpartisan civic platform—not a campaign organization or an affiliate of any political party. We are committed to transparency in our partnerships, funding, and project outcomes.",
+      valuesTitle: "Freedom, Rule of Law, Open and Free Markets, and Civic Responsibility",
       values:
-        "SEED stands for individual freedom, the rule of law, limited government, market autonomy, and the responsibility of civil society. Liberty is not irresponsible laissez-faire. It grows with civic ethics, respect for the freedom of others, and responsibility for the community.",
+        "These values provide a practical framework for public life. Individual freedom depends on fair rules and accountable institutions; open markets support choice and innovation; and civic responsibility helps people sustain trust, pluralism, and cooperation.",
       programsTitle: "Programs",
       programs: [
-        ["Korea Civic Freedom Initiative", "A one-year pilot to build the proposal platform, civic freedom briefings, civic experiments, enterprise-citizen forums, and Seed Citizen Fellows."],
-        ["Civic Freedom Briefings", "Citizen-friendly reports, card-news content, short videos, and public discussions on overregulation, enterprise and citizens, property rights, platform regulation, data administration, and public accountability."],
+        ["Korea Civic Initiative", "A 2026 pilot bringing together a citizen proposal platform, civic briefings, small-scale experiments, public dialogue, and the Seed Citizen Fellows program."],
+        ["Civic Briefings", "Accessible, evidence-informed materials and discussions on regulation, enterprise and citizens, property rights, the platform economy, digital government, and public accountability."],
         ["Citizen Proposals and Civic Experiments", "Cases proposed by citizens are selected and developed into small solution models whose outcomes are publicly recorded."],
         ["Forum on Enterprise and Civic Liberty", "A public space where companies and citizens discuss the conditions of a free society together."],
-        ["Seed Citizen Fellows", "A training track for 30 civic leaders in proposals, briefings, public discussion, civic experimentation, public recording, and explaining liberty."],
+        ["Seed Citizen Fellows", "A 2026 pilot goal to equip 30 emerging civic leaders with skills in proposal development, public discussion, civic experimentation, and transparent documentation."],
       ],
       leadershipTitle: "Leadership",
       leadership:
-        "SEED cultivates independent civic leaders, not youth wings of political parties. Leaders are trained to speak about liberty inside civil society through records, dialogue, and practical experiments.",
+        "SEED develops independent civic leadership through careful listening, evidence, dialogue, transparent documentation, and practical experimentation.",
+      founderTitle: "Founder & President",
+      founderName: "Park Kyung-seuk",
+      founderBio:
+        "Park Kyung-seuk has worked across civil society, public institutions, and corporate sustainability. His experience includes serving as a specialist member of the Presidential Commission on Sustainable Development (PCSD), executive chair of the Goyang branch of the Korean Federation for Environmental Movement, and founder and representative of the nonprofit KkumePume. He has also held roles related to corporate social contribution and sustainability management, served as an executive at the Korea Minting, Security Printing & ID Card Operating Corporation (KOMSCO), and advised Uijeongbu City.",
       contactTitle: "Contact",
       contact:
-        "For partnership, mentorship, education, support, or joint project proposals, contact hello@seedcivicpartners.org.",
+        "SEED is based in Seoul, South Korea. We welcome inquiries from civic organizations, think tanks, foundations, educators, researchers, and responsible businesses interested in international exchange or joint projects. Contact hello@seedcivicpartners.org.",
       principles: [
         ["Subject", "Citizens are not objects of state policy. They are subjects who discover and articulate public problems."],
         ["Ethics", "Liberty requires civic ethics that respect the freedom of others and the order of the community."],
@@ -225,8 +236,8 @@ export const content = {
         subtitle: "We translate complex political and institutional language into words citizens can use.",
       },
       forum: {
-        title: "SEED Public Forum",
-        subtitle: "Read JIMD Magazine inside the SEED public forum frame.",
+        title: "Insights & Civic Briefings",
+        subtitle: "English-language analysis and project updates are in development. This page will share concise, evidence-informed briefings for international partners and readers.",
       },
     },
   },

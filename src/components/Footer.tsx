@@ -18,6 +18,7 @@ export default function Footer() {
           <h2 className="mt-5 text-lg font-extrabold text-navy">{t.footer.title}</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-charcoal/60">{t.footer.description}</p>
           <p className="mt-3 text-sm font-semibold text-green-deep">{t.footer.contact}</p>
+          {language === "en" && <p className="mt-1 text-sm text-charcoal/55">{t.footer.location}</p>}
         </div>
         <div className="flex flex-wrap gap-3 text-sm font-bold text-charcoal/60">
           <Link to="/about" className="hover:text-green-deep">
