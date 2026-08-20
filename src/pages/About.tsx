@@ -90,17 +90,30 @@ export default function About() {
         </div>
       </section>
 
+      {language === "en" && (
+        <section className="section-band bg-[#F4F5F2]">
+          <div className="container-page">
+            <span className="section-kicker">LEADERSHIP</span>
+            <article className="mt-5 max-w-4xl rounded-lg border border-green-deep/10 bg-paper p-7 shadow-soft sm:p-10">
+              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-green-mid">{t.founderTitle}</p>
+              <h2 className="mt-3 text-3xl font-extrabold text-navy">{t.founderName}</h2>
+              <p className="mt-5 text-sm leading-7 text-charcoal/70">{t.founderBio}</p>
+            </article>
+          </div>
+        </section>
+      )}
+
       <section className="bg-ivory py-14">
         <div className="container-page flex flex-col gap-5 rounded-lg border border-green-deep/10 bg-paper p-6 shadow-soft md:flex-row md:items-center md:justify-between">
           <div className="flex items-start gap-4">
             <Network className="mt-1 shrink-0 text-green-mid" size={28} />
             <div>
               <h2 className="text-xl font-extrabold text-navy">
-                {language === "en" ? "A civic platform for liberty, not party politics." : "정당 정치가 아니라 자유를 위한 시민 플랫폼입니다."}
+                {language === "en" ? "Independent, nonpartisan, and ready to collaborate." : "정당 정치가 아니라 자유를 위한 시민 플랫폼입니다."}
               </h2>
               <p className="mt-2 text-sm leading-7 text-charcoal/60">
                 {language === "en"
-                  ? "SEED connects citizens, experts, civic groups, companies, and donors through transparent records and practical experiments."
+                  ? "SEED connects citizens, researchers, civic groups, foundations, companies, and international partners through dialogue, transparent records, and practical experiments."
                   : "씨앗연대는 시민, 전문가, 시민단체, 기업, 후원자를 투명한 기록과 실천적 실험으로 연결합니다."}
               </p>
             </div>

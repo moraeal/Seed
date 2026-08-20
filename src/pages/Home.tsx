@@ -34,7 +34,7 @@ export default function Home() {
           <div className="rounded-lg bg-green-deep p-7 text-white shadow-soft sm:p-10">
             <div className="flex items-center justify-between gap-4">
               <div>
-                <p className="text-xs font-extrabold tracking-[0.16em] text-gold">SEED</p>
+                <p className="text-xs font-extrabold tracking-[0.16em] text-gold">{language === "en" ? t.statsLabel : "SEED"}</p>
                 <h2 className="mt-3 text-2xl font-extrabold">
                   {language === "en" ? "Subject, Ethics, Evolution, Duty" : "Subject, Ethics, Evolution, Duty"}
                 </h2>
@@ -55,7 +55,7 @@ export default function Home() {
             </div>
             <p className="mt-8 border-t border-white/10 pt-6 text-sm leading-7 text-white/65">
               {language === "en"
-                ? "SEED turns liberty from an abstract ideological debate into practical civic infrastructure rooted in citizens' everyday problems."
+                ? "These figures are targets for SEED's 2026 pilot year, not completed results. Progress and learning will be documented openly as the programs develop."
                 : "씨앗연대는 자유를 추상적 이념 논쟁이 아니라 시민의 일상 문제에서 출발하는 실천적 시민 인프라로 바꿉니다."}
             </p>
           </div>
