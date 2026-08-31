@@ -47,11 +47,11 @@ export const newsArticles: NewsArticle[] = [
     summary: "정부가 경제단체와 만나 신속한 규제 개선을 약속했습니다. 그러나 규제의 성패는 몇 건을 없앴는지가 아니라, 시민의 안전과 자유를 지키면서 불필요한 비용을 실제로 줄였는지로 판단해야 합니다.",
     keySentence: "규제 개혁의 기준은 철폐 건수가 아니라 시민이 확인할 수 있는 효과와 책임입니다.",
     heroImage: {
-      src: "images/news/regulatory-dialogue-kcci.jpg",
-      alt: "대한상공회의소 회의장에서 발표를 듣는 참석자들",
-      caption: "자료사진. 2013년 대한상공회의소에서 열린 창조경제 관련 공개 토론회로, 2026년 8월 28일 규제합리화 간담회 현장사진은 아닙니다.",
-      credit: "사진: 전한·코리아넷/KOCIS · CC BY-SA 2.0",
-      sourceUrl: "https://commons.wikimedia.org/wiki/File:KOCIS_Korea_Panel_Discussion_for_Creative_Economy_with_Culture_04_(8683124624).jpg",
+      src: "images/news/han-seongsook-speaking.jpg",
+      alt: "고위당정협의회에서 마이크를 들고 발언하는 한성숙 국무총리",
+      caption: "자료화면. 2026년 7월 5일 제9차 고위당정협의회에서 발언하는 한성숙 국무총리입니다. 8월 28일 규제합리화 간담회 현장사진은 아닙니다.",
+      credit: "영상 화면 추출: 델리민주[더불어민주당] · CC BY 4.0",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:2026%EB%85%84_7%EC%9B%94_5%EC%9D%BC_-_%EC%A0%9C9%EC%B0%A8_%EA%B3%A0%EC%9C%84%EB%8B%B9%EC%A0%95%ED%98%91%EC%9D%98%ED%9A%8C_%EC%83%9D%EC%A4%91%EA%B3%84_-_%EB%8D%94%EB%B6%88%EC%96%B4%EB%AF%BC%EC%A3%BC%EB%8B%B9.webm",
     },
     inlineImage: {
       src: "images/news/korea-ev-charging.jpg",
