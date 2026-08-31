@@ -13,7 +13,7 @@ export default function Briefings() {
   return <section className="bg-paper pb-16 pt-11 sm:pb-20 sm:pt-14">
     <div className="container-page">
       <div
-        className="min-h-[360px] overflow-hidden rounded-xl bg-green-deep bg-[length:auto_100%] bg-right-bottom bg-no-repeat px-6 py-10 text-white sm:min-h-[390px] sm:px-10 sm:py-12 lg:min-h-[410px] lg:bg-[length:100%_100%] lg:px-14 lg:py-14"
+        className="min-h-[360px] overflow-hidden rounded-xl bg-green-deep bg-[length:auto_100%] bg-right-bottom bg-no-repeat px-6 py-10 text-white sm:min-h-[390px] sm:px-10 sm:py-12 lg:min-h-[410px] lg:px-14 lg:py-14"
         style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/briefings/citizen-briefing-hero-flat.webp)` }}
         role="img"
         aria-label="시민들이 자료와 그래프를 함께 살펴보며 공공의 문제를 토론하는 모습"
