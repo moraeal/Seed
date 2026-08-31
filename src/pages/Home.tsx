@@ -20,8 +20,9 @@ export default function Home() {
     <section className="border-b border-green-deep/15 bg-ivory">
       <div className="container-page grid gap-7 py-10 lg:grid-cols-2 lg:py-14">
         <Link to={`/columns/${latestColumn.slug}`} className="group flex h-full flex-col overflow-hidden border border-green-deep/15 bg-paper shadow-[0_24px_70px_rgba(23,76,58,.12)]">
-          <div className="relative min-h-[290px] bg-green-deep bg-cover bg-center" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}${latestColumn.heroImage.src})` }}>
-            <div className="absolute inset-0 bg-gradient-to-t from-green-deep/90 via-green-deep/10 to-transparent" />
+          <div className="relative min-h-[290px] overflow-hidden bg-green-deep">
+            <img src={`${import.meta.env.BASE_URL}${latestColumn.heroImage.src}`} alt={latestColumn.heroImage.alt} className="absolute inset-0 h-full w-full object-cover object-center transition duration-700 group-hover:scale-[1.02]" />
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-green-deep/80 to-transparent" />
             <span className="absolute left-7 top-7 border border-white/30 bg-green-deep/75 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white">LATEST SEED COLUMN</span>
             <span className="absolute bottom-4 right-5 text-[9px] text-white/70">{latestColumn.heroImage.credit}</span>
           </div>
