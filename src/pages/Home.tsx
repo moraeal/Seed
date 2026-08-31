@@ -1,151 +1,33 @@
-import { ArrowRight, BookOpenCheck, FlaskConical, Landmark, LineChart, MessageCircle, Sprout } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BookOpen, Clock, FileText, FlaskConical, Landmark, LineChart, MessageCircle, Sprout } from "lucide-react";
 import { Link } from "react-router-dom";
+import { briefings } from "../data/briefings";
 import { AUDITION_URL, getContent } from "../data/siteContent";
 import { useLanguage } from "../i18n";
 
-const pillarIcons = [Sprout, Landmark, LineChart, BookOpenCheck];
-const programIcons = [MessageCircle, BookOpenCheck, FlaskConical, Sprout];
+const valueIcons = [Sprout, Landmark, LineChart, BookOpen];
+const programIcons = [MessageCircle, BookOpen, FlaskConical, FileText];
 
 export default function Home() {
   const { language } = useLanguage();
   const t = getContent(language).home;
+  const featured = briefings.find((item) => item.featured) || briefings[0];
 
-  return (
-    <>
-      <section className="overflow-hidden bg-ivory py-12 sm:py-16 lg:py-20">
-        <div className="container-page grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
-            <span className="section-kicker">{t.kicker}</span>
-            <h1 className="mt-5 max-w-4xl text-4xl font-extrabold leading-[1.15] text-navy sm:text-5xl lg:text-6xl">
-              {t.title}
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-charcoal/70">{t.description}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/about" className="button-primary">
-                {t.primary}
-                <ArrowRight size={17} />
-              </Link>
-              <a href={AUDITION_URL} target="_blank" rel="noopener noreferrer" className="button-secondary">
-                {t.secondary}
-              </a>
-            </div>
-          </div>
-
-          <div className="rounded-lg bg-green-deep p-7 text-white shadow-soft sm:p-10">
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <p className="text-xs font-extrabold tracking-[0.16em] text-gold">{language === "en" ? t.statsLabel : "SEED"}</p>
-                <h2 className="mt-3 text-2xl font-extrabold">
-                  {language === "en" ? "Subject, Ethics, Evolution, Duty" : "Subject, Ethics, Evolution, Duty"}
-                </h2>
-              </div>
-              <img
-                src={`${import.meta.env.BASE_URL}images/brand/seed-sprout-draw.gif`}
-                alt=""
-                className="size-20 rounded-full bg-white/10 object-contain p-2"
-              />
-            </div>
-            <div className="mt-10 grid gap-3 sm:grid-cols-3">
-              {t.stats.map(([value, label]) => (
-                <div key={label} className="rounded-lg border border-white/15 bg-white/[0.07] p-4">
-                  <p className="text-3xl font-extrabold text-gold">{value}</p>
-                  <p className="mt-2 text-xs font-semibold leading-5 text-white/70">{label}</p>
-                </div>
-              ))}
-            </div>
-            <p className="mt-8 border-t border-white/10 pt-6 text-sm leading-7 text-white/65">
-              {language === "en"
-                ? "These figures are targets for SEED's 2026 pilot year, not completed results. Progress and learning will be documented openly as the programs develop."
-                : "씨앗연대는 자유를 추상적 이념 논쟁이 아니라 시민의 일상 문제에서 출발하는 실천적 시민 인프라로 바꿉니다."}
-            </p>
-          </div>
+  return <>
+    <section className="border-b border-green-deep/15 bg-ivory">
+      <div className="container-page grid min-h-[650px] lg:grid-cols-[1.08fr_0.92fr]">
+        <div className="flex flex-col justify-center border-green-deep/15 py-16 lg:border-r lg:py-24 lg:pr-16">
+          <div className="flex items-center gap-3 text-[11px] font-extrabold tracking-[0.2em] text-green-mid"><span className="h-px w-10 bg-gold" />{t.kicker}</div>
+          <h1 className="editorial-title mt-8 max-w-4xl text-[2.7rem] font-bold leading-[1.08] text-navy sm:text-6xl lg:text-[4.5rem]">{t.title}</h1>
+          <p className="mt-8 max-w-2xl text-base leading-8 text-charcoal/65 sm:text-lg">{t.description}</p>
+          <div className="mt-10 flex flex-wrap gap-3"><Link to="/about" className="button-primary">{t.primary}<ArrowRight size={17} /></Link><a href={AUDITION_URL} target="_blank" rel="noopener noreferrer" className="button-secondary">{t.secondary}<ArrowUpRight size={16} /></a></div>
+          <div className="mt-14 grid max-w-2xl grid-cols-3 border-y border-green-deep/15 py-5">{t.stats.map(([value, label]) => <div key={label} className="border-green-deep/15 px-4 first:pl-0 [&:not(:last-child)]:border-r"><strong className="editorial-title block text-3xl text-green-deep">{value}</strong><span className="mt-1 block text-[11px] leading-5 text-charcoal/50">{label}</span></div>)}</div>
         </div>
-      </section>
-
-      <section className="section-band bg-paper">
-        <div className="container-page">
-          <div className="section-heading">
-            <div>
-              <span className="section-kicker">VALUES</span>
-              <h2>{t.pillarsTitle}</h2>
-            </div>
-          </div>
-          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {t.pillars.map(([title, description], index) => {
-              const Icon = pillarIcons[index];
-              return (
-                <article key={title} className="content-card">
-                  <Icon className="text-green-mid" size={26} />
-                  <h3 className="mt-5 text-xl font-extrabold text-navy">{title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-charcoal/60">{description}</p>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-band bg-[#F4F5F2]">
-        <div className="container-page">
-          <div className="section-heading">
-            <div>
-              <span className="section-kicker">PROGRAMS</span>
-              <h2>{t.programsTitle}</h2>
-            </div>
-          </div>
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
-            {t.programs.map(([title, description], index) => {
-              const Icon = programIcons[index];
-              return (
-                <article key={title} className="content-card flex gap-5">
-                  <span className="grid size-12 shrink-0 place-items-center rounded-md bg-green-pale text-green-deep">
-                    <Icon size={22} />
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-extrabold text-navy">{title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-charcoal/60">{description}</p>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-band bg-paper">
-        <div className="container-page">
-          <div className="section-heading">
-            <div>
-              <span className="section-kicker">CIVIC AGENDAS</span>
-              <h2>{t.issueTitle}</h2>
-            </div>
-          </div>
-          <div className="mt-10 grid gap-4 lg:grid-cols-3">
-            {t.issues.map(([title, description]) => (
-              <article key={title} className="content-card bg-[#F6F8F1]">
-                <h3 className="text-xl font-extrabold text-navy">{title}</h3>
-                <p className="mt-3 text-sm leading-7 text-charcoal/65">{description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-green-deep py-16 text-white sm:py-20">
-        <div className="container-page text-center">
-          <Sprout className="mx-auto text-gold" size={38} />
-          <h2 className="mx-auto mt-6 max-w-4xl text-3xl font-extrabold leading-tight sm:text-4xl">{t.ctaTitle}</h2>
-          <p className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-white/70">{t.ctaDescription}</p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link to="/about" className="button-light">
-              {language === "en" ? "Read About SEED" : "씨앗연대 소개"}
-            </Link>
-            <a href={AUDITION_URL} target="_blank" rel="noopener noreferrer" className="button-outline-light">
-              {language === "en" ? "Citizen Proposals" : "시민제안 참여"}
-            </a>
-          </div>
-        </div>
-      </section>
-    </>
-  );
+        <div className="flex items-center py-10 lg:pl-12"><Link to={`/briefings/${featured.slug}`} className="group w-full overflow-hidden border border-green-deep/15 bg-paper shadow-[0_24px_70px_rgba(23,76,58,.12)]"><div className="relative min-h-[290px] bg-green-deep bg-cover bg-center" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/briefings/citizen-briefing-hero-flat.webp)` }}><div className="absolute inset-0 bg-gradient-to-t from-green-deep via-green-deep/15 to-transparent" /><span className="absolute left-7 top-7 border border-white/30 bg-green-deep/70 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white">LATEST BRIEFING</span></div><div className="p-7 sm:p-9"><span className="section-kicker">{featured.category}</span><h2 className="editorial-title mt-4 text-3xl font-bold leading-tight text-navy transition group-hover:text-green-mid">{featured.title}</h2><p className="mt-4 text-sm leading-7 text-charcoal/60">{featured.summary}</p><div className="mt-7 flex items-center justify-between border-t border-green-deep/10 pt-5 text-xs text-charcoal/45"><span className="flex items-center gap-1.5"><Clock size={14} />{featured.readMinutes}분</span><span className="flex items-center gap-1.5 font-bold text-green-deep">브리핑 읽기<ArrowRight size={15} /></span></div></div></Link></div>
+      </div>
+    </section>
+    <section className="bg-paper py-16 sm:py-24"><div className="container-page"><div className="grid gap-8 border-b-2 border-navy pb-7 lg:grid-cols-[1fr_auto] lg:items-end"><div><span className="section-kicker">SEED JOURNAL</span><h2 className="editorial-title mt-3 text-4xl font-bold text-navy">시민의 언어로 읽는 공공의 문제</h2></div><Link to="/briefings" className="text-link">시민브리핑 전체보기<ArrowRight size={16} /></Link></div><div className="grid divide-y divide-green-deep/10 lg:grid-cols-3 lg:divide-x lg:divide-y-0">{briefings.slice(0, 3).map((item, index) => <Link key={item.slug} to={`/briefings/${item.slug}`} className={`group py-8 lg:px-8 ${index === 0 ? "lg:pl-0" : ""}`}><span className="text-[10px] font-extrabold tracking-[.16em] text-green-mid">0{index + 1} · {item.category}</span><h3 className="editorial-title mt-4 text-2xl font-bold leading-snug text-navy group-hover:text-green-mid">{item.title}</h3><p className="mt-4 text-sm leading-7 text-charcoal/55">{item.summary}</p><time className="mt-7 block text-xs text-charcoal/40">{item.date.replace(/-/g, ".")}</time></Link>)}</div></div></section>
+    <section className="border-y border-green-deep/15 bg-[#F1F2EC] py-16 sm:py-24"><div className="container-page"><span className="section-kicker">OUR PRINCIPLES</span><div className="mt-4 grid gap-8 lg:grid-cols-[.7fr_1.3fr]"><h2 className="editorial-title text-4xl font-bold leading-tight text-navy">{t.pillarsTitle}</h2><p className="max-w-2xl text-sm leading-7 text-charcoal/60">시민을 국가와 시장의 객체가 아니라 질문하고 판단하며 책임지는 주체로 세웁니다.</p></div><div className="mt-12 grid border-y border-green-deep/15 md:grid-cols-2 xl:grid-cols-4">{t.pillars.map(([title, description], index) => { const Icon = valueIcons[index]; return <article key={title} className="border-green-deep/15 px-1 py-8 md:px-7 md:[&:not(:nth-child(2n))]:border-r xl:[&:not(:last-child)]:border-r"><Icon size={24} className="text-gold" /><h3 className="editorial-title mt-8 text-2xl font-bold text-navy">{title}</h3><p className="mt-4 text-sm leading-7 text-charcoal/60">{description}</p></article>; })}</div></div></section>
+    <section className="bg-navy py-16 text-white sm:py-24"><div className="container-page"><div className="grid gap-8 lg:grid-cols-[.7fr_1.3fr]"><div><span className="text-[11px] font-extrabold tracking-[.18em] text-gold">WHAT WE DO</span><h2 className="editorial-title mt-4 text-4xl font-bold">{t.programsTitle}</h2></div><div className="grid gap-px bg-white/15 sm:grid-cols-2">{t.programs.map(([title, description], index) => { const Icon = programIcons[index]; return <article key={title} className="bg-navy p-7 sm:p-9"><Icon size={23} className="text-gold"/><h3 className="mt-6 text-lg font-extrabold">{title}</h3><p className="mt-3 text-sm leading-7 text-white/60">{description}</p></article>; })}</div></div></div></section>
+    <section className="bg-ivory py-16 sm:py-24"><div className="container-page grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center"><div><span className="section-kicker">JOIN THE CIVIC FIELD</span><h2 className="editorial-title mt-4 max-w-4xl text-4xl font-bold leading-tight text-navy">{t.ctaTitle}</h2><p className="mt-5 max-w-3xl text-sm leading-7 text-charcoal/60">{t.ctaDescription}</p></div><div className="flex flex-wrap gap-3"><Link to="/support" className="button-primary">후원하기<ArrowRight size={16}/></Link><a href={AUDITION_URL} target="_blank" rel="noreferrer" className="button-secondary">시민제안 참여<ArrowUpRight size={16}/></a></div></div></section>
+  </>;
 }
