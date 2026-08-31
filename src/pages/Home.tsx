@@ -1,6 +1,6 @@
 import { ArrowRight, ArrowUpRight, BookOpen, Clock, FileText, FlaskConical, Landmark, LineChart, MessageCircle, Sprout } from "lucide-react";
 import { Link } from "react-router-dom";
-import { getBriefingsNewestFirst } from "../data/briefings";
+import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { getLatestColumn } from "../data/columns";
 import { getNewsNewestFirst } from "../data/news";
 import { AUDITION_URL, getContent } from "../data/siteContent";
@@ -14,7 +14,7 @@ export default function Home() {
   const t = getContent(language).home;
   const latestColumn = getLatestColumn();
   const latestNews = getNewsNewestFirst()[0];
-  const newestBriefings = getBriefingsNewestFirst();
+  const newestBriefings = getAllBriefingsNewestFirst();
 
   return <>
     <section className="border-b border-green-deep/15 bg-ivory">
