@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">경기도 재정 악화 흐름</title>
+  <desc id="desc">세입 감소에서 지방채와 기금 차입, 필수예산 부족, 세출 구조조정으로 이어지는 흐름을 설명하는 그림</desc>
+  <rect width="1200" height="675" fill="#F7F4EC"/>
+  <text x="72" y="82" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="22" font-weight="800" fill="#174C3A" letter-spacing="2">HOW THE PRESSURE BUILT</text>
+  <text x="72" y="132" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="40" font-weight="900" fill="#13243A">재정은 하루아침에 무너지지 않습니다</text>
+  <text x="72" y="170" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="18" fill="#676760">문제는 하나의 숫자가 아니라, 부족한 재원을 메우는 방식이 반복됐다는 점입니다.</text>
+
+  <g font-family="Pretendard, Apple SD Gothic Neo, sans-serif" text-anchor="middle">
+    <g transform="translate(55 255)">
+      <rect width="190" height="190" rx="28" fill="#FFFFFF" stroke="#174C3A" stroke-opacity=".15" stroke-width="2"/>
+      <circle cx="95" cy="62" r="34" fill="#E9EFEA"/>
+      <path d="M72 71h46M78 53h34M87 43h16" stroke="#174C3A" stroke-width="7" stroke-linecap="round"/>
+      <text x="95" y="126" font-size="20" font-weight="900" fill="#13243A">세입 감소</text>
+      <text x="95" y="155" font-size="15" fill="#66645F">취득세 등 감소</text>
+    </g>
+    <path d="M255 350h38" stroke="#D7A13D" stroke-width="7" stroke-linecap="round"/><path d="M284 337l18 13-18 13" fill="none" stroke="#D7A13D" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(305 255)">
+      <rect width="190" height="190" rx="28" fill="#FFFFFF" stroke="#174C3A" stroke-opacity=".15" stroke-width="2"/>
+      <circle cx="95" cy="62" r="34" fill="#FFF0CF"/>
+      <path d="M72 75h46V51H72zM81 51V41h28v10" fill="none" stroke="#A87418" stroke-width="6" stroke-linejoin="round"/>
+      <text x="95" y="126" font-size="20" font-weight="900" fill="#13243A">지방채 확대</text>
+      <text x="95" y="155" font-size="15" fill="#66645F">빚으로 부족분 보충</text>
+    </g>
+    <path d="M505 350h38" stroke="#D7A13D" stroke-width="7" stroke-linecap="round"/><path d="M534 337l18 13-18 13" fill="none" stroke="#D7A13D" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(555 255)">
+      <rect width="190" height="190" rx="28" fill="#FFFFFF" stroke="#174C3A" stroke-opacity=".15" stroke-width="2"/>
+      <circle cx="95" cy="62" r="34" fill="#FFF0CF"/>
+      <path d="M70 48h50v42H70zM76 41h38v8" fill="none" stroke="#A87418" stroke-width="6" stroke-linejoin="round"/>
+      <path d="M82 70h26" stroke="#A87418" stroke-width="5"/>
+      <text x="95" y="126" font-size="20" font-weight="900" fill="#13243A">기금 차입</text>
+      <text x="95" y="155" font-size="15" fill="#66645F">비상금까지 당겨쓰기</text>
+    </g>
+    <path d="M755 350h38" stroke="#D7A13D" stroke-width="7" stroke-linecap="round"/><path d="M784 337l18 13-18 13" fill="none" stroke="#D7A13D" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(805 255)">
+      <rect width="190" height="190" rx="28" fill="#FFFFFF" stroke="#B94B39" stroke-opacity=".25" stroke-width="2"/>
+      <circle cx="95" cy="62" r="34" fill="#FBE0DB"/>
+      <path d="M75 45h40v44H75zM83 56h24M83 68h24M83 80h15" fill="none" stroke="#A33B2B" stroke-width="5" stroke-linecap="round"/>
+      <text x="95" y="126" font-size="20" font-weight="900" fill="#A33B2B">필수예산 부족</text>
+      <text x="95" y="155" font-size="15" fill="#66645F">일부 9개월분 편성</text>
+    </g>
+    <path d="M1005 350h38" stroke="#B94B39" stroke-width="7" stroke-linecap="round"/><path d="M1034 337l18 13-18 13" fill="none" stroke="#B94B39" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(1055 255)">
+      <rect width="100" height="190" rx="28" fill="#A33B2B"/>
+      <text x="50" y="58" font-size="42" font-weight="900" fill="#FFFFFF">✂</text>
+      <text x="50" y="118" font-size="17" font-weight="900" fill="#FFFFFF">세출</text>
+      <text x="50" y="142" font-size="17" font-weight="900" fill="#FFFFFF">구조조정</text>
+      <text x="50" y="169" font-size="13" fill="#FFFFFF" opacity=".8">5,465억</text>
+    </g>
+  </g>
+
+  <rect x="72" y="504" width="1056" height="104" rx="24" fill="#13243A"/>
+  <text x="600" y="548" text-anchor="middle" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="20" font-weight="800" fill="#D8B66A">씨드의 판단</text>
+  <text x="600" y="582" text-anchor="middle" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="23" font-weight="900" fill="#FFFFFF">경기변동은 핑계가 될 수 없습니다. 그래서 재정규율과 대비가 필요합니다.</text>
+</svg>
