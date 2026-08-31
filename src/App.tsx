@@ -17,6 +17,8 @@ import Columns from "./pages/Columns";
 import ColumnDetail from "./pages/ColumnDetail";
 import Academy from "./pages/Academy";
 import UnderConstruction from "./pages/UnderConstruction";
+import News from "./pages/News";
+import NewsDetail from "./pages/NewsDetail";
 
 function AppShell() {
   const location = useLocation();
@@ -35,7 +37,8 @@ function AppShell() {
           <Route path="/briefings/:slug" element={<BriefingDetail />} />
           <Route path="/columns" element={<Columns />} />
           <Route path="/columns/:slug" element={<ColumnDetail />} />
-          <Route path="/news" element={<TodayFrame />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/news/:slug" element={<NewsDetail />} />
           <Route path="/academy" element={<Academy />} />
           <Route path="/proposals" element={<UnderConstruction page="proposals" />} />
           <Route path="/experiments" element={<UnderConstruction page="experiments" />} />
