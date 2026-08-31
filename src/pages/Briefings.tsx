@@ -18,7 +18,7 @@ export default function Briefings() {
         role="img"
         aria-label="시민들이 자료와 그래프를 함께 살펴보며 공공의 문제를 토론하는 모습"
       >
-        <div className="max-w-[64%] sm:max-w-[58%]"><span className="text-xs font-extrabold tracking-[0.18em] text-gold-light">SEED CITIZEN BRIEFING</span><h1 className="mt-4 text-4xl font-extrabold sm:text-5xl lg:text-6xl">시민브리핑</h1><p className="mt-5 max-w-lg text-sm leading-7 text-white/85 sm:text-base">가짜뉴스와 왜곡된 정보가<br />넘치는 시대,<br /><br />확인된 사실과 맥락으로<br />시민의 정확한 이해를<br />돕습니다.</p></div>
+        <div className="max-w-[64%] sm:max-w-[58%]"><span className="text-xs font-extrabold tracking-[0.18em] text-gold-light">SEED CITIZEN BRIEFING</span><h1 className="mt-4 text-4xl font-extrabold sm:text-5xl lg:text-6xl">시민브리핑</h1><p className="mt-10 max-w-lg text-sm leading-7 text-white/85 sm:text-base">가짜뉴스와 왜곡된 정보가<br />넘치는 시대,<br /><br />확인된 사실과 맥락으로<br />시민의 정확한 이해를<br />돕습니다.</p></div>
         <div className="mt-14 text-sm text-white/65 lg:mt-16">현재 <strong className="text-white">{briefings.length}</strong>개의 브리핑</div>
       </div>
 
