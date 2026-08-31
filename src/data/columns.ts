@@ -25,8 +25,8 @@ export const columns: SeedColumn[] = [
     summary: "보수의 위기는 정권 상실보다 시민의 삶을 설명할 언어를 잃은 데 있습니다. 자유·공정·법치·시장을 시민의 언어로 다시 번역하고, 새로운 시민사회의 진지전을 시작할 길을 제안합니다.",
     heroImage: {
       src: "images/columns/gramsci-archive.jpg",
-      alt: "안토니오 그람시의 초상과 편지, 옥중노트가 함께 놓인 기록사진",
-      caption: "그람시의 초상과 옥중노트. 사회를 움직이는 힘은 선거뿐 아니라 시민의 상식과 언어가 만들어지는 긴 과정에도 있습니다.",
+      alt: "왼쪽부터 안토니오 그람시, 아내 율리아 슈흐트, 처형 타니아 슈흐트의 초상과 옥중노트, 투리 감옥을 배열한 기록사진",
+      caption: "왼쪽부터 안토니오 그람시의 초상, 모스크바 엽서, 그람시의 아내 율리아 슈흐트, 또 다른 엽서, 그람시를 옥중에서 돌본 처형 타티아나 ‘타니아’ 슈흐트, 옥중노트와 1930년대 투리 감옥입니다. 사진 속 두 여성은 그람시가 아니라 그의 아내와 처형입니다.",
       credit: "Fondazione Gramsci · Wikimedia Commons (Public Domain)",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Antonio_Gramsci_-_Archive_documents_and_photos.jpg",
     },
