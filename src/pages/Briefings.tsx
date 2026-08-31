@@ -12,9 +12,15 @@ export default function Briefings() {
 
   return <section className="section-band bg-paper">
     <div className="container-page">
-      <div className="rounded-xl bg-green-deep px-6 py-10 text-white sm:px-10 lg:flex lg:items-end lg:justify-between">
-        <div className="max-w-3xl"><span className="text-xs font-extrabold tracking-[0.18em] text-gold-light">SEED CITIZEN BRIEFING</span><h1 className="mt-4 text-4xl font-extrabold sm:text-5xl">시민브리핑</h1><p className="mt-5 max-w-2xl text-sm leading-7 text-white/75">사실을 먼저 확인하고, 시민의 언어로 쟁점을 설명하며, 앞으로 지켜볼 질문을 남깁니다.</p></div>
-        <div className="mt-7 text-sm text-white/60 lg:mt-0">현재 <strong className="text-white">{briefings.length}</strong>개의 브리핑</div>
+      <div className="relative isolate min-h-[360px] overflow-hidden rounded-xl bg-green-deep px-6 py-10 text-white sm:min-h-[390px] sm:px-10 sm:py-12 lg:flex lg:min-h-[410px] lg:items-end lg:justify-between lg:px-14">
+        <img
+          src={`${import.meta.env.BASE_URL}images/briefings/citizen-briefing-hero.png`}
+          alt="시민들이 자료와 그래프를 함께 살펴보며 공공의 문제를 토론하는 모습"
+          className="absolute inset-y-0 right-[-44%] -z-10 h-full w-auto max-w-none object-contain opacity-75 sm:right-[-22%] sm:opacity-85 lg:right-[-3%] lg:opacity-95"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-green-deep via-green-deep/95 to-green-deep/15 lg:via-green-deep/80" />
+        <div className="max-w-2xl self-center lg:self-end"><span className="text-xs font-extrabold tracking-[0.18em] text-gold-light">SEED CITIZEN BRIEFING</span><h1 className="mt-4 text-4xl font-extrabold sm:text-5xl lg:text-6xl">시민브리핑</h1><p className="mt-5 max-w-xl text-sm leading-7 text-white/80 sm:text-base">사실을 먼저 확인하고, 시민의 언어로 쟁점을 설명하며, 앞으로 지켜볼 질문을 남깁니다.</p></div>
+        <div className="mt-auto pt-16 text-sm text-white/65 lg:ml-8 lg:pt-0">현재 <strong className="text-white">{briefings.length}</strong>개의 브리핑</div>
       </div>
 
       <Link to={`/briefings/${featured.slug}`} className="mt-8 grid overflow-hidden rounded-xl border border-green-deep/10 bg-green-pale shadow-soft transition hover:-translate-y-1 md:grid-cols-[0.7fr_1.3fr]">
