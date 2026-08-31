@@ -8,7 +8,7 @@ export const content = {
     nav: [
       { label: "씨앗연대 소개", path: "/about" },
       { label: "시민제안", url: AUDITION_URL },
-      { label: "씨앗 공론장", path: "/forum" },
+      { label: "시민브리핑", path: "/briefings" },
       { label: "로드맵", path: "/roadmap" },
       { label: "후원하기", path: "/support" },
     ],
