@@ -13,7 +13,8 @@ export default function Home() {
   const { language } = useLanguage();
   const t = getContent(language).home;
   const latestColumn = getLatestColumn();
-  const latestNews = getNewsNewestFirst()[0];
+  const newsCandidates = getNewsNewestFirst();
+  const latestNews = newsCandidates.find((item) => item.heroImage.src !== latestColumn.heroImage.src) ?? newsCandidates[0];
   const newestBriefings = getAllBriefingsNewestFirst();
 
   return <>
