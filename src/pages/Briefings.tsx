@@ -1,9 +1,9 @@
 import { ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
-import { getBriefingsNewestFirst } from "../data/briefings";
+import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 
 export default function Briefings() {
-  const briefings = getBriefingsNewestFirst();
+  const briefings = getAllBriefingsNewestFirst();
 
   return (
     <section className="bg-paper pb-20 sm:pb-28">
