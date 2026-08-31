@@ -1,6 +1,7 @@
 import { ArrowRight, ArrowUpRight, BookOpen, Clock, FileText, FlaskConical, Landmark, LineChart, MessageCircle, Sprout } from "lucide-react";
 import { Link } from "react-router-dom";
 import { getBriefingsNewestFirst, getLatestBriefing } from "../data/briefings";
+import { getLatestColumn } from "../data/columns";
 import { AUDITION_URL, getContent } from "../data/siteContent";
 import { useLanguage } from "../i18n";
 
@@ -11,20 +12,47 @@ export default function Home() {
   const { language } = useLanguage();
   const t = getContent(language).home;
   const featured = getLatestBriefing();
+  const latestColumn = getLatestColumn();
   const newestBriefings = getBriefingsNewestFirst();
   const featuredImage = featured.images?.[0];
 
   return <>
     <section className="border-b border-green-deep/15 bg-ivory">
-      <div className="container-page grid min-h-[650px] lg:grid-cols-[1.08fr_0.92fr]">
-        <div className="flex flex-col justify-center border-green-deep/15 py-16 lg:border-r lg:py-24 lg:pr-16">
-          <div className="flex items-center gap-3 text-[11px] font-extrabold tracking-[0.2em] text-green-mid"><span className="h-px w-10 bg-gold" />{t.kicker}</div>
-          <h1 className="editorial-title mt-8 max-w-4xl text-[2.7rem] font-bold leading-[1.08] text-navy sm:text-6xl lg:text-[4.5rem]">{t.title}</h1>
-          <p className="mt-8 max-w-2xl text-base leading-8 text-charcoal/65 sm:text-lg">{t.description}</p>
-          <div className="mt-10 flex flex-wrap gap-3"><Link to="/about" className="button-primary">{t.primary}<ArrowRight size={17} /></Link><a href={AUDITION_URL} target="_blank" rel="noopener noreferrer" className="button-secondary">{t.secondary}<ArrowUpRight size={16} /></a></div>
-          <div className="mt-14 grid max-w-2xl grid-cols-3 border-y border-green-deep/15 py-5">{t.stats.map(([value, label]) => <div key={label} className="border-green-deep/15 px-4 first:pl-0 [&:not(:last-child)]:border-r"><strong className="editorial-title block text-3xl text-green-deep">{value}</strong><span className="mt-1 block text-[11px] leading-5 text-charcoal/50">{label}</span></div>)}</div>
-        </div>
-        <div className="flex items-center py-10 lg:pl-12"><Link to={`/briefings/${featured.slug}`} className="group w-full overflow-hidden border border-green-deep/15 bg-paper shadow-[0_24px_70px_rgba(23,76,58,.12)]"><div className="relative min-h-[290px] bg-green-deep bg-cover bg-center" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}${featuredImage?.src ?? "images/briefings/citizen-briefing-hero-flat.webp"})` }}><div className="absolute inset-0 bg-gradient-to-t from-green-deep via-green-deep/10 to-transparent" /><span className="absolute left-7 top-7 border border-white/30 bg-green-deep/75 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white">LATEST BRIEFING</span>{featuredImage && <span className="absolute bottom-4 right-5 text-[9px] text-white/70">{featuredImage.credit}</span>}</div><div className="p-7 sm:p-9"><span className="section-kicker">{featured.category}</span><h2 className="editorial-title mt-4 text-3xl font-bold leading-tight text-navy transition group-hover:text-green-mid">{featured.title}</h2><p className="mt-4 text-sm leading-7 text-charcoal/65">{featured.summary}</p><p className="mt-4 border-l-2 border-gold pl-4 text-xs leading-6 text-charcoal/50">{featured.content[0]}</p><div className="mt-7 flex items-center justify-between border-t border-green-deep/10 pt-5 text-xs text-charcoal/45"><span className="flex items-center gap-1.5"><Clock size={14} />{featured.readMinutes}분</span><span className="flex items-center gap-1.5 font-bold text-green-deep">브리핑 읽기<ArrowRight size={15} /></span></div></div></Link></div>
+      <div className="container-page grid gap-7 py-10 lg:grid-cols-2 lg:py-14">
+        <Link to={`/columns/${latestColumn.slug}`} className="group flex h-full flex-col overflow-hidden border border-green-deep/15 bg-paper shadow-[0_24px_70px_rgba(23,76,58,.12)]">
+          <div className="relative min-h-[290px] bg-green-deep bg-cover bg-center" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}${latestColumn.heroImage.src})` }}>
+            <div className="absolute inset-0 bg-gradient-to-t from-green-deep/90 via-green-deep/10 to-transparent" />
+            <span className="absolute left-7 top-7 border border-white/30 bg-green-deep/75 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white">LATEST SEED COLUMN</span>
+            <span className="absolute bottom-4 right-5 text-[9px] text-white/70">{latestColumn.heroImage.credit}</span>
+          </div>
+          <div className="flex flex-1 flex-col p-7 sm:p-9">
+            <span className="section-kicker">씨드칼럼 {String(latestColumn.issue).padStart(2, "0")}</span>
+            <h1 className="editorial-title mt-4 text-3xl font-bold leading-tight text-navy transition group-hover:text-green-mid">{latestColumn.title}</h1>
+            <p className="mt-3 text-base font-semibold leading-7 text-charcoal/70">{latestColumn.subtitle}</p>
+            <p className="mt-4 text-sm leading-7 text-charcoal/60">{latestColumn.summary}</p>
+            <div className="mt-auto flex items-center justify-between border-t border-green-deep/10 pt-5 text-xs text-charcoal/45">
+              <span className="flex items-center gap-3"><time>{latestColumn.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1.5"><Clock size={14} />{latestColumn.readMinutes}분</span></span>
+              <span className="flex items-center gap-1.5 font-bold text-green-deep">칼럼 읽기<ArrowRight size={15} /></span>
+            </div>
+          </div>
+        </Link>
+        <Link to={`/briefings/${featured.slug}`} className="group flex h-full flex-col overflow-hidden border border-green-deep/15 bg-paper shadow-[0_24px_70px_rgba(23,76,58,.12)]">
+          <div className="relative min-h-[290px] bg-green-deep bg-cover bg-center" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}${featuredImage?.src ?? "images/briefings/citizen-briefing-hero-flat.webp"})` }}>
+            <div className="absolute inset-0 bg-gradient-to-t from-green-deep via-green-deep/10 to-transparent" />
+            <span className="absolute left-7 top-7 border border-white/30 bg-green-deep/75 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white">LATEST BRIEFING</span>
+            {featuredImage && <span className="absolute bottom-4 right-5 text-[9px] text-white/70">{featuredImage.credit}</span>}
+          </div>
+          <div className="flex flex-1 flex-col p-7 sm:p-9">
+            <span className="section-kicker">{featured.category}</span>
+            <h2 className="editorial-title mt-4 text-3xl font-bold leading-tight text-navy transition group-hover:text-green-mid">{featured.title}</h2>
+            <p className="mt-4 text-sm leading-7 text-charcoal/65">{featured.summary}</p>
+            <p className="mt-4 border-l-2 border-gold pl-4 text-xs leading-6 text-charcoal/50">{featured.content[0]}</p>
+            <div className="mt-auto flex items-center justify-between border-t border-green-deep/10 pt-5 text-xs text-charcoal/45">
+              <span className="flex items-center gap-1.5"><Clock size={14} />{featured.readMinutes}분</span>
+              <span className="flex items-center gap-1.5 font-bold text-green-deep">브리핑 읽기<ArrowRight size={15} /></span>
+            </div>
+          </div>
+        </Link>
       </div>
     </section>
     <section className="border-b border-green-deep/15 bg-green-deep py-14 text-white sm:py-20"><div className="container-page grid gap-8 lg:grid-cols-[.7fr_1.3fr] lg:items-center"><div><span className="text-[10px] font-extrabold tracking-[.2em] text-gold-light">WHY SEED CIVIC PARTNERS</span><h2 className="editorial-title mt-4 text-3xl font-bold sm:text-4xl">시민이 다시 사회의 주체로 서도록</h2></div><div><p className="max-w-3xl text-base leading-8 text-white/72">씨드시민파트너스는 시민을 정책의 수혜자나 정치의 동원 대상으로 보지 않습니다. 확인된 사실을 시민의 언어로 설명하고, 시민의 질문을 제안과 작은 실험으로 연결하며, 그 과정을 공개 기록으로 남깁니다.</p><Link to="/about" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-gold-light">우리의 취지 더 알아보기<ArrowRight size={16}/></Link></div></div></section>

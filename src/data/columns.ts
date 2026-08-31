@@ -132,3 +132,7 @@ export const columns: SeedColumn[] = [
 ];
 
 export const getColumn = (slug: string) => columns.find((column) => column.slug === slug);
+
+export const getColumnsNewestFirst = () => [...columns].sort((a, b) => b.issue - a.issue);
+
+export const getLatestColumn = () => getColumnsNewestFirst()[0];
