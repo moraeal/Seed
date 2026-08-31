@@ -1,14 +1,16 @@
 import { ArrowRight, Clock, Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { briefings } from "../data/briefings";
+import { briefings, getBriefingsNewestFirst, getLatestBriefing } from "../data/briefings";
 
 export default function Briefings() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("전체");
+  const newestBriefings = useMemo(() => getBriefingsNewestFirst(), []);
   const categories = ["전체", ...Array.from(new Set(briefings.map((item) => item.category)))];
-  const filtered = useMemo(() => briefings.filter((item) => (category === "전체" || item.category === category) && `${item.title} ${item.summary}`.toLowerCase().includes(query.toLowerCase())), [query, category]);
-  const featured = briefings.find((item) => item.featured) || briefings[0];
+  const filtered = useMemo(() => newestBriefings.filter((item) => (category === "전체" || item.category === category) && `${item.title} ${item.summary}`.toLowerCase().includes(query.toLowerCase())), [query, category]);
+  const featured = getLatestBriefing();
+  const featuredImage = featured.images?.[0];
 
   return <section className="bg-paper pb-16 sm:pb-24">
     <div className="container-page">
@@ -23,7 +25,7 @@ export default function Briefings() {
       </div>
 
       <Link to={`/briefings/${featured.slug}`} className="mt-12 grid overflow-hidden border-y-2 border-navy bg-paper transition hover:bg-ivory md:grid-cols-[0.55fr_1.45fr]">
-        <div className="grid min-h-52 place-items-center bg-green-deep p-8 text-center text-white"><div><span className="text-[10px] font-bold tracking-[0.2em] text-gold-light">FEATURED REPORT</span><div className="editorial-title mt-5 text-5xl">SEED</div><div className="mt-2 text-[10px] tracking-[0.16em] text-white/55">CITIZEN BRIEFING</div></div></div>
+        <div className="relative min-h-60 bg-green-deep bg-cover bg-center" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}${featuredImage?.src ?? "images/briefings/citizen-briefing-hero-flat.webp"})` }}><div className="absolute inset-0 bg-gradient-to-t from-green-deep/80 via-transparent to-transparent"/><span className="absolute left-6 top-6 bg-green-deep/75 px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] text-gold-light">LATEST REPORT</span>{featuredImage && <span className="absolute bottom-4 left-6 text-[9px] text-white/75">{featuredImage.credit}</span>}</div>
         <div className="p-7 sm:p-10"><span className="section-kicker">{featured.category}</span><h2 className="editorial-title mt-4 text-3xl font-bold leading-tight text-navy sm:text-4xl">{featured.title}</h2><p className="mt-5 text-sm leading-7 text-charcoal/60">{featured.summary}</p><span className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-green-deep">브리핑 읽기 <ArrowRight size={16} /></span></div>
       </Link>
 

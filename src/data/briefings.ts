@@ -6,7 +6,15 @@ export type Briefing = {
   date: string;
   author: string;
   readMinutes: number;
+  issueNumber?: number;
   featured?: boolean;
+  images?: {
+    src: string;
+    alt: string;
+    caption: string;
+    credit: string;
+    sourceUrl: string;
+  }[];
   content: string[];
   watchPoints: string[];
   sections?: { title: string; paragraphs?: string[]; bullets?: string[] }[];
@@ -31,7 +39,24 @@ export const briefings: Briefing[] = [
     date: "2026-08-16",
     author: "씨드 시민브리핑",
     readMinutes: 10,
+    issueNumber: 1,
     featured: true,
+    images: [
+      {
+        src: "images/briefings/briefing-01-justice.jpg",
+        alt: "법전 옆 어두운 테이블 위에 놓인 재판봉",
+        caption: "검찰개혁의 핵심은 기관의 이름보다 수사·기소 권력을 어떻게 나누고 통제하느냐에 있습니다.",
+        credit: "사진 Sasun Bughdaryan · Unsplash",
+        sourceUrl: "https://unsplash.com/photos/wooden-gavel-resting-on-a-dark-surface-next-to-book-FaTLrG5-ViE",
+      },
+      {
+        src: "images/briefings/briefing-01-fact-check.jpg",
+        alt: "펼친 책의 글자를 확대해 보는 돋보기",
+        caption: "제도 변화의 주장과 실제 법령을 구분하려면 확인된 문서와 근거를 다시 살펴봐야 합니다.",
+        credit: "사진 Spencer Liao · Unsplash",
+        sourceUrl: "https://unsplash.com/photos/magnifying-glass-over-open-book-LsUuibFthe8",
+      },
+    ],
     content: [
       "한 문장으로 보면 쟁점은 ‘검찰을 지킬 것인가 없앨 것인가’가 아닙니다. 검찰에서 빠져나온 강제수사 권력이 어디로 이동하고 누가 견제하는지, 부실수사로 억울한 시민이 생겼을 때 누가 사건을 다시 살펴볼 수 있는지가 핵심입니다.",
       "씨드는 검찰이 수사권과 기소권을 함께 보유하며 생긴 권력 집중과 정치적 남용 위험을 줄여야 한다는 개혁의 목적에 공감합니다. 동시에 검찰의 수사권이 경찰과 중수청으로 이동한 뒤에도 시민의 권리구제, 수사의 독립성, 기관 간 견제가 실제로 작동하는지 확인해야 한다고 봅니다.",
@@ -121,6 +146,23 @@ export const briefings: Briefing[] = [
     date: "2026-08-16",
     author: "씨드 시민브리핑",
     readMinutes: 8,
+    issueNumber: 2,
+    images: [
+      {
+        src: "images/briefings/briefing-02-seoul-housing.jpg",
+        alt: "서울 도심에 밀집한 고층 주거 건물과 도시 전경",
+        caption: "주택공급 숫자는 어느 지역에, 어떤 집이, 언제 실제로 늘어나는지까지 확인해야 의미가 있습니다.",
+        credit: "사진 NK Lee · Unsplash",
+        sourceUrl: "https://unsplash.com/photos/a-city-with-many-buildings-acH2NkPdIKk",
+      },
+      {
+        src: "images/briefings/briefing-02-construction.jpg",
+        alt: "서울의 고층 건물 건설 현장과 타워크레인",
+        caption: "후보지 발표와 착공, 준공과 입주는 서로 다른 단계입니다. 계획이 실제 주택이 되는 과정을 추적해야 합니다.",
+        credit: "사진 NK Lee · Unsplash",
+        sourceUrl: "https://unsplash.com/photos/a-tall-building-under-construction-58Am6oh8pfM",
+      },
+    ],
     content: [
       "큰 숫자를 비교하기 전에 같은 기준인지부터 확인해야 합니다. 정부의 23만 호+α는 수도권 추가 순증 계획이고, 서울시의 31만 호는 서울 정비사업의 총 착공 목표입니다. 지역과 계산 방식, 시간표가 모두 다릅니다.",
       "서울시는 31만 호에서 기존 주택의 멸실을 제외하면 실제로 늘어나는 집을 약 8만7천 호로 추산했습니다. 정부는 23만 호+α가 기존 대책과 중복되지 않는 전량 순증 물량이라고 설명했지만, 그중 2030년까지 착공되는 물량은 12만 호+α입니다.",
@@ -235,3 +277,12 @@ export const briefings: Briefing[] = [
 ];
 
 export const getBriefing = (slug: string) => briefings.find((briefing) => briefing.slug === slug);
+
+export const getBriefingsNewestFirst = () => [...briefings].sort((a, b) => {
+  if (a.issueNumber !== undefined || b.issueNumber !== undefined) {
+    return (b.issueNumber ?? -1) - (a.issueNumber ?? -1);
+  }
+  return b.date.localeCompare(a.date);
+});
+
+export const getLatestBriefing = () => getBriefingsNewestFirst()[0];
