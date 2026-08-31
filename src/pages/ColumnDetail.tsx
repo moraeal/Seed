@@ -27,7 +27,7 @@ export default function ColumnDetail() {
           {section.quote && <blockquote className="my-10 border-l-4 border-gold bg-green-pale px-6 py-7 font-serif text-lg font-bold leading-9 text-green-deep sm:px-8 sm:text-xl">{section.quote.map((line) => <span key={line} className="block">{line}</span>)}</blockquote>}
           {index === 3 && <figure className="my-20 overflow-hidden border border-green-deep/10 bg-white"><img src={`${import.meta.env.BASE_URL}${column.inlineImage.src}`} alt={column.inlineImage.alt} className="aspect-[16/10] w-full object-cover"/><figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:justify-between"><span>{column.inlineImage.caption}</span><a href={column.inlineImage.sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4">{column.inlineImage.credit}</a></figcaption></figure>}
         </section>)}
-        <aside className="mt-16 border-t-2 border-navy pt-8"><span className="section-kicker">자료 주</span><p className="mt-4 text-sm leading-7 text-charcoal/60">{column.sourceNote}</p></aside>
+        <aside className="mt-16 border-t-2 border-navy pt-8"><span className="section-kicker">자료 주</span><p className="mt-4 text-sm leading-7 text-charcoal/60">{column.sourceNote}</p>{column.sources && <ul className="mt-5 grid gap-2 text-sm leading-6 text-charcoal/60">{column.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ul>}</aside>
       </div>
     </div>
   </article>;
