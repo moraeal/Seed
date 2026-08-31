@@ -1,7 +1,7 @@
-import { Heart, Menu, Plus, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { AUDITION_URL, getContent } from "../data/siteContent";
+import { getContent } from "../data/siteContent";
 import { useLanguage } from "../i18n";
 
 export default function Header() {
@@ -17,14 +17,6 @@ export default function Header() {
   const renderNavItem = (item: (typeof t.nav)[number], mobile = false) => {
     const className = mobile ? mobileLinkClass : navLinkClass;
     const close = () => mobile && setOpen(false);
-
-    if ("url" in item) {
-      return (
-        <a key={item.label} href={item.url} target="_blank" rel="noopener noreferrer" onClick={close} className={className}>
-          {item.label}
-        </a>
-      );
-    }
 
     return (
       <Link key={item.label} to={item.path} onClick={close} className={className}>
@@ -53,14 +45,6 @@ export default function Header() {
           <button onClick={toggleLanguage} className="button-secondary min-w-20 text-xs" type="button">
             {t.actions.language}
           </button>
-          <a href={AUDITION_URL} target="_blank" rel="noopener noreferrer" className="button-secondary text-xs">
-            <Plus size={15} />
-            {t.actions.proposal}
-          </a>
-          <Link to="/support" className="button-primary text-xs">
-            <Heart size={15} />
-            {t.actions.support}
-          </Link>
         </div>
 
         <button
@@ -76,16 +60,10 @@ export default function Header() {
       {open && (
         <div className="border-t border-green-deep/10 bg-paper px-5 py-5 xl:hidden">
           <nav className="container-page grid grid-cols-2 gap-2">{t.nav.map((item) => renderNavItem(item, true))}</nav>
-          <div className="container-page mt-3 grid gap-2 sm:grid-cols-3">
+          <div className="container-page mt-3">
             <button onClick={toggleLanguage} className="button-secondary" type="button">
               {t.actions.language}
             </button>
-            <a href={AUDITION_URL} target="_blank" rel="noopener noreferrer" className="button-secondary">
-              {t.actions.proposal}
-            </a>
-            <Link to="/support" onClick={() => setOpen(false)} className="button-primary">
-              {t.actions.support}
-            </Link>
           </div>
         </div>
       )}

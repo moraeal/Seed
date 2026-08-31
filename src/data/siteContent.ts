@@ -6,12 +6,13 @@ export const MAGAZINE_URL = "https://jimd.kr/magazine";
 export const content = {
   ko: {
     nav: [
-      { label: "씨드시민파트너스 소개", path: "/about" },
-      { label: "시민제안", url: AUDITION_URL },
-      { label: "시민브리핑", path: "/briefings" },
-      { label: "씨드칼럼", path: "/columns" },
-      { label: "로드맵", path: "/roadmap" },
-      { label: "후원하기", path: "/support" },
+      { label: "뉴스", path: "/news" },
+      { label: "브리핑", path: "/briefings" },
+      { label: "칼럼", path: "/columns" },
+      { label: "아카데미", path: "/academy" },
+      { label: "제안", path: "/proposals" },
+      { label: "실험", path: "/experiments" },
+      { label: "소개", path: "/about" },
     ],
     actions: { proposal: "시민제안 올리기", support: "후원하기", language: "English" },
     footer: {
@@ -110,8 +111,12 @@ export const content = {
         subtitle: "생활 속 문제를 2분 제안, 시민 질문, 작은 실험으로 키우는 공간입니다.",
       },
       todayFrame: {
-        title: "Today Frame",
-        subtitle: "오늘의 이슈를 자유, 법치, 시장, 시민 책임의 관점으로 다시 읽습니다.",
+        title: "뉴스",
+        subtitle: "오늘의 주요 소식과 시민이 함께 살펴볼 공공 의제를 전합니다.",
+      },
+      academy: {
+        title: "씨드 아카데미",
+        subtitle: "시민이 사실을 읽고 질문하며 제안하고 실험하는 힘을 기르는 학습 공간입니다.",
       },
       dictionary: {
         title: "Civic Dictionary",
@@ -125,13 +130,13 @@ export const content = {
   },
   en: {
     nav: [
-      { label: "About SEED", path: "/about" },
-      { label: "Citizen Proposals", url: AUDITION_URL },
-      { label: "Civic Briefings", path: "/briefings" },
-      { label: "SEED Columns", path: "/columns" },
-      { label: "Insights", path: "/forum" },
-      { label: "Roadmap", path: "/roadmap" },
-      { label: "Support", path: "/support" },
+      { label: "News", path: "/news" },
+      { label: "Briefings", path: "/briefings" },
+      { label: "Columns", path: "/columns" },
+      { label: "Academy", path: "/academy" },
+      { label: "Proposals", path: "/proposals" },
+      { label: "Experiments", path: "/experiments" },
+      { label: "About", path: "/about" },
     ],
     actions: { proposal: "Submit a Proposal", support: "Support SEED", language: "한국어" },
     footer: {
@@ -233,6 +238,10 @@ export const content = {
       todayFrame: {
         title: "Today Frame",
         subtitle: "We read today's issues through freedom, rule of law, markets, and civic responsibility.",
+      },
+      academy: {
+        title: "SEED Academy",
+        subtitle: "A learning space where citizens build the skills to examine facts, ask questions, develop proposals, and test practical solutions.",
       },
       dictionary: {
         title: "Civic Dictionary",
