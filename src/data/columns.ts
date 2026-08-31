@@ -32,8 +32,8 @@ export const columns: SeedColumn[] = [
     },
     inlineImage: {
       src: "images/columns/gramsci-archive.jpg",
-      alt: "그람시와 아내 율리아 슈흐트, 처형 타니아 슈흐트의 초상 및 옥중노트와 투리 감옥을 배열한 기록사진",
-      caption: "왼쪽부터 안토니오 그람시의 초상, 모스크바 엽서, 그람시의 러시아인 아내 율리아 슈흐트, 또 다른 엽서, 율리아의 언니이자 수감 중인 그람시를 가까이에서 돌본 타티아나 ‘타니아’ 슈흐트, 그람시의 옥중노트와 1930년대 투리 감옥입니다. 가운데 두 여성은 그람시가 아니라 각각 그의 아내와 처형입니다.",
+      alt: "왼쪽의 율리아 슈흐트, 가운데 서신 자료, 오른쪽의 타니아 슈흐트가 보이는 기록사진",
+      caption: "화면에 보이는 왼쪽 여성은 그람시의 러시아인 아내 율리아 슈흐트이고, 오른쪽 여성은 율리아의 언니 타티아나 ‘타니아’ 슈흐트입니다. 가운데에는 그람시 가족의 서신 자료가 놓여 있습니다. 타니아는 그람시가 수감된 동안 면회와 편지 전달을 도우며 그의 생활과 건강을 가까이에서 보살폈습니다. 사진 속 두 여성은 그람시가 아니라 각각 그의 아내와 처형입니다.",
       credit: "Fondazione Gramsci · Wikimedia Commons (Public Domain)",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Antonio_Gramsci_-_Archive_documents_and_photos.jpg",
     },
