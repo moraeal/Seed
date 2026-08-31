@@ -19,6 +19,12 @@ export default function NewsDetail() {
     </header>
 
     <div className="container-page max-w-4xl py-12 sm:py-20">
+      <section className="mb-10 border border-green-deep/15 bg-white p-6 shadow-[0_16px_45px_rgba(23,76,58,.08)] sm:p-9">
+        <div className="flex flex-wrap items-center gap-3 text-xs font-bold text-charcoal/50"><span className="section-kicker">오늘 씨드가 선정한 뉴스</span><span>{article.selectedNews.outlet}</span><time>{article.selectedNews.publishedAt}</time></div>
+        <h2 className="editorial-title mt-5 text-2xl font-bold leading-snug text-navy sm:text-3xl">{article.selectedNews.headline}</h2>
+        <div className="mt-6 border-t border-green-deep/10 pt-5"><span className="text-xs font-extrabold tracking-[.16em] text-green-deep">기사 핵심 요약</span><ul className="mt-4 grid gap-3 text-sm leading-7 text-charcoal/70 sm:text-base">{article.selectedNews.summary.map((item) => <li key={item} className="flex gap-3"><span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"/><span>{item}</span></li>)}</ul></div>
+        <a href={article.selectedNews.url} target="_blank" rel="noreferrer" className="button-secondary mt-7 inline-flex text-sm">연합뉴스 원문 기사 보기</a>
+      </section>
       <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]"><img src={`${import.meta.env.BASE_URL}${article.heroImage.src}`} alt={article.heroImage.alt} className="aspect-[16/9] w-full object-cover"/><figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:justify-between"><span>{article.heroImage.caption}</span><a href={article.heroImage.sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4">{article.heroImage.credit}</a></figcaption></figure>
 
       <div className="mx-auto mt-12 max-w-3xl">
@@ -31,7 +37,7 @@ export default function NewsDetail() {
           {index === 2 && <figure className="my-16 overflow-hidden border border-green-deep/10 bg-white"><img src={`${import.meta.env.BASE_URL}${article.inlineImage.src}`} alt={article.inlineImage.alt} className="aspect-[16/10] w-full object-cover"/><figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:justify-between"><span>{article.inlineImage.caption}</span><a href={article.inlineImage.sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4">{article.inlineImage.credit}</a></figcaption></figure>}
         </section>)}
 
-        <section className="mt-16 border-t-2 border-navy pt-10"><span className="section-kicker">시민이 지켜볼 네 가지</span><ol className="mt-6 grid gap-4 sm:grid-cols-2">{article.watchPoints.map((point, index) => <li key={point} className="border border-green-deep/15 bg-white p-5"><span className="font-serif text-sm font-bold text-gold">0{index + 1}</span><p className="mt-2 text-sm font-semibold leading-7 text-navy">{point}</p></li>)}</ol></section>
+        <section className="mt-16 border-t-2 border-navy pt-10"><span className="section-kicker">앞으로 확인할 네 가지</span><ol className="mt-6 grid gap-4 sm:grid-cols-2">{article.watchPoints.map((point, index) => <li key={point} className="border border-green-deep/15 bg-white p-5"><span className="font-serif text-sm font-bold text-gold">0{index + 1}</span><p className="mt-2 text-sm font-semibold leading-7 text-navy">{point}</p></li>)}</ol></section>
 
         <aside className="mt-16 bg-green-deep px-6 py-10 text-white sm:px-10"><span className="text-xs font-bold tracking-[.22em] text-gold">SEED PERSPECTIVE</span><h2 className="mt-3 text-3xl font-extrabold">씨드의 관점</h2>{article.seedPerspective.map((paragraph) => <p key={paragraph.slice(0, 32)} className="mt-6 text-base leading-9 text-white/80 sm:text-lg">{paragraph}</p>)}</aside>
 
