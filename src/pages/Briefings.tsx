@@ -10,7 +10,7 @@ export default function Briefings() {
   const filtered = useMemo(() => briefings.filter((item) => (category === "전체" || item.category === category) && `${item.title} ${item.summary}`.toLowerCase().includes(query.toLowerCase())), [query, category]);
   const featured = briefings.find((item) => item.featured) || briefings[0];
 
-  return <section className="section-band bg-paper">
+  return <section className="bg-paper pb-16 pt-11 sm:pb-20 sm:pt-14">
     <div className="container-page">
       <div
         className="min-h-[360px] overflow-hidden rounded-xl bg-green-deep bg-[length:auto_100%] bg-right-bottom bg-no-repeat px-6 py-10 text-white sm:min-h-[390px] sm:px-10 sm:py-12 lg:min-h-[410px] lg:bg-[length:100%_100%] lg:px-14 lg:py-14"
