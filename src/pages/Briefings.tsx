@@ -16,7 +16,7 @@ export default function Briefings() {
         <img
           src={`${import.meta.env.BASE_URL}images/briefings/citizen-briefing-hero.png`}
           alt="시민들이 자료와 그래프를 함께 살펴보며 공공의 문제를 토론하는 모습"
-          className="pointer-events-none absolute bottom-0 right-[-44%] z-0 h-full w-auto max-w-none object-contain object-right-bottom opacity-75 sm:right-[-22%] sm:opacity-85 lg:right-[-3%] lg:opacity-95"
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full object-contain object-right-bottom opacity-75 sm:opacity-85 lg:opacity-95"
         />
         <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-r from-green-deep via-green-deep/90 to-transparent lg:via-green-deep/75" />
         <div className="relative z-20 max-w-2xl self-center lg:self-end"><span className="text-xs font-extrabold tracking-[0.18em] text-gold-light">SEED CITIZEN BRIEFING</span><h1 className="mt-4 text-4xl font-extrabold sm:text-5xl lg:text-6xl">시민브리핑</h1><p className="mt-5 max-w-xl text-sm leading-7 text-white/80 sm:text-base">사실을 먼저 확인하고, 시민의 언어로 쟁점을 설명하며, 앞으로 지켜볼 질문을 남깁니다.</p></div>
