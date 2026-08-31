@@ -13,6 +13,8 @@ import TodayFrame from "./pages/TodayFrame";
 import Briefings from "./pages/Briefings";
 import BriefingDetail from "./pages/BriefingDetail";
 import BriefingCommentary from "./pages/BriefingCommentary";
+import Columns from "./pages/Columns";
+import ColumnDetail from "./pages/ColumnDetail";
 
 function AppShell() {
   const location = useLocation();
@@ -29,6 +31,8 @@ function AppShell() {
           <Route path="/briefings" element={<Briefings />} />
           <Route path="/briefings/:slug/commentary" element={<BriefingCommentary />} />
           <Route path="/briefings/:slug" element={<BriefingDetail />} />
+          <Route path="/columns" element={<Columns />} />
+          <Route path="/columns/:slug" element={<ColumnDetail />} />
           <Route path="/today-frame" element={<TodayFrame />} />
           <Route path="/dictionary" element={<CivicDictionary />} />
           <Route path="/proposal-lab" element={<ProposalLab />} />

@@ -18,7 +18,7 @@ export default function SimplePage({ pageKey }: { pageKey: SimplePageKey }) {
         <p className="mt-6 max-w-3xl text-base leading-8 text-charcoal/70">{page.subtitle}</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link to="/about" className="button-primary">
-            {language === "en" ? "About SEED" : "씨앗연대 소개"}
+            {language === "en" ? "About SEED" : "씨드시민파트너스 소개"}
             <ArrowRight size={16} />
           </Link>
           <Link to="/" className="button-secondary">

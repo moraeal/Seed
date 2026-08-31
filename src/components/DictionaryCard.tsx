@@ -11,7 +11,7 @@ export default function DictionaryCard({ entry }: { entry: DictionaryEntry }) {
       </div>
       <p className="text-sm font-semibold text-navy">기존 이미지</p>
       <p className="mt-1 text-sm leading-6 text-charcoal/65">{entry.oldImage}</p>
-      <p className="mt-5 text-sm font-semibold text-navy">씨앗연대의 재정의</p>
+      <p className="mt-5 text-sm font-semibold text-navy">씨드시민파트너스의 재정의</p>
       <p className="mt-1 leading-7 text-charcoal/78">{entry.seedDefinition}</p>
       <p className="mt-5 rounded-lg bg-green-pale p-4 text-sm leading-6 text-green-deep">
         {entry.civicMeaning}

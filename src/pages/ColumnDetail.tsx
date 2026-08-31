@@ -1,0 +1,34 @@
+import { ArrowLeft, Clock, Share2 } from "lucide-react";
+import { Link, useParams } from "react-router-dom";
+import { getColumn } from "../data/columns";
+
+export default function ColumnDetail() {
+  const { slug = "" } = useParams();
+  const column = getColumn(slug);
+  if (!column) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">칼럼을 찾을 수 없습니다.</h1><Link to="/columns" className="button-primary mt-7">칼럼 목록</Link></div>;
+
+  const share = async () => {
+    if (navigator.share) await navigator.share({ title: `${column.title} - ${column.subtitle}`, text: column.summary, url: location.href });
+    else { await navigator.clipboard.writeText(location.href); alert("주소를 복사했습니다."); }
+  };
+
+  return <article className="bg-paper">
+    <header className="border-b border-green-deep/15 bg-ivory py-12 sm:py-20">
+      <div className="container-page max-w-5xl"><Link to="/columns" className="text-link"><ArrowLeft size={16}/>씨드칼럼 목록</Link><div className="mt-10 border-t-2 border-navy pt-8"><span className="section-kicker">씨드칼럼 {String(column.issue).padStart(2, "0")}</span><h1 className="editorial-title mt-5 max-w-4xl text-5xl font-bold leading-[1.08] text-navy sm:text-7xl">{column.title}</h1><p className="mt-5 max-w-4xl text-xl font-semibold leading-9 text-charcoal/70 sm:text-2xl">{column.subtitle}</p><p className="mt-7 max-w-3xl text-base leading-8 text-charcoal/60">{column.summary}</p></div><div className="mt-9 flex flex-wrap items-center gap-5 border-t border-green-deep/10 pt-5 text-xs text-charcoal/45"><span>{column.author}</span><time>{column.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>읽는 시간 {column.readMinutes}분</span><button onClick={share} className="button-secondary ml-auto min-h-9 px-3 py-2 text-xs"><Share2 size={15}/>공유</button></div></div>
+    </header>
+
+    <div className="container-page max-w-4xl py-12 sm:py-20">
+      <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]"><img src={`${import.meta.env.BASE_URL}${column.heroImage.src}`} alt={column.heroImage.alt} className="aspect-[16/9] w-full object-cover"/><figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:justify-between"><span>{column.heroImage.caption}</span><a href={column.heroImage.sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4">{column.heroImage.credit}</a></figcaption></figure>
+
+      <div className="mx-auto mt-16 max-w-3xl">
+        {column.sections.map((section, index) => <section key={section.title} className={`${index === 0 ? "" : "mt-16 border-t border-green-deep/10 pt-12"}`}>
+          <span className="font-serif text-sm font-bold text-gold">{String(index + 1).padStart(2, "0")}</span><h2 className="mt-2 text-2xl font-extrabold leading-snug text-navy sm:text-3xl">{section.title}</h2>
+          {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 28)} className="mt-6 text-base leading-9 text-charcoal/80 sm:text-lg">{paragraph}</p>)}
+          {section.quote && <blockquote className="my-10 border-l-4 border-gold bg-green-pale px-6 py-7 font-serif text-lg font-bold leading-9 text-green-deep sm:px-8 sm:text-xl">{section.quote.map((line) => <span key={line} className="block">{line}</span>)}</blockquote>}
+          {index === 3 && <figure className="my-20 overflow-hidden border border-green-deep/10 bg-white"><img src={`${import.meta.env.BASE_URL}${column.inlineImage.src}`} alt={column.inlineImage.alt} className="aspect-[16/10] w-full object-cover"/><figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:justify-between"><span>{column.inlineImage.caption}</span><a href={column.inlineImage.sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4">{column.inlineImage.credit}</a></figcaption></figure>}
+        </section>)}
+        <aside className="mt-16 border-t-2 border-navy pt-8"><span className="section-kicker">자료 주</span><p className="mt-4 text-sm leading-7 text-charcoal/60">{column.sourceNote}</p></aside>
+      </div>
+    </div>
+  </article>;
+}

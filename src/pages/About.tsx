@@ -114,7 +114,7 @@ export default function About() {
               <p className="mt-2 text-sm leading-7 text-charcoal/60">
                 {language === "en"
                   ? "SEED connects citizens, researchers, civic groups, foundations, companies, and international partners through dialogue, transparent records, and practical experiments."
-                  : "씨앗연대는 시민, 전문가, 시민단체, 기업, 후원자를 투명한 기록과 실천적 실험으로 연결합니다."}
+                  : "씨드시민파트너스는 시민, 전문가, 시민단체, 기업, 후원자를 투명한 기록과 실천적 실험으로 연결합니다."}
               </p>
             </div>
           </div>

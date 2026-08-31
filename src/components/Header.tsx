@@ -36,9 +36,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-green-deep/15 bg-ivory/95 backdrop-blur-xl">
       <div className="container-page flex h-[78px] items-center gap-5">
-        <Link to="/" className="flex shrink-0 items-center gap-4" aria-label={language === "en" ? "SEED Civic Partners home" : "씨앗연대 홈"}>
+        <Link to="/" className="flex shrink-0 items-center gap-4" aria-label={language === "en" ? "SEED Civic Partners home" : "씨드시민파트너스 홈"}>
           <img
-            src={`${import.meta.env.BASE_URL}images/brand/seed-civic-partners-logo-animated.gif`}
+            src={`${import.meta.env.BASE_URL}images/brand/seed-civic-partners-logo.svg`}
             alt="SEED Civic Partners"
             className="h-11 w-auto"
           />
