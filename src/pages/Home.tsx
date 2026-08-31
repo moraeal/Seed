@@ -1,7 +1,8 @@
 import { ArrowRight, ArrowUpRight, BookOpen, Clock, FileText, FlaskConical, Landmark, LineChart, MessageCircle, Sprout } from "lucide-react";
 import { Link } from "react-router-dom";
-import { getBriefingsNewestFirst, getLatestBriefing } from "../data/briefings";
+import { getBriefingsNewestFirst } from "../data/briefings";
 import { getLatestColumn } from "../data/columns";
+import { getNewsNewestFirst } from "../data/news";
 import { AUDITION_URL, getContent } from "../data/siteContent";
 import { useLanguage } from "../i18n";
 
@@ -11,10 +12,9 @@ const programIcons = [MessageCircle, BookOpen, FlaskConical, FileText];
 export default function Home() {
   const { language } = useLanguage();
   const t = getContent(language).home;
-  const featured = getLatestBriefing();
   const latestColumn = getLatestColumn();
+  const latestNews = getNewsNewestFirst()[0];
   const newestBriefings = getBriefingsNewestFirst();
-  const featuredImage = featured.images?.[0];
 
   return <>
     <section className="border-b border-green-deep/15 bg-ivory">
@@ -37,20 +37,21 @@ export default function Home() {
             </div>
           </div>
         </Link>
-        <Link to={`/briefings/${featured.slug}`} className="group flex h-full flex-col overflow-hidden border border-green-deep/15 bg-paper shadow-[0_24px_70px_rgba(23,76,58,.12)]">
-          <div className="relative min-h-[290px] bg-green-deep bg-cover bg-center" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}${featuredImage?.src ?? "images/briefings/citizen-briefing-hero-flat.webp"})` }}>
+        <Link to={`/news/${latestNews.slug}`} className="group flex h-full flex-col overflow-hidden border border-green-deep/15 bg-paper shadow-[0_24px_70px_rgba(23,76,58,.12)]">
+          <div className="relative min-h-[290px] overflow-hidden bg-green-deep">
+            <img src={`${import.meta.env.BASE_URL}${latestNews.heroImage.src}`} alt={latestNews.heroImage.alt} className="absolute inset-0 h-full w-full object-cover object-center transition duration-700 group-hover:scale-[1.02]" />
             <div className="absolute inset-0 bg-gradient-to-t from-green-deep via-green-deep/10 to-transparent" />
-            <span className="absolute left-7 top-7 border border-white/30 bg-green-deep/75 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white">LATEST BRIEFING</span>
-            {featuredImage && <span className="absolute bottom-4 right-5 text-[9px] text-white/70">{featuredImage.credit}</span>}
+            <span className="absolute left-7 top-7 border border-white/30 bg-green-deep/75 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white">TODAY'S SEED NEWS</span>
+            <span className="absolute bottom-4 right-5 text-[9px] text-white/70">{latestNews.heroImage.credit}</span>
           </div>
           <div className="flex flex-1 flex-col p-7 sm:p-9">
-            <span className="section-kicker">{featured.category}</span>
-            <h2 className="editorial-title mt-4 text-3xl font-bold leading-tight text-navy transition group-hover:text-green-mid">{featured.title}</h2>
-            <p className="mt-4 text-sm leading-7 text-charcoal/65">{featured.summary}</p>
-            <p className="mt-4 border-l-2 border-gold pl-4 text-xs leading-6 text-charcoal/50">{featured.content[0]}</p>
+            <span className="section-kicker">씨드뉴스 {String(latestNews.issue).padStart(2, "0")} · {latestNews.category}</span>
+            <h2 className="editorial-title mt-4 text-3xl font-bold leading-tight text-navy transition group-hover:text-green-mid">{latestNews.title}</h2>
+            <p className="mt-3 text-base font-semibold leading-7 text-charcoal/70">{latestNews.subtitle}</p>
+            <p className="mt-4 text-sm leading-7 text-charcoal/65">{latestNews.summary}</p>
             <div className="mt-auto flex items-center justify-between border-t border-green-deep/10 pt-5 text-xs text-charcoal/45">
-              <span className="flex items-center gap-1.5"><Clock size={14} />{featured.readMinutes}분</span>
-              <span className="flex items-center gap-1.5 font-bold text-green-deep">브리핑 읽기<ArrowRight size={15} /></span>
+              <span className="flex items-center gap-3"><time>{latestNews.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1.5"><Clock size={14} />{latestNews.readMinutes}분</span></span>
+              <span className="flex items-center gap-1.5 font-bold text-green-deep">뉴스 읽기<ArrowRight size={15} /></span>
             </div>
           </div>
         </Link>
