@@ -36,6 +36,7 @@ button, input, textarea { font: inherit; }
 .hero-art-slide::before { display: none; }
 
 @media (max-width: 640px) {
+  .briefing-hero-banner { background-image: none !important; }
   .hero-slide:not(.hero-art-slide) { min-height: 560px; }
   .hero-art-slide { min-height: 440px; aspect-ratio: auto; }
 }
