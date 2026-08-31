@@ -24,18 +24,18 @@ export const columns: SeedColumn[] = [
     readMinutes: 13,
     summary: "보수의 위기는 정권 상실보다 시민의 삶을 설명할 언어를 잃은 데 있습니다. 자유·공정·법치·시장을 시민의 언어로 다시 번역하고, 새로운 시민사회의 진지전을 시작할 길을 제안합니다.",
     heroImage: {
-      src: "images/columns/gramsci-archive.jpg",
-      alt: "왼쪽부터 안토니오 그람시, 아내 율리아 슈흐트, 처형 타니아 슈흐트의 초상과 옥중노트, 투리 감옥을 배열한 기록사진",
-      caption: "왼쪽부터 안토니오 그람시의 초상, 모스크바 엽서, 그람시의 아내 율리아 슈흐트, 또 다른 엽서, 그람시를 옥중에서 돌본 처형 타티아나 ‘타니아’ 슈흐트, 옥중노트와 1930년대 투리 감옥입니다. 사진 속 두 여성은 그람시가 아니라 그의 아내와 처형입니다.",
-      credit: "Fondazione Gramsci · Wikimedia Commons (Public Domain)",
-      sourceUrl: "https://commons.wikimedia.org/wiki/File:Antonio_Gramsci_-_Archive_documents_and_photos.jpg",
-    },
-    inlineImage: {
       src: "images/columns/gramsci-portrait.png",
-      alt: "1920년대 초 서른 살 무렵의 안토니오 그람시 초상",
-      caption: "안토니오 그람시. 그의 ‘진지전’은 사회의 상식과 언어, 제도를 오랜 시간에 걸쳐 형성하는 과정에 주목합니다.",
+      alt: "1920년대 초 서른 살 무렵의 이탈리아 사상가 안토니오 그람시 단독 초상",
+      caption: "이 사진의 인물은 이탈리아의 사상가이자 정치가인 안토니오 그람시(1891~1937)입니다. 1920년대 초, 서른 살 무렵 촬영된 단독 초상으로 알려져 있습니다. 그람시는 국가권력만이 아니라 시민사회의 상식과 언어가 사회의 방향을 형성한다고 보았습니다.",
       credit: "작자 미상 · Wikimedia Commons (Public Domain)",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Gramsci.png",
+    },
+    inlineImage: {
+      src: "images/columns/gramsci-archive.jpg",
+      alt: "그람시와 아내 율리아 슈흐트, 처형 타니아 슈흐트의 초상 및 옥중노트와 투리 감옥을 배열한 기록사진",
+      caption: "왼쪽부터 안토니오 그람시의 초상, 모스크바 엽서, 그람시의 러시아인 아내 율리아 슈흐트, 또 다른 엽서, 율리아의 언니이자 수감 중인 그람시를 가까이에서 돌본 타티아나 ‘타니아’ 슈흐트, 그람시의 옥중노트와 1930년대 투리 감옥입니다. 가운데 두 여성은 그람시가 아니라 각각 그의 아내와 처형입니다.",
+      credit: "Fondazione Gramsci · Wikimedia Commons (Public Domain)",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Antonio_Gramsci_-_Archive_documents_and_photos.jpg",
     },
     sections: [
       {
