@@ -19,38 +19,36 @@ export default function Home() {
 
   return <>
     <section className="border-b border-green-deep/15 bg-ivory">
-      <div className="container-page grid gap-7 py-10 lg:grid-cols-2 lg:py-14">
-        <Link to={`/columns/${latestColumn.slug}`} className="group flex h-full flex-col overflow-hidden border border-green-deep/15 bg-paper shadow-[0_24px_70px_rgba(23,76,58,.12)]">
-          <div className="relative min-h-[290px] overflow-hidden bg-green-deep">
+      <div className="container-page grid gap-6 py-8 lg:grid-cols-[1.08fr_.92fr] lg:py-10">
+        <Link to={`/columns/${latestColumn.slug}`} className="group flex h-full flex-col overflow-hidden border border-green-deep/15 bg-paper shadow-[0_20px_55px_rgba(23,76,58,.10)]">
+          <div className="relative min-h-[230px] overflow-hidden bg-green-deep sm:min-h-[250px]">
             <img src={`${import.meta.env.BASE_URL}${latestColumn.heroImage.src}`} alt={latestColumn.heroImage.alt} className="absolute inset-0 h-full w-full object-cover object-center transition duration-700 group-hover:scale-[1.02]" />
-            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-green-deep/80 to-transparent" />
-            <span className="absolute left-7 top-7 border border-white/30 bg-green-deep/75 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white">LATEST SEED COLUMN</span>
+            <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-green-deep/80 to-transparent" />
+            <span className="absolute left-6 top-6 border border-white/30 bg-green-deep/75 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white">LATEST SEED COLUMN</span>
             <span className="absolute bottom-4 right-5 text-[9px] text-white/70">{latestColumn.heroImage.credit}</span>
           </div>
-          <div className="flex flex-1 flex-col p-7 sm:p-9">
+          <div className="flex flex-1 flex-col p-6 sm:p-7">
             <span className="section-kicker">씨드칼럼 {String(latestColumn.issue).padStart(2, "0")}</span>
-            <h1 className="editorial-title mt-4 text-3xl font-bold leading-tight text-navy transition group-hover:text-green-mid">{latestColumn.title}</h1>
-            <p className="mt-3 text-base font-semibold leading-7 text-charcoal/70">{latestColumn.subtitle}</p>
-            <p className="mt-4 text-sm leading-7 text-charcoal/60">{latestColumn.summary}</p>
-            <div className="mt-auto flex items-center justify-between border-t border-green-deep/10 pt-5 text-xs text-charcoal/45">
+            <h1 className="editorial-title mt-3 text-2xl font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-3xl">{latestColumn.title}</h1>
+            <p className="mt-3 text-sm font-semibold leading-6 text-charcoal/70 sm:text-base sm:leading-7">{latestColumn.subtitle}</p>
+            <div className="mt-6 flex items-center justify-between border-t border-green-deep/10 pt-4 text-xs text-charcoal/45">
               <span className="flex items-center gap-3"><time>{latestColumn.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1.5"><Clock size={14} />{latestColumn.readMinutes}분</span></span>
               <span className="flex items-center gap-1.5 font-bold text-green-deep">칼럼 읽기<ArrowRight size={15} /></span>
             </div>
           </div>
         </Link>
-        <Link to={`/news/${latestNews.slug}`} className="group flex h-full flex-col overflow-hidden border border-green-deep/15 bg-paper shadow-[0_24px_70px_rgba(23,76,58,.12)]">
-          <div className="relative min-h-[290px] overflow-hidden bg-green-deep">
+        <Link to={`/news/${latestNews.slug}`} className="group flex h-full flex-col overflow-hidden border border-green-deep/15 bg-paper shadow-[0_20px_55px_rgba(23,76,58,.10)]">
+          <div className="relative min-h-[230px] overflow-hidden bg-green-deep sm:min-h-[250px]">
             <img src={`${import.meta.env.BASE_URL}${latestNews.heroImage.src}`} alt={latestNews.heroImage.alt} className="absolute inset-0 h-full w-full object-cover object-center transition duration-700 group-hover:scale-[1.02]" />
             <div className="absolute inset-0 bg-gradient-to-t from-green-deep via-green-deep/10 to-transparent" />
-            <span className="absolute left-7 top-7 border border-white/30 bg-green-deep/75 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white">TODAY'S SEED NEWS</span>
+            <span className="absolute left-6 top-6 border border-white/30 bg-green-deep/75 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white">SEED NEWS PICK</span>
             <span className="absolute bottom-4 right-5 text-[9px] text-white/70">{latestNews.heroImage.credit}</span>
           </div>
-          <div className="flex flex-1 flex-col p-7 sm:p-9">
+          <div className="flex flex-1 flex-col p-6 sm:p-7">
             <span className="section-kicker">씨드뉴스 {String(latestNews.issue).padStart(2, "0")} · {latestNews.category}</span>
-            <h2 className="editorial-title mt-4 text-3xl font-bold leading-tight text-navy transition group-hover:text-green-mid">{latestNews.title}</h2>
-            <p className="mt-3 text-base font-semibold leading-7 text-charcoal/70">{latestNews.subtitle}</p>
-            <p className="mt-4 text-sm leading-7 text-charcoal/65">{latestNews.summary}</p>
-            <div className="mt-auto flex items-center justify-between border-t border-green-deep/10 pt-5 text-xs text-charcoal/45">
+            <h2 className="editorial-title mt-3 text-2xl font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-3xl">{latestNews.title}</h2>
+            <p className="mt-3 text-sm font-semibold leading-6 text-charcoal/70 sm:text-base sm:leading-7">{latestNews.subtitle}</p>
+            <div className="mt-6 flex items-center justify-between border-t border-green-deep/10 pt-4 text-xs text-charcoal/45">
               <span className="flex items-center gap-3"><time>{latestNews.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1.5"><Clock size={14} />{latestNews.readMinutes}분</span></span>
               <span className="flex items-center gap-1.5 font-bold text-green-deep">뉴스 읽기<ArrowRight size={15} /></span>
             </div>
