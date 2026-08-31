@@ -12,15 +12,14 @@ export default function Briefings() {
 
   return <section className="section-band bg-paper">
     <div className="container-page">
-      <div className="relative min-h-[360px] overflow-hidden rounded-xl bg-green-deep px-6 py-10 text-white sm:min-h-[390px] sm:px-10 sm:py-12 lg:flex lg:min-h-[410px] lg:items-end lg:justify-between lg:px-14">
-        <img
-          src={`${import.meta.env.BASE_URL}images/briefings/citizen-briefing-hero.png`}
-          alt="시민들이 자료와 그래프를 함께 살펴보며 공공의 문제를 토론하는 모습"
-          className="pointer-events-none absolute inset-0 z-0 h-full w-full object-contain object-right-bottom opacity-75 sm:opacity-85 lg:opacity-95"
-        />
-        <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-r from-green-deep via-green-deep/90 to-transparent lg:via-green-deep/75" />
-        <div className="relative z-20 max-w-2xl self-center lg:self-end"><span className="text-xs font-extrabold tracking-[0.18em] text-gold-light">SEED CITIZEN BRIEFING</span><h1 className="mt-4 text-4xl font-extrabold sm:text-5xl lg:text-6xl">시민브리핑</h1><p className="mt-5 max-w-xl text-sm leading-7 text-white/80 sm:text-base">사실을 먼저 확인하고, 시민의 언어로 쟁점을 설명하며, 앞으로 지켜볼 질문을 남깁니다.</p></div>
-        <div className="relative z-20 mt-auto pt-16 text-sm text-white/65 lg:ml-8 lg:pt-0">현재 <strong className="text-white">{briefings.length}</strong>개의 브리핑</div>
+      <div
+        className="min-h-[360px] overflow-hidden rounded-xl bg-green-deep bg-[length:auto_100%] bg-right-bottom bg-no-repeat px-6 py-10 text-white sm:min-h-[390px] sm:px-10 sm:py-12 lg:min-h-[410px] lg:px-14 lg:py-14"
+        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/briefings/citizen-briefing-hero-flat.webp)` }}
+        role="img"
+        aria-label="시민들이 자료와 그래프를 함께 살펴보며 공공의 문제를 토론하는 모습"
+      >
+        <div className="max-w-[72%] sm:max-w-2xl"><span className="text-xs font-extrabold tracking-[0.18em] text-gold-light">SEED CITIZEN BRIEFING</span><h1 className="mt-4 text-4xl font-extrabold sm:text-5xl lg:text-6xl">시민브리핑</h1><p className="mt-5 max-w-xl text-sm leading-7 text-white/80 sm:text-base">사실을 먼저 확인하고, 시민의 언어로 쟁점을 설명하며, 앞으로 지켜볼 질문을 남깁니다.</p></div>
+        <div className="mt-14 text-sm text-white/65 lg:mt-16">현재 <strong className="text-white">{briefings.length}</strong>개의 브리핑</div>
       </div>
 
       <Link to={`/briefings/${featured.slug}`} className="mt-8 grid overflow-hidden rounded-xl border border-green-deep/10 bg-green-pale shadow-soft transition hover:-translate-y-1 md:grid-cols-[0.7fr_1.3fr]">
