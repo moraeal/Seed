@@ -48,10 +48,10 @@ export default function PublicInterestWatchDetail() {
       </header>
 
       <div className="container-page max-w-4xl py-12 sm:py-20">
-        <aside className="border-l-4 border-gold bg-white p-6 shadow-soft sm:p-8">
+        {!item.hideSourceBasis && <aside className="border-l-4 border-gold bg-white p-6 shadow-soft sm:p-8">
           <div className="flex items-center gap-3"><Scale className="text-gold"/><h2 className="text-lg font-extrabold text-navy">{ko ? "이 기록의 작성 기준" : "Basis of this record"}</h2></div>
           <p className="mt-4 text-sm leading-7 text-charcoal/65">{t(item.sourceBasis)}</p>
-        </aside>
+        </aside>}
 
         {item.supportNote && (
           <aside className="mt-6 rounded-lg bg-navy p-6 text-white" role="note">

@@ -33,6 +33,18 @@ export default function Monitoring() {
       </header>
 
       <div className="container-page py-12 sm:py-16">
+        <section className="mb-14 grid gap-7 border-y border-green-deep/15 bg-white px-6 py-8 sm:px-8 lg:grid-cols-[.72fr_1.28fr] lg:gap-12 lg:py-10">
+          <div>
+            <span className="section-kicker">WHY WE WATCH</span>
+            <h2 className="editorial-title mt-3 text-3xl font-bold leading-tight text-navy sm:text-4xl">{ko ? "공익을 말하는 조직도 시민 앞에 설명할 책임이 있습니다" : "Public-interest organizations also owe citizens an explanation"}</h2>
+          </div>
+          <div className="space-y-4 text-sm leading-8 text-charcoal/68 sm:text-base">
+            <p>{ko ? "공익기관은 정부기관이 아니더라도 기부금, 시민의 자원활동, 공공기금과 사회적 신뢰를 바탕으로 큰 영향력을 행사합니다. 어떤 문제를 공익으로 정의하고, 누구에게 자원을 배분하며, 어떤 목소리를 대표할지를 결정한다는 점에서 하나의 공적 권한을 갖습니다." : "Even when they are not government bodies, public-interest organizations wield significant influence through donations, volunteering, public funds and social trust. They exercise a form of public power by defining needs, allocating resources and deciding which voices to represent."}</p>
+            <p>{ko ? "공익감시는 선한 의도를 의심하거나 단체를 공격하는 일이 아닙니다. 공개된 회계자료가 시민의 상식으로 이해되는지, 축적된 자산과 조직의 권한이 설립 목적에 맞게 사용되는지, 현장의 시민이 의사결정에 참여할 수 있는지를 계속 확인하는 신뢰의 장치입니다." : "Public-interest watch is not an attack on good intentions. It is a trust mechanism: testing whether accounts are understandable, assets and authority serve the mission, and citizens at the front line can participate in decisions."}</p>
+            <p>{ko ? "씨드는 확인된 사실, 추가로 확인할 질문, 제도 개선 제안을 구분합니다. 기관의 명성이나 정치적 성향에 따라 잣대를 바꾸지 않고, 충분한 반론권과 정정 절차를 보장하면서 시민이 원문을 보고 직접 판단할 수 있는 기록을 쌓습니다." : "SEED separates confirmed facts, open questions and reform proposals. We apply the same standard regardless of reputation or politics, protect the right of reply and correction, and let citizens inspect primary records and judge for themselves."}</p>
+          </div>
+        </section>
+
         <section>
           <div className="flex flex-col gap-3 border-b-2 border-navy pb-5 sm:flex-row sm:items-end sm:justify-between">
             <div><span className="section-kicker">FOCUS WATCH</span><h2 className="mt-2 text-3xl font-extrabold text-navy">{ko ? "기부·공익기관 감시 기록" : "Giving and public-interest institutions"}</h2></div>

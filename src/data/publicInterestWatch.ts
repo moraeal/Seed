@@ -20,90 +20,112 @@ export type PublicInterestWatchCase = {
   proposals: LocalizedText[];
   caution?: LocalizedText;
   supportNote?: LocalizedText;
+  hideSourceBasis?: boolean;
   sources: WatchSource[];
 };
 
 export const publicInterestWatchCases: PublicInterestWatchCase[] = [
   {
-    slug: "beautiful-foundation",
-    organization: { ko: "아름다운재단", en: "The Beautiful Foundation" },
-    eyebrow: { ko: "민간재단·기부 생태계", en: "Private foundation · Giving ecosystem" },
+    slug: "beautiful-store",
+    organization: { ko: "아름다운가게", en: "Beautiful Store" },
+    eyebrow: { ko: "자원순환·나눔 경제", en: "Resource circulation · Giving economy" },
     title: {
-      ko: "투명성 공개를 넘어, 시민이 이해할 수 있는 설명으로",
-      en: "Beyond disclosure: transparency citizens can understand",
+      ko: "기부한 물건과 시민의 참여는 얼마나 공익으로 돌아오는가",
+      en: "How much donated value returns to citizens as public benefit?",
     },
     summary: {
-      ko: "아름다운재단은 재정보고·연차보고서·이사회 회의결과를 공개하고 있습니다. 씨드는 공개의 양을 비판하기보다, 자료가 시민의 질문에 실제로 답하는지 한 단계 더 점검합니다.",
-      en: "The Beautiful Foundation publishes financial reports, annual reports and board meeting results. SEED asks whether those disclosures answer citizens' practical questions, rather than criticizing disclosure for its own sake.",
+      ko: "아름다운가게는 시민이 기부한 물품을 판매해 자원순환과 나눔을 연결하는 대규모 공익조직입니다. 씨드는 회계의 적정성을 인정하면서도 물품의 흐름, 축적된 자산, 공익지원과 지역 참여가 시민에게 충분히 설명되는지 묻습니다.",
+      en: "Beautiful Store turns donated goods into resource circulation and public benefit at significant scale. SEED recognizes its clean audit opinion while asking whether goods flows, accumulated assets, grants and local participation are explained clearly enough.",
     },
-    status: { ko: "공개자료 검토", en: "Reviewing disclosures" },
+    status: { ko: "재정·시민참여 점검", en: "Finance and participation review" },
     updatedAt: "2026-09-01",
     sourceBasis: {
-      ko: "과거 작성 문건의 원본은 현재 보관 자료에서 확인되지 않아, 아름다운재단 공식 홈페이지의 투명성 공시와 외부감사보고서를 기준으로 새로 구성했습니다.",
-      en: "The earlier internal paper could not be located. This record was therefore rebuilt from the foundation's official transparency disclosures and independent audit reports.",
+      ko: "씨드가 보관한 「2025 아름다운가게 감사보고서」의 재무제표와 주석을 중심으로, 아름다운가게의 투명경영 공시·연차보고서·임원 및 위원회 자료를 함께 검토했습니다. 다른 기관의 자료는 포함하지 않았습니다.",
+      en: "This record is based on SEED's archived 2025 Beautiful Store audit report, cross-checked with the organization's transparency, annual-report and governance pages. It does not use Beautiful Foundation or ChildFund Korea materials.",
     },
     confirmedFacts: [
       {
-        ko: "재단 홈페이지는 법률 준수, 재정보고, 연차보고서, 이사회 회의결과를 한곳에서 공개하고 있습니다.",
-        en: "The foundation provides legal-compliance information, financial reports, annual reports and board meeting results in one transparency section.",
+        ko: "2025년 외부감사인은 아름다운가게 재무제표가 공익법인회계기준과 일반기업회계기준에 따라 중요성의 관점에서 공정하게 표시됐다는 감사의견을 냈습니다.",
+        en: "The 2025 independent auditor concluded that Beautiful Store's statements were fairly presented in all material respects under applicable nonprofit and business accounting standards.",
       },
       {
-        ko: "공개된 외부감사보고서는 재무제표와 회계정책, 기부금·사업비 관련 주석을 포함해 시민이 원문을 확인할 수 있게 합니다.",
-        en: "Published independent audit reports include financial statements, accounting policies and notes on donations and program spending.",
+        ko: "2025년 사업수익은 394억 7,764만 원입니다. 이 가운데 기부금수익은 81억 1,745만 원, 자원재순환사업수익은 277억 6,784만 원입니다.",
+        en: "2025 program revenue was KRW 39.478 billion, including KRW 8.117 billion in donations and KRW 27.768 billion from resource-circulation activities.",
       },
       {
-        ko: "재단이 직접 비영리 거버넌스 연구를 축적해 왔다는 점은 공익조직의 책무성 논의를 확장할 기반입니다.",
-        en: "Its own body of nonprofit-governance research provides a basis for expanding debate about public-interest accountability.",
+        ko: "같은 해 개인 및 공익활동지원사업 비용은 39억 386만 원, 자원재순환사업 비용은 251억 1,353만 원이며 일반관리비용은 37억 3,517만 원, 모금비용은 4억 9,304만 원입니다.",
+        en: "Spending included KRW 3.904 billion for individual and public-interest support, KRW 25.114 billion for circulation operations, KRW 3.735 billion in general administration and KRW 493 million in fundraising.",
+      },
+      {
+        ko: "2025년 말 자산은 528억 7,861만 원, 순자산은 374억 7,168만 원입니다. 현금및현금성자산은 155억 3,717만 원이고 장기차입금은 110억 6,378만 원입니다.",
+        en: "At year-end, assets were KRW 52.879 billion and net assets KRW 37.472 billion. Cash and cash equivalents were KRW 15.537 billion, while long-term borrowings were KRW 11.064 billion.",
+      },
+      {
+        ko: "미처분이익잉여금 364억 7,168만 원은 전액 차기로 이월됐습니다. 토지·건물 장부가액 174억 4,346만 원은 금융기관 차입과 관련해 담보로 제공됐습니다.",
+        en: "Unappropriated retained earnings of KRW 36.472 billion were fully carried forward. Land and buildings with a KRW 17.443 billion book value secured bank borrowing.",
       },
     ],
     questions: [
       {
-        ko: "최근 5년의 모금·사업비·운영비·이월금 변화를 시민이 비교할 수 있는 표준표와 기계가 읽을 수 있는 데이터로도 제공할 수 있습니까?",
-        en: "Can five-year trends in fundraising, program costs, operating costs and carryovers also be published in a standard, machine-readable table?",
+        ko: "기부물품의 접수·선별·판매·재활용·폐기 수량과 평가금액을 지역·품목별로 연결해 시민이 물품의 전 과정을 확인할 수 있습니까?",
+        en: "Can citizens trace donated goods from receipt through sorting, sale, recycling or disposal, with quantities and valuations by region and category?",
       },
       {
-        ko: "사업별 지원금 규모뿐 아니라 목표, 선정 기준, 중도 변경, 종료 뒤 성과와 실패까지 연결해 설명할 수 있습니까?",
-        en: "Can each program connect grant amounts with goals, selection criteria, mid-course changes and outcomes—including failures?",
+        ko: "364억 7천만 원의 미처분이익잉여금 가운데 현금성 재원, 부동산·보증금 등 비현금성 자산, 이미 용도가 정해진 재원을 구분하고 향후 사용계획을 공개할 수 있습니까?",
+        en: "Can the KRW 36.47 billion retained-earnings balance be separated into cash, property and deposits, and committed funds, with a forward spending plan?",
       },
       {
-        ko: "이사회 구성의 독립성, 임기, 이해충돌 관리와 주요 의사결정의 반대·보류 의견을 시민 눈높이에서 더 구체적으로 공개할 수 있습니까?",
-        en: "Can board independence, tenure, conflict management and dissent or deferrals in major decisions be explained more clearly?",
+        ko: "장기차입금이 95억 7천만 원에서 110억 6천만 원으로 증가한 이유와 상환계획, 서울그물코센터 건립 모금액·총사업비·운영효율 개선 효과를 한 표로 설명할 수 있습니까?",
+        en: "Can Beautiful Store explain the rise in long-term borrowing, its repayment plan, and the fundraising, total cost and operational benefits of the Seoul Mesh Center in one table?",
       },
       {
-        ko: "지정기부금과 장기 보유 재원의 사용 시점·제약·잔액을 기부자가 쉽게 추적할 수 있습니까?",
-        en: "Can donors easily trace the timing, restrictions and remaining balances of restricted and long-held funds?",
+        ko: "개인·공익활동 지원비 39억 원이 누구에게 어떤 기준으로 배분됐고, 종료 뒤 어떤 변화와 실패가 있었는지 수혜자 개인정보를 보호하며 공개할 수 있습니까?",
+        en: "Can the KRW 3.9 billion in grants be connected to recipients, criteria, outcomes and failures while protecting personal information?",
+      },
+      {
+        ko: "매장 활동가·자원봉사자·물품기부자·지역주민이 지역 운영과 이사회 의사결정에 어느 정도의 실질적 권한을 갖고 있습니까?",
+        en: "How much real decision-making power do store workers, volunteers, goods donors and local residents hold in regional operations and governance?",
       },
     ],
     proposals: [
       {
-        ko: "감사보고서 옆에 ‘시민용 한 장 결산’을 함께 공개합니다.",
-        en: "Publish a one-page citizen account alongside every audit report.",
+        ko: "재무제표 옆에 ‘물건 한 점과 1만 원의 흐름’을 보여주는 시민용 결산서를 함께 공개합니다.",
+        en: "Publish a citizen account showing the journey of one donated item and each KRW 10,000 alongside the financial statements.",
       },
       {
-        ko: "사업별 투입·선정·과정·성과를 같은 기준으로 연결한 공개 대시보드를 만듭니다.",
-        en: "Create a public dashboard linking inputs, selection, process and outcomes for every program.",
+        ko: "미처분이익잉여금·현금·부동산·차입금의 관계와 3년 사용계획을 담은 ‘시민자산 원장’을 공개합니다.",
+        en: "Publish a civic-asset ledger linking retained earnings, cash, property and debt to a three-year use plan.",
       },
       {
-        ko: "이해충돌 신고·회피와 이사회 구성 원칙을 별도 규정으로 공개하고 정기 검증합니다.",
-        en: "Publish and periodically test clear rules for conflicts, recusals and board composition.",
+        ko: "공익활동 지원사업의 선정표와 성과·중단·실패 사례를 함께 공개하는 결과 대시보드를 만듭니다.",
+        en: "Create a grant dashboard that includes selection tables, outcomes, discontinued efforts and failures.",
       },
       {
-        ko: "비판과 질의에 대한 접수일·담당부서·답변기한·후속조치를 공개하는 시민응답 규칙을 둡니다.",
-        en: "Adopt a public-response protocol showing receipt date, owner, response deadline and follow-up.",
+        ko: "지역 운영자문위원회에 매장 활동가·자원봉사자·기부자·주민의 참여 비율과 제안 처리 결과를 공개합니다.",
+        en: "Disclose representation of workers, volunteers, donors and residents on local advisory bodies, along with action on their proposals.",
       },
     ],
+    caution: {
+      ko: "미처분이익잉여금 364억 7천만 원은 회계상 누적 순자산 개념으로, 전액이 즉시 사용 가능한 현금이라는 뜻은 아닙니다. 따라서 씨드는 이 금액 자체를 문제로 단정하지 않고 현금·부동산·보증금·지정재원의 구성과 사용계획을 공개해 달라고 묻습니다.",
+      en: "The KRW 36.47 billion retained-earnings balance is an accumulated accounting measure, not all immediately spendable cash. SEED therefore asks for its composition and use plan rather than treating the balance itself as wrongdoing.",
+    },
     sources: [
       {
-        label: { ko: "아름다운재단 소개·투명성 공개", en: "Beautiful Foundation: About and transparency" },
-        url: "https://beautifulfund.org/aboutus/",
+        label: { ko: "아름다운가게 투명경영·재정보고", en: "Beautiful Store transparency and financial reports" },
+        url: "https://www.beautifulstore.org/report-activity",
+        note: { ko: "씨드 보관 2025 감사보고서와 동일한 공식 공시 경로", en: "Official disclosure page for the archived 2025 audit report" },
       },
       {
-        label: { ko: "2022년 외부감사보고서", en: "2022 independent audit report" },
-        url: "https://beautifulfund.org/annualreport2022/download/auditreport.pdf",
+        label: { ko: "2025 참여와 나눔 보고서", en: "2025 Participation and Sharing Report" },
+        url: "https://www.beautifulstore.org/archives/publication/2025-%EC%B0%B8%EC%97%AC%EC%99%80-%EB%82%98%EB%88%94-%EB%B3%B4%EA%B3%A0%EC%84%9C",
       },
       {
-        label: { ko: "아름다운재단 기부문화연구소 비영리 거버넌스 연구", en: "Giving Korea research on nonprofit governance" },
-        url: "https://research.beautifulfund.org/wp-content/uploads/20180814_062023.pdf",
+        label: { ko: "아름다운가게 임원·위원회", en: "Beautiful Store officers and committees" },
+        url: "https://www.beautifulstore.org/committee",
+      },
+      {
+        label: { ko: "서울그물코센터 건립 모금캠페인", en: "Seoul Mesh Center construction campaign" },
+        url: "https://box.donus.org/box/beautifulstore/seoulcenter",
       },
     ],
   },
@@ -399,6 +421,7 @@ export const publicInterestWatchCases: PublicInterestWatchCase[] = [
       ko: "지금 자살을 생각하거나 위기에 놓여 있다면 자살예방상담전화 109 또는 긴급전화 112·119에 바로 연락해 주세요. 이 페이지의 공익감시 내용은 전문적인 위기상담을 대신하지 않습니다.",
       en: "If you are in immediate danger or thinking about suicide in Korea, call the Suicide Crisis Hotline 109 or emergency services at 112/119. This public-watch record is not a substitute for crisis care.",
     },
+    hideSourceBasis: true,
     sources: [
       {
         label: { ko: "한국생명존중희망재단 설립목적·법적 근거", en: "Foundation purpose and statutory basis" },
@@ -425,4 +448,4 @@ export const publicInterestWatchCases: PublicInterestWatchCase[] = [
 ];
 
 export const getPublicInterestWatchCase = (slug: string) =>
-  publicInterestWatchCases.find((item) => item.slug === slug);
+  publicInterestWatchCases.find((item) => item.slug === (slug === "beautiful-foundation" ? "beautiful-store" : slug));
