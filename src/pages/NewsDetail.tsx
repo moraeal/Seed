@@ -1,5 +1,6 @@
 import { ArrowLeft, Clock, Share2 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
+import CommentSection from "../components/CommentSection";
 import { getNewsArticle } from "../data/news";
 
 export default function NewsDetail() {
@@ -42,6 +43,7 @@ export default function NewsDetail() {
         <aside className="mt-16 bg-green-deep px-6 py-10 text-white sm:px-10"><span className="text-xs font-bold tracking-[.22em] text-gold">SEED PERSPECTIVE</span><h2 className="mt-3 text-3xl font-extrabold">씨드의 관점</h2>{article.seedPerspective.map((paragraph) => <p key={paragraph.slice(0, 32)} className="mt-6 text-base leading-9 text-white/80 sm:text-lg">{paragraph}</p>)}</aside>
 
         <section className="mt-16 border-t border-green-deep/15 pt-8"><span className="section-kicker">확인한 자료</span><p className="mt-3 text-xs leading-6 text-charcoal/45">기사 작성일 기준 공개된 공식자료와 보도를 교차 확인했습니다. 이후 정책 내용은 변경될 수 있습니다.</p><ul className="mt-5 grid gap-3 text-sm leading-7 text-charcoal/65">{article.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ul></section>
+        <CommentSection postSlug={article.slug} />
       </div>
     </div>
   </article>;
