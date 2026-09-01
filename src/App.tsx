@@ -1,8 +1,10 @@
 import { Route, Routes } from "react-router-dom";
+import { AuthProvider } from "./auth";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { LanguageProvider } from "./i18n";
 import About from "./pages/About";
+import Account from "./pages/Account";
 import CivicDictionary from "./pages/CivicDictionary";
 import Forum from "./pages/Forum";
 import Home from "./pages/Home";
@@ -29,6 +31,7 @@ function AppShell() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/account" element={<Account />} />
           <Route path="/about" element={<About />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/briefings" element={<Briefings />} />
@@ -58,7 +61,9 @@ function AppShell() {
 export default function App() {
   return (
     <LanguageProvider>
-      <AppShell />
+      <AuthProvider>
+        <AppShell />
+      </AuthProvider>
     </LanguageProvider>
   );
 }
