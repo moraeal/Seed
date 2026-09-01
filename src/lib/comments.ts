@@ -21,12 +21,12 @@ const key = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
 
 export const commentsReady = Boolean(url && key);
 
-const headers: Record<string, string> = {
+const publicHeaders: Record<string, string> = {
   apikey: key || "",
   "Content-Type": "application/json",
 };
 
-if (key?.startsWith("eyJ")) headers.Authorization = `Bearer ${key}`;
+if (key?.startsWith("eyJ")) publicHeaders.Authorization = `Bearer ${key}`;
 
 const selectFields = "id,post_slug,nickname,body,created_at";
 const continuationPattern = /^\[\[continue:([^|]+)\|([^|]*)\|([^\]]*)\]\]\n?/;
@@ -67,7 +67,7 @@ export async function loadComments(postSlug: string): Promise<CommentRecord[]> {
   if (!commentsReady) return newestFirst(starterComments);
 
   try {
-    const response = await fetch(`${url}/rest/v1/comments?post_slug=eq.${encodeURIComponent(postSlug)}&is_visible=eq.true&select=${selectFields}&order=created_at.desc`, { headers });
+    const response = await fetch(`${url}/rest/v1/comments?post_slug=eq.${encodeURIComponent(postSlug)}&is_visible=eq.true&select=${selectFields}&order=created_at.desc`, { headers: publicHeaders });
     if (!response.ok) return newestFirst(starterComments);
     const submittedComments: CommentRecord[] = await response.json();
     return newestFirst([...submittedComments, ...starterComments]);
@@ -82,7 +82,7 @@ export async function loadAllComments(limit = 300): Promise<CommentRecord[]> {
 
   if (commentsReady) {
     try {
-      const response = await fetch(`${url}/rest/v1/comments?is_visible=eq.true&select=${selectFields}&order=created_at.desc&limit=${safeLimit}`, { headers });
+      const response = await fetch(`${url}/rest/v1/comments?is_visible=eq.true&select=${selectFields}&order=created_at.desc&limit=${safeLimit}`, { headers: publicHeaders });
       if (response.ok) submittedComments = await response.json();
     } catch {
       submittedComments = [];
@@ -92,12 +92,30 @@ export async function loadAllComments(limit = 300): Promise<CommentRecord[]> {
   return newestFirst([...submittedComments, ...seedComments]).slice(0, safeLimit);
 }
 
-export async function createComment(postSlug: string, nickname: string, body: string) {
+export async function createComment(postSlug: string, nickname: string, body: string, accessToken?: string) {
   if (!commentsReady) throw new Error("댓글 저장소가 아직 연결되지 않았습니다.");
+  if (!accessToken) throw new Error("댓글은 이메일 인증회원만 작성할 수 있습니다. 로그인해주세요.");
+
   const response = await fetch(`${url}/rest/v1/comments`, {
     method: "POST",
-    headers: { ...headers, Prefer: "return=minimal" },
+    headers: {
+      apikey: key || "",
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+      Prefer: "return=minimal",
+    },
     body: JSON.stringify({ post_slug: postSlug, nickname, body }),
   });
-  if (!response.ok) throw new Error("댓글 등록에 실패했습니다. 잠시 후 다시 시도해주세요.");
+
+  if (!response.ok) {
+    let message = "댓글 등록에 실패했습니다. 잠시 후 다시 시도해주세요.";
+    try {
+      const data = await response.json();
+      if (response.status === 401 || response.status === 403) message = "로그인 세션을 다시 확인해주세요.";
+      else if (data?.message) message = data.message;
+    } catch {
+      // 기본 안내문을 사용합니다.
+    }
+    throw new Error(message);
+  }
 }
