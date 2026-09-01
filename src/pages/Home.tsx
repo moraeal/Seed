@@ -1,11 +1,8 @@
-import { ArrowRight, BookOpenCheck, Clock, Eye, FlaskConical, Lightbulb, Newspaper } from "lucide-react";
+import { ArrowRight, Clock, Newspaper } from "lucide-react";
 import { Link } from "react-router-dom";
-import ScrollRevealPanel from "../components/ScrollRevealPanel";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
-import { monitoringItems, proposalItems } from "../data/civicParticipation";
 import { columns } from "../data/columns";
 import { getNewsNewestFirst } from "../data/news";
-import { academyItems, experimentItems } from "../data/programContent";
 import { useLanguage } from "../i18n";
 
 const resolveImageSrc = (src?: string) => {
@@ -57,25 +54,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-green-deep/15 bg-[#F1F2EC] py-12 sm:py-16">
-        <div className="container-page space-y-3">
-          <ScrollRevealPanel kicker="CITIZEN WATCH" title={ko ? "시민감시" : "Citizen Watch"} description={ko ? "뉴스가 지나가도 숫자와 약속은 남습니다. 씨드는 권력과 정책의 후속 결과를 계속 확인합니다." : "We continue tracking promises, numbers, and institutional consequences after the headlines move on."} link="/monitoring" linkLabel={ko ? "감시 의제 보기" : "View watchlist"} accent="green">
-            <div className="grid gap-4 lg:grid-cols-3">{monitoringItems.map((item) => <Link key={item.title} to={item.link} className="group border border-green-deep/12 bg-white p-6"><div className="flex items-center justify-between gap-3"><span className="section-kicker">{item.tag}</span><span className="text-[11px] font-bold text-charcoal/40">{item.status}</span></div><Eye className="mt-6 text-green-mid" size={22}/><h3 className="mt-4 text-lg font-extrabold leading-snug text-navy group-hover:text-green-mid">{item.title}</h3><p className="mt-3 text-sm leading-6 text-charcoal/55">{item.summary}</p></Link>)}</div>
-          </ScrollRevealPanel>
-
-          <ScrollRevealPanel kicker="CITIZEN PROPOSALS" title={ko ? "시민제안" : "Citizen Proposals"} description={ko ? "비판에서 멈추지 않습니다. 확인한 문제를 시민이 사용할 수 있는 제도와 실행 아이디어로 바꿉니다." : "We turn verified problems into practical civic and institutional proposals."} link="/proposals" linkLabel={ko ? "제안 보기" : "View proposals"} accent="gold">
-            <div className="grid gap-4 lg:grid-cols-3">{proposalItems.map((item) => <article key={item.title} className="border border-green-deep/12 bg-white p-6"><div className="flex items-center justify-between gap-3"><span className="section-kicker">{item.tag}</span><span className="text-[11px] font-bold text-[#85671F]">{item.status}</span></div><Lightbulb className="mt-6 text-gold" size={22}/><h3 className="mt-4 text-lg font-extrabold leading-snug text-navy">{item.title}</h3><p className="mt-3 text-sm leading-6 text-charcoal/55">{item.summary}</p></article>)}</div>
-          </ScrollRevealPanel>
-
-          <ScrollRevealPanel kicker="CIVIC EXPERIMENTS" title={ko ? "시민실험" : "Civic Experiments"} description={ko ? "큰 구호 이전에 작은 해결 모델을 시험합니다. 성공뿐 아니라 실패와 수정 과정도 시민사회의 학습 자산으로 남깁니다." : "We test small solution models and document what works, what fails, and what should change."} link="/experiments" linkLabel={ko ? "실험 보기" : "View experiments"} accent="navy">
-            <div className="grid gap-4 lg:grid-cols-3">{experimentItems.map((item) => <article key={item.title} className="border border-green-deep/12 bg-white p-6"><span className="section-kicker">{item.status}</span><FlaskConical className="mt-6 text-navy" size={22}/><h3 className="mt-4 text-lg font-extrabold leading-snug text-navy">{item.title}</h3><p className="mt-3 text-sm leading-6 text-charcoal/55">{item.summary}</p></article>)}</div>
-          </ScrollRevealPanel>
-
-          <ScrollRevealPanel kicker="SEED ACADEMY" title={ko ? "씨드 아카데미" : "SEED Academy"} description={ko ? "시민이 사실을 읽고 권력을 이해하며 스스로 제안할 수 있도록 실제 이슈를 중심으로 학습합니다." : "Practical learning for citizens to read facts, understand power, and develop proposals."} link="/academy" linkLabel={ko ? "아카데미 보기" : "View academy"} accent="soft">
-            <div className="grid gap-4 lg:grid-cols-3">{academyItems.map((item) => <article key={item.title} className="border border-green-deep/12 bg-white p-6"><span className="section-kicker">{item.status}</span><BookOpenCheck className="mt-6 text-green-mid" size={22}/><h3 className="mt-4 text-lg font-extrabold leading-snug text-navy">{item.title}</h3><p className="mt-3 text-sm leading-6 text-charcoal/55">{item.summary}</p></article>)}</div>
-          </ScrollRevealPanel>
-        </div>
-      </section>
     </>
   );
 }
