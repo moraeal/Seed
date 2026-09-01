@@ -8,6 +8,12 @@ export type CommentRecord = {
   created_at: string;
 };
 
+export type CommentContinuation = {
+  commentId: string;
+  nickname: string;
+  excerpt: string;
+};
+
 const url = (import.meta.env.VITE_SUPABASE_URL || "https://wajlmbahjyazkftwaeem.supabase.co").replace(/\/$/, "");
 const key = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
   || import.meta.env.VITE_SUPABASE_ANON_KEY
@@ -23,10 +29,38 @@ const headers: Record<string, string> = {
 if (key?.startsWith("eyJ")) headers.Authorization = `Bearer ${key}`;
 
 const selectFields = "id,post_slug,nickname,body,created_at";
+const continuationPattern = /^\[\[continue:([^|]+)\|([^|]*)\|([^\]]*)\]\]\n?/;
 
 const newestFirst = (comments: CommentRecord[]) => [...comments].sort(
   (a, b) => b.created_at.localeCompare(a.created_at),
 );
+
+const safelyDecode = (value: string) => {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+};
+
+export function parseCommentBody(body: string): { text: string; continuation?: CommentContinuation } {
+  const match = body.match(continuationPattern);
+  if (!match) return { text: body };
+
+  return {
+    text: body.replace(continuationPattern, ""),
+    continuation: {
+      commentId: match[1],
+      nickname: safelyDecode(match[2]),
+      excerpt: safelyDecode(match[3]),
+    },
+  };
+}
+
+export function buildContinuedCommentBody(continuation: CommentContinuation, body: string) {
+  const excerpt = continuation.excerpt.replace(/\s+/g, " ").trim().slice(0, 140);
+  return `[[continue:${continuation.commentId}|${encodeURIComponent(continuation.nickname)}|${encodeURIComponent(excerpt)}]]\n${body}`;
+}
 
 export async function loadComments(postSlug: string): Promise<CommentRecord[]> {
   const starterComments = seedComments.filter((comment) => comment.post_slug === postSlug);
