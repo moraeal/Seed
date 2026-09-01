@@ -1,6 +1,7 @@
 import { ArrowRight, ChevronLeft, ChevronRight, Newspaper } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import SourceArticleCard from "../components/SourceArticleCard";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { columns } from "../data/columns";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
@@ -162,7 +163,7 @@ export default function Home() {
         <div className="container-page">
           <div className="flex flex-col gap-4 border-b-2 border-navy pb-6 sm:flex-row sm:items-end sm:justify-between"><div><span className="section-kicker">SEED NEWS</span><h2 className="editorial-title mt-3 text-3xl font-bold text-navy sm:text-4xl">{ko ? "지금 읽어야 할 뉴스" : "News to Read Now"}</h2></div><Link to="/news" className="text-link">{ko ? "뉴스 전체보기" : "View all news"}<ArrowRight size={16}/></Link></div>
           <div className="grid border-b border-green-deep/15 md:grid-cols-3 md:divide-x md:divide-green-deep/15">
-            {latestNews.map((item) => <Link key={item.slug} to={`/news/${item.slug}`} className="group px-5 py-8 sm:px-7 md:px-8"><div className="flex items-center gap-2 text-[10px] font-extrabold tracking-[.14em] text-green-mid"><Newspaper size={14}/>{ko ? `씨드뉴스 ${String(item.issue).padStart(2, "0")}` : `SEED NEWS ${String(item.issue).padStart(2, "0")}`} · {item.category}</div><h3 className="editorial-title mt-4 text-2xl font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h3><p className="mt-4 text-sm leading-7 text-charcoal/55">{item.summary}</p><time className="mt-6 block text-xs text-charcoal/40">{item.date.replace(/-/g, ".")}</time></Link>)}
+            {latestNews.map((item) => <article key={item.slug} className="flex flex-col px-5 py-8 sm:px-7 md:px-8"><Link to={`/news/${item.slug}`} className="group block"><div className="flex items-center gap-2 text-[10px] font-extrabold tracking-[.14em] text-green-mid"><Newspaper size={14}/>{ko ? `씨드뉴스 ${String(item.issue).padStart(2, "0")}` : `SEED NEWS ${String(item.issue).padStart(2, "0")}`} · {item.category}</div><h3 className="editorial-title mt-4 text-2xl font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h3><p className="mt-4 line-clamp-4 text-sm leading-7 text-charcoal/55">{item.summary}</p><time className="mt-5 block text-xs text-charcoal/40">{item.date.replace(/-/g, ".")}</time></Link><SourceArticleCard news={item.selectedNews} compact ko={ko}/></article>)}
           </div>
         </div>
       </section>

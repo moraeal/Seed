@@ -1,6 +1,7 @@
 import { ArrowLeft, Clock, Share2 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
+import SourceArticleCard from "../components/SourceArticleCard";
 import { localizeNewsArticle } from "../data/localizedContent";
 import { getNewsArticle } from "../data/news";
 import { useLanguage } from "../i18n";
@@ -27,12 +28,7 @@ export default function NewsDetail() {
     </header>
 
     <div className="container-page max-w-4xl py-12 sm:py-20">
-      <section className="mb-10 border border-green-deep/15 bg-white p-6 shadow-[0_16px_45px_rgba(23,76,58,.08)] sm:p-9">
-        <div className="flex flex-wrap items-center gap-3 text-xs font-bold text-charcoal/50"><span className="section-kicker">{ko ? "오늘 씨드가 선정한 뉴스" : "SEED'S SELECTED NEWS"}</span><span>{article.selectedNews.outlet}</span><time>{article.selectedNews.publishedAt}</time></div>
-        <h2 className="editorial-title mt-5 text-2xl font-bold leading-snug text-navy sm:text-3xl">{article.selectedNews.headline}</h2>
-        <div className="mt-6 border-t border-green-deep/10 pt-5"><span className="text-xs font-extrabold tracking-[.16em] text-green-deep">{ko ? "기사 핵심 요약" : "KEY POINTS"}</span><ul className="mt-4 grid gap-3 text-sm leading-7 text-charcoal/70 sm:text-base">{article.selectedNews.summary.map((item, index) => <li key={`${index}-${item}`} className="flex gap-3"><span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"/><span>{item}</span></li>)}</ul></div>
-        <a href={article.selectedNews.url} target="_blank" rel="noreferrer" className="button-secondary mt-7 inline-flex text-sm">{article.selectedNews.linkLabel}</a>
-      </section>
+      <SourceArticleCard news={article.selectedNews} ko={ko}/>
       <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]"><img src={imageSrc(article.heroImage.src)} alt={article.heroImage.alt} className="aspect-[16/9] w-full object-cover"/><figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:justify-between"><span>{article.heroImage.caption}</span>{article.heroImage.sourceUrl ? <a href={article.heroImage.sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4">{article.heroImage.credit}</a> : <span className="shrink-0">{article.heroImage.credit}</span>}</figcaption></figure>
 
       <div className="mx-auto mt-12 max-w-3xl">
