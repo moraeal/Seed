@@ -75,7 +75,7 @@ export default function CitizenProposalForm({ ko }: { ko: boolean }) {
     `[${ko ? "근거·자료" : "Evidence / Sources"}]`, draft.evidence || "-",
   ].join("\n"), [draft, ko]);
 
-  const mailto = `mailto:hello@seedcivicpartners.org?subject=${encodeURIComponent(`[${ko ? "시민제안" : "Citizen Proposal"}] ${draft.title}`)}&body=${encodeURIComponent(emailBody)}`;
+  const mailto = `mailto:seedcivicpartners@gmail.com?subject=${encodeURIComponent(`[${ko ? "시민제안" : "Citizen Proposal"}] ${draft.title}`)}&body=${encodeURIComponent(emailBody)}`;
   const inputClass = "mt-2 w-full border border-green-deep/15 bg-ivory px-4 py-3.5 text-sm text-charcoal outline-none transition placeholder:text-charcoal/30 focus:border-green-mid focus:ring-2 focus:ring-green-pale";
   const labelClass = "text-sm font-extrabold text-navy";
 

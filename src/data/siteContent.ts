@@ -19,7 +19,7 @@ export const content = {
       title: "SEED Civic Partners | 씨드시민파트너스",
       description:
         "씨드시민파트너스는 시민의 작은 문제의식과 제안을 자유, 법치, 시장, 책임의 언어로 키우는 독립 시민 플랫폼입니다.",
-      contact: "Contact: hello@seedcivicpartners.org",
+      contact: "Contact: seedcivicpartners@gmail.com",
       location: "Seoul, South Korea",
     },
     home: {
@@ -89,7 +89,7 @@ export const content = {
       founderBio: "",
       contactTitle: "Contact",
       contact:
-        "파트너십, 멘토십, 교육, 후원, 공동 프로젝트 제안은 hello@seedcivicpartners.org 로 연락해 주세요.",
+        "파트너십, 멘토십, 교육, 후원, 공동 프로젝트 제안은 seedcivicpartners@gmail.com으로 연락해 주세요.",
       principles: [
         ["Subject", "시민은 정책의 객체가 아니라 공적 문제를 발견하고 말할 수 있는 주체입니다."],
         ["Ethics", "자유는 타인의 자유와 공동체 질서를 존중하는 시민 윤리를 필요로 합니다."],
@@ -143,7 +143,7 @@ export const content = {
       title: "SEED Civic Partners",
       description:
         "An independent, nonpartisan civic platform advancing citizen agency, civic responsibility, and an open civil society in South Korea.",
-      contact: "Contact: hello@seedcivicpartners.org",
+      contact: "Contact: seedcivicpartners@gmail.com",
       location: "Seoul, South Korea",
     },
     home: {
@@ -214,7 +214,7 @@ export const content = {
         "Park Kyung-seuk has worked across civil society, public institutions, and corporate sustainability. His experience includes serving as a specialist member of the Presidential Commission on Sustainable Development (PCSD), executive chair of the Goyang branch of the Korean Federation for Environmental Movement, and founder and representative of the nonprofit KkumePume. He has also held roles related to corporate social contribution and sustainability management, served as an executive at the Korea Minting, Security Printing & ID Card Operating Corporation (KOMSCO), and advised Uijeongbu City.",
       contactTitle: "Contact",
       contact:
-        "SEED is based in Seoul, South Korea. We welcome inquiries from civic organizations, think tanks, foundations, educators, researchers, and responsible businesses interested in international exchange or joint projects. Contact hello@seedcivicpartners.org.",
+        "SEED is based in Seoul, South Korea. We welcome inquiries from civic organizations, think tanks, foundations, educators, researchers, and responsible businesses interested in international exchange or joint projects. Contact seedcivicpartners@gmail.com.",
       principles: [
         ["Subject", "Citizens are not objects of state policy. They are subjects who discover and articulate public problems."],
         ["Ethics", "Liberty requires civic ethics that respect the freedom of others and the order of the community."],
