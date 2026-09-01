@@ -1,4 +1,5 @@
 import { ArrowUpRight, Lightbulb, MessageSquarePlus } from "lucide-react";
+import CommentSection from "../components/CommentSection";
 import { proposalItems } from "../data/civicParticipation";
 import { AUDITION_URL } from "../data/siteContent";
 
@@ -38,6 +39,8 @@ export default function Proposals() {
           <div className="flex items-center gap-3"><MessageSquarePlus className="text-gold"/><h2 className="text-2xl font-extrabold">좋은 제안의 기준</h2></div>
           <p className="text-sm leading-8 text-white/70">문제가 실제로 존재하는지, 누구에게 어떤 부담을 주는지, 해결책이 자유와 책임을 함께 넓히는지, 시행 뒤 결과를 측정할 수 있는지를 봅니다. 씨드는 제안을 구호가 아니라 검증 가능한 시민의 행동으로 만들고자 합니다.</p>
         </section>
+
+        <div className="mx-auto max-w-4xl"><CommentSection postSlug="proposals" /></div>
       </div>
     </section>
   );
