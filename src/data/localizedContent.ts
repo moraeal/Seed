@@ -33,16 +33,29 @@ export function localizeBriefing(briefing: Briefing, language: Language): Briefi
   const translated = briefingTranslations[briefing.slug];
   if (!translated) return briefing;
 
+  const isGyeonggiDisplay = briefing.slug === "gyeonggi-fiscal-emergency" && (briefing.images?.length ?? 0) === 4;
+
   return {
     ...briefing,
     category: translated.category,
     title: translated.title,
     summary: translated.summary,
     author: translated.author ?? briefing.author,
-    images: briefing.images?.map((image, index) => ({
-      ...image,
-      ...(translated.images?.[index] ?? {}),
-    })),
+    images: briefing.images?.map((image, index) => {
+      if (isGyeonggiDisplay && index === 0) {
+        return {
+          ...image,
+          alt: "Calculator and budget documents representing public finance and budgeting",
+          caption: "Fiscal stress is not only about a single number. Citizens should be able to see clearly how revenue, spending, debt and public funds interact. This is a symbolic budget image.",
+          credit: "Unsplash · symbolic public-finance image",
+        };
+      }
+      const translationIndex = isGyeonggiDisplay ? index - 1 : index;
+      return {
+        ...image,
+        ...(translated.images?.[translationIndex] ?? {}),
+      };
+    }),
     content: translated.content,
     sections: translated.sections ?? briefing.sections,
     verdicts: translated.verdicts ?? briefing.verdicts,
