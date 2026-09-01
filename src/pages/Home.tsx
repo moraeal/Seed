@@ -76,9 +76,9 @@ export default function Home() {
   return (
     <>
       <section className="border-b border-green-deep/15 bg-ivory">
-        <div className="container-page grid items-start gap-6 py-8 sm:py-10 lg:grid-cols-[1.55fr_.75fr] lg:gap-8 lg:py-12">
+        <div className="container-page grid items-start gap-6 pt-8 pb-5 sm:pt-10 sm:pb-6 lg:grid-cols-[1.55fr_.75fr] lg:gap-8 lg:pt-12 lg:pb-7">
           <div
-            className="group relative h-[310px] overflow-hidden bg-navy shadow-[0_24px_70px_rgba(23,76,58,.16)] sm:h-[350px]"
+            className="group relative h-[370px] overflow-hidden bg-navy shadow-[0_24px_70px_rgba(23,76,58,.16)] sm:h-[420px]"
             onMouseEnter={() => setBriefingPaused(true)}
             onMouseLeave={() => setBriefingPaused(false)}
             onTouchStart={handleTouchStart}
@@ -144,7 +144,7 @@ export default function Home() {
             )}
           </div>
 
-          <aside className="flex flex-col overflow-hidden border-y-2 border-navy bg-paper lg:h-[350px]">
+          <aside className="flex flex-col overflow-hidden border-y-2 border-navy bg-paper lg:h-[420px]">
             <div className="flex shrink-0 items-center justify-between border-b border-green-deep/15 px-6 py-4 sm:px-7"><div><span className="section-kicker">SEED COLUMN</span><h2 className="editorial-title mt-1 text-xl font-bold text-navy">{ko ? "최신 칼럼" : "Latest Columns"}</h2></div><Link to="/columns" className="text-link text-xs">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link></div>
             {latestColumns.map((column, index) => (
               <Link key={column.slug} to={`/columns/${column.slug}`} className={`group flex min-h-0 flex-1 flex-col justify-center px-6 py-2.5 sm:px-7 ${index === 0 ? "border-b border-green-deep/15" : ""}`}>
@@ -158,7 +158,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-paper py-14 sm:py-20">
+      <section className="bg-paper pt-5 pb-14 sm:pt-7 sm:pb-20">
         <div className="container-page">
           <div className="flex flex-col gap-4 border-b-2 border-navy pb-6 sm:flex-row sm:items-end sm:justify-between"><div><span className="section-kicker">SEED NEWS</span><h2 className="editorial-title mt-3 text-3xl font-bold text-navy sm:text-4xl">{ko ? "지금 읽어야 할 뉴스" : "News to Read Now"}</h2></div><Link to="/news" className="text-link">{ko ? "뉴스 전체보기" : "View all news"}<ArrowRight size={16}/></Link></div>
           <div className="grid border-b border-green-deep/15 md:grid-cols-3 md:divide-x md:divide-green-deep/15">
