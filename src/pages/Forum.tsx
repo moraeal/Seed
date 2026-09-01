@@ -1,7 +1,7 @@
 import { ChevronLeft, ChevronRight, CornerUpRight, MessageCircle, RefreshCw } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { discussionSourceTypes, resolveDiscussionSource } from "../data/discussionSources";
+import { discussionSourceTypeLabel, discussionSourceTypes, resolveDiscussionSource } from "../data/discussionSources";
 import { CommentRecord, commentsReady, loadAllComments, parseCommentBody } from "../lib/comments";
 import { useLanguage } from "../i18n";
 
@@ -14,6 +14,7 @@ export default function Forum() {
   const [page, setPage] = useState(1);
   const [notice, setNotice] = useState("");
   const [loading, setLoading] = useState(true);
+  const ko = language === "ko";
 
   const refresh = async () => {
     setLoading(true);
@@ -21,7 +22,7 @@ export default function Forum() {
     try {
       setComments(await loadAllComments(300));
     } catch (error) {
-      setNotice(error instanceof Error ? error.message : "공론장 댓글을 불러오지 못했습니다.");
+      setNotice(error instanceof Error ? error.message : (ko ? "공론장 댓글을 불러오지 못했습니다." : "Could not load forum comments."));
     } finally {
       setLoading(false);
     }
@@ -43,7 +44,6 @@ export default function Forum() {
   const totalPages = Math.max(1, Math.ceil(filteredComments.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
   const visibleComments = filteredComments.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
-  const ko = language === "ko";
 
   const continuationUrl = (comment: CommentRecord, sourcePath: string) => {
     const parsed = parseCommentBody(comment.body);
@@ -67,7 +67,7 @@ export default function Forum() {
             <p className="max-w-2xl text-base leading-8 text-charcoal/65">
               {ko
                 ? "뉴스·브리핑·칼럼·감시·제안·실험·아카데미에 남겨진 시민의견을 한곳에서 봅니다. 한 페이지에 최대 30개를 보여주고, 길어진 토론은 ‘새 댓글로 이어가기’로 새로운 의견으로 발전시킬 수 있습니다."
-                : "Comments from SEED content are gathered here with their original source. Up to 30 comments appear per page, and longer exchanges can continue as a new comment linked to the previous discussion."}
+                : "Comments from SEED news, briefings, columns, civic watch, proposals, experiments and academy content are gathered here with their original sources. Up to 30 comments appear per page, and longer exchanges can continue as new comments linked to earlier discussion."}
             </p>
             <button onClick={() => void refresh()} className="button-secondary mt-6" type="button" disabled={loading}>
               <RefreshCw size={15} className={loading ? "animate-spin" : ""} />{ko ? "새 댓글 확인" : "Refresh"}
@@ -86,7 +86,7 @@ export default function Forum() {
                 type="button"
                 className={`rounded-full border px-4 py-2 text-xs font-extrabold transition ${filter === type ? "border-green-deep bg-green-deep text-white" : "border-green-deep/15 bg-white text-charcoal/60 hover:border-green-deep/35"}`}
               >
-                {type}
+                {discussionSourceTypeLabel(type, language)}
               </button>
             ))}
           </div>
@@ -96,11 +96,11 @@ export default function Forum() {
         </div>
 
         {notice && <p className="mt-6 rounded-lg bg-gold/10 p-4 text-sm font-semibold text-charcoal/70">{notice}</p>}
-        {!commentsReady && <p className="mt-6 rounded-lg bg-gold/10 p-4 text-sm text-charcoal/65">댓글 저장소 연결을 확인하고 있습니다.</p>}
+        {!commentsReady && <p className="mt-6 rounded-lg bg-gold/10 p-4 text-sm text-charcoal/65">{ko ? "댓글 저장소 연결을 확인하고 있습니다." : "Checking the comment store connection."}</p>}
 
         <div className="mt-4 divide-y divide-green-deep/12 border-y border-green-deep/12">
           {visibleComments.map((comment) => {
-            const source = resolveDiscussionSource(comment.post_slug);
+            const source = resolveDiscussionSource(comment.post_slug, language);
             const parsed = parseCommentBody(comment.body);
             return (
               <article key={comment.id} className="grid gap-3 py-3 md:grid-cols-[190px_1fr]">
@@ -120,7 +120,7 @@ export default function Forum() {
 
                   {parsed.continuation && source.path !== "/forum" && (
                     <Link to={`${source.path}#comment-${parsed.continuation.commentId}`} className="mt-1.5 inline-flex items-center gap-1.5 rounded-full bg-green-pale px-2.5 py-1 text-[10px] font-extrabold text-green-deep hover:bg-green-pale/70">
-                      <CornerUpRight size={11}/>{parsed.continuation.nickname}{ko ? "님의 의견에서 이어짐" : " · continued"}
+                      <CornerUpRight size={11}/>{ko ? `${parsed.continuation.nickname}님의 의견에서 이어짐` : `Continued from ${parsed.continuation.nickname}`}
                     </Link>
                   )}
 
