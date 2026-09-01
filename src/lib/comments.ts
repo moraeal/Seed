@@ -92,9 +92,9 @@ export async function loadAllComments(limit = 300): Promise<CommentRecord[]> {
   return newestFirst([...submittedComments, ...seedComments]).slice(0, safeLimit);
 }
 
-export async function createComment(postSlug: string, nickname: string, body: string, accessToken?: string) {
+export async function createComment(postSlug: string, nickname: string, body: string, accessToken?: string, userId?: string) {
   if (!commentsReady) throw new Error("댓글 저장소가 아직 연결되지 않았습니다.");
-  if (!accessToken) throw new Error("댓글은 이메일 인증회원만 작성할 수 있습니다. 로그인해주세요.");
+  if (!accessToken || !userId) throw new Error("댓글은 이메일 인증회원만 작성할 수 있습니다. 로그인해주세요.");
 
   const response = await fetch(`${url}/rest/v1/comments`, {
     method: "POST",
@@ -104,7 +104,7 @@ export async function createComment(postSlug: string, nickname: string, body: st
       "Content-Type": "application/json",
       Prefer: "return=minimal",
     },
-    body: JSON.stringify({ post_slug: postSlug, nickname, body }),
+    body: JSON.stringify({ post_slug: postSlug, nickname, body, user_id: userId, is_visible: true }),
   });
 
   if (!response.ok) {
