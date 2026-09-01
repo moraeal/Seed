@@ -1,5 +1,6 @@
 import { ArrowLeft, Clock, Share2 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
+import CommentSection from "../components/CommentSection";
 import { getColumn } from "../data/columns";
 
 export default function ColumnDetail() {
@@ -18,16 +19,17 @@ export default function ColumnDetail() {
     </header>
 
     <div className="container-page max-w-4xl py-12 sm:py-20">
-      <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]"><img src={`${import.meta.env.BASE_URL}${column.heroImage.src}`} alt={column.heroImage.alt} className="aspect-[16/9] w-full object-cover"/><figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:justify-between"><span>{column.heroImage.caption}</span><a href={column.heroImage.sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4">{column.heroImage.credit}</a></figcaption></figure>
+      <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]"><img src={`${import.meta.env.BASE_URL}${column.heroImage.src}`} alt={column.heroImage.alt} className="aspect-[16/9] w-full object-cover"/><figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:justify-between"><span>{column.heroImage.caption}</span>{column.heroImage.sourceUrl ? <a href={column.heroImage.sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4">{column.heroImage.credit}</a> : <span className="shrink-0">{column.heroImage.credit}</span>}</figcaption></figure>
 
       <div className="mx-auto mt-16 max-w-3xl">
         {column.sections.map((section, index) => <section key={section.title} className={`${index === 0 ? "" : "mt-16 border-t border-green-deep/10 pt-12"}`}>
           <span className="font-serif text-sm font-bold text-gold">{String(index + 1).padStart(2, "0")}</span><h2 className="mt-2 text-2xl font-extrabold leading-snug text-navy sm:text-3xl">{section.title}</h2>
           {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 28)} className="mt-6 text-base leading-9 text-charcoal/80 sm:text-lg">{paragraph}</p>)}
           {section.quote && <blockquote className="my-10 border-l-4 border-gold bg-green-pale px-6 py-7 font-serif text-lg font-bold leading-9 text-green-deep sm:px-8 sm:text-xl">{section.quote.map((line) => <span key={line} className="block">{line}</span>)}</blockquote>}
-          {index === 3 && <figure className="my-20 overflow-hidden border border-green-deep/10 bg-white"><img src={`${import.meta.env.BASE_URL}${column.inlineImage.src}`} alt={column.inlineImage.alt} className="aspect-[16/10] w-full object-cover"/><figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:justify-between"><span>{column.inlineImage.caption}</span><a href={column.inlineImage.sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4">{column.inlineImage.credit}</a></figcaption></figure>}
+          {index === 3 && <figure className="my-20 overflow-hidden border border-green-deep/10 bg-white"><img src={`${import.meta.env.BASE_URL}${column.inlineImage.src}`} alt={column.inlineImage.alt} className="aspect-[16/10] w-full object-cover"/><figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:justify-between"><span>{column.inlineImage.caption}</span>{column.inlineImage.sourceUrl ? <a href={column.inlineImage.sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4">{column.inlineImage.credit}</a> : <span className="shrink-0">{column.inlineImage.credit}</span>}</figcaption></figure>}
         </section>)}
         <aside className="mt-16 border-t-2 border-navy pt-8"><span className="section-kicker">자료 주</span><p className="mt-4 text-sm leading-7 text-charcoal/60">{column.sourceNote}</p>{column.sources && <ul className="mt-5 grid gap-2 text-sm leading-6 text-charcoal/60">{column.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ul>}</aside>
+        <CommentSection postSlug={column.slug} />
       </div>
     </div>
   </article>;
