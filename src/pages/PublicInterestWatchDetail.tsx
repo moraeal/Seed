@@ -53,6 +53,12 @@ export default function PublicInterestWatchDetail() {
           <p className="mt-4 text-sm leading-7 text-charcoal/65">{t(item.sourceBasis)}</p>
         </aside>
 
+        {item.supportNote && (
+          <aside className="mt-6 rounded-lg bg-navy p-6 text-white" role="note">
+            <p className="text-sm font-semibold leading-7">{t(item.supportNote)}</p>
+          </aside>
+        )}
+
         {sections.map((section, sectionIndex) => {
           const Icon = section.icon;
           return (
