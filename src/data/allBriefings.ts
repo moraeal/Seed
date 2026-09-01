@@ -1,7 +1,7 @@
 import { briefings, type Briefing } from "./briefings";
-import { gyeonggiBriefing } from "./gyeonggiBriefing";
+import { gyeonggiBriefingDisplay } from "./gyeonggiBriefingDisplay";
 
-const allBriefings: Briefing[] = [gyeonggiBriefing, ...briefings];
+const allBriefings: Briefing[] = [gyeonggiBriefingDisplay, ...briefings];
 
 export const getAllBriefingsNewestFirst = () => [...allBriefings].sort((a, b) => {
   if (a.issueNumber !== undefined || b.issueNumber !== undefined) {
