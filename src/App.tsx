@@ -7,6 +7,8 @@ import CivicDictionary from "./pages/CivicDictionary";
 import Forum from "./pages/Forum";
 import Home from "./pages/Home";
 import ProposalLab from "./pages/ProposalLab";
+import Proposals from "./pages/Proposals";
+import Monitoring from "./pages/Monitoring";
 import Roadmap from "./pages/Roadmap";
 import Support from "./pages/Support";
 import TodayFrame from "./pages/TodayFrame";
@@ -39,8 +41,9 @@ function AppShell() {
           <Route path="/columns/:slug" element={<ColumnDetail />} />
           <Route path="/news" element={<News />} />
           <Route path="/news/:slug" element={<NewsDetail />} />
+          <Route path="/monitoring" element={<Monitoring />} />
+          <Route path="/proposals" element={<Proposals />} />
           <Route path="/academy" element={<Academy />} />
-          <Route path="/proposals" element={<UnderConstruction page="proposals" />} />
           <Route path="/experiments" element={<UnderConstruction page="experiments" />} />
           <Route path="/today-frame" element={<TodayFrame />} />
           <Route path="/dictionary" element={<CivicDictionary />} />
