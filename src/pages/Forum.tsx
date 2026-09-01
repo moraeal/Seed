@@ -103,35 +103,34 @@ export default function Forum() {
             const source = resolveDiscussionSource(comment.post_slug);
             const parsed = parseCommentBody(comment.body);
             return (
-              <article key={comment.id} className="grid gap-5 py-7 md:grid-cols-[220px_1fr]">
-                <div>
-                  <span className="section-kicker">{source.type}</span>
+              <article key={comment.id} className="grid gap-3 py-3 md:grid-cols-[190px_1fr]">
+                <div className="min-w-0">
+                  <span className="text-[9px] font-extrabold tracking-[.14em] text-green-mid">{source.type}</span>
                   {source.path !== "/forum" ? (
-                    <Link to={source.path} className="mt-2 block text-sm font-extrabold leading-6 text-navy hover:text-green-mid">{source.title}</Link>
+                    <Link to={source.path} className="mt-1 block line-clamp-2 text-xs font-extrabold leading-5 text-navy hover:text-green-mid">{source.title}</Link>
                   ) : (
-                    <p className="mt-2 text-sm font-extrabold leading-6 text-navy">{source.title}</p>
+                    <p className="mt-1 line-clamp-2 text-xs font-extrabold leading-5 text-navy">{source.title}</p>
                   )}
-                  <p className="mt-3 text-[11px] text-charcoal/40">{ko ? "작성 위치" : "Source"} · {source.type}</p>
                 </div>
-                <div className="border-l-0 border-green-deep/10 md:border-l md:pl-7">
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                    <strong className="text-sm text-navy">{comment.nickname}</strong>
-                    <time className="text-xs text-charcoal/40">{new Date(comment.created_at).toLocaleString(ko ? "ko-KR" : "en-US")}</time>
+                <div className="border-l-0 border-green-deep/10 md:border-l md:pl-5">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <strong className="text-xs text-navy">{comment.nickname}</strong>
+                    <time className="text-[10px] text-charcoal/40">{new Date(comment.created_at).toLocaleString(ko ? "ko-KR" : "en-US")}</time>
                   </div>
 
                   {parsed.continuation && source.path !== "/forum" && (
-                    <Link to={`${source.path}#comment-${parsed.continuation.commentId}`} className="mt-3 inline-flex items-center gap-2 rounded-full bg-green-pale px-3 py-1.5 text-[11px] font-extrabold text-green-deep hover:bg-green-pale/70">
-                      <CornerUpRight size={13}/>{parsed.continuation.nickname}{ko ? "님의 의견에서 이어짐 · 이전 의견 보기" : " · continued discussion"}
+                    <Link to={`${source.path}#comment-${parsed.continuation.commentId}`} className="mt-1.5 inline-flex items-center gap-1.5 rounded-full bg-green-pale px-2.5 py-1 text-[10px] font-extrabold text-green-deep hover:bg-green-pale/70">
+                      <CornerUpRight size={11}/>{parsed.continuation.nickname}{ko ? "님의 의견에서 이어짐" : " · continued"}
                     </Link>
                   )}
 
-                  <p className="mt-3 whitespace-pre-wrap text-sm leading-7 text-charcoal/75">{parsed.text}</p>
+                  <p className="mt-1.5 line-clamp-2 whitespace-pre-wrap text-xs leading-5 text-charcoal/75">{parsed.text}</p>
 
-                  <div className="mt-4 flex flex-wrap items-center gap-4">
+                  <div className="mt-2 flex flex-wrap items-center gap-3">
                     {source.path !== "/forum" && (
                       <>
-                        <Link to={`${source.path}#comments`} className="inline-flex items-center gap-2 text-xs font-extrabold text-green-deep">{ko ? "원문과 전체 댓글 보기" : "Open source discussion"}<MessageCircle size={14}/></Link>
-                        <Link to={continuationUrl(comment, source.path)} className="inline-flex items-center gap-2 text-xs font-extrabold text-green-mid hover:text-green-deep"><CornerUpRight size={14}/>{ko ? "새 댓글로 이어가기" : "Continue as new comment"}</Link>
+                        <Link to={`${source.path}#comments`} className="inline-flex items-center gap-1.5 text-[10px] font-extrabold text-green-deep">{ko ? "전체 댓글" : "All comments"}<MessageCircle size={12}/></Link>
+                        <Link to={continuationUrl(comment, source.path)} className="inline-flex items-center gap-1.5 text-[10px] font-extrabold text-green-mid hover:text-green-deep"><CornerUpRight size={12}/>{ko ? "새 댓글로 이어가기" : "Continue"}</Link>
                       </>
                     )}
                   </div>
