@@ -11,9 +11,8 @@ const resolveImageSrc = (src?: string) => {
   return `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 };
 
-const outlinedText = {
-  WebkitTextStroke: "0.55px rgba(4, 15, 20, 0.72)",
-  textShadow: "0 2px 4px rgba(0,0,0,.95), 1px 1px 0 rgba(0,0,0,.75), -1px 1px 0 rgba(0,0,0,.75), 1px -1px 0 rgba(0,0,0,.75), -1px -1px 0 rgba(0,0,0,.75)",
+const heroTextShadow = {
+  textShadow: "0 2px 10px rgba(0,0,0,.82)",
 };
 
 const monitoringItems = [
@@ -52,22 +51,22 @@ export default function Home() {
                 className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.018]"
               />
             )}
-            <div className="absolute inset-0 bg-black/24" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/28 to-black/12" />
+            <div className="absolute inset-0 bg-black/38" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/48 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 p-7 sm:p-10 lg:p-12">
-              <span className="inline-flex border border-white/45 bg-green-deep/75 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white backdrop-blur-sm">
+              <span className="inline-flex border border-white/45 bg-green-deep/78 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white backdrop-blur-sm">
                 {ko ? "LATEST CITIZEN BRIEFING" : "LATEST CIVIC BRIEFING"}
               </span>
-              <p className="mt-5 text-xs font-extrabold tracking-[.13em] text-gold-light" style={outlinedText}>
+              <p className="mt-5 text-xs font-extrabold tracking-[.13em] text-gold-light" style={heroTextShadow}>
                 {latestBriefing.category} · {latestBriefing.date.replace(/-/g, ".")}
               </p>
-              <h1 className="editorial-title mt-3 max-w-4xl text-4xl font-bold leading-[1.08] text-white sm:text-5xl lg:text-[3.4rem]" style={outlinedText}>
+              <h1 className="editorial-title mt-3 max-w-4xl text-4xl font-bold leading-[1.08] text-white sm:text-5xl lg:text-[3.4rem]" style={heroTextShadow}>
                 {latestBriefing.title}
               </h1>
-              <p className="mt-5 max-w-3xl text-sm font-semibold leading-7 text-white/95 sm:text-base" style={outlinedText}>
+              <p className="mt-5 max-w-3xl text-sm font-semibold leading-7 text-white/95 sm:text-base" style={heroTextShadow}>
                 {latestBriefing.summary}
               </p>
-              <div className="mt-7 flex items-center gap-5 text-xs font-bold text-white" style={outlinedText}>
+              <div className="mt-7 flex items-center gap-5 text-xs font-bold text-white" style={heroTextShadow}>
                 <span className="flex items-center gap-1.5"><Clock size={14} />{latestBriefing.readMinutes}분</span>
                 <span className="flex items-center gap-1.5">{ko ? "브리핑 읽기" : "Read briefing"}<ArrowRight size={15} /></span>
               </div>
