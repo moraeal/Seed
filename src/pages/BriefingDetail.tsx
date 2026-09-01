@@ -3,30 +3,130 @@ import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
 import { getAllBriefing } from "../data/allBriefings";
 
+const resolveImageSrc = (src: string) => {
+  if (/^https?:\/\//i.test(src)) return src;
+  return `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
+};
+
 export default function BriefingDetail() {
   const { slug = "" } = useParams();
   const briefing = getAllBriefing(slug);
-  if (!briefing) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">브리핑을 찾을 수 없습니다.</h1><Link to="/briefings" className="button-primary mt-7">목록으로</Link></div>;
+
+  if (!briefing) {
+    return (
+      <div className="container-page py-24 text-center">
+        <h1 className="text-3xl font-extrabold text-navy">브리핑을 찾을 수 없습니다.</h1>
+        <Link to="/briefings" className="button-primary mt-7">목록으로</Link>
+      </div>
+    );
+  }
 
   const share = async () => {
     if (navigator.share) await navigator.share({ title: briefing.title, text: briefing.summary, url: location.href });
-    else { await navigator.clipboard.writeText(location.href); alert("주소를 복사했습니다."); }
+    else {
+      await navigator.clipboard.writeText(location.href);
+      alert("주소를 복사했습니다.");
+    }
   };
 
-  return <article className="bg-paper">
-    <header className="border-b border-green-deep/15 bg-ivory py-12 sm:py-20"><div className="container-page max-w-5xl"><Link to="/briefings" className="text-link"><ArrowLeft size={16} />시민브리핑 목록</Link><div className="mt-10 border-t-2 border-navy pt-8"><span className="section-kicker block">{briefing.category}</span><h1 className="editorial-title mt-5 max-w-4xl text-4xl font-bold leading-[1.12] text-navy sm:text-6xl">{briefing.title}</h1><p className="mt-7 max-w-3xl text-base leading-8 text-charcoal/65 sm:text-xl">{briefing.summary}</p></div><div className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-green-deep/10 pt-5 text-xs text-charcoal/45"><span>{briefing.author}</span><time>{briefing.date.replace(/-/g, ".")} 기준</time><span className="flex items-center gap-1"><Clock size={14} />읽는 시간 {briefing.readMinutes}분</span><div className="flex w-full flex-wrap gap-2 sm:ml-auto sm:w-auto"><button onClick={share} className="button-secondary min-h-9 px-3 py-2 text-xs"><Share2 size={15} />공유</button>{briefing.commentary && <Link to={`/briefings/${briefing.slug}/commentary`} className="button-secondary min-h-9 px-3 py-2 text-xs"><FileText size={15} />논평 보기</Link>}{briefing.pdfPath && <a href={`${import.meta.env.BASE_URL}${briefing.pdfPath}`} download className="button-primary min-h-9 px-3 py-2 text-xs"><Download size={15} />PDF 원문 내려받기</a>}</div></div></div></header>
-    <div className="container-page max-w-4xl py-12 sm:py-20">
-      {briefing.images?.[0] && <figure className="mb-12 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]"><img src={`${import.meta.env.BASE_URL}${briefing.images[0].src}`} alt={briefing.images[0].alt} className="aspect-[3/2] w-full object-cover" /><figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:items-start sm:justify-between"><span className="max-w-2xl">{briefing.images[0].caption}</span><a href={briefing.images[0].sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{briefing.images[0].credit}</a></figcaption></figure>}
-      <div className="space-y-7">{briefing.content.map((paragraph) => <p key={paragraph.slice(0, 20)} className="text-base leading-9 text-charcoal/80 sm:text-lg">{paragraph}</p>)}</div>
-      {briefing.images?.[1] && <figure className="mt-12 overflow-hidden border border-green-deep/10 bg-white"><img src={`${import.meta.env.BASE_URL}${briefing.images[1].src}`} alt={briefing.images[1].alt} className="aspect-[16/9] w-full object-cover" /><figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:items-start sm:justify-between"><span className="max-w-2xl">{briefing.images[1].caption}</span><a href={briefing.images[1].sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{briefing.images[1].credit}</a></figcaption></figure>}
-      {briefing.sections?.map((section, index) => <section key={section.title} className="mt-12 border-t border-green-deep/10 pt-9"><span className="font-serif text-sm font-bold text-gold">0{index + 1}</span><h2 className="mt-2 text-2xl font-extrabold leading-snug text-navy sm:text-3xl">{section.title}</h2>{section.paragraphs && <div className="mt-5 space-y-5">{section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 24)} className="text-base leading-8 text-charcoal/75">{paragraph}</p>)}</div>}{section.bullets && <ul className="mt-6 space-y-4">{section.bullets.map((bullet) => <li key={bullet.slice(0, 24)} className="flex gap-3 text-base leading-8 text-charcoal/75"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold" />{bullet}</li>)}</ul>}</section>)}
-      {briefing.verdicts && <section className="mt-12"><span className="section-kicker">CITIZEN VERDICT</span><h2 className="mt-3 text-2xl font-extrabold text-navy sm:text-3xl">현재까지의 시민 판정</h2><div className="mt-6 overflow-x-auto rounded-lg border border-green-deep/10"><table className="w-full min-w-[680px] border-collapse bg-white text-left text-sm"><thead className="bg-green-deep text-white"><tr><th className="px-5 py-4">주장</th><th className="px-5 py-4">시민 판정</th><th className="px-5 py-4">이유</th></tr></thead><tbody className="divide-y divide-green-deep/10">{briefing.verdicts.map((item) => <tr key={item.claim}><td className="px-5 py-4 leading-6 text-charcoal/75">{item.claim}</td><td className="whitespace-nowrap px-5 py-4 font-extrabold text-green-deep">{item.status}</td><td className="px-5 py-4 leading-6 text-charcoal/60">{item.basis}</td></tr>)}</tbody></table></div></section>}
-      {briefing.images?.slice(2).map((image) => <figure key={image.src} className="mt-12 overflow-hidden border border-green-deep/10 bg-white"><img src={`${import.meta.env.BASE_URL}${image.src}`} alt={image.alt} className="aspect-[16/9] w-full object-cover" /><figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:items-start sm:justify-between"><span className="max-w-2xl">{image.caption}</span><a href={image.sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{image.credit}</a></figcaption></figure>)}
-      <aside className="mt-12 rounded-lg border-l-4 border-gold bg-green-pale p-6 sm:p-8"><h2 className="text-xl font-extrabold text-green-deep">지속해서 관찰할 지점</h2><ul className="mt-5 space-y-3">{briefing.watchPoints.map((point) => <li key={point} className="flex gap-3 text-sm leading-7 text-charcoal/75"><span className="font-serif text-gold">●</span>{point}</li>)}</ul></aside>
-      {briefing.quote && <blockquote className="mt-12 rounded-xl bg-green-deep p-7 font-serif text-xl font-bold leading-9 text-white sm:p-10 sm:text-2xl">“{briefing.quote}”</blockquote>}
-      {briefing.sourceNote && <p className="mt-8 rounded-lg border border-green-deep/10 bg-white p-5 text-sm leading-7 text-charcoal/60">{briefing.sourceNote}</p>}
-      {briefing.sources && <section className="mt-12 border-t border-green-deep/10 pt-9"><h2 className="text-xl font-extrabold text-navy">자료 출처 및 확인 기준</h2><ol className="mt-5 space-y-3">{briefing.sources.map((source, index) => <li key={source.url} className="flex gap-3 text-sm leading-6"><span className="font-serif text-gold">{index + 1}.</span><a href={source.url} target="_blank" rel="noreferrer" className="text-charcoal/65 underline decoration-green-deep/20 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ol><p className="mt-6 text-xs leading-6 text-charcoal/45">확인 기준: 각 브리핑의 기준일 현재 공개자료입니다. 이후 판결·법령·공식 발표가 나오면 판단은 업데이트될 수 있습니다.</p></section>}
-      <CommentSection postSlug={briefing.slug} />
-    </div>
-  </article>;
+  const renderFigure = (image: NonNullable<typeof briefing.images>[number], prominent = false) => (
+    <figure className={`${prominent ? "mb-12 shadow-[0_18px_55px_rgba(23,76,58,.08)]" : "mt-12"} overflow-hidden border border-green-deep/10 bg-white`}>
+      <img
+        src={resolveImageSrc(image.src)}
+        alt={image.alt}
+        className={`${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full object-cover`}
+      />
+      <figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:items-start sm:justify-between">
+        <span className="max-w-2xl">{image.caption}</span>
+        {image.sourceUrl ? (
+          <a href={image.sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">
+            {image.credit}
+          </a>
+        ) : <span className="shrink-0">{image.credit}</span>}
+      </figcaption>
+    </figure>
+  );
+
+  return (
+    <article className="bg-paper">
+      <header className="border-b border-green-deep/15 bg-ivory py-12 sm:py-20">
+        <div className="container-page max-w-5xl">
+          <Link to="/briefings" className="text-link"><ArrowLeft size={16} />시민브리핑 목록</Link>
+          <div className="mt-10 border-t-2 border-navy pt-8">
+            <span className="section-kicker block">{briefing.category}</span>
+            <h1 className="editorial-title mt-5 max-w-4xl text-4xl font-bold leading-[1.12] text-navy sm:text-6xl">{briefing.title}</h1>
+            <p className="mt-7 max-w-3xl text-base leading-8 text-charcoal/65 sm:text-xl">{briefing.summary}</p>
+          </div>
+          <div className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-green-deep/10 pt-5 text-xs text-charcoal/45">
+            <span>{briefing.author}</span>
+            <time>{briefing.date.replace(/-/g, ".")} 기준</time>
+            <span className="flex items-center gap-1"><Clock size={14} />읽는 시간 {briefing.readMinutes}분</span>
+            <div className="flex w-full flex-wrap gap-2 sm:ml-auto sm:w-auto">
+              <button onClick={share} className="button-secondary min-h-9 px-3 py-2 text-xs"><Share2 size={15} />공유</button>
+              {briefing.commentary && <Link to={`/briefings/${briefing.slug}/commentary`} className="button-secondary min-h-9 px-3 py-2 text-xs"><FileText size={15} />논평 보기</Link>}
+              {briefing.pdfPath && <a href={`${import.meta.env.BASE_URL}${briefing.pdfPath}`} download className="button-primary min-h-9 px-3 py-2 text-xs"><Download size={15} />PDF 원문 내려받기</a>}
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div className="container-page max-w-4xl py-12 sm:py-20">
+        {briefing.images?.[0] && renderFigure(briefing.images[0], true)}
+
+        <div className="space-y-7">
+          {briefing.content.map((paragraph) => (
+            <p key={paragraph.slice(0, 20)} className="text-base leading-9 text-charcoal/80 sm:text-lg">{paragraph}</p>
+          ))}
+        </div>
+
+        {briefing.images?.[1] && renderFigure(briefing.images[1])}
+
+        {briefing.sections?.map((section, index) => (
+          <section key={section.title} className="mt-12 border-t border-green-deep/10 pt-9">
+            <span className="font-serif text-sm font-bold text-gold">0{index + 1}</span>
+            <h2 className="mt-2 text-2xl font-extrabold leading-snug text-navy sm:text-3xl">{section.title}</h2>
+            {section.paragraphs && <div className="mt-5 space-y-5">{section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 24)} className="text-base leading-8 text-charcoal/75">{paragraph}</p>)}</div>}
+            {section.bullets && <ul className="mt-6 space-y-4">{section.bullets.map((bullet) => <li key={bullet.slice(0, 24)} className="flex gap-3 text-base leading-8 text-charcoal/75"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold" />{bullet}</li>)}</ul>}
+          </section>
+        ))}
+
+        {briefing.verdicts && (
+          <section className="mt-12">
+            <span className="section-kicker">CITIZEN VERDICT</span>
+            <h2 className="mt-3 text-2xl font-extrabold text-navy sm:text-3xl">현재까지의 시민 판정</h2>
+            <div className="mt-6 overflow-x-auto rounded-lg border border-green-deep/10">
+              <table className="w-full min-w-[680px] border-collapse bg-white text-left text-sm">
+                <thead className="bg-green-deep text-white"><tr><th className="px-5 py-4">주장</th><th className="px-5 py-4">시민 판정</th><th className="px-5 py-4">이유</th></tr></thead>
+                <tbody className="divide-y divide-green-deep/10">
+                  {briefing.verdicts.map((item) => (
+                    <tr key={item.claim}><td className="px-5 py-4 leading-6 text-charcoal/75">{item.claim}</td><td className="whitespace-nowrap px-5 py-4 font-extrabold text-green-deep">{item.status}</td><td className="px-5 py-4 leading-6 text-charcoal/60">{item.basis}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
+
+        {briefing.images?.slice(2).map((image) => <div key={image.src}>{renderFigure(image)}</div>)}
+
+        <aside className="mt-12 rounded-lg border-l-4 border-gold bg-green-pale p-6 sm:p-8">
+          <h2 className="text-xl font-extrabold text-green-deep">지속해서 관찰할 지점</h2>
+          <ul className="mt-5 space-y-3">{briefing.watchPoints.map((point) => <li key={point} className="flex gap-3 text-sm leading-7 text-charcoal/75"><span className="font-serif text-gold">●</span>{point}</li>)}</ul>
+        </aside>
+
+        {briefing.quote && <blockquote className="mt-12 rounded-xl bg-green-deep p-7 font-serif text-xl font-bold leading-9 text-white sm:p-10 sm:text-2xl">“{briefing.quote}”</blockquote>}
+        {briefing.sourceNote && <p className="mt-8 rounded-lg border border-green-deep/10 bg-white p-5 text-sm leading-7 text-charcoal/60">{briefing.sourceNote}</p>}
+
+        {briefing.sources && (
+          <section className="mt-12 border-t border-green-deep/10 pt-9">
+            <h2 className="text-xl font-extrabold text-navy">자료 출처 및 확인 기준</h2>
+            <ol className="mt-5 space-y-3">{briefing.sources.map((source, index) => <li key={source.url} className="flex gap-3 text-sm leading-6"><span className="font-serif text-gold">{index + 1}.</span><a href={source.url} target="_blank" rel="noreferrer" className="text-charcoal/65 underline decoration-green-deep/20 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ol>
+            <p className="mt-6 text-xs leading-6 text-charcoal/45">확인 기준: 각 브리핑의 기준일 현재 공개자료입니다. 이후 판결·법령·공식 발표가 나오면 판단은 업데이트될 수 있습니다.</p>
+          </section>
+        )}
+
+        <CommentSection postSlug={briefing.slug} />
+      </div>
+    </article>
+  );
 }
