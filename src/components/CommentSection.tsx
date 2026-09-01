@@ -63,7 +63,7 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
     setSubmitting(true);
     setNotice("");
     try {
-      await createComment(postSlug, nickname, payload, session.access_token);
+      await createComment(postSlug, nickname, payload, session.access_token, user.id);
       setBody("");
       setContinuation(undefined);
       setNotice("댓글이 등록되었습니다.");
