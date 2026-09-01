@@ -1,6 +1,7 @@
-import { CornerUpRight, MessageCircle, Send, X } from "lucide-react";
+import { CheckCircle2, CornerUpRight, LockKeyhole, MessageCircle, Send, X } from "lucide-react";
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { useAuth } from "../auth";
 import {
   buildContinuedCommentBody,
   CommentContinuation,
@@ -12,8 +13,9 @@ import {
 } from "../lib/comments";
 
 export default function CommentSection({ postSlug }: { postSlug: string }) {
+  const { session, user, nickname, isVerified, loading: authLoading } = useAuth();
+  const location = useLocation();
   const [comments, setComments] = useState<CommentRecord[]>([]);
-  const [nickname, setNickname] = useState("");
   const [body, setBody] = useState("");
   const [notice, setNotice] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -33,11 +35,7 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
     const continueText = searchParams.get("continueText");
     if (!commentId || !continueNick) return;
 
-    setContinuation({
-      commentId,
-      nickname: continueNick,
-      excerpt: continueText || "이전 의견",
-    });
+    setContinuation({ commentId, nickname: continueNick, excerpt: continueText || "이전 의견" });
     window.setTimeout(() => formRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 120);
   }, [searchParams]);
 
@@ -56,18 +54,16 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
   const submit = async (event: FormEvent) => {
     event.preventDefault();
     if (!commentsReady) return setNotice("댓글 기능을 준비하고 있습니다.");
-    if (nickname.trim().length < 2 || body.trim().length < 2) return setNotice("닉네임과 댓글을 두 글자 이상 입력해주세요.");
+    if (!user || !session || !isVerified) return setNotice("댓글은 이메일 인증회원만 작성할 수 있습니다.");
+    if (body.trim().length < 2) return setNotice("댓글을 두 글자 이상 입력해주세요.");
 
-    const payload = continuation
-      ? buildContinuedCommentBody(continuation, body.trim())
-      : body.trim();
-
+    const payload = continuation ? buildContinuedCommentBody(continuation, body.trim()) : body.trim();
     if (payload.length > 1000) return setNotice("이어쓰기 정보까지 포함해 댓글은 1,000자까지 등록할 수 있습니다. 본문을 조금 줄여주세요.");
 
     setSubmitting(true);
     setNotice("");
     try {
-      await createComment(postSlug, nickname.trim(), payload);
+      await createComment(postSlug, nickname, payload, session.access_token);
       setBody("");
       setContinuation(undefined);
       setNotice("댓글이 등록되었습니다.");
@@ -79,38 +75,60 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
     }
   };
 
+  const returnTo = `${location.pathname}${location.search}#comments-form`;
+  const loginPath = `/account?mode=login&returnTo=${encodeURIComponent(returnTo)}`;
+  const signupPath = `/account?mode=signup&returnTo=${encodeURIComponent(returnTo)}`;
+
   return (
     <section id="comments" className="mt-14 scroll-mt-28 border-t border-green-deep/10 pt-10" aria-labelledby="comments-title">
       <div className="flex items-center gap-2">
         <MessageCircle className="text-green-mid" size={24} />
         <h2 id="comments-title" className="text-2xl font-extrabold text-navy">시민의견 <span className="text-green-mid">{comments.length}</span></h2>
       </div>
-      <p className="mt-3 text-sm leading-6 text-charcoal/55">서로를 존중하며 사실과 근거를 중심으로 의견을 나눠주세요. 대화가 길어지면 ‘새 댓글로 이어가기’를 눌러 새 토론으로 이어갈 수 있습니다.</p>
+      <p className="mt-3 text-sm leading-6 text-charcoal/55">댓글은 이메일 인증회원만 작성할 수 있습니다. 읽기는 누구나 가능하며, 화면에는 가입 때 정한 닉네임이 표시됩니다.</p>
 
-      <form id="comments-form" ref={formRef} onSubmit={submit} className="mt-6 scroll-mt-28 rounded-lg border border-green-deep/10 bg-white p-5 shadow-soft">
-        {continuation && (
-          <div className="mb-5 rounded-lg border border-green-mid/20 bg-green-pale/60 p-4">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="text-xs font-extrabold text-green-deep">새 댓글로 이어쓰기</p>
-                <p className="mt-2 text-sm font-semibold text-navy">{continuation.nickname}님의 의견에서 이어집니다.</p>
-                <p className="mt-2 line-clamp-2 text-xs leading-6 text-charcoal/55">“{continuation.excerpt}”</p>
+      {!authLoading && (!user || !isVerified) ? (
+        <div id="comments-form" className="mt-6 scroll-mt-28 rounded-lg border border-green-deep/12 bg-white p-6 shadow-soft">
+          <div className="flex items-start gap-4">
+            <div className="grid size-10 shrink-0 place-items-center rounded-full bg-green-pale text-green-deep"><LockKeyhole size={20}/></div>
+            <div>
+              <h3 className="font-extrabold text-navy">인증회원만 댓글을 작성할 수 있습니다.</h3>
+              <p className="mt-2 text-sm leading-7 text-charcoal/60">이메일과 비밀번호로 간단히 가입한 뒤, 받은 메일의 인증 링크를 누르면 바로 공론장에 참여할 수 있습니다.</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <Link to={loginPath} className="button-secondary text-sm">로그인</Link>
+                <Link to={signupPath} className="button-primary text-sm">회원가입</Link>
               </div>
-              <button type="button" onClick={() => setContinuation(undefined)} className="grid size-8 shrink-0 place-items-center rounded-full border border-green-deep/10 text-charcoal/45 hover:text-green-deep" aria-label="이어쓰기 취소"><X size={15}/></button>
+              {user && !isVerified && <p className="mt-4 rounded-md bg-gold/10 px-3 py-2 text-xs font-semibold text-charcoal/65">현재 계정은 이메일 확인이 완료되지 않았습니다. 가입 메일의 인증 링크를 확인해주세요.</p>}
             </div>
           </div>
-        )}
-
-        <div className="sr-only" aria-hidden="true"><label>웹사이트<input tabIndex={-1} autoComplete="off" /></label></div>
-        <label className="field max-w-xs"><span>닉네임</span><input value={nickname} onChange={(event) => setNickname(event.target.value)} maxLength={30} placeholder="씨앗시민" required /></label>
-        <label className="field mt-4"><span>{continuation ? "이어지는 의견" : "댓글"}</span><textarea value={body} onChange={(event) => setBody(event.target.value)} maxLength={1000} rows={4} placeholder={continuation ? "이전 의견에 이어 새로운 주장이나 질문을 적어주세요." : "의견과 질문을 남겨주세요."} required /></label>
-        <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-          <span className="text-xs text-charcoal/45">{body.length}/1,000</span>
-          <button className="button-primary" type="submit" disabled={submitting || !commentsReady}><Send size={15} />{submitting ? "등록 중" : continuation ? "새 댓글로 등록" : "댓글 등록"}</button>
         </div>
-        {notice && <p className="mt-3 text-sm font-semibold text-green-deep" role="status">{notice}</p>}
-        {!commentsReady && <p className="mt-3 rounded-md bg-gold/10 px-4 py-3 text-xs leading-6 text-charcoal/65">댓글 저장소 연결을 마치는 중입니다. 연결 후 별도 회원가입 없이 이용할 수 있습니다.</p>}
-      </form>
+      ) : (
+        <form id="comments-form" ref={formRef} onSubmit={submit} className="mt-6 scroll-mt-28 rounded-lg border border-green-deep/10 bg-white p-5 shadow-soft">
+          {continuation && (
+            <div className="mb-5 rounded-lg border border-green-mid/20 bg-green-pale/60 p-4">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-xs font-extrabold text-green-deep">새 댓글로 이어쓰기</p>
+                  <p className="mt-2 text-sm font-semibold text-navy">{continuation.nickname}님의 의견에서 이어집니다.</p>
+                  <p className="mt-2 line-clamp-2 text-xs leading-6 text-charcoal/55">“{continuation.excerpt}”</p>
+                </div>
+                <button type="button" onClick={() => setContinuation(undefined)} className="grid size-8 shrink-0 place-items-center rounded-full border border-green-deep/10 text-charcoal/45 hover:text-green-deep" aria-label="이어쓰기 취소"><X size={15}/></button>
+              </div>
+            </div>
+          )}
+
+          <div className="flex flex-wrap items-center gap-3 border-b border-green-deep/10 pb-4">
+            <strong className="text-sm text-navy">{nickname}</strong>
+            <span className="inline-flex items-center gap-1 rounded-full bg-green-pale px-2.5 py-1 text-[11px] font-extrabold text-green-deep"><CheckCircle2 size={13}/>이메일 인증회원</span>
+          </div>
+          <label className="field mt-4"><span>{continuation ? "이어지는 의견" : "댓글"}</span><textarea value={body} onChange={(event) => setBody(event.target.value)} maxLength={1000} rows={4} placeholder={continuation ? "이전 의견에 이어 새로운 주장이나 질문을 적어주세요." : "의견과 질문을 남겨주세요."} required /></label>
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+            <span className="text-xs text-charcoal/45">{body.length}/1,000</span>
+            <button className="button-primary" type="submit" disabled={submitting || !commentsReady}><Send size={15} />{submitting ? "등록 중" : continuation ? "새 댓글로 등록" : "댓글 등록"}</button>
+          </div>
+          {notice && <p className="mt-3 text-sm font-semibold text-green-deep" role="status">{notice}</p>}
+        </form>
+      )}
 
       <div className="mt-7 divide-y divide-green-deep/10">
         {comments.map((comment) => {
@@ -124,7 +142,11 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
                 </a>
               )}
               <p className="mt-2 whitespace-pre-wrap text-sm leading-7 text-charcoal/75">{parsed.text}</p>
-              <button type="button" onClick={() => beginContinuation(comment)} className="mt-3 inline-flex items-center gap-1.5 text-xs font-extrabold text-green-deep hover:text-green-mid"><CornerUpRight size={14}/>새 댓글로 이어가기</button>
+              {user && isVerified ? (
+                <button type="button" onClick={() => beginContinuation(comment)} className="mt-3 inline-flex items-center gap-1.5 text-xs font-extrabold text-green-deep hover:text-green-mid"><CornerUpRight size={14}/>새 댓글로 이어가기</button>
+              ) : (
+                <Link to={loginPath} className="mt-3 inline-flex items-center gap-1.5 text-xs font-extrabold text-green-deep hover:text-green-mid"><LockKeyhole size={13}/>로그인 후 토론 이어가기</Link>
+              )}
             </article>
           );
         })}
