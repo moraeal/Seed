@@ -18,8 +18,6 @@ export default function Header() {
         ["Columns", "/columns"],
         ["Public Watch", "/monitoring"],
         ["Proposals", "/proposals"],
-        ["Experiments", "/experiments"],
-        ["Academy", "/academy"],
         ["Forum", "/forum"],
         ["About", "/about"],
       ]
@@ -29,8 +27,6 @@ export default function Header() {
         ["칼럼", "/columns"],
         ["공익감시", "/monitoring"],
         ["제안", "/proposals"],
-        ["실험", "/experiments"],
-        ["아카데미", "/academy"],
         ["공론장", "/forum"],
         ["소개", "/about"],
       ];
