@@ -12,6 +12,28 @@ const resolveImageSrc = (src?: string) => {
   return `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 };
 
+const splitBriefingTitle = (title: string): [string, string] => {
+  const words = title.trim().split(/\s+/);
+  if (words.length < 2) return [title, ""];
+
+  const target = title.length / 2;
+  let bestIndex = 1;
+  let bestScore = Number.POSITIVE_INFINITY;
+  let runningLength = 0;
+
+  for (let index = 1; index < words.length; index += 1) {
+    runningLength += words[index - 1].length + (index > 1 ? 1 : 0);
+    const punctuationBonus = /[,.:;!?·—-]$/.test(words[index - 1]) ? -3 : 0;
+    const score = Math.abs(runningLength - target) + punctuationBonus;
+    if (score < bestScore) {
+      bestScore = score;
+      bestIndex = index;
+    }
+  }
+
+  return [words.slice(0, bestIndex).join(" "), words.slice(bestIndex).join(" ")];
+};
+
 const heroTextShadow = { textShadow: "0 2px 10px rgba(0,0,0,.82)" };
 const BRIEFING_SLIDE_INTERVAL = 4000;
 
@@ -64,6 +86,7 @@ export default function Home() {
             {briefingSlides.map((briefing, index) => {
               const briefingImage = briefing.images?.[0];
               const active = index === activeBriefing;
+              const [titleLine1, titleLine2] = splitBriefingTitle(briefing.title);
               return (
                 <Link
                   key={briefing.slug}
@@ -83,7 +106,10 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/18" />
                   <div className={`absolute inset-x-0 bottom-0 p-5 pt-16 transition-all duration-700 sm:p-7 sm:pt-20 lg:p-8 lg:pt-20 ${active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
                     <p className="text-[10px] font-extrabold tracking-[.12em] text-gold-light sm:text-[11px]" style={heroTextShadow}>{briefing.category} · {briefing.date.replace(/-/g, ".")}</p>
-                    <h1 className="editorial-title mt-1.5 line-clamp-2 max-w-4xl text-[1.8rem] font-bold leading-[1.08] text-white sm:text-[2.15rem] lg:text-[2.4rem]" style={heroTextShadow}>{briefing.title}</h1>
+                    <h1 className="editorial-title mt-1.5 max-w-4xl text-[1.8rem] font-bold leading-[1.08] text-white sm:text-[2.15rem] lg:text-[2.4rem]" style={heroTextShadow}>
+                      <span className="block sm:whitespace-nowrap">{titleLine1}</span>
+                      {titleLine2 && <span className="block sm:whitespace-nowrap">{titleLine2}</span>}
+                    </h1>
                     <p className="mt-2 line-clamp-2 max-w-3xl text-xs font-semibold leading-5 text-white/95 sm:text-sm" style={heroTextShadow}>{briefing.summary}</p>
                     <div className="mt-3 flex items-center gap-4 text-[11px] font-bold text-white sm:text-xs" style={heroTextShadow}><span className="flex items-center gap-1.5"><Clock size={13}/>{briefing.readMinutes}분</span><span className="flex items-center gap-1.5">{ko ? "브리핑 읽기" : "Read briefing"}<ArrowRight size={14}/></span></div>
                   </div>
