@@ -18,14 +18,22 @@ const headers: Record<string, string> = {
   "Content-Type": "application/json",
 };
 
-// 기존 anon 키는 JWT이므로 Authorization 헤더를 함께 사용합니다.
-// 새 publishable 키는 apikey 헤더만 사용해야 합니다.
 if (key?.startsWith("eyJ")) headers.Authorization = `Bearer ${key}`;
+
+const selectFields = "id,post_slug,nickname,body,created_at";
 
 export async function loadComments(postSlug: string): Promise<CommentRecord[]> {
   if (!commentsReady) return [];
-  const response = await fetch(`${url}/rest/v1/comments?post_slug=eq.${encodeURIComponent(postSlug)}&is_visible=eq.true&select=id,post_slug,nickname,body,created_at&order=created_at.desc`, { headers });
+  const response = await fetch(`${url}/rest/v1/comments?post_slug=eq.${encodeURIComponent(postSlug)}&is_visible=eq.true&select=${selectFields}&order=created_at.desc`, { headers });
   if (!response.ok) throw new Error("댓글을 불러오지 못했습니다.");
+  return response.json();
+}
+
+export async function loadAllComments(limit = 200): Promise<CommentRecord[]> {
+  if (!commentsReady) return [];
+  const safeLimit = Math.min(Math.max(limit, 1), 500);
+  const response = await fetch(`${url}/rest/v1/comments?is_visible=eq.true&select=${selectFields}&order=created_at.desc&limit=${safeLimit}`, { headers });
+  if (!response.ok) throw new Error("공론장 댓글을 불러오지 못했습니다.");
   return response.json();
 }
 
