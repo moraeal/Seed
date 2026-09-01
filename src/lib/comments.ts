@@ -1,3 +1,5 @@
+import { seedComments } from "../data/seedComments";
+
 export type CommentRecord = {
   id: string;
   post_slug: string;
@@ -22,19 +24,38 @@ if (key?.startsWith("eyJ")) headers.Authorization = `Bearer ${key}`;
 
 const selectFields = "id,post_slug,nickname,body,created_at";
 
+const newestFirst = (comments: CommentRecord[]) => [...comments].sort(
+  (a, b) => b.created_at.localeCompare(a.created_at),
+);
+
 export async function loadComments(postSlug: string): Promise<CommentRecord[]> {
-  if (!commentsReady) return [];
-  const response = await fetch(`${url}/rest/v1/comments?post_slug=eq.${encodeURIComponent(postSlug)}&is_visible=eq.true&select=${selectFields}&order=created_at.desc`, { headers });
-  if (!response.ok) throw new Error("댓글을 불러오지 못했습니다.");
-  return response.json();
+  const starterComments = seedComments.filter((comment) => comment.post_slug === postSlug);
+  if (!commentsReady) return newestFirst(starterComments);
+
+  try {
+    const response = await fetch(`${url}/rest/v1/comments?post_slug=eq.${encodeURIComponent(postSlug)}&is_visible=eq.true&select=${selectFields}&order=created_at.desc`, { headers });
+    if (!response.ok) return newestFirst(starterComments);
+    const submittedComments: CommentRecord[] = await response.json();
+    return newestFirst([...submittedComments, ...starterComments]);
+  } catch {
+    return newestFirst(starterComments);
+  }
 }
 
-export async function loadAllComments(limit = 200): Promise<CommentRecord[]> {
-  if (!commentsReady) return [];
+export async function loadAllComments(limit = 300): Promise<CommentRecord[]> {
   const safeLimit = Math.min(Math.max(limit, 1), 500);
-  const response = await fetch(`${url}/rest/v1/comments?is_visible=eq.true&select=${selectFields}&order=created_at.desc&limit=${safeLimit}`, { headers });
-  if (!response.ok) throw new Error("공론장 댓글을 불러오지 못했습니다.");
-  return response.json();
+  let submittedComments: CommentRecord[] = [];
+
+  if (commentsReady) {
+    try {
+      const response = await fetch(`${url}/rest/v1/comments?is_visible=eq.true&select=${selectFields}&order=created_at.desc&limit=${safeLimit}`, { headers });
+      if (response.ok) submittedComments = await response.json();
+    } catch {
+      submittedComments = [];
+    }
+  }
+
+  return newestFirst([...submittedComments, ...seedComments]).slice(0, safeLimit);
 }
 
 export async function createComment(postSlug: string, nickname: string, body: string) {
