@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import ProposalLab from "./pages/ProposalLab";
 import Proposals from "./pages/Proposals";
 import Monitoring from "./pages/Monitoring";
+import PublicInterestWatchDetail from "./pages/PublicInterestWatchDetail";
 import Roadmap from "./pages/Roadmap";
 import Support from "./pages/Support";
 import TodayFrame from "./pages/TodayFrame";
@@ -42,6 +43,7 @@ function AppShell() {
           <Route path="/news" element={<News />} />
           <Route path="/news/:slug" element={<NewsDetail />} />
           <Route path="/monitoring" element={<Monitoring />} />
+          <Route path="/monitoring/:slug" element={<PublicInterestWatchDetail />} />
           <Route path="/proposals" element={<Proposals />} />
           <Route path="/academy" element={<Academy />} />
           <Route path="/experiments" element={<Experiments />} />
