@@ -1,4 +1,5 @@
-import { ArrowRight, Clock, Newspaper } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Clock, Newspaper } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { columns } from "../data/columns";
@@ -12,31 +13,106 @@ const resolveImageSrc = (src?: string) => {
 };
 
 const heroTextShadow = { textShadow: "0 2px 10px rgba(0,0,0,.82)" };
+const BRIEFING_SLIDE_INTERVAL = 4000;
 
 export default function Home() {
   const { language } = useLanguage();
-  const latestBriefing = getAllBriefingsNewestFirst()[0];
+  const briefingSlides = getAllBriefingsNewestFirst().slice(0, 4);
   const latestColumns = [...columns].sort((a, b) => b.issue - a.issue).slice(0, 2);
   const latestNews = getNewsNewestFirst().slice(0, 3);
-  const briefingImage = latestBriefing.images?.[0];
+  const [activeBriefing, setActiveBriefing] = useState(0);
+  const [briefingPaused, setBriefingPaused] = useState(false);
+  const touchStartX = useRef<number | null>(null);
   const ko = language === "ko";
+
+  useEffect(() => {
+    if (briefingPaused || briefingSlides.length < 2) return;
+    const timer = window.setInterval(() => {
+      setActiveBriefing((current) => (current + 1) % briefingSlides.length);
+    }, BRIEFING_SLIDE_INTERVAL);
+    return () => window.clearInterval(timer);
+  }, [briefingPaused, briefingSlides.length]);
+
+  const moveBriefing = (direction: number) => {
+    setActiveBriefing((current) => (current + direction + briefingSlides.length) % briefingSlides.length);
+  };
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    touchStartX.current = event.touches[0]?.clientX ?? null;
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (touchStartX.current === null) return;
+    const endX = event.changedTouches[0]?.clientX ?? touchStartX.current;
+    const delta = endX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(delta) < 45) return;
+    moveBriefing(delta < 0 ? 1 : -1);
+  };
 
   return (
     <>
       <section className="border-b border-green-deep/15 bg-ivory">
         <div className="container-page grid gap-6 py-8 sm:py-10 lg:grid-cols-[1.55fr_.75fr] lg:gap-8 lg:py-12">
-          <Link to={`/briefings/${latestBriefing.slug}`} className="group relative min-h-[520px] overflow-hidden bg-navy shadow-[0_24px_70px_rgba(23,76,58,.16)] sm:min-h-[590px]">
-            {briefingImage && <img src={resolveImageSrc(briefingImage.src)} alt={briefingImage.alt} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.018]" />}
-            <div className="absolute inset-0 bg-black/38" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/48 to-black/20" />
-            <div className="absolute inset-x-0 bottom-0 p-7 sm:p-10 lg:p-12">
-              <span className="inline-flex border border-white/45 bg-green-deep/80 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white backdrop-blur-sm">{ko ? "LATEST CITIZEN BRIEFING" : "LATEST CIVIC BRIEFING"}</span>
-              <p className="mt-5 text-xs font-extrabold tracking-[.13em] text-gold-light" style={heroTextShadow}>{latestBriefing.category} · {latestBriefing.date.replace(/-/g, ".")}</p>
-              <h1 className="editorial-title mt-3 max-w-4xl text-4xl font-bold leading-[1.08] text-white sm:text-5xl lg:text-[3.4rem]" style={heroTextShadow}>{latestBriefing.title}</h1>
-              <p className="mt-5 max-w-3xl text-sm font-semibold leading-7 text-white/95 sm:text-base" style={heroTextShadow}>{latestBriefing.summary}</p>
-              <div className="mt-7 flex items-center gap-5 text-xs font-bold text-white" style={heroTextShadow}><span className="flex items-center gap-1.5"><Clock size={14}/>{latestBriefing.readMinutes}분</span><span className="flex items-center gap-1.5">{ko ? "브리핑 읽기" : "Read briefing"}<ArrowRight size={15}/></span></div>
-            </div>
-          </Link>
+          <div
+            className="group relative min-h-[520px] overflow-hidden bg-navy shadow-[0_24px_70px_rgba(23,76,58,.16)] sm:min-h-[590px]"
+            onMouseEnter={() => setBriefingPaused(true)}
+            onMouseLeave={() => setBriefingPaused(false)}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            {briefingSlides.map((briefing, index) => {
+              const briefingImage = briefing.images?.[0];
+              const active = index === activeBriefing;
+              return (
+                <Link
+                  key={briefing.slug}
+                  to={`/briefings/${briefing.slug}`}
+                  aria-hidden={!active}
+                  tabIndex={active ? 0 : -1}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-out ${active ? "pointer-events-auto z-10 opacity-100" : "pointer-events-none z-0 opacity-0"}`}
+                >
+                  {briefingImage && (
+                    <img
+                      src={resolveImageSrc(briefingImage.src)}
+                      alt={briefingImage.alt}
+                      className={`absolute inset-0 h-full w-full object-cover transition-transform duration-[5000ms] ease-out ${active ? "scale-[1.025]" : "scale-100"}`}
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-black/38" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/48 to-black/20" />
+                  <div className={`absolute inset-x-0 bottom-0 p-7 transition-all duration-700 sm:p-10 lg:p-12 ${active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
+                    <span className="inline-flex border border-white/45 bg-green-deep/80 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white backdrop-blur-sm">{ko ? "CITIZEN BRIEFING" : "CIVIC BRIEFING"}</span>
+                    <p className="mt-5 text-xs font-extrabold tracking-[.13em] text-gold-light" style={heroTextShadow}>{briefing.category} · {briefing.date.replace(/-/g, ".")}</p>
+                    <h1 className="editorial-title mt-3 max-w-4xl text-4xl font-bold leading-[1.08] text-white sm:text-5xl lg:text-[3.4rem]" style={heroTextShadow}>{briefing.title}</h1>
+                    <p className="mt-5 max-w-3xl text-sm font-semibold leading-7 text-white/95 sm:text-base" style={heroTextShadow}>{briefing.summary}</p>
+                    <div className="mt-7 flex items-center gap-5 text-xs font-bold text-white" style={heroTextShadow}><span className="flex items-center gap-1.5"><Clock size={14}/>{briefing.readMinutes}분</span><span className="flex items-center gap-1.5">{ko ? "브리핑 읽기" : "Read briefing"}<ArrowRight size={15}/></span></div>
+                  </div>
+                </Link>
+              );
+            })}
+
+            {briefingSlides.length > 1 && (
+              <>
+                <div className="absolute bottom-5 right-5 z-30 flex items-center gap-2 sm:bottom-7 sm:right-7">
+                  <button type="button" onClick={() => moveBriefing(-1)} className="grid size-9 place-items-center rounded-full border border-white/40 bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/55" aria-label={ko ? "이전 브리핑" : "Previous briefing"}><ChevronLeft size={18}/></button>
+                  <button type="button" onClick={() => moveBriefing(1)} className="grid size-9 place-items-center rounded-full border border-white/40 bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/55" aria-label={ko ? "다음 브리핑" : "Next briefing"}><ChevronRight size={18}/></button>
+                </div>
+                <div className="absolute left-7 top-7 z-30 flex items-center gap-2 sm:left-10 sm:top-10">
+                  {briefingSlides.map((briefing, index) => (
+                    <button
+                      key={briefing.slug}
+                      type="button"
+                      onClick={() => setActiveBriefing(index)}
+                      className={`h-1.5 rounded-full transition-all duration-300 ${index === activeBriefing ? "w-8 bg-white" : "w-3 bg-white/45 hover:bg-white/70"}`}
+                      aria-label={`${ko ? "브리핑" : "Briefing"} ${index + 1}`}
+                      aria-current={index === activeBriefing ? "true" : undefined}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
 
           <aside className="flex flex-col border-y-2 border-navy bg-paper">
             <div className="flex items-center justify-between border-b border-green-deep/15 px-1 py-5"><div><span className="section-kicker">SEED COLUMN</span><h2 className="editorial-title mt-2 text-2xl font-bold text-navy">{ko ? "최신 칼럼" : "Latest Columns"}</h2></div><Link to="/columns" className="text-link text-xs">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link></div>
@@ -53,7 +129,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </>
   );
 }
