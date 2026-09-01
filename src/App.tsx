@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { LanguageProvider } from "./i18n";
@@ -18,14 +18,11 @@ import BriefingCommentary from "./pages/BriefingCommentary";
 import Columns from "./pages/Columns";
 import ColumnDetail from "./pages/ColumnDetail";
 import Academy from "./pages/Academy";
-import UnderConstruction from "./pages/UnderConstruction";
+import Experiments from "./pages/Experiments";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
 
 function AppShell() {
-  const location = useLocation();
-  const isForum = location.pathname === "/forum";
-
   return (
     <div className="min-h-screen bg-paper text-charcoal">
       <Header />
@@ -44,7 +41,7 @@ function AppShell() {
           <Route path="/monitoring" element={<Monitoring />} />
           <Route path="/proposals" element={<Proposals />} />
           <Route path="/academy" element={<Academy />} />
-          <Route path="/experiments" element={<UnderConstruction page="experiments" />} />
+          <Route path="/experiments" element={<Experiments />} />
           <Route path="/today-frame" element={<TodayFrame />} />
           <Route path="/dictionary" element={<CivicDictionary />} />
           <Route path="/proposal-lab" element={<ProposalLab />} />
@@ -53,7 +50,7 @@ function AppShell() {
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
-      {!isForum && <Footer />}
+      <Footer />
     </div>
   );
 }
