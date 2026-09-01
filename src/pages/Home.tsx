@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronLeft, ChevronRight, Clock, Newspaper } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Newspaper } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
@@ -111,7 +111,7 @@ export default function Home() {
                       {titleLine2 && <span className="block sm:whitespace-nowrap">{titleLine2}</span>}
                     </h1>
                     <p className="mt-2 line-clamp-2 max-w-3xl text-xs font-semibold leading-5 text-white/95 sm:text-sm" style={heroTextShadow}>{briefing.summary}</p>
-                    <div className="mt-3 flex items-center gap-4 text-[11px] font-bold text-white sm:text-xs" style={heroTextShadow}><span className="flex items-center gap-1.5"><Clock size={13}/>{briefing.readMinutes}분</span><span className="flex items-center gap-1.5">{ko ? "브리핑 읽기" : "Read briefing"}<ArrowRight size={14}/></span></div>
+                    <div className="mt-3 flex items-center text-[11px] font-bold text-white sm:text-xs" style={heroTextShadow}><span className="flex items-center gap-1.5">{ko ? "브리핑 읽기" : "Read briefing"}<ArrowRight size={14}/></span></div>
                   </div>
                 </Link>
               );
