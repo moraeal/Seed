@@ -55,7 +55,7 @@ export default function Home() {
       <section className="border-b border-green-deep/15 bg-ivory">
         <div className="container-page grid gap-6 py-8 sm:py-10 lg:grid-cols-[1.55fr_.75fr] lg:gap-8 lg:py-12">
           <div
-            className="group relative min-h-[520px] overflow-hidden bg-navy shadow-[0_24px_70px_rgba(23,76,58,.16)] sm:min-h-[590px]"
+            className="group relative min-h-[365px] overflow-hidden bg-navy shadow-[0_24px_70px_rgba(23,76,58,.16)] sm:min-h-[415px]"
             onMouseEnter={() => setBriefingPaused(true)}
             onMouseLeave={() => setBriefingPaused(false)}
             onTouchStart={handleTouchStart}
@@ -81,24 +81,20 @@ export default function Home() {
                   )}
                   <div className="absolute inset-0 bg-black/38" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/48 to-black/20" />
-                  <div className={`absolute inset-x-0 bottom-0 p-7 transition-all duration-700 sm:p-10 lg:p-12 ${active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
-                    <span className="inline-flex border border-white/45 bg-green-deep/80 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white backdrop-blur-sm">{ko ? "CITIZEN BRIEFING" : "CIVIC BRIEFING"}</span>
-                    <p className="mt-5 text-xs font-extrabold tracking-[.13em] text-gold-light" style={heroTextShadow}>{briefing.category} · {briefing.date.replace(/-/g, ".")}</p>
-                    <h1 className="editorial-title mt-3 max-w-4xl text-4xl font-bold leading-[1.08] text-white sm:text-5xl lg:text-[3.4rem]" style={heroTextShadow}>{briefing.title}</h1>
-                    <p className="mt-5 max-w-3xl text-sm font-semibold leading-7 text-white/95 sm:text-base" style={heroTextShadow}>{briefing.summary}</p>
-                    <div className="mt-7 flex items-center gap-5 text-xs font-bold text-white" style={heroTextShadow}><span className="flex items-center gap-1.5"><Clock size={14}/>{briefing.readMinutes}분</span><span className="flex items-center gap-1.5">{ko ? "브리핑 읽기" : "Read briefing"}<ArrowRight size={15}/></span></div>
+                  <div className={`absolute inset-x-0 bottom-0 p-6 pt-20 transition-all duration-700 sm:p-8 sm:pt-24 lg:p-9 lg:pt-24 ${active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
+                    <p className="text-[11px] font-extrabold tracking-[.13em] text-gold-light sm:text-xs" style={heroTextShadow}>{briefing.category} · {briefing.date.replace(/-/g, ".")}</p>
+                    <h1 className="editorial-title mt-2 max-w-4xl text-3xl font-bold leading-[1.08] text-white sm:text-4xl lg:text-[2.65rem]" style={heroTextShadow}>{briefing.title}</h1>
+                    <p className="mt-3 line-clamp-2 max-w-3xl text-sm font-semibold leading-6 text-white/95 sm:text-[15px]" style={heroTextShadow}>{briefing.summary}</p>
+                    <div className="mt-4 flex items-center gap-5 text-xs font-bold text-white" style={heroTextShadow}><span className="flex items-center gap-1.5"><Clock size={14}/>{briefing.readMinutes}분</span><span className="flex items-center gap-1.5">{ko ? "브리핑 읽기" : "Read briefing"}<ArrowRight size={15}/></span></div>
                   </div>
                 </Link>
               );
             })}
 
-            {briefingSlides.length > 1 && (
-              <>
-                <div className="absolute bottom-5 right-5 z-30 flex items-center gap-2 sm:bottom-7 sm:right-7">
-                  <button type="button" onClick={() => moveBriefing(-1)} className="grid size-9 place-items-center rounded-full border border-white/40 bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/55" aria-label={ko ? "이전 브리핑" : "Previous briefing"}><ChevronLeft size={18}/></button>
-                  <button type="button" onClick={() => moveBriefing(1)} className="grid size-9 place-items-center rounded-full border border-white/40 bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/55" aria-label={ko ? "다음 브리핑" : "Next briefing"}><ChevronRight size={18}/></button>
-                </div>
-                <div className="absolute left-7 top-7 z-30 flex items-center gap-2 sm:left-10 sm:top-10">
+            <div className="absolute left-5 top-5 z-30 flex flex-col items-start gap-3 sm:left-7 sm:top-7">
+              <span className="inline-flex border border-white/45 bg-green-deep/82 px-3 py-1.5 text-[10px] font-extrabold tracking-[.18em] text-white backdrop-blur-sm">{ko ? "CITIZEN BRIEFING" : "CIVIC BRIEFING"}</span>
+              {briefingSlides.length > 1 && (
+                <div className="flex items-center gap-2">
                   {briefingSlides.map((briefing, index) => (
                     <button
                       key={briefing.slug}
@@ -110,13 +106,20 @@ export default function Home() {
                     />
                   ))}
                 </div>
-              </>
+              )}
+            </div>
+
+            {briefingSlides.length > 1 && (
+              <div className="absolute bottom-4 right-4 z-30 flex items-center gap-2 sm:bottom-5 sm:right-5">
+                <button type="button" onClick={() => moveBriefing(-1)} className="grid size-9 place-items-center rounded-full border border-white/40 bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/55" aria-label={ko ? "이전 브리핑" : "Previous briefing"}><ChevronLeft size={18}/></button>
+                <button type="button" onClick={() => moveBriefing(1)} className="grid size-9 place-items-center rounded-full border border-white/40 bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/55" aria-label={ko ? "다음 브리핑" : "Next briefing"}><ChevronRight size={18}/></button>
+              </div>
             )}
           </div>
 
           <aside className="flex flex-col border-y-2 border-navy bg-paper">
-            <div className="flex items-center justify-between border-b border-green-deep/15 px-1 py-5"><div><span className="section-kicker">SEED COLUMN</span><h2 className="editorial-title mt-2 text-2xl font-bold text-navy">{ko ? "최신 칼럼" : "Latest Columns"}</h2></div><Link to="/columns" className="text-link text-xs">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link></div>
-            {latestColumns.map((column, index) => <Link key={column.slug} to={`/columns/${column.slug}`} className={`group flex flex-1 flex-col justify-center px-1 py-8 ${index === 0 ? "border-b border-green-deep/15" : ""}`}><div className="flex items-center gap-3 text-[10px] font-extrabold tracking-[.14em] text-green-mid"><span>씨드칼럼 {String(column.issue).padStart(2, "0")}</span><time className="text-charcoal/35">{column.date.replace(/-/g, ".")}</time></div><h3 className="editorial-title mt-4 text-2xl font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-3xl">{column.title}</h3><p className="mt-4 text-sm font-semibold leading-7 text-charcoal/65">{column.subtitle}</p><span className="mt-6 flex items-center gap-2 text-xs font-bold text-green-deep">{ko ? "칼럼 읽기" : "Read column"}<ArrowRight size={14}/></span></Link>)}
+            <div className="flex items-center justify-between border-b border-green-deep/15 px-6 py-5 sm:px-7"><div><span className="section-kicker">SEED COLUMN</span><h2 className="editorial-title mt-2 text-2xl font-bold text-navy">{ko ? "최신 칼럼" : "Latest Columns"}</h2></div><Link to="/columns" className="text-link text-xs">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link></div>
+            {latestColumns.map((column, index) => <Link key={column.slug} to={`/columns/${column.slug}`} className={`group flex flex-1 flex-col justify-center px-6 py-6 sm:px-7 ${index === 0 ? "border-b border-green-deep/15" : ""}`}><div className="flex items-center gap-3 text-[10px] font-extrabold tracking-[.14em] text-green-mid"><span>씨드칼럼 {String(column.issue).padStart(2, "0")}</span><time className="text-charcoal/35">{column.date.replace(/-/g, ".")}</time></div><h3 className="editorial-title mt-3 text-xl font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-2xl">{column.title}</h3><p className="mt-3 text-sm font-semibold leading-6 text-charcoal/65">{column.subtitle}</p><span className="mt-4 flex items-center gap-2 text-xs font-bold text-green-deep">{ko ? "칼럼 읽기" : "Read column"}<ArrowRight size={14}/></span></Link>)}
           </aside>
         </div>
       </section>
@@ -125,7 +128,7 @@ export default function Home() {
         <div className="container-page">
           <div className="flex flex-col gap-4 border-b-2 border-navy pb-6 sm:flex-row sm:items-end sm:justify-between"><div><span className="section-kicker">SEED NEWS</span><h2 className="editorial-title mt-3 text-3xl font-bold text-navy sm:text-4xl">{ko ? "지금 읽어야 할 뉴스" : "News to Read Now"}</h2></div><Link to="/news" className="text-link">{ko ? "뉴스 전체보기" : "View all news"}<ArrowRight size={16}/></Link></div>
           <div className="grid border-b border-green-deep/15 md:grid-cols-3 md:divide-x md:divide-green-deep/15">
-            {latestNews.map((item, index) => <Link key={item.slug} to={`/news/${item.slug}`} className={`group py-8 ${index === 0 ? "md:pr-8" : index === 1 ? "md:px-8" : "md:pl-8"}`}><div className="flex items-center gap-2 text-[10px] font-extrabold tracking-[.14em] text-green-mid"><Newspaper size={14}/>씨드뉴스 {String(item.issue).padStart(2, "0")} · {item.category}</div><h3 className="editorial-title mt-4 text-2xl font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h3><p className="mt-4 text-sm leading-7 text-charcoal/55">{item.summary}</p><time className="mt-6 block text-xs text-charcoal/40">{item.date.replace(/-/g, ".")}</time></Link>)}
+            {latestNews.map((item) => <Link key={item.slug} to={`/news/${item.slug}`} className="group px-5 py-8 sm:px-7 md:px-8"><div className="flex items-center gap-2 text-[10px] font-extrabold tracking-[.14em] text-green-mid"><Newspaper size={14}/>씨드뉴스 {String(item.issue).padStart(2, "0")} · {item.category}</div><h3 className="editorial-title mt-4 text-2xl font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h3><p className="mt-4 text-sm leading-7 text-charcoal/55">{item.summary}</p><time className="mt-6 block text-xs text-charcoal/40">{item.date.replace(/-/g, ".")}</time></Link>)}
           </div>
         </div>
       </section>
