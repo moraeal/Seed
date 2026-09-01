@@ -1,11 +1,14 @@
-import { ArrowRight, ChevronLeft, ChevronRight, Newspaper } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Lightbulb, Newspaper, Scale } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import SourceArticleCard from "../components/SourceArticleCard";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
+import { proposalItems } from "../data/civicParticipation";
 import { columns } from "../data/columns";
+import { proposalTranslations } from "../data/contentTranslations/staticPrograms";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
 import { getNewsNewestFirst } from "../data/news";
+import { LocalizedText, publicInterestWatchCases } from "../data/publicInterestWatch";
 import { useLanguage } from "../i18n";
 
 const resolveImageSrc = (src?: string) => {
@@ -44,10 +47,12 @@ export default function Home() {
   const briefingSlides = getAllBriefingsNewestFirst().slice(0, 4).map((item) => localizeBriefing(item, language));
   const latestColumns = [...columns].sort((a, b) => b.issue - a.issue).slice(0, 2).map((item) => localizeColumn(item, language));
   const latestNews = getNewsNewestFirst().slice(0, 3).map((item) => localizeNewsArticle(item, language));
+  const featuredProposals = proposalItems.map((item, index) => language === "ko" ? item : { ...item, ...proposalTranslations[index] });
   const [activeBriefing, setActiveBriefing] = useState(0);
   const [briefingPaused, setBriefingPaused] = useState(false);
   const touchStartX = useRef<number | null>(null);
   const ko = language === "ko";
+  const t = (value: LocalizedText) => value[language];
 
   useEffect(() => {
     if (briefingPaused || briefingSlides.length < 2) return;
@@ -156,6 +161,45 @@ export default function Home() {
               </Link>
             ))}
           </aside>
+        </div>
+      </section>
+
+      <section className="border-b border-green-deep/15 bg-ivory py-12 sm:py-16">
+        <div className="container-page grid gap-10 lg:grid-cols-2 lg:gap-14">
+          <div>
+            <div className="flex items-end justify-between gap-4 border-b-2 border-navy pb-4">
+              <div><span className="section-kicker">PUBLIC-INTEREST WATCH</span><h2 className="editorial-title mt-2 text-3xl font-bold text-navy">{ko ? "공익감시" : "Public-Interest Watch"}</h2></div>
+              <Link to="/monitoring" className="text-link shrink-0 text-xs">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link>
+            </div>
+            <p className="mt-5 max-w-xl text-sm leading-7 text-charcoal/60">{ko ? "기부금과 공익자원이 시민의 신뢰에 맞게 쓰이는지 공개자료와 기관의 답변을 근거로 기록합니다." : "We examine public records and institutional responses to see whether donations and public-interest resources merit civic trust."}</p>
+            <div className="mt-5 divide-y divide-green-deep/12 border-y border-green-deep/12 bg-white">
+              {publicInterestWatchCases.map((item) => (
+                <Link key={item.slug} to={`/monitoring/${item.slug}`} className="group grid grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-4 transition hover:bg-green-pale/45 sm:px-5">
+                  <Scale size={18} className="text-gold"/>
+                  <div className="min-w-0"><p className="text-[10px] font-extrabold tracking-[.1em] text-green-mid">{t(item.organization)} · {t(item.status)}</p><h3 className="mt-1 line-clamp-1 text-sm font-bold text-navy group-hover:text-green-mid">{t(item.title)}</h3></div>
+                  <ArrowRight size={15} className="text-green-deep/45 transition group-hover:translate-x-1 group-hover:text-green-deep"/>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <div className="flex items-end justify-between gap-4 border-b-2 border-navy pb-4">
+              <div><span className="section-kicker">CITIZEN PROPOSALS</span><h2 className="editorial-title mt-2 text-3xl font-bold text-navy">{ko ? "시민제안" : "Citizen Proposals"}</h2></div>
+              <Link to="/proposals" className="text-link shrink-0 text-xs">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link>
+            </div>
+            <p className="mt-5 max-w-xl text-sm leading-7 text-charcoal/60">{ko ? "시민의 작은 불편과 질문을 근거와 실행 가능성을 갖춘 공공의 제안으로 키웁니다." : "We turn everyday civic concerns into public proposals grounded in evidence and practical action."}</p>
+            <div className="mt-5 divide-y divide-green-deep/12 border-y border-green-deep/12 bg-white">
+              {featuredProposals.map((item) => (
+                <Link key={item.title} to="/proposals" className="group grid grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-4 transition hover:bg-green-pale/45 sm:px-5">
+                  <Lightbulb size={18} className="text-gold"/>
+                  <div className="min-w-0"><p className="text-[10px] font-extrabold tracking-[.1em] text-green-mid">{item.tag} · {item.status}</p><h3 className="mt-1 line-clamp-1 text-sm font-bold text-navy group-hover:text-green-mid">{item.title}</h3></div>
+                  <ArrowRight size={15} className="text-green-deep/45 transition group-hover:translate-x-1 group-hover:text-green-deep"/>
+                </Link>
+              ))}
+            </div>
+            <Link to="/proposals" className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-green-deep">{ko ? "나의 시민제안 작성하기" : "Write a citizen proposal"}<ArrowRight size={15}/></Link>
+          </div>
         </div>
       </section>
 
