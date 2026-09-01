@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { columns } from "../data/columns";
+import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
 import { getNewsNewestFirst } from "../data/news";
 import { useLanguage } from "../i18n";
 
@@ -39,9 +40,9 @@ const BRIEFING_SLIDE_INTERVAL = 4000;
 
 export default function Home() {
   const { language } = useLanguage();
-  const briefingSlides = getAllBriefingsNewestFirst().slice(0, 4);
-  const latestColumns = [...columns].sort((a, b) => b.issue - a.issue).slice(0, 2);
-  const latestNews = getNewsNewestFirst().slice(0, 3);
+  const briefingSlides = getAllBriefingsNewestFirst().slice(0, 4).map((item) => localizeBriefing(item, language));
+  const latestColumns = [...columns].sort((a, b) => b.issue - a.issue).slice(0, 2).map((item) => localizeColumn(item, language));
+  const latestNews = getNewsNewestFirst().slice(0, 3).map((item) => localizeNewsArticle(item, language));
   const [activeBriefing, setActiveBriefing] = useState(0);
   const [briefingPaused, setBriefingPaused] = useState(false);
   const touchStartX = useRef<number | null>(null);
@@ -147,7 +148,7 @@ export default function Home() {
             <div className="flex shrink-0 items-center justify-between border-b border-green-deep/15 px-6 py-4 sm:px-7"><div><span className="section-kicker">SEED COLUMN</span><h2 className="editorial-title mt-1 text-xl font-bold text-navy">{ko ? "최신 칼럼" : "Latest Columns"}</h2></div><Link to="/columns" className="text-link text-xs">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link></div>
             {latestColumns.map((column, index) => (
               <Link key={column.slug} to={`/columns/${column.slug}`} className={`group flex min-h-0 flex-1 flex-col justify-center px-6 py-2.5 sm:px-7 ${index === 0 ? "border-b border-green-deep/15" : ""}`}>
-                <div className="flex shrink-0 items-center gap-3 text-[9px] font-extrabold tracking-[.13em] text-green-mid"><span>씨드칼럼 {String(column.issue).padStart(2, "0")}</span><time className="text-charcoal/35">{column.date.replace(/-/g, ".")}</time></div>
+                <div className="flex shrink-0 items-center gap-3 text-[9px] font-extrabold tracking-[.13em] text-green-mid"><span>{ko ? `씨드칼럼 ${String(column.issue).padStart(2, "0")}` : `SEED COLUMN ${String(column.issue).padStart(2, "0")}`}</span><time className="text-charcoal/35">{column.date.replace(/-/g, ".")}</time></div>
                 <h3 className="editorial-title mt-1.5 line-clamp-2 text-[17px] font-bold leading-6 text-navy transition group-hover:text-green-mid">{column.title}</h3>
                 <p className="mt-1 line-clamp-1 text-xs font-semibold leading-5 text-charcoal/65">{column.subtitle}</p>
                 <span className="mt-1.5 flex shrink-0 items-center gap-2 text-[11px] font-bold text-green-deep">{ko ? "칼럼 읽기" : "Read column"}<ArrowRight size={13}/></span>
@@ -161,7 +162,7 @@ export default function Home() {
         <div className="container-page">
           <div className="flex flex-col gap-4 border-b-2 border-navy pb-6 sm:flex-row sm:items-end sm:justify-between"><div><span className="section-kicker">SEED NEWS</span><h2 className="editorial-title mt-3 text-3xl font-bold text-navy sm:text-4xl">{ko ? "지금 읽어야 할 뉴스" : "News to Read Now"}</h2></div><Link to="/news" className="text-link">{ko ? "뉴스 전체보기" : "View all news"}<ArrowRight size={16}/></Link></div>
           <div className="grid border-b border-green-deep/15 md:grid-cols-3 md:divide-x md:divide-green-deep/15">
-            {latestNews.map((item) => <Link key={item.slug} to={`/news/${item.slug}`} className="group px-5 py-8 sm:px-7 md:px-8"><div className="flex items-center gap-2 text-[10px] font-extrabold tracking-[.14em] text-green-mid"><Newspaper size={14}/>씨드뉴스 {String(item.issue).padStart(2, "0")} · {item.category}</div><h3 className="editorial-title mt-4 text-2xl font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h3><p className="mt-4 text-sm leading-7 text-charcoal/55">{item.summary}</p><time className="mt-6 block text-xs text-charcoal/40">{item.date.replace(/-/g, ".")}</time></Link>)}
+            {latestNews.map((item) => <Link key={item.slug} to={`/news/${item.slug}`} className="group px-5 py-8 sm:px-7 md:px-8"><div className="flex items-center gap-2 text-[10px] font-extrabold tracking-[.14em] text-green-mid"><Newspaper size={14}/>{ko ? `씨드뉴스 ${String(item.issue).padStart(2, "0")}` : `SEED NEWS ${String(item.issue).padStart(2, "0")}`} · {item.category}</div><h3 className="editorial-title mt-4 text-2xl font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h3><p className="mt-4 text-sm leading-7 text-charcoal/55">{item.summary}</p><time className="mt-6 block text-xs text-charcoal/40">{item.date.replace(/-/g, ".")}</time></Link>)}
           </div>
         </div>
       </section>
