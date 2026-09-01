@@ -1,5 +1,6 @@
 import { ArrowRight, Eye, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
+import CommentSection from "../components/CommentSection";
 import { monitoringItems } from "../data/civicParticipation";
 
 export default function Monitoring() {
@@ -37,6 +38,8 @@ export default function Monitoring() {
           <div className="flex items-center gap-3 text-navy"><ShieldCheck className="text-gold"/><h2 className="text-2xl font-extrabold">씨드의 감시 원칙</h2></div>
           <p className="text-sm leading-8 text-charcoal/65">진영의 유불리가 아니라 사실과 권력의 크기를 봅니다. 진보 진영의 과장과 권력 남용은 분명하게 비판하되, 우리 편의 과장도 사실과 다르면 바로잡습니다. 감시는 비난을 위한 것이 아니라 시민이 권력의 결정을 다시 확인할 수 있게 만드는 기록입니다.</p>
         </aside>
+
+        <div className="mx-auto max-w-4xl"><CommentSection postSlug="monitoring" /></div>
       </div>
     </section>
   );
