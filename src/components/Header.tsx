@@ -1,12 +1,14 @@
-import { Menu, X } from "lucide-react";
+import { LogIn, LogOut, Menu, UserRound, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../auth";
 import { getContent } from "../data/siteContent";
 import { useLanguage } from "../i18n";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { language, setLanguage } = useLanguage();
+  const { user, nickname, isVerified, signOut } = useAuth();
   const t = getContent(language);
 
   const nav = language === "en"
@@ -56,6 +58,16 @@ export default function Header() {
         </nav>
 
         <div className="ml-auto hidden shrink-0 items-center gap-2 md:flex xl:ml-1">
+          {user ? (
+            <>
+              <Link to="/account" className="inline-flex min-h-9 items-center gap-1.5 rounded-md border border-green-deep/15 bg-white px-3 text-xs font-extrabold text-green-deep">
+                <UserRound size={14}/><span className="max-w-20 truncate">{nickname}</span>{isVerified && <span className="text-[9px] text-green-mid">●</span>}
+              </Link>
+              <button onClick={() => void signOut()} className="grid size-9 place-items-center rounded-md border border-green-deep/15 text-charcoal/55 hover:text-green-deep" type="button" aria-label={language === "en" ? "Sign out" : "로그아웃"}><LogOut size={15}/></button>
+            </>
+          ) : (
+            <Link to="/account" className="inline-flex min-h-9 items-center gap-1.5 rounded-md border border-green-deep/15 bg-white px-3 text-xs font-extrabold text-green-deep"><LogIn size={14}/>{language === "en" ? "Sign in" : "로그인"}</Link>
+          )}
           <button onClick={toggleLanguage} className="button-secondary min-w-20 text-xs" type="button">{t.actions.language}</button>
         </div>
 
@@ -67,7 +79,15 @@ export default function Header() {
       {open && (
         <div className="border-t border-green-deep/10 bg-paper px-5 py-5 xl:hidden">
           <nav className="container-page grid grid-cols-2 gap-2 sm:grid-cols-3">{nav.map((item) => renderNavItem(item, true))}</nav>
-          <div className="container-page mt-3"><button onClick={toggleLanguage} className="button-secondary" type="button">{t.actions.language}</button></div>
+          <div className="container-page mt-4 flex flex-wrap gap-2">
+            {user ? (
+              <>
+                <Link to="/account" onClick={() => setOpen(false)} className="button-secondary"><UserRound size={15}/>{nickname}</Link>
+                <button onClick={() => { setOpen(false); void signOut(); }} className="button-secondary" type="button"><LogOut size={15}/>{language === "en" ? "Sign out" : "로그아웃"}</button>
+              </>
+            ) : <Link to="/account" onClick={() => setOpen(false)} className="button-primary"><LogIn size={15}/>{language === "en" ? "Sign in" : "로그인"}</Link>}
+            <button onClick={toggleLanguage} className="button-secondary" type="button">{t.actions.language}</button>
+          </div>
         </div>
       )}
     </header>
