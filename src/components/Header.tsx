@@ -54,9 +54,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-green-deep/15 bg-ivory/95 backdrop-blur-xl">
       <div className="container-page flex h-[78px] items-center gap-4">
-        <Link to={language === "en" ? "/en/" : "/"} className="flex shrink-0 items-center gap-4" aria-label={language === "en" ? "SEED Civic Partners home" : "씨드시민파트너스 홈"}>
+        <Link to={language === "en" ? "/en/" : "/"} className="flex shrink-0 items-center" aria-label={language === "en" ? "SEED Civic Partners home" : "씨드시민파트너스 홈"}>
           <BrandLockup tone="header" />
-          <span className="hidden border-l border-green-deep/20 pl-4 text-[9px] font-bold leading-4 tracking-[.15em] text-charcoal/45 sm:block">INDEPENDENT<br />CIVIC JOURNAL</span>
         </Link>
 
         <nav className="ml-auto hidden items-center gap-3 xl:flex 2xl:gap-5" aria-label={language === "en" ? "Main menu" : "주요 메뉴"}>
