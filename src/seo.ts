@@ -45,6 +45,8 @@ const staticRoutes: SeoRoute[] = [
   { path: "/columns", title: "씨드칼럼 | 씨드시민파트너스", description: "자유, 법치, 책임, 시장의 자율성과 강한 시민사회의 관점에서 오늘의 쟁점을 논평합니다.", type: "website", lastModified: newest(columns.map((item) => item.date)) },
   { path: "/monitoring", title: "공익감시 | 씨드시민파트너스", description: "공익조직과 공공제도가 시민에게 권한과 재정, 성과를 충분히 설명하는지 근거를 바탕으로 점검합니다.", type: "website", lastModified: newest(publicInterestWatchCases.map((item) => item.updatedAt)) },
   { path: "/proposals", title: "시민제안 | 씨드시민파트너스", description: "시민의 문제의식을 구체적인 제도와 정책의 제안으로 키우는 씨드시민파트너스의 제안 공간입니다.", type: "website", lastModified: latestDate },
+  { path: "/partners", title: "창립파트너 | 씨드시민파트너스", description: "씨드시민파트너스의 창립 취지와 파트너의 역할, 활동 방향을 확인하고 창립파트너 가입을 신청할 수 있습니다.", type: "website", lastModified: latestDate },
+  { path: "/partners/founding-statement", title: "창립취지문 | 씨드시민파트너스", description: "자유로운 시민과 책임 있는 공익, 강한 시민사회를 지향하는 씨드시민파트너스의 창립취지문 전문입니다.", type: "article", lastModified: latestDate, author: SITE_NAME, section: "창립취지문" },
   { path: "/about", title: "소개 | 씨드시민파트너스", description: "시민의 자유와 책임, 제한되고 유능한 국가, 시장의 자율성과 강한 사회를 지향하는 씨드시민파트너스를 소개합니다.", type: "website", lastModified: latestDate },
 ];
 

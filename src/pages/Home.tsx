@@ -184,7 +184,7 @@ export default function Home() {
                   : "SEED Civic Partners is an independent civic platform in South Korea that monitors public-interest institutions, explains facts and context through civic briefings, and turns citizen concerns into practical public proposals. Help us build a stronger civil society between state and market."}
               </p>
               <div className="mt-5 flex items-center">
-                <Link to="/support" className="inline-flex items-center gap-2 bg-green-deep px-5 py-3 text-sm font-extrabold text-white transition hover:bg-green-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-deep/35 focus-visible:ring-offset-2">
+                <Link to="/partners" className="inline-flex items-center gap-2 bg-green-deep px-5 py-3 text-sm font-extrabold text-white transition hover:bg-green-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-deep/35 focus-visible:ring-offset-2">
                   {ko ? "좋아요, 함께 할게요!" : "Yes, I'd Like to Join!"}<ArrowRight size={16}/>
                 </Link>
               </div>

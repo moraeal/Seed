@@ -25,6 +25,8 @@ import Academy from "./pages/Academy";
 import Experiments from "./pages/Experiments";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
+import Partners from "./pages/Partners";
+import FoundingStatement from "./pages/FoundingStatement";
 
 function AppShell() {
   return (
@@ -55,6 +57,8 @@ function AppShell() {
           <Route path="/proposal-lab" element={<ProposalLab />} />
           <Route path="/roadmap" element={<Roadmap />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/partners" element={<Partners />} />
+          <Route path="/partners/founding-statement" element={<FoundingStatement />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>

@@ -22,6 +22,7 @@ export default function Header() {
         ["Public Watch", "/monitoring"],
         ["Proposals", "/proposals"],
         ["Forum", "/forum"],
+        ["Partners", "/partners"],
         ["About", "/about"],
       ]
     : [
@@ -31,6 +32,7 @@ export default function Header() {
         ["공익감시", "/monitoring"],
         ["제안", "/proposals"],
         ["공론장", "/forum"],
+        ["파트너스", "/partners"],
         ["소개", "/about"],
       ];
 
