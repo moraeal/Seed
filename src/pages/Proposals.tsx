@@ -36,14 +36,15 @@ export default function Proposals() {
         <div className="mt-14 sm:mt-20"><CitizenProposalForm ko={ko}/></div>
 
         <section className="mt-16 border-t-2 border-navy pt-8 sm:mt-24">
-          <div className="max-w-3xl"><span className="section-kicker">PROPOSALS IN REVIEW</span><h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{ko ? "지금 검토하는 시민제안" : "Citizen Proposals Under Review"}</h2><p className="mt-3 text-sm leading-7 text-charcoal/55">{ko ? "씨드가 사실관계와 실행 가능성을 검토하고 있는 제안 사례입니다." : "Examples currently being reviewed for evidence and practical feasibility."}</p></div>
+          <div className="max-w-3xl"><span className="section-kicker">PROPOSAL EXAMPLES</span><h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{ko ? "서로 다른 시민의 자리에서 시작한 제안" : "Proposals Starting from Different Civic Perspectives"}</h2><p className="mt-3 text-sm leading-7 text-charcoal/55">{ko ? "아래 3건은 실제 접수 기록이 아니라 다양한 시민의 시각과 말투를 반영해 편집부가 구성한 제안 예시입니다. 실제 접수 제안은 제안자와 협의한 뒤 별도로 표시합니다." : "These three items are editorially constructed examples reflecting different civic perspectives and voices; they are not records of actual submissions. Real submissions will be identified separately after consultation with each proposer."}</p></div>
         <div className="mt-8 grid gap-5 lg:grid-cols-3">
           {items.map((item) => (
-            <article key={item.title} className="flex min-h-[340px] flex-col border border-green-deep/15 bg-white p-7">
+            <article key={item.title} className="flex min-h-[390px] flex-col border border-green-deep/15 bg-white p-7">
               <div className="flex items-center justify-between gap-3">
                 <span className="section-kicker">{item.tag}</span>
                 <span className="rounded-full bg-[#F3E7C7] px-3 py-1 text-[11px] font-extrabold text-[#7E5D15]">{item.status}</span>
               </div>
+              <p className="mt-4 text-xs font-bold text-green-mid">{item.perspective}</p>
               <Lightbulb className="mt-8 text-gold" size={28} />
               <h2 className="editorial-title mt-6 text-2xl font-bold leading-snug text-navy">{item.title}</h2>
               <p className="mt-4 text-sm leading-7 text-charcoal/60">{item.summary}</p>
