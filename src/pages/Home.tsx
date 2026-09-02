@@ -45,7 +45,7 @@ const BRIEFING_SLIDE_INTERVAL = 4000;
 export default function Home() {
   const { language } = useLanguage();
   const briefingSlides = getAllBriefingsNewestFirst().slice(0, 4).map((item) => localizeBriefing(item, language));
-  const latestColumns = [...columns].sort((a, b) => b.issue - a.issue).slice(0, 2).map((item) => localizeColumn(item, language));
+  const latestColumns = [...columns].sort((a, b) => b.issue - a.issue).slice(0, 3).map((item) => localizeColumn(item, language));
   const latestNews = getNewsNewestFirst().slice(0, 3).map((item) => localizeNewsArticle(item, language));
   const featuredProposals = proposalItems.map((item, index) => language === "ko" ? item : { ...item, ...proposalTranslations[index] });
   const [activeBriefing, setActiveBriefing] = useState(0);
@@ -125,7 +125,7 @@ export default function Home() {
             })}
 
             <div className="absolute left-4 top-4 z-30 flex flex-col items-start gap-2 sm:left-5 sm:top-5">
-              <span className="inline-flex border border-white/45 bg-green-deep/82 px-2.5 py-1.5 text-[9px] font-extrabold tracking-[.17em] text-white backdrop-blur-sm sm:text-[10px]">{ko ? "CITIZEN BRIEFING" : "CIVIC BRIEFING"}</span>
+              <span className="inline-flex border border-white/45 bg-green-deep/82 px-2.5 py-1.5 text-[9px] font-extrabold tracking-[.13em] text-white backdrop-blur-sm sm:text-[10px]">Civic Briefing</span>
               {briefingSlides.length > 1 && (
                 <div className="flex items-center gap-1.5">
                   {briefingSlides.map((briefing, index) => (
@@ -150,14 +150,14 @@ export default function Home() {
             )}
           </div>
 
-          <aside className="flex flex-col overflow-hidden border-y-2 border-navy bg-paper lg:h-[420px]">
-            <div className="flex shrink-0 items-center justify-between border-b border-green-deep/15 px-6 py-4 sm:px-7"><div><span className="section-kicker">SEED COLUMN</span><h2 className="editorial-title mt-1 text-xl font-bold text-navy">{ko ? "최신 칼럼" : "Latest Columns"}</h2></div><Link to="/columns" className="text-link text-xs">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link></div>
+          <aside className="flex flex-col overflow-hidden border-y-2 border-green-deep bg-paper lg:h-[420px]">
+            <div className="flex shrink-0 items-center justify-between bg-green-deep px-6 py-3 text-white sm:px-7"><div><span className="text-[9px] font-extrabold tracking-[.16em] text-white/65">SEED COLUMN</span><h2 className="editorial-title mt-0.5 text-xl font-bold text-white">{ko ? "최신 칼럼" : "Latest Columns"}</h2></div><Link to="/columns" className="inline-flex items-center gap-1 text-xs font-bold text-white/80 transition hover:text-white">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link></div>
             {latestColumns.map((column, index) => (
-              <Link key={column.slug} to={`/columns/${column.slug}`} className={`group flex min-h-0 flex-1 flex-col justify-center px-6 py-2.5 sm:px-7 ${index === 0 ? "border-b border-green-deep/15" : ""}`}>
+              <Link key={column.slug} to={`/columns/${column.slug}`} className={`group flex min-h-0 flex-1 flex-col justify-center px-6 py-1.5 sm:px-7 ${index < latestColumns.length - 1 ? "border-b border-green-deep/15" : ""}`}>
                 <div className="flex shrink-0 items-center gap-3 text-[9px] font-extrabold tracking-[.13em] text-green-mid"><span>{ko ? `씨드칼럼 ${String(column.issue).padStart(2, "0")}` : `SEED COLUMN ${String(column.issue).padStart(2, "0")}`}</span><time className="text-charcoal/35">{column.date.replace(/-/g, ".")}</time></div>
-                <h3 className="editorial-title mt-1.5 line-clamp-2 text-[17px] font-bold leading-6 text-navy transition group-hover:text-green-mid">{column.title}</h3>
-                <p className="mt-1 line-clamp-1 text-xs font-semibold leading-5 text-charcoal/65">{column.subtitle}</p>
-                <span className="mt-1.5 flex shrink-0 items-center gap-2 text-[11px] font-bold text-green-deep">{ko ? "칼럼 읽기" : "Read column"}<ArrowRight size={13}/></span>
+                <h3 className="editorial-title mt-1 line-clamp-2 text-[16px] font-bold leading-5 text-navy transition group-hover:text-green-mid">{column.title}</h3>
+                <p className="mt-0.5 line-clamp-1 text-[11px] font-semibold leading-4 text-charcoal/65">{column.subtitle}</p>
+                <span className="mt-1 flex shrink-0 items-center gap-2 text-[10px] font-bold text-green-deep">{ko ? "칼럼 읽기" : "Read column"}<ArrowRight size={12}/></span>
               </Link>
             ))}
           </aside>

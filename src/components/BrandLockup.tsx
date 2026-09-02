@@ -22,30 +22,32 @@ export default function BrandLockup({ tone }: BrandLockupProps) {
             : "absolute -left-0.5 -top-0.5 size-[52px] max-w-none"}
         />
       </span>
-      <svg viewBox="0 0 180 46" role="img" aria-hidden="true" className="h-[46px] w-[180px] shrink-0 overflow-visible">
-        <text
-          x="0"
-          y="21"
-          fill={footer ? "#FFFFFF" : "#174C3A"}
-          fontFamily="Pretendard, 'Noto Sans KR', Arial, sans-serif"
-          fontSize="19"
-          fontWeight="800"
-          letterSpacing="-0.4"
-        >
-          씨드시민파트너스
-        </text>
-        <text
-          x="1"
-          y="41"
-          fill={footer ? "#B8D0C8" : "#656B68"}
-          fontFamily="Pretendard, 'Noto Sans KR', Arial, sans-serif"
-          fontSize="8.5"
-          fontWeight="700"
-          letterSpacing="1.45"
-        >
-          SEED CIVIC PARTNERS
-        </text>
-      </svg>
+      {!footer && (
+        <svg viewBox="0 0 180 46" role="img" aria-hidden="true" className="h-[46px] w-[180px] shrink-0 overflow-visible">
+          <text
+            x="0"
+            y="21"
+            fill="#174C3A"
+            fontFamily="Pretendard, 'Noto Sans KR', Arial, sans-serif"
+            fontSize="19"
+            fontWeight="800"
+            letterSpacing="-0.4"
+          >
+            씨드시민파트너스
+          </text>
+          <text
+            x="1"
+            y="41"
+            fill="#656B68"
+            fontFamily="Pretendard, 'Noto Sans KR', Arial, sans-serif"
+            fontSize="8.5"
+            fontWeight="700"
+            letterSpacing="1.45"
+          >
+            SEED CIVIC PARTNERS
+          </text>
+        </svg>
+      )}
     </span>
   );
 }
