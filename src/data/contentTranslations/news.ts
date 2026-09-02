@@ -11,6 +11,8 @@ export const newsTranslations: Record<string, NewsTranslation> = {
       outlet: "Newsis",
       headline: "Consumer Coalition Urges National Assembly to Enact an Effective Class Action Law",
       linkLabel: "Read the Newsis article",
+      thumbnailAlt: "Consumer and civic groups call for class action legislation outside the National Assembly in the rain",
+      thumbnailCaption: "Consumer coalition press conference outside the National Assembly · Newsis",
       summary: [
         "A coalition of 19 consumer and civic organizations held a press conference outside the National Assembly on September 1, calling for passage during the regular session.",
         "The groups argue that an effective law requires opt-out participation, under which similarly situated victims are covered unless they withdraw, and a mechanism for access to evidence held by defendants.",

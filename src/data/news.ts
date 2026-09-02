@@ -65,6 +65,9 @@ export const newsArticles: NewsArticle[] = [
     "headline": "‘진짜 집단소송법 제정해야’…소비자 제정연대, 국회에 입법 촉구",
     "url": "https://mobile.newsis.com/view_amp.html?ar_id=NISX20260901_0003771422",
     "linkLabel": "뉴시스 원문 보기",
+    "thumbnailUrl": "https://img1.newsis.com/2026/09/01/NISI20260901_0002226989_web.jpg",
+    "thumbnailAlt": "비가 내리는 국회 앞에서 집단소송법 제정을 촉구하는 소비자·시민단체 기자회견",
+    "thumbnailCaption": "소비자 보호를 위한 집단소송법 제정연대의 국회 앞 기자회견 · 뉴시스",
     "summary": [
       "19개 소비자·시민단체로 구성된 제정연대는 9월 1일 국회 앞에서 집단소송법의 정기국회 처리를 촉구했습니다.",
       "단체들은 소송에서 빠지겠다고 밝히지 않은 피해자에게도 판결 효력이 미치는 옵트아웃 방식과, 기업이 보유한 자료에 접근할 수 있는 증거개시 장치가 필요하다고 주장했습니다.",
