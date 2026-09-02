@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" role="img" aria-labelledby="title desc">
+  <title id="title">국가 시민참여 시스템의 흐름</title>
+  <desc id="desc">시민의 제안이 모두의 광장, 인공지능과 정책 큐레이터, 숙의 프로그램, 국가시민참여위원회를 거쳐 정부 정책과 지역위원회로 연결되는 구조</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7f4e9"/><stop offset="1" stop-color="#e7efe9"/></linearGradient>
+    <linearGradient id="hub" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#183f36"/><stop offset="1" stop-color="#0e2636"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#102c27" flood-opacity=".13"/></filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0 0l12 6-12 6z" fill="#b58c35"/></marker>
+    <style>
+      .ko{font-family:Pretendard,'Noto Sans KR',Arial,sans-serif}.serif{font-family:'Noto Serif KR',Georgia,serif}.label{font-size:22px;font-weight:800;fill:#102c27}.small{font-size:16px;font-weight:600;fill:#52605c}.white{fill:#fff}.line{fill:none;stroke:#b58c35;stroke-width:5;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1400" height="860" rx="28" fill="url(#bg)"/>
+  <text x="700" y="72" text-anchor="middle" class="ko serif" font-size="34" font-weight="800" fill="#102c27">시민의 목소리는 어디에서 결정되는가</text>
+  <text x="700" y="108" text-anchor="middle" class="ko small">참여의 입구는 넓어지지만, 선별·숙성·의제 설정 권한은 중앙으로 모일 수 있습니다.</text>
+
+  <path class="line" d="M258 280H400"/><path class="line" d="M626 280H770"/><path class="line" d="M996 280h116"/>
+  <g filter="url(#shadow)"><rect x="70" y="200" width="188" height="160" rx="22" fill="#fff" stroke="#bfd1c8" stroke-width="3"/><circle cx="164" cy="244" r="25" fill="#d9eadf"/><path d="M139 310c10-35 40-35 50 0M126 323h76" fill="none" stroke="#26634f" stroke-width="8" stroke-linecap="round"/><text x="164" y="347" text-anchor="middle" class="ko label">시민의 제안</text></g>
+  <g filter="url(#shadow)"><rect x="400" y="200" width="226" height="160" rx="22" fill="#fff" stroke="#bfd1c8" stroke-width="3"/><rect x="473" y="225" width="80" height="58" rx="10" fill="#d9eadf"/><path d="M489 244h48M489 258h34" stroke="#26634f" stroke-width="6" stroke-linecap="round"/><text x="513" y="320" text-anchor="middle" class="ko label">모두의 광장</text><text x="513" y="347" text-anchor="middle" class="ko small">제안·토론·국민심사</text></g>
+  <g filter="url(#shadow)"><rect x="770" y="200" width="226" height="160" rx="22" fill="#fff" stroke="#d9c894" stroke-width="3"/><circle cx="883" cy="250" r="29" fill="#f0e6c8"/><path d="M870 250h26M883 237v26" stroke="#9a752a" stroke-width="6" stroke-linecap="round"/><text x="883" y="320" text-anchor="middle" class="ko label">AI·정책 큐레이터</text><text x="883" y="347" text-anchor="middle" class="ko small">분류·통합·선별·숙성</text></g>
+  <g filter="url(#shadow)"><rect x="1112" y="200" width="218" height="160" rx="22" fill="#fff" stroke="#bfd1c8" stroke-width="3"/><circle cx="1221" cy="250" r="26" fill="#d9eadf"/><circle cx="1195" cy="258" r="15" fill="#85ad9d"/><circle cx="1247" cy="258" r="15" fill="#85ad9d"/><text x="1221" y="320" text-anchor="middle" class="ko label">숙의 프로그램</text><text x="1221" y="347" text-anchor="middle" class="ko small">토론회·의제별 공론화</text></g>
+
+  <path class="line" d="M1221 360v93H928"/>
+  <g filter="url(#shadow)"><rect x="472" y="450" width="456" height="176" rx="26" fill="url(#hub)"/><text x="700" y="516" text-anchor="middle" class="ko serif white" font-size="31" font-weight="800">국가시민참여위원회</text><text x="700" y="557" text-anchor="middle" class="ko white" font-size="19" font-weight="700">종합계획 · 심의·의결 · 추진상황 점검</text><text x="700" y="591" text-anchor="middle" class="ko" font-size="17" fill="#d7e7df">시민참여 · 숙의공론 · 민주시민교육 · 시민사회 활성화</text></g>
+
+  <path class="line" d="M585 626v89H306"/><path class="line" d="M815 626v89h279"/>
+  <g filter="url(#shadow)"><rect x="120" y="712" width="372" height="104" rx="20" fill="#fff" stroke="#bfd1c8" stroke-width="3"/><text x="306" y="756" text-anchor="middle" class="ko label">정부 정책·국회 입법</text><text x="306" y="786" text-anchor="middle" class="ko small">수용·불수용과 책임의 문제</text></g>
+  <g filter="url(#shadow)"><rect x="908" y="712" width="372" height="104" rx="20" fill="#fff" stroke="#bfd1c8" stroke-width="3"/><text x="1094" y="756" text-anchor="middle" class="ko label">시·도 위원회·지역 지원센터</text><text x="1094" y="786" text-anchor="middle" class="ko small">지역 공론·교육·시민사회 지원</text></g>
+  <rect x="44" y="42" width="7" height="776" rx="4" fill="#b58c35"/>
+</svg>
