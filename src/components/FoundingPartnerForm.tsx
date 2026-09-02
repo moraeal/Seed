@@ -1,5 +1,6 @@
 import { Mail, Save } from "lucide-react";
 import { FormEvent, useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 type PartnerDraft = {
   name: string;
@@ -28,10 +29,10 @@ const emptyDraft: PartnerDraft = {
 const storageKey = "seed-founding-partner-draft";
 
 export default function FoundingPartnerForm({ ko }: { ko: boolean }) {
+  const navigate = useNavigate();
   const [draft, setDraft] = useState<PartnerDraft>(emptyDraft);
   const [consent, setConsent] = useState(false);
   const [saved, setSaved] = useState(false);
-  const [mailReady, setMailReady] = useState(false);
 
   useEffect(() => {
     try {
@@ -45,7 +46,6 @@ export default function FoundingPartnerForm({ ko }: { ko: boolean }) {
   const update = (field: keyof PartnerDraft, value: string) => {
     setDraft((current) => ({ ...current, [field]: value }));
     setSaved(false);
-    setMailReady(false);
   };
 
   const saveDraft = () => {
@@ -76,8 +76,18 @@ export default function FoundingPartnerForm({ ko }: { ko: boolean }) {
   const submit = (event: FormEvent) => {
     event.preventDefault();
     saveDraft();
-    setMailReady(true);
-    window.location.href = mailto;
+
+    const mailLink = document.createElement("a");
+    mailLink.href = mailto;
+    mailLink.target = "_blank";
+    mailLink.rel = "noopener noreferrer";
+    document.body.appendChild(mailLink);
+    mailLink.click();
+    mailLink.remove();
+
+    window.setTimeout(() => {
+      navigate(ko ? "/" : "/en/", { replace: true });
+    }, 300);
   };
 
   const roles = ko
@@ -114,7 +124,7 @@ export default function FoundingPartnerForm({ ko }: { ko: boolean }) {
 
       <div className="mt-7 flex flex-wrap items-center gap-4">
         <button type="submit" className="button-primary">{ko ? "이메일로 가입 신청 보내기" : "Send Application by Email"}<Mail size={16}/></button>
-        <p className="max-w-xl text-xs leading-6 text-charcoal/45">{mailReady ? (ko ? "이메일 앱이 열렸습니다. 작성된 내용을 확인한 뒤 마지막으로 ‘보내기’를 눌러주세요." : "Your email app has opened. Review the message and press Send to complete your application.") : (ko ? "버튼을 누르면 작성 내용이 입력된 이메일 앱이 열립니다. 이메일에서 ‘보내기’를 눌러야 접수가 완료됩니다." : "The button opens your email app with the form filled in. Press Send in the email app to complete submission.")}</p>
+        <p className="max-w-xl text-xs leading-6 text-charcoal/45">{ko ? "버튼을 누르면 이메일 앱이 별도로 열리고, 씨드 홈페이지는 메인으로 돌아갑니다. 이메일 앱에서 ‘보내기’를 눌러야 접수가 완료됩니다." : "The email app opens separately and the SEED site returns to the homepage. Press Send in your email app to complete the application."}</p>
       </div>
     </form>
   );
