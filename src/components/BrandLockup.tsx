@@ -11,7 +11,7 @@ export default function BrandLockup({ tone }: BrandLockupProps) {
   return (
     <span className="flex items-center gap-3" aria-label="씨드시민파트너스 · Seed Civic Partners">
       <span
-        className={`relative block shrink-0 overflow-hidden ${footer ? "size-[43px]" : "size-12 rounded-full bg-white"}`}
+        className={`relative block shrink-0 overflow-hidden rounded-full ${footer ? "size-[43px]" : "size-12 bg-white"}`}
         aria-hidden="true"
       >
         <img
