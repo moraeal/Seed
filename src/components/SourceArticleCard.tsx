@@ -26,9 +26,9 @@ export default function SourceArticleCard({ news, compact = false, ko }: SourceA
         aria-label={`${news.outlet}: ${news.headline}`}
       >
         <div className="min-w-0 px-4 py-3">
-          <div className="flex items-center gap-1.5 text-[10px] font-extrabold tracking-[.12em] text-green-deep"><ExternalLink size={11}/>{news.outlet}</div>
-          <p className="mt-1.5 line-clamp-2 text-xs font-bold leading-5 text-navy transition group-hover/source:text-green-mid">{news.headline}</p>
-          <p className="mt-1 line-clamp-1 text-[10px] leading-4 text-charcoal/45">{news.summary[0]}</p>
+          <div className="flex items-center gap-1.5 text-[11px] font-extrabold tracking-[.11em] text-green-deep"><ExternalLink size={11}/>{news.outlet}</div>
+          <p className="mt-1.5 line-clamp-2 text-sm font-bold leading-5 text-navy transition group-hover/source:text-green-mid">{news.headline}</p>
+          <p className="mt-1 line-clamp-1 text-xs leading-5 text-charcoal/45">{news.summary[0]}</p>
         </div>
         {thumbnail && <img src={thumbnail} alt={news.thumbnailAlt ?? ""} loading="lazy" referrerPolicy="no-referrer" className="h-full min-h-[92px] w-full object-cover"/>}
       </a>
