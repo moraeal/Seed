@@ -11,7 +11,7 @@ export default function BrandLockup({ tone }: BrandLockupProps) {
   return (
     <span className="flex items-center gap-3" aria-label="씨드시민파트너스 · Seed Civic Partners">
       <span
-        className={`relative block size-12 shrink-0 overflow-hidden rounded-full ${footer ? "bg-white ring-1 ring-white/20" : "bg-ivory ring-1 ring-green-deep/10"}`}
+        className={`relative block size-12 shrink-0 overflow-hidden rounded-full ${footer ? "bg-white ring-1 ring-white/20" : "bg-ivory"}`}
         aria-hidden="true"
       >
         <img
@@ -22,32 +22,32 @@ export default function BrandLockup({ tone }: BrandLockupProps) {
             : "absolute left-0 top-0 h-12 w-auto max-w-none"}
         />
       </span>
-      <svg viewBox="0 0 158 46" role="img" aria-hidden="true" className="h-[46px] w-[158px] shrink-0 overflow-visible">
-        <text
-          x="0"
-          y="21"
-          textLength="158"
-          lengthAdjust="spacingAndGlyphs"
-          fill={footer ? "#FFFFFF" : "#174C3A"}
-          fontFamily="Pretendard, 'Noto Sans KR', Arial, sans-serif"
-          fontSize="19"
-          fontWeight="800"
-        >
-          씨드시민파트너스
-        </text>
-        <text
-          x="0"
-          y="41"
-          textLength="158"
-          lengthAdjust="spacing"
-          fill={footer ? "#E8C967" : "#656B68"}
-          fontFamily="Pretendard, 'Noto Sans KR', Arial, sans-serif"
-          fontSize="8.7"
-          fontWeight="700"
-        >
-          Seed Civic Partners
-        </text>
-      </svg>
+      {!footer && (
+        <svg viewBox="0 0 180 46" role="img" aria-hidden="true" className="h-[46px] w-[180px] shrink-0 overflow-visible">
+          <text
+            x="0"
+            y="21"
+            fill="#174C3A"
+            fontFamily="Pretendard, 'Noto Sans KR', Arial, sans-serif"
+            fontSize="19"
+            fontWeight="800"
+            letterSpacing="-0.4"
+          >
+            씨드시민파트너스
+          </text>
+          <text
+            x="1"
+            y="41"
+            fill="#656B68"
+            fontFamily="Pretendard, 'Noto Sans KR', Arial, sans-serif"
+            fontSize="8.5"
+            fontWeight="700"
+            letterSpacing="1.45"
+          >
+            SEED CIVIC PARTNERS
+          </text>
+        </svg>
+      )}
     </span>
   );
 }
