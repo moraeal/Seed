@@ -35,6 +35,9 @@ const escapeHtml = (value = "") => String(value)
   .replaceAll('"', "&quot;")
   .replaceAll("'", "&#039;");
 
+const cdata = (value = "") => `<![CDATA[${String(value).replaceAll("]]>", "]]]]><![CDATA[>")}]]>`;
+const rfc822 = (date) => new Date(`${date}T00:00:00+09:00`).toUTCString();
+
 const paragraphList = (items = []) => items.filter(Boolean).map((item) => `<p>${escapeHtml(item)}</p>`).join("\n");
 const bulletList = (items = []) => items.length ? `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : "";
 
@@ -160,4 +163,31 @@ for (const route of seoRoutes) {
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${seoRoutes.map((route) => `  <url>\n    <loc>${canonicalUrl(route.path)}</loc>${route.lastModified ? `\n    <lastmod>${route.lastModified}</lastmod>` : ""}\n  </url>`).join("\n")}\n</urlset>\n`;
 await writeFile(path.join(dist, "sitemap.xml"), sitemap);
+const feedRoutes = seoRoutes
+  .filter((route) => route.type === "article" && route.lastModified)
+  .sort((a, b) => b.lastModified.localeCompare(a.lastModified) || a.path.localeCompare(b.path))
+  .slice(0, 50);
+const rss = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>${SITE_NAME}</title>
+    <link>${SITE_URL}/</link>
+    <description>자유와 책임의 언어로 한국 정치·사회 이슈를 전하는 씨드시민파트너스의 최신 콘텐츠입니다.</description>
+    <language>ko-KR</language>
+    <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>${rfc822(feedRoutes[0].lastModified)}</lastBuildDate>
+${feedRoutes.map((route) => `    <item>
+      <title>${cdata(route.title.replace(/ \| .*$/, ""))}</title>
+      <link>${canonicalUrl(route.path)}</link>
+      <guid isPermaLink="true">${canonicalUrl(route.path)}</guid>
+      <pubDate>${rfc822(route.lastModified)}</pubDate>
+      <dc:creator>${cdata(route.author || SITE_NAME)}</dc:creator>
+      <category>${cdata(route.section || SITE_NAME)}</category>
+      <description>${cdata(route.description)}</description>
+      <content:encoded>${cdata(articleBody(route))}</content:encoded>
+    </item>`).join("\n")}
+  </channel>
+</rss>
+`;
+await writeFile(path.join(dist, "rss.xml"), rss);
 await writeFile(path.join(dist, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
