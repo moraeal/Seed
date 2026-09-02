@@ -207,7 +207,10 @@ export default function About() {
             <h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{en ? "Want to build SEED with us?" : "씨드와 함께 기반을 만들고 싶으신가요?"}</h2>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-charcoal/58">{en ? "The Partners page explains the founding vision, partner roles, and application process." : "창립 취지와 파트너의 역할, 가입 신청은 파트너스 페이지에서 확인하실 수 있습니다."}</p>
           </div>
-          <Link to="/partners" className="button-primary shrink-0">{en ? "Go to Partners" : "파트너스 페이지로 가기"}<ArrowRight size={16}/></Link>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/partners" className="button-primary shrink-0">{en ? "Go to Partners" : "파트너스 페이지로 가기"}<ArrowRight size={16}/></Link>
+            <Link to="/partners/founding-statement" className="button-secondary shrink-0">{en ? "Read the Founding Statement" : "창립취지문 전문 읽기"}</Link>
+          </div>
         </div>
       </section>
     </div>
