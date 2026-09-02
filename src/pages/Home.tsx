@@ -163,7 +163,45 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-green-deep/15 bg-ivory py-12 sm:py-16">
+      <section className="bg-ivory pt-8 sm:pt-10">
+        <div className="container-page">
+          <div className="relative isolate overflow-hidden border-y-2 border-green-deep bg-[#fbf4e5]">
+            <img
+              src={resolveImageSrc("images/support/founding-partners-watercolor.webp")}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover object-[64%_50%] opacity-75"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#fffaf0] via-[#fffaf0]/95 to-[#fffaf0]/30" />
+            <div className="relative max-w-3xl px-6 py-10 sm:px-10 sm:py-12 lg:px-12 lg:py-14">
+              <span className="section-kicker">FOUNDING PARTNERS</span>
+              <h2 className="editorial-title mt-3 max-w-2xl text-[1.9rem] font-bold leading-tight text-navy sm:text-[2.3rem]">
+                {ko ? "씨드의 창립파트너가 되어 주세요" : "Become a Founding Partner of SEED"}
+              </h2>
+              <p className="mt-4 max-w-2xl text-[15px] font-medium leading-7 text-charcoal/75 sm:text-base">
+                {ko
+                  ? "씨드시민파트너스는 자유와 책임의 관점에서 공익을 감시하고, 확인된 사실과 맥락을 시민브리핑으로 전하며, 시민의 제안을 공공의 변화로 연결하는 독립 시민사회 플랫폼입니다. 국가와 시장 사이에서 시민의 힘을 키우는 새로운 시민운동의 기반을 함께 세워 주세요."
+                  : "SEED Civic Partners is an independent civic platform in South Korea that monitors public-interest institutions, explains facts and context through civic briefings, and turns citizen concerns into practical public proposals. Help us build a stronger civil society between state and market."}
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2 text-[11px] font-extrabold tracking-[.08em] text-green-deep/75">
+                <span className="border border-green-deep/20 bg-white/65 px-3 py-1.5">{ko ? "공익감시" : "Public Watch"}</span>
+                <span className="border border-green-deep/20 bg-white/65 px-3 py-1.5">{ko ? "시민브리핑" : "Civic Briefings"}</span>
+                <span className="border border-green-deep/20 bg-white/65 px-3 py-1.5">{ko ? "시민제안" : "Citizen Proposals"}</span>
+              </div>
+              <div className="mt-7 flex flex-wrap items-center gap-3">
+                <Link to="/support" className="inline-flex items-center gap-2 bg-green-deep px-5 py-3 text-sm font-extrabold text-white transition hover:bg-green-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-deep/35 focus-visible:ring-offset-2">
+                  {ko ? "창립파트너 참여하기" : "Become a Founding Partner"}<ArrowRight size={16}/>
+                </Link>
+                <Link to="/about" className="inline-flex items-center gap-2 border border-green-deep/30 bg-white/70 px-5 py-3 text-sm font-extrabold text-green-deep transition hover:border-green-deep hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-deep/25 focus-visible:ring-offset-2">
+                  {ko ? "씨드 소개" : "About SEED"}<ArrowRight size={16}/>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-green-deep/15 bg-ivory pt-6 pb-12 sm:pt-8 sm:pb-16">
         <div className="container-page grid gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
             <div className="flex items-end justify-between gap-4 border-b-2 border-navy pb-4">
