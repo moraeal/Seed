@@ -156,8 +156,7 @@ export default function Home() {
               <Link key={column.slug} to={`/columns/${column.slug}`} className={`group flex min-h-0 flex-1 flex-col justify-center px-6 py-1.5 sm:px-7 ${index < latestColumns.length - 1 ? "border-b border-green-deep/15" : ""}`}>
                 <div className="flex shrink-0 items-center gap-3 text-[11px] font-extrabold tracking-[.11em] text-green-mid"><span>{ko ? `씨드칼럼 ${String(column.issue).padStart(2, "0")}` : `SEED COLUMN ${String(column.issue).padStart(2, "0")}`}</span><time className="text-charcoal/35">{column.date.replace(/-/g, ".")}</time></div>
                 <h3 className="editorial-title mt-1 line-clamp-2 text-[17px] font-bold leading-6 text-navy transition group-hover:text-green-mid">{column.title}</h3>
-                <p className="mt-0.5 line-clamp-1 text-[13px] font-semibold leading-5 text-charcoal/65">{column.subtitle}</p>
-                <span className="mt-1 flex shrink-0 items-center gap-2 text-xs font-bold text-green-deep">{ko ? "칼럼 읽기" : "Read column"}<ArrowRight size={12}/></span>
+                <p className="mt-1 line-clamp-2 text-[13px] font-semibold leading-5 text-charcoal/65">{column.subtitle}</p>
               </Link>
             ))}
           </aside>
