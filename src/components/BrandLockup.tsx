@@ -5,7 +5,7 @@ type BrandLockupProps = {
 export default function BrandLockup({ tone }: BrandLockupProps) {
   const footer = tone === "footer";
   const symbolSrc = footer
-    ? "images/brand/seed-civic-partners-logo-animated-circle.gif"
+    ? "images/brand/seed-civic-partners-logo-animated-circle-clean.gif"
     : "images/brand/seed-sprout-color-leaves-reverse-transparent-hd.png";
 
   return (
