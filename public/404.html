@@ -4,22 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
-    <title>씨드시민파트너스</title>
+    <title>페이지를 찾을 수 없습니다 | 씨드시민파트너스</title>
     <script>
       (function () {
-        var base = "/Seed/";
         var path = window.location.pathname;
-        if (path.indexOf(base) === 0) {
-          path = path.slice(base.length);
-        } else {
-          path = path.replace(/^\/+/, "");
+        var hashRoute = window.location.hash.indexOf("#/") === 0
+          ? window.location.hash.slice(1)
+          : "";
+        if (hashRoute) {
+          window.location.replace("https://seedpartners.org" + hashRoute + window.location.search);
+          return;
         }
-        var target = base + "#/" + path + window.location.search;
-        window.location.replace(target);
+        if (path.indexOf("/Seed/") === 0) {
+          window.location.replace("https://seedpartners.org/" + path.slice(6) + window.location.search);
+          return;
+        }
+        window.location.replace("https://seedpartners.org/");
       })();
     </script>
   </head>
   <body>
-    <p><a href="/Seed/#/">씨드시민파트너스 홈페이지로 이동</a></p>
+    <p><a href="https://seedpartners.org/">씨드시민파트너스 홈페이지로 이동</a></p>
   </body>
 </html>

@@ -537,14 +537,14 @@ export const columns: SeedColumn[] = [
       alt: "여러 원탁에 모인 시민들이 공공 의제를 숙의하는 모습",
       caption: "시민 숙의는 사람을 한자리에 모으는 데서 끝나지 않습니다. 대표성 있는 참여자, 균형 잡힌 정보, 독립적인 진행과 결과에 대한 책임이 함께 갖춰져야 합니다.",
       credit: "씨드시민파트너스 제작 이미지",
-      sourceUrl: "https://moraeal.github.io/Seed/",
+      sourceUrl: "https://seedpartners.org/",
     },
     inlineImage: {
       src: "images/columns/citizens-assembly-deliberation.webp",
       alt: "다양한 연령의 시민들이 자료를 비교하며 토론하는 모습",
       caption: "좋은 공론장은 결론을 미리 정해 놓고 시민을 설득하는 자리가 아니라, 서로 다른 근거와 선택의 비용을 공개하고 시민이 스스로 판단하도록 돕는 자리입니다.",
       credit: "씨드시민파트너스 제작 이미지",
-      sourceUrl: "https://moraeal.github.io/Seed/",
+      sourceUrl: "https://seedpartners.org/",
     },
     sections: [
       {

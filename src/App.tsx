@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./auth";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import RouteMetadata from "./components/RouteMetadata";
 import { LanguageProvider } from "./i18n";
 import About from "./pages/About";
 import Account from "./pages/Account";
@@ -28,6 +29,7 @@ import NewsDetail from "./pages/NewsDetail";
 function AppShell() {
   return (
     <div className="min-h-screen bg-paper text-charcoal">
+      <RouteMetadata />
       <Header />
       <main>
         <Routes>

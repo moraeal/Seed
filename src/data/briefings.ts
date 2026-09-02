@@ -54,14 +54,14 @@ export const briefings: Briefing[] = [
         alt: "법전과 사건기록, 저울과 멈춘 시계가 놓인 제도기관 내부",
         caption: "헌법 제84조 논쟁의 핵심은 대통령의 직무 수행과 사법적 책임을 어떤 규칙으로 함께 지킬 것인가에 있습니다.",
         credit: "씨드시민파트너스 제작 이미지",
-        sourceUrl: "https://moraeal.github.io/Seed/briefings/president-criminal-trials-article-84",
+        sourceUrl: "https://seedpartners.org/briefings/president-criminal-trials-article-84/",
       },
       {
         src: "images/briefings/briefing-03-paused-trial.png",
         alt: "비어 있는 법정의 봉인된 사건기록과 탁상시계",
         caption: "재판의 기일이 미뤄졌다고 사건이 끝난 것은 아닙니다. 기록과 증거를 보전하고 임기 뒤 책임 절차가 이어지도록 해야 합니다.",
         credit: "씨드시민파트너스 제작 이미지",
-        sourceUrl: "https://moraeal.github.io/Seed/briefings/president-criminal-trials-article-84",
+        sourceUrl: "https://seedpartners.org/briefings/president-criminal-trials-article-84/",
       },
     ],
     content: [
