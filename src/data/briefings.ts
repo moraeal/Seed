@@ -8,12 +8,19 @@ export type Briefing = {
   readMinutes: number;
   issueNumber?: number;
   featured?: boolean;
+  /**
+   * 시민브리핑 05호 이후에는 본문을 설명하는 도표·다이어그램·그래프를
+   * 최소 2개 포함하고, afterSection으로 관련 대목 바로 뒤에 배치합니다.
+   * 영문판에는 같은 시각자료의 영문 자산과 설명을 함께 제공합니다.
+   */
   images?: {
     src: string;
     alt: string;
     caption: string;
     credit: string;
     sourceUrl: string;
+    afterSection?: number;
+    contain?: boolean;
   }[];
   content: string[];
   watchPoints: string[];

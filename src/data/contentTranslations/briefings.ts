@@ -17,6 +17,18 @@ export const briefingTranslations: Record<string, BriefingTranslation> = {
         caption: "An optimistic revenue forecast is a plan, not money already collected. Citizens should examine both program results and the rules that apply if the forecast proves wrong.",
         credit: "Image by SEED Civic Partners",
       },
+      {
+        src: "images/briefings/briefing-05-budget-balance-en.svg",
+        alt: "Chart connecting growth in 2027 expenditure and revenue with the national tax forecast and the projected reduction in the managed fiscal deficit",
+        caption: "The calculation in which spending rises 12.8% while the deficit shrinks depends on total revenue growing 30.4% and national tax revenue reaching KRW 584.4 trillion.",
+        credit: "Chart by SEED Civic Partners",
+      },
+      {
+        src: "images/briefings/briefing-05-future-fund-en.svg",
+        alt: "Chart dividing the KRW 162.3 trillion Future Response Fund among program spending, reserve resources and reduced new bond issuance",
+        caption: "The entire Future Response Fund is not program spending: KRW 45.4 trillion is allocated to programs, KRW 104.4 trillion to reserve resources and KRW 12.5 trillion to reducing new bond issuance.",
+        credit: "Chart by SEED Civic Partners",
+      },
     ],
     content: [
       "First, the conclusion. The government’s 2027 budget proposal sets total expenditure at KRW 820.9 trillion, a record increase of KRW 93 trillion from the original 2026 budget. Yet the government says the managed fiscal-balance deficit will fall from KRW 107.8 trillion to KRW 3.1 trillion and the government-debt ratio will decline from 51.6% to 48.3% of GDP.",

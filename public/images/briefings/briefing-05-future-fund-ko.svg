@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">162.3조 원 미래대응기금의 구성</title>
+  <desc id="desc">미래대응기금 162.3조 원 가운데 사업지출은 45.4조 원, 여유자금은 104.4조 원, 국채 신규발행 축소는 12.5조 원이라는 구성과 비율을 보여주는 도표</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7f4e9"/><stop offset="1" stop-color="#edf2ee"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#102c27" flood-opacity=".12"/></filter>
+    <style>.sans{font-family:Pretendard,'Noto Sans KR',Arial,sans-serif}.serif{font-family:'Noto Serif KR',Georgia,serif}.navy{fill:#102c27}.muted{fill:#52605c}.white{fill:#fff}</style>
+  </defs>
+  <rect width="1400" height="900" rx="30" fill="url(#bg)"/><rect x="42" y="42" width="8" height="816" rx="4" fill="#b58c35"/>
+  <text x="700" y="88" text-anchor="middle" class="serif navy" font-size="42" font-weight="800">162.3조 원 미래대응기금, 어디에 쓰이나</text>
+  <text x="700" y="130" text-anchor="middle" class="sans muted" font-size="21" font-weight="600">기금 전체가 2027년에 바로 집행되는 사업비는 아닙니다.</text>
+
+  <g filter="url(#shadow)"><rect x="100" y="190" width="1200" height="210" rx="26" fill="#fff" stroke="#c9d9d1" stroke-width="3"/>
+    <text x="150" y="245" class="sans navy" font-size="22" font-weight="800">전체 162.3조 원</text>
+    <clipPath id="barClip"><rect x="150" y="285" width="1100" height="72" rx="16"/></clipPath>
+    <g clip-path="url(#barClip)"><rect x="150" y="285" width="307.7" height="72" fill="#36745e"/><rect x="457.7" y="285" width="707.6" height="72" fill="#b58c35"/><rect x="1165.3" y="285" width="84.7" height="72" fill="#1f3547"/></g>
+    <text x="304" y="330" text-anchor="middle" class="sans white" font-size="22" font-weight="900">28.0%</text>
+    <text x="812" y="330" text-anchor="middle" class="sans white" font-size="22" font-weight="900">64.3%</text>
+    <text x="1207" y="330" text-anchor="middle" class="sans white" font-size="17" font-weight="900">7.7%</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="100" y="460" width="360" height="220" rx="24" fill="#fff" stroke="#9fc2b4" stroke-width="3"/>
+    <circle cx="150" cy="515" r="17" fill="#36745e"/><text x="185" y="523" class="sans navy" font-size="23" font-weight="800">사업지출</text>
+    <text x="280" y="600" text-anchor="middle" class="serif navy" font-size="47" font-weight="900">45.4조</text>
+    <text x="280" y="641" text-anchor="middle" class="sans muted" font-size="19">미래투자 사업에 집행</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="520" y="460" width="360" height="220" rx="24" fill="#fff" stroke="#d7c58e" stroke-width="3"/>
+    <circle cx="570" cy="515" r="17" fill="#b58c35"/><text x="605" y="523" class="sans navy" font-size="23" font-weight="800">여유자금</text>
+    <text x="700" y="600" text-anchor="middle" class="serif navy" font-size="47" font-weight="900">104.4조</text>
+    <text x="700" y="641" text-anchor="middle" class="sans muted" font-size="19">남겨 두고 운용하는 재원</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="940" y="460" width="360" height="220" rx="24" fill="#fff" stroke="#9eaeb8" stroke-width="3"/>
+    <circle cx="990" cy="515" r="17" fill="#1f3547"/><text x="1025" y="523" class="sans navy" font-size="23" font-weight="800">국채발행 축소</text>
+    <text x="1120" y="600" text-anchor="middle" class="serif navy" font-size="47" font-weight="900">12.5조</text>
+    <text x="1120" y="641" text-anchor="middle" class="sans muted" font-size="19">새로 빌릴 돈을 줄이는 용도</text>
+  </g>
+  <rect x="100" y="735" width="1200" height="88" rx="20" fill="#173f35"/>
+  <text x="700" y="773" text-anchor="middle" class="sans white" font-size="21" font-weight="800">시민이 확인할 것</text>
+  <text x="700" y="807" text-anchor="middle" class="sans" font-size="18" fill="#d7e7df">사업 선정 · 여유자금 운용처 · 투자 손익 · 실패 책임 · 성과 공개</text>
+  <text x="700" y="862" text-anchor="middle" class="sans muted" font-size="16">비율은 162.3조 원을 기준으로 반올림 · 2027년 정부 예산안 기준</text>
+</svg>

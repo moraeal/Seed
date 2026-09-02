@@ -39,7 +39,7 @@ export default function BriefingDetail() {
       <img
         src={resolveImageSrc(image.src)}
         alt={image.alt}
-        className={`${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full object-cover`}
+        className={`${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full ${image.contain ? "bg-[#f7f4e9] object-contain" : "object-cover"}`}
       />
       <figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:items-start sm:justify-between">
         <span className="max-w-2xl">{image.caption}</span>
@@ -87,12 +87,17 @@ export default function BriefingDetail() {
         {briefing.images?.[1] && renderFigure(briefing.images[1])}
 
         {briefing.sections?.map((section, index) => (
-          <section key={`${index}-${section.title}`} className="mt-12 border-t border-green-deep/10 pt-9">
-            <span className="font-serif text-sm font-bold text-gold">{String(index + 1).padStart(2, "0")}</span>
-            <h2 className="mt-2 text-2xl font-extrabold leading-snug text-navy sm:text-3xl">{section.title}</h2>
-            {section.paragraphs && <div className="mt-5 space-y-5">{section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className="text-base leading-8 text-charcoal/75">{paragraph}</p>)}</div>}
-            {section.bullets && <ul className="mt-6 space-y-4">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet.slice(0, 24)}`} className="flex gap-3 text-base leading-8 text-charcoal/75"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold" />{bullet}</li>)}</ul>}
-          </section>
+          <div key={`${index}-${section.title}`}>
+            <section className="mt-12 border-t border-green-deep/10 pt-9">
+              <span className="font-serif text-sm font-bold text-gold">{String(index + 1).padStart(2, "0")}</span>
+              <h2 className="mt-2 text-2xl font-extrabold leading-snug text-navy sm:text-3xl">{section.title}</h2>
+              {section.paragraphs && <div className="mt-5 space-y-5">{section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className="text-base leading-8 text-charcoal/75">{paragraph}</p>)}</div>}
+              {section.bullets && <ul className="mt-6 space-y-4">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet.slice(0, 24)}`} className="flex gap-3 text-base leading-8 text-charcoal/75"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold" />{bullet}</li>)}</ul>}
+            </section>
+            {briefing.images?.slice(2).filter((image) => image.afterSection === index).map((image) => (
+              <div key={image.src}>{renderFigure(image)}</div>
+            ))}
+          </div>
         ))}
 
         {briefing.verdicts && (
@@ -112,7 +117,7 @@ export default function BriefingDetail() {
           </section>
         )}
 
-        {briefing.images?.slice(2).map((image) => <div key={image.src}>{renderFigure(image)}</div>)}
+        {briefing.images?.slice(2).filter((image) => image.afterSection === undefined).map((image) => <div key={image.src}>{renderFigure(image)}</div>)}
 
         <aside className="mt-12 rounded-lg border-l-4 border-gold bg-green-pale p-6 sm:p-8">
           <h2 className="text-xl font-extrabold text-green-deep">{ko ? "지속해서 관찰할 지점" : "What to keep watching"}</h2>

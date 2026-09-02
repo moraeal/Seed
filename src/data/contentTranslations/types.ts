@@ -35,7 +35,7 @@ export type BriefingTranslation = {
   title: string;
   summary: string;
   author?: string;
-  images?: Array<{ alt: string; caption: string; credit?: string }>;
+  images?: Array<{ src?: string; alt: string; caption: string; credit?: string }>;
   content: string[];
   sections?: NonNullable<Briefing["sections"]>;
   verdicts?: NonNullable<Briefing["verdicts"]>;
