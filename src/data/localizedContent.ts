@@ -19,6 +19,10 @@ export function localizeColumn(column: SeedColumn, language: Language): SeedColu
     summary: translated.summary,
     heroImage: { ...column.heroImage, ...translated.heroImage },
     inlineImage: { ...column.inlineImage, ...translated.inlineImage },
+    additionalImages: column.additionalImages?.map((image, index) => ({
+      ...image,
+      ...(translated.additionalImages?.[index] ?? {}),
+    })),
     sections: translated.sections,
     sourceNote: translated.sourceNote,
     sources: column.sources?.map((source, index) => ({

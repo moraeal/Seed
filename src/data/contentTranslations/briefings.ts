@@ -1,6 +1,126 @@
 import type { BriefingTranslation } from "./types";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "2027-national-budget-revenue-debt": {
+    category: "SEED Civic Briefing 05",
+    title: "The KRW 820.9 Trillion ‘Super-Budget’: Are Korea’s Public Finances Really Improving?",
+    summary: "The government plans a record 12.8% increase in spending while saying both the fiscal balance and the debt-to-GDP ratio will improve. We put the key assumptions on the same footing: KRW 194.2 trillion in additional semiconductor-driven tax revenue, a KRW 162.3 trillion Future Response Fund, and a KRW 106 trillion increase in government debt.",
+    author: "SEED Civic Briefing",
+    images: [
+      {
+        alt: "Citizens examine a national ledger showing semiconductor tax revenue divided among public programs, future investment and debt management",
+        caption: "The central issue in the 2027 budget is not spending alone. Government must disclose how much semiconductor-boom revenue it expects, where it will go, how much will be retained and how debt will be managed.",
+        credit: "Image by SEED Civic Partners",
+      },
+      {
+        alt: "Citizens and independent reviewers separate budget documents for spending, future investment, reserve funds and government bonds",
+        caption: "An optimistic revenue forecast is a plan, not money already collected. Citizens should examine both program results and the rules that apply if the forecast proves wrong.",
+        credit: "Image by SEED Civic Partners",
+      },
+    ],
+    content: [
+      "First, the conclusion. The government’s 2027 budget proposal sets total expenditure at KRW 820.9 trillion, a record increase of KRW 93 trillion from the original 2026 budget. Yet the government says the managed fiscal-balance deficit will fall from KRW 107.8 trillion to KRW 3.1 trillion and the government-debt ratio will decline from 51.6% to 48.3% of GDP.",
+      "The apparent contradiction is resolved by the revenue forecast. The government expects a semiconductor boom to lift national tax revenue by KRW 194.2 trillion, from KRW 390.2 trillion to KRW 584.4 trillion. If that forecast holds, spending can rise sharply while fiscal indicators improve. But because the budget rests on taxes not yet collected, citizens should focus less on the size of the headline numbers than on the assumptions behind them and the rules for responding if they fail.",
+    ],
+    sections: [
+      {
+        title: "Key numbers in 30 seconds",
+        bullets: [
+          "Total expenditure: KRW 820.9 trillion, up KRW 93 trillion or 12.8% from the original 2026 budget.",
+          "Total revenue: KRW 880.8 trillion. National tax revenue is forecast at KRW 584.4 trillion, an increase of KRW 194.2 trillion.",
+          "Future Response Fund: KRW 162.3 trillion—KRW 45.4 trillion for programs, KRW 104.4 trillion managed as reserve resources, and KRW 12.5 trillion used to reduce new government-bond issuance.",
+          "Managed fiscal balance: projected to improve from a KRW 107.8 trillion deficit in 2026 to a KRW 3.1 trillion deficit in 2027.",
+          "Government debt: projected to rise by KRW 106 trillion, from KRW 1,413.8 trillion to KRW 1,519.8 trillion, even as the debt-to-GDP ratio falls from 51.6% to 48.3%.",
+          "Current stage: this is the government proposal. It becomes the final budget only after National Assembly review and approval.",
+        ],
+      },
+      {
+        title: "How can the fiscal balance improve when spending rises so much?",
+        paragraphs: [
+          "A fiscal balance is the difference between money coming in and money going out during the year. The 2027 proposal increases total expenditure by 12.8% but assumes total revenue will rise by 30.4%. Because projected revenue grows much faster than spending, the managed fiscal deficit can shrink in the calculation.",
+          "The managed fiscal balance removes surpluses in social-security funds such as the National Pension and Employment Insurance from the consolidated balance to provide a clearer view of the government’s underlying finances. The government projects the 2027 managed balance at -0.1% of GDP.",
+          "It is therefore arithmetically possible to have record spending and an improving fiscal balance at the same time. But the result depends on national tax revenue actually arriving at roughly the level the government forecasts.",
+        ],
+      },
+      {
+        title: "The KRW 162.3 trillion Future Response Fund is not all immediate spending",
+        paragraphs: [
+          "It would be wrong to read the KRW 162.3 trillion fund as KRW 162.3 trillion in new program spending. Under the government plan, actual program expenditure is KRW 45.4 trillion. Another KRW 104.4 trillion would remain under management as reserve resources, and KRW 12.5 trillion would be used to reduce new government-bond issuance.",
+          "There is merit in not exhausting all additional revenue during a tax boom and instead dividing it among future investment and fiscal buffers. A separate mechanism can also help prevent a temporary upswing in a volatile industry such as semiconductors from being mistaken for permanent revenue.",
+          "Funds, however, can make the flow of money less visible than the general account. The law and fund-management plan should clearly state which programs qualify as future investment, where reserve resources will be placed, and who bears responsibility for investment gains, losses and failed projects. Establishing the fund itself also requires legislation and National Assembly review.",
+        ],
+      },
+      {
+        title: "The amount of debt rises even if the debt ratio falls",
+        paragraphs: [
+          "The government says debt will fall from 51.6% to 48.3% of GDP. That reflects an assumption that nominal GDP and tax revenue will grow quickly, enlarging the denominator in the ratio.",
+          "But the won amount of government debt rises by KRW 106 trillion, from KRW 1,413.8 trillion to KRW 1,519.8 trillion. A lower debt ratio does not mean the amount of debt has declined.",
+          "The ratio is important for international comparison and repayment capacity, while the total amount shows the actual burden of principal and interest. Neither number alone is enough. Interest rates, interest expenditure and the maturity structure must also be examined.",
+        ],
+      },
+      {
+        title: "Semiconductor tax revenue is a forecast, not guaranteed income",
+        paragraphs: [
+          "The government forecasts national tax revenue of KRW 584.4 trillion next year, 49.8% above the original 2026 budget. It attributes much of the increase to higher corporate and income tax receipts generated by the semiconductor boom.",
+          "When semiconductor profits rise, corporate-tax receipts can jump the following year. If prices and demand fall or export conditions deteriorate, revenue can change just as quickly. The government re-estimated 2024 national tax revenue at KRW 29.6 trillion below budget, and only with the 2025 settlement did it announce an end to the large shortfalls of the previous two years.",
+          "The possibility of forecast error does not mean government should stop making budgets. It means government should publish baseline, optimistic and pessimistic scenarios together and decide in advance the order in which new programs will be adjusted if revenue falls below a defined threshold.",
+        ],
+      },
+      {
+        title: "KRW 107.6 trillion in expenditure restructuring does not mean spending fell by that amount",
+        paragraphs: [
+          "The government says it carried out KRW 107.6 trillion in expenditure restructuring. This means it reviewed existing programs, reduced or eliminated some, changed parts of mandatory spending, and redirected the resources toward new priorities.",
+          "Total expenditure nevertheless rises by KRW 93 trillion. It would therefore be wrong to say the government simply ‘saved’ KRW 107.6 trillion or made government smaller. The programs removed and the programs expanded must be compared to see the actual direction of public finance.",
+          "Citizens need the program list, not only a headline total. Government should disclose what was cut and why, whose benefits and burdens changed, and whether discontinued programs genuinely produced poor results.",
+        ],
+      },
+      {
+        title: "A budget proposal is not a final budget",
+        paragraphs: [
+          "The proposal has passed the Cabinet, but it is not yet the final budget. The government plans to submit it to the National Assembly on September 3. The Assembly may increase or reduce items after reviewing revenue assumptions, individual programs and legislation for the Future Response Fund.",
+          "Creating the fund and changing the local-education finance grant are not simple adjustments to one year’s numbers. They alter rules for allocating resources over many years. They should not be locked in hastily on the basis of a single year’s semiconductor boom.",
+          "Instead of competing to add politically attractive spending, the National Assembly should first test the realism of the revenue assumptions, require independent evaluation of the fund, and establish the response order if tax revenue comes in below forecast.",
+        ],
+      },
+      {
+        title: "SEED’s view",
+        paragraphs: [
+          "It is reasonable not to turn all additional semiconductor-boom revenue into permanent spending and to retain part of it. Investment in future growth, younger generations and the regions is also necessary. But a good purpose does not exempt spending from proof of effectiveness and accountability.",
+          "First, government and the National Assembly should publish baseline, optimistic and pessimistic national tax-revenue forecasts together. Second, citizens must be able to trace program selection, reserve management, investment losses and results in the Future Response Fund. Third, programs started with temporary excess revenue should contain an automatic sunset or review date.",
+          "Fourth, the total debt amount and interest expenditure should be disclosed alongside the debt ratio. Fifth, the full program list and evaluation basis for the KRW 107.6 trillion restructuring should be published. Taxes are not money for government to display as an achievement; they are money entrusted by citizens. Stronger rules in good times are what protect citizens’ lives when conditions worsen.",
+        ],
+      },
+    ],
+    verdicts: [
+      { claim: "The government’s 2027 expenditure proposal is a record KRW 820.9 trillion", status: "Fact", basis: "The proposal is KRW 93 trillion, or 12.8%, above the original 2026 budget." },
+      { claim: "Because spending rises, the managed fiscal balance must also worsen", status: "False", basis: "The government expects revenue to rise faster than spending and projects the managed deficit to narrow to KRW 3.1 trillion." },
+      { claim: "All KRW 162.3 trillion in the Future Response Fund will be spent on programs next year", status: "False", basis: "KRW 45.4 trillion is allocated to programs, KRW 104.4 trillion to reserve resources and KRW 12.5 trillion to reducing new bond issuance." },
+      { claim: "A lower government-debt ratio means the total amount of debt will fall", status: "False", basis: "The ratio is projected to fall to 48.3%, but total debt is expected to rise by KRW 106 trillion to KRW 1,519.8 trillion." },
+      { claim: "KRW 584.4 trillion in national tax revenue is money already secured", status: "Forecast", basis: "It is a 2027 revenue estimate that can change with semiconductor profits, the economy and asset markets." },
+      { claim: "KRW 107.6 trillion in restructuring means total expenditure fell by that amount", status: "False", basis: "Resources adjusted from existing programs are redirected to new programs, while total expenditure rises by KRW 93 trillion." },
+      { claim: "The KRW 820.9 trillion budget is already final", status: "False", basis: "It remains a government proposal until the National Assembly completes review and approval." },
+    ],
+    watchPoints: [
+      "How the National Assembly Budget Office evaluates the government’s KRW 584.4 trillion national tax-revenue forecast",
+      "Whether the Future Response Fund law contains transparent program selection, management disclosure, independent evaluation and responsibility for losses",
+      "How total expenditure, government debt and the managed fiscal balance change after National Assembly review",
+      "Whether semiconductor earnings and monthly tax receipts in the first half of 2027 track the government forecast",
+      "Whether government publishes advance rules identifying which new programs will be adjusted first if revenue falls short",
+      "Whether the program-by-program list and evaluation basis for the KRW 107.6 trillion restructuring are disclosed",
+      "Whether the medium-term plan manages interest expenditure and debt maturities as well as the total amount of debt",
+    ],
+    quote: "Tax revenue expected during a boom is not a government bonus. Transparent rules should divide it among money saved for citizens’ future, money invested now and money used to reduce borrowing.",
+    sourceNote: "This briefing is based on the government’s 2027 budget proposal and the 2026–2030 National Fiscal Management Plan available as of September 2, 2026. The KRW 820.9 trillion expenditure total, KRW 584.4 trillion national tax-revenue estimate and KRW 1,519.8 trillion government-debt figure are government projections, not final accounts. The budget and the institutions related to the Future Response Fund may change during National Assembly review.",
+    sourceLabels: [
+      "Korea Policy Briefing — Overview of the 2027 budget proposal",
+      "Ministry of Planning and Budget — 2027 budget proposal and 2026–2030 National Fiscal Management Plan",
+      "e-National Indicators — Definitions of the consolidated and managed fiscal balances",
+      "Ministry of Economy and Finance — Revised 2024 tax-revenue estimate: KRW 29.6 trillion below budget",
+      "Ministry of Economy and Finance — National tax-revenue results for fiscal year 2025",
+      "National Assembly Budget Office — Causes of tax-revenue forecast error and possible improvements",
+    ],
+  },
+
   "gyeonggi-fiscal-emergency": {
     category: "SEED Civic Briefing 04",
     title: "Is Gyeonggi Province Really ‘Bankrupt’? The Real Question Is How Its Finances Got This Far",
