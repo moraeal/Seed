@@ -1,8 +1,11 @@
+import { useLanguage } from "../i18n";
+
 type BrandLockupProps = {
   tone: "header" | "footer";
 };
 
 export default function BrandLockup({ tone }: BrandLockupProps) {
+  const { language } = useLanguage();
   const footer = tone === "footer";
   const symbolSrc = footer
     ? "images/brand/seed-civic-partners-logo-animated-circle-clean.gif"
@@ -29,11 +32,11 @@ export default function BrandLockup({ tone }: BrandLockupProps) {
             y="21"
             fill="#174C3A"
             fontFamily="Pretendard, 'Noto Sans KR', Arial, sans-serif"
-            fontSize="19"
+            fontSize={language === "en" ? "16" : "19"}
             fontWeight="800"
             letterSpacing="-0.4"
           >
-            씨드시민파트너스
+            {language === "en" ? "SEED CIVIC PARTNERS" : "씨드시민파트너스"}
           </text>
           <text
             x="1"
@@ -42,9 +45,9 @@ export default function BrandLockup({ tone }: BrandLockupProps) {
             fontFamily="Pretendard, 'Noto Sans KR', Arial, sans-serif"
             fontSize="8.5"
             fontWeight="700"
-            letterSpacing="1.45"
+            letterSpacing={language === "en" ? ".4" : "1.45"}
           >
-            SEED CIVIC PARTNERS
+            {language === "en" ? "씨드시민파트너스" : "SEED CIVIC PARTNERS"}
           </text>
         </svg>
       )}

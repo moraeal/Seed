@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { canonicalUrl, getSeoRoute, SITE_NAME } from "../seo";
+import { canonicalUrl, ENGLISH_SITE_NAME, getSeoRoute, SITE_NAME } from "../seo";
 
 function setMeta(selector: string, attributes: Record<string, string>) {
   let element = document.head.querySelector<HTMLMetaElement>(selector);
@@ -19,13 +19,15 @@ export default function RouteMetadata() {
     const title = route?.title ?? `페이지를 찾을 수 없습니다 | ${SITE_NAME}`;
     const description = route?.description ?? "씨드시민파트너스 홈페이지입니다.";
     const url = canonicalUrl(route?.path ?? "/");
+    const language = route?.language ?? "ko";
+    const siteName = language === "en" ? ENGLISH_SITE_NAME : SITE_NAME;
 
     document.title = title;
-    document.documentElement.lang = "ko";
+    document.documentElement.lang = language;
     setMeta('meta[name="description"]', { name: "description", content: description });
     setMeta('meta[name="robots"]', { name: "robots", content: route ? "index, follow, max-image-preview:large" : "noindex, follow" });
     setMeta('meta[property="og:type"]', { property: "og:type", content: route?.type ?? "website" });
-    setMeta('meta[property="og:site_name"]', { property: "og:site_name", content: SITE_NAME });
+    setMeta('meta[property="og:site_name"]', { property: "og:site_name", content: siteName });
     setMeta('meta[property="og:title"]', { property: "og:title", content: title });
     setMeta('meta[property="og:description"]', { property: "og:description", content: description });
     setMeta('meta[property="og:url"]', { property: "og:url", content: url });
@@ -40,6 +42,17 @@ export default function RouteMetadata() {
       document.head.appendChild(canonical);
     }
     canonical.href = url;
+
+    document.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach((element) => element.remove());
+    if (route?.path === "/" || route?.path === "/en") {
+      [["ko", canonicalUrl("/")], ["en", canonicalUrl("/en")], ["x-default", canonicalUrl("/")]].forEach(([hreflang, href]) => {
+        const alternate = document.createElement("link");
+        alternate.rel = "alternate";
+        alternate.hreflang = hreflang;
+        alternate.href = href;
+        document.head.appendChild(alternate);
+      });
+    }
   }, [location.pathname]);
 
   return null;

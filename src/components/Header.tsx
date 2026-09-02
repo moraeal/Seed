@@ -1,6 +1,6 @@
 import { LogIn, LogOut, Menu, UserRound, X } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth";
 import { getContent } from "../data/siteContent";
 import { useLanguage } from "../i18n";
@@ -8,6 +8,8 @@ import BrandLockup from "./BrandLockup";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
   const { language, setLanguage } = useLanguage();
   const { user, nickname, isVerified, signOut } = useAuth();
   const t = getContent(language);
@@ -32,7 +34,12 @@ export default function Header() {
         ["소개", "/about"],
       ];
 
-  const toggleLanguage = () => setLanguage(language === "ko" ? "en" : "ko");
+  const toggleLanguage = () => {
+    const nextLanguage = language === "ko" ? "en" : "ko";
+    setLanguage(nextLanguage);
+    if (nextLanguage === "en" && location.pathname === "/") navigate("/en/");
+    if (nextLanguage === "ko" && /^\/en(?:\/|$)/.test(location.pathname)) navigate("/");
+  };
   const navLinkClass = "text-[12px] font-semibold text-charcoal/70 transition hover:text-green-deep 2xl:text-[13px]";
   const mobileLinkClass = "rounded-md px-3 py-3 text-sm font-semibold text-charcoal/75 hover:bg-green-pale";
 
@@ -45,7 +52,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-green-deep/15 bg-ivory/95 backdrop-blur-xl">
       <div className="container-page flex h-[78px] items-center gap-4">
-        <Link to="/" className="flex shrink-0 items-center gap-4" aria-label={language === "en" ? "SEED Civic Partners home" : "씨드시민파트너스 홈"}>
+        <Link to={language === "en" ? "/en/" : "/"} className="flex shrink-0 items-center gap-4" aria-label={language === "en" ? "SEED Civic Partners home" : "씨드시민파트너스 홈"}>
           <BrandLockup tone="header" />
           <span className="hidden border-l border-green-deep/20 pl-4 text-[9px] font-bold leading-4 tracking-[.15em] text-charcoal/45 sm:block">INDEPENDENT<br />CIVIC JOURNAL</span>
         </Link>

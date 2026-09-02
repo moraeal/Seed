@@ -34,6 +34,7 @@ function AppShell() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/en" element={<Home />} />
           <Route path="/account" element={<Account />} />
           <Route path="/about" element={<About />} />
           <Route path="/forum" element={<Forum />} />

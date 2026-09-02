@@ -5,6 +5,7 @@ import { publicInterestWatchCases } from "./data/publicInterestWatch";
 
 export const SITE_URL = "https://seedpartners.org";
 export const SITE_NAME = "씨드시민파트너스";
+export const ENGLISH_SITE_NAME = "SEED Civic Partners";
 
 export type SeoRoute = {
   path: string;
@@ -14,6 +15,7 @@ export type SeoRoute = {
   lastModified?: string;
   author?: string;
   section?: string;
+  language?: "ko" | "en";
 };
 
 const canonicalPath = (path: string) => path === "/" ? "/" : `${path.replace(/\/$/, "")}/`;
@@ -29,6 +31,14 @@ const staticRoutes: SeoRoute[] = [
     description: "씨드시민파트너스는 자유와 책임의 언어로 시민사회 공론장을 다시 세우는 독립 시민저널입니다.",
     type: "website",
     lastModified: latestDate,
+  },
+  {
+    path: "/en",
+    title: "SEED Civic Partners | Citizen Agency and Civic Responsibility",
+    description: "SEED Civic Partners is an independent civic platform in South Korea advancing citizen agency, civic responsibility, the rule of law, and an open civil society.",
+    type: "website",
+    lastModified: latestDate,
+    language: "en",
   },
   { path: "/news", title: "씨드뉴스 | 씨드시민파트너스", description: "한국 정치·사회 이슈의 확인된 사실과 아직 확인되지 않은 부분을 구분하고 시민이 지켜볼 점을 설명합니다.", type: "website", lastModified: newest(newsArticles.map((item) => item.date)) },
   { path: "/briefings", title: "시민브리핑 | 씨드시민파트너스", description: "복잡한 정책과 제도 논쟁을 사실, 맥락, 관찰 지점과 씨드의 관점으로 차분하게 풀어냅니다.", type: "website", lastModified: newest(getAllBriefingsNewestFirst().map((item) => item.date)) },

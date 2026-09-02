@@ -14,12 +14,13 @@ const server = await createServer({
   server: { middlewareMode: true },
   optimizeDeps: { noDiscovery: true },
 });
-const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule] = await Promise.all([
+const [{ seoRoutes, canonicalUrl, SITE_NAME, ENGLISH_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, siteContentModule] = await Promise.all([
   server.ssrLoadModule("/src/seo.ts"),
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
   server.ssrLoadModule("/src/data/columns.ts"),
   server.ssrLoadModule("/src/data/publicInterestWatch.ts"),
+  server.ssrLoadModule("/src/data/siteContent.ts"),
 ]);
 await server.close();
 
@@ -27,6 +28,7 @@ const news = newsModule.newsArticles;
 const briefings = briefingModule.getAllBriefingsNewestFirst();
 const columns = columnModule.columns;
 const watchCases = watchModule.publicInterestWatchCases;
+const englishContent = siteContentModule.getContent("en");
 
 const escapeHtml = (value = "") => String(value)
   .replaceAll("&", "&amp;")
@@ -42,6 +44,15 @@ const paragraphList = (items = []) => items.filter(Boolean).map((item) => `<p>${
 const bulletList = (items = []) => items.length ? `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : "";
 
 function articleBody(route) {
+  if (route.path === "/en") return [
+    `<section><h2>About SEED Civic Partners</h2><p>${escapeHtml(englishContent.home.description)}</p></section>`,
+    `<section><h2>Our Core Values</h2>${bulletList(englishContent.home.pillars.map(([title, description]) => `${title}: ${description}`))}</section>`,
+    `<section><h2>Core Programs</h2>${bulletList(englishContent.home.programs.map(([title, description]) => `${title}: ${description}`))}</section>`,
+    `<section><h2>Political and Organizational Independence</h2><p>${escapeHtml(englishContent.about.independence)}</p></section>`,
+    `<section><h2>Founder &amp; President</h2><p><strong>${escapeHtml(englishContent.about.founderName)}</strong></p><p>${escapeHtml(englishContent.about.founderBio)}</p></section>`,
+    `<section><h2>Contact</h2><p>${escapeHtml(englishContent.about.contact)}</p></section>`,
+  ].join("\n");
+
   const newsMatch = route.path.match(/^\/news\/([^/]+)$/);
   if (newsMatch) {
     const item = news.find((entry) => entry.slug === newsMatch[1]);
@@ -93,12 +104,15 @@ function articleBody(route) {
 }
 
 function structuredData(route) {
-  if (route.path === "/") return {
+  const language = route.language === "en" ? "en" : "ko-KR";
+  const siteName = route.language === "en" ? ENGLISH_SITE_NAME : SITE_NAME;
+  if (route.path === "/" || route.path === "/en") return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: SITE_NAME,
-    url: SITE_URL,
+    name: siteName,
+    url: canonicalUrl(route.path),
     description: route.description,
+    inLanguage: language,
   };
   if (route.type === "article") return {
     "@context": "https://schema.org",
@@ -111,7 +125,7 @@ function structuredData(route) {
     author: { "@type": "Person", name: route.author || SITE_NAME },
     publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
     articleSection: route.section,
-    inLanguage: "ko-KR",
+    inLanguage: language,
   };
   return {
     "@context": "https://schema.org",
@@ -119,8 +133,8 @@ function structuredData(route) {
     name: route.title.replace(/ \| .*$/, ""),
     description: route.description,
     url: canonicalUrl(route.path),
-    isPartOf: { "@type": "WebSite", name: SITE_NAME, url: SITE_URL },
-    inLanguage: "ko-KR",
+    isPartOf: { "@type": "WebSite", name: siteName, url: SITE_URL },
+    inLanguage: language,
   };
 }
 
@@ -128,14 +142,19 @@ function render(route) {
   const title = escapeHtml(route.title);
   const description = escapeHtml(route.description);
   const canonical = canonicalUrl(route.path);
+  const language = route.language === "en" ? "en" : "ko";
+  const siteName = route.language === "en" ? ENGLISH_SITE_NAME : SITE_NAME;
+  const languageAlternates = route.path === "/" || route.path === "/en"
+    ? `\n    <link rel="alternate" hreflang="ko" href="${canonicalUrl("/")}" />\n    <link rel="alternate" hreflang="en" href="${canonicalUrl("/en")}" />\n    <link rel="alternate" hreflang="x-default" href="${canonicalUrl("/")}" />`
+    : "";
   const jsonLd = JSON.stringify(structuredData(route)).replaceAll("<", "\\u003c");
   const head = `
     <title>${title}</title>
     <meta name="description" content="${description}" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <link rel="canonical" href="${canonical}" />
+    <link rel="canonical" href="${canonical}" />${languageAlternates}
     <meta property="og:type" content="${route.type}" />
-    <meta property="og:site_name" content="${SITE_NAME}" />
+    <meta property="og:site_name" content="${siteName}" />
     <meta property="og:title" content="${title}" />
     <meta property="og:description" content="${description}" />
     <meta property="og:url" content="${canonical}" />
@@ -143,9 +162,12 @@ function render(route) {
     <meta name="twitter:title" content="${title}" />
     <meta name="twitter:description" content="${description}" />
     <script type="application/ld+json">${jsonLd}</script>`;
-  const fallback = `<article aria-label="검색엔진용 본문" style="max-width:860px;margin:0 auto;padding:48px 24px;font-family:system-ui,sans-serif;line-height:1.85;color:#26332f"><p style="font-size:12px;letter-spacing:.12em;color:#426b59">${escapeHtml(route.section || SITE_NAME)}</p><h1 style="font-size:clamp(2rem,5vw,3.5rem);line-height:1.2;color:#123b30">${title.replace(/ \| .*$/, "")}</h1><p style="font-size:1.1rem;color:#4d5c56">${description}</p>${articleBody(route)}</article>`;
+  const fallbackLabel = route.language === "en" ? "Search-engine content" : "검색엔진용 본문";
+  const fallbackSection = route.section || siteName;
+  const fallback = `<article aria-label="${fallbackLabel}" style="max-width:860px;margin:0 auto;padding:48px 24px;font-family:system-ui,sans-serif;line-height:1.85;color:#26332f"><p style="font-size:12px;letter-spacing:.12em;color:#426b59">${escapeHtml(fallbackSection)}</p><h1 style="font-size:clamp(2rem,5vw,3.5rem);line-height:1.2;color:#123b30">${title.replace(/ \| .*$/, "")}</h1><p style="font-size:1.1rem;color:#4d5c56">${description}</p>${articleBody(route)}</article>`;
 
   return template
+    .replace(/<html\s+lang="[^"]*">/i, `<html lang="${language}">`)
     .replace(/\s*<title>[\s\S]*?<\/title>/i, "")
     .replace(/\s*<meta\s+name="description"[\s\S]*?\/>/i, "")
     .replace(/\s*<meta\s+name="robots"[\s\S]*?\/>/i, "")
