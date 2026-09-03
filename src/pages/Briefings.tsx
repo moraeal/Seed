@@ -37,7 +37,7 @@ export default function Briefings() {
               <Link
                 key={briefing.slug}
                 to={`/briefings/${briefing.slug}`}
-                className="group grid gap-7 border-b border-green-deep/15 py-9 md:grid-cols-[280px_1fr] md:items-center"
+                className="group grid gap-7 border-b border-green-deep/15 px-5 py-9 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7"
               >
                 <div className="overflow-hidden bg-green-deep">
                   {image ? (

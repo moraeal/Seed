@@ -1,7 +1,7 @@
 import type { ColumnTranslation } from "../types";
 
 export const issue02: ColumnTranslation = {
-  title: `As the State Grows Stronger, Society Must Grow Stronger Too`,
+  title: `A Strong Society Beyond a Strong State`,
   subtitle: `What Venezuela’s state failure asks of Korean civil society and SEED Civic Partners`,
   author: `Park Kyung-seuk`,
   summary: `Venezuela’s collapse cannot be explained by the single word “socialism.” Oil dependence, concentration of power, policy errors and the weakening of institutions and civil society that could have corrected those errors all mattered. The lesson for Korea is not to imitate a fear slogan, but to preserve the capacity of society to restrain and correct the state.`,

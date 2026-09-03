@@ -3,7 +3,7 @@ import type { SeedColumn } from "../columns";
 export const polanyiColumn: SeedColumn = {
   slug: "beyond-polanyi-market-society-state",
   issue: 9,
-  title: "시장은 사회 안에, 사회는 국가 밖에",
+  title: "사회 안의 시장, 국가 밖의 사회",
   subtitle: "씨드 관점에서 칼 폴라니를 넘어 이재명 정부를 본다",
   date: "2026-09-03",
   author: "박경석",

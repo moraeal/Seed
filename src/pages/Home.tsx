@@ -29,7 +29,7 @@ export default function Home() {
           <div>
             {leadColumn && (
               <article className="border-t-[3px] border-navy">
-                <Link to={`/columns/${leadColumn.slug}`} className="group block pt-4">
+                <Link to={`/columns/${leadColumn.slug}`} className="group -mx-4 block px-4 pb-5 pt-4 transition-colors hover:bg-green-pale/60">
                   <div className="flex items-center justify-between gap-4 text-[11px] font-extrabold tracking-[.15em] text-green-mid">
                     <span>SEED'S VOICE · {ko ? "씨앗의 소리" : "VOICE OF THE SEED"}</span>
                     <time className="tracking-normal text-charcoal/40">{leadColumn.date.replace(/-/g, ".")}</time>
@@ -46,7 +46,7 @@ export default function Home() {
 
             <div className="mt-8 grid border-y border-green-deep/20 sm:grid-cols-2 sm:divide-x sm:divide-green-deep/20">
               {news.slice(0, 2).map((item) => (
-                <Link key={item.slug} to={`/news/${item.slug}`} className="group grid gap-4 border-b border-green-deep/15 py-5 last:border-b-0 sm:grid-cols-[112px_1fr] sm:border-b-0 sm:px-5 sm:first:pl-0 sm:last:pr-0">
+                <Link key={item.slug} to={`/news/${item.slug}`} className="group grid gap-4 border-b border-green-deep/15 px-4 py-5 transition-colors hover:bg-green-pale/70 last:border-b-0 sm:grid-cols-[112px_1fr] sm:border-b-0 sm:px-5">
                   <img src={resolveImageSrc(item.heroImage.src)} alt={item.heroImage.alt} className="aspect-[4/3] w-full object-cover sm:h-[84px]" />
                   <div><span className="text-[10px] font-extrabold tracking-[.12em] text-green-mid">{item.category}</span><h2 className="editorial-title mt-1.5 text-lg font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h2></div>
                 </Link>
@@ -80,7 +80,7 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 md:divide-x md:divide-green-deep/15">
             {news.slice(2, 5).map((item) => (
-              <article key={item.slug} className="border-b border-green-deep/15 py-7 md:px-7 md:first:pl-0 md:last:pr-0">
+              <article key={item.slug} className="border-b border-green-deep/15 px-5 py-7 transition-colors hover:bg-green-pale/70 md:px-7">
                 <Link to={`/news/${item.slug}`} className="group block">
                   <img src={resolveImageSrc(item.heroImage.src)} alt={item.heroImage.alt} className="aspect-[16/10] w-full object-cover" />
                   <p className="mt-5 flex items-center gap-2 text-[10px] font-extrabold tracking-[.12em] text-green-mid"><Newspaper size={13}/>{item.category}</p>
@@ -99,7 +99,7 @@ export default function Home() {
           <div><p className="section-kicker">CIVIC BRIEFINGS</p><h2 className="editorial-title mt-3 text-3xl font-bold leading-tight text-navy sm:text-4xl">{ko ? "사실에서 판단까지" : "From facts to judgment"}</h2><p className="mt-4 text-sm leading-7 text-charcoal/58">{ko ? "확인된 사실을 먼저 짚고, 논쟁의 맥락과 앞으로 지켜볼 지점을 시민의 언어로 설명합니다." : "We begin with verified facts, explain the context, and identify what citizens should continue to watch."}</p><Link to="/briefings" className="text-link mt-6">{ko ? "시민브리핑 전체보기" : "View all briefings"}<ArrowRight size={15}/></Link></div>
           <div className="border-t-2 border-navy">
             {briefings.slice(1, 5).map((briefing, index) => (
-              <Link key={briefing.slug} to={`/briefings/${briefing.slug}`} className="group grid gap-2 border-b border-green-deep/15 py-5 sm:grid-cols-[72px_1fr_auto] sm:items-center sm:gap-5">
+              <Link key={briefing.slug} to={`/briefings/${briefing.slug}`} className="group grid gap-2 border-b border-green-deep/15 px-4 py-5 transition-colors hover:bg-white/85 sm:grid-cols-[72px_1fr_auto] sm:items-center sm:gap-5">
                 <span className="font-serif text-sm font-bold text-gold">{String(index + 2).padStart(2, "0")}</span>
                 <div><p className="text-[10px] font-extrabold tracking-[.12em] text-green-mid">{briefing.category}</p><h3 className="editorial-title mt-1 text-xl font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-2xl">{briefing.title}</h3></div>
                 <time className="text-xs text-charcoal/38">{briefing.date.replace(/-/g, ".")}</time>

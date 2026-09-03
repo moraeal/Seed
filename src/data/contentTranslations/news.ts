@@ -3,7 +3,7 @@ import type { NewsTranslation } from "./types";
 export const newsTranslations: Record<string, NewsTranslation> = {
   "2030-trillion-won-fiscal-plan-revenue-assumptions": {
     category: "Public Finance & Accountability",
-    title: "Korea's 2030 Trillion-Won Budget Path: Growth Investment or an Optimistic Revenue Forecast?",
+    title: "The Trillion-Won Budget and Optimistic Revenue",
     subtitle: "The case for higher spending must be matched by clear adjustment rules if revenue falls short. The National Assembly should test the assumptions and exit mechanisms behind the headline figure.",
     summary: "The government has proposed KRW 820.9 trillion in spending for 2027 and a medium-term path reaching KRW 1,005.2 trillion by 2030. It expects revenue and economic growth to keep the debt-to-GDP ratio near 49 percent, but continued semiconductor strength and tax growth remain forecasts rather than confirmed outcomes.",
     keySentence: "A capable state is not one that simply spends more, but one that sets priorities and exit rules so it can remain accountable when revenue forecasts fail.",
@@ -69,7 +69,7 @@ export const newsTranslations: Record<string, NewsTranslation> = {
   },
   "class-action-law-consumer-rights-market-responsibility": {
     category: "Consumers & Markets",
-    title: "Is a Class Action Law a Shield for Citizens — or a New Form of Excessive Regulation?",
+    title: "Class Actions: Citizen Shield or Overregulation?",
     subtitle: "Nineteen consumer and civic groups are calling for legislation that includes opt-out participation and evidence disclosure. The real question is how to strengthen remedies while preventing abusive litigation.",
     summary: "As Korea's regular National Assembly session opened, consumer and civic organizations renewed their demand for a general class action law. Small and dispersed claims often go unpursued because individual litigation costs more than the loss. But poorly designed rules on scope, opt-out participation, evidence disclosure and retroactive application could create unpredictable burdens, especially for smaller businesses.",
     keySentence: "A market is not free when citizens are too small to seek justice — or when litigation risk is so large that responsible firms cannot take risks.",
@@ -175,7 +175,7 @@ export const newsTranslations: Record<string, NewsTranslation> = {
   },
   "gs-retail-data-leak-corporate-accountability": {
     category: "Digital Rights",
-    title: "Privacy Regulator Fines GS Retail KRW 12.8 Billion Over Data Leak Affecting 1.66 Million People",
+    title: "GS Retail Data Leak Draws KRW 12.8 Billion Fine",
     subtitle: "Saying ‘we were hacked’ is not enough. The investigation found failures to detect abnormal login patterns and to stop the same attack even after the first breach became known.",
     summary: "Korea’s Personal Information Protection Commission imposed a KRW 12.836 billion administrative fine and a KRW 3 million penalty on GS Retail after personal information belonging to 1,660,153 GS SHOP and GS25 members was leaked. The central issue is not only the attacker’s intrusion, but the company’s responsibility for failing to detect repeated credential-stuffing activity and prevent additional leakage after the first incident was identified.",
     keySentence: "Once a company holds citizens’ personal data, protecting it is not an optional cost — it is a condition of market trust.",
@@ -200,7 +200,7 @@ export const newsTranslations: Record<string, NewsTranslation> = {
 
   "supreme-court-nomination-returned-in-unprecedented-clash": {
     category: "Constitution & Judiciary",
-    title: "Unprecedented Demand for a New Supreme Court Nominee Puts Nomination and Appointment Powers in Direct Conflict",
+    title: "Supreme Court Renomination Demand Tests Separation of Powers",
     subtitle: "The appointment process for Son Bong-gi has stopped, while political pressure on Chief Justice Cho Hee-dae — including impeachment talk — has intensified.",
     summary: "The presidential office declined to submit Chief Justice Cho Hee-dae’s nomination of Judge Son Bong-gi to the National Assembly and asked for a different nominee. The clash is unprecedented under the current constitutional order, and lawyers disagree over the scope of presidential appointment discretion and the chief justice’s nomination authority.",
     keySentence: "The chief justice’s method of submitting a nominee can be criticized, but that criticism must not turn into a de facto presidential nomination power or impeachment pressure from a parliamentary majority.",
@@ -226,7 +226,7 @@ export const newsTranslations: Record<string, NewsTranslation> = {
 
   "basic-pension-reform-fairness-and-trust": {
     category: "Welfare & Pensions",
-    title: "Basic Pension Even With KRW 4.68 Million Monthly Earnings? Reform Debate Tests Fairness and Trust",
+    title: "Basic Pension Reform Faces a Fairness Test",
     subtitle: "If the pension threshold changes, government should explain poverty reduction, work incentives and a predictable transition — not just a new number.",
     summary: "The government is considering replacing the current target of the lower 70% of older adults with a median-income-linked threshold while increasing benefits for poorer recipients. The direction is more support for those with the least, but the number of people newly excluded and the transition rules have not yet been fully disclosed.",
     keySentence: "Basic-pension reform should be judged not by how many recipients are removed, but by whether it reduces poverty among the poorest elderly without penalizing those who continue to work.",
@@ -251,7 +251,7 @@ export const newsTranslations: Record<string, NewsTranslation> = {
 
   "youth-jobs-need-opportunity-not-another-platform": {
     category: "Youth & Jobs",
-    title: "Job Seekers Say Korea Has Enough Experience Programs and Matching Platforms — They Need Real Opportunities",
+    title: "Young Job Seekers Need Jobs, Not More Platforms",
     subtitle: "The government wants to improve connections, while young people say there must first be better jobs worth connecting to.",
     summary: "A report on the government’s youth-employment package found skepticism among job seekers who say similar work-experience programs and matching platforms already exist. The government responds that demand exceeds available program capacity and that the broader package aims to create more than 300,000 additional jobs by 2030. SEED places both claims side by side and asks what outcomes should determine success.",
     keySentence: "Young people need more than another employment platform. They need real opportunities to enter work, build skills and move to the next stage of a career.",
@@ -277,7 +277,7 @@ export const newsTranslations: Record<string, NewsTranslation> = {
 
   "regulation-reform-needs-public-accountability": {
     category: "Policy & Markets",
-    title: "Prime Minister: ‘Regulations That Can Be Fixed Quickly Will Be Listed and Removed Immediately’",
+    title: "Prime Minister Pledges Swift Regulatory Reform",
     subtitle: "The direction is reasonable, but citizens should be able to see exactly what will change, by when and with what results.",
     summary: "Prime Minister Han Seong-sook told business groups that regulations that can be resolved through inter-ministerial coordination or revision of existing rules should be addressed quickly, while more complex conflicts should go through deliberation. SEED asks what must be disclosed if this is to become genuine regulatory reform rather than another announcement.",
     keySentence: "Good regulatory reform is not about removing the largest number of rules. It lowers unnecessary barriers while protecting safety and fair competition more clearly.",

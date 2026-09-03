@@ -3,7 +3,7 @@ import type { Briefing } from "./briefings";
 export const gyeonggiBriefing: Briefing = {
   slug: "gyeonggi-fiscal-emergency",
   category: "씨드 시민브리핑 04",
-  title: "경기도는 정말 ‘부도’인가 — 문제는 왜 이 지경까지 왔느냐입니다",
+  title: "경기도 재정위기, ‘부도’보다 빚의 속도",
   summary: "경기도가 당장 지급불능에 빠진 것은 아닙니다. 그러나 지방채 발행한도 99.6%, 기금 차입, 일부 필수사업 9개월분 편성, 대규모 세출 구조조정은 분명한 경고입니다. 과장은 걷어내고 책임은 더 정확하게 묻습니다.",
   date: "2026-09-01",
   author: "씨드 시민브리핑",

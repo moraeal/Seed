@@ -41,7 +41,7 @@ export const briefings: Briefing[] = [
   {
     slug: "president-criminal-trials-article-84",
     category: "씨드 시민브리핑 03",
-    title: "대통령의 재판은 멈췄지만, 책임까지 멈춘 것은 아닙니다",
+    title: "멈춘 대통령 재판, 남은 책임",
     summary: "현직 대통령의 형사재판은 왜 중단됐을까요? 헌법 제84조의 한 문장과 엇갈린 해석, 다섯 재판의 현재 상태를 시민의 눈으로 풀었습니다.",
     date: "2026-08-31",
     author: "씨드 시민브리핑",
@@ -152,7 +152,7 @@ export const briefings: Briefing[] = [
   {
     slug: "prosecution-service-abolition",
     category: "씨드 특별브리핑 01",
-    title: "검찰청은 사라지지만, 수사권력은 사라지지 않습니다",
+    title: "검찰청 폐지 뒤 남는 수사권력",
     summary: "검찰청 폐지와 공소청·중수청 출범, 검사 직접·보완수사권 폐지의 사실과 쟁점을 시민의 관점에서 정리했습니다.",
     date: "2026-08-16",
     author: "씨드 시민브리핑",
@@ -259,7 +259,7 @@ export const briefings: Briefing[] = [
   {
     slug: "housing-supply-numbers",
     category: "씨드 시민브리핑 02",
-    title: "정부 23만 호 vs 서울시 31만 호, 실제 집은 몇 채 늘어날까요?",
+    title: "정부 23만 호·서울 31만 호, 실제 공급은?",
     summary: "수도권과 서울, 총 착공과 실제 순증, 착공과 입주가 뒤섞인 주택공급 숫자를 시민이 비교할 수 있도록 풀었습니다.",
     date: "2026-08-16",
     author: "씨드 시민브리핑",
@@ -367,7 +367,7 @@ export const briefings: Briefing[] = [
   {
     slug: "public-interest-citizenization",
     category: "공익감시",
-    title: "공익은 누구의 것인가: 공익의 시민화를 묻다",
+    title: "공익의 주인은 누구인가",
     summary: "공익기관의 선의만이 아니라 성과와 책임, 시민에게 열린 정보의 구조를 살펴봅니다.",
     date: "2026-08-30",
     author: "씨드 편집팀",
@@ -381,7 +381,7 @@ export const briefings: Briefing[] = [
   {
     slug: "sports-governance-fairness",
     category: "스포츠·공공",
-    title: "성적보다 먼저 물어야 할 질문, 스포츠 행정의 공정성",
+    title: "성적보다 공정한 스포츠 행정",
     summary: "경기 결과에 대한 분노를 넘어 선임 과정과 협회의 설명 책임, 팬 시민의 권리를 묻습니다.",
     date: "2026-08-28",
     author: "씨드 편집팀",

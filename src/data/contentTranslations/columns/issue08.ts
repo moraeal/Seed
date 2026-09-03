@@ -1,7 +1,7 @@
 import type { ColumnTranslation } from "../types";
 
 export const issue08: ColumnTranslation = {
-  title: `A Public Forum for Citizens—or Citizens Managed by the State?`,
+  title: `Citizens Managed by the State`,
   subtitle: `Behind the reassuring language of “deliberative democracy,” the nationalization of civil society may be beginning`,
   summary: `Everyone’s Square, deliberative programs, civic education, civil-society support and the National Civic Participation Commission are being joined into a permanent system linking the center and the regions. Whatever the intention to widen participation, we examine the risk that the state may come to design citizens’ agendas and political representation.`,
   heroImage: {

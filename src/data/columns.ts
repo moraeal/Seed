@@ -30,7 +30,7 @@ export const columns: SeedColumn[] = [
   {
     slug: "citizenship-managed-by-the-state",
     issue: 8,
-    title: "시민을 위한 공론장인가, 국가가 관리하는 시민인가",
+    title: "국가가 관리하는 시민",
     subtitle: "‘숙의민주주의’라는 좋은 말 뒤에서 시민사회의 국가화가 시작되고 있다",
     date: "2026-09-02",
     author: "박경석",
@@ -529,7 +529,7 @@ export const columns: SeedColumn[] = [
   {
     slug: "random-selection-alone-does-not-make-a-public-forum",
     issue: 4,
-    title: "무작위로 뽑았다고 공론장이 되는 것은 아닙니다",
+    title: "무작위 선발은 공론장이 아니다",
     subtitle: "기후시민회의와 전국 시민의회 운동을 보며, 보수가 공론장을 다시 생각해야 할 이유",
     date: "2026-08-31",
     author: "박경석",
@@ -643,7 +643,7 @@ export const columns: SeedColumn[] = [
   {
     slug: "conservatives-and-the-language-of-citizens",
     issue: 3,
-    title: "보수가 잃어버린 것은 정권이 아니라 시민의 언어이다",
+    title: "보수가 잃어버린 시민의 언어",
     subtitle: "그람시의 진지전에서 씨드의 시민브리핑까지, 보수 시민사회의 회복을 다시 묻다",
     date: "2026-08-31",
     author: "박경석",
@@ -747,7 +747,7 @@ export const columns: SeedColumn[] = [
   {
     slug: "venezuela-state-failure-and-strong-society",
     issue: 2,
-    title: "국가가 강해질수록 사회도 강해져야 합니다",
+    title: "강한 국가보다 강한 사회",
     subtitle: "베네수엘라 국가 실패가 한국 시민사회와 씨드시민파트너스에 던지는 질문",
     date: "2026-08-31",
     author: "박경석",
@@ -846,7 +846,7 @@ export const columns: SeedColumn[] = [
   {
     slug: "ham-seok-heon-and-citizenization",
     issue: 1,
-    title: "함석헌을 다시 생각한다",
+    title: "함석헌, 시민을 다시 묻다",
     subtitle: "민주화 이후, 왜 우리는 ‘시민화’를 말해야 하는가",
     date: "2026-08-30",
     author: "박경석",

@@ -1,7 +1,7 @@
 import type { ColumnTranslation } from "../types";
 
 export const issue01: ColumnTranslation = {
-  title: `Thinking About Ham Seok-heon Again`,
+  title: `Ham Seok-heon and the Citizen Question`,
   subtitle: `After democratization, why should we now speak of “citizenization”?`,
   author: `Park Kyung-seuk`,
   summary: `Korea’s democratization created institutions of political freedom. The next question is whether citizens have grown into active subjects who can think, judge, associate and hold power accountable after elections. This column revisits Ham Seok-heon’s idea of the “one person” and the seed-like citizen as a way to think about the next stage of civic development.`,

@@ -3,7 +3,7 @@ import type { BriefingTranslation } from "./types";
 export const briefingTranslations: Record<string, BriefingTranslation> = {
   "2027-national-budget-revenue-debt": {
     category: "SEED Civic Briefing 05",
-    title: "The KRW 820.9 Trillion ‘Super-Budget’: Are Korea’s Public Finances Really Improving?",
+    title: "The KRW 820.9 Trillion Budget Test",
     summary: "The government plans a record 12.8% increase in spending while saying both the fiscal balance and the debt-to-GDP ratio will improve. We put the key assumptions on the same footing: KRW 194.2 trillion in additional semiconductor-driven tax revenue, a KRW 162.3 trillion Future Response Fund, and a KRW 106 trillion increase in government debt.",
     author: "SEED Civic Briefing",
     images: [
@@ -135,7 +135,7 @@ export const briefingTranslations: Record<string, BriefingTranslation> = {
 
   "gyeonggi-fiscal-emergency": {
     category: "SEED Civic Briefing 04",
-    title: "Is Gyeonggi Province Really ‘Bankrupt’? The Real Question Is How Its Finances Got This Far",
+    title: "Gyeonggi’s Fiscal Crisis and Rising Debt",
     summary: "Gyeonggi Province is not currently insolvent. But issuing local bonds up to 99.6% of its ceiling, borrowing from public funds, budgeting only nine months for some essential programs, and carrying out major expenditure restructuring are unmistakable warning signs. The right approach is to remove exaggeration while demanding precise accountability.",
     author: "SEED Civic Briefing",
     images: [
@@ -170,7 +170,7 @@ export const briefingTranslations: Record<string, BriefingTranslation> = {
 
   "president-criminal-trials-article-84": {
     category: "SEED Civic Briefing 03",
-    title: "The President’s Trials Have Paused, but Accountability Has Not",
+    title: "Paused Presidential Trials, Unresolved Accountability",
     summary: "Why have the sitting president’s criminal trials been suspended? This briefing explains Article 84 of the Constitution, the competing interpretations of the word ‘prosecution,’ and the current status of five criminal cases in language citizens can use.",
     author: "SEED Civic Briefing",
     images: [
@@ -201,7 +201,7 @@ export const briefingTranslations: Record<string, BriefingTranslation> = {
 
   "housing-supply-numbers": {
     category: "SEED Civic Briefing 02",
-    title: "Government 230,000 vs. Seoul 310,000: How Many Homes Will Actually Be Added?",
+    title: "Government 230,000 vs. Seoul 310,000: What Will Be Built?",
     summary: "Housing numbers often mix the Seoul metropolitan area with Seoul city, gross starts with net additions, and construction starts with completed homes. This briefing puts the figures on comparable terms.",
     author: "SEED Civic Briefing",
     images: [
@@ -234,7 +234,7 @@ export const briefingTranslations: Record<string, BriefingTranslation> = {
 
   "prosecution-service-abolition": {
     category: "SEED Special Briefing 01",
-    title: "The Prosecution Service Will Disappear, but Investigative Power Will Not",
+    title: "Investigative Power After the Prosecution Service",
     summary: "This briefing explains the abolition of the Prosecution Service, the creation of a Public Prosecution Office and Serious Crimes Investigation Agency, and the removal of prosecutors’ direct and supplementary investigative powers — with a focus on where coercive state power moves and how citizens can control it.",
     author: "SEED Civic Briefing",
     images: [
@@ -268,7 +268,7 @@ export const briefingTranslations: Record<string, BriefingTranslation> = {
 
   "public-interest-citizenization": {
     category: "Public-Interest Monitoring",
-    title: "Who Owns the Public Interest? Toward the Citizenization of Public Interest",
+    title: "Who Owns the Public Interest?",
     summary: "Public institutions and nonprofit organizations should be judged not only by good intentions but by results, accountability and whether information is genuinely open to citizens.",
     author: "SEED Editorial Team",
     content: ["The label ‘public interest’ cannot function as an exemption from accountability. Public agencies, nonprofit organizations and corporate social-contribution programs should explain not only what they did but what changed for whom.", "By ‘citizenization of public interest,’ SEED means returning information and judgment to citizens rather than allowing particular organizations or experts to monopolize the definition of public good. Transparent finances, decision-making and outcomes in language citizens can understand are the starting point."],
@@ -277,7 +277,7 @@ export const briefingTranslations: Record<string, BriefingTranslation> = {
 
   "sports-governance-fairness": {
     category: "Sports & Public Affairs",
-    title: "Before the Score, Ask About Fairness in Sports Governance",
+    title: "Fairness Before Scores in Sports Governance",
     summary: "Rather than stopping at anger over results, citizens should examine the fairness of selection procedures, the accountability of sports associations and the rights of fans.",
     author: "SEED Editorial Team",
     content: ["A national team’s performance is not only the responsibility of one coach. Trust in sports administration depends on whether selection criteria were disclosed in advance, whether procedures were applied consistently, and who explains and accepts responsibility for the outcome.", "Fans are not merely consumers. When sports organizations operate with public support and national attention, fans have a civic right to demand procedures and evidence. Criticism should therefore move beyond personal attacks toward questions capable of improving institutions."],

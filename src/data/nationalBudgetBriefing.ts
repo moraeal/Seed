@@ -3,7 +3,7 @@ import type { Briefing } from "./briefings";
 export const nationalBudgetBriefing: Briefing = {
   slug: "2027-national-budget-revenue-debt",
   category: "씨드 시민브리핑 05",
-  title: "820.9조 원 ‘슈퍼예산’, 나라살림은 정말 좋아졌을까요?",
+  title: "820.9조 원 슈퍼예산, 나라살림은?",
   summary: "정부는 지출을 역대 최대인 12.8% 늘리면서도 재정수지와 국가채무비율은 좋아진다고 설명합니다. 그 배경인 반도체 추가세수 194.2조 원, 미래대응기금 162.3조 원, 106조 원 늘어나는 국가채무를 같은 기준으로 풀어봅니다.",
   date: "2026-09-02",
   author: "씨드 시민브리핑",
