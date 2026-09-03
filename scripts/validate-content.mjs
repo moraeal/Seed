@@ -21,6 +21,12 @@ const [newsModule, briefingModule, columnModule, newsTranslationModule, briefing
 await server.close();
 
 const errors = [];
+const requireEditorialStructure = (kind, item, visualCount) => {
+  if (!item.summary?.trim()) errors.push(`Missing top summary for ${kind}: ${item.slug}`);
+  if ((item.readMinutes ?? 0) < 8) return;
+  if ((item.sections?.length ?? 0) < 2) errors.push(`Long-form ${kind} needs at least two titled sections: ${item.slug}`);
+  if (visualCount < 2) errors.push(`Long-form ${kind} needs at least two purposeful visuals: ${item.slug}`);
+};
 const requireSocialImage = async (section, slug) => {
   try {
     await access(path.join(process.cwd(), "public", "images", "social", section, `${slug}.jpg`));
@@ -32,16 +38,19 @@ await requireSocialImage("site", "home");
 for (const article of newsModule.newsArticles) {
   if (!newsTranslationModule.newsTranslations[article.slug]) errors.push(`Missing English news translation: ${article.slug}`);
   if (!article.heroImage?.src) errors.push(`Missing social-preview image for news: ${article.slug}`);
+  requireEditorialStructure("news", article, [article.heroImage, article.inlineImage].filter((image) => image?.src).length);
   await requireSocialImage("news", article.slug);
 }
 for (const briefing of briefingModule.getAllBriefingsNewestFirst()) {
   if (!briefingTranslationModule.briefingTranslations[briefing.slug]) errors.push(`Missing English briefing translation: ${briefing.slug}`);
   if (!briefing.images?.[0]?.src) errors.push(`Missing social-preview image for briefing: ${briefing.slug}`);
+  requireEditorialStructure("briefing", briefing, briefing.images?.filter((image) => image?.src).length ?? 0);
   await requireSocialImage("briefings", briefing.slug);
 }
 for (const column of columnModule.columns) {
   if (!columnTranslationModule.columnTranslations[column.issue]) errors.push(`Missing English column translation: issue ${column.issue} (${column.slug})`);
   if (!column.heroImage?.src) errors.push(`Missing social-preview image for column: ${column.slug}`);
+  requireEditorialStructure("column", column, [column.heroImage, column.inlineImage, ...(column.additionalImages ?? [])].filter((image) => image?.src).length);
   await requireSocialImage("columns", column.slug);
 }
 
