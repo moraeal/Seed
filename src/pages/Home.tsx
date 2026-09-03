@@ -56,16 +56,16 @@ export default function Home() {
     <div className="bg-paper">
       <section className="border-b border-green-deep/20 bg-ivory py-7 sm:py-10">
         <div className="container-page grid gap-8 xl:grid-cols-[minmax(0,1.55fr)_minmax(350px,.72fr)] xl:gap-10">
-          <div>
+          <div className="h-full">
             {leadColumn && (
-              <article className="border-t-[3px] border-navy">
-                <Link to={`/columns/${leadColumn.slug}`} className="group -mx-4 block px-4 pb-5 pt-4 transition-colors hover:bg-green-pale/60">
-                  <div className="flex items-center justify-between gap-4 text-[11px] font-extrabold tracking-[.15em] text-green-mid">
-                    <span>SEED'S VOICE · {ko ? "씨앗의 소리" : "VOICE OF THE SEED"}</span>
-                    <time className="tracking-normal text-charcoal/40">{leadColumn.date.replace(/-/g, ".")}</time>
-                  </div>
-                  <div className="mt-4 overflow-hidden bg-navy">
+              <article className="h-full border-t-[3px] border-navy">
+                <Link to={`/columns/${leadColumn.slug}`} className="group -mx-4 block h-full px-4 pb-5 pt-4 transition-colors hover:bg-green-pale/60">
+                  <div className="relative overflow-hidden bg-navy">
                     <img src={resolveImageSrc(leadColumn.heroImage.src)} alt={leadColumn.heroImage.alt} className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-black/80 via-black/35 to-transparent px-5 pb-5 pt-16 text-white sm:px-6">
+                      <span className="text-xs font-extrabold tracking-[.2em] drop-shadow-[0_2px_4px_rgba(0,0,0,.95)] sm:text-sm">SEED'S VOICE</span>
+                      <time className="rounded-sm bg-black/45 px-2.5 py-1 text-[11px] font-semibold tracking-normal text-white drop-shadow-[0_1px_3px_rgba(0,0,0,.95)] backdrop-blur-sm">{leadColumn.date.replace(/-/g, ".")}</time>
+                    </div>
                   </div>
                   <h1 className="editorial-title mt-5 max-w-5xl text-[2.15rem] font-bold leading-[1.1] text-navy transition group-hover:text-green-mid sm:text-[3.15rem] lg:text-[3.5rem]">{leadColumn.title}</h1>
                   <p className="mt-4 max-w-4xl text-base font-medium leading-7 text-charcoal/65 sm:text-[17px] sm:leading-8">{leadColumn.summary}</p>
@@ -76,18 +76,16 @@ export default function Home() {
             )}
           </div>
 
-          <aside className="self-start bg-green-deep text-white xl:sticky xl:top-6" aria-labelledby="seed-voice-heading">
+          <aside className="h-full self-stretch bg-green-deep text-white" aria-labelledby="seed-voice-heading">
             <div className="border-b border-white/20 px-6 py-5 sm:px-7">
-              <p className="text-[10px] font-extrabold tracking-[.2em] text-gold-light">SEED'S VOICE</p>
-              <div className="mt-2 flex items-end justify-between gap-4"><h2 id="seed-voice-heading" className="editorial-title text-3xl font-bold">{ko ? "씨앗의 소리" : "VOICE OF THE SEED"}</h2><Link to="/columns" className="inline-flex items-center gap-1 text-xs font-bold text-white/65 hover:text-white">{ko ? "전체보기" : "View all"}<ArrowRight size={13}/></Link></div>
+              <div className="flex items-end justify-between gap-4"><h2 id="seed-voice-heading" className="editorial-title text-3xl font-bold">씨앗의 소리</h2><Link to="/columns" className="inline-flex items-center gap-1 text-xs font-bold text-white/65 hover:text-white">{ko ? "전체보기" : "View all"}<ArrowRight size={13}/></Link></div>
             </div>
 
             {journalColumns.slice(1, 4).map((column, index) => (
-              <Link key={column.slug} to={`/columns/${column.slug}`} className={`group block px-6 py-6 transition hover:bg-white/[.055] sm:px-7 ${index < 2 ? "border-b border-white/15" : ""}`}>
-                {index === 0 && <img src={resolveImageSrc(column.heroImage.src)} alt={column.heroImage.alt} className="mb-5 aspect-[16/9] w-full object-cover" />}
+              <Link key={column.slug} to={`/columns/${column.slug}`} className={`group block px-6 py-5 transition hover:bg-white/[.055] sm:px-7 ${index < 2 ? "border-b border-white/15" : ""}`}>
                 <time className="text-[11px] text-white/38">{column.date.replace(/-/g, ".")}</time>
-                <h3 className={`editorial-title mt-2 font-bold leading-snug text-white transition group-hover:text-gold-light ${index === 0 ? "text-2xl sm:text-[1.7rem]" : "text-xl"}`}>{column.title}</h3>
-                <p className="mt-3 line-clamp-3 text-sm leading-6 text-white/62">{column.summary}</p>
+                <h3 className="editorial-title mt-2 text-xl font-bold leading-snug text-white transition group-hover:text-gold-light sm:text-2xl">{column.title}</h3>
+                <p className="mt-3 line-clamp-2 text-sm leading-6 text-white/62">{column.summary}</p>
               </Link>
             ))}
           </aside>
