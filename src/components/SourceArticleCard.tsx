@@ -22,7 +22,7 @@ export default function SourceArticleCard({ news, compact = false, ko }: SourceA
         href={news.url}
         target="_blank"
         rel="noreferrer"
-        className="group/source mt-auto grid grid-cols-[1fr_92px] overflow-hidden border border-green-deep/15 bg-ivory transition hover:border-green-deep/30 hover:bg-green-pale/45"
+        className={`group/source mt-auto grid ${thumbnail ? "grid-cols-[1fr_92px]" : "grid-cols-1"} overflow-hidden border border-green-deep/15 bg-ivory transition hover:border-green-deep/30 hover:bg-green-pale/45`}
         aria-label={`${news.outlet}: ${news.headline}`}
       >
         <div className="min-w-0 px-4 py-3">
