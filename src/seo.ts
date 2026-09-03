@@ -6,6 +6,8 @@ import { publicInterestWatchCases } from "./data/publicInterestWatch";
 export const SITE_URL = "https://seedpartners.org";
 export const SITE_NAME = "씨드 시민저널";
 export const ENGLISH_SITE_NAME = "SEED Civic Journal";
+export const SOCIAL_SITE_NAME = "씨드시민파트너스";
+export const ENGLISH_SOCIAL_SITE_NAME = "SEED Civic Partners";
 
 export type SeoRoute = {
   path: string;

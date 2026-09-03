@@ -1,6 +1,12 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { canonicalUrl, ENGLISH_SITE_NAME, getSeoRoute, SITE_NAME } from "../seo";
+import {
+  canonicalUrl,
+  ENGLISH_SOCIAL_SITE_NAME,
+  getSeoRoute,
+  SITE_NAME,
+  SOCIAL_SITE_NAME,
+} from "../seo";
 
 function setMeta(selector: string, attributes: Record<string, string>) {
   let element = document.head.querySelector<HTMLMetaElement>(selector);
@@ -24,7 +30,7 @@ export default function RouteMetadata() {
     const description = route?.description ?? "씨드 시민저널 홈페이지입니다.";
     const url = canonicalUrl(route?.path ?? "/");
     const language = route?.language ?? "ko";
-    const siteName = language === "en" ? ENGLISH_SITE_NAME : SITE_NAME;
+    const siteName = language === "en" ? ENGLISH_SOCIAL_SITE_NAME : SOCIAL_SITE_NAME;
 
     document.title = title;
     document.documentElement.lang = language;

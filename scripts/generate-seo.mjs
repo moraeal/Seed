@@ -14,7 +14,7 @@ const server = await createServer({
   server: { middlewareMode: true },
   optimizeDeps: { noDiscovery: true },
 });
-const [{ seoRoutes, canonicalUrl, SITE_NAME, ENGLISH_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, siteContentModule] = await Promise.all([
+const [{ seoRoutes, canonicalUrl, SITE_NAME, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, siteContentModule] = await Promise.all([
   server.ssrLoadModule("/src/seo.ts"),
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
@@ -105,7 +105,7 @@ function articleBody(route) {
 
 function structuredData(route) {
   const language = route.language === "en" ? "en" : "ko-KR";
-  const siteName = route.language === "en" ? ENGLISH_SITE_NAME : SITE_NAME;
+  const siteName = route.language === "en" ? ENGLISH_SOCIAL_SITE_NAME : SOCIAL_SITE_NAME;
   if (route.path === "/" || route.path === "/en") return {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -144,7 +144,7 @@ function render(route) {
   const description = escapeHtml(route.description);
   const canonical = canonicalUrl(route.path);
   const language = route.language === "en" ? "en" : "ko";
-  const siteName = route.language === "en" ? ENGLISH_SITE_NAME : SITE_NAME;
+  const siteName = route.language === "en" ? ENGLISH_SOCIAL_SITE_NAME : SOCIAL_SITE_NAME;
   const languageAlternates = route.path === "/" || route.path === "/en"
     ? `\n    <link rel="alternate" hreflang="ko" href="${canonicalUrl("/")}" />\n    <link rel="alternate" hreflang="en" href="${canonicalUrl("/en")}" />\n    <link rel="alternate" hreflang="x-default" href="${canonicalUrl("/")}" />`
     : "";
