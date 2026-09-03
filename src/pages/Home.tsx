@@ -135,6 +135,30 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="pb-12 sm:pb-16" aria-labelledby="citizens-as-seeds-title">
+        <div className="container-page">
+          <div className="relative isolate min-h-[230px] overflow-hidden border-y-2 border-green-deep bg-[#fbf4e5] sm:min-h-[220px]">
+            <img
+              src={resolveImageSrc("images/support/founding-partners-watercolor.webp")}
+              alt="서로 다른 청년들이 함께 웃으며 이야기를 나누는 모습"
+              className="absolute inset-0 h-full w-full object-cover object-[67%_50%]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#fffaf0] via-[#fffaf0]/95 to-[#fffaf0]/20 sm:via-[#fffaf0]/88 sm:to-transparent" />
+            <div className="relative z-10 flex min-h-[230px] max-w-[82%] flex-col justify-center px-6 py-7 sm:min-h-[220px] sm:max-w-[66%] sm:px-10 lg:max-w-[61%] lg:px-12">
+              <p className="section-kicker">CITIZENS AS SEEDS</p>
+              <h2 id="citizens-as-seeds-title" className="editorial-title mt-2 text-[1.75rem] font-bold leading-tight text-navy sm:text-[2.15rem]">
+                {ko ? "우리는 시민을 씨앗으로 봅니다" : "We See Every Citizen as a Seed"}
+              </h2>
+              <p className="mt-3 max-w-3xl text-[13px] font-medium leading-6 text-charcoal/72 sm:text-[15px] sm:leading-7">
+                {ko
+                  ? "시민은 자유와 책임을 배우고 관계 속에서 자라며 사회를 변화시키는 존재입니다. 그래서 씨드시민파트너스는 성장 가능성과 생명을 품은 시민을 ‘씨앗’이라고 부릅니다."
+                  : "Citizens learn freedom and responsibility, grow through relationships, and change society. SEED Civic Partners therefore calls each citizen a seed: a living source of possibility and growth."}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="border-y border-green-deep/15 bg-[#F1F2EC] py-12 sm:py-16">
         <div className="container-page grid gap-9 lg:grid-cols-[.5fr_1.5fr] lg:gap-14">
           <div><p className="section-kicker">CIVIC BRIEFINGS</p><h2 className="editorial-title mt-3 text-3xl font-bold leading-tight text-navy sm:text-4xl">{ko ? "사실에서 판단까지" : "From facts to judgment"}</h2><p className="mt-4 text-sm leading-7 text-charcoal/58">{ko ? "확인된 사실을 먼저 짚고, 논쟁의 맥락과 앞으로 지켜볼 지점을 시민의 언어로 설명합니다." : "We begin with verified facts, explain the context, and identify what citizens should continue to watch."}</p><Link to="/briefings" className="text-link mt-6">{ko ? "시민브리핑 전체보기" : "View all briefings"}<ArrowRight size={15}/></Link></div>
