@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">공영방송 이사회 법정 정원과 현재 구성</title>
+  <desc id="desc">2026년 9월 3일 현재 KBS는 15명 중 8명, 방송문화진흥회와 EBS는 각각 13명 중 11명이 임명된 상태다.</desc>
+  <rect width="1600" height="900" fill="#f7f4e9"/>
+  <rect x="0" y="0" width="1600" height="18" fill="#174c3a"/>
+  <text x="110" y="104" fill="#17324d" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="48" font-weight="800">공영방송 이사회, 아직 완전체가 아닙니다</text>
+  <text x="110" y="154" fill="#495760" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="23">2026년 9월 3일 현재 · 법정 정원과 실제 임명 현황</text>
+
+  <g font-family="Pretendard, Noto Sans KR, sans-serif">
+    <text x="110" y="272" fill="#17324d" font-size="34" font-weight="800">KBS</text>
+    <text x="110" y="310" fill="#56626a" font-size="21">법정 정원 15명 · 국회 추천 6명</text>
+    <rect x="460" y="240" width="780" height="76" rx="10" fill="#d9ddd8"/>
+    <rect x="460" y="240" width="416" height="76" rx="10" fill="#174c3a"/>
+    <text x="668" y="289" fill="#ffffff" font-size="25" font-weight="800" text-anchor="middle">임명 8</text>
+    <text x="1058" y="289" fill="#17324d" font-size="25" font-weight="800" text-anchor="middle">공석 7</text>
+    <text x="1290" y="289" fill="#b13a2f" font-size="32" font-weight="900">8 / 15</text>
+
+    <text x="110" y="443" fill="#17324d" font-size="34" font-weight="800">MBC 대주주 방문진</text>
+    <text x="110" y="481" fill="#56626a" font-size="21">법정 정원 13명 · 국회 추천 5명</text>
+    <rect x="460" y="411" width="780" height="76" rx="10" fill="#d9ddd8"/>
+    <rect x="460" y="411" width="660" height="76" rx="10" fill="#2f725b"/>
+    <text x="790" y="460" fill="#ffffff" font-size="25" font-weight="800" text-anchor="middle">임명 11</text>
+    <text x="1180" y="460" fill="#17324d" font-size="25" font-weight="800" text-anchor="middle">공석 2</text>
+    <text x="1290" y="460" fill="#17324d" font-size="32" font-weight="900">11 / 13</text>
+
+    <text x="110" y="614" fill="#17324d" font-size="34" font-weight="800">EBS</text>
+    <text x="110" y="652" fill="#56626a" font-size="21">법정 정원 13명 · 국회 추천 5명</text>
+    <rect x="460" y="582" width="780" height="76" rx="10" fill="#d9ddd8"/>
+    <rect x="460" y="582" width="660" height="76" rx="10" fill="#2f725b"/>
+    <text x="790" y="631" fill="#ffffff" font-size="25" font-weight="800" text-anchor="middle">임명 11</text>
+    <text x="1180" y="631" fill="#17324d" font-size="25" font-weight="800" text-anchor="middle">공석 2</text>
+    <text x="1290" y="631" fill="#17324d" font-size="32" font-weight="900">11 / 13</text>
+
+    <line x1="110" y1="728" x2="1490" y2="728" stroke="#174c3a" stroke-opacity=".2" stroke-width="2"/>
+    <circle cx="128" cy="786" r="10" fill="#174c3a"/>
+    <text x="153" y="794" fill="#34434b" font-size="22">임명</text>
+    <circle cx="245" cy="786" r="10" fill="#d9ddd8" stroke="#aab2ad"/>
+    <text x="270" y="794" fill="#34434b" font-size="22">공석</text>
+    <text x="1490" y="794" fill="#56626a" font-size="20" text-anchor="end">자료: 방송 3법 및 2026.9.3 공개자료 · 씨드시민파트너스</text>
+    <text x="110" y="845" fill="#7a4f18" font-size="22" font-weight="700">핵심: 추천 주체의 다양성을 내세운 제도인 만큼, 빈자리 상태의 중대 결정은 시민적 정당성을 따져야 합니다.</text>
+  </g>
+</svg>
