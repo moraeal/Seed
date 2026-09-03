@@ -1,14 +1,9 @@
-import { ArrowRight, ChevronLeft, ChevronRight, Lightbulb, Newspaper, Scale } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { ArrowRight, Clock, Newspaper } from "lucide-react";
 import { Link } from "react-router-dom";
-import SourceArticleCard from "../components/SourceArticleCard";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
-import { proposalItems } from "../data/civicParticipation";
 import { columns } from "../data/columns";
-import { proposalTranslations } from "../data/contentTranslations/staticPrograms";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
 import { getNewsNewestFirst } from "../data/news";
-import { LocalizedText, publicInterestWatchCases } from "../data/publicInterestWatch";
 import { useLanguage } from "../i18n";
 
 const resolveImageSrc = (src?: string) => {
@@ -17,229 +12,110 @@ const resolveImageSrc = (src?: string) => {
   return `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 };
 
-const splitBriefingTitle = (title: string): [string, string] => {
-  const words = title.trim().split(/\s+/);
-  if (words.length < 2) return [title, ""];
-
-  const target = title.length / 2;
-  let bestIndex = 1;
-  let bestScore = Number.POSITIVE_INFINITY;
-  let runningLength = 0;
-
-  for (let index = 1; index < words.length; index += 1) {
-    runningLength += words[index - 1].length + (index > 1 ? 1 : 0);
-    const punctuationBonus = /[,.:;!?·—-]$/.test(words[index - 1]) ? -3 : 0;
-    const score = Math.abs(runningLength - target) + punctuationBonus;
-    if (score < bestScore) {
-      bestScore = score;
-      bestIndex = index;
-    }
-  }
-
-  return [words.slice(0, bestIndex).join(" "), words.slice(bestIndex).join(" ")];
-};
-
-const heroTextShadow = { textShadow: "0 2px 10px rgba(0,0,0,.82)" };
-const BRIEFING_SLIDE_INTERVAL = 4000;
-
 export default function Home() {
   const { language } = useLanguage();
-  const briefingSlides = getAllBriefingsNewestFirst().slice(0, 4).map((item) => localizeBriefing(item, language));
-  const latestColumns = [...columns].sort((a, b) => b.issue - a.issue).slice(0, 3).map((item) => localizeColumn(item, language));
-  const latestNews = getNewsNewestFirst().slice(0, 3).map((item) => localizeNewsArticle(item, language));
-  const featuredProposals = proposalItems.map((item, index) => language === "ko" ? item : { ...item, ...proposalTranslations[index] });
-  const [activeBriefing, setActiveBriefing] = useState(0);
-  const [briefingPaused, setBriefingPaused] = useState(false);
-  const touchStartX = useRef<number | null>(null);
   const ko = language === "ko";
-  const t = (value: LocalizedText) => value[language];
-
-  useEffect(() => {
-    if (briefingPaused || briefingSlides.length < 2) return;
-    const timer = window.setInterval(() => {
-      setActiveBriefing((current) => (current + 1) % briefingSlides.length);
-    }, BRIEFING_SLIDE_INTERVAL);
-    return () => window.clearInterval(timer);
-  }, [briefingPaused, briefingSlides.length]);
-
-  const moveBriefing = (direction: number) => {
-    setActiveBriefing((current) => (current + direction + briefingSlides.length) % briefingSlides.length);
-  };
-
-  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
-    touchStartX.current = event.touches[0]?.clientX ?? null;
-  };
-
-  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
-    if (touchStartX.current === null) return;
-    const endX = event.changedTouches[0]?.clientX ?? touchStartX.current;
-    const delta = endX - touchStartX.current;
-    touchStartX.current = null;
-    if (Math.abs(delta) < 45) return;
-    moveBriefing(delta < 0 ? 1 : -1);
-  };
+  const briefings = getAllBriefingsNewestFirst().slice(0, 5).map((item) => localizeBriefing(item, language));
+  const journalColumns = [...columns].sort((a, b) => b.issue - a.issue).slice(0, 3).map((item) => localizeColumn(item, language));
+  const news = getNewsNewestFirst().slice(0, 5).map((item) => localizeNewsArticle(item, language));
+  const leadBriefing = briefings[0];
+  const leadImage = leadBriefing?.images?.[0];
 
   return (
-    <>
-      <section className="border-b border-green-deep/15 bg-ivory">
-        <div className="container-page grid items-start gap-6 pt-8 pb-5 sm:pt-10 sm:pb-6 lg:grid-cols-[1.55fr_.75fr] lg:gap-8 lg:pt-12 lg:pb-7">
-          <div
-            className="group relative h-[370px] overflow-hidden bg-navy shadow-[0_24px_70px_rgba(23,76,58,.16)] sm:h-[420px]"
-            onMouseEnter={() => setBriefingPaused(true)}
-            onMouseLeave={() => setBriefingPaused(false)}
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
-          >
-            {briefingSlides.map((briefing, index) => {
-              const briefingImage = briefing.images?.[0];
-              const active = index === activeBriefing;
-              const [titleLine1, titleLine2] = splitBriefingTitle(briefing.title);
-              return (
-                <Link
-                  key={briefing.slug}
-                  to={`/briefings/${briefing.slug}`}
-                  aria-hidden={!active}
-                  tabIndex={active ? 0 : -1}
-                  className={`absolute inset-0 transition-opacity duration-700 ease-out ${active ? "pointer-events-auto z-10 opacity-100" : "pointer-events-none z-0 opacity-0"}`}
-                >
-                  {briefingImage && (
-                    <img
-                      src={resolveImageSrc(briefingImage.src)}
-                      alt={briefingImage.alt}
-                      className={`absolute inset-0 h-full w-full object-cover transition-transform duration-[5000ms] ease-out ${active ? "scale-[1.025]" : "scale-100"}`}
-                    />
-                  )}
-                  <div className="absolute inset-0 bg-black/40" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/18" />
-                  <div className={`absolute inset-x-0 bottom-0 p-5 pt-16 transition-all duration-700 sm:p-7 sm:pt-20 lg:p-8 lg:pt-20 ${active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
-                    <p className="text-[11px] font-extrabold tracking-[.12em] text-gold-light sm:text-xs" style={heroTextShadow}>{briefing.category} · {briefing.date.replace(/-/g, ".")}</p>
-                    <h1 className="editorial-title mt-1.5 max-w-4xl text-[1.8rem] font-bold leading-[1.08] text-white sm:text-[2.15rem] lg:text-[2.4rem]" style={heroTextShadow}>
-                      <span className="block sm:whitespace-nowrap">{titleLine1}</span>
-                      {titleLine2 && <span className="block sm:whitespace-nowrap">{titleLine2}</span>}
-                    </h1>
-                    <p className="mt-2 line-clamp-2 max-w-3xl text-sm font-semibold leading-6 text-white/95 sm:text-[15px]" style={heroTextShadow}>{briefing.summary}</p>
-                    <div className="mt-3 flex items-center text-[11px] font-bold text-white sm:text-xs" style={heroTextShadow}><span className="flex items-center gap-1.5">{ko ? "브리핑 읽기" : "Read briefing"}<ArrowRight size={14}/></span></div>
+    <div className="bg-paper">
+      <section className="border-b border-green-deep/20 bg-ivory py-7 sm:py-10">
+        <div className="container-page grid gap-8 xl:grid-cols-[minmax(0,1.55fr)_minmax(350px,.72fr)] xl:gap-10">
+          <div>
+            {leadBriefing && (
+              <article className="border-t-[3px] border-navy">
+                <Link to={`/briefings/${leadBriefing.slug}`} className="group block pt-4">
+                  <div className="flex items-center justify-between gap-4 text-[11px] font-extrabold tracking-[.15em] text-green-mid">
+                    <span>TOP STORY · CIVIC BRIEFING</span>
+                    <time className="tracking-normal text-charcoal/40">{leadBriefing.date.replace(/-/g, ".")}</time>
                   </div>
+                  {leadImage && (
+                    <div className="mt-4 overflow-hidden bg-navy">
+                      <img src={resolveImageSrc(leadImage.src)} alt={leadImage.alt} className="aspect-[16/7.7] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
+                    </div>
+                  )}
+                  <h1 className="editorial-title mt-5 max-w-5xl text-[2.15rem] font-bold leading-[1.1] text-navy transition group-hover:text-green-mid sm:text-[3.15rem] lg:text-[3.5rem]">{leadBriefing.title}</h1>
+                  <p className="mt-4 max-w-4xl text-base font-medium leading-7 text-charcoal/65 sm:text-[17px] sm:leading-8">{leadBriefing.summary}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-green-deep">{ko ? "대표 브리핑 읽기" : "Read the lead briefing"}<ArrowRight size={16}/></span>
                 </Link>
-              );
-            })}
-
-            <div className="absolute left-4 top-4 z-30 flex flex-col items-start gap-2 sm:left-5 sm:top-5">
-              <span className="inline-flex border border-white/45 bg-green-deep/82 px-2.5 py-1.5 text-[11px] font-extrabold tracking-[.13em] text-white backdrop-blur-sm">Civic Briefing</span>
-              {briefingSlides.length > 1 && (
-                <div className="flex items-center gap-1.5">
-                  {briefingSlides.map((briefing, index) => (
-                    <button
-                      key={briefing.slug}
-                      type="button"
-                      onClick={() => setActiveBriefing(index)}
-                      className={`h-1.5 rounded-full transition-all duration-300 ${index === activeBriefing ? "w-7 bg-white" : "w-2.5 bg-white/45 hover:bg-white/70"}`}
-                      aria-label={`${ko ? "브리핑" : "Briefing"} ${index + 1}`}
-                      aria-current={index === activeBriefing ? "true" : undefined}
-                    />
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {briefingSlides.length > 1 && (
-              <div className="absolute bottom-3 right-3 z-30 flex items-center gap-1.5 sm:bottom-4 sm:right-4">
-                <button type="button" onClick={() => moveBriefing(-1)} className="grid size-8 place-items-center rounded-full border border-white/40 bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/55" aria-label={ko ? "이전 브리핑" : "Previous briefing"}><ChevronLeft size={16}/></button>
-                <button type="button" onClick={() => moveBriefing(1)} className="grid size-8 place-items-center rounded-full border border-white/40 bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/55" aria-label={ko ? "다음 브리핑" : "Next briefing"}><ChevronRight size={16}/></button>
-              </div>
+              </article>
             )}
+
+            <div className="mt-8 grid border-y border-green-deep/20 sm:grid-cols-2 sm:divide-x sm:divide-green-deep/20">
+              {news.slice(0, 2).map((item) => (
+                <Link key={item.slug} to={`/news/${item.slug}`} className="group grid gap-4 border-b border-green-deep/15 py-5 last:border-b-0 sm:grid-cols-[112px_1fr] sm:border-b-0 sm:px-5 sm:first:pl-0 sm:last:pr-0">
+                  <img src={resolveImageSrc(item.heroImage.src)} alt={item.heroImage.alt} className="aspect-[4/3] w-full object-cover sm:h-[84px]" />
+                  <div><span className="text-[10px] font-extrabold tracking-[.12em] text-green-mid">{item.category}</span><h2 className="editorial-title mt-1.5 text-lg font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h2></div>
+                </Link>
+              ))}
+            </div>
           </div>
 
-          <aside className="flex flex-col overflow-hidden border-y-2 border-green-deep bg-paper lg:h-[420px]">
-            <div className="flex shrink-0 items-center justify-between bg-green-deep px-6 py-3 text-white sm:px-7"><div><span className="text-[11px] font-extrabold tracking-[.14em] text-white/65">SEED COLUMN</span><h2 className="editorial-title mt-0.5 text-xl font-bold text-white">{ko ? "최신 칼럼" : "Latest Columns"}</h2></div><Link to="/columns" className="inline-flex items-center gap-1 text-xs font-bold text-white/80 transition hover:text-white">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link></div>
-            {latestColumns.map((column, index) => (
-              <Link key={column.slug} to={`/columns/${column.slug}`} className={`group flex min-h-0 flex-1 flex-col justify-center px-6 py-1.5 transition-colors duration-200 hover:bg-green-pale/55 focus-visible:bg-green-pale/55 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-green-mid/35 sm:px-7 ${index < latestColumns.length - 1 ? "border-b border-green-deep/15" : ""}`}>
-                {ko && <div className="flex shrink-0 items-center gap-3 text-[11px] font-extrabold tracking-[.11em] text-green-mid"><span>{`씨드칼럼 ${String(column.issue).padStart(2, "0")}`}</span><time className="text-charcoal/35">{column.date.replace(/-/g, ".")}</time></div>}
-                <h3 className={`editorial-title text-[17px] font-bold leading-6 text-navy transition group-hover:text-green-mid ${ko ? "mt-1 line-clamp-2" : "line-clamp-3"}`}>{column.title}</h3>
-                {ko && <p className="mt-1 line-clamp-2 text-[13px] font-semibold leading-5 text-charcoal/65">{column.subtitle}</p>}
+          <aside className="self-start bg-green-deep text-white xl:sticky xl:top-6" aria-labelledby="seed-voice-heading">
+            <div className="border-b border-white/20 px-6 py-5 sm:px-7">
+              <p className="text-[10px] font-extrabold tracking-[.2em] text-gold-light">OPINION & IDEAS</p>
+              <div className="mt-2 flex items-end justify-between gap-4"><h2 id="seed-voice-heading" className="editorial-title text-3xl font-bold">{ko ? "씨앗의 소리" : "Voice of the Seed"}</h2><Link to="/columns" className="inline-flex items-center gap-1 text-xs font-bold text-white/65 hover:text-white">{ko ? "전체보기" : "View all"}<ArrowRight size={13}/></Link></div>
+            </div>
+
+            {journalColumns.map((column, index) => (
+              <Link key={column.slug} to={`/columns/${column.slug}`} className={`group block px-6 py-6 transition hover:bg-white/[.055] sm:px-7 ${index < journalColumns.length - 1 ? "border-b border-white/15" : ""}`}>
+                {index === 0 && <img src={resolveImageSrc(column.heroImage.src)} alt={column.heroImage.alt} className="mb-5 aspect-[16/9] w-full object-cover" />}
+                <div className="flex items-center gap-3 text-[10px] font-extrabold tracking-[.13em] text-gold-light"><span>{ko ? `씨앗의 소리 ${String(column.issue).padStart(2, "0")}` : `VOICE ${String(column.issue).padStart(2, "0")}`}</span><time className="tracking-normal text-white/38">{column.date.replace(/-/g, ".")}</time></div>
+                <h3 className={`editorial-title mt-2 font-bold leading-snug text-white transition group-hover:text-gold-light ${index === 0 ? "text-2xl sm:text-[1.7rem]" : "text-xl"}`}>{column.title}</h3>
+                {index === 0 && <p className="mt-3 text-sm leading-6 text-white/62">{column.subtitle}</p>}
               </Link>
             ))}
           </aside>
         </div>
       </section>
 
-      <section className="bg-ivory pt-8 sm:pt-10">
+      <section className="py-12 sm:py-16">
         <div className="container-page">
-          <div className="relative isolate overflow-hidden border-y-2 border-green-deep bg-[#fbf4e5]">
-            <img
-              src={resolveImageSrc("images/support/founding-partners-watercolor.webp")}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover object-[64%_50%] opacity-75"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#fffaf0] via-[#fffaf0]/95 to-[#fffaf0]/30" />
-            <div className="relative max-w-3xl px-6 py-6 sm:px-10 sm:py-7 lg:px-12 lg:py-8">
-              <span className="section-kicker">FOUNDING PARTNERS</span>
-              <h2 className="editorial-title mt-2 max-w-2xl text-[1.75rem] font-bold leading-tight text-navy sm:text-[2.1rem]">
-                {ko ? "씨드의 창립파트너가 되어 주세요" : "Become a Founding Partner of SEED"}
-              </h2>
-              <p className="mt-3 max-w-2xl text-[15px] font-medium leading-6 text-charcoal/75 sm:text-base sm:leading-7">
-                {ko
-                  ? "씨드시민파트너스는 자유와 책임의 관점에서 공익을 감시하고, 확인된 사실과 맥락을 시민브리핑으로 전하며, 시민의 제안을 공공의 변화로 연결하는 독립 시민사회 플랫폼입니다. 국가와 시장 사이에서 시민의 힘을 키우는 새로운 시민운동의 기반을 함께 세워 주세요."
-                  : "SEED Civic Partners is an independent civic platform in South Korea that monitors public-interest institutions, explains facts and context through civic briefings, and turns citizen concerns into practical public proposals. Help us build a stronger civil society between state and market."}
-              </p>
-              <div className="mt-5 flex items-center">
-                <Link to="/partners" className="inline-flex items-center gap-2 bg-green-deep px-5 py-3 text-sm font-extrabold text-white transition hover:bg-green-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-deep/35 focus-visible:ring-offset-2">
-                  {ko ? "좋아요, 함께 할게요!" : "Yes, I'd Like to Join!"}<ArrowRight size={16}/>
+          <div className="flex items-end justify-between gap-5 border-b-[3px] border-navy pb-4">
+            <div><p className="section-kicker">LATEST NEWS</p><h2 className="editorial-title mt-2 text-3xl font-bold text-navy sm:text-4xl">{ko ? "지금 읽어야 할 뉴스" : "News to Read Now"}</h2></div>
+            <Link to="/news" className="text-link shrink-0">{ko ? "뉴스 전체보기" : "View all"}<ArrowRight size={15}/></Link>
+          </div>
+          <div className="grid md:grid-cols-3 md:divide-x md:divide-green-deep/15">
+            {news.slice(2, 5).map((item) => (
+              <article key={item.slug} className="border-b border-green-deep/15 py-7 md:px-7 md:first:pl-0 md:last:pr-0">
+                <Link to={`/news/${item.slug}`} className="group block">
+                  <img src={resolveImageSrc(item.heroImage.src)} alt={item.heroImage.alt} className="aspect-[16/10] w-full object-cover" />
+                  <p className="mt-5 flex items-center gap-2 text-[10px] font-extrabold tracking-[.12em] text-green-mid"><Newspaper size={13}/>{item.category}</p>
+                  <h3 className="editorial-title mt-2 text-2xl font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h3>
+                  <p className="mt-3 line-clamp-3 text-sm leading-7 text-charcoal/58">{item.summary}</p>
+                  <div className="mt-4 flex items-center gap-3 text-xs text-charcoal/38"><time>{item.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={12}/>{item.readMinutes}{ko ? "분" : " min"}</span></div>
                 </Link>
-              </div>
-            </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="border-b border-green-deep/15 bg-ivory pt-6 pb-12 sm:pt-8 sm:pb-16">
-        <div className="container-page grid gap-10 lg:grid-cols-2 lg:gap-14">
-          <div>
-            <div className="flex items-end justify-between gap-4 border-b-2 border-navy pb-4">
-              <div><span className="section-kicker">PUBLIC-INTEREST WATCH</span><h2 className="editorial-title mt-2 text-[1.75rem] font-bold text-navy sm:text-[2rem]">{ko ? "공익감시" : "Public-Interest Watch"}</h2></div>
-              <Link to="/monitoring" className="text-link shrink-0 text-xs">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link>
-            </div>
-            <p className="mt-5 max-w-xl text-base leading-7 text-charcoal/60">{ko ? "기부금과 공익자원이 시민의 신뢰에 맞게 쓰이는지 공개자료와 기관의 답변을 근거로 기록합니다." : "We examine public records and institutional responses to see whether donations and public-interest resources merit civic trust."}</p>
-            <div className="mt-5 divide-y divide-green-deep/12 border-y border-green-deep/12 bg-white">
-              {publicInterestWatchCases.map((item) => (
-                <Link key={item.slug} to={`/monitoring/${item.slug}`} className="group grid grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-4 transition hover:bg-green-pale/45 sm:px-5">
-                  <Scale size={18} className="text-gold"/>
-                  <div className="min-w-0"><p className="text-[11px] font-extrabold tracking-[.1em] text-green-mid">{t(item.organization)} · {t(item.status)}</p><h3 className="mt-1 line-clamp-1 text-base font-bold leading-6 text-navy group-hover:text-green-mid">{t(item.title)}</h3></div>
-                  <ArrowRight size={15} className="text-green-deep/45 transition group-hover:translate-x-1 group-hover:text-green-deep"/>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <div className="flex items-end justify-between gap-4 border-b-2 border-navy pb-4">
-              <div><span className="section-kicker">CITIZEN PROPOSALS</span><h2 className="editorial-title mt-2 text-[1.75rem] font-bold text-navy sm:text-[2rem]">{ko ? "시민제안" : "Citizen Proposals"}</h2></div>
-              <Link to="/proposals" className="text-link shrink-0 text-xs">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link>
-            </div>
-            <p className="mt-5 max-w-xl text-base leading-7 text-charcoal/60">{ko ? "시민의 작은 불편과 질문을 근거와 실행 가능성을 갖춘 공공의 제안으로 키웁니다." : "We turn everyday civic concerns into public proposals grounded in evidence and practical action."}</p>
-            <div className="mt-5 divide-y divide-green-deep/12 border-y border-green-deep/12 bg-white">
-              {featuredProposals.map((item) => (
-                <Link key={item.title} to="/proposals" className="group grid grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-4 transition hover:bg-green-pale/45 sm:px-5">
-                  <Lightbulb size={18} className="text-gold"/>
-                  <div className="min-w-0"><p className="text-[11px] font-extrabold tracking-[.1em] text-green-mid">{item.tag} · {item.status}</p><h3 className="mt-1 line-clamp-1 text-base font-bold leading-6 text-navy group-hover:text-green-mid">{item.title}</h3></div>
-                  <ArrowRight size={15} className="text-green-deep/45 transition group-hover:translate-x-1 group-hover:text-green-deep"/>
-                </Link>
-              ))}
-            </div>
-            <Link to="/proposals" className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-green-deep">{ko ? "나의 시민제안 작성하기" : "Write a citizen proposal"}<ArrowRight size={15}/></Link>
+      <section className="border-y border-green-deep/15 bg-[#F1F2EC] py-12 sm:py-16">
+        <div className="container-page grid gap-9 lg:grid-cols-[.5fr_1.5fr] lg:gap-14">
+          <div><p className="section-kicker">CIVIC BRIEFINGS</p><h2 className="editorial-title mt-3 text-3xl font-bold leading-tight text-navy sm:text-4xl">{ko ? "사실에서 판단까지" : "From facts to judgment"}</h2><p className="mt-4 text-sm leading-7 text-charcoal/58">{ko ? "확인된 사실을 먼저 짚고, 논쟁의 맥락과 앞으로 지켜볼 지점을 시민의 언어로 설명합니다." : "We begin with verified facts, explain the context, and identify what citizens should continue to watch."}</p><Link to="/briefings" className="text-link mt-6">{ko ? "시민브리핑 전체보기" : "View all briefings"}<ArrowRight size={15}/></Link></div>
+          <div className="border-t-2 border-navy">
+            {briefings.slice(1, 5).map((briefing, index) => (
+              <Link key={briefing.slug} to={`/briefings/${briefing.slug}`} className="group grid gap-2 border-b border-green-deep/15 py-5 sm:grid-cols-[72px_1fr_auto] sm:items-center sm:gap-5">
+                <span className="font-serif text-sm font-bold text-gold">{String(index + 2).padStart(2, "0")}</span>
+                <div><p className="text-[10px] font-extrabold tracking-[.12em] text-green-mid">{briefing.category}</p><h3 className="editorial-title mt-1 text-xl font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-2xl">{briefing.title}</h3></div>
+                <time className="text-xs text-charcoal/38">{briefing.date.replace(/-/g, ".")}</time>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-paper pt-5 pb-14 sm:pt-7 sm:pb-20">
-        <div className="container-page">
-          <div className="flex flex-col gap-4 border-b-2 border-navy pb-6 sm:flex-row sm:items-end sm:justify-between"><div><span className="section-kicker">SEED NEWS</span><h2 className="editorial-title mt-3 text-[1.75rem] font-bold text-navy sm:text-[2rem]">{ko ? "지금 읽어야 할 뉴스" : "News to Read Now"}</h2></div><Link to="/news" className="text-link">{ko ? "뉴스 전체보기" : "View all news"}<ArrowRight size={16}/></Link></div>
-          <div className="grid border-b border-green-deep/15 md:grid-cols-3 md:divide-x md:divide-green-deep/15">
-            {latestNews.map((item) => <article key={item.slug} className="group/news flex flex-col px-5 py-8 transition-colors duration-200 hover:bg-green-pale/45 focus-within:bg-green-pale/45 sm:px-7 md:px-8"><Link to={`/news/${item.slug}`} className="group block focus-visible:outline-none"><div className="flex items-center gap-2 text-[11px] font-extrabold tracking-[.12em] text-green-mid"><Newspaper size={14}/>{ko ? `씨드뉴스 ${String(item.issue).padStart(2, "0")}` : `SEED NEWS ${String(item.issue).padStart(2, "0")}`} · {item.category}</div><h3 className="editorial-title mt-4 text-xl font-bold leading-snug text-navy transition-colors duration-200 group-hover/news:text-green-mid group-focus-within/news:text-green-mid">{item.title}</h3><p className="mt-4 line-clamp-4 text-[15px] leading-7 text-charcoal/55">{item.summary}</p><time className="mt-5 block text-xs text-charcoal/40">{item.date.replace(/-/g, ".")}</time></Link><SourceArticleCard news={item.selectedNews} compact ko={ko}/></article>)}
-          </div>
+      <section className="bg-ivory py-12 sm:py-16">
+        <div className="container-page grid gap-8 border-y-2 border-green-deep py-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div><p className="section-kicker">OUR EDITORIAL STANDARD</p><h2 className="editorial-title mt-3 text-2xl font-bold text-navy sm:text-3xl">{ko ? "사실은 정확하게, 관점은 분명하게, 시민에게는 책임 있게" : "Accurate in fact, clear in viewpoint, accountable to citizens"}</h2><p className="mt-3 max-w-4xl text-sm leading-7 text-charcoal/62">{ko ? "씨드 시민저널은 기계적 중립과 진영의 확신 사이에서, 근거를 확인하고 자유·법치·책임의 관점으로 공공의 문제를 해석합니다." : "SEED Civic Journal verifies evidence and interprets public affairs through freedom, the rule of law, and civic responsibility."}</p></div>
+          <Link to="/about" className="button-primary shrink-0">{ko ? "저널 소개 읽기" : "About the journal"}<ArrowRight size={16}/></Link>
         </div>
       </section>
-    </>
+    </div>
   );
 }

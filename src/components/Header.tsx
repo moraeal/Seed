@@ -17,23 +17,17 @@ export default function Header() {
   const nav = language === "en"
     ? [
         ["News", "/news"],
-        ["Briefings", "/briefings"],
-        ["Columns", "/columns"],
-        ["Public Watch", "/monitoring"],
-        ["Proposals", "/proposals"],
-        ["Forum", "/forum"],
-        ["Partners", "/partners"],
-        ["About", "/about"],
+        ["Civic Briefings", "/briefings"],
+        ["Voice of the Seed", "/columns"],
+        ["About the Journal", "/about"],
+        ["Founding Statement", "/founding-statement"],
       ]
     : [
-        ["뉴스", "/news"],
-        ["브리핑", "/briefings"],
-        ["칼럼", "/columns"],
-        ["공익감시", "/monitoring"],
-        ["제안", "/proposals"],
-        ["공론장", "/forum"],
-        ["파트너스", "/partners"],
-        ["소개", "/about"],
+        ["씨드뉴스", "/news"],
+        ["시민브리핑", "/briefings"],
+        ["씨앗의 소리", "/columns"],
+        ["저널 소개", "/about"],
+        ["창립취지문", "/founding-statement"],
       ];
 
   const toggleLanguage = () => {
@@ -42,7 +36,7 @@ export default function Header() {
     if (nextLanguage === "en" && location.pathname === "/") navigate("/en/");
     if (nextLanguage === "ko" && /^\/en(?:\/|$)/.test(location.pathname)) navigate("/");
   };
-  const navLinkClass = "text-[12px] font-semibold text-charcoal/70 transition hover:text-green-deep 2xl:text-[13px]";
+  const navLinkClass = "border-b-2 border-transparent px-1 py-3 text-[13px] font-bold text-charcoal/72 transition hover:border-green-deep hover:text-green-deep";
   const mobileLinkClass = "rounded-md px-3 py-3 text-sm font-semibold text-charcoal/75 hover:bg-green-pale";
 
   const renderNavItem = ([label, path]: string[], mobile = false) => {
@@ -52,17 +46,16 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-green-deep/15 bg-ivory/95 backdrop-blur-xl">
-      <div className="container-page flex h-[78px] items-center gap-4">
-        <Link to={language === "en" ? "/en/" : "/"} className="flex shrink-0 items-center" aria-label={language === "en" ? "SEED Civic Partners home" : "씨드시민파트너스 홈"}>
+    <header className="sticky top-0 z-50 bg-ivory/95 backdrop-blur-xl">
+      <div className="hidden border-b border-green-deep/10 bg-green-deep py-2 text-white/68 md:block">
+        <div className="container-page flex items-center justify-between text-[10px] font-bold tracking-[.12em]"><span>{language === "en" ? "INDEPENDENT CIVIC JOURNAL · SOUTH KOREA" : "독립 시민저널 · 대한민국"}</span><span>{language === "en" ? "FACTS · CONTEXT · CIVIC JUDGMENT" : "사실 · 맥락 · 시민의 판단"}</span></div>
+      </div>
+      <div className="container-page flex h-[76px] items-center gap-4 border-b border-green-deep/12 md:h-[82px]">
+        <Link to={language === "en" ? "/en/" : "/"} className="flex shrink-0 items-center" aria-label={language === "en" ? "SEED Civic Journal home" : "씨드 시민저널 홈"}>
           <BrandLockup tone="header" />
         </Link>
 
-        <nav className="ml-auto hidden items-center gap-3 xl:flex 2xl:gap-5" aria-label={language === "en" ? "Main menu" : "주요 메뉴"}>
-          {nav.map((item) => renderNavItem(item))}
-        </nav>
-
-        <div className="ml-auto hidden shrink-0 items-center gap-2 md:flex xl:ml-1">
+        <div className="ml-auto hidden shrink-0 items-center gap-2 md:flex">
           {user ? (
             <>
               <Link to="/account" className="inline-flex min-h-9 items-center gap-1.5 rounded-md border border-green-deep/15 bg-white px-3 text-xs font-extrabold text-green-deep">
@@ -80,6 +73,10 @@ export default function Header() {
           {open ? <X /> : <Menu />}
         </button>
       </div>
+
+      <nav className="hidden border-b border-green-deep/18 bg-paper xl:block" aria-label={language === "en" ? "Main menu" : "주요 메뉴"}>
+        <div className="container-page flex items-center justify-center gap-10">{nav.map((item) => renderNavItem(item))}</div>
+      </nav>
 
       {open && (
         <div className="border-t border-green-deep/10 bg-paper px-5 py-5 xl:hidden">

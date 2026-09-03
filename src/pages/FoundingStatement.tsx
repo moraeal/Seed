@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n";
 
@@ -29,13 +29,13 @@ export default function FoundingStatement() {
   return (
     <article className="bg-paper pb-20 sm:pb-28">
       <header className="border-b border-green-deep/15 bg-ivory py-14 sm:py-20">
-        <div className="container-page max-w-5xl"><Link to="/partners" className="text-link"><ArrowLeft size={16}/>{ko ? "파트너스 페이지" : "Partners"}</Link><span className="section-kicker mt-10 block">FOUNDING STATEMENT</span><h1 className="editorial-title mt-4 text-4xl font-bold leading-tight text-navy sm:text-6xl">{ko ? "씨드시민파트너스 창립취지문" : "Founding Statement of SEED Civic Partners"}</h1><p className="mt-6 max-w-3xl text-lg font-semibold leading-8 text-charcoal/65">{ko ? "자유로운 시민, 책임 있는 공익, 국가와 시장을 바로 세우는 강한 시민사회를 향해" : "Toward free citizens, accountable public purpose, and a strong civil society that keeps state and market in balance"}</p></div>
+        <div className="container-page max-w-5xl"><Link to="/about" className="text-link"><ArrowLeft size={16}/>{ko ? "저널 소개" : "About the Journal"}</Link><span className="section-kicker mt-10 block">FOUNDING STATEMENT</span><h1 className="editorial-title mt-4 text-4xl font-bold leading-tight text-navy sm:text-6xl">{ko ? "씨드시민파트너스 창립취지문" : "Founding Statement of SEED Civic Partners"}</h1><p className="mt-6 max-w-3xl text-lg font-semibold leading-8 text-charcoal/65">{ko ? "자유로운 시민, 책임 있는 공익, 국가와 시장을 바로 세우는 강한 시민사회를 향해" : "Toward free citizens, accountable public purpose, and a strong civil society that keeps state and market in balance"}</p></div>
       </header>
 
       <div className="container-page max-w-5xl py-12 sm:py-16">
         <div className="border-y-2 border-green-deep bg-[#fbf4e5] px-6 py-8 sm:px-10"><p className="editorial-title text-2xl font-bold leading-relaxed text-green-deep sm:text-3xl">{ko ? "시민이 자라면 사회가 강해집니다. 강한 시민사회는 국가와 시장을 시민의 삶에 책임지게 합니다." : "When citizens grow, society becomes stronger. A strong civil society keeps both state and market accountable to human life."}</p></div>
         <div className="mt-12 space-y-12">{sections.map(([title, body], index) => <section key={title}><div className="flex items-baseline gap-4"><span className="font-serif text-sm font-bold text-gold">{String(index + 1).padStart(2, "0")}</span><h2 className="editorial-title text-2xl font-bold leading-snug text-navy sm:text-3xl">{title}</h2></div><p className="mt-5 text-base leading-8 text-charcoal/68 sm:pl-10">{body}</p></section>)}</div>
-        <footer className="mt-16 border-t-2 border-navy pt-9"><p className="text-sm font-extrabold tracking-[.08em] text-green-deep">{ko ? "2026년 9월 · 씨드시민파트너스 창립준비위원회" : "September 2026 · Founding Committee, SEED Civic Partners"}</p><div className="mt-7 flex flex-wrap gap-3"><Link to="/partners#partner-application" className="button-primary">{ko ? "창립파트너로 함께하기" : "Join as a Founding Partner"}<ArrowRight size={16}/></Link><Link to="/partners" className="button-secondary">{ko ? "파트너스 안내로 돌아가기" : "Back to Partners"}</Link></div></footer>
+        <footer className="mt-16 border-t-2 border-navy pt-9"><p className="text-sm font-extrabold tracking-[.08em] text-green-deep">{ko ? "2026년 9월 · 씨드시민파트너스 창립준비위원회" : "September 2026 · Founding Committee, SEED Civic Partners"}</p><Link to="/about" className="button-secondary mt-7">{ko ? "저널 소개로 돌아가기" : "Back to the Journal"}</Link></footer>
       </div>
     </article>
   );

@@ -4,8 +4,8 @@ import { newsArticles } from "./data/news";
 import { publicInterestWatchCases } from "./data/publicInterestWatch";
 
 export const SITE_URL = "https://seedpartners.org";
-export const SITE_NAME = "씨드시민파트너스";
-export const ENGLISH_SITE_NAME = "SEED Civic Partners";
+export const SITE_NAME = "씨드 시민저널";
+export const ENGLISH_SITE_NAME = "SEED Civic Journal";
 
 export type SeoRoute = {
   path: string;
@@ -27,27 +27,26 @@ const latestDate = newest([...newsArticles.map((item) => item.date), ...columns.
 const staticRoutes: SeoRoute[] = [
   {
     path: "/",
-    title: "씨드시민파트너스 | 자유와 책임의 시민운동",
-    description: "씨드시민파트너스는 자유와 책임의 언어로 시민사회 공론장을 다시 세우는 독립 시민저널입니다.",
+    title: "씨드 시민저널 | 사실은 정확하게, 관점은 분명하게",
+    description: "씨드 시민저널은 확인된 사실과 맥락을 바탕으로 시민이 스스로 판단할 수 있도록 돕는 독립 시민저널입니다.",
     type: "website",
     lastModified: latestDate,
   },
   {
     path: "/en",
-    title: "SEED Civic Partners | Citizen Agency and Civic Responsibility",
-    description: "SEED Civic Partners is an independent civic platform in South Korea advancing citizen agency, civic responsibility, the rule of law, and an open civil society.",
+    title: "SEED Civic Journal | Facts, Context, Civic Judgment",
+    description: "SEED Civic Journal is an independent publication in South Korea offering verified facts, context, and clear civic argument.",
     type: "website",
     lastModified: latestDate,
     language: "en",
   },
-  { path: "/news", title: "씨드뉴스 | 씨드시민파트너스", description: "한국 정치·사회 이슈의 확인된 사실과 아직 확인되지 않은 부분을 구분하고 시민이 지켜볼 점을 설명합니다.", type: "website", lastModified: newest(newsArticles.map((item) => item.date)) },
-  { path: "/briefings", title: "시민브리핑 | 씨드시민파트너스", description: "복잡한 정책과 제도 논쟁을 사실, 맥락, 관찰 지점과 씨드의 관점으로 차분하게 풀어냅니다.", type: "website", lastModified: newest(getAllBriefingsNewestFirst().map((item) => item.date)) },
-  { path: "/columns", title: "씨드칼럼 | 씨드시민파트너스", description: "자유, 법치, 책임, 시장의 자율성과 강한 시민사회의 관점에서 오늘의 쟁점을 논평합니다.", type: "website", lastModified: newest(columns.map((item) => item.date)) },
+  { path: "/news", title: "씨드뉴스 | 씨드 시민저널", description: "한국 정치·사회 이슈의 확인된 사실과 아직 확인되지 않은 부분을 구분하고 시민이 지켜볼 점을 설명합니다.", type: "website", lastModified: newest(newsArticles.map((item) => item.date)) },
+  { path: "/briefings", title: "시민브리핑 | 씨드 시민저널", description: "복잡한 정책과 제도 논쟁을 사실, 맥락, 관찰 지점과 씨드의 관점으로 차분하게 풀어냅니다.", type: "website", lastModified: newest(getAllBriefingsNewestFirst().map((item) => item.date)) },
+  { path: "/columns", title: "씨앗의 소리 | 씨드 시민저널", description: "자유, 법치, 책임, 시장의 자율성과 강한 시민사회의 관점에서 오늘의 쟁점을 논평합니다.", type: "website", lastModified: newest(columns.map((item) => item.date)) },
   { path: "/monitoring", title: "공익감시 | 씨드시민파트너스", description: "공익조직과 공공제도가 시민에게 권한과 재정, 성과를 충분히 설명하는지 근거를 바탕으로 점검합니다.", type: "website", lastModified: newest(publicInterestWatchCases.map((item) => item.updatedAt)) },
   { path: "/proposals", title: "시민제안 | 씨드시민파트너스", description: "시민의 문제의식을 구체적인 제도와 정책의 제안으로 키우는 씨드시민파트너스의 제안 공간입니다.", type: "website", lastModified: latestDate },
-  { path: "/partners", title: "창립파트너 | 씨드시민파트너스", description: "씨드시민파트너스의 창립 취지와 파트너의 역할, 활동 방향을 확인하고 창립파트너 가입을 신청할 수 있습니다.", type: "website", lastModified: latestDate },
-  { path: "/partners/founding-statement", title: "창립취지문 | 씨드시민파트너스", description: "자유로운 시민과 책임 있는 공익, 강한 시민사회를 지향하는 씨드시민파트너스의 창립취지문 전문입니다.", type: "article", lastModified: latestDate, author: SITE_NAME, section: "창립취지문" },
-  { path: "/about", title: "소개 | 씨드시민파트너스", description: "시민의 자유와 책임, 제한되고 유능한 국가, 시장의 자율성과 강한 사회를 지향하는 씨드시민파트너스를 소개합니다.", type: "website", lastModified: latestDate },
+  { path: "/founding-statement", title: "창립취지문 | 씨드 시민저널", description: "자유로운 시민과 책임 있는 공익, 강한 시민사회를 지향하는 씨드시민파트너스의 창립취지문 전문입니다.", type: "article", lastModified: latestDate, author: "씨드시민파트너스", section: "창립취지문" },
+  { path: "/about", title: "저널 소개 | 씨드 시민저널", description: "사실과 해석을 구분하고 자유와 책임의 관점으로 공공의 문제를 살피는 씨드 시민저널을 소개합니다.", type: "website", lastModified: latestDate },
 ];
 
 const newsRoutes: SeoRoute[] = newsArticles.map((article) => ({
@@ -84,12 +83,12 @@ const briefingRoutes: SeoRoute[] = getAllBriefingsNewestFirst().flatMap((briefin
 
 const columnRoutes: SeoRoute[] = columns.map((column) => ({
   path: `/columns/${column.slug}`,
-  title: `${column.title} | 씨드칼럼`,
+  title: `${column.title} | 씨앗의 소리`,
   description: column.summary,
   type: "article",
   lastModified: column.date,
   author: column.author,
-  section: "씨드칼럼",
+  section: "씨앗의 소리",
 }));
 
 const monitoringRoutes: SeoRoute[] = publicInterestWatchCases.map((item) => ({

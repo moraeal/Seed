@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./auth";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -14,7 +14,6 @@ import Proposals from "./pages/Proposals";
 import Monitoring from "./pages/Monitoring";
 import PublicInterestWatchDetail from "./pages/PublicInterestWatchDetail";
 import Roadmap from "./pages/Roadmap";
-import Support from "./pages/Support";
 import TodayFrame from "./pages/TodayFrame";
 import Briefings from "./pages/Briefings";
 import BriefingDetail from "./pages/BriefingDetail";
@@ -25,7 +24,6 @@ import Academy from "./pages/Academy";
 import Experiments from "./pages/Experiments";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
-import Partners from "./pages/Partners";
 import FoundingStatement from "./pages/FoundingStatement";
 
 function AppShell() {
@@ -56,9 +54,9 @@ function AppShell() {
           <Route path="/dictionary" element={<CivicDictionary />} />
           <Route path="/proposal-lab" element={<ProposalLab />} />
           <Route path="/roadmap" element={<Roadmap />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/partners" element={<Partners />} />
-          <Route path="/partners/founding-statement" element={<FoundingStatement />} />
+          <Route path="/founding-statement" element={<FoundingStatement />} />
+          <Route path="/partners/founding-statement" element={<Navigate to="/founding-statement" replace />} />
+          <Route path="/partners" element={<Navigate to="/about" replace />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>

@@ -194,7 +194,7 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
   <channel>
     <title>${SITE_NAME}</title>
     <link>${SITE_URL}/</link>
-    <description>자유와 책임의 언어로 한국 정치·사회 이슈를 전하는 씨드시민파트너스의 최신 콘텐츠입니다.</description>
+    <description>확인된 사실과 맥락, 분명한 관점으로 한국 정치·사회 이슈를 전하는 씨드 시민저널의 최신 콘텐츠입니다.</description>
     <language>ko-KR</language>
     <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml" />
     <lastBuildDate>${rfc822(feedRoutes[0].lastModified)}</lastBuildDate>

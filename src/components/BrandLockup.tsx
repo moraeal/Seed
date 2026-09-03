@@ -12,7 +12,7 @@ export default function BrandLockup({ tone }: BrandLockupProps) {
     : "images/brand/seed-sprout-color-leaves-reverse-transparent-hd.png";
 
   return (
-    <span className="flex items-center gap-3" aria-label="씨드시민파트너스 · Seed Civic Partners">
+    <span className="flex items-center gap-3" aria-label="씨드 시민저널 · SEED Civic Journal">
       <span
         className={`relative block shrink-0 overflow-hidden rounded-full ${footer ? "size-[43px]" : "size-12 bg-white"}`}
         aria-hidden="true"
@@ -36,7 +36,7 @@ export default function BrandLockup({ tone }: BrandLockupProps) {
             fontWeight="800"
             letterSpacing="-0.4"
           >
-            {language === "en" ? "SEED CIVIC PARTNERS" : "씨드시민파트너스"}
+            {language === "en" ? "SEED CIVIC JOURNAL" : "씨드 시민저널"}
           </text>
           <text
             x="1"
@@ -47,7 +47,7 @@ export default function BrandLockup({ tone }: BrandLockupProps) {
             fontWeight="700"
             letterSpacing={language === "en" ? ".4" : "1.45"}
           >
-            {language === "en" ? "씨드시민파트너스" : "SEED CIVIC PARTNERS"}
+            {language === "en" ? "씨드 시민저널" : "SEED CIVIC JOURNAL"}
           </text>
         </svg>
       )}

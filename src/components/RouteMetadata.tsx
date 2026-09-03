@@ -17,7 +17,7 @@ export default function RouteMetadata() {
   useEffect(() => {
     const route = getSeoRoute(location.pathname);
     const title = route?.title ?? `페이지를 찾을 수 없습니다 | ${SITE_NAME}`;
-    const description = route?.description ?? "씨드시민파트너스 홈페이지입니다.";
+    const description = route?.description ?? "씨드 시민저널 홈페이지입니다.";
     const url = canonicalUrl(route?.path ?? "/");
     const language = route?.language ?? "ko";
     const siteName = language === "en" ? ENGLISH_SITE_NAME : SITE_NAME;
