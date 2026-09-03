@@ -15,6 +15,7 @@ const resolveImageSrc = (src?: string) => {
 
 export default function SourceArticleCard({ news, compact = false, ko }: SourceArticleCardProps) {
   const thumbnail = resolveImageSrc(news.thumbnailUrl);
+  const publisherOwnedThumbnail = /^https?:\/\//i.test(news.thumbnailUrl ?? "");
 
   if (compact) {
     return (
@@ -48,7 +49,7 @@ export default function SourceArticleCard({ news, compact = false, ko }: SourceA
         <h2 className="editorial-title mt-5 text-2xl font-bold leading-snug text-navy sm:text-3xl">{news.headline}</h2>
         <div className="mt-6 border-t border-green-deep/10 pt-5"><span className="text-xs font-extrabold tracking-[.16em] text-green-deep">{ko ? "기사 핵심 요약" : "KEY POINTS"}</span><ul className="mt-4 grid gap-3 text-sm leading-7 text-charcoal/70 sm:text-base">{news.summary.map((item, index) => <li key={`${index}-${item}`} className="flex gap-3"><span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"/><span>{item}</span></li>)}</ul></div>
         <a href={news.url} target="_blank" rel="noreferrer" className="button-secondary mt-7 inline-flex text-sm">{news.linkLabel}<ArrowUpRight size={15}/></a>
-        <p className="mt-3 text-[11px] leading-5 text-charcoal/40">{ko ? "기사 사진과 제목의 저작권은 해당 언론사·제공자에게 있으며, 원문 소개와 출처 확인을 위해 인용했습니다." : "The article image and headline remain the property of the publisher or credited provider and are shown here for source identification and access to the original report."}</p>
+        {publisherOwnedThumbnail && <p className="mt-3 text-[11px] leading-5 text-charcoal/40">{ko ? "기사 사진과 제목의 저작권은 해당 언론사·제공자에게 있으며, 원문 소개와 출처 확인을 위해 인용했습니다." : "The article image and headline remain the property of the publisher or credited provider and are shown here for source identification and access to the original report."}</p>}
       </div>
     </section>
   );
