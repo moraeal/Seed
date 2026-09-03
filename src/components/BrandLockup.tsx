@@ -22,12 +22,12 @@ export default function BrandLockup({ tone }: BrandLockupProps) {
             : "absolute -left-0.5 -top-0.5 size-[52px] max-w-none"}
         />
       </span>
-      <span className={`flex min-w-0 items-center ${footer ? "gap-3" : "gap-2.5 sm:gap-3"}`}>
-        <span className={`whitespace-nowrap font-extrabold tracking-[-.04em] ${footer ? "text-lg text-white sm:text-xl" : "text-[17px] text-green-deep sm:text-xl"}`}>
+      <span className={`flex min-w-0 items-center ${footer ? "gap-3 text-lg sm:text-xl" : "gap-2 sm:gap-3 text-[11px] sm:text-xl"}`}>
+        <span className={`whitespace-nowrap font-extrabold tracking-[-.04em] ${footer ? "text-white" : "text-green-deep"}`}>
           씨드시민파트너스
         </span>
         <span className={`h-7 w-px shrink-0 ${footer ? "bg-white/25" : "bg-green-deep/25"}`} aria-hidden="true" />
-        <span className={`whitespace-nowrap font-bold tracking-[.08em] ${footer ? "text-[9px] text-gold-light sm:text-[10px]" : "text-[8px] text-charcoal/55 sm:text-[10px]"}`}>
+        <span className={`whitespace-nowrap font-bold tracking-[-.02em] ${footer ? "text-white/55" : "text-charcoal/45"}`}>
           SEED CIVIC JOURNAL
         </span>
       </span>

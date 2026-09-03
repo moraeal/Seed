@@ -1,4 +1,5 @@
 import { ArrowRight, Clock, Newspaper } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { columns } from "../data/columns";
@@ -14,6 +15,8 @@ const resolveImageSrc = (src?: string) => {
 
 export default function Home() {
   const { language } = useLanguage();
+  const [featurePage, setFeaturePage] = useState(0);
+  const [featurePaused, setFeaturePaused] = useState(false);
   const ko = language === "ko";
   const briefings = getAllBriefingsNewestFirst().slice(0, 5).map((item) => localizeBriefing(item, language));
   const journalColumns = [...columns].sort((a, b) => b.issue - a.issue).slice(0, 3).map((item) => localizeColumn(item, language));
@@ -21,6 +24,13 @@ export default function Home() {
   const leadColumn = journalColumns[0];
   const leadBriefing = briefings[0];
   const leadBriefingImage = leadBriefing?.images?.[0];
+  const featuredNews = news.slice(0, 4);
+
+  useEffect(() => {
+    if (featurePaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => setFeaturePage((page) => (page + 1) % 2), 4000);
+    return () => window.clearInterval(timer);
+  }, [featurePaused]);
 
   return (
     <div className="bg-paper">
@@ -44,13 +54,31 @@ export default function Home() {
               </article>
             )}
 
-            <div className="mt-8 grid border-y border-green-deep/20 sm:grid-cols-2 sm:divide-x sm:divide-green-deep/20">
-              {news.slice(0, 2).map((item) => (
-                <Link key={item.slug} to={`/news/${item.slug}`} className="group grid gap-4 border-b border-green-deep/15 px-4 py-5 transition-colors hover:bg-green-pale/70 last:border-b-0 sm:grid-cols-[112px_1fr] sm:border-b-0 sm:px-5">
-                  <img src={resolveImageSrc(item.heroImage.src)} alt={item.heroImage.alt} className="aspect-[4/3] w-full object-cover sm:h-[84px]" />
-                  <div><span className="text-[10px] font-extrabold tracking-[.12em] text-green-mid">{item.category}</span><h2 className="editorial-title mt-1.5 text-lg font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h2></div>
-                </Link>
-              ))}
+            <div
+              className="mt-8 overflow-hidden border-y border-green-deep/20"
+              onMouseEnter={() => setFeaturePaused(true)}
+              onMouseLeave={() => setFeaturePaused(false)}
+              onFocusCapture={() => setFeaturePaused(true)}
+              onBlurCapture={() => setFeaturePaused(false)}
+              aria-label={ko ? "주요 뉴스 슬라이드" : "Featured news carousel"}
+            >
+              <div className="flex transition-transform duration-700 ease-out motion-reduce:transition-none" style={{ transform: `translateX(-${featurePage * 100}%)` }}>
+                {[0, 1].map((page) => (
+                  <div key={page} className="grid w-full shrink-0 sm:grid-cols-2 sm:divide-x sm:divide-green-deep/20">
+                    {featuredNews.slice(page * 2, page * 2 + 2).map((item) => (
+                      <Link key={item.slug} to={`/news/${item.slug}`} className="group grid gap-4 border-b border-green-deep/15 px-4 py-5 transition-colors hover:bg-green-pale/70 last:border-b-0 sm:grid-cols-[112px_1fr] sm:border-b-0 sm:px-5">
+                        <img src={resolveImageSrc(item.heroImage.src)} alt={item.heroImage.alt} className="aspect-[4/3] w-full object-cover sm:h-[84px]" />
+                        <div><span className="text-[10px] font-extrabold tracking-[.12em] text-green-mid">{item.category}</span><h2 className="editorial-title mt-1.5 text-lg font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h2></div>
+                      </Link>
+                    ))}
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-center gap-2 border-t border-green-deep/10 py-2.5">
+                {[0, 1].map((page) => (
+                  <button key={page} type="button" onClick={() => setFeaturePage(page)} className={`h-1.5 rounded-full transition-all ${featurePage === page ? "w-6 bg-green-deep" : "w-1.5 bg-green-deep/25 hover:bg-green-deep/50"}`} aria-label={ko ? `${page + 1}번째 뉴스 묶음 보기` : `Show news group ${page + 1}`} aria-current={featurePage === page ? "true" : undefined} />
+                ))}
+              </div>
             </div>
           </div>
 
