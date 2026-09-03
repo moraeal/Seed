@@ -16,11 +16,11 @@ const displayCredit = (credit: string) => {
 
 export default function FigureCaption({ caption, credit, sourceUrl }: FigureCaptionProps) {
   const label = displayCredit(credit);
-  const creditClass = "ml-2 inline text-xs font-semibold text-green-deep/75";
+  const creditClass = "shrink-0 self-end text-right text-xs font-semibold text-green-deep/75 sm:self-auto";
 
   return (
-    <figcaption className="border-t border-green-deep/10 px-5 py-4 text-[13px] leading-6 text-charcoal/60">
-      <span>{caption}</span>{" "}
+    <figcaption className="flex flex-col gap-1 border-t border-green-deep/10 px-5 py-4 text-[13px] leading-6 text-charcoal/60 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+      <span className="min-w-0 flex-1">{caption}</span>
       {sourceUrl ? (
         <a
           href={sourceUrl}
