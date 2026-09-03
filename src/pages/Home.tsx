@@ -18,29 +18,28 @@ export default function Home() {
   const briefings = getAllBriefingsNewestFirst().slice(0, 5).map((item) => localizeBriefing(item, language));
   const journalColumns = [...columns].sort((a, b) => b.issue - a.issue).slice(0, 3).map((item) => localizeColumn(item, language));
   const news = getNewsNewestFirst().slice(0, 5).map((item) => localizeNewsArticle(item, language));
+  const leadColumn = journalColumns[0];
   const leadBriefing = briefings[0];
-  const leadImage = leadBriefing?.images?.[0];
+  const leadBriefingImage = leadBriefing?.images?.[0];
 
   return (
     <div className="bg-paper">
       <section className="border-b border-green-deep/20 bg-ivory py-7 sm:py-10">
         <div className="container-page grid gap-8 xl:grid-cols-[minmax(0,1.55fr)_minmax(350px,.72fr)] xl:gap-10">
           <div>
-            {leadBriefing && (
+            {leadColumn && (
               <article className="border-t-[3px] border-navy">
-                <Link to={`/briefings/${leadBriefing.slug}`} className="group block pt-4">
+                <Link to={`/columns/${leadColumn.slug}`} className="group block pt-4">
                   <div className="flex items-center justify-between gap-4 text-[11px] font-extrabold tracking-[.15em] text-green-mid">
-                    <span>TOP STORY · CIVIC BRIEFING</span>
-                    <time className="tracking-normal text-charcoal/40">{leadBriefing.date.replace(/-/g, ".")}</time>
+                    <span>SEED'S VOICE · {ko ? "씨앗의 소리" : "VOICE OF THE SEED"}</span>
+                    <time className="tracking-normal text-charcoal/40">{leadColumn.date.replace(/-/g, ".")}</time>
                   </div>
-                  {leadImage && (
-                    <div className="mt-4 overflow-hidden bg-navy">
-                      <img src={resolveImageSrc(leadImage.src)} alt={leadImage.alt} className="aspect-[16/7.7] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
-                    </div>
-                  )}
-                  <h1 className="editorial-title mt-5 max-w-5xl text-[2.15rem] font-bold leading-[1.1] text-navy transition group-hover:text-green-mid sm:text-[3.15rem] lg:text-[3.5rem]">{leadBriefing.title}</h1>
-                  <p className="mt-4 max-w-4xl text-base font-medium leading-7 text-charcoal/65 sm:text-[17px] sm:leading-8">{leadBriefing.summary}</p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-green-deep">{ko ? "대표 브리핑 읽기" : "Read the lead briefing"}<ArrowRight size={16}/></span>
+                  <div className="mt-4 overflow-hidden bg-navy">
+                    <img src={resolveImageSrc(leadColumn.heroImage.src)} alt={leadColumn.heroImage.alt} className="aspect-[16/7.7] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
+                  </div>
+                  <h1 className="editorial-title mt-5 max-w-5xl text-[2.15rem] font-bold leading-[1.1] text-navy transition group-hover:text-green-mid sm:text-[3.15rem] lg:text-[3.5rem]">{leadColumn.title}</h1>
+                  <p className="mt-4 max-w-4xl text-base font-medium leading-7 text-charcoal/65 sm:text-[17px] sm:leading-8">{leadColumn.summary}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-green-deep">{ko ? "씨앗의 소리 읽기" : "Read SEED's voice"}<ArrowRight size={16}/></span>
                 </Link>
               </article>
             )}
@@ -55,18 +54,18 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="self-start bg-green-deep text-white xl:sticky xl:top-6" aria-labelledby="seed-voice-heading">
+          <aside className="self-start bg-green-deep text-white xl:sticky xl:top-6" aria-labelledby="civic-briefing-heading">
             <div className="border-b border-white/20 px-6 py-5 sm:px-7">
-              <p className="text-[10px] font-extrabold tracking-[.2em] text-gold-light">OPINION & IDEAS</p>
-              <div className="mt-2 flex items-end justify-between gap-4"><h2 id="seed-voice-heading" className="editorial-title text-3xl font-bold">{ko ? "씨앗의 소리" : "Voice of the Seed"}</h2><Link to="/columns" className="inline-flex items-center gap-1 text-xs font-bold text-white/65 hover:text-white">{ko ? "전체보기" : "View all"}<ArrowRight size={13}/></Link></div>
+              <p className="text-[10px] font-extrabold tracking-[.2em] text-gold-light">FACTS · CONTEXT · JUDGMENT</p>
+              <div className="mt-2 flex items-end justify-between gap-4"><h2 id="civic-briefing-heading" className="editorial-title text-3xl font-bold">CIVIC BRIEFING</h2><Link to="/briefings" className="inline-flex items-center gap-1 text-xs font-bold text-white/65 hover:text-white">{ko ? "전체보기" : "View all"}<ArrowRight size={13}/></Link></div>
             </div>
 
-            {journalColumns.map((column, index) => (
-              <Link key={column.slug} to={`/columns/${column.slug}`} className={`group block px-6 py-6 transition hover:bg-white/[.055] sm:px-7 ${index < journalColumns.length - 1 ? "border-b border-white/15" : ""}`}>
-                {index === 0 && <img src={resolveImageSrc(column.heroImage.src)} alt={column.heroImage.alt} className="mb-5 aspect-[16/9] w-full object-cover" />}
-                <div className="flex items-center gap-3 text-[10px] font-extrabold tracking-[.13em] text-gold-light"><span>{ko ? `씨앗의 소리 ${String(column.issue).padStart(2, "0")}` : `VOICE ${String(column.issue).padStart(2, "0")}`}</span><time className="tracking-normal text-white/38">{column.date.replace(/-/g, ".")}</time></div>
-                <h3 className={`editorial-title mt-2 font-bold leading-snug text-white transition group-hover:text-gold-light ${index === 0 ? "text-2xl sm:text-[1.7rem]" : "text-xl"}`}>{column.title}</h3>
-                {index === 0 && <p className="mt-3 text-sm leading-6 text-white/62">{column.subtitle}</p>}
+            {briefings.slice(0, 3).map((briefing, index) => (
+              <Link key={briefing.slug} to={`/briefings/${briefing.slug}`} className={`group block px-6 py-6 transition hover:bg-white/[.055] sm:px-7 ${index < 2 ? "border-b border-white/15" : ""}`}>
+                {index === 0 && leadBriefingImage && <img src={resolveImageSrc(leadBriefingImage.src)} alt={leadBriefingImage.alt} className="mb-5 aspect-[16/9] w-full object-cover" />}
+                <div className="flex items-center gap-3 text-[10px] font-extrabold tracking-[.13em] text-gold-light"><span>{ko ? `시민브리핑 ${String(briefing.issueNumber ?? index + 1).padStart(2, "0")}` : `CIVIC BRIEFING ${String(briefing.issueNumber ?? index + 1).padStart(2, "0")}`}</span><time className="tracking-normal text-white/38">{briefing.date.replace(/-/g, ".")}</time></div>
+                <h3 className={`editorial-title mt-2 font-bold leading-snug text-white transition group-hover:text-gold-light ${index === 0 ? "text-2xl sm:text-[1.7rem]" : "text-xl"}`}>{briefing.title}</h3>
+                {index === 0 && <p className="mt-3 line-clamp-3 text-sm leading-6 text-white/62">{briefing.summary}</p>}
               </Link>
             ))}
           </aside>

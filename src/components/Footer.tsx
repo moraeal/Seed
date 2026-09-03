@@ -12,10 +12,7 @@ export default function Footer() {
     <div className="container-page">
       <div className="grid gap-10 lg:grid-cols-[1.25fr_.75fr]">
         <div>
-          <div className="flex items-center gap-3">
-            <BrandLockup tone="footer" />
-            <div><h2 className="editorial-title text-xl font-bold leading-tight sm:text-2xl">{ko ? "씨드 시민저널" : "SEED Civic Journal"}</h2><p className="mt-1 text-[10px] font-bold tracking-[.14em] text-gold-light">SEED CIVIC PARTNERS</p></div>
-          </div>
+          <BrandLockup tone="footer" />
           <p className="mt-4 max-w-2xl text-sm leading-7 text-white/55">{ko ? "확인된 사실과 맥락을 바탕으로 시민이 스스로 판단할 수 있도록 돕는 독립 시민저널입니다." : "An independent civic journal helping citizens judge public affairs through verified facts, context, and clear argument."}</p><a href={`mailto:${email}`} className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-gold-light">Contact: {email}<ArrowUpRight size={14}/></a>
         </div>
         <div className="grid grid-cols-2 gap-8 border-t border-white/15 pt-7 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0"><div><p className="text-[10px] font-extrabold tracking-[.18em] text-white/35">READ</p><nav className="mt-5 grid gap-3 text-sm text-white/65"><Link to="/news">{ko ? "씨드뉴스" : "SEED News"}</Link><Link to="/briefings">{ko ? "시민브리핑" : "Civic Briefings"}</Link><Link to="/columns">{ko ? "씨앗의 소리" : "Voice of the Seed"}</Link></nav></div><div><p className="text-[10px] font-extrabold tracking-[.18em] text-white/35">JOURNAL</p><nav className="mt-5 grid gap-3 text-sm text-white/65"><Link to="/about">{ko ? "저널 소개" : "About the Journal"}</Link><Link to="/founding-statement">{ko ? "창립취지문" : "Founding Statement"}</Link></nav></div></div>

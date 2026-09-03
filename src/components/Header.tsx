@@ -51,7 +51,7 @@ export default function Header() {
         <div className="container-page flex items-center justify-between text-[10px] font-bold tracking-[.12em]"><span>{language === "en" ? "INDEPENDENT CIVIC JOURNAL · SOUTH KOREA" : "독립 시민저널 · 대한민국"}</span><span>{language === "en" ? "FACTS · CONTEXT · CIVIC JUDGMENT" : "사실 · 맥락 · 시민의 판단"}</span></div>
       </div>
       <div className="container-page flex h-[76px] items-center gap-4 border-b border-green-deep/12 md:h-[82px]">
-        <Link to={language === "en" ? "/en/" : "/"} className="flex shrink-0 items-center" aria-label={language === "en" ? "SEED Civic Journal home" : "씨드 시민저널 홈"}>
+        <Link to={language === "en" ? "/en/" : "/"} className="flex min-w-0 shrink items-center" aria-label={language === "en" ? "SEED Civic Journal home" : "씨드시민파트너스 홈"}>
           <BrandLockup tone="header" />
         </Link>
 
