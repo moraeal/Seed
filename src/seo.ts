@@ -23,6 +23,8 @@ export type SeoRoute = {
 const canonicalPath = (path: string) => path === "/" ? "/" : `${path.replace(/\/$/, "")}/`;
 export const canonicalUrl = (path: string) => `${SITE_URL}${canonicalPath(path)}`;
 export const assetUrl = (path: string) => `${SITE_URL}/${path.replace(/^\/+/, "")}`;
+const socialImageUrl = (section: string, slug: string, version: string) => assetUrl(`images/social/${section}/${slug}.jpg?v=${version.replace(/[^0-9]/g, "")}`);
+const firstLocalRasterImage = <T extends { src: string }>(images?: T[]) => images?.find((image) => !/^https?:\/\//i.test(image.src) && /\.(?:jpe?g|png|webp)$/i.test(image.src));
 
 const newest = (dates: string[]) => [...dates].sort()[dates.length - 1];
 const latestDate = newest([...newsArticles.map((item) => item.date), ...columns.map((item) => item.date), ...getAllBriefingsNewestFirst().map((item) => item.date)]);
@@ -34,7 +36,7 @@ const staticRoutes: SeoRoute[] = [
     description: "씨드 시민저널은 확인된 사실과 맥락을 바탕으로 시민이 스스로 판단할 수 있도록 돕는 독립 시민저널입니다.",
     type: "website",
     lastModified: latestDate,
-    image: assetUrl("images/support/founding-partners-watercolor.webp"),
+    image: socialImageUrl("site", "home", latestDate),
     imageAlt: "Young citizens gathering around a shared civic project",
   },
   {
@@ -62,11 +64,15 @@ const newsRoutes: SeoRoute[] = newsArticles.map((article) => ({
   lastModified: article.date,
   author: SITE_NAME,
   section: article.category,
-  image: assetUrl(article.heroImage.src),
+  image: socialImageUrl("news", article.slug, article.date),
   imageAlt: article.heroImage.alt,
 }));
 
 const briefingRoutes: SeoRoute[] = getAllBriefingsNewestFirst().flatMap((briefing) => {
+  const previewImage = firstLocalRasterImage(briefing.images) ?? (briefing.slug === "gyeonggi-fiscal-emergency" ? {
+    src: "images/briefings/briefing-05-budget-ledger.webp",
+    alt: "시민들이 국가 재정과 예산 장부를 점검하는 상징 이미지",
+  } : undefined);
   const routes: SeoRoute[] = [{
     path: `/briefings/${briefing.slug}`,
     title: `${briefing.title} | 시민브리핑`,
@@ -75,8 +81,8 @@ const briefingRoutes: SeoRoute[] = getAllBriefingsNewestFirst().flatMap((briefin
     lastModified: briefing.date,
     author: briefing.author,
     section: briefing.category,
-    image: briefing.images?.[0]?.src ? assetUrl(briefing.images[0].src) : undefined,
-    imageAlt: briefing.images?.[0]?.alt,
+    image: previewImage ? socialImageUrl("briefings", briefing.slug, briefing.date) : undefined,
+    imageAlt: previewImage?.alt,
   }];
   if (briefing.commentary) routes.push({
     path: `/briefings/${briefing.slug}/commentary`,
@@ -86,8 +92,8 @@ const briefingRoutes: SeoRoute[] = getAllBriefingsNewestFirst().flatMap((briefin
     lastModified: briefing.date,
     author: briefing.author,
     section: "씨드 논평",
-    image: briefing.images?.[0]?.src ? assetUrl(briefing.images[0].src) : undefined,
-    imageAlt: briefing.images?.[0]?.alt,
+    image: previewImage ? socialImageUrl("briefings", briefing.slug, briefing.date) : undefined,
+    imageAlt: previewImage?.alt,
   });
   return routes;
 });
@@ -100,7 +106,7 @@ const columnRoutes: SeoRoute[] = columns.map((column) => ({
   lastModified: column.date,
   author: column.author,
   section: "씨앗의 소리",
-  image: assetUrl(column.heroImage.src),
+  image: socialImageUrl("columns", column.slug, column.date),
   imageAlt: column.heroImage.alt,
 }));
 

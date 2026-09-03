@@ -1,4 +1,6 @@
 import { createServer } from "vite";
+import { access } from "node:fs/promises";
+import path from "node:path";
 
 const server = await createServer({
   configFile: false,
@@ -19,17 +21,28 @@ const [newsModule, briefingModule, columnModule, newsTranslationModule, briefing
 await server.close();
 
 const errors = [];
+const requireSocialImage = async (section, slug) => {
+  try {
+    await access(path.join(process.cwd(), "public", "images", "social", section, `${slug}.jpg`));
+  } catch {
+    errors.push(`Missing 1200x630 JPEG social-preview image: ${section}/${slug}.jpg`);
+  }
+};
+await requireSocialImage("site", "home");
 for (const article of newsModule.newsArticles) {
   if (!newsTranslationModule.newsTranslations[article.slug]) errors.push(`Missing English news translation: ${article.slug}`);
   if (!article.heroImage?.src) errors.push(`Missing social-preview image for news: ${article.slug}`);
+  await requireSocialImage("news", article.slug);
 }
 for (const briefing of briefingModule.getAllBriefingsNewestFirst()) {
   if (!briefingTranslationModule.briefingTranslations[briefing.slug]) errors.push(`Missing English briefing translation: ${briefing.slug}`);
   if (!briefing.images?.[0]?.src) errors.push(`Missing social-preview image for briefing: ${briefing.slug}`);
+  await requireSocialImage("briefings", briefing.slug);
 }
 for (const column of columnModule.columns) {
   if (!columnTranslationModule.columnTranslations[column.issue]) errors.push(`Missing English column translation: issue ${column.issue} (${column.slug})`);
   if (!column.heroImage?.src) errors.push(`Missing social-preview image for column: ${column.slug}`);
+  await requireSocialImage("columns", column.slug);
 }
 
 if (errors.length) {

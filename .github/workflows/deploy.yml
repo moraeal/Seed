@@ -31,6 +31,8 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+      - name: Ensure social-image converter is available
+        run: command -v convert || (sudo apt-get update && sudo apt-get install -y imagemagick)
       - name: Build
         run: pnpm run build
         env:

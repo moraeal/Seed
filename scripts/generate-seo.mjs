@@ -152,6 +152,9 @@ function render(route) {
   const socialImage = route.image ? `
     <meta property="og:image" content="${escapeHtml(route.image)}" />
     <meta property="og:image:secure_url" content="${escapeHtml(route.image)}" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="${escapeHtml(route.imageAlt || route.title)}" />
     <meta name="twitter:image" content="${escapeHtml(route.image)}" />
     <meta name="twitter:image:alt" content="${escapeHtml(route.imageAlt || route.title)}" />` : "";

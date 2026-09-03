@@ -38,12 +38,18 @@ export default function RouteMetadata() {
     if (route?.image) {
       setMeta('meta[property="og:image"]', { property: "og:image", content: route.image });
       setMeta('meta[property="og:image:secure_url"]', { property: "og:image:secure_url", content: route.image });
+      setMeta('meta[property="og:image:type"]', { property: "og:image:type", content: "image/jpeg" });
+      setMeta('meta[property="og:image:width"]', { property: "og:image:width", content: "1200" });
+      setMeta('meta[property="og:image:height"]', { property: "og:image:height", content: "630" });
       setMeta('meta[property="og:image:alt"]', { property: "og:image:alt", content: route.imageAlt ?? title });
       setMeta('meta[name="twitter:image"]', { name: "twitter:image", content: route.image });
       setMeta('meta[name="twitter:image:alt"]', { name: "twitter:image:alt", content: route.imageAlt ?? title });
     } else {
       removeMeta('meta[property="og:image"]');
       removeMeta('meta[property="og:image:secure_url"]');
+      removeMeta('meta[property="og:image:type"]');
+      removeMeta('meta[property="og:image:width"]');
+      removeMeta('meta[property="og:image:height"]');
       removeMeta('meta[property="og:image:alt"]');
       removeMeta('meta[name="twitter:image"]');
       removeMeta('meta[name="twitter:image:alt"]');
