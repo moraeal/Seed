@@ -29,9 +29,6 @@ export default function Briefings() {
         <div className="border-t-2 border-navy">
           {briefings.map((briefing) => {
             const image = briefing.images?.[0];
-            const issueLabel = briefing.issueNumber
-              ? (ko ? `시민브리핑 ${String(briefing.issueNumber).padStart(2, "0")}` : `CIVIC BRIEFING ${String(briefing.issueNumber).padStart(2, "0")}`)
-              : briefing.category;
 
             return (
               <Link
@@ -54,8 +51,7 @@ export default function Briefings() {
                 </div>
 
                 <div>
-                  <span className="section-kicker">{issueLabel}</span>
-                  <h2 className="editorial-title mt-4 text-3xl font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-4xl">
+                  <h2 className="editorial-title text-3xl font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-4xl">
                     {briefing.title}
                   </h2>
                   <p className="mt-5 max-w-3xl text-sm leading-7 text-charcoal/55">{briefing.summary}</p>

@@ -58,8 +58,7 @@ export default function BriefingDetail() {
         <div className="container-page max-w-5xl">
           <Link to="/briefings" className="text-link"><ArrowLeft size={16} />{ko ? "시민브리핑 목록" : "Civic Briefings"}</Link>
           <div className="mt-10 border-t-2 border-navy pt-8">
-            <span className="section-kicker block">{briefing.category}</span>
-            <h1 className="editorial-title mt-5 max-w-4xl text-4xl font-bold leading-[1.12] text-navy sm:text-6xl">{briefing.title}</h1>
+            <h1 className="editorial-title max-w-4xl text-4xl font-bold leading-[1.12] text-navy sm:text-6xl">{briefing.title}</h1>
             <p className="mt-7 max-w-3xl text-base leading-8 text-charcoal/65 sm:text-xl">{briefing.summary}</p>
           </div>
           <div className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-green-deep/10 pt-5 text-xs text-charcoal/45">
@@ -89,8 +88,7 @@ export default function BriefingDetail() {
         {briefing.sections?.map((section, index) => (
           <div key={`${index}-${section.title}`}>
             <section className="mt-12 border-t border-green-deep/10 pt-9">
-              <span className="font-serif text-sm font-bold text-gold">{String(index + 1).padStart(2, "0")}</span>
-              <h2 className="mt-2 text-2xl font-extrabold leading-snug text-navy sm:text-3xl">{section.title}</h2>
+              <h2 className="text-2xl font-extrabold leading-snug text-navy sm:text-3xl">{section.title}</h2>
               {section.paragraphs && <div className="mt-5 space-y-5">{section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className="text-base leading-8 text-charcoal/75">{paragraph}</p>)}</div>}
               {section.bullets && <ul className="mt-6 space-y-4">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet.slice(0, 24)}`} className="flex gap-3 text-base leading-8 text-charcoal/75"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold" />{bullet}</li>)}</ul>}
             </section>

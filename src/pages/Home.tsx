@@ -1,4 +1,4 @@
-import { ArrowRight, Clock, Newspaper } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
@@ -17,6 +17,7 @@ export default function Home() {
   const { language } = useLanguage();
   const [featurePage, setFeaturePage] = useState(0);
   const [featurePaused, setFeaturePaused] = useState(false);
+  const [featureTransition, setFeatureTransition] = useState(true);
   const ko = language === "ko";
   const briefings = getAllBriefingsNewestFirst().slice(0, 5).map((item) => localizeBriefing(item, language));
   const journalColumns = [...columns].sort((a, b) => b.issue - a.issue).slice(0, 3).map((item) => localizeColumn(item, language));
@@ -25,12 +26,20 @@ export default function Home() {
   const leadBriefing = briefings[0];
   const leadBriefingImage = leadBriefing?.images?.[0];
   const featuredNews = news.slice(0, 4);
+  const rotatingNews = featuredNews.length ? [...featuredNews, featuredNews[0]] : [];
 
   useEffect(() => {
     if (featurePaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const timer = window.setInterval(() => setFeaturePage((page) => (page + 1) % 2), 4000);
+    const timer = window.setInterval(() => setFeaturePage((page) => page + 1), 4000);
     return () => window.clearInterval(timer);
   }, [featurePaused]);
+
+  const finishFeatureTransition = () => {
+    if (featurePage !== featuredNews.length) return;
+    setFeatureTransition(false);
+    setFeaturePage(0);
+    window.requestAnimationFrame(() => window.requestAnimationFrame(() => setFeatureTransition(true)));
+  };
 
   return (
     <div className="bg-paper">
@@ -62,21 +71,17 @@ export default function Home() {
               onBlurCapture={() => setFeaturePaused(false)}
               aria-label={ko ? "주요 뉴스 슬라이드" : "Featured news carousel"}
             >
-              <div className="flex transition-transform duration-700 ease-out motion-reduce:transition-none" style={{ transform: `translateX(-${featurePage * 100}%)` }}>
-                {[0, 1].map((page) => (
-                  <div key={page} className="grid w-full shrink-0 sm:grid-cols-2 sm:divide-x sm:divide-green-deep/20">
-                    {featuredNews.slice(page * 2, page * 2 + 2).map((item) => (
-                      <Link key={item.slug} to={`/news/${item.slug}`} className="group grid gap-4 border-b border-green-deep/15 px-4 py-5 transition-colors hover:bg-green-pale/70 last:border-b-0 sm:grid-cols-[112px_1fr] sm:border-b-0 sm:px-5">
-                        <img src={resolveImageSrc(item.heroImage.src)} alt={item.heroImage.alt} className="aspect-[4/3] w-full object-cover sm:h-[84px]" />
-                        <div><span className="text-[10px] font-extrabold tracking-[.12em] text-green-mid">{item.category}</span><h2 className="editorial-title mt-1.5 text-lg font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h2></div>
-                      </Link>
-                    ))}
-                  </div>
+              <div className={`flex ${featureTransition ? "transition-transform duration-700 ease-out" : ""} motion-reduce:transition-none`} style={{ transform: `translateX(-${featurePage * 100}%)` }} onTransitionEnd={(event) => { if (event.target === event.currentTarget) finishFeatureTransition(); }}>
+                {rotatingNews.map((item, index) => (
+                  <Link key={`${item.slug}-${index}`} to={`/news/${item.slug}`} className="group grid w-full shrink-0 gap-5 px-5 py-5 transition-colors hover:bg-green-pale/70 sm:grid-cols-[156px_1fr] sm:items-center sm:px-6">
+                    <img src={resolveImageSrc(item.heroImage.src)} alt={item.heroImage.alt} className="aspect-[4/3] w-full object-cover sm:h-[104px]" />
+                    <div><h2 className="editorial-title text-xl font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-2xl">{item.title}</h2><p className="mt-2 line-clamp-2 text-sm leading-6 text-charcoal/58">{item.summary}</p></div>
+                  </Link>
                 ))}
               </div>
               <div className="flex justify-center gap-2 border-t border-green-deep/10 py-2.5">
-                {[0, 1].map((page) => (
-                  <button key={page} type="button" onClick={() => setFeaturePage(page)} className={`h-1.5 rounded-full transition-all ${featurePage === page ? "w-6 bg-green-deep" : "w-1.5 bg-green-deep/25 hover:bg-green-deep/50"}`} aria-label={ko ? `${page + 1}번째 뉴스 묶음 보기` : `Show news group ${page + 1}`} aria-current={featurePage === page ? "true" : undefined} />
+                {featuredNews.map((item, page) => (
+                  <button key={item.slug} type="button" onClick={() => { setFeatureTransition(true); setFeaturePage(page); }} className={`h-1.5 rounded-full transition-all ${(featurePage % featuredNews.length) === page ? "w-6 bg-green-deep" : "w-1.5 bg-green-deep/25 hover:bg-green-deep/50"}`} aria-label={ko ? `${page + 1}번째 뉴스 보기` : `Show news ${page + 1}`} aria-current={(featurePage % featuredNews.length) === page ? "true" : undefined} />
                 ))}
               </div>
             </div>
@@ -91,9 +96,9 @@ export default function Home() {
             {briefings.slice(0, 3).map((briefing, index) => (
               <Link key={briefing.slug} to={`/briefings/${briefing.slug}`} className={`group block px-6 py-6 transition hover:bg-white/[.055] sm:px-7 ${index < 2 ? "border-b border-white/15" : ""}`}>
                 {index === 0 && leadBriefingImage && <img src={resolveImageSrc(leadBriefingImage.src)} alt={leadBriefingImage.alt} className="mb-5 aspect-[16/9] w-full object-cover" />}
-                <div className="flex items-center gap-3 text-[10px] font-extrabold tracking-[.13em] text-gold-light"><span>{ko ? `시민브리핑 ${String(briefing.issueNumber ?? index + 1).padStart(2, "0")}` : `CIVIC BRIEFING ${String(briefing.issueNumber ?? index + 1).padStart(2, "0")}`}</span><time className="tracking-normal text-white/38">{briefing.date.replace(/-/g, ".")}</time></div>
+                <time className="text-[11px] text-white/38">{briefing.date.replace(/-/g, ".")}</time>
                 <h3 className={`editorial-title mt-2 font-bold leading-snug text-white transition group-hover:text-gold-light ${index === 0 ? "text-2xl sm:text-[1.7rem]" : "text-xl"}`}>{briefing.title}</h3>
-                {index === 0 && <p className="mt-3 line-clamp-3 text-sm leading-6 text-white/62">{briefing.summary}</p>}
+                <p className="mt-3 line-clamp-2 text-sm leading-6 text-white/62">{briefing.summary}</p>
               </Link>
             ))}
           </aside>
@@ -111,8 +116,7 @@ export default function Home() {
               <article key={item.slug} className="border-b border-green-deep/15 px-5 py-7 transition-colors hover:bg-green-pale/70 md:px-7">
                 <Link to={`/news/${item.slug}`} className="group block">
                   <img src={resolveImageSrc(item.heroImage.src)} alt={item.heroImage.alt} className="aspect-[16/10] w-full object-cover" />
-                  <p className="mt-5 flex items-center gap-2 text-[10px] font-extrabold tracking-[.12em] text-green-mid"><Newspaper size={13}/>{item.category}</p>
-                  <h3 className="editorial-title mt-2 text-2xl font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h3>
+                  <h3 className="editorial-title mt-5 text-2xl font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h3>
                   <p className="mt-3 line-clamp-3 text-sm leading-7 text-charcoal/58">{item.summary}</p>
                   <div className="mt-4 flex items-center gap-3 text-xs text-charcoal/38"><time>{item.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={12}/>{item.readMinutes}{ko ? "분" : " min"}</span></div>
                 </Link>
@@ -126,10 +130,9 @@ export default function Home() {
         <div className="container-page grid gap-9 lg:grid-cols-[.5fr_1.5fr] lg:gap-14">
           <div><p className="section-kicker">CIVIC BRIEFINGS</p><h2 className="editorial-title mt-3 text-3xl font-bold leading-tight text-navy sm:text-4xl">{ko ? "사실에서 판단까지" : "From facts to judgment"}</h2><p className="mt-4 text-sm leading-7 text-charcoal/58">{ko ? "확인된 사실을 먼저 짚고, 논쟁의 맥락과 앞으로 지켜볼 지점을 시민의 언어로 설명합니다." : "We begin with verified facts, explain the context, and identify what citizens should continue to watch."}</p><Link to="/briefings" className="text-link mt-6">{ko ? "시민브리핑 전체보기" : "View all briefings"}<ArrowRight size={15}/></Link></div>
           <div className="border-t-2 border-navy">
-            {briefings.slice(1, 5).map((briefing, index) => (
-              <Link key={briefing.slug} to={`/briefings/${briefing.slug}`} className="group grid gap-2 border-b border-green-deep/15 px-4 py-5 transition-colors hover:bg-white/85 sm:grid-cols-[72px_1fr_auto] sm:items-center sm:gap-5">
-                <span className="font-serif text-sm font-bold text-gold">{String(index + 2).padStart(2, "0")}</span>
-                <div><p className="text-[10px] font-extrabold tracking-[.12em] text-green-mid">{briefing.category}</p><h3 className="editorial-title mt-1 text-xl font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-2xl">{briefing.title}</h3></div>
+            {briefings.slice(1, 5).map((briefing) => (
+              <Link key={briefing.slug} to={`/briefings/${briefing.slug}`} className="group grid gap-2 border-b border-green-deep/15 px-4 py-5 transition-colors hover:bg-white/85 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-5">
+                <div><h3 className="editorial-title text-xl font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-2xl">{briefing.title}</h3><p className="mt-2 line-clamp-2 text-sm leading-6 text-charcoal/55">{briefing.summary}</p></div>
                 <time className="text-xs text-charcoal/38">{briefing.date.replace(/-/g, ".")}</time>
               </Link>
             ))}

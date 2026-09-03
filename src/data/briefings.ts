@@ -37,7 +37,7 @@ export type Briefing = {
   };
 };
 
-export const briefings: Briefing[] = [
+const briefingArchive: Briefing[] = [
   {
     slug: "president-criminal-trials-article-84",
     category: "씨드 시민브리핑 03",
@@ -393,6 +393,10 @@ export const briefings: Briefing[] = [
     watchPoints: ["선임 기준과 회의 기록의 공개 여부", "협회의 독립적인 평가와 책임 조치", "팬과 선수의 의견을 듣는 공식 절차"],
   },
 ];
+
+const retiredBriefingSlugs = new Set(["public-interest-citizenization", "sports-governance-fairness"]);
+
+export const briefings = briefingArchive.filter((briefing) => !retiredBriefingSlugs.has(briefing.slug));
 
 export const getBriefing = (slug: string) => briefings.find((briefing) => briefing.slug === slug);
 
