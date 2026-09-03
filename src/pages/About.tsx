@@ -6,11 +6,9 @@ import {
   Gavel,
   Landmark,
   Lightbulb,
-  Mail,
   Scale,
   ShieldCheck,
   Sprout,
-  Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n";
@@ -177,25 +175,13 @@ export default function About() {
       </section>
 
       <section className="py-14 sm:py-20">
-        <div className="container-page grid gap-8 lg:grid-cols-2">
+        <div className="container-page max-w-4xl">
           <article className="border-t-2 border-navy bg-white p-7 sm:p-9">
             <ShieldCheck className="text-gold" size={29}/>
             <h2 className="editorial-title mt-5 text-3xl font-bold text-navy">{en ? "Independence and accountability" : "독립성과 책임의 원칙"}</h2>
             <ul className="mt-6 grid gap-4">
               {principles.map((principle) => <li key={principle} className="flex gap-3 text-sm leading-7 text-charcoal/65"><CheckCircle2 className="mt-1 shrink-0 text-green-mid" size={18}/><span>{principle}</span></li>)}
             </ul>
-          </article>
-
-          <article className="border-t-2 border-gold bg-ivory p-7 sm:p-9">
-            <Users className="text-green-deep" size={29}/>
-            <p className="mt-5 text-xs font-extrabold tracking-[.16em] text-green-deep">FOUNDER &amp; PRESIDENT</p>
-            <h2 className="editorial-title mt-2 text-3xl font-bold text-navy">{en ? "Park Kyung-seuk" : "대표 박경석"}</h2>
-            <p className="mt-5 text-sm leading-7 text-charcoal/62">
-              {en
-                ? "Park Kyung-seuk has worked across civil society, public institutions, and corporate sustainability. His experience includes serving as an external cooperation officer for the Committee on Social Cohesion, secretary-general of the Federation of Civil Society Organizations, an expert member of the Presidential Commission on Sustainable Development, president of the nonprofit KkumePume, an executive at a public enterprise, and a public-policy advisor to local governments."
-                : "시민사회와 공공기관, 기업의 사회책임 현장을 두루 경험했습니다. 사회통합위원회 대외협력관, 범시민사회단체연합 사무총장, 대통령자문 지속가능발전위원회 전문위원, 사단법인 꿈에품에 대표, 공기업 임원과 지방정부 정책자문 활동 등을 거쳤습니다."}
-            </p>
-            <a href="mailto:seedcivicpartners@gmail.com" className="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-green-deep"><Mail size={16}/>seedcivicpartners@gmail.com</a>
           </article>
         </div>
       </section>
