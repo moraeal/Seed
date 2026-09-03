@@ -7,7 +7,9 @@ import { useLanguage } from "../i18n";
 export default function Columns() {
   const { language } = useLanguage();
   const ko = language === "ko";
-  const localizedColumns = columns.map((column) => localizeColumn(column, language));
+  const localizedColumns = [...columns]
+    .sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue)
+    .map((column) => localizeColumn(column, language));
 
   return <section className="bg-paper pb-20 sm:pb-28">
     <header className="border-b border-green-deep/15 bg-ivory">

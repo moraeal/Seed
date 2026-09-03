@@ -21,7 +21,7 @@ export default function Home() {
   const [newsVisibleCount, setNewsVisibleCount] = useState(() => typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches ? 3 : 1);
   const ko = language === "ko";
   const briefings = getAllBriefingsNewestFirst().slice(0, 5).map((item) => localizeBriefing(item, language));
-  const journalColumns = [...columns].sort((a, b) => b.issue - a.issue).slice(0, 4).map((item) => localizeColumn(item, language));
+  const journalColumns = [...columns].sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue).slice(0, 4).map((item) => localizeColumn(item, language));
   const news = getNewsNewestFirst().slice(0, 5).map((item) => localizeNewsArticle(item, language));
   const leadColumn = journalColumns[0];
   const leadColumnExcerpt = leadColumn?.sections.flatMap((section) => section.paragraphs)[0];
@@ -139,7 +139,7 @@ export default function Home() {
         <div className="container-page grid gap-9 lg:grid-cols-[.5fr_1.5fr] lg:gap-14">
           <div><p className="section-kicker">CIVIC BRIEFINGS</p><h2 className="editorial-title mt-3 text-3xl font-bold leading-tight text-navy sm:text-4xl">{ko ? "사실에서 판단까지" : "From facts to judgment"}</h2><p className="mt-4 text-sm leading-7 text-charcoal/58">{ko ? "확인된 사실을 먼저 짚고, 논쟁의 맥락과 앞으로 지켜볼 지점을 시민의 언어로 설명합니다." : "We begin with verified facts, explain the context, and identify what citizens should continue to watch."}</p><Link to="/briefings" className="text-link mt-6">{ko ? "시민브리핑 전체보기" : "View all briefings"}<ArrowRight size={15}/></Link></div>
           <div className="border-t-2 border-navy">
-            {briefings.slice(1, 5).map((briefing) => (
+            {briefings.slice(0, 4).map((briefing) => (
               <Link key={briefing.slug} to={`/briefings/${briefing.slug}`} className="group grid gap-2 border-b border-green-deep/15 px-4 py-5 transition-colors hover:bg-white/85 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-5">
                 <div><h3 className="editorial-title text-xl font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-2xl">{briefing.title}</h3><p className="mt-2 line-clamp-2 text-sm leading-6 text-charcoal/55">{briefing.summary}</p></div>
                 <time className="text-xs text-charcoal/38">{briefing.date.replace(/-/g, ".")}</time>
