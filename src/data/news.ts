@@ -65,6 +65,9 @@ export const newsArticles: NewsArticle[] = [
     "headline": "반도체 꺾이면 어쩌려고…4년 뒤 지출 ‘1000조’ 정부 밑그림에 우려",
     "url": "https://v.daum.net/v/20260902043138400",
     "linkLabel": "한국일보 원문 보기",
+    "thumbnailUrl": "https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202609%2F02%2Fhankooki%2F20260902043140287debt.jpg",
+    "thumbnailAlt": "이재명 대통령이 청년 예산 언박싱 행사에서 발언하는 모습",
+    "thumbnailCaption": "이재명 대통령이 2026년 8월 28일 청년 예산 언박싱 행사에서 발언하고 있습니다. 사진: 왕태석 선임기자·청와대사진기자단/한국일보",
     "summary": [
       "정부의 2026~2030년 국가재정운용계획은 2030년 총지출을 1,005조2천억 원으로 잡고, 총지출이 연평균 8.4% 증가하는 경로를 제시했습니다.",
       "정부는 같은 기간 총수입이 연평균 9.9% 증가하고 실질성장률이 2%대를 유지한다는 전망 아래, 2030년 국가채무비율을 49% 안팎에서 관리할 수 있다고 봤습니다.",
