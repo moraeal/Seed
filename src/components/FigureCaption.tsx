@@ -16,10 +16,10 @@ const displayCredit = (credit: string) => {
 
 export default function FigureCaption({ caption, credit, sourceUrl }: FigureCaptionProps) {
   const label = displayCredit(credit);
-  const creditClass = "ml-2 inline font-semibold text-green-deep/75";
+  const creditClass = "ml-2 inline text-xs font-semibold text-green-deep/75";
 
   return (
-    <figcaption className="border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/60">
+    <figcaption className="border-t border-green-deep/10 px-5 py-4 text-[13px] leading-6 text-charcoal/60">
       <span>{caption}</span>{" "}
       {sourceUrl ? (
         <a
