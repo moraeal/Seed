@@ -1,6 +1,7 @@
 import { ArrowLeft, Clock, Share2 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
+import FigureCaption from "../components/FigureCaption";
 import SourceArticleCard from "../components/SourceArticleCard";
 import { localizeNewsArticle } from "../data/localizedContent";
 import { getNewsArticle } from "../data/news";
@@ -29,7 +30,7 @@ export default function NewsDetail() {
 
     <div className="container-page max-w-4xl py-12 sm:py-20">
       <SourceArticleCard news={article.selectedNews} ko={ko}/>
-      <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]"><img src={imageSrc(article.heroImage.src)} alt={article.heroImage.alt} className="aspect-[16/9] w-full object-cover"/><figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:justify-between"><span>{article.heroImage.caption}</span>{article.heroImage.sourceUrl ? <a href={article.heroImage.sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4">{article.heroImage.credit}</a> : <span className="shrink-0">{article.heroImage.credit}</span>}</figcaption></figure>
+      <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]"><img src={imageSrc(article.heroImage.src)} alt={article.heroImage.alt} className="aspect-[16/9] w-full object-cover"/><FigureCaption caption={article.heroImage.caption} credit={article.heroImage.credit} sourceUrl={article.heroImage.sourceUrl}/></figure>
 
       <div className="mx-auto mt-12 max-w-3xl">
         <aside className="border-l-4 border-gold bg-green-pale px-6 py-7 sm:px-8"><span className="section-kicker">{ko ? "오늘의 한 문장" : "ONE SENTENCE"}</span><p className="mt-3 font-serif text-xl font-bold leading-9 text-green-deep sm:text-2xl">{article.keySentence}</p></aside>
@@ -38,7 +39,7 @@ export default function NewsDetail() {
           <h2 className="text-2xl font-extrabold leading-snug text-navy sm:text-3xl">{section.title}</h2>
           {section.paragraphs?.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 32)}`} className="mt-6 text-base leading-9 text-charcoal/80 sm:text-lg">{paragraph}</p>)}
           {section.bullets && <ul className="mt-7 grid gap-3 text-base leading-8 text-charcoal/75 sm:text-lg">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet}`} className="flex gap-3"><span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"/><span>{bullet}</span></li>)}</ul>}
-          {index === Math.min(2, article.sections.length - 1) && <figure className="my-16 overflow-hidden border border-green-deep/10 bg-white"><img src={imageSrc(article.inlineImage.src)} alt={article.inlineImage.alt} className="aspect-[16/10] w-full object-cover"/><figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:justify-between"><span>{article.inlineImage.caption}</span>{article.inlineImage.sourceUrl ? <a href={article.inlineImage.sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4">{article.inlineImage.credit}</a> : <span className="shrink-0">{article.inlineImage.credit}</span>}</figcaption></figure>}
+          {index === Math.min(2, article.sections.length - 1) && <figure className="my-16 overflow-hidden border border-green-deep/10 bg-white"><img src={imageSrc(article.inlineImage.src)} alt={article.inlineImage.alt} className="aspect-[16/10] w-full object-cover"/><FigureCaption caption={article.inlineImage.caption} credit={article.inlineImage.credit} sourceUrl={article.inlineImage.sourceUrl}/></figure>}
         </section>)}
 
         <section className="mt-16 border-t-2 border-navy pt-10"><span className="section-kicker">{ko ? "앞으로 확인할 지점" : "WHAT TO WATCH"}</span><ol className="mt-6 grid gap-4 sm:grid-cols-2">{article.watchPoints.map((point, index) => <li key={`${index}-${point}`} className="border border-green-deep/15 bg-white p-5"><p className="text-sm font-semibold leading-7 text-navy">{point}</p></li>)}</ol></section>

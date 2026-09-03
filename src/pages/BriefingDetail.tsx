@@ -1,6 +1,7 @@
 import { ArrowLeft, Clock, Download, FileText, Share2 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
+import FigureCaption from "../components/FigureCaption";
 import { getAllBriefing } from "../data/allBriefings";
 import { localizeBriefing } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
@@ -41,14 +42,7 @@ export default function BriefingDetail() {
         alt={image.alt}
         className={`${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full ${image.contain ? "bg-[#f7f4e9] object-contain" : "object-cover"}`}
       />
-      <figcaption className="flex flex-col gap-2 border-t border-green-deep/10 px-5 py-4 text-xs leading-6 text-charcoal/55 sm:flex-row sm:items-start sm:justify-between">
-        <span className="max-w-2xl">{image.caption}</span>
-        {image.sourceUrl ? (
-          <a href={image.sourceUrl} target="_blank" rel="noreferrer" className="shrink-0 underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">
-            {image.credit}
-          </a>
-        ) : <span className="shrink-0">{image.credit}</span>}
-      </figcaption>
+      <FigureCaption caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} />
     </figure>
   );
 
