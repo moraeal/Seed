@@ -29,6 +29,11 @@ export default function NewsDetail() {
     </header>
 
     <div className="container-page max-w-4xl py-12 sm:py-20">
+      {article.video && <section className="mb-12 overflow-hidden border border-green-deep/15 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]">
+        <div className="px-5 py-5 sm:px-7"><span className="section-kicker">{ko ? "현장의 목소리" : "VOICE FROM THE FIELD"}</span><h2 className="mt-2 text-xl font-extrabold leading-snug text-navy sm:text-2xl">{article.video.title}</h2><p className="mt-2 text-sm leading-7 text-charcoal/65">{article.video.description}</p></div>
+        <div className="aspect-video bg-black"><iframe className="h-full w-full" src={`https://www.youtube-nocookie.com/embed/${article.video.youtubeId}`} title={article.video.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /></div>
+        <p className="border-t border-green-deep/10 bg-ivory px-5 py-4 text-xs leading-6 text-charcoal/50 sm:px-7">※ {article.video.disclaimer}</p>
+      </section>}
       <SourceArticleCard news={article.selectedNews} ko={ko}/>
       <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]"><img src={imageSrc(article.heroImage.src)} alt={article.heroImage.alt} className="aspect-[16/9] w-full object-cover"/><FigureCaption caption={article.heroImage.caption} credit={article.heroImage.credit} sourceUrl={article.heroImage.sourceUrl}/></figure>
 

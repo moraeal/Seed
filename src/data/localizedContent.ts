@@ -86,6 +86,7 @@ export function localizeNewsArticle(article: NewsArticle, language: Language): N
     subtitle: translated.subtitle,
     summary: translated.summary,
     keySentence: translated.keySentence,
+    video: translated.video ? { ...article.video, ...translated.video } : article.video,
     selectedNews: {
       ...article.selectedNews,
       ...translated.selectedNews,

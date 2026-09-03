@@ -21,6 +21,7 @@ export type NewsTranslation = {
   subtitle: string;
   summary: string;
   keySentence: string;
+  video?: NonNullable<NewsArticle["video"]>;
   selectedNews: Omit<NewsArticle["selectedNews"], "url" | "publishedAt">;
   heroImage?: Partial<Pick<NewsArticle["heroImage"], "alt" | "caption" | "credit">>;
   inlineImage?: Partial<Pick<NewsArticle["inlineImage"], "alt" | "caption" | "credit">>;
