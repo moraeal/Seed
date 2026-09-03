@@ -18,6 +18,10 @@ export default function Home() {
   const [featurePage, setFeaturePage] = useState(0);
   const [featurePaused, setFeaturePaused] = useState(false);
   const [featureTransition, setFeatureTransition] = useState(true);
+  const [newsPage, setNewsPage] = useState(0);
+  const [newsPaused, setNewsPaused] = useState(false);
+  const [newsTransition, setNewsTransition] = useState(true);
+  const [newsVisibleCount, setNewsVisibleCount] = useState(() => typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches ? 3 : 1);
   const ko = language === "ko";
   const briefings = getAllBriefingsNewestFirst().slice(0, 5).map((item) => localizeBriefing(item, language));
   const journalColumns = [...columns].sort((a, b) => b.issue - a.issue).slice(0, 3).map((item) => localizeColumn(item, language));
@@ -27,6 +31,7 @@ export default function Home() {
   const leadBriefingImage = leadBriefing?.images?.[0];
   const featuredNews = news.slice(0, 4);
   const rotatingNews = featuredNews.length ? [...featuredNews, featuredNews[0]] : [];
+  const rotatingNewsCards = news.length ? [...news, ...news.slice(0, newsVisibleCount)] : [];
 
   useEffect(() => {
     if (featurePaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -34,11 +39,36 @@ export default function Home() {
     return () => window.clearInterval(timer);
   }, [featurePaused]);
 
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 768px)");
+    const updateVisibleCount = () => {
+      setNewsTransition(false);
+      setNewsPage(0);
+      setNewsVisibleCount(media.matches ? 3 : 1);
+      window.requestAnimationFrame(() => window.requestAnimationFrame(() => setNewsTransition(true)));
+    };
+    media.addEventListener("change", updateVisibleCount);
+    return () => media.removeEventListener("change", updateVisibleCount);
+  }, []);
+
+  useEffect(() => {
+    if (newsPaused || news.length <= newsVisibleCount || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => setNewsPage((page) => page + 1), 4500);
+    return () => window.clearInterval(timer);
+  }, [news.length, newsPaused, newsVisibleCount]);
+
   const finishFeatureTransition = () => {
     if (featurePage !== featuredNews.length) return;
     setFeatureTransition(false);
     setFeaturePage(0);
     window.requestAnimationFrame(() => window.requestAnimationFrame(() => setFeatureTransition(true)));
+  };
+
+  const finishNewsTransition = () => {
+    if (newsPage !== news.length) return;
+    setNewsTransition(false);
+    setNewsPage(0);
+    window.requestAnimationFrame(() => window.requestAnimationFrame(() => setNewsTransition(true)));
   };
 
   return (
@@ -111,9 +141,21 @@ export default function Home() {
             <div><p className="section-kicker">LATEST NEWS</p><h2 className="editorial-title mt-2 text-3xl font-bold text-navy sm:text-4xl">{ko ? "지금 읽어야 할 뉴스" : "News to Read Now"}</h2></div>
             <Link to="/news" className="text-link shrink-0">{ko ? "뉴스 전체보기" : "View all"}<ArrowRight size={15}/></Link>
           </div>
-          <div className="grid md:grid-cols-3 md:divide-x md:divide-green-deep/15">
-            {news.slice(2, 5).map((item) => (
-              <article key={item.slug} className="border-b border-green-deep/15 px-5 py-7 transition-colors hover:bg-green-pale/70 md:px-7">
+          <div
+            className="overflow-hidden"
+            onMouseEnter={() => setNewsPaused(true)}
+            onMouseLeave={() => setNewsPaused(false)}
+            onFocusCapture={() => setNewsPaused(true)}
+            onBlurCapture={() => setNewsPaused(false)}
+            aria-label={ko ? "최신 씨드뉴스 슬라이드" : "Latest SEED news carousel"}
+          >
+            <div
+              className={`flex ${newsTransition ? "transition-transform duration-700 ease-out" : ""} motion-reduce:transition-none`}
+              style={{ transform: `translateX(-${newsPage * (100 / newsVisibleCount)}%)` }}
+              onTransitionEnd={(event) => { if (event.target === event.currentTarget) finishNewsTransition(); }}
+            >
+            {rotatingNewsCards.map((item, index) => (
+              <article key={`${item.slug}-${index}`} className="w-full shrink-0 border-b border-green-deep/15 px-5 py-7 transition-colors hover:bg-green-pale/70 md:w-1/3 md:border-r md:px-7">
                 <Link to={`/news/${item.slug}`} className="group block">
                   <img src={resolveImageSrc(item.heroImage.src)} alt={item.heroImage.alt} className="aspect-[16/10] w-full object-cover" />
                   <h3 className="editorial-title mt-5 text-2xl font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h3>
@@ -122,6 +164,14 @@ export default function Home() {
                 </Link>
               </article>
             ))}
+            </div>
+            {news.length > newsVisibleCount && (
+              <div className="flex justify-center gap-2 border-t border-green-deep/10 py-3">
+                {news.map((item, page) => (
+                  <button key={item.slug} type="button" onClick={() => { setNewsTransition(true); setNewsPage(page); }} className={`h-1.5 rounded-full transition-all ${(newsPage % news.length) === page ? "w-6 bg-green-deep" : "w-1.5 bg-green-deep/25 hover:bg-green-deep/50"}`} aria-label={ko ? `${page + 1}번째 씨드뉴스 보기` : `Show SEED news ${page + 1}`} aria-current={(newsPage % news.length) === page ? "true" : undefined} />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
