@@ -21,7 +21,7 @@ export default function Home() {
   const [newsVisibleCount, setNewsVisibleCount] = useState(() => typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches ? 3 : 1);
   const ko = language === "ko";
   const briefings = getAllBriefingsNewestFirst().slice(0, 5).map((item) => localizeBriefing(item, language));
-  const journalColumns = [...columns].sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue).slice(0, 4).map((item) => localizeColumn(item, language));
+  const journalColumns = [...columns].sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue).slice(0, 5).map((item) => localizeColumn(item, language));
   const news = getNewsNewestFirst().slice(0, 5).map((item) => localizeNewsArticle(item, language));
   const leadColumn = journalColumns[0];
   const leadColumnExcerpt = leadColumn?.sections.flatMap((section) => section.paragraphs)[0];
@@ -76,18 +76,20 @@ export default function Home() {
             )}
           </div>
 
-          <aside className="h-full self-stretch bg-green-deep text-white" aria-labelledby="seed-voice-heading">
+          <aside className="flex h-full self-stretch flex-col bg-green-deep text-white" aria-labelledby="seed-voice-heading">
             <div className="border-b border-white/20 px-6 py-5 sm:px-7">
               <div className="flex items-end justify-between gap-4"><h2 id="seed-voice-heading" className="editorial-title text-3xl font-bold">씨앗의 소리</h2><Link to="/columns" className="inline-flex items-center gap-1 text-xs font-bold text-white/65 hover:text-white">{ko ? "전체보기" : "View all"}<ArrowRight size={13}/></Link></div>
             </div>
 
-            {journalColumns.slice(1, 4).map((column, index) => (
-              <Link key={column.slug} to={`/columns/${column.slug}`} className={`group block px-6 py-5 transition hover:bg-white/[.055] sm:px-7 ${index < 2 ? "border-b border-white/15" : ""}`}>
-                <time className="text-[11px] text-white/38">{column.date.replace(/-/g, ".")}</time>
-                <h3 className="editorial-title mt-2 text-xl font-bold leading-snug text-white transition group-hover:text-gold-light sm:text-2xl">{column.title}</h3>
-                <p className="mt-3 line-clamp-2 text-sm leading-6 text-white/62">{column.summary}</p>
-              </Link>
-            ))}
+            <div className="flex min-h-0 flex-1 flex-col">
+              {journalColumns.slice(1, 5).map((column, index) => (
+                <Link key={column.slug} to={`/columns/${column.slug}`} className={`group flex flex-1 flex-col justify-center bg-white/[.075] px-6 py-4 transition hover:bg-white/[.14] sm:px-7 ${index < 3 ? "border-b border-white/20" : ""}`}>
+                  <time className="text-[11px] text-white/45">{column.date.replace(/-/g, ".")}</time>
+                  <h3 className="editorial-title mt-1.5 text-lg font-bold leading-snug text-white transition group-hover:text-gold-light sm:text-xl">{column.title}</h3>
+                  <p className="mt-2 line-clamp-2 text-[13px] leading-5 text-white/65">{column.summary}</p>
+                </Link>
+              ))}
+            </div>
           </aside>
         </div>
       </section>
