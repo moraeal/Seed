@@ -28,10 +28,10 @@ export default function Home() {
   const leadColumnExcerpt = leadColumn?.sections.flatMap((section) => section.paragraphs)[0];
   const rotatingNewsCards = news.length ? [...news, ...news.slice(0, newsVisibleCount)] : [];
   const seedPrincipleEnglish = [
-    { title: "Agency", description: "Citizens are not passive beneficiaries or targets of mobilization. They identify public problems and ask their own questions." },
-    { title: "Ethics", description: "Freedom works with responsibility. Civic action begins by building the public good, not destroying opponents." },
-    { title: "Evolution", description: "We learn from experience, test small ideas, and keep improving instead of imposing a finished answer." },
-    { title: "Responsibility", description: "We carry questions through proposals, action, documentation, and follow-up rather than stopping at criticism." },
+    "Citizens are not passive beneficiaries or targets of mobilization. They identify public problems and ask their own questions.",
+    "Freedom works with responsibility. Civic action begins by building the public good, not destroying opponents.",
+    "We learn from experience, test small ideas, and keep improving instead of imposing a finished answer.",
+    "We carry questions through proposals, action, documentation, and follow-up rather than stopping at criticism.",
   ];
 
   useEffect(() => {
@@ -183,8 +183,8 @@ export default function Home() {
                       <span className="editorial-title text-4xl font-bold text-gold">{principle.code}</span>
                       <h3 className="text-lg font-extrabold tracking-wide text-green-deep">{principle.english}</h3>
                     </div>
-                    <p className="mt-3 text-sm font-extrabold text-navy">{ko ? principle.title : english.title}</p>
-                    <p className="mt-2 text-sm leading-7 text-charcoal/62">{ko ? principle.description : english.description}</p>
+                    {ko && <p className="mt-3 text-sm font-extrabold text-navy">{principle.title}</p>}
+                    <p className={`${ko ? "mt-2" : "mt-4"} text-sm leading-7 text-charcoal/62`}>{ko ? principle.description : english}</p>
                   </article>
                 );
               })}
