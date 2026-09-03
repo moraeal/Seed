@@ -3,7 +3,7 @@ import type { NewsTranslation } from "./types";
 export const newsTranslations: Record<string, NewsTranslation> = {
   "prosecution-abolition-police-case-backlog": {
     category: "Justice & Citizens' Rights",
-    title: "The Prosecution Service Is Disappearing. Where Will the Unresolved Cases Go?",
+    title: "After the Prosecution Service Is Dismantled, Where Will the Unresolved Cases Go?",
     subtitle: "With Korea's criminal-justice transition one month away, estimates suggest that as many as 200,000 unresolved cases could remain. Reform should be judged by citizens' rights, not institutional labels.",
     summary: "As Korea approaches an October 2 restructuring of its criminal-justice system, a large number of unresolved prosecution cases may be transferred to the police and newly created investigative bodies. If an already overburdened police service cannot absorb them, victims and ordinary citizens will bear the cost through delayed investigations.",
     keySentence: "Authority can be divided, but the state's responsibility for a citizen's case must not be dispersed.",
