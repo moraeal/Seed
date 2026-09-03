@@ -1,6 +1,129 @@
 import type { BriefingTranslation } from "./types";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "broadcasting-three-laws-public-governance": {
+    category: "SEED Special Briefing 06",
+    title: "One Year After Korea's Three Broadcasting Laws: Has Public Broadcasting Really Returned to the Public?",
+    summary: "Political parties now recommend a smaller share of directors, but citizens did not automatically take their place. This briefing examines incomplete boards, public recommendation panels, and the new authority given to employees, unions, academic bodies and professional organizations.",
+    author: "SEED Civic Briefing",
+    images: [
+      {
+        alt: "A public broadcaster's boardroom with several empty seats and a broadcast control room behind it",
+        caption: "Major decisions on public-broadcasting leadership are proceeding before all the recommending bodies envisioned by law have filled their seats.",
+        credit: "Image by SEED Civic Partners",
+      },
+      {
+        alt: "A print-style illustration of broadcasting authority leaving government hands and being grasped by several organizations while citizens watch",
+        caption: "Reducing government influence is not the same as expanding citizen power. The organizations and boards receiving new authority must also face civic scrutiny.",
+        credit: "Illustration by SEED Civic Partners",
+      },
+      {
+        src: "images/briefings/briefing-06-board-status-en.svg",
+        alt: "Chart comparing statutory seats, appointments and vacancies on the KBS, Foundation for Broadcast Culture and EBS boards",
+        caption: "As of September 3, 2026, none of the three boards was fully staffed. KBS had only eight of its fifteen seats filled.",
+        credit: "Chart by SEED Civic Partners",
+      },
+    ],
+    content: [
+      "The conclusion first. Korea's 2025 amendments to the three broadcasting laws were intended to separate public broadcasters from direct control by government and political parties. The share of board seats directly recommended by the National Assembly fell to about 40 percent, while viewer committees, employees, academic associations, bar groups and education organizations gained recommendation authority.",
+      "But as of September 3, 2026, reduced partisan influence cannot yet be equated with greater citizen sovereignty. All three public-broadcasting boards remain incomplete, and KBS began choosing a new president with only eight of fifteen directors appointed. The question now is not simply whether one supported the legislation, but who made recommendations, who screened candidates and how transparent those decisions are to citizens.",
+    ],
+    sections: [
+      {
+        title: "The essentials in 30 seconds",
+        bullets: [
+          "Political parties' share has declined but not disappeared. National Assembly negotiating groups recommend six of fifteen KBS directors and five of thirteen directors at both the Foundation for Broadcast Culture and EBS.",
+          "Recommendation authority now extends to viewer committees, employees, academic bodies, bar associations and education organizations. The structure gives organized intermediaries more power, not individual citizens directly.",
+          "KBS began with 8 of 15 directors appointed; the Foundation for Broadcast Culture, MBC's controlling shareholder, and EBS each began with 11 of 13. None is complete.",
+          "A public recommendation panel narrows the field of presidential candidates, but the board makes the final decision. This is public participation in appointment, not direct public election.",
+          "The law sought new boards within three months of taking effect, but the restructuring did not begin in earnest until July and August 2026.",
+        ],
+      },
+      {
+        title: "The promise of 2025 and the reality of 2026",
+        paragraphs: [
+          "The legislation promised to reduce the cycle in which boards and broadcaster presidents changed whenever political power changed, while broadening the sources of recommendations and public participation. Opponents warned that authority could simply move from political parties to labor unions and organizations aligned with the governing camp.",
+          "One year later, institutional pluralization and operational incompleteness exist at the same time. The formal share of National Assembly recommendations has fallen, but delays by the opposition and internal recommending bodies left the initial balance unfilled. Detailed enforcement decrees and rules were not completed until May 2026.",
+        ],
+        bullets: [
+          "Board expansion: KBS from 11 to 15; the Foundation for Broadcast Culture and EBS from 9 to 13.",
+          "President selection: public recommendation panels of at least 100 to 150 people.",
+          "Editorial independence: equal labor-management programming committees and consent procedures for news executives.",
+          "Implementation: incomplete boards launched well after the statutory timetable.",
+        ],
+      },
+      {
+        title: "KBS: eight directors are acting, not fifteen",
+        paragraphs: [
+          "KBS launched its new board on July 31 with only eight of fifteen directors. Four were recommended by the Democratic Party, two by broadcasting and media academic associations, and one each by the Korean Bar Association and Lawyers for a Democratic Society. Vacancies remain for two People Power Party nominees, two KBS Viewer Committee nominees and three employee nominees.",
+          "Nevertheless, the eight-member board began the process of appointing a new KBS president on August 26. The incumbent sought an injunction, arguing that the process lacked legitimacy, with the first hearing scheduled for September 9. Regardless of which bodies caused the delays, citizens should ask whether rushing the most consequential appointment before the promised diversity is present serves the spirit of the amended law.",
+        ],
+      },
+      {
+        title: "MBC: public recommendation has begun, but the public does not elect the president",
+        paragraphs: [
+          "The Foundation for Broadcast Culture, MBC's controlling shareholder, is operating with eleven of thirteen directors; two People Power Party recommendations remain vacant. From twenty applicants for MBC president, the foundation first narrows the field to eight and then four. A public panel of at least 150 people selects two through deliberative assessment, after which the foundation chooses the final nominee.",
+          "The panel is a meaningful experiment in expanding participation. Citizens, however, do not examine every applicant directly or make the final choice. Because the board still controls entry into the process and the final selection, it must disclose its screening criteria and explain its last decision if participation is to be more than decoration.",
+        ],
+      },
+      {
+        title: "EBS: more diverse recommenders, but an incomplete board",
+        paragraphs: [
+          "EBS also has eleven of thirteen directors, with two People Power Party nominees missing. On paper, its design is the most visibly balanced: recommendation authority is shared among the Korean Teachers and Education Workers Union, the Korean Federation of Teachers' Associations, the Ministry of Education, the Council of Governors of Education, the viewer committee and employees.",
+          "Different institutional names do not automatically produce different viewpoints. Each body should disclose whom it recommended and why, and apply the same conflict-of-interest standard to recent activity in political parties, election campaigns, unions and civic organizations.",
+        ],
+      },
+      {
+        title: "Broader recommendation power is not the same as citizen sovereignty",
+        paragraphs: [
+          "The new system reduces direct authority held by government and political parties while distributing recommendation rights among organized intermediaries. Yet employees, unions, academic bodies, bar associations and viewer committees can all have political orientations and organizational interests. They should not be granted automatic neutrality or representativeness simply by being labeled civil society.",
+          "Programming committees and employee-representative mechanisms can restrain improper management interference. They can also create a new internal monopoly if selection is concentrated in a dominant union. The goal should not be victory for management or labor, but rules that make them check one another and protect minority views.",
+        ],
+      },
+      {
+        title: "SEED's view",
+        paragraphs: [
+          "The three broadcasting laws began from a legitimate problem: public broadcasters should not be destabilized whenever political power changes. Lowering the share of direct National Assembly recommendations and introducing public panels are formal advances. But removing authority from the state does not by itself return that authority to citizens.",
+          "Independence requires a structure in which no single actor—government, political parties, management, unions, professional organizations or civic groups—can monopolize appointments and programming. Recommending bodies should disclose meetings and criteria, candidate conflicts of interest, panel sampling and scorecards, and the reasons for each board's final choice.",
+          "Success should be measured not by the number of additional directors but by whether news fairness, correction of errors, rights of reply, protection of internal minority views and respect for fixed presidential terms actually improve. Citizens should keep a record of outcomes rather than place faith in the intentions of the political camp that wrote the law.",
+        ],
+      },
+    ],
+    verdicts: [
+      { claim: "Political parties have been completely removed from public broadcasting by the three laws", status: "False", basis: "National Assembly negotiating groups still recommend six of fifteen KBS directors and five of thirteen directors at both the Foundation for Broadcast Culture and EBS." },
+      { claim: "Citizens directly elect the presidents of public broadcasters", status: "Exaggerated", basis: "Public panels narrow a field of candidates, but boards make the final choice; KBS also retains the president's formal appointment step." },
+      { claim: "The Korean Confederation of Trade Unions controls every public-broadcasting board", status: "Exaggerated", basis: "Unions do not directly control entire boards, though employee recommendation rights and representative mechanisms may increase organized labor's influence." },
+      { claim: "More recommending bodies automatically produce greater political neutrality", status: "Unverified", basis: "Academic bodies, bar groups, viewer committees and employees cannot automatically be assumed free of political leanings or organizational interests." },
+      { claim: "The new public-broadcasting boards are already fully constituted", status: "False", basis: "As of September 3, 2026, the KBS, Foundation for Broadcast Culture and EBS boards all had vacancies." },
+    ],
+    watchPoints: [
+      "When the KBS board reaches fifteen members and the Foundation for Broadcast Culture and EBS boards reach thirteen",
+      "Whether the opposition, KBS Viewer Committee and employee bodies explain their delayed recommendations",
+      "How the court rules on the KBS eight-member board's presidential-selection process",
+      "Whether MBC's public-panel sampling, deliberation method and scorecard are disclosed",
+      "Whether the board explains any final choice that differs from the candidates selected by the public panel",
+      "Whether recommending organizations disclose candidate criteria and conflicts of interest to the same standard",
+      "Whether party, campaign, union and civic-organization histories are reviewed under consistent rules",
+      "Whether programming committees check management or become a veto mechanism for a dominant union",
+      "Whether presidential terms and board independence are respected after a change of government",
+      "Whether indicators for political diversity, corrections and rights of reply improve from the pre-reform period",
+    ],
+    quote: "Public-broadcasting independence is not complete when authority merely leaves government. The organizations and boards receiving that authority must also answer to citizens.",
+    sourceNote: "This briefing is based on statutes, government materials and reporting publicly available as of September 3, 2026. Board composition and presidential-selection procedures remain in progress, so the assessment may be updated as events change.",
+    sourceLabels: [
+      "Korean Law Information Center — Broadcasting Act, Article 46 and related provisions",
+      "Korean Law Information Center — Foundation for Broadcast Culture Act amendments and legislative purpose",
+      "Korean Law Information Center — Korea Educational Broadcasting System Act, Article 13",
+      "Korea Media and Communications Commission — Institutional framework for implementing the three broadcasting laws",
+      "Yonhap News Agency — National Assembly passes the three broadcasting laws",
+      "Yonhap News Agency — KBS board launches with eight directors",
+      "Yonhap News Agency — KBS board begins process to select a new president",
+      "Hankyoreh — Injunction sought to halt selection of a new KBS president",
+      "Yonhap News Agency — MBC presidential field narrowed to eight",
+      "Yonhap News Agency — Cho Ho-yeon elected chair of the new EBS board",
+      "Journalists Association of Korea — One year after the Broadcasting Act amendments",
+    ],
+  },
   "2027-national-budget-revenue-debt": {
     category: "SEED Civic Briefing 05",
     title: "The KRW 820.9 Trillion Budget Test",

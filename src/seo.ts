@@ -16,10 +16,13 @@ export type SeoRoute = {
   author?: string;
   section?: string;
   language?: "ko" | "en";
+  image?: string;
+  imageAlt?: string;
 };
 
 const canonicalPath = (path: string) => path === "/" ? "/" : `${path.replace(/\/$/, "")}/`;
 export const canonicalUrl = (path: string) => `${SITE_URL}${canonicalPath(path)}`;
+export const assetUrl = (path: string) => `${SITE_URL}/${path.replace(/^\/+/, "")}`;
 
 const newest = (dates: string[]) => [...dates].sort()[dates.length - 1];
 const latestDate = newest([...newsArticles.map((item) => item.date), ...columns.map((item) => item.date), ...getAllBriefingsNewestFirst().map((item) => item.date)]);
@@ -31,6 +34,8 @@ const staticRoutes: SeoRoute[] = [
     description: "씨드 시민저널은 확인된 사실과 맥락을 바탕으로 시민이 스스로 판단할 수 있도록 돕는 독립 시민저널입니다.",
     type: "website",
     lastModified: latestDate,
+    image: assetUrl("images/support/founding-partners-watercolor.webp"),
+    imageAlt: "Young citizens gathering around a shared civic project",
   },
   {
     path: "/en",
@@ -57,6 +62,8 @@ const newsRoutes: SeoRoute[] = newsArticles.map((article) => ({
   lastModified: article.date,
   author: SITE_NAME,
   section: article.category,
+  image: assetUrl(article.heroImage.src),
+  imageAlt: article.heroImage.alt,
 }));
 
 const briefingRoutes: SeoRoute[] = getAllBriefingsNewestFirst().flatMap((briefing) => {
@@ -68,6 +75,8 @@ const briefingRoutes: SeoRoute[] = getAllBriefingsNewestFirst().flatMap((briefin
     lastModified: briefing.date,
     author: briefing.author,
     section: briefing.category,
+    image: briefing.images?.[0]?.src ? assetUrl(briefing.images[0].src) : undefined,
+    imageAlt: briefing.images?.[0]?.alt,
   }];
   if (briefing.commentary) routes.push({
     path: `/briefings/${briefing.slug}/commentary`,
@@ -77,6 +86,8 @@ const briefingRoutes: SeoRoute[] = getAllBriefingsNewestFirst().flatMap((briefin
     lastModified: briefing.date,
     author: briefing.author,
     section: "씨드 논평",
+    image: briefing.images?.[0]?.src ? assetUrl(briefing.images[0].src) : undefined,
+    imageAlt: briefing.images?.[0]?.alt,
   });
   return routes;
 });
@@ -89,6 +100,8 @@ const columnRoutes: SeoRoute[] = columns.map((column) => ({
   lastModified: column.date,
   author: column.author,
   section: "씨앗의 소리",
+  image: assetUrl(column.heroImage.src),
+  imageAlt: column.heroImage.alt,
 }));
 
 const monitoringRoutes: SeoRoute[] = publicInterestWatchCases.map((item) => ({

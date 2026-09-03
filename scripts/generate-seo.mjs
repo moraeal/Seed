@@ -126,6 +126,7 @@ function structuredData(route) {
     publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
     articleSection: route.section,
     inLanguage: language,
+    ...(route.image ? { image: route.image } : {}),
   };
   return {
     "@context": "https://schema.org",
@@ -148,6 +149,12 @@ function render(route) {
     ? `\n    <link rel="alternate" hreflang="ko" href="${canonicalUrl("/")}" />\n    <link rel="alternate" hreflang="en" href="${canonicalUrl("/en")}" />\n    <link rel="alternate" hreflang="x-default" href="${canonicalUrl("/")}" />`
     : "";
   const jsonLd = JSON.stringify(structuredData(route)).replaceAll("<", "\\u003c");
+  const socialImage = route.image ? `
+    <meta property="og:image" content="${escapeHtml(route.image)}" />
+    <meta property="og:image:secure_url" content="${escapeHtml(route.image)}" />
+    <meta property="og:image:alt" content="${escapeHtml(route.imageAlt || route.title)}" />
+    <meta name="twitter:image" content="${escapeHtml(route.image)}" />
+    <meta name="twitter:image:alt" content="${escapeHtml(route.imageAlt || route.title)}" />` : "";
   const head = `
     <title>${title}</title>
     <meta name="description" content="${description}" />
@@ -158,7 +165,8 @@ function render(route) {
     <meta property="og:title" content="${title}" />
     <meta property="og:description" content="${description}" />
     <meta property="og:url" content="${canonical}" />
-    <meta name="twitter:card" content="summary" />
+    ${socialImage}
+    <meta name="twitter:card" content="${route.image ? "summary_large_image" : "summary"}" />
     <meta name="twitter:title" content="${title}" />
     <meta name="twitter:description" content="${description}" />
     <script type="application/ld+json">${jsonLd}</script>`;

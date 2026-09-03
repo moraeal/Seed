@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Statutory seats and current membership of Korea's public-broadcasting boards</title>
+  <desc id="desc">As of September 3, 2026, KBS had eight of fifteen directors appointed, while the Foundation for Broadcast Culture and EBS each had eleven of thirteen.</desc>
+  <rect width="1600" height="900" fill="#f7f4e9"/><rect x="0" y="0" width="1600" height="18" fill="#174c3a"/>
+  <g font-family="Arial, sans-serif">
+    <text x="110" y="104" fill="#17324d" font-size="46" font-weight="800">Public-broadcasting boards remain incomplete</text>
+    <text x="110" y="154" fill="#495760" font-size="23">As of September 3, 2026 · statutory seats and actual appointments</text>
+    <text x="110" y="272" fill="#17324d" font-size="34" font-weight="800">KBS</text><text x="110" y="310" fill="#56626a" font-size="21">15 statutory seats · 6 recommended by National Assembly groups</text>
+    <rect x="650" y="240" width="590" height="76" rx="10" fill="#d9ddd8"/><rect x="650" y="240" width="315" height="76" rx="10" fill="#174c3a"/><text x="807" y="289" fill="#fff" font-size="24" font-weight="800" text-anchor="middle">8 appointed</text><text x="1102" y="289" fill="#17324d" font-size="24" font-weight="800" text-anchor="middle">7 vacant</text><text x="1290" y="289" fill="#b13a2f" font-size="32" font-weight="900">8 / 15</text>
+    <text x="110" y="443" fill="#17324d" font-size="31" font-weight="800">Foundation for Broadcast Culture</text><text x="110" y="481" fill="#56626a" font-size="21">13 statutory seats · 5 recommended by National Assembly groups</text>
+    <rect x="650" y="411" width="590" height="76" rx="10" fill="#d9ddd8"/><rect x="650" y="411" width="499" height="76" rx="10" fill="#2f725b"/><text x="900" y="460" fill="#fff" font-size="24" font-weight="800" text-anchor="middle">11 appointed</text><text x="1195" y="460" fill="#17324d" font-size="24" font-weight="800" text-anchor="middle">2 vacant</text><text x="1290" y="460" fill="#17324d" font-size="32" font-weight="900">11 / 13</text>
+    <text x="110" y="614" fill="#17324d" font-size="34" font-weight="800">EBS</text><text x="110" y="652" fill="#56626a" font-size="21">13 statutory seats · 5 recommended by National Assembly groups</text>
+    <rect x="650" y="582" width="590" height="76" rx="10" fill="#d9ddd8"/><rect x="650" y="582" width="499" height="76" rx="10" fill="#2f725b"/><text x="900" y="631" fill="#fff" font-size="24" font-weight="800" text-anchor="middle">11 appointed</text><text x="1195" y="631" fill="#17324d" font-size="24" font-weight="800" text-anchor="middle">2 vacant</text><text x="1290" y="631" fill="#17324d" font-size="32" font-weight="900">11 / 13</text>
+    <line x1="110" y1="728" x2="1490" y2="728" stroke="#174c3a" stroke-opacity=".2" stroke-width="2"/><circle cx="128" cy="786" r="10" fill="#174c3a"/><text x="153" y="794" fill="#34434b" font-size="22">Appointed</text><circle cx="310" cy="786" r="10" fill="#d9ddd8" stroke="#aab2ad"/><text x="335" y="794" fill="#34434b" font-size="22">Vacant</text>
+    <text x="1490" y="794" fill="#56626a" font-size="19" text-anchor="end">Sources: amended broadcasting laws and public data as of Sept. 3, 2026 · SEED Civic Partners</text>
+    <text x="110" y="845" fill="#7a4f18" font-size="21" font-weight="700">Key question: should incomplete boards make major decisions before the system's promised diversity is present?</text>
+  </g>
+</svg>
