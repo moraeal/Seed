@@ -11,6 +11,8 @@ export const newsTranslations: Record<string, NewsTranslation> = {
       outlet: "Hankook Ilbo",
       headline: "Concerns Grow Over Korea's Plan for Spending to Exceed KRW 1,000 Trillion by 2030",
       linkLabel: "Read the Hankook Ilbo report",
+      thumbnailAlt: "President Lee Jae-myung speaking at a youth budget briefing",
+      thumbnailCaption: "President Lee Jae-myung speaks at a youth budget briefing on August 28, 2026. Photo: Wang Tae-seok/Blue House Press Photographers, via Hankook Ilbo",
       summary: [
         "The 2026–2030 national fiscal plan places total spending at KRW 1,005.2 trillion in 2030, an average annual increase of 8.4 percent.",
         "The government expects total revenue to rise by an annual average of 9.9 percent and projects that the debt-to-GDP ratio can remain around 49 percent in 2030.",
