@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">5년치 전기요금 25조 원 선납 제안의 구조</title>
+  <desc id="desc">삼성전자 20조 원, SK하이닉스 5조 원의 선납 제안이 한국전력의 송변전망 투자로 이어지고 향후 전기요금 차감과 이자 지급으로 정산되는 구조, 그리고 확인해야 할 네 가지 안전장치를 설명한다.</desc>
+  <defs>
+    <linearGradient id="header" x1="0" x2="1">
+      <stop offset="0" stop-color="#092f3b"/>
+      <stop offset="1" stop-color="#154d5c"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#d44a3a"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#092f3b" flood-opacity=".12"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#f5f3ec"/>
+  <rect width="1600" height="210" fill="url(#header)"/>
+  <text x="90" y="82" fill="#e1bd62" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="26" font-weight="800" letter-spacing="5">FACT CHECK · POLICY FLOW</text>
+  <text x="90" y="148" fill="#ffffff" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="54" font-weight="900">5년치 전기요금 25조 원, 어디로 가나</text>
+  <text x="90" y="187" fill="#d9e4e2" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="23">보도된 제안의 자금 흐름과 아직 확정되지 않은 부분을 분리해 본다</text>
+
+  <g filter="url(#shadow)">
+    <rect x="90" y="265" width="380" height="285" rx="14" fill="#ffffff" stroke="#cbd5d1" stroke-width="2"/>
+    <rect x="610" y="265" width="380" height="285" rx="14" fill="#ffffff" stroke="#cbd5d1" stroke-width="2"/>
+    <rect x="1130" y="265" width="380" height="285" rx="14" fill="#ffffff" stroke="#cbd5d1" stroke-width="2"/>
+  </g>
+
+  <circle cx="150" cy="327" r="30" fill="#d44a3a"/>
+  <text x="150" y="337" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="27" font-weight="900">1</text>
+  <text x="200" y="337" fill="#092f3b" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="31" font-weight="900">기업 선납 제안</text>
+  <text x="135" y="407" fill="#263b40" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="27" font-weight="800">삼성전자</text>
+  <text x="420" y="407" text-anchor="end" fill="#d44a3a" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="38" font-weight="900">20조 원</text>
+  <line x1="135" y1="433" x2="425" y2="433" stroke="#d9dfdc" stroke-width="2"/>
+  <text x="135" y="480" fill="#263b40" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="27" font-weight="800">SK하이닉스</text>
+  <text x="420" y="480" text-anchor="end" fill="#d44a3a" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="38" font-weight="900">5조 원</text>
+  <text x="135" y="525" fill="#64736f" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="20">2027~2031년 예상 전기요금 기준</text>
+
+  <circle cx="670" cy="327" r="30" fill="#d44a3a"/>
+  <text x="670" y="337" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="27" font-weight="900">2</text>
+  <text x="720" y="337" fill="#092f3b" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="31" font-weight="900">한전 자금 조달</text>
+  <text x="655" y="410" fill="#263b40" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="25" font-weight="800">송전망 · 변전소 건설</text>
+  <rect x="655" y="442" width="290" height="16" rx="8" fill="#dce7e2"/>
+  <rect x="655" y="442" width="216" height="16" rx="8" fill="#1e7562"/>
+  <text x="655" y="502" fill="#64736f" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="21">용인·호남 반도체 클러스터</text>
+  <text x="655" y="532" fill="#64736f" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="21">한전채 발행 부담 완화 목적</text>
+
+  <circle cx="1190" cy="327" r="30" fill="#d44a3a"/>
+  <text x="1190" y="337" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="27" font-weight="900">3</text>
+  <text x="1240" y="337" fill="#092f3b" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="31" font-weight="900">향후 정산</text>
+  <text x="1175" y="410" fill="#263b40" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="25" font-weight="800">미래 전기요금에서 차감</text>
+  <text x="1175" y="458" fill="#263b40" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="25" font-weight="800">기업에 이자 지급 검토</text>
+  <rect x="1175" y="491" width="290" height="36" rx="18" fill="#fff0ed"/>
+  <text x="1320" y="517" text-anchor="middle" fill="#b33c2f" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="20" font-weight="900">선납금은 회계상 부채 가능</text>
+
+  <path d="M485 408H585" fill="none" stroke="#d44a3a" stroke-width="7" marker-end="url(#arrow)"/>
+  <path d="M1005 408H1105" fill="none" stroke="#d44a3a" stroke-width="7" marker-end="url(#arrow)"/>
+
+  <rect x="90" y="605" width="1420" height="300" rx="16" fill="#092f3b"/>
+  <text x="140" y="674" fill="#e1bd62" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="25" font-weight="900" letter-spacing="3">아직 확정된 의무 납부가 아니다</text>
+  <text x="140" y="718" fill="#ffffff" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="30" font-weight="900">‘자발적 협의’라면 반드시 증명해야 할 네 가지</text>
+
+  <g font-family="Pretendard, Noto Sans KR, sans-serif">
+    <rect x="140" y="758" width="300" height="92" rx="10" fill="#164958"/>
+    <text x="170" y="795" fill="#e1bd62" font-size="19" font-weight="900">01 거절의 자유</text>
+    <text x="170" y="829" fill="#fff" font-size="17">거절해도 공급·인허가 불이익 없음</text>
+
+    <rect x="480" y="758" width="300" height="92" rx="10" fill="#164958"/>
+    <text x="510" y="795" fill="#e1bd62" font-size="19" font-weight="900">02 자금의 격리</text>
+    <text x="510" y="829" fill="#fff" font-size="17">선납금 사용처와 집행 내역 공개</text>
+
+    <rect x="820" y="758" width="300" height="92" rx="10" fill="#164958"/>
+    <text x="850" y="795" fill="#e1bd62" font-size="19" font-weight="900">03 환급 보장</text>
+    <text x="850" y="829" fill="#fff" font-size="17">건설 지연·무산 시 즉시 환급</text>
+
+    <rect x="1160" y="758" width="300" height="92" rx="10" fill="#164958"/>
+    <text x="1190" y="795" fill="#e1bd62" font-size="19" font-weight="900">04 공개 검증</text>
+    <text x="1190" y="829" fill="#fff" font-size="17">금리·회계·특혜 여부 국회 검증</text>
+  </g>
+
+  <text x="90" y="955" fill="#6d7a76" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="19">※ 2026년 9월 3일 공개 보도 기준. 참여 여부·금액·기간·금리는 협의 중이며 확정되지 않았다.</text>
+</svg>
