@@ -5,9 +5,9 @@ type Section = { title: string; paragraphs: string[] };
 
 const copy = {
   ko: {
-    kicker: "ABOUT SEED JOURNAL",
+    kicker: "ABOUT SEED VOICE",
     title: "한 사람의 씨앗이 시작한 독립 시민미디어",
-    lead: "한 시민의 질문과 판단이 세상을 바꾸는 시작이 될 수 있다고 믿습니다. 씨드저널은 작아져 있던 한 사람이 자기 목소리를 되찾고, 다른 시민의 가능성을 깨우기 위해 시작한 1인 시민미디어입니다.",
+    lead: "한 시민의 질문과 판단이 세상을 바꾸는 시작이 될 수 있다고 믿습니다. 씨앗의 소리는 작아져 있던 한 사람이 자기 목소리를 되찾고, 다른 시민의 가능성을 깨우기 위해 시작한 1인 시민미디어입니다.",
     imageAlt: "한 시민의 생각이 씨앗과 잎으로 자라 여러 시민의 공론장으로 이어지는 따뜻한 수채화",
     imageCaption: "한 사람의 질문에서 시작된 작은 생각의 씨앗은 기록과 대화를 통해 더 많은 시민의 가능성으로 자라납니다.",
     sections: [
@@ -30,13 +30,13 @@ const copy = {
         title: "AI가 열어준 가능성",
         paragraphs: [
           "그런 나에게 AI는 새로운 가능성을 열어주었습니다. AI가 나를 대신해 생각해준 것은 아닙니다. 오히려 내가 무엇을 생각하고 있었는지 더 분명하게 바라보도록 도와주었습니다. 흩어져 있던 생각을 정리하고, 부족한 지식과 자료를 보완하고, 막연한 문제의식을 하나의 글과 콘텐츠로 발전시킬 수 있게 해주었습니다. 작고 불완전했던 사유의 씨앗들이 비로소 연결되고 확장되기 시작했습니다.",
-          "씨드저널은 그렇게 시작되었습니다. 이 사이트는 코딩이나 웹 개발을 배운 적 없는 한 사람이 AI와 함께 만든 독립 시민미디어입니다. 글을 쓸 때 나는 먼저 질문을 정하고, 무엇을 말하고 싶은지 밝힙니다. AI는 관련 자료를 찾고 구조를 정리하며 사실관계를 교차검토하는 데 도움을 줍니다. 그러나 무엇을 질문하고 어떻게 판단할 것인지, 그리고 그 결과에 책임지는 일은 온전히 나의 몫입니다.",
+          "씨앗의 소리는 그렇게 시작되었습니다. 이 사이트는 코딩이나 웹 개발을 배운 적 없는 한 사람이 AI와 함께 만든 독립 시민미디어입니다. 글을 쓸 때 나는 먼저 질문을 정하고, 무엇을 말하고 싶은지 밝힙니다. AI는 관련 자료를 찾고 구조를 정리하며 사실관계를 교차검토하는 데 도움을 줍니다. 그러나 무엇을 질문하고 어떻게 판단할 것인지, 그리고 그 결과에 책임지는 일은 온전히 나의 몫입니다.",
         ],
       },
       {
         title: "불완전함을 감추지 않겠습니다",
         paragraphs: [
-          "AI는 사실을 보증하는 심판도 아니고, 인간의 생각을 대신하는 주인도 아닙니다. 씨드저널은 가능한 한 출처를 확인하고 서로 다른 자료를 대조하며, 오류가 발견되면 공개적으로 바로잡겠습니다. 사실과 의견을 구분하고 AI를 활용한 과정도 숨기지 않겠습니다.",
+          "AI는 사실을 보증하는 심판도 아니고, 인간의 생각을 대신하는 주인도 아닙니다. 씨앗의 소리는 가능한 한 출처를 확인하고 서로 다른 자료를 대조하며, 오류가 발견되면 공개적으로 바로잡겠습니다. 사실과 의견을 구분하고 AI를 활용한 과정도 숨기지 않겠습니다.",
           "나의 생각은 분명히 불완전합니다. 아무리 많은 자료를 확인하고 데이터를 검토해도 놓치는 사실과 잘못된 판단이 있을 수 있습니다. 그러나 불완전하다는 이유로 자신의 생각을 포기할 필요는 없습니다. 중요한 것은 생각하지 않는 완벽함이 아니라, 질문하고 검증하고 수정하면서 성장하는 과정입니다.",
           "나는 이곳에서 지금까지 꺼내지 못했던 목소리를 펼쳐보려 합니다. 권력이 당연하다고 말하는 것을 다시 묻고, 시민사회의 이름으로 행해지는 일도 시민의 관점에서 살펴보겠습니다. 진영이 정해준 생각을 반복하기보다 내가 확인한 사실과 내가 세운 기준으로 판단하겠습니다.",
         ],
@@ -44,22 +44,22 @@ const copy = {
       {
         title: "한 사람의 씨앗에서, 더 많은 시민의 씨앗으로",
         paragraphs: [
-          "씨드저널은 거대한 언론사가 아닙니다. 한 사람의 씨앗이 시작한 1인 시민미디어입니다. 그러나 작은 씨앗 하나에도 숲으로 성장할 가능성이 들어 있습니다.",
+          "씨앗의 소리는 거대한 언론사가 아닙니다. 한 사람의 씨앗이 시작한 1인 시민미디어입니다. 그러나 작은 씨앗 하나에도 숲으로 성장할 가능성이 들어 있습니다.",
           "AI의 도움으로 한 사람이 자신의 생각을 세우고 세상에 발언할 수 있다면, 다른 시민도 그렇게 할 수 있습니다. 전문가나 유명인만 미디어의 주인이 되는 시대가 아니라, 평범한 시민도 자신의 질문과 경험과 전문성을 공적인 목소리로 발전시킬 수 있는 시대가 열리고 있습니다.",
         ],
       },
     ] satisfies Section[],
     declaration: ["내가 시민입니다.", "나는 세상을 바꾸는 작은 씨앗입니다."],
-    closing: "씨드저널은 나를 다시 세우고 성장시키기 위한 첫 번째 시도입니다. 이 작은 시도가 누군가에게 울림으로 전해지고, 또 다른 시민이 자신의 목소리를 발견하는 계기가 되기를 바랍니다. 그렇게 한 사람의 씨앗들이 자라고 서로 연결되어, 진짜 시민들이 살아 움직이는 큰 씨앗의 사회가 열리기를 희망합니다.",
+    closing: "씨앗의 소리는 나를 다시 세우고 성장시키기 위한 첫 번째 시도입니다. 이 작은 시도가 누군가에게 울림으로 전해지고, 또 다른 시민이 자신의 목소리를 발견하는 계기가 되기를 바랍니다. 그렇게 한 사람의 씨앗들이 자라고 서로 연결되어, 진짜 시민들이 살아 움직이는 큰 씨앗의 사회가 열리기를 희망합니다.",
     founderKicker: "PUBLISHER & EDITOR",
     founderName: "박경석",
-    founderRole: "씨드저널 발행인·에디터",
-    founderBio: "시민사회와 공공영역의 현장에서 활동해 왔습니다. 아직 정리되지 않은 한 시민의 질문을 기록하고, AI와 함께 사실을 확인하며 씨드저널을 만들어가고 있습니다. 완성된 답을 내세우기보다 질문하고 수정하며 성장하는 시민이 되고자 합니다.",
+    founderRole: "씨앗의 소리 발행인·에디터",
+    founderBio: "시민사회와 공공영역의 현장에서 활동해 왔습니다. 아직 정리되지 않은 한 시민의 질문을 기록하고, AI와 함께 사실을 확인하며 씨앗의 소리를 만들어가고 있습니다. 완성된 답을 내세우기보다 질문하고 수정하며 성장하는 시민이 되고자 합니다.",
   },
   en: {
-    kicker: "ABOUT SEED JOURNAL",
+    kicker: "ABOUT SEED VOICE",
     title: "An independent civic journal, begun by one citizen as a seed",
-    lead: "We believe one citizen’s questions and judgment can become the beginning of change. SEED Journal is a one-person civic publication created by someone who had learned to make himself small—and decided to recover his own voice while awakening that possibility in others.",
+    lead: "We believe one citizen’s questions and judgment can become the beginning of change. SEED VOICE is a one-person civic publication created by someone who had learned to make himself small—and decided to recover his own voice while awakening that possibility in others.",
     imageAlt: "Warm watercolor of one citizen’s ideas growing into seeds, leaves, and a public space shared by many citizens",
     imageCaption: "A small seed of thought, beginning with one person’s question, can grow through writing and dialogue into possibility for many citizens.",
     sections: [
@@ -82,13 +82,13 @@ const copy = {
         title: "The possibility opened by AI",
         paragraphs: [
           "AI opened a new possibility for me. It did not think in my place. Instead, it helped me see more clearly what I had been trying to think. It helped organize scattered ideas, identify missing knowledge and sources, and develop a vague concern into an article or piece of public analysis. Small, unfinished seeds of thought began to connect and grow.",
-          "That is how SEED Journal began. This website is an independent civic publication built by one person with no training in coding or web development, working alongside AI. I begin each article by choosing the question and stating what I want to say. AI assists with research, structure, and cross-checking. But the choice of question, the judgment that follows, and responsibility for the result remain entirely mine.",
+          "That is how SEED VOICE began. This website is an independent civic publication built by one person with no training in coding or web development, working alongside AI. I begin each article by choosing the question and stating what I want to say. AI assists with research, structure, and cross-checking. But the choice of question, the judgment that follows, and responsibility for the result remain entirely mine.",
         ],
       },
       {
         title: "We will not conceal our incompleteness",
         paragraphs: [
-          "AI is neither an arbiter that guarantees facts nor a master that replaces human thought. SEED Journal will check sources, compare different records, and correct errors openly when they are found. We will distinguish fact from opinion and be transparent about how AI has been used.",
+          "AI is neither an arbiter that guarantees facts nor a master that replaces human thought. SEED VOICE will check sources, compare different records, and correct errors openly when they are found. We will distinguish fact from opinion and be transparent about how AI has been used.",
           "My thinking is inevitably incomplete. No amount of research or data review can eliminate every omission or mistaken judgment. But incompleteness is not a reason to surrender one’s own mind. What matters is not the perfection of never thinking, but the discipline of questioning, verifying, correcting, and growing.",
           "Here I will bring forward a voice I once hesitated to use. I will question what power presents as self-evident and examine actions taken in the name of civil society from the citizen’s point of view. Rather than repeat the opinions assigned by political camps, I will judge by the facts I can verify and the principles I am prepared to defend.",
         ],
@@ -96,17 +96,17 @@ const copy = {
       {
         title: "From one seed to many civic seeds",
         paragraphs: [
-          "SEED Journal is not a large news organization. It is a one-person civic publication begun by one human seed. Yet even the smallest seed contains the possibility of a forest.",
+          "SEED VOICE is not a large news organization. It is a one-person civic publication begun by one human seed. Yet even the smallest seed contains the possibility of a forest.",
           "If AI can help one person organize a judgment and speak in public, others can do the same. Media need not belong only to experts or public figures. Ordinary citizens can develop their questions, experience, and knowledge into public voices of their own.",
         ],
       },
     ] satisfies Section[],
     declaration: ["I am a citizen.", "I am a small seed capable of changing the world."],
-    closing: "SEED Journal is my first attempt to stand upright and continue growing. I hope this small effort resonates with someone else and helps another citizen discover a voice of their own. May individual seeds grow, connect, and open the way to a society alive with citizens who think and act for themselves.",
+    closing: "SEED VOICE is my first attempt to stand upright and continue growing. I hope this small effort resonates with someone else and helps another citizen discover a voice of their own. May individual seeds grow, connect, and open the way to a society alive with citizens who think and act for themselves.",
     founderKicker: "PUBLISHER & EDITOR",
     founderName: "Park Kyung-seok",
-    founderRole: "Publisher and Editor, SEED Journal",
-    founderBio: "I have worked across civil society and the public sphere. Through SEED Journal, I record the unfinished questions of one citizen and use AI to help verify facts and organize ideas. I do not claim to possess final answers; I hope to remain a citizen who questions, corrects, and grows.",
+    founderRole: "Publisher and Editor, SEED VOICE",
+    founderBio: "I have worked across civil society and the public sphere. Through SEED VOICE, I record the unfinished questions of one citizen and use AI to help verify facts and organize ideas. I do not claim to possess final answers; I hope to remain a citizen who questions, corrects, and grows.",
   },
 };
 
