@@ -137,20 +137,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#E7E9E2] py-5 sm:py-6" aria-labelledby="citizens-as-seeds-title">
-        <div className="container-page grid gap-4 py-3 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="relative overflow-hidden bg-green-deep py-4 text-white sm:py-5" aria-labelledby="seed-voice-launch-title">
+        <img src={resolveImageSrc("images/brand/seed-sprout-color-leaves-reverse-transparent-hd.png")} alt="" className="pointer-events-none absolute -right-8 -top-12 hidden h-48 w-48 object-contain opacity-20 sm:block" />
+        <div className="container-page relative grid gap-4 py-1 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
-            <p className="section-kicker">CITIZENS AS SEEDS</p>
-            <h2 id="citizens-as-seeds-title" className="editorial-title mt-3 text-2xl font-bold text-navy sm:text-3xl">
-              {ko ? "우리는 시민을 씨앗으로 봅니다" : "We See Every Citizen as a Seed"}
+            <p className="text-xs font-extrabold tracking-[.18em] text-gold">A NEW CIVIC VOICE</p>
+            <h2 id="seed-voice-launch-title" className="editorial-title mt-2 text-2xl font-bold text-white sm:text-3xl">
+              {ko ? "씨앗의 소리가 새롭게 출범합니다" : "SEED VOICE Begins Anew"}
             </h2>
-            <p className="mt-2 text-sm leading-6 text-charcoal/62 lg:whitespace-nowrap">
+            <p className="mt-2 max-w-4xl text-sm leading-6 text-white/72">
               {ko
-                ? "시민은 자유와 책임을 배우고 관계 속에서 자라며 사회를 변화시키는 존재입니다. 그래서 씨앗의 소리는 성장 가능성과 생명을 품은 시민을 ‘씨앗’이라고 부릅니다."
-                : "Citizens learn freedom and responsibility, grow through relationships, and change society. SEED VOICE therefore calls each citizen a seed: a living source of possibility and growth."}
+                ? "한 사람의 질문에서 시작한 독립 시민미디어가 더 많은 시민의 목소리로 자라려 합니다. 씨앗이 되어주세요. 읽고, 나누고, 지지하며 함께 참여해 주세요."
+                : "An independent civic journal begun with one person's questions is ready to grow through many citizens' voices. Become a seed: read, share, support and take part."}
             </p>
           </div>
-          <Link to="/seed-language/citizen-as-seed" className="button-primary shrink-0">{ko ? "시민읽기" : "Read Citizen"}<ArrowRight size={16}/></Link>
+          <div className="flex flex-wrap gap-2">
+            <Link to="/account" className="button-light shrink-0">{ko ? "씨앗으로 참여하기" : "Take Part as a Seed"}<ArrowRight size={16}/></Link>
+            <Link to="/founding-statement" className="button-outline-light shrink-0">{ko ? "창립취지 읽기" : "Read Our Founding Vision"}</Link>
+          </div>
         </div>
       </section>
 
@@ -168,10 +172,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#E7E9E2] py-5 sm:py-6">
-        <div className="container-page grid gap-4 py-3 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="bg-[#E7E9E2] py-4 sm:py-5">
+        <div className="container-page grid gap-4 py-2 lg:grid-cols-[1fr_auto] lg:items-center">
           <div><p className="section-kicker">OUR EDITORIAL STANDARD</p><h2 className="editorial-title mt-3 text-2xl font-bold text-navy sm:text-3xl">{ko ? "사실은 정확하게, 관점은 분명하게, 시민에게는 책임 있게" : "Accurate in fact, clear in viewpoint, accountable to citizens"}</h2><p className="mt-3 max-w-4xl text-sm leading-7 text-charcoal/62">{ko ? "씨앗의 소리는 기계적 중립과 진영의 확신 사이에서, 근거를 확인하고 자유·법치·책임의 관점으로 공공의 문제를 해석합니다." : "SEED VOICE verifies evidence and interprets public affairs through freedom, the rule of law, and civic responsibility."}</p></div>
           <Link to="/about" className="button-primary shrink-0">{ko ? "소개 읽기" : "About"}<ArrowRight size={16}/></Link>
+        </div>
+      </section>
+
+      <section className="border-t border-green-deep/10 bg-[#F1F2EC] py-4 sm:py-5" aria-labelledby="citizens-as-seeds-title">
+        <div className="container-page grid gap-3 py-1 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div>
+            <p className="section-kicker">CITIZENS AS SEEDS</p>
+            <h2 id="citizens-as-seeds-title" className="editorial-title mt-2 text-2xl font-bold text-navy sm:text-3xl">
+              {ko ? "우리는 시민을 씨앗으로 봅니다" : "We See Every Citizen as a Seed"}
+            </h2>
+            <p className="mt-1.5 text-sm leading-6 text-charcoal/62">
+              {ko
+                ? "시민은 자유와 책임을 배우고 관계 속에서 자라며 사회를 변화시키는 존재입니다. 성장 가능성과 생명을 품은 시민을 우리는 ‘씨앗’이라고 부릅니다."
+                : "Citizens learn freedom and responsibility, grow through relationships, and change society. We call this living potential in every citizen a seed."}
+            </p>
+          </div>
+          <Link to="/seed-language/citizen-as-seed" className="button-primary shrink-0">{ko ? "시민읽기" : "Read Citizen"}<ArrowRight size={16}/></Link>
         </div>
       </section>
     </div>

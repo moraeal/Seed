@@ -41,7 +41,7 @@ export default function BriefingDetail() {
       <img
         src={resolveImageSrc(image.src)}
         alt={image.alt}
-        className={`${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full ${image.contain ? "bg-[#f7f4e9] object-contain" : "object-cover"}`}
+        className={image.contain ? "block h-auto w-full" : `${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full object-cover`}
       />
       <FigureCaption caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} />
     </figure>
