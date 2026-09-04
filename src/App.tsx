@@ -1,8 +1,9 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { AuthProvider } from "./auth";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import RouteMetadata from "./components/RouteMetadata";
+import NewsletterSignup from "./components/NewsletterSignup";
 import { LanguageProvider } from "./i18n";
 import About from "./pages/About";
 import Account from "./pages/Account";
@@ -29,6 +30,9 @@ import SeedLanguage from "./pages/SeedLanguage";
 import Insights from "./pages/Insights";
 
 function AppShell() {
+  const location = useLocation();
+  const showNewsletterAtBottom = !["/", "/en", "/account", "/insights"].includes(location.pathname);
+
   return (
     <div className="min-h-screen bg-paper text-charcoal">
       <RouteMetadata />
@@ -64,6 +68,7 @@ function AppShell() {
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
+      {showNewsletterAtBottom && <NewsletterSignup />}
       <Footer />
     </div>
   );
