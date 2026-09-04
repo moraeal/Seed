@@ -21,17 +21,17 @@ const staticSources: DiscussionSource[] = [
 const allSources: DiscussionSource[] = [
   ...getAllBriefingsNewestFirst().map((item) => ({ slug: item.slug, type: "시민브리핑", title: item.title, path: `/briefings/${item.slug}` })),
   ...columns.map((item) => ({ slug: item.slug, type: "씨드칼럼", title: item.title, path: `/columns/${item.slug}` })),
-  ...newsArticles.map((item) => ({ slug: item.slug, type: "씨드뉴스", title: item.title, path: `/news/${item.slug}` })),
+  ...newsArticles.map((item) => ({ slug: item.slug, type: "오늘의뉴스", title: item.title, path: `/news/${item.slug}` })),
   ...staticSources,
 ];
 
-export const discussionSourceTypes = ["전체", "시민브리핑", "씨드칼럼", "씨드뉴스", "시민감시", "시민제안", "시민실험", "아카데미"];
+export const discussionSourceTypes = ["전체", "시민브리핑", "씨드칼럼", "오늘의뉴스", "시민감시", "시민제안", "시민실험", "아카데미"];
 
 const englishTypes: Record<string, string> = {
   "전체": "All",
   "시민브리핑": "Civic Briefings",
   "씨드칼럼": "SEED Columns",
-  "씨드뉴스": "SEED News",
+  "오늘의뉴스": "Today's News",
   "시민감시": "Civic Watch",
   "시민제안": "Citizen Proposals",
   "시민실험": "Civic Experiments",
@@ -66,7 +66,7 @@ export function resolveDiscussionSource(slug: string, language: Language = "ko")
   const news = newsArticles.find((item) => item.slug === slug);
   if (news) {
     const localized = localizeNewsArticle(news, language);
-    return { ...source, type: englishTypes["씨드뉴스"], title: localized.title };
+    return { ...source, type: englishTypes["오늘의뉴스"], title: localized.title };
   }
 
   const staticEnglish: Record<string, string> = {

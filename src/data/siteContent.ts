@@ -6,7 +6,7 @@ export const MAGAZINE_URL = "https://jimd.kr/magazine";
 export const content = {
   ko: {
     nav: [
-      { label: "뉴스", path: "/news" },
+      { label: "오늘의뉴스", path: "/news" },
       { label: "브리핑", path: "/briefings" },
       { label: "칼럼", path: "/columns" },
       { label: "아카데미", path: "/academy" },
@@ -130,7 +130,7 @@ export const content = {
   },
   en: {
     nav: [
-      { label: "News", path: "/news" },
+      { label: "Today's News", path: "/news" },
       { label: "Briefings", path: "/briefings" },
       { label: "Columns", path: "/columns" },
       { label: "Academy", path: "/academy" },

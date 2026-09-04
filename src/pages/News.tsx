@@ -12,8 +12,8 @@ export default function News() {
   return <section className="bg-paper pb-20 sm:pb-28">
     <header className="border-b border-green-deep/15 bg-ivory">
       <div className="container-page grid gap-10 py-14 sm:py-20 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
-        <div><span className="section-kicker">SEED NEWS</span><h1 className="editorial-title mt-4 text-5xl font-bold text-navy sm:text-6xl">{ko ? "씨드뉴스" : "SEED News"}</h1></div>
-        <p className="max-w-2xl text-base leading-8 text-charcoal/65">{ko ? "매일 한 가지 정치·사회 뉴스를 확인된 사실과 맥락으로 정리합니다. 무엇이 발표됐고 무엇이 아직 확인되지 않았는지 구분한 뒤, 시민이 지켜볼 기준을 씨드의 관점으로 제안합니다." : "SEED News explains current political and social issues through verified facts and context. We distinguish what is confirmed from what remains uncertain, then identify practical points citizens should continue to watch."}</p>
+        <div><span className="section-kicker">TODAY'S NEWS</span><h1 className="editorial-title mt-4 text-5xl font-bold text-navy sm:text-6xl">{ko ? "오늘의뉴스" : "Today's News"}</h1></div>
+        <p className="max-w-2xl text-base leading-8 text-charcoal/65">{ko ? "매일 한 가지 정치·사회 뉴스를 확인된 사실과 맥락으로 정리합니다. 무엇이 발표됐고 무엇이 아직 확인되지 않았는지 구분한 뒤, 시민이 지켜볼 기준을 씨앗의 소리의 관점으로 제안합니다." : "Today's News explains current political and social issues through verified facts and context. We distinguish what is confirmed from what remains uncertain, then identify practical points citizens should continue to watch."}</p>
       </div>
     </header>
     <div className="container-page py-12 sm:py-16">

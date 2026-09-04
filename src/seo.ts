@@ -49,7 +49,7 @@ const staticRoutes: SeoRoute[] = [
     lastModified: latestDate,
     language: "en",
   },
-  { path: "/news", title: "씨드뉴스 | 씨앗의 소리", description: "한국 정치·사회 이슈의 확인된 사실과 아직 확인되지 않은 부분을 구분하고 시민이 지켜볼 점을 설명합니다.", type: "website", lastModified: newest(newsArticles.map((item) => item.date)) },
+  { path: "/news", title: "오늘의뉴스 | 씨앗의 소리", description: "한국 정치·사회 이슈의 확인된 사실과 아직 확인되지 않은 부분을 구분하고 시민이 지켜볼 점을 설명합니다.", type: "website", lastModified: newest(newsArticles.map((item) => item.date)) },
   { path: "/briefings", title: "시민브리핑 | 씨앗의 소리", description: "복잡한 정책과 제도 논쟁을 사실, 맥락, 관찰 지점과 씨드의 관점으로 차분하게 풀어냅니다.", type: "website", lastModified: newest(getAllBriefingsNewestFirst().map((item) => item.date)) },
   { path: "/columns", title: "칼럼 | 씨앗의 소리", description: "자유, 법치, 책임, 시장의 자율성과 강한 시민사회의 관점에서 오늘의 쟁점을 논평합니다.", type: "website", lastModified: newest(columns.map((item) => item.date)) },
   { path: "/monitoring", title: "공익감시 | 씨앗의 소리", description: "공익조직과 공공제도가 시민에게 권한과 재정, 성과를 충분히 설명하는지 근거를 바탕으로 점검합니다.", type: "website", lastModified: newest(publicInterestWatchCases.map((item) => item.updatedAt)) },
@@ -61,7 +61,7 @@ const staticRoutes: SeoRoute[] = [
 
 const newsRoutes: SeoRoute[] = newsArticles.map((article) => ({
   path: `/news/${article.slug}`,
-  title: `${article.title} | 씨드뉴스`,
+  title: `${article.title} | 오늘의뉴스`,
   description: article.summary,
   type: "article",
   lastModified: article.date,

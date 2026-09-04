@@ -5,7 +5,7 @@ type FigureCaptionProps = {
 };
 
 const isSeedCredit = (credit: string) =>
-  /씨앗의 소리|SEED VOICE|씨드뉴스/i.test(credit);
+  /씨앗의 소리|SEED VOICE|씨드뉴스|오늘의뉴스/i.test(credit);
 
 const isAiCredit = (credit: string) => /\bAI\b|인공지능/i.test(credit);
 

@@ -104,8 +104,8 @@ export default function Home() {
       <section className="py-12 sm:py-16">
         <div className="container-page">
           <div className="flex items-end justify-between gap-5 border-b-[3px] border-navy pb-4">
-            <div><p className="section-kicker">LATEST NEWS</p><h2 className="editorial-title mt-2 text-3xl font-bold text-navy sm:text-4xl">{ko ? "지금 읽어야 할 뉴스" : "News to Read Now"}</h2></div>
-            <Link to="/news" className="text-link shrink-0">{ko ? "뉴스 전체보기" : "View all"}<ArrowRight size={15}/></Link>
+            <div><p className="section-kicker">TODAY'S NEWS</p><h2 className="editorial-title mt-2 text-3xl font-bold text-navy sm:text-4xl">{ko ? "오늘의뉴스" : "Today's News"}</h2></div>
+            <Link to="/news" className="text-link shrink-0">{ko ? "오늘의뉴스 전체보기" : "View all"}<ArrowRight size={15}/></Link>
           </div>
           <div
             className="overflow-hidden"
@@ -113,7 +113,7 @@ export default function Home() {
             onMouseLeave={() => setNewsPaused(false)}
             onFocusCapture={() => setNewsPaused(true)}
             onBlurCapture={() => setNewsPaused(false)}
-            aria-label={ko ? "최신 씨드뉴스 슬라이드" : "Latest SEED news carousel"}
+            aria-label={ko ? "최신 오늘의뉴스 슬라이드" : "Latest Today's News carousel"}
           >
             <div
               className={`flex ${newsTransition ? "transition-transform duration-700 ease-out" : ""} motion-reduce:transition-none`}
@@ -134,7 +134,7 @@ export default function Home() {
             {news.length > newsVisibleCount && (
               <div className="flex justify-center gap-2 border-t border-green-deep/10 py-3">
                 {news.map((item, page) => (
-                  <button key={item.slug} type="button" onClick={() => { setNewsTransition(true); setNewsPage(page); }} className={`h-1.5 rounded-full transition-all ${(newsPage % news.length) === page ? "w-6 bg-green-deep" : "w-1.5 bg-green-deep/25 hover:bg-green-deep/50"}`} aria-label={ko ? `${page + 1}번째 씨드뉴스 보기` : `Show SEED news ${page + 1}`} aria-current={(newsPage % news.length) === page ? "true" : undefined} />
+                  <button key={item.slug} type="button" onClick={() => { setNewsTransition(true); setNewsPage(page); }} className={`h-1.5 rounded-full transition-all ${(newsPage % news.length) === page ? "w-6 bg-green-deep" : "w-1.5 bg-green-deep/25 hover:bg-green-deep/50"}`} aria-label={ko ? `${page + 1}번째 오늘의뉴스 보기` : `Show Today's News item ${page + 1}`} aria-current={(newsPage % news.length) === page ? "true" : undefined} />
                 ))}
               </div>
             )}
