@@ -7,6 +7,7 @@ import { columns } from "../data/columns";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
 import { getNewsNewestFirst } from "../data/news";
 import { useLanguage } from "../i18n";
+import NewsletterSignup from "../components/NewsletterSignup";
 
 const resolveImageSrc = (src?: string) => {
   if (!src) return "";
@@ -100,6 +101,8 @@ export default function Home() {
           </aside>
         </div>
       </section>
+
+      <NewsletterSignup />
 
       <section className="py-12 sm:py-16">
         <div className="container-page">
