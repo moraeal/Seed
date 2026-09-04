@@ -2,6 +2,7 @@ import { getAllBriefingsNewestFirst } from "./data/allBriefings";
 import { columns } from "./data/columns";
 import { newsArticles } from "./data/news";
 import { publicInterestWatchCases } from "./data/publicInterestWatch";
+import { seedLanguageArticlesKo } from "./data/seedLanguage";
 
 export const SITE_URL = "https://seedpartners.org";
 export const SITE_NAME = "씨앗의 소리";
@@ -29,7 +30,7 @@ const socialImageUrl = (section: string, slug: string, version: string) => asset
 const firstLocalRasterImage = <T extends { src: string }>(images?: T[]) => images?.find((image) => !/^https?:\/\//i.test(image.src) && /\.(?:jpe?g|png|webp)$/i.test(image.src));
 
 const newest = (dates: string[]) => [...dates].sort()[dates.length - 1];
-const latestDate = newest([...newsArticles.map((item) => item.date), ...columns.map((item) => item.date), ...getAllBriefingsNewestFirst().map((item) => item.date)]);
+const latestDate = newest([...newsArticles.map((item) => item.date), ...columns.map((item) => item.date), ...getAllBriefingsNewestFirst().map((item) => item.date), ...seedLanguageArticlesKo.map((item) => item.date)]);
 
 const staticRoutes: SeoRoute[] = [
   {
@@ -55,7 +56,7 @@ const staticRoutes: SeoRoute[] = [
   { path: "/monitoring", title: "공익감시 | 씨앗의 소리", description: "공익조직과 공공제도가 시민에게 권한과 재정, 성과를 충분히 설명하는지 근거를 바탕으로 점검합니다.", type: "website", lastModified: newest(publicInterestWatchCases.map((item) => item.updatedAt)) },
   { path: "/proposals", title: "시민제안 | 씨앗의 소리", description: "시민의 문제의식을 구체적인 제도와 정책의 제안으로 키우는 씨앗의 소리 제안 공간입니다.", type: "website", lastModified: latestDate },
   { path: "/founding-statement", title: "씨앗의 소리 취지문 | 씨앗의 소리", description: "한 사람의 생각과 목소리도 세상을 향해 자랄 수 있다는 믿음에서 시작한 독립 시민미디어 씨앗의 소리의 취지문입니다.", type: "article", lastModified: latestDate, author: "박경석", section: "씨앗의 소리 취지문" },
-  { path: "/seed-language", title: "씨앗언어 | 씨앗의 소리", description: "특정 진영이 독점한 시민사회의 언어를 해체하고 본래 의미를 되살려 시민의 언어로 다시 구성합니다.", type: "website", lastModified: latestDate },
+  { path: "/seed-language", title: "씨앗언어 | 씨앗의 소리", description: "특정 진영이 독점한 시민사회의 언어를 해체하고 본래 의미를 되살려 시민의 언어로 다시 구성합니다.", type: "website", lastModified: newest(seedLanguageArticlesKo.map((item) => item.date)) },
   { path: "/about", title: "소개 | 씨앗의 소리", description: "박경석이 혼자 만들고 운영하는 1인 독립 시민미디어 씨앗의 소리와 발행인을 소개합니다.", type: "website", lastModified: latestDate },
 ];
 
@@ -123,12 +124,25 @@ const monitoringRoutes: SeoRoute[] = publicInterestWatchCases.map((item) => ({
   section: "공익감시",
 }));
 
+const seedLanguageRoutes: SeoRoute[] = seedLanguageArticlesKo.map((article) => ({
+  path: `/seed-language/${article.slug}`,
+  title: `${article.title} | 씨앗언어`,
+  description: article.summary,
+  type: "article",
+  lastModified: article.date,
+  author: SITE_NAME,
+  section: "씨앗언어",
+  image: socialImageUrl("seed-language", article.slug, article.date),
+  imageAlt: article.heroImage.alt,
+}));
+
 export const seoRoutes: SeoRoute[] = [
   ...staticRoutes,
   ...newsRoutes,
   ...briefingRoutes,
   ...columnRoutes,
   ...monitoringRoutes,
+  ...seedLanguageRoutes,
 ];
 
 export const normalizeSeoPath = (pathname: string) => {

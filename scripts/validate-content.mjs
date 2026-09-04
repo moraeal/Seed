@@ -10,10 +10,11 @@ const server = await createServer({
   optimizeDeps: { noDiscovery: true },
 });
 
-const [newsModule, briefingModule, columnModule, newsTranslationModule, briefingTranslationModule, columnTranslationModule] = await Promise.all([
+const [newsModule, briefingModule, columnModule, seedLanguageModule, newsTranslationModule, briefingTranslationModule, columnTranslationModule] = await Promise.all([
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
   server.ssrLoadModule("/src/data/columns.ts"),
+  server.ssrLoadModule("/src/data/seedLanguage.ts"),
   server.ssrLoadModule("/src/data/contentTranslations/news.ts"),
   server.ssrLoadModule("/src/data/contentTranslations/briefings.ts"),
   server.ssrLoadModule("/src/data/contentTranslations/columns/index.ts"),
@@ -27,6 +28,7 @@ const accountabilitySurfaces = [
   "src/pages/BriefingCommentary.tsx",
   "src/pages/ColumnDetail.tsx",
   "src/pages/PublicInterestWatchDetail.tsx",
+  "src/pages/SeedLanguageDetail.tsx",
 ];
 
 for (const pagePath of accountabilitySurfaces) {
@@ -67,6 +69,13 @@ for (const column of columnModule.columns) {
   if (!column.heroImage?.src) errors.push(`Missing social-preview image for column: ${column.slug}`);
   requireEditorialStructure("column", column, [column.heroImage, column.inlineImage, ...(column.additionalImages ?? [])].filter((image) => image?.src).length);
   await requireSocialImage("columns", column.slug);
+}
+for (const article of seedLanguageModule.seedLanguageArticlesKo) {
+  const english = seedLanguageModule.getSeedLanguageArticle(article.slug, "en");
+  if (!english || english.title === article.title) errors.push(`Missing English SEED Language edition: ${article.slug}`);
+  if (![article.heroImage, article.inlineImage].every((image) => image?.src)) errors.push(`SEED Language article needs two purposeful visuals: ${article.slug}`);
+  requireEditorialStructure("SEED Language article", article, [article.heroImage, article.inlineImage].filter((image) => image?.src).length);
+  await requireSocialImage("seed-language", article.slug);
 }
 
 if (errors.length) {

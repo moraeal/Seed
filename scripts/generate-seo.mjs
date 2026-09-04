@@ -14,13 +14,14 @@ const server = await createServer({
   server: { middlewareMode: true },
   optimizeDeps: { noDiscovery: true },
 });
-const [{ seoRoutes, canonicalUrl, SITE_NAME, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, siteContentModule] = await Promise.all([
+const [{ seoRoutes, canonicalUrl, SITE_NAME, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, siteContentModule, seedLanguageModule] = await Promise.all([
   server.ssrLoadModule("/src/seo.ts"),
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
   server.ssrLoadModule("/src/data/columns.ts"),
   server.ssrLoadModule("/src/data/publicInterestWatch.ts"),
   server.ssrLoadModule("/src/data/siteContent.ts"),
+  server.ssrLoadModule("/src/data/seedLanguage.ts"),
 ]);
 await server.close();
 
@@ -29,6 +30,7 @@ const briefings = briefingModule.getAllBriefingsNewestFirst();
 const columns = columnModule.columns;
 const watchCases = watchModule.publicInterestWatchCases;
 const englishContent = siteContentModule.getContent("en");
+const seedLanguageArticles = seedLanguageModule.seedLanguageArticlesKo;
 
 const escapeHtml = (value = "") => String(value)
   .replaceAll("&", "&amp;")
@@ -90,6 +92,15 @@ function articleBody(route) {
       `<section><h2>확인된 사실</h2>${bulletList(item.confirmedFacts.map((fact) => fact.ko))}</section>`,
       `<section><h2>시민이 물을 점</h2>${bulletList(item.questions.map((question) => question.ko))}</section>`,
       `<section><h2>씨드의 제안</h2>${bulletList(item.proposals.map((proposal) => proposal.ko))}</section>`,
+    ].join("\n");
+  }
+
+  const seedLanguageMatch = route.path.match(/^\/seed-language\/([^/]+)$/);
+  if (seedLanguageMatch) {
+    const item = seedLanguageArticles.find((entry) => entry.slug === seedLanguageMatch[1]);
+    if (item) return [
+      `<section><h2>핵심 요약</h2>${bulletList(item.keyPoints)}</section>`,
+      ...item.sections.map((section) => `<section><h2>${escapeHtml(section.title)}</h2>${paragraphList(section.paragraphs)}</section>`),
     ].join("\n");
   }
 

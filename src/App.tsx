@@ -28,6 +28,7 @@ import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
 import FoundingStatement from "./pages/FoundingStatement";
 import SeedLanguage from "./pages/SeedLanguage";
+import SeedLanguageDetail from "./pages/SeedLanguageDetail";
 import Insights from "./pages/Insights";
 
 function AppShell() {
@@ -47,6 +48,7 @@ function AppShell() {
           <Route path="/insights" element={<Insights />} />
           <Route path="/about" element={<About />} />
           <Route path="/seed-language" element={<SeedLanguage />} />
+          <Route path="/seed-language/:slug" element={<SeedLanguageDetail />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/briefings" element={<Briefings />} />
           <Route path="/briefings/:slug/commentary" element={<BriefingCommentary />} />

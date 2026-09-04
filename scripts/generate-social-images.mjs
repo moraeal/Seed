@@ -16,10 +16,11 @@ const server = await createServer({
   server: { middlewareMode: true },
   optimizeDeps: { noDiscovery: true },
 });
-const [newsModule, briefingModule, columnModule] = await Promise.all([
+const [newsModule, briefingModule, columnModule, seedLanguageModule] = await Promise.all([
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
   server.ssrLoadModule("/src/data/columns.ts"),
+  server.ssrLoadModule("/src/data/seedLanguage.ts"),
 ]);
 await server.close();
 
@@ -33,6 +34,7 @@ const jobs = [
       ?? "images/briefings/briefing-05-budget-ledger.webp",
   })),
   ...columnModule.columns.map((item) => ({ section: "columns", slug: item.slug, src: item.heroImage.src })),
+  ...seedLanguageModule.seedLanguageArticlesKo.map((item) => ({ section: "seed-language", slug: item.slug, src: item.heroImage.src })),
 ];
 
 for (const job of jobs) {
