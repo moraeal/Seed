@@ -139,16 +139,19 @@ export default function Home() {
       </section>
 
       <section className="bg-[#E7E9E2] py-5 sm:py-6" aria-labelledby="citizens-as-seeds-title">
-        <div className="container-page py-3">
-          <p className="section-kicker">CITIZENS AS SEEDS</p>
-          <h2 id="citizens-as-seeds-title" className="editorial-title mt-3 text-2xl font-bold text-navy sm:text-3xl">
-            {ko ? "우리는 시민을 씨앗으로 봅니다" : "We See Every Citizen as a Seed"}
-          </h2>
-          <p className="mt-2 text-sm leading-6 text-charcoal/62 lg:whitespace-nowrap">
-            {ko
-              ? "시민은 자유와 책임을 배우고 관계 속에서 자라며 사회를 변화시키는 존재입니다. 그래서 씨앗의 소리는 성장 가능성과 생명을 품은 시민을 ‘씨앗’이라고 부릅니다."
-              : "Citizens learn freedom and responsibility, grow through relationships, and change society. SEED VOICE therefore calls each citizen a seed: a living source of possibility and growth."}
-          </p>
+        <div className="container-page grid gap-4 py-3 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div>
+            <p className="section-kicker">CITIZENS AS SEEDS</p>
+            <h2 id="citizens-as-seeds-title" className="editorial-title mt-3 text-2xl font-bold text-navy sm:text-3xl">
+              {ko ? "우리는 시민을 씨앗으로 봅니다" : "We See Every Citizen as a Seed"}
+            </h2>
+            <p className="mt-2 text-sm leading-6 text-charcoal/62 lg:whitespace-nowrap">
+              {ko
+                ? "시민은 자유와 책임을 배우고 관계 속에서 자라며 사회를 변화시키는 존재입니다. 그래서 씨앗의 소리는 성장 가능성과 생명을 품은 시민을 ‘씨앗’이라고 부릅니다."
+                : "Citizens learn freedom and responsibility, grow through relationships, and change society. SEED VOICE therefore calls each citizen a seed: a living source of possibility and growth."}
+            </p>
+          </div>
+          <Link to="/seed-language/citizen-as-seed" className="button-primary shrink-0">{ko ? "시민읽기" : "Read Citizen"}<ArrowRight size={16}/></Link>
         </div>
       </section>
 
