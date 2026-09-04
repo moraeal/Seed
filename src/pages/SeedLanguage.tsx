@@ -41,9 +41,9 @@ export default function SeedLanguage() {
         </section>
 
         <section className="mt-10 border-t-2 border-navy" aria-label={ko ? "씨앗언어 콘텐츠" : "SEED Language articles"}>
-          {articles.map((article) => <Link key={article.slug} to={`/seed-language/${article.slug}`} className="group grid gap-7 border-b border-green-deep/15 px-5 py-9 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7">
-            <div className="overflow-hidden bg-green-deep"><img src={`${import.meta.env.BASE_URL}${article.heroImage.src}`} alt={article.heroImage.alt} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.025]"/></div>
-            <div>
+          {articles.map((article) => <Link key={article.slug} to={`/seed-language/${article.slug}`} className="group grid border-b border-green-deep/15 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr]">
+            <div className="h-full min-h-56 overflow-hidden bg-green-deep"><img src={`${import.meta.env.BASE_URL}${article.heroImage.src}`} alt={article.heroImage.alt} className="aspect-[4/3] h-full w-full object-cover transition duration-500 group-hover:scale-[1.025] md:aspect-auto"/></div>
+            <div className="px-5 py-8 md:px-7 md:py-9">
               <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-charcoal/45"><span className="rounded-full bg-green-pale px-2.5 py-1 font-extrabold text-green-deep">{article.term}</span></div>
               <h3 className="editorial-title text-3xl font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-4xl">{article.title}</h3>
               <p className="mt-3 max-w-3xl text-sm leading-7 text-charcoal/55">{article.summary}</p>
