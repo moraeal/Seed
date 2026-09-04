@@ -1,5 +1,6 @@
 import { polanyiColumn } from "./columns/polanyiColumn";
 import { electricityPrepaymentColumn } from "./columns/electricityPrepaymentColumn";
+import { civicSocietyStateizationColumn } from "./columns/civicSocietyStateizationColumn";
 
 export type SeedColumn = {
   slug: string;
@@ -27,6 +28,7 @@ export type SeedColumn = {
 };
 
 export const columns: SeedColumn[] = [
+  civicSocietyStateizationColumn,
   electricityPrepaymentColumn,
   polanyiColumn,
   {
