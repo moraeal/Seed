@@ -78,7 +78,7 @@ export default function Home() {
 
           <aside className="flex h-full self-stretch flex-col border border-green-deep/15 bg-white text-navy" aria-labelledby="seed-voice-heading">
             <div className="border-b border-white/20 bg-green-deep px-6 py-5 text-white sm:px-7">
-              <div className="flex items-end justify-between gap-4"><h2 id="seed-voice-heading" className="editorial-title text-3xl font-bold">SEED VOICE</h2><Link to="/columns" className="inline-flex items-center gap-1 text-xs font-bold text-white/65 hover:text-white">{ko ? "전체보기" : "View all"}<ArrowRight size={13}/></Link></div>
+              <div className="flex items-end justify-between gap-4"><h2 id="seed-voice-heading" className="editorial-title text-xl font-bold sm:text-2xl">THE VOICE OF SEED</h2><Link to="/columns" className="inline-flex shrink-0 items-center gap-1 text-xs font-bold text-white/65 hover:text-white">{ko ? "전체보기" : "View all"}<ArrowRight size={13}/></Link></div>
             </div>
 
             <div className="flex min-h-0 flex-1 flex-col">

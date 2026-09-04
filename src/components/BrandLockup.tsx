@@ -22,11 +22,11 @@ export default function BrandLockup({ tone }: BrandLockupProps) {
             : "absolute -left-0.5 -top-0.5 size-[52px] max-w-none"}
         />
       </span>
-      <span className={`flex min-w-0 items-center ${footer ? "gap-3 text-lg sm:text-xl" : "gap-2 sm:gap-3 text-[11px] sm:text-xl"}`}>
+      <span className={`flex min-w-0 ${footer ? "items-center gap-3 text-lg sm:text-xl" : "flex-col items-start gap-0.5 text-[11px] leading-none sm:text-base"}`}>
         <span className={`whitespace-nowrap font-extrabold tracking-[-.04em] ${footer ? "text-white" : "text-green-deep"}`}>
           씨앗의 소리
         </span>
-        <span className={`h-7 w-px shrink-0 ${footer ? "bg-white/25" : "bg-green-deep/25"}`} aria-hidden="true" />
+        {footer && <span className="h-7 w-px shrink-0 bg-white/25" aria-hidden="true" />}
         <span className={`whitespace-nowrap font-bold tracking-[-.02em] ${footer ? "text-white/55" : "text-charcoal/45"}`}>
           SEED VOICE
         </span>
