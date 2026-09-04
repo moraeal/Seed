@@ -84,10 +84,15 @@ export default function Home() {
 
             <div className="flex min-h-0 flex-1 flex-col">
               {journalColumns.slice(1, 5).map((column, index) => (
-                <Link key={column.slug} to={`/columns/${column.slug}`} className={`group flex flex-1 flex-col justify-center bg-white px-6 py-4 transition hover:bg-green-pale/65 sm:px-7 ${index < 3 ? "border-b border-green-deep/15" : ""}`}>
-                  <time className="text-[11px] text-charcoal/45">{column.date.replace(/-/g, ".")}</time>
-                  <h3 className="editorial-title mt-1.5 text-lg font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-xl">{column.title}</h3>
-                  <p className="mt-2 line-clamp-2 text-[13px] leading-5 text-charcoal/60">{column.summary}</p>
+                <Link key={column.slug} to={`/columns/${column.slug}`} className={`group grid flex-1 grid-cols-[5.75rem_minmax(0,1fr)] items-center gap-4 bg-white px-5 py-4 transition hover:bg-green-pale/65 sm:px-6 ${index < 3 ? "border-b border-green-deep/15" : ""}`}>
+                  <div className="overflow-hidden bg-green-pale">
+                    <img src={resolveImageSrc(column.heroImage.src)} alt="" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.035]" />
+                  </div>
+                  <div className="min-w-0">
+                    <time className="text-[11px] text-charcoal/45">{column.date.replace(/-/g, ".")}</time>
+                    <h3 className="editorial-title mt-1 text-base font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-lg">{column.title}</h3>
+                    <p className="mt-1.5 line-clamp-2 text-xs leading-5 text-charcoal/60">{column.summary}</p>
+                  </div>
                 </Link>
               ))}
             </div>
