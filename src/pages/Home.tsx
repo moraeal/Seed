@@ -2,7 +2,6 @@ import { ArrowRight, Clock } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
-import { seedPrinciples } from "../data/aboutData";
 import { columns } from "../data/columns";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
 import { getNewsNewestFirst } from "../data/news";
@@ -28,12 +27,6 @@ export default function Home() {
   const leadColumn = journalColumns[0];
   const leadColumnExcerpt = leadColumn?.sections.flatMap((section) => section.paragraphs)[0];
   const rotatingNewsCards = news.length ? [...news, ...news.slice(0, newsVisibleCount)] : [];
-  const seedPrincipleEnglish = [
-    "Citizens are not passive beneficiaries or targets of mobilization. They identify public problems and ask their own questions.",
-    "Freedom works with responsibility. Civic action begins by building the public good, not destroying opponents.",
-    "We learn from experience, test small ideas, and keep improving instead of imposing a finished answer.",
-    "We carry questions through proposals, action, documentation, and follow-up rather than stopping at criticism.",
-  ];
 
   useEffect(() => {
     const media = window.matchMedia("(min-width: 768px)");
@@ -166,33 +159,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-
-          <section className="mt-8 border border-green-deep/20 bg-white shadow-[0_18px_50px_rgba(23,76,58,.06)]" aria-labelledby="seed-pillars-title">
-            <div className="grid border-b border-green-deep/15 px-6 py-6 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:px-8">
-              <div>
-                <p className="section-kicker">THE MEANING OF S.E.E.D</p>
-                <h2 id="seed-pillars-title" className="editorial-title mt-2 text-2xl font-bold text-navy sm:text-3xl">
-                  {ko ? "주체적 시민의 네 가지 기둥" : "Four Pillars of an Active Citizen"}
-                </h2>
-              </div>
-              <p className="mt-3 text-sm font-semibold tracking-[.18em] text-green-deep/55 sm:mt-0">S · E · E · D</p>
-            </div>
-            <div className="grid sm:grid-cols-2 xl:grid-cols-4 xl:divide-x xl:divide-green-deep/15">
-              {seedPrinciples.map((principle, index) => {
-                const english = seedPrincipleEnglish[index];
-                return (
-                  <article key={`${principle.code}-${principle.english}`} className="border-b border-green-deep/15 p-6 last:border-b-0 sm:p-7 sm:[&:nth-last-child(-n+2)]:border-b-0 xl:border-b-0">
-                    <div className="flex items-baseline gap-3">
-                      <span className="editorial-title text-4xl font-bold text-gold">{principle.code}</span>
-                      <h3 className="text-lg font-extrabold tracking-wide text-green-deep">{principle.english}</h3>
-                    </div>
-                    {ko && <p className="mt-3 text-sm font-extrabold text-navy">{principle.title}</p>}
-                    <p className={`${ko ? "mt-2" : "mt-4"} text-sm leading-7 text-charcoal/62`}>{ko ? principle.description : english}</p>
-                  </article>
-                );
-              })}
-            </div>
-          </section>
         </div>
       </section>
 
