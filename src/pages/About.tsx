@@ -113,17 +113,18 @@ export default function About() {
     <div className="bg-paper">
       <header className="border-b border-green-deep/15 bg-ivory py-10 sm:py-14">
         <div className="container-page max-w-5xl">
-          <p className="section-kicker">{content.kicker}</p>
-          <h1 className="editorial-title mt-5 max-w-4xl text-4xl font-bold leading-[1.08] text-navy sm:text-6xl">{content.title}</h1>
-          <p className="mt-5 max-w-3xl border-l-2 border-gold pl-6 text-lg leading-8 text-charcoal/70 sm:text-xl">{content.lead}</p>
+          <h1 className="editorial-title text-4xl font-bold leading-none text-green-deep sm:text-5xl lg:text-6xl">{content.kicker}</h1>
+          <p className="mt-6 max-w-3xl border-l-2 border-gold pl-6 text-lg leading-8 text-charcoal/70 sm:text-xl">{content.lead}</p>
         </div>
       </header>
 
       <main className="py-8 sm:py-10">
         <article className="container-page max-w-5xl">
           <section className="border-y border-green-deep/15 bg-[#F1F2EC] px-6 py-7 sm:px-10 sm:py-8">
-            <div className="grid gap-7 sm:grid-cols-[150px_1fr] sm:items-center sm:gap-10">
-              <img src={`${import.meta.env.BASE_URL}images/about/park-kyung-seok.jpg`} alt={content.founderName} className="aspect-[3/4] w-32 border-4 border-white object-cover shadow-md sm:w-[150px]" />
+            <div className="grid gap-7 sm:grid-cols-[210px_1fr] sm:items-center sm:gap-10">
+              <div className="aspect-[3/4] w-44 overflow-hidden bg-white sm:w-[210px]">
+                <img src={`${import.meta.env.BASE_URL}images/about/park-kyung-seok.jpg`} alt={content.founderName} className="h-full w-full scale-[1.08] object-cover object-top" />
+              </div>
               <div>
                 <p className="section-kicker">{content.founderKicker}</p>
                 <h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{content.founderName}</h2>
