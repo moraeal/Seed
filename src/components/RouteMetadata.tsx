@@ -7,6 +7,7 @@ import {
   SITE_NAME,
   SOCIAL_SITE_NAME,
 } from "../seo";
+import { recordContentView } from "../lib/engagement";
 
 function setMeta(selector: string, attributes: Record<string, string>) {
   let element = document.head.querySelector<HTMLMetaElement>(selector);
@@ -71,6 +72,12 @@ export default function RouteMetadata() {
       document.head.appendChild(canonical);
     }
     canonical.href = url;
+
+    if (!location.pathname.startsWith("/account") && !location.pathname.startsWith("/insights")) {
+      void recordContentView(location.pathname, language).catch(() => {
+        // Analytics must never interrupt reading or navigation.
+      });
+    }
 
     document.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach((element) => element.remove());
     if (route?.path === "/" || route?.path === "/en") {

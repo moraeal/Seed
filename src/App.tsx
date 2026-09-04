@@ -1,8 +1,9 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { AuthProvider } from "./auth";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import RouteMetadata from "./components/RouteMetadata";
+import NewsletterSignup from "./components/NewsletterSignup";
 import { LanguageProvider } from "./i18n";
 import About from "./pages/About";
 import Account from "./pages/Account";
@@ -26,8 +27,12 @@ import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
 import FoundingStatement from "./pages/FoundingStatement";
 import SeedLanguage from "./pages/SeedLanguage";
+import Insights from "./pages/Insights";
 
 function AppShell() {
+  const location = useLocation();
+  const showNewsletter = !["/account", "/insights"].includes(location.pathname);
+
   return (
     <div className="min-h-screen bg-paper text-charcoal">
       <RouteMetadata />
@@ -37,6 +42,7 @@ function AppShell() {
           <Route path="/" element={<Home />} />
           <Route path="/en" element={<Home />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/insights" element={<Insights />} />
           <Route path="/about" element={<About />} />
           <Route path="/seed-language" element={<SeedLanguage />} />
           <Route path="/forum" element={<Forum />} />
@@ -62,6 +68,7 @@ function AppShell() {
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
+      {showNewsletter && <NewsletterSignup />}
       <Footer />
     </div>
   );

@@ -1,6 +1,6 @@
-import { CheckCircle2, LogIn, LogOut, MailCheck, UserPlus } from "lucide-react";
+import { BarChart3, CheckCircle2, LogIn, LogOut, MailCheck, UserPlus } from "lucide-react";
 import { FormEvent, useMemo, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../auth";
 import { useLanguage } from "../i18n";
 
@@ -71,6 +71,7 @@ export default function Account() {
             <p className="mt-3 text-sm text-charcoal/55">{user.email}</p>
             <p className="mt-6 text-sm leading-7 text-charcoal/65">{ko ? "인증회원은 씨드의 뉴스·브리핑·칼럼·감시·제안·실험·아카데미에 댓글을 남기고 공론장 토론에 참여할 수 있습니다. 화면에는 실명 대신 가입 때 정한 닉네임이 표시됩니다." : "Verified members can comment on SEED news, briefings, columns, civic watch, proposals, experiments and academy content and take part in the public forum. Your chosen nickname, not your legal name, is shown publicly."}</p>
             <button type="button" onClick={() => void signOut()} className="button-secondary mt-7"><LogOut size={16}/>{ko ? "로그아웃" : "Log out"}</button>
+            {user.email?.toLowerCase() === "seedcivicpartners@gmail.com" && <Link to="/insights" className="button-primary ml-3 mt-7"><BarChart3 size={16}/>{ko ? "구독·콘텐츠 통계" : "Subscriptions & content"}</Link>}
           </div>
         </div>
       </section>
