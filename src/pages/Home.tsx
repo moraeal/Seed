@@ -154,7 +154,7 @@ export default function Home() {
 
       <section className="border-y border-green-deep/15 bg-[#F1F2EC] py-12 sm:py-16">
         <div className="container-page grid gap-9 lg:grid-cols-[.5fr_1.5fr] lg:gap-14">
-          <div className="bg-white px-5 py-6 sm:px-7"><p className="section-kicker">CIVIC BRIEFINGS</p><h2 className="editorial-title mt-3 text-3xl font-bold leading-tight text-navy sm:text-4xl">{ko ? "사실에서 판단까지" : "From facts to judgment"}</h2><p className="mt-4 text-sm leading-7 text-charcoal/58">{ko ? "확인된 사실을 먼저 짚고, 논쟁의 맥락과 앞으로 지켜볼 지점을 시민의 언어로 설명합니다." : "We begin with verified facts, explain the context, and identify what citizens should continue to watch."}</p><Link to="/briefings" className="text-link mt-6">{ko ? "시민브리핑 전체보기" : "View all briefings"}<ArrowRight size={15}/></Link></div>
+          <div className="bg-white px-5 py-6 sm:px-7"><p className="section-kicker">CIVIC BRIEFINGS</p><h2 className="editorial-title mt-3 text-3xl font-bold leading-tight text-navy sm:text-4xl">{ko ? <>사실에서<br />판단까지</> : <>From facts<br />to judgment</>}</h2><p className="mt-4 text-sm leading-7 text-charcoal/58">{ko ? "확인된 사실을 먼저 짚고, 논쟁의 맥락과 앞으로 지켜볼 지점을 시민의 언어로 설명합니다." : "We begin with verified facts, explain the context, and identify what citizens should continue to watch."}</p><Link to="/briefings" className="text-link mt-6">{ko ? "시민브리핑 전체보기" : "View all briefings"}<ArrowRight size={15}/></Link></div>
           <div className="border-t-2 border-navy">
             {briefings.slice(0, 4).map((briefing) => (
               <Link key={briefing.slug} to={`/briefings/${briefing.slug}`} className="group grid gap-2 border-b border-green-deep/15 px-4 py-5 transition-colors hover:bg-white/85 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-5">
