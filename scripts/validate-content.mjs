@@ -1,5 +1,5 @@
 import { createServer } from "vite";
-import { access } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 
 const server = await createServer({
@@ -21,6 +21,21 @@ const [newsModule, briefingModule, columnModule, newsTranslationModule, briefing
 await server.close();
 
 const errors = [];
+const accountabilitySurfaces = [
+  "src/pages/NewsDetail.tsx",
+  "src/pages/BriefingDetail.tsx",
+  "src/pages/BriefingCommentary.tsx",
+  "src/pages/ColumnDetail.tsx",
+  "src/pages/PublicInterestWatchDetail.tsx",
+];
+
+for (const pagePath of accountabilitySurfaces) {
+  const source = await readFile(path.join(process.cwd(), pagePath), "utf8");
+  if (!source.includes("<ContentAccountability")) {
+    errors.push(`Content accountability system is missing from ${pagePath}`);
+  }
+}
+
 const requireEditorialStructure = (kind, item, visualCount) => {
   if (!item.summary?.trim()) errors.push(`Missing top summary for ${kind}: ${item.slug}`);
   if ((item.readMinutes ?? 0) < 8) return;

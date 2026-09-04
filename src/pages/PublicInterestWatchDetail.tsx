@@ -1,6 +1,7 @@
 import { AlertTriangle, ArrowLeft, CheckCircle2, ExternalLink, FileQuestion, Lightbulb, Scale } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
+import ContentAccountability from "../components/ContentAccountability";
 import { getPublicInterestWatchCase, LocalizedText } from "../data/publicInterestWatch";
 import { useLanguage } from "../i18n";
 
@@ -105,6 +106,7 @@ export default function PublicInterestWatchDetail() {
           <a href="mailto:seedcivicpartners@gmail.com" className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-white underline decoration-white/35 underline-offset-4">seedcivicpartners@gmail.com</a>
         </aside>
 
+        <ContentAccountability postSlug={`monitoring-${item.slug}`} publishedDate={item.updatedAt} />
         <CommentSection postSlug={`monitoring-${item.slug}`} />
       </div>
     </article>

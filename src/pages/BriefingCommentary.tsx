@@ -1,6 +1,7 @@
 import { ArrowLeft, Download } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
+import ContentAccountability from "../components/ContentAccountability";
 import { getBriefing } from "../data/briefings";
 import { localizeBriefing } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
@@ -32,6 +33,7 @@ export default function BriefingCommentary() {
       <div className="space-y-7">{briefing.commentary.paragraphs.map((paragraph, index) => <p key={`${index}-${paragraph.slice(0, 24)}`} className={`text-base leading-9 text-charcoal/80 sm:text-lg ${index === 0 ? "first-letter:float-left first-letter:mr-2 first-letter:font-serif first-letter:text-6xl first-letter:font-bold first-letter:leading-[0.85] first-letter:text-green-deep" : ""}`}>{paragraph}</p>)}</div>
       {briefing.quote && <blockquote className="mt-12 rounded-xl bg-green-pale p-7 font-serif text-xl font-bold leading-9 text-green-deep sm:p-10 sm:text-2xl">“{briefing.quote}”</blockquote>}
       <div className="mt-10 flex flex-wrap gap-3"><Link to={`/briefings/${briefing.slug}`} className="button-secondary"><ArrowLeft size={16} />{ko ? "브리핑 본문 보기" : "Read briefing"}</Link>{briefing.pdfPath && <a href={`${import.meta.env.BASE_URL}${briefing.pdfPath}`} download className="button-primary"><Download size={16} />{ko ? "PDF 원문 내려받기" : "Download PDF"}</a>}</div>
+      <ContentAccountability postSlug={`${briefing.slug}-commentary`} publishedDate={briefing.date} />
       <CommentSection postSlug={`${briefing.slug}-commentary`} />
     </div>
   </article>;
