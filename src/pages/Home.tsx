@@ -77,17 +77,17 @@ export default function Home() {
             )}
           </div>
 
-          <aside className="flex h-full self-stretch flex-col bg-green-deep text-white" aria-labelledby="seed-voice-heading">
-            <div className="border-b border-white/20 px-6 py-5 sm:px-7">
+          <aside className="flex h-full self-stretch flex-col border border-green-deep/15 bg-white text-navy" aria-labelledby="seed-voice-heading">
+            <div className="border-b border-white/20 bg-green-deep px-6 py-5 text-white sm:px-7">
               <div className="flex items-end justify-between gap-4"><h2 id="seed-voice-heading" className="editorial-title text-3xl font-bold">씨앗의 소리</h2><Link to="/columns" className="inline-flex items-center gap-1 text-xs font-bold text-white/65 hover:text-white">{ko ? "전체보기" : "View all"}<ArrowRight size={13}/></Link></div>
             </div>
 
             <div className="flex min-h-0 flex-1 flex-col">
               {journalColumns.slice(1, 5).map((column, index) => (
-                <Link key={column.slug} to={`/columns/${column.slug}`} className={`group flex flex-1 flex-col justify-center bg-white/[.075] px-6 py-4 transition hover:bg-white/[.14] sm:px-7 ${index < 3 ? "border-b border-white/20" : ""}`}>
-                  <time className="text-[11px] text-white/45">{column.date.replace(/-/g, ".")}</time>
-                  <h3 className="editorial-title mt-1.5 text-lg font-bold leading-snug text-white transition group-hover:text-gold-light sm:text-xl">{column.title}</h3>
-                  <p className="mt-2 line-clamp-2 text-[13px] leading-5 text-white/65">{column.summary}</p>
+                <Link key={column.slug} to={`/columns/${column.slug}`} className={`group flex flex-1 flex-col justify-center bg-white px-6 py-4 transition hover:bg-green-pale/65 sm:px-7 ${index < 3 ? "border-b border-green-deep/15" : ""}`}>
+                  <time className="text-[11px] text-charcoal/45">{column.date.replace(/-/g, ".")}</time>
+                  <h3 className="editorial-title mt-1.5 text-lg font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-xl">{column.title}</h3>
+                  <p className="mt-2 line-clamp-2 text-[13px] leading-5 text-charcoal/60">{column.summary}</p>
                 </Link>
               ))}
             </div>
