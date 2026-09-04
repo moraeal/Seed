@@ -37,7 +37,7 @@ export default function BriefingDetail() {
   };
 
   const renderFigure = (image: NonNullable<typeof briefing.images>[number], prominent = false) => (
-    <figure className={`${prominent ? "mb-12 shadow-[0_18px_55px_rgba(23,76,58,.08)]" : "mt-12"} overflow-hidden border border-green-deep/10 bg-white`}>
+    <figure className={`${prominent ? "mb-8 shadow-[0_18px_55px_rgba(23,76,58,.08)]" : "mt-8"} overflow-hidden border border-green-deep/10 bg-white`}>
       <img
         src={resolveImageSrc(image.src)}
         alt={image.alt}
@@ -49,14 +49,14 @@ export default function BriefingDetail() {
 
   return (
     <article className="bg-paper">
-      <header className="border-b border-green-deep/15 bg-ivory py-12 sm:py-20">
+      <header className="border-b border-green-deep/15 bg-ivory py-8 sm:py-12">
         <div className="container-page max-w-5xl">
           <Link to="/briefings" className="text-link"><ArrowLeft size={16} />{ko ? "시민브리핑 목록" : "Civic Briefings"}</Link>
-          <div className="mt-10 border-t-2 border-navy pt-8">
-            <h1 className="editorial-title max-w-4xl text-4xl font-bold leading-[1.12] text-navy sm:text-6xl">{briefing.title}</h1>
-            <p className="mt-7 max-w-3xl text-base leading-8 text-charcoal/65 sm:text-xl">{briefing.summary}</p>
+          <div className="mt-6 border-t-2 border-navy pt-5">
+            <h1 className="editorial-title max-w-4xl text-[1.6rem] font-bold leading-[1.15] text-navy sm:text-[2.625rem]">{briefing.title}</h1>
+            <p className="mt-4 max-w-3xl text-base leading-7 text-charcoal/65 sm:text-lg">{briefing.summary}</p>
           </div>
-          <div className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-green-deep/10 pt-5 text-xs text-charcoal/45">
+          <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-green-deep/10 pt-3 text-xs text-charcoal/45">
             <span>{briefing.author}</span>
             <time>{briefing.date.replace(/-/g, ".")} {ko ? "기준" : "as of"}</time>
             <span className="flex items-center gap-1"><Clock size={14} />{ko ? `읽는 시간 ${briefing.readMinutes}분` : `${briefing.readMinutes} min read`}</span>
@@ -69,12 +69,12 @@ export default function BriefingDetail() {
         </div>
       </header>
 
-      <div className="container-page max-w-4xl py-12 sm:py-20">
+      <div className="container-page max-w-4xl py-8 sm:py-12">
         {briefing.images?.[0] && renderFigure(briefing.images[0], true)}
 
-        <div className="space-y-7">
+        <div className="space-y-4">
           {briefing.content.map((paragraph, index) => (
-            <p key={`${index}-${paragraph.slice(0, 20)}`} className="text-base leading-9 text-charcoal/80 sm:text-lg">{paragraph}</p>
+            <p key={`${index}-${paragraph.slice(0, 20)}`} className="text-base leading-8 text-charcoal/80 sm:text-[17px]">{paragraph}</p>
           ))}
         </div>
 
@@ -82,10 +82,10 @@ export default function BriefingDetail() {
 
         {briefing.sections?.map((section, index) => (
           <div key={`${index}-${section.title}`}>
-            <section className="mt-12 border-t border-green-deep/10 pt-9">
-              <h2 className="text-2xl font-extrabold leading-snug text-navy sm:text-3xl">{section.title}</h2>
-              {section.paragraphs && <div className="mt-5 space-y-5">{section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className="text-base leading-8 text-charcoal/75">{paragraph}</p>)}</div>}
-              {section.bullets && <ul className="mt-6 space-y-4">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet.slice(0, 24)}`} className="flex gap-3 text-base leading-8 text-charcoal/75"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold" />{bullet}</li>)}</ul>}
+            <section className="mt-9 border-t border-green-deep/10 pt-6">
+              <h2 className="text-xl font-extrabold leading-snug text-navy sm:text-2xl">{section.title}</h2>
+              {section.paragraphs && <div className="mt-4 space-y-3.5">{section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className="text-base leading-7 text-charcoal/75">{paragraph}</p>)}</div>}
+              {section.bullets && <ul className="mt-4 space-y-3">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet.slice(0, 24)}`} className="flex gap-3 text-base leading-7 text-charcoal/75"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold" />{bullet}</li>)}</ul>}
             </section>
             {briefing.images?.slice(2).filter((image) => image.afterSection === index).map((image) => (
               <div key={image.src}>{renderFigure(image)}</div>
@@ -94,10 +94,10 @@ export default function BriefingDetail() {
         ))}
 
         {briefing.verdicts && (
-          <section className="mt-12">
+          <section className="mt-9">
             <span className="section-kicker">CITIZEN VERDICT</span>
             <h2 className="mt-3 text-2xl font-extrabold text-navy sm:text-3xl">{ko ? "현재까지의 시민 판정" : "Citizen assessment so far"}</h2>
-            <div className="mt-6 overflow-x-auto rounded-lg border border-green-deep/10">
+            <div className="mt-4 overflow-x-auto rounded-lg border border-green-deep/10">
               <table className="w-full min-w-[680px] border-collapse bg-white text-left text-sm">
                 <thead className="bg-green-deep text-white"><tr><th className="px-5 py-4">{ko ? "주장" : "Claim"}</th><th className="px-5 py-4">{ko ? "시민 판정" : "Assessment"}</th><th className="px-5 py-4">{ko ? "이유" : "Basis"}</th></tr></thead>
                 <tbody className="divide-y divide-green-deep/10">
@@ -112,19 +112,19 @@ export default function BriefingDetail() {
 
         {briefing.images?.slice(2).filter((image) => image.afterSection === undefined).map((image) => <div key={image.src}>{renderFigure(image)}</div>)}
 
-        <aside className="mt-12 rounded-lg border-l-4 border-gold bg-green-pale p-6 sm:p-8">
+        <aside className="mt-9 rounded-lg border-l-4 border-gold bg-green-pale p-5 sm:p-6">
           <h2 className="text-xl font-extrabold text-green-deep">{ko ? "지속해서 관찰할 지점" : "What to keep watching"}</h2>
-          <ul className="mt-5 space-y-3">{briefing.watchPoints.map((point, index) => <li key={`${index}-${point}`} className="flex gap-3 text-sm leading-7 text-charcoal/75"><span className="font-serif text-gold">●</span>{point}</li>)}</ul>
+          <ul className="mt-4 space-y-2">{briefing.watchPoints.map((point, index) => <li key={`${index}-${point}`} className="flex gap-3 text-sm leading-6 text-charcoal/75"><span className="font-serif text-gold">●</span>{point}</li>)}</ul>
         </aside>
 
-        {briefing.quote && <blockquote className="mt-12 rounded-xl bg-green-deep p-7 font-serif text-xl font-bold leading-9 text-white sm:p-10 sm:text-2xl">“{briefing.quote}”</blockquote>}
-        {briefing.sourceNote && <p className="mt-8 rounded-lg border border-green-deep/10 bg-white p-5 text-sm leading-7 text-charcoal/60">{briefing.sourceNote}</p>}
+        {briefing.quote && <blockquote className="mt-9 rounded-xl bg-green-deep p-6 font-serif text-lg font-bold leading-8 text-white sm:p-7 sm:text-xl">“{briefing.quote}”</blockquote>}
+        {briefing.sourceNote && <p className="mt-6 rounded-lg border border-green-deep/10 bg-white p-4 text-sm leading-6 text-charcoal/60">{briefing.sourceNote}</p>}
 
         {briefing.sources && (
-          <section className="mt-12 border-t border-green-deep/10 pt-9">
+          <section className="mt-9 border-t border-green-deep/10 pt-6">
             <h2 className="text-xl font-extrabold text-navy">{ko ? "자료 출처 및 확인 기준" : "Sources and verification basis"}</h2>
-            <ol className="mt-5 space-y-3">{briefing.sources.map((source, index) => <li key={source.url} className="flex gap-3 text-sm leading-6"><span className="font-serif text-gold">{index + 1}.</span><a href={source.url} target="_blank" rel="noreferrer" className="text-charcoal/65 underline decoration-green-deep/20 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ol>
-            <p className="mt-6 text-xs leading-6 text-charcoal/45">{ko ? "확인 기준: 각 브리핑의 기준일 현재 공개자료입니다. 이후 판결·법령·공식 발표가 나오면 판단은 업데이트될 수 있습니다." : "Verification basis: public materials available as of each briefing's reference date. Later court decisions, laws or official announcements may require updates."}</p>
+            <ol className="mt-4 space-y-2">{briefing.sources.map((source, index) => <li key={source.url} className="flex gap-3 text-sm leading-6"><span className="font-serif text-gold">{index + 1}.</span><a href={source.url} target="_blank" rel="noreferrer" className="text-charcoal/65 underline decoration-green-deep/20 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ol>
+            <p className="mt-4 text-xs leading-6 text-charcoal/45">{ko ? "확인 기준: 각 브리핑의 기준일 현재 공개자료입니다. 이후 판결·법령·공식 발표가 나오면 판단은 업데이트될 수 있습니다." : "Verification basis: public materials available as of each briefing's reference date. Later court decisions, laws or official announcements may require updates."}</p>
           </section>
         )}
 

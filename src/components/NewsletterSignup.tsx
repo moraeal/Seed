@@ -28,12 +28,12 @@ export default function NewsletterSignup() {
   };
 
   return (
-    <section className="border-t border-green-deep/15 bg-[#E8EFE9] py-9 sm:py-11" aria-labelledby="newsletter-title">
-      <div className="container-page grid gap-6 lg:grid-cols-[.8fr_1.2fr] lg:items-center lg:gap-12">
+    <section className="border-t border-green-deep/15 bg-[#E8EFE9] py-6 sm:py-7" aria-labelledby="newsletter-title">
+      <div className="container-page grid gap-4 lg:grid-cols-[.8fr_1.2fr] lg:items-center lg:gap-8">
         <div>
           <p className="section-kicker">SEED LETTER</p>
           <h2 id="newsletter-title" className="editorial-title mt-2 text-2xl font-bold text-navy sm:text-3xl">{ko ? "새 글을 놓치지 마세요" : "Never miss a new story"}</h2>
-          <p className="mt-3 text-sm leading-7 text-charcoal/62">{ko ? "씨앗의 소리가 새 콘텐츠와 주요 소식을 전할 이메일을 등록합니다." : "Register the email where SEED VOICE can send new stories and important updates."}</p>
+          <p className="mt-2 text-sm leading-6 text-charcoal/62">{ko ? "씨앗의 소리가 새 콘텐츠와 주요 소식을 전할 이메일을 등록합니다." : "Register the email where SEED VOICE can send new stories and important updates."}</p>
         </div>
         {status === "success" ? (
           <div className="flex items-center gap-3 border-l-2 border-green-mid bg-white/70 px-5 py-4 text-sm font-bold text-green-deep" role="status"><CheckCircle2 size={20}/>{ko ? "구독 신청이 기록되었습니다." : "Your subscription request has been recorded."}</div>

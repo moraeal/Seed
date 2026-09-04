@@ -55,38 +55,38 @@ export default function Home() {
 
   return (
     <div className="bg-paper">
-      <section className="border-b border-green-deep/20 bg-ivory py-7 sm:py-10">
-        <div className="container-page grid gap-8 xl:grid-cols-[minmax(0,1.55fr)_minmax(350px,.72fr)] xl:gap-10">
+      <section className="border-b border-green-deep/20 bg-ivory py-5 sm:py-7">
+        <div className="container-page grid gap-5 xl:grid-cols-[minmax(0,1.55fr)_minmax(350px,.72fr)] xl:gap-6">
           <div className="h-full">
             {leadColumn && (
               <article className="h-full border-t-[3px] border-navy">
-                <Link to={`/columns/${leadColumn.slug}`} className="group -mx-4 block h-full px-4 pb-5 pt-4 transition-colors hover:bg-green-pale/60">
+                <Link to={`/columns/${leadColumn.slug}`} className="group -mx-4 block h-full px-4 pb-3 pt-3 transition-colors hover:bg-green-pale/60">
                   <div className="relative overflow-hidden bg-navy">
                     <img src={resolveImageSrc(leadColumn.heroImage.src)} alt={leadColumn.heroImage.alt} className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
                     <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end bg-gradient-to-t from-black/80 via-black/35 to-transparent px-5 pb-5 pt-16 text-white sm:px-6">
                       <time className="rounded-sm bg-black/45 px-2.5 py-1 text-[11px] font-semibold tracking-normal text-white drop-shadow-[0_1px_3px_rgba(0,0,0,.95)] backdrop-blur-sm">{leadColumn.date.replace(/-/g, ".")}</time>
                     </div>
                   </div>
-                  <h1 className="editorial-title mt-5 max-w-5xl text-[2.15rem] font-bold leading-[1.1] text-navy transition group-hover:text-green-mid sm:text-[3.15rem] lg:text-[3.5rem]">{leadColumn.title}</h1>
-                  <p className="mt-4 max-w-4xl text-base font-medium leading-7 text-charcoal/65 sm:text-[17px] sm:leading-8">{leadColumn.summary}</p>
-                  {leadColumnExcerpt && <p className="mt-5 max-w-4xl border-l-2 border-gold/70 pl-5 text-[15px] leading-8 text-charcoal/72 sm:line-clamp-5 sm:text-base">{leadColumnExcerpt}</p>}
-                  <span className="mt-7 inline-flex items-center gap-2 text-sm font-extrabold text-green-deep">{ko ? "씨앗의 소리 계속 읽기" : "Continue reading SEED's voice"}<ArrowRight size={16}/></span>
+                  <h1 className="editorial-title mt-3 max-w-5xl text-2xl font-bold leading-[1.15] text-navy transition group-hover:text-green-mid sm:text-[2.2rem] lg:text-[2.45rem]">{leadColumn.title}</h1>
+                  <p className="mt-2.5 max-w-4xl text-base font-medium leading-7 text-charcoal/65 sm:text-[17px]">{leadColumn.summary}</p>
+                  {leadColumnExcerpt && <p className="mt-3 max-w-4xl border-l-2 border-gold/70 pl-4 text-[15px] leading-7 text-charcoal/72 sm:line-clamp-4 sm:text-base">{leadColumnExcerpt}</p>}
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-green-deep">{ko ? "씨앗의 소리 계속 읽기" : "Continue reading SEED's voice"}<ArrowRight size={16}/></span>
                 </Link>
               </article>
             )}
           </div>
 
           <aside className="flex h-full self-stretch flex-col border border-green-deep/15 bg-white text-navy" aria-labelledby="seed-voice-heading">
-            <div className="border-b border-white/20 bg-green-deep px-6 py-5 text-white sm:px-7">
+            <div className="border-b border-white/20 bg-green-deep px-6 py-3.5 text-white sm:px-7">
               <div className="flex items-end justify-between gap-4"><h2 id="seed-voice-heading" className="editorial-title text-xl font-bold sm:text-2xl">THE VOICE OF SEED</h2><Link to="/columns" className="inline-flex shrink-0 items-center gap-1 text-xs font-bold text-white/65 hover:text-white">{ko ? "전체보기" : "View all"}<ArrowRight size={13}/></Link></div>
             </div>
 
             <div className="flex min-h-0 flex-1 flex-col">
               {journalColumns.slice(1, 5).map((column, index) => (
-                <Link key={column.slug} to={`/columns/${column.slug}`} className={`group flex flex-1 flex-col justify-center bg-white px-6 py-4 transition hover:bg-green-pale/65 sm:px-7 ${index < 3 ? "border-b border-green-deep/15" : ""}`}>
+                <Link key={column.slug} to={`/columns/${column.slug}`} className={`group flex flex-1 flex-col justify-center bg-white px-6 py-3 transition hover:bg-green-pale/65 sm:px-7 ${index < 3 ? "border-b border-green-deep/15" : ""}`}>
                   <time className="text-[11px] text-charcoal/45">{column.date.replace(/-/g, ".")}</time>
-                  <h3 className="editorial-title mt-1.5 text-lg font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-xl">{column.title}</h3>
-                  <p className="mt-2 line-clamp-2 text-[13px] leading-5 text-charcoal/60">{column.summary}</p>
+                  <h3 className="editorial-title mt-1 text-base font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.05rem]">{column.title}</h3>
+                  <p className="mt-1 line-clamp-2 text-[13px] leading-5 text-charcoal/60">{column.summary}</p>
                 </Link>
               ))}
             </div>
@@ -96,10 +96,10 @@ export default function Home() {
 
       <NewsletterSignup />
 
-      <section className="py-12 sm:py-16">
+      <section className="py-8 sm:py-10">
         <div className="container-page">
-          <div className="flex items-end justify-between gap-5 border-b-[3px] border-navy pb-4">
-            <div><p className="section-kicker">TODAY'S NEWS</p><h2 className="editorial-title mt-2 text-3xl font-bold text-navy sm:text-4xl">{ko ? "오늘의뉴스" : "Today's News"}</h2></div>
+          <div className="flex items-end justify-between gap-4 border-b-[3px] border-navy pb-3">
+            <div><p className="section-kicker">TODAY'S NEWS</p><h2 className="editorial-title mt-1.5 text-2xl font-bold text-navy sm:text-3xl">{ko ? "오늘의뉴스" : "Today's News"}</h2></div>
             <Link to="/news" className="text-link shrink-0">{ko ? "오늘의뉴스 전체보기" : "View all"}<ArrowRight size={15}/></Link>
           </div>
           <div
@@ -116,12 +116,12 @@ export default function Home() {
               onTransitionEnd={(event) => { if (event.target === event.currentTarget) finishNewsTransition(); }}
             >
             {rotatingNewsCards.map((item, index) => (
-              <article key={`${item.slug}-${index}`} className="w-full shrink-0 border-b border-green-deep/15 px-5 py-7 transition-colors hover:bg-green-pale/70 md:w-1/3 md:border-r md:px-7">
+              <article key={`${item.slug}-${index}`} className="w-full shrink-0 border-b border-green-deep/15 px-5 py-5 transition-colors hover:bg-green-pale/70 md:w-1/3 md:border-r md:px-6">
                 <Link to={`/news/${item.slug}`} className="group block">
                   <img src={resolveImageSrc(item.heroImage.src)} alt={item.heroImage.alt} className="aspect-[16/10] w-full object-cover" />
-                  <h3 className="editorial-title mt-5 text-2xl font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h3>
-                  <p className="mt-3 line-clamp-3 text-sm leading-7 text-charcoal/58">{item.summary}</p>
-                  <div className="mt-4 flex items-center gap-3 text-xs text-charcoal/38"><time>{item.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={12}/>{item.readMinutes}{ko ? "분" : " min"}</span></div>
+                  <h3 className="editorial-title mt-3 text-lg font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h3>
+                  <p className="mt-2 line-clamp-3 text-sm leading-6 text-charcoal/58">{item.summary}</p>
+                  <div className="mt-3 flex items-center gap-3 text-xs text-charcoal/38"><time>{item.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={12}/>{item.readMinutes}{ko ? "분" : " min"}</span></div>
                 </Link>
               </article>
             ))}
@@ -158,13 +158,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-green-deep/15 bg-[#F1F2EC] py-12 sm:py-16">
-        <div className="container-page grid gap-9 lg:grid-cols-[.5fr_1.5fr] lg:gap-14">
-          <div className="bg-white px-5 py-6 sm:px-7"><p className="section-kicker">SEED CITIZEN BRIEFING</p><h2 className="editorial-title mt-3 text-3xl font-bold leading-tight text-navy sm:text-4xl">{ko ? <>사실에서<br />판단까지</> : <>From facts<br />to judgment</>}</h2><p className="mt-4 text-sm leading-7 text-charcoal/58">{ko ? "확인된 사실을 먼저 짚고, 논쟁의 맥락과 앞으로 지켜볼 지점을 시민의 언어로 설명합니다." : "We begin with verified facts, explain the context, and identify what citizens should continue to watch."}</p><Link to="/briefings" className="text-link mt-6">{ko ? "시민브리핑 전체보기" : "View all briefings"}<ArrowRight size={15}/></Link></div>
+      <section className="border-y border-green-deep/15 bg-[#F1F2EC] py-8 sm:py-10">
+        <div className="container-page grid gap-6 lg:grid-cols-[.5fr_1.5fr] lg:gap-9">
+          <div className="bg-white px-5 py-4 sm:px-6"><p className="section-kicker">SEED CITIZEN BRIEFING</p><h2 className="editorial-title mt-2 text-2xl font-bold leading-tight text-navy sm:text-3xl">{ko ? <>사실에서<br />판단까지</> : <>From facts<br />to judgment</>}</h2><p className="mt-2.5 text-sm leading-6 text-charcoal/58">{ko ? "확인된 사실을 먼저 짚고, 논쟁의 맥락과 앞으로 지켜볼 지점을 시민의 언어로 설명합니다." : "We begin with verified facts, explain the context, and identify what citizens should continue to watch."}</p><Link to="/briefings" className="text-link mt-4">{ko ? "시민브리핑 전체보기" : "View all briefings"}<ArrowRight size={15}/></Link></div>
           <div className="border-t-2 border-navy">
             {briefings.slice(0, 4).map((briefing) => (
-              <Link key={briefing.slug} to={`/briefings/${briefing.slug}`} className="group grid gap-2 border-b border-green-deep/15 px-4 py-5 transition-colors hover:bg-white/85 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-5">
-                <div><h3 className="editorial-title text-xl font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-2xl">{briefing.title}</h3><p className="mt-2 line-clamp-2 text-sm leading-6 text-charcoal/55">{briefing.summary}</p></div>
+              <Link key={briefing.slug} to={`/briefings/${briefing.slug}`} className="group grid gap-2 border-b border-green-deep/15 px-4 py-3.5 transition-colors hover:bg-white/85 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-4">
+                <div><h3 className="editorial-title text-[1.05rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-lg">{briefing.title}</h3><p className="mt-1 line-clamp-2 text-sm leading-6 text-charcoal/55">{briefing.summary}</p></div>
                 <time className="text-xs text-charcoal/38">{briefing.date.replace(/-/g, ".")}</time>
               </Link>
             ))}
