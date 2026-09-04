@@ -134,8 +134,7 @@ export default function About() {
           <div className="mx-auto mt-10 max-w-3xl sm:mt-12">
             {content.sections.map((section, index) => (
               <section key={section.title} className={index === 0 ? "" : "mt-9 border-t border-green-deep/12 pt-9 sm:mt-10 sm:pt-10"}>
-                <p className="text-xs font-extrabold tracking-[.18em] text-green-mid">{String(index + 1).padStart(2, "0")}</p>
-                <h2 className="editorial-title mt-3 text-3xl font-bold leading-tight text-navy sm:text-4xl">{section.title}</h2>
+                <h2 className="editorial-title text-3xl font-bold leading-tight text-navy sm:text-4xl">{section.title}</h2>
                 <div className="mt-5 space-y-4 text-[17px] leading-[1.82] text-charcoal/75 sm:text-lg">
                   {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                 </div>
