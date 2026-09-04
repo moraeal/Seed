@@ -27,8 +27,19 @@ export default function RouteMetadata() {
 
   useEffect(() => {
     const route = getSeoRoute(location.pathname);
-    const title = route?.title ?? `페이지를 찾을 수 없습니다 | ${SITE_NAME}`;
-    const description = route?.description ?? "씨앗의 소리 홈페이지입니다.";
+    const privatePage = location.pathname.startsWith("/insights")
+      ? {
+          title: `운영자 대시보드 | ${SITE_NAME}`,
+          description: "씨앗의 소리의 구독 신청과 콘텐츠 조회 현황을 확인하는 운영자 전용 화면입니다.",
+        }
+      : location.pathname.startsWith("/account")
+        ? {
+            title: `내 계정 | ${SITE_NAME}`,
+            description: "씨앗의 소리 회원 계정과 운영 기능을 확인합니다.",
+          }
+        : null;
+    const title = route?.title ?? privatePage?.title ?? `페이지를 찾을 수 없습니다 | ${SITE_NAME}`;
+    const description = route?.description ?? privatePage?.description ?? "씨앗의 소리 홈페이지입니다.";
     const url = canonicalUrl(route?.path ?? "/");
     const language = route?.language ?? "ko";
     const siteName = language === "en" ? ENGLISH_SOCIAL_SITE_NAME : SOCIAL_SITE_NAME;
