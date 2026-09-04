@@ -54,8 +54,8 @@ const staticRoutes: SeoRoute[] = [
   { path: "/columns", title: "칼럼 | 씨앗의 소리", description: "자유, 법치, 책임, 시장의 자율성과 강한 시민사회의 관점에서 오늘의 쟁점을 논평합니다.", type: "website", lastModified: newest(columns.map((item) => item.date)) },
   { path: "/monitoring", title: "공익감시 | 씨앗의 소리", description: "공익조직과 공공제도가 시민에게 권한과 재정, 성과를 충분히 설명하는지 근거를 바탕으로 점검합니다.", type: "website", lastModified: newest(publicInterestWatchCases.map((item) => item.updatedAt)) },
   { path: "/proposals", title: "시민제안 | 씨앗의 소리", description: "시민의 문제의식을 구체적인 제도와 정책의 제안으로 키우는 씨앗의 소리 제안 공간입니다.", type: "website", lastModified: latestDate },
-  { path: "/founding-statement", title: "창립취지문 | 씨앗의 소리", description: "자유로운 시민과 책임 있는 공익, 강한 시민사회를 지향하는 씨앗의 소리 창립취지문 전문입니다.", type: "article", lastModified: latestDate, author: "씨앗의 소리", section: "창립취지문" },
-  { path: "/about", title: "저널 소개 | 씨앗의 소리", description: "사실과 해석을 구분하고 자유와 책임의 관점으로 공공의 문제를 살피는 씨앗의 소리를 소개합니다.", type: "website", lastModified: latestDate },
+  { path: "/founding-statement", title: "씨앗의 소리 취지문 | 씨앗의 소리", description: "한 사람의 생각과 목소리도 세상을 향해 자랄 수 있다는 믿음에서 시작한 독립 시민미디어 씨앗의 소리의 취지문입니다.", type: "article", lastModified: latestDate, author: "박경석", section: "씨앗의 소리 취지문" },
+  { path: "/about", title: "소개 | 씨앗의 소리", description: "박경석이 혼자 만들고 운영하는 1인 독립 시민미디어 씨앗의 소리와 발행인을 소개합니다.", type: "website", lastModified: latestDate },
 ];
 
 const newsRoutes: SeoRoute[] = newsArticles.map((article) => ({

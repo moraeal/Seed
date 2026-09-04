@@ -210,7 +210,7 @@ export default function Home() {
       <section className="bg-ivory py-12 sm:py-16">
         <div className="container-page grid gap-8 border-y-2 border-green-deep py-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div><p className="section-kicker">OUR EDITORIAL STANDARD</p><h2 className="editorial-title mt-3 text-2xl font-bold text-navy sm:text-3xl">{ko ? "사실은 정확하게, 관점은 분명하게, 시민에게는 책임 있게" : "Accurate in fact, clear in viewpoint, accountable to citizens"}</h2><p className="mt-3 max-w-4xl text-sm leading-7 text-charcoal/62">{ko ? "씨앗의 소리는 기계적 중립과 진영의 확신 사이에서, 근거를 확인하고 자유·법치·책임의 관점으로 공공의 문제를 해석합니다." : "SEED VOICE verifies evidence and interprets public affairs through freedom, the rule of law, and civic responsibility."}</p></div>
-          <Link to="/about" className="button-primary shrink-0">{ko ? "저널 소개 읽기" : "About the journal"}<ArrowRight size={16}/></Link>
+          <Link to="/about" className="button-primary shrink-0">{ko ? "소개 읽기" : "About"}<ArrowRight size={16}/></Link>
         </div>
       </section>
     </div>

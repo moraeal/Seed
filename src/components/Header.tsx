@@ -19,15 +19,13 @@ export default function Header() {
         ["News", "/news"],
         ["Civic Briefings", "/briefings"],
         ["Voice of the Seed", "/columns"],
-        ["About the Journal", "/about"],
-        ["Founding Statement", "/founding-statement"],
+        ["About", "/about"],
       ]
     : [
         ["씨드뉴스", "/news"],
         ["시민브리핑", "/briefings"],
         ["씨앗의 소리", "/columns"],
-        ["저널 소개", "/about"],
-        ["창립취지문", "/founding-statement"],
+        ["소개", "/about"],
       ];
 
   const toggleLanguage = () => {
