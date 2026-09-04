@@ -116,46 +116,46 @@ export default function About() {
 
   return (
     <div className="bg-paper">
-      <header className="border-b border-green-deep/15 bg-ivory py-14 sm:py-20">
+      <header className="border-b border-green-deep/15 bg-ivory py-10 sm:py-14">
         <div className="container-page max-w-5xl">
           <p className="section-kicker">{content.kicker}</p>
           <h1 className="editorial-title mt-5 max-w-4xl text-4xl font-bold leading-[1.08] text-navy sm:text-6xl">{content.title}</h1>
-          <p className="mt-7 max-w-3xl border-l-2 border-gold pl-6 text-lg leading-9 text-charcoal/70 sm:text-xl">{content.lead}</p>
+          <p className="mt-5 max-w-3xl border-l-2 border-gold pl-6 text-lg leading-8 text-charcoal/70 sm:text-xl">{content.lead}</p>
         </div>
       </header>
 
-      <main className="py-12 sm:py-16">
+      <main className="py-8 sm:py-10">
         <article className="container-page max-w-5xl">
           <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(20,54,43,.10)]">
             <img src={`${import.meta.env.BASE_URL}images/about/seed-journal-origin-watercolor.webp`} alt={content.imageAlt} className="aspect-[16/9] w-full object-cover" />
             <FigureCaption caption={content.imageCaption} credit="AI image by SEED Civic Partners" />
           </figure>
 
-          <div className="mx-auto mt-14 max-w-3xl sm:mt-20">
+          <div className="mx-auto mt-10 max-w-3xl sm:mt-12">
             {content.sections.map((section, index) => (
-              <section key={section.title} className={index === 0 ? "" : "mt-14 border-t border-green-deep/12 pt-14 sm:mt-16 sm:pt-16"}>
+              <section key={section.title} className={index === 0 ? "" : "mt-9 border-t border-green-deep/12 pt-9 sm:mt-10 sm:pt-10"}>
                 <p className="text-xs font-extrabold tracking-[.18em] text-green-mid">{String(index + 1).padStart(2, "0")}</p>
                 <h2 className="editorial-title mt-3 text-3xl font-bold leading-tight text-navy sm:text-4xl">{section.title}</h2>
-                <div className="mt-7 space-y-6 text-[17px] leading-[2] text-charcoal/75 sm:text-lg">
+                <div className="mt-5 space-y-4 text-[17px] leading-[1.82] text-charcoal/75 sm:text-lg">
                   {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                 </div>
               </section>
             ))}
 
-            <blockquote className="my-14 border-y-2 border-gold/70 py-9 text-center sm:my-20 sm:py-12">
+            <blockquote className="my-10 border-y-2 border-gold/70 py-7 text-center sm:my-12 sm:py-8">
               {content.declaration.map((line) => <p key={line} className="editorial-title text-3xl font-bold leading-snug text-green-deep sm:text-4xl">{line}</p>)}
             </blockquote>
-            <p className="text-[17px] leading-[2] text-charcoal/75 sm:text-lg">{content.closing}</p>
+            <p className="text-[17px] leading-[1.82] text-charcoal/75 sm:text-lg">{content.closing}</p>
           </div>
 
-          <section className="mt-16 border-y border-green-deep/15 bg-[#F1F2EC] px-6 py-9 sm:mt-24 sm:px-10 sm:py-11">
+          <section className="mt-12 border-y border-green-deep/15 bg-[#F1F2EC] px-6 py-7 sm:mt-16 sm:px-10 sm:py-8">
             <div className="grid gap-7 sm:grid-cols-[150px_1fr] sm:items-center sm:gap-10">
               <img src={`${import.meta.env.BASE_URL}images/about/park-kyung-seok.jpg`} alt={content.founderName} className="aspect-[3/4] w-32 border-4 border-white object-cover shadow-md sm:w-[150px]" />
               <div>
                 <p className="section-kicker">{content.founderKicker}</p>
                 <h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{content.founderName}</h2>
                 <p className="mt-2 text-sm font-bold text-green-deep/75">{content.founderRole}</p>
-                <p className="mt-5 max-w-2xl text-base leading-8 text-charcoal/68">{content.founderBio}</p>
+                <p className="mt-4 max-w-2xl text-base leading-7 text-charcoal/68">{content.founderBio}</p>
               </div>
             </div>
           </section>
