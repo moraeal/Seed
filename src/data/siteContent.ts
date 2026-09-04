@@ -16,9 +16,9 @@ export const content = {
     ],
     actions: { proposal: "시민제안 올리기", support: "후원하기", language: "English" },
     footer: {
-      title: "SEED Civic Partners | 씨드시민파트너스",
+      title: "SEED VOICE | 씨앗의 소리",
       description:
-        "씨드시민파트너스는 시민의 작은 문제의식과 제안을 자유, 법치, 시장, 책임의 언어로 키우는 독립 시민 플랫폼입니다.",
+        "씨앗의 소리는 시민의 작은 문제의식과 제안을 자유, 법치, 시장, 책임의 언어로 키우는 독립 시민 플랫폼입니다.",
       contact: "Contact: seedcivicpartners@gmail.com",
       location: "Seoul, South Korea",
     },
@@ -26,8 +26,8 @@ export const content = {
       kicker: "CITIZENSHIP IN ACTION",
       title: "작은 질문을 자유로운 시민의 실험으로 키웁니다.",
       description:
-        "씨드시민파트너스는 시민이 국가와 시장의 객체가 아니라 스스로 질문하고 판단하며 책임지는 공공성의 주체로 성장하도록 돕는 독립 시민 플랫폼입니다.",
-      primary: "씨드시민파트너스 소개 보기",
+        "씨앗의 소리는 시민이 국가와 시장의 객체가 아니라 스스로 질문하고 판단하며 책임지는 공공성의 주체로 성장하도록 돕는 독립 시민 플랫폼입니다.",
+      primary: "씨앗의 소리 소개 보기",
       secondary: "시민제안 참여하기",
       stats: [
         ["12", "시민자유 브리핑"],
@@ -61,7 +61,7 @@ export const content = {
     },
     about: {
       kicker: "ABOUT SEED",
-      title: "SEED Civic Partners는 한국 시민사회에 자유의 언어를 다시 심는 독립 시민 플랫폼입니다.",
+      title: "SEED VOICE는 한국 시민사회에 자유의 언어를 다시 심는 독립 시민 플랫폼입니다.",
       description:
         "우리는 시민을 국가 정책의 수혜자나 동원의 대상으로 보지 않습니다. 시민은 공적 문제를 발견하고 질문하고 제안하며 책임 있게 실험할 수 있는 자유로운 주체입니다.",
       missionTitle: "Mission",
@@ -69,10 +69,10 @@ export const content = {
         "시민의 일상 문제를 자유, 법치, 제한된 정부, 시장 자율성, 시민 책임의 언어로 번역하고, 이를 시민제안, 브리핑, 공론장, 작은 실험, 공개 기록으로 연결합니다.",
       independenceTitle: "Political and Organizational Independence",
       independence:
-        "씨드시민파트너스는 어떤 정당의 선거 조직이나 보조 조직이 아닙니다. 우리는 비당파적 정치 독립성을 지키며, 재정과 협력, 프로젝트 결과를 투명하게 기록합니다.",
+        "씨앗의 소리는 어떤 정당의 선거 조직이나 보조 조직이 아닙니다. 우리는 비당파적 정치 독립성을 지키며, 재정과 협력, 프로젝트 결과를 투명하게 기록합니다.",
       valuesTitle: "Freedom, Rule of Law, Free Markets, and Civic Responsibility",
       values:
-        "씨드시민파트너스는 개인의 자유, 법치, 제한된 정부, 시장 자율성, 시민사회의 책임을 핵심 가치로 삼습니다. 자유는 무책임한 방임이 아니라 타인의 자유와 공동체 질서를 존중하는 시민 윤리와 함께 지속됩니다.",
+        "씨앗의 소리는 개인의 자유, 법치, 제한된 정부, 시장 자율성, 시민사회의 책임을 핵심 가치로 삼습니다. 자유는 무책임한 방임이 아니라 타인의 자유와 공동체 질서를 존중하는 시민 윤리와 함께 지속됩니다.",
       programsTitle: "Programs",
       programs: [
         ["Korea Civic Freedom Initiative", "1년 파일럿 프로젝트로 시민제안 플랫폼, 자유 브리핑, 시민실험, 기업과 시민 자유 포럼, Seed Citizen Fellows를 추진합니다."],
@@ -83,7 +83,7 @@ export const content = {
       ],
       leadershipTitle: "Leadership",
       leadership:
-        "씨드시민파트너스의 리더십은 정당 조직의 청년부나 선거 동원 구조가 아니라, 시민사회 안에서 자유의 가치를 설명하고 실험하는 독립 시민 리더십을 지향합니다.",
+        "씨앗의 소리가 지향하는 리더십은 정당 조직의 청년부나 선거 동원 구조가 아니라, 시민사회 안에서 자유의 가치를 설명하고 실험하는 독립 시민 리더십입니다.",
       founderTitle: "Founder & President",
       founderName: "Park Kyung-seuk",
       founderBio: "",
@@ -100,7 +100,7 @@ export const content = {
     simplePages: {
       roadmap: {
         title: "Roadmap",
-        subtitle: "씨드시민파트너스는 제안 플랫폼, 자유 브리핑, 시민실험, 시민 리더 훈련으로 단계적으로 성장합니다.",
+        subtitle: "씨앗의 소리는 제안 플랫폼, 자유 브리핑, 시민실험, 시민 리더 훈련으로 단계적으로 성장합니다.",
       },
       support: {
         title: "Support SEED",
@@ -124,7 +124,7 @@ export const content = {
       },
       forum: {
         title: "SEED Public Forum",
-        subtitle: "전인미답 매거진을 씨드시민파트너스 공론장 안에서 함께 읽습니다.",
+        subtitle: "전인미답 매거진을 씨앗의 소리 공론장 안에서 함께 읽습니다.",
       },
     },
   },
@@ -140,7 +140,7 @@ export const content = {
     ],
     actions: { proposal: "Submit a Proposal", support: "Support SEED", language: "한국어" },
     footer: {
-      title: "SEED Civic Partners",
+      title: "SEED VOICE",
       description:
         "An independent, nonpartisan civic platform advancing citizen agency, civic responsibility, and an open civil society in South Korea.",
       contact: "Contact: seedcivicpartners@gmail.com",
@@ -150,7 +150,7 @@ export const content = {
       kicker: "CITIZEN AGENCY · CIVIC RESPONSIBILITY · OPEN CIVIL SOCIETY",
       title: "Helping citizens turn everyday concerns into constructive civic action.",
       description:
-        "SEED Civic Partners is an independent, nonpartisan platform in South Korea. We help citizens understand public issues, develop practical proposals, and test solutions grounded in freedom, the rule of law, open markets, and civic responsibility.",
+        "SEED VOICE is an independent, nonpartisan platform in South Korea. We help citizens understand public issues, develop practical proposals, and test solutions grounded in freedom, the rule of law, open markets, and civic responsibility.",
       primary: "About SEED",
       secondary: "Join Citizen Proposals",
       stats: [
@@ -185,7 +185,7 @@ export const content = {
     },
     about: {
       kicker: "ABOUT SEED",
-      title: "SEED Civic Partners strengthens citizen agency and civic responsibility in South Korea.",
+      title: "SEED VOICE strengthens citizen agency and civic responsibility in South Korea.",
       description:
         "We see citizens as active participants in public life: people who can identify problems, ask informed questions, develop proposals, and test practical solutions. Our work supports an open civil society in which disagreement is handled through evidence, dialogue, and responsible action.",
       missionTitle: "Mission",
@@ -193,7 +193,7 @@ export const content = {
         "Our mission is to turn everyday civic concerns into informed questions, practical proposals, accessible briefings, small-scale experiments, and public records. This work is guided by freedom, the rule of law, open and free markets, and civic responsibility.",
       independenceTitle: "Political and Organizational Independence",
       independence:
-        "SEED Civic Partners is an independent, nonpartisan civic platform—not a campaign organization or an affiliate of any political party. We are committed to transparency in our partnerships, funding, and project outcomes.",
+        "SEED VOICE is an independent, nonpartisan civic platform—not a campaign organization or an affiliate of any political party. We are committed to transparency in our partnerships, funding, and project outcomes.",
       valuesTitle: "Freedom, Rule of Law, Open and Free Markets, and Civic Responsibility",
       values:
         "These values provide a practical framework for public life. Individual freedom depends on fair rules and accountable institutions; open markets support choice and innovation; and civic responsibility helps people sustain trust, pluralism, and cooperation.",

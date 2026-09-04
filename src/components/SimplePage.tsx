@@ -13,12 +13,12 @@ export default function SimplePage({ pageKey }: { pageKey: SimplePageKey }) {
   return (
     <section className="min-h-[58vh] bg-ivory py-16 sm:py-20">
       <div className="container-page">
-        <span className="section-kicker">SEED CIVIC PARTNERS</span>
+        <span className="section-kicker">SEED VOICE</span>
         <h1 className="mt-5 max-w-4xl text-4xl font-extrabold leading-tight text-navy sm:text-5xl">{page.title}</h1>
         <p className="mt-6 max-w-3xl text-base leading-8 text-charcoal/70">{page.subtitle}</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link to="/about" className="button-primary">
-            {language === "en" ? "About SEED" : "씨드시민파트너스 소개"}
+            {language === "en" ? "About SEED" : "씨앗의 소리 소개"}
             <ArrowRight size={16} />
           </Link>
           <Link to="/" className="button-secondary">

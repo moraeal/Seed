@@ -5,13 +5,13 @@ type FigureCaptionProps = {
 };
 
 const isSeedCredit = (credit: string) =>
-  /씨드시민파트너스|SEED Civic Partners|씨드뉴스/i.test(credit);
+  /씨앗의 소리|SEED VOICE|씨드뉴스/i.test(credit);
 
 const isAiCredit = (credit: string) => /\bAI\b|인공지능/i.test(credit);
 
 const displayCredit = (credit: string) => {
   if (!isSeedCredit(credit)) return credit;
-  return isAiCredit(credit) ? "제작: 씨드시민파트너스" : "© 2026 씨드시민파트너스";
+  return isAiCredit(credit) ? "제작: 씨앗의 소리" : "© 2026 씨앗의 소리";
 };
 
 export default function FigureCaption({ caption, credit, sourceUrl }: FigureCaptionProps) {

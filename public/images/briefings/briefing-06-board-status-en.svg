@@ -12,7 +12,7 @@
     <text x="110" y="614" fill="#17324d" font-size="34" font-weight="800">EBS</text><text x="110" y="652" fill="#56626a" font-size="21">13 statutory seats · 5 recommended by National Assembly groups</text>
     <rect x="650" y="582" width="590" height="76" rx="10" fill="#d9ddd8"/><rect x="650" y="582" width="499" height="76" rx="10" fill="#2f725b"/><text x="900" y="631" fill="#fff" font-size="24" font-weight="800" text-anchor="middle">11 appointed</text><text x="1195" y="631" fill="#17324d" font-size="24" font-weight="800" text-anchor="middle">2 vacant</text><text x="1290" y="631" fill="#17324d" font-size="32" font-weight="900">11 / 13</text>
     <line x1="110" y1="728" x2="1490" y2="728" stroke="#174c3a" stroke-opacity=".2" stroke-width="2"/><circle cx="128" cy="786" r="10" fill="#174c3a"/><text x="153" y="794" fill="#34434b" font-size="22">Appointed</text><circle cx="310" cy="786" r="10" fill="#d9ddd8" stroke="#aab2ad"/><text x="335" y="794" fill="#34434b" font-size="22">Vacant</text>
-    <text x="1490" y="794" fill="#56626a" font-size="19" text-anchor="end">Sources: amended broadcasting laws and public data as of Sept. 3, 2026 · SEED Civic Partners</text>
+    <text x="1490" y="794" fill="#56626a" font-size="19" text-anchor="end">Sources: amended broadcasting laws and public data as of Sept. 3, 2026 · SEED VOICE</text>
     <text x="110" y="845" fill="#7a4f18" font-size="21" font-weight="700">Key question: should incomplete boards make major decisions before the system's promised diversity is present?</text>
   </g>
 </svg>

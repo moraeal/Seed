@@ -48,7 +48,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-ivory/95 backdrop-blur-xl">
       <div className="container-page flex h-[76px] items-center gap-4 border-b border-green-deep/12 md:h-[82px]">
-        <Link to={language === "en" ? "/en/" : "/"} className="flex min-w-0 shrink items-center" aria-label={language === "en" ? "SEED Civic Journal home" : "씨드시민파트너스 홈"}>
+        <Link to={language === "en" ? "/en/" : "/"} className="flex min-w-0 shrink items-center" aria-label={language === "en" ? "SEED VOICE home" : "씨앗의 소리 홈"}>
           <BrandLockup tone="header" />
         </Link>
 

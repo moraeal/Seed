@@ -8,12 +8,12 @@ export const issue04: ColumnTranslation = {
   heroImage: {
     alt: `Citizens seated at several round tables deliberating on a public issue`,
     caption: `Public deliberation does not end with putting people in the same room. Representative participation, balanced information, independent facilitation and accountability for outcomes must be designed together.`,
-    credit: `Image by SEED Civic Partners`,
+    credit: `Image by SEED VOICE`,
   },
   inlineImage: {
     alt: `Citizens of different ages comparing documents while discussing a public issue`,
     caption: `A good public forum does not begin with a predetermined conclusion. It presents competing evidence and the costs of different choices so citizens can make their own judgments.`,
-    credit: `Image by SEED Civic Partners`,
+    credit: `Image by SEED VOICE`,
   },
   sections: [
     {

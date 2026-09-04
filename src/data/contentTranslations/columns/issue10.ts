@@ -8,18 +8,18 @@ export const issue10: ColumnTranslation = {
   heroImage: {
     alt: "An editorial illustration of a giant hand pulling a power cable symbolizing future electricity payments from a semiconductor plant toward a government vault",
     caption: "When the government and a monopoly utility control access to power, can a demand for future electricity payments really be treated as an equal private transaction?",
-    credit: "Image by SEED Civic Partners",
+    credit: "Image by SEED VOICE",
   },
   inlineImage: {
     alt: "A diorama in which electricity prices and transmission lines pull a semiconductor plant away from the capital-region industrial ecosystem toward a regional power grid",
     caption: "A company's location is not merely the address of one factory. It is an ecosystem connecting workers, suppliers, research, logistics and infrastructure.",
-    credit: "Image by SEED Civic Partners",
+    credit: "Image by SEED VOICE",
   },
   additionalImages: [{
     src: "images/columns/electricity-prepayment-flow-en.svg",
     alt: "Infographic explaining a proposed KRW 20 trillion prepayment by Samsung Electronics and KRW 5 trillion by SK hynix, KEPCO grid investment, future bill offsets and safeguards",
     caption: "The reported flow of funds is separated from terms that remain unsettled and from the safeguards citizens should demand.",
-    credit: "Infographic by SEED Civic Partners",
+    credit: "Infographic by SEED VOICE",
   }],
   sections: [
     {

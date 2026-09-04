@@ -8,12 +8,12 @@ export const issue06: ColumnTranslation = {
   heroImage: {
     alt: `Political cartoon showing nominee Yong Hye-in holding on to both a National Assembly seat and a ministerial chair`,
     caption: `An AI-produced SEED column cartoon depicting the contradiction between rhetoric about equality and fairness and the attempt to retain both legislative and cabinet positions. This is not an actual scene.`,
-    credit: `AI cartoon by SEED Civic Partners`,
+    credit: `AI cartoon by SEED VOICE`,
   },
   inlineImage: {
     alt: `Editorial illustration contrasting an equality placard with two public offices associated with nominee Yong Hye-in`,
     caption: `Public office is not insurance for the survival of an individual politician or party. Equality is tested when a person refuses to demand an exception for herself. AI-produced editorial illustration; not an actual scene.`,
-    credit: `AI image by SEED Civic Partners`,
+    credit: `AI image by SEED VOICE`,
   },
   sections: [
     {

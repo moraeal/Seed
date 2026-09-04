@@ -10,18 +10,18 @@ export const briefingTranslations: Record<string, BriefingTranslation> = {
       {
         alt: "A public broadcaster's boardroom with several empty seats and a broadcast control room behind it",
         caption: "Major decisions on public-broadcasting leadership are proceeding before all the recommending bodies envisioned by law have filled their seats.",
-        credit: "Image by SEED Civic Partners",
+        credit: "Image by SEED VOICE",
       },
       {
         alt: "A print-style illustration of broadcasting authority leaving government hands and being grasped by several organizations while citizens watch",
         caption: "Reducing government influence is not the same as expanding citizen power. The organizations and boards receiving new authority must also face civic scrutiny.",
-        credit: "Illustration by SEED Civic Partners",
+        credit: "Illustration by SEED VOICE",
       },
       {
         src: "images/briefings/briefing-06-board-status-en.svg",
         alt: "Chart comparing statutory seats, appointments and vacancies on the KBS, Foundation for Broadcast Culture and EBS boards",
         caption: "As of September 3, 2026, none of the three boards was fully staffed. KBS had only eight of its fifteen seats filled.",
-        credit: "Chart by SEED Civic Partners",
+        credit: "Chart by SEED VOICE",
       },
     ],
     content: [
@@ -133,24 +133,24 @@ export const briefingTranslations: Record<string, BriefingTranslation> = {
       {
         alt: "Citizens examine a national ledger showing semiconductor tax revenue divided among public programs, future investment and debt management",
         caption: "The central issue in the 2027 budget is not spending alone. Government must disclose how much semiconductor-boom revenue it expects, where it will go, how much will be retained and how debt will be managed.",
-        credit: "Image by SEED Civic Partners",
+        credit: "Image by SEED VOICE",
       },
       {
         alt: "Citizens and independent reviewers separate budget documents for spending, future investment, reserve funds and government bonds",
         caption: "An optimistic revenue forecast is a plan, not money already collected. Citizens should examine both program results and the rules that apply if the forecast proves wrong.",
-        credit: "Image by SEED Civic Partners",
+        credit: "Image by SEED VOICE",
       },
       {
         src: "images/briefings/briefing-05-budget-balance-en.svg",
         alt: "Chart connecting growth in 2027 expenditure and revenue with the national tax forecast and the projected reduction in the managed fiscal deficit",
         caption: "The calculation in which spending rises 12.8% while the deficit shrinks depends on total revenue growing 30.4% and national tax revenue reaching KRW 584.4 trillion.",
-        credit: "Chart by SEED Civic Partners",
+        credit: "Chart by SEED VOICE",
       },
       {
         src: "images/briefings/briefing-05-future-fund-en.svg",
         alt: "Chart dividing the KRW 162.3 trillion Future Response Fund among program spending, reserve resources and reduced new bond issuance",
         caption: "The entire Future Response Fund is not program spending: KRW 45.4 trillion is allocated to programs, KRW 104.4 trillion to reserve resources and KRW 12.5 trillion to reducing new bond issuance.",
-        credit: "Chart by SEED Civic Partners",
+        credit: "Chart by SEED VOICE",
       },
     ],
     content: [
@@ -262,9 +262,9 @@ export const briefingTranslations: Record<string, BriefingTranslation> = {
     summary: "Gyeonggi Province is not currently insolvent. But issuing local bonds up to 99.6% of its ceiling, borrowing from public funds, budgeting only nine months for some essential programs, and carrying out major expenditure restructuring are unmistakable warning signs. The right approach is to remove exaggeration while demanding precise accountability.",
     author: "SEED Civic Briefing",
     images: [
-      { alt: "Illustration showing multiple warning lights in Gyeonggi Province’s finances, including local bonds, fund borrowing and shortages in essential budgets", caption: "The issue is not simply whether the province is technically bankrupt. Citizens should look at the speed of debt growth and how funding gaps were filled.", credit: "Infographic by SEED Civic Partners" },
-      { alt: "Flowchart showing Gyeonggi fiscal pressure from falling revenue to bond issuance, fund borrowing, budget shortages and expenditure restructuring", caption: "Falling tax revenue is only part of the story. The key question is whether borrowing and fund transfers still left essential programs underfunded.", credit: "Infographic by SEED Civic Partners" },
-      { alt: "Illustration contrasting political distribution of benefits with citizens demanding accountability for the use of taxes", caption: "SEED views citizens not as passive beneficiaries but as sovereign principals who entrust taxes and authority to government and demand results.", credit: "Infographic by SEED Civic Partners" },
+      { alt: "Illustration showing multiple warning lights in Gyeonggi Province’s finances, including local bonds, fund borrowing and shortages in essential budgets", caption: "The issue is not simply whether the province is technically bankrupt. Citizens should look at the speed of debt growth and how funding gaps were filled.", credit: "Infographic by SEED VOICE" },
+      { alt: "Flowchart showing Gyeonggi fiscal pressure from falling revenue to bond issuance, fund borrowing, budget shortages and expenditure restructuring", caption: "Falling tax revenue is only part of the story. The key question is whether borrowing and fund transfers still left essential programs underfunded.", credit: "Infographic by SEED VOICE" },
+      { alt: "Illustration contrasting political distribution of benefits with citizens demanding accountability for the use of taxes", caption: "SEED views citizens not as passive beneficiaries but as sovereign principals who entrust taxes and authority to government and demand results.", credit: "Infographic by SEED VOICE" },
     ],
     content: [
       "First, the conclusion: Gyeonggi Province has not become an insolvent local government unable to meet its obligations. At the end of 2025, debt as a share of the budget was 12.86%, below the metropolitan-government average of 14.61%. Calling the province already bankrupt is an exaggeration.",
@@ -297,8 +297,8 @@ export const briefingTranslations: Record<string, BriefingTranslation> = {
     summary: "Why have the sitting president’s criminal trials been suspended? This briefing explains Article 84 of the Constitution, the competing interpretations of the word ‘prosecution,’ and the current status of five criminal cases in language citizens can use.",
     author: "SEED Civic Briefing",
     images: [
-      { alt: "Law books, case files, scales and a stopped clock inside an institutional setting", caption: "The Article 84 debate is ultimately about how to protect both continuity of presidential duties and judicial accountability.", credit: "Image by SEED Civic Partners" },
-      { alt: "Sealed case files and a clock in an empty courtroom", caption: "Postponing a hearing does not end a case. Records and evidence should be preserved so accountability can resume after the presidential term.", credit: "Image by SEED Civic Partners" },
+      { alt: "Law books, case files, scales and a stopped clock inside an institutional setting", caption: "The Article 84 debate is ultimately about how to protect both continuity of presidential duties and judicial accountability.", credit: "Image by SEED VOICE" },
+      { alt: "Sealed case files and a clock in an empty courtroom", caption: "Postponing a hearing does not end a case. Records and evidence should be preserved so accountability can resume after the presidential term.", credit: "Image by SEED VOICE" },
     ],
     content: ["The five criminal trials involving the sitting president are currently paused because the courts have not set new hearing dates. This is not an acquittal, dismissal or disappearance of the cases. The allegations and defenses have not yet received final judicial determinations.", "The controversy begins with Article 84 of the Constitution, which says that the president shall not be subject to criminal ‘prosecution’ while in office except for insurrection or foreign aggression. The Constitution does not expressly say whether that term covers only the filing of a new indictment or also the continuation of a trial already under way."],
     sections: [

@@ -63,7 +63,7 @@ export const newsArticles: NewsArticle[] = [
   "category": "사법·시민권리",
   "date": "2026-09-04",
   "readMinutes": 7,
-  "title": "검찰청 해체 이후 미제 사건은 어디로?",
+  "title": "검찰청은 사라지는데, 미제 사건은 어디로 갑니까",
   "subtitle": "형사사법체계 전환을 한 달 앞두고 최대 20만 건 처리 우려가 제기됐습니다. 개혁의 성패는 조직의 간판이 아니라 시민의 권리로 판단해야 합니다.",
   "summary": "10월 2일 형사사법체계 전환을 앞두고 검찰의 미제 사건 상당수가 경찰과 새 수사기관으로 넘어갈 수 있다는 우려가 커지고 있습니다. 이미 과부하 상태인 경찰이 이 사건들을 감당하지 못하면 수사 지연의 비용은 피해자와 시민에게 돌아갑니다.",
   "keySentence": "권한은 나눌 수 있지만, 시민의 사건에 대한 국가의 책임까지 흩어져서는 안 됩니다.",
@@ -89,13 +89,13 @@ export const newsArticles: NewsArticle[] = [
     "src": "/images/news/news-08-police-case-backlog.webp",
     "alt": "수많은 사건 기록에 둘러싸여 업무를 처리하는 한국의 일선 수사관을 표현한 설명 이미지",
     "caption": "미제 사건은 서류 더미가 아닙니다. 사건마다 국가의 판단을 기다리는 시민이 있습니다. 실제 경찰관이나 수사 현장이 아닌 설명용 이미지입니다.",
-    "credit": "자료이미지 · 씨드시민파트너스 AI 제작"
+    "credit": "자료이미지 · 씨앗의 소리 AI 제작"
   },
   "inlineImage": {
     "src": "/images/briefings/briefing-01-justice.jpg",
     "alt": "법원과 수사기관을 상징하는 정의의 저울 이미지",
     "caption": "형사사법 개혁은 기관의 권한 배분뿐 아니라 사건 처리의 연속성과 시민의 권리구제를 보장해야 합니다.",
-    "credit": "자료이미지 · 씨드시민파트너스"
+    "credit": "자료이미지 · 씨앗의 소리"
   },
   "sections": [
     { "title": "먼저 확인된 사실", "paragraphs": [
@@ -163,13 +163,13 @@ export const newsArticles: NewsArticle[] = [
     "src": "/images/news/news-07-fiscal-path.webp",
     "alt": "한국 시민들이 거대한 국가 장부에서 도시와 산업으로 이어지는 재정 확대의 길을 살펴보는 상징 이미지",
     "caption": "2030년 1,000조 원을 향하는 재정계획은 성장의 길을 열 수 있지만, 그 길을 떠받칠 세입 전망과 지출 우선순위도 함께 검증해야 합니다. 실제 현장이 아닌 설명용 이미지입니다.",
-    "credit": "자료이미지 · 씨드시민파트너스 AI 제작"
+    "credit": "자료이미지 · 씨앗의 소리 AI 제작"
   },
   "inlineImage": {
     "src": "/images/news/news-07-revenue-stress-test.webp",
     "alt": "시민과 독립적인 검증자들이 반도체 경기의 상방과 하방 상황을 놓고 재정 지출의 우선순위를 점검하는 상징 이미지",
     "caption": "세수가 예상보다 적을 때 무엇을 지키고 무엇을 조정할지 미리 정하는 것이 책임 있는 재정운용입니다. 실제 검토회의 현장이 아닌 설명용 이미지입니다.",
-    "credit": "자료이미지 · 씨드시민파트너스 AI 제작"
+    "credit": "자료이미지 · 씨앗의 소리 AI 제작"
   },
   "sections": [
     {
@@ -238,13 +238,13 @@ export const newsArticles: NewsArticle[] = [
     "src": "/images/news/class-action-consumers-courthouse.webp",
     "alt": "법원 복도에서 소비자들과 기업 법률대리인이 마주 선 집단소송 설명 이미지",
     "caption": "집단소송은 흩어진 소액 피해를 하나의 절차로 모으지만, 법원은 대표성과 공통 쟁점, 소송의 적합성을 엄격하게 심사해야 합니다. 실제 사건 현장이 아닌 설명용 이미지입니다.",
-    "credit": "자료이미지 · 씨드시민파트너스 AI 제작"
+    "credit": "자료이미지 · 씨앗의 소리 AI 제작"
   },
   "inlineImage": {
     "src": "/images/news/class-action-claims-table.webp",
     "alt": "여러 시민의 영수증과 피해자료가 하나의 법률 사건으로 모이는 모습",
     "caption": "소액 피해는 한 사람에게는 소송비용보다 작을 수 있지만, 같은 피해가 반복됐다면 시장의 책임을 확인해야 할 공적 문제가 됩니다. 설명용 이미지입니다.",
-    "credit": "자료이미지 · 씨드시민파트너스 AI 제작"
+    "credit": "자료이미지 · 씨앗의 소리 AI 제작"
   },
   "sections": [
     {
@@ -353,14 +353,14 @@ export const newsArticles: NewsArticle[] = [
     "src": "/images/news/gs-retail-data-leak-hero.webp",
     "alt": "쇼핑 서비스 계정에서 시민의 개인정보가 외부로 흘러가는 구조를 설명한 이미지",
     "caption": "크리덴셜 스터핑은 다른 곳에서 확보된 계정정보를 반복 대입해 로그인한 뒤 회원정보를 빼내는 공격입니다. 실제 사건 현장이 아닌 설명용 이미지입니다.",
-    "credit": "자료이미지 · 씨드시민파트너스 AI 제작",
+    "credit": "자료이미지 · 씨앗의 소리 AI 제작",
     "sourceUrl": ""
   },
   "inlineImage": {
     "src": "/images/news/gs-retail-security-response.webp",
     "alt": "이상 로그인 탐지부터 차단과 시민 통지, 외부 검증까지 이어지는 보안 대응 절차",
     "caption": "책임 있는 대응은 이상징후 탐지, 공격 차단, 시민 통지와 독립적 검증까지 이어져야 합니다. 실제 GS리테일 보안실이 아닌 설명용 이미지입니다.",
-    "credit": "자료이미지 · 씨드시민파트너스 AI 제작",
+    "credit": "자료이미지 · 씨앗의 소리 AI 제작",
     "sourceUrl": ""
   },
   "sections": [
@@ -474,14 +474,14 @@ export const newsArticles: NewsArticle[] = [
     "src": "/images/columns/judicial-independence-courthouse.png",
     "alt": "행정부와 입법부 사이에 독립된 법원을 배치한 상징 이미지",
     "caption": "대법관 인선은 대통령·국회·대법원장 어느 한 기관도 독점하지 못하도록 권한을 나눈 헌법 절차입니다.",
-    "credit": "씨드시민파트너스 제작 이미지",
+    "credit": "씨앗의 소리 제작 이미지",
     "sourceUrl": ""
   },
   "inlineImage": {
     "src": "/images/columns/checks-and-balances.png",
     "alt": "입법 행정 사법의 균형을 나타낸 저울 이미지",
     "caption": "권력분립의 핵심은 각 기관이 서로의 권한을 지우지 못하게 하는 데 있습니다.",
-    "credit": "씨드시민파트너스 제작 이미지",
+    "credit": "씨앗의 소리 제작 이미지",
     "sourceUrl": ""
   },
   "sections": [
@@ -605,14 +605,14 @@ export const newsArticles: NewsArticle[] = [
     "src": "/images/news/basic-pension-counseling.png",
     "alt": "기초연금 상담을 받으며 서류를 살펴보는 노부부",
     "caption": "기초연금 개편은 추상적인 비율이 아니라 노후의 실제 생활과 연결된 문제입니다.",
-    "credit": "씨드시민파트너스 제작 이미지",
+    "credit": "씨앗의 소리 제작 이미지",
     "sourceUrl": ""
   },
   "inlineImage": {
     "src": "/images/news/basic-pension-working-senior.png",
     "alt": "생활비 영수증과 계산기를 살펴보는 일하는 고령자",
     "caption": "일해서 번 소득이 오히려 급여 중단으로 이어지는 ‘문턱 효과’를 줄이는 설계가 필요합니다.",
-    "credit": "씨드시민파트너스 제작 이미지",
+    "credit": "씨앗의 소리 제작 이미지",
     "sourceUrl": ""
   },
   "sections": [
@@ -718,13 +718,13 @@ export const newsArticles: NewsArticle[] = [
       src: "images/news/youth-career-fair.jpg",
       alt: "취업박람회에서 채용 담당자와 상담하는 한국 청년 구직자들",
       caption: "씨드뉴스 제작 자료이미지. 한국의 청년 취업박람회를 일반적으로 재구성한 장면이며, 한국일보 기사 속 실제 인물이나 행사 현장은 아닙니다.",
-      credit: "이미지: 씨드시민파트너스 · AI 생성",
+      credit: "이미지: 씨앗의 소리 · AI 생성",
     },
     inlineImage: {
       src: "images/news/youth-career-planning.jpg",
       alt: "함께 채용정보와 진로 계획을 살펴보는 한국 청년들",
       caption: "씨드뉴스 제작 자료이미지. 청년들이 채용정보와 경력 계획을 함께 검토하는 모습을 일반적으로 재구성했습니다.",
-      credit: "이미지: 씨드시민파트너스 · AI 생성",
+      credit: "이미지: 씨앗의 소리 · AI 생성",
     },
     sections: [
       {

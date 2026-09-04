@@ -2,7 +2,7 @@ export const AUDITION_URL = "https://moraeal.github.io/moraeal/";
 export const MAGAZINE_URL = "https://jimd.kr/magazine";
 
 export const navItems = [
-  "씨드시민파트너스 소개",
+  "씨앗의 소리 소개",
   "시민제안",
   "씨앗공론장",
   "씨앗캠페인",

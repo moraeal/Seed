@@ -45,7 +45,7 @@ const bulletList = (items = []) => items.length ? `<ul>${items.map((item) => `<l
 
 function articleBody(route) {
   if (route.path === "/en") return [
-    `<section><h2>About SEED Civic Partners</h2><p>${escapeHtml(englishContent.home.description)}</p></section>`,
+    `<section><h2>About SEED VOICE</h2><p>${escapeHtml(englishContent.home.description)}</p></section>`,
     `<section><h2>Our Core Values</h2>${bulletList(englishContent.home.pillars.map(([title, description]) => `${title}: ${description}`))}</section>`,
     `<section><h2>Core Programs</h2>${bulletList(englishContent.home.programs.map(([title, description]) => `${title}: ${description}`))}</section>`,
     `<section><h2>Political and Organizational Independence</h2><p>${escapeHtml(englishContent.about.independence)}</p></section>`,
@@ -205,7 +205,7 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
   <channel>
     <title>${SITE_NAME}</title>
     <link>${SITE_URL}/</link>
-    <description>확인된 사실과 맥락, 분명한 관점으로 한국 정치·사회 이슈를 전하는 씨드 시민저널의 최신 콘텐츠입니다.</description>
+    <description>확인된 사실과 맥락, 분명한 관점으로 한국 정치·사회 이슈를 전하는 씨앗의 소리 최신 콘텐츠입니다.</description>
     <language>ko-KR</language>
     <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml" />
     <lastBuildDate>${rfc822(feedRoutes[0].lastModified)}</lastBuildDate>

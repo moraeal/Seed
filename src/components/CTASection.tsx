@@ -11,7 +11,7 @@ export default function CTASection() {
             자유와 책임의 시민언어를 다시 심겠습니다.
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-8 text-ivory/78">
-            씨드시민파트너스는 작은 씨앗에서 시작합니다. 그러나 이 씨앗은 시민이 다시
+            씨앗의 소리는 작은 씨앗에서 시작합니다. 그러나 이 씨앗은 시민이 다시
             공공성의 주체로 자라나는 토양이 될 것입니다.
           </p>
         </div>

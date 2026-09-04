@@ -8,12 +8,12 @@ export const issue05: ColumnTranslation = {
   heroImage: {
     alt: `Symbolic image of an independent courthouse positioned between buildings representing two other branches of power`,
     caption: `Separation of powers is not a suggestion that institutions get along. It is a constitutional safeguard designed to prevent any branch from dominating the others.`,
-    credit: `Image by SEED Civic Partners`,
+    credit: `Image by SEED VOICE`,
   },
   inlineImage: {
     alt: `Symbolic image of three institutions at equal height with a balance scale`,
     caption: `No legislative, executive or judicial power owns the Constitution. The standard of checks and balances must not change with the government of the day.`,
-    credit: `Image by SEED Civic Partners`,
+    credit: `Image by SEED VOICE`,
   },
   sections: [
     {

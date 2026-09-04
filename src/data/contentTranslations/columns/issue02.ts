@@ -2,7 +2,7 @@ import type { ColumnTranslation } from "../types";
 
 export const issue02: ColumnTranslation = {
   title: `A Strong Society Beyond a Strong State`,
-  subtitle: `What Venezuela’s state failure asks of Korean civil society and SEED Civic Partners`,
+  subtitle: `What Venezuela’s state failure asks of Korean civil society and SEED VOICE`,
   author: `Park Kyung-seuk`,
   summary: `Venezuela’s collapse cannot be explained by the single word “socialism.” Oil dependence, concentration of power, policy errors and the weakening of institutions and civil society that could have corrected those errors all mattered. The lesson for Korea is not to imitate a fear slogan, but to preserve the capacity of society to restrain and correct the state.`,
   heroImage: {
@@ -21,7 +21,7 @@ export const issue02: ColumnTranslation = {
       paragraphs: [
         `I do not want to reduce Venezuela to the sentence “socialism ruined the country.” I have spent years moving between civic activism, public-interest work, corporate social contribution and public institutions. Those experiences repeatedly taught me that good intentions alone do not protect the public interest.`,
         `I do not believe the state is unnecessary. The state should be capable: it must enforce the rule of law and public safety and provide a basic safety net for the vulnerable. Markets also need fair rules and responsibility. But problems begin when the state, in the name of good intentions, starts replacing society, directing markets and substituting its judgment for that of citizens. Protecting freedom does not require abolishing the state; it requires limiting a capable state while strengthening the society that can hold it accountable.`,
-        `Korea should not be equated with Venezuela. Its industrial structure and institutions are much stronger. But the question “Who makes government correct a bad policy?” is relevant everywhere. SEED Civic Partners begins from that question.`,
+        `Korea should not be equated with Venezuela. Its industrial structure and institutions are much stronger. But the question “Who makes government correct a bad policy?” is relevant everywhere. SEED VOICE begins from that question.`,
       ],
       quote: [`We do not need a society in which the state solves every problem,`, `but a society in which citizens make the state solve problems properly.`],
     },
@@ -76,7 +76,7 @@ export const issue02: ColumnTranslation = {
       paragraphs: [
         `Korea’s industrialization greatly strengthened both the state and the market. Democratization constrained state power through elections, constitutional rules and institutions. But whether civil society became sufficiently self-reliant after democratization is a separate question. The capacity to discover, investigate and solve citizens’ problems without dependence on government budgets, party frames or corporate patronage still needs to grow. That is why I describe the next task after industrialization and democratization as “citizenization.”`,
         `Citizenization is not simply an activism of asking the state to do more. It means citizens learning to read data and budgets, evaluate public institutions, question corporate responsibility, investigate local problems and develop alternatives themselves. Citizens investigate, experiment and document before asking the state or market to respond.`,
-        `SEED Civic Partners should therefore be a functional civic organization rather than an auxiliary of a political party. It translates freedom and responsibility, the rule of law, market vitality and voluntary community into the language of ordinary life. Its starting points are civic monitoring and civic briefings: verify facts first, explain issues clearly, criticize failures and recognize good policy regardless of which government produced it.`,
+        `SEED VOICE should therefore be a functional civic organization rather than an auxiliary of a political party. It translates freedom and responsibility, the rule of law, market vitality and voluntary community into the language of ordinary life. Its starting points are civic monitoring and civic briefings: verify facts first, explain issues clearly, criticize failures and recognize good policy regardless of which government produced it.`,
       ],
       quote: [`We do not organize citizens merely to fight the state.`, `We strengthen citizens so the state and market work better.`],
     },

@@ -8,12 +8,12 @@ export const issue07: ColumnTranslation = {
   heroImage: {
     alt: `Editorial cartoon of Nepali citizens monitoring a Himalayan glacier collapse and helping residents evacuate`,
     caption: `The answer to climate risk is not to leave citizens as passive victims. A strong society is built by citizens who share warnings, help one another evacuate and demand accountability from government and business.`,
-    credit: `AI editorial cartoon by SEED Civic Partners`,
+    credit: `AI editorial cartoon by SEED VOICE`,
   },
   inlineImage: {
     alt: `Editorial cartoon of a Nepal school community evacuating students uphill after an upstream phone warning`,
     caption: `At one Nepal school, a resident’s call and the staff’s immediate judgment arrived before the formal warning system and saved more than 900 people. Civic connection and responsibility form the closest layer of disaster protection.`,
-    credit: `AI editorial cartoon by SEED Civic Partners`,
+    credit: `AI editorial cartoon by SEED VOICE`,
   },
   sections: [
     {

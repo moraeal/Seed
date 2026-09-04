@@ -184,11 +184,11 @@ def render_logo(progress):
     draw = ImageDraw.Draw(image)
     factor = LOGO_FACTOR
     draw.ellipse((2 * factor, 2 * factor, 54 * factor, 54 * factor), fill=STROKE)
-    draw.text((66 * factor, 27 * factor), "씨드시민파트너스", font=wordmark_font, fill="#174C3A", anchor="ls")
+    draw.text((66 * factor, 27 * factor), "씨앗의 소리", font=wordmark_font, fill="#174C3A", anchor="ls")
     draw_tracking(
         draw,
         (67 * factor, 43 * factor),
-        "SEED CIVIC PARTNERS",
+        "SEED VOICE",
         english_font,
         "#656B68",
         1.45 * factor,

@@ -17,7 +17,7 @@ export default function Footer() {
         </div>
         <div className="grid grid-cols-2 gap-6 border-t border-white/15 pt-5 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0"><div><p className="text-[10px] font-extrabold tracking-[.18em] text-white/35">READ</p><nav className="mt-3 grid gap-2 text-sm text-white/65"><Link to="/news">{ko ? "씨드뉴스" : "SEED News"}</Link><Link to="/briefings">{ko ? "시민브리핑" : "Civic Briefings"}</Link><Link to="/columns">{ko ? "씨앗의 소리" : "Voice of the Seed"}</Link></nav></div><div><p className="text-[10px] font-extrabold tracking-[.18em] text-white/35">JOURNAL</p><nav className="mt-3 grid gap-2 text-sm text-white/65"><Link to="/about">{ko ? "저널 소개" : "About the Journal"}</Link><Link to="/founding-statement">{ko ? "창립취지문" : "Founding Statement"}</Link></nav></div></div>
       </div>
-      <div className="mt-7 flex flex-wrap justify-between gap-3 border-t border-white/10 pt-4 text-[11px] text-white/35"><span>© 2026 SEED Civic Partners</span><span>{ko ? "사실은 정확하게, 관점은 분명하게" : "Accurate in fact, clear in viewpoint"}</span></div>
+      <div className="mt-7 flex flex-wrap justify-between gap-3 border-t border-white/10 pt-4 text-[11px] text-white/35"><span>{ko ? "© 2026 씨앗의 소리" : "© 2026 SEED VOICE"}</span><span>{ko ? "사실은 정확하게, 관점은 분명하게" : "Accurate in fact, clear in viewpoint"}</span></div>
     </div>
   </footer>;
 }

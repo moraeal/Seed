@@ -8,17 +8,17 @@ export const issue09: ColumnTranslation = {
   heroImage: {
     alt: "A paper-model community and green seed compressed between a giant market machine and a government filing system",
     caption: "Markets must not overpower society, but neither should the state that restrains markets occupy society's place.",
-    credit: "Image by SEED Civic Partners",
+    credit: "Image by SEED VOICE",
   },
   inlineImage: {
     alt: "Korean woodblock-style image of citizens' hands protecting a seed and civic commons between market and state power",
     caption: "The power that keeps society independent comes from citizens who connect and take responsibility, not organizations manufactured by the state.",
-    credit: "Image by SEED Civic Partners",
+    credit: "Image by SEED VOICE",
   },
   additionalImages: [{
     alt: "Diagram linking the Basic Society Committee, rural basic income, the National Growth Fund, direct LH development and social-solidarity economy support to state-centered planning and civic oversight tests",
     caption: "Each policy has its own rationale. Together, they reveal a common direction: government increasingly designs basic life, consumption, investment, land and civic organizations.",
-    credit: "Diagram by SEED Civic Partners",
+    credit: "Diagram by SEED VOICE",
   }],
   sections: [
     {

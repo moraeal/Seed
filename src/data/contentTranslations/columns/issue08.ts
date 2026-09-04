@@ -7,23 +7,23 @@ export const issue08: ColumnTranslation = {
   heroImage: {
     alt: `Diverse citizens submit ideas through a transparent participation portal while an administrative system sorts them behind the scenes`,
     caption: `The wider a digital participation portal becomes, the more transparent it must be about who classifies citizens’ views and which proposals become policy agendas.`,
-    credit: `Image by SEED Civic Partners`,
+    credit: `Image by SEED VOICE`,
   },
   inlineImage: {
     alt: `Citizens deliberate around a table while large institutional hands adjust their documents and microphones`,
     caption: `Giving citizens a chance to speak is not the same as giving them control over the agenda, evidence and outcome. The power to design deliberation also requires scrutiny.`,
-    credit: `Image by SEED Civic Partners`,
+    credit: `Image by SEED VOICE`,
   },
   additionalImages: [
     {
       alt: `Diagram showing citizens’ proposals moving through Everyone’s Square, AI classification, deliberative programs and the National Civic Participation Commission to government, the National Assembly and regional institutions`,
       caption: `This flow is reconstructed from the government’s plans for a participation platform and the National Civic Participation Commission. Details may change during legislation and implementation.`,
-      credit: `Diagram by SEED Civic Partners`,
+      credit: `Diagram by SEED VOICE`,
     },
     {
       alt: `A large central institutional hub connected to regional organizations while independent citizens stand outside the network holding lights`,
       caption: `When a central platform, a commission, regional bodies and support programs are joined, civic participation can develop into a nationwide administrative network.`,
-      credit: `Image by SEED Civic Partners`,
+      credit: `Image by SEED VOICE`,
     },
   ],
   sections: [

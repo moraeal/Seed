@@ -12,7 +12,7 @@ export default function HeroSection() {
             자유와 책임의 시민사회 플랫폼
           </p>
           <h1 className="text-5xl font-extrabold leading-tight text-green-deep sm:text-6xl lg:text-7xl">
-            씨드시민파트너스
+            씨앗의 소리
             <span className="mt-4 block text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
               자유와 책임으로 자라는 시민운동
             </span>
