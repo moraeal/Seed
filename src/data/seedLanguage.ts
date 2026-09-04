@@ -35,13 +35,13 @@ const citizenKo: SeedLanguageArticle = {
     "AI로 개인의 능력이 커질수록 기술교육이나 이념교육보다 자유·책임·공공성을 함께 키우는 시민의 성장이 중요해집니다.",
   ],
   heroImage: {
-    src: "images/seed-language/citizen-as-seed-hero.webp",
+    src: "images/seed-language/citizen-as-seed-hero-diverse.webp",
     alt: "회색 도시의 익명적 군중에서 다양한 이웃과 나무를 심는 시민들로 이어지는 수채화",
     caption: "시민은 주어진 자리에 머무는 이름이 아니라, 이웃과 공공의 문제를 발견하며 성장하는 존재입니다.",
     credit: "씨앗의 소리 AI 제작 이미지",
   },
   inlineImage: {
-    src: "images/seed-language/citizen-as-seed-ai.webp",
+    src: "images/seed-language/citizen-as-seed-ai-diverse.webp",
     alt: "AI와 로봇을 고립이 아닌 공동체 문제 해결에 사용하는 다양한 세대의 시민들",
     caption: "AI는 개인의 능력을 키워주지만 그 능력을 어디에 사용할지는 결정해주지 않습니다. 기술이 커질수록 시민성도 함께 자라야 합니다.",
     credit: "씨앗의 소리 AI 제작 이미지",
