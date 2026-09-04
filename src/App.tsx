@@ -3,6 +3,7 @@ import { AuthProvider } from "./auth";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import RouteMetadata from "./components/RouteMetadata";
+import ScrollToTop from "./components/ScrollToTop";
 import NewsletterSignup from "./components/NewsletterSignup";
 import { LanguageProvider } from "./i18n";
 import About from "./pages/About";
@@ -36,6 +37,7 @@ function AppShell() {
   return (
     <div className="min-h-screen bg-paper text-charcoal">
       <RouteMetadata />
+      <ScrollToTop />
       <Header />
       <main>
         <Routes>
