@@ -37,17 +37,27 @@ export default function SeedLanguage() {
               <p className="font-semibold text-navy">{ko ? "씨앗언어는 진영화된 말의 쓰임을 살피고, 왜곡되거나 잊힌 본래 의미를 찾아 시민의 삶과 책임에 맞는 새로운 정의를 제안하는 작업이 될 것입니다." : "SEED Language will examine how such words became partisan, recover meanings that were distorted or forgotten, and propose definitions grounded in citizens’ lives and responsibilities."}</p>
             </div>
 
-            <p className="mt-7 border-t border-green-deep/15 pt-5 text-sm font-extrabold text-green-deep">{ko ? "첫 번째 단어, 시민에서 시작합니다." : "We begin with our first word: citizen."}</p>
-          </div>
-        </section>
+            <div className="mt-7 border-t-2 border-navy pt-5">
+              <div className="flex items-end justify-between gap-4 pb-3">
+                <div>
+                  <p className="section-kicker">WORDS IN QUESTION</p>
+                  <h2 className="editorial-title mt-1 text-2xl font-bold text-navy">{ko ? "씨앗언어 읽기" : "Read SEED Language"}</h2>
+                </div>
+                <span className="text-sm font-extrabold text-green-deep">{articles.length}</span>
+              </div>
 
-        <section className="mt-10" aria-labelledby="seed-language-articles">
-          <div className="flex items-end justify-between gap-4 border-b-2 border-navy pb-4"><div><p className="section-kicker">WORDS IN QUESTION</p><h2 id="seed-language-articles" className="editorial-title mt-2 text-3xl font-bold text-navy">{ko ? "씨앗언어 읽기" : "Read SEED Language"}</h2></div><span className="text-sm font-extrabold text-green-deep">{articles.length}</span></div>
-          <div className="divide-y divide-green-deep/12">
-            {articles.map((article) => <Link key={article.slug} to={`/seed-language/${article.slug}`} className="group grid gap-5 py-7 md:grid-cols-[16rem_1fr] md:items-center">
-              <div className="overflow-hidden bg-green-pale"><img src={`${import.meta.env.BASE_URL}${article.heroImage.src}`} alt={article.heroImage.alt} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.025]"/></div>
-              <div><div className="flex flex-wrap items-center gap-3 text-xs text-charcoal/45"><span className="rounded-full bg-green-pale px-2.5 py-1 font-extrabold text-green-deep">{article.term}</span><time>{article.date.replace(/-/g, ".")}</time><span className="inline-flex items-center gap-1"><Clock size={13}/>{ko ? `${article.readMinutes}분 읽기` : `${article.readMinutes} min read`}</span></div><h3 className="editorial-title mt-3 text-2xl font-bold leading-snug text-navy group-hover:text-green-deep sm:text-3xl">{article.title}</h3><p className="mt-3 line-clamp-2 text-sm leading-7 text-charcoal/60">{article.summary}</p><span className="mt-4 inline-flex items-center gap-1.5 text-sm font-extrabold text-green-deep">{ko ? "글 읽기" : "Read article"}<ArrowRight size={15}/></span></div>
-            </Link>)}
+              <div className="divide-y divide-green-deep/12">
+                {articles.map((article) => <Link key={article.slug} to={`/seed-language/${article.slug}`} className="group grid gap-4 py-5 sm:grid-cols-[11rem_1fr] sm:items-center">
+                  <div className="overflow-hidden bg-green-pale"><img src={`${import.meta.env.BASE_URL}${article.heroImage.src}`} alt={article.heroImage.alt} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.025]"/></div>
+                  <div>
+                    <div className="flex flex-wrap items-center gap-3 text-xs text-charcoal/45"><span className="rounded-full bg-green-pale px-2.5 py-1 font-extrabold text-green-deep">{article.term}</span><time>{article.date.replace(/-/g, ".")}</time><span className="inline-flex items-center gap-1"><Clock size={13}/>{ko ? `${article.readMinutes}분 읽기` : `${article.readMinutes} min read`}</span></div>
+                    <h3 className="editorial-title mt-2 text-xl font-bold leading-snug text-navy group-hover:text-green-deep sm:text-2xl">{article.title}</h3>
+                    <p className="mt-2 line-clamp-2 text-sm leading-6 text-charcoal/60">{article.summary}</p>
+                    <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-extrabold text-green-deep">{ko ? "글 읽기" : "Read article"}<ArrowRight size={15}/></span>
+                  </div>
+                </Link>)}
+              </div>
+            </div>
           </div>
         </section>
       </main>
