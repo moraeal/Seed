@@ -138,13 +138,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-ivory py-12 sm:py-16" aria-labelledby="citizens-as-seeds-title">
-        <div className="container-page border-y-2 border-green-deep py-8">
+      <section className="bg-[#E7E9E2] py-8 sm:py-10" aria-labelledby="citizens-as-seeds-title">
+        <div className="container-page border-y-2 border-green-deep py-5">
           <p className="section-kicker">CITIZENS AS SEEDS</p>
           <h2 id="citizens-as-seeds-title" className="editorial-title mt-3 text-2xl font-bold text-navy sm:text-3xl">
             {ko ? "우리는 시민을 씨앗으로 봅니다" : "We See Every Citizen as a Seed"}
           </h2>
-          <p className="mt-3 max-w-4xl text-sm leading-7 text-charcoal/62">
+          <p className="mt-2 text-sm leading-6 text-charcoal/62 lg:whitespace-nowrap">
             {ko
               ? "시민은 자유와 책임을 배우고 관계 속에서 자라며 사회를 변화시키는 존재입니다. 그래서 씨앗의 소리는 성장 가능성과 생명을 품은 시민을 ‘씨앗’이라고 부릅니다."
               : "Citizens learn freedom and responsibility, grow through relationships, and change society. SEED VOICE therefore calls each citizen a seed: a living source of possibility and growth."}
@@ -166,8 +166,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-ivory py-12 sm:py-16">
-        <div className="container-page grid gap-8 border-y-2 border-green-deep py-8 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="bg-[#E7E9E2] py-8 sm:py-10">
+        <div className="container-page grid gap-5 border-y-2 border-green-deep py-5 lg:grid-cols-[1fr_auto] lg:items-center">
           <div><p className="section-kicker">OUR EDITORIAL STANDARD</p><h2 className="editorial-title mt-3 text-2xl font-bold text-navy sm:text-3xl">{ko ? "사실은 정확하게, 관점은 분명하게, 시민에게는 책임 있게" : "Accurate in fact, clear in viewpoint, accountable to citizens"}</h2><p className="mt-3 max-w-4xl text-sm leading-7 text-charcoal/62">{ko ? "씨앗의 소리는 기계적 중립과 진영의 확신 사이에서, 근거를 확인하고 자유·법치·책임의 관점으로 공공의 문제를 해석합니다." : "SEED VOICE verifies evidence and interprets public affairs through freedom, the rule of law, and civic responsibility."}</p></div>
           <Link to="/about" className="button-primary shrink-0">{ko ? "소개 읽기" : "About"}<ArrowRight size={16}/></Link>
         </div>
