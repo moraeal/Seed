@@ -13,7 +13,16 @@ export default function SeedLanguage() {
       <header className="border-b border-green-deep/15 bg-ivory py-12 sm:py-16">
         <div className="container-page max-w-5xl">
           <p className="section-kicker">SEED LANGUAGE</p>
-          <h1 className="editorial-title mt-4 text-4xl font-bold leading-tight text-navy sm:text-6xl">{ko ? "씨앗언어" : "SEED Language"}</h1>
+          <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-stretch sm:justify-between">
+            <h1 className="editorial-title flex items-center text-4xl font-bold leading-tight text-navy sm:text-6xl">{ko ? "씨앗언어" : "SEED Language"}</h1>
+            <div className="flex items-center gap-4 bg-green-deep px-5 py-4 text-white sm:min-w-72 sm:px-6">
+              <BookOpenText size={28} className="shrink-0 text-gold-light" />
+              <div>
+                <p className="text-[11px] font-extrabold tracking-[.16em] text-gold-light">WORDS IN QUESTION</p>
+                <p className="editorial-title mt-1 text-xl font-bold leading-tight">{ko ? "씨앗언어 읽기" : "Read SEED Language"}</p>
+              </div>
+            </div>
+          </div>
           <p className="mt-5 max-w-3xl border-l-2 border-gold pl-6 text-lg leading-8 text-charcoal/70 sm:text-xl">
             {ko ? "진영이 독점한 시민사회의 언어를 해체하고, 본래의 의미를 되살려 시민이 스스로 생각하고 말할 수 있는 씨앗의 언어로 다시 구성합니다." : "We will examine civic language captured by partisan camps, recover its original meaning, and rebuild it as a language citizens can use to think and speak for themselves."}
           </p>
@@ -21,15 +30,7 @@ export default function SeedLanguage() {
       </header>
 
       <main className="container-page max-w-5xl py-10 sm:py-14">
-        <section className="grid overflow-hidden border-y-2 border-green-deep bg-white lg:grid-cols-[.7fr_1.3fr]">
-          <div className="flex min-h-56 flex-col justify-between bg-green-deep p-7 text-white sm:p-9">
-            <BookOpenText size={34} className="text-gold-light" />
-            <div>
-              <p className="text-xs font-extrabold tracking-[.18em] text-gold-light">WORDS IN QUESTION</p>
-              <h2 className="editorial-title mt-3 text-3xl font-bold leading-tight">{ko ? "씨앗언어 읽기" : "Read SEED Language"}</h2>
-            </div>
-          </div>
-
+        <section className="overflow-hidden border-y-2 border-green-deep bg-white">
           <div className="p-7 sm:p-9">
             <Quote size={26} className="text-gold" />
             <div className="mt-4 space-y-4 text-base leading-8 text-charcoal/70">
