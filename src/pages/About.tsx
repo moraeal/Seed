@@ -1,4 +1,3 @@
-import FigureCaption from "../components/FigureCaption";
 import { useLanguage } from "../i18n";
 
 type Section = { title: string; paragraphs: string[] };
@@ -8,8 +7,6 @@ const copy = {
     kicker: "ABOUT SEED VOICE",
     title: "한 사람의 씨앗이 시작한 독립 시민미디어",
     lead: "한 시민의 질문과 판단이 세상을 바꾸는 시작이 될 수 있다고 믿습니다. 씨앗의 소리는 작아져 있던 한 사람이 자기 목소리를 되찾고, 다른 시민의 가능성을 깨우기 위해 시작한 1인 시민미디어입니다.",
-    imageAlt: "한 시민의 생각이 씨앗과 잎으로 자라 여러 시민의 공론장으로 이어지는 따뜻한 수채화",
-    imageCaption: "한 사람의 질문에서 시작된 작은 생각의 씨앗은 기록과 대화를 통해 더 많은 시민의 가능성으로 자라납니다.",
     sections: [
       {
         title: "더 많은 정보, 더 적은 판단",
@@ -60,8 +57,6 @@ const copy = {
     kicker: "ABOUT SEED VOICE",
     title: "An independent civic journal, begun by one citizen as a seed",
     lead: "We believe one citizen’s questions and judgment can become the beginning of change. SEED VOICE is a one-person civic publication created by someone who had learned to make himself small—and decided to recover his own voice while awakening that possibility in others.",
-    imageAlt: "Warm watercolor of one citizen’s ideas growing into seeds, leaves, and a public space shared by many citizens",
-    imageCaption: "A small seed of thought, beginning with one person’s question, can grow through writing and dialogue into possibility for many citizens.",
     sections: [
       {
         title: "More information, less independent judgment",
@@ -126,10 +121,17 @@ export default function About() {
 
       <main className="py-8 sm:py-10">
         <article className="container-page max-w-5xl">
-          <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(20,54,43,.10)]">
-            <img src={`${import.meta.env.BASE_URL}images/about/seed-journal-origin-watercolor.webp`} alt={content.imageAlt} className="aspect-[16/9] w-full object-cover" />
-            <FigureCaption caption={content.imageCaption} credit="AI image by SEED Civic Partners" />
-          </figure>
+          <section className="border-y border-green-deep/15 bg-[#F1F2EC] px-6 py-7 sm:px-10 sm:py-8">
+            <div className="grid gap-7 sm:grid-cols-[150px_1fr] sm:items-center sm:gap-10">
+              <img src={`${import.meta.env.BASE_URL}images/about/park-kyung-seok.jpg`} alt={content.founderName} className="aspect-[3/4] w-32 border-4 border-white object-cover shadow-md sm:w-[150px]" />
+              <div>
+                <p className="section-kicker">{content.founderKicker}</p>
+                <h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{content.founderName}</h2>
+                <p className="mt-2 text-sm font-bold text-green-deep/75">{content.founderRole}</p>
+                <p className="mt-4 max-w-2xl text-base leading-7 text-charcoal/68">{content.founderBio}</p>
+              </div>
+            </div>
+          </section>
 
           <div className="mx-auto mt-10 max-w-3xl sm:mt-12">
             {content.sections.map((section, index) => (
@@ -147,17 +149,6 @@ export default function About() {
             <p className="text-[17px] leading-[1.82] text-charcoal/75 sm:text-lg">{content.closing}</p>
           </div>
 
-          <section className="mt-12 border-y border-green-deep/15 bg-[#F1F2EC] px-6 py-7 sm:mt-16 sm:px-10 sm:py-8">
-            <div className="grid gap-7 sm:grid-cols-[150px_1fr] sm:items-center sm:gap-10">
-              <img src={`${import.meta.env.BASE_URL}images/about/park-kyung-seok.jpg`} alt={content.founderName} className="aspect-[3/4] w-32 border-4 border-white object-cover shadow-md sm:w-[150px]" />
-              <div>
-                <p className="section-kicker">{content.founderKicker}</p>
-                <h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{content.founderName}</h2>
-                <p className="mt-2 text-sm font-bold text-green-deep/75">{content.founderRole}</p>
-                <p className="mt-4 max-w-2xl text-base leading-7 text-charcoal/68">{content.founderBio}</p>
-              </div>
-            </div>
-          </section>
         </article>
       </main>
     </div>

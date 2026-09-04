@@ -140,23 +140,24 @@ export default function Home() {
 
       <section className="pb-12 sm:pb-16" aria-labelledby="citizens-as-seeds-title">
         <div className="container-page">
-          <div className="relative isolate min-h-[230px] overflow-hidden border-y-2 border-green-deep bg-[#fbf4e5] sm:min-h-[220px]">
-            <img
-              src={resolveImageSrc("images/support/founding-partners-watercolor.webp")}
-              alt="서로 다른 청년들이 함께 웃으며 이야기를 나누는 모습"
-              className="absolute inset-0 h-full w-full object-cover object-[67%_50%]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#fffaf0] via-[#fffaf0]/95 to-[#fffaf0]/20 sm:via-[#fffaf0]/88 sm:to-transparent" />
-            <div className="relative z-10 flex min-h-[230px] max-w-[82%] flex-col justify-center px-6 py-7 sm:min-h-[220px] sm:max-w-[66%] sm:px-10 lg:max-w-[61%] lg:px-12">
-              <p className="section-kicker">CITIZENS AS SEEDS</p>
-              <h2 id="citizens-as-seeds-title" className="editorial-title mt-2 text-[1.75rem] font-bold leading-tight text-navy sm:text-[2.15rem]">
-                {ko ? "우리는 시민을 씨앗으로 봅니다" : "We See Every Citizen as a Seed"}
-              </h2>
-              <p className="mt-3 max-w-3xl text-[13px] font-medium leading-6 text-charcoal/72 sm:text-[15px] sm:leading-7">
-                {ko
-                  ? "시민은 자유와 책임을 배우고 관계 속에서 자라며 사회를 변화시키는 존재입니다. 그래서 씨앗의 소리는 성장 가능성과 생명을 품은 시민을 ‘씨앗’이라고 부릅니다."
-                  : "Citizens learn freedom and responsibility, grow through relationships, and change society. SEED VOICE therefore calls each citizen a seed: a living source of possibility and growth."}
-              </p>
+          <div className="overflow-hidden border-y-2 border-green-deep bg-[#fffaf0]">
+            <div className="grid min-h-[230px] sm:min-h-[220px] md:grid-cols-[150px_1fr]">
+              <div className="flex items-center justify-between bg-green-deep px-6 py-5 text-[#fffaf0] md:flex-col md:items-start md:justify-center md:px-8">
+                <span className="text-[10px] font-extrabold tracking-[.24em] text-gold">CITIZENS</span>
+                <span aria-hidden="true" className="editorial-title text-4xl font-bold tracking-[-.06em] text-white/95 md:text-5xl">SEED</span>
+              </div>
+              <div className="relative flex flex-col justify-center px-6 py-8 sm:px-10 lg:px-14">
+                <div aria-hidden="true" className="absolute inset-y-7 left-0 w-px bg-gold/70" />
+                <p className="text-[10px] font-extrabold tracking-[.22em] text-green-mid">CITIZENS AS SEEDS</p>
+                <h2 id="citizens-as-seeds-title" className="editorial-title mt-2 max-w-4xl text-[1.85rem] font-bold leading-tight text-navy sm:text-[2.3rem]">
+                  {ko ? "우리는 시민을 씨앗으로 봅니다" : "We See Every Citizen as a Seed"}
+                </h2>
+                <p className="mt-3 max-w-4xl text-[14px] font-medium leading-7 text-charcoal/70 sm:text-[15px]">
+                  {ko
+                    ? "시민은 자유와 책임을 배우고 관계 속에서 자라며 사회를 변화시키는 존재입니다. 그래서 씨앗의 소리는 성장 가능성과 생명을 품은 시민을 ‘씨앗’이라고 부릅니다."
+                    : "Citizens learn freedom and responsibility, grow through relationships, and change society. SEED VOICE therefore calls each citizen a seed: a living source of possibility and growth."}
+                </p>
+              </div>
             </div>
           </div>
         </div>
