@@ -55,7 +55,7 @@ const staticRoutes: SeoRoute[] = [
   { path: "/monitoring", title: "공익감시 | 씨드시민파트너스", description: "공익조직과 공공제도가 시민에게 권한과 재정, 성과를 충분히 설명하는지 근거를 바탕으로 점검합니다.", type: "website", lastModified: newest(publicInterestWatchCases.map((item) => item.updatedAt)) },
   { path: "/proposals", title: "시민제안 | 씨드시민파트너스", description: "시민의 문제의식을 구체적인 제도와 정책의 제안으로 키우는 씨드시민파트너스의 제안 공간입니다.", type: "website", lastModified: latestDate },
   { path: "/founding-statement", title: "창립취지문 | 씨드 시민저널", description: "자유로운 시민과 책임 있는 공익, 강한 시민사회를 지향하는 씨드시민파트너스의 창립취지문 전문입니다.", type: "article", lastModified: latestDate, author: "씨드시민파트너스", section: "창립취지문" },
-  { path: "/about", title: "저널 소개 | 씨드 시민저널", description: "사실과 해석을 구분하고 자유와 책임의 관점으로 공공의 문제를 살피는 씨드 시민저널을 소개합니다.", type: "website", lastModified: latestDate },
+  { path: "/about", title: "씨드저널을 시작하며 | 씨드저널", description: "한 사람의 씨앗이 시작한 독립 시민미디어, 씨드저널의 출발과 AI 활용 원칙을 소개합니다.", type: "website", lastModified: latestDate },
 ];
 
 const newsRoutes: SeoRoute[] = newsArticles.map((article) => ({
