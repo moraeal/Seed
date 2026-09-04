@@ -55,7 +55,7 @@ const staticRoutes: SeoRoute[] = [
   { path: "/monitoring", title: "공익감시 | 씨앗의 소리", description: "공익조직과 공공제도가 시민에게 권한과 재정, 성과를 충분히 설명하는지 근거를 바탕으로 점검합니다.", type: "website", lastModified: newest(publicInterestWatchCases.map((item) => item.updatedAt)) },
   { path: "/proposals", title: "시민제안 | 씨앗의 소리", description: "시민의 문제의식을 구체적인 제도와 정책의 제안으로 키우는 씨앗의 소리 제안 공간입니다.", type: "website", lastModified: latestDate },
   { path: "/founding-statement", title: "씨앗의 소리 취지문 | 씨앗의 소리", description: "한 사람의 생각과 목소리도 세상을 향해 자랄 수 있다는 믿음에서 시작한 독립 시민미디어 씨앗의 소리의 취지문입니다.", type: "article", lastModified: latestDate, author: "박경석", section: "씨앗의 소리 취지문" },
-  { path: "/about", title: "소개 | 씨앗의 소리", description: "박경석이 혼자 만들고 운영하는 1인 독립 시민미디어 씨앗의 소리와 발행인을 소개합니다.", type: "website", lastModified: latestDate },
+  { path: "/about", title: "소개 | 씨앗의 소리", description: "독립 시민미디어 씨앗의 소리의 역할과 편집 원칙, 그리고 1인 발행인 박경석을 소개합니다.", type: "website", lastModified: latestDate },
 ];
 
 const newsRoutes: SeoRoute[] = newsArticles.map((article) => ({
