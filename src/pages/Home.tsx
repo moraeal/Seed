@@ -141,18 +141,15 @@ export default function Home() {
       <section className="pb-12 sm:pb-16" aria-labelledby="citizens-as-seeds-title">
         <div className="container-page">
           <div className="overflow-hidden border-y-2 border-green-deep bg-[#fffaf0]">
-            <div className="grid min-h-[230px] sm:min-h-[220px] md:grid-cols-[150px_1fr]">
-              <div className="flex items-center justify-between bg-green-deep px-6 py-5 text-[#fffaf0] md:flex-col md:items-start md:justify-center md:px-8">
-                <span className="text-[10px] font-extrabold tracking-[.24em] text-gold">CITIZENS</span>
-                <span aria-hidden="true" className="editorial-title text-4xl font-bold tracking-[-.06em] text-white/95 md:text-5xl">SEED</span>
-              </div>
-              <div className="relative flex flex-col justify-center px-6 py-8 sm:px-10 lg:px-14">
-                <div aria-hidden="true" className="absolute inset-y-7 left-0 w-px bg-gold/70" />
-                <p className="text-[10px] font-extrabold tracking-[.22em] text-green-mid">CITIZENS AS SEEDS</p>
-                <h2 id="citizens-as-seeds-title" className="editorial-title mt-2 max-w-4xl text-[1.85rem] font-bold leading-tight text-navy sm:text-[2.3rem]">
+            <div className="grid min-h-[230px] sm:min-h-[220px] md:grid-cols-[minmax(320px,.82fr)_minmax(0,1.18fr)]">
+              <div className="flex flex-col justify-center bg-green-deep px-7 py-8 text-[#fffaf0] sm:px-10 md:px-12">
+                <p className="text-[10px] font-extrabold tracking-[.22em] text-gold">CITIZENS AS SEEDS</p>
+                <h2 id="citizens-as-seeds-title" className="editorial-title mt-3 max-w-xl text-[1.85rem] font-bold leading-tight text-white sm:text-[2.3rem]">
                   {ko ? "우리는 시민을 씨앗으로 봅니다" : "We See Every Citizen as a Seed"}
                 </h2>
-                <p className="mt-3 max-w-4xl text-[14px] font-medium leading-7 text-charcoal/70 sm:text-[15px]">
+              </div>
+              <div className="flex flex-col justify-center border-t border-gold/45 px-7 py-8 sm:px-10 md:border-l md:border-t-0 lg:px-14">
+                <p className="max-w-4xl text-[15px] font-medium leading-8 text-charcoal/72 sm:text-base sm:leading-8">
                   {ko
                     ? "시민은 자유와 책임을 배우고 관계 속에서 자라며 사회를 변화시키는 존재입니다. 그래서 씨앗의 소리는 성장 가능성과 생명을 품은 시민을 ‘씨앗’이라고 부릅니다."
                     : "Citizens learn freedom and responsibility, grow through relationships, and change society. SEED VOICE therefore calls each citizen a seed: a living source of possibility and growth."}
