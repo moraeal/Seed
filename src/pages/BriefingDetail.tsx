@@ -1,6 +1,7 @@
 import { ArrowLeft, Clock, Download, FileText, Share2 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
+import ContentAccountability from "../components/ContentAccountability";
 import FigureCaption from "../components/FigureCaption";
 import { getAllBriefing } from "../data/allBriefings";
 import { localizeBriefing } from "../data/localizedContent";
@@ -127,6 +128,7 @@ export default function BriefingDetail() {
           </section>
         )}
 
+        <ContentAccountability postSlug={briefing.slug} publishedDate={briefing.date} />
         <CommentSection postSlug={briefing.slug} />
       </div>
     </article>

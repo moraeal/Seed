@@ -1,6 +1,7 @@
 import { ArrowLeft, Clock, Share2 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
+import ContentAccountability from "../components/ContentAccountability";
 import FigureCaption from "../components/FigureCaption";
 import { getColumn } from "../data/columns";
 import { localizeColumn } from "../data/localizedContent";
@@ -39,6 +40,7 @@ export default function ColumnDetail() {
           {column.additionalImages?.filter((image) => image.afterSection === index).map((image) => <figure key={image.src} className="my-20 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]"><img src={imageSrc(image.src)} alt={image.alt} className={`aspect-[16/10] w-full ${image.contain ? "object-contain p-3 sm:p-6" : "object-cover"}`}/><FigureCaption caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl}/></figure>)}
         </section>)}
         <aside className="mt-16 border-t-2 border-navy pt-8"><span className="section-kicker">{ko ? "자료 주" : "SOURCE NOTE"}</span><p className="mt-4 text-sm leading-7 text-charcoal/60">{column.sourceNote}</p>{column.sources && <ul className="mt-5 grid gap-2 text-sm leading-6 text-charcoal/60">{column.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ul>}</aside>
+        <ContentAccountability postSlug={column.slug} publishedDate={column.date} />
         <CommentSection postSlug={column.slug} />
       </div>
     </div>
