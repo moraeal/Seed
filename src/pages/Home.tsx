@@ -63,8 +63,7 @@ export default function Home() {
                 <Link to={`/columns/${leadColumn.slug}`} className="group -mx-4 block h-full px-4 pb-5 pt-4 transition-colors hover:bg-green-pale/60">
                   <div className="relative overflow-hidden bg-navy">
                     <img src={resolveImageSrc(leadColumn.heroImage.src)} alt={leadColumn.heroImage.alt} className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-black/80 via-black/35 to-transparent px-5 pb-5 pt-16 text-white sm:px-6">
-                      <span className="text-xs font-extrabold tracking-[.2em] drop-shadow-[0_2px_4px_rgba(0,0,0,.95)] sm:text-sm">SEED'S VOICE</span>
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end bg-gradient-to-t from-black/80 via-black/35 to-transparent px-5 pb-5 pt-16 text-white sm:px-6">
                       <time className="rounded-sm bg-black/45 px-2.5 py-1 text-[11px] font-semibold tracking-normal text-white drop-shadow-[0_1px_3px_rgba(0,0,0,.95)] backdrop-blur-sm">{leadColumn.date.replace(/-/g, ".")}</time>
                     </div>
                   </div>
@@ -79,7 +78,7 @@ export default function Home() {
 
           <aside className="flex h-full self-stretch flex-col border border-green-deep/15 bg-white text-navy" aria-labelledby="seed-voice-heading">
             <div className="border-b border-white/20 bg-green-deep px-6 py-5 text-white sm:px-7">
-              <div className="flex items-end justify-between gap-4"><h2 id="seed-voice-heading" className="editorial-title text-3xl font-bold">씨앗의 소리</h2><Link to="/columns" className="inline-flex items-center gap-1 text-xs font-bold text-white/65 hover:text-white">{ko ? "전체보기" : "View all"}<ArrowRight size={13}/></Link></div>
+              <div className="flex items-end justify-between gap-4"><h2 id="seed-voice-heading" className="editorial-title text-3xl font-bold">SEED VOICE</h2><Link to="/columns" className="inline-flex items-center gap-1 text-xs font-bold text-white/65 hover:text-white">{ko ? "전체보기" : "View all"}<ArrowRight size={13}/></Link></div>
             </div>
 
             <div className="flex min-h-0 flex-1 flex-col">
