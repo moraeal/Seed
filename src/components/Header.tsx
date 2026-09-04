@@ -16,15 +16,17 @@ export default function Header() {
 
   const nav = language === "en"
     ? [
-        ["News", "/news"],
-        ["Civic Briefings", "/briefings"],
         ["Voice of the Seed", "/columns"],
+        ["Today's News", "/news"],
+        ["SEED Briefings", "/briefings"],
+        ["SEED Language", "/seed-language"],
         ["About", "/about"],
       ]
     : [
-        ["씨드뉴스", "/news"],
-        ["시민브리핑", "/briefings"],
-        ["씨앗의 소리", "/columns"],
+        ["씨앗의소리", "/columns"],
+        ["오늘의뉴스", "/news"],
+        ["씨앗브리핑", "/briefings"],
+        ["씨앗언어", "/seed-language"],
         ["소개", "/about"],
       ];
 

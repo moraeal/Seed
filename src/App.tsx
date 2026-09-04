@@ -25,6 +25,7 @@ import Experiments from "./pages/Experiments";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
 import FoundingStatement from "./pages/FoundingStatement";
+import SeedLanguage from "./pages/SeedLanguage";
 
 function AppShell() {
   return (
@@ -37,6 +38,7 @@ function AppShell() {
           <Route path="/en" element={<Home />} />
           <Route path="/account" element={<Account />} />
           <Route path="/about" element={<About />} />
+          <Route path="/seed-language" element={<SeedLanguage />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/briefings" element={<Briefings />} />
           <Route path="/briefings/:slug/commentary" element={<BriefingCommentary />} />
