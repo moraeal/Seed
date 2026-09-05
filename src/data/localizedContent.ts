@@ -18,6 +18,7 @@ export function localizeColumn(column: SeedColumn, language: Language): SeedColu
     author: translated.author ?? column.author,
     summary: translated.summary,
     heroImage: { ...column.heroImage, ...translated.heroImage },
+    referenceVideo: column.referenceVideo ? { ...column.referenceVideo, ...translated.referenceVideo } : undefined,
     inlineImage: { ...column.inlineImage, ...translated.inlineImage },
     additionalImages: column.additionalImages?.map((image, index) => ({
       ...image,

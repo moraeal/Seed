@@ -6,8 +6,14 @@ export const issue11: ColumnTranslation = {
   author: "Park Kyung-seok",
   summary: "President Lee Jae-myung spent 210 minutes with representatives of 19 largely progressive civic organizations. This column asks what happens to representation and independence when the state treats one ideological network as civil society itself, then draws it into public committees, programs and funding.",
   heroImage: {
-    alt: "President Lee Jae-myung speaking at a meeting with civic groups in an SBS News video still",
-    caption: "President Lee Jae-myung speaks at a meeting with civic groups on September 4, 2026. Select the image to watch the SBS News field video.",
+    alt: "A symbolic scene of a president and civic-society representatives seated across a conference table while citizens watch, with the National Assembly visible outside",
+    caption: "The breadth of the people invited matters as much as the length of time spent listening.",
+    credit: "AI-generated image by SEED VOICE",
+  },
+  referenceVideo: {
+    thumbnailAlt: "SBS News video still showing President Lee Jae-myung speaking at a meeting with civic groups",
+    title: "President Lee Jae-myung’s Meeting with Civic Groups",
+    description: "SBS News footage from the meeting with civic groups held on September 4, 2026. Select the image to play the video within this article.",
     credit: "Video still · SBS News",
   },
   inlineImage: {
