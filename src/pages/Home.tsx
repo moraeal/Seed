@@ -20,11 +20,12 @@ export default function Home() {
   const [newsPaused, setNewsPaused] = useState(false);
   const [newsTransition, setNewsTransition] = useState(true);
   const [newsVisibleCount, setNewsVisibleCount] = useState(() => typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches ? 3 : 1);
+  const [activeColumnIndex, setActiveColumnIndex] = useState(0);
   const ko = language === "ko";
   const briefings = getAllBriefingsNewestFirst().slice(0, 5).map((item) => localizeBriefing(item, language));
-  const journalColumns = [...columns].sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue).slice(0, 5).map((item) => localizeColumn(item, language));
+  const journalColumns = [...columns].sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue).slice(0, 6).map((item) => localizeColumn(item, language));
   const news = getNewsNewestFirst().slice(0, 5).map((item) => localizeNewsArticle(item, language));
-  const leadColumn = journalColumns[0];
+  const leadColumn = journalColumns[activeColumnIndex] ?? journalColumns[0];
   const leadColumnExcerpt = leadColumn?.sections.flatMap((section) => section.paragraphs)[0];
   const rotatingNewsCards = news.length ? [...news, ...news.slice(0, newsVisibleCount)] : [];
 
@@ -97,13 +98,23 @@ export default function Home() {
             </div>
 
             <div className="flex min-h-0 flex-1 flex-col">
-              {journalColumns.slice(1, 5).map((column, index) => (
-                <Link key={column.slug} to={`/columns/${column.slug}`} className={`group flex flex-1 flex-col justify-center bg-white px-6 py-3 transition hover:bg-green-pale/65 sm:px-7 ${index < 3 ? "border-b border-green-deep/15" : ""}`}>
-                  <time className="text-[11px] text-charcoal/45">{column.date.replace(/-/g, ".")}</time>
-                  <h3 className="editorial-title mt-1 text-base font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.05rem]">{column.title}</h3>
-                  <p className="mt-1 line-clamp-2 text-[13px] leading-5 text-charcoal/60">{column.summary}</p>
-                </Link>
-              ))}
+              {journalColumns.slice(1, 6).map((column, index) => {
+                const columnIndex = index + 1;
+                const active = activeColumnIndex === columnIndex;
+                return (
+                  <Link
+                    key={column.slug}
+                    to={`/columns/${column.slug}`}
+                    onMouseEnter={() => setActiveColumnIndex(columnIndex)}
+                    onFocus={() => setActiveColumnIndex(columnIndex)}
+                    className={`group flex flex-1 flex-col justify-center border-l-4 px-6 py-2.5 transition sm:px-7 ${active ? "border-gold bg-green-pale/80" : "border-transparent bg-white hover:bg-green-pale/65"} ${index < 4 ? "border-b border-b-green-deep/15" : ""}`}
+                  >
+                    <time className="text-[11px] text-charcoal/45">{column.date.replace(/-/g, ".")}</time>
+                    <h3 className="editorial-title mt-1 text-base font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.05rem]">{column.title}</h3>
+                    <p className="mt-1 line-clamp-1 text-[13px] leading-5 text-charcoal/60">{column.summary}</p>
+                  </Link>
+                );
+              })}
             </div>
           </aside>
         </div>
