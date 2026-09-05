@@ -3,11 +3,15 @@ type BrandLockupProps = {
 };
 
 
+
+
 export default function BrandLockup({ tone }: BrandLockupProps) {
   const footer = tone === "footer";
   const symbolSrc = footer
     ? "images/brand/seed-civic-partners-logo-animated-circle-clean.gif"
     : "images/brand/seed-sprout-color-leaves-reverse-transparent-hd.png";
+
+
 
 
   return (
@@ -29,11 +33,8 @@ export default function BrandLockup({ tone }: BrandLockupProps) {
           씨앗의 소리
         </span>
         <span className={`h-7 w-px shrink-0 ${footer ? "bg-white/25" : "bg-green-deep/25"}`} aria-hidden="true" />
-        <span className={`whitespace-nowrap font-bold tracking-[-.02em] ${footer ? "text-white/55" : "text-charcoal/45"}`}>
+        <span className={`whitespace-nowrap font-bold tracking-[-.02em] ${footer ? "text-white/55" : "text-[22px] text-charcoal/45 sm:text-xl"}`}>
           SEED VOICE
         </span>
       </span>
     </span>
-  );
-}
-
