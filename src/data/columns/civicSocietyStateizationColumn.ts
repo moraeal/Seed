@@ -10,11 +10,12 @@ export const civicSocietyStateizationColumn: SeedColumn = {
   readMinutes: 14,
   summary: "이재명 대통령이 진보 성향 시민단체 19곳과 210분간 대화했다. 특정 진영을 시민사회 전체처럼 호명하고 위원회·사업·예산으로 국가 안에 편입할 때 시민사회의 대표성과 독립성이 어떻게 훼손될 수 있는지 묻는다.",
   heroImage: {
-    src: "images/columns/civic-society-selected-listening.webp",
-    alt: "정부 회의실 안의 초청 인사들과 유리벽 밖에서 기다리는 다양한 시민을 대비한 상징적 장면",
-    caption: "긴 경청이 폭넓은 경청을 뜻하지는 않는다. 정부가 누구를 시민사회의 대표로 초청했는지가 더 중요하다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
-    sourceUrl: "",
+    src: "https://i.ytimg.com/vi/LTILlMkKd04/maxresdefault.jpg",
+    socialSrc: "images/columns/civic-society-selected-listening.webp",
+    alt: "시민사회 초청 간담회에서 발언하는 이재명 대통령을 담은 SBS 뉴스 현장영상 화면",
+    caption: "이재명 대통령이 2026년 9월 4일 시민사회 초청 간담회에서 발언하고 있다. 이미지를 누르면 SBS 뉴스 현장영상으로 이동한다.",
+    credit: "영상 화면 · SBS 뉴스",
+    sourceUrl: "https://www.youtube.com/watch?v=LTILlMkKd04",
   },
   inlineImage: {
     src: "images/columns/civic-society-stateization-roots.webp",
