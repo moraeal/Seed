@@ -70,11 +70,11 @@ export default function Home() {
   return (
     <div className="bg-paper">
       <section className="border-b border-green-deep/20 bg-ivory py-5 sm:py-7">
-        <div className="container-page grid gap-5 xl:grid-cols-[minmax(0,1.55fr)_minmax(350px,.72fr)] xl:gap-6">
+        <div className="container-page grid items-stretch gap-5 xl:grid-cols-[minmax(0,1.55fr)_minmax(350px,.72fr)] xl:gap-6">
           <div className="h-full">
             {leadColumn && (
-              <article className="h-full">
-                <div className="group -mx-4 h-full px-4 pb-3 pt-3 transition-colors hover:bg-green-pale/60">
+              <article className="h-full bg-white">
+                <div className="group -mx-4 flex h-full flex-col px-4 pb-3 pt-3 transition-colors hover:bg-green-pale/60">
                   <div className="relative overflow-hidden bg-navy">
                     <Link to={`/columns/${leadColumn.slug}`} className="block"><img src={resolveImageSrc(leadColumn.heroImage.src)} alt={leadColumn.heroImage.alt} className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" /><div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/90 via-black/35 to-transparent px-5 pb-14 pt-20 sm:px-6"><h1 className="max-w-full font-sans text-[clamp(1.45rem,3vw,2.65rem)] font-black leading-[1.05] tracking-[-0.045em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,.85)] lg:whitespace-nowrap">{leadColumn.title}</h1></div></Link>
                     <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end px-5 pb-5 text-white sm:px-6">
@@ -82,10 +82,10 @@ export default function Home() {
                     </div>
                     {leadColumn.heroImage.sourceUrl && <a href={leadColumn.heroImage.sourceUrl} target="_blank" rel="noreferrer" className="absolute bottom-5 left-5 z-10 rounded-sm bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white underline decoration-white/45 underline-offset-2 backdrop-blur-sm transition hover:bg-black/80 sm:left-6">{leadColumn.heroImage.credit}</a>}
                   </div>
-                  <Link to={`/columns/${leadColumn.slug}`} className="block">
+                  <Link to={`/columns/${leadColumn.slug}`} className="flex flex-1 flex-col">
                     <p className="mt-3 max-w-4xl text-base font-medium leading-7 text-charcoal/65 sm:text-[17px]">{leadColumn.summary}</p>
                     {leadColumnExcerpt && <p className="mt-3 max-w-4xl border-l-2 border-gold/70 pl-4 text-[15px] leading-7 text-charcoal/72 sm:line-clamp-4 sm:text-base">{leadColumnExcerpt}</p>}
-                    <span className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-green-deep">{ko ? "씨앗의 소리 계속 읽기" : "Continue reading SEED's voice"}<ArrowRight size={16}/></span>
+                    <span className="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-extrabold text-green-deep">{ko ? "씨앗의 소리 계속 읽기" : "Continue reading SEED's voice"}<ArrowRight size={16}/></span>
                   </Link>
                 </div>
               </article>
