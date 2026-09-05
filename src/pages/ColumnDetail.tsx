@@ -9,6 +9,7 @@ import { localizeColumn } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
 
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
+const imageKey = (src: string) => imageSrc(src).replace(/#.*$/, "").replace(/\?.*$/, "");
 
 export default function ColumnDetail() {
   const { slug = "" } = useParams();
@@ -25,6 +26,17 @@ export default function ColumnDetail() {
     else { await navigator.clipboard.writeText(location.href); alert(ko ? "주소를 복사했습니다." : "Link copied."); }
   };
 
+  const seenImages = new Set([imageKey(column.heroImage.src)]);
+  const bodyImages = [
+    { ...column.inlineImage, afterSection: 3 },
+    ...(column.additionalImages ?? []),
+  ].filter((image) => {
+    const key = imageKey(image.src);
+    if (seenImages.has(key)) return false;
+    seenImages.add(key);
+    return true;
+  });
+
   return <article className="bg-paper">
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
       <div className="container-page max-w-5xl"><Link to="/columns" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "씨앗의 소리 목록" : "Voice of the Seed"}</Link><div className="mt-3 border-t-2 border-navy pt-3"><h1 className="editorial-title max-w-4xl text-[1.75rem] font-bold leading-[1.14] text-navy sm:text-[2.5rem]">{column.title}</h1><p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/60 sm:text-[15px]">{column.summary}</p></div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45"><time>{column.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${column.readMinutes}분` : `${column.readMinutes} min read`}</span><button onClick={share} className="button-secondary ml-auto min-h-8 px-3 py-1.5 text-xs"><Share2 size={15}/>{ko ? "공유" : "Share"}</button></div></div>
@@ -38,8 +50,7 @@ export default function ColumnDetail() {
           <h2 className="text-xl font-extrabold leading-snug text-navy sm:text-2xl">{section.title}</h2>
           {section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 28)}`} className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">{paragraph}</p>)}
           {section.quote && <blockquote className="my-7 border-l-4 border-gold bg-green-pale px-5 py-5 font-serif text-lg font-bold leading-8 text-green-deep sm:px-6 sm:text-xl">{section.quote.map((line, lineIndex) => <span key={`${lineIndex}-${line}`} className="block">{line}</span>)}</blockquote>}
-          {index === 3 && <figure className="my-12 overflow-hidden border border-green-deep/10 bg-white"><img src={imageSrc(column.inlineImage.src)} alt={column.inlineImage.alt} className="aspect-[16/10] w-full object-cover"/><FigureCaption caption={column.inlineImage.caption} credit={column.inlineImage.credit} sourceUrl={column.inlineImage.sourceUrl}/></figure>}
-          {column.additionalImages?.filter((image) => image.afterSection === index).map((image) => <figure key={image.src} className="my-12 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]"><img src={imageSrc(image.src)} alt={image.alt} className={image.contain ? "block h-auto w-full" : "aspect-[16/10] w-full object-cover"}/><FigureCaption caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl}/></figure>)}
+          {bodyImages.filter((image) => image.afterSection === index).map((image) => <figure key={imageKey(image.src)} className="my-12 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]"><img src={imageSrc(image.src)} alt={image.alt} className={"contain" in image && image.contain ? "block h-auto w-full" : "aspect-[16/10] w-full object-cover"}/><FigureCaption caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl}/></figure>)}
         </section>)}
         {column.referenceVideo && <section className="mt-10 border-t border-green-deep/10 pt-8" aria-labelledby="reference-video-title">
           <span className="section-kicker">{ko ? "참고 영상" : "REFERENCE VIDEO"}</span>
