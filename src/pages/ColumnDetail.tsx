@@ -24,8 +24,8 @@ export default function ColumnDetail() {
   };
 
   return <article className="bg-paper">
-    <header className="border-b border-green-deep/15 bg-ivory py-8 sm:py-12">
-      <div className="container-page max-w-5xl"><Link to="/columns" className="text-link"><ArrowLeft size={16}/>{ko ? "씨앗의 소리 목록" : "Voice of the Seed"}</Link><div className="mt-6 border-t-2 border-navy pt-5"><h1 className="editorial-title max-w-4xl text-[2.1rem] font-bold leading-[1.14] text-navy sm:text-[3.15rem]">{column.title}</h1><p className="mt-4 max-w-3xl text-base leading-7 text-charcoal/60">{column.summary}</p></div><div className="mt-5 flex flex-wrap items-center gap-4 border-t border-green-deep/10 pt-3 text-xs text-charcoal/45"><time>{column.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${column.readMinutes}분` : `${column.readMinutes} min read`}</span><button onClick={share} className="button-secondary ml-auto min-h-9 px-3 py-2 text-xs"><Share2 size={15}/>{ko ? "공유" : "Share"}</button></div></div>
+    <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
+      <div className="container-page max-w-5xl"><Link to="/columns" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "씨앗의 소리 목록" : "Voice of the Seed"}</Link><div className="mt-3 border-t-2 border-navy pt-3"><h1 className="editorial-title max-w-4xl text-[1.75rem] font-bold leading-[1.14] text-navy sm:text-[2.5rem]">{column.title}</h1><p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/60 sm:text-[15px]">{column.summary}</p></div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45"><time>{column.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${column.readMinutes}분` : `${column.readMinutes} min read`}</span><button onClick={share} className="button-secondary ml-auto min-h-8 px-3 py-1.5 text-xs"><Share2 size={15}/>{ko ? "공유" : "Share"}</button></div></div>
     </header>
 
     <div className="container-page max-w-4xl py-8 sm:py-12">

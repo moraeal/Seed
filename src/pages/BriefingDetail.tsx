@@ -49,21 +49,21 @@ export default function BriefingDetail() {
 
   return (
     <article className="bg-paper">
-      <header className="border-b border-green-deep/15 bg-ivory py-8 sm:py-12">
+      <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
         <div className="container-page max-w-5xl">
-          <Link to="/briefings" className="text-link"><ArrowLeft size={16} />{ko ? "시민브리핑 목록" : "Civic Briefings"}</Link>
-          <div className="mt-6 border-t-2 border-navy pt-5">
-            <h1 className="editorial-title max-w-4xl text-[1.6rem] font-bold leading-[1.15] text-navy sm:text-[2.625rem]">{briefing.title}</h1>
-            <p className="mt-4 max-w-3xl text-base leading-7 text-charcoal/65 sm:text-lg">{briefing.summary}</p>
+          <Link to="/briefings" className="text-link text-xs"><ArrowLeft size={14} />{ko ? "시민브리핑 목록" : "Civic Briefings"}</Link>
+          <div className="mt-3 border-t-2 border-navy pt-3">
+            <h1 className="editorial-title max-w-4xl text-[1.6rem] font-bold leading-[1.15] text-navy sm:text-[2.25rem]">{briefing.title}</h1>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/65 sm:text-[15px]">{briefing.summary}</p>
           </div>
-          <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-green-deep/10 pt-3 text-xs text-charcoal/45">
+          <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45">
             <span>{briefing.author}</span>
             <time>{briefing.date.replace(/-/g, ".")} {ko ? "기준" : "as of"}</time>
             <span className="flex items-center gap-1"><Clock size={14} />{ko ? `읽는 시간 ${briefing.readMinutes}분` : `${briefing.readMinutes} min read`}</span>
             <div className="flex w-full flex-wrap gap-2 sm:ml-auto sm:w-auto">
-              <button onClick={share} className="button-secondary min-h-9 px-3 py-2 text-xs"><Share2 size={15} />{ko ? "공유" : "Share"}</button>
-              {briefing.commentary && <Link to={`/briefings/${briefing.slug}/commentary`} className="button-secondary min-h-9 px-3 py-2 text-xs"><FileText size={15} />{ko ? "논평 보기" : "Read commentary"}</Link>}
-              {briefing.pdfPath && <a href={`${import.meta.env.BASE_URL}${briefing.pdfPath}`} download className="button-primary min-h-9 px-3 py-2 text-xs"><Download size={15} />{ko ? "PDF 원문 내려받기" : "Download PDF"}</a>}
+              <button onClick={share} className="button-secondary min-h-8 px-3 py-1.5 text-xs"><Share2 size={15} />{ko ? "공유" : "Share"}</button>
+              {briefing.commentary && <Link to={`/briefings/${briefing.slug}/commentary`} className="button-secondary min-h-8 px-3 py-1.5 text-xs"><FileText size={15} />{ko ? "논평 보기" : "Read commentary"}</Link>}
+              {briefing.pdfPath && <a href={`${import.meta.env.BASE_URL}${briefing.pdfPath}`} download className="button-primary min-h-8 px-3 py-1.5 text-xs"><Download size={15} />{ko ? "PDF 원문 내려받기" : "Download PDF"}</a>}
             </div>
           </div>
         </div>

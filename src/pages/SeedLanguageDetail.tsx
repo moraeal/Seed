@@ -22,16 +22,16 @@ export default function SeedLanguageDetail() {
   };
 
   return <article className="bg-paper">
-    <header className="border-b border-green-deep/15 bg-ivory py-8 sm:py-11">
+    <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
       <div className="container-page max-w-5xl">
-        <Link to="/seed-language" className="text-link"><ArrowLeft size={16}/>{ko ? "씨앗언어 목록" : "SEED Language"}</Link>
-        <div className="mt-5 border-t-2 border-navy pt-5">
+        <Link to="/seed-language" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "씨앗언어 목록" : "SEED Language"}</Link>
+        <div className="mt-3 border-t-2 border-navy pt-3">
           <div className="flex items-center gap-3"><span className="section-kicker">SEED LANGUAGE</span><span className="rounded-full bg-green-pale px-3 py-1 text-xs font-extrabold text-green-deep">{article.term}</span></div>
-          <h1 className="editorial-title mt-3 max-w-4xl text-[1.6rem] font-bold leading-[1.15] text-navy sm:text-[2.625rem]">{article.title}</h1>
-          <p className="mt-3 font-serif text-lg font-bold leading-7 text-green-deep sm:text-xl">{article.subtitle}</p>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-charcoal/65">{article.summary}</p>
+          <h1 className="editorial-title mt-2 max-w-4xl text-[1.6rem] font-bold leading-[1.15] text-navy sm:text-[2.25rem]">{article.title}</h1>
+          <p className="mt-2 font-serif text-base font-bold leading-6 text-green-deep sm:text-lg">{article.subtitle}</p>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/65 sm:text-[15px]">{article.summary}</p>
         </div>
-        <div className="mt-5 flex flex-wrap items-center gap-4 border-t border-green-deep/10 pt-3 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${article.readMinutes}분` : `${article.readMinutes} min read`}</span><button onClick={share} className="button-secondary ml-auto min-h-9 px-3 py-2 text-xs"><Share2 size={15}/>{ko ? "공유" : "Share"}</button></div>
+        <div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${article.readMinutes}분` : `${article.readMinutes} min read`}</span><button onClick={share} className="button-secondary ml-auto min-h-8 px-3 py-1.5 text-xs"><Share2 size={15}/>{ko ? "공유" : "Share"}</button></div>
       </div>
     </header>
 

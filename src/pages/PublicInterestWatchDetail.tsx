@@ -30,17 +30,17 @@ export default function PublicInterestWatchDetail() {
   return (
     <article className="bg-paper pb-12 sm:pb-16">
       <header className="border-b border-green-deep/15 bg-ivory">
-        <div className="container-page max-w-5xl py-8 sm:py-12">
-          <Link to="/monitoring" className="text-link"><ArrowLeft size={16}/>{ko ? "공익감시 목록" : "Public-Interest Watch"}</Link>
-          <div className="mt-6 border-t-2 border-navy pt-5">
+        <div className="container-page max-w-5xl py-4 sm:py-5">
+          <Link to="/monitoring" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "공익감시 목록" : "Public-Interest Watch"}</Link>
+          <div className="mt-3 border-t-2 border-navy pt-3">
             <div className="flex flex-wrap items-center gap-3">
               <span className="section-kicker">{t(item.eyebrow)}</span>
               <span className="rounded-full bg-green-pale px-3 py-1 text-[11px] font-extrabold text-green-deep">{t(item.status)}</span>
             </div>
-            <p className="mt-4 text-sm font-extrabold text-green-deep">{t(item.organization)}</p>
-            <h1 className="editorial-title mt-2 max-w-4xl text-[1.6rem] font-bold leading-[1.15] text-navy sm:text-[2.625rem]">{t(item.title)}</h1>
-            <p className="mt-4 max-w-3xl text-base leading-7 text-charcoal/65 sm:text-lg">{t(item.summary)}</p>
-            <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 border-t border-green-deep/10 pt-3 text-xs text-charcoal/45">
+            <p className="mt-2 text-xs font-extrabold text-green-deep">{t(item.organization)}</p>
+            <h1 className="editorial-title mt-2 max-w-4xl text-[1.6rem] font-bold leading-[1.15] text-navy sm:text-[2.25rem]">{t(item.title)}</h1>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/65 sm:text-[15px]">{t(item.summary)}</p>
+            <div className="mt-3 flex flex-wrap gap-x-3 gap-y-2 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45">
               <span>{ko ? "작성" : "Published"} {item.updatedAt.replace(/-/g, ".")}</span>
               <span>{ko ? "공개자료와 씨드 보관 문건을 교차 검토" : "Cross-checked against public disclosures and SEED records"}</span>
             </div>

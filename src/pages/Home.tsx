@@ -42,12 +42,25 @@ export default function Home() {
 
   useEffect(() => {
     if (newsPaused || news.length <= newsVisibleCount || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const timer = window.setInterval(() => setNewsPage((page) => page + 1), 4500);
+    const timer = window.setInterval(() => {
+      if (document.hidden) return;
+      setNewsPage((page) => Math.min(page + 1, news.length));
+    }, 4500);
     return () => window.clearInterval(timer);
   }, [news.length, newsPaused, newsVisibleCount]);
 
+  useEffect(() => {
+    if (!news.length || newsPage < news.length) return;
+    const fallback = window.setTimeout(() => {
+      setNewsTransition(false);
+      setNewsPage(0);
+      window.requestAnimationFrame(() => window.requestAnimationFrame(() => setNewsTransition(true)));
+    }, 850);
+    return () => window.clearTimeout(fallback);
+  }, [news.length, newsPage]);
+
   const finishNewsTransition = () => {
-    if (newsPage !== news.length) return;
+    if (newsPage < news.length) return;
     setNewsTransition(false);
     setNewsPage(0);
     window.requestAnimationFrame(() => window.requestAnimationFrame(() => setNewsTransition(true)));
