@@ -2,11 +2,13 @@ type BrandLockupProps = {
   tone: "header" | "footer";
 };
 
+
 export default function BrandLockup({ tone }: BrandLockupProps) {
   const footer = tone === "footer";
   const symbolSrc = footer
     ? "images/brand/seed-civic-partners-logo-animated-circle-clean.gif"
     : "images/brand/seed-sprout-color-leaves-reverse-transparent-hd.png";
+
 
   return (
     <span className="flex items-center gap-3" aria-label="씨앗의 소리 · SEED VOICE">
@@ -23,7 +25,7 @@ export default function BrandLockup({ tone }: BrandLockupProps) {
         />
       </span>
       <span className={`flex min-w-0 items-center ${footer ? "gap-3 text-lg sm:text-xl" : "gap-2 text-[11px] sm:gap-3 sm:text-xl"}`}>
-        <span className={`whitespace-nowrap font-extrabold tracking-[-.04em] ${footer ? "text-white" : "text-green-deep"}`}>
+        <span className={`whitespace-nowrap font-extrabold tracking-[-.04em] ${footer ? "text-white" : "text-[22px] text-green-deep sm:text-xl"}`}>
           씨앗의 소리
         </span>
         <span className={`h-7 w-px shrink-0 ${footer ? "bg-white/25" : "bg-green-deep/25"}`} aria-hidden="true" />
@@ -34,3 +36,4 @@ export default function BrandLockup({ tone }: BrandLockupProps) {
     </span>
   );
 }
+
