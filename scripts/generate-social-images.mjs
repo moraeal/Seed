@@ -1,5 +1,5 @@
 import { execFile } from "node:child_process";
-import { mkdir, unlink, writeFile } from "node:fs/promises";
+import { access, mkdir, unlink, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
 import { createServer } from "vite";
@@ -52,9 +52,15 @@ for (const job of jobs) {
       await writeFile(temporarySource, Buffer.from(await response.arrayBuffer()));
       source = temporarySource;
     } catch (error) {
-      if (!job.fallbackSrc) throw new Error(`Could not fetch social image for ${job.slug}: ${error.message}`);
-      source = path.join(publicRoot, job.fallbackSrc.replace(/^\/+/, ""));
-      console.warn(`Using fallback social image for ${job.slug}: ${error.message}`);
+      if (job.fallbackSrc) {
+        source = path.join(publicRoot, job.fallbackSrc.replace(/^\/+/, ""));
+        console.warn(`Using fallback social image for ${job.slug}: ${error.message}`);
+      } else {
+        const existingPreviewIsAvailable = await access(target).then(() => true).catch(() => false);
+        if (!existingPreviewIsAvailable) throw new Error(`Could not fetch social image for ${job.slug}: ${error.message}`);
+        console.warn(`Keeping existing social image for ${job.slug}: ${error.message}`);
+        continue;
+      }
     }
   }
 
