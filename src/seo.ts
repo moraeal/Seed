@@ -27,6 +27,7 @@ const canonicalPath = (path: string) => path === "/" ? "/" : `${path.replace(/\/
 export const canonicalUrl = (path: string) => `${SITE_URL}${canonicalPath(path)}`;
 export const assetUrl = (path: string) => `${SITE_URL}/${path.replace(/^\/+/, "")}`;
 const socialImageUrl = (section: string, slug: string, version: string) => assetUrl(`images/social/${section}/${slug}.jpg?v=${version.replace(/[^0-9]/g, "")}`);
+const stableHash = (value: string) => [...value].reduce((hash, character) => ((hash * 31) + character.charCodeAt(0)) >>> 0, 0).toString();
 const firstLocalRasterImage = <T extends { src: string }>(images?: T[]) => images?.find((image) => !/^https?:\/\//i.test(image.src) && /\.(?:jpe?g|png|webp)$/i.test(image.src));
 
 const newest = (dates: string[]) => [...dates].sort()[dates.length - 1];
@@ -110,7 +111,7 @@ const columnRoutes: SeoRoute[] = columns.map((column) => ({
   lastModified: column.date,
   author: column.author,
   section: "씨앗의 소리",
-  image: socialImageUrl("columns", column.slug, column.date),
+  image: socialImageUrl("columns", column.slug, `${column.date}-${stableHash(column.heroImage.src)}`),
   imageAlt: column.heroImage.alt,
 }));
 
