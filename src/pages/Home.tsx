@@ -181,22 +181,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-green-deep/10 bg-[#F1F2EC] py-4 sm:py-5" aria-labelledby="citizens-as-seeds-title">
-        <div className="container-page grid gap-3 py-1 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <p className="section-kicker">CITIZENS AS SEEDS</p>
-            <h2 id="citizens-as-seeds-title" className="editorial-title mt-2 text-2xl font-bold text-navy sm:text-3xl">
-              {ko ? "우리는 시민을 씨앗으로 봅니다" : "We See Every Citizen as a Seed"}
-            </h2>
-            <p className="mt-1.5 text-sm leading-6 text-charcoal/62">
-              {ko
-                ? "시민은 자유와 책임을 배우고 관계 속에서 자라며 사회를 변화시키는 존재입니다. 성장 가능성과 생명을 품은 시민을 우리는 ‘씨앗’이라고 부릅니다."
-                : "Citizens learn freedom and responsibility, grow through relationships, and change society. We call this living potential in every citizen a seed."}
-            </p>
-          </div>
-          <Link to="/seed-language/citizen-as-seed" className="button-primary shrink-0">{ko ? "시민읽기" : "Read Citizen"}<ArrowRight size={16}/></Link>
-        </div>
-      </section>
     </div>
   );
 }
