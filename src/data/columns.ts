@@ -11,7 +11,7 @@ export type SeedColumn = {
   author: string;
   readMinutes: number;
   summary: string;
-  heroImage: { src: string; alt: string; caption: string; credit: string; sourceUrl: string };
+  heroImage: { src: string; socialSrc?: string; alt: string; caption: string; credit: string; sourceUrl: string };
   inlineImage: { src: string; alt: string; caption: string; credit: string; sourceUrl: string };
   additionalImages?: {
     afterSection: number;
