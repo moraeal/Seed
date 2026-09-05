@@ -60,18 +60,20 @@ export default function Home() {
           <div className="h-full">
             {leadColumn && (
               <article className="h-full border-t-[3px] border-navy">
-                <Link to={`/columns/${leadColumn.slug}`} className="group -mx-4 block h-full px-4 pb-3 pt-3 transition-colors hover:bg-green-pale/60">
+                <div className="group -mx-4 h-full px-4 pb-3 pt-3 transition-colors hover:bg-green-pale/60">
                   <div className="relative overflow-hidden bg-navy">
-                    <img src={resolveImageSrc(leadColumn.heroImage.src)} alt={leadColumn.heroImage.alt} className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
+                    <Link to={`/columns/${leadColumn.slug}`} className="block"><img src={resolveImageSrc(leadColumn.heroImage.src)} alt={leadColumn.heroImage.alt} className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" /></Link>
                     <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end bg-gradient-to-t from-black/80 via-black/35 to-transparent px-5 pb-5 pt-16 text-white sm:px-6">
                       <time className="rounded-sm bg-black/45 px-2.5 py-1 text-[11px] font-semibold tracking-normal text-white drop-shadow-[0_1px_3px_rgba(0,0,0,.95)] backdrop-blur-sm">{leadColumn.date.replace(/-/g, ".")}</time>
                     </div>
+                    {leadColumn.heroImage.sourceUrl && <a href={leadColumn.heroImage.sourceUrl} target="_blank" rel="noreferrer" className="absolute bottom-5 left-5 z-10 rounded-sm bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white underline decoration-white/45 underline-offset-2 backdrop-blur-sm transition hover:bg-black/80 sm:left-6">{leadColumn.heroImage.credit}</a>}
                   </div>
-                  <h1 className="editorial-title mt-3 max-w-5xl text-2xl font-bold leading-[1.15] text-navy transition group-hover:text-green-mid sm:text-[2.2rem] lg:text-[2.45rem]">{leadColumn.title}</h1>
-                  <p className="mt-2.5 max-w-4xl text-base font-medium leading-7 text-charcoal/65 sm:text-[17px]">{leadColumn.summary}</p>
-                  {leadColumnExcerpt && <p className="mt-3 max-w-4xl border-l-2 border-gold/70 pl-4 text-[15px] leading-7 text-charcoal/72 sm:line-clamp-4 sm:text-base">{leadColumnExcerpt}</p>}
-                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-green-deep">{ko ? "씨앗의 소리 계속 읽기" : "Continue reading SEED's voice"}<ArrowRight size={16}/></span>
-                </Link>
+                  <Link to={`/columns/${leadColumn.slug}`} className="block"><h1 className="editorial-title mt-3 max-w-5xl text-2xl font-bold leading-[1.15] text-navy transition group-hover:text-green-mid sm:text-[2.2rem] lg:text-[2.45rem]">{leadColumn.title}</h1>
+                    <p className="mt-2.5 max-w-4xl text-base font-medium leading-7 text-charcoal/65 sm:text-[17px]">{leadColumn.summary}</p>
+                    {leadColumnExcerpt && <p className="mt-3 max-w-4xl border-l-2 border-gold/70 pl-4 text-[15px] leading-7 text-charcoal/72 sm:line-clamp-4 sm:text-base">{leadColumnExcerpt}</p>}
+                    <span className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-green-deep">{ko ? "씨앗의 소리 계속 읽기" : "Continue reading SEED's voice"}<ArrowRight size={16}/></span>
+                  </Link>
+                </div>
               </article>
             )}
           </div>
