@@ -9,6 +9,7 @@ import { getNewsArticle } from "../data/news";
 import { useLanguage } from "../i18n";
 
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
+const imageKey = (src: string) => imageSrc(src).replace(/#.*$/, "").replace(/\?.*$/, "");
 
 export default function NewsDetail() {
   const { slug = "" } = useParams();
@@ -24,6 +25,13 @@ export default function NewsDetail() {
     else { await navigator.clipboard.writeText(location.href); alert(ko ? "주소를 복사했습니다." : "Link copied."); }
   };
 
+  const heroImageKey = imageKey(article.heroImage.src);
+  const inlineImageKey = imageKey(article.inlineImage.src);
+  const selectedNews = article.selectedNews.thumbnailUrl && [heroImageKey, inlineImageKey].includes(imageKey(article.selectedNews.thumbnailUrl))
+    ? { ...article.selectedNews, thumbnailUrl: undefined }
+    : article.selectedNews;
+  const showInlineImage = inlineImageKey !== heroImageKey;
+
   return <article className="bg-paper">
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
       <div className="container-page max-w-5xl"><Link to="/news" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "오늘의뉴스 목록" : "Today's News"}</Link><div className="mt-3 border-t-2 border-navy pt-3"><h1 className="editorial-title max-w-4xl text-[1.6rem] font-bold leading-[1.15] text-navy sm:text-[2.25rem]">{article.title}</h1><p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/60 sm:text-[15px]">{article.summary}</p></div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${article.readMinutes}분` : `${article.readMinutes} min read`}</span><button onClick={share} className="button-secondary ml-auto min-h-8 px-3 py-1.5 text-xs"><Share2 size={15}/>{ko ? "공유" : "Share"}</button></div></div>
@@ -35,7 +43,7 @@ export default function NewsDetail() {
         <div className="aspect-video bg-black"><iframe className="h-full w-full" src={`https://www.youtube-nocookie.com/embed/${article.video.youtubeId}`} title={article.video.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /></div>
         <p className="border-t border-green-deep/10 bg-ivory px-5 py-4 text-xs leading-6 text-charcoal/50 sm:px-7">※ {article.video.disclaimer}</p>
       </section>}
-      <SourceArticleCard news={article.selectedNews} ko={ko}/>
+      <SourceArticleCard news={selectedNews} ko={ko}/>
       <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]">{article.heroImage.sourceUrl ? <a href={article.heroImage.sourceUrl} target="_blank" rel="noreferrer" aria-label={ko ? "사진 원문 기사 보기" : "Open the original article for this photo"} className="group/image block"><img src={imageSrc(article.heroImage.src)} alt={article.heroImage.alt} referrerPolicy="no-referrer" className="aspect-[16/9] w-full object-cover transition duration-500 group-hover/image:scale-[1.012]"/></a> : <img src={imageSrc(article.heroImage.src)} alt={article.heroImage.alt} className="aspect-[16/9] w-full object-cover"/>}<FigureCaption caption={article.heroImage.caption} credit={article.heroImage.credit} sourceUrl={article.heroImage.sourceUrl}/></figure>
 
       <div className="mx-auto mt-8 max-w-3xl">
@@ -45,7 +53,7 @@ export default function NewsDetail() {
           <h2 className="text-xl font-extrabold leading-snug text-navy sm:text-2xl">{section.title}</h2>
           {section.paragraphs?.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 32)}`} className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">{paragraph}</p>)}
           {section.bullets && <ul className="mt-5 grid gap-2.5 text-base leading-7 text-charcoal/75 sm:text-[17px]">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet}`} className="flex gap-3"><span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"/><span>{bullet}</span></li>)}</ul>}
-          {index === Math.min(2, article.sections.length - 1) && <figure className="my-10 overflow-hidden border border-green-deep/10 bg-white"><img src={imageSrc(article.inlineImage.src)} alt={article.inlineImage.alt} className="aspect-[16/10] w-full object-cover"/><FigureCaption caption={article.inlineImage.caption} credit={article.inlineImage.credit} sourceUrl={article.inlineImage.sourceUrl}/></figure>}
+          {showInlineImage && index === Math.min(2, article.sections.length - 1) && <figure className="my-10 overflow-hidden border border-green-deep/10 bg-white"><img src={imageSrc(article.inlineImage.src)} alt={article.inlineImage.alt} className="aspect-[16/10] w-full object-cover"/><FigureCaption caption={article.inlineImage.caption} credit={article.inlineImage.credit} sourceUrl={article.inlineImage.sourceUrl}/></figure>}
         </section>)}
 
         <section className="mt-10 border-t-2 border-navy pt-7"><span className="section-kicker">{ko ? "앞으로 확인할 지점" : "WHAT TO WATCH"}</span><ol className="mt-4 grid gap-3 sm:grid-cols-2">{article.watchPoints.map((point, index) => <li key={`${index}-${point}`} className="border border-green-deep/15 bg-white p-4"><p className="text-sm font-semibold leading-6 text-navy">{point}</p></li>)}</ol></section>
