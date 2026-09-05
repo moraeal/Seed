@@ -72,7 +72,7 @@ export default function Header() {
       </div>
 
       <nav className="hidden border-b border-green-deep/18 bg-paper xl:block" aria-label={language === "en" ? "Main menu" : "주요 메뉴"}>
-        <div className="container-page flex items-center justify-center gap-10">{nav.map((item) => renderNavItem(item))}</div>
+        <div className="container-page flex items-center justify-end gap-10">{nav.map((item) => renderNavItem(item))}</div>
       </nav>
 
       {open && (
