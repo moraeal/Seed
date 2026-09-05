@@ -74,7 +74,7 @@ export default function Home() {
           <div className="h-full">
             {leadColumn && (
               <article className="h-full bg-white">
-                <div className="group -mx-4 flex h-full flex-col px-4 pb-3 pt-3 transition-colors hover:bg-green-pale/60">
+                <div className="group -mx-4 flex h-full flex-col px-4 pb-3 transition-colors hover:bg-green-pale/60">
                   <div className="relative overflow-hidden bg-navy">
                     <Link to={`/columns/${leadColumn.slug}`} className="block"><img src={resolveImageSrc(leadColumn.heroImage.src)} alt={leadColumn.heroImage.alt} className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" /><div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/90 via-black/35 to-transparent px-5 pb-14 pt-20 sm:px-6"><h1 className="max-w-full font-sans text-[clamp(1.45rem,3vw,2.65rem)] font-black leading-[1.05] tracking-[-0.045em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,.85)] lg:whitespace-nowrap">{leadColumn.title}</h1></div></Link>
                     <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end px-5 pb-5 text-white sm:px-6">
