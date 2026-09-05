@@ -1,6 +1,5 @@
 import { execFile } from "node:child_process";
-import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
-import os from "node:os";
+import { mkdir, unlink, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
 import { createServer } from "vite";
@@ -9,7 +8,6 @@ const run = promisify(execFile);
 const root = process.cwd();
 const publicRoot = path.join(root, "public");
 const outputRoot = path.join(publicRoot, "images", "social");
-const temporaryRoot = await mkdtemp(path.join(os.tmpdir(), "seed-social-images-"));
 
 const server = await createServer({
   configFile: false,
@@ -32,32 +30,35 @@ const jobs = [
   ...briefingModule.getAllBriefingsNewestFirst().map((item) => ({
     section: "briefings",
     slug: item.slug,
-    src: item.images[0]?.src,
+    src: item.images.find((image) => !/^https?:\/\//i.test(image.src) && /\.(?:jpe?g|png|webp)$/i.test(image.src))?.src
+      ?? "images/briefings/briefing-05-budget-ledger.webp",
   })),
-  ...columnModule.columns.map((item) => ({ section: "columns", slug: item.slug, src: item.heroImage.src })),
+  ...columnModule.columns.map((item) => ({ section: "columns", slug: item.slug, src: item.heroImage.src, fallbackSrc: item.heroImage.socialSrc })),
   ...seedLanguageModule.seedLanguageArticlesKo.map((item) => ({ section: "seed-language", slug: item.slug, src: item.heroImage.src })),
 ];
 
-const sourcePath = async (job) => {
-  if (!job.src) throw new Error(`Missing primary image for ${job.section}/${job.slug}`);
-  if (!/^https?:\/\//i.test(job.src)) return path.join(publicRoot, job.src.replace(/^\/+/, ""));
+for (const job of jobs) {
+  const targetDirectory = path.join(outputRoot, job.section);
+  const target = path.join(targetDirectory, `${job.slug}.jpg`);
+  await mkdir(targetDirectory, { recursive: true });
+  let temporarySource;
+  let source = path.join(publicRoot, job.src.replace(/^\/+/, ""));
 
-  const response = await fetch(job.src, {
-    headers: { Accept: "image/avif,image/webp,image/apng,image/*,*/*;q=0.8", "User-Agent": "SeedAllianceSocialPreview/1.0" },
-    signal: AbortSignal.timeout(30_000),
-  });
-  if (!response.ok) throw new Error(`Could not download primary image for ${job.section}/${job.slug}: ${response.status}`);
-  const source = path.join(temporaryRoot, `${job.section}-${job.slug}`);
-  await writeFile(source, Buffer.from(await response.arrayBuffer()));
-  return source;
-};
+  if (/^https?:\/\//i.test(job.src)) {
+    temporarySource = path.join(targetDirectory, `.${job.slug}-remote-image`);
+    try {
+      const response = await fetch(job.src, { signal: AbortSignal.timeout(20_000) });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      await writeFile(temporarySource, Buffer.from(await response.arrayBuffer()));
+      source = temporarySource;
+    } catch (error) {
+      if (!job.fallbackSrc) throw new Error(`Could not fetch social image for ${job.slug}: ${error.message}`);
+      source = path.join(publicRoot, job.fallbackSrc.replace(/^\/+/, ""));
+      console.warn(`Using fallback social image for ${job.slug}: ${error.message}`);
+    }
+  }
 
-try {
-  for (const job of jobs) {
-    const source = await sourcePath(job);
-    const targetDirectory = path.join(outputRoot, job.section);
-    const target = path.join(targetDirectory, `${job.slug}.jpg`);
-    await mkdir(targetDirectory, { recursive: true });
+  try {
     await run("convert", [
       source,
       "-auto-orient",
@@ -69,9 +70,9 @@ try {
       "-quality", "88",
       target,
     ]);
+  } finally {
+    if (temporarySource) await unlink(temporarySource).catch(() => {});
   }
-} finally {
-  await rm(temporaryRoot, { recursive: true, force: true });
 }
 
 console.log(`Generated ${jobs.length} social-preview JPEG images at 1200x630.`);
