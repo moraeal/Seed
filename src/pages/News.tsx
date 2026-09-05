@@ -4,6 +4,8 @@ import { localizeNewsArticle } from "../data/localizedContent";
 import { getNewsNewestFirst } from "../data/news";
 import { useLanguage } from "../i18n";
 
+const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
+
 export default function News() {
   const { language } = useLanguage();
   const ko = language === "ko";
@@ -19,7 +21,7 @@ export default function News() {
     <div className="container-page py-8 sm:py-10">
       <div className="border-t-2 border-navy">
         {articles.map((article) => <Link key={article.slug} to={`/news/${article.slug}`} className="group grid gap-5 border-b border-green-deep/15 px-5 py-6 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7">
-          <div className="overflow-hidden bg-green-deep"><img src={`${import.meta.env.BASE_URL}${article.heroImage.src.replace(/^\//, "")}`} alt={article.heroImage.alt} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.025]" /></div>
+          <div className="relative overflow-hidden bg-green-deep"><img src={imageSrc(article.heroImage.src)} alt={article.heroImage.alt} referrerPolicy="no-referrer" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.025]" /><span className="absolute bottom-2 left-2 max-w-[calc(100%-1rem)] rounded-sm bg-black/65 px-2 py-1 text-[10px] font-semibold leading-4 text-white backdrop-blur-sm">{article.heroImage.credit}</span></div>
           <div><h2 className="editorial-title text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">{article.title}</h2><p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/55">{article.summary}</p><div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={13}/>{ko ? `${article.readMinutes}분` : `${article.readMinutes} min`}</span><span className="ml-auto flex items-center gap-2 font-bold text-green-deep">{ko ? "뉴스 읽기" : "Read news"}<ArrowRight size={15}/></span></div></div>
         </Link>)}
       </div>

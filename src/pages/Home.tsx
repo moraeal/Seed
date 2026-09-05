@@ -144,7 +144,10 @@ export default function Home() {
             {rotatingNewsCards.map((item, index) => (
               <article key={`${item.slug}-${index}`} className="w-full shrink-0 border-b border-green-deep/15 px-5 py-5 transition-colors hover:bg-green-pale/70 md:w-1/3 md:border-r md:px-6">
                 <Link to={`/news/${item.slug}`} className="group block">
-                  <img src={resolveImageSrc(item.heroImage.src)} alt={item.heroImage.alt} className="aspect-[16/10] w-full object-cover" />
+                  <div className="relative overflow-hidden bg-green-deep">
+                    <img src={resolveImageSrc(item.heroImage.src)} alt={item.heroImage.alt} referrerPolicy="no-referrer" className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
+                    <span className="absolute bottom-2 left-2 max-w-[calc(100%-1rem)] rounded-sm bg-black/65 px-2 py-1 text-[10px] font-semibold leading-4 text-white backdrop-blur-sm">{item.heroImage.credit}</span>
+                  </div>
                   <h3 className="editorial-title mt-3 text-lg font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h3>
                   <p className="mt-2 line-clamp-3 text-sm leading-6 text-charcoal/58">{item.summary}</p>
                   <div className="mt-3 flex items-center gap-3 text-xs text-charcoal/38"><time>{item.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={12}/>{item.readMinutes}{ko ? "분" : " min"}</span></div>

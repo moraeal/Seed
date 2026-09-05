@@ -79,6 +79,9 @@ export const newsArticles: NewsArticle[] = [
     "headline": "검찰 미제사건 최대 20만건 예상·시한은 12월…‘업무 폭탄’ 경찰",
     "url": "https://www.hani.co.kr/arti/society/society_general/1276181.html",
     "linkLabel": "한겨레 원문 보기",
+    "thumbnailUrl": "https://flexible.img.hani.co.kr/flexible/normal/900/592/imgdb/original/2026/0903/20260903504002.jpg",
+    "thumbnailAlt": "서울경찰청장 취임식에서 경찰헌장 낭독을 경청하는 고범석 서울경찰청장",
+    "thumbnailCaption": "고범석 서울경찰청장이 2026년 9월 3일 취임식에서 경찰헌장 낭독을 경청하고 있습니다. 사진: 연합뉴스/한겨레",
     "summary": [
       "검찰이 처리하지 못한 사건이 제도 전환 과정에서 최대 20만 건에 이를 수 있다는 전망이 나왔습니다.",
       "지난해 경찰 수사관 1명이 접수한 사건은 연평균 133.8건으로, 2021년보다 32.7% 증가했습니다.",
@@ -86,10 +89,11 @@ export const newsArticles: NewsArticle[] = [
     ]
   },
   "heroImage": {
-    "src": "/images/news/news-08-police-case-backlog.webp",
-    "alt": "수많은 사건 기록에 둘러싸여 업무를 처리하는 한국의 일선 수사관을 표현한 설명 이미지",
-    "caption": "미제 사건은 서류 더미가 아닙니다. 사건마다 국가의 판단을 기다리는 시민이 있습니다. 실제 경찰관이나 수사 현장이 아닌 설명용 이미지입니다.",
-    "credit": "자료이미지 · 씨앗의 소리 AI 제작"
+    "src": "https://flexible.img.hani.co.kr/flexible/normal/900/592/imgdb/original/2026/0903/20260903504002.jpg",
+    "alt": "서울경찰청장 취임식에서 경찰헌장 낭독을 경청하는 고범석 서울경찰청장",
+    "caption": "고범석 서울경찰청장이 2026년 9월 3일 서울 종로구 서울경찰청에서 열린 취임식에서 경찰헌장 낭독을 경청하고 있습니다.",
+    "credit": "연합뉴스 · 한겨레",
+    "sourceUrl": "https://www.hani.co.kr/arti/society/society_general/1276181.html"
   },
   "inlineImage": {
     "src": "/images/briefings/briefing-01-justice.jpg",
@@ -150,7 +154,7 @@ export const newsArticles: NewsArticle[] = [
     "headline": "반도체 꺾이면 어쩌려고…4년 뒤 지출 ‘1000조’ 정부 밑그림에 우려",
     "url": "https://v.daum.net/v/20260902043138400",
     "linkLabel": "한국일보 원문 보기",
-    "thumbnailUrl": "https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202609%2F02%2Fhankooki%2F20260902043140287debt.jpg",
+    "thumbnailUrl": "https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202609%2F02%2Fhankooki%2F20260902043140287debt.jpg",
     "thumbnailAlt": "이재명 대통령이 청년 예산 언박싱 행사에서 발언하는 모습",
     "thumbnailCaption": "이재명 대통령이 2026년 8월 28일 청년 예산 언박싱 행사에서 발언하고 있습니다. 사진: 왕태석 선임기자·청와대사진기자단/한국일보",
     "summary": [
@@ -160,10 +164,11 @@ export const newsArticles: NewsArticle[] = [
     ]
   },
   "heroImage": {
-    "src": "/images/news/news-07-fiscal-path.webp",
-    "alt": "한국 시민들이 거대한 국가 장부에서 도시와 산업으로 이어지는 재정 확대의 길을 살펴보는 상징 이미지",
-    "caption": "2030년 1,000조 원을 향하는 재정계획은 성장의 길을 열 수 있지만, 그 길을 떠받칠 세입 전망과 지출 우선순위도 함께 검증해야 합니다. 실제 현장이 아닌 설명용 이미지입니다.",
-    "credit": "자료이미지 · 씨앗의 소리 AI 제작"
+    "src": "https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202609%2F02%2Fhankooki%2F20260902043140287debt.jpg",
+    "alt": "이재명 대통령이 청년 예산 언박싱 행사에서 발언하는 모습",
+    "caption": "이재명 대통령이 2026년 8월 28일 청와대에서 열린 '청년 예산 언박싱 2027'에서 모두발언을 하고 있습니다.",
+    "credit": "왕태석 선임기자·청와대사진기자단 · 한국일보",
+    "sourceUrl": "https://v.daum.net/v/20260902043138400"
   },
   "inlineImage": {
     "src": "/images/news/news-07-revenue-stress-test.webp",
@@ -235,10 +240,11 @@ export const newsArticles: NewsArticle[] = [
     ]
   },
   "heroImage": {
-    "src": "/images/news/class-action-consumers-courthouse.webp",
-    "alt": "법원 복도에서 소비자들과 기업 법률대리인이 마주 선 집단소송 설명 이미지",
-    "caption": "집단소송은 흩어진 소액 피해를 하나의 절차로 모으지만, 법원은 대표성과 공통 쟁점, 소송의 적합성을 엄격하게 심사해야 합니다. 실제 사건 현장이 아닌 설명용 이미지입니다.",
-    "credit": "자료이미지 · 씨앗의 소리 AI 제작"
+    "src": "https://img1.newsis.com/2026/09/01/NISI20260901_0002226989_web.jpg",
+    "alt": "비가 내리는 국회 앞에서 집단소송법 제정을 촉구하는 소비자·시민단체 기자회견",
+    "caption": "소비자 보호를 위한 집단소송법 제정연대가 2026년 9월 1일 서울 여의도 국회 정문 앞에서 기자회견을 열고 있습니다.",
+    "credit": "뉴시스",
+    "sourceUrl": "https://mobile.newsis.com/view_amp.html?ar_id=NISX20260901_0003771422"
   },
   "inlineImage": {
     "src": "/images/news/class-action-claims-table.webp",
@@ -340,7 +346,7 @@ export const newsArticles: NewsArticle[] = [
     "headline": "개인정보 166만명 유출 GS리테일에 과징금 128억원…‘사고 대응 소홀’",
     "url": "https://v.daum.net/v/20260831163751029",
     "linkLabel": "중앙일보 원문 보기",
-    "thumbnailUrl": "https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202608%2F31%2Fjoongang%2F20260831163753011mrwp.jpg",
+    "thumbnailUrl": "https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202608%2F31%2Fjoongang%2F20260831163753011mrwp.jpg",
     "thumbnailAlt": "서울 시내 GS25 편의점 전경",
     "thumbnailCaption": "GS리테일 개인정보 유출 처분을 보도한 중앙일보 기사 사진 · 뉴스1",
     "summary": [
@@ -350,11 +356,11 @@ export const newsArticles: NewsArticle[] = [
     ]
   },
   "heroImage": {
-    "src": "/images/news/gs-retail-data-leak-hero.webp",
-    "alt": "쇼핑 서비스 계정에서 시민의 개인정보가 외부로 흘러가는 구조를 설명한 이미지",
-    "caption": "크리덴셜 스터핑은 다른 곳에서 확보된 계정정보를 반복 대입해 로그인한 뒤 회원정보를 빼내는 공격입니다. 실제 사건 현장이 아닌 설명용 이미지입니다.",
-    "credit": "자료이미지 · 씨앗의 소리 AI 제작",
-    "sourceUrl": ""
+    "src": "https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202608%2F31%2Fjoongang%2F20260831163753011mrwp.jpg",
+    "alt": "서울 시내 GS25 편의점 전경",
+    "caption": "GS리테일 개인정보 유출 제재가 발표된 2026년 8월 31일 서울 시내 GS25 편의점 모습입니다.",
+    "credit": "뉴스1 · 중앙일보",
+    "sourceUrl": "https://v.daum.net/v/20260831163751029"
   },
   "inlineImage": {
     "src": "/images/news/gs-retail-security-response.webp",
@@ -471,11 +477,11 @@ export const newsArticles: NewsArticle[] = [
     ]
   },
   "heroImage": {
-    "src": "/images/columns/judicial-independence-courthouse.png",
-    "alt": "행정부와 입법부 사이에 독립된 법원을 배치한 상징 이미지",
-    "caption": "대법관 인선은 대통령·국회·대법원장 어느 한 기관도 독점하지 못하도록 권한을 나눈 헌법 절차입니다.",
-    "credit": "씨앗의 소리 제작 이미지",
-    "sourceUrl": ""
+    "src": "https://dimg.donga.com/wps/NEWS/IMAGE/2026/08/29/134567271.1.jpg",
+    "alt": "대법관 재제청 요구를 발표하는 청와대 브리핑 현장",
+    "caption": "청와대가 2026년 8월 28일 대법관 후보 재제청 요구 방침을 발표하고 있습니다.",
+    "credit": "청와대사진기자단 · 동아일보",
+    "sourceUrl": "https://www.donga.com/news/Politics/article/all/20260828/134567139/2"
   },
   "inlineImage": {
     "src": "/images/columns/checks-and-balances.png",

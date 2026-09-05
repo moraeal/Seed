@@ -11,6 +11,7 @@ export const civicSocietyStateizationColumn: SeedColumn = {
   summary: "이재명 대통령이 진보 성향 시민단체 19곳과 210분간 대화했다. 특정 진영을 시민사회 전체처럼 호명하고 위원회·사업·예산으로 국가 안에 편입할 때 시민사회의 대표성과 독립성이 어떻게 훼손될 수 있는지 묻는다.",
   heroImage: {
     src: "https://i.ytimg.com/vi/LTILlMkKd04/maxresdefault.jpg",
+    socialSrc: "images/columns/civic-society-selected-listening.webp",
     alt: "시민사회 초청 간담회에서 발언하는 이재명 대통령을 담은 SBS 뉴스 현장영상 화면",
     caption: "이재명 대통령이 2026년 9월 4일 시민사회 초청 간담회에서 발언하고 있다. 이미지를 누르면 SBS 뉴스 현장영상으로 이동한다.",
     credit: "영상 화면 · SBS 뉴스",
