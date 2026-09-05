@@ -45,6 +45,11 @@ for (const job of jobs) {
   let source = path.join(publicRoot, job.src.replace(/^\/+/, ""));
 
   if (/^https?:\/\//i.test(job.src)) {
+    const existingPreviewIsAvailable = await access(target).then(() => true).catch(() => false);
+    if (existingPreviewIsAvailable && !job.fallbackSrc) {
+      console.warn(`Keeping existing social image for remote source: ${job.slug}`);
+      continue;
+    }
     temporarySource = path.join(targetDirectory, `.${job.slug}-remote-image`);
     try {
       const response = await fetch(job.src, { signal: AbortSignal.timeout(20_000) });
