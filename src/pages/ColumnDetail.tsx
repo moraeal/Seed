@@ -29,7 +29,7 @@ export default function ColumnDetail() {
     </header>
 
     <div className="container-page max-w-4xl py-8 sm:py-12">
-      <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]"><img src={imageSrc(column.heroImage.src)} alt={column.heroImage.alt} className="aspect-[16/9] w-full object-cover"/><FigureCaption caption={column.heroImage.caption} credit={column.heroImage.credit} sourceUrl={column.heroImage.sourceUrl}/></figure>
+      <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]">{column.heroImage.sourceUrl ? <a href={column.heroImage.sourceUrl} target="_blank" rel="noreferrer" aria-label={ko ? "SBS 뉴스 영상 보기" : "Watch the SBS News video"} className="group/image block"><img src={imageSrc(column.heroImage.src)} alt={column.heroImage.alt} referrerPolicy="no-referrer" className="aspect-[16/9] w-full object-cover transition duration-500 group-hover/image:scale-[1.012]"/></a> : <img src={imageSrc(column.heroImage.src)} alt={column.heroImage.alt} className="aspect-[16/9] w-full object-cover"/>}<FigureCaption caption={column.heroImage.caption} credit={column.heroImage.credit} sourceUrl={column.heroImage.sourceUrl}/></figure>
 
       <div className="mx-auto mt-10 max-w-3xl">
         {column.sections.map((section, index) => <section key={`${index}-${section.title}`} className={`${index === 0 ? "" : "mt-10 border-t border-green-deep/10 pt-8"}`}>
