@@ -82,7 +82,7 @@ export default function Home() {
                     </div>
                     {leadColumn.heroImage.sourceUrl && <a href={leadColumn.heroImage.sourceUrl} target="_blank" rel="noreferrer" className="absolute bottom-5 left-5 z-10 rounded-sm bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white underline decoration-white/45 underline-offset-2 backdrop-blur-sm transition hover:bg-black/80 sm:left-6">{leadColumn.heroImage.credit}</a>}
                   </div>
-                  <Link to={`/columns/${leadColumn.slug}`} className="flex flex-1 flex-col">
+                  <Link to={`/columns/${leadColumn.slug}`} className="flex flex-1 flex-col px-5 sm:px-6">
                     <p className="mt-3 max-w-4xl text-base font-medium leading-7 text-charcoal/65 sm:text-[17px]">{leadColumn.summary}</p>
                     {leadColumnExcerpt && <p className="mt-3 max-w-4xl border-l-2 border-gold/70 pl-4 text-[15px] leading-7 text-charcoal/72 sm:line-clamp-4 sm:text-base">{leadColumnExcerpt}</p>}
                     <span className="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-extrabold text-green-deep">{ko ? "씨앗의 소리 계속 읽기" : "Continue reading SEED's voice"}<ArrowRight size={16}/></span>
