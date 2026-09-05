@@ -23,7 +23,7 @@ export default function Home() {
   const [activeColumnIndex, setActiveColumnIndex] = useState(0);
   const ko = language === "ko";
   const briefings = getAllBriefingsNewestFirst().slice(0, 5).map((item) => localizeBriefing(item, language));
-  const journalColumns = [...columns].sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue).slice(0, 6).map((item) => localizeColumn(item, language));
+  const journalColumns = [...columns].sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue).slice(0, 5).map((item) => localizeColumn(item, language));
   const news = getNewsNewestFirst().slice(0, 5).map((item) => localizeNewsArticle(item, language));
   const leadColumn = journalColumns[activeColumnIndex] ?? journalColumns[0];
   const leadColumnExcerpt = leadColumn?.sections.flatMap((section) => section.paragraphs)[0];
@@ -98,8 +98,8 @@ export default function Home() {
             </div>
 
             <div className="flex min-h-0 flex-1 flex-col">
-              {journalColumns.slice(1, 6).map((column, index) => {
-                const columnIndex = index + 1;
+              {journalColumns.slice(0, 5).map((column, index) => {
+                const columnIndex = index;
                 const active = activeColumnIndex === columnIndex;
                 return (
                   <Link
@@ -111,7 +111,7 @@ export default function Home() {
                   >
                     <time className="text-[11px] text-charcoal/45">{column.date.replace(/-/g, ".")}</time>
                     <h3 className="editorial-title mt-1 text-base font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.05rem]">{column.title}</h3>
-                    <p className="mt-1 line-clamp-1 text-[13px] leading-5 text-charcoal/60">{column.summary}</p>
+                    <p className="mt-1 line-clamp-2 text-[13px] leading-5 text-charcoal/60">{column.summary}</p>
                   </Link>
                 );
               })}
