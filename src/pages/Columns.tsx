@@ -4,6 +4,8 @@ import { columns } from "../data/columns";
 import { localizeColumn } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
 
+const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
+
 export default function Columns() {
   const { language } = useLanguage();
   const ko = language === "ko";
@@ -21,7 +23,7 @@ export default function Columns() {
     <div className="container-page py-8 sm:py-10">
       <div className="border-t-2 border-navy">
         {localizedColumns.map((column) => <Link key={column.slug} to={`/columns/${column.slug}`} className="group grid gap-5 border-b border-green-deep/15 px-5 py-6 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7">
-          <div className="overflow-hidden bg-green-deep"><img src={`${import.meta.env.BASE_URL}${column.heroImage.src.replace(/^\//, "")}`} alt={column.heroImage.alt} className="aspect-[4/3] w-full object-cover grayscale-[15%] transition duration-500 group-hover:scale-[1.025]" /></div>
+          <div className="overflow-hidden bg-green-deep"><img src={imageSrc(column.heroImage.src)} alt={column.heroImage.alt} referrerPolicy="no-referrer" className="aspect-[4/3] w-full object-cover grayscale-[15%] transition duration-500 group-hover:scale-[1.025]" /></div>
           <div><h2 className="editorial-title text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">{column.title}</h2><p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/55">{column.summary}</p><div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-charcoal/45"><time>{column.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={13}/>{ko ? `${column.readMinutes}분` : `${column.readMinutes} min`}</span><span className="ml-auto flex items-center gap-2 font-bold text-green-deep">{ko ? "글 읽기" : "Read"}<ArrowRight size={15}/></span></div></div>
         </Link>)}
       </div>
