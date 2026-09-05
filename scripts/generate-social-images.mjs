@@ -33,7 +33,7 @@ const jobs = [
     src: item.images.find((image) => !/^https?:\/\//i.test(image.src) && /\.(?:jpe?g|png|webp)$/i.test(image.src))?.src
       ?? "images/briefings/briefing-05-budget-ledger.webp",
   })),
-  ...columnModule.columns.map((item) => ({ section: "columns", slug: item.slug, src: item.heroImage.src })),
+  ...columnModule.columns.map((item) => ({ section: "columns", slug: item.slug, src: item.heroImage.socialSrc ?? item.heroImage.src })),
   ...seedLanguageModule.seedLanguageArticlesKo.map((item) => ({ section: "seed-language", slug: item.slug, src: item.heroImage.src })),
 ];
 
