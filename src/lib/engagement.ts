@@ -38,15 +38,17 @@ export async function recordContentView(path: string, language: "ko" | "en") {
 }
 
 export type EngagementSummary = { metric: "active_subscribers" | "all_page_views" | "page_views_7d"; value: number };
+export type DailyViewStat = { view_date: string; views: number };
 export type ContentViewStat = { page_path: string; views: number; last_viewed_at: string };
 export type NewsletterSubscriber = { email: string; language: "ko" | "en"; source_path: string; status: "active" | "unsubscribed"; consented_at: string };
 
 export async function getEngagementData(session: AuthSession) {
   const token = session.access_token;
-  const [summary, views, subscribers] = await Promise.all([
+  const [summary, dailyViews, views, subscribers] = await Promise.all([
     callRpc<EngagementSummary[]>("get_engagement_summary", {}, token),
+    callRpc<DailyViewStat[]>("get_daily_view_stats", {}, token),
     callRpc<ContentViewStat[]>("get_content_view_stats", {}, token),
     callRpc<NewsletterSubscriber[]>("get_newsletter_subscribers", {}, token),
   ]);
-  return { summary, views, subscribers };
+  return { summary, dailyViews, views, subscribers };
 }

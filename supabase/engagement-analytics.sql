@@ -70,7 +70,8 @@ begin
   return query
     select 'active_subscribers'::text, count(*)::bigint from public.newsletter_subscribers where status = 'active'
     union all select 'all_page_views'::text, count(*)::bigint from public.content_page_views
-    union all select 'page_views_7d'::text, count(*)::bigint from public.content_page_views where viewed_at >= now() - interval '7 days';
+    union all select 'page_views_7d'::text, count(*)::bigint from public.content_page_views
+      where viewed_at >= ((now() at time zone 'Asia/Seoul')::date - 6)::timestamp at time zone 'Asia/Seoul';
 end; $$;
 
 create or replace function public.get_content_view_stats()
@@ -81,6 +82,30 @@ begin
   end if;
   return query select v.page_path, count(*)::bigint, max(v.viewed_at) from public.content_page_views v
     group by v.page_path order by count(*) desc, max(v.viewed_at) desc limit 100;
+end; $$;
+
+create or replace function public.get_daily_view_stats()
+returns table (view_date date, views bigint) language plpgsql security definer set search_path = '' as $$
+begin
+  if lower(coalesce(auth.jwt() ->> 'email', '')) <> 'seedcivicpartners@gmail.com' then
+    raise exception 'not authorized' using errcode = '42501';
+  end if;
+  return query
+    with days as (
+      select generate_series(
+        (now() at time zone 'Asia/Seoul')::date - 6,
+        (now() at time zone 'Asia/Seoul')::date,
+        interval '1 day'
+      )::date as day
+    ), counts as (
+      select (v.viewed_at at time zone 'Asia/Seoul')::date as day, count(*)::bigint as total
+      from public.content_page_views v
+      where v.viewed_at >= ((now() at time zone 'Asia/Seoul')::date - 6)::timestamp at time zone 'Asia/Seoul'
+      group by 1
+    )
+    select d.day, coalesce(c.total, 0)::bigint
+    from days d left join counts c using (day)
+    order by d.day;
 end; $$;
 
 create or replace function public.get_newsletter_subscribers()
@@ -98,9 +123,11 @@ revoke all on function public.subscribe_newsletter(text, text, text) from public
 revoke all on function public.record_content_view(text, text, text) from public, anon, authenticated;
 revoke all on function public.get_engagement_summary() from public, anon, authenticated;
 revoke all on function public.get_content_view_stats() from public, anon, authenticated;
+revoke all on function public.get_daily_view_stats() from public, anon, authenticated;
 revoke all on function public.get_newsletter_subscribers() from public, anon, authenticated;
 grant execute on function public.subscribe_newsletter(text, text, text) to anon, authenticated;
 grant execute on function public.record_content_view(text, text, text) to anon, authenticated;
 grant execute on function public.get_engagement_summary() to authenticated;
 grant execute on function public.get_content_view_stats() to authenticated;
+grant execute on function public.get_daily_view_stats() to authenticated;
 grant execute on function public.get_newsletter_subscribers() to authenticated;
