@@ -20,6 +20,10 @@ export default function Home() {
   const [newsPaused, setNewsPaused] = useState(false);
   const [newsTransition, setNewsTransition] = useState(true);
   const [newsVisibleCount, setNewsVisibleCount] = useState(() => typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches ? 3 : 1);
+  const [briefingPage, setBriefingPage] = useState(0);
+  const [briefingPaused, setBriefingPaused] = useState(false);
+  const [briefingTransition, setBriefingTransition] = useState(true);
+  const [briefingVisibleCount, setBriefingVisibleCount] = useState(() => typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches ? 3 : 1);
   const [activeColumnIndex, setActiveColumnIndex] = useState(0);
   const ko = language === "ko";
   const briefings = getAllBriefingsNewestFirst().slice(0, 5).map((item) => localizeBriefing(item, language));
@@ -28,14 +32,21 @@ export default function Home() {
   const leadColumn = journalColumns[activeColumnIndex] ?? journalColumns[0];
   const leadColumnExcerpt = leadColumn?.sections.flatMap((section) => section.paragraphs)[0];
   const rotatingNewsCards = news.length ? [...news, ...news.slice(0, newsVisibleCount)] : [];
+  const rotatingBriefingCards = briefings.length ? [...briefings, ...briefings.slice(0, briefingVisibleCount)] : [];
 
   useEffect(() => {
     const media = window.matchMedia("(min-width: 768px)");
     const updateVisibleCount = () => {
       setNewsTransition(false);
+      setBriefingTransition(false);
       setNewsPage(0);
+      setBriefingPage(0);
       setNewsVisibleCount(media.matches ? 3 : 1);
-      window.requestAnimationFrame(() => window.requestAnimationFrame(() => setNewsTransition(true)));
+      setBriefingVisibleCount(media.matches ? 3 : 1);
+      window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+        setNewsTransition(true);
+        setBriefingTransition(true);
+      }));
     };
     media.addEventListener("change", updateVisibleCount);
     return () => media.removeEventListener("change", updateVisibleCount);
@@ -60,11 +71,37 @@ export default function Home() {
     return () => window.clearTimeout(fallback);
   }, [news.length, newsPage]);
 
+  useEffect(() => {
+    if (briefingPaused || briefings.length <= briefingVisibleCount || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => {
+      if (document.hidden) return;
+      setBriefingPage((page) => Math.min(page + 1, briefings.length));
+    }, 5000);
+    return () => window.clearInterval(timer);
+  }, [briefingPaused, briefings.length, briefingVisibleCount]);
+
+  useEffect(() => {
+    if (!briefings.length || briefingPage < briefings.length) return;
+    const fallback = window.setTimeout(() => {
+      setBriefingTransition(false);
+      setBriefingPage(0);
+      window.requestAnimationFrame(() => window.requestAnimationFrame(() => setBriefingTransition(true)));
+    }, 850);
+    return () => window.clearTimeout(fallback);
+  }, [briefingPage, briefings.length]);
+
   const finishNewsTransition = () => {
     if (newsPage < news.length) return;
     setNewsTransition(false);
     setNewsPage(0);
     window.requestAnimationFrame(() => window.requestAnimationFrame(() => setNewsTransition(true)));
+  };
+
+  const finishBriefingTransition = () => {
+    if (briefingPage < briefings.length) return;
+    setBriefingTransition(false);
+    setBriefingPage(0);
+    window.requestAnimationFrame(() => window.requestAnimationFrame(() => setBriefingTransition(true)));
   };
 
   return (
@@ -188,15 +225,50 @@ export default function Home() {
       </section>
 
       <section className="border-y border-green-deep/15 bg-[#F1F2EC] py-8 sm:py-10">
-        <div className="container-page grid gap-6 lg:grid-cols-[.5fr_1.5fr] lg:gap-9">
-          <div className="bg-white px-5 py-4 sm:px-6"><p className="section-kicker">SEED CITIZEN BRIEFING</p><h2 className="editorial-title mt-2 text-2xl font-bold leading-tight text-navy sm:text-3xl">{ko ? <>사실에서<br />판단까지</> : <>From facts<br />to judgment</>}</h2><p className="mt-2.5 text-sm leading-6 text-charcoal/58">{ko ? "확인된 사실을 먼저 짚고, 논쟁의 맥락과 앞으로 지켜볼 지점을 시민의 언어로 설명합니다." : "We begin with verified facts, explain the context, and identify what citizens should continue to watch."}</p><Link to="/briefings" className="text-link mt-4">{ko ? "시민브리핑 전체보기" : "View all briefings"}<ArrowRight size={15}/></Link></div>
-          <div className="border-t-2 border-navy">
-            {briefings.slice(0, 4).map((briefing) => (
-              <Link key={briefing.slug} to={`/briefings/${briefing.slug}`} className="group grid gap-2 border-b border-green-deep/15 px-4 py-3.5 transition-colors hover:bg-white/85 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-4">
-                <div><h3 className="editorial-title text-[1.05rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-lg">{briefing.title}</h3><p className="mt-1 line-clamp-2 text-sm leading-6 text-charcoal/55">{briefing.summary}</p></div>
-                <time className="text-xs text-charcoal/38">{briefing.date.replace(/-/g, ".")}</time>
-              </Link>
-            ))}
+        <div className="container-page">
+          <div className="flex items-end justify-between gap-4 border-b-[3px] border-navy pb-3">
+            <div><p className="section-kicker">SEED CITIZEN BRIEFING</p><h2 className="editorial-title mt-1.5 text-2xl font-bold text-navy sm:text-3xl">{ko ? "시민브리핑" : "Citizen Briefing"}</h2></div>
+            <Link to="/briefings" className="text-link shrink-0">{ko ? "시민브리핑 전체보기" : "View all briefings"}<ArrowRight size={15}/></Link>
+          </div>
+          <div
+            className="overflow-hidden bg-white/45"
+            onMouseEnter={() => setBriefingPaused(true)}
+            onMouseLeave={() => setBriefingPaused(false)}
+            onFocusCapture={() => setBriefingPaused(true)}
+            onBlurCapture={() => setBriefingPaused(false)}
+            aria-label={ko ? "최신 시민브리핑 슬라이드" : "Latest Citizen Briefing carousel"}
+          >
+            <div
+              className={`flex ${briefingTransition ? "transition-transform duration-700 ease-out" : ""} motion-reduce:transition-none`}
+              style={{ transform: `translateX(-${briefingPage * (100 / briefingVisibleCount)}%)` }}
+              onTransitionEnd={(event) => { if (event.target === event.currentTarget) finishBriefingTransition(); }}
+            >
+              {rotatingBriefingCards.map((briefing, index) => {
+                const image = briefing.images?.[0];
+                return (
+                  <article key={`${briefing.slug}-${index}`} className="w-full shrink-0 border-b border-green-deep/15 px-5 py-5 transition-colors hover:bg-white md:w-1/3 md:border-r md:px-6">
+                    <Link to={`/briefings/${briefing.slug}`} className="group block">
+                      {image && (
+                        <div className="relative overflow-hidden bg-green-deep">
+                          <img src={resolveImageSrc(image.src)} alt={image.alt} referrerPolicy="no-referrer" className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
+                          <span className="absolute bottom-2 left-2 max-w-[calc(100%-1rem)] rounded-sm bg-black/65 px-2 py-1 text-[10px] font-semibold leading-4 text-white backdrop-blur-sm">{image.credit}</span>
+                        </div>
+                      )}
+                      <h3 className="editorial-title mt-3 text-lg font-bold leading-snug text-navy transition group-hover:text-green-mid">{briefing.title}</h3>
+                      <p className="mt-2 line-clamp-3 text-sm leading-6 text-charcoal/58">{briefing.summary}</p>
+                      <div className="mt-3 flex items-center gap-3 text-xs text-charcoal/38"><time>{briefing.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={12}/>{briefing.readMinutes}{ko ? "분" : " min"}</span></div>
+                    </Link>
+                  </article>
+                );
+              })}
+            </div>
+            {briefings.length > briefingVisibleCount && (
+              <div className="flex justify-center gap-2 border-t border-green-deep/10 py-3">
+                {briefings.map((briefing, page) => (
+                  <button key={briefing.slug} type="button" onClick={() => { setBriefingTransition(true); setBriefingPage(page); }} className={`h-1.5 rounded-full transition-all ${(briefingPage % briefings.length) === page ? "w-6 bg-green-deep" : "w-1.5 bg-green-deep/25 hover:bg-green-deep/50"}`} aria-label={ko ? `${page + 1}번째 시민브리핑 보기` : `Show Citizen Briefing item ${page + 1}`} aria-current={(briefingPage % briefings.length) === page ? "true" : undefined} />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>

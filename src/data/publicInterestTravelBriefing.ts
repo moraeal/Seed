@@ -19,7 +19,7 @@ export const publicInterestTravelBriefing: Briefing = {
       sourceUrl: "https://www.youtube.com/watch?v=ZT_c2y6x2nc",
     },
     {
-      src: "images/briefings/briefing-07-public-interest-oversight.png",
+      src: "images/briefings/briefing-07-public-interest-oversight.webp",
       alt: "시민들이 공개 문서를 검토하고 그 뒤의 공익위원회와 민간기업 공간을 감시하는 편집 이미지",
       caption: "공익기관 감시는 비용만 확인하는 일이 아닙니다. 공적 직함을 통해 얻은 정보·인맥·기회가 민간의 이해관계와 분리됐는지도 살펴야 합니다.",
       credit: "씨앗의 소리 AI 제작 이미지",
