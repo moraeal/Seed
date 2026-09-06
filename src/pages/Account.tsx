@@ -1,4 +1,4 @@
-import { BarChart3, CheckCircle2, Instagram, LogIn, LogOut, MailCheck, MessageCircle, Send, Smartphone, UserPlus } from "lucide-react";
+import { BarChart3, CheckCircle2, Instagram, LogIn, LogOut, MailCheck, MessageCircle, Send, UserPlus } from "lucide-react";
 import { FormEvent, useMemo, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../auth";
@@ -163,7 +163,7 @@ export default function Account() {
                     );
                   })}
                 </div>
-                {socialPreferences.includes("kakao") && <label className="field mt-4"><span>{ko ? "휴대전화 번호" : "Mobile number"}</span><span className="relative"><Smartphone className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-green-mid" size={17}/><input type="tel" value={phone} onChange={(event) => setPhone(formatPhone(event.target.value))} className="pl-11" placeholder="010-0000-0000" autoComplete="tel-national" inputMode="numeric" maxLength={13} required /></span><small className="font-normal leading-5 text-charcoal/45">{ko ? "새 콘텐츠를 카카오톡으로 보내드리는 데 사용합니다." : "We use this number to deliver new content through KakaoTalk."}</small></label>}
+                {socialPreferences.includes("kakao") && <label className="field mt-4"><span>{ko ? "휴대전화 번호" : "Mobile number"}</span><span><input type="tel" value={phone} onChange={(event) => setPhone(formatPhone(event.target.value))} placeholder="010-0000-0000" autoComplete="tel-national" inputMode="numeric" maxLength={13} required /></span><small className="font-normal leading-5 text-charcoal/45">{ko ? "새 콘텐츠를 카카오톡으로 보내드리는 데 사용합니다." : "We use this number to deliver new content through KakaoTalk."}</small></label>}
               </div>
             )}
 
