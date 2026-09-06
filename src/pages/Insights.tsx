@@ -1,11 +1,9 @@
-import { BarChart3, ChevronDown, Mail, RefreshCw } from "lucide-react";
+import { BarChart3, ChevronDown, Mail, RefreshCw, UserCheck } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../auth";
 import { useLanguage } from "../i18n";
-import { ContentViewStat, DailyViewStat, EngagementSummary, getEngagementData, NewsletterSubscriber } from "../lib/engagement";
-
-const OWNER_EMAIL = "seedcivicpartners@gmail.com";
+import { ContentViewStat, DailyViewStat, EngagementSummary, getEngagementData, MemberRegistration, NewsletterSubscriber } from "../lib/engagement";
 
 export default function Insights() {
   const { session, user, loading: authLoading } = useAuth();
@@ -14,11 +12,12 @@ export default function Insights() {
   const [summary, setSummary] = useState<EngagementSummary[]>([]);
   const [dailyViews, setDailyViews] = useState<DailyViewStat[]>([]);
   const [views, setViews] = useState<ContentViewStat[]>([]);
+  const [members, setMembers] = useState<MemberRegistration[]>([]);
   const [subscribers, setSubscribers] = useState<NewsletterSubscriber[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showDailyViews, setShowDailyViews] = useState(false);
-  const authorized = user?.email?.toLowerCase() === OWNER_EMAIL;
+  const authorized = user?.app_metadata?.seed_role === "owner";
 
   const refresh = async () => {
     if (!session || !authorized) return;
@@ -29,6 +28,7 @@ export default function Insights() {
       setSummary(data.summary);
       setDailyViews(data.dailyViews);
       setViews(data.views);
+      setMembers(data.members);
       setSubscribers(data.subscribers);
     } catch {
       setError(ko ? "통계 자료를 불러오지 못했습니다." : "Could not load analytics data.");
@@ -61,7 +61,22 @@ export default function Insights() {
         {showDailyViews && <section id="daily-view-trend" className="mt-4 border border-green-deep/15 bg-white p-5 sm:p-7" aria-labelledby="daily-view-trend-title"><div className="flex flex-wrap items-end justify-between gap-2"><div><h2 id="daily-view-trend-title" className="editorial-title text-xl font-bold text-navy">{ko ? "최근 7일 일별 조회 추이" : "Daily views over the last 7 days"}</h2><p className="mt-1 text-xs text-charcoal/45">{ko ? "한국 시간 기준 · 오늘 포함" : "Korea time · including today"}</p></div><p className="text-sm font-bold text-green-deep">{ko ? `합계 ${(totals.page_views_7d || 0).toLocaleString()}회` : `${(totals.page_views_7d || 0).toLocaleString()} total`}</p></div><div className="mt-7 grid h-52 grid-cols-7 items-end gap-2 border-b border-green-deep/20 px-1 sm:gap-4" role="img" aria-label={ko ? "최근 7일의 일별 페이지 조회 막대그래프" : "Bar chart of daily page views over the last 7 days"}>{dailyViews.map((item) => { const count = Number(item.views); return <div key={item.view_date} className="flex h-full min-w-0 flex-col items-center justify-end"><span className="mb-2 text-xs font-bold text-navy">{count.toLocaleString()}</span><div className="w-full max-w-12 bg-green-mid transition-[height] duration-300" style={{ height: `${Math.max(count > 0 ? 8 : 2, (count / maxDailyViews) * 140)}px` }} title={`${formatChartDate(item.view_date)}: ${count.toLocaleString()}`}/><span className="mt-2 whitespace-nowrap text-[10px] font-semibold text-charcoal/55 sm:text-xs">{formatChartDate(item.view_date)}</span></div>; })}</div>{!loading && dailyViews.length === 0 && <p className="py-10 text-center text-sm text-charcoal/45">{ko ? "일별 조회 기록이 없습니다." : "No daily view history yet."}</p>}</section>}
         <div className="mt-10 grid gap-8 xl:grid-cols-2">
           <section><h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "콘텐츠별 조회" : "Views by content"}</h2><div className="mt-4 overflow-x-auto border-t-2 border-navy"><table className="w-full text-left text-sm"><thead className="bg-[#F1F2EC] text-xs text-charcoal/50"><tr><th className="px-4 py-3">{ko ? "경로" : "Path"}</th><th className="px-4 py-3 text-right">{ko ? "조회" : "Views"}</th></tr></thead><tbody>{views.map((item) => <tr key={item.page_path} className="border-t border-green-deep/10"><td className="px-4 py-3"><Link to={item.page_path} className="font-semibold text-green-deep hover:underline">{item.page_path}</Link><p className="mt-1 text-[11px] text-charcoal/35">{formatDate(item.last_viewed_at)}</p></td><td className="px-4 py-3 text-right font-bold text-navy">{Number(item.views).toLocaleString()}</td></tr>)}</tbody></table>{!loading && views.length === 0 && <p className="px-4 py-8 text-center text-sm text-charcoal/45">{ko ? "아직 조회 기록이 없습니다." : "No page views yet."}</p>}</div></section>
-          <section><h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "이메일 구독 명단" : "Email subscribers"}</h2><div className="mt-4 overflow-x-auto border-t-2 border-navy"><table className="w-full text-left text-sm"><thead className="bg-[#F1F2EC] text-xs text-charcoal/50"><tr><th className="px-4 py-3">{ko ? "이메일" : "Email"}</th><th className="px-4 py-3">{ko ? "신청일" : "Subscribed"}</th></tr></thead><tbody>{subscribers.map((item) => <tr key={item.email} className="border-t border-green-deep/10"><td className="px-4 py-3 font-semibold text-navy">{item.email}<p className="mt-1 text-[11px] font-normal text-charcoal/35">{item.language.toUpperCase()} · {item.source_path}</p></td><td className="whitespace-nowrap px-4 py-3 text-xs text-charcoal/55">{formatDate(item.consented_at)}</td></tr>)}</tbody></table>{!loading && subscribers.length === 0 && <p className="px-4 py-8 text-center text-sm text-charcoal/45">{ko ? "아직 구독 신청이 없습니다." : "No subscription requests yet."}</p>}</div></section>
+          <div className="grid gap-8">
+            <section>
+              <div className="flex items-center justify-between gap-3">
+                <h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "회원가입 명단" : "Registered members"}</h2>
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-green-deep"><UserCheck size={15}/>{members.length.toLocaleString()}{ko ? "명" : ""}</span>
+              </div>
+              <div className="mt-4 overflow-x-auto border-t-2 border-navy">
+                <table className="w-full text-left text-sm">
+                  <thead className="bg-[#F1F2EC] text-xs text-charcoal/50"><tr><th className="px-4 py-3">{ko ? "회원" : "Member"}</th><th className="px-4 py-3">{ko ? "가입일·인증" : "Joined · verification"}</th></tr></thead>
+                  <tbody>{members.map((item) => <tr key={item.user_id} className="border-t border-green-deep/10"><td className="px-4 py-3 font-semibold text-navy">{item.nickname}<p className="mt-1 text-[11px] font-normal text-charcoal/45">{item.email}</p></td><td className="whitespace-nowrap px-4 py-3 text-xs text-charcoal/55">{formatDate(item.created_at)}<p className={`mt-1 font-bold ${item.email_confirmed_at ? "text-green-deep" : "text-amber-700"}`}>{item.email_confirmed_at ? (ko ? "인증 완료" : "Verified") : (ko ? "미인증" : "Unverified")}</p></td></tr>)}</tbody>
+                </table>
+                {!loading && members.length === 0 && <p className="px-4 py-8 text-center text-sm text-charcoal/45">{ko ? "아직 회원가입 기록이 없습니다." : "No registered members yet."}</p>}
+              </div>
+            </section>
+            <section><h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "이메일 구독 명단" : "Email subscribers"}</h2><div className="mt-4 overflow-x-auto border-t-2 border-navy"><table className="w-full text-left text-sm"><thead className="bg-[#F1F2EC] text-xs text-charcoal/50"><tr><th className="px-4 py-3">{ko ? "이메일" : "Email"}</th><th className="px-4 py-3">{ko ? "신청일" : "Subscribed"}</th></tr></thead><tbody>{subscribers.map((item) => <tr key={item.email} className="border-t border-green-deep/10"><td className="px-4 py-3 font-semibold text-navy">{item.email}<p className="mt-1 text-[11px] font-normal text-charcoal/35">{item.language.toUpperCase()} · {item.source_path}</p></td><td className="whitespace-nowrap px-4 py-3 text-xs text-charcoal/55">{formatDate(item.consented_at)}</td></tr>)}</tbody></table>{!loading && subscribers.length === 0 && <p className="px-4 py-8 text-center text-sm text-charcoal/45">{ko ? "아직 구독 신청이 없습니다." : "No subscription requests yet."}</p>}</div></section>
+          </div>
         </div>
       </div>
     </section>

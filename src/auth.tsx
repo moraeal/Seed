@@ -4,6 +4,7 @@ export type AuthUser = {
   id: string;
   email?: string;
   email_confirmed_at?: string | null;
+  app_metadata?: { seed_role?: string; [key: string]: unknown };
   user_metadata?: { nickname?: string; [key: string]: unknown };
 };
 

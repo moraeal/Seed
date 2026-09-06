@@ -33,6 +33,16 @@ revoke all on sequence public.content_page_views_id_seq from anon, authenticated
 create index if not exists content_page_views_path_time_idx on public.content_page_views (page_path, viewed_at desc);
 create index if not exists content_page_views_time_idx on public.content_page_views (viewed_at desc);
 
+create or replace function public.is_seed_owner()
+returns boolean language sql stable security definer set search_path = '' as $$
+  select exists (
+    select 1 from auth.users u
+    where u.id = auth.uid()
+      and u.deleted_at is null
+      and u.raw_app_meta_data ->> 'seed_role' = 'owner'
+  );
+$$;
+
 create or replace function public.subscribe_newsletter(p_email text, p_language text default 'ko', p_source_path text default '/')
 returns void language plpgsql security definer set search_path = '' as $$
 declare
@@ -64,7 +74,7 @@ end; $$;
 create or replace function public.get_engagement_summary()
 returns table (metric text, value bigint) language plpgsql security definer set search_path = '' as $$
 begin
-  if lower(coalesce(auth.jwt() ->> 'email', '')) <> 'seedcivicpartners@gmail.com' then
+  if not public.is_seed_owner() then
     raise exception 'not authorized' using errcode = '42501';
   end if;
   return query
@@ -77,7 +87,7 @@ end; $$;
 create or replace function public.get_content_view_stats()
 returns table (page_path text, views bigint, last_viewed_at timestamptz) language plpgsql security definer set search_path = '' as $$
 begin
-  if lower(coalesce(auth.jwt() ->> 'email', '')) <> 'seedcivicpartners@gmail.com' then
+  if not public.is_seed_owner() then
     raise exception 'not authorized' using errcode = '42501';
   end if;
   return query select v.page_path, count(*)::bigint, max(v.viewed_at) from public.content_page_views v
@@ -87,7 +97,7 @@ end; $$;
 create or replace function public.get_daily_view_stats()
 returns table (view_date date, views bigint) language plpgsql security definer set search_path = '' as $$
 begin
-  if lower(coalesce(auth.jwt() ->> 'email', '')) <> 'seedcivicpartners@gmail.com' then
+  if not public.is_seed_owner() then
     raise exception 'not authorized' using errcode = '42501';
   end if;
   return query
@@ -112,22 +122,41 @@ create or replace function public.get_newsletter_subscribers()
 returns table (email text, language text, source_path text, status text, consented_at timestamptz)
 language plpgsql security definer set search_path = '' as $$
 begin
-  if lower(coalesce(auth.jwt() ->> 'email', '')) <> 'seedcivicpartners@gmail.com' then
+  if not public.is_seed_owner() then
     raise exception 'not authorized' using errcode = '42501';
   end if;
   return query select s.email, s.language, s.source_path, s.status, s.consented_at
     from public.newsletter_subscribers s order by s.consented_at desc;
 end; $$;
 
+create or replace function public.get_member_registrations()
+returns table (user_id uuid, email text, nickname text, created_at timestamptz, email_confirmed_at timestamptz)
+language plpgsql security definer set search_path = '' as $$
+begin
+  if not public.is_seed_owner() then
+    raise exception 'not authorized' using errcode = '42501';
+  end if;
+  return query
+    select u.id, u.email::text,
+      coalesce(nullif(btrim(u.raw_user_meta_data ->> 'nickname'), ''), split_part(u.email, '@', 1), '인증회원')::text,
+      u.created_at, u.email_confirmed_at
+    from auth.users u
+    where u.deleted_at is null
+    order by u.created_at desc;
+end; $$;
+
 revoke all on function public.subscribe_newsletter(text, text, text) from public, anon, authenticated;
 revoke all on function public.record_content_view(text, text, text) from public, anon, authenticated;
+revoke all on function public.is_seed_owner() from public, anon, authenticated;
 revoke all on function public.get_engagement_summary() from public, anon, authenticated;
 revoke all on function public.get_content_view_stats() from public, anon, authenticated;
 revoke all on function public.get_daily_view_stats() from public, anon, authenticated;
 revoke all on function public.get_newsletter_subscribers() from public, anon, authenticated;
+revoke all on function public.get_member_registrations() from public, anon, authenticated;
 grant execute on function public.subscribe_newsletter(text, text, text) to anon, authenticated;
 grant execute on function public.record_content_view(text, text, text) to anon, authenticated;
 grant execute on function public.get_engagement_summary() to authenticated;
 grant execute on function public.get_content_view_stats() to authenticated;
 grant execute on function public.get_daily_view_stats() to authenticated;
 grant execute on function public.get_newsletter_subscribers() to authenticated;
+grant execute on function public.get_member_registrations() to authenticated;
