@@ -205,6 +205,16 @@ for (const route of seoRoutes) {
   await writeFile(output, render(route));
 }
 
+// Serve the account screen directly instead of routing through the cached
+// homepage shell. This also makes newly deployed signup form changes appear
+// immediately at /account.
+const accountShell = template
+  .replace(/<title>[\s\S]*?<\/title>/i, "<title>내 계정 | 씨앗의 소리</title>")
+  .replace(/<meta\s+name="robots"[\s\S]*?\/>/i, '<meta name="robots" content="noindex" />')
+  .replace(/<link\s+rel="canonical"[\s\S]*?\/>/i, '<link rel="canonical" href="https://seedpartners.org/account" />');
+await mkdir(path.join(dist, "account"), { recursive: true });
+await writeFile(path.join(dist, "account", "index.html"), accountShell);
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${seoRoutes.map((route) => `  <url>\n    <loc>${canonicalUrl(route.path)}</loc>${route.lastModified ? `\n    <lastmod>${route.lastModified}</lastmod>` : ""}\n  </url>`).join("\n")}\n</urlset>\n`;
 await writeFile(path.join(dist, "sitemap.xml"), sitemap);
 const feedRoutes = seoRoutes
