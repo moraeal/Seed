@@ -25,11 +25,7 @@ on public.comments
 for insert
 to authenticated
 with check (
-  auth.uid() is not null
-  and user_id = auth.uid()
+  (select auth.uid()) is not null
+  and user_id = (select auth.uid())
   and is_visible = true
-  and nickname = coalesce(
-    auth.jwt() -> 'user_metadata' ->> 'nickname',
-    split_part(auth.jwt() ->> 'email', '@', 1)
-  )
 );

@@ -129,8 +129,9 @@ begin
     from public.newsletter_subscribers s order by s.consented_at desc;
 end; $$;
 
-create or replace function public.get_member_registrations()
-returns table (user_id uuid, email text, nickname text, created_at timestamptz, email_confirmed_at timestamptz)
+drop function if exists public.get_member_registrations();
+create function public.get_member_registrations()
+returns table (user_id uuid, email text, nickname text, phone text, content_subscription_consent boolean, created_at timestamptz, email_confirmed_at timestamptz)
 language plpgsql security definer set search_path = '' as $$
 begin
   if not public.is_seed_owner() then
@@ -139,6 +140,8 @@ begin
   return query
     select u.id, u.email::text,
       coalesce(nullif(btrim(u.raw_user_meta_data ->> 'nickname'), ''), split_part(u.email, '@', 1), '인증회원')::text,
+      nullif(btrim(u.raw_user_meta_data ->> 'contact_phone'), '')::text,
+      (coalesce(u.raw_user_meta_data ->> 'content_subscription_consent', '') = 'true')::boolean,
       u.created_at, u.email_confirmed_at
     from auth.users u
     where u.deleted_at is null

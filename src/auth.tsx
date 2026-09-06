@@ -23,7 +23,7 @@ type AuthContextValue = {
   nickname: string;
   isVerified: boolean;
   loading: boolean;
-  signUp: (email: string, password: string, nickname: string) => Promise<{ verificationRequired: boolean }>;
+  signUp: (email: string, password: string, nickname: string, phone: string, language: "ko" | "en") => Promise<{ verificationRequired: boolean }>;
   signIn: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
 };
@@ -119,9 +119,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     void initialize();
   }, []);
 
-  const signUp = async (email: string, password: string, nickname: string) => {
+  const signUp = async (email: string, password: string, nickname: string, phone: string, language: "ko" | "en") => {
     const redirectTo = `${window.location.origin}${import.meta.env.BASE_URL}account`;
-    const payload = JSON.stringify({ email, password, data: { nickname } });
+    const payload = JSON.stringify({
+      email,
+      password,
+      data: {
+        nickname,
+        contact_phone: phone,
+        content_preferences: ["news", "briefings", "columns"],
+        language,
+        content_subscription_consent: true,
+        content_subscription_consented_at: new Date().toISOString(),
+      },
+    });
     let response = await fetch(`${supabaseUrl}/auth/v1/signup?redirect_to=${encodeURIComponent(redirectTo)}`, {
       method: "POST",
       headers: authHeaders(),
