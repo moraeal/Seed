@@ -73,9 +73,9 @@ export const newsArticles: NewsArticle[] = [
     "headline": "李대통령 \"공정·투명한 세상으로…대개혁에 시민단체 몫 크다\"",
     "url": "https://www.yna.co.kr/view/AKR20260904062600001",
     "linkLabel": "연합뉴스 원문 보기",
-    "thumbnailUrl": "https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202609%2F04%2Fkukinews%2F20260904152453109hltl.jpg",
+    "thumbnailUrl": "https://www.korea.kr/admin2011/upload/photo/2026/09/04/e6b72f7d04884cce8141ff345777f2d5_THUMB_3.jpg",
     "thumbnailAlt": "이재명 대통령이 시민사회 초청 간담회에서 인사말을 하는 모습",
-    "thumbnailCaption": "이재명 대통령이 2026년 9월 4일 청와대에서 열린 시민사회 초청 간담회에서 인사말을 하고 있습니다. 사진: 연합뉴스/쿠키뉴스",
+    "thumbnailCaption": "이재명 대통령이 2026년 9월 4일 청와대에서 열린 시민사회 초청 간담회에서 인사말을 하고 있습니다. 사진: 청와대/대한민국 정책브리핑",
     "summary": [
       "이 대통령은 시민사회가 민주화와 앞으로의 사회 대개혁에서 중요한 역할을 해왔다고 평가했습니다.",
       "민변·경실련·참여연대·전국농민회총연맹·한국진보연대 등 19개 단체 관계자가 참석한 것으로 보도됐습니다.",
@@ -83,11 +83,11 @@ export const newsArticles: NewsArticle[] = [
     ]
   },
   "heroImage": {
-    "src": "https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202609%2F04%2Fkukinews%2F20260904152453109hltl.jpg",
+    "src": "https://www.korea.kr/admin2011/upload/photo/2026/09/04/e6b72f7d04884cce8141ff345777f2d5_THUMB_3.jpg",
     "alt": "이재명 대통령이 시민사회 초청 간담회에서 인사말을 하는 모습",
     "caption": "이재명 대통령이 2026년 9월 4일 청와대에서 열린 시민사회 초청 간담회에서 인사말을 하고 있습니다.",
-    "credit": "연합뉴스 · 쿠키뉴스",
-    "sourceUrl": "https://v.daum.net/v/20260904152451243"
+    "credit": "청와대 · 대한민국 정책브리핑",
+    "sourceUrl": "https://www.korea.kr/multi/policyPhotoView.do?bbsKey=73223"
   },
   "inlineImage": {
     "src": "https://www.korea.kr/admin2011/upload/photo/2026/09/04/f993da98b79fd65876fd539df60ad51a_THUMB_3.jpg",

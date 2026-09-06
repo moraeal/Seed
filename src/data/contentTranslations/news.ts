@@ -22,7 +22,7 @@ export const newsTranslations: Record<string, NewsTranslation> = {
     heroImage: {
       alt: "President Lee Jae-myung delivering opening remarks at a civic-society meeting",
       caption: "President Lee speaks at a Blue House meeting with civic-society representatives on September 4, 2026.",
-      credit: "Yonhap News Agency · Kuki News"
+      credit: "Blue House · Korea Policy Briefing"
     },
     inlineImage: {
       alt: "President Lee Jae-myung listening to a participant at the civic-society meeting",
