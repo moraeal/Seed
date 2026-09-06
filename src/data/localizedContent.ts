@@ -50,9 +50,9 @@ export function localizeBriefing(briefing: Briefing, language: Language): Briefi
       if (isGyeonggiDisplay && index === 0) {
         return {
           ...image,
-          alt: "Calculator and budget documents representing public finance and budgeting",
-          caption: "Fiscal stress is not only about a single number. Citizens should be able to see clearly how revenue, spending, debt and public funds interact. This is a symbolic budget image.",
-          credit: "Unsplash · symbolic public-finance image",
+          alt: "MBN News coverage of Gyeonggi Province's local-bond and fiscal-emergency controversy",
+          caption: "The report examines Gyeonggi's use of 99.6 percent of its local-bond issuance ceiling and the resulting fiscal debate. Select the image to watch the MBN report.",
+          credit: "Video still · MBN News",
         };
       }
       const translationIndex = isGyeonggiDisplay ? index - 1 : index;

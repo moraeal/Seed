@@ -50,11 +50,11 @@ const briefingArchive: Briefing[] = [
     featured: true,
     images: [
       {
-        src: "images/briefings/briefing-03-constitutional-balance.png",
-        alt: "법전과 사건기록, 저울과 멈춘 시계가 놓인 제도기관 내부",
-        caption: "헌법 제84조 논쟁의 핵심은 대통령의 직무 수행과 사법적 책임을 어떤 규칙으로 함께 지킬 것인가에 있습니다.",
-        credit: "씨앗의 소리 제작 이미지",
-        sourceUrl: "https://seedpartners.org/briefings/president-criminal-trials-article-84/",
+        src: "https://i.ytimg.com/vi/5qbLBQbhByQ/hqdefault.jpg",
+        alt: "이재명 대통령의 다섯 형사재판 중단을 보도한 KBS 뉴스 화면",
+        caption: "법원이 이재명 대통령의 대북송금 사건 기일도 미루면서 취임 전 시작된 다섯 형사재판이 모두 중단됐습니다. 화면을 누르면 KBS 보도를 볼 수 있습니다.",
+        credit: "영상 화면 · KBS 뉴스",
+        sourceUrl: "https://www.youtube.com/watch?v=5qbLBQbhByQ",
       },
       {
         src: "images/briefings/briefing-03-paused-trial.png",
@@ -70,7 +70,7 @@ const briefingArchive: Briefing[] = [
     ],
     sections: [
       {
-        title: "무슨 일이 있었습니까?",
+        title: "30초 만에 보는 핵심",
         paragraphs: ["이재명 대통령 취임 뒤 법원들은 진행 중이던 형사재판의 기일을 차례로 ‘추후 지정’했습니다. 2025년 7월 22일 수원지법이 마지막 남은 사건의 기일도 미루면서 대통령이 피고인인 다섯 재판이 모두 멈췄습니다."],
         bullets: ["공직선거법 위반 사건 파기환송심", "위증교사 사건 항소심", "대장동·위례·백현동 개발 및 성남FC 사건", "쌍방울 대북송금 사건", "경기도 법인카드 유용 의혹 사건"],
       },
@@ -106,7 +106,7 @@ const briefingArchive: Briefing[] = [
         ],
       },
       {
-        title: "씨드는 이렇게 봅니다",
+        title: "대통령의 직무와 책임을 함께 감시해야 합니다",
         paragraphs: [
           "대통령이 여러 재판에 계속 불려 다니면 국정이 흔들릴 수 있다는 우려는 현실적입니다. 그러나 대통령직이 개인의 형사책임을 지워 주는 방패가 되어서는 안 됩니다. 보호해야 할 것은 대통령이라는 사람보다 국민이 맡긴 대통령의 직무입니다.",
           "임기 중 재판을 일시 정지할 수 있더라도 기록과 증거를 보전하고, 임기 종료 즉시 자동 재개되도록 해야 합니다. 대통령과 행정부가 수사기관·검찰·재판에 영향력을 행사하지 못하도록 하는 공개적 통제도 필요합니다.",
@@ -161,11 +161,11 @@ const briefingArchive: Briefing[] = [
     featured: true,
     images: [
       {
-        src: "images/briefings/briefing-01-justice.jpg",
-        alt: "법전 옆 어두운 테이블 위에 놓인 재판봉",
-        caption: "검찰개혁의 핵심은 기관의 이름보다 수사·기소 권력을 어떻게 나누고 통제하느냐에 있습니다.",
-        credit: "사진 Sasun Bughdaryan · Unsplash",
-        sourceUrl: "https://unsplash.com/photos/wooden-gavel-resting-on-a-dark-surface-next-to-book-FaTLrG5-ViE",
+        src: "https://i.ytimg.com/vi/icwD3ltBL_o/hqdefault.jpg",
+        alt: "공소청과 중대범죄수사청 법안 통과를 보도한 YTN 뉴스 화면",
+        caption: "검찰청 폐지의 핵심은 간판 교체가 아니라 수사권력이 어디로 이동하고 어떻게 통제되는가입니다. 화면을 누르면 YTN 보도를 볼 수 있습니다.",
+        credit: "영상 화면 · YTN",
+        sourceUrl: "https://www.youtube.com/watch?v=icwD3ltBL_o",
       },
       {
         src: "images/briefings/briefing-01-fact-check.jpg",
@@ -181,7 +181,7 @@ const briefingArchive: Briefing[] = [
     ],
     sections: [
       {
-        title: "먼저 확인할 다섯 가지 사실",
+        title: "30초 만에 보는 핵심",
         bullets: [
           "아직 시행 전입니다. 검찰청 폐지와 공소청·중수청 출범, 검사의 직접·보완수사권 폐지는 2026년 10월 2일부터 시행될 예정입니다.",
           "검사는 없어지지 않습니다. 검사 직위는 공소청에 남아 기소 여부 결정, 공소 유지, 영장청구 관련 업무 등을 담당합니다.",
@@ -213,7 +213,7 @@ const briefingArchive: Briefing[] = [
         paragraphs: ["한국갤럽의 2025년 9월 조사에서는 검찰청 폐지와 공소청·중수청 신설에 대한 찬성이 51%로 반대 37%보다 높았습니다. 반면 2026년 7월 조사에서는 검찰 보완수사권 유지가 61%, 전면 폐지가 23%였습니다. 질문이 다른 두 조사를 추세처럼 직접 비교할 수는 없지만, 시민들이 ‘검찰 권력은 분산하되 부실수사를 다시 살펴볼 안전장치는 남겨 달라’는 복합적인 요구를 하고 있음을 보여줍니다."],
       },
       {
-        title: "씨드는 이렇게 봅니다",
+        title: "수사권력이 이동하면 시민 감시도 이동해야 합니다",
         paragraphs: [
           "수사와 기소의 분리는 원칙이지만 시민의 권리구제는 목적입니다. 좋은 제도는 한 기관이 절대 실수하지 않는 제도가 아니라, 실수하거나 권력을 남용했을 때 다른 기관과 시민이 발견하고 고칠 수 있는 제도입니다.",
           "검찰청 폐지는 개혁의 종착점이 아니라 권력 이동의 시작입니다. 검찰의 권력을 경찰에 단순히 넘기는 것이 아니라 여러 기관의 상호견제로 바꾸고, 어느 기관도 시민 위에 서지 못하도록 해야 합니다.",
@@ -267,18 +267,18 @@ const briefingArchive: Briefing[] = [
     issueNumber: 2,
     images: [
       {
-        src: "images/briefings/briefing-02-seoul-housing.jpg",
-        alt: "서울 도심에 밀집한 고층 주거 건물과 도시 전경",
-        caption: "주택공급 숫자는 어느 지역에, 어떤 집이, 언제 실제로 늘어나는지까지 확인해야 의미가 있습니다.",
-        credit: "사진 NK Lee · Unsplash",
-        sourceUrl: "https://unsplash.com/photos/a-city-with-many-buildings-acH2NkPdIKk",
+        src: "https://i.ytimg.com/vi/QYKU8kNrWG0/hqdefault.jpg",
+        alt: "서울시의 2031년까지 31만 호 주택공급 계획을 보도한 YTN 뉴스 화면",
+        caption: "정부의 23만 호와 서울시의 31만 호는 지역·기준·시간표가 서로 다릅니다. 화면을 누르면 서울시 공급계획을 다룬 YTN 보도를 볼 수 있습니다.",
+        credit: "영상 화면 · YTN",
+        sourceUrl: "https://www.youtube.com/watch?v=QYKU8kNrWG0",
       },
       {
-        src: "images/briefings/briefing-02-construction.jpg",
-        alt: "서울의 고층 건물 건설 현장과 타워크레인",
-        caption: "후보지 발표와 착공, 준공과 입주는 서로 다른 단계입니다. 계획이 실제 주택이 되는 과정을 추적해야 합니다.",
+        src: "images/briefings/briefing-02-seoul-housing.jpg",
+        alt: "서울 도심에 밀집한 고층 주거 건물과 도시 전경",
+        caption: "후보지 발표와 착공, 준공과 입주는 서로 다른 단계입니다. 시민이 실제로 이용할 집이 언제 얼마나 늘었는지 끝까지 추적해야 합니다.",
         credit: "사진 NK Lee · Unsplash",
-        sourceUrl: "https://unsplash.com/photos/a-tall-building-under-construction-58Am6oh8pfM",
+        sourceUrl: "https://unsplash.com/photos/a-city-with-many-buildings-acH2NkPdIKk",
       },
     ],
     content: [
@@ -287,7 +287,7 @@ const briefingArchive: Briefing[] = [
     ],
     sections: [
       {
-        title: "먼저 구분해야 할 네 가지 단어",
+        title: "30초 만에 보는 핵심",
         bullets: [
           "후보지 발표는 집을 지을 장소와 계획을 공개한 단계입니다. 실제 사업이 확정된 것은 아닙니다.",
           "착공은 공사를 시작한 단계입니다. 주택시장에 실제 입주 물량이 생기려면 준공까지 기다려야 합니다.",
@@ -320,7 +320,7 @@ const briefingArchive: Briefing[] = [
         paragraphs: ["정부 계획은 수도권 전체의 추가 순증이고 서울시 계획은 서울 정비사업의 총 착공입니다. 따라서 31만이 23만보다 많다는 식으로 비교하거나 두 물량을 단순히 더해서도 안 됩니다. 일부 사업 범위가 맞물릴 수 있고, 착공 시점과 실제 입주 시점도 다릅니다."],
       },
       {
-        title: "씨드는 이렇게 봅니다",
+        title: "공급을 발표한 기관은 결과까지 설명해야 합니다",
         paragraphs: [
           "수도권의 구조적 주택 부족을 수요 억제만으로 해결하기 어렵다는 점에서 공급 확대의 방향은 필요합니다. 하지만 발표 시점의 큰 숫자는 정책 성과가 아니라 계획의 출발점입니다.",
           "정부와 서울시는 후보지, 인허가, 착공, 준공, 입주, 멸실, 순증을 같은 기준으로 매년 공개해야 합니다. 숫자를 발표한 기관이 시간이 지난 뒤 결과까지 설명할 때 시민은 정책을 신뢰할 수 있습니다.",

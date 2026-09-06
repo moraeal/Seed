@@ -12,11 +12,11 @@ export const nationalBudgetBriefing: Briefing = {
   featured: true,
   images: [
     {
-      src: "images/briefings/briefing-05-budget-ledger.webp",
-      alt: "반도체 산업에서 발생한 세수가 공공사업과 미래투자, 채무관리로 나뉘는 과정을 시민들이 국가 장부를 통해 살펴보는 상징 이미지",
-      caption: "2027년 예산안의 핵심은 지출 규모만이 아닙니다. 반도체 호황에서 생길 것으로 예상한 세금을 어디에 쓰고, 얼마나 남기며, 채무를 어떻게 관리할지가 함께 공개돼야 합니다.",
-      credit: "씨앗의 소리 제작 이미지",
-      sourceUrl: "",
+      src: "https://i.ytimg.com/vi/cyqrvxM99GY/hqdefault.jpg",
+      alt: "2027년 미래대응기금 논란을 다룬 JTV 뉴스 화면",
+      caption: "820.9조 원 예산안과 162.3조 원 미래대응기금은 낙관적 세입 전망과 운용 통제를 함께 따져야 합니다. 화면을 누르면 JTV 보도를 볼 수 있습니다.",
+      credit: "영상 화면 · JTV 뉴스",
+      sourceUrl: "https://www.youtube.com/watch?v=cyqrvxM99GY",
     },
     {
       src: "images/briefings/briefing-05-budget-oversight.webp",
@@ -109,7 +109,7 @@ export const nationalBudgetBriefing: Briefing = {
       ],
     },
     {
-      title: "씨드는 이렇게 봅니다",
+      title: "예산 감시는 전망과 결과를 함께 봅니다",
       paragraphs: [
         "반도체 호황으로 생긴 추가세수를 전부 상시지출로 바꾸지 않고 일부를 남겨 두는 방향은 타당합니다. 미래 성장동력과 청년, 지역에 투자하는 것도 필요합니다. 그러나 좋은 명분은 지출의 효과와 책임을 면제하지 않습니다.",
         "첫째, 정부와 국회는 국세수입의 기본·낙관·비관 전망을 함께 공개해야 합니다. 둘째, 미래대응기금은 사업 선정, 여유자금 운용, 투자 손실과 성과를 시민이 추적할 수 있게 해야 합니다. 셋째, 일시적인 초과세수로 시작한 사업에는 자동 종료나 재검토 시점을 두어야 합니다.",

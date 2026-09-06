@@ -12,11 +12,11 @@ export const publicBroadcastingBriefing: Briefing = {
   featured: true,
   images: [
     {
-      src: "images/briefings/briefing-06-empty-boardroom.webp",
-      alt: "여러 자리가 비어 있는 공영방송 이사회 회의실과 뒤편의 방송 조정실",
-      caption: "법이 약속한 다양한 추천 주체가 모두 채워지지 않은 상태에서 공영방송의 사장 선임이라는 중대한 결정이 진행되고 있습니다.",
-      credit: "씨앗의 소리 제작 이미지",
-      sourceUrl: "",
+      src: "https://i.ytimg.com/vi/Nvs6iXAsK9o/hqdefault.jpg",
+      alt: "방송 3법의 국회 통과를 보도한 KBS 뉴스 화면",
+      caption: "방송 3법은 공영방송 이사 추천권을 여러 조직으로 넓혔습니다. 권한이 정부에서 조직된 시민사회로 이동한 뒤의 책임까지 감시해야 합니다. 화면을 누르면 KBS 보도를 볼 수 있습니다.",
+      credit: "영상 화면 · KBS 뉴스",
+      sourceUrl: "https://www.youtube.com/watch?v=Nvs6iXAsK9o",
     },
     {
       src: "images/briefings/briefing-06-power-transfer.webp",
@@ -92,7 +92,7 @@ export const publicBroadcastingBriefing: Briefing = {
       ],
     },
     {
-      title: "씨드는 이렇게 봅니다",
+      title: "공영방송 권력을 받은 시민조직도 감시 대상입니다",
       paragraphs: [
         "공영방송이 정권 교체 때마다 흔들린 문제를 고치자는 방송 3법의 출발점은 타당합니다. 국회 직접 추천 비중을 낮추고 국민추천위원회를 도입한 것도 형식적 진전입니다. 그러나 국가권력에서 권한을 떼어냈다는 사실만으로 그 권한이 시민에게 돌아왔다고 말할 수는 없습니다.",
         "공영방송의 독립은 국가권력·정당·경영진·노조·직능단체·시민단체 가운데 어느 한쪽도 인사와 편성을 독점하지 못하게 하는 구조여야 합니다. 추천기관의 회의와 기준, 후보자의 이해충돌, 국민추천위원회의 표본과 평가표, 이사회의 최종 선택 이유를 시민에게 공개해야 합니다.",
