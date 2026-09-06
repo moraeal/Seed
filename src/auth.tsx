@@ -4,6 +4,8 @@ export type AuthUser = {
   id: string;
   email?: string;
   email_confirmed_at?: string | null;
+  phone?: string;
+  phone_confirmed_at?: string | null;
   app_metadata?: { seed_role?: string; [key: string]: unknown };
   user_metadata?: { nickname?: string; [key: string]: unknown };
 };
@@ -23,6 +25,8 @@ type AuthContextValue = {
   nickname: string;
   isVerified: boolean;
   loading: boolean;
+  requestPhoneOtp: (phone: string, nickname?: string, createUser?: boolean) => Promise<void>;
+  verifyPhoneOtp: (phone: string, token: string) => Promise<void>;
   signUp: (email: string, password: string, nickname: string) => Promise<{ verificationRequired: boolean }>;
   signIn: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
@@ -141,6 +145,32 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return { verificationRequired: true };
   };
 
+  const requestPhoneOtp = async (phone: string, nickname?: string, createUser = true) => {
+    const response = await fetch(`${supabaseUrl}/auth/v1/otp`, {
+      method: "POST",
+      headers: authHeaders(),
+      body: JSON.stringify({
+        phone,
+        channel: "sms",
+        create_user: createUser,
+        ...(nickname ? { data: { nickname } } : {}),
+      }),
+    });
+    if (!response.ok) throw new Error(await readError(response, "휴대폰 인증번호를 보내지 못했습니다."));
+  };
+
+  const verifyPhoneOtp = async (phone: string, token: string) => {
+    const response = await fetch(`${supabaseUrl}/auth/v1/verify`, {
+      method: "POST",
+      headers: authHeaders(),
+      body: JSON.stringify({ phone, token, type: "sms" }),
+    });
+    if (!response.ok) throw new Error(await readError(response, "인증번호를 확인해주세요."));
+    const next = normalizeSession(await response.json());
+    if (!next.access_token || !next.refresh_token) throw new Error("로그인 세션을 만들지 못했습니다.");
+    applySession(next);
+  };
+
   const signIn = async (email: string, password: string) => {
     const response = await fetch(`${supabaseUrl}/auth/v1/token?grant_type=password`, {
       method: "POST",
@@ -168,8 +198,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     session,
     user: session?.user ?? null,
     nickname: session?.user?.user_metadata?.nickname?.trim() || session?.user?.email?.split("@")[0] || "인증회원",
-    isVerified: Boolean(session?.user?.email_confirmed_at),
+    isVerified: Boolean(session?.user?.phone_confirmed_at || session?.user?.email_confirmed_at),
     loading,
+    requestPhoneOtp,
+    verifyPhoneOtp,
     signUp,
     signIn,
     signOut,
