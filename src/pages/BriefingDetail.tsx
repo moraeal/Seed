@@ -20,7 +20,6 @@ const getYouTubeId = (url?: string) => {
 };
 
 type ActiveMedia = {
-  type: "video" | "image";
   src: string;
   alt: string;
 };
@@ -29,6 +28,7 @@ export default function BriefingDetail() {
   const { slug = "" } = useParams();
   const { language } = useLanguage();
   const [activeMedia, setActiveMedia] = useState<ActiveMedia>();
+  const [playingVideoId, setPlayingVideoId] = useState<string>();
   const ko = language === "ko";
   const originalBriefing = getAllBriefing(slug);
   const briefing = originalBriefing ? localizeBriefing(originalBriefing, language) : undefined;
@@ -72,29 +72,35 @@ export default function BriefingDetail() {
     return (
       <figure className={`${prominent ? "mb-8 shadow-[0_18px_55px_rgba(23,76,58,.08)]" : "mt-8"} overflow-hidden border border-green-deep/10 bg-white`}>
         <div className="group relative overflow-hidden bg-navy">
-          <button
-            type="button"
-            onClick={() => setActiveMedia(youtubeId
-              ? { type: "video", src: `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0`, alt: image.alt }
-              : { type: "image", src: imageSrc, alt: image.alt })}
-            className="block w-full cursor-zoom-in text-left"
-            aria-label={youtubeId ? (ko ? "페이지 안에서 영상 재생" : "Play video on this page") : (ko ? "이미지 크게 보기" : "Enlarge image")}
-          >
-            <img src={imageSrc} alt={image.alt} className={`${imageClass} transition duration-300 group-hover:scale-[1.01]`} />
-            {youtubeId && (
-              <span className="absolute inset-0 flex items-center justify-center bg-black/10 transition group-hover:bg-black/20">
-                <span className="flex size-14 items-center justify-center rounded-full bg-white/95 text-green-deep shadow-xl sm:size-16"><Play className="ml-1" size={28} fill="currentColor" /></span>
-              </span>
-            )}
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveMedia({ type: "image", src: imageSrc, alt: image.alt })}
-            className="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-sm bg-black/70 px-2.5 py-2 text-xs font-bold text-white backdrop-blur-sm transition hover:bg-black/90"
-            aria-label={ko ? "이미지 원본 확대" : "Enlarge original image"}
-          >
-            <Maximize2 size={15} />{ko ? "확대" : "Enlarge"}
-          </button>
+          {youtubeId && playingVideoId === youtubeId ? (
+            <div className="aspect-video">
+              <iframe src={`https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0`} title={image.alt} className="h-full w-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+            </div>
+          ) : (
+            <>
+              <button
+                type="button"
+                onClick={() => youtubeId ? setPlayingVideoId(youtubeId) : setActiveMedia({ src: imageSrc, alt: image.alt })}
+                className="block w-full cursor-zoom-in text-left"
+                aria-label={youtubeId ? (ko ? "이 자리에서 영상 재생" : "Play video here") : (ko ? "이미지 크게 보기" : "Enlarge image")}
+              >
+                <img src={imageSrc} alt={image.alt} className={`${imageClass} transition duration-300 group-hover:scale-[1.01]`} />
+                {youtubeId && (
+                  <span className="absolute inset-0 flex items-center justify-center bg-black/10 transition group-hover:bg-black/20">
+                    <span className="flex size-14 items-center justify-center rounded-full bg-white/95 text-green-deep shadow-xl sm:size-16"><Play className="ml-1" size={28} fill="currentColor" /></span>
+                  </span>
+                )}
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveMedia({ src: imageSrc, alt: image.alt })}
+                className="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-sm bg-black/70 px-2.5 py-2 text-xs font-bold text-white backdrop-blur-sm transition hover:bg-black/90"
+                aria-label={ko ? "이미지 원본 확대" : "Enlarge original image"}
+              >
+                <Maximize2 size={15} />{ko ? "확대" : "Enlarge"}
+              </button>
+            </>
+          )}
         </div>
         <FigureCaption caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} />
       </figure>
@@ -187,14 +193,10 @@ export default function BriefingDetail() {
       </div>
 
       {activeMedia && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-3 backdrop-blur-sm sm:p-6" role="dialog" aria-modal="true" aria-label={activeMedia.type === "video" ? (ko ? "영상 보기" : "Video viewer") : (ko ? "이미지 확대 보기" : "Image viewer")} onMouseDown={(event) => { if (event.target === event.currentTarget) setActiveMedia(undefined); }}>
-          <div className={`relative w-full ${activeMedia.type === "video" ? "max-w-6xl" : "flex h-full max-w-7xl items-center justify-center"}`}>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-3 backdrop-blur-sm sm:p-6" role="dialog" aria-modal="true" aria-label={ko ? "이미지 확대 보기" : "Image viewer"} onMouseDown={(event) => { if (event.target === event.currentTarget) setActiveMedia(undefined); }}>
+          <div className="relative flex h-full w-full max-w-7xl items-center justify-center">
             <button type="button" onClick={() => setActiveMedia(undefined)} className="absolute right-2 top-2 z-20 flex size-10 items-center justify-center rounded-full bg-black/75 text-white shadow-lg transition hover:bg-black sm:-right-3 sm:-top-12" aria-label={ko ? "닫기" : "Close"}><X size={24} /></button>
-            {activeMedia.type === "video" ? (
-              <div className="aspect-video overflow-hidden rounded-md bg-black shadow-2xl"><iframe src={activeMedia.src} title={activeMedia.alt} className="h-full w-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div>
-            ) : (
-              <img src={activeMedia.src} alt={activeMedia.alt} className="max-h-[92vh] max-w-full object-contain shadow-2xl" />
-            )}
+            <img src={activeMedia.src} alt={activeMedia.alt} className="max-h-[92vh] max-w-full object-contain shadow-2xl" />
           </div>
         </div>
       )}
