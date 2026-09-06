@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">시민독재의 순환 구조</title>
+  <desc id="desc">시민사회의 진지 확보, 언어와 도덕 기준 선점, 반대자 좌표 찍기, 국가와 기관의 제재, 위원회와 법률을 통한 권력 고정이 순환하는 구조</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="#bd8d3b"/></marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#102c26" flood-opacity=".13"/></filter>
+  </defs>
+  <rect width="1200" height="760" fill="#f7f4ec"/>
+  <text x="600" y="73" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="39" font-weight="800" fill="#112f3b">시민독재는 어떻게 권력을 재생산하는가</text>
+  <text x="600" y="112" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="19" fill="#596862">설득의 경쟁이 독점과 퇴출, 국가 강제력으로 넘어가는 다섯 단계</text>
+  <g fill="none" stroke="#bd8d3b" stroke-width="4" marker-end="url(#arrow)">
+    <path d="M376 254 C455 179 745 179 824 254"/>
+    <path d="M929 335 C1000 390 968 526 889 558"/>
+    <path d="M779 612 C685 677 515 677 421 612"/>
+    <path d="M311 558 C232 526 200 390 271 335"/>
+    <path d="M305 244 C383 132 817 132 895 244" stroke-dasharray="8 10" opacity=".35"/>
+  </g>
+  <g font-family="Noto Sans KR, sans-serif" filter="url(#shadow)">
+    <g><rect x="165" y="210" width="270" height="130" rx="14" fill="#153f36"/><text x="300" y="258" text-anchor="middle" font-size="17" font-weight="700" fill="#dfbd6d">01 진지 확보</text><text x="300" y="292" text-anchor="middle" font-size="23" font-weight="800" fill="white">언론·교육·시민단체</text><text x="300" y="319" text-anchor="middle" font-size="15" fill="#dce7e2">인적·조직적 네트워크 축적</text></g>
+    <g><rect x="765" y="210" width="270" height="130" rx="14" fill="#153f36"/><text x="900" y="258" text-anchor="middle" font-size="17" font-weight="700" fill="#dfbd6d">02 기준 선점</text><text x="900" y="292" text-anchor="middle" font-size="23" font-weight="800" fill="white">시민·공익·정의의 독점</text><text x="900" y="319" text-anchor="middle" font-size="15" fill="#dce7e2">정치적 선택을 도덕 기준으로 전환</text></g>
+    <g><rect x="815" y="485" width="270" height="130" rx="14" fill="#812f31"/><text x="950" y="533" text-anchor="middle" font-size="17" font-weight="700" fill="#f0c97b">03 표적화</text><text x="950" y="567" text-anchor="middle" font-size="23" font-weight="800" fill="white">좌표 찍기·사회적 퇴출</text><text x="950" y="594" text-anchor="middle" font-size="15" fill="#f4dddd">반론보다 낙인과 생업 박탈</text></g>
+    <g><rect x="115" y="485" width="270" height="130" rx="14" fill="#812f31"/><text x="250" y="533" text-anchor="middle" font-size="17" font-weight="700" fill="#f0c97b">04 제재 연결</text><text x="250" y="567" text-anchor="middle" font-size="23" font-weight="800" fill="white">기관·정치·행정의 조치</text><text x="250" y="594" text-anchor="middle" font-size="15" fill="#f4dddd">시민의 판단을 공적 강제로 변환</text></g>
+    <g><circle cx="600" cy="447" r="137" fill="#fff" stroke="#bd8d3b" stroke-width="4"/><text x="600" y="410" text-anchor="middle" font-size="17" font-weight="700" fill="#996d26">05 권력 고정</text><text x="600" y="452" text-anchor="middle" font-size="27" font-weight="900" fill="#112f3b">위원회·지원·법률</text><text x="600" y="487" text-anchor="middle" font-size="17" fill="#596862">국가 자원으로 대표성을 재생산</text></g>
+  </g>
+  <rect x="166" y="690" width="868" height="42" rx="21" fill="#e8dfc9"/>
+  <text x="600" y="718" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="18" font-weight="700" fill="#153f36">감시 기준: 대표성 · 재정 · 인사 · 반론권 · 이해충돌 · 국가 강제력과의 연결</text>
+</svg>
