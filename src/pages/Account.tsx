@@ -1,8 +1,33 @@
-import { BarChart3, CheckCircle2, LogIn, LogOut, MailCheck, UserPlus } from "lucide-react";
+import { BarChart3, CheckCircle2, Instagram, LogIn, LogOut, MailCheck, MessageCircle, UserPlus, Youtube } from "lucide-react";
 import { FormEvent, useMemo, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../auth";
 import { useLanguage } from "../i18n";
+import { subscribeToNewsletter } from "../lib/engagement";
+
+const socialChannels = [
+  {
+    id: "kakao",
+    labelKo: "카카오톡 채널",
+    labelEn: "KakaoTalk Channel",
+    url: import.meta.env.VITE_KAKAO_CHANNEL_URL || "",
+    Icon: MessageCircle,
+  },
+  {
+    id: "instagram",
+    labelKo: "인스타그램",
+    labelEn: "Instagram",
+    url: import.meta.env.VITE_INSTAGRAM_URL || "",
+    Icon: Instagram,
+  },
+  {
+    id: "youtube",
+    labelKo: "유튜브",
+    labelEn: "YouTube",
+    url: import.meta.env.VITE_YOUTUBE_CHANNEL_URL || "",
+    Icon: Youtube,
+  },
+];
 
 export default function Account() {
   const { user, nickname, isVerified, loading, signUp, signIn, signOut } = useAuth();
@@ -15,6 +40,7 @@ export default function Account() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [newsletterOptIn, setNewsletterOptIn] = useState(false);
   const [notice, setNotice] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
@@ -23,6 +49,7 @@ export default function Account() {
   const changeMode = (next: "login" | "signup") => {
     setMode(next);
     setNotice("");
+    if (next === "login") setNewsletterOptIn(false);
     const nextParams = new URLSearchParams(searchParams);
     nextParams.set("mode", next);
     setSearchParams(nextParams, { replace: true });
@@ -37,10 +64,29 @@ export default function Account() {
     setSubmitting(true);
     try {
       if (mode === "signup") {
-        const result = await signUp(email.trim(), password, name.trim());
+        const normalizedEmail = email.trim();
+        const result = await signUp(normalizedEmail, password, name.trim());
+        let newsletterSaved = !newsletterOptIn;
+        if (newsletterOptIn) {
+          try {
+            await subscribeToNewsletter(normalizedEmail, language, "/account?mode=signup");
+            newsletterSaved = true;
+          } catch {
+            newsletterSaved = false;
+          }
+        }
         if (result.verificationRequired) {
-          setNotice(ko ? "가입 확인 메일을 보냈습니다. 이메일의 인증 링크를 누른 뒤 로그인해주세요." : "We sent a confirmation email. Click the verification link, then log in.");
+          if (!newsletterSaved) {
+            setNotice(ko ? "가입 확인 메일을 보냈습니다. 회원가입은 완료됐지만 이메일 구독 저장에 실패했습니다. 인증 후 홈페이지 하단에서 다시 신청해주세요." : "We sent a confirmation email. Your account was created, but the newsletter opt-in could not be saved. Please subscribe again from the site footer after verification.");
+          } else {
+            setNotice(ko
+              ? `가입 확인 메일을 보냈습니다. 이메일의 인증 링크를 누른 뒤 로그인해주세요.${newsletterOptIn ? " 이메일 구독 신청도 함께 저장했습니다." : ""}`
+              : `We sent a confirmation email. Click the verification link, then log in.${newsletterOptIn ? " Your newsletter subscription was saved too." : ""}`);
+          }
           setMode("login");
+          setNewsletterOptIn(false);
+        } else if (!newsletterSaved) {
+          setNotice(ko ? "회원가입은 완료됐지만 이메일 구독 저장에 실패했습니다. 홈페이지 하단에서 다시 신청해주세요." : "Your account was created, but the newsletter opt-in could not be saved. Please subscribe again from the site footer.");
         } else {
           navigate(returnTo);
         }
@@ -98,6 +144,46 @@ export default function Account() {
             {mode === "signup" && <label className="field"><span>{ko ? "공론장 닉네임" : "Forum nickname"}</span><input value={name} onChange={(event) => setName(event.target.value)} maxLength={30} placeholder={ko ? "씨앗시민" : "SeedCitizen"} autoComplete="nickname" required /></label>}
             <label className={`field ${mode === "signup" ? "mt-4" : ""}`}><span>{ko ? "이메일" : "Email"}</span><input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="name@example.com" autoComplete="email" required /></label>
             <label className="field mt-4"><span>{ko ? "비밀번호" : "Password"}</span><input type="password" value={password} onChange={(event) => setPassword(event.target.value)} minLength={8} placeholder={ko ? "8자 이상" : "8+ characters"} autoComplete={mode === "signup" ? "new-password" : "current-password"} required /></label>
+
+            {mode === "signup" && (
+              <div className="mt-5 rounded-lg border border-green-deep/15 bg-green-pale/35 p-4">
+                <label className="flex cursor-pointer items-start gap-3">
+                  <input
+                    type="checkbox"
+                    checked={newsletterOptIn}
+                    onChange={(event) => setNewsletterOptIn(event.target.checked)}
+                    className="mt-1 h-4 w-4 shrink-0 accent-green-deep"
+                  />
+                  <span>
+                    <span className="block text-sm font-extrabold text-navy">{ko ? "새 콘텐츠와 주요 소식을 이메일로 받기 (선택)" : "Receive new content and key updates by email (optional)"}</span>
+                    <span className="mt-1 block text-xs leading-5 text-charcoal/55">{ko ? "회원가입·이메일 인증 동의와 별개입니다. 이메일은 새 소식 안내에만 사용하며 구독 철회 시까지 보관합니다." : "This is separate from membership and email verification. We use your email only for updates and retain it until you unsubscribe."}</span>
+                  </span>
+                </label>
+              </div>
+            )}
+
+            {mode === "signup" && (
+              <div className="mt-5 border-t border-green-deep/10 pt-5">
+                <div className="flex items-end justify-between gap-3">
+                  <div>
+                    <p className="text-sm font-extrabold text-navy">{ko ? "SNS에서도 새 소식 받기 (선택)" : "Follow updates on social media (optional)"}</p>
+                    <p className="mt-1 text-xs leading-5 text-charcoal/55">{ko ? "원하는 공식 채널을 팔로우하거나 구독할 수 있습니다." : "Follow or subscribe to any official channel you prefer."}</p>
+                  </div>
+                </div>
+                <div className="mt-3 grid gap-2 sm:grid-cols-3">
+                  {socialChannels.map(({ id, labelKo, labelEn, url, Icon }) => url ? (
+                    <a key={id} href={url} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-lg border border-green-deep/15 bg-white px-3 py-3 text-xs font-extrabold text-green-deep transition hover:border-green-mid hover:bg-green-pale/40">
+                      <Icon size={17}/>{ko ? labelKo : labelEn}
+                    </a>
+                  ) : (
+                    <div key={id} className="flex items-center justify-center gap-2 rounded-lg border border-dashed border-charcoal/15 bg-[#F7F7F2] px-3 py-3 text-xs font-bold text-charcoal/35" aria-disabled="true" title={ko ? "공식 채널 주소 연결 대기 중" : "Official channel link pending"}>
+                      <Icon size={17}/>{ko ? labelKo : labelEn}
+                    </div>
+                  ))}
+                </div>
+                {socialChannels.every((channel) => !channel.url) && <p className="mt-2 text-center text-[11px] text-charcoal/40">{ko ? "공식 채널 주소 확인 후 버튼이 활성화됩니다." : "Buttons will activate when official channel links are confirmed."}</p>}
+              </div>
+            )}
 
             <button className="button-primary mt-6 w-full justify-center" type="submit" disabled={submitting}>{mode === "signup" ? <UserPlus size={16}/> : <LogIn size={16}/>} {submitting ? (ko ? "처리 중" : "Processing") : mode === "signup" ? (ko ? "이메일로 회원가입" : "Sign up with email") : (ko ? "로그인" : "Log in")}</button>
             {notice && <p className="mt-4 rounded-lg bg-gold/10 px-4 py-3 text-sm font-semibold leading-6 text-charcoal/70" role="status">{notice}</p>}
