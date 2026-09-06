@@ -16,10 +16,9 @@
           return;
         }
         if (path.indexOf("/Seed/") === 0) {
-          window.location.replace("https://seedpartners.org/" + path.slice(6) + window.location.search);
-          return;
+          path = "/" + path.slice(6);
         }
-        window.location.replace("https://seedpartners.org/");
+        window.location.replace("https://seedpartners.org/#" + path + window.location.search);
       })();
     </script>
   </head>
