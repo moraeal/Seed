@@ -137,9 +137,9 @@ begin
     raise exception 'not authorized' using errcode = '42501';
   end if;
   return query
-    select u.id, u.email::text,
+    select u.id, coalesce(u.email, u.phone)::text,
       coalesce(nullif(btrim(u.raw_user_meta_data ->> 'nickname'), ''), split_part(u.email, '@', 1), '인증회원')::text,
-      u.created_at, u.email_confirmed_at
+      u.created_at, coalesce(u.phone_confirmed_at, u.email_confirmed_at)
     from auth.users u
     where u.deleted_at is null
     order by u.created_at desc;
