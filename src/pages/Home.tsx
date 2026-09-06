@@ -113,14 +113,14 @@ export default function Home() {
               <p className="text-[11px] font-extrabold tracking-[.2em] text-gold sm:text-xs">INDEPENDENT CIVIC JOURNAL</p>
               <h1 id="journal-identity-title" className="editorial-title mt-2 text-[clamp(1.3rem,2.35vw,2rem)] font-bold leading-[1.35] tracking-[-0.035em] text-white">
                 {ko
-                  ? "씨앗의 소리는 권력을 감시하고 자유를 지키며, 기업의 도전과 혁신을 보호하는 독립 시민저널입니다."
-                  : "The Voice of Seed is an independent civic journal that watches power, defends freedom, and protects enterprise and innovation."}
+                  ? "씨앗의 소리는 권력을 감시하고 자유의 영역을 넓히며, 기업의 도전과 혁신을 보호하는 독립 시민저널입니다."
+                  : "The Voice of Seed is an independent civic journal that watches power, expands the sphere of freedom, and protects enterprise and innovation."}
               </h1>
             </div>
             <div className="flex shrink-0 flex-wrap gap-x-5 gap-y-2 border-t border-white/20 pt-3 text-xs font-bold text-white/78 lg:max-w-[22rem] lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0 sm:text-[13px]">
-              <span>{ko ? "권력을 감시합니다" : "Watch power"}</span>
-              <span>{ko ? "자유를 지킵니다" : "Defend freedom"}</span>
-              <span>{ko ? "기업의 도전과 혁신을 보호합니다" : "Protect enterprise and innovation"}</span>
+              <span>{ko ? "권력 감시" : "Watching power"}</span>
+              <span>{ko ? "자유의 확장" : "Expanding freedom"}</span>
+              <span>{ko ? "기업의 도전과 혁신" : "Enterprise and innovation"}</span>
             </div>
           </div>
         </div>
