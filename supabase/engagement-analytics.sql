@@ -19,13 +19,13 @@ revoke all on table public.newsletter_subscribers from anon, authenticated;
 create table if not exists public.member_subscriptions (
   user_id uuid primary key references auth.users(id) on delete cascade,
   email text not null unique,
-  phone text not null constraint member_subscription_phone_format check (phone ~ '^010-[0-9]{4}-[0-9]{4}$'),
+  phone text constraint member_subscription_phone_format check (phone is null or phone ~ '^010-[0-9]{4}-[0-9]{4}$'),
   content_preferences text[] not null constraint member_subscription_preferences check (
     cardinality(content_preferences) > 0
     and content_preferences <@ array['news', 'briefings', 'columns']::text[]
   ),
   social_preferences text[] not null default '{}'::text[] constraint member_subscription_social_preferences check (
-    social_preferences <@ array['instagram', 'x', 'telegram']::text[]
+    social_preferences <@ array['kakao', 'instagram', 'x', 'telegram']::text[]
   ),
   language text not null default 'ko' check (language in ('ko', 'en')),
   consented_at timestamptz not null,
@@ -37,10 +37,12 @@ create table if not exists public.member_subscriptions (
 alter table public.member_subscriptions
   add column if not exists social_preferences text[] not null default '{}'::text[];
 
+alter table public.member_subscriptions alter column phone drop not null;
+
 do $$ begin
   alter table public.member_subscriptions
     add constraint member_subscription_social_preferences
-    check (social_preferences <@ array['instagram', 'x', 'telegram']::text[]);
+    check (social_preferences <@ array['kakao', 'instagram', 'x', 'telegram']::text[]);
 exception when duplicate_object then null;
 end $$;
 
@@ -94,7 +96,7 @@ end; $$;
 create or replace function public.sync_verified_member_subscription()
 returns trigger language plpgsql security definer set search_path = '' as $$
 declare
-  v_phone text := coalesce(new.raw_user_meta_data ->> 'contact_phone', '');
+  v_phone text := nullif(btrim(coalesce(new.raw_user_meta_data ->> 'contact_phone', '')), '');
   v_preferences text[];
   v_social_preferences text[];
   v_consented_at timestamptz;
@@ -109,9 +111,12 @@ begin
 
   select coalesce(array_agg(value), array[]::text[]) into v_social_preferences
   from jsonb_array_elements_text(coalesce(new.raw_user_meta_data -> 'social_preferences', '[]'::jsonb)) as value
-  where value in ('instagram', 'x', 'telegram');
+  where value in ('kakao', 'instagram', 'x', 'telegram');
 
-  if v_phone !~ '^010-[0-9]{4}-[0-9]{4}$' or cardinality(v_preferences) = 0 then return new; end if;
+  if (v_phone is not null and v_phone !~ '^010-[0-9]{4}-[0-9]{4}$')
+    or ('kakao' = any(v_social_preferences) and v_phone is null)
+    or cardinality(v_preferences) = 0
+  then return new; end if;
 
   begin
     v_consented_at := (new.raw_user_meta_data ->> 'content_subscription_consented_at')::timestamptz;

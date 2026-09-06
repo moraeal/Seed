@@ -1,13 +1,14 @@
-import { BarChart3, CheckCircle2, Instagram, LogIn, LogOut, MailCheck, Send, Smartphone, UserPlus } from "lucide-react";
+import { BarChart3, CheckCircle2, Instagram, LogIn, LogOut, MailCheck, MessageCircle, Send, Smartphone, UserPlus } from "lucide-react";
 import { FormEvent, useMemo, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../auth";
 import { useLanguage } from "../i18n";
 
 const socialChannels = [
-  { id: "instagram", label: "Instagram", Icon: Instagram },
-  { id: "x", label: "X", Icon: null },
-  { id: "telegram", label: "Telegram", Icon: Send },
+  { id: "kakao", labelKo: "카카오톡", labelEn: "KakaoTalk", Icon: MessageCircle },
+  { id: "instagram", labelKo: "인스타그램", labelEn: "Instagram", Icon: Instagram },
+  { id: "x", labelKo: "X", labelEn: "X", Icon: null },
+  { id: "telegram", labelKo: "텔레그램", labelEn: "Telegram", Icon: Send },
 ] as const;
 
 export default function Account() {
@@ -42,6 +43,7 @@ export default function Account() {
     if (next === "login") {
       setNewsletterOptIn(false);
       setSocialPreferences([]);
+      setPhone("");
     }
     const nextParams = new URLSearchParams(searchParams);
     nextParams.set("mode", next);
@@ -53,7 +55,7 @@ export default function Account() {
     setNotice("");
     if (password.length < 8) return setNotice(ko ? "비밀번호는 8자 이상으로 설정해주세요." : "Password must be at least 8 characters.");
     if (mode === "signup" && name.trim().length < 2) return setNotice(ko ? "닉네임은 두 글자 이상 입력해주세요." : "Nickname must be at least 2 characters.");
-    if (mode === "signup" && !/^010-\d{4}-\d{4}$/.test(phone)) return setNotice(ko ? "휴대전화 번호를 010-0000-0000 형식으로 입력해주세요." : "Enter a valid Korean mobile number.");
+    if (mode === "signup" && socialPreferences.includes("kakao") && !/^010-\d{4}-\d{4}$/.test(phone)) return setNotice(ko ? "카카오톡 수신을 위해 휴대전화 번호를 010-0000-0000 형식으로 입력해주세요." : "Enter a valid Korean mobile number for KakaoTalk delivery.");
     if (mode === "signup" && !newsletterOptIn) return setNotice(ko ? "콘텐츠 이메일 수신 항목에 동의해야 회원가입할 수 있습니다." : "You must agree to receive content updates by email to sign up.");
 
     setSubmitting(true);
@@ -125,8 +127,6 @@ export default function Account() {
             <label className={`field ${mode === "signup" ? "mt-4" : ""}`}><span>{ko ? "이메일" : "Email"}</span><input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="name@example.com" autoComplete="email" required /></label>
             <label className="field mt-4"><span>{ko ? "비밀번호" : "Password"}</span><input type="password" value={password} onChange={(event) => setPassword(event.target.value)} minLength={8} placeholder={ko ? "8자 이상" : "8+ characters"} autoComplete={mode === "signup" ? "new-password" : "current-password"} required /></label>
 
-            {mode === "signup" && <label className="field mt-4"><span>{ko ? "휴대전화 번호" : "Mobile number"}</span><span className="relative"><Smartphone className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-green-mid" size={17}/><input type="tel" value={phone} onChange={(event) => setPhone(formatPhone(event.target.value))} className="pl-11" placeholder="010-0000-0000" autoComplete="tel-national" inputMode="numeric" maxLength={13} required /></span><small className="font-normal leading-5 text-charcoal/45">{ko ? "새 콘텐츠를 카카오톡으로 보내드리는 데 사용합니다." : "We use this number to deliver new content through KakaoTalk."}</small></label>}
-
             {mode === "signup" && (
               <div className="mt-5">
                 <label className="flex cursor-pointer items-start gap-3">
@@ -148,22 +148,26 @@ export default function Account() {
             {mode === "signup" && (
               <div className="mt-5 border-t border-green-deep/10 pt-5">
                 <p className="text-sm font-extrabold text-navy">{ko ? "추가로 받아볼 채널" : "Additional channels"}</p>
-                <p className="mt-1 text-xs leading-5 text-charcoal/55">{ko ? "인스타그램·X·텔레그램으로도 콘텐츠를 받아보려면 원하는 채널을 선택해주세요." : "Choose any channels where you would also like to receive content."}</p>
-                <div className="mt-3 grid grid-cols-3 gap-2">
-                  {socialChannels.map(({ id, label, Icon }) => {
+                <p className="mt-1 text-xs leading-5 text-charcoal/55">{ko ? "원하는 채널을 선택해 주세요. 선택하지 않아도 회원가입할 수 있습니다." : "Choose any channels you prefer. You can also sign up without selecting one."}</p>
+                <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                  {socialChannels.map(({ id, labelKo, labelEn, Icon }) => {
                     const selected = socialPreferences.includes(id);
                     return (
                       <label key={id} className={`flex cursor-pointer items-center justify-center gap-2 rounded-lg border px-2 py-3 text-xs font-extrabold transition ${selected ? "border-green-deep bg-green-pale text-green-deep" : "border-green-deep/15 bg-white text-charcoal/55 hover:border-green-mid"}`}>
-                        <input type="checkbox" className="sr-only" checked={selected} onChange={(event) => setSocialPreferences((current) => event.target.checked ? [...current, id] : current.filter((channel) => channel !== id))} />
-                        {Icon ? <Icon size={16}/> : <span className="text-sm leading-none">𝕏</span>}{label}
+                        <input type="checkbox" className="sr-only" checked={selected} onChange={(event) => {
+                          setSocialPreferences((current) => event.target.checked ? [...current, id] : current.filter((channel) => channel !== id));
+                          if (id === "kakao" && !event.target.checked) setPhone("");
+                        }} />
+                        {Icon ? <Icon size={16}/> : <span className="text-sm leading-none">𝕏</span>}{ko ? labelKo : labelEn}
                       </label>
                     );
                   })}
                 </div>
+                {socialPreferences.includes("kakao") && <label className="field mt-4"><span>{ko ? "휴대전화 번호" : "Mobile number"}</span><span className="relative"><Smartphone className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-green-mid" size={17}/><input type="tel" value={phone} onChange={(event) => setPhone(formatPhone(event.target.value))} className="pl-11" placeholder="010-0000-0000" autoComplete="tel-national" inputMode="numeric" maxLength={13} required /></span><small className="font-normal leading-5 text-charcoal/45">{ko ? "새 콘텐츠를 카카오톡으로 보내드리는 데 사용합니다." : "We use this number to deliver new content through KakaoTalk."}</small></label>}
               </div>
             )}
 
-            <button className="button-primary mt-6 w-full justify-center disabled:cursor-not-allowed disabled:opacity-45" type="submit" disabled={submitting || (mode === "signup" && (!/^010-\d{4}-\d{4}$/.test(phone) || !newsletterOptIn))}>{mode === "signup" ? <UserPlus size={16}/> : <LogIn size={16}/>} {submitting ? (ko ? "처리 중" : "Processing") : mode === "signup" ? (ko ? "이메일로 회원가입" : "Sign up with email") : (ko ? "로그인" : "Log in")}</button>
+            <button className="button-primary mt-6 w-full justify-center disabled:cursor-not-allowed disabled:opacity-45" type="submit" disabled={submitting || (mode === "signup" && (!newsletterOptIn || (socialPreferences.includes("kakao") && !/^010-\d{4}-\d{4}$/.test(phone))))}>{mode === "signup" ? <UserPlus size={16}/> : <LogIn size={16}/>} {submitting ? (ko ? "처리 중" : "Processing") : mode === "signup" ? (ko ? "이메일로 회원가입" : "Sign up with email") : (ko ? "로그인" : "Log in")}</button>
             {notice && <p className="mt-4 rounded-lg bg-gold/10 px-4 py-3 text-sm font-semibold leading-6 text-charcoal/70" role="status">{notice}</p>}
           </form>
         </div>

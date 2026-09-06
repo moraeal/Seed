@@ -126,9 +126,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       password,
       data: {
         nickname,
-        contact_phone: phone,
+        contact_phone: phone || null,
         content_preferences: ["news", "briefings", "columns"],
-        content_delivery_channels: ["email", "kakao", ...socialPreferences],
+        content_delivery_channels: ["email", ...socialPreferences],
         social_preferences: socialPreferences,
         language,
         content_subscription_consent: true,
