@@ -36,8 +36,8 @@ const latestDate = newest([...newsArticles.map((item) => item.date), ...columns.
 const staticRoutes: SeoRoute[] = [
   {
     path: "/",
-    title: "씨앗의 소리 | 사실은 정확하게, 관점은 분명하게",
-    description: "씨앗의 소리는 확인된 사실과 맥락을 바탕으로 시민이 스스로 판단할 수 있도록 돕는 독립 시민저널입니다.",
+    title: "씨앗의 소리 | 시민과 기업의 자유를 지키는 독립 시민저널",
+    description: "씨앗의 소리는 국가와 사회의 모든 권력을 감시하고 자유의 영역을 넓히며, 기업의 도전과 혁신을 보호하는 독립 시민저널입니다.",
     type: "website",
     lastModified: latestDate,
     image: socialImageUrl("site", "home", latestDate),
