@@ -1,6 +1,103 @@
 import type { BriefingTranslation } from "./types";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "park-jinyoung-public-trip-civic-oversight": {
+    category: "SEED Civic Briefing 07",
+    title: "Park Jin-young's U.S. Trip: How Far Should Civic Oversight of Public Bodies Go?",
+    summary: "Park reportedly paid the costs of his private itinerary, and no legal violation has been established. But oversight of a public-interest body goes beyond receipts. Citizens should also know whether information, contacts and opportunities gained through public office were kept separate from private business interests.",
+    author: "SEED Civic Briefing",
+    images: [
+      {
+        alt: "KNN News report showing Park Jin-young and the controversy over his U.S. trip",
+        caption: "KNN reported that criticism shifted toward the National Assembly after it became known that Park paid for his private itinerary. Select the image to watch the original KNN report.",
+        credit: "Video still · KNN NEWS",
+      },
+      {
+        alt: "Citizens reviewing public records while observing a public commission and a separate private-business space",
+        caption: "Oversight does not end with expenses. Citizens should also examine whether information, contacts and opportunities attached to public office were separated from private interests.",
+        credit: "AI-generated image by SEED VOICE",
+      },
+      {
+        src: "images/briefings/briefing-07-oversight-checklist-en.svg",
+        alt: "Infographic dividing civic review of official travel into checks before, during and after a trip",
+        caption: "Common rules established in advance are better than retrospective political humiliation. Itineraries, costs, support, conflicts and outcomes should be recorded and disclosed consistently.",
+        credit: "Infographic by SEED VOICE",
+      },
+    ],
+    content: [
+      "The conclusion first. On the information currently public, there is insufficient basis to say that Park Jin-young, co-chair of the Presidential Committee on Cultural Exchange, used state funds privately or violated travel rules. The committee's support office says Park paid the costs of his post-mission itinerary and return flight, and that a non-standing private member did not require separate approval to delay his return.",
+      "That does not mean the matter ends with the phrase ‘he paid for it himself.’ Oversight of a public-interest body examines authority as well as expenses. Clear separation is needed between public contacts, information and administrative support on one side and the interests of an appointee's private company on the other.",
+    ],
+    sections: [
+      {
+        title: "The essentials in 30 seconds",
+        bullets: [
+          "Park visited the United States from November 13 to 23, 2025; public travel funding covered the official five-night, six-day period ending November 18.",
+          "The support office says Park personally paid the costs of his subsequent private itinerary, including his return flight.",
+          "The National Assembly committee directed its caution to the Ministry of Culture, Sports and Tourism, not as a disciplinary penalty against Park.",
+          "Published information has not established a legal violation or private use of public funds.",
+          "The remaining question is whether official activity and support were substantively separated from Park's company-related interests.",
+        ],
+      },
+      {
+        title: "What did the National Assembly's ‘caution’ mean?",
+        paragraphs: [
+          "The Culture, Sports and Tourism Committee asked the ministry to distinguish clearly between official travel and private or employer-related activity by private appointees. Describing this as a disciplinary finding against Park personally is inaccurate.",
+          "KNN emphasized that Park serves without salary, paid his private costs and subsequently received support in online comments. But no representative polling was offered to establish that selected comments amounted to a broad public ‘backlash.’",
+        ],
+      },
+      {
+        title: "Private freedom and parliamentary oversight",
+        paragraphs: [
+          "Government should not control the privately funded time of a non-standing appointee after official duties have ended. Requiring private experts to abandon their work and personal activity would narrow participation to those with unusual time and resources.",
+          "Parliament should also avoid turning oversight into public humiliation without a defined violation. Review should follow rules and records established in advance, not the fame of the person involved.",
+        ],
+      },
+      {
+        title: "Unpaid service still carries public authority",
+        paragraphs: [
+          "Declining a salary and official vehicle deserves recognition. Yet public influence does not arise only from pay. A presidential committee chair receives access to policy, formal contacts, agenda-setting opportunities and public standing.",
+          "Unpaid service therefore shows contribution but does not remove the need to disclose conflicts. Private participation and transparent public authority must be protected together.",
+        ],
+      },
+      {
+        title: "SEED's public-interest oversight goes beyond receipts",
+        paragraphs: [
+          "SEED applies civic scrutiny not only to ministries but also to presidential and government committees, public foundations, public-interest corporations and publicly supported civic organizations. Their power may take the form of titles, information, networks, nomination authority and policy access as well as budgets.",
+          "In this case, disclosure should cover whether official contacts led to later company business, whether officials, vehicles, interpreters or protocol supported the private itinerary, and what public outcomes the mission produced. Asking these questions does not presume favoritism; it creates a record that can prevent unsupported suspicion.",
+        ],
+      },
+      {
+        title: "One standard for everyone",
+        paragraphs: [
+          "Calls to examine politicians' overseas trips are legitimate. Lawmakers and senior officials should face the same disclosure requirements. Their possible misconduct, however, does not invalidate review of another public body.",
+          "The SEED standard is the same for Park, lawmakers, public appointees, state-enterprise executives and publicly funded civic groups: disclose itinerary, cost, public support, conflicts and outcomes.",
+        ],
+      },
+    ],
+    verdicts: [
+      { claim: "The National Assembly disciplined Park", status: "Inaccurate", basis: "The committee directed the ministry to distinguish official and private itineraries more clearly; it did not impose a personal disciplinary penalty." },
+      { claim: "Public funds paid for Park's private itinerary", status: "Not established", basis: "The support office says Park paid all later private costs, including his return flight." },
+      { claim: "There is nothing else to examine because Park paid privately", status: "Incomplete", basis: "Public contacts, information, administrative support and conflicts with company interests remain distinct questions." },
+      { claim: "An unpaid appointee is not subject to public oversight", status: "False", basis: "A presidential committee chair exercises public influence and policy access regardless of salary." },
+    ],
+    watchPoints: [
+      "Whether the ministry publishes a record clearly separating official, private and company-related activity",
+      "Whether officials, vehicles, interpreters or protocol supported the private itinerary",
+      "Whether official contacts were followed by business involving JYP Entertainment",
+      "Whether the committee discloses meetings and public outcomes as well as travel costs",
+      "Whether the same standard is applied to other appointees, public-enterprise executives and lawmakers",
+      "Whether government committees establish a general conflict-of-interest rule for private members",
+    ],
+    quote: "Privately funded freedom should be respected. Public authority cannot escape civic oversight merely because it is exercised without salary.",
+    sourceNote: "This briefing reflects reporting and the committee support office's explanation available through September 6, 2026. Published material has not established a legal violation or public funding of Park's private itinerary. The assessment may be updated if detailed travel records are released.",
+    sourceLabels: [
+      "KNN NEWS — Backlash after caution over Park Jin-young's U.S. trip",
+      "Yonhap News TV — National Assembly questions private itinerary after official travel",
+      "Hankook Ilbo — Committee support office says travel complied with rules",
+      "Seoul Shinmun — Parliamentary committee calls for clearer separation of itineraries",
+    ],
+  },
   "broadcasting-three-laws-public-governance": {
     category: "SEED Special Briefing 06",
     title: "One Year After Korea's Three Broadcasting Laws: Has Public Broadcasting Really Returned to the Public?",
