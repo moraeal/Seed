@@ -57,7 +57,7 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
   const submit = async (event: FormEvent) => {
     event.preventDefault();
     if (!commentsReady) return setNotice(ko ? "댓글 기능을 준비하고 있습니다." : "Comments are not available yet.");
-    if (!user || !session || !isVerified) return setNotice(ko ? "댓글은 이메일 인증회원만 작성할 수 있습니다." : "Only email-verified members can post comments.");
+    if (!user || !session || !isVerified) return setNotice(ko ? "댓글은 인증회원만 작성할 수 있습니다." : "Only verified members can post comments.");
     if (body.trim().length < 2) return setNotice(ko ? "댓글을 두 글자 이상 입력해주세요." : "Please enter at least two characters.");
 
     const payload = continuation ? buildContinuedCommentBody(continuation, body.trim()) : body.trim();
@@ -88,7 +88,7 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
         <MessageCircle className="text-green-mid" size={24} />
         <h2 id="comments-title" className="text-2xl font-extrabold text-navy">{ko ? "시민의견" : "Civic Comments"} <span className="text-green-mid">{comments.length}</span></h2>
       </div>
-      <p className="mt-3 text-sm leading-6 text-charcoal/55">{ko ? "댓글은 이메일 인증회원만 작성할 수 있습니다. 읽기는 누구나 가능하며, 화면에는 가입 때 정한 닉네임이 표시됩니다." : "Anyone may read comments, but only email-verified members may post. Your chosen nickname is displayed publicly."}</p>
+      <p className="mt-3 text-sm leading-6 text-charcoal/55">{ko ? "댓글은 휴대폰 또는 이메일 인증회원만 작성할 수 있습니다. 읽기는 누구나 가능하며, 화면에는 가입 때 정한 닉네임이 표시됩니다." : "Anyone may read comments, but only phone- or email-verified members may post. Your chosen nickname is displayed publicly."}</p>
 
       {!authLoading && (!user || !isVerified) ? (
         <div id="comments-form" className="mt-6 scroll-mt-28 rounded-lg border border-green-deep/12 bg-white p-6 shadow-soft">
@@ -96,12 +96,12 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
             <div className="grid size-10 shrink-0 place-items-center rounded-full bg-green-pale text-green-deep"><LockKeyhole size={20}/></div>
             <div>
               <h3 className="font-extrabold text-navy">{ko ? "인증회원만 댓글을 작성할 수 있습니다." : "Only verified members can post comments."}</h3>
-              <p className="mt-2 text-sm leading-7 text-charcoal/60">{ko ? "이메일과 비밀번호로 간단히 가입한 뒤, 받은 메일의 인증 링크를 누르면 바로 공론장에 참여할 수 있습니다." : "Sign up with an email address and password, then click the confirmation link in your email to join the discussion."}</p>
+              <p className="mt-2 text-sm leading-7 text-charcoal/60">{ko ? "휴대폰으로 받은 6자리 인증번호를 입력하면 바로 공론장에 참여할 수 있습니다." : "Enter the 6-digit code sent to your phone to join the discussion."}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 <Link to={loginPath} className="button-secondary text-sm">{ko ? "로그인" : "Log in"}</Link>
                 <Link to={signupPath} className="button-primary text-sm">{ko ? "회원가입" : "Sign up"}</Link>
               </div>
-              {user && !isVerified && <p className="mt-4 rounded-md bg-gold/10 px-3 py-2 text-xs font-semibold text-charcoal/65">{ko ? "현재 계정은 이메일 확인이 완료되지 않았습니다. 가입 메일의 인증 링크를 확인해주세요." : "Your email address has not been confirmed yet. Please use the verification link in your sign-up email."}</p>}
+              {user && !isVerified && <p className="mt-4 rounded-md bg-gold/10 px-3 py-2 text-xs font-semibold text-charcoal/65">{ko ? "현재 계정의 휴대폰 또는 이메일 인증이 완료되지 않았습니다." : "Phone or email verification has not been completed for this account."}</p>}
             </div>
           </div>
         </div>
@@ -122,7 +122,7 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
 
           <div className="flex flex-wrap items-center gap-3 border-b border-green-deep/10 pb-4">
             <strong className="text-sm text-navy">{nickname}</strong>
-            <span className="inline-flex items-center gap-1 rounded-full bg-green-pale px-2.5 py-1 text-[11px] font-extrabold text-green-deep"><CheckCircle2 size={13}/>{ko ? "이메일 인증회원" : "Email verified"}</span>
+            <span className="inline-flex items-center gap-1 rounded-full bg-green-pale px-2.5 py-1 text-[11px] font-extrabold text-green-deep"><CheckCircle2 size={13}/>{ko ? "인증회원" : "Verified member"}</span>
           </div>
           <label className="field mt-4"><span>{continuation ? (ko ? "이어지는 의견" : "Continued comment") : (ko ? "댓글" : "Comment")}</span><textarea value={body} onChange={(event) => setBody(event.target.value)} maxLength={1000} rows={4} placeholder={continuation ? (ko ? "이전 의견에 이어 새로운 주장이나 질문을 적어주세요." : "Add a new argument or question that continues the previous comment.") : (ko ? "의견과 질문을 남겨주세요." : "Share your view or question.")} required /></label>
           <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
