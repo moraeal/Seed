@@ -33,7 +33,8 @@ import Insights from "./pages/Insights";
 
 function AppShell() {
   const location = useLocation();
-  const showNewsletterAtBottom = !["/", "/en", "/account", "/insights"].includes(location.pathname);
+  const normalizedPath = location.pathname.replace(/\/+$/, "") || "/";
+  const showNewsletterAtBottom = !["/", "/en", "/account", "/insights"].includes(normalizedPath);
 
   return (
     <div className="min-h-screen bg-paper text-charcoal">
