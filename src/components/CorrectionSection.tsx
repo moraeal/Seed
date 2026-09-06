@@ -31,7 +31,7 @@ export default function CorrectionSection({ postSlug }: { postSlug: string }) {
 
   const submit = async (event: FormEvent) => {
     event.preventDefault();
-    if (!user || !session || !isVerified) return setNotice(ko ? "이메일 인증회원만 사실 확인을 요청할 수 있습니다." : "Only email-verified members may submit a correction.");
+    if (!user || !session || !isVerified) return setNotice(ko ? "인증회원만 사실 확인을 요청할 수 있습니다." : "Only verified members may submit a correction.");
     if (targetExcerpt.trim().length < 2 || description.trim().length < 10) return setNotice(ko ? "확인할 부분은 2자 이상, 설명은 10자 이상 입력해주세요." : "Enter at least 2 characters for the target and 10 for the explanation.");
     if (evidenceUrl && !/^https?:\/\//i.test(evidenceUrl)) return setNotice(ko ? "근거 링크는 http:// 또는 https://로 시작해야 합니다." : "The evidence link must begin with http:// or https://.");
 
@@ -59,7 +59,7 @@ export default function CorrectionSection({ postSlug }: { postSlug: string }) {
     <p className="mt-3 text-sm leading-6 text-charcoal/55">{ko ? "잘못된 사실이나 빠진 맥락을 발견했다면 대상 문장과 근거를 남겨주세요. 요청과 검토 결과는 누구나 볼 수 있습니다." : "If you find an error or missing context, identify the passage and provide evidence. Requests and review outcomes are public."}</p>
 
     {!authLoading && (!user || !isVerified) ? <div className="mt-5 flex flex-col gap-4 rounded-lg border border-green-deep/10 bg-white p-5 sm:flex-row sm:items-center sm:justify-between">
-      <div className="flex items-start gap-3"><LockKeyhole className="mt-0.5 shrink-0 text-green-mid" size={19}/><p className="text-sm leading-6 text-charcoal/65">{ko ? "읽기는 누구나 가능하며, 제보는 이메일 인증회원만 작성할 수 있습니다." : "Anyone may read the record; verified members may submit reports."}</p></div>
+      <div className="flex items-start gap-3"><LockKeyhole className="mt-0.5 shrink-0 text-green-mid" size={19}/><p className="text-sm leading-6 text-charcoal/65">{ko ? "읽기는 누구나 가능하며, 제보는 휴대폰 또는 이메일 인증회원만 작성할 수 있습니다." : "Anyone may read the record; phone- or email-verified members may submit reports."}</p></div>
       <div className="flex shrink-0 gap-2"><Link to={loginPath} className="button-secondary text-xs">{ko ? "로그인" : "Log in"}</Link><Link to={signupPath} className="button-primary text-xs">{ko ? "회원가입" : "Sign up"}</Link></div>
     </div> : <form onSubmit={submit} className="mt-5 rounded-lg border border-green-deep/10 bg-white p-5">
       <div className="flex items-center gap-2 border-b border-green-deep/10 pb-4"><strong className="text-sm text-navy">{nickname}</strong><span className="inline-flex items-center gap-1 rounded-full bg-green-pale px-2.5 py-1 text-[11px] font-extrabold text-green-deep"><CheckCircle2 size={13}/>{ko ? "인증회원" : "Verified"}</span></div>
@@ -82,4 +82,3 @@ export default function CorrectionSection({ postSlug }: { postSlug: string }) {
     </div>
   </section>;
 }
-
