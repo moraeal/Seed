@@ -23,7 +23,7 @@ type AuthContextValue = {
   nickname: string;
   isVerified: boolean;
   loading: boolean;
-  signUp: (email: string, password: string, nickname: string, phone: string, language: "ko" | "en") => Promise<{ verificationRequired: boolean }>;
+  signUp: (email: string, password: string, nickname: string, phone: string, socialPreferences: string[], language: "ko" | "en") => Promise<{ verificationRequired: boolean }>;
   signIn: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
 };
@@ -119,7 +119,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     void initialize();
   }, []);
 
-  const signUp = async (email: string, password: string, nickname: string, phone: string, language: "ko" | "en") => {
+  const signUp = async (email: string, password: string, nickname: string, phone: string, socialPreferences: string[], language: "ko" | "en") => {
     const redirectTo = `${window.location.origin}${import.meta.env.BASE_URL}account`;
     const payload = JSON.stringify({
       email,
@@ -128,6 +128,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         nickname,
         contact_phone: phone,
         content_preferences: ["news", "briefings", "columns"],
+        content_delivery_channels: ["email", "kakao", ...socialPreferences],
+        social_preferences: socialPreferences,
         language,
         content_subscription_consent: true,
         content_subscription_consented_at: new Date().toISOString(),

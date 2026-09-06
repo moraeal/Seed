@@ -1,33 +1,14 @@
-import { BarChart3, CheckCircle2, Instagram, LogIn, LogOut, MailCheck, MessageCircle, Smartphone, UserPlus, Youtube } from "lucide-react";
+import { BarChart3, CheckCircle2, Instagram, LogIn, LogOut, MailCheck, Send, Smartphone, UserPlus } from "lucide-react";
 import { FormEvent, useMemo, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../auth";
 import { useLanguage } from "../i18n";
-import { subscribeToNewsletter } from "../lib/engagement";
 
 const socialChannels = [
-  {
-    id: "kakao",
-    labelKo: "카카오톡 채널",
-    labelEn: "KakaoTalk Channel",
-    url: import.meta.env.VITE_KAKAO_CHANNEL_URL || "",
-    Icon: MessageCircle,
-  },
-  {
-    id: "instagram",
-    labelKo: "인스타그램",
-    labelEn: "Instagram",
-    url: import.meta.env.VITE_INSTAGRAM_URL || "",
-    Icon: Instagram,
-  },
-  {
-    id: "youtube",
-    labelKo: "유튜브",
-    labelEn: "YouTube",
-    url: import.meta.env.VITE_YOUTUBE_CHANNEL_URL || "",
-    Icon: Youtube,
-  },
-];
+  { id: "instagram", label: "Instagram", Icon: Instagram },
+  { id: "x", label: "X", Icon: null },
+  { id: "telegram", label: "Telegram", Icon: Send },
+] as const;
 
 export default function Account() {
   const { user, nickname, isVerified, loading, signUp, signIn, signOut } = useAuth();
@@ -42,6 +23,7 @@ export default function Account() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [newsletterOptIn, setNewsletterOptIn] = useState(false);
+  const [socialPreferences, setSocialPreferences] = useState<string[]>([]);
   const [notice, setNotice] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
@@ -57,7 +39,10 @@ export default function Account() {
   const changeMode = (next: "login" | "signup") => {
     setMode(next);
     setNotice("");
-    if (next === "login") setNewsletterOptIn(false);
+    if (next === "login") {
+      setNewsletterOptIn(false);
+      setSocialPreferences([]);
+    }
     const nextParams = new URLSearchParams(searchParams);
     nextParams.set("mode", next);
     setSearchParams(nextParams, { replace: true });
@@ -75,25 +60,13 @@ export default function Account() {
     try {
       if (mode === "signup") {
         const normalizedEmail = email.trim();
-        const result = await signUp(normalizedEmail, password, name.trim(), phone, language);
-        let newsletterSaved = true;
-        try {
-          await subscribeToNewsletter(normalizedEmail, language, "/account?mode=signup");
-        } catch {
-          newsletterSaved = false;
-        }
+        const result = await signUp(normalizedEmail, password, name.trim(), phone, socialPreferences, language);
         if (result.verificationRequired) {
-          if (!newsletterSaved) {
-            setNotice(ko ? "가입 확인 메일을 보냈습니다. 회원가입은 완료됐지만 이메일 구독 저장에 실패했습니다. 인증 후 홈페이지 하단에서 다시 신청해주세요." : "We sent a confirmation email. Your account was created, but the newsletter opt-in could not be saved. Please subscribe again from the site footer after verification.");
-          } else {
-            setNotice(ko
-              ? "가입 확인 메일을 보냈습니다. 이메일의 인증 링크를 누른 뒤 로그인해주세요. 콘텐츠 수신 신청도 함께 저장했습니다."
-              : "We sent a confirmation email. Click the verification link, then log in. Your content subscription was saved too.");
-          }
+          setNotice(ko
+            ? "가입 확인 메일을 보냈습니다. 이메일의 인증 링크를 누르면 뉴스레터와 새 콘텐츠 수신이 시작됩니다."
+            : "We sent a confirmation email. Newsletters and new content will start after you click the verification link.");
           setMode("login");
           setNewsletterOptIn(false);
-        } else if (!newsletterSaved) {
-          setNotice(ko ? "회원가입은 완료됐지만 이메일 구독 저장에 실패했습니다. 홈페이지 하단에서 다시 신청해주세요." : "Your account was created, but the newsletter opt-in could not be saved. Please subscribe again from the site footer.");
         } else {
           navigate(returnTo);
         }
@@ -137,7 +110,7 @@ export default function Account() {
         <div className="pt-5">
           <span className="section-kicker">SEED MEMBER</span>
           <h1 className="editorial-title mt-4 text-4xl font-bold leading-tight text-navy sm:text-5xl">{ko ? "책임 있는 공론장을 위한 인증회원제" : "Verified membership for a responsible public forum"}</h1>
-          <p className="mt-6 text-base leading-8 text-charcoal/65">{ko ? "회원가입은 이메일 인증을 기본으로 합니다. 휴대전화 번호는 인증문자 없이 연락처로만 받고, 가입 회원에게는 씨앗의 소식과 새 콘텐츠를 이메일로 보내드립니다." : "Membership uses email verification. Your mobile number is collected only as a contact, without a verification text, and members receive SEED news and new content by email."}</p>
+          <p className="mt-6 text-base leading-8 text-charcoal/65">{ko ? "이메일 인증을 마치면 뉴스레터와 새 콘텐츠를 기본으로 받아보실 수 있습니다. 휴대전화 번호는 새 콘텐츠를 카카오톡으로 보내드리는 데 사용합니다." : "After verifying your email, you will receive newsletters and new content by default. Your mobile number is used to deliver new content through KakaoTalk."}</p>
           <div className="mt-7 flex items-start gap-3 rounded-lg border border-green-deep/10 bg-green-pale/55 p-4 text-sm leading-7 text-charcoal/65"><MailCheck className="mt-1 shrink-0 text-green-mid" size={20}/>{ko ? "회원가입 후 등록한 이메일로 인증 메일이 발송됩니다. 메일의 링크를 눌러야 댓글 작성 권한이 활성화됩니다." : "After sign-up, a verification email is sent to the address you registered. Commenting is enabled after you click the confirmation link."}</div>
         </div>
 
@@ -152,7 +125,7 @@ export default function Account() {
             <label className={`field ${mode === "signup" ? "mt-4" : ""}`}><span>{ko ? "이메일" : "Email"}</span><input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="name@example.com" autoComplete="email" required /></label>
             <label className="field mt-4"><span>{ko ? "비밀번호" : "Password"}</span><input type="password" value={password} onChange={(event) => setPassword(event.target.value)} minLength={8} placeholder={ko ? "8자 이상" : "8+ characters"} autoComplete={mode === "signup" ? "new-password" : "current-password"} required /></label>
 
-            {mode === "signup" && <label className="field mt-4"><span>{ko ? "휴대전화 번호 (필수)" : "Mobile number (required)"}</span><span className="relative"><Smartphone className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-green-mid" size={17}/><input type="tel" value={phone} onChange={(event) => setPhone(formatPhone(event.target.value))} className="pl-11" placeholder="010-0000-0000" autoComplete="tel-national" inputMode="numeric" maxLength={13} required /></span><small className="font-normal leading-5 text-charcoal/45">{ko ? "인증문자는 발송하지 않으며 회원 연락처로만 저장합니다." : "No verification text is sent; this is stored only as a member contact."}</small></label>}
+            {mode === "signup" && <label className="field mt-4"><span>{ko ? "휴대전화 번호" : "Mobile number"}</span><span className="relative"><Smartphone className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-green-mid" size={17}/><input type="tel" value={phone} onChange={(event) => setPhone(formatPhone(event.target.value))} className="pl-11" placeholder="010-0000-0000" autoComplete="tel-national" inputMode="numeric" maxLength={13} required /></span><small className="font-normal leading-5 text-charcoal/45">{ko ? "인증문자는 보내지 않습니다. 새 콘텐츠를 카카오톡으로 보내드리는 데 사용합니다." : "No verification text is sent. We use this number to deliver new content through KakaoTalk."}</small></label>}
 
             {mode === "signup" && (
               <div className="mt-5 rounded-lg border border-green-deep/15 bg-green-pale/35 p-4">
@@ -165,8 +138,8 @@ export default function Account() {
                     required
                   />
                   <span>
-                    <span className="block text-sm font-extrabold text-navy">{ko ? "새 콘텐츠와 주요 소식을 이메일로 받기 (필수)" : "Receive new content and key updates by email (required)"}</span>
-                    <span className="mt-1 block text-xs leading-5 text-charcoal/55">{ko ? "회원 관리와 콘텐츠 발송을 위해 이메일·휴대전화 번호를 수집하며, 회원 탈퇴 또는 수신 철회 시까지 보관합니다." : "We collect your email and mobile number for membership management and content delivery, retaining them until withdrawal or unsubscribe."}</span>
+                    <span className="block text-sm font-extrabold text-navy">{ko ? "회원가입 및 콘텐츠 수신에 동의합니다" : "I agree to membership and content delivery"}</span>
+                    <span className="mt-1 block text-xs leading-5 text-charcoal/55">{ko ? "이메일 인증 후 뉴스레터와 새 콘텐츠가 기본 발송됩니다. 수집된 이메일·휴대전화 번호와 수신 선택 정보는 회원 탈퇴 시 자동 삭제됩니다." : "After email verification, newsletters and new content are sent by default. Your email, mobile number, and channel choices are automatically deleted when you close your account."}</span>
                   </span>
                 </label>
               </div>
@@ -174,24 +147,19 @@ export default function Account() {
 
             {mode === "signup" && (
               <div className="mt-5 border-t border-green-deep/10 pt-5">
-                <div className="flex items-end justify-between gap-3">
-                  <div>
-                    <p className="text-sm font-extrabold text-navy">{ko ? "SNS에서도 새 소식 받기 (선택)" : "Follow updates on social media (optional)"}</p>
-                    <p className="mt-1 text-xs leading-5 text-charcoal/55">{ko ? "원하는 공식 채널을 팔로우하거나 구독할 수 있습니다." : "Follow or subscribe to any official channel you prefer."}</p>
-                  </div>
+                <p className="text-sm font-extrabold text-navy">{ko ? "추가로 받아볼 채널" : "Additional channels"}</p>
+                <p className="mt-1 text-xs leading-5 text-charcoal/55">{ko ? "인스타그램·X·텔레그램으로도 콘텐츠를 받아보려면 원하는 채널을 선택해주세요." : "Choose any channels where you would also like to receive content."}</p>
+                <div className="mt-3 grid grid-cols-3 gap-2">
+                  {socialChannels.map(({ id, label, Icon }) => {
+                    const selected = socialPreferences.includes(id);
+                    return (
+                      <label key={id} className={`flex cursor-pointer items-center justify-center gap-2 rounded-lg border px-2 py-3 text-xs font-extrabold transition ${selected ? "border-green-deep bg-green-pale text-green-deep" : "border-green-deep/15 bg-white text-charcoal/55 hover:border-green-mid"}`}>
+                        <input type="checkbox" className="sr-only" checked={selected} onChange={(event) => setSocialPreferences((current) => event.target.checked ? [...current, id] : current.filter((channel) => channel !== id))} />
+                        {Icon ? <Icon size={16}/> : <span className="text-sm leading-none">𝕏</span>}{label}
+                      </label>
+                    );
+                  })}
                 </div>
-                <div className="mt-3 grid gap-2 sm:grid-cols-3">
-                  {socialChannels.map(({ id, labelKo, labelEn, url, Icon }) => url ? (
-                    <a key={id} href={url} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-lg border border-green-deep/15 bg-white px-3 py-3 text-xs font-extrabold text-green-deep transition hover:border-green-mid hover:bg-green-pale/40">
-                      <Icon size={17}/>{ko ? labelKo : labelEn}
-                    </a>
-                  ) : (
-                    <div key={id} className="flex items-center justify-center gap-2 rounded-lg border border-dashed border-charcoal/15 bg-[#F7F7F2] px-3 py-3 text-xs font-bold text-charcoal/35" aria-disabled="true" title={ko ? "공식 채널 주소 연결 대기 중" : "Official channel link pending"}>
-                      <Icon size={17}/>{ko ? labelKo : labelEn}
-                    </div>
-                  ))}
-                </div>
-                {socialChannels.every((channel) => !channel.url) && <p className="mt-2 text-center text-[11px] text-charcoal/40">{ko ? "공식 채널 주소 확인 후 버튼이 활성화됩니다." : "Buttons will activate when official channel links are confirmed."}</p>}
               </div>
             )}
 

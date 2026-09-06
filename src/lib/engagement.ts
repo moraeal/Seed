@@ -47,6 +47,7 @@ export type MemberRegistration = {
   nickname: string;
   phone: string | null;
   content_subscription_consent: boolean;
+  social_preferences: string[];
   created_at: string;
   email_confirmed_at: string | null;
 };
