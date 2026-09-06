@@ -1,9 +1,8 @@
-import { useState } from "react";
-import { ArrowLeft, Clock, Play, Share2 } from "lucide-react";
+import { ArrowLeft, Clock, Share2 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
-import FigureCaption from "../components/FigureCaption";
+import InteractiveFigure from "../components/InteractiveFigure";
 import { getColumn } from "../data/columns";
 import { localizeColumn } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
@@ -17,7 +16,6 @@ export default function ColumnDetail() {
   const ko = language === "ko";
   const originalColumn = getColumn(slug);
   const column = originalColumn ? localizeColumn(originalColumn, language) : undefined;
-  const [videoOpen, setVideoOpen] = useState(false);
 
   if (!column) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">{ko ? "글을 찾을 수 없습니다." : "Article not found."}</h1><Link to="/columns" className="button-primary mt-7">{ko ? "씨앗의 소리 목록" : "Voice of the Seed"}</Link></div>;
 
@@ -43,27 +41,20 @@ export default function ColumnDetail() {
     </header>
 
     <div className="container-page max-w-4xl py-8 sm:py-12">
-      <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]">{column.heroImage.sourceUrl ? <a href={column.heroImage.sourceUrl} target="_blank" rel="noreferrer" aria-label={ko ? "대표 이미지 원문 보기" : "Open the source for the lead image"} className="group/image block"><img src={imageSrc(column.heroImage.src)} alt={column.heroImage.alt} referrerPolicy="no-referrer" className="aspect-[16/9] w-full object-cover transition duration-500 group-hover/image:scale-[1.012]"/></a> : <img src={imageSrc(column.heroImage.src)} alt={column.heroImage.alt} className="aspect-[16/9] w-full object-cover"/>}<FigureCaption caption={column.heroImage.caption} credit={column.heroImage.credit} sourceUrl={column.heroImage.sourceUrl}/></figure>
+      <InteractiveFigure src={column.heroImage.src} alt={column.heroImage.alt} caption={column.heroImage.caption} credit={column.heroImage.credit} sourceUrl={column.heroImage.sourceUrl} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]" imageClassName="aspect-[16/9] w-full object-cover" />
 
       <div className="mx-auto mt-10 max-w-3xl">
         {column.sections.map((section, index) => <section key={`${index}-${section.title}`} className={`${index === 0 ? "" : "mt-10 border-t border-green-deep/10 pt-8"}`}>
           <h2 className="text-xl font-extrabold leading-snug text-navy sm:text-2xl">{section.title}</h2>
           {section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 28)}`} className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">{paragraph}</p>)}
           {section.quote && <blockquote className="my-7 border-l-4 border-gold bg-green-pale px-5 py-5 font-serif text-lg font-bold leading-8 text-green-deep sm:px-6 sm:text-xl">{section.quote.map((line, lineIndex) => <span key={`${lineIndex}-${line}`} className="block">{line}</span>)}</blockquote>}
-          {bodyImages.filter((image) => image.afterSection === index).map((image) => <figure key={imageKey(image.src)} className="my-12 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]"><img src={imageSrc(image.src)} alt={image.alt} className={"contain" in image && image.contain ? "block h-auto w-full" : "aspect-[16/10] w-full object-cover"}/><FigureCaption caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl}/></figure>)}
+          {bodyImages.filter((image) => image.afterSection === index).map((image) => <InteractiveFigure key={imageKey(image.src)} src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName="my-12 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName={"contain" in image && image.contain ? "block h-auto w-full" : "aspect-[16/10] w-full object-cover"} />)}
         </section>)}
         {column.referenceVideo && <section className="mt-10 border-t border-green-deep/10 pt-8" aria-labelledby="reference-video-title">
           <span className="section-kicker">{ko ? "참고 영상" : "REFERENCE VIDEO"}</span>
           <h2 id="reference-video-title" className="mt-2 text-xl font-extrabold leading-snug text-navy sm:text-2xl">{column.referenceVideo.title}</h2>
           <p className="mt-3 text-sm leading-6 text-charcoal/60 sm:text-[15px]">{column.referenceVideo.description}</p>
-          <figure className="mt-5 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]">
-            {videoOpen ? <div className="aspect-video bg-black"><iframe className="h-full w-full" src={`https://www.youtube-nocookie.com/embed/${column.referenceVideo.youtubeId}?autoplay=1`} title={column.referenceVideo.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /></div> : <button type="button" onClick={() => setVideoOpen(true)} className="group relative block aspect-video w-full overflow-hidden bg-black text-white" aria-label={ko ? `${column.referenceVideo.title} 재생` : `Play ${column.referenceVideo.title}`}>
-              <img src={column.referenceVideo.thumbnailSrc} alt={column.referenceVideo.thumbnailAlt} referrerPolicy="no-referrer" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.012]" />
-              <span className="absolute inset-0 bg-black/25 transition group-hover:bg-black/35" aria-hidden="true" />
-              <span className="absolute inset-0 grid place-items-center" aria-hidden="true"><span className="grid size-16 place-items-center rounded-full border border-white/70 bg-green-deep/90 shadow-xl transition group-hover:scale-105 sm:size-20"><Play className="ml-1" size={30} fill="currentColor" /></span></span>
-            </button>}
-            <figcaption className="border-t border-green-deep/10 px-5 py-3 text-xs leading-5 text-charcoal/55 sm:px-6">{column.referenceVideo.credit}</figcaption>
-          </figure>
+          <InteractiveFigure src={column.referenceVideo.thumbnailSrc} alt={column.referenceVideo.thumbnailAlt} caption={column.referenceVideo.description} credit={column.referenceVideo.credit} sourceUrl={`https://www.youtube.com/watch?v=${column.referenceVideo.youtubeId}`} youtubeId={column.referenceVideo.youtubeId} figureClassName="mt-5 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName="aspect-video w-full object-cover" />
         </section>}
         <aside className="mt-10 border-t-2 border-navy pt-6"><span className="section-kicker">{ko ? "자료 주" : "SOURCE NOTE"}</span><p className="mt-3 text-sm leading-6 text-charcoal/60">{column.sourceNote}</p>{column.sources && <ul className="mt-4 grid gap-1.5 text-sm leading-6 text-charcoal/60">{column.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ul>}</aside>
         <ContentAccountability postSlug={column.slug} publishedDate={column.date} />

@@ -2,11 +2,9 @@ import { ArrowLeft, Clock, Share2 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
-import FigureCaption from "../components/FigureCaption";
+import InteractiveFigure from "../components/InteractiveFigure";
 import { getSeedLanguageArticle } from "../data/seedLanguage";
 import { useLanguage } from "../i18n";
-
-const imageSrc = (src: string) => `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 
 export default function SeedLanguageDetail() {
   const { slug = "" } = useParams();
@@ -36,7 +34,7 @@ export default function SeedLanguageDetail() {
     </header>
 
     <div className="container-page max-w-4xl py-8 sm:py-11">
-      <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.09)]"><img src={imageSrc(article.heroImage.src)} alt={article.heroImage.alt} className="aspect-[16/9] w-full object-cover"/><FigureCaption caption={article.heroImage.caption} credit={article.heroImage.credit}/></figure>
+      <InteractiveFigure src={article.heroImage.src} alt={article.heroImage.alt} caption={article.heroImage.caption} credit={article.heroImage.credit} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.09)]" imageClassName="aspect-[16/9] w-full object-cover" />
 
       <div className="mx-auto mt-10 max-w-3xl">
         <aside className="border-l-4 border-gold bg-green-pale px-6 py-6 sm:px-8"><span className="section-kicker">{ko ? "핵심 요약" : "KEY POINTS"}</span><ul className="mt-4 space-y-3">{article.keyPoints.map((point) => <li key={point} className="flex gap-3 text-sm font-semibold leading-7 text-navy"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold"/><span>{point}</span></li>)}</ul></aside>
@@ -44,7 +42,7 @@ export default function SeedLanguageDetail() {
         {article.sections.map((section, index) => <section key={section.title} className="mt-9 border-t border-green-deep/10 pt-6">
           <h2 className="text-xl font-extrabold leading-snug text-navy sm:text-2xl">{section.title}</h2>
           {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">{paragraph}</p>)}
-          {index === 6 && <figure className="my-8 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]"><img src={imageSrc(article.inlineImage.src)} alt={article.inlineImage.alt} className="aspect-[16/9] w-full object-cover"/><FigureCaption caption={article.inlineImage.caption} credit={article.inlineImage.credit}/></figure>}
+          {index === 6 && <InteractiveFigure src={article.inlineImage.src} alt={article.inlineImage.alt} caption={article.inlineImage.caption} credit={article.inlineImage.credit} figureClassName="my-8 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName="aspect-[16/9] w-full object-cover" />}
         </section>)}
 
         <ContentAccountability postSlug={`seed-language-${article.slug}`} publishedDate={article.date}/>

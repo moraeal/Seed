@@ -2,7 +2,7 @@ import { ArrowLeft, Clock, Share2 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
-import FigureCaption from "../components/FigureCaption";
+import InteractiveFigure from "../components/InteractiveFigure";
 import SourceArticleCard from "../components/SourceArticleCard";
 import { localizeNewsArticle } from "../data/localizedContent";
 import { getNewsArticle } from "../data/news";
@@ -40,11 +40,11 @@ export default function NewsDetail() {
     <div className="container-page max-w-4xl py-8 sm:py-12">
       {article.video && <section className="mb-12 overflow-hidden border border-green-deep/15 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]">
         <div className="px-5 py-5 sm:px-7"><span className="section-kicker">{ko ? "현장의 목소리" : "VOICE FROM THE FIELD"}</span><h2 className="mt-2 text-xl font-extrabold leading-snug text-navy sm:text-2xl">{article.video.title}</h2><p className="mt-2 text-sm leading-7 text-charcoal/65">{article.video.description}</p></div>
-        <div className="aspect-video bg-black"><iframe className="h-full w-full" src={`https://www.youtube-nocookie.com/embed/${article.video.youtubeId}`} title={article.video.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /></div>
+        <InteractiveFigure src={`https://i.ytimg.com/vi/${article.video.youtubeId}/hqdefault.jpg`} alt={article.video.title} youtubeId={article.video.youtubeId} showCaption={false} figureClassName="overflow-hidden bg-black" imageClassName="aspect-video w-full object-cover" />
         <p className="border-t border-green-deep/10 bg-ivory px-5 py-4 text-xs leading-6 text-charcoal/50 sm:px-7">※ {article.video.disclaimer}</p>
       </section>}
       <SourceArticleCard news={selectedNews} ko={ko}/>
-      <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]">{article.heroImage.sourceUrl ? <a href={article.heroImage.sourceUrl} target="_blank" rel="noreferrer" aria-label={ko ? "사진 원문 기사 보기" : "Open the original article for this photo"} className="group/image block"><img src={imageSrc(article.heroImage.src)} alt={article.heroImage.alt} referrerPolicy="no-referrer" className="aspect-[16/9] w-full object-cover transition duration-500 group-hover/image:scale-[1.012]"/></a> : <img src={imageSrc(article.heroImage.src)} alt={article.heroImage.alt} className="aspect-[16/9] w-full object-cover"/>}<FigureCaption caption={article.heroImage.caption} credit={article.heroImage.credit} sourceUrl={article.heroImage.sourceUrl}/></figure>
+      <InteractiveFigure src={article.heroImage.src} alt={article.heroImage.alt} caption={article.heroImage.caption} credit={article.heroImage.credit} sourceUrl={article.heroImage.sourceUrl} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]" imageClassName="aspect-[16/9] w-full object-cover" />
 
       <div className="mx-auto mt-8 max-w-3xl">
         <aside className="border-l-4 border-gold bg-green-pale px-6 py-7 sm:px-8"><span className="section-kicker">{ko ? "오늘의 한 문장" : "ONE SENTENCE"}</span><p className="mt-3 font-serif text-xl font-bold leading-9 text-green-deep sm:text-2xl">{article.keySentence}</p></aside>
@@ -53,7 +53,7 @@ export default function NewsDetail() {
           <h2 className="text-xl font-extrabold leading-snug text-navy sm:text-2xl">{section.title}</h2>
           {section.paragraphs?.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 32)}`} className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">{paragraph}</p>)}
           {section.bullets && <ul className="mt-5 grid gap-2.5 text-base leading-7 text-charcoal/75 sm:text-[17px]">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet}`} className="flex gap-3"><span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"/><span>{bullet}</span></li>)}</ul>}
-          {showInlineImage && index === Math.min(2, article.sections.length - 1) && <figure className="my-10 overflow-hidden border border-green-deep/10 bg-white"><img src={imageSrc(article.inlineImage.src)} alt={article.inlineImage.alt} className="aspect-[16/10] w-full object-cover"/><FigureCaption caption={article.inlineImage.caption} credit={article.inlineImage.credit} sourceUrl={article.inlineImage.sourceUrl}/></figure>}
+          {showInlineImage && index === Math.min(2, article.sections.length - 1) && <InteractiveFigure src={article.inlineImage.src} alt={article.inlineImage.alt} caption={article.inlineImage.caption} credit={article.inlineImage.credit} sourceUrl={article.inlineImage.sourceUrl} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white" imageClassName="aspect-[16/10] w-full object-cover" />}
         </section>)}
 
         <section className="mt-10 border-t-2 border-navy pt-7"><span className="section-kicker">{ko ? "앞으로 확인할 지점" : "WHAT TO WATCH"}</span><ol className="mt-4 grid gap-3 sm:grid-cols-2">{article.watchPoints.map((point, index) => <li key={`${index}-${point}`} className="border border-green-deep/15 bg-white p-4"><p className="text-sm font-semibold leading-6 text-navy">{point}</p></li>)}</ol></section>
