@@ -125,10 +125,10 @@ export default function Account() {
             <label className={`field ${mode === "signup" ? "mt-4" : ""}`}><span>{ko ? "이메일" : "Email"}</span><input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="name@example.com" autoComplete="email" required /></label>
             <label className="field mt-4"><span>{ko ? "비밀번호" : "Password"}</span><input type="password" value={password} onChange={(event) => setPassword(event.target.value)} minLength={8} placeholder={ko ? "8자 이상" : "8+ characters"} autoComplete={mode === "signup" ? "new-password" : "current-password"} required /></label>
 
-            {mode === "signup" && <label className="field mt-4"><span>{ko ? "휴대전화 번호" : "Mobile number"}</span><span className="relative"><Smartphone className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-green-mid" size={17}/><input type="tel" value={phone} onChange={(event) => setPhone(formatPhone(event.target.value))} className="pl-11" placeholder="010-0000-0000" autoComplete="tel-national" inputMode="numeric" maxLength={13} required /></span><small className="font-normal leading-5 text-charcoal/45">{ko ? "인증문자는 보내지 않습니다. 새 콘텐츠를 카카오톡으로 보내드리는 데 사용합니다." : "No verification text is sent. We use this number to deliver new content through KakaoTalk."}</small></label>}
+            {mode === "signup" && <label className="field mt-4"><span>{ko ? "휴대전화 번호" : "Mobile number"}</span><span className="relative"><Smartphone className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-green-mid" size={17}/><input type="tel" value={phone} onChange={(event) => setPhone(formatPhone(event.target.value))} className="pl-11" placeholder="010-0000-0000" autoComplete="tel-national" inputMode="numeric" maxLength={13} required /></span><small className="font-normal leading-5 text-charcoal/45">{ko ? "새 콘텐츠를 카카오톡으로 보내드리는 데 사용합니다." : "We use this number to deliver new content through KakaoTalk."}</small></label>}
 
             {mode === "signup" && (
-              <div className="mt-5 rounded-lg border border-green-deep/15 bg-green-pale/35 p-4">
+              <div className="mt-5">
                 <label className="flex cursor-pointer items-start gap-3">
                   <input
                     type="checkbox"
