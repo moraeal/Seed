@@ -46,7 +46,7 @@ export async function createCorrection(input: {
   userId?: string;
 }) {
   if (!correctionsReady) throw new Error("사실 확인 제보 저장소가 아직 연결되지 않았습니다.");
-  if (!input.accessToken || !input.userId) throw new Error("이메일 인증회원만 사실 확인을 요청할 수 있습니다.");
+  if (!input.accessToken || !input.userId) throw new Error("인증회원만 사실 확인을 요청할 수 있습니다.");
 
   const response = await fetch(`${url}/rest/v1/content_corrections`, {
     method: "POST",
@@ -72,7 +72,7 @@ export async function createCorrection(input: {
     let message = "사실 확인 요청을 등록하지 못했습니다. 잠시 후 다시 시도해주세요.";
     try {
       const data = await response.json();
-      if (response.status === 401 || response.status === 403) message = "로그인 상태와 이메일 인증 여부를 확인해주세요.";
+      if (response.status === 401 || response.status === 403) message = "로그인 상태와 회원 인증 여부를 확인해주세요.";
       else if (data?.message) message = data.message;
     } catch {
       // 기본 안내문을 사용합니다.
@@ -80,4 +80,3 @@ export async function createCorrection(input: {
     throw new Error(message);
   }
 }
-
