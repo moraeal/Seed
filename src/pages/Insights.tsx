@@ -17,6 +17,7 @@ export default function Insights() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showDailyViews, setShowDailyViews] = useState(false);
+  const [lastUpdatedAt, setLastUpdatedAt] = useState<Date | null>(null);
   const authorized = user?.app_metadata?.seed_role === "owner";
 
   const refresh = async () => {
@@ -30,6 +31,7 @@ export default function Insights() {
       setViews(data.views);
       setMembers(data.members);
       setSubscribers(data.subscribers);
+      setLastUpdatedAt(new Date());
     } catch {
       setError(ko ? "통계 자료를 불러오지 못했습니다." : "Could not load analytics data.");
     } finally {
@@ -38,6 +40,11 @@ export default function Insights() {
   };
 
   useEffect(() => { void refresh(); }, [session?.access_token, authorized]);
+  useEffect(() => {
+    if (!session || !authorized) return;
+    const timer = window.setInterval(() => { void refresh(); }, 10_000);
+    return () => window.clearInterval(timer);
+  }, [session?.access_token, authorized]);
 
   const totals = useMemo(() => Object.fromEntries(summary.map((item) => [item.metric, Number(item.value)])), [summary]);
   const maxDailyViews = useMemo(() => Math.max(1, ...dailyViews.map((item) => Number(item.views))), [dailyViews]);
@@ -51,7 +58,7 @@ export default function Insights() {
   return (
     <section className="min-h-[70vh] bg-ivory py-12 sm:py-16">
       <div className="container-page">
-        <div className="flex flex-wrap items-end justify-between gap-5 border-b-2 border-navy pb-5"><div><p className="section-kicker">PRIVATE DASHBOARD</p><h1 className="editorial-title mt-2 text-4xl font-bold text-navy">{ko ? "구독·콘텐츠 통계" : "Subscriptions & content"}</h1><p className="mt-3 text-sm text-charcoal/55">{ko ? "광고 쿠키나 방문자 개인정보 없이 페이지 조회와 구독 신청을 집계합니다." : "Page views and subscription requests, without ad cookies or visitor identity tracking."}</p></div><button type="button" onClick={() => void refresh()} className="button-secondary" disabled={loading}><RefreshCw size={15}/>{ko ? "새로고침" : "Refresh"}</button></div>
+        <div className="flex flex-wrap items-end justify-between gap-5 border-b-2 border-navy pb-5"><div><p className="section-kicker">PRIVATE DASHBOARD</p><h1 className="editorial-title mt-2 text-4xl font-bold text-navy">{ko ? "구독·콘텐츠 통계" : "Subscriptions & content"}</h1><p className="mt-3 text-sm text-charcoal/55">{ko ? "광고 쿠키나 방문자 개인정보 없이 페이지 조회와 구독 신청을 집계합니다." : "Page views and subscription requests, without ad cookies or visitor identity tracking."}</p></div><div className="text-right"><button type="button" onClick={() => void refresh()} className="button-secondary" disabled={loading}><RefreshCw className={loading ? "animate-spin" : ""} size={15}/>{ko ? "새로고침" : "Refresh"}</button><p className="mt-2 text-[11px] font-semibold text-charcoal/40">{ko ? "10초마다 자동 업데이트" : "Auto-updates every 10 seconds"}{lastUpdatedAt ? ` · ${lastUpdatedAt.toLocaleTimeString(ko ? "ko-KR" : "en-US")}` : ""}</p></div></div>
         {error && <p className="mt-5 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700" role="alert">{error}</p>}
         <div className="mt-7 grid gap-4 sm:grid-cols-3">
           <article className="border border-green-deep/15 bg-white p-5"><Mail className="text-green-mid" size={20}/><p className="mt-4 text-xs font-bold text-charcoal/45">{ko ? "활성 구독" : "Active subscribers"}</p><p className="editorial-title mt-1 text-3xl font-bold text-navy">{(totals.active_subscribers || 0).toLocaleString()}</p></article>
