@@ -47,9 +47,14 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-ivory/95 backdrop-blur-xl">
-      <div className="container-page flex h-[76px] items-center gap-4 border-b border-green-deep/12 md:h-[82px]">
-        <Link to={language === "en" ? "/en/" : "/"} className="flex min-w-0 shrink items-center" aria-label={language === "en" ? "SEED VOICE home" : "씨앗의 소리 홈"}>
+      <div className="container-page flex min-h-[92px] items-center gap-3 border-b border-green-deep/12 py-3 md:min-h-[96px] md:gap-4">
+        <Link to={language === "en" ? "/en/" : "/"} className="flex min-w-0 shrink flex-col items-start gap-1.5" aria-label={language === "en" ? "SEED VOICE home" : "씨앗의 소리 홈"}>
           <BrandLockup tone="header" />
+          <span className="max-w-[calc(100vw-5.75rem)] text-[10px] font-medium leading-[1.35] tracking-[-.02em] text-charcoal/58 sm:max-w-[42rem] sm:text-[11px] md:max-w-[46rem] lg:max-w-[50rem]">
+            {language === "ko"
+              ? "씨앗의 소리는 권력을 감시하고 자유의 영역을 넓히며, 기업의 도전과 혁신을 보호하는 독립 시민저널입니다."
+              : "An independent civic journal that watches power, expands the sphere of freedom, and protects enterprise and innovation."}
+          </span>
         </Link>
 
         <div className="ml-auto hidden shrink-0 items-center gap-2 md:flex">
