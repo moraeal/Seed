@@ -61,7 +61,7 @@ const briefingArchive: Briefing[] = [
         alt: "비어 있는 법정의 봉인된 사건기록과 탁상시계",
         caption: "재판의 기일이 미뤄졌다고 사건이 끝난 것은 아닙니다. 기록과 증거를 보전하고 임기 뒤 책임 절차가 이어지도록 해야 합니다.",
         credit: "씨앗의 소리 제작 이미지",
-        sourceUrl: "https://seedpartners.org/briefings/president-criminal-trials-article-84/",
+        sourceUrl: "https://seedvoice.kr/briefings/president-criminal-trials-article-84/",
       },
     ],
     content: [

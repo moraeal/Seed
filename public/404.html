@@ -12,17 +12,17 @@
           ? window.location.hash.slice(1)
           : "";
         if (hashRoute) {
-          window.location.replace("https://seedpartners.org" + hashRoute + window.location.search);
+          window.location.replace("https://seedvoice.kr" + hashRoute + window.location.search);
           return;
         }
         if (path.indexOf("/Seed/") === 0) {
           path = "/" + path.slice(6);
         }
-        window.location.replace("https://seedpartners.org/#" + path + window.location.search);
+        window.location.replace("https://seedvoice.kr/#" + path + window.location.search);
       })();
     </script>
   </head>
   <body>
-    <p><a href="https://seedpartners.org/">씨앗의 소리 홈페이지로 이동</a></p>
+    <p><a href="https://seedvoice.kr/">씨앗의 소리 홈페이지로 이동</a></p>
   </body>
 </html>

@@ -211,7 +211,7 @@ for (const route of seoRoutes) {
 const accountShell = template
   .replace(/<title>[\s\S]*?<\/title>/i, "<title>내 계정 | 씨앗의 소리</title>")
   .replace(/<meta\s+name="robots"[\s\S]*?\/>/i, '<meta name="robots" content="noindex" />')
-  .replace(/<link\s+rel="canonical"[\s\S]*?\/>/i, '<link rel="canonical" href="https://seedpartners.org/account" />');
+  .replace(/<link\s+rel="canonical"[\s\S]*?\/>/i, '<link rel="canonical" href="https://seedvoice.kr/account" />');
 await mkdir(path.join(dist, "account"), { recursive: true });
 await writeFile(path.join(dist, "account", "index.html"), accountShell);
 

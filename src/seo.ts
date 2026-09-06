@@ -4,7 +4,7 @@ import { newsArticles } from "./data/news";
 import { publicInterestWatchCases } from "./data/publicInterestWatch";
 import { seedLanguageArticlesKo } from "./data/seedLanguage";
 
-export const SITE_URL = "https://seedpartners.org";
+export const SITE_URL = "https://seedvoice.kr";
 export const SITE_NAME = "씨앗의 소리";
 export const ENGLISH_SITE_NAME = "SEED VOICE";
 export const SOCIAL_SITE_NAME = "씨앗의 소리";
