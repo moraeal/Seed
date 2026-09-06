@@ -106,26 +106,6 @@ export default function Home() {
 
   return (
     <div className="bg-paper">
-      <section className="border-b border-white/15 bg-green-deep text-white" aria-labelledby="journal-identity-title">
-        <div className="container-page py-5 sm:py-6">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
-            <div className="max-w-5xl">
-              <p className="text-[11px] font-extrabold tracking-[.2em] text-gold sm:text-xs">INDEPENDENT CIVIC JOURNAL</p>
-              <h1 id="journal-identity-title" className="editorial-title mt-2 text-[clamp(1.3rem,2.35vw,2rem)] font-bold leading-[1.35] tracking-[-0.035em] text-white">
-                {ko
-                  ? "씨앗의 소리는 권력을 감시하고 자유의 영역을 넓히며, 기업의 도전과 혁신을 보호하는 독립 시민저널입니다."
-                  : "The Voice of Seed is an independent civic journal that watches power, expands the sphere of freedom, and protects enterprise and innovation."}
-              </h1>
-            </div>
-            <div className="flex shrink-0 flex-wrap gap-x-5 gap-y-2 border-t border-white/20 pt-3 text-xs font-bold text-white/78 lg:max-w-[22rem] lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0 sm:text-[13px]">
-              <span>{ko ? "권력 감시" : "Watching power"}</span>
-              <span>{ko ? "자유의 확장" : "Expanding freedom"}</span>
-              <span>{ko ? "기업의 도전과 혁신" : "Enterprise and innovation"}</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="border-b border-green-deep/20 bg-ivory py-5 sm:py-7">
         <div className="container-page grid items-stretch gap-5 xl:grid-cols-[minmax(0,1.55fr)_minmax(350px,.72fr)] xl:gap-6">
           <div className="h-full">
