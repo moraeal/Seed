@@ -4,7 +4,7 @@ import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
 import InteractiveFigure from "../components/InteractiveFigure";
 
-const hero = "images/columns/lh-reform-2026.webp";
+const hero = "images/columns/lh-reform-2026.jpg";
 
 export default function LhReformColumn() {
   const share = async () => {
@@ -34,7 +34,7 @@ export default function LhReformColumn() {
         <section>
           <h2 className="text-xl font-extrabold leading-snug text-navy sm:text-2xl">개혁이라는 이름이 요란하다</h2>
           <p className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">내용 없는 깡통이 더 요란한 법이다. 유난히 이번 정부 들어 ‘개혁’이라는 이름으로 공공기관을 뜯어고치고 조직을 흔드는 일이 많다. 합치고, 나누고, 없애고, 새로 만든다. 무엇인가 대단한 일을 하고 있다는 인상을 주기에는 조직개편만큼 눈에 잘 보이는 것도 없다.</p>
-          <p className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">정부는 9월 3일 LH를 택지개발·주택건설 기능과 주거복지·자산비축 기능으로 나누는 방향을 공식화했다는 보도가 나왔다. 주택 공급의 속도를 높이겠다는 명분이다. 그러나 여기서 먼저 물어야 한다. 지금의 주택시장 문제가 정말 LH의 조직도가 잘못돼서 생긴 것인가.</p>
+          <p className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">정부는 LH 분리를 포함한 조직개편을 추진하고 있다. 주택 공급의 속도를 높이겠다는 명분이다. 그러나 여기서 먼저 물어야 한다. 지금의 주택시장 문제가 정말 LH의 조직도가 잘못돼서 생긴 것인가.</p>
           <blockquote className="my-7 border-l-4 border-gold bg-green-pale px-5 py-5 font-serif text-lg font-bold leading-8 text-green-deep sm:px-6 sm:text-xl"><span className="block">“치대국 약팽소선(治大國若烹小鮮)”</span><span className="block">큰 나라를 다스리는 것은 작은 생선을 굽는 것과 같다.</span></blockquote>
           <p className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">노자 『도덕경』의 말이다. 생선을 빨리 익히겠다고 계속 뒤집고 찌르고 손대면 결국 살이 부서진다. 국가와 공공조직도 마찬가지다. 조직이 크고 복잡할수록 무엇을 바꿀지 정확히 알고 손대야 한다. 그런데 지금 LH를 둘러싼 논의를 보면 생선을 어떻게 잘 익힐 것인가보다 얼마나 세게 뒤집을 것인가에 관심이 더 많은 듯하다.</p>
         </section>
@@ -48,7 +48,7 @@ export default function LhReformColumn() {
 
         <section className="mt-10 border-t border-green-deep/10 pt-8">
           <h2 className="text-xl font-extrabold leading-snug text-navy sm:text-2xl">수천 명 조직을 쪼개는 동안 개혁의 시간은 흘러간다</h2>
-          <p className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">LH는 현재도 전국의 택지개발, 공공분양, 임대주택, 보상, 주거복지 사업을 동시에 수행하고 있다. 2026년에도 수십 개 지구의 공공분양과 임대주택 공급계획이 진행되고 있다. 이런 조직을 둘로 나누는 일은 간판 두 개를 다는 것으로 끝나지 않는다.</p>
+          <p className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">LH는 현재도 전국의 택지개발, 공공분양, 임대주택, 보상, 주거복지 사업을 동시에 수행하고 있다. 이런 조직을 둘로 나누는 일은 간판 두 개를 다는 것으로 끝나지 않는다.</p>
           <p className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">인력을 나누고 자산을 나누고 부채를 나눠야 한다. 진행 중인 사업과 계약, 토지와 임대주택, 보증과 채무관계의 귀속도 정해야 한다. 본사와 지역조직, 전산망, 회계와 인사체계도 다시 설계해야 한다. 그 과정에서 몇 년이 흘러갈 수도 있다.</p>
           <p className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">정부에는 조직개편의 시간이지만 시민에게는 삶의 시간이다. 공급이 늦어지면 집을 기다리는 사람이 비용을 낸다. 부채 이전이 불투명하면 납세자가 위험을 떠안는다. 기관 사이 책임이 흐려지면 문제가 발생했을 때 다시 시민이 그 대가를 치른다. 시민의 생활 인프라를 정치의 실험실로 만들어서는 안 된다.</p>
         </section>
@@ -64,28 +64,20 @@ export default function LhReformColumn() {
           <h2 className="text-xl font-extrabold leading-snug text-navy sm:text-2xl">씨앗은 LH를 그대로 두자고 말하지 않는다</h2>
           <p className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">씨앗의 소리는 LH를 지금 모습 그대로 유지하자고 말하지 않는다. LH에는 개혁해야 할 문제가 많다. 비대한 조직, 개발과 공공성의 충돌, 부채와 회계의 투명성, 내부 통제와 과거 투기 사건까지 손볼 문제가 분명히 존재한다.</p>
           <p className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">그러나 공공기관 개혁의 첫 단추는 조직도를 다시 그리는 것이 아니다. 문제의 원인을 정확히 증명하는 일이다. LH의 어떤 구조가 공급을 방해했는지, 분리 외에 해결 방법은 없는지, 분리했을 때 얻는 편익이 전환비용보다 큰지를 먼저 시민 앞에 내놓아야 한다.</p>
-          <blockquote className="my-7 border-l-4 border-gold bg-green-pale px-5 py-5 font-serif text-lg font-bold leading-8 text-green-deep sm:px-6 sm:text-xl"><span className="block">개혁은 많이 뜯어고치는 능력이 아니다.</span><span className="block">무엇을 바꾸고 무엇은 함부로 건드리지 말아야 하는지 아는 절제다.</span></blockquote>
+          <blockquote className="my-7 border-l-4 border-gold bg-green-pale px-5 py-5 font-serif text-lg font-bold leading-8 text-green-deep sm:px-6 sm:text-xl"><span className="block">개혁은 많이 뜯어고치는 능력이 아니다.</span><span className="block">무엇을 바꾸고 무엇은 함부로 건드리지 말아야 하는지 아는 능력이다.</span></blockquote>
         </section>
 
         <section className="mt-10 border-t border-green-deep/10 pt-8">
-          <h2 className="text-xl font-extrabold leading-snug text-navy sm:text-2xl">먼저 숫자와 책임으로 답하라</h2>
-          <p className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">LH 분리가 정말 필요하다면 정부는 시민 앞에 최소한 다섯 가지를 답해야 한다. LH의 어떤 구조가 정책 실패를 만들었는가. 분리하면 주택 공급은 얼마나 빨라지는가. 자산과 부채는 어떻게 나누는가. 조직분리 비용은 얼마인가. 그 과정에서 진행 중인 주택사업의 지연 위험은 어떻게 막을 것인가.</p>
-          <p className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">이 질문에 답하지 못한다면 지금 필요한 것은 새로운 조직도가 아니다. 실패에 대한 정확한 진단서다. 개혁은 시끄럽다고 개혁이 아니다. 좋은 개혁은 결과로 증명된다.</p>
-          <p className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">노자의 오래된 경고를 다시 떠올릴 때다. 큰 나라를 다스리는 것은 작은 생선을 굽는 것과 같다. 국가를 운영하는 사람에게 때로 가장 필요한 힘은 무엇인가를 뒤집는 힘이 아니라, <strong className="font-extrabold text-navy">함부로 뒤집지 않는 절제</strong>다.</p>
+          <h2 className="text-xl font-extrabold leading-snug text-navy sm:text-2xl">유능한 정부는 함부로 뒤집지 않는다</h2>
+          <p className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">유능한 정부는 많이 뜯어고치는 정부가 아니다. 무엇을 바꿔야 하고 무엇은 함부로 건드리지 말아야 하는지를 아는 정부다.</p>
+          <p className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">LH 분리가 정말 필요하다면 정부는 먼저 시민 앞에 숫자와 책임으로 답해야 한다. 왜 나누는가. 나누면 무엇이 좋아지는가. 그 과정에서 시민이 치러야 할 비용은 얼마인가.</p>
+          <p className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">개혁은 시끄럽다고 개혁이 아니다. 좋은 개혁은 결과로 증명된다. 국가를 운영하는 사람에게 때로 가장 필요한 능력은 무엇인가를 뒤집는 힘이 아니라 함부로 뒤집지 않는 절제다.</p>
         </section>
 
-        <aside className="mt-10 border-t-2 border-navy pt-6">
-          <span className="section-kicker">자료 주</span>
-          <p className="mt-3 text-sm leading-6 text-charcoal/60">LH 분리 방침과 현재 진행 중인 LH 공급·사업 현황을 확인하기 위해 2026년 9월 정부 개편 보도와 LH 공식 자료를 함께 참고했다. 조직개편의 구체적인 자산·부채 이전 방식과 세부 실행계획은 향후 확정안에서 추가 검증할 필요가 있다.</p>
-          <ul className="mt-4 grid gap-1.5 text-sm leading-6 text-charcoal/60">
-            <li><a href="https://v.daum.net/v/20260903213245182" target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">2026.09.03 LH 기능별 2개사 개편 관련 보도</a></li>
-            <li><a href="https://www.lh.or.kr/gallery.es?bid=0003&mid=a10502000000" target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">LH 공식 보도자료</a></li>
-            <li><a href="https://apply.lh.or.kr/lhapply/apply/noti/sp/list.do?mi=201523&sUppAisTpCd=05" target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">LH 2026년 분양주택 공급계획</a></li>
-          </ul>
-        </aside>
+        <aside className="mt-10 border-t-2 border-navy pt-6"><span className="section-kicker">자료 주</span><p className="mt-3 text-sm leading-6 text-charcoal/60">LH 조직개편 논의와 주택공급 정책에 관한 공개 자료와 보도를 참고해 씨앗의 소리 관점으로 작성했다.</p></aside>
         <ContentAccountability postSlug="lh-reform-politics-2026" publishedDate="2026-09-07" />
         <CommentSection postSlug="lh-reform-politics-2026" />
-        <div className="mt-10 border-t border-green-deep/10 pt-6"><Link to="/columns" className="button-secondary">씨앗의 소리 목록</Link></div>
+        <div className="mt-8"><Link to="/columns" className="text-link">씨앗의 소리 목록으로</Link></div>
       </div>
     </div>
   </article>;
