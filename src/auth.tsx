@@ -24,6 +24,7 @@ type AuthContextValue = {
   isVerified: boolean;
   loading: boolean;
   signUp: (email: string, password: string, nickname: string, phone: string, socialPreferences: string[], language: "ko" | "en") => Promise<{ verificationRequired: boolean }>;
+  resendVerification: (email: string) => Promise<void>;
   signIn: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
 };
@@ -154,6 +155,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return { verificationRequired: true };
   };
 
+  const resendVerification = async (email: string) => {
+    const normalizedEmail = email.trim();
+    if (!normalizedEmail) throw new Error("인증메일을 받을 이메일 주소를 입력해주세요.");
+
+    const redirectTo = `${window.location.origin}${import.meta.env.BASE_URL}account`;
+    const response = await fetch(`${supabaseUrl}/auth/v1/resend?redirect_to=${encodeURIComponent(redirectTo)}`, {
+      method: "POST",
+      headers: authHeaders(),
+      body: JSON.stringify({ type: "signup", email: normalizedEmail }),
+    });
+    if (!response.ok) throw new Error(await readError(response, "인증메일 재발송에 실패했습니다."));
+  };
+
   const signIn = async (email: string, password: string) => {
     const response = await fetch(`${supabaseUrl}/auth/v1/token?grant_type=password`, {
       method: "POST",
@@ -184,6 +198,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     isVerified: Boolean(session?.user?.email_confirmed_at),
     loading,
     signUp,
+    resendVerification,
     signIn,
     signOut,
   }), [session, loading]);
