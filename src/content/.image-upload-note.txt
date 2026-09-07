@@ -1,1 +1,0 @@
-The LH image upload is being corrected using a binary Git blob in the next commit.
