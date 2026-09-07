@@ -23,6 +23,7 @@ type AuthContextValue = {
   nickname: string;
   isVerified: boolean;
   loading: boolean;
+  isNicknameAvailable: (nickname: string) => Promise<boolean>;
   signUp: (email: string, password: string, nickname: string, phone: string, socialPreferences: string[], language: "ko" | "en") => Promise<{ verificationRequired: boolean }>;
   resendVerification: (email: string) => Promise<void>;
   signIn: (email: string, password: string) => Promise<void>;
@@ -120,13 +121,34 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     void initialize();
   }, []);
 
+  const isNicknameAvailable = async (nickname: string) => {
+    const candidate = nickname.replace(/\s+/g, " ").trim();
+    if (candidate.length < 2 || candidate.length > 30) return false;
+
+    const response = await fetch(`${supabaseUrl}/rest/v1/rpc/is_nickname_available`, {
+      method: "POST",
+      headers: authHeaders(),
+      body: JSON.stringify({ candidate }),
+    });
+    if (!response.ok) throw new Error(await readError(response, "닉네임 중복 여부를 확인하지 못했습니다."));
+    return Boolean(await response.json());
+  };
+
   const signUp = async (email: string, password: string, nickname: string, phone: string, socialPreferences: string[], language: "ko" | "en") => {
+    const normalizedNickname = nickname.replace(/\s+/g, " ").trim();
+    const nicknameAvailable = await isNicknameAvailable(normalizedNickname);
+    if (!nicknameAvailable) {
+      throw new Error(language === "ko"
+        ? "이미 사용 중인 닉네임입니다. 다른 닉네임을 입력해주세요."
+        : "That nickname is already in use. Please choose another one.");
+    }
+
     const redirectTo = `${window.location.origin}${import.meta.env.BASE_URL}account`;
     const payload = JSON.stringify({
       email,
       password,
       data: {
-        nickname,
+        nickname: normalizedNickname,
         contact_phone: phone || null,
         content_preferences: ["news", "briefings", "columns"],
         content_delivery_channels: ["email", ...socialPreferences],
@@ -145,7 +167,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (!response.ok) {
       response = await fetch(`${supabaseUrl}/auth/v1/signup`, { method: "POST", headers: authHeaders(), body: payload });
     }
-    if (!response.ok) throw new Error(await readError(response, "회원가입에 실패했습니다."));
+    if (!response.ok) {
+      const message = await readError(response, "회원가입에 실패했습니다.");
+      try {
+        if (!(await isNicknameAvailable(normalizedNickname))) {
+          throw new Error(language === "ko"
+            ? "이미 사용 중인 닉네임입니다. 다른 닉네임을 입력해주세요."
+            : "That nickname is already in use. Please choose another one.");
+        }
+      } catch (error) {
+        if (error instanceof Error && error.message.includes("닉네임")) throw error;
+      }
+      throw new Error(message);
+    }
 
     const data = await response.json();
     if (data.access_token && data.refresh_token) {
@@ -197,6 +231,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     nickname: session?.user?.user_metadata?.nickname?.trim() || session?.user?.email?.split("@")[0] || "인증회원",
     isVerified: Boolean(session?.user?.email_confirmed_at),
     loading,
+    isNicknameAvailable,
     signUp,
     resendVerification,
     signIn,
