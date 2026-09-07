@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth";
 import { getContent } from "../data/siteContent";
 import { useLanguage } from "../i18n";
+import { SITE_DESCRIPTION } from "../seo";
 import BrandLockup from "./BrandLockup";
 
 export default function Header() {
@@ -52,7 +53,7 @@ export default function Header() {
           <BrandLockup tone="header" />
           <span className="max-w-[calc(100vw-5.75rem)] text-xs font-medium leading-[1.5] tracking-[-.02em] text-charcoal/65 sm:max-w-[42rem] sm:text-[13px] md:max-w-[46rem] md:text-sm lg:max-w-[50rem]">
             {language === "ko"
-              ? "씨앗의 소리는 권력을 감시하고 자유의 영역을 넓히며, 기업의 도전과 혁신을 보호하는 독립 시민저널입니다."
+              ? SITE_DESCRIPTION
               : "An independent civic journal that watches power, expands the sphere of freedom, and protects enterprise and innovation."}
           </span>
         </Link>
