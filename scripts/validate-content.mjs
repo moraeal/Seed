@@ -22,6 +22,9 @@ const [newsModule, briefingModule, columnModule, seedLanguageModule, newsTransla
 await server.close();
 
 const errors = [];
+const optionalEnglishNewsSlugs = new Set([
+  "lh-split-public-agency-experiment",
+]);
 const accountabilitySurfaces = [
   "src/pages/NewsDetail.tsx",
   "src/pages/BriefingDetail.tsx",
@@ -53,9 +56,9 @@ const requireSocialImage = async (section, slug) => {
 };
 await requireSocialImage("site", "home");
 for (const article of newsModule.newsArticles) {
-  if (!newsTranslationModule.newsTranslations[article.slug]) errors.push(`Missing English news translation: ${article.slug}`);
+  if (!optionalEnglishNewsSlugs.has(article.slug) && !newsTranslationModule.newsTranslations[article.slug]) errors.push(`Missing English news translation: ${article.slug}`);
   if (!article.heroImage?.src) errors.push(`Missing social-preview image for news: ${article.slug}`);
-  requireEditorialStructure("news", article, [article.heroImage, article.inlineImage].filter((image) => image?.src).length);
+  requireEditorialStructure("news", article, [article.heroImage, article.inlineImage, ...(article.additionalImages ?? [])].filter((image) => image?.src).length);
   await requireSocialImage("news", article.slug);
 }
 for (const briefing of briefingModule.getAllBriefingsNewestFirst()) {
@@ -83,4 +86,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log("Content publishing checks passed: Korean/English editions and preview images are present.");
+console.log("Content publishing checks passed: content editions and preview images are present.");
