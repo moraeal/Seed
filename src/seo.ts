@@ -93,12 +93,12 @@ const briefingRoutes: SeoRoute[] = getAllBriefingsNewestFirst().flatMap((briefin
   }];
   if (briefing.commentary) routes.push({
     path: `/briefings/${briefing.slug}/commentary`,
-    title: `${briefing.commentary.title} | 씨드 논평`,
+    title: `${briefing.commentary.title} | 브리핑 깊게 보기`,
     description: briefing.commentary.summary,
     type: "article",
     lastModified: briefing.date,
     author: briefing.author,
-    section: "씨드 논평",
+    section: "브리핑 깊게 보기",
     image: previewImage ? socialImageUrl("briefings", briefing.slug, briefing.date) : undefined,
     imageAlt: previewImage?.alt,
   });

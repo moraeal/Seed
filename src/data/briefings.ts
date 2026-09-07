@@ -33,7 +33,9 @@ export type Briefing = {
   commentary?: {
     title: string;
     summary: string;
+    readMinutes?: number;
     paragraphs: string[];
+    sections?: { title: string; paragraphs: string[] }[];
   };
 };
 

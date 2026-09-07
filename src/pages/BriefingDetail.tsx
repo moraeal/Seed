@@ -50,7 +50,7 @@ export default function BriefingDetail() {
             <span className="flex items-center gap-1"><Clock size={14} />{ko ? `읽는 시간 ${briefing.readMinutes}분` : `${briefing.readMinutes} min read`}</span>
             <div className="flex w-full flex-wrap gap-2 sm:ml-auto sm:w-auto">
               <button onClick={share} className="button-secondary min-h-8 px-3 py-1.5 text-xs"><Share2 size={15} />{ko ? "공유" : "Share"}</button>
-              {briefing.commentary && <Link to={`/briefings/${briefing.slug}/commentary`} className="button-secondary min-h-8 px-3 py-1.5 text-xs"><FileText size={15} />{ko ? "논평 보기" : "Read commentary"}</Link>}
+              {briefing.commentary && <Link to={`/briefings/${briefing.slug}/commentary`} className="button-secondary min-h-8 px-3 py-1.5 text-xs"><FileText size={15} />{ko ? "브리핑 깊게 보기" : "Read the deep dive"}</Link>}
               {briefing.pdfPath && <a href={`${import.meta.env.BASE_URL}${briefing.pdfPath}`} download className="button-primary min-h-8 px-3 py-1.5 text-xs"><Download size={15} />{ko ? "PDF 원문 내려받기" : "Download PDF"}</a>}
             </div>
           </div>

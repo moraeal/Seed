@@ -1,6 +1,164 @@
 import type { BriefingTranslation } from "./types";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "social-solidarity-economy-youth-mall-lessons": {
+    category: "SEED Civic Briefing 08",
+    title: "Korea's Social and Solidarity Economy Act: Lessons from the Youth Mall Failure",
+    summary: "Government can build shops, but it cannot manufacture customers. After 54.1 percent of the original shops in Korea's Youth Mall program closed, the lesson is clear: the social economy must grow through citizens, local businesses and real demand—not permanent dependence on state support.",
+    author: "SEED Civic Briefing",
+    images: [
+      {
+        alt: "A corridor in a Korean traditional market lined with closed shopfronts",
+        caption: "Government can provide premises and facilities, but it cannot manufacture customers or trust. Empty Youth Mall shops show why supporting suppliers alone does not create a sustainable market.",
+        credit: "AI-generated image by SEED VOICE",
+      },
+      {
+        alt: "Paper-collage illustration of residents, small-business owners and care workers designing local services together",
+        caption: "The social economy should begin with citizens' needs and participation, not official designation. Residents, businesses and civic groups need room to pool capital and skills and grow through public choice.",
+        credit: "AI-generated image by SEED VOICE",
+      },
+      {
+        src: "images/briefings/briefing-08-youth-mall-survival-en.svg",
+        alt: "Chart showing that 401 of 741 original Youth Mall shops had closed, a closure rate of 54.1 percent",
+        caption: "By August 2024, 401 of the 741 original tenant shops had closed. Creating shop units with public money is not the same as creating a market chosen by citizens.",
+        credit: "Infographic by SEED VOICE · National Assembly Research Service data",
+      },
+    ],
+    content: [
+      "Can a traditional market be revived simply by giving young people subsidized shops? Beginning in 2016, Korea's government renovated vacant units in traditional markets and supported young merchants with rent, interiors, training and promotion. The Youth Mall program promised to create jobs while drawing a new generation of customers into declining markets.",
+      "The intention was attractive. The results were not. According to the National Assembly Research Service, 401 of the 741 original tenant shops had closed by August 2024. That is a closure rate of 54.1 percent.",
+    ],
+    sections: [
+      {
+        title: "The program built shops, not a market",
+        paragraphs: [
+          "Many early Youth Malls were placed in vacant sections of markets with poor access and weak foot traffic. Premises and signs were prepared before demand had been tested. The Ministry of SMEs and Startups later acknowledged that location problems contributed to weak sales.",
+          "Subsidized rent and promotion could keep a business open for a time, but they did not guarantee customers after support ended. Young merchants could lose savings, time and confidence, while taxpayers absorbed the cost of failed projects.",
+        ],
+      },
+      {
+        title: "A much larger support framework is now taking shape",
+        paragraphs: [
+          "The Framework Act on the Social and Solidarity Economy, passed by the National Assembly on August 20, brings social enterprises, cooperatives, village enterprises, self-reliance enterprises, social ventures, nonprofits and intermediary support organizations into a common policy framework. It provides for a presidential committee, five-year national plans and social-finance mechanisms offering investment, loans and guarantees.",
+          "It also expands preferential public purchasing and allows social-economy organizations to receive priority consideration when care, cleaning, facility management and other public services are contracted out. Public bodies purchased about KRW 2.416 trillion in social-enterprise goods and services in 2025. This is therefore about who delivers care to parents, food to children and services in public facilities—not an abstract debate among NGOs.",
+        ],
+      },
+      {
+        title: "Conservatives should not abandon the social economy",
+        paragraphs: [
+          "The social economy itself is not the problem. Residents in Gyeongju turned vacant homes into a village hotel. A community energy project in Yeoju uses solar revenue for welfare and a village bus. Residents in Daegu have organized around care for people with developmental disabilities and local food.",
+          "Citizens pooling money, time and responsibility instead of asking the state to solve every problem is compatible with conservative commitments to freedom, responsibility and voluntary association. There is no reason to concede the social economy to the political left.",
+          "The danger is a social economy dependent on certification, grants, policy finance and public contracts. Just as subsidies could not replace customers in Youth Malls, preferential procurement cannot replace citizen choice and trust.",
+        ],
+      },
+      {
+        title: "Neither state withdrawal nor state control is enough",
+        paragraphs: [
+          "Britain's Big Society agenda under David Cameron sought to move authority from central government to communities and voluntary organizations. Yet critics found that public spending was reduced before smaller civic organizations had sufficient assets and capacity. Large organizations and companies were often better placed to win major contracts.",
+          "Britain illustrates the risk of withdrawal without preparation. Korea must avoid the opposite risk: a civic ecosystem designed and managed through government committees, intermediaries, finance and procurement. The answer is a capable but limited state that establishes fair conditions for citizens and businesses to cooperate independently.",
+        ],
+      },
+      {
+        title: "Build an ecosystem led by citizens and businesses",
+        paragraphs: [
+          "Social-economy organizations should rely first on membership dues, donations, user fees and resident investment rather than government grants. Businesses can contribute accounting, management, technology and distribution expertise as well as money.",
+          "Government should focus on transparent information, fair competition and tax rules that encourage private giving and investment. Care services should be judged by users' experience, community buses by reliability and cost, and cleaning services by quality—not by the provider's label.",
+        ],
+        bullets: [
+          "Disclose overlapping grants, policy finance, facility support and public contracts",
+          "Apply meaningful price, quality and outcome tests alongside ordinary small businesses",
+          "Measure whether organizations survive through citizen choice and earned income after support ends",
+        ],
+      },
+    ],
+    watchPoints: [
+      "Whether membership and conflicts of interest on national and local committees are disclosed",
+      "Whether local governments publish outsourced services, selection criteria and contract reasons",
+      "Whether social-economy organizations and ordinary small businesses face comparable price, quality and outcome tests",
+      "Whether overlapping grants, finance, facilities and procurement benefits are disclosed",
+      "Whether long-term survival and citizen satisfaction are measured after support ends",
+    ],
+    quote: "Government can build shops, but it cannot manufacture customers. It can certify organizations, but it cannot manufacture citizens' trust.",
+    sourceNote: "This briefing compares legislation and government materials available through September 8, 2026 with National Assembly research on Youth Malls and assessments by the UK Parliament and National Audit Office. The Youth Mall closure rate uses original tenant shops as of August 2024. The practical effects of Korea's new framework act will depend on subordinate rules and local implementation.",
+    sourceLabels: [
+      "National Assembly Research Service — Revitalizing youth entrepreneurship in traditional markets",
+      "Ministry of SMEs and Startups — Response concerning Youth Mall closures",
+      "Ministry of the Interior and Safety — Social and Solidarity Economy Act passes the National Assembly",
+      "Ministry of Employment and Labor — 2025 public-sector purchases from social enterprises",
+      "UK House of Commons Public Administration Committee — Assessment of the Big Society",
+      "UK National Audit Office — Voluntary, community and social enterprises in public services",
+    ],
+    commentary: {
+      title: "How to Keep the Social Economy Out of the State's Hands",
+      summary: "A closer examination of Korea's Youth Malls and Britain's Big Society shows why conservatives should support a social economy led by citizens and businesses rather than grants and government designation.",
+      readMinutes: 10,
+      paragraphs: [
+        "Imagine residents creating care services for older neighbors, investing together in a village bus where transport is scarce, or renovating vacant homes and using the proceeds to support local children and older people. This is the social economy at its best.",
+        "The real question is not whether to support or oppose the social economy. It is whether the field will become an ecosystem of organizations selected and financed by government, or one built voluntarily by citizens and businesses.",
+      ],
+      sections: [
+        {
+          title: "What the new framework act creates",
+          paragraphs: [
+            "The act brings social enterprises, cooperatives, village enterprises, self-reliance enterprises, social ventures, nonprofits and intermediary organizations into a common framework. It establishes a presidential committee, five-year plans, social finance, preferential purchasing and priority consideration in outsourced public services.",
+            "It does not automatically award every contract to a designated organization. But subordinate rules and local ordinances may substantially widen access to public finance and contracts. Civic scrutiny is needed while the system is being designed, not only after budgets have become permanent.",
+          ],
+        },
+        {
+          title: "The social economy is not an issue conservatives should concede",
+          paragraphs: [
+            "A society in which families, neighbors, religious institutions, civic groups, local businesses and cooperatives act before the state is consistent with a conservative belief in voluntary association and responsibility. It can reduce dependence on government and strengthen local resilience.",
+            "The village hotel in Gyeongju, community solar revenue supporting a bus in Yeoju, and resident-led care in Daegu show what becomes possible when people organize around real needs. The social economy does not belong to one political camp.",
+          ],
+        },
+        {
+          title: "The paradox of a state-dependent social economy",
+          paragraphs: [
+            "When survival depends on certification, grants, policy finance and public contracts, organizations begin to face government rather than citizens. An organization can survive after losing members if it continues winning programs, while a useful group can be excluded for falling outside official priorities.",
+            "Fairness to ordinary small businesses also matters. If a designated organization receives subsidized finance, facilities and preferential contracts at the same time, benefits can compound. A public-interest label must not become an exemption from competition, quality or accountability.",
+          ],
+        },
+        {
+          title: "Whose money is the KRW 2.4 trillion public market?",
+          paragraphs: [
+            "Korean public bodies purchased about KRW 2.416 trillion in social-enterprise goods and services in 2025. The market includes food, cleaning, disinfection, recycling and care as well as office supplies.",
+            "This is taxpayers' money. Success should be measured by better services at a defensible price, not simply by the share purchased from a preferred category. Contracts, costs and outcomes must be disclosed together so purchasing targets do not replace public value.",
+          ],
+        },
+        {
+          title: "Youth Malls exposed the limits of supporting suppliers",
+          paragraphs: [
+            "The Youth Mall program offered premises, rent, interiors, training and promotion in an effort to address unemployment and revive traditional markets. Yet 401 of 741 original shops had closed by August 2024. Good intentions and extensive support did not create durable demand.",
+            "The central error was to build space in weak locations and wait for customers. Young merchants needed viable locations, real demand, competitive products, experienced partners, management knowledge and private capital—not vacant units alone.",
+            "The same danger exists in the social economy. Creating organizations and awarding contracts cannot guarantee that citizens will choose their services once support ends. Government can create suppliers; it cannot substitute for a market or civic trust.",
+          ],
+        },
+        {
+          title: "Big Society: failure from the opposite direction",
+          paragraphs: [
+            "David Cameron's 2010 Big Society agenda proposed moving power from central government to communities and expanding voluntary participation in public services. Critics argued, however, that spending was cut before civil society had the assets and capacity needed to take responsibility.",
+            "Parliamentary and audit assessments identified unclear implementation, contracting barriers for smaller organizations and unequal civic capacity among places. The lesson is not that citizens cannot act. It is that transferring obligations without power, assets and capacity does not create autonomy.",
+            "Britain risked abandonment; Korea risks incorporation into a state-managed ecosystem. Both can leave small independent organizations at the margins.",
+          ],
+        },
+        {
+          title: "An autonomous ecosystem of citizens and businesses",
+          paragraphs: [
+            "Organizations should be rooted in dues, donations, user fees and resident investment. Businesses can be partners by sharing finance, accounting, management, technology and distribution while respecting the independence of civic voices.",
+            "Government should enable rather than select: improve tax treatment for giving, protect small civic investors, disclose reliable information and open unused public space on fair terms. Providers should be judged by user satisfaction, cost, quality and durability.",
+            "Overlapping support must be disclosed, and weak organizations must be allowed to lose contracts. Permanent protection erodes the very trust that the social economy requires.",
+          ],
+        },
+        {
+          title: "Citizen choice must remain the final test",
+          paragraphs: [
+            "The social economy should not be handed to the state, but it should not be abandoned either. Conservatives should offer a citizen-led alternative to a grant-dependent model rather than treating the entire field as a progressive project.",
+            "The goal is neither state withdrawal nor state control. It is a capable but limited government that creates fair conditions for citizens and businesses to cooperate. The final measure is not how many organizations were certified, but whether citizens choose them and whether they survive after support ends.",
+          ],
+        },
+      ],
+    },
+  },
   "park-jinyoung-public-trip-civic-oversight": {
     category: "SEED Civic Briefing 07",
     title: "Park Jin-young's U.S. Trip: How Far Should Civic Oversight of Public Bodies Go?",
