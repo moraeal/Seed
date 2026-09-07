@@ -9,18 +9,9 @@ const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.me
 export default function Columns() {
   const { language } = useLanguage();
   const ko = language === "ko";
-  const lhColumn = {
-    slug: "lh-reform-politics-2026",
-    title: "내용 없는 깡통이 더 요란하다",
-    summary: "LH를 쪼개는 것이 개혁인가. 지금 필요한 것은 새로운 조직도가 아니라 부동산 정책 실패에 대한 냉정한 진단이다.",
-    date: "2026-09-07",
-    readMinutes: 7,
-    heroImage: { src: "images/columns/lh-reform-2026.webp", alt: "LH 상징물이 부서지고 뒤편에 아파트 도시가 보이는 개혁 논쟁 상징 이미지" },
-  };
   const localizedColumns = [...columns]
     .sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue)
     .map((column) => localizeColumn(column, language));
-  const displayColumns = ko ? [lhColumn, ...localizedColumns] : localizedColumns;
 
   return <section className="bg-paper pb-12 sm:pb-16">
     <header className="border-b border-green-deep/15 bg-ivory">
@@ -31,7 +22,7 @@ export default function Columns() {
     </header>
     <div className="container-page py-8 sm:py-10">
       <div className="border-t border-green-deep/20">
-        {displayColumns.map((column) => <Link key={column.slug} to={`/columns/${column.slug}`} className="group grid gap-5 border-b border-green-deep/15 px-5 py-6 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7">
+        {localizedColumns.map((column) => <Link key={column.slug} to={`/columns/${column.slug}`} className="group grid gap-5 border-b border-green-deep/15 px-5 py-6 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7">
           <div className="overflow-hidden bg-green-deep"><img src={imageSrc(column.heroImage.src)} alt={column.heroImage.alt} referrerPolicy="no-referrer" className="aspect-[4/3] w-full object-cover grayscale-[15%] transition duration-500 group-hover:scale-[1.025]" /></div>
           <div><h2 className="editorial-title text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">{column.title}</h2><p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/55">{column.summary}</p><div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-charcoal/45"><time>{column.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={13}/>{ko ? `${column.readMinutes}분` : `${column.readMinutes} min`}</span><span className="ml-auto flex items-center gap-2 font-bold text-green-deep">{ko ? "글 읽기" : "Read"}<ArrowRight size={15}/></span></div></div>
         </Link>)}
