@@ -57,7 +57,7 @@ function loadTurnstile(): Promise<TurnstileApi> {
   return scriptPromise;
 }
 
-export async function getTurnstileToken(action: "signup" | "newsletter"): Promise<string | null> {
+export async function getTurnstileToken(action: "signup" | "login" | "resend" | "newsletter"): Promise<string | null> {
   if (!siteKey) return null;
 
   const api = await loadTurnstile();
