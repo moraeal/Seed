@@ -10,14 +10,14 @@ export const lhReformPolitics2026Column: SeedColumn = {
   readMinutes: 7,
   summary: "LH를 쪼개는 것이 개혁인가. 지금 필요한 것은 새로운 조직도가 아니라 부동산 정책 실패에 대한 냉정한 진단이다.",
   heroImage: {
-    src: "images/columns/lh-reform-2026.jpg",
+    src: "images/columns/lh-reform-2026.webp",
     alt: "LH 상징물이 부서지고 뒤편에 아파트 도시가 보이는 개혁 논쟁 상징 이미지",
     caption: "조직을 부수는 장면은 강렬하다. 그러나 개혁의 기준은 장면이 아니라 시민의 삶이 실제로 나아지는가에 있어야 한다.",
     credit: "씨앗의 소리 제작 이미지",
     sourceUrl: "",
   },
   inlineImage: {
-    src: "images/columns/lh-reform-2026.jpg",
+    src: "images/columns/lh-reform-2026.webp",
     alt: "LH 조직개편 논쟁을 상징하는 이미지",
     caption: "개혁은 조직도를 다시 그리는 일이 아니라 실패의 원인을 증명하는 일이다.",
     credit: "씨앗의 소리 제작 이미지",
