@@ -2,7 +2,6 @@ type TurnstileOptions = {
   sitekey: string;
   action?: string;
   appearance?: "always" | "execute" | "interaction-only";
-  execution?: "render" | "execute";
   size?: "normal" | "compact" | "flexible";
   callback?: (token: string) => void;
   "error-callback"?: (code: string) => void;
@@ -12,7 +11,6 @@ type TurnstileOptions = {
 
 type TurnstileApi = {
   render: (container: HTMLElement, options: TurnstileOptions) => string;
-  execute: (widgetId: string) => void;
   remove: (widgetId: string) => void;
 };
 
@@ -29,7 +27,7 @@ export const isTurnstileConfigured = Boolean(siteKey);
 
 function waitForApi(resolve: (api: TurnstileApi) => void, reject: (error: Error) => void, attempts = 0) {
   if (window.turnstile) return resolve(window.turnstile);
-  if (attempts > 100) return reject(new Error("turnstile_not_ready"));
+  if (attempts > 200) return reject(new Error("turnstile_not_ready"));
   window.setTimeout(() => waitForApi(resolve, reject, attempts + 1), 50);
 }
 
@@ -70,6 +68,7 @@ export async function getTurnstileToken(action: "signup" | "login" | "resend" | 
     bottom: "16px",
     zIndex: "2147483000",
     minWidth: "300px",
+    minHeight: "65px",
   });
   document.body.appendChild(container);
 
@@ -94,21 +93,19 @@ export async function getTurnstileToken(action: "signup" | "login" | "resend" | 
 
     const timeoutId = window.setTimeout(() => {
       finish(() => reject(new Error("turnstile_timeout")));
-    }, 20000);
+    }, 60000);
 
     try {
       widgetId = api.render(container, {
         sitekey: siteKey,
         action,
         appearance: "interaction-only",
-        execution: "execute",
         size: "normal",
         callback: (token) => finish(() => resolve(token)),
-        "error-callback": () => finish(() => reject(new Error("turnstile_failed"))),
+        "error-callback": (code) => finish(() => reject(new Error(`turnstile_failed_${code || "unknown"}`))),
         "expired-callback": () => finish(() => reject(new Error("turnstile_expired"))),
         "timeout-callback": () => finish(() => reject(new Error("turnstile_timeout"))),
       });
-      api.execute(widgetId);
     } catch {
       finish(() => reject(new Error("turnstile_failed")));
     }
