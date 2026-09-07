@@ -1,10 +1,11 @@
+import { contentPathSmokeTest } from "./columns/contentPathSmokeTest";
 import { lhReformColumn } from "./columns/lhReformColumn";
 import { columns as legacyColumns } from "./columnsLegacy";
 import type { SeedColumn } from "./columnsLegacy";
 
 export type { SeedColumn } from "./columnsLegacy";
 
-export const columns: SeedColumn[] = [lhReformColumn, ...legacyColumns];
+export const columns: SeedColumn[] = [contentPathSmokeTest, lhReformColumn, ...legacyColumns];
 
 export const getColumn = (slug: string) => columns.find((column) => column.slug === slug);
 
