@@ -14,7 +14,7 @@ const server = await createServer({
   server: { middlewareMode: true },
   optimizeDeps: { noDiscovery: true },
 });
-const [{ seoRoutes, canonicalUrl, SITE_NAME, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, siteContentModule, seedLanguageModule] = await Promise.all([
+const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, siteContentModule, seedLanguageModule] = await Promise.all([
   server.ssrLoadModule("/src/seo.ts"),
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
@@ -226,7 +226,7 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
   <channel>
     <title>${SITE_NAME}</title>
     <link>${SITE_URL}/</link>
-    <description>확인된 사실과 맥락, 분명한 관점으로 한국 정치·사회 이슈를 전하는 씨앗의 소리 최신 콘텐츠입니다.</description>
+    <description>${cdata(SITE_DESCRIPTION)}</description>
     <language>ko-KR</language>
     <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml" />
     <lastBuildDate>${rfc822(feedRoutes[0].lastModified)}</lastBuildDate>
