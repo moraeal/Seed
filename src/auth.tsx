@@ -57,11 +57,13 @@ async function readError(response: Response, fallback: string) {
 async function securityToken(action: "signup" | "login" | "resend") {
   try {
     return await getTurnstileToken(action);
-  } catch {
+  } catch (error) {
     const english = document.documentElement.lang.toLowerCase().startsWith("en");
+    const detail = error instanceof Error ? error.message : "turnstile_unknown";
+    console.error("Turnstile verification failed:", detail);
     throw new Error(english
-      ? "Security verification failed. Please try again."
-      : "보안 확인에 실패했습니다. 잠시 후 다시 시도해주세요.");
+      ? `Security verification failed (${detail}). Please try again.`
+      : `보안 확인에 실패했습니다 (${detail}). 잠시 후 다시 시도해주세요.`);
   }
 }
 
