@@ -2,9 +2,12 @@ create or replace function public.normalize_seed_nickname(value text)
 returns text
 language sql
 immutable
+set search_path = ''
 as $$
   select lower(regexp_replace(trim(coalesce(value, '')), '[[:space:]]+', ' ', 'g'));
 $$;
+
+revoke all on function public.normalize_seed_nickname(text) from public, anon, authenticated;
 
 create table if not exists public.nickname_registry (
   nickname_key text primary key,
@@ -31,7 +34,7 @@ returns boolean
 language sql
 stable
 security definer
-set search_path = public, auth
+set search_path = ''
 as $$
   select
     char_length(regexp_replace(trim(coalesce(candidate, '')), '[[:space:]]+', ' ', 'g')) between 2 and 30
@@ -42,14 +45,14 @@ as $$
     );
 $$;
 
-revoke all on function public.is_nickname_available(text) from public;
+revoke all on function public.is_nickname_available(text) from public, anon, authenticated;
 grant execute on function public.is_nickname_available(text) to anon, authenticated;
 
 create or replace function public.register_auth_user_nickname()
 returns trigger
 language plpgsql
 security definer
-set search_path = public, auth
+set search_path = ''
 as $$
 declare
   display_nickname text;
@@ -78,6 +81,8 @@ begin
   return new;
 end;
 $$;
+
+revoke all on function public.register_auth_user_nickname() from public, anon, authenticated;
 
 drop trigger if exists register_unique_nickname_after_signup on auth.users;
 create trigger register_unique_nickname_after_signup
