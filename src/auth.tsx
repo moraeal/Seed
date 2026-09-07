@@ -136,12 +136,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signUp = async (email: string, password: string, nickname: string, phone: string, socialPreferences: string[], language: "ko" | "en") => {
     const normalizedNickname = nickname.replace(/\s+/g, " ").trim();
+    const duplicateNicknameMessage = language === "ko"
+      ? "이미 사용 중인 닉네임입니다. 다른 닉네임을 입력해주세요."
+      : "That nickname is already in use. Please choose another one.";
+
     const nicknameAvailable = await isNicknameAvailable(normalizedNickname);
-    if (!nicknameAvailable) {
-      throw new Error(language === "ko"
-        ? "이미 사용 중인 닉네임입니다. 다른 닉네임을 입력해주세요."
-        : "That nickname is already in use. Please choose another one.");
-    }
+    if (!nicknameAvailable) throw new Error(duplicateNicknameMessage);
 
     const redirectTo = `${window.location.origin}${import.meta.env.BASE_URL}account`;
     const payload = JSON.stringify({
@@ -170,13 +170,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (!response.ok) {
       const message = await readError(response, "회원가입에 실패했습니다.");
       try {
-        if (!(await isNicknameAvailable(normalizedNickname))) {
-          throw new Error(language === "ko"
-            ? "이미 사용 중인 닉네임입니다. 다른 닉네임을 입력해주세요."
-            : "That nickname is already in use. Please choose another one.");
-        }
+        if (!(await isNicknameAvailable(normalizedNickname))) throw new Error(duplicateNicknameMessage);
       } catch (error) {
-        if (error instanceof Error && error.message.includes("닉네임")) throw error;
+        if (error instanceof Error && error.message === duplicateNicknameMessage) throw error;
       }
       throw new Error(message);
     }
