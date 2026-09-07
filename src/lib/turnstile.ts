@@ -3,8 +3,10 @@ type TurnstileOptions = {
   action?: string;
   appearance?: "always" | "execute" | "interaction-only";
   size?: "normal" | "compact" | "flexible";
+  retry?: "auto" | "never";
+  "retry-interval"?: number;
   callback?: (token: string) => void;
-  "error-callback"?: (code: string) => void;
+  "error-callback"?: (code: string) => boolean | void;
   "expired-callback"?: () => void;
   "timeout-callback"?: () => void;
 };
@@ -69,6 +71,7 @@ export async function getTurnstileToken(action: "signup" | "login" | "resend" | 
     zIndex: "2147483000",
     minWidth: "300px",
     minHeight: "65px",
+    background: "white",
   });
   document.body.appendChild(container);
 
@@ -99,15 +102,21 @@ export async function getTurnstileToken(action: "signup" | "login" | "resend" | 
       widgetId = api.render(container, {
         sitekey: siteKey,
         action,
-        appearance: "interaction-only",
+        appearance: "always",
         size: "normal",
+        retry: "auto",
+        "retry-interval": 8000,
         callback: (token) => finish(() => resolve(token)),
-        "error-callback": (code) => finish(() => reject(new Error(`turnstile_failed_${code || "unknown"}`))),
+        "error-callback": (code) => {
+          finish(() => reject(new Error(`turnstile_error_${code || "unknown"}`)));
+          return true;
+        },
         "expired-callback": () => finish(() => reject(new Error("turnstile_expired"))),
-        "timeout-callback": () => finish(() => reject(new Error("turnstile_timeout"))),
+        "timeout-callback": () => finish(() => reject(new Error("turnstile_interaction_timeout"))),
       });
-    } catch {
-      finish(() => reject(new Error("turnstile_failed")));
+    } catch (error) {
+      const detail = error instanceof Error ? error.message : "unknown";
+      finish(() => reject(new Error(`turnstile_render_${detail}`)));
     }
   });
 }
