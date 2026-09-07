@@ -4,6 +4,14 @@ import type { NewsArticle as ArchiveNewsArticle, NewsImage } from "./newsArchive
 export type { NewsImage, NewsSection, NewsSource, NewsVideo, SelectedNews } from "./newsArchive";
 export type NewsArticle = ArchiveNewsArticle & { additionalImages?: NewsImage[] };
 
+const lhHeroImage: NewsImage = {
+  src: "https://i.ytimg.com/vi/ervJ5jH7dig/hqdefault.jpg",
+  alt: "정부의 LH 분리 추진을 보도한 SBS 뉴스 경제365 영상 화면",
+  caption: "정부가 17년 만에 LH 분리 추진 방안을 검토하고 있다는 SBS 뉴스 경제365 보도 화면입니다.",
+  credit: "영상 화면 · SBS 뉴스",
+  sourceUrl: "https://www.youtube.com/watch?v=ervJ5jH7dig"
+};
+
 const lhSplitPublicAgencyArticle: NewsArticle = {
   slug: "lh-split-public-agency-experiment",
   issue: 10,
@@ -14,48 +22,20 @@ const lhSplitPublicAgencyArticle: NewsArticle = {
   subtitle: "정부는 LH를 개발과 자산관리로 나누면 재무 여건을 개선하고 주택공급을 앞당길 수 있다고 설명합니다. 그러나 17년 전에는 바로 그 통합이 효율이라고 했습니다. 공공기관은 정치적 성과를 보여주는 실험실이 아니라 시민의 집과 생활을 떠받치는 인프라입니다.",
   summary: "정부가 2009년 통합 출범한 LH를 17년 만에 다시 두 회사로 분리하는 방안을 추진합니다. 택지개발과 주택건설은 개발공사가, 임대주택 운영과 주거복지·토지비축은 자산공사가 맡는 구상입니다. 그러나 분리의 필요성을 말하기 전에 정부는 지난 17년의 성적표와 부채 배분, 조직개편 비용, 실제 주택공급 개선 효과부터 시민에게 설명해야 합니다.",
   keySentence: "공공기관 개혁은 조직도를 다시 그리는 일이 아니라, 시민의 삶이 실제로 나아지는지를 증명하는 일이어야 합니다.",
-  video: {
-    youtubeId: "ervJ5jH7dig",
-    title: "SBS 경제365｜정부, 17년 만에 LH 분리 추진",
-    description: "SBS는 정부가 LH를 개발 기능과 자산관리·주거복지 기능으로 나누는 방안을 추진한다고 보도했습니다. 영상은 기사 본문 안에서 참고자료로 확인할 수 있습니다.",
-    disclaimer: "이 영상은 SBS 뉴스 보도입니다. 씨앗의 소리는 보도 내용과 정부 발표, 공개자료를 바탕으로 쟁점을 재구성했습니다."
-  },
   selectedNews: {
     outlet: "SBS 뉴스",
     publishedAt: "2026.09.04",
     headline: "정부, 17년 만에 LH 분리 추진..개발·자산관리 나눈다",
     url: "https://www.youtube.com/watch?v=ervJ5jH7dig",
     linkLabel: "SBS 뉴스 영상 보기",
-    thumbnailUrl: "https://i.ytimg.com/vi/ervJ5jH7dig/hqdefault.jpg",
-    thumbnailAlt: "정부의 LH 분리 추진을 보도한 SBS 뉴스 경제365 영상 화면",
-    thumbnailCaption: "정부의 LH 분리 추진을 보도한 SBS 뉴스 경제365 영상 화면",
     summary: [
       "정부는 2009년 통합 출범한 LH를 17년 만에 다시 두 회사로 나누는 방안을 추진하고 있습니다.",
       "정부 구상대로라면 택지개발과 주택건설은 주택도시개발공사가, 임대주택 운영과 주거복지·토지비축은 주택도시자산공사가 맡게 됩니다.",
       "개발사업과 임대주택 관리 부담을 분리해 재무 여건을 개선하고 주택공급을 앞당기겠다는 취지지만, 재원 문제와 조직분리 갈등으로 공급이 늦어질 수 있다는 우려도 제기됩니다."
     ]
   },
-  heroImage: {
-    src: "https://i.ytimg.com/vi/ervJ5jH7dig/hqdefault.jpg",
-    alt: "정부의 LH 분리 추진을 보도한 SBS 뉴스 경제365 영상 화면",
-    caption: "정부가 17년 만에 LH 분리 추진 방안을 검토하고 있다는 SBS 뉴스 경제365 보도 화면입니다.",
-    credit: "영상 화면 · SBS 뉴스",
-    sourceUrl: "https://www.youtube.com/watch?v=ervJ5jH7dig"
-  },
-  inlineImage: {
-    src: "/images/news/lh-split-civic-view.svg",
-    alt: "LH 분리 논쟁이 시민의 주거와 생활 인프라에 미치는 영향을 상징한 이미지",
-    caption: "LH 분리 논쟁은 조직의 문제가 아니라 시민의 집과 주거복지, 주택공급의 문제입니다. 실제 현장이 아닌 설명용 이미지입니다.",
-    credit: "그래픽 · 씨앗의 소리"
-  },
-  additionalImages: [
-    {
-      src: "/images/news/lh-split-structure-graphic.svg",
-      alt: "LH 통합 구조와 분리 구상을 단순화해 보여주는 도표형 그래픽",
-      caption: "현재 LH의 개발·주거복지 기능을 둘로 나누는 구상을 단순화한 설명용 그래픽입니다. 핵심은 분리 자체가 아니라 시민편익이 실제로 개선되는지입니다.",
-      credit: "도표 그래픽 · 씨앗의 소리"
-    }
-  ],
+  heroImage: lhHeroImage,
+  inlineImage: lhHeroImage,
   sections: [
     {
       title: "무슨 일이 있었습니까",
