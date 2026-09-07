@@ -4,7 +4,7 @@ export const briefingTranslations: Record<string, BriefingTranslation> = {
   "social-solidarity-economy-youth-mall-lessons": {
     category: "SEED Civic Briefing 08",
     title: "Korea's Social and Solidarity Economy Act: Lessons from the Youth Mall Failure",
-    summary: "Government can build shops, but it cannot manufacture customers. After 54.1 percent of the original shops in Korea's Youth Mall program closed, the lesson is clear: the social economy must grow through citizens, local businesses and real demand—not permanent dependence on state support.",
+    summary: "Government can build shops, but it cannot manufacture customers. Korea spent about KRW 160.8 billion in national and local funds on Youth Malls, yet 12 of 43 malls had ceased operating and the number of shops had fallen from 741 to 331. The social economy must not repeat that model.",
     author: "SEED Civic Briefing",
     images: [
       {
@@ -19,20 +19,21 @@ export const briefingTranslations: Record<string, BriefingTranslation> = {
       },
       {
         src: "images/briefings/briefing-08-youth-mall-survival-en.svg",
-        alt: "Chart showing that 401 of 741 original Youth Mall shops had closed, a closure rate of 54.1 percent",
-        caption: "By August 2024, 401 of the 741 original tenant shops had closed. Creating shop units with public money is not the same as creating a market chosen by citizens.",
-        credit: "Infographic by SEED VOICE · National Assembly Research Service data",
+        alt: "Chart showing that about KRW 160.8 billion in public funds was spent as Youth Malls fell from 43 to 31 and their shops from 741 to 331",
+        caption: "By February 2026, 12 of the 43 Youth Malls had ceased operating and the number of shops had fallen 55.4 percent, from 741 to 331. Building premises with public money is not the same as building a market people choose.",
+        credit: "Infographic by SEED VOICE · SEMAS data submitted to the National Assembly",
       },
     ],
     content: [
       "Can a traditional market be revived simply by giving young people subsidized shops? Beginning in 2016, Korea's government renovated vacant units in traditional markets and supported young merchants with rent, interiors, training and promotion. The Youth Mall program promised to create jobs while drawing a new generation of customers into declining markets.",
-      "The intention was attractive. The results were not. According to the National Assembly Research Service, 401 of the 741 original tenant shops had closed by August 2024. That is a closure rate of 54.1 percent.",
+      "The intention was attractive. The result after a decade was stark. According to data submitted to the National Assembly by the Small Enterprise and Market Service, 12 of the 43 Youth Malls had ceased operating by February 2026. The number of shops had fallen 55.4 percent, from 741 at launch to 331, after about KRW 160.8 billion in national and local public funds.",
     ],
     sections: [
       {
         title: "The program built shops, not a market",
         paragraphs: [
           "Many early Youth Malls were placed in vacant sections of markets with poor access and weak foot traffic. Premises and signs were prepared before demand had been tested. The Ministry of SMEs and Startups later acknowledged that location problems contributed to weak sales.",
+          "Nor did an open sign necessarily mean a viable commercial district. In 2024, shops in 17 of 35 Youth Malls averaged only KRW 1 million to 4 million in monthly sales; just four malls averaged at least KRW 10 million per shop. A customer survey gave Youth Malls an awareness score of 58.6 out of 100.",
           "Subsidized rent and promotion could keep a business open for a time, but they did not guarantee customers after support ended. Young merchants could lose savings, time and confidence, while taxpayers absorbed the cost of failed projects.",
         ],
       },
@@ -79,10 +80,12 @@ export const briefingTranslations: Record<string, BriefingTranslation> = {
       "Whether long-term survival and citizen satisfaction are measured after support ends",
     ],
     quote: "Government can build shops, but it cannot manufacture customers. It can certify organizations, but it cannot manufacture citizens' trust.",
-    sourceNote: "This briefing compares legislation and government materials available through September 8, 2026 with National Assembly research on Youth Malls and assessments by the UK Parliament and National Audit Office. The Youth Mall closure rate uses original tenant shops as of August 2024. The practical effects of Korea's new framework act will depend on subordinate rules and local implementation.",
+    sourceNote: "This briefing compares legislation and government materials available through September 8, 2026 with National Assembly research, Youth Mall operating data submitted to lawmakers by the Small Enterprise and Market Service, and assessments by the UK Parliament and National Audit Office. The fall in Youth Mall shops does not mean that every departing business failed or that their survival rate was lower than that of ordinary small businesses; it measures the contraction of the publicly created mall network. The practical effects of Korea's new framework act will depend on subordinate rules and local implementation.",
     sourceLabels: [
       "National Assembly Research Service — Revitalizing youth entrepreneurship in traditional markets",
       "Ministry of SMEs and Startups — Response concerning Youth Mall closures",
+      "Hankook Ilbo — After KRW 160 billion, Youth Mall shops have halved",
+      "Hankook Ilbo — Youth Mall sales and post-support survival",
       "Ministry of the Interior and Safety — Social and Solidarity Economy Act passes the National Assembly",
       "Ministry of Employment and Labor — 2025 public-sector purchases from social enterprises",
       "UK House of Commons Public Administration Committee — Assessment of the Big Society",
@@ -128,7 +131,8 @@ export const briefingTranslations: Record<string, BriefingTranslation> = {
         {
           title: "Youth Malls exposed the limits of supporting suppliers",
           paragraphs: [
-            "The Youth Mall program offered premises, rent, interiors, training and promotion in an effort to address unemployment and revive traditional markets. Yet 401 of 741 original shops had closed by August 2024. Good intentions and extensive support did not create durable demand.",
+            "The Youth Mall program offered premises, rent, interiors, training and promotion in an effort to address unemployment and revive traditional markets. National and local governments spent about KRW 160.8 billion, yet 12 of 43 malls had ceased operating by February 2026 and the shop base had contracted 55.4 percent, from 741 to 331. This is not a failure rate for individual entrepreneurs; it is evidence that the state-created commercial network itself shrank dramatically.",
+            "Conditions in many surviving malls were also weak. In 2024, shops in 17 of 35 malls averaged only KRW 1 million to 4 million in monthly sales, while just four averaged at least KRW 10 million. Customers gave the Youth Mall concept an awareness score of 58.6 out of 100. Keeping a shop technically open is not the same as creating a durable job.",
             "The central error was to build space in weak locations and wait for customers. Young merchants needed viable locations, real demand, competitive products, experienced partners, management knowledge and private capital—not vacant units alone.",
             "The same danger exists in the social economy. Creating organizations and awarding contracts cannot guarantee that citizens will choose their services once support ends. Government can create suppliers; it cannot substitute for a market or civic trust.",
           ],

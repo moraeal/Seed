@@ -1,23 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
-  <title id="title">청년몰 최초 입점 점포의 폐업 현황</title>
-  <desc id="desc">2024년 8월 기준 최초 입점 점포 741곳 가운데 401곳이 폐업해 폐업률이 54.1퍼센트였음을 보여주는 도표</desc>
+  <title id="title">청년몰 10년의 공공재원과 운영 축소 현황</title>
+  <desc id="desc">공공재원 약 1,608억 원을 투입했지만 2026년 2월 기준 청년몰은 43곳에서 31곳으로, 점포는 741곳에서 331곳으로 줄었음을 보여주는 도표</desc>
   <rect width="1200" height="675" fill="#F6F1E7"/>
-  <text x="80" y="92" fill="#163C35" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="24" font-weight="700" letter-spacing="3">청년몰 실패가 남긴 숫자</text>
-  <text x="80" y="148" fill="#102A43" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="39" font-weight="800">최초 입점 점포의 절반 이상이 문을 닫았습니다</text>
+  <text x="80" y="92" fill="#163C35" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="24" font-weight="700" letter-spacing="3">청년몰 10년이 남긴 결과</text>
+  <text x="80" y="148" fill="#102A43" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="39" font-weight="800">1,608억 원을 썼지만 점포 기반은 반토막 났습니다</text>
   <line x1="80" y1="184" x2="1120" y2="184" stroke="#D3C7AE" stroke-width="2"/>
   <g font-family="Arial, 'Noto Sans KR', sans-serif">
     <rect x="80" y="238" width="320" height="250" rx="20" fill="#FFFFFF" stroke="#D9D2C3"/>
-    <text x="115" y="295" fill="#58666D" font-size="22">최초 입점</text>
-    <text x="115" y="396" fill="#163C35" font-size="92" font-weight="800">741</text>
-    <text x="302" y="396" fill="#58666D" font-size="27">곳</text>
+    <text x="115" y="295" fill="#58666D" font-size="22">국비·지방비</text>
+    <text x="115" y="396" fill="#163C35" font-size="72" font-weight="800">1,608억</text>
     <rect x="440" y="238" width="320" height="250" rx="20" fill="#FFFFFF" stroke="#D9D2C3"/>
-    <text x="475" y="295" fill="#58666D" font-size="22">폐업</text>
-    <text x="475" y="396" fill="#A44736" font-size="92" font-weight="800">401</text>
-    <text x="662" y="396" fill="#58666D" font-size="27">곳</text>
+    <text x="475" y="295" fill="#58666D" font-size="22">청년몰</text>
+    <text x="475" y="396" fill="#A44736" font-size="58" font-weight="800">43→31곳</text>
     <rect x="800" y="238" width="320" height="250" rx="20" fill="#163C35"/>
-    <text x="835" y="295" fill="#EADDBD" font-size="22">폐업률</text>
-    <text x="835" y="396" fill="#FFFFFF" font-size="88" font-weight="800">54.1%</text>
-    <text x="80" y="558" fill="#102A43" font-size="25" font-weight="700">점포를 만드는 것과 시장을 만드는 것은 다릅니다.</text>
-    <text x="80" y="610" fill="#6E777A" font-size="18">기준: 2024년 8월 · 최초 입점 점포 기준 · 자료: 국회입법조사처</text>
+    <text x="835" y="295" fill="#EADDBD" font-size="22">점포</text>
+    <text x="835" y="396" fill="#FFFFFF" font-size="55" font-weight="800">741→331</text>
+    <text x="80" y="558" fill="#102A43" font-size="25" font-weight="700">점포 수 55.4% 감소 — 공간은 만들었지만 시장은 남지 않았습니다.</text>
+    <text x="80" y="610" fill="#6E777A" font-size="18">기준: 2026년 2월 · 자료: 소상공인시장진흥공단·김성원 의원실</text>
   </g>
 </svg>
