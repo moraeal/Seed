@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useContext, useEffect, useMemo, useState } from "react";
+import { getTurnstileToken } from "./lib/turnstile";
 
 export type AuthUser = {
   id: string;
@@ -50,6 +51,17 @@ async function readError(response: Response, fallback: string) {
     return data.msg || data.message || data.error_description || data.error || fallback;
   } catch {
     return fallback;
+  }
+}
+
+async function securityToken(action: "signup" | "login" | "resend") {
+  try {
+    return await getTurnstileToken(action);
+  } catch {
+    const english = document.documentElement.lang.toLowerCase().startsWith("en");
+    throw new Error(english
+      ? "Security verification failed. Please try again."
+      : "보안 확인에 실패했습니다. 잠시 후 다시 시도해주세요.");
   }
 }
 
@@ -144,7 +156,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (!nicknameAvailable) throw new Error(duplicateNicknameMessage);
 
     const redirectTo = `${window.location.origin}${import.meta.env.BASE_URL}account`;
-    const payload = JSON.stringify({
+    const makePayload = (captchaToken: string | null) => JSON.stringify({
       email,
       password,
       data: {
@@ -157,15 +169,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         content_subscription_consent: true,
         content_subscription_consented_at: new Date().toISOString(),
       },
+      ...(captchaToken ? { gotrue_meta_security: { captcha_token: captchaToken } } : {}),
     });
+
+    let captchaToken = await securityToken("signup");
     let response = await fetch(`${supabaseUrl}/auth/v1/signup?redirect_to=${encodeURIComponent(redirectTo)}`, {
       method: "POST",
       headers: authHeaders(),
-      body: payload,
+      body: makePayload(captchaToken),
     });
 
     if (!response.ok) {
-      response = await fetch(`${supabaseUrl}/auth/v1/signup`, { method: "POST", headers: authHeaders(), body: payload });
+      if (captchaToken) captchaToken = await securityToken("signup");
+      response = await fetch(`${supabaseUrl}/auth/v1/signup`, {
+        method: "POST",
+        headers: authHeaders(),
+        body: makePayload(captchaToken),
+      });
     }
     if (!response.ok) {
       const message = await readError(response, "회원가입에 실패했습니다.");
@@ -189,20 +209,30 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const normalizedEmail = email.trim();
     if (!normalizedEmail) throw new Error("인증메일을 받을 이메일 주소를 입력해주세요.");
 
+    const captchaToken = await securityToken("resend");
     const redirectTo = `${window.location.origin}${import.meta.env.BASE_URL}account`;
     const response = await fetch(`${supabaseUrl}/auth/v1/resend?redirect_to=${encodeURIComponent(redirectTo)}`, {
       method: "POST",
       headers: authHeaders(),
-      body: JSON.stringify({ type: "signup", email: normalizedEmail }),
+      body: JSON.stringify({
+        type: "signup",
+        email: normalizedEmail,
+        ...(captchaToken ? { gotrue_meta_security: { captcha_token: captchaToken } } : {}),
+      }),
     });
     if (!response.ok) throw new Error(await readError(response, "인증메일 재발송에 실패했습니다."));
   };
 
   const signIn = async (email: string, password: string) => {
+    const captchaToken = await securityToken("login");
     const response = await fetch(`${supabaseUrl}/auth/v1/token?grant_type=password`, {
       method: "POST",
       headers: authHeaders(),
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({
+        email,
+        password,
+        ...(captchaToken ? { gotrue_meta_security: { captcha_token: captchaToken } } : {}),
+      }),
     });
     if (!response.ok) throw new Error(await readError(response, "이메일 또는 비밀번호를 확인해주세요."));
     const next = normalizeSession(await response.json());
