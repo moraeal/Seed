@@ -31,6 +31,7 @@ export default function NewsDetail() {
     ? { ...article.selectedNews, thumbnailUrl: undefined }
     : article.selectedNews;
   const showInlineImage = inlineImageKey !== heroImageKey;
+  const additionalImages = article.additionalImages ?? [];
 
   return <article className="bg-paper">
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
@@ -54,6 +55,7 @@ export default function NewsDetail() {
           {section.paragraphs?.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 32)}`} className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">{paragraph}</p>)}
           {section.bullets && <ul className="mt-5 grid gap-2.5 text-base leading-7 text-charcoal/75 sm:text-[17px]">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet}`} className="flex gap-3"><span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"/><span>{bullet}</span></li>)}</ul>}
           {showInlineImage && index === Math.min(2, article.sections.length - 1) && <InteractiveFigure src={article.inlineImage.src} alt={article.inlineImage.alt} caption={article.inlineImage.caption} credit={article.inlineImage.credit} sourceUrl={article.inlineImage.sourceUrl} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white" imageClassName="aspect-[16/10] w-full object-cover" />}
+          {index === Math.min(4, article.sections.length - 1) && additionalImages.map((image, imageIndex) => <InteractiveFigure key={`${imageIndex}-${image.src}`} src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white" imageClassName="aspect-[16/10] w-full object-cover" />)}
         </section>)}
 
         <section className="mt-10 border-t-2 border-navy pt-7"><span className="section-kicker">{ko ? "앞으로 확인할 지점" : "WHAT TO WATCH"}</span><ol className="mt-4 grid gap-3 sm:grid-cols-2">{article.watchPoints.map((point, index) => <li key={`${index}-${point}`} className="border border-green-deep/15 bg-white p-4"><p className="text-sm font-semibold leading-6 text-navy">{point}</p></li>)}</ol></section>
