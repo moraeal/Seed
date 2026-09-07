@@ -18,15 +18,15 @@ export const content = {
     footer: {
       title: "SEED VOICE | 씨앗의 소리",
       description:
-        "씨앗의 소리는 시민의 작은 문제의식과 제안을 자유, 법치, 시장, 책임의 언어로 키우는 독립 시민 플랫폼입니다.",
+        "씨앗의 소리는 자유의 영역을 넓히고, 기업의 도전과 혁신을 보호하며, 국가와 시민사회의 권력을 감시하는 독립 시민저널입니다.",
       contact: "Contact: seedcivicpartners@gmail.com",
       location: "Seoul, South Korea",
     },
     home: {
       kicker: "CITIZENSHIP IN ACTION",
-      title: "작은 질문을 자유로운 시민의 실험으로 키웁니다.",
+      title: "시민과 기업의 자유를 지키는 독립 시민저널",
       description:
-        "씨앗의 소리는 시민이 국가와 시장의 객체가 아니라 스스로 질문하고 판단하며 책임지는 공공성의 주체로 성장하도록 돕는 독립 시민 플랫폼입니다.",
+        "씨앗의 소리는 자유의 영역을 넓히고, 기업의 도전과 혁신을 보호하며, 국가와 시민사회의 권력을 감시하는 독립 시민저널입니다.",
       primary: "씨앗의 소리 소개 보기",
       secondary: "시민제안 참여하기",
       stats: [
