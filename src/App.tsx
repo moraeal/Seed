@@ -22,7 +22,6 @@ import BriefingDetail from "./pages/BriefingDetail";
 import BriefingCommentary from "./pages/BriefingCommentary";
 import Columns from "./pages/Columns";
 import ColumnDetail from "./pages/ColumnDetail";
-import LhReformColumn from "./pages/LhReformColumn";
 import Academy from "./pages/Academy";
 import Experiments from "./pages/Experiments";
 import News from "./pages/News";
@@ -56,7 +55,6 @@ function AppShell() {
           <Route path="/briefings/:slug/commentary" element={<BriefingCommentary />} />
           <Route path="/briefings/:slug" element={<BriefingDetail />} />
           <Route path="/columns" element={<Columns />} />
-          <Route path="/columns/lh-reform-politics-2026" element={<LhReformColumn />} />
           <Route path="/columns/:slug" element={<ColumnDetail />} />
           <Route path="/news" element={<News />} />
           <Route path="/news/:slug" element={<NewsDetail />} />
