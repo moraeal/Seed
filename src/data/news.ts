@@ -10,7 +10,7 @@ const lhSplitPublicAgencyArticle: NewsArticle = {
   category: "공공기관·주거",
   date: "2026-09-07",
   readMinutes: 8,
-  title: "정부, 17년 만에 LH 분리 추진..개발·자산관리 나눈다 / 경제365 / SBS 10시뉴스",
+  title: "정부, 17년 만에 LH 분리 추진..개발·자산관리 나눈다",
   subtitle: "정부는 LH를 개발과 자산관리로 나누면 재무 여건을 개선하고 주택공급을 앞당길 수 있다고 설명합니다. 그러나 17년 전에는 바로 그 통합이 효율이라고 했습니다. 공공기관은 정치적 성과를 보여주는 실험실이 아니라 시민의 집과 생활을 떠받치는 인프라입니다.",
   summary: "정부가 2009년 통합 출범한 LH를 17년 만에 다시 두 회사로 분리하는 방안을 추진합니다. 택지개발과 주택건설은 개발공사가, 임대주택 운영과 주거복지·토지비축은 자산공사가 맡는 구상입니다. 그러나 분리의 필요성을 말하기 전에 정부는 지난 17년의 성적표와 부채 배분, 조직개편 비용, 실제 주택공급 개선 효과부터 시민에게 설명해야 합니다.",
   keySentence: "공공기관 개혁은 조직도를 다시 그리는 일이 아니라, 시민의 삶이 실제로 나아지는지를 증명하는 일이어야 합니다.",
@@ -23,7 +23,7 @@ const lhSplitPublicAgencyArticle: NewsArticle = {
   selectedNews: {
     outlet: "SBS 뉴스",
     publishedAt: "2026.09.04",
-    headline: "정부, 17년 만에 LH 분리 추진..개발·자산관리 나눈다 / 경제365 / SBS 10시뉴스",
+    headline: "정부, 17년 만에 LH 분리 추진..개발·자산관리 나눈다",
     url: "https://www.youtube.com/watch?v=ervJ5jH7dig",
     linkLabel: "SBS 뉴스 영상 보기",
     thumbnailUrl: "https://i.ytimg.com/vi/ervJ5jH7dig/hqdefault.jpg",
