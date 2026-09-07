@@ -1,4 +1,5 @@
 import type { AuthSession } from "../auth";
+import { getTurnstileToken } from "./turnstile";
 
 const supabaseUrl = (import.meta.env.VITE_SUPABASE_URL || "https://wajlmbahjyazkftwaeem.supabase.co").replace(/\/$/, "");
 const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
@@ -24,7 +25,26 @@ async function callRpc<T>(name: string, body: Record<string, unknown>, token?: s
 }
 
 export async function subscribeToNewsletter(email: string, language: "ko" | "en", sourcePath: string) {
-  await callRpc<void>("subscribe_newsletter", { p_email: email, p_language: language, p_source_path: sourcePath });
+  let captchaToken: string | null = null;
+  try {
+    captchaToken = await getTurnstileToken("newsletter");
+  } catch {
+    throw new Error(language === "ko"
+      ? "보안 확인에 실패했습니다. 잠시 후 다시 시도해주세요."
+      : "Security verification failed. Please try again.");
+  }
+
+  if (!captchaToken) {
+    await callRpc<void>("subscribe_newsletter", { p_email: email, p_language: language, p_source_path: sourcePath });
+    return;
+  }
+
+  const response = await fetch(`${supabaseUrl}/functions/v1/newsletter-turnstile`, {
+    method: "POST",
+    headers: rpcHeaders(),
+    body: JSON.stringify({ token: captchaToken, email, language, sourcePath }),
+  });
+  if (!response.ok) throw new Error(`Newsletter verification failed (${response.status})`);
 }
 
 export async function recordContentView(path: string, language: "ko" | "en") {
