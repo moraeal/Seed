@@ -37,6 +37,18 @@ const jobs = [
   ...seedLanguageModule.seedLanguageArticlesKo.map((item) => ({ section: "seed-language", slug: item.slug, src: item.heroImage.src })),
 ];
 
+const convertToSocialImage = async (source, target) => run("convert", [
+  source,
+  "-auto-orient",
+  "-resize", "1200x630^",
+  "-gravity", "center",
+  "-extent", "1200x630",
+  "-strip",
+  "-interlace", "Plane",
+  "-quality", "88",
+  target,
+]);
+
 for (const job of jobs) {
   const targetDirectory = path.join(outputRoot, job.section);
   const target = path.join(targetDirectory, `${job.slug}.jpg`);
@@ -70,20 +82,27 @@ for (const job of jobs) {
   }
 
   try {
-    await run("convert", [
-      source,
-      "-auto-orient",
-      "-resize", "1200x630^",
-      "-gravity", "center",
-      "-extent", "1200x630",
-      "-strip",
-      "-interlace", "Plane",
-      "-quality", "88",
-      target,
-    ]);
+    await convertToSocialImage(source, target);
+  } catch (error) {
+    if (job.fallbackSrc) {
+      try {
+        const fallbackSource = path.join(publicRoot, job.fallbackSrc.replace(/^\/+/, ""));
+        await convertToSocialImage(fallbackSource, target);
+        console.warn(`Using fallback social image for ${job.slug}: ${error.message}`);
+        continue;
+      } catch (fallbackError) {
+        console.warn(`Fallback social image failed for ${job.slug}: ${fallbackError.message}`);
+      }
+    }
+    const existingPreviewIsAvailable = await access(target).then(() => true).catch(() => false);
+    if (existingPreviewIsAvailable) {
+      console.warn(`Keeping existing social image for ${job.slug}: ${error.message}`);
+    } else {
+      console.warn(`Skipping social image for ${job.slug}: ${error.message}`);
+    }
   } finally {
     if (temporarySource) await unlink(temporarySource).catch(() => {});
   }
 }
 
-console.log(`Generated ${jobs.length} social-preview JPEG images at 1200x630.`);
+console.log(`Generated social-preview JPEG images at 1200x630 where source images were available.`);
