@@ -12,7 +12,7 @@ const socialChannels = [
 ] as const;
 
 export default function Account() {
-  const { user, nickname, isVerified, loading, signUp, signIn, signOut } = useAuth();
+  const { user, nickname, isVerified, loading, signUp, resendVerification, signIn, signOut } = useAuth();
   const { language } = useLanguage();
   const ko = language === "ko";
   const [searchParams, setSearchParams] = useSearchParams();
@@ -27,6 +27,7 @@ export default function Account() {
   const [socialPreferences, setSocialPreferences] = useState<string[]>([]);
   const [notice, setNotice] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [resending, setResending] = useState(false);
 
   const returnTo = useMemo(() => searchParams.get("returnTo") || "/forum", [searchParams]);
 
@@ -50,6 +51,27 @@ export default function Account() {
     setSearchParams(nextParams, { replace: true });
   };
 
+  const resend = async () => {
+    const normalizedEmail = email.trim();
+    if (!normalizedEmail) {
+      setNotice(ko ? "인증메일을 받을 이메일 주소를 먼저 입력해주세요." : "Enter the email address that should receive the verification message.");
+      return;
+    }
+
+    setResending(true);
+    setNotice("");
+    try {
+      await resendVerification(normalizedEmail);
+      setNotice(ko
+        ? "가입 후 아직 인증하지 않은 주소라면 인증메일을 다시 보냈습니다. 받은편지함과 스팸함을 확인해주세요."
+        : "If this address belongs to an unverified account, we sent a new verification email. Please check your inbox and spam folder.");
+    } catch (error) {
+      setNotice(error instanceof Error ? error.message : (ko ? "인증메일 재발송 중 오류가 발생했습니다." : "We could not resend the verification email."));
+    } finally {
+      setResending(false);
+    }
+  };
+
   const submit = async (event: FormEvent) => {
     event.preventDefault();
     setNotice("");
@@ -65,8 +87,8 @@ export default function Account() {
         const result = await signUp(normalizedEmail, password, name.trim(), phone, socialPreferences, language);
         if (result.verificationRequired) {
           setNotice(ko
-            ? "가입 확인 메일을 보냈습니다. 이메일의 인증 링크를 누르면 뉴스레터와 새 콘텐츠 수신이 시작됩니다."
-            : "We sent a confirmation email. Newsletters and new content will start after you click the verification link.");
+            ? "가입 확인 메일을 보냈습니다. 이메일의 인증 링크를 누르면 뉴스레터와 새 콘텐츠 수신이 시작됩니다. 메일이 보이지 않으면 아래의 인증메일 다시 보내기를 이용해주세요."
+            : "We sent a confirmation email. Newsletters and new content will start after you click the verification link. If the message does not arrive, use the resend button below.");
           setMode("login");
           setNewsletterOptIn(false);
         } else {
@@ -167,7 +189,12 @@ export default function Account() {
               </div>
             )}
 
-            <button className="button-primary mt-6 w-full justify-center disabled:cursor-not-allowed disabled:opacity-45" type="submit" disabled={submitting || (mode === "signup" && (!newsletterOptIn || (socialPreferences.includes("kakao") && !/^010-\d{4}-\d{4}$/.test(phone))))}>{mode === "signup" ? <UserPlus size={16}/> : <LogIn size={16}/>} {submitting ? (ko ? "처리 중" : "Processing") : mode === "signup" ? (ko ? "이메일로 회원가입" : "Sign up with email") : (ko ? "로그인" : "Log in")}</button>
+            <button className="button-primary mt-6 w-full justify-center disabled:cursor-not-allowed disabled:opacity-45" type="submit" disabled={submitting || resending || (mode === "signup" && (!newsletterOptIn || (socialPreferences.includes("kakao") && !/^010-\d{4}-\d{4}$/.test(phone))))}>{mode === "signup" ? <UserPlus size={16}/> : <LogIn size={16}/>} {submitting ? (ko ? "처리 중" : "Processing") : mode === "signup" ? (ko ? "이메일로 회원가입" : "Sign up with email") : (ko ? "로그인" : "Log in")}</button>
+            {mode === "login" && email.trim() && (
+              <button className="button-secondary mt-3 w-full justify-center disabled:cursor-not-allowed disabled:opacity-45" type="button" onClick={() => void resend()} disabled={submitting || resending}>
+                <MailCheck size={16}/>{resending ? (ko ? "인증메일 보내는 중" : "Sending verification email") : (ko ? "인증메일 다시 보내기" : "Resend verification email")}
+              </button>
+            )}
             {notice && <p className="mt-4 rounded-lg bg-gold/10 px-4 py-3 text-sm font-semibold leading-6 text-charcoal/70" role="status">{notice}</p>}
           </form>
         </div>
