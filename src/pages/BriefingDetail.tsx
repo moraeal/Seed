@@ -42,7 +42,7 @@ export default function BriefingDetail() {
           <Link to="/briefings" className="text-link text-xs"><ArrowLeft size={14} />{ko ? "시민브리핑 목록" : "Civic Briefings"}</Link>
           <div className="mt-3 border-t-2 border-navy pt-3">
             <h1 className="editorial-title max-w-4xl text-[1.6rem] font-bold leading-[1.15] text-navy sm:text-[2.25rem]">{briefing.title}</h1>
-            <p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/65 sm:text-[15px]">{briefing.summary}</p>
+            <p className="article-summary">{briefing.summary}</p>
           </div>
           <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45">
             <span>{briefing.author}</span>
@@ -60,9 +60,9 @@ export default function BriefingDetail() {
       <div className="container-page max-w-4xl py-8 sm:py-12">
         {briefing.images?.[0] && renderFigure(briefing.images[0], true)}
 
-        <div className="space-y-4">
+        <div className="reading-column">
           {briefing.content.map((paragraph, index) => (
-            <p key={`${index}-${paragraph.slice(0, 20)}`} className="text-base leading-8 text-charcoal/80 sm:text-[17px]">{paragraph}</p>
+            <p key={`${index}-${paragraph.slice(0, 20)}`} className={`${index === 0 ? "mt-0" : ""} article-copy`}>{paragraph}</p>
           ))}
         </div>
 
@@ -70,10 +70,10 @@ export default function BriefingDetail() {
 
         {briefing.sections?.map((section, index) => (
           <div key={`${index}-${section.title}`}>
-            <section className="mt-9 border-t border-green-deep/10 pt-6">
-              <h2 className="text-xl font-extrabold leading-snug text-navy sm:text-2xl">{section.title}</h2>
-              {section.paragraphs && <div className="mt-4 space-y-3.5">{section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className="text-base leading-7 text-charcoal/75">{paragraph}</p>)}</div>}
-              {section.bullets && <ul className="mt-4 space-y-3">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet.slice(0, 24)}`} className="flex gap-3 text-base leading-7 text-charcoal/75"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold" />{bullet}</li>)}</ul>}
+            <section className="article-section reading-column">
+              <h2 className="article-section-title">{section.title}</h2>
+              {section.paragraphs && <div>{section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className="article-copy">{paragraph}</p>)}</div>}
+              {section.bullets && <ul className="mt-5 space-y-3">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet.slice(0, 24)}`} className="flex gap-3 text-[17px] leading-[1.8] text-charcoal/80 sm:text-lg"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold" />{bullet}</li>)}</ul>}
             </section>
             {briefing.images?.slice(2).filter((image) => image.afterSection === index).map((image) => (
               <div key={image.src}>{renderFigure(image)}</div>

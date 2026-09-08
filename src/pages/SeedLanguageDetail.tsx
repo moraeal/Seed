@@ -28,7 +28,7 @@ export default function SeedLanguageDetail() {
           <div className="flex items-center gap-3"><span className="section-kicker">SEED LANGUAGE</span><span className="rounded-full bg-green-pale px-3 py-1 text-xs font-extrabold text-green-deep">{article.term}</span></div>
           <h1 className="editorial-title mt-2 max-w-4xl text-[1.6rem] font-bold leading-[1.15] text-navy sm:text-[2.25rem]">{article.title}</h1>
           <p className="mt-2 font-serif text-base font-bold leading-6 text-green-deep sm:text-lg">{article.subtitle}</p>
-          <p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/65 sm:text-[15px]">{article.summary}</p>
+          <p className="article-summary">{article.summary}</p>
         </div>
         <div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${article.readMinutes}분` : `${article.readMinutes} min read`}</span><button onClick={share} className="button-secondary ml-auto min-h-8 px-3 py-1.5 text-xs"><Share2 size={15}/>{ko ? "공유" : "Share"}</button></div>
       </div>
@@ -37,12 +37,12 @@ export default function SeedLanguageDetail() {
     <div className="container-page max-w-4xl py-8 sm:py-11">
       <InteractiveFigure src={article.heroImage.src} alt={article.heroImage.alt} caption={article.heroImage.caption} credit={article.heroImage.credit} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.09)]" imageClassName="aspect-[16/9] w-full object-cover" />
 
-      <div className="mx-auto mt-10 max-w-3xl">
+      <div className="reading-column mt-10">
         <aside className="border-l-4 border-gold bg-green-pale px-6 py-6 sm:px-8"><span className="section-kicker">{ko ? "핵심 요약" : "KEY POINTS"}</span><ul className="mt-4 space-y-3">{article.keyPoints.map((point) => <li key={point} className="flex gap-3 text-sm font-semibold leading-7 text-navy"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold"/><span>{point}</span></li>)}</ul></aside>
 
-        {article.sections.map((section, index) => <section key={section.title} className="mt-9 border-t border-green-deep/10 pt-6">
-          <h2 className="text-xl font-extrabold leading-snug text-navy sm:text-2xl">{section.title}</h2>
-          {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className="mt-4 text-base leading-8 text-charcoal/80 sm:text-[17px]">{paragraph}</p>)}
+        {article.sections.map((section, index) => <section key={section.title} className="article-section">
+          <h2 className="article-section-title">{section.title}</h2>
+          {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className="article-copy">{paragraph}</p>)}
           {index === 6 && <InteractiveFigure src={article.inlineImage.src} alt={article.inlineImage.alt} caption={article.inlineImage.caption} credit={article.inlineImage.credit} figureClassName="my-8 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName="aspect-[16/9] w-full object-cover" />}
         </section>)}
 
