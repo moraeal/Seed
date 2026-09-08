@@ -25,7 +25,17 @@ export default function NewsDetail() {
     else { await navigator.clipboard.writeText(location.href); alert(ko ? "주소를 복사했습니다." : "Link copied."); }
   };
 
-  const heroImageKey = imageKey(article.heroImage.src);
+  const detailHeroImage = article.slug === "lh-split-public-agency-experiment"
+    ? {
+        ...article.heroImage,
+        src: "images/news/lh-split-hero-v2.webp",
+        alt: ko ? "LH 분리 추진을 상징적으로 표현한 씨앗의소리 오늘의뉴스 대표 이미지" : "SEED VOICE representative image illustrating the proposed LH split",
+        caption: ko ? "정부의 LH 분리 추진을 다룬 오늘의뉴스 대표 이미지입니다." : "Representative image for Today's News on the government's proposed LH split.",
+        credit: ko ? "씨앗의소리 AI 제작 이미지" : "AI image by SEED VOICE",
+        sourceUrl: undefined,
+      }
+    : article.heroImage;
+  const heroImageKey = imageKey(detailHeroImage.src);
   const inlineImageKey = imageKey(article.inlineImage.src);
   const selectedNews = article.selectedNews.thumbnailUrl && [heroImageKey, inlineImageKey].includes(imageKey(article.selectedNews.thumbnailUrl))
     ? { ...article.selectedNews, thumbnailUrl: undefined }
@@ -45,7 +55,7 @@ export default function NewsDetail() {
         <p className="border-t border-green-deep/10 bg-ivory px-5 py-4 text-xs leading-6 text-charcoal/50 sm:px-7">※ {article.video.disclaimer}</p>
       </section>}
       <SourceArticleCard news={selectedNews} ko={ko}/>
-      <InteractiveFigure src={article.heroImage.src} alt={article.heroImage.alt} caption={article.heroImage.caption} credit={article.heroImage.credit} sourceUrl={article.heroImage.sourceUrl} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]" imageClassName="aspect-[16/9] w-full object-cover" />
+      <InteractiveFigure src={detailHeroImage.src} alt={detailHeroImage.alt} caption={detailHeroImage.caption} credit={detailHeroImage.credit} sourceUrl={detailHeroImage.sourceUrl} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]" imageClassName="aspect-[16/9] w-full object-cover" />
 
       <div className="mx-auto mt-8 max-w-3xl">
         <aside className="border-l-4 border-gold bg-green-pale px-6 py-7 sm:px-8"><span className="section-kicker">{ko ? "오늘의 한 문장" : "ONE SENTENCE"}</span><p className="mt-3 font-serif text-xl font-bold leading-9 text-green-deep sm:text-2xl">{article.keySentence}</p></aside>
