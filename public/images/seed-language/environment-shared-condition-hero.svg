@@ -1,49 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 563" role="img" aria-labelledby="title desc">
   <title id="title">환경은 함께 만들어가는 삶의 조건</title>
-  <desc id="desc">강과 숲, 도시와 반도체 공장, 전력망과 에너지 설비가 한 풍경 안에서 연결된 편집 일러스트</desc>
-  <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfeee9"/><stop offset="1" stop-color="#f7f4ea"/></linearGradient>
-    <linearGradient id="river" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8bb9c6"/><stop offset="1" stop-color="#b7d9dc"/></linearGradient>
-    <linearGradient id="field" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8faa79"/><stop offset="1" stop-color="#d2d39d"/></linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-opacity=".12"/></filter>
-  </defs>
-  <rect width="1600" height="900" fill="url(#sky)"/>
-  <circle cx="1320" cy="155" r="78" fill="#e6c86f" opacity=".9"/>
-  <path d="M0 520 C220 430 390 470 590 530 C790 590 970 520 1160 460 C1360 400 1490 430 1600 470 L1600 900 L0 900Z" fill="url(#field)"/>
-  <path d="M0 650 C260 610 420 650 620 715 C810 775 1020 760 1210 700 C1370 648 1490 640 1600 660 L1600 900 L0 900Z" fill="url(#river)"/>
-  <g opacity=".92">
-    <path d="M85 500 L140 360 L195 500Z" fill="#315f4d"/><path d="M145 500 L220 315 L295 500Z" fill="#426f59"/><path d="M255 500 L320 350 L385 500Z" fill="#527d62"/>
-    <rect x="132" y="480" width="14" height="65" fill="#6d543d"/><rect x="214" y="478" width="14" height="70" fill="#6d543d"/>
-  </g>
-  <g filter="url(#shadow)">
-    <rect x="540" y="355" width="410" height="250" rx="6" fill="#f7f8f5" stroke="#254d42" stroke-width="8"/>
-    <rect x="575" y="400" width="80" height="68" fill="#a7c8c6"/><rect x="680" y="400" width="80" height="68" fill="#a7c8c6"/><rect x="785" y="400" width="80" height="68" fill="#a7c8c6"/>
-    <rect x="575" y="495" width="290" height="70" fill="#d7dfdc"/>
-    <rect x="895" y="302" width="38" height="80" fill="#586d69"/>
-    <path d="M895 315 C920 300 938 312 948 326 C929 337 911 335 895 315Z" fill="#c5d5d1" opacity=".8"/>
-    <rect x="705" y="325" width="85" height="28" fill="#254d42"/>
-    <text x="747" y="345" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#f7f4ea">FAB</text>
-  </g>
-  <g stroke="#36594f" stroke-width="8" fill="none">
-    <path d="M1040 510 L1110 350 L1180 510"/><path d="M1064 455 H1156"/><path d="M1080 412 H1140"/>
-    <path d="M1180 510 L1250 350 L1320 510"/><path d="M1204 455 H1296"/><path d="M1220 412 H1280"/>
-    <path d="M1110 350 C1150 326 1210 326 1250 350" stroke-width="4"/>
-  </g>
-  <g transform="translate(1340 430)">
-    <rect x="-85" y="80" width="170" height="28" rx="4" fill="#355c4f"/>
-    <path d="M-55 80 Q-42 0 0 -15 Q42 0 55 80Z" fill="#e7e7df" stroke="#355c4f" stroke-width="7"/>
-    <path d="M-28 5 Q0 -28 28 5" fill="none" stroke="#355c4f" stroke-width="5"/>
-  </g>
-  <g transform="translate(420 265)" stroke="#3f725e" stroke-width="7" fill="none">
-    <circle cx="0" cy="0" r="12" fill="#3f725e"/><path d="M0 0 L0 155"/><path d="M0 0 L-72 -42"/><path d="M0 0 L74 -34"/><path d="M0 0 L8 -82"/>
-  </g>
-  <g transform="translate(380 560)">
-    <rect x="-100" y="0" width="200" height="86" rx="6" fill="#315f4d" opacity=".92"/>
-    <g stroke="#e5d687" stroke-width="3"><path d="M-80 18 H80"/><path d="M-80 43 H80"/><path d="M-80 68 H80"/><path d="M-50 0 V86"/><path d="M0 0 V86"/><path d="M50 0 V86"/></g>
-  </g>
-  <g fill="#f7f4ea" stroke="#315f4d" stroke-width="5">
-    <circle cx="280" cy="720" r="27"/><circle cx="340" cy="700" r="27"/><circle cx="400" cy="725" r="27"/>
-    <path d="M235 800 Q280 745 325 800Z"/><path d="M295 785 Q340 730 385 785Z"/><path d="M355 805 Q400 750 445 805Z"/>
-  </g>
-  <path d="M150 790 C280 730 390 735 510 790" fill="none" stroke="#f7f4ea" stroke-width="14" stroke-linecap="round" opacity=".75"/>
+  <desc id="desc">강과 도시, 녹지와 산업이 함께 어우러진 환경 대표 이미지</desc>
+  <image href="environment-shared-condition-hero.webp" x="0" y="0" width="1000" height="563" preserveAspectRatio="xMidYMid slice"/>
 </svg>
