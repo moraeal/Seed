@@ -1,12 +1,5 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import {
-  canonicalUrl,
-  ENGLISH_SOCIAL_SITE_NAME,
-  getSeoRoute,
-  SITE_NAME,
-  SOCIAL_SITE_NAME,
-} from "../seo";
 import { recordContentView } from "../lib/engagement";
 
 function setMeta(selector: string, attributes: Record<string, string>) {
@@ -26,6 +19,18 @@ export default function RouteMetadata() {
   const location = useLocation();
 
   useEffect(() => {
+    let cancelled = false;
+
+    const updateMetadata = async () => {
+      const {
+        canonicalUrl,
+        ENGLISH_SOCIAL_SITE_NAME,
+        getSeoRoute,
+        SITE_NAME,
+        SOCIAL_SITE_NAME,
+      } = await import("../seo");
+      if (cancelled) return;
+
     const route = getSeoRoute(location.pathname);
     const privatePage = location.pathname.startsWith("/insights")
       ? {
@@ -100,6 +105,12 @@ export default function RouteMetadata() {
         document.head.appendChild(alternate);
       });
     }
+    };
+
+    void updateMetadata();
+    return () => {
+      cancelled = true;
+    };
   }, [location.pathname]);
 
   return null;

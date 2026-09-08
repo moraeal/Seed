@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { AuthProvider } from "./auth";
 import Footer from "./components/Footer";
@@ -5,35 +6,37 @@ import Header from "./components/Header";
 import RouteMetadata from "./components/RouteMetadata";
 import ScrollToTop from "./components/ScrollToTop";
 import NewsletterSignup from "./components/NewsletterSignup";
-import { LanguageProvider } from "./i18n";
-import About from "./pages/About";
-import PublisherMessage from "./pages/PublisherMessage";
-import Account from "./pages/Account";
-import CivicDictionary from "./pages/CivicDictionary";
-import Forum from "./pages/Forum";
-import Home from "./pages/Home";
-import ProposalLab from "./pages/ProposalLab";
-import Proposals from "./pages/Proposals";
-import Monitoring from "./pages/Monitoring";
-import PublicInterestWatchDetail from "./pages/PublicInterestWatchDetail";
-import Roadmap from "./pages/Roadmap";
-import TodayFrame from "./pages/TodayFrame";
-import Briefings from "./pages/Briefings";
-import BriefingDetail from "./pages/BriefingDetail";
-import BriefingCommentary from "./pages/BriefingCommentary";
-import Columns from "./pages/Columns";
-import ColumnDetail from "./pages/ColumnDetail";
-import Academy from "./pages/Academy";
-import Experiments from "./pages/Experiments";
-import News from "./pages/News";
-import NewsDetail from "./pages/NewsDetail";
-import FoundingStatement from "./pages/FoundingStatement";
-import SeedLanguage from "./pages/SeedLanguage";
-import SeedLanguageDetail from "./pages/SeedLanguageDetail";
-import Insights from "./pages/Insights";
+import { LanguageProvider, useLanguage } from "./i18n";
+
+const About = lazy(() => import("./pages/About"));
+const PublisherMessage = lazy(() => import("./pages/PublisherMessage"));
+const Account = lazy(() => import("./pages/Account"));
+const CivicDictionary = lazy(() => import("./pages/CivicDictionary"));
+const Forum = lazy(() => import("./pages/Forum"));
+const Home = lazy(() => import("./pages/Home"));
+const ProposalLab = lazy(() => import("./pages/ProposalLab"));
+const Proposals = lazy(() => import("./pages/Proposals"));
+const Monitoring = lazy(() => import("./pages/Monitoring"));
+const PublicInterestWatchDetail = lazy(() => import("./pages/PublicInterestWatchDetail"));
+const Roadmap = lazy(() => import("./pages/Roadmap"));
+const TodayFrame = lazy(() => import("./pages/TodayFrame"));
+const Briefings = lazy(() => import("./pages/Briefings"));
+const BriefingDetail = lazy(() => import("./pages/BriefingDetail"));
+const BriefingCommentary = lazy(() => import("./pages/BriefingCommentary"));
+const Columns = lazy(() => import("./pages/Columns"));
+const ColumnDetail = lazy(() => import("./pages/ColumnDetail"));
+const Academy = lazy(() => import("./pages/Academy"));
+const Experiments = lazy(() => import("./pages/Experiments"));
+const News = lazy(() => import("./pages/News"));
+const NewsDetail = lazy(() => import("./pages/NewsDetail"));
+const FoundingStatement = lazy(() => import("./pages/FoundingStatement"));
+const SeedLanguage = lazy(() => import("./pages/SeedLanguage"));
+const SeedLanguageDetail = lazy(() => import("./pages/SeedLanguageDetail"));
+const Insights = lazy(() => import("./pages/Insights"));
 
 function AppShell() {
   const location = useLocation();
+  const { language } = useLanguage();
   const normalizedPath = location.pathname.replace(/\/+$/, "") || "/";
   const showNewsletterAtBottom = !["/", "/en", "/account", "/insights"].includes(normalizedPath);
 
@@ -43,7 +46,8 @@ function AppShell() {
       <ScrollToTop />
       <Header />
       <main>
-        <Routes>
+        <Suspense fallback={<div className="container-page min-h-[48vh] py-16" role="status"><p className="text-sm font-bold text-green-deep">{language === "en" ? "Loading page…" : "페이지를 불러오는 중입니다…"}</p></div>}>
+          <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/en" element={<Home />} />
           <Route path="/account" element={<Account />} />
@@ -73,7 +77,8 @@ function AppShell() {
           <Route path="/partners/founding-statement" element={<Navigate to="/founding-statement" replace />} />
           <Route path="/partners" element={<Navigate to="/about" replace />} />
           <Route path="*" element={<Home />} />
-        </Routes>
+          </Routes>
+        </Suspense>
       </main>
       {showNewsletterAtBottom && <NewsletterSignup />}
       <Footer />

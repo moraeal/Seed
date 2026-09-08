@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n";
-import { SITE_DESCRIPTION } from "../seo";
+import { SITE_DESCRIPTION } from "../siteMeta";
 import BrandLockup from "./BrandLockup";
 
 export default function Footer() {
