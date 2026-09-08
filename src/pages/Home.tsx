@@ -6,6 +6,7 @@ import { columns } from "../data/columns";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
 import { getNewsNewestFirst } from "../data/news";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
+import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
 import { useLanguage } from "../i18n";
 import NewsletterSignup from "../components/NewsletterSignup";
 import SafeImage from "../components/SafeImage";
@@ -53,8 +54,12 @@ export default function Home() {
   const briefings = getAllBriefingsNewestFirst().slice(0, 5).map((item) => localizeBriefing(item, language));
   const journalColumns = [...columns].sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue).slice(0, 5).map((item) => localizeColumn(item, language));
   const news = getNewsNewestFirst().slice(0, 5).map((item) => localizeNewsArticle(item, language));
-  const seedLanguageArticle = seedLanguageArticlesKo
-    .map((item) => getSeedLanguageArticle(item.slug, language)!)
+  const seedLanguageArticle = [
+    ...seedLanguageEnvironmentArticlesKo.filter((item) => item.slug !== "environment-beyond-camps-deep-read"),
+    ...seedLanguageArticlesKo,
+  ]
+    .map((item) => getSeedLanguageEnvironmentArticle(item.slug, language) ?? getSeedLanguageArticle(item.slug, language))
+    .filter((article): article is NonNullable<typeof article> => Boolean(article))
     .sort((a, b) => b.date.localeCompare(a.date))[0];
   const latestBriefing = briefings[0];
   const latestNews = news[0];
