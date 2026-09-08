@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">반도체 산업이 다시 묻는 물과 전력</title>
+  <desc id="desc">서남권 반도체 팹 4기에 필요한 전력 6.3GW와 하루 65만 톤의 물을 중심으로 환경과 산업의 연결을 보여주는 인포그래픽</desc>
+  <rect width="1600" height="900" fill="#f8f5ec"/>
+  <text x="800" y="100" text-anchor="middle" font-family="Arial,sans-serif" font-size="46" font-weight="800" fill="#173f35">산업의 현실이 환경정책을 다시 묻습니다</text>
+  <text x="800" y="150" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" fill="#5c6964">서남권 반도체 팹 4기 계획 기준</text>
+  <g font-family="Arial,sans-serif">
+    <g transform="translate(180 245)">
+      <rect width="560" height="360" rx="22" fill="#e2eef2" stroke="#507f8d" stroke-width="6"/>
+      <path d="M100 94 C140 40 170 5 170 -28 C170 5 200 40 240 94 C270 137 242 190 170 190 C98 190 70 137 100 94Z" fill="#6ea7b9" opacity=".92"/>
+      <text x="310" y="105" font-size="34" font-weight="800" fill="#244d5b">물</text>
+      <text x="310" y="160" font-size="56" font-weight="800" fill="#173f35">하루 65만 톤</text>
+      <text x="310" y="212" font-size="23" fill="#4a6269">반도체 생산에 필수인 산업용수</text>
+      <text x="310" y="253" font-size="23" fill="#4a6269">댐·재이용수·기존 수자원 활용 검토</text>
+      <text x="310" y="294" font-size="23" fill="#4a6269">가뭄과 지역 수용성까지 함께 판단</text>
+    </g>
+    <g transform="translate(860 245)">
+      <rect width="560" height="360" rx="22" fill="#eee8cf" stroke="#9f833a" stroke-width="6"/>
+      <path d="M150 32 L80 173 H165 L118 300 L278 124 H190 L235 32Z" fill="#d0a936"/>
+      <text x="310" y="105" font-size="34" font-weight="800" fill="#66531e">전력</text>
+      <text x="310" y="160" font-size="56" font-weight="800" fill="#173f35">6.3 GW</text>
+      <text x="310" y="212" font-size="23" fill="#625c49">대형 원전 약 4.5기 설비용량 수준</text>
+      <text x="310" y="253" font-size="23" fill="#625c49">원전·재생에너지·망·저장장치 검토</text>
+      <text x="310" y="294" font-size="23" fill="#625c49">안정성·가격·탄소·환경영향 비교</text>
+    </g>
+  </g>
+  <path d="M740 425 C785 385 815 385 860 425" fill="none" stroke="#6e7b76" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="800" cy="425" r="18" fill="#173f35"/>
+  <rect x="255" y="690" width="1090" height="120" rx="18" fill="#173f35"/>
+  <text x="800" y="738" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#f8f5ec">핵심 질문</text>
+  <text x="800" y="783" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" fill="#f8f5ec">어느 진영이 찬성했는가가 아니라, 무엇이 가장 안전하고 효과적인가</text>
+</svg>
