@@ -1,12 +1,13 @@
 import { ArrowLeft, Clock } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
+import ArticleContinuation, { getFollowingItem } from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
 import InteractiveFigure from "../components/InteractiveFigure";
 import ShareButton from "../components/ShareButton";
 import SourceArticleCard from "../components/SourceArticleCard";
 import { localizeNewsArticle } from "../data/localizedContent";
-import { getNewsArticle } from "../data/news";
+import { getNewsArticle, getNewsNewestFirst } from "../data/news";
 import { useLanguage } from "../i18n";
 
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
@@ -20,6 +21,9 @@ export default function NewsDetail() {
   const article = originalArticle ? localizeNewsArticle(originalArticle, language) : undefined;
 
   if (!article) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">{ko ? "뉴스를 찾을 수 없습니다." : "News article not found."}</h1><Link to="/news" className="button-primary mt-7">{ko ? "뉴스 목록" : "News"}</Link></div>;
+
+  const nextOriginalArticle = getFollowingItem(getNewsNewestFirst(), article.slug);
+  const nextArticle = nextOriginalArticle ? localizeNewsArticle(nextOriginalArticle, language) : undefined;
 
   const isLhArticle = article.slug === "lh-split-public-agency-experiment";
   const detailHeroImage = isLhArticle
@@ -73,6 +77,7 @@ export default function NewsDetail() {
         <section className="mt-10 border-t border-green-deep/15 pt-6"><span className="section-kicker">{ko ? "확인한 자료" : "SOURCES"}</span><p className="mt-2 text-xs leading-6 text-charcoal/45">{ko ? "기사 작성일 기준 공개된 공식자료와 보도를 교차 확인했습니다. 이후 정책 내용은 변경될 수 있습니다." : "Sources reflect public materials available at the time of writing. Later official decisions or policy changes may update the picture."}</p><ul className="mt-4 grid gap-2 text-sm leading-6 text-charcoal/65">{article.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ul></section>
         <ContentAccountability postSlug={article.slug} publishedDate={article.date} />
         <CommentSection postSlug={article.slug} />
+        {nextArticle && <ArticleContinuation item={{ href: `/news/${nextArticle.slug}`, title: nextArticle.title, summary: nextArticle.summary }} listHref="/news" listLabel={ko ? "오늘의뉴스 전체 보기" : "All news"} />}
       </div>
     </div>
   </article>;

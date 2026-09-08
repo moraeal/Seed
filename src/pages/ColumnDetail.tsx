@@ -1,10 +1,11 @@
 import { Clock } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
+import ArticleContinuation, { getFollowingItem } from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
 import InteractiveFigure from "../components/InteractiveFigure";
 import ShareButton from "../components/ShareButton";
-import { getColumn } from "../data/columns";
+import { getColumn, getColumnsNewestFirst } from "../data/columns";
 import { localizeColumn } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
 
@@ -19,6 +20,9 @@ export default function ColumnDetail() {
   const column = originalColumn ? localizeColumn(originalColumn, language) : undefined;
 
   if (!column) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">{ko ? "글을 찾을 수 없습니다." : "Article not found."}</h1><Link to="/columns" className="button-primary mt-7">{ko ? "씨앗의 소리 목록" : "Voice of the Seed"}</Link></div>;
+
+  const nextOriginalColumn = getFollowingItem(getColumnsNewestFirst(), column.slug);
+  const nextColumn = nextOriginalColumn ? localizeColumn(nextOriginalColumn, language) : undefined;
 
   const seenImages = new Set([imageKey(column.heroImage.src)]);
   const bodyImages = [
@@ -55,6 +59,7 @@ export default function ColumnDetail() {
         <aside className="mt-10 border-t-2 border-navy pt-6"><span className="section-kicker">{ko ? "자료 주" : "SOURCE NOTE"}</span><p className="mt-3 text-sm leading-6 text-charcoal/60">{column.sourceNote}</p>{column.sources && <ul className="mt-4 grid gap-1.5 text-sm leading-6 text-charcoal/60">{column.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ul>}</aside>
         <ContentAccountability postSlug={column.slug} publishedDate={column.date} />
         <CommentSection postSlug={column.slug} />
+        {nextColumn && <ArticleContinuation item={{ href: `/columns/${nextColumn.slug}`, title: nextColumn.title, summary: nextColumn.summary }} listHref="/columns" listLabel={ko ? "칼럼 전체 보기" : "All columns"} />}
       </div>
     </div>
   </article>;

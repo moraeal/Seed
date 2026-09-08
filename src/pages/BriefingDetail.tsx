@@ -1,10 +1,11 @@
 import { ArrowLeft, Clock, Download, FileText } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
+import ArticleContinuation, { getFollowingItem } from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
 import InteractiveFigure from "../components/InteractiveFigure";
 import ShareButton from "../components/ShareButton";
-import { getAllBriefing } from "../data/allBriefings";
+import { getAllBriefing, getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { localizeBriefing } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
 
@@ -23,6 +24,9 @@ export default function BriefingDetail() {
       </div>
     );
   }
+
+  const nextOriginalBriefing = getFollowingItem(getAllBriefingsNewestFirst(), briefing.slug);
+  const nextBriefing = nextOriginalBriefing ? localizeBriefing(nextOriginalBriefing, language) : undefined;
 
   const renderFigure = (image: NonNullable<typeof briefing.images>[number], prominent = false) => (
     <InteractiveFigure src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName={`${prominent ? "mb-8 shadow-[0_18px_55px_rgba(23,76,58,.08)]" : "mt-8"} overflow-hidden border border-green-deep/10 bg-white`} imageClassName={image.contain ? "block h-auto w-full" : `${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full object-cover`} />
@@ -111,6 +115,7 @@ export default function BriefingDetail() {
 
         <ContentAccountability postSlug={briefing.slug} publishedDate={briefing.date} />
         <CommentSection postSlug={briefing.slug} />
+        {nextBriefing && <ArticleContinuation item={{ href: `/briefings/${nextBriefing.slug}`, title: nextBriefing.title, summary: nextBriefing.summary }} listHref="/briefings" listLabel={ko ? "시민브리핑 전체 보기" : "All briefings"} />}
       </div>
 
     </article>
