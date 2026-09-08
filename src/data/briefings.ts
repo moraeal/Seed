@@ -52,10 +52,10 @@ const briefingArchive: Briefing[] = [
     featured: true,
     images: [
       {
-        src: "https://i.ytimg.com/vi/5qbLBQbhByQ/hqdefault.jpg",
-        alt: "이재명 대통령의 다섯 형사재판 중단을 보도한 KBS 뉴스 화면",
-        caption: "법원이 이재명 대통령의 대북송금 사건 기일도 미루면서 취임 전 시작된 다섯 형사재판이 모두 중단됐습니다. 화면을 누르면 KBS 보도를 볼 수 있습니다.",
-        credit: "영상 화면 · KBS 뉴스",
+        src: "images/briefings/briefing-03-constitutional-balance.png",
+        alt: "대통령 재판 중단과 헌법적 균형을 상징적으로 표현한 이미지",
+        caption: "취임 전 시작된 다섯 형사재판의 중단과 헌법 제84조의 쟁점을 표현한 이미지입니다. 화면을 누르면 KBS 보도를 볼 수 있습니다.",
+        credit: "씨앗의 소리 제작 이미지",
         sourceUrl: "https://www.youtube.com/watch?v=5qbLBQbhByQ",
       },
       {
@@ -163,10 +163,10 @@ const briefingArchive: Briefing[] = [
     featured: true,
     images: [
       {
-        src: "https://i.ytimg.com/vi/icwD3ltBL_o/hqdefault.jpg",
-        alt: "공소청과 중대범죄수사청 법안 통과를 보도한 YTN 뉴스 화면",
+        src: "images/briefings/briefing-01-justice.jpg",
+        alt: "검찰청 폐지 뒤 수사권력의 이동과 통제를 상징하는 정의의 저울 이미지",
         caption: "검찰청 폐지의 핵심은 간판 교체가 아니라 수사권력이 어디로 이동하고 어떻게 통제되는가입니다. 화면을 누르면 YTN 보도를 볼 수 있습니다.",
-        credit: "영상 화면 · YTN",
+        credit: "씨앗의 소리 자료 이미지",
         sourceUrl: "https://www.youtube.com/watch?v=icwD3ltBL_o",
       },
       {
@@ -269,10 +269,10 @@ const briefingArchive: Briefing[] = [
     issueNumber: 2,
     images: [
       {
-        src: "https://i.ytimg.com/vi/QYKU8kNrWG0/hqdefault.jpg",
-        alt: "서울시의 2031년까지 31만 호 주택공급 계획을 보도한 YTN 뉴스 화면",
+        src: "images/news/lh-split-hero-v2.webp",
+        alt: "주택공급 계획의 착공과 입주 과정을 보여주는 건설 현장 이미지",
         caption: "정부의 23만 호와 서울시의 31만 호는 지역·기준·시간표가 서로 다릅니다. 화면을 누르면 서울시 공급계획을 다룬 YTN 보도를 볼 수 있습니다.",
-        credit: "영상 화면 · YTN",
+        credit: "씨앗의 소리 자료 이미지",
         sourceUrl: "https://www.youtube.com/watch?v=QYKU8kNrWG0",
       },
       {

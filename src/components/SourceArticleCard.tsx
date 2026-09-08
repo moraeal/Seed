@@ -1,5 +1,6 @@
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import type { SelectedNews } from "../data/news";
+import SafeImage from "./SafeImage";
 
 type SourceArticleCardProps = {
   news: SelectedNews;
@@ -31,7 +32,7 @@ export default function SourceArticleCard({ news, compact = false, ko }: SourceA
           <p className="mt-1.5 line-clamp-2 text-sm font-bold leading-5 text-navy transition group-hover/source:text-green-mid">{news.headline}</p>
           <p className="mt-1 line-clamp-1 text-xs leading-5 text-charcoal/45">{news.summary[0]}</p>
         </div>
-        {thumbnail && <img src={thumbnail} alt={news.thumbnailAlt ?? ""} loading="lazy" referrerPolicy="no-referrer" className="h-full min-h-[92px] w-full object-cover"/>}
+        {thumbnail && <SafeImage src={thumbnail} alt={news.thumbnailAlt ?? ""} loading="lazy" referrerPolicy="no-referrer" className="h-full min-h-[92px] w-full object-cover"/>}
       </a>
     );
   }
@@ -40,7 +41,7 @@ export default function SourceArticleCard({ news, compact = false, ko }: SourceA
     <section className="mb-10 overflow-hidden border border-green-deep/15 bg-white shadow-[0_16px_45px_rgba(23,76,58,.08)]">
       {thumbnail && (
         <a href={news.url} target="_blank" rel="noreferrer" className="group/image block overflow-hidden bg-green-deep">
-          <img src={thumbnail} alt={news.thumbnailAlt ?? ""} referrerPolicy="no-referrer" className="aspect-[16/9] w-full object-cover transition duration-500 group-hover/image:scale-[1.015]"/>
+          <SafeImage src={thumbnail} alt={news.thumbnailAlt ?? ""} referrerPolicy="no-referrer" className="aspect-[16/9] w-full object-cover transition duration-500 group-hover/image:scale-[1.015]"/>
           {news.thumbnailCaption && <span className="block border-t border-green-deep/10 bg-white px-5 py-3 text-xs leading-5 text-charcoal/50">{news.thumbnailCaption}</span>}
         </a>
       )}

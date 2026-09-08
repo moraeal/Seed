@@ -12,10 +12,10 @@ export const nationalBudgetBriefing: Briefing = {
   featured: true,
   images: [
     {
-      src: "https://i.ytimg.com/vi/cyqrvxM99GY/hqdefault.jpg",
-      alt: "2027년 미래대응기금 논란을 다룬 JTV 뉴스 화면",
-      caption: "820.9조 원 예산안과 162.3조 원 미래대응기금은 낙관적 세입 전망과 운용 통제를 함께 따져야 합니다. 화면을 누르면 JTV 보도를 볼 수 있습니다.",
-      credit: "영상 화면 · JTV 뉴스",
+      src: "images/briefings/briefing-05-budget-ledger.webp",
+      alt: "예산 장부와 재정 흐름을 시민의 관점에서 살펴보는 상징 이미지",
+      caption: "820.9조 원 예산안과 162.3조 원 미래대응기금은 낙관적 세입 전망과 운용 통제를 함께 따져야 합니다. 씨앗의 소리 제작 이미지를 누르면 JTV 보도를 볼 수 있습니다.",
+      credit: "씨앗의 소리 제작 이미지",
       sourceUrl: "https://www.youtube.com/watch?v=cyqrvxM99GY",
     },
     {

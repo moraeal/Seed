@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">씨앗의 소리 기본 이미지</title>
+  <desc id="desc">짙은 초록색 배경 위에서 새싹이 자라는 모습을 표현한 기본 이미지</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d382d"/>
+      <stop offset="1" stop-color="#1b5b46"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="48%" r="55%">
+      <stop offset="0" stop-color="#f5f0df" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#f5f0df" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <path d="M800 660C799 554 814 466 856 377" fill="none" stroke="#f3e8c8" stroke-width="24" stroke-linecap="round"/>
+  <path d="M845 402C724 405 642 350 623 249c119-11 212 44 244 137-6 7-13 12-22 16Z" fill="#f0c557"/>
+  <path d="M855 377c39-104 132-154 247-130-29 102-120 153-238 146-5-4-8-10-9-16Z" fill="#9ec47d"/>
+  <path d="M611 684c124-39 253-39 378 0" fill="none" stroke="#f3e8c8" stroke-opacity=".36" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="800" cy="688" r="8" fill="#f0c557"/>
+</svg>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { localizeBriefing } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
+import SafeImage from "../components/SafeImage";
 
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 
@@ -38,7 +39,7 @@ export default function Briefings() {
               >
                 <div className="overflow-hidden bg-green-deep">
                   {image ? (
-                    <img
+                    <SafeImage
                       src={imageSrc(image.src)}
                       alt={image.alt}
                       className="aspect-[4/3] w-full object-cover grayscale-[15%] transition duration-500 group-hover:scale-[1.025]"

@@ -51,7 +51,7 @@ export default function NewsDetail() {
     <div className="container-page max-w-4xl py-8 sm:py-12">
       {article.video && <section className="mb-12 overflow-hidden border border-green-deep/15 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]">
         <div className="px-5 py-5 sm:px-7"><span className="section-kicker">{ko ? "현장의 목소리" : "VOICE FROM THE FIELD"}</span><h2 className="mt-2 text-xl font-extrabold leading-snug text-navy sm:text-2xl">{article.video.title}</h2><p className="mt-2 text-sm leading-7 text-charcoal/65">{article.video.description}</p></div>
-        <InteractiveFigure src={`https://i.ytimg.com/vi/${article.video.youtubeId}/hqdefault.jpg`} alt={article.video.title} youtubeId={article.video.youtubeId} showCaption={false} figureClassName="overflow-hidden bg-black" imageClassName="aspect-video w-full object-cover" />
+        <InteractiveFigure src={article.heroImage.src} alt={article.video.title} youtubeId={article.video.youtubeId} showCaption={false} figureClassName="overflow-hidden bg-black" imageClassName="aspect-video w-full object-cover" />
         <p className="border-t border-green-deep/10 bg-ivory px-5 py-4 text-xs leading-6 text-charcoal/50 sm:px-7">※ {article.video.disclaimer}</p>
       </section>}
       <SourceArticleCard news={selectedNews} ko={ko}/>

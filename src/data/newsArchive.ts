@@ -73,9 +73,9 @@ export const newsArticles: NewsArticle[] = [
     "headline": "李대통령 \"공정·투명한 세상으로…대개혁에 시민단체 몫 크다\"",
     "url": "https://www.yna.co.kr/view/AKR20260904062600001",
     "linkLabel": "연합뉴스 원문 보기",
-    "thumbnailUrl": "https://www.korea.kr/admin2011/upload/photo/2026/09/04/e6b72f7d04884cce8141ff345777f2d5_THUMB_3.jpg",
-    "thumbnailAlt": "이재명 대통령이 시민사회 초청 간담회에서 인사말을 하는 모습",
-    "thumbnailCaption": "이재명 대통령이 2026년 9월 4일 청와대에서 열린 시민사회 초청 간담회에서 인사말을 하고 있습니다. 사진: 청와대/대한민국 정책브리핑",
+    "thumbnailUrl": "/images/columns/civic-society-selected-listening.webp",
+    "thumbnailAlt": "대통령과 시민사회 관계자의 대화를 상징적으로 표현한 회의실 이미지",
+    "thumbnailCaption": "대통령과 시민사회의 대화, 그리고 대표성의 문제를 상징적으로 표현한 씨앗의 소리 제작 이미지입니다.",
     "summary": [
       "이 대통령은 시민사회가 민주화와 앞으로의 사회 대개혁에서 중요한 역할을 해왔다고 평가했습니다.",
       "민변·경실련·참여연대·전국농민회총연맹·한국진보연대 등 19개 단체 관계자가 참석한 것으로 보도됐습니다.",
@@ -83,18 +83,16 @@ export const newsArticles: NewsArticle[] = [
     ]
   },
   "heroImage": {
-    "src": "https://www.korea.kr/admin2011/upload/photo/2026/09/04/e6b72f7d04884cce8141ff345777f2d5_THUMB_3.jpg",
-    "alt": "이재명 대통령이 시민사회 초청 간담회에서 인사말을 하는 모습",
-    "caption": "이재명 대통령이 2026년 9월 4일 청와대에서 열린 시민사회 초청 간담회에서 인사말을 하고 있습니다.",
-    "credit": "청와대 · 대한민국 정책브리핑",
-    "sourceUrl": "https://www.korea.kr/multi/policyPhotoView.do?bbsKey=73223"
+    "src": "/images/columns/civic-society-selected-listening.webp",
+    "alt": "대통령과 시민사회 관계자의 대화를 상징적으로 표현한 회의실 이미지",
+    "caption": "경청의 시간만큼 중요한 것은 대화의 문이 서로 다른 시민들에게 얼마나 넓게 열려 있는가입니다.",
+    "credit": "씨앗의 소리 제작 이미지"
   },
   "inlineImage": {
-    "src": "https://www.korea.kr/admin2011/upload/photo/2026/09/04/f993da98b79fd65876fd539df60ad51a_THUMB_3.jpg",
-    "alt": "시민사회 초청 간담회에서 참석자의 발언을 듣는 이재명 대통령",
-    "caption": "대통령이 참석자의 발언을 듣고 있습니다. 경청의 시간만큼 중요한 것은 누구를 어떤 기준으로 초청했는지, 제안이 어떤 절차로 정책이 되는지를 공개하는 일입니다.",
-    "credit": "청와대 · 대한민국 정책브리핑",
-    "sourceUrl": "https://www.korea.kr/multi/policyPhotoView.do?bbsKey=73223"
+    "src": "/images/columns/civic-power-representation-hall.webp",
+    "alt": "국회가 보이는 공간에서 시민 대표성과 공론장을 상징적으로 표현한 이미지",
+    "caption": "누구를 어떤 기준으로 초청했는지, 제안이 어떤 절차로 정책이 되는지를 공개하는 일이 중요합니다.",
+    "credit": "씨앗의 소리 제작 이미지"
   },
   "sections": [
     {
@@ -173,7 +171,7 @@ export const newsArticles: NewsArticle[] = [
     "headline": "검찰 미제사건 최대 20만건 예상·시한은 12월…‘업무 폭탄’ 경찰",
     "url": "https://www.hani.co.kr/arti/society/society_general/1276181.html",
     "linkLabel": "한겨레 원문 보기",
-    "thumbnailUrl": "https://flexible.img.hani.co.kr/flexible/normal/900/592/imgdb/original/2026/0903/20260903504002.jpg",
+    "thumbnailUrl": "/images/news/source-prosecution-hankyoreh.jpg",
     "thumbnailAlt": "서울경찰청장 취임식에서 경찰헌장 낭독을 경청하는 고범석 서울경찰청장",
     "thumbnailCaption": "고범석 서울경찰청장이 2026년 9월 3일 취임식에서 경찰헌장 낭독을 경청하고 있습니다. 사진: 연합뉴스/한겨레",
     "summary": [
@@ -183,7 +181,7 @@ export const newsArticles: NewsArticle[] = [
     ]
   },
   "heroImage": {
-    "src": "https://flexible.img.hani.co.kr/flexible/normal/900/592/imgdb/original/2026/0903/20260903504002.jpg",
+    "src": "/images/news/source-prosecution-hankyoreh.jpg",
     "alt": "서울경찰청장 취임식에서 경찰헌장 낭독을 경청하는 고범석 서울경찰청장",
     "caption": "고범석 서울경찰청장이 2026년 9월 3일 서울 종로구 서울경찰청에서 열린 취임식에서 경찰헌장 낭독을 경청하고 있습니다.",
     "credit": "연합뉴스 · 한겨레",
@@ -248,7 +246,7 @@ export const newsArticles: NewsArticle[] = [
     "headline": "반도체 꺾이면 어쩌려고…4년 뒤 지출 ‘1000조’ 정부 밑그림에 우려",
     "url": "https://v.daum.net/v/20260902043138400",
     "linkLabel": "한국일보 원문 보기",
-    "thumbnailUrl": "https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202609%2F02%2Fhankooki%2F20260902043140287debt.jpg",
+    "thumbnailUrl": "/images/news/source-budget-hankookilbo.jpg",
     "thumbnailAlt": "이재명 대통령이 청년 예산 언박싱 행사에서 발언하는 모습",
     "thumbnailCaption": "이재명 대통령이 2026년 8월 28일 청년 예산 언박싱 행사에서 발언하고 있습니다. 사진: 왕태석 선임기자·청와대사진기자단/한국일보",
     "summary": [
@@ -258,7 +256,7 @@ export const newsArticles: NewsArticle[] = [
     ]
   },
   "heroImage": {
-    "src": "https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202609%2F02%2Fhankooki%2F20260902043140287debt.jpg",
+    "src": "/images/news/source-budget-hankookilbo.jpg",
     "alt": "이재명 대통령이 청년 예산 언박싱 행사에서 발언하는 모습",
     "caption": "이재명 대통령이 2026년 8월 28일 청와대에서 열린 '청년 예산 언박싱 2027'에서 모두발언을 하고 있습니다.",
     "credit": "왕태석 선임기자·청와대사진기자단 · 한국일보",
@@ -324,7 +322,7 @@ export const newsArticles: NewsArticle[] = [
     "headline": "‘진짜 집단소송법 제정해야’…소비자 제정연대, 국회에 입법 촉구",
     "url": "https://mobile.newsis.com/view_amp.html?ar_id=NISX20260901_0003771422",
     "linkLabel": "뉴시스 원문 보기",
-    "thumbnailUrl": "https://img1.newsis.com/2026/09/01/NISI20260901_0002226989_web.jpg",
+    "thumbnailUrl": "/images/news/source-class-action-newsis.jpg",
     "thumbnailAlt": "비가 내리는 국회 앞에서 집단소송법 제정을 촉구하는 소비자·시민단체 기자회견",
     "thumbnailCaption": "소비자 보호를 위한 집단소송법 제정연대의 국회 앞 기자회견 · 뉴시스",
     "summary": [
@@ -334,7 +332,7 @@ export const newsArticles: NewsArticle[] = [
     ]
   },
   "heroImage": {
-    "src": "https://img1.newsis.com/2026/09/01/NISI20260901_0002226989_web.jpg",
+    "src": "/images/news/source-class-action-newsis.jpg",
     "alt": "비가 내리는 국회 앞에서 집단소송법 제정을 촉구하는 소비자·시민단체 기자회견",
     "caption": "소비자 보호를 위한 집단소송법 제정연대가 2026년 9월 1일 서울 여의도 국회 정문 앞에서 기자회견을 열고 있습니다.",
     "credit": "뉴시스",
@@ -440,7 +438,7 @@ export const newsArticles: NewsArticle[] = [
     "headline": "개인정보 166만명 유출 GS리테일에 과징금 128억원…‘사고 대응 소홀’",
     "url": "https://v.daum.net/v/20260831163751029",
     "linkLabel": "중앙일보 원문 보기",
-    "thumbnailUrl": "https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202608%2F31%2Fjoongang%2F20260831163753011mrwp.jpg",
+    "thumbnailUrl": "/images/news/source-gs-retail-joongang.jpg",
     "thumbnailAlt": "서울 시내 GS25 편의점 전경",
     "thumbnailCaption": "GS리테일 개인정보 유출 처분을 보도한 중앙일보 기사 사진 · 뉴스1",
     "summary": [
@@ -450,7 +448,7 @@ export const newsArticles: NewsArticle[] = [
     ]
   },
   "heroImage": {
-    "src": "https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202608%2F31%2Fjoongang%2F20260831163753011mrwp.jpg",
+    "src": "/images/news/source-gs-retail-joongang.jpg",
     "alt": "서울 시내 GS25 편의점 전경",
     "caption": "GS리테일 개인정보 유출 제재가 발표된 2026년 8월 31일 서울 시내 GS25 편의점 모습입니다.",
     "credit": "뉴스1 · 중앙일보",
@@ -561,7 +559,7 @@ export const newsArticles: NewsArticle[] = [
     "headline": "李, 대법관 재제청 요청…‘조희대 제청’ 손봉기 반려",
     "url": "https://www.donga.com/news/Politics/article/all/20260828/134567139/2",
     "linkLabel": "동아일보 원문 보기",
-    "thumbnailUrl": "https://dimg.donga.com/wps/NEWS/IMAGE/2026/08/29/134567271.1.jpg",
+    "thumbnailUrl": "/images/news/source-supreme-court-donga.jpg",
     "thumbnailAlt": "대법관 재제청 요구를 발표하는 청와대 브리핑 현장",
     "thumbnailCaption": "대법관 재제청 요구를 보도한 동아일보 기사 사진 · 청와대사진기자단",
     "summary": [
@@ -571,7 +569,7 @@ export const newsArticles: NewsArticle[] = [
     ]
   },
   "heroImage": {
-    "src": "https://dimg.donga.com/wps/NEWS/IMAGE/2026/08/29/134567271.1.jpg",
+    "src": "/images/news/source-supreme-court-donga.jpg",
     "alt": "대법관 재제청 요구를 발표하는 청와대 브리핑 현장",
     "caption": "청와대가 2026년 8월 28일 대법관 후보 재제청 요구 방침을 발표하고 있습니다.",
     "credit": "청와대사진기자단 · 동아일보",
@@ -692,7 +690,7 @@ export const newsArticles: NewsArticle[] = [
     "headline": "‘하후상박 증액’…저소득층, 기초연금 더 받나? [따져보니]",
     "url": "https://www.youtube.com/watch?v=aZG4sFs84_U",
     "linkLabel": "TV조선 보도 보기",
-    "thumbnailUrl": "https://i.ytimg.com/vi/aZG4sFs84_U/maxresdefault.jpg",
+    "thumbnailUrl": "/images/news/basic-pension-counseling.png",
     "thumbnailAlt": "기초연금 하후상박 개편을 설명하는 TV조선 보도 화면",
     "thumbnailCaption": "기초연금 개편안을 분석한 TV조선 ‘따져보니’ 보도 화면",
     "summary": [
@@ -916,7 +914,7 @@ export const newsArticles: NewsArticle[] = [
       headline: "韓총리 \"신속 해결 가능 규제는 리스트업해 즉시 해소할 것\"",
       url: "https://www.yna.co.kr/view/AKR20260828061200001",
       linkLabel: "연합뉴스 원문 기사 보기",
-      thumbnailUrl: "https://img2.yna.co.kr/photo/yna/YH/2026/08/28/PYH2026082803490001301_P4.jpg",
+      thumbnailUrl: "/images/news/regulatory-dialogue-kcci.jpg",
       thumbnailAlt: "경제 협·단체 규제합리화 간담회에서 발언하는 한성숙 국무총리",
       thumbnailCaption: "규제합리화 간담회를 보도한 연합뉴스 기사 사진",
       summary: [

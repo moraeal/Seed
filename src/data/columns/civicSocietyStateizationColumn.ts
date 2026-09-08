@@ -18,11 +18,11 @@ export const civicSocietyStateizationColumn: SeedColumn = {
   },
   referenceVideo: {
     youtubeId: "LTILlMkKd04",
-    thumbnailSrc: "https://i.ytimg.com/vi/LTILlMkKd04/maxresdefault.jpg",
-    thumbnailAlt: "시민사회 초청 간담회에서 발언하는 이재명 대통령을 담은 SBS 뉴스 현장영상 화면",
+    thumbnailSrc: "images/columns/civic-power-representation-hall.webp",
+    thumbnailAlt: "국회가 보이는 공간에서 시민 대표성과 공론장을 상징적으로 표현한 이미지",
     title: "이재명 대통령 시민사회 초청 간담회 현장영상",
-    description: "2026년 9월 4일 열린 시민사회 초청 간담회를 보도한 SBS 뉴스 영상입니다. 화면을 누르면 이 기사 안에서 바로 재생됩니다.",
-    credit: "영상 화면 · SBS 뉴스",
+    description: "씨앗의 소리 제작 이미지입니다. 화면을 누르면 2026년 9월 4일 시민사회 초청 간담회를 보도한 SBS 뉴스 영상을 재생합니다.",
+    credit: "씨앗의 소리 제작 이미지",
   },
   inlineImage: {
     src: "images/columns/civic-society-stateization-roots.webp",

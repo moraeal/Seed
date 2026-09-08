@@ -2,6 +2,7 @@ import { ArrowRight, BookOpenText, Clock, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { useLanguage } from "../i18n";
+import SafeImage from "../components/SafeImage";
 
 export default function SeedLanguage() {
   const { language } = useLanguage();
@@ -43,7 +44,7 @@ export default function SeedLanguage() {
 
         <section className="mt-7 border-t-2 border-navy" aria-label={ko ? "씨앗언어 콘텐츠" : "SEED Language articles"}>
           {articles.map((article) => <Link key={article.slug} to={`/seed-language/${article.slug}`} className="group grid border-b border-green-deep/15 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr]">
-            <div className="h-full min-h-56 overflow-hidden bg-green-deep"><img src={`${import.meta.env.BASE_URL}${article.heroImage.src}`} alt={article.heroImage.alt} className="aspect-[4/3] h-full w-full object-cover transition duration-500 group-hover:scale-[1.025] md:aspect-auto"/></div>
+            <div className="h-full min-h-56 overflow-hidden bg-green-deep"><SafeImage src={`${import.meta.env.BASE_URL}${article.heroImage.src}`} alt={article.heroImage.alt} className="aspect-[4/3] h-full w-full object-cover transition duration-500 group-hover:scale-[1.025] md:aspect-auto"/></div>
             <div className="px-5 py-6 md:px-7">
               <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-charcoal/45"><span className="rounded-full bg-green-pale px-2.5 py-1 font-extrabold text-green-deep">{article.term}</span></div>
               <h3 className="editorial-title text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">{article.title}</h3>

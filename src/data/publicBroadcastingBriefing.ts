@@ -12,10 +12,10 @@ export const publicBroadcastingBriefing: Briefing = {
   featured: true,
   images: [
     {
-      src: "https://i.ytimg.com/vi/Nvs6iXAsK9o/hqdefault.jpg",
-      alt: "방송 3법의 국회 통과를 보도한 KBS 뉴스 화면",
-      caption: "방송 3법은 공영방송 이사 추천권을 여러 조직으로 넓혔습니다. 권한이 정부에서 조직된 시민사회로 이동한 뒤의 책임까지 감시해야 합니다. 화면을 누르면 KBS 보도를 볼 수 있습니다.",
-      credit: "영상 화면 · KBS 뉴스",
+      src: "images/briefings/briefing-06-empty-boardroom.webp",
+      alt: "공영방송 이사회의 비어 있는 좌석을 상징적으로 표현한 이미지",
+      caption: "방송 3법은 공영방송 이사 추천권을 여러 조직으로 넓혔습니다. 씨앗의 소리 제작 이미지를 누르면 KBS 보도를 볼 수 있습니다.",
+      credit: "씨앗의 소리 제작 이미지",
       sourceUrl: "https://www.youtube.com/watch?v=Nvs6iXAsK9o",
     },
     {

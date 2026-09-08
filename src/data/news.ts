@@ -5,11 +5,10 @@ export type { NewsImage, NewsSection, NewsSource, NewsVideo, SelectedNews } from
 export type NewsArticle = ArchiveNewsArticle & { additionalImages?: NewsImage[] };
 
 const lhHeroImage: NewsImage = {
-  src: "https://i.ytimg.com/vi/ervJ5jH7dig/hqdefault.jpg",
-  alt: "정부의 LH 분리 추진을 보도한 SBS 뉴스 경제365 영상 화면",
-  caption: "정부가 17년 만에 LH 분리 추진 방안을 검토하고 있다는 SBS 뉴스 경제365 보도 화면입니다.",
-  credit: "영상 화면 · SBS 뉴스",
-  sourceUrl: "https://www.youtube.com/watch?v=ervJ5jH7dig"
+  src: "/images/news/lh-split-hero-v2.webp",
+  alt: "LH 조직 분리 논의를 상징적으로 표현한 도시와 건설 현장 이미지",
+  caption: "LH의 개발·자산관리 기능 분리 논의와 그 영향을 상징적으로 표현한 이미지입니다.",
+  credit: "씨앗의 소리 제작 이미지",
 };
 
 const lhSplitPublicAgencyArticle: NewsArticle = {
@@ -28,6 +27,7 @@ const lhSplitPublicAgencyArticle: NewsArticle = {
     headline: "정부, 17년 만에 LH 분리 추진..개발·자산관리 나눈다",
     url: "https://www.youtube.com/watch?v=ervJ5jH7dig",
     linkLabel: "SBS 뉴스 영상 보기",
+    thumbnailUrl: "/images/news/lh-split-hero-v2.webp",
     summary: [
       "정부는 2009년 통합 출범한 LH를 17년 만에 다시 두 회사로 나누는 방안을 추진하고 있습니다.",
       "정부 구상대로라면 택지개발과 주택건설은 주택도시개발공사가, 임대주택 운영과 주거복지·토지비축은 주택도시자산공사가 맡게 됩니다.",

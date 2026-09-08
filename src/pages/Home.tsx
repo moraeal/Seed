@@ -8,6 +8,7 @@ import { getNewsNewestFirst } from "../data/news";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { useLanguage } from "../i18n";
 import NewsletterSignup from "../components/NewsletterSignup";
+import SafeImage from "../components/SafeImage";
 
 const resolveImageSrc = (src?: string) => {
   if (!src) return "";
@@ -265,7 +266,7 @@ export default function Home() {
                     <div className="group -mx-4 flex h-full flex-col px-4 pb-3 transition-colors hover:bg-green-pale/60">
                       <div className="relative overflow-hidden bg-navy" onMouseEnter={() => setLeadStoryPaused(true)} onMouseLeave={() => setLeadStoryPaused(false)}>
                         <Link to={story.href} tabIndex={active ? undefined : -1} className="block">
-                          <img src={resolveImageSrc(story.image.src)} alt={story.image.alt} referrerPolicy="no-referrer" className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
+                          <SafeImage src={resolveImageSrc(story.image.src)} alt={story.image.alt} referrerPolicy="no-referrer" className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
                           <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/90 via-black/35 to-transparent px-5 pb-14 pt-20 sm:px-6">
                             <h1 className="max-w-full font-sans text-[clamp(1.45rem,3vw,2.65rem)] font-black leading-[1.05] tracking-[-0.045em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,.85)]">{story.title}</h1>
                           </div>
@@ -356,7 +357,7 @@ export default function Home() {
               <article key={`${item.slug}-${index}`} className="w-full shrink-0 border-b border-green-deep/15 px-5 py-5 transition-colors hover:bg-green-pale/70 md:w-1/3 md:border-r md:px-6">
                 <Link to={`/news/${item.slug}`} className="group block">
                   <div className="relative overflow-hidden bg-green-deep">
-                    <img src={resolveImageSrc(item.heroImage.src)} alt={item.heroImage.alt} referrerPolicy="no-referrer" className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
+                    <SafeImage src={resolveImageSrc(item.heroImage.src)} alt={item.heroImage.alt} referrerPolicy="no-referrer" className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
                     <span className="absolute bottom-2 left-2 max-w-[calc(100%-1rem)] rounded-sm bg-black/65 px-2 py-1 text-[10px] font-semibold leading-4 text-white backdrop-blur-sm">{item.heroImage.credit}</span>
                   </div>
                   <h3 className="editorial-title mt-3 text-lg font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h3>
@@ -424,7 +425,7 @@ export default function Home() {
                     <Link to={`/briefings/${briefing.slug}`} className="group block">
                       {image && (
                         <div className="relative overflow-hidden bg-green-deep">
-                          <img src={resolveImageSrc(image.src)} alt={image.alt} referrerPolicy="no-referrer" className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
+                          <SafeImage src={resolveImageSrc(image.src)} alt={image.alt} referrerPolicy="no-referrer" className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
                           <span className="absolute bottom-2 left-2 max-w-[calc(100%-1rem)] rounded-sm bg-black/65 px-2 py-1 text-[10px] font-semibold leading-4 text-white backdrop-blur-sm">{image.credit}</span>
                         </div>
                       )}
