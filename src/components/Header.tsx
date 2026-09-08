@@ -1,6 +1,6 @@
 import { LogIn, LogOut, Menu, UserRound, X } from "lucide-react";
-import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth";
 import { getContent } from "../data/siteContent";
 import { useLanguage } from "../i18n";
@@ -32,17 +32,41 @@ export default function Header() {
 
   const toggleLanguage = () => {
     const nextLanguage = language === "ko" ? "en" : "ko";
+    setOpen(false);
     setLanguage(nextLanguage);
     if (nextLanguage === "en" && location.pathname === "/") navigate("/en/");
     if (nextLanguage === "ko" && /^\/en(?:\/|$)/.test(location.pathname)) navigate("/");
   };
-  const navLinkClass = "border-b-2 border-transparent px-1 py-3 text-[13px] font-bold text-charcoal/72 transition hover:border-green-deep hover:text-green-deep";
-  const mobileLinkClass = "rounded-md px-3 py-3 text-sm font-semibold text-charcoal/75 hover:bg-green-pale";
+  const navLinkClass = "border-b-2 px-1 py-3 text-[13px] font-bold transition";
+  const mobileLinkClass = "flex min-h-12 items-center justify-between border-b border-green-deep/10 px-3 py-3 text-base font-bold transition last:border-b-0";
+
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [open]);
 
   const renderNavItem = ([label, path]: string[], mobile = false) => {
-    const className = mobile ? mobileLinkClass : navLinkClass;
     const close = () => mobile && setOpen(false);
-    return <Link key={label} to={path} onClick={close} className={className}>{label}</Link>;
+    return (
+      <NavLink
+        key={label}
+        to={path}
+        onClick={close}
+        className={({ isActive }) => mobile
+          ? `${mobileLinkClass} ${isActive ? "bg-green-pale text-green-deep" : "text-charcoal/75 hover:bg-green-pale/70 hover:text-green-deep"}`
+          : `${navLinkClass} ${isActive ? "border-green-deep text-green-deep" : "border-transparent text-charcoal/72 hover:border-green-deep hover:text-green-deep"}`}
+      >
+        {({ isActive }) => <>{label}{mobile && isActive && <span className="text-xs font-extrabold text-green-mid">{language === "en" ? "Current" : "현재"}</span>}</>}
+      </NavLink>
+    );
   };
 
   return (
@@ -71,7 +95,7 @@ export default function Header() {
           <button onClick={toggleLanguage} className="button-secondary min-w-20 text-xs" type="button">{t.actions.language}</button>
         </div>
 
-        <button onClick={() => setOpen(!open)} className="ml-auto grid size-10 place-items-center rounded-md border border-green-deep/15 text-green-deep xl:hidden" aria-label={language === "en" ? "Open menu" : "메뉴 열기"} type="button">
+        <button onClick={() => setOpen(!open)} className="ml-auto grid size-10 place-items-center rounded-md border border-green-deep/15 text-green-deep xl:hidden" aria-label={language === "en" ? (open ? "Close menu" : "Open menu") : (open ? "메뉴 닫기" : "메뉴 열기")} aria-expanded={open} aria-controls="mobile-main-menu" type="button">
           {open ? <X /> : <Menu />}
         </button>
       </div>
@@ -81,8 +105,8 @@ export default function Header() {
       </nav>
 
       {open && (
-        <div className="border-t border-green-deep/10 bg-paper px-5 py-5 xl:hidden">
-          <nav className="container-page grid grid-cols-2 gap-2 sm:grid-cols-3">{nav.map((item) => renderNavItem(item, true))}</nav>
+        <div id="mobile-main-menu" className="border-t border-green-deep/10 bg-paper px-5 py-4 shadow-[0_12px_24px_rgba(17,43,37,.08)] xl:hidden">
+          <nav className="container-page grid sm:grid-cols-2 sm:gap-x-5">{nav.map((item) => renderNavItem(item, true))}</nav>
           <div className="container-page mt-4 flex flex-wrap gap-2">
             {user ? (
               <>
