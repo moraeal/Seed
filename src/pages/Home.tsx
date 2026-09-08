@@ -96,7 +96,9 @@ export default function Home() {
       cta: ko ? "오늘의뉴스 읽기" : "Read today's news",
       image: {
         ...latestNews.heroImage,
-        src: `images/social/news/${latestNews.slug}.jpg`,
+        src: latestNews.slug === "lh-split-public-agency-experiment" ? "images/news/lh-split-civic-view.svg" : latestNews.heroImage.src,
+        credit: latestNews.slug === "lh-split-public-agency-experiment" ? (ko ? "씨앗의소리 제작 인포그래픽" : "Infographic by SEED VOICE") : latestNews.heroImage.credit,
+        sourceUrl: latestNews.slug === "lh-split-public-agency-experiment" ? undefined : latestNews.heroImage.sourceUrl,
       },
     },
     seedLanguageArticle && {
