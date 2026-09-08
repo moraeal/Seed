@@ -31,7 +31,7 @@ export default function NewsDetail() {
         src: "images/news/lh-split-hero-v2.webp",
         alt: ko ? "LH 분리 추진을 상징적으로 표현한 씨앗의소리 오늘의뉴스 대표 이미지" : "SEED VOICE representative image illustrating the proposed LH split",
         caption: ko ? "정부의 LH 분리 추진을 다룬 오늘의뉴스 대표 이미지입니다." : "Representative image for Today's News on the government's proposed LH split.",
-        credit: ko ? "씨앗의소리 AI 제작 이미지" : "AI image by SEED VOICE",
+        credit: "",
         sourceUrl: undefined,
       }
     : article.heroImage;
