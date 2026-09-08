@@ -4,18 +4,12 @@ type SafeImageProps = ImgHTMLAttributes<HTMLImageElement> & {
   fallbackSrc?: string;
 };
 
-const environmentHeroSvg = "images/seed-language/environment-shared-condition-hero.svg";
-const environmentHeroWebp = "images/seed-language/environment-shared-condition-hero.webp";
-
 const resolveImageSrc = (src?: string) => {
   if (!src) return "";
   if (/^(?:https?:|data:|blob:)/i.test(src)) return src;
   const normalized = src.replace(/^\//, "");
-  const corrected = normalized.endsWith(environmentHeroSvg)
-    ? normalized.replace(environmentHeroSvg, environmentHeroWebp)
-    : normalized;
-  if (corrected.startsWith(import.meta.env.BASE_URL)) return corrected;
-  return `${import.meta.env.BASE_URL}${corrected}`;
+  if (normalized.startsWith(import.meta.env.BASE_URL)) return normalized;
+  return `${import.meta.env.BASE_URL}${normalized}`;
 };
 
 const defaultFallback = `${import.meta.env.BASE_URL}images/brand/editorial-image-fallback.svg`;

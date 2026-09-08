@@ -15,10 +15,10 @@ const environmentKo: SeedLanguageArticle = {
     "원전·댐·보·재생에너지 같은 수단은 진영의 금기가 아니라 효과·비용·안전성·환경영향으로 판단해야 합니다.",
   ],
   heroImage: {
-    src: "images/seed-language/environment-shared-condition-hero.svg",
-    alt: "강과 숲, 도시와 반도체 공장, 전력망과 에너지 설비가 한 풍경 안에서 연결된 편집 일러스트",
+    src: "images/seed-language/environment-shared-condition-hero.webp",
+    alt: "강과 녹지, 시민의 일상, 도시와 반도체 공장, 전력망과 에너지 설비가 한 공간에서 공존하는 풍경",
     caption: "환경은 자연만의 문제가 아닙니다. 시민의 삶, 기업의 생산, 물과 전력, 기술과 제도가 함께 만들어가는 생활 조건입니다.",
-    credit: "씨앗의 소리 편집 이미지",
+    credit: "씨앗의 소리 AI 제작 이미지",
   },
   inlineImage: {
     src: "images/seed-language/environment-civic-framework.svg",
@@ -108,10 +108,10 @@ const environmentDeepKo: SeedLanguageArticle = {
     "씨앗은 환경을 시민의 권리, 기업의 책임, 국가의 제한된 역할, 기술과 시장의 혁신을 함께 묶는 공공의 언어로 봅니다.",
   ],
   heroImage: {
-    src: "images/seed-language/environment-shared-condition-hero.svg",
-    alt: "강과 숲, 도시와 반도체 공장, 전력망과 에너지 설비가 한 풍경 안에서 연결된 편집 일러스트",
+    src: "images/seed-language/environment-shared-condition-hero.webp",
+    alt: "강과 녹지, 시민의 일상, 도시와 반도체 공장, 전력망과 에너지 설비가 한 공간에서 공존하는 풍경",
     caption: "환경은 자연과 산업 가운데 하나를 고르는 문제가 아니라 서로 다른 삶의 조건을 어떻게 조정하고 책임질 것인가의 문제입니다.",
-    credit: "씨앗의 소리 편집 이미지",
+    credit: "씨앗의 소리 AI 제작 이미지",
   },
   inlineImage: {
     src: "images/seed-language/environment-water-power-map.svg",

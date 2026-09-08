@@ -14,7 +14,7 @@ const server = await createServer({
   server: { middlewareMode: true },
   optimizeDeps: { noDiscovery: true },
 });
-const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, siteContentModule, seedLanguageModule] = await Promise.all([
+const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, siteContentModule, seedLanguageModule, seedLanguageEnvironmentModule] = await Promise.all([
   server.ssrLoadModule("/src/seo.ts"),
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
@@ -22,6 +22,7 @@ const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME,
   server.ssrLoadModule("/src/data/publicInterestWatch.ts"),
   server.ssrLoadModule("/src/data/siteContent.ts"),
   server.ssrLoadModule("/src/data/seedLanguage.ts"),
+  server.ssrLoadModule("/src/data/seedLanguageEnvironment.ts"),
 ]);
 await server.close();
 
@@ -30,7 +31,10 @@ const briefings = briefingModule.getAllBriefingsNewestFirst();
 const columns = columnModule.columns;
 const watchCases = watchModule.publicInterestWatchCases;
 const englishContent = siteContentModule.getContent("en");
-const seedLanguageArticles = seedLanguageModule.seedLanguageArticlesKo;
+const seedLanguageArticles = [
+  ...seedLanguageEnvironmentModule.seedLanguageEnvironmentArticlesKo,
+  ...seedLanguageModule.seedLanguageArticlesKo,
+];
 
 const escapeHtml = (value = "") => String(value)
   .replaceAll("&", "&amp;")
