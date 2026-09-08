@@ -94,7 +94,10 @@ export default function Home() {
       readMinutes: latestNews.readMinutes,
       href: `/news/${latestNews.slug}`,
       cta: ko ? "오늘의뉴스 읽기" : "Read today's news",
-      image: latestNews.heroImage,
+      image: {
+        ...latestNews.heroImage,
+        src: `images/social/news/${latestNews.slug}.jpg`,
+      },
     },
     seedLanguageArticle && {
       key: `language-${seedLanguageArticle.slug}`,
