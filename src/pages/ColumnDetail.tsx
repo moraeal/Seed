@@ -1,8 +1,9 @@
-import { Clock, Share2 } from "lucide-react";
+import { Clock } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
 import InteractiveFigure from "../components/InteractiveFigure";
+import ShareButton from "../components/ShareButton";
 import { getColumn } from "../data/columns";
 import { localizeColumn } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
@@ -19,11 +20,6 @@ export default function ColumnDetail() {
 
   if (!column) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">{ko ? "글을 찾을 수 없습니다." : "Article not found."}</h1><Link to="/columns" className="button-primary mt-7">{ko ? "씨앗의 소리 목록" : "Voice of the Seed"}</Link></div>;
 
-  const share = async () => {
-    if (navigator.share) await navigator.share({ title: `${column.title} - ${column.subtitle}`, text: column.summary, url: location.href });
-    else { await navigator.clipboard.writeText(location.href); alert(ko ? "주소를 복사했습니다." : "Link copied."); }
-  };
-
   const seenImages = new Set([imageKey(column.heroImage.src)]);
   const bodyImages = [
     { ...column.inlineImage, afterSection: 3 },
@@ -37,7 +33,7 @@ export default function ColumnDetail() {
 
   return <article className="bg-paper">
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
-      <div className="container-page max-w-5xl"><div className="pt-3 text-center"><h1 className="editorial-title mx-auto max-w-4xl text-[1.75rem] font-bold leading-[1.14] text-navy sm:text-[2.5rem]">{column.title}</h1><p className="article-summary mx-auto">{column.summary}</p></div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45"><time>{column.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${column.readMinutes}분` : `${column.readMinutes} min read`}</span><button onClick={share} className="button-secondary ml-auto min-h-8 px-3 py-1.5 text-xs"><Share2 size={15}/>{ko ? "공유" : "Share"}</button></div></div>
+      <div className="container-page max-w-5xl"><div className="pt-3 text-center"><h1 className="editorial-title mx-auto max-w-4xl text-[1.75rem] font-bold leading-[1.14] text-navy sm:text-[2.5rem]">{column.title}</h1><p className="article-summary mx-auto">{column.summary}</p></div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45"><time>{column.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${column.readMinutes}분` : `${column.readMinutes} min read`}</span><ShareButton title={`${column.title} - ${column.subtitle}`} text={column.summary} className="ml-auto" /></div></div>
     </header>
 
     <div className="container-page max-w-4xl py-8 sm:py-12">

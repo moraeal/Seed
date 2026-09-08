@@ -1,8 +1,9 @@
-import { ArrowLeft, Clock, Share2 } from "lucide-react";
+import { ArrowLeft, Clock } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
 import InteractiveFigure from "../components/InteractiveFigure";
+import ShareButton from "../components/ShareButton";
 import SourceArticleCard from "../components/SourceArticleCard";
 import { localizeNewsArticle } from "../data/localizedContent";
 import { getNewsArticle } from "../data/news";
@@ -19,11 +20,6 @@ export default function NewsDetail() {
   const article = originalArticle ? localizeNewsArticle(originalArticle, language) : undefined;
 
   if (!article) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">{ko ? "뉴스를 찾을 수 없습니다." : "News article not found."}</h1><Link to="/news" className="button-primary mt-7">{ko ? "뉴스 목록" : "News"}</Link></div>;
-
-  const share = async () => {
-    if (navigator.share) await navigator.share({ title: article.title, text: article.summary, url: location.href });
-    else { await navigator.clipboard.writeText(location.href); alert(ko ? "주소를 복사했습니다." : "Link copied."); }
-  };
 
   const isLhArticle = article.slug === "lh-split-public-agency-experiment";
   const detailHeroImage = isLhArticle
@@ -46,7 +42,7 @@ export default function NewsDetail() {
 
   return <article className="bg-paper">
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
-      <div className="container-page max-w-5xl"><Link to="/news" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "오늘의뉴스 목록" : "Today's News"}</Link><div className="mt-3 border-t-2 border-navy pt-3"><h1 className="editorial-title max-w-4xl text-[1.6rem] font-bold leading-[1.15] text-navy sm:text-[2.25rem]">{article.title}</h1><p className="article-summary">{article.summary}</p></div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${article.readMinutes}분` : `${article.readMinutes} min read`}</span><button onClick={share} className="button-secondary ml-auto min-h-8 px-3 py-1.5 text-xs"><Share2 size={15}/>{ko ? "공유" : "Share"}</button></div></div>
+      <div className="container-page max-w-5xl"><Link to="/news" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "오늘의뉴스 목록" : "Today's News"}</Link><div className="mt-3 border-t-2 border-navy pt-3"><h1 className="editorial-title max-w-4xl text-[1.6rem] font-bold leading-[1.15] text-navy sm:text-[2.25rem]">{article.title}</h1><p className="article-summary">{article.summary}</p></div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${article.readMinutes}분` : `${article.readMinutes} min read`}</span><ShareButton title={article.title} text={article.summary} className="ml-auto" /></div></div>
     </header>
 
     <div className="container-page max-w-4xl py-8 sm:py-12">

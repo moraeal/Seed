@@ -1,8 +1,9 @@
-import { ArrowLeft, Clock, Download, FileText, Share2 } from "lucide-react";
+import { ArrowLeft, Clock, Download, FileText } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
 import InteractiveFigure from "../components/InteractiveFigure";
+import ShareButton from "../components/ShareButton";
 import { getAllBriefing } from "../data/allBriefings";
 import { localizeBriefing } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
@@ -23,14 +24,6 @@ export default function BriefingDetail() {
     );
   }
 
-  const share = async () => {
-    if (navigator.share) await navigator.share({ title: briefing.title, text: briefing.summary, url: location.href });
-    else {
-      await navigator.clipboard.writeText(location.href);
-      alert(ko ? "주소를 복사했습니다." : "Link copied.");
-    }
-  };
-
   const renderFigure = (image: NonNullable<typeof briefing.images>[number], prominent = false) => (
     <InteractiveFigure src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName={`${prominent ? "mb-8 shadow-[0_18px_55px_rgba(23,76,58,.08)]" : "mt-8"} overflow-hidden border border-green-deep/10 bg-white`} imageClassName={image.contain ? "block h-auto w-full" : `${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full object-cover`} />
   );
@@ -49,7 +42,7 @@ export default function BriefingDetail() {
             <time>{briefing.date.replace(/-/g, ".")} {ko ? "기준" : "as of"}</time>
             <span className="flex items-center gap-1"><Clock size={14} />{ko ? `읽는 시간 ${briefing.readMinutes}분` : `${briefing.readMinutes} min read`}</span>
             <div className="flex w-full flex-wrap gap-2 sm:ml-auto sm:w-auto">
-              <button onClick={share} className="button-secondary min-h-8 px-3 py-1.5 text-xs"><Share2 size={15} />{ko ? "공유" : "Share"}</button>
+              <ShareButton title={briefing.title} text={briefing.summary} />
               {briefing.commentary && <Link to={`/briefings/${briefing.slug}/commentary`} className="button-secondary min-h-8 px-3 py-1.5 text-xs"><FileText size={15} />{ko ? "브리핑 깊게 보기" : "Read the deep dive"}</Link>}
               {briefing.pdfPath && <a href={`${import.meta.env.BASE_URL}${briefing.pdfPath}`} download className="button-primary min-h-8 px-3 py-1.5 text-xs"><Download size={15} />{ko ? "PDF 원문 내려받기" : "Download PDF"}</a>}
             </div>

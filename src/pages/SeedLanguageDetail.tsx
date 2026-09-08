@@ -1,8 +1,9 @@
-import { ArrowLeft, BookOpenText, Clock, Share2 } from "lucide-react";
+import { ArrowLeft, BookOpenText, Clock } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
 import InteractiveFigure from "../components/InteractiveFigure";
+import ShareButton from "../components/ShareButton";
 import { getSeedLanguageArticle } from "../data/seedLanguage";
 import { getSeedLanguageEnvironmentArticle } from "../data/seedLanguageEnvironment";
 import { useLanguage } from "../i18n";
@@ -32,11 +33,6 @@ export default function SeedLanguageDetail() {
     credit: ko ? "씨앗의 소리 AI 제작 이미지" : "AI image produced by SEED VOICE",
   } : article.heroImage;
 
-  const share = async () => {
-    if (navigator.share) await navigator.share({ title: article.title, text: article.summary, url: location.href });
-    else { await navigator.clipboard.writeText(location.href); alert(ko ? "주소를 복사했습니다." : "Link copied."); }
-  };
-
   return <article className="bg-paper">
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
       <div className="container-page max-w-5xl">
@@ -52,7 +48,7 @@ export default function SeedLanguageDetail() {
           <span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${article.readMinutes}분` : `${article.readMinutes} min read`}</span>
           <div className="ml-auto flex flex-wrap items-center gap-2">
             {deepReadHref && <Link to={deepReadHref} className="button-primary min-h-8 px-3 py-1.5 text-xs"><BookOpenText size={15}/>{ko ? "깊게 읽기 · 13분" : "Deep Read · 13 min"}</Link>}
-            <button onClick={share} className="button-secondary min-h-8 px-3 py-1.5 text-xs"><Share2 size={15}/>{ko ? "공유" : "Share"}</button>
+            <ShareButton title={article.title} text={article.summary} />
           </div>
         </div>
       </div>
