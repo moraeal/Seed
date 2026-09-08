@@ -4,13 +4,14 @@ import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
 import InteractiveFigure from "../components/InteractiveFigure";
 import { getSeedLanguageArticle } from "../data/seedLanguage";
+import { getSeedLanguageEnvironmentArticle } from "../data/seedLanguageEnvironment";
 import { useLanguage } from "../i18n";
 
 export default function SeedLanguageDetail() {
   const { slug = "" } = useParams();
   const { language } = useLanguage();
   const ko = language === "ko";
-  const article = getSeedLanguageArticle(slug, language);
+  const article = getSeedLanguageEnvironmentArticle(slug, language) ?? getSeedLanguageArticle(slug, language);
 
   if (!article) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">{ko ? "씨앗언어 글을 찾을 수 없습니다." : "SEED Language article not found."}</h1><Link to="/seed-language" className="button-primary mt-7">{ko ? "씨앗언어 목록" : "SEED Language"}</Link></div>;
 
