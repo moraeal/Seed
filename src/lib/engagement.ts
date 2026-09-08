@@ -57,9 +57,13 @@ export async function recordContentView(path: string, language: "ko" | "en") {
   await callRpc<void>("record_content_view", { p_path: path, p_language: language, p_referrer_host: referrerHost });
 }
 
-export type EngagementSummary = { metric: "active_subscribers" | "all_page_views" | "page_views_7d"; value: number };
+export type EngagementSummary = {
+  metric: "active_subscribers" | "all_page_views" | "page_views_today" | "page_views_7d" | "page_views_30d" | "member_count";
+  value: number;
+};
 export type DailyViewStat = { view_date: string; views: number };
 export type ContentViewStat = { page_path: string; views: number; last_viewed_at: string };
+export type ReferrerStat = { referrer_host: string; views: number };
 export type NewsletterSubscriber = { email: string; language: "ko" | "en"; source_path: string; status: "active" | "unsubscribed"; consented_at: string };
 export type MemberRegistration = {
   user_id: string;
@@ -74,12 +78,13 @@ export type MemberRegistration = {
 
 export async function getEngagementData(session: AuthSession) {
   const token = session.access_token;
-  const [summary, dailyViews, views, members, subscribers] = await Promise.all([
+  const [summary, dailyViews, views, referrers, members, subscribers] = await Promise.all([
     callRpc<EngagementSummary[]>("get_engagement_summary", {}, token),
     callRpc<DailyViewStat[]>("get_daily_view_stats", {}, token),
     callRpc<ContentViewStat[]>("get_content_view_stats", {}, token),
+    callRpc<ReferrerStat[]>("get_referrer_stats", {}, token),
     callRpc<MemberRegistration[]>("get_member_registrations", {}, token),
     callRpc<NewsletterSubscriber[]>("get_newsletter_subscribers", {}, token),
   ]);
-  return { summary, dailyViews, views, members, subscribers };
+  return { summary, dailyViews, views, referrers, members, subscribers };
 }
