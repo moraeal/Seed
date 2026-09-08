@@ -1,4 +1,4 @@
-import { LogIn, LogOut, Menu, UserRound, X } from "lucide-react";
+import { LogIn, LogOut, Menu, Search, UserRound, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth";
@@ -21,6 +21,7 @@ export default function Header() {
         ["SEED Briefings", "/briefings"],
         ["SEED Language", "/seed-language"],
         ["About", "/about"],
+        ["Search", "/search"],
       ]
     : [
         ["씨앗의소리", "/columns"],
@@ -28,6 +29,7 @@ export default function Header() {
         ["씨앗브리핑", "/briefings"],
         ["씨앗언어", "/seed-language"],
         ["소개", "/about"],
+        ["검색", "/search"],
       ];
 
   const toggleLanguage = () => {
@@ -37,7 +39,7 @@ export default function Header() {
     if (nextLanguage === "en" && location.pathname === "/") navigate("/en/");
     if (nextLanguage === "ko" && /^\/en(?:\/|$)/.test(location.pathname)) navigate("/");
   };
-  const navLinkClass = "border-b-2 px-1 py-3 text-[13px] font-bold transition";
+  const navLinkClass = "inline-flex items-center gap-1.5 border-b-2 px-1 py-3 text-[13px] font-bold transition";
   const mobileLinkClass = "flex min-h-12 items-center justify-between border-b border-green-deep/10 px-3 py-3 text-base font-bold transition last:border-b-0";
 
   useEffect(() => {
@@ -64,7 +66,7 @@ export default function Header() {
           ? `${mobileLinkClass} ${isActive ? "bg-green-pale text-green-deep" : "text-charcoal/75 hover:bg-green-pale/70 hover:text-green-deep"}`
           : `${navLinkClass} ${isActive ? "border-green-deep text-green-deep" : "border-transparent text-charcoal/72 hover:border-green-deep hover:text-green-deep"}`}
       >
-        {({ isActive }) => <>{label}{mobile && isActive && <span className="text-xs font-extrabold text-green-mid">{language === "en" ? "Current" : "현재"}</span>}</>}
+        {({ isActive }) => <>{path === "/search" && <Search size={15}/>}<span>{label}</span>{mobile && isActive && <span className="ml-auto text-xs font-extrabold text-green-mid">{language === "en" ? "Current" : "현재"}</span>}</>}
       </NavLink>
     );
   };

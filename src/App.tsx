@@ -33,6 +33,7 @@ const FoundingStatement = lazy(() => import("./pages/FoundingStatement"));
 const SeedLanguage = lazy(() => import("./pages/SeedLanguage"));
 const SeedLanguageDetail = lazy(() => import("./pages/SeedLanguageDetail"));
 const Insights = lazy(() => import("./pages/Insights"));
+const SearchPage = lazy(() => import("./pages/Search"));
 
 function AppShell() {
   const location = useLocation();
@@ -52,6 +53,7 @@ function AppShell() {
           <Route path="/en" element={<Home />} />
           <Route path="/account" element={<Account />} />
           <Route path="/insights" element={<Insights />} />
+          <Route path="/search" element={<SearchPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/publisher-message" element={<PublisherMessage />} />
           <Route path="/seed-language" element={<SeedLanguage />} />
