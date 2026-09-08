@@ -268,7 +268,7 @@ export default function Home() {
                         <Link to={story.href} tabIndex={active ? undefined : -1} className="block">
                           <SafeImage src={resolveImageSrc(story.image.src)} alt={story.image.alt} referrerPolicy="no-referrer" className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
                           <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/90 via-black/35 to-transparent px-5 pb-14 pt-20 sm:px-6">
-                            <h1 className="max-w-full font-sans text-[clamp(1.45rem,3vw,2.65rem)] font-black leading-[1.05] tracking-[-0.045em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,.85)]">{story.title}</h1>
+                            <h1 className="line-clamp-2 max-w-full text-balance font-sans text-[clamp(1.45rem,3vw,2.65rem)] font-black leading-[1.08] tracking-[-0.045em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,.85)]">{story.title}</h1>
                           </div>
                         </Link>
                         <div className="pointer-events-none absolute left-5 top-5 sm:left-6">
@@ -287,9 +287,9 @@ export default function Home() {
                         {story.key !== "news-lh-split-public-agency-experiment" && (story.image.sourceUrl ? <a href={story.image.sourceUrl} target="_blank" rel="noreferrer" tabIndex={active ? undefined : -1} className="absolute bottom-5 left-5 z-10 max-w-[45%] truncate rounded-sm bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white underline decoration-white/45 underline-offset-2 backdrop-blur-sm transition hover:bg-black/80 sm:left-6">{story.image.credit}</a> : <span className="pointer-events-none absolute bottom-5 left-5 z-10 max-w-[45%] truncate rounded-sm bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur-sm sm:left-6">{story.image.credit}</span>)}
                       </div>
                       <Link to={story.href} tabIndex={active ? undefined : -1} className="flex flex-1 flex-col px-5 sm:px-6">
-                        <p className="mt-3 max-w-4xl text-base font-medium leading-7 text-charcoal/65 sm:text-[17px]">{story.summary}</p>
+                        <p className="mt-3 line-clamp-2 max-w-4xl text-base font-medium leading-7 text-charcoal/65 sm:text-[17px]">{story.summary}</p>
                         {story.excerpt && <p className="mt-3 max-w-4xl border-l-2 border-gold/70 pl-4 text-[15px] leading-7 text-charcoal/72 line-clamp-3 sm:text-base">{story.excerpt}</p>}
-                        <span className="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-extrabold text-green-deep">{story.cta}<ArrowRight size={16}/></span>
+                        <span className="mt-auto inline-flex w-fit items-center gap-2 border-b-2 border-gold pb-1 pt-4 text-sm font-extrabold text-green-deep transition group-hover:border-green-deep">{story.cta}<ArrowRight size={16}/></span>
                       </Link>
                     </div>
                   </article>
@@ -429,9 +429,9 @@ export default function Home() {
                           <span className="absolute bottom-2 left-2 max-w-[calc(100%-1rem)] rounded-sm bg-black/65 px-2 py-1 text-[10px] font-semibold leading-4 text-white backdrop-blur-sm">{image.credit}</span>
                         </div>
                       )}
-                      <h3 className="editorial-title mt-3 text-lg font-bold leading-snug text-navy transition group-hover:text-green-mid">{briefing.title}</h3>
-                      <p className="mt-2 line-clamp-3 text-sm leading-6 text-charcoal/58">{briefing.summary}</p>
-                      <div className="mt-3 flex items-center gap-3 text-xs text-charcoal/38"><time>{briefing.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={12}/>{briefing.readMinutes}{ko ? "분" : " min"}</span></div>
+                      <h3 className="editorial-title mt-3 line-clamp-2 text-balance text-lg font-bold leading-snug text-navy transition group-hover:text-green-mid">{briefing.title}</h3>
+                      <p className="mt-2 line-clamp-2 text-sm leading-6 text-charcoal/58">{briefing.summary}</p>
+                      <div className="mt-4 flex items-center justify-between gap-3 border-t border-green-deep/10 pt-3 text-xs"><time className="text-charcoal/38">{briefing.date.replace(/-/g, ".")}</time><span className="inline-flex items-center gap-1 font-extrabold text-green-deep">{ko ? "브리핑 읽기" : "Read briefing"}<ArrowRight size={13}/></span></div>
                     </Link>
                   </article>
                 );
