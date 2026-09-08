@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, Pause, Play } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
@@ -47,7 +47,10 @@ export default function Home() {
   const [briefingTransition, setBriefingTransition] = useState(true);
   const [briefingVisibleCount, setBriefingVisibleCount] = useState(() => typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches ? 3 : 1);
   const [leadStoryIndex, setLeadStoryIndex] = useState(0);
-  const [leadStoryPaused, setLeadStoryPaused] = useState(false);
+  const [leadStoryInteractionPaused, setLeadStoryInteractionPaused] = useState(false);
+  const [leadStoryAutoplayPaused, setLeadStoryAutoplayPaused] = useState(() =>
+    typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
   const [leadStoryTransition, setLeadStoryTransition] = useState(true);
   const [previewColumnIndex, setPreviewColumnIndex] = useState<number | null>(null);
   const ko = language === "ko";
@@ -136,14 +139,23 @@ export default function Home() {
   }, [language]);
 
   useEffect(() => {
-    if (leadStoryPaused || previewColumnIndex !== null || leadStories.length <= 1 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (leadStoryInteractionPaused || leadStoryAutoplayPaused || previewColumnIndex !== null || leadStories.length <= 1) return;
     const timer = window.setInterval(() => {
       if (document.hidden) return;
       setLeadStoryTransition(true);
       setLeadStoryIndex((index) => Math.min(index + 1, leadStories.length));
     }, 7000);
     return () => window.clearInterval(timer);
-  }, [leadStories.length, leadStoryPaused, previewColumnIndex]);
+  }, [leadStories.length, leadStoryInteractionPaused, leadStoryAutoplayPaused, previewColumnIndex]);
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const pauseForReducedMotion = (event: MediaQueryListEvent) => {
+      if (event.matches) setLeadStoryAutoplayPaused(true);
+    };
+    media.addEventListener("change", pauseForReducedMotion);
+    return () => media.removeEventListener("change", pauseForReducedMotion);
+  }, []);
 
   useEffect(() => {
     if (previewColumnIndex !== null || !leadStories.length || leadStoryIndex < leadStories.length) return;
@@ -258,8 +270,12 @@ export default function Home() {
         <div className="container-page grid items-stretch gap-5 xl:grid-cols-[minmax(0,1.55fr)_minmax(350px,.72fr)] xl:gap-6">
           <div
             className="h-full overflow-hidden bg-white"
-            onFocusCapture={() => setLeadStoryPaused(true)}
-            onBlurCapture={() => setLeadStoryPaused(false)}
+            onMouseEnter={() => setLeadStoryInteractionPaused(true)}
+            onMouseLeave={() => setLeadStoryInteractionPaused(false)}
+            onFocusCapture={() => setLeadStoryInteractionPaused(true)}
+            onBlurCapture={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setLeadStoryInteractionPaused(false);
+            }}
             aria-label={ko ? "네 가지 최신 기사 소개" : "Four latest featured stories"}
             aria-roledescription="carousel"
           >
@@ -269,7 +285,7 @@ export default function Home() {
                 return (
                   <article key={`${story.key}-${index}`} className="w-full shrink-0 bg-white" aria-hidden={!active} aria-label={`${story.menu}: ${story.title}`}>
                     <div className="group -mx-4 flex h-full flex-col px-4 pb-3 transition-colors hover:bg-green-pale/60">
-                      <div className="relative overflow-hidden bg-navy" onMouseEnter={() => setLeadStoryPaused(true)} onMouseLeave={() => setLeadStoryPaused(false)}>
+                      <div className="relative overflow-hidden bg-navy">
                         <Link to={story.href} tabIndex={active ? undefined : -1} className="block">
                           <SafeImage src={resolveImageSrc(story.image.src)} alt={story.image.alt} loading={index === 0 ? "eager" : "lazy"} fetchPriority={index === 0 ? "high" : "auto"} referrerPolicy="no-referrer" className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
                           <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/90 via-black/35 to-transparent px-5 pb-14 pt-20 sm:px-6">
@@ -283,6 +299,7 @@ export default function Home() {
                         {leadStories.length > 1 && (
                           <div className="absolute right-5 top-5 z-10 flex gap-1.5 sm:right-6">
                             <button type="button" onClick={() => moveLeadStory(-1)} className="grid h-9 w-9 place-items-center rounded-full bg-black/55 text-white backdrop-blur-sm transition hover:bg-green-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" aria-label={ko ? "이전 최신 기사" : "Previous featured story"}><ArrowLeft size={17}/></button>
+                            <button type="button" onClick={() => setLeadStoryAutoplayPaused((paused) => !paused)} className="grid h-9 w-9 place-items-center rounded-full bg-black/55 text-white backdrop-blur-sm transition hover:bg-green-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" aria-label={leadStoryAutoplayPaused ? (ko ? "최신 기사 자동 넘김 재생" : "Play featured stories") : (ko ? "최신 기사 자동 넘김 일시정지" : "Pause featured stories")} aria-pressed={leadStoryAutoplayPaused}>{leadStoryAutoplayPaused ? <Play size={16} fill="currentColor"/> : <Pause size={16} fill="currentColor"/>}</button>
                             <button type="button" onClick={() => moveLeadStory(1)} className="grid h-9 w-9 place-items-center rounded-full bg-black/55 text-white backdrop-blur-sm transition hover:bg-green-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" aria-label={ko ? "다음 최신 기사" : "Next featured story"}><ArrowRight size={17}/></button>
                           </div>
                         )}
@@ -303,6 +320,7 @@ export default function Home() {
             </div>
             {leadStories.length > 1 && (
               <div className="flex items-center justify-center gap-2 border-t border-green-deep/10 py-3">
+                <span className="sr-only" aria-live={leadStoryInteractionPaused || leadStoryAutoplayPaused ? "polite" : "off"}>{ko ? `${(leadStoryIndex % leadStories.length) + 1}번째 기사, ${leadStories[leadStoryIndex % leadStories.length]?.title}` : `Story ${(leadStoryIndex % leadStories.length) + 1}, ${leadStories[leadStoryIndex % leadStories.length]?.title}`}</span>
                 {leadStories.map((story, index) => <button key={story.key} type="button" onClick={() => { setPreviewColumnIndex(null); setLeadStoryTransition(true); setLeadStoryIndex(index); }} className={`h-1.5 rounded-full transition-all ${previewColumnIndex === null && (leadStoryIndex % leadStories.length) === index ? "w-7 bg-green-deep" : "w-1.5 bg-green-deep/25 hover:bg-green-deep/50"}`} aria-label={ko ? `${story.menu} 최신 기사 보기` : `Show latest ${story.menu} story`} aria-current={previewColumnIndex === null && (leadStoryIndex % leadStories.length) === index ? "true" : undefined} />)}
               </div>
             )}
