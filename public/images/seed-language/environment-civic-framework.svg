@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">환경을 함께 만드는 세 주체</title>
+  <desc id="desc">시민의 권리, 기업의 책임, 국가의 역할이 서로 연결되는 씨앗언어 환경 프레임</desc>
+  <rect width="1600" height="900" fill="#f7f4ea"/>
+  <text x="800" y="105" text-anchor="middle" font-family="Arial,sans-serif" font-size="48" font-weight="800" fill="#183d34">환경을 함께 만드는 세 주체</text>
+  <text x="800" y="155" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" fill="#5d6c67">환경은 보호의 대상이 아니라 자유·책임·제도가 함께 만드는 삶의 조건입니다.</text>
+  <g font-family="Arial,sans-serif">
+    <g transform="translate(290 410)">
+      <circle r="178" fill="#dbe9e3" stroke="#2f6b56" stroke-width="7"/>
+      <text y="-58" text-anchor="middle" font-size="34" font-weight="800" fill="#1d4d3d">시민의 권리</text>
+      <text y="0" text-anchor="middle" font-size="24" fill="#3f5d54">깨끗한 공기와 물</text>
+      <text y="40" text-anchor="middle" font-size="24" fill="#3f5d54">건강과 재산의 보호</text>
+      <text y="80" text-anchor="middle" font-size="24" fill="#3f5d54">생활환경을 선택할 자유</text>
+    </g>
+    <g transform="translate(800 410)">
+      <circle r="178" fill="#e8dfbd" stroke="#a6812f" stroke-width="7"/>
+      <text y="-58" text-anchor="middle" font-size="34" font-weight="800" fill="#674f17">기업의 책임</text>
+      <text y="0" text-anchor="middle" font-size="24" fill="#635a3f">오염비용의 내부화</text>
+      <text y="40" text-anchor="middle" font-size="24" fill="#635a3f">환경 리스크 관리</text>
+      <text y="80" text-anchor="middle" font-size="24" fill="#635a3f">기술혁신과 경쟁력</text>
+    </g>
+    <g transform="translate(1310 410)">
+      <circle r="178" fill="#dfe5eb" stroke="#51677a" stroke-width="7"/>
+      <text y="-58" text-anchor="middle" font-size="34" font-weight="800" fill="#364a5c">국가의 역할</text>
+      <text y="0" text-anchor="middle" font-size="24" fill="#50606c">피해와 책임의 규칙</text>
+      <text y="40" text-anchor="middle" font-size="24" fill="#50606c">과학적 기준과 정보</text>
+      <text y="80" text-anchor="middle" font-size="24" fill="#50606c">과잉규제의 견제</text>
+    </g>
+  </g>
+  <g stroke="#61756d" stroke-width="8" fill="none" stroke-linecap="round">
+    <path d="M465 410 H615"/><path d="M985 410 H1135"/>
+  </g>
+  <g fill="#61756d"><path d="M605 395 L635 410 L605 425Z"/><path d="M1125 395 L1155 410 L1125 425Z"/></g>
+  <rect x="260" y="690" width="1080" height="112" rx="14" fill="#173f35"/>
+  <text x="800" y="737" text-anchor="middle" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#f7f4ea">판단 기준</text>
+  <text x="800" y="776" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" fill="#f7f4ea">실제 피해 · 정책 효과 · 비용 부담 · 대안의 존재 · 정당한 절차</text>
+</svg>
