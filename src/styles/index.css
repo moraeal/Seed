@@ -37,6 +37,9 @@ button, input, textarea { font: inherit; }
 .hero-art-slide { min-height: 0; aspect-ratio: 756 / 331; align-self: start; background: #eef1e8; }
 .hero-art-slide::before { display: none; }
 
+/* 메인 좌측 상단 LH 대표 이미지의 AI 제작 출처 문구는 표시하지 않습니다. */
+[aria-roledescription="carousel"] .relative.overflow-hidden.bg-navy:has(> a > img[src$="lh-split-hero-v2.webp"]) > span.absolute.bottom-5.left-5 { display: none !important; }
+
 @media (max-width: 640px) {
   .briefing-hero-banner { background-image: none !important; }
   .hero-slide:not(.hero-art-slide) { min-height: 560px; }
