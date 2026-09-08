@@ -8,6 +8,7 @@ const run = promisify(execFile);
 const root = process.cwd();
 const publicRoot = path.join(root, "public");
 const outputRoot = path.join(publicRoot, "images", "social");
+const environmentHero = "images/seed-language/environment-shared-condition-hero.webp";
 
 const server = await createServer({
   configFile: false,
@@ -35,7 +36,7 @@ const jobs = [
       ?? "images/briefings/briefing-05-budget-ledger.webp",
   })),
   ...columnModule.columns.map((item) => ({ section: "columns", slug: item.slug, src: item.heroImage.src, fallbackSrc: item.heroImage.socialSrc })),
-  ...seedLanguageEnvironmentModule.seedLanguageEnvironmentArticlesKo.map((item) => ({ section: "seed-language", slug: item.slug, src: item.heroImage.src })),
+  ...seedLanguageEnvironmentModule.seedLanguageEnvironmentArticlesKo.map((item) => ({ section: "seed-language", slug: item.slug, src: environmentHero })),
   ...seedLanguageModule.seedLanguageArticlesKo.map((item) => ({ section: "seed-language", slug: item.slug, src: item.heroImage.src })),
 ];
 
