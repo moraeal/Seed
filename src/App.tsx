@@ -39,7 +39,7 @@ function AppShell() {
   const location = useLocation();
   const { language } = useLanguage();
   const normalizedPath = location.pathname.replace(/\/+$/, "") || "/";
-  const showNewsletterAtBottom = !["/", "/en", "/account", "/insights"].includes(normalizedPath);
+  const showNewsletterAtBottom = !["/", "/en", "/account"].includes(normalizedPath) && !normalizedPath.startsWith("/insights");
 
   return (
     <div className="min-h-screen bg-paper text-charcoal">
@@ -53,6 +53,10 @@ function AppShell() {
           <Route path="/en" element={<Home />} />
           <Route path="/account" element={<Account />} />
           <Route path="/insights" element={<Insights />} />
+          <Route path="/insights/content" element={<Insights />} />
+          <Route path="/insights/traffic" element={<Insights />} />
+          <Route path="/insights/subscribers" element={<Insights />} />
+          <Route path="/insights/members" element={<Insights />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/publisher-message" element={<PublisherMessage />} />
