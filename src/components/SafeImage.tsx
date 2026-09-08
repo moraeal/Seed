@@ -18,7 +18,7 @@ const resolveImageSrc = (src?: string) => {
 
 const defaultFallback = `${import.meta.env.BASE_URL}images/brand/editorial-image-fallback.svg`;
 
-export default function SafeImage({ src, fallbackSrc = defaultFallback, onError, ...props }: SafeImageProps) {
+export default function SafeImage({ src, fallbackSrc = defaultFallback, onError, loading = "lazy", decoding = "async", ...props }: SafeImageProps) {
   const primarySrc = resolveImageSrc(src);
   const resolvedFallback = resolveImageSrc(fallbackSrc);
   const [currentSrc, setCurrentSrc] = useState(primarySrc || resolvedFallback);
@@ -31,6 +31,8 @@ export default function SafeImage({ src, fallbackSrc = defaultFallback, onError,
     <img
       {...props}
       src={currentSrc}
+      loading={loading}
+      decoding={decoding}
       onError={(event) => {
         onError?.(event);
         if (currentSrc !== resolvedFallback) setCurrentSrc(resolvedFallback);

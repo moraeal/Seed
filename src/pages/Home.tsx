@@ -271,7 +271,7 @@ export default function Home() {
                     <div className="group -mx-4 flex h-full flex-col px-4 pb-3 transition-colors hover:bg-green-pale/60">
                       <div className="relative overflow-hidden bg-navy" onMouseEnter={() => setLeadStoryPaused(true)} onMouseLeave={() => setLeadStoryPaused(false)}>
                         <Link to={story.href} tabIndex={active ? undefined : -1} className="block">
-                          <SafeImage src={resolveImageSrc(story.image.src)} alt={story.image.alt} referrerPolicy="no-referrer" className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
+                          <SafeImage src={resolveImageSrc(story.image.src)} alt={story.image.alt} loading={index === 0 ? "eager" : "lazy"} fetchPriority={index === 0 ? "high" : "auto"} referrerPolicy="no-referrer" className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
                           <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/90 via-black/35 to-transparent px-5 pb-14 pt-20 sm:px-6">
                             <h1 className="line-clamp-2 max-w-full text-balance font-sans text-[clamp(1.45rem,3vw,2.65rem)] font-black leading-[1.08] tracking-[-0.045em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,.85)]">{story.title}</h1>
                           </div>
