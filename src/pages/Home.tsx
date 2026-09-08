@@ -1,10 +1,11 @@
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { columns } from "../data/columns";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
 import { getNewsNewestFirst } from "../data/news";
+import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { useLanguage } from "../i18n";
 import NewsletterSignup from "../components/NewsletterSignup";
 
@@ -12,6 +13,25 @@ const resolveImageSrc = (src?: string) => {
   if (!src) return "";
   if (/^https?:\/\//i.test(src)) return src;
   return `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
+};
+
+type LeadStory = {
+  key: string;
+  menu: string;
+  eyebrow: string;
+  title: string;
+  summary: string;
+  excerpt?: string;
+  date: string;
+  readMinutes: number;
+  href: string;
+  cta: string;
+  image: {
+    src: string;
+    alt: string;
+    credit: string;
+    sourceUrl?: string;
+  };
 };
 
 export default function Home() {
@@ -24,15 +44,87 @@ export default function Home() {
   const [briefingPaused, setBriefingPaused] = useState(false);
   const [briefingTransition, setBriefingTransition] = useState(true);
   const [briefingVisibleCount, setBriefingVisibleCount] = useState(() => typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches ? 3 : 1);
-  const [activeColumnIndex, setActiveColumnIndex] = useState(0);
+  const [leadStoryIndex, setLeadStoryIndex] = useState(0);
+  const [leadStoryPaused, setLeadStoryPaused] = useState(false);
   const ko = language === "ko";
   const briefings = getAllBriefingsNewestFirst().slice(0, 5).map((item) => localizeBriefing(item, language));
   const journalColumns = [...columns].sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue).slice(0, 5).map((item) => localizeColumn(item, language));
   const news = getNewsNewestFirst().slice(0, 5).map((item) => localizeNewsArticle(item, language));
-  const leadColumn = journalColumns[activeColumnIndex] ?? journalColumns[0];
-  const leadColumnExcerpt = leadColumn?.sections.flatMap((section) => section.paragraphs)[0];
+  const seedLanguageArticle = seedLanguageArticlesKo
+    .map((item) => getSeedLanguageArticle(item.slug, language)!)
+    .sort((a, b) => b.date.localeCompare(a.date))[0];
+  const latestColumn = journalColumns[0];
+  const latestBriefing = briefings[0];
+  const latestNews = news[0];
+  const leadStories = [
+    latestColumn && {
+      key: `column-${latestColumn.slug}`,
+      menu: ko ? "씨앗의소리" : "SEED's Voice",
+      eyebrow: "THE VOICE OF SEED",
+      title: latestColumn.title,
+      summary: latestColumn.summary,
+      excerpt: latestColumn.sections.flatMap((section) => section.paragraphs)[0],
+      date: latestColumn.date,
+      readMinutes: latestColumn.readMinutes,
+      href: `/columns/${latestColumn.slug}`,
+      cta: ko ? "씨앗의소리 읽기" : "Read SEED's Voice",
+      image: latestColumn.heroImage,
+    },
+    latestBriefing?.images?.[0] && {
+      key: `briefing-${latestBriefing.slug}`,
+      menu: ko ? "브리핑" : "Briefing",
+      eyebrow: "SEED CITIZEN BRIEFING",
+      title: latestBriefing.title,
+      summary: latestBriefing.summary,
+      excerpt: latestBriefing.sections?.[0]?.paragraphs?.[0] ?? latestBriefing.content[0],
+      date: latestBriefing.date,
+      readMinutes: latestBriefing.readMinutes,
+      href: `/briefings/${latestBriefing.slug}`,
+      cta: ko ? "브리핑 읽기" : "Read briefing",
+      image: latestBriefing.images[0],
+    },
+    latestNews && {
+      key: `news-${latestNews.slug}`,
+      menu: ko ? "오늘의뉴스" : "Today's News",
+      eyebrow: "TODAY'S NEWS",
+      title: latestNews.title,
+      summary: latestNews.summary,
+      excerpt: latestNews.keySentence,
+      date: latestNews.date,
+      readMinutes: latestNews.readMinutes,
+      href: `/news/${latestNews.slug}`,
+      cta: ko ? "오늘의뉴스 읽기" : "Read today's news",
+      image: latestNews.heroImage,
+    },
+    seedLanguageArticle && {
+      key: `language-${seedLanguageArticle.slug}`,
+      menu: ko ? "씨앗언어" : "SEED Language",
+      eyebrow: "SEED LANGUAGE",
+      title: seedLanguageArticle.title,
+      summary: seedLanguageArticle.summary,
+      excerpt: seedLanguageArticle.keyPoints[0],
+      date: seedLanguageArticle.date,
+      readMinutes: seedLanguageArticle.readMinutes,
+      href: `/seed-language/${seedLanguageArticle.slug}`,
+      cta: ko ? "씨앗언어 읽기" : "Read SEED Language",
+      image: seedLanguageArticle.heroImage,
+    },
+  ].filter(Boolean) as LeadStory[];
   const rotatingNewsCards = news.length ? [...news, ...news.slice(0, newsVisibleCount)] : [];
   const rotatingBriefingCards = briefings.length ? [...briefings, ...briefings.slice(0, briefingVisibleCount)] : [];
+
+  useEffect(() => {
+    setLeadStoryIndex(0);
+  }, [language]);
+
+  useEffect(() => {
+    if (leadStoryPaused || leadStories.length <= 1 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => {
+      if (document.hidden) return;
+      setLeadStoryIndex((index) => (index + 1) % leadStories.length);
+    }, 5000);
+    return () => window.clearInterval(timer);
+  }, [leadStories.length, leadStoryPaused]);
 
   useEffect(() => {
     const media = window.matchMedia("(min-width: 768px)");
@@ -104,28 +196,65 @@ export default function Home() {
     window.requestAnimationFrame(() => window.requestAnimationFrame(() => setBriefingTransition(true)));
   };
 
+  const moveLeadStory = (direction: number) => {
+    setLeadStoryIndex((index) => (index + direction + leadStories.length) % leadStories.length);
+  };
+
   return (
     <div className="bg-paper">
       <section className="border-b border-green-deep/20 bg-ivory py-5 sm:py-7">
         <div className="container-page grid items-stretch gap-5 xl:grid-cols-[minmax(0,1.55fr)_minmax(350px,.72fr)] xl:gap-6">
-          <div className="h-full">
-            {leadColumn && (
-              <article className="h-full bg-white">
-                <div className="group -mx-4 flex h-full flex-col px-4 pb-3 transition-colors hover:bg-green-pale/60">
-                  <div className="relative overflow-hidden bg-navy">
-                    <Link to={`/columns/${leadColumn.slug}`} className="block"><img src={resolveImageSrc(leadColumn.heroImage.src)} alt={leadColumn.heroImage.alt} className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" /><div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/90 via-black/35 to-transparent px-5 pb-14 pt-20 sm:px-6"><h1 className="max-w-full font-sans text-[clamp(1.45rem,3vw,2.65rem)] font-black leading-[1.05] tracking-[-0.045em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,.85)] lg:whitespace-nowrap">{leadColumn.title}</h1></div></Link>
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end px-5 pb-5 text-white sm:px-6">
-                      <time className="rounded-sm bg-black/45 px-2.5 py-1 text-[11px] font-semibold tracking-normal text-white drop-shadow-[0_1px_3px_rgba(0,0,0,.95)] backdrop-blur-sm">{leadColumn.date.replace(/-/g, ".")}</time>
+          <div
+            className="h-full overflow-hidden bg-white"
+            onMouseEnter={() => setLeadStoryPaused(true)}
+            onMouseLeave={() => setLeadStoryPaused(false)}
+            onFocusCapture={() => setLeadStoryPaused(true)}
+            onBlurCapture={() => setLeadStoryPaused(false)}
+            aria-label={ko ? "네 가지 최신 기사 소개" : "Four latest featured stories"}
+            aria-roledescription="carousel"
+          >
+            <div className="flex h-full transition-transform duration-700 ease-out motion-reduce:transition-none" style={{ transform: `translateX(-${leadStoryIndex * 100}%)` }}>
+              {leadStories.map((story, index) => {
+                const active = index === leadStoryIndex;
+                return (
+                  <article key={story.key} className="w-full shrink-0 bg-white" aria-hidden={!active} aria-label={`${story.menu}: ${story.title}`}>
+                    <div className="group -mx-4 flex h-full flex-col px-4 pb-3 transition-colors hover:bg-green-pale/60">
+                      <div className="relative overflow-hidden bg-navy">
+                        <Link to={story.href} tabIndex={active ? undefined : -1} className="block">
+                          <img src={resolveImageSrc(story.image.src)} alt={story.image.alt} referrerPolicy="no-referrer" className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
+                          <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/90 via-black/35 to-transparent px-5 pb-14 pt-20 sm:px-6">
+                            <h1 className="max-w-full font-sans text-[clamp(1.45rem,3vw,2.65rem)] font-black leading-[1.05] tracking-[-0.045em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,.85)]">{story.title}</h1>
+                          </div>
+                        </Link>
+                        <div className="pointer-events-none absolute left-5 top-5 sm:left-6">
+                          <p className="rounded-sm bg-green-deep/90 px-3 py-1.5 text-[10px] font-black tracking-[.13em] text-gold-light backdrop-blur-sm">{story.eyebrow}</p>
+                          <p className="mt-1.5 text-xs font-extrabold text-white drop-shadow-md">{story.menu}</p>
+                        </div>
+                        {leadStories.length > 1 && (
+                          <div className="absolute right-5 top-5 z-10 flex gap-1.5 sm:right-6">
+                            <button type="button" onClick={() => moveLeadStory(-1)} className="grid h-9 w-9 place-items-center rounded-full bg-black/55 text-white backdrop-blur-sm transition hover:bg-green-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" aria-label={ko ? "이전 최신 기사" : "Previous featured story"}><ArrowLeft size={17}/></button>
+                            <button type="button" onClick={() => moveLeadStory(1)} className="grid h-9 w-9 place-items-center rounded-full bg-black/55 text-white backdrop-blur-sm transition hover:bg-green-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" aria-label={ko ? "다음 최신 기사" : "Next featured story"}><ArrowRight size={17}/></button>
+                          </div>
+                        )}
+                        <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end px-5 pb-5 text-white sm:px-6">
+                          <time className="rounded-sm bg-black/45 px-2.5 py-1 text-[11px] font-semibold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,.95)] backdrop-blur-sm">{story.date.replace(/-/g, ".")} · {story.readMinutes}{ko ? "분" : " min"}</time>
+                        </div>
+                        {story.image.sourceUrl ? <a href={story.image.sourceUrl} target="_blank" rel="noreferrer" tabIndex={active ? undefined : -1} className="absolute bottom-5 left-5 z-10 max-w-[45%] truncate rounded-sm bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white underline decoration-white/45 underline-offset-2 backdrop-blur-sm transition hover:bg-black/80 sm:left-6">{story.image.credit}</a> : <span className="pointer-events-none absolute bottom-5 left-5 z-10 max-w-[45%] truncate rounded-sm bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur-sm sm:left-6">{story.image.credit}</span>}
+                      </div>
+                      <Link to={story.href} tabIndex={active ? undefined : -1} className="flex flex-1 flex-col px-5 sm:px-6">
+                        <p className="mt-3 max-w-4xl text-base font-medium leading-7 text-charcoal/65 sm:text-[17px]">{story.summary}</p>
+                        {story.excerpt && <p className="mt-3 max-w-4xl border-l-2 border-gold/70 pl-4 text-[15px] leading-7 text-charcoal/72 line-clamp-3 sm:text-base">{story.excerpt}</p>}
+                        <span className="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-extrabold text-green-deep">{story.cta}<ArrowRight size={16}/></span>
+                      </Link>
                     </div>
-                    {leadColumn.heroImage.sourceUrl && <a href={leadColumn.heroImage.sourceUrl} target="_blank" rel="noreferrer" className="absolute bottom-5 left-5 z-10 rounded-sm bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white underline decoration-white/45 underline-offset-2 backdrop-blur-sm transition hover:bg-black/80 sm:left-6">{leadColumn.heroImage.credit}</a>}
-                  </div>
-                  <Link to={`/columns/${leadColumn.slug}`} className="flex flex-1 flex-col px-5 sm:px-6">
-                    <p className="mt-3 max-w-4xl text-base font-medium leading-7 text-charcoal/65 sm:text-[17px]">{leadColumn.summary}</p>
-                    {leadColumnExcerpt && <p className="mt-3 max-w-4xl border-l-2 border-gold/70 pl-4 text-[15px] leading-7 text-charcoal/72 sm:line-clamp-4 sm:text-base">{leadColumnExcerpt}</p>}
-                    <span className="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-extrabold text-green-deep">{ko ? "씨앗의 소리 계속 읽기" : "Continue reading SEED's voice"}<ArrowRight size={16}/></span>
-                  </Link>
-                </div>
-              </article>
+                  </article>
+                );
+              })}
+            </div>
+            {leadStories.length > 1 && (
+              <div className="flex items-center justify-center gap-2 border-t border-green-deep/10 py-3">
+                {leadStories.map((story, index) => <button key={story.key} type="button" onClick={() => setLeadStoryIndex(index)} className={`h-1.5 rounded-full transition-all ${leadStoryIndex === index ? "w-7 bg-green-deep" : "w-1.5 bg-green-deep/25 hover:bg-green-deep/50"}`} aria-label={ko ? `${story.menu} 최신 기사 보기` : `Show latest ${story.menu} story`} aria-current={leadStoryIndex === index ? "true" : undefined} />)}
+              </div>
             )}
           </div>
 
@@ -136,15 +265,11 @@ export default function Home() {
 
             <div className="flex min-h-0 flex-1 flex-col">
               {journalColumns.slice(0, 5).map((column, index) => {
-                const columnIndex = index;
-                const active = activeColumnIndex === columnIndex;
                 return (
                   <Link
                     key={column.slug}
                     to={`/columns/${column.slug}`}
-                    onMouseEnter={() => setActiveColumnIndex(columnIndex)}
-                    onFocus={() => setActiveColumnIndex(columnIndex)}
-                    className={`group flex flex-1 flex-col justify-center border-l-4 px-6 py-2.5 transition sm:px-7 ${active ? "border-gold bg-green-pale/80" : "border-transparent bg-white hover:bg-green-pale/65"} ${index < 4 ? "border-b border-b-green-deep/15" : ""}`}
+                    className={`group flex flex-1 flex-col justify-center border-l-4 border-transparent bg-white px-6 py-2.5 transition hover:border-gold hover:bg-green-pale/65 focus-visible:border-gold focus-visible:bg-green-pale/65 sm:px-7 ${index < 4 ? "border-b border-b-green-deep/15" : ""}`}
                   >
                     <time className="text-[11px] text-charcoal/45">{column.date.replace(/-/g, ".")}</time>
                     <h3 className="editorial-title mt-1 text-base font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.05rem]">{column.title}</h3>
