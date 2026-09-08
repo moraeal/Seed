@@ -7,6 +7,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import NewsletterSignup from "./components/NewsletterSignup";
 import { LanguageProvider } from "./i18n";
 import About from "./pages/About";
+import PublisherMessage from "./pages/PublisherMessage";
 import Account from "./pages/Account";
 import CivicDictionary from "./pages/CivicDictionary";
 import Forum from "./pages/Forum";
@@ -48,6 +49,7 @@ function AppShell() {
           <Route path="/account" element={<Account />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/about" element={<About />} />
+          <Route path="/publisher-message" element={<PublisherMessage />} />
           <Route path="/seed-language" element={<SeedLanguage />} />
           <Route path="/seed-language/:slug" element={<SeedLanguageDetail />} />
           <Route path="/forum" element={<Forum />} />

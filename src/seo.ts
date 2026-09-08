@@ -60,7 +60,8 @@ const staticRoutes: SeoRoute[] = [
   { path: "/proposals", title: "시민제안 | 씨앗의 소리", description: "시민의 문제의식을 구체적인 제도와 정책의 제안으로 키우는 씨앗의 소리 제안 공간입니다.", type: "website", lastModified: latestDate },
   { path: "/founding-statement", title: "씨앗의 소리 취지문 | 씨앗의 소리", description: "한 사람의 생각과 목소리도 세상을 향해 자랄 수 있다는 믿음에서 시작한 독립 시민미디어 씨앗의 소리의 취지문입니다.", type: "article", lastModified: latestDate, author: "박경석", section: "씨앗의 소리 취지문" },
   { path: "/seed-language", title: "씨앗언어 | 씨앗의 소리", description: "특정 진영이 독점한 시민사회의 언어를 해체하고 본래 의미를 되살려 시민의 언어로 다시 구성합니다.", type: "website", lastModified: newest(seedLanguageArticlesKo.map((item) => item.date)) },
-  { path: "/about", title: "소개 | 씨앗의 소리", description: "박경석이 혼자 만들고 운영하는 1인 독립 시민미디어 씨앗의 소리와 발행인을 소개합니다.", type: "website", lastModified: latestDate },
+  { path: "/about", title: "씨드 보이스 소개 | 씨앗의 소리", description: "자유의 영역을 넓히고 기업의 도전과 혁신을 보호하며 국가와 시민사회의 권력을 감시하는 독립 시민저널 씨앗의 소리를 소개합니다.", type: "website", lastModified: latestDate },
+  { path: "/publisher-message", title: "발행인 인사말 | 씨앗의 소리", description: "한 사람의 질문과 판단에서 시작된 독립 시민미디어 씨앗의 소리의 발행인 인사말입니다.", type: "article", lastModified: latestDate, author: "박경석", section: "발행인 인사말" },
 ];
 
 const newsRoutes: SeoRoute[] = newsArticles.map((article) => ({
