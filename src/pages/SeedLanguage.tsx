@@ -1,13 +1,17 @@
 import { ArrowRight, BookOpenText, Clock, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
+import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
 import { useLanguage } from "../i18n";
 import SafeImage from "../components/SafeImage";
 
 export default function SeedLanguage() {
   const { language } = useLanguage();
   const ko = language === "ko";
-  const articles = seedLanguageArticlesKo.map((item) => getSeedLanguageArticle(item.slug, language)!);
+  const articleIndex = [...seedLanguageEnvironmentArticlesKo, ...seedLanguageArticlesKo];
+  const articles = articleIndex
+    .map((item) => getSeedLanguageEnvironmentArticle(item.slug, language) ?? getSeedLanguageArticle(item.slug, language))
+    .filter((article): article is NonNullable<typeof article> => Boolean(article));
 
   return (
     <div className="min-h-[68vh] bg-paper">
