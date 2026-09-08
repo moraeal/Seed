@@ -34,6 +34,9 @@ export type SelectedNews = {
   thumbnailUrl?: string;
   thumbnailAlt?: string;
   thumbnailCaption?: string;
+  thumbnailYoutubeId?: string;
+  thumbnailPlacement?: "top" | "after-summary";
+  thumbnailFallbackUrl?: string;
 };
 
 export type NewsArticle = {

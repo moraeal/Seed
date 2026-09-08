@@ -1,5 +1,6 @@
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import type { SelectedNews } from "../data/news";
+import InteractiveFigure from "./InteractiveFigure";
 import SafeImage from "./SafeImage";
 
 type SourceArticleCardProps = {
@@ -17,6 +18,26 @@ const resolveImageSrc = (src?: string) => {
 export default function SourceArticleCard({ news, compact = false, ko }: SourceArticleCardProps) {
   const thumbnail = resolveImageSrc(news.thumbnailUrl);
   const publisherOwnedThumbnail = /^https?:\/\//i.test(news.thumbnailUrl ?? "");
+  const thumbnailAfterSummary = news.thumbnailPlacement === "after-summary";
+
+  const fullThumbnail = thumbnail && (news.thumbnailYoutubeId ? (
+    <InteractiveFigure
+      src={thumbnail}
+      alt={news.thumbnailAlt ?? news.headline}
+      caption={news.thumbnailCaption}
+      credit={`${ko ? "영상 화면" : "Video still"} · ${news.outlet}`}
+      sourceUrl={news.url}
+      youtubeId={news.thumbnailYoutubeId}
+      fallbackSrc={news.thumbnailFallbackUrl}
+      figureClassName="overflow-hidden bg-green-deep"
+      imageClassName="aspect-[16/9] w-full object-cover"
+    />
+  ) : (
+    <a href={news.url} target="_blank" rel="noreferrer" className="group/image block overflow-hidden bg-green-deep">
+      <SafeImage src={thumbnail} alt={news.thumbnailAlt ?? ""} referrerPolicy="no-referrer" className="aspect-[16/9] w-full object-cover transition duration-500 group-hover/image:scale-[1.015]"/>
+      {news.thumbnailCaption && <span className="block border-t border-green-deep/10 bg-white px-5 py-3 text-xs leading-5 text-charcoal/50">{news.thumbnailCaption}</span>}
+    </a>
+  ));
 
   if (compact) {
     return (
@@ -39,16 +60,12 @@ export default function SourceArticleCard({ news, compact = false, ko }: SourceA
 
   return (
     <section className="mb-10 overflow-hidden border border-green-deep/15 bg-white shadow-[0_16px_45px_rgba(23,76,58,.08)]">
-      {thumbnail && (
-        <a href={news.url} target="_blank" rel="noreferrer" className="group/image block overflow-hidden bg-green-deep">
-          <SafeImage src={thumbnail} alt={news.thumbnailAlt ?? ""} referrerPolicy="no-referrer" className="aspect-[16/9] w-full object-cover transition duration-500 group-hover/image:scale-[1.015]"/>
-          {news.thumbnailCaption && <span className="block border-t border-green-deep/10 bg-white px-5 py-3 text-xs leading-5 text-charcoal/50">{news.thumbnailCaption}</span>}
-        </a>
-      )}
+      {!thumbnailAfterSummary && fullThumbnail}
       <div className="p-6 sm:p-9">
         <div className="flex flex-wrap items-center gap-3 text-xs font-bold text-charcoal/50"><span className="section-kicker">{ko ? "오늘의뉴스 선정 기사" : "TODAY'S SELECTED NEWS"}</span><span>{news.outlet}</span><time>{news.publishedAt}</time></div>
         <h2 className="editorial-title mt-5 text-2xl font-bold leading-snug text-navy sm:text-3xl">{news.headline}</h2>
         <div className="mt-6 border-t border-green-deep/10 pt-5"><span className="text-xs font-extrabold tracking-[.16em] text-green-deep">{ko ? "기사 핵심 요약" : "KEY POINTS"}</span><ul className="mt-4 grid gap-3 text-sm leading-7 text-charcoal/70 sm:text-base">{news.summary.map((item, index) => <li key={`${index}-${item}`} className="flex gap-3"><span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"/><span>{item}</span></li>)}</ul></div>
+        {thumbnailAfterSummary && fullThumbnail && <div className="-mx-6 mt-7 border-y border-green-deep/10 sm:-mx-9">{fullThumbnail}</div>}
         <a href={news.url} target="_blank" rel="noreferrer" className="button-secondary mt-7 inline-flex text-sm">{news.linkLabel}<ArrowUpRight size={15}/></a>
         {publisherOwnedThumbnail && <p className="mt-3 text-[11px] leading-5 text-charcoal/40">{ko ? "기사 사진과 제목의 저작권은 해당 언론사·제공자에게 있으며, 원문 소개와 출처 확인을 위해 인용했습니다." : "The article image and headline remain the property of the publisher or credited provider and are shown here for source identification and access to the original report."}</p>}
       </div>

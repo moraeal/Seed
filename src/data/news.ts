@@ -27,7 +27,12 @@ const lhSplitPublicAgencyArticle: NewsArticle = {
     headline: "정부, 17년 만에 LH 분리 추진..개발·자산관리 나눈다",
     url: "https://www.youtube.com/watch?v=ervJ5jH7dig",
     linkLabel: "SBS 뉴스 영상 보기",
-    thumbnailUrl: "/images/news/lh-split-hero-v2.webp",
+    thumbnailUrl: "https://i.ytimg.com/vi/ervJ5jH7dig/hqdefault.jpg",
+    thumbnailAlt: "정부의 LH 분리 추진을 보도한 SBS 뉴스 경제365 영상 화면",
+    thumbnailCaption: "화면을 누르면 SBS 뉴스 영상을 이 페이지에서 바로 볼 수 있습니다.",
+    thumbnailYoutubeId: "ervJ5jH7dig",
+    thumbnailPlacement: "after-summary",
+    thumbnailFallbackUrl: "/images/news/lh-split-hero-v2.webp",
     summary: [
       "정부는 2009년 통합 출범한 LH를 17년 만에 다시 두 회사로 나누는 방안을 추진하고 있습니다.",
       "정부 구상대로라면 택지개발과 주택건설은 주택도시개발공사가, 임대주택 운영과 주거복지·토지비축은 주택도시자산공사가 맡게 됩니다.",
