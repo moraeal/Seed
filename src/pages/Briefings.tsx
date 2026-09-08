@@ -52,18 +52,18 @@ export default function Briefings() {
                 </div>
 
                 <div>
-                  <h2 className="editorial-title text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">
+                  <h2 className="editorial-title line-clamp-2 text-balance text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">
                     {briefing.title}
                   </h2>
-                  <p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/55">{briefing.summary}</p>
-                  <div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-charcoal/45">
+                  <p className="mt-2 line-clamp-2 max-w-3xl text-base leading-7 text-charcoal/60">{briefing.summary}</p>
+                  <div className="mt-4 flex flex-wrap items-center gap-4 border-t border-green-deep/10 pt-3 text-xs text-charcoal/45">
                     <time>{briefing.date.replace(/-/g, ".")}</time>
                     <span>{briefing.author}</span>
                     <span className="flex items-center gap-1">
                       <Clock size={13} />
                       {ko ? `${briefing.readMinutes}분` : `${briefing.readMinutes} min`}
                     </span>
-                    <span className="ml-auto flex items-center gap-2 font-bold text-green-deep">
+                    <span className="ml-auto flex items-center gap-2 font-extrabold text-green-deep">
                       {ko ? "브리핑 읽기" : "Read briefing"}
                       <ArrowRight size={15} />
                     </span>

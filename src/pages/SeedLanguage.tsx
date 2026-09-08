@@ -59,9 +59,9 @@ export default function SeedLanguage() {
               <div className="h-full min-h-56 overflow-hidden bg-green-deep"><SafeImage src={`${import.meta.env.BASE_URL}${heroSrc}`} alt={heroAlt} className="aspect-[4/3] h-full w-full object-cover transition duration-500 group-hover:scale-[1.025] md:aspect-auto"/></div>
               <div className="px-5 py-6 md:px-7">
                 <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-charcoal/45"><span className="rounded-full bg-green-pale px-2.5 py-1 font-extrabold text-green-deep">{article.term}</span></div>
-                <h3 className="editorial-title text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">{article.title}</h3>
-                <p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/55">{article.summary}</p>
-                <div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={13}/>{ko ? `${article.readMinutes}분` : `${article.readMinutes} min`}</span><span className="ml-auto flex items-center gap-2 font-bold text-green-deep">{ko ? "글 읽기" : "Read article"}<ArrowRight size={15}/></span></div>
+                <h3 className="editorial-title line-clamp-2 text-balance text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">{article.title}</h3>
+                <p className="mt-2 line-clamp-2 max-w-3xl text-base leading-7 text-charcoal/60">{article.summary}</p>
+                <div className="mt-4 flex flex-wrap items-center gap-4 border-t border-green-deep/10 pt-3 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={13}/>{ko ? `${article.readMinutes}분` : `${article.readMinutes} min`}</span><span className="ml-auto flex items-center gap-2 font-extrabold text-green-deep">{ko ? "글 읽기" : "Read article"}<ArrowRight size={15}/></span></div>
               </div>
             </Link>;
           })}
