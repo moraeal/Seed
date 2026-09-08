@@ -46,6 +46,7 @@ export default function Home() {
   const [briefingVisibleCount, setBriefingVisibleCount] = useState(() => typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches ? 3 : 1);
   const [leadStoryIndex, setLeadStoryIndex] = useState(0);
   const [leadStoryPaused, setLeadStoryPaused] = useState(false);
+  const [leadStoryTransition, setLeadStoryTransition] = useState(true);
   const [previewColumnIndex, setPreviewColumnIndex] = useState<number | null>(null);
   const ko = language === "ko";
   const briefings = getAllBriefingsNewestFirst().slice(0, 5).map((item) => localizeBriefing(item, language));
@@ -116,8 +117,9 @@ export default function Home() {
       image: seedLanguageArticle.heroImage,
     },
   ].filter(Boolean) as LeadStory[];
+  const rotatingLeadStories = leadStories.length ? [...leadStories, leadStories[0]] : [];
   const displayedLeadStories = previewColumnIndex === null
-    ? leadStories
+    ? rotatingLeadStories
     : [columnLeadStories[previewColumnIndex] ?? leadStories[0]];
   const displayedLeadStoryIndex = previewColumnIndex === null ? leadStoryIndex : 0;
   const rotatingNewsCards = news.length ? [...news, ...news.slice(0, newsVisibleCount)] : [];
@@ -131,10 +133,21 @@ export default function Home() {
     if (leadStoryPaused || previewColumnIndex !== null || leadStories.length <= 1 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setInterval(() => {
       if (document.hidden) return;
-      setLeadStoryIndex((index) => (index + 1) % leadStories.length);
+      setLeadStoryTransition(true);
+      setLeadStoryIndex((index) => Math.min(index + 1, leadStories.length));
     }, 7000);
     return () => window.clearInterval(timer);
   }, [leadStories.length, leadStoryPaused, previewColumnIndex]);
+
+  useEffect(() => {
+    if (previewColumnIndex !== null || !leadStories.length || leadStoryIndex < leadStories.length) return;
+    const fallback = window.setTimeout(() => {
+      setLeadStoryTransition(false);
+      setLeadStoryIndex(0);
+      window.requestAnimationFrame(() => window.requestAnimationFrame(() => setLeadStoryTransition(true)));
+    }, 850);
+    return () => window.clearTimeout(fallback);
+  }, [leadStories.length, leadStoryIndex, previewColumnIndex]);
 
   useEffect(() => {
     const media = window.matchMedia("(min-width: 768px)");
@@ -206,9 +219,31 @@ export default function Home() {
     window.requestAnimationFrame(() => window.requestAnimationFrame(() => setBriefingTransition(true)));
   };
 
+  const finishLeadStoryTransition = () => {
+    if (previewColumnIndex !== null || leadStoryIndex < leadStories.length) return;
+    setLeadStoryTransition(false);
+    setLeadStoryIndex(0);
+    window.requestAnimationFrame(() => window.requestAnimationFrame(() => setLeadStoryTransition(true)));
+  };
+
   const moveLeadStory = (direction: number) => {
     setPreviewColumnIndex(null);
-    setLeadStoryIndex((index) => (index + direction + leadStories.length) % leadStories.length);
+    setLeadStoryTransition(true);
+    setLeadStoryIndex((index) => direction > 0
+      ? Math.min((index >= leadStories.length ? 0 : index) + 1, leadStories.length)
+      : ((index >= leadStories.length ? 0 : index) - 1 + leadStories.length) % leadStories.length);
+  };
+
+  const showColumnPreview = (index: number) => {
+    setLeadStoryTransition(false);
+    setLeadStoryIndex((current) => current >= leadStories.length ? 0 : current);
+    setPreviewColumnIndex(index);
+  };
+
+  const clearColumnPreview = () => {
+    setLeadStoryTransition(false);
+    setPreviewColumnIndex(null);
+    window.requestAnimationFrame(() => window.requestAnimationFrame(() => setLeadStoryTransition(true)));
   };
 
   return (
@@ -222,11 +257,11 @@ export default function Home() {
             aria-label={ko ? "네 가지 최신 기사 소개" : "Four latest featured stories"}
             aria-roledescription="carousel"
           >
-            <div className={`flex h-full ${previewColumnIndex === null ? "transition-transform duration-700 ease-out" : ""} motion-reduce:transition-none`} style={{ transform: `translateX(-${displayedLeadStoryIndex * 100}%)` }}>
+            <div className={`flex h-full ${previewColumnIndex === null && leadStoryTransition ? "transition-transform duration-700 ease-out" : ""} motion-reduce:transition-none`} style={{ transform: `translateX(-${displayedLeadStoryIndex * 100}%)` }} onTransitionEnd={(event) => { if (event.target === event.currentTarget) finishLeadStoryTransition(); }}>
               {displayedLeadStories.map((story, index) => {
                 const active = index === displayedLeadStoryIndex;
                 return (
-                  <article key={story.key} className="w-full shrink-0 bg-white" aria-hidden={!active} aria-label={`${story.menu}: ${story.title}`}>
+                  <article key={`${story.key}-${index}`} className="w-full shrink-0 bg-white" aria-hidden={!active} aria-label={`${story.menu}: ${story.title}`}>
                     <div className="group -mx-4 flex h-full flex-col px-4 pb-3 transition-colors hover:bg-green-pale/60">
                       <div className="relative overflow-hidden bg-navy" onMouseEnter={() => setLeadStoryPaused(true)} onMouseLeave={() => setLeadStoryPaused(false)}>
                         <Link to={story.href} tabIndex={active ? undefined : -1} className="block">
@@ -262,7 +297,7 @@ export default function Home() {
             </div>
             {leadStories.length > 1 && (
               <div className="flex items-center justify-center gap-2 border-t border-green-deep/10 py-3">
-                {leadStories.map((story, index) => <button key={story.key} type="button" onClick={() => { setPreviewColumnIndex(null); setLeadStoryIndex(index); }} className={`h-1.5 rounded-full transition-all ${previewColumnIndex === null && leadStoryIndex === index ? "w-7 bg-green-deep" : "w-1.5 bg-green-deep/25 hover:bg-green-deep/50"}`} aria-label={ko ? `${story.menu} 최신 기사 보기` : `Show latest ${story.menu} story`} aria-current={previewColumnIndex === null && leadStoryIndex === index ? "true" : undefined} />)}
+                {leadStories.map((story, index) => <button key={story.key} type="button" onClick={() => { setPreviewColumnIndex(null); setLeadStoryTransition(true); setLeadStoryIndex(index); }} className={`h-1.5 rounded-full transition-all ${previewColumnIndex === null && (leadStoryIndex % leadStories.length) === index ? "w-7 bg-green-deep" : "w-1.5 bg-green-deep/25 hover:bg-green-deep/50"}`} aria-label={ko ? `${story.menu} 최신 기사 보기` : `Show latest ${story.menu} story`} aria-current={previewColumnIndex === null && (leadStoryIndex % leadStories.length) === index ? "true" : undefined} />)}
               </div>
             )}
           </div>
@@ -279,10 +314,10 @@ export default function Home() {
                   <Link
                     key={column.slug}
                     to={`/columns/${column.slug}`}
-                    onMouseEnter={() => setPreviewColumnIndex(index)}
-                    onMouseLeave={() => setPreviewColumnIndex(null)}
-                    onFocus={() => setPreviewColumnIndex(index)}
-                    onBlur={() => setPreviewColumnIndex(null)}
+                    onMouseEnter={() => showColumnPreview(index)}
+                    onMouseLeave={clearColumnPreview}
+                    onFocus={() => showColumnPreview(index)}
+                    onBlur={clearColumnPreview}
                     className={`group flex flex-1 flex-col justify-center border-l-4 px-6 py-2.5 transition sm:px-7 ${active ? "border-gold bg-green-pale/80" : "border-transparent bg-white hover:border-gold hover:bg-green-pale/65 focus-visible:border-gold focus-visible:bg-green-pale/65"} ${index < 4 ? "border-b border-b-green-deep/15" : ""}`}
                   >
                     <time className="text-[11px] text-charcoal/45">{column.date.replace(/-/g, ".")}</time>
