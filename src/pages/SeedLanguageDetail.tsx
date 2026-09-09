@@ -26,6 +26,7 @@ export default function SeedLanguageDetail() {
     ? getSeedLanguageEnvironmentArticle(nextArticleSource.slug, language) ?? getSeedLanguageArticle(nextArticleSource.slug, language)
     : undefined;
 
+  const isTypographyPilot = article.slug === "democracy-not-a-king";
   const isEnvironmentArticle = article.slug.startsWith("environment-");
   const relatedSlug = article.relatedArticle?.slug
     ?? (article.slug === ENVIRONMENT_FEATURE_SLUG ? ENVIRONMENT_DEEP_READ_SLUG : undefined);
@@ -51,8 +52,8 @@ export default function SeedLanguageDetail() {
         <Link to="/seed-language" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "씨앗언어 목록" : "SEED Language"}</Link>
         <div className="mt-3 border-t-2 border-navy pt-3">
           <div className="flex items-center gap-3"><span className="section-kicker">SEED LANGUAGE</span><span className="rounded-full bg-green-pale px-3 py-1 text-xs font-extrabold text-green-deep">{article.term}</span></div>
-          <h1 className="editorial-title mt-2 max-w-4xl text-[1.6rem] font-bold leading-[1.15] text-navy sm:text-[2.25rem]">{article.title}</h1>
-          <p className="mt-2 font-serif text-base font-bold leading-6 text-green-deep sm:text-lg">{article.subtitle}</p>
+          <h1 className={`${isTypographyPilot ? "font-sans font-extrabold" : "editorial-title font-bold"} mt-2 max-w-4xl text-[1.6rem] leading-[1.15] tracking-[-.035em] text-navy sm:text-[2.25rem]`}>{article.title}</h1>
+          <p className={`mt-2 text-base font-bold leading-6 text-green-deep sm:text-lg ${isTypographyPilot ? "font-sans" : "font-serif"}`}>{article.subtitle}</p>
           <p className="article-summary">{article.summary}</p>
         </div>
         <div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45">
@@ -79,9 +80,9 @@ export default function SeedLanguageDetail() {
 
         {article.relatedArticle && <Link to={`/seed-language/${article.relatedArticle.slug}`} className="mt-6 flex items-center gap-3 border border-green-deep/20 bg-white px-5 py-4 text-base font-bold leading-7 text-green-deep hover:bg-green-pale"><BookOpenText size={20} className="shrink-0"/>{article.relatedArticle.label}</Link>}
 
-        {article.sections.map((section, index) => <section id={`article-section-${index + 1}`} key={section.title} className="article-section scroll-mt-28">
-          <h2 className="article-section-title">{section.title}</h2>
-          {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className="article-copy">{paragraph}</p>)}
+        {article.sections.map((section, index) => <section id={`article-section-${index + 1}`} key={section.title} className={`article-section scroll-mt-28 ${isTypographyPilot ? "mt-9 border-t-0 pt-0 sm:mt-10 sm:pt-0" : ""}`}>
+          <h2 className={`article-section-title ${isTypographyPilot ? "text-[1.4rem] leading-[1.35] sm:text-2xl" : ""}`}>{section.title}</h2>
+          {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className={`article-copy ${isTypographyPilot ? "mt-3 leading-[1.78] sm:leading-[1.78]" : ""}`}>{paragraph}</p>)}
           {section.sourceIndices && <ul className="mt-4 space-y-2 border-l-2 border-green-deep/20 pl-4">{section.sourceIndices.map((sourceIndex) => article.sources?.[sourceIndex]).filter((source) => Boolean(source)).map((source) => source && <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="text-sm leading-6 text-green-deep underline underline-offset-4">{source.label}</a></li>)}</ul>}
           {(article.charts ?? (article.chart ? [article.chart] : [])).filter((chart) => index === chart.afterSection).map((chart, chartIndex) => <figure key={chart.title} className="my-9 border-y-2 border-green-deep bg-white" aria-labelledby={`comparison-${index}-${chartIndex}`}>
             <figcaption id={`comparison-${index}-${chartIndex}`} className="px-4 py-5 text-lg font-bold leading-7 text-navy sm:px-6">{chart.title}</figcaption>
