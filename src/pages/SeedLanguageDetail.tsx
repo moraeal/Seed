@@ -96,7 +96,7 @@ export default function SeedLanguageDetail() {
         {article.relatedArticle && <Link to={`/seed-language/${article.relatedArticle.slug}`} className="my-8 flex items-center gap-3 border border-green-deep/20 bg-white px-5 py-4 text-base font-bold leading-7 text-green-deep hover:bg-green-pale"><BookOpenText size={20} className="shrink-0"/>{article.relatedArticle.label}</Link>}
         <ContentAccountability postSlug={`seed-language-${article.slug}`} publishedDate={article.date}/>
         <CommentSection postSlug={`seed-language-${article.slug}`}/>
-        {nextArticle && <ArticleContinuation item={{ href: `/seed-language/${nextArticle.slug}`, title: nextArticle.title, summary: nextArticle.summary }} listHref="/seed-language" listLabel={ko ? "씨앗언어 전체 보기" : "All SEED Language"} />}
+        {nextArticle && nextArticle.slug !== deepReadArticle?.slug && <ArticleContinuation item={{ href: `/seed-language/${nextArticle.slug}`, title: nextArticle.title, summary: nextArticle.summary }} listHref="/seed-language" listLabel={ko ? "씨앗언어 전체 보기" : "All SEED Language"} />}
       </div>
     </div>
   </article>;
