@@ -1,4 +1,4 @@
-import { Activity, CalendarCheck2, History } from "lucide-react";
+import { Activity, CalendarCheck2, ChevronDown, History } from "lucide-react";
 import { getContentRevisions } from "../data/contentRevisions";
 import { useLanguage } from "../i18n";
 import CorrectionSection from "./CorrectionSection";
@@ -8,8 +8,14 @@ export default function ContentAccountability({ postSlug, publishedDate }: { pos
   const ko = language === "ko";
   const revisions = getContentRevisions(postSlug, publishedDate);
 
-  return <section className="mt-12 border-y-2 border-green-deep bg-white" aria-labelledby="accountability-title">
-    <div className="p-6 sm:p-8">
+  return <details className="group mt-8 scroll-mt-28">
+    <summary className="flex cursor-pointer list-none items-center gap-3 border-y border-green-deep/15 bg-white px-5 py-4 text-navy transition hover:bg-green-pale/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-deep">
+      <Activity size={20} className="shrink-0 text-green-mid"/>
+      <h2 className="text-base font-extrabold sm:text-lg">{ko ? "사실 확인과 수정 기록" : "Fact checks and revisions"}</h2>
+      <span className="ml-auto hidden text-xs font-semibold text-charcoal/50 sm:inline">{ko ? `지속 모니터링 · 수정 ${revisions.length}건` : `Ongoing monitoring · ${revisions.length} revisions`}</span>
+      <ChevronDown size={18} className="shrink-0 text-green-mid transition-transform group-open:rotate-180"/>
+    </summary>
+    <div className="border-x border-b border-green-deep/15 bg-white p-5 sm:p-6">
       <div className="flex flex-wrap items-center gap-3">
         <span className="inline-flex items-center gap-2 rounded-full bg-green-deep px-3 py-1.5 text-xs font-extrabold text-white"><Activity size={14}/>{ko ? "지속 모니터링 중" : "ONGOING MONITORING"}</span>
         <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-charcoal/50"><CalendarCheck2 size={14}/>{ko ? `최초 확인 기준일 ${publishedDate.replace(/-/g, ".")}` : `Initial verification: ${publishedDate}`}</span>
@@ -30,6 +36,6 @@ export default function ContentAccountability({ postSlug, publishedDate }: { pos
 
       <CorrectionSection postSlug={postSlug}/>
     </div>
-  </section>;
+  </details>;
 }
 
