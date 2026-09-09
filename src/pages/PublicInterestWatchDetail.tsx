@@ -38,7 +38,7 @@ export default function PublicInterestWatchDetail() {
               <span className="rounded-full bg-green-pale px-3 py-1 text-[11px] font-extrabold text-green-deep">{t(item.status)}</span>
             </div>
             <p className="mt-2 text-xs font-extrabold text-green-deep">{t(item.organization)}</p>
-            <h1 className="editorial-title mt-2 max-w-4xl text-[1.6rem] font-bold leading-[1.15] text-navy sm:text-[2.25rem]">{t(item.title)}</h1>
+            <h1 className="article-detail-title mt-2 max-w-4xl">{t(item.title)}</h1>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/65 sm:text-[15px]">{t(item.summary)}</p>
             <div className="mt-3 flex flex-wrap gap-x-3 gap-y-2 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45">
               <span>{ko ? "작성" : "Published"} {item.updatedAt.replace(/-/g, ".")}</span>
@@ -66,12 +66,12 @@ export default function PublicInterestWatchDetail() {
             <section key={section.key} className="mt-9 border-t border-green-deep/12 pt-6">
               <div className="flex items-start gap-4">
                 <div className="grid size-11 shrink-0 place-items-center rounded-full bg-green-pale"><Icon className={section.tone} size={22}/></div>
-                <div><span className="font-serif text-xs font-bold text-gold">{String(sectionIndex + 1).padStart(2, "0")}</span><h2 className="mt-1 text-xl font-extrabold text-navy sm:text-2xl">{section.label}</h2></div>
+                <div><span className="text-xs font-extrabold text-gold">{String(sectionIndex + 1).padStart(2, "0")}</span><h2 className="mt-1 text-xl font-extrabold text-navy sm:text-2xl">{section.label}</h2></div>
               </div>
               <ol className="mt-5 space-y-3">
                 {section.items.map((entry, index) => (
                   <li key={`${section.key}-${index}`} className="grid gap-3 border border-green-deep/10 bg-white p-4 sm:grid-cols-[2rem_1fr] sm:p-5">
-                    <span className="font-serif text-sm font-bold text-gold">{String(index + 1).padStart(2, "0")}</span>
+                    <span className="text-sm font-extrabold text-gold">{String(index + 1).padStart(2, "0")}</span>
                     <p className="text-sm leading-7 text-charcoal/75 sm:text-base">{t(entry)}</p>
                   </li>
                 ))}
@@ -92,7 +92,7 @@ export default function PublicInterestWatchDetail() {
           <div className="mt-4 divide-y divide-green-deep/10 border-y border-green-deep/10">
             {item.sources.map((source, index) => (
               <a key={source.url} href={source.url} target="_blank" rel="noreferrer" className="group flex items-start gap-4 py-3.5 text-charcoal/70 hover:text-green-deep">
-                <span className="font-serif text-sm font-bold text-gold">{String(index + 1).padStart(2, "0")}</span>
+                <span className="text-sm font-extrabold text-gold">{String(index + 1).padStart(2, "0")}</span>
                 <span className="flex-1"><strong className="block text-sm font-extrabold text-navy group-hover:text-green-deep">{t(source.label)}</strong>{source.note && <span className="mt-1 block text-xs leading-6 text-charcoal/45">{t(source.note)}</span>}</span>
                 <ExternalLink className="mt-0.5 shrink-0" size={16}/>
               </a>
