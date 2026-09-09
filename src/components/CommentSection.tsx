@@ -1,4 +1,4 @@
-import { CheckCircle2, CornerUpRight, LockKeyhole, MessageCircle, Send, X } from "lucide-react";
+import { CheckCircle2, ChevronDown, CornerUpRight, LockKeyhole, MessageCircle, Send, X } from "lucide-react";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { useAuth } from "../auth";
@@ -24,6 +24,7 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
   const [submitting, setSubmitting] = useState(false);
   const [continuation, setContinuation] = useState<CommentContinuation | undefined>();
   const [searchParams] = useSearchParams();
+  const [panelOpen, setPanelOpen] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
   const refresh = () => loadComments(postSlug).then(setComments).catch(() => setNotice(ko ? "댓글을 불러오지 못했습니다." : "Could not load comments."));
@@ -38,6 +39,7 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
     const continueText = searchParams.get("continueText");
     if (!commentId || !continueNick) return;
 
+    setPanelOpen(true);
     setContinuation({ commentId, nickname: continueNick, excerpt: continueText || (ko ? "이전 의견" : "Previous comment") });
     window.setTimeout(() => formRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 120);
   }, [searchParams, ko]);
@@ -83,12 +85,15 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
   const signupPath = `/account?mode=signup&returnTo=${encodeURIComponent(returnTo)}`;
 
   return (
-    <section id="comments" className="mt-14 scroll-mt-28 border-t border-green-deep/10 pt-10" aria-labelledby="comments-title">
-      <div className="flex items-center gap-2">
-        <MessageCircle className="text-green-mid" size={24} />
-        <h2 id="comments-title" className="text-2xl font-extrabold text-navy">{ko ? "시민의견" : "Civic Comments"} <span className="text-green-mid">{comments.length}</span></h2>
-      </div>
-      <p className="mt-3 text-sm leading-6 text-charcoal/55">{ko ? "댓글은 이메일 인증회원만 작성할 수 있습니다. 읽기는 누구나 가능하며, 화면에는 가입 때 정한 닉네임이 표시됩니다." : "Anyone may read comments, but only email-verified members may post. Your chosen nickname is displayed publicly."}</p>
+    <details id="comments" className="group mt-4 scroll-mt-28" open={panelOpen} onToggle={(event) => setPanelOpen(event.currentTarget.open)}>
+      <summary className="flex cursor-pointer list-none items-center gap-3 border-y border-green-deep/15 bg-white px-5 py-4 text-navy transition hover:bg-green-pale/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-deep">
+        <MessageCircle className="shrink-0 text-green-mid" size={20} />
+        <h2 id="comments-title" className="text-base font-extrabold sm:text-lg">{ko ? "시민의견" : "Civic Comments"} <span className="text-green-mid">{comments.length}</span></h2>
+        <span className="ml-auto hidden text-xs font-semibold text-charcoal/50 sm:inline">{ko ? "눌러서 의견 보기·쓰기" : "Open to read or comment"}</span>
+        <ChevronDown size={18} className="shrink-0 text-green-mid transition-transform group-open:rotate-180"/>
+      </summary>
+      <div className="border-x border-b border-green-deep/15 bg-paper px-5 py-6 sm:px-6">
+        <p className="text-sm leading-6 text-charcoal/55">{ko ? "댓글은 이메일 인증회원만 작성할 수 있습니다. 읽기는 누구나 가능하며, 화면에는 가입 때 정한 닉네임이 표시됩니다." : "Anyone may read comments, but only email-verified members may post. Your chosen nickname is displayed publicly."}</p>
 
       {!authLoading && (!user || !isVerified) ? (
         <div id="comments-form" className="mt-6 scroll-mt-28 rounded-lg border border-green-deep/12 bg-white p-6 shadow-soft">
@@ -155,6 +160,7 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
         })}
         {commentsReady && comments.length === 0 && <p className="py-8 text-center text-sm text-charcoal/45">{ko ? "첫 번째 시민의견을 남겨주세요." : "Be the first to leave a civic comment."}</p>}
       </div>
-    </section>
+      </div>
+    </details>
   );
 }
