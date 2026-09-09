@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import ArticleContinuation, { getFollowingItem } from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
+import DeepReadBanner from "../components/DeepReadBanner";
 import InteractiveFigure from "../components/InteractiveFigure";
 import ShareButton from "../components/ShareButton";
 import { getAllBriefing, getAllBriefingsNewestFirst } from "../data/allBriefings";
@@ -113,6 +114,7 @@ export default function BriefingDetail() {
           </section>
         )}
 
+        {briefing.commentary && <DeepReadBanner href={`/briefings/${briefing.slug}/commentary`} readMinutes={briefing.commentary.readMinutes} />}
         <ContentAccountability postSlug={briefing.slug} publishedDate={briefing.date} />
         <CommentSection postSlug={briefing.slug} />
         {nextBriefing && <ArticleContinuation item={{ href: `/briefings/${nextBriefing.slug}`, title: nextBriefing.title, summary: nextBriefing.summary }} listHref="/briefings" listLabel={ko ? "시민브리핑 전체 보기" : "All briefings"} />}
