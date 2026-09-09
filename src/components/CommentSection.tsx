@@ -34,6 +34,10 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
   }, [postSlug]);
 
   useEffect(() => {
+    if (location.hash === "#comments" || location.hash === "#comments-form") setPanelOpen(true);
+  }, [location.hash]);
+
+  useEffect(() => {
     const commentId = searchParams.get("continueFrom");
     const continueNick = searchParams.get("continueNick");
     const continueText = searchParams.get("continueText");
