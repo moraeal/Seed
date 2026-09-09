@@ -78,7 +78,6 @@ export default function SeedLanguageDetail() {
       <div className="reading-column mt-10">
         <aside className="border-l-4 border-gold bg-green-pale px-6 py-6 sm:px-8"><span className="section-kicker">{ko ? "핵심 요약" : "KEY POINTS"}</span><ul className="mt-4 space-y-3">{article.keyPoints.map((point) => <li key={point} className="flex gap-3 text-sm font-semibold leading-7 text-navy"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold"/><span>{point}</span></li>)}</ul></aside>
 
-        {article.relatedArticle && <Link to={`/seed-language/${article.relatedArticle.slug}`} className="mt-6 flex items-center gap-3 border border-green-deep/20 bg-white px-5 py-4 text-base font-bold leading-7 text-green-deep hover:bg-green-pale"><BookOpenText size={20} className="shrink-0"/>{article.relatedArticle.label}</Link>}
 
         {article.sections.map((section, index) => <section id={`article-section-${index + 1}`} key={section.title} className={`article-section scroll-mt-28 ${isTypographyPilot ? "mt-9 border-t-0 pt-0 sm:mt-10 sm:pt-0" : ""}`}>
           <h2 className={`article-section-title ${isTypographyPilot ? "text-[1.4rem] leading-[1.35] sm:text-2xl" : ""}`}>{section.title}</h2>
