@@ -26,6 +26,7 @@ export default function BriefingDetail() {
     );
   }
 
+  const isLongRead = briefing.readMinutes >= 8;
   const nextOriginalBriefing = getFollowingItem(getAllBriefingsNewestFirst(), briefing.slug);
   const nextBriefing = nextOriginalBriefing ? localizeBriefing(nextOriginalBriefing, language) : undefined;
 
@@ -39,7 +40,7 @@ export default function BriefingDetail() {
         <div className="container-page max-w-5xl">
           <Link to="/briefings" className="text-link text-xs"><ArrowLeft size={14} />{ko ? "시민브리핑 목록" : "Civic Briefings"}</Link>
           <div className="mt-3 border-t-2 border-navy pt-3">
-            <h1 className="editorial-title max-w-4xl text-[1.6rem] font-bold leading-[1.15] text-navy sm:text-[2.25rem]">{briefing.title}</h1>
+            <h1 className="article-detail-title max-w-4xl">{briefing.title}</h1>
             <p className="article-summary">{briefing.summary}</p>
           </div>
           <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45">
@@ -59,7 +60,7 @@ export default function BriefingDetail() {
 
         <div className="reading-column">
           {briefing.content.map((paragraph, index) => (
-            <p key={`${index}-${paragraph.slice(0, 20)}`} className={`${index === 0 ? "mt-0" : ""} article-copy`}>{paragraph}</p>
+            <p key={`${index}-${paragraph.slice(0, 20)}`} className={`${index === 0 ? "mt-0" : ""} article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>
           ))}
         </div>
 
@@ -67,10 +68,10 @@ export default function BriefingDetail() {
 
         {briefing.sections?.map((section, index) => (
           <div key={`${index}-${section.title}`}>
-            <section className="article-section reading-column">
+            <section className={`article-section reading-column ${isLongRead ? "article-section-long" : ""}`}>
               <h2 className="article-section-title">{section.title}</h2>
-              {section.paragraphs && <div>{section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className="article-copy">{paragraph}</p>)}</div>}
-              {section.bullets && <ul className="mt-5 space-y-3">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet.slice(0, 24)}`} className="flex gap-3 text-[17px] leading-[1.8] text-charcoal/80 sm:text-lg"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold" />{bullet}</li>)}</ul>}
+              {section.paragraphs && <div>{section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>)}</div>}
+              {section.bullets && <ul className="mt-5 space-y-3">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet.slice(0, 24)}`} className="flex gap-3 text-[17px] leading-[1.78] text-charcoal/80 sm:text-lg"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold" />{bullet}</li>)}</ul>}
             </section>
             {briefing.images?.slice(2).filter((image) => image.afterSection === index).map((image) => (
               <div key={image.src}>{renderFigure(image)}</div>
@@ -102,7 +103,7 @@ export default function BriefingDetail() {
           <ul className="mt-4 space-y-2">{briefing.watchPoints.map((point, index) => <li key={`${index}-${point}`} className="flex gap-3 text-sm leading-6 text-charcoal/75"><span className="font-serif text-gold">●</span>{point}</li>)}</ul>
         </aside>
 
-        {briefing.quote && <blockquote className="mt-9 rounded-xl bg-green-deep p-6 font-serif text-lg font-bold leading-8 text-white sm:p-7 sm:text-xl">“{briefing.quote}”</blockquote>}
+        {briefing.quote && <blockquote className="mt-9 rounded-xl bg-green-deep p-6 text-lg font-bold leading-8 text-white sm:p-7 sm:text-xl">“{briefing.quote}”</blockquote>}
         {briefing.sourceNote && <p className="mt-6 rounded-lg border border-green-deep/10 bg-white p-4 text-sm leading-6 text-charcoal/60">{briefing.sourceNote}</p>}
 
         {briefing.sources && (
