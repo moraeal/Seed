@@ -27,7 +27,13 @@ export default function SeedLanguageDetail() {
     : undefined;
 
   const isEnvironmentArticle = article.slug.startsWith("environment-");
-  const deepReadHref = article.slug === ENVIRONMENT_FEATURE_SLUG ? `/seed-language/${ENVIRONMENT_DEEP_READ_SLUG}` : null;
+  const relatedSlug = article.relatedArticle?.slug
+    ?? (article.slug === ENVIRONMENT_FEATURE_SLUG ? ENVIRONMENT_DEEP_READ_SLUG : undefined);
+  const relatedArticle = relatedSlug
+    ? getSeedLanguageEnvironmentArticle(relatedSlug, language) ?? getSeedLanguageArticle(relatedSlug, language)
+    : undefined;
+  const deepReadArticle = relatedArticle && relatedArticle.readMinutes > article.readMinutes ? relatedArticle : undefined;
+  const deepReadHref = deepReadArticle ? `/seed-language/${deepReadArticle.slug}` : null;
   const heroImage = isEnvironmentArticle ? {
     src: ENVIRONMENT_HERO,
     alt: ko
@@ -53,7 +59,7 @@ export default function SeedLanguageDetail() {
           <time>{article.date.replace(/-/g, ".")}</time>
           <span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${article.readMinutes}분` : `${article.readMinutes} min read`}</span>
           <div className="ml-auto flex flex-wrap items-center gap-2">
-            {deepReadHref && <Link to={deepReadHref} className="button-primary min-h-8 px-3 py-1.5 text-xs"><BookOpenText size={15}/>{ko ? "깊게 읽기 · 13분" : "Deep Read · 13 min"}</Link>}
+            {deepReadHref && deepReadArticle && <Link to={deepReadHref} className="button-primary min-h-10 px-4 py-2 text-sm"><BookOpenText size={16}/>{ko ? `깊게 읽기 · ${deepReadArticle.readMinutes}분` : `Deep Read · ${deepReadArticle.readMinutes} min`}</Link>}
             <ShareButton title={article.title} text={article.summary} />
           </div>
         </div>

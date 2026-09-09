@@ -126,7 +126,8 @@ export default function Home() {
       cta: ko ? "씨앗언어 읽기" : "Read SEED Language",
       image: seedLanguageArticle.heroImage,
     },
-  ].filter(Boolean) as LeadStory[];
+  ].filter((story): story is LeadStory => Boolean(story))
+    .sort((a, b) => b.date.localeCompare(a.date));
   const rotatingLeadStories = leadStories.length ? [...leadStories, leadStories[0]] : [];
   const displayedLeadStories = previewColumnIndex === null
     ? rotatingLeadStories
