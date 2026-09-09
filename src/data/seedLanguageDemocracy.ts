@@ -18,6 +18,7 @@ const sourcesEn = sources.map((source, index) => ({ ...source, label: [
 
 const democracyFeatureKo: SeedLanguageArticle = {
   slug: "democracy-not-a-king",
+  newsletterEligible: true,
   term: "민주",
   date: "2026-09-09",
   readMinutes: 5,
@@ -149,6 +150,7 @@ const democracyFeatureEn: SeedLanguageArticle = {
 
 const democracyDeepKo: SeedLanguageArticle = {
   slug: "democracy-citizens-deep-read",
+  newsletterEligible: false,
   term: "민주 · 깊게 읽기",
   date: "2026-09-09",
   readMinutes: 15,
@@ -174,7 +176,7 @@ const democracyDeepKo: SeedLanguageArticle = {
     credit: "씨앗의 소리 AI 제작 이미지 · 상징적 삽화",
   },
   showTableOfContents: true,
-  relatedArticle: { slug: "democracy-not-a-king", label: "5분 대표기사 · 민주는 왕을 뽑는 일이 아니라 권력을 제한하는 일이다" },
+  relatedArticle: { slug: "democracy-not-a-king", label: "5분 요약본 보기" },
   chart: {
     title: "‘국민의 뜻’ 이후에 무엇을 허용하는가",
     headers: ["질문", "권력을 독점하는 민주 해석", "자유민주주의의 기준"],
@@ -394,7 +396,7 @@ const democracyDeepEn: SeedLanguageArticle = {
   ],
   heroImage: { ...democracyDeepKo.heroImage, alt: "Citizens debate around separate tables within an open architectural structure symbolizing checks and balances", caption: "The democratic public is not a collective reduced to one voice. It consists of individuals with equal rights and different judgments.", credit: "SEED VOICE AI-generated conceptual illustration" },
   inlineImage: { ...democracyDeepKo.inlineImage!, alt: "Residents examine documents and question a public official at equal table height in a neighborhood library", caption: "Civic formation is not learning an approved political answer. It is the everyday habit of questioning even leaders we chose and examining their answers.", credit: "SEED VOICE AI-generated conceptual illustration" },
-  relatedArticle: { slug: "democracy-not-a-king", label: "5-minute feature · Democracy is not choosing a king. It is limiting power." },
+  relatedArticle: { slug: "democracy-not-a-king", label: "Read the 5-minute summary" },
   sources: sourcesEn,
   chart: {
     title: "What follows a claim to speak for ‘the people’?",

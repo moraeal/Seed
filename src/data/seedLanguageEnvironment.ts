@@ -3,6 +3,7 @@ import type { SeedLanguageArticle } from "./seedLanguage";
 
 const environmentKo: SeedLanguageArticle = {
   slug: "environment-shared-condition",
+  newsletterEligible: true,
   term: "환경",
   date: "2026-09-08",
   readMinutes: 5,
@@ -96,6 +97,7 @@ const environmentKo: SeedLanguageArticle = {
 
 const environmentDeepKo: SeedLanguageArticle = {
   slug: "environment-beyond-camps-deep-read",
+  newsletterEligible: false,
   term: "환경 · 깊게 읽기",
   date: "2026-09-08",
   readMinutes: 13,

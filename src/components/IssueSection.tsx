@@ -42,7 +42,7 @@ export default function IssueSection({ issue, index }: { issue: Issue; index: nu
                   ? issue.heroImage
                   : `${import.meta.env.BASE_URL}${issue.heroImage}`
               }
-              alt={issue.heroAlt ?? `${issue.title} 대표 이미지`}
+              alt={issue.heroAlt ?? `${issue.title} 관련 이미지`}
               className="absolute left-1/2 h-[300%] w-auto max-w-none -translate-x-1/2"
               style={{ top: bannerOffsets[heroPosition] }}
               loading="lazy"

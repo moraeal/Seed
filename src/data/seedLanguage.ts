@@ -13,6 +13,8 @@ export type SeedLanguageArticle = {
   term: string;
   date: string;
   readMinutes: number;
+  /** Only explicitly opted-in standalone articles may enter a future email queue. */
+  newsletterEligible?: boolean;
   title: string;
   subtitle: string;
   summary: string;
