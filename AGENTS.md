@@ -1,5 +1,7 @@
 # SEED publishing rules
 
+- Paired 5-minute articles and deep reads must share the same primary image, body images, and charts from common data references. Position shared visuals at the relevant section in each edition; do not duplicate an image within one page. Apply replacements to both articles and both languages together. Deep reads remain excluded from newsletter sends.
+
 - “대표기사” and “대표이미지” are internal editorial terms. Do not expose them in reader-facing labels, article copy, image captions, alt text, metadata, or emails. Use “5분 요약본 보기” for the deep-read link back to its short article, and “Read the 5-minute summary” in English.
 - Deep reads are supplementary website articles, never separate newsletter sends. For paired content, only the standalone short article is email-eligible. Require explicit `newsletterEligible === true` when a future newsletter system selects SEED Language articles; missing flags must not opt content in. Eligibility metadata alone does not schedule or send email.
 

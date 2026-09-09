@@ -610,6 +610,31 @@ const democracyDeepEn: SeedLanguageArticle = {
   ],
 };
 
+// Share the topic's visual set across both lengths and localize it together.
+const yoonAgainImageKo = {
+  src: "images/seed-language/democracy-yoon-again-photo.webp",
+  alt: "젖은 광장의 빈 접이식 의자에 기대어 놓인 YOON AGAIN 피켓과 태극기",
+  caption: "한 정치인의 복귀와 대한민국의 회복은 같은 일이 아니다. 시민의 판단 기준은 인물에 대한 충성보다 헌정질서와 원칙이어야 한다.",
+  credit: "씨앗의 소리 AI 제작 이미지 · 실제 집회 사진이 아닌 상징적 장면",
+};
+const yoonAgainImageEn = {
+  ...yoonAgainImageKo,
+  alt: "A YOON AGAIN placard and South Korean flag lean against an empty folding chair on a wet plaza",
+  caption: "Restoring a politician is not the same as restoring the republic. Citizens should judge by constitutional principles rather than personal loyalty.",
+  credit: "SEED VOICE AI-generated symbolic scene · not a photograph of an actual rally",
+};
+for (const [shortArticle, deepArticle, inlineImage] of [
+  [democracyFeatureKo, democracyDeepKo, yoonAgainImageKo],
+  [democracyFeatureEn, democracyDeepEn, yoonAgainImageEn],
+] as const) {
+  deepArticle.heroImage = shortArticle.heroImage;
+  shortArticle.inlineImage = deepArticle.inlineImage = inlineImage;
+  shortArticle.inlineImageAfterSection = 4;
+  deepArticle.inlineImageAfterSection = deepArticle.sections.findIndex((section) => /윤어게인|Yoon Again/.test(section.title));
+  shortArticle.charts = [{ ...deepArticle.chart!, afterSection: 2 }, { ...shortArticle.chart!, afterSection: 3 }];
+  deepArticle.charts = [{ ...deepArticle.chart!, afterSection: 3 }, { ...shortArticle.chart!, afterSection: 8 }];
+}
+
 export const democracyArticlesKo = [democracyFeatureKo, democracyDeepKo];
 export function getDemocracyArticle(slug: string, language: Language) {
   if (slug === democracyFeatureKo.slug) return language === "en" ? democracyFeatureEn : democracyFeatureKo;

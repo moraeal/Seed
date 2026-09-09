@@ -150,7 +150,7 @@ const seedLanguageRoutes: SeoRoute[] = allSeedLanguageArticlesKo.map((article) =
   lastModified: article.date,
   author: SITE_NAME,
   section: "씨앗언어",
-  image: socialImageUrl("seed-language", article.slug, `${article.date}-${article.slug.startsWith("environment-") ? "3" : "2"}`),
+  image: socialImageUrl("seed-language", article.slug, `${article.date}-${stableHash(article.heroImage.src)}`),
   imageAlt: article.heroImage.alt,
 }));
 

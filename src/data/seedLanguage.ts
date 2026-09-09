@@ -26,6 +26,7 @@ export type SeedLanguageArticle = {
   showTableOfContents?: boolean;
   relatedArticle?: { slug: string; label: string };
   sources?: { label: string; url: string }[];
+  charts?: NonNullable<SeedLanguageArticle["chart"]>[];
   chart?: {
     title: string;
     headers: [string, string, string];
