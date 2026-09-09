@@ -61,17 +61,33 @@ export default function SeedLanguageDetail() {
     </header>
 
     <div className="container-page max-w-4xl py-8 sm:py-11">
+      {article.showTableOfContents && <nav id="article-contents" aria-labelledby="contents-title" className="mb-10 scroll-mt-28 border-t-2 border-navy bg-white px-5 py-6 sm:px-8">
+        <h2 id="contents-title" className="editorial-title text-xl font-bold text-navy">{ko ? "목차로 먼저 읽기" : "Read the argument at a glance"}</h2>
+        <p className="mt-2 text-sm leading-7 text-charcoal/65">{ko ? "각 항목은 이 글의 핵심 주장입니다. 목차만 읽어 흐름을 살피거나, 궁금한 항목을 눌러 본문으로 이동할 수 있습니다." : "Each entry states a central claim. Read this outline on its own, or select a section to explore the argument."}</p>
+        <ol className="mt-5 divide-y divide-green-deep/10">{article.sections.map((section, index) => <li key={section.title}><a href={`#article-section-${index + 1}`} className="flex gap-4 py-4 text-navy hover:text-green-mid focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-deep"><span className="pt-0.5 text-sm font-bold text-green-deep" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><span><span className="block text-base font-bold leading-7">{section.title}</span>{section.overview && <span className="mt-1 block text-sm leading-6 text-charcoal/65">{section.overview}</span>}</span></a></li>)}</ol>
+      </nav>}
       <InteractiveFigure src={heroImage.src} alt={heroImage.alt} caption={heroImage.caption} credit={heroImage.credit} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.09)]" imageClassName="aspect-[16/9] w-full object-cover" />
 
       <div className="reading-column mt-10">
         <aside className="border-l-4 border-gold bg-green-pale px-6 py-6 sm:px-8"><span className="section-kicker">{ko ? "핵심 요약" : "KEY POINTS"}</span><ul className="mt-4 space-y-3">{article.keyPoints.map((point) => <li key={point} className="flex gap-3 text-sm font-semibold leading-7 text-navy"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold"/><span>{point}</span></li>)}</ul></aside>
 
-        {article.sections.map((section, index) => <section key={section.title} className="article-section">
+        {article.relatedArticle && <Link to={`/seed-language/${article.relatedArticle.slug}`} className="mt-6 flex items-center gap-3 border border-green-deep/20 bg-white px-5 py-4 text-base font-bold leading-7 text-green-deep hover:bg-green-pale"><BookOpenText size={20} className="shrink-0"/>{article.relatedArticle.label}</Link>}
+
+        {article.sections.map((section, index) => <section id={`article-section-${index + 1}`} key={section.title} className="article-section scroll-mt-28">
           <h2 className="article-section-title">{section.title}</h2>
           {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className="article-copy">{paragraph}</p>)}
-          {index === 6 && <InteractiveFigure src={article.inlineImage.src} alt={article.inlineImage.alt} caption={article.inlineImage.caption} credit={article.inlineImage.credit} figureClassName="my-8 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName="aspect-[16/9] w-full object-cover" />}
+          {section.sourceIndices && <ul className="mt-4 space-y-2 border-l-2 border-green-deep/20 pl-4">{section.sourceIndices.map((sourceIndex) => article.sources?.[sourceIndex]).filter((source) => Boolean(source)).map((source) => source && <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="text-sm leading-6 text-green-deep underline underline-offset-4">{source.label}</a></li>)}</ul>}
+          {article.chart && index === article.chart.afterSection && <figure className="my-9 border-y-2 border-green-deep bg-white" aria-labelledby="comparison-title">
+            <figcaption id="comparison-title" className="px-4 py-5 text-lg font-bold leading-7 text-navy sm:px-6">{article.chart.title}</figcaption>
+            <div className="overflow-x-auto" tabIndex={0} role="region" aria-label={article.chart.title}><table className="w-full min-w-[300px] table-fixed border-collapse text-left text-sm leading-6"><thead className="bg-green-deep text-white"><tr>{article.chart.headers.map((header, column) => <th scope="col" key={header} className={`${column === 0 ? "w-[20%]" : "w-[40%]"} px-3 py-4 align-top font-bold sm:px-5`}>{header}</th>)}</tr></thead><tbody>{article.chart.rows.map((row) => <tr key={row[0]} className="border-b border-green-deep/15 odd:bg-green-pale/40"><th scope="row" className="px-3 py-4 align-top font-bold text-navy sm:px-5">{row[0]}</th><td className="px-3 py-4 align-top text-charcoal/80 sm:px-5">{row[1]}</td><td className="px-3 py-4 align-top text-green-deep sm:px-5">{row[2]}</td></tr>)}</tbody></table></div>
+            <p className="px-4 py-4 text-sm leading-6 text-charcoal/65 sm:px-6">{article.chart.note}</p>
+          </figure>}
+          {index === Math.min(6, article.sections.length - 1) && article.inlineImage && <InteractiveFigure src={article.inlineImage.src} alt={article.inlineImage.alt} caption={article.inlineImage.caption} credit={article.inlineImage.credit} figureClassName="my-8 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName="aspect-[16/9] w-full object-cover" />}
+          {article.showTableOfContents && <a href="#article-contents" className="mt-4 inline-block text-sm font-semibold text-green-deep underline underline-offset-4">{ko ? "목차로 돌아가기" : "Back to contents"}</a>}
         </section>)}
 
+        {article.sources && <aside className="my-10 border-t border-green-deep/20 pt-6"><h2 className="text-base font-bold text-navy">{ko ? "출처와 사실 확인" : "Sources and factual basis"}</h2><ul className="mt-4 space-y-3">{article.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="text-sm leading-7 text-green-deep underline underline-offset-4">{source.label}</a></li>)}</ul></aside>}
+        {article.relatedArticle && <Link to={`/seed-language/${article.relatedArticle.slug}`} className="my-8 flex items-center gap-3 border border-green-deep/20 bg-white px-5 py-4 text-base font-bold leading-7 text-green-deep hover:bg-green-pale"><BookOpenText size={20} className="shrink-0"/>{article.relatedArticle.label}</Link>}
         <ContentAccountability postSlug={`seed-language-${article.slug}`} publishedDate={article.date}/>
         <CommentSection postSlug={`seed-language-${article.slug}`}/>
         {nextArticle && <ArticleContinuation item={{ href: `/seed-language/${nextArticle.slug}`, title: nextArticle.title, summary: nextArticle.summary }} listHref="/seed-language" listLabel={ko ? "씨앗언어 전체 보기" : "All SEED Language"} />}

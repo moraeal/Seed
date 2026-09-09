@@ -11,7 +11,8 @@ export default function SeedLanguage() {
   const { language } = useLanguage();
   const ko = language === "ko";
   const articleIndex = [...seedLanguageEnvironmentArticlesKo, ...seedLanguageArticlesKo]
-    .filter((item) => item.readMinutes < 12);
+    .filter((item) => item.readMinutes < 12)
+    .sort((a, b) => b.date.localeCompare(a.date));
   const articles = articleIndex
     .map((item) => getSeedLanguageEnvironmentArticle(item.slug, language) ?? getSeedLanguageArticle(item.slug, language))
     .filter((article): article is NonNullable<typeof article> => Boolean(article));

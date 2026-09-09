@@ -1,4 +1,5 @@
 import type { Language } from "../i18n";
+import { democracyArticlesKo, getDemocracyArticle } from "./seedLanguageDemocracy";
 
 export type SeedLanguageImage = {
   src: string;
@@ -16,9 +17,19 @@ export type SeedLanguageArticle = {
   subtitle: string;
   summary: string;
   keyPoints: string[];
-  sections: { title: string; paragraphs: string[] }[];
+  sections: { title: string; paragraphs: string[]; overview?: string; sourceIndices?: number[] }[];
   heroImage: SeedLanguageImage;
-  inlineImage: SeedLanguageImage;
+  inlineImage?: SeedLanguageImage;
+  showTableOfContents?: boolean;
+  relatedArticle?: { slug: string; label: string };
+  sources?: { label: string; url: string }[];
+  chart?: {
+    title: string;
+    headers: [string, string, string];
+    rows: [string, string, string][];
+    note: string;
+    afterSection: number;
+  };
 };
 
 const citizenKo: SeedLanguageArticle = {
@@ -140,7 +151,7 @@ const citizenEn: SeedLanguageArticle = {
     credit: "AI image produced by SEED VOICE",
   },
   inlineImage: {
-    ...citizenKo.inlineImage,
+    ...citizenKo.inlineImage!,
     alt: "Citizens of different generations using AI and a robot to solve a shared community problem rather than retreat into isolation",
     caption: "AI can enlarge individual capacity, but it cannot decide what that power should serve. Civic character must grow with technology.",
     credit: "AI image produced by SEED VOICE",
@@ -197,9 +208,11 @@ const citizenEn: SeedLanguageArticle = {
   ],
 };
 
-export const seedLanguageArticlesKo = [citizenKo];
+export const seedLanguageArticlesKo = [...democracyArticlesKo, citizenKo];
 
 export function getSeedLanguageArticle(slug: string, language: Language) {
+  const democracy = getDemocracyArticle(slug, language);
+  if (democracy) return democracy;
   if (slug !== citizenKo.slug) return undefined;
   return language === "en" ? citizenEn : citizenKo;
 }

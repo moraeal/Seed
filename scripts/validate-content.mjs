@@ -76,8 +76,9 @@ for (const column of columnModule.columns) {
 for (const article of seedLanguageModule.seedLanguageArticlesKo) {
   const english = seedLanguageModule.getSeedLanguageArticle(article.slug, "en");
   if (!english || english.title === article.title) errors.push(`Missing English SEED Language edition: ${article.slug}`);
-  if (![article.heroImage, article.inlineImage].every((image) => image?.src)) errors.push(`SEED Language article needs two purposeful visuals: ${article.slug}`);
-  requireEditorialStructure("SEED Language article", article, [article.heroImage, article.inlineImage].filter((image) => image?.src).length);
+  const visualCount = [article.heroImage, article.inlineImage].filter((image) => image?.src).length + (article.chart?.rows?.length ? 1 : 0);
+  if (!article.heroImage?.src || visualCount < 2) errors.push(`SEED Language article needs a primary image and two purposeful visuals: ${article.slug}`);
+  requireEditorialStructure("SEED Language article", article, visualCount);
   await requireSocialImage("seed-language", article.slug);
 }
 
