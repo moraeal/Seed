@@ -9,7 +9,7 @@ export default function DeepReadBanner({ href }: { href: string }) {
   return (
     <Link
       to={href}
-      className="group my-8 flex flex-col items-stretch gap-4 border-y border-green-deep/20 bg-white px-5 py-5 text-green-deep transition hover:bg-green-pale/45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-deep sm:flex-row sm:items-center sm:px-6"
+      className="group mx-auto my-8 flex w-full max-w-[46rem] flex-col items-stretch gap-4 border-y border-green-deep/20 bg-white px-5 py-5 text-green-deep transition hover:bg-green-pale/45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-deep sm:flex-row sm:items-center sm:px-6"
     >
       <span className="grid size-10 shrink-0 place-items-center rounded-full bg-green-pale text-green-deep">
         <BookOpenText size={20} />
