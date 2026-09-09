@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import ArticleContinuation, { getFollowingItem } from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
+import DeepReadBanner from "../components/DeepReadBanner";
 import InteractiveFigure from "../components/InteractiveFigure";
 import ShareButton from "../components/ShareButton";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
@@ -93,7 +94,9 @@ export default function SeedLanguageDetail() {
         </section>)}
 
         {article.sources && <aside className="my-10 border-t border-green-deep/20 pt-6"><h2 className="text-base font-bold text-navy">{ko ? "출처와 사실 확인" : "Sources and factual basis"}</h2><ul className="mt-4 space-y-3">{article.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="text-sm leading-7 text-green-deep underline underline-offset-4">{source.label}</a></li>)}</ul></aside>}
-        {article.relatedArticle && <Link to={`/seed-language/${article.relatedArticle.slug}`} className="my-8 flex items-center gap-3 border border-green-deep/20 bg-white px-5 py-4 text-base font-bold leading-7 text-green-deep hover:bg-green-pale"><BookOpenText size={20} className="shrink-0"/>{article.relatedArticle.label}</Link>}
+        {deepReadHref && deepReadArticle
+          ? <DeepReadBanner href={deepReadHref} readMinutes={deepReadArticle.readMinutes} />
+          : article.relatedArticle && <Link to={`/seed-language/${article.relatedArticle.slug}`} className="my-8 flex items-center gap-3 border border-green-deep/20 bg-white px-5 py-4 text-base font-bold leading-7 text-green-deep hover:bg-green-pale"><BookOpenText size={20} className="shrink-0"/>{article.relatedArticle.label}</Link>}
         <ContentAccountability postSlug={`seed-language-${article.slug}`} publishedDate={article.date}/>
         <CommentSection postSlug={`seed-language-${article.slug}`}/>
         {nextArticle && nextArticle.slug !== deepReadArticle?.slug && <ArticleContinuation item={{ href: `/seed-language/${nextArticle.slug}`, title: nextArticle.title, summary: nextArticle.summary }} listHref="/seed-language" listLabel={ko ? "씨앗언어 전체 보기" : "All SEED Language"} />}
