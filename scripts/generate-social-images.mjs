@@ -40,12 +40,19 @@ const jobs = [
   ...seedLanguageModule.seedLanguageArticlesKo.map((item) => ({ section: "seed-language", slug: item.slug, src: item.heroImage.src })),
 ];
 
+// Rasterized from the site's existing seed symbol for portable, font-free builds.
+const badgePng = path.join(publicRoot, "images/brand/seed-social-badge.png");
+
 const convertToSocialImage = async (source, target) => run("convert", [
   source,
   "-auto-orient",
   "-resize", "1200x630^",
   "-gravity", "center",
   "-extent", "1200x630",
+  "(", badgePng, "-resize", "88x88", ")",
+  "-gravity", "southeast",
+  "-geometry", "+28+28",
+  "-composite",
   "-strip",
   "-interlace", "Plane",
   "-quality", "88",
@@ -62,6 +69,7 @@ for (const job of jobs) {
   if (/^https?:\/\//i.test(job.src)) {
     const existingPreviewIsAvailable = await access(target).then(() => true).catch(() => false);
     if (existingPreviewIsAvailable && !job.fallbackSrc) {
+      await convertToSocialImage(target, target);
       console.warn(`Keeping existing social image for remote source: ${job.slug}`);
       continue;
     }
@@ -78,6 +86,7 @@ for (const job of jobs) {
       } else {
         const existingPreviewIsAvailable = await access(target).then(() => true).catch(() => false);
         if (!existingPreviewIsAvailable) throw new Error(`Could not fetch social image for ${job.slug}: ${error.message}`);
+        await convertToSocialImage(target, target);
         console.warn(`Keeping existing social image for ${job.slug}: ${error.message}`);
         continue;
       }
@@ -108,4 +117,4 @@ for (const job of jobs) {
   }
 }
 
-console.log(`Generated social-preview JPEG images at 1200x630 where source images were available.`);
+console.log(`Generated branded social-preview JPEG images at 1200x630 where source images were available.`);

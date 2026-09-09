@@ -40,7 +40,7 @@ export type SeoRoute = {
 const canonicalPath = (path: string) => path === "/" ? "/" : `${path.replace(/\/$/, "")}/`;
 export const canonicalUrl = (path: string) => `${SITE_URL}${canonicalPath(path)}`;
 export const assetUrl = (path: string) => `${SITE_URL}/${path.replace(/^\/+/, "")}`;
-const socialImageUrl = (section: string, slug: string, version: string) => assetUrl(`images/social/${section}/${slug}.jpg?v=${version.replace(/[^0-9]/g, "")}`);
+const socialImageUrl = (section: string, slug: string, version: string) => assetUrl(`images/social/${section}/${slug}.jpg?v=brand1-${version.replace(/[^0-9]/g, "")}`);
 const stableHash = (value: string) => [...value].reduce((hash, character) => ((hash * 31) + character.charCodeAt(0)) >>> 0, 0).toString();
 const firstLocalRasterImage = <T extends { src: string }>(images?: T[]) => images?.find((image) => !/^https?:\/\//i.test(image.src) && /\.(?:jpe?g|png|webp)$/i.test(image.src));
 
@@ -80,7 +80,7 @@ const staticRoutes: SeoRoute[] = [
 
 const newsRoutes: SeoRoute[] = newsArticles.map((article) => ({
   path: `/news/${article.slug}`,
-  title: `${article.title} | 오늘의뉴스`,
+  title: `${article.title} | 씨앗의 소리`,
   description: article.summary,
   type: "article",
   lastModified: article.date,
@@ -97,7 +97,7 @@ const briefingRoutes: SeoRoute[] = getAllBriefingsNewestFirst().flatMap((briefin
   } : undefined);
   const routes: SeoRoute[] = [{
     path: `/briefings/${briefing.slug}`,
-    title: `${briefing.title} | 시민브리핑`,
+    title: `${briefing.title} | 씨앗의 소리`,
     description: briefing.summary,
     type: "article",
     lastModified: briefing.date,
@@ -108,7 +108,7 @@ const briefingRoutes: SeoRoute[] = getAllBriefingsNewestFirst().flatMap((briefin
   }];
   if (briefing.commentary) routes.push({
     path: `/briefings/${briefing.slug}/commentary`,
-    title: `${briefing.commentary.title} | 브리핑 깊게 보기`,
+    title: `${briefing.commentary.title} | 씨앗의 소리`,
     description: briefing.commentary.summary,
     type: "article",
     lastModified: briefing.date,
@@ -134,7 +134,7 @@ const columnRoutes: SeoRoute[] = columns.map((column) => ({
 
 const monitoringRoutes: SeoRoute[] = publicInterestWatchCases.map((item) => ({
   path: `/monitoring/${item.slug}`,
-  title: `${item.title.ko} | 공익감시`,
+  title: `${item.title.ko} | 씨앗의 소리`,
   description: item.summary.ko,
   type: "article",
   lastModified: item.updatedAt,
@@ -144,7 +144,7 @@ const monitoringRoutes: SeoRoute[] = publicInterestWatchCases.map((item) => ({
 
 const seedLanguageRoutes: SeoRoute[] = allSeedLanguageArticlesKo.map((article) => ({
   path: `/seed-language/${article.slug}`,
-  title: `${article.title} | 씨앗언어`,
+  title: `${article.title} | 씨앗의 소리`,
   description: article.summary,
   type: "article",
   lastModified: article.date,
