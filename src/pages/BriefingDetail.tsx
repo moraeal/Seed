@@ -1,4 +1,4 @@
-import { ArrowLeft, Clock, Download, FileText } from "lucide-react";
+import { ArrowLeft, Clock, Download } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import ArticleContinuation, { getFollowingItem } from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
@@ -48,7 +48,6 @@ export default function BriefingDetail() {
             <span className="flex items-center gap-1"><Clock size={14} />{ko ? `읽는 시간 ${briefing.readMinutes}분` : `${briefing.readMinutes} min read`}</span>
             <div className="flex w-full flex-wrap gap-2 sm:ml-auto sm:w-auto">
               <ShareButton title={briefing.title} text={briefing.summary} />
-              {briefing.commentary && <Link to={`/briefings/${briefing.slug}/commentary`} className="button-secondary min-h-8 px-3 py-1.5 text-xs"><FileText size={15} />{ko ? "브리핑 깊게 보기" : "Read the deep dive"}</Link>}
               {briefing.pdfPath && <a href={`${import.meta.env.BASE_URL}${briefing.pdfPath}`} download className="button-primary min-h-8 px-3 py-1.5 text-xs"><Download size={15} />{ko ? "PDF 원문 내려받기" : "Download PDF"}</a>}
             </div>
           </div>
@@ -114,7 +113,7 @@ export default function BriefingDetail() {
           </section>
         )}
 
-        {briefing.commentary && <DeepReadBanner href={`/briefings/${briefing.slug}/commentary`} readMinutes={briefing.commentary.readMinutes} />}
+        {briefing.commentary && <DeepReadBanner href={`/briefings/${briefing.slug}/commentary`} />}
         <ContentAccountability postSlug={briefing.slug} publishedDate={briefing.date} />
         <CommentSection postSlug={briefing.slug} />
         {nextBriefing && <ArticleContinuation item={{ href: `/briefings/${nextBriefing.slug}`, title: nextBriefing.title, summary: nextBriefing.summary }} listHref="/briefings" listLabel={ko ? "시민브리핑 전체 보기" : "All briefings"} />}
