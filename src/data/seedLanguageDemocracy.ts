@@ -31,6 +31,13 @@ const democracyFeatureKo: SeedLanguageArticle = {
     "민주의 진정성은 상대편을 비판할 때보다 우리 편 권력을 제한할 때 드러난다.",
   ],
   heroImage: {
+    src: "images/seed-language/democracy-citizens-photo.webp",
+    alt: "어두운 홀에서 빈 권력자의 의자 주위에 서서 정면을 바라보는 시민들",
+    caption: "권력의 자리는 시민에게서 나온다. 지도자를 선택한 시민은 그 권력을 감시할 권리도 갖는다.",
+    credit: "씨앗의 소리 AI 제작 이미지 · 사진 형식의 상징적 장면",
+  },
+  inlineImageAfterSection: 4,
+  inlineImage: {
     src: "images/seed-language/democracy-not-a-king-hero.webp",
     alt: "빈 권력자의 의자를 뒤로하고 같은 높이의 탁자에 모여 토론하는 다양한 시민들",
     caption: "시민은 지도자를 선택한다. 그러나 선택한 순간에도 질문하고 비판하고 교체할 권리를 내려놓지 않는다.",
@@ -97,7 +104,8 @@ const democracyFeatureEn: SeedLanguageArticle = {
     "Conservatives need parties that cultivate and scrutinize leaders, not another political savior.",
     "Democratic commitment is tested most clearly when we limit the power of our own side.",
   ],
-  heroImage: { ...democracyFeatureKo.heroImage, alt: "Citizens debate at an equal-height table with an empty ceremonial chair behind them", caption: "Citizens choose a leader without surrendering their right to question, criticize and replace that leader.", credit: "SEED VOICE AI-generated conceptual illustration" },
+  heroImage: { ...democracyFeatureKo.heroImage, alt: "Citizens stand around an empty seat of power in a dark hall and look directly at the viewer", caption: "Public authority comes from citizens. Choosing a leader preserves the citizen’s right to scrutinize that leader’s power.", credit: "SEED VOICE AI-generated image · photorealistic symbolic scene" },
+  inlineImage: { ...democracyFeatureKo.inlineImage!, alt: "Citizens debate at an equal-height table with an empty ceremonial chair behind them", caption: "Citizens choose a leader without surrendering their right to question, criticize and replace that leader.", credit: "SEED VOICE AI-generated conceptual illustration" },
   relatedArticle: { slug: "democracy-citizens-deep-read", label: "Deep Read · Democracy is a citizen’s right, not a ruler’s banner · 15 min" },
   sources: sourcesEn,
   chart: {

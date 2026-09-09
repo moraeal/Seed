@@ -22,6 +22,7 @@ export type SeedLanguageArticle = {
   sections: { title: string; paragraphs: string[]; overview?: string; sourceIndices?: number[] }[];
   heroImage: SeedLanguageImage;
   inlineImage?: SeedLanguageImage;
+  inlineImageAfterSection?: number;
   showTableOfContents?: boolean;
   relatedArticle?: { slug: string; label: string };
   sources?: { label: string; url: string }[];
