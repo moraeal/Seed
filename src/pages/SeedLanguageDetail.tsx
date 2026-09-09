@@ -61,7 +61,6 @@ export default function SeedLanguageDetail() {
           <time>{article.date.replace(/-/g, ".")}</time>
           <span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${article.readMinutes}분` : `${article.readMinutes} min read`}</span>
           <div className="ml-auto flex flex-wrap items-center gap-2">
-            {deepReadHref && deepReadArticle && <Link to={deepReadHref} className="button-primary min-h-10 px-4 py-2 text-sm"><BookOpenText size={16}/>{ko ? `깊게 읽기 · ${deepReadArticle.readMinutes}분` : `Deep Read · ${deepReadArticle.readMinutes} min`}</Link>}
             <ShareButton title={article.title} text={article.summary} />
           </div>
         </div>
@@ -95,7 +94,7 @@ export default function SeedLanguageDetail() {
 
         {article.sources && <aside className="my-10 border-t border-green-deep/20 pt-6"><h2 className="text-base font-bold text-navy">{ko ? "출처와 사실 확인" : "Sources and factual basis"}</h2><ul className="mt-4 space-y-3">{article.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="text-sm leading-7 text-green-deep underline underline-offset-4">{source.label}</a></li>)}</ul></aside>}
         {deepReadHref && deepReadArticle
-          ? <DeepReadBanner href={deepReadHref} readMinutes={deepReadArticle.readMinutes} />
+          ? <DeepReadBanner href={deepReadHref} />
           : article.relatedArticle && <Link to={`/seed-language/${article.relatedArticle.slug}`} className="my-8 flex items-center gap-3 border border-green-deep/20 bg-white px-5 py-4 text-base font-bold leading-7 text-green-deep hover:bg-green-pale"><BookOpenText size={20} className="shrink-0"/>{article.relatedArticle.label}</Link>}
         <ContentAccountability postSlug={`seed-language-${article.slug}`} publishedDate={article.date}/>
         <CommentSection postSlug={`seed-language-${article.slug}`}/>
