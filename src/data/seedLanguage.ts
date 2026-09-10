@@ -1,5 +1,6 @@
 import type { Language } from "../i18n";
 import { democracyArticlesKo, getDemocracyArticle } from "./seedLanguageDemocracy";
+import { getPublicInterestArticle, publicInterestArticlesKo } from "./seedLanguagePublicInterest";
 
 export type SeedLanguageImage = {
   src: string;
@@ -15,6 +16,8 @@ export type SeedLanguageArticle = {
   readMinutes: number;
   /** Only explicitly opted-in standalone articles may enter a future email queue. */
   newsletterEligible?: boolean;
+  /** Set to false when an article intentionally yields the home hero to a closely related news story. */
+  homeHeroEligible?: boolean;
   title: string;
   subtitle: string;
   summary: string;
@@ -212,9 +215,11 @@ const citizenEn: SeedLanguageArticle = {
   ],
 };
 
-export const seedLanguageArticlesKo = [...democracyArticlesKo, citizenKo];
+export const seedLanguageArticlesKo = [...publicInterestArticlesKo, ...democracyArticlesKo, citizenKo];
 
 export function getSeedLanguageArticle(slug: string, language: Language) {
+  const publicInterest = getPublicInterestArticle(slug, language);
+  if (publicInterest) return publicInterest;
   const democracy = getDemocracyArticle(slug, language);
   if (democracy) return democracy;
   if (slug !== citizenKo.slug) return undefined;

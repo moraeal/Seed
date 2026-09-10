@@ -61,6 +61,7 @@ export default function Home() {
     ...seedLanguageEnvironmentArticlesKo.filter((item) => item.slug !== "environment-beyond-camps-deep-read"),
     ...seedLanguageArticlesKo,
   ]
+    .filter((item) => item.homeHeroEligible !== false)
     .filter((item) => item.readMinutes < 12)
     .map((item) => getSeedLanguageEnvironmentArticle(item.slug, language) ?? getSeedLanguageArticle(item.slug, language))
     .filter((article): article is NonNullable<typeof article> => Boolean(article))

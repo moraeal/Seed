@@ -51,6 +51,7 @@ const contentTitles: Record<string, LocalizedText> = {
   "seed-language:democracy-citizens-deep-read": { ko: "민주는 권력자의 깃발이 아니라 시민의 권리다", en: "Democracy Is a Citizen's Right, Not a Ruler's Banner" },
   "seed-language:democracy-not-a-king": { ko: "민주는 왕을 뽑는 일이 아니라 권력을 제한하는 일이다", en: "Democracy Is Not Choosing a King. It Is Limiting Power." },
   "seed-language:environment-shared-condition": { ko: "환경은 보호의 대상이 아니라 함께 만들어가는 삶의 조건이다", en: "The Environment Is a Condition of Life We Build Together" },
+  "seed-language:public-interest-belongs-to-citizens": { ko: "공익은 국가의 것이 아니라 시민의 것이다", en: "Public Interest Belongs to Citizens, Not the State" },
 };
 
 const editorialRelations: Record<string, EditorialRelation> = {
@@ -236,6 +237,11 @@ const editorialRelations: Record<string, EditorialRelation> = {
     { kind: "column", slug: "conservatives-and-the-language-of-citizens" },
     { ko: "정치 언어의 적용", en: "APPLYING THE LANGUAGE" },
     { ko: "씨앗시민의 정의를 보수 정치가 잃어버린 시민의 언어라는 현실 문제에 적용합니다.", en: "Apply the definition of the Seed Citizen to the civic language conservative politics has lost." },
+  ),
+  [keyOf("seed-language", "public-interest-belongs-to-citizens")]: relation(
+    { kind: "news", slug: "local-sports-subsidy-accountability" },
+    { ko: "현실의 사례", en: "A REAL-WORLD CASE" },
+    { ko: "공익의 시민화라는 원칙을 지방 체육보조금 정산 문제에 적용해 봅니다.", en: "Apply the principle of citizen-centered public interest to the local sports-grant settlement case." },
   ),
   [keyOf("seed-language", "environment-shared-condition")]: relation(
     { kind: "column", slug: "nepal-climate-crisis-conservative-seed-response" },
