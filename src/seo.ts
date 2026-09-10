@@ -150,7 +150,7 @@ const researchRoutes: SeoRoute[] = [{
   lastModified: "2026-09-10",
   author: SITE_NAME,
   section: "씨앗 심층연구",
-  image: socialImageUrl("research", "community-chest-of-korea", "2026-09-10"),
+  image: socialImageUrl("research", "community-chest-of-korea", "2026-09-10-2"),
   imageAlt: "공익자금의 흐름을 장부와 돋보기로 점검하는 시민 공익감시 일러스트",
 }];
 

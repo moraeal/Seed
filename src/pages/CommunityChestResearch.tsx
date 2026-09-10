@@ -61,7 +61,7 @@ export default function CommunityChestResearch() {
 
       <div className="container-page max-w-6xl py-8 sm:py-12">
         <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]">
-          <img src={`${import.meta.env.BASE_URL}images/monitoring/community-chest-deep-hero.png`} alt={article.heroAlt} className="aspect-[16/9] w-full object-cover" />
+          <img src={`${import.meta.env.BASE_URL}images/monitoring/community-chest-deep-hero.png?v=20260910-2`} alt={article.heroAlt} className="aspect-[16/9] w-full object-cover" />
           <figcaption className="border-t border-green-deep/10 px-5 py-3 text-xs leading-6 text-charcoal/50 sm:px-7">{article.heroCaption}</figcaption>
         </figure>
 
