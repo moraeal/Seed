@@ -290,13 +290,13 @@ export default function Home() {
                       <div className="relative overflow-hidden bg-ivory">
                         <Link to={story.href} tabIndex={active ? undefined : -1} className="block">
                           <SafeImage src={resolveImageSrc(story.image.src)} alt={story.image.alt} loading={index === 0 ? "eager" : "lazy"} fetchPriority={index === 0 ? "high" : "auto"} referrerPolicy="no-referrer" className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
-                          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,253,247,0.92)_0%,rgba(255,253,247,0.58)_42%,rgba(255,253,247,0)_70%)] px-5 pt-[5.15rem] sm:px-6 sm:pt-[5.4rem]">
-                            <h1 className="line-clamp-2 max-w-[92%] text-balance font-sans text-[clamp(1.35rem,3vw,2.55rem)] font-black leading-[1.08] tracking-[-0.045em] text-green-deep drop-shadow-[0_1px_1px_rgba(255,255,255,.85)] sm:max-w-[86%]">{story.title}</h1>
+                          <div className="pointer-events-none absolute inset-0 px-5 pt-[5.15rem] sm:px-6 sm:pt-[5.4rem]">
+                            <h1 className="line-clamp-2 max-w-[92%] text-balance font-sans text-[clamp(1.35rem,3vw,2.55rem)] font-black leading-[1.08] tracking-[-0.045em] text-paper sm:max-w-[86%]" style={{ WebkitTextStroke: "1px rgba(9, 29, 22, 0.95)", paintOrder: "stroke fill", textShadow: "0 2px 7px rgba(0, 0, 0, 0.72)" }}>{story.title}</h1>
                           </div>
                         </Link>
                         <div className="pointer-events-none absolute left-5 top-5 sm:left-6">
                           <p className="rounded-sm bg-green-deep px-3 py-1.5 text-[10px] font-black tracking-[.13em] text-white shadow-sm">{story.eyebrow}</p>
-                          <p className="mt-1.5 text-xs font-extrabold text-green-deep">{story.menu}</p>
+                          <p className="mt-1.5 text-xs font-extrabold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,.95)]">{story.menu}</p>
                         </div>
                         {leadStories.length > 1 && (
                           <div className="absolute right-5 top-5 z-10 flex gap-1.5 sm:right-6">
