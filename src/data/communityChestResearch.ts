@@ -46,8 +46,8 @@ export const communityChestResearch: Record<ResearchLanguage, CommunityChestRese
     date: "2026-09-10",
     readMinutes: 12,
     verifiedAt: "2026년 9월 10일",
-    heroAlt: "기부금 장부에서 시민 공동체로 자원이 이동하고 그 과정을 돋보기로 살피는 공익감시 일러스트",
-    heroCaption: "공익자금의 핵심은 규모가 아니라 시민이 흐름과 결과를 확인할 수 있는 설명 책임입니다. 씨앗 제작 이미지.",
+    heroAlt: "시민 네 명이 기부금 장부와 지역 배분 흐름을 함께 점검하는 모습",
+    heroCaption: "공익자금의 핵심은 규모가 아니라 시민이 흐름과 결과를 확인할 수 있는 설명 책임입니다. 씨앗의 소리 AI 제작 이미지.",
     sections: [
       {
         id: "revision",
@@ -164,8 +164,8 @@ export const communityChestResearch: Record<ResearchLanguage, CommunityChestRese
     date: "2026-09-10",
     readMinutes: 12,
     verifiedAt: "September 10, 2026",
-    heroAlt: "Editorial illustration of public-interest funds moving from a transparent ledger to citizen groups under a magnifying glass",
-    heroCaption: "The central issue in public-interest funding is not scale alone, but whether citizens can follow the money and its results. Illustration by SEED VOICE.",
+    heroAlt: "Four citizens examining a donation ledger and the flow of funds to local projects",
+    heroCaption: "The central issue in public-interest funding is not scale alone, but whether citizens can follow the money and its results. AI image produced by SEED VOICE.",
     sections: [
       {
         id: "revision",
