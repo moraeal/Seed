@@ -1,6 +1,7 @@
 import { Check, Share2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLanguage } from "../i18n";
+import { recordAnalyticsEvent } from "../lib/engagement";
 
 type ShareButtonProps = {
   title: string;
@@ -15,6 +16,12 @@ export default function ShareButton({ title, text, className = "" }: ShareButton
   const ko = language === "ko";
   const [status, setStatus] = useState<ShareStatus>("idle");
 
+  const recordShare = () => {
+    void recordAnalyticsEvent("share_click", window.location.pathname, language).catch(() => {
+      // Sharing must remain available if analytics is unavailable.
+    });
+  };
+
   useEffect(() => {
     if (status === "idle") return;
     const timeout = window.setTimeout(() => setStatus("idle"), 2200);
@@ -25,6 +32,7 @@ export default function ShareButton({ title, text, className = "" }: ShareButton
     try {
       await navigator.clipboard.writeText(window.location.href);
       setStatus("copied");
+      recordShare();
     } catch {
       setStatus("failed");
     }
@@ -40,6 +48,7 @@ export default function ShareButton({ title, text, className = "" }: ShareButton
 
     try {
       await navigator.share({ title, text, url: window.location.href });
+      recordShare();
     } catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") return;
       await copyLink();

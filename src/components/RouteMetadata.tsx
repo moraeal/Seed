@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { recordContentView } from "../lib/engagement";
+import { useAuth } from "../auth";
+import { beginContentEngagement, recordContentView, setAnalyticsOwnerExclusion } from "../lib/engagement";
 
 function setMeta(selector: string, attributes: Record<string, string>) {
   let element = document.head.querySelector<HTMLMetaElement>(selector);
@@ -17,9 +18,16 @@ function removeMeta(selector: string) {
 
 export default function RouteMetadata() {
   const location = useLocation();
+  const { user, loading: authLoading } = useAuth();
+  const owner = user?.app_metadata?.seed_role === "owner";
+
+  useEffect(() => {
+    setAnalyticsOwnerExclusion(owner);
+  }, [owner]);
 
   useEffect(() => {
     let cancelled = false;
+    let stopEngagement: (() => void) | undefined;
 
     const updateMetadata = async () => {
       const {
@@ -89,10 +97,12 @@ export default function RouteMetadata() {
     }
     canonical.href = url;
 
-    if (!location.pathname.startsWith("/account") && !location.pathname.startsWith("/insights")) {
+    const trackablePage = !location.pathname.startsWith("/account") && !location.pathname.startsWith("/insights");
+    if (trackablePage && !authLoading && !owner) {
       void recordContentView(location.pathname, language).catch(() => {
         // Analytics must never interrupt reading or navigation.
       });
+      stopEngagement = beginContentEngagement(location.pathname, language);
     }
 
     document.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach((element) => element.remove());
@@ -110,8 +120,9 @@ export default function RouteMetadata() {
     void updateMetadata();
     return () => {
       cancelled = true;
+      stopEngagement?.();
     };
-  }, [location.pathname]);
+  }, [location.pathname, authLoading, user?.app_metadata?.seed_role]);
 
   return null;
 }
