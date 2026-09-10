@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1400" viewBox="0 0 1000 1400" role="img" aria-labelledby="title desc">
+  <title id="title">Investigative and prosecutorial power before and after restructuring</title>
+  <desc id="desc">A vertical infographic showing that state coercive power remains after the Prosecution Service is divided among new institutions</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#315e50"/></marker>
+    <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#19362f" flood-opacity=".12"/></filter>
+  </defs>
+  <rect width="1000" height="1400" fill="#f4f0e7"/>
+  <rect width="1000" height="190" fill="#173f35"/>
+  <text x="500" y="70" text-anchor="middle" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="39" font-weight="800">The sign may vanish.</text>
+  <text x="500" y="118" text-anchor="middle" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="39" font-weight="800">Coercive power does not.</text>
+  <text x="500" y="157" text-anchor="middle" fill="#d9e7e2" font-family="Inter, Arial, sans-serif" font-size="20">Investigative and prosecutorial power after restructuring</text>
+  <rect x="70" y="230" width="860" height="255" rx="22" fill="#fff" filter="url(#shadow)"/>
+  <text x="105" y="275" fill="#796c5b" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">BEFORE</text>
+  <rect x="115" y="310" width="290" height="70" rx="14" fill="#e5eee9" stroke="#315e50" stroke-width="2"/>
+  <text x="260" y="354" text-anchor="middle" fill="#173f35" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="700">Justice Ministry</text>
+  <line x1="405" y1="345" x2="500" y2="345" stroke="#315e50" stroke-width="5" marker-end="url(#arrow)"/>
+  <rect x="515" y="300" width="370" height="90" rx="14" fill="#315e50"/>
+  <text x="700" y="338" text-anchor="middle" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800">Prosecution Service</text>
+  <text x="700" y="370" text-anchor="middle" fill="#e5eee9" font-family="Inter, Arial, sans-serif" font-size="17">investigation · indictment · prosecution</text>
+  <text x="500" y="440" text-anchor="middle" fill="#6f675d" font-family="Inter, Arial, sans-serif" font-size="18">Powers concentrated in a single institution</text>
+  <rect x="70" y="525" width="860" height="340" rx="22" fill="#fff" filter="url(#shadow)"/>
+  <text x="105" y="570" fill="#b34f3f" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">AFTER RESTRUCTURING</text>
+  <rect x="105" y="605" width="330" height="68" rx="14" fill="#e5eee9" stroke="#315e50" stroke-width="2"/>
+  <text x="270" y="647" text-anchor="middle" fill="#173f35" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">Justice Ministry</text>
+  <rect x="565" y="605" width="330" height="68" rx="14" fill="#e5eee9" stroke="#315e50" stroke-width="2"/>
+  <text x="730" y="632" text-anchor="middle" fill="#173f35" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Interior and Safety</text>
+  <text x="730" y="655" text-anchor="middle" fill="#173f35" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Ministry</text>
+  <line x1="270" y1="673" x2="270" y2="722" stroke="#315e50" stroke-width="5" marker-end="url(#arrow)"/>
+  <line x1="730" y1="673" x2="730" y2="722" stroke="#315e50" stroke-width="5" marker-end="url(#arrow)"/>
+  <rect x="105" y="732" width="330" height="92" rx="14" fill="#315e50"/>
+  <text x="270" y="772" text-anchor="middle" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="800">Prosecution Office</text>
+  <text x="270" y="802" text-anchor="middle" fill="#e5eee9" font-family="Inter, Arial, sans-serif" font-size="16">indictment · prosecution</text>
+  <rect x="565" y="732" width="330" height="92" rx="14" fill="#315e50"/>
+  <text x="730" y="762" text-anchor="middle" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800">Serious Crimes Investigation</text>
+  <text x="730" y="786" text-anchor="middle" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800">Agency and Police</text>
+  <text x="730" y="810" text-anchor="middle" fill="#e5eee9" font-family="Inter, Arial, sans-serif" font-size="14">criminal investigations</text>
+  <text x="500" y="925" text-anchor="middle" fill="#173f35" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800">The path a citizen's case still follows</text>
+  <rect x="55" y="965" width="260" height="78" rx="39" fill="#fff" stroke="#c5bba9" stroke-width="2"/>
+  <text x="185" y="995" text-anchor="middle" fill="#2a2a2a" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Citizen or</text><text x="185" y="1019" text-anchor="middle" fill="#2a2a2a" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">business</text>
+  <line x1="315" y1="1004" x2="365" y2="1004" stroke="#315e50" stroke-width="5" marker-end="url(#arrow)"/>
+  <rect x="375" y="965" width="250" height="78" rx="39" fill="#fff" stroke="#c5bba9" stroke-width="2"/>
+  <text x="500" y="994" text-anchor="middle" fill="#2a2a2a" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">Police or Serious</text><text x="500" y="1019" text-anchor="middle" fill="#2a2a2a" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">Crimes Agency</text>
+  <line x1="625" y1="1004" x2="675" y2="1004" stroke="#315e50" stroke-width="5" marker-end="url(#arrow)"/>
+  <rect x="685" y="965" width="260" height="78" rx="39" fill="#fff" stroke="#c5bba9" stroke-width="2"/>
+  <text x="815" y="995" text-anchor="middle" fill="#2a2a2a" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Prosecutors</text><text x="815" y="1019" text-anchor="middle" fill="#2a2a2a" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">and courts</text>
+  <rect x="70" y="1095" width="860" height="220" rx="20" fill="#efe4d7"/>
+  <text x="105" y="1140" fill="#b34f3f" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800">QUESTIONS THAT REMAIN</text>
+  <text x="105" y="1195" fill="#3b342d" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">More agencies</text>
+  <text x="370" y="1195" fill="#3b342d" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">Blurred responsibility</text>
+  <text x="690" y="1195" fill="#3b342d" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">Political control</text>
+  <line x1="105" y1="1230" x2="895" y2="1230" stroke="#cdbca8" stroke-width="2"/>
+  <text x="105" y="1274" fill="#173f35" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">SEED'S TEST</text>
+  <text x="275" y="1274" fill="#173f35" font-family="Inter, Arial, sans-serif" font-size="18">total coercive power · due process · accountability</text>
+  <text x="500" y="1360" text-anchor="middle" fill="#6f675d" font-family="Inter, Arial, sans-serif" font-size="14">Simplified from enacted laws and government drafts.</text>
+  <text x="500" y="1382" text-anchor="middle" fill="#6f675d" font-family="Inter, Arial, sans-serif" font-size="14">Operational details may change under subsequent rules.</text>
+</svg>
