@@ -60,7 +60,7 @@ export default function RouteMetadata() {
     document.title = title;
     document.documentElement.lang = language;
     setMeta('meta[name="description"]', { name: "description", content: description });
-    setMeta('meta[name="robots"]', { name: "robots", content: route ? "index, follow, max-image-preview:large" : "noindex, follow" });
+    setMeta('meta[name="robots"]', { name: "robots", content: route && !route.noindex ? "index, follow, max-image-preview:large" : "noindex, follow" });
     setMeta('meta[property="og:type"]', { property: "og:type", content: route?.type ?? "website" });
     setMeta('meta[property="og:site_name"]', { property: "og:site_name", content: siteName });
     setMeta('meta[property="og:title"]', { property: "og:title", content: title });

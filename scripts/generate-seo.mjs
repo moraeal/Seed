@@ -14,7 +14,7 @@ const server = await createServer({
   server: { middlewareMode: true },
   optimizeDeps: { noDiscovery: true },
 });
-const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, siteContentModule, seedLanguageModule, seedLanguageEnvironmentModule] = await Promise.all([
+const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, siteContentModule, seedLanguageModule, seedLanguageEnvironmentModule, communityChestModule] = await Promise.all([
   server.ssrLoadModule("/src/seo.ts"),
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
@@ -23,6 +23,7 @@ const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME,
   server.ssrLoadModule("/src/data/siteContent.ts"),
   server.ssrLoadModule("/src/data/seedLanguage.ts"),
   server.ssrLoadModule("/src/data/seedLanguageEnvironment.ts"),
+  server.ssrLoadModule("/src/data/communityChestResearch.ts"),
 ]);
 await server.close();
 
@@ -35,6 +36,7 @@ const seedLanguageArticles = [
   ...seedLanguageEnvironmentModule.seedLanguageEnvironmentArticlesKo,
   ...seedLanguageModule.seedLanguageArticlesKo,
 ];
+const communityChestResearch = communityChestModule.communityChestResearch.ko;
 
 const escapeHtml = (value = "") => String(value)
   .replaceAll("&", "&amp;")
@@ -108,6 +110,15 @@ function articleBody(route) {
     ].join("\n");
   }
 
+  if (route.path === "/research/community-chest-of-korea") return [
+    `<section><h2>핵심 요약</h2>${paragraphList(communityChestResearch.summary)}</section>`,
+    ...communityChestResearch.sections.map((section) =>
+      `<section><h2>${escapeHtml(section.title)}</h2><p><strong>${escapeHtml(section.deck)}</strong></p>${paragraphList(section.paragraphs)}${bulletList(section.bullets ?? [])}</section>`
+    ),
+    `<section><h2>결론</h2>${paragraphList(communityChestResearch.conclusion)}</section>`,
+    `<section><h2>확인 자료</h2><ul>${communityChestResearch.sources.map((source) => `<li><a href="${escapeHtml(source.url)}">${escapeHtml(source.label)}</a></li>`).join("")}</ul></section>`,
+  ].join("\n");
+
   const listing = route.path === "/news" ? news.map((item) => ({ path: `/news/${item.slug}`, title: item.title, summary: item.summary }))
     : route.path === "/briefings" ? briefings.map((item) => ({ path: `/briefings/${item.slug}`, title: item.title, summary: item.summary }))
     : route.path === "/columns" ? columns.map((item) => ({ path: `/columns/${item.slug}`, title: item.title, summary: item.summary }))
@@ -128,6 +139,7 @@ function structuredData(route) {
     url: canonicalUrl(route.path),
     description: route.description,
     inLanguage: language,
+    sameAs: ["https://x.com/SeedVoice_KR"],
   };
   if (route.type === "article") return {
     "@context": "https://schema.org",
@@ -137,8 +149,8 @@ function structuredData(route) {
     datePublished: route.lastModified,
     dateModified: route.lastModified,
     mainEntityOfPage: canonicalUrl(route.path),
-    author: { "@type": "Person", name: route.author || SITE_NAME },
-    publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+    author: { "@type": route.author && route.author !== SITE_NAME ? "Person" : "Organization", name: route.author || SITE_NAME },
+    publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL, sameAs: ["https://x.com/SeedVoice_KR"] },
     articleSection: route.section,
     inLanguage: language,
     ...(route.image ? { image: route.image } : {}),
@@ -176,7 +188,7 @@ function render(route) {
   const head = `
     <title>${title}</title>
     <meta name="description" content="${description}" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="robots" content="${route.noindex ? "noindex, follow" : "index, follow, max-image-preview:large"}" />
     <link rel="canonical" href="${canonical}" />${languageAlternates}
     <meta property="og:type" content="${route.type}" />
     <meta property="og:site_name" content="${siteName}" />
@@ -219,8 +231,34 @@ const accountShell = template
 await mkdir(path.join(dist, "account"), { recursive: true });
 await writeFile(path.join(dist, "account", "index.html"), accountShell);
 
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${seoRoutes.map((route) => `  <url>\n    <loc>${canonicalUrl(route.path)}</loc>${route.lastModified ? `\n    <lastmod>${route.lastModified}</lastmod>` : ""}\n  </url>`).join("\n")}\n</urlset>\n`;
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${seoRoutes.filter((route) => !route.noindex).map((route) => `  <url>\n    <loc>${canonicalUrl(route.path)}</loc>${route.lastModified ? `\n    <lastmod>${route.lastModified}</lastmod>` : ""}\n  </url>`).join("\n")}\n</urlset>\n`;
 await writeFile(path.join(dist, "sitemap.xml"), sitemap);
+
+const newsCutoff = new Date();
+newsCutoff.setUTCDate(newsCutoff.getUTCDate() - 2);
+const recentNewsRoutes = seoRoutes.filter((route) =>
+  route.type === "article"
+  && route.lastModified
+  && !["/founding-statement", "/publisher-message"].includes(route.path)
+  && new Date(`${route.lastModified}T23:59:59Z`) >= newsCutoff
+);
+const newsSitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+${recentNewsRoutes.map((route) => `  <url>
+    <loc>${canonicalUrl(route.path)}</loc>
+    <news:news>
+      <news:publication>
+        <news:name>${escapeHtml(SITE_NAME)}</news:name>
+        <news:language>ko</news:language>
+      </news:publication>
+      <news:publication_date>${route.lastModified}</news:publication_date>
+      <news:title>${escapeHtml(route.title.replace(/ \| .*$/, ""))}</news:title>
+    </news:news>
+  </url>`).join("\n")}
+</urlset>
+`;
+await writeFile(path.join(dist, "news-sitemap.xml"), newsSitemap);
 const feedRoutes = seoRoutes
   .filter((route) => route.type === "article" && route.lastModified)
   .sort((a, b) => b.lastModified.localeCompare(a.lastModified) || a.path.localeCompare(b.path))
@@ -248,4 +286,4 @@ ${feedRoutes.map((route) => `    <item>
 </rss>
 `;
 await writeFile(path.join(dist, "rss.xml"), rss);
-await writeFile(path.join(dist, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+await writeFile(path.join(dist, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/news-sitemap.xml\n`);
