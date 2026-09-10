@@ -291,12 +291,11 @@ export default function Home() {
                         <Link to={story.href} tabIndex={active ? undefined : -1} className="block">
                           <SafeImage src={resolveImageSrc(story.image.src)} alt={story.image.alt} loading={index === 0 ? "eager" : "lazy"} fetchPriority={index === 0 ? "high" : "auto"} referrerPolicy="no-referrer" className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
                           <div className="pointer-events-none absolute inset-0 px-5 pt-[5.15rem] sm:px-6 sm:pt-[5.4rem]">
-                            <h1 className="line-clamp-2 max-w-[92%] text-balance font-sans text-[clamp(1.35rem,3vw,2.55rem)] font-black leading-[1.08] tracking-[-0.045em] text-paper sm:max-w-[86%]" style={{ WebkitTextStroke: "1px rgba(9, 29, 22, 0.95)", paintOrder: "stroke fill", textShadow: "0 2px 7px rgba(0, 0, 0, 0.72)" }}>{story.title}</h1>
+                            <h1 className="line-clamp-2 max-w-[92%] text-balance font-sans text-[clamp(1.35rem,3vw,2.55rem)] font-black leading-[1.08] tracking-[-0.045em] text-paper sm:max-w-[86%]" style={{ WebkitTextStroke: "1px rgba(9, 29, 22, 0.95)", paintOrder: "stroke fill", textShadow: "3px 3px 4px rgba(0, 0, 0, 0.78)" }}>{story.title}</h1>
                           </div>
                         </Link>
                         <div className="pointer-events-none absolute left-5 top-5 sm:left-6">
                           <p className="rounded-sm bg-green-deep px-3 py-1.5 text-[10px] font-black tracking-[.13em] text-white shadow-sm">{story.eyebrow}</p>
-                          <p className="mt-1.5 text-xs font-extrabold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,.95)]">{story.menu}</p>
                         </div>
                         {leadStories.length > 1 && (
                           <div className="absolute right-5 top-5 z-10 flex gap-1.5 sm:right-6">
@@ -305,10 +304,6 @@ export default function Home() {
                             <button type="button" onClick={() => moveLeadStory(1)} className="grid h-9 w-9 place-items-center rounded-full border border-green-deep/15 bg-paper/90 text-green-deep shadow-sm backdrop-blur-sm transition hover:bg-green-deep hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-deep" aria-label={ko ? "다음 최신 기사" : "Next featured story"}><ArrowRight size={17}/></button>
                           </div>
                         )}
-                        <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end px-5 pb-5 sm:px-6">
-                          <time className="rounded-sm border border-green-deep/10 bg-paper/90 px-2.5 py-1 text-[11px] font-semibold text-green-deep shadow-sm backdrop-blur-sm">{story.date.replace(/-/g, ".")} · {story.readMinutes}{ko ? "분" : " min"}</time>
-                        </div>
-                        {story.key !== "news-lh-split-public-agency-experiment" && (story.image.sourceUrl ? <a href={story.image.sourceUrl} target="_blank" rel="noreferrer" tabIndex={active ? undefined : -1} className="absolute bottom-5 left-5 z-10 max-w-[45%] truncate rounded-sm border border-green-deep/10 bg-paper/90 px-2.5 py-1 text-[11px] font-semibold text-green-deep underline decoration-green-deep/30 underline-offset-2 shadow-sm backdrop-blur-sm transition hover:bg-white sm:left-6">{story.image.credit}</a> : <span className="pointer-events-none absolute bottom-5 left-5 z-10 max-w-[45%] truncate rounded-sm border border-green-deep/10 bg-paper/90 px-2.5 py-1 text-[11px] font-semibold text-green-deep shadow-sm backdrop-blur-sm sm:left-6">{story.image.credit}</span>)}
                       </div>
                       <Link to={story.href} tabIndex={active ? undefined : -1} className="flex flex-1 flex-col px-5 sm:px-6">
                         <p className="mt-3 line-clamp-2 max-w-4xl text-base font-medium leading-7 text-charcoal/65 sm:text-[17px]">{story.summary}</p>
