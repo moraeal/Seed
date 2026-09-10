@@ -290,7 +290,7 @@ export default function Home() {
                       <div className="relative overflow-hidden bg-ivory">
                         <Link to={story.href} tabIndex={active ? undefined : -1} className="block">
                           <SafeImage src={resolveImageSrc(story.image.src)} alt={story.image.alt} loading={index === 0 ? "eager" : "lazy"} fetchPriority={index === 0 ? "high" : "auto"} referrerPolicy="no-referrer" className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
-                          <div className="pointer-events-none absolute inset-0 px-5 pt-[5.15rem] sm:px-6 sm:pt-[5.4rem]">
+                          <div className="pointer-events-none absolute inset-0 flex items-end px-5 pb-8 sm:px-6 sm:pb-9">
                             <h1 className="line-clamp-2 max-w-[92%] text-balance font-sans text-[clamp(1.35rem,3vw,2.55rem)] font-black leading-[1.08] tracking-[-0.045em] text-paper sm:max-w-[86%]" style={{ WebkitTextStroke: "1px rgba(9, 29, 22, 0.95)", paintOrder: "stroke fill", textShadow: "3px 3px 4px rgba(0, 0, 0, 0.78)" }}>{story.title}</h1>
                           </div>
                         </Link>
