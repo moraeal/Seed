@@ -3,6 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        var recoveryStarted = false;
+        var retryKey = "seed-reload";
+
+        window.__seedRecover = function () {
+          if (recoveryStarted) return false;
+          recoveryStarted = true;
+
+          var url = new URL(window.location.href);
+          var previousRetry = Number(url.searchParams.get(retryKey) || 0);
+          var now = Date.now();
+          if (previousRetry && now - previousRetry < 60000) return false;
+
+          url.searchParams.set(retryKey, String(now));
+          window.location.replace(url.toString());
+          return true;
+        };
+
+        window.addEventListener("vite:preloadError", function (event) {
+          event.preventDefault();
+          window.__seedRecover();
+        });
+
+        window.addEventListener("error", function (event) {
+          var target = event.target;
+          var message = String(event.message || "");
+          var failedModule = target instanceof HTMLScriptElement && target.type === "module";
+          var failedChunk = /dynamically imported module|module script|loading chunk|chunkloaderror/i.test(message);
+          if (failedModule || failedChunk) window.__seedRecover();
+        }, true);
+      })();
+    </script>
     <meta
       name="description"
       content="씨앗의 소리는 자유의 영역을 넓히고, 기업의 도전과 혁신을 보호하며, 국가와 시민사회의 권력을 감시하는 독립 시민저널입니다."

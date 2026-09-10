@@ -74,8 +74,12 @@ function normalizeSession(raw: AuthSession): AuthSession {
 }
 
 function saveSession(session: AuthSession | null) {
-  if (!session) localStorage.removeItem(STORAGE_KEY);
-  else localStorage.setItem(STORAGE_KEY, JSON.stringify(session));
+  try {
+    if (!session) localStorage.removeItem(STORAGE_KEY);
+    else localStorage.setItem(STORAGE_KEY, JSON.stringify(session));
+  } catch {
+    // Keep the public site usable when a browser blocks local storage.
+  }
 }
 
 async function getUser(accessToken: string): Promise<AuthUser> {
@@ -118,7 +122,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           return;
         }
 
-        const stored = localStorage.getItem(STORAGE_KEY);
+        let stored: string | null = null;
+        try {
+          stored = localStorage.getItem(STORAGE_KEY);
+        } catch {
+          // Authentication remains signed out when storage is unavailable.
+        }
         if (!stored) return;
         let parsed = JSON.parse(stored) as AuthSession;
         const now = Math.floor(Date.now() / 1000);
