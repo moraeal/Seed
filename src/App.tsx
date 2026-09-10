@@ -18,6 +18,7 @@ const ProposalLab = lazy(() => import("./pages/ProposalLab"));
 const Proposals = lazy(() => import("./pages/Proposals"));
 const Monitoring = lazy(() => import("./pages/Monitoring"));
 const PublicInterestWatchDetail = lazy(() => import("./pages/PublicInterestWatchDetail"));
+const CommunityChestResearch = lazy(() => import("./pages/CommunityChestResearch"));
 const Roadmap = lazy(() => import("./pages/Roadmap"));
 const TodayFrame = lazy(() => import("./pages/TodayFrame"));
 const Briefings = lazy(() => import("./pages/Briefings"));
@@ -72,6 +73,7 @@ function AppShell() {
           <Route path="/news/:slug" element={<NewsDetail />} />
           <Route path="/monitoring" element={<Monitoring />} />
           <Route path="/monitoring/:slug" element={<PublicInterestWatchDetail />} />
+          <Route path="/research/community-chest-of-korea" element={<CommunityChestResearch />} />
           <Route path="/proposals" element={<Proposals />} />
           <Route path="/academy" element={<Academy />} />
           <Route path="/experiments" element={<Experiments />} />

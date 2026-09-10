@@ -22,6 +22,8 @@ export type PublicInterestWatchCase = {
   supportNote?: LocalizedText;
   hideSourceBasis?: boolean;
   sources: WatchSource[];
+  researchHref?: string;
+  researchLabel?: LocalizedText;
 };
 
 export const publicInterestWatchCases: PublicInterestWatchCase[] = [
@@ -138,14 +140,14 @@ export const publicInterestWatchCases: PublicInterestWatchCase[] = [
       en: "The power of large-scale fundraising requires greater accountability",
     },
     summary: {
-      ko: "기존 씨드 문건은 공동모금회의 중앙집중적 구조, 이월자산, 지정기탁 중심 배분과 작은 시민조직의 접근 장벽을 문제로 제기합니다. 과거 비위 사례와 현재 공시자료를 구분해 다시 묻습니다.",
-      en: "SEED's earlier paper raises questions about centralization, carried-over assets, restricted allocations and barriers for small civic groups. This record separates historical controversies from current disclosures.",
+      ko: "2021~2025년 공식 공시를 다시 확인해 모금·배분·차기이월 순자산과 지정기탁 구조를 점검했습니다. 과거 논란은 기관의 답변과 구분해 기록하고, 작은 시민조직의 접근성을 묻습니다.",
+      en: "We rechecked 2021–2025 disclosures on fundraising, distributions, carried-over net assets and donor-restricted allocations, separating historical controversies from institutional responses and current questions.",
     },
     status: { ko: "집중 질의", en: "Priority inquiry" },
-    updatedAt: "2026-09-01",
+    updatedAt: "2026-09-10",
     sourceBasis: {
-      ko: "씨드가 보관한 「사회복지공동모금회의 구조적 한계와 공익의 시민화」와 결산자료 재구성 메모를 바탕으로 작성했습니다. 원문 속 과거 사건·수치는 현재 사실과 구분해 검증 질문으로 전환했습니다.",
-      en: "This record draws on SEED's paper on the Community Chest's structural limits and a working reconstruction of financial disclosures. Historical incidents and figures are separated from current facts and reframed as verification questions.",
+      ko: "씨드가 보관한 기존 분석 PDF를 출발점으로 삼되, 2026년 9월 10일 사랑의열매 중앙회 경영공시·현행 법령·이사회 공개자료와 관련 보도를 다시 대조했습니다. 법정 기준, 공식 수치, 과거 사건, 씨앗의 해석을 구분했습니다.",
+      en: "Starting from SEED's archived PDF, this record was rebuilt on September 10, 2026 against the Chest's disclosures, current law, governance records and relevant reporting. Statutory tests, official figures, historical incidents and SEED's analysis are separated.",
     },
     confirmedFacts: [
       {
@@ -160,15 +162,23 @@ export const publicInterestWatchCases: PublicInterestWatchCase[] = [
         ko: "회장 인사말은 2025년 모금 실적을 9,864억 원으로 밝히고 있습니다. 규모가 커진 만큼 배분 과정과 잔액에 대한 설명 책임도 함께 커집니다.",
         en: "The chair's official message reports KRW 986.4 billion raised in 2025. Greater scale brings a corresponding duty to explain allocation and balances.",
       },
+      {
+        ko: "공식 경영공시상 2025년 배분액은 9,860억 원이며, 이 가운데 지정기탁은 7,430억 원으로 약 75.4%입니다.",
+        en: "Official disclosures report KRW 986.0 billion distributed in 2025, including KRW 743.0 billion—about 75.4%—in donor-restricted allocations.",
+      },
+      {
+        ko: "공식 수입지출현황상 차기이월 순자산은 2021년 8,181억 원에서 2025년 1조 962억 원으로 증가했습니다. 이는 현금 잔액과 같은 개념은 아닙니다.",
+        en: "The official income-and-expenditure statement shows net assets carried forward rising from KRW 818.1 billion in 2021 to KRW 1.0962 trillion in 2025. This is not equivalent to cash on hand.",
+      },
     ],
     questions: [
       {
-        ko: "기존 결산 재구성에서 2021~2025년 차기이월 순자산이 8,181억 원에서 1조 962억 원으로 늘어난 것으로 나타납니다. 회계연도·지정 여부·대기기간별 원인과 사용계획을 원자료로 확인해 주십시오.",
-        en: "SEED's reconstruction indicates that net assets carried forward rose from KRW 818.1 billion to KRW 1.0962 trillion between 2021 and 2025. Please verify the causes and plans by year, restriction status and age.",
+        ko: "차기이월 순자산 1조 962억 원을 발생연도·지정 여부·대기기간별로 나누고 향후 집행계획과 연결해 공개할 수 있습니까?",
+        en: "Can the KRW 1.0962 trillion carried forward be disclosed by origin year, restriction status and age, with a forward spending plan?",
       },
       {
-        ko: "지정기탁 배분 비중이 약 75%라는 기존 분석이 맞는지, 기부자의 지정과 모금회의 독립적 배분 판단이 각각 어떤 영향을 갖는지 공개할 수 있습니까?",
-        en: "Can the Chest verify SEED's estimate that restricted allocations account for roughly 75%, and explain the relative influence of donor designations and independent allocation judgment?",
+        ko: "지정기탁 배분이 약 75%를 차지하는 구조에서 기부자의 지정과 모금회의 독립적 배분 판단이 각각 어떤 영향을 갖는지 공개할 수 있습니까?",
+        en: "With donor-restricted allocations at about 75%, can the Chest explain the relative influence of donor direction and its independent allocation judgment?",
       },
       {
         ko: "운영비 비율을 총모금액 기준뿐 아니라 용도 제약이 없는 일반모금액 기준으로도 제시할 수 있습니까?",
@@ -202,8 +212,8 @@ export const publicInterestWatchCases: PublicInterestWatchCase[] = [
       },
     ],
     caution: {
-      ko: "위 이월액과 지정기탁 비중은 씨드의 기존 결산자료 재구성 값입니다. 공동모금회의 확인과 산출표 공개 전까지는 확정 사실이 아니라 공개 질의의 근거로 사용합니다.",
-      en: "The carryover and restricted-allocation figures above come from SEED's reconstruction. Until the Chest verifies them and the calculation table is published, they remain the basis for questions—not settled findings.",
+      ko: "차기이월 순자산과 지정기탁 비중은 사랑의열매 중앙회 공식 공시에서 확인했습니다. 다만 이월 순자산은 전액 즉시 사용 가능한 현금이나 방치된 재원을 뜻하지 않으며, 세부 구성과 집행 일정은 추가 설명이 필요합니다. 일반모금액 대비 운영비 비율은 법정 10% 기준과 다른 분석지표입니다.",
+      en: "Carryover and donor-restricted shares are confirmed in national-office disclosures. Carryover is not all immediately available cash or proof of idle funds; its composition and schedule need further explanation. An operating-cost ratio against unrestricted giving is an analytical measure, not the statutory 10% test.",
     },
     sources: [
       {
@@ -216,14 +226,15 @@ export const publicInterestWatchCases: PublicInterestWatchCase[] = [
       },
       {
         label: { ko: "사랑의열매 경영공시·감사보고서", en: "Management disclosures and audit reports" },
-        url: "https://seoul.chest.or.kr/lf/ct/initMngmtpblntf.do",
+        url: "https://www.chest.or.kr/lf/ct/initMngmtpblntf.do",
       },
       {
-        label: { ko: "씨드 보관 문건: 사회복지공동모금회 조직 평가 분석", en: "SEED archive: Organizational assessment of Community Chest of Korea" },
-        url: "https://docs.google.com/document/d/14EL02yCWdKaQvT8MpDjM-NcUvgfL3LfO9pDWacskEvk/edit?usp=drivesdk",
-        note: { ko: "씨드 내부 분석 원문", en: "SEED's original analysis" },
+        label: { ko: "사랑의열매 이사회·분과실행위원 공개자료", en: "Community Chest board and committee disclosures" },
+        url: "https://www.chest.or.kr/lf/intrcn/initWpeople.do?cckIs=C",
       },
     ],
+    researchHref: "/research/community-chest-of-korea",
+    researchLabel: { ko: "심층연구 읽기", en: "Read the deep research" },
   },
   {
     slug: "korea-football-association",

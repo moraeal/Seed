@@ -10,7 +10,19 @@ export type ContentRevision = {
 
 const revisionStartDate = "2026-09-04";
 
-const recordedRevisions: Record<string, ContentRevision[]> = {};
+const recordedRevisions: Record<string, ContentRevision[]> = {
+  "monitoring-community-chest-of-korea": [
+    {
+      version: "v1.1",
+      date: "2026-09-10",
+      titleKo: "공식 공시 재검증 및 심층연구 연결",
+      titleEn: "Official figures rechecked and deep research linked",
+      detailKo: "차기이월 순자산과 지정기탁 비중을 공식 확인값으로 갱신하고, 법정 운영비 기준과 별도 분석지표를 구분했습니다. 팩트체크 개정판 심층연구를 연결했습니다.",
+      detailEn: "Carryover and donor-restricted shares were updated as confirmed figures, and the statutory operating-cost test was separated from alternative analysis. A fact-checked deep research edition was linked.",
+      kind: "content",
+    },
+  ],
+};
 
 export function getContentRevisions(postSlug: string, publishedDate: string): ContentRevision[] {
   const revisions: ContentRevision[] = [
@@ -39,4 +51,3 @@ export function getContentRevisions(postSlug: string, publishedDate: string): Co
 
   return [...revisions, ...(recordedRevisions[postSlug] || [])].sort((a, b) => b.date.localeCompare(a.date));
 }
-

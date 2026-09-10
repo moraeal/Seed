@@ -142,6 +142,18 @@ const monitoringRoutes: SeoRoute[] = publicInterestWatchCases.map((item) => ({
   section: "공익감시",
 }));
 
+const researchRoutes: SeoRoute[] = [{
+  path: "/research/community-chest-of-korea",
+  title: "사랑의열매는 시민의 공익을 어떻게 배분하는가 | 씨앗의 소리",
+  description: "사랑의열매의 2021~2025년 모금·배분·이월재원·지정기탁·운영비와 시민 참여 구조를 공식자료로 다시 검증한 씨앗 심층연구입니다.",
+  type: "article",
+  lastModified: "2026-09-10",
+  author: SITE_NAME,
+  section: "씨앗 심층연구",
+  image: socialImageUrl("research", "community-chest-of-korea", "2026-09-10"),
+  imageAlt: "공익자금의 흐름을 장부와 돋보기로 점검하는 시민 공익감시 일러스트",
+}];
+
 const seedLanguageRoutes: SeoRoute[] = allSeedLanguageArticlesKo.map((article) => ({
   path: `/seed-language/${article.slug}`,
   title: `${article.title} | 씨앗의 소리`,
@@ -160,6 +172,7 @@ export const seoRoutes: SeoRoute[] = [
   ...briefingRoutes,
   ...columnRoutes,
   ...monitoringRoutes,
+  ...researchRoutes,
   ...seedLanguageRoutes,
 ];
 

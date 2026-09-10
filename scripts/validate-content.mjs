@@ -34,6 +34,7 @@ const accountabilitySurfaces = [
   "src/pages/BriefingCommentary.tsx",
   "src/pages/ColumnDetail.tsx",
   "src/pages/PublicInterestWatchDetail.tsx",
+  "src/pages/CommunityChestResearch.tsx",
   "src/pages/SeedLanguageDetail.tsx",
 ];
 
@@ -58,6 +59,7 @@ const requireSocialImage = async (section, slug) => {
   }
 };
 await requireSocialImage("site", "home");
+await requireSocialImage("research", "community-chest-of-korea");
 for (const article of newsModule.newsArticles) {
   if (!editorialContinuationModule.getEditorialContinuation("news", article.slug, "ko") || !editorialContinuationModule.getEditorialContinuation("news", article.slug, "en")) errors.push(`Editorial continuation is missing or incomplete for news: ${article.slug}`);
   if (!optionalEnglishNewsSlugs.has(article.slug) && !newsTranslationModule.newsTranslations[article.slug]) errors.push(`Missing English news translation: ${article.slug}`);

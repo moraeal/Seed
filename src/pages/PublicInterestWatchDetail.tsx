@@ -1,4 +1,4 @@
-import { AlertTriangle, ArrowLeft, CheckCircle2, ExternalLink, FileQuestion, Lightbulb, Scale } from "lucide-react";
+import { AlertTriangle, ArrowLeft, BookOpenText, CheckCircle2, ExternalLink, FileQuestion, Lightbulb, Scale } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import ArticleContinuation from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
@@ -48,6 +48,7 @@ export default function PublicInterestWatchDetail() {
               <span>{ko ? "작성" : "Published"} {item.updatedAt.replace(/-/g, ".")}</span>
               <span>{ko ? "공개자료와 씨드 보관 문건을 교차 검토" : "Cross-checked against public disclosures and SEED records"}</span>
             </div>
+            {item.researchHref && item.researchLabel && <Link to={item.researchHref} className="button-primary mt-5"><BookOpenText size={17}/>{t(item.researchLabel)}</Link>}
           </div>
         </div>
       </header>
