@@ -1,6 +1,85 @@
 import type { NewsTranslation } from "./types";
 
 export const newsTranslations: Record<string, NewsTranslation> = {
+  "local-sports-subsidy-accountability": {
+    category: "Local Government & Public Funds",
+    title: "KRW 20 Billion in Sports Grants: Why Were Revenue and Receipts Missing?",
+    subtitle: "A public-interest label does not suspend transparency or the duty to explain how citizens' money was used.",
+    summary: "South Korea's Anti-Corruption and Civil Rights Commission reviewed sports-grant projects in 12 basic-level municipalities over the past three years. According to YTN, most of the sports associations reviewed omitted entry fees, ticket revenue or sponsorships from their settlements. At least KRW 20 billion in public subsidies went to the projects, but that is not a confirmed loss or embezzlement figure. The next questions are the actual amount omitted, what is recovered, and why municipal oversight failed.",
+    keySentence: "Private organizations deserve autonomy, but once they use public money they owe citizens a full account of its sources and results.",
+    selectedNews: {
+      outlet: "YTN",
+      headline: "Commission Finds Poor Management of Local Sports Grants, Recommends Recovery and Referrals",
+      linkLabel: "Read the YTN report (Korean)",
+      thumbnailUrl: "/images/news/local-sports-subsidy-ledger.webp",
+      thumbnailAlt: "A ledger, receipts, calculator and transparent cash box in an empty indoor gymnasium",
+      thumbnailCaption: "A SEED VOICE-produced editorial image symbolizing the need for transparent accounting of sports-event revenue and public grants.",
+      summary: [
+        "The commission reviewed sports-grant projects in 12 basic-level municipalities over the past three years.",
+        "Most associations reviewed reportedly omitted entry fees, ticket sales or sponsorship revenue, while many failed to provide supporting records.",
+        "The commission recommended recovery and corrective action and said selected suspected embezzlement or breach-of-trust matters would be referred to investigators."
+      ]
+    },
+    heroImage: {
+      alt: "A ledger, receipts, calculator and transparent cash box in an empty indoor gymnasium",
+      caption: "When grants and event revenue finance the same activity, both flows should be visible in one account to citizens.",
+      credit: "AI editorial image by SEED VOICE"
+    },
+    inlineImage: {
+      src: "/images/news/local-sports-subsidy-facts-en.svg",
+      alt: "A graphic explaining the sports-grant review's scope, the meaning of KRW 20 billion and the announced next steps",
+      caption: "The KRW 20 billion-plus figure is the subsidy total for the projects reviewed—not a confirmed loss or embezzlement total.",
+      credit: "SEED VOICE · Based on YTN's report of the commission's findings"
+    },
+    sections: [
+      {
+        title: "What happened",
+        paragraphs: [
+          "The Anti-Corruption and Civil Rights Commission selected 12 basic-level municipalities and reviewed sports-related local grant projects carried out over the past three years. YTN reported on September 10 that most of the sports associations reviewed failed to disclose revenue from athlete entry fees, admission tickets and sponsorships in their grant settlements.",
+          "The commission said many associations did not submit records needed to verify revenue and spending, meaning the scale of omitted revenue could be larger. The review also reportedly found cases in which revenue from similar events was appropriated and public funds were used for purposes unrelated to the project, including condolence payments for an association instructor.",
+          "The commission said it would notify the municipalities, recommend recovery and corrective action, and refer selected matters that may involve embezzlement or breach of trust. These are administrative findings and suspected criminal matters—not final judicial determinations against any person or organization."
+        ]
+      },
+      {
+        title: "KRW 20 billion is not a ‘loss figure’",
+        paragraphs: [
+          "The reported KRW 20 billion-plus figure is the amount of local subsidies committed to projects where revenue omissions or inadequate supporting records were identified. It does not mean that all KRW 20 billion disappeared or was embezzled. The subsidy total, omitted revenue, spending outside the approved purpose and the eventual recovery amount must be reported separately.",
+          "That distinction is more than wording. Treating the entire grant total as a loss exaggerates the allegation; reporting only the amount ultimately recovered could understate a wider management failure. Municipalities should publish comparable project-level figures for subsidies, self-generated revenue, expenditure, balances and recoveries."
+        ]
+      },
+      {
+        title: "What remains unconfirmed",
+        paragraphs: [
+          "The public report does not identify all 12 municipalities and associations or provide a project-by-project breakdown of grants, omitted revenue and missing records. It also does not divide the KRW 20 billion total between properly spent funds, spending outside the approved purpose and money subject to recovery.",
+          "The specific conduct, amounts and responses of those connected to matters referred for investigation have not been disclosed. A referral is not a conviction; criminal responsibility must be determined through investigation and trial.",
+          "Further disclosure is also needed on why municipal settlement reviews failed to detect omitted revenue and inadequate records, what checks were performed, and what action officials took when irregularities were found."
+        ]
+      },
+      {
+        title: "Municipal oversight is part of the story",
+        paragraphs: [
+          "Sports associations may deliver the projects, but municipalities award the grants and approve the settlements. Grant recipients must spend and document funds according to the approved purpose and conditions; municipalities must examine performance and settlement reports and recover improperly used funds.",
+          "The issue should therefore not end as a story about accounting failures inside a handful of sports bodies. The grant-review process, the separation of subsidies from event revenue, and whether past violations affect future awards all require examination."
+        ]
+      }
+    ],
+    watchPoints: [
+      "Whether the 12 municipalities publish project-level subsidy, omitted-revenue and improper-spending figures",
+      "Whether officials clearly distinguish the KRW 20 billion subsidy total from confirmed losses and recoveries",
+      "How projects lacking supporting records passed settlement review or received later funding",
+      "Whether municipalities disclose recovery, investigation and official-oversight outcomes",
+      "Whether a common system is introduced to record entry fees, ticket sales and sponsorships alongside grant spending"
+    ],
+    seedPerspective: [
+      "Sports associations and other private organizations deserve autonomy. But autonomy is not a right to hide the use of public funds. Once citizens' taxes support a project, the organization must explain revenue, expenditure and remaining balances.",
+      "A capable state does not directly manage every private activity. It sets clear grant conditions, publishes results and recovers improperly used funds. If an oversight body merely collected paperwork while repeated omissions went undetected, the state's own management responsibility must also be examined.",
+      "The most important number is not KRW 20 billion by itself. It is the project-level amount eventually found to have been omitted or misused, what is recovered, and what changes prevent a recurrence. Public interest is proved through accountable process, not by an organization's label."
+    ],
+    sourceLabels: [
+      "YTN — Commission finds poor management of local sports grants and announces recovery and referrals (Sept. 10, 2026)",
+      "Korean Law Information Center — Act on the Management of Local Subsidies"
+    ]
+  },
   "president-civic-society-dialogue-representation": {
     category: "Civil Society & the Public Sphere",
     title: "After 210 Minutes with the President, Who Spoke for ‘Civil Society’ ?",

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img" aria-labelledby="title desc">
+  <title id="title">지방 체육보조금 조사에서 확인된 네 가지 사실</title>
+  <desc id="desc">국민권익위원회 조사 범위와 확인된 정산 문제, 200억 원의 정확한 의미, 후속조치를 정리한 도표</desc>
+  <rect width="1280" height="800" fill="#f7f3e9"/>
+  <rect x="56" y="52" width="1168" height="696" rx="12" fill="#ffffff" stroke="#174c3a" stroke-opacity=".18" stroke-width="2"/>
+  <text x="104" y="125" fill="#174c3a" font-family="sans-serif" font-size="26" font-weight="700" letter-spacing="4">조사 결과, 이렇게 읽어야 합니다</text>
+  <line x1="104" y1="154" x2="1176" y2="154" stroke="#c99a3d" stroke-width="4"/>
+
+  <g font-family="sans-serif">
+    <rect x="104" y="198" width="510" height="190" rx="8" fill="#edf4ef"/>
+    <text x="136" y="250" fill="#174c3a" font-size="22" font-weight="700">조사 범위</text>
+    <text x="136" y="315" fill="#102b46" font-size="54" font-weight="800">12개 기초지자체</text>
+    <text x="136" y="354" fill="#45534e" font-size="22">최근 3년간 체육 분야 보조사업</text>
+
+    <rect x="666" y="198" width="510" height="190" rx="8" fill="#f8f1df"/>
+    <text x="698" y="250" fill="#174c3a" font-size="22" font-weight="700">확인된 정산 문제</text>
+    <text x="698" y="302" fill="#102b46" font-size="31" font-weight="800">참가비 · 입장료 · 협찬금</text>
+    <text x="698" y="346" fill="#45534e" font-size="22">대다수 체육회가 수익 발생을 누락</text>
+
+    <rect x="104" y="424" width="510" height="220" rx="8" fill="#102b46"/>
+    <text x="136" y="478" fill="#f0c66a" font-size="22" font-weight="700">200억 원 이상의 뜻</text>
+    <text x="136" y="548" fill="#ffffff" font-size="49" font-weight="800">관련 사업 보조금</text>
+    <text x="136" y="592" fill="#ffffff" fill-opacity=".76" font-size="21">확정된 횡령액이나 피해액이 아닙니다</text>
+
+    <rect x="666" y="424" width="510" height="220" rx="8" fill="#174c3a"/>
+    <text x="698" y="478" fill="#f0c66a" font-size="22" font-weight="700">다음 절차</text>
+    <text x="698" y="539" fill="#ffffff" font-size="31" font-weight="800">환수·시정 권고</text>
+    <text x="698" y="586" fill="#ffffff" font-size="31" font-weight="800">일부 사안 수사 의뢰</text>
+    <text x="698" y="622" fill="#ffffff" fill-opacity=".72" font-size="18">권익위 조사 결과 기준</text>
+  </g>
+  <text x="104" y="704" fill="#66736e" font-family="sans-serif" font-size="18">자료: 국민권익위원회 조사 결과를 전한 YTN 보도(2026.09.10)</text>
+</svg>

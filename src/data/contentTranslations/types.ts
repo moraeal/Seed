@@ -24,8 +24,8 @@ export type NewsTranslation = {
   keySentence: string;
   video?: NonNullable<NewsArticle["video"]>;
   selectedNews: Omit<NewsArticle["selectedNews"], "url" | "publishedAt">;
-  heroImage?: Partial<Pick<NewsArticle["heroImage"], "alt" | "caption" | "credit">>;
-  inlineImage?: Partial<Pick<NewsArticle["inlineImage"], "alt" | "caption" | "credit">>;
+  heroImage?: Partial<Pick<NewsArticle["heroImage"], "src" | "alt" | "caption" | "credit">>;
+  inlineImage?: Partial<Pick<NewsArticle["inlineImage"], "src" | "alt" | "caption" | "credit">>;
   sections: NewsArticle["sections"];
   watchPoints: string[];
   seedPerspective: string[];

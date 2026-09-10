@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img" aria-labelledby="title desc">
+  <title id="title">Four facts from the local sports-subsidy review</title>
+  <desc id="desc">The review's scope, reported settlement failures, the precise meaning of KRW 20 billion, and the next steps</desc>
+  <rect width="1280" height="800" fill="#f7f3e9"/>
+  <rect x="56" y="52" width="1168" height="696" rx="12" fill="#ffffff" stroke="#174c3a" stroke-opacity=".18" stroke-width="2"/>
+  <text x="104" y="125" fill="#174c3a" font-family="sans-serif" font-size="26" font-weight="700" letter-spacing="3">HOW TO READ THE FINDINGS</text>
+  <line x1="104" y1="154" x2="1176" y2="154" stroke="#c99a3d" stroke-width="4"/>
+
+  <g font-family="sans-serif">
+    <rect x="104" y="198" width="510" height="190" rx="8" fill="#edf4ef"/>
+    <text x="136" y="250" fill="#174c3a" font-size="22" font-weight="700">Scope reviewed</text>
+    <text x="136" y="315" fill="#102b46" font-size="48" font-weight="800">12 municipalities</text>
+    <text x="136" y="354" fill="#45534e" font-size="21">Sports grants over the past three years</text>
+
+    <rect x="666" y="198" width="510" height="190" rx="8" fill="#f8f1df"/>
+    <text x="698" y="250" fill="#174c3a" font-size="22" font-weight="700">Reported settlement failure</text>
+    <text x="698" y="302" fill="#102b46" font-size="28" font-weight="800">Fees · tickets · sponsorships</text>
+    <text x="698" y="346" fill="#45534e" font-size="20">Revenue omitted by most associations reviewed</text>
+
+    <rect x="104" y="424" width="510" height="220" rx="8" fill="#102b46"/>
+    <text x="136" y="478" fill="#f0c66a" font-size="22" font-weight="700">What KRW 20bn+ means</text>
+    <text x="136" y="548" fill="#ffffff" font-size="39" font-weight="800">Subsidies to the projects</text>
+    <text x="136" y="592" fill="#ffffff" fill-opacity=".76" font-size="20">Not a confirmed loss or embezzlement total</text>
+
+    <rect x="666" y="424" width="510" height="220" rx="8" fill="#174c3a"/>
+    <text x="698" y="478" fill="#f0c66a" font-size="22" font-weight="700">Next steps</text>
+    <text x="698" y="539" fill="#ffffff" font-size="29" font-weight="800">Recovery and corrective action</text>
+    <text x="698" y="586" fill="#ffffff" font-size="29" font-weight="800">Selected cases referred</text>
+    <text x="698" y="622" fill="#ffffff" fill-opacity=".72" font-size="18">Based on the commission's findings</text>
+  </g>
+  <text x="104" y="704" fill="#66736e" font-family="sans-serif" font-size="18">Source: YTN report on the Anti-Corruption and Civil Rights Commission review, Sept. 10, 2026</text>
+</svg>
