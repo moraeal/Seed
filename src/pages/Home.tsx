@@ -290,7 +290,7 @@ export default function Home() {
                       <div className="relative overflow-hidden bg-ivory">
                         <Link to={story.href} tabIndex={active ? undefined : -1} className="block">
                           <SafeImage src={resolveImageSrc(story.image.src)} alt={story.image.alt} loading={index === 0 ? "eager" : "lazy"} fetchPriority={index === 0 ? "high" : "auto"} referrerPolicy="no-referrer" className="aspect-[16/8.6] w-full object-cover transition duration-700 group-hover:scale-[1.018]" />
-                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-paper/95 via-paper/70 via-[48%] to-transparent px-5 pt-[5.15rem] sm:px-6 sm:pt-[5.4rem]">
+                          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,253,247,0.92)_0%,rgba(255,253,247,0.58)_42%,rgba(255,253,247,0)_70%)] px-5 pt-[5.15rem] sm:px-6 sm:pt-[5.4rem]">
                             <h1 className="line-clamp-2 max-w-[92%] text-balance font-sans text-[clamp(1.35rem,3vw,2.55rem)] font-black leading-[1.08] tracking-[-0.045em] text-green-deep drop-shadow-[0_1px_1px_rgba(255,255,255,.85)] sm:max-w-[86%]">{story.title}</h1>
                           </div>
                         </Link>
