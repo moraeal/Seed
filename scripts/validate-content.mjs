@@ -10,11 +10,14 @@ const server = await createServer({
   optimizeDeps: { noDiscovery: true },
 });
 
-const [newsModule, briefingModule, columnModule, seedLanguageModule, newsTranslationModule, briefingTranslationModule, columnTranslationModule] = await Promise.all([
+const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguageEnvironmentModule, publicInterestWatchModule, editorialContinuationModule, newsTranslationModule, briefingTranslationModule, columnTranslationModule] = await Promise.all([
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
   server.ssrLoadModule("/src/data/columns.ts"),
   server.ssrLoadModule("/src/data/seedLanguage.ts"),
+  server.ssrLoadModule("/src/data/seedLanguageEnvironment.ts"),
+  server.ssrLoadModule("/src/data/publicInterestWatch.ts"),
+  server.ssrLoadModule("/src/data/editorialContinuations.ts"),
   server.ssrLoadModule("/src/data/contentTranslations/news.ts"),
   server.ssrLoadModule("/src/data/contentTranslations/briefings.ts"),
   server.ssrLoadModule("/src/data/contentTranslations/columns/index.ts"),
@@ -56,30 +59,40 @@ const requireSocialImage = async (section, slug) => {
 };
 await requireSocialImage("site", "home");
 for (const article of newsModule.newsArticles) {
+  if (!editorialContinuationModule.getEditorialContinuation("news", article.slug, "ko") || !editorialContinuationModule.getEditorialContinuation("news", article.slug, "en")) errors.push(`Editorial continuation is missing or incomplete for news: ${article.slug}`);
   if (!optionalEnglishNewsSlugs.has(article.slug) && !newsTranslationModule.newsTranslations[article.slug]) errors.push(`Missing English news translation: ${article.slug}`);
   if (!article.heroImage?.src) errors.push(`Missing social-preview image for news: ${article.slug}`);
   requireEditorialStructure("news", article, [article.heroImage, article.inlineImage, ...(article.additionalImages ?? [])].filter((image) => image?.src).length);
   await requireSocialImage("news", article.slug);
 }
 for (const briefing of briefingModule.getAllBriefingsNewestFirst()) {
+  if (!editorialContinuationModule.getEditorialContinuation("briefing", briefing.slug, "ko") || !editorialContinuationModule.getEditorialContinuation("briefing", briefing.slug, "en")) errors.push(`Editorial continuation is missing or incomplete for briefing: ${briefing.slug}`);
   if (!briefingTranslationModule.briefingTranslations[briefing.slug]) errors.push(`Missing English briefing translation: ${briefing.slug}`);
   if (!briefing.images?.[0]?.src) errors.push(`Missing social-preview image for briefing: ${briefing.slug}`);
   requireEditorialStructure("briefing", briefing, briefing.images?.filter((image) => image?.src).length ?? 0);
   await requireSocialImage("briefings", briefing.slug);
 }
 for (const column of columnModule.columns) {
+  if (!editorialContinuationModule.getEditorialContinuation("column", column.slug, "ko") || !editorialContinuationModule.getEditorialContinuation("column", column.slug, "en")) errors.push(`Editorial continuation is missing or incomplete for column: ${column.slug}`);
   if (!columnTranslationModule.columnTranslations[column.issue]) errors.push(`Missing English column translation: issue ${column.issue} (${column.slug})`);
   if (!column.heroImage?.src) errors.push(`Missing social-preview image for column: ${column.slug}`);
   requireEditorialStructure("column", column, [column.heroImage, column.inlineImage, ...(column.additionalImages ?? [])].filter((image) => image?.src).length);
   await requireSocialImage("columns", column.slug);
 }
 for (const article of seedLanguageModule.seedLanguageArticlesKo) {
+  if (!editorialContinuationModule.getEditorialContinuation("seed-language", article.slug, "ko") || !editorialContinuationModule.getEditorialContinuation("seed-language", article.slug, "en")) errors.push(`Editorial continuation is missing or incomplete for SEED Language: ${article.slug}`);
   const english = seedLanguageModule.getSeedLanguageArticle(article.slug, "en");
   if (!english || english.title === article.title) errors.push(`Missing English SEED Language edition: ${article.slug}`);
   const visualCount = [article.heroImage, article.inlineImage].filter((image) => image?.src).length + (article.chart?.rows?.length ? 1 : 0);
   if (!article.heroImage?.src || visualCount < 2) errors.push(`SEED Language article needs a primary image and two purposeful visuals: ${article.slug}`);
   requireEditorialStructure("SEED Language article", article, visualCount);
   await requireSocialImage("seed-language", article.slug);
+}
+for (const article of seedLanguageEnvironmentModule.seedLanguageEnvironmentArticlesKo) {
+  if (!editorialContinuationModule.getEditorialContinuation("seed-language", article.slug, "ko") || !editorialContinuationModule.getEditorialContinuation("seed-language", article.slug, "en")) errors.push(`Editorial continuation is missing or incomplete for SEED Language: ${article.slug}`);
+}
+for (const item of publicInterestWatchModule.publicInterestWatchCases) {
+  if (!editorialContinuationModule.getEditorialContinuation("monitoring", item.slug, "ko") || !editorialContinuationModule.getEditorialContinuation("monitoring", item.slug, "en")) errors.push(`Editorial continuation is missing or incomplete for public-interest watch: ${item.slug}`);
 }
 
 if (errors.length) {

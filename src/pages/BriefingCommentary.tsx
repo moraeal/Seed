@@ -28,8 +28,8 @@ export default function BriefingCommentary() {
         <Link to={`/briefings/${briefing.slug}`} className="inline-flex items-center gap-1.5 text-xs font-bold text-white/75 hover:text-white"><ArrowLeft size={14} />{ko ? "대표보기로 돌아가기" : "Back to the briefing"}</Link>
         <span className="mt-3 block text-[11px] font-extrabold tracking-[0.18em] text-gold-light">SEED BRIEFING DEEP DIVE</span>
         <p className="mt-1.5 text-xs font-bold text-white/60">{ko ? "브리핑 깊게 보기" : "Briefing deep dive"}</p>
-        <h1 className="article-detail-title-dark mt-2 max-w-4xl">{briefing.commentary.title}</h1>
-        <p className="mt-2 max-w-3xl text-sm leading-6 text-white/75 sm:text-[15px]">{briefing.commentary.summary}</p>
+        <h1 className="article-detail-title-dark mt-2">{briefing.commentary.title}</h1>
+        <p className="mx-auto mt-2 max-w-3xl text-sm leading-6 text-white/75 sm:text-[15px]">{briefing.commentary.summary}</p>
         <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-white/55"><span>{briefing.author}</span><time>{briefing.date.replace(/-/g, ".")} {ko ? "기준" : "as of"}</time>{briefing.commentary.readMinutes && <span className="flex items-center gap-1"><Clock size={14} />{ko ? `읽는 시간 ${briefing.commentary.readMinutes}분` : `${briefing.commentary.readMinutes} min read`}</span>}{briefing.pdfPath && <a href={`${import.meta.env.BASE_URL}${briefing.pdfPath}`} download className="button-light ml-auto min-h-8 px-3 py-1.5 text-xs"><Download size={15} />{ko ? "PDF 원문 내려받기" : "Download PDF"}</a>}</div>
       </div>
     </header>

@@ -1,12 +1,13 @@
 import { ArrowLeft, Clock, Download } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
-import ArticleContinuation, { getFollowingItem } from "../components/ArticleContinuation";
+import ArticleContinuation from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
 import DeepReadBanner from "../components/DeepReadBanner";
 import InteractiveFigure from "../components/InteractiveFigure";
 import ShareButton from "../components/ShareButton";
-import { getAllBriefing, getAllBriefingsNewestFirst } from "../data/allBriefings";
+import { getAllBriefing } from "../data/allBriefings";
+import { getEditorialContinuation } from "../data/editorialContinuations";
 import { localizeBriefing } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
 
@@ -27,8 +28,7 @@ export default function BriefingDetail() {
   }
 
   const isLongRead = briefing.readMinutes >= 8;
-  const nextOriginalBriefing = getFollowingItem(getAllBriefingsNewestFirst(), briefing.slug);
-  const nextBriefing = nextOriginalBriefing ? localizeBriefing(nextOriginalBriefing, language) : undefined;
+  const continuation = getEditorialContinuation("briefing", briefing.slug, language);
 
   const renderFigure = (image: NonNullable<typeof briefing.images>[number], prominent = false) => (
     <InteractiveFigure src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName={`${prominent ? "mb-8 shadow-[0_18px_55px_rgba(23,76,58,.08)]" : "mt-8"} overflow-hidden border border-green-deep/10 bg-white`} imageClassName={image.contain ? "block h-auto w-full" : `${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full object-cover`} />
@@ -40,7 +40,7 @@ export default function BriefingDetail() {
         <div className="container-page max-w-5xl">
           <Link to="/briefings" className="text-link text-xs"><ArrowLeft size={14} />{ko ? "시민브리핑 목록" : "Civic Briefings"}</Link>
           <div className="mt-3 border-t-2 border-navy pt-3">
-            <h1 className="article-detail-title max-w-4xl">{briefing.title}</h1>
+            <h1 className="article-detail-title">{briefing.title}</h1>
             <p className="article-summary">{briefing.summary}</p>
           </div>
           <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45">
@@ -117,7 +117,7 @@ export default function BriefingDetail() {
         {briefing.commentary && <DeepReadBanner href={`/briefings/${briefing.slug}/commentary`} />}
         <ContentAccountability postSlug={briefing.slug} publishedDate={briefing.date} />
         <CommentSection postSlug={briefing.slug} />
-        {nextBriefing && <ArticleContinuation item={{ href: `/briefings/${nextBriefing.slug}`, title: nextBriefing.title, summary: nextBriefing.summary }} listHref="/briefings" listLabel={ko ? "시민브리핑 전체 보기" : "All briefings"} />}
+        {continuation && <ArticleContinuation item={continuation} />}
       </div>
 
     </article>

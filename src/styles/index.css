@@ -25,10 +25,10 @@ button, input, textarea { font: inherit; }
   .hero-arrow { @apply grid size-9 place-items-center rounded-full border border-white/25 text-white transition hover:bg-white hover:text-green-deep; }
   .field { @apply grid gap-2 text-xs font-bold text-charcoal/70; }
   .field input, .field textarea { @apply w-full rounded-md border border-green-deep/15 bg-white px-4 py-3.5 text-sm font-normal text-charcoal outline-none transition placeholder:text-charcoal/30 focus:border-green-mid focus:ring-2 focus:ring-green-mid/10; }
-  .article-detail-title { @apply text-[1.75rem] font-extrabold leading-[1.18] tracking-[-.035em] text-navy sm:text-[2.25rem]; }
-  .article-detail-title-dark { @apply text-[1.75rem] font-extrabold leading-[1.18] tracking-[-.035em] text-white sm:text-[2.25rem]; }
-  .article-detail-subtitle { @apply mt-2 text-base font-bold leading-[1.55] text-green-deep sm:text-lg; }
-  .article-summary { @apply mt-2.5 max-w-3xl text-[15px] leading-7 text-charcoal/65 sm:text-base; }
+  .article-detail-title { @apply mx-auto text-center text-[1.75rem] font-extrabold leading-[1.18] tracking-[-.035em] text-navy sm:text-[2.25rem]; max-width: 46rem; text-wrap: balance; word-break: keep-all; overflow-wrap: break-word; }
+  .article-detail-title-dark { @apply mx-auto text-center text-[1.75rem] font-extrabold leading-[1.18] tracking-[-.035em] text-white sm:text-[2.25rem]; max-width: 46rem; text-wrap: balance; word-break: keep-all; overflow-wrap: break-word; }
+  .article-detail-subtitle { @apply mx-auto mt-2 max-w-3xl text-center text-base font-bold leading-[1.55] text-green-deep sm:text-lg; text-wrap: balance; word-break: keep-all; }
+  .article-summary { @apply mx-auto mt-2.5 max-w-3xl text-[15px] leading-7 text-charcoal/65 sm:text-base; }
   .reading-column { @apply mx-auto w-full max-w-[46rem]; }
   .article-section { @apply mt-9 sm:mt-10; }
   .article-section-long { @apply mt-10 sm:mt-12; }

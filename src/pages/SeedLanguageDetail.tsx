@@ -1,13 +1,14 @@
 import { ArrowLeft, BookOpenText, Clock } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
-import ArticleContinuation, { getFollowingItem } from "../components/ArticleContinuation";
+import ArticleContinuation from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
 import DeepReadBanner from "../components/DeepReadBanner";
 import InteractiveFigure from "../components/InteractiveFigure";
 import ShareButton from "../components/ShareButton";
-import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
-import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
+import { getEditorialContinuation } from "../data/editorialContinuations";
+import { getSeedLanguageArticle } from "../data/seedLanguage";
+import { getSeedLanguageEnvironmentArticle } from "../data/seedLanguageEnvironment";
 import { useLanguage } from "../i18n";
 
 const ENVIRONMENT_HERO = "images/seed-language/environment-shared-condition-hero.webp";
@@ -22,10 +23,7 @@ export default function SeedLanguageDetail() {
 
   if (!article) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">{ko ? "씨앗언어 글을 찾을 수 없습니다." : "SEED Language article not found."}</h1><Link to="/seed-language" className="button-primary mt-7">{ko ? "씨앗언어 목록" : "SEED Language"}</Link></div>;
 
-  const nextArticleSource = getFollowingItem([...seedLanguageEnvironmentArticlesKo, ...seedLanguageArticlesKo], article.slug);
-  const nextArticle = nextArticleSource
-    ? getSeedLanguageEnvironmentArticle(nextArticleSource.slug, language) ?? getSeedLanguageArticle(nextArticleSource.slug, language)
-    : undefined;
+  const continuation = getEditorialContinuation("seed-language", article.slug, language);
 
   const isLongRead = article.readMinutes >= 8;
   const isEnvironmentArticle = article.slug.startsWith("environment-");
@@ -53,7 +51,7 @@ export default function SeedLanguageDetail() {
         <Link to="/seed-language" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "씨앗언어 목록" : "SEED Language"}</Link>
         <div className="mt-3 border-t-2 border-navy pt-3">
           <div className="flex items-center gap-3"><span className="section-kicker">SEED LANGUAGE</span><span className="rounded-full bg-green-pale px-3 py-1 text-xs font-extrabold text-green-deep">{article.term}</span></div>
-          <h1 className="article-detail-title mt-2 max-w-4xl">{article.title}</h1>
+          <h1 className="article-detail-title mt-2">{article.title}</h1>
           <p className="article-detail-subtitle">{article.subtitle}</p>
           <p className="article-summary">{article.summary}</p>
         </div>
@@ -98,7 +96,7 @@ export default function SeedLanguageDetail() {
           : article.relatedArticle && <Link to={`/seed-language/${article.relatedArticle.slug}`} className="my-8 flex items-center gap-3 border border-green-deep/20 bg-white px-5 py-4 text-base font-bold leading-7 text-green-deep hover:bg-green-pale"><BookOpenText size={20} className="shrink-0"/>{article.relatedArticle.label}</Link>}
         <ContentAccountability postSlug={`seed-language-${article.slug}`} publishedDate={article.date}/>
         <CommentSection postSlug={`seed-language-${article.slug}`}/>
-        {nextArticle && nextArticle.slug !== deepReadArticle?.slug && <ArticleContinuation item={{ href: `/seed-language/${nextArticle.slug}`, title: nextArticle.title, summary: nextArticle.summary }} listHref="/seed-language" listLabel={ko ? "씨앗언어 전체 보기" : "All SEED Language"} />}
+        {continuation && continuation.href !== deepReadHref && <ArticleContinuation item={continuation} />}
       </div>
     </div>
   </article>;

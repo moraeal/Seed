@@ -1,7 +1,9 @@
 import { AlertTriangle, ArrowLeft, CheckCircle2, ExternalLink, FileQuestion, Lightbulb, Scale } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
+import ArticleContinuation from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
+import { getEditorialContinuation } from "../data/editorialContinuations";
 import { getPublicInterestWatchCase, LocalizedText } from "../data/publicInterestWatch";
 import { useLanguage } from "../i18n";
 
@@ -21,6 +23,8 @@ export default function PublicInterestWatchDetail() {
     );
   }
 
+  const continuation = getEditorialContinuation("monitoring", item.slug, language);
+
   const sections = [
     { key: "facts", icon: CheckCircle2, label: ko ? "공개자료로 확인한 사실" : "Facts confirmed in public records", items: item.confirmedFacts, tone: "text-green-mid" },
     { key: "questions", icon: FileQuestion, label: ko ? "시민이 묻는 핵심 질문" : "Questions citizens should ask", items: item.questions, tone: "text-gold" },
@@ -38,8 +42,8 @@ export default function PublicInterestWatchDetail() {
               <span className="rounded-full bg-green-pale px-3 py-1 text-[11px] font-extrabold text-green-deep">{t(item.status)}</span>
             </div>
             <p className="mt-2 text-xs font-extrabold text-green-deep">{t(item.organization)}</p>
-            <h1 className="article-detail-title mt-2 max-w-4xl">{t(item.title)}</h1>
-            <p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/65 sm:text-[15px]">{t(item.summary)}</p>
+            <h1 className="article-detail-title mt-2">{t(item.title)}</h1>
+            <p className="mx-auto mt-2 max-w-3xl text-sm leading-6 text-charcoal/65 sm:text-[15px]">{t(item.summary)}</p>
             <div className="mt-3 flex flex-wrap gap-x-3 gap-y-2 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45">
               <span>{ko ? "작성" : "Published"} {item.updatedAt.replace(/-/g, ".")}</span>
               <span>{ko ? "공개자료와 씨드 보관 문건을 교차 검토" : "Cross-checked against public disclosures and SEED records"}</span>
@@ -108,6 +112,7 @@ export default function PublicInterestWatchDetail() {
 
         <ContentAccountability postSlug={`monitoring-${item.slug}`} publishedDate={item.updatedAt} />
         <CommentSection postSlug={`monitoring-${item.slug}`} />
+        {continuation && <ArticleContinuation item={continuation} />}
       </div>
     </article>
   );
