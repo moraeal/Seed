@@ -12,7 +12,6 @@ const sectionItems: SectionItem[] = [
   { kicker: "STORIES THAT MATTER", labelKo: "지금 읽어야 할 이야기", labelEn: "Stories" },
   { kicker: "SEED CITIZEN BRIEFING", labelKo: "시민브리핑", labelEn: "Briefing" },
   { kicker: "THE VOICE OF SEED", labelKo: "씨앗의 소리", labelEn: "Voice" },
-  { kicker: "SEED LANGUAGE", labelKo: "씨앗언어", labelEn: "Language" },
   { kicker: "READERS & LATEST", labelKo: "많이 읽은 글", labelEn: "Readers & Latest" },
 ];
 
