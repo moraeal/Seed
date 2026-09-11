@@ -12,12 +12,14 @@ const sources = [
   { label: "The Guardian — BrewDog loses B Corp status", url: "https://www.theguardian.com/business/2022/dec/01/brewdog-loses-its-ethical-b-corp-certificate" },
 ];
 
+const briefingPath = "/briefings/social-economy-fair-competition";
+
 export default function BCorpDeepDive() {
   return (
     <article className="bg-paper">
       <header className="border-b border-green-deep/10 bg-green-deep py-5 text-white sm:py-7">
         <div className="container-page max-w-4xl">
-          <Link to="/briefings/social-solidarity-economy-youth-mall-lessons" className="inline-flex items-center gap-1.5 text-xs font-bold text-white/75 hover:text-white">
+          <Link to={briefingPath} className="inline-flex items-center gap-1.5 text-xs font-bold text-white/75 hover:text-white">
             <ArrowLeft size={14} /> 시민브리핑으로 돌아가기
           </Link>
           <span className="mt-4 block text-[11px] font-extrabold tracking-[0.18em] text-gold-light">SEED BRIEFING · DEEP ANALYSIS</span>
@@ -89,7 +91,7 @@ export default function BCorpDeepDive() {
           <p className="mt-4 text-xs leading-6 text-charcoal/45">확인 기준: 2026년 9월 11일 현재 공개된 B Lab 공식자료와 관련 보도를 대조했습니다. B Corp는 정부가 부여하는 법적 기업형태가 아니라 민간 비영리기관 B Lab의 인증이며, 국가별 법제와 공공조달 제도는 별도로 작동합니다.</p>
         </section>
 
-        <div className="mt-8"><Link to="/briefings/social-solidarity-economy-youth-mall-lessons" className="button-secondary"><ArrowLeft size={16} /> 시민브리핑으로 돌아가기</Link></div>
+        <div className="mt-8"><Link to={briefingPath} className="button-secondary"><ArrowLeft size={16} /> 5분 요약본 보기</Link></div>
       </div>
     </article>
   );
