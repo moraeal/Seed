@@ -24,6 +24,7 @@ const TodayFrame = lazy(() => import("./pages/TodayFrame"));
 const Briefings = lazy(() => import("./pages/Briefings"));
 const BriefingDetail = lazy(() => import("./pages/BriefingDetail"));
 const BriefingCommentary = lazy(() => import("./pages/BriefingCommentary"));
+const BCorpDeepDive = lazy(() => import("./pages/BCorpDeepDive"));
 const Columns = lazy(() => import("./pages/Columns"));
 const ColumnDetail = lazy(() => import("./pages/ColumnDetail"));
 const Academy = lazy(() => import("./pages/Academy"));
@@ -65,6 +66,7 @@ function AppShell() {
           <Route path="/seed-language/:slug" element={<SeedLanguageDetail />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/briefings" element={<Briefings />} />
+          <Route path="/briefings/social-solidarity-economy-youth-mall-lessons/b-corp" element={<BCorpDeepDive />} />
           <Route path="/briefings/:slug/commentary" element={<BriefingCommentary />} />
           <Route path="/briefings/:slug" element={<BriefingDetail />} />
           <Route path="/columns" element={<Columns />} />
