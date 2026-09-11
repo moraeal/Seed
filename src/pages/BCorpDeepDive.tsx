@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -13,8 +14,33 @@ const sources = [
 ];
 
 const briefingPath = "/briefings/social-economy-fair-competition";
+const pageTitle = "국가가 고르지 않아도 좋은 기업은 자랄 수 있을까 | 씨앗의 소리";
+const pageDescription = "B Corp는 정부가 사회적기업을 지정하고 보조금·공공조달 혜택을 주는 방식과 무엇이 다른지, 그리고 민간 인증이 실제 대안이 될 수 있는지 살펴봅니다.";
+const heroImagePath = "images/briefings/briefing-09-bcorp-market-trust.jpg";
 
 export default function BCorpDeepDive() {
+  useEffect(() => {
+    document.title = pageTitle;
+    const ensureMeta = (selector: string, attr: "name" | "property", key: string, value: string) => {
+      let element = document.head.querySelector<HTMLMetaElement>(selector);
+      if (!element) {
+        element = document.createElement("meta");
+        element.setAttribute(attr, key);
+        document.head.appendChild(element);
+      }
+      element.setAttribute("content", value);
+    };
+    const imageUrl = `${window.location.origin}${import.meta.env.BASE_URL}${heroImagePath}`;
+    ensureMeta('meta[name="description"]', "name", "description", pageDescription);
+    ensureMeta('meta[property="og:title"]', "property", "og:title", pageTitle);
+    ensureMeta('meta[property="og:description"]', "property", "og:description", pageDescription);
+    ensureMeta('meta[property="og:type"]', "property", "og:type", "article");
+    ensureMeta('meta[property="og:image"]', "property", "og:image", imageUrl);
+    ensureMeta('meta[name="twitter:title"]', "name", "twitter:title", pageTitle);
+    ensureMeta('meta[name="twitter:description"]', "name", "twitter:description", pageDescription);
+    ensureMeta('meta[name="twitter:image"]', "name", "twitter:image", imageUrl);
+  }, []);
+
   return (
     <article className="bg-paper">
       <header className="border-b border-green-deep/10 bg-green-deep py-5 text-white sm:py-7">
@@ -25,7 +51,7 @@ export default function BCorpDeepDive() {
           <span className="mt-4 block text-[11px] font-extrabold tracking-[0.18em] text-gold-light">SEED BRIEFING · DEEP ANALYSIS</span>
           <h1 className="article-detail-title-dark mt-2">국가가 고르지 않아도 좋은 기업은 자랄 수 있을까</h1>
           <p className="mx-auto mt-3 max-w-3xl text-sm leading-6 text-white/75 sm:text-[15px]">
-            B Corp는 정부가 사회적기업을 지정하고 보조금·공공조달 혜택을 주는 방식과 무엇이 다른지, 그리고 민간 인증이 실제 대안이 될 수 있는지 살펴봅니다.
+            {pageDescription}
           </p>
           <div className="mt-4 flex flex-wrap gap-3 text-xs text-white/55"><span>씨앗의 소리 심층분석</span><time>2026.09.11 기준</time><span>읽는 시간 12분</span></div>
         </div>
@@ -33,7 +59,7 @@ export default function BCorpDeepDive() {
 
       <div className="container-page max-w-[50rem] py-9 sm:py-12">
         <figure className="mb-8 overflow-hidden rounded-xl border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]">
-          <img src={`${import.meta.env.BASE_URL}images/briefings/briefing-09-bcorp-market-trust.jpg`} alt="시민들이 기업의 사회적 성과와 신뢰 정보를 확인하고 동네 가게를 선택하는 상징 이미지" className="aspect-[16/9] w-full object-cover" />
+          <img src={`${import.meta.env.BASE_URL}${heroImagePath}`} alt="시민들이 기업의 사회적 성과와 신뢰 정보를 확인하고 동네 가게를 선택하는 상징 이미지" className="aspect-[16/9] w-full object-cover" loading="eager" decoding="async" />
           <figcaption className="border-t border-green-deep/10 px-4 py-3 text-xs leading-5 text-charcoal/55">기업의 행동과 성과를 투명하게 공개하고 시민·소비자·투자자가 선택하는 시장을 상징적으로 표현했습니다. · 씨앗의 소리 AI 제작 이미지</figcaption>
         </figure>
 
