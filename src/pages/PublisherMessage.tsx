@@ -49,8 +49,8 @@ const copy = {
     declaration: ["내가 시민입니다.", "나는 세상을 바꾸는 작은 씨앗입니다."],
     closing: "씨앗의 소리는 나를 다시 세우고 성장시키기 위한 첫 번째 시도입니다. 이 작은 시도가 누군가에게 울림으로 전해지고, 또 다른 시민이 자신의 목소리를 발견하는 계기가 되기를 바랍니다. 그렇게 한 사람의 씨앗들이 자라고 서로 연결되어, 진짜 시민들이 살아 움직이는 큰 씨앗의 사회가 열리기를 희망합니다.",
     founderKicker: "PUBLISHER & EDITOR",
-    founderName: "박경석",
-    founderRole: "씨앗의 소리 발행인·에디터",
+    founderName: "서한결",
+    founderRole: "씨앗의 소리 발행인",
     founderBio: "시민사회와 공공영역의 현장에서 활동해 왔습니다. 아직 정리되지 않은 한 시민의 질문을 기록하고, AI와 함께 사실을 확인하며 씨앗의 소리를 만들어가고 있습니다. 완성된 답을 내세우기보다 질문하고 수정하며 성장하는 시민이 되고자 합니다.",
   },
   en: {
@@ -99,8 +99,8 @@ const copy = {
     declaration: ["I am a citizen.", "I am a small seed capable of changing the world."],
     closing: "SEED VOICE is my first attempt to stand upright and continue growing. I hope this small effort resonates with someone else and helps another citizen discover a voice of their own. May individual seeds grow, connect, and open the way to a society alive with citizens who think and act for themselves.",
     founderKicker: "PUBLISHER & EDITOR",
-    founderName: "Park Kyung-seok",
-    founderRole: "Publisher and Editor, SEED VOICE",
+    founderName: "Seo Han-gyeol",
+    founderRole: "Publisher, SEED VOICE",
     founderBio: "I have worked across civil society and the public sphere. Through SEED VOICE, I record the unfinished questions of one citizen and use AI to help verify facts and organize ideas. I do not claim to possess final answers; I hope to remain a citizen who questions, corrects, and grows.",
   },
 };
@@ -122,16 +122,11 @@ export default function PublisherMessage() {
       <main className="py-8 sm:py-10">
         <article className="container-page max-w-5xl">
           <section className="border-y border-green-deep/15 bg-[#F1F2EC] px-6 py-7 sm:px-10 sm:py-8">
-            <div className="grid gap-7 sm:grid-cols-[210px_1fr] sm:items-center sm:gap-10">
-              <div className="aspect-[3/4] w-44 overflow-hidden bg-white sm:w-[210px]">
-                <img src={`${import.meta.env.BASE_URL}images/about/park-kyung-seok.jpg`} alt={content.founderName} className="h-full w-full scale-[1.08] object-cover object-top" />
-              </div>
-              <div>
-                <p className="section-kicker">{content.founderKicker}</p>
-                <h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{content.founderName}</h2>
-                <p className="mt-2 text-sm font-bold text-green-deep/75">{content.founderRole}</p>
-                <p className="mt-4 max-w-2xl text-base leading-7 text-charcoal/68">{content.founderBio}</p>
-              </div>
+            <div className="max-w-3xl">
+              <p className="section-kicker">{content.founderKicker}</p>
+              <h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{content.founderName}</h2>
+              <p className="mt-2 text-sm font-bold text-green-deep/75">{content.founderRole}</p>
+              <p className="mt-4 text-base leading-7 text-charcoal/68">{content.founderBio}</p>
             </div>
           </section>
 
