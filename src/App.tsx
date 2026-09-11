@@ -66,7 +66,7 @@ function AppShell() {
           <Route path="/seed-language/:slug" element={<SeedLanguageDetail />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/briefings" element={<Briefings />} />
-          <Route path="/briefings/social-solidarity-economy-youth-mall-lessons/b-corp" element={<BCorpDeepDive />} />
+          <Route path="/briefings/social-economy-fair-competition/b-corp" element={<BCorpDeepDive />} />
           <Route path="/briefings/:slug/commentary" element={<BriefingCommentary />} />
           <Route path="/briefings/:slug" element={<BriefingDetail />} />
           <Route path="/columns" element={<Columns />} />
