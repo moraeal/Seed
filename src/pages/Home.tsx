@@ -38,6 +38,27 @@ export default function Home() {
   const latestNews = news[0];
   const latestBriefing = briefings[0];
 
+  const newcomerLinks = [
+    {
+      to: "/about",
+      kicker: ko ? "씨앗의 소리" : "ABOUT SEED VOICE",
+      title: ko ? "왜 이 독립 시민저널을 만들었는가" : "Why this independent civic journal exists",
+      summary: ko ? "씨앗의 소리가 무엇을 지키고 무엇을 감시하는지, 저널의 기준과 방향을 먼저 읽어보세요." : "Start with the principles, purpose, and editorial direction behind SEED VOICE.",
+    },
+    {
+      to: "/founding-statement",
+      kicker: ko ? "창간정신" : "FOUNDING STATEMENT",
+      title: ko ? "자유의 영역을 넓히는 저널" : "A journal that expands the sphere of freedom",
+      summary: ko ? "국가와 시민사회의 권력을 함께 감시하고 시민과 기업의 자유를 지키겠다는 창간의 기준입니다." : "The founding standard: scrutinize power in both the state and civil society while defending civic and economic freedom.",
+    },
+    {
+      to: "/publisher-message",
+      kicker: ko ? "발행인의 말" : "PUBLISHER'S MESSAGE",
+      title: ko ? "어느 작은 시민의 말" : "The words of one ordinary citizen",
+      summary: ko ? "전문가나 유명인의 권위가 아니라 한 시민의 질문과 판단에서 시작한 1인 시민미디어의 이야기입니다." : "The story of a one-person civic publication built from one citizen’s questions and judgment.",
+    },
+  ];
+
   return (
     <div className="bg-paper">
       <section className="border-b border-green-deep/15 bg-ivory py-7 sm:py-9 lg:py-10">
@@ -138,6 +159,45 @@ export default function Home() {
         <div className="container-page">
           <div className="flex items-end justify-between gap-4 border-b-[3px] border-navy pb-3"><div><p className="section-kicker">LATEST</p><h2 className="editorial-title mt-1.5 text-2xl font-bold text-navy sm:text-3xl">{ko ? "최신 글" : "Latest"}</h2></div><Link to="/search" className="text-link shrink-0">{ko ? "검색하기" : "Search"}<ArrowRight size={15}/></Link></div>
           <div className="divide-y divide-green-deep/12 pt-2">{news.slice(0, 5).map((item) => <Link key={item.slug} to={`/news/${item.slug}`} className="group grid gap-2 py-4 sm:grid-cols-[7rem_1fr_auto] sm:items-center sm:gap-5"><time className="text-xs text-charcoal/40">{item.date.replace(/-/g, ".")}</time><h3 className="editorial-title break-keep text-lg font-bold text-navy transition group-hover:text-green-mid">{item.title}</h3><span className="text-xs font-extrabold text-green-deep">TODAY&apos;S NEWS</span></Link>)}</div>
+        </div>
+      </section>
+
+      <section className="border-y border-green-deep/12 bg-ivory py-12 sm:py-16" aria-labelledby="newcomer-title">
+        <div className="container-page">
+          <div className="max-w-2xl">
+            <p className="section-kicker">START HERE</p>
+            <h2 id="newcomer-title" className="editorial-title mt-2 text-3xl font-bold text-navy sm:text-4xl">{ko ? "처음 오셨다면" : "New to SEED VOICE?"}</h2>
+            <p className="mt-3 text-sm leading-7 text-charcoal/60 sm:text-base">{ko ? "씨앗의 소리가 무엇을 보고 어떤 기준으로 판단하는지, 아래 세 글에서 가장 빠르게 확인할 수 있습니다." : "These three pages are the fastest way to understand what SEED VOICE watches and the standards it uses."}</p>
+          </div>
+          <div className="mt-7 grid gap-5 md:grid-cols-3">
+            {newcomerLinks.map((item, index) => (
+              <Link key={item.to} to={item.to} className="group flex min-h-[220px] flex-col justify-between border border-green-deep/12 bg-white p-6 transition hover:-translate-y-0.5 hover:border-green-deep/30">
+                <div>
+                  <div className="flex items-center justify-between gap-3"><p className="text-[10px] font-black tracking-[.14em] text-green-deep">{item.kicker}</p><span className="text-xs font-black text-charcoal/25">0{index + 1}</span></div>
+                  <h3 className="editorial-title mt-5 break-keep text-2xl font-bold leading-snug text-navy transition group-hover:text-green-mid">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-charcoal/58">{item.summary}</p>
+                </div>
+                <span className="mt-6 inline-flex items-center gap-1 text-xs font-extrabold text-green-deep">{ko ? "읽어보기" : "Read"}<ArrowRight size={13}/></span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-16" aria-labelledby="publisher-home-title">
+        <div className="container-page">
+          <Link to="/publisher-message" className="group grid gap-8 border-y-[3px] border-navy py-8 sm:py-10 lg:grid-cols-[.38fr_.62fr] lg:items-center">
+            <div>
+              <p className="section-kicker">PUBLISHER'S MESSAGE</p>
+              <p className="editorial-title mt-4 text-5xl font-black tracking-[-.06em] text-green-deep sm:text-6xl">{ko ? "한시언" : "Han Si-eon"}</p>
+              <p className="mt-2 text-sm font-semibold text-charcoal/50">{ko ? "씨앗의 소리 발행인" : "Publisher, SEED VOICE"}</p>
+            </div>
+            <div>
+              <h2 id="publisher-home-title" className="editorial-title break-keep text-3xl font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-4xl">{ko ? "어느 작은 시민의 말" : "The words of one ordinary citizen"}</h2>
+              <p className="mt-4 max-w-3xl text-base leading-8 text-charcoal/65 sm:text-lg">{ko ? "유명인이나 전문가의 권위가 아니라 한 시민의 질문과 판단으로 세상을 바라보겠습니다. 사실을 확인하고 자유와 책임의 기준으로 권력을 살피며, 완성된 답보다 질문하고 수정하며 성장하는 시민의 목소리를 기록합니다." : "SEED VOICE looks at the world through one citizen’s questions and judgment rather than borrowed authority. It verifies facts, scrutinizes power through freedom and responsibility, and records a civic voice willing to question, correct, and grow."}</p>
+              <span className="mt-5 inline-flex items-center gap-1 text-sm font-extrabold text-green-deep">{ko ? "발행인의 말 읽기" : "Read the publisher's message"}<ArrowRight size={15}/></span>
+            </div>
+          </Link>
         </div>
       </section>
 
