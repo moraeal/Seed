@@ -16,7 +16,7 @@ const sources = [
 const briefingPath = "/briefings/social-economy-fair-competition";
 const pageTitle = "국가가 고르지 않아도 좋은 기업은 자랄 수 있을까 | 씨앗의 소리";
 const pageDescription = "B Corp는 정부가 사회적기업을 지정하고 보조금·공공조달 혜택을 주는 방식과 무엇이 다른지, 그리고 민간 인증이 실제 대안이 될 수 있는지 살펴봅니다.";
-const heroImagePath = "images/briefings/briefing-09-bcorp-market-trust.jpg";
+const heroImagePath = "images/briefings/briefing-09-bcorp-market-trust-data.svg";
 
 export default function BCorpDeepDive() {
   useEffect(() => {
