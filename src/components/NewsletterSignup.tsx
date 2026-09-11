@@ -28,7 +28,7 @@ export default function NewsletterSignup() {
   };
 
   return (
-    <section className="border-t border-green-deep/15 bg-[#E8EFE9] py-6 sm:py-7" aria-labelledby="newsletter-title">
+    <section id="newsletter" className="scroll-mt-32 border-t border-green-deep/15 bg-[#E8EFE9] py-6 sm:py-7" aria-labelledby="newsletter-title">
       <div className="container-page grid gap-4 lg:grid-cols-[.8fr_1.2fr] lg:items-center lg:gap-8">
         <div>
           <p className="section-kicker">SEED LETTER</p>
