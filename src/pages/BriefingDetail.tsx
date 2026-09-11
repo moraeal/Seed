@@ -29,7 +29,7 @@ export default function BriefingDetail() {
 
   const isLongRead = briefing.readMinutes >= 8;
   const continuation = getEditorialContinuation("briefing", briefing.slug, language);
-  const hasBCorpDeepDive = briefing.slug === "social-solidarity-economy-youth-mall-lessons";
+  const hasBCorpDeepDive = briefing.slug === "social-economy-fair-competition";
 
   const renderFigure = (image: NonNullable<typeof briefing.images>[number], prominent = false) => (
     <InteractiveFigure src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName={`${prominent ? "mb-8 shadow-[0_18px_55px_rgba(23,76,58,.08)]" : "mt-8"} overflow-hidden border border-green-deep/10 bg-white`} imageClassName={image.contain ? "block h-auto w-full" : `${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full object-cover`} />
