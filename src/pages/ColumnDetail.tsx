@@ -1,10 +1,11 @@
-import { Clock } from "lucide-react";
+import { Clock, FileText } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import ArticleContinuation from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
 import InteractiveFigure from "../components/InteractiveFigure";
 import ShareButton from "../components/ShareButton";
+import SourceDocumentPanel from "../components/SourceDocumentPanel";
 import { getColumn } from "../data/columns";
 import { localizeColumn } from "../data/localizedContent";
 import { getEditorialContinuation } from "../data/editorialContinuations";
@@ -38,11 +39,13 @@ export default function ColumnDetail() {
 
   return <article className="bg-paper">
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
-      <div className="container-page max-w-5xl"><div className="pt-3"><h1 className="article-detail-title">{column.title}</h1><p className="article-summary">{column.summary}</p></div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45"><time>{column.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${column.readMinutes}분` : `${column.readMinutes} min read`}</span><ShareButton title={`${column.title} - ${column.subtitle}`} text={column.summary} className="ml-auto" /></div></div>
+      <div className="container-page max-w-5xl"><div className="pt-3"><h1 className="article-detail-title">{column.title}</h1><p className="article-summary">{column.summary}</p></div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45"><time>{column.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${column.readMinutes}분` : `${column.readMinutes} min read`}</span>{column.sourceDocument && <a href="#source-document" className="flex items-center gap-1 font-bold text-green-deep hover:underline"><FileText size={14}/>{ko ? "성명서 원문 대조" : "Compare source"}</a>}<ShareButton title={`${column.title} - ${column.subtitle}`} text={column.summary} className="ml-auto" /></div></div>
     </header>
 
     <div className="container-page max-w-4xl py-8 sm:py-12">
       <InteractiveFigure src={column.heroImage.src} alt={column.heroImage.alt} caption={column.heroImage.caption} credit={column.heroImage.credit} sourceUrl={column.heroImage.sourceUrl} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]" imageClassName="aspect-[16/9] w-full object-cover" />
+
+      {column.sourceDocument && <SourceDocumentPanel document={column.sourceDocument} ko={ko} />}
 
       <div className="reading-column mt-10">
         {column.sections.map((section, index) => <section key={`${index}-${section.title}`} className={index === 0 ? "" : `article-section ${isLongRead ? "article-section-long" : ""}`}>

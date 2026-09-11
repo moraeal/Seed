@@ -31,6 +31,12 @@ export type SeedColumn = {
     sourceUrl: string;
     contain?: boolean;
   }[];
+  sourceDocument?: {
+    title: string;
+    description: string;
+    pdfPath: string;
+    pageImages: string[];
+  };
   sections: { title: string; paragraphs: string[]; quote?: string[] }[];
   sourceNote: string;
   sources?: { label: string; url: string }[];

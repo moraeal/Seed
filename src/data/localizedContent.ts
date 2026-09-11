@@ -24,6 +24,7 @@ export function localizeColumn(column: SeedColumn, language: Language): SeedColu
       ...image,
       ...(translated.additionalImages?.[index] ?? {}),
     })),
+    sourceDocument: column.sourceDocument ? { ...column.sourceDocument, ...translated.sourceDocument } : undefined,
     sections: translated.sections,
     sourceNote: translated.sourceNote,
     sources: column.sources?.map((source, index) => ({

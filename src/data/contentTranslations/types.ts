@@ -11,6 +11,7 @@ export type ColumnTranslation = {
   referenceVideo?: Partial<Pick<NonNullable<SeedColumn["referenceVideo"]>, "thumbnailAlt" | "title" | "description" | "credit">>;
   inlineImage?: Partial<Pick<SeedColumn["inlineImage"], "alt" | "caption" | "credit">>;
   additionalImages?: Array<{ src?: string; alt: string; caption: string; credit?: string }>;
+  sourceDocument?: Partial<Pick<NonNullable<SeedColumn["sourceDocument"]>, "title" | "description">>;
   sections: SeedColumn["sections"];
   sourceNote: string;
   sourceLabels?: string[];

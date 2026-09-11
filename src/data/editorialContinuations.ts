@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:civic-groups-are-not-state-vanguard-2026": {
+    ko: {
+      href: "/columns/when-civic-power-rules-citizens",
+      title: "시민의 이름으로 시민을 지배할 때",
+      relationship: "시민권력 감시",
+      reason: "국가권력과 결합한 시민단체의 도덕적 권위가 어떻게 시민을 압박하는 또 하나의 권력이 될 수 있는지 이어서 살펴봅니다.",
+      listHref: "/columns",
+      listLabel: "씨앗의 소리 전체 보기",
+    },
+    en: {
+      href: "/columns/when-civic-power-rules-citizens",
+      title: "When Citizens Are Ruled in the Name of Citizens",
+      relationship: "WATCHING CIVIC POWER",
+      reason: "Continue with how the moral authority of civic groups, when joined to state power, can become another form of pressure over citizens.",
+      listHref: "/columns",
+      listLabel: "All columns",
+    },
+  },
   "column:control-power-before-ten-percent-penalty-2026": {
     ko: {
       href: "/columns/prosecution-reform-power-transfer-2026",
