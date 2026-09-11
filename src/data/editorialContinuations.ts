@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:control-power-before-ten-percent-penalty-2026": {
+    ko: {
+      href: "/columns/prosecution-reform-power-transfer-2026",
+      title: "검찰개혁은 권력을 옮겨 심는 일이 아니다",
+      relationship: "권력 통제의 관점",
+      reason: "기업에 대한 행정 제재의 문제를 넘어 국가의 강제력이 어느 기관으로 이동하고 어떤 절차로 통제돼야 하는지 이어서 살펴봅니다.",
+      listHref: "/columns",
+      listLabel: "씨앗의 소리 전체 보기",
+    },
+    en: {
+      href: "/columns/prosecution-reform-power-transfer-2026",
+      title: "Prosecution Reform Is Not About Moving Power Elsewhere",
+      relationship: "CONSTRAINING STATE POWER",
+      reason: "Continue from administrative sanctions on companies to the broader question of where state coercion moves and how institutions should constrain it.",
+      listHref: "/columns",
+      listLabel: "All columns",
+    },
+  },
   "briefing:social-economy-fair-competition": {
     ko: {
       href: "/briefings/social-solidarity-economy-youth-mall-lessons",
