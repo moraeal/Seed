@@ -53,11 +53,32 @@ export default function PopularLatest() {
 
   const latest = useMemo<DisplayItem[]>(() => {
     const items: DisplayItem[] = [];
-    getNewsNewestFirst().slice(0, 5).forEach((item) => {
+
+    getNewsNewestFirst().forEach((item) => {
       const localized = localizeNewsArticle(item, language);
       items.push({ path: `/news/${localized.slug}`, title: localized.title, category: ko ? "오늘의 뉴스" : "NEWS", date: localized.date });
     });
-    return items;
+
+    getAllBriefingsNewestFirst().forEach((item) => {
+      const localized = localizeBriefing(item, language);
+      items.push({ path: `/briefings/${localized.slug}`, title: localized.title, category: ko ? "씨앗브리핑" : "BRIEFING", date: localized.date });
+    });
+
+    columns.forEach((item) => {
+      const localized = localizeColumn(item, language);
+      items.push({ path: `/columns/${localized.slug}`, title: localized.title, category: ko ? "씨앗의 소리" : "VOICE", date: localized.date });
+    });
+
+    [...seedLanguageEnvironmentArticlesKo, ...seedLanguageArticlesKo].forEach((item) => {
+      const localized = getSeedLanguageEnvironmentArticle(item.slug, language) ?? getSeedLanguageArticle(item.slug, language);
+      if (!localized || localized.readMinutes >= 12) return;
+      items.push({ path: `/seed-language/${localized.slug}`, title: localized.title, category: ko ? "씨앗언어" : "SEED LANGUAGE", date: localized.date });
+    });
+
+    return items
+      .filter((item) => Boolean(item.date))
+      .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
+      .slice(0, 5);
   }, [language, ko]);
 
   useEffect(() => {
