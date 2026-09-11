@@ -29,6 +29,7 @@ export default function BriefingDetail() {
 
   const isLongRead = briefing.readMinutes >= 8;
   const continuation = getEditorialContinuation("briefing", briefing.slug, language);
+  const hasBCorpDeepDive = briefing.slug === "social-solidarity-economy-youth-mall-lessons";
 
   const renderFigure = (image: NonNullable<typeof briefing.images>[number], prominent = false) => (
     <InteractiveFigure src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName={`${prominent ? "mb-8 shadow-[0_18px_55px_rgba(23,76,58,.08)]" : "mt-8"} overflow-hidden border border-green-deep/10 bg-white`} imageClassName={image.contain ? "block h-auto w-full" : `${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full object-cover`} />
@@ -115,6 +116,14 @@ export default function BriefingDetail() {
         )}
 
         {briefing.commentary && <DeepReadBanner href={`/briefings/${briefing.slug}/commentary`} />}
+        {hasBCorpDeepDive && (
+          <aside className="mt-5 rounded-xl border border-green-deep/15 bg-white p-5 shadow-[0_10px_30px_rgba(23,76,58,.05)] sm:p-6">
+            <span className="text-[11px] font-extrabold tracking-[0.16em] text-green-deep">추가 심층분석 · B CORP</span>
+            <h2 className="mt-2 text-xl font-extrabold leading-8 text-navy sm:text-2xl">국가가 고르지 않아도 좋은 기업은 자랄 수 있을까</h2>
+            <p className="mt-2 text-sm leading-6 text-charcoal/65">정부가 사회적기업을 선별해 지원하는 대신, 민간 인증과 시민의 선택으로 사회적 가치를 평가하는 B Corp 모델의 장점과 한계를 분석했습니다.</p>
+            <Link to={`/briefings/${briefing.slug}/b-corp`} className="button-primary mt-4">{ko ? "B Corp 심층분석 읽기" : "Read the B Corp deep analysis"}</Link>
+          </aside>
+        )}
         <ContentAccountability postSlug={briefing.slug} publishedDate={briefing.date} />
         <CommentSection postSlug={briefing.slug} />
         {continuation && <ArticleContinuation item={continuation} />}
