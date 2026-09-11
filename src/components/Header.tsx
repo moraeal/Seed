@@ -5,6 +5,7 @@ import { useAuth } from "../auth";
 import { getContent } from "../data/siteContent";
 import { useLanguage } from "../i18n";
 import BrandLockup from "./BrandLockup";
+import HomeSectionNav from "./HomeSectionNav";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -14,6 +15,7 @@ export default function Header() {
   const { user, nickname, isVerified, signOut } = useAuth();
   const t = getContent(language);
   const ko = language === "ko";
+  const isHome = location.pathname === "/" || location.pathname === "/en/";
 
   const nav = language === "en"
     ? [
@@ -116,6 +118,8 @@ export default function Header() {
       <nav className="hidden border-b border-green-deep/14 bg-paper xl:block" aria-label={language === "en" ? "Main menu" : "주요 메뉴"}>
         <div className="container-page flex items-center justify-start gap-8">{nav.map((item) => renderNavItem(item))}</div>
       </nav>
+
+      {isHome && <HomeSectionNav />}
 
       {open && (
         <div id="mobile-main-menu" className="border-t border-green-deep/10 bg-paper px-5 py-4 shadow-[0_12px_24px_rgba(17,43,37,.08)] xl:hidden">
