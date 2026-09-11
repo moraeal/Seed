@@ -123,7 +123,7 @@ export default function PopularLatest() {
       : (ko ? "최근 30일 조회 데이터가 아직 없습니다." : "No readership data is available for the last 30 days yet.");
 
   return (
-    <section className="py-9 sm:py-12" aria-labelledby="popular-latest-title">
+    <section className="py-8 sm:py-10" aria-labelledby="popular-latest-title">
       <div className="container-page">
         <div className="flex items-end justify-between gap-3 border-b-[3px] border-navy pb-2.5 sm:gap-4 sm:pb-3">
           <div>
@@ -133,17 +133,17 @@ export default function PopularLatest() {
           <Link to="/search" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "검색하기" : "Search"}<ArrowRight size={14}/></Link>
         </div>
 
-        <div className="grid gap-7 pt-4 sm:gap-10 sm:pt-6 lg:grid-cols-2 lg:gap-12">
+        <div className="grid gap-6 pt-4 sm:gap-8 sm:pt-5 lg:grid-cols-2 lg:gap-10">
           <div>
             <div className="flex items-end justify-between gap-3 sm:gap-4"><h3 className="editorial-title text-[1.08rem] font-bold text-navy sm:text-2xl">{ko ? "최근 30일 많이 읽은 글" : "Most read · 30 days"}</h3><span className="text-[10px] font-semibold text-charcoal/40 sm:text-[11px]">{ko ? "실제 조회 기준" : "Actual views"}</span></div>
             <div className="mt-2.5 divide-y divide-green-deep/12 border-y border-green-deep/15 sm:mt-3">
               {popularItems.length > 0 ? popularItems.map((item, index) => (
-                <Link key={item.path} to={item.path} className="group grid grid-cols-[1.6rem_1fr_auto] gap-2.5 py-3 sm:grid-cols-[2rem_1fr_auto] sm:gap-4 sm:py-4">
+                <Link key={item.path} to={item.path} className="group grid grid-cols-[1.6rem_1fr_auto] gap-2.5 py-3 sm:grid-cols-[2rem_1fr_auto] sm:gap-4 sm:py-3.5">
                   <span className="text-xs font-black text-green-deep/55 sm:text-sm">{String(index + 1).padStart(2, "0")}</span>
                   <div><p className="text-[9px] font-black tracking-[.12em] text-green-deep sm:text-[10px]">{item.category}</p><h4 className="editorial-title mt-0.5 break-keep text-[1rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:mt-1 sm:text-lg">{item.title}</h4></div>
                   <span className="self-center text-[11px] font-bold tabular-nums text-charcoal/45 sm:text-xs">{item.views?.toLocaleString()}{ko ? "회" : ""}</span>
                 </Link>
-              )) : <p className="py-5 text-[13px] text-charcoal/45 sm:py-6 sm:text-sm" role="status">{popularEmptyMessage}</p>}
+              )) : <p className="py-5 text-[13px] text-charcoal/45 sm:py-5 sm:text-sm" role="status">{popularEmptyMessage}</p>}
             </div>
           </div>
 
@@ -151,7 +151,7 @@ export default function PopularLatest() {
             <h3 className="editorial-title text-[1.08rem] font-bold text-navy sm:text-2xl">{ko ? "최신 글" : "Latest"}</h3>
             <div className="mt-2.5 divide-y divide-green-deep/12 border-y border-green-deep/15 sm:mt-3">
               {latest.map((item) => (
-                <Link key={item.path} to={item.path} className="group grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 py-3 sm:grid-cols-[6.5rem_1fr_auto] sm:items-center sm:gap-4 sm:py-4">
+                <Link key={item.path} to={item.path} className="group grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 py-3 sm:grid-cols-[6.5rem_1fr_auto] sm:items-center sm:gap-4 sm:py-3.5">
                   <time className="text-[11px] text-charcoal/40 sm:text-xs">{item.date?.replace(/-/g, ".")}</time>
                   <h4 className="editorial-title break-keep text-[1rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-lg">{item.title}</h4>
                   <span className="col-start-2 text-[9px] font-black tracking-[.1em] text-green-deep sm:col-auto sm:text-[10px]">{item.category}</span>
