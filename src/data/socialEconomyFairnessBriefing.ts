@@ -12,18 +12,18 @@ export const socialEconomyFairnessBriefing: Briefing = {
   featured: true,
   images: [
     {
-      src: "images/briefings/briefing-08-civic-ecosystem.webp",
-      alt: "주민과 지역 상인, 돌봄 종사자가 생활서비스를 함께 설계하는 모습",
-      caption: "사회적경제의 출발점은 정부의 지정이 아니라 시민의 필요와 자발적 협력이어야 합니다. 문제는 사회적경제 자체가 아니라 국가가 특정 조직을 선별하고 경쟁조건까지 바꾸는 방식입니다.",
+      src: "images/briefings/briefing-09-state-led-social-economy.jpg",
+      alt: "정부의 손에 들어 올려진 한 상점과 문을 닫은 기존 상권을 대비한 상징 이미지",
+      caption: "국가가 특정 기업을 선택해 지원하면 같은 시장의 다른 사업자에게도 경쟁조건의 변화가 생깁니다. 사회적경제 지원은 혜택뿐 아니라 기존 시장에 미치는 영향까지 함께 평가해야 합니다.",
       credit: "씨앗의 소리 AI 제작 이미지",
       sourceUrl: "",
     },
     {
-      src: "images/columns/civic-society-stateization-roots.webp",
-      alt: "국가 지원과 시민사회 조직의 관계를 상징적으로 보여주는 이미지",
-      caption: "지원이 장기화되고 금융·조달·위탁까지 연결되면 시민사회 조직이 시민보다 행정기관을 바라보는 구조가 만들어질 수 있습니다.",
+      src: "images/briefings/briefing-09-bcorp-market-trust.jpg",
+      alt: "시민들이 기업의 사회적 성과와 신뢰 정보를 확인하고 동네 가게를 선택하는 상징 이미지",
+      caption: "B Corp가 보여주는 핵심은 국가가 좋은 기업을 대신 고르는 것이 아니라, 기업의 행동과 성과를 투명하게 공개하고 시민과 투자자가 선택할 수 있게 만드는 것입니다.",
       credit: "씨앗의 소리 AI 제작 이미지",
-      sourceUrl: "",
+      sourceUrl: "https://www.bcorporation.net/en-us/certification/",
     },
     {
       src: "images/briefings/briefing-08-youth-mall-survival-ko.svg",
