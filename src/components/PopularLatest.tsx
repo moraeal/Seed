@@ -11,6 +11,7 @@ import { useLanguage } from "../i18n";
 
 type PublicTopContent = { page_path: string; views: number };
 type DisplayItem = { path: string; title: string; category: string; date?: string; views?: number };
+type PopularStatus = "loading" | "success" | "error";
 
 const supabaseUrl = (import.meta.env.VITE_SUPABASE_URL || "https://wajlmbahjyazkftwaeem.supabase.co").replace(/\/$/, "");
 const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
@@ -29,6 +30,7 @@ export default function PopularLatest() {
   const { language } = useLanguage();
   const ko = language === "ko";
   const [popular, setPopular] = useState<PublicTopContent[]>([]);
+  const [popularStatus, setPopularStatus] = useState<PopularStatus>("loading");
 
   const titleMap = useMemo(() => {
     const entries = new Map<string, string>();
@@ -83,6 +85,7 @@ export default function PopularLatest() {
 
   useEffect(() => {
     let active = true;
+    setPopularStatus("loading");
     fetch(`${supabaseUrl}/rest/v1/rpc/get_public_top_content`, {
       method: "POST",
       headers: {
@@ -93,8 +96,16 @@ export default function PopularLatest() {
       body: "{}",
     })
       .then((response) => response.ok ? response.json() : Promise.reject(new Error(String(response.status))))
-      .then((rows: PublicTopContent[]) => { if (active) setPopular(rows); })
-      .catch(() => { if (active) setPopular([]); });
+      .then((rows: PublicTopContent[]) => {
+        if (!active) return;
+        setPopular(rows);
+        setPopularStatus("success");
+      })
+      .catch(() => {
+        if (!active) return;
+        setPopular([]);
+        setPopularStatus("error");
+      });
     return () => { active = false; };
   }, []);
 
@@ -104,6 +115,12 @@ export default function PopularLatest() {
       return title ? { path: item.page_path, title, category: categoryFromPath(item.page_path, ko), views: Number(item.views) } : null;
     })
     .filter((item): item is DisplayItem => Boolean(item));
+
+  const popularEmptyMessage = popularStatus === "loading"
+    ? (ko ? "조회 데이터를 불러오는 중입니다." : "Loading readership data.")
+    : popularStatus === "error"
+      ? (ko ? "조회 데이터를 불러오지 못했습니다." : "Readership data is temporarily unavailable.")
+      : (ko ? "최근 30일 조회 데이터가 아직 없습니다." : "No readership data is available for the last 30 days yet.");
 
   return (
     <section className="py-9 sm:py-12" aria-labelledby="popular-latest-title">
@@ -126,7 +143,7 @@ export default function PopularLatest() {
                   <div><p className="text-[9px] font-black tracking-[.12em] text-green-deep sm:text-[10px]">{item.category}</p><h4 className="editorial-title mt-0.5 break-keep text-[1rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:mt-1 sm:text-lg">{item.title}</h4></div>
                   <span className="self-center text-[11px] font-bold tabular-nums text-charcoal/45 sm:text-xs">{item.views?.toLocaleString()}{ko ? "회" : ""}</span>
                 </Link>
-              )) : <p className="py-5 text-[13px] text-charcoal/45 sm:py-6 sm:text-sm">{ko ? "조회 데이터를 불러오는 중입니다." : "Loading readership data."}</p>}
+              )) : <p className="py-5 text-[13px] text-charcoal/45 sm:py-6 sm:text-sm" role="status">{popularEmptyMessage}</p>}
             </div>
           </div>
 
