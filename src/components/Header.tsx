@@ -39,7 +39,7 @@ export default function Header() {
     if (nextLanguage === "ko" && /^\/en(?:\/|$)/.test(location.pathname)) navigate("/");
   };
 
-  const navLinkClass = "inline-flex items-center border-b-2 px-1 py-3 text-[13px] font-bold transition";
+  const navLinkClass = "inline-flex items-center border-b-2 px-0.5 py-2.5 text-[13px] font-bold transition";
   const mobileLinkClass = "flex min-h-12 items-center justify-between border-b border-green-deep/10 px-3 py-3 text-base font-bold transition last:border-b-0";
 
   useEffect(() => {
@@ -73,48 +73,48 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-ivory/95 backdrop-blur-xl">
-      <div className="container-page flex min-h-[82px] items-center gap-3 border-b border-green-deep/12 py-2.5 md:min-h-[88px] md:gap-4">
-        <Link to={language === "en" ? "/en/" : "/"} className="flex min-w-0 shrink flex-col items-start gap-1" aria-label={language === "en" ? "SEED VOICE home" : "씨앗의 소리 홈"}>
+      <div className="container-page flex min-h-[70px] items-center gap-3 border-b border-green-deep/10 py-2 md:min-h-[74px] md:gap-4">
+        <Link to={language === "en" ? "/en/" : "/"} className="flex min-w-0 shrink flex-col items-start gap-0.5" aria-label={language === "en" ? "SEED VOICE home" : "씨앗의 소리 홈"}>
           <BrandLockup tone="header" />
-          <span className="max-w-[calc(100vw-8.5rem)] text-[11px] font-medium leading-[1.4] tracking-[-.02em] text-charcoal/58 sm:max-w-[42rem] sm:text-xs md:max-w-[46rem] lg:max-w-[50rem]">
+          <span className="max-w-[calc(100vw-8.5rem)] text-[10px] font-medium leading-[1.35] tracking-[-.02em] text-charcoal/52 sm:max-w-[42rem] sm:text-[11px] md:max-w-[46rem] lg:max-w-[50rem]">
             {ko
               ? "시민과 기업의 자유를 지키는 독립 시민저널"
               : "An independent civic journal for citizens, enterprise and freedom."}
           </span>
         </Link>
 
-        <div className="ml-auto hidden shrink-0 items-center gap-2 xl:flex">
-          <Link to="/search" className="inline-flex min-h-9 items-center gap-1.5 px-2 text-xs font-extrabold text-charcoal/70 transition hover:text-green-deep" aria-label={ko ? "검색" : "Search"}>
-            <Search size={16}/><span>{ko ? "검색" : "Search"}</span>
+        <div className="ml-auto hidden shrink-0 items-center gap-1.5 xl:flex">
+          <Link to="/search" className="inline-flex min-h-8 items-center gap-1.5 px-2 text-[11px] font-extrabold text-charcoal/62 transition hover:text-green-deep" aria-label={ko ? "검색" : "Search"}>
+            <Search size={15}/><span>{ko ? "검색" : "Search"}</span>
           </Link>
-          <a href="#newsletter" className="inline-flex min-h-9 items-center rounded-sm bg-green-deep px-4 text-xs font-extrabold text-white transition hover:bg-green-mid">
+          <a href="#newsletter" className="inline-flex min-h-8 items-center rounded-sm bg-green-deep px-3.5 text-[11px] font-extrabold text-white transition hover:bg-green-mid">
             {ko ? "구독" : "Subscribe"}
           </a>
           {user ? (
             <>
-              <Link to="/account" className="inline-flex min-h-9 items-center gap-1.5 rounded-md border border-green-deep/15 bg-white px-3 text-xs font-extrabold text-green-deep">
-                <UserRound size={14}/><span className="max-w-20 truncate">{nickname}</span>{isVerified && <span className="text-[9px] text-green-mid">●</span>}
+              <Link to="/account" className="inline-flex min-h-8 items-center gap-1.5 rounded-md border border-green-deep/12 bg-white px-2.5 text-[11px] font-extrabold text-green-deep">
+                <UserRound size={13}/><span className="max-w-20 truncate">{nickname}</span>{isVerified && <span className="text-[9px] text-green-mid">●</span>}
               </Link>
-              <button onClick={() => void signOut()} className="grid size-9 place-items-center rounded-md border border-green-deep/15 text-charcoal/55 hover:text-green-deep" type="button" aria-label={language === "en" ? "Sign out" : "로그아웃"}><LogOut size={15}/></button>
+              <button onClick={() => void signOut()} className="grid size-8 place-items-center rounded-md border border-green-deep/12 text-charcoal/50 hover:text-green-deep" type="button" aria-label={language === "en" ? "Sign out" : "로그아웃"}><LogOut size={14}/></button>
             </>
           ) : (
-            <Link to="/account" className="inline-flex min-h-9 items-center gap-1.5 px-2 text-xs font-extrabold text-charcoal/62 transition hover:text-green-deep"><LogIn size={14}/>{language === "en" ? "Sign in" : "로그인"}</Link>
+            <Link to="/account" className="inline-flex min-h-8 items-center gap-1.5 px-2 text-[11px] font-extrabold text-charcoal/58 transition hover:text-green-deep"><LogIn size={13}/>{language === "en" ? "Sign in" : "로그인"}</Link>
           )}
-          <button onClick={toggleLanguage} className="min-h-9 px-2 text-xs font-bold text-charcoal/62 transition hover:text-green-deep" type="button">{t.actions.language}</button>
+          <button onClick={toggleLanguage} className="min-h-8 px-2 text-[11px] font-bold text-charcoal/58 transition hover:text-green-deep" type="button">{t.actions.language}</button>
         </div>
 
-        <div className="ml-auto flex shrink-0 items-center gap-1 xl:hidden">
-          <Link to="/search" className="grid size-10 place-items-center rounded-md text-green-deep transition hover:bg-green-pale" aria-label={ko ? "검색" : "Search"}>
-            <Search size={19}/>
+        <div className="ml-auto flex shrink-0 items-center gap-0.5 xl:hidden">
+          <Link to="/search" className="grid size-9 place-items-center rounded-md text-green-deep transition hover:bg-green-pale" aria-label={ko ? "검색" : "Search"}>
+            <Search size={18}/>
           </Link>
-          <button onClick={() => setOpen(!open)} className="grid size-10 place-items-center rounded-md text-green-deep transition hover:bg-green-pale" aria-label={language === "en" ? (open ? "Close menu" : "Open menu") : (open ? "메뉴 닫기" : "메뉴 열기")} aria-expanded={open} aria-controls="mobile-main-menu" type="button">
-            {open ? <X size={21}/> : <Menu size={21}/>} 
+          <button onClick={() => setOpen(!open)} className="grid size-9 place-items-center rounded-md text-green-deep transition hover:bg-green-pale" aria-label={language === "en" ? (open ? "Close menu" : "Open menu") : (open ? "메뉴 닫기" : "메뉴 열기")} aria-expanded={open} aria-controls="mobile-main-menu" type="button">
+            {open ? <X size={20}/> : <Menu size={20}/>} 
           </button>
         </div>
       </div>
 
-      <nav className="hidden border-b border-green-deep/18 bg-paper xl:block" aria-label={language === "en" ? "Main menu" : "주요 메뉴"}>
-        <div className="container-page flex items-center justify-start gap-9">{nav.map((item) => renderNavItem(item))}</div>
+      <nav className="hidden border-b border-green-deep/14 bg-paper xl:block" aria-label={language === "en" ? "Main menu" : "주요 메뉴"}>
+        <div className="container-page flex items-center justify-start gap-8">{nav.map((item) => renderNavItem(item))}</div>
       </nav>
 
       {open && (
