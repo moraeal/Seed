@@ -32,6 +32,11 @@ export default function BCorpDeepDive() {
       </header>
 
       <div className="container-page max-w-[50rem] py-9 sm:py-12">
+        <figure className="mb-8 overflow-hidden rounded-xl border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]">
+          <img src={`${import.meta.env.BASE_URL}images/briefings/briefing-09-bcorp-market-trust.jpg`} alt="시민들이 기업의 사회적 성과와 신뢰 정보를 확인하고 동네 가게를 선택하는 상징 이미지" className="aspect-[16/9] w-full object-cover" />
+          <figcaption className="border-t border-green-deep/10 px-4 py-3 text-xs leading-5 text-charcoal/55">기업의 행동과 성과를 투명하게 공개하고 시민·소비자·투자자가 선택하는 시장을 상징적으로 표현했습니다. · 씨앗의 소리 AI 제작 이미지</figcaption>
+        </figure>
+
         <section className="reading-column">
           <p className="article-copy article-copy-long mt-0">한국의 사회적경제 논쟁은 자주 두 극단으로 갈립니다. 국가가 사회적기업을 적극적으로 지정하고 지원해야 한다는 주장과, 시장에 맡기고 정부는 손을 떼야 한다는 주장입니다. 그러나 두 선택지만 있는 것은 아닙니다. 국가가 특정 기업을 ‘좋은 기업’으로 선별하지 않더라도 시민과 소비자, 투자자와 민간기관이 사회적 가치를 평가하고 선택하게 만드는 제도를 설계할 수 있습니다.</p>
           <p className="article-copy article-copy-long">B Corp는 그 가능성을 보여주는 대표적 사례입니다. B Corp 인증은 정부가 발급하는 사회적기업 지위가 아니라 비영리조직 B Lab이 운영하는 민간 인증입니다. 기업은 사회·환경·거버넌스에 관한 기준을 충족하고 외부 검증을 받아야 하며, 인증을 받은 뒤에도 갱신과 검증을 거칩니다. 2026년부터 적용되는 새 기준은 모든 기업이 인권, 기후행동, 공정한 노동, 환경책임, 이해관계자 거버넌스 등 핵심 분야에서 각각 최소요건을 충족하도록 구조를 강화했습니다.</p>
