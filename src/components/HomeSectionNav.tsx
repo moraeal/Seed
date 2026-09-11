@@ -34,6 +34,9 @@ export default function HomeSectionNav() {
     label: ko ? item.labelKo : item.labelEn,
   })), [ko]);
 
+  const activeItem = labels.find((item) => item.kicker === active) ?? labels[0];
+  const activeIndex = labels.findIndex((item) => item.kicker === active);
+
   useEffect(() => {
     let frame = 0;
 
@@ -48,7 +51,7 @@ export default function HomeSectionNav() {
 
         if (!candidates.length) return;
 
-        const threshold = 210;
+        const threshold = 190;
         let current = candidates[0].item.kicker;
         for (const entry of candidates) {
           if (entry.section.getBoundingClientRect().top <= threshold) current = entry.item.kicker;
@@ -70,31 +73,43 @@ export default function HomeSectionNav() {
   const goTo = (kicker: string) => {
     const section = findSection(kicker);
     if (!section) return;
-    const headerOffset = window.innerWidth >= 1280 ? 165 : 105;
+    const headerOffset = window.innerWidth >= 1280 ? 150 : 92;
     const top = section.getBoundingClientRect().top + window.scrollY - headerOffset;
     window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
   };
 
   return (
     <div
-      className={`overflow-hidden border-b border-green-deep/12 bg-white/96 transition-[max-height,opacity] duration-300 ${visible ? "max-h-14 opacity-100" : "max-h-0 opacity-0"}`}
+      className={`overflow-hidden border-b border-green-deep/8 bg-ivory/88 backdrop-blur-md transition-[max-height,opacity] duration-300 ${visible ? "max-h-10 opacity-100" : "max-h-0 opacity-0"}`}
       aria-hidden={!visible}
     >
-      <nav className="container-page flex min-h-11 items-center gap-1 overflow-x-auto py-1.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label={ko ? "메인 섹션 바로가기" : "Home section navigation"}>
-        {labels.map((item) => {
-          const isActive = active === item.kicker;
-          return (
-            <button
-              key={item.kicker}
-              type="button"
-              onClick={() => goTo(item.kicker)}
-              className={`shrink-0 rounded-full px-3 py-1.5 text-[11px] font-extrabold transition sm:text-xs ${isActive ? "bg-green-deep text-white" : "text-charcoal/55 hover:bg-green-pale hover:text-green-deep"}`}
-              aria-current={isActive ? "true" : undefined}
-            >
-              {item.label}
-            </button>
-          );
-        })}
+      <nav className="container-page flex min-h-8 items-center justify-between gap-4 py-1" aria-label={ko ? "메인 섹션 위치 안내" : "Home section position"}>
+        <button
+          type="button"
+          onClick={() => goTo(activeItem.kicker)}
+          className="min-w-0 truncate text-left text-[10px] font-extrabold tracking-[.04em] text-green-deep sm:text-[11px]"
+          aria-label={ko ? `${activeItem.label} 섹션으로 이동` : `Go to ${activeItem.label}`}
+        >
+          <span className="mr-2 text-charcoal/35">{ko ? "현재" : "NOW"}</span>
+          {activeItem.label}
+        </button>
+
+        <div className="flex shrink-0 items-center gap-2" role="list" aria-label={ko ? "섹션 위치" : "Section position"}>
+          {labels.map((item, index) => {
+            const isActive = index === activeIndex;
+            return (
+              <button
+                key={item.kicker}
+                type="button"
+                onClick={() => goTo(item.kicker)}
+                className={`h-1.5 rounded-full transition-all duration-200 ${isActive ? "w-6 bg-green-deep" : "w-1.5 bg-charcoal/20 hover:bg-green-deep/45"}`}
+                aria-current={isActive ? "true" : undefined}
+                aria-label={item.label}
+                title={item.label}
+              />
+            );
+          })}
+        </div>
       </nav>
     </div>
   );
