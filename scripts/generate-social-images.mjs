@@ -27,7 +27,7 @@ const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguag
 await server.close();
 
 const jobs = [
-  { section: "site", slug: "home", src: "images/support/founding-partners-watercolor.webp" },
+  { section: "site", slug: "home", src: "images/brand/seedvoice-independent-watchdog.webp" },
   ...newsModule.newsArticles.map((item) => ({ section: "news", slug: item.slug, src: item.heroImage.src })),
   ...briefingModule.getAllBriefingsNewestFirst().map((item) => ({
     section: "briefings",
