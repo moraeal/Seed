@@ -14,6 +14,8 @@ type InteractiveFigureProps = {
   figureClassName?: string;
   imageClassName?: string;
   videoClassName?: string;
+  captionClassName?: string;
+  captionCreditClassName?: string;
   showCaption?: boolean;
   fallbackSrc?: string;
 };
@@ -34,6 +36,8 @@ export default function InteractiveFigure({
   figureClassName = "overflow-hidden border border-green-deep/10 bg-white",
   imageClassName = "aspect-[16/9] w-full object-cover",
   videoClassName = "aspect-video",
+  captionClassName,
+  captionCreditClassName,
   showCaption = true,
   fallbackSrc,
 }: InteractiveFigureProps) {
@@ -74,7 +78,7 @@ export default function InteractiveFigure({
             </>
           )}
         </div>
-        {showCaption && <FigureCaption caption={caption} credit={credit} sourceUrl={sourceUrl}/>} 
+        {showCaption && <FigureCaption caption={caption} credit={credit} sourceUrl={sourceUrl} className={captionClassName} creditClassName={captionCreditClassName}/>} 
       </figure>
 
       {imageOpen && (
