@@ -126,24 +126,20 @@ export default function Home() {
                 </Link>
               )}
               {seedLanguageArticle && (
-                <Link to={`/seed-language/${seedLanguageArticle.slug}`} className="group block py-3.5 xl:flex-1 xl:py-3">
-                  <div className="min-w-0">
-                    <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">SEED LANGUAGE</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "언어 읽기" : "Read"}<ArrowRight size={11}/></span></div>
-                    {ko && seedLanguageTerm ? (
-                      <div className="mt-1 grid grid-cols-[96px_minmax(0,1fr)] items-start gap-3 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:grid-cols-[112px_minmax(0,1fr)]">
-                        <div>
-                          <h2 className="editorial-title text-[1.42rem] font-black leading-none text-navy transition group-hover:text-green-mid sm:text-[1.55rem]">{seedLanguageArticle.term}</h2>
-                          <p className="mt-1.5 text-[11px] font-bold leading-none text-charcoal/55">{seedLanguageTerm.hanja}</p>
-                          <p className="mt-1 text-[9px] font-black tracking-[.08em] text-green-deep/65 sm:text-[10px]">{seedLanguageTerm.english}</p>
-                        </div>
-                        <p className="line-clamp-3 text-[11px] leading-[1.45] text-charcoal/58 sm:text-[12px]">{seedLanguageArticle.summary}</p>
-                      </div>
-                    ) : (
+                <Link to={`/seed-language/${seedLanguageArticle.slug}`} className="group grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3">
+                  <div className="flex aspect-[4/3] h-full max-h-[96px] w-full flex-col items-center justify-center border border-green-deep/15 bg-green-pale/45 text-center">
+                    <p className="editorial-title text-[1.22rem] font-black leading-none text-navy sm:text-[1.32rem]">{ko ? seedLanguageArticle.term : seedLanguageArticle.term.toUpperCase()}</p>
+                    {ko && seedLanguageTerm && (
                       <>
-                        <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{seedLanguageArticle.title}</h2>
-                        <p className="mt-1 line-clamp-3 text-[11px] leading-[1.45] text-charcoal/58 sm:text-[12px]">{seedLanguageArticle.summary}</p>
+                        <p className="mt-1.5 text-[10px] font-bold leading-none text-charcoal/55">{seedLanguageTerm.hanja}</p>
+                        <p className="mt-1 text-[8px] font-black tracking-[.08em] text-green-deep/65 sm:text-[9px]">{seedLanguageTerm.english}</p>
                       </>
                     )}
+                  </div>
+                  <div className="min-w-0">
+                    <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">SEED LANGUAGE</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "언어 읽기" : "Read"}<ArrowRight size={11}/></span></div>
+                    <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{seedLanguageArticle.title}</h2>
+                    <p className="mt-1 line-clamp-3 text-[11px] leading-[1.45] text-charcoal/58 sm:text-[12px]">{seedLanguageArticle.summary}</p>
                   </div>
                 </Link>
               )}
