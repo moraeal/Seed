@@ -1,4 +1,11 @@
-import type { SeedLanguageArticle } from "./seedLanguage";
+import type { SeedLanguageArticle } from "./seedLanguageBase";
+
+export const freedomInfographic = {
+  src: "images/seed-language/freedom-subject-infographic.webp",
+  alt: "간섭받지 않을 자유, 지배받지 않을 자유, 선택할 수 있는 기회, 선택에 대한 책임이 가운데 자유는 주체라는 원을 둘러싼 도표",
+  caption: "자유는 간섭의 부재만이 아니라 비지배, 실질적 선택 기회, 선택에 대한 책임이 함께 작동할 때 시민을 주체로 세웁니다.",
+  credit: "씨앗의 소리 제작 인포그래픽",
+};
 
 export const freedomArticleKo: SeedLanguageArticle = {
   slug: "freedom-as-citizen-agency",
@@ -27,16 +34,6 @@ export const freedomArticleKo: SeedLanguageArticle = {
     credit: "씨앗의 소리 AI 제작 이미지",
   },
   inlineImageAfterSection: 4,
-  additionalImages: [
-    {
-      afterSection: 5,
-      src: "images/seed-language/freedom-subject-infographic.webp",
-      alt: "간섭받지 않을 자유, 지배받지 않을 자유, 선택할 수 있는 기회, 선택에 대한 책임이 가운데 자유는 주체라는 원을 둘러싼 도표",
-      caption: "자유는 간섭의 부재만이 아니라 비지배, 실질적 선택 기회, 선택에 대한 책임이 함께 작동할 때 시민을 주체로 세웁니다.",
-      credit: "씨앗의 소리 제작 인포그래픽",
-      contain: true,
-    },
-  ],
   sections: [
     {
       title: "자유를 방임으로 이해하면 논쟁의 출발부터 틀어집니다",
