@@ -14,6 +14,7 @@ import { useLanguage } from "../i18n";
 const ENVIRONMENT_HERO = "images/seed-language/environment-shared-condition-hero.webp";
 const ENVIRONMENT_FEATURE_SLUG = "environment-shared-condition";
 const ENVIRONMENT_DEEP_READ_SLUG = "environment-beyond-camps-deep-read";
+const FREEDOM_FEATURE_SLUG = "freedom-is-not-neglect-but-subjecthood-2026";
 
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 const imageKey = (src: string) => imageSrc(src).replace(/#.*$/, "").replace(/\?.*$/, "");
@@ -30,6 +31,7 @@ export default function SeedLanguageDetail() {
 
   const isLongRead = article.readMinutes >= 8;
   const isEnvironmentArticle = article.slug.startsWith("environment-");
+  const hideTopHero = article.slug === FREEDOM_FEATURE_SLUG;
   const relatedSlug = article.relatedArticle?.slug
     ?? (article.slug === ENVIRONMENT_FEATURE_SLUG ? ENVIRONMENT_DEEP_READ_SLUG : undefined);
   const relatedArticle = relatedSlug
@@ -48,7 +50,7 @@ export default function SeedLanguageDetail() {
     credit: ko ? "씨앗의 소리 AI 제작 이미지" : "AI image produced by SEED VOICE",
   } : article.heroImage;
 
-  const seenImages = new Set([imageKey(heroImage.src)]);
+  const seenImages = new Set(hideTopHero ? [] : [imageKey(heroImage.src)]);
   const bodyImages = [
     ...(article.inlineImage ? [{ ...article.inlineImage, afterSection: article.inlineImageAfterSection ?? Math.min(6, article.sections.length - 1) }] : []),
     ...(article.additionalImages ?? []),
@@ -85,9 +87,9 @@ export default function SeedLanguageDetail() {
         <p className="mt-2 text-sm leading-7 text-charcoal/65">{ko ? "각 항목은 이 글의 핵심 주장입니다. 목차만 읽어 흐름을 살피거나, 궁금한 항목을 눌러 본문으로 이동할 수 있습니다." : "Each entry states a central claim. Read this outline on its own, or select a section to explore the argument."}</p>
         <ol className="mt-5 divide-y divide-green-deep/10">{article.sections.map((section, index) => <li key={section.title}><a href={`#article-section-${index + 1}`} className="flex gap-4 py-4 text-navy hover:text-green-mid focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-deep"><span className="pt-0.5 text-sm font-bold text-green-deep" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><span><span className="block text-base font-bold leading-7">{section.title}</span>{section.overview && <span className="mt-1 block text-sm leading-6 text-charcoal/65">{section.overview}</span>}</span></a></li>)}</ol>
       </nav>}
-      <InteractiveFigure src={heroImage.src} alt={heroImage.alt} caption={heroImage.caption} credit={heroImage.credit} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.09)]" imageClassName="aspect-[16/9] w-full object-cover" />
+      {!hideTopHero && <InteractiveFigure src={heroImage.src} alt={heroImage.alt} caption={heroImage.caption} credit={heroImage.credit} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.09)]" imageClassName="aspect-[16/9] w-full object-cover" />}
 
-      <div className="reading-column mt-10">
+      <div className={`reading-column ${hideTopHero ? "" : "mt-10"}`}>
         <aside className="border-l-4 border-gold bg-green-pale px-6 py-6 sm:px-8"><span className="section-kicker">{ko ? "핵심 요약" : "KEY POINTS"}</span><ul className="mt-4 space-y-3">{article.keyPoints.map((point) => <li key={point} className="flex gap-3 text-sm font-semibold leading-7 text-navy"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold"/><span>{point}</span></li>)}</ul></aside>
 
         {article.sections.map((section, index) => <section id={`article-section-${index + 1}`} key={section.title} className={`article-section scroll-mt-28 ${isLongRead ? "article-section-long" : ""}`}>
