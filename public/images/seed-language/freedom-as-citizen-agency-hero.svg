@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" role="img" aria-labelledby="title desc">
+  <title id="title">보호의 공간을 지나 스스로 선택의 길로 나아가는 시민</title>
+  <desc id="desc">안전, 복지, 경제안정, 공공서비스를 내세운 투명한 보호 구조물과 규제·허가·심사·제한·통제의 관문, 그리고 새로운 도전과 다양한 선택으로 향하는 시민의 길을 상징한 이미지</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b8d2e5"/>
+      <stop offset="0.45" stop-color="#e5edf2"/>
+      <stop offset="1" stop-color="#f4c987"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8f6ff" stop-opacity="0.74"/>
+      <stop offset="0.5" stop-color="#bcd7e6" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.48"/>
+    </linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9d0c4"/>
+      <stop offset="1" stop-color="#f7dfb8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#24343f" flood-opacity="0.18"/>
+    </filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+    <clipPath id="domeClip">
+      <path d="M-120 626 C-105 254 126 54 495 42 C862 31 1068 246 1024 646 C760 720 301 724 -120 626Z"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1536" height="1024" fill="url(#sky)"/>
+  <circle cx="1263" cy="335" r="118" fill="#ffe7a9" opacity="0.72"/>
+  <circle cx="1263" cy="335" r="58" fill="#fff5d0" opacity="0.82"/>
+
+  <g opacity="0.55">
+    <path d="M800 612 h616 v28 H800z" fill="#7b8991" opacity="0.22"/>
+    <path d="M885 598 h28 v42 h-28zM940 562 h33 v78 h-33zM1000 590 h28 v50h-28zM1050 540 h46 v100h-46zM1112 574h36v66h-36zM1188 528h24v112h-24zM1221 501h34v139h-34zM1290 565h48v75h-48z" fill="#5f737d" opacity="0.42"/>
+    <path d="M1118 524 l25 -95 l25 95z" fill="#6c7b80" opacity="0.38"/>
+    <rect x="1138" y="374" width="7" height="150" fill="#6c7b80" opacity="0.5"/>
+  </g>
+
+  <path d="M0 732 C245 663 491 658 736 703 C950 742 1153 698 1536 628 L1536 1024 L0 1024Z" fill="url(#road)"/>
+  <path d="M663 690 C807 724 993 720 1536 623" fill="none" stroke="#fff7e6" stroke-width="18" opacity="0.55"/>
+  <path d="M728 731 C906 780 1100 770 1536 690" fill="none" stroke="#735d49" stroke-width="2" opacity="0.18"/>
+
+  <g filter="url(#shadow)">
+    <path d="M-120 626 C-105 254 126 54 495 42 C862 31 1068 246 1024 646 C760 720 301 724 -120 626Z" fill="url(#glass)" stroke="#f4fbff" stroke-width="5" opacity="0.9"/>
+    <path d="M-80 585 C90 470 337 424 590 444 C765 458 900 520 1016 626" fill="none" stroke="#ffffff" stroke-width="7" opacity="0.42"/>
+    <path d="M40 170 C325 90 698 96 948 260" fill="none" stroke="#ffffff" stroke-width="5" opacity="0.34"/>
+    <path d="M32 168 C331 185 625 187 918 266" fill="none" stroke="#8eb0c3" stroke-width="2" opacity="0.35"/>
+    <path d="M181 96 C112 244 90 420 119 651" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.28"/>
+    <path d="M433 47 C396 244 385 458 421 691" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.25"/>
+    <path d="M698 76 C755 267 762 461 716 678" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.24"/>
+  </g>
+
+  <g font-family="Pretendard, Noto Sans KR, Apple SD Gothic Neo, Arial, sans-serif" font-weight="800" fill="#31414b">
+    <g transform="translate(72 325)">
+      <path d="M0 -48 l45 16 v36 c0 42-27 67-45 76-18-9-45-34-45-76v-36z" fill="none" stroke="#344a54" stroke-width="6" opacity="0.72"/>
+      <text x="0" y="60" text-anchor="middle" font-size="36">안전</text>
+      <text x="0" y="96" text-anchor="middle" font-size="22" font-weight="600">생명과 재산 보호</text>
+    </g>
+    <g transform="translate(235 330)">
+      <circle cx="-26" cy="-42" r="12" fill="#344a54" opacity="0.72"/><circle cx="0" cy="-50" r="15" fill="#344a54" opacity="0.72"/><circle cx="26" cy="-42" r="12" fill="#344a54" opacity="0.72"/>
+      <path d="M-58 2 c31-34 86-34 116 0 v24 h-116z" fill="#344a54" opacity="0.72"/>
+      <text x="0" y="66" text-anchor="middle" font-size="36">복지</text>
+      <text x="0" y="102" text-anchor="middle" font-size="22" font-weight="600">사회적 지원</text>
+    </g>
+    <g transform="translate(422 330)">
+      <rect x="-52" y="-4" width="18" height="46" fill="#344a54" opacity="0.72"/><rect x="-20" y="-28" width="18" height="70" fill="#344a54" opacity="0.72"/><rect x="12" y="-60" width="18" height="102" fill="#344a54" opacity="0.72"/><path d="M-62 -40 C-20 -58 14 -82 44 -118" fill="none" stroke="#344a54" stroke-width="6" opacity="0.62"/>
+      <text x="0" y="66" text-anchor="middle" font-size="34">경제안정</text>
+      <text x="0" y="102" text-anchor="middle" font-size="22" font-weight="600">물가·일자리 관리</text>
+    </g>
+    <g transform="translate(623 324)">
+      <circle cx="0" cy="-46" r="32" fill="#344a54" opacity="0.72"/><rect x="-8" y="-66" width="16" height="40" fill="#fff"/><rect x="-20" y="-54" width="40" height="16" fill="#fff"/>
+      <text x="0" y="72" text-anchor="middle" font-size="32">공공서비스</text>
+      <text x="0" y="108" text-anchor="middle" font-size="21" font-weight="600">의료·교육·주거</text>
+    </g>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="662" y="78" width="280" height="128" rx="10" fill="#f8faf6" opacity="0.96"/>
+    <text x="802" y="132" text-anchor="middle" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="32" font-weight="900" fill="#25343b">더 안전한 사회를 위해</text>
+    <text x="802" y="173" text-anchor="middle" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="25" font-weight="700" fill="#44535b">함께 만들어갑니다</text>
+    <line x1="690" y1="156" x2="740" y2="156" stroke="#45565f" stroke-width="3"/><line x1="866" y1="156" x2="916" y2="156" stroke="#45565f" stroke-width="3"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="742" y="186" width="232" height="590" fill="#d5d2c9" stroke="#f4f2ea" stroke-width="5"/>
+    <rect x="768" y="214" width="110" height="526" fill="#f6f4ed" opacity="0.42"/>
+    <rect x="879" y="214" width="12" height="526" fill="#5f6466" opacity="0.45"/>
+    <rect x="910" y="214" width="12" height="526" fill="#5f6466" opacity="0.45"/>
+    <g font-family="Pretendard, Noto Sans KR, sans-serif" font-size="30" font-weight="900" fill="#36434a">
+      <rect x="840" y="270" width="88" height="76" rx="8" fill="#d4d3cf" stroke="#f4f1e6"/>
+      <text x="884" y="319" text-anchor="middle">규제</text>
+      <rect x="840" y="382" width="88" height="76" rx="8" fill="#d4d3cf" stroke="#f4f1e6"/>
+      <text x="884" y="431" text-anchor="middle">허가</text>
+      <rect x="840" y="494" width="88" height="76" rx="8" fill="#d4d3cf" stroke="#f4f1e6"/>
+      <text x="884" y="543" text-anchor="middle">심사</text>
+      <rect x="840" y="606" width="88" height="76" rx="8" fill="#d4d3cf" stroke="#f4f1e6"/>
+      <text x="884" y="655" text-anchor="middle">제한</text>
+      <rect x="840" y="718" width="88" height="76" rx="8" fill="#d4d3cf" stroke="#f4f1e6"/>
+      <text x="884" y="767" text-anchor="middle">통제</text>
+    </g>
+  </g>
+
+  <g fill="#2f3336" opacity="0.86">
+    <ellipse cx="520" cy="915" rx="44" ry="12" opacity="0.18"/>
+    <circle cx="518" cy="469" r="34"/><path d="M485 512 q34-18 68 0 v214 h-68z"/><path d="M468 585 h30 v174 h-30z"/><path d="M540 585 h30 v174 h-30z"/>
+    <ellipse cx="246" cy="871" rx="30" ry="8" opacity="0.18"/>
+    <circle cx="246" cy="548" r="26"/><path d="M218 588 q28-16 56 0 v145 h-56z"/><path d="M202 645 h24 v105 h-24z"/><path d="M267 645 h24 v105 h-24z"/>
+    <circle cx="183" cy="606" r="20"/><path d="M161 637 q22-13 44 0 v92h-44z"/>
+  </g>
+
+  <g opacity="0.75" fill="#333">
+    <circle cx="1032" cy="641" r="18"/><path d="M1014 666 q18-10 36 0 v68h-36z"/>
+    <circle cx="1117" cy="603" r="17"/><path d="M1101 628 q16-10 33 0 v64h-33z"/>
+    <circle cx="1192" cy="618" r="18"/><path d="M1175 644 q17-10 35 0 v66h-35z"/>
+    <circle cx="1330" cy="592" r="17"/><path d="M1313 616 q17-10 34 0 v68h-34z"/>
+  </g>
+
+  <g transform="translate(1268 254)" filter="url(#shadow)" font-family="Pretendard, Noto Sans KR, sans-serif" font-weight="900" fill="#fff">
+    <rect x="114" y="0" width="12" height="380" rx="6" fill="#3b3833"/>
+    <g font-size="25">
+      <path d="M0 0h122l-24 36H0l-20-18z" fill="#393631"/><text x="56" y="27" text-anchor="middle">새로운 도전</text>
+      <path d="M18 70h104l-24 36H18L-2 88z" fill="#403b33"/><text x="63" y="97" text-anchor="middle">다양한 선택</text>
+      <path d="M0 140h122l-24 36H0l-20-18z" fill="#4a3f32"/><text x="56" y="167" text-anchor="middle">더 넓은 기회</text>
+      <path d="M18 210h104l-24 36H18L-2 228z" fill="#5b4936"/><text x="62" y="237" text-anchor="middle">스스로의 삶</text>
+    </g>
+  </g>
+
+  <g font-family="Pretendard, Noto Sans KR, sans-serif" font-weight="800" fill="#1f343b" opacity="0.82">
+    <text x="766" y="916" font-size="24">보호는 필요합니다. 그러나 보호가 선택을 대신하기 시작하면 자유는 작아집니다.</text>
+  </g>
+</svg>
