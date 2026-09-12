@@ -56,10 +56,23 @@ button, input, textarea { font: inherit; }
   background-color: transparent !important;
 }
 
-/* 데스크톱에서는 우측 목록의 별도 아랫선을 없애고 메인 섹션의 공통 하단선으로 마감합니다. */
-@media (min-width: 1280px) {
-  .bg-paper > section:first-child aside {
-    border-bottom-color: transparent !important;
+/* 메인 첫 화면의 외곽 여백만 줄여 좌우 콘텐츠를 더 단단하게 묶습니다. */
+.bg-paper > section:first-child {
+  padding-top: 0.875rem;
+  padding-bottom: 0.625rem;
+}
+
+@media (min-width: 640px) {
+  .bg-paper > section:first-child {
+    padding-top: 1.25rem;
+    padding-bottom: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bg-paper > section:first-child {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
   }
 }
 
