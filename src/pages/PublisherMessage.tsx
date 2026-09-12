@@ -52,10 +52,9 @@ const copy = {
     imageAlt: "갈라진 콘크리트에서 돋아난 작은 새싹과 여러 시민을 닮은 그림자",
     imageCaption: "어느 작은 시민의 말이 여러 시민의 목소리로 자랍니다.",
     founderKicker: "PUBLISHER",
-    founderName: "한시언",
+    founderName: "작은씨앗",
     founderRole: "씨앗의 소리 발행인",
-    founderMeaning: "‘한시언’은 ‘어느 작은 시민의 말’이라는 뜻을 담은 필명입니다.",
-    founderBio: "유명인이나 전문가의 권위가 아니라 한 시민의 질문과 판단으로 세상을 바라보겠다는 다짐입니다. 사실을 확인하고 자유와 책임의 기준으로 권력을 살피며, 완성된 답보다 질문하고 수정하며 성장하는 시민의 목소리를 기록하겠습니다.",
+    founderBio: "시민사회와 공공영역, 기업 현장을 두루 경험해 온 시민사회 활동가이자 공익 기획자입니다. 국가·시장·시민사회가 만나는 여러 현장에서 활동하며 제도와 조직이 시민의 삶에 어떤 영향을 미치는지 지켜봐 왔습니다. 씨앗의 소리에서는 특정 진영이나 권위에 기대지 않고, 한 시민의 질문과 판단으로 사실을 확인하고 자유와 책임의 기준에서 국가와 시민사회의 권력을 함께 살피고자 합니다.",
   },
   en: {
     kicker: "PUBLISHER'S MESSAGE",
@@ -105,10 +104,9 @@ const copy = {
     imageAlt: "A small seedling emerging through cracked concrete and casting shadows that resemble a group of citizens",
     imageCaption: "The words of one ordinary citizen can grow into the voices of many.",
     founderKicker: "PUBLISHER",
-    founderName: "Han Si-eon",
+    founderName: "Small Seed",
     founderRole: "Publisher, SEED VOICE",
-    founderMeaning: "‘Han Si-eon’ is a pen name meaning ‘the words of one ordinary citizen.’",
-    founderBio: "It is a pledge to see the world through one citizen’s questions and judgment, rather than the borrowed authority of fame or expertise. I will verify facts, scrutinize power through the principles of freedom and responsibility, and record the voice of a citizen willing to question, correct, and grow.",
+    founderBio: "A civic-society activist and public-interest planner with experience across civil society, public institutions, and the business sector. Having worked where government, markets, and civil society meet, I have watched closely how institutions and organizations affect citizens’ everyday lives. At SEED VOICE, I aim to verify facts and scrutinize power in both the state and civil society through the principles of freedom and responsibility, without relying on partisan camps or borrowed authority.",
   },
 };
 
@@ -155,8 +153,7 @@ export default function PublisherMessage() {
               <p className="section-kicker">{content.founderKicker}</p>
               <h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{content.founderName}</h2>
               <p className="mt-2 text-sm font-bold text-green-deep/75">{content.founderRole}</p>
-              <p className="mt-4 text-base font-semibold leading-7 text-charcoal/75">{content.founderMeaning}</p>
-              <p className="mt-3 text-base leading-7 text-charcoal/68">{content.founderBio}</p>
+              <p className="mt-4 text-base leading-7 text-charcoal/68">{content.founderBio}</p>
             </section>
           </div>
 
