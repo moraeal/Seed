@@ -6,7 +6,7 @@ type Section = { title: string; paragraphs: string[] };
 const copy = {
   ko: {
     kicker: "PUBLISHER'S MESSAGE",
-    title: "한 사람의 씨앗이 시작한 독립 시민미디어",
+    title: "작은씨앗으로 시작한 독립 시민미디어",
     lead: "한 시민의 질문과 판단이 세상을 바꾸는 씨앗이 될 수 있다고 믿습니다. 씨앗의 소리는 작아져 있던 한 사람이 자기 목소리를 되찾고, 다른 시민의 가능성을 깨우기 위해 시작한 독립 시민미디어입니다.",
     sections: [
       {
@@ -58,7 +58,7 @@ const copy = {
   },
   en: {
     kicker: "PUBLISHER'S MESSAGE",
-    title: "An independent civic journal, begun by one citizen as a seed",
+    title: "An independent civic journal begun by Small Seed",
     lead: "We believe one citizen’s questions and judgment can become a seed of change. SEED VOICE is an independent civic publication begun by one person who decided to recover his own voice and awaken that possibility in others.",
     sections: [
       {
