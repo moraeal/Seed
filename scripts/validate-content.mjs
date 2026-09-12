@@ -36,7 +36,6 @@ const accountabilitySurfaces = [
   "src/pages/PublicInterestWatchDetail.tsx",
   "src/pages/CommunityChestResearch.tsx",
   "src/pages/SeedLanguageDetailBase.tsx",
-  "src/pages/FreedomSeedLanguageDetail.tsx",
 ];
 
 for (const pagePath of accountabilitySurfaces) {
