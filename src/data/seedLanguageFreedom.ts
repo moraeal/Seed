@@ -16,22 +16,22 @@ const freedomKo: SeedLanguageArticle = {
     "자유·책임·공정이 함께 설 때 시민은 정책의 대상이 아니라 선택의 주체가 됩니다.",
   ],
   heroImage: {
-    src: "images/seed-language/freedom-subject-fork-road.webp",
-    alt: "갈림길 앞에 서서 스스로 삶의 방향을 선택하려는 시민을 상징한 장면",
-    caption: "자유는 시민을 방치하는 것이 아니라, 시민이 스스로 길을 고를 수 있는 조건을 세우는 일입니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
-  },
-  inlineImage: {
-    src: "images/seed-language/freedom-protection-control-glass-dome.webp",
+    src: "images/seed-language/freedom-protection-control-glass-dome-hd.svg",
     alt: "시민을 보호하는 장치가 동시에 통제의 장벽이 될 수 있음을 표현한 이미지",
     caption: "국가의 보호가 시민의 선택권을 대신하기 시작하면 보호와 통제의 경계는 흐려집니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "씨앗의 소리 도식 이미지",
+  },
+  inlineImage: {
+    src: "images/seed-language/freedom-protection-control-glass-dome-hd.svg",
+    alt: "시민을 보호하는 장치가 동시에 통제의 장벽이 될 수 있음을 표현한 이미지",
+    caption: "국가의 보호가 시민의 선택권을 대신하기 시작하면 보호와 통제의 경계는 흐려집니다.",
+    credit: "씨앗의 소리 도식 이미지",
   },
   inlineImageAfterSection: 2,
   additionalImages: [
     {
       afterSection: 5,
-      src: "images/seed-language/freedom-subject-four-box-diagram.webp",
+      src: "images/seed-language/freedom-subject-four-box-diagram-hd.svg",
       alt: "간섭받지 않을 자유, 지배받지 않을 자유, 선택할 수 있는 기회, 선택에 대한 책임이 가운데 자유는 주체라는 원으로 연결되는 도표",
       caption: "자유는 네 조건이 함께 작동할 때 시민을 주체로 세웁니다.",
       credit: "씨앗의 소리 도식",
@@ -104,15 +104,15 @@ const freedomEn: SeedLanguageArticle = {
   ],
   heroImage: {
     ...freedomKo.heroImage,
-    alt: "A citizen standing before diverging roads, symbolizing the capacity to choose one's own direction",
-    caption: "Freedom is not abandoning citizens. It is creating the conditions in which they can choose their own path.",
-    credit: "AI image produced by SEED VOICE",
+    alt: "A symbolic image showing the boundary between protection and control",
+    caption: "When state protection begins to replace citizens' own choices, the line between protection and control becomes blurred.",
+    credit: "SEED VOICE diagram image",
   },
   inlineImage: {
     ...freedomKo.inlineImage!,
     alt: "A symbolic image showing the boundary between protection and control",
     caption: "When state protection begins to replace citizens' own choices, the line between protection and control becomes blurred.",
-    credit: "AI image produced by SEED VOICE",
+    credit: "SEED VOICE diagram image",
   },
   additionalImages: [
     {
