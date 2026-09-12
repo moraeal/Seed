@@ -8,10 +8,14 @@ const files = fs.readdirSync(dataDir)
 
 const articlePattern = /(\bslug:\s*"[^"]+"[\s\S]{0,1200}?\btitle:\s*")([^"]+)(")/g;
 const replacements = new Map();
+const approvedTitleExceptions = new Set([
+  '자유는 방임이 아니라 주체를 세우는 일이다',
+]);
 
 for (const file of files) {
   const source = fs.readFileSync(file, 'utf8');
   const normalized = source.replace(articlePattern, (full, prefix, title, suffix) => {
+    if (approvedTitleExceptions.has(title)) return full;
     if (title.includes('아니라') && title.endsWith('다') && !title.endsWith('말이다')) {
       const next = `${title.slice(0, -1)}라는 말이다`;
       replacements.set(title, next);
@@ -22,7 +26,6 @@ for (const file of files) {
   fs.writeFileSync(file, normalized, 'utf8');
 }
 
-// Synchronize related-article labels and any other duplicated title references.
 for (const file of files) {
   let source = fs.readFileSync(file, 'utf8');
   for (const [before, after] of replacements) {
