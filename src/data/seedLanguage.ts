@@ -1,5 +1,6 @@
 import type { Language } from "../i18n";
 import { democracyArticlesKo, getDemocracyArticle } from "./seedLanguageDemocracy";
+import { freedomArticlesKo, getFreedomArticle } from "./seedLanguageFreedom";
 import { getPublicInterestArticle, publicInterestArticlesKo } from "./seedLanguagePublicInterest";
 
 export type SeedLanguageImage = {
@@ -22,10 +23,11 @@ export type SeedLanguageArticle = {
   subtitle: string;
   summary: string;
   keyPoints: string[];
-  sections: { title: string; paragraphs: string[]; overview?: string; sourceIndices?: number[] }[];
+  sections: { title: string; paragraphs: string[]; overview?: string; sourceIndices?: number[]; quote?: string[] }[];
   heroImage: SeedLanguageImage;
   inlineImage?: SeedLanguageImage;
   inlineImageAfterSection?: number;
+  additionalImages?: Array<SeedLanguageImage & { afterSection: number; contain?: boolean }>;
   showTableOfContents?: boolean;
   relatedArticle?: { slug: string; label: string };
   sources?: { label: string; url: string }[];
@@ -215,9 +217,11 @@ const citizenEn: SeedLanguageArticle = {
   ],
 };
 
-export const seedLanguageArticlesKo = [...publicInterestArticlesKo, ...democracyArticlesKo, citizenKo];
+export const seedLanguageArticlesKo = [...freedomArticlesKo, ...publicInterestArticlesKo, ...democracyArticlesKo, citizenKo];
 
 export function getSeedLanguageArticle(slug: string, language: Language) {
+  const freedom = getFreedomArticle(slug, language);
+  if (freedom) return freedom;
   const publicInterest = getPublicInterestArticle(slug, language);
   if (publicInterest) return publicInterest;
   const democracy = getDemocracyArticle(slug, language);
