@@ -56,6 +56,13 @@ button, input, textarea { font: inherit; }
   background-color: transparent !important;
 }
 
+/* 데스크톱에서는 우측 목록의 별도 아랫선을 없애고 메인 섹션의 공통 하단선으로 마감합니다. */
+@media (min-width: 1280px) {
+  .bg-paper > section:first-child aside {
+    border-bottom-color: transparent !important;
+  }
+}
+
 @media (max-width: 640px) {
   .briefing-hero-banner { background-image: none !important; }
   .hero-slide:not(.hero-art-slide) { min-height: 560px; }
