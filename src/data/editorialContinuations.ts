@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "news:media-appeal-justice-press-play": {
+    ko: {
+      href: "/columns/prosecution-reform-power-transfer-2026",
+      title: "검찰개혁은 권력을 옮겨 심는 일이 아니다",
+      relationship: "함께 읽기",
+      reason: "검찰청 해체와 보완수사권 논란이 시민의 권리와 권력 통제 문제로 이어지는 지점을 더 넓게 살펴봅니다.",
+      listHref: "/news",
+      listLabel: "오늘의 뉴스 전체 보기",
+    },
+    en: {
+      href: "/columns/prosecution-reform-power-transfer-2026",
+      title: "Prosecution Reform Is Not About Moving Power Elsewhere",
+      relationship: "READ NEXT",
+      reason: "Continue with the broader question of how prosecution reform, investigative powers and institutional checks affect citizen rights.",
+      listHref: "/news",
+      listLabel: "All Today's News",
+    },
+  },
   "column:civic-groups-are-not-state-vanguard-2026": {
     ko: {
       href: "/columns/when-civic-power-rules-citizens",
