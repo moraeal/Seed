@@ -9,6 +9,7 @@ const root = process.cwd();
 const publicRoot = path.join(root, "public");
 const outputRoot = path.join(publicRoot, "images", "social");
 const environmentHero = "images/seed-language/environment-shared-condition-hero.webp";
+const defaultBriefingHero = "images/briefings/briefing-05-budget-ledger.webp";
 
 const server = await createServer({
   configFile: false,
@@ -26,15 +27,22 @@ const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguag
 ]);
 await server.close();
 
+const rasterBriefingImages = (item) => item.images
+  .filter((image) => !/^https?:\/\//i.test(image.src) && /\.(?:jpe?g|png|webp)$/i.test(image.src))
+  .map((image) => image.src);
+
 const jobs = [
   { section: "site", slug: "home", src: "images/brand/seedvoice-independent-watchdog.webp" },
   ...newsModule.newsArticles.map((item) => ({ section: "news", slug: item.slug, src: item.heroImage.src })),
-  ...briefingModule.getAllBriefingsNewestFirst().map((item) => ({
-    section: "briefings",
-    slug: item.slug,
-    src: item.images.find((image) => !/^https?:\/\//i.test(image.src) && /\.(?:jpe?g|png|webp)$/i.test(image.src))?.src
-      ?? "images/briefings/briefing-05-budget-ledger.webp",
-  })),
+  ...briefingModule.getAllBriefingsNewestFirst().map((item) => {
+    const images = rasterBriefingImages(item);
+    return {
+      section: "briefings",
+      slug: item.slug,
+      src: images[0] ?? defaultBriefingHero,
+      fallbackSrc: images[1] ?? defaultBriefingHero,
+    };
+  }),
   ...columnModule.columns.map((item) => ({ section: "columns", slug: item.slug, src: item.heroImage.src, fallbackSrc: item.heroImage.socialSrc })),
   ...seedLanguageEnvironmentModule.seedLanguageEnvironmentArticlesKo.map((item) => ({ section: "seed-language", slug: item.slug, src: environmentHero })),
   ...seedLanguageModule.seedLanguageArticlesKo.map((item) => ({ section: "seed-language", slug: item.slug, src: item.heroImage.src })),
@@ -118,4 +126,4 @@ for (const job of jobs) {
   }
 }
 
-console.log(`Generated branded social-preview JPEG images at 1200x630 where source images were available.`);
+console.log("Generated branded social-preview JPEG images at 1200x630 where source images were available.");
