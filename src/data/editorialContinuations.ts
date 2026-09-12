@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:state-cannot-monopolize-life-2026": {
+    ko: {
+      href: "/columns/civic-groups-are-not-state-vanguard-2026",
+      title: "시민단체는 정부의 돌격대가 아니다",
+      relationship: "시민사회와 국가",
+      reason: "자살예방 정책의 국가 독점 문제를 넘어, 정부 사업에 동원되는 시민사회가 어떻게 독립성과 비판 기능을 잃는지 이어서 살펴봅니다.",
+      listHref: "/columns",
+      listLabel: "씨앗의 소리 전체 보기",
+    },
+    en: {
+      href: "/columns/civic-groups-are-not-state-vanguard-2026",
+      title: "Civic Groups Are Not the Government’s Vanguard",
+      relationship: "CIVIL SOCIETY AND THE STATE",
+      reason: "Continue from the state monopoly over suicide prevention to how civic organizations lose their independence and critical role when drafted into government programs.",
+      listHref: "/columns",
+      listLabel: "All columns",
+    },
+  },
   "news:media-appeal-justice-press-play": {
     ko: {
       href: "/columns/prosecution-reform-power-transfer-2026",
