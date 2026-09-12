@@ -6,7 +6,7 @@ type Section = { title: string; paragraphs: string[] };
 const copy = {
   ko: {
     kicker: "PUBLISHER'S MESSAGE",
-    title: "작은씨앗으로 시작한 독립 시민미디어",
+    title: "작은씨앗으로 시작한\n독립 시민미디어",
     lead: "한 시민의 질문과 판단이 세상을 바꾸는 씨앗이 될 수 있다고 믿습니다. 씨앗의 소리는 작아져 있던 한 사람이 자기 목소리를 되찾고, 다른 시민의 가능성을 깨우기 위해 시작한 독립 시민미디어입니다.",
     sections: [
       {
@@ -119,7 +119,7 @@ export default function PublisherMessage() {
       <header className="border-b border-green-deep/15 bg-ivory py-10 sm:py-14">
         <div className="container-page max-w-5xl">
           <p className="section-kicker">{content.kicker}</p>
-          <h1 className="editorial-title mt-4 max-w-4xl text-4xl font-bold leading-tight text-green-deep sm:text-5xl lg:text-6xl">{content.title}</h1>
+          <h1 className="editorial-title mt-4 max-w-4xl whitespace-pre-line text-4xl font-bold leading-tight text-green-deep sm:text-5xl lg:text-6xl">{content.title}</h1>
           <p className="mt-6 max-w-3xl border-l-2 border-gold pl-6 text-lg leading-8 text-charcoal/70 sm:text-xl">{content.lead}</p>
         </div>
       </header>
