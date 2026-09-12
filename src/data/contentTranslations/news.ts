@@ -3,7 +3,7 @@ import type { NewsTranslation } from "./types";
 export const newsTranslations: Record<string, NewsTranslation> = {
   "media-appeal-justice-press-play": {
     category: "Justice, Media & Civil Rights",
-    title: "If Officials May Go to the Press, Is It ‘Media Play’ When Victims Do?",
+    title: "A Judge Warns Against ‘Media Play’; a Politician Says Go to the Press",
     subtitle: "When the media becomes the emergency exit of criminal justice, where should an ordinary citizen take an unresolved grievance?",
     summary: "During South Korea's debate over abolishing the prosecutors' office and limiting supplementary-investigation powers, former lawmaker Choi Kang-wook said, in a hypothetical situation where police failed to investigate properly, that a prosecutor could alert the media. In a separate appellate hearing tied to the Busan roundhouse-kick case, reports said the presiding judge referred to the victim side's media activity as a kind of ‘media play.’ The two contexts are different, but the public question is unavoidable: why is media disclosure a tool when used by power, yet suspect when used by a victim?",
     keySentence: "If public officials can call media disclosure a remedy while victims are told their appeal is ‘media play,’ where are citizens supposed to go?",
