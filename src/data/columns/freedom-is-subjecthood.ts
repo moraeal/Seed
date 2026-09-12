@@ -11,8 +11,8 @@ export const freedomIsSubjecthoodColumn: SeedColumn = {
   summary: "자유는 단순히 간섭받지 않는 상태가 아니다. 누구에게도 자의적으로 종속되지 않고 스스로 판단하고 선택할 수 있는 조건이다. 국가는 시민 대신 선택하기보다 시민이 선택할 수 있는 조건을 넓혀야 한다. 자유와 책임과 공정이 함께 갈 때 시민은 비로소 주체가 된다.",
   heroImage: {
     src: "images/seed-language/freedom-subject-fork-road.webp",
-    alt: "갈림길 앞에 서서 스스로 방향을 선택하려는 시민을 상징한 장면",
-    caption: "자유는 길을 없애는 것이 아니라, 시민이 스스로 길을 고를 수 있는 조건을 세우는 일입니다.",
+    alt: "보호와 통제의 경계 앞에서 스스로 삶의 방향을 선택하려는 시민을 상징한 장면",
+    caption: "자유는 시민을 방치하는 것이 아니라, 시민이 스스로 길을 고를 수 있는 조건을 세우는 일입니다.",
     credit: "씨앗의 소리 AI 제작 이미지",
     sourceUrl: "",
   },
@@ -26,8 +26,8 @@ export const freedomIsSubjecthoodColumn: SeedColumn = {
   additionalImages: [
     {
       afterSection: 5,
-      src: "images/seed-language/freedom-subject-four-box-diagram.svg",
-      alt: "간섭받지 않을 자유, 지배받지 않을 자유, 선택할 수 있는 기회, 선택에 대한 책임이 가운데 자유는 주체라는 원으로 연결되는 간결한 도표",
+      src: "images/seed-language/freedom-subject-four-box-diagram.webp",
+      alt: "간섭받지 않을 자유, 지배받지 않을 자유, 선택할 수 있는 기회, 선택에 대한 책임이 가운데 자유는 주체라는 원으로 연결되는 도표",
       caption: "자유는 네 조건이 함께 작동할 때 시민을 주체로 세웁니다.",
       credit: "씨앗의 소리 도식",
       sourceUrl: "",
