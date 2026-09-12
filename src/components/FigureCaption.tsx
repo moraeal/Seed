@@ -2,6 +2,8 @@ type FigureCaptionProps = {
   caption: string;
   credit: string;
   sourceUrl?: string;
+  className?: string;
+  creditClassName?: string;
 };
 
 const isSeedCredit = (credit: string) =>
@@ -14,19 +16,19 @@ const displayCredit = (credit: string) => {
   return isAiCredit(credit) ? "제작: 씨앗의 소리" : "© 2026 씨앗의 소리";
 };
 
-export default function FigureCaption({ caption, credit, sourceUrl }: FigureCaptionProps) {
+export default function FigureCaption({ caption, credit, sourceUrl, className, creditClassName }: FigureCaptionProps) {
   const label = displayCredit(credit);
-  const creditClass = "shrink-0 self-end text-right text-xs font-semibold text-green-deep/75 sm:self-auto";
+  const creditClass = creditClassName ?? "shrink-0 self-end text-right text-xs font-semibold text-green-deep/75 sm:self-auto";
 
   return (
-    <figcaption className="flex flex-col gap-1 border-t border-green-deep/10 px-5 py-4 text-[13px] leading-6 text-charcoal/60 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+    <figcaption className={className ?? "flex flex-col gap-1 border-t border-green-deep/10 px-5 py-4 text-[13px] leading-6 text-charcoal/60 sm:flex-row sm:items-start sm:justify-between sm:gap-6"}>
       <span className="min-w-0 flex-1">{caption}</span>
       {sourceUrl ? (
         <a
           href={sourceUrl}
           target="_blank"
           rel="noreferrer"
-          className={`${creditClass} underline decoration-green-deep/30 underline-offset-4 hover:text-green-deep`}
+          className={`${creditClass} underline decoration-current/40 underline-offset-4`}
         >
           {label}
         </a>
