@@ -17,13 +17,15 @@ const resolveImageSrc = (src?: string) => {
   return `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 };
 
-const seedLanguageEnglishLabel = (term: string) => ({
+const seedLanguageEnglishLabels: Record<string, string> = {
   민주: "DEMOCRACY",
   자유: "FREEDOM",
   환경: "ENVIRONMENT",
   공익: "PUBLIC INTEREST",
   시민: "CITIZEN",
-}[term] ?? "SEED LANGUAGE");
+};
+
+const seedLanguageEnglishLabel = (term: string) => seedLanguageEnglishLabels[term] ?? "SEED LANGUAGE";
 
 export default function Home() {
   const { language } = useLanguage();
