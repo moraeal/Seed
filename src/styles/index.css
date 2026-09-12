@@ -50,6 +50,12 @@ button, input, textarea { font: inherit; }
 /* 메인 좌측 상단 LH 대표 이미지의 AI 제작 출처 문구는 표시하지 않습니다. */
 [aria-roledescription="carousel"] .relative.overflow-hidden.bg-navy:has(> a > img[src$="lh-split-hero-v2.webp"]) > span.absolute.bottom-5.left-5 { display: none !important; }
 
+/* 메인 상단 우측 목록 썸네일이 행 높이만큼 늘어나며 초록 배경이 선처럼 드러나는 현상을 막습니다. */
+.bg-paper > section:first-child aside > a > div:first-child {
+  align-self: start;
+  background-color: transparent !important;
+}
+
 @media (max-width: 640px) {
   .briefing-hero-banner { background-image: none !important; }
   .hero-slide:not(.hero-art-slide) { min-height: 560px; }
