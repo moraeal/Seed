@@ -27,6 +27,7 @@ export default function NewsDetail() {
   const continuation = getEditorialContinuation("news", article.slug, language);
 
   const isLhArticle = article.slug === "lh-split-public-agency-experiment";
+  const usesSourceVideoAsBodyImage = article.slug === "media-appeal-justice-press-play";
   const detailHeroImage = isLhArticle
     ? {
         ...article.heroImage,
@@ -39,10 +40,10 @@ export default function NewsDetail() {
     : article.heroImage;
   const heroImageKey = imageKey(detailHeroImage.src);
   const inlineImageKey = imageKey(article.inlineImage.src);
-  const selectedNews = article.selectedNews.thumbnailUrl && [heroImageKey, inlineImageKey].includes(imageKey(article.selectedNews.thumbnailUrl))
+  const selectedNews = !usesSourceVideoAsBodyImage && article.selectedNews.thumbnailUrl && [heroImageKey, inlineImageKey].includes(imageKey(article.selectedNews.thumbnailUrl))
     ? { ...article.selectedNews, thumbnailUrl: undefined }
     : article.selectedNews;
-  const showInlineImage = inlineImageKey !== heroImageKey;
+  const showInlineImage = !usesSourceVideoAsBodyImage && inlineImageKey !== heroImageKey;
   const additionalImages = article.additionalImages ?? [];
 
   return <article className="bg-paper">
@@ -57,7 +58,7 @@ export default function NewsDetail() {
         <p className="border-t border-green-deep/10 bg-ivory px-5 py-4 text-xs leading-6 text-charcoal/50 sm:px-7">※ {article.video.disclaimer}</p>
       </section>}
       <SourceArticleCard news={selectedNews} ko={ko}/>
-      {!isLhArticle && <InteractiveFigure src={detailHeroImage.src} alt={detailHeroImage.alt} caption={detailHeroImage.caption} credit={detailHeroImage.credit} sourceUrl={detailHeroImage.sourceUrl} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]" imageClassName="aspect-[16/9] w-full object-cover" />}
+      {!isLhArticle && !usesSourceVideoAsBodyImage && <InteractiveFigure src={detailHeroImage.src} alt={detailHeroImage.alt} caption={detailHeroImage.caption} credit={detailHeroImage.credit} sourceUrl={detailHeroImage.sourceUrl} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]" imageClassName="aspect-[16/9] w-full object-cover" />}
 
       <div className="reading-column mt-8">
         <aside className="border-l-4 border-gold bg-green-pale px-6 py-7 sm:px-8"><span className="section-kicker">{ko ? "오늘의 한 문장" : "ONE SENTENCE"}</span><p className="mt-3 text-xl font-extrabold leading-8 text-green-deep sm:text-2xl sm:leading-9">{article.keySentence}</p></aside>
