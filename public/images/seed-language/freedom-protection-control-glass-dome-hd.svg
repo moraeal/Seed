@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">보호와 통제의 경계</title>
+  <desc id="desc">한 시민을 둘러싼 투명한 보호 구조가 한쪽에서는 안전을 제공하지만 다른 한쪽에서는 선택과 이동을 막는 장벽이 될 수 있음을 상징적으로 표현한 그림</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5f0e4"/>
+      <stop offset="1" stop-color="#e8efe9"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d9eee6" stop-opacity=".48"/>
+      <stop offset=".48" stop-color="#ffffff" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#9fc9ba" stop-opacity=".45"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#173d32" flood-opacity=".14"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <path d="M0 695 C260 645 465 720 705 675 C960 627 1180 615 1600 690 L1600 900 L0 900 Z" fill="#d9dfd2"/>
+  <path d="M0 728 C290 680 510 755 770 716 C1035 677 1270 666 1600 720" fill="none" stroke="#bbc9bc" stroke-width="3"/>
+
+  <g opacity=".58">
+    <circle cx="230" cy="185" r="92" fill="#e6c86a"/>
+    <circle cx="1370" cy="170" r="52" fill="#c4d8cf"/>
+    <circle cx="1270" cy="250" r="22" fill="#d2b85e"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <path d="M405 650 V436 C405 235 568 105 800 105 C1032 105 1195 235 1195 436 V650" fill="url(#glass)" stroke="#2f765d" stroke-width="11"/>
+    <path d="M800 107 V650" stroke="#2f765d" stroke-width="5" stroke-opacity=".35"/>
+    <path d="M405 650 H690" stroke="#2f765d" stroke-width="11" stroke-linecap="round"/>
+    <path d="M910 650 H1195" stroke="#2f765d" stroke-width="11" stroke-linecap="round"/>
+    <path d="M690 650 C713 608 747 585 800 585 C853 585 887 608 910 650" fill="none" stroke="#2f765d" stroke-width="11" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(800 470)">
+    <circle cx="0" cy="-112" r="48" fill="#203c35"/>
+    <path d="M-78 75 C-70 -34 -49 -67 0 -67 C49 -67 70 -34 78 75 Z" fill="#315f50"/>
+    <path d="M-50 72 L-72 203" stroke="#203c35" stroke-width="25" stroke-linecap="round"/>
+    <path d="M50 72 L72 203" stroke="#203c35" stroke-width="25" stroke-linecap="round"/>
+    <path d="M-64 -5 L-132 76" stroke="#315f50" stroke-width="22" stroke-linecap="round"/>
+    <path d="M64 -5 L132 76" stroke="#315f50" stroke-width="22" stroke-linecap="round"/>
+  </g>
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M690 646 C620 660 553 697 492 758" stroke="#b68b24" stroke-width="12"/>
+    <path d="M910 646 C980 660 1047 697 1108 758" stroke="#b68b24" stroke-width="12"/>
+    <path d="M492 758 l31 -4 l-8 30" stroke="#b68b24" stroke-width="12"/>
+    <path d="M1108 758 l-31 -4 l8 30" stroke="#b68b24" stroke-width="12"/>
+  </g>
+
+  <g opacity=".82" fill="#315f50">
+    <rect x="255" y="430" width="85" height="16" rx="8"/>
+    <rect x="1260" y="430" width="85" height="16" rx="8"/>
+    <rect x="300" y="480" width="55" height="12" rx="6"/>
+    <rect x="1245" y="480" width="55" height="12" rx="6"/>
+  </g>
+
+  <path d="M397 650 H1203" stroke="#183e32" stroke-width="4" stroke-opacity=".25"/>
+</svg>
