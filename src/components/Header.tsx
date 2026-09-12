@@ -4,11 +4,13 @@ import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth";
 import { getContent } from "../data/siteContent";
 import { useLanguage } from "../i18n";
+import ArticleFindPanel from "./ArticleFindPanel";
 import BrandLockup from "./BrandLockup";
 import HomeSectionNav from "./HomeSectionNav";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [findOpen, setFindOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { language, setLanguage } = useLanguage();
@@ -16,6 +18,11 @@ export default function Header() {
   const t = getContent(language);
   const ko = language === "ko";
   const isHome = location.pathname === "/" || location.pathname === "/en/";
+  const normalizedPath = location.pathname.replace(/\/+$/, "") || "/";
+  const isContentDetail =
+    /^\/(?:seed-language|columns|news|monitoring)\/[^/]+/.test(normalizedPath) ||
+    /^\/briefings\/[^/]+/.test(normalizedPath) ||
+    normalizedPath === "/research/community-chest-of-korea";
 
   const nav = language === "en"
     ? [
@@ -36,6 +43,7 @@ export default function Header() {
   const toggleLanguage = () => {
     const nextLanguage = language === "ko" ? "en" : "ko";
     setOpen(false);
+    setFindOpen(false);
     setLanguage(nextLanguage);
     if (nextLanguage === "en" && location.pathname === "/") navigate("/en/");
     if (nextLanguage === "ko" && /^\/en(?:\/|$)/.test(location.pathname)) navigate("/");
@@ -46,6 +54,7 @@ export default function Header() {
 
   useEffect(() => {
     setOpen(false);
+    setFindOpen(false);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -73,69 +82,98 @@ export default function Header() {
     );
   };
 
+  const renderSearchControl = (mobile = false) => {
+    if (isContentDetail) {
+      return (
+        <button
+          type="button"
+          onClick={() => setFindOpen((value) => !value)}
+          className={mobile
+            ? "grid size-9 place-items-center rounded-md text-green-deep transition hover:bg-green-pale"
+            : "inline-flex min-h-8 items-center gap-1.5 px-2 text-[11px] font-extrabold text-charcoal/62 transition hover:text-green-deep"}
+          aria-label={ko ? "이 글에서 찾기" : "Find in this article"}
+          aria-expanded={findOpen}
+        >
+          <Search size={mobile ? 18 : 15}/>{!mobile && <span>{ko ? "이 글에서 찾기" : "Find in article"}</span>}
+        </button>
+      );
+    }
+
+    return (
+      <Link
+        to="/search"
+        className={mobile
+          ? "grid size-9 place-items-center rounded-md text-green-deep transition hover:bg-green-pale"
+          : "inline-flex min-h-8 items-center gap-1.5 px-2 text-[11px] font-extrabold text-charcoal/62 transition hover:text-green-deep"}
+        aria-label={ko ? "콘텐츠 검색" : "Search content"}
+      >
+        <Search size={mobile ? 18 : 15}/>{!mobile && <span>{ko ? "검색" : "Search"}</span>}
+      </Link>
+    );
+  };
+
   return (
-    <header className="sticky top-0 z-50 bg-ivory/95 backdrop-blur-xl">
-      <div className="container-page flex min-h-[70px] items-center gap-3 border-b border-green-deep/10 py-2 md:min-h-[74px] md:gap-4">
-        <Link to={language === "en" ? "/en/" : "/"} className="flex min-w-0 shrink flex-col items-start gap-0.5" aria-label={language === "en" ? "SEED VOICE home" : "씨앗의 소리 홈"}>
-          <BrandLockup tone="header" />
-          <span className="max-w-[calc(100vw-8.5rem)] text-[10px] font-medium leading-[1.35] tracking-[-.02em] text-charcoal/52 sm:max-w-[42rem] sm:text-[11px] md:max-w-[46rem] lg:max-w-[50rem]">
-            {ko
-              ? "시민과 기업의 자유를 지키는 독립 시민저널"
-              : "An independent civic journal for citizens, enterprise and freedom."}
-          </span>
-        </Link>
-
-        <div className="ml-auto hidden shrink-0 items-center gap-1.5 xl:flex">
-          <Link to="/search" className="inline-flex min-h-8 items-center gap-1.5 px-2 text-[11px] font-extrabold text-charcoal/62 transition hover:text-green-deep" aria-label={ko ? "검색" : "Search"}>
-            <Search size={15}/><span>{ko ? "검색" : "Search"}</span>
+    <>
+      <header className="sticky top-0 z-50 bg-ivory/95 backdrop-blur-xl">
+        <div className="container-page flex min-h-[70px] items-center gap-3 border-b border-green-deep/10 py-2 md:min-h-[74px] md:gap-4">
+          <Link to={language === "en" ? "/en/" : "/"} className="flex min-w-0 shrink flex-col items-start gap-0.5" aria-label={language === "en" ? "SEED VOICE home" : "씨앗의 소리 홈"}>
+            <BrandLockup tone="header" />
+            <span className="max-w-[calc(100vw-8.5rem)] text-[10px] font-medium leading-[1.35] tracking-[-.02em] text-charcoal/52 sm:max-w-[42rem] sm:text-[11px] md:max-w-[46rem] lg:max-w-[50rem]">
+              {ko
+                ? "시민과 기업의 자유를 지키는 독립 시민저널"
+                : "An independent civic journal for citizens, enterprise and freedom."}
+            </span>
           </Link>
-          <a href="#newsletter" className="inline-flex min-h-8 items-center rounded-sm bg-green-deep px-3.5 text-[11px] font-extrabold text-white transition hover:bg-green-mid">
-            {ko ? "구독" : "Subscribe"}
-          </a>
-          {user ? (
-            <>
-              <Link to="/account" className="inline-flex min-h-8 items-center gap-1.5 rounded-md border border-green-deep/12 bg-white px-2.5 text-[11px] font-extrabold text-green-deep">
-                <UserRound size={13}/><span className="max-w-20 truncate">{nickname}</span>{isVerified && <span className="text-[9px] text-green-mid">●</span>}
-              </Link>
-              <button onClick={() => void signOut()} className="grid size-8 place-items-center rounded-md border border-green-deep/12 text-charcoal/50 hover:text-green-deep" type="button" aria-label={language === "en" ? "Sign out" : "로그아웃"}><LogOut size={14}/></button>
-            </>
-          ) : (
-            <Link to="/account" className="inline-flex min-h-8 items-center gap-1.5 px-2 text-[11px] font-extrabold text-charcoal/58 transition hover:text-green-deep"><LogIn size={13}/>{language === "en" ? "Sign in" : "로그인"}</Link>
-          )}
-          <button onClick={toggleLanguage} className="min-h-8 px-2 text-[11px] font-bold text-charcoal/58 transition hover:text-green-deep" type="button">{t.actions.language}</button>
-        </div>
 
-        <div className="ml-auto flex shrink-0 items-center gap-0.5 xl:hidden">
-          <Link to="/search" className="grid size-9 place-items-center rounded-md text-green-deep transition hover:bg-green-pale" aria-label={ko ? "검색" : "Search"}>
-            <Search size={18}/>
-          </Link>
-          <button onClick={() => setOpen(!open)} className="grid size-9 place-items-center rounded-md text-green-deep transition hover:bg-green-pale" aria-label={language === "en" ? (open ? "Close menu" : "Open menu") : (open ? "메뉴 닫기" : "메뉴 열기")} aria-expanded={open} aria-controls="mobile-main-menu" type="button">
-            {open ? <X size={20}/> : <Menu size={20}/>} 
-          </button>
-        </div>
-      </div>
-
-      <nav className="hidden border-b border-green-deep/14 bg-paper xl:block" aria-label={language === "en" ? "Main menu" : "주요 메뉴"}>
-        <div className="container-page flex items-center justify-start gap-8">{nav.map((item) => renderNavItem(item))}</div>
-      </nav>
-
-      {isHome && <HomeSectionNav />}
-
-      {open && (
-        <div id="mobile-main-menu" className="border-t border-green-deep/10 bg-paper px-5 py-4 shadow-[0_12px_24px_rgba(17,43,37,.08)] xl:hidden">
-          <nav className="container-page grid sm:grid-cols-2 sm:gap-x-5">{nav.map((item) => renderNavItem(item, true))}</nav>
-          <div className="container-page mt-4 flex flex-wrap gap-2">
-            <a href="#newsletter" onClick={() => setOpen(false)} className="button-primary">{ko ? "구독" : "Subscribe"}</a>
+          <div className="ml-auto hidden shrink-0 items-center gap-1.5 xl:flex">
+            {renderSearchControl()}
+            <a href="#newsletter" className="inline-flex min-h-8 items-center rounded-sm bg-green-deep px-3.5 text-[11px] font-extrabold text-white transition hover:bg-green-mid">
+              {ko ? "구독" : "Subscribe"}
+            </a>
             {user ? (
               <>
-                <Link to="/account" onClick={() => setOpen(false)} className="button-secondary"><UserRound size={15}/>{nickname}</Link>
-                <button onClick={() => { setOpen(false); void signOut(); }} className="button-secondary" type="button"><LogOut size={15}/>{language === "en" ? "Sign out" : "로그아웃"}</button>
+                <Link to="/account" className="inline-flex min-h-8 items-center gap-1.5 rounded-md border border-green-deep/12 bg-white px-2.5 text-[11px] font-extrabold text-green-deep">
+                  <UserRound size={13}/><span className="max-w-20 truncate">{nickname}</span>{isVerified && <span className="text-[9px] text-green-mid">●</span>}
+                </Link>
+                <button onClick={() => void signOut()} className="grid size-8 place-items-center rounded-md border border-green-deep/12 text-charcoal/50 hover:text-green-deep" type="button" aria-label={language === "en" ? "Sign out" : "로그아웃"}><LogOut size={14}/></button>
               </>
-            ) : <Link to="/account" onClick={() => setOpen(false)} className="button-secondary"><LogIn size={15}/>{language === "en" ? "Sign in" : "로그인"}</Link>}
-            <button onClick={toggleLanguage} className="button-secondary" type="button">{t.actions.language}</button>
+            ) : (
+              <Link to="/account" className="inline-flex min-h-8 items-center gap-1.5 px-2 text-[11px] font-extrabold text-charcoal/58 transition hover:text-green-deep"><LogIn size={13}/>{language === "en" ? "Sign in" : "로그인"}</Link>
+            )}
+            <button onClick={toggleLanguage} className="min-h-8 px-2 text-[11px] font-bold text-charcoal/58 transition hover:text-green-deep" type="button">{t.actions.language}</button>
+          </div>
+
+          <div className="ml-auto flex shrink-0 items-center gap-0.5 xl:hidden">
+            {renderSearchControl(true)}
+            <button onClick={() => setOpen(!open)} className="grid size-9 place-items-center rounded-md text-green-deep transition hover:bg-green-pale" aria-label={language === "en" ? (open ? "Close menu" : "Open menu") : (open ? "메뉴 닫기" : "메뉴 열기")} aria-expanded={open} aria-controls="mobile-main-menu" type="button">
+              {open ? <X size={20}/> : <Menu size={20}/>} 
+            </button>
           </div>
         </div>
-      )}
-    </header>
+
+        <nav className="hidden border-b border-green-deep/14 bg-paper xl:block" aria-label={language === "en" ? "Main menu" : "주요 메뉴"}>
+          <div className="container-page flex items-center justify-start gap-8">{nav.map((item) => renderNavItem(item))}</div>
+        </nav>
+
+        {isHome && <HomeSectionNav />}
+
+        {open && (
+          <div id="mobile-main-menu" className="border-t border-green-deep/10 bg-paper px-5 py-4 shadow-[0_12px_24px_rgba(17,43,37,.08)] xl:hidden">
+            <nav className="container-page grid sm:grid-cols-2 sm:gap-x-5">{nav.map((item) => renderNavItem(item, true))}</nav>
+            <div className="container-page mt-4 flex flex-wrap gap-2">
+              <a href="#newsletter" onClick={() => setOpen(false)} className="button-primary">{ko ? "구독" : "Subscribe"}</a>
+              {user ? (
+                <>
+                  <Link to="/account" onClick={() => setOpen(false)} className="button-secondary"><UserRound size={15}/>{nickname}</Link>
+                  <button onClick={() => { setOpen(false); void signOut(); }} className="button-secondary" type="button"><LogOut size={15}/>{language === "en" ? "Sign out" : "로그아웃"}</button>
+                </>
+              ) : <Link to="/account" onClick={() => setOpen(false)} className="button-secondary"><LogIn size={15}/>{language === "en" ? "Sign in" : "로그인"}</Link>}
+              <button onClick={toggleLanguage} className="button-secondary" type="button">{t.actions.language}</button>
+            </div>
+          </div>
+        )}
+      </header>
+      <ArticleFindPanel open={findOpen && isContentDetail} onClose={() => setFindOpen(false)} language={language} />
+    </>
   );
 }
