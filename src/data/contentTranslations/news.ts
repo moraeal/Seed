@@ -1,6 +1,89 @@
 import type { NewsTranslation } from "./types";
 
 export const newsTranslations: Record<string, NewsTranslation> = {
+  "media-appeal-justice-press-play": {
+    category: "Justice, Media & Civil Rights",
+    title: "If Officials May Go to the Press, Is It ‘Media Play’ When Victims Do?",
+    subtitle: "When the media becomes the emergency exit of criminal justice, where should an ordinary citizen take an unresolved grievance?",
+    summary: "During South Korea's debate over abolishing the prosecutors' office and limiting supplementary-investigation powers, former lawmaker Choi Kang-wook said, in a hypothetical situation where police failed to investigate properly, that a prosecutor could alert the media. In a separate appellate hearing tied to the Busan roundhouse-kick case, reports said the presiding judge referred to the victim side's media activity as a kind of ‘media play.’ The two contexts are different, but the public question is unavoidable: why is media disclosure a tool when used by power, yet suspect when used by a victim?",
+    keySentence: "If public officials can call media disclosure a remedy while victims are told their appeal is ‘media play,’ where are citizens supposed to go?",
+    selectedNews: {
+      outlet: "SBS News",
+      headline: "\"The victim also did media play\" — Anger Over Judge's Remark in Busan Roundhouse-Kick Case",
+      linkLabel: "Watch the SBS subtitled news clip",
+      thumbnailUrl: "https://i.ytimg.com/vi/2v_qXgHXrbY/maxresdefault.jpg",
+      thumbnailAlt: "SBS News subtitled clip about controversy over remarks by the judge in the Busan roundhouse-kick retaliation-threat appeal",
+      thumbnailCaption: "A related SBS News clip showing why treating a victim's public appeal as ‘media play’ has become controversial. Select the image to watch the video.",
+      thumbnailYoutubeId: "2v_qXgHXrbY",
+      thumbnailPlacement: "after-summary",
+      thumbnailFallbackUrl: "/images/brand/editorial-image-fallback.svg",
+      summary: [
+        "SBS reported that the presiding judge in the retaliation-threat appeal connected to the Busan roundhouse-kick case made remarks suggesting the victim side had engaged in ‘media play.’",
+        "The victim side has argued that public attention was necessary to expose threats and prevent further harm.",
+        "This controversy concerns the separate retaliation-threat appeal, not the original case in which the attacker received a 20-year sentence."
+      ]
+    },
+    heroImage: {
+      src: "https://i.ytimg.com/vi/2v_qXgHXrbY/maxresdefault.jpg",
+      alt: "SBS News subtitled clip about controversy over remarks by the judge in the Busan roundhouse-kick retaliation-threat appeal",
+      caption: "The SBS News video still placed inside the article-summary box.",
+      credit: "Video still · SBS News"
+    },
+    inlineImage: {
+      src: "https://i.ytimg.com/vi/2v_qXgHXrbY/maxresdefault.jpg",
+      alt: "SBS News subtitled clip about controversy over remarks by the judge in the Busan roundhouse-kick retaliation-threat appeal",
+      caption: "",
+      credit: ""
+    },
+    sections: [
+      {
+        title: "Two scenes collide",
+        paragraphs: [
+          "The first scene comes from the debate over dismantling the prosecutors' office and removing prosecutors' supplementary-investigation powers. In a July appearance on the YouTube program Maebul Show, former lawmaker Choi Kang-wook discussed a hypothetical case in which police failed to investigate properly and said that, if he were a prosecutor, he would inform the media. This was not an official policy telling citizens to go to the press; it was a claim that a prosecutor could publicly raise a policing failure.",
+          "The second scene comes from the appeal in the retaliation-threat case connected to the Busan roundhouse-kick attack. SBS, JTBC and others reported that the presiding judge referred to the victim side's media activity as ‘media play,’ prompting public criticism.",
+          "The speakers and contexts are different. Yet for citizens the question is clear: when institutions fail, is media disclosure a legitimate remedy for those with authority but ‘play’ when the speaker is a victim?"
+        ]
+      },
+      {
+        title: "A victim's media appeal signals an institutional gap",
+        paragraphs: [
+          "A citizen who feels fully protected and heard within the justice system has little reason to seek media attention. When a victim turns to the press, it often means the institutional channels feel too narrow, too slow, or too indifferent to the danger and grievance at stake.",
+          "Media coverage must not replace a trial, and public opinion must not decide punishment. But that principle should not become a demand for victim silence. Courts may worry about politicization or trial by publicity; they should answer that concern by hearing and explaining more within procedure, not by making a victim's public appeal sound improper."
+        ]
+      },
+      {
+        title: "The issue is not the media. It is the missing channel.",
+        paragraphs: [
+          "The reason ‘tell the media’ appears in the prosecutorial-reform debate is anxiety about weakened checks inside the justice system. If the only remaining remedy for a failed investigation is public exposure, that is not a triumph of institutional design; it is a sign of institutional emptiness.",
+          "The same applies when a crime victim goes public. The problem is not that the media is too powerful. The problem is that the system has not provided a sufficiently trusted channel for fear, risk and unresolved grievance. Before blaming the media appeal, we should ask why the citizen had to go that far."
+        ]
+      },
+      {
+        title: "Citizens need protected speech, not silence",
+        paragraphs: [
+          "For an ordinary citizen, the phrase ‘media play’ lands coldly. If a victim becomes suspect the moment she speaks publicly, the citizen becomes alone again. Before the state tells citizens to wait quietly, it must prove that they are safe while waiting, informed while waiting and able to challenge the process while waiting.",
+          "SEED VOICE does not argue that media coverage should replace courts. But neither can we accept the casual labeling of a victim's last appeal as ‘play.’ A capable state does not silence citizens. It builds channels strong enough that citizens do not have to seek the media as a final emergency exit."
+        ]
+      }
+    ],
+    watchPoints: [
+      "Whether the court explains the context of the reported remark and its victim-protection standards",
+      "Whether the appeal process sufficiently protects victim participation, safety and notice",
+      "Whether real remedies are created if police fail to investigate properly after prosecutorial powers are reduced",
+      "Whether victims who need public attention face secondary harm or procedural disadvantage",
+      "Whether Korea can distinguish trial by publicity from a protected victim's right to speak"
+    ],
+    seedPerspective: [
+      "The media cannot replace institutions. But when institutions fail to absorb a citizen's grievance, the media becomes an emergency exit. Before criticizing that exit, we must ask why the citizen was pushed toward it.",
+      "It is not fair if public officials may describe media disclosure as a remedy while victims are accused of ‘media play.’ The state should be less irritated by citizens' speech and more concerned with whether safe institutional channels exist.",
+      "Civil freedom begins with the freedom to speak. Especially for crime victims and weaker citizens, the right to speak must be protected while still distinguishing it from pressure campaigns. A justice system that demands silence cannot fully protect citizens."
+    ],
+    sourceLabels: [
+      "SBS News — Subtitled clip on anger over judge's reported remark in the Busan roundhouse-kick retaliation-threat appeal",
+      "JTBC News on X — Reported remark: ‘The victim also engaged in substantial media play’",
+      "JIBS/Daum — Report on Choi Kang-wook's comments about a prosecutor alerting the media if police fail to investigate"
+    ]
+  },
   "local-sports-subsidy-accountability": {
     category: "Local Government & Public Funds",
     title: "KRW 20 Billion in Sports Grants: Why Were Revenue and Receipts Missing?",
