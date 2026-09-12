@@ -1,64 +1,62 @@
 import type { SeedLanguageArticle } from "./seedLanguageBase";
 
 export const freedomArticleKo: SeedLanguageArticle = {
-  "slug": "freedom-as-citizen-agency",
-  "term": "자유",
-  "date": "2026-09-12",
-  "readMinutes": 9,
-  "newsletterEligible": false,
-  "title": "자유는 방종하는 게 아니라 주체를 세우는 것이다",
-  "subtitle": "자유의 반대말은 규제가 아니라 종속이다",
-  "summary": "자유는 마음대로 하는 것이 아니라 내 삶을 누가 결정하느냐의 문제다. 간섭받지 않을 자유, 자의적인 권력에 지배받지 않을 자유, 실제로 선택할 수 있는 기회, 그리고 선택한 시민의 책임이 함께 있을 때 자유는 시민을 주체로 세운다.",
-  "keyPoints": [
+  slug: "freedom-as-citizen-agency",
+  term: "자유",
+  date: "2026-09-12",
+  readMinutes: 9,
+  newsletterEligible: false,
+  title: "자유는 방종하는 게 아니라 주체를 세우는 것이다",
+  subtitle: "자유의 반대말은 규제가 아니라 종속이다",
+  summary: "자유는 마음대로 하는 것이 아니라 내 삶을 누가 결정하느냐의 문제다. 간섭받지 않을 자유, 자의적인 권력에 지배받지 않을 자유, 실제로 선택할 수 있는 기회, 그리고 선택한 시민의 책임이 함께 있을 때 자유는 시민을 주체로 세운다.",
+  keyPoints: [
     "자유는 마음대로 하는 것이 아니라 내 삶을 누가 결정하느냐의 문제다.",
     "간섭받지 않는 것만으로는 충분하지 않으며, 누구의 자의적인 의지에도 종속되지 않아야 한다.",
     "국가는 시민을 대신 선택하는 것이 아니라 시민이 선택할 수 있는 조건을 넓혀야 한다.",
-    "자유 없는 책임은 동원이고, 책임 없는 자유는 불신이며, 공정 없는 자유는 특권이다."
+    "자유 없는 책임은 동원이고, 책임 없는 자유는 불신이며, 공정 없는 자유는 특권이다.",
   ],
-  "heroImage": {
-    "src": "images/seed-language/freedom-as-citizen-agency-hero.webp",
-    "alt": "안전·복지·경제안정·공공서비스를 제공하는 보호의 공간과 규제·허가·심사의 관문을 지나 스스로의 선택으로 향하는 시민들",
-    "caption": "자유의 질문은 보호냐 방임이냐가 아니다. 보호가 시민의 선택을 넓히는가, 아니면 선택을 대신하기 시작하는가에 있다.",
-    "credit": "씨앗의 소리 AI 제작 이미지 · 상징적 장면"
+  heroImage: {
+    src: "images/seed-language/freedom-as-citizen-agency-hero.svg",
+    alt: "안전·복지·경제안정·공공서비스를 제공하는 보호의 공간과 규제·허가·심사의 관문을 지나 스스로의 선택으로 향하는 시민들",
+    caption: "자유의 질문은 보호냐 방임이냐가 아니다. 보호가 시민의 선택을 넓히는가, 아니면 선택을 대신하기 시작하는가에 있다.",
+    credit: "씨앗의 소리 AI 제작 이미지 · 상징적 장면",
   },
-  "inlineImage": {
-    "src": "images/seed-language/freedom-as-citizen-agency-infographic.webp",
-    "alt": "자유를 간섭받지 않을 자유, 지배받지 않을 자유, 선택할 수 있는 기회, 선택에 대한 책임의 네 요소로 설명한 인포그래픽",
-    "caption": "씨앗의 소리가 말하는 자유는 네 요소가 함께 움직이는 구조다. 간섭과 지배를 벗어날 권리, 실제로 선택할 수 있는 조건, 그리고 선택의 결과에 대한 책임이 시민을 주체로 세운다.",
-    "credit": "씨앗의 소리 AI 제작 인포그래픽"
+  inlineImage: {
+    src: "images/seed-language/freedom-as-citizen-agency-infographic.svg",
+    alt: "자유를 간섭받지 않을 자유, 지배받지 않을 자유, 선택할 수 있는 기회, 선택에 대한 책임의 네 요소로 설명한 인포그래픽",
+    caption: "씨앗의 소리가 말하는 자유는 네 요소가 함께 움직이는 구조다. 간섭과 지배를 벗어날 권리, 실제로 선택할 수 있는 조건, 그리고 선택의 결과에 대한 책임이 시민을 주체로 세운다.",
+    credit: "씨앗의 소리 AI 제작 인포그래픽",
   },
-  "inlineImageAfterSection": 7,
-  "showTableOfContents": false,
-  "sections": [
+  inlineImageAfterSection: 7,
+  showTableOfContents: false,
+  sections: [
     {
-      "title": "자유는 마음대로 하는 것이 아니다",
-      "paragraphs": [
+      title: "자유는 마음대로 하는 것이 아니다",
+      paragraphs: [
         "자유를 말하면 이상하게도 먼저 방종을 떠올리는 사람들이 있다.",
         "“그럼 하고 싶은 대로 하겠다는 말인가.”",
         "아니다.",
         "자유는 마음대로 하는 것이 아니다. 자유는 내 삶을 누가 결정하느냐의 문제다.",
         "국가가 결정하는가. 다수가 결정하는가. 전문가가 결정하는가. 시장이 사실상 선택을 강요하는가. 아니면 내가 충분한 정보를 가지고 스스로 판단하고 선택하는가.",
-        "자유의 문제는 여기서 시작한다."
-      ]
+        "자유의 문제는 여기서 시작한다.",
+      ],
     },
     {
-      "title": "자유는 국가가 내버려 두는 것만을 뜻하지 않는다",
-      "paragraphs": [
+      title: "자유는 국가가 내버려 두는 것만을 뜻하지 않는다",
+      paragraphs: [
         "정치철학에서 자유를 설명하는 가장 오래된 방법 가운데 하나는 간섭받지 않을 자유다.",
         "국가가 내가 무슨 말을 할지 정하지 않는 것, 어떤 직업을 가질지 대신 결정하지 않는 것, 누구와 모이고 어떤 생각을 가질지를 통제하지 않는 것이다.",
         "아이재아 벌린이 말한 ‘소극적 자유’가 여기에 가깝다.",
         "이 자유는 중요하다.",
         "국가가 선한 목적을 가지고 있다고 해서 시민의 삶에 마음대로 들어올 수는 없다. 공익이라는 이름을 붙였다고 시민의 선택권이 사라지는 것도 아니다.",
         "그러나 간섭만 없으면 우리는 정말 자유로운가.",
-        "그렇지는 않다."
+        "그렇지는 않다.",
       ],
-      "sourceIndices": [
-        0
-      ]
+      sourceIndices: [0],
     },
     {
-      "title": "아무도 간섭하지 않는데 자유롭지 않을 수도 있다",
-      "paragraphs": [
+      title: "아무도 간섭하지 않는데 자유롭지 않을 수도 있다",
+      paragraphs: [
         "한 사람이 권력자의 지배 아래 있다고 생각해보자.",
         "권력자는 지금 아무것도 명령하지 않는다. 말도 막지 않는다. 재산도 빼앗지 않는다.",
         "그러나 마음만 먹으면 언제든 그렇게 할 수 있다.",
@@ -68,15 +66,13 @@ export const freedomArticleKo: SeedLanguageArticle = {
         "필립 페팃이 말하는 ‘비지배의 자유’다.",
         "좋은 권력자가 나를 괴롭히지 않는 것과, 권력자가 애초에 함부로 나를 괴롭힐 수 없는 것은 전혀 다른 문제다.",
         "그래서 자유로운 사회에 필요한 것은 좋은 사람에게 권력을 맡기는 것이 아니다.",
-        "좋은 사람이든 나쁜 사람이든 함부로 행사할 수 없는 권력의 구조를 만드는 것이다."
+        "좋은 사람이든 나쁜 사람이든 함부로 행사할 수 없는 권력의 구조를 만드는 것이다.",
       ],
-      "sourceIndices": [
-        1
-      ]
+      sourceIndices: [1],
     },
     {
-      "title": "휘발유 가격을 정부가 정하면 우리는 자유롭지 않은가",
-      "paragraphs": [
+      title: "휘발유 가격을 정부가 정하면 우리는 자유롭지 않은가",
+      paragraphs: [
         "최근 아주 흥미로운 사례가 있다.",
         "정부는 중동 정세와 국제유가 급등에 대응해 석유 최고가격제를 시행하고 있다. 8월 말 기준 휘발유 최고가격은 리터당 1,784원, 경유는 1,773원으로 정해졌고, 지난 3월 도입된 제도는 6개월을 넘겨 계속되고 있다. 정부는 민생 부담과 국제유가 상황을 그 이유로 들고 있다.",
         "소비자에게는 반가운 정책일 수 있다.",
@@ -90,15 +86,13 @@ export const freedomArticleKo: SeedLanguageArticle = {
         "자유사회에서 중요한 것은 개입의 유무만이 아니다.",
         "개입에는 이유가 있어야 하고, 기준이 있어야 하며, 기간이 있어야 하고, 종료 조건이 있어야 한다.",
         "권력을 행사할 수 있다는 것과 자의적으로 권력을 행사할 수 있다는 것 사이에는 매우 큰 차이가 있다.",
-        "자유는 바로 그 차이를 묻는다."
+        "자유는 바로 그 차이를 묻는다.",
       ],
-      "sourceIndices": [
-        3
-      ]
+      sourceIndices: [3],
     },
     {
-      "title": "직업을 선택할 자유가 있으면 청년은 자유로운가",
-      "paragraphs": [
+      title: "직업을 선택할 자유가 있으면 청년은 자유로운가",
+      paragraphs: [
         "자유에는 또 다른 문제가 있다.",
         "대한민국의 청년에게는 직업선택의 자유가 있다.",
         "정부가 어느 회사에 들어가라고 명령하지 않는다. 공무원이 되라고 강요하지도 않는다.",
@@ -111,16 +105,13 @@ export const freedomArticleKo: SeedLanguageArticle = {
         "“어디든 취업할 자유가 있다”고 말해도 실제 갈 수 있는 직장이 없다면 그 자유는 종이 위의 자유가 되기 쉽다.",
         "그렇다고 국가가 청년의 직업을 대신 정해주는 것이 답이라는 뜻도 아니다.",
         "씨앗이 중요하게 보는 것은 바로 이 지점이다.",
-        "국가는 시민을 대신 선택하는 것이 아니라 시민이 선택할 수 있는 조건을 넓혀야 한다."
+        "국가는 시민을 대신 선택하는 것이 아니라 시민이 선택할 수 있는 조건을 넓혀야 한다.",
       ],
-      "sourceIndices": [
-        2,
-        4
-      ]
+      sourceIndices: [2, 4],
     },
     {
-      "title": "자유를 준다는 말부터 조금 이상하다",
-      "paragraphs": [
+      title: "자유를 준다는 말부터 조금 이상하다",
+      paragraphs: [
         "우리는 흔히 이런 표현을 쓴다.",
         "“정부가 자유를 허용했다.”",
         "가만히 생각해보면 이상한 말이다.",
@@ -135,12 +126,12 @@ export const freedomArticleKo: SeedLanguageArticle = {
         "왜 가격에 개입하는가.",
         "왜 이 행동을 제한하는가.",
         "그리고 그 조치는 언제 끝나는가.",
-        "이 질문을 계속 던지는 것이 자유사회의 시민이다."
-      ]
+        "이 질문을 계속 던지는 것이 자유사회의 시민이다.",
+      ],
     },
     {
-      "title": "그러나 자유는 ‘나는 내 마음대로 하겠다’는 선언도 아니다",
-      "paragraphs": [
+      title: "그러나 자유는 ‘나는 내 마음대로 하겠다’는 선언도 아니다",
+      paragraphs: [
         "여기에서 자유에 대한 또 하나의 오해가 생긴다.",
         "자유를 국가권력의 제한으로만 이해하면 자유는 쉽게 개인의 권리 주장으로만 축소된다.",
         "그러나 내가 자유로운 만큼 다른 사람도 자유롭다.",
@@ -150,12 +141,12 @@ export const freedomArticleKo: SeedLanguageArticle = {
         "국가가 모든 위험을 제거해주고, 모든 실패를 책임지고, 모든 선택의 결과를 보상해준다면 어느 순간 시민의 선택은 국가의 관리 대상으로 바뀔 수 있다.",
         "반대로 아무런 기회도 조건도 주어지지 않은 사람에게 “네 선택이었으니 네 책임”이라고 말하는 것 역시 자유라고 부르기 어렵다.",
         "자유와 책임은 그래서 서로 적이 아니다.",
-        "책임 없는 자유는 타인의 자유를 침범하기 쉽고, 자유 없는 책임은 강요가 된다."
-      ]
+        "책임 없는 자유는 타인의 자유를 침범하기 쉽고, 자유 없는 책임은 강요가 된다.",
+      ],
     },
     {
-      "title": "씨앗이 말하는 자유",
-      "paragraphs": [
+      title: "씨앗이 말하는 자유",
+      paragraphs: [
         "씨앗은 자유를 단순히 ‘간섭받지 않는 상태’라고 보지 않는다.",
         "누구에게도 자의적으로 종속되지 않고, 스스로 판단하고 선택하며, 그 선택에 책임질 수 있는 시민의 상태.",
         "그것이 우리가 말하고 싶은 자유에 가깝다.",
@@ -168,12 +159,12 @@ export const freedomArticleKo: SeedLanguageArticle = {
         "간섭만 없고 기회가 없다면 자유는 형식이 된다.",
         "기회는 있지만 국가가 모든 선택을 대신한다면 자유는 보호라는 이름의 관리가 된다.",
         "권리만 주장하고 책임을 지지 않는다면 자유는 특권이 될 수 있다.",
-        "그리고 권력이 선의를 내세워 시민의 선택을 대신하기 시작하면 자유는 조금씩 허가제로 변한다."
-      ]
+        "그리고 권력이 선의를 내세워 시민의 선택을 대신하기 시작하면 자유는 조금씩 허가제로 변한다.",
+      ],
     },
     {
-      "title": "자유의 반대말은 규제가 아니라 종속이다",
-      "paragraphs": [
+      title: "자유의 반대말은 규제가 아니라 종속이다",
+      paragraphs: [
         "그래서 자유의 반대말을 단순히 ‘규제’라고 생각해서는 안 된다.",
         "필요한 규제도 있다.",
         "다른 사람의 자유를 침해하지 못하게 하는 법도 필요하고, 공정한 경쟁을 유지하기 위한 규칙도 필요하다. 시민의 생명과 재산을 보호하기 위한 국가의 역할 역시 필요하다.",
@@ -189,30 +180,15 @@ export const freedomArticleKo: SeedLanguageArticle = {
         "다만 마지막 판단까지 다른 사람에게 넘겨주지는 않는다.",
         "자유는 마음대로 살아도 된다는 허락이 아니다.",
         "누구에게도 종속되지 않은 채 자신의 삶을 스스로 판단하고 선택할 수 있다는 말이다.",
-        "그리고 자유로운 시민사회란 그런 선택을 할 수 있는 시민이 점점 많아지는 사회다."
-      ]
-    }
+        "그리고 자유로운 시민사회란 그런 선택을 할 수 있는 시민이 점점 많아지는 사회다.",
+      ],
+    },
   ],
-  "sources": [
-    {
-      "label": "Stanford Encyclopedia of Philosophy, Positive and Negative Liberty",
-      "url": "https://plato.stanford.edu/entries/liberty-positive-negative/"
-    },
-    {
-      "label": "Stanford Encyclopedia of Philosophy, Republicanism",
-      "url": "https://plato.stanford.edu/entries/republicanism/"
-    },
-    {
-      "label": "Stanford Encyclopedia of Philosophy, The Capability Approach",
-      "url": "https://plato.stanford.edu/entries/capability-approach/"
-    },
-    {
-      "label": "산업통상부, 9차 최고가격 동결, 민생부담과 국제유가를 종합 고려",
-      "url": "https://www.motir.go.kr/kor/article/ATCL03465409b/171671/view"
-    },
-    {
-      "label": "국가데이터처, 2026년 8월 고용동향",
-      "url": "https://www.mods.go.kr/board.es?act=view&bid=210&list_no=446913&mid=a10301030200"
-    }
-  ]
+  sources: [
+    { label: "Stanford Encyclopedia of Philosophy, Positive and Negative Liberty", url: "https://plato.stanford.edu/entries/liberty-positive-negative/" },
+    { label: "Stanford Encyclopedia of Philosophy, Republicanism", url: "https://plato.stanford.edu/entries/republicanism/" },
+    { label: "Stanford Encyclopedia of Philosophy, The Capability Approach", url: "https://plato.stanford.edu/entries/capability-approach/" },
+    { label: "산업통상부, 9차 최고가격 동결, 민생부담과 국제유가를 종합 고려", url: "https://www.motir.go.kr/kor/article/ATCL03465409b/171671/view" },
+    { label: "국가데이터처, 2026년 8월 고용동향", url: "https://www.mods.go.kr/board.es?act=view&bid=210&list_no=446913&mid=a10301030200" },
+  ],
 };
