@@ -6,7 +6,7 @@ export const freedomArticleKo: SeedLanguageArticle = {
   "date": "2026-09-12",
   "readMinutes": 9,
   "newsletterEligible": false,
-  "title": "자유는 마음대로 하는 것이 아니라 누구에게도 종속되지 않고 스스로 선택하는 것이라는 말이다",
+  "title": "자유는 방종하는 게 아니라 주체를 세우는 것이다",
   "subtitle": "자유의 반대말은 규제가 아니라 종속이다",
   "summary": "자유는 마음대로 하는 것이 아니라 내 삶을 누가 결정하느냐의 문제다. 간섭받지 않을 자유, 자의적인 권력에 지배받지 않을 자유, 실제로 선택할 수 있는 기회, 그리고 선택한 시민의 책임이 함께 있을 때 자유는 시민을 주체로 세운다.",
   "keyPoints": [
@@ -28,7 +28,7 @@ export const freedomArticleKo: SeedLanguageArticle = {
     "credit": "씨앗의 소리 AI 제작 인포그래픽"
   },
   "inlineImageAfterSection": 7,
-  "showTableOfContents": true,
+  "showTableOfContents": false,
   "sections": [
     {
       "title": "자유는 마음대로 하는 것이 아니다",
