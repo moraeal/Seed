@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   normalize:
-    if: github.event.head_commit.message == 'chore: add one-time seed language title migration'
+    if: github.event.head_commit.message == 'fix: run seed language title migration'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,8 +18,8 @@ jobs:
           fetch-depth: 0
 
       - name: Normalize article titles and references
-        shell: python
         run: |
+          python - <<'PY'
           from pathlib import Path
           import re
 
@@ -39,7 +39,6 @@ jobs:
               new_text = article_pattern.sub(collect, text)
               path.write_text(new_text, encoding='utf-8')
 
-          # Keep related-article labels and duplicated title references synchronized.
           for path in files:
               text = path.read_text(encoding='utf-8')
               for old, new in replacements.items():
@@ -56,6 +55,7 @@ jobs:
           print('Updated titles:')
           for old, new in replacements.items():
               print(f'- {old} -> {new}')
+          PY
 
       - name: Commit normalized titles
         run: |
