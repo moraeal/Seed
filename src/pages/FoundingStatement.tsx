@@ -41,7 +41,7 @@ export default function FoundingStatement() {
           {sections.map(([title, body]) => <section key={title}><h2 className="editorial-title text-2xl font-bold leading-snug text-navy sm:text-3xl">{title}</h2><p className="mt-3 text-base leading-8 text-charcoal/70">{body}</p></section>)}
         </div>
         <footer className="mt-11 border-t-2 border-navy pt-7">
-          <p className="text-sm font-extrabold tracking-[.06em] text-green-deep">{ko ? "2026년 9월 · 박경석, 씨앗의 소리 발행인" : "September 2026 · Park Kyung-seuk, Publisher of SEED VOICE"}</p>
+          <p className="text-sm font-extrabold tracking-[.06em] text-green-deep">{ko ? "2026년 9월 · 작은씨앗, 씨앗의 소리 발행인" : "September 2026 · Small Seed, Publisher of SEED VOICE"}</p>
           <Link to="/about" className="button-secondary mt-6">{ko ? "소개로 돌아가기" : "Back to About"}</Link>
         </footer>
       </div>
