@@ -16,13 +16,13 @@ export const freedomArticleKo: SeedLanguageArticle = {
     "자유 없는 책임은 동원이고, 책임 없는 자유는 불신이며, 공정 없는 자유는 특권이다.",
   ],
   heroImage: {
-    src: "images/seed-language/freedom-as-citizen-agency-hero.svg",
+    src: "images/seed-language/freedom-as-citizen-agency-hero.jpg",
     alt: "안전·복지·경제안정·공공서비스를 제공하는 보호의 공간과 규제·허가·심사의 관문을 지나 스스로의 선택으로 향하는 시민들",
     caption: "자유의 질문은 보호냐 방임이냐가 아니다. 보호가 시민의 선택을 넓히는가, 아니면 선택을 대신하기 시작하는가에 있다.",
     credit: "씨앗의 소리 AI 제작 이미지 · 상징적 장면",
   },
   inlineImage: {
-    src: "images/seed-language/freedom-as-citizen-agency-infographic.svg",
+    src: "images/seed-language/freedom-as-citizen-agency-infographic.jpg",
     alt: "자유를 간섭받지 않을 자유, 지배받지 않을 자유, 선택할 수 있는 기회, 선택에 대한 책임의 네 요소로 설명한 인포그래픽",
     caption: "씨앗의 소리가 말하는 자유는 네 요소가 함께 움직이는 구조다. 간섭과 지배를 벗어날 권리, 실제로 선택할 수 있는 조건, 그리고 선택의 결과에 대한 책임이 시민을 주체로 세운다.",
     credit: "씨앗의 소리 AI 제작 인포그래픽",
