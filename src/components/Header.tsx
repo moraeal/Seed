@@ -23,14 +23,14 @@ export default function Header() {
         ["Today's News", "/news"],
         ["SEED Briefings", "/briefings"],
         ["SEED Language", "/seed-language"],
-        ["About", "/about"],
+        ["About", "/publisher-message"],
       ]
     : [
         ["씨앗의 소리", "/columns"],
         ["오늘의 뉴스", "/news"],
         ["씨앗브리핑", "/briefings"],
         ["씨앗언어", "/seed-language"],
-        ["소개", "/about"],
+        ["소개", "/publisher-message"],
       ];
 
   const toggleLanguage = () => {
