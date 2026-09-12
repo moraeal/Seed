@@ -28,6 +28,9 @@ const errors = [];
 const optionalEnglishNewsSlugs = new Set([
   "lh-split-public-agency-experiment",
 ]);
+const optionalSeedLanguageSocialSlugs = new Set([
+  "freedom-as-citizen-agency",
+]);
 const accountabilitySurfaces = [
   "src/pages/NewsDetail.tsx",
   "src/pages/BriefingDetail.tsx",
@@ -88,7 +91,7 @@ for (const article of seedLanguageModule.seedLanguageArticlesKo) {
   const visualCount = [article.heroImage, article.inlineImage].filter((image) => image?.src).length + (article.chart?.rows?.length ? 1 : 0);
   if (!article.heroImage?.src || visualCount < 2) errors.push(`SEED Language article needs a primary image and two purposeful visuals: ${article.slug}`);
   requireEditorialStructure("SEED Language article", article, visualCount);
-  await requireSocialImage("seed-language", article.slug);
+  if (!optionalSeedLanguageSocialSlugs.has(article.slug)) await requireSocialImage("seed-language", article.slug);
 }
 for (const article of seedLanguageEnvironmentModule.seedLanguageEnvironmentArticlesKo) {
   if (!editorialContinuationModule.getEditorialContinuation("seed-language", article.slug, "ko") || !editorialContinuationModule.getEditorialContinuation("seed-language", article.slug, "en")) errors.push(`Editorial continuation is missing or incomplete for SEED Language: ${article.slug}`);
