@@ -8,7 +8,28 @@ import {
 
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
+const freedomSubjecthoodContinuation: { ko: EditorialContinuation; en: EditorialContinuation } = {
+  ko: {
+    href: "/seed-language/citizen-as-seed",
+    title: "시민은 주어지는 이름이 아니라 자라나는 존재다",
+    relationship: "씨앗언어 이어읽기",
+    reason: "자유가 시민을 주체로 세우는 일이라면, 그 주체가 어떻게 사적 개인에서 공공성의 시민으로 성장하는지 이어서 살펴봅니다.",
+    listHref: "/seed-language",
+    listLabel: "씨앗언어 전체 보기",
+  },
+  en: {
+    href: "/seed-language/citizen-as-seed",
+    title: "Citizenship is not a given label; it is something we grow into",
+    relationship: "READ NEXT IN SEED LANGUAGE",
+    reason: "Continue from freedom as subjecthood to the question of how a private person grows into a citizen who judges and acts in public life.",
+    listHref: "/seed-language",
+    listLabel: "All SEED Language",
+  },
+};
+
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:freedom-is-not-neglect-but-subjecthood-2026": freedomSubjecthoodContinuation,
+  "seed-language:freedom-is-not-neglect-but-subjecthood-2026": freedomSubjecthoodContinuation,
   "news:media-appeal-justice-press-play": {
     ko: {
       href: "/columns/prosecution-reform-power-transfer-2026",
