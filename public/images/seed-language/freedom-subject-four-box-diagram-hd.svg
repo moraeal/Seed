@@ -1,59 +1,65 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
-  <title id="title">자유를 주체로 세우는 네 조건</title>
-  <desc id="desc">간섭받지 않을 자유, 지배받지 않을 자유, 선택할 수 있는 기회, 선택에 대한 책임이 가운데 자유는 주체라는 개념으로 연결되는 네 칸 도표</desc>
+  <title id="title">자유를 주체로 세우는 네 조건 / Four conditions of freedom as subjecthood</title>
+  <desc id="desc">간섭받지 않을 자유, 지배받지 않을 자유, 선택할 수 있는 기회, 선택에 대한 책임이 가운데 자유는 주체라는 개념으로 연결되는 네 칸 도표 / A four-part diagram connecting freedom from interference, freedom from domination, real opportunity to choose, and responsibility for choice to freedom as subjecthood.</desc>
   <rect width="1600" height="1000" fill="#fbfaf6"/>
-  <g font-family="Pretendard, Noto Sans KR, Apple SD Gothic Neo, sans-serif">
-    <text x="800" y="92" text-anchor="middle" font-size="48" font-weight="800" fill="#173d32">자유는 시민을 주체로 세우는 조건이다</text>
-    <text x="800" y="140" text-anchor="middle" font-size="24" font-weight="500" fill="#52655d">네 조건이 함께 작동할 때 자유는 방임도 특권도 아닌 시민의 역량이 됩니다.</text>
+  <g font-family="Pretendard, Noto Sans KR, Apple SD Gothic Neo, Arial, sans-serif">
+    <text x="800" y="82" text-anchor="middle" font-size="44" font-weight="800" fill="#173d32">자유는 시민을 주체로 세우는 조건이다</text>
+    <text x="800" y="126" text-anchor="middle" font-size="22" font-weight="700" fill="#315f50">FREEDOM IS A CONDITION FOR CITIZEN SUBJECTHOOD</text>
+    <text x="800" y="163" text-anchor="middle" font-size="22" font-weight="500" fill="#52655d">네 조건이 함께 작동할 때 자유는 방임도 특권도 아닌 시민의 역량이 됩니다.</text>
 
     <g fill="none" stroke="#8aa99d" stroke-width="5">
-      <path d="M520 355 C630 380 676 412 720 452"/>
-      <path d="M1080 355 C970 380 924 412 880 452"/>
-      <path d="M520 730 C630 704 676 672 720 632"/>
-      <path d="M1080 730 C970 704 924 672 880 632"/>
+      <path d="M520 365 C630 390 676 422 720 462"/>
+      <path d="M1080 365 C970 390 924 422 880 462"/>
+      <path d="M520 740 C630 714 676 682 720 642"/>
+      <path d="M1080 740 C970 714 924 682 880 642"/>
     </g>
 
     <g>
-      <rect x="165" y="230" width="455" height="230" rx="32" fill="#eef4ef" stroke="#315f50" stroke-width="4"/>
-      <circle cx="230" cy="298" r="29" fill="#315f50"/>
-      <text x="230" y="307" text-anchor="middle" font-size="27" font-weight="800" fill="#fff">1</text>
-      <text x="392" y="333" text-anchor="middle" font-size="36" font-weight="800" fill="#173d32">간섭받지 않을 자유</text>
-      <text x="392" y="382" text-anchor="middle" font-size="24" fill="#52655d">국가와 타인이 시민의 선택을</text>
-      <text x="392" y="418" text-anchor="middle" font-size="24" fill="#52655d">함부로 대신하지 않는 조건</text>
+      <rect x="145" y="230" width="475" height="245" rx="32" fill="#eef4ef" stroke="#315f50" stroke-width="4"/>
+      <circle cx="210" cy="298" r="29" fill="#315f50"/>
+      <text x="210" y="307" text-anchor="middle" font-size="27" font-weight="800" fill="#fff">1</text>
+      <text x="382" y="327" text-anchor="middle" font-size="34" font-weight="800" fill="#173d32">간섭받지 않을 자유</text>
+      <text x="382" y="364" text-anchor="middle" font-size="20" font-weight="700" fill="#315f50">Freedom from interference</text>
+      <text x="382" y="409" text-anchor="middle" font-size="22" fill="#52655d">국가와 타인이 시민의 선택을</text>
+      <text x="382" y="442" text-anchor="middle" font-size="22" fill="#52655d">함부로 대신하지 않는 조건</text>
     </g>
 
     <g>
-      <rect x="980" y="230" width="455" height="230" rx="32" fill="#eef4ef" stroke="#315f50" stroke-width="4"/>
+      <rect x="980" y="230" width="475" height="245" rx="32" fill="#eef4ef" stroke="#315f50" stroke-width="4"/>
       <circle cx="1045" cy="298" r="29" fill="#315f50"/>
       <text x="1045" y="307" text-anchor="middle" font-size="27" font-weight="800" fill="#fff">2</text>
-      <text x="1208" y="333" text-anchor="middle" font-size="36" font-weight="800" fill="#173d32">지배받지 않을 자유</text>
-      <text x="1208" y="382" text-anchor="middle" font-size="24" fill="#52655d">권력과 재량에 자의적으로</text>
-      <text x="1208" y="418" text-anchor="middle" font-size="24" fill="#52655d">종속되지 않는 조건</text>
+      <text x="1218" y="327" text-anchor="middle" font-size="34" font-weight="800" fill="#173d32">지배받지 않을 자유</text>
+      <text x="1218" y="364" text-anchor="middle" font-size="20" font-weight="700" fill="#315f50">Freedom from domination</text>
+      <text x="1218" y="409" text-anchor="middle" font-size="22" fill="#52655d">권력과 재량에 자의적으로</text>
+      <text x="1218" y="442" text-anchor="middle" font-size="22" fill="#52655d">종속되지 않는 조건</text>
     </g>
 
     <g>
-      <rect x="165" y="625" width="455" height="230" rx="32" fill="#f6f0dc" stroke="#b68b24" stroke-width="4"/>
-      <circle cx="230" cy="693" r="29" fill="#b68b24"/>
-      <text x="230" y="702" text-anchor="middle" font-size="27" font-weight="800" fill="#fff">3</text>
-      <text x="392" y="728" text-anchor="middle" font-size="36" font-weight="800" fill="#173d32">선택할 수 있는 기회</text>
-      <text x="392" y="777" text-anchor="middle" font-size="24" fill="#52655d">정보·교육·이동·도전의 문이</text>
-      <text x="392" y="813" text-anchor="middle" font-size="24" fill="#52655d">실제로 열려 있는 조건</text>
+      <rect x="145" y="625" width="475" height="245" rx="32" fill="#f6f0dc" stroke="#b68b24" stroke-width="4"/>
+      <circle cx="210" cy="693" r="29" fill="#b68b24"/>
+      <text x="210" y="702" text-anchor="middle" font-size="27" font-weight="800" fill="#fff">3</text>
+      <text x="382" y="722" text-anchor="middle" font-size="34" font-weight="800" fill="#173d32">선택할 수 있는 기회</text>
+      <text x="382" y="759" text-anchor="middle" font-size="20" font-weight="700" fill="#8b681b">Real opportunity to choose</text>
+      <text x="382" y="804" text-anchor="middle" font-size="22" fill="#52655d">정보·교육·이동·도전의 문이</text>
+      <text x="382" y="837" text-anchor="middle" font-size="22" fill="#52655d">실제로 열려 있는 조건</text>
     </g>
 
     <g>
-      <rect x="980" y="625" width="455" height="230" rx="32" fill="#f6f0dc" stroke="#b68b24" stroke-width="4"/>
+      <rect x="980" y="625" width="475" height="245" rx="32" fill="#f6f0dc" stroke="#b68b24" stroke-width="4"/>
       <circle cx="1045" cy="693" r="29" fill="#b68b24"/>
       <text x="1045" y="702" text-anchor="middle" font-size="27" font-weight="800" fill="#fff">4</text>
-      <text x="1208" y="728" text-anchor="middle" font-size="36" font-weight="800" fill="#173d32">선택에 대한 책임</text>
-      <text x="1208" y="777" text-anchor="middle" font-size="24" fill="#52655d">스스로 내린 결정의 결과를</text>
-      <text x="1208" y="813" text-anchor="middle" font-size="24" fill="#52655d">사회 속에서 감당하는 조건</text>
+      <text x="1218" y="722" text-anchor="middle" font-size="34" font-weight="800" fill="#173d32">선택에 대한 책임</text>
+      <text x="1218" y="759" text-anchor="middle" font-size="20" font-weight="700" fill="#8b681b">Responsibility for choice</text>
+      <text x="1218" y="804" text-anchor="middle" font-size="22" fill="#52655d">스스로 내린 결정의 결과를</text>
+      <text x="1218" y="837" text-anchor="middle" font-size="22" fill="#52655d">사회 속에서 감당하는 조건</text>
     </g>
 
     <g>
-      <circle cx="800" cy="542" r="150" fill="#173d32"/>
-      <circle cx="800" cy="542" r="128" fill="none" stroke="#d9c374" stroke-width="3"/>
-      <text x="800" y="522" text-anchor="middle" font-size="28" font-weight="700" fill="#d9c374">FREEDOM</text>
-      <text x="800" y="582" text-anchor="middle" font-size="43" font-weight="900" fill="#fff">자유는 주체다</text>
+      <circle cx="800" cy="552" r="150" fill="#173d32"/>
+      <circle cx="800" cy="552" r="128" fill="none" stroke="#d9c374" stroke-width="3"/>
+      <text x="800" y="522" text-anchor="middle" font-size="27" font-weight="700" fill="#d9c374">FREEDOM</text>
+      <text x="800" y="576" text-anchor="middle" font-size="40" font-weight="900" fill="#fff">자유는 주체다</text>
+      <text x="800" y="613" text-anchor="middle" font-size="17" font-weight="700" fill="#dce9e3">FREEDOM AS SUBJECTHOOD</text>
     </g>
   </g>
 </svg>
