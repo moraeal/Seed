@@ -15,6 +15,9 @@ const ENVIRONMENT_HERO = "images/seed-language/environment-shared-condition-hero
 const ENVIRONMENT_FEATURE_SLUG = "environment-shared-condition";
 const ENVIRONMENT_DEEP_READ_SLUG = "environment-beyond-camps-deep-read";
 
+const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
+const imageKey = (src: string) => imageSrc(src).replace(/#.*$/, "").replace(/\?.*$/, "");
+
 export default function SeedLanguageDetail() {
   const { slug = "" } = useParams();
   const { language } = useLanguage();
@@ -44,6 +47,17 @@ export default function SeedLanguageDetail() {
       : "The environment is not nature isolated behind a boundary. It is the lived condition created together by civic life, cities, industry, water and energy.",
     credit: ko ? "씨앗의 소리 AI 제작 이미지" : "AI image produced by SEED VOICE",
   } : article.heroImage;
+
+  const seenImages = new Set([imageKey(heroImage.src)]);
+  const bodyImages = [
+    ...(article.inlineImage ? [{ ...article.inlineImage, afterSection: article.inlineImageAfterSection ?? Math.min(6, article.sections.length - 1) }] : []),
+    ...(article.additionalImages ?? []),
+  ].filter((image) => {
+    const key = imageKey(image.src);
+    if (seenImages.has(key)) return false;
+    seenImages.add(key);
+    return true;
+  });
 
   return <article className="bg-paper">
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
@@ -76,17 +90,17 @@ export default function SeedLanguageDetail() {
       <div className="reading-column mt-10">
         <aside className="border-l-4 border-gold bg-green-pale px-6 py-6 sm:px-8"><span className="section-kicker">{ko ? "핵심 요약" : "KEY POINTS"}</span><ul className="mt-4 space-y-3">{article.keyPoints.map((point) => <li key={point} className="flex gap-3 text-sm font-semibold leading-7 text-navy"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold"/><span>{point}</span></li>)}</ul></aside>
 
-
         {article.sections.map((section, index) => <section id={`article-section-${index + 1}`} key={section.title} className={`article-section scroll-mt-28 ${isLongRead ? "article-section-long" : ""}`}>
           <h2 className="article-section-title">{section.title}</h2>
           {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>)}
+          {section.quote && <blockquote className="my-7 border-l-4 border-gold bg-green-pale px-5 py-5 text-lg font-bold leading-8 text-green-deep sm:px-6 sm:text-xl">{section.quote.map((line, lineIndex) => <span key={`${lineIndex}-${line}`} className="block">{line}</span>)}</blockquote>}
           {section.sourceIndices && <ul className="mt-4 space-y-2 border-l-2 border-green-deep/20 pl-4">{section.sourceIndices.map((sourceIndex) => article.sources?.[sourceIndex]).filter((source) => Boolean(source)).map((source) => source && <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="text-sm leading-6 text-green-deep underline underline-offset-4">{source.label}</a></li>)}</ul>}
           {(article.charts ?? (article.chart ? [article.chart] : [])).filter((chart) => index === chart.afterSection).map((chart, chartIndex) => <figure key={chart.title} className="my-9 border-y-2 border-green-deep bg-white" aria-labelledby={`comparison-${index}-${chartIndex}`}>
             <figcaption id={`comparison-${index}-${chartIndex}`} className="px-4 py-5 text-lg font-bold leading-7 text-navy sm:px-6">{chart.title}</figcaption>
             <div className="overflow-x-auto" tabIndex={0} role="region" aria-label={chart.title}><table className="w-full min-w-[300px] table-fixed border-collapse text-left text-sm leading-6"><thead className="bg-green-deep text-white"><tr>{chart.headers.map((header, column) => <th scope="col" key={header} className={`${column === 0 ? "w-[20%]" : "w-[40%]"} px-3 py-4 align-top font-bold sm:px-5`}>{header}</th>)}</tr></thead><tbody>{chart.rows.map((row) => <tr key={row[0]} className="border-b border-green-deep/15 odd:bg-green-pale/40"><th scope="row" className="px-3 py-4 align-top font-bold text-navy sm:px-5">{row[0]}</th><td className="px-3 py-4 align-top text-charcoal/80 sm:px-5">{row[1]}</td><td className="px-3 py-4 align-top text-green-deep sm:px-5">{row[2]}</td></tr>)}</tbody></table></div>
             <p className="px-4 py-4 text-sm leading-6 text-charcoal/65 sm:px-6">{chart.note}</p>
           </figure>)}
-          {index === Math.min(article.inlineImageAfterSection ?? 6, article.sections.length - 1) && article.inlineImage && <InteractiveFigure src={article.inlineImage.src} alt={article.inlineImage.alt} caption={article.inlineImage.caption} credit={article.inlineImage.credit} figureClassName="my-8 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName="aspect-[16/9] w-full object-cover" />}
+          {bodyImages.filter((image) => index === image.afterSection).map((image) => <InteractiveFigure key={imageKey(image.src)} src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} figureClassName="my-8 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName={"contain" in image && image.contain ? "block h-auto w-full bg-white object-contain" : "aspect-[16/9] w-full object-cover"} />)}
           {article.showTableOfContents && <a href="#article-contents" className="mt-4 inline-block text-sm font-semibold text-green-deep underline underline-offset-4">{ko ? "목차로 돌아가기" : "Back to contents"}</a>}
         </section>)}
 
