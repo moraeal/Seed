@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Korea's 2025 suicide-prevention budget and civil-society partnership funding</title>
+  <desc id="desc">Of the government's KRW 56.2 billion suicide-prevention budget, about KRW 500 million, or 0.89 percent, was assigned to the identified civil-society grant program.</desc>
+  <rect width="1200" height="760" fill="#f7f4ea"/>
+  <text x="80" y="92" fill="#173f35" font-family="Arial, sans-serif" font-size="26" font-weight="700">KOREA · 2025 SUICIDE-PREVENTION BUDGET</text>
+  <text x="80" y="145" fill="#152b3a" font-family="Arial, sans-serif" font-size="44" font-weight="800">Less than 1% for partnership</text>
+  <text x="80" y="190" fill="#52615d" font-family="Arial, sans-serif" font-size="21">Government-wide spending compared with the identified civil-society grant program</text>
+
+  <rect x="80" y="255" width="1040" height="118" rx="14" fill="#235f4c"/>
+  <text x="110" y="306" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="700">Government suicide-prevention budget</text>
+  <text x="110" y="350" fill="#ffffff" font-family="Arial, sans-serif" font-size="38" font-weight="800">KRW 56.2 billion</text>
+
+  <rect x="80" y="424" width="1040" height="118" rx="14" fill="#e4ded0"/>
+  <rect x="80" y="424" width="9.25" height="118" rx="4" fill="#c78a2c"/>
+  <text x="110" y="475" fill="#152b3a" font-family="Arial, sans-serif" font-size="24" font-weight="700">Civil-society partnership grant program</text>
+  <text x="110" y="519" fill="#152b3a" font-family="Arial, sans-serif" font-size="38" font-weight="800">About KRW 500 million</text>
+  <text x="920" y="503" fill="#a35d16" font-family="Arial, sans-serif" font-size="42" font-weight="800">0.89%</text>
+
+  <line x1="80" y1="608" x2="1120" y2="608" stroke="#c9c3b4"/>
+  <text x="80" y="654" fill="#173f35" font-family="Arial, sans-serif" font-size="25" font-weight="700">The government-wide budget rose to KRW 70.8 billion in 2026.</text>
+  <text x="80" y="696" fill="#52615d" font-family="Arial, sans-serif" font-size="18">The 0.89% comparison uses figures from the same year: KRW 56.2bn and about KRW 500m in 2025.</text>
+  <text x="80" y="726" fill="#6c7773" font-family="Arial, sans-serif" font-size="16">Sources: Ministry of Health and Welfare and KFSP disclosures · Graphic: SEED VOICE</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">2025년 자살예방 예산과 민관협력 공모사업 비교</title>
+  <desc id="desc">정부 자살예방 예산 562억 원 가운데 민관협력 공모사업은 약 5억 원으로 0.89퍼센트였다.</desc>
+  <rect width="1200" height="760" fill="#f7f4ea"/>
+  <text x="80" y="92" fill="#173f35" font-family="Arial, Noto Sans KR, sans-serif" font-size="26" font-weight="700">2025 자살예방 예산</text>
+  <text x="80" y="145" fill="#152b3a" font-family="Arial, Noto Sans KR, sans-serif" font-size="46" font-weight="800">민관협력은 1%도 되지 않았다</text>
+  <text x="80" y="190" fill="#52615d" font-family="Arial, Noto Sans KR, sans-serif" font-size="21">정부 전체 예산과 민관협력 공모사업의 확인 가능한 규모 비교</text>
+
+  <rect x="80" y="255" width="1040" height="118" rx="14" fill="#dce9e1"/>
+  <rect x="80" y="255" width="1040" height="118" rx="14" fill="#235f4c"/>
+  <text x="110" y="306" fill="#ffffff" font-family="Arial, Noto Sans KR, sans-serif" font-size="24" font-weight="700">정부 자살예방 예산</text>
+  <text x="110" y="350" fill="#ffffff" font-family="Arial, Noto Sans KR, sans-serif" font-size="38" font-weight="800">562억 원</text>
+
+  <rect x="80" y="424" width="1040" height="118" rx="14" fill="#e4ded0"/>
+  <rect x="80" y="424" width="9.25" height="118" rx="4" fill="#c78a2c"/>
+  <text x="110" y="475" fill="#152b3a" font-family="Arial, Noto Sans KR, sans-serif" font-size="24" font-weight="700">민관협력 자살예방 공모사업</text>
+  <text x="110" y="519" fill="#152b3a" font-family="Arial, Noto Sans KR, sans-serif" font-size="38" font-weight="800">약 5억 원</text>
+  <text x="920" y="503" fill="#a35d16" font-family="Arial, Noto Sans KR, sans-serif" font-size="42" font-weight="800">0.89%</text>
+
+  <line x1="80" y1="608" x2="1120" y2="608" stroke="#c9c3b4"/>
+  <text x="80" y="654" fill="#173f35" font-family="Arial, Noto Sans KR, sans-serif" font-size="25" font-weight="700">2026년 정부 자살예방 예산은 708억 원으로 확대됐다.</text>
+  <text x="80" y="696" fill="#52615d" font-family="Arial, Noto Sans KR, sans-serif" font-size="18">비율은 같은 연도인 2025년 정부 예산 562억 원과 민관협력 공모 약 5억 원을 비교해 계산했다.</text>
+  <text x="80" y="726" fill="#6c7773" font-family="Arial, Noto Sans KR, sans-serif" font-size="16">자료: 보건복지부·한국생명존중희망재단 공개자료 / 구성: 씨앗의 소리</text>
+</svg>
