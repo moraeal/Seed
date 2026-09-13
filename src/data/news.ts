@@ -4,6 +4,106 @@ import type { NewsArticle as ArchiveNewsArticle, NewsImage } from "./newsArchive
 export type { NewsImage, NewsSection, NewsSource, NewsVideo, SelectedNews } from "./newsArchive";
 export type NewsArticle = ArchiveNewsArticle & { additionalImages?: NewsImage[] };
 
+const nationalDebtRatioGdpComparisonArticle: NewsArticle = {
+  slug: "national-debt-ratio-gdp-comparison",
+  issue: 13,
+  category: "재정·통계·국가책임",
+  date: "2026-09-13",
+  readMinutes: 5,
+  title: "나랏빚 106조 늘었는데 채무비율은 하락?",
+  subtitle: "정부는 국가채무비율이 51.6%에서 48.3%로 낮아진다고 홍보했습니다. 그러나 올해에는 과거 GDP 전망을, 내년에는 최신 전망을 사용했습니다. 같은 기준으로 비교하면 결론은 반대로 바뀝니다.",
+  summary: "정부가 제시한 수치 자체는 각각의 계산 안에서 성립합니다. 문제는 서로 다른 시점의 명목 GDP 전망으로 산출한 두 비율을 같은 기준인 것처럼 비교했다는 점입니다. 올해에도 최신 GDP 전망을 적용하면 국가채무비율은 46.9%가 되고, 내년 48.3%는 하락이 아니라 1.4%포인트 상승입니다. 통계는 숫자만 맞아서는 안 됩니다. 비교 기준까지 정직해야 합니다.",
+  keySentence: "계산식을 숨기지 않았다는 것만으로는 충분하지 않습니다. 정부는 국민을 통계로 미혹시키지 말아야 합니다.",
+  selectedNews: {
+    outlet: "KBS 뉴스",
+    publishedAt: "2026.09.01",
+    headline: "내년 예산 820.9조 역대 최대 편성…미래·청년에 집중",
+    url: "https://www.youtube.com/watch?v=fXfqzCqEw8U",
+    linkLabel: "KBS 뉴스 영상 보기",
+    thumbnailUrl: "https://i.ytimg.com/vi/fXfqzCqEw8U/hqdefault.jpg",
+    thumbnailAlt: "2027년도 예산안의 총지출과 미래대응기금을 설명하는 KBS 뉴스 영상 화면",
+    thumbnailCaption: "정부의 2027년도 예산안과 미래대응기금 설명을 담은 KBS 보도입니다. 화면을 누르면 영상을 바로 볼 수 있습니다.",
+    thumbnailYoutubeId: "fXfqzCqEw8U",
+    thumbnailPlacement: "after-summary",
+    thumbnailFallbackUrl: "/images/brand/editorial-image-fallback.svg",
+    summary: [
+      "정부가 편성한 2027년도 총지출은 820조9천억 원으로, 2026년 본예산보다 93조 원 늘어난 역대 최대 규모입니다.",
+      "162조3천억 원의 미래대응기금 가운데 45조4천억 원은 사업에 쓰고 104조4천억 원은 여유자금으로 적립한다는 계획입니다.",
+      "국가채무 총액은 1,519조8천억 원으로 늘지만, 정부는 GDP 대비 국가채무비율이 51.6%에서 48.3%로 낮아진다고 설명했습니다."
+    ]
+  },
+  heroImage: {
+    src: "/images/briefings/briefing-05-budget-ledger.webp",
+    alt: "국가 예산과 채무 구조를 상징하는 예산 장부 이미지",
+    caption: "국가채무 총액과 GDP 대비 비율은 같은 기준에서 함께 살펴봐야 합니다.",
+    credit: "씨앗의 소리 자료 이미지"
+  },
+  inlineImage: {
+    src: "/images/news/national-debt-gdp-comparison-ko.svg",
+    alt: "정부가 제시한 국가채무비율 비교와 최신 GDP를 동일하게 적용한 비교를 나란히 보여주는 도표",
+    caption: "올해와 내년에 같은 시점의 GDP 전망을 적용하면 국가채무비율은 하락이 아니라 상승으로 바뀝니다.",
+    credit: "씨앗의 소리 정리 · 자료: 기획예산처, 한국은행 전망을 인용한 매일경제 분석"
+  },
+  sections: [
+    {
+      title: "국가채무는 늘어나는데 비율은 낮아집니다",
+      paragraphs: [
+        "정부는 2027년도 예산안을 발표하며 총지출을 820조9천억 원으로 편성했습니다. 올해 본예산보다 12.8% 늘어난 역대 최대 규모입니다. 162조3천억 원의 미래대응기금도 새로 만들겠다고 밝혔습니다.",
+        "정부가 특히 강조한 숫자는 국가채무비율입니다. 정부 발표에 따르면 GDP 대비 국가채무비율은 2026년 51.6%에서 2027년 48.3%로 3.3%포인트 낮아집니다. 그러나 국가채무 총액은 1,413조8천억 원에서 1,519조8천억 원으로 106조 원 증가합니다.",
+        "빚이 늘더라도 경제 규모가 더 빠르게 커지면 GDP 대비 비율은 낮아질 수 있습니다. 따라서 채무 총액이 늘고 비율이 낮아진다는 사실만으로 통계가 잘못됐다고 말할 수는 없습니다. 문제는 두 비율을 계산하는 데 사용한 GDP 전망의 기준이 서로 다르다는 데 있습니다."
+      ]
+    },
+    {
+      title: "올해는 과거 GDP, 내년은 최신 GDP를 썼습니다",
+      paragraphs: [
+        "매일경제가 김우철 한국재정학회장의 분석을 인용해 보도한 내용에 따르면, 정부가 2026년 국가채무비율 51.6%를 계산할 때 사용한 명목 GDP는 약 2,740조 원입니다. 지난해 예산을 편성할 당시 예상했던 수치입니다.",
+        "이후 반도체 호황 등의 영향으로 한국은행의 2026년 명목 GDP 전망은 약 3,015조 원으로 높아졌습니다. 하지만 정부는 내년과 비교할 올해 비율에는 기존의 낮은 GDP 전망을 그대로 두었습니다. 반면 2027년 국가채무비율 48.3%에는 최근 전망한 명목 GDP 약 3,147조 원을 적용했습니다.",
+        "쉽게 말하면 올해에는 과거에 예상한 작은 GDP를, 내년에는 최근에 예상한 큰 GDP를 사용한 것입니다. 그러면 올해 비율은 상대적으로 높게 나오고 내년 비율은 낮아 보입니다."
+      ]
+    },
+    {
+      title: "같은 기준으로 비교하면 결론이 반대입니다",
+      paragraphs: [
+        "김우철 교수는 올해에도 최신 명목 GDP 전망치 3,015조 원을 적용해야 두 해의 변화를 제대로 비교할 수 있다고 지적했습니다. 이 기준으로 계산하면 2026년 국가채무비율은 51.6%가 아니라 약 46.9%가 됩니다.",
+        "그렇다면 2027년 48.3%는 올해보다 3.3%포인트 하락하는 것이 아니라 약 1.4%포인트 상승합니다. 정부 계산과 김 교수의 계산은 각자 사용한 숫자 안에서는 성립하지만, 어떤 기준을 선택하느냐에 따라 재정이 개선됐다는 결론과 악화됐다는 결론이 뒤바뀝니다.",
+        "정부는 2026년 수치가 당시 예산을 편성할 때 사용한 공식 전망이고, 2027년 수치는 새 예산안을 위한 전망이라고 설명할 수 있습니다. 행정적으로 두 수치가 만들어진 과정에는 이유가 있을 것입니다. 그러나 이를 한 줄에 놓고 51.6%에서 48.3%로 낮아진다고 홍보하려면 기준의 차이도 같은 크기로 알려야 합니다."
+      ]
+    },
+    {
+      title: "미래대응기금의 104조 원도 설명해야 합니다",
+      paragraphs: [
+        "이번 국가채무 증가에는 새로 만드는 미래대응기금도 관련돼 있습니다. 정부는 162조3천억 원 가운데 45조4천억 원을 청년·성장동력·지방·교육과 인재 분야에 투자하고, 12조5천억 원은 국채 신규발행을 줄이는 데 활용한다고 설명했습니다. 나머지 104조4천억 원은 여유자금으로 적립할 계획입니다.",
+        "김우철 교수는 이 여유자금이 내년도 국가채무 증가액과 거의 비슷하다며 사실상 빚을 늘려 기금에 돈을 쌓는 구조라고 비판했습니다. 정부는 반도체 호황기에 생긴 추가세수를 미래 위기에 대비해 남겨 두는 장치라고 설명합니다.",
+        "미래를 대비하는 기금이 필요할 수 있습니다. 그러나 왜 지금 104조4천억 원을 적립해야 하는지, 어디에 운용하는지, 국회의 통제와 성과평가를 어떻게 받을지는 별도로 검증해야 합니다. 좋은 목적이 큰 돈의 설명 책임을 면제하지는 않습니다."
+      ]
+    },
+    {
+      title: "국민을 통계로 미혹시키지 마십시오",
+      paragraphs: [
+        "이번 사안을 곧바로 통계조작이라고 단정할 근거는 아직 없습니다. 허위 숫자를 만들었다고 확인된 것도 아닙니다. 그러나 숫자가 거짓이 아니라고 해서 그 숫자를 이용한 설명까지 언제나 진실한 것은 아닙니다.",
+        "서로 다른 비교 기준을 사용하면 나빠진 것도 좋아진 것처럼 보일 수 있습니다. 국가채무비율이 낮아진다는 문구를 앞세우려면 채무 총액이 106조 원 늘어난다는 사실, 올해와 내년에 적용한 GDP 전망이 다르다는 사실, 같은 기준으로 계산하면 비율이 상승한다는 분석도 함께 밝혀야 합니다.",
+        "정부 통계는 정책을 돋보이게 하는 장식이 아닙니다. 국민이 나라살림을 판단하고 미래 부담을 가늠하기 위한 공공재입니다. 계산식을 숨기지 않았다는 것만으로는 충분하지 않습니다. 숫자뿐 아니라 비교 기준까지 정직해야 합니다. 정부는 국민을 통계로 미혹시키지 말아야 합니다."
+      ]
+    }
+  ],
+  watchPoints: [
+    "정부가 최신 명목 GDP 전망을 적용한 2026년 국가채무비율도 함께 공개하는가",
+    "국회 심사에서 국가채무 총액과 이자비용, GDP 대비 비율을 같은 기준으로 비교하는가",
+    "미래대응기금 104조4천억 원의 운용처와 국회 통제, 성과평가 방식을 공개하는가",
+    "기획예산처가 GDP 전망 기준이 다르다는 지적에 어떤 근거로 설명하거나 수치를 보완하는가"
+  ],
+  seedPerspective: [
+    "재정지표는 복잡하기 때문에 정부의 설명 책임이 더 큽니다. 시민이 계산식과 전망 시점을 모두 찾아보지 않아도 재정의 실제 방향을 이해할 수 있도록 같은 기준의 숫자를 나란히 제시해야 합니다.",
+    "국가채무를 무조건 줄여야 한다는 뜻은 아닙니다. 경제 위기와 미래 투자에는 재정이 필요할 수 있습니다. 그러나 지출의 필요성을 주장하는 일과 재정 상태가 개선됐다고 홍보하는 일은 구분해야 합니다.",
+    "통계는 정부의 성적표이지 정부가 작성하는 홍보문이 아닙니다. 유리한 비율만 보여주지 말고 그 비율을 만든 분모와 전제, 불리한 절대액까지 함께 공개해야 시민이 스스로 판단할 수 있습니다."
+  ],
+  sources: [
+    { label: "KBS 뉴스 — 내년 예산 820.9조 역대 최대 편성…미래·청년에 집중", url: "https://www.youtube.com/watch?v=fXfqzCqEw8U" },
+    { label: "대한민국 정책브리핑 — 내년 예산안 820.9조 원, 역대 최대…162조 미래대응기금 신설", url: "https://www.korea.kr/news/policyNewsView.do?newsId=148970973" },
+    { label: "매일경제 — 나랏빚 106조 늘었는데 재정 좋아졌다?…국가채무비율에 숨은 GDP 착시", url: "https://www.mk.co.kr/news/economy/12151012" }
+  ]
+};
+
 const localSportsSubsidyArticle: NewsArticle = {
   slug: "local-sports-subsidy-accountability",
   issue: 11,
@@ -288,7 +388,7 @@ const mediaAppealJusticeArticle: NewsArticle = {
   ]
 };
 
-export const newsArticles: NewsArticle[] = [mediaAppealJusticeArticle, localSportsSubsidyArticle, lhSplitPublicAgencyArticle, ...archivedNewsArticles];
+export const newsArticles: NewsArticle[] = [nationalDebtRatioGdpComparisonArticle, mediaAppealJusticeArticle, localSportsSubsidyArticle, lhSplitPublicAgencyArticle, ...archivedNewsArticles];
 
 export const getNewsNewestFirst = () => [...newsArticles].sort((a, b) => b.date.localeCompare(a.date));
 export const getNewsArticle = (slug: string) => newsArticles.find((article) => article.slug === slug);
