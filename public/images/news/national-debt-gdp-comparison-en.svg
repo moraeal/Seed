@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f5f0e4"/>
+  <rect x="48" y="42" width="1104" height="591" rx="10" fill="#fffdf8" stroke="#174c3a" stroke-width="2"/>
+  <g font-family="Arial, sans-serif">
+    <text x="92" y="105" fill="#13263b" font-size="38" font-weight="800">Same debt, different GDP basis—opposite story</text>
+    <text x="92" y="144" fill="#59645f" font-size="20">National debt: KRW 1,413.8tn in 2026 → KRW 1,519.8tn in 2027</text>
+    <line x1="600" y1="184" x2="600" y2="547" stroke="#d7d5cc" stroke-width="2"/>
+    <text x="102" y="226" fill="#174c3a" font-size="24" font-weight="800">Government presentation</text>
+    <text x="650" y="226" fill="#174c3a" font-size="24" font-weight="800">Latest-GDP comparison</text>
+    <text x="102" y="286" fill="#13263b" font-size="25" font-weight="700">2026</text>
+    <text x="102" y="346" fill="#13263b" font-size="52" font-weight="900">51.6%</text>
+    <text x="102" y="383" fill="#67716c" font-size="19">Older GDP forecast: ~KRW 2,740tn</text>
+    <text x="397" y="337" fill="#ad3f32" font-size="58" font-weight="900">→</text>
+    <text x="469" y="286" fill="#13263b" font-size="25" font-weight="700">2027</text>
+    <text x="438" y="346" fill="#13263b" font-size="52" font-weight="900">48.3%</text>
+    <text x="350" y="439" fill="#ad3f32" font-size="27" font-weight="800">Down 3.3pp</text>
+    <text x="650" y="286" fill="#13263b" font-size="25" font-weight="700">2026</text>
+    <text x="650" y="346" fill="#13263b" font-size="52" font-weight="900">46.9%</text>
+    <text x="650" y="383" fill="#67716c" font-size="19">Latest GDP outlook: ~KRW 3,015tn</text>
+    <text x="930" y="337" fill="#c29222" font-size="58" font-weight="900">→</text>
+    <text x="1000" y="286" fill="#13263b" font-size="25" font-weight="700">2027</text>
+    <text x="958" y="346" fill="#13263b" font-size="52" font-weight="900">48.3%</text>
+    <text x="880" y="439" fill="#ad3f32" font-size="27" font-weight="800">Up 1.4pp</text>
+    <rect x="92" y="494" width="1016" height="84" rx="8" fill="#174c3a"/>
+    <text x="600" y="546" text-anchor="middle" fill="#fff" font-size="25" font-weight="800">Honest statistics require an honest basis of comparison</text>
+    <text x="1098" y="612" text-anchor="end" fill="#68716d" font-size="15">SEED VOICE · 2026.09.13</text>
+  </g>
+</svg>
