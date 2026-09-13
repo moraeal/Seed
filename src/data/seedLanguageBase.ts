@@ -18,6 +18,8 @@ export type SeedLanguageArticle = {
   newsletterEligible?: boolean;
   /** Set to false when an article intentionally yields the home hero to a closely related news story. */
   homeHeroEligible?: boolean;
+  /** Set to false for a permanent editorial guide that should not appear in ordinary article lists. */
+  listingEligible?: boolean;
   title: string;
   subtitle: string;
   summary: string;
