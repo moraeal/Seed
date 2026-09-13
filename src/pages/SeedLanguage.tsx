@@ -12,7 +12,7 @@ export default function SeedLanguage() {
   const { language } = useLanguage();
   const ko = language === "ko";
   const articleIndex = [...seedLanguageEnvironmentArticlesKo, ...seedLanguageArticlesKo]
-    .filter((item) => item.readMinutes < 12)
+    .filter((item) => item.listingEligible !== false && item.readMinutes < 12)
     .sort((a, b) => b.date.localeCompare(a.date));
   const articles = articleIndex
     .map((item) => getSeedLanguageEnvironmentArticle(item.slug, language) ?? getSeedLanguageArticle(item.slug, language))
@@ -35,21 +35,44 @@ export default function SeedLanguage() {
               </div>
             </div>
           </div>
-          <p className="mt-5 max-w-3xl border-l-2 border-gold pl-6 text-lg leading-8 text-charcoal/70 sm:text-xl">
-            {ko ? "진영이 독점한 시민사회의 언어를 해체하고, 본래의 의미를 되살려 시민이 스스로 생각하고 말할 수 있는 씨앗의 언어로 다시 구성합니다." : "We will examine civic language captured by partisan camps, recover its original meaning, and rebuild it as a language citizens can use to think and speak for themselves."}
-          </p>
+          <div className="mt-5 max-w-5xl border-l-2 border-gold pl-6 text-base leading-7 text-charcoal/70 sm:text-lg sm:leading-8">
+            {ko ? (
+              <>
+                <p>진영과 온라인의 언어는 시민을 이해하기보다 편으로 나누고, 좋은 가치마저 질문하기 어려운 구호로 만듭니다.</p>
+                <p>씨앗언어는 익숙한 말과 새로 생긴 말에 숨은 전제와 권력을 드러냅니다.</p>
+                <p>사람을 적으로 규정하지 않고 문제를 근거·비용·결과·책임으로 판단하도록 시민에게 언어를 돌려줍니다.</p>
+              </>
+            ) : (
+              <>
+                <p>Political and online language can divide citizens into camps instead of helping us understand one another, turning even worthy values into slogans that resist questions.</p>
+                <p>SEED Language examines both partisan vocabulary and emerging expressions to reveal the assumptions and power embedded within them.</p>
+                <p>It returns language to citizens so they can judge problems through evidence, cost, outcomes and responsibility rather than treating people as enemies.</p>
+              </>
+            )}
+          </div>
         </div>
       </header>
 
       <main className="container-page max-w-5xl py-8 sm:py-10">
         <section className="overflow-hidden border-y-2 border-green-deep bg-white">
-          <div className="p-5 sm:p-6">
-            <Quote size={26} className="text-gold" />
-            <div className="mt-4 space-y-4 text-base leading-8 text-charcoal/70">
-              <p>{ko ? "자유, 민주주의, 공익, 시민사회처럼 모두의 것이어야 할 말들이 특정 진영의 구호와 정체성을 나타내는 언어로 굳어졌습니다. 익숙한 단어를 그대로 사용하면서도 우리는 그 안에 어떤 전제와 권력이 숨어 있는지 충분히 묻지 못했습니다." : "Words such as freedom, democracy, public interest, and civil society should belong to everyone. Yet many have hardened into slogans and identity markers claimed by particular political camps."}</p>
-              <p className="font-semibold text-navy">{ko ? "씨앗언어는 진영화된 말의 쓰임을 살피고, 왜곡되거나 잊힌 본래 의미를 찾아 시민의 삶과 책임에 맞는 새로운 정의를 제안하는 작업이 될 것입니다." : "SEED Language will examine how such words became partisan, recover meanings that were distorted or forgotten, and propose definitions grounded in citizens’ lives and responsibilities."}</p>
+          <Link to="/seed-language/words-turn-citizens-into-enemies" className="group block p-5 transition-colors hover:bg-green-pale/45 sm:p-6">
+            <div className="flex items-start justify-between gap-5">
+              <div>
+                <Quote size={26} className="text-gold" />
+                <p className="mt-4 text-[11px] font-extrabold tracking-[.14em] text-green-deep">{ko ? "씨앗언어가 필요한 이유" : "WHY SEED LANGUAGE MATTERS"}</p>
+                <h2 className="editorial-title mt-2 text-[1.45rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.8rem]">
+                  {ko ? "말이 시민을 적으로 만든다" : "When Words Turn Citizens into Enemies"}
+                </h2>
+                <p className="mt-3 max-w-3xl text-base leading-7 text-charcoal/70 sm:leading-8">
+                  {ko ? "진영의 딱지와 신조어, 알고리즘이 시민의 판단과 관계를 어떻게 바꾸는지 살펴봅니다. 사람을 편으로 나누는 언어를 넘어, 문제를 구체적으로 묻는 시민의 언어가 왜 필요한지 설명합니다." : "This guide examines how partisan labels, new expressions and algorithms reshape civic judgment and relationships—and why citizens need language that questions problems instead of sorting people into camps."}
+                </p>
+              </div>
+              <ArrowRight size={22} className="mt-1 shrink-0 text-green-deep transition-transform group-hover:translate-x-1" />
             </div>
-          </div>
+            <div className="mt-4 flex items-center gap-2 border-t border-green-deep/10 pt-3 text-sm font-extrabold text-green-deep">
+              <span>{ko ? "설명 글 읽기" : "Read the guide"}</span><ArrowRight size={15} />
+            </div>
+          </Link>
         </section>
 
         <section className="mt-7" aria-label={ko ? "씨앗언어 콘텐츠" : "SEED Language articles"}>
