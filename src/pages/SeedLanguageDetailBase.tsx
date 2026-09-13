@@ -65,7 +65,7 @@ export default function SeedLanguageDetail() {
       </div>
     </header>
 
-    <div className="container-page max-w-4xl py-8 sm:py-11">
+    <div className="article-content-frame py-8 sm:py-11">
       {article.showTableOfContents && <nav id="article-contents" aria-labelledby="contents-title" className="mb-10 scroll-mt-28 border-t-2 border-navy bg-white px-5 py-6 sm:px-8">
         <h2 id="contents-title" className="text-xl font-extrabold text-navy">{ko ? "목차로 먼저 읽기" : "Read the argument at a glance"}</h2>
         <p className="mt-2 text-sm leading-7 text-charcoal/65">{ko ? "각 항목은 이 글의 핵심 주장입니다. 목차만 읽어 흐름을 살피거나, 궁금한 항목을 눌러 본문으로 이동할 수 있습니다." : "Each entry states a central claim. Read this outline on its own, or select a section to explore the argument."}</p>

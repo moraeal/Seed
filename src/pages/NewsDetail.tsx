@@ -51,7 +51,7 @@ export default function NewsDetail() {
       <div className="container-page max-w-5xl"><Link to="/news" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "오늘의뉴스 목록" : "Today's News"}</Link><div className="mt-3 border-t-2 border-navy pt-3"><h1 className="article-detail-title">{article.title}</h1><p className="article-summary">{article.summary}</p></div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${article.readMinutes}분` : `${article.readMinutes} min read`}</span><ShareButton title={article.title} text={article.summary} className="ml-auto" /></div></div>
     </header>
 
-    <div className="container-page max-w-4xl py-8 sm:py-12">
+    <div className="article-content-frame py-8 sm:py-12">
       {article.video && <section className="mb-12 overflow-hidden border border-green-deep/15 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]">
         <div className="px-5 py-5 sm:px-7"><span className="section-kicker">{ko ? "현장의 목소리" : "VOICE FROM THE FIELD"}</span><h2 className="mt-2 text-xl font-extrabold leading-snug text-navy sm:text-2xl">{article.video.title}</h2><p className="mt-2 text-sm leading-7 text-charcoal/65">{article.video.description}</p></div>
         <InteractiveFigure src={article.heroImage.src} alt={article.video.title} youtubeId={article.video.youtubeId} showCaption={false} figureClassName="overflow-hidden bg-black" imageClassName="aspect-video w-full object-cover" />

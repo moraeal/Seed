@@ -57,7 +57,7 @@ export default function BCorpDeepDive() {
         </div>
       </header>
 
-      <div className="container-page max-w-[50rem] py-9 sm:py-12">
+      <div className="article-content-frame py-9 sm:py-12">
         <figure className="mb-8 overflow-hidden rounded-xl border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]">
           <img src={`${import.meta.env.BASE_URL}${heroImagePath}`} alt="시민들이 기업의 사회적 성과와 신뢰 정보를 확인하고 동네 가게를 선택하는 상징 이미지" className="aspect-[16/9] w-full object-cover" loading="eager" decoding="async" />
           <figcaption className="border-t border-green-deep/10 px-4 py-3 text-xs leading-5 text-charcoal/55">기업의 행동과 성과를 투명하게 공개하고 시민·소비자·투자자가 선택하는 시장을 상징적으로 표현했습니다. · 씨앗의 소리 AI 제작 이미지</figcaption>

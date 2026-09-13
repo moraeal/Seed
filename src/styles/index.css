@@ -10,6 +10,7 @@ button, input, textarea { font: inherit; }
 
 @layer components {
   .container-page { @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12; }
+  .article-content-frame { @apply mx-auto w-full max-w-4xl px-5 sm:px-8 lg:px-12; }
   .section-band { @apply py-10 sm:py-12; }
   .button-primary { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm bg-green-deep px-5 py-3 font-bold text-white transition hover:bg-green-mid focus:outline-none focus:ring-2 focus:ring-gold; }
   .button-secondary { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border border-green-deep/25 bg-transparent px-5 py-3 font-bold text-green-deep transition hover:bg-green-pale; }
@@ -35,6 +36,15 @@ button, input, textarea { font: inherit; }
   .article-section-title { @apply text-[1.4rem] font-extrabold leading-[1.35] tracking-[-.025em] text-navy sm:text-2xl; }
   .article-copy { @apply mt-3 text-[17px] leading-[1.78] tracking-[-.012em] text-charcoal/85 sm:text-lg sm:leading-[1.78]; }
   .article-copy-long { @apply mt-3.5 leading-[1.82] sm:leading-[1.82]; }
+}
+
+@media (min-width: 1280px) {
+  .article-content-frame { max-width: 68rem; }
+  .article-detail-title,
+  .article-detail-title-dark,
+  .article-detail-subtitle,
+  .article-summary,
+  .reading-column { max-width: 50rem; }
 }
 
 .editorial-title { font-family: Georgia, "Noto Serif KR", "Nanum Myeongjo", serif; letter-spacing: -0.035em; }

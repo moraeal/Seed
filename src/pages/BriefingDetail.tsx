@@ -56,7 +56,7 @@ export default function BriefingDetail() {
         </div>
       </header>
 
-      <div className="container-page max-w-4xl py-8 sm:py-12">
+      <div className="article-content-frame py-8 sm:py-12">
         {briefing.images?.[0] && renderFigure(briefing.images[0], true)}
 
         <div className="reading-column">

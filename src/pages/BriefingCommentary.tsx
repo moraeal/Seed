@@ -34,21 +34,23 @@ export default function BriefingCommentary() {
       </div>
     </header>
 
-    <div className="container-page max-w-[50rem] py-8 sm:py-11">
+    <div className="article-content-frame py-8 sm:py-11">
       {briefing.images?.[0] && renderFigure(briefing.images[0])}
-      <div>{briefing.commentary.paragraphs.map((paragraph, index) => <p key={`${index}-${paragraph.slice(0, 24)}`} className={`article-copy article-copy-long ${index === 0 ? "mt-0" : ""}`}>{paragraph}</p>)}</div>
+      <div className="reading-column">{briefing.commentary.paragraphs.map((paragraph, index) => <p key={`${index}-${paragraph.slice(0, 24)}`} className={`article-copy article-copy-long ${index === 0 ? "mt-0" : ""}`}>{paragraph}</p>)}</div>
       {briefing.commentary.sections?.map((section, index) => <div key={`${index}-${section.title}`}>
-        <section className="article-section article-section-long">
+        <section className="article-section article-section-long reading-column">
           <h2 className="article-section-title">{section.title}</h2>
           <div>{section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className="article-copy article-copy-long">{paragraph}</p>)}</div>
         </section>
         {index === 4 && briefing.images?.[2] && renderFigure(briefing.images[2])}
         {index === 6 && briefing.images?.[1] && renderFigure(briefing.images[1])}
       </div>)}
-      {briefing.quote && <blockquote className="mt-8 rounded-xl bg-green-pale p-6 text-lg font-bold leading-8 text-green-deep sm:p-7 sm:text-xl">“{briefing.quote}”</blockquote>}
-      <div className="mt-7 flex flex-wrap gap-3"><Link to={`/briefings/${briefing.slug}`} className="button-secondary"><ArrowLeft size={16} />{ko ? "대표보기로 돌아가기" : "Back to the briefing"}</Link>{briefing.pdfPath && <a href={`${import.meta.env.BASE_URL}${briefing.pdfPath}`} download className="button-primary"><Download size={16} />{ko ? "PDF 원문 내려받기" : "Download PDF"}</a>}</div>
-      <ContentAccountability postSlug={`${briefing.slug}-commentary`} publishedDate={briefing.date} />
-      <CommentSection postSlug={`${briefing.slug}-commentary`} />
+      {briefing.quote && <blockquote className="reading-column mt-8 rounded-xl bg-green-pale p-6 text-lg font-bold leading-8 text-green-deep sm:p-7 sm:text-xl">“{briefing.quote}”</blockquote>}
+      <div className="reading-column mt-7 flex flex-wrap gap-3"><Link to={`/briefings/${briefing.slug}`} className="button-secondary"><ArrowLeft size={16} />{ko ? "대표보기로 돌아가기" : "Back to the briefing"}</Link>{briefing.pdfPath && <a href={`${import.meta.env.BASE_URL}${briefing.pdfPath}`} download className="button-primary"><Download size={16} />{ko ? "PDF 원문 내려받기" : "Download PDF"}</a>}</div>
+      <div className="reading-column">
+        <ContentAccountability postSlug={`${briefing.slug}-commentary`} publishedDate={briefing.date} />
+        <CommentSection postSlug={`${briefing.slug}-commentary`} />
+      </div>
     </div>
   </article>;
 }
