@@ -12,7 +12,7 @@ const copy = {
       {
         title: "더 많은 정보, 더 적은 판단",
         paragraphs: [
-          "기존 언론이 정보와 의제를 독점하던 시대가 저물고 유튜브와 1인 미디어의 시대가 열렸습니다. 누구나 말할 수 있게 되었고, 누구나 세상에 자신의 콘텐츠를 내놓을 수 있게 되었습니다.",
+          "기존 언론이 정보와 의제를 독점하던 시대가 저물고 유튜브와 개인 미디어의 시대가 열렸습니다. 누구나 말할 수 있게 되었고, 누구나 세상에 자신의 콘텐츠를 내놓을 수 있게 되었습니다.",
           "그러나 우리는 정말 더 자유롭게 생각하게 되었을까요. 알고리즘을 타고 밀려오는 자극적인 정보를 끊임없이 받아들이며, 어느 순간 다른 사람의 주장과 분노를 내 생각이라고 착각합니다. 많이 보고 듣지만 시민으로서 꼭 알아야 할 것이 무엇인지는 더욱 분간하기 어려워졌습니다.",
           "정치권력과 시민사회, 공익기관 사이의 경계도 흐려지고 있습니다. 서로를 감시해야 할 기관들이 때로는 서로를 감싸고, 그 관계는 ‘친절한 국가’와 ‘공익’이라는 이름으로 우리의 일상에 들어옵니다. 우리는 세상을 비판하면서도 어느 순간 그 구조에 익숙해집니다.",
         ],
@@ -28,7 +28,7 @@ const copy = {
         title: "AI가 열어준 가능성",
         paragraphs: [
           "그런 나에게 AI는 새로운 가능성을 열어주었습니다. 나를 대신해 생각한 것이 아니라, 내가 무엇을 생각하고 있었는지 더 분명하게 바라보도록 도왔습니다. 흩어진 생각을 정리하고 부족한 자료를 보완하면서, 막연했던 문제의식은 글과 콘텐츠로 자라기 시작했습니다.",
-          "씨앗의 소리는 그렇게 시작되었습니다. 코딩이나 웹 개발을 배운 적 없는 한 사람이 AI와 함께 만든 독립 시민미디어입니다. 나는 질문과 판단을 세우고, AI는 자료 조사와 구조화, 사실관계의 교차검토를 돕습니다. 무엇을 질문하고 어떻게 판단할 것인지, 그 결과에 책임지는 일은 온전히 나의 몫입니다.",
+          "씨앗의 소리는 그렇게 시작되었습니다. 코딩이나 웹 개발을 배운 적 없는 한 사람의 질문과 AI의 도움으로 출발한 독립 시민미디어입니다. 나는 질문과 판단을 세우고, AI는 자료 조사와 구조화, 사실관계의 교차검토를 돕습니다. 무엇을 질문하고 어떻게 판단할 것인지, 그 결과에 책임지는 일은 온전히 나의 몫입니다.",
         ],
       },
       {
@@ -42,7 +42,7 @@ const copy = {
       {
         title: "한 사람의 씨앗에서, 더 많은 시민의 씨앗으로",
         paragraphs: [
-          "씨앗의 소리는 거대한 언론사가 아닙니다. 한 사람의 씨앗이 시작한 1인 시민미디어입니다. 그러나 작은 씨앗 하나에도 숲으로 성장할 가능성이 들어 있습니다.",
+          "씨앗의 소리는 거대한 언론사가 아닙니다. 한 사람의 질문에서 시작해 더 많은 시민의 목소리로 자라려는 독립 시민미디어입니다. 작은 씨앗 하나에도 숲으로 성장할 가능성이 들어 있습니다.",
           "AI의 도움으로 한 사람이 자신의 생각을 세우고 세상에 발언할 수 있다면, 다른 시민도 그렇게 할 수 있습니다. 전문가나 유명인만이 아니라 평범한 시민도 자신의 질문과 경험을 공적인 목소리로 발전시킬 수 있습니다.",
         ],
       },
@@ -64,7 +64,7 @@ const copy = {
       {
         title: "More information, less independent judgment",
         paragraphs: [
-          "The age in which legacy media monopolized information and the public agenda is fading. YouTube and one-person media have opened a new era in which almost anyone can speak and publish.",
+          "The age in which legacy media monopolized information and the public agenda is fading. YouTube and independent creators have opened a new era in which almost anyone can speak and publish.",
           "But has that made us freer thinkers? As algorithms deliver an endless stream of provocative fragments, we can begin to mistake someone else’s argument or anger for our own thinking. We see and hear more than ever, yet it is harder to discern what citizens truly need to know.",
           "The boundaries among political power, civil society, and public-interest institutions are also blurring. Organizations that should scrutinize one another sometimes protect one another, while their relationships enter daily life under the reassuring language of a ‘caring state’ and ‘the public good.’ We criticize these structures, yet quietly grow accustomed to them.",
         ],
@@ -80,7 +80,7 @@ const copy = {
         title: "The possibility opened by AI",
         paragraphs: [
           "AI opened a new possibility for me. It did not think in my place; it helped me see more clearly what I had been trying to think. As scattered ideas were organized and missing sources filled in, vague concerns began to grow into public writing.",
-          "That is how SEED VOICE began: an independent civic publication built by one person with no training in coding or web development, working alongside AI. I set the questions and make the judgments; AI assists with research, structure, and cross-checking. Responsibility for the result remains entirely mine.",
+          "That is how SEED VOICE began: an independent civic publication born from one person’s questions and the help of AI, without prior training in coding or web development. I set the questions and make the judgments; AI assists with research, structure, and cross-checking. Responsibility for the result remains entirely mine.",
         ],
       },
       {
@@ -94,7 +94,7 @@ const copy = {
       {
         title: "From one seed to many civic seeds",
         paragraphs: [
-          "SEED VOICE is not a large news organization. It is a one-person civic publication begun by one human seed. Yet even the smallest seed contains the possibility of a forest.",
+          "SEED VOICE is not a large news organization. It began with one person’s questions and seeks to grow through the voices of more citizens. Even the smallest seed contains the possibility of a forest.",
           "If AI can help one person organize a judgment and speak in public, others can do the same. Media need not belong only to experts or public figures; ordinary citizens can develop their questions and experience into public voices of their own.",
         ],
       },
