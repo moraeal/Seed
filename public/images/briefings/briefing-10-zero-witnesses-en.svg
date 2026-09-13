@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
   <title id="title">Nineteen of twenty-four hearings had no witnesses</title>
-  <desc id="desc">A SEED VOICE infographic showing 24 total hearings, 19 with zero witnesses, equal to 79.2 percent, based on a PSPD tally through June 2026.</desc>
+  <desc id="desc">A SEED VOICE infographic showing 24 total hearings, 19 with zero witnesses, equal to 79.2 percent, recalculated from official National Assembly records through June 2026.</desc>
   <rect width="1600" height="900" fill="#faf9f4"/>
   <line x1="533" y1="150" x2="533" y2="570" stroke="#d9ddd8" stroke-width="3"/>
   <line x1="1067" y1="150" x2="1067" y2="570" stroke="#d9ddd8" stroke-width="3"/>
@@ -14,5 +14,5 @@
   </g>
   <rect x="55" y="620" width="1490" height="150" rx="4" fill="#245c3a"/>
   <text x="800" y="716" font-family="Arial, Helvetica, sans-serif" font-size="55" font-weight="750" fill="#ffffff" text-anchor="middle">NO WITNESSES MEANS NO CROSS-EXAMINATION</text>
-  <text x="800" y="835" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="500" fill="#565d59" text-anchor="middle">PSPD tally · through June 2026</text>
+  <text x="800" y="835" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="500" fill="#565d59" text-anchor="middle">SEED VOICE audit · official National Assembly records · through June 2026</text>
 </svg>
