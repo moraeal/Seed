@@ -39,7 +39,7 @@ export default function Home() {
     ...seedLanguageEnvironmentArticlesKo.filter((item) => item.slug !== "environment-beyond-camps-deep-read"),
     ...seedLanguageArticlesKo,
   ]
-    .filter((item) => item.homeHeroEligible !== false && item.readMinutes < 12)
+    .filter((item) => item.homeHeroEligible !== false && item.listingEligible !== false && item.readMinutes < 12)
     .map((item) => getSeedLanguageEnvironmentArticle(item.slug, language) ?? getSeedLanguageArticle(item.slug, language))
     .filter((article): article is NonNullable<typeof article> => Boolean(article))
     .sort((a, b) => b.date.localeCompare(a.date))[0];
