@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">국회 공식 기록을 직접 대조한 증인 0명 청문회 집계</title>
+  <desc id="desc">씨앗의 소리가 국회 공식 기록을 후보자별로 대조한 결과, 전체 청문회 24건 가운데 19건, 79.2퍼센트가 증인 0명 청문회였습니다.</desc>
+  <rect width="1600" height="900" fill="#faf9f4"/>
+  <text x="800" y="82" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="30" font-weight="750" fill="#245c3a" text-anchor="middle">국회 공식 기록 · 24건 직접 대조</text>
+  <line x1="533" y1="150" x2="533" y2="570" stroke="#d9ddd8" stroke-width="3"/>
+  <line x1="1067" y1="150" x2="1067" y2="570" stroke="#d9ddd8" stroke-width="3"/>
+  <g font-family="Pretendard, 'Noto Sans KR', sans-serif" text-anchor="middle">
+    <text x="267" y="390" font-size="210" font-weight="800" fill="#242729">24건</text>
+    <text x="267" y="500" font-size="44" font-weight="700" fill="#4c5150">전체 청문회</text>
+    <text x="800" y="390" font-size="210" font-weight="800" fill="#d78b00">19건</text>
+    <text x="800" y="500" font-size="44" font-weight="700" fill="#4c5150">증인 0명</text>
+    <text x="1333" y="390" font-size="190" font-weight="800" fill="#245c3a">79.2%</text>
+    <text x="1333" y="500" font-size="44" font-weight="700" fill="#4c5150">비율</text>
+  </g>
+  <rect x="55" y="620" width="1490" height="150" rx="4" fill="#245c3a"/>
+  <text x="800" y="716" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="55" font-weight="750" fill="#ffffff" text-anchor="middle">증인이 없으면 교차검증도 없습니다</text>
+  <text x="800" y="835" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="28" font-weight="500" fill="#565d59" text-anchor="middle">씨앗의 소리 자체 검증 · 국회 공식 기록 대조 · 2026년 6월 기준</text>
+</svg>

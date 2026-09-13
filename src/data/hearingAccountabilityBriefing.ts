@@ -34,7 +34,7 @@ export const hearingAccountabilityBriefing: Briefing = {
       sourceUrl: "",
     },
     {
-      src: "images/briefings/briefing-10-zero-witnesses-ko.webp",
+      src: "images/briefings/briefing-10-zero-witnesses-ko.svg",
       alt: "전체 청문회 24건 가운데 증인 없는 청문회 19건, 79.2%를 보여주는 인포그래픽",
       caption: "씨앗의 소리가 2026년 6월까지 실제로 열린 국무총리·국무위원 후보자 청문회 24건의 국회 공식 기록을 후보자별로 직접 대조해 재계산한 결과입니다.",
       credit: "씨앗의 소리 자체 집계 · 국회 공식 기록 재계산",
