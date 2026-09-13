@@ -31,7 +31,7 @@ export default function SourceArticleCard({ news, compact = false, ko }: SourceA
       fallbackSrc={news.thumbnailFallbackUrl}
       figureClassName="overflow-hidden bg-green-deep"
       imageClassName="aspect-[16/9] w-full object-cover"
-      captionClassName="flex flex-col gap-1 border-t border-white/15 px-5 py-4 text-[13px] leading-6 text-white/82 sm:flex-row sm:items-start sm:justify-between sm:gap-6"
+      captionClassName="flex flex-col gap-1 border-t border-white/15 px-5 py-4 text-[13px] leading-6 text-white/90 sm:flex-row sm:items-start sm:justify-between sm:gap-6"
       captionCreditClassName="shrink-0 self-end text-right text-xs font-semibold text-white/70 sm:self-auto"
     />
   ) : (
