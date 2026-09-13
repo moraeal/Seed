@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "news:national-debt-ratio-gdp-comparison": {
+    ko: {
+      href: "/briefings/2027-national-budget-revenue-debt",
+      title: "820.9조 원 슈퍼예산, 나라살림은?",
+      relationship: "숫자 더 깊게 보기",
+      reason: "국가채무비율의 비교 기준을 확인한 뒤, 2027년 예산의 세입·지출·기금 구조를 같은 기준으로 더 자세히 살펴봅니다.",
+      listHref: "/news",
+      listLabel: "오늘의 뉴스 전체 보기",
+    },
+    en: {
+      href: "/briefings/2027-national-budget-revenue-debt",
+      title: "The KRW 820.9 Trillion Budget Test",
+      relationship: "READ THE NUMBERS",
+      reason: "After checking the GDP basis behind the debt ratio, examine the revenue, spending and fund structure of the 2027 budget in greater detail.",
+      listHref: "/news",
+      listLabel: "All Today's News",
+    },
+  },
   "column:state-cannot-monopolize-life-2026": {
     ko: {
       href: "/columns/civic-groups-are-not-state-vanguard-2026",
