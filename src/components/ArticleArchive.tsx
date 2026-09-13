@@ -2,7 +2,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export const ARTICLE_ARCHIVE_PAGE_SIZE = 20;
+export const ARTICLE_ARCHIVE_PAGE_SIZE = 10;
 export const RECENT_ARTICLE_COUNT = 5;
 
 export type ArticleArchiveItem = {
@@ -30,6 +30,8 @@ export default function ArticleArchive({ items, ko }: ArticleArchiveProps) {
 
   const start = (page - 1) * ARTICLE_ARCHIVE_PAGE_SIZE;
   const pageItems = items.slice(start, start + ARTICLE_ARCHIVE_PAGE_SIZE);
+  const firstColumnLength = Math.ceil(pageItems.length / 2);
+  const pageColumns = [pageItems.slice(0, firstColumnLength), pageItems.slice(firstColumnLength)];
 
   const movePage = (nextPage: number) => {
     setPage(nextPage);
@@ -52,25 +54,27 @@ export default function ArticleArchive({ items, ko }: ArticleArchiveProps) {
         </p>
       </div>
 
-      <div>
-        {pageItems.map((item) => (
-          <Link
-            key={item.key}
-            to={item.to}
-            className="group grid gap-2 border-b border-green-deep/15 px-1 py-5 transition-colors hover:bg-green-pale/55 sm:grid-cols-[7.5rem_1fr] sm:gap-6 sm:px-4"
-          >
-            <time className="pt-1 text-xs font-semibold tracking-wide text-charcoal/45">
-              {item.date.replace(/-/g, ".")}
-            </time>
-            <div className="min-w-0">
-              <h3 className="editorial-title line-clamp-2 text-[1.15rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-xl">
-                {item.title}
-              </h3>
-              <p className="mt-1.5 line-clamp-2 max-w-4xl text-sm leading-6 text-charcoal/60 sm:text-[0.95rem] sm:leading-7">
-                {item.summary}
-              </p>
-            </div>
-          </Link>
+      <div className="mt-4 grid gap-x-8 md:grid-cols-2">
+        {pageColumns.map((column, columnIndex) => (
+          <div key={columnIndex} className={column.length ? "border-t border-green-deep/15" : ""}>
+            {column.map((item) => (
+              <Link
+                key={item.key}
+                to={item.to}
+                className="group block border-b border-green-deep/15 px-1 py-4 transition-colors hover:bg-green-pale/55 sm:px-2"
+              >
+                <time className="text-[11px] font-semibold tracking-wide text-charcoal/40">
+                  {item.date.replace(/-/g, ".")}
+                </time>
+                <h3 className="editorial-title mt-1 line-clamp-2 text-[1.05rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-lg">
+                  {item.title}
+                </h3>
+                <p className="mt-1 line-clamp-2 text-[0.82rem] leading-5 text-charcoal/55 sm:text-sm sm:leading-6">
+                  {item.summary}
+                </p>
+              </Link>
+            ))}
+          </div>
         ))}
       </div>
 
