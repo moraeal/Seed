@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">From partisan language to civic language</title>
+  <desc id="desc">Three shifts: from sorting people into groups to defining problems, from moral verdicts to facts and responsibility, and from good intentions to costs and outcomes</desc>
+  <rect width="1600" height="900" fill="#f6f2e8"/>
+  <rect x="90" y="80" width="1420" height="740" rx="8" fill="#fff" stroke="#174c3a" stroke-width="3"/>
+  <text x="800" y="155" text-anchor="middle" fill="#102a43" font-family="Arial, sans-serif" font-size="48" font-weight="800">From partisan language to civic language</text>
+  <line x1="800" y1="205" x2="800" y2="740" stroke="#d2b15f" stroke-width="4"/>
+  <rect x="150" y="215" width="560" height="82" rx="6" fill="#102a43"/>
+  <rect x="890" y="215" width="560" height="82" rx="6" fill="#174c3a"/>
+  <text x="430" y="268" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="31" font-weight="800">PARTISAN LANGUAGE</text>
+  <text x="1170" y="268" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="31" font-weight="800">CIVIC LANGUAGE</text>
+  <g font-family="Arial, sans-serif" font-size="27">
+    <rect x="150" y="345" width="560" height="105" rx="6" fill="#eef1f3"/><text x="430" y="410" text-anchor="middle" fill="#263746">Sorts people into groups</text>
+    <rect x="890" y="345" width="560" height="105" rx="6" fill="#e5f0e9"/><text x="1170" y="410" text-anchor="middle" fill="#174c3a" font-weight="700">Defines the problem precisely</text>
+    <rect x="150" y="500" width="560" height="105" rx="6" fill="#eef1f3"/><text x="430" y="565" text-anchor="middle" fill="#263746">Issues a moral verdict first</text>
+    <rect x="890" y="500" width="560" height="105" rx="6" fill="#e5f0e9"/><text x="1170" y="565" text-anchor="middle" fill="#174c3a" font-weight="700">Asks about facts, rights and duties</text>
+    <rect x="150" y="655" width="560" height="105" rx="6" fill="#eef1f3"/><text x="430" y="720" text-anchor="middle" fill="#263746">Treats good intent as enough</text>
+    <rect x="890" y="655" width="560" height="105" rx="6" fill="#e5f0e9"/><text x="1170" y="720" text-anchor="middle" fill="#174c3a" font-weight="700">Tests costs and outcomes</text>
+  </g>
+  <g fill="#d2b15f"><path d="M760 385h70v-22l42 35-42 35v-22h-70z"/><path d="M760 540h70v-22l42 35-42 35v-22h-70z"/><path d="M760 695h70v-22l42 35-42 35v-22h-70z"/></g>
+</svg>

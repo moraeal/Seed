@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">진영의 언어에서 시민의 언어로</title>
+  <desc id="desc">사람을 집단으로 묶고 선악을 판정하며 좋은 의도를 앞세우는 진영의 언어를, 문제를 나누고 권리와 책임을 묻고 비용과 결과를 검증하는 시민의 언어로 바꾸는 세 가지 기준</desc>
+  <rect width="1600" height="900" fill="#f6f2e8"/>
+  <rect x="90" y="80" width="1420" height="740" rx="8" fill="#fff" stroke="#174c3a" stroke-width="3"/>
+  <text x="800" y="155" text-anchor="middle" fill="#102a43" font-family="Noto Sans KR, sans-serif" font-size="48" font-weight="800">진영의 언어에서 시민의 언어로</text>
+  <line x1="800" y1="205" x2="800" y2="740" stroke="#d2b15f" stroke-width="4"/>
+  <rect x="150" y="215" width="560" height="82" rx="6" fill="#102a43"/>
+  <rect x="890" y="215" width="560" height="82" rx="6" fill="#174c3a"/>
+  <text x="430" y="268" text-anchor="middle" fill="#fff" font-family="Noto Sans KR, sans-serif" font-size="31" font-weight="800">진영의 언어</text>
+  <text x="1170" y="268" text-anchor="middle" fill="#fff" font-family="Noto Sans KR, sans-serif" font-size="31" font-weight="800">시민의 언어</text>
+  <g font-family="Noto Sans KR, sans-serif" font-size="29">
+    <rect x="150" y="345" width="560" height="105" rx="6" fill="#eef1f3"/><text x="430" y="410" text-anchor="middle" fill="#263746">사람을 집단으로 묶는다</text>
+    <rect x="890" y="345" width="560" height="105" rx="6" fill="#e5f0e9"/><text x="1170" y="410" text-anchor="middle" fill="#174c3a" font-weight="700">문제를 구체적으로 나눈다</text>
+    <rect x="150" y="500" width="560" height="105" rx="6" fill="#eef1f3"/><text x="430" y="565" text-anchor="middle" fill="#263746">선악을 먼저 판정한다</text>
+    <rect x="890" y="500" width="560" height="105" rx="6" fill="#e5f0e9"/><text x="1170" y="565" text-anchor="middle" fill="#174c3a" font-weight="700">사실과 권리·책임을 묻는다</text>
+    <rect x="150" y="655" width="560" height="105" rx="6" fill="#eef1f3"/><text x="430" y="720" text-anchor="middle" fill="#263746">좋은 의도를 앞세운다</text>
+    <rect x="890" y="655" width="560" height="105" rx="6" fill="#e5f0e9"/><text x="1170" y="720" text-anchor="middle" fill="#174c3a" font-weight="700">비용과 결과를 검증한다</text>
+  </g>
+  <g fill="#d2b15f"><path d="M760 385h70v-22l42 35-42 35v-22h-70z"/><path d="M760 540h70v-22l42 35-42 35v-22h-70z"/><path d="M760 695h70v-22l42 35-42 35v-22h-70z"/></g>
+</svg>

@@ -18,6 +18,7 @@ const resolveImageSrc = (src?: string) => {
 };
 
 const seedLanguageTerms: Record<string, { hanja: string; english: string }> = {
+  진영언어: { hanja: "陣營言語", english: "PARTISAN LANGUAGE" },
   시민: { hanja: "市民", english: "CITIZEN" },
   자유: { hanja: "自由", english: "FREEDOM" },
   민주: { hanja: "民主", english: "DEMOCRACY" },

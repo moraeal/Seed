@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "seed-language:words-turn-citizens-into-enemies": {
+    ko: {
+      href: "/seed-language/citizen-as-seed",
+      title: "시민은 주어지는 이름이 아니라 자라나는 존재다",
+      relationship: "언어와 시민",
+      reason: "진영이 붙인 이름에서 벗어난 시민이 어떻게 스스로 묻고 판단하는 공공의 주체로 성장하는지 이어서 살펴봅니다.",
+      listHref: "/seed-language",
+      listLabel: "씨앗언어 전체 보기",
+    },
+    en: {
+      href: "/seed-language/citizen-as-seed",
+      title: "Citizenship Is Not a Given Label; It Is Something We Grow Into",
+      relationship: "LANGUAGE AND CITIZENSHIP",
+      reason: "Continue with how citizens move beyond partisan labels and grow into public agents who question and judge for themselves.",
+      listHref: "/seed-language",
+      listLabel: "All SEED Language",
+    },
+  },
   "news:national-debt-ratio-gdp-comparison": {
     ko: {
       href: "/briefings/2027-national-budget-revenue-debt",
