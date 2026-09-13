@@ -3,6 +3,8 @@ export type Briefing = {
   category: string;
   title: string;
   summary: string;
+  introTitle?: string;
+  keyHighlights?: string[];
   date: string;
   author: string;
   readMinutes: number;

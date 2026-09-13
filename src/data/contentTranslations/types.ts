@@ -37,6 +37,8 @@ export type BriefingTranslation = {
   category: string;
   title: string;
   summary: string;
+  introTitle?: string;
+  keyHighlights?: string[];
   author?: string;
   images?: Array<{ src?: string; alt: string; caption: string; credit?: string }>;
   content: string[];

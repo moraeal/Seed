@@ -46,6 +46,8 @@ export function localizeBriefing(briefing: Briefing, language: Language): Briefi
     category: translated.category,
     title: translated.title,
     summary: translated.summary,
+    introTitle: translated.introTitle ?? briefing.introTitle,
+    keyHighlights: translated.keyHighlights ?? briefing.keyHighlights,
     author: translated.author ?? briefing.author,
     images: briefing.images?.map((image, index) => {
       if (isGyeonggiDisplay && index === 0) {

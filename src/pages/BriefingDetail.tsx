@@ -59,7 +59,16 @@ export default function BriefingDetail() {
       <div className="article-content-frame py-8 sm:py-12">
         {briefing.images?.[0] && renderFigure(briefing.images[0], true)}
 
+        {briefing.keyHighlights && (
+          <aside className="reading-column mb-8 rounded-xl border border-green-deep/15 bg-green-pale p-5 shadow-[0_10px_30px_rgba(23,76,58,.05)] sm:p-7">
+            <span className="section-kicker">KEY SUMMARY</span>
+            <h2 className="mt-2 text-xl font-extrabold text-navy sm:text-2xl">{ko ? "핵심 요약" : "Key points"}</h2>
+            <ul className="mt-4 space-y-3">{briefing.keyHighlights.map((point, index) => <li key={`${index}-${point.slice(0, 24)}`} className="flex gap-3 text-[16px] leading-7 text-charcoal/80 sm:text-[17px]"><span className="mt-[11px] size-1.5 shrink-0 rounded-full bg-gold" />{point}</li>)}</ul>
+          </aside>
+        )}
+
         <div className="reading-column">
+          {briefing.introTitle && <h2 className="article-section-title mt-0">{briefing.introTitle}</h2>}
           {briefing.content.map((paragraph, index) => (
             <p key={`${index}-${paragraph.slice(0, 20)}`} className={`${index === 0 ? "mt-0" : ""} article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>
           ))}

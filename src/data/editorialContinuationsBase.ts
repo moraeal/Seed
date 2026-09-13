@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "briefing:confirmation-hearings-zero-witnesses": {
+    ko: {
+      href: "/briefings/president-criminal-trials-article-84",
+      title: "멈춘 대통령 재판, 남은 책임",
+      relationship: "권력 통제 장치",
+      reason: "청문회가 인사권을 검증하는 장치라면, 헌법 제84조 논쟁은 대통령의 형사책임을 어떻게 통제할 것인지 묻습니다.",
+      listHref: "/briefings",
+      listLabel: "씨앗브리핑 전체 보기",
+    },
+    en: {
+      href: "/briefings/president-criminal-trials-article-84",
+      title: "A President’s Paused Trials and the Accountability That Remains",
+      relationship: "CHECKS ON POWER",
+      reason: "If confirmation hearings scrutinize appointment power, the Article 84 debate asks how a president’s criminal accountability should be preserved.",
+      listHref: "/briefings",
+      listLabel: "All briefings",
+    },
+  },
   "seed-language:words-turn-citizens-into-enemies": {
     ko: {
       href: "/seed-language/citizen-as-seed",
