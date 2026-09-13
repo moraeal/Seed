@@ -1,6 +1,99 @@
 import type { NewsTranslation } from "./types";
 
 export const newsTranslations: Record<string, NewsTranslation> = {
+  "national-debt-ratio-gdp-comparison": {
+    category: "Public Finance, Statistics & Accountability",
+    title: "Debt Rises by KRW 106 Trillion—So Why Does the Ratio Fall?",
+    subtitle: "The government says the debt-to-GDP ratio will fall from 51.6% to 48.3%. But the 2026 figure uses an older GDP forecast while the 2027 figure uses a newer one. Put both years on the same basis and the direction reverses.",
+    summary: "Each published ratio can be reproduced from the inputs used. The problem is comparability: the government placed ratios based on GDP forecasts from different vintages side by side as though they shared one basis. Applying the latest GDP outlook to 2026 produces a ratio of about 46.9%, making the 2027 figure of 48.3% an increase of roughly 1.4 percentage points, not a decline. Statistical honesty requires consistent comparisons, not merely valid arithmetic.",
+    keySentence: "Disclosing a formula is not enough. Government must not use mismatched statistics to leave citizens with a misleading picture.",
+    selectedNews: {
+      outlet: "KBS News",
+      headline: "Korea Proposes Record KRW 820.9 Trillion Budget Focused on the Future and Youth",
+      linkLabel: "Watch the KBS News report (Korean)",
+      thumbnailUrl: "https://i.ytimg.com/vi/fXfqzCqEw8U/hqdefault.jpg",
+      thumbnailAlt: "KBS News video explaining Korea's proposed 2027 budget and Future Response Fund",
+      thumbnailCaption: "This KBS report presents the government's 2027 budget proposal and Future Response Fund. Select the image to play the video.",
+      thumbnailYoutubeId: "fXfqzCqEw8U",
+      thumbnailPlacement: "after-summary",
+      thumbnailFallbackUrl: "/images/brand/editorial-image-fallback.svg",
+      summary: [
+        "The proposed 2027 budget totals KRW 820.9 trillion, KRW 93 trillion above the 2026 original budget and the largest on record.",
+        "Of the KRW 162.3 trillion Future Response Fund, KRW 45.4 trillion would finance programs while KRW 104.4 trillion would remain as reserve assets.",
+        "Nominal national debt would rise to KRW 1,519.8 trillion, yet the government says the debt-to-GDP ratio will fall from 51.6% to 48.3%."
+      ]
+    },
+    heroImage: {
+      src: "/images/briefings/briefing-05-budget-ledger.webp",
+      alt: "A budget ledger representing the structure of public spending and national debt",
+      caption: "Nominal debt and the debt-to-GDP ratio should be examined together on a consistent basis.",
+      credit: "SEED VOICE reference image"
+    },
+    inlineImage: {
+      src: "/images/news/national-debt-gdp-comparison-en.svg",
+      alt: "A chart comparing the government's debt-ratio presentation with a same-basis comparison using the latest GDP outlook",
+      caption: "When both years are compared on a consistent GDP-forecast basis, the debt ratio rises rather than falls.",
+      credit: "SEED VOICE · Sources: Ministry of Planning and Budget; Maeil Business analysis citing the Bank of Korea outlook"
+    },
+    sections: [
+      {
+        title: "Debt rises while the ratio falls",
+        paragraphs: [
+          "Korea's government has proposed KRW 820.9 trillion in spending for 2027, up 12.8% from the 2026 original budget and the largest total on record. It also plans to establish a KRW 162.3 trillion Future Response Fund.",
+          "The government highlights a decline in the debt-to-GDP ratio from 51.6% in 2026 to 48.3% in 2027. Yet nominal national debt rises from KRW 1,413.8 trillion to KRW 1,519.8 trillion—an increase of KRW 106 trillion.",
+          "There is no contradiction in principle: debt can rise while its ratio to GDP falls if the economy grows faster. The issue is that the GDP forecasts used for the two ratios were prepared at different times."
+        ]
+      },
+      {
+        title: "An older GDP forecast for 2026, a newer one for 2027",
+        paragraphs: [
+          "Maeil Business, citing Korean Public Finance Association president Kim Woo-chul, reports that the government's 51.6% ratio for 2026 uses nominal GDP of about KRW 2,740 trillion—the estimate available when the earlier budget was prepared.",
+          "Stronger semiconductor conditions later pushed the Bank of Korea's 2026 nominal-GDP outlook to about KRW 3,015 trillion. The government nevertheless retained the older, lower denominator for 2026 while calculating the 2027 ratio with a newer nominal-GDP forecast of roughly KRW 3,147 trillion.",
+          "In plain terms, the current year is measured against an older, smaller economy while next year is measured against a newer, larger one. That makes the current-year ratio look relatively high and the next-year ratio look lower."
+        ]
+      },
+      {
+        title: "A consistent basis reverses the conclusion",
+        paragraphs: [
+          "Kim argues that a meaningful comparison should also apply the latest nominal-GDP outlook to 2026. On that basis, the 2026 debt ratio is about 46.9%, not 51.6%.",
+          "The 2027 figure of 48.3% then represents an increase of about 1.4 percentage points rather than a decline of 3.3 points. Both calculations can be internally correct, yet the story changes entirely with the choice of comparison basis.",
+          "The government can reasonably say that 51.6% was the official ratio used for the earlier budget and 48.3% is the forecast prepared for the new one. But if those figures are placed on one line to advertise improvement, the difference in their forecast vintages must be disclosed with equal prominence."
+        ]
+      },
+      {
+        title: "The KRW 104.4 trillion reserve also needs scrutiny",
+        paragraphs: [
+          "The planned Future Response Fund is also connected to the debt increase. Of its KRW 162.3 trillion, the government says KRW 45.4 trillion will finance youth, growth, regional and education programs, while KRW 12.5 trillion will reduce new bond issuance. The remaining KRW 104.4 trillion would be held as reserve assets.",
+          "Kim argues that this reserve is close to the entire increase in national debt and amounts to borrowing in order to accumulate fund assets. The government describes it as a buffer that preserves exceptional semiconductor-driven revenue for future shocks.",
+          "Such a buffer may have a legitimate purpose. But the case for accumulating KRW 104.4 trillion now, its investment rules, legislative control and performance review all require separate scrutiny. A worthy label cannot replace accountability for a very large pool of public money."
+        ]
+      },
+      {
+        title: "Do not mislead citizens with statistics",
+        paragraphs: [
+          "The available evidence does not establish fabricated data or deliberate statistical manipulation. But numbers can be individually true while the narrative built from them remains misleading.",
+          "If the government highlights a lower ratio, it should also disclose the KRW 106 trillion increase in nominal debt, the different GDP-forecast vintages and the same-basis calculation showing a higher ratio. Citizens should not have to reconstruct those facts themselves.",
+          "Fiscal statistics are not decorations for policy promotion. They are public goods that let citizens judge the state of the budget and the burdens passed forward. Correct arithmetic is only the beginning; the basis of comparison must be honest as well."
+        ]
+      }
+    ],
+    watchPoints: [
+      "Whether the government also publishes a 2026 debt ratio using the latest nominal-GDP outlook",
+      "Whether parliamentary review compares nominal debt, interest costs and debt ratios on a consistent basis",
+      "Whether the KRW 104.4 trillion reserve receives transparent investment rules, legislative control and performance review",
+      "How the Ministry of Planning and Budget responds to criticism of the mismatched GDP-forecast vintages"
+    ],
+    seedPerspective: [
+      "Fiscal indicators are difficult to interpret, which increases government's duty to explain them clearly. Citizens should see consistent comparisons without having to reconstruct the denominator and forecast date themselves.",
+      "This is not an argument that debt must never rise. Public finance may be needed during crises and for credible long-term investment. But the case for spending and the claim that fiscal conditions have improved are different propositions.",
+      "Statistics are the government's report card, not government-written advertising. Citizens need the favorable ratio, the unfavorable nominal total and the assumptions behind both in order to judge for themselves."
+    ],
+    sourceLabels: [
+      "KBS News — Korea proposes record KRW 820.9 trillion budget focused on the future and youth",
+      "Korea Policy Briefing — 2027 budget proposal and KRW 162 trillion Future Response Fund",
+      "Maeil Business — The GDP-base illusion behind the reported fall in Korea's debt ratio"
+    ]
+  },
   "media-appeal-justice-press-play": {
     category: "Justice, Media & Civil Rights",
     title: "A Judge Warns Against ‘Media Play’; a Politician Says Go to the Press",
