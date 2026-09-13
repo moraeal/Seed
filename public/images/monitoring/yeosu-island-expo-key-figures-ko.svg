@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">여수세계섬박람회 핵심 숫자</title>
+  <desc id="desc">기본사업비 248억 원에서 직접사업비 713억 원으로 확대된 과정과 관람객, 사업수익, 운영대행 목표 수치</desc>
+  <rect width="1200" height="900" rx="44" fill="#f7f3e8"/>
+  <rect x="42" y="42" width="1116" height="816" rx="32" fill="#fffdf7" stroke="#174c3a" stroke-width="3"/>
+  <text x="90" y="116" fill="#174c3a" font-family="Pretendard, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="28" font-weight="800" letter-spacing="2">공익감시 · 핵심 숫자</text>
+  <text x="90" y="174" fill="#142b45" font-family="Pretendard, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="46" font-weight="900">여수세계섬박람회</text>
+
+  <rect x="90" y="218" width="1020" height="210" rx="24" fill="#142b45"/>
+  <text x="130" y="276" fill="#d7b46a" font-family="Pretendard, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="25" font-weight="800">사업비 확대</text>
+  <text x="130" y="358" fill="#ffffff" font-family="Pretendard, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="68" font-weight="900">248억 원</text>
+  <path d="M505 332h130" stroke="#d7b46a" stroke-width="8" stroke-linecap="round"/>
+  <path d="m618 312 25 20-25 20" fill="none" stroke="#d7b46a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="685" y="358" fill="#ffffff" font-family="Pretendard, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="68" font-weight="900">713억 원</text>
+  <text x="130" y="402" fill="#c9d8d1" font-family="Pretendard, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="22" font-weight="700">2021 승인</text>
+  <text x="685" y="402" fill="#c9d8d1" font-family="Pretendard, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="22" font-weight="700">현재 직접사업비</text>
+
+  <g font-family="Pretendard, Apple SD Gothic Neo, Noto Sans KR, sans-serif">
+    <rect x="90" y="464" width="320" height="254" rx="22" fill="#e8f0ec"/>
+    <text x="122" y="518" fill="#174c3a" font-size="24" font-weight="800">관람객 목표</text>
+    <text x="122" y="603" fill="#142b45" font-size="58" font-weight="900">300만 명</text>
+    <text x="122" y="658" fill="#50665e" font-size="21" font-weight="700">61일 · 하루 약 4만9천 명</text>
+
+    <rect x="440" y="464" width="320" height="254" rx="22" fill="#efe7d5"/>
+    <text x="472" y="518" fill="#7b5a20" font-size="24" font-weight="800">사업수익 목표</text>
+    <text x="472" y="603" fill="#142b45" font-size="58" font-weight="900">120억 원</text>
+    <text x="472" y="658" fill="#6d6048" font-size="21" font-weight="700">개막 직전 확보 약 44억 원</text>
+
+    <rect x="790" y="464" width="320" height="254" rx="22" fill="#e6ebf1"/>
+    <text x="822" y="518" fill="#35526f" font-size="24" font-weight="800">종합운영대행</text>
+    <text x="822" y="591" fill="#142b45" font-size="47" font-weight="900">269억 원</text>
+    <text x="822" y="628" fill="#506477" font-size="19" font-weight="800">배정예산</text>
+    <text x="822" y="675" fill="#35526f" font-size="26" font-weight="900">낙찰 196.7억 원</text>
+  </g>
+
+  <line x1="90" y1="766" x2="1110" y2="766" stroke="#174c3a" stroke-opacity=".22" stroke-width="2"/>
+  <text x="90" y="815" fill="#5e6a65" font-family="Pretendard, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="19" font-weight="700">기준: 2026년 9월 13일 공개자료 교차 확인</text>
+  <text x="1110" y="815" text-anchor="end" fill="#174c3a" font-family="Pretendard, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="20" font-weight="900">SEED VOICE</text>
+</svg>

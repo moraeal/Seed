@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Yeosu World Island Expo: key figures</title>
+  <desc id="desc">The rise from a KRW 24.8 billion base budget to KRW 71.3 billion in direct project spending, with visitor, revenue and operations-contract targets</desc>
+  <rect width="1200" height="900" rx="44" fill="#f7f3e8"/>
+  <rect x="42" y="42" width="1116" height="816" rx="32" fill="#fffdf7" stroke="#174c3a" stroke-width="3"/>
+  <text x="90" y="116" fill="#174c3a" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="2">PUBLIC-INTEREST WATCH · KEY FIGURES</text>
+  <text x="90" y="174" fill="#142b45" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="900">YEOSU WORLD ISLAND EXPO</text>
+  <rect x="90" y="218" width="1020" height="210" rx="24" fill="#142b45"/>
+  <text x="130" y="276" fill="#d7b46a" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800">PROJECT BUDGET EXPANSION</text>
+  <text x="130" y="358" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="57" font-weight="900">KRW 24.8bn</text>
+  <path d="M505 332h130" stroke="#d7b46a" stroke-width="8" stroke-linecap="round"/>
+  <path d="m618 312 25 20-25 20" fill="none" stroke="#d7b46a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="685" y="358" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="57" font-weight="900">KRW 71.3bn</text>
+  <text x="130" y="402" fill="#c9d8d1" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">2021 approval</text>
+  <text x="685" y="402" fill="#c9d8d1" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">current direct spending</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="90" y="464" width="320" height="254" rx="22" fill="#e8f0ec"/>
+    <text x="122" y="518" fill="#174c3a" font-size="23" font-weight="800">VISITOR TARGET</text>
+    <text x="122" y="603" fill="#142b45" font-size="54" font-weight="900">3 million</text>
+    <text x="122" y="658" fill="#50665e" font-size="19" font-weight="700">61 days · about 49,000/day</text>
+    <rect x="440" y="464" width="320" height="254" rx="22" fill="#efe7d5"/>
+    <text x="472" y="518" fill="#7b5a20" font-size="23" font-weight="800">REVENUE TARGET</text>
+    <text x="472" y="603" fill="#142b45" font-size="48" font-weight="900">KRW 12bn</text>
+    <text x="472" y="658" fill="#6d6048" font-size="18" font-weight="700">about KRW 4.4bn secured</text>
+    <rect x="790" y="464" width="320" height="254" rx="22" fill="#e6ebf1"/>
+    <text x="822" y="518" fill="#35526f" font-size="23" font-weight="800">OPERATIONS CONTRACT</text>
+    <text x="822" y="586" fill="#142b45" font-size="43" font-weight="900">KRW 26.9bn</text>
+    <text x="822" y="624" fill="#506477" font-size="18" font-weight="800">allocated budget</text>
+    <text x="822" y="674" fill="#35526f" font-size="23" font-weight="900">award: KRW 19.67bn</text>
+  </g>
+  <line x1="90" y1="766" x2="1110" y2="766" stroke="#174c3a" stroke-opacity=".22" stroke-width="2"/>
+  <text x="90" y="815" fill="#5e6a65" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">Sources cross-checked as of September 13, 2026</text>
+  <text x="1110" y="815" text-anchor="end" fill="#174c3a" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="900">SEED VOICE</text>
+</svg>

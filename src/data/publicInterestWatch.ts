@@ -14,6 +14,7 @@ export type PublicInterestWatchCase = {
   summary: LocalizedText;
   status: LocalizedText;
   updatedAt: string;
+  heroImage?: { src: string; alt: LocalizedText };
   sourceBasis: LocalizedText;
   confirmedFacts: LocalizedText[];
   questions: LocalizedText[];
@@ -27,6 +28,37 @@ export type PublicInterestWatchCase = {
 };
 
 export const publicInterestWatchCases: PublicInterestWatchCase[] = [
+  {
+    slug: "yeosu-world-island-expo",
+    organization: { ko: "2026 여수세계섬박람회", en: "2026 Yeosu World Island Expo" },
+    eyebrow: { ko: "예산·계약·행정 책임", en: "Budget · Procurement · Accountability" },
+    title: {
+      ko: "여수세계섬박람회, 잼버리의 재탕이 되어서는 안 됩니다",
+      en: "The Yeosu World Island Expo Must Not Repeat the Jamboree",
+    },
+    summary: {
+      ko: "248억 원으로 승인된 행사의 직접사업비가 713억 원까지 커졌습니다. 300만 명의 관람객과 120억 원의 사업수익, 대규모 운영대행 계약을 누가 어떻게 책임지는지 추적합니다.",
+      en: "An event approved at KRW 24.8 billion has grown to KRW 71.3 billion. SEED tracks accountability for its 3 million visitor target, KRW 12 billion revenue plan and major outsourced operations contract.",
+    },
+    status: { ko: "개막 초기 집중점검", en: "Early-stage intensive review" },
+    updatedAt: "2026-09-13",
+    heroImage: {
+      src: "images/monitoring/yeosu-island-expo-budget-accountability.webp",
+      alt: {
+        ko: "섬과 바다를 배경으로 예산 장부, 저울과 점검 조명이 놓인 공익감시 상징 일러스트",
+        en: "Editorial illustration of a public budget ledger, balance scale and inspection lamp overlooking an island coastline",
+      },
+    },
+    sourceBasis: {
+      ko: "국제행사 승인자료, 전라남도 예산자료, 조달·낙찰자료, 조직위원회 발표와 복수 언론의 현장보도를 2026년 9월 13일 다시 대조했습니다.",
+      en: "SEED rechecked international-event approval records, provincial budgets, tender and award data, organizer statements and multiple field reports on September 13, 2026.",
+    },
+    confirmedFacts: [],
+    questions: [],
+    proposals: [],
+    hideSourceBasis: true,
+    sources: [],
+  },
   {
     slug: "beautiful-store",
     organization: { ko: "아름다운가게", en: "Beautiful Store" },

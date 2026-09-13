@@ -284,6 +284,11 @@ const editorialRelations: Record<string, EditorialRelation> = {
     { ko: "공익기관의 비교", en: "COMPARING PUBLIC-INTEREST INSTITUTIONS" },
     { ko: "생명존중 사업의 성과와 재정 문제를 대형 모금·배분기관의 설명책임과 비교해 봅니다.", en: "Compare accountability for suicide-prevention outcomes and funding with that of a major fundraising and allocation institution." },
   ),
+  [keyOf("monitoring", "yeosu-world-island-expo")]: relation(
+    { kind: "briefing", slug: "2027-national-budget-revenue-debt" },
+    { ko: "재정의 다음 질문", en: "THE NEXT FISCAL QUESTION" },
+    { ko: "지역 국제행사의 예산과 책임 문제를 국가 예산의 수입·지출·부채 구조로 이어서 살펴봅니다.", en: "Extend the expo's questions of public spending and accountability to the national budget's revenue, expenditure and debt structure." },
+  ),
 };
 
 const sectionInfo: Record<EditorialContentKind, { href: string; ko: string; en: string }> = {
