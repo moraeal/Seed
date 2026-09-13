@@ -12,7 +12,7 @@ export type Briefing = {
   issueNumber?: number;
   featured?: boolean;
   publicWatch?: boolean;
-  homeBriefingEligible?: boolean;
+  homeBriefingLeadEligible?: boolean;
   listingStyle?: "recent" | "archive";
   /**
    * 시민브리핑 05호 이후에는 본문을 설명하는 도표·다이어그램·그래프를

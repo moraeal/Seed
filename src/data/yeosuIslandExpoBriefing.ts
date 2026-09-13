@@ -14,7 +14,7 @@ export const yeosuIslandExpoBriefing: Briefing = {
   author: "씨앗의 소리",
   readMinutes: 13,
   publicWatch: true,
-  homeBriefingEligible: false,
+  homeBriefingLeadEligible: false,
   listingStyle: "archive",
   images: [
     {
