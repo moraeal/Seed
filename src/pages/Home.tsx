@@ -66,7 +66,7 @@ export default function Home() {
       to: "/publisher-message",
       kicker: ko ? "발행인의 말" : "PUBLISHER'S MESSAGE",
       title: ko ? "어느 작은 시민의 말" : "The words of one ordinary citizen",
-      summary: ko ? "전문가나 유명인의 권위가 아니라 한 시민의 질문과 판단에서 시작한 1인 시민미디어의 이야기입니다." : "The story of a one-person civic publication built from one citizen’s questions and judgment.",
+      summary: ko ? "전문가나 유명인의 권위가 아니라 한 시민의 질문과 판단에서 시작해 더 많은 시민의 목소리로 자라려는 독립 시민저널의 이야기입니다." : "The story of an independent civic journal that began with one citizen’s questions and seeks to grow through the voices of many.",
     },
     {
       to: "/founding-statement",
