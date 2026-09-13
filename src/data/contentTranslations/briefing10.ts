@@ -134,7 +134,6 @@ export const hearingAccountabilityTranslation: BriefingTranslation = {
     "Whether confirmation-hearing law is strengthened to attach meaningful consequences to withheld documents and unjustified nonappearance",
   ],
   quote: "A confirmation hearing is not a ceremony for approving the president’s choice. It is a process through which citizens scrutinize power. Without witnesses, there is no cross-examination.",
-  sourceNote: "This briefing uses public information available on September 13, 2026, before Kim Seung-won’s confirmation hearing. The ‘19 of 24’ figure is not borrowed from a civil-society tally. SEED VOICE identified the 24 prime-ministerial and cabinet hearings actually held from June 25, 2025 through June 26, 2026, then checked each case against National Assembly proceedings, adopted hearing plans, confirmation-request records and full National Assembly Broadcasting videos. A case was classified as ‘zero witnesses’ when the final number of adopted witnesses was zero; reference witnesses were tracked separately. Holdovers who did not undergo a hearing and nominees who withdrew before a hearing were excluded. The case-by-case sources, rulings and formulas are retained in an internal audit workbook. The total and percentage should be checked again after the other cabinet hearings scheduled for September 15–16.",
   sourceLabels: [
     "Korea Policy Briefing — official status of 17 completed nominee hearings as of July 20, 2025",
     "National Assembly Broadcasting — full video of Kim Min-seok’s prime-ministerial confirmation hearing",
