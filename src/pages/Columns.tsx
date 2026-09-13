@@ -4,6 +4,7 @@ import { columns } from "../data/columns";
 import { localizeColumn } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
 import SafeImage from "../components/SafeImage";
+import ArticleArchive, { RECENT_ARTICLE_COUNT } from "../components/ArticleArchive";
 
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 
@@ -13,6 +14,8 @@ export default function Columns() {
   const localizedColumns = [...columns]
     .sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue)
     .map((column) => localizeColumn(column, language));
+  const recentColumns = localizedColumns.slice(0, RECENT_ARTICLE_COUNT);
+  const archiveColumns = localizedColumns.slice(RECENT_ARTICLE_COUNT);
 
   return <section className="bg-paper pb-12 sm:pb-16">
     <header className="border-b border-green-deep/15 bg-ivory">
@@ -22,12 +25,17 @@ export default function Columns() {
       </div>
     </header>
     <div className="container-page py-8 sm:py-10">
-      <div className="border-t-2 border-navy">
-        {localizedColumns.map((column) => <Link key={column.slug} to={`/columns/${column.slug}`} className="group grid gap-5 border-b border-green-deep/15 px-5 py-6 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7">
+      <div className="mb-4 flex items-end justify-between gap-4 border-b-2 border-navy pb-3">
+        <div><span className="section-kicker">LATEST</span><h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "최근 기사" : "Latest articles"}</h2></div>
+        <p className="text-xs font-semibold text-charcoal/45">{ko ? "최근 5건" : "Latest five"}</p>
+      </div>
+      <div>
+        {recentColumns.map((column) => <Link key={column.slug} to={`/columns/${column.slug}`} className="group grid gap-5 border-b border-green-deep/15 px-5 py-6 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7">
           <div className="overflow-hidden bg-green-deep"><SafeImage src={imageSrc(column.heroImage.src)} alt={column.heroImage.alt} referrerPolicy="no-referrer" className="aspect-[4/3] w-full object-cover grayscale-[15%] transition duration-500 group-hover:scale-[1.025]" /></div>
           <div><h2 className="editorial-title line-clamp-2 text-balance text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">{column.title}</h2><p className="mt-2 line-clamp-2 max-w-3xl text-base leading-7 text-charcoal/60">{column.summary}</p><div className="mt-4 flex flex-wrap items-center gap-4 border-t border-green-deep/10 pt-3 text-xs text-charcoal/45"><time>{column.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={13}/>{ko ? `${column.readMinutes}분` : `${column.readMinutes} min`}</span><span className="ml-auto flex items-center gap-2 font-extrabold text-green-deep">{ko ? "글 읽기" : "Read"}<ArrowRight size={15}/></span></div></div>
         </Link>)}
       </div>
+      <ArticleArchive ko={ko} items={archiveColumns.map((column) => ({ key: column.slug, to: `/columns/${column.slug}`, title: column.title, summary: column.summary, date: column.date }))} />
     </div>
   </section>;
 }

@@ -4,6 +4,7 @@ import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { localizeBriefing } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
 import SafeImage from "../components/SafeImage";
+import ArticleArchive, { RECENT_ARTICLE_COUNT } from "../components/ArticleArchive";
 
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 
@@ -11,6 +12,8 @@ export default function Briefings() {
   const { language } = useLanguage();
   const ko = language === "ko";
   const briefings = getAllBriefingsNewestFirst().map((briefing) => localizeBriefing(briefing, language));
+  const recentBriefings = briefings.slice(0, RECENT_ARTICLE_COUNT);
+  const archiveBriefings = briefings.slice(RECENT_ARTICLE_COUNT);
 
   return (
     <section className="bg-paper pb-12 sm:pb-16">
@@ -27,8 +30,12 @@ export default function Briefings() {
       </header>
 
       <div className="container-page py-8 sm:py-10">
-        <div className="border-t-2 border-navy">
-          {briefings.map((briefing) => {
+        <div className="mb-4 flex items-end justify-between gap-4 border-b-2 border-navy pb-3">
+          <div><span className="section-kicker">LATEST</span><h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "최근 기사" : "Latest articles"}</h2></div>
+          <p className="text-xs font-semibold text-charcoal/45">{ko ? "최근 5건" : "Latest five"}</p>
+        </div>
+        <div>
+          {recentBriefings.map((briefing) => {
             const image = briefing.images?.[0];
 
             return (
@@ -73,6 +80,7 @@ export default function Briefings() {
             );
           })}
         </div>
+        <ArticleArchive ko={ko} items={archiveBriefings.map((briefing) => ({ key: briefing.slug, to: `/briefings/${briefing.slug}`, title: briefing.title, summary: briefing.summary, date: briefing.date }))} />
       </div>
     </section>
   );

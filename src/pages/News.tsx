@@ -4,6 +4,7 @@ import { localizeNewsArticle } from "../data/localizedContent";
 import { getNewsNewestFirst } from "../data/news";
 import { useLanguage } from "../i18n";
 import SafeImage from "../components/SafeImage";
+import ArticleArchive, { RECENT_ARTICLE_COUNT } from "../components/ArticleArchive";
 
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 
@@ -11,6 +12,8 @@ export default function News() {
   const { language } = useLanguage();
   const ko = language === "ko";
   const articles = getNewsNewestFirst().map((article) => localizeNewsArticle(article, language));
+  const recentArticles = articles.slice(0, RECENT_ARTICLE_COUNT);
+  const archiveArticles = articles.slice(RECENT_ARTICLE_COUNT);
 
   return <section className="bg-paper pb-12 sm:pb-16">
     <header className="border-b border-green-deep/15 bg-ivory">
@@ -20,12 +23,17 @@ export default function News() {
       </div>
     </header>
     <div className="container-page py-8 sm:py-10">
-      <div className="border-t-2 border-navy">
-        {articles.map((article) => <Link key={article.slug} to={`/news/${article.slug}`} className="group grid gap-5 border-b border-green-deep/15 px-5 py-6 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7">
+      <div className="mb-4 flex items-end justify-between gap-4 border-b-2 border-navy pb-3">
+        <div><span className="section-kicker">LATEST</span><h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "최근 기사" : "Latest articles"}</h2></div>
+        <p className="text-xs font-semibold text-charcoal/45">{ko ? "최근 5건" : "Latest five"}</p>
+      </div>
+      <div>
+        {recentArticles.map((article) => <Link key={article.slug} to={`/news/${article.slug}`} className="group grid gap-5 border-b border-green-deep/15 px-5 py-6 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7">
           <div className="relative overflow-hidden bg-green-deep"><SafeImage src={imageSrc(article.selectedNews.thumbnailUrl ?? article.heroImage.src)} alt={article.selectedNews.thumbnailAlt ?? article.heroImage.alt} referrerPolicy="no-referrer" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.025]" /><span className="absolute bottom-2 left-2 max-w-[calc(100%-1rem)] rounded-sm bg-black/65 px-2 py-1 text-[10px] font-semibold leading-4 text-white backdrop-blur-sm">{article.selectedNews.thumbnailYoutubeId ? `${article.selectedNews.outlet} 영상 화면` : /^https?:\/\//i.test(article.selectedNews.thumbnailUrl ?? "") ? `${article.selectedNews.outlet} 기사 이미지` : "자료 이미지"}</span></div>
           <div><h2 className="editorial-title line-clamp-2 text-balance text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">{article.title}</h2><p className="mt-2 line-clamp-2 max-w-3xl text-base leading-7 text-charcoal/60">{article.summary}</p><div className="mt-4 flex flex-wrap items-center gap-4 border-t border-green-deep/10 pt-3 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={13}/>{ko ? `${article.readMinutes}분` : `${article.readMinutes} min`}</span><span className="ml-auto flex items-center gap-2 font-extrabold text-green-deep">{ko ? "뉴스 읽기" : "Read news"}<ArrowRight size={15}/></span></div></div>
         </Link>)}
       </div>
+      <ArticleArchive ko={ko} items={archiveArticles.map((article) => ({ key: article.slug, to: `/news/${article.slug}`, title: article.title, summary: article.summary, date: article.date }))} />
     </div>
   </section>;
 }

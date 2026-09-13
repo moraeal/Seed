@@ -4,6 +4,7 @@ import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLang
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
 import { useLanguage } from "../i18n";
 import SafeImage from "../components/SafeImage";
+import ArticleArchive, { RECENT_ARTICLE_COUNT } from "../components/ArticleArchive";
 
 const ENVIRONMENT_HERO = "images/seed-language/environment-shared-condition-hero.webp";
 
@@ -16,6 +17,8 @@ export default function SeedLanguage() {
   const articles = articleIndex
     .map((item) => getSeedLanguageEnvironmentArticle(item.slug, language) ?? getSeedLanguageArticle(item.slug, language))
     .filter((article): article is NonNullable<typeof article> => Boolean(article));
+  const recentArticles = articles.slice(0, RECENT_ARTICLE_COUNT);
+  const archiveArticles = articles.slice(RECENT_ARTICLE_COUNT);
 
   return (
     <div className="min-h-[68vh] bg-paper">
@@ -49,8 +52,13 @@ export default function SeedLanguage() {
           </div>
         </section>
 
-        <section className="mt-7 border-t-2 border-navy" aria-label={ko ? "씨앗언어 콘텐츠" : "SEED Language articles"}>
-          {articles.map((article) => {
+        <section className="mt-7" aria-label={ko ? "씨앗언어 콘텐츠" : "SEED Language articles"}>
+          <div className="mb-4 flex items-end justify-between gap-4 border-b-2 border-navy pb-3">
+            <div><span className="section-kicker">LATEST</span><h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "최근 기사" : "Latest articles"}</h2></div>
+            <p className="text-xs font-semibold text-charcoal/45">{ko ? "최근 5건" : "Latest five"}</p>
+          </div>
+          <div>
+          {recentArticles.map((article) => {
             const heroSrc = article.slug.startsWith("environment-") ? ENVIRONMENT_HERO : article.heroImage.src;
             const heroAlt = article.slug.startsWith("environment-")
               ? (ko ? "강과 녹지, 시민의 일상, 도시와 산업시설이 함께 놓인 환경 풍경" : "A river, green space, everyday civic life, city and industry sharing one landscape")
@@ -66,7 +74,9 @@ export default function SeedLanguage() {
               </div>
             </Link>;
           })}
+          </div>
         </section>
+        <ArticleArchive ko={ko} items={archiveArticles.map((article) => ({ key: article.slug, to: `/seed-language/${article.slug}`, title: article.title, summary: article.summary, date: article.date }))} />
       </main>
     </div>
   );
