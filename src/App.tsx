@@ -74,6 +74,7 @@ function AppShell() {
           <Route path="/news" element={<News />} />
           <Route path="/news/:slug" element={<NewsDetail />} />
           <Route path="/monitoring" element={<Monitoring />} />
+          <Route path="/monitoring/yeosu-world-island-expo" element={<Navigate to="/briefings/yeosu-world-island-expo" replace />} />
           <Route path="/monitoring/:slug" element={<PublicInterestWatchDetail />} />
           <Route path="/research/community-chest-of-korea" element={<CommunityChestResearch />} />
           <Route path="/proposals" element={<Proposals />} />

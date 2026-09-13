@@ -141,8 +141,6 @@ const monitoringRoutes: SeoRoute[] = publicInterestWatchCases.map((item) => ({
   lastModified: item.updatedAt,
   author: SITE_NAME,
   section: "공익감시",
-  image: item.heroImage ? socialImageUrl("monitoring", item.slug, `${item.updatedAt}-${stableHash(item.heroImage.src)}`) : undefined,
-  imageAlt: item.heroImage?.alt.ko,
 }));
 
 const researchRoutes: SeoRoute[] = [{

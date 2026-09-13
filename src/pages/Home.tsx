@@ -29,7 +29,10 @@ const seedLanguageTerms: Record<string, { hanja: string; english: string }> = {
 export default function Home() {
   const { language } = useLanguage();
   const ko = language === "ko";
-  const briefings = getAllBriefingsNewestFirst().slice(0, 5).map((item) => localizeBriefing(item, language));
+  const allBriefings = getAllBriefingsNewestFirst();
+  const briefings = allBriefings.filter((item) => item.homeBriefingEligible !== false).slice(0, 5).map((item) => localizeBriefing(item, language));
+  const publicWatchBriefingSource = allBriefings.find((item) => item.publicWatch);
+  const publicWatchBriefing = publicWatchBriefingSource ? localizeBriefing(publicWatchBriefingSource, language) : undefined;
   const journalColumns = [...columns]
     .sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue)
     .slice(0, 9)
@@ -50,6 +53,10 @@ export default function Home() {
   const latestNews = news[0];
   const latestBriefing = briefings[0];
   const publicWatchColumn = journalColumns.find((column) => column.slug === "civic-groups-are-not-state-vanguard-2026") ?? journalColumns[1];
+  const publicWatchHref = publicWatchBriefing ? `/briefings/${publicWatchBriefing.slug}` : publicWatchColumn ? `/columns/${publicWatchColumn.slug}` : "";
+  const publicWatchTitle = publicWatchBriefing?.title ?? publicWatchColumn?.title;
+  const publicWatchSummary = publicWatchBriefing?.summary ?? publicWatchColumn?.summary;
+  const publicWatchImage = publicWatchBriefing?.images?.[0] ?? publicWatchColumn?.heroImage;
   const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[seedLanguageArticle.term] : undefined;
 
   const newcomerLinks = [
@@ -116,13 +123,13 @@ export default function Home() {
                   </div>
                 </Link>
               )}
-              {publicWatchColumn && (
-                <Link to={`/columns/${publicWatchColumn.slug}`} className="group grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3">
-                  <div className="overflow-hidden bg-green-deep"><SafeImage src={resolveImageSrc(publicWatchColumn.heroImage.src)} alt={publicWatchColumn.heroImage.alt} referrerPolicy="no-referrer" className="aspect-[4/3] h-full max-h-[96px] w-full object-cover transition duration-500 group-hover:scale-[1.02]" /></div>
+              {publicWatchHref && publicWatchTitle && publicWatchSummary && publicWatchImage && (
+                <Link to={publicWatchHref} className="group grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3">
+                  <div className="overflow-hidden bg-green-deep"><SafeImage src={resolveImageSrc(publicWatchImage.src)} alt={publicWatchImage.alt} referrerPolicy="no-referrer" className="aspect-[4/3] h-full max-h-[96px] w-full object-cover transition duration-500 group-hover:scale-[1.02]" /></div>
                   <div className="min-w-0">
                     <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">SEED WATCH</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "감시 읽기" : "Read"}<ArrowRight size={11}/></span></div>
-                    <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{publicWatchColumn.title}</h2>
-                    <p className="mt-1 line-clamp-3 text-[11px] leading-[1.45] text-charcoal/58 sm:text-[12px]">{publicWatchColumn.summary}</p>
+                    <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{publicWatchTitle}</h2>
+                    <p className="mt-1 line-clamp-3 text-[11px] leading-[1.45] text-charcoal/58 sm:text-[12px]">{publicWatchSummary}</p>
                   </div>
                 </Link>
               )}

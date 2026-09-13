@@ -6,7 +6,6 @@ import ContentAccountability from "../components/ContentAccountability";
 import { getEditorialContinuation } from "../data/editorialContinuations";
 import { getPublicInterestWatchCase, LocalizedText } from "../data/publicInterestWatch";
 import { useLanguage } from "../i18n";
-import YeosuIslandExpoWatchArticle from "./YeosuIslandExpoWatchArticle";
 
 export default function PublicInterestWatchDetail() {
   const { slug = "" } = useParams();
@@ -22,10 +21,6 @@ export default function PublicInterestWatchDetail() {
         <Link to="/monitoring" className="button-primary mt-7">{ko ? "공익감시로 돌아가기" : "Back to Public-Interest Watch"}</Link>
       </div>
     );
-  }
-
-  if (item.slug === "yeosu-world-island-expo") {
-    return <YeosuIslandExpoWatchArticle item={item} language={language}/>;
   }
 
   const continuation = getEditorialContinuation("monitoring", item.slug, language);

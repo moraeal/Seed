@@ -1,0 +1,73 @@
+import type { Briefing } from "./briefings";
+import { yeosuIslandExpoArticle, yeosuIslandExpoSources } from "./yeosuIslandExpoWatch";
+
+const article = yeosuIslandExpoArticle.ko;
+
+export const yeosuIslandExpoBriefing: Briefing = {
+  slug: "yeosu-world-island-expo",
+  category: "씨앗 시민브리핑 · 공익감시",
+  title: "여수세계섬박람회, 잼버리의 재탕이 되어서는 안 됩니다",
+  subtitle: article.subtitle,
+  summary: "248억 원으로 승인된 행사의 직접사업비가 713억 원까지 커졌습니다. 300만 명의 관람객과 120억 원의 사업수익, 대규모 운영대행 계약을 누가 어떻게 책임지는지 추적합니다.",
+  keyHighlights: article.highlights,
+  date: "2026-09-13",
+  author: "씨앗의 소리",
+  readMinutes: 13,
+  publicWatch: true,
+  homeBriefingEligible: false,
+  listingStyle: "archive",
+  images: [
+    {
+      src: "images/monitoring/yeosu-island-expo-budget-accountability.webp",
+      alt: article.heroAlt,
+      caption: article.heroCaption,
+      credit: "씨앗의 소리 제작 이미지",
+      sourceUrl: "",
+    },
+    {
+      src: "images/monitoring/yeosu-island-expo-key-figures-ko.svg",
+      alt: article.infographicAlt,
+      caption: article.infographicCaption,
+      credit: "씨앗의 소리 제작 인포그래픽",
+      sourceUrl: "",
+      contain: true,
+    },
+    {
+      src: "images/monitoring/yeosu-island-expo-outsourcing-responsibility.webp",
+      alt: article.bodyAlt,
+      caption: article.bodyCaption,
+      credit: "씨앗의 소리 제작 이미지",
+      sourceUrl: "",
+      afterSection: 1,
+    },
+  ],
+  content: article.intro.map((paragraph) => paragraph.text),
+  sections: article.sections.map((section) => ({
+    title: section.heading,
+    paragraphs: section.paragraphs.map((paragraph) => paragraph.text),
+  })),
+  paragraphLinks: article.sections.flatMap((section, sectionIndex) => section.paragraphs.flatMap((paragraph, paragraphIndex) => paragraph.links ? [{ sectionIndex, paragraphIndex, links: paragraph.links }] : [])),
+  watchTitle: article.watchHeading,
+  watchIntro: article.watchIntro,
+  watchPoints: article.watchItems,
+  closing: article.closing.slice(0, 2),
+  quote: article.closing[2],
+  sourceNote: "2026년 9월 13일 기준 국제행사 승인자료, 전라남도 예산자료, 조달·낙찰자료, 조직위원회 발표와 복수 언론의 현장보도를 다시 대조했습니다.",
+  sources: [
+    { label: "연합뉴스 — 2026 여수세계섬박람회 국제행사 승인", url: yeosuIslandExpoSources.approval },
+    { label: "2026 여수세계섬박람회 조직위원회 — 행사 개요", url: yeosuIslandExpoSources.overview },
+    { label: "한국일보 — 사업비 확대 과정과 세부 편성", url: yeosuIslandExpoSources.budget },
+    { label: "전라남도 — 2026년도 본예산 설명자료", url: yeosuIslandExpoSources.provincialBudget },
+    { label: "산군 — 종합운영대행 용역 입찰·낙찰 정보", url: yeosuIslandExpoSources.operationsTender },
+    { label: "KBC — 종합운영대행 용역 선정 보도", url: yeosuIslandExpoSources.operationsReport },
+    { label: "연합뉴스 — 새만금 잼버리 감사 결과", url: yeosuIslandExpoSources.jamboreeAudit },
+    { label: "연합뉴스 — 잼버리 지역업체 계약 집중 지적과 반박", url: yeosuIslandExpoSources.jamboreeContracts },
+    { label: "연합뉴스 — 잼버리 전세버스 입찰 의혹 조사", url: yeosuIslandExpoSources.jamboreeBus },
+    { label: "매일경제 — 개막 당일 정전과 상인 피해 보도", url: yeosuIslandExpoSources.blackout },
+    { label: "여수시·조직위원회 — 개도 식당 관련 반박", url: yeosuIslandExpoSources.blackoutRebuttal },
+    { label: "MBC — 외국어 안내 서비스 점검", url: yeosuIslandExpoSources.languages },
+    { label: "전남일보 — 개막 첫 주말 관람객 집계", url: yeosuIslandExpoSources.firstWeekend },
+    { label: "연합뉴스 — 개막 사흘 누적 관람객 집계", url: yeosuIslandExpoSources.firstThreeDays },
+    { label: "조직위원회 프레스데이 — 개막 전 사업수익 확보액", url: yeosuIslandExpoSources.preopeningRevenue },
+  ],
+};

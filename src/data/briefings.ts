@@ -2,6 +2,7 @@ export type Briefing = {
   slug: string;
   category: string;
   title: string;
+  subtitle?: string;
   summary: string;
   introTitle?: string;
   keyHighlights?: string[];
@@ -10,6 +11,9 @@ export type Briefing = {
   readMinutes: number;
   issueNumber?: number;
   featured?: boolean;
+  publicWatch?: boolean;
+  homeBriefingEligible?: boolean;
+  listingStyle?: "recent" | "archive";
   /**
    * 시민브리핑 05호 이후에는 본문을 설명하는 도표·다이어그램·그래프를
    * 최소 2개 포함하고, afterSection으로 관련 대목 바로 뒤에 배치합니다.
@@ -26,6 +30,14 @@ export type Briefing = {
   }[];
   content: string[];
   watchPoints: string[];
+  paragraphLinks?: {
+    sectionIndex: number;
+    paragraphIndex: number;
+    links: { label: string; url: string }[];
+  }[];
+  watchTitle?: string;
+  watchIntro?: string;
+  closing?: string[];
   sections?: { title: string; paragraphs?: string[]; bullets?: string[] }[];
   verdicts?: { claim: string; status: string; basis: string }[];
   quote?: string;

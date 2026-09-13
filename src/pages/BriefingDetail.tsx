@@ -1,4 +1,4 @@
-import { ArrowLeft, Clock, Download } from "lucide-react";
+import { ArrowLeft, Clock, Download, ExternalLink } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import ArticleContinuation from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
@@ -42,6 +42,7 @@ export default function BriefingDetail() {
           <Link to="/briefings" className="text-link text-xs"><ArrowLeft size={14} />{ko ? "시민브리핑 목록" : "Civic Briefings"}</Link>
           <div className="mt-3 border-t-2 border-navy pt-3">
             <h1 className="article-detail-title">{briefing.title}</h1>
+            {briefing.subtitle && <p className="mx-auto mt-2 max-w-3xl text-base font-bold leading-7 text-green-deep sm:text-lg">{briefing.subtitle}</p>}
             <p className="article-summary">{briefing.summary}</p>
           </div>
           <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45">
@@ -80,7 +81,10 @@ export default function BriefingDetail() {
           <div key={`${index}-${section.title}`}>
             <section className={`article-section reading-column ${isLongRead ? "article-section-long" : ""}`}>
               <h2 className="article-section-title">{section.title}</h2>
-              {section.paragraphs && <div>{section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>)}</div>}
+              {section.paragraphs && <div>{section.paragraphs.map((paragraph, paragraphIndex) => {
+                const links = briefing.paragraphLinks?.find((entry) => entry.sectionIndex === index && entry.paragraphIndex === paragraphIndex)?.links;
+                return <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}{links?.map((link) => <a key={link.url} href={link.url} target="_blank" rel="noreferrer" className="ml-2 inline-flex items-center gap-1 font-bold text-green-deep underline decoration-green-deep/25 underline-offset-4 hover:text-green-mid">{link.label}<ExternalLink size={13}/></a>)}</p>;
+              })}</div>}
               {section.bullets && <ul className="mt-5 space-y-3">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet.slice(0, 24)}`} className="flex gap-3 text-[17px] leading-[1.78] text-charcoal/80 sm:text-lg"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold" />{bullet}</li>)}</ul>}
             </section>
             {briefing.images?.slice(2).filter((image) => image.afterSection === index).map((image) => (
@@ -109,10 +113,12 @@ export default function BriefingDetail() {
         {briefing.images?.slice(2).filter((image) => image.afterSection === undefined).map((image) => <div key={image.src}>{renderFigure(image)}</div>)}
 
         <aside className="mt-9 rounded-lg border-l-4 border-gold bg-green-pale p-5 sm:p-6">
-          <h2 className="text-xl font-extrabold text-green-deep">{ko ? "지속해서 관찰할 지점" : "What to keep watching"}</h2>
+          <h2 className="text-xl font-extrabold text-green-deep">{briefing.watchTitle ?? (ko ? "지속해서 관찰할 지점" : "What to keep watching")}</h2>
+          {briefing.watchIntro && <p className="mt-2 text-sm leading-6 text-charcoal/70">{briefing.watchIntro}</p>}
           <ul className="mt-4 space-y-2">{briefing.watchPoints.map((point, index) => <li key={`${index}-${point}`} className="flex gap-3 text-sm leading-6 text-charcoal/75"><span className="font-serif text-gold">●</span>{point}</li>)}</ul>
         </aside>
 
+        {briefing.closing && <div className="reading-column mt-9">{briefing.closing.map((paragraph, index) => <p key={`${index}-${paragraph.slice(0, 24)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>)}</div>}
         {briefing.quote && <blockquote className="mt-9 rounded-xl bg-green-deep p-6 text-lg font-bold leading-8 text-white sm:p-7 sm:text-xl">“{briefing.quote}”</blockquote>}
         {briefing.sourceNote && <p className="mt-6 rounded-lg border border-green-deep/10 bg-white p-4 text-sm leading-6 text-charcoal/60">{briefing.sourceNote}</p>}
 

@@ -45,6 +45,7 @@ export function localizeBriefing(briefing: Briefing, language: Language): Briefi
     ...briefing,
     category: translated.category,
     title: translated.title,
+    subtitle: translated.subtitle ?? briefing.subtitle,
     summary: translated.summary,
     introTitle: translated.introTitle ?? briefing.introTitle,
     keyHighlights: translated.keyHighlights ?? briefing.keyHighlights,
@@ -68,6 +69,10 @@ export function localizeBriefing(briefing: Briefing, language: Language): Briefi
     sections: translated.sections ?? briefing.sections,
     verdicts: translated.verdicts ?? briefing.verdicts,
     watchPoints: translated.watchPoints,
+    paragraphLinks: translated.paragraphLinks ?? briefing.paragraphLinks,
+    watchTitle: translated.watchTitle ?? briefing.watchTitle,
+    watchIntro: translated.watchIntro ?? briefing.watchIntro,
+    closing: translated.closing ?? briefing.closing,
     quote: translated.quote ?? briefing.quote,
     sourceNote: translated.sourceNote ?? briefing.sourceNote,
     sources: briefing.sources?.map((source, index) => ({

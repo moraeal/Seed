@@ -12,8 +12,9 @@ export default function Briefings() {
   const { language } = useLanguage();
   const ko = language === "ko";
   const briefings = getAllBriefingsNewestFirst().map((briefing) => localizeBriefing(briefing, language));
-  const recentBriefings = briefings.slice(0, RECENT_ARTICLE_COUNT);
-  const archiveBriefings = briefings.slice(RECENT_ARTICLE_COUNT);
+  const recentBriefings = briefings.filter((briefing) => briefing.listingStyle !== "archive").slice(0, RECENT_ARTICLE_COUNT);
+  const recentSlugs = new Set(recentBriefings.map((briefing) => briefing.slug));
+  const archiveBriefings = briefings.filter((briefing) => !recentSlugs.has(briefing.slug));
 
   return (
     <section className="bg-paper pb-12 sm:pb-16">

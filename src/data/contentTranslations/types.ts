@@ -36,6 +36,7 @@ export type NewsTranslation = {
 export type BriefingTranslation = {
   category: string;
   title: string;
+  subtitle?: string;
   summary: string;
   introTitle?: string;
   keyHighlights?: string[];
@@ -45,6 +46,10 @@ export type BriefingTranslation = {
   sections?: NonNullable<Briefing["sections"]>;
   verdicts?: NonNullable<Briefing["verdicts"]>;
   watchPoints: string[];
+  paragraphLinks?: NonNullable<Briefing["paragraphLinks"]>;
+  watchTitle?: string;
+  watchIntro?: string;
+  closing?: string[];
   quote?: string;
   sourceNote?: string;
   sourceLabels?: string[];
