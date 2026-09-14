@@ -120,17 +120,9 @@ export default function Monitoring() {
       </header>
 
       <div className="container-page py-8 sm:py-10">
-        <section aria-labelledby="connected-watch-title">
-          <div className="flex flex-col gap-3 border-b-2 border-navy pb-5 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <span className="section-kicker">CONNECTED WATCH</span>
-              <h2 id="connected-watch-title" className="mt-2 text-3xl font-extrabold text-navy">{ko ? "기사에서 이어지는 감시" : "Watch threads from our reporting"}</h2>
-            </div>
-            <p className="max-w-lg text-sm leading-7 text-charcoal/55">{ko ? "원문의 형식과 주소는 유지하고, 감시해야 할 쟁점을 이곳에서 이어 봅니다." : "Original formats and URLs remain unchanged while the issues that require scrutiny are followed here."}</p>
-          </div>
-
+        <section>
           {leadArticle && (
-            <div className="mt-5 grid gap-5 lg:grid-cols-[1.16fr_.84fr]">
+            <div className="grid gap-5 lg:grid-cols-[1.16fr_.84fr]">
               <Link to={leadArticle.to} className="group relative min-h-[430px] overflow-hidden bg-navy text-white">
                 <SafeImage src={leadArticle.image} alt={leadArticle.imageAlt} className="absolute inset-0 h-full w-full object-cover opacity-45 transition duration-500 group-hover:scale-[1.02] group-hover:opacity-55" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/55 to-transparent" />
