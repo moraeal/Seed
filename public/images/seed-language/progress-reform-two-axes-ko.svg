@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">진보·보수와 개혁·수구는 같은 축이 아니다</title>
+  <desc id="desc">가로축은 보수와 진보, 세로축은 수구와 개혁을 나타내며 네 가지 조합의 판단 기준을 설명한다.</desc>
+  <rect width="1600" height="900" fill="#f5f1e8"/>
+  <text x="90" y="92" fill="#132f45" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="48" font-weight="800">진보·보수와 개혁·수구는 같은 축이 아니다</text>
+  <text x="90" y="138" fill="#486158" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="24">가치는 무엇을 지키고 바꿀지 묻고, 태도는 자기 권력까지 고칠 수 있는지 묻는다.</text>
+
+  <g transform="translate(250 205)">
+    <rect width="1100" height="540" rx="20" fill="#fffdf8" stroke="#174c3a" stroke-width="3"/>
+    <rect x="0" y="0" width="550" height="270" fill="#e7f0ea"/>
+    <rect x="550" y="0" width="550" height="270" fill="#edf4ef"/>
+    <rect x="0" y="270" width="550" height="270" fill="#f1e7df"/>
+    <rect x="550" y="270" width="550" height="270" fill="#f4e5df"/>
+    <line x1="550" y1="0" x2="550" y2="540" stroke="#174c3a" stroke-width="3"/>
+    <line x1="0" y1="270" x2="1100" y2="270" stroke="#174c3a" stroke-width="3"/>
+
+    <g font-family="Pretendard, Noto Sans KR, sans-serif">
+      <text x="40" y="58" fill="#174c3a" font-size="30" font-weight="800">개혁적 보수</text>
+      <text x="40" y="108" fill="#243b46" font-size="25">자유·법치·신뢰를 지키며</text>
+      <text x="40" y="148" fill="#243b46" font-size="25">특권과 낡은 진입장벽을 고친다</text>
+
+      <text x="590" y="58" fill="#174c3a" font-size="30" font-weight="800">개혁적 진보</text>
+      <text x="590" y="108" fill="#243b46" font-size="25">불공정과 닫힌 기회를 바꾸며</text>
+      <text x="590" y="148" fill="#243b46" font-size="25">자기편의 권력도 제한한다</text>
+
+      <text x="40" y="335" fill="#8d4734" font-size="30" font-weight="800">수구적 보수</text>
+      <text x="40" y="385" fill="#4e3b36" font-size="25">자유와 질서를 말하면서</text>
+      <text x="40" y="425" fill="#4e3b36" font-size="25">자기편의 특권과 권력을 감싼다</text>
+
+      <text x="590" y="335" fill="#8d4734" font-size="30" font-weight="800">수구적 진보</text>
+      <text x="590" y="385" fill="#4e3b36" font-size="25">개혁과 공익을 말하면서</text>
+      <text x="590" y="425" fill="#4e3b36" font-size="25">자리·예산·조직을 지킨다</text>
+    </g>
+  </g>
+
+  <g font-family="Pretendard, Noto Sans KR, sans-serif" fill="#132f45" font-weight="800">
+    <text x="635" y="190" font-size="25">↑ 자기 권력까지 고친다 · 개혁</text>
+    <text x="645" y="785" font-size="25">↓ 가진 권력을 지킨다 · 수구</text>
+    <text x="68" y="490" font-size="26">보수</text>
+    <text x="68" y="526" font-size="19" font-weight="600">지킬 가치</text>
+    <text x="1450" y="490" font-size="26">진보</text>
+    <text x="1436" y="526" font-size="19" font-weight="600">바꿀 현실</text>
+  </g>
+  <text x="800" y="850" text-anchor="middle" fill="#b18a35" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="31" font-weight="800">보수는 개혁적일 수 있고 진보는 수구적일 수 있다.</text>
+</svg>

@@ -27,14 +27,36 @@ const freedomContinuation: Record<Language, EditorialContinuation> = {
   },
 };
 
+const progressContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/seed-language/freedom-as-citizen-agency",
+    title: "자유는 방임이 아니라, 스스로 설 수 있는 힘이다",
+    relationship: "진보와 자유",
+    reason: "진보를 시민의 자유를 넓히는 태도로 판단했다면, 자유가 방임이나 보호의 반대말을 넘어 시민을 어떻게 주체로 세우는지 이어서 살펴봅니다.",
+    listHref: "/seed-language",
+    listLabel: "씨앗언어 전체 보기",
+  },
+  en: {
+    href: "/seed-language/freedom-as-citizen-agency",
+    title: "Freedom Is Not Neglect. It Is What Makes Citizens Agents",
+    relationship: "PROGRESS AND FREEDOM",
+    reason: "If progress is judged by whether it expands citizens' freedom, continue with how freedom makes citizens agents rather than objects of protection.",
+    listHref: "/seed-language",
+    listLabel: "All SEED Language",
+  },
+};
+
 const isFreedom = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "freedom-as-citizen-agency";
+const isProgress = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-progress";
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (isProgress(kind, slug)) return true;
   if (isFreedom(kind, slug)) return true;
   return hasBaseEditorialContinuation(kind, slug);
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (isProgress(kind, slug)) return progressContinuation[language];
   if (isFreedom(kind, slug)) return freedomContinuation[language];
   return getBaseEditorialContinuation(kind, slug, language);
 }

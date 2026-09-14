@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Progress and conservatism are not the same axis as reform and reaction</title>
+  <desc id="desc">The horizontal axis runs from conservatism to progressivism and the vertical axis from reaction to reform.</desc>
+  <rect width="1600" height="900" fill="#f5f1e8"/>
+  <text x="90" y="92" fill="#132f45" font-family="Inter, Arial, sans-serif" font-size="45" font-weight="800">Progress and conservatism are not reform and reaction</text>
+  <text x="90" y="138" fill="#486158" font-family="Inter, Arial, sans-serif" font-size="23">Values ask what to preserve or change. Attitude asks whether we can correct our own power.</text>
+
+  <g transform="translate(250 205)">
+    <rect width="1100" height="540" rx="20" fill="#fffdf8" stroke="#174c3a" stroke-width="3"/>
+    <rect x="0" y="0" width="550" height="270" fill="#e7f0ea"/>
+    <rect x="550" y="0" width="550" height="270" fill="#edf4ef"/>
+    <rect x="0" y="270" width="550" height="270" fill="#f1e7df"/>
+    <rect x="550" y="270" width="550" height="270" fill="#f4e5df"/>
+    <line x1="550" y1="0" x2="550" y2="540" stroke="#174c3a" stroke-width="3"/>
+    <line x1="0" y1="270" x2="1100" y2="270" stroke="#174c3a" stroke-width="3"/>
+
+    <g font-family="Inter, Arial, sans-serif">
+      <text x="40" y="58" fill="#174c3a" font-size="30" font-weight="800">Reformist conservatism</text>
+      <text x="40" y="108" fill="#243b46" font-size="23">Preserves liberty, law and trust;</text>
+      <text x="40" y="146" fill="#243b46" font-size="23">removes privilege and barriers</text>
+
+      <text x="590" y="58" fill="#174c3a" font-size="30" font-weight="800">Reformist progressivism</text>
+      <text x="590" y="108" fill="#243b46" font-size="23">Changes unfair, closed systems;</text>
+      <text x="590" y="146" fill="#243b46" font-size="23">limits its own side's power</text>
+
+      <text x="40" y="335" fill="#8d4734" font-size="30" font-weight="800">Reactionary conservatism</text>
+      <text x="40" y="385" fill="#4e3b36" font-size="23">Invokes liberty and order;</text>
+      <text x="40" y="423" fill="#4e3b36" font-size="23">shields its own privilege and power</text>
+
+      <text x="590" y="335" fill="#8d4734" font-size="30" font-weight="800">Reactionary progressivism</text>
+      <text x="590" y="385" fill="#4e3b36" font-size="23">Invokes reform and public interest;</text>
+      <text x="590" y="423" fill="#4e3b36" font-size="23">protects offices, budgets and groups</text>
+    </g>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif" fill="#132f45" font-weight="800">
+    <text x="616" y="190" font-size="24">↑ Corrects its own power · Reform</text>
+    <text x="605" y="785" font-size="24">↓ Protects its own power · Reaction</text>
+    <text x="38" y="488" font-size="24">Conservative</text>
+    <text x="54" y="520" font-size="18" font-weight="600">Preserve</text>
+    <text x="1390" y="488" font-size="24">Progressive</text>
+    <text x="1411" y="520" font-size="18" font-weight="600">Change</text>
+  </g>
+  <text x="800" y="850" text-anchor="middle" fill="#b18a35" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800">Conservatism can be reformist. Progressivism can be reactionary.</text>
+</svg>
