@@ -17,8 +17,8 @@ export default function PublicInterestWatchDetail() {
   if (!item) {
     return (
       <div className="container-page py-24 text-center">
-        <h1 className="text-3xl font-extrabold text-navy">{ko ? "공익감시 기록을 찾을 수 없습니다." : "Watch record not found."}</h1>
-        <Link to="/monitoring" className="button-primary mt-7">{ko ? "공익감시로 돌아가기" : "Back to Public-Interest Watch"}</Link>
+        <h1 className="text-3xl font-extrabold text-navy">{ko ? "씨앗의 눈 기록을 찾을 수 없습니다." : "Watch record not found."}</h1>
+        <Link to="/monitoring" className="button-primary mt-7">{ko ? "씨앗의 눈으로 돌아가기" : "Back to SEED Watch"}</Link>
       </div>
     );
   }
@@ -35,7 +35,7 @@ export default function PublicInterestWatchDetail() {
     <article className="bg-paper pb-12 sm:pb-16">
       <header className="border-b border-green-deep/15 bg-ivory">
         <div className="container-page max-w-5xl py-4 sm:py-5">
-          <Link to="/monitoring" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "공익감시 목록" : "Public-Interest Watch"}</Link>
+          <Link to="/monitoring" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "씨앗의 눈 목록" : "SEED Watch"}</Link>
           <div className="mt-3 border-t-2 border-navy pt-3">
             <div className="flex flex-wrap items-center gap-3">
               <span className="section-kicker">{t(item.eyebrow)}</span>
