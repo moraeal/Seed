@@ -29,6 +29,7 @@ export default function Header() {
         ["Voice of the Seed", "/columns"],
         ["Today's News", "/news"],
         ["SEED Briefings", "/briefings"],
+        ["SEED Watch", "/monitoring"],
         ["SEED Language", "/seed-language"],
         ["About", "/publisher-message"],
       ]
@@ -36,6 +37,7 @@ export default function Header() {
         ["씨앗의 소리", "/columns"],
         ["오늘의 뉴스", "/news"],
         ["씨앗브리핑", "/briefings"],
+        ["씨앗의 눈", "/monitoring"],
         ["씨앗언어", "/seed-language"],
         ["소개", "/publisher-message"],
       ];
@@ -152,7 +154,7 @@ export default function Header() {
         </div>
 
         <nav className="hidden border-b border-green-deep/14 bg-paper xl:block" aria-label={language === "en" ? "Main menu" : "주요 메뉴"}>
-          <div className="container-page flex items-center justify-start gap-8">{nav.map((item) => renderNavItem(item))}</div>
+          <div className="container-page flex items-center justify-start gap-7">{nav.map((item) => renderNavItem(item))}</div>
         </nav>
 
         {isHome && <HomeSectionNav />}
