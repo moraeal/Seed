@@ -14,12 +14,13 @@ const server = await createServer({
   server: { middlewareMode: true },
   optimizeDeps: { noDiscovery: true },
 });
-const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, siteContentModule, seedLanguageModule, seedLanguageEnvironmentModule, communityChestModule] = await Promise.all([
+const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, seedWatchModule, siteContentModule, seedLanguageModule, seedLanguageEnvironmentModule, communityChestModule] = await Promise.all([
   server.ssrLoadModule("/src/seo.ts"),
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
   server.ssrLoadModule("/src/data/columns.ts"),
   server.ssrLoadModule("/src/data/publicInterestWatch.ts"),
+  server.ssrLoadModule("/src/data/seedWatchIndex.ts"),
   server.ssrLoadModule("/src/data/siteContent.ts"),
   server.ssrLoadModule("/src/data/seedLanguage.ts"),
   server.ssrLoadModule("/src/data/seedLanguageEnvironment.ts"),
@@ -31,12 +32,26 @@ const news = newsModule.newsArticles;
 const briefings = briefingModule.getAllBriefingsNewestFirst();
 const columns = columnModule.columns;
 const watchCases = watchModule.publicInterestWatchCases;
+const seedWatchReferences = seedWatchModule.seedWatchReferences;
 const englishContent = siteContentModule.getContent("en");
 const seedLanguageArticles = [
   ...seedLanguageEnvironmentModule.seedLanguageEnvironmentArticlesKo,
   ...seedLanguageModule.seedLanguageArticlesKo,
 ];
 const communityChestResearch = communityChestModule.communityChestResearch.ko;
+
+const seedWatchListing = seedWatchReferences.map((reference) => {
+  if (reference.kind === "news") {
+    const item = news.find((entry) => entry.slug === reference.slug);
+    return item ? { path: `/news/${item.slug}`, title: item.title, summary: item.summary, date: item.date } : null;
+  }
+  if (reference.kind === "briefing") {
+    const item = briefings.find((entry) => entry.slug === reference.slug);
+    return item ? { path: `/briefings/${item.slug}`, title: item.title, summary: item.summary, date: item.date } : null;
+  }
+  const item = columns.find((entry) => entry.slug === reference.slug);
+  return item ? { path: `/columns/${item.slug}`, title: item.title, summary: item.summary, date: item.date } : null;
+}).filter(Boolean).sort((a, b) => b.date.localeCompare(a.date));
 
 const escapeHtml = (value = "") => String(value)
   .replaceAll("&", "&amp;")
@@ -122,7 +137,10 @@ function articleBody(route) {
   const listing = route.path === "/news" ? news.map((item) => ({ path: `/news/${item.slug}`, title: item.title, summary: item.summary }))
     : route.path === "/briefings" ? briefings.map((item) => ({ path: `/briefings/${item.slug}`, title: item.title, summary: item.summary }))
     : route.path === "/columns" ? columns.map((item) => ({ path: `/columns/${item.slug}`, title: item.title, summary: item.summary }))
-    : route.path === "/monitoring" ? watchCases.map((item) => ({ path: `/monitoring/${item.slug}`, title: item.title.ko, summary: item.summary.ko }))
+    : route.path === "/monitoring" ? [
+      ...seedWatchListing,
+      ...watchCases.map((item) => ({ path: `/monitoring/${item.slug}`, title: item.title.ko, summary: item.summary.ko })),
+    ]
     : [];
 
   if (listing.length) return `<ul>${listing.map((item) => `<li><a href="${canonicalUrl(item.path)}"><strong>${escapeHtml(item.title)}</strong></a><p>${escapeHtml(item.summary)}</p></li>`).join("\n")}</ul>`;
