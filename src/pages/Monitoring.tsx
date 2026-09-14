@@ -108,31 +108,18 @@ export default function Monitoring() {
       <header className="border-b border-green-deep/15 bg-ivory">
         <div className="container-page grid gap-6 py-9 sm:py-12 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
           <div>
-            <span className="section-kicker">SEED WATCH</span>
+            <span className="section-kicker">PUBLIC-INTEREST WATCH</span>
             <h1 className="editorial-title mt-2.5 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "씨앗의 눈" : "SEED Watch"}</h1>
           </div>
           <p className="max-w-2xl text-base leading-8 text-charcoal/65">
             {ko
-              ? "권력과 예산은 기록될 때 책임을 집니다. 씨앗의 눈은 뉴스·브리핑·칼럼에서 시작된 문제를 다시 연결하고, 공개자료와 기관의 답변, 그 이후의 변화까지 지켜봅니다."
-              : "Power and public money become accountable when they are recorded. SEED Watch reconnects questions first raised in our news, briefings and columns, then follows the records, institutional replies and what changes next."}
+              ? "씨앗의 눈은 국가와 지방정부, 공공기관과 시민사회가 가진 권력, 그리고 세금과 기부금이 어떻게 쓰이는지를 감시합니다. 선한 목적이나 명성도 검증을 대신할 수 없습니다. 공개자료와 기관의 답변, 사업의 실제 결과를 끝까지 기록합니다."
+              : "SEED Watch scrutinizes power exercised by national and local government, public institutions and civil society—and how taxes and donations are used. Good intentions or reputation do not replace verification. We follow public records, institutional replies and real-world outcomes."}
           </p>
         </div>
       </header>
 
       <div className="container-page py-8 sm:py-10">
-        <section className="mb-10 grid gap-5 border-y border-green-deep/15 bg-white px-6 py-6 sm:px-8 lg:grid-cols-[.72fr_1.28fr] lg:gap-8">
-          <div>
-            <span className="section-kicker">HOW IT WORKS</span>
-            <h2 className="editorial-title mt-3 text-3xl font-bold leading-tight text-navy sm:text-4xl">
-              {ko ? "기존 기사를 바꾸지 않고, 지켜봐야 할 기록을 다시 연결합니다" : "Original articles stay intact. Watch records are reconnected here."}
-            </h2>
-          </div>
-          <div className="space-y-3 text-sm leading-7 text-charcoal/68 sm:text-base">
-            <p>{ko ? "기존 뉴스와 브리핑, 칼럼은 원래 메뉴와 주소에 그대로 둡니다. 씨앗의 눈은 그 가운데 권력, 예산, 절차, 시민의 권리와 관련된 기사를 한곳에서 다시 볼 수 있게 묶는 두 번째 편집면입니다." : "News, briefings and columns remain in their original sections and at their original addresses. SEED Watch is a second editorial view that gathers reporting about power, budgets, procedure and civic rights."}</p>
-            <p>{ko ? "한 번 보도한 뒤 끝내지 않습니다. 질의서를 보냈는지, 기관이 무엇을 답했는지, 예산과 제도가 실제로 바뀌었는지를 이어서 기록합니다. 앞으로 시작하는 감시기사는 처음부터 씨앗의 눈 기록으로 발행합니다." : "The record does not end with publication. We follow whether questions were sent, what institutions answered, and whether budgets or rules actually changed. New watchdog work will be published directly as SEED Watch records."}</p>
-          </div>
-        </section>
-
         <section aria-labelledby="connected-watch-title">
           <div className="flex flex-col gap-3 border-b-2 border-navy pb-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
