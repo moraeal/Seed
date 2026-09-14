@@ -70,7 +70,7 @@ const staticRoutes: SeoRoute[] = [
   { path: "/news", title: "오늘의뉴스 | 씨앗의 소리", description: "한국 정치·사회 이슈의 확인된 사실과 아직 확인되지 않은 부분을 구분하고 시민이 지켜볼 점을 설명합니다.", type: "website", lastModified: newest(newsArticles.map((item) => item.date)) },
   { path: "/briefings", title: "시민브리핑 | 씨앗의 소리", description: "복잡한 정책과 제도 논쟁을 사실, 맥락, 관찰 지점과 씨드의 관점으로 차분하게 풀어냅니다.", type: "website", lastModified: newest(getAllBriefingsNewestFirst().map((item) => item.date)) },
   { path: "/columns", title: "칼럼 | 씨앗의 소리", description: "자유, 법치, 책임, 시장의 자율성과 강한 시민사회의 관점에서 오늘의 쟁점을 논평합니다.", type: "website", lastModified: newest(columns.map((item) => item.date)) },
-  { path: "/monitoring", title: "공익감시 | 씨앗의 소리", description: "공익조직과 공공제도가 시민에게 권한과 재정, 성과를 충분히 설명하는지 근거를 바탕으로 점검합니다.", type: "website", lastModified: newest(publicInterestWatchCases.map((item) => item.updatedAt)) },
+  { path: "/monitoring", title: "씨앗의 눈 | 씨앗의 소리", description: "뉴스·브리핑·칼럼에서 시작된 공익감시 의제를 다시 연결하고, 권력과 예산에 대한 질문부터 기관의 답변과 후속 변화까지 기록합니다.", type: "website", lastModified: latestDate },
   { path: "/proposals", title: "시민제안 | 씨앗의 소리", description: "시민의 문제의식을 구체적인 제도와 정책의 제안으로 키우는 씨앗의 소리 제안 공간입니다.", type: "website", lastModified: latestDate },
   { path: "/founding-statement", title: "씨앗의 소리 취지문 | 씨앗의 소리", description: "한 사람의 생각과 목소리도 세상을 향해 자랄 수 있다는 믿음에서 시작한 독립 시민미디어 씨앗의 소리의 취지문입니다.", type: "article", lastModified: latestDate, author: "박경석", section: "씨앗의 소리 취지문" },
   { path: "/seed-language", title: "씨앗언어 | 씨앗의 소리", description: "특정 진영이 독점한 시민사회의 언어를 해체하고 본래 의미를 되살려 시민의 언어로 다시 구성합니다.", type: "website", lastModified: newest(allSeedLanguageArticlesKo.map((item) => item.date)) },
@@ -140,7 +140,7 @@ const monitoringRoutes: SeoRoute[] = publicInterestWatchCases.map((item) => ({
   type: "article",
   lastModified: item.updatedAt,
   author: SITE_NAME,
-  section: "공익감시",
+  section: "씨앗의 눈",
 }));
 
 const researchRoutes: SeoRoute[] = [{
