@@ -26,6 +26,7 @@ export default function SeedLanguageDetail() {
   const continuation = getEditorialContinuation("seed-language", article.slug, language);
 
   const isLongRead = article.readMinutes >= 8;
+  const isProgressArticle = article.slug === "what-is-true-progress";
   const isEnvironmentArticle = article.slug.startsWith("environment-");
   const relatedSlug = article.relatedArticle?.slug
     ?? (article.slug === ENVIRONMENT_FEATURE_SLUG ? ENVIRONMENT_DEEP_READ_SLUG : undefined);
@@ -79,7 +80,7 @@ export default function SeedLanguageDetail() {
 
         {article.sections.map((section, index) => <section id={`article-section-${index + 1}`} key={section.title} className={`article-section scroll-mt-28 ${isLongRead ? "article-section-long" : ""}`}>
           <h2 className="article-section-title">{section.title}</h2>
-          {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>)}
+          {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className={`article-copy ${isLongRead ? "article-copy-long" : ""} ${isProgressArticle ? "!text-charcoal" : ""}`}>{paragraph}</p>)}
           {section.sourceIndices && <ul className="mt-4 space-y-2 border-l-2 border-green-deep/20 pl-4">{section.sourceIndices.map((sourceIndex) => article.sources?.[sourceIndex]).filter((source) => Boolean(source)).map((source) => source && <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="text-sm leading-6 text-green-deep underline underline-offset-4">{source.label}</a></li>)}</ul>}
           {(article.charts ?? (article.chart ? [article.chart] : [])).filter((chart) => index === chart.afterSection).map((chart, chartIndex) => <figure key={chart.title} className="my-9 border-y-2 border-green-deep bg-white" aria-labelledby={`comparison-${index}-${chartIndex}`}>
             <figcaption id={`comparison-${index}-${chartIndex}`} className="px-4 py-5 text-lg font-bold leading-7 text-navy sm:px-6">{chart.title}</figcaption>
