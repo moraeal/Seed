@@ -97,7 +97,7 @@ export default function Monitoring() {
   const sideArticles = recentArticles.slice(1);
   const archivedArticles = curatedArticles.slice(RECENT_ARTICLE_COUNT);
   const criteria = [
-    { icon: Landmark, ko: "권력과 절차", en: "Power & procedure", detailKo: "결정권과 검증 절차", detailEn: "Authority and due process" },
+    { icon: Landmark, ko: "입법과 권력", en: "Legislation & power", detailKo: "법안·절차·결정권", detailEn: "Bills, procedure and authority" },
     { icon: Scale, ko: "예산과 성과", en: "Budgets & outcomes", detailKo: "돈의 흐름과 실제 결과", detailEn: "Money flows and results" },
     { icon: Eye, ko: "시민의 권리", en: "Civic rights", detailKo: "참여·선택·이의제기", detailEn: "Voice, choice and appeal" },
     { icon: FileSearch, ko: "답변과 후속", en: "Replies & follow-up", detailKo: "질의·반론·변화 기록", detailEn: "Questions, replies and change" },
@@ -113,8 +113,8 @@ export default function Monitoring() {
           </div>
           <p className="max-w-2xl text-base leading-8 text-charcoal/65">
             {ko
-              ? "씨앗의 눈은 국가와 지방정부, 공공기관과 시민사회가 가진 권력, 그리고 세금과 기부금이 어떻게 쓰이는지를 감시합니다. 선한 목적이나 명성도 검증을 대신할 수 없습니다. 공개자료와 기관의 답변, 사업의 실제 결과를 끝까지 기록합니다."
-              : "SEED Watch scrutinizes power exercised by national and local government, public institutions and civil society—and how taxes and donations are used. Good intentions or reputation do not replace verification. We follow public records, institutional replies and real-world outcomes."}
+              ? "씨앗의 눈은 국회와 입법 과정, 국가와 지방정부, 공공기관과 시민사회가 가진 권력을 감시합니다. 법안과 제도가 시민의 권리와 기업의 자유를 어떻게 바꾸는지, 세금과 기부금이 어떻게 쓰이는지 살핍니다. 선한 목적이나 명성도 검증을 대신할 수 없습니다. 공개자료와 기관의 답변, 시행 이후의 실제 결과를 끝까지 기록합니다."
+              : "SEED Watch scrutinizes legislatures and lawmaking, national and local government, public institutions and civil-society power. We examine how bills and institutions change civic rights and economic freedom, and how taxes and donations are used. Good intentions or reputation do not replace verification. We follow public records, institutional replies and real-world outcomes after implementation."}
           </p>
         </div>
       </header>
