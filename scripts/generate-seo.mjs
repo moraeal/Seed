@@ -121,6 +121,7 @@ function articleBody(route) {
     const item = seedLanguageArticles.find((entry) => entry.slug === seedLanguageMatch[1]);
     if (item) return [
       `<section><h2>핵심 요약</h2>${bulletList(item.keyPoints)}</section>`,
+      paragraphList(item.leadParagraphs),
       ...item.sections.map((section) => `<section><h2>${escapeHtml(section.title)}</h2>${paragraphList(section.paragraphs)}</section>`),
     ].join("\n");
   }

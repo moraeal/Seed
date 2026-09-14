@@ -46,16 +46,38 @@ const progressContinuation: Record<Language, EditorialContinuation> = {
   },
 };
 
+const discourseContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/columns/citizenization-before-advancement-2026",
+    title: "선진화를 위해서는 시민화가 우선이다",
+    relationship: "담론과 시민화",
+    reason: "선진화 담론이 시민의 실천과 어떻게 만날 수 있는지, 시민화를 하나의 판단 잣대로 제안한 글로 이어갑니다.",
+    listHref: "/seed-language",
+    listLabel: "씨앗언어 전체 보기",
+  },
+  en: {
+    href: "/columns/citizenization-before-advancement-2026",
+    title: "Citizenization Must Come Before Advancement",
+    relationship: "DISCOURSE AND CITIZENIZATION",
+    reason: "Continue with how the advancement discourse can meet civic practice, and why citizenization is offered as one standard of judgment.",
+    listHref: "/seed-language",
+    listLabel: "All SEED Language",
+  },
+};
+
 const isFreedom = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "freedom-as-citizen-agency";
 const isProgress = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-progress";
+const isDiscourse = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "discourse-many-words-no-direction";
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (isDiscourse(kind, slug)) return true;
   if (isProgress(kind, slug)) return true;
   if (isFreedom(kind, slug)) return true;
   return hasBaseEditorialContinuation(kind, slug);
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (isDiscourse(kind, slug)) return discourseContinuation[language];
   if (isProgress(kind, slug)) return progressContinuation[language];
   if (isFreedom(kind, slug)) return freedomContinuation[language];
   return getBaseEditorialContinuation(kind, slug, language);

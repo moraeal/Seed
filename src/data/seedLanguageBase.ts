@@ -24,6 +24,8 @@ export type SeedLanguageArticle = {
   subtitle: string;
   summary: string;
   keyPoints: string[];
+  /** Introductory paragraphs that appear after the key-points box and before the first titled section. */
+  leadParagraphs?: string[];
   sections: { title: string; paragraphs: string[]; overview?: string; sourceIndices?: number[] }[];
   heroImage: SeedLanguageImage;
   inlineImage?: SeedLanguageImage;
