@@ -88,7 +88,7 @@ for (const article of seedLanguageModule.seedLanguageArticlesKo) {
   if (!editorialContinuationModule.getEditorialContinuation("seed-language", article.slug, "ko") || !editorialContinuationModule.getEditorialContinuation("seed-language", article.slug, "en")) errors.push(`Editorial continuation is missing or incomplete for SEED Language: ${article.slug}`);
   const english = seedLanguageModule.getSeedLanguageArticle(article.slug, "en");
   if (!english || english.title === article.title) errors.push(`Missing English SEED Language edition: ${article.slug}`);
-  const visualCount = [article.heroImage, article.inlineImage].filter((image) => image?.src).length + (article.chart?.rows?.length ? 1 : 0);
+  const visualCount = [article.heroImage, article.inlineImage, article.secondaryImage].filter((image) => image?.src).length + (article.chart?.rows?.length ? 1 : 0);
   if (!article.heroImage?.src || visualCount < 2) errors.push(`SEED Language article needs a primary image and two purposeful visuals: ${article.slug}`);
   requireEditorialStructure("SEED Language article", article, visualCount);
   if (!optionalSeedLanguageSocialSlugs.has(article.slug)) await requireSocialImage("seed-language", article.slug);

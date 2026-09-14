@@ -31,9 +31,9 @@ export const progressArticleKo: SeedLanguageArticle = {
     "진보라는 이름을 가졌더라도 시민의 자유를 줄이고 자기편의 권력을 지킨다면 앞으로 나아가는 세력이라 부르기 어렵다.",
   ],
   heroImage: {
-    src: "images/seed-language/what-is-true-progress-hero.webp",
-    alt: "오래된 시민 제도와 새로운 도시의 길 사이에서 스스로 방향을 선택하는 한 시민",
-    caption: "진보와 보수는 정치적 신분증이 아니다. 지킬 가치와 바꿀 권력을 스스로 판단하는 시민의 태도다.",
+    src: "images/seed-language/what-is-true-progress-hero-v2.webp",
+    alt: "역사적 건축물과 새로운 일터, 녹지 사이의 여러 길을 오가는 다양한 시민들",
+    caption: "진보와 보수는 두 진영이 차지한 길이 아니다. 시민은 지킬 가치와 바꿀 현실을 여러 삶의 자리에서 함께 선택한다.",
     credit: "씨앗의 소리 AI 제작 이미지 · 상징적 장면",
   },
   inlineImage: {
@@ -43,7 +43,14 @@ export const progressArticleKo: SeedLanguageArticle = {
     credit: "씨앗의 소리 편집 도표",
   },
   inlineImageAfterSection: 3,
-  showTableOfContents: true,
+  secondaryImage: {
+    src: "images/seed-language/what-is-true-progress-opening-wall.webp",
+    alt: "오래된 석조 공간의 튼튼한 골격은 남기고 막힌 벽을 함께 움직여 새로운 통로를 여는 시민들",
+    caption: "개혁은 오래된 것을 모두 부수는 일이 아니다. 지켜야 할 토대는 남기고 시민의 자유와 새로운 도전을 막는 벽을 여는 일이다.",
+    credit: "씨앗의 소리 AI 제작 이미지 · 상징적 장면",
+  },
+  secondaryImageAfterSection: 5,
+  showTableOfContents: false,
   sections: [
     {
       title: "나는 보수다. 그러나 나는 또한 진보다",
@@ -188,8 +195,8 @@ export const progressArticleEn: SeedLanguageArticle = {
   ],
   heroImage: {
     ...progressArticleKo.heroImage,
-    alt: "A citizen choosing a direction between an established civic institution and an open path through a new city",
-    caption: "Progressivism and conservatism are not political identity cards. Citizens must decide which values to preserve and which powers to change.",
+    alt: "Citizens moving along many paths between historic institutions, new workplaces and public green space",
+    caption: "Progressivism and conservatism are not two roads owned by opposing camps. Citizens choose together what should endure and what should change.",
     credit: "AI editorial image produced by SEED VOICE",
   },
   inlineImage: {
@@ -197,6 +204,12 @@ export const progressArticleEn: SeedLanguageArticle = {
     alt: "A graphic separating progress and conservatism from reform and reaction as two different axes",
     caption: "What to preserve or change is a choice of values. Whether one can correct one's own power is an attitude toward power.",
     credit: "SEED VOICE editorial graphic",
+  },
+  secondaryImage: {
+    ...progressArticleKo.secondaryImage!,
+    alt: "Citizens preserving sound arches while moving obsolete walls to open several new passages",
+    caption: "Reform does not mean destroying everything old. It preserves sound foundations while opening barriers that obstruct citizens' freedom and new attempts.",
+    credit: "AI editorial image produced by SEED VOICE",
   },
   sections: [
     {

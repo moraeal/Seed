@@ -28,6 +28,8 @@ export type SeedLanguageArticle = {
   heroImage: SeedLanguageImage;
   inlineImage?: SeedLanguageImage;
   inlineImageAfterSection?: number;
+  secondaryImage?: SeedLanguageImage;
+  secondaryImageAfterSection?: number;
   showTableOfContents?: boolean;
   relatedArticle?: { slug: string; label: string };
   sources?: { label: string; url: string }[];

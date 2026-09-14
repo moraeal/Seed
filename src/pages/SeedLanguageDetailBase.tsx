@@ -87,6 +87,7 @@ export default function SeedLanguageDetail() {
             <p className="px-4 py-4 text-sm leading-6 text-charcoal/65 sm:px-6">{chart.note}</p>
           </figure>)}
           {index === Math.min(article.inlineImageAfterSection ?? 6, article.sections.length - 1) && article.inlineImage && <InteractiveFigure src={article.inlineImage.src} alt={article.inlineImage.alt} caption={article.inlineImage.caption} credit={article.inlineImage.credit} figureClassName="my-8 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName="aspect-[16/9] w-full object-cover" />}
+          {index === Math.min(article.secondaryImageAfterSection ?? 6, article.sections.length - 1) && article.secondaryImage && <InteractiveFigure src={article.secondaryImage.src} alt={article.secondaryImage.alt} caption={article.secondaryImage.caption} credit={article.secondaryImage.credit} figureClassName="my-8 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName="aspect-[16/9] w-full object-cover" />}
           {article.showTableOfContents && <a href="#article-contents" className="mt-4 inline-block text-sm font-semibold text-green-deep underline underline-offset-4">{ko ? "목차로 돌아가기" : "Back to contents"}</a>}
         </section>)}
 
