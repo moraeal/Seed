@@ -144,7 +144,7 @@ export default function Monitoring() {
 
                 <div>
                   <div className="mb-3 flex flex-wrap items-center gap-2 text-[11px] font-extrabold">
-                    <span className="bg-gold px-2.5 py-1 text-navy">{article.status}</span>
+                    <span className="bg-green-deep px-2.5 py-1 text-white">{article.status}</span>
                     <span className="text-green-deep">{article.topic}</span>
                     <span className="text-charcoal/42">{article.sourceMenu}</span>
                   </div>
