@@ -21,6 +21,7 @@ const seedLanguageTerms: Record<string, { hanja: string; english: string }> = {
   진영언어: { hanja: "陣營言語", english: "PARTISAN LANGUAGE" },
   시민: { hanja: "市民", english: "CITIZEN" },
   자유: { hanja: "自由", english: "FREEDOM" },
+  진보: { hanja: "進步", english: "PROGRESS · PROGRESSIVISM" },
   민주: { hanja: "民主", english: "DEMOCRACY" },
   환경: { hanja: "環境", english: "ENVIRONMENT" },
   공익: { hanja: "公益", english: "PUBLIC INTEREST" },
@@ -142,7 +143,7 @@ export default function Home() {
                     {ko && seedLanguageTerm && (
                       <>
                         <p className="mt-1.5 text-[10px] font-bold leading-none text-charcoal/55">{seedLanguageTerm.hanja}</p>
-                        <p className="mt-1 text-[8px] font-black tracking-[.08em] text-green-deep/65 sm:text-[9px]">{seedLanguageTerm.english}</p>
+                        <p className="mt-1 max-w-full px-1 text-[8px] font-black leading-tight tracking-[.04em] text-green-deep/65 sm:text-[8px]">{seedLanguageTerm.english}</p>
                       </>
                     )}
                   </div>

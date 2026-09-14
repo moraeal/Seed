@@ -17,7 +17,7 @@ const sharedSources = [
 
 export const progressArticleKo: SeedLanguageArticle = {
   slug: "what-is-true-progress",
-  term: "진보(進步) · Progress · Progressivism",
+  term: "진보",
   date: "2026-09-14",
   readMinutes: 11,
   newsletterEligible: false,
@@ -183,7 +183,7 @@ export const progressArticleKo: SeedLanguageArticle = {
 
 export const progressArticleEn: SeedLanguageArticle = {
   ...progressArticleKo,
-  term: "Progress · Progressivism",
+  term: "Progress",
   title: "What Is Real Progress?",
   subtitle: "Progress is not a medal from the past but an attitude in the present",
   summary: "Progressivism and conservatism are not moral identity cards. They ask what should change and what should endure. Reform and reaction are measured by whether a movement can correct not only an unjust reality but also its own power. When the name of progress restricts citizens' freedom and protects one camp's authority, it loses the meaning of moving forward.",
