@@ -93,8 +93,6 @@ export default function Monitoring() {
     .filter((article): article is ResolvedWatchArticle => article !== null)
     .sort((a, b) => b.date.localeCompare(a.date));
   const recentArticles = curatedArticles.slice(0, RECENT_ARTICLE_COUNT);
-  const leadArticle = recentArticles[0];
-  const sideArticles = recentArticles.slice(1);
   const archivedArticles = curatedArticles.slice(RECENT_ARTICLE_COUNT);
   const criteria = [
     { icon: Landmark, ko: "입법과 권력", en: "Legislation & power", detailKo: "법안·절차·결정권", detailEn: "Bills, procedure and authority" },
@@ -121,36 +119,49 @@ export default function Monitoring() {
 
       <div className="container-page py-8 sm:py-10">
         <section>
-          {leadArticle && (
-            <div className="grid gap-5 lg:grid-cols-[1.16fr_.84fr]">
-              <Link to={leadArticle.to} className="group relative min-h-[430px] overflow-hidden bg-navy text-white">
-                <SafeImage src={leadArticle.image} alt={leadArticle.imageAlt} className="absolute inset-0 h-full w-full object-cover opacity-45 transition duration-500 group-hover:scale-[1.02] group-hover:opacity-55" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/55 to-transparent" />
-                <div className="relative flex min-h-[430px] flex-col justify-end p-6 sm:p-8">
-                  <div className="flex flex-wrap items-center gap-2 text-[11px] font-extrabold tracking-[.08em]">
-                    <span className="bg-gold px-2.5 py-1 text-navy">{leadArticle.status}</span>
-                    <span className="text-white/72">{leadArticle.topic} · {leadArticle.sourceMenu}</span>
+          <div className="mb-4 flex items-end justify-between gap-4 border-b-2 border-navy pb-3">
+            <div>
+              <span className="section-kicker">LATEST</span>
+              <h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "최근 기사" : "Latest articles"}</h2>
+            </div>
+            <p className="text-xs font-semibold text-charcoal/45">{ko ? "최근 5건" : "Latest five"}</p>
+          </div>
+
+          <div>
+            {recentArticles.map((article) => (
+              <Link
+                key={article.key}
+                to={article.to}
+                className="group grid gap-5 border-b border-green-deep/15 px-5 py-6 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7"
+              >
+                <div className="overflow-hidden bg-green-deep">
+                  <SafeImage
+                    src={article.image}
+                    alt={article.imageAlt}
+                    className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.025]"
+                  />
+                </div>
+
+                <div>
+                  <div className="mb-3 flex flex-wrap items-center gap-2 text-[11px] font-extrabold">
+                    <span className="bg-gold px-2.5 py-1 text-navy">{article.status}</span>
+                    <span className="text-green-deep">{article.topic}</span>
+                    <span className="text-charcoal/42">{article.sourceMenu}</span>
                   </div>
-                  <h3 className="editorial-title mt-4 max-w-3xl text-3xl font-bold leading-tight sm:text-4xl">{leadArticle.title}</h3>
-                  <p className="mt-4 line-clamp-3 max-w-2xl text-sm leading-7 text-white/72 sm:text-base">{leadArticle.summary}</p>
-                  <span className="mt-5 flex items-center gap-2 text-sm font-extrabold text-gold">{ko ? "원문 기사 보기" : "Read the original"}<ArrowRight size={16}/></span>
+                  <h3 className="editorial-title line-clamp-2 text-balance text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">
+                    {article.title}
+                  </h3>
+                  <p className="mt-2 line-clamp-2 max-w-3xl text-base leading-7 text-charcoal/60">{article.summary}</p>
+                  <div className="mt-4 flex flex-wrap items-center gap-4 border-t border-green-deep/10 pt-3 text-xs text-charcoal/45">
+                    <time>{article.date.replace(/-/g, ".")}</time>
+                    <span className="ml-auto flex items-center gap-2 font-extrabold text-green-deep">
+                      {ko ? "기사 읽기" : "Read article"}<ArrowRight size={15}/>
+                    </span>
+                  </div>
                 </div>
               </Link>
-
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-                {sideArticles.map((article) => (
-                  <Link key={article.key} to={article.to} className="group grid grid-cols-[6.5rem_1fr] gap-4 border border-green-deep/15 bg-white p-3 transition hover:border-green-deep/35 hover:bg-green-pale/35">
-                    <SafeImage src={article.image} alt={article.imageAlt} className="h-full min-h-28 w-full object-cover" />
-                    <div className="min-w-0 py-1">
-                      <div className="flex flex-wrap gap-x-2 text-[10px] font-extrabold tracking-wide text-green-deep"><span>{article.status}</span><span className="text-charcoal/42">{article.sourceMenu}</span></div>
-                      <h3 className="editorial-title mt-2 line-clamp-2 text-lg font-bold leading-snug text-navy group-hover:text-green-mid">{article.title}</h3>
-                      <p className="mt-2 text-[11px] font-semibold text-charcoal/42">{article.date.replace(/-/g, ".")}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
+            ))}
+          </div>
 
           <ArticleArchive items={archivedArticles.map((article) => ({ key: article.key, to: article.to, title: article.title, summary: article.summary, date: article.date }))} ko={ko} />
         </section>
