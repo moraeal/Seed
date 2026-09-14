@@ -135,6 +135,24 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
       listLabel: "All columns",
     },
   },
+  "column:citizenization-before-advancement-2026": {
+    ko: {
+      href: "/seed-language/citizen-as-seed",
+      title: "시민은 주어지는 이름이 아니라 자라나는 존재다",
+      relationship: "시민화 더 깊게 읽기",
+      reason: "선진화의 출발점으로 제안한 시민화가 시민 한 사람의 자유와 책임, 공익의 실천에서 어떻게 시작되는지 이어서 살펴봅니다.",
+      listHref: "/columns",
+      listLabel: "씨앗의 소리 전체 보기",
+    },
+    en: {
+      href: "/seed-language/citizen-as-seed",
+      title: "Citizenship Is Not a Given Label; It Is Something We Grow Into",
+      relationship: "EXPLORE CIVIC FORMATION",
+      reason: "Continue with how civic formation begins in each person's freedom, responsibility and practice of the public good.",
+      listHref: "/columns",
+      listLabel: "All columns",
+    },
+  },
   "briefing:social-economy-fair-competition": {
     ko: {
       href: "/briefings/social-solidarity-economy-youth-mall-lessons",
