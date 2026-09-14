@@ -296,7 +296,7 @@ const sectionInfo: Record<EditorialContentKind, { href: string; ko: string; en: 
   briefing: { href: "/briefings", ko: "씨앗브리핑 전체 보기", en: "All briefings" },
   column: { href: "/columns", ko: "씨앗의 소리 전체 보기", en: "All columns" },
   "seed-language": { href: "/seed-language", ko: "씨앗언어 전체 보기", en: "All SEED Language" },
-  monitoring: { href: "/monitoring", ko: "공익감시 전체 보기", en: "All public-interest watch records" },
+  monitoring: { href: "/monitoring", ko: "씨앗의 눈 전체 보기", en: "All SEED Watch records" },
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
