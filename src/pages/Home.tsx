@@ -83,7 +83,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-paper">
+    <div className="home-page bg-paper">
       <section className="border-b border-green-deep/15 bg-ivory py-4 sm:py-6 lg:py-7">
         <div className="container-page">
           <div className="mb-3 border-b border-green-deep/15 pb-2.5 sm:mb-4">
@@ -99,7 +99,7 @@ export default function Home() {
                   </div>
                   <p className="mt-3 text-[10px] font-black tracking-[.14em] text-green-deep sm:mt-3.5 sm:text-[11px]">THE VOICE OF SEED</p>
                   <h1 className="editorial-title mt-1.5 max-w-5xl break-keep text-balance text-[1.75rem] font-black leading-[1.12] tracking-[-0.038em] text-navy transition group-hover:text-green-mid sm:text-[clamp(1.9rem,3.5vw,3rem)] sm:leading-[1.09] sm:tracking-[-0.042em]">{leadColumn.title}</h1>
-                  <p className="mt-2 line-clamp-3 max-w-4xl text-[14px] leading-6 text-charcoal/64 sm:mt-2.5 sm:text-[1.02rem] sm:leading-7">{leadColumn.summary}</p>
+                  <p className="home-lead-summary mt-2 line-clamp-3 max-w-4xl sm:mt-2.5">{leadColumn.summary}</p>
                   <div className="mt-3 flex items-center gap-3 text-[11px] text-charcoal/45 sm:text-xs"><time>{leadColumn.date.replace(/-/g, ".")}</time><span className="inline-flex items-center gap-1"><Clock size={12}/>{leadColumn.readMinutes}{ko ? "분 읽기" : " min read"}</span></div>
                 </Link>
               </article>
@@ -111,7 +111,7 @@ export default function Home() {
                   <div className="min-w-0">
                     <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">TODAY&apos;S NEWS</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "뉴스 읽기" : "Read"}<ArrowRight size={11}/></span></div>
                     <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{latestNews.title}</h2>
-                    <p className="mt-1 line-clamp-3 text-[11px] leading-[1.45] text-charcoal/58 sm:text-[12px]">{latestNews.summary}</p>
+                    <p className="home-compact-summary mt-1 line-clamp-3">{latestNews.summary}</p>
                   </div>
                 </Link>
               )}
@@ -121,7 +121,7 @@ export default function Home() {
                   <div className="min-w-0">
                     <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">SEED BRIEFING</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "브리핑 읽기" : "Read"}<ArrowRight size={11}/></span></div>
                     <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{latestBriefing.title}</h2>
-                    <p className="mt-1 line-clamp-3 text-[11px] leading-[1.45] text-charcoal/58 sm:text-[12px]">{latestBriefing.summary}</p>
+                    <p className="home-compact-summary mt-1 line-clamp-3">{latestBriefing.summary}</p>
                   </div>
                 </Link>
               )}
@@ -131,7 +131,7 @@ export default function Home() {
                   <div className="min-w-0">
                     <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">SEED WATCH</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "감시 읽기" : "Read"}<ArrowRight size={11}/></span></div>
                     <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{publicWatchTitle}</h2>
-                    <p className="mt-1 line-clamp-3 text-[11px] leading-[1.45] text-charcoal/58 sm:text-[12px]">{publicWatchSummary}</p>
+                    <p className="home-compact-summary mt-1 line-clamp-3">{publicWatchSummary}</p>
                   </div>
                 </Link>
               )}
@@ -149,7 +149,7 @@ export default function Home() {
                   <div className="min-w-0">
                     <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">SEED LANGUAGE</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "언어 읽기" : "Read"}<ArrowRight size={11}/></span></div>
                     <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{seedLanguageArticle.title}</h2>
-                    <p className="mt-1 line-clamp-3 text-[11px] leading-[1.45] text-charcoal/58 sm:text-[12px]">{seedLanguageArticle.summary}</p>
+                    <p className="home-compact-summary mt-1 line-clamp-3">{seedLanguageArticle.summary}</p>
                   </div>
                 </Link>
               )}
