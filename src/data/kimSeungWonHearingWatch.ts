@@ -37,6 +37,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   },
   keyChanges: [
     {
+      date: "2026-09-16",
+      text: {
+        ko: "약 14시간 동안 진행된 인사청문회가 자정 무렵 종료됐지만 인사청문경과보고서는 현장에서 채택되지 않았습니다.",
+        en: "The confirmation hearing ended around midnight after roughly 14 hours, but the committee did not adopt its hearing report at the meeting.",
+      },
+    },
+    {
       date: "2026-09-15",
       text: {
         ko: "후보자 측은 소속 보좌진이 청문위원의 질의 자료를 촬영한 사실을 인정하고 사과했으며, 후보자의 지시나 관여는 없었다고 밝혔습니다.",
@@ -318,6 +325,32 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-16",
+      title: { ko: "14시간 청문회 종료·경과보고서 미채택", en: "Fourteen-hour hearing ends without committee report" },
+      description: {
+        ko: "9월 15일 오전 10시에 시작한 인사청문회는 자정 무렵 약 14시간 만에 종료됐습니다. 후보자는 마무리 발언에서 장관으로 일할 기회가 주어지면 국민이 신뢰하는 형사사법 체계를 완성하겠다고 밝혔습니다. 그러나 법제사법위원회는 이날 인사청문경과보고서를 채택하지 않았고, 여야는 추후 채택 여부를 다시 논의할 예정입니다. 이는 후보자 적격·부적격에 관한 위원회의 최종 판단이 내려졌다는 뜻이 아니라, 보고서 처리가 다음 절차로 넘어갔다는 의미입니다.",
+        en: "The hearing that began at 10 a.m. on September 15 ended around midnight after roughly 14 hours. In his closing remarks, Kim said that if given the opportunity to serve, he would complete a criminal-justice system trusted by the public. The Legislation and Judiciary Committee did not adopt its hearing report at the meeting and is expected to discuss it later. This does not amount to a final committee finding on his fitness; it means the report remains pending in the next procedural stage.",
+      },
+      change: { ko: "청문회 종료, 경과보고서 처리는 다음 회의로", en: "Hearing ends; committee report remains pending" },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "YTN", en: "YTN" },
+          title: { ko: "김승원 법무장관 후보자 청문회, 14시간 만에 종료", en: "Kim hearing ends after 14 hours" },
+          url: "https://www.ytn.co.kr/_ln/0101_202609160000319090",
+          publishedAt: "2026-09-16",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "연합뉴스TV", en: "Yonhap News TV" },
+          title: { ko: "김승원 청문회 14시간 만에 종료…‘신뢰받는 형사사법체계 완성할 것’", en: "Kim hearing ends after 14 hours" },
+          url: "https://www.yonhapnewstv.co.kr/news/AKR20260916004252pyl",
+          publishedAt: "2026-09-16",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "다음",
       title: { ko: "청문경과보고서와 임명 여부 확인", en: "Committee report and appointment decision" },
       description: {
@@ -394,6 +427,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+    { ko: "인사청문회는 약 14시간 만인 2026년 9월 16일 자정 무렵 종료됐으며, 법제사법위원회는 이날 인사청문경과보고서를 채택하지 않았습니다.", en: "The hearing ended around midnight on September 16, 2026 after roughly 14 hours, and the Legislation and Judiciary Committee did not adopt its report at the meeting." },
     { ko: "김승원 후보자 인사청문회는 2026년 9월 15일 증인·참고인 없이 개최됐습니다.", en: "Kim Seung-won's confirmation hearing was held on September 15, 2026 without witnesses or reference witnesses." },
     { ko: "국민의힘은 증인 44명과 참고인 4명을 요구했으며 최종적으로 모두 채택되지 않았습니다.", en: "The People Power Party requested 44 witnesses and four reference witnesses; none was approved." },
     { ko: "후보자가 식약처에 임상시험 승인 관련 민원을 전달한 사실과 양모 씨를 알고 지낸 사실은 후보자의 설명으로 확인됐습니다.", en: "The nominee acknowledged relaying a clinical-trial approval petition to the regulator and knowing the woman associated with the request." },
@@ -441,6 +475,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "YTN — 14시간 청문회 종료와 경과보고서 미채택", en: "YTN — Hearing ends after 14 hours without committee report" },
+      url: "https://www.ytn.co.kr/_ln/0101_202609160000319090",
+    },
+    {
+      label: { ko: "연합뉴스TV — 김승원 후보자 인사청문회 종료", en: "Yonhap News TV — Kim confirmation hearing concludes" },
+      url: "https://www.yonhapnewstv.co.kr/news/AKR20260916004252pyl",
+    },
     {
       label: { ko: "연합뉴스 — 김승원 법무부 장관 후보자 지명과 청문회 준비", en: "Yonhap — Nomination and hearing preparations" },
       url: "https://www.yna.co.kr/view/AKR20260901183300004",
