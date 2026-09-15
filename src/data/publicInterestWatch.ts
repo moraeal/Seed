@@ -7,6 +7,7 @@ export type WatchTimelineStatus = "confirmed" | "response" | "new" | "pending";
 export type WatchTimelineSource = {
   publisher: LocalizedText;
   title: LocalizedText;
+  summary?: LocalizedText;
   url: string;
   publishedAt?: string;
   thumbnailSrc?: string;

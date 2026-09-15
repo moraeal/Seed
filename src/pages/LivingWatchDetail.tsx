@@ -189,6 +189,7 @@ export default function LivingWatchDetail({ item, language, continuation }: Prop
                                 <ExternalLink size={13}/>
                               </div>
                               <strong className="mt-2 line-clamp-2 text-sm leading-5 text-navy group-hover:text-green-deep">{t(source.title)}</strong>
+                              {source.summary && <p className="mt-2 line-clamp-3 text-xs leading-5 text-charcoal/58">{t(source.summary)}</p>}
                               <div className="mt-auto flex items-center justify-between gap-2 pt-3 text-[10px] text-charcoal/42">
                                 <time>{source.publishedAt?.replace(/-/g, ".")}</time>
                                 <span>{source.kind === "video" ? (ko ? "영상 보기" : "Watch") : (ko ? "원문 보기" : "Open source")}</span>
