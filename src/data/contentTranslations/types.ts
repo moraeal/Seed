@@ -27,6 +27,7 @@ export type NewsTranslation = {
   selectedNews: Omit<NewsArticle["selectedNews"], "url" | "publishedAt">;
   heroImage?: Partial<Pick<NewsArticle["heroImage"], "src" | "alt" | "caption" | "credit">>;
   inlineImage?: Partial<Pick<NewsArticle["inlineImage"], "src" | "alt" | "caption" | "credit">>;
+  additionalImages?: Array<Partial<Pick<NewsArticle["heroImage"], "src" | "alt" | "caption" | "credit">>>;
   sections: NewsArticle["sections"];
   watchPoints: string[];
   seedPerspective: string[];

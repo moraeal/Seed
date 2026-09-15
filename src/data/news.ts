@@ -1,5 +1,6 @@
 import { newsArticles as archivedNewsArticles } from "./newsArchive";
 import type { NewsArticle as ArchiveNewsArticle, NewsImage } from "./newsArchive";
+import { fuelPriceCapTaxBillArticle } from "./news/fuelPriceCapTaxBill";
 
 export type { NewsImage, NewsSection, NewsSource, NewsVideo, SelectedNews } from "./newsArchive";
 export type NewsArticle = ArchiveNewsArticle & { additionalImages?: NewsImage[] };
@@ -388,7 +389,7 @@ const mediaAppealJusticeArticle: NewsArticle = {
   ]
 };
 
-export const newsArticles: NewsArticle[] = [nationalDebtRatioGdpComparisonArticle, mediaAppealJusticeArticle, localSportsSubsidyArticle, lhSplitPublicAgencyArticle, ...archivedNewsArticles];
+export const newsArticles: NewsArticle[] = [fuelPriceCapTaxBillArticle, nationalDebtRatioGdpComparisonArticle, mediaAppealJusticeArticle, localSportsSubsidyArticle, lhSplitPublicAgencyArticle, ...archivedNewsArticles];
 
 export const getNewsNewestFirst = () => [...newsArticles].sort((a, b) => b.date.localeCompare(a.date));
 export const getNewsArticle = (slug: string) => newsArticles.find((article) => article.slug === slug);

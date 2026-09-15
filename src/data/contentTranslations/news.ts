@@ -1,6 +1,8 @@
 import type { NewsTranslation } from "./types";
+import { fuelPriceCapTaxBillTranslation } from "./news/fuelPriceCapTaxBill";
 
 export const newsTranslations: Record<string, NewsTranslation> = {
+  "fuel-price-cap-tax-bill": fuelPriceCapTaxBillTranslation,
   "national-debt-ratio-gdp-comparison": {
     category: "Public Finance, Statistics & Accountability",
     title: "Debt Rises by KRW 106 Trillion—So Why Does the Ratio Fall?",

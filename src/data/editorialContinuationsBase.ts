@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "news:fuel-price-cap-tax-bill": {
+    ko: {
+      href: "/news/national-debt-ratio-gdp-comparison",
+      title: "나랏빚 106조 늘었는데 채무비율은 하락?",
+      relationship: "재정의 숨은 비용",
+      reason: "가격표 뒤로 옮겨간 재정 부담을 확인했다면, 정부가 국가채무를 설명할 때 비교 기준을 어떻게 선택하는지도 이어서 살펴봅니다.",
+      listHref: "/news",
+      listLabel: "오늘의 뉴스 전체 보기",
+    },
+    en: {
+      href: "/news/national-debt-ratio-gdp-comparison",
+      title: "Debt Rises by KRW 106 Trillion—So Why Does the Ratio Fall?",
+      relationship: "HIDDEN FISCAL COSTS",
+      reason: "After tracing the public cost behind a lower fuel-price sign, continue with how the government chooses the comparison basis used to describe national debt.",
+      listHref: "/news",
+      listLabel: "All Today's News",
+    },
+  },
   "briefing:confirmation-hearings-zero-witnesses": {
     ko: {
       href: "/briefings/president-criminal-trials-article-84",

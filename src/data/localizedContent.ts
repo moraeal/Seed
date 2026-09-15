@@ -104,6 +104,10 @@ export function localizeNewsArticle(article: NewsArticle, language: Language): N
     },
     heroImage: { ...article.heroImage, ...translated.heroImage },
     inlineImage: { ...article.inlineImage, ...translated.inlineImage },
+    additionalImages: article.additionalImages?.map((image, index) => ({
+      ...image,
+      ...(translated.additionalImages?.[index] ?? {}),
+    })),
     sections: translated.sections,
     watchPoints: translated.watchPoints,
     seedPerspective: translated.seedPerspective,
