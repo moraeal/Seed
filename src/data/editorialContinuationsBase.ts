@@ -83,7 +83,7 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
   },
   "briefing:confirmation-hearings-zero-witnesses": {
     ko: {
-      href: "/monitoring/kim-seung-won-confirmation-hearing",
+      href: "/news/kim-seung-won-confirmation-hearing",
       title: "김승원 후보자 청문회, 지금까지 무엇이 달라졌나",
       relationship: "이 사건 계속 보기",
       reason: "9월 15일 청문회 개최와 새롭게 확인된 사실, 후보자의 해명, 경과보고서와 임명 여부를 하나의 타임라인에서 계속 확인합니다.",
@@ -91,7 +91,7 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
     listLabel: "브리핑 전체 보기",
     },
     en: {
-      href: "/monitoring/kim-seung-won-confirmation-hearing",
+      href: "/news/kim-seung-won-confirmation-hearing",
       title: "Kim Seung-won's Hearing: What Has Changed?",
       relationship: "FOLLOW THIS CASE",
       reason: "Follow the September 15 hearing, newly verified facts, the nominee's responses and the pending committee report and appointment decision in one timeline.",

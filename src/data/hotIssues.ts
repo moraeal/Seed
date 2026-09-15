@@ -35,7 +35,7 @@ export function getHotIssuesNewestFirst(language: Language): HotIssueListItem[] 
 
   const trackers = newsTrackerCases.map((item) => ({
     key: `tracker-${item.slug}`,
-    to: `/monitoring/${item.slug}`,
+    to: `/news/${item.slug}`,
     title: item.title[language],
     summary: item.summary[language],
     date: item.updatedAt,

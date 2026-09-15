@@ -99,7 +99,7 @@ export default function SearchPage() {
       summary: item.summary[language],
       body: [item.sourceBasis[language], ...(item.keyChanges ?? []).map((change) => change.text[language]), ...(item.timeline ?? []).flatMap((entry) => [entry.title[language], entry.description[language]])].join(" "),
       date: item.updatedAt,
-      href: `/monitoring/${item.slug}`,
+      href: `/news/${item.slug}`,
       imageSrc: item.heroImage?.src ?? "",
       imageAlt: item.heroImage?.alt[language] ?? item.title[language],
     }));

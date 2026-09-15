@@ -30,7 +30,7 @@ const ColumnDetail = lazy(() => import("./pages/ColumnDetail"));
 const Academy = lazy(() => import("./pages/Academy"));
 const Experiments = lazy(() => import("./pages/Experiments"));
 const News = lazy(() => import("./pages/News"));
-const NewsDetail = lazy(() => import("./pages/NewsDetail"));
+const HotIssueDetail = lazy(() => import("./pages/HotIssueDetail"));
 const FoundingStatement = lazy(() => import("./pages/FoundingStatement"));
 const SeedLanguage = lazy(() => import("./pages/SeedLanguage"));
 const SeedLanguageDetail = lazy(() => import("./pages/SeedLanguageDetail"));
@@ -73,7 +73,7 @@ function AppShell() {
           <Route path="/columns" element={<Columns />} />
           <Route path="/columns/:slug" element={<ColumnDetail />} />
           <Route path="/news" element={<News />} />
-          <Route path="/news/:slug" element={<NewsDetail />} />
+          <Route path="/news/:slug" element={<HotIssueDetail />} />
           <Route path="/monitoring" element={<Monitoring />} />
           <Route path="/monitoring/yeosu-world-island-expo" element={<Navigate to="/briefings/yeosu-world-island-expo" replace />} />
           <Route path="/monitoring/:slug" element={<PublicInterestWatchDetail />} />

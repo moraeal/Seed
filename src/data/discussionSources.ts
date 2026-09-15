@@ -23,7 +23,7 @@ const allSources: DiscussionSource[] = [
   ...getAllBriefingsNewestFirst().map((item) => ({ slug: item.slug, type: "브리핑", title: item.title, path: `/briefings/${item.slug}` })),
   ...columns.map((item) => ({ slug: item.slug, type: "칼럼", title: item.title, path: `/columns/${item.slug}` })),
   ...newsArticles.map((item) => ({ slug: item.slug, type: "핫이슈", title: item.title, path: `/news/${item.slug}` })),
-  ...newsTrackerCases.map((item) => ({ slug: item.slug, type: "핫이슈", title: item.title.ko, path: `/monitoring/${item.slug}` })),
+  ...newsTrackerCases.map((item) => ({ slug: item.slug, type: "핫이슈", title: item.title.ko, path: `/news/${item.slug}` })),
   ...staticSources,
 ];
 

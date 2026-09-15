@@ -134,7 +134,7 @@ const columnRoutes: SeoRoute[] = columns.map((column) => ({
 }));
 
 const monitoringRoutes: SeoRoute[] = publicInterestWatchCases.map((item) => ({
-  path: `/monitoring/${item.slug}`,
+  path: item.timeline?.length ? `/news/${item.slug}` : `/monitoring/${item.slug}`,
   title: `${item.title.ko} | 씨앗의 소리`,
   description: item.summary.ko,
   type: "article",
