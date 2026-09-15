@@ -16,8 +16,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   openedAt: "2026-08-31",
   updatedAt: "2026-09-15",
   nextCheck: {
-    ko: "11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판, 법제사법위원회의 인사청문경과보고서 채택 여부와 대통령의 임명 여부",
-    en: "The November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder, whether the Legislation and Judiciary Committee adopts its hearing report, and whether the president proceeds with the appointment",
+    ko: "경찰의 재수사 여부 결정, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판, 법제사법위원회의 인사청문경과보고서 채택 여부와 대통령의 임명 여부",
+    en: "The police decision on whether to reinvestigate, the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder, whether the Legislation and Judiciary Committee adopts its hearing report, and whether the president proceeds with the appointment",
   },
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
@@ -36,6 +36,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "This timeline cross-checks National Assembly schedules and decisions, public statements from the nominee and both parties, and reporting based on Ministry of Food and Drug Safety records. Allegations and the nominee's rebuttals are kept separate from verified facts.",
   },
   keyChanges: [
+    {
+      date: "2026-09-15",
+      text: {
+        ko: "공개된 검찰 참고인 진술 보도에서 당시 식약처장 비서는 김 후보자의 문자를 ‘청탁성 메시지’로 인식했다고 밝혔습니다.",
+        en: "Reporting on a prosecution witness statement says the food-safety chief's secretary regarded Kim's message as a request carrying the character of a solicitation.",
+      },
+    },
     {
       date: "2026-09-15",
       text: {
@@ -225,6 +232,33 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
     {
       date: "2026-09-15",
+      title: { ko: "식약처장 비서의 검찰 진술 내용 공개", en: "Prosecution statement by regulator chief's secretary reported" },
+      description: {
+        ko: "경향신문과 SBS는 2023년 검찰 참고인 조사 기록을 토대로, 당시 김강립 식약처장의 비서였던 공무원이 김 후보자의 문자를 ‘청탁성 메시지’로 인식했다고 진술했다고 보도했습니다. 보도된 기록에 따르면 김 후보자의 문자는 식약처장과 담당 실무진에게 전달됐고, 당시 비서는 김 전 처장이 ‘챙겨보되 다음부터는 이런 얘기가 나오지 않게 해 달라’는 취지로 지시했다고 담당 과장에게 알렸습니다. 다만 해당 비서는 김 전 처장의 정확한 지시는 기억나지 않는다고도 진술했습니다. 이는 참고인의 인식과 진술이며 위법성에 대한 사법 판단은 아닙니다. 김 후보자는 지연된 민원의 처리 상황을 확인해 달라는 요청이었을 뿐 부정한 청탁은 아니었다는 입장을 유지하고 있습니다.",
+        en: "The Kyunghyang Shinmun and SBS reported, based on a 2023 prosecution witness statement, that a civil servant who served as the food-safety chief's secretary regarded Kim's message as carrying the character of a solicitation. According to the reported record, Kim's message was relayed to the chief and working-level officials, and the secretary told a division chief that the chief had instructed officials to review it while ensuring such a request would not recur. The secretary also said she could not remember the chief's exact instruction. This was a witness's account and interpretation, not a judicial finding of illegality. Kim continues to maintain that he sought only a check on a delayed petition, not improper influence.",
+      },
+      change: { ko: "민원 전달 경로와 당시 식약처 내부 인식이 수사기록 보도로 구체화", en: "Reporting adds detail on the message's internal route and how it was perceived inside the regulator" },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "경향신문", en: "The Kyunghyang Shinmun" },
+          title: { ko: "식약처장 비서, 검찰에 ‘국회의원 청탁은 김승원뿐’", en: "Regulator chief's secretary told prosecutors Kim was the only lawmaker to make such a request" },
+          url: "https://www.khan.co.kr/article/202609151104001",
+          publishedAt: "2026-09-15",
+          thumbnailSrc: "https://img.khan.co.kr/news/2026/09/15/news-p.v1.20260915.0194fe8190cf456ab4f0fc43db4e8ffd_P1.jpg",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "SBS 뉴스", en: "SBS News" },
+          title: { ko: "‘청탁성 분명’ 비서 진술…남긴 메시지엔 ‘국부유출’ 언급", en: "Secretary described message as a solicitation; message mentioned preventing loss of national wealth" },
+          url: "https://news.sbs.co.kr/amp/news.amp?news_id=N1008754197",
+          publishedAt: "2026-09-15",
+          kind: "article",
+        },
+      ],
+    },
+    {
+      date: "2026-09-15",
       title: { ko: "관련 브로커 재판, 결심 11월 12일로 연기", en: "Closing hearing in related broker case postponed to November 12" },
       description: {
         ko: "서울서부지법은 제넨셀 임상시험 승인 청탁과 정치후원금 500만 원 제공 약속 혐의로 기소된 브로커 양모 씨와 제넨셀 설립자 강모 씨의 공판을 열었지만, 예정했던 검찰 구형과 변론 종결을 진행하지 않았습니다. 재판부는 강씨의 별도 배임·횡령 사건 항소심 선고가 미뤄진 점을 확인한 뒤 두 사람의 결심공판을 11월 12일 오후 4시로 연기했습니다. 따라서 이날 재판에서는 후보자와 관련한 새로운 법원의 판단이 나오지 않았으며, 쟁점의 사법적 확인은 다음 기일 이후로 미뤄졌습니다.",
@@ -271,8 +305,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
         en: "Kim says he only asked officials to check a delayed public-interest petition and did not improperly intervene in approval.",
       },
       assessment: {
-        ko: "민원 전달 사실과 후보자가 양모 씨와 알고 지냈다는 점은 확인됐습니다. 전달의 적절성과 실제 영향력 행사는 양측 주장이 충돌합니다.",
-        en: "The petition and Kim's acquaintance with the woman are established. The propriety and effect of his intervention remain contested.",
+        ko: "민원 전달 사실과 후보자가 양모 씨와 알고 지냈다는 점은 확인됐습니다. 공개된 검찰 참고인 진술 보도에 따르면 당시 식약처장 비서는 해당 문자를 청탁성 메시지로 인식했고, 문자는 담당 실무진까지 전달됐습니다. 그러나 이는 참고인의 진술이며 위법성이나 승인 결정에 미친 영향을 확정한 법원 판단은 아닙니다.",
+        en: "The petition and Kim's acquaintance with the woman are established. Reporting on a prosecution witness statement says the regulator chief's secretary regarded the message as a solicitation and that it reached working-level officials. This remains a witness account, however, not a court finding that the contact was illegal or affected approval.",
       },
       status: "contested",
     },
@@ -331,13 +365,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     { ko: "후보자가 식약처에 임상시험 승인 관련 민원을 전달한 사실과 양모 씨를 알고 지낸 사실은 후보자의 설명으로 확인됐습니다.", en: "The nominee acknowledged relaying a clinical-trial approval petition to the regulator and knowing the woman associated with the request." },
     { ko: "식약처 자료를 인용한 보도에 따르면 제넨셀 임상시험 참여자 93명은 치료제 후보물질 또는 위약을 투여받았습니다.", en: "According to reporting based on regulator data, 93 Genencell trial participants received either the treatment candidate or a placebo." },
     { ko: "식약처는 현재까지 중대한 약물이상반응이 보고되지 않았다고 밝혔습니다.", en: "The regulator said no serious adverse drug reactions had been reported to date." },
+    { ko: "경향신문과 SBS가 보도한 검찰 참고인 조사 기록에 따르면 김 후보자의 문자는 당시 식약처장과 담당 실무진에게 전달됐습니다.", en: "According to the prosecution witness record reported by The Kyunghyang Shinmun and SBS, Kim's message was relayed to the regulator chief and working-level officials." },
   ],
   currentControversies: [
     {
       title: { ko: "식약처 민원 전달이 어디까지 영향을 미쳤나", en: "How much influence did the petition relay have?" },
       description: {
-        ko: "후보자는 지연된 민원 절차를 확인해 달라고 했을 뿐이라고 설명합니다. 야당은 국회의원의 연락이 승인 과정에 영향력을 행사한 것이라고 주장합니다. 실제 처리 경로와 승인 판단에 미친 영향은 관련 문서와 관계자 증언으로 충분히 확인되지 않았습니다.",
-        en: "Kim says he only asked officials to check a delayed petition, while the opposition alleges that contact from a lawmaker influenced approval. The processing trail and any effect on the decision have not been fully established through documents or testimony.",
+        ko: "후보자는 지연된 민원 절차를 확인해 달라고 했을 뿐이라고 설명합니다. 반면 공개된 검찰 참고인 진술 보도에서 당시 식약처장 비서는 이 문자를 청탁성으로 인식했다고 밝혔습니다. 문자가 담당 실무진까지 전달된 경로는 구체화됐지만, 이것이 임상시험 승인 판단에 실제 영향을 미쳤는지와 법적으로 부정한 청탁에 해당하는지는 아직 확인되지 않았습니다.",
+        en: "Kim says he only asked officials to check a delayed petition. Reporting on a prosecution witness statement says the regulator chief's secretary regarded the message as a solicitation. The route by which it reached working-level officials is now clearer, but whether it affected approval or legally constituted an improper request remains unresolved.",
       },
     },
     {
@@ -403,6 +438,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       label: { ko: "데일리안 — 제넨셀 실험·주가조작 관여 부인", en: "Dailian — Denial of involvement in Genencell trial and stock manipulation" },
       url: "https://www.dailian.co.kr/news/view/1690738/",
+    },
+    {
+      label: { ko: "경향신문 — 식약처장 비서의 검찰 참고인 진술", en: "The Kyunghyang Shinmun — Prosecution witness statement by the regulator chief's secretary" },
+      url: "https://www.khan.co.kr/article/202609151104001",
+    },
+    {
+      label: { ko: "SBS — 식약처 내부 전달 경로와 비서 진술", en: "SBS — Internal relay of the message and the secretary's statement" },
+      url: "https://news.sbs.co.kr/amp/news.amp?news_id=N1008754197",
     },
     {
       label: { ko: "머니투데이 — 관련 브로커·제넨셀 설립자 결심공판 연기", en: "MoneyToday — Closing hearing postponed in related broker and Genencell founder case" },
