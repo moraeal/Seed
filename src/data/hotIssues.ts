@@ -45,5 +45,11 @@ export function getHotIssuesNewestFirst(language: Language): HotIssueListItem[] 
     status: item.status[language],
   }));
 
-  return [...news, ...trackers].sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
+  return [...news, ...trackers].sort((a, b) => {
+    const dateOrder = b.date.localeCompare(a.date);
+    if (dateOrder !== 0) return dateOrder;
+
+    const trackerOrder = Number(b.key.startsWith("tracker-")) - Number(a.key.startsWith("tracker-"));
+    return trackerOrder || a.title.localeCompare(b.title);
+  });
 }
