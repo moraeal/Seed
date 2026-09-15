@@ -60,8 +60,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       date: "2026-09-15",
       text: {
-        ko: "가족 협동조합의 바우처 기관 지정 과정과 관련한 녹취가 공개돼 새로운 확인 과제가 생겼습니다.",
-        en: "A recording raised a new question about the designation of a family cooperative as a voucher-service provider.",
+        ko: "후보자는 가족 협동조합의 운영과 배우자의 급여는 학부모 조합원들이 결정하며 배우자에게 돌아갈 별도 이익은 없다고 해명했습니다.",
+        en: "Kim said parent-members decide the cooperative's operations and his spouse's pay, and that no separate profit returns to her.",
       },
     },
   ],
@@ -184,8 +184,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       date: "2026-09-15",
       title: { ko: "증인 0명으로 인사청문회 개최", en: "Hearing held with zero witnesses" },
       description: {
-        ko: "인사청문회는 증인과 참고인 없이 열렸습니다. 야당은 임상시험 승인 민원과 가족 협동조합의 바우처 제공기관 지정 과정 등을 추궁했고, 후보자는 지연된 민원 절차를 확인해 달라고 전달했을 뿐 부당한 개입은 없었다고 반박했습니다. 오른쪽 국회방송 전체 영상에서 후보자의 답변과 여야 의원들의 질의를 직접 확인할 수 있습니다.",
-        en: "The hearing was held without witnesses or reference witnesses. The opposition questioned the clinical-trial petition and the designation of the family cooperative as a voucher provider. Kim said he had merely relayed a request to check a delayed petition and denied improper intervention. The full National Assembly TV video allows readers to review the nominee's answers and lawmakers' questions directly.",
+        ko: "인사청문회는 증인과 참고인 없이 열렸습니다. 야당은 임상시험 승인 민원과 가족 협동조합의 바우처 제공기관 지정 과정 등을 추궁했습니다. 후보자는 관련 의혹으로 심려를 끼친 데 송구하다고 밝혔지만, 식약처에는 지연된 민원 절차를 확인해 달라고 전달했을 뿐이며 제넨셀의 실험 결과 조작이나 주가조작에는 관여하지 않았다고 반박했습니다. 가족 협동조합에 대해서도 학부모 조합원들이 운영과 급여를 결정하고 배우자에게 돌아갈 별도 이익은 없다고 해명했습니다. 이 답변은 후보자의 해명이며, 증인 진술이나 관련 문서와의 교차검증은 이뤄지지 않았습니다.",
+        en: "The hearing was held without witnesses or reference witnesses. The opposition questioned the clinical-trial petition and the designation of the family cooperative as a voucher provider. Kim apologized for causing public concern but said he had only asked officials to check a delayed petition and denied involvement in manipulated trial results or stock manipulation. He also said parent-members decide the cooperative's operations and pay and that no separate profit returns to his spouse. These were the nominee's explanations and were not cross-checked through witness testimony or related records.",
       },
       change: { ko: "예정됐던 증인 없는 청문회가 실제로 진행", en: "The planned witness-free hearing takes place" },
       status: "new",
@@ -197,6 +197,22 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
           publishedAt: "2026-09-15",
           thumbnailSrc: "https://i.ytimg.com/vi/5C1fnWXbMvs/hqdefault.jpg",
           kind: "video",
+        },
+        {
+          publisher: { ko: "아이뉴스24", en: "iNews24" },
+          title: { ko: "여야, 법무장관 청문회 격돌…가족 협동조합 의혹 해명", en: "Parties clash at hearing as Kim addresses family-cooperative allegation" },
+          url: "https://www.inews24.com/view/2005755",
+          publishedAt: "2026-09-15",
+          thumbnailSrc: "https://static.inews24.com/v1/a47c99080ad6ab.jpg",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "데일리안", en: "Dailian" },
+          title: { ko: "김승원, 제넨셀 실험 조작·주가조작 관여 부인", en: "Kim denies involvement in Genencell trial manipulation or stock manipulation" },
+          url: "https://www.dailian.co.kr/news/view/1690738/",
+          publishedAt: "2026-09-15",
+          thumbnailSrc: "https://cdnimage.dailian.co.kr/news/202609/news_1789458303924_1690738_m_1.jpg",
+          kind: "article",
         },
       ],
     },
@@ -266,8 +282,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
         en: "The opposition cites a recording to allege preferential treatment when a cooperative run by Kim's spouse was designated as a voucher provider.",
       },
       response: {
-        ko: "협동조합 측과 수원시의 자료, 후보자의 최종 해명을 추가로 확인해야 합니다.",
-        en: "Records from the cooperative and Suwon City, as well as the nominee's full response, still need to be checked.",
+        ko: "후보자는 협동조합이 발달장애 학부모들이 만든 조직이며 운영과 배우자의 급여·근로조건도 학부모 조합원들이 결정한다고 밝혔습니다. 배우자에게 돌아갈 별도 이익은 없고 가족기업도 아니라고 반박했습니다.",
+        en: "Kim said the cooperative was formed by parents of children with developmental disabilities and that parent-members decide its operations and his spouse's pay and working conditions. He denied that it generates a separate profit for his spouse or operates as a family business.",
       },
       assessment: {
         ko: "녹취 공개와 의혹 제기는 확인됐지만 실제 절차 위반이나 특혜 여부는 아직 확인되지 않았습니다.",
@@ -301,8 +317,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       title: { ko: "가족 협동조합 지정 과정에 특혜가 있었나", en: "Was there preferential treatment for the family cooperative?" },
       description: {
-        ko: "바우처 제공기관 지정 과정과 관련한 녹취와 야당의 의혹 제기는 공개됐습니다. 그러나 다른 신청기관과 다른 절차가 적용됐는지, 후보자의 영향력이 작용했는지, 실제 위법이나 특혜가 있었는지는 아직 확인되지 않았습니다.",
-        en: "A recording and opposition allegations concerning the cooperative's designation as a voucher provider are public. It remains unestablished whether different procedures were applied, whether Kim exercised influence, or whether any illegality or preferential treatment occurred.",
+        ko: "바우처 제공기관 지정 과정과 관련한 녹취와 야당의 의혹 제기는 공개됐습니다. 후보자는 학부모 조합원들이 운영과 급여를 결정하고 배우자에게 돌아갈 별도 이익은 없다고 반박했습니다. 그러나 다른 신청기관과 다른 절차가 적용됐는지, 후보자의 영향력이 작용했는지, 실제 위법이나 특혜가 있었는지는 관련 문서와 관계자 증언으로 확인되지 않았습니다.",
+        en: "A recording and opposition allegations concerning the cooperative's designation as a voucher provider are public. Kim responded that parent-members decide operations and pay and that no separate profit returns to his spouse. Records and testimony have not established whether different procedures were applied, whether Kim exercised influence, or whether any illegality or preferential treatment occurred.",
       },
     },
   ],
@@ -346,6 +362,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       label: { ko: "국회방송 — 김승원 후보자 인사청문회 생중계", en: "National Assembly TV — Live hearing coverage" },
       url: "https://www.youtube.com/watch?v=5C1fnWXbMvs",
       note: { ko: "2026년 9월 15일 법제사법위원회 전체회의", en: "Legislation and Judiciary Committee meeting, September 15, 2026" },
+    },
+    {
+      label: { ko: "아이뉴스24 — 가족 협동조합 의혹에 대한 후보자 해명", en: "iNews24 — Nominee's response on the family-cooperative allegation" },
+      url: "https://www.inews24.com/view/2005755",
+    },
+    {
+      label: { ko: "데일리안 — 제넨셀 실험·주가조작 관여 부인", en: "Dailian — Denial of involvement in Genencell trial and stock manipulation" },
+      url: "https://www.dailian.co.kr/news/view/1690738/",
     },
   ],
 };
