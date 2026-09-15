@@ -24,7 +24,7 @@ export default function PublicInterestWatchDetail() {
     );
   }
 
-  const continuation = getEditorialContinuation("monitoring", item.slug, language);
+  const continuation = item.continuationEligible === false ? undefined : getEditorialContinuation("monitoring", item.slug, language);
 
   if (item.timeline?.length) {
     return <LivingWatchDetail item={item} language={language} continuation={continuation} />;

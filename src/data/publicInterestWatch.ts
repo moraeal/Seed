@@ -1,4 +1,5 @@
 import { kimSeungWonHearingWatch } from "./kimSeungWonHearingWatch";
+import { prosecutionServiceAbolitionTracker } from "./prosecutionServiceAbolitionTracker";
 import { yeosuIslandExpoTracker } from "./yeosuIslandExpoTracker";
 
 export type LocalizedText = { ko: string; en: string };
@@ -39,6 +40,12 @@ export type WatchKeyChange = {
 export type WatchControversy = {
   title: LocalizedText;
   description: LocalizedText;
+};
+
+export type WatchAuthorityMap = {
+  institution: LocalizedText;
+  role: LocalizedText;
+  citizenCheck: LocalizedText;
 };
 
 export type WatchRelatedContent = {
@@ -85,10 +92,20 @@ export type PublicInterestWatchCase = {
   timeline?: WatchTimelineEntry[];
   issues?: WatchIssue[];
   currentControversies?: WatchControversy[];
+  authorityMap?: WatchAuthorityMap[];
+  authorityMapIntro?: LocalizedText;
+  followUpChecks?: LocalizedText[];
+  sectionHeadings?: {
+    facts?: LocalizedText;
+    controversies?: LocalizedText;
+    followUp?: LocalizedText;
+  };
+  continuationEligible?: boolean;
   relatedContents?: WatchRelatedContent[];
 };
 
 export const publicInterestWatchCases: PublicInterestWatchCase[] = [
+  prosecutionServiceAbolitionTracker,
   yeosuIslandExpoTracker,
   kimSeungWonHearingWatch,
   {

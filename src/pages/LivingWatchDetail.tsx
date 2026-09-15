@@ -194,11 +194,41 @@ export default function LivingWatchDetail({ item, language, continuation }: Prop
           </section>
         )}
 
+        {!!item.authorityMap?.length && (
+          <section className="mt-12" aria-labelledby="authority-map-title">
+            <div className="border-b-2 border-navy pb-4">
+              <span className="section-kicker">WHERE THE POWER GOES</span>
+              <h2 id="authority-map-title" className="mt-1.5 text-2xl font-extrabold text-navy sm:text-3xl">{ko ? "검찰의 권한은 어디로 가는가" : "Where the prosecution service's powers go"}</h2>
+              {item.authorityMapIntro && <p className="mt-2 max-w-3xl text-sm leading-7 text-charcoal/58">{t(item.authorityMapIntro)}</p>}
+            </div>
+            <div className="mt-4 overflow-x-auto border border-green-deep/12 bg-white">
+              <table className="w-full min-w-[720px] border-collapse text-left">
+                <thead className="bg-navy text-white">
+                  <tr>
+                    <th className="w-[24%] px-5 py-3 text-xs font-black tracking-[.06em]">{ko ? "기관" : "INSTITUTION"}</th>
+                    <th className="w-[38%] px-5 py-3 text-xs font-black tracking-[.06em]">{ko ? "맡게 되는 권한" : "ROLE"}</th>
+                    <th className="px-5 py-3 text-xs font-black tracking-[.06em]">{ko ? "시민이 확인할 지점" : "PUBLIC TEST"}</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-green-deep/10">
+                  {item.authorityMap.map((entry) => (
+                    <tr key={t(entry.institution)} className="align-top">
+                      <th className="bg-ivory/65 px-5 py-4 text-sm font-extrabold leading-6 text-navy">{t(entry.institution)}</th>
+                      <td className="px-5 py-4 text-sm leading-7 text-charcoal/70">{t(entry.role)}</td>
+                      <td className="px-5 py-4 text-sm leading-7 text-charcoal/70">{t(entry.citizenCheck)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
+
         <section className="mt-12 grid gap-8 lg:grid-cols-2" aria-label={ko ? "사실과 남은 논란" : "Facts and unresolved controversies"}>
           <div>
             <div className="border-b-2 border-green-deep pb-4">
               <span className="section-kicker">FACTS SO FAR</span>
-              <h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "지금까지 확인된 사실" : "What has been established"}</h2>
+              <h2 className="mt-1.5 text-2xl font-extrabold text-navy">{item.sectionHeadings?.facts ? t(item.sectionHeadings.facts) : (ko ? "지금까지 확인된 사실" : "What has been established")}</h2>
             </div>
             <ul className="mt-4 divide-y divide-green-deep/10 border-y border-green-deep/10 bg-white px-5">
               {item.confirmedFacts.map((fact, index) => (
@@ -214,7 +244,7 @@ export default function LivingWatchDetail({ item, language, continuation }: Prop
             <div>
               <div className="border-b-2 border-gold pb-4">
                 <span className="section-kicker">STILL IN DISPUTE</span>
-                <h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "아직 논란 중인 부분" : "What remains disputed"}</h2>
+                <h2 className="mt-1.5 text-2xl font-extrabold text-navy">{item.sectionHeadings?.controversies ? t(item.sectionHeadings.controversies) : (ko ? "아직 논란 중인 부분" : "What remains disputed")}</h2>
               </div>
               <div className="mt-4 space-y-3">
                 {item.currentControversies.map((issue, index) => (
@@ -227,6 +257,23 @@ export default function LivingWatchDetail({ item, language, continuation }: Prop
             </div>
           )}
         </section>
+
+        {!!item.followUpChecks?.length && (
+          <section className="mt-12" aria-labelledby="follow-up-title">
+            <div className="border-b-2 border-red-700 pb-4">
+              <span className="section-kicker">WHAT CITIZENS SHOULD TRACK</span>
+              <h2 id="follow-up-title" className="mt-1.5 text-2xl font-extrabold text-navy">{item.sectionHeadings?.followUp ? t(item.sectionHeadings.followUp) : (ko ? "앞으로 확인할 결정과 결과" : "Decisions and outcomes to watch")}</h2>
+            </div>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+              {item.followUpChecks.map((entry, index) => (
+                <li key={index} className="grid grid-cols-[2rem_1fr] gap-3 border border-red-700/15 bg-white p-5">
+                  <span className="text-sm font-black text-red-700">{String(index + 1).padStart(2, "0")}</span>
+                  <p className="text-sm leading-7 text-charcoal/70">{t(entry)}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {!!item.relatedContents?.length && (
           <section className="mt-12 border-t-2 border-navy pt-6">

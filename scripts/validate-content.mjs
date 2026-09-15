@@ -97,7 +97,7 @@ for (const article of seedLanguageEnvironmentModule.seedLanguageEnvironmentArtic
   if (!editorialContinuationModule.getEditorialContinuation("seed-language", article.slug, "ko") || !editorialContinuationModule.getEditorialContinuation("seed-language", article.slug, "en")) errors.push(`Editorial continuation is missing or incomplete for SEED Language: ${article.slug}`);
 }
 for (const item of publicInterestWatchModule.publicInterestWatchCases) {
-  if (!editorialContinuationModule.getEditorialContinuation("monitoring", item.slug, "ko") || !editorialContinuationModule.getEditorialContinuation("monitoring", item.slug, "en")) errors.push(`Editorial continuation is missing or incomplete for public-interest watch: ${item.slug}`);
+  if (item.continuationEligible !== false && (!editorialContinuationModule.getEditorialContinuation("monitoring", item.slug, "ko") || !editorialContinuationModule.getEditorialContinuation("monitoring", item.slug, "en"))) errors.push(`Editorial continuation is missing or incomplete for public-interest watch: ${item.slug}`);
   if (item.heroImage?.src) await requireSocialImage("monitoring", item.slug);
 }
 
