@@ -401,8 +401,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     {
       date: "2026-09-14",
       title: {
-        ko: "대통령, 초대 중수청장 후보자 추가 검증 지시",
-        en: "President orders additional vetting of the first agency-director nominee",
+        ko: "대통령, 초대 중수청장 후보자 추가 검증 지시한 것으로 보도",
+        en: "President reportedly orders more vetting of first agency-director nominee",
       },
       description: {
         ko: "동아일보는 15일 대통령실 관계자의 말을 인용해 이재명 대통령이 14일 김지용 후보자에 대한 추가 검증을 지시했다고 보도했습니다. 김 후보자는 같은 날 기자회견에서 수사·기소 분리에 공감한다고 밝히고 특정인과의 친분으로 혜택을 받았다는 주장을 반박했습니다. 추가 검증 단계로 넘어갔다는 보도는 나왔지만 지명 철회나 인사청문요청안 제출 여부는 아직 결정되지 않았습니다.",
