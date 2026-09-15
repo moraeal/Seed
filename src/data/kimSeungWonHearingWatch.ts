@@ -321,18 +321,6 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     ko: "임상시험 참여자 93명은 치료제 후보물질 또는 위약을 투여받은 전체 참여자 수입니다. 중대한 약물이상반응이 보고되지 않았다는 식약처 설명도 함께 확인해야 합니다. 이 수치를 피해자 수나 후보자의 책임으로 단정해서는 안 됩니다. 가족 협동조합 관련 녹취 역시 실제 특혜나 위법행위의 확정 증거는 아닙니다.",
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
-  relatedContents: [
-    {
-      href: "/briefings/confirmation-hearings-zero-witnesses",
-      label: { ko: "관련 씨앗브리핑", en: "Related civic briefing" },
-      title: { ko: "청문회 80%가 증인 0명—이쯤 가면 막 하자는 겁니까", en: "Zero Witnesses in Nearly 80% of Hearings—Has Scrutiny Collapsed?" },
-      summary: {
-        ko: "2026년 6월까지 열린 총리·국무위원 후보자 청문회 24건을 국회 공식 기록으로 직접 대조한 씨앗브리핑입니다.",
-        en: "SEED's briefing cross-checking 24 prime-ministerial and ministerial hearings held through June 2026 against National Assembly records.",
-      },
-      date: "2026-09-13",
-    },
-  ],
   sources: [
     {
       label: { ko: "연합뉴스 — 김승원 법무부 장관 후보자 지명과 청문회 준비", en: "Yonhap — Nomination and hearing preparations" },
