@@ -103,27 +103,27 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       ],
     },
     {
-      date: "2019-05-16",
+      date: "2019-11-04",
       title: {
-        ko: "기본계획 연구용역 계약·착수",
-        en: "Initial planning study commissioned and launched",
+        ko: "기본계획 연구용역 첫 중간보고",
+        en: "First interim report on the initial planning study",
       },
       description: {
-        ko: "여수시는 5월 16일 박람회 기본계획 수립 연구용역 계약을 체결하고 22일 착수보고회를 열기로 했습니다. 용역은 개최 배경과 당위성, 주제, 목표 관람객, 개최 장소, 전시 구성과 경제성을 검토했습니다. 이후 중간보고와 공청회 등을 거쳐 구상을 정부 심사에 올릴 사업계획으로 바꾸기 시작했습니다.",
-        en: "Yeosu signed the initial planning-study contract on May 16 and scheduled the launch briefing for May 22. The study examined the case for the event, theme, attendance target, venues, exhibitions and economic feasibility. Interim reports and a public hearing then began turning the idea into a proposal suitable for national review.",
+        ko: "여수시는 5월 기본계획 연구용역에 착수한 뒤 11월 4일 첫 중간보고회를 열었습니다. 수도권과 광주·전남권 설문에서는 여수 방문 경험, 섬의 가치, 박람회 방문 의사와 기대 프로그램을 물었습니다. 참석자들은 섬 주민에게 무엇이 남는지와 주제가 피상적이지 않은지를 구체적으로 검토해야 한다고 요구했습니다.",
+        en: "After commissioning the initial study in May, Yeosu held its first interim report on November 4. A survey in the Seoul metropolitan area and Gwangju–South Jeolla asked about prior visits to Yeosu, perceptions of islands, willingness to attend and expected programs. Participants called for a clearer account of what the fair would leave island residents and whether its theme was sufficiently concrete.",
       },
       status: "confirmed",
       sources: [
         {
-          publisher: { ko: "프레시안", en: "Pressian" },
+          publisher: { ko: "뉴스핌", en: "Newspim" },
           title: {
-            ko: "여수시, 세계섬박람회 기본계획 수립…22일 용역 착수",
-            en: "Yeosu commissions island-fair master plan, study to launch May 22",
+            ko: "여수시, 세계섬박람회 용역 중간 보고회 개최",
+            en: "Yeosu holds interim report on world island fair study",
           },
-          url: "https://www.pressian.com/pages/articles/241627",
-          publishedAt: "2019-05-20",
+          url: "https://www.newspim.com/news/view/20191104000937",
+          publishedAt: "2019-11-04",
           kind: "article",
-          thumbnailSrc: "https://cdn.pressian.com/data/photos/cdn/20190521/art_1558332985.jpg",
+          thumbnailSrc: "https://img.newspim.com/news/2019/11/04/1911041327598760_t1.jpg",
         },
       ],
     },
