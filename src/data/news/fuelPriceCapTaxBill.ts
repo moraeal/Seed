@@ -13,21 +13,20 @@ export const fuelPriceCapTaxBillArticle: PublishableNewsArticle = {
   summary: "정부는 국제유가 급등에 대응해 정유사가 주유소에 공급하는 휘발유·경유·등유 가격에 상한을 두고 있습니다. 소비자가 주유소에서 직접 내는 가격을 규제하는 제도는 아닙니다. 정부는 정유사 손실 보전을 위해 목적예비비 4조 2천억 원을 편성했지만, 이는 이미 지급된 금액이 아니며 실제 보상액은 원가와 손실을 정산한 뒤 결정됩니다. 가격을 낮추는 정책이라면 그 비용과 수혜가 누구에게 돌아가는지도 함께 공개해야 합니다.",
   keySentence: "가격은 눌렀습니다. 비용은 사라지지 않았습니다.",
   selectedNews: {
-    outlet: "JTBC 뉴스",
-    publishedAt: "2026.03.12",
-    headline: "'석유 최고가격제' 외국에선 이미 실패했다? [이슈PLAY]",
-    url: "https://www.youtube.com/watch?v=sR6Fu9_NAfY",
-    linkLabel: "JTBC 뉴스 영상 보기",
-    thumbnailUrl: "https://i.ytimg.com/vi/sR6Fu9_NAfY/maxresdefault.jpg",
-    thumbnailAlt: "석유 최고가격제의 해외 사례와 국내 제도 차이를 설명하는 JTBC 뉴스 영상 화면",
-    thumbnailCaption: "해외 실패 사례와 국내 손실보전 방식의 차이를 짚은 JTBC 팩트체크 보도입니다. 화면을 누르면 영상을 볼 수 있습니다.",
-    thumbnailYoutubeId: "sR6Fu9_NAfY",
+    outlet: "SBS Biz",
+    publishedAt: "2026.09.14 15:22",
+    headline: "출구전략 못 찾는 석유 최고가격제",
+    url: "https://biz.sbs.co.kr/article/20000334518",
+    linkLabel: "SBS Biz 원문 보기",
+    thumbnailUrl: "https://img.biz.sbs.co.kr/upload/2026/09/14/YAp1789367780292.jpg",
+    thumbnailAlt: "석유 최고가격제가 시행 중인 주유소의 주유기와 차량",
+    thumbnailCaption: "석유 최고가격제의 연장 가능성과 늘어나는 재정부담을 다룬 9월 14일 보도입니다. 사진: SBS Biz",
     thumbnailPlacement: "after-summary",
     thumbnailFallbackUrl: "/images/brand/editorial-image-fallback.svg",
     summary: [
-      "정부는 정유사가 주유소에 공급하는 도매가격에 상한을 두고, 상한 때문에 발생한 정유사 손실은 국가가 보전하는 방식으로 제도를 설계했습니다.",
-      "미국과 헝가리의 과거 가격상한제는 공급자 손실 보전이 충분하지 않아 공급 부족으로 이어졌지만, 국내 제도는 손실 보전을 통해 공급 위축을 막겠다는 차이가 있습니다.",
-      "손실 보전에는 국민 세금이 들어가므로 제도를 짧게 운용하고 보상 기준과 실제 지급액을 투명하게 공개해야 한다는 지적이 나옵니다."
+      "정부는 석유 최고가격제를 당분간 이어갈 방침입니다. 제9차 최고가격 적용은 9월 18일 끝나며, 제10차 적용 여부와 가격 수준은 국제유가 등을 반영해 결정됩니다.",
+      "정부는 이 제도가 8월 소비자물가 상승률을 0.5%포인트가량 낮춘 것으로 추산하지만, 시행이 길어질수록 정유사 손실을 보전할 재정부담도 커집니다.",
+      "손실 보전을 위해 목적예비비 4조 2천억 원에 더해 내년도 예산안에 약 1조 4천억 원이 반영됐습니다. 가격 상한을 단계적으로 높이거나 취약계층·운송 부문을 선별 지원하는 출구전략이 필요하다는 지적입니다."
     ]
   },
   heroImage: {
@@ -100,7 +99,7 @@ export const fuelPriceCapTaxBillArticle: PublishableNewsArticle = {
     "가격표의 숫자는 정책의 한쪽 면입니다. 세금으로 옮겨간 비용, 혜택의 분배, 종료 조건까지 함께 공개할 때 비로소 국민은 이 정책이 필요한 보호인지 비싼 착시인지 판단할 수 있습니다."
   ],
   sources: [
-    { label: "JTBC 뉴스 — '석유 최고가격제' 외국에선 이미 실패했다? [이슈PLAY]", url: "https://www.youtube.com/watch?v=sR6Fu9_NAfY" },
+    { label: "SBS Biz — 출구전략 못 찾는 석유 최고가격제", url: "https://biz.sbs.co.kr/article/20000334518" },
     { label: "산업통상부 — 석유 최고가격제 손실보상 및 목적예비비 관련 공식자료", url: "https://www.motir.go.kr/kor/article/ATCLe0854704d/172198/view" },
     { label: "산업통상부 — 석유 최고가격제 시행 관련 공식자료", url: "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/171944/view" },
     { label: "국회도서관 국가전략정보포털 — 석유 최고가격제 관련 동향", url: "https://nsp.nanet.go.kr/trend/latest/detail.do?latestTrendControlNo=TREN0000004000" }

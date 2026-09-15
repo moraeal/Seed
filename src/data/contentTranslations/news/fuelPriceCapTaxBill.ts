@@ -7,19 +7,18 @@ export const fuelPriceCapTaxBillTranslation: NewsTranslation = {
   summary: "South Korea has capped the prices at which refiners supply gasoline, diesel and kerosene to distributors in response to a surge in global oil prices. The policy does not directly regulate the retail price displayed at filling stations. The government set aside KRW 4.2 trillion in a contingency reserve to compensate refiners, but that is a budget allocation—not money already paid. Actual compensation will be determined after cost and loss claims are reviewed. A policy that lowers visible prices must also disclose who receives the benefit and who ultimately bears the cost.",
   keySentence: "The price was capped. The cost did not disappear.",
   selectedNews: {
-    outlet: "JTBC News",
-    headline: "Fact Check: Have Fuel Price Caps Already Failed Abroad?",
-    linkLabel: "Watch the JTBC News report (Korean)",
-    thumbnailUrl: "https://i.ytimg.com/vi/sR6Fu9_NAfY/maxresdefault.jpg",
-    thumbnailAlt: "JTBC News report comparing foreign fuel price caps with South Korea's compensation-backed system",
-    thumbnailCaption: "JTBC examines why earlier foreign price caps caused shortages and how Korea's compensation mechanism differs. Select the image to watch the Korean-language report.",
-    thumbnailYoutubeId: "sR6Fu9_NAfY",
+    outlet: "SBS Biz",
+    headline: "Korea Struggles to Find an Exit from Its Petroleum Price Ceiling",
+    linkLabel: "Read the SBS Biz report (Korean)",
+    thumbnailUrl: "https://img.biz.sbs.co.kr/upload/2026/09/14/YAp1789367780292.jpg",
+    thumbnailAlt: "Fuel pumps and vehicles at a filling station operating under Korea's petroleum price ceiling",
+    thumbnailCaption: "The September 14 report examines the likely extension of the price ceiling and its growing fiscal cost. Photo: SBS Biz",
     thumbnailPlacement: "after-summary",
     thumbnailFallbackUrl: "/images/brand/editorial-image-fallback.svg",
     summary: [
-      "Korea caps the wholesale prices refiners charge filling stations and compensates verified losses caused by that ceiling.",
-      "Earlier US and Hungarian schemes lacked comparable supplier compensation and were followed by shortages; Korea says compensation is intended to protect supply.",
-      "Because the compensation comes from public funds, experts argue that the measure should be temporary and its settlement rules and final payments transparent."
+      "The government is likely to continue the petroleum price ceiling. The ninth ceiling period ends on September 18, after which the tenth ceiling and its level will be decided with reference to global oil prices.",
+      "Officials estimate that the policy reduced August consumer-price inflation by about 0.5 percentage points, but prolonging it increases the public cost of compensating refiners.",
+      "In addition to the KRW 4.2 trillion contingency reserve, about KRW 1.4 trillion was included in next year's budget proposal. The report highlights calls for a gradual rise in the ceiling or more targeted support for vulnerable households and transport."
     ]
   },
   heroImage: {
@@ -90,7 +89,7 @@ export const fuelPriceCapTaxBillTranslation: NewsTranslation = {
     "The number on the pump is only one side of the policy. Citizens can judge whether this is necessary protection or an expensive illusion only when the transferred fiscal cost, distribution of benefits and exit conditions are disclosed together."
   ],
   sourceLabels: [
-    "JTBC News — Fact check on foreign fuel price caps and Korea's compensation-backed system",
+    "SBS Biz — Korea struggles to find an exit from its petroleum price ceiling",
     "Ministry of Trade, Industry and Resources — Official materials on compensation and the KRW 4.2 trillion contingency reserve",
     "Ministry of Trade, Industry and Resources — Official materials on implementation of the petroleum price ceiling",
     "National Assembly Library — Policy brief on Korea's petroleum price ceiling"
