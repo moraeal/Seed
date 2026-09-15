@@ -1,4 +1,5 @@
 import { kimSeungWonHearingWatch } from "./kimSeungWonHearingWatch";
+import { yeosuIslandExpoTracker } from "./yeosuIslandExpoTracker";
 
 export type LocalizedText = { ko: string; en: string };
 
@@ -88,6 +89,7 @@ export type PublicInterestWatchCase = {
 };
 
 export const publicInterestWatchCases: PublicInterestWatchCase[] = [
+  yeosuIslandExpoTracker,
   kimSeungWonHearingWatch,
   {
     slug: "beautiful-store",

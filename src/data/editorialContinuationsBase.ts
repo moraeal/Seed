@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "monitoring:yeosu-world-island-expo-tracker": {
+    ko: {
+      href: "/briefings/yeosu-world-island-expo",
+      title: "행사는 외주로 맡겨도 책임까지 외주로 넘길 수는 없습니다",
+      relationship: "예산과 책임 깊게 보기",
+      reason: "타임라인에서 확인한 사업비 확대와 운영 과정을 바탕으로 계약·사업수익·사후 활용에 남은 책임을 더 자세히 살펴봅니다.",
+      listHref: "/monitoring",
+      listLabel: "씨앗의 눈 전체 보기",
+    },
+    en: {
+      href: "/briefings/yeosu-world-island-expo",
+      title: "An Event May Be Outsourced. Responsibility Cannot Be.",
+      relationship: "BUDGET AND ACCOUNTABILITY",
+      reason: "Use the timeline's record of expansion and operations to examine procurement, operating revenue and post-event responsibilities in greater depth.",
+      listHref: "/monitoring",
+      listLabel: "All SEED Watch records",
+    },
+  },
   "monitoring:kim-seung-won-confirmation-hearing": {
     ko: {
       href: "/briefings/confirmation-hearings-zero-witnesses",
