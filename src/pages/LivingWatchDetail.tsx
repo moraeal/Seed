@@ -7,9 +7,11 @@ import {
   Clock3,
   ExternalLink,
   FileQuestion,
+  FileText,
   History,
   Lightbulb,
   MessageSquareText,
+  PlayCircle,
   Scale,
   Sparkles,
 } from "lucide-react";
@@ -152,13 +154,50 @@ export default function LivingWatchDetail({ item, language, continuation }: Prop
                   <span className={`absolute left-[.62rem] top-0 z-10 grid size-8 place-items-center rounded-full border-2 sm:left-[7.25rem] ${timelineTone[entry.status]}`}>
                     {entry.status === "pending" ? <Clock3 size={14}/> : entry.status === "response" ? <MessageSquareText size={14}/> : <CircleDot size={13}/>} 
                   </span>
-                  <div className={`border p-5 ${entry.status === "new" ? "border-red-700/25 bg-red-50/45" : entry.status === "pending" ? "border-dashed border-charcoal/25 bg-white/55" : "border-green-deep/12 bg-white"}`}>
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className={`rounded-full px-2.5 py-1 text-[10px] font-black tracking-[.08em] ${entry.status === "new" ? "bg-red-700 text-white" : entry.status === "pending" ? "bg-charcoal/8 text-charcoal/55" : entry.status === "response" ? "bg-gold/20 text-amber-800" : "bg-green-pale text-green-deep"}`}>{timelineLabels[entry.status]}</span>
-                      {entry.change && <span className="text-xs font-bold text-red-700">{t(entry.change)}</span>}
+                  <div className={`border ${entry.status === "new" ? "border-red-700/25 bg-red-50/45" : entry.status === "pending" ? "border-dashed border-charcoal/25 bg-white/55" : "border-green-deep/12 bg-white"}`}>
+                    <div className={entry.sources?.length ? "grid md:grid-cols-[minmax(0,1fr)_15rem]" : undefined}>
+                      <div className="p-5">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className={`rounded-full px-2.5 py-1 text-[10px] font-black tracking-[.08em] ${entry.status === "new" ? "bg-red-700 text-white" : entry.status === "pending" ? "bg-charcoal/8 text-charcoal/55" : entry.status === "response" ? "bg-gold/20 text-amber-800" : "bg-green-pale text-green-deep"}`}>{timelineLabels[entry.status]}</span>
+                          {entry.change && <span className="text-xs font-bold text-red-700">{t(entry.change)}</span>}
+                        </div>
+                        <h3 className="mt-3 text-lg font-extrabold leading-snug text-navy sm:text-xl">{t(entry.title)}</h3>
+                        <p className="mt-2 text-sm leading-7 text-charcoal/68 sm:text-[15px]">{t(entry.description)}</p>
+                      </div>
+
+                      {!!entry.sources?.length && (() => {
+                        const source = entry.sources[0];
+                        return (
+                          <a href={source.url} target="_blank" rel="noreferrer" className="group flex min-w-0 flex-col border-t border-green-deep/10 bg-ivory/75 transition hover:bg-green-pale/55 md:border-l md:border-t-0" aria-label={`${t(source.publisher)}: ${t(source.title)}`}>
+                            <div className="relative aspect-video overflow-hidden bg-navy">
+                              {source.thumbnailSrc ? (
+                                <SafeImage src={source.thumbnailSrc} alt="" className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.025]" />
+                              ) : (
+                                <div className="grid h-full place-items-center bg-[linear-gradient(135deg,#123f35,#0f2438)] px-5 text-center">
+                                  <div>
+                                    <FileText className="mx-auto text-gold" size={24}/>
+                                    <span className="mt-2 block text-sm font-black text-white">{t(source.publisher)}</span>
+                                  </div>
+                                </div>
+                              )}
+                              {source.kind === "video" && <PlayCircle className="absolute bottom-2.5 right-2.5 fill-white/90 text-navy" size={30}/>}
+                              {entry.sources.length > 1 && <span className="absolute left-2.5 top-2.5 rounded-full bg-navy/85 px-2.5 py-1 text-[10px] font-black text-white">+{entry.sources.length - 1}</span>}
+                            </div>
+                            <div className="flex flex-1 flex-col p-4">
+                              <div className="flex items-center justify-between gap-2 text-[10px] font-black tracking-[.08em] text-green-deep">
+                                <span>{t(source.publisher)}</span>
+                                <ExternalLink size={13}/>
+                              </div>
+                              <strong className="mt-2 line-clamp-2 text-sm leading-5 text-navy group-hover:text-green-deep">{t(source.title)}</strong>
+                              <div className="mt-auto flex items-center justify-between gap-2 pt-3 text-[10px] text-charcoal/42">
+                                <time>{source.publishedAt?.replace(/-/g, ".")}</time>
+                                <span>{source.kind === "video" ? (ko ? "영상 보기" : "Watch") : (ko ? "원문 보기" : "Open source")}</span>
+                              </div>
+                            </div>
+                          </a>
+                        );
+                      })()}
                     </div>
-                    <h3 className="mt-3 text-lg font-extrabold leading-snug text-navy sm:text-xl">{t(entry.title)}</h3>
-                    <p className="mt-2 text-sm leading-7 text-charcoal/68 sm:text-[15px]">{t(entry.description)}</p>
                   </div>
                 </li>
               ))}

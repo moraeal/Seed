@@ -4,12 +4,22 @@ export type LocalizedText = { ko: string; en: string };
 
 export type WatchTimelineStatus = "confirmed" | "response" | "new" | "pending";
 
+export type WatchTimelineSource = {
+  publisher: LocalizedText;
+  title: LocalizedText;
+  url: string;
+  publishedAt?: string;
+  thumbnailSrc?: string;
+  kind?: "article" | "video" | "document";
+};
+
 export type WatchTimelineEntry = {
   date: string;
   title: LocalizedText;
   description: LocalizedText;
   change?: LocalizedText;
   status: WatchTimelineStatus;
+  sources?: WatchTimelineSource[];
 };
 
 export type WatchIssue = {

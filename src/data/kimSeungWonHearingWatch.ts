@@ -62,6 +62,16 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
         en: "Kim described the transition to a new criminal-justice system as his most urgent mission.",
       },
       status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "SBS 뉴스", en: "SBS News" },
+          title: { ko: "새 형사법 안착이 소명…김승원 법무부 장관 후보자 지명", en: "Kim nominated as justice minister, pledges transition to new criminal-law system" },
+          url: "https://www.youtube.com/watch?v=THahJu6anZg",
+          publishedAt: "2026-08-31",
+          thumbnailSrc: "https://i.ytimg.com/vi/THahJu6anZg/hqdefault.jpg",
+          kind: "video",
+        },
+      ],
     },
     {
       date: "2026-09-03",
@@ -71,6 +81,15 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
         en: "The Justice Ministry formed a preparation team as formal scrutiny began.",
       },
       status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: { ko: "김승원 법무부 장관 후보자 지명과 인사청문회 준비", en: "Kim Seung-won nomination and hearing preparations" },
+          url: "https://www.yna.co.kr/view/AKR20260901183300004",
+          publishedAt: "2026-09-03",
+          kind: "article",
+        },
+      ],
     },
     {
       date: "2026-09-07",
@@ -81,6 +100,15 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       },
       change: { ko: "후보자의 관계 인정과 첫 구체적 해명", en: "First detailed response acknowledging the relationship" },
       status: "response",
+      sources: [
+        {
+          publisher: { ko: "MBC 뉴스데스크", en: "MBC Newsdesk" },
+          title: { ko: "후보자, 민원 전달의 신중함과 브로커 친분 언급", en: "Nominee addresses the petition and acknowledges an acquaintance" },
+          url: "https://imnews.imbc.com/replay/2026/nwdesk/article/6850172_37004.html",
+          publishedAt: "2026-09-07",
+          kind: "article",
+        },
+      ],
     },
     {
       date: "2026-09-09",
@@ -90,6 +118,15 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
         en: "The committee confirmed the hearing plan but the parties failed to agree on the opposition's request for 44 witnesses and four reference witnesses.",
       },
       status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "MBC 뉴스", en: "MBC News" },
+          title: { ko: "청문회 일정 확정…증인·참고인 채택은 여야 합의 불발", en: "Hearing date set as parties fail to agree on witnesses" },
+          url: "https://imnews.imbc.com/replay/2026/nwdesk/article/6851006_37004.html",
+          publishedAt: "2026-09-09",
+          kind: "article",
+        },
+      ],
     },
     {
       date: "2026-09-10",
@@ -100,6 +137,15 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       },
       change: { ko: "교차검증 없이 후보자 답변 중심으로 진행되는 구조 확정", en: "Hearing structure fixed around the nominee's answers without witness cross-checking" },
       status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "MBC 뉴스", en: "MBC News" },
+          title: { ko: "증인 44명·참고인 4명 채택 무산", en: "Requests for 44 witnesses and four reference witnesses fail" },
+          url: "https://imnews.imbc.com/replay/2026/nwdesk/article/6851006_37004.html",
+          publishedAt: "2026-09-10",
+          kind: "article",
+        },
+      ],
     },
     {
       date: "2026-09-14",
@@ -110,6 +156,15 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       },
       change: { ko: "논쟁이 승인 절차를 넘어 실제 인체 임상 범위로 확대", en: "The dispute expands from the approval process to the scale of the human trial" },
       status: "new",
+      sources: [
+        {
+          publisher: { ko: "SBS 뉴스", en: "SBS News" },
+          title: { ko: "제넨셀 임상시험 참여자 93명과 청문회 쟁점", en: "Ninety-three Genencell trial participants and the hearing issues" },
+          url: "https://news.sbs.co.kr/news/endPage.do?newsId=N1008752902",
+          publishedAt: "2026-09-14",
+          kind: "article",
+        },
+      ],
     },
     {
       date: "2026-09-15",
@@ -120,6 +175,16 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       },
       change: { ko: "예정됐던 증인 없는 청문회가 실제로 진행", en: "The planned witness-free hearing takes place" },
       status: "new",
+      sources: [
+        {
+          publisher: { ko: "국회방송", en: "National Assembly TV" },
+          title: { ko: "김승원 법무부 장관 후보자 인사청문회 생중계", en: "Kim Seung-won confirmation hearing live coverage" },
+          url: "https://www.youtube.com/watch?v=5C1fnWXbMvs",
+          publishedAt: "2026-09-15",
+          thumbnailSrc: "https://i.ytimg.com/vi/5C1fnWXbMvs/hqdefault.jpg",
+          kind: "video",
+        },
+      ],
     },
     {
       date: "다음",
@@ -248,7 +313,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
     {
       label: { ko: "국회방송 — 김승원 후보자 인사청문회 생중계", en: "National Assembly TV — Live hearing coverage" },
-      url: "https://www.youtube.com/@NATV_korea",
+      url: "https://www.youtube.com/watch?v=5C1fnWXbMvs",
       note: { ko: "2026년 9월 15일 법제사법위원회 전체회의", en: "Legislation and Judiciary Committee meeting, September 15, 2026" },
     },
   ],
