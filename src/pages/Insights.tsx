@@ -1,11 +1,13 @@
-import { ChevronRight, Mail, RefreshCw, Users } from "lucide-react";
+import { Check, ChevronRight, Mail, RefreshCw, Users } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../auth";
 import { useLanguage } from "../i18n";
 import { ContentViewStat, DailyViewStat, EngagementSummary, FunnelStat, getEngagementData, MemberRegistration, NewsletterSubscriber, TrafficSourceStat } from "../lib/engagement";
+import { getFeaturedContentCandidates } from "../data/featuredContent";
+import { getFeaturedContentPath, setFeaturedContentPath } from "../lib/featuredContent";
 
-type Section = "dashboard" | "content" | "traffic" | "subscribers" | "members";
+type Section = "dashboard" | "content" | "traffic" | "subscribers" | "members" | "featured";
 
 const navItems: { key: Section; ko: string; en: string; path: string }[] = [
   { key: "dashboard", ko: "종합 대시보드", en: "Dashboard", path: "/insights" },
@@ -13,6 +15,7 @@ const navItems: { key: Section; ko: string; en: string; path: string }[] = [
   { key: "traffic", ko: "유입 분석", en: "Traffic", path: "/insights/traffic" },
   { key: "subscribers", ko: "이메일 구독자", en: "Subscribers", path: "/insights/subscribers" },
   { key: "members", ko: "회원 관리", en: "Members", path: "/insights/members" },
+  { key: "featured", ko: "메인기사 관리", en: "Featured story", path: "/insights/featured" },
 ];
 
 function sectionFromPath(path: string): Section {
@@ -20,6 +23,7 @@ function sectionFromPath(path: string): Section {
   if (path.endsWith("/traffic")) return "traffic";
   if (path.endsWith("/subscribers")) return "subscribers";
   if (path.endsWith("/members")) return "members";
+  if (path.endsWith("/featured")) return "featured";
   return "dashboard";
 }
 
@@ -48,6 +52,9 @@ export default function Insights() {
   const [error, setError] = useState("");
   const [lastUpdatedAt, setLastUpdatedAt] = useState<Date | null>(null);
   const [contentCategory, setContentCategory] = useState("all");
+  const [featuredPath, setFeaturedPath] = useState<string | null>(null);
+  const [savingFeaturedPath, setSavingFeaturedPath] = useState<string | null>(null);
+  const [featuredNotice, setFeaturedNotice] = useState("");
   const authorized = user?.app_metadata?.seed_role === "owner";
 
   const refresh = async () => {
@@ -77,6 +84,13 @@ export default function Insights() {
     const timer = window.setInterval(() => { void refresh(); }, 30_000);
     return () => window.clearInterval(timer);
   }, [session?.access_token, authorized]);
+  useEffect(() => {
+    if (section !== "featured" || !authorized) return;
+    setFeaturedNotice("");
+    void getFeaturedContentPath()
+      .then(setFeaturedPath)
+      .catch(() => setFeaturedNotice(ko ? "현재 메인기사를 불러오지 못했습니다." : "Could not load the current featured story."));
+  }, [section, authorized, ko]);
 
   const totals = useMemo(() => Object.fromEntries(summary.map((item) => [item.metric, Number(item.value)])), [summary]);
   const funnelTotals = useMemo(() => Object.fromEntries(funnel.map((item) => [item.stage, Number(item.total)])), [funnel]);
@@ -84,6 +98,25 @@ export default function Insights() {
   const maxDailyViews = useMemo(() => Math.max(1, ...dailyViews.map((item) => Number(item.views))), [dailyViews]);
   const filteredViews = useMemo(() => contentCategory === "all" ? views : views.filter((item) => categoryLabel(item.page_path, true) === contentCategory), [views, contentCategory]);
   const topViews = views.slice(0, 5);
+  const featuredCandidates = useMemo(() => getFeaturedContentCandidates(language), [language]);
+  const effectiveFeaturedPath = featuredCandidates.some((item) => item.path === featuredPath)
+    ? featuredPath
+    : featuredCandidates.find((item) => item.category === "column")?.path ?? featuredCandidates[0]?.path;
+  const currentFeatured = featuredCandidates.find((item) => item.path === effectiveFeaturedPath);
+  const selectFeatured = async (path: string) => {
+    if (!session) return;
+    setSavingFeaturedPath(path);
+    setFeaturedNotice("");
+    try {
+      const savedPath = await setFeaturedContentPath(session, path);
+      setFeaturedPath(savedPath);
+      setFeaturedNotice(ko ? "메인기사를 변경했습니다. 메인페이지에 바로 반영됩니다." : "The featured story has been updated." );
+    } catch {
+      setFeaturedNotice(ko ? "메인기사를 변경하지 못했습니다. 잠시 후 다시 시도해주세요." : "Could not update the featured story." );
+    } finally {
+      setSavingFeaturedPath(null);
+    }
+  };
   const formatDate = (value: string) => new Intl.DateTimeFormat(ko ? "ko-KR" : "en-US", { dateStyle: "medium", timeStyle: "short" }).format(new Date(value));
   const formatChartDate = (value: string) => new Intl.DateTimeFormat(ko ? "ko-KR" : "en-US", { month: "numeric", day: "numeric", weekday: "short", timeZone: "Asia/Seoul" }).format(new Date(`${value}T00:00:00+09:00`));
 
@@ -97,8 +130,8 @@ export default function Insights() {
     <section className="min-h-[70vh] bg-ivory py-10 sm:py-14">
       <div className="container-page">
         <div className="flex flex-wrap items-end justify-between gap-5 border-b-2 border-navy pb-5">
-          <div><p className="section-kicker">PRIVATE ANALYTICS</p><h1 className="editorial-title mt-2 text-4xl font-bold text-navy">{ko ? pageTitle?.ko : pageTitle?.en}</h1><p className="mt-3 text-sm text-charcoal/55">{ko ? "사이트 유입, 콘텐츠 소비, 구독과 회원 현황을 분리해 확인합니다." : "Review traffic, content consumption, subscriptions and members separately."}</p></div>
-          <div className="text-right"><button type="button" onClick={() => void refresh()} className="button-secondary" disabled={loading}><RefreshCw className={loading ? "animate-spin" : ""} size={15}/>{ko ? "새로고침" : "Refresh"}</button><p className="mt-2 text-[11px] font-semibold text-charcoal/40">{ko ? "30초마다 자동 업데이트" : "Auto-updates every 30 seconds"}{lastUpdatedAt ? ` · ${lastUpdatedAt.toLocaleTimeString(ko ? "ko-KR" : "en-US")}` : ""}</p></div>
+          <div><p className="section-kicker">{section === "featured" ? "PRIVATE MANAGEMENT" : "PRIVATE ANALYTICS"}</p><h1 className="editorial-title mt-2 text-4xl font-bold text-navy">{ko ? pageTitle?.ko : pageTitle?.en}</h1><p className="mt-3 text-sm text-charcoal/55">{section === "featured" ? (ko ? "메인페이지에 노출할 기사를 대표 계정으로 직접 관리합니다." : "Choose the story shown at the top of the homepage.") : (ko ? "사이트 유입, 콘텐츠 소비, 구독과 회원 현황을 분리해 확인합니다." : "Review traffic, content consumption, subscriptions and members separately.")}</p></div>
+          {section !== "featured" && <div className="text-right"><button type="button" onClick={() => void refresh()} className="button-secondary" disabled={loading}><RefreshCw className={loading ? "animate-spin" : ""} size={15}/>{ko ? "새로고침" : "Refresh"}</button><p className="mt-2 text-[11px] font-semibold text-charcoal/40">{ko ? "30초마다 자동 업데이트" : "Auto-updates every 30 seconds"}{lastUpdatedAt ? ` · ${lastUpdatedAt.toLocaleTimeString(ko ? "ko-KR" : "en-US")}` : ""}</p></div>}
         </div>
 
         <nav className="mt-5 flex gap-2 overflow-x-auto pb-1" aria-label={ko ? "통계 메뉴" : "Analytics navigation"}>{navItems.map((item) => <Link key={item.key} to={item.path} className={`whitespace-nowrap border px-4 py-2 text-sm font-bold transition-colors ${section === item.key ? "border-green-deep bg-green-deep text-white" : "border-green-deep/15 bg-white text-green-deep hover:border-green-mid"}`}>{ko ? item.ko : item.en}</Link>)}</nav>
@@ -128,6 +161,24 @@ export default function Insights() {
         {section === "subscribers" && <section className="mt-7"><div className="flex items-end justify-between gap-3"><div><h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "이메일 구독자" : "Email subscribers"}</h2><p className="mt-1 text-sm text-charcoal/50">{ko ? "회원과 분리해 뉴스레터 수신 명단을 관리합니다." : "Manage newsletter recipients separately from members."}</p></div><span className="inline-flex items-center gap-1.5 text-sm font-bold text-green-deep"><Mail size={16}/>{subscribers.filter((item) => item.status === "active").length.toLocaleString()}</span></div><div className="mt-5 overflow-x-auto border-t-2 border-navy bg-white"><table className="w-full text-left text-sm"><thead className="bg-[#F1F2EC] text-xs text-charcoal/50"><tr><th className="px-4 py-3">{ko ? "이메일" : "Email"}</th><th className="px-4 py-3">{ko ? "상태" : "Status"}</th><th className="px-4 py-3">{ko ? "가입 경로" : "Source"}</th><th className="px-4 py-3">{ko ? "신청일" : "Subscribed"}</th></tr></thead><tbody>{subscribers.map((item) => <tr key={item.email} className="border-t border-green-deep/10"><td className="px-4 py-3 font-semibold text-navy">{item.email}</td><td className={`px-4 py-3 text-xs font-bold ${item.status === "active" ? "text-green-deep" : "text-charcoal/40"}`}>{item.status === "active" ? (ko ? "활성" : "Active") : (ko ? "해지" : "Unsubscribed")}</td><td className="px-4 py-3 text-xs text-charcoal/55">{item.source_path}</td><td className="whitespace-nowrap px-4 py-3 text-xs text-charcoal/55">{formatDate(item.consented_at)}</td></tr>)}</tbody></table>{!loading && subscribers.length === 0 && <p className="px-4 py-8 text-center text-sm text-charcoal/45">{ko ? "아직 구독 신청이 없습니다." : "No subscription requests yet."}</p>}</div></section>}
 
         {section === "members" && <section className="mt-7"><div className="flex items-end justify-between gap-3"><div><h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "회원 관리" : "Members"}</h2><p className="mt-1 text-sm text-charcoal/50">{ko ? "회원가입·인증·콘텐츠 수신 상태를 확인합니다." : "Review registration, verification and content subscription status."}</p></div><span className="inline-flex items-center gap-1.5 text-sm font-bold text-green-deep"><Users size={16}/>{members.length.toLocaleString()}</span></div><div className="mt-5 overflow-x-auto border-t-2 border-navy bg-white"><table className="w-full text-left text-sm"><thead className="bg-[#F1F2EC] text-xs text-charcoal/50"><tr><th className="px-4 py-3">{ko ? "회원" : "Member"}</th><th className="px-4 py-3">{ko ? "연락처" : "Contact"}</th><th className="px-4 py-3">{ko ? "이메일 인증" : "Verified"}</th><th className="px-4 py-3">{ko ? "콘텐츠 수신" : "Subscription"}</th><th className="px-4 py-3">{ko ? "가입일" : "Joined"}</th></tr></thead><tbody>{members.map((item) => <tr key={item.user_id} className="border-t border-green-deep/10"><td className="px-4 py-3 font-semibold text-navy">{item.nickname}</td><td className="px-4 py-3 text-xs text-charcoal/55"><p>{item.email}</p>{item.phone && <p className="mt-1">{item.phone}</p>}</td><td className={`px-4 py-3 text-xs font-bold ${item.email_confirmed_at ? "text-green-deep" : "text-amber-700"}`}>{item.email_confirmed_at ? (ko ? "완료" : "Verified") : (ko ? "미인증" : "Unverified")}</td><td className={`px-4 py-3 text-xs font-bold ${item.content_subscription_consent ? "text-green-deep" : "text-charcoal/35"}`}>{item.content_subscription_consent ? (ko ? "수신" : "Subscribed") : (ko ? "미수신" : "No")}</td><td className="whitespace-nowrap px-4 py-3 text-xs text-charcoal/55">{formatDate(item.created_at)}</td></tr>)}</tbody></table>{!loading && members.length === 0 && <p className="px-4 py-8 text-center text-sm text-charcoal/45">{ko ? "회원가입 기록이 없습니다." : "No registered members yet."}</p>}</div></section>}
+
+        {section === "featured" && <section className="mt-7">
+          <div><h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "메인페이지 상단 기사" : "Homepage featured story"}</h2><p className="mt-1 text-sm text-charcoal/50">{ko ? "원하는 기사를 선택하면 별도 배포 없이 메인페이지 왼쪽 상단에 바로 반영됩니다." : "Choose any published story to place it at the top of the homepage without a new deployment."}</p></div>
+          {featuredNotice && <p className="mt-5 border border-green-deep/15 bg-[#E8EFE9] px-4 py-3 text-sm font-semibold text-green-deep" role="status">{featuredNotice}</p>}
+          <div className="mt-5 border-t-2 border-navy bg-white">
+            <div className="divide-y divide-green-deep/10">
+              {featuredCandidates.map((item) => {
+                const selected = item.path === effectiveFeaturedPath;
+                return <article key={item.path} className={`grid gap-4 p-4 sm:grid-cols-[112px_minmax(0,1fr)_auto] sm:items-center ${selected ? "bg-green-pale/55" : ""}`}>
+                  <div className="aspect-[4/3] overflow-hidden bg-green-deep"><img src={item.image.src.startsWith("http") ? item.image.src : `${import.meta.env.BASE_URL}${item.image.src.replace(/^\//, "")}`} alt="" className="h-full w-full object-cover" loading="lazy" /></div>
+                  <div className="min-w-0"><div className="flex flex-wrap items-center gap-2"><span className="text-[10px] font-black tracking-[.12em] text-green-deep">{item.categoryLabel}</span>{selected && <span className="inline-flex items-center gap-1 bg-green-deep px-2 py-1 text-[10px] font-bold text-white"><Check size={11}/>{ko ? "현재 노출 중" : "Currently featured"}</span>}</div><h3 className="editorial-title mt-1.5 text-lg font-bold leading-snug text-navy">{item.title}</h3><p className="mt-1 line-clamp-2 text-xs leading-5 text-charcoal/55">{item.summary}</p><p className="mt-1 text-[11px] text-charcoal/40">{item.date.replace(/-/g, ".")} · {item.readMinutes}{ko ? "분 읽기" : " min read"}</p></div>
+                  <button type="button" className={selected ? "button-secondary cursor-default" : "button-primary"} disabled={selected || savingFeaturedPath !== null} onClick={() => void selectFeatured(item.path)}>{savingFeaturedPath === item.path ? (ko ? "변경 중" : "Updating") : selected ? (ko ? "노출 중" : "Featured") : (ko ? "메인기사로 지정" : "Feature")}</button>
+                </article>;
+              })}
+            </div>
+          </div>
+          {!currentFeatured && featuredPath && <p className="mt-4 text-xs text-amber-700">{ko ? "저장된 기사를 현재 콘텐츠 목록에서 찾지 못해 최신 기사로 대체 표시됩니다." : "The saved story is unavailable, so the newest story is shown instead."}</p>}
+        </section>}
       </div>
     </section>
   );

@@ -59,6 +59,7 @@ function AppShell() {
           <Route path="/insights/traffic" element={<Insights />} />
           <Route path="/insights/subscribers" element={<Insights />} />
           <Route path="/insights/members" element={<Insights />} />
+          <Route path="/insights/featured" element={<Insights />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/publisher-message" element={<PublisherMessage />} />

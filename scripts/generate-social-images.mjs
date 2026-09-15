@@ -33,7 +33,14 @@ const rasterBriefingImages = (item) => item.images
 
 const jobs = [
   { section: "site", slug: "home", src: "images/brand/seedvoice-independent-watchdog.webp" },
-  ...newsModule.newsArticles.map((item) => ({ section: "news", slug: item.slug, src: item.heroImage.src })),
+  ...newsModule.newsArticles.map((item) => ({
+    section: "news",
+    slug: item.slug,
+    src: item.heroImage.src,
+    fallbackSrc: item.selectedNews?.thumbnailFallbackUrl?.match(/\.(?:jpe?g|png|webp)$/i)
+      ? item.selectedNews.thumbnailFallbackUrl
+      : "images/brand/seedvoice-independent-watchdog.webp",
+  })),
   ...briefingModule.getAllBriefingsNewestFirst().map((item) => {
     const images = rasterBriefingImages(item);
     return {

@@ -1,4 +1,5 @@
 import { ArrowRight, Clock } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NewsletterSignup from "../components/NewsletterSignup";
 import PopularLatest from "../components/PopularLatest";
@@ -9,7 +10,9 @@ import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/l
 import { getNewsNewestFirst } from "../data/news";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
+import { getFeaturedContentCandidates } from "../data/featuredContent";
 import { useLanguage } from "../i18n";
+import { getFeaturedContentPath } from "../lib/featuredContent";
 
 const resolveImageSrc = (src?: string) => {
   if (!src) return "";
@@ -31,6 +34,7 @@ const seedLanguageTerms: Record<string, { hanja: string; english: string }> = {
 export default function Home() {
   const { language } = useLanguage();
   const ko = language === "ko";
+  const [featuredPath, setFeaturedPath] = useState<string | null>(null);
   const allBriefings = getAllBriefingsNewestFirst();
   const localizedBriefings = allBriefings.map((item) => localizeBriefing(item, language));
   const briefings = localizedBriefings.filter((item) => item.homeBriefingLeadEligible !== false).slice(0, 5);
@@ -51,6 +55,11 @@ export default function Home() {
     .sort((a, b) => b.date.localeCompare(a.date))[0];
 
   const leadColumn = journalColumns[0];
+  const featuredCandidates = getFeaturedContentCandidates(language);
+  const defaultFeaturedPath = leadColumn ? `/columns/${leadColumn.slug}` : featuredCandidates[0]?.path;
+  const featuredLead = featuredCandidates.find((item) => item.path === featuredPath)
+    ?? featuredCandidates.find((item) => item.path === defaultFeaturedPath)
+    ?? featuredCandidates[0];
   const voiceLeadColumn = journalColumns[4];
   const voiceListColumns = journalColumns.slice(0, 4);
   const latestNews = news[0];
@@ -62,6 +71,14 @@ export default function Home() {
   const publicWatchSummary = publicWatchBriefing?.summary ?? publicWatchColumn?.summary;
   const publicWatchImage = publicWatchBriefing?.images?.[0] ?? publicWatchColumn?.heroImage;
   const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[seedLanguageArticle.term] : undefined;
+
+  useEffect(() => {
+    let active = true;
+    void getFeaturedContentPath()
+      .then((path) => { if (active) setFeaturedPath(path); })
+      .catch(() => { /* Keep the newest column as the safe fallback. */ });
+    return () => { active = false; };
+  }, []);
 
   const newcomerLinks = [
     {
@@ -93,16 +110,16 @@ export default function Home() {
             <p className="mt-1 text-[13px] font-medium text-charcoal/55 sm:text-sm">{ko ? "오늘 씨앗이 주목하는 문제" : "What SEED is watching today"}</p>
           </div>
           <div className="grid gap-5 sm:gap-6 xl:grid-cols-[minmax(0,1.62fr)_minmax(390px,.92fr)] xl:items-stretch xl:gap-7">
-            {leadColumn && (
+            {featuredLead && (
               <article className="group h-full min-w-0">
-                <Link to={`/columns/${leadColumn.slug}`} className="flex h-full flex-col">
+                <Link to={featuredLead.path} className="flex h-full flex-col">
                   <div className="overflow-hidden bg-green-deep">
-                    <SafeImage src={resolveImageSrc(leadColumn.heroImage.src)} alt={leadColumn.heroImage.alt} loading="eager" fetchPriority="high" referrerPolicy="no-referrer" className="aspect-[16/8.55] w-full object-cover transition duration-500 group-hover:scale-[1.01] sm:aspect-[16/7.65]" />
+                    <SafeImage src={resolveImageSrc(featuredLead.image.src)} alt={featuredLead.image.alt} loading="eager" fetchPriority="high" referrerPolicy="no-referrer" className="aspect-[16/8.55] w-full object-cover transition duration-500 group-hover:scale-[1.01] sm:aspect-[16/7.65]" />
                   </div>
-                  <p className="mt-3 text-[10px] font-black tracking-[.14em] text-green-deep sm:mt-3.5 sm:text-[11px]">THE VOICE OF SEED</p>
-                  <h1 className="editorial-title mt-1.5 max-w-5xl break-keep text-balance text-[1.75rem] font-black leading-[1.12] tracking-[-0.038em] text-navy transition group-hover:text-green-mid sm:text-[clamp(1.9rem,3.5vw,3rem)] sm:leading-[1.09] sm:tracking-[-0.042em]">{leadColumn.title}</h1>
-                  <p className="home-lead-summary mt-2 line-clamp-3 max-w-4xl sm:mt-2.5">{leadColumn.summary}</p>
-                  <div className="mt-3 flex items-center gap-3 text-[11px] text-charcoal/45 sm:text-xs"><time>{leadColumn.date.replace(/-/g, ".")}</time><span className="inline-flex items-center gap-1"><Clock size={12}/>{leadColumn.readMinutes}{ko ? "분 읽기" : " min read"}</span></div>
+                  <p className="mt-3 text-[10px] font-black tracking-[.14em] text-green-deep sm:mt-3.5 sm:text-[11px]">{featuredLead.kicker}</p>
+                  <h1 className="editorial-title mt-1.5 max-w-5xl break-keep text-balance text-[1.75rem] font-black leading-[1.12] tracking-[-0.038em] text-navy transition group-hover:text-green-mid sm:text-[clamp(1.9rem,3.5vw,3rem)] sm:leading-[1.09] sm:tracking-[-0.042em]">{featuredLead.title}</h1>
+                  <p className="home-lead-summary mt-2 line-clamp-3 max-w-4xl sm:mt-2.5">{featuredLead.summary}</p>
+                  <div className="mt-3 flex items-center gap-3 text-[11px] text-charcoal/45 sm:text-xs"><time>{featuredLead.date.replace(/-/g, ".")}</time><span className="inline-flex items-center gap-1"><Clock size={12}/>{featuredLead.readMinutes}{ko ? "분 읽기" : " min read"}</span></div>
                 </Link>
               </article>
             )}
