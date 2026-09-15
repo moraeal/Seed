@@ -163,12 +163,6 @@ export default function LivingWatchDetail({ item, language, continuation }: Prop
                         </div>
                         <h3 className="mt-3 text-lg font-extrabold leading-snug text-navy sm:text-xl">{t(entry.title)}</h3>
                         <p className="mt-2 text-sm leading-7 text-charcoal/68 sm:text-[15px]">{t(entry.description)}</p>
-                        {entry.sources?.[0]?.summary && (
-                          <div className="mt-4 border-t border-green-deep/10 pt-3">
-                            <span className="text-[10px] font-black tracking-[.12em] text-green-deep">{ko ? "관련 보도 요약" : "SOURCE SUMMARY"}</span>
-                            <p className="mt-1.5 text-xs leading-5 text-charcoal/58 sm:text-[13px] sm:leading-6">{t(entry.sources[0].summary)}</p>
-                          </div>
-                        )}
                       </div>
 
                       {!!entry.sources?.length && (() => {

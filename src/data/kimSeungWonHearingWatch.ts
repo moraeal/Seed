@@ -58,15 +58,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       date: "2026-08-31",
       title: { ko: "법무부 장관 후보자로 지명", en: "Nominated as justice minister" },
       description: {
-        ko: "김승원 후보자는 새로운 형사사법 체계의 안착을 가장 시급한 소명으로 제시했습니다.",
-        en: "Kim described the transition to a new criminal-justice system as his most urgent mission.",
+        ko: "김승원 후보자는 법무부 장관 후보자로 지명된 뒤 새로운 형사사법 체계의 안착과 법무부의 인권보호기관 역할 회복을 가장 시급한 소명으로 제시했습니다. 여당은 환영했지만 야당은 이재명 대통령의 재판과 공소 취소 문제를 거론하며 강한 검증을 예고했습니다.",
+        en: "After being nominated as justice minister, Kim identified the transition to a new criminal-justice system and restoration of the ministry's human-rights role as his most urgent missions. The governing party welcomed the nomination, while the opposition signaled intense scrutiny over issues involving the president's trials and possible withdrawal of charges.",
       },
       status: "confirmed",
       sources: [
         {
           publisher: { ko: "SBS 뉴스", en: "SBS News" },
           title: { ko: "새 형사법 안착이 소명…김승원 법무부 장관 후보자 지명", en: "Kim nominated as justice minister, pledges transition to new criminal-law system" },
-          summary: { ko: "김 후보자는 새 형사사법 체계의 안착을 가장 시급한 소명으로 제시했습니다. 여야의 첫 평가도 함께 전했습니다.", en: "Kim called the transition to a new criminal-justice system his most urgent mission. The report also covered the parties' initial reactions." },
           url: "https://www.youtube.com/watch?v=THahJu6anZg",
           publishedAt: "2026-08-31",
           thumbnailSrc: "https://i.ytimg.com/vi/THahJu6anZg/hqdefault.jpg",
@@ -78,15 +77,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       date: "2026-09-03",
       title: { ko: "인사청문회 준비단 출범", en: "Hearing preparation team begins work" },
       description: {
-        ko: "법무부에 준비단이 꾸려지고 후보자 검증 절차가 본격적으로 시작됐습니다.",
-        en: "The Justice Ministry formed a preparation team as formal scrutiny began.",
+        ko: "법무부에 인사청문회 준비단이 꾸려지면서 후보자의 재산·경력과 각종 의혹에 대한 자료 제출 및 검증 절차가 본격적으로 시작됐습니다. 지명 발표가 정치권의 평가 단계에서 국회의 공식 검증 단계로 넘어간 시점입니다.",
+        en: "The Justice Ministry formed a hearing preparation team, beginning formal document submission and scrutiny of the nominee's assets, career and surrounding allegations. The nomination moved from initial political reaction into the National Assembly's formal review process.",
       },
       status: "confirmed",
       sources: [
         {
           publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
           title: { ko: "김승원 법무부 장관 후보자 지명과 인사청문회 준비", en: "Kim Seung-won nomination and hearing preparations" },
-          summary: { ko: "법무부가 인사청문회 준비단을 구성하면서 후보자 검증 절차가 본격적으로 시작됐습니다.", en: "The Justice Ministry formed a hearing preparation team, formally beginning the scrutiny process." },
           url: "https://www.yna.co.kr/view/AKR20260901183300004",
           publishedAt: "2026-09-03",
           kind: "article",
@@ -97,8 +95,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       date: "2026-09-07",
       title: { ko: "후보자, 민원 전달의 신중함과 브로커 친분 언급", en: "Nominee addresses the petition and acknowledges an acquaintance" },
       description: {
-        ko: "후보자는 임상 승인 관련 민원 전달에 더욱 신중했어야 했다고 밝혔고, 브로커로 지목된 양모 씨와 알고 지낸 사실을 인정했습니다. 다만 부정한 청탁은 없었다고 반박했습니다.",
-        en: "Kim said he should have been more cautious when relaying the clinical-trial petition and acknowledged knowing the woman described as a broker, while denying any improper request.",
+        ko: "후보자는 임상시험 승인 관련 민원을 식약처에 전달한 과정에서 더욱 신중했어야 했다고 밝혔습니다. 브로커로 지목된 양모 씨와 알고 지낸 사실도 인정했지만, 민원 처리 상황을 확인해 달라는 취지였을 뿐 승인 과정에 영향력을 행사하거나 부정한 청탁을 한 것은 아니라고 반박했습니다.",
+        en: "Kim said he should have been more cautious when relaying a petition concerning clinical-trial approval and acknowledged knowing the woman described as a broker. He maintained that he had only asked officials to check the petition's status and denied exerting influence over approval or making an improper request.",
       },
       change: { ko: "후보자의 관계 인정과 첫 구체적 해명", en: "First detailed response acknowledging the relationship" },
       status: "response",
@@ -106,7 +104,6 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
         {
           publisher: { ko: "MBC 뉴스데스크", en: "MBC Newsdesk" },
           title: { ko: "후보자, 민원 전달의 신중함과 브로커 친분 언급", en: "Nominee addresses the petition and acknowledges an acquaintance" },
-          summary: { ko: "후보자는 임상 승인 민원 전달에 더 신중했어야 했다고 밝혔습니다. 양모 씨와의 친분은 인정했지만 부정한 청탁은 부인했습니다.", en: "Kim said he should have been more cautious in relaying the petition. He acknowledged the acquaintance but denied an improper request." },
           url: "https://imnews.imbc.com/replay/2026/nwdesk/article/6850172_37004.html",
           publishedAt: "2026-09-07",
           kind: "article",
@@ -117,15 +114,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       date: "2026-09-09",
       title: { ko: "9월 15일 청문회 확정·증인 합의는 불발", en: "September 15 hearing set; no agreement on witnesses" },
       description: {
-        ko: "법제사법위원회는 청문회 실시계획을 확정했지만, 야당이 요구한 증인 44명과 참고인 4명에 대해 여야가 합의하지 못했습니다.",
-        en: "The committee confirmed the hearing plan but the parties failed to agree on the opposition's request for 44 witnesses and four reference witnesses.",
+        ko: "국회 법제사법위원회는 9월 15일 인사청문회를 열기로 하고 실시계획을 확정했습니다. 그러나 야당이 임상시험 승인 민원과 가족 협동조합 의혹 등을 확인하기 위해 요구한 증인 44명과 참고인 4명에 대해서는 여야가 합의하지 못했습니다.",
+        en: "The National Assembly's Legislation and Judiciary Committee confirmed its plan to hold the hearing on September 15. The parties failed, however, to agree on the opposition's request for 44 witnesses and four reference witnesses concerning the clinical-trial petition, family cooperative and other allegations.",
       },
       status: "confirmed",
       sources: [
         {
           publisher: { ko: "MBC 뉴스", en: "MBC News" },
           title: { ko: "청문회 일정 확정…증인·참고인 채택은 여야 합의 불발", en: "Hearing date set as parties fail to agree on witnesses" },
-          summary: { ko: "법사위는 9월 15일 청문회 일정을 확정했습니다. 야당이 요구한 증인 44명과 참고인 4명은 합의하지 못했습니다.", en: "The committee set the hearing for September 15 but failed to agree on the opposition's request for 44 witnesses and four reference witnesses." },
           url: "https://imnews.imbc.com/replay/2026/nwdesk/article/6851006_37004.html",
           publishedAt: "2026-09-09",
           kind: "article",
@@ -136,8 +132,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       date: "2026-09-10",
       title: { ko: "증인·참고인 채택 최종 무산", en: "Witness requests lapse" },
       description: {
-        ko: "법정 출석 요구 시한이 지나면서 청문회는 증인과 참고인 없이 열리게 됐습니다.",
-        en: "The statutory notice deadline passed, leaving the hearing to proceed without witnesses or reference witnesses.",
+        ko: "증인 출석을 요구할 수 있는 법정 시한이 지나면서 44명의 증인과 4명의 참고인은 모두 채택되지 않았습니다. 이에 따라 청문회는 핵심 관계자의 증언이나 후보자 답변에 대한 교차검증 없이 후보자의 해명을 중심으로 진행되는 구조가 됐습니다.",
+        en: "The statutory notice deadline passed with none of the 44 witnesses or four reference witnesses approved. The hearing was therefore set to proceed around the nominee's explanations, without testimony from central figures or witness-based cross-checking of his answers.",
       },
       change: { ko: "교차검증 없이 후보자 답변 중심으로 진행되는 구조 확정", en: "Hearing structure fixed around the nominee's answers without witness cross-checking" },
       status: "confirmed",
@@ -145,7 +141,6 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
         {
           publisher: { ko: "MBC 뉴스", en: "MBC News" },
           title: { ko: "증인 44명·참고인 4명 채택 무산", en: "Requests for 44 witnesses and four reference witnesses fail" },
-          summary: { ko: "법정 출석 요구 시한이 지나면서 핵심 관계자 없이 후보자의 답변만 듣는 청문회가 확정됐습니다.", en: "The statutory notice deadline passed, confirming a hearing centered on the nominee's answers without testimony from central figures." },
           url: "https://imnews.imbc.com/replay/2026/nwdesk/article/6851006_37004.html",
           publishedAt: "2026-09-10",
           kind: "article",
@@ -156,8 +151,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       date: "2026-09-14",
       title: { ko: "임상시험 참여자 93명 사실 보도", en: "Trial involved 93 participants" },
       description: {
-        ko: "식약처 자료를 인용한 보도에서 2022년 국내 임상시험 참여자 93명이 제넨셀 치료제 후보물질 또는 위약을 투여받은 사실이 확인됐습니다. 식약처는 현재까지 중대한 약물이상반응은 보고되지 않았다고 밝혔습니다.",
-        en: "Reporting based on regulator data found that 93 participants in a 2022 domestic trial received either the Genencell candidate or a placebo. The regulator said no serious adverse drug reactions had been reported to date.",
+        ko: "식약처 자료를 인용한 보도에서 2022년 국내 임상시험 참여자 93명이 제넨셀 치료제 후보물질 또는 위약을 투여받은 사실이 확인됐습니다. 이 숫자는 피해자 수가 아니라 전체 임상 참여자 수입니다. 식약처는 현재까지 중대한 약물이상반응은 보고되지 않았다고 밝혔습니다.",
+        en: "Reporting based on regulator data found that 93 participants in a 2022 domestic trial received either the Genencell candidate or a placebo. The figure represents all trial participants, not a count of victims. The regulator said no serious adverse drug reactions had been reported to date.",
       },
       change: { ko: "논쟁이 승인 절차를 넘어 실제 인체 임상 범위로 확대", en: "The dispute expands from the approval process to the scale of the human trial" },
       status: "new",
@@ -165,7 +160,6 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
         {
           publisher: { ko: "SBS 뉴스", en: "SBS News" },
           title: { ko: "제넨셀 임상시험 참여자 93명과 청문회 쟁점", en: "Ninety-three Genencell trial participants and the hearing issues" },
-          summary: { ko: "식약처 자료를 토대로 93명이 치료제 후보물질 또는 위약을 투여받았다고 보도했습니다. 중대한 약물이상반응은 보고되지 않았습니다.", en: "The report said 93 participants received either the treatment candidate or a placebo. No serious adverse drug reactions had been reported." },
           url: "https://news.sbs.co.kr/news/endPage.do?newsId=N1008752902",
           publishedAt: "2026-09-14",
           kind: "article",
@@ -176,8 +170,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       date: "2026-09-15",
       title: { ko: "증인 0명으로 인사청문회 개최", en: "Hearing held with zero witnesses" },
       description: {
-        ko: "야당은 임상시험 승인 민원과 가족 협동조합 등을 추궁했고, 후보자는 지연된 절차를 확인해 달라는 민원 전달이었을 뿐 부당한 개입은 없었다고 반박했습니다.",
-        en: "The opposition questioned the clinical-trial petition and the family cooperative. Kim said he merely relayed a request to check a delayed procedure and denied improper intervention.",
+        ko: "인사청문회는 증인과 참고인 없이 열렸습니다. 야당은 임상시험 승인 민원과 가족 협동조합의 바우처 제공기관 지정 과정 등을 추궁했고, 후보자는 지연된 민원 절차를 확인해 달라고 전달했을 뿐 부당한 개입은 없었다고 반박했습니다. 오른쪽 국회방송 전체 영상에서 후보자의 답변과 여야 의원들의 질의를 직접 확인할 수 있습니다.",
+        en: "The hearing was held without witnesses or reference witnesses. The opposition questioned the clinical-trial petition and the designation of the family cooperative as a voucher provider. Kim said he had merely relayed a request to check a delayed petition and denied improper intervention. The full National Assembly TV video allows readers to review the nominee's answers and lawmakers' questions directly.",
       },
       change: { ko: "예정됐던 증인 없는 청문회가 실제로 진행", en: "The planned witness-free hearing takes place" },
       status: "new",
@@ -185,7 +179,6 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
         {
           publisher: { ko: "국회방송", en: "National Assembly TV" },
           title: { ko: "김승원 법무부 장관 후보자 인사청문회 생중계", en: "Kim Seung-won confirmation hearing live coverage" },
-          summary: { ko: "증인·참고인 없이 열린 청문회 전체 영상입니다. 후보자의 답변과 여야 의원들의 질의를 직접 확인할 수 있습니다.", en: "Full video of the hearing held without witnesses or reference witnesses, including the nominee's answers and lawmakers' questions." },
           url: "https://www.youtube.com/watch?v=5C1fnWXbMvs",
           publishedAt: "2026-09-15",
           thumbnailSrc: "https://i.ytimg.com/vi/5C1fnWXbMvs/hqdefault.jpg",
