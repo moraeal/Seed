@@ -103,27 +103,27 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       ],
     },
     {
-      date: "2019-05",
+      date: "2019-05-16",
       title: {
-        ko: "기본계획 연구용역 착수",
-        en: "Initial planning study begins",
+        ko: "기본계획 연구용역 계약·착수",
+        en: "Initial planning study commissioned and launched",
       },
       description: {
-        ko: "여수시는 박람회 개최 배경과 당위성, 주제, 목표 관람객, 개최 장소, 전시 구성과 경제성을 검토하는 기본계획 연구용역에 착수했습니다. 이후 두 차례 중간보고, 시의회 간담회와 시민설명회를 거쳐 구상을 정부 심사에 올릴 사업계획으로 바꾸기 시작했습니다.",
-        en: "Yeosu commissioned a planning study covering the case for the event, theme, attendance target, venues, exhibitions and economic feasibility. Two interim reports, a city-council session and a public briefing then began turning the idea into a proposal suitable for national review.",
+        ko: "여수시는 5월 16일 박람회 기본계획 수립 연구용역 계약을 체결하고 22일 착수보고회를 열기로 했습니다. 용역은 개최 배경과 당위성, 주제, 목표 관람객, 개최 장소, 전시 구성과 경제성을 검토했습니다. 이후 중간보고와 공청회 등을 거쳐 구상을 정부 심사에 올릴 사업계획으로 바꾸기 시작했습니다.",
+        en: "Yeosu signed the initial planning-study contract on May 16 and scheduled the launch briefing for May 22. The study examined the case for the event, theme, attendance target, venues, exhibitions and economic feasibility. Interim reports and a public hearing then began turning the idea into a proposal suitable for national review.",
       },
       status: "confirmed",
       sources: [
         {
-          publisher: { ko: "전남CBS 노컷뉴스", en: "Jeonnam CBS NoCut News" },
+          publisher: { ko: "프레시안", en: "Pressian" },
           title: {
-            ko: "‘설마 이게 될 줄은’ 여수세계섬박람회 승인 뒷이야기",
-            en: "How the Yeosu World Island Fair secured international-event approval",
+            ko: "여수시, 세계섬박람회 기본계획 수립…22일 용역 착수",
+            en: "Yeosu commissions island-fair master plan, study to launch May 22",
           },
-          url: "https://jn.nocutnews.co.kr/news/5608808",
-          publishedAt: "2021-08-17",
+          url: "https://www.pressian.com/pages/articles/241627",
+          publishedAt: "2019-05-20",
           kind: "article",
-          thumbnailSrc: "https://file2.nocutnews.co.kr/newsroom/image/2021/08/17/202108171147413039_0.jpg",
+          thumbnailSrc: "https://cdn.pressian.com/data/photos/cdn/20190521/art_1558332985.jpg",
         },
       ],
     },
