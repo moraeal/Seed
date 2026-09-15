@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "monitoring:kim-seung-won-confirmation-hearing": {
+    ko: {
+      href: "/briefings/confirmation-hearings-zero-witnesses",
+      title: "청문회 80%가 증인 0명—이쯤 가면 막 하자는 겁니까",
+      relationship: "사건의 제도적 배경",
+      reason: "김승원 후보자 한 사람의 청문회를 넘어, 증인 없는 청문회가 반복되며 시민의 검증권이 어떻게 약해졌는지 살펴봅니다.",
+      listHref: "/monitoring",
+      listLabel: "씨앗의 눈 전체 보기",
+    },
+    en: {
+      href: "/briefings/confirmation-hearings-zero-witnesses",
+      title: "Zero Witnesses in Nearly 80% of Hearings—Has Scrutiny Collapsed?",
+      relationship: "THE INSTITUTIONAL CONTEXT",
+      reason: "Move beyond one nominee to examine how repeated witness-free hearings weaken citizens' right to scrutinize executive appointments.",
+      listHref: "/monitoring",
+      listLabel: "All SEED Watch records",
+    },
+  },
   "news:fuel-price-cap-tax-bill": {
     ko: {
       href: "/news/national-debt-ratio-gdp-comparison",
@@ -29,18 +47,18 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
   },
   "briefing:confirmation-hearings-zero-witnesses": {
     ko: {
-      href: "/briefings/president-criminal-trials-article-84",
-      title: "멈춘 대통령 재판, 남은 책임",
-      relationship: "권력 통제 장치",
-      reason: "청문회가 인사권을 검증하는 장치라면, 헌법 제84조 논쟁은 대통령의 형사책임을 어떻게 통제할 것인지 묻습니다.",
+      href: "/monitoring/kim-seung-won-confirmation-hearing",
+      title: "김승원 후보자 청문회, 지금까지 무엇이 달라졌나",
+      relationship: "이 사건 계속 보기",
+      reason: "9월 15일 청문회 개최와 새롭게 확인된 사실, 후보자의 해명, 경과보고서와 임명 여부를 하나의 타임라인에서 계속 확인합니다.",
       listHref: "/briefings",
       listLabel: "씨앗브리핑 전체 보기",
     },
     en: {
-      href: "/briefings/president-criminal-trials-article-84",
-      title: "A President’s Paused Trials and the Accountability That Remains",
-      relationship: "CHECKS ON POWER",
-      reason: "If confirmation hearings scrutinize appointment power, the Article 84 debate asks how a president’s criminal accountability should be preserved.",
+      href: "/monitoring/kim-seung-won-confirmation-hearing",
+      title: "Kim Seung-won's Hearing: What Has Changed?",
+      relationship: "FOLLOW THIS CASE",
+      reason: "Follow the September 15 hearing, newly verified facts, the nominee's responses and the pending committee report and appointment decision in one timeline.",
       listHref: "/briefings",
       listLabel: "All briefings",
     },

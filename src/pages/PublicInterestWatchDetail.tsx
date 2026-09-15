@@ -6,6 +6,7 @@ import ContentAccountability from "../components/ContentAccountability";
 import { getEditorialContinuation } from "../data/editorialContinuations";
 import { getPublicInterestWatchCase, LocalizedText } from "../data/publicInterestWatch";
 import { useLanguage } from "../i18n";
+import LivingWatchDetail from "./LivingWatchDetail";
 
 export default function PublicInterestWatchDetail() {
   const { slug = "" } = useParams();
@@ -24,6 +25,10 @@ export default function PublicInterestWatchDetail() {
   }
 
   const continuation = getEditorialContinuation("monitoring", item.slug, language);
+
+  if (item.timeline?.length) {
+    return <LivingWatchDetail item={item} language={language} continuation={continuation} />;
+  }
 
   const sections = [
     { key: "facts", icon: CheckCircle2, label: ko ? "공개자료로 확인한 사실" : "Facts confirmed in public records", items: item.confirmedFacts, tone: "text-green-mid" },

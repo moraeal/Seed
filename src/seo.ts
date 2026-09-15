@@ -141,6 +141,8 @@ const monitoringRoutes: SeoRoute[] = publicInterestWatchCases.map((item) => ({
   lastModified: item.updatedAt,
   author: SITE_NAME,
   section: "씨앗의 눈",
+  image: item.heroImage ? socialImageUrl("monitoring", item.slug, item.updatedAt) : undefined,
+  imageAlt: item.heroImage?.alt.ko,
 }));
 
 const researchRoutes: SeoRoute[] = [{

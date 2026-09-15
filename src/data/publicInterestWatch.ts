@@ -1,4 +1,32 @@
+import { kimSeungWonHearingWatch } from "./kimSeungWonHearingWatch";
+
 export type LocalizedText = { ko: string; en: string };
+
+export type WatchTimelineStatus = "confirmed" | "response" | "new" | "pending";
+
+export type WatchTimelineEntry = {
+  date: string;
+  title: LocalizedText;
+  description: LocalizedText;
+  change?: LocalizedText;
+  status: WatchTimelineStatus;
+};
+
+export type WatchIssue = {
+  title: LocalizedText;
+  claim: LocalizedText;
+  response: LocalizedText;
+  assessment: LocalizedText;
+  status: "confirmed" | "contested" | "pending";
+};
+
+export type WatchRelatedContent = {
+  href: string;
+  label: LocalizedText;
+  title: LocalizedText;
+  summary: LocalizedText;
+  date: string;
+};
 
 export type WatchSource = {
   label: LocalizedText;
@@ -24,9 +52,22 @@ export type PublicInterestWatchCase = {
   sources: WatchSource[];
   researchHref?: string;
   researchLabel?: LocalizedText;
+  openedAt?: string;
+  nextCheck?: LocalizedText;
+  heroImage?: {
+    src: string;
+    alt: LocalizedText;
+    caption: LocalizedText;
+    credit: LocalizedText;
+  };
+  keyChanges?: LocalizedText[];
+  timeline?: WatchTimelineEntry[];
+  issues?: WatchIssue[];
+  relatedContents?: WatchRelatedContent[];
 };
 
 export const publicInterestWatchCases: PublicInterestWatchCase[] = [
+  kimSeungWonHearingWatch,
   {
     slug: "beautiful-store",
     organization: { ko: "아름다운가게", en: "Beautiful Store" },

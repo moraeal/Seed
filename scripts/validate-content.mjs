@@ -98,6 +98,7 @@ for (const article of seedLanguageEnvironmentModule.seedLanguageEnvironmentArtic
 }
 for (const item of publicInterestWatchModule.publicInterestWatchCases) {
   if (!editorialContinuationModule.getEditorialContinuation("monitoring", item.slug, "ko") || !editorialContinuationModule.getEditorialContinuation("monitoring", item.slug, "en")) errors.push(`Editorial continuation is missing or incomplete for public-interest watch: ${item.slug}`);
+  if (item.heroImage?.src) await requireSocialImage("monitoring", item.slug);
 }
 
 if (errors.length) {
