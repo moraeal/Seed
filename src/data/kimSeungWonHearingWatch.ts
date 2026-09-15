@@ -14,7 +14,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   },
   status: { ko: "청문회 개최·후속 확인 중", en: "Hearing held · Follow-up under way" },
   openedAt: "2026-08-31",
-  updatedAt: "2026-09-15",
+  updatedAt: "2026-09-16",
   nextCheck: {
     ko: "경찰의 재수사 여부 결정, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판, 법제사법위원회의 인사청문경과보고서 채택 여부와 대통령의 임명 여부",
     en: "The police decision on whether to reinvestigate, the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder, whether the Legislation and Judiciary Committee adopts its hearing report, and whether the president proceeds with the appointment",
@@ -36,6 +36,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "This timeline cross-checks National Assembly schedules and decisions, public statements from the nominee and both parties, and reporting based on Ministry of Food and Drug Safety records. Allegations and the nominee's rebuttals are kept separate from verified facts.",
   },
   keyChanges: [
+    {
+      date: "2026-09-15",
+      text: {
+        ko: "후보자 측은 소속 보좌진이 청문위원의 질의 자료를 촬영한 사실을 인정하고 사과했으며, 후보자의 지시나 관여는 없었다고 밝혔습니다.",
+        en: "Kim's office acknowledged and apologized for a staff member photographing a committee member's questioning notes, while saying the nominee neither directed nor took part in it.",
+      },
+    },
     {
       date: "2026-09-15",
       text: {
@@ -284,6 +291,33 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-15",
+      title: { ko: "보좌진의 청문위원 자료 촬영, 후보자 측 사과", en: "Nominee's office apologizes after staff member photographs committee notes" },
+      description: {
+        ko: "청문회 도중 김 후보자 의원실 보좌진이 주진우 국민의힘 의원이 검토하던 질의 자료를 촬영한 사실이 중계 화면과 후보자 측 입장으로 확인됐습니다. 김 후보자 측은 부적절한 처신이었다며 사과하고, 해당 직원이 잘못을 인지한 뒤 사진을 삭제했으며 엄중히 조치하겠다고 밝혔습니다. 다만 후보자를 비롯한 누구도 촬영을 지시하거나 관여하지 않았다고 설명했습니다. 촬영 사실과 후보자 측 사과는 확인됐지만, 주 의원이 주장한 조직적 ‘사찰’ 여부나 촬영물이 다른 사람에게 전달됐는지는 확인되지 않았습니다.",
+        en: "Broadcast footage and a statement from Kim's office confirmed that a member of his parliamentary staff photographed questioning material being reviewed by People Power Party lawmaker Joo Jin-woo during the hearing. Kim's office apologized for the inappropriate conduct, said the staff member deleted the image after recognizing the mistake and promised disciplinary action. It also said neither Kim nor anyone else directed or participated in the act. The photographing and apology are established, but Joo's claim of organized surveillance and whether the image was shared have not been verified.",
+      },
+      change: { ko: "후보자 측이 촬영 사실을 인정하고 공식 사과", en: "Kim's office acknowledges the photograph and issues an apology" },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "이데일리", en: "Edaily" },
+          title: { ko: "‘청문회 중 도촬 논란’ 김승원 측 ‘주진우에게 진심으로 사과’", en: "Kim's office apologizes to Joo over photographing controversy during hearing" },
+          url: "https://www.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=05733446645580448",
+          publishedAt: "2026-09-15",
+          thumbnailSrc: "https://image.edaily.co.kr/images/photo/files/NP/S/2026/09/PS26091501610.jpg",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: { ko: "김승원 보좌진 ‘주진우 촬영’ 논란…후보자 측 사과", en: "Kim's staff photographed Joo's notes; nominee's office apologizes" },
+          url: "https://www.yna.co.kr/amp/view/AKR20260915089652001",
+          publishedAt: "2026-09-15",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "다음",
       title: { ko: "청문경과보고서와 임명 여부 확인", en: "Committee report and appointment decision" },
       description: {
@@ -366,6 +400,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     { ko: "식약처 자료를 인용한 보도에 따르면 제넨셀 임상시험 참여자 93명은 치료제 후보물질 또는 위약을 투여받았습니다.", en: "According to reporting based on regulator data, 93 Genencell trial participants received either the treatment candidate or a placebo." },
     { ko: "식약처는 현재까지 중대한 약물이상반응이 보고되지 않았다고 밝혔습니다.", en: "The regulator said no serious adverse drug reactions had been reported to date." },
     { ko: "경향신문과 SBS가 보도한 검찰 참고인 조사 기록에 따르면 김 후보자의 문자는 당시 식약처장과 담당 실무진에게 전달됐습니다.", en: "According to the prosecution witness record reported by The Kyunghyang Shinmun and SBS, Kim's message was relayed to the regulator chief and working-level officials." },
+    { ko: "김 후보자 측은 소속 보좌진이 청문위원의 질의 자료를 촬영한 사실을 인정하고 사과했으며, 후보자의 지시나 관여는 없었다고 밝혔습니다.", en: "Kim's office acknowledged and apologized for a staff member photographing a committee member's questioning material, while stating that the nominee did not direct or participate in it." },
   ],
   currentControversies: [
     {
@@ -454,6 +489,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       label: { ko: "뉴스핌 — 관련 재판 다음 기일 11월 12일 오후 4시", en: "NewsPim — Next hearing set for November 12 at 4 p.m." },
       url: "https://www.newspim.com/news/view/20260915001246",
+    },
+    {
+      label: { ko: "이데일리 — 청문위원 자료 촬영에 대한 후보자 측 사과", en: "Edaily — Nominee's office apologizes over photographing committee notes" },
+      url: "https://www.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=05733446645580448",
+    },
+    {
+      label: { ko: "연합뉴스 — 보좌진 촬영 사실과 후보자 측 해명", en: "Yonhap — Staff photograph and nominee office's response" },
+      url: "https://www.yna.co.kr/amp/view/AKR20260915089652001",
     },
   ],
 };
