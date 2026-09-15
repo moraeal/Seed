@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "monitoring:prosecution-service-abolition-tracker": {
+    ko: {
+      href: "/columns/prosecution-reform-power-transfer-2026",
+      title: "검찰개혁은 권력을 옮겨 심는 일이 아니다",
+      relationship: "사건에서 판단으로",
+      reason: "검찰청 폐지 뒤 수사·기소 권한이 어디로 이동하는지 확인했다면, 그 변화가 국가의 강제력을 실제로 줄이고 더 엄격히 통제하는 개혁인지 이어서 살펴봅니다.",
+      listHref: "/monitoring",
+      listLabel: "씨앗의 눈 전체 보기",
+    },
+    en: {
+      href: "/columns/prosecution-reform-power-transfer-2026",
+      title: "Prosecution Reform Is Not About Moving Power Elsewhere",
+      relationship: "FROM RECORD TO JUDGMENT",
+      reason: "After tracing where investigative and prosecutorial powers move, examine whether the new system actually reduces state coercion and subjects it to stricter control.",
+      listHref: "/monitoring",
+      listLabel: "All SEED Watch records",
+    },
+  },
   "monitoring:yeosu-world-island-expo-tracker": {
     ko: {
       href: "/briefings/yeosu-world-island-expo",

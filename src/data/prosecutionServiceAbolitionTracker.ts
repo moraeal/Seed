@@ -24,7 +24,7 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
   },
   openedAt: "2025-09-05",
   updatedAt: "2026-09-15",
-  continuationEligible: false,
+  continuationEligible: true,
   nextCheck: {
     ko: "공소청 최종 직제와 검사 정원, 김지용 중수청장 후보자의 인사청문 절차, 10월 2일 실제 출범 인원·사건 이관·KICS 필수 기능 가동 여부",
     en: "The final Prosecution Agency structure and prosecutor headcount; the confirmation process for Serious Crimes Investigation Agency nominee Kim Ji-yong; and actual staffing, case transfers and essential KICS functions on October 2",
