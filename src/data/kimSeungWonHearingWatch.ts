@@ -37,20 +37,32 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   },
   keyChanges: [
     {
-      ko: "증인·참고인 0명 상태로 9월 15일 인사청문회가 실제 개최됐습니다.",
-      en: "The hearing went ahead on September 15 with no witnesses or reference witnesses.",
+      date: "2026-09-15",
+      text: {
+        ko: "증인·참고인 0명 상태로 인사청문회가 실제 개최됐습니다.",
+        en: "The hearing went ahead with no witnesses or reference witnesses.",
+      },
     },
     {
-      ko: "제넨셀 임상시험에서 신약 또는 위약을 투여받은 참여자가 93명이었다는 사실이 새롭게 보도됐습니다.",
-      en: "New reporting established that 93 trial participants received either the Genencell treatment candidate or a placebo.",
+      date: "2026-09-14",
+      text: {
+        ko: "제넨셀 임상시험에서 신약 후보물질 또는 위약을 투여받은 참여자가 93명이었다는 사실이 보도됐습니다.",
+        en: "Reporting established that 93 trial participants received either the Genencell treatment candidate or a placebo.",
+      },
     },
     {
-      ko: "후보자는 청문회에서 식약처에 부당한 압력을 행사한 것이 아니라 지연된 민원 절차를 확인해 달라고 요청했을 뿐이라고 반박했습니다.",
-      en: "At the hearing, the nominee denied improper pressure on the regulator and said he had only asked officials to check a delayed petition.",
+      date: "2026-09-15",
+      text: {
+        ko: "후보자는 식약처에 부당한 압력을 행사한 것이 아니라 지연된 민원 절차를 확인해 달라고 요청했을 뿐이라고 반박했습니다.",
+        en: "The nominee denied improper pressure on the regulator and said he had only asked officials to check a delayed petition.",
+      },
     },
     {
-      ko: "가족 협동조합의 바우처 기관 지정 과정과 관련한 녹취가 청문회 당일 공개돼 새로운 확인 과제가 생겼습니다.",
-      en: "A recording released on the day of the hearing raised a new question about the designation of a family cooperative as a voucher-service provider.",
+      date: "2026-09-15",
+      text: {
+        ko: "가족 협동조합의 바우처 기관 지정 과정과 관련한 녹취가 공개돼 새로운 확인 과제가 생겼습니다.",
+        en: "A recording raised a new question about the designation of a family cooperative as a voucher-service provider.",
+      },
     },
   ],
   timeline: [
@@ -265,7 +277,32 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   confirmedFacts: [
     { ko: "김승원 후보자 인사청문회는 2026년 9월 15일 증인·참고인 없이 개최됐습니다.", en: "Kim Seung-won's confirmation hearing was held on September 15, 2026 without witnesses or reference witnesses." },
     { ko: "국민의힘은 증인 44명과 참고인 4명을 요구했으며 최종적으로 모두 채택되지 않았습니다.", en: "The People Power Party requested 44 witnesses and four reference witnesses; none was approved." },
+    { ko: "후보자가 식약처에 임상시험 승인 관련 민원을 전달한 사실과 양모 씨를 알고 지낸 사실은 후보자의 설명으로 확인됐습니다.", en: "The nominee acknowledged relaying a clinical-trial approval petition to the regulator and knowing the woman associated with the request." },
     { ko: "식약처 자료를 인용한 보도에 따르면 제넨셀 임상시험 참여자 93명은 치료제 후보물질 또는 위약을 투여받았습니다.", en: "According to reporting based on regulator data, 93 Genencell trial participants received either the treatment candidate or a placebo." },
+    { ko: "식약처는 현재까지 중대한 약물이상반응이 보고되지 않았다고 밝혔습니다.", en: "The regulator said no serious adverse drug reactions had been reported to date." },
+  ],
+  currentControversies: [
+    {
+      title: { ko: "식약처 민원 전달이 어디까지 영향을 미쳤나", en: "How much influence did the petition relay have?" },
+      description: {
+        ko: "후보자는 지연된 민원 절차를 확인해 달라고 했을 뿐이라고 설명합니다. 야당은 국회의원의 연락이 승인 과정에 영향력을 행사한 것이라고 주장합니다. 실제 처리 경로와 승인 판단에 미친 영향은 관련 문서와 관계자 증언으로 충분히 확인되지 않았습니다.",
+        en: "Kim says he only asked officials to check a delayed petition, while the opposition alleges that contact from a lawmaker influenced approval. The processing trail and any effect on the decision have not been fully established through documents or testimony.",
+      },
+    },
+    {
+      title: { ko: "증인 없는 청문회로 해명이 충분히 검증됐나", en: "Could a witness-free hearing adequately test the explanations?" },
+      description: {
+        ko: "후보자는 청문회에서 직접 해명했지만 관련 당사자는 한 명도 증언대에 서지 않았습니다. 야당의 44명 요구가 과도했는지와 별개로, 핵심 관계자 몇 명이라도 불러 답변을 대조했어야 한다는 논란은 남아 있습니다.",
+        en: "Kim responded directly at the hearing, but no relevant party testified. Separate from whether the opposition's request for 44 witnesses was excessive, controversy remains over the failure to call even a small number of central figures for cross-checking.",
+      },
+    },
+    {
+      title: { ko: "가족 협동조합 지정 과정에 특혜가 있었나", en: "Was there preferential treatment for the family cooperative?" },
+      description: {
+        ko: "바우처 제공기관 지정 과정과 관련한 녹취와 야당의 의혹 제기는 공개됐습니다. 그러나 다른 신청기관과 다른 절차가 적용됐는지, 후보자의 영향력이 작용했는지, 실제 위법이나 특혜가 있었는지는 아직 확인되지 않았습니다.",
+        en: "A recording and opposition allegations concerning the cooperative's designation as a voucher provider are public. It remains unestablished whether different procedures were applied, whether Kim exercised influence, or whether any illegality or preferential treatment occurred.",
+      },
+    },
   ],
   questions: [
     { ko: "핵심 관계자 한두 명의 증언조차 없이 후보자의 해명을 충분히 교차검증할 수 있었습니까?", en: "Could the nominee's account be adequately tested without testimony from even one or two central figures?" },

@@ -30,6 +30,16 @@ export type WatchIssue = {
   status: "confirmed" | "contested" | "pending";
 };
 
+export type WatchKeyChange = {
+  date: string;
+  text: LocalizedText;
+};
+
+export type WatchControversy = {
+  title: LocalizedText;
+  description: LocalizedText;
+};
+
 export type WatchRelatedContent = {
   href: string;
   label: LocalizedText;
@@ -70,9 +80,10 @@ export type PublicInterestWatchCase = {
     caption: LocalizedText;
     credit: LocalizedText;
   };
-  keyChanges?: LocalizedText[];
+  keyChanges?: WatchKeyChange[];
   timeline?: WatchTimelineEntry[];
   issues?: WatchIssue[];
+  currentControversies?: WatchControversy[];
   relatedContents?: WatchRelatedContent[];
 };
 

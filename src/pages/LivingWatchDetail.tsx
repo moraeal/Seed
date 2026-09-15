@@ -1,15 +1,12 @@
 import {
-  AlertTriangle,
   ArrowLeft,
   ArrowRight,
   CalendarClock,
   CircleDot,
   Clock3,
   ExternalLink,
-  FileQuestion,
   FileText,
   History,
-  Lightbulb,
   MessageSquareText,
   PlayCircle,
   Scale,
@@ -38,12 +35,6 @@ const timelineTone: Record<WatchTimelineStatus, string> = {
   pending: "border-charcoal/25 bg-white text-charcoal/55",
 };
 
-const issueTone = {
-  confirmed: "bg-green-pale text-green-deep",
-  contested: "bg-gold/15 text-amber-800",
-  pending: "bg-charcoal/8 text-charcoal/55",
-};
-
 export default function LivingWatchDetail({ item, language, continuation }: Props) {
   const ko = language === "ko";
   const t = (value: LocalizedText) => value[language];
@@ -52,11 +43,6 @@ export default function LivingWatchDetail({ item, language, continuation }: Prop
     response: ko ? "해명" : "RESPONSE",
     new: ko ? "새로 추가" : "NEW",
     pending: ko ? "다음 확인" : "NEXT",
-  };
-  const issueLabels = {
-    confirmed: ko ? "사실 확인" : "VERIFIED",
-    contested: ko ? "주장 충돌" : "CONTESTED",
-    pending: ko ? "추가 확인" : "PENDING",
   };
 
   return (
@@ -130,7 +116,10 @@ export default function LivingWatchDetail({ item, language, continuation }: Prop
               {item.keyChanges.map((entry, index) => (
                 <div key={index} className="grid grid-cols-[2.25rem_1fr] gap-3 border border-red-700/15 bg-white p-4 sm:p-5">
                   <span className="grid size-9 place-items-center rounded-full bg-red-700 text-sm font-black text-white">{index + 1}</span>
-                  <p className="text-sm font-semibold leading-7 text-charcoal/72">{t(entry)}</p>
+                  <div>
+                    <time className="text-[10px] font-black tracking-[.1em] text-red-700">{ko ? "확인 " : "VERIFIED "}{entry.date.replace(/-/g, ".")}</time>
+                    <p className="mt-1 text-sm font-semibold leading-7 text-charcoal/72">{t(entry.text)}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -205,52 +194,39 @@ export default function LivingWatchDetail({ item, language, continuation }: Prop
           </section>
         )}
 
-        {!!item.issues?.length && (
-          <section className="mt-10" aria-labelledby="issues-title">
-            <div className="border-b-2 border-navy pb-4">
-              <span className="section-kicker">ISSUE CHECK</span>
-              <h2 id="issues-title" className="mt-1.5 text-3xl font-extrabold text-navy">{ko ? "쟁점별 현재 확인 상태" : "Current verification status by issue"}</h2>
-              <p className="mt-2 text-sm leading-7 text-charcoal/55">{ko ? "의혹 제기, 후보자의 해명, 씨앗이 확인한 내용을 구분합니다." : "Allegations, the nominee's response and SEED's assessment are separated."}</p>
+        <section className="mt-12 grid gap-8 lg:grid-cols-2" aria-label={ko ? "사실과 남은 논란" : "Facts and unresolved controversies"}>
+          <div>
+            <div className="border-b-2 border-green-deep pb-4">
+              <span className="section-kicker">FACTS SO FAR</span>
+              <h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "지금까지 확인된 사실" : "What has been established"}</h2>
             </div>
-
-            <div className="mt-5 space-y-4">
-              {item.issues.map((issue, index) => (
-                <article key={index} className="overflow-hidden border border-green-deep/12 bg-white">
-                  <header className="flex flex-wrap items-center justify-between gap-3 border-b border-green-deep/10 bg-ivory px-5 py-4">
-                    <h3 className="text-lg font-extrabold text-navy">{t(issue.title)}</h3>
-                    <span className={`rounded-full px-3 py-1 text-[10px] font-black tracking-[.08em] ${issueTone[issue.status]}`}>{issueLabels[issue.status]}</span>
-                  </header>
-                  <div className="grid gap-px bg-green-deep/10 md:grid-cols-3">
-                    <div className="bg-white p-5"><span className="text-[10px] font-black tracking-[.14em] text-charcoal/38">{ko ? "제기된 주장" : "ALLEGATION"}</span><p className="mt-3 text-sm leading-7 text-charcoal/68">{t(issue.claim)}</p></div>
-                    <div className="bg-white p-5"><span className="text-[10px] font-black tracking-[.14em] text-charcoal/38">{ko ? "후보자·여당의 설명" : "RESPONSE"}</span><p className="mt-3 text-sm leading-7 text-charcoal/68">{t(issue.response)}</p></div>
-                    <div className="bg-green-pale/55 p-5"><span className="text-[10px] font-black tracking-[.14em] text-green-deep">{ko ? "씨앗의 확인" : "SEED CHECK"}</span><p className="mt-3 text-sm font-semibold leading-7 text-charcoal/72">{t(issue.assessment)}</p></div>
-                  </div>
-                </article>
+            <ul className="mt-4 divide-y divide-green-deep/10 border-y border-green-deep/10 bg-white px-5">
+              {item.confirmedFacts.map((fact, index) => (
+                <li key={index} className="grid grid-cols-[1.5rem_1fr] gap-3 py-4">
+                  <CircleDot className="mt-1 text-green-deep" size={15}/>
+                  <p className="text-sm leading-7 text-charcoal/70">{t(fact)}</p>
+                </li>
               ))}
+            </ul>
+          </div>
+
+          {!!item.currentControversies?.length && (
+            <div>
+              <div className="border-b-2 border-gold pb-4">
+                <span className="section-kicker">STILL IN DISPUTE</span>
+                <h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "아직 논란 중인 부분" : "What remains disputed"}</h2>
+              </div>
+              <div className="mt-4 space-y-3">
+                {item.currentControversies.map((issue, index) => (
+                  <article key={index} className="border-l-4 border-gold bg-white p-5">
+                    <h3 className="text-base font-extrabold leading-6 text-navy">{t(issue.title)}</h3>
+                    <p className="mt-2 text-sm leading-7 text-charcoal/68">{t(issue.description)}</p>
+                  </article>
+                ))}
+              </div>
             </div>
-          </section>
-        )}
-
-        <section className="mt-12 grid gap-5 lg:grid-cols-2">
-          <div className="border-t-2 border-navy pt-5">
-            <div className="flex items-center gap-3"><FileQuestion className="text-gold"/><h2 className="text-2xl font-extrabold text-navy">{ko ? "아직 남은 질문" : "Questions still open"}</h2></div>
-            <ol className="mt-4 space-y-3">
-              {item.questions.map((entry, index) => <li key={index} className="grid grid-cols-[1.75rem_1fr] gap-3 bg-white p-4"><span className="text-xs font-black text-gold">{String(index + 1).padStart(2, "0")}</span><p className="text-sm leading-7 text-charcoal/70">{t(entry)}</p></li>)}
-            </ol>
-          </div>
-          <div className="border-t-2 border-navy pt-5">
-            <div className="flex items-center gap-3"><Lightbulb className="text-green-mid"/><h2 className="text-2xl font-extrabold text-navy">{ko ? "제도 개선 제안" : "Reform proposals"}</h2></div>
-            <ol className="mt-4 space-y-3">
-              {item.proposals.map((entry, index) => <li key={index} className="grid grid-cols-[1.75rem_1fr] gap-3 bg-white p-4"><span className="text-xs font-black text-green-mid">{String(index + 1).padStart(2, "0")}</span><p className="text-sm leading-7 text-charcoal/70">{t(entry)}</p></li>)}
-            </ol>
-          </div>
+          )}
         </section>
-
-        {item.caution && (
-          <aside className="mt-10 rounded-lg border border-gold/30 bg-gold/10 p-6">
-            <div className="flex items-start gap-3"><AlertTriangle className="mt-0.5 shrink-0 text-gold" size={20}/><div><h2 className="font-extrabold text-navy">{ko ? "사실 해석 주의" : "A note on interpretation"}</h2><p className="mt-2 text-sm leading-7 text-charcoal/65">{t(item.caution)}</p></div></div>
-          </aside>
-        )}
 
         {!!item.relatedContents?.length && (
           <section className="mt-12 border-t-2 border-navy pt-6">
