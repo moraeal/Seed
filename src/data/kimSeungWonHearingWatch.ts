@@ -16,8 +16,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   openedAt: "2026-08-31",
   updatedAt: "2026-09-15",
   nextCheck: {
-    ko: "법제사법위원회의 인사청문경과보고서 채택 여부와 대통령의 임명 여부",
-    en: "Whether the Legislation and Judiciary Committee adopts its hearing report and whether the president proceeds with the appointment",
+    ko: "11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판, 법제사법위원회의 인사청문경과보고서 채택 여부와 대통령의 임명 여부",
+    en: "The November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder, whether the Legislation and Judiciary Committee adopts its hearing report, and whether the president proceeds with the appointment",
   },
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
@@ -36,6 +36,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "This timeline cross-checks National Assembly schedules and decisions, public statements from the nominee and both parties, and reporting based on Ministry of Food and Drug Safety records. Allegations and the nominee's rebuttals are kept separate from verified facts.",
   },
   keyChanges: [
+    {
+      date: "2026-09-15",
+      text: {
+        ko: "관련 브로커와 제넨셀 설립자의 결심공판이 열렸지만 검찰 구형과 변론 종결 없이 11월 12일로 연기됐습니다.",
+        en: "The closing hearing for the alleged broker and Genencell founder was held but postponed to November 12 without prosecutors seeking sentences or arguments closing.",
+      },
+    },
     {
       date: "2026-09-15",
       text: {
@@ -217,6 +224,32 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-15",
+      title: { ko: "관련 브로커 재판, 결심 11월 12일로 연기", en: "Closing hearing in related broker case postponed to November 12" },
+      description: {
+        ko: "서울서부지법은 제넨셀 임상시험 승인 청탁과 정치후원금 500만 원 제공 약속 혐의로 기소된 브로커 양모 씨와 제넨셀 설립자 강모 씨의 공판을 열었지만, 예정했던 검찰 구형과 변론 종결을 진행하지 않았습니다. 재판부는 강씨의 별도 배임·횡령 사건 항소심 선고가 미뤄진 점을 확인한 뒤 두 사람의 결심공판을 11월 12일 오후 4시로 연기했습니다. 따라서 이날 재판에서는 후보자와 관련한 새로운 법원의 판단이 나오지 않았으며, 쟁점의 사법적 확인은 다음 기일 이후로 미뤄졌습니다.",
+        en: "The Seoul Western District Court convened a hearing for the alleged broker and Genencell founder, who are charged over a request for clinical-trial approval and a promised KRW 5 million political donation, but did not proceed with the planned sentencing requests or close arguments. After noting that judgment in the founder's separate breach-of-trust and embezzlement appeal had been delayed, the court postponed the closing hearing to 4 p.m. on November 12. No new judicial finding concerning the nominee emerged that day, leaving judicial clarification of the dispute for a later date.",
+      },
+      change: { ko: "예정됐던 구형·변론 종결 없이 다음 결심공판 일정만 확정", en: "Only a new closing-hearing date was set; planned sentencing requests and closing arguments did not occur" },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "머니투데이", en: "MoneyToday" },
+          title: { ko: "'김승원 신약 청탁 의혹' 브로커 재판 10분 만에 끝나", en: "Broker trial in Kim drug-petition case ends in under 10 minutes" },
+          url: "https://www.mt.co.kr/amp/society/2026/09/15/2026091516262841540",
+          publishedAt: "2026-09-15",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "뉴스핌", en: "NewsPim" },
+          title: { ko: "김승원 '신약 청탁' 브로커 양씨, 법원 출석…각종 의혹 '묵묵부답'", en: "Alleged broker in Kim drug-petition case appears in court and declines comment" },
+          url: "https://www.newspim.com/news/view/20260915001246",
+          publishedAt: "2026-09-15",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "다음",
       title: { ko: "청문경과보고서와 임명 여부 확인", en: "Committee report and appointment decision" },
       description: {
@@ -370,6 +403,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       label: { ko: "데일리안 — 제넨셀 실험·주가조작 관여 부인", en: "Dailian — Denial of involvement in Genencell trial and stock manipulation" },
       url: "https://www.dailian.co.kr/news/view/1690738/",
+    },
+    {
+      label: { ko: "머니투데이 — 관련 브로커·제넨셀 설립자 결심공판 연기", en: "MoneyToday — Closing hearing postponed in related broker and Genencell founder case" },
+      url: "https://www.mt.co.kr/amp/society/2026/09/15/2026091516262841540",
+    },
+    {
+      label: { ko: "뉴스핌 — 관련 재판 다음 기일 11월 12일 오후 4시", en: "NewsPim — Next hearing set for November 12 at 4 p.m." },
+      url: "https://www.newspim.com/news/view/20260915001246",
     },
   ],
 };
