@@ -114,9 +114,9 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       status: "response",
       sources: [
         {
-          publisher: { ko: "MBC 뉴스데스크", en: "MBC Newsdesk" },
-          title: { ko: "후보자, 민원 전달의 신중함과 브로커 친분 언급", en: "Nominee addresses the petition and acknowledges an acquaintance" },
-          url: "https://imnews.imbc.com/replay/2026/nwdesk/article/6850172_37004.html",
+          publisher: { ko: "SBS 뉴스", en: "SBS News" },
+          title: { ko: "김승원 \"식약처 부정청탁 안 해\"…민원 전달은 신중했어야", en: "Kim denies improper request to regulator, says petition relay should have been more cautious" },
+          url: "https://news.sbs.co.kr/news/endPage.do?cooper=GSTAND&news_id=N1008740610&plink=RSSLINK",
           publishedAt: "2026-09-07",
           kind: "article",
         },
@@ -132,9 +132,9 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       status: "confirmed",
       sources: [
         {
-          publisher: { ko: "MBC 뉴스", en: "MBC News" },
-          title: { ko: "청문회 일정 확정…증인·참고인 채택은 여야 합의 불발", en: "Hearing date set as parties fail to agree on witnesses" },
-          url: "https://imnews.imbc.com/replay/2026/nwdesk/article/6851006_37004.html",
+          publisher: { ko: "한겨레", en: "The Hankyoreh" },
+          title: { ko: "국힘 \"증인 44명 채택해야\" 민주 \"한 명도 안 돼\"", en: "Opposition seeks 44 witnesses; governing party rejects all" },
+          url: "https://www.hani.co.kr/arti/politics/politics_general/1277007.html",
           publishedAt: "2026-09-09",
           kind: "article",
         },
@@ -151,9 +151,9 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       status: "confirmed",
       sources: [
         {
-          publisher: { ko: "MBC 뉴스", en: "MBC News" },
-          title: { ko: "증인 44명·참고인 4명 채택 무산", en: "Requests for 44 witnesses and four reference witnesses fail" },
-          url: "https://imnews.imbc.com/replay/2026/nwdesk/article/6851006_37004.html",
+          publisher: { ko: "동아일보", en: "The Dong-A Ilbo" },
+          title: { ko: "김승원 청문회 증인 채택 결국 무산", en: "Witness selection for Kim's hearing ultimately fails" },
+          url: "https://www.donga.com/news/Politics/article/all/20260910/134639508/2",
           publishedAt: "2026-09-10",
           kind: "article",
         },
@@ -337,12 +337,16 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       url: "https://www.yna.co.kr/view/AKR20260901183300004",
     },
     {
-      label: { ko: "MBC — 후보자의 민원 전달·브로커 관계 해명", en: "MBC — Nominee's response on the petition and acquaintance" },
-      url: "https://imnews.imbc.com/replay/2026/nwdesk/article/6850172_37004.html",
+      label: { ko: "SBS — 후보자의 민원 전달·브로커 관계 해명", en: "SBS — Nominee's response on the petition and acquaintance" },
+      url: "https://news.sbs.co.kr/news/endPage.do?cooper=GSTAND&news_id=N1008740610&plink=RSSLINK",
     },
     {
-      label: { ko: "MBC — 증인 44명·참고인 4명 채택 무산", en: "MBC — Failure to approve 44 witnesses and four reference witnesses" },
-      url: "https://imnews.imbc.com/replay/2026/nwdesk/article/6851006_37004.html",
+      label: { ko: "한겨레 — 증인 44명·참고인 4명 채택 공방", en: "The Hankyoreh — Dispute over 44 witnesses and four reference witnesses" },
+      url: "https://www.hani.co.kr/arti/politics/politics_general/1277007.html",
+    },
+    {
+      label: { ko: "동아일보 — 증인·참고인 채택 최종 무산", en: "The Dong-A Ilbo — Witness and reference-witness selection ultimately fails" },
+      url: "https://www.donga.com/news/Politics/article/all/20260910/134639508/2",
     },
     {
       label: { ko: "SBS — 임상시험 참여자 93명과 청문회 쟁점", en: "SBS — Ninety-three trial participants and the hearing issues" },
