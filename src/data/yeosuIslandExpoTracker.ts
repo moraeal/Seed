@@ -483,6 +483,34 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-15",
+      title: {
+        ko: "개막 초기 지적 뒤 공연·그늘·연계교통 보강",
+        en: "Organizers add programming, shade and a new event shuttle after early criticism",
+      },
+      description: {
+        ko: "조직위와 여수시는 개막 초기 제기된 볼거리 부족과 한낮 관람 불편에 대응해 공연·체험 프로그램을 늘리고 그늘막을 추가했다고 밝혔습니다. 양산용 우산과 얼음생수를 지원하고, 주행사장과 남도 K-가든 페스티벌을 잇는 무료 셔틀도 하루 14회 운행하기 시작했습니다. 운영을 보완했다는 발표와 실제 관람객 불편이 줄었는지는 구분해 계속 확인합니다.",
+        en: "The organizing committee and Yeosu said they expanded performances and hands-on programs and added shade after early complaints about thin content and daytime heat. They also began providing umbrellas and iced water and operating 14 free shuttle trips a day between the main venue and the Namdo K-Garden Festival. The announced measures are recorded separately from whether they measurably reduce visitor inconvenience.",
+      },
+      change: {
+        ko: "개막 전 계획을 유지하는 단계에서 현장 반응에 따른 운영 보완 단계로 전환",
+        en: "Operations shift from following the pre-opening plan to making changes in response to visitor feedback",
+      },
+      status: "response",
+      sources: [
+        {
+          publisher: { ko: "2026여수세계섬박람회 조직위원회", en: "2026 Yeosu World Island Fair Organizing Committee" },
+          title: {
+            ko: "개막 열흘, 여수세계섬박람회 달라졌다… 공연 늘리고 콘텐츠 채우고",
+            en: "Ten days after opening, organizers expand performances and visitor support",
+          },
+          url: "https://island.yeosu2026.or.kr/6_4/253",
+          publishedAt: "2026-09-15",
+          kind: "document",
+        },
+      ],
+    },
+    {
       date: "다음",
       title: {
         ko: "관람객·수익·교통 보완과 폐막 뒤 정산 확인",
@@ -523,6 +551,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     {
       ko: "금오도 무료셔틀은 개막 나흘 뒤 중단됐고, 식당 음수대의 일반세균 검출로 개장 전 사용이 중단됐습니다. 중금속이 검출됐다는 온라인 주장은 사실이 아니었습니다.",
       en: "The free Geumodo shuttle stopped four days after opening, and a restaurant drinking-water point was closed before opening after excessive general bacteria were found. Online claims of heavy metals were false.",
+    },
+    {
+      ko: "조직위와 여수시는 개막 초기 지적 뒤 공연·체험과 그늘막을 늘리고, 얼음생수·양산용 우산 지원과 남도 K-가든 페스티벌 연계 무료셔틀 하루 14회 운행을 시작했다고 9월 15일 밝혔습니다.",
+      en: "On September 15, organizers and Yeosu said they had expanded performances, activities and shade, added iced-water and umbrella support, and begun 14 daily free shuttle trips to the Namdo K-Garden Festival in response to early feedback.",
     },
   ],
   currentControversies: [
@@ -628,6 +660,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       label: { ko: "매일경제 — 개막 9일 관람객과 초기 운영 문제", en: "Maeil Business Newspaper — Nine-day attendance and early operating issues" },
       url: "https://v.daum.net/v/20260914111208747",
       note: { ko: "2026년 9월 14일 확인", en: "Checked September 14, 2026" },
+    },
+    {
+      label: { ko: "박람회 조직위원회 — 개막 초기 프로그램·관람환경 보강", en: "Organizing committee — Post-opening programming and visitor-support changes" },
+      url: "https://island.yeosu2026.or.kr/6_4/253",
     },
     {
       label: { ko: "박람회 조직위원회 — 행사 개요와 일정", en: "Organizing committee — Event overview and schedule" },
