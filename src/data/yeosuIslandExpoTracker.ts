@@ -335,6 +335,7 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
           },
           url: "https://go.seoul.co.kr/news/newsView.php?id=20250125500020",
           publishedAt: "2025-01-25",
+          thumbnailSrc: "https://img.seoul.co.kr/img/upload/2025/01/25/SSC_20250125101058_V.jpg.webp",
           kind: "article",
         },
       ],
