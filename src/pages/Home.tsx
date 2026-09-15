@@ -38,8 +38,6 @@ export default function Home() {
   const allBriefings = getAllBriefingsNewestFirst();
   const localizedBriefings = allBriefings.map((item) => localizeBriefing(item, language));
   const briefings = localizedBriefings.filter((item) => item.homeBriefingLeadEligible !== false).slice(0, 5);
-  const publicWatchBriefingSource = allBriefings.find((item) => item.publicWatch);
-  const publicWatchBriefing = publicWatchBriefingSource ? localizeBriefing(publicWatchBriefingSource, language) : undefined;
   const journalColumns = [...columns]
     .sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue)
     .slice(0, 9)
@@ -65,6 +63,14 @@ export default function Home() {
   const latestHotIssue = hotIssues[0];
   const latestBriefing = briefings[0];
   const briefingList = localizedBriefings.filter((item) => item.slug !== latestBriefing?.slug).slice(0, 4);
+  const latestHotIssuePathParts = latestHotIssue?.to.split("/").filter(Boolean) ?? [];
+  const latestHotIssueSlug = latestHotIssuePathParts[latestHotIssuePathParts.length - 1]?.replace(/-tracker$/, "");
+  const publicWatchBriefingSource = allBriefings.find((item) => (
+    item.publicWatch
+    && item.slug !== latestBriefing?.slug
+    && item.slug !== latestHotIssueSlug
+  ));
+  const publicWatchBriefing = publicWatchBriefingSource ? localizeBriefing(publicWatchBriefingSource, language) : undefined;
   const publicWatchColumn = journalColumns.find((column) => column.slug === "civic-groups-are-not-state-vanguard-2026") ?? journalColumns[1];
   const publicWatchHref = publicWatchBriefing ? `/briefings/${publicWatchBriefing.slug}` : publicWatchColumn ? `/columns/${publicWatchColumn.slug}` : "";
   const publicWatchTitle = publicWatchBriefing?.title ?? publicWatchColumn?.title;
