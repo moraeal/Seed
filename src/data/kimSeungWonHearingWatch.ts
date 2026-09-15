@@ -118,6 +118,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
           title: { ko: "김승원 \"식약처 부정청탁 안 해\"…민원 전달은 신중했어야", en: "Kim denies improper request to regulator, says petition relay should have been more cautious" },
           url: "https://news.sbs.co.kr/news/endPage.do?cooper=GSTAND&news_id=N1008740610&plink=RSSLINK",
           publishedAt: "2026-09-07",
+          thumbnailSrc: "https://img.sbs.co.kr/newimg/news/20260905/202219344_1280.jpg",
           kind: "article",
         },
       ],
@@ -132,9 +133,9 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       status: "confirmed",
       sources: [
         {
-          publisher: { ko: "한겨레", en: "The Hankyoreh" },
-          title: { ko: "국힘 \"증인 44명 채택해야\" 민주 \"한 명도 안 돼\"", en: "Opposition seeks 44 witnesses; governing party rejects all" },
-          url: "https://www.hani.co.kr/arti/politics/politics_general/1277007.html",
+          publisher: { ko: "조선일보", en: "The Chosun Ilbo" },
+          title: { ko: "김승원 증인·참고인 채택 사실상 무산…야당 ‘맹탕 청문회’", en: "Witness selection for Kim hearing effectively fails as opposition warns of a hollow hearing" },
+          url: "https://www.chosun.com/politics/politics_general/2026/09/09/RGILLHFNK5B3JLUDJLOXK24AEE/",
           publishedAt: "2026-09-09",
           kind: "article",
         },
@@ -155,6 +156,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
           title: { ko: "김승원 청문회 증인 채택 결국 무산", en: "Witness selection for Kim's hearing ultimately fails" },
           url: "https://www.donga.com/news/Politics/article/all/20260910/134639508/2",
           publishedAt: "2026-09-10",
+          thumbnailSrc: "https://dimg.donga.com/wps/NEWS/IMAGE/2026/09/10/134639811.1.jpg",
           kind: "article",
         },
       ],
@@ -341,8 +343,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       url: "https://news.sbs.co.kr/news/endPage.do?cooper=GSTAND&news_id=N1008740610&plink=RSSLINK",
     },
     {
-      label: { ko: "한겨레 — 증인 44명·참고인 4명 채택 공방", en: "The Hankyoreh — Dispute over 44 witnesses and four reference witnesses" },
-      url: "https://www.hani.co.kr/arti/politics/politics_general/1277007.html",
+      label: { ko: "조선일보 — 증인·참고인 채택 사실상 무산", en: "The Chosun Ilbo — Witness and reference-witness selection effectively fails" },
+      url: "https://www.chosun.com/politics/politics_general/2026/09/09/RGILLHFNK5B3JLUDJLOXK24AEE/",
     },
     {
       label: { ko: "동아일보 — 증인·참고인 채택 최종 무산", en: "The Dong-A Ilbo — Witness and reference-witness selection ultimately fails" },
