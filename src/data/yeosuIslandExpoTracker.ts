@@ -115,15 +115,15 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       status: "confirmed",
       sources: [
         {
-          publisher: { ko: "프레시안", en: "Pressian" },
+          publisher: { ko: "전남CBS 노컷뉴스", en: "Jeonnam CBS NoCut News" },
           title: {
-            ko: "여수시, 세계 최초 섬박람회 기본구상 최종 확정",
-            en: "Yeosu finalizes the basic concept for a world-first island fair",
+            ko: "‘설마 이게 될 줄은’ 여수세계섬박람회 승인 뒷이야기",
+            en: "How the Yeosu World Island Fair secured international-event approval",
           },
-          url: "https://www.pressian.com/pages/articles/2020062616333674289",
-          publishedAt: "2020-06-26",
+          url: "https://jn.nocutnews.co.kr/news/5608808",
+          publishedAt: "2021-08-17",
           kind: "article",
-          thumbnailSrc: "https://www.pressian.com/_resources/10/2020/06/26/2020062616331065090_l.jpg",
+          thumbnailSrc: "https://file2.nocutnews.co.kr/newsroom/image/2021/08/17/202108171147413039_0.jpg",
         },
       ],
     },
