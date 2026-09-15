@@ -20,7 +20,7 @@ export default function Columns() {
   return <section className="bg-paper pb-12 sm:pb-16">
     <header className="border-b border-green-deep/15 bg-ivory">
       <div className="container-page grid gap-6 py-9 sm:py-12 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
-        <div><span className="section-kicker">THE VOICE OF SEED</span><h1 className="editorial-title mt-2.5 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "씨앗의 소리" : "Voice of the Seed"}</h1></div>
+        <div><span className="section-kicker">COLUMNS</span><h1 className="editorial-title mt-2.5 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "칼럼" : "Columns"}</h1></div>
         <p className="max-w-2xl text-base leading-8 text-charcoal/65">{ko ? "시민과 사회, 자유와 책임을 씨앗의 소리 관점으로 깊이 생각합니다. 사실을 설명하는 브리핑에서 한 걸음 더 나아가 오늘의 사건이 시민사회에 던지는 의미와 방향을 논합니다." : "Voice of the Seed examines citizens and society, freedom and responsibility, and the institutions of civil society. It moves beyond explanation to offer clear arguments for civic life."}</p>
       </div>
     </header>

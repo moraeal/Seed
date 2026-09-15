@@ -607,3 +607,6 @@ export const publicInterestWatchCases: PublicInterestWatchCase[] = [
 
 export const getPublicInterestWatchCase = (slug: string) =>
   publicInterestWatchCases.find((item) => item.slug === (slug === "beautiful-foundation" ? "beautiful-store" : slug));
+
+export const newsTrackerCases = publicInterestWatchCases.filter((item) => Boolean(item.timeline?.length));
+export const civicWatchCases = publicInterestWatchCases.filter((item) => !item.timeline?.length);

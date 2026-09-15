@@ -7,7 +7,7 @@ import { getAllBriefing } from "../data/allBriefings";
 import { getColumn } from "../data/columns";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
 import { getNewsArticle } from "../data/news";
-import { publicInterestWatchCases, type LocalizedText } from "../data/publicInterestWatch";
+import { civicWatchCases, type LocalizedText } from "../data/publicInterestWatch";
 import { seedWatchReferences, type SeedWatchReference } from "../data/seedWatchIndex";
 import { useLanguage, type Language } from "../i18n";
 
@@ -44,7 +44,7 @@ function resolveWatchArticle(reference: SeedWatchReference, language: Language):
       imageAlt: article.heroImage.alt,
       topic,
       status,
-      sourceMenu: language === "ko" ? "오늘의 뉴스" : "Today's News",
+      sourceMenu: language === "ko" ? "핫이슈" : "Hot Issues",
     };
   }
 
@@ -63,7 +63,7 @@ function resolveWatchArticle(reference: SeedWatchReference, language: Language):
       imageAlt: image?.alt ?? article.title,
       topic,
       status,
-      sourceMenu: language === "ko" ? "씨앗브리핑" : "SEED Briefings",
+      sourceMenu: language === "ko" ? "브리핑" : "Briefings",
     };
   }
 
@@ -80,7 +80,7 @@ function resolveWatchArticle(reference: SeedWatchReference, language: Language):
     imageAlt: article.heroImage.alt,
     topic,
     status,
-    sourceMenu: language === "ko" ? "씨앗의 소리" : "Voice of the Seed",
+    sourceMenu: language === "ko" ? "칼럼" : "Columns",
   };
 }
 
@@ -107,12 +107,12 @@ export default function Monitoring() {
         <div className="container-page grid gap-6 py-9 sm:py-12 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
           <div>
             <span className="section-kicker">PUBLIC-INTEREST WATCH</span>
-            <h1 className="editorial-title mt-2.5 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "씨앗의 눈" : "SEED Watch"}</h1>
+            <h1 className="editorial-title mt-2.5 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "시민감시" : "Civic Watch"}</h1>
           </div>
           <p className="max-w-2xl text-base leading-8 text-charcoal/65">
             {ko
-              ? "씨앗의 눈은 국회와 입법 과정, 국가와 지방정부, 공공기관과 시민사회가 가진 권력을 감시합니다. 법안과 제도가 시민의 권리와 기업의 자유를 어떻게 바꾸는지, 세금과 기부금이 어떻게 쓰이는지 살핍니다. 선한 목적이나 명성도 검증을 대신할 수 없습니다. 공개자료와 기관의 답변, 시행 이후의 실제 결과를 끝까지 기록합니다."
-              : "SEED Watch scrutinizes legislatures and lawmaking, national and local government, public institutions and civil-society power. We examine how bills and institutions change civic rights and economic freedom, and how taxes and donations are used. Good intentions or reputation do not replace verification. We follow public records, institutional replies and real-world outcomes after implementation."}
+              ? "시민감시는 국회와 입법 과정, 국가와 지방정부, 공공기관과 시민사회가 가진 권력을 감시합니다. 법안과 제도가 시민의 권리와 기업의 자유를 어떻게 바꾸는지, 세금과 기부금이 어떻게 쓰이는지 살핍니다. 선한 목적이나 명성도 검증을 대신할 수 없습니다. 공개자료와 기관의 답변, 시행 이후의 실제 결과를 끝까지 기록합니다."
+              : "Civic Watch scrutinizes legislatures and lawmaking, national and local government, public institutions and civil-society power. We examine how bills and institutions change civic rights and economic freedom, and how taxes and donations are used. Good intentions or reputation do not replace verification. We follow public records, institutional replies and real-world outcomes after implementation."}
           </p>
         </div>
       </header>
@@ -176,7 +176,7 @@ export default function Monitoring() {
           </div>
 
           <div className="mt-4 grid gap-4 lg:grid-cols-2">
-            {publicInterestWatchCases.map((item) => (
+            {civicWatchCases.map((item) => (
               <Link key={item.slug} to={`/monitoring/${item.slug}`} className="group flex min-h-[300px] flex-col border border-green-deep/15 bg-white p-5 transition hover:-translate-y-1 hover:shadow-[0_20px_55px_rgba(23,76,58,.10)] sm:p-6">
                 <div className="flex items-center justify-between gap-3"><span className="section-kicker">{t(item.eyebrow)}</span><span className="rounded-full bg-green-pale px-3 py-1 text-[11px] font-extrabold text-green-deep">{t(item.status)}</span></div>
                 <BookOpenText className="mt-5 text-gold" size={25}/>
@@ -200,7 +200,7 @@ export default function Monitoring() {
         </section>
 
         <aside className="mt-12 grid gap-6 border-t-2 border-navy pt-9 lg:grid-cols-[.7fr_1.3fr] lg:items-start">
-          <div className="flex items-center gap-3 text-navy"><ShieldCheck className="text-gold"/><h2 className="text-2xl font-extrabold">{ko ? "씨앗의 눈이 지키는 원칙" : "The SEED Watch standard"}</h2></div>
+          <div className="flex items-center gap-3 text-navy"><ShieldCheck className="text-gold"/><h2 className="text-2xl font-extrabold">{ko ? "시민감시가 지키는 원칙" : "The Civic Watch standard"}</h2></div>
           <p className="text-sm leading-8 text-charcoal/65">{ko ? "진영이나 명성보다 사실과 시민이 치르는 비용을 봅니다. 확인된 사실, 아직 남은 질문, 씨앗의 판단을 구분하고 충분한 반론권과 정정 절차를 보장합니다. 선한 목적은 검증의 면허가 아닙니다. 감시는 낙인이 아니라 시민이 다음 결과를 확인할 수 있게 만드는 공공 기록입니다." : "We examine facts and the cost borne by citizens, not reputation or partisan convenience. Confirmed facts, open questions and SEED's judgment are separated, with a right of reply and correction. Good intentions are not immunity from scrutiny. Watch records let citizens verify what happens next; they do not brand institutions."}</p>
         </aside>
 

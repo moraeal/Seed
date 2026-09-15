@@ -1,7 +1,7 @@
 import { getAllBriefingsNewestFirst } from "./data/allBriefings";
 import { columns } from "./data/columns";
 import { newsArticles } from "./data/news";
-import { publicInterestWatchCases } from "./data/publicInterestWatch";
+import { newsTrackerCases, publicInterestWatchCases } from "./data/publicInterestWatch";
 import { seedLanguageArticlesKo } from "./data/seedLanguage";
 import { seedLanguageEnvironmentArticlesKo } from "./data/seedLanguageEnvironment";
 import {
@@ -47,7 +47,7 @@ const firstLocalRasterImage = <T extends { src: string }>(images?: T[]) => image
 
 const allSeedLanguageArticlesKo = [...seedLanguageEnvironmentArticlesKo, ...seedLanguageArticlesKo];
 const newest = (dates: string[]) => [...dates].sort()[dates.length - 1];
-const latestDate = newest([...newsArticles.map((item) => item.date), ...columns.map((item) => item.date), ...getAllBriefingsNewestFirst().map((item) => item.date), ...allSeedLanguageArticlesKo.map((item) => item.date)]);
+const latestDate = newest([...newsArticles.map((item) => item.date), ...publicInterestWatchCases.map((item) => item.updatedAt), ...columns.map((item) => item.date), ...getAllBriefingsNewestFirst().map((item) => item.date), ...allSeedLanguageArticlesKo.map((item) => item.date)]);
 
 const staticRoutes: SeoRoute[] = [
   {
@@ -67,16 +67,16 @@ const staticRoutes: SeoRoute[] = [
     lastModified: latestDate,
     language: "en",
   },
-  { path: "/news", title: "오늘의뉴스 | 씨앗의 소리", description: "한국 정치·사회 이슈의 확인된 사실과 아직 확인되지 않은 부분을 구분하고 시민이 지켜볼 점을 설명합니다.", type: "website", lastModified: newest(newsArticles.map((item) => item.date)) },
-  { path: "/briefings", title: "시민브리핑 | 씨앗의 소리", description: "복잡한 정책과 제도 논쟁을 사실, 맥락, 관찰 지점과 씨드의 관점으로 차분하게 풀어냅니다.", type: "website", lastModified: newest(getAllBriefingsNewestFirst().map((item) => item.date)) },
+  { path: "/news", title: "핫이슈 | 씨앗의 소리", description: "정치·사회 이슈의 핵심 보도와 뉴스트래커를 한곳에 모아 확인된 사실과 아직 결정되지 않은 내용을 구분합니다.", type: "website", lastModified: newest([...newsArticles.map((item) => item.date), ...newsTrackerCases.map((item) => item.updatedAt)]) },
+  { path: "/briefings", title: "브리핑 | 씨앗의 소리", description: "복잡한 정책과 제도 논쟁을 사실, 맥락, 관찰 지점과 씨드의 관점으로 차분하게 풀어냅니다.", type: "website", lastModified: newest(getAllBriefingsNewestFirst().map((item) => item.date)) },
   { path: "/columns", title: "칼럼 | 씨앗의 소리", description: "자유, 법치, 책임, 시장의 자율성과 강한 시민사회의 관점에서 오늘의 쟁점을 논평합니다.", type: "website", lastModified: newest(columns.map((item) => item.date)) },
-  { path: "/monitoring", title: "씨앗의 눈 | 씨앗의 소리", description: "뉴스·브리핑·칼럼에서 시작된 공익감시 의제를 다시 연결하고, 권력과 예산에 대한 질문부터 기관의 답변과 후속 변화까지 기록합니다.", type: "website", lastModified: latestDate },
+  { path: "/monitoring", title: "시민감시 | 씨앗의 소리", description: "국가와 시민사회의 권력, 예산과 성과를 공개자료와 기관의 답변으로 점검하고 후속 변화를 기록합니다.", type: "website", lastModified: latestDate },
   { path: "/proposals", title: "시민제안 | 씨앗의 소리", description: "시민의 문제의식을 구체적인 제도와 정책의 제안으로 키우는 씨앗의 소리 제안 공간입니다.", type: "website", lastModified: latestDate },
   { path: "/founding-statement", title: "씨앗의 소리 취지문 | 씨앗의 소리", description: "한 사람의 생각과 목소리도 세상을 향해 자랄 수 있다는 믿음에서 시작한 독립 시민미디어 씨앗의 소리의 취지문입니다.", type: "article", lastModified: latestDate, author: "박경석", section: "씨앗의 소리 취지문" },
-  { path: "/seed-language", title: "씨앗언어 | 씨앗의 소리", description: "특정 진영이 독점한 시민사회의 언어를 해체하고 본래 의미를 되살려 시민의 언어로 다시 구성합니다.", type: "website", lastModified: newest(allSeedLanguageArticlesKo.map((item) => item.date)) },
+  { path: "/seed-language", title: "용어해설 | 씨앗의 소리", description: "특정 진영이 독점한 시민사회의 언어를 해체하고 본래 의미를 되살려 시민의 언어로 다시 구성합니다.", type: "website", lastModified: newest(allSeedLanguageArticlesKo.map((item) => item.date)) },
   { path: "/about", title: "씨드 보이스 소개 | 씨앗의 소리", description: "자유의 영역을 넓히고 기업의 도전과 혁신을 보호하며 국가와 시민사회의 권력을 감시하는 독립 시민저널 씨앗의 소리를 소개합니다.", type: "website", lastModified: latestDate },
   { path: "/publisher-message", title: "발행인 인사말 | 씨앗의 소리", description: "한 사람의 질문과 판단에서 시작된 독립 시민미디어 씨앗의 소리의 발행인 인사말입니다.", type: "article", lastModified: latestDate, author: "한시언", section: "발행인 인사말" },
-  { path: "/search", title: "통합검색 | 씨앗의 소리", description: "씨앗의 소리의 뉴스, 브리핑, 칼럼과 씨앗언어 콘텐츠를 한 번에 검색합니다.", type: "website", lastModified: latestDate, noindex: true },
+  { path: "/search", title: "통합검색 | 씨앗의 소리", description: "씨앗의 소리의 핫이슈, 브리핑, 칼럼, 시민감시와 용어해설을 한 번에 검색합니다.", type: "website", lastModified: latestDate, noindex: true },
 ];
 
 const newsRoutes: SeoRoute[] = newsArticles.map((article) => ({
@@ -128,7 +128,7 @@ const columnRoutes: SeoRoute[] = columns.map((column) => ({
   type: "article",
   lastModified: column.date,
   author: column.author,
-  section: "씨앗의 소리",
+  section: "칼럼",
   image: socialImageUrl("columns", column.slug, `${column.date}-${stableHash(column.heroImage.src)}`),
   imageAlt: column.heroImage.alt,
 }));
@@ -140,7 +140,7 @@ const monitoringRoutes: SeoRoute[] = publicInterestWatchCases.map((item) => ({
   type: "article",
   lastModified: item.updatedAt,
   author: SITE_NAME,
-  section: "씨앗의 눈",
+  section: item.timeline?.length ? "핫이슈" : "시민감시",
   image: item.heroImage ? socialImageUrl("monitoring", item.slug, item.updatedAt) : undefined,
   imageAlt: item.heroImage?.alt.ko,
 }));
@@ -164,7 +164,7 @@ const seedLanguageRoutes: SeoRoute[] = allSeedLanguageArticlesKo.map((article) =
   type: "article",
   lastModified: article.date,
   author: SITE_NAME,
-  section: "씨앗언어",
+  section: "용어해설",
   image: socialImageUrl("seed-language", article.slug, `${article.date}-${stableHash(article.heroImage.src)}`),
   imageAlt: article.heroImage.alt,
 }));

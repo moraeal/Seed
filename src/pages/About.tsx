@@ -13,13 +13,14 @@ const copy = {
       "씨앗의 소리는 시민에게 결론을 대신 내려주는 미디어가 되려 하지 않습니다. 확인된 사실과 아직 확인되지 않은 주장을 구분하고, 제도와 정책이 우리의 세금·일자리·주거·자유에 어떤 영향을 주는지 생활의 언어로 설명합니다.",
       "국가만이 아니라 시민사회와 공익기관도 권력을 가질 수 있습니다. 씨앗의 소리는 어느 진영에도 시민의 이름을 독점할 권리를 주지 않고, 권한을 가진 모든 주체에게 투명성과 책임을 묻습니다.",
     ],
-    contentsTitle: "네 개의 창으로 세상을 읽습니다",
+    contentsTitle: "다섯 개의 창으로 세상을 읽습니다",
     contentsLead: "같은 사건도 질문의 깊이와 독자의 필요에 따라 다른 형식으로 다룹니다.",
     contents: [
-      { label: "씨앗의소리", english: "THE VOICE OF SEED", description: "자유·법치·책임과 시민의 관점에서 시대의 쟁점을 분명하게 논평합니다.", path: "/columns" },
-      { label: "오늘의뉴스", english: "TODAY'S NEWS", description: "지금 알아야 할 사실을 빠르게 확인하고, 시민의 삶과 연결되는 핵심을 짚습니다.", path: "/news" },
-      { label: "씨앗브리핑", english: "SEED CITIZEN BRIEFING", description: "복잡한 정책과 제도를 사실, 맥락, 관찰 지점과 씨드의 판단으로 깊이 설명합니다.", path: "/briefings" },
-      { label: "씨앗언어", english: "SEED LANGUAGE", description: "진영이 독점한 시민사회의 말을 해체하고, 시민이 스스로 생각할 수 있는 언어로 다시 정의합니다.", path: "/seed-language" },
+      { label: "칼럼", english: "COLUMNS", description: "자유·법치·책임과 시민의 관점에서 시대의 쟁점을 분명하게 논평합니다.", path: "/columns" },
+      { label: "핫이슈", english: "HOT ISSUES", description: "지금 알아야 할 사실을 정리하고, 오래 이어지는 사건은 뉴스트래커로 흐름을 기록합니다.", path: "/news" },
+      { label: "브리핑", english: "BRIEFINGS", description: "복잡한 정책과 제도를 사실, 맥락, 관찰 지점과 씨드의 판단으로 깊이 설명합니다.", path: "/briefings" },
+      { label: "시민감시", english: "CIVIC WATCH", description: "국가와 시민사회의 권력, 예산과 성과를 공개자료와 기관의 답변으로 점검합니다.", path: "/monitoring" },
+      { label: "용어해설", english: "GLOSSARY", description: "진영이 독점한 시민사회의 말을 해체하고, 시민이 스스로 생각할 수 있는 언어로 다시 정의합니다.", path: "/seed-language" },
     ],
     standardTitle: "사실은 정확하게, 관점은 분명하게, 시민에게는 책임 있게",
     standards: [
@@ -44,13 +45,14 @@ const copy = {
       "SEED VOICE does not aim to make decisions for its readers. We distinguish verified facts from unsettled claims and explain in everyday language how institutions and policies affect taxes, jobs, housing and freedom.",
       "Power exists beyond the state. Civic organizations and public-interest institutions can also accumulate influence. We grant no political camp a monopoly on the citizen’s name, and ask every holder of power for transparency and accountability.",
     ],
-    contentsTitle: "Four windows on public life",
+    contentsTitle: "Five windows on public life",
     contentsLead: "We use different formats according to the depth of the question and what readers need.",
     contents: [
-      { label: "Voice of the Seed", english: "THE VOICE OF SEED", description: "Clear commentary on public issues through freedom, the rule of law, responsibility and civic agency.", path: "/columns" },
-      { label: "Today's News", english: "TODAY'S NEWS", description: "A timely account of essential facts and why they matter in citizens’ daily lives.", path: "/news" },
-      { label: "SEED Briefings", english: "SEED CITIZEN BRIEFING", description: "Deeper explanations of policy and institutions through facts, context, watch points and SEED’s judgment.", path: "/briefings" },
-      { label: "SEED Language", english: "SEED LANGUAGE", description: "Reclaiming civic words captured by political camps so citizens can think in language of their own.", path: "/seed-language" },
+      { label: "Columns", english: "COLUMNS", description: "Clear commentary on public issues through freedom, the rule of law, responsibility and civic agency.", path: "/columns" },
+      { label: "Hot Issues", english: "HOT ISSUES", description: "Essential facts on current issues, with news trackers recording cases that continue to unfold.", path: "/news" },
+      { label: "Briefings", english: "BRIEFINGS", description: "Deeper explanations of policy and institutions through facts, context, watch points and SEED’s judgment.", path: "/briefings" },
+      { label: "Civic Watch", english: "CIVIC WATCH", description: "Evidence-based scrutiny of power, budgets and outcomes across the state and civil society.", path: "/monitoring" },
+      { label: "Glossary", english: "GLOSSARY", description: "Reclaiming civic words captured by political camps so citizens can think in language of their own.", path: "/seed-language" },
     ],
     standardTitle: "Accurate in fact, clear in viewpoint, accountable to citizens",
     standards: [
@@ -67,7 +69,7 @@ const copy = {
   },
 };
 
-const contentIcons = [Eye, FileSearch, BookOpenText, Languages];
+const contentIcons = [Eye, FileSearch, BookOpenText, Scale, Languages];
 const standardIcons = [FileSearch, Scale, Eye];
 
 export default function About() {

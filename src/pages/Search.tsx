@@ -6,6 +6,7 @@ import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { getColumnsNewestFirst } from "../data/columns";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
 import { getNewsNewestFirst } from "../data/news";
+import { newsTrackerCases } from "../data/publicInterestWatch";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
 import { useLanguage } from "../i18n";
@@ -17,7 +18,7 @@ type SearchItem = {
   summary: string;
   body: string;
   date: string;
-  readMinutes: number;
+  readMinutes?: number;
   href: string;
   imageSrc: string;
   imageAlt: string;
@@ -38,7 +39,7 @@ export default function SearchPage() {
   const items = useMemo<SearchItem[]>(() => {
     const news = getNewsNewestFirst().map((item) => localizeNewsArticle(item, language)).map((item) => ({
       key: `news-${item.slug}`,
-      category: ko ? "오늘의뉴스" : "Today's News",
+      category: ko ? "핫이슈" : "Hot Issues",
       title: item.title,
       summary: item.summary,
       body: [item.subtitle, item.keySentence, item.category, ...item.sections.flatMap((section) => [section.title, ...(section.paragraphs ?? []), ...(section.bullets ?? [])]), ...item.watchPoints].join(" "),
@@ -51,7 +52,7 @@ export default function SearchPage() {
 
     const briefings = getAllBriefingsNewestFirst().map((item) => localizeBriefing(item, language)).map((item) => ({
       key: `briefing-${item.slug}`,
-      category: ko ? "씨앗브리핑" : "SEED Briefing",
+      category: ko ? "브리핑" : "Briefings",
       title: item.title,
       summary: item.summary,
       body: [item.category, ...item.content, ...(item.sections ?? []).flatMap((section) => [section.title, ...(section.paragraphs ?? []), ...(section.bullets ?? [])]), ...item.watchPoints].join(" "),
@@ -64,7 +65,7 @@ export default function SearchPage() {
 
     const columns = getColumnsNewestFirst().map((item) => localizeColumn(item, language)).map((item) => ({
       key: `column-${item.slug}`,
-      category: ko ? "씨앗의소리" : "Voice of the Seed",
+      category: ko ? "칼럼" : "Columns",
       title: item.title,
       summary: item.summary,
       body: [item.subtitle, ...item.sections.flatMap((section) => [section.title, ...section.paragraphs])].join(" "),
@@ -80,7 +81,7 @@ export default function SearchPage() {
       .filter((item): item is NonNullable<typeof item> => Boolean(item))
       .map((item) => ({
         key: `language-${item.slug}`,
-        category: ko ? "씨앗언어" : "SEED Language",
+        category: ko ? "용어해설" : "Glossary",
         title: item.title,
         summary: item.summary,
         body: [item.term, item.subtitle, ...item.keyPoints, ...item.sections.flatMap((section) => [section.title, ...section.paragraphs])].join(" "),
@@ -91,7 +92,19 @@ export default function SearchPage() {
         imageAlt: item.heroImage.alt,
       }));
 
-    return [...news, ...briefings, ...columns, ...seedLanguage];
+    const trackers = newsTrackerCases.map((item) => ({
+      key: `tracker-${item.slug}`,
+      category: ko ? "핫이슈" : "Hot Issues",
+      title: item.title[language],
+      summary: item.summary[language],
+      body: [item.sourceBasis[language], ...(item.keyChanges ?? []).map((change) => change.text[language]), ...(item.timeline ?? []).flatMap((entry) => [entry.title[language], entry.description[language]])].join(" "),
+      date: item.updatedAt,
+      href: `/monitoring/${item.slug}`,
+      imageSrc: item.heroImage?.src ?? "",
+      imageAlt: item.heroImage?.alt[language] ?? item.title[language],
+    }));
+
+    return [...news, ...trackers, ...briefings, ...columns, ...seedLanguage];
   }, [ko, language]);
 
   const results = useMemo(() => {
@@ -130,7 +143,7 @@ export default function SearchPage() {
         <div className="container-page py-10 sm:py-14">
           <span className="section-kicker">SEARCH SEED VOICE</span>
           <h1 className="editorial-title mt-3 text-4xl font-bold text-navy sm:text-5xl">{ko ? "통합검색" : "Search"}</h1>
-          <p className="mt-3 max-w-2xl text-base leading-7 text-charcoal/65">{ko ? "오늘의뉴스, 씨앗브리핑, 씨앗의소리와 씨앗언어의 제목과 본문을 함께 검색합니다." : "Search titles and full text across Today's News, SEED Briefings, Voice of the Seed and SEED Language."}</p>
+          <p className="mt-3 max-w-2xl text-base leading-7 text-charcoal/65">{ko ? "핫이슈, 브리핑, 칼럼, 시민감시와 용어해설의 제목과 본문을 함께 검색합니다." : "Search titles and full text across Hot Issues, Briefings, Columns, Civic Watch and the Glossary."}</p>
 
           <form onSubmit={submit} role="search" className="mt-7 flex max-w-3xl items-stretch border-2 border-green-deep bg-white focus-within:ring-2 focus-within:ring-gold/60">
             <SearchIcon className="ml-4 self-center text-green-deep" size={22} aria-hidden="true"/>
@@ -163,7 +176,7 @@ export default function SearchPage() {
                     <Link to={item.href} className="group grid gap-5 py-6 transition hover:bg-green-pale/50 sm:grid-cols-[190px_minmax(0,1fr)] sm:px-3">
                       {item.imageSrc ? <div className="overflow-hidden bg-ivory"><SafeImage src={resolveImageSrc(item.imageSrc)} alt={item.imageAlt} loading="lazy" referrerPolicy="no-referrer" className="aspect-[16/10] h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"/></div> : <div className="hidden bg-green-pale sm:block" aria-hidden="true"/>}
                       <div className="min-w-0 self-center">
-                        <div className="flex flex-wrap items-center gap-3 text-xs text-charcoal/45"><span className="font-extrabold text-green-mid">{item.category}</span><time>{item.date.replace(/-/g, ".")}</time><span className="inline-flex items-center gap-1"><Clock size={13}/>{item.readMinutes}{ko ? "분" : " min"}</span></div>
+                        <div className="flex flex-wrap items-center gap-3 text-xs text-charcoal/45"><span className="font-extrabold text-green-mid">{item.category}</span><time>{item.date.replace(/-/g, ".")}</time>{item.readMinutes && <span className="inline-flex items-center gap-1"><Clock size={13}/>{item.readMinutes}{ko ? "분" : " min"}</span>}</div>
                         <h3 className="editorial-title mt-2 text-balance text-[1.35rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-2xl">{item.title}</h3>
                         <p className="mt-2 line-clamp-2 text-base leading-7 text-charcoal/62">{item.summary}</p>
                         <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-extrabold text-green-deep">{ko ? "글 읽기" : "Read article"}<ArrowRight size={15}/></span>

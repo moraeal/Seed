@@ -3,6 +3,7 @@ import { getAllBriefingsNewestFirst } from "./allBriefings";
 import { columns } from "./columns";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "./localizedContent";
 import { newsArticles } from "./news";
+import { newsTrackerCases } from "./publicInterestWatch";
 
 export type DiscussionSource = {
   slug: string;
@@ -19,19 +20,20 @@ const staticSources: DiscussionSource[] = [
 ];
 
 const allSources: DiscussionSource[] = [
-  ...getAllBriefingsNewestFirst().map((item) => ({ slug: item.slug, type: "시민브리핑", title: item.title, path: `/briefings/${item.slug}` })),
-  ...columns.map((item) => ({ slug: item.slug, type: "씨드칼럼", title: item.title, path: `/columns/${item.slug}` })),
-  ...newsArticles.map((item) => ({ slug: item.slug, type: "오늘의뉴스", title: item.title, path: `/news/${item.slug}` })),
+  ...getAllBriefingsNewestFirst().map((item) => ({ slug: item.slug, type: "브리핑", title: item.title, path: `/briefings/${item.slug}` })),
+  ...columns.map((item) => ({ slug: item.slug, type: "칼럼", title: item.title, path: `/columns/${item.slug}` })),
+  ...newsArticles.map((item) => ({ slug: item.slug, type: "핫이슈", title: item.title, path: `/news/${item.slug}` })),
+  ...newsTrackerCases.map((item) => ({ slug: item.slug, type: "핫이슈", title: item.title.ko, path: `/monitoring/${item.slug}` })),
   ...staticSources,
 ];
 
-export const discussionSourceTypes = ["전체", "시민브리핑", "씨드칼럼", "오늘의뉴스", "시민감시", "시민제안", "시민실험", "아카데미"];
+export const discussionSourceTypes = ["전체", "브리핑", "칼럼", "핫이슈", "시민감시", "시민제안", "시민실험", "아카데미"];
 
 const englishTypes: Record<string, string> = {
   "전체": "All",
-  "시민브리핑": "Civic Briefings",
-  "씨드칼럼": "SEED Columns",
-  "오늘의뉴스": "Today's News",
+  "브리핑": "Briefings",
+  "칼럼": "Columns",
+  "핫이슈": "Hot Issues",
   "시민감시": "Civic Watch",
   "시민제안": "Citizen Proposals",
   "시민실험": "Civic Experiments",
@@ -54,20 +56,23 @@ export function resolveDiscussionSource(slug: string, language: Language = "ko")
   const briefing = getAllBriefingsNewestFirst().find((item) => item.slug === slug);
   if (briefing) {
     const localized = localizeBriefing(briefing, language);
-    return { ...source, type: englishTypes["시민브리핑"], title: localized.title };
+    return { ...source, type: englishTypes["브리핑"], title: localized.title };
   }
 
   const column = columns.find((item) => item.slug === slug);
   if (column) {
     const localized = localizeColumn(column, language);
-    return { ...source, type: englishTypes["씨드칼럼"], title: localized.title };
+    return { ...source, type: englishTypes["칼럼"], title: localized.title };
   }
 
   const news = newsArticles.find((item) => item.slug === slug);
   if (news) {
     const localized = localizeNewsArticle(news, language);
-    return { ...source, type: englishTypes["오늘의뉴스"], title: localized.title };
+    return { ...source, type: englishTypes["핫이슈"], title: localized.title };
   }
+
+  const tracker = newsTrackerCases.find((item) => item.slug === slug);
+  if (tracker) return { ...source, type: englishTypes["핫이슈"], title: tracker.title.en };
 
   const staticEnglish: Record<string, string> = {
     monitoring: "Civic Watch",

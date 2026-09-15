@@ -39,7 +39,7 @@ export default function BriefingDetail() {
     <article className="bg-paper">
       <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
         <div className="container-page max-w-5xl">
-          <Link to="/briefings" className="text-link text-xs"><ArrowLeft size={14} />{ko ? "시민브리핑 목록" : "Civic Briefings"}</Link>
+          <Link to="/briefings" className="text-link text-xs"><ArrowLeft size={14} />{ko ? "브리핑 목록" : "Briefings"}</Link>
           <div className="mt-3 border-t-2 border-navy pt-3">
             <h1 className="article-detail-title">{briefing.title}</h1>
             {briefing.subtitle && <p className="mx-auto mt-2 max-w-3xl text-base font-bold leading-7 text-green-deep sm:text-lg">{briefing.subtitle}</p>}

@@ -9,9 +9,9 @@ type SectionItem = {
 
 const sectionItems: SectionItem[] = [
   { kicker: "TODAY'S SEED", labelKo: "오늘의 씨앗", labelEn: "Today's Seed" },
-  { kicker: "STORIES THAT MATTER", labelKo: "지금 읽어야 할 이야기", labelEn: "Stories" },
-  { kicker: "SEED CITIZEN BRIEFING", labelKo: "시민브리핑", labelEn: "Briefing" },
-  { kicker: "THE VOICE OF SEED", labelKo: "씨앗의 소리", labelEn: "Voice" },
+  { kicker: "HOT ISSUES", labelKo: "핫이슈", labelEn: "Hot Issues" },
+  { kicker: "BRIEFINGS", labelKo: "브리핑", labelEn: "Briefings" },
+  { kicker: "COLUMNS", labelKo: "칼럼", labelEn: "Columns" },
   { kicker: "READERS & LATEST", labelKo: "많이 읽은 글", labelEn: "Readers & Latest" },
 ];
 

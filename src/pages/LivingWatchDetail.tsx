@@ -50,7 +50,7 @@ export default function LivingWatchDetail({ item, language, continuation }: Prop
       <header className="border-b border-green-deep/15 bg-ivory">
         <div className="container-page max-w-6xl py-5 sm:py-7">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <Link to="/monitoring" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "씨앗의 눈" : "SEED Watch"}</Link>
+            <Link to="/news" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "핫이슈" : "Hot Issues"}</Link>
             <ShareButton title={t(item.title)} text={t(item.summary)} />
           </div>
 

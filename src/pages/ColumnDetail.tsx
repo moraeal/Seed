@@ -21,7 +21,7 @@ export default function ColumnDetail() {
   const originalColumn = getColumn(slug);
   const column = originalColumn ? localizeColumn(originalColumn, language) : undefined;
 
-  if (!column) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">{ko ? "글을 찾을 수 없습니다." : "Article not found."}</h1><Link to="/columns" className="button-primary mt-7">{ko ? "씨앗의 소리 목록" : "Voice of the Seed"}</Link></div>;
+  if (!column) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">{ko ? "글을 찾을 수 없습니다." : "Article not found."}</h1><Link to="/columns" className="button-primary mt-7">{ko ? "칼럼 목록" : "Columns"}</Link></div>;
 
   const isLongRead = column.readMinutes >= 8;
   const continuation = getEditorialContinuation("column", column.slug, language);

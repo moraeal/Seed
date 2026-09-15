@@ -26,19 +26,19 @@ export default function Header() {
 
   const nav = language === "en"
     ? [
-        ["Voice of the Seed", "/columns"],
-        ["Today's News", "/news"],
-        ["SEED Briefings", "/briefings"],
-        ["SEED Watch", "/monitoring"],
-        ["SEED Language", "/seed-language"],
+        ["Columns", "/columns"],
+        ["Hot Issues", "/news"],
+        ["Briefings", "/briefings"],
+        ["Civic Watch", "/monitoring"],
+        ["Glossary", "/seed-language"],
         ["About", "/publisher-message"],
       ]
     : [
-        ["씨앗의 소리", "/columns"],
-        ["오늘의 뉴스", "/news"],
-        ["씨앗브리핑", "/briefings"],
-        ["씨앗의 눈", "/monitoring"],
-        ["씨앗언어", "/seed-language"],
+        ["칼럼", "/columns"],
+        ["핫이슈", "/news"],
+        ["브리핑", "/briefings"],
+        ["시민감시", "/monitoring"],
+        ["용어해설", "/seed-language"],
         ["소개", "/publisher-message"],
       ];
 

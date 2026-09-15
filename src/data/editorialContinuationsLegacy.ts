@@ -199,7 +199,7 @@ const editorialRelations: Record<string, EditorialRelation> = {
   ),
   [keyOf("column", "nepal-climate-crisis-conservative-seed-response")]: relation(
     { kind: "seed-language", slug: "environment-shared-condition" },
-    { ko: "씨앗언어", en: "SEED LANGUAGE" },
+    { ko: "용어해설", en: "GLOSSARY" },
     { ko: "기후재난의 사례에서 출발해 환경을 진영이 아닌 삶의 조건으로 다시 정의합니다.", en: "Move from a climate-disaster case to a definition of environment as a shared condition of life rather than a partisan identity." },
   ),
   [keyOf("column", "equality-rhetoric-and-two-seats-yong-hye-in")]: relation(
@@ -292,11 +292,11 @@ const editorialRelations: Record<string, EditorialRelation> = {
 };
 
 const sectionInfo: Record<EditorialContentKind, { href: string; ko: string; en: string }> = {
-  news: { href: "/news", ko: "오늘의뉴스 전체 보기", en: "All news" },
-  briefing: { href: "/briefings", ko: "씨앗브리핑 전체 보기", en: "All briefings" },
-  column: { href: "/columns", ko: "씨앗의 소리 전체 보기", en: "All columns" },
-  "seed-language": { href: "/seed-language", ko: "씨앗언어 전체 보기", en: "All SEED Language" },
-  monitoring: { href: "/monitoring", ko: "씨앗의 눈 전체 보기", en: "All SEED Watch records" },
+  news: { href: "/news", ko: "핫이슈 전체 보기", en: "All Hot Issues" },
+  briefing: { href: "/briefings", ko: "브리핑 전체 보기", en: "All briefings" },
+  column: { href: "/columns", ko: "칼럼 전체 보기", en: "All columns" },
+  "seed-language": { href: "/seed-language", ko: "용어해설 전체 보기", en: "All Glossary entries" },
+  monitoring: { href: "/monitoring", ko: "시민감시 전체 보기", en: "All Civic Watch records" },
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {

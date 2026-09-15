@@ -8,9 +8,9 @@ export type SeedWatchReference = {
 };
 
 /**
- * 씨앗의 눈은 기존 기사를 옮기거나 고쳐 쓰지 않는다.
+ * 시민감시는 기존 기사를 옮기거나 고쳐 쓰지 않는다.
  * 이 목록은 원래 메뉴와 주소를 유지한 기사 가운데 공익감시 성격의 기록을 다시 연결한다.
- * 앞으로 씨앗의 눈에서 직접 시작하는 감시기록은 publicInterestWatchCases에 추가한다.
+ * 앞으로 시민감시에서 직접 시작하는 감시기록은 publicInterestWatchCases에 추가한다.
  */
 export const seedWatchReferences: SeedWatchReference[] = [
   {

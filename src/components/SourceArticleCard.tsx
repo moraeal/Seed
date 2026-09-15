@@ -64,7 +64,7 @@ export default function SourceArticleCard({ news, compact = false, ko }: SourceA
     <section className="mb-10 overflow-hidden border border-green-deep/15 bg-white shadow-[0_16px_45px_rgba(23,76,58,.08)]">
       {!thumbnailAfterSummary && fullThumbnail}
       <div className="p-6 sm:p-9">
-        <div className="flex flex-wrap items-center gap-3 text-xs font-bold text-charcoal/50"><span className="section-kicker">{ko ? "오늘의뉴스 선정 기사" : "TODAY'S SELECTED NEWS"}</span><span>{news.outlet}</span><time>{news.publishedAt}</time></div>
+        <div className="flex flex-wrap items-center gap-3 text-xs font-bold text-charcoal/50"><span className="section-kicker">{ko ? "핫이슈 선정 기사" : "HOT ISSUE SOURCE"}</span><span>{news.outlet}</span><time>{news.publishedAt}</time></div>
         <h2 className="editorial-title mt-5 text-2xl font-bold leading-snug text-navy sm:text-3xl">{news.headline}</h2>
         <div className="mt-6 border-t border-green-deep/10 pt-5"><span className="text-xs font-extrabold tracking-[.16em] text-green-deep">{ko ? "기사 핵심 요약" : "KEY POINTS"}</span><ul className="mt-4 grid gap-3 text-sm leading-7 text-charcoal/70 sm:text-base">{news.summary.map((item, index) => <li key={`${index}-${item}`} className="flex gap-3"><span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"/><span>{item}</span></li>)}</ul></div>
         {thumbnailAfterSummary && fullThumbnail && <div className="-mx-6 mt-7 border-y border-green-deep/10 sm:-mx-9">{fullThumbnail}</div>}

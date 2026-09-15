@@ -1,8 +1,8 @@
 import type { Language } from "../i18n";
 import { getAllBriefingsNewestFirst } from "./allBriefings";
 import { columns } from "./columns";
-import { localizeBriefing, localizeColumn, localizeNewsArticle } from "./localizedContent";
-import { getNewsNewestFirst } from "./news";
+import { getHotIssuesNewestFirst } from "./hotIssues";
+import { localizeBriefing, localizeColumn } from "./localizedContent";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "./seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "./seedLanguageEnvironment";
 
@@ -14,7 +14,7 @@ export type FeaturedContent = {
   title: string;
   summary: string;
   date: string;
-  readMinutes: number;
+  readMinutes?: number;
   image: { src: string; alt: string };
 };
 
@@ -25,8 +25,8 @@ export function getFeaturedContentCandidates(language: Language): FeaturedConten
     return {
       path: `/columns/${item.slug}`,
       category: "column",
-      categoryLabel: ko ? "씨앗의 소리" : "Voice",
-      kicker: "THE VOICE OF SEED",
+      categoryLabel: ko ? "칼럼" : "Columns",
+      kicker: "COLUMNS",
       title: localized.title,
       summary: localized.summary,
       date: item.date,
@@ -35,18 +35,17 @@ export function getFeaturedContentCandidates(language: Language): FeaturedConten
     };
   });
 
-  const newsItems: FeaturedContent[] = getNewsNewestFirst().map((item) => {
-    const localized = localizeNewsArticle(item, language);
+  const newsItems: FeaturedContent[] = getHotIssuesNewestFirst(language).map((item) => {
     return {
-      path: `/news/${item.slug}`,
+      path: item.to,
       category: "news",
-      categoryLabel: ko ? "오늘의 뉴스" : "News",
-      kicker: "TODAY'S NEWS",
-      title: localized.title,
-      summary: localized.summary,
+      categoryLabel: ko ? "핫이슈" : "Hot Issues",
+      kicker: "HOT ISSUES",
+      title: item.title,
+      summary: item.summary,
       date: item.date,
       readMinutes: item.readMinutes,
-      image: localized.heroImage,
+      image: { src: item.imageSrc, alt: item.imageAlt },
     };
   });
 
@@ -56,8 +55,8 @@ export function getFeaturedContentCandidates(language: Language): FeaturedConten
     return {
       path: `/briefings/${item.slug}`,
       category: watch ? "watch" : "briefing",
-      categoryLabel: watch ? (ko ? "씨앗의 눈" : "Watch") : (ko ? "씨앗브리핑" : "Briefing"),
-      kicker: watch ? "SEED WATCH" : "SEED BRIEFING",
+      categoryLabel: watch ? (ko ? "시민감시" : "Civic Watch") : (ko ? "브리핑" : "Briefings"),
+      kicker: watch ? "CIVIC WATCH" : "BRIEFINGS",
       title: localized.title,
       summary: localized.summary,
       date: item.date,
@@ -79,8 +78,8 @@ export function getFeaturedContentCandidates(language: Language): FeaturedConten
     return [{
       path: `/seed-language/${item.slug}`,
       category: "language",
-      categoryLabel: ko ? "씨앗언어" : "Seed Language",
-      kicker: "SEED LANGUAGE",
+      categoryLabel: ko ? "용어해설" : "Glossary",
+      kicker: "GLOSSARY",
       title: localized.title,
       summary: localized.summary,
       date: item.date,
