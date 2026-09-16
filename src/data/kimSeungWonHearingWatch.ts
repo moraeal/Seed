@@ -16,8 +16,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   openedAt: "2026-08-31",
   updatedAt: "2026-09-16",
   nextCheck: {
-    ko: "경찰의 재수사 여부 결정, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판, 법제사법위원회의 인사청문경과보고서 채택 여부와 대통령의 임명 여부",
-    en: "The police decision on whether to reinvestigate, the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder, whether the Legislation and Judiciary Committee adopts its hearing report, and whether the president proceeds with the appointment",
+    ko: "제넨셀 의혹에 대한 경찰의 재수사 여부 결정과 가족 협동조합 고발 사건의 수사 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판, 법제사법위원회의 인사청문경과보고서 채택 여부와 대통령의 임명 여부",
+    en: "The police decision on whether to reinvestigate the Genencell allegation and progress in the family-cooperative complaint, the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder, whether the Legislation and Judiciary Committee adopts its hearing report, and whether the president proceeds with the appointment",
   },
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
@@ -36,6 +36,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "This timeline cross-checks National Assembly schedules and decisions, public statements from the nominee and both parties, and reporting based on Ministry of Food and Drug Safety records. Allegations and the nominee's rebuttals are kept separate from verified facts.",
   },
   keyChanges: [
+    {
+      date: "2026-09-16",
+      text: {
+        ko: "가족 협동조합의 수원시 제공기관 선정 과정과 관련한 고발 사건이 수원팔달경찰서에 배당됐습니다. 이는 수사 담당 기관이 정해진 것이며 특혜나 위법이 확인됐다는 뜻은 아닙니다.",
+        en: "A complaint over the family cooperative's selection as a Suwon service provider was assigned to Suwon Paldal Police Station. The assignment identifies the investigating agency but does not establish preferential treatment or illegality.",
+      },
+    },
     {
       date: "2026-09-16",
       text: {
@@ -351,6 +358,32 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-16",
+      title: { ko: "가족 협동조합 고발 사건, 수원팔달경찰서 배당", en: "Family-cooperative complaint assigned to Suwon Paldal Police Station" },
+      description: {
+        ko: "경기남부경찰청은 가족 협동조합이 2022년 수원시 방과후활동서비스 제공기관으로 선정된 과정과 관련해 접수된 청탁금지법 위반·허위공문서 작성 혐의 고발 사건을 수원팔달경찰서에 배당했다고 밝혔습니다. 고발인은 당시 심사에 관여한 수원시 공무원 등의 처벌을 요구했고, 후보자 측은 수원시에서 특혜를 받은 사실이 없으며 의혹은 명백한 왜곡이라고 반박했습니다. 사건 배당은 담당 수사기관이 정해졌다는 절차적 사실일 뿐, 고발 내용이나 특혜·위법 여부가 확인됐다는 의미는 아닙니다.",
+        en: "The Gyeonggi Nambu Provincial Police said a complaint alleging violations of the Improper Solicitation and Graft Act and falsification of official documents in the cooperative's 2022 selection as a Suwon after-school activity provider was assigned to Suwon Paldal Police Station. The complainant sought punishment of Suwon officials involved in the review, while Kim's office denied receiving preferential treatment and called the allegation a distortion. Assignment of the case identifies the investigating agency; it does not establish the complaint's claims, preferential treatment or illegality.",
+      },
+      change: { ko: "고발장 접수 단계에서 관할 경찰서 수사 단계로 이동", en: "The complaint moves from intake to an assigned police investigation" },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: { ko: "경기남부청, 김승원 가족조합 고발 사건 수원팔달서 배당", en: "Police assign Kim family-cooperative complaint to Suwon Paldal station" },
+          url: "https://www.yna.co.kr/view/AKR20260916129000061",
+          publishedAt: "2026-09-16",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "뉴시스", en: "Newsis" },
+          title: { ko: "‘가족 조합’ 김승원 고발 사건 경찰 수사 본격화", en: "Police move ahead with investigation of Kim family-cooperative complaint" },
+          url: "https://www.newsis.com/view/NISX20260916_0003792269",
+          publishedAt: "2026-09-16",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "다음",
       title: { ko: "청문경과보고서와 임명 여부 확인", en: "Committee report and appointment decision" },
       description: {
@@ -420,13 +453,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
         en: "Kim said the cooperative was formed by parents of children with developmental disabilities and that parent-members decide its operations and his spouse's pay and working conditions. He denied that it generates a separate profit for his spouse or operates as a family business.",
       },
       assessment: {
-        ko: "녹취 공개와 의혹 제기는 확인됐지만 실제 절차 위반이나 특혜 여부는 아직 확인되지 않았습니다.",
-        en: "The recording and allegation are public, but a procedural violation or preferential treatment has not been established.",
+        ko: "녹취 공개와 의혹 제기는 확인됐고, 관련 고발 사건은 9월 16일 수원팔달경찰서에 배당됐습니다. 다만 사건 배당은 수사 담당 기관이 정해진 것이며 실제 절차 위반이나 특혜가 확인됐다는 뜻은 아닙니다.",
+        en: "The recording and allegation are public, and the related complaint was assigned to Suwon Paldal Police Station on September 16. The assignment identifies the investigating agency but does not establish a procedural violation or preferential treatment.",
       },
       status: "pending",
     },
   ],
   confirmedFacts: [
+    { ko: "경기남부경찰청은 가족 협동조합 관련 청탁금지법 위반·허위공문서 작성 혐의 고발 사건을 2026년 9월 16일 수원팔달경찰서에 배당했습니다.", en: "Gyeonggi Nambu Provincial Police assigned the complaint alleging graft-law violations and falsification of official documents in the family-cooperative matter to Suwon Paldal Police Station on September 16, 2026." },
     { ko: "인사청문회는 약 14시간 만인 2026년 9월 16일 자정 무렵 종료됐으며, 법제사법위원회는 이날 인사청문경과보고서를 채택하지 않았습니다.", en: "The hearing ended around midnight on September 16, 2026 after roughly 14 hours, and the Legislation and Judiciary Committee did not adopt its report at the meeting." },
     { ko: "김승원 후보자 인사청문회는 2026년 9월 15일 증인·참고인 없이 개최됐습니다.", en: "Kim Seung-won's confirmation hearing was held on September 15, 2026 without witnesses or reference witnesses." },
     { ko: "국민의힘은 증인 44명과 참고인 4명을 요구했으며 최종적으로 모두 채택되지 않았습니다.", en: "The People Power Party requested 44 witnesses and four reference witnesses; none was approved." },
@@ -454,8 +488,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       title: { ko: "가족 협동조합 지정 과정에 특혜가 있었나", en: "Was there preferential treatment for the family cooperative?" },
       description: {
-        ko: "바우처 제공기관 지정 과정과 관련한 녹취와 야당의 의혹 제기는 공개됐습니다. 후보자는 학부모 조합원들이 운영과 급여를 결정하고 배우자에게 돌아갈 별도 이익은 없다고 반박했습니다. 그러나 다른 신청기관과 다른 절차가 적용됐는지, 후보자의 영향력이 작용했는지, 실제 위법이나 특혜가 있었는지는 관련 문서와 관계자 증언으로 확인되지 않았습니다.",
-        en: "A recording and opposition allegations concerning the cooperative's designation as a voucher provider are public. Kim responded that parent-members decide operations and pay and that no separate profit returns to his spouse. Records and testimony have not established whether different procedures were applied, whether Kim exercised influence, or whether any illegality or preferential treatment occurred.",
+        ko: "바우처 제공기관 지정 과정과 관련한 고발 사건이 수원팔달경찰서에 배당됐습니다. 후보자는 학부모 조합원들이 운영과 급여를 결정하고 배우자에게 돌아갈 별도 이익은 없으며 수원시의 특혜도 없었다고 반박했습니다. 경찰 수사가 시작되는 단계로, 다른 신청기관과 다른 절차가 적용됐는지, 후보자의 영향력이 작용했는지, 실제 위법이나 특혜가 있었는지는 아직 확인되지 않았습니다.",
+        en: "The complaint over the cooperative's designation as a voucher provider has been assigned to Suwon Paldal Police Station. Kim responded that parent-members decide operations and pay, no separate profit returns to his spouse and Suwon provided no preferential treatment. The police process is beginning; it has not yet established whether different procedures were applied, whether Kim exercised influence, or whether any illegality or preferential treatment occurred.",
       },
     },
   ],
@@ -475,6 +509,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "연합뉴스 — 가족 협동조합 고발 사건 수원팔달경찰서 배당", en: "Yonhap — Family-cooperative complaint assigned to Suwon Paldal Police Station" },
+      url: "https://www.yna.co.kr/view/AKR20260916129000061",
+    },
+    {
+      label: { ko: "뉴시스 — 가족 협동조합 관련 경찰 수사 본격화", en: "Newsis — Police move ahead with family-cooperative investigation" },
+      url: "https://www.newsis.com/view/NISX20260916_0003792269",
+    },
     {
       label: { ko: "YTN — 14시간 청문회 종료와 경과보고서 미채택", en: "YTN — Hearing ends after 14 hours without committee report" },
       url: "https://www.ytn.co.kr/_ln/0101_202609160000319090",
