@@ -225,6 +225,24 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
       listLabel: "All columns",
     },
   },
+  "column:no-one-stopped-it-silence-and-power": {
+    ko: {
+      href: "/columns/when-civic-power-rules-citizens",
+      title: "시민의 이름으로 시민을 지배할 때",
+      relationship: "침묵과 시민권력",
+      reason: "한 사람의 침묵이 권력의 빈자리를 만드는 장면에서 출발해, 시민의 이름으로 커진 권력을 시민이 어떻게 다시 감시해야 하는지 이어서 살펴봅니다.",
+      listHref: "/columns",
+      listLabel: "칼럼 전체 보기",
+    },
+    en: {
+      href: "/columns/when-civic-power-rules-citizens",
+      title: "When Citizens Are Ruled in the Name of Citizens",
+      relationship: "SILENCE AND CIVIC POWER",
+      reason: "Continue from the silence that leaves room for power to the question of how citizens should scrutinize authority exercised in their own name.",
+      listHref: "/columns",
+      listLabel: "All columns",
+    },
+  },
   "briefing:social-economy-fair-competition": {
     ko: {
       href: "/briefings/social-solidarity-economy-youth-mall-lessons",

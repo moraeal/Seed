@@ -20,6 +20,7 @@ export type SeedColumn = {
     title: string;
     description: string;
     credit: string;
+    afterSection?: number;
   };
   inlineImage: { src: string; alt: string; caption: string; credit: string; sourceUrl: string };
   additionalImages?: {

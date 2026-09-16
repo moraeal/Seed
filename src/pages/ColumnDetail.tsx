@@ -1,4 +1,5 @@
 import { Clock, FileText } from "lucide-react";
+import { Fragment } from "react";
 import { Link, useParams } from "react-router-dom";
 import ArticleContinuation from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
@@ -37,6 +38,13 @@ export default function ColumnDetail() {
     return true;
   });
 
+  const referenceVideoSection = column.referenceVideo && <section className={`article-section ${isLongRead ? "article-section-long" : ""}`} aria-labelledby="reference-video-title">
+    <span className="section-kicker">{ko ? "참고 영상" : "REFERENCE VIDEO"}</span>
+    <h2 id="reference-video-title" className="mt-2 text-xl font-extrabold leading-snug text-navy sm:text-2xl">{column.referenceVideo.title}</h2>
+    <p className="mt-3 text-sm leading-6 text-charcoal/60 sm:text-[15px]">{column.referenceVideo.description}</p>
+    <InteractiveFigure src={column.referenceVideo.thumbnailSrc} alt={column.referenceVideo.thumbnailAlt} caption={column.referenceVideo.description} credit={column.referenceVideo.credit} sourceUrl={`https://www.youtube.com/watch?v=${column.referenceVideo.youtubeId}`} youtubeId={column.referenceVideo.youtubeId} figureClassName="mt-5 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName="aspect-video w-full object-cover" />
+  </section>;
+
   return <article className="bg-paper">
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
       <div className="container-page max-w-5xl"><div className="pt-3"><h1 className="article-detail-title">{column.title}</h1><p className="article-summary">{column.summary}</p></div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45"><time>{column.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${column.readMinutes}분` : `${column.readMinutes} min read`}</span>{column.sourceDocument && <a href="#source-document" className="flex items-center gap-1 font-bold text-green-deep hover:underline"><FileText size={14}/>{ko ? "성명서 원문 대조" : "Compare source"}</a>}<ShareButton title={`${column.title} - ${column.subtitle}`} text={column.summary} className="ml-auto" /></div></div>
@@ -48,18 +56,13 @@ export default function ColumnDetail() {
       {column.sourceDocument && <SourceDocumentPanel document={column.sourceDocument} ko={ko} />}
 
       <div className="reading-column mt-10">
-        {column.sections.map((section, index) => <section key={`${index}-${section.title}`} className={index === 0 ? "" : `article-section ${isLongRead ? "article-section-long" : ""}`}>
+        {column.sections.map((section, index) => <Fragment key={`${index}-${section.title}`}><section className={index === 0 ? "" : `article-section ${isLongRead ? "article-section-long" : ""}`}>
           <h2 className="article-section-title">{section.title}</h2>
           {section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 28)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>)}
           {section.quote && <blockquote className="my-7 border-l-4 border-gold bg-green-pale px-5 py-5 text-lg font-bold leading-8 text-green-deep sm:px-6 sm:text-xl">{section.quote.map((line, lineIndex) => <span key={`${lineIndex}-${line}`} className="block">{line}</span>)}</blockquote>}
           {bodyImages.filter((image) => image.afterSection === index).map((image) => <InteractiveFigure key={imageKey(image.src)} src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName="my-12 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName={"contain" in image && image.contain ? "block h-auto w-full" : "aspect-[16/10] w-full object-cover"} />)}
-        </section>)}
-        {column.referenceVideo && <section className={`article-section ${isLongRead ? "article-section-long" : ""}`} aria-labelledby="reference-video-title">
-          <span className="section-kicker">{ko ? "참고 영상" : "REFERENCE VIDEO"}</span>
-          <h2 id="reference-video-title" className="mt-2 text-xl font-extrabold leading-snug text-navy sm:text-2xl">{column.referenceVideo.title}</h2>
-          <p className="mt-3 text-sm leading-6 text-charcoal/60 sm:text-[15px]">{column.referenceVideo.description}</p>
-          <InteractiveFigure src={column.referenceVideo.thumbnailSrc} alt={column.referenceVideo.thumbnailAlt} caption={column.referenceVideo.description} credit={column.referenceVideo.credit} sourceUrl={`https://www.youtube.com/watch?v=${column.referenceVideo.youtubeId}`} youtubeId={column.referenceVideo.youtubeId} figureClassName="mt-5 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName="aspect-video w-full object-cover" />
-        </section>}
+        </section>{column.referenceVideo?.afterSection === index && referenceVideoSection}</Fragment>)}
+        {column.referenceVideo && column.referenceVideo.afterSection === undefined && referenceVideoSection}
         <aside className="mt-10 border-t-2 border-navy pt-6"><span className="section-kicker">{ko ? "자료 주" : "SOURCE NOTE"}</span><p className="mt-3 text-sm leading-6 text-charcoal/60">{column.sourceNote}</p>{column.sources && <ul className="mt-4 grid gap-1.5 text-sm leading-6 text-charcoal/60">{column.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ul>}</aside>
         <ContentAccountability postSlug={column.slug} publishedDate={column.date} />
         <CommentSection postSlug={column.slug} />
