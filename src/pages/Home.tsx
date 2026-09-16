@@ -90,7 +90,7 @@ export default function Home() {
     {
       to: "/about",
       kicker: ko ? "씨앗의 소리" : "ABOUT SEED VOICE",
-      title: ko ? "왜 지금 씨앗의 소리인가" : "Why SEED VOICE, why now",
+      title: ko ? "씨앗의 소리가 지키려는 것" : "What SEED VOICE Stands For",
       summary: ko ? "법의 지배와 권력분립, 시민과 기업의 자유를 지키며 국가와 시민사회의 권력을 감시하는 이유를 밝힙니다." : "Why SEED VOICE defends the rule of law, separated powers, and civic and economic freedom while watching power in the state and civil society.",
     },
     {
