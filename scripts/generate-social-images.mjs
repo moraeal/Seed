@@ -34,6 +34,7 @@ const rasterBriefingImages = (item) => item.images
 
 const jobs = [
   { section: "site", slug: "home", src: "images/brand/seedvoice-independent-watchdog.webp" },
+  { section: "site", slug: "founding-statement", src: "images/columns/checks-and-balances.png" },
   ...newsModule.newsArticles.map((item) => ({
     section: "news",
     slug: item.slug,

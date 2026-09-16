@@ -72,7 +72,7 @@ const staticRoutes: SeoRoute[] = [
   { path: "/columns", title: "칼럼 | 씨앗의 소리", description: "자유, 법치, 책임, 시장의 자율성과 강한 시민사회의 관점에서 오늘의 쟁점을 논평합니다.", type: "website", lastModified: newest(columns.map((item) => item.date)) },
   { path: "/monitoring", title: "시민감시 | 씨앗의 소리", description: "국가와 시민사회의 권력, 예산과 성과를 공개자료와 기관의 답변으로 점검하고 후속 변화를 기록합니다.", type: "website", lastModified: latestDate },
   { path: "/proposals", title: "시민제안 | 씨앗의 소리", description: "시민의 문제의식을 구체적인 제도와 정책의 제안으로 키우는 씨앗의 소리 제안 공간입니다.", type: "website", lastModified: latestDate },
-  { path: "/founding-statement", title: "씨앗의 소리 취지문 | 씨앗의 소리", description: "한 사람의 생각과 목소리도 세상을 향해 자랄 수 있다는 믿음에서 시작한 독립 시민미디어 씨앗의 소리의 취지문입니다.", type: "article", lastModified: latestDate, author: "어느 작은 시민의 말", section: "씨앗의 소리 취지문" },
+  { path: "/founding-statement", title: "왜 지금 씨앗의 소리인가 | 씨앗의 소리", description: "다수결만으로 민주주의가 완성되지 않는 이유와 법의 지배, 제한된 정부, 권력분립과 시민의 자유를 지키려는 씨앗의 소리의 취지문입니다.", type: "article", lastModified: latestDate, author: "어느 작은 시민의 말", section: "씨앗의 소리 취지문", image: socialImageUrl("site", "founding-statement", latestDate), imageAlt: "국회, 정부와 법원의 권력분립과 시민의 자유를 상징하는 이미지" },
   { path: "/seed-language", title: "용어해설 | 씨앗의 소리", description: "특정 진영이 독점한 시민사회의 언어를 해체하고 본래 의미를 되살려 시민의 언어로 다시 구성합니다.", type: "website", lastModified: newest(allSeedLanguageArticlesKo.map((item) => item.date)) },
   { path: "/about", title: "왜 지금 씨앗의 소리인가 | 씨앗의 소리", description: "법의 지배, 제한된 정부, 권력분립과 시민·기업의 자유를 지키며 국가와 시민사회의 권력을 감시하는 독립 시민저널 씨앗의 소리의 선언입니다.", type: "website", lastModified: latestDate },
   { path: "/publisher-message", title: "발행인 소개 | 씨앗의 소리", description: "한 사람의 질문과 판단에서 시작된 독립 시민저널 씨앗의 소리의 발행인 소개입니다.", type: "article", lastModified: latestDate, author: "어느 작은 시민의 말", section: "발행인 소개" },

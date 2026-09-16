@@ -101,9 +101,9 @@ export default function Home() {
     },
     {
       to: "/founding-statement",
-      kicker: ko ? "창간정신" : "FOUNDING STATEMENT",
-      title: ko ? "자유의 영역을 넓히는 저널" : "A journal that expands the sphere of freedom",
-      summary: ko ? "국가와 시민사회의 권력을 함께 감시하고 시민과 기업의 자유를 지키겠다는 창간의 기준입니다." : "The founding standard: scrutinize power in both the state and civil society while defending civic and economic freedom.",
+      kicker: ko ? "취지문 전문" : "FULL STATEMENT",
+      title: ko ? "왜 지금 씨앗의 소리인가" : "Why SEED VOICE, Why Now",
+      summary: ko ? "민주의 시대를 넘어 시민의 시대로 가야 하는 이유와 씨앗의 소리가 감시할 권력을 밝힌 원고 전문입니다." : "The full statement on moving beyond political camps toward an age of citizens—and the powers SEED VOICE will watch.",
     },
   ];
 
