@@ -213,34 +213,34 @@ export default function FoundingStatement() {
   const content = copy[language];
 
   return (
-    <article className="bg-paper pb-16 sm:pb-20">
-      <header className="border-b border-green-deep/15 bg-ivory py-12 sm:py-16">
+    <article className="bg-paper pb-12 sm:pb-16">
+      <header className="border-b border-green-deep/15 bg-ivory py-9 sm:py-12">
         <div className="container-page max-w-4xl">
           <Link to="/about" className="text-link"><ArrowLeft size={16}/>{content.back}</Link>
-          <span className="section-kicker mt-8 block">{content.kicker}</span>
+          <span className="section-kicker mt-6 block">{content.kicker}</span>
           <h1 className="editorial-title mt-3 text-4xl font-bold leading-tight text-navy sm:text-6xl">{content.title}</h1>
-          <p className="mt-5 max-w-3xl text-xl font-bold leading-8 text-green-deep sm:text-2xl">{content.subtitle}</p>
-          <p className="mt-5 max-w-3xl border-l-2 border-gold pl-5 text-base leading-7 text-charcoal/65 sm:text-lg">{content.summary}</p>
+          <p className="mt-4 max-w-3xl text-xl font-bold leading-8 text-green-deep sm:text-2xl">{content.subtitle}</p>
+          <p className="mt-4 max-w-3xl border-l-2 border-gold pl-5 text-base leading-7 text-charcoal/65 sm:text-lg">{content.summary}</p>
         </div>
       </header>
 
-      <div className="container-page max-w-4xl py-10 sm:py-12">
-        <div className="space-y-5 text-[17px] leading-[1.82] text-charcoal/76 sm:text-lg">
+      <div className="container-page max-w-4xl py-8 sm:py-10">
+        <div className="space-y-4 text-[17px] leading-[1.75] text-charcoal/76 sm:text-lg">
           {content.intro.map((paragraph, index) => (
             <p key={paragraph} className={index === content.intro.length - 1 ? "editorial-title pt-2 text-2xl font-bold text-green-deep sm:text-3xl" : ""}>{paragraph}</p>
           ))}
         </div>
 
-        <div className="mt-11 space-y-11 sm:mt-14 sm:space-y-14">
+        <div className="mt-8 space-y-5 sm:mt-10 sm:space-y-7">
           {content.sections.map((section, index) => (
             <Fragment key={section.title}>
-              <section className="border-t border-green-deep/15 pt-8 sm:pt-10">
+              <section className="border-t border-green-deep/15 pt-6 sm:pt-7">
                 <h2 className="editorial-title text-3xl font-bold leading-tight text-navy sm:text-4xl">{section.title}</h2>
-                <div className="mt-5 space-y-4 text-[17px] leading-[1.82] text-charcoal/76 sm:text-lg">
+                <div className="mt-4 space-y-3 text-[17px] leading-[1.75] text-charcoal/76 sm:text-lg">
                   {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                 </div>
                 {section.source && (
-                  <a href={section.source.url} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-green-deep underline decoration-gold/70 underline-offset-4">
+                  <a href={section.source.url} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-green-deep underline decoration-gold/70 underline-offset-4">
                     {section.source.label}<ExternalLink size={14}/>
                   </a>
                 )}
@@ -268,20 +268,20 @@ export default function FoundingStatement() {
           ))}
         </div>
 
-        <section className="mt-12 border-y-2 border-gold/75 bg-[#fbf4e5] px-6 py-8 sm:mt-16 sm:px-10 sm:py-10">
-          <div className="space-y-2 editorial-title text-2xl font-bold leading-relaxed text-green-deep sm:text-3xl">
+        <section className="mt-8 border-y-2 border-gold/75 bg-[#fbf4e5] px-5 py-6 sm:mt-10 sm:px-8 sm:py-7">
+          <div className="space-y-1 editorial-title text-2xl font-bold leading-relaxed text-green-deep sm:text-3xl">
             {content.closingQuestions.map((line) => <p key={line}>{line}</p>)}
           </div>
-          <p className="mt-7 text-[17px] font-semibold leading-[1.82] text-charcoal/78 sm:text-lg">{content.declaration}</p>
+          <p className="mt-5 text-[17px] font-semibold leading-[1.75] text-charcoal/78 sm:text-lg">{content.declaration}</p>
         </section>
 
-        <blockquote className="my-10 border-y-2 border-green-deep py-8 text-center sm:my-12 sm:py-10">
+        <blockquote className="my-8 border-y-2 border-green-deep py-6 text-center sm:my-10 sm:py-7">
           {content.final.map((line) => <p key={line} className="editorial-title text-3xl font-bold leading-relaxed text-green-deep sm:text-4xl">{line}</p>)}
         </blockquote>
 
-        <footer className="border-t border-green-deep/15 pt-7">
+        <footer className="border-t border-green-deep/15 pt-6">
           <p className="text-sm font-extrabold tracking-[.04em] text-green-deep">{content.author}</p>
-          <Link to="/about" className="button-secondary mt-6">{content.back}</Link>
+          <Link to="/about" className="button-secondary mt-5">{content.back}</Link>
         </footer>
       </div>
     </article>
