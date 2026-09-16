@@ -19,15 +19,15 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     en: "On October 2, 2026, South Korea's Prosecution Service will be abolished and replaced by a Prosecution Agency and a Serious Crimes Investigation Agency. This record follows where the powers to investigate, indict, seek warrants and review non-referral decisions actually move—and whether staffing, budgets and case transfers are ready.",
   },
   status: {
-    ko: "출범 17일 전·직제와 초대 청장 재검토",
-    en: "17 days to launch · Structure and first director under review",
+    ko: "출범 16일 전·중수청 2차 특례임용 접수 중",
+    en: "16 days to launch · Second special-transfer round open",
   },
   openedAt: "2025-09-05",
-  updatedAt: "2026-09-15",
+  updatedAt: "2026-09-16",
   continuationEligible: true,
   nextCheck: {
-    ko: "공소청 최종 직제와 검사 정원, 김지용 중수청장 후보자의 인사청문 절차, 10월 2일 실제 출범 인원·사건 이관·KICS 필수 기능 가동 여부",
-    en: "The final Prosecution Agency structure and prosecutor headcount; the confirmation process for Serious Crimes Investigation Agency nominee Kim Ji-yong; and actual staffing, case transfers and essential KICS functions on October 2",
+    ko: "9월 20일 마감되는 중수청 2차 특례임용의 지원·선정 인원, 공소청 최종 직제와 검사 정원, 김지용 중수청장 후보자의 인사청문 절차, 10월 2일 실제 출범 인원·사건 이관·KICS 필수 기능 가동 여부",
+    en: "Application and selection figures from the second special-transfer round closing September 20; the final Prosecution Agency structure and prosecutor headcount; the confirmation process for nominee Kim Ji-yong; and actual staffing, case transfers and essential KICS functions on October 2",
   },
   heroImage: {
     src: "images/monitoring/prosecution-service-abolition-tracker-hero.webp",
@@ -75,6 +75,13 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       text: {
         ko: "대통령이 김지용 초대 중수청장 후보자에 대한 추가 검증을 지시한 것으로 보도됐습니다. 지명 철회나 인사청문요청안 제출 여부는 아직 확정되지 않았습니다.",
         en: "The president was reported to have ordered additional vetting of Kim Ji-yong, the nominee to lead the new investigation agency. Neither withdrawal of the nomination nor submission of a confirmation request has been confirmed.",
+      },
+    },
+    {
+      date: "2026-09-15",
+      text: {
+        ko: "행정안전부는 1차 특례임용 지원 부족 뒤 검사와 검찰청 직원을 대상으로 2차 접수를 시작했습니다. 9월 20일 마감하고 별도 철회기간 없이 9월 말까지 선발하지만, 추가 지원자와 실제 임용 인원은 아직 공개되지 않았습니다.",
+        en: "After the first special-transfer round fell short, the Interior Ministry opened a second round for prosecutors and Prosecution Service staff. Applications close September 20 and selections are due by month-end without a withdrawal period, but additional applicant and appointment totals have not yet been released.",
       },
     },
   ],
@@ -428,6 +435,34 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-15",
+      title: {
+        ko: "중수청, 출범 직전 2차 특례임용 시작",
+        en: "Investigation agency opens a second special-transfer round before launch",
+      },
+      description: {
+        ko: "행정안전부 중수청 개청준비단은 검사와 검찰직·마약수사직 7급 이상, 전산·방송통신 등 일반직 공무원을 대상으로 2차 특례임용 접수를 시작했습니다. 접수기간은 9월 15일부터 20일까지입니다. 출범이 임박했다는 이유로 별도 철회기간을 두지 않고 9월 말까지 선발해 10월 2일부터 순차 임용할 계획입니다. 1차 최종 신청자는 정원의 61.3%였지만, 이번 발표에는 2차 모집 목표나 실제 충원 예상치가 제시되지 않았습니다.",
+        en: "The Interior Ministry's launch team opened a second special-transfer round for prosecutors, senior Prosecution Service and narcotics-investigation staff, and general-service officials in fields including IT and communications. Applications run from September 15 through 20. With launch approaching, there will be no separate withdrawal period; selections are due by month-end for phased appointments beginning October 2. First-round applicants covered 61.3 percent of authorized posts, but the announcement gave no target or expected staffing total for the second round.",
+      },
+      change: {
+        ko: "인력 부족에 대응해 출범 17일 전 추가 모집 절차 가동",
+        en: "A second recruitment process begins 17 days before launch in response to the staffing gap",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "행정안전부", en: "Ministry of the Interior and Safety" },
+          title: {
+            ko: "중수청, 검찰청 검사 및 직원 대상 2차 특례 임용 실시",
+            en: "Second special-transfer round for prosecutors and Prosecution Service staff",
+          },
+          url: "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129475",
+          publishedAt: "2026-09-15",
+          kind: "document",
+        },
+      ],
+    },
+    {
       date: "2026-10-02",
       title: {
         ko: "검찰청 폐지·공소청과 중수청 출범 예정",
@@ -549,8 +584,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     {
       title: { ko: "출범일은 확정됐지만 준비는 끝났는가", en: "The launch date is fixed. Is the system ready?" },
       description: {
-        ko: "중수청 특례임용 신청자는 정원의 61.3%이고 공소청 직제는 출범 직전에도 수정 중입니다. KICS 전체 기능도 12월 완성이 목표입니다. 법률의 시행일과 시민이 체감할 수 있는 정상 운영일이 같을지는 아직 확인되지 않았습니다.",
-        en: "Special-transfer applicants cover 61.3 percent of authorized investigation-agency posts, the prosecution structure is still being revised, and full KICS functionality is scheduled only for December. The legal start date may not be the date citizens experience normal operations.",
+        ko: "중수청 1차 특례임용 신청자는 정원의 61.3%였고 정부는 출범 17일 전 2차 모집을 시작했습니다. 공소청 직제는 출범 직전에도 수정 중이며 KICS 전체 기능도 12월 완성이 목표입니다. 법률의 시행일과 시민이 체감할 수 있는 정상 운영일이 같을지는 아직 확인되지 않았습니다.",
+        en: "First-round special-transfer applicants covered 61.3 percent of authorized investigation-agency posts, prompting a second round 17 days before launch. The prosecution structure is still being revised, and full KICS functionality is scheduled only for December. The legal start date may not be the date citizens experience normal operations.",
       },
     },
   ],
@@ -561,8 +596,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
   },
   followUpChecks: [
     {
-      ko: "공소청 최종 검사·직원 정원과 중수청의 실제 출근 인원, 결원율",
-      en: "Final Prosecution Agency headcount and actual Serious Crimes Investigation Agency staffing and vacancy rates",
+      ko: "2차 특례임용의 지원·선정 인원, 공소청 최종 검사·직원 정원과 중수청의 실제 출근 인원·결원율",
+      en: "Second-round application and selection totals, final Prosecution Agency headcount, and actual Serious Crimes Investigation Agency staffing and vacancy rates",
     },
     {
       ko: "검찰에서 넘긴 수사사건 수, 예외적으로 공소청이 90일 안에 마무리하는 사건 수와 처리 결과",
@@ -632,6 +667,11 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       label: { ko: "2027년도 정부 예산안", en: "Government's 2027 budget proposal" },
       url: "https://www.mpb.go.kr/web/main/file/download/uu/b5378b3d6d8b41b8b6792f9e9a1f2674",
       note: { ko: "공소청·중수청 예산은 국회 의결 전 정부안", en: "Agency allocations remain a proposal pending parliamentary approval" },
+    },
+    {
+      label: { ko: "행정안전부 — 중수청 2차 특례임용 실시", en: "Interior Ministry — Second special-transfer round for the investigation agency" },
+      url: "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129475",
+      note: { ko: "9월 15~20일 접수, 철회기간 없이 9월 말 선발·10월 2일부터 순차 임용", en: "Applications September 15–20, selections by month-end without a withdrawal period, phased appointments from October 2" },
     },
   ],
 };
