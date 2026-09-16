@@ -31,7 +31,7 @@ export default function Header() {
         ["Briefings", "/briefings"],
         ["Civic Watch", "/monitoring"],
         ["Glossary", "/seed-language"],
-        ["About", "/publisher-message"],
+        ["About", "/about"],
       ]
     : [
         ["칼럼", "/columns"],
@@ -39,7 +39,7 @@ export default function Header() {
         ["브리핑", "/briefings"],
         ["시민감시", "/monitoring"],
         ["용어해설", "/seed-language"],
-        ["소개", "/publisher-message"],
+        ["소개", "/about"],
       ];
 
   const toggleLanguage = () => {

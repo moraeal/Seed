@@ -5,8 +5,8 @@ type Section = { title: string; paragraphs: string[] };
 
 const copy = {
   ko: {
-    kicker: "PUBLISHER'S MESSAGE",
-    title: "작은씨앗으로 시작한\n독립 시민미디어",
+    kicker: "PUBLISHER",
+    title: "한 사람의 질문에서 시작한\n독립 시민저널",
     lead: "한 시민의 질문과 판단이 세상을 바꾸는 씨앗이 될 수 있다고 믿습니다. 씨앗의 소리는 작아져 있던 한 사람이 자기 목소리를 되찾고, 다른 시민의 가능성을 깨우기 위해 시작한 독립 시민미디어입니다.",
     sections: [
       {
@@ -52,13 +52,13 @@ const copy = {
     imageAlt: "갈라진 콘크리트에서 돋아난 작은 새싹과 여러 시민을 닮은 그림자",
     imageCaption: "어느 작은 시민의 말이 여러 시민의 목소리로 자랍니다.",
     founderKicker: "PUBLISHER",
-    founderName: "작은씨앗",
+    founderName: "어느 작은 시민의 말",
     founderRole: "씨앗의 소리 발행인",
     founderBio: "시민사회와 공공영역, 기업 현장을 두루 경험해 온 시민사회 활동가이자 공익 기획자입니다. 국가·시장·시민사회가 만나는 여러 현장에서 활동하며 제도와 조직이 시민의 삶에 어떤 영향을 미치는지 지켜봐 왔습니다. 씨앗의 소리에서는 특정 진영이나 권위에 기대지 않고, 한 시민의 질문과 판단으로 사실을 확인하고 자유와 책임의 기준에서 국가와 시민사회의 권력을 함께 살피고자 합니다.",
   },
   en: {
-    kicker: "PUBLISHER'S MESSAGE",
-    title: "An independent civic journal begun by Small Seed",
+    kicker: "PUBLISHER",
+    title: "An independent civic journal begun with one citizen’s questions",
     lead: "We believe one citizen’s questions and judgment can become a seed of change. SEED VOICE is an independent civic publication begun by one person who decided to recover his own voice and awaken that possibility in others.",
     sections: [
       {
@@ -104,7 +104,7 @@ const copy = {
     imageAlt: "A small seedling emerging through cracked concrete and casting shadows that resemble a group of citizens",
     imageCaption: "The words of one ordinary citizen can grow into the voices of many.",
     founderKicker: "PUBLISHER",
-    founderName: "Small Seed",
+    founderName: "Words of an Ordinary Citizen",
     founderRole: "Publisher, SEED VOICE",
     founderBio: "A civic-society activist and public-interest planner with experience across civil society, public institutions, and the business sector. Having worked where government, markets, and civil society meet, I have watched closely how institutions and organizations affect citizens’ everyday lives. At SEED VOICE, I aim to verify facts and scrutinize power in both the state and civil society through the principles of freedom and responsibility, without relying on partisan camps or borrowed authority.",
   },

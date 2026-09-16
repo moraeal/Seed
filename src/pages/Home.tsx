@@ -88,9 +88,15 @@ export default function Home() {
 
   const newcomerLinks = [
     {
+      to: "/about",
+      kicker: ko ? "씨앗의 소리" : "ABOUT SEED VOICE",
+      title: ko ? "왜 지금 씨앗의 소리인가" : "Why SEED VOICE, why now",
+      summary: ko ? "법의 지배와 권력분립, 시민과 기업의 자유를 지키며 국가와 시민사회의 권력을 감시하는 이유를 밝힙니다." : "Why SEED VOICE defends the rule of law, separated powers, and civic and economic freedom while watching power in the state and civil society.",
+    },
+    {
       to: "/publisher-message",
-      kicker: ko ? "발행인의 말" : "PUBLISHER'S MESSAGE",
-      title: ko ? "어느 작은 시민의 말" : "The words of one ordinary citizen",
+      kicker: ko ? "발행인 소개" : "ABOUT THE PUBLISHER",
+      title: ko ? "어느 작은 시민의 말" : "Words of an ordinary citizen",
       summary: ko ? "전문가나 유명인의 권위가 아니라 한 시민의 질문과 판단에서 시작해 더 많은 시민의 목소리로 자라려는 독립 시민저널의 이야기입니다." : "The story of an independent civic journal that began with one citizen’s questions and seeks to grow through the voices of many.",
     },
     {
@@ -98,12 +104,6 @@ export default function Home() {
       kicker: ko ? "창간정신" : "FOUNDING STATEMENT",
       title: ko ? "자유의 영역을 넓히는 저널" : "A journal that expands the sphere of freedom",
       summary: ko ? "국가와 시민사회의 권력을 함께 감시하고 시민과 기업의 자유를 지키겠다는 창간의 기준입니다." : "The founding standard: scrutinize power in both the state and civil society while defending civic and economic freedom.",
-    },
-    {
-      to: "/about",
-      kicker: ko ? "씨앗의 소리" : "ABOUT SEED VOICE",
-      title: ko ? "왜 이 독립 시민저널을 만들었는가" : "Why this independent civic journal exists",
-      summary: ko ? "씨앗의 소리가 무엇을 지키고 무엇을 감시하는지, 저널의 기준과 방향을 먼저 읽어보세요." : "Start with the principles, purpose, and editorial direction behind SEED VOICE.",
     },
   ];
 
