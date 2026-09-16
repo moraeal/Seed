@@ -39,6 +39,8 @@ const seedLanguageArticles = [
   ...seedLanguageModule.seedLanguageArticlesKo,
 ];
 const communityChestResearch = communityChestModule.communityChestResearch.ko;
+const publisherLogo = `${SITE_URL}/images/brand/seed-civic-partners-logo.svg`;
+const koreaDateTime = (date) => date ? `${date}T00:00:00+09:00` : undefined;
 
 const seedWatchListing = seedWatchReferences.map((reference) => {
   if (reference.kind === "news") {
@@ -67,6 +69,16 @@ const paragraphList = (items = []) => items.filter(Boolean).map((item) => `<p>${
 const bulletList = (items = []) => items.length ? `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : "";
 
 function articleBody(route) {
+  if (route.path === "/") {
+    const latest = [
+      ...news.map((item) => ({ path: `/news/${item.slug}`, title: item.title, summary: item.summary, date: item.date })),
+      ...briefings.map((item) => ({ path: `/briefings/${item.slug}`, title: item.title, summary: item.summary, date: item.date })),
+      ...columns.map((item) => ({ path: `/columns/${item.slug}`, title: item.title, summary: item.summary, date: item.date })),
+      ...seedLanguageArticles.map((item) => ({ path: `/seed-language/${item.slug}`, title: item.title, summary: item.summary, date: item.date })),
+    ].sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title)).slice(0, 12);
+    return `<section><h2>최신 기사</h2><ul>${latest.map((item) => `<li><a href="${canonicalUrl(item.path)}"><strong>${escapeHtml(item.title)}</strong></a><p>${escapeHtml(item.summary)}</p></li>`).join("\n")}</ul></section>`;
+  }
+
   if (route.path === "/en") return [
     `<section><h2>About SEED VOICE</h2><p>${escapeHtml(englishContent.home.description)}</p></section>`,
     `<section><h2>Our Core Values</h2>${bulletList(englishContent.home.pillars.map(([title, description]) => `${title}: ${description}`))}</section>`,
@@ -153,23 +165,36 @@ function structuredData(route) {
   const siteName = route.language === "en" ? ENGLISH_SOCIAL_SITE_NAME : SOCIAL_SITE_NAME;
   if (route.path === "/" || route.path === "/en") return {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: siteName,
-    url: canonicalUrl(route.path),
-    description: route.description,
-    inLanguage: language,
-    sameAs: ["https://x.com/SeedVoice_KR"],
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${SITE_URL}/#organization`,
+        name: siteName,
+        url: SITE_URL,
+        logo: { "@type": "ImageObject", url: publisherLogo },
+        description: route.description,
+        sameAs: ["https://x.com/SeedVoice_KR"],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        name: siteName,
+        url: canonicalUrl(route.path),
+        inLanguage: language,
+        publisher: { "@id": `${SITE_URL}/#organization` },
+      },
+    ],
   };
   if (route.type === "article") return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": /^\/(?:news|briefings|monitoring)\//.test(route.path) ? "NewsArticle" : "Article",
     headline: route.title.replace(/ \| .*$/, ""),
     description: route.description,
-    datePublished: route.lastModified,
-    dateModified: route.lastModified,
+    datePublished: koreaDateTime(route.publishedAt ?? route.lastModified),
+    dateModified: koreaDateTime(route.lastModified ?? route.publishedAt),
     mainEntityOfPage: canonicalUrl(route.path),
     author: { "@type": route.author && route.author !== SITE_NAME ? "Person" : "Organization", name: route.author || SITE_NAME },
-    publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL, sameAs: ["https://x.com/SeedVoice_KR"] },
+    publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL, logo: { "@type": "ImageObject", url: publisherLogo }, sameAs: ["https://x.com/SeedVoice_KR"] },
     articleSection: route.section,
     inLanguage: language,
     ...(route.image ? { image: route.image } : {}),
@@ -230,6 +255,7 @@ function render(route) {
     .replace(/\s*<meta\s+name="robots"[\s\S]*?\/>/i, "")
     .replace(/\s*<link\s+rel="canonical"[\s\S]*?\/>/i, "")
     .replace(/\s*<meta\s+(?:property="og:[^"]+"|name="twitter:[^"]+")[\s\S]*?\/>/gi, "")
+    .replace(/\s*<script\s+type="application\/ld\+json">[\s\S]*?<\/script>/gi, "")
     .replace("</head>", `${head}\n  </head>`)
     .replace('<div id="root"></div>', `<div id="root">${fallback}</div>`);
 }
@@ -246,7 +272,8 @@ for (const route of seoRoutes) {
 const accountShell = template
   .replace(/<title>[\s\S]*?<\/title>/i, "<title>내 계정 | 씨앗의 소리</title>")
   .replace(/<meta\s+name="robots"[\s\S]*?\/>/i, '<meta name="robots" content="noindex" />')
-  .replace(/<link\s+rel="canonical"[\s\S]*?\/>/i, '<link rel="canonical" href="https://seedvoice.kr/account" />');
+  .replace(/<link\s+rel="canonical"[\s\S]*?\/>/i, '<link rel="canonical" href="https://seedvoice.kr/account" />')
+  .replace(/\s*<script\s+type="application\/ld\+json">[\s\S]*?<\/script>/gi, "");
 await mkdir(path.join(dist, "account"), { recursive: true });
 await writeFile(path.join(dist, "account", "index.html"), accountShell);
 
