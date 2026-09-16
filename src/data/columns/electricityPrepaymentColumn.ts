@@ -6,7 +6,7 @@ export const electricityPrepaymentColumn: SeedColumn = {
   title: "기업을 정부의 현금인출기로 보지 마라",
   subtitle: "미래 재정도 모자라 미래 전기료까지 끌어다 쓰겠다는 위험한 국가주의",
   date: "2026-09-03",
-  author: "박경석",
+  author: "작은씨앗",
   readMinutes: 11,
   summary: "정부와 한전이 삼성전자와 SK하이닉스에 5년치 전기요금 약 25조 원을 미리 내는 방안을 제안했다. 공기업 부실의 책임을 기업 현금으로 메우고 전기요금으로 기업의 입지를 조종하려는 발상이 왜 국가 강압으로 변질될 수 있는지 묻는다.",
   heroImage: {

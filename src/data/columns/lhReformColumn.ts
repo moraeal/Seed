@@ -6,7 +6,7 @@ export const lhReformColumn: SeedColumn = {
   title: "내용 없는 깡통이 더 요란하다",
   subtitle: "LH를 쪼개는 것이 개혁인가",
   date: "2026-09-07",
-  author: "박경석",
+  author: "작은씨앗",
   readMinutes: 7,
   summary: "LH를 쪼개는 것이 개혁인가. 지금 필요한 것은 새로운 조직도가 아니라 부동산 정책 실패에 대한 냉정한 진단이다.",
   heroImage: {

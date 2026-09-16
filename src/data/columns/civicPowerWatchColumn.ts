@@ -6,7 +6,7 @@ export const civicPowerWatchColumn: SeedColumn = {
   title: "시민의 이름으로 시민을 지배할 때",
   subtitle: "그람시의 진지전에서 ‘시민독재’까지, 이제 시민이 시민권력을 감시해야 한다",
   date: "2026-09-06",
-  author: "박경석",
+  author: "작은씨앗",
   readMinutes: 11,
   summary: "국가와 시장을 감시하던 시민사회도 예산·인사·언론·정책 접근권을 축적하면 권력이 된다. 공론장의 진지를 점유하고, 좌표 찍기로 반대자를 침묵시키며, 그 영향력을 위원회와 법률로 고정하는 순간 시민운동은 시민독재로 변할 수 있다.",
   heroImage: {

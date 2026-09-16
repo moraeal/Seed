@@ -6,7 +6,7 @@ export const civicSocietyStateizationColumn: SeedColumn = {
   title: "그들이 대한민국 시민사회를 대표하는가",
   subtitle: "대통령의 210분 경청과 ‘시민사회 국가화’의 위험",
   date: "2026-09-04",
-  author: "박경석",
+  author: "작은씨앗",
   readMinutes: 14,
   summary: "이재명 대통령이 진보 성향 시민단체 19곳과 210분간 대화했다. 특정 진영을 시민사회 전체처럼 호명하고 위원회·사업·예산으로 국가 안에 편입할 때 시민사회의 대표성과 독립성이 어떻게 훼손될 수 있는지 묻는다.",
   heroImage: {

@@ -105,7 +105,7 @@ const copy = {
     secondImageAlt: "씨알사상을 통해 이름 없는 시민을 역사의 주체로 바라본 함석헌 선생",
     secondImageCaption: "함석헌 선생. 이름 없는 씨알을 통치의 대상이 아니라 역사의 주체로 보았습니다.",
     secondImageCredit: "사진 출처: 서울Pn",
-    author: "2026년 9월 · 어느 작은 시민의 말, 씨앗의 소리 발행인",
+    author: "2026년 9월 · 작은씨앗, 씨앗의 소리 발행인",
     back: "소개로 돌아가기",
   },
   en: {
@@ -203,7 +203,7 @@ const copy = {
     secondImageAlt: "Korean thinker Ham Seok-heon, who saw ordinary unnamed people as the agents of history",
     secondImageCaption: "Ham Seok-heon saw the unnamed ssial not as objects of rule, but as the agents of history.",
     secondImageCredit: "Photo source: SeoulPn",
-    author: "September 2026 · Words of an Ordinary Citizen, Publisher of SEED VOICE",
+    author: "September 2026 · Small Seed, Publisher of SEED VOICE",
     back: "Back to About",
   },
 };
