@@ -29,6 +29,7 @@ export type SeoRoute = {
   title: string;
   description: string;
   type: "website" | "article";
+  publishedAt?: string;
   lastModified?: string;
   author?: string;
   section?: string;
@@ -72,10 +73,10 @@ const staticRoutes: SeoRoute[] = [
   { path: "/columns", title: "칼럼 | 씨앗의 소리", description: "자유, 법치, 책임, 시장의 자율성과 강한 시민사회의 관점에서 오늘의 쟁점을 논평합니다.", type: "website", lastModified: newest(columns.map((item) => item.date)) },
   { path: "/monitoring", title: "시민감시 | 씨앗의 소리", description: "국가와 시민사회의 권력, 예산과 성과를 공개자료와 기관의 답변으로 점검하고 후속 변화를 기록합니다.", type: "website", lastModified: latestDate },
   { path: "/proposals", title: "시민제안 | 씨앗의 소리", description: "시민의 문제의식을 구체적인 제도와 정책의 제안으로 키우는 씨앗의 소리 제안 공간입니다.", type: "website", lastModified: latestDate },
-  { path: "/founding-statement", title: "왜 지금 씨앗의 소리인가 | 씨앗의 소리", description: "다수결만으로 민주주의가 완성되지 않는 이유와 법의 지배, 제한된 정부, 권력분립과 시민의 자유를 지키려는 씨앗의 소리의 취지문입니다.", type: "article", lastModified: latestDate, author: "작은씨앗", section: "씨앗의 소리 취지문", image: socialImageUrl("site", "founding-statement", latestDate), imageAlt: "국회, 정부와 법원의 권력분립과 시민의 자유를 상징하는 이미지" },
+  { path: "/founding-statement", title: "왜 지금 씨앗의 소리인가 | 씨앗의 소리", description: "다수결만으로 민주주의가 완성되지 않는 이유와 법의 지배, 제한된 정부, 권력분립과 시민의 자유를 지키려는 씨앗의 소리의 취지문입니다.", type: "article", publishedAt: latestDate, lastModified: latestDate, author: "작은씨앗", section: "씨앗의 소리 취지문", image: socialImageUrl("site", "founding-statement", latestDate), imageAlt: "국회, 정부와 법원의 권력분립과 시민의 자유를 상징하는 이미지" },
   { path: "/seed-language", title: "용어해설 | 씨앗의 소리", description: "특정 진영이 독점한 시민사회의 언어를 해체하고 본래 의미를 되살려 시민의 언어로 다시 구성합니다.", type: "website", lastModified: newest(allSeedLanguageArticlesKo.map((item) => item.date)) },
   { path: "/about", title: "씨앗의 소리가 지키려는 것 | 씨앗의 소리", description: "법의 지배, 제한된 정부, 권력분립과 시민·기업의 자유를 지키며 국가와 시민사회의 권력을 감시하는 독립 시민저널 씨앗의 소리의 선언입니다.", type: "website", lastModified: latestDate },
-  { path: "/publisher-message", title: "발행인 소개 | 씨앗의 소리", description: "한 사람의 질문과 판단에서 시작된 독립 시민저널 씨앗의 소리의 발행인 소개입니다.", type: "article", lastModified: latestDate, author: "작은씨앗", section: "발행인 소개" },
+  { path: "/publisher-message", title: "발행인 소개 | 씨앗의 소리", description: "한 사람의 질문과 판단에서 시작된 독립 시민저널 씨앗의 소리의 발행인 소개입니다.", type: "article", publishedAt: latestDate, lastModified: latestDate, author: "작은씨앗", section: "발행인 소개" },
   { path: "/search", title: "통합검색 | 씨앗의 소리", description: "씨앗의 소리의 핫이슈, 브리핑, 칼럼, 시민감시와 용어해설을 한 번에 검색합니다.", type: "website", lastModified: latestDate, noindex: true },
 ];
 
@@ -84,6 +85,7 @@ const newsRoutes: SeoRoute[] = newsArticles.map((article) => ({
   title: `${article.title} | 씨앗의 소리`,
   description: article.summary,
   type: "article",
+  publishedAt: article.date,
   lastModified: article.date,
   author: SITE_NAME,
   section: article.category,
@@ -101,6 +103,7 @@ const briefingRoutes: SeoRoute[] = getAllBriefingsNewestFirst().flatMap((briefin
     title: `${briefing.title} | 씨앗의 소리`,
     description: briefing.summary,
     type: "article",
+    publishedAt: briefing.date,
     lastModified: briefing.date,
     author: briefing.author,
     section: briefing.category,
@@ -112,6 +115,7 @@ const briefingRoutes: SeoRoute[] = getAllBriefingsNewestFirst().flatMap((briefin
     title: `${briefing.commentary.title} | 씨앗의 소리`,
     description: briefing.commentary.summary,
     type: "article",
+    publishedAt: briefing.date,
     lastModified: briefing.date,
     author: briefing.author,
     section: "브리핑 깊게 보기",
@@ -126,6 +130,7 @@ const columnRoutes: SeoRoute[] = columns.map((column) => ({
   title: `${column.title} | 씨앗의 소리`,
   description: column.summary,
   type: "article",
+  publishedAt: column.date,
   lastModified: column.date,
   author: column.author,
   section: "칼럼",
@@ -138,6 +143,7 @@ const monitoringRoutes: SeoRoute[] = publicInterestWatchCases.map((item) => ({
   title: `${item.title.ko} | 씨앗의 소리`,
   description: item.summary.ko,
   type: "article",
+  publishedAt: item.openedAt ?? item.updatedAt,
   lastModified: item.updatedAt,
   author: SITE_NAME,
   section: item.timeline?.length ? "핫이슈" : "시민감시",
@@ -150,6 +156,7 @@ const researchRoutes: SeoRoute[] = [{
   title: "사랑의열매는 시민의 공익을 어떻게 배분하는가 | 씨앗의 소리",
   description: "사랑의열매의 2021~2025년 모금·배분·이월재원·지정기탁·운영비와 시민 참여 구조를 공식자료로 다시 검증한 씨앗 심층연구입니다.",
   type: "article",
+  publishedAt: "2026-09-10",
   lastModified: "2026-09-10",
   author: SITE_NAME,
   section: "씨앗 심층연구",
@@ -162,6 +169,7 @@ const seedLanguageRoutes: SeoRoute[] = allSeedLanguageArticlesKo.map((article) =
   title: `${article.title} | 씨앗의 소리`,
   description: article.summary,
   type: "article",
+  publishedAt: article.date,
   lastModified: article.date,
   author: SITE_NAME,
   section: "용어해설",
