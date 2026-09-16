@@ -1,4 +1,5 @@
 import { silenceAndPowerColumn } from "./columns/silenceAndPowerColumn";
+import { farmlandOwnershipPressureColumn } from "./columns/farmlandOwnershipPressureColumn";
 import { citizenizationBeforeAdvancementColumn } from "./columns/citizenizationBeforeAdvancementColumn";
 import { stateCannotMonopolizeLifeColumn } from "./columns/state-cannot-monopolize-life";
 import { civicGroupsAreNotStateVanguardColumn } from "./columns/civic-groups-are-not-state-vanguard";
@@ -10,7 +11,7 @@ import type { SeedColumn } from "./columnsLegacy";
 
 export type { SeedColumn } from "./columnsLegacy";
 
-export const columns: SeedColumn[] = [silenceAndPowerColumn, citizenizationBeforeAdvancementColumn, stateCannotMonopolizeLifeColumn, civicGroupsAreNotStateVanguardColumn, tenPercentPowerColumn, prosecutionReformPowerTransferColumn, lhReformColumn, ...legacyColumns];
+export const columns: SeedColumn[] = [farmlandOwnershipPressureColumn, silenceAndPowerColumn, citizenizationBeforeAdvancementColumn, stateCannotMonopolizeLifeColumn, civicGroupsAreNotStateVanguardColumn, tenPercentPowerColumn, prosecutionReformPowerTransferColumn, lhReformColumn, ...legacyColumns];
 
 export const getColumn = (slug: string) => columns.find((column) => column.slug === slug);
 

@@ -1,0 +1,377 @@
+import type { PublicInterestWatchCase } from "./publicInterestWatch";
+
+export const farmlandCensusTracker: PublicInterestWatchCase = {
+  slug: "farmland-census-disposal-orders-tracker",
+  organization: {
+    ko: "전국 농지 전수조사",
+    en: "National Farmland Census",
+  },
+  eyebrow: {
+    ko: "농지 소유·처분·이행강제금",
+    en: "Ownership · Disposal · Enforcement charges",
+  },
+  title: {
+    ko: "농지 27%는 누가 사나",
+    en: "Who Will Buy the 27 Percent of Farmland Flagged for Review?",
+  },
+  summary: {
+    ko: "전국 농지 기본조사에서 약 30만㏊가 법 위반 의심 대상으로 분류됐습니다. 아직 위법이 확정된 농지가 아닙니다. 씨앗은 심층조사 결과부터 처분명령, 매년 25%의 이행강제금, 농지은행의 수용 능력과 실제 농민에게 이전된 면적까지 한 기록에서 추적합니다.",
+    en: "Administrative screening flagged roughly 300,000 hectares—about 27 percent of the area reviewed—for possible violations. These are not confirmed violations. SEED tracks the field-review results, disposal orders, annual 25 percent enforcement charges, the Farmland Bank's capacity and the area that ultimately reaches working farmers.",
+  },
+  status: {
+    ko: "심층조사 진행·처분 결과 추적",
+    en: "Field review under way · Disposals tracked",
+  },
+  openedAt: "2026-02-24",
+  updatedAt: "2026-09-16",
+  nextCheck: {
+    ko: "심층조사를 거친 실제 위법 확정 면적, 유형별 처분의무·처분명령 건수, 농지은행 매수청구 접수와 거절 현황, 이행강제금 최초 부과 사례",
+    en: "Area confirmed in violation after field review; disposal duties and orders by category; Farmland Bank purchase requests and refusals; and the first enforcement-charge cases",
+  },
+  heroImage: {
+    src: "images/monitoring/farmland-census-tracker-hero.webp",
+    alt: {
+      ko: "조사원들이 농촌 현장에서 항공사진과 태블릿을 대조하며 농지를 확인하는 모습",
+      en: "Inspectors compare aerial imagery with a tablet while checking farmland in the field",
+    },
+    caption: {
+      ko: "행정정보가 의심 농지를 추려낼 수는 있습니다. 위법 확정과 처분은 현장 확인, 소명, 구제 절차를 거쳐야 합니다.",
+      en: "Administrative data can flag land for review. A final violation finding and disposal order require field verification, explanation and meaningful remedies.",
+    },
+    credit: {
+      ko: "씨앗의 소리 AI 제작 이미지",
+      en: "AI-assisted image by SEED VOICE",
+    },
+  },
+  sourceBasis: {
+    ko: "농림축산식품부의 조사계획·법 개정 보도자료·예산안, 국가법령정보센터의 현행 농지법과 헌법재판소 결정례, 2026년 7월 말 기본조사 결과 보도를 날짜별로 대조했습니다. 27%를 위법 확정 비율로 쓰지 않았고, 30만㏊의 의심 면적과 6,800㏊의 2027년 공급 지원 목표도 동일한 통계인 것처럼 합산하지 않았습니다.",
+    en: "This record cross-checks the Agriculture Ministry's census plan, legislative releases and budget proposal with the current Farmland Act, Constitutional Court decisions and late-July screening results. It does not treat 27 percent as a confirmed violation rate, or the 300,000 hectares flagged and the 2027 supply-support target of 6,800 hectares as directly equivalent measures.",
+  },
+  caution: {
+    ko: "27%는 행정정보 기본조사에서 추출된 위반 의심 비율입니다. 실제 위법과 처분 대상 규모는 심층조사와 소명 절차 뒤 달라질 수 있습니다. ‘4년이면 100%’는 첫 부과 뒤 평가액이 변하지 않고 매년 25%씩 네 번 부과된다는 단순 계산입니다.",
+    en: "The 27 percent figure is an administrative-screening result, not a confirmed violation rate. The final area in violation or subject to disposal may change after field review. The four-year, 100 percent illustration assumes an unchanged valuation and four annual charges after the first assessment.",
+  },
+  keyChanges: [
+    {
+      date: "2026-07-30",
+      text: {
+        ko: "기본조사 대상의 약 97%를 확인한 결과 약 27%, 30만㏊가 위반 의심 대상으로 분류됐습니다.",
+        en: "With about 97 percent of the administrative screening complete, roughly 27 percent—300,000 hectares—was flagged for further review.",
+      },
+    },
+    {
+      date: "2026-08-28",
+      text: {
+        ko: "개정 농지법이 시행되면서 농지 전수조사와 처분명령 집행을 위한 권한이 강화됐습니다.",
+        en: "Amendments strengthening the legal basis for the census and disposal enforcement took effect.",
+      },
+    },
+    {
+      date: "2026-09-10",
+      text: {
+        ko: "경실련은 농민 피해 가능성을 인정하면서도 정부에 전수조사를 좌고우면하지 말고 완수하라고 촉구했습니다.",
+        en: "CCEJ acknowledged potential harm to farmers while urging the government to complete the census without hesitation.",
+      },
+    },
+  ],
+  timeline: [
+    {
+      date: "2026-02-24",
+      title: {
+        ko: "대통령, 농지 사용실태 전수조사 검토 지시",
+        en: "President orders review of a nationwide farmland census",
+      },
+      description: {
+        ko: "국무회의에서 농지 가격과 투기 문제를 거론하며 농지 사용실태 전수조사와 사후관리 강화를 검토하라고 지시했습니다. 전국 조사 추진의 정치적 출발점입니다.",
+        en: "At a cabinet meeting, the president raised farmland prices and speculation and ordered review of a nationwide use census and stronger follow-up management. This became the political starting point of the current program.",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "경실련", en: "CCEJ" },
+          title: { ko: "농지전수조사 완수 촉구 성명", en: "Statement urging completion of the farmland census" },
+          url: "https://ccej.or.kr/posts/kZtq6wb",
+          publishedAt: "2026-09-10",
+          kind: "document",
+        },
+      ],
+    },
+    {
+      date: "2026-03-31",
+      title: {
+        ko: "2년에 걸친 전수조사 계획 공개",
+        en: "Two-year census plan is published",
+      },
+      description: {
+        ko: "정부는 2026년에 1996년 농지법 시행 이후 취득 농지를, 2027년에 그 이전 취득 농지를 조사하기로 했습니다. 행정정보·항공사진·위성·드론과 AI로 의심 농지를 추출하고 현장점검을 병행하는 방식입니다.",
+        en: "The government said it would review land acquired after the Farmland Act took effect in 1996 during 2026, then examine earlier acquisitions in 2027. Administrative data, aerial and satellite imagery, drones and AI would flag parcels for field review.",
+      },
+      change: {
+        ko: "일부 위험군 조사에서 전국 단위 조사로 확대",
+        en: "Review expands from risk groups to a nationwide program",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "농림축산식품부", en: "Ministry of Agriculture" },
+          title: { ko: "농지 전수조사 추진계획", en: "National farmland census plan" },
+          url: "https://www.mafra.go.kr/bbs/home/792/596131/download.do",
+          publishedAt: "2026-03-31",
+          kind: "document",
+        },
+      ],
+    },
+    {
+      date: "2026-05-07",
+      title: {
+        ko: "전수조사·처분명령 강화 농지법 개정안 통과",
+        en: "Amendments strengthen census and disposal enforcement",
+      },
+      description: {
+        ko: "국회 본회의가 조사원의 토지 출입 근거, 불법 임대차 신고포상금 확대와 농지 처분명령 강화를 담은 개정안을 의결했습니다. 조사 결과를 실제 행정처분으로 연결할 법적 기반이 강화됐습니다.",
+        en: "The National Assembly approved provisions covering inspectors' access to land, rewards for reporting illegal leases and stronger disposal enforcement. The amendments expanded the legal basis for turning census findings into administrative action.",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "농림축산식품부", en: "Ministry of Agriculture" },
+          title: { ko: "농지 전수조사 실시와 처분명령 강화", en: "Farmland census and stronger disposal orders" },
+          url: "https://www.mafra.go.kr/bbs/home/792/577856/artclView.do",
+          publishedAt: "2026-05-07",
+          kind: "document",
+        },
+      ],
+    },
+    {
+      date: "2026-05-18",
+      title: {
+        ko: "전국 농지 기본조사 시작",
+        en: "Nationwide administrative screening begins",
+      },
+      description: {
+        ko: "1996년 이후 취득 농지를 중심으로 기본조사가 시작됐습니다. 정부는 5~7월 행정정보를 확인하고 8월부터 의심 농지와 투기 위험군을 현장에서 점검하는 일정을 제시했습니다.",
+        en: "Administrative screening began with land acquired since 1996. The government scheduled data review from May through July and field checks of flagged parcels and speculation-risk groups from August.",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "대한민국 정책브리핑", en: "Korea Policy Briefing" },
+          title: { ko: "전국 농지 전수조사 착수", en: "Launch of the nationwide farmland census" },
+          url: "https://www.mafra.go.kr/bbs/home/792/596131/download.do",
+          publishedAt: "2026-05-18",
+          kind: "article",
+        },
+      ],
+    },
+    {
+      date: "2026-07-30",
+      title: {
+        ko: "약 27%·30만㏊가 위반 의심 대상으로 분류",
+        en: "About 27 percent—300,000 hectares—is flagged",
+      },
+      description: {
+        ko: "기본조사 대상의 약 97%를 확인한 시점에 전체의 약 27%가 위반 의심 대상으로 분류됐습니다. 불법 임대차 의심 21.1%, 무단 휴경 11.6%, 불법 전용 9.0%, 소유 제한 위반 1.4% 등이었으며 유형은 중복될 수 있습니다. 이 수치는 위법 확정 비율이 아닙니다.",
+        en: "When about 97 percent of the screening had been completed, roughly 27 percent was flagged. Categories included suspected illegal leases at 21.1 percent, unauthorized idling at 11.6 percent, unauthorized conversion at 9.0 percent and ownership-limit issues at 1.4 percent. Categories may overlap, and the figure is not a confirmed violation rate.",
+      },
+      change: {
+        ko: "전수조사의 첫 전국 규모 수치 공개",
+        en: "First nationwide screening figure released",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "매일경제", en: "Maeil Business Newspaper" },
+          title: { ko: "농지 27% ‘법 위반’ 의심…내달 심층조사", en: "Twenty-seven percent of farmland flagged for possible violations" },
+          url: "https://www.mk.co.kr/news/economy/12112144",
+          publishedAt: "2026-07-30",
+          kind: "article",
+        },
+      ],
+    },
+    {
+      date: "2026-08-01",
+      title: {
+        ko: "위반 의심 농지 현장 심층조사 시작",
+        en: "Field review of flagged land begins",
+      },
+      description: {
+        ko: "정부는 기본조사에서 추출한 의심 농지와 토지거래허가구역·수도권·경매 취득자·외국인 소유 농지 등 위험군을 현장에서 확인하기 시작했습니다. 실제 위법과 처분 대상 규모는 이 단계의 소명과 판정으로 달라질 수 있습니다.",
+        en: "Officials began field checks of parcels flagged in screening and risk groups such as land in transaction-permit zones, the Seoul metropolitan area, auction acquisitions and foreign-owned farmland. The final violation and disposal totals may change through explanation and review at this stage.",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "매일경제", en: "Maeil Business Newspaper" },
+          title: { ko: "농지 27% ‘법 위반’ 의심…내달 심층조사", en: "Twenty-seven percent of farmland flagged for possible violations" },
+          url: "https://www.mk.co.kr/news/economy/12112144",
+          publishedAt: "2026-07-30",
+          kind: "article",
+        },
+      ],
+    },
+    {
+      date: "2026-09-10",
+      title: {
+        ko: "경실련, ‘좌고우면 말고 완수’ 촉구",
+        en: "CCEJ urges completion without hesitation",
+      },
+      description: {
+        ko: "경실련은 농지 투기와 위장농업인 문제를 들어 전수조사를 계획대로 완수하라고 촉구했습니다. 동시에 고령화·영농승계·관행적 임대차와 임차농 피해 가능성을 인정하고 보완책을 주문했습니다. 조사 속도와 처분의 현실적 출구를 어떻게 함께 확보할지가 남았습니다.",
+        en: "CCEJ cited speculation and sham farmers in urging completion of the census. It also acknowledged aging, succession, customary leasing and potential harm to tenant farmers, and called for safeguards. The unresolved question is how enforcement can proceed without eliminating a workable exit.",
+      },
+      status: "response",
+      sources: [
+        {
+          publisher: { ko: "경실련", en: "CCEJ" },
+          title: { ko: "정부는 좌고우면 하지 말고 농지전수조사 완수에 최선을 다하라", en: "Government should complete the farmland census without hesitation" },
+          url: "https://ccej.or.kr/posts/kZtq6wb",
+          publishedAt: "2026-09-10",
+          kind: "document",
+        },
+      ],
+    },
+    {
+      date: "2026-10-01",
+      title: {
+        ko: "심층조사 중간 결과와 처분 규모 확인",
+        en: "Check interim field-review and disposal totals",
+      },
+      description: {
+        ko: "위법 확정 면적, 정당한 사유가 인정된 면적, 처분의무 통지와 처분명령 건수를 구분해 확인합니다. 정부가 집계 일정을 발표하면 날짜를 수정합니다.",
+        en: "SEED will separate the area confirmed in violation, the area excused for legitimate reasons, disposal-duty notices and formal disposal orders. The date will be revised when the government publishes a reporting schedule.",
+      },
+      status: "pending",
+    },
+  ],
+  confirmedFacts: [
+    {
+      ko: "기본조사의 약 27%는 위법 확정 비율이 아니라 심층조사를 위한 의심 분류입니다.",
+      en: "The roughly 27 percent figure is a screening category for field review, not a confirmed violation rate.",
+    },
+    {
+      ko: "농지 처분명령 불이행 시 감정가격과 공시지가 중 높은 금액의 25%가 이행강제금 기준이 될 수 있으며, 이행할 때까지 매년 한 차례 반복될 수 있습니다.",
+      en: "Failure to comply with a disposal order can trigger an annual charge equal to 25 percent of the higher of appraised value or officially assessed land value until compliance.",
+    },
+    {
+      ko: "첫 이행강제금 부과 전에는 원칙적으로 1년의 처분의무기간과 최장 6개월의 처분명령 단계가 있습니다.",
+      en: "Before the first charge, the process generally includes a one-year disposal-obligation period and a disposal order allowing up to six additional months.",
+    },
+    {
+      ko: "평가액이 1억원으로 변하지 않는다는 가정에서 네 차례 부과액은 누적 1억원이지만, 납부해도 처분의무는 사라지지 않습니다.",
+      en: "At an unchanged KRW 100 million valuation, four annual charges total KRW 100 million, but payment does not extinguish the disposal duty.",
+    },
+    {
+      ko: "정부의 2027년 농지 공급 지원 목표는 6,800㏊이며, 조사에서 위반 의심으로 분류된 면적은 약 30만㏊입니다. 두 수치는 직접 비교 가능한 동일한 통계는 아닙니다.",
+      en: "The government's 2027 supported-supply target is 6,800 hectares, while about 300,000 hectares was flagged in screening. The two figures are not directly comparable measures.",
+    },
+  ],
+  questions: [
+    {
+      ko: "매수자를 찾지 못했거나 농지은행이 매입을 거절한 경우도 처분명령 불이행으로 동일하게 처리합니까?",
+      en: "Is an owner treated as noncompliant even after failing to find a buyer or being refused by the Farmland Bank?",
+    },
+    {
+      ko: "투기성 보유와 상속·고령·질병·관행적 임대차를 어떤 증거와 기준으로 구분합니까?",
+      en: "What evidence distinguishes speculation from inheritance, age, illness and customary leasing?",
+    },
+    {
+      ko: "처분된 농지가 실제 자경농과 청년농에게 얼마에, 얼마나 이전됐습니까?",
+      en: "How much disposed land reaches working and young farmers, and at what price?",
+    },
+  ],
+  proposals: [
+    {
+      ko: "위반 확정·정당한 사유 인정·처분의무·처분명령·이행강제금을 단계별로 분리해 공개합니다.",
+      en: "Publish separate totals for confirmed violations, legitimate-reason findings, disposal duties, disposal orders and enforcement charges.",
+    },
+    {
+      ko: "농지은행 매수청구 접수·거절 사유·실제 매입면적과 매입가격을 지역별로 공개합니다.",
+      en: "Disclose Farmland Bank purchase requests, refusal reasons, area purchased and prices by region.",
+    },
+    {
+      ko: "실제 매각을 시도했지만 적격 매수자가 없었던 소유자에게 적용할 유예·구제 기준을 공개합니다.",
+      en: "Publish deferral and relief standards for owners who made genuine sale attempts but found no eligible buyer.",
+    },
+  ],
+  currentControversies: [
+    {
+      title: {
+        ko: "27%가 실제 처분 대상인가",
+        en: "Will 27 percent actually face disposal?",
+      },
+      description: {
+        ko: "아닙니다. 현재 수치는 행정정보상 의심 분류입니다. 심층조사 뒤 위법이 확인되고 정당한 사유가 인정되지 않아야 처분 절차로 이어집니다.",
+        en: "No. The figure is an administrative flag. Disposal requires a confirmed violation after field review and no accepted legitimate reason.",
+      },
+    },
+    {
+      title: {
+        ko: "팔리지 않는 땅에도 매년 25%를 부과할 수 있나",
+        en: "Can a 25 percent annual charge apply when no buyer exists?",
+      },
+      description: {
+        ko: "현행 제도는 정당한 사유와 매수청구 절차를 두고 있습니다. 그러나 실제 매수 노력과 농지은행 거절이 어떤 경우 면책 또는 유예로 인정되는지는 집행 사례를 통해 확인해야 합니다.",
+        en: "The law recognizes legitimate reasons and a public-purchase request. How genuine sale efforts and Farmland Bank refusals affect relief must be tested through actual enforcement cases.",
+      },
+    },
+    {
+      title: {
+        ko: "농지은행이 처분 물량을 받아낼 수 있나",
+        en: "Can the Farmland Bank absorb the volume?",
+      },
+      description: {
+        ko: "2027년 공급 지원 확대계획은 확인됐지만 전수조사로 나올 처분 물량과 지역별 매입 능력을 연결한 공식 수급표는 아직 확인되지 않았습니다.",
+        en: "The 2027 expansion plan is public, but no official supply-demand table yet connects likely census-driven disposals with regional purchase capacity.",
+      },
+    },
+  ],
+  followUpChecks: [
+    { ko: "심층조사 완료 면적과 실제 위법 확정 비율", en: "Area field-reviewed and final violation rate" },
+    { ko: "유형별 처분의무 통지와 처분명령 건수", en: "Disposal duties and orders by violation category" },
+    { ko: "이의신청·행정소송과 처분 취소 사례", en: "Appeals, administrative suits and canceled orders" },
+    { ko: "이행강제금 부과·징수·체납액", en: "Enforcement charges assessed, collected and unpaid" },
+    { ko: "농지은행 매수청구·거절·매입 면적", en: "Farmland Bank requests, refusals and purchases" },
+    { ko: "처분 전후 지역별 농지 실거래가격", en: "Regional transaction prices before and after disposals" },
+    { ko: "청년농·자경농에게 이전된 면적과 실제 경작 여부", en: "Area reaching young and working farmers and whether it is cultivated" },
+    { ko: "고령농·상속농지·임차농에 적용된 예외와 구제 결과", en: "Exceptions and relief for elderly farmers, inherited land and tenants" },
+  ],
+  sectionHeadings: {
+    facts: { ko: "지금까지 확인된 숫자와 절차", en: "Numbers and procedures established so far" },
+    controversies: { ko: "아직 답이 나오지 않은 문제", en: "Questions still unresolved" },
+    followUp: { ko: "앞으로 확인할 처분과 이전 결과", en: "Disposal and transfer outcomes to track" },
+  },
+  continuationEligible: false,
+  sources: [
+    {
+      label: { ko: "정부·여당 농지 전수조사 추진계획", en: "Government farmland census plan" },
+      url: "https://www.mafra.go.kr/bbs/home/792/596131/download.do",
+      note: { ko: "2년 조사 범위와 행정정보·현장조사 방식", en: "Two-year scope and data/field-review method" },
+    },
+    {
+      label: { ko: "농림축산식품부 농지법 개정 보도자료", en: "Agriculture Ministry release on Farmland Act amendments" },
+      url: "https://www.mafra.go.kr/bbs/home/792/577856/artclView.do",
+    },
+    {
+      label: { ko: "매일경제 기본조사 결과 보도", en: "Maeil Business Newspaper on screening results" },
+      url: "https://www.mk.co.kr/news/economy/12112144",
+    },
+    {
+      label: { ko: "농림축산식품부 농지제도 안내서", en: "Agriculture Ministry farmland-system guide" },
+      url: "https://www.mafra.go.kr/bbs/mafra/71/254918/download.do",
+      note: { ko: "처분명령과 매년 25% 이행강제금 절차", en: "Disposal-order and annual 25 percent charge process" },
+    },
+    {
+      label: { ko: "농림축산식품부 2027년 예산안", en: "Agriculture Ministry 2027 budget proposal" },
+      url: "https://www.mafra.go.kr/bbs/home/792/599930/download.do",
+      note: { ko: "농지 공급 지원 5,230㏊에서 6,800㏊ 확대계획", en: "Plan to expand supported farmland supply from 5,230 to 6,800 hectares" },
+    },
+    {
+      label: { ko: "헌법재판소 농지 이행강제금 결정", en: "Constitutional Court decision on farmland enforcement charges" },
+      url: "https://law.go.kr/LSW/detcInfoP.do?detcSeq=13001&mode=1",
+    },
+    {
+      label: { ko: "경실련 농지전수조사 성명", en: "CCEJ statement on the farmland census" },
+      url: "https://ccej.or.kr/posts/kZtq6wb",
+    },
+  ],
+};

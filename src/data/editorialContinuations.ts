@@ -65,11 +65,32 @@ const discourseContinuation: Record<Language, EditorialContinuation> = {
   },
 };
 
+const farmlandOwnershipContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/news/farmland-census-disposal-orders-tracker",
+    title: "농지 27%는 누가 사나",
+    relationship: "사실과 절차 추적",
+    reason: "칼럼이 제기한 질문에 이어 전수조사 수치, 처분 절차, 연간 25% 이행강제금과 후속 조치를 자료별로 확인합니다.",
+    listHref: "/columns",
+    listLabel: "칼럼 전체 보기",
+  },
+  en: {
+    href: "/news/farmland-census-disposal-orders-tracker",
+    title: "Who Will Buy the 27% of Farmland Flagged?",
+    relationship: "TRACK THE FACTS AND PROCESS",
+    reason: "Continue from the column's questions to a source-by-source tracker of the survey figures, disposal process, annual 25% enforcement charge and next steps.",
+    listHref: "/columns",
+    listLabel: "All columns",
+  },
+};
+
 const isFreedom = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "freedom-as-citizen-agency";
 const isProgress = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-progress";
 const isDiscourse = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "discourse-many-words-no-direction";
+const isFarmlandOwnership = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "farmland-ownership-without-an-exit";
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (isFarmlandOwnership(kind, slug)) return true;
   if (isDiscourse(kind, slug)) return true;
   if (isProgress(kind, slug)) return true;
   if (isFreedom(kind, slug)) return true;
@@ -77,6 +98,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (isFarmlandOwnership(kind, slug)) return farmlandOwnershipContinuation[language];
   if (isDiscourse(kind, slug)) return discourseContinuation[language];
   if (isProgress(kind, slug)) return progressContinuation[language];
   if (isFreedom(kind, slug)) return freedomContinuation[language];
