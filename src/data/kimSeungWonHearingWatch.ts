@@ -14,10 +14,10 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   },
   status: { ko: "청문회 개최·후속 확인 중", en: "Hearing held · Follow-up under way" },
   openedAt: "2026-08-31",
-  updatedAt: "2026-09-16",
+  updatedAt: "2026-09-17",
   nextCheck: {
-    ko: "제넨셀 의혹에 대한 경찰의 재수사 여부 결정과 가족 협동조합 고발 사건의 수사 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판, 법제사법위원회의 인사청문경과보고서 채택 여부와 대통령의 임명 여부",
-    en: "The police decision on whether to reinvestigate the Genencell allegation and progress in the family-cooperative complaint, the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder, whether the Legislation and Judiciary Committee adopts its hearing report, and whether the president proceeds with the appointment",
+    ko: "후보자의 수임 관련 청문회 답변 정정이 인사청문경과보고서에 반영되는지, 제넨셀 의혹에 대한 경찰의 재수사 여부 결정과 가족 협동조합 고발 사건의 수사 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판, 대통령의 임명 여부",
+    en: "Whether the correction to the nominee's hearing answer about past legal representation is reflected in the committee report, the police decision on reinvestigating the Genencell allegation and progress in the family-cooperative complaint, the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder, and whether the president proceeds with the appointment",
   },
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
@@ -36,6 +36,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "This timeline cross-checks National Assembly schedules and decisions, public statements from the nominee and both parties, and reporting based on Ministry of Food and Drug Safety records. Allegations and the nominee's rebuttals are kept separate from verified facts.",
   },
   keyChanges: [
+    {
+      date: "2026-09-16",
+      text: {
+        ko: "후보자가 2013∼2014년 정인재 판사가 배석한 서울고법 재판부 사건을 수임한 사실이 확인돼 청문회 답변과 배치됐습니다. 후보자는 기억에 의존해 답변하다 착오가 있었다며 사과했습니다.",
+        en: "Records showed that Kim represented a party in a 2013–2014 case before a Seoul High Court panel on which Judge Jeong In-jae sat, contradicting his hearing answer. Kim apologized and said he had answered from memory and was mistaken.",
+      },
+    },
     {
       date: "2026-09-16",
       text: {
@@ -384,6 +391,33 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-16",
+      title: { ko: "과거 수임 기록 확인·청문회 답변 착오 사과", en: "Past representation confirmed; nominee apologizes for mistaken hearing answer" },
+      description: {
+        ko: "법조계 확인 보도에 따르면 김 후보자는 변호사로 일하던 2013∼2014년 정인재 판사가 배석한 서울고법 민사21부의 민사소송에서 원고 측을 대리했습니다. 이는 정 판사가 속한 재판부 사건을 수임한 적이 없다는 9월 15일 청문회 답변과 배치됩니다. 후보자 측은 정 판사가 주심이 아니었고 의뢰인에게 유리한 결과가 난 사건도 아니어서 기억하지 못했다며, 기억에 의존해 답변하다 착오가 있었고 오해를 부른 점이 송구하다고 밝혔습니다. 수임 기록은 답변의 오류를 확인하지만, 그 자체로 2023년 제넨셀 설립자 구속영장 기각에 후보자가 영향을 미쳤다는 사실을 입증하지는 않습니다.",
+        en: "According to reporting based on legal records, Kim represented the plaintiff in a 2013–2014 civil appeal before Seoul High Court Civil Division 21, where Judge Jeong In-jae sat as an associate judge. This conflicts with his September 15 hearing answer that he had never handled a case before a panel including Jeong. Kim's team said Jeong was not the presiding judge and the case did not end favorably for his client, so he did not remember it; he apologized for answering from memory and causing misunderstanding. The record establishes that the hearing answer was inaccurate, but does not itself show that Kim influenced the 2023 denial of a detention warrant for Genencell's founder.",
+      },
+      change: { ko: "청문회 답변과 배치되는 기록 확인 뒤 후보자 측 정정·사과", en: "Records contradict the hearing answer, prompting a correction and apology" },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: { ko: "김승원, 변호사때 제넨셀 영장기각판사 사건 맡아…청문 답변과 배치", en: "Kim represented a case before panel including judge who later denied Genencell warrant" },
+          url: "https://www.yna.co.kr/view/AKR20260916177500004",
+          publishedAt: "2026-09-16",
+          thumbnailSrc: "https://img6.yna.co.kr/photo/yna/YH/2026/09/15/PYH2026091518600001300_P4.jpg",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "뉴스핌", en: "NewsPim" },
+          title: { ko: "김승원, 과거 '제넨셀 영장기각 판사 사건' 수임…청문회 중 착오", en: "Kim says hearing answer was mistaken after past representation emerges" },
+          url: "https://www.newspim.com/news/view/20260916001204",
+          publishedAt: "2026-09-16",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "다음",
       title: { ko: "청문경과보고서와 임명 여부 확인", en: "Committee report and appointment decision" },
       description: {
@@ -460,6 +494,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+    { ko: "김 후보자는 2013∼2014년 정인재 판사가 배석한 서울고법 민사21부 사건에서 원고 측 소송대리를 맡았습니다. 이는 해당 재판부 사건을 수임한 적 없다는 청문회 답변과 배치되며, 후보자 측은 기억에 의존한 착오였다며 사과했습니다.", en: "Kim represented the plaintiff in a 2013–2014 case before Seoul High Court Civil Division 21, where Judge Jeong In-jae sat as an associate judge. This conflicts with his hearing answer that he had never handled a case before that panel; his team apologized and attributed the answer to a memory-based mistake." },
     { ko: "경기남부경찰청은 가족 협동조합 관련 청탁금지법 위반·허위공문서 작성 혐의 고발 사건을 2026년 9월 16일 수원팔달경찰서에 배당했습니다.", en: "Gyeonggi Nambu Provincial Police assigned the complaint alleging graft-law violations and falsification of official documents in the family-cooperative matter to Suwon Paldal Police Station on September 16, 2026." },
     { ko: "인사청문회는 약 14시간 만인 2026년 9월 16일 자정 무렵 종료됐으며, 법제사법위원회는 이날 인사청문경과보고서를 채택하지 않았습니다.", en: "The hearing ended around midnight on September 16, 2026 after roughly 14 hours, and the Legislation and Judiciary Committee did not adopt its report at the meeting." },
     { ko: "김승원 후보자 인사청문회는 2026년 9월 15일 증인·참고인 없이 개최됐습니다.", en: "Kim Seung-won's confirmation hearing was held on September 15, 2026 without witnesses or reference witnesses." },
@@ -471,6 +506,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     { ko: "김 후보자 측은 소속 보좌진이 청문위원의 질의 자료를 촬영한 사실을 인정하고 사과했으며, 후보자의 지시나 관여는 없었다고 밝혔습니다.", en: "Kim's office acknowledged and apologized for a staff member photographing a committee member's questioning material, while stating that the nominee did not direct or participate in it." },
   ],
   currentControversies: [
+    {
+      title: { ko: "청문회 수임 답변의 오류가 검증 판단에 미칠 영향", en: "How the inaccurate hearing answer affects scrutiny" },
+      description: {
+        ko: "수임 기록은 정인재 판사가 배석한 재판부 사건을 맡은 적 없다는 후보자의 답변이 사실과 달랐음을 확인합니다. 후보자 측은 정 판사가 주심이 아니고 패소한 사건이어서 기억하지 못한 단순 착오라고 사과했습니다. 다만 이 기록만으로 두 사람 사이에 부적절한 청탁이 있었거나 후보자가 2023년 제넨셀 설립자 구속영장 기각에 영향을 미쳤다고 단정할 수는 없습니다. 답변 오류의 중대성과 경과보고서 반영 여부는 별도로 확인해야 합니다.",
+        en: "The representation record establishes that Kim's answer denying any case before a panel including Judge Jeong was inaccurate. His team apologized and called it a simple memory lapse because Jeong was not the presiding judge and the case was lost. The record alone does not establish an improper request between them or show that Kim influenced the 2023 denial of a detention warrant for Genencell's founder. The significance of the inaccurate answer and whether it is reflected in the committee report remain to be seen.",
+      },
+    },
     {
       title: { ko: "식약처 민원 전달이 어디까지 영향을 미쳤나", en: "How much influence did the petition relay have?" },
       description: {
@@ -509,6 +551,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "연합뉴스 — 정인재 판사 배석 재판부 사건 수임과 후보자 사과", en: "Yonhap — Representation before panel including Judge Jeong and nominee's apology" },
+      url: "https://www.yna.co.kr/view/AKR20260916177500004",
+    },
+    {
+      label: { ko: "뉴스핌 — 과거 수임 기록과 청문회 답변 착오 해명", en: "NewsPim — Past representation and explanation of mistaken hearing answer" },
+      url: "https://www.newspim.com/news/view/20260916001204",
+    },
     {
       label: { ko: "연합뉴스 — 가족 협동조합 고발 사건 수원팔달경찰서 배당", en: "Yonhap — Family-cooperative complaint assigned to Suwon Paldal Police Station" },
       url: "https://www.yna.co.kr/view/AKR20260916129000061",
