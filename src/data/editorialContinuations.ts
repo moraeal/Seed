@@ -84,12 +84,33 @@ const farmlandOwnershipContinuation: Record<Language, EditorialContinuation> = {
   },
 };
 
+const farmlandTrackerContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/columns/farmland-ownership-without-an-exit",
+    title: "소유권은 남았지만 소유할 수 없다",
+    relationship: "씨앗의 소리",
+    reason: "농지 전수조사의 숫자와 절차를 확인했다면, 팔리지 않는 농지와 반복되는 이행강제금이 시민의 재산권에 남기는 문제를 이어서 읽습니다.",
+    listHref: "/news",
+    listLabel: "핫이슈 전체 보기",
+  },
+  en: {
+    href: "/columns/farmland-ownership-without-an-exit",
+    title: "Ownership on Paper, but No Practical Right to Keep It",
+    relationship: "SEED VOICE",
+    reason: "After reviewing the census figures and enforcement process, continue with what unsellable farmland and recurring charges mean for citizens' property rights.",
+    listHref: "/news",
+    listLabel: "All Hot Issues",
+  },
+};
+
 const isFreedom = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "freedom-as-citizen-agency";
 const isProgress = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-progress";
 const isDiscourse = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "discourse-many-words-no-direction";
 const isFarmlandOwnership = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "farmland-ownership-without-an-exit";
+const isFarmlandTracker = (kind: EditorialContentKind, slug: string) => kind === "monitoring" && slug === "farmland-census-disposal-orders-tracker";
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (isFarmlandTracker(kind, slug)) return true;
   if (isFarmlandOwnership(kind, slug)) return true;
   if (isDiscourse(kind, slug)) return true;
   if (isProgress(kind, slug)) return true;
@@ -98,6 +119,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (isFarmlandTracker(kind, slug)) return farmlandTrackerContinuation[language];
   if (isFarmlandOwnership(kind, slug)) return farmlandOwnershipContinuation[language];
   if (isDiscourse(kind, slug)) return discourseContinuation[language];
   if (isProgress(kind, slug)) return progressContinuation[language];

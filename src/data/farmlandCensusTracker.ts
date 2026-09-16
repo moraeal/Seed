@@ -340,7 +340,7 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     controversies: { ko: "아직 답이 나오지 않은 문제", en: "Questions still unresolved" },
     followUp: { ko: "앞으로 확인할 처분과 이전 결과", en: "Disposal and transfer outcomes to track" },
   },
-  continuationEligible: false,
+  continuationEligible: true,
   sources: [
     {
       label: { ko: "정부·여당 농지 전수조사 추진계획", en: "Government farmland census plan" },
