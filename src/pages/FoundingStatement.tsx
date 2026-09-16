@@ -103,7 +103,8 @@ const copy = {
     firstImageAlt: "국회, 정부와 법원이 서로 균형을 이루며 시민의 자유를 지키는 권력분립의 상징 이미지",
     firstImageCaption: "다수결은 민주주의의 수단입니다. 민주주의를 지키는 것은 법치와 권력분립, 소수의 발언권입니다.",
     secondImageAlt: "씨알사상을 통해 이름 없는 시민을 역사의 주체로 바라본 함석헌 선생",
-    secondImageCaption: "함석헌은 이름 없는 씨알을 통치의 대상이 아니라 역사의 주체로 보았습니다.",
+    secondImageCaption: "함석헌 선생. 이름 없는 씨알을 통치의 대상이 아니라 역사의 주체로 보았습니다.",
+    secondImageCredit: "사진 출처: 서울Pn",
     author: "2026년 9월 · 어느 작은 시민의 말, 씨앗의 소리 발행인",
     back: "소개로 돌아가기",
   },
@@ -201,6 +202,7 @@ const copy = {
     firstImageCaption: "Majority rule is a democratic instrument. The rule of law, separated powers and minority voice are what keep democracy alive.",
     secondImageAlt: "Korean thinker Ham Seok-heon, who saw ordinary unnamed people as the agents of history",
     secondImageCaption: "Ham Seok-heon saw the unnamed ssial not as objects of rule, but as the agents of history.",
+    secondImageCredit: "Photo source: SeoulPn",
     author: "September 2026 · Words of an Ordinary Citizen, Publisher of SEED VOICE",
     back: "Back to About",
   },
@@ -252,9 +254,14 @@ export default function FoundingStatement() {
               )}
 
               {index === 6 && (
-                <figure className="mx-auto max-w-2xl overflow-hidden border-y border-green-deep/15 bg-[#F1F2EC]">
-                  <img src={`${import.meta.env.BASE_URL}images/columns/ham-seok-heon-portrait.jpg`} alt={content.secondImageAlt} className="aspect-[16/10] w-full object-cover object-[center_28%] grayscale" />
-                  <figcaption className="px-5 py-3 text-sm leading-6 text-charcoal/65 sm:px-6">{content.secondImageCaption}</figcaption>
+                <figure className="mx-auto max-w-md overflow-hidden border-y border-green-deep/15 bg-[#F1F2EC]">
+                  <img src={`${import.meta.env.BASE_URL}images/columns/ham-seok-heon-portrait.jpg`} alt={content.secondImageAlt} className="h-auto w-full grayscale" />
+                  <figcaption className="px-5 py-3 text-sm leading-6 text-charcoal/65 sm:px-6">
+                    {content.secondImageCaption}{" "}
+                    <a href="https://go.seoul.co.kr/news/newsView.php?id=20161125014003" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 font-semibold text-green-deep hover:underline">
+                      {content.secondImageCredit}<ExternalLink size={12} aria-hidden="true" />
+                    </a>
+                  </figcaption>
                 </figure>
               )}
             </Fragment>
