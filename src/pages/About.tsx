@@ -15,7 +15,7 @@ import { useLanguage } from "../i18n";
 const copy = {
   ko: {
     kicker: "ABOUT SEED VOICE",
-    title: "왜 지금\n씨앗의 소리인가",
+    title: "씨앗의 소리가\n지키려는 것",
     lead: "민주주의는 선거의 승리만으로 완성되지 않습니다. 법의 지배와 권력분립, 시민의 자유가 무너진다면 민주라는 이름만 남습니다.",
     identity: "씨앗의 소리는 자유의 영역을 넓히고, 기업의 도전과 혁신을 보호하며, 국가와 시민사회의 권력을 감시하는 독립 시민저널입니다.",
     publisher: "발행인 소개",
@@ -66,7 +66,7 @@ const copy = {
   },
   en: {
     kicker: "ABOUT SEED VOICE",
-    title: "Why SEED VOICE,\nWhy Now",
+    title: "What SEED VOICE\nStands For",
     lead: "Democracy is not secured by electoral victory alone. When the rule of law, separation of powers and civic freedom erode, little remains beyond the name.",
     identity: "SEED VOICE is an independent civic journal that expands the sphere of freedom, protects enterprise and innovation, and watches power in both the state and civil society.",
     publisher: "About the Publisher",
