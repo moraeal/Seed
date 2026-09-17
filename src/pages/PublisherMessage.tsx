@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import { useLanguage } from "../i18n";
 
 type Section = { title: string; paragraphs: string[] };
-type CreedItem = { title: string; description: string };
 
 const copy = {
   ko: {
@@ -35,14 +34,6 @@ const copy = {
     aiKicker: "AI USE",
     aiTitle: "AI를 활용합니다",
     aiBody: "자료 조사와 구조화, 사실관계의 교차검토에 AI를 활용합니다. 질문과 판단, 원고의 최종 책임은 필진에게 있습니다.",
-    creedKicker: "SEED VOICE PRINCIPLES",
-    creedTitle: "씨앗의 소리 강령",
-    creed: [
-      { title: "사실을 확인하고 오류를 바로잡습니다", description: "원문과 공개자료를 대조하고, 잘못이 확인되면 공개적으로 수정합니다." },
-      { title: "관점을 숨기지 않습니다", description: "자유·자율·법치·책임의 기준으로 판단합니다." },
-      { title: "권력을 감시합니다", description: "국가와 정당뿐 아니라 시민사회 권력도 같은 기준으로 봅니다." },
-      { title: "도전과 선택을 지킵니다", description: "기업의 혁신과 시민의 일자리·선택을 함께 살핍니다." },
-    ] satisfies CreedItem[],
     declaration: ["시민은 정치의 관객이 아닙니다.", "질문하고 판단하며 권력을 지켜보는 주체입니다."],
     closing: "작은씨앗에서 시작한 목소리는 이제 다른 시민의 질문과 만나고 있습니다. 씨앗은 작습니다. 그러나 시민의 판단이 연결되면 권력의 방향을 바꿀 수 있습니다.",
     imageAlt: "갈라진 콘크리트에서 돋아난 작은 새싹과 여러 시민을 닮은 그림자",
@@ -90,14 +81,6 @@ const copy = {
     aiKicker: "AI USE",
     aiTitle: "How AI is used",
     aiBody: "AI assists with research, structure, and factual cross-checking. Contributors remain responsible for the questions, judgments, and final text.",
-    creedKicker: "SEED VOICE PRINCIPLES",
-    creedTitle: "Our principles",
-    creed: [
-      { title: "Facts are checked and errors corrected", description: "We compare primary sources and public records, correcting the record openly when needed." },
-      { title: "Our viewpoint is visible", description: "We judge through freedom, autonomy, the rule of law, and responsibility." },
-      { title: "Power is scrutinized", description: "State, party, and civil-society power face the same standard." },
-      { title: "Initiative and choice matter", description: "We defend enterprise, innovation, jobs, and citizens’ freedom to choose." },
-    ] satisfies CreedItem[],
     declaration: ["Citizens are not spectators in politics.", "They question, judge, and keep watch over power."],
     closing: "The voice that began with Small Seed is now meeting the questions of other citizens. A seed is small. But connected civic judgment can change the direction of power.",
     imageAlt: "A small seedling emerging through cracked concrete and casting shadows that resemble a group of citizens",
@@ -156,19 +139,6 @@ export default function PublisherMessage() {
               <h2 className="editorial-title mt-2 text-2xl font-bold text-navy">{content.aiTitle}</h2>
               <p className="mt-3 text-base leading-7 text-charcoal/70">{content.aiBody}</p>
             </aside>
-
-            <section className="mt-10 border-y border-green-deep/15 py-9 sm:mt-12 sm:py-11">
-              <p className="section-kicker">{content.creedKicker}</p>
-              <h2 className="editorial-title mt-3 text-3xl font-bold text-navy sm:text-4xl">{content.creedTitle}</h2>
-              <div className="mt-7 grid gap-px overflow-hidden border border-green-deep/15 bg-green-deep/15 sm:grid-cols-2">
-                {content.creed.map((item) => (
-                  <article key={item.title} className="bg-white px-5 py-5 sm:px-6">
-                    <h3 className="text-base font-extrabold text-green-deep">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-charcoal/65">{item.description}</p>
-                  </article>
-                ))}
-              </div>
-            </section>
 
             <blockquote className="my-10 border-y-2 border-gold/70 py-7 text-center sm:my-12 sm:py-8">
               {content.declaration.map((line) => <p key={line} className="editorial-title text-3xl font-bold leading-snug text-green-deep sm:text-4xl">{line}</p>)}
