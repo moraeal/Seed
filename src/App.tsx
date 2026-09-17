@@ -36,6 +36,8 @@ const SeedLanguage = lazy(() => import("./pages/SeedLanguage"));
 const SeedLanguageDetail = lazy(() => import("./pages/SeedLanguageDetail"));
 const Insights = lazy(() => import("./pages/Insights"));
 const SearchPage = lazy(() => import("./pages/Search"));
+const LegislativeWatch = lazy(() => import("./pages/LegislativeWatch"));
+const LegislativeBillDetail = lazy(() => import("./pages/LegislativeBillDetail"));
 
 function AppShell() {
   const location = useLocation();
@@ -60,6 +62,7 @@ function AppShell() {
           <Route path="/insights/subscribers" element={<Insights />} />
           <Route path="/insights/members" element={<Insights />} />
           <Route path="/insights/featured" element={<Insights />} />
+          <Route path="/insights/legislation" element={<Insights />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/publisher-message" element={<PublisherMessage />} />
@@ -75,6 +78,8 @@ function AppShell() {
           <Route path="/news" element={<News />} />
           <Route path="/news/:slug" element={<HotIssueDetail />} />
           <Route path="/monitoring" element={<Monitoring />} />
+          <Route path="/monitoring/legislation" element={<LegislativeWatch />} />
+          <Route path="/monitoring/legislation/:slug" element={<LegislativeBillDetail />} />
           <Route path="/monitoring/yeosu-world-island-expo" element={<Navigate to="/briefings/yeosu-world-island-expo" replace />} />
           <Route path="/monitoring/:slug" element={<PublicInterestWatchDetail />} />
           <Route path="/research/community-chest-of-korea" element={<CommunityChestResearch />} />

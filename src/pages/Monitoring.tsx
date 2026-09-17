@@ -119,6 +119,15 @@ export default function Monitoring() {
       </header>
 
       <div className="container-page py-8 sm:py-10">
+        <section className="mb-14 grid gap-5 border-y-2 border-navy bg-green-pale/45 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center" aria-labelledby="legislative-watch-title">
+          <div>
+            <span className="section-kicker">LEGISLATIVE WATCH</span>
+            <h2 id="legislative-watch-title" className="editorial-title mt-2 text-3xl font-bold text-navy">{ko ? "새 법안, 시민의 눈으로 읽기" : "New bills, read through a civic lens"}</h2>
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-charcoal/60">{ko ? "국회에 새로 접수된 법안을 자동 수집하고, 시민의 권리와 선택·기업 활동·공공기관 권한·재정에 미칠 영향을 분석합니다. 모든 분석은 편집 검토 뒤 공개합니다." : "We collect newly introduced National Assembly bills and examine their likely effects on civic rights and choice, enterprise, public authority and public finances. Every analysis is reviewed before publication."}</p>
+          </div>
+          <Link to="/monitoring/legislation" className="button-primary whitespace-nowrap">{ko ? "입법감시 보기" : "Open Legislative Watch"}<ArrowRight size={15}/></Link>
+        </section>
+
         <section aria-labelledby="news-trackers-title">
           <div className="flex flex-col gap-3 border-b-2 border-navy pb-5 sm:flex-row sm:items-end sm:justify-between">
             <div>

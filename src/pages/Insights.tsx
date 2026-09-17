@@ -7,8 +7,9 @@ import { ContentViewStat, DailyViewStat, EngagementSummary, FunnelStat, getEngag
 import { getFeaturedContentCandidates } from "../data/featuredContent";
 import { isHotIssueColumn } from "../data/columns";
 import { getFeaturedContentPath, setFeaturedContentPath } from "../lib/featuredContent";
+import LegislativeAdminPanel from "../components/LegislativeAdminPanel";
 
-type Section = "dashboard" | "content" | "traffic" | "subscribers" | "members" | "featured";
+type Section = "dashboard" | "content" | "traffic" | "subscribers" | "members" | "featured" | "legislation";
 
 const FEATURED_ITEMS_PER_PAGE = 20;
 
@@ -19,6 +20,7 @@ const navItems: { key: Section; ko: string; en: string; path: string }[] = [
   { key: "subscribers", ko: "이메일 구독자", en: "Subscribers", path: "/insights/subscribers" },
   { key: "members", ko: "회원 관리", en: "Members", path: "/insights/members" },
   { key: "featured", ko: "메인기사 관리", en: "Featured story", path: "/insights/featured" },
+  { key: "legislation", ko: "입법감시 관리", en: "Legislative monitor", path: "/insights/legislation" },
 ];
 
 function sectionFromPath(path: string): Section {
@@ -27,6 +29,7 @@ function sectionFromPath(path: string): Section {
   if (path.endsWith("/subscribers")) return "subscribers";
   if (path.endsWith("/members")) return "members";
   if (path.endsWith("/featured")) return "featured";
+  if (path.endsWith("/legislation")) return "legislation";
   return "dashboard";
 }
 
@@ -142,6 +145,8 @@ export default function Insights() {
   return (
     <section className="min-h-[70vh] bg-ivory py-10 sm:py-14">
       <div className="container-page">
+        {section === "legislation" && session && <LegislativeAdminPanel session={session} />}
+        {section !== "legislation" && <>
         <div className="flex flex-wrap items-end justify-between gap-5 border-b-2 border-navy pb-5">
           <div><p className="section-kicker">{section === "featured" ? "PRIVATE MANAGEMENT" : "PRIVATE ANALYTICS"}</p><h1 className="editorial-title mt-2 text-4xl font-bold text-navy">{ko ? pageTitle?.ko : pageTitle?.en}</h1><p className="mt-3 text-sm text-charcoal/55">{section === "featured" ? (ko ? "메인페이지에 노출할 기사를 대표 계정으로 직접 관리합니다." : "Choose the story shown at the top of the homepage.") : (ko ? "사이트 유입, 콘텐츠 소비, 구독과 회원 현황을 분리해 확인합니다." : "Review traffic, content consumption, subscriptions and members separately.")}</p></div>
           {section !== "featured" && <div className="text-right"><button type="button" onClick={() => void refresh()} className="button-secondary" disabled={loading}><RefreshCw className={loading ? "animate-spin" : ""} size={15}/>{ko ? "새로고침" : "Refresh"}</button><p className="mt-2 text-[11px] font-semibold text-charcoal/40">{ko ? "30초마다 자동 업데이트" : "Auto-updates every 30 seconds"}{lastUpdatedAt ? ` · ${lastUpdatedAt.toLocaleTimeString(ko ? "ko-KR" : "en-US")}` : ""}</p></div>}
@@ -197,6 +202,7 @@ export default function Insights() {
           </nav>}
           {!currentFeatured && featuredPath && <p className="mt-4 text-xs text-amber-700">{ko ? "저장된 기사를 현재 콘텐츠 목록에서 찾지 못해 최신 기사로 대체 표시됩니다." : "The saved story is unavailable, so the newest story is shown instead."}</p>}
         </section>}
+        </>}
       </div>
     </section>
   );
