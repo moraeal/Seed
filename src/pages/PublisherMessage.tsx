@@ -5,9 +5,9 @@ type Section = { title: string; paragraphs: string[] };
 
 const copy = {
   ko: {
-    kicker: "PUBLISHER",
-    title: "한 사람의 질문에서 시작한\n독립 시민저널",
-    lead: "한 시민의 질문과 판단이 세상을 바꾸는 씨앗이 될 수 있다고 믿습니다. 씨앗의 소리는 작아져 있던 한 사람이 자기 목소리를 되찾고, 다른 시민의 가능성을 깨우기 위해 시작한 독립 시민미디어입니다.",
+    kicker: "OUR STORY",
+    title: "작은씨앗으로 시작한\n독립 시민저널",
+    lead: "한 시민의 질문과 판단이 세상을 바꾸는 씨앗이 될 수 있다고 믿습니다. 씨앗의 소리는 작은씨앗 한 사람의 목소리에서 출발해, 서로 다른 시민의 질문과 판단을 함께 키워가는 독립 시민저널입니다.",
     sections: [
       {
         title: "더 많은 정보, 더 적은 판단",
@@ -18,48 +18,56 @@ const copy = {
         ],
       },
       {
-        title: "나의 생각은 정말 나의 것인가",
+        title: "우리의 생각은 정말 우리의 것인가",
         paragraphs: [
-          "그래서 나 자신에게 묻게 되었습니다. 지금 내가 하는 생각은 정말 나의 것인가. 자유롭고 공정한 세상을 바란다고 말하면서 정작 누군가의 생각에 올라탄 채 떠다니고 있는 것은 아닌가.",
-          "나는 나입니다. 그러나 오랫동안 나를 충분히 선언하지 못했습니다. 생각은 있었지만 정리되지 않았고, 목소리는 있었지만 세상에 내놓을 용기가 부족했습니다. 블로그와 SNS에 생각의 조각들을 단편적으로 남겼지만, 그것들은 하나의 관점과 이야기로 이어지지 못했습니다.",
+          "그래서 우리는 스스로에게 묻습니다. 지금 우리가 하는 생각은 정말 우리의 것인가. 자유롭고 공정한 세상을 바란다고 말하면서 정작 누군가의 생각에 올라탄 채 떠다니고 있는 것은 아닌가.",
+          "우리는 각자의 목소리를 가진 시민입니다. 그러나 오랫동안 그 목소리를 충분히 드러내지 못했습니다. 생각은 있었지만 정리되지 않았고, 말하고 싶었지만 세상에 내놓을 용기가 부족했습니다. 블로그와 SNS에 생각의 조각들을 남겼지만, 그것들은 하나의 관점과 이야기로 이어지지 못했습니다.",
         ],
       },
       {
         title: "AI가 열어준 가능성",
         paragraphs: [
-          "그런 나에게 AI는 새로운 가능성을 열어주었습니다. 나를 대신해 생각한 것이 아니라, 내가 무엇을 생각하고 있었는지 더 분명하게 바라보도록 도왔습니다. 흩어진 생각을 정리하고 부족한 자료를 보완하면서, 막연했던 문제의식은 글과 콘텐츠로 자라기 시작했습니다.",
-          "씨앗의 소리는 그렇게 시작되었습니다. 코딩이나 웹 개발을 배운 적 없는 한 사람의 질문과 AI의 도움으로 출발한 독립 시민미디어입니다. 나는 질문과 판단을 세우고, AI는 자료 조사와 구조화, 사실관계의 교차검토를 돕습니다. 무엇을 질문하고 어떻게 판단할 것인지, 그 결과에 책임지는 일은 온전히 나의 몫입니다.",
+          "씨앗의 소리를 처음 시작한 작은씨앗에게 AI는 새로운 가능성을 열어주었습니다. 사람을 대신해 생각한 것이 아니라, 무엇을 생각하고 있었는지 더 분명하게 바라보도록 도왔습니다. 흩어진 생각을 정리하고 부족한 자료를 보완하면서, 막연했던 문제의식은 글과 콘텐츠로 자라기 시작했습니다.",
+          "씨앗의 소리는 그렇게 시작되었습니다. 코딩이나 웹 개발을 배운 적 없는 한 사람의 질문과 AI의 도움으로 출발한 독립 시민저널입니다. 이제 우리는 각자의 질문과 판단을 세우고, AI는 자료 조사와 구조화, 사실관계의 교차검토를 돕습니다. 무엇을 질문하고 어떻게 판단할 것인지, 그 결과에 책임지는 일은 온전히 우리의 몫입니다.",
         ],
       },
       {
         title: "불완전함을 감추지 않겠습니다",
         paragraphs: [
           "AI는 사실을 보증하는 심판도, 인간의 생각을 대신하는 주인도 아닙니다. 씨앗의 소리는 출처를 확인하고 서로 다른 자료를 대조하며, 오류가 발견되면 공개적으로 바로잡겠습니다. 사실과 의견을 구분하고 AI를 활용한 과정도 숨기지 않겠습니다.",
-          "나의 생각은 불완전합니다. 많은 자료를 검토해도 놓치는 사실과 잘못된 판단이 있을 수 있습니다. 중요한 것은 생각하지 않는 완벽함이 아니라, 질문하고 검증하고 수정하면서 성장하는 과정입니다.",
-          "나는 이곳에서 지금까지 꺼내지 못했던 목소리를 펼쳐보려 합니다. 권력이 당연하다고 말하는 것을 다시 묻고, 시민사회의 이름으로 행해지는 일도 시민의 관점에서 살펴보겠습니다. 진영이 정해준 생각을 반복하기보다 내가 확인한 사실과 내가 세운 기준으로 판단하겠습니다.",
+          "우리의 생각은 불완전합니다. 많은 자료를 검토해도 놓치는 사실과 잘못된 판단이 있을 수 있습니다. 중요한 것은 생각하지 않는 완벽함이 아니라, 질문하고 검증하고 수정하면서 성장하는 과정입니다.",
+          "우리는 이곳에서 지금까지 꺼내지 못했던 시민의 목소리를 펼쳐보려 합니다. 권력이 당연하다고 말하는 것을 다시 묻고, 시민사회의 이름으로 행해지는 일도 시민의 관점에서 살펴보겠습니다. 진영이 정해준 생각을 반복하기보다 우리가 확인한 사실과 우리가 세운 기준으로 판단하겠습니다.",
         ],
       },
       {
-        title: "한 사람의 씨앗에서, 더 많은 시민의 씨앗으로",
+        title: "작은씨앗에서, 더 많은 시민의 씨앗으로",
         paragraphs: [
-          "씨앗의 소리는 거대한 언론사가 아닙니다. 한 사람의 질문에서 시작해 더 많은 시민의 목소리로 자라려는 독립 시민미디어입니다. 작은 씨앗 하나에도 숲으로 성장할 가능성이 들어 있습니다.",
+          "씨앗의 소리는 거대한 언론사가 아닙니다. 작은씨앗 한 사람의 질문에서 시작해 더 많은 시민의 목소리로 자라려는 독립 시민저널입니다. 작은 씨앗 하나에도 숲으로 성장할 가능성이 들어 있습니다.",
           "AI의 도움으로 한 사람이 자신의 생각을 세우고 세상에 발언할 수 있다면, 다른 시민도 그렇게 할 수 있습니다. 전문가나 유명인만이 아니라 평범한 시민도 자신의 질문과 경험을 공적인 목소리로 발전시킬 수 있습니다.",
         ],
       },
     ] satisfies Section[],
-    declaration: ["내가 시민입니다.", "나는 세상을 바꾸는 작은 씨앗입니다."],
-    closing: "씨앗의 소리는 나를 다시 세우고 성장시키기 위한 첫 번째 시도입니다. 이 작은 시도가 또 다른 시민이 자신의 목소리를 발견하는 계기가 되고, 한 사람의 씨앗들이 자라 서로 연결되기를 바랍니다.",
+    declaration: ["우리가 시민입니다.", "우리는 세상을 바꾸는 작은 씨앗들입니다."],
+    closing: "씨앗의 소리는 우리 각자가 자신의 목소리를 바로 세우고 함께 성장하기 위한 시도입니다. 이 작은 시도가 또 다른 시민이 자기 목소리를 발견하는 계기가 되고, 한 사람 한 사람의 씨앗이 자라 서로 연결되기를 바랍니다.",
     imageAlt: "갈라진 콘크리트에서 돋아난 작은 새싹과 여러 시민을 닮은 그림자",
-    imageCaption: "작은씨앗의 목소리가 여러 시민의 목소리로 자랍니다.",
-    founderKicker: "PUBLISHER",
-    founderName: "작은씨앗",
-    founderRole: "씨앗의 소리 발행인",
-    founderBio: "시민사회와 공공영역, 기업 현장을 두루 경험해 온 시민사회 활동가이자 공익 기획자입니다. 국가·시장·시민사회가 만나는 여러 현장에서 활동하며 제도와 조직이 시민의 삶에 어떤 영향을 미치는지 지켜봐 왔습니다. 씨앗의 소리에서는 특정 진영이나 권위에 기대지 않고, 한 시민의 질문과 판단으로 사실을 확인하고 자유와 책임의 기준에서 국가와 시민사회의 권력을 함께 살피고자 합니다.",
+    imageCaption: "작은씨앗에서 시작한 목소리가 여러 시민의 목소리로 자랍니다.",
+    contributorsKicker: "CONTRIBUTORS",
+    contributorsTitle: "필진 소개",
+    contributors: [
+      {
+        name: "작은씨앗",
+        bio: "시민사회와 공공영역, 기업 현장을 두루 경험해 온 시민사회 활동가이자 공익 기획자입니다. 국가·시장·시민사회가 만나는 여러 현장에서 활동하며 제도와 조직이 시민의 삶에 어떤 영향을 미치는지 지켜봐 왔습니다. 씨앗의 소리에서는 특정 진영이나 권위에 기대지 않고, 한 시민의 질문과 판단으로 사실을 확인하고 자유와 책임의 기준에서 국가와 시민사회의 권력을 함께 살피고자 합니다.",
+      },
+      {
+        name: "경계의 시민",
+        bio: "공군 부사관과 장교로 복무하며 국방·교육·공보 현장을 경험했습니다. 북한학을 전공하고 러시아·CIS 지역의 정치와 국제관계를 연구하고 있습니다. 씨앗의 소리에서는 군과 안보, 북한과 통일 문제를 시민의 자유와 권리라는 자리에서 살펴봅니다. 안보의 필요성을 인정하면서도 그 이름 아래 시민의 권리가 가려지지 않는지 묻습니다.",
+      },
+    ],
   },
   en: {
     kicker: "PUBLISHER",
-    title: "An independent civic journal begun with one citizen’s questions",
-    lead: "We believe one citizen’s questions and judgment can become a seed of change. SEED VOICE is an independent civic publication begun by one person who decided to recover his own voice and awaken that possibility in others.",
+    title: "An Independent Civic Journal That Began with Small Seed",
+    lead: "We believe one citizen’s questions and judgment can become a seed of change. SEED VOICE began with Small Seed’s voice and is growing into an independent civic journal where different citizens develop their questions and judgments together.",
     sections: [
       {
         title: "More information, less independent judgment",
@@ -70,43 +78,51 @@ const copy = {
         ],
       },
       {
-        title: "Are my thoughts really my own?",
+        title: "Are our thoughts really our own?",
         paragraphs: [
-          "That led me to ask: Are the thoughts I hold truly mine? I say I want a free and fair society—but am I living by my own judgment, or being carried by ideas someone else has already chosen for me?",
-          "I am myself. Yet for a long time I did not fully declare who I was. I had thoughts but could not organize them; I had a voice but lacked the courage to put it into the world. I left fragments on blogs and social media, but they did not yet form a coherent perspective or story.",
+          "That leads us to ask: Are the thoughts we hold truly our own? We say we want a free and fair society—but are we living by our own judgment, or being carried by ideas someone else has already chosen for us?",
+          "We are citizens with voices of our own. Yet for a long time, we did not fully bring those voices into the world. We had thoughts but could not organize them; we wanted to speak but lacked the courage to do so. We left fragments on blogs and social media, but they did not yet form a coherent perspective or story.",
         ],
       },
       {
         title: "The possibility opened by AI",
         paragraphs: [
-          "AI opened a new possibility for me. It did not think in my place; it helped me see more clearly what I had been trying to think. As scattered ideas were organized and missing sources filled in, vague concerns began to grow into public writing.",
-          "That is how SEED VOICE began: an independent civic publication born from one person’s questions and the help of AI, without prior training in coding or web development. I set the questions and make the judgments; AI assists with research, structure, and cross-checking. Responsibility for the result remains entirely mine.",
+          "For Small Seed, who first started SEED VOICE, AI opened a new possibility. It did not replace human thought; it helped clarify what had been difficult to articulate. As scattered ideas were organized and missing sources filled in, vague concerns began to grow into public writing.",
+          "That is how SEED VOICE began: an independent civic journal born from one person’s questions and the help of AI, without prior training in coding or web development. Today, we set our own questions and judgments; AI assists with research, structure, and cross-checking. Responsibility for the result remains entirely ours.",
         ],
       },
       {
         title: "We will not conceal our incompleteness",
         paragraphs: [
           "AI is neither an arbiter that guarantees facts nor a master that replaces human thought. SEED VOICE will check sources, compare records, correct errors openly, distinguish fact from opinion, and be transparent about how AI has been used.",
-          "My thinking is incomplete. Research cannot eliminate every omission or mistaken judgment. What matters is not the perfection of never thinking, but the discipline of questioning, verifying, correcting, and growing.",
-          "Here I will bring forward a voice I once hesitated to use. I will question what power presents as self-evident and examine actions taken in the name of civil society from the citizen’s point of view. Rather than repeat the opinions assigned by political camps, I will judge by the facts I can verify and the principles I am prepared to defend.",
+          "Our thinking is incomplete. Research cannot eliminate every omission or mistaken judgment. What matters is not the perfection of never thinking, but the discipline of questioning, verifying, correcting, and growing.",
+          "Here we will bring forward civic voices that have too often remained unspoken. We will question what power presents as self-evident and examine actions taken in the name of civil society from the citizen’s point of view. Rather than repeat the opinions assigned by political camps, we will judge by the facts we can verify and the principles we are prepared to defend.",
         ],
       },
       {
-        title: "From one seed to many civic seeds",
+        title: "From Small Seed to many civic seeds",
         paragraphs: [
-          "SEED VOICE is not a large news organization. It began with one person’s questions and seeks to grow through the voices of more citizens. Even the smallest seed contains the possibility of a forest.",
+          "SEED VOICE is not a large news organization. It began with Small Seed’s questions and seeks to grow through the voices of more citizens. Even the smallest seed contains the possibility of a forest.",
           "If AI can help one person organize a judgment and speak in public, others can do the same. Media need not belong only to experts or public figures; ordinary citizens can develop their questions and experience into public voices of their own.",
         ],
       },
     ] satisfies Section[],
-    declaration: ["I am a citizen.", "I am a small seed capable of changing the world."],
-    closing: "SEED VOICE is my first attempt to stand upright and continue growing. I hope it helps another citizen discover a voice of their own, so that individual seeds may grow and connect.",
+    declaration: ["We are citizens.", "We are small seeds capable of changing the world."],
+    closing: "SEED VOICE is our effort to stand in our own voices and continue growing together. We hope it helps another citizen discover a voice of their own, so that individual seeds may grow and connect.",
     imageAlt: "A small seedling emerging through cracked concrete and casting shadows that resemble a group of citizens",
-    imageCaption: "Small Seed’s voice can grow into the voices of many citizens.",
-    founderKicker: "PUBLISHER",
-    founderName: "Small Seed",
-    founderRole: "Publisher, SEED VOICE",
-    founderBio: "A civic-society activist and public-interest planner with experience across civil society, public institutions, and the business sector. Having worked where government, markets, and civil society meet, I have watched closely how institutions and organizations affect citizens’ everyday lives. At SEED VOICE, I aim to verify facts and scrutinize power in both the state and civil society through the principles of freedom and responsibility, without relying on partisan camps or borrowed authority.",
+    imageCaption: "The voice that began with Small Seed can grow into the voices of many citizens.",
+    contributorsKicker: "CONTRIBUTORS",
+    contributorsTitle: "Meet the Contributors",
+    contributors: [
+      {
+        name: "Small Seed",
+        bio: "A civic-society activist and public-interest planner with experience across civil society, public institutions, and the business sector. Having worked where government, markets, and civil society meet, Small Seed has watched closely how institutions and organizations affect citizens’ everyday lives. At SEED VOICE, Small Seed verifies facts and scrutinizes power in both the state and civil society through the principles of freedom and responsibility, without relying on partisan camps or borrowed authority.",
+      },
+      {
+        name: "Citizen at the Boundary",
+        bio: "A former Air Force noncommissioned officer and commissioned officer with experience in defense, education, and public affairs. His research focuses on North Korea and the politics and international relations of Russia and the CIS. At SEED VOICE, he examines the military, security, North Korea, and unification from the standpoint of civic freedom and rights. He recognizes the necessity of security while asking whether citizens’ rights are being obscured in its name.",
+      },
+    ],
   },
 };
 
@@ -150,10 +166,16 @@ export default function PublisherMessage() {
             <p className="text-[17px] leading-[1.82] text-charcoal/75 sm:text-lg">{content.closing}</p>
 
             <section className="mt-10 border-y border-green-deep/15 bg-[#F1F2EC] px-6 py-7 sm:mt-12 sm:px-10 sm:py-8">
-              <p className="section-kicker">{content.founderKicker}</p>
-              <h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{content.founderName}</h2>
-              <p className="mt-2 text-sm font-bold text-green-deep/75">{content.founderRole}</p>
-              <p className="mt-4 text-base leading-7 text-charcoal/68">{content.founderBio}</p>
+              <p className="section-kicker">{content.contributorsKicker}</p>
+              <h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{content.contributorsTitle}</h2>
+              <div className="mt-7 divide-y divide-green-deep/15">
+                {content.contributors.map((contributor) => (
+                  <article key={contributor.name} className="py-6 first:pt-0 last:pb-0">
+                    <h3 className="editorial-title text-2xl font-bold text-navy">{contributor.name}</h3>
+                    <p className="mt-4 text-base leading-7 text-charcoal/68">{contributor.bio}</p>
+                  </article>
+                ))}
+              </div>
             </section>
           </div>
 
