@@ -19,15 +19,15 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     en: "On October 2, 2026, South Korea's Prosecution Service will be abolished and replaced by a Prosecution Agency and a Serious Crimes Investigation Agency. This record follows where the powers to investigate, indict, seek warrants and review non-referral decisions actually move—and whether staffing, budgets and case transfers are ready.",
   },
   status: {
-    ko: "출범 15일 전·중수청법 개정안 법사위 회부",
-    en: "15 days to launch · Investigation-agency bill sent to the Legislation Committee",
+    ko: "출범 14일 전·중수청법 개정안 본회의 통과",
+    en: "14 days to launch · Investigation-agency amendment passes Parliament",
   },
   openedAt: "2025-09-05",
-  updatedAt: "2026-09-17",
+  updatedAt: "2026-09-18",
   continuationEligible: true,
   nextCheck: {
-    ko: "사회적 약자 대상 7대 범죄의 보완·재수사 근거를 담은 중수청법 개정안의 법사위·본회의 처리 결과, 9월 20일 마감되는 2차 특례임용의 지원·선정 인원, 공소청 최종 직제와 검사 정원, 김지용 중수청장 후보자의 인사청문 절차, 10월 2일 실제 출범 인원·사건 이관·KICS 필수 기능 가동 여부",
-    en: "The Legislation Committee and plenary outcome of the bill covering supplementary and renewed investigations in seven vulnerable-victim crime categories; application and selection figures from the second special-transfer round closing September 20; the final Prosecution Agency structure and prosecutor headcount; the confirmation process for nominee Kim Ji-yong; and actual staffing, case transfers and essential KICS functions on October 2",
+    ko: "사회적 약자 대상 7대 범죄의 보완·재수사 근거를 담은 중수청법 개정안의 정부 이송·공포와 최종 조문, 9월 20일 마감되는 2차 특례임용의 지원·선정 인원, 공소청 최종 직제와 검사 정원, 김지용 중수청장 후보자의 인사청문 절차, 10월 2일 실제 출범 인원·사건 이관·KICS 필수 기능 가동 여부",
+    en: "Transmission, promulgation and final text of the amendment covering supplementary and renewed investigations in seven vulnerable-victim crime categories; application and selection figures from the second special-transfer round closing September 20; the final Prosecution Agency structure and prosecutor headcount; the confirmation process for nominee Kim Ji-yong; and actual staffing, case transfers and essential KICS functions on October 2",
   },
   heroImage: {
     src: "images/monitoring/prosecution-service-abolition-tracker-hero.webp",
@@ -45,8 +45,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     },
   },
   sourceBasis: {
-    ko: "정부조직법·공소청법·중대범죄수사청법·형사소송법과 시행령·직제 등 공포된 법령을 기준으로 삼았습니다. 아직 입법예고 중인 공소청 직제안, 행정안전위원회를 통과해 법사위 심사 전인 중수청법 개정안, 국회 의결 전인 2027년도 예산안은 확정된 제도·예산과 구분했습니다. 언론 보도는 원문 제목·공개일·사진을 대조했고 사용 제외 매체가 직접·간접 출처로 들어오지 않았는지도 확인했습니다.",
-    en: "This record is anchored in promulgated statutes and decrees: the Government Organization Act, the Prosecution Agency Act, the Serious Crimes Investigation Agency Act, the Criminal Procedure Act and their implementing rules. The draft Prosecution Agency organization plan, the investigation-agency amendment approved by the Interior Committee but not yet reviewed by the Legislation Committee, and the government's still-unapproved 2027 budget proposal are kept separate from settled law and appropriations. Original headlines, publication dates and images were cross-checked, including for excluded direct or indirect sources.",
+    ko: "정부조직법·공소청법·중대범죄수사청법·형사소송법과 시행령·직제 등 공포된 법령을 기준으로 삼았습니다. 아직 입법예고 중인 공소청 직제안, 국회 본회의를 통과했지만 공포 전인 중수청법 개정안, 국회 의결 전인 2027년도 예산안은 확정된 제도·예산과 구분했습니다. 언론 보도는 원문 제목·공개일·사진을 대조했고 사용 제외 매체가 직접·간접 출처로 들어오지 않았는지도 확인했습니다.",
+    en: "This record is anchored in promulgated statutes and decrees: the Government Organization Act, the Prosecution Agency Act, the Serious Crimes Investigation Agency Act, the Criminal Procedure Act and their implementing rules. The draft Prosecution Agency organization plan, the investigation-agency amendment passed by Parliament but not yet promulgated, and the government's still-unapproved 2027 budget proposal are kept separate from settled law and appropriations. Original headlines, publication dates and images were cross-checked, including for excluded direct or indirect sources.",
   },
   keyChanges: [
     {
@@ -80,8 +80,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     {
       date: "2026-09-15",
       text: {
-        ko: "국회 행정안전위원회가 사회적 약자 대상 7대 범죄에서 검사가 중수청에 보완수사·재수사를 요구할 수 있도록 하는 개정안을 수정 가결했습니다. 법사위와 본회의를 남겨둔 상임위 의결 단계입니다.",
-        en: "The National Assembly's Interior Committee amended and approved a bill allowing prosecutors to request supplementary or renewed investigation by the new agency in seven vulnerable-victim crime categories. It still awaits Legislation Committee and plenary consideration.",
+        ko: "국회 행정안전위원회가 사회적 약자 대상 7대 범죄에서 검사가 중수청에 보완수사·재수사를 요구할 수 있도록 하는 개정안을 수정 가결했습니다.",
+        en: "The National Assembly's Interior Committee amended and approved a bill allowing prosecutors to request supplementary or renewed investigation by the new agency in seven vulnerable-victim crime categories.",
       },
     },
     {
@@ -89,6 +89,13 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       text: {
         ko: "행정안전부는 1차 특례임용 지원 부족 뒤 검사와 검찰청 직원을 대상으로 2차 접수를 시작했습니다. 9월 20일 마감하고 별도 철회기간 없이 9월 말까지 선발하지만, 추가 지원자와 실제 임용 인원은 아직 공개되지 않았습니다.",
         en: "After the first special-transfer round fell short, the Interior Ministry opened a second round for prosecutors and Prosecution Service staff. Applications close September 20 and selections are due by month-end without a withdrawal period, but additional applicant and appointment totals have not yet been released.",
+      },
+    },
+    {
+      date: "2026-09-17",
+      text: {
+        ko: "중수청이 사회적 약자 대상 7대 범죄의 보완·재수사를 맡을 수 있도록 한 개정안이 법사위를 거쳐 국회 본회의에서 수정 가결됐습니다. 국회 심사는 끝났지만 정부 이송과 공포가 남았습니다.",
+        en: "An amendment authorizing the new agency to conduct supplementary or renewed investigations in seven vulnerable-victim crime categories passed the Legislation Committee and the National Assembly plenary session. Parliamentary review is complete, but transmission to the government and promulgation remain.",
       },
     },
   ],
@@ -442,18 +449,18 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       ],
     },
     {
-      date: "2026-09-15",
+      date: "2026-09-17",
       title: {
-        ko: "행안위, 사회적 약자 7대 범죄 중수청 보완·재수사안 통과",
-        en: "Committee advances follow-up investigation powers for seven vulnerable-victim crime categories",
+        ko: "사회적 약자 7대 범죄 중수청 보완·재수사안, 국회 통과",
+        en: "Parliament passes follow-up investigation powers for seven vulnerable-victim crime categories",
       },
       description: {
-        ko: "국회 행정안전위원회는 의안번호 2220544 중수청법 개정안을 수정 가결했습니다. 이 안은 성폭력, 아동·청소년 대상 성범죄, 스토킹, 아동학대, 장애인학대, 노인학대, 가정폭력 사건에서 검사가 중수청 또는 지방중수청에 보완수사·재수사를 요구하고 중수청이 이를 수행할 법적 근거를 둡니다. 피해자 보호를 보완하려는 조치지만 전체 범죄가 아니라 7개 범주에 한정됩니다. 공식 의안 페이지는 8월 11일 발의된 원안과 9월 15일 수정가결·법사위 회부 기록을 함께 제공합니다. 아직 본회의 의결·공포 전입니다.",
-        en: "The National Assembly's Interior Committee amended and approved Bill No. 2220544. It would allow prosecutors to request supplementary or renewed investigation by the Serious Crimes Investigation Agency or its regional offices in cases involving sexual violence, sexual crimes against children and adolescents, stalking, child abuse, abuse of persons with disabilities, elder abuse and domestic violence. The measure seeks to strengthen victim protection but is limited to seven categories. The official bill page combines the proposal filed on August 11 with its amended approval and referral to the Legislation Committee on September 15. It has not yet passed the plenary session or been promulgated.",
+        ko: "국회는 의안번호 2220544 중수청법 개정안을 9월 16일 법제사법위원회 수정 가결에 이어 17일 본회의에서 수정 가결했습니다. 이 안은 성폭력, 아동·청소년 대상 성범죄, 스토킹, 아동학대, 장애인학대, 노인학대, 가정폭력 사건에서 검사가 중수청 또는 지방중수청에 보완수사·재수사를 요구하고 중수청이 이를 수행할 법적 근거를 둡니다. 피해자 보호를 위한 예외적 수사 범위를 7개 범주에 둔 것입니다. 공식 의안 페이지는 8월 11일 공개된 발의 문서에 9월 15일 행안위, 16일 법사위, 17일 본회의 처리 기록을 누적한 자료입니다. 국회 심사는 끝났지만 아직 정부 이송·공포 전입니다.",
+        en: "Parliament amended and approved Bill No. 2220544 in the Legislation and Judiciary Committee on September 16 and again in plenary on September 17. The bill allows prosecutors to request supplementary or renewed investigation by the Serious Crimes Investigation Agency or its regional offices in cases involving sexual violence, sexual crimes against children and adolescents, stalking, child abuse, abuse of persons with disabilities, elder abuse and domestic violence. It creates a limited victim-protection exception covering seven categories. The official bill page is a continuously updated legislative record: it pairs the proposal published on August 11 with the Interior Committee action on September 15, Legislation Committee action on September 16 and plenary approval on September 17. Parliamentary review is complete, but transmission to the government and promulgation remain.",
       },
       change: {
-        ko: "수사·기소 분리 뒤 피해자 구제를 위한 중수청의 예외적 수사 범위가 상임위 문턱을 넘음",
-        en: "A committee clears limited follow-up investigation powers intended to protect victims after the investigation-prosecution split",
+        ko: "수사·기소 분리 뒤 피해자 구제를 위한 중수청의 예외적 수사 범위가 국회 심사를 마침",
+        en: "Parliament completes review of limited follow-up investigation powers intended to protect victims after the investigation-prosecution split",
       },
       status: "new",
       sources: [
@@ -594,8 +601,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       en: "As of September 15, the Prosecution Agency structure and prosecutor headcount remain under review; the September 4 draft is not final.",
     },
     {
-      ko: "사회적 약자 대상 7대 범죄의 보완·재수사를 중수청이 맡을 수 있도록 하는 개정안은 9월 15일 행정안전위원회를 통과했지만 아직 법사위·본회의 의결과 공포를 거치지 않았습니다.",
-      en: "An amendment allowing the new agency to conduct supplementary or renewed investigations in seven vulnerable-victim crime categories passed the Interior Committee on September 15 but still requires Legislation Committee and plenary approval and promulgation.",
+      ko: "사회적 약자 대상 7대 범죄의 보완·재수사를 중수청이 맡을 수 있도록 하는 개정안은 9월 17일 국회 본회의를 통과했습니다. 아직 정부 이송과 공포를 거친 법률은 아닙니다.",
+      en: "An amendment allowing the new agency to conduct supplementary or renewed investigations in seven vulnerable-victim crime categories passed the National Assembly plenary session on September 17. It has not yet been transmitted to the government and promulgated as law.",
     },
   ],
   currentControversies: [
@@ -609,8 +616,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     {
       title: { ko: "보완수사 폐지는 개혁인가, 피해자 구제의 공백인가", en: "Reform—or a gap in remedies for victims?" },
       description: {
-        ko: "직접 보완수사를 없애야 수사·기소가 분리된다는 주장이 있습니다. 반면 기록만 보고 기소 여부를 판단하면 사건이 반복해서 오가고 피해자 구제가 늦어질 수 있다는 반론도 강합니다. 행안위를 통과한 개정안은 사회적 약자 대상 7대 범죄에 한해 중수청이 보완·재수사를 맡도록 했습니다. 이 제한적 보완책으로 공백이 줄어드는지는 처리기간과 재수사 요구 이행률로 확인해야 합니다.",
-        en: "One side argues that genuine separation requires ending prosecutors' supplementary investigations. The strongest counterargument is that file-only review may send cases back and forth and delay relief for victims. The committee-approved amendment would let the new agency conduct follow-up investigations in seven vulnerable-victim crime categories. Processing times and compliance rates will show whether this limited safeguard closes the gap.",
+        ko: "직접 보완수사를 없애야 수사·기소가 분리된다는 주장이 있습니다. 반면 기록만 보고 기소 여부를 판단하면 사건이 반복해서 오가고 피해자 구제가 늦어질 수 있다는 반론도 강합니다. 국회를 통과한 개정안은 사회적 약자 대상 7대 범죄에 한해 중수청이 보완·재수사를 맡도록 했습니다. 이 제한적 보완책으로 공백이 줄어드는지는 공포 뒤 처리기간과 재수사 요구 이행률로 확인해야 합니다.",
+        en: "One side argues that genuine separation requires ending prosecutors' supplementary investigations. The strongest counterargument is that file-only review may send cases back and forth and delay relief for victims. The amendment passed by Parliament would let the new agency conduct follow-up investigations in seven vulnerable-victim crime categories. After promulgation, processing times and compliance rates will show whether this limited safeguard closes the gap.",
       },
     },
     {
@@ -635,8 +642,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
   },
   followUpChecks: [
     {
-      ko: "중수청법 개정안 의안번호 2220544의 법사위·본회의 처리 결과와 최종 7대 범죄 범위",
-      en: "Legislation Committee and plenary outcome of Bill No. 2220544 and the final scope of the seven covered crime categories",
+      ko: "중수청법 개정안 의안번호 2220544의 정부 이송·공포일, 법률번호와 최종 7대 범죄 조문",
+      en: "Government transmission and promulgation dates, act number and final seven-category text for Bill No. 2220544",
     },
     {
       ko: "2차 특례임용의 지원·선정 인원, 공소청 최종 검사·직원 정원과 중수청의 실제 출근 인원·결원율",
@@ -719,7 +726,7 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     {
       label: { ko: "중수청법 일부개정안·의안번호 2220544", en: "Investigation agency amendment, Bill No. 2220544" },
       url: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2220544/detailRP",
-      note: { ko: "사회적 약자 대상 7대 범죄 보완·재수사 근거와 9월 15일 행안위 수정가결 기록", en: "Grounds for follow-up investigations in seven vulnerable-victim crime categories and the Interior Committee's September 15 amended approval" },
+      note: { ko: "사회적 약자 대상 7대 범죄 보완·재수사 근거와 9월 15일 행안위·16일 법사위·17일 본회의 수정가결 기록", en: "Grounds for follow-up investigations in seven vulnerable-victim crime categories and amended approvals by the Interior Committee on September 15, Legislation Committee on September 16 and plenary session on September 17" },
     },
   ],
 };
