@@ -94,16 +94,16 @@ export default function Home() {
       summary: ko ? "법의 지배와 권력분립, 시민과 기업의 자유를 지키며 국가와 시민사회의 권력을 감시하는 이유를 밝힙니다." : "Why SEED VOICE defends the rule of law, separated powers, and civic and economic freedom while watching power in the state and civil society.",
     },
     {
-      to: "/publisher-message",
-      kicker: ko ? "발행인 소개" : "ABOUT THE PUBLISHER",
-      title: ko ? "작은씨앗" : "Small Seed",
-      summary: ko ? "전문가나 유명인의 권위가 아니라 한 시민의 질문과 판단에서 시작해 더 많은 시민의 목소리로 자라려는 독립 시민저널의 이야기입니다." : "The story of an independent civic journal that began with one citizen’s questions and seeks to grow through the voices of many.",
-    },
-    {
       to: "/founding-statement",
       kicker: ko ? "취지문 전문" : "FULL STATEMENT",
       title: ko ? "왜 지금 씨앗의 소리인가" : "Why SEED VOICE, Why Now",
       summary: ko ? "민주의 시대를 넘어 시민의 시대로 가야 하는 이유와 씨앗의 소리가 감시할 권력을 밝힌 원고 전문입니다." : "The full statement on moving beyond political camps toward an age of citizens—and the powers SEED VOICE will watch.",
+    },
+    {
+      to: "/publisher-message",
+      kicker: ko ? "필진 소개" : "CONTRIBUTORS",
+      title: ko ? "작은씨앗 · 경계의 시민" : "Small Seed · Citizen at the Boundary",
+      summary: ko ? "서로 다른 현장과 경험에서 출발한 두 시민이 각자의 질문과 판단으로 씨앗의 소리를 만들어갑니다." : "Two citizens shaped by different fields and experiences build SEED VOICE through their own questions and judgment.",
     },
   ];
 
