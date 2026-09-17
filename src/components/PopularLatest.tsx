@@ -19,7 +19,7 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
   || import.meta.env.VITE_SUPABASE_ANON_KEY
   || "sb_publishable_gf96jsxTYvTeAzOL1AsBIA_fs4RlDje";
 
-export default function PopularLatest() {
+export default function PopularLatest({ featuredPath }: { featuredPath?: string }) {
   const { language } = useLanguage();
   const ko = language === "ko";
   const [popular, setPopular] = useState<PublicTopContent[]>([]);
@@ -78,10 +78,10 @@ export default function PopularLatest() {
     });
 
     return items
-      .filter((item) => Boolean(item.date))
+      .filter((item) => Boolean(item.date) && item.path !== featuredPath)
       .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
       .slice(0, 5);
-  }, [language]);
+  }, [featuredPath, language]);
 
   useEffect(() => {
     let active = true;
