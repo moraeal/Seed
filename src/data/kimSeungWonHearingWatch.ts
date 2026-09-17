@@ -243,7 +243,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
         },
         {
           publisher: { ko: "한국일보", en: "Hankook Ilbo" },
-          title: { ko: "식약처 "국내 3곳서 제넨셀 치료제 투약"…청문회에도 풀리지 않는 의혹 논란", en: "Regulator data show Genencell trial participants across three Korean institutions" },
+          title: { ko: "식약처 ‘국내 3곳서 제넨셀 치료제 투약’…청문회에도 풀리지 않는 의혹 논란", en: "Regulator data show Genencell trial participants across three Korean institutions" },
           url: "https://www.hankookilbo.com/News/Read/A2026091614160002035",
           publishedAt: "2026-09-17",
           thumbnailSrc: "https://newsimg.hankookilbo.com/2026/09/16/dc39d67d-50ef-423e-a327-6a445a055999.jpg",
