@@ -5,7 +5,7 @@ const photoCredit = "Photo or source material from the original manuscript";
 export const issue23: ColumnTranslation = {
   title: "What We Found Measuring Radiation Across Fukushima",
   subtitle: "A three-day walk through the accident zone to test what fear had taught me about nuclear power",
-  author: "The Citizen Who Looks Again",
+  author: "Beyond Thought",
   authorBio: "A citizen who came to reconsider nuclear power and energy after years in the student movement and progressive politics. While gathering evidence to rebut the nuclear industry, he began testing his own assumptions, cross-checked the claims of both sides and changed his judgment. As a policy coordinator with the Facts and Science Network, he examines energy, radiation and environmental questions through measurement, field observation and scientific evidence rather than familiar belief.",
   summary: "Even after my view of nuclear power became favorable, I felt a need to see the region affected by an accident for myself and give people accurate information. When the two co-representatives of the Facts and Science Network invited me to join them, I traveled through Fukushima Prefecture for three days and two nights, from May 27 to 29, 2019.",
   heroImage: {
