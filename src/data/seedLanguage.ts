@@ -4,6 +4,7 @@ import { freedomArticleEn } from "./seedLanguageFreedomEn";
 import { partisanLanguageArticleEn, partisanLanguageArticleKo } from "./seedLanguagePartisanLanguage";
 import { progressArticleEn, progressArticleKo } from "./seedLanguageProgress";
 import { discourseArticleEn, discourseArticleKo } from "./seedLanguageDiscourse";
+import { conservatismArticleEn, conservatismArticleKo } from "./seedLanguageConservatism";
 import {
   getSeedLanguageArticle as getBaseSeedLanguageArticle,
   seedLanguageArticlesKo as baseSeedLanguageArticlesKo,
@@ -14,9 +15,10 @@ export type {
   SeedLanguageImage,
 } from "./seedLanguageBase";
 
-export const seedLanguageArticlesKo = [discourseArticleKo, progressArticleKo, partisanLanguageArticleKo, freedomArticleKo, ...baseSeedLanguageArticlesKo];
+export const seedLanguageArticlesKo = [conservatismArticleKo, discourseArticleKo, progressArticleKo, partisanLanguageArticleKo, freedomArticleKo, ...baseSeedLanguageArticlesKo];
 
 export function getSeedLanguageArticle(slug: string, language: Language) {
+  if (slug === conservatismArticleKo.slug) return language === "en" ? conservatismArticleEn : conservatismArticleKo;
   if (slug === discourseArticleKo.slug) return language === "en" ? discourseArticleEn : discourseArticleKo;
   if (slug === progressArticleKo.slug) return language === "en" ? progressArticleEn : progressArticleKo;
   if (slug === partisanLanguageArticleKo.slug) return language === "en" ? partisanLanguageArticleEn : partisanLanguageArticleKo;

@@ -25,6 +25,7 @@ const seedLanguageTerms: Record<string, { hanja: string; english: string }> = {
   시민: { hanja: "市民", english: "CITIZEN" },
   자유: { hanja: "自由", english: "FREEDOM" },
   진보: { hanja: "進步", english: "PROGRESS · PROGRESSIVISM" },
+  보수: { hanja: "保守", english: "CONSERVATIVE · CONSERVATISM" },
   민주: { hanja: "民主", english: "DEMOCRACY" },
   환경: { hanja: "環境", english: "ENVIRONMENT" },
   공익: { hanja: "公益", english: "PUBLIC INTEREST" },

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">보수라는 말의 세 층위</title>
+  <desc id="desc">보수의 본래 의미, 한국에서 통용되는 보수, 씨앗이 보는 보수를 비교한다.</desc>
+  <rect width="1600" height="900" fill="#f5f1e8"/>
+  <text x="90" y="92" fill="#132f45" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="48" font-weight="800">보수라는 말의 세 층위</text>
+  <text x="90" y="140" fill="#486158" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="24">같은 이름 안에 사상적 원뜻, 한국 현대사의 경험, 씨앗의 판단 기준이 겹쳐 있다.</text>
+
+  <g transform="translate(70 210)" font-family="Pretendard, Noto Sans KR, sans-serif">
+    <g>
+      <rect width="455" height="525" rx="20" fill="#fffdf8" stroke="#174c3a" stroke-width="3"/>
+      <rect width="455" height="105" rx="20" fill="#dce9e1"/>
+      <path d="M0 85h455v20H0z" fill="#dce9e1"/>
+      <text x="32" y="52" fill="#174c3a" font-size="20" font-weight="800" letter-spacing="2">본래의 보수</text>
+      <text x="32" y="85" fill="#132f45" font-size="30" font-weight="800">검증된 질서의 보존</text>
+      <text x="32" y="155" fill="#243b46" font-size="24" font-weight="700">지킬 것</text>
+      <text x="32" y="195" fill="#486158" font-size="22">축적된 제도와 생활의 지혜</text>
+      <text x="32" y="255" fill="#243b46" font-size="24" font-weight="700">변화</text>
+      <text x="32" y="295" fill="#486158" font-size="22">급진적 전면 개조보다</text>
+      <text x="32" y="329" fill="#486158" font-size="22">점진적이고 검증된 개선</text>
+      <text x="32" y="392" fill="#243b46" font-size="24" font-weight="700">경계할 것</text>
+      <text x="32" y="432" fill="#8d4734" font-size="22">추상적 설계와 권력의 오만</text>
+      <text x="32" y="478" fill="#174c3a" font-size="20" font-weight="800">지키기 위해 고친다</text>
+    </g>
+
+    <g transform="translate(485 0)">
+      <rect width="455" height="525" rx="20" fill="#fffaf2" stroke="#b18a35" stroke-width="3"/>
+      <rect width="455" height="105" rx="20" fill="#eee2c5"/>
+      <path d="M0 85h455v20H0z" fill="#eee2c5"/>
+      <text x="32" y="52" fill="#7b5e20" font-size="20" font-weight="800" letter-spacing="2">한국의 통용 의미</text>
+      <text x="32" y="85" fill="#132f45" font-size="30" font-weight="800">안보·성장·질서</text>
+      <text x="32" y="155" fill="#243b46" font-size="24" font-weight="700">형성 배경</text>
+      <text x="32" y="195" fill="#5f533a" font-size="22">분단·전쟁·국가 수립·산업화</text>
+      <text x="32" y="255" fill="#243b46" font-size="24" font-weight="700">중심 가치</text>
+      <text x="32" y="295" fill="#5f533a" font-size="22">반공·한미동맹·시장경제</text>
+      <text x="32" y="329" fill="#5f533a" font-size="22">법질서·재산권·책임</text>
+      <text x="32" y="392" fill="#243b46" font-size="24" font-weight="700">남은 모순</text>
+      <text x="32" y="432" fill="#8d4734" font-size="22">자유와 권위주의, 시장과 관치</text>
+      <text x="32" y="478" fill="#7b5e20" font-size="20" font-weight="800">역사적 성취와 권력을 구분한다</text>
+    </g>
+
+    <g transform="translate(970 0)">
+      <rect width="455" height="525" rx="20" fill="#f8fbf9" stroke="#132f45" stroke-width="3"/>
+      <rect width="455" height="105" rx="20" fill="#dce5ec"/>
+      <path d="M0 85h455v20H0z" fill="#dce5ec"/>
+      <text x="32" y="52" fill="#174c3a" font-size="20" font-weight="800" letter-spacing="2">씨앗이 보는 보수</text>
+      <text x="32" y="85" fill="#132f45" font-size="30" font-weight="800">자유가 오래 버티는 질서</text>
+      <text x="32" y="155" fill="#243b46" font-size="24" font-weight="700">지킬 것</text>
+      <text x="32" y="195" fill="#486158" font-size="22">자유·법치·도전·책임·안보</text>
+      <text x="32" y="255" fill="#243b46" font-size="24" font-weight="700">바꿀 것</text>
+      <text x="32" y="295" fill="#486158" font-size="22">특권·정경유착·진입장벽</text>
+      <text x="32" y="329" fill="#486158" font-size="22">자기편의 권력과 권위주의</text>
+      <text x="32" y="392" fill="#243b46" font-size="24" font-weight="700">판단 기준</text>
+      <text x="32" y="432" fill="#8d4734" font-size="22">자기편에도 같은 원칙인가</text>
+      <text x="32" y="478" fill="#174c3a" font-size="20" font-weight="800">기업의 자유, 기업의 특권은 아니다</text>
+    </g>
+  </g>
+
+  <text x="800" y="815" text-anchor="middle" fill="#132f45" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="32" font-weight="800">보수는 낡은 것을 지키는 일이 아니라, 지킬 만한 것을 가려 지키는 일이다.</text>
+</svg>

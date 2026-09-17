@@ -46,6 +46,25 @@ const progressContinuation: Record<Language, EditorialContinuation> = {
   },
 };
 
+const conservatismContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/seed-language/what-is-true-progress",
+    title: "무엇이 진짜 진보인가",
+    relationship: "보수와 진보",
+    reason: "보수가 무엇을 지킬 것인지 살펴봤다면, 진보가 무엇을 바꾸고 자기편의 권력까지 고칠 수 있는지 같은 기준으로 이어서 살펴봅니다.",
+    listHref: "/seed-language",
+    listLabel: "용어해설 전체 보기",
+  },
+  en: {
+    href: "/seed-language/what-is-true-progress",
+    title: "What Is Real Progress?",
+    relationship: "CONSERVATISM AND PROGRESS",
+    reason: "After asking what conservatism should preserve, continue with whether progress can reform unjust institutions—and the power held by its own camp.",
+    listHref: "/seed-language",
+    listLabel: "All Glossary entries",
+  },
+};
+
 const discourseContinuation: Record<Language, EditorialContinuation> = {
   ko: {
     href: "/columns/citizenization-before-advancement-2026",
@@ -105,11 +124,13 @@ const farmlandTrackerContinuation: Record<Language, EditorialContinuation> = {
 
 const isFreedom = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "freedom-as-citizen-agency";
 const isProgress = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-progress";
+const isConservatism = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-conservatism";
 const isDiscourse = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "discourse-many-words-no-direction";
 const isFarmlandOwnership = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "farmland-ownership-without-an-exit";
 const isFarmlandTracker = (kind: EditorialContentKind, slug: string) => kind === "monitoring" && slug === "farmland-census-disposal-orders-tracker";
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (isConservatism(kind, slug)) return true;
   if (isFarmlandTracker(kind, slug)) return true;
   if (isFarmlandOwnership(kind, slug)) return true;
   if (isDiscourse(kind, slug)) return true;
@@ -119,6 +140,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (isConservatism(kind, slug)) return conservatismContinuation[language];
   if (isFarmlandTracker(kind, slug)) return farmlandTrackerContinuation[language];
   if (isFarmlandOwnership(kind, slug)) return farmlandOwnershipContinuation[language];
   if (isDiscourse(kind, slug)) return discourseContinuation[language];
