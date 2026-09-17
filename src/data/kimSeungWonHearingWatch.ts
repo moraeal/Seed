@@ -14,7 +14,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   },
   status: { ko: "청문회 개최·후속 확인 중", en: "Hearing held · Follow-up under way" },
   openedAt: "2026-08-31",
-  updatedAt: "2026-09-17",
+  updatedAt: "2026-09-18",
   nextCheck: {
     ko: "대통령의 공식 임명 여부와 법무부 취임 절차, 제넨셀 의혹에 대한 경찰의 재수사 여부 결정과 가족 협동조합 고발 사건의 수사 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
     en: "The president's official appointment decision and any Justice Ministry inauguration, the police decision on reinvestigating the Genencell allegation and progress in the family-cooperative complaint, and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
@@ -226,10 +226,10 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
     {
       date: "2026-09-14",
-      title: { ko: "임상시험 참여자 93명 사실 보도", en: "Trial involved 93 participants" },
+      title: { ko: "임상시험 참여자 93명·3개 기관 분포 확인", en: "Ninety-three trial participants across three institutions" },
       description: {
-        ko: "식약처 자료를 인용한 보도에서 2022년 국내 임상시험 참여자 93명이 제넨셀 치료제 후보물질 또는 위약을 투여받은 사실이 확인됐습니다. 이 숫자는 피해자 수가 아니라 전체 임상 참여자 수입니다. 식약처는 현재까지 중대한 약물이상반응은 보고되지 않았다고 밝혔습니다.",
-        en: "Reporting based on regulator data found that 93 participants in a 2022 domestic trial received either the Genencell candidate or a placebo. The figure represents all trial participants, not a count of victims. The regulator said no serious adverse drug reactions had been reported to date.",
+        ko: "식약처 자료를 인용한 보도에서 2022년 국내 임상시험 참여자 93명이 제넨셀 치료제 후보물질 또는 위약을 투여받은 사실이 확인됐습니다. 후속 공개된 식약처 자료에서는 참여자가 국내 3개 기관에 각각 9명·15명·69명으로 나뉘어 있었다는 구체적 분포도 확인됐습니다. 이 숫자는 피해자 수가 아니라 전체 임상 참여자 수입니다. 식약처는 중대하고 예상하지 못한 약물이상반응 의심사례가 보고되지 않았다고 밝혔지만, 기관명·연령대와 그 밖의 이상반응 발생 여부는 공개하지 않았습니다.",
+        en: "Reporting based on regulator data found that 93 participants in a 2022 domestic trial received either the Genencell candidate or a placebo. Follow-up regulator data showed that the participants were distributed across three Korean institutions in groups of 9, 15 and 69. The figure represents all trial participants, not a count of victims. The regulator said no suspected unexpected serious adverse reactions had been reported, but did not disclose the institutions, age groups or whether other adverse events occurred.",
       },
       change: { ko: "논쟁이 승인 절차를 넘어 실제 인체 임상 범위로 확대", en: "The dispute expands from the approval process to the scale of the human trial" },
       status: "new",
@@ -239,6 +239,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
           title: { ko: "제넨셀 임상시험 참여자 93명과 청문회 쟁점", en: "Ninety-three Genencell trial participants and the hearing issues" },
           url: "https://news.sbs.co.kr/news/endPage.do?newsId=N1008752902",
           publishedAt: "2026-09-14",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "한국일보", en: "Hankook Ilbo" },
+          title: { ko: "식약처 "국내 3곳서 제넨셀 치료제 투약"…청문회에도 풀리지 않는 의혹 논란", en: "Regulator data show Genencell trial participants across three Korean institutions" },
+          url: "https://www.hankookilbo.com/News/Read/A2026091614160002035",
+          publishedAt: "2026-09-17",
+          thumbnailSrc: "https://newsimg.hankookilbo.com/2026/09/16/dc39d67d-50ef-423e-a327-6a445a055999.jpg",
           kind: "article",
         },
       ],
@@ -618,8 +626,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     { ko: "김승원 후보자 인사청문회는 2026년 9월 15일 증인·참고인 없이 개최됐습니다.", en: "Kim Seung-won's confirmation hearing was held on September 15, 2026 without witnesses or reference witnesses." },
     { ko: "국민의힘은 증인 44명과 참고인 4명을 요구했으며 최종적으로 모두 채택되지 않았습니다.", en: "The People Power Party requested 44 witnesses and four reference witnesses; none was approved." },
     { ko: "후보자가 식약처에 임상시험 승인 관련 민원을 전달한 사실과 양모 씨를 알고 지낸 사실은 후보자의 설명으로 확인됐습니다.", en: "The nominee acknowledged relaying a clinical-trial approval petition to the regulator and knowing the woman associated with the request." },
-    { ko: "식약처 자료를 인용한 보도에 따르면 제넨셀 임상시험 참여자 93명은 치료제 후보물질 또는 위약을 투여받았습니다.", en: "According to reporting based on regulator data, 93 Genencell trial participants received either the treatment candidate or a placebo." },
-    { ko: "식약처는 현재까지 중대한 약물이상반응이 보고되지 않았다고 밝혔습니다.", en: "The regulator said no serious adverse drug reactions had been reported to date." },
+    { ko: "식약처 자료를 인용한 보도에 따르면 제넨셀 임상시험 참여자 93명은 치료제 후보물질 또는 위약을 투여받았고, 국내 3개 기관에 각각 9명·15명·69명으로 나뉘어 있었습니다.", en: "According to reporting based on regulator data, 93 Genencell trial participants received either the treatment candidate or a placebo, distributed across three Korean institutions in groups of 9, 15 and 69." },
+    { ko: "식약처는 중대하고 예상하지 못한 약물이상반응 의심사례가 보고되지 않았다고 밝혔습니다. 기관명·참여자 연령대와 그 밖의 이상반응 발생 여부는 공개되지 않았습니다.", en: "The regulator said no suspected unexpected serious adverse reactions had been reported. The institutions, participant age groups and whether other adverse events occurred were not disclosed." },
     { ko: "경향신문과 SBS가 보도한 검찰 참고인 조사 기록에 따르면 김 후보자의 문자는 당시 식약처장과 담당 실무진에게 전달됐습니다.", en: "According to the prosecution witness record reported by The Kyunghyang Shinmun and SBS, Kim's message was relayed to the regulator chief and working-level officials." },
     { ko: "김 후보자 측은 소속 보좌진이 청문위원의 질의 자료를 촬영한 사실을 인정하고 사과했으며, 후보자의 지시나 관여는 없었다고 밝혔습니다.", en: "Kim's office acknowledged and apologized for a staff member photographing a committee member's questioning material, while stating that the nominee did not direct or participate in it." },
   ],
@@ -747,6 +755,10 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       label: { ko: "동아일보 — 증인·참고인 채택 최종 무산", en: "The Dong-A Ilbo — Witness and reference-witness selection ultimately fails" },
       url: "https://www.donga.com/news/Politics/article/all/20260910/134639508/2",
+    },
+    {
+      label: { ko: "한국일보 — 식약처 자료로 확인된 임상 3개 기관·참여자 분포", en: "Hankook Ilbo — Three trial institutions and participant distribution confirmed in regulator data" },
+      url: "https://www.hankookilbo.com/News/Read/A2026091614160002035",
     },
     {
       label: { ko: "SBS — 임상시험 참여자 93명과 청문회 쟁점", en: "SBS — Ninety-three trial participants and the hearing issues" },
