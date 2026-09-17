@@ -51,10 +51,20 @@ const copy = {
     closing: "씨앗의 소리는 나를 다시 세우고 성장시키기 위한 첫 번째 시도입니다. 이 작은 시도가 또 다른 시민이 자신의 목소리를 발견하는 계기가 되고, 한 사람의 씨앗들이 자라 서로 연결되기를 바랍니다.",
     imageAlt: "갈라진 콘크리트에서 돋아난 작은 새싹과 여러 시민을 닮은 그림자",
     imageCaption: "작은씨앗의 목소리가 여러 시민의 목소리로 자랍니다.",
-    founderKicker: "PUBLISHER",
-    founderName: "작은씨앗",
-    founderRole: "씨앗의 소리 발행인",
-    founderBio: "시민사회와 공공영역, 기업 현장을 두루 경험해 온 시민사회 활동가이자 공익 기획자입니다. 국가·시장·시민사회가 만나는 여러 현장에서 활동하며 제도와 조직이 시민의 삶에 어떤 영향을 미치는지 지켜봐 왔습니다. 씨앗의 소리에서는 특정 진영이나 권위에 기대지 않고, 한 시민의 질문과 판단으로 사실을 확인하고 자유와 책임의 기준에서 국가와 시민사회의 권력을 함께 살피고자 합니다.",
+    contributorsKicker: "CONTRIBUTORS",
+    contributorsTitle: "필진 소개",
+    contributors: [
+      {
+        name: "작은씨앗",
+        role: "씨앗의 소리 발행인",
+        bio: "시민사회와 공공영역, 기업 현장을 두루 경험해 온 시민사회 활동가이자 공익 기획자입니다. 국가·시장·시민사회가 만나는 여러 현장에서 활동하며 제도와 조직이 시민의 삶에 어떤 영향을 미치는지 지켜봐 왔습니다. 씨앗의 소리에서는 특정 진영이나 권위에 기대지 않고, 한 시민의 질문과 판단으로 사실을 확인하고 자유와 책임의 기준에서 국가와 시민사회의 권력을 함께 살피고자 합니다.",
+      },
+      {
+        name: "경계의 시민",
+        role: "씨앗의 소리 기고자",
+        bio: "공군 부사관과 장교로 복무하며 국방·교육·공보 현장을 경험했습니다. 북한학을 전공하고 러시아·CIS 지역의 정치와 국제관계를 연구하고 있습니다. 씨앗의 소리에서는 군과 안보, 북한과 통일 문제를 시민의 자유와 권리라는 자리에서 살펴봅니다.",
+      },
+    ],
   },
   en: {
     kicker: "PUBLISHER",
@@ -103,10 +113,20 @@ const copy = {
     closing: "SEED VOICE is my first attempt to stand upright and continue growing. I hope it helps another citizen discover a voice of their own, so that individual seeds may grow and connect.",
     imageAlt: "A small seedling emerging through cracked concrete and casting shadows that resemble a group of citizens",
     imageCaption: "Small Seed’s voice can grow into the voices of many citizens.",
-    founderKicker: "PUBLISHER",
-    founderName: "Small Seed",
-    founderRole: "Publisher, SEED VOICE",
-    founderBio: "A civic-society activist and public-interest planner with experience across civil society, public institutions, and the business sector. Having worked where government, markets, and civil society meet, I have watched closely how institutions and organizations affect citizens’ everyday lives. At SEED VOICE, I aim to verify facts and scrutinize power in both the state and civil society through the principles of freedom and responsibility, without relying on partisan camps or borrowed authority.",
+    contributorsKicker: "CONTRIBUTORS",
+    contributorsTitle: "Meet the Contributors",
+    contributors: [
+      {
+        name: "Small Seed",
+        role: "Publisher, SEED VOICE",
+        bio: "A civic-society activist and public-interest planner with experience across civil society, public institutions, and the business sector. Having worked where government, markets, and civil society meet, I have watched closely how institutions and organizations affect citizens’ everyday lives. At SEED VOICE, I aim to verify facts and scrutinize power in both the state and civil society through the principles of freedom and responsibility, without relying on partisan camps or borrowed authority.",
+      },
+      {
+        name: "Citizen at the Boundary",
+        role: "Contributor, SEED VOICE",
+        bio: "A former Air Force noncommissioned officer and commissioned officer with experience in defense, education, and public affairs. His research focuses on North Korea and the politics and international relations of Russia and the CIS. At SEED VOICE, he examines the military, security, North Korea, and unification from the standpoint of civic freedom and rights.",
+      },
+    ],
   },
 };
 
@@ -150,10 +170,17 @@ export default function PublisherMessage() {
             <p className="text-[17px] leading-[1.82] text-charcoal/75 sm:text-lg">{content.closing}</p>
 
             <section className="mt-10 border-y border-green-deep/15 bg-[#F1F2EC] px-6 py-7 sm:mt-12 sm:px-10 sm:py-8">
-              <p className="section-kicker">{content.founderKicker}</p>
-              <h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{content.founderName}</h2>
-              <p className="mt-2 text-sm font-bold text-green-deep/75">{content.founderRole}</p>
-              <p className="mt-4 text-base leading-7 text-charcoal/68">{content.founderBio}</p>
+              <p className="section-kicker">{content.contributorsKicker}</p>
+              <h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{content.contributorsTitle}</h2>
+              <div className="mt-7 divide-y divide-green-deep/15">
+                {content.contributors.map((contributor) => (
+                  <article key={contributor.name} className="py-6 first:pt-0 last:pb-0">
+                    <h3 className="editorial-title text-2xl font-bold text-navy">{contributor.name}</h3>
+                    <p className="mt-2 text-sm font-bold text-green-deep/75">{contributor.role}</p>
+                    <p className="mt-4 text-base leading-7 text-charcoal/68">{contributor.bio}</p>
+                  </article>
+                ))}
+              </div>
             </section>
           </div>
 
