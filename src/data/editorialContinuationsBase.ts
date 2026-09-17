@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "briefing:can-half-the-nation-be-dissolved": {
+    ko: {
+      href: "/briefings/confirmation-hearings-zero-witnesses",
+      title: "청문회 80%가 증인 0명—이쯤 가면 막 하자는 겁니까",
+      relationship: "김승원 청문회 더 보기",
+      reason: "국민의힘 해산 검토 답변이 나온 같은 인사청문회에서, 증인 없는 검증 절차가 시민의 통제권을 어떻게 약화시켰는지도 함께 살펴봅니다.",
+      listHref: "/briefings",
+      listLabel: "브리핑 전체 보기",
+    },
+    en: {
+      href: "/briefings/confirmation-hearings-zero-witnesses",
+      title: "Nearly 80% of Hearings Had Zero Witnesses—Is This How Far We Have Come?",
+      relationship: "MORE FROM THE KIM HEARING",
+      reason: "Examine how a hearing without witnesses weakened public scrutiny in the same confirmation process where the party-dissolution answer emerged.",
+      listHref: "/briefings",
+      listLabel: "All briefings",
+    },
+  },
   "monitoring:prosecution-service-abolition-tracker": {
     ko: {
       href: "/columns/prosecution-reform-power-transfer-2026",
