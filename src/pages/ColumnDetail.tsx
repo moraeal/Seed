@@ -66,4 +66,9 @@ export default function ColumnDetail() {
         {column.referenceVideo && column.referenceVideo.afterSection === undefined && referenceVideoSection}
         <aside className="mt-10 border-t-2 border-navy pt-6"><span className="section-kicker">{ko ? "자료 주" : "SOURCE NOTE"}</span><p className="mt-3 text-sm leading-6 text-charcoal/60">{column.sourceNote}</p>{column.sources && <ul className="mt-4 grid gap-1.5 text-sm leading-6 text-charcoal/60">{column.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ul>}</aside>
         <ContentAccountability postSlug={column.slug} publishedDate={column.date} />
-        <CommentSection postSlug={column.sl
+        <CommentSection postSlug={column.slug} />
+        {continuation && <ArticleContinuation item={continuation} />}
+      </div>
+    </div>
+  </article>;
+}

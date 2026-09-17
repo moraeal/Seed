@@ -54,4 +54,34 @@ export const issue22: ColumnTranslation = {
       title: "Why suspicions of political punishment emerged",
       paragraphs: [
         "The debate contains political language that goes beyond military education. President Lee Jae-myung publicly referred to the Army academy's connection to past coups and privileged status. In August, the ministry said integration would help break with a wrongful past and establish a military loyal to the Constitution and the people.",
-        "Those statements leave the government's final purpose open to scrutiny. Versions of academy integration predate this administration, and demographic decline and future-war requirements are real. At the same time, the government's own pairin
+        "Those statements leave the government's final purpose open to scrutiny. Versions of academy integration predate this administration, and demographic decline and future-war requirements are real. At the same time, the government's own pairing of educational reform with historical rupture shows that political purpose has entered the plan.",
+        "Military education should not become a stage on which each administration performs its judgment of history. Responsibility for past wrongdoing should be assigned to people and acts. The harder question is whether renaming and relocating institutions will change constitutional loyalty more effectively than reforming education, promotion and command culture.",
+      ],
+    },
+    {
+      title: "The American example shows a career-stage model of joint education",
+      paragraphs: [
+        "The United States runs separate Army, Navy and Air Force academies while commissioning officers through ROTC and officer-candidate programs as well. It develops cross-service capability through joint professional military education and joint assignments later in an officer's career.",
+        "Korea cannot simply copy the American structure because the countries differ in scale, missions and accession systems. The useful lesson is that officers can first build deep service expertise and then connect it through joint professional education and assignments as their careers advance.",
+        "Korea should begin by assessing how well its existing joint-college and command-and-staff education develops operational capability and identifying what should change at each career stage. That evidence should determine whether academy integration is necessary. Placing one-campus integration ahead of this assessment allows symbolic politics to drive education reform.",
+      ],
+    },
+    {
+      title: "Five questions the government must answer first",
+      paragraphs: [
+        "First, what evidence shows that physical integration during the cadet years will improve combat power more than existing joint and command-and-staff education? Second, how will the services protect the expertise company-grade officers need? Third, how will Jaun-dae provide the specialist facilities and practical training required by the Navy and Air Force?",
+        "Fourth, what will happen to the existing campuses and what will relocation and construction cost? Fifth, how much did political judgments about the Army academy, coups and historical rupture shape the institutional plan? Without answers, the proposal will continue to look less like military education reform than a political reorganization.",
+        "National security is no place for symbolic politics or an administration's race against the clock. The decisive tests are practical: Will the plan improve combat capability? Will it protect service expertise? Has the government accurately diagnosed a failure in the joint education that already exists? Has it disclosed the cost citizens will bear?",
+        "The 70-percent figure describes an accession system that prepares company-grade officers to master their service missions first. Joint education then connects that expertise after operational experience. A policy that begins by merging schools producing 14 percent, without military evidence for changing this career sequence, has the character of a politically driven symbolic project. The change directly produced by the current plan is institutional reorganization rather than stronger combat capability.",
+      ],
+      quote: ["The 70-percent figure reflects a system that builds service expertise first.", "The current plan directly reorganizes institutions; stronger combat capability still requires proof."],
+    },
+  ],
+  sourceNote: "This article develops a critique raised in the service-academy integration debate and presents it from the SEED VOICE perspective. It was checked against the July 16 basic plan, Army commissioning-route data, the August public hearing and the defense minister nominee's September 16 testimony. The earlier two-plus-two and Jangseong relocation concepts are distinguished from the final basic plan's four-year Jaun-dae model.",
+  sourceLabels: [
+    "Yonhap — Government announces four-year Armed Forces Academy plan",
+    "Seoul Shinmun — Joint-education hours by commissioning route",
+    "Ministry of National Defense — Public hearing on the Armed Forces Academy",
+    "Yonhap — Minister nominee says current plan needs improvement",
+  ],
+};

@@ -164,4 +164,97 @@ const prosecutionReformColumnContinuation: Record<Language, EditorialContinuatio
   ko: {
     href: "/monitoring/prosecution-service-abolition-tracker",
     title: "검찰청 폐지, 무엇이 사라지고 무엇이 남나",
-    relationship: "사실과 제도 변�
+    relationship: "사실과 제도 변화 추적",
+    reason: "권력 이전의 위험을 짚은 논평에 이어, 검찰청 폐지와 수사·기소 권한 재편이 실제로 어떻게 진행되는지 날짜별 기록으로 확인합니다.",
+    listHref: "/news",
+    listLabel: "핫이슈 전체 보기",
+  },
+  en: {
+    href: "/monitoring/prosecution-service-abolition-tracker",
+    title: "Abolishing the Prosecution Service: What Disappears, and What Remains?",
+    relationship: "TRACK THE INSTITUTIONAL CHANGE",
+    reason: "Continue from the argument about relocated power to a dated record of the prosecution service's abolition and the redistribution of investigative and charging authority.",
+    listHref: "/news",
+    listLabel: "All Hot Issues",
+  },
+};
+
+const militaryAcademyColumnContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/news/military-academy-integration-tracker",
+    title: "사관학교를 합치면 군은 강해지나",
+    relationship: "계획과 변화 추적",
+    reason: "칼럼의 판단에 이어 기본계획, 장교 양성 통계, 공청회와 장관 후보자의 보완 발언이 어떻게 정책에 반영되는지 날짜별로 확인합니다.",
+    listHref: "/columns",
+    listLabel: "칼럼 전체 보기",
+  },
+  en: {
+    href: "/news/military-academy-integration-tracker",
+    title: "Will Merging the Service Academies Make the Military Stronger?",
+    relationship: "TRACK THE PLAN",
+    reason: "Continue from the column to a dated record of the basic plan, commissioning data, the hearing and the incoming minister's proposed revisions.",
+    listHref: "/columns",
+    listLabel: "All columns",
+  },
+};
+
+const militaryAcademyTrackerContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/columns/military-academy-integration-rotc-question",
+    title: "사관학교 통합, 전력 강화보다 정치가 먼저 보인다",
+    relationship: "사실에서 판단으로",
+    reason: "통합안의 변화와 확인된 수치를 본 뒤, 왜 14%가 나오는 사관학교의 물리적 통합이 군 전체의 전력 강화로 이어지는지 씨앗의 관점에서 따져봅니다.",
+    listHref: "/news",
+    listLabel: "핫이슈 전체 보기",
+  },
+  en: {
+    href: "/columns/military-academy-integration-rotc-question",
+    title: "A Service Academy Merger Driven More by Politics Than Military Need",
+    relationship: "FROM FACTS TO JUDGMENT",
+    reason: "After reviewing the plan and the verified numbers, examine whether merging the academies that produce 14 percent of new officers can strengthen the force as a whole.",
+    listHref: "/news",
+    listLabel: "All Hot Issues",
+  },
+};
+
+const isFreedom = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "freedom-as-citizen-agency";
+const isProgress = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-progress";
+const isConservatism = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-conservatism";
+const isDiscourse = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "discourse-many-words-no-direction";
+const isFarmlandOwnership = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "farmland-ownership-without-an-exit";
+const isFarmlandTracker = (kind: EditorialContentKind, slug: string) => kind === "monitoring" && slug === "farmland-census-disposal-orders-tracker";
+const isNuclearPolicyColumn = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "democratic-party-nuclear-policy-reversal";
+const isNuclearPolicyTracker = (kind: EditorialContentKind, slug: string) => kind === "monitoring" && slug === "democratic-party-nuclear-policy-reversal-tracker";
+const isProsecutionReformColumn = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "prosecution-reform-power-transfer-2026";
+const isMilitaryAcademyColumn = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "military-academy-integration-rotc-question";
+const isMilitaryAcademyTracker = (kind: EditorialContentKind, slug: string) => kind === "monitoring" && slug === "military-academy-integration-tracker";
+
+export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (isNuclearPolicyTracker(kind, slug)) return true;
+  if (isNuclearPolicyColumn(kind, slug)) return true;
+  if (isProsecutionReformColumn(kind, slug)) return true;
+  if (isConservatism(kind, slug)) return true;
+  if (isMilitaryAcademyTracker(kind, slug)) return true;
+  if (isMilitaryAcademyColumn(kind, slug)) return true;
+  if (isFarmlandTracker(kind, slug)) return true;
+  if (isFarmlandOwnership(kind, slug)) return true;
+  if (isDiscourse(kind, slug)) return true;
+  if (isProgress(kind, slug)) return true;
+  if (isFreedom(kind, slug)) return true;
+  return hasBaseEditorialContinuation(kind, slug);
+}
+
+export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (isMilitaryAcademyTracker(kind, slug)) return militaryAcademyTrackerContinuation[language];
+  if (isMilitaryAcademyColumn(kind, slug)) return militaryAcademyColumnContinuation[language];
+  if (isNuclearPolicyTracker(kind, slug)) return nuclearPolicyTrackerContinuation[language];
+  if (isNuclearPolicyColumn(kind, slug)) return nuclearPolicyColumnContinuation[language];
+  if (isProsecutionReformColumn(kind, slug)) return prosecutionReformColumnContinuation[language];
+  if (isConservatism(kind, slug)) return conservatismContinuation[language];
+  if (isFarmlandTracker(kind, slug)) return farmlandTrackerContinuation[language];
+  if (isFarmlandOwnership(kind, slug)) return farmlandOwnershipContinuation[language];
+  if (isDiscourse(kind, slug)) return discourseContinuation[language];
+  if (isProgress(kind, slug)) return progressContinuation[language];
+  if (isFreedom(kind, slug)) return freedomContinuation[language];
+  return getBaseEditorialContinuation(kind, slug, language);
+}

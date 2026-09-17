@@ -112,3 +112,230 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
         {
           publisher: { ko: "뉴스핌", en: "NewsPim" },
           title: { ko: "육·해·공군 사관학교 558명, 계룡대서 ‘통합 임관’", en: "558 service-academy graduates commissioned at a joint ceremony" },
+          url: "https://www.newspim.com/news/view/20260220000182",
+          publishedAt: "2026-02-20",
+          kind: "article",
+          thumbnailSrc: "images/monitoring/military-academy-news/2026-02-20-newspim.jpg",
+        },
+      ],
+    },
+    {
+      date: "2026-07-16",
+      title: {
+        ko: "자운대 4년제 국군사관학교 기본계획 발표",
+        en: "Government announces a four-year Armed Forces Academy at Jaun-dae",
+      },
+      description: {
+        ko: "정부는 발표 전까지 검토한 2+2 방식을 접고 대전 자운대 한 캠퍼스에서 4년간 교육하는 모델을 제시했습니다. 저학년 공통교육과 고학년 군별 전공심화를 병행하고, 군별 인원을 정해 선발하면서 공통선발도 일부 도입하는 방안을 검토하기로 했습니다. 첫 통합 입학 연도와 총사업비는 밝히지 않았습니다.",
+        en: "The government dropped the pre-announcement two-plus-two concept and proposed four years on one Jaun-dae campus, combining common early coursework with service-specific upper-level study. It considered service-allocated admissions plus a common pool, but did not set the first class year or full project cost.",
+      },
+      change: {
+        ko: "2+2 분산교육 검토안에서 4년 동일 캠퍼스 통합교육으로 변경",
+        en: "Shift from a dispersed two-plus-two concept to four years on one campus",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: { ko: "4년제 통합 국군사관학교 대전 자운대에", en: "Government announces four-year Armed Forces Academy in Daejeon" },
+          url: "https://www.yna.co.kr/view/AKR20260716039653001",
+          publishedAt: "2026-07-16",
+          kind: "article",
+          thumbnailSrc: "images/monitoring/military-academy-news/2026-07-16-yonhap.jpg",
+        },
+      ],
+    },
+    {
+      date: "2026-07-30",
+      title: {
+        ko: "ROTC·학사장교 합동성 교육 2시간 확인",
+        en: "ROTC and officer-candidate joint instruction measured at two hours",
+      },
+      description: {
+        ko: "육군본부의 장교 양성기관별 교육 현황에 따르면 ROTC·학사장교는 640시간 가운데 합동성 교육을 2시간 받았습니다. 2024년 신임장교 약 5,500명 중 두 과정 출신은 약 70%, 3군 사관학교 출신은 약 14%였습니다. 육사는 3,825시간 가운데 280시간을 합동작전 교육에 배정한 것으로 집계됐습니다.",
+        en: "Army data showed two hours of joint instruction within the 640-hour ROTC and officer-candidate programs. Those routes produced about 70 percent of roughly 5,500 new officers in 2024, compared with about 14 percent from the three service academies. KMA allocated 280 of 3,825 hours to joint operations.",
+      },
+      change: {
+        ko: "합동성 명분과 장교 양성 전체 체계 사이의 교육 격차가 수치로 확인",
+        en: "Quantified gap between the jointness rationale and the wider commissioning system",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "서울신문", en: "Seoul Shinmun" },
+          title: { ko: "합동성 급해 합친다더니 ‘육사 280시간, ROTC는 2시간’", en: "KMA gives 280 hours of joint instruction; ROTC gives two" },
+          url: "https://v.daum.net/v/20260730165938000",
+          publishedAt: "2026-07-30",
+          kind: "article",
+          thumbnailSrc: "images/monitoring/military-academy-news/2026-07-30-seoul.jpg",
+        },
+      ],
+    },
+    {
+      date: "2026-08-07",
+      title: {
+        ko: "국방부, ‘잘못된 역사와 단절’ 의미 부여",
+        en: "Ministry links integration to a break with a wrongful past",
+      },
+      description: {
+        ko: "국방부는 미래전 대비·교육 효율화·합동성 강화와 함께 통합이 잘못된 역사와 단절하고 헌법과 국민에게 충성하는 국군 정체성을 세우는 초석이 될 것이라고 설명했습니다. 군사교육 개편과 역사적 평가가 한 정책 안에 결합됐습니다.",
+        en: "Alongside future-war readiness, efficiency and jointness, the ministry said integration would help break with a wrongful past and establish a force loyal to the Constitution and the people. Military education reform and historical judgment were now explicitly joined in one policy.",
+      },
+      status: "response",
+      sources: [
+        {
+          publisher: { ko: "동아일보", en: "The Dong-A Ilbo" },
+          title: { ko: "국방부 ‘사관학교 통합, 잘못된 역사 단절 초석’", en: "Defense Ministry links academy integration to historical rupture" },
+          url: "https://www.donga.com/news/Politics/article/all/20260807/134437766/1",
+          publishedAt: "2026-08-07",
+          kind: "article",
+          thumbnailSrc: "images/monitoring/military-academy-news/2026-08-07-donga.jpg",
+        },
+      ],
+    },
+    {
+      date: "2026-08-26",
+      title: {
+        ko: "첫 공청회, 찬반 토론보다 고성과 충돌이 부각",
+        en: "First public hearing is overshadowed by disruption",
+      },
+      description: {
+        ko: "국방부가 찬반 전문가 각 3명이 참여하는 첫 공개 공청회를 열었습니다. 반대 참석자들의 고성과 욕설, 진행 방해가 이어져 토론의 내용보다 충돌이 크게 보도됐습니다. 공청회 전체 영상은 공개됐지만 쟁점별 답변과 반영 결과를 정리한 공식 문서는 추가 확인이 필요합니다.",
+        en: "The ministry held its first public hearing with three speakers on each side. Shouting and disruption by opponents overshadowed much of the substantive discussion. The full video is public, but an official issue-by-issue response and record of how comments affected the plan are still needed.",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "국방부", en: "Ministry of National Defense" },
+          title: { ko: "국군사관학교 창설 관련 공청회 전체 영상", en: "Full public hearing on the Armed Forces Academy" },
+          url: "https://www.youtube.com/watch?v=9IqNYQjnUTQ",
+          publishedAt: "2026-08-26",
+          kind: "video",
+          thumbnailSrc: "images/monitoring/military-academy-news/2026-08-26-mnd-youtube.jpg",
+        },
+      ],
+    },
+    {
+      date: "2026-09-16",
+      title: {
+        ko: "장관 후보자 ‘현재 안은 완전하지 않다’",
+        en: "Defense minister nominee calls the current plan incomplete",
+      },
+      description: {
+        ko: "강신철 국방부 장관 후보자는 인사청문회에서 사관학교 개혁과 통합교육의 필요성에는 동의했지만 현 기본안에는 보완할 부분이 있다고 밝혔습니다. 물리적 통합뿐 아니라 비물리적 연결도 가능하며 여러 의견을 듣겠다고 말했습니다. 10월 세부계획이 기본안의 골격을 얼마나 수정할지가 새 관찰 지점이 됐습니다.",
+        en: "At his confirmation hearing, Kang Shin-chul supported academy reform and integrated education but said the current basic plan needed improvement. He noted that integration could be physical or non-physical and promised to hear competing views. The next test is how much the October detailed plan changes the July framework.",
+      },
+      change: {
+        ko: "차기 국방부 수장이 기본안의 보완 가능성을 공개적으로 인정",
+        en: "Incoming defense leadership publicly acknowledges room to revise the basic plan",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: { ko: "강신철 ‘현재 안, 보완할 부분 보여’", en: "Kang Shin-chul says current academy plan needs improvement" },
+          url: "https://www.yna.co.kr/amp/view/AKR20260916093451504",
+          publishedAt: "2026-09-16",
+          kind: "article",
+          thumbnailSrc: "images/monitoring/military-academy-news/2026-09-16-yonhap.jpg",
+        },
+      ],
+    },
+    {
+      date: "2026-10-01",
+      title: {
+        ko: "세부계획과 설치법안 확인",
+        en: "Review the detailed plan and enabling legislation",
+      },
+      description: {
+        ko: "국방부가 예고한 세부계획에서 통합 선발 시점과 방식, 각 군 전문교육, ROTC·학사장교 교육, 자운대 이전 일정과 재원, 기존 부지 활용이 어떻게 정리되는지 확인합니다. 발표 일정이 달라지면 날짜를 수정합니다.",
+        en: "SEED will review admissions timing and design, service-specific education, ROTC and officer-candidate reform, the Jaun-dae schedule and financing, and reuse of existing campuses. The date will be updated if the ministry's schedule changes.",
+      },
+      status: "pending",
+    },
+  ],
+  confirmedFacts: [
+    {
+      ko: "7월 16일 기본계획은 대전 자운대에서 4년간 통합교육하는 국군사관학교를 제시했지만 첫 통합 입학 연도를 확정하지 않았습니다.",
+      en: "The July 16 plan proposed four years of integrated education at Jaun-dae but did not set the first integrated admissions year.",
+    },
+    {
+      ko: "정부는 저학년 공통교육과 고학년 군별 전공심화를 병행하고, 단계적으로 간호사관학교·첨단기술사관학교와 학군·학사 과정까지 연계한다는 구상입니다.",
+      en: "The government proposes common early coursework, later service-specific study and eventual links to nursing, advanced-technology, ROTC and officer-candidate programs.",
+    },
+    {
+      ko: "2024년 신임장교의 약 70%는 ROTC·학사장교 출신이었고 3군 사관학교 출신은 약 14%였습니다.",
+      en: "ROTC and officer-candidate routes produced about 70 percent of new officers in 2024; the three service academies produced about 14 percent.",
+    },
+    {
+      ko: "ROTC·학사장교의 임관 전 합동성 교육은 2시간, 육사의 합동작전 교육은 280시간으로 집계됐습니다.",
+      en: "Pre-commission joint instruction was reported at two hours for ROTC and officer candidates, compared with 280 hours at KMA.",
+    },
+    {
+      ko: "강신철 국방부 장관 후보자는 9월 16일 현재 기본안이 완전하지 않으며 보완이 필요하다고 밝혔습니다.",
+      en: "On September 16, defense minister nominee Kang Shin-chul said the current plan was incomplete and needed improvement.",
+    },
+  ],
+  questions: [
+    {
+      ko: "통합으로 높이겠다는 ‘합동성’을 어떤 시험·훈련·야전 성과로 측정하고, 현행 교육과 비교할 것입니까?",
+      en: "What tests, exercises and field outcomes will measure the jointness the merger is meant to improve, and what is the baseline?",
+    },
+    {
+      ko: "초급장교 다수를 배출하는 ROTC·학사장교의 합동성 교육 2시간을 언제, 어느 수준까지 늘릴 계획입니까?",
+      en: "When and by how much will the two hours of joint instruction for ROTC and officer candidates be expanded?",
+    },
+    {
+      ko: "자운대 신축·이전과 기존 세 사관학교 시설 재배치의 총사업비, 재원, 단계별 일정은 얼마입니까?",
+      en: "What are the full cost, funding source and phased schedule for Jaun-dae construction, relocation and reuse of the three campuses?",
+    },
+    {
+      ko: "해군 함정·해양교육과 공군 비행·항공교육처럼 현장 시설이 필요한 전문교육을 한 캠퍼스에서 어떻게 보장합니까?",
+      en: "How will one campus support specialized naval and air-force training that depends on ships, maritime facilities, flight operations and aviation infrastructure?",
+    },
+    {
+      ko: "공청회와 연구용역에서 나온 찬반 의견 가운데 무엇을 수용·배제했는지 근거와 함께 공개할 수 있습니까?",
+      en: "Will the ministry publish which hearing and research recommendations it accepted or rejected, with reasons?",
+    },
+  ],
+  proposals: [
+    {
+      ko: "사관학교·3사·ROTC·학사장교의 인원, 교육시간, 합동교육, 양성비용과 임관 뒤 보직·진급을 같은 표로 공개합니다.",
+      en: "Publish one comparable table covering numbers, training hours, joint instruction, cost, assignments and promotion outcomes across every commissioning route.",
+    },
+    {
+      ko: "물리적 통합안과 네트워크형 통합안의 교육 효과·비용·전문성 위험을 독립 평가해 국회 입법 전에 공개합니다.",
+      en: "Commission an independent comparison of physical merger and networked integration, covering learning outcomes, cost and risks to service expertise, before legislation.",
+    },
+    {
+      ko: "ROTC·학사장교 합동교육 보강을 사관학교 통합과 같은 일정표에 넣고 매년 교육시간과 성과를 공개합니다.",
+      en: "Put ROTC and officer-candidate joint education on the same reform timetable and report annual hours and outcomes.",
+    },
+    {
+      ko: "기존 부지 매각·전용 여부와 자운대 사업비는 별도 시민 원장으로 공개해 교육개혁과 부동산 처분을 분리해 검증합니다.",
+      en: "Publish a separate public ledger for campus sale or reuse and Jaun-dae spending so educational reform and property disposal can be audited independently.",
+    },
+  ],
+  sources: [
+    {
+      label: { ko: "국방부 — 국군사관학교 창설 공청회 전체 영상", en: "Defense Ministry — Full public hearing" },
+      url: "https://www.youtube.com/watch?v=9IqNYQjnUTQ",
+    },
+    {
+      label: { ko: "연합뉴스 — 국군사관학교 기본계획", en: "Yonhap — Armed Forces Academy basic plan" },
+      url: "https://www.yna.co.kr/view/AKR20260716039653001",
+    },
+    {
+      label: { ko: "서울신문 — 장교 양성기관별 합동성 교육 현황", en: "Seoul Shinmun — Joint education by commissioning route" },
+      url: "https://v.daum.net/v/20260730165938000",
+    },
+    {
+      label: { ko: "동아일보 — 국방부의 역사 단절 설명", en: "Dong-A Ilbo — Ministry's historical-rupture explanation" },
+      url: "https://www.donga.com/news/Politics/article/all/20260807/134437766/1",
+    },
+    {
+      label: { ko: "연합뉴스 — 국방부 장관 후보자 인사청문회", en: "Yonhap — Defense minister nominee's testimony" },
+      url: "https://www.yna.co.kr/amp/view/AKR20260916093451504",
+    },
+  ],
+};
