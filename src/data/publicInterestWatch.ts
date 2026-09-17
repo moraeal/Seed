@@ -1,5 +1,6 @@
 import { farmlandCensusTracker } from "./farmlandCensusTracker";
 import { kimSeungWonHearingWatch } from "./kimSeungWonHearingWatch";
+import { nuclearPolicyReversalTracker } from "./nuclearPolicyReversalTracker";
 import { prosecutionServiceAbolitionTracker } from "./prosecutionServiceAbolitionTracker";
 import { yeosuIslandExpoTracker } from "./yeosuIslandExpoTracker";
 
@@ -106,6 +107,7 @@ export type PublicInterestWatchCase = {
 };
 
 export const publicInterestWatchCases: PublicInterestWatchCase[] = [
+  nuclearPolicyReversalTracker,
   farmlandCensusTracker,
   prosecutionServiceAbolitionTracker,
   yeosuIslandExpoTracker,
