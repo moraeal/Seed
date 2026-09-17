@@ -108,8 +108,8 @@ export default function LegislativeAdminPanel({ session }: { session: AuthSessio
   const saveEditorial = async (bill: LegislativeBill) => {
     const draft = drafts[bill.bill_id] || makeDraft(bill);
     const keywords = draft.keywords.split(",").map((keyword) => keyword.trim()).filter(Boolean);
-    if (draft.isFeatured && !bill.is_featured && featuredCount >= 3) {
-      setNotice("주목 법안은 최대 3건입니다. 기존 주목 지정을 먼저 해제해 주세요.");
+    if (draft.isFeatured && !bill.is_featured && featuredCount >= 5) {
+      setNotice("주목 법안은 최대 5건입니다. 기존 주목 지정을 먼저 해제해 주세요.");
       return;
     }
     if (draft.isFeatured && (!draft.featuredReason.trim() || keywords.length < 2 || keywords.length > 4)) {
@@ -117,12 +117,12 @@ export default function LegislativeAdminPanel({ session }: { session: AuthSessio
       return;
     }
     const order = draft.isFeatured ? Number(draft.featuredOrder || featuredCount + (bill.is_featured ? 0 : 1)) : null;
-    if (draft.isFeatured && (order === null || !Number.isInteger(order) || order < 1 || order > 3)) {
-      setNotice("주목 법안 노출 순서는 1~3 사이에서 지정해 주세요.");
+    if (draft.isFeatured && (order === null || !Number.isInteger(order) || order < 1 || order > 5)) {
+      setNotice("주목 법안 노출 순서는 1~5 사이에서 지정해 주세요.");
       return;
     }
     if (draft.isFeatured && order !== null && bills.some((item) => item.bill_id !== bill.bill_id && item.is_featured && item.featured_order === order)) {
-      setNotice("같은 노출 순서를 사용하는 주목 법안이 있습니다. 1~3 중 비어 있는 순서를 선택해 주세요.");
+      setNotice("같은 노출 순서를 사용하는 주목 법안이 있습니다. 1~5 중 비어 있는 순서를 선택해 주세요.");
       return;
     }
 
@@ -193,7 +193,7 @@ export default function LegislativeAdminPanel({ session }: { session: AuthSessio
         {isOpen && <div className="border-t border-green-deep/10 bg-ivory/70 p-5">
           <div className="grid gap-5 lg:grid-cols-2">
             <label className="text-xs font-extrabold text-navy">현재 진행 단계<select value={draft.currentStage} onChange={(event) => changeDraft(bill.bill_id, { currentStage: event.target.value })} className="mt-2 block w-full border border-green-deep/20 bg-white px-3 py-3 text-sm font-normal">{stages.map((stage) => <option key={stage}>{stage}</option>)}</select></label>
-            <div className="grid grid-cols-[1fr_130px] gap-3"><button type="button" onClick={() => changeDraft(bill.bill_id, { isFeatured: !draft.isFeatured, featuredOrder: !draft.isFeatured ? draft.featuredOrder || String(Math.min(featuredCount + 1, 3)) : "" })} className={`mt-6 inline-flex items-center justify-center gap-2 border px-4 py-3 text-sm font-extrabold ${draft.isFeatured ? "border-green-deep bg-green-deep text-white" : "border-green-deep/20 bg-white text-green-deep"}`}><Star size={15} fill={draft.isFeatured ? "currentColor" : "none"}/>{draft.isFeatured ? "주목 지정됨" : "주목 지정"}</button><label className="text-xs font-extrabold text-navy">노출 순서<select value={draft.featuredOrder} disabled={!draft.isFeatured} onChange={(event) => changeDraft(bill.bill_id, { featuredOrder: event.target.value })} className="mt-2 block w-full border border-green-deep/20 bg-white px-3 py-3 text-sm font-normal disabled:opacity-40"><option value="">선택</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></label></div>
+            <div className="grid grid-cols-[1fr_130px] gap-3"><button type="button" onClick={() => changeDraft(bill.bill_id, { isFeatured: !draft.isFeatured, featuredOrder: !draft.isFeatured ? draft.featuredOrder || String(Math.min(featuredCount + 1, 5)) : "" })} className={`mt-6 inline-flex items-center justify-center gap-2 border px-4 py-3 text-sm font-extrabold ${draft.isFeatured ? "border-green-deep bg-green-deep text-white" : "border-green-deep/20 bg-white text-green-deep"}`}><Star size={15} fill={draft.isFeatured ? "currentColor" : "none"}/>{draft.isFeatured ? "주목 지정됨" : "주목 지정"}</button><label className="text-xs font-extrabold text-navy">노출 순서<select value={draft.featuredOrder} disabled={!draft.isFeatured} onChange={(event) => changeDraft(bill.bill_id, { featuredOrder: event.target.value })} className="mt-2 block w-full border border-green-deep/20 bg-white px-3 py-3 text-sm font-normal disabled:opacity-40"><option value="">선택</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></label></div>
             <label className="lg:col-span-2 text-xs font-extrabold text-navy">왜 지금 이 법안을 봐야 하는가<textarea value={draft.featuredReason} onChange={(event) => changeDraft(bill.bill_id, { featuredReason: event.target.value })} rows={3} placeholder="주목 법안 카드에 표시할 2~3줄의 이유" className="mt-2 block w-full border border-green-deep/20 bg-white px-3 py-3 text-sm font-normal leading-6"/></label>
             <label className="lg:col-span-2 text-xs font-extrabold text-navy">씨앗 관찰 키워드<textarea value={draft.keywords} onChange={(event) => changeDraft(bill.bill_id, { keywords: event.target.value })} rows={2} placeholder="시민의 권리, 재정 부담, 권력 통제 (쉼표로 2~4개)" className="mt-2 block w-full border border-green-deep/20 bg-white px-3 py-3 text-sm font-normal leading-6"/></label>
             <label className="lg:col-span-2 text-xs font-extrabold text-navy">공개용 핵심 요약<textarea value={draft.publicSummary} onChange={(event) => changeDraft(bill.bill_id, { publicSummary: event.target.value })} rows={4} placeholder="자동 분석 요약을 검토·수정한 공개 문안" className="mt-2 block w-full border border-green-deep/20 bg-white px-3 py-3 text-sm font-normal leading-6"/></label>
