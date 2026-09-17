@@ -8,12 +8,14 @@ import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { getColumnsNewestFirst, hotIssueColumnTrackerSlugs } from "../data/columns";
 import { localizeBriefing, localizeColumn } from "../data/localizedContent";
 import { getHotIssuesNewestFirst } from "../data/hotIssues";
-import { newsTrackerCases } from "../data/publicInterestWatch";
+import { civicWatchCases, newsTrackerCases } from "../data/publicInterestWatch";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
+import { taxPolicies } from "../data/taxWatch";
 import { getFeaturedContentCandidates } from "../data/featuredContent";
 import { useLanguage } from "../i18n";
 import { getFeaturedContentPath } from "../lib/featuredContent";
+import { getPublishedLegislativeBills, type LegislativeBill } from "../lib/legislativeMonitoring";
 
 const resolveImageSrc = (src?: string) => {
   if (!src) return "";
@@ -33,11 +35,22 @@ const seedLanguageTerms: Record<string, { hanja: string; english: string }> = {
   담론: { hanja: "談論", english: "DISCOURSE" },
 };
 
+type HomeCivicWatchItem = {
+  key: string;
+  category: "issue" | "legislation" | "tax" | "public-interest";
+  date: string;
+  to: string;
+  title: string;
+  summary: string;
+  status: string;
+};
+
 export default function Home() {
   const { language } = useLanguage();
   const ko = language === "ko";
   const [featuredPath, setFeaturedPath] = useState<string | null>(null);
   const [featuredReady, setFeaturedReady] = useState(false);
+  const [legislativeBills, setLegislativeBills] = useState<LegislativeBill[]>([]);
   const allBriefings = getAllBriefingsNewestFirst();
   const localizedBriefings = allBriefings.map((item) => localizeBriefing(item, language));
   const allJournalColumns = getColumnsNewestFirst().map((item) => localizeColumn(item, language));
@@ -90,12 +103,78 @@ export default function Home() {
   } : undefined;
   const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[seedLanguageArticle.term] : undefined;
 
+  const civicWatchCandidates: HomeCivicWatchItem[] = [
+    ...newsTrackerCases.map((item) => ({
+      key: `issue-${item.slug}`,
+      category: "issue" as const,
+      date: item.updatedAt,
+      to: `/monitoring/${item.slug}`,
+      title: item.title[language],
+      summary: item.summary[language],
+      status: item.status[language],
+    })),
+    ...legislativeBills
+      .filter((bill) => bill.review_state === "published")
+      .map((bill) => ({
+        key: `legislation-${bill.bill_id}`,
+        category: "legislation" as const,
+        date: (bill.editorial_updated_at || bill.published_at || bill.updated_at || bill.proposed_date || "").slice(0, 10),
+        to: `/monitoring/legislation/${bill.slug}`,
+        title: ko ? bill.title : bill.analysis?.title_en || bill.title,
+        summary: ko
+          ? bill.public_summary_ko || bill.analysis?.summary_ko || bill.official_summary || "공식 자료와 조문을 검토한 입법감시 기록입니다."
+          : bill.public_summary_en || bill.analysis?.summary_en || "A legislative watch record based on official documents and bill text.",
+        status: ko ? `중요도 ${bill.importance_score}` : `Impact ${bill.importance_score}`,
+      })),
+    ...taxPolicies.map((item) => ({
+      key: `tax-${item.slug}`,
+      category: "tax" as const,
+      date: item.checkedAt,
+      to: `/monitoring/tax/${item.slug}`,
+      title: item.title[language],
+      summary: item.summary[language],
+      status: item.status[language],
+    })),
+    ...civicWatchCases.map((item) => ({
+      key: `public-interest-${item.slug}`,
+      category: "public-interest" as const,
+      date: item.updatedAt,
+      to: `/monitoring/${item.slug}`,
+      title: item.title[language],
+      summary: item.summary[language],
+      status: item.status[language],
+    })),
+  ]
+    .filter((item) => item.to !== activeFeaturedPath && item.to !== publicWatchHref)
+    .sort((a, b) => b.date.localeCompare(a.date));
+
+  const recentCivicWatchItems = civicWatchCandidates.reduce<HomeCivicWatchItem[]>((selected, item) => {
+    if (selected.length >= 3 || selected.some((candidate) => candidate.category === item.category)) return selected;
+    selected.push(item);
+    return selected;
+  }, []);
+
+  const civicWatchCategoryLabels: Record<HomeCivicWatchItem["category"], string> = {
+    issue: ko ? "이슈감시" : "Issue Watch",
+    legislation: ko ? "입법감시" : "Legislative Watch",
+    tax: ko ? "세금감시" : "Tax Watch",
+    "public-interest": ko ? "공익감시" : "Public-interest Watch",
+  };
+
   useEffect(() => {
     let active = true;
     void getFeaturedContentPath()
       .then((path) => { if (active) setFeaturedPath(path); })
       .catch(() => { /* Keep the newest column as the safe fallback. */ })
       .finally(() => { if (active) setFeaturedReady(true); });
+    return () => { active = false; };
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    void getPublishedLegislativeBills(20)
+      .then((bills) => { if (active) setLegislativeBills(bills); })
+      .catch(() => { /* Static civic-watch records remain available as the safe fallback. */ });
     return () => { active = false; };
   }, []);
 
@@ -200,6 +279,37 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {recentCivicWatchItems.length > 0 && (
+        <section className="border-b border-green-deep/12 bg-white py-7 sm:py-9" aria-labelledby="recent-civic-watch-title">
+          <div className="container-page">
+            <div className="flex items-end justify-between gap-3 border-b-[3px] border-navy pb-2.5 sm:gap-4 sm:pb-3">
+              <div>
+                <p className="section-kicker">CIVIC WATCH</p>
+                <h2 id="recent-civic-watch-title" className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "새로 공개된 시민감시" : "New from Civic Watch"}</h2>
+                <p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">{ko ? "사건과 법안, 세금정책, 공익기관에서 새로 확인한 내용을 모았습니다." : "New findings on major issues, legislation, tax policy and public-interest institutions."}</p>
+              </div>
+              <Link to="/monitoring" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link>
+            </div>
+            <div className="divide-y divide-green-deep/15 md:grid md:grid-cols-3 md:divide-x md:divide-y-0">
+              {recentCivicWatchItems.map((item) => (
+                <Link key={item.key} to={item.to} className="group block py-5 md:px-6 md:first:pl-0 md:last:pr-0">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-[10px] font-black tracking-[.12em] text-green-deep">{civicWatchCategoryLabels[item.category]}</span>
+                    <time className="shrink-0 text-[11px] text-charcoal/40">{item.date.replace(/-/g, ".")}</time>
+                  </div>
+                  <h3 className="editorial-title mt-2 line-clamp-2 break-keep text-[1.08rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.2rem]">{item.title}</h3>
+                  <p className="mt-1.5 line-clamp-2 text-[13px] leading-5.5 text-charcoal/58 sm:text-sm sm:leading-6">{item.summary}</p>
+                  <div className="mt-3 flex items-center justify-between gap-3 border-t border-green-deep/10 pt-2.5">
+                    <span className="truncate text-[11px] font-bold text-charcoal/45">{item.status}</span>
+                    <span className="inline-flex shrink-0 items-center gap-1 text-[11px] font-extrabold text-green-deep">{ko ? "기록 보기" : "View record"}<ArrowRight size={12}/></span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="pt-9 pb-6 sm:pt-16 sm:pb-8" aria-labelledby="hot-issues-title"><div className="container-page"><div className="flex items-end justify-between gap-3 border-b-[3px] border-navy pb-2.5 sm:gap-4 sm:pb-3"><div><p className="section-kicker">HOT ISSUES</p><h2 id="hot-issues-title" className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "핫이슈" : "Hot Issues"}</h2><p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">{ko ? "뉴스트래커의 기록을 바탕으로 사건의 쟁점과 의미를 설명합니다." : "Reporting and commentary explain the meaning behind Civic Watch records."}</p></div><Link to="/news" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link></div><div className="divide-y divide-green-deep/12 pt-1 md:grid md:grid-cols-3 md:gap-8 md:divide-y-0 md:pt-6">{visibleHotIssues.slice(0, 3).map((item) => <article key={item.key} className="group py-4 md:py-0"><Link to={item.to} className="block"><div className="hidden h-[220px] overflow-hidden bg-ivory md:block lg:h-[240px]"><SafeImage src={resolveImageSrc(item.imageSrc)} alt={item.imageAlt} referrerPolicy="no-referrer" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.018]" /></div><p className="mt-3 text-[10px] font-black tracking-[.12em] text-green-deep">{item.kindLabel}</p><h3 className="editorial-title break-keep text-[1.08rem] font-bold leading-snug text-navy transition group-hover:text-green-mid md:mt-1 md:text-[1.35rem]">{item.title}</h3><p className="mt-1.5 line-clamp-3 text-[13px] leading-5 text-charcoal/58 md:mt-2 md:text-sm md:leading-6">{item.summary}</p><div className="mt-2 flex items-center gap-3 text-[11px] text-charcoal/45 sm:text-xs"><time>{item.date.replace(/-/g, ".")}</time>{item.readMinutes && <span className="inline-flex items-center gap-1"><Clock size={12}/>{item.readMinutes}{ko ? "분 읽기" : " min read"}</span>}</div></Link></article>)}</div></div></section>
 
