@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n";
 import { getPublishedLegislativeBills, type LegislativeBill } from "../lib/legislativeMonitoring";
+import MonitoringSubnav from "../components/MonitoringSubnav";
 
 const dateText = (date: string | null) => date ? date.replace(/-/g, ".") : "—";
 
@@ -39,6 +40,7 @@ export default function LegislativeWatch() {
         <p className="max-w-2xl text-base leading-8 text-charcoal/65">{ko ? "새 법안이 시민의 선택과 권리, 기업의 활동, 국가기관의 권한과 재정에 어떤 변화를 만드는지 추적합니다. 확인된 조문과 예상 효과를 구분하고, 심사 과정에서 달라지는 내용도 같은 기록에 이어 붙입니다." : "We track how proposed laws may change civic rights and choice, enterprise, public authority and fiscal exposure. Confirmed provisions are separated from expected effects, with later amendments and decisions kept in the same record."}</p>
       </div>
     </header>
+    <MonitoringSubnav />
 
     <div className="container-page py-8 sm:py-10">
       {featured.length > 0 && <section className="mb-10 border-2 border-green-deep bg-ivory shadow-[8px_8px_0_0_rgba(24,83,66,0.12)]">
