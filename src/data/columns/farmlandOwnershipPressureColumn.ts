@@ -8,7 +8,7 @@ export const farmlandOwnershipPressureColumn: SeedColumn = {
   date: "2026-09-16",
   author: "작은씨앗",
   readMinutes: 7,
-  summary: "전국 농지 기본조사에서 약 27%가 법 위반 의심 대상으로 분류됐다. 처분명령 뒤에도 농지를 팔지 못하면 평가액의 25%가 매년 반복될 수 있다. 농지 투기를 바로잡는 일과 팔리지 않는 농지의 책임까지 시민에게 떠넘기는 일은 다르다.",
+  summary: "전국 농지 기본조사에서 약 27%가 법 위반 의심 대상으로 분류됐다. 처분명령 뒤에도 농지를 팔지 못하면 평가액의 25%가 이행강제금으로 매년 반복해서 부과될 수 있다. 농지 투기를 바로잡는 일과 팔리지 않는 농지의 책임까지 시민에게 떠넘기는 일은 다르다.",
   heroImage: {
     src: "images/columns/farmland-ownership-pressure.webp",
     alt: "해 질 무렵 작은 농지 앞에서 처분 서류를 든 고령의 농지 소유자",
