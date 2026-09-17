@@ -5,6 +5,7 @@ import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { columns } from "../data/columns";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
 import { getNewsNewestFirst } from "../data/news";
+import { newsTrackerCases } from "../data/publicInterestWatch";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
 import { useLanguage } from "../i18n";
@@ -38,6 +39,9 @@ export default function PopularLatest() {
       const localized = localizeColumn(item, language);
       entries.set(`/columns/${localized.slug}`, localized.title);
     });
+    newsTrackerCases.forEach((item) => {
+      entries.set(`/monitoring/${item.slug}`, item.title[language]);
+    });
     [...seedLanguageEnvironmentArticlesKo, ...seedLanguageArticlesKo].forEach((item) => {
       const localized = getSeedLanguageEnvironmentArticle(item.slug, language) ?? getSeedLanguageArticle(item.slug, language);
       if (localized) entries.set(`/seed-language/${localized.slug}`, localized.title);
@@ -61,6 +65,10 @@ export default function PopularLatest() {
     columns.forEach((item) => {
       const localized = localizeColumn(item, language);
       items.push({ path: `/columns/${localized.slug}`, title: localized.title, date: localized.date });
+    });
+
+    newsTrackerCases.forEach((item) => {
+      items.push({ path: `/monitoring/${item.slug}`, title: item.title[language], date: item.updatedAt });
     });
 
     [...seedLanguageEnvironmentArticlesKo, ...seedLanguageArticlesKo].forEach((item) => {

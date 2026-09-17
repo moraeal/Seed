@@ -5,7 +5,7 @@ import { useAuth } from "../auth";
 import { useLanguage } from "../i18n";
 import { ContentViewStat, DailyViewStat, EngagementSummary, FunnelStat, getEngagementData, MemberRegistration, NewsletterSubscriber, TrafficSourceStat } from "../lib/engagement";
 import { getFeaturedContentCandidates } from "../data/featuredContent";
-import { newsTrackerCases } from "../data/publicInterestWatch";
+import { isHotIssueColumn } from "../data/columns";
 import { getFeaturedContentPath, setFeaturedContentPath } from "../lib/featuredContent";
 
 type Section = "dashboard" | "content" | "traffic" | "subscribers" | "members" | "featured";
@@ -31,9 +31,9 @@ function sectionFromPath(path: string): Section {
 }
 
 function categoryLabel(path: string, ko: boolean) {
-  if (path.startsWith("/news/") || newsTrackerCases.some((item) => path.startsWith(`/monitoring/${item.slug}`))) return ko ? "핫이슈" : "Hot Issues";
+  if (path.startsWith("/news/")) return ko ? "핫이슈" : "Hot Issues";
   if (path.startsWith("/briefings/")) return ko ? "브리핑" : "Briefings";
-  if (path.startsWith("/columns/")) return ko ? "칼럼" : "Columns";
+  if (path.startsWith("/columns/")) return isHotIssueColumn(path.split("/").filter(Boolean).pop() ?? "") ? (ko ? "핫이슈" : "Hot Issues") : (ko ? "칼럼" : "Columns");
   if (path.startsWith("/seed-language/")) return ko ? "용어해설" : "Glossary";
   if (path.startsWith("/monitoring/")) return ko ? "시민감시" : "Civic Watch";
   return ko ? "기타" : "Other";

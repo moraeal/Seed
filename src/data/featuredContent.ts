@@ -1,8 +1,9 @@
 import type { Language } from "../i18n";
 import { getAllBriefingsNewestFirst } from "./allBriefings";
-import { columns } from "./columns";
+import { getColumnsNewestFirst } from "./columns";
 import { getHotIssuesNewestFirst } from "./hotIssues";
 import { localizeBriefing, localizeColumn } from "./localizedContent";
+import { newsTrackerCases } from "./publicInterestWatch";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "./seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "./seedLanguageEnvironment";
 
@@ -20,7 +21,7 @@ export type FeaturedContent = {
 
 export function getFeaturedContentCandidates(language: Language): FeaturedContent[] {
   const ko = language === "ko";
-  const columnItems: FeaturedContent[] = columns.map((item) => {
+  const columnItems: FeaturedContent[] = getColumnsNewestFirst().map((item) => {
     const localized = localizeColumn(item, language);
     return {
       path: `/columns/${item.slug}`,
@@ -65,6 +66,20 @@ export function getFeaturedContentCandidates(language: Language): FeaturedConten
     };
   });
 
+  const trackerItems: FeaturedContent[] = newsTrackerCases.map((item) => ({
+    path: `/monitoring/${item.slug}`,
+    category: "watch",
+    categoryLabel: ko ? "시민감시" : "Civic Watch",
+    kicker: "CIVIC WATCH · NEWS TRACKER",
+    title: item.title[language],
+    summary: item.summary[language],
+    date: item.updatedAt,
+    image: {
+      src: item.heroImage?.src ?? "/images/brand/editorial-image-fallback.svg",
+      alt: item.heroImage?.alt[language] ?? item.title[language],
+    },
+  }));
+
   const languageSources = [
     ...seedLanguageEnvironmentArticlesKo,
     ...seedLanguageArticlesKo,
@@ -88,6 +103,6 @@ export function getFeaturedContentCandidates(language: Language): FeaturedConten
     }];
   });
 
-  return [...columnItems, ...newsItems, ...briefingItems, ...languageItems]
+  return [...columnItems, ...newsItems, ...trackerItems, ...briefingItems, ...languageItems]
     .sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
 }

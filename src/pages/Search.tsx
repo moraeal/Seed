@@ -3,7 +3,7 @@ import { FormEvent, useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import SafeImage from "../components/SafeImage";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
-import { getColumnsNewestFirst } from "../data/columns";
+import { getColumnsNewestFirst, getHotIssueColumnsNewestFirst } from "../data/columns";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
 import { getNewsNewestFirst } from "../data/news";
 import { newsTrackerCases } from "../data/publicInterestWatch";
@@ -76,6 +76,19 @@ export default function SearchPage() {
       imageAlt: item.heroImage.alt,
     }));
 
+    const hotIssueColumns = getHotIssueColumnsNewestFirst().map((item) => localizeColumn(item, language)).map((item) => ({
+      key: `hot-issue-column-${item.slug}`,
+      category: ko ? "핫이슈" : "Hot Issues",
+      title: item.title,
+      summary: item.summary,
+      body: [item.subtitle, ...item.sections.flatMap((section) => [section.title, ...section.paragraphs])].join(" "),
+      date: item.date,
+      readMinutes: item.readMinutes,
+      href: `/columns/${item.slug}`,
+      imageSrc: item.heroImage.src,
+      imageAlt: item.heroImage.alt,
+    }));
+
     const seedLanguage = [...seedLanguageEnvironmentArticlesKo, ...seedLanguageArticlesKo]
       .map((item) => getSeedLanguageEnvironmentArticle(item.slug, language) ?? getSeedLanguageArticle(item.slug, language))
       .filter((item): item is NonNullable<typeof item> => Boolean(item))
@@ -94,17 +107,17 @@ export default function SearchPage() {
 
     const trackers = newsTrackerCases.map((item) => ({
       key: `tracker-${item.slug}`,
-      category: ko ? "핫이슈" : "Hot Issues",
+      category: ko ? "시민감시" : "Civic Watch",
       title: item.title[language],
       summary: item.summary[language],
       body: [item.sourceBasis[language], ...(item.keyChanges ?? []).map((change) => change.text[language]), ...(item.timeline ?? []).flatMap((entry) => [entry.title[language], entry.description[language]])].join(" "),
       date: item.updatedAt,
-      href: `/news/${item.slug}`,
+      href: `/monitoring/${item.slug}`,
       imageSrc: item.heroImage?.src ?? "",
       imageAlt: item.heroImage?.alt[language] ?? item.title[language],
     }));
 
-    return [...news, ...trackers, ...briefings, ...columns, ...seedLanguage];
+    return [...news, ...hotIssueColumns, ...trackers, ...briefings, ...columns, ...seedLanguage];
   }, [ko, language]);
 
   const results = useMemo(() => {

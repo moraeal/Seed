@@ -1,6 +1,6 @@
 import { ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
-import { columns } from "../data/columns";
+import { getColumnsNewestFirst } from "../data/columns";
 import { localizeColumn } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
 import SafeImage from "../components/SafeImage";
@@ -11,8 +11,7 @@ const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.me
 export default function Columns() {
   const { language } = useLanguage();
   const ko = language === "ko";
-  const localizedColumns = [...columns]
-    .sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue)
+  const localizedColumns = getColumnsNewestFirst()
     .map((column) => localizeColumn(column, language));
   const recentColumns = localizedColumns.slice(0, RECENT_ARTICLE_COUNT);
   const archiveColumns = localizedColumns.slice(RECENT_ARTICLE_COUNT);

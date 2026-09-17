@@ -1,5 +1,5 @@
 import { AlertTriangle, ArrowLeft, BookOpenText, CheckCircle2, ExternalLink, FileQuestion, Lightbulb, Scale } from "lucide-react";
-import { Link, Navigate, useLocation, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ArticleContinuation from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
@@ -10,7 +10,6 @@ import LivingWatchDetail from "./LivingWatchDetail";
 
 export default function PublicInterestWatchDetail() {
   const { slug = "" } = useParams();
-  const { pathname } = useLocation();
   const { language } = useLanguage();
   const ko = language === "ko";
   const item = getPublicInterestWatchCase(slug);
@@ -23,10 +22,6 @@ export default function PublicInterestWatchDetail() {
         <Link to="/monitoring" className="button-primary mt-7">{ko ? "시민감시로 돌아가기" : "Back to Civic Watch"}</Link>
       </div>
     );
-  }
-
-  if (item.timeline?.length && pathname.startsWith("/monitoring/")) {
-    return <Navigate to={`/news/${item.slug}`} replace />;
   }
 
   const continuation = item.continuationEligible === false ? undefined : getEditorialContinuation("monitoring", item.slug, language);

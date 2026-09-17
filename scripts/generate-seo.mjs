@@ -31,6 +31,8 @@ await server.close();
 const news = newsModule.newsArticles;
 const briefings = briefingModule.getAllBriefingsNewestFirst();
 const columns = columnModule.columns;
+const editorialColumns = columnModule.getColumnsNewestFirst();
+const hotIssueColumns = columnModule.getHotIssueColumnsNewestFirst();
 const watchCases = watchModule.publicInterestWatchCases;
 const seedWatchReferences = seedWatchModule.seedWatchReferences;
 const englishContent = siteContentModule.getContent("en");
@@ -147,9 +149,12 @@ function articleBody(route) {
     `<section><h2>확인 자료</h2><ul>${communityChestResearch.sources.map((source) => `<li><a href="${escapeHtml(source.url)}">${escapeHtml(source.label)}</a></li>`).join("")}</ul></section>`,
   ].join("\n");
 
-  const listing = route.path === "/news" ? news.map((item) => ({ path: `/news/${item.slug}`, title: item.title, summary: item.summary }))
+  const listing = route.path === "/news" ? [
+      ...news.map((item) => ({ path: `/news/${item.slug}`, title: item.title, summary: item.summary })),
+      ...hotIssueColumns.map((item) => ({ path: `/columns/${item.slug}`, title: item.title, summary: item.summary })),
+    ]
     : route.path === "/briefings" ? briefings.map((item) => ({ path: `/briefings/${item.slug}`, title: item.title, summary: item.summary }))
-    : route.path === "/columns" ? columns.map((item) => ({ path: `/columns/${item.slug}`, title: item.title, summary: item.summary }))
+    : route.path === "/columns" ? editorialColumns.map((item) => ({ path: `/columns/${item.slug}`, title: item.title, summary: item.summary }))
     : route.path === "/monitoring" ? [
       ...seedWatchListing,
       ...watchCases.map((item) => ({ path: `/monitoring/${item.slug}`, title: item.title.ko, summary: item.summary.ko })),

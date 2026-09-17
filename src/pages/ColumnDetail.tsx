@@ -1,4 +1,4 @@
-import { Clock, FileText } from "lucide-react";
+import { ArrowLeft, Clock, FileText } from "lucide-react";
 import { Fragment } from "react";
 import { Link, useParams } from "react-router-dom";
 import ArticleContinuation from "../components/ArticleContinuation";
@@ -7,7 +7,7 @@ import ContentAccountability from "../components/ContentAccountability";
 import InteractiveFigure from "../components/InteractiveFigure";
 import ShareButton from "../components/ShareButton";
 import SourceDocumentPanel from "../components/SourceDocumentPanel";
-import { getColumn } from "../data/columns";
+import { getColumn, isHotIssueColumn } from "../data/columns";
 import { localizeColumn } from "../data/localizedContent";
 import { getEditorialContinuation } from "../data/editorialContinuations";
 import { useLanguage } from "../i18n";
@@ -25,6 +25,7 @@ export default function ColumnDetail() {
   if (!column) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">{ko ? "글을 찾을 수 없습니다." : "Article not found."}</h1><Link to="/columns" className="button-primary mt-7">{ko ? "칼럼 목록" : "Columns"}</Link></div>;
 
   const isLongRead = column.readMinutes >= 8;
+  const hotIssue = isHotIssueColumn(column.slug);
   const continuation = getEditorialContinuation("column", column.slug, language);
 
   const seenImages = new Set([imageKey(column.heroImage.src)]);
@@ -47,7 +48,7 @@ export default function ColumnDetail() {
 
   return <article className="bg-paper">
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
-      <div className="container-page max-w-5xl"><div className="pt-3"><h1 className="article-detail-title">{column.title}</h1><p className="article-summary">{column.summary}</p></div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45"><time>{column.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${column.readMinutes}분` : `${column.readMinutes} min read`}</span>{column.sourceDocument && <a href="#source-document" className="flex items-center gap-1 font-bold text-green-deep hover:underline"><FileText size={14}/>{ko ? "성명서 원문 대조" : "Compare source"}</a>}<ShareButton title={`${column.title} - ${column.subtitle}`} text={column.summary} className="ml-auto" /></div></div>
+      <div className="container-page max-w-5xl">{hotIssue && <Link to="/news" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "핫이슈 목록" : "Hot Issues"}</Link>}<div className="pt-3"><h1 className="article-detail-title">{column.title}</h1><p className="article-summary">{column.summary}</p></div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45">{hotIssue && <span className="font-extrabold text-green-deep">{ko ? "핫이슈 · 쟁점 칼럼" : "HOT ISSUE · COMMENTARY"}</span>}<time>{column.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${column.readMinutes}분` : `${column.readMinutes} min read`}</span>{column.sourceDocument && <a href="#source-document" className="flex items-center gap-1 font-bold text-green-deep hover:underline"><FileText size={14}/>{ko ? "성명서 원문 대조" : "Compare source"}</a>}<ShareButton title={`${column.title} - ${column.subtitle}`} text={column.summary} className="ml-auto" /></div></div>
     </header>
 
     <div className="article-content-frame py-8 sm:py-12">

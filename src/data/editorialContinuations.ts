@@ -86,20 +86,20 @@ const discourseContinuation: Record<Language, EditorialContinuation> = {
 
 const farmlandOwnershipContinuation: Record<Language, EditorialContinuation> = {
   ko: {
-    href: "/news/farmland-census-disposal-orders-tracker",
+    href: "/monitoring/farmland-census-disposal-orders-tracker",
     title: "농지 27%는 누가 사나",
     relationship: "사실과 절차 추적",
     reason: "칼럼이 제기한 질문에 이어 전수조사 수치, 처분 절차, 연간 25% 이행강제금과 후속 조치를 자료별로 확인합니다.",
-    listHref: "/columns",
-    listLabel: "칼럼 전체 보기",
+    listHref: "/news",
+    listLabel: "핫이슈 전체 보기",
   },
   en: {
-    href: "/news/farmland-census-disposal-orders-tracker",
+    href: "/monitoring/farmland-census-disposal-orders-tracker",
     title: "Who Will Buy the 27% of Farmland Flagged?",
     relationship: "TRACK THE FACTS AND PROCESS",
     reason: "Continue from the column's questions to a source-by-source tracker of the survey figures, disposal process, annual 25% enforcement charge and next steps.",
-    listHref: "/columns",
-    listLabel: "All columns",
+    listHref: "/news",
+    listLabel: "All Hot Issues",
   },
 };
 
@@ -109,35 +109,35 @@ const farmlandTrackerContinuation: Record<Language, EditorialContinuation> = {
     title: "소유권은 남았지만 소유할 수 없다",
     relationship: "씨앗의 소리",
     reason: "농지 전수조사의 숫자와 절차를 확인했다면, 팔리지 않는 농지와 반복되는 이행강제금이 시민의 재산권에 남기는 문제를 이어서 읽습니다.",
-    listHref: "/news",
-    listLabel: "핫이슈 전체 보기",
+    listHref: "/monitoring",
+    listLabel: "시민감시 전체 보기",
   },
   en: {
     href: "/columns/farmland-ownership-without-an-exit",
     title: "Ownership on Paper, but No Practical Right to Keep It",
     relationship: "SEED VOICE",
     reason: "After reviewing the census figures and enforcement process, continue with what unsellable farmland and recurring charges mean for citizens' property rights.",
-    listHref: "/news",
-    listLabel: "All Hot Issues",
+    listHref: "/monitoring",
+    listLabel: "All Civic Watch records",
   },
 };
 
 const nuclearPolicyColumnContinuation: Record<Language, EditorialContinuation> = {
   ko: {
-    href: "/news/democratic-party-nuclear-policy-reversal-tracker",
+    href: "/monitoring/democratic-party-nuclear-policy-reversal-tracker",
     title: "탈원전에서 신규 원전 추진까지",
     relationship: "사실과 정책 변화 추적",
     reason: "칼럼이 제기한 정책의 예측가능성과 기업 자율성 문제에 이어, 2017년 이후 원전정책과 기업 이전 논의가 어떻게 바뀌었는지 날짜별 자료로 확인합니다.",
-    listHref: "/columns",
-    listLabel: "칼럼 전체 보기",
+    listHref: "/news",
+    listLabel: "핫이슈 전체 보기",
   },
   en: {
-    href: "/news/democratic-party-nuclear-policy-reversal-tracker",
+    href: "/monitoring/democratic-party-nuclear-policy-reversal-tracker",
     title: "From a Nuclear Phase-Down to New Reactor Construction",
     relationship: "TRACK THE FACTS AND POLICY SHIFTS",
     reason: "Continue from the column's argument to a dated record of nuclear policy, regional industrial planning and corporate relocation since 2017.",
-    listHref: "/columns",
-    listLabel: "All columns",
+    listHref: "/news",
+    listLabel: "All Hot Issues",
   },
 };
 
@@ -147,14 +147,33 @@ const nuclearPolicyTrackerContinuation: Record<Language, EditorialContinuation> 
     title: "이제는 원전을 다시 짓자는 민주당",
     relationship: "씨앗의 소리",
     reason: "날짜별 정책 변화를 확인했다면, 탈원전에서 원전 확대로의 전환과 기업 이전 정책이 국가의 예측가능성과 권력의 한계에 남기는 문제를 이어서 읽습니다.",
-    listHref: "/news",
-    listLabel: "핫이슈 전체 보기",
+    listHref: "/monitoring",
+    listLabel: "시민감시 전체 보기",
   },
   en: {
     href: "/columns/democratic-party-nuclear-policy-reversal",
     title: "Now South Korea's Democrats Want to Build Nuclear Plants Again",
     relationship: "SEED VOICE",
     reason: "After reviewing the dated record, continue with what the reversal and corporate-relocation policy mean for predictability and the limits of state power.",
+    listHref: "/monitoring",
+    listLabel: "All Civic Watch records",
+  },
+};
+
+const prosecutionReformColumnContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/monitoring/prosecution-service-abolition-tracker",
+    title: "검찰청 폐지, 무엇이 사라지고 무엇이 남나",
+    relationship: "사실과 제도 변화 추적",
+    reason: "권력 이전의 위험을 짚은 논평에 이어, 검찰청 폐지와 수사·기소 권한 재편이 실제로 어떻게 진행되는지 날짜별 기록으로 확인합니다.",
+    listHref: "/news",
+    listLabel: "핫이슈 전체 보기",
+  },
+  en: {
+    href: "/monitoring/prosecution-service-abolition-tracker",
+    title: "Abolishing the Prosecution Service: What Disappears, and What Remains?",
+    relationship: "TRACK THE INSTITUTIONAL CHANGE",
+    reason: "Continue from the argument about relocated power to a dated record of the prosecution service's abolition and the redistribution of investigative and charging authority.",
     listHref: "/news",
     listLabel: "All Hot Issues",
   },
@@ -168,10 +187,12 @@ const isFarmlandOwnership = (kind: EditorialContentKind, slug: string) => kind =
 const isFarmlandTracker = (kind: EditorialContentKind, slug: string) => kind === "monitoring" && slug === "farmland-census-disposal-orders-tracker";
 const isNuclearPolicyColumn = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "democratic-party-nuclear-policy-reversal";
 const isNuclearPolicyTracker = (kind: EditorialContentKind, slug: string) => kind === "monitoring" && slug === "democratic-party-nuclear-policy-reversal-tracker";
+const isProsecutionReformColumn = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "prosecution-reform-power-transfer-2026";
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
   if (isNuclearPolicyTracker(kind, slug)) return true;
   if (isNuclearPolicyColumn(kind, slug)) return true;
+  if (isProsecutionReformColumn(kind, slug)) return true;
   if (isConservatism(kind, slug)) return true;
   if (isFarmlandTracker(kind, slug)) return true;
   if (isFarmlandOwnership(kind, slug)) return true;
@@ -184,6 +205,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
   if (isNuclearPolicyTracker(kind, slug)) return nuclearPolicyTrackerContinuation[language];
   if (isNuclearPolicyColumn(kind, slug)) return nuclearPolicyColumnContinuation[language];
+  if (isProsecutionReformColumn(kind, slug)) return prosecutionReformColumnContinuation[language];
   if (isConservatism(kind, slug)) return conservatismContinuation[language];
   if (isFarmlandTracker(kind, slug)) return farmlandTrackerContinuation[language];
   if (isFarmlandOwnership(kind, slug)) return farmlandOwnershipContinuation[language];

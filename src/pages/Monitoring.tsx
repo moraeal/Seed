@@ -7,7 +7,7 @@ import { getAllBriefing } from "../data/allBriefings";
 import { getColumn } from "../data/columns";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
 import { getNewsArticle } from "../data/news";
-import { civicWatchCases, type LocalizedText } from "../data/publicInterestWatch";
+import { civicWatchCases, newsTrackerCases, type LocalizedText } from "../data/publicInterestWatch";
 import { seedWatchReferences, type SeedWatchReference } from "../data/seedWatchIndex";
 import { useLanguage, type Language } from "../i18n";
 
@@ -92,6 +92,7 @@ export default function Monitoring() {
     .map((reference) => resolveWatchArticle(reference, language))
     .filter((article): article is ResolvedWatchArticle => article !== null)
     .sort((a, b) => b.date.localeCompare(a.date));
+  const trackers = [...newsTrackerCases].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
   const recentArticles = curatedArticles.slice(0, RECENT_ARTICLE_COUNT);
   const archivedArticles = curatedArticles.slice(RECENT_ARTICLE_COUNT);
   const criteria = [
@@ -111,18 +112,45 @@ export default function Monitoring() {
           </div>
           <p className="max-w-2xl text-base leading-8 text-charcoal/65">
             {ko
-              ? "시민감시는 국회와 입법 과정, 국가와 지방정부, 공공기관과 시민사회가 가진 권력을 감시합니다. 법안과 제도가 시민의 권리와 기업의 자유를 어떻게 바꾸는지, 세금과 기부금이 어떻게 쓰이는지 살핍니다. 선한 목적이나 명성도 검증을 대신할 수 없습니다. 공개자료와 기관의 답변, 시행 이후의 실제 결과를 끝까지 기록합니다."
-              : "Civic Watch scrutinizes legislatures and lawmaking, national and local government, public institutions and civil-society power. We examine how bills and institutions change civic rights and economic freedom, and how taxes and donations are used. Good intentions or reputation do not replace verification. We follow public records, institutional replies and real-world outcomes after implementation."}
+              ? "시민감시는 국회와 입법 과정, 국가와 지방정부, 공공기관과 시민사회가 가진 권력을 감시합니다. 뉴스트래커로 사건과 정책의 변화를 날짜별로 쌓고, 공개자료와 기관의 답변, 시행 이후의 실제 결과를 끝까지 기록합니다. 선한 목적이나 명성도 검증을 대신할 수 없습니다."
+              : "Civic Watch scrutinizes legislatures and lawmaking, national and local government, public institutions and civil-society power. News trackers preserve dated changes in events and policy, alongside public records, institutional replies and real-world outcomes. Good intentions or reputation do not replace verification."}
           </p>
         </div>
       </header>
 
       <div className="container-page py-8 sm:py-10">
-        <section>
+        <section aria-labelledby="news-trackers-title">
+          <div className="flex flex-col gap-3 border-b-2 border-navy pb-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <span className="section-kicker">NEWS TRACKERS</span>
+              <h2 id="news-trackers-title" className="mt-2 text-3xl font-extrabold text-navy">{ko ? "뉴스트래커" : "News Trackers"}</h2>
+            </div>
+            <p className="max-w-lg text-sm leading-7 text-charcoal/55">{ko ? "한 번의 보도로 끝내지 않고, 확인된 사실과 새로 달라진 내용을 날짜별로 이어 기록합니다." : "Dated records distinguish verified facts from later changes instead of ending with a single report."}</p>
+          </div>
+
+          <div>
+            {trackers.map((item) => (
+              <Link key={item.slug} to={`/monitoring/${item.slug}`} className="group grid gap-5 border-b border-green-deep/15 px-5 py-6 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7">
+                <div className="relative overflow-hidden bg-green-deep">
+                  <SafeImage src={imageSrc(item.heroImage?.src ?? "/images/brand/editorial-image-fallback.svg")} alt={t(item.heroImage?.alt ?? item.title)} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.025]" />
+                  <span className="absolute bottom-2 left-2 rounded-sm bg-black/65 px-2 py-1 text-[10px] font-semibold text-white backdrop-blur-sm">{ko ? "뉴스트래커" : "News tracker"}</span>
+                </div>
+                <div>
+                  <div className="mb-3 flex flex-wrap items-center gap-2 text-[11px] font-extrabold"><span className="bg-green-deep px-2.5 py-1 text-white">{t(item.status)}</span><span className="text-green-deep">{t(item.eyebrow)}</span></div>
+                  <h3 className="editorial-title line-clamp-2 text-balance text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">{t(item.title)}</h3>
+                  <p className="mt-2 line-clamp-2 max-w-3xl text-base leading-7 text-charcoal/60">{t(item.summary)}</p>
+                  <div className="mt-4 flex flex-wrap items-center gap-4 border-t border-green-deep/10 pt-3 text-xs text-charcoal/45"><time>{item.updatedAt.replace(/-/g, ".")}</time><span className="ml-auto flex items-center gap-2 font-extrabold text-green-deep">{ko ? "기록 보기" : "View record"}<ArrowRight size={15}/></span></div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-16">
           <div className="mb-4 flex items-end justify-between gap-4 border-b-2 border-navy pb-3">
             <div>
               <span className="section-kicker">LATEST</span>
-              <h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "최근 기사" : "Latest articles"}</h2>
+              <h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "관련 시민감시 기사" : "Related Civic Watch articles"}</h2>
             </div>
             <p className="text-xs font-semibold text-charcoal/45">{ko ? "최근 5건" : "Latest five"}</p>
           </div>

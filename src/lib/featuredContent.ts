@@ -22,7 +22,7 @@ export async function getFeaturedContentPath(): Promise<string | null> {
 }
 
 export async function setFeaturedContentPath(session: AuthSession, path: string): Promise<string> {
-  if (!/^\/(columns|news|briefings|seed-language)\/[a-z0-9][a-z0-9-]*$/.test(path)) {
+  if (!/^\/(columns|news|briefings|monitoring|seed-language)\/[a-z0-9][a-z0-9-]*$/.test(path)) {
     throw new Error("Invalid featured content path");
   }
   const response = await fetch(`${supabaseUrl}/rest/v1/homepage_featured_content?on_conflict=slot`, {

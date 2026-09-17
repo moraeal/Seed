@@ -1,7 +1,7 @@
 import type { Language } from "../i18n";
-import { localizeNewsArticle } from "./localizedContent";
+import { getHotIssueColumnsNewestFirst } from "./columns";
+import { localizeColumn, localizeNewsArticle } from "./localizedContent";
 import { getNewsNewestFirst } from "./news";
-import { newsTrackerCases } from "./publicInterestWatch";
 
 export type HotIssueListItem = {
   key: string;
@@ -33,23 +33,24 @@ export function getHotIssuesNewestFirst(language: Language): HotIssueListItem[] 
     };
   });
 
-  const trackers = newsTrackerCases.map((item) => ({
-    key: `tracker-${item.slug}`,
-    to: `/news/${item.slug}`,
-    title: item.title[language],
-    summary: item.summary[language],
-    date: item.updatedAt,
-    imageSrc: item.heroImage?.src ?? "/images/brand/editorial-image-fallback.svg",
-    imageAlt: item.heroImage?.alt[language] ?? item.title[language],
-    kindLabel: ko ? "뉴스트래커" : "News tracker",
-    status: item.status[language],
-  }));
+  const commentary = getHotIssueColumnsNewestFirst().map((item) => {
+    const localized = localizeColumn(item, language);
+    return {
+      key: `column-${item.slug}`,
+      to: `/columns/${item.slug}`,
+      title: localized.title,
+      summary: localized.summary,
+      date: item.date,
+      imageSrc: localized.heroImage.src,
+      imageAlt: localized.heroImage.alt,
+      kindLabel: ko ? "쟁점 칼럼" : "Issue commentary",
+      readMinutes: item.readMinutes,
+    };
+  });
 
-  return [...news, ...trackers].sort((a, b) => {
+  return [...news, ...commentary].sort((a, b) => {
     const dateOrder = b.date.localeCompare(a.date);
     if (dateOrder !== 0) return dateOrder;
-
-    const trackerOrder = Number(b.key.startsWith("tracker-")) - Number(a.key.startsWith("tracker-"));
-    return trackerOrder || a.title.localeCompare(b.title);
+    return a.title.localeCompare(b.title);
   });
 }

@@ -50,14 +50,14 @@ export default function LivingWatchDetail({ item, language, continuation }: Prop
       <header className="border-b border-green-deep/15 bg-ivory">
         <div className="container-page max-w-6xl py-5 sm:py-7">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <Link to="/news" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "핫이슈" : "Hot Issues"}</Link>
+            <Link to="/monitoring" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "시민감시" : "Civic Watch"}</Link>
             <ShareButton title={t(item.title)} text={t(item.summary)} />
           </div>
 
           <div className="mt-4 grid gap-7 border-t-2 border-navy pt-5 lg:grid-cols-[1.08fr_.92fr] lg:items-center">
             <div>
               <div className="flex flex-wrap items-center gap-2.5">
-                <span className="section-kicker">LIVING ISSUE RECORD</span>
+                <span className="section-kicker">CIVIC WATCH · NEWS TRACKER</span>
                 <span className="rounded-full bg-red-700 px-3 py-1 text-[11px] font-extrabold text-white">{t(item.status)}</span>
               </div>
               <p className="mt-4 text-sm font-extrabold text-green-deep">{t(item.organization)}</p>

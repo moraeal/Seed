@@ -1,7 +1,7 @@
 import { getAllBriefingsNewestFirst } from "./data/allBriefings";
-import { columns } from "./data/columns";
+import { columns, getColumnsNewestFirst, getHotIssueColumnsNewestFirst, isHotIssueColumn } from "./data/columns";
 import { newsArticles } from "./data/news";
-import { newsTrackerCases, publicInterestWatchCases } from "./data/publicInterestWatch";
+import { publicInterestWatchCases } from "./data/publicInterestWatch";
 import { seedLanguageArticlesKo } from "./data/seedLanguage";
 import { seedLanguageEnvironmentArticlesKo } from "./data/seedLanguageEnvironment";
 import {
@@ -68,10 +68,10 @@ const staticRoutes: SeoRoute[] = [
     lastModified: latestDate,
     language: "en",
   },
-  { path: "/news", title: "핫이슈 | 씨앗의 소리", description: "정치·사회 이슈의 핵심 보도와 뉴스트래커를 한곳에 모아 확인된 사실과 아직 결정되지 않은 내용을 구분합니다.", type: "website", lastModified: newest([...newsArticles.map((item) => item.date), ...newsTrackerCases.map((item) => item.updatedAt)]) },
+  { path: "/news", title: "핫이슈 | 씨앗의 소리", description: "뉴스트래커가 쌓은 사실을 바탕으로 정치·사회 사건의 핵심 쟁점과 시민에게 미치는 영향을 보도와 논평으로 설명합니다.", type: "website", lastModified: newest([...newsArticles.map((item) => item.date), ...getHotIssueColumnsNewestFirst().map((item) => item.date)]) },
   { path: "/briefings", title: "브리핑 | 씨앗의 소리", description: "복잡한 정책과 제도 논쟁을 사실, 맥락, 관찰 지점과 씨드의 관점으로 차분하게 풀어냅니다.", type: "website", lastModified: newest(getAllBriefingsNewestFirst().map((item) => item.date)) },
-  { path: "/columns", title: "칼럼 | 씨앗의 소리", description: "자유, 법치, 책임, 시장의 자율성과 강한 시민사회의 관점에서 오늘의 쟁점을 논평합니다.", type: "website", lastModified: newest(columns.map((item) => item.date)) },
-  { path: "/monitoring", title: "시민감시 | 씨앗의 소리", description: "국가와 시민사회의 권력, 예산과 성과를 공개자료와 기관의 답변으로 점검하고 후속 변화를 기록합니다.", type: "website", lastModified: latestDate },
+  { path: "/columns", title: "칼럼 | 씨앗의 소리", description: "특정 사건의 기록에 종속되지 않는 독립적인 주장과 사유를 통해 자유, 책임, 시장과 시민사회를 깊이 생각합니다.", type: "website", lastModified: newest(getColumnsNewestFirst().map((item) => item.date)) },
+  { path: "/monitoring", title: "시민감시 | 씨앗의 소리", description: "뉴스트래커로 사건과 정책의 변화를 날짜별로 기록하고, 국가와 시민사회의 권력·예산·성과를 공개자료와 기관 답변으로 점검합니다.", type: "website", lastModified: newest(publicInterestWatchCases.map((item) => item.updatedAt)) },
   { path: "/proposals", title: "시민제안 | 씨앗의 소리", description: "시민의 문제의식을 구체적인 제도와 정책의 제안으로 키우는 씨앗의 소리 제안 공간입니다.", type: "website", lastModified: latestDate },
   { path: "/founding-statement", title: "왜 지금 씨앗의 소리인가 | 씨앗의 소리", description: "다수결만으로 민주주의가 완성되지 않는 이유와 법의 지배, 제한된 정부, 권력분립과 시민의 자유를 지키려는 씨앗의 소리의 취지문입니다.", type: "article", publishedAt: latestDate, lastModified: latestDate, author: "작은씨앗", section: "씨앗의 소리 취지문", image: socialImageUrl("site", "founding-statement", latestDate), imageAlt: "국회, 정부와 법원의 권력분립과 시민의 자유를 상징하는 이미지" },
   { path: "/seed-language", title: "용어해설 | 씨앗의 소리", description: "특정 진영이 독점한 시민사회의 언어를 해체하고 본래 의미를 되살려 시민의 언어로 다시 구성합니다.", type: "website", lastModified: newest(allSeedLanguageArticlesKo.map((item) => item.date)) },
@@ -133,20 +133,20 @@ const columnRoutes: SeoRoute[] = columns.map((column) => ({
   publishedAt: column.date,
   lastModified: column.date,
   author: column.author,
-  section: "칼럼",
+  section: isHotIssueColumn(column.slug) ? "핫이슈" : "칼럼",
   image: socialImageUrl("columns", column.slug, `${column.date}-${stableHash(column.heroImage.src)}`),
   imageAlt: column.heroImage.alt,
 }));
 
 const monitoringRoutes: SeoRoute[] = publicInterestWatchCases.map((item) => ({
-  path: item.timeline?.length ? `/news/${item.slug}` : `/monitoring/${item.slug}`,
+  path: `/monitoring/${item.slug}`,
   title: `${item.title.ko} | 씨앗의 소리`,
   description: item.summary.ko,
   type: "article",
   publishedAt: item.openedAt ?? item.updatedAt,
   lastModified: item.updatedAt,
   author: SITE_NAME,
-  section: item.timeline?.length ? "핫이슈" : "시민감시",
+  section: "시민감시",
   image: item.heroImage ? socialImageUrl("monitoring", item.slug, item.updatedAt) : undefined,
   imageAlt: item.heroImage?.alt.ko,
 }));
