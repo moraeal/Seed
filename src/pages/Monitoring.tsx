@@ -17,7 +17,7 @@ export default function Monitoring() {
     <header className="border-b border-green-deep/15 bg-ivory">
       <div className="container-page grid gap-6 py-9 sm:py-12 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
         <div><span className="section-kicker">CIVIC WATCH</span><h1 className="editorial-title mt-2.5 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "시민감시" : "Civic Watch"}</h1></div>
-        <p className="max-w-2xl text-base leading-8 text-charcoal/65">{ko ? "사건의 흐름, 법안, 세금정책, 시민의 이름으로 쓰이는 권한과 돈을 나누어 기록합니다. 확인된 사실과 남은 질문, 씨앗의 판단을 구분합니다." : "We keep separate records for events, legislation, tax policy, and the use of power and money in the public interest—distinguishing facts, open questions and Seed Voice's judgment."}</p>
+        <p className="max-w-2xl text-base leading-8 text-charcoal/65">{ko ? "시민감시는 시민의 삶과 기업 활동에 영향을 주는 자유와 규제의 흐름을 살펴봅니다. 주요 사건과 법안, 세금정책, 공익기관의 활동을 분야별로 기록하고 무엇이 어떻게 달라지는지 쉽게 설명합니다. 확인된 사실과 아직 풀리지 않은 질문, 씨앗의 판단을 나누어 독자가 직접 판단할 수 있도록 돕습니다." : "Civic Watch examines how freedom and regulation affect citizens' lives and business activity. We organize major events, legislation, tax policy, and the work of public-interest institutions by subject, explaining in plain language what is changing and how. By separating verified facts, unresolved questions and Seed Voice's judgment, we help readers reach their own conclusions."}</p>
       </div>
     </header>
 
