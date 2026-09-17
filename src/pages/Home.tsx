@@ -287,7 +287,7 @@ export default function Home() {
               <div>
                 <p className="section-kicker">CIVIC WATCH</p>
                 <h2 id="recent-civic-watch-title" className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "시민감시" : "Civic Watch"}</h2>
-                <p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">{ko ? "사건과 법안, 세금정책, 공익기관에서 새로 확인한 내용을 모았습니다." : "New findings on major issues, legislation, tax policy and public-interest institutions."}</p>
+                <p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">{ko ? "현재 감시이슈와 국회 입법안, 세금감시 메뉴에 새로 업데이트된 내용을 모았습니다." : "New findings on major issues, legislation, tax policy and public-interest institutions."}</p>
               </div>
               <Link to="/monitoring" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link>
             </div>
