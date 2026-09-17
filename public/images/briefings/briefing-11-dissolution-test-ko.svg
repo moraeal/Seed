@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">정당해산은 다섯 문턱을 넘어야 합니다</title>
+  <desc id="desc">정부 청구, 정당 귀속성, 구체적 위험, 최후수단, 헌법재판관 6명 찬성의 다섯 단계</desc>
+  <rect width="1600" height="900" fill="#f5f2eb"/>
+  <text x="110" y="112" font-family="Noto Sans KR, sans-serif" font-size="52" font-weight="800" fill="#17202a">정당해산은 다섯 문턱을 넘어야 합니다</text>
+  <text x="112" y="168" font-family="Noto Sans KR, sans-serif" font-size="26" fill="#53606a">정치적 비난이나 대통령 개인의 책임만으로는 부족합니다</text>
+  <line x1="190" y1="445" x2="1410" y2="445" stroke="#b9a58d" stroke-width="8"/>
+  <g font-family="Noto Sans KR, sans-serif" text-anchor="middle">
+    <g transform="translate(220 0)"><circle cy="445" r="66" fill="#253b52"/><text y="458" font-size="36" font-weight="800" fill="#fff">1</text><text y="570" font-size="31" font-weight="800" fill="#17202a">정부의 청구</text><text y="614" font-size="23" fill="#53606a">국무회의 심의</text></g>
+    <g transform="translate(510 0)"><circle cy="445" r="66" fill="#35536d"/><text y="458" font-size="36" font-weight="800" fill="#fff">2</text><text y="570" font-size="31" font-weight="800" fill="#17202a">정당 귀속성</text><text y="614" font-size="23" fill="#53606a">개인 행위와 구분</text></g>
+    <g transform="translate(800 0)"><circle cy="445" r="66" fill="#6b4b4b"/><text y="458" font-size="36" font-weight="800" fill="#fff">3</text><text y="570" font-size="31" font-weight="800" fill="#17202a">구체적 위험</text><text y="614" font-size="23" fill="#53606a">실질적 해악 가능성</text></g>
+    <g transform="translate(1090 0)"><circle cy="445" r="66" fill="#7b5a3f"/><text y="458" font-size="36" font-weight="800" fill="#fff">4</text><text y="570" font-size="31" font-weight="800" fill="#17202a">최후수단</text><text y="614" font-size="23" fill="#53606a">다른 대안이 없어야</text></g>
+    <g transform="translate(1380 0)"><circle cy="445" r="66" fill="#8b2f35"/><text y="458" font-size="36" font-weight="800" fill="#fff">5</text><text y="570" font-size="31" font-weight="800" fill="#17202a">재판관 6명</text><text y="614" font-size="23" fill="#53606a">이상 찬성</text></g>
+  </g>
+  <rect x="110" y="726" width="1380" height="86" rx="18" fill="#17202a"/>
+  <text x="800" y="782" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="30" font-weight="700" fill="#fff">정당해산은 경쟁자를 제거하는 지름길이 아니라 민주주의가 허용한 가장 예외적인 최후수단입니다</text>
+</svg>

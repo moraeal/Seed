@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Party dissolution must clear five thresholds</title>
+  <desc id="desc">Government petition, attribution, concrete danger, last resort and six Constitutional Court votes</desc>
+  <rect width="1600" height="900" fill="#f5f2eb"/>
+  <text x="110" y="112" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="800" fill="#17202a">Party dissolution must clear five thresholds</text>
+  <text x="112" y="168" font-family="Inter, Arial, sans-serif" font-size="26" fill="#53606a">Political condemnation or one president’s liability is not enough</text>
+  <line x1="190" y1="445" x2="1410" y2="445" stroke="#b9a58d" stroke-width="8"/>
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle">
+    <g transform="translate(220 0)"><circle cy="445" r="66" fill="#253b52"/><text y="458" font-size="36" font-weight="800" fill="#fff">1</text><text y="570" font-size="29" font-weight="800" fill="#17202a">Government filing</text><text y="614" font-size="22" fill="#53606a">Cabinet deliberation</text></g>
+    <g transform="translate(510 0)"><circle cy="445" r="66" fill="#35536d"/><text y="458" font-size="36" font-weight="800" fill="#fff">2</text><text y="570" font-size="29" font-weight="800" fill="#17202a">Attribution</text><text y="614" font-size="22" fill="#53606a">Not individual conduct</text></g>
+    <g transform="translate(800 0)"><circle cy="445" r="66" fill="#6b4b4b"/><text y="458" font-size="36" font-weight="800" fill="#fff">3</text><text y="570" font-size="29" font-weight="800" fill="#17202a">Concrete danger</text><text y="614" font-size="22" fill="#53606a">Substantial harm</text></g>
+    <g transform="translate(1090 0)"><circle cy="445" r="66" fill="#7b5a3f"/><text y="458" font-size="36" font-weight="800" fill="#fff">4</text><text y="570" font-size="29" font-weight="800" fill="#17202a">Last resort</text><text y="614" font-size="22" fill="#53606a">No adequate alternative</text></g>
+    <g transform="translate(1380 0)"><circle cy="445" r="66" fill="#8b2f35"/><text y="458" font-size="36" font-weight="800" fill="#fff">5</text><text y="570" font-size="29" font-weight="800" fill="#17202a">Six justices</text><text y="614" font-size="22" fill="#53606a">Must vote to dissolve</text></g>
+  </g>
+  <rect x="110" y="726" width="1380" height="86" rx="18" fill="#17202a"/>
+  <text x="800" y="782" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#fff">Dissolution is democracy’s most exceptional last resort—not a shortcut for removing a rival</text>
+</svg>
