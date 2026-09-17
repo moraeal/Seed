@@ -281,28 +281,28 @@ export default function Home() {
       </section>
 
       {recentCivicWatchItems.length > 0 && (
-        <section className="border-b border-green-deep/12 bg-white py-7 sm:py-9" aria-labelledby="recent-civic-watch-title">
+        <section className="bg-paper pt-8 pb-4 sm:pt-12 sm:pb-5" aria-labelledby="recent-civic-watch-title">
           <div className="container-page">
             <div className="flex items-end justify-between gap-3 border-b-[3px] border-navy pb-2.5 sm:gap-4 sm:pb-3">
               <div>
                 <p className="section-kicker">CIVIC WATCH</p>
-                <h2 id="recent-civic-watch-title" className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "새로 공개된 시민감시" : "New from Civic Watch"}</h2>
+                <h2 id="recent-civic-watch-title" className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "시민감시" : "Civic Watch"}</h2>
                 <p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">{ko ? "사건과 법안, 세금정책, 공익기관에서 새로 확인한 내용을 모았습니다." : "New findings on major issues, legislation, tax policy and public-interest institutions."}</p>
               </div>
               <Link to="/monitoring" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link>
             </div>
-            <div className="divide-y divide-green-deep/15 md:grid md:grid-cols-3 md:divide-x md:divide-y-0">
+            <div className="mt-4 grid gap-3 sm:mt-5 sm:gap-5 md:grid-cols-3">
               {recentCivicWatchItems.map((item) => (
-                <Link key={item.key} to={item.to} className="group block py-5 md:px-6 md:first:pl-0 md:last:pr-0">
+                <Link key={item.key} to={item.to} className="group flex h-full flex-col border border-green-deep/15 bg-white p-4 transition-all duration-200 hover:-translate-y-1 hover:border-green-deep/35 hover:bg-green-pale/35 hover:shadow-[0_12px_28px_rgba(20,55,45,0.10)] focus-visible:-translate-y-1 focus-visible:border-green-deep/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-deep/20 sm:p-5">
                   <div className="flex items-center justify-between gap-3">
                     <span className="text-[10px] font-black tracking-[.12em] text-green-deep">{civicWatchCategoryLabels[item.category]}</span>
                     <time className="shrink-0 text-[11px] text-charcoal/40">{item.date.replace(/-/g, ".")}</time>
                   </div>
                   <h3 className="editorial-title mt-2 line-clamp-2 break-keep text-[1.08rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.2rem]">{item.title}</h3>
                   <p className="mt-1.5 line-clamp-2 text-[13px] leading-5.5 text-charcoal/58 sm:text-sm sm:leading-6">{item.summary}</p>
-                  <div className="mt-3 flex items-center justify-between gap-3 border-t border-green-deep/10 pt-2.5">
+                  <div className="mt-3 flex items-center justify-between gap-3 border-t border-green-deep/10 pt-2.5 sm:mt-4 md:mt-auto">
                     <span className="truncate text-[11px] font-bold text-charcoal/45">{item.status}</span>
-                    <span className="inline-flex shrink-0 items-center gap-1 text-[11px] font-extrabold text-green-deep">{ko ? "기록 보기" : "View record"}<ArrowRight size={12}/></span>
+                    <span className="inline-flex shrink-0 items-center gap-1 text-[11px] font-extrabold text-green-deep">{ko ? "기록 보기" : "View record"}<ArrowRight size={12} className="transition-transform duration-200 group-hover:translate-x-1"/></span>
                   </div>
                 </Link>
               ))}
