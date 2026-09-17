@@ -16,8 +16,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   openedAt: "2026-08-31",
   updatedAt: "2026-09-17",
   nextCheck: {
-    ko: "후보자의 수임 관련 청문회 답변 정정이 인사청문경과보고서에 반영되는지, 제넨셀 의혹에 대한 경찰의 재수사 여부 결정과 가족 협동조합 고발 사건의 수사 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판, 대통령의 임명 여부",
-    en: "Whether the correction to the nominee's hearing answer about past legal representation is reflected in the committee report, the police decision on reinvestigating the Genencell allegation and progress in the family-cooperative complaint, the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder, and whether the president proceeds with the appointment",
+    ko: "대통령의 공식 임명 여부와 법무부 취임 절차, 제넨셀 의혹에 대한 경찰의 재수사 여부 결정과 가족 협동조합 고발 사건의 수사 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
+    en: "The president's official appointment decision and any Justice Ministry inauguration, the police decision on reinvestigating the Genencell allegation and progress in the family-cooperative complaint, and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
   },
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
@@ -36,6 +36,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "This timeline cross-checks National Assembly schedules and decisions, public statements from the nominee and both parties, and reporting based on Ministry of Food and Drug Safety records. Allegations and the nominee's rebuttals are kept separate from verified facts.",
   },
   keyChanges: [
+    {
+      date: "2026-09-17",
+      text: {
+        ko: "국회 법제사법위원회가 국민의힘 위원들이 퇴장한 가운데 민주당 주도로 김 후보자 인사청문경과보고서를 ‘적격’ 의견으로 채택했습니다. 보고서 채택은 국회 절차의 완료이며 장관 임명 자체는 아닙니다.",
+        en: "The National Assembly's Legislation and Judiciary Committee adopted Kim's confirmation report with a fit-for-office opinion under Democratic Party leadership after People Power Party members walked out. Adoption completes the committee stage but is not itself the ministerial appointment.",
+      },
+    },
     {
       date: "2026-09-16",
       text: {
@@ -418,11 +425,37 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       ],
     },
     {
-      date: "다음",
-      title: { ko: "청문경과보고서와 임명 여부 확인", en: "Committee report and appointment decision" },
+      date: "2026-09-17",
+      title: { ko: "법사위, 청문보고서 ‘적격’ 채택", en: "Committee adopts report with fit-for-office opinion" },
       description: {
-        ko: "법제사법위원회가 경과보고서를 채택하는지, 미채택 시 대통령이 재송부를 요청하거나 임명을 강행하는지 확인합니다.",
-        en: "SEED will track whether the committee adopts its report and, if it does not, whether the president requests reconsideration or proceeds with the appointment.",
+        ko: "법제사법위원회는 9월 17일 국민의힘 위원들이 모두 퇴장한 가운데 민주당 주도로 김 후보자의 인사청문경과보고서를 ‘적격’ 의견으로 채택했습니다. 보고서 채택과 국민의힘 위원들의 퇴장은 확인된 절차적 사실입니다. 여당은 야당에 협조를 요청했으나 거절당했다고 밝혔고, 야당은 합의 없는 기습 상정이었다고 반발해 의사일정 협의 과정은 양측 주장이 엇갈립니다. 보고서 채택으로 국회 위원회 절차는 마무리됐지만, 대통령의 장관 임명은 별도 절차입니다.",
+        en: "On September 17, the Legislation and Judiciary Committee adopted Kim's confirmation report with a fit-for-office opinion under Democratic Party leadership after all People Power Party members walked out. The adoption and walkout are verified procedural facts. The governing party said it had requested opposition cooperation and been refused, while the opposition called the agenda addition a surprise made without agreement; their accounts of the scheduling process conflict. The committee stage is complete, but the president's ministerial appointment is a separate step.",
+      },
+      change: { ko: "국회 보고서 절차 완료, 대통령 임명 여부 확인 단계로", en: "Committee report stage complete; appointment decision remains" },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "뉴시스", en: "Newsis" },
+          title: { ko: "국회 법사위, 김승원 법무부 장관 후보자 인사청문보고서 與 주도로 채택…국힘 퇴장", en: "Committee adopts Kim confirmation report under governing-party lead as opposition walks out" },
+          url: "https://www.newsis.com/view/NISX20260917_0003793711",
+          publishedAt: "2026-09-17",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "YTN", en: "YTN" },
+          title: { ko: "김승원 법무장관 후보자 청문보고서 범여권 주도로 채택", en: "Kim confirmation report adopted under governing-bloc leadership" },
+          url: "https://m.ytn.co.kr/news_view.php?key=202609171235008829&s_mcd=0101",
+          publishedAt: "2026-09-17",
+          kind: "article",
+        },
+      ],
+    },
+    {
+      date: "다음",
+      title: { ko: "대통령의 임명 여부 확인", en: "Appointment decision" },
+      description: {
+        ko: "대통령실의 공식 임명 발표와 법무부의 취임 절차가 진행되는지 확인합니다.",
+        en: "SEED will track any official appointment announcement from the presidential office and inauguration steps by the Justice Ministry.",
       },
       status: "pending",
     },
@@ -494,6 +527,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+    { ko: "국회 법제사법위원회는 2026년 9월 17일 국민의힘 위원들이 퇴장한 가운데 민주당 주도로 김 후보자의 인사청문경과보고서를 ‘적격’ 의견으로 채택했습니다. 보고서 채택은 국회 위원회 절차의 완료이며 장관 임명 자체는 아닙니다.", en: "On September 17, 2026, the National Assembly's Legislation and Judiciary Committee adopted Kim's confirmation report with a fit-for-office opinion under Democratic Party leadership after People Power Party members walked out. Adoption completes the committee stage but is not itself the ministerial appointment." },
     { ko: "김 후보자는 2013∼2014년 정인재 판사가 배석한 서울고법 민사21부 사건에서 원고 측 소송대리를 맡았습니다. 이는 해당 재판부 사건을 수임한 적 없다는 청문회 답변과 배치되며, 후보자 측은 기억에 의존한 착오였다며 사과했습니다.", en: "Kim represented the plaintiff in a 2013–2014 case before Seoul High Court Civil Division 21, where Judge Jeong In-jae sat as an associate judge. This conflicts with his hearing answer that he had never handled a case before that panel; his team apologized and attributed the answer to a memory-based mistake." },
     { ko: "경기남부경찰청은 가족 협동조합 관련 청탁금지법 위반·허위공문서 작성 혐의 고발 사건을 2026년 9월 16일 수원팔달경찰서에 배당했습니다.", en: "Gyeonggi Nambu Provincial Police assigned the complaint alleging graft-law violations and falsification of official documents in the family-cooperative matter to Suwon Paldal Police Station on September 16, 2026." },
     { ko: "인사청문회는 약 14시간 만인 2026년 9월 16일 자정 무렵 종료됐으며, 법제사법위원회는 이날 인사청문경과보고서를 채택하지 않았습니다.", en: "The hearing ended around midnight on September 16, 2026 after roughly 14 hours, and the Legislation and Judiciary Committee did not adopt its report at the meeting." },
@@ -509,8 +543,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       title: { ko: "청문회 수임 답변의 오류가 검증 판단에 미칠 영향", en: "How the inaccurate hearing answer affects scrutiny" },
       description: {
-        ko: "수임 기록은 정인재 판사가 배석한 재판부 사건을 맡은 적 없다는 후보자의 답변이 사실과 달랐음을 확인합니다. 후보자 측은 정 판사가 주심이 아니고 패소한 사건이어서 기억하지 못한 단순 착오라고 사과했습니다. 다만 이 기록만으로 두 사람 사이에 부적절한 청탁이 있었거나 후보자가 2023년 제넨셀 설립자 구속영장 기각에 영향을 미쳤다고 단정할 수는 없습니다. 답변 오류의 중대성과 경과보고서 반영 여부는 별도로 확인해야 합니다.",
-        en: "The representation record establishes that Kim's answer denying any case before a panel including Judge Jeong was inaccurate. His team apologized and called it a simple memory lapse because Jeong was not the presiding judge and the case was lost. The record alone does not establish an improper request between them or show that Kim influenced the 2023 denial of a detention warrant for Genencell's founder. The significance of the inaccurate answer and whether it is reflected in the committee report remain to be seen.",
+        ko: "수임 기록은 정인재 판사가 배석한 재판부 사건을 맡은 적 없다는 후보자의 답변이 사실과 달랐음을 확인합니다. 후보자 측은 정 판사가 주심이 아니고 패소한 사건이어서 기억하지 못한 단순 착오라고 사과했습니다. 다만 이 기록만으로 두 사람 사이에 부적절한 청탁이 있었거나 후보자가 2023년 제넨셀 설립자 구속영장 기각에 영향을 미쳤다고 단정할 수는 없습니다. 법사위가 보고서를 ‘적격’ 의견으로 채택했지만 답변 오류의 중대성에 대한 평가는 정치적으로 엇갈립니다.",
+        en: "The representation record establishes that Kim's answer denying any case before a panel including Judge Jeong was inaccurate. His team apologized and called it a simple memory lapse because Jeong was not the presiding judge and the case was lost. The record alone does not establish an improper request between them or show that Kim influenced the 2023 denial of a detention warrant for Genencell's founder. Although the committee adopted the report with a fit-for-office opinion, political assessments of the answer's significance remain divided.",
       },
     },
     {
@@ -551,6 +585,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "뉴시스 — 법사위, 김승원 후보자 청문보고서 ‘적격’ 채택", en: "Newsis — Committee adopts Kim confirmation report with fit-for-office opinion" },
+      url: "https://www.newsis.com/view/NISX20260917_0003793711",
+    },
+    {
+      label: { ko: "YTN — 김승원 후보자 청문보고서 범여권 주도로 채택", en: "YTN — Kim confirmation report adopted under governing-bloc leadership" },
+      url: "https://m.ytn.co.kr/news_view.php?key=202609171235008829&s_mcd=0101",
+    },
     {
       label: { ko: "연합뉴스 — 정인재 판사 배석 재판부 사건 수임과 후보자 사과", en: "Yonhap — Representation before panel including Judge Jeong and nominee's apology" },
       url: "https://www.yna.co.kr/view/AKR20260916177500004",
