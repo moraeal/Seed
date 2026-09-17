@@ -23,10 +23,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     en: "Fair under way · Outcomes being tracked",
   },
   openedAt: "2018-09-05",
-  updatedAt: "2026-09-15",
+  updatedAt: "2026-09-17",
   nextCheck: {
-    ko: "일일 관람객을 유료·무료·단체·초청으로 나눈 집계, 금오도 교통 대책, 사업수익 120억 원의 달성 여부와 11월 4일 폐막 뒤 최종 정산",
-    en: "Daily attendance split into paid, free, group and invited visits; replacement transport on Geumodo; progress toward the KRW 12 billion revenue target; and final settlement after the November 4 closing",
+    ko: "일일 관람객을 유료·무료·단체·초청·공무출장으로 나눈 집계, 금오도 교통 대책, 사업수익 120억 원의 달성 여부와 11월 4일 폐막 뒤 최종 정산",
+    en: "Daily attendance split into paid, free, group, invited and publicly funded staff visits; replacement transport on Geumodo; progress toward the KRW 12 billion revenue target; and final settlement after the November 4 closing",
   },
   heroImage: {
     src: "images/monitoring/yeosu-island-expo-tracker-hero.webp",
@@ -67,6 +67,13 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       text: {
         ko: "248억 원 기본사업에 428억 원의 확대사업이 추가돼 직접사업 규모가 676억 원으로 커졌습니다.",
         en: "An additional KRW 42.8 billion program expanded direct spending from KRW 24.8 billion to KRW 67.6 billion.",
+      },
+    },
+    {
+      date: "2026-09-10",
+      text: {
+        ko: "전남광주특별시가 업무 연관성과 무관하게 직원의 박람회 관람을 출장으로 인정하고 여비 지급도 가능하게 했습니다.",
+        en: "The South Jeolla–Gwangju authority allowed staff to count fair visits as official travel, regardless of job relevance, with travel expenses available.",
       },
     },
     {
@@ -463,6 +470,34 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-10",
+      title: {
+        ko: "공무원 관람을 출장 처리·여비 지급",
+        en: "Public employees' visits qualify as official travel with expenses",
+      },
+      description: {
+        ko: "전남광주특별시는 9월 9일 관람객 유치 대책회의 뒤 10일 무안청사와 직속기관·사업소 등에 공문을 보내, 업무 연관성과 무관하게 직원이 박람회를 관람하면 출장으로 처리하고 교통비와 일비를 지급할 수 있게 했습니다. 입장권이나 행사장 영수증이 증빙이며, 부서장에게 참여 권장과 일정 분산도 요청했습니다. 시는 흥행을 위한 동원이 아니라 기존 국제행사 현장 체험 관행의 연장이라고 해명했습니다.",
+        en: "After an attendance-promotion meeting on September 9, the South Jeolla–Gwangju authority sent a September 10 memo allowing employees to count a fair visit as official travel, regardless of job relevance, and claim transport and daily allowances. A ticket or venue receipt serves as proof, while department heads were asked to encourage participation and stagger visits. The authority said this was an extension of established field-learning practice for international events, not mobilization to boost attendance.",
+      },
+      change: {
+        ko: "관람객 유치가 홍보를 넘어 행정조직의 유급 출장 관람으로 확대",
+        en: "Attendance promotion expands from publicity to publicly funded staff visits",
+      },
+      status: "response",
+      sources: [
+        {
+          publisher: { ko: "경향신문", en: "Kyunghyang Shinmun" },
+          title: {
+            ko: "흥행 부진 여수 섬박람회, 출장비 주며 ‘공무원 동원’",
+            en: "Public employees offered official travel and expenses to attend the Yeosu fair",
+          },
+          url: "https://www.khan.co.kr/article/202609142121015",
+          publishedAt: "2026-09-14",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "2026-09-13",
       title: {
         ko: "9일 누적 10만 명·금오도 무료셔틀 중단",
@@ -558,6 +593,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       en: "The fair opened on September 5, 2026, and recorded cumulative attendance of 100,008 through September 13.",
     },
     {
+      ko: "전남광주특별시는 9월 10일 업무 연관성과 무관하게 직원의 박람회 관람을 출장으로 인정하고 교통비·일비를 지급할 수 있도록 안내했습니다.",
+      en: "On September 10, the South Jeolla–Gwangju authority allowed employees to treat fair attendance as official travel regardless of job relevance and made transport and daily allowances available.",
+    },
+    {
       ko: "금오도 무료셔틀은 개막 나흘 뒤 중단됐고, 식당 음수대의 일반세균 검출로 개장 전 사용이 중단됐습니다. 중금속이 검출됐다는 온라인 주장은 사실이 아니었습니다.",
       en: "The free Geumodo shuttle stopped four days after opening, and a restaurant drinking-water point was closed before opening after excessive general bacteria were found. Online claims of heavy metals were false.",
     },
@@ -593,8 +632,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
         en: "Will the 3 million target translate into paid visits and revenue?",
       },
       description: {
-        ko: "개막 9일 누적은 목표의 3.3%였습니다. 추석 연휴와 단체관람이 남아 있어 최종 흥행을 단정할 단계는 아닙니다. 다만 무료·초청·단체·중복 방문을 나누지 않은 총인원만으로는 120억 원 수익계획의 성과를 판단할 수 없습니다.",
-        en: "Nine-day attendance was 3.3 percent of the target. Holiday and group traffic remain, so a final verdict is premature. But an undifferentiated total—without paid, free, invited, group and repeat visits—cannot establish progress toward KRW 12 billion in revenue.",
+        ko: "개막 9일 누적은 목표의 3.3%였습니다. 추석 연휴와 단체관람이 남아 있어 최종 흥행을 단정할 단계는 아닙니다. 다만 공무출장 관람까지 허용된 만큼 유료·무료·초청·단체·공무출장·중복 방문을 나누지 않은 총인원만으로는 120억 원 수익계획의 성과를 판단할 수 없습니다.",
+        en: "Nine-day attendance was 3.3 percent of the target. Holiday and group traffic remain, so a final verdict is premature. With public employees now allowed to attend on official travel, an undifferentiated total—without paid, free, invited, group, publicly funded staff and repeat visits—cannot establish progress toward KRW 12 billion in revenue.",
       },
     },
     {
@@ -621,8 +660,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
   questions: [],
   proposals: [],
   caution: {
-    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 9일간 관람객 10만 8명도 유료 입장객만을 뜻하지 않습니다.",
-    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The nine-day attendance figure of 100,008 is not a paid-admission count.",
+    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 9일간 관람객 10만 8명도 유료 입장객만을 뜻하지 않으며, 이후 집계에는 출장 처리된 공무원 관람이 포함될 수 있습니다.",
+    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The nine-day attendance figure of 100,008 is not a paid-admission count, and later totals may include public employees attending on official travel.",
   },
   sources: [
     {
@@ -673,6 +712,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       label: { ko: "매일경제 — 개막 9일 관람객과 초기 운영 문제", en: "Maeil Business Newspaper — Nine-day attendance and early operating issues" },
       url: "https://v.daum.net/v/20260914111208747",
       note: { ko: "2026년 9월 14일 확인", en: "Checked September 14, 2026" },
+    },
+    {
+      label: { ko: "경향신문 — 공무원 관람 출장 처리 공문과 전남광주시 해명", en: "Kyunghyang Shinmun — Official-travel memo for staff attendance and the authority's response" },
+      url: "https://www.khan.co.kr/article/202609142121015",
     },
     {
       label: { ko: "박람회 조직위원회 — 개막 초기 프로그램·관람환경 보강", en: "Organizing committee — Post-opening programming and visitor-support changes" },
