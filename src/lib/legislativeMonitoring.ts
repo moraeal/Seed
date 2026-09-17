@@ -59,10 +59,48 @@ export type LegislativeBill = {
   analysis_generated_at: string | null;
   analysis_error: string | null;
   published_at: string | null;
+  current_stage: string;
+  is_featured: boolean;
+  featured_order: number | null;
+  featured_reason_ko: string | null;
+  featured_reason_en: string | null;
+  observation_keywords: string[];
+  public_summary_ko: string | null;
+  public_summary_en: string | null;
+  seed_view_ko: string | null;
+  seed_view_en: string | null;
+  related_content: LegislativeRelatedContent[];
+  allow_bookmark: boolean;
+  notification_status: "disabled" | "available" | "active";
+  important_change_status: "none" | "draft" | "approved";
+  important_change_note_ko: string | null;
+  important_change_note_en: string | null;
+  editorial_updated_at: string | null;
   source_checked_at: string;
   last_source_update: string | null;
   created_at: string;
   updated_at: string;
+};
+
+export type LegislativeRelatedContent = {
+  title: string;
+  url: string;
+  category?: string;
+};
+
+export type LegislativeEditorialPatch = {
+  current_stage: string;
+  is_featured: boolean;
+  featured_order: number | null;
+  featured_reason_ko: string | null;
+  featured_reason_en: string | null;
+  observation_keywords: string[];
+  public_summary_ko: string | null;
+  public_summary_en: string | null;
+  seed_view_ko: string | null;
+  seed_view_en: string | null;
+  allow_bookmark: boolean;
+  notification_status: "disabled" | "available" | "active";
 };
 
 export type LegislativeBillEvent = {
@@ -100,7 +138,7 @@ async function readResponse<T>(response: Response): Promise<T> {
 }
 
 export async function getPublishedLegislativeBills(limit = 100) {
-  const fields = "bill_id,bill_no,assembly_age,slug,title,proposer,representative_proposer,co_proposers,proposer_kind,proposed_date,committee,bill_kind,source_status,processing_result,official_summary,proposal_reason,main_content,detail_url,full_text_url,importance_score,importance_level,review_state,analysis,analysis_model,analysis_generated_at,analysis_error,published_at,source_checked_at,last_source_update,created_at,updated_at";
+  const fields = "bill_id,bill_no,assembly_age,slug,title,proposer,representative_proposer,co_proposers,proposer_kind,proposed_date,committee,bill_kind,source_status,processing_result,official_summary,proposal_reason,main_content,detail_url,full_text_url,importance_score,importance_level,review_state,analysis,analysis_model,analysis_generated_at,analysis_error,published_at,current_stage,is_featured,featured_order,featured_reason_ko,featured_reason_en,observation_keywords,public_summary_ko,public_summary_en,seed_view_ko,seed_view_en,related_content,allow_bookmark,notification_status,important_change_status,important_change_note_ko,important_change_note_en,editorial_updated_at,source_checked_at,last_source_update,created_at,updated_at";
   const response = await fetch(`${supabaseUrl}/rest/v1/legislative_bills?select=${fields}&order=proposed_date.desc.nullslast,published_at.desc&limit=${limit}`, { headers: headers() });
   return readResponse<LegislativeBill[]>(response);
 }
@@ -133,6 +171,16 @@ export async function setLegislativeReviewState(session: AuthSession, billId: st
     method: "PATCH",
     headers: { ...headers(session), Prefer: "return=representation" },
     body: JSON.stringify({ review_state: reviewState, published_at: publishedAt, updated_at: new Date().toISOString() }),
+  });
+  const rows = await readResponse<LegislativeBill[]>(response);
+  return rows[0];
+}
+
+export async function updateLegislativeEditorial(session: AuthSession, billId: string, patch: LegislativeEditorialPatch) {
+  const response = await fetch(`${supabaseUrl}/rest/v1/legislative_bills?bill_id=eq.${encodeURIComponent(billId)}`, {
+    method: "PATCH",
+    headers: { ...headers(session), Prefer: "return=representation" },
+    body: JSON.stringify({ ...patch, editorial_updated_at: new Date().toISOString(), updated_at: new Date().toISOString() }),
   });
   const rows = await readResponse<LegislativeBill[]>(response);
   return rows[0];

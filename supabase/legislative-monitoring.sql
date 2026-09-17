@@ -35,6 +35,23 @@ create table if not exists public.legislative_bills (
   analysis_generated_at timestamptz,
   analysis_error text,
   published_at timestamptz,
+  current_stage text not null default '발의',
+  is_featured boolean not null default false,
+  featured_order integer check (featured_order is null or featured_order between 1 and 99),
+  featured_reason_ko text,
+  featured_reason_en text,
+  observation_keywords text[] not null default '{}',
+  public_summary_ko text,
+  public_summary_en text,
+  seed_view_ko text,
+  seed_view_en text,
+  related_content jsonb not null default '[]'::jsonb check (jsonb_typeof(related_content) = 'array'),
+  allow_bookmark boolean not null default true,
+  notification_status text not null default 'disabled' check (notification_status in ('disabled', 'available', 'active')),
+  important_change_status text not null default 'none' check (important_change_status in ('none', 'draft', 'approved')),
+  important_change_note_ko text,
+  important_change_note_en text,
+  editorial_updated_at timestamptz,
   last_source_update timestamptz,
   source_checked_at timestamptz not null default now(),
   created_at timestamptz not null default now(),
@@ -44,6 +61,7 @@ create table if not exists public.legislative_bills (
 create index if not exists legislative_bills_proposed_date_idx on public.legislative_bills (proposed_date desc);
 create index if not exists legislative_bills_review_state_idx on public.legislative_bills (review_state, importance_score desc);
 create index if not exists legislative_bills_published_at_idx on public.legislative_bills (published_at desc) where published_at is not null;
+create index if not exists legislative_bills_featured_order_idx on public.legislative_bills (featured_order, published_at desc) where is_featured = true and review_state = 'published' and published_at is not null;
 
 create table if not exists public.legislative_bill_events (
   id uuid primary key default gen_random_uuid(),
@@ -60,6 +78,56 @@ create table if not exists public.legislative_bill_events (
 );
 
 create index if not exists legislative_bill_events_bill_date_idx on public.legislative_bill_events (bill_id, event_date desc);
+
+create schema if not exists private;
+
+create or replace function private.track_legislative_bill_change()
+returns trigger
+language plpgsql
+set search_path = ''
+as $$
+begin
+  if new.current_stage is distinct from old.current_stage then
+    insert into public.legislative_bill_events (bill_id, event_key, event_type, event_date, title, description, source_url)
+    values (
+      new.bill_id, 'stage:' || gen_random_uuid()::text, 'stage_change', current_date,
+      '법안 단계 변경: ' || coalesce(old.current_stage, '미확인') || ' → ' || coalesce(new.current_stage, '미확인'),
+      case when new.source_status is not null then '국회 공개 상태: ' || new.source_status else null end,
+      new.detail_url
+    );
+  end if;
+
+  if new.source_status is distinct from old.source_status then
+    insert into public.legislative_bill_events (bill_id, event_key, event_type, event_date, title, description, source_url)
+    values (
+      new.bill_id, 'source-status:' || gen_random_uuid()::text, 'source_status', current_date,
+      '국회 공개 상태 변경',
+      coalesce(old.source_status, '미확인') || ' → ' || coalesce(new.source_status, '미확인'),
+      new.detail_url
+    );
+  end if;
+
+  if new.important_change_status = 'approved'
+     and (
+       old.important_change_status is distinct from new.important_change_status
+       or old.important_change_note_ko is distinct from new.important_change_note_ko
+     ) then
+    insert into public.legislative_bill_events (bill_id, event_key, event_type, event_date, title, description, source_url)
+    values (
+      new.bill_id, 'important-change:' || gen_random_uuid()::text, 'approved_change', current_date,
+      '중요 변경사항 승인', new.important_change_note_ko, new.detail_url
+    );
+  end if;
+
+  return new;
+end;
+$$;
+
+drop trigger if exists legislative_bill_change_history on public.legislative_bills;
+create trigger legislative_bill_change_history
+after update of current_stage, source_status, important_change_status, important_change_note_ko
+on public.legislative_bills
+for each row execute function private.track_legislative_bill_change();
 
 create table if not exists public.legislative_sync_runs (
   id uuid primary key default gen_random_uuid(),
