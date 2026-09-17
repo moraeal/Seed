@@ -75,7 +75,7 @@ button, input, textarea { font: inherit; }
 [aria-roledescription="carousel"] .relative.overflow-hidden.bg-navy:has(> a > img[src$="lh-split-hero-v2.webp"]) > span.absolute.bottom-5.left-5 { display: none !important; }
 
 /* 메인 상단 우측 목록 썸네일이 행 높이만큼 늘어나며 초록 배경이 선처럼 드러나는 현상을 막습니다. */
-.bg-paper > section:first-child aside > a > div:first-child {
+.bg-paper > section:first-child aside > a > div:first-child.overflow-hidden {
   align-self: start;
   background-color: transparent !important;
 }
