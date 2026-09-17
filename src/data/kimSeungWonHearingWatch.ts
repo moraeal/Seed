@@ -39,6 +39,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       date: "2026-09-17",
       text: {
+        ko: "제넨셀 의혹의 핵심 당사자인 양모 씨가 6쪽 입장문을 내고 김 후보자에게 치료제의 신속 검토를 요청한 사실과 정치권 친분을 과시한 언행을 인정·사과했습니다. 다만 위법한 특혜 요구, 정치후원금 약속과 전환사채 6억 원의 대가성은 모두 부인했습니다. 이는 양씨의 주장으로 수사·재판을 통해 확정된 판단은 아닙니다.",
+        en: "A central figure in the Genencell allegation issued a six-page statement acknowledging that she asked Kim to seek an expedited review and apologizing for boasting of political connections. She denied seeking unlawful favoritism, promising a political donation or receiving a KRW 600 million convertible-bond investment as payment. These are her claims, not findings established by an investigation or court.",
+      },
+    },
+    {
+      date: "2026-09-17",
+      text: {
         ko: "국회 법제사법위원회가 국민의힘 위원들이 퇴장한 가운데 민주당 주도로 김 후보자 인사청문경과보고서를 ‘적격’ 의견으로 채택했습니다. 보고서 채택은 국회 절차의 완료이며 장관 임명 자체는 아닙니다.",
         en: "The National Assembly's Legislation and Judiciary Committee adopted Kim's confirmation report with a fit-for-office opinion under Democratic Party leadership after People Power Party members walked out. Adoption completes the committee stage but is not itself the ministerial appointment.",
       },
@@ -485,6 +492,33 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-17",
+      title: { ko: "브로커 양씨, 6쪽 입장문으로 혐의 전면 부인", en: "Alleged broker issues six-page statement denying charges" },
+      description: {
+        ko: "제넨셀 임상시험 승인 청탁 의혹의 핵심 당사자로 재판을 받고 있는 양모 씨는 변호인을 통해 6쪽 분량의 입장문을 냈습니다. 양씨는 김 후보자에게 치료제의 신속한 검토를 요청한 사실과 주변 정치인과의 친분을 과시한 경솔한 언행을 인정하고 사과했습니다. 그러나 특정 자료를 숨기거나 절차를 어긴 승인을 요구하지 않았고, 정치후원금 500만 원 제공 약속과 제넨셀의 전환사채 6억 원 인수가 청탁 대가였다는 혐의도 부인했습니다. 과거 운영 업소는 일반음식점이지 룸살롱이 아니었다고도 주장했습니다. 입장문 발표와 그 내용은 확인됐지만, 혐의에 대한 양씨의 해명은 수사·재판에서 확정된 사실이 아닙니다.",
+        en: "The woman on trial as a central figure in the alleged Genencell clinical-trial solicitation issued a six-page statement through counsel. She acknowledged asking Kim to seek an expedited review of the treatment and apologized for reckless remarks boasting of political connections. She denied asking officials to conceal material or bypass procedures, promising a KRW 5 million political donation, or receiving a KRW 600 million convertible-bond investment as payment for a request. She also said the venue she formerly operated was a general restaurant, not a room salon. The statement and its contents are verified, but her explanations are not facts established by the investigation or trial.",
+      },
+      change: { ko: "침묵하던 핵심 당사자가 청탁·금품 혐의별로 구체적 반박 제시", en: "A central party offers detailed rebuttals to the solicitation and payment allegations" },
+      status: "response",
+      sources: [
+        {
+          publisher: { ko: "뉴스핌", en: "NewsPim" },
+          title: { ko: "'신약 청탁 의혹' 양씨 \"국민께 심려 끼쳐 송구\"…혐의는 전면 부인", en: "Woman in drug-solicitation case apologizes for concern but denies charges" },
+          url: "https://www.newspim.com/news/view/20260917001110",
+          publishedAt: "2026-09-17",
+          thumbnailSrc: "https://img.newspim.com/news/2026/09/17/260917161955567_w.jpg",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "조선일보", en: "The Chosun Ilbo" },
+          title: { ko: "브로커 양씨 ‘정치인과 친분 과시, 경솔한 언행 사과…국민께 송구’", en: "Alleged broker apologizes for boasting of political connections" },
+          url: "https://www.chosun.com/national/court_law/2026/09/17/HKW3XBYBSJF3DF4NUUYM6IRDAQ/",
+          publishedAt: "2026-09-17",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "다음",
       title: { ko: "대통령의 임명 여부 확인", en: "Appointment decision" },
       description: {
@@ -561,6 +595,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+    { ko: "제넨셀 의혹 관련 재판을 받고 있는 양모 씨는 2026년 9월 17일 변호인을 통해 6쪽 입장문을 공개했습니다. 신속 검토 요청과 정치권 친분 과시를 인정·사과하고 특혜 요구·후원금 약속·전환사채 대가성을 부인한 것은 양씨의 주장입니다.", en: "On September 17, 2026, the woman on trial in the Genencell-related case released a six-page statement through counsel. Her acknowledgment and apology over seeking an expedited review and boasting of political connections, and her denials of favoritism, a donation promise and a quid pro quo for the convertible-bond investment, are her claims." },
     { ko: "국회 법제사법위원회는 2026년 9월 17일 국민의힘 위원들이 퇴장한 가운데 민주당 주도로 김 후보자의 인사청문경과보고서를 ‘적격’ 의견으로 채택했습니다. 보고서 채택은 국회 위원회 절차의 완료이며 장관 임명 자체는 아닙니다.", en: "On September 17, 2026, the National Assembly's Legislation and Judiciary Committee adopted Kim's confirmation report with a fit-for-office opinion under Democratic Party leadership after People Power Party members walked out. Adoption completes the committee stage but is not itself the ministerial appointment." },
     { ko: "김 후보자 인사청문회 준비단은 2026년 9월 16일 후보자와 양모 씨가 함께 찍은 사진의 원본·비교 이미지와 해명 자료를 공개했습니다. 사진이 사무실 또는 상가에서 촬영됐고 의혹 제기 측이 악의적으로 편집했다는 내용은 준비단의 주장입니다.", en: "On September 16, 2026, Kim's hearing preparation team released an original and comparison image of a photo showing Kim with the woman, together with an explanatory statement. Its assertions that the photo was taken in an office or commercial space and was maliciously edited by the accusers are the team's claims." },
     { ko: "김 후보자는 2013∼2014년 정인재 판사가 배석한 서울고법 민사21부 사건에서 원고 측 소송대리를 맡았습니다. 이는 해당 재판부 사건을 수임한 적 없다는 청문회 답변과 배치되며, 후보자 측은 기억에 의존한 착오였다며 사과했습니다.", en: "Kim represented the plaintiff in a 2013–2014 case before Seoul High Court Civil Division 21, where Judge Jeong In-jae sat as an associate judge. This conflicts with his hearing answer that he had never handled a case before that panel; his team apologized and attributed the answer to a memory-based mistake." },
@@ -592,8 +627,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       title: { ko: "식약처 민원 전달이 어디까지 영향을 미쳤나", en: "How much influence did the petition relay have?" },
       description: {
-        ko: "후보자는 지연된 민원 절차를 확인해 달라고 했을 뿐이라고 설명합니다. 반면 공개된 검찰 참고인 진술 보도에서 당시 식약처장 비서는 이 문자를 청탁성으로 인식했다고 밝혔습니다. 문자가 담당 실무진까지 전달된 경로는 구체화됐지만, 이것이 임상시험 승인 판단에 실제 영향을 미쳤는지와 법적으로 부정한 청탁에 해당하는지는 아직 확인되지 않았습니다.",
-        en: "Kim says he only asked officials to check a delayed petition. Reporting on a prosecution witness statement says the regulator chief's secretary regarded the message as a solicitation. The route by which it reached working-level officials is now clearer, but whether it affected approval or legally constituted an improper request remains unresolved.",
+        ko: "후보자는 지연된 민원 절차를 확인해 달라고 했을 뿐이라고 설명합니다. 양모 씨도 신속 검토 요청은 인정하면서 위법한 특혜나 자료 은폐 요구, 후원금·전환사채의 대가성은 부인했습니다. 반면 공개된 검찰 참고인 진술 보도에서 당시 식약처장 비서는 김 후보자의 문자를 청탁성으로 인식했다고 밝혔습니다. 문자가 담당 실무진까지 전달된 경로는 구체화됐지만, 후보자와 양씨의 해명이 수사기록·재판 증거와 일치하는지, 승인 판단에 실제 영향을 미쳤는지와 법적으로 부정한 청탁에 해당하는지는 아직 확인되지 않았습니다.",
+        en: "Kim says he only asked officials to check a delayed petition. The woman likewise acknowledged seeking an expedited review while denying unlawful favoritism, concealment of material, or a quid pro quo involving a donation or convertible-bond investment. Reporting on a prosecution witness statement says the regulator chief's secretary regarded Kim's message as a solicitation. The route to working-level officials is clearer, but it remains unresolved whether their explanations match the investigative and trial evidence, whether the contact affected approval, or whether it legally constituted an improper request.",
       },
     },
     {
@@ -627,6 +662,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "뉴스핌 — 양씨 6쪽 입장문과 청탁·금품 혐의 부인", en: "NewsPim — Six-page statement denying solicitation and payment allegations" },
+      url: "https://www.newspim.com/news/view/20260917001110",
+    },
+    {
+      label: { ko: "조선일보 — 양씨의 정치권 친분 과시 사과와 혐의 반박", en: "The Chosun Ilbo — Apology for boasting of political ties and denial of allegations" },
+      url: "https://www.chosun.com/national/court_law/2026/09/17/HKW3XBYBSJF3DF4NUUYM6IRDAQ/",
+    },
     {
       label: { ko: "뉴시스 — 법사위, 김승원 후보자 청문보고서 ‘적격’ 채택", en: "Newsis — Committee adopts Kim confirmation report with fit-for-office opinion" },
       url: "https://www.newsis.com/view/NISX20260917_0003793711",
