@@ -6,6 +6,7 @@ export type ColumnTranslation = {
   title: string;
   subtitle: string;
   author?: string;
+  authorBio?: string;
   summary: string;
   heroImage?: Partial<Pick<SeedColumn["heroImage"], "alt" | "caption" | "credit">>;
   referenceVideo?: Partial<Pick<NonNullable<SeedColumn["referenceVideo"]>, "thumbnailAlt" | "title" | "description" | "credit">>;

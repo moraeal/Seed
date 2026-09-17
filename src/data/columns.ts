@@ -1,3 +1,4 @@
+import { militaryAcademyIntegrationColumn } from "./columns/militaryAcademyIntegrationColumn";
 import { silenceAndPowerColumn } from "./columns/silenceAndPowerColumn";
 import { nuclearPolicyReversalColumn } from "./columns/nuclearPolicyReversalColumn";
 import { farmlandOwnershipPressureColumn } from "./columns/farmlandOwnershipPressureColumn";
@@ -12,16 +13,18 @@ import type { SeedColumn } from "./columnsLegacy";
 
 export type { SeedColumn } from "./columnsLegacy";
 
-export const columns: SeedColumn[] = [nuclearPolicyReversalColumn, farmlandOwnershipPressureColumn, silenceAndPowerColumn, citizenizationBeforeAdvancementColumn, stateCannotMonopolizeLifeColumn, civicGroupsAreNotStateVanguardColumn, tenPercentPowerColumn, prosecutionReformPowerTransferColumn, lhReformColumn, ...legacyColumns];
+export const columns: SeedColumn[] = [militaryAcademyIntegrationColumn, nuclearPolicyReversalColumn, farmlandOwnershipPressureColumn, silenceAndPowerColumn, citizenizationBeforeAdvancementColumn, stateCannotMonopolizeLifeColumn, civicGroupsAreNotStateVanguardColumn, tenPercentPowerColumn, prosecutionReformPowerTransferColumn, lhReformColumn, ...legacyColumns];
 
 export const hotIssueColumnSlugs = new Set([
   "democratic-party-nuclear-policy-reversal",
+  "military-academy-integration-rotc-question",
   "farmland-ownership-without-an-exit",
   "prosecution-reform-power-transfer-2026",
 ]);
 
 export const hotIssueColumnTrackerSlugs: Record<string, string> = {
   "democratic-party-nuclear-policy-reversal": "democratic-party-nuclear-policy-reversal-tracker",
+  "military-academy-integration-rotc-question": "military-academy-integration-tracker",
   "farmland-ownership-without-an-exit": "farmland-census-disposal-orders-tracker",
   "prosecution-reform-power-transfer-2026": "prosecution-service-abolition-tracker",
 };

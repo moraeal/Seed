@@ -16,6 +16,7 @@ export function localizeColumn(column: SeedColumn, language: Language): SeedColu
     title: translated.title,
     subtitle: translated.subtitle,
     author: translated.author ?? column.author,
+    authorBio: translated.authorBio ?? column.authorBio,
     summary: translated.summary,
     heroImage: { ...column.heroImage, ...translated.heroImage },
     referenceVideo: column.referenceVideo ? { ...column.referenceVideo, ...translated.referenceVideo } : undefined,
