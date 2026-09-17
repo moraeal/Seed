@@ -56,13 +56,11 @@ const copy = {
     contributors: [
       {
         name: "작은씨앗",
-        role: "씨앗의 소리 발행인",
         bio: "시민사회와 공공영역, 기업 현장을 두루 경험해 온 시민사회 활동가이자 공익 기획자입니다. 국가·시장·시민사회가 만나는 여러 현장에서 활동하며 제도와 조직이 시민의 삶에 어떤 영향을 미치는지 지켜봐 왔습니다. 씨앗의 소리에서는 특정 진영이나 권위에 기대지 않고, 한 시민의 질문과 판단으로 사실을 확인하고 자유와 책임의 기준에서 국가와 시민사회의 권력을 함께 살피고자 합니다.",
       },
       {
         name: "경계의 시민",
-        role: "씨앗의 소리 기고자",
-        bio: "공군 부사관과 장교로 복무하며 국방·교육·공보 현장을 경험했습니다. 북한학을 전공하고 러시아·CIS 지역의 정치와 국제관계를 연구하고 있습니다. 씨앗의 소리에서는 군과 안보, 북한과 통일 문제를 시민의 자유와 권리라는 자리에서 살펴봅니다.",
+        bio: "공군 부사관과 장교로 복무하며 국방·교육·공보 현장을 경험했습니다. 북한학을 전공하고 러시아·CIS 지역의 정치와 국제관계를 연구하고 있습니다. 씨앗의 소리에서는 군과 안보, 북한과 통일 문제를 시민의 자유와 권리라는 자리에서 살펴봅니다. 안보의 필요성을 인정하면서도 그 이름 아래 시민의 권리가 가려지지 않는지 묻습니다.",
       },
     ],
   },
@@ -118,13 +116,11 @@ const copy = {
     contributors: [
       {
         name: "Small Seed",
-        role: "Publisher, SEED VOICE",
         bio: "A civic-society activist and public-interest planner with experience across civil society, public institutions, and the business sector. Having worked where government, markets, and civil society meet, I have watched closely how institutions and organizations affect citizens’ everyday lives. At SEED VOICE, I aim to verify facts and scrutinize power in both the state and civil society through the principles of freedom and responsibility, without relying on partisan camps or borrowed authority.",
       },
       {
         name: "Citizen at the Boundary",
-        role: "Contributor, SEED VOICE",
-        bio: "A former Air Force noncommissioned officer and commissioned officer with experience in defense, education, and public affairs. His research focuses on North Korea and the politics and international relations of Russia and the CIS. At SEED VOICE, he examines the military, security, North Korea, and unification from the standpoint of civic freedom and rights.",
+        bio: "A former Air Force noncommissioned officer and commissioned officer with experience in defense, education, and public affairs. His research focuses on North Korea and the politics and international relations of Russia and the CIS. At SEED VOICE, he examines the military, security, North Korea, and unification from the standpoint of civic freedom and rights. He recognizes the necessity of security while asking whether citizens’ rights are being obscured in its name.",
       },
     ],
   },
@@ -176,7 +172,6 @@ export default function PublisherMessage() {
                 {content.contributors.map((contributor) => (
                   <article key={contributor.name} className="py-6 first:pt-0 last:pb-0">
                     <h3 className="editorial-title text-2xl font-bold text-navy">{contributor.name}</h3>
-                    <p className="mt-2 text-sm font-bold text-green-deep/75">{contributor.role}</p>
                     <p className="mt-4 text-base leading-7 text-charcoal/68">{contributor.bio}</p>
                   </article>
                 ))}
