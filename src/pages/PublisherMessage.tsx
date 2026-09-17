@@ -49,6 +49,10 @@ const copy = {
         name: "경계의 시민",
         bio: "공군 부사관과 장교로 복무하며 국방·교육·공보 현장을 경험했습니다. 북한학을 전공하고 러시아·CIS 지역의 정치와 국제관계를 연구하고 있습니다. 씨앗의 소리에서는 군과 안보, 북한과 통일 문제를 시민의 자유와 권리라는 자리에서 살펴봅니다. 안보의 필요성을 인정하면서도 그 이름 아래 시민의 권리가 가려지지 않는지 묻습니다.",
       },
+      {
+        name: "다시 보는 시민",
+        bio: "학생운동과 진보정당 활동을 거쳐 원자력과 에너지 문제를 다시 공부해 온 시민입니다. 원자력계의 주장을 반박하려 자료를 찾다가 자신이 믿어온 전제부터 다시 확인하게 되었고, 찬반 양쪽의 자료를 교차 검증하며 판단을 바꾸었습니다. 사실과 과학 네트웤 정책간사로 활동하며, 씨앗의 소리에서는 익숙한 믿음보다 측정과 현장, 과학적 근거를 따라 에너지·방사선·환경 문제를 살펴봅니다.",
+      },
     ],
   },
   en: {
@@ -95,6 +99,10 @@ const copy = {
       {
         name: "Citizen at the Boundary",
         bio: "A former Air Force noncommissioned officer and commissioned officer with experience in defense, education, and public affairs. His research focuses on North Korea and the politics and international relations of Russia and the CIS. At SEED VOICE, he examines the military, security, North Korea, and unification from the standpoint of civic freedom and rights. He recognizes the necessity of security while asking whether citizens’ rights are being obscured in its name.",
+      },
+      {
+        name: "The Citizen Who Looks Again",
+        bio: "A citizen who came to reconsider nuclear power and energy after years in the student movement and progressive politics. While gathering evidence to rebut the nuclear industry, he began testing his own assumptions, cross-checked the claims of both sides and changed his judgment. As a policy coordinator with the Facts and Science Network, he examines energy, radiation and environmental questions through measurement, field observation and scientific evidence rather than familiar belief.",
       },
     ],
   },

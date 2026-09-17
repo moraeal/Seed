@@ -25,6 +25,10 @@ export function localizeColumn(column: SeedColumn, language: Language): SeedColu
       ...image,
       ...(translated.additionalImages?.[index] ?? {}),
     })),
+    embeddedFigures: column.embeddedFigures?.map((figure, index) => ({
+      ...figure,
+      ...(translated.embeddedFigures?.[index] ?? {}),
+    })),
     sourceDocument: column.sourceDocument ? { ...column.sourceDocument, ...translated.sourceDocument } : undefined,
     sections: translated.sections,
     sourceNote: translated.sourceNote,

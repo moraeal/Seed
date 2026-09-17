@@ -13,6 +13,8 @@ export type SeedColumn = {
   authorBio?: string;
   readMinutes: number;
   summary: string;
+  displayHero?: boolean;
+  displayInlineImage?: boolean;
   heroImage: { src: string; socialSrc?: string; alt: string; caption: string; credit: string; sourceUrl: string };
   referenceVideo?: {
     youtubeId: string;
@@ -32,6 +34,13 @@ export type SeedColumn = {
     credit: string;
     sourceUrl: string;
     contain?: boolean;
+  }[];
+  embeddedFigures?: {
+    afterSection: number;
+    kind: "flight-dose-table" | "birth-defects-chart" | "energy-gdp-chart";
+    caption: string;
+    credit: string;
+    sourceUrl: string;
   }[];
   sourceDocument?: {
     title: string;

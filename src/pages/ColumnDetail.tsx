@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import ArticleContinuation from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
+import ColumnEmbeddedFigure from "../components/ColumnEmbeddedFigure";
 import InteractiveFigure from "../components/InteractiveFigure";
 import ShareButton from "../components/ShareButton";
 import SourceDocumentPanel from "../components/SourceDocumentPanel";
@@ -28,9 +29,9 @@ export default function ColumnDetail() {
   const hotIssue = isHotIssueColumn(column.slug);
   const continuation = getEditorialContinuation("column", column.slug, language);
 
-  const seenImages = new Set([imageKey(column.heroImage.src)]);
+  const seenImages = new Set(column.displayHero === false ? [] : [imageKey(column.heroImage.src)]);
   const bodyImages = [
-    { ...column.inlineImage, afterSection: 3 },
+    ...(column.displayInlineImage === false ? [] : [{ ...column.inlineImage, afterSection: 3 }]),
     ...(column.additionalImages ?? []),
   ].filter((image) => {
     const key = imageKey(image.src);
@@ -52,16 +53,17 @@ export default function ColumnDetail() {
     </header>
 
     <div className="article-content-frame py-8 sm:py-12">
-      <InteractiveFigure src={column.heroImage.src} alt={column.heroImage.alt} caption={column.heroImage.caption} credit={column.heroImage.credit} sourceUrl={column.heroImage.sourceUrl} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]" imageClassName="aspect-[16/9] w-full object-cover" />
+      {column.displayHero !== false && <InteractiveFigure src={column.heroImage.src} alt={column.heroImage.alt} caption={column.heroImage.caption} credit={column.heroImage.credit} sourceUrl={column.heroImage.sourceUrl} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]" imageClassName="aspect-[16/9] w-full object-cover" />}
 
       {column.sourceDocument && <SourceDocumentPanel document={column.sourceDocument} ko={ko} />}
 
       <div className="reading-column mt-10">
         {column.sections.map((section, index) => <Fragment key={`${index}-${section.title}`}><section className={index === 0 ? "" : `article-section ${isLongRead ? "article-section-long" : ""}`}>
-          <h2 className="article-section-title">{section.title}</h2>
+          {section.title && <h2 className="article-section-title">{section.title}</h2>}
           {section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 28)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>)}
           {section.quote && <blockquote className="my-7 border-l-4 border-gold bg-green-pale px-5 py-5 text-lg font-bold leading-8 text-green-deep sm:px-6 sm:text-xl">{section.quote.map((line, lineIndex) => <span key={`${lineIndex}-${line}`} className="block">{line}</span>)}</blockquote>}
           {bodyImages.filter((image) => image.afterSection === index).map((image) => <InteractiveFigure key={imageKey(image.src)} src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName="my-12 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName={"contain" in image && image.contain ? "block h-auto w-full" : "aspect-[16/10] w-full object-cover"} />)}
+          {column.embeddedFigures?.filter((figure) => figure.afterSection === index).map((figure) => <ColumnEmbeddedFigure key={`${figure.kind}-${index}`} figure={figure} ko={ko} />)}
         </section>{column.referenceVideo?.afterSection === index && referenceVideoSection}</Fragment>)}
         {column.referenceVideo && column.referenceVideo.afterSection === undefined && referenceVideoSection}
         <aside className="mt-10 border-t-2 border-navy pt-6"><span className="section-kicker">{ko ? "자료 주" : "SOURCE NOTE"}</span><p className="mt-3 text-sm leading-6 text-charcoal/60">{column.sourceNote}</p>{column.sources && <ul className="mt-4 grid gap-1.5 text-sm leading-6 text-charcoal/60">{column.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ul>}</aside>

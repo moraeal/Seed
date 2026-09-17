@@ -217,6 +217,25 @@ const militaryAcademyTrackerContinuation: Record<Language, EditorialContinuation
   },
 };
 
+const fukushimaJourneyContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/columns/democratic-party-nuclear-policy-reversal",
+    title: "이제는 원전을 다시 짓자는 민주당",
+    relationship: "기행에서 정책으로",
+    reason: "후쿠시마 현장 기록에 이어, 한국의 원전정책이 탈원전에서 신규 원전 추진으로 바뀌는 과정과 정책의 예측가능성을 살펴봅니다.",
+    listHref: "/columns",
+    listLabel: "칼럼 전체 보기",
+  },
+  en: {
+    href: "/columns/democratic-party-nuclear-policy-reversal",
+    title: "Now South Korea's Democrats Want to Build Nuclear Plants Again",
+    relationship: "FROM FIELD NOTES TO POLICY",
+    reason: "Continue from the Fukushima field record to South Korea's shift from a nuclear phase-down toward new reactors and the question of policy predictability.",
+    listHref: "/columns",
+    listLabel: "All columns",
+  },
+};
+
 const isFreedom = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "freedom-as-citizen-agency";
 const isProgress = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-progress";
 const isConservatism = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-conservatism";
@@ -228,8 +247,10 @@ const isNuclearPolicyTracker = (kind: EditorialContentKind, slug: string) => kin
 const isProsecutionReformColumn = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "prosecution-reform-power-transfer-2026";
 const isMilitaryAcademyColumn = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "military-academy-integration-rotc-question";
 const isMilitaryAcademyTracker = (kind: EditorialContentKind, slug: string) => kind === "monitoring" && slug === "military-academy-integration-tracker";
+const isFukushimaJourney = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "fukushima-journey-original";
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (isFukushimaJourney(kind, slug)) return true;
   if (isNuclearPolicyTracker(kind, slug)) return true;
   if (isNuclearPolicyColumn(kind, slug)) return true;
   if (isProsecutionReformColumn(kind, slug)) return true;
@@ -245,6 +266,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (isFukushimaJourney(kind, slug)) return fukushimaJourneyContinuation[language];
   if (isMilitaryAcademyTracker(kind, slug)) return militaryAcademyTrackerContinuation[language];
   if (isMilitaryAcademyColumn(kind, slug)) return militaryAcademyColumnContinuation[language];
   if (isNuclearPolicyTracker(kind, slug)) return nuclearPolicyTrackerContinuation[language];
