@@ -2,6 +2,7 @@ import { getAllBriefingsNewestFirst } from "./data/allBriefings";
 import { columns, getColumnsNewestFirst, getHotIssueColumnsNewestFirst, isHotIssueColumn } from "./data/columns";
 import { newsArticles } from "./data/news";
 import { publicInterestWatchCases } from "./data/publicInterestWatch";
+import { taxPolicies } from "./data/taxWatch";
 import { seedLanguageArticlesKo } from "./data/seedLanguage";
 import { seedLanguageEnvironmentArticlesKo } from "./data/seedLanguageEnvironment";
 import {
@@ -154,6 +155,19 @@ const monitoringRoutes: SeoRoute[] = publicInterestWatchCases.map((item) => ({
   imageAlt: item.heroImage?.alt.ko,
 }));
 
+const taxRoutes: SeoRoute[] = taxPolicies.map((item) => ({
+  path: `/monitoring/tax/${item.slug}`,
+  title: `${item.title.ko} | 씨앗의 소리`,
+  description: item.summary.ko,
+  type: "article",
+  publishedAt: item.checkedAt,
+  lastModified: item.checkedAt,
+  author: SITE_NAME,
+  section: "세금감시",
+  image: socialImageUrl("tax", item.slug, item.checkedAt),
+  imageAlt: item.heroImage.alt.ko,
+}));
+
 const researchRoutes: SeoRoute[] = [{
   path: "/research/community-chest-of-korea",
   title: "사랑의열매는 시민의 공익을 어떻게 배분하는가 | 씨앗의 소리",
@@ -186,6 +200,7 @@ export const seoRoutes: SeoRoute[] = [
   ...briefingRoutes,
   ...columnRoutes,
   ...monitoringRoutes,
+  ...taxRoutes,
   ...researchRoutes,
   ...seedLanguageRoutes,
 ];

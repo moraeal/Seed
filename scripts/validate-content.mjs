@@ -10,13 +10,14 @@ const server = await createServer({
   optimizeDeps: { noDiscovery: true },
 });
 
-const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguageEnvironmentModule, publicInterestWatchModule, editorialContinuationModule, newsTranslationModule, briefingTranslationModule, columnTranslationModule] = await Promise.all([
+const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguageEnvironmentModule, publicInterestWatchModule, taxWatchModule, editorialContinuationModule, newsTranslationModule, briefingTranslationModule, columnTranslationModule] = await Promise.all([
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
   server.ssrLoadModule("/src/data/columns.ts"),
   server.ssrLoadModule("/src/data/seedLanguage.ts"),
   server.ssrLoadModule("/src/data/seedLanguageEnvironment.ts"),
   server.ssrLoadModule("/src/data/publicInterestWatch.ts"),
+  server.ssrLoadModule("/src/data/taxWatch.ts"),
   server.ssrLoadModule("/src/data/editorialContinuations.ts"),
   server.ssrLoadModule("/src/data/contentTranslations/news.ts"),
   server.ssrLoadModule("/src/data/contentTranslations/briefings.ts"),
@@ -39,6 +40,7 @@ const accountabilitySurfaces = [
   "src/pages/PublicInterestWatchDetail.tsx",
   "src/pages/CommunityChestResearch.tsx",
   "src/pages/SeedLanguageDetailBase.tsx",
+  "src/pages/TaxPolicyDetail.tsx",
 ];
 
 for (const pagePath of accountabilitySurfaces) {
@@ -99,6 +101,11 @@ for (const article of seedLanguageEnvironmentModule.seedLanguageEnvironmentArtic
 for (const item of publicInterestWatchModule.publicInterestWatchCases) {
   if (item.continuationEligible !== false && (!editorialContinuationModule.getEditorialContinuation("monitoring", item.slug, "ko") || !editorialContinuationModule.getEditorialContinuation("monitoring", item.slug, "en"))) errors.push(`Editorial continuation is missing or incomplete for public-interest watch: ${item.slug}`);
   if (item.heroImage?.src) await requireSocialImage("monitoring", item.slug);
+}
+for (const item of taxWatchModule.taxPolicies) {
+  if (!item.title?.ko || !item.title?.en || !item.summary?.ko || !item.summary?.en) errors.push(`Missing Korean or English tax policy edition: ${item.slug}`);
+  if (!item.heroImage?.ko || !item.heroImage?.en) errors.push(`Missing bilingual tax policy image: ${item.slug}`);
+  await requireSocialImage("tax", item.slug);
 }
 
 if (errors.length) {

@@ -18,13 +18,14 @@ const server = await createServer({
   server: { middlewareMode: true },
   optimizeDeps: { noDiscovery: true },
 });
-const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguageEnvironmentModule, publicInterestWatchModule] = await Promise.all([
+const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguageEnvironmentModule, publicInterestWatchModule, taxWatchModule] = await Promise.all([
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
   server.ssrLoadModule("/src/data/columns.ts"),
   server.ssrLoadModule("/src/data/seedLanguage.ts"),
   server.ssrLoadModule("/src/data/seedLanguageEnvironment.ts"),
   server.ssrLoadModule("/src/data/publicInterestWatch.ts"),
+  server.ssrLoadModule("/src/data/taxWatch.ts"),
 ]);
 await server.close();
 
@@ -58,6 +59,7 @@ const jobs = [
   ...publicInterestWatchModule.publicInterestWatchCases
     .filter((item) => item.heroImage?.src)
     .map((item) => ({ section: "monitoring", slug: item.slug, src: item.heroImage.src })),
+  ...taxWatchModule.taxPolicies.map((item) => ({ section: "tax", slug: item.slug, src: item.heroImage.ko })),
   { section: "research", slug: "community-chest-of-korea", src: "images/monitoring/community-chest-deep-hero.png" },
 ];
 
