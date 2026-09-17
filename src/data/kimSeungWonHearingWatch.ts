@@ -46,6 +46,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       date: "2026-09-16",
       text: {
+        ko: "후보자 인사청문회 준비단이 브로커로 지목된 양모 씨와 찍은 사진의 원본·비교 이미지를 공개했습니다. 준비단은 사무실 또는 상가에서 찍은 사진이 일부 삭제·확대·채도 조정을 거쳐 바닷가처럼 제시됐다고 주장했지만, 촬영 장소와 편집 의도는 독립적으로 확인되지 않았습니다.",
+        en: "Kim's hearing preparation team released an original and comparison image of his photo with the woman described as a broker. The team alleged that a photo taken in an office or commercial space was cropped, enlarged and color-adjusted to look like a seaside scene, but the location and intent behind the editing have not been independently established.",
+      },
+    },
+    {
+      date: "2026-09-16",
+      text: {
         ko: "후보자가 2013∼2014년 정인재 판사가 배석한 서울고법 재판부 사건을 수임한 사실이 확인돼 청문회 답변과 배치됐습니다. 후보자는 기억에 의존해 답변하다 착오가 있었다며 사과했습니다.",
         en: "Records showed that Kim represented a party in a 2013–2014 case before a Seoul High Court panel on which Judge Jeong In-jae sat, contradicting his hearing answer. Kim apologized and said he had answered from memory and was mistaken.",
       },
@@ -425,6 +432,33 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-16",
+      title: { ko: "브로커와 찍은 사진 원본 공개·촬영 장소 추가 해명", en: "Original photo released with further explanation of where it was taken" },
+      description: {
+        ko: "김 후보자 인사청문회 준비단은 청문회에서 제시된 후보자와 양모 씨의 사진에 대해 원본·비교 이미지를 공개했습니다. 사진과 준비단 입장이 공개된 사실은 확인됩니다. 준비단은 원본에는 비상구 표시등과 실내 조명 등이 보이며 사무실 또는 상가에서 찍힌 사진을 의혹 제기 측이 일부 삭제·확대하고 채도를 조정해 바닷가처럼 보이게 했다고 주장했습니다. 그러나 정확한 촬영 장소와 편집 의도는 독립적으로 확인되지 않았고, 준비단도 두 사람이 평소 알고 지낸 지인 관계였다고 밝혔습니다. 이번 공개는 ‘바닷가 동행’이라는 해석에 반박 자료를 더하지만 제넨셀 민원 전달의 적정성이나 두 사람의 관계 전반을 확정하지는 않습니다.",
+        en: "Kim's hearing preparation team released an original and comparison image of the photo shown at the hearing of Kim with the woman described as a broker. The release of the image and statement is verified. The team said the original shows an emergency-exit sign and indoor lighting, and alleged that the accusers cropped, enlarged and adjusted the saturation of a photo taken in an office or commercial space to make it resemble a seaside scene. The exact location and intent behind the editing have not been independently established, and the team acknowledged that Kim and the woman were acquaintances. The release adds evidence against the seaside-trip interpretation but does not resolve the propriety of the Genencell petition or the broader nature of their relationship.",
+      },
+      change: { ko: "후보자 측이 원본 비교 사진을 공개해 ‘바닷가 동행’ 해석에 반박", en: "Kim's team releases a comparison image rebutting the seaside-trip interpretation" },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "뉴스1", en: "News1" },
+          title: { ko: "김승원 측 \"브로커와 사진, 바닷가 아닌 사무실…野가 조작·편집\"", en: "Kim's team says photo with alleged broker was taken in an office, not at the seaside" },
+          url: "https://www.news1.kr/society/court-prosecution/6293059",
+          publishedAt: "2026-09-16",
+          thumbnailSrc: "https://i3n.news1.kr/system/photos/2026/9/16/8110419/high.jpg",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "조선비즈", en: "ChosunBiz" },
+          title: { ko: "김승원 측, 브로커 양씨와 찍은 사진에 ‘사무실 또는 상가에서 촬영’", en: "Kim's team says photo with alleged broker was taken in an office or commercial space" },
+          url: "https://biz.chosun.com/topics/law_firm/2026/09/16/K4VUQAEY6BASTD2LRQK4OKR2ZU/?outputType=amp",
+          publishedAt: "2026-09-16",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "2026-09-17",
       title: { ko: "법사위, 청문보고서 ‘적격’ 채택", en: "Committee adopts report with fit-for-office opinion" },
       description: {
@@ -528,6 +562,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   ],
   confirmedFacts: [
     { ko: "국회 법제사법위원회는 2026년 9월 17일 국민의힘 위원들이 퇴장한 가운데 민주당 주도로 김 후보자의 인사청문경과보고서를 ‘적격’ 의견으로 채택했습니다. 보고서 채택은 국회 위원회 절차의 완료이며 장관 임명 자체는 아닙니다.", en: "On September 17, 2026, the National Assembly's Legislation and Judiciary Committee adopted Kim's confirmation report with a fit-for-office opinion under Democratic Party leadership after People Power Party members walked out. Adoption completes the committee stage but is not itself the ministerial appointment." },
+    { ko: "김 후보자 인사청문회 준비단은 2026년 9월 16일 후보자와 양모 씨가 함께 찍은 사진의 원본·비교 이미지와 해명 자료를 공개했습니다. 사진이 사무실 또는 상가에서 촬영됐고 의혹 제기 측이 악의적으로 편집했다는 내용은 준비단의 주장입니다.", en: "On September 16, 2026, Kim's hearing preparation team released an original and comparison image of a photo showing Kim with the woman, together with an explanatory statement. Its assertions that the photo was taken in an office or commercial space and was maliciously edited by the accusers are the team's claims." },
     { ko: "김 후보자는 2013∼2014년 정인재 판사가 배석한 서울고법 민사21부 사건에서 원고 측 소송대리를 맡았습니다. 이는 해당 재판부 사건을 수임한 적 없다는 청문회 답변과 배치되며, 후보자 측은 기억에 의존한 착오였다며 사과했습니다.", en: "Kim represented the plaintiff in a 2013–2014 case before Seoul High Court Civil Division 21, where Judge Jeong In-jae sat as an associate judge. This conflicts with his hearing answer that he had never handled a case before that panel; his team apologized and attributed the answer to a memory-based mistake." },
     { ko: "경기남부경찰청은 가족 협동조합 관련 청탁금지법 위반·허위공문서 작성 혐의 고발 사건을 2026년 9월 16일 수원팔달경찰서에 배당했습니다.", en: "Gyeonggi Nambu Provincial Police assigned the complaint alleging graft-law violations and falsification of official documents in the family-cooperative matter to Suwon Paldal Police Station on September 16, 2026." },
     { ko: "인사청문회는 약 14시간 만인 2026년 9월 16일 자정 무렵 종료됐으며, 법제사법위원회는 이날 인사청문경과보고서를 채택하지 않았습니다.", en: "The hearing ended around midnight on September 16, 2026 after roughly 14 hours, and the Legislation and Judiciary Committee did not adopt its report at the meeting." },
@@ -540,6 +575,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     { ko: "김 후보자 측은 소속 보좌진이 청문위원의 질의 자료를 촬영한 사실을 인정하고 사과했으며, 후보자의 지시나 관여는 없었다고 밝혔습니다.", en: "Kim's office acknowledged and apologized for a staff member photographing a committee member's questioning material, while stating that the nominee did not direct or participate in it." },
   ],
   currentControversies: [
+    {
+      title: { ko: "브로커와 찍은 사진은 무엇을 보여주는가", en: "What does the photo with the alleged broker establish?" },
+      description: {
+        ko: "후보자 측이 공개한 원본·비교 사진은 청문회에서 제기된 ‘바닷가 동행’ 해석에 반박 자료가 됐습니다. 후보자 측은 사무실 또는 상가에서 찍은 사진이 일부 삭제·확대·채도 조정을 거쳐 바닷가처럼 제시됐다고 주장하지만, 정확한 촬영 장소와 편집 의도는 독립적으로 확인되지 않았습니다. 준비단은 두 사람이 지인 관계였다고 밝혔으며, 사진만으로 제넨셀 민원 전달이 부정한 청탁이었는지까지 판단할 수는 없습니다.",
+        en: "The original and comparison image released by Kim's team provides material rebutting the hearing's seaside-trip interpretation. The team alleges that a photo taken in an office or commercial space was cropped, enlarged and color-adjusted to look like a seaside scene, but the exact location and intent behind the editing have not been independently established. The team said Kim and the woman were acquaintances, and the photo alone cannot determine whether the Genencell petition amounted to an improper solicitation.",
+      },
+    },
     {
       title: { ko: "청문회 수임 답변의 오류가 검증 판단에 미칠 영향", en: "How the inaccurate hearing answer affects scrutiny" },
       description: {
@@ -592,6 +634,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       label: { ko: "YTN — 김승원 후보자 청문보고서 범여권 주도로 채택", en: "YTN — Kim confirmation report adopted under governing-bloc leadership" },
       url: "https://m.ytn.co.kr/news_view.php?key=202609171235008829&s_mcd=0101",
+    },
+    {
+      label: { ko: "뉴스1 — 브로커와 찍은 사진 원본 공개와 후보자 측 해명", en: "News1 — Original photo with alleged broker and Kim team's explanation" },
+      url: "https://www.news1.kr/society/court-prosecution/6293059",
+    },
+    {
+      label: { ko: "조선비즈 — 사진 촬영 장소·편집에 관한 후보자 측 주장", en: "ChosunBiz — Kim team's claims about the photo's location and editing" },
+      url: "https://biz.chosun.com/topics/law_firm/2026/09/16/K4VUQAEY6BASTD2LRQK4OKR2ZU/?outputType=amp",
     },
     {
       label: { ko: "연합뉴스 — 정인재 판사 배석 재판부 사건 수임과 후보자 사과", en: "Yonhap — Representation before panel including Judge Jeong and nominee's apology" },
