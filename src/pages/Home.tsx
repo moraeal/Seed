@@ -162,7 +162,7 @@ export default function Home() {
               )}
               {seedLanguageArticle && (
                 <Link to={`/seed-language/${seedLanguageArticle.slug}`} className="group grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3">
-                  <div className="flex aspect-[4/3] h-full max-h-[96px] w-full flex-col items-center justify-center border border-green-deep/15 bg-green-pale/45 text-center">
+                  <div className="flex aspect-[4/3] h-full max-h-[96px] w-full flex-col items-center justify-center border border-green-deep/15 bg-white text-center">
                     <p className="editorial-title text-[1.22rem] font-black leading-none text-navy sm:text-[1.32rem]">{ko ? seedLanguageArticle.term : seedLanguageArticle.term.toUpperCase()}</p>
                     {ko && seedLanguageTerm && (
                       <>
