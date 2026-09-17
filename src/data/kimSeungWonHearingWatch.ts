@@ -46,8 +46,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       date: "2026-09-17",
       text: {
-        ko: "국회 법제사법위원회가 국민의힘 위원들이 퇴장한 가운데 민주당 주도로 김 후보자 인사청문경과보고서를 ‘적격’ 의견으로 채택했고, 국회는 이날 보고서를 대통령실에 송부했습니다. 국회 절차는 끝났지만 장관 임명 자체는 아직 확인되지 않았습니다.",
-        en: "The National Assembly's Legislation and Judiciary Committee adopted Kim's confirmation report with a fit-for-office opinion under Democratic Party leadership after People Power Party members walked out, and the Assembly sent the report to the presidential office that day. The parliamentary process is complete, but the ministerial appointment itself has not yet been confirmed.",
+        ko: "국회 법제사법위원회가 국민의힘 위원들이 퇴장한 가운데 민주당 주도로 김 후보자 인사청문경과보고서를 ‘적격’ 의견으로 채택했고, 국회는 이날 보고서를 대통령실에 송부했습니다. 같은 날 청와대 대변인실은 온라인에 퍼진 ‘김승원 임명안 재가’ 공지가 청와대 명의를 도용한 허위·조작 정보라고 밝혔습니다. 국회 절차는 끝났지만 장관 임명 자체는 아직 확인되지 않았습니다.",
+        en: "The National Assembly's Legislation and Judiciary Committee adopted Kim's confirmation report with a fit-for-office opinion under Democratic Party leadership after People Power Party members walked out, and the Assembly sent the report to the presidential office that day. The presidential office later said an online notice claiming that Kim's appointment had been approved was fabricated and misused its name. The parliamentary process is complete, but the ministerial appointment itself has not yet been confirmed.",
       },
     },
     {
@@ -469,8 +469,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       date: "2026-09-17",
       title: { ko: "청문보고서 ‘적격’ 채택 뒤 대통령실 송부", en: "Fit-for-office report adopted and sent to presidential office" },
       description: {
-        ko: "법제사법위원회는 9월 17일 국민의힘 위원들이 모두 퇴장한 가운데 민주당 주도로 김 후보자의 인사청문경과보고서를 ‘적격’ 의견으로 채택했고, 국회는 이날 보고서를 대통령실에 송부했습니다. 채택·송부와 국민의힘 위원들의 퇴장은 확인된 절차적 사실입니다. 여당은 야당에 협조를 요청했으나 거절당했다고 밝혔고, 야당은 합의 없는 기습 상정이었다고 반발해 의사일정 협의 과정은 양측 주장이 엇갈립니다. 이로써 국회 절차는 마무리됐으며 대통령의 장관 임명만 별도로 남았습니다. 임명 발표는 아직 확인되지 않았습니다.",
-        en: "On September 17, the Legislation and Judiciary Committee adopted Kim's confirmation report with a fit-for-office opinion under Democratic Party leadership after all People Power Party members walked out, and the Assembly sent the report to the presidential office that day. The adoption, transmission and walkout are verified procedural facts. The governing party said it had requested opposition cooperation and been refused, while the opposition called the agenda addition a surprise made without agreement; their accounts of the scheduling process conflict. The parliamentary process is now complete and the president's appointment decision remains separate. No appointment announcement has yet been confirmed.",
+        ko: "법제사법위원회는 9월 17일 국민의힘 위원들이 모두 퇴장한 가운데 민주당 주도로 김 후보자의 인사청문경과보고서를 ‘적격’ 의견으로 채택했고, 국회는 이날 보고서를 대통령실에 송부했습니다. 채택·송부와 국민의힘 위원들의 퇴장은 확인된 절차적 사실입니다. 여당은 야당에 협조를 요청했으나 거절당했다고 밝혔고, 야당은 합의 없는 기습 상정이었다고 반발해 의사일정 협의 과정은 양측 주장이 엇갈립니다. 같은 날 청와대 대변인실은 온라인에 유포된 ‘김승원 법무부 장관 후보자 임명안 재가’ 공지를 청와대 명의를 도용한 허위·조작 정보라고 공식 확인했습니다. 오후 7시 30분 기준 재가는 이뤄지지 않았습니다. 국회 절차는 마무리됐지만 대통령의 장관 임명은 별도로 남아 있습니다.",
+        en: "On September 17, the Legislation and Judiciary Committee adopted Kim's confirmation report with a fit-for-office opinion under Democratic Party leadership after all People Power Party members walked out, and the Assembly sent the report to the presidential office that day. The adoption, transmission and walkout are verified procedural facts. The governing party said it had requested opposition cooperation and been refused, while the opposition called the agenda addition a surprise made without agreement; their accounts of the scheduling process conflict. Later that day, the presidential office formally identified an online notice claiming that Kim's appointment had been approved as fabricated information misusing its name. No approval had occurred as of 7:30 p.m. The parliamentary process is complete, but the president's appointment decision remains separate.",
       },
       change: { ko: "보고서 대통령실 송부로 국회 절차 완료, 임명 여부 확인 단계로", en: "Report sent to presidential office; parliamentary process complete and appointment decision remains" },
       status: "new",
@@ -493,6 +493,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
           publisher: { ko: "조선일보", en: "The Chosun Ilbo" },
           title: { ko: "국회, 김승원 청문보고서 청와대로 송부", en: "National Assembly sends Kim confirmation report to presidential office" },
           url: "https://www.chosun.com/politics/assembly/2026/09/17/JHEYH3HKG5BQNL6G3QNYZCIBDE/",
+          publishedAt: "2026-09-17",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "뉴시스", en: "Newsis" },
+          title: { ko: "청와대, ‘김승원 임명안 재가’ 허위 공지에 엄정 대처", en: "Presidential office warns over fabricated notice claiming Kim's appointment was approved" },
+          url: "https://www.newsis.com/view/NISX20260917_0003794622",
           publishedAt: "2026-09-17",
           kind: "article",
         },
@@ -603,7 +610,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   ],
   confirmedFacts: [
     { ko: "제넨셀 의혹 관련 재판을 받고 있는 양모 씨는 2026년 9월 17일 변호인을 통해 6쪽 입장문을 공개했습니다. 신속 검토 요청과 정치권 친분 과시를 인정·사과하고 특혜 요구·후원금 약속·전환사채 대가성을 부인한 것은 양씨의 주장입니다.", en: "On September 17, 2026, the woman on trial in the Genencell-related case released a six-page statement through counsel. Her acknowledgment and apology over seeking an expedited review and boasting of political connections, and her denials of favoritism, a donation promise and a quid pro quo for the convertible-bond investment, are her claims." },
-    { ko: "국회 법제사법위원회는 2026년 9월 17일 국민의힘 위원들이 퇴장한 가운데 민주당 주도로 김 후보자의 인사청문경과보고서를 ‘적격’ 의견으로 채택했고, 국회는 이날 보고서를 대통령실에 송부했습니다. 이는 국회 절차의 완료이며 장관 임명 자체는 아닙니다.", en: "On September 17, 2026, the National Assembly's Legislation and Judiciary Committee adopted Kim's confirmation report with a fit-for-office opinion under Democratic Party leadership after People Power Party members walked out, and the Assembly sent it to the presidential office that day. This completes the parliamentary process but is not itself the ministerial appointment." },
+    { ko: "국회 법제사법위원회는 2026년 9월 17일 국민의힘 위원들이 퇴장한 가운데 민주당 주도로 김 후보자의 인사청문경과보고서를 ‘적격’ 의견으로 채택했고, 국회는 이날 보고서를 대통령실에 송부했습니다. 같은 날 청와대 대변인실은 온라인에 유포된 ‘김승원 임명안 재가’ 공지를 청와대 명의를 도용한 허위·조작 정보라고 공식 확인했으며, 오후 7시 30분 기준 재가는 이뤄지지 않았습니다.", en: "On September 17, 2026, the National Assembly's Legislation and Judiciary Committee adopted Kim's confirmation report with a fit-for-office opinion under Democratic Party leadership after People Power Party members walked out, and the Assembly sent it to the presidential office that day. The presidential office later identified an online notice claiming that Kim's appointment had been approved as fabricated information misusing its name; no approval had occurred as of 7:30 p.m." },
     { ko: "김 후보자 인사청문회 준비단은 2026년 9월 16일 후보자와 양모 씨가 함께 찍은 사진의 원본·비교 이미지와 해명 자료를 공개했습니다. 사진이 사무실 또는 상가에서 촬영됐고 의혹 제기 측이 악의적으로 편집했다는 내용은 준비단의 주장입니다.", en: "On September 16, 2026, Kim's hearing preparation team released an original and comparison image of a photo showing Kim with the woman, together with an explanatory statement. Its assertions that the photo was taken in an office or commercial space and was maliciously edited by the accusers are the team's claims." },
     { ko: "김 후보자는 2013∼2014년 정인재 판사가 배석한 서울고법 민사21부 사건에서 원고 측 소송대리를 맡았습니다. 이는 해당 재판부 사건을 수임한 적 없다는 청문회 답변과 배치되며, 후보자 측은 기억에 의존한 착오였다며 사과했습니다.", en: "Kim represented the plaintiff in a 2013–2014 case before Seoul High Court Civil Division 21, where Judge Jeong In-jae sat as an associate judge. This conflicts with his hearing answer that he had never handled a case before that panel; his team apologized and attributed the answer to a memory-based mistake." },
     { ko: "경기남부경찰청은 가족 협동조합 관련 청탁금지법 위반·허위공문서 작성 혐의 고발 사건을 2026년 9월 16일 수원팔달경찰서에 배당했습니다.", en: "Gyeonggi Nambu Provincial Police assigned the complaint alleging graft-law violations and falsification of official documents in the family-cooperative matter to Suwon Paldal Police Station on September 16, 2026." },
@@ -669,6 +676,10 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "뉴시스 — 청와대, ‘김승원 임명안 재가’ 허위 공지에 엄정 대처", en: "Newsis — Presidential office warns over fabricated notice claiming Kim's appointment was approved" },
+      url: "https://www.newsis.com/view/NISX20260917_0003794622",
+    },
     {
       label: { ko: "조선일보 — 국회, 김승원 후보자 청문보고서 대통령실 송부", en: "The Chosun Ilbo — National Assembly sends Kim confirmation report to presidential office" },
       url: "https://www.chosun.com/politics/assembly/2026/09/17/JHEYH3HKG5BQNL6G3QNYZCIBDE/",
