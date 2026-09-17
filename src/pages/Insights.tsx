@@ -1,4 +1,4 @@
-import { Check, ChevronRight, Mail, RefreshCw, Users } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight, Mail, RefreshCw, Users } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../auth";
@@ -9,6 +9,8 @@ import { newsTrackerCases } from "../data/publicInterestWatch";
 import { getFeaturedContentPath, setFeaturedContentPath } from "../lib/featuredContent";
 
 type Section = "dashboard" | "content" | "traffic" | "subscribers" | "members" | "featured";
+
+const FEATURED_ITEMS_PER_PAGE = 20;
 
 const navItems: { key: Section; ko: string; en: string; path: string }[] = [
   { key: "dashboard", ko: "종합 대시보드", en: "Dashboard", path: "/insights" },
@@ -57,6 +59,7 @@ export default function Insights() {
   const [featuredPath, setFeaturedPath] = useState<string | null>(null);
   const [savingFeaturedPath, setSavingFeaturedPath] = useState<string | null>(null);
   const [featuredNotice, setFeaturedNotice] = useState("");
+  const [featuredPage, setFeaturedPage] = useState(1);
   const authorized = user?.app_metadata?.seed_role === "owner";
 
   const refresh = async () => {
@@ -101,10 +104,18 @@ export default function Insights() {
   const filteredViews = useMemo(() => contentCategory === "all" ? views : views.filter((item) => categoryLabel(item.page_path, true) === contentCategory), [views, contentCategory]);
   const topViews = views.slice(0, 5);
   const featuredCandidates = useMemo(() => getFeaturedContentCandidates(language), [language]);
+  const featuredPageCount = Math.max(1, Math.ceil(featuredCandidates.length / FEATURED_ITEMS_PER_PAGE));
+  const paginatedFeaturedCandidates = useMemo(() => {
+    const start = (featuredPage - 1) * FEATURED_ITEMS_PER_PAGE;
+    return featuredCandidates.slice(start, start + FEATURED_ITEMS_PER_PAGE);
+  }, [featuredCandidates, featuredPage]);
   const effectiveFeaturedPath = featuredCandidates.some((item) => item.path === featuredPath)
     ? featuredPath
     : featuredCandidates.find((item) => item.category === "column")?.path ?? featuredCandidates[0]?.path;
   const currentFeatured = featuredCandidates.find((item) => item.path === effectiveFeaturedPath);
+  useEffect(() => {
+    setFeaturedPage((page) => Math.min(page, featuredPageCount));
+  }, [featuredPageCount]);
   const selectFeatured = async (path: string) => {
     if (!session) return;
     setSavingFeaturedPath(path);
@@ -165,11 +176,11 @@ export default function Insights() {
         {section === "members" && <section className="mt-7"><div className="flex items-end justify-between gap-3"><div><h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "회원 관리" : "Members"}</h2><p className="mt-1 text-sm text-charcoal/50">{ko ? "회원가입·인증·콘텐츠 수신 상태를 확인합니다." : "Review registration, verification and content subscription status."}</p></div><span className="inline-flex items-center gap-1.5 text-sm font-bold text-green-deep"><Users size={16}/>{members.length.toLocaleString()}</span></div><div className="mt-5 overflow-x-auto border-t-2 border-navy bg-white"><table className="w-full text-left text-sm"><thead className="bg-[#F1F2EC] text-xs text-charcoal/50"><tr><th className="px-4 py-3">{ko ? "회원" : "Member"}</th><th className="px-4 py-3">{ko ? "연락처" : "Contact"}</th><th className="px-4 py-3">{ko ? "이메일 인증" : "Verified"}</th><th className="px-4 py-3">{ko ? "콘텐츠 수신" : "Subscription"}</th><th className="px-4 py-3">{ko ? "가입일" : "Joined"}</th></tr></thead><tbody>{members.map((item) => <tr key={item.user_id} className="border-t border-green-deep/10"><td className="px-4 py-3 font-semibold text-navy">{item.nickname}</td><td className="px-4 py-3 text-xs text-charcoal/55"><p>{item.email}</p>{item.phone && <p className="mt-1">{item.phone}</p>}</td><td className={`px-4 py-3 text-xs font-bold ${item.email_confirmed_at ? "text-green-deep" : "text-amber-700"}`}>{item.email_confirmed_at ? (ko ? "완료" : "Verified") : (ko ? "미인증" : "Unverified")}</td><td className={`px-4 py-3 text-xs font-bold ${item.content_subscription_consent ? "text-green-deep" : "text-charcoal/35"}`}>{item.content_subscription_consent ? (ko ? "수신" : "Subscribed") : (ko ? "미수신" : "No")}</td><td className="whitespace-nowrap px-4 py-3 text-xs text-charcoal/55">{formatDate(item.created_at)}</td></tr>)}</tbody></table>{!loading && members.length === 0 && <p className="px-4 py-8 text-center text-sm text-charcoal/45">{ko ? "회원가입 기록이 없습니다." : "No registered members yet."}</p>}</div></section>}
 
         {section === "featured" && <section className="mt-7">
-          <div><h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "메인페이지 상단 기사" : "Homepage featured story"}</h2><p className="mt-1 text-sm text-charcoal/50">{ko ? "원하는 기사를 선택하면 별도 배포 없이 메인페이지 왼쪽 상단에 바로 반영됩니다." : "Choose any published story to place it at the top of the homepage without a new deployment."}</p></div>
+          <div className="flex flex-wrap items-end justify-between gap-3"><div><h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "메인페이지 상단 기사" : "Homepage featured story"}</h2><p className="mt-1 text-sm text-charcoal/50">{ko ? "원하는 기사를 선택하면 별도 배포 없이 메인페이지 왼쪽 상단에 바로 반영됩니다." : "Choose any published story to place it at the top of the homepage without a new deployment."}</p></div><p className="text-xs font-semibold text-charcoal/45">{ko ? `전체 ${featuredCandidates.length.toLocaleString()}건 · ${featuredPage}/${featuredPageCount}페이지` : `${featuredCandidates.length.toLocaleString()} stories · Page ${featuredPage} of ${featuredPageCount}`}</p></div>
           {featuredNotice && <p className="mt-5 border border-green-deep/15 bg-[#E8EFE9] px-4 py-3 text-sm font-semibold text-green-deep" role="status">{featuredNotice}</p>}
           <div className="mt-5 border-t-2 border-navy bg-white">
             <div className="divide-y divide-green-deep/10">
-              {featuredCandidates.map((item) => {
+              {paginatedFeaturedCandidates.map((item) => {
                 const selected = item.path === effectiveFeaturedPath;
                 return <article key={item.path} className={`grid gap-4 p-4 sm:grid-cols-[112px_minmax(0,1fr)_auto] sm:items-center ${selected ? "bg-green-pale/55" : ""}`}>
                   <div className="aspect-[4/3] overflow-hidden bg-green-deep"><img src={item.image.src.startsWith("http") ? item.image.src : `${import.meta.env.BASE_URL}${item.image.src.replace(/^\//, "")}`} alt="" className="h-full w-full object-cover" loading="lazy" /></div>
@@ -179,6 +190,11 @@ export default function Insights() {
               })}
             </div>
           </div>
+          {featuredPageCount > 1 && <nav className="mt-6 flex flex-wrap items-center justify-center gap-2" aria-label={ko ? "메인기사 목록 페이지" : "Featured story pages"}>
+            <button type="button" onClick={() => setFeaturedPage((page) => Math.max(1, page - 1))} disabled={featuredPage === 1} className="inline-flex min-h-10 items-center gap-1 border border-green-deep/15 bg-white px-3 py-2 text-sm font-bold text-green-deep transition-colors hover:border-green-mid disabled:cursor-not-allowed disabled:opacity-35"><ChevronLeft size={15}/>{ko ? "이전" : "Previous"}</button>
+            {Array.from({ length: featuredPageCount }, (_, index) => index + 1).map((page) => <button key={page} type="button" onClick={() => setFeaturedPage(page)} aria-current={featuredPage === page ? "page" : undefined} aria-label={ko ? `${page}페이지` : `Page ${page}`} className={`min-h-10 min-w-10 border px-3 py-2 text-sm font-bold transition-colors ${featuredPage === page ? "border-green-deep bg-green-deep text-white" : "border-green-deep/15 bg-white text-green-deep hover:border-green-mid"}`}>{page}</button>)}
+            <button type="button" onClick={() => setFeaturedPage((page) => Math.min(featuredPageCount, page + 1))} disabled={featuredPage === featuredPageCount} className="inline-flex min-h-10 items-center gap-1 border border-green-deep/15 bg-white px-3 py-2 text-sm font-bold text-green-deep transition-colors hover:border-green-mid disabled:cursor-not-allowed disabled:opacity-35">{ko ? "다음" : "Next"}<ChevronRight size={15}/></button>
+          </nav>}
           {!currentFeatured && featuredPath && <p className="mt-4 text-xs text-amber-700">{ko ? "저장된 기사를 현재 콘텐츠 목록에서 찾지 못해 최신 기사로 대체 표시됩니다." : "The saved story is unavailable, so the newest story is shown instead."}</p>}
         </section>}
       </div>
