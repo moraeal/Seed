@@ -122,14 +122,56 @@ const farmlandTrackerContinuation: Record<Language, EditorialContinuation> = {
   },
 };
 
+const nuclearPolicyColumnContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/news/democratic-party-nuclear-policy-reversal-tracker",
+    title: "탈원전에서 신규 원전 추진까지",
+    relationship: "사실과 정책 변화 추적",
+    reason: "칼럼이 제기한 정책의 예측가능성과 기업 자율성 문제에 이어, 2017년 이후 원전정책과 기업 이전 논의가 어떻게 바뀌었는지 날짜별 자료로 확인합니다.",
+    listHref: "/columns",
+    listLabel: "칼럼 전체 보기",
+  },
+  en: {
+    href: "/news/democratic-party-nuclear-policy-reversal-tracker",
+    title: "From a Nuclear Phase-Down to New Reactor Construction",
+    relationship: "TRACK THE FACTS AND POLICY SHIFTS",
+    reason: "Continue from the column's argument to a dated record of nuclear policy, regional industrial planning and corporate relocation since 2017.",
+    listHref: "/columns",
+    listLabel: "All columns",
+  },
+};
+
+const nuclearPolicyTrackerContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/columns/democratic-party-nuclear-policy-reversal",
+    title: "이제는 원전을 다시 짓자는 민주당",
+    relationship: "씨앗의 소리",
+    reason: "날짜별 정책 변화를 확인했다면, 탈원전에서 원전 확대로의 전환과 기업 이전 정책이 국가의 예측가능성과 권력의 한계에 남기는 문제를 이어서 읽습니다.",
+    listHref: "/news",
+    listLabel: "핫이슈 전체 보기",
+  },
+  en: {
+    href: "/columns/democratic-party-nuclear-policy-reversal",
+    title: "Now South Korea's Democrats Want to Build Nuclear Plants Again",
+    relationship: "SEED VOICE",
+    reason: "After reviewing the dated record, continue with what the reversal and corporate-relocation policy mean for predictability and the limits of state power.",
+    listHref: "/news",
+    listLabel: "All Hot Issues",
+  },
+};
+
 const isFreedom = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "freedom-as-citizen-agency";
 const isProgress = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-progress";
 const isConservatism = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-conservatism";
 const isDiscourse = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "discourse-many-words-no-direction";
 const isFarmlandOwnership = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "farmland-ownership-without-an-exit";
 const isFarmlandTracker = (kind: EditorialContentKind, slug: string) => kind === "monitoring" && slug === "farmland-census-disposal-orders-tracker";
+const isNuclearPolicyColumn = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "democratic-party-nuclear-policy-reversal";
+const isNuclearPolicyTracker = (kind: EditorialContentKind, slug: string) => kind === "monitoring" && slug === "democratic-party-nuclear-policy-reversal-tracker";
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (isNuclearPolicyTracker(kind, slug)) return true;
+  if (isNuclearPolicyColumn(kind, slug)) return true;
   if (isConservatism(kind, slug)) return true;
   if (isFarmlandTracker(kind, slug)) return true;
   if (isFarmlandOwnership(kind, slug)) return true;
@@ -140,6 +182,8 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (isNuclearPolicyTracker(kind, slug)) return nuclearPolicyTrackerContinuation[language];
+  if (isNuclearPolicyColumn(kind, slug)) return nuclearPolicyColumnContinuation[language];
   if (isConservatism(kind, slug)) return conservatismContinuation[language];
   if (isFarmlandTracker(kind, slug)) return farmlandTrackerContinuation[language];
   if (isFarmlandOwnership(kind, slug)) return farmlandOwnershipContinuation[language];

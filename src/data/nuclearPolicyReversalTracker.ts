@@ -11,12 +11,12 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     en: "Nuclear policy · Corporate relocation · Regional growth",
   },
   title: {
-    ko: "이제는 원전을 다시 짓자는 민주당",
-    en: "After Years of Opposing New Reactors, South Korea's Democrats Now Want to Build Again",
+    ko: "탈원전에서 신규 원전 추진까지",
+    en: "From a Nuclear Phase-Down to New Reactor Construction",
   },
   summary: {
-    ko: "지금껏 탈원전을 외치던 정부가 신규 대형원전 2기 건설을 이어받고 추가 원전까지 검토하고 있습니다. 서남권 반도체 산단과 AI 데이터센터를 지역성장 사업으로 추진하면서 늘어난 전력수요가 그 근거가 됐습니다. 씨앗은 원전 찬반보다 장기정책의 예측가능성과 기업의 자율성이 어떻게 달라지는지를 추적합니다.",
-    en: "A governing camp that long championed a nuclear phase-down has retained plans for two large reactors and is now considering more. The stated rationale is rising electricity demand from regional semiconductor clusters and AI data centers. SEED tracks not only the nuclear debate, but also policy predictability and the limits of state power over corporate location and investment.",
+    ko: "2017년 신규 원전 6기 백지화에서 2026년 신규 대형원전 2기 추진과 추가 원전 검토까지, 민주당 정부의 원전정책 변화를 날짜별로 기록합니다. 서남권 반도체 산단과 AI 데이터센터의 전력수요, 지역별 전기요금과 기업 이전 정책이 원전 논의와 어떻게 연결되는지도 함께 추적합니다.",
+    en: "This tracker records the shift from cancelling six planned reactors in 2017 to proceeding with two large reactors and considering more in 2026. It also follows how power demand from southwest semiconductor projects and AI data centers, regional electricity pricing and corporate-relocation policy became linked to the nuclear debate.",
   },
   status: {
     ko: "정책 전환·추가 원전 검토",
@@ -46,10 +46,6 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
   sourceBasis: {
     ko: "2017년 에너지전환 로드맵, 제11차 전력수급기본계획, 제21대 대통령선거 후보자토론회, 정부 정책브리핑과 관계 부처 발표, HMM 노조의 부산 이전 반발 및 산업용 지역 전기요금제 보도를 날짜별로 대조했습니다. 제11차 계획은 윤석열 정부가 확정했다는 점과 이재명 정부가 재검토 뒤 이어받았다는 점을 구분했습니다. 원전 필요성에 대한 판단과 정책 전환의 설명 책임도 따로 살폈습니다.",
     en: "This record cross-checks the 2017 Energy Transition Roadmap, the 11th Basic Plan for Electricity Supply and Demand, the 2025 presidential debate, government briefings, ministerial announcements, labor opposition to HMM's proposed relocation and reporting on regional industrial electricity rates. It distinguishes the previous administration's adoption of the 11th plan from the current administration's decision to retain it after review, and separates the case for nuclear power from the duty to explain a major policy reversal.",
-  },
-  supportNote: {
-    ko: "정책은 현실에 맞게 바뀔 수 있습니다. 원전이 실제로 필요하다면 바꾸는 것이 맞습니다. 그러나 국가의 장기정책을 정치적 필요에 따라 동전 뒤집듯 바꾸면 그 비용은 기업과 시민이 치릅니다. 바뀐 정책보다 더 심각한 것은 예측할 수 없는 국가입니다.",
-    en: "Policy may change when reality changes, and nuclear power should be reconsidered if it is genuinely needed. But when a long-term national policy is flipped for political convenience, companies and citizens pay the bill. More damaging than a changed policy is a state whose commitments cannot be predicted.",
   },
   caution: {
     ko: "제11차 전력수급기본계획의 신규 대형원전 2기는 윤석열 정부가 확정했습니다. 이재명 정부의 정책 전환은 이 계획을 새로 만든 것이 아니라 재검토 뒤 계획대로 추진하고, 이후 산업 전력수요를 근거로 추가 원전 검토까지 나아간 데 있습니다. 반도체 투자는 기업과 정부의 협의안이지만 HMM처럼 정부가 이전 방침을 먼저 밝힌 사례에서는 강제 이전이라는 반발이 제기됐습니다.",
@@ -306,42 +302,42 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
   currentControversies: [
     {
       title: {
-        ko: "원전이 필요한가보다 먼저, 왜 정책이 바뀌었는가",
-        en: "Before asking whether nuclear power is needed, explain why the policy changed",
+        ko: "정책 전환의 근거와 비용",
+        en: "Grounds and costs of the policy reversal",
       },
       description: {
-        ko: "원전을 다시 짓는 결정 자체는 현실적인 선택일 수 있습니다. 그러나 민주당은 자신들이 밀어붙였던 탈원전 정책에서 어떤 전제가 달라졌고 당시 판단에서 무엇이 부족했는지, 그 사이 기업과 지역, 원전 생태계가 치른 비용은 얼마인지 먼저 설명해야 합니다.",
-        en: "Building reactors again may be a realistic choice. But the Democratic Party must first explain which assumptions changed, what was missing from its earlier judgment and what costs companies, regions and the nuclear supply chain absorbed in the meantime.",
+        ko: "정부는 전력수요 증가와 원전 필요 여론을 추진 근거로 제시했습니다. 앞으로는 2017년 정책의 어떤 전제가 달라졌는지, 정책 전환 과정에서 기업·지역·원전 생태계가 부담한 비용이 얼마인지 확인해야 합니다.",
+        en: "The government has cited rising demand and public support for nuclear power. The remaining questions are which assumptions behind the 2017 policy changed and what transition costs were borne by companies, regions and the nuclear supply chain.",
       },
     },
     {
       title: {
-        ko: "기업을 옮기고, 그 기업 때문에 원전을 짓는 구조",
-        en: "Move industry first, then cite its demand to justify reactors",
+        ko: "산업 입지계획과 추가 원전의 연결",
+        en: "The link between industrial location and additional reactors",
       },
       description: {
-        ko: "정부가 산업의 위치와 대규모 투자를 특정 권역에 배치한 뒤 그 계획에서 생긴 전력수요를 근거로 원전을 더 지을 수 있다고 말하기 시작했습니다. 산업의 위치부터 발전소 숫자까지 국가가 정하면 기업은 스스로 위험을 판단하는 주체가 아니라 국가계획의 수행자가 되기 쉽습니다.",
-        en: "The government first placed major industrial investment in selected regions, then began citing the resulting power demand as a reason to build more reactors. When the state determines both industrial location and generation capacity, companies risk becoming implementers of a national plan rather than independent decision-makers.",
+        ko: "정부는 서남권 반도체 투자를 지역성장 사업으로 배치한 뒤 이 사업에서 생길 전력수요를 추가 원전 검토의 근거로 제시했습니다. 제12차 전력수급기본계획에서 산업 수요와 발전설비 계획이 어떤 계산으로 연결되는지 확인할 필요가 있습니다.",
+        en: "After placing southwest semiconductor investment within its regional-growth strategy, the government cited the resulting demand as a reason to consider more reactors. The 12th electricity plan must show how industrial forecasts are translated into generation capacity.",
       },
     },
     {
       title: {
-        ko: "유인책이 선택권을 형식으로만 남기는가",
-        en: "Do incentives leave corporate choice intact only on paper?",
+        ko: "기업 이전의 동의와 거부 절차",
+        en: "Consent and refusal procedures in corporate relocation",
       },
       description: {
-        ko: "반도체 투자는 기업과 정부가 협의한 계획이고 지역별 전기요금과 세제·보조금은 형식상 유인책입니다. 반면 HMM처럼 정부가 이전 방침을 먼저 못 박고 회사와 노동자가 뒤따르는 사례에서는 강제라는 비판이 나올 수밖에 없습니다. 정책금융과 공공 지분, 인허가와 기반시설까지 한 방향으로 묶이면 기업의 선택은 형식적으로만 남을 수 있습니다.",
-        en: "Semiconductor plans were negotiated with companies, while regional rates, tax policy and subsidies are formally incentives. HMM is different: the government announced a relocation direction before the company and workers agreed, prompting accusations of coercion. When policy finance, public ownership, permits and infrastructure all point one way, corporate choice can survive in form while disappearing in practice.",
+        ko: "반도체 투자는 기업과 정부의 협의안이며 지역별 전기요금과 세제·보조금은 유인책으로 제시됐습니다. HMM 사례에서는 정부가 이전 방침을 먼저 밝힌 뒤 노조가 강제 이전이라고 반발했습니다. 이사회·주주·노동자의 동의와 거부 절차가 실제로 어떻게 보장되는지가 남은 쟁점입니다.",
+        en: "Semiconductor investment was negotiated with companies, while regional rates, taxes and subsidies were presented as incentives. In HMM's case, the union called the move coercive after the government announced the destination first. The remaining issue is how consent and refusal rights for boards, shareholders and workers operate in practice.",
       },
     },
     {
       title: {
-        ko: "장기정책의 전환비용은 누가 책임지는가",
-        en: "Who bears the transition cost of reversing a long-term policy?",
+        ko: "재생에너지 전략과 신규 원전의 결합 원칙",
+        en: "How renewables and new reactors will be combined",
       },
       description: {
-        ko: "원전 산업에 남은 기업도 떠난 기업도 비용을 치렀고 지역과 대학, 협력업체의 계획도 달라졌습니다. 지금까지 정부 설명은 늘어난 전력수요와 원전 여론에 머물러 있습니다. 무엇이 틀렸고 왜 바뀌었으며 누가 비용을 치렀는지 공개해야 다음 정책도 믿을 수 있습니다.",
-        en: "Companies that remained in the nuclear industry and those that left both paid a price, while plans at universities, regions and suppliers also changed. The government's explanation has focused on demand growth and public support for nuclear power. Trust in the next policy requires disclosure of what was wrong, why it changed and who paid for the reversal.",
+        ko: "이재명 후보는 대선 토론에서 재생에너지 확대와 전력망 확충을 강조했습니다. 정부가 신규 원전과 추가 원전 검토를 이어가면서 재생에너지 비중, RE100 대응, 원전 건설기간과 비용을 어떤 원칙으로 조정할지는 아직 구체화되지 않았습니다.",
+        en: "During the campaign, Lee emphasized renewable expansion and grid investment. As the government proceeds with new reactors and considers more, it has yet to specify how renewable targets, RE100 demand, construction time and reactor costs will be reconciled.",
       },
     },
   ],
@@ -381,7 +377,7 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
       en: "What to watch next",
     },
   },
-  continuationEligible: false,
+  continuationEligible: true,
   questions: [],
   proposals: [],
   sources: [

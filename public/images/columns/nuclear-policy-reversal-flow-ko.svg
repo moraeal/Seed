@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">탈원전에서 추가 원전 검토까지의 정책 흐름</title>
+  <desc id="desc">2017년 탈원전 정책, 2026년 지역 산업 배치, 신규 원전 추진과 추가 검토의 연결을 보여준다.</desc>
+  <rect width="1200" height="675" fill="#f5f1e7"/>
+  <text x="80" y="92" fill="#132b46" font-family="sans-serif" font-size="38" font-weight="800">정책은 어떻게 뒤집혔나</text>
+  <text x="80" y="137" fill="#40515f" font-family="sans-serif" font-size="21">탈원전에서 지역 산업 배치, 다시 원전 확대 검토까지</text>
+  <line x1="196" y1="324" x2="1004" y2="324" stroke="#183f35" stroke-width="8"/>
+  <path d="M1004 304 L1044 324 L1004 344 Z" fill="#183f35"/>
+  <g font-family="sans-serif">
+    <circle cx="210" cy="324" r="78" fill="#f5f1e7" stroke="#8e2d2d" stroke-width="9"/>
+    <text x="210" y="310" text-anchor="middle" fill="#8e2d2d" font-size="24" font-weight="800">2017</text>
+    <text x="210" y="344" text-anchor="middle" fill="#132b46" font-size="26" font-weight="800">탈원전</text>
+    <text x="210" y="438" text-anchor="middle" fill="#40515f" font-size="19">신규 원전 6기 백지화</text>
+
+    <circle cx="600" cy="324" r="78" fill="#f5f1e7" stroke="#b47c2c" stroke-width="9"/>
+    <text x="600" y="310" text-anchor="middle" fill="#94631f" font-size="24" font-weight="800">2026</text>
+    <text x="600" y="344" text-anchor="middle" fill="#132b46" font-size="24" font-weight="800">산업 재배치</text>
+    <text x="600" y="438" text-anchor="middle" fill="#40515f" font-size="19">반도체·AI 지역 배치</text>
+
+    <circle cx="990" cy="324" r="78" fill="#f5f1e7" stroke="#183f35" stroke-width="9"/>
+    <text x="990" y="310" text-anchor="middle" fill="#183f35" font-size="24" font-weight="800">현재</text>
+    <text x="990" y="344" text-anchor="middle" fill="#132b46" font-size="23" font-weight="800">원전 확대 검토</text>
+    <text x="990" y="438" text-anchor="middle" fill="#40515f" font-size="19">신규 2기 추진·추가 검토</text>
+  </g>
+  <rect x="80" y="518" width="1040" height="88" rx="8" fill="#132b46"/>
+  <text x="600" y="572" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="25" font-weight="800">기업을 옮기고, 그 기업의 전력수요를 근거로 원전을 더 짓는 구조</text>
+</svg>
