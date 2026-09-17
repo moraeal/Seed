@@ -1,9 +1,10 @@
-import { Check, Clock3, ExternalLink, Pause, RefreshCw, Save, Star, X } from "lucide-react";
+import { Check, Clock3, ExternalLink, Newspaper, Pause, RefreshCw, Save, Star, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import type { AuthSession } from "../auth";
 import {
   getLegislativeAdminData,
+  approveLegislativeMediaCoverage,
   setLegislativeReviewState,
   updateLegislativeEditorial,
   type LegislativeBill,
@@ -101,6 +102,20 @@ export default function LegislativeAdminPanel({ session }: { session: AuthSessio
     setDrafts((current) => ({ ...current, [bill.bill_id]: current[bill.bill_id] || makeDraft(bill) }));
     setOpenEditor((current) => current === bill.bill_id ? "" : bill.bill_id);
   };
+
+  const approveMedia = async (bill: LegislativeBill) => {
+    setSaving(bill.bill_id);
+    setNotice("");
+    try {
+      const updated = await approveLegislativeMediaCoverage(session, bill.bill_id, bill.media_coverage_draft || []);
+      if (updated) setBills((current) => current.map((item) => item.bill_id === bill.bill_id ? updated : item));
+      setNotice("언론보도 요약을 상세페이지에 공개했습니다.");
+    } catch {
+      setNotice("언론보도 요약을 공개하지 못했습니다.");
+    } finally {
+      setSaving("");
+    }
+  };
   const changeDraft = (billId: string, patch: Partial<EditorialDraft>) => {
     setDrafts((current) => ({ ...current, [billId]: { ...current[billId], ...patch } }));
   };
@@ -180,12 +195,13 @@ export default function LegislativeAdminPanel({ session }: { session: AuthSessio
       const isOpen = openEditor === bill.bill_id;
       return <article key={bill.bill_id} className="border-b border-green-deep/15 bg-white">
         <div className="grid gap-4 p-5 lg:grid-cols-[110px_1fr_auto] lg:items-center">
-          <div><span className={`inline-flex px-2 py-1 text-[11px] font-black ${bill.importance_score >= 85 ? "bg-red-800 text-white" : bill.importance_score >= 60 ? "bg-gold text-navy" : "bg-green-pale text-green-deep"}`}>중요도 {bill.importance_score}</span>{bill.is_featured && <span className="mt-2 inline-flex items-center gap-1 bg-green-deep px-2 py-1 text-[11px] font-black text-white"><Star size={11} fill="currentColor"/>주목 {bill.featured_order || "—"}</span>}<time className="mt-2 block text-xs text-charcoal/45">{bill.proposed_date?.replace(/-/g, ".") || "—"}</time><span className="mt-1 block text-[11px] font-bold text-charcoal/40">{stateLabels[bill.review_state]}</span></div>
+          <div><span className={`inline-flex px-2 py-1 text-[11px] font-black ${bill.importance_score >= 90 ? "bg-red-800 text-white" : bill.importance_score >= 75 ? "bg-gold text-navy" : "bg-green-pale text-green-deep"}`}>중요도 {bill.importance_score}</span>{bill.direction_risk_score >= 60 && <span className="mt-2 inline-flex bg-red-50 px-2 py-1 text-[11px] font-black text-red-800">역방향 신호 {bill.direction_risk_score}</span>}{bill.is_featured && <span className="mt-2 inline-flex items-center gap-1 bg-green-deep px-2 py-1 text-[11px] font-black text-white"><Star size={11} fill="currentColor"/>주목 {bill.featured_order || "—"}</span>}<time className="mt-2 block text-xs text-charcoal/45">{bill.proposed_date?.replace(/-/g, ".") || "—"}</time><span className="mt-1 block text-[11px] font-bold text-charcoal/40">{stateLabels[bill.review_state]}</span></div>
           <div><div className="flex flex-wrap gap-2 text-xs font-bold text-green-deep"><span>{bill.committee || "소관위 미정"}</span>{bill.bill_no && <span className="text-charcoal/40">{bill.bill_no}</span>}<span className="text-charcoal/40">현재 {bill.current_stage || "발의"}</span></div><h3 className="mt-2 text-lg font-extrabold leading-7 text-navy">{bill.title}</h3><p className="mt-2 line-clamp-2 text-sm leading-6 text-charcoal/55">{bill.public_summary_ko || bill.analysis?.summary_ko || bill.official_summary || bill.proposal_reason || "분석에 필요한 공식 상세자료를 확인하고 있습니다."}</p><div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-charcoal/45"><span>{bill.proposer || bill.representative_proposer || "제안자 확인 중"}</span>{bill.detail_url && <a href={bill.detail_url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 font-bold text-green-deep">국회 원문<ExternalLink size={12}/></a>}<Link to={`/monitoring/legislation/${bill.slug}`} className="font-bold text-green-deep">미리보기</Link></div></div>
           <div className="flex flex-wrap gap-2 lg:max-w-[280px] lg:justify-end">
             {bill.review_state !== "published" && <button type="button" disabled={saving === bill.bill_id || !bill.analysis?.summary_ko || !bill.analysis?.summary_en || !bill.analysis?.title_en} onClick={() => void updateState(bill, "published")} title={!bill.analysis?.summary_ko || !bill.analysis?.summary_en || !bill.analysis?.title_en ? "한·영문 분석이 완료된 뒤 공개할 수 있습니다." : undefined} className="inline-flex items-center gap-1.5 bg-green-deep px-3 py-2 text-xs font-extrabold text-white disabled:cursor-not-allowed disabled:opacity-35"><Check size={14}/>공개</button>}
             {bill.review_state !== "held" && <button type="button" disabled={saving === bill.bill_id} onClick={() => void updateState(bill, "held")} className="inline-flex items-center gap-1.5 border border-green-deep/20 px-3 py-2 text-xs font-extrabold text-green-deep"><Pause size={14}/>보류</button>}
             {bill.review_state !== "excluded" && <button type="button" disabled={saving === bill.bill_id} onClick={() => void updateState(bill, "excluded")} className="inline-flex items-center gap-1.5 border border-red-800/20 px-3 py-2 text-xs font-extrabold text-red-800"><X size={14}/>제외</button>}
+            {bill.media_coverage_draft?.length > 0 && <button type="button" disabled={saving === bill.bill_id} onClick={() => void approveMedia(bill)} className="inline-flex items-center gap-1.5 border border-green-deep/20 bg-green-pale px-3 py-2 text-xs font-extrabold text-green-deep"><Newspaper size={14}/>언론요약 승인 {bill.media_coverage_draft.length}</button>}
             <button type="button" onClick={() => toggleEditor(bill)} className="inline-flex items-center gap-1.5 border border-gold bg-ivory px-3 py-2 text-xs font-extrabold text-navy"><Star size={14}/>{isOpen ? "편집 닫기" : "공개 문안 편집"}</button>
           </div>
         </div>
@@ -198,6 +214,8 @@ export default function LegislativeAdminPanel({ session }: { session: AuthSessio
             <label className="lg:col-span-2 text-xs font-extrabold text-navy">씨앗 관찰 키워드<textarea value={draft.keywords} onChange={(event) => changeDraft(bill.bill_id, { keywords: event.target.value })} rows={2} placeholder="시민의 권리, 재정 부담, 권력 통제 (쉼표로 2~4개)" className="mt-2 block w-full border border-green-deep/20 bg-white px-3 py-3 text-sm font-normal leading-6"/></label>
             <label className="lg:col-span-2 text-xs font-extrabold text-navy">공개용 핵심 요약<textarea value={draft.publicSummary} onChange={(event) => changeDraft(bill.bill_id, { publicSummary: event.target.value })} rows={4} placeholder="자동 분석 요약을 검토·수정한 공개 문안" className="mt-2 block w-full border border-green-deep/20 bg-white px-3 py-3 text-sm font-normal leading-6"/></label>
             <label className="lg:col-span-2 text-xs font-extrabold text-navy">씨앗은 이렇게 봅니다<textarea value={draft.seedView} onChange={(event) => changeDraft(bill.bill_id, { seedView: event.target.value })} rows={5} placeholder="근거·질문·우려를 중심으로 씨드보이스의 관찰과 판단을 작성합니다." className="mt-2 block w-full border border-green-deep/20 bg-white px-3 py-3 text-sm font-normal leading-6"/></label>
+            {bill.direction_risk_flags?.length > 0 && <div className="lg:col-span-2 border border-red-800/15 bg-red-50/60 p-4"><p className="text-xs font-extrabold text-red-800">역방향 입법 자동 신호</p><ul className="mt-2 space-y-1 text-sm leading-6 text-charcoal/65">{bill.direction_risk_flags.map((flag) => <li key={flag}>• {flag}</li>)}</ul></div>}
+            {bill.media_coverage_draft?.length > 0 && <div className="lg:col-span-2 border border-green-deep/15 bg-white p-4"><p className="text-xs font-extrabold text-navy">자동 수집된 관련 언론보도 — 승인 전 비공개</p><div className="mt-3 divide-y divide-green-deep/10">{bill.media_coverage_draft.map((item) => <div key={`${item.url}-${item.title}`} className="py-3"><a href={item.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm font-bold text-green-deep">{item.source} · {item.title}<ExternalLink size={12}/></a><p className="mt-1 text-sm leading-6 text-charcoal/60">{item.summary_ko}</p></div>)}</div></div>}
           </div>
           <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-green-deep/10 pt-4"><label className="flex items-center gap-2 text-xs font-bold text-charcoal/60"><input type="checkbox" checked={draft.allowBookmark} onChange={(event) => changeDraft(bill.bill_id, { allowBookmark: event.target.checked })}/>향후 관심 법안 저장 허용</label><button type="button" disabled={saving === bill.bill_id} onClick={() => void saveEditorial(bill)} className="button-primary"><Save size={15}/>{saving === bill.bill_id ? "저장 중" : "편집 내용 저장"}</button></div>
         </div>}

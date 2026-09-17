@@ -24,6 +24,9 @@ export type LegislativeAnalysis = {
   business_impact_en?: string[];
   authority_shift_ko?: string[];
   authority_shift_en?: string[];
+  direction_classification?: "freedom_expanding" | "mixed" | "reverse_direction" | "neutral";
+  direction_rationale_ko?: string[];
+  direction_rationale_en?: string[];
   watch_points_ko?: string[];
   watch_points_en?: string[];
   evidence_gaps_ko?: string[];
@@ -53,6 +56,8 @@ export type LegislativeBill = {
   full_text_url: string | null;
   importance_score: number;
   importance_level: "unrated" | "low" | "medium" | "high" | "critical";
+  direction_risk_score: number;
+  direction_risk_flags: string[];
   review_state: LegislativeReviewState;
   analysis: LegislativeAnalysis;
   analysis_model: string | null;
@@ -70,6 +75,9 @@ export type LegislativeBill = {
   seed_view_ko: string | null;
   seed_view_en: string | null;
   related_content: LegislativeRelatedContent[];
+  media_coverage_draft: LegislativeMediaCoverage[];
+  media_coverage: LegislativeMediaCoverage[];
+  media_checked_at: string | null;
   allow_bookmark: boolean;
   notification_status: "disabled" | "available" | "active";
   important_change_status: "none" | "draft" | "approved";
@@ -86,6 +94,16 @@ export type LegislativeRelatedContent = {
   title: string;
   url: string;
   category?: string;
+};
+
+export type LegislativeMediaCoverage = {
+  title: string;
+  url: string;
+  source: string;
+  published_at: string | null;
+  snippet?: string;
+  summary_ko: string;
+  summary_en: string;
 };
 
 export type LegislativeEditorialPatch = {
@@ -138,7 +156,7 @@ async function readResponse<T>(response: Response): Promise<T> {
 }
 
 export async function getPublishedLegislativeBills(limit = 100) {
-  const fields = "bill_id,bill_no,assembly_age,slug,title,proposer,representative_proposer,co_proposers,proposer_kind,proposed_date,committee,bill_kind,source_status,processing_result,official_summary,proposal_reason,main_content,detail_url,full_text_url,importance_score,importance_level,review_state,analysis,analysis_model,analysis_generated_at,analysis_error,published_at,current_stage,is_featured,featured_order,featured_reason_ko,featured_reason_en,observation_keywords,public_summary_ko,public_summary_en,seed_view_ko,seed_view_en,related_content,allow_bookmark,notification_status,important_change_status,important_change_note_ko,important_change_note_en,editorial_updated_at,source_checked_at,last_source_update,created_at,updated_at";
+  const fields = "bill_id,bill_no,assembly_age,slug,title,proposer,representative_proposer,co_proposers,proposer_kind,proposed_date,committee,bill_kind,source_status,processing_result,official_summary,proposal_reason,main_content,detail_url,full_text_url,importance_score,importance_level,direction_risk_score,direction_risk_flags,review_state,analysis,analysis_model,analysis_generated_at,analysis_error,published_at,current_stage,is_featured,featured_order,featured_reason_ko,featured_reason_en,observation_keywords,public_summary_ko,public_summary_en,seed_view_ko,seed_view_en,related_content,media_coverage,media_checked_at,allow_bookmark,notification_status,important_change_status,important_change_note_ko,important_change_note_en,editorial_updated_at,source_checked_at,last_source_update,created_at,updated_at";
   const response = await fetch(`${supabaseUrl}/rest/v1/legislative_bills?select=${fields}&order=proposed_date.desc.nullslast,published_at.desc&limit=${limit}`, { headers: headers() });
   return readResponse<LegislativeBill[]>(response);
 }
@@ -181,6 +199,16 @@ export async function updateLegislativeEditorial(session: AuthSession, billId: s
     method: "PATCH",
     headers: { ...headers(session), Prefer: "return=representation" },
     body: JSON.stringify({ ...patch, editorial_updated_at: new Date().toISOString(), updated_at: new Date().toISOString() }),
+  });
+  const rows = await readResponse<LegislativeBill[]>(response);
+  return rows[0];
+}
+
+export async function approveLegislativeMediaCoverage(session: AuthSession, billId: string, coverage: LegislativeMediaCoverage[]) {
+  const response = await fetch(`${supabaseUrl}/rest/v1/legislative_bills?bill_id=eq.${encodeURIComponent(billId)}`, {
+    method: "PATCH",
+    headers: { ...headers(session), Prefer: "return=representation" },
+    body: JSON.stringify({ media_coverage: coverage, editorial_updated_at: new Date().toISOString(), updated_at: new Date().toISOString() }),
   });
   const rows = await readResponse<LegislativeBill[]>(response);
   return rows[0];
