@@ -147,7 +147,7 @@ const monitoringRoutes: SeoRoute[] = publicInterestWatchCases.map((item) => ({
   title: `${item.title.ko} | 씨앗의 소리`,
   description: item.summary.ko,
   type: "article",
-  publishedAt: item.openedAt ?? item.updatedAt,
+  publishedAt: item.publishedAt ?? item.openedAt ?? item.updatedAt,
   lastModified: item.updatedAt,
   author: SITE_NAME,
   section: "시민감시",
