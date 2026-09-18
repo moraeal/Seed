@@ -18,7 +18,7 @@ export default function News() {
     <header className="border-b border-green-deep/15 bg-ivory">
       <div className="container-page grid gap-6 py-9 sm:py-12 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
         <div><span className="section-kicker">HOT ISSUES</span><h1 className="editorial-title mt-2.5 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "핫이슈" : "Hot Issues"}</h1></div>
-        <p className="max-w-2xl text-base leading-8 text-charcoal/65">{ko ? "뉴스트래커가 쌓은 사실과 흐름을 바탕으로 사건의 핵심 쟁점과 시민에게 미치는 영향을 설명합니다. 빠르게 변하는 사안은 핵심 보도로, 판단이 필요한 사안은 쟁점 칼럼으로 다룹니다." : "Hot Issues explains the stakes and civic consequences behind the facts preserved in Civic Watch trackers. Fast-moving developments appear as essential reporting; issues requiring judgment appear as issue commentary."}</p>
+        <p className="max-w-2xl text-base leading-8 text-charcoal/65">{ko ? "사실과 흐름을 바탕으로 사건의 핵심 쟁점과 시민에게 미치는 영향을 설명합니다. 빠르게 변하는 사안은 핵심 보도로, 판단이 필요한 사안은 쟁점 칼럼으로 다룹니다." : "Hot Issues explains the stakes and civic consequences behind the facts preserved in Civic Watch trackers. Fast-moving developments appear as essential reporting; issues requiring judgment appear as issue commentary."}</p>
       </div>
     </header>
     <div className="container-page py-8 sm:py-10">
