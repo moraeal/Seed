@@ -8,6 +8,14 @@ body { margin: 0; background: #fffdf7; color: #252a2e; }
 button, input, textarea { font: inherit; }
 ::selection { background: #d7c08b; color: #174c3a; }
 
+.seed-inline-editing main [data-seed-editable="true"] {
+  outline: 3px solid #c8a95b !important;
+  outline-offset: 4px;
+  border-radius: 2px;
+  cursor: text !important;
+  background-color: rgba(215, 192, 139, 0.16) !important;
+}
+
 @layer components {
   .container-page { @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12; }
   .article-content-frame { @apply mx-auto w-full max-w-4xl px-5 sm:px-8 lg:px-12; }

@@ -3,6 +3,7 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { AuthProvider } from "./auth";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import InlinePageEditor from "./components/InlinePageEditor";
 import RouteMetadata from "./components/RouteMetadata";
 import ScrollToTop from "./components/ScrollToTop";
 import NewsletterSignup from "./components/NewsletterSignup";
@@ -109,6 +110,7 @@ function AppShell() {
       </main>
       {showNewsletterAtBottom && <NewsletterSignup />}
       <Footer />
+      <InlinePageEditor />
     </div>
   );
 }
