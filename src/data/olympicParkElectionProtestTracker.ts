@@ -129,6 +129,7 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
           },
           url: "https://www.newstomato.com/readnews.aspx?no=1303147",
           publishedAt: "2026-06-05",
+          thumbnailSrc: "/images/monitoring/olympic-park/20260605-newstomato.jpg",
           kind: "article",
         },
       ],
@@ -157,7 +158,7 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
           },
           url: "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003241218",
           publishedAt: "2026-06-08",
-          thumbnailSrc: "https://ojsfile.ohmynews.com/STD_IMG_FILE/2026/0608/IE003632217_STD.jpg",
+          thumbnailSrc: "/images/monitoring/olympic-park/20260607-ohmynews.jpg",
           kind: "article",
         },
       ],
@@ -179,13 +180,14 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
       status: "confirmed",
       sources: [
         {
-          publisher: { ko: "YTN", en: "YTN" },
+          publisher: { ko: "동아일보", en: "The Dong-A Ilbo" },
           title: {
-            ko: "중앙선관위, 선거 당일 투표용지 부족 투표소 91곳 확인",
-            en: "Election commission confirms ballot shortages at 91 polling stations",
+            ko: "선관위, 용지 부족 91곳·투표 중단 26곳 확인",
+            en: "Election commission confirms shortages at 91 sites and suspensions at 26",
           },
-          url: "https://www.ytn.co.kr/_ln/0101_202606082157403306",
+          url: "https://www.donga.com/news/Politics/article/all/20260608/134073703/2",
           publishedAt: "2026-06-08",
+          thumbnailSrc: "/images/monitoring/olympic-park/20260608-donga.jpg",
           kind: "article",
         },
       ],
@@ -205,6 +207,19 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
         en: "The commission acknowledged a system-wide failure rather than a handful of isolated mistakes.",
       },
       status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: {
+            ko: "진상규명위, 선거관리 총체적 부실 결론",
+            en: "Inquiry finds systemic election-management failures",
+          },
+          url: "https://www.yna.co.kr/view/AKR20260619071551001",
+          publishedAt: "2026-06-19",
+          thumbnailSrc: "/images/monitoring/olympic-park/20260619-yonhap.jpg",
+          kind: "article",
+        },
+      ],
     },
     {
       date: "2026-06-21",
@@ -230,6 +245,7 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
           },
           url: "https://www.yna.co.kr/view/AKR20260621019200004",
           publishedAt: "2026-06-21",
+          thumbnailSrc: "/images/monitoring/olympic-park/20260621-yonhap.jpg",
           kind: "article",
         },
       ],
@@ -258,6 +274,7 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
           },
           url: "https://www.yna.co.kr/view/AKR20260727115500001",
           publishedAt: "2026-07-27",
+          thumbnailSrc: "/images/monitoring/olympic-park/20260727-yonhap.jpg",
           kind: "article",
         },
       ],
@@ -286,6 +303,7 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
           },
           url: "https://www.yonhapnewstv.co.kr/news/MYH202608120026536A2",
           publishedAt: "2026-08-12",
+          thumbnailSrc: "/images/monitoring/olympic-park/20260812-yonhaptv.jpg",
           kind: "article",
         },
       ],
@@ -306,6 +324,17 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
       },
       status: "new",
       sources: [
+        {
+          publisher: { ko: "뉴스핌", en: "NewsPim" },
+          title: {
+            ko: "이태한 선관위 특검 공식 출범",
+            en: "Election-commission special prosecutor formally launches",
+          },
+          url: "https://www.newspim.com/news/view/20260907000572",
+          publishedAt: "2026-09-07",
+          thumbnailSrc: "/images/monitoring/olympic-park/20260907-newspim.jpg",
+          kind: "article",
+        },
         {
           publisher: { ko: "국회입법예고", en: "National Assembly legislative information" },
           title: {
@@ -370,6 +399,7 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
           },
           url: "https://www.yna.co.kr/view/AKR20260917047655004",
           publishedAt: "2026-09-17",
+          thumbnailSrc: "/images/monitoring/olympic-park/20260917-yonhap.jpg",
           kind: "article",
         },
       ],
