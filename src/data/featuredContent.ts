@@ -3,7 +3,7 @@ import { getAllBriefingsNewestFirst } from "./allBriefings";
 import { getColumnsNewestFirst } from "./columns";
 import { getHotIssuesNewestFirst } from "./hotIssues";
 import { localizeBriefing, localizeColumn } from "./localizedContent";
-import { newsTrackerCases } from "./publicInterestWatch";
+import { newsTrackerCases } from "./newsTrackerRegistry";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "./seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "./seedLanguageEnvironment";
 

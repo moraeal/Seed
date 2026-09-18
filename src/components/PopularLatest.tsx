@@ -5,7 +5,7 @@ import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { columns } from "../data/columns";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
 import { getNewsNewestFirst } from "../data/news";
-import { newsTrackerCases } from "../data/publicInterestWatch";
+import { newsTrackerCases } from "../data/newsTrackerRegistry";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
 import { useLanguage } from "../i18n";

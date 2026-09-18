@@ -1,5 +1,5 @@
 import { Navigate, useParams } from "react-router-dom";
-import { getPublicInterestWatchCase } from "../data/publicInterestWatch";
+import { getPublicInterestWatchCase } from "../data/newsTrackerRegistry";
 import NewsDetail from "./NewsDetail";
 
 export default function HotIssueDetail() {

@@ -3,7 +3,7 @@ import { getAllBriefingsNewestFirst } from "./allBriefings";
 import { columns, isHotIssueColumn } from "./columns";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "./localizedContent";
 import { newsArticles } from "./news";
-import { newsTrackerCases } from "./publicInterestWatch";
+import { newsTrackerCases } from "./newsTrackerRegistry";
 
 export type DiscussionSource = {
   slug: string;
