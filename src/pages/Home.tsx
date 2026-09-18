@@ -25,6 +25,7 @@ const resolveImageSrc = (src?: string) => {
 };
 
 const seedLanguageTerms: Record<string, { hanja: string; english: string }> = {
+  정치: { hanja: "政治", english: "POLITICS" },
   진영언어: { hanja: "陣營言語", english: "PARTISAN LANGUAGE" },
   시민: { hanja: "市民", english: "CITIZEN" },
   자유: { hanja: "自由", english: "FREEDOM" },
@@ -57,10 +58,10 @@ export default function Home() {
   const allJournalColumns = getColumnsNewestFirst().map((item) => localizeColumn(item, language));
   const hotIssues = getHotIssuesNewestFirst(language).slice(0, 5);
   const seedLanguageCandidates = [
-    ...seedLanguageEnvironmentArticlesKo.filter((item) => item.slug !== "environment-beyond-camps-deep-read"),
+    ...seedLanguageEnvironmentArticlesKo,
     ...seedLanguageArticlesKo,
   ]
-    .filter((item) => item.homeHeroEligible !== false && item.listingEligible !== false && item.readMinutes < 12)
+    .filter((item) => item.homeHeroEligible !== false && item.listingEligible !== false)
     .map((item) => getSeedLanguageEnvironmentArticle(item.slug, language) ?? getSeedLanguageArticle(item.slug, language))
     .filter((article): article is NonNullable<typeof article> => Boolean(article))
     .sort((a, b) => b.date.localeCompare(a.date));
