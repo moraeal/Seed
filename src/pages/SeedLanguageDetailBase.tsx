@@ -27,7 +27,7 @@ export default function SeedLanguageDetail() {
 
   const isLongRead = article.readMinutes >= 8;
   const isProgressArticle = article.slug === "what-is-true-progress";
-  const usesDarkBodyCopy = isProgressArticle || article.slug === "what-is-true-conservatism" || article.slug === "discourse-many-words-no-direction";
+  const usesDarkBodyCopy = isProgressArticle || article.slug === "what-is-true-conservatism" || article.slug === "discourse-many-words-no-direction" || article.slug === "politics-is-a-citizens-tool";
   const isEnvironmentArticle = article.slug.startsWith("environment-");
   const relatedSlug = article.relatedArticle?.slug
     ?? (article.slug === ENVIRONMENT_FEATURE_SLUG ? ENVIRONMENT_DEEP_READ_SLUG : undefined);
