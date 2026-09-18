@@ -16,7 +16,7 @@ const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguag
   server.ssrLoadModule("/src/data/columns.ts"),
   server.ssrLoadModule("/src/data/seedLanguage.ts"),
   server.ssrLoadModule("/src/data/seedLanguageEnvironment.ts"),
-  server.ssrLoadModule("/src/data/publicInterestWatch.ts"),
+  server.ssrLoadModule("/src/data/newsTrackerRegistry.ts"),
   server.ssrLoadModule("/src/data/taxWatch.ts"),
   server.ssrLoadModule("/src/data/editorialContinuations.ts"),
   server.ssrLoadModule("/src/data/contentTranslations/news.ts"),
