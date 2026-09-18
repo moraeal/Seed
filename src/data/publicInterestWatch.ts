@@ -83,6 +83,7 @@ export type PublicInterestWatchCase = {
   sources: WatchSource[];
   researchHref?: string;
   researchLabel?: LocalizedText;
+  publishedAt?: string;
   openedAt?: string;
   nextCheck?: LocalizedText;
   heroImage?: {
