@@ -12,7 +12,7 @@ export default function SeedLanguage() {
   const { language } = useLanguage();
   const ko = language === "ko";
   const articleIndex = [...seedLanguageEnvironmentArticlesKo, ...seedLanguageArticlesKo]
-    .filter((item) => item.listingEligible !== false && item.readMinutes < 12)
+    .filter((item) => item.listingEligible !== false)
     .sort((a, b) => b.date.localeCompare(a.date));
   const articles = articleIndex
     .map((item) => getSeedLanguageEnvironmentArticle(item.slug, language) ?? getSeedLanguageArticle(item.slug, language))

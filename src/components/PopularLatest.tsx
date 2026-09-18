@@ -73,7 +73,7 @@ export default function PopularLatest({ featuredPath }: { featuredPath?: string 
 
     [...seedLanguageEnvironmentArticlesKo, ...seedLanguageArticlesKo].forEach((item) => {
       const localized = getSeedLanguageEnvironmentArticle(item.slug, language) ?? getSeedLanguageArticle(item.slug, language);
-      if (!localized || localized.listingEligible === false || localized.readMinutes >= 12) return;
+      if (!localized || localized.listingEligible === false) return;
       items.push({ path: `/seed-language/${localized.slug}`, title: localized.title, date: localized.date });
     });
 

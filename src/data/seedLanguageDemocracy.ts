@@ -160,6 +160,7 @@ const democracyDeepKo: SeedLanguageArticle = {
   slug: "democracy-citizens-deep-read",
   newsletterEligible: false,
   homeHeroEligible: false,
+  listingEligible: false,
   term: "민주 · 깊게 읽기",
   date: "2026-09-09",
   readMinutes: 15,

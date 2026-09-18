@@ -99,6 +99,7 @@ const environmentDeepKo: SeedLanguageArticle = {
   slug: "environment-beyond-camps-deep-read",
   newsletterEligible: false,
   homeHeroEligible: false,
+  listingEligible: false,
   term: "환경 · 깊게 읽기",
   date: "2026-09-08",
   readMinutes: 13,
