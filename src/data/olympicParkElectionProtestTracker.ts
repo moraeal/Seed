@@ -151,14 +151,14 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
       status: "response",
       sources: [
         {
-          publisher: { ko: "오마이뉴스", en: "OhmyNews" },
+          publisher: { ko: "조선비즈", en: "ChosunBiz" },
           title: {
-            ko: "올림픽공원 농성 초기 현장",
-            en: "Early scenes from the Olympic Park protest",
+            ko: "재선거 요구와 시민 자율 운영이 이어진 올림픽공원 현장",
+            en: "Olympic Park protesters sustain re-election calls and citizen-run operations",
           },
-          url: "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003241218",
+          url: "https://v.daum.net/v/20260608142301278",
           publishedAt: "2026-06-08",
-          thumbnailSrc: "/images/monitoring/olympic-park/20260607-ohmynews.jpg",
+          thumbnailSrc: "/images/monitoring/olympic-park/20260608-chosunbiz.jpg",
           kind: "article",
         },
       ],

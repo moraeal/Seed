@@ -1,5 +1,7 @@
 # SEED publishing rules
 
+- Do not use OhmyNews (오마이뉴스) as a source, link, image provider, or source-credit outlet in any new or updated SEED article, tracker, briefing, column, commentary, translation, or metadata. Replace any OhmyNews material encountered during an edit with a suitable source from another outlet.
+
 - Paired 5-minute articles and deep reads must share the same primary image, body images, and charts from common data references. Position shared visuals at the relevant section in each edition; do not duplicate an image within one page. Apply replacements to both articles and both languages together. Deep reads remain excluded from newsletter sends.
 
 - “대표기사” and “대표이미지” are internal editorial terms. Do not expose them in reader-facing labels, article copy, image captions, alt text, metadata, or emails. Use “5분 요약본 보기” for the deep-read link back to its short article, and “Read the 5-minute summary” in English.
