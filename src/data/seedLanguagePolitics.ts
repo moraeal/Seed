@@ -4,6 +4,8 @@ const sources = [
   { label: "최장집, 『민주화 이후의 민주주의』", url: "https://www.humanitasbook.co.kr/book/225" },
   { label: "Pierre Rosanvallon, Counter-Democracy: Politics in an Age of Distrust", url: "https://www.cambridge.org/core/books/counterdemocracy/9E50CE6B38C8F1D65CA477C14CD6B413" },
   { label: "Aristotle, Politics", url: "https://classics.mit.edu/Aristotle/politics.html" },
+  { label: "Geneva Graduate Institute, ‘Counter-democracy’ and democratic oversight", url: "https://www.graduateinstitute.ch/communications/news/counter-democracy-and-democratic-oversight" },
+  { label: "Felix Heidenreich, Die Organisation des Politischen", url: "https://www.theorieblog.de/wp-content/uploads/2016/11/ZPTh_2016_1_Heidenreich.pdf" },
   { label: "World Justice Project, Rule of Law Index", url: "https://worldjusticeproject.org/rule-of-law-index/" },
 ];
 
@@ -11,7 +13,7 @@ export const politicsArticleKo: SeedLanguageArticle = {
   slug: "politics-is-a-citizens-tool",
   term: "정치",
   date: "2026-09-18",
-  readMinutes: 13,
+  readMinutes: 11,
   newsletterEligible: false,
   title: "정치는 사회를 대신하는 권력이 아니라 시민이 사용하는 도구라는 말이다",
   subtitle: "정치란 무엇인가",
@@ -55,7 +57,7 @@ export const politicsArticleKo: SeedLanguageArticle = {
         "정치가 만들어야 할 가장 기본적인 결과는 예측 가능한 사회 시스템이다. 누구를 아느냐에 따라 결과가 달라지지 않고, 정권이 바뀌었다고 어제의 합법이 오늘의 위법으로 뒤집히지 않으며, 권력의 뜻보다 법의 지배가 앞서는 사회다.",
         "정치의 목적은 시민의 삶을 대신 설계하는 데 있지 않다. 서로 다른 시민이 자유롭게 살아갈 수 있도록 공정하고 안정된 경기장을 만드는 데 있다.",
       ],
-      sourceIndices: [2, 3],
+      sourceIndices: [2, 5],
     },
     {
       title: "정치는 사회를 바꾸는 유일한 길이 아니다",
@@ -83,7 +85,6 @@ export const politicsArticleKo: SeedLanguageArticle = {
         "누군가 내 대신 문제를 해결해 줄 것이다. 나는 투표했고 세금을 냈으니 내 몫은 끝났다고 생각한다. 결과가 마음에 들지 않으면 정치인을 비판하면 된다. 그동안에는 당장 눈앞의 재미와 소비에 관심을 두면 그만이다.",
         "이 모습을 시민 개인의 게으름으로만 설명할 수는 없다.",
         "정당은 표를 얻기 위해 모든 문제를 해결해 주겠다고 약속했다. 국가는 시민이 서로 풀 수 있는 일까지 정책과 보조금의 영역으로 가져갔다. 언론과 미디어는 시민의 조용한 실천보다 정치인의 말과 진영의 싸움을 더 크게 보여주었다. 정치 과잉은 시민을 관객으로 만들었고, 관객이 된 시민은 다시 정치에 더 많은 해결을 요구했다.",
-        "주인이 하인에게 모든 것을 맡기고 무기력하게 의존하게 되면 결국 하인은 주인을 부리게 된다.",
         "정당은 깨어 있는 시민을 편하게 여기지 않는다. 깨어 있는 시민은 공약의 비용을 묻고, 예산의 흐름을 살피며, 인사의 책임을 따진다. 자기편 정부의 잘못도 외면하지 않는다. 어느 권력에도 이런 시민은 편리한 지지자가 아니다.",
         "권력은 자발적으로 자신을 제한하지 않는다. 시민의 감시가 권력을 제한한다.",
       ],
@@ -94,7 +95,7 @@ export const politicsArticleKo: SeedLanguageArticle = {
         "최장집은 『민주화 이후의 민주주의』에서 민주화 이후에도 노동과 서민의 요구를 제대로 대표하지 못한 한국의 정당체제를 비판했다. 시민의 요구가 정당을 통해 조직되고, 정책으로 경쟁하며, 집권의 결과에 책임지는 민주주의가 필요하다는 주장이다.",
         "이 진단은 여전히 유효하다. 흩어진 시민의 요구를 법과 제도로 만들 정당은 필요하다. 시민의 직접 참여만으로 복잡한 국가를 운영할 수도 없다.",
         "그러나 정당이 시민을 대표한다는 이유로 시민 위에 설 수는 없다.",
-        "정당은 시민의 뜻을 모으는 통로인 동시에 시민이 감시해야 할 권력이다. 정당이 시민을 진영으로 묶고 공천과 정책을 독점하며 비판을 배신으로 취급한다면 대표는 지배로 변한다. 시민이 정당에 자신의 판단까지 맡기면 좋은 정치를 지속시키기도 어렵다.",
+        "정당은 시민의 뜻을 모으는 통로인 동시에 시민이 감시해야 할 권력이다. 정당이 시민을 진영으로 묶고 공천과 정책을 독점하며 비판을 배신으로 취급한다면 대표는 지배로 변한다. 시민이 정당에 자신의 판단까지 맡기면 좋은 정치를 지속시키기도 어렵다. 주인이 하인에게 모든 것을 맡기고 무기력하게 의존하게 되면 결국 하인은 주인을 부리게 된다.",
         "정당이 시민을 이끄는 민주주의에서 시민이 정당을 부리는 민주주의로 가야 한다.",
       ],
       sourceIndices: [0],
@@ -108,7 +109,7 @@ export const politicsArticleKo: SeedLanguageArticle = {
         "불신이 곧 민주주의는 아니다. 사실을 확인하지 않는 의심, 상대 진영을 향한 무조건적인 거부, 결과에 책임지지 않는 분노는 정치를 바로잡지 못한다. 대항민주주의는 모든 것에 반대하는 정치가 아니다. 권력이 설명하고 책임지도록 만드는 시민의 힘이다.",
         "씨앗은 여기에서 한 걸음 더 나아간다. 선출된 정부와 정당만 감시해서는 충분하지 않다. 시민단체와 노동조합, 기업과 언론, 전문가와 공익기관도 예산과 영향력을 가지면 권력이 된다. 시민의 이름을 사용한다고 감시에서 제외될 수는 없다.",
       ],
-      sourceIndices: [1],
+      sourceIndices: [1, 3, 4],
     },
     {
       title: "시민과 정치는 긴장 관계에 있다",
@@ -203,7 +204,7 @@ export const politicsArticleEn: SeedLanguageArticle = {
       "Those rules cannot shift with a ruler’s mood or a government’s convenience. Law must be public, clear, stable and equally binding on those who hold power. Citizens and firms must be able to rely on it when planning lives, investment, contracts and new ventures.",
       "The most basic result of politics is therefore a predictable social system: outcomes do not depend on personal connections; a change of government does not turn yesterday’s lawful act into today’s offence; and the rule of law comes before the will of rulers.",
       "Politics should not design every citizen’s life. It should maintain a fair and stable arena in which different citizens can live freely.",
-    ], sourceIndices: [2, 3] },
+    ], sourceIndices: [2, 5] },
     { title: "Politics Is Not the Only Path to Social Change", paragraphs: [
       "When we imagine social change, we usually think first of policy. We assume a new law, a larger budget, another agency or committee will solve the problem. Social change becomes policy change, and parties and government become its principal agents.",
       "Politics does carry essential responsibilities. Defence, public safety, justice, basic order, rights, fair competition and disaster response cannot be left to isolated individuals. Parties must gather dispersed demands, turn them into policy, seek an electoral mandate and answer for the results of governing.",
@@ -222,7 +223,6 @@ export const politicsArticleEn: SeedLanguageArticle = {
       "Someone else will solve my problem. I voted and paid taxes, so my share is done. If the result is poor, I can criticize politicians; meanwhile I can devote myself to the next amusement or purchase.",
       "This cannot be explained simply as personal laziness.",
       "Parties promise to solve everything in order to win votes. The state draws even citizen-solvable matters into programmes and subsidies. News and media amplify politicians and partisan combat more than quiet civic work. Political excess creates spectators, and spectators demand still more solutions from politics.",
-      "When a master entrusts everything to a servant and becomes helplessly dependent, the servant eventually begins to command the master.",
       "Parties do not find alert citizens convenient. Alert citizens ask what promises cost, trace budgets, test appointments and scrutinize misconduct by their own side. No power regards them as easy supporters.",
       "Power does not limit itself voluntarily. Civic scrutiny imposes the limit.",
     ] },
@@ -230,7 +230,7 @@ export const politicsArticleEn: SeedLanguageArticle = {
       "In Democracy after Democratization, Choi Jang-jip criticized a Korean party system that failed to represent workers and ordinary people even after democratic transition. He argued that civic demands must be organized through parties, contested through policy and answered for through government.",
       "The diagnosis still matters. Parties are needed to turn dispersed demands into law and institutions, and direct participation alone cannot administer a complex state.",
       "Yet representation does not place a party above the citizen.",
-      "A party channels citizens’ will and is also a power citizens must watch. When parties sort citizens into camps, monopolize nominations and policy, and treat criticism as betrayal, representation becomes domination. Citizens who surrender judgment to a party also make good government harder to sustain.",
+      "A party channels citizens’ will and is also a power citizens must watch. When parties sort citizens into camps, monopolize nominations and policy, and treat criticism as betrayal, representation becomes domination. Citizens who surrender judgment to a party also make good government harder to sustain. When a master entrusts everything to a servant and becomes helplessly dependent, the servant eventually begins to command the master.",
       "Democracy must move from parties leading citizens to citizens directing parties.",
     ], sourceIndices: [0] },
     { title: "Civic Power Continues after Election Day", paragraphs: [
@@ -239,7 +239,7 @@ export const politicsArticleEn: SeedLanguageArticle = {
       "Rosanvallon describes citizens as monitors, veto players and judges. He does not treat all distrust as democratic failure. Distrust grounded in facts and accountability can keep power under democratic tension.",
       "Distrust by itself is not democracy. Baseless suspicion, automatic rejection of the other camp and anger without responsibility do not repair politics. Counter-democracy is not opposition to everything; it is civic power that forces authority to explain and answer.",
       "SEED takes one further step. Elected government and parties are not the only powers to watch. Civic groups, labour unions, firms, media, experts and public-interest bodies acquire power when they command budgets and influence. Using the name of citizens cannot exempt them from scrutiny.",
-    ], sourceIndices: [1] },
+    ], sourceIndices: [1, 3, 4] },
     { title: "Citizens and Politics Stand in Productive Tension", paragraphs: [
       "Citizens and politics are not related as ruler and subject. Politics should not teach and lead passive citizens, and citizens should not hand every decision to politics.",
       "Citizens authorize power and watch it. Politics exercises authority but must remain alert to civic judgment. The principle does not change under progressive or conservative government.",
