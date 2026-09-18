@@ -3,8 +3,8 @@ import type { PublicInterestWatchCase } from "./publicInterestWatch";
 export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
   slug: "olympic-park-election-protest-tracker",
   organization: {
-    ko: "올림픽공원 재선거 요구 시위",
-    en: "Olympic Park re-election protest",
+    ko: "올림픽공원 시민들은 왜 아직 떠나지 않았나",
+    en: "Why have the citizens at Olympic Park still not left?",
   },
   eyebrow: {
     ko: "투표용지 부족·재선거 요구·선관위 특검",
@@ -23,6 +23,7 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     en: "Special investigation active · Protest continuing",
   },
   openedAt: "2026-06-03",
+  publishedAt: "2026-09-18",
   updatedAt: "2026-09-18",
   sourceBasis: {
     ko: "선거관리위원회 조사 결과를 인용한 보도, 선거소송 심리와 결정, 선관위 특검법과 압수수색 보도, 올림픽공원 현장 보도를 교차 확인했다. 사실·수사 중인 의혹·확인되지 않은 주장을 같은 층위에 놓지 않았다.",
@@ -162,18 +163,46 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
       ],
     },
     {
-      date: "2026-06-19",
+      date: "2026-06-08",
       title: {
         ko: "선관위 조사, 91곳 부족·26곳 투표 중단 확인",
         en: "Election commission review confirms shortages at 91 sites and suspensions at 26",
       },
       description: {
-        ko: "선관위 진상조사 결과 투표용지 부족은 91개 투표소에서 발생했고 26곳에서는 실제 투표 중단으로 이어진 것으로 파악됐다. 조사위는 이를 총체적 선거관리 실패로 규정하고 관련자 12명 수사를 권고했다.",
-        en: "The commission's review identified shortages at 91 polling stations and actual suspensions at 26, described the episode as a systemic election-management failure and recommended investigation of twelve people.",
+        ko: "선관위는 투표용지를 추가 송부한 투표소가 140곳이며, 그중 추가 용지를 실제 사용한 곳은 91곳이라고 밝혔다. 26곳에서는 투표가 잠시 중단됐다가 재개됐다.",
+        en: "The commission said extra ballots were dispatched to 140 polling stations, used at 91 of them, and that voting was temporarily suspended and resumed at 26.",
       },
       change: {
         ko: "투표용지 부족과 투표 중단은 공식 조사로 확인된 사실이 됐다.",
         en: "The ballot shortages and voting suspensions became officially established facts.",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "YTN", en: "YTN" },
+          title: {
+            ko: "중앙선관위, 선거 당일 투표용지 부족 투표소 91곳 확인",
+            en: "Election commission confirms ballot shortages at 91 polling stations",
+          },
+          url: "https://www.ytn.co.kr/_ln/0101_202606082157403306",
+          publishedAt: "2026-06-08",
+          kind: "article",
+        },
+      ],
+    },
+    {
+      date: "2026-06-19",
+      title: {
+        ko: "진상조사위, 총체적 선거관리 실패로 결론",
+        en: "Inquiry concludes the election-management system failed",
+      },
+      description: {
+        ko: "선관위 진상조사위는 투표용지 인쇄·배부와 보고·대응 과정 전반에 문제가 있었다고 판단하고 관련자 수사를 권고했다. 관리 실패의 책임선과 고의·은폐 여부는 이후 수사에서 가려질 사안으로 남았다.",
+        en: "The commission's inquiry found failures across ballot printing, distribution, reporting and response, and recommended investigation of those involved. Lines of responsibility and whether intent or concealment was involved remained for investigators to determine.",
+      },
+      change: {
+        ko: "선관위 스스로 현장 몇 곳의 실수가 아니라 관리 체계 전반의 실패를 인정했다.",
+        en: "The commission acknowledged a system-wide failure rather than a handful of isolated mistakes.",
       },
       status: "confirmed",
     },
@@ -472,6 +501,10 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     {
       label: { ko: "뉴스토마토 — 6월 5일 농성 이동", en: "NewsTomato — June 5 protest relocation" },
       url: "https://www.newstomato.com/readnews.aspx?no=1303147",
+    },
+    {
+      label: { ko: "YTN — 6월 8일 투표용지 부족 현황", en: "YTN — June 8 ballot-shortage findings" },
+      url: "https://www.ytn.co.kr/_ln/0101_202606082157403306",
     },
     {
       label: { ko: "연합뉴스 — 7월 27일 선거소송 심리", en: "Yonhap — July 27 election-litigation hearing" },
