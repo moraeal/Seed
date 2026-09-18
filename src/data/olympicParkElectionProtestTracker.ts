@@ -370,7 +370,7 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
           },
           url: "https://www.youtube.com/watch?v=lOLqizXgTlM",
           publishedAt: "2026-09-12",
-          thumbnailSrc: "https://i.ytimg.com/vi/lOLqizXgTlM/maxresdefault.jpg",
+          thumbnailSrc: "https://img.youtube.com/vi/lOLqizXgTlM/hqdefault.jpg",
           kind: "video",
         },
       ],
