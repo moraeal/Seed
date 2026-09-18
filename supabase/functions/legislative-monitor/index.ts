@@ -1,7 +1,6 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
 const ASSEMBLY_BASE = "https://open.assembly.go.kr/portal/openapi";
-const MEMBER_BILLS_ENDPOINT = "nzmimeepazxkubdpn";
 const ALL_BILLS_ENDPOINT = "TVBPMBILL11";
 const ASSEMBLY_AGE = 22;
 const ANALYSIS_MODEL = "gpt-5.6-luna";
@@ -20,6 +19,7 @@ type NormalizedBill = {
   co_proposers: string[];
   proposer_kind: string | null;
   proposed_date: string | null;
+  plenary_passed_at: string | null;
   committee: string | null;
   bill_kind: string | null;
   source_status: string | null;
@@ -37,6 +37,7 @@ type NormalizedBill = {
   direction_risk_flags: string[];
   review_state: "collected" | "queued";
   published_at: string | null;
+  current_stage: string;
   source_checked_at: string;
   last_source_update: string;
   updated_at: string;
@@ -142,6 +143,7 @@ async function normalizeBill(row: Json): Promise<NormalizedBill | null> {
   if (!billId || !title) return null;
   const billNo = first(row, ["BILL_NO", "bill_no"]);
   const proposedDate = parseDate(first(row, ["PROPOSE_DT", "RCP_DT", "propose_dt", "rcp_dt"]));
+  const plenaryPassedAt = parseDate(first(row, ["PROC_DT", "proc_dt"]));
   const representative = first(row, ["RST_PROPOSER", "REPRESENTATIVE_PROPOSER", "rst_proposer"]);
   const coProposersRaw = first(row, ["PUBL_PROPOSER", "CO_PROPOSERS", "publ_proposer"]);
   const officialSummary = first(row, ["SUMMARY", "BILL_SUMMARY", "summary"]);
@@ -161,6 +163,7 @@ async function normalizeBill(row: Json): Promise<NormalizedBill | null> {
     co_proposers: coProposersRaw ? coProposersRaw.split(",").map((name) => name.trim()).filter(Boolean) : [],
     proposer_kind: first(row, ["PROPOSER_KIND", "PROPOSER_GUBUN", "proposer_kind"]),
     proposed_date: proposedDate,
+    plenary_passed_at: plenaryPassedAt,
     committee: first(row, ["CURR_COMMITTEE", "COMMITTEE", "COMMITTEE_NM", "committee"]),
     bill_kind: first(row, ["BILL_KIND", "BILL_GUBUN", "bill_kind"]),
     source_status: first(row, ["PROC_STAGE_CD", "PROC_STAGE", "STATUS", "proc_stage"]),
@@ -178,6 +181,7 @@ async function normalizeBill(row: Json): Promise<NormalizedBill | null> {
     direction_risk_flags: rated.directionFlags,
     review_state: rated.score >= ANALYSIS_THRESHOLD ? "queued" : "collected",
     published_at: null,
+    current_stage: plenaryPassedAt ? "본회의" : "발의",
     source_checked_at: now,
     last_source_update: now,
     updated_at: now,
@@ -222,7 +226,7 @@ async function verifyCronToken(candidate: string | null) {
   return Boolean(await response.json());
 }
 
-async function fetchAssembly(endpoint: string, date: string) {
+async function fetchAssembly(endpoint: string, date: string, dateField: "PROPOSE_DT" | "PROC_DT") {
   const key = Deno.env.get("ASSEMBLY_OPEN_API_KEY");
   if (!key) throw new Error("ASSEMBLY_OPEN_API_KEY is not configured");
   const params = new URLSearchParams({
@@ -231,7 +235,7 @@ async function fetchAssembly(endpoint: string, date: string) {
     pIndex: "1",
     pSize: "1000",
     AGE: String(ASSEMBLY_AGE),
-    PROPOSE_DT: date.replaceAll("-", ""),
+    [dateField]: date,
   });
   const response = await fetch(`${ASSEMBLY_BASE}/${endpoint}?${params.toString()}`);
   if (!response.ok) throw new Error(`${endpoint} returned HTTP ${response.status}`);
@@ -280,6 +284,8 @@ async function analyzeBill(bill: NormalizedBill) {
     title: bill.title,
     bill_no: bill.bill_no,
     proposed_date: bill.proposed_date,
+    plenary_passed_at: bill.plenary_passed_at,
+    processing_result: bill.processing_result,
     proposer: bill.proposer,
     representative_proposer: bill.representative_proposer,
     committee: bill.committee,
@@ -297,7 +303,7 @@ async function analyzeBill(bill: NormalizedBill) {
       input: [
         {
           role: "system",
-          content: "You analyze Korean legislation for SEED VOICE, an independent civic journal. Use only the supplied official record. Separate confirmed provisions from likely effects. Never invent costs, legal effects, stakeholders, or political motives. If evidence is missing, place the limitation in evidence_gaps. Examine citizen choice and rights, business and market burdens, transfers of authority, enforcement powers, fiscal exposure, and unintended effects. Explicitly classify whether the bill expands freedom, is mixed, moves in a reverse direction by narrowing citizen or business freedom or enlarging insufficiently checked power, or is neutral. A beneficial stated purpose does not cancel coercive duties, sanctions, delegated power, barriers to entry, surveillance, compelled disclosure, or weakened review; identify those mechanisms precisely and avoid partisan labels. title_en must be a faithful, natural English bill title. official_rationale_en must concisely translate the official rationale and principal provisions, without adding analysis, and should stay under 350 English words. Keep every array concise with 2 to 4 items unless the evidence supports fewer. Write concise Korean and polished English for international readers. Do not recommend partisan support or opposition.",
+          content: "You analyze Korean legislation that has passed the National Assembly plenary for SEED VOICE, an independent civic journal. Use only the supplied official record. Clearly distinguish plenary passage from promulgation and enforcement. Separate confirmed provisions from likely effects. Never invent costs, legal effects, stakeholders, or political motives. If evidence is missing, place the limitation in evidence_gaps. Examine citizen choice and rights, business and market burdens, transfers of authority, enforcement powers, fiscal exposure, and unintended effects. Explicitly classify whether the passed bill expands freedom, is mixed, moves in a reverse direction by narrowing citizen or business freedom or enlarging insufficiently checked power, or is neutral. A beneficial stated purpose does not cancel coercive duties, sanctions, delegated power, barriers to entry, surveillance, compelled disclosure, or weakened review; identify those mechanisms precisely and avoid partisan labels. title_en must be a faithful, natural English bill title. official_rationale_en must concisely translate the official rationale and principal provisions, without adding analysis, and should stay under 350 English words. Keep every array concise with 2 to 4 items unless the evidence supports fewer. Write concise Korean and polished English for international readers. Do not recommend partisan support or opposition.",
         },
         { role: "user", content: JSON.stringify(evidence) },
       ],
@@ -344,14 +350,23 @@ function rssValue(item: string, tag: string) {
   return match ? decodeXml(match[1]) : "";
 }
 
+const wait = (milliseconds: number) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
 async function fetchMediaCandidates(bill: NormalizedBill): Promise<MediaCandidate[]> {
   const identity = bill.representative_proposer || "";
   const query = `"${bill.title}" ${identity} when:30d`;
   const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=ko&gl=KR&ceid=KR:ko`;
-  const response = await fetch(url, { headers: { "User-Agent": "SEED-VOICE-Legislative-Monitor/1.0" } });
-  if (!response.ok) throw new Error(`Google News RSS returned HTTP ${response.status}`);
+  let response: Response | null = null;
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    response = await fetch(url, { headers: { "User-Agent": "SEED-VOICE-Legislative-Monitor/1.0" } });
+    if (response.ok) break;
+    if (![429, 503].includes(response.status) || attempt === 2) throw new Error(`Google News RSS returned HTTP ${response.status}`);
+    await wait(1000 * (attempt + 1));
+  }
+  if (!response?.ok) throw new Error("Google News RSS did not return a usable response");
   const xml = await response.text();
-  return [...xml.matchAll(/<item>([\s\S]*?)<\/item>/gi)].slice(0, 10).map((match) => {
+  const blockedSources = ["오마이뉴스", "ohmynews", "mbc", "문화방송", "한겨레", "hani.co.kr"];
+  return [...xml.matchAll(/<item>([\s\S]*?)<\/item>/gi)].slice(0, 15).map((match) => {
     const item = match[1];
     const rawDate = rssValue(item, "pubDate");
     const parsedDate = rawDate ? new Date(rawDate) : null;
@@ -362,7 +377,15 @@ async function fetchMediaCandidates(bill: NormalizedBill): Promise<MediaCandidat
       published_at: parsedDate && !Number.isNaN(parsedDate.valueOf()) ? parsedDate.toISOString() : null,
       snippet: rssValue(item, "description"),
     };
-  }).filter((item) => item.title && item.url);
+  }).filter((item) => {
+    const identity = `${item.source} ${item.title} ${item.url}`.toLowerCase();
+    return item.title && item.url && !blockedSources.some((blocked) => identity.includes(blocked));
+  });
+}
+
+function mediaImpact(candidates: MediaCandidate[]) {
+  const sources = new Set(candidates.map((item) => item.source.trim().toLowerCase()).filter(Boolean));
+  return Math.min(100, sources.size * 20 + Math.min(candidates.length, 4) * 5);
 }
 
 function mediaSchema() {
@@ -436,13 +459,13 @@ async function summarizeMediaCoverage(bill: NormalizedBill, candidates: MediaCan
 
 async function upsertBills(bills: NormalizedBill[]) {
   if (!bills.length) return [] as NormalizedBill[];
-  const existing = new Map<string, { review_state: string; published_at: string | null; official_summary: string | null }>();
+  const existing = new Map<string, { review_state: string; published_at: string | null; official_summary: string | null; current_stage: string }>();
   for (let index = 0; index < bills.length; index += 100) {
     const ids = bills.slice(index, index + 100).map((bill) => bill.bill_id);
     const filter = encodeURIComponent(`(${ids.join(",")})`);
-    const lookup = await rest(`legislative_bills?bill_id=in.${filter}&select=bill_id,review_state,published_at,official_summary`);
+    const lookup = await rest(`legislative_bills?bill_id=in.${filter}&select=bill_id,review_state,published_at,official_summary,current_stage`);
     if (!lookup.ok) throw new Error(`Existing bill lookup failed: ${lookup.status}`);
-    for (const row of await lookup.json() as { bill_id: string; review_state: string; published_at: string | null; official_summary: string | null }[]) existing.set(row.bill_id, row);
+    for (const row of await lookup.json() as { bill_id: string; review_state: string; published_at: string | null; official_summary: string | null; current_stage: string }[]) existing.set(row.bill_id, row);
   }
   const enriched: NormalizedBill[] = [];
   for (let index = 0; index < bills.length; index += 10) {
@@ -466,7 +489,7 @@ async function upsertBills(bills: NormalizedBill[]) {
   const safeBills = enriched.map((bill) => {
     const current = existing.get(bill.bill_id);
     if (!current || !editorialStates.has(current.review_state)) return bill;
-    return { ...bill, review_state: current.review_state, published_at: current.published_at };
+    return { ...bill, review_state: current.review_state, published_at: current.published_at, current_stage: bill.plenary_passed_at ? "본회의" : current.current_stage };
   });
   const response = await rest("legislative_bills?on_conflict=bill_id", {
     method: "POST",
@@ -481,11 +504,12 @@ Deno.serve(async (req: Request) => {
   if (req.method !== "POST") return json({ error: "method_not_allowed" }, 405);
   if (!(await verifyCronToken(req.headers.get("x-seed-cron-token")))) return json({ error: "unauthorized" }, 401);
 
-  let body: { days?: number; analyze?: boolean; analysisLimit?: number; media?: boolean } = {};
+  let body: { days?: number; analyze?: boolean; analysisLimit?: number; media?: boolean; autoPublish?: boolean } = {};
   try { body = await req.json(); } catch { /* Empty body uses safe defaults. */ }
   const days = Math.max(1, Math.min(14, Number(body.days || 3)));
   const shouldAnalyze = body.analyze !== false;
   const shouldCheckMedia = body.media !== false;
+  const autoPublish = body.autoPublish !== false;
   const analysisLimit = Math.max(1, Math.min(12, Number(body.analysisLimit || 6)));
   const startedAt = new Date().toISOString();
   let runId = "";
@@ -494,7 +518,7 @@ Deno.serve(async (req: Request) => {
     const runResponse = await rest("legislative_sync_runs", {
       method: "POST",
       headers: adminHeaders("return=representation"),
-      body: JSON.stringify({ endpoint: `${MEMBER_BILLS_ENDPOINT},${ALL_BILLS_ENDPOINT}`, metadata: { days, shouldAnalyze } }),
+      body: JSON.stringify({ endpoint: ALL_BILLS_ENDPOINT, metadata: { days, shouldAnalyze, autoPublish, mode: "plenary-passed" } }),
     });
     if (runResponse.ok) runId = String((await runResponse.json())?.[0]?.id || "");
 
@@ -502,38 +526,80 @@ Deno.serve(async (req: Request) => {
     const warnings: string[] = [];
     for (let offset = 0; offset < days; offset += 1) {
       const date = koreaDate(-offset);
-      for (const endpoint of [MEMBER_BILLS_ENDPOINT, ALL_BILLS_ENDPOINT]) {
-        try {
-          const rows = await fetchAssembly(endpoint, date);
-          for (const row of rows) {
-            const rowDate = parseDate(first(row, ["PROPOSE_DT", "RCP_DT", "propose_dt", "rcp_dt"]));
-            if (rowDate && rowDate !== date) continue;
-            const id = first(row, ["BILL_ID", "bill_id", "BILLID"]);
-            if (id) collected.set(id, { ...(collected.get(id) || {}), ...row });
-          }
-        } catch (error) {
-          warnings.push(`${endpoint}/${date}: ${error instanceof Error ? error.message : String(error)}`);
+      try {
+        const rows = await fetchAssembly(ALL_BILLS_ENDPOINT, date, "PROC_DT");
+        for (const row of rows) {
+          const rowDate = parseDate(first(row, ["PROC_DT", "proc_dt"]));
+          const result = first(row, ["PROC_RESULT_CD", "PROC_RESULT", "proc_result_cd", "proc_result"]);
+          if (rowDate !== date || !result?.includes("가결")) continue;
+          const id = first(row, ["BILL_ID", "bill_id", "BILLID"]);
+          if (id) collected.set(id, { ...(collected.get(id) || {}), ...row });
         }
+      } catch (error) {
+        warnings.push(`${ALL_BILLS_ENDPOINT}/${date}: ${error instanceof Error ? error.message : String(error)}`);
       }
     }
 
     const normalized = (await Promise.all([...collected.values()].map(normalizeBill))).filter((bill): bill is NormalizedBill => Boolean(bill));
     const saved = await upsertBills(normalized);
+    const mediaCandidates = new Map<string, MediaCandidate[]>();
+    const mediaScores = new Map<string, number>();
+    if (shouldCheckMedia) {
+      // Every passed bill is scored from the official record. Media lookup is capped to the
+      // 24 strongest civic-impact candidates so one large plenary sitting cannot overwhelm RSS.
+      const mediaDiscoveryBills = [...saved]
+        .sort((a, b) => (b.importance_score + b.direction_risk_score) - (a.importance_score + a.direction_risk_score))
+        .slice(0, 24);
+      for (let index = 0; index < mediaDiscoveryBills.length; index += 3) {
+        await Promise.all(mediaDiscoveryBills.slice(index, index + 3).map(async (bill) => {
+          try {
+            const candidates = await fetchMediaCandidates(bill);
+            mediaCandidates.set(bill.bill_id, candidates);
+            mediaScores.set(bill.bill_id, mediaImpact(candidates));
+          } catch (error) {
+            warnings.push(`media-discovery/${bill.bill_id}: ${error instanceof Error ? error.message : String(error)}`);
+          }
+        }));
+        if (index + 3 < mediaDiscoveryBills.length) await wait(500);
+      }
+    }
     const rankedImportantBills = saved
-      .filter((item) => item.importance_score >= ANALYSIS_THRESHOLD)
-      .sort((a, b) => b.importance_score - a.importance_score || (b.proposed_date || "").localeCompare(a.proposed_date || ""));
+      .filter((item) => !["held", "excluded"].includes(item.review_state))
+      .map((item) => ({ bill: item, mediaScore: mediaScores.get(item.bill_id) || 0 }))
+      .filter(({ bill, mediaScore }) => bill.importance_score >= ANALYSIS_THRESHOLD || bill.direction_risk_score >= 60 || mediaScore >= 25)
+      .sort((a, b) => (b.bill.importance_score + b.mediaScore) - (a.bill.importance_score + a.mediaScore)
+        || (b.bill.plenary_passed_at || "").localeCompare(a.bill.plenary_passed_at || ""))
+      .slice(0, analysisLimit)
+      .map(({ bill }) => bill);
     const openaiConfigured = Boolean(Deno.env.get("OPENAI_API_KEY"));
     let analyzed = 0;
     const analysisErrors: string[] = [];
-    const analysisBills = shouldAnalyze ? rankedImportantBills.filter((item) => item.review_state === "queued").slice(0, analysisLimit) : [];
+    const analysisBills = shouldAnalyze ? rankedImportantBills : [];
     await Promise.all(analysisBills.map(async (bill) => {
       try {
         const analysis = await analyzeBill(bill);
         if (!analysis) return;
+        const candidates = mediaCandidates.get(bill.bill_id) || [];
+        const mediaCoverage = shouldCheckMedia ? await summarizeMediaCoverage(bill, candidates) : [];
+        const now = new Date().toISOString();
         const response = await rest(`legislative_bills?bill_id=eq.${encodeURIComponent(bill.bill_id)}`, {
           method: "PATCH",
           headers: adminHeaders("return=minimal"),
-          body: JSON.stringify({ analysis, analysis_model: ANALYSIS_MODEL, analysis_generated_at: new Date().toISOString(), review_state: "review", analysis_error: null, updated_at: new Date().toISOString() }),
+          body: JSON.stringify({
+            analysis,
+            analysis_model: ANALYSIS_MODEL,
+            analysis_generated_at: now,
+            review_state: autoPublish ? "published" : "review",
+            published_at: autoPublish ? bill.published_at || now : bill.published_at,
+            current_stage: "본회의",
+            media_impact_score: mediaScores.get(bill.bill_id) || 0,
+            media_coverage: mediaCoverage,
+            media_coverage_draft: mediaCoverage,
+            media_checked_at: shouldCheckMedia ? now : null,
+            auto_published: autoPublish,
+            analysis_error: null,
+            updated_at: now,
+          }),
         });
         if (!response.ok) throw new Error(`analysis save returned HTTP ${response.status}`);
         analyzed += 1;
@@ -548,32 +614,15 @@ Deno.serve(async (req: Request) => {
       }
     }));
 
-    let mediaChecked = 0;
-    let mediaDrafts = 0;
+    const mediaChecked = mediaCandidates.size;
+    const mediaDrafts = [...mediaCandidates.values()].filter((items) => items.length > 0).length;
     const mediaErrors: string[] = [];
-    const mediaBills = shouldCheckMedia ? rankedImportantBills.slice(0, analysisLimit) : [];
-    await Promise.all(mediaBills.map(async (bill) => {
-      try {
-        const candidates = await fetchMediaCandidates(bill);
-        const mediaCoverageDraft = await summarizeMediaCoverage(bill, candidates);
-        const response = await rest(`legislative_bills?bill_id=eq.${encodeURIComponent(bill.bill_id)}`, {
-          method: "PATCH",
-          headers: adminHeaders("return=minimal"),
-          body: JSON.stringify({ media_coverage_draft: mediaCoverageDraft, media_checked_at: new Date().toISOString(), updated_at: new Date().toISOString() }),
-        });
-        if (!response.ok) throw new Error(`media save returned HTTP ${response.status}`);
-        mediaChecked += 1;
-        if (mediaCoverageDraft.length) mediaDrafts += 1;
-      } catch (error) {
-        mediaErrors.push(`${bill.bill_id}: ${error instanceof Error ? error.message : String(error)}`);
-      }
-    }));
 
     const status = warnings.length || analysisErrors.length || mediaErrors.length ? "partial" : "success";
     if (runId) await rest(`legislative_sync_runs?id=eq.${runId}`, {
       method: "PATCH",
       headers: adminHeaders("return=minimal"),
-      body: JSON.stringify({ finished_at: new Date().toISOString(), status, fetched_count: collected.size, inserted_count: saved.length, queued_count: saved.filter((bill) => bill.importance_score >= ANALYSIS_THRESHOLD).length, metadata: { days, analysisLimit, openaiConfigured, analyzed, mediaChecked, mediaDrafts, warnings, analysisErrors, mediaErrors, startedAt } }),
+      body: JSON.stringify({ finished_at: new Date().toISOString(), status, fetched_count: collected.size, inserted_count: saved.length, queued_count: rankedImportantBills.length, metadata: { days, analysisLimit, openaiConfigured, autoPublish, analyzed, mediaChecked, mediaDrafts, warnings, analysisErrors, mediaErrors, startedAt } }),
     });
     return json({ ok: true, status, fetched: collected.size, saved: saved.length, openaiConfigured, analyzed, mediaChecked, mediaDrafts, warnings, analysisErrors, mediaErrors });
   } catch (error) {
