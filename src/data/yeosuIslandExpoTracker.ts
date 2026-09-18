@@ -23,10 +23,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     en: "Fair under way · Outcomes being tracked",
   },
   openedAt: "2018-09-05",
-  updatedAt: "2026-09-17",
+  updatedAt: "2026-09-18",
   nextCheck: {
-    ko: "일일 관람객을 유료·무료·단체·초청·공무출장으로 나눈 집계, 금오도 교통 대책, 사업수익 120억 원의 달성 여부와 11월 4일 폐막 뒤 최종 정산",
-    en: "Daily attendance split into paid, free, group, invited and publicly funded staff visits; replacement transport on Geumodo; progress toward the KRW 12 billion revenue target; and final settlement after the November 4 closing",
+    ko: "일일 관람객을 유료·무료·단체·초청·공무출장으로 나눈 집계, 콘텐츠 보완 추경 7억 원의 의결·집행 내역, 금오도 교통 대책, 사업수익 120억 원의 달성 여부와 11월 4일 폐막 뒤 최종 정산",
+    en: "Daily attendance split into paid, free, group, invited and publicly funded staff visits; approval and spending details for the KRW 700 million content supplement; replacement transport on Geumodo; progress toward the KRW 12 billion revenue target; and final settlement after the November 4 closing",
   },
   heroImage: {
     src: "images/monitoring/yeosu-island-expo-tracker-hero.webp",
@@ -81,6 +81,13 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       text: {
         ko: "개막 9일 누적 관람객은 10만 8명으로, 300만 명 목표의 3.3%였습니다.",
         en: "Cumulative attendance reached 100,008 after nine days, 3.3 percent of the 3 million target.",
+      },
+    },
+    {
+      date: "2026-09-15",
+      text: {
+        ko: "개막 열흘 뒤 특별시의회 추경 심사에 콘텐츠 보완비 7억 원이 올라왔고, 집행부는 기존 콘텐츠의 부족한 부분을 보완하기 위한 예산이라고 설명했습니다.",
+        en: "Ten days after opening, a KRW 700 million content supplement reached council review; the administration said it was needed to remedy shortcomings in the existing program.",
       },
     },
   ],
@@ -555,6 +562,35 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-15",
+      title: {
+        ko: "개막 뒤 콘텐츠 보완비 7억 원 추경 심사",
+        en: "KRW 700 million content supplement reviewed after opening",
+      },
+      description: {
+        ko: "전남광주통합특별시의회 농수산위원회는 박람회 개막 열흘 뒤인 9월 15일 제1회 추가경정예산안을 심사하면서 콘텐츠 행사비 7억 원의 편성 시점을 따졌습니다. 류기준 위원장은 이미 행사가 시작된 뒤 예산을 요구한 것은 사전 준비 부족을 드러낸 것 아니냐고 지적했습니다. 집행부는 관람객 유치를 위해 기존 콘텐츠의 부족한 부분을 보완하려는 예산이라고 답했습니다. 현재 확인된 것은 추경안 편성과 상임위 심사이며, 최종 의결액과 실제 계약·집행 내역은 아직 확인되지 않았습니다.",
+        en: "On September 15, ten days after the fair opened, the South Jeolla–Gwangju council's agriculture and fisheries committee questioned why KRW 700 million for fair content had been placed in the first supplementary budget only after opening. Committee chair Ryu Gi-jun asked whether the timing revealed inadequate preparation. The administration said the money was intended to address shortcomings in existing content and attract visitors. What is confirmed so far is the budget proposal and committee review; final approval, contracts and actual spending remain unverified.",
+      },
+      change: {
+        ko: "개막 뒤 운영 보완이 프로그램 조정을 넘어 추가 재정 투입 심사로 확대",
+        en: "Post-opening fixes expand from program changes to a new request for public funding",
+      },
+      status: "pending",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: {
+            ko: "여수섬박람회 개막뒤 콘텐츠비용 7억 추경…‘준비부실’ 지적",
+            en: "Council questions KRW 700 million content supplement proposed after the Yeosu fair opened",
+          },
+          url: "https://www.yna.co.kr/view/AKR20260916131800054",
+          publishedAt: "2026-09-16",
+          kind: "article",
+          thumbnailSrc: "https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202609/16/yonhap/20260916154153897jbsn.jpg",
+        },
+      ],
+    },
+    {
       date: "다음",
       title: {
         ko: "관람객·수익·교통 보완과 폐막 뒤 정산 확인",
@@ -604,6 +640,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       ko: "조직위와 여수시는 개막 초기 지적 뒤 공연·체험과 그늘막을 늘리고, 얼음생수·양산용 우산 지원과 남도 K-가든 페스티벌 연계 무료셔틀 하루 14회 운행을 시작했다고 9월 15일 밝혔습니다.",
       en: "On September 15, organizers and Yeosu said they had expanded performances, activities and shade, added iced-water and umbrella support, and begun 14 daily free shuttle trips to the Namdo K-Garden Festival in response to early feedback.",
     },
+    {
+      ko: "전남광주통합특별시는 개막 열흘 뒤 콘텐츠 행사비 7억 원을 추가경정예산안에 편성했고, 9월 15일 특별시의회 상임위원회 심사를 받았습니다. 최종 의결과 집행은 아직 확인되지 않았습니다.",
+      en: "Ten days after opening, the South Jeolla–Gwangju authority placed KRW 700 million for fair content in a supplementary budget reviewed by a council committee on September 15. Final approval and spending have not yet been confirmed.",
+    },
   ],
   currentControversies: [
     {
@@ -612,8 +652,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
         en: "How much of the post-approval expansion was reassessed?",
       },
       description: {
-        ko: "국제행사 승인은 248억 원 기본사업을 대상으로 이뤄졌습니다. 직접사업이 713억 원으로 늘고 개최기간과 관람객 목표까지 달라진 뒤 확대된 사업 전체를 어떤 기준으로 다시 검증했는지 공개자료만으로는 충분히 보이지 않습니다.",
-        en: "International-event approval covered a KRW 24.8 billion base. Public records do not yet clearly show how the full expanded program was reassessed after direct spending reached KRW 71.3 billion and both duration and attendance targets changed.",
+        ko: "국제행사 승인은 248억 원 기본사업을 대상으로 이뤄졌습니다. 직접사업이 713억 원으로 늘고 개최기간과 관람객 목표까지 달라진 데 이어, 개막 뒤 콘텐츠 보완비 7억 원까지 추경안에 편성됐습니다. 확대된 사업을 어떤 기준으로 다시 검증했고 추가 예산을 어디에 쓸 것인지 공개자료만으로는 충분히 보이지 않습니다.",
+        en: "International-event approval covered a KRW 24.8 billion base. Direct spending later reached KRW 71.3 billion, the duration and attendance targets changed, and a further KRW 700 million content supplement was proposed after opening. Public records do not yet clearly show how the expanded program was reassessed or exactly how the new money would be spent.",
       },
     },
     {
@@ -660,8 +700,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
   questions: [],
   proposals: [],
   caution: {
-    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 9일간 관람객 10만 8명도 유료 입장객만을 뜻하지 않으며, 이후 집계에는 출장 처리된 공무원 관람이 포함될 수 있습니다.",
-    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The nine-day attendance figure of 100,008 is not a paid-admission count, and later totals may include public employees attending on official travel.",
+    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 콘텐츠 보완비 7억 원은 현재 추경안 편성·상임위 심사 단계이므로 확정 지출로 보거나 713억 원에 곧바로 더해서도 안 됩니다. 9일간 관람객 10만 8명도 유료 입장객만을 뜻하지 않으며, 이후 집계에는 출장 처리된 공무원 관람이 포함될 수 있습니다.",
+    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The proposed KRW 700 million content supplement is still at the budget-review stage, so it should not be treated as final spending or automatically added to the KRW 71.3 billion. The nine-day attendance figure of 100,008 is not a paid-admission count, and later totals may include public employees attending on official travel.",
   },
   sources: [
     {
@@ -716,6 +756,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     {
       label: { ko: "경향신문 — 공무원 관람 출장 처리 공문과 전남광주시 해명", en: "Kyunghyang Shinmun — Official-travel memo for staff attendance and the authority's response" },
       url: "https://www.khan.co.kr/article/202609142121015",
+    },
+    {
+      label: { ko: "연합뉴스 — 개막 뒤 콘텐츠 보완비 7억 원 추경 심사", en: "Yonhap — Council review of a KRW 700 million post-opening content supplement" },
+      url: "https://www.yna.co.kr/view/AKR20260916131800054",
     },
     {
       label: { ko: "박람회 조직위원회 — 개막 초기 프로그램·관람환경 보강", en: "Organizing committee — Post-opening programming and visitor-support changes" },
