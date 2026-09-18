@@ -42,12 +42,12 @@ export const taxPolicies: TaxPolicy[] = [
     checkedAt: "2026-09-18",
     deadline: "2026-09-23",
     heroImage: {
-      ko: "images/monitoring/fuel-tax-extension-2026-hero.webp",
-      en: "images/monitoring/fuel-tax-extension-2026-hero.webp",
-      alt: { ko: "주유기 옆으로 화물차와 LPG 택시가 지나고 영수증이 길게 이어진 유류세 감시 이미지", en: "A fuel-tax watchdog image showing pumps, a delivery truck, an LPG taxi and a long receipt" },
+      ko: "images/monitoring/fuel-tax-extension-2026-ko.png",
+      en: "images/monitoring/fuel-tax-extension-2026-en.png",
+      alt: { ko: "휘발유·경유·LPG 부탄의 유류세 인하율과 리터당 세액을 비교한 도표", en: "Chart comparing fuel-tax reduction rates and per-liter tax for gasoline, diesel and LPG butane" },
       caption: {
-        ko: "당장의 유류비 부담은 줄어듭니다. 그러나 짧은 연장이 반복되는 동안 줄어드는 세수와 종료 기준은 잘 보이지 않습니다. 씨앗의 소리가 유류세 인하의 두 얼굴을 상징적으로 구성했습니다.",
-        en: "Fuel costs fall in the near term, while the revenue cost and exit rule remain less visible as short extensions continue. Seed Voice created this image to show both sides of the fuel-tax cut.",
+        ko: "휘발유는 15%, 경유와 LPG 부탄은 25%의 인하율이 2026년 11월 30일까지 유지됩니다. 리터당 세액은 부가가치세를 포함한 금액입니다.",
+        en: "The 15% gasoline cut and 25% diesel and LPG butane cuts remain through November 30, 2026. Per-liter figures include VAT.",
       },
     },
     processNote: {
