@@ -37,7 +37,7 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     en: "Next checks: forensic findings from servers and documents, summonses or indictments, responsibility for changing ballot-printing thresholds, the true scale of disenfranchisement and reforms before the next election.",
   },
   heroImage: {
-    src: "https://img0.yna.co.kr/etc/inner/KR/2026/06/14/AKR20260614024200004_03_i_P4.jpg",
+    src: "/images/monitoring/olympic-park-election-protest-20260614.jpg",
     alt: {
       ko: "서울 올림픽공원에서 재선거를 요구하며 집회 중인 시민들",
       en: "Citizens rallying at Seoul Olympic Park to demand a new election",
