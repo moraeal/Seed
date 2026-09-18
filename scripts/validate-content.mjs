@@ -10,7 +10,7 @@ const server = await createServer({
   optimizeDeps: { noDiscovery: true },
 });
 
-const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguageEnvironmentModule, publicInterestWatchModule, taxWatchModule, editorialContinuationModule, newsTranslationModule, briefingTranslationModule, columnTranslationModule] = await Promise.all([
+const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguageEnvironmentModule, publicInterestWatchModule, taxWatchModule, editorialContinuationModule, newsTranslationModule, briefingTranslationModule, columnTranslationModule, legislativeCommentaryModule] = await Promise.all([
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
   server.ssrLoadModule("/src/data/columns.ts"),
@@ -22,6 +22,7 @@ const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguag
   server.ssrLoadModule("/src/data/contentTranslations/news.ts"),
   server.ssrLoadModule("/src/data/contentTranslations/briefings.ts"),
   server.ssrLoadModule("/src/data/contentTranslations/columns/index.ts"),
+  server.ssrLoadModule("/src/data/legislativeCommentaries.ts"),
 ]);
 await server.close();
 
@@ -41,6 +42,7 @@ const accountabilitySurfaces = [
   "src/pages/CommunityChestResearch.tsx",
   "src/pages/SeedLanguageDetailBase.tsx",
   "src/pages/TaxPolicyDetail.tsx",
+  "src/pages/LegislativeCommentaryDetail.tsx",
 ];
 
 for (const pagePath of accountabilitySurfaces) {
@@ -106,6 +108,15 @@ for (const item of taxWatchModule.taxPolicies) {
   if (!item.title?.ko || !item.title?.en || !item.summary?.ko || !item.summary?.en) errors.push(`Missing Korean or English tax policy edition: ${item.slug}`);
   if (!item.heroImage?.ko || !item.heroImage?.en) errors.push(`Missing bilingual tax policy image: ${item.slug}`);
   await requireSocialImage("tax", item.slug);
+}
+for (const item of legislativeCommentaryModule.legislativeCommentaries) {
+  const ko = item.editions?.ko;
+  const en = item.editions?.en;
+  if (!ko?.title || !ko?.summary || !en?.title || !en?.summary) errors.push(`Missing Korean or English legislative commentary edition: ${item.slug}`);
+  if (!item.heroSrc) errors.push(`Missing primary image for legislative commentary: ${item.slug}`);
+  if (!ko?.chart?.rows?.length || !en?.chart?.rows?.length) errors.push(`Missing Korean or English chart for legislative commentary: ${item.slug}`);
+  requireEditorialStructure("legislative commentary", { ...item, summary: ko?.summary, sections: ko?.sections }, 2);
+  await requireSocialImage("legislation", item.slug);
 }
 
 if (errors.length) {

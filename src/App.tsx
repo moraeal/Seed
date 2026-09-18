@@ -37,6 +37,7 @@ const SeedLanguageDetail = lazy(() => import("./pages/SeedLanguageDetail"));
 const Insights = lazy(() => import("./pages/Insights"));
 const SearchPage = lazy(() => import("./pages/Search"));
 const LegislativeWatch = lazy(() => import("./pages/LegislativeWatch"));
+const LegislativeCommentaryDetail = lazy(() => import("./pages/LegislativeCommentaryDetail"));
 const LegislativeBillDetail = lazy(() => import("./pages/LegislativeBillDetail"));
 const TaxWatch = lazy(() => import("./pages/TaxWatch"));
 const TaxPolicyDetail = lazy(() => import("./pages/TaxPolicyDetail"));
@@ -82,6 +83,7 @@ function AppShell() {
           <Route path="/news/:slug" element={<HotIssueDetail />} />
           <Route path="/monitoring" element={<Monitoring />} />
           <Route path="/monitoring/legislation" element={<LegislativeWatch />} />
+          <Route path="/monitoring/legislation/commentary/:slug" element={<LegislativeCommentaryDetail />} />
           <Route path="/monitoring/legislation/:slug" element={<LegislativeBillDetail />} />
           <Route path="/monitoring/tax" element={<TaxWatch />} />
           <Route path="/monitoring/tax/:slug" element={<TaxPolicyDetail />} />
