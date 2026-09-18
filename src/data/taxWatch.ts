@@ -23,8 +23,95 @@ export type TaxPolicy = {
 
 const officialPlan = "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129005";
 const publicLegislation = "https://opinion.lawmaking.go.kr/gcom/ogLmPp";
+const fuelTaxNotice = "https://mofe.go.kr/lw/lap/detailTbPrvntcView.do?menuNo=7050300&searchBbsId1=MOSFBBS_000000000055&searchNttId1=MOSF_000000000079385";
+const lpgTaxNotice = "https://mofe.go.kr/lw/lap/detailTbPrvntcView.do?menuNo=7050300&searchBbsId1=MOSFBBS_000000000055&searchNttId1=MOSF_000000000079384";
+const fuelTaxReport = "https://www.mk.co.kr/news/economy/12156047";
 
 export const taxPolicies: TaxPolicy[] = [
+  {
+    slug: "fuel-tax-cut-extended-november-2026",
+    importance: 83,
+    status: { ko: "입법예고", en: "Public notice" },
+    title: { ko: "유류세 인하, 11월 말까지 두 달 더 연장", en: "Fuel-tax cuts extended for two more months" },
+    summary: {
+      ko: "정부가 휘발유·경유·LPG 부탄의 한시적 유류세 인하를 2026년 11월 30일까지 연장합니다. 리터당 세금은 인하 전보다 휘발유 122원, 경유 145원, 부탄 51원 낮은 수준이 유지됩니다.",
+      en: "The government will extend temporary fuel-tax cuts on gasoline, diesel and LPG butane through November 30, 2026. Per-liter tax remains KRW 122 lower for gasoline, KRW 145 lower for diesel and KRW 51 lower for butane than before the cuts.",
+    },
+    affected: { ko: "운전자 · 화물·물류업 · 택시·LPG 차량 · 정유·주유업", en: "Drivers · Freight and logistics · Taxis and LPG vehicles · Refiners and fuel retailers" },
+    checkedAt: "2026-09-18",
+    deadline: "2026-09-23",
+    heroImage: {
+      ko: "images/news/fuel-price-cap-tax-bill-hero.webp",
+      en: "images/news/fuel-price-cap-tax-bill-hero.webp",
+      alt: { ko: "주유기와 정유시설 사이에 길게 펼쳐진 세금 관련 문서", en: "Fuel pumps and a refinery with tax documents stretching across the foreground" },
+    },
+    oneSentence: {
+      ko: "9월 말 끝날 예정이던 유류세 인하를 두 달 연장해 당장의 기름값 부담은 낮추지만, 감세에 따른 재정비용과 종료 기준은 공개되지 않았습니다.",
+      en: "A two-month extension keeps immediate fuel costs lower, but the government has not disclosed the fiscal cost or a clear exit rule for the temporary tax cut.",
+    },
+    keyChanges: [
+      {
+        title: { ko: "인하율을 11월 말까지 유지", en: "Current reductions continue through November" },
+        body: { ko: "휘발유 15%, 경유 25%, LPG 부탄 25%의 인하율을 2026년 11월 30일까지 두 달 더 적용합니다.", en: "The 15% cut for gasoline and 25% cuts for diesel and LPG butane will remain in effect through November 30, 2026." },
+      },
+      {
+        title: { ko: "리터당 세금은 현 수준 유지", en: "Per-liter tax stays at current levels" },
+        body: { ko: "부가가치세를 포함한 리터당 세금은 휘발유 698원, 경유 436원, 부탄 152원으로 유지됩니다. 인하 전보다 각각 122원, 145원, 51원 낮습니다.", en: "Including VAT, tax remains KRW 698 per liter for gasoline, KRW 436 for diesel and KRW 152 for butane—respectively KRW 122, KRW 145 and KRW 51 below pre-cut levels." },
+      },
+    ],
+    changeMap: [
+      {
+        title: { ko: "시민의 부담", en: "Citizen burden" },
+        items: [
+          { ko: "운전자와 LPG 차량 이용자의 세 부담이 두 달 더 낮게 유지됩니다.", en: "Drivers and LPG-vehicle users keep the lower tax burden for two more months." },
+          { ko: "실제 주유 가격은 국제유가·환율·유통마진에 따라 세금 인하 폭과 다르게 움직일 수 있습니다.", en: "Pump prices may not move one-for-one with the tax cut because crude prices, exchange rates and retail margins also matter." },
+        ],
+      },
+      {
+        title: { ko: "일과 기업활동", en: "Work and enterprise" },
+        items: [
+          { ko: "화물·물류·택시 등 연료비 비중이 큰 업종의 단기 운영비 부담을 낮춥니다.", en: "The extension lowers near-term operating costs for freight, logistics, taxis and other fuel-intensive businesses." },
+          { ko: "두 달 단위 연장은 운송계약과 비용 계획의 예측 가능성을 충분히 높이지 못합니다.", en: "Two-month extensions still provide limited predictability for transport contracts and cost planning." },
+        ],
+      },
+      {
+        title: { ko: "정부의 재정책임", en: "Fiscal accountability" },
+        items: [
+          { ko: "감세에 따른 두 달간의 세수 감소 규모가 입법예고 페이지에 제시되지 않았습니다.", en: "The notice page does not state the two-month revenue cost of the extension." },
+          { ko: "국제유가·환율·물가 중 어떤 조건에서 인하를 끝낼지 기준이 필요합니다.", en: "The government should specify which oil-price, exchange-rate or inflation conditions would end the cut." },
+        ],
+      },
+    ],
+    officialRationale: {
+      ko: "정부는 중동 정세 불안이 이어지는 상황에서 국민의 유류비 부담을 줄이되 향후 대응 여력을 남기기 위해 현행 인하율을 두 달 연장한다고 설명합니다.",
+      en: "The government says the extension will ease fuel-cost pressure amid continuing instability in the Middle East while preserving room for later policy responses.",
+    },
+    risks: [
+      { ko: "짧은 연장이 반복되면 한시 조치의 종료 시점과 기준이 불투명해집니다.", en: "Repeated short extensions make the end date and exit criteria of a temporary measure unclear." },
+      { ko: "세수 감소 규모를 밝히지 않으면 시민이 부담 완화의 편익과 재정비용을 함께 판단하기 어렵습니다.", en: "Without a revenue estimate, citizens cannot weigh immediate relief against the fiscal cost." },
+      { ko: "국제유가와 유통마진이 오르면 세금 인하가 소비자가격에 온전히 반영되지 않을 수 있습니다.", en: "Higher crude prices or retail margins can prevent the full tax reduction from reaching consumers." },
+    ],
+    questions: [
+      { ko: "이번 두 달 연장으로 줄어드는 세수는 정확히 얼마입니까?", en: "Exactly how much revenue will be forgone during the two-month extension?" },
+      { ko: "유류세 인하를 종료하거나 조정할 국제유가·환율·물가 기준은 무엇입니까?", en: "What oil-price, exchange-rate or inflation thresholds will trigger an adjustment or end the cut?" },
+      { ko: "유종별 세금 인하분이 실제 주유소 가격에 얼마나 반영되는지 공개합니까?", en: "Will the government publish how much of each fuel's tax cut is passed through at the pump?" },
+    ],
+    seedView: {
+      ko: "시민과 운송업의 당장 부담을 낮추는 감세는 필요할 수 있습니다. 그러나 ‘두 달 더’가 반복되면 한시 조치는 예측 가능한 세제가 아니라 상황에 따라 연장되는 행정 수단이 됩니다. 정부는 부담 완화만 설명할 것이 아니라 줄어드는 세수, 가격 반영률, 종료 조건을 함께 공개해야 합니다. 그래야 시민은 오늘의 기름값과 내일의 재정비용을 동시에 판단할 수 있습니다.",
+      en: "Tax relief can be justified when households and transport businesses face immediate pressure. But repeated two-month extensions turn a temporary measure into a discretionary tool rather than a predictable tax rule. The government should publish the revenue cost, retail pass-through and exit conditions so citizens can assess today's fuel-price relief alongside tomorrow's fiscal cost.",
+    },
+    timeline: [
+      { date: "2026-09-18", title: { ko: "두 시행령 개정안 입법예고·씨앗의 소리 확인", en: "Two decree amendments opened for public comment and verified by Seed Voice" } },
+      { date: "2026-09-23", title: { ko: "시민 의견 제출 마감", en: "Public comment deadline" } },
+      { date: "2026-10-01", title: { ko: "연장 적용 시작 예정", en: "Planned start of the extension" } },
+      { date: "2026-11-30", title: { ko: "현 인하 조치 종료 예정", en: "Scheduled expiry of current reductions" } },
+    ],
+    sources: [
+      { label: { ko: "재정경제부 교통·에너지·환경세법 시행령 입법예고", en: "MOFE notice on the Transportation, Energy and Environment Tax decree" }, url: fuelTaxNotice },
+      { label: { ko: "재정경제부 개별소비세법 시행령 입법예고", en: "MOFE notice on the Individual Consumption Tax decree" }, url: lpgTaxNotice },
+      { label: { ko: "매일경제 유류세 인하 연장 보도", en: "Maeil Business report on the fuel-tax extension" }, url: fuelTaxReport },
+    ],
+  },
   {
     slug: "local-housing-welfare-tax",
     importance: 88,
