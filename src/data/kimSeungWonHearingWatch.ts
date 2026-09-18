@@ -548,6 +548,25 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-17",
+      title: { ko: "제넨셀 설립자, 청탁 제안 경위와 문자 전달 주장", en: "Genencell founder describes alleged solicitation and message relay" },
+      description: {
+        ko: "제넨셀 설립자 강세찬 씨는 TV조선 인터뷰에서 2021년 임상시험 승인이 늦어진다고 양모 씨에게 토로하자 양씨가 도움을 자청했고, 김승원 후보자의 이름도 먼저 꺼냈다고 주장했습니다. 강씨는 김 후보자가 당시 식약처장에게 보냈다는 문자 캡처도 양씨에게서 전달받았다고 말했습니다. 인터뷰에서 이런 발언을 한 사실은 확인되지만, 청탁 제안의 실제 경위와 문자 캡처의 진위·전달 과정은 독립적으로 확인되지 않았으며 재판 중인 당사자의 주장입니다.",
+        en: "Genencell founder Kang Se-chan told TV Chosun that, after he complained in 2021 about delays in clinical-trial approval, the woman identified as a broker volunteered to help and first raised Kim Seung-won's name. Kang said she later sent him a screenshot of a message said to have been sent by Kim to the food-safety regulator's chief. The interview and the fact that Kang made these statements are verified, but the actual origin of the request and the authenticity and relay of the screenshot have not been independently established; they remain claims by a party in the ongoing trial.",
+      },
+      change: { ko: "제넨셀 설립자가 청탁 제안의 시작과 문자 캡처 전달 경로에 관해 처음으로 구체적 주장 제시", en: "Genencell founder offers a first detailed account of who initiated the request and how a message screenshot was relayed" },
+      status: "response",
+      sources: [
+        {
+          publisher: { ko: "TV조선", en: "TV Chosun" },
+          title: { ko: "[단독] 강세찬 \"양 씨가 알아봐 준다고 해…김승원 이름도 먼저 꺼내\"", en: "Kang says the alleged broker offered to look into it and first mentioned Kim" },
+          url: "https://news.tvchosun.com/site/data/html_dir/2026/09/17/2026091790216.html",
+          publishedAt: "2026-09-17",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "2026-09-18",
       title: { ko: "대통령, 임명 여부 ‘아직 최종 결론 못내’", en: "President says no final appointment decision yet" },
       description: {
@@ -683,8 +702,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       title: { ko: "식약처 민원 전달이 어디까지 영향을 미쳤나", en: "How much influence did the petition relay have?" },
       description: {
-        ko: "후보자는 지연된 민원 절차를 확인해 달라고 했을 뿐이라고 설명합니다. 양모 씨도 신속 검토 요청은 인정하면서 위법한 특혜나 자료 은폐 요구, 후원금·전환사채의 대가성은 부인했습니다. 반면 공개된 검찰 참고인 진술 보도에서 당시 식약처장 비서는 김 후보자의 문자를 청탁성으로 인식했다고 밝혔습니다. 문자가 담당 실무진까지 전달된 경로는 구체화됐지만, 후보자와 양씨의 해명이 수사기록·재판 증거와 일치하는지, 승인 판단에 실제 영향을 미쳤는지와 법적으로 부정한 청탁에 해당하는지는 아직 확인되지 않았습니다.",
-        en: "Kim says he only asked officials to check a delayed petition. The woman likewise acknowledged seeking an expedited review while denying unlawful favoritism, concealment of material, or a quid pro quo involving a donation or convertible-bond investment. Reporting on a prosecution witness statement says the regulator chief's secretary regarded Kim's message as a solicitation. The route to working-level officials is clearer, but it remains unresolved whether their explanations match the investigative and trial evidence, whether the contact affected approval, or whether it legally constituted an improper request.",
+        ko: "후보자는 지연된 민원 절차를 확인해 달라고 했을 뿐이라고 설명합니다. 양모 씨도 신속 검토 요청은 인정하면서 위법한 특혜나 자료 은폐 요구, 후원금·전환사채의 대가성은 부인했습니다. 제넨셀 설립자 강세찬 씨는 양씨가 도움을 자청하며 김 후보자 이름을 먼저 꺼냈고, 김 후보자가 식약처장에게 보냈다는 문자 캡처를 양씨에게서 받았다고 주장했습니다. 반면 공개된 검찰 참고인 진술 보도에서 당시 식약처장 비서는 김 후보자의 문자를 청탁성으로 인식했다고 밝혔습니다. 문자 전달 경로에 관한 당사자 진술은 구체화됐지만, 서로의 설명이 수사기록·재판 증거와 일치하는지, 승인 판단에 실제 영향을 미쳤는지와 법적으로 부정한 청탁에 해당하는지는 아직 확인되지 않았습니다.",
+        en: "Kim says he only asked officials to check a delayed petition. The woman likewise acknowledged seeking an expedited review while denying unlawful favoritism, concealment of material, or a quid pro quo involving a donation or convertible-bond investment. Genencell founder Kang Se-chan claims that she volunteered to help, first raised Kim's name and later sent him a screenshot of a message said to have been sent by Kim to the regulator chief. Reporting on a prosecution witness statement says the chief's secretary regarded Kim's message as a solicitation. The parties have now offered a more detailed account of the message relay, but it remains unresolved whether their explanations match the investigative and trial evidence, whether the contact affected approval, or whether it legally constituted an improper request.",
       },
     },
     {
@@ -718,6 +737,10 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "TV조선 — 제넨셀 설립자의 청탁 제안·문자 전달 경위 주장", en: "TV Chosun — Genencell founder's account of the alleged request and message relay" },
+      url: "https://news.tvchosun.com/site/data/html_dir/2026/09/17/2026091790216.html",
+    },
     {
       label: { ko: "뉴시스 — 대통령, 김승원 임명 여부 ‘아직 최종 결론 못내’", en: "Newsis — President says no final decision yet on Kim appointment" },
       url: "https://www.newsis.com/view/NISX20260918_0003795395",
