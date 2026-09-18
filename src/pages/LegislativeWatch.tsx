@@ -62,7 +62,13 @@ export default function LegislativeWatch() {
     <MonitoringSubnav />
 
     <div className="container-page py-8 sm:py-10">
-      <section className="border-2 border-navy bg-white" aria-labelledby="legislative-commentary-list-title">
+      <nav aria-label={ko ? "입법감시 목록 바로가기" : "Legislative watch list shortcuts"} className="mb-6 grid border-2 border-navy bg-white sm:grid-cols-3">
+        <a href="#legislative-commentary-list" className="flex items-center justify-between bg-green-deep px-5 py-4 text-sm font-black text-white transition hover:bg-green-mid sm:text-base">{ko ? "입법감시 기사" : "Watch Articles"}<span className="text-xs text-gold">{legislativeCommentaries.length}</span></a>
+        <a href="#today-bills" className="flex items-center justify-between border-t border-green-deep/20 px-5 py-4 text-sm font-black text-navy transition hover:bg-green-pale sm:border-l sm:border-t-0 sm:text-base">{ko ? "오늘의 법안" : "Today's Bills"}<span className="text-xs text-charcoal/40">{todayBills.length}</span></a>
+        <a href="#past-bills" className="flex items-center justify-between border-t border-green-deep/20 px-5 py-4 text-sm font-black text-navy transition hover:bg-green-pale sm:border-l sm:border-t-0 sm:text-base">{ko ? "지난 법안" : "Past Bills"}<span className="text-xs text-charcoal/40">{pastBills.length}</span></a>
+      </nav>
+
+      <section id="legislative-commentary-list" className="scroll-mt-24 border-2 border-navy bg-white" aria-labelledby="legislative-commentary-list-title">
         <div className="flex flex-col gap-3 border-b-2 border-navy bg-ivory px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-6">
           <div><span className="section-kicker">LEGISLATIVE COMMENTARY</span><h2 id="legislative-commentary-list-title" className="editorial-title mt-1 text-2xl font-bold text-navy">{ko ? "입법감시 기사 목록" : "Legislative Watch Articles"}</h2></div>
           <p className="max-w-2xl text-sm leading-6 text-charcoal/60">{ko ? "통과 법안 가운데 시민의 자유와 권력의 이동을 더 깊이 살펴야 할 사안을 골라 논평합니다. 법안 기록의 사실과 씨앗의 판단을 구분해 읽을 수 있습니다." : "We select passed bills that require deeper scrutiny of civic freedom and shifts in state power, keeping the legislative record distinct from Seed Voice's editorial judgment."}</p>
@@ -78,7 +84,7 @@ export default function LegislativeWatch() {
         </div>
       </section>
 
-      <section className="mt-10 border-2 border-navy bg-white" aria-labelledby="today-bills-title">
+      <section id="today-bills" className="mt-10 scroll-mt-24 border-2 border-navy bg-white" aria-labelledby="today-bills-title">
         <div className="flex flex-col gap-3 border-b-2 border-navy bg-green-deep px-5 py-5 text-white sm:flex-row sm:items-end sm:justify-between sm:px-6">
           <div><span className="text-[11px] font-black tracking-[.18em] text-gold">TODAY'S BILLS</span><h2 id="today-bills-title" className="editorial-title mt-1 text-2xl font-bold">{ko ? "오늘의 법안" : "Today's Bills"}<span className="ml-2 text-sm text-gold">{todayBills.length}</span></h2></div>
           <p className="max-w-2xl text-sm leading-6 text-white/70">{ko ? "오늘 씨앗의 입법감시 목록에 새로 공개된 법안입니다. 법안명이나 분석 보기를 누르면 핵심 변화와 시민 영향을 확인할 수 있습니다." : "Bills newly published to Seed Voice's legislative watch today. Open a bill to review its key changes and civic impact."}</p>
@@ -93,7 +99,7 @@ export default function LegislativeWatch() {
         <div>{todayBills.map((bill) => <BillRow key={bill.bill_id} bill={bill} ko={ko} today/>)}</div>
       </section>
 
-      <section className="mt-10 border-2 border-navy bg-white" aria-labelledby="past-bills-title">
+      <section id="past-bills" className="mt-10 scroll-mt-24 border-2 border-navy bg-white" aria-labelledby="past-bills-title">
         <div className="flex flex-col gap-3 border-b-2 border-navy bg-ivory px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-6">
           <div><span className="section-kicker">PAST BILLS</span><h2 id="past-bills-title" className="editorial-title mt-1 text-2xl font-bold text-navy">{ko ? "지난 법안" : "Past Bills"}<span className="ml-2 text-sm text-charcoal/40">{pastBills.length}</span></h2></div>
           <p className="max-w-2xl text-sm leading-6 text-charcoal/60">{ko ? "이전에 공개된 입법감시 기록입니다. 법안명·발의자·위원회와 시민영향도로 필요한 법안을 찾아볼 수 있습니다." : "Previously published legislative-watch records. Search by bill title, sponsor, committee, or civic-impact level."}</p>
