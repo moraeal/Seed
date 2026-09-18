@@ -389,8 +389,8 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
   ],
   confirmedFacts: [
     {
-      ko: "선관위 조사에서 투표용지 부족은 91개 투표소, 실제 투표 중단은 26개 투표소에서 확인됐다.",
-      en: "The election commission's review confirmed ballot shortages at 91 polling stations and actual voting suspensions at 26.",
+      ko: "선관위는 투표용지를 추가 송부한 투표소가 140곳이며, 그중 추가 용지를 실제 사용한 곳은 91곳이라고 밝혔다. 26곳에서는 투표가 잠시 중단됐다가 재개됐다.",
+      en: "The commission said extra ballots were dispatched to 140 polling stations, used at 91 of them, and voting was temporarily suspended and resumed at 26.",
     },
     {
       ko: "투표용지 인쇄 하한은 60%에서 50%로 낮아졌고, 이 변경은 선관위 전체회의의 정식 의결 없이 내부 결재로 이뤄진 것으로 보도됐다.",
