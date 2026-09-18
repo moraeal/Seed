@@ -22,7 +22,7 @@ type Selection = {
   publishedText: string;
 };
 
-const editableTags = new Set(["A", "BUTTON", "BLOCKQUOTE", "FIGCAPTION", "H1", "H2", "H3", "H4", "H5", "H6", "LABEL", "LI", "P", "SPAN", "TD", "TH"]);
+const editableTags = new Set(["A", "B", "BUTTON", "BLOCKQUOTE", "EM", "FIGCAPTION", "H1", "H2", "H3", "H4", "H5", "H6", "LABEL", "LI", "P", "SMALL", "SPAN", "STRONG", "TD", "TH"]);
 
 function directTextNodes(element: Element) {
   return Array.from(element.childNodes).filter((node): node is Text => node.nodeType === Node.TEXT_NODE && Boolean((node as Text).data.trim()));
@@ -57,6 +57,18 @@ function editableElement(target: EventTarget | null, root: Element) {
     current = current.parentElement;
   }
   return null;
+}
+
+function clickedTextNodeIndex(event: MouseEvent, element: Element) {
+  const nodes = directTextNodes(element);
+  const caretPosition = document.caretPositionFromPoint?.(event.clientX, event.clientY);
+  let clickedNode = caretPosition?.offsetNode;
+  if (!clickedNode) {
+    const legacyDocument = document as Document & { caretRangeFromPoint?: (x: number, y: number) => Range | null };
+    clickedNode = legacyDocument.caretRangeFromPoint?.(event.clientX, event.clientY)?.startContainer;
+  }
+  const index = clickedNode ? nodes.indexOf(clickedNode as Text) : -1;
+  return index >= 0 ? index : 0;
 }
 
 function formatRevisionDate(value: string, locale: "ko" | "en") {
@@ -154,7 +166,7 @@ export default function InlinePageEditor() {
       if (!element) return;
       const path = elementPath(root, element);
       const nodes = directTextNodes(element);
-      const nodeIndex = 0;
+      const nodeIndex = clickedTextNodeIndex(event as MouseEvent, element);
       const node = nodes[nodeIndex];
       if (!path || !node) return;
       event.preventDefault();
