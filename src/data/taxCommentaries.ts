@@ -63,6 +63,10 @@ export const taxCommentaries: TaxCommentary[] = [
       label: { ko: "산업통상부 — 석유 최고가격제 손실보전 재정지원 설명자료", en: "Ministry of Trade, Industry and Resources — official explanation of fiscal compensation under the petroleum price ceiling" },
       url: "https://www.motir.go.kr/kor/article/ATCLe0854704d/172198/view",
     },
+    {
+      label: { ko: "SBS Biz — 출구전략 못 찾는 석유 최고가격제", en: "SBS Biz — Korea struggles to find an exit from its petroleum price ceiling" },
+      url: "https://biz.sbs.co.kr/article/20000334518",
+    },
   ],
   relatedReading: {
     ko: {
@@ -116,7 +120,7 @@ export const taxCommentaries: TaxCommentary[] = [
           title: "덜 걷는 세금 옆에서 국고 지출도 늘어납니다",
           paragraphs: [
             "유류세 인하분을 다른 세목으로 곧바로 다시 걷는 제도는 아닙니다. 다만 지금의 기름값 대책에는 별도의 석유 최고가격제도 함께 작동하고 있습니다. 정부가 정유사의 공급가격에 상한을 두고, 그 때문에 발생한 것으로 인정되는 손실을 국고에서 보전하는 제도입니다.",
-            "정부는 손실보전을 위해 목적예비비 4조 2천억 원을 편성했습니다. 이 금액은 정유사에 이미 지급된 돈이 아니라 정산을 위해 확보한 한도입니다. 산업통상부는 정유사가 원가자료를 제출하면 정산위원회 심의를 거쳐 연내 지원금을 지급할 계획이라고 밝혔습니다.",
+            "정부는 손실보전을 위해 올해 목적예비비 4조 2천억 원을 편성했고, 내년도 예산안에도 약 1조 4천억 원을 반영했습니다. 두 금액 모두 정유사에 이미 지급된 돈이 아니라 손실보전에 대비한 예산입니다. 산업통상부는 정유사가 원가자료를 제출하면 정산위원회 심의를 거쳐 연내 지원금을 지급할 계획이라고 밝혔습니다.",
             "결국 시민이 주유소에서 덜 내는 동안 재정은 두 방향의 부담을 집니다. 한쪽에서는 유류세 수입이 줄고, 다른 한쪽에서는 최고가격제 손실보전 지출이 생깁니다. 두 제도는 법적 구조가 다르지만 국민의 장부에서는 함께 보아야 할 비용입니다.",
           ],
           quote: "주유소에서 줄어든 부담이 국가 장부에서 사라지는 것은 아닙니다.",
@@ -133,7 +137,7 @@ export const taxCommentaries: TaxCommentary[] = [
           title: "씨앗은 두 장부와 두 종료 기준을 계속 보겠습니다",
           paragraphs: [
             "첫째는 실제 주유가격입니다. 세금 인하분이 정유·도매·소매 단계를 거쳐 소비자가격에 얼마나 반영됐는지 유종별로 확인해야 합니다. 국제유가나 환율이 올랐다는 설명만으로는 세금 인하 효과가 어디에서 줄었는지 알 수 없습니다.",
-            "둘째는 세수 감소액입니다. 두 달간 덜 걷는 교통·에너지·환경세와 개별소비세, 이에 연동되는 세입을 합쳐 공개해야 합니다. 최고가격제에서는 정유사별 청구액, 정산위원회 인정액과 실제 지급액을 차례로 확인해야 합니다. 4조 2천억 원의 편성액이 아니라 정산 뒤 국고에서 실제로 나간 돈이 최종 비용입니다.",
+            "둘째는 세수 감소액입니다. 두 달간 덜 걷는 교통·에너지·환경세와 개별소비세, 이에 연동되는 세입을 합쳐 공개해야 합니다. 최고가격제에서는 정유사별 청구액, 정산위원회 인정액과 실제 지급액을 차례로 확인해야 합니다. 올해 4조 2천억 원과 내년도 약 1조 4천억 원의 예산 규모가 아니라 정산 뒤 국고에서 실제로 나간 돈이 최종 비용입니다.",
             "마지막은 두 제도의 종료 기준입니다. 유류세 인하의 연장·축소·종료와 최고가격제의 유지·해제를 각각 어떤 수치로 결정하는지 공개해야 합니다. 세금은 덜 걷고 보전금은 지출하면서 가격표만 낮아졌다고 말한다면 시민은 절반의 장부만 보게 됩니다.",
             "당장의 부담을 낮추는 일과 장기 재정을 지키는 일은 서로 반대편에 있지 않습니다. 세금을 덜 걷는다면 그 이유와 비용을 밝히고, 다시 걷는다면 그 기준과 시점을 예고하면 됩니다. 부담 완화는 환영받을 수 있습니다. 불투명한 연장은 감시받아야 합니다.",
           ],
@@ -149,7 +153,7 @@ export const taxCommentaries: TaxCommentary[] = [
           ["재정 비용", "유류세 인하와 최고가격제 병행", "두 달간 줄어드는 세수·정유사 손실 실제 지급액", "덜 걷는 돈과 국고 지출을 합산해 비교"],
           ["종료 기준", "중동 정세와 대응 여력 고려", "유가·환율·물가의 객관적 기준", "연장·축소·종료 결정의 근거"],
         ],
-        note: "출처: 재정경제부 2026년 9월 18일 시행령 개정안 입법예고, 산업통상부 2026년 9월 14일 설명자료. 리터당 세액은 부가가치세를 포함한 금액입니다. 목적예비비 4조 2천억 원은 실제 지급액이 아니라 손실보전을 위해 편성한 금액입니다.",
+        note: "출처: 재정경제부 2026년 9월 18일 시행령 개정안 입법예고, 산업통상부 2026년 9월 14일 설명자료, SBS Biz 2026년 9월 14일 보도. 리터당 세액은 부가가치세를 포함한 금액입니다. 올해 목적예비비 4조 2천억 원과 내년도 예산안 약 1조 4천억 원은 실제 지급액이 아니라 손실보전에 대비한 예산입니다.",
         afterSection: 0,
       },
       sourceNote: "이 글은 2026년 9월 18일 공개된 재정경제부의 교통·에너지·환경세법 시행령 및 개별소비세법 시행령 개정안 입법예고와 9월 14일 산업통상부 설명자료를 기준으로 작성했습니다. 유류세 인하와 석유 최고가격제는 서로 다른 제도이며, 유류세 감면액을 특정 세목으로 자동 환수하는 구조는 아닙니다. 다만 세수 감소와 최고가격제 손실보전은 모두 국민이 함께 확인해야 할 재정비용입니다. 씨앗의 소리는 세수 감소액, 정유사별 청구·인정·지급액과 두 제도의 종료 기준을 계속 확인합니다.",
@@ -187,7 +191,7 @@ export const taxCommentaries: TaxCommentary[] = [
           title: "Lower tax receipts sit beside higher public spending",
           paragraphs: [
             "The fuel-tax reduction is not automatically recouped through another named tax. But a separate petroleum price ceiling is operating alongside it. The government caps refinery supply prices and compensates losses recognized as resulting from that ceiling with public funds.",
-            "The government allocated KRW 4.2 trillion in contingency reserves for this compensation. That is a budget envelope, not money already paid to refiners. The Ministry of Trade, Industry and Resources says compensation will be paid after refiners submit cost data and a settlement committee reviews the claims.",
+            "The government allocated KRW 4.2 trillion in this year's contingency reserves and included about KRW 1.4 trillion in next year's budget proposal for compensation. Both are budget provisions, not money already paid to refiners. The Ministry of Trade, Industry and Resources says compensation will be paid after refiners submit cost data and a settlement committee reviews the claims.",
             "The public ledger therefore absorbs pressure in two directions while motorists pay less at the pump: fuel-tax receipts fall, and compensation spending arises under the price ceiling. The two policies are legally distinct, but their fiscal costs belong in the same public account.",
           ],
           quote: "A smaller bill at the pump does not make the cost disappear from the public ledger.",
@@ -204,7 +208,7 @@ export const taxCommentaries: TaxCommentary[] = [
           title: "Seed Voice will track both ledgers and both exit rules",
           paragraphs: [
             "First is the pump-price pass-through. The government should show how much of each fuel's tax reduction reaches retail prices after refining, wholesale and retail margins. General references to crude prices or exchange rates do not identify where the benefit was absorbed.",
-            "Second is total forgone revenue, including the transportation-energy-environment tax, individual consumption tax and linked receipts. Under the price ceiling, the government should disclose each refiner's claim, the amount recognized by the settlement committee and the amount actually paid. The final cost is not the KRW 4.2 trillion allocation but the money disbursed after settlement.",
+            "Second is total forgone revenue, including the transportation-energy-environment tax, individual consumption tax and linked receipts. Under the price ceiling, the government should disclose each refiner's claim, the amount recognized by the settlement committee and the amount actually paid. The final cost is not this year's KRW 4.2 trillion reserve or the roughly KRW 1.4 trillion proposed for next year, but the money disbursed after settlement.",
             "The final test is the exit rule for each policy. The government should disclose the indicators that will determine whether the fuel-tax cut is extended, narrowed or ended, and whether the petroleum price ceiling is maintained or lifted. Reporting only the lower price while omitting both forgone revenue and compensation would show citizens only half the ledger.",
             "Near-term relief and long-term fiscal responsibility are not opposites. If government collects less, it should disclose the reason and cost. If it later collects more, it should announce the threshold and timing. Relief can be welcomed. Opaque extensions still deserve scrutiny.",
           ],
@@ -220,7 +224,7 @@ export const taxCommentaries: TaxCommentary[] = [
           ["Fiscal cost", "Tax cut and petroleum price ceiling operating together", "Two-month revenue loss and actual refinery-compensation payments", "Compare forgone revenue and public spending together"],
           ["Exit rule", "Middle East risks and policy flexibility", "Oil, exchange-rate and inflation thresholds", "Evidence for extending, narrowing or ending the cuts"],
         ],
-        note: "Sources: Ministry of Economy and Finance decree notices dated September 18, 2026, and the Ministry of Trade, Industry and Resources explanation dated September 14, 2026. Per-liter tax figures include VAT. KRW 4.2 trillion is an allocation for potential compensation, not an amount already paid.",
+        note: "Sources: Ministry of Economy and Finance decree notices dated September 18, 2026; the Ministry of Trade, Industry and Resources explanation dated September 14, 2026; and SBS Biz reporting dated September 14, 2026. Per-liter tax figures include VAT. This year's KRW 4.2 trillion reserve and the roughly KRW 1.4 trillion proposed for next year are budget provisions, not amounts already paid.",
         afterSection: 0,
       },
       sourceNote: "This commentary is based on the Ministry of Economy and Finance's September 18, 2026 decree notices and the Ministry of Trade, Industry and Resources' September 14 explanation. The fuel-tax cut and petroleum price ceiling are separate policies; the tax reduction is not automatically recovered through another named tax. Yet forgone revenue and compensation paid under the ceiling are both public fiscal costs. Seed Voice will track forgone revenue, refinery claims, recognized losses, actual payments and the exit criteria for both measures.",
