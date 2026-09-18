@@ -3,7 +3,7 @@ import type { ColumnTranslation } from "../types";
 export const issue07: ColumnTranslation = {
   title: `The Nepal Disaster Shows the Climate Crisis Is Not the Left’s Exclusive Cause`,
   subtitle: `Will fear enlarge the state, or will responsible citizens build a strong society?`,
-  author: `Park Kyung-seuk`,
+  author: "Small Seed",
   summary: `The glacier collapse and catastrophic flooding in Nepal warn us that conservatives cannot deny climate risk or leave the issue to the political left. Conservatism should approach climate change through stewardship of the land, protection of communities and responsibility to future generations. SEED proposes a strong society built on open risk data, civic initiative and scrutiny of both government and markets—not climate policy used to justify unlimited state control.`,
   heroImage: {
     alt: `Editorial cartoon of Nepali citizens monitoring a Himalayan glacier collapse and helping residents evacuate`,

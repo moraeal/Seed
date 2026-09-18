@@ -3,7 +3,7 @@ import type { ColumnTranslation } from "../types";
 export const issue13: ColumnTranslation = {
   title: "Empty Cans Make the Loudest Noise",
   subtitle: "Is splitting LH really reform?",
-  author: "Kyungseok Park",
+  author: "Small Seed",
   summary: "Is breaking up LH really reform? What Korea needs now is not another organizational chart, but a sober diagnosis of why housing policy has failed.",
   heroImage: {
     alt: "An illustration of an LH monument cracking in front of a city skyline as a gavel strikes it",

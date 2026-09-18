@@ -3,7 +3,7 @@ import type { ColumnTranslation } from "../types";
 export const issue11: ColumnTranslation = {
   title: "Do They Represent Korean Civil Society?",
   subtitle: "The president's 210-minute listening session and the danger of civil society becoming an arm of the state",
-  author: "Park Kyung-seok",
+  author: "Small Seed",
   summary: "President Lee Jae-myung spent 210 minutes with representatives of 19 largely progressive civic organizations. This column asks what happens to representation and independence when the state treats one ideological network as civil society itself, then draws it into public committees, programs and funding.",
   heroImage: {
     alt: "A symbolic scene of a president and civic-society representatives seated across a conference table while citizens watch, with the National Assembly visible outside",

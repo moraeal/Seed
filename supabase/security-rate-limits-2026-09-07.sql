@@ -147,7 +147,7 @@ end;
 $$;
 
 revoke all on function public.subscribe_newsletter(text, text, text) from public, anon, authenticated;
-grant execute on function public.subscribe_newsletter(text, text, text) to anon, authenticated;
+grant execute on function public.subscribe_newsletter(text, text, text) to service_role;
 
 create or replace function public.record_content_view(
   p_path text,

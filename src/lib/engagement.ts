@@ -135,15 +135,17 @@ export async function subscribeToNewsletter(email: string, language: "ko" | "en"
   }
 
   if (!captchaToken) {
-    await callRpc<void>("subscribe_newsletter", { p_email: email, p_language: language, p_source_path: sourcePath });
-  } else {
-    const response = await fetch(`${supabaseUrl}/functions/v1/newsletter-turnstile`, {
-      method: "POST",
-      headers: rpcHeaders(),
-      body: JSON.stringify({ token: captchaToken, email, language, sourcePath }),
-    });
-    if (!response.ok) throw new Error(`Newsletter verification failed (${response.status})`);
+    throw new Error(language === "ko"
+      ? "보안 확인을 사용할 수 없습니다. 잠시 후 다시 시도해주세요."
+      : "Security verification is unavailable. Please try again shortly.");
   }
+
+  const response = await fetch(`${supabaseUrl}/functions/v1/newsletter-turnstile`, {
+    method: "POST",
+    headers: rpcHeaders(),
+    body: JSON.stringify({ token: captchaToken, email, language, sourcePath }),
+  });
+  if (!response.ok) throw new Error(`Newsletter verification failed (${response.status})`);
 
   void recordAnalyticsEvent("newsletter_signup", sourcePath, language).catch(() => {
     // Conversion measurement must never change the signup result.

@@ -3,7 +3,7 @@ import type { ColumnTranslation } from "../types";
 export const issue10: ColumnTranslation = {
   title: "Stop Treating Companies as the Government's ATM",
   subtitle: "The dangerous statism of pulling forward not only future public revenue, but future electricity bills",
-  author: "Park Kyung-seuk",
+  author: "Small Seed",
   summary: "The government and Korea Electric Power Corporation have proposed that Samsung Electronics and SK hynix prepay roughly KRW 25 trillion in electricity charges for five years. This column asks how using corporate cash to cover a public utility's failures—and electricity pricing to steer corporate location—can turn industrial policy into state coercion.",
   heroImage: {
     alt: "An editorial illustration of a giant hand pulling a power cable symbolizing future electricity payments from a semiconductor plant toward a government vault",

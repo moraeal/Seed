@@ -104,8 +104,7 @@ Deno.serve(async (req: Request) => {
   });
 
   if (!rpc.ok) {
-    const detail = await rpc.text();
-    return json(req, { error: "subscription_failed", detail: detail.slice(0, 200) }, rpc.status === 429 ? 429 : 400);
+    return json(req, { error: "subscription_failed" }, rpc.status === 429 ? 429 : 400);
   }
 
   return new Response(null, { status: 204, headers: corsHeaders(req) });

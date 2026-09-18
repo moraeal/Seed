@@ -8,7 +8,7 @@ const publicInterestKo: SeedLanguageArticle = {
   readMinutes: 6,
   newsletterEligible: true,
   homeHeroEligible: false,
-  title: "공익은 국가의 것이 아니라 시민의 것이다",
+  title: "공익은 국가의 것이 아니라 시민의 것이라는 말이다",
   subtitle: "공익이 국가로 가면 관료화되고, 진영으로 가면 권력이 됩니다. 공익을 다시 시민에게 돌려줘야 합니다.",
   summary: "공익은 정부나 공익기관이 시민에게 베푸는 선의가 아닙니다. 시민이 공동체의 문제를 발견하고 서로 연결되어 직접 해결해 나가는 과정에서 만들어지는 사회적 가치입니다. 씨앗은 공익자금의 목적을 기존 조직의 유지가 아니라 새로운 시민의 참여를 키우는 데서 찾습니다.",
   keyPoints: [

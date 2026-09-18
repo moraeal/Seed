@@ -83,8 +83,8 @@ export const content = {
       leadershipTitle: "Leadership",
       leadership:
         "씨앗의 소리가 지향하는 리더십은 정당 조직의 청년부나 선거 동원 구조가 아니라, 시민사회 안에서 자유의 가치를 설명하고 실험하는 독립 시민 리더십입니다.",
-      founderTitle: "Founder & President",
-      founderName: "Park Kyung-seuk",
+      founderTitle: "Publisher",
+      founderName: "Small Seed",
       founderBio: "",
       contactTitle: "Contact",
       contact:
@@ -206,10 +206,10 @@ export const content = {
       leadershipTitle: "Leadership",
       leadership:
         "SEED develops independent civic leadership through careful listening, evidence, dialogue, transparent documentation, and practical experimentation.",
-      founderTitle: "Founder & President",
-      founderName: "Park Kyung-seuk",
+      founderTitle: "Publisher",
+      founderName: "Small Seed",
       founderBio:
-        "Park Kyung-seuk has worked across civil society, public institutions, and corporate sustainability. His experience includes serving as a specialist member of the Presidential Commission on Sustainable Development (PCSD), executive chair of the Goyang branch of the Korean Federation for Environmental Movement, and founder and representative of the nonprofit KkumePume. He has also held roles related to corporate social contribution and sustainability management, served as an executive at the Korea Minting, Security Printing & ID Card Operating Corporation (KOMSCO), and advised Uijeongbu City.",
+        "SEED VOICE is published under a pen name to keep attention on its reporting, arguments, and public record rather than the publisher's personal identity.",
       contactTitle: "Contact",
       contact:
         "SEED is based in Seoul, South Korea. We welcome inquiries from civic organizations, think tanks, foundations, educators, researchers, and responsible businesses interested in international exchange or joint projects. Contact seedcivicpartners@gmail.com.",

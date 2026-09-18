@@ -3,7 +3,7 @@ import type { ColumnTranslation } from "../types";
 export const issue06: ColumnTranslation = {
   title: `Yong Hye-in Climbed the Ladder of Privilege While Preaching Equality`,
   subtitle: `Holding on to both a National Assembly seat and a cabinet post, while putting partisan slogans ahead of victims’ appeals`,
-  author: `Park Kyung-seuk`,
+  author: "Small Seed",
   summary: `Rep. Yong Hye-in, long associated with the language of equality and protection for the vulnerable, has been nominated to lead the Ministry of Gender Equality and Family. Her decision to retain her proportional-representation seat even if appointed minister, after entering the Assembly twice through satellite-party arrangements, and the gaps in victim protection exposed during the debate over prosecutors’ supplementary investigative powers raise a basic question: do her actions match the equality and responsibility she has advocated?`,
   heroImage: {
     alt: `Political cartoon showing nominee Yong Hye-in holding on to both a National Assembly seat and a ministerial chair`,

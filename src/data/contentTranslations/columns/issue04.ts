@@ -3,7 +3,7 @@ import type { ColumnTranslation } from "../types";
 export const issue04: ColumnTranslation = {
   title: `Random Selection Is Not a Public Forum`,
   subtitle: `What Korea’s Climate Citizens’ Assembly and national citizens’ assembly movement can teach conservatives about public deliberation`,
-  author: `Park Kyung-seuk`,
+  author: "Small Seed",
   summary: `A citizens’ assembly cannot be justified by random selection alone. Representation, balance of information, agenda-setting and accountability all matter. This column proposes the conditions under which citizens’ assemblies can become trusted deliberative institutions that complement representative democracy rather than replace it.`,
   heroImage: {
     alt: `Citizens seated at several round tables deliberating on a public issue`,

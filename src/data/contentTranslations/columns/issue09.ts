@@ -3,7 +3,7 @@ import type { ColumnTranslation } from "../types";
 export const issue09: ColumnTranslation = {
   title: "Markets Within Society, Society Beyond the State",
   subtitle: "Moving beyond Karl Polanyi: a SEED reading of the Lee Jae-myung administration",
-  author: "Park Kyung-seuk",
+  author: "Small Seed",
   summary: "Polanyi saw the danger of markets swallowing society. But a state that promises to protect society from markets can absorb society in turn. SEED examines signs of state-centered design across the Basic Society agenda, local currency, policy finance, public housing and the social-solidarity economy.",
   heroImage: {
     alt: "A paper-model community and green seed compressed between a giant market machine and a government filing system",

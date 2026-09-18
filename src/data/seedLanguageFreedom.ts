@@ -6,7 +6,7 @@ export const freedomArticleKo: SeedLanguageArticle = {
   date: "2026-09-12",
   readMinutes: 10,
   newsletterEligible: false,
-  title: "자유는 방임이 아니라, 스스로 설 수 있는 힘이다",
+  title: "자유는 방임이 아니라, 스스로 설 수 있는 힘이라는 말이다",
   subtitle: "자유의 반대말은 규제가 아니라 종속이다",
   summary: "자유는 마음대로 하는 것이 아니라 내 삶의 마지막 판단을 누가 내리느냐의 문제다. 간섭받지 않는 것만으로는 충분하지 않다. 누구의 자의적인 권력에도 종속되지 않고, 실제 선택할 수 있는 조건과 선택에 대한 책임이 함께 있을 때 자유는 시민을 주체로 세운다.",
   keyPoints: [

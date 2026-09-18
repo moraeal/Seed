@@ -3,7 +3,7 @@ import type { ColumnTranslation } from "../types";
 export const issue05: ColumnTranslation = {
   title: `When Political Power Tells the Chief Justice to Pick Again`,
   subtitle: `A parliamentary majority does not own the judiciary — why an unprecedented demand for renomination, impeachment pressure and Supreme Court expansion are warning signs for constitutional democracy`,
-  author: `Park Kyung-seuk`,
+  author: "Small Seed",
   summary: `The presidential office’s demand that the chief justice submit a different Supreme Court justice nominee, public talk from governing-party figures about impeaching the chief justice, and legislation expanding the Supreme Court are converging at the same time. Each step may have its own institutional rationale, but a governing majority should draw a firm line against the temptation to reshape the judiciary’s personnel and structure for its own political term.`,
   heroImage: {
     alt: `Symbolic image of an independent courthouse positioned between buildings representing two other branches of power`,

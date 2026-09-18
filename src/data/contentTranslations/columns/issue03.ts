@@ -3,7 +3,7 @@ import type { ColumnTranslation } from "../types";
 export const issue03: ColumnTranslation = {
   title: `The Civic Language Conservatives Lost`,
   subtitle: `From Gramsci’s war of position to SEED’s civic briefings: rethinking the recovery of conservative civil society`,
-  author: `Park Kyung-seuk`,
+  author: "Small Seed",
   summary: `The deeper crisis of Korean conservatism is not merely the loss of political power. It is the loss of a language capable of explaining freedom, fairness, the rule of law and markets in the everyday terms of citizens. This column argues that conservative civil society must rebuild trust by translating principles into civic language, institutions and practice.`,
   heroImage: {
     alt: `Portrait of Italian thinker Antonio Gramsci in the early 1920s`,

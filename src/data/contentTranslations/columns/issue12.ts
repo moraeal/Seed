@@ -3,7 +3,7 @@ import type { ColumnTranslation } from "../types";
 export const issue12: ColumnTranslation = {
   title: "When Civic Power Rules in the Name of Citizens",
   subtitle: "From Gramsci's war of position to civic authoritarianism—and why citizens must now scrutinize civic power",
-  author: "Park Kyung-seok",
+  author: "Small Seed",
   summary: "Civil society can become a power center when it accumulates public funding, personnel networks, media access and policy influence. Civic activism risks becoming civic authoritarianism when it occupies the public sphere, silences dissent through coordinated targeting and locks its influence into committees and law.",
   heroImage: {
     alt: "An editorial scene contrasting organized representatives at a brightly lit roundtable with ordinary citizens left beyond a transparent boundary",

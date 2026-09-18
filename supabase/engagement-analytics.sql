@@ -283,7 +283,7 @@ revoke all on function public.get_content_view_stats() from public, anon, authen
 revoke all on function public.get_daily_view_stats() from public, anon, authenticated;
 revoke all on function public.get_newsletter_subscribers() from public, anon, authenticated;
 revoke all on function public.get_member_registrations() from public, anon, authenticated;
-grant execute on function public.subscribe_newsletter(text, text, text) to anon, authenticated;
+grant execute on function public.subscribe_newsletter(text, text, text) to service_role;
 grant execute on function public.record_content_view(text, text, text) to anon, authenticated;
 grant execute on function public.get_engagement_summary() to authenticated;
 grant execute on function public.get_content_view_stats() to authenticated;
