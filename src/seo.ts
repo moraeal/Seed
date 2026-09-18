@@ -1,7 +1,7 @@
 import { getAllBriefingsNewestFirst } from "./data/allBriefings";
 import { columns, getColumnsNewestFirst, getHotIssueColumnsNewestFirst, isHotIssueColumn } from "./data/columns";
 import { newsArticles } from "./data/news";
-import { publicInterestWatchCases } from "./data/publicInterestWatch";
+import { publicInterestWatchCases } from "./data/newsTrackerRegistry";
 import { taxPolicies } from "./data/taxWatch";
 import { seedLanguageArticlesKo } from "./data/seedLanguage";
 import { seedLanguageEnvironmentArticlesKo } from "./data/seedLanguageEnvironment";
