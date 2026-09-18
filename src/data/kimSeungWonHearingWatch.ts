@@ -37,6 +37,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   },
   keyChanges: [
     {
+      date: "2026-09-18",
+      text: {
+        ko: "이재명 대통령은 기자회견에서 김 후보자 임명 여부에 관해 아직 최종 결론을 내리지 못했다며, 검증 과정에서 제기된 여러 논란과 국민 눈높이를 고려해 신중하게 결정하겠다고 밝혔습니다. 이는 임명 판단이 보류된 상태라는 대통령의 직접 설명이며, 임명 또는 지명 철회가 확정됐다는 뜻은 아닙니다.",
+        en: "President Lee Jae Myung said at a press conference that he had not reached a final decision on Kim's appointment and would decide carefully after considering the controversies raised during vetting and public expectations. This is the president's direct explanation that the decision remains pending, not confirmation of either appointment or withdrawal.",
+      },
+    },
+    {
       date: "2026-09-17",
       text: {
         ko: "제넨셀 의혹의 핵심 당사자인 양모 씨가 6쪽 입장문을 내고 김 후보자에게 치료제의 신속 검토를 요청한 사실과 정치권 친분을 과시한 언행을 인정·사과했습니다. 다만 위법한 특혜 요구, 정치후원금 약속과 전환사채 6억 원의 대가성은 모두 부인했습니다. 이는 양씨의 주장으로 수사·재판을 통해 확정된 판단은 아닙니다.",
@@ -541,6 +548,32 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-18",
+      title: { ko: "대통령, 임명 여부 ‘아직 최종 결론 못내’", en: "President says no final appointment decision yet" },
+      description: {
+        ko: "이재명 대통령은 9월 18일 기자회견에서 김 후보자를 임명할 계획인지 묻는 질문에 아직 최종 결론을 내리지 못했다고 답했습니다. 대통령은 인사 검증 과정에서 여러 논란이 발생했다고 평가하고, 그 과정에서 벌어진 사안과 지적, 국민 눈높이를 고려해 신중하게 결정하겠다고 밝혔습니다. 발언 내용은 확인된 대통령의 직접 설명이지만, 이날 임명 또는 지명 철회가 결정된 것은 아닙니다.",
+        en: "At a September 18 press conference, President Lee Jae Myung said he had not reached a final conclusion when asked whether he planned to appoint Kim. He said several controversies had arisen during vetting and that he would decide carefully after considering the matters and criticism raised and public expectations. The statement is a verified direct explanation from the president, but no appointment or withdrawal was decided that day.",
+      },
+      change: { ko: "대통령이 임명 판단 보류를 직접 확인", en: "President directly confirms the appointment decision remains pending" },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "뉴시스", en: "Newsis" },
+          title: { ko: "이 대통령, '김승원 임명 계획' 질문에 \"아직 최종 결론 내지 못해…신중하게 결정\"", en: "President says no final conclusion yet on Kim appointment and pledges careful decision" },
+          url: "https://www.newsis.com/view/NISX20260918_0003795395",
+          publishedAt: "2026-09-18",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "한국경제", en: "The Korea Economic Daily" },
+          title: { ko: "[속보] 李대통령 \"김승원 임명 여부, 아직 최종 결론 못내\"", en: "President says he has not reached a final decision on Kim appointment" },
+          url: "https://www.hankyung.com/article/2026091834767",
+          publishedAt: "2026-09-18",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "다음",
       title: { ko: "대통령의 임명 여부 확인", en: "Appointment decision" },
       description: {
@@ -617,6 +650,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+    { ko: "이재명 대통령은 2026년 9월 18일 기자회견에서 김 후보자 임명 여부에 관해 아직 최종 결론을 내리지 못했으며, 검증 과정의 논란과 국민 눈높이를 고려해 신중하게 결정하겠다고 밝혔습니다. 이날 임명 또는 지명 철회가 결정된 것은 아닙니다.", en: "At a September 18, 2026 press conference, President Lee Jae Myung said he had not reached a final decision on Kim's appointment and would decide carefully after considering the controversies raised during vetting and public expectations. No appointment or withdrawal was decided that day." },
     { ko: "제넨셀 의혹 관련 재판을 받고 있는 양모 씨는 2026년 9월 17일 변호인을 통해 6쪽 입장문을 공개했습니다. 신속 검토 요청과 정치권 친분 과시를 인정·사과하고 특혜 요구·후원금 약속·전환사채 대가성을 부인한 것은 양씨의 주장입니다.", en: "On September 17, 2026, the woman on trial in the Genencell-related case released a six-page statement through counsel. Her acknowledgment and apology over seeking an expedited review and boasting of political connections, and her denials of favoritism, a donation promise and a quid pro quo for the convertible-bond investment, are her claims." },
     { ko: "국회 법제사법위원회는 2026년 9월 17일 국민의힘 위원들이 퇴장한 가운데 민주당 주도로 김 후보자의 인사청문경과보고서를 ‘적격’ 의견으로 채택했고, 국회는 이날 보고서를 대통령실에 송부했습니다. 같은 날 청와대 대변인실은 온라인에 유포된 ‘김승원 임명안 재가’ 공지를 청와대 명의를 도용한 허위·조작 정보라고 공식 확인했으며, 오후 7시 30분 기준 재가는 이뤄지지 않았습니다.", en: "On September 17, 2026, the National Assembly's Legislation and Judiciary Committee adopted Kim's confirmation report with a fit-for-office opinion under Democratic Party leadership after People Power Party members walked out, and the Assembly sent it to the presidential office that day. The presidential office later identified an online notice claiming that Kim's appointment had been approved as fabricated information misusing its name; no approval had occurred as of 7:30 p.m." },
     { ko: "김 후보자 인사청문회 준비단은 2026년 9월 16일 후보자와 양모 씨가 함께 찍은 사진의 원본·비교 이미지와 해명 자료를 공개했습니다. 사진이 사무실 또는 상가에서 촬영됐고 의혹 제기 측이 악의적으로 편집했다는 내용은 준비단의 주장입니다.", en: "On September 16, 2026, Kim's hearing preparation team released an original and comparison image of a photo showing Kim with the woman, together with an explanatory statement. Its assertions that the photo was taken in an office or commercial space and was maliciously edited by the accusers are the team's claims." },
@@ -684,6 +718,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "뉴시스 — 대통령, 김승원 임명 여부 ‘아직 최종 결론 못내’", en: "Newsis — President says no final decision yet on Kim appointment" },
+      url: "https://www.newsis.com/view/NISX20260918_0003795395",
+    },
+    {
+      label: { ko: "한국경제 — 대통령, 김승원 임명 여부 신중 결정", en: "The Korea Economic Daily — President says Kim appointment requires careful decision" },
+      url: "https://www.hankyung.com/article/2026091834767",
+    },
     {
       label: { ko: "뉴시스 — 청와대, ‘김승원 임명안 재가’ 허위 공지에 엄정 대처", en: "Newsis — Presidential office warns over fabricated notice claiming Kim's appointment was approved" },
       url: "https://www.newsis.com/view/NISX20260917_0003794622",
