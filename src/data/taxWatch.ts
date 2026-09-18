@@ -8,7 +8,7 @@ export type TaxPolicy = {
   summary: LocalizedText;
   affected: LocalizedText;
   checkedAt: string;
-  deadline: string;
+  deadline?: string;
   heroImage: { ko: string; en: string; alt: LocalizedText; caption?: LocalizedText };
   processNote?: LocalizedText;
   oneSentence: LocalizedText;
@@ -27,8 +27,113 @@ const publicLegislation = "https://opinion.lawmaking.go.kr/gcom/ogLmPp";
 const fuelTaxNotice = "https://mofe.go.kr/lw/lap/detailTbPrvntcView.do?menuNo=7050300&searchBbsId1=MOSFBBS_000000000055&searchNttId1=MOSF_000000000079385";
 const lpgTaxNotice = "https://mofe.go.kr/lw/lap/detailTbPrvntcView.do?menuNo=7050300&searchBbsId1=MOSFBBS_000000000055&searchNttId1=MOSF_000000000079384";
 const fuelTaxReport = "https://www.mk.co.kr/news/economy/12156047";
+const contentStrategyBill = "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221473/detailRP?yType=I";
+const contentStrategyAccountBill = "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221472/detailRP?yType=I";
 
 export const taxPolicies: TaxPolicy[] = [
+  {
+    slug: "content-strategy-special-account-rebate-bill",
+    importance: 84,
+    status: { ko: "법안 발의", en: "Bill introduced" },
+    title: {
+      ko: "콘텐츠 지원 특별회계 신설안—현금환급·세제·부담금 경감",
+      en: "Content bill proposes a special account, cash rebates and tax relief",
+    },
+    summary: {
+      ko: "콘텐츠산업을 국가전략산업으로 지정하고 별도 특별회계, 제작비 현금환급, 세제·정책금융 우대, 지역방송 부담금 경감을 묶어 지원하는 법안이 발의됐습니다. 공식 요약에는 총비용·환급률·감면 규모가 제시되지 않았습니다.",
+      en: "A new bill would designate content as a national strategic industry and combine a dedicated special account, production-spending cash rebates, tax and policy-finance preferences, and levy relief for regional broadcasters. Its official summary gives no total cost, rebate rate or relief estimate.",
+    },
+    affected: {
+      ko: "콘텐츠 제작사 · OTT · 지역방송 · 납세자",
+      en: "Content producers · Streaming platforms · Regional broadcasters · Taxpayers",
+    },
+    checkedAt: "2026-09-19",
+    heroImage: {
+      ko: "images/monitoring/content-strategy-support-flow-ko.png",
+      en: "images/monitoring/content-strategy-support-flow-en.png",
+      alt: {
+        ko: "콘텐츠산업 특별회계에서 현금환급, 세제·금융 우대, 펀드, 부담금 경감으로 지원이 흐르는 구조",
+        en: "Flow diagram showing a content-industry special account funding cash rebates, tax and finance preferences, funds, and levy relief",
+      },
+      caption: {
+        ko: "법안이 제시한 네 갈래 지원 구조입니다. 공식 요약에는 특별회계 규모, 환급률, 부담금 경감액이 없습니다.",
+        en: "The bill's four support channels. The official summary does not state the special-account size, rebate rate or value of levy relief.",
+      },
+    },
+    processNote: {
+      ko: "2026년 9월 18일 발의된 의원입법안으로, 아직 확정된 법률이 아닙니다. 국회 심사 과정에서 지원 대상·재원·환급 기준과 시행시점이 달라질 수 있습니다.",
+      en: "This private member's bill was introduced on September 18, 2026 and has not been enacted. Eligibility, funding, rebate rules and timing may change during National Assembly review.",
+    },
+    oneSentence: {
+      ko: "콘텐츠산업 지원을 특별회계와 현금환급·세제·부담금 경감으로 상시화하는 틀을 만들지만, 시민이 부담할 총비용과 종료 기준은 아직 보이지 않습니다.",
+      en: "The bill would create a standing framework of special-account funding, cash rebates, tax preferences and levy relief, without yet showing taxpayers the total cost or an exit rule.",
+    },
+    keyChanges: [
+      {
+        title: { ko: "제작비를 현금으로 환급", en: "Cash rebates for production spending" },
+        body: {
+          ko: "국내에서 제작·투자하는 외국 사업자와 일정 규모 이상의 국내 제작·투자사에 적격지출 기본환급금과 추가환급을 지급할 수 있게 합니다. 공식 요약에는 환급률·상한·적격지출 범위가 없습니다.",
+          en: "Foreign producers investing in Korea and qualifying domestic producers or investors could receive base and additional rebates for eligible spending. The summary does not specify rates, caps or eligible-cost rules.",
+        },
+      },
+      {
+        title: { ko: "특별회계·세제·부담금 지원을 한 틀에", en: "One framework for accounts, tax and levy relief" },
+        body: {
+          ko: "콘텐츠전략산업발전특별회계와 두 종류의 펀드를 만들고, 세제·정책금융 우대와 지역 방송사업자 부담금 경감, OTT 상생투자협력금 인센티브의 근거를 둡니다.",
+          en: "It would establish a dedicated special account and two funds, while authorizing tax and policy-finance preferences, levy relief for regional broadcasters, and incentives tied to voluntary OTT cooperation payments.",
+        },
+      },
+    ],
+    changeMap: [
+      {
+        title: { ko: "시민의 부담", en: "Citizen burden" },
+        items: [
+          { ko: "현금환급은 예산 지출이고 세제 우대와 부담금 경감은 정부 수입 감소입니다.", en: "Cash rebates are budget outlays; tax preferences and levy relief reduce public revenue." },
+          { ko: "세 수단의 비용을 합친 총액이 공개돼야 다른 분야 지출과 비교할 수 있습니다.", en: "A combined cost is needed to compare this package with other public spending." },
+        ],
+      },
+      {
+        title: { ko: "기업의 선택", en: "Enterprise choice" },
+        items: [
+          { ko: "국내 제작과 지식재산권 국내 귀속에 유리한 계약은 더 큰 지원을 받을 수 있습니다.", en: "Domestic production and contracts keeping intellectual property in Korea could receive preferential support." },
+          { ko: "전략콘텐츠 지정과 환급 기준에 따라 같은 업종에서도 지원 조건이 달라집니다.", en: "Strategic-content designation and rebate rules could create different conditions within the same industry." },
+        ],
+      },
+      {
+        title: { ko: "정부의 권한", en: "Government power" },
+        items: [
+          { ko: "콘텐츠산업전략위원회가 기본계획과 부처 간 재원 배분을 심의·의결합니다.", en: "A Content Industry Strategy Committee would decide plans and inter-ministerial resource allocation." },
+          { ko: "특별회계·펀드·환급의 선정 기준과 사후 성과 공개가 핵심 통제장치가 됩니다.", en: "Eligibility rules and public performance reporting become the key safeguards for the account, funds and rebates." },
+        ],
+      },
+    ],
+    officialRationale: {
+      ko: "발의자는 글로벌 OTT 확산으로 국내 제작사의 지식재산권과 투자 기반이 취약해졌고, 영국·캐나다 등과의 제작 유치 경쟁에 대응하려면 정책금융·세제·재정 지원을 한 체계로 묶어야 한다고 설명합니다. 2030년 K-컬처 300조 원, 문화수출 50조 원 등의 정부 목표도 근거로 들었습니다.",
+      en: "The sponsors argue that global streaming growth has weakened domestic producers' intellectual-property and financing position, and that Korea needs an integrated package of fiscal, tax and policy-finance support to compete with production incentives in countries such as the United Kingdom and Canada. They also cite the government's 2030 targets for a KRW 300 trillion K-culture economy and KRW 50 trillion in cultural exports.",
+    },
+    risks: [
+      { ko: "공식 요약에는 특별회계 재원, 연간 지출 한도, 현금환급률과 일몰기한이 제시되지 않았습니다.", en: "The summary provides no funding source, annual spending cap, rebate rate or sunset date." },
+      { ko: "전략콘텐츠 지정과 우대 기준이 불투명하면 정부가 시장의 승자와 계약 형태를 고르는 권한이 커집니다.", en: "Opaque strategic-content and preference rules could expand government's power to select market winners and favored contract structures." },
+      { ko: "OTT의 상생투자협력금이 실제로 자발적인지, 인센티브가 사실상 납부 압력으로 작동하지 않는지 확인해야 합니다.", en: "The voluntary nature of OTT cooperation payments needs scrutiny, including whether incentives create de facto pressure to contribute." },
+    ],
+    questions: [
+      { ko: "특별회계·펀드·현금환급·세제 우대·부담금 경감을 모두 합친 연간 재정비용은 얼마입니까?", en: "What is the annual combined fiscal cost of the special account, funds, cash rebates, tax preferences and levy relief?" },
+      { ko: "환급률·지출 상한·적격지출·전략콘텐츠는 누가 어떤 공개 기준으로 정합니까?", en: "Who will set the rebate rate, spending cap, eligible costs and strategic-content criteria, and under what published rules?" },
+      { ko: "지원에 일몰과 정기 성과평가를 두고 기업별 수혜액과 고용·수출 성과를 공개합니까?", en: "Will support include a sunset and periodic review, with recipient-level benefits and employment and export outcomes disclosed?" },
+    ],
+    seedView: {
+      ko: "콘텐츠산업의 협상력과 지식재산권을 키우자는 취지는 타당합니다. 그러나 특별회계는 미래 세금에 대한 고정된 청구권이고, 현금환급은 지출이며, 세제 우대와 부담금 경감은 보이지 않는 재정비용입니다. 서로 다른 이름으로 나눠 놓으면 전체 비용이 작아 보입니다. 국회는 지원 근거를 만들기 전에 모든 수단을 합친 비용표, 선정 기준, 일몰과 성과 공개 방식을 먼저 제시해야 합니다. 지원 패키지는 회계의 단위가 아닙니다.",
+      en: "The case for stronger bargaining power and domestic intellectual-property ownership is credible. But a special account creates a standing claim on future taxes, cash rebates are spending, and tax preferences and levy relief are less visible fiscal costs. Splitting them across different labels can make the total look smaller than it is. Before authorizing the package, Parliament should publish one combined cost table, eligibility rules, a sunset and a performance-disclosure plan. A 'support package' is not an accounting unit.",
+    },
+    timeline: [
+      { date: "2026-09-18", title: { ko: "콘텐츠산업 특별법안과 국가재정법 개정안 발의", en: "Content-industry bill and companion National Finance Act amendment introduced" } },
+      { date: "2026-09-19", title: { ko: "씨앗의 소리 확인·분석", en: "Verified and analyzed by Seed Voice" } },
+    ],
+    sources: [
+      { label: { ko: "국회 의안 제2221473호 콘텐츠산업 특별법안", en: "National Assembly Bill 2221473: Content Industry Special Act" }, url: contentStrategyBill },
+      { label: { ko: "국회 의안 제2221472호 국가재정법 개정안", en: "National Assembly Bill 2221472: National Finance Act amendment" }, url: contentStrategyAccountBill },
+    ],
+  },
   {
     slug: "fuel-tax-cut-extended-november-2026",
     importance: 83,

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">콘텐츠산업 지원 구조</title>
+  <desc id="desc">특별회계와 정책 결정에서 현금환급, 세제와 금융 우대, 투자 펀드, 부담금 경감으로 이어지는 법안 구조</desc>
+  <rect width="1600" height="900" fill="#0d2433"/>
+  <path d="M0 760 C300 650 480 830 790 710 C1050 610 1270 760 1600 610 L1600 900 L0 900Z" fill="#123f36" opacity=".72"/>
+  <text x="110" y="115" fill="#d3aa55" font-family="Noto Sans KR Thin, sans-serif" font-size="28" font-weight="800" letter-spacing="5">TAX &amp; LEVY WATCH</text>
+  <text x="110" y="184" fill="#ffffff" font-family="Noto Sans KR Thin, sans-serif" font-size="50" font-weight="800">콘텐츠 지원, 네 갈래 재정비용</text>
+  <text x="110" y="231" fill="#dce7e2" font-family="Noto Sans KR Thin, sans-serif" font-size="24">2026.09.18 발의 · 아직 법률이 아닌 국회 제안</text>
+
+  <rect x="110" y="300" width="420" height="230" rx="24" fill="#f6f1e7"/>
+  <text x="320" y="355" text-anchor="middle" fill="#163f36" font-family="Noto Sans KR Thin, sans-serif" font-size="22" font-weight="800">재원과 결정</text>
+  <text x="320" y="419" text-anchor="middle" fill="#0d2433" font-family="Noto Sans KR Thin, sans-serif" font-size="35" font-weight="800">콘텐츠전략산업</text>
+  <text x="320" y="463" text-anchor="middle" fill="#0d2433" font-family="Noto Sans KR Thin, sans-serif" font-size="35" font-weight="800">발전특별회계</text>
+  <text x="320" y="505" text-anchor="middle" fill="#5d6965" font-family="Noto Sans KR Thin, sans-serif" font-size="19">전략위원회가 계획·재원 배분 심의</text>
+
+  <path d="M555 414 H654" stroke="#d3aa55" stroke-width="10" stroke-linecap="round"/>
+  <path d="M642 394 L672 414 L642 434" fill="none" stroke="#d3aa55" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g font-family="Noto Sans KR Thin, sans-serif">
+    <rect x="710" y="286" width="350" height="140" rx="20" fill="#ffffff"/>
+    <text x="750" y="333" fill="#d3aa55" font-size="22" font-weight="900">01</text>
+    <text x="750" y="376" fill="#0d2433" font-size="28" font-weight="800">제작비 현금환급</text>
+    <text x="750" y="405" fill="#66716d" font-size="17">환급률·상한은 공식 요약에 없음</text>
+
+    <rect x="1090" y="286" width="400" height="140" rx="20" fill="#ffffff"/>
+    <text x="1130" y="333" fill="#d3aa55" font-size="22" font-weight="900">02</text>
+    <text x="1130" y="376" fill="#0d2433" font-size="28" font-weight="800">세제·정책금융 우대</text>
+    <text x="1130" y="405" fill="#66716d" font-size="17">IP 귀속·계약 개선과 연계</text>
+
+    <rect x="710" y="458" width="350" height="140" rx="20" fill="#ffffff"/>
+    <text x="750" y="505" fill="#d3aa55" font-size="22" font-weight="900">03</text>
+    <text x="750" y="548" fill="#0d2433" font-size="28" font-weight="800">IP·공동제작 펀드</text>
+    <text x="750" y="577" fill="#66716d" font-size="17">별도 투자 재원 조성</text>
+
+    <rect x="1090" y="458" width="400" height="140" rx="20" fill="#ffffff"/>
+    <text x="1130" y="505" fill="#d3aa55" font-size="22" font-weight="900">04</text>
+    <text x="1130" y="548" fill="#0d2433" font-size="28" font-weight="800">지역방송 부담금 경감</text>
+    <text x="1130" y="577" fill="#66716d" font-size="17">OTT 협력금 인센티브도 포함</text>
+  </g>
+
+  <rect x="110" y="665" width="1380" height="112" rx="18" fill="#d3aa55"/>
+  <text x="150" y="714" fill="#0d2433" font-family="Noto Sans KR Thin, sans-serif" font-size="25" font-weight="900">시민이 확인할 한 줄</text>
+  <text x="150" y="753" fill="#0d2433" font-family="Noto Sans KR Thin, sans-serif" font-size="25" font-weight="700">현금지출 + 세수감소 + 부담금 경감 = 연간 총비용은 얼마인가</text>
+  <text x="1490" y="838" text-anchor="end" fill="#dce7e2" font-family="Noto Sans KR Thin, sans-serif" font-size="18">국회 의안 2221473·2221472 요약을 바탕으로 씨앗의 소리 재구성</text>
+</svg>
