@@ -76,8 +76,8 @@ export default function Home() {
   const journalColumns = allJournalColumns
     .filter((item) => `/columns/${item.slug}` !== activeFeaturedPath)
     .slice(0, 5);
-  const voiceLeadColumn = journalColumns[4];
-  const voiceListColumns = journalColumns.slice(0, 4);
+  const voiceLeadColumn = journalColumns[0];
+  const voiceListColumns = journalColumns.slice(1, 5);
   const visibleHotIssues = hotIssues.filter((item) => item.to !== activeFeaturedPath);
   const latestHotIssue = visibleHotIssues[0];
   const briefings = localizedBriefings
