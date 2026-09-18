@@ -15,8 +15,8 @@ export const politicsArticleKo: SeedLanguageArticle = {
   date: "2026-09-18",
   readMinutes: 11,
   newsletterEligible: false,
-  title: "정치는 사회를 대신하는 권력이 아니라 시민이 사용하는 도구라는 말이다",
-  subtitle: "정치란 무엇인가",
+  title: "정치는 권력이 아니라 도구다",
+  subtitle: "정치는 사회를 대신하는 권력이 아니라 시민이 사용하는 도구라는 말이다",
   summary: "정치는 서로 다른 이해관계를 조정하고 공동의 규칙을 만들어 법의 지배 아래 예측 가능한 사회를 세우는 일이다. 민주주의는 좋은 지도자에게 문제를 맡기는 제도가 아니라 시민이 권력을 위임하고, 감시하고, 제한하는 과정이다. 정책은 사회를 바꾸는 수단이고 시민은 사회를 바꾸는 주체다.",
   keyPoints: [
     "정치는 서로 다른 이해관계를 조정하고 누구에게나 적용되는 공동의 규칙을 만드는 일이다.",
@@ -38,7 +38,7 @@ export const politicsArticleKo: SeedLanguageArticle = {
     credit: "씨앗의 소리 편집 도표",
   },
   inlineImageAfterSection: 6,
-  showTableOfContents: true,
+  showTableOfContents: false,
   leadParagraphs: [
     "정치란 무엇인가.",
     "우리는 대통령을 뽑고 국회의원을 선출하는 일, 정당이 경쟁하고 국회가 법을 만들며 정부가 정책을 집행하는 일을 정치라고 배웠다. 사회에 문제가 생기면 정치가 해결해야 한다고 생각한다. 해결하지 못하면 무능한 정부를 비판하고 다음 선거에서 다른 정당을 선택한다.",
@@ -167,8 +167,8 @@ export const politicsArticleKo: SeedLanguageArticle = {
 export const politicsArticleEn: SeedLanguageArticle = {
   ...politicsArticleKo,
   term: "Politics",
-  title: "Politics Is Not Power That Replaces Society; It Is a Tool Citizens Use",
-  subtitle: "What is politics?",
+  title: "Politics Is Not Power. It Is a Tool.",
+  subtitle: "Politics does not replace society; it is a tool citizens use",
   summary: "Politics reconciles competing interests and creates common rules so that people can plan their lives under the rule of law. Democracy is not the act of handing every problem to a good leader. It is the continuing work of authorizing, watching and limiting power. Policy is a means of social change; citizens are its agents.",
   keyPoints: [
     "Politics reconciles competing interests and creates common rules that apply to everyone.",
