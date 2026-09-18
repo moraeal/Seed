@@ -8,12 +8,11 @@ import { taxPolicies } from "../data/taxWatch";
 import { useLanguage } from "../i18n";
 
 const dateText = (date: string) => date.replace(/-/g, ".");
-const getKoreaDate = () => new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
 
 function PolicyRow({ policy, ko, index, today = false }: { policy: (typeof taxPolicies)[number]; ko: boolean; index: number; today?: boolean }) {
   return <Link to={`/monitoring/tax/${policy.slug}`} className="group grid gap-5 border-b border-charcoal/10 px-4 py-7 transition last:border-b-0 hover:bg-[#FBFAF6] sm:px-6 lg:grid-cols-[160px_1fr_auto] lg:items-center">
     <div><span className={`inline-flex rounded-full px-2.5 py-1 text-[11px] font-black ${policy.importance >= 85 ? "bg-red-800 text-white" : "bg-gold text-navy"}`}>{ko ? `중요도 ${policy.importance}` : `Impact ${policy.importance}`}</span><p className="mt-3 flex items-center gap-2 text-xs text-charcoal/50"><CalendarDays size={14}/>{ko ? `확인 ${dateText(policy.checkedAt)}` : `Checked ${policy.checkedAt}`}</p></div>
-    <div><div className="mb-2 flex flex-wrap gap-2 text-xs font-bold text-charcoal/55"><span>{String(index + 1).padStart(2, "0")}</span><span className="text-charcoal/35">{ko ? policy.status.ko : policy.status.en}</span><span className="text-charcoal/35">{ko ? `의견 제출 ${dateText(policy.deadline)}까지` : `Comments due ${policy.deadline}`}</span>{today && <span className="text-gold">{ko ? "오늘 공개" : "Published today"}</span>}</div><h2 className="editorial-title text-[1.3rem] font-bold leading-snug text-navy group-hover:text-green-deep sm:text-[1.55rem]">{ko ? policy.title.ko : policy.title.en}</h2><p className="mt-2 line-clamp-2 max-w-3xl text-sm leading-7 text-charcoal/60">{ko ? policy.summary.ko : policy.summary.en}</p><p className="mt-3 flex items-center gap-2 text-xs text-charcoal/45"><ReceiptText size={14}/>{ko ? policy.affected.ko : policy.affected.en}</p></div>
+    <div><div className="mb-2 flex flex-wrap gap-2 text-xs font-bold text-charcoal/55"><span>{String(index + 1).padStart(2, "0")}</span><span className="text-charcoal/35">{ko ? policy.status.ko : policy.status.en}</span><span className="text-charcoal/35">{ko ? `의견 제출 ${dateText(policy.deadline)}까지` : `Comments due ${policy.deadline}`}</span>{today && <span className="text-gold">{ko ? "최근 공개" : "Latest release"}</span>}</div><h2 className="editorial-title text-[1.3rem] font-bold leading-snug text-navy group-hover:text-green-deep sm:text-[1.55rem]">{ko ? policy.title.ko : policy.title.en}</h2><p className="mt-2 line-clamp-2 max-w-3xl text-sm leading-7 text-charcoal/60">{ko ? policy.summary.ko : policy.summary.en}</p><p className="mt-3 flex items-center gap-2 text-xs text-charcoal/45"><ReceiptText size={14}/>{ko ? policy.affected.ko : policy.affected.en}</p></div>
     <span className="flex items-center gap-2 text-sm font-extrabold text-green-deep">{ko ? "분석 보기" : "View analysis"}<ArrowRight size={15}/></span>
   </Link>;
 }
@@ -22,9 +21,12 @@ export default function TaxWatch() {
   const { language } = useLanguage();
   const ko = language === "ko";
   const [query, setQuery] = useState("");
-  const today = useMemo(() => getKoreaDate(), []);
-  const todayPolicies = useMemo(() => taxPolicies.filter((policy) => policy.checkedAt === today), [today]);
-  const pastPolicies = useMemo(() => taxPolicies.filter((policy) => policy.checkedAt !== today), [today]);
+  const latestCheckedAt = useMemo(() => taxPolicies.reduce(
+    (latest, policy) => policy.checkedAt > latest ? policy.checkedAt : latest,
+    "",
+  ), []);
+  const todayPolicies = useMemo(() => taxPolicies.filter((policy) => policy.checkedAt === latestCheckedAt), [latestCheckedAt]);
+  const pastPolicies = useMemo(() => taxPolicies.filter((policy) => policy.checkedAt !== latestCheckedAt), [latestCheckedAt]);
   const filteredPastPolicies = useMemo(() => pastPolicies.filter((policy) => {
     const term = query.trim().toLowerCase();
     return !term || [policy.title.ko, policy.title.en, policy.summary.ko, policy.summary.en, policy.affected.ko, policy.affected.en, policy.status.ko, policy.status.en].some((value) => value.toLowerCase().includes(term));
@@ -48,9 +50,9 @@ export default function TaxWatch() {
       </section>
 
       <section id="today-tax-policies" className="mt-10 scroll-mt-24 overflow-hidden rounded-xl border border-charcoal/10 bg-white shadow-[0_12px_32px_rgba(31,51,73,0.055)]" aria-labelledby="today-tax-policies-title">
-        <div className="flex flex-col gap-3 border-b border-charcoal/10 bg-white px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-6"><div><span className="text-[10px] font-extrabold tracking-[.2em] text-gold">TODAY'S TAX POLICIES</span><h2 id="today-tax-policies-title" className="editorial-title mt-1 text-2xl font-bold text-navy">{ko ? "오늘의 세금정책" : "Today's Tax Policies"}<span className="ml-2 rounded-full bg-charcoal/5 px-2 py-0.5 text-xs text-charcoal/50">{todayPolicies.length}</span></h2></div><p className="max-w-2xl text-sm leading-6 text-charcoal/60">{ko ? "오늘 새로 확인해 공개한 세금정책입니다. 정책명이나 분석 보기를 누르면 시민 부담과 기업 활동, 정부 권한의 변화를 확인할 수 있습니다." : "Tax measures newly verified and published today. Open a record to review changes to civic burdens, enterprise and government power."}</p></div>
-        <div className="flex flex-col gap-3 border-b border-charcoal/10 bg-[#FAF8F2] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6"><p className="text-sm leading-7 text-charcoal/60"><strong className="text-navy">{dateText(today)}</strong><br/>{ko ? "정부 발표·입법예고·국회 심사 자료에서 중요도 75점 이상인 정책을 확인해 공개합니다." : "We review government announcements, legislative notices and National Assembly materials, publishing measures scoring 75 or above."}</p><a href="https://opinion.lawmaking.go.kr/gcom/ogLmPp" target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center gap-2 text-xs font-extrabold text-green-deep">{ko ? "입법예고 검색·의견 제출" : "Search notices and comment"}<ExternalLink size={13}/></a></div>
-        {todayPolicies.length ? <div>{todayPolicies.map((policy, index) => <PolicyRow key={policy.slug} policy={policy} ko={ko} index={index} today/>)}</div> : <div className="py-16 text-center"><ReceiptText className="mx-auto text-gold"/><p className="mt-4 text-sm font-bold text-navy">{ko ? "오늘 새로 공개된 세금정책이 아직 없습니다." : "No tax policy has been newly published today."}</p></div>}
+        <div className="flex flex-col gap-3 border-b border-charcoal/10 bg-white px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-6"><div><span className="text-[10px] font-extrabold tracking-[.2em] text-gold">TODAY'S TAX POLICIES</span><h2 id="today-tax-policies-title" className="editorial-title mt-1 text-2xl font-bold text-navy">{ko ? "오늘의 세금정책" : "Today's Tax Policies"}<span className="ml-2 rounded-full bg-charcoal/5 px-2 py-0.5 text-xs text-charcoal/50">{todayPolicies.length}</span></h2></div><p className="max-w-2xl text-sm leading-6 text-charcoal/60">{ko ? "가장 최근에 공개한 세금정책을 다음 업데이트 전까지 유지합니다. 정책명이나 분석 보기를 누르면 시민 부담과 기업 활동, 정부 권한의 변화를 확인할 수 있습니다." : "The most recently published tax measures remain here until the next update. Open a record to review changes to civic burdens, enterprise and government power."}</p></div>
+        <div className="flex flex-col gap-3 border-b border-charcoal/10 bg-[#FAF8F2] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6"><p className="text-sm leading-7 text-charcoal/60"><strong className="text-navy">{dateText(latestCheckedAt)}</strong><br/>{ko ? "정부 발표·입법예고·국회 심사 자료에서 중요도 75점 이상인 정책을 확인해 공개합니다." : "We review government announcements, legislative notices and National Assembly materials, publishing measures scoring 75 or above."}</p><a href="https://opinion.lawmaking.go.kr/gcom/ogLmPp" target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center gap-2 text-xs font-extrabold text-green-deep">{ko ? "입법예고 검색·의견 제출" : "Search notices and comment"}<ExternalLink size={13}/></a></div>
+        {todayPolicies.length ? <div>{todayPolicies.map((policy, index) => <PolicyRow key={policy.slug} policy={policy} ko={ko} index={index} today/>)}</div> : <div className="py-16 text-center"><ReceiptText className="mx-auto text-gold"/><p className="mt-4 text-sm font-bold text-navy">{ko ? "공개된 세금정책이 아직 없습니다." : "No tax policies have been published yet."}</p></div>}
       </section>
 
       <section id="past-tax-policies" className="mt-10 scroll-mt-24 overflow-hidden rounded-xl border border-charcoal/10 bg-white shadow-[0_12px_32px_rgba(31,51,73,0.055)]" aria-labelledby="past-tax-policies-title">
