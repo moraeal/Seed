@@ -66,8 +66,8 @@ export default function LivingWatchDetail({ item, language, continuation }: Prop
 
               <dl className="mt-6 grid gap-px overflow-hidden border border-green-deep/12 bg-green-deep/12 sm:grid-cols-3">
                 <div className="bg-white p-4">
-                  <dt className="text-[10px] font-black tracking-[.14em] text-charcoal/40">{ko ? "사건 시작" : "OPENED"}</dt>
-                  <dd className="mt-2 text-sm font-extrabold text-navy">{item.openedAt?.replace(/-/g, ".")}</dd>
+                  <dt className="text-[10px] font-black tracking-[.14em] text-charcoal/40">{item.publishedAt ? (ko ? "최초 게시" : "FIRST PUBLISHED") : (ko ? "사건 시작" : "OPENED")}</dt>
+                  <dd className="mt-2 text-sm font-extrabold text-navy">{(item.publishedAt ?? item.openedAt)?.replace(/-/g, ".")}</dd>
                 </div>
                 <div className="bg-white p-4">
                   <dt className="text-[10px] font-black tracking-[.14em] text-charcoal/40">{ko ? "마지막 업데이트" : "LAST UPDATED"}</dt>
