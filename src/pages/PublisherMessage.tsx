@@ -125,6 +125,19 @@ export default function PublisherMessage() {
       <main className="py-8 sm:py-10">
         <article className="container-page max-w-5xl">
           <div className="mx-auto max-w-3xl">
+            <section className="mb-10 border-y border-green-deep/15 bg-[#F1F2EC] px-6 py-7 sm:mb-12 sm:px-10 sm:py-8">
+              <p className="section-kicker">{content.contributorsKicker}</p>
+              <h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{content.contributorsTitle}</h2>
+              <div className="mt-7 divide-y divide-green-deep/15">
+                {content.contributors.map((contributor) => (
+                  <article key={contributor.name} className="py-6 first:pt-0 last:pb-0">
+                    <h3 className="editorial-title text-2xl font-bold text-navy">{contributor.name}</h3>
+                    <p className="mt-4 text-base leading-7 text-charcoal/68">{contributor.bio}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+
             {content.sections.map((section, index) => (
               <Fragment key={section.title}>
                 <section className={index === 0 ? "" : "mt-9 border-t border-green-deep/12 pt-9 sm:mt-10 sm:pt-10"}>
@@ -153,18 +166,6 @@ export default function PublisherMessage() {
             </blockquote>
             <p className="text-[17px] leading-[1.82] text-charcoal/75 sm:text-lg">{content.closing}</p>
 
-            <section className="mt-10 border-y border-green-deep/15 bg-[#F1F2EC] px-6 py-7 sm:mt-12 sm:px-10 sm:py-8">
-              <p className="section-kicker">{content.contributorsKicker}</p>
-              <h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{content.contributorsTitle}</h2>
-              <div className="mt-7 divide-y divide-green-deep/15">
-                {content.contributors.map((contributor) => (
-                  <article key={contributor.name} className="py-6 first:pt-0 last:pb-0">
-                    <h3 className="editorial-title text-2xl font-bold text-navy">{contributor.name}</h3>
-                    <p className="mt-4 text-base leading-7 text-charcoal/68">{contributor.bio}</p>
-                  </article>
-                ))}
-              </div>
-            </section>
           </div>
 
         </article>
