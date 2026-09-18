@@ -575,31 +575,16 @@ Deno.serve(async (req: Request) => {
     const mediaScores = new Map<string, number>();
     if (shouldCheckMedia) {
       try {
-        const broadCoverage = await fetchNewsCandidates('"국회 본회의" (법안 OR 개정안) (통과 OR 가결) when:7d', 100);
+        const broadCoverage = [
+          ...await fetchNewsCandidates('"국회 본회의" 법안 통과 when:7d', 100),
+          ...await fetchNewsCandidates('"국회 본회의" 개정안 가결 when:7d', 100),
+        ].filter((item, itemIndex, items) => items.findIndex((candidate) => candidate.url === item.url) === itemIndex);
         for (const bill of saved) {
           const matches = broadCoverage.filter((candidate) => matchesBill(candidate, bill));
           if (matches.length) mediaCandidates.set(bill.bill_id, matches);
         }
       } catch (error) {
         warnings.push(`media-discovery/broad: ${error instanceof Error ? error.message : String(error)}`);
-      }
-      // Every passed bill is scored from the official record. Media lookup is capped to the
-      // 12 strongest civic-impact candidates so one large plenary sitting cannot overwhelm RSS.
-      const mediaDiscoveryBills = [...saved]
-        .sort((a, b) => (b.importance_score + b.direction_risk_score) - (a.importance_score + a.direction_risk_score))
-        .slice(0, 12);
-      for (let index = 0; index < mediaDiscoveryBills.length; index += 3) {
-        await Promise.all(mediaDiscoveryBills.slice(index, index + 3).map(async (bill) => {
-          try {
-            const candidates = await fetchMediaCandidates(bill);
-            const combined = [...(mediaCandidates.get(bill.bill_id) || []), ...candidates]
-              .filter((item, itemIndex, items) => items.findIndex((candidate) => candidate.url === item.url) === itemIndex);
-            mediaCandidates.set(bill.bill_id, combined);
-          } catch (error) {
-            warnings.push(`media-discovery/${bill.bill_id}: ${error instanceof Error ? error.message : String(error)}`);
-          }
-        }));
-        if (index + 3 < mediaDiscoveryBills.length) await wait(500);
       }
       for (const bill of saved) mediaScores.set(bill.bill_id, mediaImpact(mediaCandidates.get(bill.bill_id) || []));
     }
