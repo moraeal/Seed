@@ -9,8 +9,8 @@ import SafeImage from "../components/SafeImage";
 
 const dateText = (date: string | null) => date ? date.replace(/-/g, ".") : "—";
 
-const getKoreaDate = (value: number | string = Date.now()) => new Date(
-  typeof value === "number" ? value + 9 * 60 * 60 * 1000 : new Date(value).getTime() + 9 * 60 * 60 * 1000,
+const getKoreaDate = (value: string) => new Date(
+  new Date(value).getTime() + 9 * 60 * 60 * 1000,
 ).toISOString().slice(0, 10);
 
 function BillRow({ bill, ko, today = false }: { bill: LegislativeBill; ko: boolean; today?: boolean }) {
@@ -18,7 +18,7 @@ function BillRow({ bill, ko, today = false }: { bill: LegislativeBill; ko: boole
   const title = ko ? bill.title : bill.analysis?.title_en || bill.title;
   return <Link to={`/monitoring/legislation/${bill.slug}`} className="group grid gap-5 border-b border-charcoal/10 px-4 py-7 transition last:border-b-0 hover:bg-[#FBFAF6] sm:px-6 lg:grid-cols-[160px_1fr_auto] lg:items-center">
     <div><span className={`inline-flex rounded-full px-2.5 py-1 text-[11px] font-black ${bill.importance_level === "critical" ? "bg-red-800 text-white" : bill.importance_level === "high" ? "bg-gold text-navy" : "bg-navy/10 text-navy"}`}>{ko ? `시민영향도 ${bill.importance_score}` : `Civic impact ${bill.importance_score}`}</span><p className="mt-3 flex items-center gap-2 text-xs text-charcoal/50"><CalendarDays size={14}/>{dateText(bill.plenary_passed_at || bill.proposed_date)}</p></div>
-    <div><div className="mb-2 flex flex-wrap gap-2 text-xs font-bold text-charcoal/55"><span>{bill.committee || (ko ? "소관위 미정" : "Committee pending")}</span>{bill.bill_no && <span className="text-charcoal/35">{bill.bill_no}</span>}<span className="text-charcoal/35">{bill.processing_result || bill.current_stage || (ko ? "본회의 의결" : "Plenary vote")}</span>{today && <span className="inline-flex items-center gap-1 text-gold"><Star size={12} fill="currentColor"/>{ko ? "오늘 공개" : "Published today"}</span>}</div><h2 className="editorial-title text-[1.3rem] font-bold leading-snug text-navy group-hover:text-green-deep sm:text-[1.55rem]">{title}</h2><p className="mt-2 line-clamp-2 max-w-3xl text-sm leading-7 text-charcoal/60">{summary || (ko ? bill.official_summary : undefined) || (ko ? "본회의를 통과한 법안의 내용과 영향을 확인하고 있습니다." : "Reviewing the substance and effects of this plenary-passed bill.")}</p><p className="mt-3 flex flex-wrap items-center gap-3 text-xs text-charcoal/45"><span className="flex items-center gap-2"><Building2 size={14}/>{bill.proposer || bill.representative_proposer || (ko ? "제안자 확인 중" : "Sponsor pending")}</span>{bill.media_impact_score > 0 && <span>{ko ? `언론관심도 ${bill.media_impact_score}` : `Media attention ${bill.media_impact_score}`}</span>}</p></div>
+    <div><div className="mb-2 flex flex-wrap gap-2 text-xs font-bold text-charcoal/55"><span>{bill.committee || (ko ? "소관위 미정" : "Committee pending")}</span>{bill.bill_no && <span className="text-charcoal/35">{bill.bill_no}</span>}<span className="text-charcoal/35">{bill.processing_result || bill.current_stage || (ko ? "본회의 의결" : "Plenary vote")}</span>{today && <span className="inline-flex items-center gap-1 text-gold"><Star size={12} fill="currentColor"/>{ko ? "최근 공개" : "Latest release"}</span>}</div><h2 className="editorial-title text-[1.3rem] font-bold leading-snug text-navy group-hover:text-green-deep sm:text-[1.55rem]">{title}</h2><p className="mt-2 line-clamp-2 max-w-3xl text-sm leading-7 text-charcoal/60">{summary || (ko ? bill.official_summary : undefined) || (ko ? "본회의를 통과한 법안의 내용과 영향을 확인하고 있습니다." : "Reviewing the substance and effects of this plenary-passed bill.")}</p><p className="mt-3 flex flex-wrap items-center gap-3 text-xs text-charcoal/45"><span className="flex items-center gap-2"><Building2 size={14}/>{bill.proposer || bill.representative_proposer || (ko ? "제안자 확인 중" : "Sponsor pending")}</span>{bill.media_impact_score > 0 && <span>{ko ? `언론관심도 ${bill.media_impact_score}` : `Media attention ${bill.media_impact_score}`}</span>}</p></div>
     <span className="flex items-center gap-2 text-sm font-extrabold text-green-deep">{ko ? "분석 보기" : "View analysis"}<ArrowRight size={15}/></span>
   </Link>;
 }
@@ -39,13 +39,17 @@ export default function LegislativeWatch() {
       .finally(() => setLoading(false));
   }, [ko]);
 
-  const koreaToday = useMemo(() => getKoreaDate(), []);
+  const latestPublishedDate = useMemo(() => bills.reduce((latest, bill) => {
+    if (!bill.published_at) return latest;
+    const publishedDate = getKoreaDate(bill.published_at);
+    return publishedDate > latest ? publishedDate : latest;
+  }, ""), [bills]);
   const todayBills = useMemo(() => bills.filter((bill) => (
-    bill.published_at ? getKoreaDate(bill.published_at) === koreaToday : false
-  )), [bills, koreaToday]);
+    bill.published_at ? getKoreaDate(bill.published_at) === latestPublishedDate : false
+  )), [bills, latestPublishedDate]);
   const pastBills = useMemo(() => bills.filter((bill) => (
-    !bill.published_at || getKoreaDate(bill.published_at) !== koreaToday
-  )), [bills, koreaToday]);
+    !bill.published_at || getKoreaDate(bill.published_at) !== latestPublishedDate
+  )), [bills, latestPublishedDate]);
   const filteredPastBills = useMemo(() => pastBills.filter((bill) => {
     if (level !== "all" && bill.importance_level !== level) return false;
     const term = query.trim().toLowerCase();
@@ -87,15 +91,15 @@ export default function LegislativeWatch() {
       <section id="today-bills" className="mt-10 scroll-mt-24 overflow-hidden rounded-xl border border-charcoal/10 bg-white shadow-[0_12px_32px_rgba(31,51,73,0.055)]" aria-labelledby="today-bills-title">
         <div className="flex flex-col gap-3 border-b border-charcoal/10 bg-white px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-6">
           <div><span className="text-[10px] font-extrabold tracking-[.2em] text-gold">TODAY'S BILLS</span><h2 id="today-bills-title" className="editorial-title mt-1 text-2xl font-bold text-navy">{ko ? "오늘의 법안" : "Today's Bills"}<span className="ml-2 rounded-full bg-charcoal/5 px-2 py-0.5 text-xs text-charcoal/50">{todayBills.length}</span></h2></div>
-          <p className="max-w-2xl text-sm leading-6 text-charcoal/60">{ko ? "오늘 씨앗의 입법감시 목록에 새로 공개된 법안입니다. 법안명이나 분석 보기를 누르면 핵심 변화와 시민 영향을 확인할 수 있습니다." : "Bills newly published to Seed Voice's legislative watch today. Open a bill to review its key changes and civic impact."}</p>
+          <p className="max-w-2xl text-sm leading-6 text-charcoal/60">{ko ? "가장 최근에 공개한 법안을 다음 업데이트 전까지 유지합니다. 법안명이나 분석 보기를 누르면 핵심 변화와 시민 영향을 확인할 수 있습니다." : "The most recently published bills remain here until the next update. Open a bill to review its key changes and civic impact."}</p>
         </div>
         <div className="flex flex-col gap-3 border-b border-charcoal/10 bg-[#FAF8F2] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-          <p className="text-sm leading-7 text-charcoal/60"><strong className="text-navy">{dateText(koreaToday)}</strong><br/>{ko ? "화요일과 금요일에 본회의 통과법안 전체를 확인하고, 사회적 관심과 씨앗의 시민영향 기준을 함께 적용해 공개합니다." : "Every Tuesday and Friday, we review plenary-passed bills and publish selections using both public-attention signals and Seed Voice's civic-impact criteria."}</p>
+          <p className="text-sm leading-7 text-charcoal/60"><strong className="text-navy">{dateText(latestPublishedDate)}</strong><br/>{ko ? "화요일과 금요일에 본회의 통과법안 전체를 확인하고, 사회적 관심과 씨앗의 시민영향 기준을 함께 적용해 공개합니다." : "Every Tuesday and Friday, we review plenary-passed bills and publish selections using both public-attention signals and Seed Voice's civic-impact criteria."}</p>
           <a href="https://likms.assembly.go.kr/bill/main.do" target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center gap-2 text-xs font-extrabold text-green-deep">{ko ? "국회에서 최근 법안 검색" : "Search recent bills"}<ExternalLink size={13}/></a>
         </div>
         {loading && <p className="py-16 text-center text-sm text-charcoal/50">{ko ? "입법 기록을 불러오는 중입니다." : "Loading legislative records…"}</p>}
         {error && <p className="py-16 text-center text-sm font-bold text-red-700">{error}</p>}
-        {!loading && !error && todayBills.length === 0 && <div className="py-16 text-center"><Scale className="mx-auto text-gold"/><p className="mt-4 text-sm font-bold text-navy">{ko ? "오늘 새로 공개된 법안이 아직 없습니다." : "No bill has been newly published today."}</p></div>}
+        {!loading && !error && todayBills.length === 0 && <div className="py-16 text-center"><Scale className="mx-auto text-gold"/><p className="mt-4 text-sm font-bold text-navy">{ko ? "공개된 법안이 아직 없습니다." : "No bills have been published yet."}</p></div>}
         <div>{todayBills.map((bill) => <BillRow key={bill.bill_id} bill={bill} ko={ko} today/>)}</div>
       </section>
 
