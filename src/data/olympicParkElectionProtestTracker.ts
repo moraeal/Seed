@@ -44,12 +44,12 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
       en: "Citizens rallying at Seoul Olympic Park to demand a new election",
     },
     caption: {
-      ko: "투표용지 부족 사태 이후 시민들은 올림픽공원에서 재선거와 선거제도 개선을 요구하는 농성을 이어 왔다.",
-      en: "Citizens have continued their Olympic Park protest for a new election and electoral reform following the ballot shortage.",
+      ko: "투표용지 부족 사태 이후 이어진 올림픽공원 농성 현장을 관련 보도를 바탕으로 재구성한 이미지.",
+      en: "A reconstructed image of the continuing Olympic Park protest, based on reporting from the scene following the ballot shortage.",
     },
     credit: {
-      ko: "사진: 연합뉴스",
-      en: "Photo: Yonhap News Agency",
+      ko: "이미지: 씨앗의 소리",
+      en: "Image: SEED VOICE",
     },
   },
   keyChanges: [
