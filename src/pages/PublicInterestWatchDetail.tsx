@@ -4,7 +4,8 @@ import ArticleContinuation from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
 import { getEditorialContinuation } from "../data/editorialContinuations";
-import { getPublicInterestWatchCase, LocalizedText } from "../data/publicInterestWatch";
+import type { LocalizedText } from "../data/publicInterestWatch";
+import { getPublicInterestWatchCase } from "../data/newsTrackerRegistry";
 import { useLanguage } from "../i18n";
 import LivingWatchDetail from "./LivingWatchDetail";
 
