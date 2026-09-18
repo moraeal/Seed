@@ -1,9 +1,11 @@
-import { ArrowRight, Building2, CalendarDays, ExternalLink, FileSearch, Scale, Star } from "lucide-react";
+import { ArrowRight, Building2, CalendarDays, Clock, ExternalLink, FileSearch, Scale, Star } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n";
+import { getLegislativeCommentaryEdition, legislativeCommentaries } from "../data/legislativeCommentaries";
 import { getPublishedLegislativeBills, type LegislativeBill } from "../lib/legislativeMonitoring";
 import MonitoringSubnav from "../components/MonitoringSubnav";
+import SafeImage from "../components/SafeImage";
 
 const dateText = (date: string | null) => date ? date.replace(/-/g, ".") : "—";
 
@@ -68,6 +70,22 @@ export default function LegislativeWatch() {
     <MonitoringSubnav />
 
     <div className="container-page py-8 sm:py-10">
+      <section className="mb-9 border-2 border-navy bg-white" aria-labelledby="legislative-commentary-list-title">
+        <div className="flex flex-col gap-3 border-b-2 border-navy bg-ivory px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-6">
+          <div><span className="section-kicker">LEGISLATIVE COMMENTARY</span><h2 id="legislative-commentary-list-title" className="editorial-title mt-1 text-2xl font-bold text-navy">{ko ? "입법 논평" : "Legislative Commentary"}</h2></div>
+          <p className="max-w-2xl text-sm leading-6 text-charcoal/60">{ko ? "통과 법안 가운데 시민의 자유와 권력의 이동을 더 깊이 살펴야 할 사안을 골라 논평합니다. 법안 기록의 사실과 씨앗의 판단을 구분해 읽을 수 있습니다." : "We select passed bills that require deeper scrutiny of civic freedom and shifts in state power, keeping the legislative record distinct from Seed Voice's editorial judgment."}</p>
+        </div>
+        <div className="grid divide-y divide-green-deep/15 lg:grid-cols-2 lg:divide-x lg:divide-y-0">
+          {legislativeCommentaries.map((article) => {
+            const edition = getLegislativeCommentaryEdition(article, ko ? "ko" : "en");
+            return <Link key={article.slug} to={`/monitoring/legislation/commentary/${article.slug}`} className="group grid gap-4 p-5 transition hover:bg-green-pale/45 sm:grid-cols-[180px_1fr] sm:items-center sm:p-6">
+              <div className="overflow-hidden bg-ivory"><SafeImage src={`${import.meta.env.BASE_URL}${article.heroSrc}`} alt={edition.heroAlt} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.025]" /></div>
+              <div className="min-w-0"><div className="flex flex-wrap items-center gap-2 text-[11px] font-extrabold text-green-deep"><span>{ko ? "입법 논평" : "COMMENTARY"}</span><span className="text-charcoal/35">{ko ? `의안 ${article.billNo}` : `Bill ${article.billNo}`}</span></div><h3 className="editorial-title mt-2 line-clamp-2 text-xl font-bold leading-snug text-navy transition group-hover:text-green-mid">{edition.title}</h3><p className="mt-2 line-clamp-2 text-sm leading-6 text-charcoal/60">{edition.summary}</p><div className="mt-3 flex items-center gap-3 border-t border-green-deep/10 pt-3 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={12}/>{article.readMinutes}{ko ? "분" : " min"}</span><span className="ml-auto flex items-center gap-1.5 font-extrabold text-green-deep">{ko ? "논평 읽기" : "Read"}<ArrowRight size={13}/></span></div></div>
+            </Link>;
+          })}
+        </div>
+      </section>
+
       <div role="tablist" aria-label={ko ? "입법감시 보기" : "Legislative watch views"} className="grid border-b-2 border-navy sm:grid-cols-2">
         <button type="button" role="tab" aria-selected={activeTab === "weekly"} aria-controls="weekly-bills-panel" onClick={() => setActiveTab("weekly")} className={`px-5 py-4 text-left text-sm font-black transition sm:text-base ${activeTab === "weekly" ? "bg-green-deep text-white" : "bg-white text-charcoal/55 hover:bg-green-pale"}`}>{ko ? "이번 주 통과법안" : "Bills Passed This Week"}<span className={`ml-2 text-xs ${activeTab === "weekly" ? "text-gold" : "text-charcoal/35"}`}>{weeklySelection.length}</span></button>
         <button type="button" role="tab" aria-selected={activeTab === "archive"} aria-controls="legislative-archive-panel" onClick={() => setActiveTab("archive")} className={`border-t border-green-deep/15 px-5 py-4 text-left text-sm font-black transition sm:border-l sm:border-t-0 sm:text-base ${activeTab === "archive" ? "bg-green-deep text-white" : "bg-white text-charcoal/55 hover:bg-green-pale"}`}>{ko ? "입법감시 목록" : "Legislative Watch List"}<span className={`ml-2 text-xs ${activeTab === "archive" ? "text-gold" : "text-charcoal/35"}`}>{archivedBills.length}</span></button>

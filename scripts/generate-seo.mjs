@@ -14,7 +14,7 @@ const server = await createServer({
   server: { middlewareMode: true },
   optimizeDeps: { noDiscovery: true },
 });
-const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, seedWatchModule, siteContentModule, seedLanguageModule, seedLanguageEnvironmentModule, communityChestModule] = await Promise.all([
+const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, seedWatchModule, siteContentModule, seedLanguageModule, seedLanguageEnvironmentModule, communityChestModule, legislativeCommentaryModule] = await Promise.all([
   server.ssrLoadModule("/src/seo.ts"),
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
@@ -25,6 +25,7 @@ const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME,
   server.ssrLoadModule("/src/data/seedLanguage.ts"),
   server.ssrLoadModule("/src/data/seedLanguageEnvironment.ts"),
   server.ssrLoadModule("/src/data/communityChestResearch.ts"),
+  server.ssrLoadModule("/src/data/legislativeCommentaries.ts"),
 ]);
 await server.close();
 
@@ -41,6 +42,7 @@ const seedLanguageArticles = [
   ...seedLanguageModule.seedLanguageArticlesKo,
 ];
 const communityChestResearch = communityChestModule.communityChestResearch.ko;
+const legislativeCommentaries = legislativeCommentaryModule.legislativeCommentaries;
 const publisherLogo = `${SITE_URL}/images/brand/seed-civic-partners-logo.svg`;
 const koreaDateTime = (date) => date ? `${date}T00:00:00+09:00` : undefined;
 
@@ -77,6 +79,7 @@ function articleBody(route) {
       ...briefings.map((item) => ({ path: `/briefings/${item.slug}`, title: item.title, summary: item.summary, date: item.date })),
       ...columns.map((item) => ({ path: `/columns/${item.slug}`, title: item.title, summary: item.summary, date: item.date })),
       ...seedLanguageArticles.map((item) => ({ path: `/seed-language/${item.slug}`, title: item.title, summary: item.summary, date: item.date })),
+      ...legislativeCommentaries.map((item) => ({ path: `/monitoring/legislation/commentary/${item.slug}`, title: item.editions.ko.title, summary: item.editions.ko.summary, date: item.date })),
     ].sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title)).slice(0, 12);
     return `<section><h2>최신 기사</h2><ul>${latest.map((item) => `<li><a href="${canonicalUrl(item.path)}"><strong>${escapeHtml(item.title)}</strong></a><p>${escapeHtml(item.summary)}</p></li>`).join("\n")}</ul></section>`;
   }
@@ -130,6 +133,19 @@ function articleBody(route) {
     ].join("\n");
   }
 
+  const legislativeCommentaryMatch = route.path.match(/^\/monitoring\/legislation\/commentary\/([^/]+)$/);
+  if (legislativeCommentaryMatch) {
+    const item = legislativeCommentaries.find((entry) => entry.slug === legislativeCommentaryMatch[1]);
+    if (item) {
+      const edition = item.editions.ko;
+      return [
+        `<section><h2>핵심 요약</h2>${bulletList(edition.keyPoints)}</section>`,
+        ...edition.sections.map((section) => `<section><h2>${escapeHtml(section.title)}</h2>${paragraphList(section.paragraphs)}${section.quote ? `<blockquote>${escapeHtml(section.quote)}</blockquote>` : ""}</section>`),
+        `<section><h2>자료와 확인 기준</h2><p>${escapeHtml(edition.sourceNote)}</p><ul>${item.sources.map((source) => `<li><a href="${escapeHtml(source.url)}">${escapeHtml(source.label.ko)}</a></li>`).join("")}</ul></section>`,
+      ].join("\n");
+    }
+  }
+
   const seedLanguageMatch = route.path.match(/^\/seed-language\/([^/]+)$/);
   if (seedLanguageMatch) {
     const item = seedLanguageArticles.find((entry) => entry.slug === seedLanguageMatch[1]);
@@ -159,6 +175,7 @@ function articleBody(route) {
       ...seedWatchListing,
       ...watchCases.map((item) => ({ path: `/monitoring/${item.slug}`, title: item.title.ko, summary: item.summary.ko })),
     ]
+    : route.path === "/monitoring/legislation" ? legislativeCommentaries.map((item) => ({ path: `/monitoring/legislation/commentary/${item.slug}`, title: item.editions.ko.title, summary: item.editions.ko.summary }))
     : [];
 
   if (listing.length) return `<ul>${listing.map((item) => `<li><a href="${canonicalUrl(item.path)}"><strong>${escapeHtml(item.title)}</strong></a><p>${escapeHtml(item.summary)}</p></li>`).join("\n")}</ul>`;

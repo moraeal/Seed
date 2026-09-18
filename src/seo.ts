@@ -3,6 +3,7 @@ import { columns, getColumnsNewestFirst, getHotIssueColumnsNewestFirst, isHotIss
 import { newsArticles } from "./data/news";
 import { publicInterestWatchCases } from "./data/newsTrackerRegistry";
 import { taxPolicies } from "./data/taxWatch";
+import { legislativeCommentaries } from "./data/legislativeCommentaries";
 import { seedLanguageArticlesKo } from "./data/seedLanguage";
 import { seedLanguageEnvironmentArticlesKo } from "./data/seedLanguageEnvironment";
 import {
@@ -49,7 +50,7 @@ const firstLocalRasterImage = <T extends { src: string }>(images?: T[]) => image
 
 const allSeedLanguageArticlesKo = [...seedLanguageEnvironmentArticlesKo, ...seedLanguageArticlesKo];
 const newest = (dates: string[]) => [...dates].sort()[dates.length - 1];
-const latestDate = newest([...newsArticles.map((item) => item.date), ...publicInterestWatchCases.map((item) => item.updatedAt), ...columns.map((item) => item.date), ...getAllBriefingsNewestFirst().map((item) => item.date), ...allSeedLanguageArticlesKo.map((item) => item.date)]);
+const latestDate = newest([...newsArticles.map((item) => item.date), ...publicInterestWatchCases.map((item) => item.updatedAt), ...columns.map((item) => item.date), ...getAllBriefingsNewestFirst().map((item) => item.date), ...allSeedLanguageArticlesKo.map((item) => item.date), ...legislativeCommentaries.map((item) => item.date)]);
 
 const staticRoutes: SeoRoute[] = [
   {
@@ -168,6 +169,19 @@ const taxRoutes: SeoRoute[] = taxPolicies.map((item) => ({
   imageAlt: item.heroImage.alt.ko,
 }));
 
+const legislativeCommentaryRoutes: SeoRoute[] = legislativeCommentaries.map((item) => ({
+  path: `/monitoring/legislation/commentary/${item.slug}`,
+  title: `${item.editions.ko.title} | 씨앗의 소리`,
+  description: item.editions.ko.summary,
+  type: "article",
+  publishedAt: item.date,
+  lastModified: item.date,
+  author: SITE_NAME,
+  section: "입법 논평",
+  image: socialImageUrl("legislation", item.slug, `${item.date}-${stableHash(item.heroSrc)}`),
+  imageAlt: item.editions.ko.heroAlt,
+}));
+
 const researchRoutes: SeoRoute[] = [{
   path: "/research/community-chest-of-korea",
   title: "사랑의열매는 시민의 공익을 어떻게 배분하는가 | 씨앗의 소리",
@@ -200,6 +214,7 @@ export const seoRoutes: SeoRoute[] = [
   ...briefingRoutes,
   ...columnRoutes,
   ...monitoringRoutes,
+  ...legislativeCommentaryRoutes,
   ...taxRoutes,
   ...researchRoutes,
   ...seedLanguageRoutes,
