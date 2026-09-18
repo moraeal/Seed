@@ -40,6 +40,7 @@ const LegislativeWatch = lazy(() => import("./pages/LegislativeWatch"));
 const LegislativeCommentaryDetail = lazy(() => import("./pages/LegislativeCommentaryDetail"));
 const LegislativeBillDetail = lazy(() => import("./pages/LegislativeBillDetail"));
 const TaxWatch = lazy(() => import("./pages/TaxWatch"));
+const TaxCommentaryDetail = lazy(() => import("./pages/TaxCommentaryDetail"));
 const TaxPolicyDetail = lazy(() => import("./pages/TaxPolicyDetail"));
 const PublicInterestWatch = lazy(() => import("./pages/PublicInterestWatch"));
 
@@ -86,6 +87,7 @@ function AppShell() {
           <Route path="/monitoring/legislation/commentary/:slug" element={<LegislativeCommentaryDetail />} />
           <Route path="/monitoring/legislation/:slug" element={<LegislativeBillDetail />} />
           <Route path="/monitoring/tax" element={<TaxWatch />} />
+          <Route path="/monitoring/tax/commentary/:slug" element={<TaxCommentaryDetail />} />
           <Route path="/monitoring/tax/:slug" element={<TaxPolicyDetail />} />
           <Route path="/monitoring/public-interest" element={<PublicInterestWatch />} />
           <Route path="/monitoring/yeosu-world-island-expo" element={<Navigate to="/briefings/yeosu-world-island-expo" replace />} />

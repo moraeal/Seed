@@ -18,7 +18,7 @@ const server = await createServer({
   server: { middlewareMode: true },
   optimizeDeps: { noDiscovery: true },
 });
-const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguageEnvironmentModule, publicInterestWatchModule, taxWatchModule, legislativeCommentaryModule] = await Promise.all([
+const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguageEnvironmentModule, publicInterestWatchModule, taxWatchModule, taxCommentaryModule, legislativeCommentaryModule] = await Promise.all([
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
   server.ssrLoadModule("/src/data/columns.ts"),
@@ -26,6 +26,7 @@ const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguag
   server.ssrLoadModule("/src/data/seedLanguageEnvironment.ts"),
   server.ssrLoadModule("/src/data/newsTrackerRegistry.ts"),
   server.ssrLoadModule("/src/data/taxWatch.ts"),
+  server.ssrLoadModule("/src/data/taxCommentaries.ts"),
   server.ssrLoadModule("/src/data/legislativeCommentaries.ts"),
 ]);
 await server.close();
@@ -61,6 +62,7 @@ const jobs = [
     .filter((item) => item.heroImage?.src)
     .map((item) => ({ section: "monitoring", slug: item.slug, src: item.heroImage.src })),
   ...taxWatchModule.taxPolicies.map((item) => ({ section: "tax", slug: item.slug, src: item.heroImage.ko })),
+  ...taxCommentaryModule.taxCommentaries.map((item) => ({ section: "tax-commentary", slug: item.slug, src: item.heroSrc })),
   ...legislativeCommentaryModule.legislativeCommentaries.map((item) => ({ section: "legislation", slug: item.slug, src: item.heroSrc })),
   { section: "research", slug: "community-chest-of-korea", src: "images/monitoring/community-chest-deep-hero.png" },
 ];

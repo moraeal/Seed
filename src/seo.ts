@@ -3,6 +3,7 @@ import { columns, getColumnsNewestFirst, getHotIssueColumnsNewestFirst, isHotIss
 import { newsArticles } from "./data/news";
 import { publicInterestWatchCases } from "./data/newsTrackerRegistry";
 import { taxPolicies } from "./data/taxWatch";
+import { taxCommentaries } from "./data/taxCommentaries";
 import { legislativeCommentaries } from "./data/legislativeCommentaries";
 import { seedLanguageArticlesKo } from "./data/seedLanguage";
 import { seedLanguageEnvironmentArticlesKo } from "./data/seedLanguageEnvironment";
@@ -169,6 +170,19 @@ const taxRoutes: SeoRoute[] = taxPolicies.map((item) => ({
   imageAlt: item.heroImage.alt.ko,
 }));
 
+const taxCommentaryRoutes: SeoRoute[] = taxCommentaries.map((item) => ({
+  path: `/monitoring/tax/commentary/${item.slug}`,
+  title: `${item.editions.ko.title} | 씨앗의 소리`,
+  description: item.editions.ko.summary,
+  type: "article",
+  publishedAt: item.date,
+  lastModified: item.date,
+  author: SITE_NAME,
+  section: "세금 논평",
+  image: socialImageUrl("tax-commentary", item.slug, `${item.date}-${stableHash(item.heroSrc)}`),
+  imageAlt: item.editions.ko.heroAlt,
+}));
+
 const legislativeCommentaryRoutes: SeoRoute[] = legislativeCommentaries.map((item) => ({
   path: `/monitoring/legislation/commentary/${item.slug}`,
   title: `${item.editions.ko.title} | 씨앗의 소리`,
@@ -216,6 +230,7 @@ export const seoRoutes: SeoRoute[] = [
   ...monitoringRoutes,
   ...legislativeCommentaryRoutes,
   ...taxRoutes,
+  ...taxCommentaryRoutes,
   ...researchRoutes,
   ...seedLanguageRoutes,
 ];
