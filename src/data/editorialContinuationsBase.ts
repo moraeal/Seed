@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "seed-language:politics-is-a-citizens-tool": {
+    ko: {
+      href: "/seed-language/citizen-as-seed",
+      title: "시민은 주어지는 이름이 아니라 자라나는 존재라는 말이다",
+      relationship: "정치에서 시민으로",
+      reason: "정치가 시민이 사용하는 도구라면, 그 도구를 맡기고 감시하며 책임지는 시민은 어떻게 성장하는지 이어서 살펴봅니다.",
+      listHref: "/seed-language",
+      listLabel: "용어해설 전체 보기",
+    },
+    en: {
+      href: "/seed-language/citizen-as-seed",
+      title: "Citizenship Is Not a Given Label; It Is Something We Grow Into",
+      relationship: "FROM POLITICS TO CITIZENSHIP",
+      reason: "If politics is a tool citizens use, continue with how citizens grow able to authorize, scrutinize and take responsibility for that tool.",
+      listHref: "/seed-language",
+      listLabel: "All Glossary entries",
+    },
+  },
   "briefing:future-response-fund-public-money": {
     ko: {
       href: "/briefings/2027-national-budget-revenue-debt",
