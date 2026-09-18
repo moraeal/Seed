@@ -63,8 +63,8 @@ export default function LegislativeWatch() {
 
     <div className="container-page py-8 sm:py-10">
       <nav aria-label={ko ? "입법감시 목록 바로가기" : "Legislative watch list shortcuts"} className="mb-7 grid overflow-hidden rounded-xl border border-charcoal/10 bg-white shadow-[0_8px_24px_rgba(31,51,73,0.045)] sm:grid-cols-3">
-        <a href="#legislative-commentary-list" className="flex items-center justify-between border-b-2 border-green-deep px-5 py-4 text-sm font-black text-navy transition hover:bg-[#FAF9F5] sm:text-base">{ko ? "입법감시 기사" : "Watch Articles"}<span className="rounded-full bg-charcoal/5 px-2 py-0.5 text-xs text-charcoal/55">{legislativeCommentaries.length}</span></a>
-        <a href="#today-bills" className="flex items-center justify-between border-b-2 border-transparent px-5 py-4 text-sm font-black text-navy transition hover:border-charcoal/20 hover:bg-[#FAF9F5] sm:text-base">{ko ? "오늘의 법안" : "Today's Bills"}<span className="rounded-full bg-charcoal/5 px-2 py-0.5 text-xs text-charcoal/55">{todayBills.length}</span></a>
+        <a href="#legislative-commentary-list" className="flex items-center justify-between border-b-2 border-green-deep bg-green-deep px-5 py-4 text-sm font-black text-white transition hover:bg-green-mid sm:text-base">{ko ? "입법감시 기사" : "Watch Articles"}<span className="rounded-full bg-white/12 px-2 py-0.5 text-xs text-gold">{legislativeCommentaries.length}</span></a>
+        <a href="#today-bills" className="flex items-center justify-between border-b-2 border-gold/40 bg-[#F3F5EC] px-5 py-4 text-sm font-black text-navy transition hover:bg-green-pale sm:text-base">{ko ? "오늘의 법안" : "Today's Bills"}<span className="rounded-full bg-white/80 px-2 py-0.5 text-xs text-charcoal/55">{todayBills.length}</span></a>
         <a href="#past-bills" className="flex items-center justify-between border-b-2 border-transparent px-5 py-4 text-sm font-black text-navy transition hover:border-charcoal/20 hover:bg-[#FAF9F5] sm:text-base">{ko ? "지난 법안" : "Past Bills"}<span className="rounded-full bg-charcoal/5 px-2 py-0.5 text-xs text-charcoal/55">{pastBills.length}</span></a>
       </nav>
 
