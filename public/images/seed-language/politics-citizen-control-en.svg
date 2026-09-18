@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Democracy in which citizens use politics</title>
+  <desc id="desc">A cycle from civic authorization to political authority, common rules and a predictable society, with civic scrutiny limiting power</desc>
+  <rect width="1200" height="760" fill="#f7f3e8"/>
+  <text x="600" y="78" text-anchor="middle" fill="#112f3b" font-family="Arial, sans-serif" font-size="42" font-weight="800">Politics Is a Tool Citizens Use</text>
+  <text x="600" y="116" text-anchor="middle" fill="#49665e" font-family="Arial, sans-serif" font-size="19">Authorization creates power; scrutiny creates its boundaries</text>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="55" y="230" width="235" height="160" rx="22" fill="#153f36"/>
+    <text x="172" y="285" fill="#dfbd6d" font-size="17" font-weight="700">01 · SOVEREIGNTY</text>
+    <text x="172" y="330" fill="white" font-size="30" font-weight="800">Citizens</text>
+    <text x="172" y="364" fill="#dce7e2" font-size="17">Judge and authorize</text>
+    <rect x="335" y="230" width="235" height="160" rx="22" fill="#ffffff" stroke="#153f36" stroke-width="3"/>
+    <text x="452" y="285" fill="#8f6b1f" font-size="17" font-weight="700">02 · AUTHORITY</text>
+    <text x="452" y="330" fill="#112f3b" font-size="30" font-weight="800">Politics</text>
+    <text x="452" y="364" fill="#49665e" font-size="17">Reconciles and decides</text>
+    <rect x="615" y="230" width="235" height="160" rx="22" fill="#e9efe9" stroke="#153f36" stroke-width="3"/>
+    <text x="732" y="285" fill="#8f6b1f" font-size="17" font-weight="700">03 · RULE OF LAW</text>
+    <text x="732" y="330" fill="#112f3b" font-size="28" font-weight="800">Common Rules</text>
+    <text x="732" y="364" fill="#49665e" font-size="17">Apply to everyone</text>
+    <rect x="895" y="230" width="250" height="160" rx="22" fill="#d9b862"/>
+    <text x="1020" y="285" fill="#153f36" font-size="17" font-weight="700">04 · OUTCOME</text>
+    <text x="1020" y="325" fill="#112f3b" font-size="25" font-weight="800">A Predictable</text>
+    <text x="1020" y="355" fill="#112f3b" font-size="25" font-weight="800">Society</text>
+    <text x="1020" y="381" fill="#153f36" font-size="16">Freedom and responsibility grow</text>
+  </g>
+  <g stroke="#7c9a90" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M295 310h27"/><path d="M316 297l13 13-13 13"/>
+    <path d="M575 310h27"/><path d="M596 297l13 13-13 13"/>
+    <path d="M855 310h27"/><path d="M876 297l13 13-13 13"/>
+  </g>
+  <path d="M1020 445c0 165-167 215-440 215S172 610 172 445" fill="none" stroke="#b35145" stroke-width="7" stroke-linecap="round"/>
+  <path d="M159 463l13-24 13 24" fill="none" stroke="#b35145" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="354" y="500" width="492" height="86" rx="43" fill="#fff" stroke="#b35145" stroke-width="3"/>
+  <text x="600" y="536" text-anchor="middle" fill="#8b342b" font-family="Arial, sans-serif" font-size="19" font-weight="800">CIVIC POWER BETWEEN ELECTIONS</text>
+  <text x="600" y="566" text-anchor="middle" fill="#49665e" font-family="Arial, sans-serif" font-size="18">Scrutiny · veto · judgment limit authority</text>
+  <text x="600" y="711" text-anchor="middle" fill="#112f3b" font-family="Arial, sans-serif" font-size="24" font-weight="800">Politics is not the owner. It is the citizen’s tool.</text>
+</svg>
