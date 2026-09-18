@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "briefing:future-response-fund-public-money": {
+    ko: {
+      href: "/briefings/2027-national-budget-revenue-debt",
+      title: "820.9조 원 슈퍼예산, 나라살림은?",
+      relationship: "예산 전체 구조 보기",
+      reason: "미래대응기금의 사업과 통제를 살펴봤다면, 2027년 예산의 세입 전망·국가채무·104조 원 여유자금 구조를 같은 기준으로 이어서 확인합니다.",
+      listHref: "/briefings",
+      listLabel: "브리핑 전체 보기",
+    },
+    en: {
+      href: "/briefings/2027-national-budget-revenue-debt",
+      title: "The KRW 820.9 Trillion Budget Test",
+      relationship: "SEE THE FULL BUDGET STRUCTURE",
+      reason: "Continue from the fund's programs and controls to the 2027 revenue assumptions, national debt and the KRW 104.4 trillion reserve.",
+      listHref: "/briefings",
+      listLabel: "All briefings",
+    },
+  },
   "briefing:can-half-the-nation-be-dissolved": {
     ko: {
       href: "/briefings/confirmation-hearings-zero-witnesses",

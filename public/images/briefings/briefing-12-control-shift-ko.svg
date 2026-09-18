@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">지방재정 결정권의 이동</title>
+  <desc id="desc">법에 따라 지방에 자동 배분되던 자율재원이 중앙정부의 미래대응기금을 거쳐 지정 사업비로 내려가는 구조를 설명하는 도표</desc>
+  <rect width="1400" height="760" fill="#f4f2eb"/>
+  <text x="700" y="88" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="42" font-weight="800" fill="#173a36">돈의 총액만큼 중요한 것은 결정권입니다</text>
+  <text x="700" y="135" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="21" fill="#52625f">자동 배분 재원이 중앙기금으로 이동하면 지방이 스스로 정할 수 있는 범위가 달라집니다</text>
+  <g transform="translate(90 235)">
+    <rect width="345" height="285" rx="26" fill="#ffffff" stroke="#1f5a50" stroke-width="4"/>
+    <text x="172" y="62" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="20" font-weight="700" fill="#64817b">기존 흐름</text>
+    <text x="172" y="120" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="29" font-weight="800" fill="#173a36">내국세 증가분</text>
+    <path d="M172 145v44" stroke="#1f5a50" stroke-width="6" stroke-linecap="round"/>
+    <path d="M156 177l16 18 16-18" fill="none" stroke="#1f5a50" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="172" y="232" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="27" font-weight="800" fill="#1f5a50">지방 자율재원</text>
+    <text x="172" y="267" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="18" fill="#52625f">지역이 우선순위를 결정</text>
+  </g>
+  <g transform="translate(528 200)">
+    <rect width="345" height="355" rx="30" fill="#173a36"/>
+    <text x="172" y="70" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="21" font-weight="700" fill="#d7e8e2">변경되는 흐름</text>
+    <text x="172" y="138" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="31" font-weight="800" fill="#ffffff">미래대응기금</text>
+    <text x="172" y="181" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="19" fill="#d7e8e2">추가세수 일부를 중앙에 적립</text>
+    <path d="M172 214v49" stroke="#d2aa50" stroke-width="6" stroke-linecap="round"/>
+    <path d="M156 250l16 18 16-18" fill="none" stroke="#d2aa50" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="58" y="286" width="229" height="45" rx="22" fill="#d2aa50"/>
+    <text x="172" y="316" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="19" font-weight="800" fill="#173a36">중앙정부가 사업 선정</text>
+  </g>
+  <g transform="translate(966 235)">
+    <rect width="345" height="285" rx="26" fill="#ffffff" stroke="#b68a2b" stroke-width="4"/>
+    <text x="172" y="62" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="20" font-weight="700" fill="#8f722f">다시 지방으로</text>
+    <text x="172" y="120" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="29" font-weight="800" fill="#173a36">지정 사업비</text>
+    <path d="M172 145v44" stroke="#b68a2b" stroke-width="6" stroke-linecap="round"/>
+    <path d="M156 177l16 18 16-18" fill="none" stroke="#b68a2b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="172" y="232" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="27" font-weight="800" fill="#9b711d">꼬리표가 붙은 돈</text>
+    <text x="172" y="267" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="18" fill="#52625f">지역의 선택 범위가 축소</text>
+  </g>
+  <path d="M445 378h66" stroke="#667873" stroke-width="5" stroke-linecap="round"/>
+  <path d="M494 362l18 16-18 16" fill="none" stroke="#667873" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M883 378h66" stroke="#667873" stroke-width="5" stroke-linecap="round"/>
+  <path d="M932 362l18 16-18 16" fill="none" stroke="#667873" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="270" y="625" width="860" height="68" rx="34" fill="#e7dfc9"/>
+  <text x="700" y="668" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="23" font-weight="800" fill="#173a36">총액 증가와 지방의 재정 자율성은 따로 확인해야 합니다</text>
+</svg>
