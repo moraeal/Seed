@@ -352,21 +352,10 @@ function rssValue(item: string, tag: string) {
 
 const wait = (milliseconds: number) => new Promise((resolve) => setTimeout(resolve, milliseconds));
 
-async function fetchMediaCandidates(bill: NormalizedBill): Promise<MediaCandidate[]> {
-  const identity = bill.representative_proposer || "";
-  const query = `"${bill.title}" ${identity} when:30d`;
-  const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=ko&gl=KR&ceid=KR:ko`;
-  let response: Response | null = null;
-  for (let attempt = 0; attempt < 3; attempt += 1) {
-    response = await fetch(url, { headers: { "User-Agent": "SEED-VOICE-Legislative-Monitor/1.0" } });
-    if (response.ok) break;
-    if (![429, 503].includes(response.status) || attempt === 2) throw new Error(`Google News RSS returned HTTP ${response.status}`);
-    await wait(1000 * (attempt + 1));
-  }
-  if (!response?.ok) throw new Error("Google News RSS did not return a usable response");
-  const xml = await response.text();
-  const blockedSources = ["오마이뉴스", "ohmynews", "mbc", "문화방송", "한겨레", "hani.co.kr"];
-  return [...xml.matchAll(/<item>([\s\S]*?)<\/item>/gi)].slice(0, 15).map((match) => {
+const blockedMediaSources = ["오마이뉴스", "ohmynews", "mbc", "문화방송", "한겨레", "hani.co.kr"];
+
+function parseMediaFeed(xml: string, limit: number) {
+  return [...xml.matchAll(/<item>([\s\S]*?)<\/item>/gi)].slice(0, limit).map((match) => {
     const item = match[1];
     const rawDate = rssValue(item, "pubDate");
     const parsedDate = rawDate ? new Date(rawDate) : null;
@@ -379,8 +368,48 @@ async function fetchMediaCandidates(bill: NormalizedBill): Promise<MediaCandidat
     };
   }).filter((item) => {
     const identity = `${item.source} ${item.title} ${item.url}`.toLowerCase();
-    return item.title && item.url && !blockedSources.some((blocked) => identity.includes(blocked));
+    return item.title && item.url && !blockedMediaSources.some((blocked) => identity.includes(blocked));
   });
+}
+
+async function fetchNewsCandidates(query: string, limit: number): Promise<MediaCandidate[]> {
+  const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=ko&gl=KR&ceid=KR:ko`;
+  let response: Response | null = null;
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    response = await fetch(url, { headers: { "User-Agent": "SEED-VOICE-Legislative-Monitor/1.0" } });
+    if (response.ok) break;
+    if (![429, 503].includes(response.status) || attempt === 2) throw new Error(`Google News RSS returned HTTP ${response.status}`);
+    await wait(1000 * (attempt + 1));
+  }
+  if (!response?.ok) throw new Error("Google News RSS did not return a usable response");
+  const xml = await response.text();
+  return parseMediaFeed(xml, limit);
+}
+
+async function fetchMediaCandidates(bill: NormalizedBill): Promise<MediaCandidate[]> {
+  const identity = bill.representative_proposer || "";
+  return fetchNewsCandidates(`"${bill.title}" ${identity} when:30d`, 15);
+}
+
+function compactSearchText(value: string) {
+  return value.toLowerCase().replace(/[^0-9a-z가-힣]/g, "");
+}
+
+function billAliases(title: string) {
+  const withoutSuffix = title
+    .replace(/\([^)]*\)/g, "")
+    .replace(/일부개정법률안|전부개정법률안|개정법률안|제정법률안|폐지법률안|법률안/g, "")
+    .trim();
+  const shortLaw = withoutSuffix
+    .replace(/에 관한 법률$/g, "법")
+    .replace(/에 대한 법률$/g, "법")
+    .replace(/법률$/g, "법");
+  return [...new Set([withoutSuffix, shortLaw].map(compactSearchText).filter((value) => value.length >= 4))];
+}
+
+function matchesBill(candidate: MediaCandidate, bill: NormalizedBill) {
+  const haystack = compactSearchText(`${candidate.title} ${candidate.snippet}`);
+  return billAliases(bill.title).some((alias) => haystack.includes(alias));
 }
 
 function mediaImpact(candidates: MediaCandidate[]) {
@@ -545,23 +574,34 @@ Deno.serve(async (req: Request) => {
     const mediaCandidates = new Map<string, MediaCandidate[]>();
     const mediaScores = new Map<string, number>();
     if (shouldCheckMedia) {
+      try {
+        const broadCoverage = await fetchNewsCandidates('"국회 본회의" (법안 OR 개정안) (통과 OR 가결) when:7d', 100);
+        for (const bill of saved) {
+          const matches = broadCoverage.filter((candidate) => matchesBill(candidate, bill));
+          if (matches.length) mediaCandidates.set(bill.bill_id, matches);
+        }
+      } catch (error) {
+        warnings.push(`media-discovery/broad: ${error instanceof Error ? error.message : String(error)}`);
+      }
       // Every passed bill is scored from the official record. Media lookup is capped to the
-      // 24 strongest civic-impact candidates so one large plenary sitting cannot overwhelm RSS.
+      // 12 strongest civic-impact candidates so one large plenary sitting cannot overwhelm RSS.
       const mediaDiscoveryBills = [...saved]
         .sort((a, b) => (b.importance_score + b.direction_risk_score) - (a.importance_score + a.direction_risk_score))
-        .slice(0, 24);
+        .slice(0, 12);
       for (let index = 0; index < mediaDiscoveryBills.length; index += 3) {
         await Promise.all(mediaDiscoveryBills.slice(index, index + 3).map(async (bill) => {
           try {
             const candidates = await fetchMediaCandidates(bill);
-            mediaCandidates.set(bill.bill_id, candidates);
-            mediaScores.set(bill.bill_id, mediaImpact(candidates));
+            const combined = [...(mediaCandidates.get(bill.bill_id) || []), ...candidates]
+              .filter((item, itemIndex, items) => items.findIndex((candidate) => candidate.url === item.url) === itemIndex);
+            mediaCandidates.set(bill.bill_id, combined);
           } catch (error) {
             warnings.push(`media-discovery/${bill.bill_id}: ${error instanceof Error ? error.message : String(error)}`);
           }
         }));
         if (index + 3 < mediaDiscoveryBills.length) await wait(500);
       }
+      for (const bill of saved) mediaScores.set(bill.bill_id, mediaImpact(mediaCandidates.get(bill.bill_id) || []));
     }
     const rankedImportantBills = saved
       .filter((item) => !["held", "excluded"].includes(item.review_state))
