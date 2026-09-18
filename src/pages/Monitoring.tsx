@@ -2,7 +2,8 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import SafeImage from "../components/SafeImage";
 import MonitoringSubnav from "../components/MonitoringSubnav";
-import { newsTrackerCases, type LocalizedText } from "../data/publicInterestWatch";
+import type { LocalizedText } from "../data/publicInterestWatch";
+import { newsTrackerCases } from "../data/newsTrackerRegistry";
 import { useLanguage } from "../i18n";
 
 const imageSrc = (src: string) => src.startsWith("/") ? src : `/${src}`;
