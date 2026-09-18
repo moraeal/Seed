@@ -1,4 +1,4 @@
-name: Encrypted Supabase backup to Google Drive
+name: Encrypted Supabase backup
 
 on:
   workflow_dispatch:
@@ -20,17 +20,13 @@ jobs:
     env:
       SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
       BACKUP_ENCRYPTION_PASSPHRASE: ${{ secrets.BACKUP_ENCRYPTION_PASSPHRASE }}
-      RCLONE_CONFIG_GDRIVE_TOKEN: ${{ secrets.RCLONE_CONFIG_GDRIVE_TOKEN }}
-      RCLONE_CONFIG_GDRIVE_TYPE: drive
-      RCLONE_CONFIG_GDRIVE_SCOPE: drive
-      RCLONE_CONFIG_GDRIVE_ROOT_FOLDER_ID: 1lFD4n_XcLbvlnmrK2s1zBoK8C1QsDJLu
 
     steps:
       - name: Check backup configuration
         id: preflight
         shell: bash
         run: |
-          if [[ -z "$SUPABASE_DB_URL" || -z "$BACKUP_ENCRYPTION_PASSPHRASE" || -z "$RCLONE_CONFIG_GDRIVE_TOKEN" ]]; then
+          if [[ -z "$SUPABASE_DB_URL" || -z "$BACKUP_ENCRYPTION_PASSPHRASE" ]]; then
             echo "::notice::Backup secrets are not configured yet; this run is safely skipped."
             echo "ready=false" >> "$GITHUB_OUTPUT"
             exit 0
@@ -51,7 +47,7 @@ jobs:
         if: steps.preflight.outputs.ready == 'true'
         run: |
           sudo apt-get update
-          sudo apt-get install --yes gnupg rclone
+          sudo apt-get install --yes gnupg
 
       - name: Dump Supabase roles, schema, and data
         if: steps.preflight.outputs.ready == 'true'
@@ -100,39 +96,17 @@ jobs:
 
           echo "output_dir=$output_dir" >> "$GITHUB_OUTPUT"
           echo "encrypted_name=$encrypted_name" >> "$GITHUB_OUTPUT"
-          echo "month_day=$(TZ=Asia/Seoul date +'%d')" >> "$GITHUB_OUTPUT"
+          echo "artifact_name=seedvoice-supabase-${timestamp}" >> "$GITHUB_OUTPUT"
 
-      - name: Upload encrypted backup to Google Drive
+      - name: Stage encrypted backup for Google Drive transfer
         if: steps.preflight.outputs.ready == 'true'
-        shell: bash
-        run: |
-          set -euo pipefail
-          rclone mkdir gdrive:daily
-          rclone mkdir gdrive:monthly
-          rclone copy "${{ steps.archive.outputs.output_dir }}" gdrive:daily \
-            --include "${{ steps.archive.outputs.encrypted_name }}" \
-            --include "${{ steps.archive.outputs.encrypted_name }}.sha256"
-          rclone check "${{ steps.archive.outputs.output_dir }}" gdrive:daily \
-            --one-way \
-            --include "${{ steps.archive.outputs.encrypted_name }}" \
-            --include "${{ steps.archive.outputs.encrypted_name }}.sha256"
-
-      - name: Keep monthly copy
-        if: steps.preflight.outputs.ready == 'true' && steps.archive.outputs.month_day == '01'
-        run: |
-          rclone copy "${{ steps.archive.outputs.output_dir }}" gdrive:monthly \
-            --include "${{ steps.archive.outputs.encrypted_name }}" \
-            --include "${{ steps.archive.outputs.encrypted_name }}.sha256"
-
-      - name: Apply retention policy
-        if: steps.preflight.outputs.ready == 'true'
-        run: |
-          rclone delete gdrive:daily --min-age 15d \
-            --include "seedvoice-supabase-*.tar.gz.gpg" \
-            --include "seedvoice-supabase-*.tar.gz.gpg.sha256"
-          rclone delete gdrive:monthly --min-age 370d \
-            --include "seedvoice-supabase-*.tar.gz.gpg" \
-            --include "seedvoice-supabase-*.tar.gz.gpg.sha256"
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.archive.outputs.artifact_name }}
+          path: ${{ steps.archive.outputs.output_dir }}
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
 
       - name: Remove plaintext backup files
         if: always()

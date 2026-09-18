@@ -1,6 +1,6 @@
 # Supabase encrypted Google Drive backup
 
-The `supabase-drive-backup.yml` workflow creates a Supabase-aware database dump, encrypts it before upload, and stores only encrypted files in the dedicated Google Drive folder.
+The `supabase-drive-backup.yml` workflow creates a Supabase-aware database dump and encrypts it before any external transfer. GitHub Actions keeps the encrypted transfer artifact for seven days. A scheduled connected-app task copies that artifact into the dedicated Google Drive folder owned by `moraeal@gmail.com`.
 
 ## Coverage
 
@@ -14,15 +14,13 @@ Add these under **Settings > Secrets and variables > Actions**. Never paste them
 
 1. `SUPABASE_DB_URL`: the Supabase Session Pooler connection string from the project **Connect** panel, including the database password.
 2. `BACKUP_ENCRYPTION_PASSPHRASE`: a long random passphrase kept separately in a password manager. Losing it makes the backups unreadable.
-3. `RCLONE_CONFIG_GDRIVE_TOKEN`: the token JSON produced by authorizing the `drive` backend with rclone for the target Google account.
-
-Until all three secrets exist, scheduled runs exit successfully without creating or uploading a backup.
+Until both secrets exist, scheduled runs exit successfully without creating a backup. Google credentials are not stored in GitHub; the connected Google Drive account performs the transfer separately.
 
 ## Retention
 
-- Daily encrypted backups: 14 days.
-- First-day-of-month encrypted backups: approximately 12 months.
-- The workflow uploads a SHA-256 checksum alongside every encrypted archive and verifies the Drive upload.
+- GitHub transfer artifacts: 7 days.
+- Google Drive is the durable backup location. Daily copies can be retained for 14 days and monthly copies for approximately 12 months.
+- The workflow packages a SHA-256 checksum alongside every encrypted archive. The Drive transfer must verify the uploaded file exists before reporting success.
 
 ## Restore outline
 
