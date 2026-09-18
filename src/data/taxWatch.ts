@@ -9,7 +9,8 @@ export type TaxPolicy = {
   affected: LocalizedText;
   checkedAt: string;
   deadline: string;
-  heroImage: { ko: string; en: string; alt: LocalizedText };
+  heroImage: { ko: string; en: string; alt: LocalizedText; caption?: LocalizedText };
+  processNote?: LocalizedText;
   oneSentence: LocalizedText;
   keyChanges: Array<{ title: LocalizedText; body: LocalizedText }>;
   changeMap: Array<{ title: LocalizedText; items: LocalizedText[] }>;
@@ -41,9 +42,17 @@ export const taxPolicies: TaxPolicy[] = [
     checkedAt: "2026-09-18",
     deadline: "2026-09-23",
     heroImage: {
-      ko: "images/news/fuel-price-cap-tax-bill-hero.webp",
-      en: "images/news/fuel-price-cap-tax-bill-hero.webp",
-      alt: { ko: "주유기와 정유시설 사이에 길게 펼쳐진 세금 관련 문서", en: "Fuel pumps and a refinery with tax documents stretching across the foreground" },
+      ko: "images/monitoring/fuel-tax-extension-2026-hero.webp",
+      en: "images/monitoring/fuel-tax-extension-2026-hero.webp",
+      alt: { ko: "주유기 옆으로 화물차와 LPG 택시가 지나고 영수증이 길게 이어진 유류세 감시 이미지", en: "A fuel-tax watchdog image showing pumps, a delivery truck, an LPG taxi and a long receipt" },
+      caption: {
+        ko: "당장의 유류비 부담은 줄어듭니다. 그러나 짧은 연장이 반복되는 동안 줄어드는 세수와 종료 기준은 잘 보이지 않습니다. 씨앗의 소리가 유류세 인하의 두 얼굴을 상징적으로 구성했습니다.",
+        en: "Fuel costs fall in the near term, while the revenue cost and exit rule remain less visible as short extensions continue. Seed Voice created this image to show both sides of the fuel-tax cut.",
+      },
+    },
+    processNote: {
+      ko: "아직 확정된 시행령이 아닙니다. 2026년 9월 23일까지 의견을 받은 뒤 국무회의 의결을 거쳐 적용될 예정입니다.",
+      en: "The decrees are not final. Public comments remain open through September 23, 2026, after which Cabinet approval is required before implementation.",
     },
     oneSentence: {
       ko: "9월 말 끝날 예정이던 유류세 인하를 두 달 연장해 당장의 기름값 부담은 낮추지만, 감세에 따른 재정비용과 종료 기준은 공개되지 않았습니다.",
