@@ -28,6 +28,14 @@ export type TaxCommentary = {
   readMinutes: number;
   heroSrc: string;
   sources: { label: LocalizedText; url: string }[];
+  relatedReading?: Record<TaxCommentaryLanguage, {
+    href: string;
+    title: string;
+    relationship: string;
+    reason: string;
+    listHref: string;
+    listLabel: string;
+  }>;
   editions: Record<TaxCommentaryLanguage, CommentaryEdition>;
 };
 
@@ -36,7 +44,7 @@ export const taxCommentaries: TaxCommentary[] = [
   slug: "fuel-tax-relief-needs-an-exit-rule",
   relatedPolicySlug: "fuel-tax-cut-extended-november-2026",
   date: "2026-09-18",
-  readMinutes: 6,
+  readMinutes: 7,
   heroSrc: "images/monitoring/fuel-tax-extension-2026-hero.webp",
   sources: [
     {
@@ -51,16 +59,38 @@ export const taxCommentaries: TaxCommentary[] = [
       label: { ko: "매일경제 — 유류세 인하 11월 말까지 연장", en: "Maeil Business — fuel-tax cuts extended through November" },
       url: "https://www.mk.co.kr/news/economy/12156047",
     },
+    {
+      label: { ko: "산업통상부 — 석유 최고가격제 손실보전 재정지원 설명자료", en: "Ministry of Trade, Industry and Resources — official explanation of fiscal compensation under the petroleum price ceiling" },
+      url: "https://www.motir.go.kr/kor/article/ATCLe0854704d/172198/view",
+    },
   ],
+  relatedReading: {
+    ko: {
+      href: "/news/fuel-price-cap-tax-bill",
+      title: "기름값 잡았다지만—4조 2천억 청구서는 누가 내나",
+      relationship: "같은 기름값, 또 하나의 재정비용",
+      reason: "유류세 인하와 별도로 운영되는 석유 최고가격제가 정유사 손실을 어떻게 국고 부담으로 옮기는지 설명합니다.",
+      listHref: "/news",
+      listLabel: "핫이슈 전체 보기",
+    },
+    en: {
+      href: "/news/fuel-price-cap-tax-bill",
+      title: "Fuel Prices Were Capped—Who Pays the KRW 4.2 Trillion Bill?",
+      relationship: "THE OTHER FISCAL COST BEHIND FUEL PRICES",
+      reason: "This related article explains how Korea's separate petroleum price ceiling transfers verified refinery losses to the public budget.",
+      listHref: "/news",
+      listLabel: "All Hot Issues",
+    },
+  },
   editions: {
     ko: {
       title: "기름값은 낮췄지만, 감세 비용은 보이지 않습니다",
       subtitle: "유류세 인하가 필요해도 두 달짜리 연장에는 세수와 종료 기준이 따라야 합니다",
-      summary: "정부가 휘발유·경유·LPG 부탄의 유류세 인하를 2026년 11월 말까지 두 달 더 연장합니다. 운전자와 운송업의 부담을 덜어주는 조치입니다. 그러나 이번 연장으로 줄어드는 세수와 인하 종료 기준은 입법예고 화면에서 확인하기 어렵습니다. 오늘의 기름값만큼 내일의 재정비용도 함께 공개해야 합니다.",
+      summary: "정부가 휘발유·경유·LPG 부탄의 유류세 인하를 2026년 11월 말까지 두 달 더 연장합니다. 운전자와 운송업의 부담을 덜어주는 조치입니다. 그러나 이번 연장으로 줄어드는 세수는 공개되지 않았고, 별도로 운영되는 석유 최고가격제의 정유사 손실은 국고가 보전합니다. 주유소에서 낮아진 가격과 국가 장부에 남는 비용을 함께 공개해야 합니다.",
       keyPoints: [
         "휘발유 15%, 경유·LPG 부탄 25%의 인하율이 11월 30일까지 유지돼 운전자와 운송업의 단기 부담을 낮춥니다.",
         "리터당 세액은 인하 전보다 휘발유 122원, 경유 145원, 부탄 51원 낮지만 실제 주유가격 반영률은 따로 확인해야 합니다.",
-        "두 달간의 세수 감소 규모와 객관적인 종료 기준이 공개돼야 감세의 편익과 비용을 함께 판단할 수 있습니다.",
+        "유류세는 덜 걷고 최고가격제 손실은 국고로 보전하는 만큼, 두 제도의 전체 재정비용과 각각의 종료 기준을 함께 공개해야 합니다.",
       ],
       heroAlt: "주유기에서 길게 이어진 영수증 뒤로 화물차와 LPG 택시가 이동하는 유류세 감시 이미지",
       heroCaption: "주유기 앞에서는 세금 인하가 보입니다. 국가 재정에서는 줄어드는 세수가 잘 보이지 않습니다. 유류비 부담 완화와 감세 비용은 같은 장부에서 함께 확인해야 합니다.",
@@ -83,6 +113,15 @@ export const taxCommentaries: TaxCommentary[] = [
           quote: "기름값의 122원은 보이는데, 국가 장부에서 빠지는 금액은 보이지 않습니다.",
         },
         {
+          title: "덜 걷는 세금 옆에서 국고 지출도 늘어납니다",
+          paragraphs: [
+            "유류세 인하분을 다른 세목으로 곧바로 다시 걷는 제도는 아닙니다. 다만 지금의 기름값 대책에는 별도의 석유 최고가격제도 함께 작동하고 있습니다. 정부가 정유사의 공급가격에 상한을 두고, 그 때문에 발생한 것으로 인정되는 손실을 국고에서 보전하는 제도입니다.",
+            "정부는 손실보전을 위해 목적예비비 4조 2천억 원을 편성했습니다. 이 금액은 정유사에 이미 지급된 돈이 아니라 정산을 위해 확보한 한도입니다. 산업통상부는 정유사가 원가자료를 제출하면 정산위원회 심의를 거쳐 연내 지원금을 지급할 계획이라고 밝혔습니다.",
+            "결국 시민이 주유소에서 덜 내는 동안 재정은 두 방향의 부담을 집니다. 한쪽에서는 유류세 수입이 줄고, 다른 한쪽에서는 최고가격제 손실보전 지출이 생깁니다. 두 제도는 법적 구조가 다르지만 국민의 장부에서는 함께 보아야 할 비용입니다.",
+          ],
+          quote: "주유소에서 줄어든 부담이 국가 장부에서 사라지는 것은 아닙니다.",
+        },
+        {
           title: "두 달짜리 연장은 예측 가능한 세제가 아닙니다",
           paragraphs: [
             "정부는 국제유가와 중동 정세를 보며 대응 여력을 남기기 위해 두 달만 연장한다고 설명합니다. 급변하는 상황에 탄력적으로 대응하려는 취지는 이해할 수 있습니다. 그러나 짧은 연장이 반복될수록 시민과 기업은 두 달 뒤 세금이 어떻게 바뀔지 다시 기다려야 합니다.",
@@ -91,10 +130,11 @@ export const taxCommentaries: TaxCommentary[] = [
           ],
         },
         {
-          title: "씨앗은 세 가지 숫자를 계속 보겠습니다",
+          title: "씨앗은 두 장부와 두 종료 기준을 계속 보겠습니다",
           paragraphs: [
             "첫째는 실제 주유가격입니다. 세금 인하분이 정유·도매·소매 단계를 거쳐 소비자가격에 얼마나 반영됐는지 유종별로 확인해야 합니다. 국제유가나 환율이 올랐다는 설명만으로는 세금 인하 효과가 어디에서 줄었는지 알 수 없습니다.",
-            "둘째는 세수 감소액입니다. 두 달간 덜 걷는 교통·에너지·환경세와 개별소비세, 이에 연동되는 세입을 합쳐 공개해야 합니다. 셋째는 종료 기준입니다. 11월 말 이후 연장·축소·종료 가운데 어떤 결정을 내리는지보다 그 결정을 어떤 수치로 설명하는지가 더 중요합니다.",
+            "둘째는 세수 감소액입니다. 두 달간 덜 걷는 교통·에너지·환경세와 개별소비세, 이에 연동되는 세입을 합쳐 공개해야 합니다. 최고가격제에서는 정유사별 청구액, 정산위원회 인정액과 실제 지급액을 차례로 확인해야 합니다. 4조 2천억 원의 편성액이 아니라 정산 뒤 국고에서 실제로 나간 돈이 최종 비용입니다.",
+            "마지막은 두 제도의 종료 기준입니다. 유류세 인하의 연장·축소·종료와 최고가격제의 유지·해제를 각각 어떤 수치로 결정하는지 공개해야 합니다. 세금은 덜 걷고 보전금은 지출하면서 가격표만 낮아졌다고 말한다면 시민은 절반의 장부만 보게 됩니다.",
             "당장의 부담을 낮추는 일과 장기 재정을 지키는 일은 서로 반대편에 있지 않습니다. 세금을 덜 걷는다면 그 이유와 비용을 밝히고, 다시 걷는다면 그 기준과 시점을 예고하면 됩니다. 부담 완화는 환영받을 수 있습니다. 불투명한 연장은 감시받아야 합니다.",
           ],
         },
@@ -106,22 +146,22 @@ export const taxCommentaries: TaxCommentary[] = [
         rows: [
           ["적용 기간", "2026년 11월 30일까지 두 달 연장", "11월 말 이후의 조정 원칙", "계약과 비용 계획의 예측 가능성"],
           ["세 부담", "휘발유 15%, 경유·부탄 25% 인하", "주유가격에 실제 반영된 비율", "유종별·지역별 판매가격 변화"],
-          ["재정 비용", "국민 유류비 부담 경감", "두 달간 줄어드는 전체 세수", "감세 편익과 재정비용의 비교"],
+          ["재정 비용", "유류세 인하와 최고가격제 병행", "두 달간 줄어드는 세수·정유사 손실 실제 지급액", "덜 걷는 돈과 국고 지출을 합산해 비교"],
           ["종료 기준", "중동 정세와 대응 여력 고려", "유가·환율·물가의 객관적 기준", "연장·축소·종료 결정의 근거"],
         ],
-        note: "출처: 재정경제부 2026년 9월 18일 시행령 개정안 입법예고와 당일 발표 내용. 리터당 세액은 부가가치세를 포함한 금액입니다.",
+        note: "출처: 재정경제부 2026년 9월 18일 시행령 개정안 입법예고, 산업통상부 2026년 9월 14일 설명자료. 리터당 세액은 부가가치세를 포함한 금액입니다. 목적예비비 4조 2천억 원은 실제 지급액이 아니라 손실보전을 위해 편성한 금액입니다.",
         afterSection: 0,
       },
-      sourceNote: "이 글은 2026년 9월 18일 공개된 재정경제부의 교통·에너지·환경세법 시행령 및 개별소비세법 시행령 개정안 입법예고를 기준으로 작성했습니다. 의견 제출 기한은 9월 23일이며, 두 시행령은 국무회의 의결을 거쳐 시행될 예정입니다. 씨앗의 소리는 세수 감소액, 주유가격 반영률과 11월 말 이후의 종료 기준을 계속 확인합니다.",
+      sourceNote: "이 글은 2026년 9월 18일 공개된 재정경제부의 교통·에너지·환경세법 시행령 및 개별소비세법 시행령 개정안 입법예고와 9월 14일 산업통상부 설명자료를 기준으로 작성했습니다. 유류세 인하와 석유 최고가격제는 서로 다른 제도이며, 유류세 감면액을 특정 세목으로 자동 환수하는 구조는 아닙니다. 다만 세수 감소와 최고가격제 손실보전은 모두 국민이 함께 확인해야 할 재정비용입니다. 씨앗의 소리는 세수 감소액, 정유사별 청구·인정·지급액과 두 제도의 종료 기준을 계속 확인합니다.",
     },
     en: {
       title: "Fuel bills fall, but the fiscal cost remains out of sight",
       subtitle: "Even justified relief needs a revenue estimate and a predictable exit rule",
-      summary: "South Korea will extend temporary fuel-tax cuts on gasoline, diesel and LPG butane through November 2026. The measure offers real relief to drivers and transport businesses. Yet the public notice does not prominently state the revenue cost or the conditions for ending the cuts. Today's lower fuel bill should be presented alongside tomorrow's fiscal cost.",
+      summary: "South Korea will extend temporary fuel-tax cuts on gasoline, diesel and LPG butane through November 2026. The measure offers real relief to drivers and transport businesses. Yet the revenue loss remains undisclosed, while a separate petroleum price ceiling compensates verified refinery losses from the public budget. The lower price at the pump and the cost left on the public ledger should be disclosed together.",
       keyPoints: [
         "The 15% gasoline cut and 25% diesel and LPG butane cuts continue through November 30, lowering near-term costs for drivers and transport businesses.",
         "Per-liter tax remains KRW 122 lower for gasoline, KRW 145 lower for diesel and KRW 51 lower for butane, but actual pass-through at the pump still needs verification.",
-        "Citizens need the two-month revenue estimate and objective exit criteria to judge the relief and its fiscal cost together.",
+        "Because Korea is both collecting less fuel tax and financing losses under a separate price ceiling, citizens need the total fiscal cost and exit rules for both measures.",
       ],
       heroAlt: "Fuel pumps with a long receipt stretching toward a delivery truck and an LPG taxi",
       heroCaption: "The tax cut is visible at the pump. The revenue forgone in the public ledger is harder to see. Fuel-cost relief and its fiscal cost belong in the same account.",
@@ -144,6 +184,15 @@ export const taxCommentaries: TaxCommentary[] = [
           quote: "The KRW 122 at the pump is visible. The amount missing from the public ledger is not.",
         },
         {
+          title: "Lower tax receipts sit beside higher public spending",
+          paragraphs: [
+            "The fuel-tax reduction is not automatically recouped through another named tax. But a separate petroleum price ceiling is operating alongside it. The government caps refinery supply prices and compensates losses recognized as resulting from that ceiling with public funds.",
+            "The government allocated KRW 4.2 trillion in contingency reserves for this compensation. That is a budget envelope, not money already paid to refiners. The Ministry of Trade, Industry and Resources says compensation will be paid after refiners submit cost data and a settlement committee reviews the claims.",
+            "The public ledger therefore absorbs pressure in two directions while motorists pay less at the pump: fuel-tax receipts fall, and compensation spending arises under the price ceiling. The two policies are legally distinct, but their fiscal costs belong in the same public account.",
+          ],
+          quote: "A smaller bill at the pump does not make the cost disappear from the public ledger.",
+        },
+        {
           title: "A two-month extension is not a predictable tax rule",
           paragraphs: [
             "Officials say a short extension preserves flexibility while oil markets and regional tensions remain uncertain. The case for flexibility is understandable. But every short extension leaves households and businesses waiting to learn what their tax bill will be only weeks later.",
@@ -152,10 +201,11 @@ export const taxCommentaries: TaxCommentary[] = [
           ],
         },
         {
-          title: "Seed Voice will track three numbers",
+          title: "Seed Voice will track both ledgers and both exit rules",
           paragraphs: [
             "First is the pump-price pass-through. The government should show how much of each fuel's tax reduction reaches retail prices after refining, wholesale and retail margins. General references to crude prices or exchange rates do not identify where the benefit was absorbed.",
-            "Second is total forgone revenue, including the transportation-energy-environment tax, individual consumption tax and linked receipts. Third is the exit rule. Whether the government extends, narrows or ends the cuts after November matters less than whether it explains the decision with measurable criteria.",
+            "Second is total forgone revenue, including the transportation-energy-environment tax, individual consumption tax and linked receipts. Under the price ceiling, the government should disclose each refiner's claim, the amount recognized by the settlement committee and the amount actually paid. The final cost is not the KRW 4.2 trillion allocation but the money disbursed after settlement.",
+            "The final test is the exit rule for each policy. The government should disclose the indicators that will determine whether the fuel-tax cut is extended, narrowed or ended, and whether the petroleum price ceiling is maintained or lifted. Reporting only the lower price while omitting both forgone revenue and compensation would show citizens only half the ledger.",
             "Near-term relief and long-term fiscal responsibility are not opposites. If government collects less, it should disclose the reason and cost. If it later collects more, it should announce the threshold and timing. Relief can be welcomed. Opaque extensions still deserve scrutiny.",
           ],
         },
@@ -167,13 +217,13 @@ export const taxCommentaries: TaxCommentary[] = [
         rows: [
           ["Period", "Two-month extension through November 30, 2026", "Rule after November", "Predictability for contracts and budgets"],
           ["Tax burden", "15% gasoline cut; 25% diesel and butane cuts", "Actual retail pass-through", "Price changes by fuel and region"],
-          ["Fiscal cost", "Relief from fuel expenses", "Total two-month revenue loss", "Comparison of benefits and fiscal cost"],
+          ["Fiscal cost", "Tax cut and petroleum price ceiling operating together", "Two-month revenue loss and actual refinery-compensation payments", "Compare forgone revenue and public spending together"],
           ["Exit rule", "Middle East risks and policy flexibility", "Oil, exchange-rate and inflation thresholds", "Evidence for extending, narrowing or ending the cuts"],
         ],
-        note: "Sources: Ministry of Economy and Finance decree notices and statements dated September 18, 2026. Per-liter tax figures include VAT.",
+        note: "Sources: Ministry of Economy and Finance decree notices dated September 18, 2026, and the Ministry of Trade, Industry and Resources explanation dated September 14, 2026. Per-liter tax figures include VAT. KRW 4.2 trillion is an allocation for potential compensation, not an amount already paid.",
         afterSection: 0,
       },
-      sourceNote: "This commentary is based on the Ministry of Economy and Finance's September 18, 2026 notices amending the transportation-energy-environment tax and individual consumption tax decrees. Public comments close on September 23, and Cabinet approval is required before implementation. Seed Voice will continue to track forgone revenue, retail pass-through and the post-November exit rule.",
+      sourceNote: "This commentary is based on the Ministry of Economy and Finance's September 18, 2026 decree notices and the Ministry of Trade, Industry and Resources' September 14 explanation. The fuel-tax cut and petroleum price ceiling are separate policies; the tax reduction is not automatically recovered through another named tax. Yet forgone revenue and compensation paid under the ceiling are both public fiscal costs. Seed Voice will track forgone revenue, refinery claims, recognized losses, actual payments and the exit criteria for both measures.",
     },
   },
 },
