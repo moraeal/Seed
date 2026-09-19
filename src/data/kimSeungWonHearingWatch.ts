@@ -151,6 +151,31 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   ],
   timeline: [
     {
+      date: "2026-09-19",
+      title: { ko: "김승원 후보자, 지명 20일 만에 자진 사퇴", en: "Kim withdraws 20 days after nomination" },
+      description: {
+        ko: "김승원 후보자는 9월 19일 오전 국회 소통관에서 기자회견을 열고 깊은 고민 끝에 법무부 장관 후보자직을 내려놓기로 했다고 밝혔습니다. 국민 눈높이에 미치지 못했음을 받아들이고 정부에 부담을 더해서는 안 된다고 판단했으며, 9월 18일 대통령 기자회견을 보고 결심을 굳혔다고 설명했습니다. 이로써 김 후보자의 임명 절차는 지명 20일 만에 종료됐습니다. 다만 후보직 사퇴가 제넨셀 민원 의혹이나 가족 협동조합 고발 사건의 사실관계와 위법성에 대한 판단을 대신하는 것은 아니며, 관련 수사와 재판은 별도로 이어집니다.",
+        en: "Kim Seung-won announced at a September 19 press conference at the National Assembly that, after deep consideration, he would withdraw as justice minister nominee. He said he accepted that he had fallen short of public expectations, concluded that he should not add to the government's burden and finalized the decision after watching the president's September 18 press conference. His appointment process ended 20 days after nomination. The withdrawal does not determine the facts or legality of the Genencell petition allegation or family-cooperative complaint; the related investigations and trial continue separately.",
+      },
+      change: { ko: "임명 절차 종료, 관련 의혹의 수사·재판은 별도 진행", en: "Appointment process ends; related investigations and trial remain separate" },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: { ko: "김승원 ‘국민 눈높이 못 미쳤다…후보자직 내려놓겠다’", en: "Kim says he fell short of public expectations and will withdraw" },
+          url: "https://www.yna.co.kr/amp/view/AKR20260919029200001",
+          publishedAt: "2026-09-19",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "채널A", en: "Channel A" },
+          title: { ko: "김승원 ‘깊은 고민 끝에 법무부 장관 후보직 내려놓는다’", en: "Kim says he will step down as justice minister nominee after deep consideration" },
+          url: "https://ichannela.com/news/detail/amp/000000551332.do",
+          publishedAt: "2026-09-19",
+          kind: "article",
+        },
+      ],
+    },    {
       date: "2026-08-31",
       title: { ko: "법무부 장관 후보자로 지명", en: "Nominated as justice minister" },
       description: {
@@ -708,32 +733,6 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       status: "pending",
     },
   ],
-    {
-      date: "2026-09-19",
-      title: { ko: "김승원 후보자, 지명 20일 만에 자진 사퇴", en: "Kim withdraws 20 days after nomination" },
-      description: {
-        ko: "김승원 후보자는 9월 19일 오전 국회 소통관에서 기자회견을 열고 깊은 고민 끝에 법무부 장관 후보자직을 내려놓기로 했다고 밝혔습니다. 국민 눈높이에 미치지 못했음을 받아들이고 정부에 부담을 더해서는 안 된다고 판단했으며, 9월 18일 대통령 기자회견을 보고 결심을 굳혔다고 설명했습니다. 이로써 김 후보자의 임명 절차는 지명 20일 만에 종료됐습니다. 다만 후보직 사퇴가 제넨셀 민원 의혹이나 가족 협동조합 고발 사건의 사실관계와 위법성에 대한 판단을 대신하는 것은 아니며, 관련 수사와 재판은 별도로 이어집니다.",
-        en: "Kim Seung-won announced at a September 19 press conference at the National Assembly that, after deep consideration, he would withdraw as justice minister nominee. He said he accepted that he had fallen short of public expectations, concluded that he should not add to the government's burden and finalized the decision after watching the president's September 18 press conference. His appointment process ended 20 days after nomination. The withdrawal does not determine the facts or legality of the Genencell petition allegation or family-cooperative complaint; the related investigations and trial continue separately.",
-      },
-      change: { ko: "임명 절차 종료, 관련 의혹의 수사·재판은 별도 진행", en: "Appointment process ends; related investigations and trial remain separate" },
-      status: "confirmed",
-      sources: [
-        {
-          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
-          title: { ko: "김승원 ‘국민 눈높이 못 미쳤다…후보자직 내려놓겠다’", en: "Kim says he fell short of public expectations and will withdraw" },
-          url: "https://www.yna.co.kr/amp/view/AKR20260919029200001",
-          publishedAt: "2026-09-19",
-          kind: "article",
-        },
-        {
-          publisher: { ko: "채널A", en: "Channel A" },
-          title: { ko: "김승원 ‘깊은 고민 끝에 법무부 장관 후보직 내려놓는다’", en: "Kim says he will step down as justice minister nominee after deep consideration" },
-          url: "https://ichannela.com/news/detail/amp/000000551332.do",
-          publishedAt: "2026-09-19",
-          kind: "article",
-        },
-      ],
-    },
   confirmedFacts: [
     { ko: "김승원 후보자는 2026년 9월 19일 국회 소통관 기자회견에서 법무부 장관 후보자직을 자진 사퇴한다고 밝혔습니다. 지명 20일 만이자 법사위가 ‘적격’ 의견의 청문경과보고서를 채택한 지 이틀 만입니다. 사퇴로 임명 절차는 종료됐지만 관련 의혹의 사실관계나 위법성이 확정된 것은 아닙니다.", en: "On September 19, 2026, Kim Seung-won announced at a National Assembly press conference that he was withdrawing as justice minister nominee. The decision came 20 days after nomination and two days after the committee adopted a fit-for-office confirmation report. The withdrawal ended the appointment process but did not determine the facts or legality of the related allegations." },
     { ko: "경기남부경찰청은 세종메디칼이 제넨셀 창립자 강세찬 씨를 특정경제범죄 가중처벌법상 사기 혐의로 고소한 사건과 관련해 2026년 9월 22일 소환 조사할 계획이라고 밝혔습니다. 경찰은 6월 사건을 검찰에 송치했으나 7월 보완수사 요구를 받았습니다. 이는 112억 원 투자 피해 주장에 관한 별도 사건이며, 소환만으로 혐의가 확정된 것은 아닙니다.", en: "Gyeonggi Nambu Provincial Police said it plans to question Genencell founder Kang Se-chan on September 22, 2026 in an aggravated-fraud complaint brought by Sejong Medical. Police forwarded the case in June and prosecutors requested supplementary investigation in July. This is a separate case concerning claimed investment losses of KRW 11.2 billion, and the summons does not establish guilt." },
