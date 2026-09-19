@@ -92,17 +92,17 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       },
     },
     {
-      date: "2026-09-18",
-      text: {
-        ko: "중수청이 사회적 약자 대상 7대 범죄의 보완·재수사를 맡도록 한 개정안이 9월 17일 국회 본회의를 통과한 뒤 18일 정부로 이송됐습니다. 국회 절차는 끝났지만 아직 공포된 법률은 아닙니다.",
-        en: "The amendment authorizing follow-up investigations in seven vulnerable-victim crime categories passed the National Assembly on September 17 and was transmitted to the government on September 18. Parliamentary action is complete, but the bill has not yet been promulgated as law.",
-      },
-    },
-    {
       date: "2026-09-17",
       text: {
         ko: "행정안전부는 추가 검증 결과 김지용 중수청장 후보자를 둘러싼 주요 의혹이 사실이 아니라고 발표했습니다. 다만 후보자 본인 확인에 의존했다는 반박이 나왔고 인사청문요청서 제출과 청문 일정은 아직 확인되지 않았습니다.",
         en: "The Interior Ministry said additional vetting found the main allegations against nominee Kim Ji-yong unsubstantiated. Critics challenged the ministry's reliance on Kim's own account, while submission of the confirmation request and a hearing date remain unconfirmed.",
+      },
+    },
+    {
+      date: "2026-09-18",
+      text: {
+        ko: "중수청이 사회적 약자 대상 7대 범죄의 보완·재수사를 맡도록 한 개정안이 9월 17일 국회 본회의를 통과한 뒤 18일 정부로 이송됐습니다. 국회 절차는 끝났지만 아직 공포된 법률은 아닙니다.",
+        en: "The amendment authorizing follow-up investigations in seven vulnerable-victim crime categories passed the National Assembly on September 17 and was transmitted to the government on September 18. Parliamentary action is complete, but the bill has not yet been promulgated as law.",
       },
     },
     {
