@@ -80,10 +80,10 @@ const staticRoutes: SeoRoute[] = [
   { path: "/monitoring/public-interest", title: "공익감시 | 씨앗의 소리", description: "공공기관·공익기관·시민단체와 보조사업이 시민의 이름으로 사용하는 권한과 돈, 설명 책임과 실제 결과를 공개자료로 점검합니다.", type: "website", lastModified: newest(publicInterestWatchCases.map((item) => item.updatedAt)) },
   { path: "/proposals", title: "시민제안 | 씨앗의 소리", description: "시민의 문제의식을 구체적인 제도와 정책의 제안으로 키우는 씨앗의 소리 제안 공간입니다.", type: "website", lastModified: latestDate },
   { path: "/founding-statement", title: "왜 지금 씨앗의 소리인가 | 씨앗의 소리", description: "다수결만으로 민주주의가 완성되지 않는 이유와 법의 지배, 제한된 정부, 권력분립과 시민의 자유를 지키려는 씨앗의 소리의 취지문입니다.", type: "article", publishedAt: latestDate, lastModified: latestDate, author: "작은씨앗", section: "씨앗의 소리 취지문", image: socialImageUrl("site", "founding-statement", latestDate), imageAlt: "국회, 정부와 법원의 권력분립과 시민의 자유를 상징하는 이미지" },
-  { path: "/seed-language", title: "용어해설 | 씨앗의 소리", description: "특정 진영이 독점한 시민사회의 언어를 해체하고 본래 의미를 되살려 시민의 언어로 다시 구성합니다.", type: "website", lastModified: newest(allSeedLanguageArticlesKo.map((item) => item.date)) },
+  { path: "/seed-language", title: "시민언어 | 씨앗의 소리", description: "특정 진영이 독점한 시민사회의 언어를 해체하고 본래 의미를 되살려 시민의 언어로 다시 구성합니다.", type: "website", lastModified: newest(allSeedLanguageArticlesKo.map((item) => item.date)) },
   { path: "/about", title: "씨앗의 소리가 지키려는 것 | 씨앗의 소리", description: "법의 지배, 제한된 정부, 권력분립과 시민·기업의 자유를 지키며 국가와 시민사회의 권력을 감시하는 독립 시민저널 씨앗의 소리의 선언입니다.", type: "website", lastModified: latestDate },
   { path: "/publisher-message", title: "발행인 소개 | 씨앗의 소리", description: "한 사람의 질문과 판단에서 시작된 독립 시민저널 씨앗의 소리의 발행인 소개입니다.", type: "article", publishedAt: latestDate, lastModified: latestDate, author: "작은씨앗", section: "발행인 소개" },
-  { path: "/search", title: "통합검색 | 씨앗의 소리", description: "씨앗의 소리의 핫이슈, 브리핑, 칼럼, 시민감시와 용어해설을 한 번에 검색합니다.", type: "website", lastModified: latestDate, noindex: true },
+  { path: "/search", title: "통합검색 | 씨앗의 소리", description: "씨앗의 소리의 핫이슈, 브리핑, 칼럼, 시민감시와 시민언어을 한 번에 검색합니다.", type: "website", lastModified: latestDate, noindex: true },
 ];
 
 const newsRoutes: SeoRoute[] = newsArticles.map((article) => ({
@@ -217,7 +217,7 @@ const seedLanguageRoutes: SeoRoute[] = allSeedLanguageArticlesKo.map((article) =
   publishedAt: article.date,
   lastModified: article.date,
   author: SITE_NAME,
-  section: "용어해설",
+  section: "시민언어",
   image: socialImageUrl("seed-language", article.slug, `${article.date}-${stableHash(article.heroImage.src)}`),
   imageAlt: article.heroImage.alt,
 }));

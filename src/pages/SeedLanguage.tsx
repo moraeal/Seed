@@ -26,12 +26,12 @@ export default function SeedLanguage() {
         <div className="container-page max-w-5xl">
           <p className="section-kicker">GLOSSARY</p>
           <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-stretch sm:justify-between">
-            <h1 className="editorial-title flex items-center text-[2.1rem] font-bold leading-tight text-navy sm:text-[2.625rem]">{ko ? "용어해설" : "Glossary"}</h1>
+            <h1 className="editorial-title flex items-center text-[2.1rem] font-bold leading-tight text-navy sm:text-[2.625rem]">{ko ? "시민언어" : "Glossary"}</h1>
             <div className="flex items-center gap-4 bg-green-deep px-5 py-4 text-white sm:min-w-72 sm:px-6">
               <BookOpenText size={28} className="shrink-0 text-gold-light" />
               <div>
                 <p className="text-[11px] font-extrabold tracking-[.16em] text-gold-light">WORDS IN QUESTION</p>
-                <p className="editorial-title mt-1 text-xl font-bold leading-tight">{ko ? "용어해설 읽기" : "Read the Glossary"}</p>
+                <p className="editorial-title mt-1 text-xl font-bold leading-tight">{ko ? "시민언어 읽기" : "Read the Glossary"}</p>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@ export default function SeedLanguage() {
             {ko ? (
               <>
                 <p>진영과 온라인의 언어는 시민을 이해하기보다 편으로 나누고, 좋은 가치마저 질문하기 어려운 구호로 만듭니다.</p>
-                <p>용어해설은 익숙한 말과 새로 생긴 말에 숨은 전제와 권력을 드러냅니다.</p>
+                <p>시민언어는 익숙한 말과 새로 생긴 말에 숨은 전제와 권력을 드러냅니다.</p>
                 <p>사람을 적으로 규정하지 않고 문제를 근거·비용·결과·책임으로 판단하도록 시민에게 언어를 돌려줍니다.</p>
               </>
             ) : (
@@ -59,7 +59,7 @@ export default function SeedLanguage() {
             <div className="flex items-start justify-between gap-5">
               <div>
                 <Quote size={26} className="text-gold" />
-                <p className="mt-4 text-[11px] font-extrabold tracking-[.14em] text-green-deep">{ko ? "용어해설이 필요한 이유" : "WHY THE GLOSSARY MATTERS"}</p>
+                <p className="mt-4 text-[11px] font-extrabold tracking-[.14em] text-green-deep">{ko ? "시민언어가 필요한 이유" : "WHY THE GLOSSARY MATTERS"}</p>
                 <h2 className="editorial-title mt-2 text-[1.45rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.8rem]">
                   {ko ? "말이 시민을 적으로 만든다" : "When Words Turn Citizens into Enemies"}
                 </h2>
@@ -75,7 +75,7 @@ export default function SeedLanguage() {
           </Link>
         </section>
 
-        <section className="mt-7" aria-label={ko ? "용어해설 콘텐츠" : "Glossary articles"}>
+        <section className="mt-7" aria-label={ko ? "시민언어 콘텐츠" : "Glossary articles"}>
           <div className="mb-4 flex items-end justify-between gap-4 border-b-2 border-navy pb-3">
             <div><span className="section-kicker">LATEST</span><h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "최근 기사" : "Latest articles"}</h2></div>
             <p className="text-xs font-semibold text-charcoal/45">{ko ? "최근 5건" : "Latest five"}</p>

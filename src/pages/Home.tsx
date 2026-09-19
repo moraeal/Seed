@@ -319,7 +319,7 @@ export default function Home() {
                     )}
                   </div>
                   <div className="min-w-0">
-                    <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">GLOSSARY</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "용어해설 보기" : "Read"}<ArrowRight size={11}/></span></div>
+                    <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">GLOSSARY</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "시민언어 보기" : "Read"}<ArrowRight size={11}/></span></div>
                     <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{seedLanguageArticle.title}</h2>
                     <p className="home-compact-summary mt-1 line-clamp-3">{seedLanguageArticle.summary}</p>
                   </div>

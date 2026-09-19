@@ -94,7 +94,7 @@ export default function SearchPage() {
       .filter((item): item is NonNullable<typeof item> => Boolean(item))
       .map((item) => ({
         key: `language-${item.slug}`,
-        category: ko ? "용어해설" : "Glossary",
+        category: ko ? "시민언어" : "Glossary",
         title: item.title,
         summary: item.summary,
         body: [item.term, item.subtitle, ...item.keyPoints, ...item.sections.flatMap((section) => [section.title, ...section.paragraphs])].join(" "),
@@ -156,7 +156,7 @@ export default function SearchPage() {
         <div className="container-page py-10 sm:py-14">
           <span className="section-kicker">SEARCH SEED VOICE</span>
           <h1 className="editorial-title mt-3 text-4xl font-bold text-navy sm:text-5xl">{ko ? "통합검색" : "Search"}</h1>
-          <p className="mt-3 max-w-2xl text-base leading-7 text-charcoal/65">{ko ? "핫이슈, 브리핑, 칼럼, 시민감시와 용어해설의 제목과 본문을 함께 검색합니다." : "Search titles and full text across Hot Issues, Briefings, Columns, Civic Watch and the Glossary."}</p>
+          <p className="mt-3 max-w-2xl text-base leading-7 text-charcoal/65">{ko ? "핫이슈, 브리핑, 칼럼, 시민감시와 시민언어의 제목과 본문을 함께 검색합니다." : "Search titles and full text across Hot Issues, Briefings, Columns, Civic Watch and the Glossary."}</p>
 
           <form onSubmit={submit} role="search" className="mt-7 flex max-w-3xl items-stretch border-2 border-green-deep bg-white focus-within:ring-2 focus-within:ring-gold/60">
             <SearchIcon className="ml-4 self-center text-green-deep" size={22} aria-hidden="true"/>

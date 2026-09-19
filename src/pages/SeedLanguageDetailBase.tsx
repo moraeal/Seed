@@ -21,7 +21,7 @@ export default function SeedLanguageDetail() {
   const ko = language === "ko";
   const article = getSeedLanguageEnvironmentArticle(slug, language) ?? getSeedLanguageArticle(slug, language);
 
-  if (!article) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">{ko ? "용어해설 글을 찾을 수 없습니다." : "Glossary article not found."}</h1><Link to="/seed-language" className="button-primary mt-7">{ko ? "용어해설 목록" : "Glossary"}</Link></div>;
+  if (!article) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">{ko ? "시민언어 글을 찾을 수 없습니다." : "Glossary article not found."}</h1><Link to="/seed-language" className="button-primary mt-7">{ko ? "시민언어 목록" : "Glossary"}</Link></div>;
 
   const continuation = getEditorialContinuation("seed-language", article.slug, language);
 
@@ -50,7 +50,7 @@ export default function SeedLanguageDetail() {
   return <article className="bg-paper">
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
       <div className="container-page max-w-5xl">
-        <Link to="/seed-language" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "용어해설 목록" : "Glossary"}</Link>
+        <Link to="/seed-language" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "시민언어 목록" : "Glossary"}</Link>
         <div className="mt-3 border-t-2 border-navy pt-3">
           <div className="flex items-center gap-3"><span className="section-kicker">GLOSSARY</span><span className="rounded-full bg-green-pale px-3 py-1 text-xs font-extrabold text-green-deep">{article.term}</span></div>
           <h1 className="article-detail-title mt-2">{article.title}</h1>

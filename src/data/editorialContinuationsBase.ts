@@ -16,7 +16,7 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
       relationship: "정치에서 시민으로",
       reason: "정치가 시민이 사용하는 도구라면, 그 도구를 맡기고 감시하며 책임지는 시민은 어떻게 성장하는지 이어서 살펴봅니다.",
       listHref: "/seed-language",
-      listLabel: "용어해설 전체 보기",
+      listLabel: "시민언어 전체 보기",
     },
     en: {
       href: "/seed-language/citizen-as-seed",
@@ -160,7 +160,7 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
       relationship: "언어와 시민",
       reason: "진영이 붙인 이름에서 벗어난 시민이 어떻게 스스로 묻고 판단하는 공공의 주체로 성장하는지 이어서 살펴봅니다.",
       listHref: "/seed-language",
-    listLabel: "용어해설 전체 보기",
+    listLabel: "시민언어 전체 보기",
     },
     en: {
       href: "/seed-language/citizen-as-seed",

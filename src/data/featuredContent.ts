@@ -93,7 +93,7 @@ export function getFeaturedContentCandidates(language: Language): FeaturedConten
     return [{
       path: `/seed-language/${item.slug}`,
       category: "language",
-      categoryLabel: ko ? "용어해설" : "Glossary",
+      categoryLabel: ko ? "시민언어" : "Glossary",
       kicker: "GLOSSARY",
       title: localized.title,
       summary: localized.summary,

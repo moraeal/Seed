@@ -15,7 +15,7 @@ const freedomContinuation: Record<Language, EditorialContinuation> = {
     relationship: "자유와 시민",
     reason: "자유가 시민을 주체로 세우는 조건이라면, 그 시민이 어떻게 공공의 주체로 성장하는지 이어서 살펴봅니다.",
     listHref: "/seed-language",
-    listLabel: "용어해설 전체 보기",
+    listLabel: "시민언어 전체 보기",
   },
   en: {
     href: "/seed-language/citizen-as-seed",
@@ -34,7 +34,7 @@ const progressContinuation: Record<Language, EditorialContinuation> = {
     relationship: "진보와 자유",
     reason: "진보를 시민의 자유를 넓히는 태도로 판단했다면, 자유가 방임이나 보호의 반대말을 넘어 시민을 어떻게 주체로 세우는지 이어서 살펴봅니다.",
     listHref: "/seed-language",
-    listLabel: "용어해설 전체 보기",
+    listLabel: "시민언어 전체 보기",
   },
   en: {
     href: "/seed-language/freedom-as-citizen-agency",
@@ -53,7 +53,7 @@ const conservatismContinuation: Record<Language, EditorialContinuation> = {
     relationship: "보수와 진보",
     reason: "보수가 무엇을 지킬 것인지 살펴봤다면, 진보가 무엇을 바꾸고 자기편의 권력까지 고칠 수 있는지 같은 기준으로 이어서 살펴봅니다.",
     listHref: "/seed-language",
-    listLabel: "용어해설 전체 보기",
+    listLabel: "시민언어 전체 보기",
   },
   en: {
     href: "/seed-language/what-is-true-progress",
@@ -72,7 +72,7 @@ const discourseContinuation: Record<Language, EditorialContinuation> = {
     relationship: "담론과 시민화",
     reason: "선진화 담론이 시민의 실천과 어떻게 만날 수 있는지, 시민화를 하나의 판단 잣대로 제안한 글로 이어갑니다.",
     listHref: "/seed-language",
-    listLabel: "용어해설 전체 보기",
+    listLabel: "시민언어 전체 보기",
   },
   en: {
     href: "/columns/citizenization-before-advancement-2026",
