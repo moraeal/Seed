@@ -334,7 +334,7 @@ export default function Home() {
           }}
         >
           <div className="flex flex-col justify-center">
-            <p id="recommended-series-title" className="text-[11px] font-black tracking-[-.01em] text-green-mid sm:text-xs">{ko ? "추천 주제" : "FEATURED TOPICS"}</p>
+            <p id="recommended-series-title" className="text-[11px] font-black tracking-[-.01em] text-green-mid sm:text-xs">{ko ? "주제별 찾아보기" : "BROWSE BY TOPIC"}</p>
             <button type="button" onClick={showMoreTopics} className="mt-1 w-fit text-[10px] font-bold text-charcoal/45 underline decoration-charcoal/25 underline-offset-4 transition-colors hover:text-green-deep focus-visible:text-green-deep focus-visible:outline-none">{ko ? "더보기" : "More"}</button>
           </div>
           <div key={recommendedTopicPage} className="recommended-topic-group grid min-w-0 grid-cols-2 gap-x-2 gap-y-1 sm:grid-cols-4 sm:gap-3">
