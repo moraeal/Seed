@@ -91,10 +91,10 @@ export function classifyArticleTopics(article: ClassifiableArticle, fallbacks: T
           + (title.includes(term) ? 8 : 0)
           + (summary.includes(term) ? 4 : 0)
           + (category.includes(term) ? 5 : 0)
-          + (body.includes(term) ? 1 : 0);
+          + (body.includes(term) ? 0.5 : 0);
       }, 0),
     }))
-    .filter((topic) => topic.score > 0)
+    .filter((topic) => topic.score >= 4)
     .sort((a, b) => b.score - a.score)
     .map((topic) => topic.id);
 
