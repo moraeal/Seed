@@ -79,7 +79,7 @@ export default function HomeSectionNav() {
 
   return (
     <div
-      className={`overflow-hidden border-b border-green-deep/8 bg-ivory/88 backdrop-blur-md transition-[max-height,opacity] duration-300 ${visible ? "max-h-10 opacity-100" : "max-h-0 opacity-0"}`}
+      className={`overflow-hidden bg-ivory/88 backdrop-blur-md transition-[max-height,opacity] duration-300 ${visible ? "max-h-10 border-b border-green-deep/8 opacity-100" : "max-h-0 opacity-0"}`}
       aria-hidden={!visible}
     >
       <nav className="container-page flex min-h-8 items-center justify-between gap-4 py-1" aria-label={ko ? "메인 섹션 위치 안내" : "Home section position"}>
