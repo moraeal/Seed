@@ -74,6 +74,7 @@ const staticRoutes: SeoRoute[] = [
   { path: "/news", title: "핫이슈 | 씨앗의 소리", description: "뉴스트래커가 쌓은 사실을 바탕으로 정치·사회 사건의 핵심 쟁점과 시민에게 미치는 영향을 보도와 논평으로 설명합니다.", type: "website", lastModified: newest([...newsArticles.map((item) => item.date), ...getHotIssueColumnsNewestFirst().map((item) => item.date)]) },
   { path: "/briefings", title: "브리핑 | 씨앗의 소리", description: "복잡한 정책과 제도 논쟁을 사실, 맥락, 관찰 지점과 씨드의 관점으로 차분하게 풀어냅니다.", type: "website", lastModified: newest(getAllBriefingsNewestFirst().map((item) => item.date)) },
   { path: "/columns", title: "칼럼 | 씨앗의 소리", description: "특정 사건의 기록에 종속되지 않는 독립적인 주장과 사유를 통해 자유, 책임, 시장과 시민사회를 깊이 생각합니다.", type: "website", lastModified: newest(getColumnsNewestFirst().map((item) => item.date)) },
+  { path: "/contributions", title: "필자 기고 | 씨앗의 소리", description: "씨앗의 소리 필자들이 쓰고 편집부 검토를 거쳐 게시한 칼럼과 브리핑을 읽습니다.", type: "website", lastModified: latestDate },
   { path: "/monitoring", title: "시민감시 | 씨앗의 소리", description: "뉴스트래커로 사건과 정책의 변화를 날짜별로 기록하고, 국가와 시민사회의 권력·예산·성과를 공개자료와 기관 답변으로 점검합니다.", type: "website", lastModified: newest(publicInterestWatchCases.map((item) => item.updatedAt)) },
   { path: "/monitoring/legislation", title: "입법감시 | 씨앗의 소리", description: "국회 법안이 시민의 권리와 선택, 기업 활동, 국가 권한과 재정에 미칠 변화를 공식 자료와 함께 추적합니다.", type: "website", lastModified: latestDate },
   { path: "/monitoring/tax", title: "세금감시 | 씨앗의 소리", description: "정부의 세제정책과 세법·시행령·국세청 집행 기준이 시민과 기업의 실제 부담을 어떻게 바꾸는지 추적합니다.", type: "website", lastModified: latestDate },

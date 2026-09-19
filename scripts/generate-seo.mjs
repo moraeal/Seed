@@ -303,6 +303,7 @@ await writeFile(path.join(dist, "account", "index.html"), accountShell);
 // so refreshes and post-login redirects do not fall through to a 404 page.
 const privateShellRoutes = [
   ["writer", "필자 집필실 | 씨앗의 소리"],
+  ["writer/preview", "기사 페이지 미리보기 | 씨앗의 소리"],
   ["insights", "운영 통계 | 씨앗의 소리"],
   ["insights/content", "콘텐츠 통계 | 씨앗의 소리"],
   ["insights/traffic", "유입 분석 | 씨앗의 소리"],

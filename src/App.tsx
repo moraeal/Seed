@@ -45,13 +45,15 @@ const TaxCommentaryDetail = lazy(() => import("./pages/TaxCommentaryDetail"));
 const TaxPolicyDetail = lazy(() => import("./pages/TaxPolicyDetail"));
 const PublicInterestWatch = lazy(() => import("./pages/PublicInterestWatch"));
 const WriterRoom = lazy(() => import("./pages/WriterRoom"));
+const DraftArticlePreview = lazy(() => import("./pages/DraftArticlePreview"));
+const Contributions = lazy(() => import("./pages/Contributions"));
 const EditorialDesk = lazy(() => import("./pages/EditorialDesk"));
 
 function AppShell() {
   const location = useLocation();
   const { language } = useLanguage();
   const normalizedPath = location.pathname.replace(/\/+$/, "") || "/";
-  const showNewsletterAtBottom = !["/", "/en", "/account"].includes(normalizedPath) && !normalizedPath.startsWith("/insights");
+  const showNewsletterAtBottom = !["/", "/en", "/account"].includes(normalizedPath) && !normalizedPath.startsWith("/insights") && !normalizedPath.startsWith("/writer");
 
   return (
     <div className="min-h-screen bg-paper text-charcoal">
@@ -65,6 +67,8 @@ function AppShell() {
           <Route path="/en" element={<Home />} />
           <Route path="/account" element={<Account />} />
           <Route path="/writer" element={<WriterRoom />} />
+          <Route path="/writer/preview" element={<DraftArticlePreview />} />
+          <Route path="/contributions" element={<Contributions />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/insights/content" element={<Insights />} />
           <Route path="/insights/traffic" element={<Insights />} />

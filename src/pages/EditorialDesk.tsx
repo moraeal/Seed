@@ -1,4 +1,4 @@
-import { ArrowLeft, CheckCircle2, Download, FileCheck2, FilePenLine, Inbox, LoaderCircle, RefreshCw, RotateCcw, Save, Send, UserRound } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Download, ExternalLink, Eye, FileCheck2, FilePenLine, Inbox, LoaderCircle, RefreshCw, RotateCcw, Save, Send, UserRound } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../auth";
@@ -38,6 +38,11 @@ export default function EditorialDesk() {
   const [contentType, setContentType] = useState<ArticleDraftType>("column");
   const [editedText, setEditedText] = useState("");
   const [feedback, setFeedback] = useState("");
+  const [subtitle, setSubtitle] = useState("");
+  const [summary, setSummary] = useState("");
+  const [byline, setByline] = useState("");
+  const [slug, setSlug] = useState("");
+  const [heroImageUrl, setHeroImageUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [downloading, setDownloading] = useState(false);
@@ -89,6 +94,11 @@ export default function EditorialDesk() {
     setContentType(selected.content_type);
     setEditedText(selected.edited_text || selected.source_text);
     setFeedback(selected.editor_feedback || "");
+    setSubtitle(selected.page_subtitle || "");
+    setSummary(selected.page_summary || "");
+    setByline(selected.page_byline || memberMap.get(selected.author_id)?.nickname || "필자");
+    setSlug(selected.page_slug || "");
+    setHeroImageUrl(selected.page_hero_image_url || "");
     setNotice("");
   }, [selected?.id]);
 
@@ -110,6 +120,11 @@ export default function EditorialDesk() {
         content_type: contentType,
         edited_text: editedText,
         editor_feedback: feedback.trim(),
+        page_subtitle: subtitle.trim(),
+        page_summary: summary.trim(),
+        page_byline: byline.trim(),
+        page_slug: slug.trim().toLowerCase().replace(/[^a-z0-9-]+/g, "-").replace(/^-+|-+$/g, "") || null,
+        page_hero_image_url: heroImageUrl.trim(),
         status,
       });
       setDrafts((current) => current.map((item) => item.id === saved.id ? saved : item));
@@ -210,13 +225,28 @@ export default function EditorialDesk() {
 
             <label className="field mt-5"><span>필자에게 전달할 편집 의견</span><textarea value={feedback} onChange={(event) => setFeedback(event.target.value)} rows={6} placeholder="수정이 필요한 이유와 구체적인 요청 사항을 적어주세요."/></label>
 
+            <section className="mt-5 border border-green-deep/12 bg-[#F7F6F0] p-5">
+              <div><h3 className="text-sm font-extrabold text-navy">기사 페이지 설정</h3><p className="mt-1 text-xs leading-5 text-charcoal/45">미리보기로 실제 구현 화면을 확인한 뒤 최종 게시할 수 있습니다.</p></div>
+              <div className="mt-4 grid gap-4 lg:grid-cols-2">
+                <label className="field"><span>부제</span><input value={subtitle} maxLength={300} onChange={(event) => setSubtitle(event.target.value)} placeholder="제목 아래 부제"/></label>
+                <label className="field"><span>필자명</span><input value={byline} maxLength={100} onChange={(event) => setByline(event.target.value)} placeholder="공개 필자명"/></label>
+              </div>
+              <label className="field mt-4"><span>기사 요약</span><textarea value={summary} maxLength={600} onChange={(event) => setSummary(event.target.value)} rows={3} placeholder="비워두면 본문 앞부분으로 자동 생성됩니다."/></label>
+              <div className="mt-4 grid gap-4 lg:grid-cols-2">
+                <label className="field"><span>공개 주소</span><div className="flex items-stretch"><span className="inline-flex items-center border border-r-0 border-green-deep/15 bg-white px-3 text-xs text-charcoal/45">/contributions?article=</span><input value={slug} maxLength={120} onChange={(event) => setSlug(event.target.value)} placeholder="비우면 자동 생성"/></div></label>
+                <label className="field"><span>대표 이미지 URL</span><input value={heroImageUrl} maxLength={1000} onChange={(event) => setHeroImageUrl(event.target.value)} placeholder="비우면 기본 이미지 사용"/></label>
+              </div>
+            </section>
+
             <div className="mt-7 flex flex-wrap items-center justify-end gap-3 border-t border-green-deep/10 pt-5">
+              <button type="button" className="button-secondary" onClick={() => window.open(`/writer/preview?id=${encodeURIComponent(selected.id)}`, "_blank", "noopener,noreferrer")}><Eye size={16}/>페이지 미리보기</button>
+              {selected.status === "published" && selected.page_slug && <Link className="button-secondary" to={`/contributions?article=${encodeURIComponent(selected.page_slug)}`} target="_blank" rel="noreferrer"><ExternalLink size={16}/>게시 페이지</Link>}
               <button type="button" className="button-secondary" disabled={saving} onClick={() => void persist(selected.status, "편집 내용을 저장했습니다.")}><Save size={16}/>{saving ? "저장 중" : "편집 저장"}</button>
               {selected.status === "submitted" && <button type="button" className="button-primary" disabled={saving} onClick={() => void persist("in_review", "검토를 시작했습니다.")}><FilePenLine size={16}/>검토 시작</button>}
               {selected.status === "changes_requested" && <button type="button" className="button-primary" disabled={saving} onClick={() => void persist("in_review", "원고를 다시 검토 중으로 옮겼습니다.")}><RotateCcw size={16}/>다시 검토</button>}
               {["in_review", "submitted"].includes(selected.status) && <button type="button" className="button-secondary" disabled={saving} onClick={() => void persist("changes_requested", "필자에게 수정 요청 상태로 전달했습니다.")}><Send size={16}/>필자 수정 요청</button>}
               {["in_review", "submitted", "changes_requested"].includes(selected.status) && <button type="button" className="button-primary" disabled={saving} onClick={() => void persist("approved", "게시 준비 원고로 승인했습니다.")}><FileCheck2 size={16}/>게시 준비 승인</button>}
-              {selected.status === "approved" && <><button type="button" className="button-secondary" disabled={saving} onClick={() => void persist("in_review", "편집 중 상태로 되돌렸습니다.")}><RotateCcw size={16}/>편집으로 되돌리기</button><button type="button" className="button-primary" disabled={saving} onClick={() => void persist("published", "게시 완료로 표시했습니다.")}><CheckCircle2 size={16}/>게시 완료 표시</button></>}
+              {selected.status === "approved" && <><button type="button" className="button-secondary" disabled={saving} onClick={() => void persist("in_review", "편집 중 상태로 되돌렸습니다.")}><RotateCcw size={16}/>편집으로 되돌리기</button><button type="button" className="button-primary" disabled={saving} onClick={() => void persist("published", "기사 페이지를 최종 게시했습니다.")}><CheckCircle2 size={16}/>최종 게시</button></>}
             </div>
           </div> : <div className="grid min-h-96 place-items-center border border-green-deep/12 bg-white p-8 text-center text-sm text-charcoal/45">검토할 원고를 선택해주세요.</div>}
         </div>

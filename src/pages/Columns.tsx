@@ -26,7 +26,7 @@ export default function Columns() {
     <div className="container-page py-8 sm:py-10">
       <div className="mb-4 flex items-end justify-between gap-4 border-b-2 border-navy pb-3">
         <div><span className="section-kicker">LATEST</span><h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "최근 기사" : "Latest articles"}</h2></div>
-        <p className="text-xs font-semibold text-charcoal/45">{ko ? "최근 5건" : "Latest five"}</p>
+        <div className="flex items-center gap-4"><Link to="/contributions" className="inline-flex items-center gap-1.5 text-xs font-extrabold text-green-deep hover:text-green-mid">{ko ? "필자 기고 보기" : "Writer contributions"}<ArrowRight size={14}/></Link><p className="text-xs font-semibold text-charcoal/45">{ko ? "최근 5건" : "Latest five"}</p></div>
       </div>
       <div>
         {recentColumns.map((column) => <Link key={column.slug} to={`/columns/${column.slug}`} className="group grid gap-5 border-b border-green-deep/15 px-5 py-6 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7">

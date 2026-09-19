@@ -18,6 +18,11 @@ export type ArticleDraft = {
   ai_instructions: string;
   edited_text: string;
   editor_feedback: string;
+  page_subtitle: string;
+  page_summary: string;
+  page_byline: string;
+  page_slug: string | null;
+  page_hero_image_url: string;
   status: ArticleDraftStatus;
   attachment_name: string | null;
   attachment_type: string | null;
@@ -30,9 +35,30 @@ export type ArticleDraft = {
   published_at: string | null;
 };
 
+export type PublishedContribution = {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  summary: string;
+  byline: string;
+  content_type: ArticleDraftType;
+  body: string;
+  hero_image_url: string;
+  published_at: string;
+  updated_at: string;
+};
+
+export type PublishedContributionListItem = Omit<PublishedContribution, "id" | "body" | "updated_at">;
+
 const headers = (session: AuthSession, extra: Record<string, string> = {}) => ({
   apikey: supabaseKey,
   Authorization: `Bearer ${session.access_token}`,
+  ...extra,
+});
+
+const publicHeaders = (extra: Record<string, string> = {}) => ({
+  apikey: supabaseKey,
   ...extra,
 });
 
@@ -53,9 +79,19 @@ export async function listArticleDrafts(session: AuthSession) {
   return response.json() as Promise<ArticleDraft[]>;
 }
 
+export async function getArticleDraft(session: AuthSession, draftId: string) {
+  const response = await fetch(`${supabaseUrl}/rest/v1/article_drafts?id=eq.${encodeURIComponent(draftId)}&select=*&limit=1`, {
+    headers: headers(session),
+  });
+  if (!response.ok) throw new Error(await readError(response, "원고를 불러오지 못했습니다."));
+  const rows = await response.json() as ArticleDraft[];
+  if (!rows[0]) throw new Error("원고를 찾지 못했거나 열람 권한이 없습니다.");
+  return rows[0];
+}
+
 export async function saveArticleDraft(
   session: AuthSession,
-  draft: Pick<ArticleDraft, "id" | "author_id" | "title" | "content_type" | "source_text" | "editor_notes" | "ai_instructions" | "status" | "attachment_name" | "attachment_type" | "attachment_path">,
+  draft: Pick<ArticleDraft, "id" | "author_id" | "title" | "content_type" | "source_text" | "editor_notes" | "ai_instructions" | "page_subtitle" | "page_summary" | "page_byline" | "status" | "attachment_name" | "attachment_type" | "attachment_path">,
 ) {
   const response = await fetch(`${supabaseUrl}/rest/v1/article_drafts?on_conflict=id`, {
     method: "POST",
@@ -73,7 +109,7 @@ export async function saveArticleDraft(
 export async function updateArticleDraftReview(
   session: AuthSession,
   draftId: string,
-  updates: Pick<ArticleDraft, "title" | "content_type" | "edited_text" | "editor_feedback" | "status">,
+  updates: Pick<ArticleDraft, "title" | "content_type" | "edited_text" | "editor_feedback" | "page_subtitle" | "page_summary" | "page_byline" | "page_slug" | "page_hero_image_url" | "status">,
 ) {
   const response = await fetch(`${supabaseUrl}/rest/v1/article_drafts?id=eq.${encodeURIComponent(draftId)}&select=*`, {
     method: "PATCH",
@@ -87,6 +123,28 @@ export async function updateArticleDraftReview(
   const rows = await response.json() as ArticleDraft[];
   if (!rows[0]) throw new Error("원고를 찾지 못했거나 수정 권한이 없습니다.");
   return rows[0];
+}
+
+export async function getPublishedContribution(slug: string) {
+  const response = await fetch(`${supabaseUrl}/rest/v1/rpc/get_published_contribution`, {
+    method: "POST",
+    headers: publicHeaders({ "Content-Type": "application/json" }),
+    body: JSON.stringify({ requested_slug: slug }),
+  });
+  if (!response.ok) throw new Error(await readError(response, "게시된 기사를 불러오지 못했습니다."));
+  const rows = await response.json() as PublishedContribution[];
+  if (!rows[0]) throw new Error("게시된 기사를 찾을 수 없습니다.");
+  return rows[0];
+}
+
+export async function listPublishedContributions() {
+  const response = await fetch(`${supabaseUrl}/rest/v1/rpc/list_published_contributions`, {
+    method: "POST",
+    headers: publicHeaders({ "Content-Type": "application/json" }),
+    body: "{}",
+  });
+  if (!response.ok) throw new Error(await readError(response, "필자 기사 목록을 불러오지 못했습니다."));
+  return response.json() as Promise<PublishedContributionListItem[]>;
 }
 
 export async function downloadDraftAttachment(session: AuthSession, draft: ArticleDraft) {

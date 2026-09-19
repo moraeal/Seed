@@ -45,6 +45,11 @@ export default function RouteMetadata() {
           title: `운영자 대시보드 | ${SITE_NAME}`,
           description: "씨앗의 소리의 구독 신청과 콘텐츠 조회 현황을 확인하는 운영자 전용 화면입니다.",
         }
+      : location.pathname.startsWith("/writer")
+        ? {
+            title: `필자 집필실 | ${SITE_NAME}`,
+            description: "씨앗의 소리 필자 전용 원고 작성과 기사 미리보기 화면입니다.",
+          }
       : location.pathname.startsWith("/account")
         ? {
             title: `내 계정 | ${SITE_NAME}`,
@@ -53,7 +58,7 @@ export default function RouteMetadata() {
         : null;
     const title = route?.title ?? privatePage?.title ?? `페이지를 찾을 수 없습니다 | ${SITE_NAME}`;
     const description = route?.description ?? privatePage?.description ?? "씨앗의 소리 홈페이지입니다.";
-    const url = canonicalUrl(route?.path ?? "/");
+    const url = canonicalUrl(route?.path ?? (privatePage ? location.pathname : "/"));
     const language = route?.language ?? "ko";
     const siteName = language === "en" ? ENGLISH_SOCIAL_SITE_NAME : SOCIAL_SITE_NAME;
 
@@ -97,7 +102,7 @@ export default function RouteMetadata() {
     }
     canonical.href = url;
 
-    const trackablePage = !location.pathname.startsWith("/account") && !location.pathname.startsWith("/insights");
+    const trackablePage = !location.pathname.startsWith("/account") && !location.pathname.startsWith("/insights") && !location.pathname.startsWith("/writer");
     if (trackablePage && !authLoading && !owner) {
       void recordContentView(location.pathname, language).catch(() => {
         // Analytics must never interrupt reading or navigation.

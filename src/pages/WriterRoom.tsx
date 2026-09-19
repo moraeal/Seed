@@ -1,4 +1,4 @@
-import { FileText, LoaderCircle, Save, Send, Sparkles, UploadCloud } from "lucide-react";
+import { ExternalLink, Eye, FileText, LoaderCircle, Save, Send, Sparkles, UploadCloud } from "lucide-react";
 import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../auth";
@@ -14,7 +14,7 @@ const statusLabel: Record<ArticleDraftStatus, string> = {
   published: "게시 완료",
 };
 
-const emptyDraft = (userId: string): ArticleDraft => ({
+const emptyDraft = (userId: string, nickname: string): ArticleDraft => ({
   id: crypto.randomUUID(),
   author_id: userId,
   title: "",
@@ -24,6 +24,11 @@ const emptyDraft = (userId: string): ArticleDraft => ({
   ai_instructions: "",
   edited_text: "",
   editor_feedback: "",
+  page_subtitle: "",
+  page_summary: "",
+  page_byline: nickname,
+  page_slug: null,
+  page_hero_image_url: "",
   status: "draft",
   attachment_name: null,
   attachment_type: null,
@@ -37,7 +42,7 @@ const emptyDraft = (userId: string): ArticleDraft => ({
 });
 
 export default function WriterRoom() {
-  const { session, user, loading: authLoading } = useAuth();
+  const { session, user, nickname, loading: authLoading } = useAuth();
   const { language } = useLanguage();
   const ko = language === "ko";
   const role = user?.app_metadata?.seed_role;
@@ -59,7 +64,7 @@ export default function WriterRoom() {
     try {
       const rows = await listArticleDrafts(session);
       setDrafts(rows);
-      setDraft((current) => current ? rows.find((item) => item.id === current.id) || current : rows[0] || emptyDraft(user.id));
+      setDraft((current) => current ? rows.find((item) => item.id === current.id) || current : rows[0] || emptyDraft(user.id, nickname));
     } catch (error) {
       setNotice(error instanceof Error ? error.message : "원고 목록을 불러오지 못했습니다.");
     } finally {
@@ -100,6 +105,9 @@ export default function WriterRoom() {
         source_text: draft.source_text,
         editor_notes: draft.editor_notes,
         ai_instructions: draft.ai_instructions,
+        page_subtitle: draft.page_subtitle,
+        page_summary: draft.page_summary,
+        page_byline: draft.page_byline,
         status,
         ...attachmentFields,
       });
@@ -129,7 +137,7 @@ export default function WriterRoom() {
       <div className="container-page">
         <div className="flex flex-wrap items-end justify-between gap-5 border-b-2 border-navy pb-5">
           <div><p className="section-kicker">SEED WRITERS' ROOM</p><h1 className="editorial-title mt-2 text-4xl font-bold text-navy">필자 집필실</h1><p className="mt-3 text-sm leading-6 text-charcoal/55">원고를 직접 작성하거나 파일로 올리고, 편집 방향과 AI 수정 요청을 함께 남길 수 있습니다.</p></div>
-          <button type="button" className="button-primary" onClick={() => { setDraft(emptyDraft(user.id)); setAttachment(null); setNotice(""); }}><FileText size={16}/>새 원고</button>
+          <button type="button" className="button-primary" onClick={() => { setDraft(emptyDraft(user.id, nickname)); setAttachment(null); setNotice(""); }}><FileText size={16}/>새 원고</button>
         </div>
 
         {notice && <p className="mt-5 border border-green-deep/15 bg-[#E8EFE9] px-4 py-3 text-sm font-semibold text-green-deep" role="status">{notice}</p>}
@@ -163,6 +171,15 @@ export default function WriterRoom() {
               <label className="field"><span className="inline-flex items-center gap-1.5"><Sparkles size={15}/>AI 편집 요청</span><textarea value={draft.ai_instructions} disabled={!editable} onChange={(event) => update("ai_instructions", event.target.value)} rows={5} placeholder="문체, 분량, 이미지·도표 수정 방향을 적어주세요."/><small className="font-normal leading-5 text-charcoal/45">AI 자동 편집·이미지·도표 생성은 다음 개발 단계에서 이 지시란과 연결됩니다.</small></label>
             </div>
 
+            <section className="mt-5 border border-green-deep/12 bg-[#F7F6F0] p-5">
+              <div className="flex flex-wrap items-center justify-between gap-2"><div><h3 className="text-sm font-extrabold text-navy">기사 페이지 정보</h3><p className="mt-1 text-xs leading-5 text-charcoal/45">저장 후 실제 사이트 형태로 미리볼 수 있습니다.</p></div></div>
+              <div className="mt-4 grid gap-4 lg:grid-cols-2">
+                <label className="field"><span>부제</span><input value={draft.page_subtitle} disabled={!editable} maxLength={300} onChange={(event) => update("page_subtitle", event.target.value)} placeholder="제목 아래에 표시할 부제"/></label>
+                <label className="field"><span>필자명</span><input value={draft.page_byline} disabled={!editable} maxLength={100} onChange={(event) => update("page_byline", event.target.value)} placeholder="기사에 표시할 이름"/></label>
+              </div>
+              <label className="field mt-4"><span>기사 요약</span><textarea value={draft.page_summary} disabled={!editable} maxLength={600} onChange={(event) => update("page_summary", event.target.value)} rows={3} placeholder="목록과 기사 머리말에 표시할 짧은 요약"/></label>
+            </section>
+
             {(draft.editor_feedback || draft.edited_text || ["in_review", "approved", "published"].includes(draft.status)) && <section className="mt-5 border-l-4 border-green-mid bg-green-pale/45 p-5">
               <h3 className="text-sm font-extrabold text-navy">편집부 검토 내용</h3>
               {draft.editor_feedback && <div className="mt-3 whitespace-pre-wrap text-sm leading-7 text-charcoal/70">{draft.editor_feedback}</div>}
@@ -170,6 +187,11 @@ export default function WriterRoom() {
             </section>}
 
             <div className="mt-7 flex flex-wrap justify-end gap-3 border-t border-green-deep/10 pt-5">
+              <button type="button" className="button-secondary" onClick={() => {
+                if (!drafts.some((item) => item.id === draft.id)) { setNotice("기사 페이지를 보려면 원고를 먼저 임시저장해주세요."); return; }
+                window.open(`/writer/preview?id=${encodeURIComponent(draft.id)}`, "_blank", "noopener,noreferrer");
+              }}><Eye size={16}/>페이지 미리보기</button>
+              {draft.status === "published" && draft.page_slug && <Link className="button-secondary" to={`/contributions?article=${encodeURIComponent(draft.page_slug)}`} target="_blank" rel="noreferrer"><ExternalLink size={16}/>게시 페이지</Link>}
               <button type="submit" className="button-secondary" disabled={saving || !editable}><Save size={16}/>{saving ? "저장 중" : "임시저장"}</button>
               <button type="button" className="button-primary" disabled={saving || !editable} onClick={() => void persist("submitted")}><Send size={16}/>{saving ? "처리 중" : "편집부 검토 요청"}</button>
             </div>
