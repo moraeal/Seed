@@ -13,6 +13,8 @@ import { civicWatchCases } from "../data/publicInterestWatch";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
 import { taxPolicies } from "../data/taxWatch";
+import { getLegislativeCommentaryEdition, legislativeCommentaries } from "../data/legislativeCommentaries";
+import { getTaxCommentaryEdition, taxCommentaries } from "../data/taxCommentaries";
 import { getFeaturedContentCandidates } from "../data/featuredContent";
 import { useLanguage } from "../i18n";
 import { getFeaturedContentPath } from "../lib/featuredContent";
@@ -45,6 +47,15 @@ type HomeCivicWatchItem = {
   title: string;
   summary: string;
   status: string;
+};
+
+type HomeWatchCommentary = {
+  slug: string;
+  date: string;
+  readMinutes: number;
+  to: string;
+  title: string;
+  summary: string;
 };
 
 export default function Home() {
@@ -162,6 +173,37 @@ export default function Home() {
     tax: ko ? "세금감시" : "Tax Watch",
     "public-interest": ko ? "공익감시" : "Public-interest Watch",
   };
+
+  // Commentary is deliberately separate from the factual monitoring records above.
+  // New commentary added to either data source appears here without a homepage edit.
+  const legislativeCommentaryItems: HomeWatchCommentary[] = legislativeCommentaries
+    .map((article) => {
+      const edition = getLegislativeCommentaryEdition(article, ko ? "ko" : "en");
+      return {
+        slug: article.slug,
+        date: article.date,
+        readMinutes: article.readMinutes,
+        to: `/monitoring/legislation/commentary/${article.slug}`,
+        title: edition.title,
+        summary: edition.summary,
+      };
+    })
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 2);
+  const taxCommentaryItems: HomeWatchCommentary[] = taxCommentaries
+    .map((article) => {
+      const edition = getTaxCommentaryEdition(article, ko ? "ko" : "en");
+      return {
+        slug: article.slug,
+        date: article.date,
+        readMinutes: article.readMinutes,
+        to: `/monitoring/tax/commentary/${article.slug}`,
+        title: edition.title,
+        summary: edition.summary,
+      };
+    })
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 2);
 
   useEffect(() => {
     let active = true;
@@ -309,6 +351,46 @@ export default function Home() {
                 </Link>
               ))}
             </div>
+            {(legislativeCommentaryItems.length > 0 || taxCommentaryItems.length > 0) && (
+              <div className="mt-7 grid gap-5 border-t border-green-deep/15 pt-6 lg:grid-cols-2">
+                <section aria-labelledby="home-legislative-commentary-title">
+                  <div className="flex items-center justify-between gap-3 border-b border-green-deep/20 pb-2.5">
+                    <div>
+                      <p className="text-[10px] font-black tracking-[.14em] text-green-deep">LEGISLATIVE COMMENTARY</p>
+                      <h3 id="home-legislative-commentary-title" className="editorial-title mt-1 text-lg font-bold text-navy sm:text-xl">{ko ? "입법감시 논평" : "Legislative Commentary"}</h3>
+                    </div>
+                    <Link to="/monitoring/legislation" className="text-link shrink-0 text-xs">{ko ? "전체보기" : "View all"}<ArrowRight size={13}/></Link>
+                  </div>
+                  <div className="divide-y divide-green-deep/12">
+                    {legislativeCommentaryItems.map((article) => (
+                      <Link key={article.slug} to={article.to} className="group block py-4 first:pt-3">
+                        <div className="flex items-center gap-3 text-[11px] text-charcoal/45"><span className="font-extrabold text-green-deep">{ko ? "입법 논평" : "COMMENTARY"}</span><time>{article.date.replace(/-/g, ".")}</time><span className="inline-flex items-center gap-1"><Clock size={11}/>{article.readMinutes}{ko ? "분" : " min"}</span></div>
+                        <h4 className="editorial-title mt-1.5 break-keep text-[1.05rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-lg">{article.title}</h4>
+                        <p className="mt-1 line-clamp-2 text-[13px] leading-5 text-charcoal/58 sm:text-sm sm:leading-6">{article.summary}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+                <section aria-labelledby="home-tax-commentary-title">
+                  <div className="flex items-center justify-between gap-3 border-b border-green-deep/20 pb-2.5">
+                    <div>
+                      <p className="text-[10px] font-black tracking-[.14em] text-green-deep">TAX COMMENTARY</p>
+                      <h3 id="home-tax-commentary-title" className="editorial-title mt-1 text-lg font-bold text-navy sm:text-xl">{ko ? "세금감시 논평" : "Tax Commentary"}</h3>
+                    </div>
+                    <Link to="/monitoring/tax" className="text-link shrink-0 text-xs">{ko ? "전체보기" : "View all"}<ArrowRight size={13}/></Link>
+                  </div>
+                  <div className="divide-y divide-green-deep/12">
+                    {taxCommentaryItems.map((article) => (
+                      <Link key={article.slug} to={article.to} className="group block py-4 first:pt-3">
+                        <div className="flex items-center gap-3 text-[11px] text-charcoal/45"><span className="font-extrabold text-green-deep">{ko ? "세금 논평" : "COMMENTARY"}</span><time>{article.date.replace(/-/g, ".")}</time><span className="inline-flex items-center gap-1"><Clock size={11}/>{article.readMinutes}{ko ? "분" : " min"}</span></div>
+                        <h4 className="editorial-title mt-1.5 break-keep text-[1.05rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-lg">{article.title}</h4>
+                        <p className="mt-1 line-clamp-2 text-[13px] leading-5 text-charcoal/58 sm:text-sm sm:leading-6">{article.summary}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              </div>
+            )}
           </div>
         </section>
       )}
