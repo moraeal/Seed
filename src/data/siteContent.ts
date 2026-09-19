@@ -10,7 +10,7 @@ export const content = {
       { label: "핫이슈", path: "/news" },
       { label: "브리핑", path: "/briefings" },
       { label: "시민감시", path: "/monitoring" },
-      { label: "용어해설", path: "/seed-language" },
+      { label: "시민언어", path: "/seed-language" },
       { label: "소개", path: "/about" },
     ],
     actions: { proposal: "시민제안 올리기", support: "후원하기", language: "English" },

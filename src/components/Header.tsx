@@ -38,7 +38,7 @@ export default function Header() {
         ["핫이슈", "/news"],
         ["브리핑", "/briefings"],
         ["시민감시", "/monitoring"],
-        ["용어해설", "/seed-language"],
+        ["시민언어", "/seed-language"],
         ["소개", "/about"],
       ];
 
