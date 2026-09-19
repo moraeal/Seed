@@ -83,26 +83,26 @@ button, input, textarea { font: inherit; }
 [aria-roledescription="carousel"] .relative.overflow-hidden.bg-navy:has(> a > img[src$="lh-split-hero-v2.webp"]) > span.absolute.bottom-5.left-5 { display: none !important; }
 
 /* 메인 상단 우측 목록 썸네일이 행 높이만큼 늘어나며 초록 배경이 선처럼 드러나는 현상을 막습니다. */
-.bg-paper > section:first-child aside > a > div:first-child.overflow-hidden {
+.home-today-section aside > a > div:first-child.overflow-hidden {
   align-self: start;
   background-color: transparent !important;
 }
 
 /* 메인 첫 화면의 외곽 여백만 줄여 좌우 콘텐츠를 더 단단하게 묶습니다. */
-.bg-paper > section:first-child {
+.home-today-section {
   padding-top: 0.875rem;
   padding-bottom: 0.625rem;
 }
 
 @media (min-width: 640px) {
-  .bg-paper > section:first-child {
+  .home-today-section {
     padding-top: 1.25rem;
     padding-bottom: 0.875rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .bg-paper > section:first-child {
+  .home-today-section {
     padding-top: 1.5rem;
     padding-bottom: 0.75rem;
   }
@@ -110,7 +110,7 @@ button, input, textarea { font: inherit; }
 
 /* 데스크톱에서는 우측 목록의 별도 아랫선을 없애고 메인 섹션의 공통 하단선 하나로 마감합니다. */
 @media (min-width: 1280px) {
-  .bg-paper > section:first-child aside {
+  .home-today-section aside {
     border-bottom-color: transparent !important;
   }
 }

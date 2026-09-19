@@ -60,6 +60,29 @@ type HomeWatchCommentary = {
   imageAlt: string;
 };
 
+const recommendedSeries = [
+  {
+    to: "/columns/prosecution-reform-power-transfer-2026",
+    title: { ko: "검찰개혁 논리 해부", en: "Inside Prosecution Reform" },
+    summary: { ko: "조직이 아니라 이동하는 수사권력을 봅니다", en: "Following investigative power, not institutional labels" },
+  },
+  {
+    to: "/monitoring/public-interest",
+    title: { ko: "공익기관 감시", en: "Public-interest Watch" },
+    summary: { ko: "공익의 이름으로 행사되는 권한과 자금을 추적합니다", en: "Tracking power and money exercised in the public interest" },
+  },
+  {
+    to: "/columns/wealth-crosses-borders-inheritance-tax",
+    title: { ko: "기업승계와 상속세", en: "Succession and Inheritance Tax" },
+    summary: { ko: "기업과 인재가 한국에 남을 조건을 묻습니다", en: "What would keep enterprise and talent in Korea?" },
+  },
+  {
+    to: "/columns/citizenization-before-advancement-2026",
+    title: { ko: "시민화론", en: "The Citizenization Thesis" },
+    summary: { ko: "선진화에 앞서 스스로 서는 시민을 생각합니다", en: "Citizens who can stand on their own before advancement" },
+  },
+] as const;
+
 export default function Home() {
   const { language } = useLanguage();
   const ko = language === "ko";
@@ -251,7 +274,31 @@ export default function Home() {
 
   return (
     <div className="home-page bg-paper">
-      <section className="border-b border-green-deep/15 bg-ivory py-4 sm:py-6 lg:py-7">
+      <section className="border-b border-green-deep/15 bg-paper" aria-labelledby="recommended-series-title">
+        <div className="container-page flex min-h-[66px] items-stretch overflow-hidden px-0 sm:px-8 lg:px-12">
+          <div className="flex w-[104px] shrink-0 flex-col justify-center border-r border-green-deep/15 px-4 sm:w-[138px] sm:px-0 sm:pr-5">
+            <p id="recommended-series-title" className="text-[11px] font-black tracking-[-.01em] text-green-mid sm:text-xs">{ko ? "추천 기획" : "FEATURED"}</p>
+            <p className="mt-0.5 hidden text-[9px] font-bold tracking-[.13em] text-charcoal/35 sm:block">SEED SERIES</p>
+          </div>
+          <div className="flex min-w-0 flex-1 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {recommendedSeries.map((series) => (
+              <Link
+                key={series.to}
+                to={series.to}
+                className="group flex min-w-[220px] flex-1 flex-col justify-center border-r border-green-deep/10 px-4 py-2.5 transition-colors last:border-r-0 hover:bg-green-pale/55 focus-visible:bg-green-pale/55 focus-visible:outline-none sm:min-w-[245px] sm:px-5"
+              >
+                <span className="flex items-center gap-1.5 text-[12px] font-extrabold text-navy transition-colors group-hover:text-green-mid sm:text-[13px]">
+                  {series.title[language]}
+                  <ArrowRight size={12} aria-hidden="true" className="shrink-0 transition-transform group-hover:translate-x-0.5" />
+                </span>
+                <span className="mt-1 line-clamp-1 text-[10px] leading-4 text-charcoal/48 sm:text-[11px]">{series.summary[language]}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="home-today-section border-b border-green-deep/15 bg-ivory py-4 sm:py-6 lg:py-7">
         <div className="container-page">
           <div className="mb-3 border-b border-green-deep/15 pb-2.5 sm:mb-4">
             <p className="section-kicker">TODAY&apos;S SEED</p>
