@@ -3,8 +3,8 @@ import type { ColumnTranslation } from "../types";
 export const issue24: ColumnTranslation = {
   title: "Wealth Crosses Borders. What Will Make It Stay in Korea?",
   subtitle: "The question left by the Samsung family’s completion of a KRW 12 trillion inheritance-tax bill",
-  author: "Hyerim Park",
-  authorBio: "A manager at the Center for Free Enterprise who develops research and content on markets and business institutions. She examines how taxes and regulation shape entrepreneurial choices, investment, employment and opportunity for citizens.",
+  author: "Blue Horizon",
+  authorBio: "Previously researched market economics and business policy at a private policy institute. Now works in environmental research and planning, leading projects for a sustainable society. Writes about institutions and policies that can bring growth and the environment, entrepreneurship and sustainability together.",
   summary: "The Samsung family has completed roughly KRW 12 trillion in inheritance-tax payments over five years and six installments. One family paid about 50 percent more than South Korea collected in total inheritance tax in 2024. The number raises a larger question: while countries compete for wealth and talent, what will persuade entrepreneurs to remain, invest and create jobs in Korea?",
   heroImage: {
     alt: "An anonymous Korean businessperson carrying a travel bag walks toward an airport departure gate at dawn",
