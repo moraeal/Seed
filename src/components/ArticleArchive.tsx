@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -11,6 +11,9 @@ export type ArticleArchiveItem = {
   title: string;
   summary: string;
   date: string;
+  term?: string;
+  termHanja?: string;
+  termEnglish?: string;
 };
 
 type ArticleArchiveProps = {
@@ -58,21 +61,44 @@ export default function ArticleArchive({ items, ko }: ArticleArchiveProps) {
         {pageColumns.map((column, columnIndex) => (
           <div key={columnIndex} className={column.length ? "border-t border-green-deep/15" : ""}>
             {column.map((item) => (
-              <Link
-                key={item.key}
-                to={item.to}
-                className="group block border-b border-green-deep/15 px-1 py-4 transition-colors hover:bg-green-pale/55 sm:px-2"
-              >
-                <time className="text-[11px] font-semibold tracking-wide text-charcoal/40">
-                  {item.date.replace(/-/g, ".")}
-                </time>
-                <h3 className="editorial-title mt-1 line-clamp-2 text-[1.05rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-lg">
-                  {item.title}
-                </h3>
-                <p className="mt-1 line-clamp-2 text-[0.82rem] leading-5 text-charcoal/55 sm:text-sm sm:leading-6">
-                  {item.summary}
-                </p>
-              </Link>
+              item.term ? (
+                <Link
+                  key={item.key}
+                  to={item.to}
+                  className="group grid grid-cols-[92px_minmax(0,1fr)] gap-3 border-b border-green-deep/15 py-4 transition-colors hover:bg-green-pale/55 sm:grid-cols-[112px_minmax(0,1fr)] sm:gap-4 sm:px-2"
+                >
+                  <div className="flex aspect-[4/3] h-full max-h-[96px] w-full flex-col items-center justify-center border border-green-deep/15 bg-white text-center">
+                    <p className="editorial-title text-[1.15rem] font-black leading-none text-navy sm:text-[1.28rem]">{item.term}</p>
+                    {ko && item.termHanja && <p className="mt-1.5 text-[10px] font-bold leading-none text-charcoal/55">{item.termHanja}</p>}
+                    {ko && item.termEnglish && <p className="mt-1 max-w-full px-1 text-[8px] font-black leading-tight tracking-[.04em] text-green-deep/65">{item.termEnglish}</p>}
+                  </div>
+                  <div className="min-w-0">
+                    <div className="flex items-center justify-between gap-2">
+                      <p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">GLOSSARY</p>
+                      <span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "시민언어 보기" : "Read"}<ArrowRight size={11}/></span>
+                    </div>
+                    <h3 className="editorial-title mt-1 line-clamp-2 text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{item.title}</h3>
+                    <p className="mt-1 line-clamp-2 text-[0.82rem] leading-5 text-charcoal/55 sm:text-sm sm:leading-6">{item.summary}</p>
+                    <time className="mt-2 block text-[10px] font-semibold tracking-wide text-charcoal/40">{item.date.replace(/-/g, ".")}</time>
+                  </div>
+                </Link>
+              ) : (
+                <Link
+                  key={item.key}
+                  to={item.to}
+                  className="group block border-b border-green-deep/15 px-1 py-4 transition-colors hover:bg-green-pale/55 sm:px-2"
+                >
+                  <time className="text-[11px] font-semibold tracking-wide text-charcoal/40">
+                    {item.date.replace(/-/g, ".")}
+                  </time>
+                  <h3 className="editorial-title mt-1 line-clamp-2 text-[1.05rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-lg">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1 line-clamp-2 text-[0.82rem] leading-5 text-charcoal/55 sm:text-sm sm:leading-6">
+                    {item.summary}
+                  </p>
+                </Link>
+              )
             ))}
           </div>
         ))}

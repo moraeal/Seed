@@ -8,6 +8,19 @@ import ArticleArchive, { RECENT_ARTICLE_COUNT } from "../components/ArticleArchi
 
 const ENVIRONMENT_HERO = "images/seed-language/environment-shared-condition-hero.webp";
 
+const seedLanguageTerms: Record<string, { hanja: string; english: string }> = {
+  정치: { hanja: "政治", english: "POLITICS" },
+  진영언어: { hanja: "陣營言語", english: "PARTISAN LANGUAGE" },
+  시민: { hanja: "市民", english: "CITIZEN" },
+  자유: { hanja: "自由", english: "FREEDOM" },
+  진보: { hanja: "進步", english: "PROGRESS · PROGRESSIVISM" },
+  보수: { hanja: "保守", english: "CONSERVATIVE · CONSERVATISM" },
+  민주: { hanja: "民主", english: "DEMOCRACY" },
+  환경: { hanja: "環境", english: "ENVIRONMENT" },
+  공익: { hanja: "公益", english: "PUBLIC INTEREST" },
+  담론: { hanja: "談論", english: "DISCOURSE" },
+};
+
 export default function SeedLanguage() {
   const { language } = useLanguage();
   const ko = language === "ko";
@@ -99,7 +112,22 @@ export default function SeedLanguage() {
           })}
           </div>
         </section>
-        <ArticleArchive ko={ko} items={archiveArticles.map((article) => ({ key: article.slug, to: `/seed-language/${article.slug}`, title: article.title, summary: article.summary, date: article.date }))} />
+        <ArticleArchive
+          ko={ko}
+          items={archiveArticles.map((article) => {
+            const termMeta = ko ? seedLanguageTerms[article.term] : undefined;
+            return {
+              key: article.slug,
+              to: `/seed-language/${article.slug}`,
+              title: article.title,
+              summary: article.summary,
+              date: article.date,
+              term: ko ? article.term : article.term.toUpperCase(),
+              termHanja: termMeta?.hanja,
+              termEnglish: termMeta?.english,
+            };
+          })}
+        />
       </main>
     </div>
   );
