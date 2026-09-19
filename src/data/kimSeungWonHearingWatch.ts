@@ -16,8 +16,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   openedAt: "2026-08-31",
   updatedAt: "2026-09-19",
   nextCheck: {
-    ko: "후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 제넨셀 민원 의혹 재수사 여부와 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
-    en: "The nomination and confirmation process for a successor justice minister, the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud, the police decision on reinvestigating the Genencell petition allegation and progress in the family-cooperative complaint, and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
+    ko: "전직 보좌진 탄원서의 청와대 수령 여부와 개별 의혹에 대한 독립 확인·수사 착수 여부, 후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 제넨셀 민원 의혹 재수사 여부와 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
+    en: "Independent verification of whether the presidential office received the former aides' petitions and whether any investigation begins into the individual allegations; the nomination and confirmation process for a successor justice minister; the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud; the police decision on reinvestigating the Genencell petition allegation and progress in the family-cooperative complaint; and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
   },
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
@@ -150,6 +150,32 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      date: "2026-09-19",
+      title: { ko: "전직 보좌진 탄원서 보도와 후보자 측 반박", en: "Former aides' petitions reported; Kim's office disputes allegations" },
+      description: {
+        ko: "KBS는 전직 보좌진이 작성한 탄원서 실물을 입수했으며, 탄원서가 9월 17일 청와대 정무수석 등에게 전달된 것으로 파악됐다고 보도했습니다. 채널A도 탄원서를 작성한 전직 보좌진에게 전달 주장을 직접 확인했다고 전했습니다. 두 매체는 탄원서에 성추행·추가 음주운전·보좌진 폭언·추가 청탁·경기도당 회계 부정 의혹 등이 담겼다고 보도했습니다. 김승원 의원실은 청와대로부터 탄원서 내용에 관해 연락받지 않았고 제출 여부도 몰랐다면서, 보도된 소문에는 사실과 다른 내용이나 과장·오류가 있다고 반박했습니다. 청와대 고위 관계자는 인사 관련 사항이라 확인할 수 없다고 밝혔습니다. 따라서 탄원서 실물 입수 보도와 작성자의 전달 주장, 후보자 측 반박은 확인되지만, 탄원서에 적힌 개별 의혹의 진위와 사퇴에 미친 영향은 아직 확인되지 않았습니다.",
+        en: "KBS reported that it obtained the petitions written by former aides and understood that they were delivered on September 17 to the presidential chief for political affairs and others. Channel A also said a former aide who wrote a petition directly confirmed the claimed delivery. The outlets reported allegations involving sexual misconduct, an additional drunk-driving incident, verbal abuse of aides, further solicitation and accounting irregularities in the Gyeonggi provincial party. Kim's office said it had not been contacted by the presidential office about the petitions and did not know whether they had been submitted, arguing that the reported rumors contain falsehoods, exaggerations or errors. A senior presidential-office official declined to confirm a personnel-related matter. The reporting that KBS obtained the documents, the author's delivery claim and Kim's rebuttal are established; the truth of each allegation and any role the petitions played in the withdrawal remain unverified.",
+      },
+      change: { ko: "새 문서 보도·후보자 측 반박, 개별 의혹은 미확인", en: "New document reporting and rebuttal; individual allegations remain unverified" },
+      status: "response",
+      sources: [
+        {
+          publisher: { ko: "KBS", en: "KBS" },
+          title: { ko: "[단독] 청와대 전달된 추가 의혹 탄원서…사퇴 결정타 됐나", en: "Petitions with additional allegations reportedly delivered to presidential office" },
+          url: "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8667880",
+          publishedAt: "2026-09-19",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "채널A", en: "Channel A" },
+          title: { ko: "“김승원 폭탄 더 터질 모양”…‘보좌진 탄원서’ 맹공", en: "Former aide's petition becomes focus after Kim's withdrawal" },
+          url: "https://www.youtube.com/watch?v=0UvmwJ4f4mQ",
+          publishedAt: "2026-09-19",
+          kind: "video",
+        },
+      ],
+    },
     {
       date: "2026-09-19",
       title: { ko: "김승원 후보자, 지명 20일 만에 자진 사퇴", en: "Kim withdraws 20 days after nomination" },
@@ -768,6 +794,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   ],
   currentControversies: [
     {
+      title: { ko: "전직 보좌진 탄원서의 개별 의혹은 확인됐나", en: "Have the allegations in the former aides' petitions been verified?" },
+      description: {
+        ko: "KBS는 전직 보좌진 탄원서 실물을 입수했고, 채널A는 작성자에게 전달 주장을 직접 확인했다고 보도했습니다. 그러나 청와대는 인사 관련 사항이라 수령 여부를 확인하지 않았습니다. 김승원 의원실은 청와대로부터 연락받지 않았고 제출 여부도 몰랐다면서, 보도된 소문은 사실과 다르거나 과장·오류가 있다고 반박했습니다. 문서 존재와 전달 주장이 보도됐다는 사실은 개별 의혹의 진실성을 곧바로 입증하지 않습니다. 성추행·추가 음주운전·폭언·추가 청탁·회계 부정 의혹의 진위와 사퇴에 미친 영향은 독립 자료나 수사·사법 판단으로 확인되지 않았습니다.",
+        en: "KBS reported obtaining the former aides' petitions, while Channel A said it directly confirmed the delivery claim with an author. The presidential office declined to confirm receipt, citing the personnel-related nature of the matter. Kim's office said it had not been contacted by the presidential office and did not know whether the petitions were submitted, disputing the reported rumors as false, exaggerated or erroneous. The reported existence of the documents and the delivery claim do not by themselves establish the underlying allegations. The claims of sexual misconduct, an additional drunk-driving incident, verbal abuse, further solicitation and accounting irregularities—and any role they played in the withdrawal—have not been established by independent evidence, an investigation or a court.",
+      },
+    },
+    {
       title: { ko: "브로커와 찍은 사진은 무엇을 보여주는가", en: "What does the photo with the alleged broker establish?" },
       description: {
         ko: "후보자 측이 공개한 원본·비교 사진은 청문회에서 제기된 ‘바닷가 동행’ 해석에 반박 자료가 됐습니다. 후보자 측은 사무실 또는 상가에서 찍은 사진이 일부 삭제·확대·채도 조정을 거쳐 바닷가처럼 제시됐다고 주장하지만, 정확한 촬영 장소와 편집 의도는 독립적으로 확인되지 않았습니다. 준비단은 두 사람이 지인 관계였다고 밝혔으며, 사진만으로 제넨셀 민원 전달이 부정한 청탁이었는지까지 판단할 수는 없습니다.",
@@ -819,6 +852,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "KBS — 청와대 전달 주장 전직 보좌진 탄원서와 후보자 측 반박", en: "KBS — Former aides' petitions reportedly delivered to presidential office and Kim's rebuttal" },
+      url: "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8667880",
+    },
+    {
+      label: { ko: "채널A — 전직 보좌진 탄원서 작성·전달 주장 확인", en: "Channel A — Former aide confirms writing and claimed delivery of petition" },
+      url: "https://www.youtube.com/watch?v=0UvmwJ4f4mQ",
+    },
     {
       label: { ko: "연합뉴스 — 청와대, 김승원 사퇴 결정 존중·후속 절차 예고", en: "Yonhap — Presidential office respects Kim's withdrawal and outlines follow-up steps" },
       url: "https://www.yna.co.kr/amp/view/AKR20260919033300001",
