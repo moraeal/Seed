@@ -23,10 +23,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     en: "Fair under way · Outcomes being tracked",
   },
   openedAt: "2018-09-05",
-  updatedAt: "2026-09-18",
+  updatedAt: "2026-09-19",
   nextCheck: {
-    ko: "일일 관람객을 유료·무료·단체·초청·공무출장으로 나눈 집계, 콘텐츠 보완 추경 7억 원의 의결·집행 내역, 금오도 교통 대책, 사업수익 120억 원의 달성 여부와 11월 4일 폐막 뒤 최종 정산",
-    en: "Daily attendance split into paid, free, group, invited and publicly funded staff visits; approval and spending details for the KRW 700 million content supplement; replacement transport on Geumodo; progress toward the KRW 12 billion revenue target; and final settlement after the November 4 closing",
+    ko: "일일 관람객을 유료·무료·단체·초청·공무출장으로 나눈 집계, 콘텐츠 보완 추경 7억 원의 의결·집행 내역, 신기항 셔틀 이용실적과 금오도 안의 교통 보완, 사업수익 120억 원의 달성 여부와 11월 4일 폐막 뒤 최종 정산",
+    en: "Daily attendance split into paid, free, group, invited and publicly funded staff visits; approval and spending details for the KRW 700 million content supplement; use of the Shingi Port shuttle and transport within Geumodo; progress toward the KRW 12 billion revenue target; and final settlement after the November 4 closing",
   },
   heroImage: {
     src: "images/monitoring/yeosu-island-expo-tracker-hero.webp",
@@ -88,6 +88,13 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       text: {
         ko: "개막 열흘 뒤 특별시의회 추경 심사에 콘텐츠 보완비 7억 원이 올라왔고, 집행부는 기존 콘텐츠의 부족한 부분을 보완하기 위한 예산이라고 설명했습니다.",
         en: "Ten days after opening, a KRW 700 million content supplement reached council review; the administration said it was needed to remedy shortcomings in the existing program.",
+      },
+    },
+    {
+      date: "2026-09-16",
+      text: {
+        ko: "금오도 무료셔틀 중단 뒤 신기항과 주행사장을 잇는 직행 셔틀이 대형버스 1대·하루 5회로 운행을 시작했습니다.",
+        en: "After the free Geumodo shuttle stopped, one large bus began operating five direct daily trips between Shingi Port and the main venue.",
       },
     },
   ],
@@ -591,14 +598,70 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-16",
+      title: {
+        ko: "신기항–주행사장 직행 셔틀 하루 5회 신설",
+        en: "Five daily direct shuttles added between Shingi Port and the main venue",
+      },
+      description: {
+        ko: "조직위는 9월 16일부터 신기항과 주행사장을 바로 잇는 대형버스 1대를 하루 5회 운행하기 시작했습니다. 첫차는 주행사장에서 오전 8시 10분, 막차는 신기항에서 오후 7시 40분에 출발합니다. 금오도 무료셔틀 중단 뒤 육지 쪽 환승 연결을 보완한 조치이지만, 금오도 안에서 중단된 이동수단을 대신하는 노선은 아닙니다. 수요를 감당할 수 있는지는 이용실적으로 확인해야 합니다.",
+        en: "On September 16, organizers began running one large bus on five direct daily trips between Shingi Port and the main venue. The first trip leaves the main venue at 8:10 a.m. and the last leaves Shingi Port at 7:40 p.m. The route improves the mainland connection after Geumodo's free shuttle stopped, but it does not replace transport lost within the island. Ridership will show whether the capacity is sufficient.",
+      },
+      change: {
+        ko: "금오도 무료셔틀 중단 뒤 육지 쪽 환승 연결 보완",
+        en: "A mainland transfer link is added after the Geumodo shuttle suspension",
+      },
+      status: "response",
+      sources: [
+        {
+          publisher: { ko: "2026여수세계섬박람회 조직위원회", en: "2026 Yeosu World Island Fair Organizing Committee" },
+          title: {
+            ko: "셔틀버스 신기항 노선 추가 안내",
+            en: "Notice of the added Shingi Port shuttle route",
+          },
+          url: "https://yeosu2026.or.kr/6_2/49",
+          publishedAt: "2026-09-16",
+          kind: "document",
+        },
+      ],
+    },
+    {
+      date: "2026-09-17",
+      title: {
+        ko: "식당·공연 논란에 조직위 해명과 개선책",
+        en: "Organizers respond to meal and performance criticism with proposed fixes",
+      },
+      description: {
+        ko: "조직위는 1만4900원 간장게장 백반이 일반 돌게가 아닌 연평도산 꽃게를 쓰고, 운영업체 서울 매장과 게장 양은 같지만 가격은 3천 원 낮다고 설명했습니다. 밥 취사량 조정, 반찬 확대, 만족도 조사를 개선책으로 제시했습니다. ‘거문도 뱃노래’는 70세 이상 거문도 주민 전수회의 공연이며 조직위 직접사업비가 아닌 지자체 연계사업이라고 밝혔고, 연출 수준은 보완하겠다고 했습니다. 이는 조직위의 설명이며 실제 원가·계약과 개선 이행은 별도 확인이 필요합니다.",
+        en: "Organizers said the KRW 14,900 soy-marinated crab meal uses higher-priced Yeonpyeong flower crab rather than the usual stone crab, provides the same crab portion as the operator's Seoul restaurant and costs KRW 3,000 less. They proposed cooking rice in smaller demand-based batches, adding side dishes and surveying diners. They also said the Geomundo Boat Song was performed by a preservation group of island residents over 70 through a local-government-linked project, not the committee's direct project budget, while promising to improve production quality. These are the organizers' explanations; costs, contracts and delivery of the promised changes still require independent confirmation.",
+      },
+      change: {
+        ko: "비판 대응이 법적대응 예고에서 구체적 사실관계·보완계획 공개로 확대",
+        en: "The response expands from warning of legal action to publishing specific explanations and corrective plans",
+      },
+      status: "response",
+      sources: [
+        {
+          publisher: { ko: "2026여수세계섬박람회 조직위원회", en: "2026 Yeosu World Island Fair Organizing Committee" },
+          title: {
+            ko: "여수세계섬박람회 공연 및 식당 논란 관련 설명",
+            en: "Organizers' explanation of the performance and restaurant controversies",
+          },
+          url: "https://yeosu2026.or.kr/6_2/50",
+          publishedAt: "2026-09-17",
+          kind: "document",
+        },
+      ],
+    },
+    {
       date: "다음",
       title: {
         ko: "관람객·수익·교통 보완과 폐막 뒤 정산 확인",
         en: "Track attendance, revenue, transport fixes and final settlement",
       },
       description: {
-        ko: "유료·무료·단체·초청을 구분한 일일 관람객, 금오도 대체교통 시행 여부, 120억 원 사업수익의 실제 달성액을 확인합니다. 11월 4일 폐막 뒤에는 직접사업과 연계사업 정산, 계약 변경, 철거·존치 시설과 유지비, 섬 주민의 생활에 남은 변화를 이어서 기록합니다.",
-        en: "The next checks are daily attendance split by paid, free, group and invited visits; replacement transport on Geumodo; and actual revenue against the KRW 12 billion plan. After November 4, the record will follow direct and linked project settlement, contract changes, retained and removed facilities, maintenance costs and lasting effects for island residents.",
+        ko: "유료·무료·단체·초청을 구분한 일일 관람객, 신기항 셔틀의 이용실적·수송력과 금오도 안의 대체교통, 120억 원 사업수익의 실제 달성액을 확인합니다. 11월 4일 폐막 뒤에는 직접사업과 연계사업 정산, 계약 변경, 철거·존치 시설과 유지비, 섬 주민의 생활에 남은 변화를 이어서 기록합니다.",
+        en: "The next checks are daily attendance split by paid, free, group and invited visits; use and capacity of the Shingi Port shuttle and replacement transport within Geumodo; and actual revenue against the KRW 12 billion plan. After November 4, the record will follow direct and linked project settlement, contract changes, retained and removed facilities, maintenance costs and lasting effects for island residents.",
       },
       status: "pending",
     },
@@ -644,6 +707,14 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       ko: "전남광주통합특별시는 개막 열흘 뒤 콘텐츠 행사비 7억 원을 추가경정예산안에 편성했고, 9월 15일 특별시의회 상임위원회 심사를 받았습니다. 최종 의결과 집행은 아직 확인되지 않았습니다.",
       en: "Ten days after opening, the South Jeolla–Gwangju authority placed KRW 700 million for fair content in a supplementary budget reviewed by a council committee on September 15. Final approval and spending have not yet been confirmed.",
     },
+    {
+      ko: "조직위는 9월 16일부터 신기항과 주행사장을 잇는 대형버스 1대를 하루 5회 운행하기 시작했습니다. 첫차는 주행사장에서 오전 8시 10분, 막차는 신기항에서 오후 7시 40분에 출발합니다.",
+      en: "On September 16, organizers began operating one large bus on five daily trips between Shingi Port and the main venue, from an 8:10 a.m. departure at the venue to a 7:40 p.m. departure at Shingi Port.",
+    },
+    {
+      ko: "조직위는 식당의 밥·반찬 운영을 고치고 만족도 조사를 하며 ‘거문도 뱃노래’의 연출 수준을 보완하겠다고 9월 17일 밝혔습니다. 원재료·가격과 공연 예산에 관한 내용은 조직위의 설명입니다.",
+      en: "On September 17, organizers said they would adjust rice and side-dish service, survey diners and improve production of the Geomundo Boat Song. Claims about ingredients, pricing and performance funding are the organizers' account.",
+    },
   ],
   currentControversies: [
     {
@@ -682,8 +753,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
         en: "Does transport support the promise that the islands are the venue?",
       },
       description: {
-        ko: "개도와 금오도는 박람회의 차별화된 부행사장입니다. 그러나 개막 직후 금오도 무료셔틀이 중단됐고 안내에도 혼선이 생겼습니다. 섬 주민의 생업과 관광객의 이동권을 사전에 충분히 조정했는지가 남아 있습니다.",
-        en: "Gaedo and Geumodo are central to the fair's distinctive claim. Yet Geumodo's free shuttle stopped days after opening and visitor information lagged. The unresolved issue is whether island livelihoods and visitor mobility were adequately coordinated before opening.",
+        ko: "개도와 금오도는 박람회의 차별화된 부행사장입니다. 개막 직후 금오도 무료셔틀이 중단된 뒤 9월 16일부터 주행사장–신기항 직행 대형버스 1대가 하루 5회 운행되기 시작했습니다. 이 노선은 육지 쪽 접근을 보완하지만 금오도 안에서 중단된 이동수단을 그대로 대신하지는 않습니다. 수송력이 수요에 맞는지와 섬 주민의 생업·관광객 이동권을 어떻게 함께 보장할지가 남아 있습니다.",
+        en: "Gaedo and Geumodo are central to the fair's distinctive claim. After Geumodo's free shuttle stopped days after opening, one large bus began five daily direct trips between the main venue and Shingi Port on September 16. That improves mainland access but does not replace the lost service within Geumodo. Whether capacity meets demand and how island livelihoods can coexist with visitor mobility remain unresolved.",
       },
     },
     {
@@ -692,16 +763,16 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
         en: "Will operational fixes be as visible as responses to criticism?",
       },
       description: {
-        ko: "정전·교통·음수대처럼 확인된 문제와 중금속 검출처럼 사실과 다른 주장은 구분해야 합니다. 조직위는 허위정보에 법적 대응을 예고했습니다. 동시에 실제 문제를 언제 어떻게 고쳤는지, 관람객 불편과 손실을 어떻게 처리했는지도 같은 수준으로 공개할 필요가 있습니다.",
-        en: "Verified issues such as power, transport and water must be separated from false claims such as heavy-metal contamination. Organizers have warned of legal action against misinformation. They should disclose actual fixes, timing and remedies for visitors with equal visibility.",
+        ko: "정전·교통·음수대처럼 확인된 문제와 중금속 검출처럼 사실과 다른 주장은 구분해야 합니다. 조직위는 식당 원재료·가격과 공연 예산을 해명하고 밥·반찬 운영, 만족도 조사, 공연 연출을 보완하겠다고 밝혔습니다. 이제 필요한 것은 원가·계약 자료와 개선 전후의 결과를 공개해 그 설명과 이행을 확인할 수 있게 하는 일입니다.",
+        en: "Verified issues such as power, transport and water must be separated from false claims such as heavy-metal contamination. Organizers have explained the meal's ingredients and price and the performance's funding, and promised changes to food service, surveys and staging. Costs, contracts and before-and-after results are now needed to test both the explanation and its delivery.",
       },
     },
   ],
   questions: [],
   proposals: [],
   caution: {
-    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 콘텐츠 보완비 7억 원은 현재 추경안 편성·상임위 심사 단계이므로 확정 지출로 보거나 713억 원에 곧바로 더해서도 안 됩니다. 9일간 관람객 10만 8명도 유료 입장객만을 뜻하지 않으며, 이후 집계에는 출장 처리된 공무원 관람이 포함될 수 있습니다.",
-    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The proposed KRW 700 million content supplement is still at the budget-review stage, so it should not be treated as final spending or automatically added to the KRW 71.3 billion. The nine-day attendance figure of 100,008 is not a paid-admission count, and later totals may include public employees attending on official travel.",
+    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 콘텐츠 보완비 7억 원은 현재 추경안 편성·상임위 심사 단계이므로 확정 지출로 보거나 713억 원에 곧바로 더해서도 안 됩니다. 9일간 관람객 10만 8명도 유료 입장객만을 뜻하지 않으며, 이후 집계에는 출장 처리된 공무원 관람이 포함될 수 있습니다. 식당 원재료·가격과 공연 예산 구분은 조직위의 공식 설명이며 원가·계약 자료로 독립 검증된 수치가 아닙니다.",
+    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The proposed KRW 700 million content supplement is still at the budget-review stage, so it should not be treated as final spending or automatically added to the KRW 71.3 billion. The nine-day attendance figure of 100,008 is not a paid-admission count, and later totals may include public employees attending on official travel. The account of meal ingredients and prices and the distinction in performance funding comes from the organizers and has not been independently verified against cost and contract records.",
   },
   sources: [
     {
@@ -764,6 +835,14 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     {
       label: { ko: "박람회 조직위원회 — 개막 초기 프로그램·관람환경 보강", en: "Organizing committee — Post-opening programming and visitor-support changes" },
       url: "https://island.yeosu2026.or.kr/6_4/253",
+    },
+    {
+      label: { ko: "박람회 조직위원회 — 신기항 직행 셔틀 운행 안내", en: "Organizing committee — Shingi Port direct-shuttle notice" },
+      url: "https://yeosu2026.or.kr/6_2/49",
+    },
+    {
+      label: { ko: "박람회 조직위원회 — 식당·공연 논란 관련 설명", en: "Organizing committee — Explanation of the meal and performance controversies" },
+      url: "https://yeosu2026.or.kr/6_2/50",
     },
     {
       label: { ko: "박람회 조직위원회 — 행사 개요와 일정", en: "Organizing committee — Event overview and schedule" },
