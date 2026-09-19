@@ -507,12 +507,12 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       status: "new",
       sources: [
         {
-          publisher: { ko: "행정안전부·KTV 국민방송", en: "Interior Ministry and KTV" },
+          publisher: { ko: "KTV 국민방송", en: "KTV Korean Policy Broadcasting" },
           title: {
             ko: "초대 중수청장 후보자 관련 행정안전부 브리핑",
             en: "Interior Ministry briefing on the nominee for first director of the Serious Crimes Investigation Agency",
           },
-          url: "https://www.mois.go.kr/video/bbs/type019/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000255&nttId=129581&searchCode1=",
+          url: "https://www.ktv.go.kr/content/view?content_id=761152",
           publishedAt: "2026-09-18",
           kind: "document",
         },
@@ -825,8 +825,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       note: { ko: "사회적 약자 대상 7대 범죄 보완·재수사 근거와 9월 15일 행안위·16일 법사위·17일 본회의 수정가결 기록", en: "Grounds for follow-up investigations in seven vulnerable-victim crime categories and amended approvals by the Interior Committee on September 15, Legislation Committee on September 16 and plenary session on September 17" },
     },
     {
-      label: { ko: "행정안전부·KTV — 초대 중수청장 후보자 브리핑", en: "Interior Ministry and KTV — Briefing on first-director nominee" },
-      url: "https://www.mois.go.kr/video/bbs/type019/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000255&nttId=129581&searchCode1=",
+      label: { ko: "KTV 국민방송 — 행정안전부 초대 중수청장 후보자 브리핑", en: "KTV — Interior Ministry briefing on first-director nominee" },
+      url: "https://www.ktv.go.kr/content/view?content_id=761152",
       note: { ko: "9월 17일 추가 검증 결과와 후보자 관련 의혹에 대한 정부 설명", en: "The government's September 17 account of additional vetting and allegations concerning the nominee" },
     },
     {
