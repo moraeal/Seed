@@ -3,7 +3,7 @@ export const topicTaxonomy = [
     id: "justice",
     label: { ko: "검찰개혁과 사법", en: "Justice and Prosecution Reform" },
     description: { ko: "수사권·기소권과 사법독립을 함께 봅니다", en: "Investigative power, prosecution and judicial independence" },
-    keywords: ["검찰", "검사", "사법", "수사", "기소", "경찰", "법원", "재판", "형사", "prosecution", "prosecutor", "justice", "investigation", "police", "court", "criminal"],
+    keywords: ["검찰", "검사", "사법", "수사권", "수사기관", "수사 절차", "기소", "경찰", "법원", "재판", "형사", "prosecution", "prosecutor", "justice", "investigation", "police", "court", "criminal"],
   },
   {
     id: "civil-society",
