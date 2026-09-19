@@ -14,10 +14,10 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   },
   status: { ko: "청문회 개최·후속 확인 중", en: "Hearing held · Follow-up under way" },
   openedAt: "2026-08-31",
-  updatedAt: "2026-09-18",
+  updatedAt: "2026-09-19",
   nextCheck: {
-    ko: "대통령의 공식 임명 여부와 법무부 취임 절차, 제넨셀 의혹에 대한 경찰의 재수사 여부 결정과 가족 협동조합 고발 사건의 수사 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
-    en: "The president's official appointment decision and any Justice Ministry inauguration, the police decision on reinvestigating the Genencell allegation and progress in the family-cooperative complaint, and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
+    ko: "대통령의 공식 임명 여부와 법무부 취임 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 제넨셀 민원 의혹 재수사 여부와 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
+    en: "The president's official appointment decision and any Justice Ministry inauguration, the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud, the police decision on reinvestigating the Genencell petition allegation and progress in the family-cooperative complaint, and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
   },
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
@@ -36,6 +36,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "This timeline cross-checks National Assembly schedules and decisions, public statements from the nominee and both parties, and reporting based on Ministry of Food and Drug Safety records. Allegations and the nominee's rebuttals are kept separate from verified facts.",
   },
   keyChanges: [
+    {
+      date: "2026-09-19",
+      text: {
+        ko: "경기남부경찰청은 제넨셀 창립자 강세찬 씨를 9월 22일 특정경제범죄 가중처벌법상 사기 혐의로 소환 조사할 계획이라고 밝혔습니다. 경찰이 6월 사건을 검찰에 송치한 뒤 7월 보완수사 요구를 받아 진행하는 추가 조사입니다. 이는 세종메디칼의 112억 원 투자 피해 주장에 관한 별도 사건으로, 소환 자체가 강씨의 혐의나 김 후보자의 식약처 청탁 의혹을 입증하는 것은 아닙니다.",
+        en: "Gyeonggi Nambu Provincial Police said it plans to question Genencell founder Kang Se-chan on September 22 over alleged aggravated fraud. The questioning is part of supplementary investigation requested by prosecutors in July after police forwarded the case in June. It concerns Sejong Medical's separate claim of KRW 11.2 billion in investment losses; the summons itself establishes neither Kang's guilt nor the allegation that Kim improperly solicited the regulator.",
+      },
+    },
     {
       date: "2026-09-18",
       text: {
@@ -593,6 +600,32 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-19",
+      title: { ko: "제넨셀 창립자, 9월 22일 경찰 보완수사 소환", en: "Genencell founder summoned for supplementary police questioning on September 22" },
+      description: {
+        ko: "경기남부경찰청은 세종메디칼이 제넨셀 창립자 강세찬 씨를 특정경제범죄 가중처벌법상 사기 혐의로 고소한 사건과 관련해 9월 22일 소환 조사할 계획이라고 밝혔습니다. 경찰은 6월 사건을 검찰에 송치했으나 7월 검찰의 보완수사 요구를 받아 추가 조사를 진행하고 있습니다. 2021년 10월 전환사채·주식 거래 시점이 임상시험 승인 민원 의혹 시기와 겹치지만, 이번 소환은 112억 원 투자 피해 주장에 관한 별도 사기 사건입니다. 소환만으로 강씨의 혐의나 김 후보자의 청탁 여부가 확인된 것은 아닙니다.",
+        en: "Gyeonggi Nambu Provincial Police said it plans to question Genencell founder Kang Se-chan on September 22 in a case alleging aggravated fraud brought by Sejong Medical. Police forwarded the case to prosecutors in June, but prosecutors requested supplementary investigation in July. The October 2021 convertible-bond and share transactions overlap in time with the clinical-trial petition controversy, but this summons concerns a separate claim of KRW 11.2 billion in investment losses. It does not by itself establish Kang's guilt or whether Kim made an improper solicitation.",
+      },
+      change: { ko: "검찰의 보완수사 요구에 따른 소환 일정 확정", en: "Questioning scheduled after prosecutors requested supplementary investigation" },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "뉴시스", en: "Newsis" },
+          title: { ko: "100억대 사기 제넨셀 창립자, 22일 경기남부경찰청 출석", en: "Genencell founder to appear before Gyeonggi Nambu Police on September 22 in alleged fraud case" },
+          url: "https://www.newsis.com/view/NISX20260919_0003796443",
+          publishedAt: "2026-09-19",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "뉴스1", en: "News1" },
+          title: { ko: "‘100억대 사기 혐의’ 제넨셀 창립자, 22일 경찰 소환", en: "Genencell founder summoned by police on September 22 over alleged fraud" },
+          url: "https://www.news1.kr/local/gyeonggi/6295929",
+          publishedAt: "2026-09-19",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "다음",
       title: { ko: "대통령의 임명 여부 확인", en: "Appointment decision" },
       description: {
@@ -669,6 +702,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+    { ko: "경기남부경찰청은 세종메디칼이 제넨셀 창립자 강세찬 씨를 특정경제범죄 가중처벌법상 사기 혐의로 고소한 사건과 관련해 2026년 9월 22일 소환 조사할 계획이라고 밝혔습니다. 경찰은 6월 사건을 검찰에 송치했으나 7월 보완수사 요구를 받았습니다. 이는 112억 원 투자 피해 주장에 관한 별도 사건이며, 소환만으로 혐의가 확정된 것은 아닙니다.", en: "Gyeonggi Nambu Provincial Police said it plans to question Genencell founder Kang Se-chan on September 22, 2026 in an aggravated-fraud complaint brought by Sejong Medical. Police forwarded the case in June and prosecutors requested supplementary investigation in July. This is a separate case concerning claimed investment losses of KRW 11.2 billion, and the summons does not establish guilt." },
     { ko: "이재명 대통령은 2026년 9월 18일 기자회견에서 김 후보자 임명 여부에 관해 아직 최종 결론을 내리지 못했으며, 검증 과정의 논란과 국민 눈높이를 고려해 신중하게 결정하겠다고 밝혔습니다. 이날 임명 또는 지명 철회가 결정된 것은 아닙니다.", en: "At a September 18, 2026 press conference, President Lee Jae Myung said he had not reached a final decision on Kim's appointment and would decide carefully after considering the controversies raised during vetting and public expectations. No appointment or withdrawal was decided that day." },
     { ko: "제넨셀 의혹 관련 재판을 받고 있는 양모 씨는 2026년 9월 17일 변호인을 통해 6쪽 입장문을 공개했습니다. 신속 검토 요청과 정치권 친분 과시를 인정·사과하고 특혜 요구·후원금 약속·전환사채 대가성을 부인한 것은 양씨의 주장입니다.", en: "On September 17, 2026, the woman on trial in the Genencell-related case released a six-page statement through counsel. Her acknowledgment and apology over seeking an expedited review and boasting of political connections, and her denials of favoritism, a donation promise and a quid pro quo for the convertible-bond investment, are her claims." },
     { ko: "국회 법제사법위원회는 2026년 9월 17일 국민의힘 위원들이 퇴장한 가운데 민주당 주도로 김 후보자의 인사청문경과보고서를 ‘적격’ 의견으로 채택했고, 국회는 이날 보고서를 대통령실에 송부했습니다. 같은 날 청와대 대변인실은 온라인에 유포된 ‘김승원 임명안 재가’ 공지를 청와대 명의를 도용한 허위·조작 정보라고 공식 확인했으며, 오후 7시 30분 기준 재가는 이뤄지지 않았습니다.", en: "On September 17, 2026, the National Assembly's Legislation and Judiciary Committee adopted Kim's confirmation report with a fit-for-office opinion under Democratic Party leadership after People Power Party members walked out, and the Assembly sent it to the presidential office that day. The presidential office later identified an online notice claiming that Kim's appointment had been approved as fabricated information misusing its name; no approval had occurred as of 7:30 p.m." },
@@ -702,8 +736,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       title: { ko: "식약처 민원 전달이 어디까지 영향을 미쳤나", en: "How much influence did the petition relay have?" },
       description: {
-        ko: "후보자는 지연된 민원 절차를 확인해 달라고 했을 뿐이라고 설명합니다. 양모 씨도 신속 검토 요청은 인정하면서 위법한 특혜나 자료 은폐 요구, 후원금·전환사채의 대가성은 부인했습니다. 제넨셀 설립자 강세찬 씨는 양씨가 도움을 자청하며 김 후보자 이름을 먼저 꺼냈고, 김 후보자가 식약처장에게 보냈다는 문자 캡처를 양씨에게서 받았다고 주장했습니다. 반면 공개된 검찰 참고인 진술 보도에서 당시 식약처장 비서는 김 후보자의 문자를 청탁성으로 인식했다고 밝혔습니다. 문자 전달 경로에 관한 당사자 진술은 구체화됐지만, 서로의 설명이 수사기록·재판 증거와 일치하는지, 승인 판단에 실제 영향을 미쳤는지와 법적으로 부정한 청탁에 해당하는지는 아직 확인되지 않았습니다.",
-        en: "Kim says he only asked officials to check a delayed petition. The woman likewise acknowledged seeking an expedited review while denying unlawful favoritism, concealment of material, or a quid pro quo involving a donation or convertible-bond investment. Genencell founder Kang Se-chan claims that she volunteered to help, first raised Kim's name and later sent him a screenshot of a message said to have been sent by Kim to the regulator chief. Reporting on a prosecution witness statement says the chief's secretary regarded Kim's message as a solicitation. The parties have now offered a more detailed account of the message relay, but it remains unresolved whether their explanations match the investigative and trial evidence, whether the contact affected approval, or whether it legally constituted an improper request.",
+        ko: "후보자는 지연된 민원 절차를 확인해 달라고 했을 뿐이라고 설명합니다. 양모 씨도 신속 검토 요청은 인정하면서 위법한 특혜나 자료 은폐 요구, 후원금·전환사채의 대가성은 부인했습니다. 제넨셀 설립자 강세찬 씨는 양씨가 도움을 자청하며 김 후보자 이름을 먼저 꺼냈고, 김 후보자가 식약처장에게 보냈다는 문자 캡처를 양씨에게서 받았다고 주장했습니다. 반면 공개된 검찰 참고인 진술 보도에서 당시 식약처장 비서는 김 후보자의 문자를 청탁성으로 인식했다고 밝혔습니다. 문자 전달 경로에 관한 당사자 진술은 구체화됐지만, 서로의 설명이 수사기록·재판 증거와 일치하는지, 승인 판단에 실제 영향을 미쳤는지와 법적으로 부정한 청탁에 해당하는지는 아직 확인되지 않았습니다. 별도로 강씨는 세종메디칼의 112억 원 투자 피해 주장과 관련한 사기 사건에서 검찰의 보완수사 요구에 따라 9월 22일 경찰 소환을 앞두고 있습니다. 이 별도 사건의 혐의와 김 후보자의 민원 전달 적법성은 구분해 판단해야 합니다.",
+        en: "Kim says he only asked officials to check a delayed petition. The woman likewise acknowledged seeking an expedited review while denying unlawful favoritism, concealment of material, or a quid pro quo involving a donation or convertible-bond investment. Genencell founder Kang Se-chan claims that she volunteered to help, first raised Kim's name and later sent him a screenshot of a message said to have been sent by Kim to the regulator chief. Reporting on a prosecution witness statement says the chief's secretary regarded Kim's message as a solicitation. The parties have now offered a more detailed account of the message relay, but it remains unresolved whether their explanations match the investigative and trial evidence, whether the contact affected approval, or whether it legally constituted an improper request. Separately, Kang is scheduled for police questioning on September 22 after prosecutors requested supplementary investigation into Sejong Medical's claim of KRW 11.2 billion in investment losses. That separate fraud allegation must be assessed independently from the legality of Kim's petition relay.",
       },
     },
     {
@@ -737,6 +771,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "뉴시스 — 제넨셀 창립자 9월 22일 경찰 보완수사 소환", en: "Newsis — Genencell founder summoned for supplementary police questioning on September 22" },
+      url: "https://www.newsis.com/view/NISX20260919_0003796443",
+    },
+    {
+      label: { ko: "뉴스1 — 제넨셀 창립자 100억대 사기 혐의 경찰 소환", en: "News1 — Genencell founder summoned over alleged fraud" },
+      url: "https://www.news1.kr/local/gyeonggi/6295929",
+    },
     {
       label: { ko: "TV조선 — 제넨셀 설립자의 청탁 제안·문자 전달 경위 주장", en: "TV Chosun — Genencell founder's account of the alleged request and message relay" },
       url: "https://news.tvchosun.com/site/data/html_dir/2026/09/17/2026091790216.html",
