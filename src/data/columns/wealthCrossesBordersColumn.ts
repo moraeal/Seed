@@ -11,9 +11,9 @@ export const wealthCrossesBordersColumn: SeedColumn = {
   readMinutes: 8,
   summary: "삼성 일가는 5년간 여섯 차례에 걸쳐 약 12조 원의 상속세를 완납했다. 한 가족이 낸 세금이 2024년 전체 상속세 세수보다 50%가량 많다는 사실은 한국의 상속세가 기업승계와 투자, 일자리에 어떤 영향을 미치는지 다시 묻게 한다. 세계가 부와 인재를 유치하는 동안 한국은 무엇으로 기업가를 남게 할 것인가.",
   heroImage: {
-    src: "images/columns/wealth-migration/wealth-crosses-borders.webp",
-    alt: "새벽 국제공항 출국장에서 여행 가방을 든 한국인 기업가가 항공기 탑승구를 향해 걸어가는 상징적 장면",
-    caption: "자본과 기업가는 세율만 보고 움직이지 않습니다. 그러나 세금은 한 나라가 기업가의 도전과 자산을 어떻게 대하는지 보여주는 분명한 신호입니다.",
+    src: "images/columns/law-controls-company-and-state.webp",
+    alt: "기업 건물 모형과 정부 문서가 황금색 저울 위에서 균형을 이루는 상징 이미지",
+    caption: "상속세 논쟁의 핵심은 납세 의무와 기업의 지속 가능성 사이에 어떤 균형을 세울 것인가에 있습니다.",
     credit: "씨앗의 소리 AI 제작 이미지",
     sourceUrl: "",
   },
