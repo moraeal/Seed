@@ -11,6 +11,7 @@ const navigation = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const isPreview = import.meta.env.VITE_SITE_STAGE !== "production";
 
   useEffect(() => {
     const close = () => setOpen(false);
@@ -20,6 +21,11 @@ export default function Header() {
 
   return (
     <header id="top" className="sticky top-0 z-50 border-b border-[#183b33]/10 bg-[#fffdf8]/95 backdrop-blur-xl">
+      {isPreview && (
+        <div className="bg-[#183b33] px-5 py-2 text-center text-[11px] font-bold tracking-[-.01em] text-white/80">
+          KUMEPUME 홈페이지 개편 미리보기 · 후원과 문의 기능은 준비 중입니다
+        </div>
+      )}
       <div className="container-page flex min-h-[78px] items-center gap-5 py-2 lg:min-h-[86px]">
         <a href="#top" className="flex shrink-0 items-center gap-3" aria-label="KUMEPUME 홈">
           <span className="kumepume-logo-mark" aria-hidden="true"><span /><span /><span /></span>
