@@ -1,9 +1,9 @@
-import { Check, ChevronLeft, ChevronRight, Mail, RefreshCw, Users } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight, Mail, RefreshCw, UserRoundCog, Users } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../auth";
 import { useLanguage } from "../i18n";
-import { ContentViewStat, DailyViewStat, EngagementSummary, FunnelStat, getEngagementData, MemberRegistration, NewsletterSubscriber, TrafficSourceStat } from "../lib/engagement";
+import { ContentViewStat, DailyViewStat, EngagementSummary, FunnelStat, getEngagementData, MemberRegistration, NewsletterSubscriber, setMemberSeedRole, TrafficSourceStat } from "../lib/engagement";
 import { getFeaturedContentCandidates } from "../data/featuredContent";
 import { isHotIssueColumn } from "../data/columns";
 import { getFeaturedContentPath, setFeaturedContentPath } from "../lib/featuredContent";
@@ -63,6 +63,8 @@ export default function Insights() {
   const [savingFeaturedPath, setSavingFeaturedPath] = useState<string | null>(null);
   const [featuredNotice, setFeaturedNotice] = useState("");
   const [featuredPage, setFeaturedPage] = useState(1);
+  const [roleSavingUserId, setRoleSavingUserId] = useState<string | null>(null);
+  const [roleNotice, setRoleNotice] = useState("");
   const authorized = user?.app_metadata?.seed_role === "owner";
 
   const refresh = async () => {
@@ -133,6 +135,23 @@ export default function Insights() {
       setSavingFeaturedPath(null);
     }
   };
+  const changeMemberRole = async (member: MemberRegistration) => {
+    if (!session || member.seed_role === "owner") return;
+    const nextRole = member.seed_role === "author" ? "" : "author";
+    setRoleSavingUserId(member.user_id);
+    setRoleNotice("");
+    try {
+      await setMemberSeedRole(session, member.user_id, nextRole);
+      setMembers((current) => current.map((item) => item.user_id === member.user_id ? { ...item, seed_role: nextRole || "member" } : item));
+      setRoleNotice(nextRole === "author"
+        ? `${member.nickname} 회원을 필자로 지정했습니다. 다음 로그인부터 집필실을 이용할 수 있습니다.`
+        : `${member.nickname} 회원의 필자 권한을 해제했습니다.`);
+    } catch {
+      setRoleNotice(ko ? "권한을 변경하지 못했습니다. 잠시 후 다시 시도해주세요." : "Could not update the member role.");
+    } finally {
+      setRoleSavingUserId(null);
+    }
+  };
   const formatDate = (value: string) => new Intl.DateTimeFormat(ko ? "ko-KR" : "en-US", { dateStyle: "medium", timeStyle: "short" }).format(new Date(value));
   const formatChartDate = (value: string) => new Intl.DateTimeFormat(ko ? "ko-KR" : "en-US", { month: "numeric", day: "numeric", weekday: "short", timeZone: "Asia/Seoul" }).format(new Date(`${value}T00:00:00+09:00`));
 
@@ -178,7 +197,7 @@ export default function Insights() {
 
         {section === "subscribers" && <section className="mt-7"><div className="flex items-end justify-between gap-3"><div><h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "이메일 구독자" : "Email subscribers"}</h2><p className="mt-1 text-sm text-charcoal/50">{ko ? "회원과 분리해 뉴스레터 수신 명단을 관리합니다." : "Manage newsletter recipients separately from members."}</p></div><span className="inline-flex items-center gap-1.5 text-sm font-bold text-green-deep"><Mail size={16}/>{subscribers.filter((item) => item.status === "active").length.toLocaleString()}</span></div><div className="mt-5 overflow-x-auto border-t-2 border-navy bg-white"><table className="w-full text-left text-sm"><thead className="bg-[#F1F2EC] text-xs text-charcoal/50"><tr><th className="px-4 py-3">{ko ? "이메일" : "Email"}</th><th className="px-4 py-3">{ko ? "상태" : "Status"}</th><th className="px-4 py-3">{ko ? "가입 경로" : "Source"}</th><th className="px-4 py-3">{ko ? "신청일" : "Subscribed"}</th></tr></thead><tbody>{subscribers.map((item) => <tr key={item.email} className="border-t border-green-deep/10"><td className="px-4 py-3 font-semibold text-navy">{item.email}</td><td className={`px-4 py-3 text-xs font-bold ${item.status === "active" ? "text-green-deep" : "text-charcoal/40"}`}>{item.status === "active" ? (ko ? "활성" : "Active") : (ko ? "해지" : "Unsubscribed")}</td><td className="px-4 py-3 text-xs text-charcoal/55">{item.source_path}</td><td className="whitespace-nowrap px-4 py-3 text-xs text-charcoal/55">{formatDate(item.consented_at)}</td></tr>)}</tbody></table>{!loading && subscribers.length === 0 && <p className="px-4 py-8 text-center text-sm text-charcoal/45">{ko ? "아직 구독 신청이 없습니다." : "No subscription requests yet."}</p>}</div></section>}
 
-        {section === "members" && <section className="mt-7"><div className="flex items-end justify-between gap-3"><div><h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "회원 관리" : "Members"}</h2><p className="mt-1 text-sm text-charcoal/50">{ko ? "회원가입·인증·콘텐츠 수신 상태를 확인합니다." : "Review registration, verification and content subscription status."}</p></div><span className="inline-flex items-center gap-1.5 text-sm font-bold text-green-deep"><Users size={16}/>{members.length.toLocaleString()}</span></div><div className="mt-5 overflow-x-auto border-t-2 border-navy bg-white"><table className="w-full text-left text-sm"><thead className="bg-[#F1F2EC] text-xs text-charcoal/50"><tr><th className="px-4 py-3">{ko ? "회원" : "Member"}</th><th className="px-4 py-3">{ko ? "연락처" : "Contact"}</th><th className="px-4 py-3">{ko ? "이메일 인증" : "Verified"}</th><th className="px-4 py-3">{ko ? "콘텐츠 수신" : "Subscription"}</th><th className="px-4 py-3">{ko ? "가입일" : "Joined"}</th></tr></thead><tbody>{members.map((item) => <tr key={item.user_id} className="border-t border-green-deep/10"><td className="px-4 py-3 font-semibold text-navy">{item.nickname}</td><td className="px-4 py-3 text-xs text-charcoal/55"><p>{item.email}</p>{item.phone && <p className="mt-1">{item.phone}</p>}</td><td className={`px-4 py-3 text-xs font-bold ${item.email_confirmed_at ? "text-green-deep" : "text-amber-700"}`}>{item.email_confirmed_at ? (ko ? "완료" : "Verified") : (ko ? "미인증" : "Unverified")}</td><td className={`px-4 py-3 text-xs font-bold ${item.content_subscription_consent ? "text-green-deep" : "text-charcoal/35"}`}>{item.content_subscription_consent ? (ko ? "수신" : "Subscribed") : (ko ? "미수신" : "No")}</td><td className="whitespace-nowrap px-4 py-3 text-xs text-charcoal/55">{formatDate(item.created_at)}</td></tr>)}</tbody></table>{!loading && members.length === 0 && <p className="px-4 py-8 text-center text-sm text-charcoal/45">{ko ? "회원가입 기록이 없습니다." : "No registered members yet."}</p>}</div></section>}
+        {section === "members" && <section className="mt-7"><div className="flex items-end justify-between gap-3"><div><h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "회원·필자 관리" : "Members & authors"}</h2><p className="mt-1 text-sm text-charcoal/50">{ko ? "이메일 인증을 마친 회원을 필자로 지정하면 해당 계정에 집필실이 열립니다." : "Assign the author role to a verified member to open the writers' room."}</p></div><span className="inline-flex items-center gap-1.5 text-sm font-bold text-green-deep"><Users size={16}/>{members.length.toLocaleString()}</span></div>{roleNotice && <p className="mt-5 border border-green-deep/15 bg-[#E8EFE9] px-4 py-3 text-sm font-semibold text-green-deep" role="status">{roleNotice}</p>}<div className="mt-5 overflow-x-auto border-t-2 border-navy bg-white"><table className="w-full text-left text-sm"><thead className="bg-[#F1F2EC] text-xs text-charcoal/50"><tr><th className="px-4 py-3">{ko ? "회원" : "Member"}</th><th className="px-4 py-3">{ko ? "연락처" : "Contact"}</th><th className="px-4 py-3">{ko ? "이메일 인증" : "Verified"}</th><th className="px-4 py-3">{ko ? "현재 권한" : "Role"}</th><th className="px-4 py-3">{ko ? "가입일" : "Joined"}</th><th className="px-4 py-3 text-right">{ko ? "필자 지정" : "Author access"}</th></tr></thead><tbody>{members.map((item) => <tr key={item.user_id} className="border-t border-green-deep/10"><td className="px-4 py-3 font-semibold text-navy">{item.nickname}</td><td className="px-4 py-3 text-xs text-charcoal/55"><p>{item.email}</p>{item.phone && <p className="mt-1">{item.phone}</p>}</td><td className={`px-4 py-3 text-xs font-bold ${item.email_confirmed_at ? "text-green-deep" : "text-amber-700"}`}>{item.email_confirmed_at ? (ko ? "완료" : "Verified") : (ko ? "미인증" : "Unverified")}</td><td className="px-4 py-3 text-xs font-bold text-navy">{item.seed_role === "owner" ? (ko ? "최고관리자" : "Owner") : item.seed_role === "author" ? (ko ? "필자" : "Author") : (ko ? "일반회원" : "Member")}</td><td className="whitespace-nowrap px-4 py-3 text-xs text-charcoal/55">{formatDate(item.created_at)}</td><td className="px-4 py-3 text-right">{item.seed_role === "owner" ? <span className="text-xs font-bold text-charcoal/35">{ko ? "변경 불가" : "Locked"}</span> : <button type="button" disabled={!item.email_confirmed_at || roleSavingUserId !== null} onClick={() => void changeMemberRole(item)} className={item.seed_role === "author" ? "button-secondary" : "button-primary"}><UserRoundCog size={15}/>{roleSavingUserId === item.user_id ? (ko ? "변경 중" : "Updating") : item.seed_role === "author" ? (ko ? "필자 해제" : "Remove author") : (ko ? "필자로 지정" : "Make author")}</button>}</td></tr>)}</tbody></table>{!loading && members.length === 0 && <p className="px-4 py-8 text-center text-sm text-charcoal/45">{ko ? "회원가입 기록이 없습니다." : "No registered members yet."}</p>}</div></section>}
 
         {section === "featured" && <section className="mt-7">
           <div className="flex flex-wrap items-end justify-between gap-3"><div><h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "메인페이지 상단 기사" : "Homepage featured story"}</h2><p className="mt-1 text-sm text-charcoal/50">{ko ? "원하는 기사를 선택하면 별도 배포 없이 메인페이지 왼쪽 상단에 바로 반영됩니다." : "Choose any published story to place it at the top of the homepage without a new deployment."}</p></div><p className="text-xs font-semibold text-charcoal/45">{ko ? `전체 ${featuredCandidates.length.toLocaleString()}건 · ${featuredPage}/${featuredPageCount}페이지` : `${featuredCandidates.length.toLocaleString()} stories · Page ${featuredPage} of ${featuredPageCount}`}</p></div>

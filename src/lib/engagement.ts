@@ -233,7 +233,15 @@ export type MemberRegistration = {
   social_preferences: string[];
   created_at: string;
   email_confirmed_at: string | null;
+  seed_role: "owner" | "author" | "member";
 };
+
+export async function setMemberSeedRole(session: AuthSession, userId: string, role: "author" | "") {
+  return callRpc<string>("set_member_seed_role", {
+    target_user_id: userId,
+    target_role: role,
+  }, session.access_token);
+}
 
 export async function getEngagementData(session: AuthSession) {
   const token = session.access_token;

@@ -44,6 +44,7 @@ const TaxWatch = lazy(() => import("./pages/TaxWatch"));
 const TaxCommentaryDetail = lazy(() => import("./pages/TaxCommentaryDetail"));
 const TaxPolicyDetail = lazy(() => import("./pages/TaxPolicyDetail"));
 const PublicInterestWatch = lazy(() => import("./pages/PublicInterestWatch"));
+const WriterRoom = lazy(() => import("./pages/WriterRoom"));
 
 function AppShell() {
   const location = useLocation();
@@ -62,6 +63,7 @@ function AppShell() {
           <Route path="/" element={<Home />} />
           <Route path="/en" element={<Home />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/writer" element={<WriterRoom />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/insights/content" element={<Insights />} />
           <Route path="/insights/traffic" element={<Insights />} />
