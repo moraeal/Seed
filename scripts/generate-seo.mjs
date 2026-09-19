@@ -299,6 +299,30 @@ const accountShell = template
 await mkdir(path.join(dist, "account"), { recursive: true });
 await writeFile(path.join(dist, "account", "index.html"), accountShell);
 
+// Private application routes also need a physical entry file on GitHub Pages
+// so refreshes and post-login redirects do not fall through to a 404 page.
+const privateShellRoutes = [
+  ["writer", "필자 집필실 | 씨앗의 소리"],
+  ["insights", "운영 통계 | 씨앗의 소리"],
+  ["insights/content", "콘텐츠 통계 | 씨앗의 소리"],
+  ["insights/traffic", "유입 분석 | 씨앗의 소리"],
+  ["insights/subscribers", "이메일 구독자 | 씨앗의 소리"],
+  ["insights/members", "회원·필자 관리 | 씨앗의 소리"],
+  ["insights/featured", "메인기사 관리 | 씨앗의 소리"],
+  ["insights/legislation", "입법감시 관리 | 씨앗의 소리"],
+];
+
+for (const [privatePath, privateTitle] of privateShellRoutes) {
+  const privateShell = template
+    .replace(/<title>[\s\S]*?<\/title>/i, `<title>${privateTitle}</title>`)
+    .replace(/<meta\s+name="robots"[\s\S]*?\/>/i, '<meta name="robots" content="noindex" />')
+    .replace(/<link\s+rel="canonical"[\s\S]*?\/>/i, `<link rel="canonical" href="https://seedvoice.kr/${privatePath}" />`)
+    .replace(/\s*<script\s+type="application\/ld\+json">[\s\S]*?<\/script>/gi, "");
+  const output = path.join(dist, privatePath, "index.html");
+  await mkdir(path.dirname(output), { recursive: true });
+  await writeFile(output, privateShell);
+}
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${seoRoutes.filter((route) => !route.noindex).map((route) => `  <url>\n    <loc>${canonicalUrl(route.path)}</loc>${route.lastModified ? `\n    <lastmod>${route.lastModified}</lastmod>` : ""}\n  </url>`).join("\n")}\n</urlset>\n`;
 await writeFile(path.join(dist, "sitemap.xml"), sitemap);
 
