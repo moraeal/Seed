@@ -41,6 +41,211 @@ export type TaxCommentary = {
 
 export const taxCommentaries: TaxCommentary[] = [
 {
+  slug: "content-support-one-ledger",
+  relatedPolicySlug: "content-strategy-special-account-rebate-bill",
+  date: "2026-09-19",
+  readMinutes: 8,
+  heroSrc: "images/tax/content-support-one-ledger.webp",
+  sources: [
+    {
+      label: { ko: "국회 의안 제2221473호 — 콘텐츠산업의 국가전략산업 육성에 관한 특별법안", en: "National Assembly Bill 2221473 — Special Act on Developing Content as a National Strategic Industry" },
+      url: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221473/detailRP?yType=I",
+    },
+    {
+      label: { ko: "국회 의안 제2221472호 — 국가재정법 일부개정법률안", en: "National Assembly Bill 2221472 — National Finance Act amendment" },
+      url: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221472/detailRP?yType=I",
+    },
+    {
+      label: { ko: "정부 정책브리핑 — 1조 원대 K-콘텐츠 펀드와 제작비 최대 30% 세액공제", en: "Korean government briefing — KRW 1 trillion content fund and production tax credits of up to 30%" },
+      url: "https://www.korea.kr/news/policyNewsView.do?newsId=148926961",
+    },
+    {
+      label: { ko: "머니투데이 — 2026년 콘텐츠 정책펀드 7,300억 원 조성", en: "MoneyToday — KRW 730 billion content policy fund for 2026" },
+      url: "https://www.mt.co.kr/culture/2026/01/23/2026012308440338275",
+    },
+    {
+      label: { ko: "전자신문 — 2027년 K콘텐츠 예산안 1조 7,719억 원", en: "Electronic Times — KRW 1.7719 trillion proposed K-content budget for 2027" },
+      url: "https://www.etnews.com/20260904000133",
+    },
+  ],
+  editions: {
+    ko: {
+      title: "K콘텐츠 지원, 이름은 네 개인데 계산서는 하나다",
+      subtitle: "특별회계·현금환급·세액공제·부담금 감면을 한 장부에서 봐야 합니다",
+      summary: "정부는 2027년 K콘텐츠 예산안에 1조 7,719억 원을 편성했고, 2026년에는 7,300억 원 규모의 콘텐츠 정책펀드를 조성하고 있습니다. 여기에 별도 특별회계와 제작비 현금환급, 세제·정책금융 우대, 부담금 감면을 묶은 법안이 발의됐습니다. 지원의 필요성은 설명됐지만 기존 사업과의 중복, 연간 총비용, 환급률과 일몰은 보이지 않습니다. 이름은 달라도 시민이 확인할 계산서는 하나여야 합니다.",
+      keyPoints: [
+        "2027년 K콘텐츠 예산안 1조 7,719억 원과 2026년 7,300억 원 정책펀드가 이미 추진되는 가운데 별도의 특별회계 신설안이 나왔습니다.",
+        "현금환급은 지출, 세액공제는 세수 감소, 정책금융은 위험 부담, 부담금 감면은 공적 수입 감소이므로 하나의 통합 비용표가 필요합니다.",
+        "외국 제작사 환급과 OTT 상생협력금에는 국내 고용·IP 귀속·회수 조건, 자발성, 구독료 전가 여부를 확인할 장치가 필요합니다.",
+      ],
+      heroAlt: "콘텐츠 제작 현장의 카메라 뒤에서 영수증과 동전, 여러 재정 경로가 하나의 공공 장부로 모이는 세금감시 이미지",
+      heroCaption: "콘텐츠 지원은 예산·펀드·세액공제·현금환급·부담금 감면으로 나뉩니다. 이름이 달라도 시민에게 돌아오는 재정비용은 한 장부에서 확인해야 합니다.",
+      sections: [
+        {
+          title: "1조 7,719억 원 뒤에 또 하나의 특별회계가 옵니다",
+          paragraphs: [
+            "정부는 2027년 K콘텐츠 산업 예산안에 1조 7,719억 원을 편성했습니다. 2026년에는 역대 최대인 7,300억 원 규모의 콘텐츠 정책펀드를 조성하고 있습니다. 2024년에는 2028년까지 1조 200억 원 규모의 K-콘텐츠·미디어 전략펀드를 만들고 영상콘텐츠 제작비 세액공제를 최대 30%까지 확대하겠다고 발표했습니다.",
+            "그런데 9월 18일 국회에는 콘텐츠전략산업발전특별회계를 새로 설치하는 법안이 발의됐습니다. 특별회계뿐만이 아닙니다. 국내 제작비 현금환급, 세제와 정책금융 우대, 지식재산권 투자펀드, 글로벌 공동제작 펀드, 지역방송 부담금 경감까지 한 법안에 담겼습니다.",
+            "이 숫자들을 그대로 더해 전체 지원액이라고 부를 수는 없습니다. 연도가 다르고, 펀드에는 민간 자금이 들어가며, 예산안과 정책펀드 사이에 중복되는 사업이 있을 수 있습니다. 바로 그래서 통합 비용표가 필요합니다. 지금 공개된 자료만으로는 기존 사업을 새 특별회계로 옮기는 것인지, 기존 지원 위에 재정을 더 얹는 것인지 구분하기 어렵습니다.",
+          ],
+          quote: "지원의 이름은 여러 개인데, 중복을 걷어낸 계산서는 아직 없습니다.",
+        },
+        {
+          title: "콘텐츠산업을 키워야 한다는 이유는 분명합니다",
+          paragraphs: [
+            "국내 제작사가 세계 시장에서 성공하고도 지식재산권과 후속 수익을 글로벌 플랫폼에 넘기는 구조는 개선할 필요가 있습니다. 영국과 캐나다를 비롯한 여러 국가가 제작비 환급과 세제 혜택으로 대형 프로젝트를 유치하는 상황에서 한국만 아무런 정책 수단 없이 경쟁하기도 어렵습니다.",
+            "콘텐츠는 제작 단계에서 많은 자금이 들어가지만 흥행 여부는 불확실합니다. 담보가 부족한 제작사는 민간 금융만으로 장기 자금을 조달하기 어렵습니다. 국내 제작사의 협상력을 높이고 IP를 국내에 남기겠다는 법안의 목적에는 현실적인 근거가 있습니다.",
+            "그러나 산업의 가치가 높다는 사실과 모든 지원 수단이 정당하다는 결론은 같은 말이 아닙니다. 필요성이 큰 산업일수록 지원 경쟁도 커지고, 각 부처와 기관이 만든 사업은 쉽게 사라지지 않습니다. 산업을 키우는 돈과 지원체계를 유지하는 돈을 구분하지 않으면 좋은 목적이 재정의 빈칸을 가립니다.",
+          ],
+        },
+        {
+          title: "현금환급은 지출이고 세액공제는 보이지 않는 지출입니다",
+          paragraphs: [
+            "법안은 국내에서 제작하거나 투자하는 외국 사업자와 일정 규모 이상의 국내 사업자에게 적격지출의 기본환급금과 추가환급을 지급할 수 있도록 합니다. 정부가 세금을 덜 걷는 세액공제와 달리 현금환급은 예산에서 직접 돈이 나갑니다. 둘 다 기업의 제작비를 낮추지만 국가 장부에 나타나는 방식은 다릅니다.",
+            "정책금융 우대는 당장 보조금으로 잡히지 않아도 금리 우대와 손실 위험을 공공부문이 부담할 수 있습니다. 지역방송 부담금 감면은 지원받는 기업의 비용을 줄이는 대신 해당 부담금 수입을 감소시킵니다. 특별회계는 특정 사업이 매년 일반 예산의 우선순위 경쟁에서 비켜나 안정적인 재원을 요구할 통로가 됩니다.",
+            "지출, 세수 감소, 금융 위험, 부담금 감면을 서로 다른 자료에 흩어 놓으면 각 숫자는 작아 보입니다. 하지만 시민이 부담할 전체 비용은 줄어들지 않습니다. 지원 패키지는 홍보의 단위일 수는 있어도 회계의 단위는 아닙니다.",
+          ],
+          quote: "현금환급은 지출이고, 세액공제와 부담금 감면은 잘 보이지 않는 재정비용입니다.",
+        },
+        {
+          title: "외국 제작사를 지원한 뒤 한국에 무엇이 남습니까",
+          paragraphs: [
+            "해외 제작사를 국내로 유치하면 촬영장과 장비, 숙박, 운송, 후반작업에서 일자리와 매출이 생길 수 있습니다. 지역의 제작 기반을 키우고 한국 인력을 국제 프로젝트에 연결하는 효과도 기대할 수 있습니다.",
+            "그 효과가 자동으로 생기는 것은 아닙니다. 환급률이 높고 국내 고용이나 기술 이전 조건이 약하면 해외 제작사가 한국에서 비용만 지출한 뒤 IP와 수익을 모두 가져갈 수 있습니다. 대형 국내 제작사가 기존에 하던 지출을 환급 대상으로 바꿔 받는다면 새로운 투자보다 기존 비용의 보전에 가까워질 수도 있습니다.",
+            "환급률과 작품별 상한, 국내 인력 고용 비율, 중소 제작사 참여, IP의 국내 보유와 수익 환류 조건이 먼저 공개돼야 합니다. 약속한 고용과 투자가 이뤄지지 않을 때 지원금을 돌려받는 환수조항도 필요합니다. 해외 제작 유치 건수보다 지원금 1원당 국내에 남은 임금·세금·IP 수익을 확인해야 합니다.",
+          ],
+        },
+        {
+          title: "자발적 협력금이 거절하기 어려운 준조세가 되지 않는가",
+          paragraphs: [
+            "법안은 OTT 사업자가 자발적 협약에 따라 상생투자협력금을 내고 인센티브를 받을 수 있는 근거를 둡니다. 국내 콘텐츠 생태계에 기여하는 플랫폼을 우대하겠다는 취지입니다.",
+            "정부가 규제 완화와 사업상 혜택을 결정하면서 동시에 협력금 납부를 권한다면 ‘자발적’이라는 말만으로 충분하지 않습니다. 내지 않았을 때 불이익이 없다는 점, 금액 산정과 사용처, 기금 운용 주체와 수혜기업 선정 과정이 공개돼야 실제 자발성을 확인할 수 있습니다.",
+            "기업이 부담한 비용은 구독료와 광고비, 제작 단가에 반영될 수 있습니다. 협력금이 좋은 이름을 가진 준조세가 되면 최종 계산서는 플랫폼이 아니라 이용자와 제작 현장에 돌아갑니다. 상생이라는 목적도 거절할 자유와 공개된 회계 위에서만 신뢰를 얻을 수 있습니다.",
+          ],
+        },
+        {
+          title: "정부가 문화산업의 승자를 고르는 권한도 커집니다",
+          paragraphs: [
+            "새 콘텐츠산업전략위원회는 기본계획과 부처 간 정책조정, 재원 배분을 심의·의결하게 됩니다. 전략콘텐츠를 지정하고 계약 개선이나 IP 국내 귀속 조건에 따라 금융·세제상 우대를 달리할 수 있는 길도 열립니다.",
+            "공공 지원에는 선정이 필요합니다. 그렇더라도 어떤 장르와 기업, 어떤 계약 구조를 전략적으로 우대할지 정부가 정하기 시작하면 시장의 실패를 보완하는 지원과 정부가 승자를 고르는 산업정책의 경계가 흐려집니다. 문화산업에서는 정치적 선호나 유행하는 정책 언어가 지원 기준에 들어올 위험도 가볍게 볼 수 없습니다.",
+            "심사위원 명단, 이해충돌 방지, 평가표, 기업별 수혜액과 탈락 사유를 공개해야 합니다. 정부가 고른 작품의 흥행만 알릴 것이 아니라 지원받지 못한 기업과의 고용·수출·민간투자 성과를 같은 기준으로 비교해야 합니다.",
+          ],
+        },
+        {
+          title: "씨앗은 하나의 장부와 하나의 종료 기준을 보겠습니다",
+          paragraphs: [
+            "첫째, 기존 지원과 신규 사업을 연결한 통합표가 필요합니다. 2027년 예산안, 2026년 정책펀드, 기존 전략펀드, 제작비 세액공제와 새 특별회계 사이의 포함·중복 관계를 사업별로 밝혀야 합니다. 서로 다른 연도와 민간 출자액을 섞어 성과를 부풀리지 않고, 순수한 국고 지출과 조세지출을 따로 표시해야 합니다.",
+            "둘째, 기업별 지원과 성과를 연결해야 합니다. 현금환급액, 세액공제액, 정책금융 우대, 부담금 감면을 합친 기업별 총수혜액과 국내 고용·민간투자·수출·IP 수익을 함께 공개해야 합니다. 실패한 사업과 회수하지 못한 투자도 성과표에서 빠져서는 안 됩니다.",
+            "셋째, 일몰과 환수 기준을 법에 남겨야 합니다. 몇 년 뒤 어떤 지표로 지원을 줄이거나 끝낼지, 고용과 국내 지출 약속을 지키지 못하면 어떻게 환수할지 정해야 합니다. 특별회계는 한 번 만들어지면 사업의 필요성보다 회계의 존속이 앞서기 쉽습니다.",
+            "K콘텐츠의 성공은 정부가 만든 작품 수가 아니라 시민과 기업이 자유롭게 도전해 세계의 선택을 받은 결과로 평가해야 합니다. 지원이 필요할 수 있습니다. 그러나 이름을 여러 개 붙여 비용을 흩어 놓을 이유는 없습니다. 이름은 네 개여도 시민이 받아볼 계산서는 하나여야 합니다.",
+          ],
+        },
+      ],
+      chart: {
+        title: "K콘텐츠 지원, 서로 다른 이름과 같은 재정 질문",
+        description: "기존에 추진 중인 지원과 새 법안의 수단을 단순 합산하지 않고, 각각 어떤 비용으로 남는지 구분했습니다.",
+        headers: ["지원 수단", "확인된 내용", "재정에 남는 방식", "추가로 공개할 항목"],
+        rows: [
+          ["정부 예산", "2027년 K콘텐츠 예산안 1조 7,719억 원", "직접 재정지출", "신규·기존 사업 구분과 집행 성과"],
+          ["정책펀드", "2026년 콘텐츠 정책펀드 7,300억 원", "정부 출자와 민간 출자·투자 위험", "순수 국고액, 회수액, 손실과 민간 중복"],
+          ["세액공제", "영상콘텐츠 제작비 최대 30% 공제", "걷지 않은 세금인 조세지출", "기업별 감면액과 추가 투자 효과"],
+          ["새 법안", "특별회계·현금환급·금융 우대·부담금 감면", "지출·세수 감소·위험 부담·공적 수입 감소", "총액, 환급률, 상한, 재원, 일몰"],
+        ],
+        note: "자료: 국회 의안 제2221473호·제2221472호, 정부 정책브리핑 2024년 3월 13일, 머니투데이 2026년 1월 23일, 전자신문 2026년 9월 4일. 각 수치는 연도와 구성, 정부·민간 출자 범위가 달라 단순 합산할 수 없습니다.",
+        afterSection: 0,
+      },
+      sourceNote: "이 글은 2026년 9월 18일 발의된 국회 의안 제2221473호와 제2221472호의 제안이유·주요내용, 정부의 2024년 미디어·콘텐츠 산업융합 발전방안, 2026년 콘텐츠 정책펀드 발표와 2027년 문화체육관광부 예산안 보도를 기준으로 작성했습니다. 2026년 9월 19일 현재 의안 원문 첨부파일과 비용추계서는 공개되지 않았고, 새 특별회계의 재원·현금환급률·연간 상한·일몰도 확인되지 않습니다. 펀드와 예산안 수치는 연도 및 민간 출자 포함 범위가 달라 서로 단순 합산하지 않았습니다. 씨앗의 소리는 비용추계서, 상임위원회 검토보고서, 시행령상 환급 기준과 기업별 수혜·성과 공개 여부를 계속 확인합니다.",
+    },
+    en: {
+      title: "Four names for content support, one bill for the public",
+      subtitle: "Special accounts, cash rebates, tax credits and levy relief belong on one fiscal ledger",
+      summary: "South Korea's proposed 2027 budget allocates KRW 1.7719 trillion to the content industry, while a KRW 730 billion policy fund is being formed in 2026. A new bill would add a dedicated special account, production cash rebates, tax and policy-finance preferences, and levy relief. The industrial case is clear, but the overlap with existing programs, annual public cost, rebate rates and sunset rules are not. Different labels should still produce one bill that taxpayers can inspect.",
+      keyPoints: [
+        "A new special account is proposed while a KRW 1.7719 trillion 2027 budget plan and a KRW 730 billion 2026 content policy fund are already in motion.",
+        "Cash rebates are spending; tax credits are forgone revenue; policy finance carries public risk; and levy relief reduces public receipts. They need one consolidated cost table.",
+        "Rebates for foreign productions and OTT cooperation payments need enforceable rules on Korean jobs, IP retention, clawbacks, voluntariness and consumer pass-through.",
+      ],
+      heroAlt: "A Korean content-production set where receipts, coins and several funding channels converge on a single public ledger",
+      heroCaption: "Content support is divided among budgets, funds, tax credits, cash rebates and levy relief. Different labels do not remove the need for one public fiscal ledger.",
+      sections: [
+        {
+          title: "Another special account follows a KRW 1.7719 trillion budget plan",
+          paragraphs: [
+            "South Korea's proposed 2027 budget allocates KRW 1.7719 trillion to the content industry. In 2026, the government and private investors are forming a record KRW 730 billion content policy fund. In 2024, the government announced a KRW 1.02 trillion content-and-media strategy fund through 2028 and production tax credits of up to 30%.",
+            "A bill introduced on September 18 would now create a Content Strategic Industry Development Special Account. It also authorizes cash rebates for eligible Korean production spending, tax and policy-finance preferences, IP and international co-production funds, and levy relief for regional broadcasters.",
+            "These figures cannot simply be added. They cover different years, some funds include private capital, and budget programs may overlap with policy funds. That is precisely why a consolidated table is needed. The public materials do not show whether the new account reorganizes existing support or adds another permanent layer on top of it.",
+          ],
+          quote: "Support has many labels. A cost table that removes overlap is still missing.",
+        },
+        {
+          title: "The industrial case is real",
+          paragraphs: [
+            "Korean producers can achieve global success while surrendering intellectual-property rights and downstream revenue to international platforms. Major production hubs, including the United Kingdom and Canada, use rebates and tax incentives to compete for large projects. Korea cannot ignore that competition.",
+            "Content production requires substantial capital before demand is known, and smaller producers often lack the collateral for long-term private financing. The bill therefore addresses real problems: bargaining power, domestic IP ownership and investment capacity.",
+            "But a valuable industry does not make every support instrument self-justifying. The more attractive the policy goal, the easier it is for overlapping programs and administering institutions to survive without a common test of cost and results.",
+          ],
+        },
+        {
+          title: "A rebate is spending; a credit is spending made less visible",
+          paragraphs: [
+            "The bill would allow base and additional cash rebates for eligible Korean spending by foreign producers and qualifying domestic producers or investors. Unlike a tax credit, a cash rebate is paid directly from the budget. Both lower production costs, but they appear differently in public accounts.",
+            "Preferential policy finance can shift funding costs and downside risk to the public sector. Levy relief for regional broadcasters lowers a company's burden by reducing a public receipt. A special account gives a policy field a more stable claim on future revenue, partly insulating it from the annual competition of the general budget.",
+            "When outlays, forgone revenue, financial risk and levy relief are placed in separate documents, each number looks smaller. The total public cost does not. A support package may be a communications unit; it is not an accounting unit.",
+          ],
+          quote: "Cash rebates are spending. Tax credits and levy relief are fiscal costs that are easier to overlook.",
+        },
+        {
+          title: "What remains in Korea after a foreign production leaves?",
+          paragraphs: [
+            "Attracting overseas productions can generate local spending on studios, equipment, accommodation, transport and post-production. It can also connect Korean workers and suppliers to international projects.",
+            "Those benefits are not automatic. A generous rebate with weak employment or technology-transfer conditions may subsidize spending while leaving IP and long-term revenue abroad. Support for activity that would have occurred anyway can become compensation for existing costs rather than new investment.",
+            "The rebate rate, project cap, Korean employment share, participation by smaller suppliers, IP conditions and revenue retention should be published in advance. Clawbacks are needed when promised investment or jobs do not materialize. The meaningful metric is not the number of productions attracted but the wages, tax receipts and IP income retained in Korea per won of support.",
+          ],
+        },
+        {
+          title: "A voluntary OTT payment can still become a quasi-levy",
+          paragraphs: [
+            "The bill would authorize incentives for streaming platforms that join voluntary agreements and make content-cooperation payments. The stated goal is to encourage platforms to contribute to the domestic production ecosystem.",
+            "Voluntary language is not enough when the same government controls regulatory relief and business advantages. Genuine voluntariness requires proof that non-payment carries no disadvantage, as well as disclosure of the formula, use of funds, administrator and recipient-selection process.",
+            "Platforms may pass the cost into subscription prices, advertising or production terms. If a well-named cooperation payment operates like a levy, the final bill reaches users and producers. Partnership earns trust only when refusal remains possible and the account is public.",
+          ],
+        },
+        {
+          title: "The bill also expands government's power to pick winners",
+          paragraphs: [
+            "A new Content Industry Strategy Committee would decide basic plans, inter-ministerial coordination and resource allocation. Strategic-content designation and contract or IP conditions could influence access to tax and financial preferences.",
+            "Public support inevitably requires selection. Yet the boundary between correcting a market failure and choosing favored companies, genres or contract structures becomes blurred when government controls both the label and the money. Cultural production adds a further concern: fashionable policy language or political preferences should not become hidden eligibility tests.",
+            "The public should see reviewer names, conflict safeguards, scoring rules, recipient-level benefits and reasons for rejection. Performance must compare subsidized recipients with similar unsupported firms on employment, exports and private investment—not merely celebrate the hits chosen by government.",
+          ],
+        },
+        {
+          title: "Seed Voice will follow one ledger and one exit rule",
+          paragraphs: [
+            "First, the government and National Assembly should map the 2027 budget plan, 2026 policy fund, earlier strategy fund, production tax credits and the proposed special account. The table should distinguish new from existing programs, remove overlap and separate pure public money from private capital.",
+            "Second, support and results should be linked by recipient. Cash rebates, tax credits, preferential finance and levy relief should be combined into a recipient's total benefit and compared with Korean employment, private investment, exports and IP income. Failed projects and unrecovered investment belong in the same record.",
+            "Third, the law needs sunsets and clawbacks. It should say when support will be reduced or ended and how money will be recovered when spending or employment commitments are missed. Once created, a special account can outlive the problem it was meant to solve.",
+            "Korean content succeeds when citizens and firms are free to create, invest and win audiences around the world—not when government can report how many projects it selected. Support may be justified. Scattering its cost across multiple labels is not. Four names should still produce one bill for the public.",
+          ],
+        },
+      ],
+      chart: {
+        title: "Different support labels, the same fiscal questions",
+        description: "Existing measures and the new bill are separated by how their cost appears. The figures should not be mechanically added.",
+        headers: ["Instrument", "Confirmed measure", "How the cost appears", "Disclosure still needed"],
+        rows: [
+          ["Budget", "KRW 1.7719tn proposed for content in 2027", "Direct public spending", "New versus existing programs and execution results"],
+          ["Policy fund", "KRW 730bn content policy fund in 2026", "Public and private capital plus investment risk", "Net public contribution, recoveries, losses and overlap"],
+          ["Tax credit", "Up to 30% of eligible production spending", "Forgone tax revenue", "Recipient-level relief and additional investment created"],
+          ["New bill", "Special account, cash rebates, finance preferences and levy relief", "Outlays, forgone revenue, risk and lower public receipts", "Total, rates, caps, funding source and sunset"],
+        ],
+        note: "Sources: National Assembly Bills 2221473 and 2221472; Korean government briefing dated March 13, 2024; MoneyToday dated January 23, 2026; and Electronic Times dated September 4, 2026. The figures cover different years and funding compositions, including private capital, and cannot be added together mechanically.",
+        afterSection: 0,
+      },
+      sourceNote: "This commentary is based on the official summaries of National Assembly Bills 2221473 and 2221472, introduced on September 18, 2026; the government's 2024 media-and-content strategy; the 2026 content policy fund announcement; and reporting on the Ministry of Culture's proposed 2027 budget. As of September 19, 2026, the full bill attachment and a fiscal-cost estimate were not available on the public legislation page. The proposed special account's funding source, rebate rates, annual caps and sunset were also unspecified. Because the budget and fund figures cover different years and may include private capital or overlapping programs, this article does not add them together. Seed Voice will track the official cost estimate, committee review, implementing rebate rules and recipient-level disclosure of benefits and outcomes.",
+    },
+  },
+},
+{
   slug: "fuel-tax-relief-needs-an-exit-rule",
   relatedPolicySlug: "fuel-tax-cut-extended-november-2026",
   date: "2026-09-18",
