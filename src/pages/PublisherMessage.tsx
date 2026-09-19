@@ -53,6 +53,10 @@ const copy = {
         name: "생각 너머",
         bio: "학생운동과 진보정당 활동을 거쳐 원자력과 에너지 문제를 다시 공부해 온 시민입니다. 원자력계의 주장을 반박하려 자료를 찾다가 자신이 믿어온 전제부터 다시 확인하게 되었고, 찬반 양쪽의 자료를 교차 검증하며 판단을 바꾸었습니다. 사실과 과학 네트웤 정책간사로 활동하며, 씨앗의 소리에서는 익숙한 믿음보다 측정과 현장, 과학적 근거를 따라 에너지·방사선·환경 문제를 살펴봅니다.",
       },
+      {
+        name: "박혜림",
+        bio: "자유기업원 매니저로 시장경제와 기업 제도를 주제로 연구와 콘텐츠를 만들고 있습니다. 세금과 규제가 기업가의 선택과 투자, 일자리와 시민의 기회에 어떤 영향을 미치는지 살펴봅니다.",
+      },
     ],
   },
   en: {
@@ -103,6 +107,10 @@ const copy = {
       {
         name: "Beyond Thought",
         bio: "A citizen who came to reconsider nuclear power and energy after years in the student movement and progressive politics. While gathering evidence to rebut the nuclear industry, he began testing his own assumptions, cross-checked the claims of both sides and changed his judgment. As a policy coordinator with the Facts and Science Network, he examines energy, radiation and environmental questions through measurement, field observation and scientific evidence rather than familiar belief.",
+      },
+      {
+        name: "Hyerim Park",
+        bio: "A manager at the Center for Free Enterprise who develops research and content on markets and business institutions. She examines how taxes and regulation shape entrepreneurial choices, investment, employment and opportunity for citizens.",
       },
     ],
   },
