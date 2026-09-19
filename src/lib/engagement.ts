@@ -243,6 +243,10 @@ export async function setMemberSeedRole(session: AuthSession, userId: string, ro
   }, session.access_token);
 }
 
+export async function listMemberRegistrations(session: AuthSession) {
+  return callRpc<MemberRegistration[]>("get_member_registrations", {}, session.access_token);
+}
+
 export async function getEngagementData(session: AuthSession) {
   const token = session.access_token;
   const [summary, dailyViews, views, traffic, funnel, members, subscribers] = await Promise.all([

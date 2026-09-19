@@ -8,6 +8,7 @@ import { useLanguage } from "../i18n";
 const statusLabel: Record<ArticleDraftStatus, string> = {
   draft: "작성 중",
   submitted: "검토 요청",
+  in_review: "편집부 검토 중",
   changes_requested: "수정 요청",
   approved: "승인",
   published: "게시 완료",
@@ -21,6 +22,8 @@ const emptyDraft = (userId: string): ArticleDraft => ({
   source_text: "",
   editor_notes: "",
   ai_instructions: "",
+  edited_text: "",
+  editor_feedback: "",
   status: "draft",
   attachment_name: null,
   attachment_type: null,
@@ -28,6 +31,9 @@ const emptyDraft = (userId: string): ArticleDraft => ({
   created_at: new Date().toISOString(),
   updated_at: new Date().toISOString(),
   submitted_at: null,
+  reviewer_id: null,
+  reviewed_at: null,
+  published_at: null,
 });
 
 export default function WriterRoom() {
@@ -156,6 +162,12 @@ export default function WriterRoom() {
               <label className="field"><span>편집부에 남길 메모</span><textarea value={draft.editor_notes} disabled={!editable} onChange={(event) => update("editor_notes", event.target.value)} rows={5} placeholder="출처, 반드시 살릴 문장, 공개 시 주의사항 등을 적어주세요."/></label>
               <label className="field"><span className="inline-flex items-center gap-1.5"><Sparkles size={15}/>AI 편집 요청</span><textarea value={draft.ai_instructions} disabled={!editable} onChange={(event) => update("ai_instructions", event.target.value)} rows={5} placeholder="문체, 분량, 이미지·도표 수정 방향을 적어주세요."/><small className="font-normal leading-5 text-charcoal/45">AI 자동 편집·이미지·도표 생성은 다음 개발 단계에서 이 지시란과 연결됩니다.</small></label>
             </div>
+
+            {(draft.editor_feedback || draft.edited_text || ["in_review", "approved", "published"].includes(draft.status)) && <section className="mt-5 border-l-4 border-green-mid bg-green-pale/45 p-5">
+              <h3 className="text-sm font-extrabold text-navy">편집부 검토 내용</h3>
+              {draft.editor_feedback && <div className="mt-3 whitespace-pre-wrap text-sm leading-7 text-charcoal/70">{draft.editor_feedback}</div>}
+              {draft.edited_text && <details className="mt-4"><summary className="cursor-pointer text-sm font-bold text-green-deep">편집본 미리보기</summary><div className="mt-3 max-h-96 overflow-y-auto whitespace-pre-wrap border-t border-green-deep/10 pt-4 text-sm leading-7 text-charcoal/70">{draft.edited_text}</div></details>}
+            </section>}
 
             <div className="mt-7 flex flex-wrap justify-end gap-3 border-t border-green-deep/10 pt-5">
               <button type="submit" className="button-secondary" disabled={saving || !editable}><Save size={16}/>{saving ? "저장 중" : "임시저장"}</button>

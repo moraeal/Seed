@@ -1,4 +1,4 @@
-import { BarChart3, CheckCircle2, Instagram, LogIn, LogOut, MailCheck, MessageCircle, PenLine, Send, UserPlus } from "lucide-react";
+import { BarChart3, CheckCircle2, ClipboardList, Instagram, LogIn, LogOut, MailCheck, MessageCircle, PenLine, Send, UserPlus } from "lucide-react";
 import { FormEvent, useMemo, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../auth";
@@ -123,6 +123,7 @@ export default function Account() {
             <button type="button" onClick={() => void signOut()} className="button-secondary mt-7"><LogOut size={16}/>{ko ? "로그아웃" : "Log out"}</button>
             {(user.app_metadata?.seed_role === "author" || user.app_metadata?.seed_role === "owner") && <Link to="/writer" className="button-primary ml-3 mt-7"><PenLine size={16}/>{ko ? "필자 집필실" : "Writers' room"}</Link>}
             {user.app_metadata?.seed_role === "owner" && <Link to="/insights" className="button-primary ml-3 mt-7"><BarChart3 size={16}/>{ko ? "구독·콘텐츠 통계" : "Subscriptions & content"}</Link>}
+            {user.app_metadata?.seed_role === "owner" && <Link to="/insights/editorial" className="button-primary ml-3 mt-7"><ClipboardList size={16}/>{ko ? "편집부 원고함" : "Editorial desk"}</Link>}
           </div>
         </div>
       </section>

@@ -308,6 +308,7 @@ const privateShellRoutes = [
   ["insights/traffic", "유입 분석 | 씨앗의 소리"],
   ["insights/subscribers", "이메일 구독자 | 씨앗의 소리"],
   ["insights/members", "회원·필자 관리 | 씨앗의 소리"],
+  ["insights/editorial", "편집부 원고함 | 씨앗의 소리"],
   ["insights/featured", "메인기사 관리 | 씨앗의 소리"],
   ["insights/legislation", "입법감시 관리 | 씨앗의 소리"],
 ];

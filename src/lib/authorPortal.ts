@@ -5,7 +5,7 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
   || import.meta.env.VITE_SUPABASE_ANON_KEY
   || "sb_publishable_gf96jsxTYvTeAzOL1AsBIA_fs4RlDje";
 
-export type ArticleDraftStatus = "draft" | "submitted" | "changes_requested" | "approved" | "published";
+export type ArticleDraftStatus = "draft" | "submitted" | "in_review" | "changes_requested" | "approved" | "published";
 export type ArticleDraftType = "column" | "briefing" | "civic_language" | "monitoring" | "other";
 
 export type ArticleDraft = {
@@ -16,6 +16,8 @@ export type ArticleDraft = {
   source_text: string;
   editor_notes: string;
   ai_instructions: string;
+  edited_text: string;
+  editor_feedback: string;
   status: ArticleDraftStatus;
   attachment_name: string | null;
   attachment_type: string | null;
@@ -23,6 +25,9 @@ export type ArticleDraft = {
   created_at: string;
   updated_at: string;
   submitted_at: string | null;
+  reviewer_id: string | null;
+  reviewed_at: string | null;
+  published_at: string | null;
 };
 
 const headers = (session: AuthSession, extra: Record<string, string> = {}) => ({
@@ -63,6 +68,43 @@ export async function saveArticleDraft(
   if (!response.ok) throw new Error(await readError(response, "원고를 저장하지 못했습니다."));
   const rows = await response.json() as ArticleDraft[];
   return rows[0];
+}
+
+export async function updateArticleDraftReview(
+  session: AuthSession,
+  draftId: string,
+  updates: Pick<ArticleDraft, "title" | "content_type" | "edited_text" | "editor_feedback" | "status">,
+) {
+  const response = await fetch(`${supabaseUrl}/rest/v1/article_drafts?id=eq.${encodeURIComponent(draftId)}&select=*`, {
+    method: "PATCH",
+    headers: headers(session, {
+      "Content-Type": "application/json",
+      Prefer: "return=representation",
+    }),
+    body: JSON.stringify(updates),
+  });
+  if (!response.ok) throw new Error(await readError(response, "편집 검토 내용을 저장하지 못했습니다."));
+  const rows = await response.json() as ArticleDraft[];
+  if (!rows[0]) throw new Error("원고를 찾지 못했거나 수정 권한이 없습니다.");
+  return rows[0];
+}
+
+export async function downloadDraftAttachment(session: AuthSession, draft: ArticleDraft) {
+  if (!draft.attachment_path) throw new Error("첨부파일이 없습니다.");
+  const encodedPath = encodeURIComponent(draft.attachment_path).replace(/%2F/g, "/");
+  const response = await fetch(`${supabaseUrl}/storage/v1/object/authenticated/author-drafts/${encodedPath}`, {
+    headers: headers(session),
+  });
+  if (!response.ok) throw new Error(await readError(response, "첨부파일을 내려받지 못했습니다."));
+  const blob = await response.blob();
+  const objectUrl = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = objectUrl;
+  link.download = draft.attachment_name || "원고-첨부파일";
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(objectUrl);
 }
 
 function safeFileName(name: string) {
