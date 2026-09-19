@@ -16,8 +16,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   openedAt: "2026-08-31",
   updatedAt: "2026-09-19",
   nextCheck: {
-    ko: "대통령의 공식 임명 여부와 법무부 취임 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 제넨셀 민원 의혹 재수사 여부와 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
-    en: "The president's official appointment decision and any Justice Ministry inauguration, the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud, the police decision on reinvestigating the Genencell petition allegation and progress in the family-cooperative complaint, and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
+    ko: "후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 제넨셀 민원 의혹 재수사 여부와 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
+    en: "The nomination and confirmation process for a successor justice minister, the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud, the police decision on reinvestigating the Genencell petition allegation and progress in the family-cooperative complaint, and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
   },
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
@@ -36,6 +36,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "This timeline cross-checks National Assembly schedules and decisions, public statements from the nominee and both parties, and reporting based on Ministry of Food and Drug Safety records. Allegations and the nominee's rebuttals are kept separate from verified facts.",
   },
   keyChanges: [
+    {
+      date: "2026-09-19",
+      text: {
+        ko: "김승원 후보자는 국회 소통관 기자회견에서 법무부 장관 후보자직을 자진 사퇴한다고 밝혔습니다. 지명 20일 만이자 법사위가 ‘적격’ 의견의 청문경과보고서를 채택한 지 이틀 만입니다. 김 후보자는 국민 눈높이에 미치지 못했음을 받아들이고 정부에 부담을 더하지 않기 위해 물러난다고 설명했으며, 전날 대통령 기자회견을 보고 결심을 굳혔다고 말했습니다. 이에 따라 임명 절차는 종료됐지만 제기된 의혹과 관련 수사·재판은 별개로 계속됩니다.",
+        en: "Kim Seung-won announced at a National Assembly press conference that he was withdrawing as justice minister nominee. The decision came 20 days after his nomination and two days after the committee adopted a fit-for-office confirmation report. Kim said he accepted that he had fallen short of public expectations, did not want to add to the government's burden and finalized his decision after watching the president's press conference the previous day. The appointment process has therefore ended, while the investigations and trials connected to the allegations continue separately.",
+      },
+    },
     {
       date: "2026-09-19",
       text: {
@@ -701,7 +708,34 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       status: "pending",
     },
   ],
+    {
+      date: "2026-09-19",
+      title: { ko: "김승원 후보자, 지명 20일 만에 자진 사퇴", en: "Kim withdraws 20 days after nomination" },
+      description: {
+        ko: "김승원 후보자는 9월 19일 오전 국회 소통관에서 기자회견을 열고 깊은 고민 끝에 법무부 장관 후보자직을 내려놓기로 했다고 밝혔습니다. 국민 눈높이에 미치지 못했음을 받아들이고 정부에 부담을 더해서는 안 된다고 판단했으며, 9월 18일 대통령 기자회견을 보고 결심을 굳혔다고 설명했습니다. 이로써 김 후보자의 임명 절차는 지명 20일 만에 종료됐습니다. 다만 후보직 사퇴가 제넨셀 민원 의혹이나 가족 협동조합 고발 사건의 사실관계와 위법성에 대한 판단을 대신하는 것은 아니며, 관련 수사와 재판은 별도로 이어집니다.",
+        en: "Kim Seung-won announced at a September 19 press conference at the National Assembly that, after deep consideration, he would withdraw as justice minister nominee. He said he accepted that he had fallen short of public expectations, concluded that he should not add to the government's burden and finalized the decision after watching the president's September 18 press conference. His appointment process ended 20 days after nomination. The withdrawal does not determine the facts or legality of the Genencell petition allegation or family-cooperative complaint; the related investigations and trial continue separately.",
+      },
+      change: { ko: "임명 절차 종료, 관련 의혹의 수사·재판은 별도 진행", en: "Appointment process ends; related investigations and trial remain separate" },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: { ko: "김승원 ‘국민 눈높이 못 미쳤다…후보자직 내려놓겠다’", en: "Kim says he fell short of public expectations and will withdraw" },
+          url: "https://www.yna.co.kr/amp/view/AKR20260919029200001",
+          publishedAt: "2026-09-19",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "채널A", en: "Channel A" },
+          title: { ko: "김승원 ‘깊은 고민 끝에 법무부 장관 후보직 내려놓는다’", en: "Kim says he will step down as justice minister nominee after deep consideration" },
+          url: "https://ichannela.com/news/detail/amp/000000551332.do",
+          publishedAt: "2026-09-19",
+          kind: "article",
+        },
+      ],
+    },
   confirmedFacts: [
+    { ko: "김승원 후보자는 2026년 9월 19일 국회 소통관 기자회견에서 법무부 장관 후보자직을 자진 사퇴한다고 밝혔습니다. 지명 20일 만이자 법사위가 ‘적격’ 의견의 청문경과보고서를 채택한 지 이틀 만입니다. 사퇴로 임명 절차는 종료됐지만 관련 의혹의 사실관계나 위법성이 확정된 것은 아닙니다.", en: "On September 19, 2026, Kim Seung-won announced at a National Assembly press conference that he was withdrawing as justice minister nominee. The decision came 20 days after nomination and two days after the committee adopted a fit-for-office confirmation report. The withdrawal ended the appointment process but did not determine the facts or legality of the related allegations." },
     { ko: "경기남부경찰청은 세종메디칼이 제넨셀 창립자 강세찬 씨를 특정경제범죄 가중처벌법상 사기 혐의로 고소한 사건과 관련해 2026년 9월 22일 소환 조사할 계획이라고 밝혔습니다. 경찰은 6월 사건을 검찰에 송치했으나 7월 보완수사 요구를 받았습니다. 이는 112억 원 투자 피해 주장에 관한 별도 사건이며, 소환만으로 혐의가 확정된 것은 아닙니다.", en: "Gyeonggi Nambu Provincial Police said it plans to question Genencell founder Kang Se-chan on September 22, 2026 in an aggravated-fraud complaint brought by Sejong Medical. Police forwarded the case in June and prosecutors requested supplementary investigation in July. This is a separate case concerning claimed investment losses of KRW 11.2 billion, and the summons does not establish guilt." },
     { ko: "이재명 대통령은 2026년 9월 18일 기자회견에서 김 후보자 임명 여부에 관해 아직 최종 결론을 내리지 못했으며, 검증 과정의 논란과 국민 눈높이를 고려해 신중하게 결정하겠다고 밝혔습니다. 이날 임명 또는 지명 철회가 결정된 것은 아닙니다.", en: "At a September 18, 2026 press conference, President Lee Jae Myung said he had not reached a final decision on Kim's appointment and would decide carefully after considering the controversies raised during vetting and public expectations. No appointment or withdrawal was decided that day." },
     { ko: "제넨셀 의혹 관련 재판을 받고 있는 양모 씨는 2026년 9월 17일 변호인을 통해 6쪽 입장문을 공개했습니다. 신속 검토 요청과 정치권 친분 과시를 인정·사과하고 특혜 요구·후원금 약속·전환사채 대가성을 부인한 것은 양씨의 주장입니다.", en: "On September 17, 2026, the woman on trial in the Genencell-related case released a six-page statement through counsel. Her acknowledgment and apology over seeking an expedited review and boasting of political connections, and her denials of favoritism, a donation promise and a quid pro quo for the convertible-bond investment, are her claims." },
@@ -771,6 +805,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "연합뉴스 — 김승원 법무부 장관 후보자 자진 사퇴", en: "Yonhap — Kim Seung-won withdraws as justice minister nominee" },
+      url: "https://www.yna.co.kr/amp/view/AKR20260919029200001",
+    },
+    {
+      label: { ko: "채널A — 김승원 후보자, 깊은 고민 끝에 후보직 사퇴", en: "Channel A — Kim withdraws as nominee after deep consideration" },
+      url: "https://ichannela.com/news/detail/amp/000000551332.do",
+    },
     {
       label: { ko: "뉴시스 — 제넨셀 창립자 9월 22일 경찰 보완수사 소환", en: "Newsis — Genencell founder summoned for supplementary police questioning on September 22" },
       url: "https://www.newsis.com/view/NISX20260919_0003796443",
