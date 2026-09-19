@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --configLoader native",
     "normalize:titles": "node scripts/normalize-seed-language-titles.mjs",
-    "build": "node scripts/generate-social-images.mjs && node scripts/validate-content.mjs && tsc -b && vite build --configLoader native && node scripts/generate-seo.mjs",
+    "build": "tsc -b && vite build --configLoader native",
     "preview": "vite preview --configLoader native"
   },
   "dependencies": {

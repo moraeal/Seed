@@ -6,9 +6,9 @@
     <script>
       (function () {
         var recoveryStarted = false;
-        var retryKey = "seed-reload";
+        var retryKey = "kumepume-reload";
 
-        window.__seedRecover = function () {
+        window.__kumepumeRecover = function () {
           if (recoveryStarted) return false;
           recoveryStarted = true;
 
@@ -24,7 +24,7 @@
 
         window.addEventListener("vite:preloadError", function (event) {
           event.preventDefault();
-          window.__seedRecover();
+          window.__kumepumeRecover();
         });
 
         window.addEventListener("error", function (event) {
@@ -32,28 +32,25 @@
           var message = String(event.message || "");
           var failedModule = target instanceof HTMLScriptElement && target.type === "module";
           var failedChunk = /dynamically imported module|module script|loading chunk|chunkloaderror/i.test(message);
-          if (failedModule || failedChunk) window.__seedRecover();
+          if (failedModule || failedChunk) window.__kumepumeRecover();
         }, true);
       })();
     </script>
     <meta
       name="description"
-      content="씨앗의 소리는 자유의 영역을 넓히고, 기업의 도전과 혁신을 보호하며, 국가와 시민사회의 권력을 감시하는 독립 시민저널입니다."
+      content="꿈에품에는 나눔과 공익봉사를 통해 사람의 가능성을 키우고 시민과 기업의 책임 있는 참여를 사회적 변화로 연결하는 공익법인입니다."
     />
-    <meta name="naver-site-verification" content="4159726c4ee7484c6119ee12394ba9e545b556a2" />
-    <meta name="msvalidate.01" content="F4FD6F58DDC327323321CC2D8CA9A5E5" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <link rel="canonical" href="https://seedvoice.kr/" />
-    <link rel="alternate" type="application/rss+xml" title="씨앗의 소리 RSS" href="https://seedvoice.kr/rss.xml" />
+    <link rel="canonical" href="https://kumepume.org/" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="씨앗의 소리" />
-    <meta property="og:title" content="씨앗의 소리 | 시민과 기업의 자유를 지키는 독립 시민저널" />
-    <meta property="og:description" content="씨앗의 소리는 자유의 영역을 넓히고, 기업의 도전과 혁신을 보호하며, 국가와 시민사회의 권력을 감시하는 독립 시민저널입니다." />
-    <meta property="og:url" content="https://seedvoice.kr/" />
+    <meta property="og:site_name" content="KUMEPUME 꿈에품에" />
+    <meta property="og:title" content="KUMEPUME 꿈에품에 | 꿈을 품고, 시민의 힘을 키웁니다" />
+    <meta property="og:description" content="나눔과 공익봉사를 통해 사람의 가능성을 키우고 시민과 기업의 참여를 사회적 변화로 연결합니다." />
+    <meta property="og:url" content="https://kumepume.org/" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="씨앗의 소리 | 시민과 기업의 자유를 지키는 독립 시민저널" />
-    <meta name="twitter:description" content="씨앗의 소리는 자유의 영역을 넓히고, 기업의 도전과 혁신을 보호하며, 국가와 시민사회의 권력을 감시하는 독립 시민저널입니다." />
-    <title>씨앗의 소리 | 시민과 기업의 자유를 지키는 독립 시민저널</title>
+    <meta name="twitter:title" content="KUMEPUME 꿈에품에 | 꿈을 품고, 시민의 힘을 키웁니다" />
+    <meta name="twitter:description" content="나눔과 공익봉사를 통해 사람의 가능성을 키우고 시민과 기업의 참여를 사회적 변화로 연결합니다." />
+    <title>KUMEPUME 꿈에품에 | 꿈을 품고, 시민의 힘을 키웁니다</title>
   </head>
   <body>
     <div id="root"></div>

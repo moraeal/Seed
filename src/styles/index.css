@@ -120,3 +120,99 @@ button, input, textarea { font: inherit; }
   .hero-slide:not(.hero-art-slide) { min-height: 560px; }
   .hero-art-slide { min-height: 440px; aspect-ratio: auto; }
 }
+
+/* KUMEPUME civic-organization homepage */
+.kumepume-home {
+  background: #fffdf8;
+}
+
+.kumepume-hero {
+  background:
+    radial-gradient(circle at 8% 12%, rgba(255, 192, 76, 0.24), transparent 26rem),
+    #f6f1e6;
+}
+
+.kumepume-eyebrow {
+  color: #e47716;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+.kumepume-section-title {
+  margin-top: 1rem;
+  color: #183b33;
+  font-size: clamp(2.15rem, 4.8vw, 3.65rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.kumepume-button-primary,
+.kumepume-button-secondary {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.75rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 900;
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.kumepume-button-primary {
+  background: #183b33;
+  color: white;
+}
+
+.kumepume-button-primary:hover {
+  background: #285748;
+  transform: translateY(-2px);
+}
+
+.kumepume-button-secondary {
+  border: 1px solid rgba(24, 59, 51, 0.28);
+  color: #183b33;
+}
+
+.kumepume-button-secondary:hover {
+  border-color: #183b33;
+  background: rgba(255, 255, 255, 0.65);
+  transform: translateY(-2px);
+}
+
+.kumepume-logo-mark {
+  position: relative;
+  display: inline-block;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50% 50% 48% 52%;
+  background: #ef901f;
+  transform: rotate(-8deg);
+}
+
+.kumepume-logo-mark span {
+  position: absolute;
+  display: block;
+  border-radius: 999px 0 999px 0;
+  background: #183b33;
+}
+
+.kumepume-logo-mark span:nth-child(1) { width: 0.78rem; height: 1.15rem; left: 0.64rem; top: 0.62rem; transform: rotate(-28deg); }
+.kumepume-logo-mark span:nth-child(2) { width: 0.72rem; height: 1.05rem; right: 0.58rem; top: 0.72rem; transform: rotate(58deg); }
+.kumepume-logo-mark span:nth-child(3) { width: 0.3rem; height: 1.22rem; left: 1.18rem; bottom: 0.36rem; border-radius: 999px; transform: rotate(4deg); }
+
+@media (max-width: 1023px) {
+  .kumepume-hero > .container-page {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .kumepume-hero > .container-page > div:first-child {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
