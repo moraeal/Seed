@@ -83,7 +83,7 @@ export const wealthCrossesBordersColumn: SeedColumn = {
       ],
     },
   ],
-  sourceNote: "이 글은 필자가 2025년 자유기업원에 기고한 문제의식을 바탕으로 삼성가 상속세 완납, 영국 비거주자 세제 개편, 한국의 상속주식 평가방식 논의 등 2026년 사례를 보완했습니다. 백만장자 이동 수치는 Henley & Partners와 New World Wealth가 발표한 2025년 전망치로, 각국 출입국 당국의 확정 이민 통계가 아닙니다.",
+  sourceNote: "",
   sources: [
     { label: "연합뉴스TV — 삼성가, 5년 만에 상속세 12조 원 완납", url: "https://www.yonhapnewstv.co.kr/news/MYH20260503191031yvq" },
     { label: "Henley & Partners — Private Wealth Migration Report 2025", url: "https://www.henleyglobal.com/publications/henley-private-wealth-migration-report-2025" },
