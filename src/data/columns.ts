@@ -1,3 +1,4 @@
+import { wealthCrossesBordersColumn } from "./columns/wealthCrossesBordersColumn";
 import { militaryAcademyIntegrationColumn } from "./columns/militaryAcademyIntegrationColumn";
 import { fukushimaJourneyColumn } from "./columns/fukushimaJourneyColumn";
 import { silenceAndPowerColumn } from "./columns/silenceAndPowerColumn";
@@ -14,7 +15,7 @@ import type { SeedColumn } from "./columnsLegacy";
 
 export type { SeedColumn } from "./columnsLegacy";
 
-export const columns: SeedColumn[] = [fukushimaJourneyColumn, militaryAcademyIntegrationColumn, nuclearPolicyReversalColumn, farmlandOwnershipPressureColumn, silenceAndPowerColumn, citizenizationBeforeAdvancementColumn, stateCannotMonopolizeLifeColumn, civicGroupsAreNotStateVanguardColumn, tenPercentPowerColumn, prosecutionReformPowerTransferColumn, lhReformColumn, ...legacyColumns];
+export const columns: SeedColumn[] = [wealthCrossesBordersColumn, fukushimaJourneyColumn, militaryAcademyIntegrationColumn, nuclearPolicyReversalColumn, farmlandOwnershipPressureColumn, silenceAndPowerColumn, citizenizationBeforeAdvancementColumn, stateCannotMonopolizeLifeColumn, civicGroupsAreNotStateVanguardColumn, tenPercentPowerColumn, prosecutionReformPowerTransferColumn, lhReformColumn, ...legacyColumns];
 
 export const hotIssueColumnSlugs = new Set([
   "democratic-party-nuclear-policy-reversal",
