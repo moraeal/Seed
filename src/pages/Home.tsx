@@ -244,7 +244,7 @@ export default function Home() {
     {
       to: "/publisher-message",
       kicker: ko ? "필진 소개" : "CONTRIBUTORS",
-      title: ko ? "작은씨앗 · 경계의 시민 · 생각 너머 · 박혜림 ···" : "Small Seed · Citizen at the Boundary · Beyond Thought · Hyerim Park ···",
+      title: ko ? "작은씨앗 · 경계의 시민 · 생각 너머 · 푸른지평 ···" : "Small Seed · Citizen at the Boundary · Beyond Thought · Blue Horizon ···",
       summary: ko ? "서로 다른 현장과 경험에서 출발한 필진이 각자의 질문과 판단으로 씨앗의 소리를 만들어갑니다." : "Contributors shaped by different fields and experiences build SEED VOICE through their own questions and judgment.",
     },
   ];
