@@ -48,6 +48,7 @@ const WriterRoom = lazy(() => import("./pages/WriterRoom"));
 const DraftArticlePreview = lazy(() => import("./pages/DraftArticlePreview"));
 const Contributions = lazy(() => import("./pages/Contributions"));
 const EditorialDesk = lazy(() => import("./pages/EditorialDesk"));
+const Support = lazy(() => import("./pages/Support"));
 
 function AppShell() {
   const location = useLocation();
@@ -79,6 +80,7 @@ function AppShell() {
           <Route path="/insights/legislation" element={<Insights />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/support" element={<Support />} />
           <Route path="/publisher-message" element={<PublisherMessage />} />
           <Route path="/seed-language" element={<SeedLanguage />} />
           <Route path="/seed-language/:slug" element={<SeedLanguageDetail />} />
