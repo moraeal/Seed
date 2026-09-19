@@ -1,0 +1,105 @@
+import type { ColumnTranslation } from "../types";
+
+export const issue25: ColumnTranslation = {
+  title: "Inside South Korea’s ‘97 Generation’",
+  subtitle: "Why did 1990s university cohorts who rejected student activists later share the same language of the public square?",
+  author: "Beyond Familiar Thought",
+  authorBio: "A citizen who moved from the student movement and progressive-party politics to a renewed study of nuclear power and energy. Now a policy coordinator at the Facts and Science Network, the author writes for SEED VOICE by following documents, field evidence and verifiable facts rather than familiar convictions.",
+  summary: "They were born in the 1970s and entered university in the 1990s. How did a cohort once divided between student activists and their critics come to share a similar political sensibility in the public squares of the 2000s? A former Hanchongryun activist looks back from inside his own generation.",
+  heroImage: {
+    alt: "An editorial image joining young participants at a 1990s university rally with citizens in a later candlelight gathering",
+    caption: "Although divided between activists and non-activists at university, members of the 1990s cohorts later shared similar songs, symbols and languages of anger and mourning in the public square.",
+    credit: "AI-assisted image by SEED VOICE",
+  },
+  inlineImage: {
+    alt: "A middle-aged citizen checks several sources on a phone while standing among people holding candles",
+    caption: "Solidarity in the public square can move democracy, but the size of a crowd cannot make every claim circulating within it true.",
+    credit: "AI-assisted image by SEED VOICE",
+  },
+  sections: [
+    {
+      title: "",
+      paragraphs: [
+        "In 2003, I served on the central committee of Hanchongryun, the Korean Federation of University Student Councils. I belonged to the student-movement current commonly called National Liberation, or NL. I am also one of those born in the 1970s who entered university in the 1990s. In this essay, I call us the ‘97 Generation’: 1990s university cohorts born in the 1970s.",
+        "The 97 Generation is not a single bloc. Some led the student movement, while many more openly disliked the activists. Others had little interest in politics or supported conservative parties. Flatten those differences, and the reality of the generation disappears.",
+        "Yet one scene still calls for explanation. Activists and non-activists who had seemed like oil and water at university later gathered in the public squares of the 2000s, sharing similar songs and symbols, anger and mourning. How did people who had taken different paths meet within a common political sensibility?",
+        "This is not an attempt to put an entire generation on trial. It is an effort to reconstruct, from within, the movement I joined and the emotional structure of the generation in which I have lived.",
+      ],
+    },
+    {
+      title: "Activists who entered university after democratization",
+      paragraphs: [
+        "The 97 Generation came of age in circumstances different from those of the 1980s university cohorts who had directly experienced authoritarian violence. We spent our adolescence after the 1987 constitutional reform restored direct presidential elections, amid economic growth and an expanding consumer culture.",
+        "The arrival of Seo Taiji and Boys was more than the debut of a popular act. Young people were no longer peripheral consumers of culture; they became the agents of enormous fandoms. First-generation idol groups such as H.O.T. and S.E.S. followed. The 97 Generation was among the first to gather around taste rather than organization, sharing songs and symbols in collective excitement.",
+        "The university landscape was different. Hostility toward student activists was growing among ordinary students, but activist organizations remained powerful. Hanchongryun, which succeeded Jeondaehyop, retained considerable mobilizing power through its national structure, launch rallies, student councils, clubs, rural volunteer programs and political education.",
+        "After plainclothes police officers beat Myongji University student Kang Gyeong-dae to death in April 1991, large protests followed. A series of students and workers, including Park Seung-hui, Kim Yeong-gyun and Cheon Se-yong, died by self-immolation. On May 25, Kim Gwi-jeong died during a police crackdown on a protest. Anger at state violence was intense. So were public unease and fatigue as deaths and violent clashes continued.",
+        "Early-1990s cohorts shaped by that period later sustained Hanchongryun’s organizational culture. Its language hardened, and the organization demanded greater commitment. The collapse of Soviet and Eastern European socialism deeply shook the People’s Democracy, or PD, current. By contrast, the NL current, which treated North Korea as an ideological reference point, retained organizational dominance for longer.",
+        "The investigations I experienced in the late 1990s and early 2000s were not the torture interrogations of the 1980s. My colleagues and I were questioned by police and prosecutors, but I did not suffer torture or physical abuse. That is my experience; it does not mean that human-rights violations had vanished from every investigative agency.",
+        "I nevertheless saw a paradox. Violence in front of us had diminished, yet the movement’s language became more radical. A generation that had not directly experienced dictatorship invoked its overthrow more easily. As the real enemy receded, the imagined enemy grew larger.",
+        "The 1996 Yonsei University standoff exposed that gap. Students and police clashed violently over a Hanchongryun-led reunification festival, and more than 5,000 students were detained. The following year, near the launch rally for Hanchongryun’s fifth term, students beat a civilian named Lee Seok to death.",
+        "A movement organized against state violence had inflicted violence on an individual. A good cause could not become a license for brutality. Hanchongryun’s moral authority collapsed.",
+      ],
+      quote: ["A good cause could not become", "a license for brutality."],
+    },
+    {
+      title: "From launch-rally flames to candlelight squares",
+      paragraphs: [
+        "Those who attended Jeondaehyop or Hanchongryun launch rallies remember the overwhelming collective experience: enormous flags, protest songs, tens of thousands of lighter flames and a crowd moving as one. The spectacle produced an intense sense of belonging and exhilaration.",
+        "When the person beside you is hurt, or when a crowd mourns a death together, calmly examining a rally’s claims and facts easily falls away. Individual judgment enters the emotion of the mass. The energy of the square gives people courage, but it can also take away their freedom to doubt.",
+        "I saw traces of that culture in the candlelight gatherings of the 2000s. Through songs, performances and symbols, strangers quickly formed an emotional community much as they had at the mass rallies of the student movement.",
+        "That does not make the candlelight movement a copy of Jeondaehyop or Hanchongryun. The vigils that spread after two schoolgirls were killed by a U.S. military vehicle in 2002 created a new form of assembly: a suggestion on an online message board, rapid circulation of information, civic-group organizing, and voluntary participation by individuals and families all came together.",
+        "The 2004 demonstrations against President Roh Moo-hyun’s impeachment, the 2008 protests over U.S. beef imports and the 2016–17 candlelight movement for President Park Geun-hye’s impeachment also differed in their issues, participants and forms of organization.",
+        "There was both continuity and rupture. Traditional movement organizations understood stages, marches, slogans and crowd management. Citizens shaped by the internet and popular culture turned protest into something resembling a cultural event. The organizing experience of activists met the voluntary participation of non-activist citizens in the square.",
+        "No single organization can claim to have created the candlelight movement. No single political camp can own the public square.",
+      ],
+    },
+    {
+      title: "Why did people who disliked activists go to the square?",
+      paragraphs: [
+        "Even for those who disliked the student activists of the 1990s, the public square gradually became less alien.",
+        "Street celebrations during the 2002 World Cup brought the experience of singing and sharing symbols in a huge crowd closer to everyday life. The candlelight vigils later that year combined mourning and anger. The gatherings of 2004 and 2008 turned sharing information online and expressing political views in the street into a generational experience.",
+        "Former activists and non-activist citizens learned a similar emotional grammar without belonging to the same organization: a story of resisting unjust power, mourning for victims and the moral assurance that comes from the size of a crowd.",
+        "The public square is an important democratic space. Citizens must be able to criticize power and express their views between elections. Nor should we dismiss the fact that the 2016–17 candlelight movement led, through constitutional procedures, to a presidential impeachment and an early election.",
+        "But the presence of a large crowd does not guarantee the truth of every piece of information circulating within it.",
+        "During the 2008 candlelight protests, exaggerated or inaccurate claims about the risks of U.S. beef spread rapidly. The government, for its part, failed to explain the issue and persuade an anxious public. Distrust and exaggeration reinforced each other.",
+        "The square moved democracy. It also showed how emotion can move ahead of verification.",
+      ],
+      quote: ["The square moved democracy.", "It also showed how emotion can move ahead of verification."],
+    },
+    {
+      title: "Roh Moo-hyun’s death and an emotional community",
+      paragraphs: [
+        "The death of former president Roh Moo-hyun in 2009 left another powerful collective memory for the 97 Generation. Mourning together briefly erased political differences and bound people within a shared emotion. That memory also affected how later political events and information were received.",
+        "Yet Roh’s death alone cannot explain every subsequent party merger or generational voting pattern.",
+        "The Unified Progressive Party was created in 2011 through a merger of the Democratic Labor Party, the Participation Party and the New Progressive Integration Alliance formed by defectors from the New Progressive Party. Different ideologies and organizations came together amid electoral calculations, political interests and debate over reorganizing progressive politics. Roh’s death may have formed part of the period’s emotional backdrop, but the evidence is insufficient to call it a direct cause.",
+        "Exit polls in the 2022 presidential election showed strong support for Lee Jae-myung among people then in their forties. It would still be excessive to conclude that the entire 97 Generation had been captured by one ideology. Voting reflects not only formative political experience but also work and wealth, housing and children’s education, region and gender, and assessments of the government of the day.",
+        "Generational analysis is a starting point for explanation, not a verdict.",
+      ],
+    },
+    {
+      title: "Memory can be evidence, but it cannot be a license",
+      paragraphs: [
+        "The 97 Generation enjoyed the freedoms that followed democratization, witnessed the explosion of popular culture and the arrival of the internet, and discovered collective power in repeated public gatherings. It also lived through moments when a movement’s good cause hid organizational error, and when mourning and anger came before verification.",
+        "What I want to examine is not which party we supported. It is how we tested our certainty that we were right.",
+        "Did applause around us, the size of the square and the agreement of our peers replace evidence? Did we readily identify exaggeration by the other side while excusing it on our own?",
+        "Political forces on both left and right exploit the emotions of their supporters. They select fragments of fact, attach stories of victimhood and sacrifice, and reduce opponents to evil. Citizens do not escape this structure merely by changing to the other camp’s slogan. They escape by checking sources, reading counterarguments and correcting their judgment when a prediction fails.",
+        "The public square must belong to citizens. No generation or organization can own it. Democracy is not completed by the ability to gather in large numbers. After dispersing, citizens must still verify facts, scrutinize power and correct their own errors.",
+        "What the 97 Generation must recover is not the passion of its youth. It is the civic strength to doubt and test that passion for itself.",
+      ],
+      quote: ["What must be recovered is not youthful passion,", "but the civic strength to doubt and test it."],
+    },
+  ],
+  sourceNote: "The generational frame and the discussion of collective emotion are the author’s interpretation and recollection. Claims about events, organizations and institutions were cross-checked against the sources below.",
+  sourceLabels: [
+    "Korea Democracy Foundation Open Archives — The May 1991 Struggle",
+    "Encyclopedia of Korean Culture — Kang Gyeong-dae",
+    "Encyclopedia of Korean Culture — Park Seung-hui",
+    "Yonhap News Agency — Detentions and arrests during the 1996 Yonsei University standoff",
+    "Encyclopedia of Korean Culture — Democratic Labor Party",
+    "Korean Law Information Center — Constitutional Court decision 2013Hun-Da-1",
+    "SBS — Overview of the three-network exit poll for the 20th presidential election",
+    "Kyunghyang Shinmun — Exit-poll results by age group in the 20th presidential election",
+    "Oxford Academic — Candlelight Vigils and Citizen Activism",
+    "Social Movement Studies — The Candlelight Protests in South Korea",
+  ],
+};
