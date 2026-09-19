@@ -34,6 +34,14 @@ const impact = [
   { value: "5명", label: "2024년 기준 실무진" },
 ];
 
+const quickLinks = [
+  { label: "단체 소개", detail: "꿈에품에가 지향하는 변화", href: "#work" },
+  { label: "주요 사업", detail: "사람·시민·공익·세계", href: "#work" },
+  { label: "활동과 성과", detail: "숫자와 현장으로 보는 변화", href: "#impact" },
+  { label: "함께하기", detail: "후원·봉사·기업협력", href: "#join" },
+  { label: "투명경영", detail: "정관·공시·연차보고", href: "#transparency" },
+];
+
 export default function Home() {
   return (
     <div className="kumepume-home">
@@ -57,6 +65,24 @@ export default function Home() {
         </div>
       </section>
 
+      <nav className="border-y border-[#183b33]/10 bg-white" aria-label="메인페이지 바로가기">
+        <div className="container-page grid sm:grid-cols-2 lg:grid-cols-5">
+          {quickLinks.map((item, index) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className={`group flex min-h-[112px] items-center justify-between gap-4 py-6 transition hover:bg-[#f2f7ed] sm:px-6 ${index > 0 ? "border-t border-[#183b33]/10 sm:border-t-0 lg:border-l" : ""} ${index === 2 || index === 4 ? "sm:border-l lg:border-l" : ""}`}
+            >
+              <span>
+                <strong className="block text-base font-black text-[#183b33]">{item.label}</strong>
+                <small className="mt-1.5 block text-xs leading-5 text-charcoal/48">{item.detail}</small>
+              </span>
+              <ArrowRight className="shrink-0 text-[#e47716] transition group-hover:translate-x-1" size={18} />
+            </a>
+          ))}
+        </div>
+      </nav>
+
       <section id="work" className="scroll-mt-32 bg-white py-20 sm:py-24">
         <div className="container-page">
           <div className="flex flex-col justify-between gap-7 lg:flex-row lg:items-end"><div><p className="kumepume-eyebrow">WHAT WE DO</p><h2 className="kumepume-section-title">삶을 보듬고, 시민의 힘을 키웁니다</h2></div><p className="max-w-2xl text-base leading-8 text-charcoal/60">지원에 머물지 않고 자립으로, 정보에 머물지 않고 시민의 판단과 행동으로 이어지는 네 가지 사업을 펼칩니다.</p></div>
@@ -69,6 +95,18 @@ export default function Home() {
       <section id="impact" className="scroll-mt-32 bg-[#183b33] py-20 text-white sm:py-24">
         <div className="container-page">
           <div className="grid gap-12 lg:grid-cols-[.72fr_1.28fr] lg:items-end"><div><p className="text-xs font-black tracking-[.2em] text-[#ffc04c]">OUR IMPACT</p><h2 className="mt-5 text-4xl font-black leading-tight tracking-[-.045em] sm:text-5xl">좋은 뜻이<br />변화로 남도록</h2><p className="mt-5 max-w-lg text-base leading-8 text-white/65">우리는 얼마를 썼는지만이 아니라 누구의 삶이 어떻게 달라졌는지, 그 변화가 얼마나 지속되는지를 기록하겠습니다.</p></div><div className="grid gap-px overflow-hidden rounded-sm bg-white/15 sm:grid-cols-2">{impact.map((item) => <div key={item.label} className="bg-white/[.045] p-7 sm:p-9"><strong className="block text-3xl font-black tracking-[-.04em] text-[#ffc04c] sm:text-4xl">{item.value}</strong><span className="mt-3 block text-sm font-bold text-white/70">{item.label}</span></div>)}</div></div>
+          <div className="mt-10 grid gap-4 border-t border-white/15 pt-8 md:grid-cols-3">
+            {[
+              ["01", "목표를 먼저 공개합니다", "무엇을 바꾸려는 사업인지 시작부터 분명히 밝힙니다."],
+              ["02", "과정과 숫자를 기록합니다", "참여와 지출, 현장의 변화를 확인 가능한 자료로 남깁니다."],
+              ["03", "다음 행동으로 연결합니다", "성과와 한계를 함께 공개하고 더 나은 사업으로 개선합니다."],
+            ].map(([number, title, description]) => (
+              <div key={number} className="grid grid-cols-[auto_1fr] gap-4 py-2">
+                <span className="text-xs font-black tracking-[.15em] text-[#ffc04c]">{number}</span>
+                <div><strong className="block text-base font-black">{title}</strong><p className="mt-2 text-sm leading-6 text-white/55">{description}</p></div>
+              </div>
+            ))}
+          </div>
           <p className="mt-7 text-xs text-white/38">※ 공익법인 결산 공시 및 2024년 단체현황 자료 기준</p>
         </div>
       </section>
