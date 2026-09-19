@@ -1,4 +1,4 @@
-import { ClipboardList, LogIn, LogOut, Menu, PenLine, Search, UserRound, X } from "lucide-react";
+import { ClipboardList, HandHeart, LogIn, LogOut, Menu, PenLine, Search, UserRound, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth";
@@ -132,6 +132,9 @@ export default function Header() {
             <a href="#newsletter" className="inline-flex min-h-8 items-center rounded-sm bg-green-deep px-3.5 text-[11px] font-extrabold text-white transition hover:bg-green-mid">
               {ko ? "구독" : "Subscribe"}
             </a>
+            <Link to="/support" className="inline-flex min-h-8 items-center rounded-sm border border-gold/70 px-3.5 text-[11px] font-extrabold text-green-deep transition hover:bg-gold hover:text-navy">
+              {ko ? "후원" : "Support"}
+            </Link>
             {user ? (
               <>
                 {(user.app_metadata?.seed_role === "author" || user.app_metadata?.seed_role === "owner") && <Link to="/writer" className="inline-flex min-h-8 items-center gap-1.5 px-2 text-[11px] font-extrabold text-green-deep"><PenLine size={13}/>{ko ? "집필실" : "Write"}</Link>}
@@ -166,6 +169,7 @@ export default function Header() {
             <nav className="container-page grid sm:grid-cols-2 sm:gap-x-5">{nav.map((item) => renderNavItem(item, true))}</nav>
             <div className="container-page mt-4 flex flex-wrap gap-2">
               <a href="#newsletter" onClick={() => setOpen(false)} className="button-primary">{ko ? "구독" : "Subscribe"}</a>
+              <Link to="/support" onClick={() => setOpen(false)} className="button-secondary"><HandHeart size={15}/>{ko ? "후원하기" : "Support"}</Link>
               {user ? (
                 <>
                   {(user.app_metadata?.seed_role === "author" || user.app_metadata?.seed_role === "owner") && <Link to="/writer" onClick={() => setOpen(false)} className="button-primary"><PenLine size={15}/>{ko ? "필자 집필실" : "Writers' room"}</Link>}
