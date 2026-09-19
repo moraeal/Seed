@@ -2,7 +2,6 @@ import { ArrowRight, Clock } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NewsletterSignup from "../components/NewsletterSignup";
-import PopularLatest from "../components/PopularLatest";
 import SafeImage from "../components/SafeImage";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { getColumnsNewestFirst, hotIssueColumnTrackerSlugs } from "../data/columns";
@@ -51,11 +50,14 @@ type HomeCivicWatchItem = {
 
 type HomeWatchCommentary = {
   slug: string;
+  category: "legislation" | "tax";
   date: string;
   readMinutes: number;
   to: string;
   title: string;
   summary: string;
+  imageSrc: string;
+  imageAlt: string;
 };
 
 export default function Home() {
@@ -176,34 +178,38 @@ export default function Home() {
 
   // Commentary is deliberately separate from the factual monitoring records above.
   // New commentary added to either data source appears here without a homepage edit.
-  const legislativeCommentaryItems: HomeWatchCommentary[] = legislativeCommentaries
-    .map((article) => {
+  const commentaryItems: HomeWatchCommentary[] = [
+    ...legislativeCommentaries.map((article) => {
       const edition = getLegislativeCommentaryEdition(article, ko ? "ko" : "en");
       return {
         slug: article.slug,
+        category: "legislation" as const,
         date: article.date,
         readMinutes: article.readMinutes,
         to: `/monitoring/legislation/commentary/${article.slug}`,
         title: edition.title,
         summary: edition.summary,
+        imageSrc: article.heroSrc,
+        imageAlt: edition.heroAlt,
       };
-    })
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 2);
-  const taxCommentaryItems: HomeWatchCommentary[] = taxCommentaries
-    .map((article) => {
+    }),
+    ...taxCommentaries.map((article) => {
       const edition = getTaxCommentaryEdition(article, ko ? "ko" : "en");
       return {
         slug: article.slug,
+        category: "tax" as const,
         date: article.date,
         readMinutes: article.readMinutes,
         to: `/monitoring/tax/commentary/${article.slug}`,
         title: edition.title,
         summary: edition.summary,
+        imageSrc: article.heroSrc,
+        imageAlt: edition.heroAlt,
       };
-    })
+    }),
+  ]
     .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 2);
+    .slice(0, 3);
 
   useEffect(() => {
     let active = true;
@@ -351,44 +357,23 @@ export default function Home() {
                 </Link>
               ))}
             </div>
-            {(legislativeCommentaryItems.length > 0 || taxCommentaryItems.length > 0) && (
-              <div className="mt-7 grid gap-5 border-t border-green-deep/15 pt-6 lg:grid-cols-2">
-                <section aria-labelledby="home-legislative-commentary-title">
-                  <div className="flex items-center justify-between gap-3 border-b border-green-deep/20 pb-2.5">
-                    <div>
-                      <p className="text-[10px] font-black tracking-[.14em] text-green-deep">LEGISLATIVE COMMENTARY</p>
-                      <h3 id="home-legislative-commentary-title" className="editorial-title mt-1 text-lg font-bold text-navy sm:text-xl">{ko ? "입법감시 논평" : "Legislative Commentary"}</h3>
+            {commentaryItems.length > 0 && (
+              <div className="mt-5 grid gap-3 border-t border-green-deep/15 pt-5 sm:gap-5 md:grid-cols-3">
+                {commentaryItems.map((article) => (
+                  <Link key={`${article.category}-${article.slug}`} to={article.to} className="group grid grid-cols-[94px_minmax(0,1fr)] gap-3 py-1 sm:grid-cols-[108px_minmax(0,1fr)] md:grid-cols-[96px_minmax(0,1fr)] lg:grid-cols-[112px_minmax(0,1fr)]">
+                    <div className="overflow-hidden bg-green-deep">
+                      <SafeImage src={resolveImageSrc(article.imageSrc)} alt={article.imageAlt} referrerPolicy="no-referrer" className="aspect-[4/3] h-full max-h-[88px] w-full object-cover transition duration-500 group-hover:scale-[1.025]" />
                     </div>
-                    <Link to="/monitoring/legislation" className="text-link shrink-0 text-xs">{ko ? "전체보기" : "View all"}<ArrowRight size={13}/></Link>
-                  </div>
-                  <div className="divide-y divide-green-deep/12">
-                    {legislativeCommentaryItems.map((article) => (
-                      <Link key={article.slug} to={article.to} className="group block py-4 first:pt-3">
-                        <div className="flex items-center gap-3 text-[11px] text-charcoal/45"><span className="font-extrabold text-green-deep">{ko ? "입법 논평" : "COMMENTARY"}</span><time>{article.date.replace(/-/g, ".")}</time><span className="inline-flex items-center gap-1"><Clock size={11}/>{article.readMinutes}{ko ? "분" : " min"}</span></div>
-                        <h4 className="editorial-title mt-1.5 break-keep text-[1.05rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-lg">{article.title}</h4>
-                        <p className="mt-1 line-clamp-2 text-[13px] leading-5 text-charcoal/58 sm:text-sm sm:leading-6">{article.summary}</p>
-                      </Link>
-                    ))}
-                  </div>
-                </section>
-                <section aria-labelledby="home-tax-commentary-title">
-                  <div className="flex items-center justify-between gap-3 border-b border-green-deep/20 pb-2.5">
-                    <div>
-                      <p className="text-[10px] font-black tracking-[.14em] text-green-deep">TAX COMMENTARY</p>
-                      <h3 id="home-tax-commentary-title" className="editorial-title mt-1 text-lg font-bold text-navy sm:text-xl">{ko ? "세금감시 논평" : "Tax Commentary"}</h3>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2 text-[9px] font-black tracking-[.08em] text-green-deep sm:text-[10px]">
+                        <span>{article.category === "legislation" ? (ko ? "입법 논평" : "LEGISLATIVE") : (ko ? "세금 논평" : "TAX")}</span>
+                        <time className="font-medium tracking-normal text-charcoal/38">{article.date.replace(/-/g, ".")}</time>
+                      </div>
+                      <h3 className="editorial-title mt-1 line-clamp-2 break-keep text-[.94rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.02rem]">{article.title}</h3>
+                      <p className="mt-1 line-clamp-2 text-[11px] leading-[1.55] text-charcoal/55 sm:text-xs">{article.summary}</p>
                     </div>
-                    <Link to="/monitoring/tax" className="text-link shrink-0 text-xs">{ko ? "전체보기" : "View all"}<ArrowRight size={13}/></Link>
-                  </div>
-                  <div className="divide-y divide-green-deep/12">
-                    {taxCommentaryItems.map((article) => (
-                      <Link key={article.slug} to={article.to} className="group block py-4 first:pt-3">
-                        <div className="flex items-center gap-3 text-[11px] text-charcoal/45"><span className="font-extrabold text-green-deep">{ko ? "세금 논평" : "COMMENTARY"}</span><time>{article.date.replace(/-/g, ".")}</time><span className="inline-flex items-center gap-1"><Clock size={11}/>{article.readMinutes}{ko ? "분" : " min"}</span></div>
-                        <h4 className="editorial-title mt-1.5 break-keep text-[1.05rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-lg">{article.title}</h4>
-                        <p className="mt-1 line-clamp-2 text-[13px] leading-5 text-charcoal/58 sm:text-sm sm:leading-6">{article.summary}</p>
-                      </Link>
-                    ))}
-                  </div>
-                </section>
+                  </Link>
+                ))}
               </div>
             )}
           </div>
@@ -400,8 +385,6 @@ export default function Home() {
       <section className="border-t border-green-deep/12 pt-8 pb-4 sm:pt-12 sm:pb-5"><div className="container-page"><div className="flex items-end justify-between gap-3 border-b-[3px] border-navy pb-2.5 sm:gap-4 sm:pb-3"><div><p className="section-kicker">BRIEFINGS</p><h2 className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "브리핑" : "Briefings"}</h2><p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">{ko ? "시민에게는 때로 분노의 성명서보다 친절한 설명서가 필요합니다." : "Citizens sometimes need a clear explanation more than an angry statement."}</p></div><Link to="/briefings" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link></div><div className="grid gap-5 pt-4 sm:gap-6 sm:pt-4 lg:grid-cols-[.95fr_1.05fr]">{latestBriefing && <Link to={`/briefings/${latestBriefing.slug}`} className="group block">{latestBriefing.images?.[0] && <div className="overflow-hidden bg-green-deep"><SafeImage src={resolveImageSrc(latestBriefing.images[0].src)} alt={latestBriefing.images[0].alt} referrerPolicy="no-referrer" className="aspect-[16/7.1] w-full object-cover transition duration-500 group-hover:scale-[1.015] sm:aspect-[16/7.8]" /></div>}<h3 className="editorial-title mt-3 break-keep text-[1.3rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:mt-3 sm:text-2xl">{latestBriefing.title}</h3><p className="mt-1.5 line-clamp-3 text-[13px] leading-5.5 text-charcoal/60 sm:mt-1.5 sm:text-sm sm:leading-6">{latestBriefing.summary}</p></Link>}<div className="divide-y divide-green-deep/15 border-t border-green-deep/15 lg:border-t-0">{briefingList.map((briefing, index) => <Link key={briefing.slug} to={`/briefings/${briefing.slug}`} className="group grid grid-cols-[1.6rem_1fr] gap-2.5 py-3 sm:grid-cols-[2rem_1fr] sm:gap-3 sm:py-3"><span className="text-xs font-black text-green-deep/55 sm:text-sm">{String(index + 1).padStart(2, "0")}</span><div><h3 className="editorial-title break-keep text-[1rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-lg">{briefing.title}</h3><p className="mt-1 line-clamp-2 text-[12px] leading-5 text-charcoal/55 sm:line-clamp-2 sm:text-sm sm:leading-6">{briefing.summary}</p></div></Link>)}</div></div></div></section>
 
       <section className="border-t border-green-deep/12 py-8 sm:py-12"><div className="container-page"><div className="flex items-end justify-between gap-3 border-b-[3px] border-navy pb-2.5 sm:gap-4 sm:pb-3"><div><p className="section-kicker">COLUMNS</p><h2 className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "칼럼" : "Columns"}</h2><p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">{ko ? "정답을 말하기보다, 익숙한 생각에 질문을 던집니다." : "Rather than declare the answer, we question what has become familiar."}</p></div><Link to="/columns" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link></div><div className="grid gap-5 pt-4 sm:gap-6 sm:pt-4 lg:grid-cols-[1.05fr_.95fr]"><div className="divide-y divide-green-deep/15 border-y border-green-deep/15 lg:border-t-0">{voiceListColumns.map((column, index) => <Link key={column.slug} to={`/columns/${column.slug}`} className="group grid grid-cols-[1.6rem_1fr] gap-2.5 py-3 sm:grid-cols-[2rem_1fr] sm:gap-3 sm:py-3"><span className="text-xs font-black text-green-deep/55 sm:text-sm">{String(index + 1).padStart(2, "0")}</span><div><h3 className="editorial-title break-keep text-[1rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-lg">{column.title}</h3><p className="mt-1 line-clamp-2 text-[12px] leading-5 text-charcoal/55 sm:line-clamp-2 sm:text-sm sm:leading-6">{column.summary}</p></div></Link>)}</div>{voiceLeadColumn && <Link to={`/columns/${voiceLeadColumn.slug}`} className="group block border-y border-green-deep/15 pt-4 pb-3 lg:border-t-0 lg:pt-0"><div className="hidden overflow-hidden bg-ivory sm:block"><SafeImage src={resolveImageSrc(voiceLeadColumn.heroImage.src)} alt={voiceLeadColumn.heroImage.alt} referrerPolicy="no-referrer" className="aspect-[16/7.1] w-full object-cover transition duration-500 group-hover:scale-[1.015] sm:aspect-[16/7.8]" /></div><h3 className="editorial-title break-keep text-[1.2rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:mt-3 sm:text-2xl">{voiceLeadColumn.title}</h3><p className="mt-1.5 line-clamp-2 text-[13px] leading-5.5 text-charcoal/60 sm:mt-1.5 sm:text-sm sm:leading-6">{voiceLeadColumn.summary}</p></Link>}</div></div></section>
-
-      <PopularLatest featuredPath={activeFeaturedPath} />
 
       <section className="border-t border-green-deep/12 py-7 sm:py-12" aria-labelledby="newcomer-title"><div className="container-page"><div><p className="section-kicker">START HERE</p><h2 id="newcomer-title" className="editorial-title mt-1.5 text-[1.55rem] font-bold text-navy sm:mt-2 sm:text-4xl">{ko ? "처음 오셨다면" : "New to SEED VOICE?"}</h2><p className="mt-2 whitespace-nowrap text-[13px] leading-6 text-charcoal/60 sm:mt-2.5 sm:text-base sm:leading-7">{ko ? "씨앗의 소리가 무엇을 보고 어떤 기준으로 판단하는지, 아래 세 글에서 가장 빠르게 확인할 수 있습니다." : "These three pages are the fastest way to understand what SEED VOICE watches and the standards it uses."}</p></div><div className="mt-4 grid gap-3 sm:mt-5 sm:gap-5 md:grid-cols-3">{newcomerLinks.map((item, index) => <Link key={item.to} to={item.to} className="group grid grid-cols-[1.8rem_1fr_auto] items-start gap-2.5 border border-solid border-green-deep/15 bg-white p-4 transition hover:border-green-deep/30 sm:flex sm:min-h-[160px] sm:flex-col sm:p-5 sm:hover:-translate-y-0.5"><span className="pt-0.5 text-[11px] font-black text-charcoal/25 sm:hidden">0{index + 1}</span><div><div className="flex items-center justify-between gap-3"><p className="text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">{item.kicker}</p><span className="hidden text-[11px] font-black text-charcoal/25 sm:inline sm:text-xs">0{index + 1}</span></div><h3 className="editorial-title mt-1.5 break-keep text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:mt-4 sm:text-2xl">{item.title}</h3><p className="hidden sm:mt-2.5 sm:line-clamp-2 sm:block sm:text-sm sm:leading-6 sm:text-charcoal/58">{item.summary}</p></div><ArrowRight size={15} className="mt-1 text-green-deep sm:hidden"/></Link>)}</div></div></section>
 
