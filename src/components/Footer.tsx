@@ -7,7 +7,7 @@ import BrandLockup from "./BrandLockup";
 export default function Footer() {
   const { language } = useLanguage();
   const ko = language === "ko";
-  const email = "seedcivicpartners@gmail.com";
+  const email = "seedvoicekr@gmail.com";
 
   return <footer className="border-t border-white/10 bg-[#112B25] py-8 text-white">
     <div className="container-page">

@@ -114,7 +114,7 @@ export default function PublicInterestWatchDetail() {
         <aside className="mt-9 rounded-xl bg-green-deep p-6 text-white sm:p-7">
           <h2 className="text-xl font-extrabold">{ko ? "반론권과 정정 원칙" : "Right of reply and correction"}</h2>
           <p className="mt-4 text-sm leading-7 text-white/75">{ko ? "기관의 설명과 반론을 환영합니다. 확인 가능한 근거가 도착하면 답변 전문 또는 요지를 이 기록에 연결하고, 사실 오류는 수정 이력과 함께 바로잡겠습니다." : "We welcome explanations and replies. Verifiable responses will be linked in full or summarized here, and factual errors will be corrected with a visible revision record."}</p>
-          <a href="mailto:seedcivicpartners@gmail.com" className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-white underline decoration-white/35 underline-offset-4">seedcivicpartners@gmail.com</a>
+          <a href="mailto:seedvoicekr@gmail.com" className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-white underline decoration-white/35 underline-offset-4">seedvoicekr@gmail.com</a>
         </aside>
 
         <ContentAccountability postSlug={`monitoring-${item.slug}`} publishedDate={item.updatedAt} />

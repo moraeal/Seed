@@ -71,7 +71,7 @@ export default function FoundingPartnerForm({ ko }: { ko: boolean }) {
     draft.contribution,
   ].join("\n"), [draft, ko]);
 
-  const mailto = `mailto:seedcivicpartners@gmail.com?subject=${encodeURIComponent(ko ? `[창립파트너 신청] ${draft.name}` : `[Founding Partner Application] ${draft.name}`)}&body=${encodeURIComponent(emailBody)}`;
+  const mailto = `mailto:seedvoicekr@gmail.com?subject=${encodeURIComponent(ko ? `[창립파트너 신청] ${draft.name}` : `[Founding Partner Application] ${draft.name}`)}&body=${encodeURIComponent(emailBody)}`;
 
   const submit = (event: FormEvent) => {
     event.preventDefault();

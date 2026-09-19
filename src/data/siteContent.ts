@@ -18,7 +18,7 @@ export const content = {
       title: "SEED VOICE | 씨앗의 소리",
       description:
         "씨앗의 소리는 자유의 영역을 넓히고, 기업의 도전과 혁신을 보호하며, 국가와 시민사회의 권력을 감시하는 독립 시민저널입니다.",
-      contact: "Contact: seedcivicpartners@gmail.com",
+      contact: "Contact: seedvoicekr@gmail.com",
       location: "Seoul, South Korea",
     },
     home: {
@@ -88,7 +88,7 @@ export const content = {
       founderBio: "",
       contactTitle: "Contact",
       contact:
-        "파트너십, 멘토십, 교육, 후원, 공동 프로젝트 제안은 seedcivicpartners@gmail.com으로 연락해 주세요.",
+        "파트너십, 멘토십, 교육, 후원, 공동 프로젝트 제안은 seedvoicekr@gmail.com으로 연락해 주세요.",
       principles: [
         ["Subject", "시민은 정책의 객체가 아니라 공적 문제를 발견하고 말할 수 있는 주체입니다."],
         ["Ethics", "자유는 타인의 자유와 공동체 질서를 존중하는 시민 윤리를 필요로 합니다."],
@@ -141,7 +141,7 @@ export const content = {
       title: "SEED VOICE",
       description:
         "An independent, nonpartisan civic platform advancing citizen agency, civic responsibility, and an open civil society in South Korea.",
-      contact: "Contact: seedcivicpartners@gmail.com",
+      contact: "Contact: seedvoicekr@gmail.com",
       location: "Seoul, South Korea",
     },
     home: {
@@ -212,7 +212,7 @@ export const content = {
         "SEED VOICE is published under a pen name to keep attention on its reporting, arguments, and public record rather than the publisher's personal identity.",
       contactTitle: "Contact",
       contact:
-        "SEED is based in Seoul, South Korea. We welcome inquiries from civic organizations, think tanks, foundations, educators, researchers, and responsible businesses interested in international exchange or joint projects. Contact seedcivicpartners@gmail.com.",
+        "SEED is based in Seoul, South Korea. We welcome inquiries from civic organizations, think tanks, foundations, educators, researchers, and responsible businesses interested in international exchange or joint projects. Contact seedvoicekr@gmail.com.",
       principles: [
         ["Subject", "Citizens are not objects of state policy. They are subjects who discover and articulate public problems."],
         ["Ethics", "Liberty requires civic ethics that respect the freedom of others and the order of the community."],
