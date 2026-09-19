@@ -1,5 +1,5 @@
 import { ArrowRight, Clock } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import NewsletterSignup from "../components/NewsletterSignup";
 import SafeImage from "../components/SafeImage";
@@ -60,26 +60,56 @@ type HomeWatchCommentary = {
   imageAlt: string;
 };
 
-const recommendedSeries = [
+const recommendedTopics = [
   {
-    to: "/columns/prosecution-reform-power-transfer-2026",
-    title: { ko: "검찰개혁 논리 해부", en: "Inside Prosecution Reform" },
-    summary: { ko: "조직이 아니라 이동하는 수사권력을 봅니다", en: "Following investigative power, not institutional labels" },
+    to: { ko: "/search?q=검찰", en: "/search?q=prosecution" },
+    title: { ko: "검찰개혁과 사법", en: "Justice and Prosecution Reform" },
+    summary: { ko: "수사권·기소권과 사법독립을 함께 봅니다", en: "Investigative power, prosecution and judicial independence" },
   },
   {
-    to: "/monitoring/public-interest",
-    title: { ko: "공익기관 감시", en: "Public-interest Watch" },
-    summary: { ko: "공익의 이름으로 행사되는 권한과 자금을 추적합니다", en: "Tracking power and money exercised in the public interest" },
+    to: { ko: "/search?q=시민사회", en: "/search?q=civil%20society" },
+    title: { ko: "시민사회와 공익", en: "Civil Society and Public Interest" },
+    summary: { ko: "시민사회의 자율성과 공익의 기준을 묻습니다", en: "Autonomy in civil society and the meaning of public interest" },
   },
   {
-    to: "/columns/wealth-crosses-borders-inheritance-tax",
-    title: { ko: "기업승계와 상속세", en: "Succession and Inheritance Tax" },
-    summary: { ko: "기업과 인재가 한국에 남을 조건을 묻습니다", en: "What would keep enterprise and talent in Korea?" },
+    to: { ko: "/search?q=기업", en: "/search?q=business" },
+    title: { ko: "기업과 시장", en: "Enterprise and Markets" },
+    summary: { ko: "도전과 혁신을 막는 제도와 규제를 살핍니다", en: "Institutions and rules shaping enterprise and innovation" },
   },
   {
-    to: "/columns/citizenization-before-advancement-2026",
-    title: { ko: "시민화론", en: "The Citizenization Thesis" },
-    summary: { ko: "선진화에 앞서 스스로 서는 시민을 생각합니다", en: "Citizens who can stand on their own before advancement" },
+    to: { ko: "/monitoring/tax", en: "/monitoring/tax" },
+    title: { ko: "세금과 재정", en: "Tax and Public Finance" },
+    summary: { ko: "누가 부담하고 어디에 쓰이는지 추적합니다", en: "Who pays, who benefits and where public money goes" },
+  },
+  {
+    to: { ko: "/monitoring/legislation", en: "/monitoring/legislation" },
+    title: { ko: "입법과 시민 권리", en: "Legislation and Civic Rights" },
+    summary: { ko: "법안이 자유와 선택에 미칠 영향을 따집니다", en: "How proposed laws affect freedom and civic choice" },
+  },
+  {
+    to: { ko: "/search?q=환경", en: "/search?q=environment" },
+    title: { ko: "환경과 에너지", en: "Environment and Energy" },
+    summary: { ko: "과학·비용·책임의 관점에서 정책을 읽습니다", en: "Policy through evidence, cost and responsibility" },
+  },
+  {
+    to: { ko: "/search?q=사관학교", en: "/search?q=military%20academy" },
+    title: { ko: "국방과 안보", en: "Defense and Security" },
+    summary: { ko: "정치적 명분보다 국가 역량을 먼저 봅니다", en: "National capability before political symbolism" },
+  },
+  {
+    to: { ko: "/search?q=시민화", en: "/search?q=citizenization" },
+    title: { ko: "시민화와 민주주의", en: "Citizenization and Democracy" },
+    summary: { ko: "큰 국가가 아니라 스스로 서는 시민을 생각합니다", en: "Citizens who can stand on their own before a larger state" },
+  },
+  {
+    to: { ko: "/seed-language", en: "/seed-language" },
+    title: { ko: "정치와 시민언어", en: "Politics and Civic Language" },
+    summary: { ko: "익숙한 정치 언어의 뜻과 쓰임을 다시 묻습니다", en: "Reconsidering the language that shapes public life" },
+  },
+  {
+    to: { ko: "/monitoring/public-interest", en: "/monitoring/public-interest" },
+    title: { ko: "공익기관 감시", en: "Public-interest Institutions" },
+    summary: { ko: "권한·예산·성과를 공개자료로 확인합니다", en: "Reviewing authority, budgets and outcomes through public records" },
   },
 ] as const;
 
@@ -89,6 +119,10 @@ export default function Home() {
   const [featuredPath, setFeaturedPath] = useState<string | null>(null);
   const [featuredReady, setFeaturedReady] = useState(false);
   const [legislativeBills, setLegislativeBills] = useState<LegislativeBill[]>([]);
+  const recommendedTopicsRef = useRef<HTMLDivElement>(null);
+  const recommendedTopicIndexRef = useRef(0);
+  const recommendedTopicResetRef = useRef<number | null>(null);
+  const [recommendedTopicsPaused, setRecommendedTopicsPaused] = useState(false);
   const allBriefings = getAllBriefingsNewestFirst();
   const localizedBriefings = allBriefings.map((item) => localizeBriefing(item, language));
   const allJournalColumns = getColumnsNewestFirst().map((item) => localizeColumn(item, language));
@@ -251,6 +285,35 @@ export default function Home() {
     return () => { active = false; };
   }, []);
 
+  useEffect(() => {
+    if (recommendedTopicsPaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const interval = window.setInterval(() => {
+      const track = recommendedTopicsRef.current;
+      const firstTopic = track?.querySelector<HTMLElement>("[data-recommended-topic]");
+      if (!track || !firstTopic) return;
+
+      const nextIndex = recommendedTopicIndexRef.current + 1;
+      track.scrollTo({ left: firstTopic.offsetWidth * nextIndex, behavior: "smooth" });
+      recommendedTopicIndexRef.current = nextIndex;
+
+      if (nextIndex >= recommendedTopics.length) {
+        recommendedTopicResetRef.current = window.setTimeout(() => {
+          track.scrollTo({ left: 0, behavior: "auto" });
+          recommendedTopicIndexRef.current = 0;
+          recommendedTopicResetRef.current = null;
+        }, 750);
+      }
+    }, 6000);
+
+    return () => {
+      window.clearInterval(interval);
+      if (recommendedTopicResetRef.current !== null) {
+        window.clearTimeout(recommendedTopicResetRef.current);
+        recommendedTopicResetRef.current = null;
+      }
+    };
+  }, [recommendedTopicsPaused]);
+
   const newcomerLinks = [
     {
       to: "/about",
@@ -272,6 +335,22 @@ export default function Home() {
     },
   ];
 
+  const showMoreTopics = () => {
+    const track = recommendedTopicsRef.current;
+    const firstTopic = track?.querySelector<HTMLElement>("[data-recommended-topic]");
+    if (!track || !firstTopic) return;
+    const nextIndex = recommendedTopicIndexRef.current + 1;
+    track.scrollTo({ left: firstTopic.offsetWidth * nextIndex, behavior: "smooth" });
+    recommendedTopicIndexRef.current = nextIndex;
+    if (nextIndex >= recommendedTopics.length) {
+      recommendedTopicResetRef.current = window.setTimeout(() => {
+        track.scrollTo({ left: 0, behavior: "auto" });
+        recommendedTopicIndexRef.current = 0;
+        recommendedTopicResetRef.current = null;
+      }, 750);
+    }
+  };
+
   return (
     <div className="home-page bg-paper">
       <section className="border-b border-green-deep/15 bg-paper" aria-labelledby="recommended-series-title">
@@ -280,21 +359,47 @@ export default function Home() {
             <p id="recommended-series-title" className="text-[11px] font-black tracking-[-.01em] text-green-mid sm:text-xs">{ko ? "추천 기획" : "FEATURED"}</p>
             <p className="mt-0.5 hidden text-[9px] font-bold tracking-[.13em] text-charcoal/35 sm:block">SEED SERIES</p>
           </div>
-          <div className="flex min-w-0 flex-1 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {recommendedSeries.map((series) => (
+          <div
+            ref={recommendedTopicsRef}
+            className="flex min-w-0 flex-1 snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            onMouseEnter={() => setRecommendedTopicsPaused(true)}
+            onMouseLeave={() => setRecommendedTopicsPaused(false)}
+            onFocusCapture={() => setRecommendedTopicsPaused(true)}
+            onBlurCapture={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setRecommendedTopicsPaused(false);
+            }}
+            onScroll={(event) => {
+              const firstTopic = event.currentTarget.querySelector<HTMLElement>("[data-recommended-topic]");
+              if (firstTopic && recommendedTopicResetRef.current === null) {
+                recommendedTopicIndexRef.current = Math.round(event.currentTarget.scrollLeft / firstTopic.offsetWidth);
+              }
+            }}
+          >
+            {[...recommendedTopics, ...recommendedTopics].map((topic, index) => {
+              const duplicate = index >= recommendedTopics.length;
+              return (
               <Link
-                key={series.to}
-                to={series.to}
-                className="group flex min-w-[220px] flex-1 flex-col justify-center border-r border-green-deep/10 px-4 py-2.5 transition-colors last:border-r-0 hover:bg-green-pale/55 focus-visible:bg-green-pale/55 focus-visible:outline-none sm:min-w-[245px] sm:px-5"
+                key={`${topic.title.ko}-${index}`}
+                to={topic.to[language]}
+                className="group flex min-w-[220px] flex-1 snap-start flex-col justify-center border-r border-green-deep/10 px-4 py-2.5 transition-colors hover:bg-green-pale/55 focus-visible:bg-green-pale/55 focus-visible:outline-none sm:min-w-[245px] sm:px-5"
+                data-recommended-topic
+                aria-hidden={duplicate || undefined}
+                tabIndex={duplicate ? -1 : undefined}
               >
-                <span className="flex items-center gap-1.5 text-[12px] font-extrabold text-navy transition-colors group-hover:text-green-mid sm:text-[13px]">
-                  {series.title[language]}
-                  <ArrowRight size={12} aria-hidden="true" className="shrink-0 transition-transform group-hover:translate-x-0.5" />
-                </span>
-                <span className="mt-1 line-clamp-1 text-[10px] leading-4 text-charcoal/48 sm:text-[11px]">{series.summary[language]}</span>
+                <span className="text-[12px] font-extrabold text-navy transition-colors group-hover:text-green-mid sm:text-[13px]">{topic.title[language]}</span>
+                <span className="mt-1 line-clamp-1 text-[10px] leading-4 text-charcoal/48 sm:text-[11px]">{topic.summary[language]}</span>
               </Link>
-            ))}
+              );
+            })}
           </div>
+          <button
+            type="button"
+            onClick={showMoreTopics}
+            className="w-[94px] shrink-0 border-l border-green-deep/15 px-3 text-[10px] font-extrabold leading-4 text-green-deep transition-colors hover:bg-green-pale/55 hover:text-green-mid focus-visible:bg-green-pale/55 focus-visible:outline-none sm:w-[112px] sm:text-[11px]"
+            aria-label={ko ? "오른쪽의 추천 주제 더보기" : "Show more featured topics to the right"}
+          >
+            {ko ? "주제 더보기" : "More topics"}
+          </button>
         </div>
       </section>
 
