@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">2025 private wealth migration forecast</title>
+  <desc id="desc">Projected millionaire net outflows from the United Kingdom, China, India, and South Korea, and projected net inflows to the United Arab Emirates, United States, and Italy.</desc>
+  <rect width="1200" height="760" fill="#f7f4ea"/>
+  <text x="70" y="72" fill="#102d46" font-family="Arial, sans-serif" font-size="34" font-weight="700">2025 PRIVATE WEALTH MIGRATION FORECAST</text>
+  <text x="70" y="108" fill="#52616d" font-family="Arial, sans-serif" font-size="19">PROJECTED NET MOVEMENT · NOT CONFIRMED IMMIGRATION COUNTS</text>
+  <line x1="70" y1="140" x2="1130" y2="140" stroke="#c4b06a" stroke-width="4"/>
+
+  <rect x="70" y="180" width="510" height="500" rx="10" fill="#102d46"/>
+  <text x="110" y="232" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="700">NET OUTFLOW</text>
+  <text x="110" y="270" fill="#dce5e2" font-family="Arial, sans-serif" font-size="17">people</text>
+  <g font-family="Arial, sans-serif">
+    <text x="110" y="338" fill="#ffffff" font-size="24" font-weight="700">UK</text>
+    <rect x="180" y="310" width="330" height="38" rx="4" fill="#b86d60"/>
+    <text x="525" y="338" text-anchor="end" fill="#ffffff" font-size="23" font-weight="700">−16,500</text>
+
+    <text x="110" y="423" fill="#ffffff" font-size="24" font-weight="700">CN</text>
+    <rect x="180" y="395" width="156" height="38" rx="4" fill="#c98678"/>
+    <text x="525" y="423" text-anchor="end" fill="#ffffff" font-size="23" font-weight="700">−7,800</text>
+
+    <text x="110" y="508" fill="#ffffff" font-size="24" font-weight="700">IN</text>
+    <rect x="180" y="480" width="70" height="38" rx="4" fill="#d69d91"/>
+    <text x="525" y="508" text-anchor="end" fill="#ffffff" font-size="23" font-weight="700">−3,500</text>
+
+    <text x="110" y="593" fill="#ffffff" font-size="24" font-weight="700">KR</text>
+    <rect x="180" y="565" width="48" height="38" rx="4" fill="#e0b2a8"/>
+    <text x="525" y="593" text-anchor="end" fill="#ffffff" font-size="23" font-weight="700">−2,400</text>
+  </g>
+
+  <rect x="620" y="180" width="510" height="500" rx="10" fill="#e4ece7"/>
+  <text x="660" y="232" fill="#174c3a" font-family="Arial, sans-serif" font-size="25" font-weight="700">NET INFLOW</text>
+  <text x="660" y="270" fill="#52616d" font-family="Arial, sans-serif" font-size="17">people</text>
+  <g font-family="Arial, sans-serif">
+    <text x="660" y="370" fill="#102d46" font-size="24" font-weight="700">AE</text>
+    <rect x="730" y="342" width="294" height="38" rx="4" fill="#1f7255"/>
+    <text x="1075" y="370" text-anchor="end" fill="#102d46" font-size="23" font-weight="700">+9,800</text>
+
+    <text x="660" y="475" fill="#102d46" font-size="24" font-weight="700">US</text>
+    <rect x="730" y="447" width="225" height="38" rx="4" fill="#398569"/>
+    <text x="1075" y="475" text-anchor="end" fill="#102d46" font-size="23" font-weight="700">+7,500</text>
+
+    <text x="660" y="580" fill="#102d46" font-size="24" font-weight="700">IT</text>
+    <rect x="730" y="552" width="108" height="38" rx="4" fill="#66a18a"/>
+    <text x="1075" y="580" text-anchor="end" fill="#102d46" font-size="23" font-weight="700">+3,600</text>
+  </g>
+  <text x="70" y="726" fill="#52616d" font-family="Arial, sans-serif" font-size="17">Source: Henley Private Wealth Migration Report 2025 · Graphic: SEED VOICE</text>
+</svg>
