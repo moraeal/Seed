@@ -75,7 +75,7 @@ export const issue24: ColumnTranslation = {
       ],
     },
   ],
-  sourceNote: "This article updates an argument the author first published through the Center for Free Enterprise in 2025 with the Samsung family’s final tax payment, the UK non-dom reform and Korea’s 2026 debate over listed-share valuation. The millionaire-migration figures come from the 2025 forecast by Henley & Partners and New World Wealth; they are not confirmed immigration statistics from national authorities.",
+  sourceNote: "",
   sourceLabels: [
     "Yonhap News TV — Samsung family completes KRW 12 trillion inheritance-tax payment",
     "Henley & Partners — Private Wealth Migration Report 2025",
