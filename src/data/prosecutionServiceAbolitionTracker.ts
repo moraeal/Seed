@@ -19,15 +19,15 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     en: "On October 2, 2026, South Korea's Prosecution Service will be abolished and replaced by a Prosecution Agency and a Serious Crimes Investigation Agency. This record follows where the powers to investigate, indict, seek warrants and review non-referral decisions actually move—and whether staffing, budgets and case transfers are ready.",
   },
   status: {
-    ko: "출범 14일 전·중수청법 개정안 본회의 통과",
-    en: "14 days to launch · Investigation-agency amendment passes Parliament",
+    ko: "출범 13일 전·경찰 현장교육 시작·초대 청장 청문 절차 대기",
+    en: "13 days to launch · Police training begins · First-director hearing still pending",
   },
   openedAt: "2025-09-05",
-  updatedAt: "2026-09-18",
+  updatedAt: "2026-09-19",
   continuationEligible: true,
   nextCheck: {
-    ko: "사회적 약자 대상 7대 범죄의 보완·재수사 근거를 담은 중수청법 개정안의 정부 이송·공포와 최종 조문, 9월 20일 마감되는 2차 특례임용의 지원·선정 인원, 공소청 최종 직제와 검사 정원, 김지용 중수청장 후보자의 인사청문 절차, 10월 2일 실제 출범 인원·사건 이관·KICS 필수 기능 가동 여부",
-    en: "Transmission, promulgation and final text of the amendment covering supplementary and renewed investigations in seven vulnerable-victim crime categories; application and selection figures from the second special-transfer round closing September 20; the final Prosecution Agency structure and prosecutor headcount; the confirmation process for nominee Kim Ji-yong; and actual staffing, case transfers and essential KICS functions on October 2",
+    ko: "사회적 약자 대상 7대 범죄의 보완·재수사 근거를 담은 중수청법 개정안의 정부 이송·공포와 최종 조문, 9월 20일 마감되는 2차 특례임용의 지원·선정 인원, 공소청 최종 직제와 검사 정원, 김지용 중수청장 후보자의 인사청문요청서 제출·청문 일정, 경찰 현장지원 체계와 10월 2일 실제 출범 인원·사건 이관·KICS 필수 기능 가동 여부",
+    en: "Transmission, promulgation and final text of the amendment covering supplementary and renewed investigations in seven vulnerable-victim crime categories; application and selection figures from the second special-transfer round closing September 20; the final Prosecution Agency structure and prosecutor headcount; submission of the confirmation request and a hearing date for nominee Kim Ji-yong; police field-support arrangements; and actual staffing, case transfers and essential KICS functions on October 2",
   },
   heroImage: {
     src: "images/monitoring/prosecution-service-abolition-tracker-hero.webp",
@@ -96,6 +96,20 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       text: {
         ko: "중수청이 사회적 약자 대상 7대 범죄의 보완·재수사를 맡을 수 있도록 한 개정안이 법사위를 거쳐 국회 본회의에서 수정 가결됐습니다. 국회 심사는 끝났지만 정부 이송과 공포가 남았습니다.",
         en: "An amendment authorizing the new agency to conduct supplementary or renewed investigations in seven vulnerable-victim crime categories passed the Legislation Committee and the National Assembly plenary session. Parliamentary review is complete, but transmission to the government and promulgation remain.",
+      },
+    },
+    {
+      date: "2026-09-17",
+      text: {
+        ko: "행정안전부는 추가 검증 결과 김지용 중수청장 후보자를 둘러싼 주요 의혹이 사실이 아니라고 발표했습니다. 다만 후보자 본인 확인에 의존했다는 반박이 나왔고 인사청문요청서 제출과 청문 일정은 아직 확인되지 않았습니다.",
+        en: "The Interior Ministry said additional vetting found the main allegations against nominee Kim Ji-yong unsubstantiated. Critics challenged the ministry's reliance on Kim's own account, while submission of the confirmation request and a hearing date remain unconfirmed.",
+      },
+    },
+    {
+      date: "2026-09-18",
+      text: {
+        ko: "경찰청은 개정 형사소송법의 전국 의무교육을 시작하고 이달 말부터 경찰서·시도경찰청·국가수사본부에 단계별 현장 상담·지원 조직을 가동하기로 했습니다.",
+        en: "The National Police Agency began mandatory nationwide training on the revised Criminal Procedure Act and said tiered consultation and support teams would begin operating at police stations, provincial agencies and the National Office of Investigation by month-end.",
       },
     },
   ],
@@ -477,6 +491,44 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-17",
+      title: {
+        ko: "행안부, 김지용 후보자 의혹에 추가 검증 결과 공개",
+        en: "Interior Ministry publishes additional vetting response on nominee Kim Ji-yong",
+      },
+      description: {
+        ko: "행정안전부는 김지용 후보자가 수사·기소 분리에 반대한 적이 없고, 대검 형사부장 시절 김학의 전 차관 불법 출국금지 사건과 정진웅 검사 사건의 기소에도 반대했다고 발표했습니다. 이른바 친윤 검사·검찰주의자라는 주장도 추가 검증에서 사실이 아닌 것으로 확인했다고 밝혔습니다. 이는 정부가 공개한 검증 결과이자 후보자 측 해명입니다. 임은정 서울동부지검장은 반대 의견이 있었다면 이의제기서 등 기록이 남아야 한다며 후보자 본인 확인을 재검증으로 볼 수 없다고 반박했습니다. 공식 브리핑은 후보 지명이 유지되고 있음을 보여주지만, 인사청문요청서 제출과 청문 일정은 아직 확인되지 않았습니다. 브리핑은 9월 17일 열렸고 행안부 동영상 자료는 18일 공개됐습니다.",
+        en: "The Interior Ministry said Kim Ji-yong had not opposed separation of investigation and prosecution and had argued against indictments in both the Kim Hak-ui travel-ban case and the case involving prosecutor Jeong Jin-ung while serving as a senior prosecution official. It also said further vetting did not substantiate claims that Kim was aligned with former president Yoon or committed to preserving prosecutorial power. These are the government's vetting conclusions and the nominee's account, not independently established findings. Seoul Eastern District Prosecutor Lim Eun-jung countered that any objection should have left a written or electronic record and said asking the nominee again did not amount to fresh verification. The briefing indicates that the nomination remains in place, but submission of a confirmation request and a hearing date have not been confirmed. The briefing took place September 17; the ministry posted the video on September 18.",
+      },
+      change: {
+        ko: "정부가 추가 검증 결론을 공개했지만 검증 자료와 국회 청문 절차는 아직 열리지 않음",
+        en: "The government discloses its conclusion, but the underlying record and parliamentary hearing remain pending",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "행정안전부·KTV 국민방송", en: "Interior Ministry and KTV" },
+          title: {
+            ko: "초대 중수청장 후보자 관련 행정안전부 브리핑",
+            en: "Interior Ministry briefing on the nominee for first director of the Serious Crimes Investigation Agency",
+          },
+          url: "https://www.mois.go.kr/video/bbs/type019/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000255&nttId=129581&searchCode1=",
+          publishedAt: "2026-09-18",
+          kind: "document",
+        },
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: {
+            ko: "임은정, 김지용 중수청장 후보자 또 저격…‘사실과 다른 발표’",
+            en: "Prosecutor Lim Eun-jung challenges the government's account of nominee Kim Ji-yong",
+          },
+          url: "https://www.yna.co.kr/view/AKR20260918027400004",
+          publishedAt: "2026-09-18",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "2026-09-15",
       title: {
         ko: "중수청, 출범 직전 2차 특례임용 시작",
@@ -501,6 +553,35 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
           url: "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129475",
           publishedAt: "2026-09-15",
           kind: "document",
+        },
+      ],
+    },
+    {
+      date: "2026-09-18",
+      title: {
+        ko: "경찰, 개정 형소법 전국 의무교육과 현장지원 체계 가동",
+        en: "Police begin mandatory nationwide training and field support for new procedure",
+      },
+      description: {
+        ko: "경찰청은 10월 2일 개정 형사소송법 시행을 앞두고 시도경찰청 동료강사와 현장 상담·지원 태스크포스 구성원, 직접수사부서 수사관을 대상으로 첫 소집교육을 실시했습니다. 개정 수사실무지침을 교재로 18개 시도경찰청 순회교육, 수사팀장 화상교육, 모든 경찰관의 사이버교육을 이어갑니다. 이달 말부터는 경찰서·시도경찰청·국가수사본부에 단계별 상담·지원 조직을 두고 법령과 지침 해석을 통일할 계획입니다. 준비가 시작됐다는 사실과 현장에서 혼선이 없다는 결과는 다릅니다. 출범 뒤 사건 처리기간과 불송치 이의신청, 보완·재수사 요구의 이행 결과를 확인해야 합니다.",
+        en: "Ahead of the revised Criminal Procedure Act taking effect on October 2, the National Police Agency held its first session for provincial trainers, field consultation and support-team members, and direct-investigation officers. Using a revised investigation manual, it plans visits to all 18 provincial agencies, video training for investigation-team leaders and mandatory online courses for every police officer. Tiered support teams at police stations, provincial agencies and the National Office of Investigation are due to begin by month-end to provide consistent interpretations of statutes and guidance. Training has begun; that does not yet establish that the transition will be free of disruption. Case duration, challenges to non-referral decisions and compliance with requests for further investigation must be measured after launch.",
+      },
+      change: {
+        ko: "법 시행 준비가 계획에서 전국 교육과 현장 상담 체계의 실제 가동으로 넘어감",
+        en: "Implementation moves from planning to nationwide training and an operating support structure",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "서울신문", en: "Seoul Shinmun" },
+          title: {
+            ko: "‘현장 혼선 없도록’…경찰, 개정 형소법 시행 앞두고 전국 수사관 교육",
+            en: "Police train investigators nationwide ahead of revised criminal procedure",
+          },
+          url: "https://www.seoul.co.kr/news/society/2026/09/18/20260918500207",
+          publishedAt: "2026-09-18",
+          kind: "article",
+          thumbnailSrc: "https://img.seoul.co.kr/img/upload/2026/09/18/SSC_20260918144532_O2.jpg",
         },
       ],
     },
@@ -604,6 +685,10 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       ko: "사회적 약자 대상 7대 범죄의 보완·재수사를 중수청이 맡을 수 있도록 하는 개정안은 9월 17일 국회 본회의를 통과했습니다. 아직 정부 이송과 공포를 거친 법률은 아닙니다.",
       en: "An amendment allowing the new agency to conduct supplementary or renewed investigations in seven vulnerable-victim crime categories passed the National Assembly plenary session on September 17. It has not yet been transmitted to the government and promulgated as law.",
     },
+    {
+      ko: "경찰청은 9월 18일 개정 형사소송법 전국 의무교육을 시작했고, 이달 말부터 경찰서·시도경찰청·국가수사본부에 단계별 현장 상담·지원 조직을 운영할 계획입니다.",
+      en: "The National Police Agency began mandatory nationwide training on the revised Criminal Procedure Act on September 18 and plans tiered consultation and support teams at police stations, provincial agencies and the National Office of Investigation by month-end.",
+    },
   ],
   currentControversies: [
     {
@@ -625,6 +710,13 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       description: {
         ko: "중대범죄 수사는 경험과 전문성이 필요하므로 검찰 인력을 활용해야 한다는 설명이 타당합니다. 동시에 초대 청장과 핵심 인력이 검찰 출신으로 채워질 경우 새 기관이 ‘이름만 바꾼 검찰’이 될 수 있다는 우려도 남습니다.",
         en: "Serious-crime investigations do require experience, making use of prosecution personnel a defensible choice. But if the first director and core staff come predominantly from the old service, concern remains that the new body could reproduce the institution under another name.",
+      },
+    },
+    {
+      title: { ko: "추가 검증은 무엇으로 끝났는가", en: "What evidence closed the additional vetting?" },
+      description: {
+        ko: "행안부는 김지용 후보자에 대한 추가 검증에서 주요 의혹이 사실이 아닌 것으로 확인됐다고 밝혔습니다. 반면 임은정 서울동부지검장은 후보자가 과거 기소에 반대했다면 이의제기서나 전산 기록이 남아야 한다고 반박했습니다. 정부의 해명과 반론은 모두 공개됐지만 검증에 사용한 기록은 아직 공개되지 않았습니다. 국회가 어떤 자료를 제출받고 청문하는지가 남았습니다.",
+        en: "The Interior Ministry says additional vetting did not substantiate the main allegations against Kim Ji-yong. Seoul Eastern District Prosecutor Lim Eun-jung counters that any past objection to indictment should have left a written or electronic record. The government's account and the challenge are now public, but the records used in the review are not. The next test is what evidence Parliament receives and examines.",
       },
     },
     {
@@ -660,6 +752,10 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     {
       ko: "KICS 필수 기능의 출범일 장애 여부와 12월 전체 기능 구축 완료 여부",
       en: "Launch-day failures in essential KICS services and completion of the full system by December",
+    },
+    {
+      ko: "김지용 후보자의 인사청문요청서 제출일·청문 일정과 추가 검증에 사용된 이의제기서·전산 기록 등 근거자료",
+      en: "Submission and hearing dates for nominee Kim Ji-yong and the documentary basis for additional vetting, including any written objections or electronic records",
     },
     {
       ko: "검찰청 잔여 예산의 실제 이체액과 국회가 확정한 2027년도 두 기관 예산",
@@ -727,6 +823,21 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       label: { ko: "중수청법 일부개정안·의안번호 2220544", en: "Investigation agency amendment, Bill No. 2220544" },
       url: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2220544/detailRP",
       note: { ko: "사회적 약자 대상 7대 범죄 보완·재수사 근거와 9월 15일 행안위·16일 법사위·17일 본회의 수정가결 기록", en: "Grounds for follow-up investigations in seven vulnerable-victim crime categories and amended approvals by the Interior Committee on September 15, Legislation Committee on September 16 and plenary session on September 17" },
+    },
+    {
+      label: { ko: "행정안전부·KTV — 초대 중수청장 후보자 브리핑", en: "Interior Ministry and KTV — Briefing on first-director nominee" },
+      url: "https://www.mois.go.kr/video/bbs/type019/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000255&nttId=129581&searchCode1=",
+      note: { ko: "9월 17일 추가 검증 결과와 후보자 관련 의혹에 대한 정부 설명", en: "The government's September 17 account of additional vetting and allegations concerning the nominee" },
+    },
+    {
+      label: { ko: "연합뉴스 — 행안부 추가 검증 발표에 대한 임은정 검사장 반박", en: "Yonhap — Prosecutor Lim Eun-jung's response to the Interior Ministry briefing" },
+      url: "https://www.yna.co.kr/view/AKR20260918027400004",
+      note: { ko: "이의제기서·전산 기록 없이 후보자 본인 확인에 의존했다는 9월 18일 반박", en: "September 18 challenge over reliance on the nominee's account without disclosed written or electronic records" },
+    },
+    {
+      label: { ko: "서울신문 — 경찰 개정 형소법 전국 교육", en: "Seoul Shinmun — Nationwide police training on revised criminal procedure" },
+      url: "https://www.seoul.co.kr/news/society/2026/09/18/20260918500207",
+      note: { ko: "9월 18일 소집교육, 18개 시도청 순회·의무교육과 이달 말 현장지원 조직 가동 계획", en: "September 18 launch session, nationwide mandatory training and field-support teams planned by month-end" },
     },
   ],
 };
