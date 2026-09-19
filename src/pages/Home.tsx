@@ -62,52 +62,52 @@ type HomeWatchCommentary = {
 
 const recommendedTopics = [
   {
-    to: { ko: "/search?q=검찰", en: "/search?q=prosecution" },
+    to: { ko: "/search?topic=justice", en: "/search?topic=justice" },
     title: { ko: "검찰개혁과 사법", en: "Justice and Prosecution Reform" },
     summary: { ko: "수사권·기소권과 사법독립을 함께 봅니다", en: "Investigative power, prosecution and judicial independence" },
   },
   {
-    to: { ko: "/search?q=시민사회", en: "/search?q=civil%20society" },
+    to: { ko: "/search?topic=civil-society", en: "/search?topic=civil-society" },
     title: { ko: "시민사회와 공익", en: "Civil Society and Public Interest" },
     summary: { ko: "시민사회의 자율성과 공익의 기준을 묻습니다", en: "Autonomy in civil society and the meaning of public interest" },
   },
   {
-    to: { ko: "/search?q=기업", en: "/search?q=business" },
+    to: { ko: "/search?topic=markets", en: "/search?topic=markets" },
     title: { ko: "기업과 시장", en: "Enterprise and Markets" },
     summary: { ko: "도전과 혁신을 막는 제도와 규제를 살핍니다", en: "Institutions and rules shaping enterprise and innovation" },
   },
   {
-    to: { ko: "/monitoring/tax", en: "/monitoring/tax" },
+    to: { ko: "/search?topic=tax-finance", en: "/search?topic=tax-finance" },
     title: { ko: "세금과 재정", en: "Tax and Public Finance" },
     summary: { ko: "누가 부담하고 어디에 쓰이는지 추적합니다", en: "Who pays, who benefits and where public money goes" },
   },
   {
-    to: { ko: "/monitoring/legislation", en: "/monitoring/legislation" },
+    to: { ko: "/search?topic=legislation-rights", en: "/search?topic=legislation-rights" },
     title: { ko: "입법과 시민 권리", en: "Legislation and Civic Rights" },
     summary: { ko: "법안이 자유와 선택에 미칠 영향을 따집니다", en: "How proposed laws affect freedom and civic choice" },
   },
   {
-    to: { ko: "/search?q=환경", en: "/search?q=environment" },
+    to: { ko: "/search?topic=environment-energy", en: "/search?topic=environment-energy" },
     title: { ko: "환경과 에너지", en: "Environment and Energy" },
     summary: { ko: "과학·비용·책임의 관점에서 정책을 읽습니다", en: "Policy through evidence, cost and responsibility" },
   },
   {
-    to: { ko: "/search?q=사관학교", en: "/search?q=military%20academy" },
+    to: { ko: "/search?topic=defense-security", en: "/search?topic=defense-security" },
     title: { ko: "국방과 안보", en: "Defense and Security" },
     summary: { ko: "정치적 명분보다 국가 역량을 먼저 봅니다", en: "National capability before political symbolism" },
   },
   {
-    to: { ko: "/search?q=시민화", en: "/search?q=citizenization" },
+    to: { ko: "/search?topic=citizenship-democracy", en: "/search?topic=citizenship-democracy" },
     title: { ko: "시민화와 민주주의", en: "Citizenization and Democracy" },
     summary: { ko: "큰 국가가 아니라 스스로 서는 시민을 생각합니다", en: "Citizens who can stand on their own before a larger state" },
   },
   {
-    to: { ko: "/seed-language", en: "/seed-language" },
+    to: { ko: "/search?topic=politics-language", en: "/search?topic=politics-language" },
     title: { ko: "정치와 시민언어", en: "Politics and Civic Language" },
     summary: { ko: "익숙한 정치 언어의 뜻과 쓰임을 다시 묻습니다", en: "Reconsidering the language that shapes public life" },
   },
   {
-    to: { ko: "/monitoring/public-interest", en: "/monitoring/public-interest" },
+    to: { ko: "/search?topic=public-interest-watch", en: "/search?topic=public-interest-watch" },
     title: { ko: "공익기관 감시", en: "Public-interest Institutions" },
     summary: { ko: "권한·예산·성과를 공개자료로 확인합니다", en: "Reviewing authority, budgets and outcomes through public records" },
   },
