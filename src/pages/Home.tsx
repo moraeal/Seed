@@ -1,5 +1,5 @@
 import { ArrowRight, Clock } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NewsletterSignup from "../components/NewsletterSignup";
 import SafeImage from "../components/SafeImage";
@@ -119,9 +119,7 @@ export default function Home() {
   const [featuredPath, setFeaturedPath] = useState<string | null>(null);
   const [featuredReady, setFeaturedReady] = useState(false);
   const [legislativeBills, setLegislativeBills] = useState<LegislativeBill[]>([]);
-  const recommendedTopicsRef = useRef<HTMLDivElement>(null);
-  const recommendedTopicIndexRef = useRef(0);
-  const recommendedTopicResetRef = useRef<number | null>(null);
+  const [recommendedTopicPage, setRecommendedTopicPage] = useState(0);
   const [recommendedTopicsPaused, setRecommendedTopicsPaused] = useState(false);
   const allBriefings = getAllBriefingsNewestFirst();
   const localizedBriefings = allBriefings.map((item) => localizeBriefing(item, language));
@@ -287,31 +285,11 @@ export default function Home() {
 
   useEffect(() => {
     if (recommendedTopicsPaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const interval = window.setInterval(() => {
-      const track = recommendedTopicsRef.current;
-      const firstTopic = track?.querySelector<HTMLElement>("[data-recommended-topic]");
-      if (!track || !firstTopic) return;
-
-      const nextIndex = recommendedTopicIndexRef.current + 1;
-      track.scrollTo({ left: firstTopic.offsetWidth * nextIndex, behavior: "smooth" });
-      recommendedTopicIndexRef.current = nextIndex;
-
-      if (nextIndex >= recommendedTopics.length) {
-        recommendedTopicResetRef.current = window.setTimeout(() => {
-          track.scrollTo({ left: 0, behavior: "auto" });
-          recommendedTopicIndexRef.current = 0;
-          recommendedTopicResetRef.current = null;
-        }, 750);
-      }
-    }, 6000);
-
-    return () => {
-      window.clearInterval(interval);
-      if (recommendedTopicResetRef.current !== null) {
-        window.clearTimeout(recommendedTopicResetRef.current);
-        recommendedTopicResetRef.current = null;
-      }
-    };
+    const interval = window.setInterval(
+      () => setRecommendedTopicPage((current) => (current + 1) % Math.ceil(recommendedTopics.length / 4)),
+      6000,
+    );
+    return () => window.clearInterval(interval);
   }, [recommendedTopicsPaused]);
 
   const newcomerLinks = [
@@ -335,71 +313,42 @@ export default function Home() {
     },
   ];
 
-  const showMoreTopics = () => {
-    const track = recommendedTopicsRef.current;
-    const firstTopic = track?.querySelector<HTMLElement>("[data-recommended-topic]");
-    if (!track || !firstTopic) return;
-    const nextIndex = recommendedTopicIndexRef.current + 1;
-    track.scrollTo({ left: firstTopic.offsetWidth * nextIndex, behavior: "smooth" });
-    recommendedTopicIndexRef.current = nextIndex;
-    if (nextIndex >= recommendedTopics.length) {
-      recommendedTopicResetRef.current = window.setTimeout(() => {
-        track.scrollTo({ left: 0, behavior: "auto" });
-        recommendedTopicIndexRef.current = 0;
-        recommendedTopicResetRef.current = null;
-      }, 750);
-    }
-  };
+  const visibleRecommendedTopics = Array.from({ length: 4 }, (_, index) => (
+    recommendedTopics[(recommendedTopicPage * 4 + index) % recommendedTopics.length]
+  ));
+
+  const showMoreTopics = () => setRecommendedTopicPage(
+    (current) => (current + 1) % Math.ceil(recommendedTopics.length / 4),
+  );
 
   return (
     <div className="home-page bg-paper">
-      <section className="border-b border-green-deep/15 bg-paper" aria-labelledby="recommended-series-title">
-        <div className="container-page flex min-h-[66px] items-stretch overflow-hidden px-0 sm:px-8 lg:px-12">
-          <div className="flex w-[104px] shrink-0 flex-col justify-center border-r border-green-deep/15 px-4 sm:w-[138px] sm:px-0 sm:pr-5">
+      <section className="bg-[#E2E9E1]" aria-labelledby="recommended-series-title">
+        <div
+          className="container-page grid min-h-[74px] grid-cols-[92px_minmax(0,1fr)] items-stretch gap-2 py-2.5 sm:grid-cols-[130px_minmax(0,1fr)] sm:gap-5 sm:py-0"
+          onMouseEnter={() => setRecommendedTopicsPaused(true)}
+          onMouseLeave={() => setRecommendedTopicsPaused(false)}
+          onFocusCapture={() => setRecommendedTopicsPaused(true)}
+          onBlurCapture={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setRecommendedTopicsPaused(false);
+          }}
+        >
+          <div className="flex flex-col justify-center">
             <p id="recommended-series-title" className="text-[11px] font-black tracking-[-.01em] text-green-mid sm:text-xs">{ko ? "추천 기획" : "FEATURED"}</p>
-            <p className="mt-0.5 hidden text-[9px] font-bold tracking-[.13em] text-charcoal/35 sm:block">SEED SERIES</p>
+            <button type="button" onClick={showMoreTopics} className="mt-1 w-fit text-[10px] font-bold text-charcoal/45 underline decoration-charcoal/25 underline-offset-4 transition-colors hover:text-green-deep focus-visible:text-green-deep focus-visible:outline-none">{ko ? "더보기" : "More"}</button>
           </div>
-          <div
-            ref={recommendedTopicsRef}
-            className="flex min-w-0 flex-1 snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            onMouseEnter={() => setRecommendedTopicsPaused(true)}
-            onMouseLeave={() => setRecommendedTopicsPaused(false)}
-            onFocusCapture={() => setRecommendedTopicsPaused(true)}
-            onBlurCapture={(event) => {
-              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setRecommendedTopicsPaused(false);
-            }}
-            onScroll={(event) => {
-              const firstTopic = event.currentTarget.querySelector<HTMLElement>("[data-recommended-topic]");
-              if (firstTopic && recommendedTopicResetRef.current === null) {
-                recommendedTopicIndexRef.current = Math.round(event.currentTarget.scrollLeft / firstTopic.offsetWidth);
-              }
-            }}
-          >
-            {[...recommendedTopics, ...recommendedTopics].map((topic, index) => {
-              const duplicate = index >= recommendedTopics.length;
-              return (
+          <div key={recommendedTopicPage} className="recommended-topic-group grid min-w-0 grid-cols-2 gap-x-2 gap-y-1 sm:grid-cols-4 sm:gap-3">
+            {visibleRecommendedTopics.map((topic, index) => (
               <Link
-                key={`${topic.title.ko}-${index}`}
+                key={`${recommendedTopicPage}-${topic.title.ko}-${index}`}
                 to={topic.to[language]}
-                className="group flex min-w-[220px] flex-1 snap-start flex-col justify-center border-r border-green-deep/10 px-4 py-2.5 transition-colors hover:bg-green-pale/55 focus-visible:bg-green-pale/55 focus-visible:outline-none sm:min-w-[245px] sm:px-5"
-                data-recommended-topic
-                aria-hidden={duplicate || undefined}
-                tabIndex={duplicate ? -1 : undefined}
+                className="group flex min-w-0 flex-col justify-center rounded-sm px-2.5 py-2 transition-colors hover:bg-white/45 focus-visible:bg-white/45 focus-visible:outline-none sm:px-3.5"
               >
-                <span className="text-[12px] font-extrabold text-navy transition-colors group-hover:text-green-mid sm:text-[13px]">{topic.title[language]}</span>
-                <span className="mt-1 line-clamp-1 text-[10px] leading-4 text-charcoal/48 sm:text-[11px]">{topic.summary[language]}</span>
+                <span className="truncate text-[11px] font-extrabold text-navy transition-colors group-hover:text-green-mid sm:text-[13px]">{topic.title[language]}</span>
+                <span className="mt-0.5 line-clamp-1 text-[9px] leading-4 text-charcoal/48 sm:mt-1 sm:text-[11px]">{topic.summary[language]}</span>
               </Link>
-              );
-            })}
+            ))}
           </div>
-          <button
-            type="button"
-            onClick={showMoreTopics}
-            className="w-[94px] shrink-0 border-l border-green-deep/15 px-3 text-[10px] font-extrabold leading-4 text-green-deep transition-colors hover:bg-green-pale/55 hover:text-green-mid focus-visible:bg-green-pale/55 focus-visible:outline-none sm:w-[112px] sm:text-[11px]"
-            aria-label={ko ? "오른쪽의 추천 주제 더보기" : "Show more featured topics to the right"}
-          >
-            {ko ? "주제 더보기" : "More topics"}
-          </button>
         </div>
       </section>
 
