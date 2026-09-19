@@ -79,7 +79,6 @@ const normalize = (value: string) => value.normalize("NFKC").toLocaleLowerCase()
 export function classifyArticleTopics(article: ClassifiableArticle, fallbacks: TopicId[] = ["citizenship-democracy"]) {
   const title = normalize(article.title);
   const summary = normalize(article.summary);
-  const body = normalize(article.body);
   const category = normalize(article.category);
 
   const ranked = topicTaxonomy
@@ -90,8 +89,7 @@ export function classifyArticleTopics(article: ClassifiableArticle, fallbacks: T
         return score
           + (title.includes(term) ? 8 : 0)
           + (summary.includes(term) ? 4 : 0)
-          + (category.includes(term) ? 5 : 0)
-          + (body.includes(term) ? 0.5 : 0);
+          + (category.includes(term) ? 5 : 0);
       }, 0),
     }))
     .filter((topic) => topic.score >= 4)
