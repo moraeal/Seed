@@ -23,10 +23,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     en: "Fair under way · Outcomes being tracked",
   },
   openedAt: "2018-09-05",
-  updatedAt: "2026-09-19",
+  updatedAt: "2026-09-20",
   nextCheck: {
-    ko: "일일 관람객을 유료·무료·단체·초청·공무출장으로 나눈 집계, 콘텐츠 보완 추경 7억 원의 의결·집행 내역, 신기항 셔틀 이용실적과 금오도 안의 교통 보완, 사업수익 120억 원의 달성 여부와 11월 4일 폐막 뒤 최종 정산",
-    en: "Daily attendance split into paid, free, group, invited and publicly funded staff visits; approval and spending details for the KRW 700 million content supplement; use of the Shingi Port shuttle and transport within Geumodo; progress toward the KRW 12 billion revenue target; and final settlement after the November 4 closing",
+    ko: "누적 입장객을 유료·무료·단체·초청·공무출장으로 나눈 집계, 식음시설 계약금액·임대료·수수료와 지역 환원, 콘텐츠 보완 추경 7억 원의 의결·집행 내역, 신기항 셔틀 이용실적과 금오도 안의 교통 보완, 사업수익 120억 원의 달성 여부와 11월 4일 폐막 뒤 최종 정산",
+    en: "Cumulative attendance split into paid, free, group, invited and publicly funded staff visits; food-service contract value, rent, commissions and local return; approval and spending details for the KRW 700 million content supplement; use of the Shingi Port shuttle and transport within Geumodo; progress toward the KRW 12 billion revenue target; and final settlement after the November 4 closing",
   },
   heroImage: {
     src: "images/monitoring/yeosu-island-expo-tracker-hero.webp",
@@ -77,10 +77,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       },
     },
     {
-      date: "2026-09-13",
+      date: "2026-09-17",
       text: {
-        ko: "개막 9일 누적 관람객은 10만 8명으로, 300만 명 목표의 3.3%였습니다.",
-        en: "Cumulative attendance reached 100,008 after nine days, 3.3 percent of the 3 million target.",
+        ko: "개막 13일 누적 입장객은 12만8,217명으로, 300만 명 목표의 4.3%였습니다.",
+        en: "Cumulative attendance reached 128,217 after 13 days, 4.3 percent of the 3 million target.",
       },
     },
     {
@@ -654,14 +654,43 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-17",
+      title: {
+        ko: "13일 누적 12만8,217명·식음업체 23곳 중 지역업체 5곳",
+        en: "Thirteen-day attendance reaches 128,217; five of 23 food vendors are local",
+      },
+      description: {
+        ko: "9월 5일 개막부터 17일까지 누적 입장객은 12만8,217명으로 하루 평균 약 9,863명, 300만 명 목표의 4.3%였습니다. 유료·무료·단체·초청·공무출장을 나눈 수치는 공개되지 않았습니다. 식음시설은 공개입찰로 선정된 아모제푸드가 입점업체 선정과 관리를 총괄하며, 23개 식음료 업체 중 지역업체는 5곳이고 논란이 된 게장반상 판매업체는 서울 업체로 확인됐습니다. 조직위는 행사 규모와 고회전 수요에 대응하려 전문기업 총괄 방식을 택했다고 설명했습니다. 계약금액과 임대료·수수료 구조, 지역에 돌아가는 수익은 추가 확인이 필요합니다.",
+        en: "From the September 5 opening through September 17, cumulative attendance reached 128,217—about 9,863 a day and 4.3 percent of the 3 million target. No breakdown for paid, free, group, invited or publicly funded staff visits was released. Amoje Food, selected through public bidding, oversees food-vendor selection and management; only five of the 23 food and beverage vendors are local, while the vendor behind the disputed crab meal is based in Seoul. Organizers said a specialist operator was chosen to handle the event's scale and rapid turnover. The contract value, rent and commission structure, and the share of revenue retained locally remain unverified.",
+      },
+      change: {
+        ko: "흥행 판단이 누적 총인원뿐 아니라 입장객 구성과 지역 환원 구조 확인으로 확대",
+        en: "Evaluation expands from a headline attendance total to visitor composition and local economic return",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "전남CBS 노컷뉴스", en: "Jeonnam CBS NoCut News" },
+          title: {
+            ko: "‘섬의 매력’ 보다 ‘간장게장’으로 뜨거운 여수섬박람회 가보니",
+            en: "At the Yeosu fair, controversy over the crab meal overshadows the islands",
+          },
+          url: "https://www.nocutnews.co.kr/news/6580796",
+          publishedAt: "2026-09-19",
+          kind: "article",
+          thumbnailSrc: "https://file2.nocutnews.co.kr/newsroom/image/2026/09/19/202609191051405601_0.jpg",
+        },
+      ],
+    },
+    {
       date: "다음",
       title: {
         ko: "관람객·수익·교통 보완과 폐막 뒤 정산 확인",
         en: "Track attendance, revenue, transport fixes and final settlement",
       },
       description: {
-        ko: "유료·무료·단체·초청을 구분한 일일 관람객, 신기항 셔틀의 이용실적·수송력과 금오도 안의 대체교통, 120억 원 사업수익의 실제 달성액을 확인합니다. 11월 4일 폐막 뒤에는 직접사업과 연계사업 정산, 계약 변경, 철거·존치 시설과 유지비, 섬 주민의 생활에 남은 변화를 이어서 기록합니다.",
-        en: "The next checks are daily attendance split by paid, free, group and invited visits; use and capacity of the Shingi Port shuttle and replacement transport within Geumodo; and actual revenue against the KRW 12 billion plan. After November 4, the record will follow direct and linked project settlement, contract changes, retained and removed facilities, maintenance costs and lasting effects for island residents.",
+        ko: "유료·무료·단체·초청·공무출장을 구분한 입장객, 식음시설 계약금액·임대료·수수료와 지역 환원, 신기항 셔틀의 이용실적·수송력과 금오도 안의 대체교통, 120억 원 사업수익의 실제 달성액을 확인합니다. 11월 4일 폐막 뒤에는 직접사업과 연계사업 정산, 계약 변경, 철거·존치 시설과 유지비, 섬 주민의 생활에 남은 변화를 이어서 기록합니다.",
+        en: "The next checks are attendance split by paid, free, group, invited and publicly funded staff visits; the food-service contract value, rent, commissions and local return; use and capacity of the Shingi Port shuttle and replacement transport within Geumodo; and actual revenue against the KRW 12 billion plan. After November 4, the record will follow direct and linked project settlement, contract changes, retained and removed facilities, maintenance costs and lasting effects for island residents.",
       },
       status: "pending",
     },
@@ -688,8 +717,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       en: "Including roads, tourism and cultural projects, the pre-opening linked total was reported at KRW 183.9 billion. It is not the same category as the KRW 71.3 billion direct budget.",
     },
     {
-      ko: "박람회는 2026년 9월 5일 개막했고 9월 13일까지 누적 관람객은 10만 8명으로 집계됐습니다.",
-      en: "The fair opened on September 5, 2026, and recorded cumulative attendance of 100,008 through September 13.",
+      ko: "박람회는 2026년 9월 5일 개막했고 9월 17일까지 누적 입장객은 12만8,217명으로 집계됐습니다. 유료·무료·단체·초청·공무출장별 인원은 공개되지 않았습니다.",
+      en: "The fair opened on September 5, 2026, and recorded cumulative attendance of 128,217 through September 17. Counts by paid, free, group, invited and publicly funded staff visits were not disclosed.",
     },
     {
       ko: "전남광주특별시는 9월 10일 업무 연관성과 무관하게 직원의 박람회 관람을 출장으로 인정하고 교통비·일비를 지급할 수 있도록 안내했습니다.",
@@ -714,6 +743,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     {
       ko: "조직위는 식당의 밥·반찬 운영을 고치고 만족도 조사를 하며 ‘거문도 뱃노래’의 연출 수준을 보완하겠다고 9월 17일 밝혔습니다. 원재료·가격과 공연 예산에 관한 내용은 조직위의 설명입니다.",
       en: "On September 17, organizers said they would adjust rice and side-dish service, survey diners and improve production of the Geomundo Boat Song. Claims about ingredients, pricing and performance funding are the organizers' account.",
+    },
+    {
+      ko: "식음시설은 공개입찰로 선정된 아모제푸드가 입점업체 선정과 관리를 총괄하며, 23개 식음료 업체 중 지역업체는 5곳입니다.",
+      en: "Amoje Food, selected through public bidding, oversees vendor selection and management, and five of the fair's 23 food and beverage vendors are local.",
     },
   ],
   currentControversies: [
@@ -743,8 +776,18 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
         en: "Will the 3 million target translate into paid visits and revenue?",
       },
       description: {
-        ko: "개막 9일 누적은 목표의 3.3%였습니다. 추석 연휴와 단체관람이 남아 있어 최종 흥행을 단정할 단계는 아닙니다. 다만 공무출장 관람까지 허용된 만큼 유료·무료·초청·단체·공무출장·중복 방문을 나누지 않은 총인원만으로는 120억 원 수익계획의 성과를 판단할 수 없습니다.",
-        en: "Nine-day attendance was 3.3 percent of the target. Holiday and group traffic remain, so a final verdict is premature. With public employees now allowed to attend on official travel, an undifferentiated total—without paid, free, invited, group, publicly funded staff and repeat visits—cannot establish progress toward KRW 12 billion in revenue.",
+        ko: "개막 13일 누적 입장객은 목표의 4.3%였습니다. 추석 연휴와 단체관람이 남아 있어 최종 흥행을 단정할 단계는 아닙니다. 다만 공무출장 관람까지 허용된 만큼 유료·무료·초청·단체·공무출장·중복 방문을 나누지 않은 총인원만으로는 120억 원 수익계획의 성과를 판단할 수 없습니다.",
+        en: "Thirteen-day attendance was 4.3 percent of the target. Holiday and group traffic remain, so a final verdict is premature. With public employees now allowed to attend on official travel, an undifferentiated total—without paid, free, invited, group, publicly funded staff and repeat visits—cannot establish progress toward KRW 12 billion in revenue.",
+      },
+    },
+    {
+      title: {
+        ko: "식음시설 수익은 지역에 얼마나 돌아가는가",
+        en: "How much food-service revenue stays in the local economy?",
+      },
+      description: {
+        ko: "공개입찰로 선정된 외식기업이 23개 입점업체의 선정과 관리를 맡았지만 지역업체는 5곳에 그쳤습니다. 전문기업 총괄이 대규모 행사 운영에는 유리할 수 있습니다. 그러나 계약금액, 임대료와 수수료, 매출 배분, 지역업체 선정 기준이 공개돼야 공공재정으로 만든 행사의 수익이 지역에 얼마나 남는지 판단할 수 있습니다.",
+        en: "A food-service company selected through public bidding manages the 23 vendors, but only five are local. Centralized specialist management may help a large event operate efficiently. The contract value, rent, commissions, revenue sharing and local-vendor criteria must be disclosed to show how much economic benefit from a publicly funded event remains in the region.",
       },
     },
     {
@@ -771,8 +814,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
   questions: [],
   proposals: [],
   caution: {
-    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 콘텐츠 보완비 7억 원은 현재 추경안 편성·상임위 심사 단계이므로 확정 지출로 보거나 713억 원에 곧바로 더해서도 안 됩니다. 9일간 관람객 10만 8명도 유료 입장객만을 뜻하지 않으며, 이후 집계에는 출장 처리된 공무원 관람이 포함될 수 있습니다. 식당 원재료·가격과 공연 예산 구분은 조직위의 공식 설명이며 원가·계약 자료로 독립 검증된 수치가 아닙니다.",
-    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The proposed KRW 700 million content supplement is still at the budget-review stage, so it should not be treated as final spending or automatically added to the KRW 71.3 billion. The nine-day attendance figure of 100,008 is not a paid-admission count, and later totals may include public employees attending on official travel. The account of meal ingredients and prices and the distinction in performance funding comes from the organizers and has not been independently verified against cost and contract records.",
+    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 콘텐츠 보완비 7억 원은 현재 추경안 편성·상임위 심사 단계이므로 확정 지출로 보거나 713억 원에 곧바로 더해서도 안 됩니다. 13일간 입장객 12만8,217명은 유료 입장객만을 뜻하지 않으며 출장 처리된 공무원 관람이 포함될 수 있습니다. 식당 원재료·가격과 공연 예산 구분은 조직위의 공식 설명이며 원가·계약 자료로 독립 검증된 수치가 아닙니다.",
+    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The proposed KRW 700 million content supplement is still at the budget-review stage, so it should not be treated as final spending or automatically added to the KRW 71.3 billion. The 13-day attendance figure of 128,217 is not a paid-admission count and may include public employees attending on official travel. The account of meal ingredients and prices and the distinction in performance funding comes from the organizers and has not been independently verified against cost and contract records.",
   },
   sources: [
     {
@@ -843,6 +886,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     {
       label: { ko: "박람회 조직위원회 — 식당·공연 논란 관련 설명", en: "Organizing committee — Explanation of the meal and performance controversies" },
       url: "https://yeosu2026.or.kr/6_2/50",
+    },
+    {
+      label: { ko: "전남CBS 노컷뉴스 — 13일 누적 입장객과 식음시설 운영 구조", en: "Jeonnam CBS NoCut News — Thirteen-day attendance and food-service operating structure" },
+      url: "https://www.nocutnews.co.kr/news/6580796",
     },
     {
       label: { ko: "박람회 조직위원회 — 행사 개요와 일정", en: "Organizing committee — Event overview and schedule" },
