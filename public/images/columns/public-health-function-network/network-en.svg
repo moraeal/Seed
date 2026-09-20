@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">A regional essential-care network measured by function and results</title>
+  <desc id="desc">Public and private hospitals deliver maternity emergency pediatric and cardiovascular care under contracts support and public accountability</desc>
+  <rect width="1600" height="900" fill="#f7f5ef"/>
+  <text x="800" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="800" fill="#0f2438">Public value is proved by function and results</text>
+  <text x="800" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="600" fill="#496052">A regional network applying the same duties to public and private hospitals</text>
+
+  <rect x="110" y="220" width="510" height="250" rx="28" fill="#ffffff" stroke="#1f5a47" stroke-width="4"/>
+  <circle cx="180" cy="290" r="34" fill="#dcebe4"/>
+  <path d="M180 270v40M160 290h40" stroke="#1f5a47" stroke-width="10" stroke-linecap="round"/>
+  <text x="235" y="300" font-family="Arial, sans-serif" font-size="32" font-weight="800" fill="#163f33">Public hospitals</text>
+  <text x="160" y="365" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#243a4a">Infectious disease · safety net · emergency</text>
+  <text x="160" y="415" font-family="Arial, sans-serif" font-size="21" fill="#50616c">Maintain services the market alone cannot sustain</text>
+
+  <rect x="980" y="220" width="510" height="250" rx="28" fill="#ffffff" stroke="#9b7722" stroke-width="4"/>
+  <circle cx="1050" cy="290" r="34" fill="#f4e8c8"/>
+  <path d="M1050 270v40M1030 290h40" stroke="#9b7722" stroke-width="10" stroke-linecap="round"/>
+  <text x="1105" y="300" font-family="Arial, sans-serif" font-size="32" font-weight="800" fill="#705515">Private hospitals</text>
+  <text x="1030" y="365" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#243a4a">Maternity · pediatrics · cardiac · emergency</text>
+  <text x="1030" y="415" font-family="Arial, sans-serif" font-size="21" fill="#50616c">Deliver essential services a region cannot lose</text>
+
+  <path d="M620 345H700" stroke="#1f5a47" stroke-width="7" stroke-linecap="round"/>
+  <path d="M690 329l28 16-28 16" fill="#1f5a47"/>
+  <path d="M980 345H900" stroke="#9b7722" stroke-width="7" stroke-linecap="round"/>
+  <path d="M910 329l-28 16 28 16" fill="#9b7722"/>
+  <rect x="700" y="245" width="200" height="200" rx="100" fill="#123b30"/>
+  <text x="800" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="800" fill="#ffffff">Regional</text>
+  <text x="800" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="800" fill="#ffffff">care network</text>
+  <text x="800" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#d9b85b">Access for citizens</text>
+
+  <rect x="285" y="545" width="1030" height="115" rx="24" fill="#e8efe9" stroke="#b8cbbf" stroke-width="2"/>
+  <text x="800" y="592" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="800" fill="#163f33">Government contracts and support</text>
+  <text x="800" y="632" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#394c45">Staffing and on-call costs · disclosed service terms · clawbacks for failure</text>
+  <path d="M520 545V490" stroke="#547f6e" stroke-width="6" stroke-linecap="round"/>
+  <path d="M504 506l16-28 16 28" fill="#547f6e"/>
+  <path d="M1080 545V490" stroke="#8d772e" stroke-width="6" stroke-linecap="round"/>
+  <path d="M1064 506l16-28 16 28" fill="#8d772e"/>
+
+  <text x="800" y="730" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="800" fill="#0f2438">Five results citizens should be able to see</text>
+  <g font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle" fill="#ffffff">
+    <rect x="105" y="770" width="260" height="72" rx="18" fill="#1f5a47"/><text x="235" y="814">Night and holiday cover</text>
+    <rect x="390" y="770" width="260" height="72" rx="18" fill="#315f78"/><text x="520" y="814">Definitive emergency care</text>
+    <rect x="675" y="770" width="250" height="72" rx="18" fill="#7c6530"/><text x="800" y="814">Out-of-area transfers</text>
+    <rect x="950" y="770" width="250" height="72" rx="18" fill="#526a5e"/><text x="1075" y="814">Clinician retention</text>
+    <rect x="1225" y="770" width="270" height="72" rx="18" fill="#243a4a"/><text x="1360" y="814">Care delivered per subsidy</text>
+  </g>
+</svg>
