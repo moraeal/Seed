@@ -24,6 +24,12 @@ export const topicTaxonomy = [
     keywords: ["세금", "세수", "조세", "재정", "예산", "기금", "부담금", "환급", "상속세", "국고", "tax", "fiscal", "budget", "fund", "levy", "rebate", "revenue", "treasury"],
   },
   {
+    id: "health-welfare",
+    label: { ko: "보건·복지와 지역의료", en: "Health, Welfare and Regional Care" },
+    description: { ko: "시민이 실제로 이용할 수 있는 의료·돌봄 체계를 살핍니다", en: "Health and care systems that citizens can actually access" },
+    keywords: ["보건", "복지", "의료", "공공의료", "지역의료", "병원", "응급", "분만", "돌봄", "건강", "health", "healthcare", "public health", "regional care", "hospital", "emergency care", "maternity care", "welfare", "care"],
+  },
+  {
     id: "legislation-rights",
     label: { ko: "입법과 시민 권리", en: "Legislation and Civic Rights" },
     description: { ko: "법안이 자유와 선택에 미칠 영향을 따집니다", en: "How proposed laws affect freedom and civic choice" },
