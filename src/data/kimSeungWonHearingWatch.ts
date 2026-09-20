@@ -14,10 +14,10 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   },
   status: { ko: "청문회 개최·후속 확인 중", en: "Hearing held · Follow-up under way" },
   openedAt: "2026-08-31",
-  updatedAt: "2026-09-20",
+  updatedAt: "2026-09-21",
   nextCheck: {
-    ko: "2011년 자전거 모임 원게시물과 참석자 신원에 대한 추가 확인, 후보자 측이 예고한 AI 합성물 유포 관련 법적 조치의 실제 착수 여부, 전직 보좌진 탄원서의 청와대 수령 여부와 개별 의혹에 대한 독립 확인·수사 착수 여부, 후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 제넨셀 민원 의혹 재수사 여부와 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
-    en: "Further verification of the original 2011 cycling-post record and the participants' identities; whether Kim's office follows through on threatened legal action over circulating AI-generated images; independent verification of whether the presidential office received the former aides' petitions and whether any investigation begins into the individual allegations; the nomination and confirmation process for a successor justice minister; the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud; the police decision on reinvestigating the Genencell petition allegation and progress in the family-cooperative complaint; and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
+    ko: "9월 18일 김 전 후보자와 전직 보좌진의 면담 여부·대화 내용에 대한 당사자의 추가 해명과 객관 자료, 2011년 자전거 모임 원게시물과 참석자 신원에 대한 추가 확인, 후보자 측이 예고한 AI 합성물 유포 관련 법적 조치의 실제 착수 여부, 전직 보좌진 탄원서의 청와대 수령 여부와 개별 의혹에 대한 독립 확인·수사 착수 여부, 후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 제넨셀 민원 의혹 재수사 여부와 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
+    en: "Any further response or objective record concerning the reported September 18 meeting between Kim and a former aide and what was discussed; further verification of the original 2011 cycling-post record and the participants' identities; whether Kim's office follows through on threatened legal action over circulating AI-generated images; independent verification of whether the presidential office received the former aides' petitions and whether any investigation begins into the individual allegations; the nomination and confirmation process for a successor justice minister; the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud; the police decision on reinvestigating the Genencell petition allegation and progress in the family-cooperative complaint; and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
   },
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
@@ -36,6 +36,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "This timeline cross-checks National Assembly schedules and decisions, public statements from the nominee and both parties, and reporting based on Ministry of Food and Drug Safety records. Allegations and the nominee's rebuttals are kept separate from verified facts.",
   },
   keyChanges: [
+    {
+      date: "2026-09-20",
+      text: {
+        ko: "KBS·TV조선·매일경제는 탄원서를 청와대에 전달했다고 주장하는 전직 보좌진이 김 전 후보자의 사퇴 전날인 9월 18일 수원에서 김 전 후보자를 만나 약 2시간 동안 탄원서 의혹을 설명하고 거취 문제를 논의했다고 보도했습니다. KBS는 전직 보좌진의 말을 토대로 김 전 후보자가 의혹을 부인하면서 탄원서 작성자를 만나게 해달라고 요청했다고 전했고, TV조선은 전직 보좌진이 결단을 촉구했다고 보도했습니다. 김 전 후보자는 이 보도들에 별도 답변을 내놓지 않았습니다. 이는 전직 보좌진의 직접 주장에 기초한 복수 보도이며, 면담의 정확한 대화 내용과 무마 시도 여부는 독립적으로 확정되지 않았습니다.",
+        en: "KBS, TV Chosun and Maeil Business Newspaper reported that a former aide who says the petitions were delivered to the presidential office met Kim in Suwon on September 18, the day before his withdrawal, for about two hours to explain the allegations and discuss his position. Citing the former aide, KBS said Kim denied the allegations and asked to meet the petition's author; TV Chosun reported that the aide urged him to make a decision. Kim did not issue a separate response to these reports. The accounts are multiple reports based on a former aide's direct claim; the precise conversation and whether Kim attempted to suppress the allegations have not been independently established.",
+      },
+    },
     {
       date: "2026-09-20",
       text: {
@@ -157,6 +164,46 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      date: "2026-09-20",
+      title: { ko: "사퇴 전날 전직 보좌진 면담 주장과 동석 의원들의 반박", en: "Former aide alleges pre-withdrawal meeting; lawmakers dispute awareness of misconduct" },
+      description: {
+        ko: "KBS·TV조선·매일경제는 전직 보좌진의 말을 토대로 김 전 후보자가 사퇴 발표 전날인 9월 18일 수원에서 전직 보좌진을 약 2시간 만났다고 보도했습니다. 보도에 따르면 전직 보좌진은 탄원서에 담긴 의혹을 설명하고 거취를 논의했으며, KBS는 김 전 후보자가 의혹을 부인하고 탄원서 작성자를 만나게 해달라고 요청했다고 전했습니다. 이는 의원실이 9월 19일 ‘탄원서가 제출됐는지도 몰랐다’고 밝힌 해명의 범위를 둘러싼 새 쟁점입니다. 다만 김 전 후보자는 사실 확인 요청에 별도 답변을 내놓지 않았고, 면담 내용과 무마 시도 여부는 전직 보좌진의 주장 외 객관 자료로 확인되지 않았습니다. 별도로 TV조선은 탄원서에서 성추행 의혹이 제기된 2024년 술자리에 김용민 의원과 장경태 의원도 동석했다고 보도했습니다. 두 의원은 동석 당시 문제 제기가 없었고 관련 사실을 전혀 인지하지 못했다며 의혹을 반박했습니다.",
+        en: "KBS, TV Chosun and Maeil Business Newspaper reported, based on a former aide's account, that Kim met the former aide in Suwon for about two hours on September 18, the day before announcing his withdrawal. The reports say the aide explained allegations in the petitions and discussed Kim's position; KBS said Kim denied the allegations and asked to meet the petition's author. The account creates a new question about the scope of the office's September 19 statement that it did not know whether the petitions had been submitted. Kim did not separately answer the outlets' requests for comment, and no objective record has established the precise conversation or an attempt to suppress the allegations. Separately, TV Chosun reported that lawmakers Kim Yong-min and Jang Kyung-tae attended the 2024 gathering at which the petition alleges sexual misconduct. Both said no concern was raised at the gathering and that they had been entirely unaware of such an incident, disputing the allegation.",
+      },
+      change: { ko: "사퇴 전날 면담에 관한 전직 보좌진 주장과 동석 의원들의 직접 반박 추가", en: "Former aide's account of a pre-withdrawal meeting and direct rebuttals from attending lawmakers added" },
+      status: "response",
+      sources: [
+        {
+          publisher: { ko: "KBS", en: "KBS" },
+          title: { ko: "[단독] ‘탄원서 몰랐다’던 김승원, 사퇴 전날 전직 보좌진 만나 무마 시도", en: "Former aide says Kim sought to defuse petition allegations the day before withdrawal" },
+          url: "https://www.youtube.com/watch?v=5d9rmLsQG3E",
+          publishedAt: "2026-09-20",
+          kind: "video",
+        },
+        {
+          publisher: { ko: "TV조선", en: "TV Chosun" },
+          title: { ko: "[단독] 전직 보좌진, 사퇴 회견 전날 김승원 만나 ‘최후통첩’", en: "Former aide says Kim was urged to decide the day before withdrawal" },
+          url: "https://news.tvchosun.com/site/data/html_dir/2026/09/20/2026092090112.html",
+          publishedAt: "2026-09-20",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "매일경제", en: "Maeil Business Newspaper" },
+          title: { ko: "[단독] ‘사퇴 전날 김승원 만나 탄원서 설명’", en: "Former aide says petition allegations were explained to Kim before withdrawal" },
+          url: "https://www.mk.co.kr/news/politics/12157535",
+          publishedAt: "2026-09-20",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "TV조선", en: "TV Chosun" },
+          title: { ko: "[단독] 김승원 ‘성추행 의혹’ 술자리에 김용민·장경태 동석", en: "Lawmakers at gathering say they were unaware of alleged misconduct" },
+          url: "https://news.tvchosun.com/site/data/html_dir/2026/09/20/2026092090140.html",
+          publishedAt: "2026-09-20",
+          kind: "article",
+        },
+      ],
+    },
     {
       date: "2026-09-19",
       title: { ko: "2011년 자전거 모임 자료 보도와 AI 합성물 대응 예고", en: "2011 cycling record reported; Kim's office warns over AI-generated image" },
@@ -830,8 +877,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       title: { ko: "전직 보좌진 탄원서의 개별 의혹은 확인됐나", en: "Have the allegations in the former aides' petitions been verified?" },
       description: {
-        ko: "KBS는 전직 보좌진 탄원서 실물을 입수했고, 채널A는 작성자에게 전달 주장을 직접 확인했다고 보도했습니다. 그러나 청와대는 인사 관련 사항이라 수령 여부를 확인하지 않았습니다. 김승원 의원실은 청와대로부터 연락받지 않았고 제출 여부도 몰랐다면서, 보도된 소문은 사실과 다르거나 과장·오류가 있다고 반박했습니다. 문서 존재와 전달 주장이 보도됐다는 사실은 개별 의혹의 진실성을 곧바로 입증하지 않습니다. 성추행·추가 음주운전·폭언·추가 청탁·회계 부정 의혹의 진위와 사퇴에 미친 영향은 독립 자료나 수사·사법 판단으로 확인되지 않았습니다.",
-        en: "KBS reported obtaining the former aides' petitions, while Channel A said it directly confirmed the delivery claim with an author. The presidential office declined to confirm receipt, citing the personnel-related nature of the matter. Kim's office said it had not been contacted by the presidential office and did not know whether the petitions were submitted, disputing the reported rumors as false, exaggerated or erroneous. The reported existence of the documents and the delivery claim do not by themselves establish the underlying allegations. The claims of sexual misconduct, an additional drunk-driving incident, verbal abuse, further solicitation and accounting irregularities—and any role they played in the withdrawal—have not been established by independent evidence, an investigation or a court.",
+        ko: "KBS는 전직 보좌진 탄원서 실물을 입수했고, 채널A는 작성자에게 전달 주장을 직접 확인했다고 보도했습니다. 그러나 청와대는 인사 관련 사항이라 수령 여부를 확인하지 않았습니다. 김승원 의원실은 청와대로부터 연락받지 않았고 제출 여부도 몰랐다면서, 보도된 소문은 사실과 다르거나 과장·오류가 있다고 반박했습니다. 이후 KBS·TV조선·매일경제는 전직 보좌진이 9월 18일 김 전 후보자를 직접 만나 탄원서 의혹을 설명하고 거취를 논의했다고 보도했습니다. 김 전 후보자는 추가 사실 확인 요청에 답하지 않았습니다. 성추행 의혹이 제기된 술자리에 동석한 김용민·장경태 의원은 당시 문제 제기가 없었고 의혹을 전혀 인지하지 못했다고 밝혔습니다. 문서 존재, 면담 주장과 당사자들의 반박이 공개됐다는 사실은 확인되지만, 면담의 정확한 대화 내용과 무마 시도 여부, 성추행·추가 음주운전·폭언·추가 청탁·회계 부정 의혹의 진위와 사퇴에 미친 영향은 독립 자료나 수사·사법 판단으로 확인되지 않았습니다.",
+        en: "KBS reported obtaining the former aides' petitions, while Channel A said it directly confirmed the delivery claim with an author. The presidential office declined to confirm receipt, citing the personnel-related nature of the matter. Kim's office said it had not been contacted by the presidential office and did not know whether the petitions were submitted, disputing the reported rumors as false, exaggerated or erroneous. KBS, TV Chosun and Maeil Business Newspaper subsequently reported that a former aide met Kim on September 18 to explain the petition allegations and discuss his position. Kim did not answer further requests for comment. Lawmakers Kim Yong-min and Jang Kyung-tae, who attended the gathering at which sexual misconduct is alleged, said no concern was raised at the time and that they were wholly unaware of such an incident. The documents, reported meeting claim and public rebuttals are established as matters in the record; the precise conversation, whether Kim sought to suppress the allegations, the truth of the sexual-misconduct, additional drunk-driving, verbal-abuse, further-solicitation and accounting claims, and any role they played in the withdrawal have not been established by independent evidence, an investigation or a court.",
       },
     },
     {
@@ -886,6 +933,22 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "KBS — 사퇴 전날 전직 보좌진 면담·무마 시도 주장", en: "KBS — Former aide alleges pre-withdrawal meeting and attempt to defuse petition claims" },
+      url: "https://www.youtube.com/watch?v=5d9rmLsQG3E",
+    },
+    {
+      label: { ko: "TV조선 — 사퇴 전날 전직 보좌진 면담 주장", en: "TV Chosun — Former aide's account of meeting Kim before withdrawal" },
+      url: "https://news.tvchosun.com/site/data/html_dir/2026/09/20/2026092090112.html",
+    },
+    {
+      label: { ko: "매일경제 — 사퇴 전날 탄원서 의혹 설명·거취 논의 보도", en: "Maeil Business Newspaper — Report on pre-withdrawal discussion of petition allegations" },
+      url: "https://www.mk.co.kr/news/politics/12157535",
+    },
+    {
+      label: { ko: "TV조선 — 의혹 제기 술자리 동석 의원들의 반박", en: "TV Chosun — Rebuttals from lawmakers who attended the gathering" },
+      url: "https://news.tvchosun.com/site/data/html_dir/2026/09/20/2026092090140.html",
+    },
     {
       label: { ko: "시사저널 — 2011년 자전거 모임 사진·영상 게시물과 후보자 측 답변", en: "Sisa Journal — 2011 cycling-post images and Kim office's response" },
       url: "https://www.sisajournal.com/news/articleView.html?idxno=387822",
