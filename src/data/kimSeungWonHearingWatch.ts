@@ -14,10 +14,10 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   },
   status: { ko: "청문회 개최·후속 확인 중", en: "Hearing held · Follow-up under way" },
   openedAt: "2026-08-31",
-  updatedAt: "2026-09-19",
+  updatedAt: "2026-09-20",
   nextCheck: {
-    ko: "전직 보좌진 탄원서의 청와대 수령 여부와 개별 의혹에 대한 독립 확인·수사 착수 여부, 후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 제넨셀 민원 의혹 재수사 여부와 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
-    en: "Independent verification of whether the presidential office received the former aides' petitions and whether any investigation begins into the individual allegations; the nomination and confirmation process for a successor justice minister; the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud; the police decision on reinvestigating the Genencell petition allegation and progress in the family-cooperative complaint; and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
+    ko: "2011년 자전거 모임 원게시물과 참석자 신원에 대한 추가 확인, 후보자 측이 예고한 AI 합성물 유포 관련 법적 조치의 실제 착수 여부, 전직 보좌진 탄원서의 청와대 수령 여부와 개별 의혹에 대한 독립 확인·수사 착수 여부, 후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 제넨셀 민원 의혹 재수사 여부와 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
+    en: "Further verification of the original 2011 cycling-post record and the participants' identities; whether Kim's office follows through on threatened legal action over circulating AI-generated images; independent verification of whether the presidential office received the former aides' petitions and whether any investigation begins into the individual allegations; the nomination and confirmation process for a successor justice minister; the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud; the police decision on reinvestigating the Genencell petition allegation and progress in the family-cooperative complaint; and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
   },
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
@@ -36,6 +36,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "This timeline cross-checks National Assembly schedules and decisions, public statements from the nominee and both parties, and reporting based on Ministry of Food and Drug Safety records. Allegations and the nominee's rebuttals are kept separate from verified facts.",
   },
   keyChanges: [
+    {
+      date: "2026-09-20",
+      text: {
+        ko: "시사저널은 양모 씨가 운영하던 식당의 네이버 카페에서 김 전 후보자가 참가한 2011년 자전거 모임 사진·영상 게시물을 확인했다고 보도했습니다. 이는 김 전 후보자가 양씨의 사건을 수임하기 약 7개월 전 해당 식당 카페에 등장했다는 새 자료지만, 사진 속 여성의 신원과 양씨의 실제 동행 여부는 확인되지 않았습니다. 김 전 후보자 측은 15년 전 참석자들을 기억하기 어렵다고 답했습니다. 별도로 의원실은 온라인에 퍼진 부적절한 신체 접촉 장면은 AI 합성물이라며 제작·유포자에 대한 법적 대응을 예고했습니다.",
+        en: "Sisa Journal reported finding a 2011 photo-and-video post in the Naver cafe of a restaurant operated by the woman linked to the Genencell allegation, showing Kim participating in a group cycling trip. The post predates his formal appearance as her lawyer by about seven months, but the identities of the women pictured—and whether she joined the ride—remain unverified. Kim's office said it could not recall the participants after 15 years. Separately, the office said an image circulating online that depicts inappropriate physical contact was AI-generated and warned that it would pursue its creators and distributors.",
+      },
+    },
     {
       date: "2026-09-19",
       text: {
@@ -150,6 +157,33 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      date: "2026-09-19",
+      title: { ko: "2011년 자전거 모임 자료 보도와 AI 합성물 대응 예고", en: "2011 cycling record reported; Kim's office warns over AI-generated image" },
+      description: {
+        ko: "시사저널은 양모 씨가 운영하던 식당의 네이버 카페에 2011년 5월 30일 게시된 ‘소리산 소풍 라이딩’ 사진 20여 장과 영상 1개에서 김 전 후보자를 확인했다고 보도했습니다. 재판 기록상 김 전 후보자가 양씨 사건의 변호인 선임계를 낸 시점보다 약 7개월 앞선 자료입니다. 다만 게시 경위와 사진 속 여성들의 신원, 양씨가 모임에 실제 동행했는지는 확인되지 않았습니다. 김 전 후보자 측은 15년 전이라 구체적인 참석자를 기억하기 어렵고 양씨와의 관계는 청문회에서 설명했다고 답했습니다. 같은 날 의원실은 김 전 후보자와 양씨의 부적절한 신체 접촉 장면으로 유포되는 이미지는 AI 합성물이라며 최초 제작자·유포자를 추적해 법적 조치를 하겠다고 밝혔습니다. 따라서 카페에 게시된 실제 자전거 모임 사진과 별도로 유포되는 AI 합성 이미지는 구분해야 합니다.",
+        en: "Sisa Journal reported identifying Kim in some 20 photographs and one video posted on May 30, 2011 under the title 'Sorisan Picnic Ride' in the Naver cafe of a restaurant operated by the woman linked to the Genencell allegation. The material predates by about seven months the court record showing Kim formally entering her case as counsel. However, it remains unclear why the material was posted, who the women pictured were, and whether she actually joined the ride. Kim's office said it could not recall specific participants after 15 years and had already explained the relationship at the hearing. The office separately said an online image depicting inappropriate physical contact between Kim and the woman was AI-generated and warned that it would trace and take legal action against the original creator and distributors. The genuine cycling-post images and the separately circulating AI-generated image therefore must not be conflated.",
+      },
+      change: { ko: "관계 시점을 살필 새 자료·후보자 측 허위 이미지 대응, 동행 여부는 미확인", en: "New material bearing on the relationship timeline and a response to fabricated imagery; attendance remains unverified" },
+      status: "response",
+      sources: [
+        {
+          publisher: { ko: "시사저널", en: "Sisa Journal" },
+          title: { ko: "[단독] 김승원 ‘자전거 라이딩’, 양수진 ‘네이버 카페’서 2011년 ‘찰칵’", en: "2011 cycling photos of Kim found in Naver cafe linked to Yang" },
+          url: "https://www.sisajournal.com/news/articleView.html?idxno=387822",
+          publishedAt: "2026-09-19",
+          thumbnailSrc: "https://cdn.sisajournal.com/news/photo/202609/387822_396226_5010.jpg",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "시사저널", en: "Sisa Journal" },
+          title: { ko: "김승원 측, 법무장관 사퇴 당일 ‘AI 합성물 유포자 끝까지 추적’", en: "Kim's office warns of legal action against distributors of AI-generated image" },
+          url: "https://www.sisajournal.com/news/articleView.html?idxno=387825",
+          publishedAt: "2026-09-19",
+          kind: "article",
+        },
+      ],
+    },
     {
       date: "2026-09-19",
       title: { ko: "전직 보좌진 탄원서 보도와 후보자 측 반박", en: "Former aides' petitions reported; Kim's office disputes allegations" },
@@ -803,8 +837,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       title: { ko: "브로커와 찍은 사진은 무엇을 보여주는가", en: "What does the photo with the alleged broker establish?" },
       description: {
-        ko: "후보자 측이 공개한 원본·비교 사진은 청문회에서 제기된 ‘바닷가 동행’ 해석에 반박 자료가 됐습니다. 후보자 측은 사무실 또는 상가에서 찍은 사진이 일부 삭제·확대·채도 조정을 거쳐 바닷가처럼 제시됐다고 주장하지만, 정확한 촬영 장소와 편집 의도는 독립적으로 확인되지 않았습니다. 준비단은 두 사람이 지인 관계였다고 밝혔으며, 사진만으로 제넨셀 민원 전달이 부정한 청탁이었는지까지 판단할 수는 없습니다.",
-        en: "The original and comparison image released by Kim's team provides material rebutting the hearing's seaside-trip interpretation. The team alleges that a photo taken in an office or commercial space was cropped, enlarged and color-adjusted to look like a seaside scene, but the exact location and intent behind the editing have not been independently established. The team said Kim and the woman were acquaintances, and the photo alone cannot determine whether the Genencell petition amounted to an improper solicitation.",
+        ko: "후보자 측이 공개한 원본·비교 사진은 청문회에서 제기된 ‘바닷가 동행’ 해석에 반박 자료가 됐습니다. 이후 시사저널은 양씨가 운영하던 식당의 네이버 카페에서 김 전 후보자가 참가한 2011년 자전거 모임 사진·영상 게시물을 확인했다고 보도했습니다. 이 자료는 김 전 후보자의 변호인 선임보다 앞서 두 사람의 생활권이 겹쳤을 가능성을 살필 단서지만, 사진 속 여성의 신원과 양씨의 동행 여부는 확인되지 않았고 후보자 측도 참석자를 기억하지 못한다고 답했습니다. 의원실이 AI 합성물이라고 밝힌 부적절한 신체 접촉 이미지와 실제 카페 게시 사진도 구분해야 합니다. 어느 사진도 그 자체로 제넨셀 민원 전달이 부정한 청탁이었다는 점을 입증하지는 않습니다.",
+        en: "The original and comparison image released by Kim's team provided material rebutting the hearing's seaside-trip interpretation. Sisa Journal later reported finding a 2011 cycling-post record in the Naver cafe of a restaurant operated by the woman, showing Kim among the participants. The material may help examine whether their social circles overlapped before he formally entered her case as counsel, but the identities of the women pictured and whether she joined the ride remain unverified; Kim's office said it could not recall the participants. The genuine cafe images must also be distinguished from an image depicting inappropriate physical contact that Kim's office says was AI-generated. None of the images, by itself, establishes that the Genencell petition amounted to improper solicitation.",
       },
     },
     {
@@ -852,6 +886,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "시사저널 — 2011년 자전거 모임 사진·영상 게시물과 후보자 측 답변", en: "Sisa Journal — 2011 cycling-post images and Kim office's response" },
+      url: "https://www.sisajournal.com/news/articleView.html?idxno=387822",
+    },
+    {
+      label: { ko: "시사저널 — AI 합성물 유포 관련 후보자 측 법적 대응 예고", en: "Sisa Journal — Kim office warns of legal action over AI-generated image" },
+      url: "https://www.sisajournal.com/news/articleView.html?idxno=387825",
+    },
     {
       label: { ko: "KBS — 청와대 전달 주장 전직 보좌진 탄원서와 후보자 측 반박", en: "KBS — Former aides' petitions reportedly delivered to presidential office and Kim's rebuttal" },
       url: "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8667880",
