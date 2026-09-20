@@ -220,7 +220,7 @@ const militaryAcademyTrackerContinuation: Record<Language, EditorialContinuation
 const fukushimaJourneyContinuation: Record<Language, EditorialContinuation> = {
   ko: {
     href: "/columns/democratic-party-nuclear-policy-reversal",
-    title: "이제는 원전을 다시 짓자는 민주당",
+        title: "탈원전 외치더니 이젠 친원전 하자고?",
     relationship: "기행에서 정책으로",
     reason: "후쿠시마 현장 기록에 이어, 한국의 원전정책이 탈원전에서 신규 원전 추진으로 바뀌는 과정과 정책의 예측가능성을 살펴봅니다.",
     listHref: "/columns",
