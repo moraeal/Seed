@@ -1,4 +1,5 @@
-import { Fragment } from "react";
+import { Minus, Plus } from "lucide-react";
+import { Fragment, useState } from "react";
 import { useLanguage } from "../i18n";
 
 type Section = { title: string; paragraphs: string[] };
@@ -40,22 +41,34 @@ const copy = {
     imageCaption: "작은씨앗에서 시작한 목소리가 여러 시민의 목소리로 자랍니다.",
     contributorsKicker: "CONTRIBUTORS",
     contributorsTitle: "필진 소개",
+    contributorsLead: "서로 다른 현장을 경험한 시민들이 각자의 질문으로 씨앗의 소리를 함께 만듭니다. 이름을 선택하면 소개를 볼 수 있습니다.",
+    closeProfile: "소개 접기",
+    openProfile: "소개 보기",
     contributors: [
       {
         name: "작은씨앗",
+        focus: "시민사회 · 공익 · 권력감시",
         bio: "시민사회와 공공영역, 기업 현장을 두루 경험해 온 시민사회 활동가이자 공익 기획자입니다. 국가·시장·시민사회가 만나는 여러 현장에서 활동하며 제도와 조직이 시민의 삶에 어떤 영향을 미치는지 지켜봐 왔습니다. 씨앗의 소리에서는 특정 진영이나 권위에 기대지 않고, 한 시민의 질문과 판단으로 사실을 확인하고 자유와 책임의 기준에서 국가와 시민사회의 권력을 함께 살피고자 합니다.",
       },
       {
         name: "경계의 시민",
+        focus: "국방 · 안보 · 북한",
         bio: "공군 부사관과 장교로 복무하며 국방·교육·공보 현장을 경험했습니다. 북한학을 전공하고 러시아·CIS 지역의 정치와 국제관계를 연구하고 있습니다. 씨앗의 소리에서는 군과 안보, 북한과 통일 문제를 시민의 자유와 권리라는 자리에서 살펴봅니다. 안보의 필요성을 인정하면서도 그 이름 아래 시민의 권리가 가려지지 않는지 묻습니다.",
       },
       {
         name: "생각 너머",
+        focus: "과학 · 에너지 · 환경",
         bio: "학생운동과 진보정당 활동을 거쳐 원자력과 에너지 문제를 다시 공부해 온 시민입니다. 원자력계의 주장을 반박하려 자료를 찾다가 자신이 믿어온 전제부터 다시 확인하게 되었고, 찬반 양쪽의 자료를 교차 검증하며 판단을 바꾸었습니다. 사실과 과학 네트웤 정책간사로 활동하며, 씨앗의 소리에서는 익숙한 믿음보다 측정과 현장, 과학적 근거를 따라 에너지·방사선·환경 문제를 살펴봅니다.",
       },
       {
         name: "푸른지평",
+        focus: "시장경제 · 기업 · 지속가능성",
         bio: "민간 정책연구기관에서 시장경제와 기업정책을 연구했다. 현재는 환경 분야 연구·기획자로 일하며 지속가능한 사회를 위한 다양한 프로젝트를 맡고 있다. 성장과 환경, 기업가정신과 지속가능성이 함께 갈 수 있는 제도와 정책에 관심을 두고 글을 쓴다.",
+      },
+      {
+        name: "이음",
+        focus: "기업 · 시민사회 · 사회적 책임",
+        bio: "기업과 시민사회가 함께 사회문제를 해결하는 방법을 고민해 왔습니다. 여러 협력사업을 기획하고 현장을 연결하며 서로 다른 언어와 이해관계가 만나는 지점을 살펴왔습니다. 씨앗의 소리에서는 기업의 성장과 사회적 책임이 함께 설 수 있는 현실적인 해법을 찾고자 합니다.",
       },
     ],
   },
@@ -95,22 +108,34 @@ const copy = {
     imageCaption: "The voice that began with Small Seed can grow into the voices of many citizens.",
     contributorsKicker: "CONTRIBUTORS",
     contributorsTitle: "Meet the Contributors",
+    contributorsLead: "Citizens with experience in different fields bring their own questions to SEED VOICE. Select a name to read the contributor’s profile.",
+    closeProfile: "Close profile",
+    openProfile: "View profile",
     contributors: [
       {
         name: "Small Seed",
+        focus: "Civil society · Public interest · Accountability",
         bio: "A civic-society activist and public-interest planner with experience across civil society, public institutions, and the business sector. Having worked where government, markets, and civil society meet, Small Seed has watched closely how institutions and organizations affect citizens’ everyday lives. At SEED VOICE, Small Seed verifies facts and scrutinizes power in both the state and civil society through the principles of freedom and responsibility, without relying on partisan camps or borrowed authority.",
       },
       {
         name: "Citizen at the Boundary",
+        focus: "Defense · Security · North Korea",
         bio: "A former Air Force noncommissioned officer and commissioned officer with experience in defense, education, and public affairs. His research focuses on North Korea and the politics and international relations of Russia and the CIS. At SEED VOICE, he examines the military, security, North Korea, and unification from the standpoint of civic freedom and rights. He recognizes the necessity of security while asking whether citizens’ rights are being obscured in its name.",
       },
       {
         name: "Beyond Thought",
+        focus: "Science · Energy · Environment",
         bio: "A citizen who came to reconsider nuclear power and energy after years in the student movement and progressive politics. While gathering evidence to rebut the nuclear industry, he began testing his own assumptions, cross-checked the claims of both sides and changed his judgment. As a policy coordinator with the Facts and Science Network, he examines energy, radiation and environmental questions through measurement, field observation and scientific evidence rather than familiar belief.",
       },
       {
         name: "Blue Horizon",
+        focus: "Markets · Enterprise · Sustainability",
         bio: "Previously researched market economics and business policy at a private policy institute. Now works in environmental research and planning, leading projects for a sustainable society. Writes about institutions and policies that can bring growth and the environment, entrepreneurship and sustainability together.",
+      },
+      {
+        name: "Link",
+        focus: "Enterprise · Civil society · Social responsibility",
+        bio: "Has long explored how businesses and civil society can work together to address social problems. Through planning collaborative initiatives and connecting people in the field, Link has observed where different vocabularies and interests meet. At SEED VOICE, Link looks for practical ways to align business growth with social responsibility.",
       },
     ],
   },
@@ -119,6 +144,7 @@ const copy = {
 export default function PublisherMessage() {
   const { language } = useLanguage();
   const content = copy[language];
+  const [activeContributor, setActiveContributor] = useState<number | null>(null);
 
   return (
     <div className="bg-paper">
@@ -132,19 +158,52 @@ export default function PublisherMessage() {
 
       <main className="py-8 sm:py-10">
         <article className="container-page max-w-5xl">
-          <div className="mx-auto max-w-3xl">
-            <section className="mb-10 border-y border-green-deep/15 bg-[#F1F2EC] px-6 py-7 sm:mb-12 sm:px-10 sm:py-8">
+          <section className="mx-auto mb-10 max-w-4xl border-y border-green-deep/15 bg-[#F1F2EC] px-5 py-7 sm:mb-12 sm:px-8 sm:py-9">
+            <div className="flex flex-col gap-3 border-b border-green-deep/15 pb-6 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
+              <div>
               <p className="section-kicker">{content.contributorsKicker}</p>
               <h2 className="editorial-title mt-3 text-3xl font-bold text-navy">{content.contributorsTitle}</h2>
-              <div className="mt-7 divide-y divide-green-deep/15">
-                {content.contributors.map((contributor) => (
-                  <article key={contributor.name} className="py-6 first:pt-0 last:pb-0">
-                    <h3 className="editorial-title text-2xl font-bold text-navy">{contributor.name}</h3>
-                    <p className="mt-4 text-base leading-7 text-charcoal/68">{contributor.bio}</p>
-                  </article>
-                ))}
               </div>
-            </section>
+              <p className="max-w-md text-sm leading-6 text-charcoal/60 sm:text-right">{content.contributorsLead}</p>
+            </div>
+
+            <div className="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              {content.contributors.map((contributor, index) => {
+                const isActive = activeContributor === index;
+                return (
+                  <button
+                    key={contributor.name}
+                    type="button"
+                    aria-expanded={isActive}
+                    aria-controls={`contributor-profile-${index}`}
+                    onClick={() => setActiveContributor(isActive ? null : index)}
+                    className={`group flex min-h-[94px] w-full items-center justify-between gap-4 border px-4 py-4 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-mid/35 ${isActive ? "border-green-deep bg-green-deep text-white" : "border-green-deep/15 bg-white text-navy hover:-translate-y-0.5 hover:border-green-deep/35 hover:shadow-[0_8px_22px_rgba(20,55,45,0.08)]"}`}
+                  >
+                    <span className="min-w-0">
+                      <span className="editorial-title block text-xl font-bold leading-tight">{contributor.name}</span>
+                      <span className={`mt-2 block text-xs font-semibold leading-5 ${isActive ? "text-white/65" : "text-charcoal/52"}`}>{contributor.focus}</span>
+                    </span>
+                    <span className={`grid size-8 shrink-0 place-items-center rounded-full border ${isActive ? "border-white/25 text-white" : "border-green-deep/15 text-green-deep"}`} aria-hidden="true">
+                      {isActive ? <Minus size={15} /> : <Plus size={15} />}
+                    </span>
+                    <span className="sr-only">{isActive ? content.closeProfile : content.openProfile}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {activeContributor !== null && (
+              <article id={`contributor-profile-${activeContributor}`} className="mt-3 border-l-4 border-gold bg-white px-5 py-5 sm:px-7 sm:py-6" aria-live="polite">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="editorial-title text-2xl font-bold text-navy">{content.contributors[activeContributor].name}</h3>
+                  <p className="text-xs font-extrabold tracking-[.06em] text-green-deep/65">{content.contributors[activeContributor].focus}</p>
+                </div>
+                <p className="mt-4 text-base leading-7 text-charcoal/68">{content.contributors[activeContributor].bio}</p>
+              </article>
+            )}
+          </section>
+
+          <div className="mx-auto max-w-3xl">
 
             {content.sections.map((section, index) => (
               <Fragment key={section.title}>
