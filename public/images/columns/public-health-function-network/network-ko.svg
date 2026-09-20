@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">소유보다 기능과 결과로 설계하는 지역 필수의료망</title>
+  <desc id="desc">공공병원과 민간병원이 분만 응급 소아 심뇌혈관 진료를 함께 맡고 국가와 지방자치단체가 계약과 지원 및 공개 검증으로 책임을 확인하는 구조</desc>
+  <rect width="1600" height="900" fill="#f7f5ef"/>
+  <text x="800" y="90" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="46" font-weight="800" fill="#0f2438">지역의료는 소유보다 기능과 결과로 증명된다</text>
+  <text x="800" y="140" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="24" font-weight="600" fill="#496052">공공병원과 민간병원이 같은 책임 기준으로 연결되는 의료망</text>
+
+  <rect x="110" y="220" width="510" height="250" rx="28" fill="#ffffff" stroke="#1f5a47" stroke-width="4"/>
+  <circle cx="180" cy="290" r="34" fill="#dcebe4"/>
+  <path d="M180 270v40M160 290h40" stroke="#1f5a47" stroke-width="10" stroke-linecap="round"/>
+  <text x="235" y="300" font-family="Noto Sans KR, sans-serif" font-size="34" font-weight="800" fill="#163f33">공공병원</text>
+  <text x="160" y="365" font-family="Noto Sans KR, sans-serif" font-size="25" font-weight="700" fill="#243a4a">감염병  취약계층  응급·중증</text>
+  <text x="160" y="415" font-family="Noto Sans KR, sans-serif" font-size="23" fill="#50616c">수익만으로 유지하기 어려운 안전망을 담당</text>
+
+  <rect x="980" y="220" width="510" height="250" rx="28" fill="#ffffff" stroke="#9b7722" stroke-width="4"/>
+  <circle cx="1050" cy="290" r="34" fill="#f4e8c8"/>
+  <path d="M1050 270v40M1030 290h40" stroke="#9b7722" stroke-width="10" stroke-linecap="round"/>
+  <text x="1105" y="300" font-family="Noto Sans KR, sans-serif" font-size="34" font-weight="800" fill="#705515">민간병원</text>
+  <text x="1030" y="365" font-family="Noto Sans KR, sans-serif" font-size="25" font-weight="700" fill="#243a4a">분만  소아  심뇌혈관  응급</text>
+  <text x="1030" y="415" font-family="Noto Sans KR, sans-serif" font-size="23" fill="#50616c">지역에서 사라지면 안 되는 필수기능을 수행</text>
+
+  <path d="M620 345H700" stroke="#1f5a47" stroke-width="7" stroke-linecap="round"/>
+  <path d="M690 329l28 16-28 16" fill="#1f5a47"/>
+  <path d="M980 345H900" stroke="#9b7722" stroke-width="7" stroke-linecap="round"/>
+  <path d="M910 329l-28 16 28 16" fill="#9b7722"/>
+
+  <rect x="700" y="245" width="200" height="200" rx="100" fill="#123b30"/>
+  <text x="800" y="325" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="28" font-weight="800" fill="#ffffff">지역</text>
+  <text x="800" y="365" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="28" font-weight="800" fill="#ffffff">필수의료망</text>
+  <text x="800" y="405" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="20" font-weight="600" fill="#d9b85b">시민의 치료 접근</text>
+
+  <rect x="285" y="545" width="1030" height="115" rx="24" fill="#e8efe9" stroke="#b8cbbf" stroke-width="2"/>
+  <text x="800" y="592" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="29" font-weight="800" fill="#163f33">국가·지방자치단체의 계약과 지원</text>
+  <text x="800" y="632" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="23" fill="#394c45">필수인력과 당직비 보상  ·  서비스 조건 공개  ·  약속 불이행 시 환수</text>
+  <path d="M520 545V490" stroke="#547f6e" stroke-width="6" stroke-linecap="round"/>
+  <path d="M504 506l16-28 16 28" fill="#547f6e"/>
+  <path d="M1080 545V490" stroke="#8d772e" stroke-width="6" stroke-linecap="round"/>
+  <path d="M1064 506l16-28 16 28" fill="#8d772e"/>
+
+  <text x="800" y="730" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="27" font-weight="800" fill="#0f2438">시민에게 공개할 다섯 가지 성적표</text>
+  <g font-family="Noto Sans KR, sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#ffffff">
+    <rect x="105" y="770" width="260" height="72" rx="18" fill="#1f5a47"/><text x="235" y="814">야간·휴일 가동일</text>
+    <rect x="390" y="770" width="260" height="72" rx="18" fill="#315f78"/><text x="520" y="814">응급 최종치료율</text>
+    <rect x="675" y="770" width="250" height="72" rx="18" fill="#7c6530"/><text x="800" y="814">타지역 전원율</text>
+    <rect x="950" y="770" width="250" height="72" rx="18" fill="#526a5e"/><text x="1075" y="814">의료진 근속기간</text>
+    <rect x="1225" y="770" width="270" height="72" rx="18" fill="#243a4a"/><text x="1360" y="814">지원금 대비 진료실적</text>
+  </g>
+</svg>

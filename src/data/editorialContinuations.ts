@@ -255,6 +255,25 @@ const korea97GenerationContinuation: Record<Language, EditorialContinuation> = {
   },
 };
 
+const publicHealthFunctionContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/columns/state-cannot-monopolize-life-2026",
+    title: "국가는 생명을 독점할 수 없다",
+    relationship: "지역의료에서 시민의 생명으로",
+    reason: "지역의료의 공공성을 소유가 아니라 기능과 결과로 판단했다면, 생명을 지키는 정책에서 국가와 시민사회가 책임과 권한을 어떻게 나눌지 이어서 살펴봅니다.",
+    listHref: "/columns",
+    listLabel: "칼럼 전체 보기",
+  },
+  en: {
+    href: "/columns/state-cannot-monopolize-life-2026",
+    title: "The State Cannot Monopolize the Work of Saving Lives",
+    relationship: "FROM REGIONAL CARE TO CIVIC RESPONSIBILITY",
+    reason: "After judging public health care by function and outcomes rather than ownership, continue with how government and civil society should share responsibility and authority in policies that protect life.",
+    listHref: "/columns",
+    listLabel: "All columns",
+  },
+};
+
 const isFreedom = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "freedom-as-citizen-agency";
 const isProgress = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-progress";
 const isConservatism = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-conservatism";
@@ -268,8 +287,10 @@ const isMilitaryAcademyColumn = (kind: EditorialContentKind, slug: string) => ki
 const isMilitaryAcademyTracker = (kind: EditorialContentKind, slug: string) => kind === "monitoring" && slug === "military-academy-integration-tracker";
 const isFukushimaJourney = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "fukushima-journey-original";
 const isKorea97Generation = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "korea-97-generation-political-emotion";
+const isPublicHealthFunction = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "public-health-proved-by-function";
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (isPublicHealthFunction(kind, slug)) return true;
   if (isKorea97Generation(kind, slug)) return true;
   if (isFukushimaJourney(kind, slug)) return true;
   if (isNuclearPolicyTracker(kind, slug)) return true;
@@ -287,6 +308,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (isPublicHealthFunction(kind, slug)) return publicHealthFunctionContinuation[language];
   if (isKorea97Generation(kind, slug)) return korea97GenerationContinuation[language];
   if (isFukushimaJourney(kind, slug)) return fukushimaJourneyContinuation[language];
   if (isMilitaryAcademyTracker(kind, slug)) return militaryAcademyTrackerContinuation[language];
