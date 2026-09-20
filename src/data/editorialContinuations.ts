@@ -144,7 +144,7 @@ const nuclearPolicyColumnContinuation: Record<Language, EditorialContinuation> =
 const nuclearPolicyTrackerContinuation: Record<Language, EditorialContinuation> = {
   ko: {
     href: "/columns/democratic-party-nuclear-policy-reversal",
-    title: "이제는 원전을 다시 짓자는 민주당",
+        title: "탈원전 외치더니 이젠 친원전 하자고?",
     relationship: "씨앗의 소리",
     reason: "날짜별 정책 변화를 확인했다면, 탈원전에서 원전 확대로의 전환과 기업 이전 정책이 국가의 예측가능성과 권력의 한계에 남기는 문제를 이어서 읽습니다.",
     listHref: "/monitoring",
