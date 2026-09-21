@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, Building2, CircleAlert, ExternalLink, FileCheck2, Landmark, ReceiptText, Scale, WalletCards } from "lucide-react";
+import { ArrowLeft, ArrowRight, Building2, CircleAlert, ExternalLink, FileCheck2, Landmark, ReceiptText, Scale, Sparkles, WalletCards } from "lucide-react";
 import { Link } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
@@ -32,6 +32,14 @@ export default function PublicInstitutionReformTrackerPage() {
   const filteredTasks = useMemo(
     () => activeLens === "all" ? publicInstitutionReformTasks : publicInstitutionReformTasks.filter((task) => task.lenses.includes(activeLens)),
     [activeLens],
+  );
+  const recentChanges = useMemo(
+    () => [...publicInstitutionReformTasks].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)).slice(0, 3),
+    [],
+  );
+  const reformTimeline = useMemo(
+    () => [...publicInstitutionReformTasks].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt) || b.media.publishedAt.localeCompare(a.media.publishedAt)),
+    [],
   );
 
   return <article className="bg-paper pb-14 sm:pb-20">
@@ -66,6 +74,30 @@ export default function PublicInstitutionReformTrackerPage() {
           ].map(([value, label]) => <div key={label} className="bg-white p-5 sm:p-6"><strong className="editorial-title text-4xl font-bold text-red-700">{value}</strong><p className="mt-2 text-sm font-extrabold leading-6 text-navy">{label}</p></div>)}
         </div>
         <aside className="mt-4 flex gap-3 border-l-4 border-gold bg-gold/10 p-5"><CircleAlert className="mt-0.5 shrink-0 text-gold" size={21}/><p className="text-sm leading-7 text-charcoal/70">{ko ? "109는 개편 대상기관의 단순 명단 수가 아니라 통합·청산 뒤 줄이겠다는 목표입니다. LH 분리처럼 기관 수가 늘 수 있는 조치와 공항 통합 재검토도 같은 계획에 포함돼 있습니다." : "The figure 109 is a net reduction target after mergers and liquidation, not a simple list of affected bodies. The same plan also includes an LH split that may add an entity and an airport merger that remains under review."}</p></aside>
+      </section>
+
+      <section className="mt-12" aria-labelledby="recent-change-title">
+        <div className="flex items-center gap-3 border-b-2 border-navy pb-4"><Sparkles className="text-red-700" size={23}/><div><span className="section-kicker">WHAT CHANGED</span><h2 id="recent-change-title" className="mt-1 text-3xl font-extrabold text-navy">{ko ? "최근 확인된 변화 3가지" : "Three latest verified changes"}</h2></div></div>
+        <div className="mt-4 grid gap-4 lg:grid-cols-3">
+          {recentChanges.map((task, index) => <article key={task.id} className="flex min-h-full flex-col border border-red-700/15 bg-white p-5 sm:p-6">
+            <div className="flex items-center justify-between gap-3"><span className="grid size-9 place-items-center rounded-full bg-red-700 text-sm font-black text-white">{index + 1}</span><time className="text-[10px] font-black tracking-[.1em] text-red-700">{ko ? "확인" : "VERIFIED"} {task.updatedAt.replace(/-/g, ".")}</time></div>
+            <h3 className="editorial-title mt-4 text-xl font-bold leading-snug text-navy">{t(task.shortTitle)}</h3>
+            <p className="mt-3 text-sm leading-7 text-charcoal/70">{t(task.confirmed)}</p>
+            <a href={`#${task.id}`} className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-extrabold text-green-deep">{ko ? "세부 변화 보기" : "View the details"}<ArrowRight size={14}/></a>
+          </article>)}
+        </div>
+      </section>
+
+      <section className="mt-12" aria-labelledby="timeline-title">
+        <div className="flex flex-col gap-3 border-b-2 border-navy pb-4 sm:flex-row sm:items-end sm:justify-between"><div><span className="section-kicker">REFORM TIMELINE</span><h2 id="timeline-title" className="mt-1.5 text-3xl font-extrabold text-navy">{ko ? "주요 흐름을 한눈에 보기" : "The reform timeline at a glance"}</h2></div><p className="max-w-xl text-sm leading-7 text-charcoal/55">{ko ? "새 자료가 추가되면 날짜순으로 자동 재정렬됩니다." : "New records are automatically reordered by date."}</p></div>
+        <div className="mt-5 overflow-hidden border-y border-green-deep/12 bg-white">
+          {reformTimeline.map((task, index) => <article key={task.id} className="grid grid-cols-[5.5rem_1fr] gap-4 border-b border-green-deep/10 p-3 last:border-b-0 sm:grid-cols-[7rem_7rem_1fr_auto] sm:items-center sm:p-4">
+            <a href={task.media.url} target="_blank" rel="noreferrer" className="group relative row-span-2 block aspect-[4/3] overflow-hidden bg-navy sm:row-span-1"><SafeImage src={imageSrc(task.media.thumbnailSrc)} alt={t(task.media.thumbnailAlt)} className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]"/></a>
+            <div className="flex flex-col gap-1"><span className="text-[10px] font-black tracking-[.1em] text-charcoal/38">{String(index + 1).padStart(2, "0")}</span><time className="text-xs font-black text-red-700">{task.updatedAt.replace(/-/g, ".")}</time></div>
+            <div className="min-w-0"><div className="flex flex-wrap items-center gap-2"><span className="rounded-full bg-green-pale px-2.5 py-1 text-[10px] font-extrabold text-green-deep">{t(reformStageLabels[task.stage])}</span><span className="text-[11px] font-bold text-charcoal/42">{t(task.media.outlet)}</span></div><h3 className="editorial-title mt-1.5 text-base font-bold leading-6 text-navy sm:text-lg">{t(task.title)}</h3></div>
+            <a href={`#${task.id}`} className="col-start-2 inline-flex items-center gap-1.5 text-xs font-extrabold text-green-deep sm:col-start-auto">{ko ? "현재 판단" : "Current assessment"}<ArrowRight size={13}/></a>
+          </article>)}
+        </div>
       </section>
 
       <section className="mt-12" aria-labelledby="lens-title">
