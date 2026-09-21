@@ -12,7 +12,7 @@ export const publicHealthFunctionNetworkColumn: SeedColumn = {
   readMinutes: 6,
   summary: "경북 김천의 분만병원, 안동의 닥터헬기, 전남의 공공·민간 분만망은 지역의료가 소유 형태 하나로 유지되지 않는다는 사실을 보여준다. 공공병원은 필요하지만 공공병원만으로는 부족하다. 국가는 병원의 간판이 아니라 필수의료 기능과 시민이 실제로 받은 치료 결과를 계약하고 검증해야 한다.",
   heroImage: {
-    src: `${imageRoot}/hero.webp`,
+    src: `${imageRoot}/hero-v2.webp`,
     alt: "해 질 무렵 지역 병원 응급실로 환자를 옮기는 의료진",
     caption: "지역 주민에게 필요한 것은 병원의 소유 표지가 아니라 필요한 순간 실제로 작동하는 응급실과 의료진이다.",
     credit: "씨앗의 소리 AI 제작 이미지",
