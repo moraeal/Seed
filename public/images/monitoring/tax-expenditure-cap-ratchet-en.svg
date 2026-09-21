@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">The tax-expenditure cap ratchet</title>
+  <desc id="desc">The current formula feeds an over-limit actual rate into the next three-year average; the bill would substitute the cap.</desc>
+  <rect width="1200" height="675" fill="#F4F1E8"/>
+  <rect x="40" y="35" width="1120" height="605" rx="28" fill="#FFFDF8" stroke="#D8D1C0" stroke-width="2"/>
+  <text x="82" y="95" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#8D3B2E" letter-spacing="1.5">TODAY'S TAX POLICY · BILL INTRODUCED</text>
+  <text x="82" y="145" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="800" fill="#17251E">When an overrun helps lift the next cap</text>
+  <text x="82" y="180" font-family="Inter, Arial, sans-serif" font-size="20" fill="#526159">The bill would substitute the old cap for an over-limit actual rate.</text>
+
+  <rect x="82" y="220" width="500" height="262" rx="22" fill="#F9E7E1"/>
+  <text x="114" y="263" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#9E3D30">CURRENT FORMULA</text>
+  <text x="114" y="303" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#17251E">Over-limit actual rate</text>
+  <path d="M386 294 H478" stroke="#C95745" stroke-width="5" stroke-linecap="round"/>
+  <path d="M466 283 L480 294 L466 305" fill="none" stroke="#C95745" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="114" y="349" font-family="Inter, Arial, sans-serif" font-size="21" fill="#3E4B45">Average of prior 3 actual rates</text>
+  <text x="114" y="389" font-family="Inter, Arial, sans-serif" font-size="21" fill="#3E4B45">+ 0.5 percentage point</text>
+  <rect x="114" y="414" width="405" height="43" rx="12" fill="#FFF8F5"/>
+  <text x="316" y="442" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#9E3D30">An overrun can raise a future cap</text>
+
+  <rect x="618" y="220" width="500" height="262" rx="22" fill="#E2F0E8"/>
+  <text x="650" y="263" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#236344">PROPOSED RULE</text>
+  <text x="650" y="303" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#17251E">Use that year's cap</text>
+  <path d="M881 294 H1014" stroke="#2E8058" stroke-width="5" stroke-linecap="round"/>
+  <path d="M1002 283 L1016 294 L1002 305" fill="none" stroke="#2E8058" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="650" y="349" font-family="Inter, Arial, sans-serif" font-size="21" fill="#3E4B45">Average of prior 3 calculation values</text>
+  <text x="650" y="389" font-family="Inter, Arial, sans-serif" font-size="21" fill="#3E4B45">+ 0.5 percentage point</text>
+  <rect x="650" y="414" width="405" height="43" rx="12" fill="#F7FFFA"/>
+  <text x="852" y="442" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#236344">Blocks automatic carry-through</text>
+
+  <line x1="82" y1="515" x2="1118" y2="515" stroke="#D8D1C0" stroke-width="2"/>
+  <text x="82" y="558" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#526159">2026 CONTEXT</text>
+  <text x="263" y="558" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="#17251E">KRW 80.5tn projected</text>
+  <text x="569" y="558" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="#17251E">Rate 16.1%</text>
+  <text x="769" y="558" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="#236344">Within the 16.5% cap</text>
+  <text x="82" y="599" font-family="Inter, Arial, sans-serif" font-size="15" fill="#6B756F">The 2026 forecast is not an overrun. The bill would change how a future over-limit year enters the formula.</text>
+  <text x="1118" y="614" text-anchor="end" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#8D3B2E">SEED VOICE · TAX WATCH</text>
+</svg>

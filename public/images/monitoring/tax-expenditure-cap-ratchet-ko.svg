@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">국세감면 한도의 자동 상승 고리</title>
+  <desc id="desc">현행 산식은 한도 초과 실적도 다음 3년 평균에 넣지만, 개정안은 초과 실적 대신 당시 한도를 넣는다.</desc>
+  <rect width="1200" height="675" fill="#F4F1E8"/>
+  <rect x="40" y="35" width="1120" height="605" rx="28" fill="#FFFDF8" stroke="#D8D1C0" stroke-width="2"/>
+  <text x="82" y="95" font-family="Noto Sans KR Thin, sans-serif" font-size="18" font-weight="700" fill="#8D3B2E" letter-spacing="1.5">오늘의 세금정책 · 법안 발의</text>
+  <text x="82" y="145" font-family="Noto Sans KR Thin, sans-serif" font-size="37" font-weight="800" fill="#17251E">초과한 감면율이 다음 한도를 올립니다</text>
+  <text x="82" y="180" font-family="Noto Sans KR Thin, sans-serif" font-size="20" fill="#526159">개정안은 초과 실적 대신 ‘당시 한도’를 대입해 자동 상승 고리를 끊습니다.</text>
+
+  <rect x="82" y="220" width="500" height="262" rx="22" fill="#F9E7E1"/>
+  <text x="114" y="263" font-family="Noto Sans KR Thin, sans-serif" font-size="20" font-weight="800" fill="#9E3D30">현행 산식</text>
+  <text x="114" y="303" font-family="Noto Sans KR Thin, sans-serif" font-size="25" font-weight="700" fill="#17251E">초과한 실제 감면율</text>
+  <path d="M330 294 H478" stroke="#C95745" stroke-width="5" stroke-linecap="round"/>
+  <path d="M466 283 L480 294 L466 305" fill="none" stroke="#C95745" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="114" y="349" font-family="Noto Sans KR Thin, sans-serif" font-size="21" fill="#3E4B45">직전 3년 실제값의 평균</text>
+  <text x="114" y="389" font-family="Noto Sans KR Thin, sans-serif" font-size="21" fill="#3E4B45">+ 0.5%포인트</text>
+  <rect x="114" y="414" width="405" height="43" rx="12" fill="#FFF8F5"/>
+  <text x="316" y="443" text-anchor="middle" font-family="Noto Sans KR Thin, sans-serif" font-size="18" font-weight="700" fill="#9E3D30">초과가 다음 한도를 끌어올릴 수 있음</text>
+
+  <rect x="618" y="220" width="500" height="262" rx="22" fill="#E2F0E8"/>
+  <text x="650" y="263" font-family="Noto Sans KR Thin, sans-serif" font-size="20" font-weight="800" fill="#236344">개정안</text>
+  <text x="650" y="303" font-family="Noto Sans KR Thin, sans-serif" font-size="25" font-weight="700" fill="#17251E">초과한 해의 ‘한도’</text>
+  <path d="M868 294 H1014" stroke="#2E8058" stroke-width="5" stroke-linecap="round"/>
+  <path d="M1002 283 L1016 294 L1002 305" fill="none" stroke="#2E8058" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="650" y="349" font-family="Noto Sans KR Thin, sans-serif" font-size="21" fill="#3E4B45">직전 3년 계산값의 평균</text>
+  <text x="650" y="389" font-family="Noto Sans KR Thin, sans-serif" font-size="21" fill="#3E4B45">+ 0.5%포인트</text>
+  <rect x="650" y="414" width="405" height="43" rx="12" fill="#F7FFFA"/>
+  <text x="852" y="443" text-anchor="middle" font-family="Noto Sans KR Thin, sans-serif" font-size="18" font-weight="700" fill="#236344">초과 실적의 자동 반영을 차단</text>
+
+  <line x1="82" y1="515" x2="1118" y2="515" stroke="#D8D1C0" stroke-width="2"/>
+  <text x="82" y="558" font-family="Noto Sans KR Thin, sans-serif" font-size="18" font-weight="700" fill="#526159">2026년 배경 수치</text>
+  <text x="270" y="558" font-family="Noto Sans KR Thin, sans-serif" font-size="23" font-weight="800" fill="#17251E">국세감면액 약 80.5조 원</text>
+  <text x="611" y="558" font-family="Noto Sans KR Thin, sans-serif" font-size="23" font-weight="800" fill="#17251E">전망 16.1%</text>
+  <text x="819" y="558" font-family="Noto Sans KR Thin, sans-serif" font-size="23" font-weight="800" fill="#236344">한도 16.5% 이내</text>
+  <text x="82" y="599" font-family="Noto Sans KR Thin, sans-serif" font-size="16" fill="#6B756F">※ 2026년 전망은 한도 초과 사례가 아닙니다. 법안은 앞으로 한도를 넘는 해의 계산 방식을 바꾸는 제안입니다.</text>
+  <text x="1118" y="614" text-anchor="end" font-family="Noto Sans KR Thin, sans-serif" font-size="16" font-weight="700" fill="#8D3B2E">씨앗의 소리 · 세금감시</text>
+</svg>

@@ -29,8 +29,117 @@ const lpgTaxNotice = "https://mofe.go.kr/lw/lap/detailTbPrvntcView.do?menuNo=705
 const fuelTaxReport = "https://www.mk.co.kr/news/economy/12156047";
 const contentStrategyBill = "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221473/detailRP?yType=I";
 const contentStrategyAccountBill = "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221472/detailRP?yType=I";
+const taxExpenditureCapBill = "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221495/detailRP";
+const nationalFinanceAct = "https://www.law.go.kr/법령/국가재정법";
+const taxExpenditurePlanReport = "https://marketin.edaily.co.kr/News/ReadE?newsId=04031126645388896";
 
 export const taxPolicies: TaxPolicy[] = [
+  {
+    slug: "tax-expenditure-cap-ratchet-bill",
+    importance: 81,
+    status: { ko: "법안 발의", en: "Bill introduced" },
+    title: {
+      ko: "감면 한도 초과가 다음 한도를 올리는 고리, 끊자는 법안",
+      en: "Bill targets the ratchet that lets tax-break overruns lift future caps",
+    },
+    summary: {
+      ko: "국세감면율이 법정 한도를 넘은 해에는 실제 감면율 대신 그해 한도를 다음 한도 계산에 넣도록 하는 국가재정법 개정안이 발의됐습니다. 초과 실적이 이후 3년 평균과 한도를 자동으로 끌어올리는 구조를 막자는 제안입니다.",
+      en: "A proposed National Finance Act amendment would use the statutory cap, rather than the higher actual tax-expenditure rate, when an overrun feeds into future cap calculations. It is designed to stop an overrun from mechanically raising the rolling average and later caps.",
+    },
+    affected: {
+      ko: "모든 납세자 · 조세특례 수혜 기업·개인 · 재정당국",
+      en: "All taxpayers · Beneficiaries of tax preferences · Fiscal authorities",
+    },
+    checkedAt: "2026-09-22",
+    heroImage: {
+      ko: "images/monitoring/tax-expenditure-cap-ratchet-ko.png",
+      en: "images/monitoring/tax-expenditure-cap-ratchet-en.png",
+      alt: {
+        ko: "국세감면율 한도 초과 실적이 다음 한도에 반영되는 현행 구조와 개정안의 차이를 설명한 도표",
+        en: "Diagram comparing the current tax-expenditure cap ratchet with the proposed rule",
+      },
+      caption: {
+        ko: "현행 한도는 직전 3년 실제 국세감면율 평균에 0.5%포인트를 더해 계산합니다. 개정안은 초과한 해의 실제값 대신 한도를 쓰도록 합니다. 2026년 전망 16.1%는 그해 한도 16.5% 이내입니다.",
+        en: "The current cap is the prior three-year average actual tax-expenditure rate plus 0.5 percentage point. The bill would substitute the cap for an over-limit actual rate. The 2026 forecast of 16.1% is within that year's 16.5% cap.",
+      },
+    },
+    processNote: {
+      ko: "2026년 9월 21일 발의된 의원입법안으로 아직 확정된 법률이 아닙니다. 국회 심사 과정에서 계산 방식과 시행시점이 달라질 수 있습니다.",
+      en: "This private member's bill was introduced on September 21, 2026 and has not been enacted. Its formula and effective date may change during National Assembly review.",
+    },
+    oneSentence: {
+      ko: "조세감면 한도를 넘긴 실적이 다음 한도를 다시 높이는 자동 상승 고리를 끊어, 걷지 않은 세금에 대한 재정 규율을 강화하자는 법안입니다.",
+      en: "The bill would break the automatic ratchet by which an over-limit tax-expenditure result raises later caps, tightening discipline over revenue forgone through tax preferences.",
+    },
+    keyChanges: [
+      {
+        title: { ko: "초과 실적 대신 한도를 대입", en: "Substitute the cap for an overrun" },
+        body: {
+          ko: "어느 해의 실제 국세감면율이 그해 한도를 넘으면, 이후 한도를 계산할 때 높은 실제값이 아니라 당시 한도를 사용합니다.",
+          en: "If the actual tax-expenditure rate exceeds that year's cap, later cap calculations would use the cap itself instead of the higher actual rate.",
+        },
+      },
+      {
+        title: { ko: "3년 평균의 자동 상승을 제한", en: "Limit the rolling-average ratchet" },
+        body: {
+          ko: "현행 한도는 직전 3년 실제 감면율 평균에 0.5%포인트를 더합니다. 개정안은 초과가 반복될수록 계산 기준까지 높아지는 효과를 줄입니다.",
+          en: "The current cap equals the prior three-year average actual rate plus 0.5 percentage point. The amendment would reduce the tendency of repeated overruns to lift the benchmark itself.",
+        },
+      },
+    ],
+    changeMap: [
+      {
+        title: { ko: "시민의 부담", en: "Citizen burden" },
+        items: [
+          { ko: "당장 세율이나 개인의 공제액을 바꾸는 법안은 아닙니다.", en: "The bill would not immediately change tax rates or an individual's deduction." },
+          { ko: "다만 향후 비과세·감면 확대 여지를 줄여 세입 기반과 일반 납세자의 형평에 영향을 줄 수 있습니다.", en: "It could narrow room for future exemptions and credits, affecting the revenue base and fairness among taxpayers." },
+        ],
+      },
+      {
+        title: { ko: "기업과 수혜자의 선택", en: "Enterprise and beneficiary choice" },
+        items: [
+          { ko: "새 특례를 만들거나 기존 특례를 연장할 때 더 분명한 우선순위와 재원 보완이 요구될 수 있습니다.", en: "New or extended preferences may face clearer prioritization and offset requirements." },
+          { ko: "어떤 감면을 먼저 정비하느냐에 따라 업종·기업·가구별 영향은 달라집니다.", en: "Effects will differ across sectors, firms and households depending on which preferences are reviewed first." },
+        ],
+      },
+      {
+        title: { ko: "숨은 재정비용", en: "Less-visible fiscal cost" },
+        items: [
+          { ko: "2026년 국세감면액은 약 80조5천억 원, 감면율은 16.1%로 전망됐습니다.", en: "Tax expenditures are projected at about KRW 80.5 trillion in 2026, with a 16.1% rate." },
+          { ko: "2026년 전망은 한도 16.5% 이내이며, 이번 법안은 특정 연도의 즉시 삭감이 아니라 향후 한도 산식의 규율을 다룹니다.", en: "The 2026 forecast is within the 16.5% cap; the bill concerns future cap mechanics, not an immediate cut for a particular year." },
+        ],
+      },
+    ],
+    officialRationale: {
+      ko: "발의자는 실제 국세감면율이 한도를 넘더라도 그 초과 실적이 다음 한도 산정에 반영돼 한도가 계속 높아질 수 있다고 지적합니다. 국회 결산심사에서도 이런 산식이 국세감면율 관리 취지에 맞지 않는다는 의견이 제기됐다는 설명입니다.",
+      en: "The sponsor argues that an actual rate above the cap can still enter the next calculation and keep lifting the cap. The bill cites concerns raised during the National Assembly's settlement review that this formula undermines the purpose of managing the tax-expenditure rate.",
+    },
+    risks: [
+      { ko: "국세감면 한도는 강제 삭감선이 아니라 정부가 지키도록 노력해야 하는 기준이어서, 산식만 바꿔도 초과를 막지 못할 수 있습니다.", en: "Because the cap is an endeavor obligation rather than an automatic cut, changing the formula alone may not prevent overruns." },
+      { ko: "경기 위기나 전략산업 지원처럼 한시적으로 감면 수요가 커지는 때에는 정책 대응 여지가 줄 수 있습니다.", en: "The rule could reduce flexibility when temporary relief expands during a downturn or for strategic-industry support." },
+      { ko: "총량만 관리하고 수혜자·성과를 공개하지 않으면 효과 낮은 특례보다 정치적으로 약한 특례가 먼저 줄어들 수 있습니다.", en: "Without beneficiary and performance disclosure, aggregate control could cut politically weaker preferences before low-performing ones." },
+    ],
+    questions: [
+      { ko: "정부는 최근 3년의 한도·실적과 초과 원인을 매년 같은 표로 공개합니까?", en: "Will the government publish each of the prior three years' caps, actual rates and drivers of any overrun in one consistent table?" },
+      { ko: "한도를 넘으면 어떤 비과세·감면을 어떤 성과 기준으로 먼저 재검토합니까?", en: "If the cap is exceeded, which exemptions or credits will be reviewed first and against what performance criteria?" },
+      { ko: "노력 의무에 그치지 않도록 국회 보고·시정계획·세수보완책을 의무화합니까?", en: "Will reporting to Parliament, a corrective plan and revenue offsets be required so the cap is more than an endeavor obligation?" },
+      { ko: "새 생산세액공제와 근로장려금 확대 등 추가 감면은 기존 저성과 특례의 종료와 함께 제시됩니까?", en: "Will new production credits and expanded earned-income credits be paired with the end of low-performing preferences?" },
+    ],
+    seedView: {
+      ko: "조세감면은 지원이라는 이름을 쓰지만, 걷지 않은 세금으로 만든 재정 선택입니다. 위기 대응과 성장 투자를 위해 감면이 필요할 수 있다는 반론도 타당합니다. 그러나 한도를 넘긴 실적이 다음 한도를 올리는 구조라면 한도는 통제선보다 이동하는 기준점이 됩니다. 이번 개정안은 그 자동 상승 고리를 끊는 최소한의 장치입니다. 동시에 한도가 노력 의무에 머무는 약점도 남습니다. 국회는 산식 개정과 함께 초과 사유, 수혜자, 성과, 종료할 특례와 세수보완책을 공개하게 해야 합니다.",
+      en: "Tax preferences are described as support, but they remain fiscal choices made through revenue forgone. The counterargument—that relief may be necessary in crises or for growth investment—is valid. Yet a cap becomes a moving reference point rather than a control when an overrun helps raise the next cap. This amendment is a minimum safeguard against that ratchet. Its weakness remains that the cap is still only an endeavor obligation. Parliament should pair the formula change with mandatory disclosure of overrun causes, beneficiaries, outcomes, preferences to be ended and revenue offsets.",
+    },
+    timeline: [
+      { date: "2026-03-31", title: { ko: "정부, 2026년도 조세지출 기본계획 의결", en: "Government approves the 2026 Tax Expenditure Basic Plan" } },
+      { date: "2026-09-21", title: { ko: "국가재정법 개정안 제2221495호 발의", en: "National Finance Act amendment Bill 2221495 introduced" } },
+      { date: "2026-09-22", title: { ko: "씨앗의 소리 확인·분석", en: "Verified and analyzed by Seed Voice" } },
+    ],
+    sources: [
+      { label: { ko: "국회 의안 제2221495호 국가재정법 개정안", en: "National Assembly Bill 2221495: National Finance Act amendment" }, url: taxExpenditureCapBill },
+      { label: { ko: "국가법령정보센터 국가재정법", en: "Korean Law Information Center: National Finance Act" }, url: nationalFinanceAct },
+      { label: { ko: "이데일리 2026년도 조세지출 기본계획 보도", en: "Edaily report on the 2026 Tax Expenditure Basic Plan" }, url: taxExpenditurePlanReport },
+    ],
+  },
   {
     slug: "content-strategy-special-account-rebate-bill",
     importance: 84,
