@@ -260,9 +260,9 @@ export const publicInstitutionReformTracker: PublicInterestWatchCase = {
     en: "This tracker starts from the government-wide reform plan approved by the 11th Public Institution Management Committee on September 3, 2026, then cross-checks ministry follow-ups and original media reporting. The figure 109 is a net reduction target, not a simple count of affected institutions.",
   },
   heroImage: {
-    src: "images/news/lh-power-five-merge-hero.webp",
-    alt: { ko: "발전시설과 주거지역을 배경으로 공공기관 통합과 분리를 표현한 이미지", en: "Public-institution mergers and splits represented against power and housing infrastructure" },
-    caption: { ko: "조직도를 바꾸는 것만으로 비용과 권한이 줄어드는 것은 아닙니다.", en: "Redrawing an organization chart does not automatically reduce cost or power." },
+    src: "images/monitoring/public-institution-reform/public-institution-reform-109-hero.webp",
+    alt: { ko: "공공기관 명패를 철거하는 동안 뒤편 사무조직은 그대로 업무를 이어가는 모습", en: "Public-institution nameplates being removed while the office organization behind them continues operating" },
+    caption: { ko: "기관 명패가 줄어드는 것과 조직의 비용·기능·권한이 실제로 줄어드는 것은 같은 일이 아닙니다.", en: "Removing institutional nameplates is not the same as reducing the underlying costs, functions and authority." },
     credit: { ko: "씨앗의 소리 AI 제작 이미지", en: "AI-generated image by SEED VOICE" },
   },
   confirmedFacts: [
