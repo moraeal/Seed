@@ -15,6 +15,7 @@ import { taxPolicies } from "../data/taxWatch";
 import { getLegislativeCommentaryEdition, legislativeCommentaries } from "../data/legislativeCommentaries";
 import { getTaxCommentaryEdition, taxCommentaries } from "../data/taxCommentaries";
 import { getFeaturedContentCandidates } from "../data/featuredContent";
+import { topicTaxonomy } from "../data/topicTaxonomy";
 import { useLanguage } from "../i18n";
 import { getFeaturedContentPath } from "../lib/featuredContent";
 import { getPublishedLegislativeBills, type LegislativeBill } from "../lib/legislativeMonitoring";
@@ -59,59 +60,6 @@ type HomeWatchCommentary = {
   imageSrc: string;
   imageAlt: string;
 };
-
-const recommendedTopics = [
-  {
-    to: { ko: "/search?topic=justice", en: "/search?topic=justice" },
-    title: { ko: "검찰개혁과 사법", en: "Justice and Prosecution Reform" },
-    summary: { ko: "수사권·기소권과 사법독립을 함께 봅니다", en: "Investigative power, prosecution and judicial independence" },
-  },
-  {
-    to: { ko: "/search?topic=civil-society", en: "/search?topic=civil-society" },
-    title: { ko: "시민사회와 공익", en: "Civil Society and Public Interest" },
-    summary: { ko: "시민사회의 자율성과 공익의 기준을 묻습니다", en: "Autonomy in civil society and the meaning of public interest" },
-  },
-  {
-    to: { ko: "/search?topic=markets", en: "/search?topic=markets" },
-    title: { ko: "기업과 시장", en: "Enterprise and Markets" },
-    summary: { ko: "도전과 혁신을 막는 제도와 규제를 살핍니다", en: "Institutions and rules shaping enterprise and innovation" },
-  },
-  {
-    to: { ko: "/search?topic=tax-finance", en: "/search?topic=tax-finance" },
-    title: { ko: "세금과 재정", en: "Tax and Public Finance" },
-    summary: { ko: "누가 부담하고 어디에 쓰이는지 추적합니다", en: "Who pays, who benefits and where public money goes" },
-  },
-  {
-    to: { ko: "/search?topic=legislation-rights", en: "/search?topic=legislation-rights" },
-    title: { ko: "입법과 시민 권리", en: "Legislation and Civic Rights" },
-    summary: { ko: "법안이 자유와 선택에 미칠 영향을 따집니다", en: "How proposed laws affect freedom and civic choice" },
-  },
-  {
-    to: { ko: "/search?topic=environment-energy", en: "/search?topic=environment-energy" },
-    title: { ko: "환경과 에너지", en: "Environment and Energy" },
-    summary: { ko: "과학·비용·책임의 관점에서 정책을 읽습니다", en: "Policy through evidence, cost and responsibility" },
-  },
-  {
-    to: { ko: "/search?topic=defense-security", en: "/search?topic=defense-security" },
-    title: { ko: "국방과 안보", en: "Defense and Security" },
-    summary: { ko: "정치적 명분보다 국가 역량을 먼저 봅니다", en: "National capability before political symbolism" },
-  },
-  {
-    to: { ko: "/search?topic=citizenship-democracy", en: "/search?topic=citizenship-democracy" },
-    title: { ko: "시민화와 민주주의", en: "Citizenization and Democracy" },
-    summary: { ko: "큰 국가가 아니라 스스로 서는 시민을 생각합니다", en: "Citizens who can stand on their own before a larger state" },
-  },
-  {
-    to: { ko: "/search?topic=politics-language", en: "/search?topic=politics-language" },
-    title: { ko: "정치와 시민언어", en: "Politics and Civic Language" },
-    summary: { ko: "익숙한 정치 언어의 뜻과 쓰임을 다시 묻습니다", en: "Reconsidering the language that shapes public life" },
-  },
-  {
-    to: { ko: "/search?topic=public-interest-watch", en: "/search?topic=public-interest-watch" },
-    title: { ko: "공익기관 감시", en: "Public-interest Institutions" },
-    summary: { ko: "권한·예산·성과를 공개자료로 확인합니다", en: "Reviewing authority, budgets and outcomes through public records" },
-  },
-] as const;
 
 export default function Home() {
   const { language } = useLanguage();
@@ -286,7 +234,7 @@ export default function Home() {
   useEffect(() => {
     if (recommendedTopicsPaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const interval = window.setInterval(
-      () => setRecommendedTopicPage((current) => (current + 1) % Math.ceil(recommendedTopics.length / 4)),
+      () => setRecommendedTopicPage((current) => (current + 1) % Math.ceil(topicTaxonomy.length / 4)),
       6000,
     );
     return () => window.clearInterval(interval);
@@ -314,11 +262,11 @@ export default function Home() {
   ];
 
   const visibleRecommendedTopics = Array.from({ length: 4 }, (_, index) => (
-    recommendedTopics[(recommendedTopicPage * 4 + index) % recommendedTopics.length]
+    topicTaxonomy[(recommendedTopicPage * 4 + index) % topicTaxonomy.length]
   ));
 
   const showMoreTopics = () => setRecommendedTopicPage(
-    (current) => (current + 1) % Math.ceil(recommendedTopics.length / 4),
+    (current) => (current + 1) % Math.ceil(topicTaxonomy.length / 4),
   );
 
   return (
@@ -340,12 +288,12 @@ export default function Home() {
           <div key={recommendedTopicPage} className="recommended-topic-group grid min-w-0 grid-cols-2 gap-x-2 gap-y-1 sm:grid-cols-4 sm:gap-3">
             {visibleRecommendedTopics.map((topic, index) => (
               <Link
-                key={`${recommendedTopicPage}-${topic.title.ko}-${index}`}
-                to={topic.to[language]}
+                key={`${recommendedTopicPage}-${topic.id}-${index}`}
+                to={`/search?topic=${topic.id}`}
                 className="group flex min-w-0 flex-col justify-center rounded-sm px-2.5 py-2 transition-colors hover:bg-white/45 focus-visible:bg-white/45 focus-visible:outline-none sm:px-3.5"
               >
-                <span className="truncate text-[11px] font-extrabold text-navy transition-colors group-hover:text-green-mid sm:text-[13px]">{topic.title[language]}</span>
-                <span className="mt-0.5 line-clamp-1 text-[9px] leading-4 text-charcoal/48 sm:mt-1 sm:text-[11px]">{topic.summary[language]}</span>
+                <span className="truncate text-[11px] font-extrabold text-navy transition-colors group-hover:text-green-mid sm:text-[13px]">{topic.label[language]}</span>
+                <span className="mt-0.5 line-clamp-1 text-[9px] leading-4 text-charcoal/48 sm:mt-1 sm:text-[11px]">{topic.description[language]}</span>
               </Link>
             ))}
           </div>
