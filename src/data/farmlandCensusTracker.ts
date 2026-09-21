@@ -19,14 +19,14 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     en: "Administrative screening flagged roughly 300,000 hectares—about 27 percent of the area reviewed—for possible violations. These are not confirmed violations. SEED tracks the field-review results, disposal orders, annual 25 percent enforcement charges, the Farmland Bank's capacity and the area that ultimately reaches working farmers.",
   },
   status: {
-    ko: "심층조사 진행·처분 결과 추적",
-    en: "Field review under way · Disposals tracked",
+    ko: "당정 후속조치 발표·심층조사 진행",
+    en: "Follow-up measures announced · Field review under way",
   },
   openedAt: "2026-02-24",
-  updatedAt: "2026-09-16",
+  updatedAt: "2026-09-21",
   nextCheck: {
-    ko: "심층조사를 거친 실제 위법 확정 면적, 유형별 처분의무·처분명령 건수, 농지은행 매수청구 접수와 거절 현황, 이행강제금 최초 부과 사례",
-    en: "Area confirmed in violation after field review; disposal duties and orders by category; Farmland Bank purchase requests and refusals; and the first enforcement-charge cases",
+    ko: "11월 15일까지의 임대차 특별정비 결과, 심층조사 후 실제 위법 확정 면적, 처분 유예·사후 전용 추인 특별조치법의 발의·의결, 농지은행 위탁·매입 실적",
+    en: "Results of the lease regularization period through November 15; area confirmed in violation after field review; introduction and passage of the special-act bill on deferrals and retroactive conversion approval; and Farmland Bank trust and purchase results",
   },
   heroImage: {
     src: "images/monitoring/farmland-census-tracker-hero.webp",
@@ -44,14 +44,21 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     },
   },
   sourceBasis: {
-    ko: "농림축산식품부의 조사계획·법 개정 보도자료·예산안, 국가법령정보센터의 현행 농지법과 헌법재판소 결정례, 2026년 7월 말 기본조사 결과 보도를 날짜별로 대조했습니다. 27%를 위법 확정 비율로 쓰지 않았고, 30만㏊의 의심 면적과 6,800㏊의 2027년 공급 지원 목표도 동일한 통계인 것처럼 합산하지 않았습니다.",
-    en: "This record cross-checks the Agriculture Ministry's census plan, legislative releases and budget proposal with the current Farmland Act, Constitutional Court decisions and late-July screening results. It does not treat 27 percent as a confirmed violation rate, or the 300,000 hectares flagged and the 2027 supply-support target of 6,800 hectares as directly equivalent measures.",
+    ko: "농림축산식품부의 조사계획·법 개정 보도자료·예산안과 2026년 9월 21일 당정 후속조치, 국가법령정보센터의 현행 농지법과 헌법재판소 결정례, 7월 말 기본조사 결과를 날짜별로 대조했습니다. 27%를 위법 확정 비율로 쓰지 않았고, 처분 유예와 사후 전용 추인은 아직 특별조치법 제정이 필요한 정책 방향으로 구분했습니다.",
+    en: "This record cross-checks the Agriculture Ministry's census plan, legislative releases and budget proposal, the government-party follow-up measures announced on September 21, the current Farmland Act, Constitutional Court decisions and the late-July screening results. It does not treat 27 percent as a confirmed violation rate, and distinguishes disposal deferrals and retroactive conversion approval as policy proposals that still require special legislation.",
   },
   caution: {
     ko: "27%는 행정정보 기본조사에서 추출된 위반 의심 비율입니다. 실제 위법과 처분 대상 규모는 심층조사와 소명 절차 뒤 달라질 수 있습니다. ‘4년이면 100%’는 첫 부과 뒤 평가액이 변하지 않고 매년 25%씩 네 번 부과된다는 단순 계산입니다.",
     en: "The 27 percent figure is an administrative-screening result, not a confirmed violation rate. The final area in violation or subject to disposal may change after field review. The four-year, 100 percent illustration assumes an unchanged valuation and four annual charges after the first assessment.",
   },
   keyChanges: [
+    {
+      date: "2026-09-21",
+      text: {
+        ko: "당정은 투기성·중대한 위반은 법대로 조치하되 관행적 임대차는 농지은행 위탁 시 처분을 유예하고, 경미한 불법 전용은 사후 추인하는 특별조치법을 추진하기로 했습니다.",
+        en: "The government and ruling party said speculative and serious violations would face enforcement, while customary leases could receive disposal deferrals through the Farmland Bank and minor unauthorized conversions could be regularized under proposed special legislation.",
+      },
+    },
     {
       date: "2026-07-30",
       text: {
@@ -238,6 +245,31 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-21",
+      title: {
+        ko: "관행적 임대차 처분 유예·불법 전용 양성화 방침 발표",
+        en: "Government announces deferrals for customary leases and a path to regularize minor conversions",
+      },
+      description: {
+        ko: "당정은 투기 목적의 농지 보유와 농업진흥지역의 중대한 불법 전용은 현행법에 따라 조치하되, 투기와 무관한 관행적 임대차는 농지은행에 위탁하면 처분을 유예하기로 했습니다. 임대차 특별정비 기간은 11월 15일까지 연장하고, 절차를 거치지 않은 경미한 농지 전용은 요건 심사와 농지보전부담금 부과 뒤 사후 추인하는 방안을 추진합니다. 이 조치들은 아직 특별조치법 제정이 필요한 정책 방향이며 심층조사 결과도 확정되지 않았습니다.",
+        en: "The government and ruling party said speculative holdings and serious unauthorized conversion in agricultural promotion zones would remain subject to enforcement. Customary leases unrelated to speculation could receive a disposal deferral if entrusted to the Farmland Bank. The lease regularization period was extended through November 15, and the government proposed retroactive approval for minor conversions after eligibility review and payment of farmland-preservation charges. These remain policy proposals requiring special legislation, and field-review results are not yet final.",
+      },
+      change: {
+        ko: "일률적 처분 우려에서 위반 유형별 처분·유예·정상화 체계로 정책 방향 구체화",
+        en: "Policy shifts from fears of blanket disposal toward differentiated enforcement, deferral and regularization",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "농림축산식품부", en: "Ministry of Agriculture, Food and Rural Affairs" },
+          title: { ko: "농촌의 관행적 위반은 정상화·양성화…농지 전수조사 후속조치", en: "Follow-up measures distinguish speculative violations from customary rural practices" },
+          url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782609",
+          publishedAt: "2026-09-21",
+          kind: "document",
+        },
+      ],
+    },
+    {
       date: "2026-10-01",
       title: {
         ko: "심층조사 중간 결과와 처분 규모 확인",
@@ -251,6 +283,10 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+    {
+      ko: "9월 21일 발표된 처분 유예와 경미한 불법 전용 사후 추인은 확정 시행 제도가 아니라 특별조치법 제정이 필요한 정책 방향입니다.",
+      en: "The disposal deferrals and retroactive approval for minor unauthorized conversions announced on September 21 are policy proposals requiring special legislation, not rules already in force.",
+    },
     {
       ko: "기본조사의 약 27%는 위법 확정 비율이 아니라 심층조사를 위한 의심 분류입니다.",
       en: "The roughly 27 percent figure is a screening category for field review, not a confirmed violation rate.",
@@ -274,6 +310,10 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
   ],
   questions: [
     {
+      ko: "특별조치법은 어떤 위반을 ‘관행적·경미한 위반’으로 규정하고, 투기와 구분하기 위한 증거·심사·불복 절차를 어떻게 설계합니까?",
+      en: "How will the special-act bill define customary or minor violations, and what evidence, review and appeal procedures will distinguish them from speculation?",
+    },
+    {
       ko: "매수자를 찾지 못했거나 농지은행이 매입을 거절한 경우도 처분명령 불이행으로 동일하게 처리합니까?",
       en: "Is an owner treated as noncompliant even after failing to find a buyer or being refused by the Farmland Bank?",
     },
@@ -288,6 +328,10 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
   ],
   proposals: [
     {
+      ko: "처분 유예·사후 전용 추인의 대상과 제외 기준을 법률에 구체화하고, 투기 판정의 증거와 이의신청 절차를 함께 공개합니다.",
+      en: "Define eligibility and exclusions for deferrals and retroactive approval in statute, and publish the evidence standards and appeal process used to identify speculation.",
+    },
+    {
       ko: "위반 확정·정당한 사유 인정·처분의무·처분명령·이행강제금을 단계별로 분리해 공개합니다.",
       en: "Publish separate totals for confirmed violations, legitimate-reason findings, disposal duties, disposal orders and enforcement charges.",
     },
@@ -301,6 +345,16 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     },
   ],
   currentControversies: [
+    {
+      title: {
+        ko: "처분 유예가 이미 시행되는가",
+        en: "Are the disposal deferrals already in force?",
+      },
+      description: {
+        ko: "아닙니다. 정부가 9월 21일 방향을 발표했지만 처분 유예와 사후 전용 추인의 구체적 대상·절차는 특별조치법 제정이 필요합니다. 법안 문구와 국회 심사 결과를 확인해야 합니다.",
+        en: "No. The government announced the direction on September 21, but the scope and procedure for deferrals and retroactive approval require special legislation. The bill text and legislative outcome still need to be examined.",
+      },
+    },
     {
       title: {
         ko: "27%가 실제 처분 대상인가",
@@ -333,6 +387,8 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     },
   ],
   followUpChecks: [
+    { ko: "11월 15일까지의 임대차 특별정비 신청·위탁·제외 실적", en: "Applications, Farmland Bank trusts and exclusions during the lease regularization period through November 15" },
+    { ko: "처분 유예·사후 전용 추인 특별조치법의 발의안·심사·시행 기준", en: "Bill text, review and implementation standards for the special act on deferrals and retroactive approval" },
     { ko: "심층조사 완료 면적과 실제 위법 확정 비율", en: "Area field-reviewed and final violation rate" },
     { ko: "유형별 처분의무 통지와 처분명령 건수", en: "Disposal duties and orders by violation category" },
     { ko: "이의신청·행정소송과 처분 취소 사례", en: "Appeals, administrative suits and canceled orders" },
@@ -349,6 +405,11 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
   },
   continuationEligible: true,
   sources: [
+    {
+      label: { ko: "농림축산식품부 농지 전수조사 후속조치", en: "Agriculture Ministry follow-up measures for the farmland census" },
+      url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782609",
+      note: { ko: "2026년 9월 21일 당정협의 결과·처분 유예·특별조치법 추진 방향", en: "September 21 government-party measures on disposal deferrals and proposed special legislation" },
+    },
     {
       label: { ko: "정부·여당 농지 전수조사 추진계획", en: "Government farmland census plan" },
       url: "https://www.mafra.go.kr/bbs/home/792/596131/download.do",
