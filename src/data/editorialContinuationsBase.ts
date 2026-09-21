@@ -153,6 +153,24 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
     listLabel: "All Hot Issues",
     },
   },
+  "news:lh-debt-split-power-five-merge": {
+    ko: {
+      href: "/news/lh-split-public-agency-experiment",
+      title: "정부, 17년 만에 LH 분리 추진..개발·자산관리 나눈다",
+      relationship: "LH 개편의 출발점",
+      reason: "LH 분리의 배경과 부채 배분, 공급 지연 위험을 먼저 살핀 뒤 이번 통합·분할 개편의 기준을 함께 보십시오.",
+      listHref: "/news",
+      listLabel: "핫이슈 전체 보기",
+    },
+    en: {
+      href: "/news/lh-split-public-agency-experiment",
+      title: "Government Moves to Split LH into Development and Asset Management",
+      relationship: "THE STARTING POINT FOR LH REFORM",
+      reason: "First examine the LH split's background, debt allocation and supply-delay risk, then return to the wider standard for judging this merger-and-split reform.",
+      listHref: "/news",
+      listLabel: "All Hot Issues",
+    },
+  },
   "briefing:confirmation-hearings-zero-witnesses": {
     ko: {
       href: "/monitoring/kim-seung-won-confirmation-hearing",
