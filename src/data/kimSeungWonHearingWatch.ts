@@ -14,10 +14,10 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   },
   status: { ko: "청문회 개최·후속 확인 중", en: "Hearing held · Follow-up under way" },
   openedAt: "2026-08-31",
-  updatedAt: "2026-09-21",
+  updatedAt: "2026-09-22",
   nextCheck: {
-    ko: "9월 18일 김 전 후보자와 전직 보좌진의 면담 여부·대화 내용에 대한 당사자의 추가 해명과 객관 자료, 2011년 자전거 모임 원게시물과 참석자 신원에 대한 추가 확인, 후보자 측이 예고한 AI 합성물 유포 관련 법적 조치의 실제 착수 여부, 전직 보좌진 탄원서의 청와대 수령을 뒷받침하는 문서·독립 확인과 경찰 전달 여부, 개별 의혹에 관한 고발 또는 수사 단서 확보 여부, 청와대가 밝힌 인사검증 절차 보완 검토 결과, 후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 경찰이 검찰 자료를 검토 중인 제넨셀 민원 의혹 고소 사건과 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
-    en: "Any further response or objective record concerning the reported September 18 meeting between Kim and a former aide and what was discussed; further verification of the original 2011 cycling-post record and the participants' identities; whether Kim's office follows through on threatened legal action over circulating AI-generated images; documentary or independent confirmation that the presidential office received the former aides' petitions and whether it forwards them to police; whether a complaint or investigative lead emerges from the individual allegations; the outcome of the presidential office's review of improvements to personnel vetting; the nomination and confirmation process for a successor justice minister; the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud; progress in the Genencell petition complaint, for which police are reviewing prosecution records, and the family-cooperative complaint; and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
+    ko: "9월 18일 김 전 후보자와 전직 보좌진의 면담 여부·대화 내용에 대한 당사자의 추가 해명과 객관 자료, 2011년 자전거 모임 원게시물과 참석자 신원에 대한 추가 확인, 후보자 측이 예고한 AI 합성물 유포 관련 법적 조치의 실제 착수 여부, 전직 보좌진 탄원서의 청와대 수령을 뒷받침하는 문서·독립 확인과 경찰 전달 여부, 개별 의혹에 관한 고발 또는 수사 단서 확보 여부, 전직 보좌진이 작성한 45쪽 경기도당 회계 의혹 자료의 원문·회계 증빙과 김 전 후보자·민주당 경기도당·청와대의 공식 해명, 선거관리위원회 또는 수사기관의 검증 여부, 청와대가 밝힌 인사검증 절차 보완 검토 결과, 후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 경찰이 검찰 자료를 검토 중인 제넨셀 민원 의혹 고소 사건과 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
+    en: "Any further response or objective record concerning the reported September 18 meeting between Kim and a former aide and what was discussed; further verification of the original 2011 cycling-post record and the participants' identities; whether Kim's office follows through on threatened legal action over circulating AI-generated images; documentary or independent confirmation that the presidential office received the former aides' petitions and whether it forwards them to police; whether a complaint or investigative lead emerges from the individual allegations; the full document and accounting evidence behind the former aide's 45-page compilation of alleged provincial-party accounting irregularities, official responses from Kim, the Democratic Party's Gyeonggi branch and the presidential office, and any review by the election commission or investigators; the outcome of the presidential office's review of improvements to personnel vetting; the nomination and confirmation process for a successor justice minister; the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud; progress in the Genencell petition complaint, for which police are reviewing prosecution records, and the family-cooperative complaint; and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
   },
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
@@ -36,6 +36,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "This timeline cross-checks National Assembly schedules and decisions, public statements from the nominee and both parties, and reporting based on Ministry of Food and Drug Safety records. Allegations and the nominee's rebuttals are kept separate from verified facts.",
   },
   keyChanges: [
+    {
+      date: "2026-09-21",
+      text: {
+        ko: "채널A는 김 전 후보자의 전직 보좌진이 작성한 ‘더불어민주당 경기도당 회계부정 사례집’ 45쪽 PPT를 확보했다고 보도했습니다. 자료에는 급여 일부를 별도 통장으로 돌려받아 사용했다는 의혹 등 7개 유형 35건이 담겼습니다. 작성자는 9월 17일 청와대 고위 관계자에게 텔레그램으로 보냈다고 주장했지만, 해당 관계자는 사실관계가 맞지 않고 구체적인 내용은 확인할 수 없다고 반박했습니다. 김 전 후보자 측은 입장을 내지 않았습니다. 자료의 존재와 내용은 보도로 확인됐지만 개별 사례의 회계 증빙, 위법성, 청와대 전달·보고 여부는 확인되지 않았습니다.",
+        en: "Channel A reported obtaining a 45-page presentation titled ‘Cases of Accounting Irregularities in the Democratic Party's Gyeonggi Branch,’ prepared by a former aide to Kim. It lists 35 allegations in seven categories, including a claim that part of staff salaries was returned through a separate account and used elsewhere. The author said it was sent by Telegram to a senior presidential official on September 17, while the official disputed the account as factually inaccurate and declined to confirm specifics. Kim's side did not respond. The document and its contents are established as reported material, but the accounting evidence, illegality of individual cases, and whether the presidential office received or reported it remain unverified.",
+      },
+    },
     {
       date: "2026-09-21",
       text: {
@@ -178,6 +185,32 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      date: "2026-09-21",
+      title: { ko: "전직 보좌진 작성 45쪽 경기도당 회계 의혹 자료 공개", en: "Former aide's 45-page compilation of provincial-party accounting allegations reported" },
+      description: {
+        ko: "채널A는 김 전 후보자가 경기도당 위원장이던 시기의 회계 의혹을 정리한 45쪽 PPT를 직접 확보했다고 보도했습니다. ‘더불어민주당 경기도당 회계부정 사례집’이라는 제목의 자료에는 7개 유형 35건이 적혀 있으며, 당직자 급여 일부를 신고하지 않은 통장으로 돌려받아 사용했다는 의혹과 당직자 유니폼 비용으로 보고하고 워크숍 참석자 조끼를 샀다는 의혹 등이 포함됐습니다. 작성자인 전직 보좌진은 9월 17일 청와대 고위 관계자에게 텔레그램으로 보냈고 대통령에게 보고하겠다는 답을 받았다고 주장했습니다. 해당 관계자는 사실관계가 맞지 않으며 구체적인 내용은 확인할 수 없다고 반박했고, 김 전 후보자 측은 채널A의 질의에 답하지 않았습니다. 따라서 문서의 존재와 기재 내용은 확인됐지만 개별 의혹의 회계 증빙과 위법성, 실제 전달·보고 여부는 당사자 주장과 반박이 엇갈려 아직 확정되지 않았습니다.",
+        en: "Channel A reported directly obtaining a 45-page presentation compiling accounting allegations from Kim's tenure as head of the Democratic Party's Gyeonggi branch. Titled ‘Cases of Accounting Irregularities in the Democratic Party's Gyeonggi Branch,’ it lists 35 allegations in seven categories, including claims that part of staff salaries was returned through an undeclared account and that expenses reported as staff uniforms were used for vests for workshop participants. The former aide who prepared it said it was sent by Telegram to a senior presidential official on September 17 and that the official replied it would be reported to the president. The official disputed the account as factually inaccurate and declined to confirm specifics, while Kim's side did not answer Channel A's inquiry. The document and what it alleges are therefore established as reported material, but the accounting evidence, legal significance of each claim, and actual receipt or reporting remain unresolved amid conflicting accounts.",
+      },
+      change: { ko: "탄원서와 별도로 작성된 회계 의혹 문서의 실물·구체 내용과 상반된 전달 주장을 구분해 기록", en: "Documented the separate accounting-allegation file, its contents and conflicting claims over delivery" },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "채널A", en: "Channel A" },
+          title: { ko: "[단독] ‘김승원 회계부정 의혹 자료’ 청와대에 전달 주장", en: "Former aide claims Kim accounting-allegation file was sent to presidential office" },
+          url: "https://ichannela.com/news/detail/000000551610.do",
+          publishedAt: "2026-09-21",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "뉴스1", en: "News1" },
+          title: { ko: "‘김승원 탄원서’, 대통령 기자회견 전날 전달 주장", en: "Former aide says Kim petition was delivered before presidential press conference" },
+          url: "https://www.news1.kr/politics/assembly/6298116",
+          publishedAt: "2026-09-21",
+          kind: "article",
+        },
+      ],
+    },
     {
       date: "2026-09-21",
       title: { ko: "서울경찰청, 탄원서 의혹 수사 조건과 기존 고발 4건 진행 상황 공개", en: "Seoul police outline threshold for petition inquiry and status of four existing complaints" },
@@ -944,8 +977,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       title: { ko: "전직 보좌진 탄원서의 개별 의혹은 확인됐나", en: "Have the allegations in the former aides' petitions been verified?" },
       description: {
-        ko: "KBS는 전직 보좌진 탄원서 실물을 입수했고, 채널A는 작성자에게 전달 주장을 직접 확인했다고 보도했습니다. 김승원 의원실은 청와대로부터 연락받지 않았고 제출 여부도 몰랐다면서, 보도된 소문은 사실과 다르거나 과장·오류가 있다고 반박했습니다. 9월 21일 강유정 청와대 수석대변인은 김 전 후보자의 사퇴로 인사권이 남아 있지 않고 청와대는 인사권으로 답했다고 밝혔지만 탄원서 수령 여부 자체는 확인하지 않았습니다. 이후 KBS·TV조선·매일경제는 전직 보좌진이 9월 18일 김 전 후보자를 직접 만나 탄원서 의혹을 설명하고 거취를 논의했다고 보도했습니다. 김 전 후보자는 추가 사실 확인 요청에 답하지 않았습니다. 성추행 의혹이 제기된 술자리에 동석한 김용민·장경태 의원은 당시 문제 제기가 없었고 의혹을 전혀 인지하지 못했다고 밝혔습니다. 서울경찰청장은 9월 21일 경찰이 탄원서를 아직 받지 못했고, 성추행 의혹은 구체적인 수사 단서나 고발 없이 의혹만으로 수사에 착수할 수 없다고 밝혔습니다. 문서 존재, 면담 주장과 당사자들의 반박, 청와대의 답변 범위는 확인되지만 청와대의 실제 수령 여부와 탄원서의 개별 의혹은 아직 확인되지 않았고 정식 수사 단계도 아닙니다. 면담의 정확한 대화 내용과 무마 시도 여부, 성추행·추가 음주운전·폭언·추가 청탁·회계 부정 의혹의 진위와 사퇴에 미친 영향도 독립 자료나 수사·사법 판단으로 확인되지 않았습니다.",
-        en: "KBS reported obtaining the former aides' petitions, while Channel A said it directly confirmed the delivery claim with an author. Kim's office said it had not been contacted by the presidential office and did not know whether the petitions were submitted, disputing the reported rumors as false, exaggerated or erroneous. On September 21, senior presidential spokesperson Kang Yu-jung said Kim's withdrawal left no appointment authority to exercise and that the office had answered through its personnel decision, but she did not confirm whether the petitions were received. KBS, TV Chosun and Maeil Business Newspaper subsequently reported that a former aide met Kim on September 18 to explain the petition allegations and discuss his position. Kim did not answer further requests for comment. Lawmakers Kim Yong-min and Jang Kyung-tae, who attended the gathering at which sexual misconduct is alleged, said no concern was raised at the time and that they were wholly unaware of such an incident. On September 21, the Seoul police commissioner said police had not received the petitions and could not open an investigation into the sexual-misconduct allegation on allegation alone without a concrete investigative lead or complaint. The documents, reported meeting claim, public rebuttals and scope of the presidential office's response are established as matters in the record, but actual receipt by the presidential office and the individual allegations remain unverified and have not entered a formal investigation. The precise conversation, whether Kim sought to suppress the allegations, the truth of the sexual-misconduct, additional drunk-driving, verbal-abuse, further-solicitation and accounting claims, and any role they played in the withdrawal have not been established by independent evidence, an investigation or a court.",
+        ko: "KBS는 전직 보좌진 탄원서 실물을 입수했고, 채널A는 작성자에게 전달 주장을 직접 확인했다고 보도했습니다. 채널A는 별도로 전직 보좌진이 작성한 45쪽 분량의 경기도당 회계 의혹 PPT도 확보했으며, 자료에는 7개 유형 35건의 의혹이 기재돼 있다고 보도했습니다. 작성자는 이를 청와대 고위 관계자에게 보냈다고 주장했지만 해당 관계자는 사실관계가 맞지 않는다고 반박했고, 김 전 후보자 측은 질의에 답하지 않았습니다. 김승원 의원실은 청와대로부터 연락받지 않았고 제출 여부도 몰랐다면서, 보도된 소문은 사실과 다르거나 과장·오류가 있다고 반박했습니다. 9월 21일 강유정 청와대 수석대변인은 김 전 후보자의 사퇴로 인사권이 남아 있지 않고 청와대는 인사권으로 답했다고 밝혔지만 탄원서 수령 여부 자체는 확인하지 않았습니다. 이후 KBS·TV조선·매일경제는 전직 보좌진이 9월 18일 김 전 후보자를 직접 만나 탄원서 의혹을 설명하고 거취를 논의했다고 보도했습니다. 김 전 후보자는 추가 사실 확인 요청에 답하지 않았습니다. 성추행 의혹이 제기된 술자리에 동석한 김용민·장경태 의원은 당시 문제 제기가 없었고 의혹을 전혀 인지하지 못했다고 밝혔습니다. 서울경찰청장은 9월 21일 경찰이 탄원서를 아직 받지 못했고, 성추행 의혹은 구체적인 수사 단서나 고발 없이 의혹만으로 수사에 착수할 수 없다고 밝혔습니다. 문서 존재, 면담 주장과 당사자들의 반박, 청와대의 답변 범위는 확인되지만 청와대의 실제 수령 여부와 탄원서의 개별 의혹은 아직 확인되지 않았고 정식 수사 단계도 아닙니다. 면담의 정확한 대화 내용과 무마 시도 여부, 성추행·추가 음주운전·폭언·추가 청탁·회계 부정 의혹의 진위와 사퇴에 미친 영향도 독립 자료나 수사·사법 판단으로 확인되지 않았습니다.",
+        en: "KBS reported obtaining the former aides' petitions, while Channel A said it directly confirmed the delivery claim with an author. Channel A separately reported obtaining a 45-page presentation prepared by a former aide that lists 35 allegations in seven categories concerning the Gyeonggi party branch. The author said it was sent to a senior presidential official, but the official disputed the account as factually inaccurate and Kim's side did not answer the outlet's inquiry. Kim's office said it had not been contacted by the presidential office and did not know whether the petitions were submitted, disputing the reported rumors as false, exaggerated or erroneous. On September 21, senior presidential spokesperson Kang Yu-jung said Kim's withdrawal left no appointment authority to exercise and that the office had answered through its personnel decision, but she did not confirm whether the petitions were received. KBS, TV Chosun and Maeil Business Newspaper subsequently reported that a former aide met Kim on September 18 to explain the petition allegations and discuss his position. Kim did not answer further requests for comment. Lawmakers Kim Yong-min and Jang Kyung-tae, who attended the gathering at which sexual misconduct is alleged, said no concern was raised at the time and that they were wholly unaware of such an incident. On September 21, the Seoul police commissioner said police had not received the petitions and could not open an investigation into the sexual-misconduct allegation on allegation alone without a concrete investigative lead or complaint. The documents, reported meeting claim, public rebuttals and scope of the presidential office's response are established as matters in the record, but actual receipt by the presidential office and the individual allegations remain unverified and have not entered a formal investigation. The precise conversation, whether Kim sought to suppress the allegations, the truth of the sexual-misconduct, additional drunk-driving, verbal-abuse, further-solicitation and accounting claims, and any role they played in the withdrawal have not been established by independent evidence, an investigation or a court.",
       },
     },
     {
@@ -1000,6 +1033,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "채널A — 전직 보좌진 작성 45쪽 경기도당 회계 의혹 자료와 전달 공방", en: "Channel A — Former aide's 45-page provincial-party accounting allegation file and disputed delivery" },
+      url: "https://ichannela.com/news/detail/000000551610.do",
+    },
+    {
+      label: { ko: "뉴스1 — 전직 보좌진의 탄원서 전달 시점·경위 주장", en: "News1 — Former aide's account of petition delivery timing and route" },
+      url: "https://www.news1.kr/politics/assembly/6298116",
+    },
     {
       label: { ko: "KBS 1라디오 전격시사 — 청와대의 탄원서 논란 답변·인사검증 보완 검토", en: "KBS Radio 1 Jeongyeok Sisa — Presidential response on petition controversy and review of vetting improvements" },
       url: "https://v.daum.net/v/6L3tSXSrWT",
