@@ -77,6 +77,7 @@ function AppShell() {
           <Route path="/insights/editorial" element={<EditorialDesk />} />
           <Route path="/insights/featured" element={<Insights />} />
           <Route path="/insights/legislation" element={<Insights />} />
+          <Route path="/insights/tax" element={<Insights />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/publisher-message" element={<PublisherMessage />} />
