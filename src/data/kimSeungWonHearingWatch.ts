@@ -16,8 +16,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   openedAt: "2026-08-31",
   updatedAt: "2026-09-21",
   nextCheck: {
-    ko: "9월 18일 김 전 후보자와 전직 보좌진의 면담 여부·대화 내용에 대한 당사자의 추가 해명과 객관 자료, 2011년 자전거 모임 원게시물과 참석자 신원에 대한 추가 확인, 후보자 측이 예고한 AI 합성물 유포 관련 법적 조치의 실제 착수 여부, 전직 보좌진 탄원서의 청와대 수령 여부와 개별 의혹에 대한 독립 확인·수사 착수 여부, 후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 제넨셀 민원 의혹 재수사 여부와 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
-    en: "Any further response or objective record concerning the reported September 18 meeting between Kim and a former aide and what was discussed; further verification of the original 2011 cycling-post record and the participants' identities; whether Kim's office follows through on threatened legal action over circulating AI-generated images; independent verification of whether the presidential office received the former aides' petitions and whether any investigation begins into the individual allegations; the nomination and confirmation process for a successor justice minister; the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud; the police decision on reinvestigating the Genencell petition allegation and progress in the family-cooperative complaint; and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
+    ko: "9월 18일 김 전 후보자와 전직 보좌진의 면담 여부·대화 내용에 대한 당사자의 추가 해명과 객관 자료, 2011년 자전거 모임 원게시물과 참석자 신원에 대한 추가 확인, 후보자 측이 예고한 AI 합성물 유포 관련 법적 조치의 실제 착수 여부, 전직 보좌진 탄원서의 청와대 수령·경찰 전달 여부와 개별 의혹에 관한 고발 또는 수사 단서 확보 여부, 후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 경찰이 검찰 자료를 검토 중인 제넨셀 민원 의혹 고소 사건과 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
+    en: "Any further response or objective record concerning the reported September 18 meeting between Kim and a former aide and what was discussed; further verification of the original 2011 cycling-post record and the participants' identities; whether Kim's office follows through on threatened legal action over circulating AI-generated images; whether the presidential office received or forwards the former aides' petitions to police and whether a complaint or investigative lead emerges from the individual allegations; the nomination and confirmation process for a successor justice minister; the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud; progress in the Genencell petition complaint, for which police are reviewing prosecution records, and the family-cooperative complaint; and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
   },
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
@@ -36,6 +36,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "This timeline cross-checks National Assembly schedules and decisions, public statements from the nominee and both parties, and reporting based on Ministry of Food and Drug Safety records. Allegations and the nominee's rebuttals are kept separate from verified facts.",
   },
   keyChanges: [
+    {
+      date: "2026-09-21",
+      text: {
+        ko: "고범석 서울경찰청장은 정례 기자간담회에서 전직 보좌진 탄원서에 담겼다고 보도된 성추행 의혹은 현재 의혹 제기만으로 수사에 착수할 수 없고 구체적인 단서나 고발이 필요하다고 밝혔습니다. 경찰은 해당 탄원서를 아직 받지 못했습니다. 별도로 김 전 후보자 관련 피고발 사건 4건은 영등포경찰서가 수사 중이며, 제넨셀 임상시험 승인 민원 의혹 고소 사건은 서울서부지검에서 공소장 등 일부 자료를 공유받아 기존 불기소 결정서·공개 판결문과 함께 검토하고 있습니다. 이는 경찰이 밝힌 현재 절차로, 탄원서의 개별 의혹이나 제넨셀 민원 전달의 위법성이 확인됐다는 뜻은 아닙니다.",
+        en: "Seoul Metropolitan Police Commissioner Ko Beom-seok said at a regular press briefing that police cannot open an investigation into the sexual-misconduct allegation reported in the former aides' petitions on allegation alone and would need a concrete lead or complaint. Police have not received the petitions. Separately, Yeongdeungpo Police Station is investigating four complaints involving Kim, while police handling the Genencell clinical-trial petition complaint have obtained some materials, including an indictment, from the Seoul Western District Prosecutors' Office and are reviewing them alongside the earlier non-prosecution decision and public court records. This is the procedural status described by police; it does not establish the individual petition allegations or the illegality of Kim's contact with the regulator.",
+      },
+    },
     {
       date: "2026-09-20",
       text: {
@@ -164,6 +171,32 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      date: "2026-09-21",
+      title: { ko: "서울경찰청, 탄원서 의혹 수사 조건과 기존 고발 4건 진행 상황 공개", en: "Seoul police outline threshold for petition inquiry and status of four existing complaints" },
+      description: {
+        ko: "고범석 서울경찰청장은 9월 21일 정례 기자간담회에서 전직 보좌진 탄원서에 담겼다고 보도된 성추행 의혹을 두고 의혹 제기만으로 수사하면 자의적으로 흐를 수 있어 구체적인 혐의·일시·장소·대상이나 고발 등 수사 단서가 필요하다고 밝혔습니다. 경찰은 청와대에 전달됐다는 탄원서를 아직 받지 못했습니다. 별도로 김 전 후보자 관련 피고발 사건은 모두 4건으로 영등포경찰서가 수사 중이며, 제넨셀 임상시험 승인 민원 의혹 고소 사건과 관련해서는 서울서부지검으로부터 공소장 등 일부 자료를 공유받아 불기소 결정서와 공개 판결문 등을 검토하고 있다고 설명했습니다. 이 발표는 탄원서 의혹이 아직 정식 수사 단계가 아니라는 점과 기존 고발 사건의 자료 검토가 진행 중이라는 점을 확인한 것으로, 개별 의혹이나 민원 전달의 위법성을 확정한 판단은 아닙니다.",
+        en: "At a September 21 regular press briefing, Seoul Metropolitan Police Commissioner Ko Beom-seok said that opening an investigation into the sexual-misconduct allegation reported in the former aides' petitions on allegation alone could make enforcement arbitrary. He said police would need an investigative lead such as specific conduct, time, place and target, or a formal complaint. Police have not received the petitions reportedly delivered to the presidential office. Separately, Ko said Yeongdeungpo Police Station is investigating four complaints involving Kim. In the Genencell clinical-trial petition complaint, police have received some materials, including an indictment, from the Seoul Western District Prosecutors' Office and are reviewing the earlier non-prosecution decision and public court records. The briefing establishes that the petition allegation has not entered a formal investigation and that records are being reviewed in the existing complaints; it does not determine the truth of the individual allegations or the legality of Kim's contact with the regulator.",
+      },
+      change: { ko: "탄원서 의혹은 수사 전 단계·기존 고발 4건은 수사 및 자료 검토 중으로 구분", en: "Petition allegation remains pre-investigation; four existing complaints are under investigation and records review" },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: { ko: "경찰, 김승원 성추행 의혹에 ‘의혹만 가지고 수사 착수할 수 없어’", en: "Police say allegation alone is insufficient to open Kim sexual-misconduct investigation" },
+          url: "https://www.yna.co.kr/amp/view/AKR20260921087500004",
+          publishedAt: "2026-09-21",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "뉴시스", en: "Newsis" },
+          title: { ko: "‘탄원서 의혹’ 김승원…경찰 ‘단초될 자료 있어야 수사 가능’", en: "Police say investigative lead is required in Kim petition allegation" },
+          url: "https://www.newsis.com/view/NISX20260921_0003798241",
+          publishedAt: "2026-09-21",
+          kind: "article",
+        },
+      ],
+    },
     {
       date: "2026-09-20",
       title: { ko: "사퇴 전날 전직 보좌진 면담 주장과 동석 의원들의 반박", en: "Former aide alleges pre-withdrawal meeting; lawmakers dispute awareness of misconduct" },
@@ -856,6 +889,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+    { ko: "고범석 서울경찰청장은 2026년 9월 21일 전직 보좌진 탄원서에 담겼다고 보도된 성추행 의혹은 구체적인 수사 단서나 고발 없이 의혹만으로 수사에 착수할 수 없다고 밝혔습니다. 경찰은 탄원서를 아직 받지 못했습니다. 별도로 김 전 후보자 관련 피고발 사건 4건은 영등포경찰서가 수사 중이며, 제넨셀 임상시험 승인 민원 의혹 고소 사건에서는 서울서부지검이 공유한 공소장 등 일부 자료와 불기소 결정서·공개 판결문을 검토하고 있습니다.", en: "On September 21, 2026, Seoul Metropolitan Police Commissioner Ko Beom-seok said police could not open an investigation into the sexual-misconduct allegation reported in the former aides' petitions on allegation alone without a concrete investigative lead or complaint. Police have not received the petitions. Separately, Yeongdeungpo Police Station is investigating four complaints involving Kim, and police handling the Genencell clinical-trial petition complaint are reviewing some materials shared by the Seoul Western District Prosecutors' Office, including an indictment, together with the earlier non-prosecution decision and public court records." },
     { ko: "김승원 후보자는 2026년 9월 19일 국회 소통관 기자회견에서 법무부 장관 후보자직을 자진 사퇴한다고 밝혔습니다. 지명 20일 만이자 법사위가 ‘적격’ 의견의 청문경과보고서를 채택한 지 이틀 만입니다. 청와대는 결정을 존중하고 후속 절차를 규정에 따라 진행하겠다고 밝혔습니다. 사퇴로 임명 절차는 종료됐지만 관련 의혹의 사실관계나 위법성이 확정된 것은 아닙니다.", en: "On September 19, 2026, Kim Seung-won announced at a National Assembly press conference that he was withdrawing as justice minister nominee. The decision came 20 days after nomination and two days after the committee adopted a fit-for-office confirmation report. The presidential office said it respected the decision and would proceed with follow-up steps under established rules. The withdrawal ended the appointment process but did not determine the facts or legality of the related allegations." },
     { ko: "경기남부경찰청은 세종메디칼이 제넨셀 창립자 강세찬 씨를 특정경제범죄 가중처벌법상 사기 혐의로 고소한 사건과 관련해 2026년 9월 22일 소환 조사할 계획이라고 밝혔습니다. 경찰은 6월 사건을 검찰에 송치했으나 7월 보완수사 요구를 받았습니다. 이는 112억 원 투자 피해 주장에 관한 별도 사건이며, 소환만으로 혐의가 확정된 것은 아닙니다.", en: "Gyeonggi Nambu Provincial Police said it plans to question Genencell founder Kang Se-chan on September 22, 2026 in an aggravated-fraud complaint brought by Sejong Medical. Police forwarded the case in June and prosecutors requested supplementary investigation in July. This is a separate case concerning claimed investment losses of KRW 11.2 billion, and the summons does not establish guilt." },
     { ko: "이재명 대통령은 2026년 9월 18일 기자회견에서 김 후보자 임명 여부에 관해 아직 최종 결론을 내리지 못했으며, 검증 과정의 논란과 국민 눈높이를 고려해 신중하게 결정하겠다고 밝혔습니다. 이날 임명 또는 지명 철회가 결정된 것은 아닙니다.", en: "At a September 18, 2026 press conference, President Lee Jae Myung said he had not reached a final decision on Kim's appointment and would decide carefully after considering the controversies raised during vetting and public expectations. No appointment or withdrawal was decided that day." },
@@ -877,8 +911,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       title: { ko: "전직 보좌진 탄원서의 개별 의혹은 확인됐나", en: "Have the allegations in the former aides' petitions been verified?" },
       description: {
-        ko: "KBS는 전직 보좌진 탄원서 실물을 입수했고, 채널A는 작성자에게 전달 주장을 직접 확인했다고 보도했습니다. 그러나 청와대는 인사 관련 사항이라 수령 여부를 확인하지 않았습니다. 김승원 의원실은 청와대로부터 연락받지 않았고 제출 여부도 몰랐다면서, 보도된 소문은 사실과 다르거나 과장·오류가 있다고 반박했습니다. 이후 KBS·TV조선·매일경제는 전직 보좌진이 9월 18일 김 전 후보자를 직접 만나 탄원서 의혹을 설명하고 거취를 논의했다고 보도했습니다. 김 전 후보자는 추가 사실 확인 요청에 답하지 않았습니다. 성추행 의혹이 제기된 술자리에 동석한 김용민·장경태 의원은 당시 문제 제기가 없었고 의혹을 전혀 인지하지 못했다고 밝혔습니다. 문서 존재, 면담 주장과 당사자들의 반박이 공개됐다는 사실은 확인되지만, 면담의 정확한 대화 내용과 무마 시도 여부, 성추행·추가 음주운전·폭언·추가 청탁·회계 부정 의혹의 진위와 사퇴에 미친 영향은 독립 자료나 수사·사법 판단으로 확인되지 않았습니다.",
-        en: "KBS reported obtaining the former aides' petitions, while Channel A said it directly confirmed the delivery claim with an author. The presidential office declined to confirm receipt, citing the personnel-related nature of the matter. Kim's office said it had not been contacted by the presidential office and did not know whether the petitions were submitted, disputing the reported rumors as false, exaggerated or erroneous. KBS, TV Chosun and Maeil Business Newspaper subsequently reported that a former aide met Kim on September 18 to explain the petition allegations and discuss his position. Kim did not answer further requests for comment. Lawmakers Kim Yong-min and Jang Kyung-tae, who attended the gathering at which sexual misconduct is alleged, said no concern was raised at the time and that they were wholly unaware of such an incident. The documents, reported meeting claim and public rebuttals are established as matters in the record; the precise conversation, whether Kim sought to suppress the allegations, the truth of the sexual-misconduct, additional drunk-driving, verbal-abuse, further-solicitation and accounting claims, and any role they played in the withdrawal have not been established by independent evidence, an investigation or a court.",
+        ko: "KBS는 전직 보좌진 탄원서 실물을 입수했고, 채널A는 작성자에게 전달 주장을 직접 확인했다고 보도했습니다. 그러나 청와대는 인사 관련 사항이라 수령 여부를 확인하지 않았습니다. 김승원 의원실은 청와대로부터 연락받지 않았고 제출 여부도 몰랐다면서, 보도된 소문은 사실과 다르거나 과장·오류가 있다고 반박했습니다. 이후 KBS·TV조선·매일경제는 전직 보좌진이 9월 18일 김 전 후보자를 직접 만나 탄원서 의혹을 설명하고 거취를 논의했다고 보도했습니다. 김 전 후보자는 추가 사실 확인 요청에 답하지 않았습니다. 성추행 의혹이 제기된 술자리에 동석한 김용민·장경태 의원은 당시 문제 제기가 없었고 의혹을 전혀 인지하지 못했다고 밝혔습니다. 서울경찰청장은 9월 21일 경찰이 탄원서를 아직 받지 못했고, 성추행 의혹은 구체적인 수사 단서나 고발 없이 의혹만으로 수사에 착수할 수 없다고 밝혔습니다. 문서 존재, 면담 주장과 당사자들의 반박이 공개됐다는 사실은 확인되지만, 탄원서 의혹은 아직 정식 수사 단계가 아닙니다. 면담의 정확한 대화 내용과 무마 시도 여부, 성추행·추가 음주운전·폭언·추가 청탁·회계 부정 의혹의 진위와 사퇴에 미친 영향도 독립 자료나 수사·사법 판단으로 확인되지 않았습니다.",
+        en: "KBS reported obtaining the former aides' petitions, while Channel A said it directly confirmed the delivery claim with an author. The presidential office declined to confirm receipt, citing the personnel-related nature of the matter. Kim's office said it had not been contacted by the presidential office and did not know whether the petitions were submitted, disputing the reported rumors as false, exaggerated or erroneous. KBS, TV Chosun and Maeil Business Newspaper subsequently reported that a former aide met Kim on September 18 to explain the petition allegations and discuss his position. Kim did not answer further requests for comment. Lawmakers Kim Yong-min and Jang Kyung-tae, who attended the gathering at which sexual misconduct is alleged, said no concern was raised at the time and that they were wholly unaware of such an incident. On September 21, the Seoul police commissioner said police had not received the petitions and could not open an investigation into the sexual-misconduct allegation on allegation alone without a concrete investigative lead or complaint. The documents, reported meeting claim and public rebuttals are established as matters in the record, but the petition allegations have not entered a formal investigation. The precise conversation, whether Kim sought to suppress the allegations, the truth of the sexual-misconduct, additional drunk-driving, verbal-abuse, further-solicitation and accounting claims, and any role they played in the withdrawal have not been established by independent evidence, an investigation or a court.",
       },
     },
     {
@@ -898,8 +932,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       title: { ko: "식약처 민원 전달이 어디까지 영향을 미쳤나", en: "How much influence did the petition relay have?" },
       description: {
-        ko: "후보자는 지연된 민원 절차를 확인해 달라고 했을 뿐이라고 설명합니다. 양모 씨도 신속 검토 요청은 인정하면서 위법한 특혜나 자료 은폐 요구, 후원금·전환사채의 대가성은 부인했습니다. 제넨셀 설립자 강세찬 씨는 양씨가 도움을 자청하며 김 후보자 이름을 먼저 꺼냈고, 김 후보자가 식약처장에게 보냈다는 문자 캡처를 양씨에게서 받았다고 주장했습니다. 반면 공개된 검찰 참고인 진술 보도에서 당시 식약처장 비서는 김 후보자의 문자를 청탁성으로 인식했다고 밝혔습니다. 문자 전달 경로에 관한 당사자 진술은 구체화됐지만, 서로의 설명이 수사기록·재판 증거와 일치하는지, 승인 판단에 실제 영향을 미쳤는지와 법적으로 부정한 청탁에 해당하는지는 아직 확인되지 않았습니다. 별도로 강씨는 세종메디칼의 112억 원 투자 피해 주장과 관련한 사기 사건에서 검찰의 보완수사 요구에 따라 9월 22일 경찰 소환을 앞두고 있습니다. 이 별도 사건의 혐의와 김 후보자의 민원 전달 적법성은 구분해 판단해야 합니다.",
-        en: "Kim says he only asked officials to check a delayed petition. The woman likewise acknowledged seeking an expedited review while denying unlawful favoritism, concealment of material, or a quid pro quo involving a donation or convertible-bond investment. Genencell founder Kang Se-chan claims that she volunteered to help, first raised Kim's name and later sent him a screenshot of a message said to have been sent by Kim to the regulator chief. Reporting on a prosecution witness statement says the chief's secretary regarded Kim's message as a solicitation. The parties have now offered a more detailed account of the message relay, but it remains unresolved whether their explanations match the investigative and trial evidence, whether the contact affected approval, or whether it legally constituted an improper request. Separately, Kang is scheduled for police questioning on September 22 after prosecutors requested supplementary investigation into Sejong Medical's claim of KRW 11.2 billion in investment losses. That separate fraud allegation must be assessed independently from the legality of Kim's petition relay.",
+        ko: "후보자는 지연된 민원 절차를 확인해 달라고 했을 뿐이라고 설명합니다. 양모 씨도 신속 검토 요청은 인정하면서 위법한 특혜나 자료 은폐 요구, 후원금·전환사채의 대가성은 부인했습니다. 제넨셀 설립자 강세찬 씨는 양씨가 도움을 자청하며 김 후보자 이름을 먼저 꺼냈고, 김 후보자가 식약처장에게 보냈다는 문자 캡처를 양씨에게서 받았다고 주장했습니다. 반면 공개된 검찰 참고인 진술 보도에서 당시 식약처장 비서는 김 후보자의 문자를 청탁성으로 인식했다고 밝혔습니다. 서울경찰청은 제넨셀 민원 의혹 고소 사건에서 서울서부지검으로부터 공소장 등 일부 자료를 공유받아 기존 불기소 결정서·공개 판결문과 함께 검토 중이라고 밝혔습니다. 자료 검토가 시작됐지만 서로의 설명이 수사기록·재판 증거와 일치하는지, 승인 판단에 실제 영향을 미쳤는지와 법적으로 부정한 청탁에 해당하는지는 아직 확인되지 않았습니다. 별도로 강씨는 세종메디칼의 112억 원 투자 피해 주장과 관련한 사기 사건에서 검찰의 보완수사 요구에 따라 9월 22일 경찰 소환을 앞두고 있습니다. 이 별도 사건의 혐의와 김 후보자의 민원 전달 적법성은 구분해 판단해야 합니다.",
+        en: "Kim says he only asked officials to check a delayed petition. The woman likewise acknowledged seeking an expedited review while denying unlawful favoritism, concealment of material, or a quid pro quo involving a donation or convertible-bond investment. Genencell founder Kang Se-chan claims that she volunteered to help, first raised Kim's name and later sent him a screenshot of a message said to have been sent by Kim to the regulator chief. Reporting on a prosecution witness statement says the chief's secretary regarded Kim's message as a solicitation. Seoul police say they have received some materials, including an indictment, from the Seoul Western District Prosecutors' Office in the Genencell petition complaint and are reviewing them alongside the earlier non-prosecution decision and public court records. The records review has begun, but it remains unresolved whether the parties' accounts match the investigative and trial evidence, whether the contact affected approval, or whether it legally constituted an improper request. Separately, Kang is scheduled for police questioning on September 22 after prosecutors requested supplementary investigation into Sejong Medical's claim of KRW 11.2 billion in investment losses. That separate fraud allegation must be assessed independently from the legality of Kim's petition relay.",
       },
     },
     {
@@ -933,6 +967,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "연합뉴스 — 탄원서 의혹 수사 조건·김승원 관련 고발 4건과 제넨셀 자료 검토", en: "Yonhap — Threshold for petition inquiry, four complaints involving Kim and Genencell records review" },
+      url: "https://www.yna.co.kr/amp/view/AKR20260921087500004",
+    },
+    {
+      label: { ko: "뉴시스 — 탄원서 의혹 수사 전 단계·제넨셀 민원 의혹 자료 검토", en: "Newsis — Petition allegation remains pre-investigation and Genencell records are under review" },
+      url: "https://www.newsis.com/view/NISX20260921_0003798241",
+    },
     {
       label: { ko: "KBS — 사퇴 전날 전직 보좌진 면담·무마 시도 주장", en: "KBS — Former aide alleges pre-withdrawal meeting and attempt to defuse petition claims" },
       url: "https://www.youtube.com/watch?v=5d9rmLsQG3E",
