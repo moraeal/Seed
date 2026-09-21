@@ -19,6 +19,7 @@ const ProposalLab = lazy(() => import("./pages/ProposalLab"));
 const Proposals = lazy(() => import("./pages/Proposals"));
 const Monitoring = lazy(() => import("./pages/Monitoring"));
 const PublicInterestWatchDetail = lazy(() => import("./pages/PublicInterestWatchDetail"));
+const PublicInstitutionReformTracker = lazy(() => import("./pages/PublicInstitutionReformTracker"));
 const CommunityChestResearch = lazy(() => import("./pages/CommunityChestResearch"));
 const Roadmap = lazy(() => import("./pages/Roadmap"));
 const TodayFrame = lazy(() => import("./pages/TodayFrame"));
@@ -100,6 +101,7 @@ function AppShell() {
           <Route path="/monitoring/tax/commentary/:slug" element={<TaxCommentaryDetail />} />
           <Route path="/monitoring/tax/:slug" element={<TaxPolicyDetail />} />
           <Route path="/monitoring/public-interest" element={<PublicInterestWatch />} />
+          <Route path="/monitoring/public-institution-reform-109" element={<PublicInstitutionReformTracker />} />
           <Route path="/monitoring/yeosu-world-island-expo" element={<Navigate to="/briefings/yeosu-world-island-expo" replace />} />
           <Route path="/monitoring/:slug" element={<PublicInterestWatchDetail />} />
           <Route path="/research/community-chest-of-korea" element={<CommunityChestResearch />} />

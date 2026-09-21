@@ -1,4 +1,4 @@
-import { ArrowLeft, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import ArticleContinuation from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
@@ -60,6 +60,7 @@ export default function NewsDetail() {
         <p className="border-t border-green-deep/10 bg-ivory px-5 py-4 text-xs leading-6 text-charcoal/50 sm:px-7">※ {article.video.disclaimer}</p>
       </section>}
       <SourceArticleCard news={selectedNews} ko={ko}/>
+      {article.slug === "lh-debt-split-power-five-merge" && <Link to="/monitoring/public-institution-reform-109" className="mb-10 flex items-center justify-between gap-4 border-l-4 border-gold bg-navy px-5 py-5 text-white transition hover:bg-green-deep sm:px-7"><span><span className="text-[10px] font-black tracking-[.14em] text-gold">{ko ? "연결된 시민감시" : "CONNECTED CIVIC WATCH"}</span><strong className="mt-1 block text-base leading-7">{ko ? "공공기관 109, 정말 줄어드나 — 전체 진행상황 보기" : "Will the 109-entity reduction really happen? View the full tracker"}</strong></span><ArrowRight className="shrink-0" size={19}/></Link>}
       {!isLhArticle && !isFuelPriceCapArticle && !usesSourceVideoAsBodyImage && <InteractiveFigure src={detailHeroImage.src} alt={detailHeroImage.alt} caption={detailHeroImage.caption} credit={detailHeroImage.credit} sourceUrl={detailHeroImage.sourceUrl} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]" imageClassName="aspect-[16/9] w-full object-cover" />}
 
       <div className="reading-column mt-8">
