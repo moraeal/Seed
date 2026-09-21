@@ -5,14 +5,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   organization: { ko: "김승원 법무부 장관 후보자 인사청문회", en: "Confirmation hearing of Justice Minister nominee Kim Seung-won" },
   eyebrow: { ko: "인사청문회·시민의 검증권", en: "Confirmation hearing · Citizens' right to scrutiny" },
   title: {
-    ko: "증인 없는 청문회에서 의혹은 어디까지 검증됐나",
-    en: "How far could scrutiny go in a hearing with no witnesses?",
+    ko: "사퇴로 끝난 인사 절차, 남은 수사와 의혹은 어디까지 왔나",
+    en: "The appointment ended in withdrawal. Where do the remaining inquiries stand?",
   },
   summary: {
-    ko: "김승원 법무부 장관 후보자 지명 이후 제넨셀 임상시험 승인 민원, 증인 채택 무산, 가족 협동조합 의혹과 후보자의 해명까지 흩어진 사실을 시간순으로 연결합니다. 확인된 사실과 정치권의 주장, 아직 남은 질문을 구분해 청문경과보고서와 임명 여부까지 계속 기록합니다.",
-    en: "This record connects the nomination of Justice Minister nominee Kim Seung-won, the Genencell clinical-trial petition, the failure to call witnesses, questions involving a family cooperative and the nominee's responses. It separates verified facts, political claims and unresolved questions, and will continue through the committee report and appointment decision.",
+    ko: "김승원 전 법무부 장관 후보자의 사퇴로 인사 절차는 끝났습니다. 이 페이지는 제넨셀 민원, 가족 협동조합, 전직 보좌진 탄원서와 경기도당 회계 의혹 가운데 확인된 사실과 당사자 주장, 아직 남은 수사·검증 과제를 구분해 기록합니다.",
+    en: "Kim Seung-won's withdrawal ended the appointment process. This page separates established facts, interested parties' claims and unresolved investigative questions involving the Genencell petition, the family cooperative, former aides' petitions and provincial-party accounting allegations.",
   },
-  status: { ko: "청문회 개최·후속 확인 중", en: "Hearing held · Follow-up under way" },
+  status: { ko: "후보자 사퇴·관련 수사 추적", en: "Nominee withdrawn · Related cases tracked" },
   openedAt: "2026-08-31",
   updatedAt: "2026-09-22",
   nextCheck: {
@@ -34,6 +34,32 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   sourceBasis: {
     ko: "국회 청문회 일정과 의결 기록, 후보자와 여야의 공개 발언, 식품의약품안전처 자료를 인용한 보도를 날짜별로 대조했습니다. 의혹 제기와 후보자의 반박은 확인된 사실과 분리해 기록했습니다.",
     en: "This timeline cross-checks National Assembly schedules and decisions, public statements from the nominee and both parties, and reporting based on Ministry of Food and Drug Safety records. Allegations and the nominee's rebuttals are kept separate from verified facts.",
+  },
+  displayMode: "layered",
+  snapshot: {
+    conclusion: {
+      ko: "후보자 임명 절차는 종료됐지만, 제넨셀 민원·가족 협동조합·전직 보좌진이 제기한 의혹에 관한 경찰 수사와 사실 확인은 끝나지 않았습니다.",
+      en: "The appointment process has ended, but police inquiries and fact-checking concerning the Genencell petition, the family cooperative and former aides' allegations remain unresolved.",
+    },
+    keyFacts: [
+      {
+        ko: "김승원 후보자는 9월 19일 자진 사퇴했고 청와대는 결정을 존중한다고 밝혔습니다.",
+        en: "Kim withdrew on September 19, and the presidential office said it respected his decision.",
+      },
+      {
+        ko: "김 전 후보자 관련 피고발 사건 4건은 영등포경찰서가 수사 중입니다.",
+        en: "Yeongdeungpo Police Station is investigating four complaints involving Kim.",
+      },
+      {
+        ko: "전직 보좌진의 탄원서와 45쪽 회계 의혹 자료는 존재가 확인됐지만 개별 내용의 진위와 위법성은 확정되지 않았습니다.",
+        en: "The former aides' petitions and 45-page accounting-allegation file have been reported and obtained, but the truth and legality of the individual claims remain unestablished.",
+      },
+    ],
+    tracking: [
+      { ko: "경찰의 제넨셀 민원 의혹 자료 검토와 고발 사건 처리", en: "Police review of the Genencell records and related complaints" },
+      { ko: "경기도당 회계 의혹 자료의 증빙·수사 또는 선관위 검증 여부", en: "Evidence and any police or election-commission review of the accounting allegations" },
+      { ko: "가족 협동조합 고발 사건과 전직 보좌진 탄원서의 후속 절차", en: "Follow-up in the family-cooperative complaint and former aides' petitions" },
+    ],
   },
   keyChanges: [
     {

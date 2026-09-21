@@ -45,6 +45,12 @@ export type WatchControversy = {
   description: LocalizedText;
 };
 
+export type WatchSnapshot = {
+  conclusion: LocalizedText;
+  keyFacts: LocalizedText[];
+  tracking: LocalizedText[];
+};
+
 export type WatchAuthorityMap = {
   institution: LocalizedText;
   role: LocalizedText;
@@ -93,6 +99,8 @@ export type PublicInterestWatchCase = {
     credit: LocalizedText;
   };
   keyChanges?: WatchKeyChange[];
+  displayMode?: "layered";
+  snapshot?: WatchSnapshot;
   timeline?: WatchTimelineEntry[];
   issues?: WatchIssue[];
   currentControversies?: WatchControversy[];
