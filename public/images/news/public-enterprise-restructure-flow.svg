@@ -1,23 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">Public-enterprise restructuring: split responsibility, concentrated power</title>
-  <desc id="desc">A conceptual diagram showing two housing functions separating on the left and five generation units converging into a single large power unit on the right.</desc>
-  <rect width="1200" height="630" fill="#f5f5ef"/>
-  <path d="M0 0H530V630H0Z" fill="#e9eee4"/>
-  <path d="M530 0H1200V630H530Z" fill="#e7edf0"/>
-  <path d="M530 55V575" stroke="#b8c2b5" stroke-width="3" stroke-dasharray="10 12"/>
-  <g fill="#536a57">
-    <rect x="140" y="195" width="175" height="145" rx="14"/>
-    <rect x="140" y="405" width="175" height="145" rx="14"/>
+  <title id="title">공기업 개편의 두 방향: LH는 분할, 발전 5사는 통합</title>
+  <desc id="desc">왼쪽은 하나의 LH가 개발·건설과 주거복지·자산관리로 나뉘는 흐름, 오른쪽은 발전 공기업 다섯 곳이 한국발전 하나로 모이는 흐름을 보여준다.</desc>
+  <defs>
+    <style>
+      .title { font-family: Pretendard, Arial, sans-serif; font-size: 29px; font-weight: 800; fill: #132b2f; }
+      .label { font-family: Pretendard, Arial, sans-serif; font-size: 22px; font-weight: 700; fill: #16353a; }
+      .small { font-family: Pretendard, Arial, sans-serif; font-size: 17px; font-weight: 600; fill: #48605f; }
+      .card { fill: #ffffff; stroke: #adc4be; stroke-width: 2; }
+      .arrow { fill: none; stroke: #2f7b69; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+    <marker id="arrowHead" markerWidth="12" markerHeight="12" refX="9" refY="4.5" orient="auto"><path d="M0 0L10 4.5L0 9Z" fill="#2f7b69"/></marker>
+  </defs>
+  <rect width="1200" height="630" fill="#f7f8f5"/>
+  <text x="600" y="60" text-anchor="middle" class="title">공기업 개편, 두 방향이 던지는 같은 질문</text>
+  <text x="600" y="94" text-anchor="middle" class="small">비용과 책임은 더 잘 보이는가 · 권한과 결정은 더 잘 통제되는가</text>
+
+  <rect x="48" y="126" width="515" height="448" rx="24" fill="#eaf3ee"/>
+  <text x="82" y="174" class="label">LH는 나눕니다</text>
+  <text x="82" y="202" class="small">한 기관의 서로 다른 기능을 분리</text>
+  <rect x="195" y="226" width="220" height="68" rx="15" fill="#2f7b69"/>
+  <text x="305" y="270" text-anchor="middle" style="font-family:Pretendard,Arial,sans-serif;font-size:28px;font-weight:800;fill:#fff">LH</text>
+  <path d="M305 294V330L166 330V360" class="arrow" marker-end="url(#arrowHead)"/>
+  <path d="M305 294V330L446 330V360" class="arrow" marker-end="url(#arrowHead)"/>
+  <rect x="74" y="370" width="184" height="94" rx="16" class="card"/>
+  <text x="166" y="408" text-anchor="middle" class="label">개발·건설</text>
+  <text x="166" y="435" text-anchor="middle" class="small">공급·사업 실행</text>
+  <rect x="354" y="370" width="184" height="94" rx="16" class="card"/>
+  <text x="446" y="408" text-anchor="middle" class="label">주거복지·자산관리</text>
+  <text x="446" y="435" text-anchor="middle" class="small">임대·복지 운영</text>
+  <rect x="74" y="493" width="464" height="50" rx="13" fill="#d2e5da"/>
+  <text x="306" y="526" text-anchor="middle" class="small">확인할 것: 부채와 개발수익은 어디로 이동하는가</text>
+
+  <rect x="637" y="126" width="515" height="448" rx="24" fill="#edf2f5"/>
+  <text x="671" y="174" class="label">발전 공기업 5사는 모읍니다</text>
+  <text x="671" y="202" class="small">분산된 발전 권한을 한 법인으로 통합</text>
+  <g>
+    <rect x="671" y="231" width="96" height="48" rx="12" class="card"/><text x="719" y="262" text-anchor="middle" class="small">남동</text>
+    <rect x="777" y="231" width="96" height="48" rx="12" class="card"/><text x="825" y="262" text-anchor="middle" class="small">중부</text>
+    <rect x="883" y="231" width="96" height="48" rx="12" class="card"/><text x="931" y="262" text-anchor="middle" class="small">서부</text>
+    <rect x="724" y="292" width="96" height="48" rx="12" class="card"/><text x="772" y="323" text-anchor="middle" class="small">남부</text>
+    <rect x="830" y="292" width="96" height="48" rx="12" class="card"/><text x="878" y="323" text-anchor="middle" class="small">동서</text>
   </g>
-  <path d="M315 268H425M315 478H425" stroke="#a98a42" stroke-width="14" stroke-linecap="round"/>
-  <path d="M405 238L445 268L405 298M405 448L445 478L405 508" fill="none" stroke="#a98a42" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <g fill="#607984">
-    <circle cx="675" cy="130" r="46"/><circle cx="675" cy="260" r="46"/><circle cx="675" cy="390" r="46"/><circle cx="675" cy="520" r="46"/><circle cx="820" cy="325" r="46"/>
-  </g>
-  <g stroke="#607984" stroke-width="12" stroke-linecap="round">
-    <path d="M722 130L915 265"/><path d="M722 260L915 295"/><path d="M722 390L915 355"/><path d="M722 520L915 385"/><path d="M867 325L915 325"/>
-  </g>
-  <circle cx="1015" cy="325" r="122" fill="#294a4f"/>
-  <path d="M950 325H1080M1015 260V390" stroke="#d2bc78" stroke-width="18" stroke-linecap="round"/>
-  <path d="M74 72H464M612 72H1126" stroke="#1f2c31" stroke-width="10" opacity=".35"/>
+  <path d="M719 279L832 386M825 279L832 386M931 279L832 386M772 340L832 386M878 340L832 386" class="arrow" marker-end="url(#arrowHead)"/>
+  <rect x="717" y="401" width="230" height="74" rx="17" fill="#284e5c"/>
+  <text x="832" y="433" text-anchor="middle" style="font-family:Pretendard,Arial,sans-serif;font-size:25px;font-weight:800;fill:#fff">한국발전</text>
+  <text x="832" y="459" text-anchor="middle" style="font-family:Pretendard,Arial,sans-serif;font-size:15px;font-weight:600;fill:#d9e7eb">하나의 통합 법인</text>
+  <rect x="671" y="493" width="447" height="50" rx="13" fill="#d9e6ec"/>
+  <text x="894" y="526" text-anchor="middle" class="small">확인할 것: 원가·투자·요금 결정은 더 투명해지는가</text>
 </svg>
