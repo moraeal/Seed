@@ -36,7 +36,7 @@ export const publicEnterpriseRestructureArticle: PublishableNewsArticle = {
     credit: "씨앗의 소리 AI 제작 이미지(자료사진)"
   },
   inlineImage: {
-    src: "/images/news/public-enterprise-restructure-flow.svg",
+    src: "/images/news/public-enterprise-restructure-contrast-v2.svg",
     alt: "LH 기능은 두 갈래로 나뉘고 발전 공기업 다섯 곳은 하나의 큰 법인으로 모이는 개편 방향을 표현한 도식",
     caption: "왼쪽의 분할과 오른쪽의 통합은 조직의 크기보다 비용과 권력의 흐름을 어떻게 바꾸는지로 평가해야 합니다.",
     credit: "씨앗의 소리 정리"

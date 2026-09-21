@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">LH는 하나에서 둘로, 발전 공기업은 다섯에서 하나로</title>
+  <desc id="desc">LH 분할과 발전 공기업 통합을 좌우로 비교하고, 부채와 권력의 이동을 시민이 확인해야 한다는 점을 강조한 인포그래픽이다.</desc>
+  <defs>
+    <style>
+      text { font-family: Pretendard, "Noto Sans KR", Arial, sans-serif; }
+      .ink { fill: #183438; }
+      .muted { fill: #58706f; }
+      .white { fill: #ffffff; }
+      .head { font-size: 31px; font-weight: 800; }
+      .panel-title { font-size: 25px; font-weight: 800; }
+      .big { font-size: 66px; font-weight: 900; letter-spacing: -2px; }
+      .box { font-size: 20px; font-weight: 800; }
+      .body { font-size: 17px; font-weight: 600; }
+      .small { font-size: 15px; font-weight: 650; }
+    </style>
+    <marker id="greenArrow" markerWidth="12" markerHeight="12" refX="9" refY="4.5" orient="auto"><path d="M0 0L10 4.5L0 9Z" fill="#287964"/></marker>
+    <marker id="blueArrow" markerWidth="12" markerHeight="12" refX="9" refY="4.5" orient="auto"><path d="M0 0L10 4.5L0 9Z" fill="#315f74"/></marker>
+  </defs>
+
+  <rect width="1200" height="630" fill="#f7f5ef"/>
+  <text x="600" y="52" text-anchor="middle" class="ink head">한쪽은 나누고, 다른 쪽은 합칩니다</text>
+  <text x="600" y="83" text-anchor="middle" class="muted body">공기업 개편에서 시민이 확인해야 할 것은 조직도가 아니라 비용과 권력의 이동입니다</text>
+
+  <rect x="48" y="111" width="520" height="404" rx="24" fill="#e8f1ec"/>
+  <rect x="72" y="136" width="82" height="34" rx="17" fill="#287964"/>
+  <text x="113" y="159" text-anchor="middle" class="white small">LH 분할</text>
+  <text x="308" y="213" text-anchor="middle" class="ink big">1 → 2</text>
+  <text x="308" y="244" text-anchor="middle" class="muted body">하나의 기관을 서로 다른 두 기능으로</text>
+
+  <rect x="82" y="288" width="204" height="86" rx="16" fill="#ffffff" stroke="#abc6bb" stroke-width="2"/>
+  <text x="184" y="324" text-anchor="middle" class="ink box">개발·건설</text>
+  <text x="184" y="351" text-anchor="middle" class="muted small">택지·주택 공급</text>
+  <rect x="330" y="288" width="204" height="86" rx="16" fill="#ffffff" stroke="#abc6bb" stroke-width="2"/>
+  <text x="432" y="324" text-anchor="middle" class="ink box">주거복지·자산관리</text>
+  <text x="432" y="351" text-anchor="middle" class="muted small">임대·복지 운영</text>
+  <path d="M308 249V268H184V280" fill="none" stroke="#287964" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#greenArrow)"/>
+  <path d="M308 249V268H432V280" fill="none" stroke="#287964" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#greenArrow)"/>
+
+  <rect x="82" y="400" width="452" height="79" rx="15" fill="#fff6ee" stroke="#e4a675" stroke-width="2"/>
+  <text x="102" y="431" fill="#b94f2f" class="panel-title">부채 173.7조원</text>
+  <text x="102" y="458" class="ink body">나눈 뒤 빚과 개발수익을 어디에 둘 것인가</text>
+
+  <rect x="632" y="111" width="520" height="404" rx="24" fill="#e8eef2"/>
+  <rect x="656" y="136" width="126" height="34" rx="17" fill="#315f74"/>
+  <text x="719" y="159" text-anchor="middle" class="white small">발전 5사 통합</text>
+  <text x="892" y="213" text-anchor="middle" class="ink big">5 → 1</text>
+  <text x="892" y="244" text-anchor="middle" class="muted body">분산된 설비와 의사결정을 하나의 법인으로</text>
+
+  <g class="small" text-anchor="middle">
+    <rect x="656" y="276" width="82" height="40" rx="11" fill="#fff" stroke="#aac0ca" stroke-width="2"/><text x="697" y="302" class="ink">남동</text>
+    <rect x="748" y="276" width="82" height="40" rx="11" fill="#fff" stroke="#aac0ca" stroke-width="2"/><text x="789" y="302" class="ink">중부</text>
+    <rect x="840" y="276" width="82" height="40" rx="11" fill="#fff" stroke="#aac0ca" stroke-width="2"/><text x="881" y="302" class="ink">서부</text>
+    <rect x="932" y="276" width="82" height="40" rx="11" fill="#fff" stroke="#aac0ca" stroke-width="2"/><text x="973" y="302" class="ink">남부</text>
+    <rect x="1024" y="276" width="82" height="40" rx="11" fill="#fff" stroke="#aac0ca" stroke-width="2"/><text x="1065" y="302" class="ink">동서</text>
+  </g>
+  <path d="M697 322V344M789 322V344M881 322V344M973 322V344M1065 322V344M697 344H1065M881 344V363" fill="none" stroke="#315f74" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blueArrow)"/>
+  <rect x="775" y="375" width="214" height="66" rx="16" fill="#294f60"/>
+  <text x="882" y="416" text-anchor="middle" class="white panel-title">한국발전</text>
+  <text x="892" y="475" text-anchor="middle" fill="#b84332" class="panel-title">도매 공급 60% 이상 우려</text>
+
+  <rect x="48" y="538" width="1104" height="64" rx="18" fill="#17383a"/>
+  <text x="600" y="566" text-anchor="middle" class="white box">분할은 부채를 없애지 않고, 통합은 권력을 저절로 통제하지 않습니다</text>
+  <text x="600" y="590" text-anchor="middle" fill="#d8e7e1" class="small">돈의 이동과 결정권자의 책임이 시민에게 공개되는지가 개혁의 기준입니다</text>
+</svg>
