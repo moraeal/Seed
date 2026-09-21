@@ -41,6 +41,7 @@ export default function NewsDetail() {
     : article.heroImage;
   const heroImageKey = imageKey(detailHeroImage.src);
   const inlineImageKey = imageKey(article.inlineImage.src);
+  const inlineImageIsSvg = /\.svg(?:$|[?#])/i.test(article.inlineImage.src);
   const selectedNews = !usesSourceVideoAsBodyImage && article.selectedNews.thumbnailUrl && [heroImageKey, inlineImageKey].includes(imageKey(article.selectedNews.thumbnailUrl))
     ? { ...article.selectedNews, thumbnailUrl: undefined }
     : article.selectedNews;
@@ -70,7 +71,7 @@ export default function NewsDetail() {
           {section.bullets && <ul className="mt-5 grid gap-2.5 text-base leading-7 text-charcoal/75 sm:text-[17px]">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet}`} className="flex gap-3"><span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"/><span>{bullet}</span></li>)}</ul>}
           {isFuelPriceCapArticle && index === 0 && <InteractiveFigure src={detailHeroImage.src} alt={detailHeroImage.alt} caption={detailHeroImage.caption} credit={detailHeroImage.credit} sourceUrl={detailHeroImage.sourceUrl} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_50px_rgba(23,76,58,.08)]" imageClassName="aspect-[16/9] w-full object-cover" />}
           {isLhArticle && index === Math.min(2, article.sections.length - 1) && <InteractiveFigure src={detailHeroImage.src} alt={detailHeroImage.alt} showCaption={false} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white" imageClassName="aspect-[16/9] w-full object-cover" />}
-          {showInlineImage && index === Math.min(2, article.sections.length - 1) && <InteractiveFigure src={article.inlineImage.src} alt={article.inlineImage.alt} caption={article.inlineImage.caption} credit={article.inlineImage.credit} sourceUrl={article.inlineImage.sourceUrl} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white" imageClassName={isFuelPriceCapArticle ? "aspect-[16/9] w-full bg-ivory object-contain" : "aspect-[16/10] w-full object-cover"} />}
+          {showInlineImage && index === Math.min(2, article.sections.length - 1) && <InteractiveFigure src={article.inlineImage.src} alt={article.inlineImage.alt} caption={article.inlineImage.caption} credit={article.inlineImage.credit} sourceUrl={article.inlineImage.sourceUrl} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white" imageClassName={isFuelPriceCapArticle || inlineImageIsSvg ? "block h-auto w-full bg-ivory object-contain" : "aspect-[16/10] w-full object-cover"} />}
           {index === Math.min(4, article.sections.length - 1) && additionalImages.map((image, imageIndex) => <InteractiveFigure key={`${imageIndex}-${image.src}`} src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white" imageClassName="aspect-[16/10] w-full object-cover" />)}
         </section>)}
 
