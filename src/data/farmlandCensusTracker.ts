@@ -94,11 +94,6 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
       },
       status: "confirmed",
       sources: [
-    {
-      label: { ko: "농림축산식품부 농지 전수조사 후속조치", en: "Agriculture Ministry follow-up measures for the farmland census" },
-      url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782609",
-      note: { ko: "2026년 9월 21일 당정협의 결과·처분 유예·특별조치법 추진 방향", en: "September 21 government-party measures on disposal deferrals and proposed special legislation" },
-    },
         {
           publisher: { ko: "미주중앙일보", en: "Korea Daily" },
           title: { ko: "이 대통령 ‘농지 사놓고 농사짓지 않으면 강제매각해야’…전수조사 지시", en: "President orders farmland census and calls for forced sale of unused farmland" },
@@ -270,7 +265,7 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
           title: { ko: "농촌의 관행적 위반은 정상화·양성화…농지 전수조사 후속조치", en: "Follow-up measures distinguish speculative violations from customary rural practices" },
           url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782609",
           publishedAt: "2026-09-21",
-          kind: "official",
+          kind: "document",
         },
       ],
     },
@@ -410,6 +405,11 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
   },
   continuationEligible: true,
   sources: [
+    {
+      label: { ko: "농림축산식품부 농지 전수조사 후속조치", en: "Agriculture Ministry follow-up measures for the farmland census" },
+      url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782609",
+      note: { ko: "2026년 9월 21일 당정협의 결과·처분 유예·특별조치법 추진 방향", en: "September 21 government-party measures on disposal deferrals and proposed special legislation" },
+    },
     {
       label: { ko: "정부·여당 농지 전수조사 추진계획", en: "Government farmland census plan" },
       url: "https://www.mafra.go.kr/bbs/home/792/596131/download.do",
