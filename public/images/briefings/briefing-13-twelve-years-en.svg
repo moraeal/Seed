@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800" role="img" aria-labelledby="title desc">
+  <title id="title">How Korea's social economy framework changed over twelve years</title>
+  <desc id="desc">The diagram compares the conservative-led 2014 proposal, the 2026 state support system and the missing standards of autonomy, fair competition and responsibility for losses.</desc>
+  <rect width="1400" height="800" fill="#f8f4e9"/>
+  <rect x="64" y="56" width="1272" height="688" rx="30" fill="#ffffff" stroke="#174c3a" stroke-opacity="0.13" stroke-width="2"/>
+  <text x="700" y="128" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="800" fill="#102c4c">How the framework changed over twelve years</text>
+  <text x="700" y="170" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="600" fill="#425a54">From supporting civic cooperation to a state-designed support system</text>
+
+  <rect x="110" y="230" width="350" height="350" rx="24" fill="#eef5ef" stroke="#174c3a" stroke-width="2"/>
+  <text x="145" y="280" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#b37a14">2014 · START</text>
+  <text x="145" y="319" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="800" fill="#174c3a">Conservatives</text>
+  <text x="145" y="350" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="800" fill="#174c3a">proposed it</text>
+  <line x1="145" y1="368" x2="425" y2="368" stroke="#174c3a" stroke-opacity="0.18" stroke-width="2"/>
+  <text x="145" y="410" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="650" fill="#253b35">Saenuri lawmaker Yoo Seung-min</text>
+  <text x="145" y="444" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="650" fill="#253b35">67 Saenuri Party sponsors</text>
+  <text x="145" y="500" font-family="Inter, Arial, sans-serif" font-size="18" fill="#52645f">Voluntary association and</text>
+  <text x="145" y="531" font-family="Inter, Arial, sans-serif" font-size="18" fill="#52645f">cooperation for local needs</text>
+
+  <path d="M480 405 H525" stroke="#c69a3a" stroke-width="7" stroke-linecap="round"/>
+  <path d="M514 389 L535 405 L514 421" fill="none" stroke="#c69a3a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="545" y="230" width="350" height="350" rx="24" fill="#f4f0e4" stroke="#c69a3a" stroke-width="2"/>
+  <text x="580" y="280" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#b37a14">2026 · ENACTED</text>
+  <text x="580" y="319" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800" fill="#102c4c">A state-designed</text>
+  <text x="580" y="350" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800" fill="#102c4c">support system</text>
+  <line x1="580" y1="368" x2="860" y2="368" stroke="#102c4c" stroke-opacity="0.15" stroke-width="2"/>
+  <text x="580" y="407" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="650" fill="#253b35">Presidential committee</text>
+  <text x="580" y="441" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="650" fill="#253b35">Five-year plans · policy finance</text>
+  <text x="580" y="475" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="650" fill="#253b35">Preferred purchasing · contracts</text>
+  <text x="580" y="527" font-family="Inter, Arial, sans-serif" font-size="17" fill="#52645f">More support requires more</text>
+  <text x="580" y="557" font-family="Inter, Arial, sans-serif" font-size="17" fill="#52645f">disclosure and accountability</text>
+
+  <path d="M915 405 H960" stroke="#c69a3a" stroke-width="7" stroke-linecap="round"/>
+  <path d="M949 389 L970 405 L949 421" fill="none" stroke="#c69a3a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="980" y="230" width="310" height="350" rx="24" fill="#102c4c"/>
+  <text x="1015" y="280" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#e3ba59">THE MISSING ANSWER</text>
+  <text x="1015" y="319" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800" fill="#ffffff">Beyond</text>
+  <text x="1015" y="350" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800" fill="#ffffff">opposition</text>
+  <line x1="1015" y1="368" x2="1255" y2="368" stroke="#ffffff" stroke-opacity="0.20" stroke-width="2"/>
+  <circle cx="1030" cy="405" r="7" fill="#e3ba59"/><text x="1053" y="412" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff">Civic autonomy</text>
+  <circle cx="1030" cy="450" r="7" fill="#e3ba59"/><text x="1053" y="457" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff">Fair competition</text>
+  <circle cx="1030" cy="495" r="7" fill="#e3ba59"/><text x="1053" y="502" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Responsibility</text>
+  <text x="1053" y="528" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">for losses</text>
+  <text x="1015" y="542" font-family="Inter, Arial, sans-serif" font-size="15" fill="#dce5e1">Enforceable rules, not</text>
+  <text x="1015" y="563" font-family="Inter, Arial, sans-serif" font-size="15" fill="#dce5e1">another political slogan</text>
+
+  <rect x="180" y="630" width="1040" height="70" rx="18" fill="#174c3a"/>
+  <text x="700" y="665" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800" fill="#ffffff">THE TEST: Who qualifies, who receives public money,</text>
+  <text x="700" y="691" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800" fill="#ffffff">and who pays when support fails?</text>
+</svg>

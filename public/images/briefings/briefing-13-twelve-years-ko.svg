@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800" role="img" aria-labelledby="title desc">
+  <title id="title">사회연대경제기본법, 12년 동안 무엇이 달라졌나</title>
+  <desc id="desc">2014년 보수 진영의 법안 발의, 2026년 국가 지원체계의 제정, 보수 야당이 제시했어야 할 자율성·공정경쟁·손실책임의 기준을 비교한다.</desc>
+  <rect width="1400" height="800" fill="#f8f4e9"/>
+  <rect x="64" y="56" width="1272" height="688" rx="30" fill="#ffffff" stroke="#174c3a" stroke-opacity="0.13" stroke-width="2"/>
+  <text x="700" y="128" text-anchor="middle" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="42" font-weight="800" fill="#102c4c">사회연대경제기본법, 12년 동안 무엇이 달라졌나</text>
+  <text x="700" y="170" text-anchor="middle" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="21" font-weight="600" fill="#425a54">시민의 협동을 돕자는 출발에서 국가가 설계하는 지원체계로</text>
+
+  <rect x="110" y="230" width="350" height="350" rx="24" fill="#eef5ef" stroke="#174c3a" stroke-width="2"/>
+  <text x="145" y="280" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="18" font-weight="800" fill="#b37a14">2014 · 출발</text>
+  <text x="145" y="330" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="30" font-weight="800" fill="#174c3a">보수가 먼저 제안</text>
+  <line x1="145" y1="355" x2="425" y2="355" stroke="#174c3a" stroke-opacity="0.18" stroke-width="2"/>
+  <text x="145" y="405" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="22" font-weight="650" fill="#253b35">새누리당 유승민 의원</text>
+  <text x="145" y="443" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="22" font-weight="650" fill="#253b35">새누리당 의원 67명 발의</text>
+  <text x="145" y="501" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="20" fill="#52645f">자발적 결사와 협동으로</text>
+  <text x="145" y="535" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="20" fill="#52645f">생활문제를 풀자는 구상</text>
+
+  <path d="M480 405 H525" stroke="#c69a3a" stroke-width="7" stroke-linecap="round"/>
+  <path d="M514 389 L535 405 L514 421" fill="none" stroke="#c69a3a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="545" y="230" width="350" height="350" rx="24" fill="#f4f0e4" stroke="#c69a3a" stroke-width="2"/>
+  <text x="580" y="280" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="18" font-weight="800" fill="#b37a14">2026 · 제정</text>
+  <text x="580" y="330" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="30" font-weight="800" fill="#102c4c">국가 지원체계로 확대</text>
+  <line x1="580" y1="355" x2="860" y2="355" stroke="#102c4c" stroke-opacity="0.15" stroke-width="2"/>
+  <text x="580" y="405" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="21" font-weight="650" fill="#253b35">대통령 소속 위원회</text>
+  <text x="580" y="441" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="21" font-weight="650" fill="#253b35">5년 계획 · 사회연대금융</text>
+  <text x="580" y="477" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="21" font-weight="650" fill="#253b35">우선구매 · 위탁 우선고려</text>
+  <text x="580" y="529" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="19" fill="#52645f">지원이 커질수록 선정 기준과</text>
+  <text x="580" y="560" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="19" fill="#52645f">돈의 흐름을 더 공개해야 함</text>
+
+  <path d="M915 405 H960" stroke="#c69a3a" stroke-width="7" stroke-linecap="round"/>
+  <path d="M949 389 L970 405 L949 421" fill="none" stroke="#c69a3a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="980" y="230" width="310" height="350" rx="24" fill="#102c4c"/>
+  <text x="1015" y="280" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="18" font-weight="800" fill="#e3ba59">야당의 빈칸</text>
+  <text x="1015" y="330" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="29" font-weight="800" fill="#ffffff">반대보다 필요한 것</text>
+  <line x1="1015" y1="355" x2="1255" y2="355" stroke="#ffffff" stroke-opacity="0.20" stroke-width="2"/>
+  <circle cx="1030" cy="404" r="7" fill="#e3ba59"/><text x="1053" y="412" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="22" font-weight="700" fill="#ffffff">시민의 자율성</text>
+  <circle cx="1030" cy="453" r="7" fill="#e3ba59"/><text x="1053" y="461" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="22" font-weight="700" fill="#ffffff">공정한 경쟁</text>
+  <circle cx="1030" cy="502" r="7" fill="#e3ba59"/><text x="1053" y="510" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="22" font-weight="700" fill="#ffffff">손실의 책임</text>
+  <text x="1015" y="548" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="16" fill="#dce5e1">구호가 아니라 시행 가능한</text>
+  <text x="1015" y="573" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="16" fill="#dce5e1">통제 규칙으로 답해야 합니다</text>
+
+  <rect x="180" y="630" width="1040" height="70" rx="18" fill="#174c3a"/>
+  <text x="700" y="674" text-anchor="middle" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="23" font-weight="800" fill="#ffffff">핵심 감시: 누가 인정하고, 누가 돈을 받으며, 실패 비용은 누가 지는가</text>
+</svg>

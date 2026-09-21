@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "briefing:social-solidarity-economy-law-conservative-silence": {
+    ko: {
+      href: "/briefings/social-solidarity-economy-youth-mall-lessons",
+      title: "사회연대경제기본법, 청년몰 실패 사례에서 배우자",
+      relationship: "실패 사례로 점검하기",
+      reason: "정부가 공급자와 공간을 만들어도 시민의 선택과 지속 가능한 시장까지 만들 수는 없다는 점을 청년몰 사례에서 이어서 확인합니다.",
+      listHref: "/briefings",
+      listLabel: "브리핑 전체 보기",
+    },
+    en: {
+      href: "/briefings/social-solidarity-economy-youth-mall-lessons",
+      title: "Korea's Social Economy Act: Lessons from the Youth Mall Failure",
+      relationship: "TEST IT AGAINST A FAILURE",
+      reason: "Continue with the Youth Mall case, which shows that government can create suppliers and spaces without creating durable citizen demand or a sustainable market.",
+      listHref: "/briefings",
+      listLabel: "All briefings",
+    },
+  },
   "column:wealth-crosses-borders-inheritance-tax": {
     ko: {
       href: "/columns/government-electricity-prepayment-pressure",
