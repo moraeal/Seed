@@ -44,7 +44,7 @@ export default function PublicInstitutionReformTrackerPage() {
         <div className="mt-4 grid gap-7 border-t-2 border-navy pt-5 lg:grid-cols-[1.08fr_.92fr] lg:items-center">
           <div>
             <div className="flex flex-wrap items-center gap-2.5"><span className="section-kicker">SPECIAL WATCH · PUBLIC INSTITUTIONS</span><span className="rounded-full bg-red-700 px-3 py-1 text-[11px] font-extrabold text-white">{t(publicInstitutionReformTracker.status)}</span></div>
-            <h1 className="editorial-title mt-4 text-balance text-[2.25rem] font-bold leading-[1.12] text-navy sm:text-[3.2rem]">{t(publicInstitutionReformTracker.title)}</h1>
+            <h1 className="editorial-title mt-4 text-[2.25rem] font-bold leading-[1.12] text-navy sm:text-[3.2rem]">{ko ? <><span className="block">공공기관 109,</span><span className="block">정말 줄어드나</span></> : t(publicInstitutionReformTracker.title)}</h1>
             <p className="mt-4 max-w-3xl text-[15px] leading-7 text-charcoal/68 sm:text-base sm:leading-8">{t(publicInstitutionReformTracker.summary)}</p>
             <p className="mt-5 border-l-4 border-gold pl-4 text-lg font-extrabold leading-8 text-green-deep">{ko ? "기관은 줄고, 국민 부담과 정부 권한도 줄어드는가?" : "Will institutions, public cost and government power all shrink together?"}</p>
             <div className="mt-5 flex flex-wrap items-center gap-4 text-xs text-charcoal/45"><time>{ko ? "최초 공개 2026.09.21" : "First published Sep. 21, 2026"}</time><span>{ko ? "새 사실이 확인될 때만 갱신" : "Updated only when material facts change"}</span></div>
@@ -77,14 +77,14 @@ export default function PublicInstitutionReformTrackerPage() {
 
       <section className="mt-8" aria-live="polite">
         <div className="grid gap-6">
-          {filteredTasks.map((task, index) => <article key={task.id} id={task.id} className="overflow-hidden border border-green-deep/12 bg-white shadow-[0_18px_55px_rgba(23,76,58,.07)]">
+          {filteredTasks.map((task) => <article key={task.id} id={task.id} className="overflow-hidden border border-green-deep/12 bg-white shadow-[0_18px_55px_rgba(23,76,58,.07)]">
             <div className="grid lg:grid-cols-[19rem_1fr]">
               <a href={task.media.url} target="_blank" rel="noreferrer" className="group flex min-w-0 flex-col bg-ivory" aria-label={`${t(task.media.outlet)}: ${t(task.media.title)}`}>
                 <div className="relative aspect-video overflow-hidden bg-navy lg:aspect-auto lg:min-h-[15rem]"><SafeImage src={imageSrc(task.media.thumbnailSrc)} alt={t(task.media.thumbnailAlt)} className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]"/><span className="absolute left-3 top-3 bg-navy/90 px-2.5 py-1 text-[10px] font-black tracking-[.08em] text-white">{ko ? "언론 보도" : "MEDIA REPORT"}</span></div>
                 <div className="flex flex-1 flex-col p-5"><div className="flex items-center justify-between gap-3 text-[11px] font-black text-green-deep"><span>{t(task.media.outlet)}</span><ExternalLink size={14}/></div><strong className="mt-2 text-base leading-6 text-navy group-hover:text-green-deep">{t(task.media.title)}</strong><time className="mt-auto pt-4 text-xs text-charcoal/40">{task.media.publishedAt.replace(/-/g, ".")}</time></div>
               </a>
               <div className="p-5 sm:p-7">
-                <div className="flex flex-wrap items-center gap-2"><span className="text-xs font-black text-gold">{String(index + 1).padStart(2, "0")}</span><span className="rounded-full bg-green-pale px-3 py-1 text-[11px] font-extrabold text-green-deep">{t(reformStageLabels[task.stage])}</span><span className="text-xs font-extrabold text-charcoal/45">{t(task.reformType)}</span></div>
+                <div className="flex flex-wrap items-center gap-2"><span className="text-xs font-black text-gold">{String(publicInstitutionReformTasks.findIndex((item) => item.id === task.id) + 1).padStart(2, "0")}</span><span className="rounded-full bg-green-pale px-3 py-1 text-[11px] font-extrabold text-green-deep">{t(reformStageLabels[task.stage])}</span><span className="text-xs font-extrabold text-charcoal/45">{t(task.reformType)}</span></div>
                 <h3 className="editorial-title mt-3 text-2xl font-bold leading-tight text-navy sm:text-[1.8rem]">{t(task.title)}</h3>
                 <p className="mt-3 text-sm font-semibold leading-7 text-green-deep">{t(task.institutions)}</p>
                 <dl className="mt-5 grid gap-4 sm:grid-cols-2">
