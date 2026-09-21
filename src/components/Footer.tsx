@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="grid gap-7 lg:grid-cols-[1.25fr_.75fr]">
         <div>
           <BrandLockup tone="footer" />
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-white/55">{ko ? SITE_DESCRIPTION : "An independent civic journal helping citizens judge public affairs through verified facts, context, and clear argument."}</p><a href={`mailto:${email}`} className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-gold-light">Contact: {email}<ArrowUpRight size={14}/></a>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-white/55">{ko ? SITE_DESCRIPTION : "SEED VOICE defends freedom for citizens and enterprise, scrutinizes power, and restores integrity to the public good."}</p><a href={`mailto:${email}`} className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-gold-light">Contact: {email}<ArrowUpRight size={14}/></a>
         </div>
         <div className="grid grid-cols-2 gap-6 border-t border-white/15 pt-5 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0"><div><p className="text-[10px] font-extrabold tracking-[.18em] text-white/35">READ</p><nav className="mt-3 grid gap-2 text-sm text-white/65"><Link to="/columns">{ko ? "칼럼" : "Columns"}</Link><Link to="/news">{ko ? "핫이슈" : "Hot Issues"}</Link><Link to="/briefings">{ko ? "브리핑" : "Briefings"}</Link><Link to="/monitoring">{ko ? "시민감시" : "Civic Watch"}</Link><Link to="/seed-language">{ko ? "시민언어" : "Glossary"}</Link></nav></div><div><p className="text-[10px] font-extrabold tracking-[.18em] text-white/35">ABOUT</p><nav className="mt-3 grid gap-2 text-sm text-white/65"><Link to="/about">{ko ? "소개" : "About"}</Link><Link to="/publisher-message">{ko ? "발행인 소개" : "About the Publisher"}</Link></nav></div></div>
       </div>

@@ -17,15 +17,15 @@ export const content = {
     footer: {
       title: "SEED VOICE | 씨앗의 소리",
       description:
-        "씨앗의 소리는 자유의 영역을 넓히고, 기업의 도전과 혁신을 보호하며, 국가와 시민사회의 권력을 감시하는 독립 시민저널입니다.",
+        "씨앗의 소리는 시민과 기업의 자유를 지키고, 국가와 시민사회의 권력을 감시하며, 공익을 시민의 관점에서 바로 세우는 독립 시민저널입니다.",
       contact: "Contact: seedvoicekr@gmail.com",
       location: "Seoul, South Korea",
     },
     home: {
       kicker: "CITIZENSHIP IN ACTION",
-      title: "시민과 기업의 자유를 지키는 독립 시민저널",
+      title: "시민과 기업의 자유를 지키고, 공익을 바로 세우는 독립 시민저널",
       description:
-        "씨앗의 소리는 자유의 영역을 넓히고, 기업의 도전과 혁신을 보호하며, 국가와 시민사회의 권력을 감시하는 독립 시민저널입니다.",
+        "씨앗의 소리는 시민과 기업의 자유를 지키고, 국가와 시민사회의 권력을 감시하며, 공익을 시민의 관점에서 바로 세우는 독립 시민저널입니다.",
       primary: "씨앗의 소리 소개 보기",
       secondary: "시민제안 참여하기",
       stats: [
@@ -140,15 +140,15 @@ export const content = {
     footer: {
       title: "SEED VOICE",
       description:
-        "An independent, nonpartisan civic platform advancing citizen agency, civic responsibility, and an open civil society in South Korea.",
+        "An independent civic journal defending freedom for citizens and enterprise and restoring integrity to the public good.",
       contact: "Contact: seedvoicekr@gmail.com",
       location: "Seoul, South Korea",
     },
     home: {
       kicker: "CITIZEN AGENCY · CIVIC RESPONSIBILITY · OPEN CIVIL SOCIETY",
-      title: "Helping citizens turn everyday concerns into constructive civic action.",
+      title: "Defending freedom for citizens and enterprise, and restoring integrity to the public good.",
       description:
-        "SEED VOICE is an independent, nonpartisan platform in South Korea. We help citizens understand public issues, develop practical proposals, and test solutions grounded in freedom, the rule of law, open markets, and civic responsibility.",
+        "SEED VOICE is an independent civic journal that defends freedom for citizens and enterprise, scrutinizes power in the state and civil society, and restores integrity to the public good.",
       primary: "About SEED",
       secondary: "Join Citizen Proposals",
       stats: [
