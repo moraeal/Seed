@@ -16,8 +16,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   openedAt: "2026-08-31",
   updatedAt: "2026-09-21",
   nextCheck: {
-    ko: "9월 18일 김 전 후보자와 전직 보좌진의 면담 여부·대화 내용에 대한 당사자의 추가 해명과 객관 자료, 2011년 자전거 모임 원게시물과 참석자 신원에 대한 추가 확인, 후보자 측이 예고한 AI 합성물 유포 관련 법적 조치의 실제 착수 여부, 전직 보좌진 탄원서의 청와대 수령·경찰 전달 여부와 개별 의혹에 관한 고발 또는 수사 단서 확보 여부, 후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 경찰이 검찰 자료를 검토 중인 제넨셀 민원 의혹 고소 사건과 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
-    en: "Any further response or objective record concerning the reported September 18 meeting between Kim and a former aide and what was discussed; further verification of the original 2011 cycling-post record and the participants' identities; whether Kim's office follows through on threatened legal action over circulating AI-generated images; whether the presidential office received or forwards the former aides' petitions to police and whether a complaint or investigative lead emerges from the individual allegations; the nomination and confirmation process for a successor justice minister; the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud; progress in the Genencell petition complaint, for which police are reviewing prosecution records, and the family-cooperative complaint; and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
+    ko: "9월 18일 김 전 후보자와 전직 보좌진의 면담 여부·대화 내용에 대한 당사자의 추가 해명과 객관 자료, 2011년 자전거 모임 원게시물과 참석자 신원에 대한 추가 확인, 후보자 측이 예고한 AI 합성물 유포 관련 법적 조치의 실제 착수 여부, 전직 보좌진 탄원서의 청와대 수령을 뒷받침하는 문서·독립 확인과 경찰 전달 여부, 개별 의혹에 관한 고발 또는 수사 단서 확보 여부, 청와대가 밝힌 인사검증 절차 보완 검토 결과, 후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 경찰이 검찰 자료를 검토 중인 제넨셀 민원 의혹 고소 사건과 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
+    en: "Any further response or objective record concerning the reported September 18 meeting between Kim and a former aide and what was discussed; further verification of the original 2011 cycling-post record and the participants' identities; whether Kim's office follows through on threatened legal action over circulating AI-generated images; documentary or independent confirmation that the presidential office received the former aides' petitions and whether it forwards them to police; whether a complaint or investigative lead emerges from the individual allegations; the outcome of the presidential office's review of improvements to personnel vetting; the nomination and confirmation process for a successor justice minister; the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud; progress in the Genencell petition complaint, for which police are reviewing prosecution records, and the family-cooperative complaint; and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
   },
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
@@ -36,6 +36,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "This timeline cross-checks National Assembly schedules and decisions, public statements from the nominee and both parties, and reporting based on Ministry of Food and Drug Safety records. Allegations and the nominee's rebuttals are kept separate from verified facts.",
   },
   keyChanges: [
+    {
+      date: "2026-09-21",
+      text: {
+        ko: "강유정 청와대 수석대변인은 KBS 1라디오 인터뷰에서 전직 보좌진 탄원서를 청와대가 받았는지 묻는 질문에 김 전 후보자의 사퇴로 더 이상 인사권이 남아 있지 않으며 청와대는 인사권으로 답했다고 밝혔습니다. 탄원서 수령 여부에는 답하지 않았고, 인사검증 절차에서 보완할 부분이 있는지 검토가 시작됐다고 설명했습니다. 따라서 청와대의 공식 대응 범위는 확인됐지만 탄원서 수령 여부는 여전히 미확인입니다.",
+        en: "In a KBS Radio 1 interview, senior presidential spokesperson Kang Yu-jung responded to a question about whether the presidential office received the former aides' petitions by saying that Kim's withdrawal left no appointment authority to exercise and that the office had answered through its personnel decision. She did not confirm receipt and said a review had begun into possible improvements to the personnel-vetting process. The scope of the presidential office's response is therefore confirmed, but receipt of the petitions remains unverified.",
+      },
+    },
     {
       date: "2026-09-21",
       text: {
@@ -192,6 +199,32 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
           publisher: { ko: "뉴시스", en: "Newsis" },
           title: { ko: "‘탄원서 의혹’ 김승원…경찰 ‘단초될 자료 있어야 수사 가능’", en: "Police say investigative lead is required in Kim petition allegation" },
           url: "https://www.newsis.com/view/NISX20260921_0003798241",
+          publishedAt: "2026-09-21",
+          kind: "article",
+        },
+      ],
+    },
+    {
+      date: "2026-09-21",
+      title: { ko: "청와대, 탄원서 수령 여부 답변 유보·인사검증 보완 검토", en: "Presidential office declines to confirm petition receipt and reviews personnel-vetting improvements" },
+      description: {
+        ko: "강유정 청와대 수석대변인은 9월 21일 KBS 1라디오 ‘전격시사’ 인터뷰에서 전직 보좌진 탄원서를 청와대가 받았는지 묻는 질문에, 김 전 후보자가 사퇴해 더 이상 인사권이 남아 있지 않고 청와대는 인사권으로 답했다고 밝혔습니다. 추가 의혹은 당이나 다른 차원에서 다뤄야 한다고 했으며, 탄원서 수령 여부 자체는 확인하지 않았습니다. 인사검증 체계에 관해서는 이재명 대통령이 보완할 부분을 살펴보겠다고 밝힌 시점부터 검토가 시작됐다고 설명했습니다. 이는 청와대의 직접 답변과 검토 착수를 확인한 것이지만, 탄원서가 실제 접수됐는지나 개별 의혹의 진위를 확인한 것은 아닙니다.",
+        en: "In a September 21 interview on KBS Radio 1's Jeongyeok Sisa, senior presidential spokesperson Kang Yu-jung responded to a question about whether the presidential office received the former aides' petitions by saying that Kim's withdrawal left no appointment authority to exercise and that the office had answered through its personnel decision. She said the remaining allegations should be addressed by the party or through another channel, while not confirming whether the petitions were received. On the personnel-vetting system, she said a review began when President Lee Jae Myung said shortcomings should be examined. This confirms the presidential office's direct response and the start of a review, but not receipt of the petitions or the truth of the individual allegations.",
+      },
+      change: { ko: "청와대의 공식 답변 범위와 인사검증 보완 검토 착수 확인", en: "Presidential office's response and start of personnel-vetting review confirmed" },
+      status: "response",
+      sources: [
+        {
+          publisher: { ko: "KBS 1라디오 전격시사", en: "KBS Radio 1 Jeongyeok Sisa" },
+          title: { ko: "[전격시사] 강유정 청와대 수석대변인 — 김승원 탄원서 논란 관련 답변", en: "Kang Yu-jung interview — response on controversy over petitions concerning Kim Seung-won" },
+          url: "https://v.daum.net/v/6L3tSXSrWT",
+          publishedAt: "2026-09-21",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "뉴시스", en: "Newsis" },
+          title: { ko: "靑, 김승원 탄원서 의혹에 ‘인사권으로 답 드려…나머지 이야기는 당에서 다뤄야’", en: "Presidential office says it answered Kim petition issue through appointment authority" },
+          url: "https://www.newsis.com/view/NISX20260921_0003797610",
           publishedAt: "2026-09-21",
           kind: "article",
         },
@@ -911,8 +944,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       title: { ko: "전직 보좌진 탄원서의 개별 의혹은 확인됐나", en: "Have the allegations in the former aides' petitions been verified?" },
       description: {
-        ko: "KBS는 전직 보좌진 탄원서 실물을 입수했고, 채널A는 작성자에게 전달 주장을 직접 확인했다고 보도했습니다. 그러나 청와대는 인사 관련 사항이라 수령 여부를 확인하지 않았습니다. 김승원 의원실은 청와대로부터 연락받지 않았고 제출 여부도 몰랐다면서, 보도된 소문은 사실과 다르거나 과장·오류가 있다고 반박했습니다. 이후 KBS·TV조선·매일경제는 전직 보좌진이 9월 18일 김 전 후보자를 직접 만나 탄원서 의혹을 설명하고 거취를 논의했다고 보도했습니다. 김 전 후보자는 추가 사실 확인 요청에 답하지 않았습니다. 성추행 의혹이 제기된 술자리에 동석한 김용민·장경태 의원은 당시 문제 제기가 없었고 의혹을 전혀 인지하지 못했다고 밝혔습니다. 서울경찰청장은 9월 21일 경찰이 탄원서를 아직 받지 못했고, 성추행 의혹은 구체적인 수사 단서나 고발 없이 의혹만으로 수사에 착수할 수 없다고 밝혔습니다. 문서 존재, 면담 주장과 당사자들의 반박이 공개됐다는 사실은 확인되지만, 탄원서 의혹은 아직 정식 수사 단계가 아닙니다. 면담의 정확한 대화 내용과 무마 시도 여부, 성추행·추가 음주운전·폭언·추가 청탁·회계 부정 의혹의 진위와 사퇴에 미친 영향도 독립 자료나 수사·사법 판단으로 확인되지 않았습니다.",
-        en: "KBS reported obtaining the former aides' petitions, while Channel A said it directly confirmed the delivery claim with an author. The presidential office declined to confirm receipt, citing the personnel-related nature of the matter. Kim's office said it had not been contacted by the presidential office and did not know whether the petitions were submitted, disputing the reported rumors as false, exaggerated or erroneous. KBS, TV Chosun and Maeil Business Newspaper subsequently reported that a former aide met Kim on September 18 to explain the petition allegations and discuss his position. Kim did not answer further requests for comment. Lawmakers Kim Yong-min and Jang Kyung-tae, who attended the gathering at which sexual misconduct is alleged, said no concern was raised at the time and that they were wholly unaware of such an incident. On September 21, the Seoul police commissioner said police had not received the petitions and could not open an investigation into the sexual-misconduct allegation on allegation alone without a concrete investigative lead or complaint. The documents, reported meeting claim and public rebuttals are established as matters in the record, but the petition allegations have not entered a formal investigation. The precise conversation, whether Kim sought to suppress the allegations, the truth of the sexual-misconduct, additional drunk-driving, verbal-abuse, further-solicitation and accounting claims, and any role they played in the withdrawal have not been established by independent evidence, an investigation or a court.",
+        ko: "KBS는 전직 보좌진 탄원서 실물을 입수했고, 채널A는 작성자에게 전달 주장을 직접 확인했다고 보도했습니다. 김승원 의원실은 청와대로부터 연락받지 않았고 제출 여부도 몰랐다면서, 보도된 소문은 사실과 다르거나 과장·오류가 있다고 반박했습니다. 9월 21일 강유정 청와대 수석대변인은 김 전 후보자의 사퇴로 인사권이 남아 있지 않고 청와대는 인사권으로 답했다고 밝혔지만 탄원서 수령 여부 자체는 확인하지 않았습니다. 이후 KBS·TV조선·매일경제는 전직 보좌진이 9월 18일 김 전 후보자를 직접 만나 탄원서 의혹을 설명하고 거취를 논의했다고 보도했습니다. 김 전 후보자는 추가 사실 확인 요청에 답하지 않았습니다. 성추행 의혹이 제기된 술자리에 동석한 김용민·장경태 의원은 당시 문제 제기가 없었고 의혹을 전혀 인지하지 못했다고 밝혔습니다. 서울경찰청장은 9월 21일 경찰이 탄원서를 아직 받지 못했고, 성추행 의혹은 구체적인 수사 단서나 고발 없이 의혹만으로 수사에 착수할 수 없다고 밝혔습니다. 문서 존재, 면담 주장과 당사자들의 반박, 청와대의 답변 범위는 확인되지만 청와대의 실제 수령 여부와 탄원서의 개별 의혹은 아직 확인되지 않았고 정식 수사 단계도 아닙니다. 면담의 정확한 대화 내용과 무마 시도 여부, 성추행·추가 음주운전·폭언·추가 청탁·회계 부정 의혹의 진위와 사퇴에 미친 영향도 독립 자료나 수사·사법 판단으로 확인되지 않았습니다.",
+        en: "KBS reported obtaining the former aides' petitions, while Channel A said it directly confirmed the delivery claim with an author. Kim's office said it had not been contacted by the presidential office and did not know whether the petitions were submitted, disputing the reported rumors as false, exaggerated or erroneous. On September 21, senior presidential spokesperson Kang Yu-jung said Kim's withdrawal left no appointment authority to exercise and that the office had answered through its personnel decision, but she did not confirm whether the petitions were received. KBS, TV Chosun and Maeil Business Newspaper subsequently reported that a former aide met Kim on September 18 to explain the petition allegations and discuss his position. Kim did not answer further requests for comment. Lawmakers Kim Yong-min and Jang Kyung-tae, who attended the gathering at which sexual misconduct is alleged, said no concern was raised at the time and that they were wholly unaware of such an incident. On September 21, the Seoul police commissioner said police had not received the petitions and could not open an investigation into the sexual-misconduct allegation on allegation alone without a concrete investigative lead or complaint. The documents, reported meeting claim, public rebuttals and scope of the presidential office's response are established as matters in the record, but actual receipt by the presidential office and the individual allegations remain unverified and have not entered a formal investigation. The precise conversation, whether Kim sought to suppress the allegations, the truth of the sexual-misconduct, additional drunk-driving, verbal-abuse, further-solicitation and accounting claims, and any role they played in the withdrawal have not been established by independent evidence, an investigation or a court.",
       },
     },
     {
@@ -967,6 +1000,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "KBS 1라디오 전격시사 — 청와대의 탄원서 논란 답변·인사검증 보완 검토", en: "KBS Radio 1 Jeongyeok Sisa — Presidential response on petition controversy and review of vetting improvements" },
+      url: "https://v.daum.net/v/6L3tSXSrWT",
+    },
+    {
+      label: { ko: "뉴시스 — 청와대, 탄원서 수령 여부 답변 유보·인사권으로 답변", en: "Newsis — Presidential office declines to confirm petition receipt and points to personnel decision" },
+      url: "https://www.newsis.com/view/NISX20260921_0003797610",
+    },
     {
       label: { ko: "연합뉴스 — 탄원서 의혹 수사 조건·김승원 관련 고발 4건과 제넨셀 자료 검토", en: "Yonhap — Threshold for petition inquiry, four complaints involving Kim and Genencell records review" },
       url: "https://www.yna.co.kr/amp/view/AKR20260921087500004",
