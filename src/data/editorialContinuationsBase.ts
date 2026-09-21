@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:inheritance-tax-business-continuity": {
+    ko: {
+      href: "/columns/government-electricity-prepayment-pressure",
+      title: "기업을 정부의 현금인출기로 보지 마라",
+      relationship: "세금과 기업의 자유",
+      reason: "상속세가 기업승계와 일자리에 미치는 영향을 살펴봤다면, 공기업의 재정 부담을 민간기업의 선납금으로 돌리는 정책이 기업의 자율성을 어떻게 흔드는지도 이어서 읽습니다.",
+      listHref: "/columns",
+      listLabel: "칼럼 전체 보기",
+    },
+    en: {
+      href: "/columns/government-electricity-prepayment-pressure",
+      title: "Stop Treating Companies as the Government's ATM",
+      relationship: "TAX AND BUSINESS FREEDOM",
+      reason: "After considering how inheritance tax affects succession and jobs, continue with how shifting a public utility's financing burden onto private companies can weaken business autonomy.",
+      listHref: "/columns",
+      listLabel: "All columns",
+    },
+  },
   "column:wealth-crosses-borders-inheritance-tax": {
     ko: {
       href: "/columns/government-electricity-prepayment-pressure",

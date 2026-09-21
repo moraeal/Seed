@@ -44,9 +44,9 @@ export default function SearchPage() {
   useEffect(() => setDraft(query), [query]);
 
   const items = useMemo<SearchItem[]>(() => {
-    const withTopics = (item: Omit<SearchItem, "topics">, fallbacks?: TopicId[]): SearchItem => ({
+    const withTopics = (item: Omit<SearchItem, "topics">, fallbacks?: TopicId[], explicitTopics?: TopicId[]): SearchItem => ({
       ...item,
-      topics: classifyArticleTopics(item, fallbacks),
+      topics: explicitTopics ?? classifyArticleTopics(item, fallbacks),
     });
 
     const news = getNewsNewestFirst().map((item) => localizeNewsArticle(item, language)).map((item) => ({
@@ -86,7 +86,8 @@ export default function SearchPage() {
       href: `/columns/${item.slug}`,
       imageSrc: item.heroImage.src,
       imageAlt: item.heroImage.alt,
-    })).map((item) => withTopics(item));
+      topicIds: item.topicIds,
+    })).map(({ topicIds, ...item }) => withTopics(item, undefined, topicIds));
 
     const hotIssueColumns = getHotIssueColumnsNewestFirst().map((item) => localizeColumn(item, language)).map((item) => ({
       key: `hot-issue-column-${item.slug}`,
