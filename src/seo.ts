@@ -83,6 +83,7 @@ const staticRoutes: SeoRoute[] = [
   { path: "/founding-statement", title: "왜 지금 씨앗의 소리인가 | 씨앗의 소리", description: "다수결만으로 민주주의가 완성되지 않는 이유와 법의 지배, 제한된 정부, 권력분립과 시민의 자유를 지키려는 씨앗의 소리의 취지문입니다.", type: "article", publishedAt: latestDate, lastModified: latestDate, author: "작은씨앗", section: "씨앗의 소리 취지문", image: socialImageUrl("site", "founding-statement", latestDate), imageAlt: "국회, 정부와 법원의 권력분립과 시민의 자유를 상징하는 이미지" },
   { path: "/seed-language", title: "시민언어 | 씨앗의 소리", description: "특정 진영이 독점한 시민사회의 언어를 해체하고 본래 의미를 되살려 시민의 언어로 다시 구성합니다.", type: "website", lastModified: newest(allSeedLanguageArticlesKo.map((item) => item.date)) },
   { path: "/about", title: "씨앗의 소리가 지키려는 것 | 씨앗의 소리", description: "법의 지배, 제한된 정부, 권력분립과 시민·기업의 자유를 지키며 국가와 시민사회의 권력을 감시하는 독립 시민저널 씨앗의 소리의 선언입니다.", type: "website", lastModified: latestDate },
+  { path: "/support", title: "후원하기 | 씨앗의 소리", description: "개인과 기업, 단체와 기관, 전문가가 씨앗의 소리의 독립적인 시민감시 활동을 후원하고 약정을 남길 수 있습니다.", type: "website", lastModified: latestDate },
   { path: "/publisher-message", title: "발행인 소개 | 씨앗의 소리", description: "한 사람의 질문과 판단에서 시작된 독립 시민저널 씨앗의 소리의 발행인 소개입니다.", type: "article", publishedAt: latestDate, lastModified: latestDate, author: "작은씨앗", section: "발행인 소개" },
   { path: "/search", title: "통합검색 | 씨앗의 소리", description: "씨앗의 소리의 핫이슈, 브리핑, 칼럼, 시민감시와 시민언어을 한 번에 검색합니다.", type: "website", lastModified: latestDate, noindex: true },
 ];
