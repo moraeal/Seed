@@ -15,13 +15,13 @@ export const socialSolidarityEconomyLawTranslation: BriefingTranslation = {
   author: "SEED BRIEFING",
   images: [
     {
-      alt: "Citizens planning a community project on one side of a glass partition and an administrative space with official files and a certification stamp on the other",
-      caption: "The social and solidarity economy should begin with citizens' needs and voluntary cooperation. Citizens must now scrutinize whether certification and public funding support that cooperation or make it dependent on government.",
+      alt: "Citizens hold a green safety net carrying everyday necessities while a giant official stamp descends above it",
+      caption: "Government certification and support descend over a safety net woven by citizens. The central question is whether that stamp protects voluntary cooperation or binds it to administrative selection.",
       credit: "AI-generated image by SEED VOICE",
     },
     {
-      alt: "Local residents discussing community-service maps and budgets around a table",
-      caption: "Citizen-led responses to gaps in care, transport and housing deserve protection. But an organization should not depend more on winning government programs than on citizens choosing its services.",
+      alt: "A community care worker delivers a meal and groceries to an older resident in a Korean neighborhood",
+      caption: "The value of the social economy appears in daily life, not a conference room. Relationships like this should survive through citizen trust even after a government program ends.",
       credit: "AI-generated image by SEED VOICE",
     },
     {

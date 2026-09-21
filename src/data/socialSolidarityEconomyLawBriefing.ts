@@ -20,16 +20,16 @@ export const socialSolidarityEconomyLawBriefing: Briefing = {
   featured: true,
   images: [
     {
-      src: "images/briefings/briefing-13-citizens-and-state.webp",
-      alt: "주민들이 공동체 사업을 논의하는 공간과 공문서·인증 도장이 놓인 행정 공간이 유리벽을 사이에 두고 나뉜 모습",
-      caption: "사회연대경제의 출발점은 시민의 필요와 자발적 협동입니다. 정부의 인증과 자금이 그 협동을 돕는 수단인지, 행정에 종속시키는 통로인지가 이제 시민의 감시 대상입니다.",
+      src: "images/briefings/briefing-13-civic-net-v2.webp",
+      alt: "주민들이 생활에 필요한 물품을 받친 녹색 그물을 함께 붙잡고 있고 그 위로 거대한 행정 도장이 내려오는 상징 장면",
+      caption: "시민이 함께 만든 연대의 그물 위로 정부의 인증과 지원이 내려옵니다. 그 도장이 시민의 협동을 지켜 주는 장치인지, 행정의 선택에 묶는 힘인지가 이 법의 핵심 질문입니다.",
       credit: "AI 생성 이미지 · 씨앗의 소리",
       sourceUrl: "",
     },
     {
-      src: "images/briefings/briefing-13-community-table.webp",
-      alt: "지역 주민들이 생활서비스 지도와 예산 자료를 펼쳐 놓고 함께 논의하는 현장",
-      caption: "돌봄·교통·주거처럼 시장과 정부가 놓친 문제를 주민이 함께 해결하는 일은 보호할 가치가 있습니다. 다만 조직의 생존이 시민의 선택보다 정부 사업 선정에 달려서는 안 됩니다.",
+      src: "images/briefings/briefing-13-care-delivery-v2.webp",
+      alt: "지역 돌봄 활동가가 한국의 오래된 주택가에서 홀로 사는 어르신에게 식사와 식료품을 전달하는 현장",
+      caption: "사회연대경제의 가치는 회의실이 아니라 생활 현장에서 드러납니다. 돌봄 활동가가 어르신의 안부를 확인하고 식사를 전하는 이런 관계가 행정사업이 끝난 뒤에도 시민의 신뢰 속에서 이어질 수 있어야 합니다.",
       credit: "AI 생성 이미지 · 씨앗의 소리",
       sourceUrl: "",
     },
