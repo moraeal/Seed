@@ -3,7 +3,7 @@ import type { Briefing } from "./briefings";
 export const socialSolidarityEconomyLawBriefing: Briefing = {
   slug: "social-solidarity-economy-law-conservative-silence",
   category: "씨드 시민브리핑 13",
-  title: "보수가 시작한 사회연대경제법, 보수 야당은 왜 말이 없었습니까",
+  title: "보수가 시작한 사회연대경제법, 보수 야당은 왜 말이 없나",
   subtitle: "반대 구호는 있었지만 시민의 자율·공정경쟁·재정책임을 지킬 대안은 보이지 않았습니다",
   summary: "사회연대경제기본법은 2014년 새누리당 유승민 의원과 같은 당 의원 67명의 발의에서 출발했습니다. 12년 뒤 법은 대통령 소속 위원회와 정책금융, 우선구매·공공서비스 위탁 지원을 갖춘 국가 정책체계가 됐습니다. 사회적경제를 ‘좌파 법안’이라 부르는 것만으로는 부족합니다. 보수 야당이 답했어야 할 질문은 시민의 협동을 살리면서 국가의 선별과 예산 의존을 어떻게 제한할 것인가였습니다.",
   introTitle: "이 법을 찬반 두 글자로만 보면 놓치는 것",
@@ -20,8 +20,8 @@ export const socialSolidarityEconomyLawBriefing: Briefing = {
   featured: true,
   images: [
     {
-      src: "images/briefings/briefing-13-civic-net-v2.webp",
-      alt: "주민들이 생활에 필요한 물품을 받친 녹색 그물을 함께 붙잡고 있고 그 위로 거대한 행정 도장이 내려오는 상징 장면",
+      src: "images/briefings/briefing-13-civic-net-stamp-v3.webp",
+      alt: "주민들이 생활에 필요한 물품을 받친 녹색 그물을 함께 붙잡고 있고 사회적 경제라고 새겨진 거대한 행정 도장이 그 위로 내려오는 상징 장면",
       caption: "시민이 함께 만든 연대의 그물 위로 정부의 인증과 지원이 내려옵니다. 그 도장이 시민의 협동을 지켜 주는 장치인지, 행정의 선택에 묶는 힘인지가 이 법의 핵심 질문입니다.",
       credit: "AI 생성 이미지 · 씨앗의 소리",
       sourceUrl: "",

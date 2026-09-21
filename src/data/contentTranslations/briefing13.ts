@@ -2,7 +2,7 @@ import type { BriefingTranslation } from "./types";
 
 export const socialSolidarityEconomyLawTranslation: BriefingTranslation = {
   category: "SEED BRIEFING 13",
-  title: "Conservatives Started Korea's Social Economy Act. Why Did the Conservative Opposition Have So Little to Say?",
+  title: "Conservatives Started Korea's Social Economy Act. Why Is the Conservative Opposition Silent?",
   subtitle: "There were slogans of opposition, but no clear alternative built on civic autonomy, fair competition and fiscal accountability",
   summary: "Korea's Framework Act on the Social and Solidarity Economy began with a 2014 bill led by Saenuri Party lawmaker Yoo Seung-min and sponsored by 67 lawmakers from his party. Twelve years later, it has become a national system of presidential committees, policy finance, preferential procurement and public-service contracting. Calling it a ‘left-wing bill’ is not enough. The conservative task was to protect voluntary cooperation while limiting state discretion and subsidy dependence.",
   introTitle: "What a simple yes-or-no argument misses",
@@ -15,7 +15,7 @@ export const socialSolidarityEconomyLawTranslation: BriefingTranslation = {
   author: "SEED BRIEFING",
   images: [
     {
-      alt: "Citizens hold a green safety net carrying everyday necessities while a giant official stamp descends above it",
+      alt: "Citizens hold a green safety net carrying everyday necessities while a giant official stamp engraved with the Korean words for social economy descends above it",
       caption: "Government certification and support descend over a safety net woven by citizens. The central question is whether that stamp protects voluntary cooperation or binds it to administrative selection.",
       credit: "AI-generated image by SEED VOICE",
     },
