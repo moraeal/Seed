@@ -15,18 +15,18 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     en: "How Yeosu's Island Fair grew from a KRW 24.8 billion approval to a KRW 71.3 billion event",
   },
   summary: {
-    ko: "2018년 처음 공개된 세계 섬 박람회 구상이 2021년 248억 원 규모의 정부 승인 국제행사를 거쳐 713억 원의 직접사업과 1,839억 원의 연계사업으로 확대된 과정을 기록합니다. 개막 뒤에는 관람객·사업수익·섬 교통·현장 운영과 행사 뒤 남을 시설까지 같은 페이지에서 계속 확인합니다.",
-    en: "This record follows the idea first made public in 2018 through its 2021 government approval at KRW 24.8 billion, its expansion to KRW 71.3 billion in direct spending and KRW 183.9 billion including linked projects. After opening, it tracks attendance, revenue, island transport, operations and what remains when the event ends.",
+    ko: "2018년 처음 공개된 세계 섬 박람회 구상이 2021년 248억 원 규모의 정부 승인 국제행사를 거쳐 713억 원의 직접사업과 1,839억 원의 연계사업으로 확대된 과정을 기록합니다. 개막 뒤 관람객·수익·교통·현장 운영을 확인하고, 9월 21일 예산·계약 관련 형사고발이 접수된 뒤에는 수사기관의 판단과 행사 뒤 정산까지 이어서 추적합니다.",
+    en: "This record follows the idea first made public in 2018 through its 2021 government approval at KRW 24.8 billion, its expansion to KRW 71.3 billion in direct spending and KRW 183.9 billion including linked projects. It tracks attendance, revenue, transport and operations after opening, and—following a September 21 criminal complaint over budgeting and contracts—will follow any prosecutorial action and the final settlement.",
   },
   status: {
-    ko: "박람회 운영 중·성과 확인",
-    en: "Fair under way · Outcomes being tracked",
+    ko: "박람회 운영 중·형사고발 접수·성과 확인",
+    en: "Fair under way · Criminal complaint filed · Outcomes tracked",
   },
   openedAt: "2018-09-05",
-  updatedAt: "2026-09-20",
+  updatedAt: "2026-09-22",
   nextCheck: {
-    ko: "누적 입장객을 유료·무료·단체·초청·공무출장으로 나눈 집계, 식음시설 계약금액·임대료·수수료와 지역 환원, 콘텐츠 보완 추경 7억 원의 의결·집행 내역, 신기항 셔틀 이용실적과 금오도 안의 교통 보완, 사업수익 120억 원의 달성 여부와 11월 4일 폐막 뒤 최종 정산",
-    en: "Cumulative attendance split into paid, free, group, invited and publicly funded staff visits; food-service contract value, rent, commissions and local return; approval and spending details for the KRW 700 million content supplement; use of the Shingi Port shuttle and transport within Geumodo; progress toward the KRW 12 billion revenue target; and final settlement after the November 4 closing",
+    ko: "9월 21일 고발사건의 광주지검 접수·배당과 실제 수사 착수 여부, 피고발인과 조직위의 구체적 입장, 누적 입장객을 유료·무료·단체·초청·공무출장으로 나눈 집계, 수의계약을 포함한 계약 원문과 집행액, 콘텐츠 보완 추경 7억 원의 의결·집행, 사업수익 120억 원의 달성 여부와 폐막 뒤 최종 정산",
+    en: "Receipt and assignment of the September 21 complaint at the Gwangju District Prosecutors' Office and whether a formal investigation begins; specific responses from those named and the organizing committee; cumulative attendance split into paid, free, group, invited and publicly funded staff visits; contract documents and spending including negotiated contracts; approval and use of the KRW 700 million content supplement; progress toward the KRW 12 billion revenue target; and final settlement after closing",
   },
   heroImage: {
     src: "images/monitoring/yeosu-island-expo-tracker-hero.webp",
@@ -95,6 +95,13 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       text: {
         ko: "금오도 무료셔틀 중단 뒤 신기항과 주행사장을 잇는 직행 셔틀이 대형버스 1대·하루 5회로 운행을 시작했습니다.",
         en: "After the free Geumodo shuttle stopped, one large bus began operating five direct daily trips between Shingi Port and the main venue.",
+      },
+    },
+    {
+      date: "2026-09-21",
+      text: {
+        ko: "자유통일당이 예산 편성·집행과 계약 전반을 문제 삼아 조직위·전현직 지방정부 책임자 등을 광주지검에 형사고발했습니다. 혐의는 고발인의 주장으로, 수사기관 판단은 아직 나오지 않았습니다.",
+        en: "The Liberty Unification Party filed a criminal complaint with Gwangju prosecutors against organizing-committee and current and former local-government officials over budgeting, spending and contracts. The alleged offenses remain the complainant's claims; prosecutors have not reached any findings.",
       },
     },
   ],
@@ -683,14 +690,43 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-21",
+      title: {
+        ko: "예산·계약 부실 의혹, 형사고발 단계로",
+        en: "Budget and contract allegations reach the criminal-complaint stage",
+      },
+      description: {
+        ko: "자유통일당은 박람회 예산 편성·집행과 관리 전반에 부실이 있었다며 조직위원장과 사무총장, 전현직 시장·도지사 및 관련 실무자 등을 업무상배임·지방재정법 위반·허위공문서 작성 및 행사 혐의로 광주지방검찰청에 고발했다고 밝혔습니다. 고발인은 1,839억 원 규모의 연계사업, 개막 전후 추가 예산, 공무출장 관람, 다수 수의계약 정황을 수사해야 한다고 주장했습니다. 확인된 사실은 고발이 제기됐다는 점입니다. 계약 대금 부풀리기나 통계 조작 의도 등은 고발인의 주장으로, 사건 배당·수사 착수 여부와 피고발인 측의 구체적 답변은 아직 확인되지 않았습니다.",
+        en: "The Liberty Unification Party said it filed a complaint with the Gwangju District Prosecutors' Office against the organizing committee's chair and secretary-general, current and former local leaders, and working-level officials, alleging occupational breach of trust, Local Finance Act violations and the creation and use of false official documents. It asked investigators to examine the KRW 183.9 billion linked-project total, additional funding before and after opening, publicly funded staff visits and what it described as numerous negotiated contracts. What is confirmed is the filing itself. Claims of inflated contract prices or an intent to manipulate attendance are allegations by the complainant; case assignment, a formal investigation and detailed responses from those named have not yet been confirmed.",
+      },
+      change: {
+        ko: "예산·계약 논란이 정치적 비판을 넘어 수사기관에 판단을 요구하는 절차로 이동",
+        en: "The dispute moves from political criticism to a formal request for prosecutorial review",
+      },
+      status: "pending",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: {
+            ko: "자유통일당 ‘여수세계섬박람회 예산부실 의혹’ 관련 책임자 고발",
+            en: "Party files complaint against Yeosu fair officials over alleged budget mismanagement",
+          },
+          url: "https://www.yna.co.kr/view/AKR20260921093100001",
+          publishedAt: "2026-09-21",
+          kind: "article",
+          thumbnailSrc: "https://img3.yna.co.kr/photo/yna/YH/2026/09/05/PYH2026090504050005400_P4.jpg",
+        },
+      ],
+    },
+    {
       date: "다음",
       title: {
         ko: "관람객·수익·교통 보완과 폐막 뒤 정산 확인",
         en: "Track attendance, revenue, transport fixes and final settlement",
       },
       description: {
-        ko: "유료·무료·단체·초청·공무출장을 구분한 입장객, 식음시설 계약금액·임대료·수수료와 지역 환원, 신기항 셔틀의 이용실적·수송력과 금오도 안의 대체교통, 120억 원 사업수익의 실제 달성액을 확인합니다. 11월 4일 폐막 뒤에는 직접사업과 연계사업 정산, 계약 변경, 철거·존치 시설과 유지비, 섬 주민의 생활에 남은 변화를 이어서 기록합니다.",
-        en: "The next checks are attendance split by paid, free, group, invited and publicly funded staff visits; the food-service contract value, rent, commissions and local return; use and capacity of the Shingi Port shuttle and replacement transport within Geumodo; and actual revenue against the KRW 12 billion plan. After November 4, the record will follow direct and linked project settlement, contract changes, retained and removed facilities, maintenance costs and lasting effects for island residents.",
+        ko: "9월 21일 고발사건의 접수·배당과 실제 수사 착수 여부, 피고발인과 조직위의 구체적 답변부터 확인합니다. 이어 유료·무료·단체·초청·공무출장을 구분한 입장객, 수의계약을 포함한 계약 원문과 집행액, 식음시설 수익의 지역 환원, 섬 교통, 120억 원 사업수익의 실제 달성액을 추적합니다. 11월 4일 폐막 뒤에는 직접사업과 연계사업 정산, 계약 변경, 철거·존치 시설과 유지비를 기록합니다.",
+        en: "The next checks are receipt and assignment of the September 21 complaint, whether a formal investigation begins, and specific responses from those named and the organizers. The tracker will then follow attendance split by paid, free, group, invited and publicly funded staff visits; contract documents and spending including negotiated contracts; local return from food service; island transport; and actual revenue against the KRW 12 billion plan. After November 4, it will track direct and linked project settlement, contract changes, retained and removed facilities, and maintenance costs.",
       },
       status: "pending",
     },
@@ -748,8 +784,22 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       ko: "식음시설은 공개입찰로 선정된 아모제푸드가 입점업체 선정과 관리를 총괄하며, 23개 식음료 업체 중 지역업체는 5곳입니다.",
       en: "Amoje Food, selected through public bidding, oversees vendor selection and management, and five of the fair's 23 food and beverage vendors are local.",
     },
+    {
+      ko: "자유통일당은 9월 21일 박람회 예산·계약과 운영을 문제 삼아 조직위와 전현직 지방정부 책임자 등을 광주지방검찰청에 형사고발했다고 밝혔습니다. 고발 제기와 혐의 입증은 별개의 절차입니다.",
+      en: "On September 21, the Liberty Unification Party said it filed a criminal complaint with the Gwangju District Prosecutors' Office against organizing-committee and current and former local-government officials over the fair's budgets, contracts and operations. Filing a complaint is not proof of the alleged offenses.",
+    },
   ],
   currentControversies: [
+    {
+      title: {
+        ko: "형사고발은 수사와 책임 판단으로 이어지는가",
+        en: "Will the complaint lead to an investigation and findings of responsibility?",
+      },
+      description: {
+        ko: "9월 21일 형사고발은 예산·계약 논란을 수사기관의 판단 대상으로 옮겼습니다. 그러나 고발인의 문제 제기만으로 배임, 지방재정법 위반, 허위공문서 작성이 입증되는 것은 아닙니다. 광주지검의 사건 접수·배당, 압수수색이나 계약자료 요구 등 실제 수사 착수, 피고발인과 조직위의 구체적 답변을 확인해야 합니다.",
+        en: "The September 21 complaint places the budget and contract dispute before prosecutors. The complainant's allegations alone do not establish breach of trust, violations of local-finance law or false official documents. The next evidence will be whether Gwangju prosecutors register and assign the case, take investigative steps such as seeking contract records, and receive specific responses from those named and the organizing committee.",
+      },
+    },
     {
       title: {
         ko: "248억 원 승인 뒤 커진 사업은 어디까지 다시 검증됐나",
@@ -814,8 +864,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
   questions: [],
   proposals: [],
   caution: {
-    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 콘텐츠 보완비 7억 원은 현재 추경안 편성·상임위 심사 단계이므로 확정 지출로 보거나 713억 원에 곧바로 더해서도 안 됩니다. 13일간 입장객 12만8,217명은 유료 입장객만을 뜻하지 않으며 출장 처리된 공무원 관람이 포함될 수 있습니다. 식당 원재료·가격과 공연 예산 구분은 조직위의 공식 설명이며 원가·계약 자료로 독립 검증된 수치가 아닙니다.",
-    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The proposed KRW 700 million content supplement is still at the budget-review stage, so it should not be treated as final spending or automatically added to the KRW 71.3 billion. The 13-day attendance figure of 128,217 is not a paid-admission count and may include public employees attending on official travel. The account of meal ingredients and prices and the distinction in performance funding comes from the organizers and has not been independently verified against cost and contract records.",
+    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 콘텐츠 보완비 7억 원은 현재 추경안 편성·상임위 심사 단계이므로 확정 지출로 보거나 713억 원에 곧바로 더해서도 안 됩니다. 13일간 입장객 12만8,217명은 유료 입장객만을 뜻하지 않으며 출장 처리된 공무원 관람이 포함될 수 있습니다. 9월 21일 고발에서 제기된 배임·법 위반·허위공문서와 계약대금 부풀리기·관람객 통계 조작 의도는 고발인의 주장으로, 수사기관이 확인한 사실이나 처분 결과가 아닙니다.",
+    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The proposed KRW 700 million content supplement is still at the budget-review stage, so it should not be treated as final spending or automatically added to the KRW 71.3 billion. The 13-day attendance figure of 128,217 is not a paid-admission count and may include public employees attending on official travel. Allegations in the September 21 complaint—including breach of trust, legal violations, false official documents, inflated contract prices and an intent to manipulate attendance—are the complainant's claims, not facts established or disposed of by investigators.",
   },
   sources: [
     {
@@ -890,6 +940,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     {
       label: { ko: "전남CBS 노컷뉴스 — 13일 누적 입장객과 식음시설 운영 구조", en: "Jeonnam CBS NoCut News — Thirteen-day attendance and food-service operating structure" },
       url: "https://www.nocutnews.co.kr/news/6580796",
+    },
+    {
+      label: { ko: "연합뉴스 — 예산·계약 관련 책임자 형사고발", en: "Yonhap — Criminal complaint over budgeting and contracts" },
+      url: "https://www.yna.co.kr/view/AKR20260921093100001",
     },
     {
       label: { ko: "박람회 조직위원회 — 행사 개요와 일정", en: "Organizing committee — Event overview and schedule" },
