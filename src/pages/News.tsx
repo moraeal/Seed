@@ -7,6 +7,7 @@ import { getHotIssuesNewestFirst } from "../data/hotIssues";
 import { useLanguage } from "../i18n";
 
 const INITIAL_MORE_ISSUES = 6;
+const RISING_ISSUE_KEY = "news-dmz-security-command-failure";
 
 export default function News() {
   const { language } = useLanguage();
@@ -15,7 +16,9 @@ export default function News() {
   const clusters = getHotIssueClusters(language);
   const clusteredPaths = new Set(clusters.flatMap((cluster) => cluster.items.map((item) => item.to)));
   const moreIssues = getHotIssuesNewestFirst(language).filter((item) => !clusteredPaths.has(item.to));
-  const visibleMoreIssues = showAll ? moreIssues : moreIssues.slice(0, INITIAL_MORE_ISSUES);
+  const risingIssue = moreIssues.find((item) => item.key === RISING_ISSUE_KEY) ?? moreIssues[0];
+  const remainingIssues = moreIssues.filter((item) => item.key !== risingIssue?.key);
+  const visibleMoreIssues = showAll ? remainingIssues : remainingIssues.slice(0, INITIAL_MORE_ISSUES);
 
   return (
     <section className="bg-paper pb-14 sm:pb-20">
@@ -73,36 +76,68 @@ export default function News() {
           ))}
         </div>
 
-        {moreIssues.length > 0 && (
-          <section className="mt-9 border-t-[3px] border-navy pt-5 sm:mt-12 sm:pt-6" aria-labelledby="more-hot-issues-title">
-            <header className="flex items-end justify-between gap-4">
-              <div>
-                <span className="section-kicker">MORE ISSUES</span>
-                <h2 id="more-hot-issues-title" className="editorial-title mt-1.5 text-2xl font-bold text-navy sm:text-3xl">
-                  {ko ? "더 살펴볼 이슈" : "More issues to explore"}
+        {risingIssue && (
+          <section className="mt-9 grid gap-8 border-t-[3px] border-navy pt-5 sm:mt-12 sm:pt-6 lg:grid-cols-[1.05fr_.95fr] lg:gap-10" aria-label={ko ? "새롭게 떠오르는 이슈와 더 살펴볼 이슈" : "Rising and further issues"}>
+            <div>
+              <header>
+                <span className="section-kicker">RISING ISSUE</span>
+                <h2 className="editorial-title mt-1.5 text-2xl font-bold text-navy sm:text-3xl">
+                  {ko ? "지금 막 떠오르는 이슈" : "An issue now emerging"}
                 </h2>
-              </div>
-              {moreIssues.length > INITIAL_MORE_ISSUES && (
-                <button
-                  type="button"
-                  onClick={() => setShowAll((current) => !current)}
-                  aria-expanded={showAll}
-                  className="inline-flex shrink-0 items-center gap-2 py-2 text-xs font-extrabold text-green-deep hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 sm:text-sm"
-                >
-                  {showAll ? (ko ? "간단히 보기" : "Show less") : (ko ? "전체 이슈 보기" : "View all issues")}
-                  <ArrowRight size={14} className={showAll ? "rotate-[-90deg]" : ""} aria-hidden="true" />
-                </button>
-              )}
-            </header>
+              </header>
 
-            <div className="mt-4 border-b border-green-deep/15">
-              {visibleMoreIssues.map((item) => (
-                <Link key={item.key} to={item.to} className="group grid gap-1 border-t border-green-deep/15 py-3.5 sm:grid-cols-[7.5rem_minmax(0,1fr)_6.5rem] sm:items-center sm:gap-4 sm:py-4">
-                  <span className="text-[10px] font-extrabold tracking-[.08em] text-green-deep">{item.kindLabel}</span>
-                  <h3 className="editorial-title break-keep text-[1rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{item.title}</h3>
-                  <time className="text-[11px] font-medium text-charcoal/40 sm:text-right">{item.date.replace(/-/g, ".")}</time>
-                </Link>
-              ))}
+              <Link to={risingIssue.to} className="group mt-4 block">
+                <div className="relative overflow-hidden bg-ivory">
+                  <SafeImage
+                    src={risingIssue.imageSrc}
+                    alt={risingIssue.imageAlt}
+                    referrerPolicy="no-referrer"
+                    className="aspect-[16/8.7] w-full object-cover transition duration-500 group-hover:scale-[1.018]"
+                  />
+                  <span className="absolute left-0 top-0 bg-green-deep px-3 py-2 text-[10px] font-black tracking-[.12em] text-white">{risingIssue.kindLabel}</span>
+                </div>
+                <div className="border-b border-green-deep/15 pb-4 pt-3">
+                  <div className="flex items-center justify-between gap-3 text-[11px] font-semibold text-charcoal/42">
+                    <span>{ko ? "새로 주목할 흐름" : "NEWLY EMERGING"}</span>
+                    <time>{risingIssue.date.replace(/-/g, ".")}</time>
+                  </div>
+                  <h3 className="editorial-title mt-2 break-keep text-[1.35rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.65rem]">{risingIssue.title}</h3>
+                  <p className="mt-2 line-clamp-3 text-[13px] leading-6 text-charcoal/60 sm:text-sm sm:leading-7">{risingIssue.summary}</p>
+                  <span className="mt-3 inline-flex items-center gap-2 text-xs font-extrabold text-green-deep">{ko ? "이슈 읽기" : "Read issue"}<ArrowRight size={14} className="transition-transform group-hover:translate-x-1" aria-hidden="true"/></span>
+                </div>
+              </Link>
+            </div>
+
+            <div>
+              <header className="flex items-end justify-between gap-4">
+                <div>
+                  <span className="section-kicker">MORE ISSUES</span>
+                  <h2 id="more-hot-issues-title" className="editorial-title mt-1.5 text-2xl font-bold text-navy sm:text-3xl">
+                    {ko ? "더 살펴볼 이슈" : "More issues to explore"}
+                  </h2>
+                </div>
+                {remainingIssues.length > INITIAL_MORE_ISSUES && (
+                  <button
+                    type="button"
+                    onClick={() => setShowAll((current) => !current)}
+                    aria-expanded={showAll}
+                    className="inline-flex shrink-0 items-center gap-2 py-2 text-xs font-extrabold text-green-deep hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 sm:text-sm"
+                  >
+                    {showAll ? (ko ? "간단히 보기" : "Show less") : (ko ? "전체 보기" : "View all")}
+                    <ArrowRight size={14} className={showAll ? "rotate-[-90deg]" : ""} aria-hidden="true" />
+                  </button>
+                )}
+              </header>
+
+              <div className="mt-4 border-b border-green-deep/15">
+                {visibleMoreIssues.map((item) => (
+                  <Link key={item.key} to={item.to} className="group grid gap-1 border-t border-green-deep/15 py-3.5 sm:grid-cols-[6.5rem_minmax(0,1fr)_5.8rem] sm:items-center sm:gap-3 sm:py-4">
+                    <span className="text-[10px] font-extrabold tracking-[.08em] text-green-deep">{item.kindLabel}</span>
+                    <h3 className="editorial-title break-keep text-[1rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.05rem]">{item.title}</h3>
+                    <time className="text-[11px] font-medium text-charcoal/40 sm:text-right">{item.date.replace(/-/g, ".")}</time>
+                  </Link>
+                ))}
+              </div>
             </div>
           </section>
         )}
