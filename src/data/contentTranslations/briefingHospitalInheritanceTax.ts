@@ -15,7 +15,7 @@ export const hospitalInheritanceTaxTranslation: BriefingTranslation = {
   author: "SEED NEWS BRIEFING",
   images: [
     {
-      src: "images/briefings/hospital-inheritance-freedom-ai.png",
+      src: "images/briefings/hospital-inheritance-freedom-ai.webp",
       alt: "An older physician handing hospital keys to a younger physician in a maternity-hospital corridor, with tax papers and a calculator in the foreground",
       caption: "Succession is not simply the transfer of a building. It carries forward medical facilities, an organization, jobs and services. This AI-generated image visualizes the issue examined in this briefing.",
       credit: "AI-generated image · SEED VOICE",

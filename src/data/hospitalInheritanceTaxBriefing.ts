@@ -20,7 +20,7 @@ export const hospitalInheritanceTaxBriefing: Briefing = {
   homeBriefingLeadEligible: true,
   images: [
     {
-      src: "images/briefings/hospital-inheritance-freedom-ai.png",
+      src: "images/briefings/hospital-inheritance-freedom-ai.webp",
       alt: "분만병원 복도에서 고령의 의사가 젊은 의사에게 열쇠를 건네고 앞에는 세금 서류와 계산기가 놓인 모습",
       caption: "병원 승계는 건물 한 채를 넘기는 일이 아닙니다. 의료시설과 조직, 고용과 서비스를 다음 세대로 이어가는 일입니다. 기사의 문제의식을 시각화한 AI 생성 이미지입니다.",
       credit: "씨앗의 소리 AI 생성 이미지",
