@@ -293,6 +293,25 @@ const publicLanguageContinuation: Record<Language, EditorialContinuation> = {
   },
 };
 
+const unificationLanguageContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/seed-language/freedom-as-citizen-agency",
+    title: "자유는 방임이 아니라, 스스로 설 수 있는 힘이다",
+    relationship: "통일과 자유",
+    reason: "통일을 자유의 영토를 넓히는 일로 보았다면, 씨앗이 말하는 자유가 시민을 어떻게 삶의 주체로 세우는지 이어서 살펴봅니다.",
+    listHref: "/seed-language",
+    listLabel: "시민언어 전체 보기",
+  },
+  en: {
+    href: "/seed-language/freedom-as-citizen-agency",
+    title: "Freedom Is Not Neglect. It Is What Makes Citizens Agents",
+    relationship: "UNIFICATION AND FREEDOM",
+    reason: "If unification should expand the realm of freedom, continue with how SEED defines the freedom that makes citizens agents in their own lives.",
+    listHref: "/seed-language",
+    listLabel: "All Glossary articles",
+  },
+};
+
 const skHynixHackathonContinuation: Record<Language, EditorialContinuation> = {
   ko: {
     href: "/briefings/social-economy-fair-competition",
@@ -346,10 +365,12 @@ const isFukushimaJourney = (kind: EditorialContentKind, slug: string) => kind ==
 const isKorea97Generation = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "korea-97-generation-political-emotion";
 const isPublicHealthFunction = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "public-health-proved-by-function";
 const isPublicLanguage = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "public-beyond-state-ownership";
+const isUnificationLanguage = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "unification-freedom-responsibility";
 const isSkHynixHackathon = (kind: EditorialContentKind, slug: string) => kind === "briefing" && slug === "sk-hynix-ai-hackathon-skills-first-hiring";
 const isHospitalInheritanceTax = (kind: EditorialContentKind, slug: string) => kind === "briefing" && slug === "hospital-inheritance-tax-maternity-care";
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (isUnificationLanguage(kind, slug)) return true;
   if (isSkHynixHackathon(kind, slug)) return true;
   if (isHospitalInheritanceTax(kind, slug)) return true;
   if (isPublicLanguage(kind, slug)) return true;
@@ -371,6 +392,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (isUnificationLanguage(kind, slug)) return unificationLanguageContinuation[language];
   if (isSkHynixHackathon(kind, slug)) return skHynixHackathonContinuation[language];
   if (isHospitalInheritanceTax(kind, slug)) return hospitalInheritanceTaxContinuation[language];
   if (isPublicLanguage(kind, slug)) return publicLanguageContinuation[language];
