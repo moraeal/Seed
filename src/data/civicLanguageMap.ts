@@ -14,14 +14,21 @@ export type CivicLanguageCategory = {
   terms: CivicLanguageTerm[];
 };
 
+const canonicalPublishedTerms: Record<string, string> = {
+  "민주": "민주주의",
+};
+
+const completedFromArticles = [...seedLanguageEnvironmentArticlesKo, ...seedLanguageArticlesKo]
+  .filter((article) => article.listingEligible !== false)
+  .reduce<Record<string, string>>((result, article) => {
+    result[canonicalPublishedTerms[article.term] ?? article.term] = `/seed-language/${article.slug}`;
+    return result;
+  }, {});
+
 const completed: Record<string, string> = {
-  "자유": "/seed-language/freedom-as-citizen-agency",
-  "담론": "/seed-language/discourse-many-words-no-direction",
-  "진보": "/seed-language/what-is-true-progress",
-  "보수": "/seed-language/what-is-true-conservatism",
+  ...completedFromArticles,
   "시민화": "/columns/citizenization-before-advancement-2026",
   "선진화": "/columns/citizenization-before-advancement-2026",
-  "공공": "/seed-language/public-beyond-state-ownership",
 };
 
 const priorities = [
@@ -190,3 +197,5 @@ export const civicLanguagePriorities = priorities.map((label, index) => ({ label
 export const civicLanguageQuestions: Record<string, string> = {
   "공익": "누가 무엇을 공익이라고 결정하는가", "공공성": "공공기관이 하는 일은 모두 공공적인가", "공동선": "공동선은 개인의 자유보다 앞서는가", "시민": "국민·민중·대중·시민은 어떻게 다른가", "시민사회": "시민단체가 시민사회를 대표하는가", "국가": "국가는 왜 필요하고 어디까지 강해야 하는가", "강한 사회": "강한 국가를 견제하려면 왜 사회도 강해야 하는가", "개혁": "개혁이라고 부르면 모두 좋은 변화인가", "공정": "공정은 과정인가, 결과인가", "정의": "내 편의 정의와 모두의 정의는 어떻게 다른가", "법치": "법대로 하는 것이 곧 법치인가", "입헌주의": "선거에서 이긴 권력도 왜 제한되어야 하는가", "삼권분립": "기관을 셋으로 나누면 권력이 저절로 견제되는가", "비지배 자유": "간섭받지 않는 것만으로 자유롭다고 할 수 있는가", "자의적 권력": "선의로 행사하는 권력도 위험할 수 있는가", "공론장": "말이 많은 곳은 모두 공론장인가", "숙의민주주의": "오래 토론하면 더 민주적인 결정이 되는가", "시민의회": "무작위로 뽑힌 시민이 국민을 대표할 수 있는가", "대표성": "누구를 대표한다고 말할 수 있는가", "정치적 중립": "침묵하는 것이 중립인가", "기득권": "기득권은 사람인가, 구조인가", "카르텔": "이해관계가 같으면 모두 카르텔인가", "포퓰리즘": "인기 있는 정책은 모두 포퓰리즘인가", "극우": "보수와 극우는 어디에서 갈라지는가", "좌파": "다른 정책을 주장하면 모두 좌파인가", "가짜뉴스": "거짓·오보·의견은 어떻게 다른가", "혐오표현": "불쾌한 말은 모두 혐오표현인가", "정치검찰": "검찰을 비판하는 말인가, 수사를 부정하는 말인가", "친기업": "기업의 자유를 말하면 시민의 권리를 외면하는가", "시민대표": "누가 시민을 대표한다고 말할 수 있는가", "사회적 책임": "기업과 시민단체와 국가는 각각 무엇을 책임져야 하는가", "사회적경제": "좋은 목적은 공공지원의 충분한 이유가 되는가", "시민감시": "감시와 비판, 정치적 공격은 어떻게 다른가", "정책 환류": "실패한 정책은 왜 다음 결정에 반영되지 않는가", "시민데이터": "시민의 경험은 어떻게 공적인 자료가 되는가", "플랫폼 권력": "정부가 아닌 기업도 시민을 지배할 수 있는가", "증강된 개인": "AI는 시민을 강하게 만드는가, 의존하게 만드는가", "공익의 시민화": "공익을 시민에게 돌려준다는 것은 무엇인가", "시민사회 국가화": "시민단체가 국가에 의존하면 무엇이 달라지는가", "씨앗시민": "시민은 어떻게 자라나는가",
 };
+import { seedLanguageArticlesKo } from "./seedLanguage";
+import { seedLanguageEnvironmentArticlesKo } from "./seedLanguageEnvironment";
