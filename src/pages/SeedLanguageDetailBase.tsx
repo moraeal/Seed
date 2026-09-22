@@ -15,6 +15,21 @@ const ENVIRONMENT_HERO = "images/seed-language/environment-shared-condition-hero
 const ENVIRONMENT_FEATURE_SLUG = "environment-shared-condition";
 const ENVIRONMENT_DEEP_READ_SLUG = "environment-beyond-camps-deep-read";
 
+function InlineLinkedText({ text }: { text: string }) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+
+  return <>{parts.map((part, index) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!match) return part;
+
+    const [, label, href] = match;
+    const className = "font-semibold text-green-deep underline decoration-green-deep/35 underline-offset-4 hover:decoration-green-deep";
+    return href.startsWith("/")
+      ? <Link key={`${href}-${index}`} to={href} className={className}>{label}</Link>
+      : <a key={`${href}-${index}`} href={href} target="_blank" rel="noreferrer" className={className}>{label}</a>;
+  })}</>;
+}
+
 export default function SeedLanguageDetail() {
   const { slug = "" } = useParams();
   const { language } = useLanguage();
@@ -73,12 +88,12 @@ export default function SeedLanguageDetail() {
       <div className="reading-column mt-10">
         <aside className="border-l-4 border-gold bg-green-pale px-6 py-6 sm:px-8"><span className="section-kicker">{ko ? "핵심 요약" : "KEY POINTS"}</span><ul className="mt-4 space-y-3">{article.keyPoints.map((point) => <li key={point} className="flex gap-3 text-sm font-semibold leading-7 text-navy"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold"/><span>{point}</span></li>)}</ul></aside>
 
-        {article.leadParagraphs && <div className={`article-section ${isLongRead ? "article-section-long" : ""}`}>{article.leadParagraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className={`article-copy ${isLongRead ? "article-copy-long" : ""} ${usesDarkBodyCopy ? "!text-charcoal" : ""}`}>{paragraph}</p>)}</div>}
+        {article.leadParagraphs && <div className={`article-section ${isLongRead ? "article-section-long" : ""}`}>{article.leadParagraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className={`article-copy ${isLongRead ? "article-copy-long" : ""} ${usesDarkBodyCopy ? "!text-charcoal" : ""}`}><InlineLinkedText text={paragraph}/></p>)}</div>}
 
 
         {article.sections.map((section, index) => <section id={`article-section-${index + 1}`} key={section.title} className={`article-section scroll-mt-28 ${isLongRead ? "article-section-long" : ""}`}>
           <h2 className="article-section-title">{section.title}</h2>
-          {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className={`article-copy ${isLongRead ? "article-copy-long" : ""} ${usesDarkBodyCopy ? "!text-charcoal" : ""}`}>{paragraph}</p>)}
+          {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className={`article-copy ${isLongRead ? "article-copy-long" : ""} ${usesDarkBodyCopy ? "!text-charcoal" : ""}`}><InlineLinkedText text={paragraph}/></p>)}
           {section.sourceIndices && <ul className="mt-4 space-y-2 border-l-2 border-green-deep/20 pl-4">{section.sourceIndices.map((sourceIndex) => article.sources?.[sourceIndex]).filter((source) => Boolean(source)).map((source) => source && <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="text-sm leading-6 text-green-deep underline underline-offset-4">{source.label}</a></li>)}</ul>}
           {(article.charts ?? (article.chart ? [article.chart] : [])).filter((chart) => index === chart.afterSection).map((chart, chartIndex) => <figure key={chart.title} className="my-9 border-y-2 border-green-deep bg-white" aria-labelledby={`comparison-${index}-${chartIndex}`}>
             <figcaption id={`comparison-${index}-${chartIndex}`} className="px-4 py-5 text-lg font-bold leading-7 text-navy sm:px-6">{chart.title}</figcaption>
