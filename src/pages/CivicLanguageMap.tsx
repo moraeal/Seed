@@ -1,6 +1,7 @@
 import { ArrowLeft, BookOpenText, Check, Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import SafeImage from "../components/SafeImage";
 import {
   civicLanguageCategories,
   civicLanguagePriorities,
@@ -70,6 +71,17 @@ export default function CivicLanguageMap() {
             <p>We will test progressive and conservative language by the same standards without mechanically dividing responsibility in half. Meaning, use and effects on civic freedom and power are the test.</p>
           </>}
         </div>
+        <figure className="mt-9 overflow-hidden bg-white shadow-[0_18px_55px_rgba(23,76,58,.09)]">
+          <SafeImage
+            src="images/seed-language/civic-language-map-hero.webp"
+            alt={ko ? "여러 세대의 시민이 붉고 푸른 표식을 걷어내며 흩어진 말의 조각을 다시 잇는 모습" : "Citizens across generations remove red and blue factional marks and reconnect scattered fragments of public language"}
+            className="aspect-[16/9] w-full object-cover"
+            loading="eager"
+          />
+          <figcaption className="border-t border-green-deep/10 px-4 py-3 text-xs leading-5 text-charcoal/50">
+            {ko ? "진영의 표식에 가려진 말의 뜻을 시민이 함께 다시 잇는 장면입니다. · 씨앗의 소리 AI 제작 이미지" : "Citizens reconnect words obscured by factional labels. · AI-generated editorial image by SEED VOICE"}
+          </figcaption>
+        </figure>
         <blockquote className="mt-8 max-w-3xl border-l-4 border-gold pl-5 text-xl font-extrabold leading-8 text-navy sm:text-2xl">{ko ? "말은 어느 진영의 소유물이 아닙니다." : "Words belong to no political camp."}</blockquote>
       </div>
     </header>
