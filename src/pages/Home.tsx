@@ -28,6 +28,7 @@ const resolveImageSrc = (src?: string) => {
 };
 
 const seedLanguageTerms: Record<string, { hanja: string; english: string }> = {
+  통일: { hanja: "統一", english: "UNIFICATION" },
   정치: { hanja: "政治", english: "POLITICS" },
   진영언어: { hanja: "陣營言語", english: "PARTISAN LANGUAGE" },
   시민: { hanja: "市民", english: "CITIZEN" },
