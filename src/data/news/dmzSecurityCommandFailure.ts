@@ -2,7 +2,6 @@ import type { NewsArticle } from "../newsArchive";
 
 export const dmzSecurityCommandFailureArticle: NewsArticle = {
   slug: "dmz-security-command-failure",
-  preferHeroImageInListings: true,
   issue: 16,
   category: "국방·안보·국가책임",
   date: "2026-09-22",
