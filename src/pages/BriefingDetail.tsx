@@ -42,7 +42,8 @@ export default function BriefingDetail() {
         <div className="container-page max-w-5xl">
           <Link to="/briefings" className="text-link text-xs"><ArrowLeft size={14} />{ko ? "브리핑 목록" : "Briefings"}</Link>
           <div className="mt-3 border-t-2 border-navy pt-3">
-            <h1 className="article-detail-title">{briefing.title}</h1>
+            <span className="section-kicker">{briefing.category}</span>
+            <h1 className="article-detail-title mt-2">{briefing.title}</h1>
             {briefing.subtitle && <p className="mx-auto mt-2 max-w-3xl text-base font-bold leading-7 text-green-deep sm:text-lg">{briefing.subtitle}</p>}
             <p className="article-summary">{briefing.summary}</p>
           </div>

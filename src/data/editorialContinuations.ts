@@ -293,6 +293,25 @@ const publicLanguageContinuation: Record<Language, EditorialContinuation> = {
   },
 };
 
+const hospitalInheritanceTaxContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/columns/public-health-proved-by-function",
+    title: "공공의료는 병원 간판으로 증명되지 않는다",
+    relationship: "세제에서 의료의 공공성으로",
+    reason: "병원 승계의 혜택을 소유관계가 아니라 필수의료 기능과 시민이 얻는 결과로 판단해야 한다는 기준을 이어서 살펴봅니다.",
+    listHref: "/briefings",
+    listLabel: "브리핑 전체 보기",
+  },
+  en: {
+    href: "/columns/public-health-proved-by-function",
+    title: "Public Healthcare Is Not Proven by the Name on the Hospital",
+    relationship: "FROM TAX DESIGN TO PUBLIC HEALTH",
+    reason: "Continue with why support for hospital succession should depend on essential-care functions and public outcomes rather than ownership alone.",
+    listHref: "/briefings",
+    listLabel: "All briefings",
+  },
+};
+
 const isFreedom = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "freedom-as-citizen-agency";
 const isProgress = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-progress";
 const isConservatism = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-conservatism";
@@ -308,8 +327,10 @@ const isFukushimaJourney = (kind: EditorialContentKind, slug: string) => kind ==
 const isKorea97Generation = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "korea-97-generation-political-emotion";
 const isPublicHealthFunction = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "public-health-proved-by-function";
 const isPublicLanguage = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "public-beyond-state-ownership";
+const isHospitalInheritanceTax = (kind: EditorialContentKind, slug: string) => kind === "briefing" && slug === "hospital-inheritance-tax-maternity-care";
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (isHospitalInheritanceTax(kind, slug)) return true;
   if (isPublicLanguage(kind, slug)) return true;
   if (isPublicHealthFunction(kind, slug)) return true;
   if (isKorea97Generation(kind, slug)) return true;
@@ -329,6 +350,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (isHospitalInheritanceTax(kind, slug)) return hospitalInheritanceTaxContinuation[language];
   if (isPublicLanguage(kind, slug)) return publicLanguageContinuation[language];
   if (isPublicHealthFunction(kind, slug)) return publicHealthFunctionContinuation[language];
   if (isKorea97Generation(kind, slug)) return korea97GenerationContinuation[language];

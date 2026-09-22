@@ -11,8 +11,9 @@ import { yeosuIslandExpoBriefing } from "./yeosuIslandExpoBriefing";
 import { futureResponseFundBriefing } from "./futureResponseFundBriefing";
 import { socialSolidarityEconomyLawBriefing } from "./socialSolidarityEconomyLawBriefing";
 import { activistFundingPressureBriefing } from "./activistFundingPressureBriefing";
+import { hospitalInheritanceTaxBriefing } from "./hospitalInheritanceTaxBriefing";
 
-const allBriefings: Briefing[] = [activistFundingPressureBriefing, socialSolidarityEconomyLawBriefing, futureResponseFundBriefing, partyDissolutionBriefing, yeosuIslandExpoBriefing, hearingAccountabilityBriefing, socialEconomyFairnessBriefing, socialEconomyBriefing, publicInterestTravelBriefing, publicBroadcastingBriefing, nationalBudgetBriefing, gyeonggiBriefingDisplay, ...briefings];
+const allBriefings: Briefing[] = [hospitalInheritanceTaxBriefing, activistFundingPressureBriefing, socialSolidarityEconomyLawBriefing, futureResponseFundBriefing, partyDissolutionBriefing, yeosuIslandExpoBriefing, hearingAccountabilityBriefing, socialEconomyFairnessBriefing, socialEconomyBriefing, publicInterestTravelBriefing, publicBroadcastingBriefing, nationalBudgetBriefing, gyeonggiBriefingDisplay, ...briefings];
 
 export const getAllBriefingsNewestFirst = () => [...allBriefings].sort((a, b) => {
   const dateOrder = b.date.localeCompare(a.date);

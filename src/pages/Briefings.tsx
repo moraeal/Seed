@@ -60,6 +60,7 @@ export default function Briefings() {
                 </div>
 
                 <div>
+                  <span className="section-kicker">{briefing.category}</span>
                   <h2 className="editorial-title line-clamp-2 text-balance text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">
                     {briefing.title}
                   </h2>
