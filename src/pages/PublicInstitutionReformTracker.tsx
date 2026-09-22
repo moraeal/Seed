@@ -139,13 +139,15 @@ export default function PublicInstitutionReformTrackerPage() {
         <aside className="bg-navy p-6 text-white sm:p-7"><FileCheck2 className="text-gold" size={25}/><span className="mt-5 block text-[10px] font-black tracking-[.14em] text-gold">NEXT CHECK</span><h2 className="mt-2 text-xl font-extrabold">{ko ? "다음에 확인할 변화" : "The next changes to verify"}</h2><p className="mt-4 text-sm leading-7 text-white/78">{t(publicInstitutionReformTracker.nextCheck!)}</p><Link to="/news/lh-debt-split-power-five-merge" className="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-white underline decoration-white/35 underline-offset-4">{ko ? "연결된 쟁점기사 읽기" : "Read the connected analysis"}<ArrowRight size={15}/></Link></aside>
       </section>
 
-      <section className="mt-12 border-t-2 border-navy pt-6">
-        <h2 className="text-2xl font-extrabold text-navy">{ko ? "공식 근거자료" : "Official records"}</h2>
-        <p className="mt-2 text-sm leading-7 text-charcoal/55">{ko ? "화면에는 언론 보도를 먼저 보여주고, 사실과 진행단계는 아래 정부 원문으로 다시 확인합니다." : "Media coverage appears first on the page; facts and stages are checked again against the official records below."}</p>
-        <div className="mt-4 divide-y divide-green-deep/10 border-y border-green-deep/10">{publicInstitutionReformTracker.sources.map((source, index) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer" className="group flex items-start gap-4 py-4"><span className="text-sm font-black text-gold">{String(index + 1).padStart(2, "0")}</span><strong className="flex-1 text-sm leading-6 text-navy group-hover:text-green-deep">{t(source.label)}</strong><ExternalLink className="mt-1 shrink-0 text-charcoal/35" size={15}/></a>)}</div>
+      <section className="mt-10">
+        <details className="group border-y border-green-deep/15 bg-white">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-1 py-4 text-sm font-extrabold text-navy marker:hidden">
+            <span>{ko ? "출처·확인자료 보기" : "View sources and verification records"}</span>
+            <span aria-hidden="true" className="text-xl font-light text-green-deep transition group-open:rotate-45">+</span>
+          </summary>
+          <div className="divide-y divide-green-deep/10 border-t border-green-deep/10 px-1 pb-1">{publicInstitutionReformTracker.sources.map((source, index) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer" className="group/source flex items-start gap-4 py-4"><span className="text-sm font-black text-gold">{String(index + 1).padStart(2, "0")}</span><strong className="flex-1 text-sm leading-6 text-navy group-hover/source:text-green-deep">{t(source.label)}</strong><ExternalLink className="mt-1 shrink-0 text-charcoal/35" size={15}/></a>)}</div>
+        </details>
       </section>
-
-      <aside className="mt-10 border-l-4 border-gold bg-white p-5 sm:p-6"><div className="flex items-center gap-3"><Scale className="text-gold" size={21}/><h2 className="font-extrabold text-navy">{ko ? "이 기록의 기준" : "Method"}</h2></div><p className="mt-3 text-sm leading-7 text-charcoal/65">{t(publicInstitutionReformTracker.sourceBasis)}</p></aside>
       <ContentAccountability postSlug={`monitoring-${publicInstitutionReformTracker.slug}`} publishedDate={publicInstitutionReformTracker.updatedAt}/>
       <CommentSection postSlug={`monitoring-${publicInstitutionReformTracker.slug}`}/>
     </div>
