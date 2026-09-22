@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpenText, Clock, Quote } from "lucide-react";
+import { ArrowRight, BookOpenText, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
@@ -41,13 +41,20 @@ export default function SeedLanguage() {
           <p className="section-kicker">GLOSSARY</p>
           <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-stretch sm:justify-between">
             <h1 className="editorial-title flex items-center text-[2.1rem] font-bold leading-tight text-navy sm:text-[2.625rem]">{ko ? "시민언어" : "Glossary"}</h1>
-            <div className="flex items-center gap-4 bg-green-deep px-5 py-4 text-white sm:min-w-72 sm:px-6">
+            <Link
+              to="/seed-language/words-turn-citizens-into-enemies"
+              className="group flex items-center gap-4 bg-green-deep px-5 py-4 text-white transition-colors hover:bg-green-mid sm:min-w-72 sm:px-6"
+              aria-label={ko ? "시민언어가 필요한 이유 읽기" : "Read why the glossary matters"}
+            >
               <BookOpenText size={28} className="shrink-0 text-gold-light" />
               <div>
                 <p className="text-[11px] font-extrabold tracking-[.16em] text-gold-light">WORDS IN QUESTION</p>
-                <p className="editorial-title mt-1 text-xl font-bold leading-tight">{ko ? "시민언어 읽기" : "Read the Glossary"}</p>
+                <p className="editorial-title mt-1 text-xl font-bold leading-tight">{ko ? "시민언어가 필요한 이유" : "Why the Glossary Matters"}</p>
+                <span className="mt-2 flex items-center gap-1.5 text-xs font-bold text-white/75 transition-colors group-hover:text-white">
+                  {ko ? "내용 보기" : "Read more"}<ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                </span>
               </div>
-            </div>
+            </Link>
           </div>
           <div className="mt-5 max-w-5xl border-l-2 border-gold pl-6 text-base leading-7 text-charcoal/70 sm:text-lg sm:leading-8">
             {ko ? (
@@ -68,28 +75,7 @@ export default function SeedLanguage() {
       </header>
 
       <main className="container-page max-w-5xl py-8 sm:py-10">
-        <section className="overflow-hidden border-y-2 border-green-deep bg-white">
-          <Link to="/seed-language/words-turn-citizens-into-enemies" className="group block p-5 transition-colors hover:bg-green-pale/45 sm:p-6">
-            <div className="flex items-start justify-between gap-5">
-              <div>
-                <Quote size={26} className="text-gold" />
-                <p className="mt-4 text-[11px] font-extrabold tracking-[.14em] text-green-deep">{ko ? "시민언어가 필요한 이유" : "WHY THE GLOSSARY MATTERS"}</p>
-                <h2 className="editorial-title mt-2 text-[1.45rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.8rem]">
-                  {ko ? "말이 시민을 적으로 만든다" : "When Words Turn Citizens into Enemies"}
-                </h2>
-                <p className="mt-3 max-w-3xl text-base leading-7 text-charcoal/70 sm:leading-8">
-                  {ko ? "진영의 딱지와 신조어, 알고리즘이 시민의 판단과 관계를 어떻게 바꾸는지 살펴봅니다. 사람을 편으로 나누는 언어를 넘어, 문제를 구체적으로 묻는 시민의 언어가 왜 필요한지 설명합니다." : "This guide examines how partisan labels, new expressions and algorithms reshape civic judgment and relationships—and why citizens need language that questions problems instead of sorting people into camps."}
-                </p>
-              </div>
-              <ArrowRight size={22} className="mt-1 shrink-0 text-green-deep transition-transform group-hover:translate-x-1" />
-            </div>
-            <div className="mt-4 flex items-center gap-2 border-t border-green-deep/10 pt-3 text-sm font-extrabold text-green-deep">
-              <span>{ko ? "설명 글 읽기" : "Read the guide"}</span><ArrowRight size={15} />
-            </div>
-          </Link>
-        </section>
-
-        <section className="mt-7" aria-label={ko ? "시민언어 콘텐츠" : "Glossary articles"}>
+        <section aria-label={ko ? "시민언어 콘텐츠" : "Glossary articles"}>
           <div className="mb-4 flex items-end justify-between gap-4 border-b-2 border-navy pb-3">
             <div><span className="section-kicker">LATEST</span><h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "최근 기사" : "Latest articles"}</h2></div>
             <p className="text-xs font-semibold text-charcoal/45">{ko ? "최근 5건" : "Latest five"}</p>
