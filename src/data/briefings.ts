@@ -28,6 +28,16 @@ export type Briefing = {
     afterSection?: number;
     contain?: boolean;
   }[];
+  sourceArticle?: {
+    title: string;
+    publisher: string;
+    publishedAt: string;
+    url: string;
+    imageSrc: string;
+    imageAlt: string;
+    imageCredit: string;
+    note?: string;
+  };
   content: string[];
   watchPoints: string[];
   paragraphLinks?: {

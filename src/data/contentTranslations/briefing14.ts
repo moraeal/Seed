@@ -31,6 +31,13 @@ export const activistFundingPressureTranslation: BriefingTranslation = {
       credit: "SEED VOICE infographic",
     },
   ],
+  sourceArticle: {
+    title: "Civic Group Accused of Pressuring Companies Through Lawmakers to Fund Activists",
+    publisher: "Maeil Shinmun",
+    imageAlt: "DongHang proposal graphic stating that KRW 8.676 billion supported 12,743 public-interest activists over thirteen years from 2013",
+    imageCredit: "Image source: DongHang proposal graphic reproduced in the Maeil Shinmun report",
+    note: "The allegation that a proposal travelled through lawmakers' offices and pressured companies is the starting point of this briefing. Open the original report to compare its claims directly with SEED's review.",
+  },
   content: [
     "A media report says a proposal seeking medical bills, health screening and counselling for public-interest activists was delivered to major companies through several lawmakers' offices. There is nothing inherently wrong with asking for such support. Multiple studies have documented low pay and limited benefits across Korea's civic sector.",
     "But the proposal reportedly travelled through political offices. That changes the question. The need for support does not establish that lawmakers should serve as intermediaries for corporate donations.",
@@ -100,7 +107,7 @@ export const activistFundingPressureTranslation: BriefingTranslation = {
   quote: "Companies are not cash machines for civic groups. Lawmakers are not their fundraising offices.",
   sourceNote: "This briefing compares the original report, DongHang's public program and partnership materials, activist-sustainability research and related reporting available through September 22, 2026. It does not treat coercion as established because the lawmakers, companies, wording and follow-up contacts have not been disclosed. It also does not equate cumulative program support with corporate donations.",
   sourceLabels: [
-    "Original report — Allegation involving activist-support proposals routed through lawmakers' offices",
+    "Maeil Shinmun — ‘Civic Group Accused of Pressuring Companies Through Lawmakers to Fund Activists’ (September 15, 2026)",
     "DongHang Activist Cooperative — Corporate and organizational partnerships",
     "DongHang — 2025 Activist Sustainability Index",
     "Reporting on activist pay, benefits and retention",

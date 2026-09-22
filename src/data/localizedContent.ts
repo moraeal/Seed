@@ -70,6 +70,10 @@ export function localizeBriefing(briefing: Briefing, language: Language): Briefi
         ...(translated.images?.[translationIndex] ?? {}),
       };
     }),
+    sourceArticle: briefing.sourceArticle ? {
+      ...briefing.sourceArticle,
+      ...(translated.sourceArticle ?? {}),
+    } : undefined,
     content: translated.content,
     sections: translated.sections ?? briefing.sections,
     verdicts: translated.verdicts ?? briefing.verdicts,

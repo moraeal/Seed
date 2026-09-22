@@ -43,6 +43,16 @@ export const activistFundingPressureBriefing: Briefing = {
       contain: true,
     },
   ],
+  sourceArticle: {
+    title: "활동가 지원하라고 국회의원 통해 기업 압박한 시민단체",
+    publisher: "매일신문",
+    publishedAt: "2026-09-15",
+    url: "https://www.imaeil.com/page/view/2026091518012219913",
+    imageSrc: "images/briefings/briefing-14-original-report-proposal.webp",
+    imageAlt: "2013년부터 13년 동안 공익활동가 1만2743명에게 86억7647만원을 지원했다는 동행 사업제안서 이미지",
+    imageCredit: "이미지 출처: 매일신문 보도에 실린 동행 사업제안서",
+    note: "이 보도가 제기한 의원실 경유와 기업 압박 의혹이 이 브리핑의 출발점입니다. 원보도를 직접 열어 보도의 주장과 씨앗의 검토를 함께 비교할 수 있습니다.",
+  },
   content: [
     "공익활동가의 의료비와 건강검진, 심리상담을 지원해 달라는 제안서가 일부 국회의원실을 거쳐 대기업에 전달됐다는 보도가 나왔습니다. 활동가를 돕자는 제안만 놓고 보면 이상할 것이 없습니다. 시민단체 활동가 상당수가 낮은 임금과 부족한 복지 속에서 일한다는 사실은 여러 조사를 통해 확인됐습니다.",
     "그런데 이번에는 제안서가 국회의원실을 거쳐갔습니다. 바로 이 지점에서 이야기가 달라집니다. 지원이 필요하다는 사실과 정치권이 기업 후원의 전달자가 되어도 괜찮다는 판단은 같은 말이 아닙니다.",
@@ -112,7 +122,7 @@ export const activistFundingPressureBriefing: Briefing = {
   quote: "기업은 시민단체의 현금인출기가 아닙니다. 국회의원도 시민단체의 모금 창구가 아닙니다.",
   sourceNote: "이 브리핑은 2026년 9월 22일까지 공개된 최초 보도, 동행의 공식 사업·파트너십 안내, 공익활동가 지속가능성 조사와 관련 보도를 대조해 작성했습니다. 의원실과 기업의 명칭, 구체적인 전달 문구와 후속 연락은 공개되지 않아 압박의 존재를 확정하지 않았습니다. 누적 지원액과 기업 후원금도 같은 금액으로 보지 않았습니다.",
   sources: [
-    { label: "관련 보도 — 의원실을 통한 활동가 지원 제안 의혹", url: "https://www.imaeil.com/page/view/2026091518012219913" },
+    { label: "매일신문 — 「활동가 지원하라고 국회의원 통해 기업 압박한 시민단체」 (2026.09.15.)", url: "https://www.imaeil.com/page/view/2026091518012219913" },
     { label: "공익활동가 사회적협동조합 동행 — 기업·단체 파트너십 안내", url: "https://www.activistcoop.org/partnership" },
     { label: "동행 — 2025 공익활동가 지속가능지수 연구", url: "https://www.activistcoop.org/research_/?bmode=view&idx=166711340" },
     { label: "공익활동가의 임금·복지와 장기근속 문제를 다룬 보도", url: "https://futurechosun.com/archives/53124" },
