@@ -1,31 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
-  <title id="title">Three choices in Korea's hospital inheritance-tax debate</title>
-  <desc id="desc">Comparison of the hospital's estimated KRW 4 billion tax under the current deduction, KRW 33 billion after exclusion, and a conditional alternative separating land taxation from essential-care continuity.</desc>
+  <title id="title">Inheritance tax should not prevent a business from continuing</title>
+  <desc id="desc">Comparison of the hospital's estimated KRW 4 billion tax under the current deduction, more than KRW 33 billion after exclusion, and payment deferral while the business continues.</desc>
   <rect width="1200" height="675" fill="#f5f0e6"/>
   <rect x="54" y="48" width="1092" height="579" rx="30" fill="#fffdf7" stroke="#174c3a" stroke-width="3"/>
   <text x="92" y="112" font-family="sans-serif" font-size="24" font-weight="700" fill="#a9781d">NEWS BRIEFING · TODAY'S NEWS</text>
-  <text x="92" y="164" font-family="sans-serif" font-size="40" font-weight="800" fill="#132b43">Protecting a hospital—or protecting property?</text>
-  <text x="92" y="202" font-family="sans-serif" font-size="20" fill="#52605d">The hospital's estimates and SEED's more precise alternative</text>
+  <text x="92" y="164" font-family="sans-serif" font-size="38" font-weight="800" fill="#132b43">Tax should not force the sale of a viable business</text>
+  <text x="92" y="202" font-family="sans-serif" font-size="20" fill="#52605d">The hospital's estimates and an alternative to forced liquidation</text>
   <rect x="92" y="246" width="300" height="242" rx="22" fill="#edf5ef"/>
   <text x="122" y="288" font-family="sans-serif" font-size="20" font-weight="700" fill="#174c3a">Current deduction</text>
   <text x="122" y="374" font-family="sans-serif" font-size="61" font-weight="800" fill="#174c3a">KRW 4bn</text>
   <text x="122" y="414" font-family="sans-serif" font-size="18" fill="#52605d">Hospital's tax estimate</text>
-  <text x="122" y="453" font-family="sans-serif" font-size="17" fill="#7a837f">May shelter substantial</text>
-  <text x="122" y="479" font-family="sans-serif" font-size="17" fill="#7a837f">land appreciation</text>
+  <text x="122" y="453" font-family="sans-serif" font-size="17" fill="#7a837f">Leaves room to preserve</text>
+  <text x="122" y="479" font-family="sans-serif" font-size="17" fill="#7a837f">the business and jobs</text>
   <rect x="450" y="246" width="300" height="242" rx="22" fill="#fff0eb"/>
-  <text x="480" y="288" font-family="sans-serif" font-size="20" font-weight="700" fill="#9b3b2b">Blanket exclusion</text>
+  <text x="480" y="288" font-family="sans-serif" font-size="20" font-weight="700" fill="#9b3b2b">Hospitals excluded</text>
   <text x="480" y="374" font-family="sans-serif" font-size="56" font-weight="800" fill="#9b3b2b">KRW 33bn+</text>
   <text x="480" y="414" font-family="sans-serif" font-size="18" fill="#52605d">Hospital's tax estimate</text>
-  <text x="480" y="453" font-family="sans-serif" font-size="17" fill="#7a837f">Blocks avoidance but may</text>
-  <text x="480" y="479" font-family="sans-serif" font-size="17" fill="#7a837f">endanger maternity care</text>
+  <text x="480" y="453" font-family="sans-serif" font-size="17" fill="#7a837f">May force asset sales</text>
+  <text x="480" y="479" font-family="sans-serif" font-size="17" fill="#7a837f">and threaten continuity</text>
   <rect x="808" y="246" width="300" height="242" rx="22" fill="#fff7df" stroke="#c4942c" stroke-width="2"/>
-  <text x="838" y="288" font-family="sans-serif" font-size="20" font-weight="700" fill="#8a651d">SEED's alternative</text>
-  <text x="838" y="337" font-family="sans-serif" font-size="27" font-weight="800" fill="#132b43">Tax the land</text>
-  <text x="838" y="378" font-family="sans-serif" font-size="27" font-weight="800" fill="#132b43">Conditionally protect care</text>
-  <text x="838" y="425" font-family="sans-serif" font-size="17" fill="#52605d">Defer while essential care</text>
-  <text x="838" y="451" font-family="sans-serif" font-size="17" fill="#52605d">and jobs are maintained;</text>
-  <text x="838" y="477" font-family="sans-serif" font-size="17" fill="#52605d">claw back after conversion</text>
+  <text x="838" y="288" font-family="sans-serif" font-size="20" font-weight="700" fill="#8a651d">Continuity option</text>
+  <text x="838" y="337" font-family="sans-serif" font-size="27" font-weight="800" fill="#132b43">Defer while operating</text>
+  <text x="838" y="378" font-family="sans-serif" font-size="27" font-weight="800" fill="#132b43">Tax upon disposal</text>
+  <text x="838" y="425" font-family="sans-serif" font-size="17" fill="#52605d">Verify genuine business</text>
+  <text x="838" y="451" font-family="sans-serif" font-size="17" fill="#52605d">and jobs; collect after sale,</text>
+  <text x="838" y="477" font-family="sans-serif" font-size="17" fill="#52605d">closure or conversion</text>
   <line x1="92" y1="528" x2="1108" y2="528" stroke="#174c3a" stroke-opacity=".18" stroke-width="2"/>
-  <text x="92" y="572" font-family="sans-serif" font-size="22" font-weight="700" fill="#174c3a">Tax relief should follow essential care—not a medical family's bloodline.</text>
+  <text x="92" y="572" font-family="sans-serif" font-size="21" font-weight="700" fill="#174c3a">Do not force a sale to pay tax. Identify abuse and hold the abuser responsible.</text>
   <text x="92" y="605" font-family="sans-serif" font-size="15" fill="#7a837f">The two figures are hospital estimates, not final tax assessments. Valuation and ownership structure could change the amount.</text>
 </svg>

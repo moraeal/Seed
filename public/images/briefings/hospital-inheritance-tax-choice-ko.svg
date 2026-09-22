@@ -1,30 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
-  <title id="title">병원 상속세 논란의 세 가지 선택</title>
-  <desc id="desc">현행 공제 적용 시 병원 측 추산 40억원, 병원 제외 시 330억원, 그리고 토지 상승분 과세와 필수의료 조건부 보호라는 대안을 비교한다.</desc>
+  <title id="title">상속세가 기업의 계속을 막아서는 안 됩니다</title>
+  <desc id="desc">현행 공제 적용 시 병원 측 추산 40억원, 병원 제외 시 330억원 이상, 그리고 기업 계속을 전제로 한 납부유예 대안을 비교한다.</desc>
   <rect width="1200" height="675" fill="#f5f0e6"/>
   <rect x="54" y="48" width="1092" height="579" rx="30" fill="#fffdf7" stroke="#174c3a" stroke-width="3"/>
   <text x="92" y="112" font-family="sans-serif" font-size="24" font-weight="700" fill="#a9781d">뉴스브리핑 · 오늘의 뉴스</text>
-  <text x="92" y="164" font-family="sans-serif" font-size="40" font-weight="800" fill="#132b43">병원을 지키는가, 부동산을 지키는가</text>
-  <text x="92" y="202" font-family="sans-serif" font-size="20" fill="#52605d">호산여성병원이 조선일보에 밝힌 추산과 씨앗이 제안하는 정밀한 기준</text>
+  <text x="92" y="164" font-family="sans-serif" font-size="40" font-weight="800" fill="#132b43">상속세가 기업의 계속을 막아서는 안 됩니다</text>
+  <text x="92" y="202" font-family="sans-serif" font-size="20" fill="#52605d">호산여성병원이 밝힌 추산과 강제매각을 피하는 과세 대안</text>
   <rect x="92" y="246" width="300" height="242" rx="22" fill="#edf5ef"/>
   <text x="122" y="288" font-family="sans-serif" font-size="20" font-weight="700" fill="#174c3a">현행 공제 적용</text>
   <text x="122" y="374" font-family="sans-serif" font-size="70" font-weight="800" fill="#174c3a">40억</text>
   <text x="122" y="414" font-family="sans-serif" font-size="18" fill="#52605d">병원 측 예상 상속세</text>
-  <text x="122" y="453" font-family="sans-serif" font-size="17" fill="#7a837f">고가 토지 상승분까지</text>
-  <text x="122" y="479" font-family="sans-serif" font-size="17" fill="#7a837f">폭넓게 공제될 수 있음</text>
+  <text x="122" y="453" font-family="sans-serif" font-size="17" fill="#7a837f">기업과 고용을</text>
+  <text x="122" y="479" font-family="sans-serif" font-size="17" fill="#7a837f">계속할 여지</text>
   <rect x="450" y="246" width="300" height="242" rx="22" fill="#fff0eb"/>
-  <text x="480" y="288" font-family="sans-serif" font-size="20" font-weight="700" fill="#9b3b2b">병원 일괄 제외</text>
+  <text x="480" y="288" font-family="sans-serif" font-size="20" font-weight="700" fill="#9b3b2b">병원 제외 시</text>
   <text x="480" y="374" font-family="sans-serif" font-size="70" font-weight="800" fill="#9b3b2b">330억+</text>
   <text x="480" y="414" font-family="sans-serif" font-size="18" fill="#52605d">병원 측 예상 상속세</text>
-  <text x="480" y="453" font-family="sans-serif" font-size="17" fill="#7a837f">편법 차단은 가능하지만</text>
-  <text x="480" y="479" font-family="sans-serif" font-size="17" fill="#7a837f">분만병원 존속 위험</text>
+  <text x="480" y="453" font-family="sans-serif" font-size="17" fill="#7a837f">핵심 자산 매각과</text>
+  <text x="480" y="479" font-family="sans-serif" font-size="17" fill="#7a837f">기업 존속 위기</text>
   <rect x="808" y="246" width="300" height="242" rx="22" fill="#fff7df" stroke="#c4942c" stroke-width="2"/>
-  <text x="838" y="288" font-family="sans-serif" font-size="20" font-weight="700" fill="#8a651d">씨앗의 제안</text>
-  <text x="838" y="337" font-family="sans-serif" font-size="28" font-weight="800" fill="#132b43">토지는 과세</text>
-  <text x="838" y="378" font-family="sans-serif" font-size="28" font-weight="800" fill="#132b43">의료는 조건부 보호</text>
-  <text x="838" y="425" font-family="sans-serif" font-size="17" fill="#52605d">필수의료·고용 유지 중 과세이연</text>
-  <text x="838" y="455" font-family="sans-serif" font-size="17" fill="#52605d">폐업·매각·용도 변경 때 추징</text>
+  <text x="838" y="288" font-family="sans-serif" font-size="20" font-weight="700" fill="#8a651d">계속기업 대안</text>
+  <text x="838" y="337" font-family="sans-serif" font-size="28" font-weight="800" fill="#132b43">운영 중 납부유예</text>
+  <text x="838" y="378" font-family="sans-serif" font-size="28" font-weight="800" fill="#132b43">처분할 때 과세</text>
+  <text x="838" y="425" font-family="sans-serif" font-size="17" fill="#52605d">실제 사업·고용 유지 여부 확인</text>
+  <text x="838" y="455" font-family="sans-serif" font-size="17" fill="#52605d">매각·폐업·용도 변경 때 징수</text>
   <line x1="92" y1="528" x2="1108" y2="528" stroke="#174c3a" stroke-opacity=".18" stroke-width="2"/>
-  <text x="92" y="572" font-family="sans-serif" font-size="22" font-weight="700" fill="#174c3a">세제 혜택은 의사 집안이 아니라 시민에게 필요한 의료 기능에 붙어야 합니다.</text>
+  <text x="92" y="572" font-family="sans-serif" font-size="22" font-weight="700" fill="#174c3a">기업을 팔아 세금을 내게 하지 말고, 편법을 가려내 책임을 물어야 합니다.</text>
   <text x="92" y="605" font-family="sans-serif" font-size="15" fill="#7a837f">※ 40억원·330억원은 확정세액이 아니라 병원 측 추산입니다. 실제 세액은 자산평가와 소유구조 등에 따라 달라질 수 있습니다.</text>
 </svg>
