@@ -7,11 +7,11 @@ export const dmzSecurityCommandFailureTranslation: NewsTranslation = {
   summary: "An explosion in the western sector of the Demilitarized Zone injured three officers from the 25th Infantry Division; one battalion commander lost a foot. At the next day's regular briefing, however, defense officials could not immediately state when the danger was detected, how many personnel were deployed or the precise nature of the mission. If a desire for dialogue becomes an excuse to blur threats—and a message of sympathy is treated as a substitute for command responsibility—the result is not peace but an abandonment of security.",
   keySentence: "Freedom survives only on a foundation of rigorous security.",
   selectedNews: {
-    outlet: "YTN Radio",
+    outlet: "Maeil Shinmun News Cabinet",
     headline: "A Lieutenant Colonel Lost His Foot—Another Failure of Command?",
     linkLabel: "Watch the related discussion (Korean)",
     thumbnailUrl: "https://img.youtube.com/vi/KrUGGm37rfI/maxresdefault.jpg",
-    thumbnailAlt: "YTN Radio video discussing the DMZ explosion and the government's security response",
+    thumbnailAlt: "Maeil Shinmun News Cabinet video discussing the DMZ explosion and the government's security response",
     thumbnailCaption: "The discussion criticizes failures of command, reporting and public explanation after the DMZ blast. Select the image to watch the Korean-language video.",
     thumbnailYoutubeId: "KrUGGm37rfI",
     thumbnailPlacement: "after-summary",
@@ -88,6 +88,6 @@ export const dmzSecurityCommandFailureTranslation: NewsTranslation = {
   sourceLabels: [
     "YTN — JCS follow-up explanation of the DMZ blast mission and circumstances (September 22, 2026)",
     "Korea Economic Daily — Report on controversy over answers at the Defense Ministry briefing (September 22, 2026)",
-    "YTN Radio — Discussion of the DMZ blast and the government's security response"
+    "Maeil Shinmun News Cabinet — Discussion of the DMZ blast and the government's security response"
   ]
 };
