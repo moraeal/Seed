@@ -18,10 +18,11 @@ const server = await createServer({
   server: { middlewareMode: true },
   optimizeDeps: { noDiscovery: true },
 });
-const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguageEnvironmentModule, publicInterestWatchModule, taxWatchModule, taxCommentaryModule, legislativeCommentaryModule] = await Promise.all([
+const [newsModule, briefingModule, columnModule, hotIssueClusterModule, seedLanguageModule, seedLanguageEnvironmentModule, publicInterestWatchModule, taxWatchModule, taxCommentaryModule, legislativeCommentaryModule] = await Promise.all([
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
   server.ssrLoadModule("/src/data/columns.ts"),
+  server.ssrLoadModule("/src/data/hotIssueClusters.ts"),
   server.ssrLoadModule("/src/data/seedLanguage.ts"),
   server.ssrLoadModule("/src/data/seedLanguageEnvironment.ts"),
   server.ssrLoadModule("/src/data/newsTrackerRegistry.ts"),
@@ -56,6 +57,7 @@ const jobs = [
     };
   }),
   ...columnModule.columns.map((item) => ({ section: "columns", slug: item.slug, src: item.heroImage.src, fallbackSrc: item.heroImage.socialSrc })),
+  ...hotIssueClusterModule.getHotIssueClusters("ko").map((item) => ({ section: "hot-issues", slug: item.id, src: item.imageSrc })),
   ...seedLanguageEnvironmentModule.seedLanguageEnvironmentArticlesKo.map((item) => ({ section: "seed-language", slug: item.slug, src: environmentHero })),
   ...seedLanguageModule.seedLanguageArticlesKo.map((item) => ({ section: "seed-language", slug: item.slug, src: item.heroImage.src })),
   ...publicInterestWatchModule.publicInterestWatchCases

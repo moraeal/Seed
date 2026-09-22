@@ -33,6 +33,7 @@ const Academy = lazy(() => import("./pages/Academy"));
 const Experiments = lazy(() => import("./pages/Experiments"));
 const News = lazy(() => import("./pages/News"));
 const HotIssueDetail = lazy(() => import("./pages/HotIssueDetail"));
+const HotIssueClusterDetail = lazy(() => import("./pages/HotIssueClusterDetail"));
 const FoundingStatement = lazy(() => import("./pages/FoundingStatement"));
 const SeedLanguage = lazy(() => import("./pages/SeedLanguage"));
 const SeedLanguageDetail = lazy(() => import("./pages/SeedLanguageDetail"));
@@ -92,6 +93,7 @@ function AppShell() {
           <Route path="/columns" element={<Columns />} />
           <Route path="/columns/:slug" element={<ColumnDetail />} />
           <Route path="/news" element={<News />} />
+          <Route path="/news/issues/:id" element={<HotIssueClusterDetail />} />
           <Route path="/news/:slug" element={<HotIssueDetail />} />
           <Route path="/monitoring" element={<Monitoring />} />
           <Route path="/monitoring/legislation" element={<LegislativeWatch />} />

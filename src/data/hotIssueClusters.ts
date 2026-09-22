@@ -28,7 +28,10 @@ export type HotIssueCluster = {
   number: string;
   title: string;
   summary: string;
+  latestChange: string;
   focus: string;
+  imageSrc: string;
+  imageAlt: string;
   items: HotIssueClusterItem[];
   updatedAt: string;
 };
@@ -39,6 +42,7 @@ const clusterDefinitions: Array<{
   id: string;
   title: Record<Language, string>;
   summary: Record<Language, string>;
+  latestChange: Record<Language, string>;
   focus: Record<Language, string>;
   references: HotIssueReference[];
 }> = [
@@ -51,6 +55,10 @@ const clusterDefinitions: Array<{
     summary: {
       ko: "248억 원으로 승인된 행사는 직접사업비 713억 원으로 커졌습니다. 개막 뒤에도 현장 혼선과 계약 논란이 이어지는 가운데, 씨앗은 예산·입찰·계약 자료를 한 흐름으로 묶어 추적합니다.",
       en: "An event approved at KRW 24.8 billion grew to KRW 71.3 billion in direct project spending. SEED VOICE connects the budget, tenders, contracts and post-opening problems in one continuing record.",
+    },
+    latestChange: {
+      ko: "412건의 계약 자료를 다시 연결해 예산의 실제 흐름을 확인했습니다.",
+      en: "We reconnected 412 contract records to trace where the budget actually went.",
     },
     focus: {
       ko: "지금 볼 질문 · 713억 원의 예산과 412건의 계약은 어디로 흘렀나",
@@ -72,6 +80,10 @@ const clusterDefinitions: Array<{
       ko: "상속은 개인 재산의 이전만이 아닙니다. 기업의 주식과 고용, 투자와 서비스가 다음 세대로 이어질 수 있는지를 함께 결정합니다. 씨앗은 고율 과세가 기업과 인재의 이동에 미치는 영향을 살펴봅니다.",
       en: "Inheritance is not only a transfer of private wealth. It can determine whether ownership, jobs, investment and services survive into the next generation. These stories examine how high rates affect business continuity and mobility.",
     },
+    latestChange: {
+      ko: "분만병원 사례와 해외 연구를 통해 고율 상속세가 계속사업에 미치는 영향을 살펴봅니다.",
+      en: "A maternity-hospital case and overseas research show how high inheritance taxes affect business continuity.",
+    },
     focus: {
       ko: "지금 볼 질문 · 편법을 막는 세금이 정상적인 기업승계까지 막고 있지 않은가",
       en: "Question now · Is a tax meant to deter avoidance also obstructing legitimate succession?",
@@ -91,6 +103,10 @@ const clusterDefinitions: Array<{
     summary: {
       ko: "검찰청 간판이 사라져도 국가의 강제력은 사라지지 않습니다. 공소청·중수청 출범과 보완수사권 폐지 논쟁을 시민의 방어권, 피해자 구제, 책임의 연결이라는 기준으로 계속 확인합니다.",
       en: "Removing the prosecution service does not remove the state's coercive power. SEED VOICE follows the new agencies, the loss of supplementary-investigation powers, remedies for victims and lines of accountability.",
+    },
+    latestChange: {
+      ko: "형사사법체계 전환을 앞두고 수사 공백과 시민의 방어권 문제를 다시 확인했습니다.",
+      en: "Ahead of the criminal-justice transition, we revisited investigative gaps and citizens' right to defend themselves.",
     },
     focus: {
       ko: "지금 볼 질문 · 권력은 줄었나, 아니면 주소만 바뀌었나",
@@ -112,6 +128,10 @@ const clusterDefinitions: Array<{
     summary: {
       ko: "정부는 발전 공기업을 합치고 LH는 나누며 공공기관 109개를 줄이겠다고 밝혔습니다. 조직도보다 중요한 것은 부채와 비용, 권력과 책임이 시민에게 더 잘 보이게 되는가입니다.",
       en: "The government plans to merge power generators, split LH and reduce the public-sector count by 109. The real test is whether debt, cost, power and responsibility become more visible to citizens.",
+    },
+    latestChange: {
+      ko: "LH 분할과 발전 5사 통합안이 부채·비용·권력의 책임선을 어떻게 바꾸는지 추적합니다.",
+      en: "We track how the LH split and power-company merger would reshape responsibility for debt, cost and power.",
     },
     focus: {
       ko: "지금 볼 질문 · 한쪽에서는 빚을 나누고 다른 쪽에서는 권력을 합치는 기준은 무엇인가",
@@ -224,7 +244,10 @@ export function getHotIssueClusters(language: Language): HotIssueCluster[] {
       number: String(index + 1).padStart(2, "0"),
       title: cluster.title[language],
       summary: cluster.summary[language],
+      latestChange: cluster.latestChange[language],
       focus: cluster.focus[language],
+      imageSrc: items[0]?.imageSrc ?? fallbackImage,
+      imageAlt: items[0]?.imageAlt ?? cluster.title[language],
       items,
       updatedAt: items[0]?.date ?? "",
     };

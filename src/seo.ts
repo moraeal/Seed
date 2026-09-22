@@ -5,6 +5,7 @@ import { publicInterestWatchCases } from "./data/newsTrackerRegistry";
 import { taxPolicies } from "./data/taxWatch";
 import { taxCommentaries } from "./data/taxCommentaries";
 import { legislativeCommentaries } from "./data/legislativeCommentaries";
+import { getHotIssueClusters } from "./data/hotIssueClusters";
 import { seedLanguageArticlesKo } from "./data/seedLanguage";
 import { seedLanguageEnvironmentArticlesKo } from "./data/seedLanguageEnvironment";
 import {
@@ -98,6 +99,18 @@ const newsRoutes: SeoRoute[] = newsArticles.map((article) => ({
   section: article.category,
   image: socialImageUrl("news", article.slug, article.date),
   imageAlt: article.heroImage.alt,
+}));
+
+const hotIssueClusterRoutes: SeoRoute[] = getHotIssueClusters("ko").map((cluster) => ({
+  path: `/news/issues/${cluster.id}`,
+  title: `${cluster.title} | 씨앗의 소리`,
+  description: cluster.summary,
+  type: "article",
+  lastModified: cluster.updatedAt,
+  author: SITE_NAME,
+  section: "핫이슈",
+  image: socialImageUrl("hot-issues", cluster.id, cluster.updatedAt),
+  imageAlt: cluster.imageAlt,
 }));
 
 const briefingRoutes: SeoRoute[] = getAllBriefingsNewestFirst().flatMap((briefing) => {
@@ -226,6 +239,7 @@ const seedLanguageRoutes: SeoRoute[] = allSeedLanguageArticlesKo.map((article) =
 export const seoRoutes: SeoRoute[] = [
   ...staticRoutes,
   ...newsRoutes,
+  ...hotIssueClusterRoutes,
   ...briefingRoutes,
   ...columnRoutes,
   ...monitoringRoutes,
