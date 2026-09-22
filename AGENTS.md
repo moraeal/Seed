@@ -14,6 +14,7 @@
 - Do not publish when the matching English translation or primary preview image is missing. Run the full production build before release.
 - Preserve SEED's long-form depth when a subject needs context, evidence, and argument. Do not shorten a briefing or column merely to chase clicks.
 - Make long content easy to enter and scan: open with a concise summary or key sentence, use clear intermediate headings, keep paragraphs visually separated, and maintain generous reading space on desktop and mobile.
+- Do not add a separate table-of-contents or “read the outline first” box to articles, including long-form pieces. Use the opening summary and clear intermediate headings to guide readers instead.
 - Every item estimated at eight minutes or longer must contain at least two meaningful titled sections and at least two purposeful visuals. Use charts or infographics for numbers and systems, and illustrations or photographs for concepts and human context. Do not add decorative images that carry no editorial meaning.
 - Keep the visual hierarchy consistent across Korean and English editions. Translate every summary, section heading, image description, and caption; preserve the same editorial structure rather than delivering a thinner English version.
 

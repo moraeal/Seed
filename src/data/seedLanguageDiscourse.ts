@@ -32,7 +32,6 @@ export const discourseArticleKo: SeedLanguageArticle = {
     credit: "씨앗의 소리 AI 제작 이미지 · 상징적 장면",
   },
   inlineImageAfterSection: 2,
-  showTableOfContents: false,
   leadParagraphs: [
     "한국 정치에는 말이 넘칩니다. 국회와 방송, 유튜브와 SNS에서는 진보와 보수가 하루도 쉬지 않고 충돌합니다. 상대를 비판하고 지지자를 결집하는 말은 갈수록 강해집니다.",
     "그런데 한국 사회가 어디로 가야 하는지는 잘 보이지 않습니다.",

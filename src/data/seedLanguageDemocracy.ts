@@ -185,7 +185,6 @@ const democracyDeepKo: SeedLanguageArticle = {
     caption: "시민화는 정해진 정치적 정답을 배우는 일이 아니다. 자신이 선택한 지도자에게도 질문하고 그 답을 검증하는 일상의 습관이다.",
     credit: "씨앗의 소리 AI 제작 이미지 · 상징적 삽화",
   },
-  showTableOfContents: true,
   relatedArticle: { slug: "democracy-not-a-king", label: "5분 요약본 보기" },
   chart: {
     title: "‘국민의 뜻’ 이후에 무엇을 허용하는가",

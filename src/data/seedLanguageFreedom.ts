@@ -28,7 +28,6 @@ export const freedomArticleKo: SeedLanguageArticle = {
     credit: "씨앗의 소리 AI 제작 인포그래픽",
   },
   inlineImageAfterSection: 8,
-  showTableOfContents: false,
   chart: {
     title: "같은 자유, 다른 시민 — 자유가 약해지는 상태와 씨앗이 말하는 자유",
     headers: ["판단 기준", "자유가 약해지는 상태", "씨앗이 말하는 자유"],

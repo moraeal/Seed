@@ -29,7 +29,6 @@ export const publicArticleKo: SeedLanguageArticle = {
     credit: "씨앗의 소리 AI 제작 이미지",
   },
   inlineImageAfterSection: 2,
-  showTableOfContents: true,
   leadParagraphs: [
     "동네의 민간 산부인과에는 의사와 간호사가 있고 분만실도 열려 있습니다. 가까운 공공병원에는 간판과 건물은 있지만 분만할 의료진이 없습니다. 이때 주민에게 더 공공적인 병원은 어디일까요.",
     "최근 씨앗의 소리는 「공공의료는 병원 간판으로 증명되지 않는다」에서 이 질문을 다뤘습니다. 김천의 분만병원, 안동의 닥터헬기, 전남의 공공·민간 분만망은 공공의료가 소유 형태 하나로 유지되지 않는다는 사실을 보여줬습니다.",

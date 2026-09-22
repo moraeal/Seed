@@ -68,11 +68,6 @@ export default function SeedLanguageDetail() {
     </header>
 
     <div className="article-content-frame py-8 sm:py-11">
-      {article.showTableOfContents && <nav id="article-contents" aria-labelledby="contents-title" className="mb-10 scroll-mt-28 border-t-2 border-navy bg-white px-5 py-6 sm:px-8">
-        <h2 id="contents-title" className="text-xl font-extrabold text-navy">{ko ? "목차로 먼저 읽기" : "Read the argument at a glance"}</h2>
-        <p className="mt-2 text-sm leading-7 text-charcoal/65">{ko ? "각 항목은 이 글의 핵심 주장입니다. 목차만 읽어 흐름을 살피거나, 궁금한 항목을 눌러 본문으로 이동할 수 있습니다." : "Each entry states a central claim. Read this outline on its own, or select a section to explore the argument."}</p>
-        <ol className="mt-5 divide-y divide-green-deep/10">{article.sections.map((section, index) => <li key={section.title}><a href={`#article-section-${index + 1}`} className="flex gap-4 py-4 text-navy hover:text-green-mid focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-deep"><span className="pt-0.5 text-sm font-bold text-green-deep" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><span><span className="block text-base font-bold leading-7">{section.title}</span>{section.overview && <span className="mt-1 block text-sm leading-6 text-charcoal/65">{section.overview}</span>}</span></a></li>)}</ol>
-      </nav>}
       <InteractiveFigure src={heroImage.src} alt={heroImage.alt} caption={heroImage.caption} credit={heroImage.credit} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.09)]" imageClassName="aspect-[16/9] w-full object-cover" />
 
       <div className="reading-column mt-10">
@@ -92,7 +87,6 @@ export default function SeedLanguageDetail() {
           </figure>)}
           {index === Math.min(article.inlineImageAfterSection ?? 6, article.sections.length - 1) && article.inlineImage && <InteractiveFigure src={article.inlineImage.src} alt={article.inlineImage.alt} caption={article.inlineImage.caption} credit={article.inlineImage.credit} figureClassName="my-8 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName="aspect-[16/9] w-full object-cover" />}
           {index === Math.min(article.secondaryImageAfterSection ?? 6, article.sections.length - 1) && article.secondaryImage && <InteractiveFigure src={article.secondaryImage.src} alt={article.secondaryImage.alt} caption={article.secondaryImage.caption} credit={article.secondaryImage.credit} figureClassName="my-8 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName="aspect-[16/9] w-full object-cover" />}
-          {article.showTableOfContents && <a href="#article-contents" className="mt-4 inline-block text-sm font-semibold text-green-deep underline underline-offset-4">{ko ? "목차로 돌아가기" : "Back to contents"}</a>}
         </section>)}
 
         {article.sources && <aside className="my-10 border-t border-green-deep/20 pt-6"><h2 className="text-base font-bold text-navy">{ko ? "출처와 사실 확인" : "Sources and factual basis"}</h2><ul className="mt-4 space-y-3">{article.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="text-sm leading-7 text-green-deep underline underline-offset-4">{source.label}</a></li>)}</ul></aside>}

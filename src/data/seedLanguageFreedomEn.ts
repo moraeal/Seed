@@ -27,7 +27,6 @@ export const freedomArticleEn: SeedLanguageArticle = {
     credit: "AI image produced by SEED VOICE",
   },
   inlineImageAfterSection: 3,
-  showTableOfContents: true,
   sections: [
     {
       title: "Freedom makes citizens larger",

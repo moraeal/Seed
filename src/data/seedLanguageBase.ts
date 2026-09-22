@@ -32,7 +32,6 @@ export type SeedLanguageArticle = {
   inlineImageAfterSection?: number;
   secondaryImage?: SeedLanguageImage;
   secondaryImageAfterSection?: number;
-  showTableOfContents?: boolean;
   relatedArticle?: { slug: string; label: string };
   sources?: { label: string; url: string }[];
   charts?: NonNullable<SeedLanguageArticle["chart"]>[];

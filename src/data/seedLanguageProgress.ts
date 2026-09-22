@@ -50,7 +50,6 @@ export const progressArticleKo: SeedLanguageArticle = {
     credit: "씨앗의 소리 AI 제작 이미지 · 상징적 장면",
   },
   secondaryImageAfterSection: 5,
-  showTableOfContents: false,
   sections: [
     {
       title: "나는 보수다. 그러나 나는 또한 진보다",

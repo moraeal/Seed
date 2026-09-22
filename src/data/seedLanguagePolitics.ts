@@ -38,7 +38,6 @@ export const politicsArticleKo: SeedLanguageArticle = {
     credit: "씨앗의 소리 편집 도표",
   },
   inlineImageAfterSection: 6,
-  showTableOfContents: false,
   leadParagraphs: [
     "정치란 무엇인가.",
     "뉴스 화면을 켜면 정치가 넘쳐난다. 대통령의 말, 정당의 공방, 지지율과 선거 이야기가 하루도 빠지지 않는다. 정치는 이렇게 우리 곁에 가득한데, 정작 시민은 자신의 삶을 바꿀 힘이 없다고 느낀다. 정치가 커질수록 시민은 왜 더 무력해지는가.",

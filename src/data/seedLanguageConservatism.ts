@@ -38,7 +38,6 @@ export const conservatismArticleKo: SeedLanguageArticle = {
     credit: "씨앗의 소리 편집 도표",
   },
   inlineImageAfterSection: 5,
-  showTableOfContents: false,
   sections: [
     {
       title: "나는 보수다",

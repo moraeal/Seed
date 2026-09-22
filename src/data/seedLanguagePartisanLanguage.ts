@@ -38,7 +38,6 @@ export const partisanLanguageArticleKo: SeedLanguageArticle = {
     credit: "씨앗의 소리 편집 도표",
   },
   inlineImageAfterSection: 6,
-  showTableOfContents: false,
   sections: [
     {
       title: "우리는 언제부터 서로의 이름을 잃었나",
