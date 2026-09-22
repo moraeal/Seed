@@ -103,6 +103,12 @@ export function getFeaturedContentCandidates(language: Language): FeaturedConten
     }];
   });
 
-  return [...columnItems, ...newsItems, ...trackerItems, ...briefingItems, ...languageItems]
+  const candidates = [...columnItems, ...newsItems, ...trackerItems, ...briefingItems, ...languageItems]
     .sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
+  const seenPaths = new Set<string>();
+  return candidates.filter((item) => {
+    if (seenPaths.has(item.path)) return false;
+    seenPaths.add(item.path);
+    return true;
+  });
 }
