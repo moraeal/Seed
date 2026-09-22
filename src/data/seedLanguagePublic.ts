@@ -31,7 +31,7 @@ export const publicArticleKo: SeedLanguageArticle = {
   inlineImageAfterSection: 2,
   leadParagraphs: [
     "동네의 민간 산부인과에는 의사와 간호사가 있고 분만실도 열려 있습니다. 가까운 공공병원에는 간판과 건물은 있지만 분만할 의료진이 없습니다. 이때 주민에게 더 공공적인 병원은 어디일까요.",
-    "최근 씨앗의 소리는 「공공의료는 병원 간판으로 증명되지 않는다」에서 이 질문을 다뤘습니다. 김천의 분만병원, 안동의 닥터헬기, 전남의 공공·민간 분만망은 공공의료가 소유 형태 하나로 유지되지 않는다는 사실을 보여줬습니다.",
+    "최근 씨앗의 소리는 [「공공의료는 병원 간판으로 증명되지 않는다」](/columns/public-health-proved-by-function)에서 이 질문을 다뤘습니다. 김천의 분만병원, 안동의 닥터헬기, 전남의 공공·민간 분만망은 공공의료가 소유 형태 하나로 유지되지 않는다는 사실을 보여줬습니다.",
     "이 사례는 의료만의 이야기가 아닙니다. 버스와 학교, 공원과 도서관, 돌봄과 재난 대응에서도 우리는 ‘공공’이라는 말을 자주 씁니다. 그러나 국가나 지방자치단체가 운영하면 곧 공공이고, 민간이 운영하면 사적인 것이라고 나누는 순간 중요한 질문이 사라집니다. 시민에게 필요한 기능이 실제로 작동하는가. 결정 과정에 시민의 목소리가 들어가는가. 결과에 대해 누가 설명하고 책임지는가.",
   ],
   charts: [
@@ -149,7 +149,7 @@ export const publicArticleEn: SeedLanguageArticle = {
   },
   leadParagraphs: [
     "A privately owned maternity clinic in town has doctors, nurses and an open delivery room. The nearby public hospital has a building and a public name, but no staff able to deliver babies. Which hospital is more public to the resident who needs care?",
-    "SEED VOICE recently examined that question in ‘Public Healthcare Is Not Proven by the Name on the Hospital.’ Maternity care in Gimcheon, the doctor helicopter based in Andong and South Jeolla’s public-private maternity network all show that public healthcare cannot be sustained by ownership form alone.",
+    "SEED VOICE recently examined that question in [‘Public Healthcare Is Not Proven by the Name on the Hospital.’](/columns/public-health-proved-by-function) Maternity care in Gimcheon, the doctor helicopter based in Andong and South Jeolla’s public-private maternity network all show that public healthcare cannot be sustained by ownership form alone.",
     "The question reaches beyond medicine. We use the word public for buses, schools, parks, libraries, care and disaster response. But dividing them into public because government operates them and private because a company does erases the questions that matter: Does the needed function work? Can citizens influence the decision? Who explains and answers for the outcome?",
   ],
   charts: [{
