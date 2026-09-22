@@ -1,3 +1,5 @@
+import { taxExpenditureCapCommentary } from "./taxExpenditureCapCommentary";
+
 export type TaxCommentaryLanguage = "ko" | "en";
 
 type LocalizedText = { ko: string; en: string };
@@ -27,6 +29,12 @@ export type TaxCommentary = {
   date: string;
   readMinutes: number;
   heroSrc: string;
+  bodyImage?: {
+    src: string;
+    afterSection: number;
+    alt: LocalizedText;
+    caption: LocalizedText;
+  };
   sources: { label: LocalizedText; url: string }[];
   relatedReading?: Record<TaxCommentaryLanguage, {
     href: string;
@@ -40,6 +48,7 @@ export type TaxCommentary = {
 };
 
 export const taxCommentaries: TaxCommentary[] = [
+taxExpenditureCapCommentary,
 {
   slug: "content-support-one-ledger",
   relatedPolicySlug: "content-strategy-special-account-rebate-bill",
@@ -577,4 +586,5 @@ export const taxCommentaries: TaxCommentary[] = [
 }];
 
 export const getTaxCommentary = (slug: string) => taxCommentaries.find((item) => item.slug === slug);
+export const getTaxCommentaryForPolicy = (policySlug: string) => taxCommentaries.find((item) => item.relatedPolicySlug === policySlug);
 export const getTaxCommentaryEdition = (item: TaxCommentary, language: TaxCommentaryLanguage) => item.editions[language];

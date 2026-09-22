@@ -1,7 +1,8 @@
-import { ArrowLeft, CalendarDays, ExternalLink, ReceiptText, Star } from "lucide-react";
+import { ArrowLeft, ArrowRight, CalendarDays, ExternalLink, ReceiptText, Star } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import ContentAccountability from "../components/ContentAccountability";
 import SafeImage from "../components/SafeImage";
+import { getTaxCommentaryEdition, getTaxCommentaryForPolicy } from "../data/taxCommentaries";
 import { getTaxPolicy, type LocalizedText } from "../data/taxWatch";
 import { useLanguage } from "../i18n";
 
@@ -15,6 +16,9 @@ export default function TaxPolicyDetail() {
   const policy = getTaxPolicy(slug);
 
   if (!policy) return <div className="container-page min-h-[55vh] py-24 text-center"><h1 className="editorial-title text-3xl font-bold text-navy">{ko ? "공개된 세금정책 기록을 찾을 수 없습니다." : "This published tax policy record could not be found."}</h1><Link to="/monitoring/tax" className="button-primary mt-7">{ko ? "세금감시 목록" : "Tax Watch"}</Link></div>;
+
+  const relatedCommentary = getTaxCommentaryForPolicy(policy.slug);
+  const commentaryEdition = relatedCommentary ? getTaxCommentaryEdition(relatedCommentary, ko ? "ko" : "en") : undefined;
 
   return <article className="bg-paper pb-16">
     <header className="border-b border-green-deep/15 bg-ivory py-9 sm:py-12">
@@ -51,6 +55,8 @@ export default function TaxPolicyDetail() {
       </NumberedSection>
 
       <section className="article-section reading-column border-2 border-green-deep bg-ivory p-6 shadow-[7px_7px_0_0_rgba(24,83,66,0.12)] sm:p-8"><div className="flex items-center gap-2 text-green-deep"><Star size={17} fill="currentColor"/><span className="text-[11px] font-black tracking-[.18em]">06 · SEED VOICE VIEW</span></div><h2 className="editorial-title mt-3 text-2xl font-bold text-navy">{ko ? "씨앗은 이렇게 봅니다" : "How Seed Voice sees it"}</h2><p className="mt-4 whitespace-pre-line text-base leading-8 text-charcoal/75">{localized(policy.seedView, ko)}</p><p className="mt-5 border-t border-green-deep/15 pt-4 text-xs leading-6 text-charcoal/50">{ko ? "이 상자는 공식 사실 정보와 구분되는 씨앗의 소리의 편집 판단입니다. 새 자료가 확인되면 근거와 판단을 함께 갱신합니다." : "This box contains Seed Voice's editorial judgment, separate from the official factual record. Evidence and analysis will be updated when new material is verified."}</p></section>
+
+      {relatedCommentary && commentaryEdition && <Link to={`/monitoring/tax/commentary/${relatedCommentary.slug}`} className="article-section reading-column flex items-center justify-between gap-4 border-2 border-green-deep bg-white px-5 py-5 text-green-deep transition hover:bg-green-pale sm:px-6"><span><span className="section-kicker">{ko ? "쉬운 시민 논평" : "PLAIN-LANGUAGE COMMENTARY"}</span><strong className="mt-1 block text-base leading-7 text-navy">{commentaryEdition.title}</strong><span className="mt-1 block text-sm leading-6 text-charcoal/60">{ko ? "이 법안이 시민의 세금과 생활에 어떤 의미인지 쉽게 풀어봅니다." : "A plain-language account of what this bill means for taxpayers and everyday life."}</span></span><ArrowRight className="shrink-0" size={18}/></Link>}
 
       <NumberedSection number="07" title={ko ? "정책 진행 타임라인" : "Policy timeline"}>
         <ol className="space-y-5 border-l-2 border-green-deep/20 pl-6">{policy.timeline.map((event) => <li key={`${event.date}-${event.title.ko}`}><time className="text-xs font-black text-green-deep">{event.date.length === 7 ? event.date.replace("-", ".") : dateText(event.date)}</time><h3 className="mt-1 font-bold text-navy">{localized(event.title, ko)}</h3>{event.date === policy.checkedAt && <span className="mt-1 inline-flex bg-green-pale px-2 py-1 text-[10px] font-bold text-green-deep">{ko ? "현재 확인 단계" : "Current verified stage"}</span>}</li>)}</ol>
