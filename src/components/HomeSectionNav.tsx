@@ -10,9 +10,9 @@ type SectionItem = {
 const sectionItems: SectionItem[] = [
   { kicker: "TODAY'S SEED", labelKo: "오늘의 씨앗", labelEn: "Today's Seed" },
   { kicker: "HOT ISSUES", labelKo: "핫이슈", labelEn: "Hot Issues" },
+  { kicker: "CIVIC WATCH", labelKo: "시민감시", labelEn: "Civic Watch" },
   { kicker: "BRIEFINGS", labelKo: "브리핑", labelEn: "Briefings" },
   { kicker: "COLUMNS", labelKo: "칼럼", labelEn: "Columns" },
-  { kicker: "READERS & LATEST", labelKo: "많이 읽은 글", labelEn: "Readers & Latest" },
 ];
 
 function findSection(kicker: string) {

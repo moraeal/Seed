@@ -71,7 +71,7 @@ const staticRoutes: SeoRoute[] = [
     lastModified: latestDate,
     language: "en",
   },
-  { path: "/news", title: "핫이슈 | 씨앗의 소리", description: "뉴스트래커가 쌓은 사실을 바탕으로 정치·사회 사건의 핵심 쟁점과 시민에게 미치는 영향을 보도와 논평으로 설명합니다.", type: "website", lastModified: newest([...newsArticles.map((item) => item.date), ...getHotIssueColumnsNewestFirst().map((item) => item.date)]) },
+  { path: "/news", title: "핫이슈 | 씨앗의 소리", description: "최근 가장 뜨거운 현안을 이슈별로 묶어 기사·브리핑·칼럼·시민감시 기록의 흐름을 한눈에 보여줍니다.", type: "website", lastModified: newest([...newsArticles.map((item) => item.date), ...getHotIssueColumnsNewestFirst().map((item) => item.date)]) },
   { path: "/briefings", title: "브리핑 | 씨앗의 소리", description: "복잡한 정책과 제도 논쟁을 사실, 맥락, 관찰 지점과 씨드의 관점으로 차분하게 풀어냅니다.", type: "website", lastModified: newest(getAllBriefingsNewestFirst().map((item) => item.date)) },
   { path: "/columns", title: "칼럼 | 씨앗의 소리", description: "특정 사건의 기록에 종속되지 않는 독립적인 주장과 사유를 통해 자유, 책임, 시장과 시민사회를 깊이 생각합니다.", type: "website", lastModified: newest(getColumnsNewestFirst().map((item) => item.date)) },
   { path: "/contributions", title: "필자 기고 | 씨앗의 소리", description: "씨앗의 소리 필자들이 쓰고 편집부 검토를 거쳐 게시한 칼럼과 브리핑을 읽습니다.", type: "website", lastModified: latestDate },

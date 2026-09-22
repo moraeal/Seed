@@ -6,11 +6,11 @@ export const MAGAZINE_URL = "https://jimd.kr/magazine";
 export const content = {
   ko: {
     nav: [
-      { label: "칼럼", path: "/columns" },
       { label: "핫이슈", path: "/news" },
       { label: "브리핑", path: "/briefings" },
       { label: "시민감시", path: "/monitoring" },
       { label: "시민언어", path: "/seed-language" },
+      { label: "칼럼", path: "/columns" },
       { label: "소개", path: "/about" },
     ],
     actions: { proposal: "시민제안 올리기", support: "후원하기", language: "English" },
@@ -129,11 +129,11 @@ export const content = {
   },
   en: {
     nav: [
-      { label: "Columns", path: "/columns" },
       { label: "Hot Issues", path: "/news" },
       { label: "Briefings", path: "/briefings" },
       { label: "Civic Watch", path: "/monitoring" },
       { label: "Glossary", path: "/seed-language" },
+      { label: "Columns", path: "/columns" },
       { label: "About", path: "/about" },
     ],
     actions: { proposal: "Submit a Proposal", support: "Support SEED", language: "한국어" },

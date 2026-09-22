@@ -26,19 +26,19 @@ export default function Header() {
 
   const nav = language === "en"
     ? [
-        ["Columns", "/columns"],
         ["Hot Issues", "/news"],
         ["Briefings", "/briefings"],
         ["Civic Watch", "/monitoring"],
         ["Glossary", "/seed-language"],
+        ["Columns", "/columns"],
         ["About", "/about"],
       ]
     : [
-        ["칼럼", "/columns"],
         ["핫이슈", "/news"],
         ["브리핑", "/briefings"],
         ["시민감시", "/monitoring"],
         ["시민언어", "/seed-language"],
+        ["칼럼", "/columns"],
         ["소개", "/about"],
       ];
 
