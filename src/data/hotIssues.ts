@@ -20,14 +20,20 @@ export function getHotIssuesNewestFirst(language: Language): HotIssueListItem[] 
   const ko = language === "ko";
   const news = getNewsNewestFirst().map((item) => {
     const localized = localizeNewsArticle(item, language);
+    const listingImage = item.preferHeroImageInListings
+      ? localized.heroImage
+      : {
+          src: localized.selectedNews.thumbnailUrl ?? localized.heroImage.src,
+          alt: localized.selectedNews.thumbnailAlt ?? localized.heroImage.alt,
+        };
     return {
       key: `news-${item.slug}`,
       to: `/news/${item.slug}`,
       title: localized.title,
       summary: localized.summary,
       date: item.date,
-      imageSrc: localized.selectedNews.thumbnailUrl ?? localized.heroImage.src,
-      imageAlt: localized.selectedNews.thumbnailAlt ?? localized.heroImage.alt,
+      imageSrc: listingImage.src,
+      imageAlt: listingImage.alt,
       kindLabel: ko ? "뉴스" : "News",
       readMinutes: item.readMinutes,
     };
