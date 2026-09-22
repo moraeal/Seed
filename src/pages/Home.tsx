@@ -5,6 +5,7 @@ import NewsletterSignup from "../components/NewsletterSignup";
 import SafeImage from "../components/SafeImage";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { getColumnsNewestFirst, hotIssueColumnTrackerSlugs } from "../data/columns";
+import { getHotIssueClusters } from "../data/hotIssueClusters";
 import { localizeBriefing, localizeColumn } from "../data/localizedContent";
 import { getHotIssuesNewestFirst } from "../data/hotIssues";
 import { newsTrackerCases } from "../data/newsTrackerRegistry";
@@ -101,6 +102,7 @@ export default function Home() {
   const localizedBriefings = allBriefings.map((item) => localizeBriefing(item, language));
   const allJournalColumns = getColumnsNewestFirst().map((item) => localizeColumn(item, language));
   const hotIssues = getHotIssuesNewestFirst(language);
+  const hotIssueClusters = getHotIssueClusters(language);
   const seedLanguageCandidates = [
     ...seedLanguageEnvironmentArticlesKo,
     ...seedLanguageArticlesKo,
@@ -247,7 +249,6 @@ export default function Home() {
     .sort((a, b) => b.date.localeCompare(a.date));
 
   const commentaryItems = claimUnseen(commentaryCandidates, (item) => item.to, claimedHomePaths, 3);
-  const visibleHotIssues = claimUnseen(hotIssues, (item) => item.to, claimedHomePaths, 3);
   const briefings = claimUnseen(
     localizedBriefings.filter((item) => item.homeBriefingLeadEligible !== false),
     (item) => `/briefings/${item.slug}`,
@@ -430,7 +431,52 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="pt-9 pb-6 sm:pt-16 sm:pb-8" aria-labelledby="hot-issues-title"><div className="container-page"><div className="flex items-end justify-between gap-3 border-b-[3px] border-navy pb-2.5 sm:gap-4 sm:pb-3"><div><p className="section-kicker">HOT ISSUES</p><h2 id="hot-issues-title" className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "핫이슈" : "Hot Issues"}</h2><p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">{ko ? "뉴스트래커의 기록을 바탕으로 사건의 쟁점과 의미를 설명합니다." : "Reporting and commentary explain the meaning behind Civic Watch records."}</p></div><Link to="/news" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link></div><div className="divide-y divide-green-deep/12 pt-1 md:grid md:grid-cols-3 md:gap-8 md:divide-y-0 md:pt-6">{visibleHotIssues.slice(0, 3).map((item) => <article key={item.key} className="group py-4 md:py-0"><Link to={item.to} className="block"><div className="hidden h-[220px] overflow-hidden bg-ivory md:block lg:h-[240px]"><SafeImage src={resolveImageSrc(item.imageSrc)} alt={item.imageAlt} referrerPolicy="no-referrer" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.018]" /></div><p className="mt-3 text-[10px] font-black tracking-[.12em] text-green-deep">{item.kindLabel}</p><h3 className="editorial-title break-keep text-[1.08rem] font-bold leading-snug text-navy transition group-hover:text-green-mid md:mt-1 md:text-[1.35rem]">{item.title}</h3><p className="mt-1.5 line-clamp-3 text-[13px] leading-5 text-charcoal/58 md:mt-2 md:text-sm md:leading-6">{item.summary}</p><div className="mt-2 flex items-center gap-3 text-[11px] text-charcoal/45 sm:text-xs"><time>{item.date.replace(/-/g, ".")}</time>{item.readMinutes && <span className="inline-flex items-center gap-1"><Clock size={12}/>{item.readMinutes}{ko ? "분 읽기" : " min read"}</span>}</div></Link></article>)}</div></div></section>
+      <section className="pt-9 pb-6 sm:pt-16 sm:pb-8" aria-labelledby="hot-issues-title">
+        <div className="container-page">
+          <div className="flex items-end justify-between gap-3 border-b-[3px] border-navy pb-2.5 sm:gap-4 sm:pb-3">
+            <div>
+              <p className="section-kicker">HOT ISSUES</p>
+              <h2 id="hot-issues-title" className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "핫이슈" : "Hot Issues"}</h2>
+              <p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">
+                {ko ? "지금 시민이 알아야 할 네 가지 흐름을 씨앗의 관점으로 정리합니다." : "Four developing issues citizens need to understand now, organized from SEED VOICE's perspective."}
+              </p>
+            </div>
+            <Link to="/news" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link>
+          </div>
+
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
+            {hotIssueClusters.map((item, index) => (
+              <Link
+                key={item.id}
+                to={`/news/issues/${item.id}`}
+                className="group flex h-full flex-col overflow-hidden border-t-[3px] border-green-deep bg-white shadow-[0_10px_26px_rgba(20,55,45,.055)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(20,55,45,.11)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4"
+              >
+                <div className="relative overflow-hidden bg-ivory">
+                  <SafeImage
+                    src={resolveImageSrc(item.imageSrc)}
+                    alt={item.imageAlt}
+                    loading={index < 2 ? "eager" : "lazy"}
+                    referrerPolicy="no-referrer"
+                    className="aspect-[16/9] w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                  />
+                  <span className="absolute left-0 top-0 bg-green-deep px-2.5 py-1.5 text-[9px] font-black tracking-[.13em] text-white">
+                    {ko ? `현안 ${item.number}` : `ISSUE ${item.number}`}
+                  </span>
+                </div>
+                <div className="flex flex-1 flex-col p-4">
+                  <div className="flex items-center justify-between gap-3 text-[10px] font-semibold text-charcoal/40">
+                    <span>{ko ? "최근 변화" : "LATEST CHANGE"}</span>
+                    <time>{item.updatedAt.replace(/-/g, ".")}</time>
+                  </div>
+                  <h3 className="editorial-title mt-2 line-clamp-3 break-keep text-[1.08rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.18rem]">{item.title}</h3>
+                  <p className="mt-1.5 line-clamp-2 text-[12px] leading-5 text-charcoal/58 sm:text-[13px]">{item.latestChange}</p>
+                  <span className="mt-auto inline-flex items-center justify-end gap-1.5 pt-3 text-[11px] font-extrabold text-green-deep">{ko ? "현안 보기" : "View issue"}<ArrowRight size={13} className="transition-transform group-hover:translate-x-1" aria-hidden="true"/></span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {recentCivicWatchItems.length > 0 && (
         <section className="bg-paper pt-8 pb-4 sm:pt-12 sm:pb-5" aria-labelledby="recent-civic-watch-title">
