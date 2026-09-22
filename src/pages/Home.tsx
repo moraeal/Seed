@@ -451,7 +451,7 @@ export default function Home() {
                 to={`/news/issues/${item.id}`}
                 className="group flex h-full flex-col overflow-hidden border-t-[3px] border-green-deep bg-white shadow-[0_10px_26px_rgba(20,55,45,.055)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(20,55,45,.11)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4"
               >
-                <div className="relative overflow-hidden bg-ivory">
+                <div className="overflow-hidden bg-ivory">
                   <SafeImage
                     src={resolveImageSrc(item.imageSrc)}
                     alt={item.imageAlt}
@@ -459,9 +459,6 @@ export default function Home() {
                     referrerPolicy="no-referrer"
                     className="aspect-[16/9] w-full object-cover transition duration-500 group-hover:scale-[1.02]"
                   />
-                  <span className="absolute left-0 top-0 bg-green-deep px-2.5 py-1.5 text-[9px] font-black tracking-[.13em] text-white">
-                    {ko ? `현안 ${item.number}` : `ISSUE ${item.number}`}
-                  </span>
                 </div>
                 <div className="flex flex-1 flex-col p-4">
                   <div className="flex items-center justify-between gap-3 text-[10px] font-semibold text-charcoal/40">

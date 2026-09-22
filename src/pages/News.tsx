@@ -44,7 +44,7 @@ export default function News() {
               key={cluster.id}
               className="group flex h-full flex-col overflow-hidden border-t-4 border-green-deep bg-white shadow-[0_12px_32px_rgba(20,55,45,.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(20,55,45,.11)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4"
             >
-              <div className="relative overflow-hidden bg-ivory">
+              <div className="overflow-hidden bg-ivory">
                 <SafeImage
                   src={cluster.imageSrc}
                   alt={cluster.imageAlt}
@@ -53,9 +53,6 @@ export default function News() {
                   referrerPolicy="no-referrer"
                   className="aspect-[16/8.6] w-full object-cover transition duration-500 group-hover:scale-[1.018]"
                 />
-                <span className="absolute left-0 top-0 bg-green-deep px-3 py-2 text-[10px] font-black tracking-[.14em] text-white">
-                  {ko ? `현안 ${cluster.number}` : `ISSUE ${cluster.number}`}
-                </span>
               </div>
 
               <div className="flex flex-1 flex-col p-5 sm:p-6">
