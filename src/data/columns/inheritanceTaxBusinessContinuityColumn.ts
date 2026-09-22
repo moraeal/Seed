@@ -5,7 +5,7 @@ const imageRoot = "images/columns/inheritance-tax-capital-mobility";
 export const inheritanceTaxBusinessContinuityColumn: SeedColumn = {
   slug: "inheritance-tax-capital-and-talent-mobility",
   issue: 27,
-  title: "상속세가 자본과 인재의 이동을 자극하는 나라",
+  title: "상속세가 자본과 인재의 망명을 자극하는 나라",
   subtitle: "자본이 움직이면 기업이 움직이고, 기업가도 함께 움직인다",
   date: "2026-09-22",
   author: "이음",

@@ -1,7 +1,7 @@
 import type { ColumnTranslation } from "../types";
 
 export const issue27: ColumnTranslation = {
-  title: "When Inheritance Tax Pushes Capital and Talent to Move",
+  title: "When Inheritance Tax Drives Capital and Talent into Exile",
   subtitle: "When capital moves, companies move—and entrepreneurs move with them",
   author: "Eum",
   authorBio: "An ordinary office worker who has considered how civil society and business can coexist. The author hopes to open a conversation about the social responsibility businesses need in this moment.",
