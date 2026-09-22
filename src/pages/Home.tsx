@@ -36,6 +36,7 @@ const seedLanguageTerms: Record<string, { hanja: string; english: string }> = {
   민주: { hanja: "民主", english: "DEMOCRACY" },
   환경: { hanja: "環境", english: "ENVIRONMENT" },
   공익: { hanja: "公益", english: "PUBLIC INTEREST" },
+  공공: { hanja: "公共", english: "PUBLIC · PUBLICNESS" },
   담론: { hanja: "談論", english: "DISCOURSE" },
 };
 

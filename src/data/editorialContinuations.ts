@@ -274,6 +274,25 @@ const publicHealthFunctionContinuation: Record<Language, EditorialContinuation> 
   },
 };
 
+const publicLanguageContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/columns/public-health-proved-by-function",
+    title: "공공의료는 병원 간판으로 증명되지 않는다",
+    relationship: "개념에서 생활로",
+    reason: "공공을 소유가 아니라 기능·참여·책임의 관계로 이해했다면, 지역의료에서 그 기준이 실제로 어떻게 작동하는지 이어서 살펴봅니다.",
+    listHref: "/seed-language",
+    listLabel: "시민언어 전체 보기",
+  },
+  en: {
+    href: "/columns/public-health-proved-by-function",
+    title: "Public Healthcare Is Not Proven by the Name on the Hospital",
+    relationship: "FROM CONCEPT TO DAILY LIFE",
+    reason: "After understanding publicness as a relationship of function, participation and accountability rather than ownership, see how that standard works in regional healthcare.",
+    listHref: "/seed-language",
+    listLabel: "All Glossary articles",
+  },
+};
+
 const isFreedom = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "freedom-as-citizen-agency";
 const isProgress = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-progress";
 const isConservatism = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "what-is-true-conservatism";
@@ -288,8 +307,10 @@ const isMilitaryAcademyTracker = (kind: EditorialContentKind, slug: string) => k
 const isFukushimaJourney = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "fukushima-journey-original";
 const isKorea97Generation = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "korea-97-generation-political-emotion";
 const isPublicHealthFunction = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "public-health-proved-by-function";
+const isPublicLanguage = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "public-beyond-state-ownership";
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (isPublicLanguage(kind, slug)) return true;
   if (isPublicHealthFunction(kind, slug)) return true;
   if (isKorea97Generation(kind, slug)) return true;
   if (isFukushimaJourney(kind, slug)) return true;
@@ -308,6 +329,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (isPublicLanguage(kind, slug)) return publicLanguageContinuation[language];
   if (isPublicHealthFunction(kind, slug)) return publicHealthFunctionContinuation[language];
   if (isKorea97Generation(kind, slug)) return korea97GenerationContinuation[language];
   if (isFukushimaJourney(kind, slug)) return fukushimaJourneyContinuation[language];

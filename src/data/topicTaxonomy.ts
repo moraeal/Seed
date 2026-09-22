@@ -9,7 +9,7 @@ export const topicTaxonomy = [
     id: "civil-society",
     label: { ko: "시민사회와 공익", en: "Civil Society and Public Interest" },
     description: { ko: "시민사회의 자율성과 공익의 기준을 묻습니다", en: "Autonomy in civil society and the meaning of public interest" },
-    keywords: ["시민사회", "공익", "비영리", "기부", "모금", "재단", "협동조합", "사회적경제", "civil society", "public interest", "nonprofit", "donation", "foundation", "social economy"],
+    keywords: ["시민사회", "공익", "공공", "공공성", "비영리", "기부", "모금", "재단", "협동조합", "사회적경제", "civil society", "public interest", "publicness", "nonprofit", "donation", "foundation", "social economy"],
   },
   {
     id: "markets",
