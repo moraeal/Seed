@@ -6,7 +6,7 @@ import { getHotIssueClusters } from "../data/hotIssueClusters";
 import { getHotIssuesNewestFirst } from "../data/hotIssues";
 import { useLanguage } from "../i18n";
 
-const INITIAL_MORE_ISSUES = 6;
+const INITIAL_MORE_ISSUES = 9;
 const RISING_ISSUE_KEY = "news-dmz-security-command-failure";
 
 export default function News() {
@@ -74,8 +74,8 @@ export default function News() {
         </div>
 
         {risingIssue && (
-          <section className="mt-9 grid gap-8 border-t-[3px] border-navy pt-5 sm:mt-12 sm:pt-6 lg:grid-cols-[1.05fr_.95fr] lg:gap-10" aria-label={ko ? "새롭게 떠오르는 이슈와 더 살펴볼 이슈" : "Rising and further issues"}>
-            <div>
+          <section className="mt-9 grid gap-8 border-y border-t-[3px] border-green-deep/15 border-t-navy pb-5 pt-5 sm:mt-12 sm:pb-6 sm:pt-6 lg:grid-cols-[1.05fr_.95fr] lg:gap-10" aria-label={ko ? "새롭게 떠오르는 이슈와 더 살펴볼 이슈" : "Rising and further issues"}>
+            <div className="flex h-full flex-col">
               <header>
                 <span className="section-kicker">RISING ISSUE</span>
                 <h2 className="editorial-title mt-1.5 text-2xl font-bold text-navy sm:text-3xl">
@@ -83,7 +83,7 @@ export default function News() {
                 </h2>
               </header>
 
-              <Link to={risingIssue.to} className="group mt-4 block">
+              <Link to={risingIssue.to} className="group mt-4 flex flex-1 flex-col">
                 <div className="relative overflow-hidden bg-ivory">
                   <SafeImage
                     src={risingIssue.imageSrc}
@@ -93,19 +93,19 @@ export default function News() {
                   />
                   <span className="absolute left-0 top-0 bg-green-deep px-3 py-2 text-[10px] font-black tracking-[.12em] text-white">{risingIssue.kindLabel}</span>
                 </div>
-                <div className="border-b border-green-deep/15 pb-4 pt-3">
+                <div className="flex flex-1 flex-col pt-3">
                   <div className="flex items-center justify-between gap-3 text-[11px] font-semibold text-charcoal/42">
                     <span>{ko ? "새로 주목할 흐름" : "NEWLY EMERGING"}</span>
                     <time>{risingIssue.date.replace(/-/g, ".")}</time>
                   </div>
                   <h3 className="editorial-title mt-2 break-keep text-[1.35rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.65rem]">{risingIssue.title}</h3>
                   <p className="mt-2 line-clamp-3 text-[13px] leading-6 text-charcoal/60 sm:text-sm sm:leading-7">{risingIssue.summary}</p>
-                  <span className="mt-3 inline-flex items-center gap-2 text-xs font-extrabold text-green-deep">{ko ? "이슈 읽기" : "Read issue"}<ArrowRight size={14} className="transition-transform group-hover:translate-x-1" aria-hidden="true"/></span>
+                  <span className="mt-auto inline-flex items-center gap-2 pt-3 text-xs font-extrabold text-green-deep">{ko ? "이슈 읽기" : "Read issue"}<ArrowRight size={14} className="transition-transform group-hover:translate-x-1" aria-hidden="true"/></span>
                 </div>
               </Link>
             </div>
 
-            <div>
+            <div className="flex h-full flex-col">
               <header className="flex items-end justify-between gap-4">
                 <div>
                   <span className="section-kicker">MORE ISSUES</span>
@@ -126,7 +126,7 @@ export default function News() {
                 )}
               </header>
 
-              <div className="mt-4 border-b border-green-deep/15">
+              <div className="mt-4 flex-1">
                 {visibleMoreIssues.map((item) => (
                   <Link key={item.key} to={item.to} className="group grid gap-1 border-t border-green-deep/15 py-3.5 sm:grid-cols-[6.5rem_minmax(0,1fr)_5.8rem] sm:items-center sm:gap-3 sm:py-4">
                     <span className="text-[10px] font-extrabold tracking-[.08em] text-green-deep">{item.kindLabel}</span>
