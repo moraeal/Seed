@@ -16,8 +16,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   openedAt: "2026-08-31",
   updatedAt: "2026-09-22",
   nextCheck: {
-    ko: "9월 18일 김 전 후보자와 전직 보좌진의 면담 여부·대화 내용에 대한 당사자의 추가 해명과 객관 자료, 2011년 자전거 모임 원게시물과 참석자 신원에 대한 추가 확인, 후보자 측이 예고한 AI 합성물 유포 관련 법적 조치의 실제 착수 여부, 전직 보좌진 탄원서의 청와대 수령을 뒷받침하는 문서·독립 확인과 경찰 전달 여부, 개별 의혹에 관한 고발 또는 수사 단서 확보 여부, 전직 보좌진이 작성한 45쪽 경기도당 회계 의혹 자료의 원문·회계 증빙과 김 전 후보자·민주당 경기도당·청와대의 공식 해명, 선거관리위원회 또는 수사기관의 검증 여부, 청와대가 밝힌 인사검증 절차 보완 검토 결과, 후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 경찰이 검찰 자료를 검토 중인 제넨셀 민원 의혹 고소 사건과 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
-    en: "Any further response or objective record concerning the reported September 18 meeting between Kim and a former aide and what was discussed; further verification of the original 2011 cycling-post record and the participants' identities; whether Kim's office follows through on threatened legal action over circulating AI-generated images; documentary or independent confirmation that the presidential office received the former aides' petitions and whether it forwards them to police; whether a complaint or investigative lead emerges from the individual allegations; the full document and accounting evidence behind the former aide's 45-page compilation of alleged provincial-party accounting irregularities, official responses from Kim, the Democratic Party's Gyeonggi branch and the presidential office, and any review by the election commission or investigators; the outcome of the presidential office's review of improvements to personnel vetting; the nomination and confirmation process for a successor justice minister; the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud; progress in the Genencell petition complaint, for which police are reviewing prosecution records, and the family-cooperative complaint; and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
+    ko: "식약처가 열람을 제시한 제넨셀 임상시험계획 심사자료의 실제 공개 범위와 국회의 추가 자료 요구 결과, 9월 18일 김 전 후보자와 전직 보좌진의 면담 여부·대화 내용에 대한 당사자의 추가 해명과 객관 자료, 2011년 자전거 모임 원게시물과 참석자 신원에 대한 추가 확인, 후보자 측이 예고한 AI 합성물 유포 관련 법적 조치의 실제 착수 여부, 전직 보좌진 탄원서의 청와대 수령을 뒷받침하는 문서·독립 확인과 경찰 전달 여부, 개별 의혹에 관한 고발 또는 수사 단서 확보 여부, 전직 보좌진이 작성한 45쪽 경기도당 회계 의혹 자료의 원문·회계 증빙과 김 전 후보자·민주당 경기도당·청와대의 공식 해명, 선거관리위원회 또는 수사기관의 검증 여부, 청와대가 밝힌 인사검증 절차 보완 검토 결과, 후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 경찰이 검찰 자료를 검토 중인 제넨셀 민원 의혹 고소 사건과 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
+    en: "The actual scope of access to the Genencell clinical-trial application review records that the regulator offered for inspection, and the outcome of parliament's renewed document request; any further response or objective record concerning the reported September 18 meeting between Kim and a former aide and what was discussed; further verification of the original 2011 cycling-post record and the participants' identities; whether Kim's office follows through on threatened legal action over circulating AI-generated images; documentary or independent confirmation that the presidential office received the former aides' petitions and whether it forwards them to police; whether a complaint or investigative lead emerges from the individual allegations; the full document and accounting evidence behind the former aide's 45-page compilation of alleged provincial-party accounting irregularities, official responses from Kim, the Democratic Party's Gyeonggi branch and the presidential office, and any review by the election commission or investigators; the outcome of the presidential office's review of improvements to personnel vetting; the nomination and confirmation process for a successor justice minister; the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud; progress in the Genencell petition complaint, for which police are reviewing prosecution records, and the family-cooperative complaint; and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
   },
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
@@ -57,11 +57,19 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     ],
     tracking: [
       { ko: "경찰의 제넨셀 민원 의혹 자료 검토와 고발 사건 처리", en: "Police review of the Genencell records and related complaints" },
+      { ko: "식약처의 제넨셀 심사자료 열람 범위와 국회의 추가 제출 요구", en: "Scope of access to the regulator's Genencell review records and parliament's renewed request" },
       { ko: "경기도당 회계 의혹 자료의 증빙·수사 또는 선관위 검증 여부", en: "Evidence and any police or election-commission review of the accounting allegations" },
       { ko: "가족 협동조합 고발 사건과 전직 보좌진 탄원서의 후속 절차", en: "Follow-up in the family-cooperative complaint and former aides' petitions" },
     ],
   },
   keyChanges: [
+    {
+      date: "2026-09-21",
+      text: {
+        ko: "국회 보건복지위원회 소속 국민의힘 의원 8명이 식약처를 방문해 제넨셀 임상시험계획 심사자료 제출을 요구했습니다. 식약처는 특혜나 절차 위반은 없었다는 기존 입장을 유지하면서 약사법상 기업 비밀 보호 등을 이유로 전문 제출 대신 열람을 제시했고, 법적 검토 뒤 제공 범위를 넓힐 수 있는지 살피겠다고 밝혔습니다. 별도 자체조사를 하지 않은 이유로는 수사기관이 더 강도 높은 조사를 했다는 점을 들었습니다. 이는 식약처의 새 절차 설명이지만 승인 과정의 적정성이 독립적으로 확정됐다는 뜻은 아닙니다.",
+        en: "Eight People Power Party members of the National Assembly's Health and Welfare Committee visited the regulator and demanded the Genencell clinical-trial application review records. The regulator maintained that no favoritism or procedural breach occurred, offered inspection rather than full submission citing statutory protection of corporate information, and said it would examine whether access could be broadened after legal review. It said it had not conducted a separate internal inquiry because law enforcement had carried out a more intensive investigation. This is a new procedural explanation from the regulator, not an independent determination that the approval process was proper.",
+      },
+    },
     {
       date: "2026-09-21",
       text: {
@@ -211,6 +219,32 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      date: "2026-09-21",
+      title: { ko: "식약처, 제넨셀 심사자료 ‘제출 대신 열람’·별도 자체조사 미실시 설명", en: "Regulator offers inspection instead of submission of Genencell records and explains no separate internal inquiry" },
+      description: {
+        ko: "국회 보건복지위원회 소속 국민의힘 의원 8명은 충북 오송 식약처를 방문해 오유경 처장 등과 면담하고 제넨셀 임상시험계획 승인 근거가 된 비임상·안전성·보완·내부 검토 자료를 요구했습니다. 면담 뒤 공개된 설명에 따르면 식약처는 약사법상 기업의 영업상 비밀 보호와 법적 분쟁 가능성을 이유로 전문 제출 대신 의원 열람을 제시했고, 추가 법적 검토를 거쳐 제공 범위를 확대할 수 있는지 살피겠다고 밝혔습니다. 식약처는 승인 과정에서 특혜나 절차 위반은 없었다는 입장을 유지했으며, 별도 자체조사를 하지 않은 이유로 수사기관이 더 강도 높은 조사를 했다는 점을 들었습니다. 임상 참여자 93명은 계획된 투약 후 28일까지 추적했고 그 뒤에는 별도 추적을 하지 않았다고도 설명했습니다. 자료 열람과 자체조사 미실시 사실은 관계기관의 새 설명으로 확인되지만, 심사자료 원문이 공개·검증된 것은 아니어서 승인 적정성과 민원 전달의 영향은 아직 확정되지 않았습니다.",
+        en: "Eight People Power Party members of the National Assembly's Health and Welfare Committee visited the Ministry of Food and Drug Safety in Osong, met Commissioner Oh Yu-kyung and other officials, and requested nonclinical, safety, supplementary and internal review records supporting the Genencell clinical-trial application approval. According to explanations released after the meeting, the regulator cited statutory protection of corporate trade secrets and possible legal disputes, offered lawmakers inspection rather than full submission, and said it would examine whether the access scope could be broadened after further legal review. It maintained that there had been no favoritism or procedural breach and said it had not conducted a separate internal inquiry because law enforcement had carried out a more intensive investigation. It also said the 93 trial participants were followed for the planned 28 days after dosing and were not separately tracked afterward. The offered inspection and absence of an internal inquiry are newly confirmed agency explanations, but the underlying review records have not been publicly examined, so the propriety of the approval and the influence of Kim's petition relay remain unresolved.",
+      },
+      change: { ko: "식약처가 심사자료 제공 방식·자체조사 여부와 임상 참여자 추적 범위를 구체적으로 설명", en: "Regulator gives a specific account of record access, internal inquiry and participant follow-up" },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "뉴스1", en: "News1" },
+          title: { ko: "국힘, '김승원 청탁 의혹'에 식약처 항의방문…‘제넨셀 자료 제출해야’", en: "Opposition lawmakers visit regulator and demand Genencell records over Kim allegation" },
+          url: "https://www.news1.kr/bio/welfare-medical/6297972",
+          publishedAt: "2026-09-21",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "팜이데일리", en: "Pharm Edaily" },
+          title: { ko: "제넨셀 논란에도 자체조사 안 한 식약처…자료 제출 요구엔 ‘열람만’", en: "Regulator conducted no internal Genencell inquiry and offers inspection instead of records" },
+          url: "https://pharm.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=04300086645582416",
+          publishedAt: "2026-09-21",
+          kind: "article",
+        },
+      ],
+    },
     {
       date: "2026-09-21",
       title: { ko: "전직 보좌진 작성 45쪽 경기도당 회계 의혹 자료 공개", en: "Former aide's 45-page compilation of provincial-party accounting allegations reported" },
@@ -981,6 +1015,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+    { ko: "식약처는 2026년 9월 21일 국회 보건복지위원들의 방문 면담에서 제넨셀 임상시험계획 심사자료의 전문 제출 대신 열람을 제시했고, 법적 검토 뒤 제공 범위를 넓힐 수 있는지 살피겠다고 밝혔습니다. 별도 자체조사는 하지 않았으며 수사기관의 조사가 더 강도 높았다는 점을 이유로 들었습니다. 임상 참여자 93명은 계획된 투약 뒤 28일까지 추적했고 이후 별도 추적은 하지 않았다고 설명했습니다.", en: "At a September 21, 2026 meeting with members of the National Assembly's Health and Welfare Committee, the regulator offered inspection rather than full submission of the Genencell clinical-trial application review records and said it would examine whether access could be broadened after legal review. It said no separate internal inquiry had been conducted because law enforcement's investigation was more intensive. It also said the 93 trial participants were followed for the planned 28 days after dosing and were not separately tracked afterward." },
     { ko: "고범석 서울경찰청장은 2026년 9월 21일 전직 보좌진 탄원서에 담겼다고 보도된 성추행 의혹은 구체적인 수사 단서나 고발 없이 의혹만으로 수사에 착수할 수 없다고 밝혔습니다. 경찰은 탄원서를 아직 받지 못했습니다. 별도로 김 전 후보자 관련 피고발 사건 4건은 영등포경찰서가 수사 중이며, 제넨셀 임상시험 승인 민원 의혹 고소 사건에서는 서울서부지검이 공유한 공소장 등 일부 자료와 불기소 결정서·공개 판결문을 검토하고 있습니다.", en: "On September 21, 2026, Seoul Metropolitan Police Commissioner Ko Beom-seok said police could not open an investigation into the sexual-misconduct allegation reported in the former aides' petitions on allegation alone without a concrete investigative lead or complaint. Police have not received the petitions. Separately, Yeongdeungpo Police Station is investigating four complaints involving Kim, and police handling the Genencell clinical-trial petition complaint are reviewing some materials shared by the Seoul Western District Prosecutors' Office, including an indictment, together with the earlier non-prosecution decision and public court records." },
     { ko: "김승원 후보자는 2026년 9월 19일 국회 소통관 기자회견에서 법무부 장관 후보자직을 자진 사퇴한다고 밝혔습니다. 지명 20일 만이자 법사위가 ‘적격’ 의견의 청문경과보고서를 채택한 지 이틀 만입니다. 청와대는 결정을 존중하고 후속 절차를 규정에 따라 진행하겠다고 밝혔습니다. 사퇴로 임명 절차는 종료됐지만 관련 의혹의 사실관계나 위법성이 확정된 것은 아닙니다.", en: "On September 19, 2026, Kim Seung-won announced at a National Assembly press conference that he was withdrawing as justice minister nominee. The decision came 20 days after nomination and two days after the committee adopted a fit-for-office confirmation report. The presidential office said it respected the decision and would proceed with follow-up steps under established rules. The withdrawal ended the appointment process but did not determine the facts or legality of the related allegations." },
     { ko: "경기남부경찰청은 세종메디칼이 제넨셀 창립자 강세찬 씨를 특정경제범죄 가중처벌법상 사기 혐의로 고소한 사건과 관련해 2026년 9월 22일 소환 조사할 계획이라고 밝혔습니다. 경찰은 6월 사건을 검찰에 송치했으나 7월 보완수사 요구를 받았습니다. 이는 112억 원 투자 피해 주장에 관한 별도 사건이며, 소환만으로 혐의가 확정된 것은 아닙니다.", en: "Gyeonggi Nambu Provincial Police said it plans to question Genencell founder Kang Se-chan on September 22, 2026 in an aggravated-fraud complaint brought by Sejong Medical. Police forwarded the case in June and prosecutors requested supplementary investigation in July. This is a separate case concerning claimed investment losses of KRW 11.2 billion, and the summons does not establish guilt." },
@@ -1024,8 +1059,8 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     {
       title: { ko: "식약처 민원 전달이 어디까지 영향을 미쳤나", en: "How much influence did the petition relay have?" },
       description: {
-        ko: "후보자는 지연된 민원 절차를 확인해 달라고 했을 뿐이라고 설명합니다. 양모 씨도 신속 검토 요청은 인정하면서 위법한 특혜나 자료 은폐 요구, 후원금·전환사채의 대가성은 부인했습니다. 제넨셀 설립자 강세찬 씨는 양씨가 도움을 자청하며 김 후보자 이름을 먼저 꺼냈고, 김 후보자가 식약처장에게 보냈다는 문자 캡처를 양씨에게서 받았다고 주장했습니다. 반면 공개된 검찰 참고인 진술 보도에서 당시 식약처장 비서는 김 후보자의 문자를 청탁성으로 인식했다고 밝혔습니다. 서울경찰청은 제넨셀 민원 의혹 고소 사건에서 서울서부지검으로부터 공소장 등 일부 자료를 공유받아 기존 불기소 결정서·공개 판결문과 함께 검토 중이라고 밝혔습니다. 자료 검토가 시작됐지만 서로의 설명이 수사기록·재판 증거와 일치하는지, 승인 판단에 실제 영향을 미쳤는지와 법적으로 부정한 청탁에 해당하는지는 아직 확인되지 않았습니다. 별도로 강씨는 세종메디칼의 112억 원 투자 피해 주장과 관련한 사기 사건에서 검찰의 보완수사 요구에 따라 9월 22일 경찰 소환을 앞두고 있습니다. 이 별도 사건의 혐의와 김 후보자의 민원 전달 적법성은 구분해 판단해야 합니다.",
-        en: "Kim says he only asked officials to check a delayed petition. The woman likewise acknowledged seeking an expedited review while denying unlawful favoritism, concealment of material, or a quid pro quo involving a donation or convertible-bond investment. Genencell founder Kang Se-chan claims that she volunteered to help, first raised Kim's name and later sent him a screenshot of a message said to have been sent by Kim to the regulator chief. Reporting on a prosecution witness statement says the chief's secretary regarded Kim's message as a solicitation. Seoul police say they have received some materials, including an indictment, from the Seoul Western District Prosecutors' Office in the Genencell petition complaint and are reviewing them alongside the earlier non-prosecution decision and public court records. The records review has begun, but it remains unresolved whether the parties' accounts match the investigative and trial evidence, whether the contact affected approval, or whether it legally constituted an improper request. Separately, Kang is scheduled for police questioning on September 22 after prosecutors requested supplementary investigation into Sejong Medical's claim of KRW 11.2 billion in investment losses. That separate fraud allegation must be assessed independently from the legality of Kim's petition relay.",
+        ko: "후보자는 지연된 민원 절차를 확인해 달라고 했을 뿐이라고 설명합니다. 양모 씨도 신속 검토 요청은 인정하면서 위법한 특혜나 자료 은폐 요구, 후원금·전환사채의 대가성은 부인했습니다. 제넨셀 설립자 강세찬 씨는 양씨가 도움을 자청하며 김 후보자 이름을 먼저 꺼냈고, 김 후보자가 식약처장에게 보냈다는 문자 캡처를 양씨에게서 받았다고 주장했습니다. 반면 공개된 검찰 참고인 진술 보도에서 당시 식약처장 비서는 김 후보자의 문자를 청탁성으로 인식했다고 밝혔습니다. 서울경찰청은 제넨셀 민원 의혹 고소 사건에서 서울서부지검으로부터 공소장 등 일부 자료를 공유받아 기존 불기소 결정서·공개 판결문과 함께 검토 중이라고 밝혔습니다. 식약처는 9월 21일 국회 면담에서 특혜·절차 위반은 없었다는 입장을 유지하면서 심사자료 전문 제출 대신 열람을 제시했고, 수사기관의 조사를 이유로 별도 자체조사를 하지 않았다고 설명했습니다. 자료 열람이 실제 독립 검증으로 이어질지는 아직 확인되지 않았습니다. 서로의 설명이 수사기록·재판 증거와 일치하는지, 승인 판단에 실제 영향을 미쳤는지와 법적으로 부정한 청탁에 해당하는지도 여전히 확정되지 않았습니다. 별도로 강씨는 세종메디칼의 112억 원 투자 피해 주장과 관련한 사기 사건에서 검찰의 보완수사 요구에 따라 9월 22일 경찰 소환을 앞두고 있습니다. 이 별도 사건의 혐의와 김 후보자의 민원 전달 적법성은 구분해 판단해야 합니다.",
+        en: "Kim says he only asked officials to check a delayed petition. The woman likewise acknowledged seeking an expedited review while denying unlawful favoritism, concealment of material, or a quid pro quo involving a donation or convertible-bond investment. Genencell founder Kang Se-chan claims that she volunteered to help, first raised Kim's name and later sent him a screenshot of a message said to have been sent by Kim to the regulator chief. Reporting on a prosecution witness statement says the chief's secretary regarded Kim's message as a solicitation. Seoul police say they have received some materials, including an indictment, from the Seoul Western District Prosecutors' Office in the Genencell petition complaint and are reviewing them alongside the earlier non-prosecution decision and public court records. At the September 21 parliamentary meeting, the regulator maintained that there was no favoritism or procedural breach, offered inspection rather than full submission of the review records, and said no separate internal inquiry had been conducted because law enforcement had investigated the matter. Whether inspection leads to meaningful independent scrutiny remains unknown. It also remains unresolved whether the parties' accounts match the investigative and trial evidence, whether the contact affected approval, or whether it legally constituted an improper request. Separately, Kang is scheduled for police questioning on September 22 after prosecutors requested supplementary investigation into Sejong Medical's claim of KRW 11.2 billion in investment losses. That separate fraud allegation must be assessed independently from the legality of Kim's petition relay.",
       },
     },
     {
@@ -1059,6 +1094,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: { ko: "뉴스1 — 복지위원 식약처 방문·제넨셀 심사자료 제출 요구와 식약처 답변", en: "News1 — Lawmakers' regulator visit, demand for Genencell review records and agency response" },
+      url: "https://www.news1.kr/bio/welfare-medical/6297972",
+    },
+    {
+      label: { ko: "팜이데일리 — 식약처의 제넨셀 자료 열람 제시·자체조사와 참여자 추적 설명", en: "Pharm Edaily — Regulator's offered inspection, internal-inquiry explanation and participant follow-up" },
+      url: "https://pharm.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=04300086645582416",
+    },
     {
       label: { ko: "채널A — 전직 보좌진 작성 45쪽 경기도당 회계 의혹 자료와 전달 공방", en: "Channel A — Former aide's 45-page provincial-party accounting allegation file and disputed delivery" },
       url: "https://ichannela.com/news/detail/000000551610.do",
