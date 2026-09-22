@@ -368,8 +368,27 @@ const isPublicLanguage = (kind: EditorialContentKind, slug: string) => kind === 
 const isUnificationLanguage = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "unification-freedom-responsibility";
 const isSkHynixHackathon = (kind: EditorialContentKind, slug: string) => kind === "briefing" && slug === "sk-hynix-ai-hackathon-skills-first-hiring";
 const isHospitalInheritanceTax = (kind: EditorialContentKind, slug: string) => kind === "briefing" && slug === "hospital-inheritance-tax-maternity-care";
+const isCorporateCitizenColumn = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "corporations-are-citizens-too";
+
+const corporateCitizenContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/briefings/sk-hynix-ai-hackathon-skills-first-hiring",
+    title: "SK하이닉스 AI 해커톤, 채용 전에 문제를 풀게 하다",
+    relationship: "기업의 기회 만들기",
+    reason: "기업이 청년에게 기술을 익히고 도전할 기회를 제공하는 또 다른 방식을 살펴봅니다.",
+    listHref: "/columns", listLabel: "칼럼 전체 보기",
+  },
+  en: {
+    href: "/briefings/sk-hynix-ai-hackathon-skills-first-hiring",
+    title: "SK hynix's AI Hackathon and Skills-First Hiring",
+    relationship: "EXPANDING OPPORTUNITY",
+    reason: "Explore another way a company can open a path for young people to learn and demonstrate their skills.",
+    listHref: "/columns", listLabel: "All columns",
+  },
+};
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (isCorporateCitizenColumn(kind, slug)) return true;
   if (isUnificationLanguage(kind, slug)) return true;
   if (isSkHynixHackathon(kind, slug)) return true;
   if (isHospitalInheritanceTax(kind, slug)) return true;
@@ -392,6 +411,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (isCorporateCitizenColumn(kind, slug)) return corporateCitizenContinuation[language];
   if (isUnificationLanguage(kind, slug)) return unificationLanguageContinuation[language];
   if (isSkHynixHackathon(kind, slug)) return skHynixHackathonContinuation[language];
   if (isHospitalInheritanceTax(kind, slug)) return hospitalInheritanceTaxContinuation[language];
