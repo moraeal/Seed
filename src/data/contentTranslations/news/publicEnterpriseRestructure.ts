@@ -10,7 +10,7 @@ export const publicEnterpriseRestructureTranslation: NewsTranslation = {
     outlet: "Ministry of Climate, Energy and Environment",
     headline: "Reference Material on the Integration of Five Generation Companies",
     linkLabel: "View ministry material (Korean)",
-    thumbnailUrl: "/images/news/lh-power-five-merge-hero.png",
+    thumbnailUrl: "/images/news/lh-power-five-merge-hero.webp",
     thumbnailAlt: "A symbolic image showing transmission equipment, five generation facilities and a divided housing area",
     thumbnailCaption: "A SEED VOICE reference image illustrating the contrast between the proposed LH split and the merger of five generation companies.",
     thumbnailPlacement: "after-summary",
