@@ -17,6 +17,7 @@
 - Do not add a separate table-of-contents or “read the outline first” box to articles, including long-form pieces. Use the opening summary and clear intermediate headings to guide readers instead.
 - Every item estimated at eight minutes or longer must contain at least two meaningful titled sections and at least two purposeful visuals. Use charts or infographics for numbers and systems, and illustrations or photographs for concepts and human context. Do not add decorative images that carry no editorial meaning.
 - Keep the visual hierarchy consistent across Korean and English editions. Translate every summary, section heading, image description, and caption; preserve the same editorial structure rather than delivering a thinner English version.
+- When article copy mentions or explains a related SEED article, link the article title to its canonical detail route at the point of mention. A duplicate entry in the sources list does not replace this inline link. Apply the equivalent link in the English edition.
 
 ## Recovery and backup routine
 
