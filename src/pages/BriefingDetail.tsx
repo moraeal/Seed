@@ -88,7 +88,7 @@ export default function BriefingDetail() {
                 <p className="mt-2 text-xs font-bold text-charcoal/50">{briefing.sourceArticle.publisher} · {briefing.sourceArticle.publishedAt.replace(/-/g, ".")}</p>
                 <h2 className="mt-2 text-xl font-extrabold leading-8 text-navy sm:text-2xl">{briefing.sourceArticle.title}</h2>
                 {briefing.sourceArticle.note && <p className="mt-3 text-sm leading-6 text-charcoal/65">{briefing.sourceArticle.note}</p>}
-                <a href={briefing.sourceArticle.url} target="_blank" rel="noreferrer" className="mt-4 inline-flex w-fit items-center gap-1.5 font-bold text-green-deep underline decoration-green-deep/25 underline-offset-4 hover:text-green-mid">{ko ? "원보도 직접 읽기" : "Read the original report"}<ExternalLink size={14}/></a>
+                <a href={briefing.sourceArticle.url} target="_blank" rel="noreferrer" className="mt-4 inline-flex w-fit items-center gap-1.5 font-bold text-green-deep underline decoration-green-deep/25 underline-offset-4 hover:text-green-mid">{ko ? "기사 읽기" : "Read the original report"}<ExternalLink size={14}/></a>
                 <p className="mt-3 text-[11px] leading-5 text-charcoal/45">{briefing.sourceArticle.imageCredit}</p>
               </div>
             </div>
