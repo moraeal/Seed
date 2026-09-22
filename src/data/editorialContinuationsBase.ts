@@ -9,6 +9,42 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:yeosu-island-expo-procurement-ledger": {
+    ko: {
+      href: "/monitoring/yeosu-world-island-expo-tracker",
+      title: "248억 승인에서 713억 행사까지, 여수섬박람회는 어떻게 커졌나",
+      relationship: "예산의 시작부터 운영 결과까지",
+      reason: "입찰·계약 구조를 확인했다면, 2018년 구상부터 예산 확대·개막 뒤 운영과 성과가 어떻게 달라졌는지 뉴스트래커에서 이어서 확인합니다.",
+      listHref: "/monitoring",
+      listLabel: "시민감시 전체 보기",
+    },
+    en: {
+      href: "/monitoring/yeosu-world-island-expo-tracker",
+      title: "How Yeosu's Island Fair grew from a KRW 24.8 billion approval to a KRW 71.3 billion event",
+      relationship: "FROM THE ORIGINAL BUDGET TO OPERATING RESULTS",
+      reason: "After examining the tender and contract structure, follow the fair from its 2018 proposal through budget expansion, opening and operating outcomes in the continuing tracker.",
+      listHref: "/monitoring",
+      listLabel: "All Civic Watch records",
+    },
+  },
+  "column:inheritance-tax-capital-and-talent-mobility": {
+    ko: {
+      href: "/columns/government-electricity-prepayment-pressure",
+      title: "기업을 정부의 현금인출기로 보지 마라",
+      relationship: "기업과 국가의 경계",
+      reason: "상속세가 기업의 투자와 소유구조에 미치는 영향을 살펴봤다면, 공기업의 재정 부담을 민간기업의 선납금으로 돌리는 정책이 기업의 자유를 어떻게 흔드는지도 이어서 살펴봅니다.",
+      listHref: "/columns",
+      listLabel: "칼럼 전체 보기",
+    },
+    en: {
+      href: "/columns/government-electricity-prepayment-pressure",
+      title: "Stop Treating Companies as the Government's ATM",
+      relationship: "BUSINESS AND THE STATE",
+      reason: "After examining how inheritance tax affects investment and ownership, continue with how shifting a public utility's financing burden onto private firms can undermine economic freedom.",
+      listHref: "/columns",
+      listLabel: "All columns",
+    },
+  },
   "briefing:activist-support-political-pressure": {
     ko: {
       href: "/columns/civic-groups-are-not-state-vanguard-2026",
@@ -59,24 +95,6 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
       title: "Stop Treating Companies as the Government's ATM",
       relationship: "TAX AND ECONOMIC FREEDOM",
       reason: "After examining how inheritance tax affects succession and investment, continue with how shifting a public utility's financing burden onto private companies can undermine enterprise autonomy.",
-      listHref: "/columns",
-      listLabel: "All columns",
-    },
-  },
-  "column:inheritance-tax-capital-and-talent-mobility": {
-    ko: {
-      href: "/columns/government-electricity-prepayment-pressure",
-      title: "기업을 정부의 현금인출기로 보지 마라",
-      relationship: "기업과 국가의 경계",
-      reason: "상속세가 기업의 투자와 소유구조에 미치는 영향을 살펴봤다면, 공기업의 재정 부담을 민간기업의 선납금으로 돌리는 정책이 기업의 자유를 어떻게 흔드는지도 이어서 살펴봅니다.",
-      listHref: "/columns",
-      listLabel: "칼럼 전체 보기",
-    },
-    en: {
-      href: "/columns/government-electricity-prepayment-pressure",
-      title: "Stop Treating Companies as the Government's ATM",
-      relationship: "BUSINESS AND THE STATE",
-      reason: "After examining how inheritance tax affects investment and ownership, continue with how shifting a public utility's financing burden onto private firms can undermine economic freedom.",
       listHref: "/columns",
       listLabel: "All columns",
     },

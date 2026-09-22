@@ -13,6 +13,12 @@ export type SeedWatchReference = {
  */
 export const seedWatchReferences: SeedWatchReference[] = [
   {
+    kind: "column",
+    slug: "yeosu-island-expo-procurement-ledger",
+    topic: { ko: "지역사업·조달", en: "Local projects & procurement" },
+    status: { ko: "입찰·계약 분석", en: "Tender and contract analysis" },
+  },
+  {
     kind: "briefing",
     slug: "yeosu-world-island-expo",
     topic: { ko: "지역사업·예산", en: "Local projects & budgets" },
