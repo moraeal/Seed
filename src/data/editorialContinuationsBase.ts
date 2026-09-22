@@ -63,6 +63,24 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
       listLabel: "All columns",
     },
   },
+  "column:inheritance-tax-capital-and-talent-mobility": {
+    ko: {
+      href: "/columns/government-electricity-prepayment-pressure",
+      title: "기업을 정부의 현금인출기로 보지 마라",
+      relationship: "기업과 국가의 경계",
+      reason: "상속세가 기업의 투자와 소유구조에 미치는 영향을 살펴봤다면, 공기업의 재정 부담을 민간기업의 선납금으로 돌리는 정책이 기업의 자유를 어떻게 흔드는지도 이어서 살펴봅니다.",
+      listHref: "/columns",
+      listLabel: "칼럼 전체 보기",
+    },
+    en: {
+      href: "/columns/government-electricity-prepayment-pressure",
+      title: "Stop Treating Companies as the Government's ATM",
+      relationship: "BUSINESS AND THE STATE",
+      reason: "After examining how inheritance tax affects investment and ownership, continue with how shifting a public utility's financing burden onto private firms can undermine economic freedom.",
+      listHref: "/columns",
+      listLabel: "All columns",
+    },
+  },
   "seed-language:politics-is-a-citizens-tool": {
     ko: {
       href: "/seed-language/citizen-as-seed",

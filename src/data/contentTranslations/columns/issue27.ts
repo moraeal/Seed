@@ -1,64 +1,95 @@
 import type { ColumnTranslation } from "../types";
 
 export const issue27: ColumnTranslation = {
-  title: "Is Inheritance Tax Only a Tax on the Rich?",
-  subtitle: "Preventing inherited privilege must not also sever a company’s future",
+  title: "When Inheritance Tax Pushes Capital and Talent to Move",
+  subtitle: "When capital moves, companies move—and entrepreneurs move with them",
   author: "Eum",
   authorBio: "An ordinary office worker who has considered how civil society and business can coexist. The author hopes to open a conversation about the social responsibility businesses need in this moment.",
-  summary: "Inheritance tax holds inherited wealth accountable. But when a business stake is inherited, investment, jobs, suppliers and local communities are also at stake. The better answer is a conditional approach: ease payment pressure while requiring sound governance, continued employment and real investment.",
+  summary: "Korea's high inheritance tax reaches beyond a private transfer of wealth. It can affect company shares, investment capital, ownership structures and the mobility of talent. Sweden's repeal, Taiwan's rate cuts and Norwegian firm-level research show the question Korea must answer.",
   heroImage: {
-    alt: "In a meeting room overlooking a factory at dusk, an older and a younger businessperson review documents while workers leave after a shift outside",
-    caption: "The cost of business succession can extend beyond one heir, affecting ownership, investment, employment and supplier relationships.",
+    alt: "A photorealistic scene of an entrepreneur standing between Seoul's business district and an international departure corridor",
+    caption: "Tax is one of the conditions that shapes where capital and entrepreneurs choose to invest and build businesses.",
     credit: "AI-assisted image by SEED VOICE",
   },
   inlineImage: {
-    alt: "Businesspeople reviewing documents in a meeting room overlooking a factory at dusk",
-    caption: "Inheritance-tax reform must consider both the transfer of wealth and the continuity and responsibility of an operating company.",
+    alt: "A photorealistic scene of two generations leaving a family business against Stockholm's business district",
+    caption: "Sweden concluded that inheritance tax distorted family-business succession and asset allocation, and decided to repeal it in 2004.",
     credit: "AI-assisted image by SEED VOICE",
   },
+  additionalImages: [
+    {
+      alt: "A photorealistic scene of two generations leaving a family business against Stockholm's business district",
+      caption: "Sweden concluded that inheritance tax distorted family-business succession and asset allocation, and decided to repeal it in 2004.",
+      credit: "AI-assisted image by SEED VOICE",
+    },
+    {
+      alt: "A chart comparing inheritance-tax choices in Korea, Taiwan and Sweden",
+      caption: "Korea's top rate is 50%, with a valuation premium possible for controlling-shareholder stock. Taiwan's top rate is 20%, while Sweden has repealed inheritance and gift taxes.",
+      credit: "SEED VOICE reconstruction from national tax laws and government material",
+    },
+  ],
   sections: [
     {
-      title: "The tax is charged to an heir, but its effects can spread beyond the company",
+      title: "",
       paragraphs: [
-        "In May 2026, the family of the late Samsung chairman Lee Kun-hee completed inheritance-tax payments of roughly KRW 12 trillion. The bill was paid in six installments over five years beginning in 2021. A sum on that scale, comparable with a full year of national inheritance-tax revenue, is more than a private taxpayer’s story.",
-        "The principle that large inheritances should bear a large tax burden is not wrong. Receiving substantial wealth without having created it carries responsibility in the name of tax fairness and equality of opportunity. No case can be made for allowing inherited wealth to pass without any public obligation.",
-        "The question changes when what is inherited is not cash or real estate but a stake in an operating company. A shareholding is both property and decision-making power. Selling shares or pledging them as collateral to pay tax can alter corporate control, with consequences for long-term investment, employment and supplier contracts.",
-        "A conglomerate such as Samsung has options: share-backed loans, dividends and partial share sales. Many mid-sized and smaller businesses do not. When most value is tied up in unlisted shares and operating assets, paying tax may require selling control or the business itself. If collecting tax destabilizes a viable company, whom does that fairness serve?",
-      ],
-      quote: ["The tax is charged to an heir,", "but its effects can spread beyond the company."],
-    },
-    {
-      title: "Business succession is not the same as hereditary management",
-      paragraphs: [
-        "The transfer of ownership to the next generation should not guarantee management control. When an unqualified child runs a firm simply because of family ties, the company, its shareholders and its workers all lose. Evasive succession schemes, self-dealing and opaque governance should be policed more firmly, whether or not inheritance tax changes.",
-        "But making the transfer of a business stake itself impossible is not a sound way to prevent hereditary management. Boards, shareholders and markets should judge who can run a company. Inheritance tax should not become an exam for managerial competence.",
-        "Korea has long calculated inheritance tax on the deceased person’s entire estate. The high top rate and valuation of controlling shareholders’ stock have kept business succession at the center of the tax debate. The government’s consideration of a move toward recipient-based inheritance taxation begins with the same question: whether the current system properly reflects each heir’s actual capacity to pay.",
-        "Korea already has family-business deductions and installment-payment rules. The question is no longer whether a mechanism exists. It is who qualifies, under what conditions, and how the public verifies that a company receiving relief has kept its promises.",
+        "When capital moves, companies move, and entrepreneurs move with them. No country can ignore this when setting tax rates. Yet Korea's inheritance tax remains trapped in an era when capital and companies could not cross borders so easily.",
+        "As of 2026, Korea's top inheritance-tax rate is 50%. The 50% rate applies when the taxable base exceeds KRW 3 billion. A valuation premium on shares held by a controlling shareholder can raise the effective top burden to 60%.",
+        "Much of an entrepreneur's wealth is not cash. It is stock in the company the entrepreneur runs or controls. Inheritance tax therefore cannot be treated as a simple tax on private property. Heirs must raise cash, often by increasing dividends, borrowing or selling company shares. A high rate directly affects succession and ownership.",
+        "What does a persistently high inheritance tax do? Sweden experienced the problem and chose an answer.",
       ],
     },
     {
-      title: "Not a giveaway, but a contract between society and business",
+      title: "Why did a welfare state abandon inheritance tax?",
       paragraphs: [
-        "Calling every inheritance-tax reform a tax cut for the rich hides the costs borne by workers, suppliers and communities when a company is sold or broken up during succession. Yet granting broad reductions simply because an asset is a business would not earn public consent either.",
-        "The answer is to pair payment relief with responsibility. Shares in a genuinely continuing business could receive longer deferral or installment options. In exchange, the firm should maintain employment and investment for a defined period, keep corporate assets from private diversion, and disclose the succession process and governance structure. When the commitments are broken, the deferred or reduced tax should be recovered.",
-        "Tax burdens can be eased, but responsibility must remain. That is not a privilege. It is a contract between society and business.",
+        "IKEA, H&M, Tetra Pak and ABU all began in Sweden. Their founders or owners have been cited among those who moved abroad, or shifted headquarters abroad, in response to Sweden's heavy taxation of capital.",
+        "Sweden is a high-tax welfare state. Yet at the end of 2004 it repealed both inheritance and gift taxes. The government concluded that the tax had moved away from fair taxation and had instead made succession harder, distorted economic behavior and encouraged avoidance.",
+        "The repeal bill described the distortion in concrete terms. Different valuation methods for different share classes encouraged companies to move from the Stockholm exchange's A-list to the O-list to reduce tax. In plain terms, the tax burden changed with the market on which the same shares were listed, so firms adapted their listings to the tax rules. The government also recognized the burden on generational transitions in small firms and the broad legal avoidance options available to wealthy taxpayers. Repeated technical fixes were no longer enough. Parliament stated that repeal would ease succession in family businesses.",
+        "Sweden did not abandon welfare. It concluded that demanding a large cash payment at the moment a business or productive asset changes hands was economically inefficient.",
+        "There is little evidence that repeal weakened Sweden's capital market. Stockholm remains one of Europe's most active markets for companies raising equity. That achievement cannot be attributed to inheritance tax alone: economic conditions, pension capital and growth-market institutions also matter. But neither is there a strong basis for claiming that repeal impeded public offerings or capital-market development.",
       ],
-      quote: ["Tax burdens can be eased, but responsibility must remain.", "That is a contract between society and business."],
     },
     {
-      title: "Who disappears behind the phrase ‘a tax cut for the rich’",
+      title: "The effects also appeared inside firms",
       paragraphs: [
-        "When a company is broken up or sold in a succession process, the heir is not the only one who bears the cost. Workers may lose jobs, suppliers may lose a customer, and a region may lose its tax base and industrial foundation. Treating succession only as a private transfer of wealth erases those interests from the debate.",
-        "Business cannot escape responsibility. A demand for lower tax while preserving evasive succession, self-dealing and opaque governance will not persuade citizens. Any support for succession must be judged by whether it sustains a company and investment, rather than merely protecting an heir’s personal wealth.",
-        "The public should look beyond the rate. How many firms have sold stakes or businesses to pay inheritance tax? Did companies receiving relief preserve employment and investment? Did they instead raise dividends and private benefits? The size of a tax reduction should be recorded alongside the jobs and investment it has actually protected.",
-        "A company is not a shelter from tax. But neither is it a state cash machine. Inherited wealth should carry responsibility; the way that responsibility is imposed, however, must not cut off enterprise, jobs and the economy’s future.",
+        "Norway offers another Nordic case. It repealed inheritance tax in 2014. In 2026, University of Cambridge researchers linked Norwegian private firms with information on controlling owners, their families and tax records to trace changes around the repeal.",
+        "They compared firms whose owners had children—and therefore greater exposure to family succession—with other firms. After repeal, the first group recorded persistent increases in tangible and intangible fixed assets and a higher research-and-development employment share. The effects were concentrated among wealthy owners whose portfolios were illiquid and heavily tied to company equity.",
+        "The researchers focused on the possibility that owners had held more liquid assets and reduced productive investment in anticipation of a future tax bill. Removing the tax allowed more capital to remain available for equipment, intangible assets and research.",
+        "Inheritance tax does not begin to affect a business only after someone dies. The expectation of a future bill can alter investment, dividends, ownership structures and asset allocation long beforehand. Sweden's institutional experience and the Norwegian firm evidence point to the same mechanism.",
+      ],
+    },
+    {
+      title: "Taiwan stepped back from 50%",
+      paragraphs: [
+        "Taiwan also deserves Korea's attention. Its top inheritance-tax rate was once 50%. On 23 January 2009, it replaced the progressive schedule with a flat 10% rate. In 2017, Taiwan restored progressive rates in response to equity and welfare-funding concerns, but it did not return to 50%. Current rates are 10%, 15% and 20%.",
+        "A familiar objection is that no one truly leaves a country because of tax. For most people, that may be correct. The OECD finds that ordinary heirs generally show limited migration response to differences in inheritance tax.",
+        "The picture changes at the very top. Research reviewed by the OECD found a significant residential response among US billionaires to differences in state estate taxes. The OECD says policymakers should consider the possibility that ultra-wealthy taxpayers can relocate in response to tax design.",
+        "Tax does not make everyone leave. But for those able to move, it becomes a real variable. Entrepreneurs, investors and high-net-worth individuals are heavily represented among that mobile group.",
+      ],
+    },
+    {
+      title: "A personal tax reaches inside the company",
+      paragraphs: [
+        "In Korea, inheritance tax is often framed as a private problem for the rich. The picture changes when most of an entrepreneur's wealth is company stock. Owning KRW 10 billion in shares is not the same as holding KRW 10 billion in cash, yet the tax must be paid in cash. Shares must be sold or money must be drawn from the company. Family ownership can fall, long-term control can shift, and funds that could have financed investment can instead pay tax. The liability is personal, but its economic effects enter the firm.",
+        "That was precisely Sweden's concern. When a tax pushes companies to change listings, complicates succession and encourages elaborate avoidance planning, it is distorting economic behavior beyond its stated purpose.",
+        "Korea cannot avoid the same question: what behavior is produced by a high rate, narrow brackets and complex share valuation?",
+        "Entrepreneurs know that as they build a larger company, the next generation's tax bill also grows. Wealthy individuals can choose where to hold assets and reside. Founders can choose where to locate headquarters. Skilled people can choose where to work, start companies and accumulate assets. Tax is never the only factor, but claiming it has no effect is equally unrealistic. Sweden recognized that fact and repealed the tax. Taiwan cut its top rate from 50% to 10% and today still stops at 20%.",
+      ],
+      quote: ["Inheritance tax is charged to an individual,", "but its economic effects enter the company."],
+    },
+    {
+      title: "Korea must now answer",
+      paragraphs: [
+        "Capital moves. Companies move. People move. As competition among countries intensifies, movement becomes easier. A debate that sees only distribution, while ignoring how firms behave, where capital goes and where entrepreneurs launch their next venture, sees only half the tax.",
+        "Sweden recognized the problem more than twenty years ago. Korea must now answer it.",
       ],
     },
   ],
-  sourceNote: "This column draws on National Tax Service and National Law Information Center material available as of September 21, 2026, along with reporting on the Samsung family’s inheritance-tax payments. The content and timing of any inheritance-tax reform remain subject to legislation and administrative procedure.",
+  sourceNote: "This column draws on Korean, Swedish and Taiwanese tax material available as of 22 September 2026, the OECD's inheritance-tax review, historical research on Sweden's inheritance tax and a research presentation on Norway's firm-level investment effects. Because each jurisdiction and study reflects different conditions and periods, the comparisons should be used to examine incentives rather than mechanically transplanted to Korea.",
   sourceLabels: [
-    "National Tax Service — Inheritance-tax guide",
-    "Korean Law Information Center — Inheritance and Gift Tax Act",
-    "Yonhap News TV — Report on completion of Samsung family inheritance-tax payments",
+    "National Tax Service — Inheritance-tax rates and filing guide",
+    "Economic History Review — The history and 2004 repeal of Sweden's inheritance tax",
+    "NMBU Tax Research Center — Norwegian inheritance-tax repeal and firm investment",
+    "OECD — Inheritance Taxation in OECD Countries",
+    "Taiwan Ministry of Finance tax portal",
   ],
 };
