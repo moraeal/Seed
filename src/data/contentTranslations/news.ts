@@ -1,8 +1,10 @@
 import type { NewsTranslation } from "./types";
 import { fuelPriceCapTaxBillTranslation } from "./news/fuelPriceCapTaxBill";
 import { publicEnterpriseRestructureTranslation } from "./news/publicEnterpriseRestructure";
+import { dmzSecurityCommandFailureTranslation } from "./news/dmzSecurityCommandFailure";
 
 export const newsTranslations: Record<string, NewsTranslation> = {
+  "dmz-security-command-failure": dmzSecurityCommandFailureTranslation,
   "lh-debt-split-power-five-merge": publicEnterpriseRestructureTranslation,
   "fuel-price-cap-tax-bill": fuelPriceCapTaxBillTranslation,
   "national-debt-ratio-gdp-comparison": {

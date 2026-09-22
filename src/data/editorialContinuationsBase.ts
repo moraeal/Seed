@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "news:dmz-security-command-failure": {
+    ko: {
+      href: "/columns/military-academy-integration-rotc-question",
+      title: "사관학교 통합, 전력 강화보다 정치가 먼저 보인다",
+      relationship: "안보와 정치의 경계",
+      reason: "DMZ 현장에서 드러난 대비태세와 지휘 책임의 문제에 이어, 군 교육 개편에서도 실제 전력보다 정치적 상징이 앞선 것은 아닌지 살펴봅니다.",
+      listHref: "/news",
+      listLabel: "핫이슈 전체 보기",
+    },
+    en: {
+      href: "/columns/military-academy-integration-rotc-question",
+      title: "Military-Academy Integration: Politics Before Combat Power",
+      relationship: "SECURITY AND POLITICAL SYMBOLISM",
+      reason: "After examining readiness and command responsibility in the DMZ, continue with whether military-education reform is also putting political symbolism ahead of combat effectiveness.",
+      listHref: "/news",
+      listLabel: "All Hot Issues",
+    },
+  },
   "column:yeosu-island-expo-procurement-ledger": {
     ko: {
       href: "/monitoring/yeosu-world-island-expo-tracker",
