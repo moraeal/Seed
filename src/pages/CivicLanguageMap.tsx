@@ -1,4 +1,4 @@
-import { ArrowLeft, BookOpenText, Check, Search } from "lucide-react";
+import { ArrowLeft, BookOpenText, Check, FolderOpen, Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import SafeImage from "../components/SafeImage";
@@ -19,13 +19,12 @@ export default function CivicLanguageMap() {
   const ko = language === "ko";
   const [query, setQuery] = useState("");
   const [status, setStatus] = useState<StatusFilter>("all");
-  const [categoryId, setCategoryId] = useState("all");
+  const [categoryId, setCategoryId] = useState(civicLanguageCategories[0].id);
 
   const completedCount = useMemo(() => new Set(civicLanguageCategories.flatMap((category) => category.terms).filter((item) => item.href).map((item) => item.label)).size, []);
-  const visibleCategories = useMemo(() => {
+  const filteredCategories = useMemo(() => {
     const needle = normalized(query);
     return civicLanguageCategories
-      .filter((category) => categoryId === "all" || category.id === categoryId)
       .map((category) => ({
         ...category,
         terms: category.terms.filter((item) => {
@@ -35,22 +34,22 @@ export default function CivicLanguageMap() {
           if (!needle) return true;
           return [item.label, ...(item.aliases ?? [])].some((value) => normalized(value).includes(needle));
         }),
-      }))
-      .filter((category) => category.terms.length > 0);
-  }, [categoryId, query, status]);
+      }));
+  }, [query, status]);
+  const activeCategory = filteredCategories.find((category) => category.id === categoryId) ?? filteredCategories[0];
+  const matchingTermCount = filteredCategories.reduce((total, category) => total + category.terms.length, 0);
 
   const renderTerm = (item: CivicLanguageTerm) => {
     const content = <>
-      <span className="font-extrabold text-navy">{item.label}</span>
-      {item.aliases?.length ? <span className="text-xs text-charcoal/45">({item.aliases.join(" · ")})</span> : null}
-      {item.href ? <span className="ml-auto inline-flex items-center gap-1 text-[11px] font-extrabold text-green-deep"><Check size={12}/>{ko ? "정리 완료" : "Published"}</span> : <span className="ml-auto text-[11px] font-bold text-charcoal/35">{ko ? "정리 예정" : "Planned"}</span>}
-      {item.priority ? <span className="rounded-full bg-gold/15 px-2 py-0.5 text-[10px] font-extrabold text-navy">{ko ? `우선 ${item.priority}` : `Priority ${item.priority}`}</span> : null}
-      {item.analysisOnly ? <span className="rounded-full bg-charcoal/5 px-2 py-0.5 text-[10px] font-extrabold text-charcoal/55">{ko ? "분석 대상" : "For analysis"}</span> : null}
+      <span className="min-w-0 flex-1"><span className="font-extrabold text-navy">{item.label}</span>{item.aliases?.length ? <span className="ml-1 text-[10px] text-charcoal/40">({item.aliases.join(" · ")})</span> : null}</span>
+      {item.href ? <span className="inline-flex shrink-0 items-center gap-0.5 text-[10px] font-extrabold text-green-deep"><Check size={11}/>{ko ? "완료" : "Done"}</span> : <span className="shrink-0 text-[10px] font-bold text-charcoal/30">{ko ? "예정" : "Planned"}</span>}
+      {item.priority ? <span className="shrink-0 rounded-full bg-gold/15 px-1.5 py-0.5 text-[9px] font-extrabold text-navy">{ko ? `우선 ${item.priority}` : `P${item.priority}`}</span> : null}
+      {item.analysisOnly ? <span className="shrink-0 rounded-full bg-charcoal/5 px-1.5 py-0.5 text-[9px] font-extrabold text-charcoal/55">{ko ? "분석" : "Analysis"}</span> : null}
     </>;
 
     return item.href
-      ? <Link key={item.label} to={item.href} className="flex min-h-11 flex-wrap items-center gap-2 border-b border-green-deep/10 px-1 py-2.5 transition-colors hover:bg-green-pale/55">{content}</Link>
-      : <div key={item.label} className="flex min-h-11 flex-wrap items-center gap-2 border-b border-green-deep/10 px-1 py-2.5">{content}</div>;
+      ? <Link key={item.label} to={item.href} className="flex min-h-9 items-center gap-1.5 border-b border-green-deep/10 px-1 py-1.5 text-[13px] transition-colors hover:bg-green-pale/55">{content}</Link>
+      : <div key={item.label} className="flex min-h-9 items-center gap-1.5 border-b border-green-deep/10 px-1 py-1.5 text-[13px]">{content}</div>;
   };
 
   return <article className="bg-paper">
@@ -106,33 +105,59 @@ export default function CivicLanguageMap() {
           </div>
         </div>
 
-        <div className="mt-4 flex gap-2 overflow-x-auto pb-2" aria-label={ko ? "분류 선택" : "Choose a category"}>
-          <button type="button" onClick={() => setCategoryId("all")} className={`shrink-0 border-b-2 px-2 py-2 text-xs font-extrabold ${categoryId === "all" ? "border-green-deep text-green-deep" : "border-transparent text-charcoal/45"}`}>{ko ? "전체 분류" : "All categories"}</button>
-          {civicLanguageCategories.map((category) => <button key={category.id} type="button" onClick={() => setCategoryId(category.id)} className={`shrink-0 border-b-2 px-2 py-2 text-xs font-extrabold ${categoryId === category.id ? "border-green-deep text-green-deep" : "border-transparent text-charcoal/45"}`}>{category.title}</button>)}
-        </div>
+        <div className="mt-5 overflow-hidden border border-green-deep/20 bg-ivory shadow-[0_20px_55px_rgba(23,76,58,.08)]">
+          <div className="grid lg:grid-cols-[13.5rem_minmax(0,1fr)]">
+            <aside className="border-b border-green-deep/15 bg-green-pale/55 p-3 lg:border-r lg:border-b-0" aria-label={ko ? "시민언어 파일 태그" : "Civic language file tabs"}>
+              <div className="flex items-center justify-between px-2 py-1.5">
+                <span className="flex items-center gap-2 text-[11px] font-extrabold tracking-[.14em] text-green-deep"><FolderOpen size={15}/>{ko ? "분류 파일" : "FILE INDEX"}</span>
+                <span className="text-[10px] font-bold text-charcoal/40">{ko ? `${matchingTermCount}개` : matchingTermCount}</span>
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-1 sm:grid-cols-3 lg:grid-cols-1" role="tablist" aria-orientation="vertical">
+                {filteredCategories.map((category, index) => {
+                  const selected = category.id === activeCategory.id;
+                  return <button
+                    key={category.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={selected}
+                    aria-controls="civic-language-folder"
+                    onClick={() => setCategoryId(category.id)}
+                    className={`group flex min-h-8 items-center gap-2 border-l-[3px] px-2 py-1.5 text-left transition ${selected ? "border-green-deep bg-white text-navy shadow-sm" : "border-transparent text-charcoal/55 hover:bg-white/65 hover:text-navy"} ${category.terms.length === 0 ? "opacity-40" : ""}`}
+                  >
+                    <span className={`text-[10px] font-black ${selected ? "text-gold" : "text-charcoal/30"}`}>{String(index + 1).padStart(2, "0")}</span>
+                    <span className="min-w-0 flex-1 truncate text-[11px] font-extrabold sm:text-xs">{category.title}</span>
+                    <span className="text-[9px] font-bold text-charcoal/35">{category.terms.length}</span>
+                  </button>;
+                })}
+              </div>
+            </aside>
 
-        {visibleCategories.length ? <div className="mt-8 space-y-12">
-          {visibleCategories.map((category, categoryIndex) => <section key={category.id} id={category.id} className="scroll-mt-28">
-            <div className="grid gap-5 md:grid-cols-[14rem_1fr]">
-              <div>
-                <p className="text-xs font-extrabold tracking-[.14em] text-green-mid">{String(categoryIndex + 1).padStart(2, "0")}</p>
-                <h3 className="mt-2 text-xl font-extrabold leading-snug text-navy">{category.title}</h3>
-                <p className="mt-2 text-sm font-bold leading-6 text-green-deep">{category.question}</p>
+            <section id="civic-language-folder" role="tabpanel" className="relative min-h-[43rem] bg-white">
+              <div className="absolute top-0 right-6 h-3 w-32 rounded-b-sm bg-gold/70 sm:w-44" aria-hidden="true"/>
+              <div className="border-b border-green-deep/12 px-5 pt-7 pb-4 sm:px-7">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <p className="text-[10px] font-extrabold tracking-[.16em] text-green-mid">{ko ? "시민언어 파일" : "CIVIC LANGUAGE FILE"} {String(civicLanguageCategories.findIndex((item) => item.id === activeCategory.id) + 1).padStart(2, "0")}</p>
+                    <h3 className="mt-1.5 text-xl font-extrabold leading-snug text-navy sm:text-2xl">{activeCategory.title}</h3>
+                    <p className="mt-1 text-sm font-bold leading-6 text-green-deep">{activeCategory.question}</p>
+                  </div>
+                  <span className="rounded-full bg-green-pale px-2.5 py-1 text-[10px] font-extrabold text-green-deep">{ko ? `현재 ${activeCategory.terms.length}개` : `${activeCategory.terms.length} shown`}</span>
+                </div>
+                <p className="mt-3 max-w-3xl text-[13px] leading-6 text-charcoal/60 sm:text-sm">{activeCategory.description}</p>
               </div>
-              <div>
-                <p className="max-w-3xl text-[15px] leading-7 text-charcoal/65">{category.description}</p>
-                <div className="mt-5 grid gap-x-7 md:grid-cols-2">{category.terms.map(renderTerm)}</div>
-              </div>
-            </div>
-          </section>)}
-        </div> : <div className="py-20 text-center text-sm font-bold text-charcoal/45">{ko ? "조건에 맞는 용어가 없습니다." : "No terms match these filters."}</div>}
+              {activeCategory.terms.length ? <div className="grid gap-x-4 px-5 py-3 sm:grid-cols-2 sm:px-7 xl:grid-cols-3">
+                {activeCategory.terms.map(renderTerm)}
+              </div> : <div className="flex min-h-56 items-center justify-center px-6 text-center text-sm font-bold text-charcoal/40">{ko ? "이 파일에는 현재 조건에 맞는 용어가 없습니다. 다른 파일 태그를 선택해보세요." : "No terms in this file match the current filters. Choose another file tab."}</div>}
+            </section>
+          </div>
+        </div>
       </section>
 
-      <section className="mt-16 border-t-2 border-navy pt-8" aria-labelledby="priorities-heading">
+      <section className="mt-14 border-t-2 border-navy pt-7" aria-labelledby="priorities-heading">
         <div className="flex items-center gap-3"><BookOpenText className="text-green-deep"/><h2 id="priorities-heading" className="text-2xl font-extrabold text-navy">{ko ? "씨앗이 우선 정리할 40개 용어" : "Forty terms SEED will examine first"}</h2></div>
-        <p className="mt-4 max-w-3xl text-base leading-7 text-charcoal/65">{ko ? "시민의 일상과 현재의 정치·사회 논쟁에 가까운 말부터 하나씩 살펴보겠습니다. 새 글이 게시되면 이 목록은 자동으로 ‘정리 완료’로 바뀌고 해당 기사로 연결됩니다." : "We will begin with terms closest to everyday civic life and current public debate. Each entry will link to its article when published."}</p>
-        <ol className="mt-7 grid gap-x-8 md:grid-cols-2">
-          {civicLanguagePriorities.map((item) => <li key={item.label} className="grid grid-cols-[2rem_1fr] gap-2 border-b border-green-deep/10 py-3"><span className="text-sm font-extrabold text-gold">{item.priority}</span><div><strong className="text-sm text-navy">{item.label}</strong><p className="mt-1 text-sm leading-6 text-charcoal/55">{civicLanguageQuestions[item.label]}</p></div></li>)}
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-charcoal/60">{ko ? "시민의 일상과 현재의 정치·사회 논쟁에 가까운 말부터 정리합니다. 새 글이 게시되면 자동으로 ‘정리 완료’로 바뀌고 해당 기사로 연결됩니다." : "We begin with terms closest to everyday civic life and current debate. Each entry links to its article when published."}</p>
+        <ol className="mt-5 grid grid-cols-2 gap-x-3 border-t border-green-deep/12 sm:grid-cols-3 lg:grid-cols-4">
+          {civicLanguagePriorities.map((item) => <li key={item.label} className="grid grid-cols-[1.35rem_1fr] gap-1.5 border-b border-green-deep/10 py-2 pr-1"><span className="text-[11px] font-extrabold text-gold">{item.priority}</span><div className="min-w-0"><strong className="block truncate text-xs text-navy">{item.label}</strong><p className="mt-0.5 line-clamp-2 text-[10px] leading-4 text-charcoal/50">{civicLanguageQuestions[item.label]}</p></div></li>)}
         </ol>
       </section>
 
