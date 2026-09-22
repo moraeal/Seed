@@ -6,9 +6,9 @@ export const issue28: ColumnTranslation = {
   author: "Small Seed",
   summary: "Reconnecting tender, award and contract-registration records produced KRW 69.56 billion in related registrations. One operations package accounted for KRW 19.79 billion of the organizing committee’s KRW 47.55 billion, while several visitor-facing projects were put out as urgent tenders only five to seven months before opening.",
   heroImage: {
-    alt: "Data graphic distinguishing 126 tender notices, 412 contract registrations and KRW 69.56 billion in related registered value",
-    caption: "Tender notices, contract registrations and actual payments are different measures. SEED reconnected corrections, re-tenders, phased contracts and amendments before assessing the spending structure.",
-    credit: "Data graphic by SEED VOICE",
+    alt: "A symbolic view of procurement ledgers and branching budget flows beneath an expo structure on a dark sea",
+    caption: "Beneath the expo spectacle sit hundreds of contracts and branching flows of public money. Public scrutiny begins by following that ledger.",
+    credit: "AI editorial image by SEED VOICE",
   },
   referenceVideo: {
     thumbnailAlt: "YTN video report on the Yeosu World Island Expo site and procurement notices",
@@ -17,9 +17,9 @@ export const issue28: ColumnTranslation = {
     credit: "YTN",
   },
   inlineImage: {
-    alt: "Yeosu World Island Expo procurement analysis graphic",
-    caption: "Treating notices, contracts and spending as one number hides the structure.",
-    credit: "Data graphic by SEED VOICE",
+    alt: "Symbolic image of the Yeosu World Island Expo contract ledger and budget flows",
+    caption: "The contract ledger and the flow of public money deserve attention before the expo spectacle.",
+    credit: "AI editorial image by SEED VOICE",
   },
   additionalImages: [
     {
