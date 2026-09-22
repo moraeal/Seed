@@ -23,10 +23,10 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     en: "Follow-up measures announced · Field review under way",
   },
   openedAt: "2026-02-24",
-  updatedAt: "2026-09-21",
+  updatedAt: "2026-09-22",
   nextCheck: {
-    ko: "11월 15일까지의 임대차 특별정비 결과, 심층조사 후 실제 위법 확정 면적, 처분 유예·사후 전용 추인 특별조치법의 발의·의결, 농지은행 위탁·매입 실적",
-    en: "Results of the lease regularization period through November 15; area confirmed in violation after field review; introduction and passage of the special-act bill on deferrals and retroactive conversion approval; and Farmland Bank trust and purchase results",
+    ko: "11월 15일까지의 임대차 특별정비 결과, 심층조사 후 실제 위법 확정 면적, 연내 의결을 목표로 한 처분 유예·사후 전용 추인 특별조치법의 발의·심사, 농지은행 위탁·매입 실적",
+    en: "Results of the lease regularization period through November 15; area confirmed in violation after field review; introduction and review of the special-act bill on deferrals and retroactive conversion approval, which the government aims to pass by year-end; and Farmland Bank trust and purchase results",
   },
   heroImage: {
     src: "images/monitoring/farmland-census-tracker-hero.webp",
@@ -55,8 +55,8 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     {
       date: "2026-09-21",
       text: {
-        ko: "당정은 투기성·중대한 위반은 법대로 조치하되 관행적 임대차는 농지은행 위탁 시 처분을 유예하고, 경미한 불법 전용은 사후 추인하는 특별조치법을 추진하기로 했습니다.",
-        en: "The government and ruling party said speculative and serious violations would face enforcement, while customary leases could receive disposal deferrals through the Farmland Bank and minor unauthorized conversions could be regularized under proposed special legislation.",
+        ko: "당정은 투기성·중대한 위반은 법대로 조치하되 관행적 임대차는 농지은행 위탁 시 처분을 유예하고, 경미한 불법 전용은 사후 추인하는 특별조치법의 국회 의결을 연내 마무리하겠다고 밝혔습니다.",
+        en: "The government and ruling party said speculative and serious violations would face enforcement, while customary leases could receive disposal deferrals through the Farmland Bank and minor unauthorized conversions could be regularized under special legislation they aim to pass by year-end.",
       },
     },
     {
@@ -251,8 +251,8 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
         en: "Government announces deferrals for customary leases and a path to regularize minor conversions",
       },
       description: {
-        ko: "당정은 투기 목적의 농지 보유와 농업진흥지역의 중대한 불법 전용은 현행법에 따라 조치하되, 투기와 무관한 관행적 임대차는 농지은행에 위탁하면 처분을 유예하기로 했습니다. 임대차 특별정비 기간은 11월 15일까지 연장하고, 절차를 거치지 않은 경미한 농지 전용은 요건 심사와 농지보전부담금 부과 뒤 사후 추인하는 방안을 추진합니다. 이 조치들은 아직 특별조치법 제정이 필요한 정책 방향이며 심층조사 결과도 확정되지 않았습니다.",
-        en: "The government and ruling party said speculative holdings and serious unauthorized conversion in agricultural promotion zones would remain subject to enforcement. Customary leases unrelated to speculation could receive a disposal deferral if entrusted to the Farmland Bank. The lease regularization period was extended through November 15, and the government proposed retroactive approval for minor conversions after eligibility review and payment of farmland-preservation charges. These remain policy proposals requiring special legislation, and field-review results are not yet final.",
+        ko: "당정은 투기 목적의 농지 보유와 농업진흥지역의 중대한 불법 전용은 현행법에 따라 조치하되, 투기와 무관한 관행적 임대차는 농지은행에 위탁하면 처분을 유예하기로 했습니다. 임대차 특별정비 기간은 11월 15일까지 연장합니다. 소유한 지 3년이 지난 농지를 조사기간 안에 농지은행에 위탁 임대하면 보완조사에서 제외하고 임대차 위반으로 보지 않는 방안도 추진합니다. 경미한 불법 전용은 요건 심사와 농지보전부담금 부과 뒤 사후 추인하며, 정부는 이를 위한 특별조치법의 국회 의결을 연내 마치겠다고 밝혔습니다. 법률이 아직 제정된 것은 아니며 심층조사 결과도 확정되지 않았습니다.",
+        en: "The government and ruling party said speculative holdings and serious unauthorized conversion in agricultural promotion zones would remain subject to enforcement. Customary leases unrelated to speculation could receive a disposal deferral if entrusted to the Farmland Bank, and the lease regularization period was extended through November 15. They also proposed excluding land held for more than three years from supplementary review—and not treating it as an unlawful lease—when it is entrusted to the Farmland Bank during the review period. Minor unauthorized conversions could receive retroactive approval after eligibility review and payment of farmland-preservation charges. The government aims to complete National Assembly passage of the special legislation by year-end, but the law has not yet been enacted and field-review results are not final.",
       },
       change: {
         ko: "일률적 처분 우려에서 위반 유형별 처분·유예·정상화 체계로 정책 방향 구체화",
@@ -260,6 +260,17 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
       },
       status: "confirmed",
       sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: {
+            ko: "상속·고령농지 일괄처분 면제…'관행 임대차' 조건부 처분유예",
+            en: "Conditional disposal deferrals announced for inherited, elderly-owned and customary leased farmland",
+          },
+          url: "https://www.yna.co.kr/view/AKR20260921008700030",
+          publishedAt: "2026-09-21",
+          thumbnailSrc: "/images/monitoring/farmland-census-news/2026-09-21-yonhap.webp",
+          kind: "article",
+        },
         {
           publisher: { ko: "농림축산식품부", en: "Ministry of Agriculture, Food and Rural Affairs" },
           title: { ko: "농촌의 관행적 위반은 정상화·양성화…농지 전수조사 후속조치", en: "Follow-up measures distinguish speculative violations from customary rural practices" },
@@ -283,6 +294,10 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+    {
+      ko: "정부는 특별조치법의 국회 의결을 2026년 말까지 마치겠다는 목표를 제시했지만, 9월 22일 현재 법안이 제정된 것은 아닙니다.",
+      en: "The government aims to complete National Assembly passage of the special legislation by the end of 2026, but no such law had been enacted as of September 22.",
+    },
     {
       ko: "9월 21일 발표된 처분 유예와 경미한 불법 전용 사후 추인은 확정 시행 제도가 아니라 특별조치법 제정이 필요한 정책 방향입니다.",
       en: "The disposal deferrals and retroactive approval for minor unauthorized conversions announced on September 21 are policy proposals requiring special legislation, not rules already in force.",
@@ -388,7 +403,7 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
   ],
   followUpChecks: [
     { ko: "11월 15일까지의 임대차 특별정비 신청·위탁·제외 실적", en: "Applications, Farmland Bank trusts and exclusions during the lease regularization period through November 15" },
-    { ko: "처분 유예·사후 전용 추인 특별조치법의 발의안·심사·시행 기준", en: "Bill text, review and implementation standards for the special act on deferrals and retroactive approval" },
+    { ko: "연내 의결 목표인 처분 유예·사후 전용 추인 특별조치법의 발의안·심사·시행 기준", en: "Bill text, review and implementation standards for the year-end-targeted special act on deferrals and retroactive approval" },
     { ko: "심층조사 완료 면적과 실제 위법 확정 비율", en: "Area field-reviewed and final violation rate" },
     { ko: "유형별 처분의무 통지와 처분명령 건수", en: "Disposal duties and orders by violation category" },
     { ko: "이의신청·행정소송과 처분 취소 사례", en: "Appeals, administrative suits and canceled orders" },
@@ -405,6 +420,11 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
   },
   continuationEligible: true,
   sources: [
+    {
+      label: { ko: "연합뉴스 — 상속·고령농지와 관행 임대차 후속조치", en: "Yonhap — Follow-up measures for inherited, elderly-owned and customarily leased farmland" },
+      url: "https://www.yna.co.kr/view/AKR20260921008700030",
+      note: { ko: "연내 특별조치법 의결 목표·3년 이상 보유 농지 위탁 기준", en: "Year-end legislative target and proposed Farmland Bank rule for land held more than three years" },
+    },
     {
       label: { ko: "농림축산식품부 농지 전수조사 후속조치", en: "Agriculture Ministry follow-up measures for the farmland census" },
       url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156782609",
