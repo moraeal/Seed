@@ -4,6 +4,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import SafeImage from "../components/SafeImage";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { getColumnsNewestFirst, getHotIssueColumnsNewestFirst } from "../data/columns";
+import { civicLanguageCategories } from "../data/civicLanguageMap";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
 import { getNewsNewestFirst } from "../data/news";
 import { newsTrackerCases } from "../data/newsTrackerRegistry";
@@ -169,7 +170,19 @@ export default function SearchPage() {
       }, ["tax-finance"]);
     });
 
-    return [...news, ...hotIssueColumns, ...trackers, ...briefings, ...columns, ...seedLanguage, ...legislative, ...tax];
+    const civicLanguageMap = withTopics({
+      key: "language-why-civic-language",
+      category: ko ? "시민언어" : "Glossary",
+      title: ko ? "우리가 다시 뜻을 새겨야 할 말들" : "Words We Need to Define Again",
+      summary: ko ? "씨앗이 하나씩 정리할 시민언어 전체 지도와 시민언어가 필요한 이유" : "Why civic language matters and the complete map of terms SEED will examine",
+      body: civicLanguageCategories.flatMap((category) => [category.title, category.question, category.description, ...category.terms.flatMap((term) => [term.label, ...(term.aliases ?? [])])]).join(" "),
+      date: "2026-09-22",
+      href: "/seed-language/why-civic-language",
+      imageSrc: "",
+      imageAlt: ko ? "시민언어 전체 지도" : "Civic language map",
+    }, ["politics-language"]);
+
+    return [...news, ...hotIssueColumns, ...trackers, ...briefings, ...columns, civicLanguageMap, ...seedLanguage, ...legislative, ...tax];
   }, [ko, language]);
 
   const results = useMemo(() => {

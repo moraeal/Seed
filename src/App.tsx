@@ -37,6 +37,7 @@ const HotIssueClusterDetail = lazy(() => import("./pages/HotIssueClusterDetail")
 const FoundingStatement = lazy(() => import("./pages/FoundingStatement"));
 const SeedLanguage = lazy(() => import("./pages/SeedLanguage"));
 const SeedLanguageDetail = lazy(() => import("./pages/SeedLanguageDetail"));
+const CivicLanguageMap = lazy(() => import("./pages/CivicLanguageMap"));
 const Insights = lazy(() => import("./pages/Insights"));
 const SearchPage = lazy(() => import("./pages/Search"));
 const LegislativeWatch = lazy(() => import("./pages/LegislativeWatch"));
@@ -84,6 +85,8 @@ function AppShell() {
           <Route path="/about" element={<About />} />
           <Route path="/publisher-message" element={<PublisherMessage />} />
           <Route path="/seed-language" element={<SeedLanguage />} />
+          <Route path="/seed-language/why-civic-language" element={<CivicLanguageMap />} />
+          <Route path="/seed-language/words-turn-citizens-into-enemies" element={<Navigate to="/columns/words-turn-citizens-into-enemies" replace />} />
           <Route path="/seed-language/:slug" element={<SeedLanguageDetail />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/briefings" element={<Briefings />} />

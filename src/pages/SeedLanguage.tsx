@@ -42,7 +42,7 @@ export default function SeedLanguage() {
           <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-stretch sm:justify-between">
             <h1 className="editorial-title flex items-center text-[2.1rem] font-bold leading-tight text-navy sm:text-[2.625rem]">{ko ? "시민언어" : "Glossary"}</h1>
             <Link
-              to="/seed-language/words-turn-citizens-into-enemies"
+              to="/seed-language/why-civic-language"
               className="group flex items-center gap-4 bg-green-deep px-5 py-4 text-white transition-colors hover:bg-green-mid sm:min-w-72 sm:px-6"
               aria-label={ko ? "시민언어가 필요한 이유 읽기" : "Read why the glossary matters"}
             >
