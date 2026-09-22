@@ -62,6 +62,33 @@ type HomeWatchCommentary = {
   imageAlt: string;
 };
 
+const claimFirstUnseen = <T,>(
+  items: T[],
+  pathOf: (item: T) => string,
+  claimedPaths: Set<string>,
+) => {
+  const item = items.find((candidate) => !claimedPaths.has(pathOf(candidate)));
+  if (item) claimedPaths.add(pathOf(item));
+  return item;
+};
+
+const claimUnseen = <T,>(
+  items: T[],
+  pathOf: (item: T) => string,
+  claimedPaths: Set<string>,
+  limit: number,
+) => {
+  const selected: T[] = [];
+  for (const item of items) {
+    const path = pathOf(item);
+    if (claimedPaths.has(path)) continue;
+    claimedPaths.add(path);
+    selected.push(item);
+    if (selected.length >= limit) break;
+  }
+  return selected;
+};
+
 export default function Home() {
   const { language } = useLanguage();
   const ko = language === "ko";
@@ -73,7 +100,7 @@ export default function Home() {
   const allBriefings = getAllBriefingsNewestFirst();
   const localizedBriefings = allBriefings.map((item) => localizeBriefing(item, language));
   const allJournalColumns = getColumnsNewestFirst().map((item) => localizeColumn(item, language));
-  const hotIssues = getHotIssuesNewestFirst(language).slice(0, 5);
+  const hotIssues = getHotIssuesNewestFirst(language);
   const seedLanguageCandidates = [
     ...seedLanguageEnvironmentArticlesKo,
     ...seedLanguageArticlesKo,
@@ -92,34 +119,34 @@ export default function Home() {
       ?? featuredCandidates[0]
     : undefined;
   const activeFeaturedPath = featuredLead?.path;
-  const journalColumns = allJournalColumns
-    .filter((item) => `/columns/${item.slug}` !== activeFeaturedPath)
-    .slice(0, 5);
-  const voiceLeadColumn = journalColumns[0];
-  const voiceListColumns = journalColumns.slice(1, 5);
-  const visibleHotIssues = hotIssues.filter((item) => item.to !== activeFeaturedPath);
-  const latestHotIssue = visibleHotIssues[0];
-  const briefings = localizedBriefings
-    .filter((item) => item.homeBriefingLeadEligible !== false && `/briefings/${item.slug}` !== activeFeaturedPath)
-    .slice(0, 5);
-  const latestBriefing = briefings[0];
-  const briefingList = briefings.slice(1, 5);
-  const seedLanguageArticle = seedLanguageCandidates.find(
-    (item) => `/seed-language/${item.slug}` !== activeFeaturedPath,
+  // A story gets one position on the homepage. Higher placements claim the route first,
+  // and each lower section automatically advances to the next eligible article.
+  const claimedHomePaths = new Set(activeFeaturedPath ? [activeFeaturedPath] : []);
+  const latestHotIssue = claimFirstUnseen(hotIssues, (item) => item.to, claimedHomePaths);
+  const latestBriefing = claimFirstUnseen(
+    localizedBriefings.filter((item) => item.homeBriefingLeadEligible !== false),
+    (item) => `/briefings/${item.slug}`,
+    claimedHomePaths,
   );
   const latestHotIssueColumnSlug = latestHotIssue?.key.startsWith("column-") ? latestHotIssue.key.replace(/^column-/, "") : undefined;
   const pairedTrackerSlug = latestHotIssueColumnSlug ? hotIssueColumnTrackerSlugs[latestHotIssueColumnSlug] : undefined;
   const publicWatchTracker = [...newsTrackerCases]
     .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
-    .find((item) => item.slug !== pairedTrackerSlug && `/monitoring/${item.slug}` !== activeFeaturedPath)
-    ?? newsTrackerCases.find((item) => `/monitoring/${item.slug}` !== activeFeaturedPath);
+    .find((item) => item.slug !== pairedTrackerSlug && !claimedHomePaths.has(`/monitoring/${item.slug}`))
+    ?? newsTrackerCases.find((item) => !claimedHomePaths.has(`/monitoring/${item.slug}`));
   const publicWatchHref = publicWatchTracker ? `/monitoring/${publicWatchTracker.slug}` : "";
+  if (publicWatchHref) claimedHomePaths.add(publicWatchHref);
   const publicWatchTitle = publicWatchTracker?.title[language];
   const publicWatchSummary = publicWatchTracker?.summary[language];
   const publicWatchImage = publicWatchTracker?.heroImage ? {
     src: publicWatchTracker.heroImage.src,
     alt: publicWatchTracker.heroImage.alt[language],
   } : undefined;
+  const seedLanguageArticle = claimFirstUnseen(
+    seedLanguageCandidates,
+    (item) => `/seed-language/${item.slug}`,
+    claimedHomePaths,
+  );
   const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[seedLanguageArticle.term] : undefined;
 
   const civicWatchCandidates: HomeCivicWatchItem[] = [
@@ -164,11 +191,16 @@ export default function Home() {
       status: item.status[language],
     })),
   ]
-    .filter((item) => item.to !== activeFeaturedPath && item.to !== publicWatchHref)
+    .filter((item) => !claimedHomePaths.has(item.to))
     .sort((a, b) => b.date.localeCompare(a.date));
 
   const recentCivicWatchItems = civicWatchCandidates.reduce<HomeCivicWatchItem[]>((selected, item) => {
-    if (selected.length >= 3 || selected.some((candidate) => candidate.category === item.category)) return selected;
+    if (
+      selected.length >= 3
+      || claimedHomePaths.has(item.to)
+      || selected.some((candidate) => candidate.category === item.category)
+    ) return selected;
+    claimedHomePaths.add(item.to);
     selected.push(item);
     return selected;
   }, []);
@@ -182,7 +214,7 @@ export default function Home() {
 
   // Commentary is deliberately separate from the factual monitoring records above.
   // New commentary added to either data source appears here without a homepage edit.
-  const commentaryItems: HomeWatchCommentary[] = [
+  const commentaryCandidates: HomeWatchCommentary[] = [
     ...legislativeCommentaries.map((article) => {
       const edition = getLegislativeCommentaryEdition(article, ko ? "ko" : "en");
       return {
@@ -212,8 +244,26 @@ export default function Home() {
       };
     }),
   ]
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 3);
+    .sort((a, b) => b.date.localeCompare(a.date));
+
+  const commentaryItems = claimUnseen(commentaryCandidates, (item) => item.to, claimedHomePaths, 3);
+  const visibleHotIssues = claimUnseen(hotIssues, (item) => item.to, claimedHomePaths, 3);
+  const briefings = claimUnseen(
+    localizedBriefings.filter((item) => item.homeBriefingLeadEligible !== false),
+    (item) => `/briefings/${item.slug}`,
+    claimedHomePaths,
+    5,
+  );
+  const briefingLead = briefings[0];
+  const briefingList = briefings.slice(1);
+  const journalColumns = claimUnseen(
+    allJournalColumns,
+    (item) => `/columns/${item.slug}`,
+    claimedHomePaths,
+    5,
+  );
+  const voiceLeadColumn = journalColumns[0];
+  const voiceListColumns = journalColumns.slice(1);
 
   useEffect(() => {
     let active = true;
@@ -432,7 +482,7 @@ export default function Home() {
 
       <section className="pt-9 pb-6 sm:pt-16 sm:pb-8" aria-labelledby="hot-issues-title"><div className="container-page"><div className="flex items-end justify-between gap-3 border-b-[3px] border-navy pb-2.5 sm:gap-4 sm:pb-3"><div><p className="section-kicker">HOT ISSUES</p><h2 id="hot-issues-title" className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "핫이슈" : "Hot Issues"}</h2><p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">{ko ? "뉴스트래커의 기록을 바탕으로 사건의 쟁점과 의미를 설명합니다." : "Reporting and commentary explain the meaning behind Civic Watch records."}</p></div><Link to="/news" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link></div><div className="divide-y divide-green-deep/12 pt-1 md:grid md:grid-cols-3 md:gap-8 md:divide-y-0 md:pt-6">{visibleHotIssues.slice(0, 3).map((item) => <article key={item.key} className="group py-4 md:py-0"><Link to={item.to} className="block"><div className="hidden h-[220px] overflow-hidden bg-ivory md:block lg:h-[240px]"><SafeImage src={resolveImageSrc(item.imageSrc)} alt={item.imageAlt} referrerPolicy="no-referrer" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.018]" /></div><p className="mt-3 text-[10px] font-black tracking-[.12em] text-green-deep">{item.kindLabel}</p><h3 className="editorial-title break-keep text-[1.08rem] font-bold leading-snug text-navy transition group-hover:text-green-mid md:mt-1 md:text-[1.35rem]">{item.title}</h3><p className="mt-1.5 line-clamp-3 text-[13px] leading-5 text-charcoal/58 md:mt-2 md:text-sm md:leading-6">{item.summary}</p><div className="mt-2 flex items-center gap-3 text-[11px] text-charcoal/45 sm:text-xs"><time>{item.date.replace(/-/g, ".")}</time>{item.readMinutes && <span className="inline-flex items-center gap-1"><Clock size={12}/>{item.readMinutes}{ko ? "분 읽기" : " min read"}</span>}</div></Link></article>)}</div></div></section>
 
-      <section className="border-t border-green-deep/12 pt-8 pb-4 sm:pt-12 sm:pb-5"><div className="container-page"><div className="flex items-end justify-between gap-3 border-b-[3px] border-navy pb-2.5 sm:gap-4 sm:pb-3"><div><p className="section-kicker">BRIEFINGS</p><h2 className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "브리핑" : "Briefings"}</h2><p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">{ko ? "시민에게는 때로 분노의 성명서보다 친절한 설명서가 필요합니다." : "Citizens sometimes need a clear explanation more than an angry statement."}</p></div><Link to="/briefings" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link></div><div className="grid gap-5 pt-4 sm:gap-6 sm:pt-4 lg:grid-cols-[.95fr_1.05fr]">{latestBriefing && <Link to={`/briefings/${latestBriefing.slug}`} className="group block">{latestBriefing.images?.[0] && <div className="overflow-hidden bg-green-deep"><SafeImage src={resolveImageSrc(latestBriefing.images[0].src)} alt={latestBriefing.images[0].alt} referrerPolicy="no-referrer" className="aspect-[16/7.1] w-full object-cover transition duration-500 group-hover:scale-[1.015] sm:aspect-[16/7.8]" /></div>}<h3 className="editorial-title mt-3 break-keep text-[1.3rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:mt-3 sm:text-2xl">{latestBriefing.title}</h3><p className="mt-1.5 line-clamp-3 text-[13px] leading-5.5 text-charcoal/60 sm:mt-1.5 sm:text-sm sm:leading-6">{latestBriefing.summary}</p></Link>}<div className="divide-y divide-green-deep/15 border-t border-green-deep/15 lg:border-t-0">{briefingList.map((briefing, index) => <Link key={briefing.slug} to={`/briefings/${briefing.slug}`} className="group grid grid-cols-[1.6rem_1fr] gap-2.5 py-3 sm:grid-cols-[2rem_1fr] sm:gap-3 sm:py-3"><span className="text-xs font-black text-green-deep/55 sm:text-sm">{String(index + 1).padStart(2, "0")}</span><div><h3 className="editorial-title break-keep text-[1rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-lg">{briefing.title}</h3><p className="mt-1 line-clamp-2 text-[12px] leading-5 text-charcoal/55 sm:line-clamp-2 sm:text-sm sm:leading-6">{briefing.summary}</p></div></Link>)}</div></div></div></section>
+      <section className="border-t border-green-deep/12 pt-8 pb-4 sm:pt-12 sm:pb-5"><div className="container-page"><div className="flex items-end justify-between gap-3 border-b-[3px] border-navy pb-2.5 sm:gap-4 sm:pb-3"><div><p className="section-kicker">BRIEFINGS</p><h2 className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "브리핑" : "Briefings"}</h2><p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">{ko ? "시민에게는 때로 분노의 성명서보다 친절한 설명서가 필요합니다." : "Citizens sometimes need a clear explanation more than an angry statement."}</p></div><Link to="/briefings" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link></div><div className="grid gap-5 pt-4 sm:gap-6 sm:pt-4 lg:grid-cols-[.95fr_1.05fr]">{briefingLead && <Link to={`/briefings/${briefingLead.slug}`} className="group block">{briefingLead.images?.[0] && <div className="overflow-hidden bg-green-deep"><SafeImage src={resolveImageSrc(briefingLead.images[0].src)} alt={briefingLead.images[0].alt} referrerPolicy="no-referrer" className="aspect-[16/7.1] w-full object-cover transition duration-500 group-hover:scale-[1.015] sm:aspect-[16/7.8]" /></div>}<h3 className="editorial-title mt-3 break-keep text-[1.3rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:mt-3 sm:text-2xl">{briefingLead.title}</h3><p className="mt-1.5 line-clamp-3 text-[13px] leading-5.5 text-charcoal/60 sm:mt-1.5 sm:text-sm sm:leading-6">{briefingLead.summary}</p></Link>}<div className="divide-y divide-green-deep/15 border-t border-green-deep/15 lg:border-t-0">{briefingList.map((briefing, index) => <Link key={briefing.slug} to={`/briefings/${briefing.slug}`} className="group grid grid-cols-[1.6rem_1fr] gap-2.5 py-3 sm:grid-cols-[2rem_1fr] sm:gap-3 sm:py-3"><span className="text-xs font-black text-green-deep/55 sm:text-sm">{String(index + 1).padStart(2, "0")}</span><div><h3 className="editorial-title break-keep text-[1rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-lg">{briefing.title}</h3><p className="mt-1 line-clamp-2 text-[12px] leading-5 text-charcoal/55 sm:line-clamp-2 sm:text-sm sm:leading-6">{briefing.summary}</p></div></Link>)}</div></div></div></section>
 
       <section className="border-t border-green-deep/12 py-8 sm:py-12"><div className="container-page"><div className="flex items-end justify-between gap-3 border-b-[3px] border-navy pb-2.5 sm:gap-4 sm:pb-3"><div><p className="section-kicker">COLUMNS</p><h2 className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "칼럼" : "Columns"}</h2><p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">{ko ? "정답을 말하기보다, 익숙한 생각에 질문을 던집니다." : "Rather than declare the answer, we question what has become familiar."}</p></div><Link to="/columns" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link></div><div className="grid gap-5 pt-4 sm:gap-6 sm:pt-4 lg:grid-cols-[1.05fr_.95fr]"><div className="divide-y divide-green-deep/15 border-y border-green-deep/15 lg:border-t-0">{voiceListColumns.map((column, index) => <Link key={column.slug} to={`/columns/${column.slug}`} className="group grid grid-cols-[1.6rem_1fr] gap-2.5 py-3 sm:grid-cols-[2rem_1fr] sm:gap-3 sm:py-3"><span className="text-xs font-black text-green-deep/55 sm:text-sm">{String(index + 1).padStart(2, "0")}</span><div><h3 className="editorial-title break-keep text-[1rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-lg">{column.title}</h3><p className="mt-1 line-clamp-2 text-[12px] leading-5 text-charcoal/55 sm:line-clamp-2 sm:text-sm sm:leading-6">{column.summary}</p></div></Link>)}</div>{voiceLeadColumn && <Link to={`/columns/${voiceLeadColumn.slug}`} className="group block border-y border-green-deep/15 pt-4 pb-3 lg:border-t-0 lg:pt-0"><div className="hidden overflow-hidden bg-ivory sm:block"><SafeImage src={resolveImageSrc(voiceLeadColumn.heroImage.src)} alt={voiceLeadColumn.heroImage.alt} referrerPolicy="no-referrer" className="aspect-[16/7.1] w-full object-cover transition duration-500 group-hover:scale-[1.015] sm:aspect-[16/7.8]" /></div><h3 className="editorial-title break-keep text-[1.2rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:mt-3 sm:text-2xl">{voiceLeadColumn.title}</h3><p className="mt-1.5 line-clamp-2 text-[13px] leading-5.5 text-charcoal/60 sm:mt-1.5 sm:text-sm sm:leading-6">{voiceLeadColumn.summary}</p></Link>}</div></div></section>
 
