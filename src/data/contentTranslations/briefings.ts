@@ -6,8 +6,10 @@ import { partyDissolutionTranslation } from "./briefing11";
 import { futureResponseFundTranslation } from "./briefing12";
 import { socialSolidarityEconomyLawTranslation } from "./briefing13";
 import { yeosuIslandExpoBriefingTranslation } from "./briefingYeosuIslandExpo";
+import { activistFundingPressureTranslation } from "./briefing14";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "activist-support-political-pressure": activistFundingPressureTranslation,
   "social-solidarity-economy-law-conservative-silence": socialSolidarityEconomyLawTranslation,
   "future-response-fund-public-money": futureResponseFundTranslation,
   "can-half-the-nation-be-dissolved": partyDissolutionTranslation,

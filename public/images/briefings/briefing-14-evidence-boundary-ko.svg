@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">활동가 지원 요청 논란의 증거 경계</title>
+  <desc id="desc">현재 공개자료로 확인된 내용과 아직 확인되지 않은 내용을 나란히 비교한 도표</desc>
+  <rect width="1200" height="720" fill="#f6f2e8"/>
+  <rect x="54" y="48" width="1092" height="624" rx="28" fill="#fffdf8" stroke="#24372f" stroke-width="2"/>
+  <text x="96" y="108" fill="#17241f" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="38" font-weight="700">활동가 지원 요청 논란, 어디까지 확인됐나</text>
+  <text x="96" y="146" fill="#5c685f" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="20">공개된 사실과 아직 비어 있는 정보를 구분해야 판단이 앞서가지 않습니다.</text>
+
+  <rect x="88" y="184" width="490" height="372" rx="22" fill="#e7f1eb"/>
+  <circle cx="126" cy="225" r="15" fill="#2f6b50"/>
+  <path d="M119 225l5 5 10-12" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="154" y="234" fill="#1e503b" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="27" font-weight="700">현재 공개자료로 확인된 것</text>
+  <g fill="#24372f" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="22">
+    <circle cx="124" cy="293" r="5" fill="#2f6b50"/><text x="144" y="301">활동가 의료·검진·상담 지원 제안</text>
+    <circle cx="124" cy="359" r="5" fill="#2f6b50"/><text x="144" y="367">일부 민주당 의원실을 거쳤다는 보도</text>
+    <circle cx="124" cy="425" r="5" fill="#2f6b50"/><text x="144" y="433">익명 기업 관계자 “압박으로 느꼈다”</text>
+    <circle cx="124" cy="491" r="5" fill="#2f6b50"/><text x="144" y="499">동행은 관련 의혹을 부인</text>
+  </g>
+
+  <rect x="622" y="184" width="490" height="372" rx="22" fill="#f4e8e2"/>
+  <circle cx="660" cy="225" r="15" fill="#9b4e36"/>
+  <path d="M654 219l12 12m0-12l-12 12" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="688" y="234" fill="#7d3c2a" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="27" font-weight="700">아직 확인되지 않은 것</text>
+  <g fill="#3c302b" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="22">
+    <circle cx="658" cy="293" r="5" fill="#9b4e36"/><text x="678" y="301">어느 의원실·기업이었는가</text>
+    <circle cx="658" cy="359" r="5" fill="#9b4e36"/><text x="678" y="367">전달 문구·후속 연락·요청액</text>
+    <circle cx="658" cy="425" r="5" fill="#9b4e36"/><text x="678" y="433">기업 내부 심사와 거절 가능성</text>
+    <circle cx="658" cy="491" r="5" fill="#9b4e36"/><text x="678" y="499">86.7억 원의 재원별 구성</text>
+  </g>
+
+  <line x1="96" y1="588" x2="1104" y2="588" stroke="#d7d0c1" stroke-width="2"/>
+  <text x="600" y="633" text-anchor="middle" fill="#17241f" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="25" font-weight="700">지원의 필요성과 요청 방식의 적절성은 별개의 문제입니다.</text>
+</svg>

@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "briefing:activist-support-political-pressure": {
+    ko: {
+      href: "/columns/civic-groups-are-not-state-vanguard-2026",
+      title: "시민단체는 정부의 돌격대가 아니다",
+      relationship: "시민사회와 권력",
+      reason: "정치권을 거친 기업 후원 요청의 문제를 살펴봤다면, 시민단체가 국가권력과 가까워질 때 독립성과 시민의 권리가 어떻게 흔들리는지도 이어서 살펴봅니다.",
+      listHref: "/briefings",
+      listLabel: "브리핑 전체 보기",
+    },
+    en: {
+      href: "/columns/civic-groups-are-not-state-vanguard-2026",
+      title: "Civic Groups Are Not the Government’s Vanguard",
+      relationship: "CIVIL SOCIETY AND POWER",
+      reason: "After examining a corporate-funding request routed through political offices, continue with how proximity to state power can compromise civic independence and citizens’ rights.",
+      listHref: "/briefings",
+      listLabel: "All briefings",
+    },
+  },
   "briefing:social-solidarity-economy-law-conservative-silence": {
     ko: {
       href: "/briefings/social-solidarity-economy-youth-mall-lessons",

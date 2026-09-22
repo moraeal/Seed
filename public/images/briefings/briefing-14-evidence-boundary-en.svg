@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">The evidentiary boundary in the activist-support funding controversy</title>
+  <desc id="desc">A comparison of what the public record establishes and what remains unresolved</desc>
+  <rect width="1200" height="720" fill="#f6f2e8"/>
+  <rect x="54" y="48" width="1092" height="624" rx="28" fill="#fffdf8" stroke="#24372f" stroke-width="2"/>
+  <text x="96" y="108" fill="#17241f" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="700">What does the public record actually establish?</text>
+  <text x="96" y="146" fill="#5c685f" font-family="Inter, Arial, sans-serif" font-size="19">Separating known facts from missing evidence prevents conclusions from outrunning the record.</text>
+
+  <rect x="88" y="184" width="490" height="372" rx="22" fill="#e7f1eb"/>
+  <circle cx="126" cy="225" r="15" fill="#2f6b50"/>
+  <path d="M119 225l5 5 10-12" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="154" y="234" fill="#1e503b" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700">Established publicly</text>
+  <g fill="#24372f" font-family="Inter, Arial, sans-serif" font-size="19">
+    <circle cx="124" cy="286" r="5" fill="#2f6b50"/><text x="144" y="293">Proposal for medical, screening</text><text x="144" y="318">and counselling support</text>
+    <circle cx="124" cy="366" r="5" fill="#2f6b50"/><text x="144" y="373">Reported route through some</text><text x="144" y="398">Democratic Party lawmakers' offices</text>
+    <circle cx="124" cy="446" r="5" fill="#2f6b50"/><text x="144" y="453">Anonymous corporate official</text><text x="144" y="478">said the request felt coercive</text>
+    <circle cx="124" cy="512" r="5" fill="#2f6b50"/><text x="144" y="519">DongHang denied the allegation</text>
+  </g>
+
+  <rect x="622" y="184" width="490" height="372" rx="22" fill="#f4e8e2"/>
+  <circle cx="660" cy="225" r="15" fill="#9b4e36"/>
+  <path d="M654 219l12 12m0-12l-12 12" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="688" y="234" fill="#7d3c2a" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700">Still unresolved</text>
+  <g fill="#3c302b" font-family="Inter, Arial, sans-serif" font-size="19">
+    <circle cx="658" cy="286" r="5" fill="#9b4e36"/><text x="678" y="293">Which lawmakers' offices</text><text x="678" y="318">and companies were involved</text>
+    <circle cx="658" cy="366" r="5" fill="#9b4e36"/><text x="678" y="373">Wording, follow-up contact</text><text x="678" y="398">and amount requested</text>
+    <circle cx="658" cy="446" r="5" fill="#9b4e36"/><text x="678" y="453">Internal review and whether</text><text x="678" y="478">companies could freely decline</text>
+    <circle cx="658" cy="512" r="5" fill="#9b4e36"/><text x="678" y="519">Funding sources within KRW 8.68bn</text>
+  </g>
+
+  <line x1="96" y1="588" x2="1104" y2="588" stroke="#d7d0c1" stroke-width="2"/>
+  <text x="600" y="625" text-anchor="middle" fill="#17241f" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">The need for support and the propriety of the request are separate questions.</text>
+</svg>
