@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">학벌 대신 문제해결력을 보는 SK하이닉스 AI 해커톤</title>
+  <desc id="desc">학력 전공 학점 경력 제한은 제외되고 포트폴리오와 두 차례 예선, AI 활용 과정, 작동하는 결과물이 평가되는 구조</desc>
+  <rect width="1200" height="675" fill="#071018"/>
+  <circle cx="1080" cy="90" r="240" fill="#ef5a24" opacity=".12"/>
+  <circle cx="130" cy="620" r="260" fill="#9d1d46" opacity=".18"/>
+  <text x="70" y="78" fill="#f4a261" font-family="Pretendard,Arial,sans-serif" font-size="22" font-weight="800" letter-spacing="2">기업브리핑 · SK하이닉스 AI 해커톤 2026</text>
+  <text x="70" y="142" fill="#ffffff" font-family="Pretendard,Arial,sans-serif" font-size="48" font-weight="900">학벌을 지운 자리, 무엇이 평가합니까</text>
+  <text x="70" y="183" fill="#c8d2d8" font-family="Pretendard,Arial,sans-serif" font-size="23">기회의 문은 넓어졌지만 새로운 기준도 투명해야 합니다</text>
+  <rect x="70" y="230" width="460" height="310" rx="26" fill="#121f29" stroke="#32424d"/>
+  <text x="110" y="282" fill="#ff8a5b" font-family="Pretendard,Arial,sans-serif" font-size="25" font-weight="900">없앤 기준</text>
+  <text x="110" y="342" fill="#ffffff" font-family="Pretendard,Arial,sans-serif" font-size="31" font-weight="800">출신학교</text>
+  <text x="110" y="395" fill="#ffffff" font-family="Pretendard,Arial,sans-serif" font-size="31" font-weight="800">전공과 학점</text>
+  <text x="110" y="448" fill="#ffffff" font-family="Pretendard,Arial,sans-serif" font-size="31" font-weight="800">개발 경력 제한</text>
+  <line x1="98" y1="332" x2="420" y2="332" stroke="#ef5a24" stroke-width="5" opacity=".8"/>
+  <line x1="98" y1="385" x2="420" y2="385" stroke="#ef5a24" stroke-width="5" opacity=".8"/>
+  <line x1="98" y1="438" x2="420" y2="438" stroke="#ef5a24" stroke-width="5" opacity=".8"/>
+  <path d="M555 385h90" stroke="#f4a261" stroke-width="8" stroke-linecap="round"/>
+  <path d="m625 360 28 25-28 25" fill="none" stroke="#f4a261" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="670" y="230" width="460" height="310" rx="26" fill="#fff8ef"/>
+  <text x="710" y="282" fill="#9d1d46" font-family="Pretendard,Arial,sans-serif" font-size="25" font-weight="900">새로 보는 기준</text>
+  <text x="710" y="342" fill="#17242d" font-family="Pretendard,Arial,sans-serif" font-size="30" font-weight="800">포트폴리오</text>
+  <text x="710" y="395" fill="#17242d" font-family="Pretendard,Arial,sans-serif" font-size="30" font-weight="800">AI 활용과 문제 정의</text>
+  <text x="710" y="448" fill="#17242d" font-family="Pretendard,Arial,sans-serif" font-size="30" font-weight="800">검증 과정과 결과물</text>
+  <text x="70" y="606" fill="#ffffff" font-family="Pretendard,Arial,sans-serif" font-size="26" font-weight="900">실력으로 증명하라는 약속, 기업도 채용 결과로 증명해야 합니다.</text>
+  <text x="70" y="640" fill="#9fb0ba" font-family="Pretendard,Arial,sans-serif" font-size="17">자료: SK하이닉스 AI 해커톤 2026 공식 안내 · 씨앗의 소리 정리</text>
+</svg>

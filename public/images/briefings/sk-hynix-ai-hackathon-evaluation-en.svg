@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">What replaces academic pedigree in the SK hynix AI Hackathon</title>
+  <desc id="desc">University, major, GPA and experience requirements are removed while portfolios, online rounds, AI use and working outputs are assessed</desc>
+  <rect width="1200" height="675" fill="#071018"/>
+  <circle cx="1080" cy="90" r="240" fill="#ef5a24" opacity=".12"/>
+  <circle cx="130" cy="620" r="260" fill="#9d1d46" opacity=".18"/>
+  <text x="70" y="78" fill="#f4a261" font-family="Arial,sans-serif" font-size="22" font-weight="800" letter-spacing="2">BUSINESS BRIEFING · SK HYNIX AI HACKATHON 2026</text>
+  <text x="70" y="142" fill="#ffffff" font-family="Arial,sans-serif" font-size="45" font-weight="900">Pedigree is gone. What takes its place?</text>
+  <text x="70" y="183" fill="#c8d2d8" font-family="Arial,sans-serif" font-size="23">Access may be wider, but the new criteria must be transparent.</text>
+  <rect x="70" y="230" width="460" height="310" rx="26" fill="#121f29" stroke="#32424d"/>
+  <text x="110" y="282" fill="#ff8a5b" font-family="Arial,sans-serif" font-size="25" font-weight="900">REMOVED</text>
+  <text x="110" y="342" fill="#ffffff" font-family="Arial,sans-serif" font-size="31" font-weight="800">University name</text>
+  <text x="110" y="395" fill="#ffffff" font-family="Arial,sans-serif" font-size="31" font-weight="800">Major and GPA</text>
+  <text x="110" y="448" fill="#ffffff" font-family="Arial,sans-serif" font-size="31" font-weight="800">Experience requirement</text>
+  <line x1="98" y1="332" x2="445" y2="332" stroke="#ef5a24" stroke-width="5" opacity=".8"/>
+  <line x1="98" y1="385" x2="445" y2="385" stroke="#ef5a24" stroke-width="5" opacity=".8"/>
+  <line x1="98" y1="438" x2="445" y2="438" stroke="#ef5a24" stroke-width="5" opacity=".8"/>
+  <path d="M555 385h90" stroke="#f4a261" stroke-width="8" stroke-linecap="round"/>
+  <path d="m625 360 28 25-28 25" fill="none" stroke="#f4a261" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="670" y="230" width="460" height="310" rx="26" fill="#fff8ef"/>
+  <text x="710" y="282" fill="#9d1d46" font-family="Arial,sans-serif" font-size="25" font-weight="900">ASSESSED</text>
+  <text x="710" y="342" fill="#17242d" font-family="Arial,sans-serif" font-size="30" font-weight="800">Portfolio</text>
+  <text x="710" y="395" fill="#17242d" font-family="Arial,sans-serif" font-size="30" font-weight="800">AI use and problem framing</text>
+  <text x="710" y="448" fill="#17242d" font-family="Arial,sans-serif" font-size="30" font-weight="800">Verification and outputs</text>
+  <text x="70" y="606" fill="#ffffff" font-family="Arial,sans-serif" font-size="25" font-weight="900">If candidates must prove skills through results, the company should too.</text>
+  <text x="70" y="640" fill="#9fb0ba" font-family="Arial,sans-serif" font-size="17">Source: SK hynix AI Hackathon 2026 official materials · SEED VOICE</text>
+</svg>

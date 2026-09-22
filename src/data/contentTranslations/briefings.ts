@@ -8,8 +8,10 @@ import { socialSolidarityEconomyLawTranslation } from "./briefing13";
 import { yeosuIslandExpoBriefingTranslation } from "./briefingYeosuIslandExpo";
 import { activistFundingPressureTranslation } from "./briefing14";
 import { hospitalInheritanceTaxTranslation } from "./briefingHospitalInheritanceTax";
+import { skHynixAiHackathonTranslation } from "./briefingSkHynixAiHackathon";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "sk-hynix-ai-hackathon-skills-first-hiring": skHynixAiHackathonTranslation,
   "hospital-inheritance-tax-maternity-care": hospitalInheritanceTaxTranslation,
   "activist-support-political-pressure": activistFundingPressureTranslation,
   "social-solidarity-economy-law-conservative-silence": socialSolidarityEconomyLawTranslation,
