@@ -241,6 +241,50 @@ export const publicInstitutionReformTasks: PublicInstitutionReformTask[] = [
       thumbnailAlt: { ko: "공공기관 지방이전 방향을 발표하는 정부 기자회견", en: "Government press conference announcing the relocation direction" },
     },
   },
+  {
+    id: "korail-subsidiaries",
+    title: { ko: "코레일 자회사 5곳을 3개 전문회사로 통합", en: "Consolidating five Korail subsidiaries into three specialist companies" },
+    shortTitle: { ko: "코레일 자회사 통합 완료", en: "Korail subsidiary merger completed" },
+    reformType: { ko: "5개 자회사 → 3개 전문회사", en: "Five subsidiaries → three specialist companies" },
+    stage: "implementation",
+    lenses: ["tariff", "region-jobs"],
+    institutions: {
+      ko: "코레일네트웍스·코레일관광개발·코레일유통·코레일로지스·코레일테크",
+      en: "Korail Networks, Korail Tourism Development, Korail Retail, Korail Logistics and Korail Tech",
+    },
+    plannedStructure: {
+      ko: "고객서비스·유통물류·유지관리 3개 전문회사 체제",
+      en: "Three specialist companies for customer service, retail-logistics and maintenance",
+    },
+    governmentPromise: {
+      ko: "역·열차·연계교통 서비스를 묶고 중복 기능을 조정해 이용 편의와 철도 안전을 높이겠다는 계획입니다.",
+      en: "The government says integrated station, train and connecting-transport services and fewer overlapping functions will improve convenience and rail safety.",
+    },
+    confirmed: {
+      ko: "2026년 9월 23일 합병 절차가 끝나 5개 자회사가 3개 전문회사 체제로 운영을 시작했습니다. 코레일네트웍스와 코레일관광개발, 코레일유통과 코레일로지스가 각각 합병했고 코레일테크는 기존 법인을 유지합니다. 통합 회사의 공식 명칭은 연내 확정할 예정입니다.",
+      en: "The merger process was completed on September 23, 2026, and the five subsidiaries began operating as three specialist companies. Korail Networks merged with Korail Tourism Development, Korail Retail merged with Korail Logistics, and Korail Tech remained a separate company. The merged companies' official names are due by year-end.",
+    },
+    unresolved: [
+      { ko: "통합 회사의 공식 명칭과 조직·인사·임금체계", en: "Final company names and the organization, staffing and pay systems" },
+      { ko: "2027년 상반기 기능조정 로드맵과 연말 위탁계약 완료 여부", en: "The function-adjustment roadmap due in the first half of 2027 and completion of outsourcing contracts by year-end" },
+      { ko: "통합비용·절감액과 편의점 가격·안전·서비스의 실제 개선", en: "Merger costs, savings and actual changes in retail prices, safety and service quality" },
+    ],
+    citizenImpact: {
+      ko: "109개 순감축 계획에 포함된 자회사 통합이 실제 법인 개편까지 완료된 사례입니다. 다만 회사 수 감소가 비용 절감이나 서비스 개선으로 이어졌는지는 별도의 결과 검증이 필요합니다.",
+      en: "This is a case in the 109-entity net-reduction plan that has advanced to a completed corporate restructuring. Whether fewer companies actually reduce costs or improve services still requires outcome verification.",
+    },
+    lawStatus: { ko: "합병 완료·기능조정 후속 추진", en: "Merger completed; function adjustment pending" },
+    costStatus: { ko: "통합비용·절감액 미공개", en: "Merger cost and savings not disclosed" },
+    updatedAt: "2026-09-23",
+    media: {
+      outlet: { ko: "머니투데이", en: "MoneyToday" },
+      title: { ko: "코레일 자회사, 3개로 통합…편의점 할인·수하물 공간 늘린다", en: "Korail subsidiaries consolidated into three, with retail discounts and more luggage space planned" },
+      url: "https://www.mt.co.kr/estate/2026/09/23/2026092215441828280",
+      publishedAt: "2026-09-23",
+      thumbnailSrc: "images/monitoring/public-institution-reform/korail-subsidiaries-moneytoday-20260923.jpg",
+      thumbnailAlt: { ko: "코레일관광네트웍스 통합 서비스 체계 인포그래픽", en: "Infographic showing the integrated Korail Tourism Networks service structure" },
+    },
+  },
 ];
 
 export const publicInstitutionReformTracker: PublicInterestWatchCase = {
@@ -252,9 +296,9 @@ export const publicInstitutionReformTracker: PublicInterestWatchCase = {
     ko: "정부는 공공기관 109개 감축을 내걸었습니다. 씨앗은 기관 숫자보다 통합비용과 부채, 전기·가스요금, 주택 공급, 지역의 결정권이 실제로 어떻게 달라지는지 추적합니다.",
     en: "The government has announced a net reduction of 109 public entities. SEED tracks what happens to merger costs, debt, utility bills, housing supply and regional authority—not just the headline count.",
   },
-  status: { ko: "정부안 발표·후속안 추적", en: "Plan announced · Follow-up under watch" },
+  status: { ko: "자회사 통합 완료·후속안 추적", en: "Subsidiary merger completed · Follow-up under watch" },
   publishedAt: "2026-09-21",
-  updatedAt: "2026-09-21",
+  updatedAt: "2026-09-23",
   sourceBasis: {
     ko: "2026년 9월 3일 제11차 공공기관운영위원회에서 의결된 정부 합동 기능개혁 방안과 각 부처 후속 발표를 기준으로, 언론 원문에서 시민 생활에 미칠 쟁점을 교차 확인했습니다. 109는 단순 대상기관 수가 아니라 정부가 제시한 순감축 목표입니다.",
     en: "This tracker starts from the government-wide reform plan approved by the 11th Public Institution Management Committee on September 3, 2026, then cross-checks ministry follow-ups and original media reporting. The figure 109 is a net reduction target, not a simple count of affected institutions.",
@@ -266,6 +310,7 @@ export const publicInstitutionReformTracker: PublicInterestWatchCase = {
     credit: { ko: "씨앗의 소리 AI 제작 이미지", en: "AI-generated image by SEED VOICE" },
   },
   confirmedFacts: [
+    { ko: "코레일 자회사 5곳은 2026년 9월 23일부터 고객서비스·유통물류·유지관리 3개 전문회사 체제로 운영을 시작했습니다.", en: "Five Korail subsidiaries began operating as three specialist companies for customer service, retail-logistics and maintenance on September 23, 2026." },
     { ko: "정부가 제시한 감축 목표는 전략적 구조개혁 15개, 유사·중복기능 일원화 11개, 자회사·소규모기관 통합 83개로 합계 109개입니다.", en: "The reduction target consists of 15 entities under strategic restructuring, 11 under overlapping-function consolidation and 83 subsidiaries or small bodies." },
     { ko: "109는 개편 영향을 받는 기관의 단순한 명단 수가 아니라 통합과 청산 뒤 줄이겠다는 순감축 목표입니다.", en: "The 109 figure is a net reduction target after mergers and liquidation, not a simple list of every affected institution." },
     { ko: "핵심 통합·분리 과제의 법률 개정, 자산·부채 승계, 통합비용은 대부분 후속 결정이 필요합니다.", en: "Most major tasks still require legislation and decisions on assets, debt and implementation costs." },
@@ -281,10 +326,14 @@ export const publicInstitutionReformTracker: PublicInterestWatchCase = {
     { ko: "공공요금·주택 공급·지역 일자리처럼 시민이 체감할 결과를 개편 전후 같은 기준으로 공개합니다.", en: "Report pre- and post-reform outcomes using consistent measures for tariffs, housing and regional jobs." },
   ],
   nextCheck: {
-    ko: "정부의 세부 기관 명단, 관련 법률안 제출, 핵심 5개 과제의 통합·분할 비용 공개 여부를 확인합니다.",
-    en: "Next checks: the detailed institution list, filing of enabling legislation and disclosure of costs for the five priority reforms.",
+    ko: "코레일 통합비용·절감액과 10대 서비스의 실제 이행, 정부의 세부 기관 명단, 관련 법률안 제출, 핵심 5개 과제의 통합·분할 비용 공개 여부를 확인합니다.",
+    en: "Next checks: Korail merger costs, savings and delivery of the ten service measures; the detailed institution list; enabling legislation; and cost disclosure for the five priority reforms.",
   },
   sources: [
+    {
+      label: { ko: "국토교통부 — 코레일 자회사 5곳의 3개 전문회사 통합 완료 보도자료 (2026.09.23)", en: "Land ministry release confirming the five-to-three Korail subsidiary merger (Sep. 23, 2026)" },
+      url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783024",
+    },
     {
       label: { ko: "관계부처합동 — 공공기관 기능개혁 추진방안 정책뉴스 (2026.09.03)", en: "Government-wide public-institution reform policy release (Sep. 3, 2026)" },
       url: "https://www.korea.kr/news/policyNewsView.do?newsId=148971154",
