@@ -32,8 +32,119 @@ const contentStrategyAccountBill = "https://opinion.lawmaking.go.kr/gcom/nsmLmSt
 const taxExpenditureCapBill = "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221495/detailRP";
 const nationalFinanceAct = "https://www.law.go.kr/법령/국가재정법";
 const taxExpenditurePlanReport = "https://marketin.edaily.co.kr/News/ReadE?newsId=04031126645388896";
+const farmFisheryNationalTaxBill = "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221545/detailRP";
+const farmFisheryLocalTaxBill = "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221543/detailRP";
+const taxReformOfficialFile = "https://mofe.go.kr/com/cmm/fms/FileDown.do?atchFileId=ATCH_000000000032335&fileSn=4";
+const taxReformAgricultureReport = "https://www.taxtimes.co.kr/news/article.html?no=276259";
 
 export const taxPolicies: TaxPolicy[] = [
+  {
+    slug: "farm-fishery-tax-breaks-2030-bill",
+    importance: 84,
+    status: { ko: "법안 발의", en: "Bills introduced" },
+    title: {
+      ko: "농어업 세금특례, 서로 다른 일몰을 2030년으로 묶자는 법안",
+      en: "Bills would align broad farm and fishery tax breaks to a 2030 sunset",
+    },
+    summary: {
+      ko: "농어민·농어업법인·협동조합 등에 적용되는 국세와 지방세 특례의 서로 다른 일몰을 2030년 말로 맞추는 두 법안이 발의됐습니다. 예측 가능성을 높인다는 취지지만, 종료 예정 특례까지 함께 연장될 수 있고 국세·지방세를 합친 비용표는 제시되지 않았습니다.",
+      en: "Two bills would move a wide range of national and local tax preferences for farmers, fishers, related corporations and cooperatives to a common sunset at the end of 2030. The sponsors cite predictability, but some preferences scheduled to end could be prolonged, and no combined national-local cost table has been provided.",
+    },
+    affected: {
+      ko: "농어민 · 농어업법인 · 협동조합 · 지방자치단체 · 모든 납세자",
+      en: "Farmers and fishers · Agricultural and fishery corporations · Cooperatives · Local governments · All taxpayers",
+    },
+    checkedAt: "2026-09-23",
+    heroImage: {
+      ko: "images/monitoring/farm-fishery-tax-breaks-2030-ko.png",
+      en: "images/monitoring/farm-fishery-tax-breaks-2030-en.png",
+      alt: {
+        ko: "2026년과 2028년으로 흩어진 농어업 국세·지방세 특례 일몰을 2030년으로 맞추는 법안의 구조를 설명한 도표",
+        en: "Diagram explaining bills that would align agricultural and fishery national and local tax-break sunsets from 2026 and 2028 to 2030",
+      },
+      caption: {
+        ko: "두 법안은 여러 국세·지방세 특례의 일몰을 2030년 12월 31일로 맞춥니다. 공식 제안 설명에는 특례별 수혜자 수와 국세·지방세를 합친 연간 세수 감소액이 없습니다.",
+        en: "The two bills would align numerous national and local tax preferences to December 31, 2030. The official summaries do not provide recipient counts by preference or a combined annual national-local revenue-loss estimate.",
+      },
+    },
+    processNote: {
+      ko: "2026년 9월 22일 발의된 의원입법안 두 건으로 아직 확정된 법률이 아닙니다. 국회 심사에서 대상 조항·일몰과 시행시점이 달라질 수 있습니다.",
+      en: "These two private member's bills were introduced on September 22, 2026 and have not been enacted. Covered provisions, sunsets and the effective date may change during National Assembly review.",
+    },
+    oneSentence: {
+      ko: "농어업 지원의 예측 가능성을 높이자는 제안이지만, 성과와 비용이 다른 여러 특례를 한 날짜로 묶으면 일몰 심사가 일괄 연장 절차로 바뀔 수 있습니다.",
+      en: "The proposal promises greater predictability for agricultural support, but one common date could turn separate sunset reviews of preferences with different costs and results into a single renewal exercise.",
+    },
+    keyChanges: [
+      {
+        title: { ko: "국세 특례 일몰을 2030년으로", en: "National tax preferences moved to 2030" },
+        body: {
+          ko: "농어업법인 과세특례, 자경농지·축사용지·어업용 토지 양도소득세 감면, 농어민 저축·조합 예탁금, 농어업 기자재와 면세유 관련 부가가치세·간접세 특례 등 주요 기한을 2030년으로 맞춥니다.",
+          en: "The national-tax bill would align major preferences—including rules for agricultural and fishery corporations, capital-gains relief for qualifying land, savings and cooperative deposits, equipment-related VAT relief and tax-exempt fuel—to 2030.",
+        },
+      },
+      {
+        title: { ko: "지방세 특례도 같은 날짜로", en: "Local tax preferences aligned to the same date" },
+        body: {
+          ko: "농어민·농어업법인·농수협과 관련 기관에 대한 취득세·재산세·등록면허세 감면 가운데 2026년부터 2028년 사이 끝나는 주요 특례를 2030년 말까지 연장합니다.",
+          en: "The local-tax bill would extend major acquisition, property and registration-license tax preferences for farmers, fishers, sector corporations, cooperatives and related bodies that currently expire between 2026 and 2028 through the end of 2030.",
+        },
+      },
+    ],
+    changeMap: [
+      {
+        title: { ko: "현장의 예측 가능성", en: "Predictability for producers" },
+        items: [
+          { ko: "농어업의 긴 투자주기와 소득 변동을 고려하면 임박한 일몰을 반복 연장하는 방식보다 지원 기간을 미리 아는 편이 경영계획에 유리합니다.", en: "Given long investment cycles and volatile income in farming and fishing, knowing the support horizon in advance can aid planning more than repeated last-minute extensions." },
+          { ko: "국세와 지방세의 기한을 맞추면 사업자와 지방자치단체의 행정 혼선도 줄 수 있습니다.", en: "Matching national and local deadlines could also reduce administrative confusion for businesses and local governments." },
+        ],
+      },
+      {
+        title: { ko: "시민과 지방재정의 부담", en: "Cost to taxpayers and local budgets" },
+        items: [
+          { ko: "세율을 새로 올리는 법안은 아니지만, 감면 연장은 국가와 지방자치단체가 걷지 않는 세금을 늘리는 재정 선택입니다.", en: "The bills do not raise a tax rate, but extending relief is a fiscal choice that increases revenue forgone by the national and local governments." },
+          { ko: "공식 요약에는 두 법안을 합친 연간 세수 감소액과 특례별 수혜자 수가 없습니다.", en: "The official summaries give neither a combined annual revenue-loss estimate nor recipient counts for each preference." },
+        ],
+      },
+      {
+        title: { ko: "일몰 심사의 의미", en: "Meaning of the sunset review" },
+        items: [
+          { ko: "정부 세제개편안은 농어업 특례를 상시화·연장·종료로 나눠 정비하려 했지만, 의원안은 여러 기한을 하나의 2030년 심사 시점으로 묶습니다.", en: "The government's tax reform plan sorted agricultural preferences into permanent, extended and expiring categories; the bills instead group many deadlines at one 2030 review point." },
+          { ko: "성과가 다른 특례를 한꺼번에 심사하면 개별 특례의 종료 판단이 큰 묶음의 정치적 협상에 가려질 수 있습니다.", en: "Reviewing dissimilar preferences together may let decisions on weak individual measures disappear into negotiation over the larger package." },
+        ],
+      },
+    ],
+    officialRationale: {
+      ko: "발의자는 농어업 관련 조세특례의 일몰이 2026년과 2028년 등에 흩어져 있어 정책 예측 가능성이 떨어진다고 설명합니다. 주요 기한을 2030년으로 통일하면 지원의 안정성을 높이고, 한 시점에 종합적인 성과평가와 제도 정비를 할 수 있다는 논리입니다.",
+      en: "The sponsors say agricultural and fishery tax preferences expire across 2026, 2028 and other dates, reducing policy predictability. A common 2030 deadline, they argue, would stabilize support and allow comprehensive performance review and reform at one point.",
+    },
+    risks: [
+      { ko: "정부가 종료 또는 재정사업 전환을 검토한 특례까지 2030년으로 옮기면, 선별 정비가 일괄 연장으로 바뀔 수 있습니다.", en: "Moving preferences that the government considered ending or converting into budget programs to 2030 could replace selective reform with blanket extension." },
+      { ko: "실제 농어민과 법인·협동조합·관련 기관의 수혜를 분리하지 않으면 지원이 현장 소득 안정에 얼마나 닿는지 알기 어렵습니다.", en: "Without separating benefits to working farmers and fishers from those to corporations, cooperatives and related bodies, it is difficult to tell how much support reaches household income stability." },
+      { ko: "국세와 지방세의 세수 감소를 따로만 관리하면 지방재정까지 포함한 전체 비용이 보이지 않습니다.", en: "If national and local revenue losses are tracked separately, the package's full fiscal cost—including pressure on local budgets—remains obscured." },
+    ],
+    questions: [
+      { ko: "두 법안이 연장하는 조항별 연간 국세·지방세 감소액과 수혜자 수는 얼마입니까?", en: "What are the annual national and local revenue losses and recipient counts for every provision extended by the two bills?" },
+      { ko: "정부가 종료 또는 재정사업 전환 대상으로 분류한 특례 가운데 의원안으로 다시 연장되는 것은 무엇입니까?", en: "Which preferences that the government classified for expiry or conversion into spending programs would instead be extended by these bills?" },
+      { ko: "실제 농어민, 농어업법인, 협동조합과 관련 기관의 수혜액을 구분해 공개합니까?", en: "Will benefits be disclosed separately for working farmers and fishers, sector corporations, cooperatives and related institutions?" },
+      { ko: "2030년 종합평가 전에도 성과가 낮은 개별 특례를 종료할 수 있는 중간평가를 둡니까?", en: "Will interim reviews be able to end low-performing individual preferences before the comprehensive 2030 review?" },
+    ],
+    seedView: {
+      ko: "농어업은 소득 변동이 크고 투자 회수기간이 깁니다. 세제 지원의 기한을 미리 알려 달라는 요구는 타당합니다. 그러나 일몰은 지원을 갑자기 끊기 위한 날짜가 아니라, 걷지 않은 세금의 성과와 수혜를 다시 묻겠다는 약속입니다. 정부안은 특례를 상시화·연장·종료로 나눴는데, 의원안은 여러 국세와 지방세 특례를 2030년 한 날짜로 묶습니다. 비용표와 수혜자 표가 없는 ‘종합 심사’는 종합 검증보다 일괄 연장이 되기 쉽습니다. 국회는 두 법안을 함께 심사하되 실제 농어민과 법인·조합·기관의 수혜를 나누고, 국세와 지방세의 감소액을 한 표에 놓아야 합니다. 예측 가능성은 심사를 없애는 이유가 아니라 심사 일정을 미리 공개할 이유입니다.",
+      en: "Farming and fishing face volatile incomes and long investment horizons, so the demand for a predictable tax-support timetable is legitimate. But a sunset is not merely a date on which support suddenly stops. It is a promise to reassess the results and beneficiaries of revenue forgone. The government's plan separated preferences into permanent, extended and expiring categories; these bills would move a broad collection of national and local preferences to one date in 2030. A 'comprehensive review' without cost and beneficiary tables can become blanket renewal rather than comprehensive scrutiny. Parliament should review the bills together, distinguish working producers from corporations, cooperatives and institutions, and put national and local revenue losses in one table. Predictability is a reason to publish the review schedule in advance, not to remove meaningful review.",
+    },
+    timeline: [
+      { date: "2026-07-30", title: { ko: "정부, 2026년 세제개편안에서 농어업 특례를 상시화·연장·종료로 구분", en: "Government's 2026 tax reform plan sorts agricultural preferences into permanent, extended and expiring categories" } },
+      { date: "2026-09-22", title: { ko: "조세특례제한법·지방세특례제한법 개정안 발의", en: "National and local tax preference amendment bills introduced" } },
+      { date: "2026-09-23", title: { ko: "씨앗의 소리 확인·분석", en: "Verified and analyzed by Seed Voice" } },
+    ],
+    sources: [
+      { label: { ko: "국회 의안 제2221545호 조세특례제한법 개정안", en: "National Assembly Bill 2221545: Restriction of Special Taxation Act amendment" }, url: farmFisheryNationalTaxBill },
+      { label: { ko: "국회 의안 제2221543호 지방세특례제한법 개정안", en: "National Assembly Bill 2221543: Restriction of Special Local Taxation Act amendment" }, url: farmFisheryLocalTaxBill },
+      { label: { ko: "기획재정부 2026년 세제개편안 상세본", en: "Ministry of Economy and Finance: 2026 tax reform plan (detailed)" }, url: taxReformOfficialFile },
+      { label: { ko: "세정신문 농림어업 조세특례 정비 내용", en: "Korea Tax News report on changes to agricultural tax preferences" }, url: taxReformAgricultureReport },
+    ],
+  },
   {
     slug: "tax-expenditure-cap-ratchet-bill",
     importance: 81,
