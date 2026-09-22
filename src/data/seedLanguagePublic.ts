@@ -24,7 +24,7 @@ export const publicArticleKo: SeedLanguageArticle = {
   },
   inlineImage: {
     src: `${imageRoot}/local-bus.webp`,
-    alt: "지역 버스정류장에서 노인과 학생, 의료인과 유아 동반 시민이 버스를 이용하는 모습",
+    alt: "서울 광화문 정류장에서 노인과 직장인, 유아 동반 시민이 143번 시내버스를 이용하는 모습",
     caption: "버스 한 대가 시민의 일상을 잇기 위해서는 행정의 기준, 민간 운영자의 책임, 노동자의 서비스, 시민의 이용이 함께 작동해야 합니다.",
     credit: "씨앗의 소리 AI 제작 이미지",
   },
