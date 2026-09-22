@@ -17,6 +17,8 @@ import { useLanguage } from "../i18n";
 type SearchItem = {
   key: string;
   category: string;
+  author?: string;
+  authorBio?: string;
   title: string;
   summary: string;
   body: string;
@@ -65,6 +67,7 @@ export default function SearchPage() {
     const briefings = getAllBriefingsNewestFirst().map((item) => localizeBriefing(item, language)).map((item) => ({
       key: `briefing-${item.slug}`,
       category: ko ? "브리핑" : "Briefings",
+      author: item.author,
       title: item.title,
       summary: item.summary,
       body: [item.category, ...item.content, ...(item.sections ?? []).flatMap((section) => [section.title, ...(section.paragraphs ?? []), ...(section.bullets ?? [])]), ...item.watchPoints].join(" "),
@@ -78,6 +81,8 @@ export default function SearchPage() {
     const columns = getColumnsNewestFirst().map((item) => localizeColumn(item, language)).map((item) => ({
       key: `column-${item.slug}`,
       category: ko ? "칼럼" : "Columns",
+      author: item.author,
+      authorBio: item.authorBio,
       title: item.title,
       summary: item.summary,
       body: [item.subtitle, ...item.sections.flatMap((section) => [section.title, ...section.paragraphs])].join(" "),
@@ -92,6 +97,8 @@ export default function SearchPage() {
     const hotIssueColumns = getHotIssueColumnsNewestFirst().map((item) => localizeColumn(item, language)).map((item) => ({
       key: `hot-issue-column-${item.slug}`,
       category: ko ? "핫이슈" : "Hot Issues",
+      author: item.author,
+      authorBio: item.authorBio,
       title: item.title,
       summary: item.summary,
       body: [item.subtitle, ...item.sections.flatMap((section) => [section.title, ...section.paragraphs])].join(" "),
@@ -168,21 +175,28 @@ export default function SearchPage() {
   const results = useMemo(() => {
     const tokens = normalize(query).split(" ").filter(Boolean);
     if (!tokens.length) return [];
+    const compactQuery = tokens.join("");
 
     return items
       .map((item) => {
         const title = normalize(item.title);
         const summary = normalize(item.summary);
         const category = normalize(item.category);
+        const author = normalize(item.author ?? "");
+        const authorBio = normalize(item.authorBio ?? "");
         const body = normalize(item.body);
-        const searchable = `${title} ${summary} ${category} ${body}`;
-        if (!tokens.every((token) => searchable.includes(token))) return null;
+        const searchable = `${title} ${summary} ${category} ${author} ${authorBio} ${body}`;
+        const matchesEveryToken = tokens.every((token) => searchable.includes(token));
+        const matchesWithoutSpaces = searchable.replace(/\s+/g, "").includes(compactQuery);
+        if (!matchesEveryToken && !matchesWithoutSpaces) return null;
         const score = tokens.reduce((total, token) => total
           + (title.includes(token) ? 12 : 0)
+          + (author.includes(token) ? 10 : 0)
           + (category.includes(token) ? 5 : 0)
           + (summary.includes(token) ? 4 : 0)
+          + (authorBio.includes(token) ? 2 : 0)
           + (body.includes(token) ? 1 : 0), 0);
-        return { item, score };
+        return { item, score: score + (author.replace(/\s+/g, "").includes(compactQuery) ? 20 : 0) };
       })
       .filter((result): result is { item: SearchItem; score: number } => Boolean(result))
       .sort((a, b) => b.score - a.score || b.item.date.localeCompare(a.item.date))
@@ -207,7 +221,7 @@ export default function SearchPage() {
           <h1 className="editorial-title mt-2 text-[1.8rem] font-bold text-navy sm:text-[2.25rem]">{activeTopic ? (ko ? "주제별 찾아보기" : "Browse by Topic") : (ko ? "통합검색" : "Search")}</h1>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/60 sm:text-base sm:leading-7">{activeTopic
             ? (ko ? "관심 주제를 선택하면 관련 기사와 감시 기록을 최신순으로 모아볼 수 있습니다." : "Choose a topic to browse related reporting, commentary and watch records in one place.")
-            : (ko ? "핫이슈, 브리핑, 칼럼, 시민감시와 시민언어의 제목과 본문을 함께 검색합니다." : "Search titles and full text across Hot Issues, Briefings, Columns, Civic Watch and the Glossary.")}</p>
+            : (ko ? "핫이슈, 브리핑, 칼럼, 시민감시와 시민언어의 제목·본문·필자를 함께 검색합니다." : "Search titles, full text and author names across Hot Issues, Briefings, Columns, Civic Watch and the Glossary.")}</p>
 
           {activeTopic ? (
             <nav className="mt-5 flex flex-wrap gap-2" aria-label={ko ? "기사 주제" : "Article topics"}>
@@ -217,7 +231,7 @@ export default function SearchPage() {
               })}
             </nav>
           ) : (
-            <form onSubmit={submit} role="search" className="mt-5 flex max-w-3xl items-stretch border-2 border-green-deep bg-white focus-within:ring-2 focus-within:ring-gold/60">
+            <form onSubmit={submit} role="search" className="site-search-form mt-5 flex max-w-3xl items-stretch border border-green-deep/40 bg-white transition focus-within:border-green-deep focus-within:shadow-[0_0_0_3px_rgba(200,169,91,.28)]">
               <SearchIcon className="ml-4 self-center text-green-deep" size={20} aria-hidden="true"/>
               <label htmlFor="site-search" className="sr-only">{ko ? "검색어" : "Search query"}</label>
               <input id="site-search" type="search" value={draft} onChange={(event) => setDraft(event.target.value)} placeholder={ko ? "찾고 싶은 주제나 단어를 입력하세요" : "Enter a topic or keyword"} autoComplete="off" className="min-w-0 flex-1 bg-transparent px-3 py-3 text-base text-navy outline-none placeholder:text-charcoal/40"/>
@@ -264,7 +278,7 @@ export default function SearchPage() {
                     <Link to={item.href} className="group grid gap-5 py-6 transition hover:bg-green-pale/50 sm:grid-cols-[190px_minmax(0,1fr)] sm:px-3">
                       {item.imageSrc ? <div className="overflow-hidden bg-ivory"><SafeImage src={resolveImageSrc(item.imageSrc)} alt={item.imageAlt} loading="lazy" referrerPolicy="no-referrer" className="aspect-[16/10] h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"/></div> : <div className="hidden bg-green-pale sm:block" aria-hidden="true"/>}
                       <div className="min-w-0 self-center">
-                        <div className="flex flex-wrap items-center gap-3 text-xs text-charcoal/45"><span className="font-extrabold text-green-mid">{item.category}</span><time>{item.date.replace(/-/g, ".")}</time>{item.readMinutes && <span className="inline-flex items-center gap-1"><Clock size={13}/>{item.readMinutes}{ko ? "분" : " min"}</span>}</div>
+                        <div className="flex flex-wrap items-center gap-3 text-xs text-charcoal/45"><span className="font-extrabold text-green-mid">{item.category}</span>{item.author && <span className="font-bold text-charcoal/60">{ko ? "필자" : "By"} {item.author}</span>}<time>{item.date.replace(/-/g, ".")}</time>{item.readMinutes && <span className="inline-flex items-center gap-1"><Clock size={13}/>{item.readMinutes}{ko ? "분" : " min"}</span>}</div>
                         <h3 className="editorial-title mt-2 text-balance text-[1.35rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-2xl">{item.title}</h3>
                         <p className="mt-2 line-clamp-2 text-base leading-7 text-charcoal/62">{item.summary}</p>
                         <div className="mt-3 flex flex-wrap gap-1.5">{item.topics.map((topicId) => <span key={topicId} className="rounded-full bg-green-pale px-2.5 py-1 text-[11px] font-bold text-green-deep">{getTopic(topicId).label[language]}</span>)}</div>

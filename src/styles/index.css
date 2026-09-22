@@ -19,6 +19,11 @@ button, input, textarea { font: inherit; }
   outline-offset: 3px;
 }
 
+/* 통합검색은 폼 전체에 하나의 포커스 표시만 보여줍니다. */
+.site-search-form input:focus-visible {
+  outline: none;
+}
+
 .seed-inline-editing main [data-seed-editable="true"] {
   outline: 3px solid #c8a95b !important;
   outline-offset: 4px;
