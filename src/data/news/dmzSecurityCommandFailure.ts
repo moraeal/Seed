@@ -11,13 +11,13 @@ export const dmzSecurityCommandFailureArticle: NewsArticle = {
   summary: "서부전선 비무장지대에서 폭발이 일어나 육군 25사단 간부 3명이 다쳤고, 지휘관 한 명은 발목을 잃었다. 그런데 사고 다음 날 국방부 정례브리핑에서는 위험 징후를 언제 파악했는지, 몇 명이 투입됐는지, 어떤 임무였는지조차 곧바로 답하지 못했다. 대화를 원한다는 이유로 위협을 흐리고, 위로를 했다는 이유로 지휘 책임을 다했다고 여긴다면 그것은 평화가 아니라 안보의 방기다.",
   keySentence: "자유는 철저한 안보 위에서만 지켜진다.",
   selectedNews: {
-    outlet: "YTN 라디오",
+    outlet: "매일신문 뉴스캐비닛",
     publishedAt: "2026.09.22",
     headline: "중령 발목이 절단됐는데…‘짜장면 먹고싶다’ 2탄? [뉴캐]",
     url: "https://youtu.be/KrUGGm37rfI",
     linkLabel: "관련 영상 보기",
     thumbnailUrl: "https://img.youtube.com/vi/KrUGGm37rfI/maxresdefault.jpg",
-    thumbnailAlt: "비무장지대 폭발 사고와 정부의 안보 대응을 다룬 YTN 라디오 영상 화면",
+    thumbnailAlt: "비무장지대 폭발 사고와 정부의 안보 대응을 다룬 매일신문 뉴스캐비닛 영상 화면",
     thumbnailCaption: "DMZ 폭발 사고 뒤 드러난 군 지휘·보고 체계와 정부의 안보 인식을 비판한 대담입니다. 화면을 누르면 영상을 볼 수 있습니다.",
     thumbnailYoutubeId: "KrUGGm37rfI",
     thumbnailPlacement: "after-summary",
@@ -96,6 +96,6 @@ export const dmzSecurityCommandFailureArticle: NewsArticle = {
   sources: [
     { label: "YTN — 합참, DMZ 폭발 사고 임무·경위 후속 설명 (2026.09.22)", url: "https://www.ytn.co.kr/_ln/0101_202609221602396647" },
     { label: "한국경제 — 국방부 정례브리핑 답변 논란 보도 (2026.09.22)", url: "https://www.hankyung.com/article/202609220857H" },
-    { label: "YTN 라디오 — 중령 발목이 절단됐는데…‘짜장면 먹고싶다’ 2탄? [뉴캐]", url: "https://youtu.be/KrUGGm37rfI" }
+    { label: "매일신문 뉴스캐비닛 — 중령 발목이 절단됐는데…‘짜장면 먹고싶다’ 2탄? [뉴캐]", url: "https://youtu.be/KrUGGm37rfI" }
   ]
 };
