@@ -45,7 +45,7 @@ export type BriefingTranslation = {
   keyHighlights?: string[];
   author?: string;
   images?: Array<{ src?: string; alt: string; caption: string; credit?: string }>;
-  sourceArticle?: Partial<Pick<NonNullable<Briefing["sourceArticle"]>, "title" | "publisher" | "imageAlt" | "imageCredit" | "note">>;
+  sourceArticle?: Partial<Pick<NonNullable<Briefing["sourceArticle"]>, "title" | "publisher" | "imageSrc" | "imageAlt" | "imageCredit" | "note">>;
   content: string[];
   sections?: NonNullable<Briefing["sections"]>;
   verdicts?: NonNullable<Briefing["verdicts"]>;
