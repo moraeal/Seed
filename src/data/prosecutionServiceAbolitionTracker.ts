@@ -19,15 +19,15 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     en: "On October 2, 2026, South Korea's Prosecution Service will be abolished and replaced by a Prosecution Agency and a Serious Crimes Investigation Agency. This record follows where the powers to investigate, indict, seek warrants and review non-referral decisions actually move—and whether staffing, budgets and case transfers are ready.",
   },
   status: {
-    ko: "출범 10일 전·중수청 인선 시작·공소청 직제 수정안 심사 중",
-    en: "10 days to launch · Investigation-agency staffing begins · Revised prosecution structure under review",
+    ko: "출범 9일 전·공소청 직제 국무회의 의결·중수청 최종 임용 대기",
+    en: "9 days to launch · Prosecution Agency structure approved · Final investigation-agency appointments pending",
   },
   openedAt: "2025-09-05",
-  updatedAt: "2026-09-22",
+  updatedAt: "2026-09-23",
   continuationEligible: true,
   nextCheck: {
-    ko: "사회적 약자 대상 7대 범죄의 보완·재수사 근거를 담은 중수청법 개정안의 공포일·법률번호와 최종 조문, 2차 특례임용 201명의 최종 선발 인원과 5급 이상 임용 예정자 212명의 확정·발령 결과, 공소청 직제·검사 정원 수정안의 법제처 심사와 국무회의 의결, 김지용 중수청장 후보자의 인사청문요청서 제출·청문 일정, 경찰 현장지원 체계와 10월 2일 실제 출범 인원·사건 이관·KICS 필수 기능 가동 여부",
-    en: "Promulgation date, act number and final text of the amendment covering supplementary and renewed investigations in seven vulnerable-victim crime categories; final selections from the 201 second-round applicants and confirmation and appointment of the 212 provisional senior staff; review and Cabinet approval of the revised Prosecution Agency structure and prosecutor headcount; submission of the confirmation request and a hearing date for nominee Kim Ji-yong; police field-support arrangements; and actual staffing, case transfers and essential KICS functions on October 2",
+    ko: "사회적 약자 대상 7대 범죄의 보완·재수사 근거를 담은 중수청법 개정안의 공포일·법률번호와 최종 조문, 2차 특례임용 201명의 최종 선발 인원과 5급 이상 임용 예정자 212명의 확정·발령 결과, 공소청 직제·검사정원법 시행령의 공포문과 출범일 실제 검사 약 1,900명·형사법무직 938명 배치 결과, 김지용 중수청장 후보자의 인사청문요청서 제출·청문 일정, 경찰 현장지원 체계와 10월 2일 사건 이관·KICS 필수 기능 가동 여부",
+    en: "Promulgation date, act number and final text of the amendment covering supplementary and renewed investigations in seven vulnerable-victim crime categories; final selections from the 201 second-round applicants and confirmation and appointment of the 212 provisional senior staff; promulgated texts of the Prosecution Agency organization and prosecutor-ceiling decrees and the actual launch deployment of about 1,900 prosecutors and 938 criminal-legal-service staff; submission of the confirmation request and a hearing date for nominee Kim Ji-yong; police field-support arrangements; and October 2 case transfers and essential KICS functions",
   },
   heroImage: {
     src: "images/monitoring/prosecution-service-abolition-tracker-hero.webp",
@@ -45,8 +45,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     },
   },
   sourceBasis: {
-    ko: "정부조직법·공소청법·중대범죄수사청법·형사소송법과 시행령·직제 등 공포된 법령을 기준으로 삼았습니다. 법제처 심사 중인 공소청 직제·검사 정원 수정안, 국회 본회의를 통과했지만 공포 전인 중수청법 개정안, 아직 발령 전인 중수청 임용 예정자, 국회 의결 전인 2027년도 예산안은 확정된 제도·인사·예산과 구분했습니다. 언론 보도는 원문 제목·공개일·사진을 대조했고 사용 제외 매체가 직접·간접 출처로 들어오지 않았는지도 확인했습니다.",
-    en: "This record is anchored in promulgated statutes and decrees: the Government Organization Act, the Prosecution Agency Act, the Serious Crimes Investigation Agency Act, the Criminal Procedure Act and their implementing rules. The revised Prosecution Agency structure and staffing plan under legal review, the investigation-agency amendment passed by Parliament but not yet promulgated, provisional staff not yet formally appointed, and the government's still-unapproved 2027 budget proposal are kept separate from settled law, appointments and appropriations. Original headlines, publication dates and images were cross-checked, including for excluded direct or indirect sources.",
+    ko: "정부조직법·공소청법·중대범죄수사청법·형사소송법과 시행령·직제 등 공포된 법령을 기준으로 삼았습니다. 9월 22일 국무회의가 의결한 공소청 직제·검사정원법 시행령안은 심사 중이던 9월 21일 수정안과 구분했고, 검사 법정 정원 2,292명과 실제 출범 계획 인원 약 1,900명도 같은 수치로 합치지 않았습니다. 국회 본회의를 통과했지만 공포 전인 중수청법 개정안, 아직 발령 전인 중수청 임용 예정자, 국회 의결 전인 2027년도 예산안은 확정된 제도·인사·예산과 구분했습니다. 언론 보도는 원문 제목·공개일·사진을 대조했고 사용 제외 매체가 직접·간접 출처로 들어오지 않았는지도 확인했습니다.",
+    en: "This record is anchored in promulgated statutes and decrees: the Government Organization Act, the Prosecution Agency Act, the Serious Crimes Investigation Agency Act, the Criminal Procedure Act and their implementing rules. The Prosecution Agency organization and prosecutor-ceiling decrees approved by the Cabinet on September 22 are distinguished from the September 21 drafts then still under review, while the statutory ceiling of 2,292 prosecutors is kept separate from the planned launch staffing of about 1,900. The investigation-agency amendment passed by Parliament but not yet promulgated, provisional staff not yet formally appointed, and the government's still-unapproved 2027 budget proposal remain separate from settled law, appointments and appropriations. Original headlines, publication dates and images were cross-checked, including for excluded direct or indirect sources.",
   },
   keyChanges: [
     {
@@ -124,6 +124,13 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       text: {
         ko: "법무부는 재검토 뒤에도 공소청 검사 정원을 2,292명으로 유지하고 ‘사법통제부’를 ‘불송치심사부’로 바꾸는 수정안을 법제처에 넘겼습니다. 법제처 심사와 차관회의·국무회의가 남아 있어 아직 확정 직제는 아닙니다.",
         en: "After review, the Justice Ministry sent a revised plan retaining all 2,292 prosecutor posts and renaming the proposed Judicial Control Division as the Non-Referral Review Division. It remains subject to legal review and Cabinet-level approval.",
+      },
+    },
+    {
+      date: "2026-09-22",
+      text: {
+        ko: "국무회의가 공소청 직제와 검사정원법 시행령안을 의결했습니다. 검사 법정 정원은 2,292명으로 두되 결원을 채우지 않아 약 1,900명으로 출범하고, 수사관은 2,048명을 줄여 형사법무직 938명만 남기는 계획입니다.",
+        en: "The Cabinet approved the Prosecution Agency organization and prosecutor-ceiling decrees. The statutory ceiling remains 2,292, but vacancies will be left unfilled for a launch force of about 1,900 prosecutors, while 2,048 investigator posts will be removed, leaving 938 criminal-legal-service staff.",
       },
     },
   ],
@@ -657,6 +664,35 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-22",
+      title: {
+        ko: "공소청 직제 국무회의 의결…검사 약 1,900명·형사법무직 938명으로 출범",
+        en: "Cabinet approves launch structure with about 1,900 prosecutors and 938 legal-service staff",
+      },
+      description: {
+        ko: "국무회의는 9월 22일 ‘공소청과 그 소속기관 직제’와 검사정원법 시행령안을 의결했습니다. 검사 법정 정원은 2,292명으로 유지하지만 결원을 채우지 않아 약 1,900명으로 출범하며, 법무부는 외부 용역 뒤 법률을 고쳐 법정 정원도 줄이겠다고 밝혔습니다. 검사장급 3자리와 8개 부서를 없애고, 불송치심사부는 최초안 19곳에서 13곳으로 줄였습니다. 검찰 수사관은 2,986명에서 2,048명을 줄여 938명을 형사법무직으로 전환하고, 다른 일반직까지 합친 감축 규모는 8,415명 가운데 2,525명입니다. 법무부는 강제 전출 없이 희망 전보와 자연 감소로 추진하겠다고 했습니다. 의결된 숫자가 10월 2일 실제 출근 인원과 재판·민원 처리 역량으로 이어지는지는 별도로 확인해야 합니다.",
+        en: "On September 22, the Cabinet approved the organization decree for the Prosecution Agency and a decree under the Prosecutor Quota Act. The statutory ceiling remains 2,292, but vacancies will go unfilled so the agency launches with about 1,900 prosecutors; the Justice Ministry says it will later seek a statutory reduction after an external review. The plan removes three chief-prosecutor-level posts and eight units and cuts the proposed Non-Referral Review Divisions from 19 to 13. Of 2,986 prosecution investigators, 2,048 posts will be removed, leaving 938 staff reclassified into a criminal-legal-service track. Including other general-service positions, 2,525 of 8,415 posts are to be cut. The ministry says it will rely on voluntary transfers and attrition rather than forced moves. Whether these approved numbers translate into launch-day staffing and adequate trial and public services must still be verified in operation.",
+      },
+      change: {
+        ko: "법제처 심사 중이던 수정안이 국무회의를 통과해 출범 조직과 계획 인원이 확정 단계로 이동",
+        en: "The revised drafts clear the Cabinet, moving the launch structure and planned staffing into the final implementation stage",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: {
+            ko: "공소청 검사 15∼20%↓·수사관 70%↓…1재판부 1공판검사제로(종합3보)",
+            en: "Prosecution Agency to cut prosecutors 15–20% and investigators 70%, moving toward one trial prosecutor per court division",
+          },
+          url: "https://www.yna.co.kr/view/AKR20260922046553004",
+          publishedAt: "2026-09-22",
+          kind: "article",
+          thumbnailSrc: "https://img1.yna.co.kr/photo/yna/YH/2026/09/22/PYH2026092203680001301_P4.jpg",
+        },
+      ],
+    },
+    {
       date: "2026-10-02",
       title: {
         ko: "검찰청 폐지·공소청과 중수청 출범 예정",
@@ -749,8 +785,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       en: "The government's 2027 proposal allocates KRW 472.4 billion to the investigation agency and KRW 1.0854 trillion to the prosecution agency, but Parliament has not enacted those amounts.",
     },
     {
-      ko: "법무부는 재검토 뒤 공소청 검사 정원 2,292명을 유지하고 사법통제부를 불송치심사부로 바꾸는 수정안을 법제처에 넘겼습니다. 법제처 심사와 국무회의 의결 전이므로 아직 최종 직제는 아닙니다.",
-      en: "After review, the Justice Ministry sent forward a revised draft retaining 2,292 prosecutor posts and renaming the Judicial Control Division as the Non-Referral Review Division. It is not final before legal review and Cabinet approval.",
+      ko: "국무회의는 9월 22일 공소청 직제와 검사정원법 시행령안을 의결했습니다. 검사 법정 정원은 2,292명으로 유지하지만 결원을 채우지 않아 약 1,900명으로 출범하고, 수사관은 2,048명을 줄여 형사법무직 938명만 남기는 계획입니다.",
+      en: "On September 22, the Cabinet approved the Prosecution Agency organization and prosecutor-ceiling decrees. The statutory ceiling remains 2,292, but the agency plans to launch with about 1,900 prosecutors by leaving vacancies unfilled; 2,048 investigator posts will be removed, leaving 938 criminal-legal-service staff.",
     },
     {
       ko: "사회적 약자 대상 7대 범죄의 보완·재수사를 중수청이 맡을 수 있도록 하는 개정안은 9월 17일 국회 본회의를 통과하고 18일 정부로 이송됐습니다. 아직 공포된 법률은 아닙니다.",
@@ -797,8 +833,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     {
       title: { ko: "출범일은 확정됐지만 준비는 끝났는가", en: "The launch date is fixed. Is the system ready?" },
       description: {
-        ko: "중수청 1차 최종 신청자는 정원의 61.3%였고 2차 모집에도 201명만 추가 지원했습니다. 5급 이상 임용 예정자 212명 가운데 검사 80명이 포함됐지만 아직 최종 발령 전이며, 공소청 직제도 법제처 심사 중입니다. KICS 전체 기능은 12월 완성이 목표입니다. 법률의 시행일과 시민이 체감할 수 있는 정상 운영일이 같을지는 실제 출근 인원과 사건 처리 결과로 확인해야 합니다.",
-        en: "First-round final applicants covered 61.3 percent of authorized investigation-agency posts, and the second round added only 201 applicants. Of 212 provisional senior appointees, 80 are prosecutors, but final appointment orders are still pending and the Prosecution Agency structure remains under legal review. Full KICS functionality is not expected until December. Whether the legal start date is also the date of normal public-facing operations will depend on actual staff reporting for duty and case-processing results.",
+        ko: "중수청 1차 최종 신청자는 정원의 61.3%였고 2차 모집에도 201명만 추가 지원했습니다. 5급 이상 임용 예정자 212명 가운데 검사 80명이 포함됐지만 아직 최종 발령 전입니다. 공소청 직제는 국무회의를 통과했지만 약 1,900명의 검사와 형사법무직 938명이 실제로 배치됐는지, 강제 전출 없이 2,525명의 일반직 감축이 어떻게 이뤄지는지는 결과로 남았습니다. KICS 전체 기능도 12월 완성이 목표입니다. 법률의 시행일과 시민이 체감할 정상 운영일이 같은지는 실제 출근 인원과 사건 처리 결과로 확인해야 합니다.",
+        en: "First-round final applicants covered 61.3 percent of authorized investigation-agency posts, and the second round added only 201 applicants. Of 212 provisional senior appointees, 80 are prosecutors, but final appointment orders remain pending. The Prosecution Agency structure has cleared the Cabinet, yet actual deployment of about 1,900 prosecutors and 938 criminal-legal-service staff—and the implementation of 2,525 general-service cuts without forced transfers—remain to be tested. Full KICS functionality is not expected until December. Whether the legal start date is also the date of normal public-facing operations will depend on actual staffing and case-processing results.",
       },
     },
   ],
@@ -813,8 +849,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       en: "Promulgation date, act number and final seven-category text for Bill No. 2220544",
     },
     {
-      ko: "2차 특례임용 201명의 최종 선발 인원, 5급 이상 임용 예정자 212명의 확정·발령 결과, 공소청 최종 검사·직원 정원과 중수청의 실제 출근 인원·결원율",
-      en: "Final selections from the 201 second-round applicants, confirmation and appointment of the 212 provisional senior staff, final Prosecution Agency headcount, and actual Serious Crimes Investigation Agency staffing and vacancy rates",
+      ko: "2차 특례임용 201명의 최종 선발 인원, 5급 이상 임용 예정자 212명의 확정·발령 결과, 공소청 검사 약 1,900명·형사법무직 938명의 실제 배치와 중수청 출근 인원·결원율",
+      en: "Final selections from the 201 second-round applicants, confirmation and appointment of the 212 provisional senior staff, actual deployment of about 1,900 Prosecution Agency prosecutors and 938 criminal-legal-service staff, and investigation-agency staffing and vacancy rates",
     },
     {
       ko: "검찰에서 넘긴 수사사건 수, 예외적으로 공소청이 90일 안에 마무리하는 사건 수와 처리 결과",
@@ -923,6 +959,11 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       label: { ko: "경향신문 — 공소청 검사 정원·직제 수정안", en: "Kyunghyang Shinmun — Revised Prosecution Agency staffing and structure" },
       url: "https://www.khan.co.kr/article/202609211704011",
       note: { ko: "검사 정원 2,292명 유지와 불송치심사부 명칭 변경, 법제처 심사 중인 수정안", en: "Revised draft retains 2,292 prosecutor posts, renames the review division and remains under legal review" },
+    },
+    {
+      label: { ko: "연합뉴스 — 공소청 직제·검사정원법 시행령안 국무회의 의결", en: "Yonhap — Cabinet approval of Prosecution Agency organization and prosecutor-ceiling decrees" },
+      url: "https://www.yna.co.kr/view/AKR20260922046553004",
+      note: { ko: "검사 약 1,900명·형사법무직 938명 출범 계획과 일반직 2,525명 감축, 9월 22일 국무회의 의결", en: "September 22 Cabinet approval of plans for about 1,900 prosecutors, 938 criminal-legal-service staff and 2,525 general-service cuts" },
     },
   ],
 };
