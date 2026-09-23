@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<rect width="1200" height="900" fill="#f8f7f2"/>
+<style>.t{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;fill:#19251f}.h{font-weight:700;font-size:38px}.s{font-size:20px;fill:#506057}.l{font-size:19px}.v{font-size:18px;font-weight:700}.note{font-size:17px;fill:#5f6b65}</style>
+<text class="t h" x="70" y="70">지역에 따라 생명안전망의 격차가 크다</text>
+<text class="t s" x="70" y="106">2025년 시도별 연령표준화 자살률 · 표준인구 10만 명당</text>
+<g transform="translate(70,145)">
+<line x1="170" y1="0" x2="170" y2="650" stroke="#cbd2ce"/>
+<line x1="420" y1="0" x2="420" y2="650" stroke="#e1e5e2"/><line x1="670" y1="0" x2="670" y2="650" stroke="#e1e5e2"/><line x1="920" y1="0" x2="920" y2="650" stroke="#e1e5e2"/>
+<text class="t note" x="160" y="-12">0</text><text class="t note" x="408" y="-12">10</text><text class="t note" x="658" y="-12">20</text><text class="t note" x="908" y="-12">30</text>
+<!-- bars scaled 25px/unit -->
+<g class="t l">
+<text x="0" y="31">제주</text><rect x="170" y="10" width="758" height="28" rx="5" fill="#b64334"/><text class="v" x="940" y="31">30.3</text>
+<text x="0" y="68">충남</text><rect x="170" y="47" width="700" height="28" rx="5" fill="#cc6656"/><text class="v" x="882" y="68">28.0</text>
+<text x="0" y="105">대전</text><rect x="170" y="84" width="678" height="28" rx="5" fill="#cc6656"/><text class="v" x="860" y="105">27.1</text>
+<text x="0" y="142">전남</text><rect x="170" y="121" width="640" height="28" rx="5" fill="#758b7c"/><text class="v" x="822" y="142">25.6</text>
+<text x="0" y="179">충북</text><rect x="170" y="158" width="633" height="28" rx="5" fill="#758b7c"/><text class="v" x="815" y="179">25.3</text>
+<text x="0" y="216">대구</text><rect x="170" y="195" width="628" height="28" rx="5" fill="#758b7c"/><text class="v" x="810" y="216">25.1</text>
+<text x="0" y="253">인천</text><rect x="170" y="232" width="623" height="28" rx="5" fill="#758b7c"/><text class="v" x="805" y="253">24.9</text>
+<text x="0" y="290">부산·광주</text><rect x="170" y="269" width="620" height="28" rx="5" fill="#758b7c"/><text class="v" x="802" y="290">24.8</text>
+<text x="0" y="327">경북</text><rect x="170" y="306" width="613" height="28" rx="5" fill="#758b7c"/><text class="v" x="795" y="327">24.5</text>
+<text x="0" y="364">강원</text><rect x="170" y="343" width="610" height="28" rx="5" fill="#758b7c"/><text class="v" x="792" y="364">24.4</text>
+<text x="0" y="401">경남</text><rect x="170" y="380" width="603" height="28" rx="5" fill="#758b7c"/><text class="v" x="785" y="401">24.1</text>
+<text x="0" y="438">전국</text><rect x="170" y="417" width="580" height="28" rx="5" fill="#243f32"/><text class="v" x="762" y="438">23.2</text>
+<text x="0" y="475">울산</text><rect x="170" y="454" width="578" height="28" rx="5" fill="#758b7c"/><text class="v" x="760" y="475">23.1</text>
+<text x="0" y="512">경기</text><rect x="170" y="491" width="570" height="28" rx="5" fill="#758b7c"/><text class="v" x="752" y="512">22.8</text>
+<text x="0" y="549">전북</text><rect x="170" y="528" width="525" height="28" rx="5" fill="#5b879b"/><text class="v" x="707" y="549">21.0</text>
+<text x="0" y="586">서울</text><rect x="170" y="565" width="483" height="28" rx="5" fill="#5b879b"/><text class="v" x="665" y="586">19.3</text>
+<text x="0" y="623">세종</text><rect x="170" y="602" width="415" height="28" rx="5" fill="#3f758e"/><text class="v" x="597" y="623">16.6</text>
+</g></g>
+<text class="t note" x="70" y="835">낮은 수치가 곧 정책의 인과적 성과를 뜻하지는 않는다. 지역 여건·인력·예산을 함께 비교해야 한다.</text>
+<text class="t note" x="70" y="868">출처: 국가데이터처 「2025년 사망원인통계 결과」 표 24 · 씨앗의 소리 구성</text>
+</svg>

@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:suicide-prevention-mois-local-community": {
+    ko: {
+      href: "/columns/state-cannot-monopolize-life-2026",
+      title: "국가는 생명을 독점할 수 없다",
+      relationship: "국가 책임과 시민사회의 역할",
+      reason: "행안부와 지방정부의 책임을 살펴봤다면, 자살예방 예산과 정책 결정권이 중앙기관에 집중된 구조를 이어서 확인합니다.",
+      listHref: "/columns",
+      listLabel: "칼럼 전체 보기",
+    },
+    en: {
+      href: "/columns/state-cannot-monopolize-life-2026",
+      title: "The State Cannot Monopolize the Work of Saving Lives",
+      relationship: "STATE RESPONSIBILITY AND CIVIC ACTION",
+      reason: "After examining the Interior Ministry's local responsibilities, continue with how suicide-prevention budgets and policy authority have become concentrated in central institutions.",
+      listHref: "/columns",
+      listLabel: "All columns",
+    },
+  },
   "news:dmz-security-command-failure": {
     ko: {
       href: "/columns/military-academy-integration-rotc-question",
