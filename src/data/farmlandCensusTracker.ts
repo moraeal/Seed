@@ -23,7 +23,7 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     en: "Follow-up measures announced · Field review under way",
   },
   openedAt: "2026-02-24",
-  updatedAt: "2026-09-22",
+  updatedAt: "2026-09-23",
   nextCheck: {
     ko: "11월 15일까지의 임대차 특별정비 결과, 심층조사 후 실제 위법 확정 면적, 연내 의결을 목표로 한 처분 유예·사후 전용 추인 특별조치법의 발의·심사, 농지은행 위탁·매입 실적",
     en: "Results of the lease regularization period through November 15; area confirmed in violation after field review; introduction and review of the special-act bill on deferrals and retroactive conversion approval, which the government aims to pass by year-end; and Farmland Bank trust and purchase results",
@@ -44,14 +44,21 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     },
   },
   sourceBasis: {
-    ko: "농림축산식품부의 조사계획·법 개정 보도자료·예산안과 2026년 9월 21일 당정 후속조치, 국가법령정보센터의 현행 농지법과 헌법재판소 결정례, 7월 말 기본조사 결과를 날짜별로 대조했습니다. 27%를 위법 확정 비율로 쓰지 않았고, 처분 유예와 사후 전용 추인은 아직 특별조치법 제정이 필요한 정책 방향으로 구분했습니다.",
-    en: "This record cross-checks the Agriculture Ministry's census plan, legislative releases and budget proposal, the government-party follow-up measures announced on September 21, the current Farmland Act, Constitutional Court decisions and the late-July screening results. It does not treat 27 percent as a confirmed violation rate, and distinguishes disposal deferrals and retroactive conversion approval as policy proposals that still require special legislation.",
+    ko: "농림축산식품부의 조사계획·법 개정 보도자료·예산안과 2026년 9월 21일 당정 후속조치, 9월 22일 청와대 설명, 국가법령정보센터의 현행 농지법과 헌법재판소 결정례, 7월 말 기본조사 결과를 날짜별로 대조했습니다. 27%를 위법 확정 비율로 쓰지 않았고, 처분 유예와 사후 전용 추인은 아직 특별조치법 제정이 필요한 정책 방향으로 구분했습니다.",
+    en: "This record cross-checks the Agriculture Ministry's census plan, legislative releases and budget proposal, the government-party follow-up measures announced on September 21, the presidential office's September 22 briefing, the current Farmland Act, Constitutional Court decisions and the late-July screening results. It does not treat 27 percent as a confirmed violation rate, and distinguishes disposal deferrals and retroactive conversion approval as policy proposals that still require special legislation.",
   },
   caution: {
     ko: "27%는 행정정보 기본조사에서 추출된 위반 의심 비율입니다. 실제 위법과 처분 대상 규모는 심층조사와 소명 절차 뒤 달라질 수 있습니다. ‘4년이면 100%’는 첫 부과 뒤 평가액이 변하지 않고 매년 25%씩 네 번 부과된다는 단순 계산입니다.",
     en: "The 27 percent figure is an administrative-screening result, not a confirmed violation rate. The final area in violation or subject to disposal may change after field review. The four-year, 100 percent illustration assumes an unchanged valuation and four annual charges after the first assessment.",
   },
   keyChanges: [
+    {
+      date: "2026-09-22",
+      text: {
+        ko: "청와대는 이번 전수조사에서 처분 관련 통지가 아직 한 건도 나가지 않았다고 확인했습니다. 27% 의심 분류가 처분 단계로 넘어간 수치는 아니라는 점이 공식 확인됐습니다.",
+        en: "The presidential office confirmed that no disposal notice had yet been issued from this census. The 27 percent flagged in screening is not a count that has advanced to disposal.",
+      },
+    },
     {
       date: "2026-09-21",
       text: {
@@ -281,6 +288,39 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-22",
+      title: {
+        ko: "전수조사 처분 통지 ‘0건’ 공식 확인",
+        en: "Presidential office confirms zero disposal notices from the census",
+      },
+      description: {
+        ko: "청와대 농림축산비서관은 9월 22일까지 2026년 농지 전수조사로 발송된 처분 관련 통지가 한 건도 없다고 밝혔습니다. 매년 실시하는 농지 이용실태조사의 통지와는 구분해야 합니다. 정부는 토지거래허가구역에서 취득했거나 경매 등으로 공유 취득했거나 허위 농업법인으로 취득한 농지 가운데 불법 임대·휴경이 확인된 경우를 투기 판정의 주요 대상으로 제시했습니다. 농지은행은 일반 농지를 감정평가에 따른 시세로, 투기 농지를 공시지가로 매입할 방침이라고 설명했습니다. 다만 심층조사의 위법 확정 통계와 세부 판정·불복 기준은 아직 공개되지 않았습니다.",
+        en: "The presidential office said that, as of September 22, no disposal-related notice had been issued from the 2026 census; notices from the separate annual farmland-use survey must not be conflated with this figure. It identified likely speculation cases as unlawfully leased or idle land acquired in transaction-permit zones, through shared auction purchases or via sham agricultural corporations. The Farmland Bank plans to buy ordinary land at appraised market value and speculative land at the officially assessed value. Final field-review totals and detailed decision and appeal standards remain unpublished.",
+      },
+      change: {
+        ko: "의심 분류 30만㏊와 실제 처분 집행 사이의 현재 간극을 수치로 확인",
+        en: "Quantifies the current gap between 300,000 hectares flagged and actual disposal enforcement",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "SBS", en: "SBS News" },
+          title: { ko: "‘농지 헐값 매입?’ 불안 커지자…청와대 직접 해명", en: "Presidential office responds to concerns over forced, below-market farmland purchases" },
+          url: "https://news.sbs.co.kr/news/endPage.do?news_id=N1008765922",
+          publishedAt: "2026-09-22",
+          thumbnailSrc: "/images/monitoring/farmland-census-news/2026-09-22-sbs.webp",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "청와대", en: "Office of the President" },
+          title: { ko: "팩트방앗간: ‘농지 전수조사, 걱정하지 않으셔도 됩니다’", en: "Fact Mill: What the farmland census does and does not do" },
+          url: "https://www.youtube.com/watch?v=R4na1PfwBIc",
+          publishedAt: "2026-09-22",
+          kind: "video",
+        },
+      ],
+    },
+    {
       date: "2026-10-01",
       title: {
         ko: "심층조사 중간 결과와 처분 규모 확인",
@@ -294,6 +334,10 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+    {
+      ko: "청와대는 9월 22일까지 2026년 농지 전수조사에서 처분 관련 통지가 한 건도 발송되지 않았다고 확인했습니다. 이는 별도로 매년 실시하는 농지 이용실태조사의 통지 건수까지 0이라는 뜻은 아닙니다.",
+      en: "The presidential office confirmed that no disposal-related notice had been issued from the 2026 census as of September 22. This does not mean that the separate annual farmland-use survey issued no notices.",
+    },
     {
       ko: "정부는 특별조치법의 국회 의결을 2026년 말까지 마치겠다는 목표를 제시했지만, 9월 22일 현재 법안이 제정된 것은 아닙니다.",
       en: "The government aims to complete National Assembly passage of the special legislation by the end of 2026, but no such law had been enacted as of September 22.",
