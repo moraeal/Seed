@@ -2,92 +2,96 @@ import type { NewsTranslation } from "../types";
 
 export const dmzSecurityCommandFailureTranslation: NewsTranslation = {
   category: "Defense, Security & State Accountability",
-  title: "A Soldier Lost His Foot. The Defense Ministry Said It Would ‘Check.’",
+  title: "A Soldier Lost His Foot. What Was the Defense Ministry Doing?",
   subtitle: "Freedom survives only on a foundation of rigorous security.",
-  summary: "An explosion in the western sector of the Demilitarized Zone injured three officers from the 25th Infantry Division; one battalion commander lost a foot. At the next day's regular briefing, however, defense officials could not immediately state when the danger was detected, how many personnel were deployed or the precise nature of the mission. If a desire for dialogue becomes an excuse to blur threats—and a message of sympathy is treated as a substitute for command responsibility—the result is not peace but an abandonment of security.",
-  keySentence: "Freedom survives only on a foundation of rigorous security.",
+  summary: "After reports that North Korean troops had crossed the Military Demarcation Line more than 20 times in the preceding month, a suspected mine blast injured three South Korean officers near the line. The military had already detected altered terrain. What did it do to assess the danger and protect its personnel? Earlier disputes over guard weapons make the question more urgent.",
+  keySentence: "The Defense Ministry's ‘rules and principles’ matter only if they protect the troops on the ground.",
   selectedNews: {
-    outlet: "Maeil Shinmun News Cabinet",
-    headline: "A Lieutenant Colonel Lost His Foot—Another Failure of Command?",
-    linkLabel: "Watch the related discussion (Korean)",
-    thumbnailUrl: "https://img.youtube.com/vi/KrUGGm37rfI/maxresdefault.jpg",
-    thumbnailAlt: "Maeil Shinmun News Cabinet video discussing the DMZ explosion and the government's security response",
-    thumbnailCaption: "The discussion criticizes failures of command, reporting and public explanation after the DMZ blast. Select the image to watch the Korean-language video.",
-    thumbnailYoutubeId: "KrUGGm37rfI",
+    outlet: "SBS News",
+    headline: "Reporter presses military officials over signs of mine-laying south of the demarcation line",
+    linkLabel: "Watch the Defense Ministry briefing (Korean)",
+    thumbnailUrl: "https://img.youtube.com/vi/342c3urASLc/hqdefault.jpg",
+    thumbnailAlt: "SBS News video of questions about North Korean crossings and terrain changes at the September 14 Defense Ministry briefing",
+    thumbnailCaption: "The exchange took place a week before the blast. Select the image to watch the Korean-language report.",
+    thumbnailYoutubeId: "342c3urASLc",
     thumbnailPlacement: "after-summary",
     thumbnailFallbackUrl: "/images/news/dmz-security-command-failure.webp",
     summary: [
-      "The speakers criticize military authorities for failing to explain basic operational facts even after soldiers suffered grave injuries.",
-      "They argue that inter-Korean dialogue and diplomatic ambitions cannot outrank the state's duty to confront threats and protect service members."
+      "At the September 14 briefing, the Joint Chiefs of Staff said it had detected altered terrain south of the line and was discussing possible mine-laying with the United Nations Command.",
+      "Asked what the military had done while North Korean troops worked in the area, the spokesperson cited ‘rules and principles’ but withheld operational details on security grounds."
     ]
   },
   heroImage: {
     alt: "A combat boot and mine-warning sign on a muddy DMZ path, with fencing and a guard post in the distance",
-    caption: "A state that cannot promptly explain facts and command responsibility after a soldier is maimed cannot credibly claim strong security.",
-    credit: "AI reference image by SEED VOICE"
+    caption: "The question is whether the military was prepared to protect its personnel amid repeated crossings and altered terrain.",
+    credit: "AI-generated symbolic image by SEED VOICE"
   },
   inlineImage: {
     alt: "A combat boot and mine-warning sign on a muddy DMZ path, with fencing and a guard post in the distance",
     caption: "Freedom survives only on a foundation of rigorous security.",
-    credit: "AI reference image by SEED VOICE"
+    credit: "AI-generated symbolic image by SEED VOICE"
   },
   sections: [
     {
-      title: "A soldier lost his foot; officials could not answer basic questions",
+      title: "More than 20 crossings: what was the military doing?",
       paragraphs: [
-        "An explosion occurred in the western sector of the Demilitarized Zone on September 21. Three officers from the Army's 25th Infantry Division were injured, and a lieutenant colonel serving as battalion commander suffered the loss of a foot. The Joint Chiefs of Staff said the following day that the unit had been opening a patrol route for a United Nations Command investigation into possible North Korean incursions and terrain changes near the Military Demarcation Line.",
-        "Investigators must determine whether the device was a North Korean mine, an older South Korean mine or displaced ordnance. Unverified responsibility must not be presented as fact. But uncertainty about the device does not suspend scrutiny of preparedness and operational command.",
-        "The more disturbing scene came at the Defense Ministry's regular briefing. Asked when the terrain change was detected, how many personnel had been deployed and what mission they were carrying out, the JCS spokesperson repeatedly said the answers would have to be checked. In a grave incident that maimed a service member, arriving before the public without basic operational facts is more than a communications lapse. It signals failure in reporting, command and accountability."
+        "On September 9, news reports said North Korean troops had crossed the Military Demarcation Line (MDL) more than 20 times in the preceding month. That figure covered roughly a month, not the first nine days of September. South Korean forces reportedly broadcast warnings when a crossing appeared imminent and fired warning shots when troops crossed. Yet the military had also detected altered terrain south of the MDL. This was not simply a series of crossings followed by withdrawals.",
+        "On September 21, an explosion injured three officers of the 25th Infantry Division as they opened a route in the western sector of the Demilitarized Zone. A lieutenant colonel commanding the reconnaissance battalion lost his foot; another officer was also seriously hurt. The Joint Chiefs of Staff said the mission was to prepare a route for a United Nations Command inspection of an area where North Korean mine-laying was suspected.",
+        "Investigators have not established that the device was a North Korean mine. The exact relationship between the blast site and the earlier terrain changes also remains to be established. But those unknowns do not postpone a separate question: what risk information and protection did the military give the people it sent in?"
       ]
     },
     {
-      title: "Sympathy is necessary, but it cannot replace command",
+      title: "A reporter raised the danger a week before the blast",
       paragraphs: [
-        "The president was right to wish the injured personnel a rapid recovery and promise support. The commander in chief's responsibility, however, does not end with a message of sympathy. The public should be told when the president was briefed, what orders followed and whether other units conducting similar missions received immediate safety reviews.",
-        "When the state orders soldiers into danger, it assumes responsibility for intelligence, detection equipment, protective gear, evacuation, treatment and rehabilitation. It must disclose whether the mission was properly approved and assessed, what information reached the field commander and how similar operations changed after the blast.",
-        "Repeating that support will be provided is not the language of accountability. The state's language is to establish the cause, hold the chain of command responsible where errors occurred and change procedures and equipment so the same sacrifice is not repeated. Sympathy matters. It is not command."
+        "At a September 14 Defense Ministry briefing, a reporter asked what South Korean forces had done while North Korean troops apparently worked south of the demarcation line, leaving visible terrain changes. Jang Do-young, the Joint Chiefs' public affairs chief, acknowledged the changes and said the military was discussing possible mine-laying with the United Nations Command. He said the response had followed established rules and principles.",
+        "When pressed on whether those measures had worked, Jang said operational security limited what he could disclose. The public cannot expect the military to reveal every operational procedure. But once the military acknowledges signs of work south of the line, it owes an account of how it managed the resulting danger. Rules and principles mean something only if they protect the people sent into the field.",
+        "A week later, an officer lost his foot during a mission connected to investigating that danger. The briefing questions can no longer be dismissed as an argument over wording."
       ]
     },
     {
-      title: "Peace cannot be secured by pleading for dialogue",
+      title: "Earlier guard-duty controversies sharpen the question",
       paragraphs: [
-        "The government says it wants to keep a channel open with North Korea. Dialogue that lowers tension and reduces the risk of accidental conflict has value. But dialogue is not a prayer based on the other side's goodwill. It must be an instrument chosen by a state capable of absorbing and deterring threats.",
-        "North Korea has recast inter-Korean relations as relations between two hostile states while fortifying the border area and laying mines. If Seoul keeps repeating its willingness to talk while obscuring danger and responsibility where its own soldiers were injured, that is not patience in pursuit of peace. It is weakness that asks for dialogue without first securing the ground beneath it.",
-        "North Korea will not respect a government that minimizes threats for fear of complicating diplomacy. A promise without the power to defend it is not negotiation but a request. A normal state establishes the facts, responds firmly to incursions and threats, and then talks when dialogue serves its security."
+        "In January, the Army's 21st Division in Yanggu told personnel guarding an installation entrance to carry batons instead of firearms. The instruction was withdrawn after criticism. The defense minister said the broader guidance had been misunderstood as it passed down the chain of command. This did not occur in the 1st Corps.",
+        "Separate reports said the 1st Corps, responsible for a western sector, had kept ammunition out of K6 heavy machine guns during guard duty. A subsequent report said personnel also carried loaded magazines on their bodies without attaching them to K2 rifles. They were not without ammunition. But if a guard must retrieve and attach a magazine during an immediate threat, who assessed and approved the time that would cost?",
+        "The baton instruction, the unloaded-weapons reports and this blast are distinct events. There is no evidence that one directly caused another. Taken together, however, they make the military's response to recurring readiness concerns a matter of public accountability."
       ]
     },
     {
-      title: "Security cannot be reduced to political rhetoric",
+      title: "What happens after a warning?",
       paragraphs: [
-        "This incident reveals more than the danger of one explosive device. It exposes a military unable to explain the threat it was investigating, a command structure unprepared to account for grave injuries and a government tempted to put the image of inter-Korean dialogue ahead of security realities.",
-        "A government that speaks of peace must first demonstrate that it can defend the state. It must continuously monitor changes around the Military Demarcation Line, give personnel the best available information and equipment, and provide a coherent public account when an incident occurs. Without those basics, an ambitious peace agenda is a paper structure erected over a soldier's sacrifice.",
-        "SEED VOICE will not state that North Korea caused the blast before evidence establishes it. Nor will we accept ‘the investigation is ongoing’ as a shield for incompetence or evasion. Fact-finding must be careful, but the state's response must be swift. Care and paralysis are not the same thing."
+        "Warnings are a necessary tool, and South Korean troops did fire warning shots in response to crossings. It would be false to claim they stood unarmed and merely asked North Korean troops to turn back. The question is what happened afterward. Who checked the danger left behind, when did they check it, and what did the next patrol know before entering the area?",
+        "Not every crossing is an act of war. An armed incursion that escalates into an attack, however, can put those at the post into combat within seconds. At that moment, weapons elsewhere and ammunition in storage matter less than the guard's ability to respond immediately. A surprise attack exposes gaps in readiness.",
+        "People can sleep safely behind the lines because service members bear the risk at the front. If the military cannot show that it shared known hazards and equipped those troops to respond, how can the public feel secure? What is the Defense Ministry doing to earn that trust?"
       ]
     },
     {
-      title: "Freedom rests on rigorous security",
+      title: "The state owes the injured officer an answer, not another formula",
       paragraphs: [
-        "Freedom does not sustain itself through peaceful slogans. Military readiness at the border, command decisions that put life first and political leadership that accepts responsibility for failure form its foundation. When that foundation weakens, freedom of speech, economic freedom and ordinary civic life all become vulnerable.",
-        "The government must not reduce this to an unfortunate accident. It should disclose when the danger was detected, why the mission was approved, what protective measures were used, and when the presidential office and Defense Ministry were briefed and acted. It must also assume long-term responsibility for treatment, rehabilitation, continued service and life after discharge.",
-        "A state is not strong when a soldier loses his foot and the Defense Ministry can only say it will check. A government cannot protect peace by using its desire for dialogue to cover gaps in security. Freedom survives only on a foundation of rigorous security. The government must prove that it can still fulfill that most basic duty."
+        "The United Nations Command investigation must establish what exploded and who, if anyone, planted it. Evidence has not yet established North Korean responsibility. The inquiry into South Korean command decisions need not wait. The military should say what it knew from the first detection of altered terrain through the day of the blast, and how it assessed the route-clearing mission.",
+        "Officials should also explain why they could not immediately answer basic questions about the timing of detection and the deployed personnel at the next day's briefing. The presidential office and Defense Ministry should state when they received reports, what they ordered and how they protected other units on similar missions. Long-term treatment, rehabilitation and life after service for the injured personnel must remain a public obligation.",
+        "An officer lost his foot while serving his country. Anger is a natural response when ‘rules and principles’ are the only words citizens hear. The Defense Ministry must show what it stopped, how it removed the remaining danger and how well it protected those it sent into harm's way. Freedom rests on security that works."
       ]
     }
   ],
   watchPoints: [
-    "Whether military authorities disclose when terrain changes and possible MDL incursions were first detected and reported",
-    "Whether the approval, risk assessment, force size, detection gear, protective equipment and route-clearance procedures are disclosed",
-    "Whether the presidential office and Defense Ministry disclose the timing of reports, orders issued and safety measures for similar missions",
-    "Whether the UNC investigation and the type and origin of the explosive device are reported transparently",
-    "Whether the injured personnel receive a long-term plan for treatment, rehabilitation, prosthetics, continued service and life after discharge"
+    "Whether the military discloses when crossings and terrain changes were first detected, reported and addressed",
+    "Whether investigators establish the relationship between the blast site and suspected mine-laying area, and identify the device and its origin",
+    "Whether route-clearance approval, risk assessment, information sharing, equipment and protection procedures are reviewed",
+    "How guard readiness changed after the baton instruction and the 1st Corps ammunition controversy",
+    "Whether injured personnel receive long-term treatment, rehabilitation, prosthetics and support after discharge"
   ],
   seedPerspective: [
-    "Dialogue does not substitute for security. Only after deterrence and readiness are established does dialogue become a sovereign choice. Waiting for an adversary's response without adequate strength is not a peace policy; it is an abandonment of responsibility.",
-    "The cause of the explosion must be established through evidence. But an ongoing investigation cannot excuse failures in operational judgment, force protection, reporting or public explanation.",
-    "A state that invokes freedom must first show the ability and will to defend it. Security that protects service members and holds leaders accountable is the first foundation of civic freedom."
+    "South Korean forces did fire warning shots. The measure of their response is not how often they broadcast or fired, but whether they removed hazards and protected service members.",
+    "Evidence must determine whether North Korean troops planted the device. Independently, the state must explain how it managed known risks and why its personnel were injured.",
+    "Civic freedom and ordinary life depend on the safety of those serving at the border. The Defense Ministry's duty is to ensure they come home."
   ],
   sourceLabels: [
-    "YTN — JCS follow-up explanation of the DMZ blast mission and circumstances (September 22, 2026)",
-    "Korea Economic Daily — Report on controversy over answers at the Defense Ministry briefing (September 22, 2026)",
-    "Maeil Shinmun News Cabinet — Discussion of the DMZ blast and the government's security response"
+    "Yonhap News — More than 20 MDL crossings in the preceding month (September 9, 2026)",
+    "Korean government policy briefing — Defense Ministry transcript (September 14, 2026)",
+    "Yonhap News — DMZ blast during route-clearing mission (September 22, 2026)",
+    "News1 — Baton instruction at the 21st Division and its withdrawal (January 7, 2026)",
+    "JTBC — 1st Corps K6 guard-duty ammunition policy (July 29, 2026)",
+    "Chosun Ilbo — 1st Corps K2 rifle ammunition policy (August 5, 2026)",
+    "SBS News — Video of the September 14 Defense Ministry briefing"
   ]
 };
