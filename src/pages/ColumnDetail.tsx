@@ -16,6 +16,19 @@ import { useLanguage } from "../i18n";
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 const imageKey = (src: string) => imageSrc(src).replace(/#.*$/, "").replace(/\?.*$/, "");
 
+function InlineLinkedText({ text }: { text: string }) {
+  return <>{text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part, index) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!match) return part;
+
+    const [, label, href] = match;
+    const className = "font-semibold text-green-deep underline decoration-green-deep/35 underline-offset-4 hover:decoration-green-deep";
+    return href.startsWith("/")
+      ? <Link key={`${href}-${index}`} to={href} className={className}>{label}</Link>
+      : <a key={`${href}-${index}`} href={href} target="_blank" rel="noreferrer" className={className}>{label}</a>;
+  })}</>;
+}
+
 export default function ColumnDetail() {
   const { slug = "" } = useParams();
   const { language } = useLanguage();
@@ -60,7 +73,7 @@ export default function ColumnDetail() {
       <div className="reading-column mt-10">
         {column.sections.map((section, index) => <Fragment key={`${index}-${section.title}`}><section className={index === 0 ? "" : `article-section ${isLongRead ? "article-section-long" : ""}`}>
           {section.title && <h2 className="article-section-title">{section.title}</h2>}
-          {section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 28)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>)}
+          {section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 28)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}><InlineLinkedText text={paragraph}/></p>)}
           {section.quote && <blockquote className="my-7 border-l-4 border-gold bg-green-pale px-5 py-5 text-lg font-bold leading-8 text-green-deep sm:px-6 sm:text-xl">{section.quote.map((line, lineIndex) => <span key={`${lineIndex}-${line}`} className="block">{line}</span>)}</blockquote>}
           {bodyImages.filter((image) => image.afterSection === index).map((image) => <InteractiveFigure key={imageKey(image.src)} src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName="my-12 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)]" imageClassName={"contain" in image && image.contain ? "block h-auto w-full" : "aspect-[16/10] w-full object-cover"} />)}
           {column.embeddedFigures?.filter((figure) => figure.afterSection === index).map((figure) => <ColumnEmbeddedFigure key={`${figure.kind}-${index}`} figure={figure} ko={ko} />)}

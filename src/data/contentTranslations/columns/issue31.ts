@@ -1,10 +1,10 @@
 import type { ColumnTranslation } from "../types";
 
 export const issue31: ColumnTranslation = {
-  title: "Suicide Prevention: It Is Time for the Interior Ministry to Act",
-  subtitle: "Beyond a treatment-centered health policy toward a community safety net built by local government and civil society",
+  title: "Suicide Prevention Needs the Interior Ministry at the Table",
+  subtitle: "Beyond treatment-centered policy, local government and civil society must build a lasting community safety net",
   author: "Small Seed",
-  summary: "Suicide prevention is beyond the capacity of the Ministry of Health and Welfare alone. The Ministry of the Interior and Safety must become a joint lead, equipping local governments and civic organizations with the staff, authority and durable funding needed to protect life in the community.",
+  summary: "Suicide prevention cannot remain the responsibility of the Health Ministry and its affiliated institutions. The Interior Ministry must give local governments staff, budgets and authority, while civic groups help design and sustain the community safety net.",
   heroImage: {
     alt: "Local government officials and community organizers discuss a life-safety network around a map of their area",
     caption: "Suicide prevention is not the work of hospitals and counseling centers alone. Local government and civil society must work together close to people's daily lives.",
@@ -23,7 +23,7 @@ export const issue31: ColumnTranslation = {
       credit: "Graphic by SEED VOICE based on Statistics Korea's 2025 cause-of-death data",
     },
     {
-      src: "images/columns/suicide-prevention-mois/local-suicide-prevention-system-en.svg",
+      src: "images/columns/suicide-prevention-mois/local-suicide-prevention-system-en.svg?v=contrast-2",
       alt: "Diagram of an Interior Ministry-led local network connecting welfare, housing, employment, debt advice, health care, emergency services and civil society",
       caption: "MOIS must give local governments the organization and resources to connect fragmented services and sustain civic participation.",
       credit: "Graphic by SEED VOICE",
@@ -33,73 +33,85 @@ export const issue31: ColumnTranslation = {
     {
       title: "",
       paragraphs: [
-        "Suicide prevention is beyond the capacity of the Ministry of Health and Welfare alone. Hospitals and counseling centers cannot by themselves resolve job loss, debt, isolation and broken relationships. Communities must be able to recognize a crisis early, help people find support and remain beside them after treatment. That is why the Ministry of the Interior and Safety must become a joint lead.",
-        "MOIS has a clear task: organize local administration so that health, welfare, housing and employment support work together; secure the people and money required; and give local civic organizations a durable base from which to serve residents. It cannot avoid that responsibility by calling suicide prevention a Health Ministry matter.",
-      ],
-      quote: ["Suicide prevention is beyond the capacity of the Health Ministry alone.", "The Interior Ministry must become a joint lead."],
-    },
-    {
-      title: "Institutions exist. What has changed on the ground?",
-      paragraphs: [
-        "The problem is not a complete absence of government bodies. Korea has a cross-government life-protection headquarters under the prime minister, and local governments have designated vice-mayor-level suicide-prevention officers. At a September 1 meeting, the Office for Government Policy Coordination discussed dedicated teams, more personnel and local networks. Those arrangements make the next question unavoidable: after creating titles and holding meetings, what changed in the field?",
-        "The Health Ministry's complacency also requires scrutiny. Its July emergency plan said Korea would move beyond a model centered on physical and psychiatric treatment and support the whole of a suicide attempt survivor's life. The government was acknowledging a demand that civic organizations had raised for years: social crises must be addressed as well.",
-        "The same document contained a heavier figure. Police and fire services responded to about 51,000 suicide-attempt incidents in 2025, while suicide-prevention counseling personnel made 3,738 field dispatches, about 7 percent of that number. The figures count different kinds of dispatch and do not prove that everyone else received no support. They do confirm, in the government's own data, a gap between emergency response and specialized follow-up.",
-        "A new plan does not explain away that gap. The ministry must say why counseling and care failed to connect in time, where staffing was inadequate and what the lead agency failed to repair. A ministry that has long emphasized treatment and counseling must first account for whether those services actually reached people in crisis.",
+        "Suicide prevention is beyond the capacity of a single ministry. Hospitals and counseling centers cannot by themselves resolve job loss, debt, housing insecurity, isolation, exhausted caregivers and broken relationships. Prevention also depends on people who recognize a crisis early, help a neighbor reach support and remain present after treatment ends.",
+        "Leaving this mission to the Ministry of Health and Welfare while the Ministry of the Interior and Safety stands back is an evasion of responsibility. MOIS has authority over the structures, staffing and coordination of local administration. When suicide-prevention policy fails at community level, MOIS also has a duty to answer.",
+        "SEED previously argued in [“The State Must Not Monopolize Life”](https://seedvoice.kr/columns/state-cannot-monopolize-life-2026/) that stronger government responsibility must not become a monopoly over budgets, information and policy decisions. The next question is local: who will provide the staff, authority and funding that allow municipalities and civic groups to work together? MOIS must answer it.",
       ],
     },
     {
-      title: "Life remains after treatment ends",
+      title: "Institutions exist, but the field still does not move",
       paragraphs: [
-        "Professor Lee Pum-soo's research and policy work poses a central question: does suicide prevention end with treatment of an individual's mind, or does it continue until the social conditions in which that person must live are restored?",
-        "In his 2022 paper on suicide in contemporary Korean society, Lee examined rapid social change and weakened communities and emphasized society's role in restoring belonging and a sense that one's existence matters. At a 2023 National Assembly forum, he proposed locally led prevention and support for civic and religious organizations. In 2024, he again stressed the budgets, institutions and personnel required for cooperation between municipalities and private groups.",
-        "Translated into policy, that means taking responsibility both for a clinical referral and for rebuilding the relationships to which a person returns. Community encouragement cannot end as a slogan at a campaign event. It must become regular contact, help with daily hardship and a relationship that can be restored when formal support breaks down.",
-        "Research supports social connection as a serious policy pillar. A 2022 systematic review pooled ten randomized trials measuring suicide deaths and reported a risk ratio of 0.48 for social-support interventions. The pooled reduction in suicide attempts was not statistically significant. This does not mean every civic program cuts suicide deaths in half. It does justify investment in sustained social support as a distinct part of prevention.",
-        "Japan's Basic Act on Suicide Countermeasures provides a useful institutional example. It requires prefectural and municipal plans, central grants to support implementation and cooperation with civic organizations. Responsibility is placed locally, but the conditions for action are financed nationally.",
-        "A study of six towns in Akita Prefecture combined resident participation, activities that strengthened purpose among older people and local relationship networks. Suicide rates in the intervention towns fell from 70.8 per 100,000 in 1999 to 34.1 in 2004, while comparison towns moved from 47.8 to 49.1. Because the study was not randomized, the entire decline cannot be attributed to the program. It nevertheless shows the potential of treating the community itself as an actor in prevention.",
+        "Korea already has a cross-government Life Protection Headquarters under the prime minister. Local governments have designated vice-mayor-level suicide-prevention officers. In September, the Office for Government Policy Coordination brought metropolitan officials together to discuss dedicated teams, staffing and local networks.",
+        "The question is whether those arrangements work. Can an officer direct other departments? How many full-time staff are available? Are suicide-prevention duties merely added to existing workloads? Do public-health centers, neighborhood welfare teams, debt and employment services, police, fire services and civic organizations actually maintain continuity around one person in crisis?",
+        "The government must disclose staffing and execution results. A title in an organization chart is not an operating system. A structure that cannot move the field becomes an alibi.",
       ],
     },
     {
-      title: "Civil society's history cannot be pushed behind the foundation",
+      title: "The Health Ministry has admitted the limits of a treatment-centered model",
       paragraphs: [
-        "Korean civil society has accumulated decades of experience. Lifeline Korea records the opening of an online suicide-prevention center in 2002, expansion of nationwide prevention-center work in 2003 and a national university campaign in 2005. The Respect for Life Citizens' Council records civic demands for a national policy in 2017 and the formation of the Korea Life Movement Alliance by 26 organizations in 2018, followed by the council's launch.",
-        "The Korea Foundation for Suicide Prevention was established in 2021. Civic work did not begin with the foundation's first grant notice. People had already provided counseling and education, demanded government responsibility and sustained voluntary organizations in the field.",
-        "That history must not be moved to the margins of policy. It is unfair if experienced frontline groups must wait for short annual competitions while only a centrally funded institution is recognized as professional. Expertise does not come from an institutional name alone. It grows through stable people and budgets, training, verification and accumulated field experience. Civic organizations deserve the conditions to build it as well.",
+        "The Ministry of Health and Welfare’s July 2026 emergency plan said Korea would move beyond an approach centered on physical and psychiatric treatment and support the whole of a suicide attempt survivor’s life. That statement amounts to an official admission that the existing frame was too narrow.",
+        "The same release disclosed a more troubling number. Police and fire services responded to about 51,000 suicide-attempt incidents in 2025, while suicide-prevention counseling personnel made 3,738 field dispatches, about 7 percent of that total. This comparison does not prove that everyone else received no support. It does show a large gap between emergency response and specialized follow-up, acknowledged by the government itself.",
+        "A new plan cannot erase that failure. The ministry should explain where staffing was insufficient, why counseling and care failed to connect in time and how many people fell out of the support system. A ministry that has long emphasized care and counseling must first show whether those services reached people at the point of crisis.",
+        "SEED’s public-interest review, [“Where Does Korea’s KRW 70.8 Billion Suicide-Prevention Budget Actually Go?”](https://seedvoice.kr/monitoring/korea-foundation-for-suicide-prevention/), distinguished the government-wide 2026 budget from the Korea Foundation for Suicide Prevention’s own KRW 37.042 billion budget. The foundation’s public-private partnership line was KRW 703 million—1.9 percent of its own budget and about 1 percent of the government-wide total. Not all of that line consists of direct grants to civic groups.",
+        "The government describes suicide as a social problem while keeping most resources inside central institutions and a health-centered delivery system. Partnership must be demonstrated through authority and budgets, not names on an attendance sheet.",
+      ],
+    },
+    {
+      title: "Treatment cannot send people back to the same cliff",
+      paragraphs: [
+        "Professor Lee Pum-soo’s work asks whether policy stops after treating an individual mind or continues until the conditions of life are restored. His 2022 paper connected rapid social change and weakened communities to the need to rebuild belonging and a sense that one matters. In later National Assembly discussions, he called for locally led policy and stronger support for religious and civic organizations, backed by adequate organizations, personnel and finance.",
+        "The policy implication is clear. Referral to a hospital must be paired with the rebuilding of a viable life. A dismissed worker may need income and employment support. A debtor may need restructuring. An isolated person may need a relationship that lasts. Returning a person after treatment to the conditions that produced the crisis cannot be called complete prevention.",
+        "Evidence also supports social connection as a distinct pillar. A 2022 systematic review and meta-analysis of randomized trials reported a risk ratio of 0.48 for suicide deaths in social-support intervention groups across ten studies. The pooled reduction in suicide attempts was not statistically significant. The finding does not mean that every civic program cuts deaths in half. It does justify treating sustained social support as a serious prevention strategy alongside clinical care.",
+        "Japan’s Basic Act on Suicide Countermeasures points in the same direction. It requires prefectural and municipal plans adapted to local conditions, authorizes central grants and calls for cooperation among government, health institutions, employers, schools and civic organizations.",
+        "A quasi-experimental study in six towns in Akita Prefecture combined resident participation, programs to strengthen purpose among older people and community networks. The suicide rate in intervention towns fell from 70.8 per 100,000 in 1999 to 34.1 in 2004, while comparison towns moved from 47.8 to 49.1. The design does not allow the entire decline to be attributed to the program, but it shows the possibility of treating a community as an actor in prevention.",
+      ],
+    },
+    {
+      title: "Civic experience predates the national foundation",
+      paragraphs: [
+        "Korean civil society has built this field over decades. Lifeline Korea records the launch of an online suicide-prevention center in 2002, expansion of nationwide prevention-center activity in 2003 and a national university campaign in 2005. The history published by the Respect for Life Citizens’ Council records civic demands for a national policy in 2017, the formation of the Korea Life Movement Alliance by 26 organizations in April 2018 and the council’s launch later that year.",
+        "The Korea Foundation for Suicide Prevention was established in 2021. Civic action did not begin with the foundation. Long before it existed, people provided counseling and education, connected organizations and pressed the government and presidential office for a national response. Their experience helped build the field the foundation now occupies.",
+        "It is unjust to erase that history and treat a state-created institution as the sole owner of expertise. If frontline organizations must repeatedly wait for short annual competitions while an institution with stable staff and funding alone receives professional status, those who did the hard work and those credited with the result become different groups.",
+        "Expertise is accumulated through people, time, resources, records and corrected failures. The state cannot deny civic groups the conditions needed to build that expertise and then cite their limited capacity as a reason to exclude them.",
       ],
     },
     {
       title: "The foundation should support the field, not guard the gate",
       paragraphs: [
-        "The Korea Foundation for Suicide Prevention must not be allowed to control the entire field. It has legitimate roles in research, education, coordination and technical support. But Korea should resist a system in which one gate effectively decides what civil society may do, who receives support and which outcomes count. The state cannot transfer its duty to coordinate ministries and local governments to an affiliated institution.",
-        "The foundation's 2026 public-private partnership competition planned to support roughly ten organizations with about KRW 50 million each for projects ending on November 30. This is not the whole of civic support. Yet it is reasonable to ask whether projects ending within the year can sustain organizers' jobs and the long relationships on which local trust depends.",
-        "Transparent spending and independent evaluation are necessary. They must be paired with multi-year support for personnel and operations. Civil society also needs a seat in policy design and the freedom to criticize policy independently. The purpose of public support should be to build the capacity to remain beside residents over time.",
-      ],
-      quote: ["The foundation should support the field, not become the gate through which the entire field must pass."],
-    },
-    {
-      title: "Regional gaps make the Interior Ministry's responsibility unmistakable",
-      paragraphs: [
-        "The regional gap makes MOIS's responsibility clearer. In Korea's 2025 cause-of-death statistics, age-standardized suicide rates per 100,000 standard population were 30.3 in Jeju, 28.0 in South Chungcheong and 27.1 in Daejeon. Sejong recorded 16.6 and Seoul 19.3. The differences remain large even after adjusting for age structure.",
-        "These figures should not become a simplistic scorecard for mayors and governors. A single year's rate also reflects local economic conditions and random variation. Government should identify which policies worked in lower-rate regions and what support is missing in higher-rate ones. The central government's role is not merely to publish rankings but to direct people and money toward communities with greater need.",
-        "MOIS can say it has begun to move. At a July central-local policy meeting, it asked local governments to deploy personnel rapidly to suicide-prevention departments. The next report should replace the word 'asked' with actual headcounts, dedicated positions, vacancies, budgets and regional gaps. Adding another duty to an overburdened public-health employee is not a functioning accountability system.",
+        "The foundation must not become the institution that determines the entire direction of prevention. It has legitimate functions in research, education, coordination and technical support. It should not become the single gate through which civic participation, funding and recognition must pass.",
+        "Administrative and professional expertise deserve respect. But a closed circle that designs programs, implements them, evaluates them and explains the results resists outside scrutiny. Cross-ministerial and local coordination is a government responsibility and cannot be transferred to an institution affiliated with the Health Ministry. The foundation is not a national command authority and should not be turned into one.",
+        "The foundation’s 2026 partnership competition planned to select roughly ten organizations, each receiving around KRW 50 million, for work ending on November 30. It is one program rather than all civic support. Yet a grant lasting only several months cannot reliably sustain staff employment or long-term trust with residents.",
+        "Civic support must invest in people and relationships. Korea needs transparent evaluation, multi-year funding and open routes for small local organizations and groups led by bereaved families and people with lived experience. Voluntary action cannot be treated as unpaid labor.",
       ],
     },
     {
-      title: "MOIS must move people, money and the whole local network",
+      title: "Regional gaps leave MOIS no excuse",
       paragraphs: [
-        "MOIS should first determine whether local suicide-prevention officers have real authority to coordinate departments and whether they have dedicated staff. Together with the Health Ministry, it should strengthen specialist personnel and connect neighborhood welfare teams with housing, employment and debt services and local civic organizations. A resident in crisis should not have to repeat the entire story at every institution until exhaustion. Someone must verify that support actually continued.",
-        "Civil society needs a stable base for work. Korea should introduce multi-year support with open selection and independent evaluation, while creating routes for small local groups and organizations led by bereaved families. Voluntary commitment must not be confused with unpaid labor. Building residents' trust takes time and resources that allow organizers to live.",
-        "A system that observes local conditions must not stigmatize residents or invade privacy. It should identify job and income shocks, rising isolation and gaps in services, then offer help early. The process of rebuilding relationships and connecting support must respect each person's rights and choices.",
+        "Korea’s 2025 age-standardized regional suicide rates ranged from 30.3 per 100,000 in Jeju, 28.0 in South Chungcheong and 27.1 in Daejeon to 16.6 in Sejong and 19.3 in Seoul. These differences remain large even after adjusting for age structure.",
+        "The figures should not become a simplistic scorecard for mayors and governors. Annual rates reflect economic conditions, population characteristics and random variation. Government should identify which policies worked in lower-rate regions and which services are missing in higher-rate areas. Publishing rankings is not enough; central government must direct people and resources toward places with greater need.",
+        "MOIS asked local governments in July 2026 to deploy staff quickly to suicide-prevention departments. The next report must show actual headcount, vacancies, concurrent duties, turnover and executed budgets by region. Assigning another responsibility to an already overloaded employee is not a dedicated system.",
+        "If MOIS continues to treat suicide prevention solely as Health Ministry business, its inaction approaches dereliction. A ministry responsible for local-government organization, intergovernmental coordination and community safety cannot be absent from an administrative failure measured in lives.",
       ],
     },
     {
-      title: "A six-month decline must not become an institutional trophy",
+      title: "Three actions must begin now",
       paragraphs: [
-        "The government reported 849 fewer suicide deaths in the first half of 2026 than a year earlier. The decline is welcome. But the number alone does not prove the effect of a particular policy. Government must disclose which age groups and regions improved, what interventions worked and who remains beyond the reach of support.",
-        "Suicide-prevention outcomes cannot end as credit claimed by one institution. What matters is who was actually beside a person through a difficult period and whether that relationship can still exist next year. A system in which civil society carries the fieldwork while budgets, authority and recognition accumulate at the center must change.",
-        "The Health Ministry must answer for gaps in its response and for long-standing civic demands it failed to absorb. The foundation must concentrate on helping frontline organizations grow. MOIS must provide the people, money and coordination that allow local governments to protect life as an ordinary responsibility of administration.",
-        "Suicide prevention is a national mission beyond the capacity of one ministry. It is time for the Interior Ministry to act and to answer with an accountable system in which local government and civil society can work together.",
+        "First, MOIS should conduct and publish a nationwide audit of local suicide-prevention teams and staff, including the authority of designated officers, full-time positions, vacancies, concurrent duties and budgets.",
+        "Second, it should require locally designed networks that connect health and mental-health centers with neighborhood welfare teams, housing, debt and employment services, police, fire services, schools, religious institutions, civic organizations and groups led by bereaved families and people in recovery. Every referral should have an accountable owner who verifies whether support actually continued.",
+        "Third, it should create funding that allows civic organizations to employ people and build trust over several years. Municipalities need a dedicated account that is not dependent on a single national-foundation competition. Performance reporting should include service connection, disengagement, recontact, regional disparity and recovery—not simply training attendance and campaign exposure.",
+        "This work must respect privacy and choice. The system should monitor unemployment, debt, isolation and service gaps, rather than mark individuals as dangerous. Assistance should be proactive while remaining rights-based.",
       ],
-      quote: ["Suicide prevention is a national mission beyond the capacity of one ministry.", "It is time for the Interior Ministry to act."],
+    },
+    {
+      title: "Do not turn a six-month decline into a government trophy",
+      paragraphs: [
+        "The government reported 849 fewer suicide deaths in the first half of 2026 than a year earlier. Every life not lost matters, and frontline work deserves recognition.",
+        "But a six-month decline does not prove policy success. Korea recorded 14,144 suicide deaths in 2025, a crude rate of 27.8 per 100,000—38.8 deaths a day. Its OECD-standardized rate was 24.9, more than twice the OECD average of 10.9.",
+        "The government must identify which age groups and regions improved, which did not and what interventions contributed. Claiming credit for a favorable number before separating policy effects from economic, demographic and event effects is not accountability.",
+        "Suicide-prevention outcomes cannot become a trophy for a ministry or an institution. What matters is who was beside a person in crisis and whether that relationship will still exist next year. A system in which civil society carries the hardest work while central institutions retain budgets, authority and credit must change.",
+        "The Health Ministry must answer for gaps in access and the limits of its health-centered delivery model. The foundation must help frontline groups grow rather than stand above them. MOIS must move the local structures, people and money required to make prevention an ordinary responsibility of local government.",
+        "Suicide prevention is not a narrow welfare program. It is a national life-safety mission. MOIS can no longer remain in the background. It must go to the regions, bring local government and civil society into a durable system and take responsibility for making that system work.",
+      ],
     },
   ],
   sourceNote: "Regional figures are age-standardized suicide rates in Statistics Korea's 2025 cause-of-death data. Police and fire dispatches and counseling-staff dispatches are different counts and are not treated as a direct count of people who received no help. The limits of both the social-support meta-analysis and the Akita study are stated in the article.",
