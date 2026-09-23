@@ -36,8 +36,117 @@ const farmFisheryNationalTaxBill = "https://opinion.lawmaking.go.kr/gcom/nsmLmSt
 const farmFisheryLocalTaxBill = "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221543/detailRP";
 const taxReformOfficialFile = "https://mofe.go.kr/com/cmm/fms/FileDown.do?atchFileId=ATCH_000000000032335&fileSn=4";
 const taxReformAgricultureReport = "https://www.taxtimes.co.kr/news/article.html?no=276259";
+const taxBreakBudgetConversionBill = "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221575/detailRP";
+const taxExpenditureBasicPlan = "https://eiec.kdi.re.kr/policy/materialView.do?num=278710";
+const naboTaxExpenditureReview = "https://www.nabo.go.kr/ko/periodical/focusView.do?idx=9236&key=2507040015";
 
 export const taxPolicies: TaxPolicy[] = [
+  {
+    slug: "tax-break-to-budget-conversion-bill",
+    importance: 82,
+    status: { ko: "법안 발의", en: "Bill introduced" },
+    title: {
+      ko: "끝난 세금감면, 예산사업으로 옮길 통로를 만드는 법안",
+      en: "Bill would create a route from expiring tax breaks to budget spending",
+    },
+    summary: {
+      ko: "조세감면을 매년 평가해 직접 예산지원이 더 효과적이라고 판단하면 재정지출로 전환할 수 있게 하는 국가재정법 개정안이 발의됐습니다. 감면보다 예산이 투명하고 정밀할 수 있지만, 일몰이 지원의 종료가 아니라 지출 방식의 변경으로 끝날 가능성도 생깁니다.",
+      en: "A proposed National Finance Act amendment would allow tax preferences to be reviewed annually and converted into direct budget spending when that method is judged more effective. Budget support can be more transparent and better targeted, but a sunset could end by changing the form of support rather than ending it.",
+    },
+    affected: {
+      ko: "모든 납세자 · 조세특례 수혜 개인·기업 · 예산 지원 대상 · 재정당국",
+      en: "All taxpayers · Individual and corporate tax-preference beneficiaries · Budget-support recipients · Fiscal authorities",
+    },
+    checkedAt: "2026-09-24",
+    heroImage: {
+      ko: "images/monitoring/tax-break-budget-conversion-ko.png",
+      en: "images/monitoring/tax-break-budget-conversion-en.png",
+      alt: {
+        ko: "세금감면을 평가해 직접 예산지출로 전환하는 법안의 흐름과 감시 지점을 설명한 도표",
+        en: "Diagram showing a bill's proposed route from tax preferences through review to direct budget spending",
+      },
+      caption: {
+        ko: "법안은 조세지출을 매년 평가해 필요하면 재정지출로 전환하고, 실적과 계획을 조세지출 결산서·예산서에 싣도록 합니다. 특정 특례나 전환 금액은 아직 정해지지 않았습니다.",
+        en: "The bill would require annual review, allow conversion to direct spending, and report results and plans in tax-expenditure budget and settlement documents. It does not yet identify a specific preference or conversion amount.",
+      },
+    },
+    processNote: {
+      ko: "2026년 9월 23일 발의된 의원입법안으로 아직 확정된 법률이 아닙니다. 법안이 통과돼도 개별 사업의 실제 지출은 해마다 예산안 편성과 국회 의결을 거쳐야 합니다.",
+      en: "This private member's bill was introduced on September 23, 2026 and has not been enacted. Even if passed, spending on an individual program would still require annual budget preparation and parliamentary approval.",
+    },
+    oneSentence: {
+      ko: "보이지 않던 세금감면을 예산으로 드러내는 장치가 될 수 있지만, 종료할 특례를 새 예산사업으로 보존하는 통로가 되지 않는지 함께 봐야 합니다.",
+      en: "The proposal could make less-visible tax preferences explicit in the budget, but it also requires scrutiny against preserving an expiring preference as a new spending program.",
+    },
+    keyChanges: [
+      {
+        title: { ko: "매년 평가해 예산사업으로 전환", en: "Annual review and conversion to spending" },
+        body: {
+          ko: "조세지출의 필요성과 정책 효과성을 매년 검토하고, 세금감면보다 직접 재정지출이 효과성·형평성에서 낫다고 판단되는 경우 예산지원으로 전환할 법적 근거를 둡니다.",
+          en: "Tax preferences would be reviewed annually, with statutory authority to convert them into direct spending when budget support is judged more effective or equitable than relief through the tax code.",
+        },
+      },
+      {
+        title: { ko: "전환 실적과 계획을 국회에 공개", en: "Report results and plans to Parliament" },
+        body: {
+          ko: "전환한 실적은 조세지출결산서에, 앞으로의 전환 계획은 조세지출예산서에 포함합니다. 전환된 지출은 원칙적으로 기존 특례의 목적과 지원 대상 범위에서 사용합니다.",
+          en: "Completed conversions would appear in the tax-expenditure settlement statement and future plans in the tax-expenditure budget statement. Spending would generally retain the original preference's purpose and beneficiary scope.",
+        },
+      },
+    ],
+    changeMap: [
+      {
+        title: { ko: "더 보이는 지원", en: "More visible support" },
+        items: [
+          { ko: "세금감면은 걷지 않은 세금이라 일반 예산보다 전체 비용과 수혜자가 덜 보일 수 있습니다.", en: "Tax preferences are revenue forgone, so their full cost and beneficiaries can be less visible than ordinary spending." },
+          { ko: "예산사업으로 바꾸면 해마다 금액과 사업 내용을 국회가 심사하고 결산에서 집행을 확인할 수 있습니다.", en: "Once converted into a budget program, the amount and design face annual parliamentary scrutiny and execution can be examined at settlement." },
+        ],
+      },
+      {
+        title: { ko: "시민과 기업의 선택", en: "Choices for citizens and firms" },
+        items: [
+          { ko: "자동적으로 적용되는 공제·감면과 달리 예산지원은 신청·선정·지급 기준을 거칠 수 있어 수혜 방식이 달라집니다.", en: "Unlike broadly available deductions or credits, budget support may require applications, selection and payment criteria, changing how beneficiaries receive support." },
+          { ko: "정밀한 선별은 가능해지지만 담당 부처의 선정 권한과 기업의 행정비용은 커질 수 있습니다.", en: "Targeting can become more precise, while ministries gain selection power and firms may face higher administrative costs." },
+        ],
+      },
+      {
+        title: { ko: "일몰 뒤에도 남는 비용", en: "Costs that can survive a sunset" },
+        items: [
+          { ko: "특례의 일몰은 세법상 감면을 끝내지만, 같은 목적과 대상을 가진 예산사업이 이어지면 시민이 부담할 지원 비용은 사라지지 않습니다.", en: "A sunset can end relief in the tax code while the public cost continues through a budget program serving the same purpose and recipients." },
+          { ko: "법안은 전환할 특정 특례와 금액을 정하지 않아 실제 재정효과는 향후 예산안에서 확인해야 합니다.", en: "Because the bill names no specific preference or amount, its fiscal effect will depend on future budget proposals." },
+        ],
+      },
+    ],
+    officialRationale: {
+      ko: "발의자는 직접 예산지원이 효과성과 형평성에서 더 나은 경우에도 전환 근거가 없어 지원 공백이나 단발성 사업이 생기고 국가재정운용계획과 연결되지 못한다고 설명합니다. 정부도 2026년 조세지출 기본계획에서 소득재분배 효과나 유사·중복 지출 정비가 필요한 특례의 재정지출 전환을 추진하겠다고 밝혔습니다.",
+      en: "The sponsor argues that the absence of a conversion mechanism can create support gaps, one-off programs and weak links to the national fiscal plan even when direct spending would be more effective or equitable. The government's 2026 Tax Expenditure Basic Plan likewise proposed conversion where spending improves redistribution or helps consolidate overlapping support.",
+    },
+    risks: [
+      { ko: "성과가 낮아 끝내야 할 감면과 지원 방식만 바꿔야 할 감면을 구분하는 공개 기준이 없으면, 일몰이 사실상 자동 승계 절차가 될 수 있습니다.", en: "Without public criteria separating relief that should end from relief whose delivery method should change, a sunset could become a de facto succession process." },
+      { ko: "기존 목적과 지원 대상을 원칙적으로 유지하면 과거 수혜자가 새 예산의 고정 수혜자로 굳을 수 있습니다.", en: "Generally preserving the original purpose and beneficiary scope could entrench former recipients as standing claimants on the new budget." },
+      { ko: "재난·경기침체·대량실업 등에는 다른 용도로 쓸 수 있다는 예외가 있어, 전환 재원이 당초 정책평가와 무관하게 이동할 여지가 있습니다.", en: "An exception permitting other uses during disasters, downturns or mass unemployment leaves room for converted resources to move away from the policy reviewed." },
+    ],
+    questions: [
+      { ko: "어떤 성과·형평성 기준을 충족해야 감면을 종료하고 예산사업으로 전환합니까?", en: "What performance and equity tests must be met before a preference ends and becomes a budget program?" },
+      { ko: "전환 전후의 세수 감소액과 예산액, 수혜자 수를 한 표에서 비교해 공개합니까?", en: "Will revenue forgone, the replacement budget and recipient counts be disclosed together before and after conversion?" },
+      { ko: "새 예산사업에도 별도의 일몰과 정기 성과평가를 두어 지원이 자동으로 존속하지 않게 합니까?", en: "Will the replacement program have its own sunset and periodic review so support does not continue automatically?" },
+      { ko: "긴급상황 예외로 다른 용도에 쓴 금액과 사유를 국회와 시민에게 언제 공개합니까?", en: "When will amounts and reasons for emergency repurposing be disclosed to Parliament and the public?" },
+    ],
+    seedView: {
+      ko: "세금감면은 지원인데도 예산서 바깥에 있어 비용과 수혜자가 흐려집니다. 직접 예산으로 옮기면 국회가 해마다 금액을 심사하고, 행정부가 누구에게 얼마를 지급했는지 결산에서 따질 수 있습니다. 이 장점은 분명합니다. 그러나 감면의 일몰은 지원의 성과를 다시 묻겠다는 약속입니다. 종료할 특례가 이름만 바꿔 예산사업으로 남는다면 일몰은 출구가 아니라 환승구가 됩니다. 법안은 전환할 특례와 금액을 아직 정하지 않았습니다. 국회가 볼 것은 전환 건수만이 아닙니다. 전환 전후의 총비용, 실제 수혜자, 신청과 선정 기준, 새 사업의 일몰, 긴급상황에 다른 용도로 옮긴 내역이 한 표에 함께 공개되는지를 계속 확인해야 합니다.",
+      en: "Tax preferences provide support outside the ordinary budget, where costs and beneficiaries can be harder to see. Direct spending would let Parliament approve amounts annually and examine who received what at settlement. That is a real advantage. But a sunset is a promise to reassess whether support still works. If a preference that should end survives under a budget-program label, the sunset becomes a transfer station rather than an exit. The bill does not yet name any preference or amount for conversion. Scrutiny should therefore extend beyond the number of conversions to one table showing total costs before and after, actual beneficiaries, eligibility and selection rules, a sunset for the new program, and any emergency repurposing.",
+    },
+    timeline: [
+      { date: "2026-03-31", title: { ko: "정부, 조세지출의 재정지출 전환을 기본계획에 포함", en: "Government includes tax-preference conversion in its basic plan" } },
+      { date: "2026-09-23", title: { ko: "국가재정법 개정안 제2221575호 발의", en: "National Finance Act amendment Bill 2221575 introduced" } },
+      { date: "2026-09-24", title: { ko: "씨앗의 소리 확인·분석", en: "Verified and analyzed by Seed Voice" } },
+    ],
+    sources: [
+      { label: { ko: "국회 의안 제2221575호 국가재정법 개정안", en: "National Assembly Bill 2221575: National Finance Act amendment" }, url: taxBreakBudgetConversionBill },
+      { label: { ko: "재정경제부 2026년 조세지출 기본계획", en: "Ministry of Economy and Finance: 2026 Tax Expenditure Basic Plan" }, url: taxExpenditureBasicPlan },
+      { label: { ko: "국회예산정책처 조세지출 기본계획 분석", en: "National Assembly Budget Office review of the tax-expenditure plan" }, url: naboTaxExpenditureReview },
+    ],
+  },
   {
     slug: "farm-fishery-tax-breaks-2030-bill",
     importance: 84,

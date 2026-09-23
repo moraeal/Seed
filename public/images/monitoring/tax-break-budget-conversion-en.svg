@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">A route from tax breaks to budget programs</title>
+  <desc id="desc">A diagram explaining annual review, conversion from a tax preference to direct spending, and parliamentary budget and settlement scrutiny.</desc>
+  <rect width="1200" height="675" fill="#F4F1E8"/>
+  <rect x="40" y="35" width="1120" height="605" rx="28" fill="#FFFDF8" stroke="#D8D1C0" stroke-width="2"/>
+  <text x="82" y="92" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#8D3B2E" letter-spacing="1.5">TODAY'S TAX POLICY · NATIONAL FINANCE ACT BILL</text>
+  <text x="82" y="132" font-family="Arial, sans-serif" font-size="32" font-weight="800" fill="#17251E">A tax break can end while support survives</text>
+  <text x="82" y="168" font-family="Arial, sans-serif" font-size="32" font-weight="800" fill="#17251E">in the budget</text>
+  <text x="82" y="199" font-family="Arial, sans-serif" font-size="19" fill="#526159">The bill creates a route from tax expenditure to direct spending.</text>
+
+  <rect x="82" y="224" width="310" height="220" rx="22" fill="#F3E9D1"/>
+  <text x="112" y="267" font-family="Arial, sans-serif" font-size="19" font-weight="800" fill="#7A5B22">1 · TAX PREFERENCE</text>
+  <text x="112" y="315" font-family="Arial, sans-serif" font-size="25" font-weight="800" fill="#17251E">Revenue forgone</text>
+  <text x="112" y="355" font-family="Arial, sans-serif" font-size="18" fill="#3E4B45">Relief through the tax code</text>
+  <text x="112" y="389" font-family="Arial, sans-serif" font-size="18" fill="#3E4B45">Costs can be less visible</text>
+
+  <path d="M414 333 H483" stroke="#8D3B2E" stroke-width="6" stroke-linecap="round"/>
+  <path d="M467 316 L488 333 L467 350" fill="none" stroke="#8D3B2E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="510" y="224" width="215" height="220" rx="22" fill="#F9E7E1"/>
+  <text x="540" y="267" font-family="Arial, sans-serif" font-size="19" font-weight="800" fill="#9E3D30">2 · ANNUAL REVIEW</text>
+  <text x="540" y="315" font-family="Arial, sans-serif" font-size="21" font-weight="800" fill="#17251E">Need</text>
+  <text x="540" y="352" font-family="Arial, sans-serif" font-size="21" font-weight="800" fill="#17251E">Effectiveness</text>
+  <text x="540" y="389" font-family="Arial, sans-serif" font-size="21" font-weight="800" fill="#17251E">Equity</text>
+
+  <path d="M747 333 H816" stroke="#8D3B2E" stroke-width="6" stroke-linecap="round"/>
+  <path d="M800 316 L821 333 L800 350" fill="none" stroke="#8D3B2E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="844" y="224" width="274" height="220" rx="22" fill="#E2F0E8"/>
+  <text x="874" y="267" font-family="Arial, sans-serif" font-size="19" font-weight="800" fill="#236344">3 · BUDGET SPENDING</text>
+  <text x="874" y="315" font-family="Arial, sans-serif" font-size="25" font-weight="800" fill="#17251E">Direct support</text>
+  <text x="874" y="355" font-family="Arial, sans-serif" font-size="18" fill="#3E4B45">Annual budget approval</text>
+  <text x="874" y="389" font-family="Arial, sans-serif" font-size="18" fill="#3E4B45">Execution checked at settlement</text>
+
+  <rect x="82" y="486" width="1036" height="104" rx="18" fill="#F9E7E1"/>
+  <text x="112" y="526" font-family="Arial, sans-serif" font-size="19" font-weight="800" fill="#9E3D30">WATCH</text>
+  <text x="225" y="526" font-family="Arial, sans-serif" font-size="19" fill="#17251E">Does the sunset end support—or move it into a new program?</text>
+  <text x="112" y="563" font-family="Arial, sans-serif" font-size="16" fill="#6B514C">No preference or conversion amount is named yet. The fiscal cost will appear in future budgets.</text>
+  <text x="1118" y="615" text-anchor="end" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#8D3B2E">SEED VOICE · TAX WATCH</text>
+</svg>

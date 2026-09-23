@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">세금감면을 예산사업으로 전환하는 법안</title>
+  <desc id="desc">조세지출을 매년 평가해 직접 예산지출로 전환하고 국회 예산과 결산에서 공개하는 흐름을 설명한다.</desc>
+  <rect width="1200" height="675" fill="#F4F1E8"/>
+  <rect x="40" y="35" width="1120" height="605" rx="28" fill="#FFFDF8" stroke="#D8D1C0" stroke-width="2"/>
+  <text x="82" y="92" font-family="Noto Sans KR, sans-serif" font-size="18" font-weight="700" fill="#8D3B2E" letter-spacing="1.5">오늘의 세금정책 · 국가재정법 개정안</text>
+  <text x="82" y="141" font-family="Noto Sans KR, sans-serif" font-size="36" font-weight="800" fill="#17251E">세금감면이 끝나도 지원은 예산으로 남을 수 있습니다</text>
+  <text x="82" y="178" font-family="Noto Sans KR, sans-serif" font-size="20" fill="#526159">법안은 조세지출을 평가해 직접 재정지출로 바꾸는 통로를 만듭니다.</text>
+
+  <rect x="82" y="224" width="310" height="220" rx="22" fill="#F3E9D1"/>
+  <text x="112" y="267" font-family="Noto Sans KR, sans-serif" font-size="19" font-weight="800" fill="#7A5B22">① 세금감면</text>
+  <text x="112" y="315" font-family="Noto Sans KR, sans-serif" font-size="25" font-weight="800" fill="#17251E">걷지 않은 세금</text>
+  <text x="112" y="355" font-family="Noto Sans KR, sans-serif" font-size="18" fill="#3E4B45">세법에 따라 공제·감면</text>
+  <text x="112" y="389" font-family="Noto Sans KR, sans-serif" font-size="18" fill="#3E4B45">비용·수혜자가 덜 보일 수 있음</text>
+
+  <path d="M414 333 H483" stroke="#8D3B2E" stroke-width="6" stroke-linecap="round"/>
+  <path d="M467 316 L488 333 L467 350" fill="none" stroke="#8D3B2E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="510" y="224" width="215" height="220" rx="22" fill="#F9E7E1"/>
+  <text x="540" y="267" font-family="Noto Sans KR, sans-serif" font-size="19" font-weight="800" fill="#9E3D30">② 매년 평가</text>
+  <text x="540" y="315" font-family="Noto Sans KR, sans-serif" font-size="21" font-weight="800" fill="#17251E">필요성</text>
+  <text x="540" y="352" font-family="Noto Sans KR, sans-serif" font-size="21" font-weight="800" fill="#17251E">효과성</text>
+  <text x="540" y="389" font-family="Noto Sans KR, sans-serif" font-size="21" font-weight="800" fill="#17251E">형평성</text>
+
+  <path d="M747 333 H816" stroke="#8D3B2E" stroke-width="6" stroke-linecap="round"/>
+  <path d="M800 316 L821 333 L800 350" fill="none" stroke="#8D3B2E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="844" y="224" width="274" height="220" rx="22" fill="#E2F0E8"/>
+  <text x="874" y="267" font-family="Noto Sans KR, sans-serif" font-size="19" font-weight="800" fill="#236344">③ 예산지출</text>
+  <text x="874" y="315" font-family="Noto Sans KR, sans-serif" font-size="25" font-weight="800" fill="#17251E">직접 지원</text>
+  <text x="874" y="355" font-family="Noto Sans KR, sans-serif" font-size="18" fill="#3E4B45">해마다 국회 예산심사</text>
+  <text x="874" y="389" font-family="Noto Sans KR, sans-serif" font-size="18" fill="#3E4B45">집행액·수혜자 결산 확인</text>
+
+  <rect x="82" y="486" width="1036" height="104" rx="18" fill="#F9E7E1"/>
+  <text x="112" y="526" font-family="Noto Sans KR, sans-serif" font-size="19" font-weight="800" fill="#9E3D30">감시할 지점</text>
+  <text x="250" y="526" font-family="Noto Sans KR, sans-serif" font-size="19" fill="#17251E">감면의 일몰이 지원의 종료인가, 예산사업으로 갈아타는 날인가</text>
+  <text x="112" y="563" font-family="Noto Sans KR, sans-serif" font-size="16" fill="#6B514C">특정 특례와 전환 금액은 아직 정해지지 않았습니다. 실제 비용은 향후 예산안에서 확인해야 합니다.</text>
+  <text x="1118" y="615" text-anchor="end" font-family="Noto Sans KR, sans-serif" font-size="16" font-weight="700" fill="#8D3B2E">씨앗의 소리 · 세금감시</text>
+</svg>
