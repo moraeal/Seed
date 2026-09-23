@@ -9,22 +9,6 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
-  "briefing:seojin-school-neighbors-civic-solidarity": {
-    ko: {
-      href: "/seed-language/citizen-as-seed",
-      title: "시민은 주어지는 이름이 아니라 자라나는 존재다",
-      relationship: "이웃에서 시민으로",
-      reason: "학교를 찾은 이웃의 행동을 보았다면, 시민이 어떻게 공공의 주체로 성장하는지 씨앗언어에서 이어서 읽습니다.",
-      listHref: "/briefings", listLabel: "브리핑 전체 보기",
-    },
-    en: {
-      href: "/seed-language/citizen-as-seed",
-      title: "A Citizen Is Not a Given Label but a Growing Being",
-      relationship: "FROM NEIGHBOR TO CITIZEN",
-      reason: "After seeing neighbors act together, read how citizens grow into agents of public life.",
-      listHref: "/briefings", listLabel: "All briefings",
-    },
-  },
   "column:suicide-prevention-mois-local-community": {
     ko: {
       href: "/columns/state-cannot-monopolize-life-2026",
