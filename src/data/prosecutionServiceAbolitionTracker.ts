@@ -716,16 +716,6 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       status: "new",
       sources: [
         {
-          publisher: { ko: "법무부", en: "Ministry of Justice" },
-          title: {
-            ko: "검찰 고위 간부 인사",
-            en: "Senior prosecution personnel appointment",
-          },
-          url: "https://www.moj.go.kr/bbs/moj/182/610562/artclView.do",
-          publishedAt: "2026-09-22",
-          kind: "document",
-        },
-        {
           publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
           title: {
             ko: "이정현 대검 차장 ‘이 대통령 공소취소, 진상조사 결과 살펴봐야’",
@@ -735,6 +725,16 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
           publishedAt: "2026-09-23",
           kind: "article",
           thumbnailSrc: "https://img5.yna.co.kr/photo/yna/YH/2026/09/23/PYH2026092302820001300_P4.jpg",
+        },
+        {
+          publisher: { ko: "법무부", en: "Ministry of Justice" },
+          title: {
+            ko: "검찰 고위 간부 인사",
+            en: "Senior prosecution personnel appointment",
+          },
+          url: "https://www.moj.go.kr/bbs/moj/182/610562/artclView.do",
+          publishedAt: "2026-09-22",
+          kind: "document",
         },
       ],
     },
