@@ -46,6 +46,36 @@ const legislativeCommentaries = legislativeCommentaryModule.legislativeCommentar
 const publisherLogo = `${SITE_URL}/images/brand/seed-civic-partners-logo.svg`;
 const koreaDateTime = (date) => date ? `${date}T00:00:00+09:00` : undefined;
 
+// GitHub Pages needs a physical file for each database-backed bill detail URL.
+// Read only public, published records so previews never enter the sitemap.
+const supabaseUrl = (process.env.VITE_SUPABASE_URL || "https://wajlmbahjyazkftwaeem.supabase.co").replace(/\/$/, "");
+const supabaseKey = process.env.VITE_SUPABASE_PUBLISHABLE_KEY
+  || process.env.VITE_SUPABASE_ANON_KEY
+  || "sb_publishable_gf96jsxTYvTeAzOL1AsBIA_fs4RlDje";
+const billsResponse = await fetch(
+  `${supabaseUrl}/rest/v1/legislative_bills?select=slug,title,public_summary_ko,seed_view_ko,detail_url,proposed_date,published_at&review_state=eq.published&order=published_at.desc&limit=1000`,
+  { headers: { apikey: supabaseKey }, signal: AbortSignal.timeout(20000) },
+);
+if (!billsResponse.ok) throw new Error(`Cannot load published bills for static pages: HTTP ${billsResponse.status}`);
+const publishedBills = await billsResponse.json();
+if (!Array.isArray(publishedBills) || publishedBills.length >= 1000) {
+  throw new Error("Published bill list is invalid or exceeds the current page limit");
+}
+const publishedBillBySlug = new Map(publishedBills.map((bill) => [bill.slug, bill]));
+const allRoutes = [
+  ...seoRoutes,
+  ...publishedBills.filter((bill) => /^bill-\d+$/.test(bill.slug)).map((bill) => ({
+    path: `/monitoring/legislation/${bill.slug}`,
+    title: `${bill.title} | 씨앗의 소리`,
+    description: bill.public_summary_ko || `${bill.title}의 발의 내용과 입법 진행 상황을 살펴봅니다.`,
+    type: "article",
+    publishedAt: bill.published_at?.slice(0, 10),
+    lastModified: bill.published_at?.slice(0, 10),
+    author: SITE_NAME,
+    section: "입법감시",
+  })),
+];
+
 const seedWatchListing = seedWatchReferences.map((reference) => {
   if (reference.kind === "news") {
     const item = news.find((entry) => entry.slug === reference.slug);
@@ -73,6 +103,15 @@ const paragraphList = (items = []) => items.filter(Boolean).map((item) => `<p>${
 const bulletList = (items = []) => items.length ? `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : "";
 
 function articleBody(route) {
+  const billMatch = route.path.match(/^\/monitoring\/legislation\/(bill-\d+)$/);
+  if (billMatch) {
+    const bill = publishedBillBySlug.get(billMatch[1]);
+    if (bill) return [
+      bill.public_summary_ko ? `<section><h2>법안 요약</h2>${paragraphList([bill.public_summary_ko])}</section>` : "",
+      bill.seed_view_ko ? `<section><h2>씨앗의 관점</h2>${paragraphList([bill.seed_view_ko])}</section>` : "",
+      bill.detail_url ? `<p><a href="${escapeHtml(bill.detail_url)}">국회 의안정보 원문</a></p>` : "",
+    ].join("\n");
+  }
   if (route.path === "/") {
     const latest = [
       ...news.map((item) => ({ path: `/news/${item.slug}`, title: item.title, summary: item.summary, date: item.date })),
@@ -282,7 +321,7 @@ function render(route) {
     .replace('<div id="root"></div>', `<div id="root">${fallback}</div>`);
 }
 
-for (const route of seoRoutes) {
+for (const route of allRoutes) {
   const output = route.path === "/" ? path.join(dist, "index.html") : path.join(dist, route.path.slice(1), "index.html");
   await mkdir(path.dirname(output), { recursive: true });
   await writeFile(output, render(route));
@@ -325,12 +364,12 @@ for (const [privatePath, privateTitle] of privateShellRoutes) {
   await writeFile(output, privateShell);
 }
 
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${seoRoutes.filter((route) => !route.noindex).map((route) => `  <url>\n    <loc>${canonicalUrl(route.path)}</loc>${route.lastModified ? `\n    <lastmod>${route.lastModified}</lastmod>` : ""}\n  </url>`).join("\n")}\n</urlset>\n`;
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${allRoutes.filter((route) => !route.noindex).map((route) => `  <url>\n    <loc>${canonicalUrl(route.path)}</loc>${route.lastModified ? `\n    <lastmod>${route.lastModified}</lastmod>` : ""}\n  </url>`).join("\n")}\n</urlset>\n`;
 await writeFile(path.join(dist, "sitemap.xml"), sitemap);
 
 const newsCutoff = new Date();
 newsCutoff.setUTCDate(newsCutoff.getUTCDate() - 2);
-const recentNewsRoutes = seoRoutes.filter((route) =>
+const recentNewsRoutes = allRoutes.filter((route) =>
   route.type === "article"
   && route.lastModified
   && !["/founding-statement", "/publisher-message"].includes(route.path)
@@ -353,7 +392,7 @@ ${recentNewsRoutes.map((route) => `  <url>
 </urlset>
 `;
 await writeFile(path.join(dist, "news-sitemap.xml"), newsSitemap);
-const feedRoutes = seoRoutes
+const feedRoutes = allRoutes
   .filter((route) => route.type === "article" && route.lastModified)
   .sort((a, b) => b.lastModified.localeCompare(a.lastModified) || a.path.localeCompare(b.path))
   .slice(0, 50);
