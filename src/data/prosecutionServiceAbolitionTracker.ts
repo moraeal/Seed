@@ -19,15 +19,15 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     en: "On October 2, 2026, South Korea's Prosecution Service will be abolished and replaced by a Prosecution Agency and a Serious Crimes Investigation Agency. This record follows where the powers to investigate, indict, seek warrants and review non-referral decisions actually move—and whether staffing, budgets and case transfers are ready.",
   },
   status: {
-    ko: "출범 9일 전·공소청 직제 국무회의 의결·중수청 최종 임용 대기",
-    en: "9 days to launch · Prosecution Agency structure approved · Final investigation-agency appointments pending",
+    ko: "출범 8일 전·공소청 전환 지휘부 보강·중수청 최종 임용 대기",
+    en: "8 days to launch · Transition leadership installed · Final investigation-agency appointments pending",
   },
   openedAt: "2025-09-05",
-  updatedAt: "2026-09-23",
+  updatedAt: "2026-09-24",
   continuationEligible: true,
   nextCheck: {
-    ko: "사회적 약자 대상 7대 범죄의 보완·재수사 근거를 담은 중수청법 개정안의 공포일·법률번호와 최종 조문, 2차 특례임용 201명의 최종 선발 인원과 5급 이상 임용 예정자 212명의 확정·발령 결과, 공소청 직제·검사정원법 시행령의 공포문과 출범일 실제 검사 약 1,900명·형사법무직 938명 배치 결과, 김지용 중수청장 후보자의 인사청문요청서 제출·청문 일정, 경찰 현장지원 체계와 10월 2일 사건 이관·KICS 필수 기능 가동 여부",
-    en: "Promulgation date, act number and final text of the amendment covering supplementary and renewed investigations in seven vulnerable-victim crime categories; final selections from the 201 second-round applicants and confirmation and appointment of the 212 provisional senior staff; promulgated texts of the Prosecution Agency organization and prosecutor-ceiling decrees and the actual launch deployment of about 1,900 prosecutors and 938 criminal-legal-service staff; submission of the confirmation request and a hearing date for nominee Kim Ji-yong; police field-support arrangements; and October 2 case transfers and essential KICS functions",
+    ko: "사회적 약자 대상 7대 범죄의 보완·재수사 근거를 담은 중수청법 개정안의 공포일·법률번호와 최종 조문, 2차 특례임용 201명의 최종 선발 인원과 5급 이상 임용 예정자 212명의 확정·발령 결과, 공소청 직제·검사정원법 시행령의 공포문과 출범일 실제 검사 약 1,900명·형사법무직 938명 배치 결과, 김지용 중수청장 후보자의 인사청문요청서 제출·청문 일정, 이정현 검찰총장 직무대행이 밝힌 중수청·경찰과의 업무협약과 협력 절차, 경찰 현장지원 체계와 10월 2일 사건 이관·KICS 필수 기능 가동 여부",
+    en: "Promulgation date, act number and final text of the amendment covering supplementary and renewed investigations in seven vulnerable-victim crime categories; final selections from the 201 second-round applicants and confirmation and appointment of the 212 provisional senior staff; promulgated texts of the Prosecution Agency organization and prosecutor-ceiling decrees and the actual launch deployment of about 1,900 prosecutors and 938 criminal-legal-service staff; submission of the confirmation request and a hearing date for nominee Kim Ji-yong; any memorandum and working procedures with the investigation agency and police announced by acting prosecutor general Lee Jeong-hyeon; police field-support arrangements; and October 2 case transfers and essential KICS functions",
   },
   heroImage: {
     src: "images/monitoring/prosecution-service-abolition-tracker-hero.webp",
@@ -131,6 +131,13 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       text: {
         ko: "국무회의가 공소청 직제와 검사정원법 시행령안을 의결했습니다. 검사 법정 정원은 2,292명으로 두되 결원을 채우지 않아 약 1,900명으로 출범하고, 수사관은 2,048명을 줄여 형사법무직 938명만 남기는 계획입니다.",
         en: "The Cabinet approved the Prosecution Agency organization and prosecutor-ceiling decrees. The statutory ceiling remains 2,292, but vacancies will be left unfilled for a launch force of about 1,900 prosecutors, while 2,048 investigator posts will be removed, leaving 938 criminal-legal-service staff.",
+      },
+    },
+    {
+      date: "2026-09-23",
+      text: {
+        ko: "이정현 수원고검장이 대검 차장검사로 부임해 검찰총장 직무를 대행하고 공소청 전환을 지휘하게 됐습니다. 그는 중수청·경찰과 업무협약을 포함한 협력관계를 강화하겠다고 밝혔지만 구체적인 절차는 아직 공개되지 않았습니다.",
+        en: "Lee Jeong-hyeon took office as deputy prosecutor general, becoming acting prosecutor general and taking charge of the transition. He called for stronger cooperation with the new investigation agency and police, including memoranda of understanding, but no detailed procedures have yet been released.",
       },
     },
   ],
@@ -693,6 +700,45 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-23",
+      title: {
+        ko: "이정현 검찰총장 직무대행, 공소청 전환 지휘",
+        en: "Lee Jeong-hyeon takes charge of the Prosecution Agency transition",
+      },
+      description: {
+        ko: "법무부가 이정현 수원고검장을 9월 23일자로 대검 차장검사에 전보했고, 공석인 검찰총장 직무도 맡겼습니다. 법무부는 대검 차장의 사직으로 생긴 지휘부 공백을 메우고 공소청 출범을 차질 없이 준비하기 위한 인사라고 설명했습니다. 이 직무대행은 첫 출근길에 공소청을 인권 보호 기관으로 조기에 안착시키고 중수청·경찰과 업무협약을 포함한 사전 협력관계를 강화하겠다고 밝혔습니다. 지휘부는 채워졌지만 기관 간 사건 이관·보완수사 요구·정보 공유 절차는 아직 공개되지 않았습니다. 출범 뒤 협약 문서와 실제 사건 처리 결과를 확인해야 합니다.",
+        en: "The Justice Ministry transferred Suwon High Prosecutors' Office chief Lee Jeong-hyeon to deputy prosecutor general effective September 23, making him acting prosecutor general while the top post remains vacant. The ministry said the appointment was intended to fill a leadership gap and ensure an orderly launch of the Prosecution Agency. On his first day, Lee said he would help establish the agency as a protector of human rights and strengthen advance coordination with the Serious Crimes Investigation Agency and police, including memoranda of understanding. Leadership is now in place, but procedures for transferring cases, requesting further investigation and sharing information have not been published. The public test will be the written agreements and actual case handling after launch.",
+      },
+      change: {
+        ko: "두 달 가까이 비었던 검찰 지휘부를 출범 9일 전에 채웠지만 기관 간 협력 규칙은 아직 약속 단계",
+        en: "A leadership vacancy lasting nearly two months is filled nine days before launch, while inter-agency rules remain only a commitment",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "법무부", en: "Ministry of Justice" },
+          title: {
+            ko: "검찰 고위 간부 인사",
+            en: "Senior prosecution personnel appointment",
+          },
+          url: "https://www.moj.go.kr/bbs/moj/182/610562/artclView.do",
+          publishedAt: "2026-09-22",
+          kind: "document",
+        },
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: {
+            ko: "이정현 대검 차장 ‘이 대통령 공소취소, 진상조사 결과 살펴봐야’",
+            en: "Deputy prosecutor general Lee says results of review should be examined before decision on presidential case",
+          },
+          url: "https://www.yna.co.kr/amp/view/AKR20260923035252004",
+          publishedAt: "2026-09-23",
+          kind: "article",
+          thumbnailSrc: "https://img5.yna.co.kr/photo/yna/YH/2026/09/23/PYH2026092302820001300_P4.jpg",
+        },
+      ],
+    },
+    {
       date: "2026-10-02",
       title: {
         ko: "검찰청 폐지·공소청과 중수청 출범 예정",
@@ -799,6 +845,10 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     {
       ko: "중수청 2차 특례임용 추가 지원자는 201명으로 보도됐습니다. 1차 지원자 가운데 5급 이상 임용 예정자는 212명이며 검사 80명이 포함됐지만, 명단은 아직 최종 확정·발령 전입니다.",
       en: "The second special-transfer round drew a reported 201 additional applicants. The first-round pool produced 212 provisional appointees at Grade 5 or above, including 80 prosecutors, but the list has not yet been finalized or formally appointed.",
+    },
+    {
+      ko: "법무부는 이정현 수원고검장을 9월 23일자로 대검 차장검사에 전보했고, 이 차장이 검찰총장 직무를 대행하며 공소청 출범 준비를 지휘하고 있습니다.",
+      en: "The Justice Ministry transferred Lee Jeong-hyeon from chief of the Suwon High Prosecutors' Office to deputy prosecutor general effective September 23; he is acting prosecutor general and directing preparations for the Prosecution Agency launch.",
     },
   ],
   currentControversies: [
