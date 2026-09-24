@@ -1015,5 +1015,10 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       url: "https://www.yna.co.kr/view/AKR20260922046553004",
       note: { ko: "검사 약 1,900명·형사법무직 938명 출범 계획과 일반직 2,525명 감축, 9월 22일 국무회의 의결", en: "September 22 Cabinet approval of plans for about 1,900 prosecutors, 938 criminal-legal-service staff and 2,525 general-service cuts" },
     },
+    {
+      label: { ko: "법무부 — 검찰 고위 간부 인사", en: "Justice Ministry — Senior prosecution personnel appointment" },
+      url: "https://www.moj.go.kr/bbs/moj/182/610562/artclView.do",
+      note: { ko: "이정현 수원고검장을 9월 23일자로 대검 차장검사에 전보한 공식 인사자료", en: "Official appointment notice transferring Lee Jeong-hyeon to deputy prosecutor general effective September 23" },
+    },
   ],
 };
