@@ -15,18 +15,18 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     en: "Will Merging the Service Academies Make the Military Stronger?",
   },
   summary: {
-    ko: "정부는 육·해·공군 사관학교를 대전 자운대의 4년제 국군사관학교로 통합하는 기본계획을 발표했습니다. 씨앗은 초기 2+2 구상에서 4년 통합안으로 바뀐 과정, ROTC·학사장교의 교육 공백, 공청회와 입법, 비용과 부지 활용, 차기 국방부 장관의 수정 여부를 계속 기록합니다.",
-    en: "The government has proposed merging the Army, Navy and Air Force academies into a four-year Armed Forces Academy at Jaun-dae in Daejeon. SEED tracks the shift from an early two-plus-two model to full co-location, gaps in ROTC and officer-candidate education, hearings and legislation, cost and campus reuse, and any revisions under the next defense minister.",
+    ko: "정부는 육·해·공군 사관학교를 대전 자운대의 4년제 국군사관학교로 통합하는 기본계획을 발표했습니다. 씨앗은 초기 2+2 구상에서 4년 통합안으로 바뀐 과정, ROTC·학사장교의 교육 공백, 공청회와 입법, 비용과 부지 활용, 신임 국방부 장관의 수정 여부를 계속 기록합니다.",
+    en: "The government has proposed merging the Army, Navy and Air Force academies into a four-year Armed Forces Academy at Jaun-dae in Daejeon. SEED tracks the shift from an early two-plus-two model to full co-location, gaps in ROTC and officer-candidate education, hearings and legislation, cost and campus reuse, and any revisions under the new defense minister.",
   },
   status: {
     ko: "기본계획 발표·보완 검토",
     en: "Basic plan announced · Revisions under review",
   },
   openedAt: "2025-06-26",
-  updatedAt: "2026-09-17",
+  updatedAt: "2026-09-24",
   nextCheck: {
-    ko: "10월 세부계획의 통합 선발 시점과 방식, 자운대 이전 일정·총사업비, 각 군 전문교육 시설, ROTC·학사장교 합동교육 확대안, 국군사관학교 설치법 발의 내용",
-    en: "The October detailed plan: admissions timing and model, Jaun-dae schedule and full cost, service-specific facilities, expanded joint education for ROTC and officer candidates, and the Armed Forces Academy bill",
+    ko: "10월 세부계획의 통합 선발 시점과 방식, 자운대 이전 일정·총사업비, 각 군 전문교육 시설, ROTC·학사장교 합동교육 확대안, 국군사관학교 설치법과 2028년 예산 편성 전 선행연구 일정",
+    en: "The October detailed plan: admissions timing and model, Jaun-dae schedule and full cost, service-specific facilities, expanded joint education for ROTC and officer candidates, the Armed Forces Academy bill, and studies required before possible 2028 funding",
   },
   heroImage: {
     src: "images/monitoring/military-academy-integration-tracker.webp",
@@ -44,12 +44,12 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     },
   },
   sourceBasis: {
-    ko: "국방부의 2026년 7월 기본계획 발표와 8월 26일 공청회 영상, 국회에 제출된 육군본부 장교 양성기관별 교육 현황을 인용한 보도, 9월 16일 국방부 장관 후보자 인사청문회 답변을 날짜별로 대조했습니다. 발표 전 보도에 나온 2+2·장성 이전안과 발표된 자운대 4년 통합안을 구분했습니다.",
-    en: "This tracker cross-checks the Defense Ministry's July 2026 basic plan and August 26 hearing video, reporting based on Army commissioning-route data submitted to the National Assembly, and the defense minister nominee's September 16 testimony. It distinguishes pre-announcement two-plus-two and Jangseong concepts from the announced four-year Jaun-dae model.",
+    ko: "국방부의 2026년 7월 기본계획 발표와 8월 26일 공청회 영상, 국회에 제출된 육군본부 장교 양성기관별 교육 현황을 인용한 보도, 9월 1일 2027년도 정부 예산안, 9월 16일 국방부 장관 후보자 인사청문회 답변을 날짜별로 대조했습니다. 발표 전 보도에 나온 2+2·장성 이전안과 발표된 자운대 4년 통합안을 구분했습니다.",
+    en: "This tracker cross-checks the Defense Ministry's July 2026 basic plan and August 26 hearing video, reporting based on Army commissioning-route data submitted to the National Assembly, the government's September 1 budget proposal for 2027, and the defense minister nominee's September 16 testimony. It distinguishes pre-announcement two-plus-two and Jangseong concepts from the announced four-year Jaun-dae model.",
   },
   caution: {
-    ko: "국군사관학교의 첫 통합 선발 시점, 이전 완료 시기와 총사업비는 아직 확정되지 않았습니다. 2028년 출범과 2032~2036년 이전은 검토안으로 보도된 일정이며, 7월 기본계획은 구체적인 입학 연도를 명시하지 않았습니다. ‘정치적 징벌’은 공식 확인된 목적이 아니라 대통령과 국방부의 역사 단절 발언에서 제기된 해석입니다.",
-    en: "The first integrated class, relocation completion date and total cost remain unsettled. A 2028 launch and 2032–36 relocation were reported as options; the July basic plan did not set a first admissions year. Political punishment is an interpretation prompted by official historical-rupture language, not a confirmed stated purpose.",
+    ko: "국군사관학교의 첫 통합 선발 시점, 이전 완료 시기와 총사업비는 아직 확정되지 않았습니다. 2027년도 정부 예산안에는 창설 사업비가 별도 반영되지 않았고, 2028년 편성은 선행연구 뒤 검토하는 단계입니다. 2028년 출범과 2032~2036년 이전도 확정 일정이 아닙니다. ‘정치적 징벌’은 공식 확인된 목적이 아니라 대통령과 국방부의 역사 단절 발언에서 제기된 해석입니다.",
+    en: "The first integrated class, relocation completion date and total cost remain unsettled. The government's 2027 budget proposal contains no dedicated academy-merger funding; possible 2028 funding remains under review after preliminary studies. A 2028 launch and 2032–36 relocation are also not confirmed schedules. Political punishment is an interpretation prompted by official historical-rupture language, not a confirmed stated purpose.",
   },
   keyChanges: [
     {
@@ -64,6 +64,13 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
       text: {
         ko: "ROTC·학사장교가 2024년 신임장교의 약 70%를 배출했지만 합동성 교육은 2시간에 그친다는 육군 자료가 공개됐습니다.",
         en: "Army data showed ROTC and officer-candidate routes produced about 70 percent of 2024 commissions but received two hours of joint instruction.",
+      },
+    },
+    {
+      date: "2026-09-01",
+      text: {
+        ko: "2027년도 정부 국방예산안에 국군사관학교 창설 사업비가 별도 반영되지 않아, 선행연구와 2028년 이후 재원 확보가 새 관문이 됐습니다.",
+        en: "The government's 2027 defense budget proposal contains no dedicated academy-merger funding, making preliminary studies and possible funding from 2028 the next hurdle.",
       },
     },
     {
@@ -216,20 +223,46 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-01",
+      title: {
+        ko: "2027년도 정부 예산안에 창설 사업비 미반영",
+        en: "No academy-merger funding in the government's 2027 budget proposal",
+      },
+      description: {
+        ko: "정부가 국회에 제출하기로 한 2027년도 국방예산안 73조2,777억 원에는 국군사관학교 창설 관련 사업비가 별도 반영되지 않았습니다. 국방부는 선행연구로 사업 규모와 소요 재원을 구체화한 뒤 2028년도 예산안 편성을 검토한다는 입장입니다. 이는 통합 철회가 아니라 타당성·비용 검증과 국회 예산 심사가 남았다는 뜻이며, 2028년 편성도 아직 확정되지 않았습니다.",
+        en: "The government's proposed 2027 defense budget of KRW 73.2777 trillion contains no dedicated funding for creating the Armed Forces Academy. The ministry says it will define the project's scale and financing through preliminary studies before considering the 2028 budget. This does not cancel the merger, but it leaves feasibility, cost and parliamentary funding review unresolved; 2028 funding is not confirmed.",
+      },
+      change: {
+        ko: "기본계획 발표 뒤에도 첫해 사업비가 편성되지 않아 재원·일정의 불확실성이 공식 예산안에서 확인",
+        en: "The first post-plan budget proposal confirms continued uncertainty over financing and schedule",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "동아일보", en: "The Dong-A Ilbo" },
+          title: { ko: "내년 국방예산 70조 첫 돌파…사관학교 통합 예산은 반영 안해", en: "2027 defense budget proposal omits academy-merger funding" },
+          url: "https://www.donga.com/news/Politics/article/all/20260901/134583162/1",
+          publishedAt: "2026-09-01",
+          kind: "article",
+          thumbnailSrc: "images/monitoring/military-academy-news/2026-09-01-donga.jpg",
+        },
+      ],
+    },
+    {
       date: "2026-09-16",
       title: {
         ko: "장관 후보자 ‘현재 안은 완전하지 않다’",
         en: "Defense minister nominee calls the current plan incomplete",
       },
       description: {
-        ko: "강신철 국방부 장관 후보자는 인사청문회에서 사관학교 개혁과 통합교육의 필요성에는 동의했지만 현 기본안에는 보완할 부분이 있다고 밝혔습니다. 물리적 통합뿐 아니라 비물리적 연결도 가능하며 여러 의견을 듣겠다고 말했습니다. 10월 세부계획이 기본안의 골격을 얼마나 수정할지가 새 관찰 지점이 됐습니다.",
-        en: "At his confirmation hearing, Kang Shin-chul supported academy reform and integrated education but said the current basic plan needed improvement. He noted that integration could be physical or non-physical and promised to hear competing views. The next test is how much the October detailed plan changes the July framework.",
+        ko: "강신철 현 국방부 장관은 후보자 인사청문회에서 사관학교 개혁과 통합교육의 필요성에는 동의했지만 현 기본안에는 보완할 부분이 있다고 밝혔습니다. 물리적 통합뿐 아니라 비물리적 연결도 가능하며 여러 의견을 듣겠다고 말했습니다. 9월 22일 취임했지만 수정안은 아직 발표하지 않아, 10월 세부계획이 기본안의 골격을 얼마나 바꿀지가 관찰 지점입니다.",
+        en: "At his confirmation hearing, now-defense minister Kang Shin-chul supported academy reform and integrated education but said the current basic plan needed improvement. He noted that integration could be physical or non-physical and promised to hear competing views. He took office on September 22 but has not announced revisions, making the October detailed plan the next test of how much the July framework may change.",
       },
       change: {
         ko: "차기 국방부 수장이 기본안의 보완 가능성을 공개적으로 인정",
         en: "Incoming defense leadership publicly acknowledges room to revise the basic plan",
       },
-      status: "new",
+      status: "confirmed",
       sources: [
         {
           publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
@@ -272,8 +305,12 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
       en: "Pre-commission joint instruction was reported at two hours for ROTC and officer candidates, compared with 280 hours at KMA.",
     },
     {
-      ko: "강신철 국방부 장관 후보자는 9월 16일 현재 기본안이 완전하지 않으며 보완이 필요하다고 밝혔습니다.",
-      en: "On September 16, defense minister nominee Kang Shin-chul said the current plan was incomplete and needed improvement.",
+      ko: "강신철 현 국방부 장관은 후보자였던 9월 16일 현재 기본안이 완전하지 않으며 보완이 필요하다고 밝혔습니다.",
+      en: "On September 16, then-defense minister nominee Kang Shin-chul said the current plan was incomplete and needed improvement.",
+    },
+    {
+      ko: "2027년도 정부 국방예산안에는 국군사관학교 창설 사업비가 별도 반영되지 않았으며, 2028년 편성은 선행연구 뒤 검토할 사안입니다.",
+      en: "The government's 2027 defense budget proposal contains no dedicated Armed Forces Academy funding; possible 2028 funding remains subject to preliminary studies.",
     },
   ],
   questions: [
@@ -336,6 +373,10 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     {
       label: { ko: "연합뉴스 — 국방부 장관 후보자 인사청문회", en: "Yonhap — Defense minister nominee's testimony" },
       url: "https://www.yna.co.kr/amp/view/AKR20260916093451504",
+    },
+    {
+      label: { ko: "동아일보 — 2027년도 정부 국방예산안", en: "The Dong-A Ilbo — Government's 2027 defense budget proposal" },
+      url: "https://www.donga.com/news/Politics/article/all/20260901/134583162/1",
     },
   ],
 };
