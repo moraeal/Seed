@@ -174,7 +174,7 @@ export default function LegislativeAdminPanel({ session }: { session: AuthSessio
 
   return <section>
     <div className="flex flex-wrap items-end justify-between gap-4 border-b-2 border-navy pb-5">
-      <div><p className="section-kicker">LEGISLATIVE MONITOR</p><h2 className="editorial-title mt-2 text-3xl font-bold text-navy">입법감시 관리</h2><p className="mt-2 text-sm leading-6 text-charcoal/55">화요일과 금요일에 본회의 통과법안을 자동 분석·공개합니다. 공개된 기록을 확인한 뒤 보완하거나 보류·제외하고, 씨앗이 더 주목할 법안을 지정할 수 있습니다.</p></div>
+      <div><p className="section-kicker">LEGISLATIVE MONITOR</p><h2 className="editorial-title mt-2 text-3xl font-bold text-navy">입법감시 관리</h2><p className="mt-2 text-sm leading-6 text-charcoal/55">새 발의안은 수집·분석 후 검토 목록에 쌓이며, 검토한 법안만 공개할 수 있습니다. 본회의 통과법안은 기존 화·금 점검을 이어갑니다. 의안번호와 진행 단계를 확인하고 문안을 다듬어 주세요.</p></div>
       <button type="button" onClick={() => void refresh()} disabled={loading} className="button-secondary"><RefreshCw size={15} className={loading ? "animate-spin" : ""}/>새로고침</button>
     </div>
 

@@ -303,7 +303,7 @@ async function analyzeBill(bill: NormalizedBill) {
       input: [
         {
           role: "system",
-          content: "You analyze Korean legislation that has passed the National Assembly plenary for SEED VOICE, an independent civic journal. Use only the supplied official record. Clearly distinguish plenary passage from promulgation and enforcement. Separate confirmed provisions from likely effects. Never invent costs, legal effects, stakeholders, or political motives. If evidence is missing, place the limitation in evidence_gaps. Examine citizen choice and rights, business and market burdens, transfers of authority, enforcement powers, fiscal exposure, and unintended effects. Explicitly classify whether the passed bill expands freedom, is mixed, moves in a reverse direction by narrowing citizen or business freedom or enlarging insufficiently checked power, or is neutral. A beneficial stated purpose does not cancel coercive duties, sanctions, delegated power, barriers to entry, surveillance, compelled disclosure, or weakened review; identify those mechanisms precisely and avoid partisan labels. title_en must be a faithful, natural English bill title. official_rationale_en must concisely translate the official rationale and principal provisions, without adding analysis, and should stay under 350 English words. Keep every array concise with 2 to 4 items unless the evidence supports fewer. Write concise Korean and polished English for international readers. Do not recommend partisan support or opposition.",
+          content: "You analyze Korean legislation for SEED VOICE, an independent civic journal. Use only the supplied official record. Distinguish a newly proposed bill from plenary passage, promulgation and enforcement; never describe a proposal as current law. Separate confirmed proposed provisions from likely effects. Never invent costs, legal effects, stakeholders, or political motives. If evidence is missing, place the limitation in evidence_gaps. Examine citizen choice and rights, business and market burdens, transfers of authority, enforcement powers, fiscal exposure, and unintended effects. Classify whether the proposal expands freedom, is mixed, narrows citizen or business freedom or enlarges insufficiently checked power, or is neutral. A beneficial stated purpose does not cancel coercive duties, sanctions, delegated power, barriers to entry, surveillance, compelled disclosure, or weakened review; identify those mechanisms precisely and avoid partisan labels. title_en must be a faithful, natural English bill title. official_rationale_en must concisely translate the official rationale and principal provisions, without adding analysis, and should stay under 350 English words. Keep every array concise with 2 to 4 items unless the evidence supports fewer. Write concise Korean and polished English for international readers. Do not recommend partisan support or opposition.",
         },
         { role: "user", content: JSON.stringify(evidence) },
       ],
@@ -322,6 +322,27 @@ async function analyzeBill(bill: NormalizedBill) {
   }).join("");
   if (!text) throw new Error("OpenAI analysis did not return structured text");
   return JSON.parse(text);
+}
+
+function hasCompleteSummaryPage(analysis: unknown) {
+  if (!analysis || typeof analysis !== "object" || Array.isArray(analysis)) return false;
+  const result = analysis as Json;
+  const requiredText = ["title_en", "official_rationale_en", "summary_ko", "summary_en"];
+  const requiredArrays = [
+    "changes_ko", "changes_en",
+    "positive_effects_ko", "positive_effects_en",
+    "risks_ko", "risks_en",
+    "citizen_impact_ko", "citizen_impact_en",
+    "business_impact_ko", "business_impact_en",
+    "authority_shift_ko", "authority_shift_en",
+    "direction_rationale_ko", "direction_rationale_en",
+    "watch_points_ko", "watch_points_en",
+    "evidence_gaps_ko", "evidence_gaps_en",
+  ];
+  return requiredText.every((key) => Boolean(clean(result[key])))
+    && requiredArrays.every((key) => Array.isArray(result[key]))
+    && ["freedom_expanding", "mixed", "reverse_direction", "neutral"].includes(String(result.direction_classification || ""))
+    && ["low", "medium", "high"].includes(String(result.confidence || ""));
 }
 
 type MediaCandidate = {
@@ -533,12 +554,14 @@ Deno.serve(async (req: Request) => {
   if (req.method !== "POST") return json({ error: "method_not_allowed" }, 405);
   if (!(await verifyCronToken(req.headers.get("x-seed-cron-token")))) return json({ error: "unauthorized" }, 401);
 
-  let body: { days?: number; analyze?: boolean; analysisLimit?: number; media?: boolean; autoPublish?: boolean } = {};
+  let body: { days?: number; startOffset?: number; analyze?: boolean; analysisLimit?: number; media?: boolean; autoPublish?: boolean; mode?: "proposed" | "plenary-passed" } = {};
   try { body = await req.json(); } catch { /* Empty body uses safe defaults. */ }
   const days = Math.max(1, Math.min(14, Number(body.days || 3)));
+  const startOffset = Math.max(0, Math.min(30, Number(body.startOffset || 0)));
   const shouldAnalyze = body.analyze !== false;
   const shouldCheckMedia = body.media !== false;
-  const autoPublish = body.autoPublish !== false;
+  const proposalMode = body.mode === "proposed";
+  const autoPublish = !proposalMode && body.autoPublish !== false;
   const analysisLimit = Math.max(1, Math.min(12, Number(body.analysisLimit || 6)));
   const startedAt = new Date().toISOString();
   let runId = "";
@@ -547,20 +570,20 @@ Deno.serve(async (req: Request) => {
     const runResponse = await rest("legislative_sync_runs", {
       method: "POST",
       headers: adminHeaders("return=representation"),
-      body: JSON.stringify({ endpoint: ALL_BILLS_ENDPOINT, metadata: { days, shouldAnalyze, autoPublish, mode: "plenary-passed" } }),
+      body: JSON.stringify({ endpoint: ALL_BILLS_ENDPOINT, metadata: { days, startOffset, shouldAnalyze, autoPublish, mode: proposalMode ? "proposed" : "plenary-passed" } }),
     });
     if (runResponse.ok) runId = String((await runResponse.json())?.[0]?.id || "");
 
     const collected = new Map<string, Json>();
     const warnings: string[] = [];
     for (let offset = 0; offset < days; offset += 1) {
-      const date = koreaDate(-offset);
+      const date = koreaDate(-offset - startOffset);
       try {
-        const rows = await fetchAssembly(ALL_BILLS_ENDPOINT, date, "PROC_DT");
+        const rows = await fetchAssembly(ALL_BILLS_ENDPOINT, date, proposalMode ? "PROPOSE_DT" : "PROC_DT");
         for (const row of rows) {
-          const rowDate = parseDate(first(row, ["PROC_DT", "proc_dt"]));
+          const rowDate = parseDate(first(row, proposalMode ? ["PROPOSE_DT", "propose_dt"] : ["PROC_DT", "proc_dt"]));
           const result = first(row, ["PROC_RESULT_CD", "PROC_RESULT", "proc_result_cd", "proc_result"]);
-          if (rowDate !== date || !result?.includes("가결")) continue;
+          if (rowDate !== date || (!proposalMode && !result?.includes("가결"))) continue;
           const id = first(row, ["BILL_ID", "bill_id", "BILLID"]);
           if (id) collected.set(id, { ...(collected.get(id) || {}), ...row });
         }
@@ -588,8 +611,10 @@ Deno.serve(async (req: Request) => {
       }
       for (const bill of saved) mediaScores.set(bill.bill_id, mediaImpact(mediaCandidates.get(bill.bill_id) || []));
     }
-    const rankedImportantBills = saved
-      .filter((item) => !["held", "excluded"].includes(item.review_state))
+    // Every bill remains in the internal collection. Only newly selected bills
+    // advance to analysis and can receive a public list entry + summary page.
+    const selectedBills = saved
+      .filter((item) => ["collected", "queued", "error"].includes(item.review_state))
       .map((item) => ({ bill: item, mediaScore: mediaScores.get(item.bill_id) || 0 }))
       .filter(({ bill, mediaScore }) => bill.importance_score >= ANALYSIS_THRESHOLD || bill.direction_risk_score >= 60 || mediaScore >= 25)
       .sort((a, b) => (b.bill.importance_score + b.mediaScore) - (a.bill.importance_score + a.mediaScore)
@@ -599,11 +624,14 @@ Deno.serve(async (req: Request) => {
     const openaiConfigured = Boolean(Deno.env.get("OPENAI_API_KEY"));
     let analyzed = 0;
     const analysisErrors: string[] = [];
-    const analysisBills = shouldAnalyze ? rankedImportantBills : [];
+    const analysisBills = shouldAnalyze ? selectedBills : [];
     await Promise.all(analysisBills.map(async (bill) => {
       try {
         const analysis = await analyzeBill(bill);
         if (!analysis) return;
+        if (!hasCompleteSummaryPage(analysis)) {
+          throw new Error("Selected bill analysis is incomplete; public list and summary page were not created");
+        }
         const candidates = mediaCandidates.get(bill.bill_id) || [];
         const mediaCoverage = shouldCheckMedia ? await summarizeMediaCoverage(bill, candidates) : [];
         const now = new Date().toISOString();
@@ -616,7 +644,7 @@ Deno.serve(async (req: Request) => {
             analysis_generated_at: now,
             review_state: autoPublish ? "published" : "review",
             published_at: autoPublish ? bill.published_at || now : bill.published_at,
-            current_stage: "본회의",
+            current_stage: bill.plenary_passed_at ? "본회의" : "발의",
             media_impact_score: mediaScores.get(bill.bill_id) || 0,
             media_coverage: mediaCoverage,
             media_coverage_draft: mediaCoverage,
@@ -647,7 +675,7 @@ Deno.serve(async (req: Request) => {
     if (runId) await rest(`legislative_sync_runs?id=eq.${runId}`, {
       method: "PATCH",
       headers: adminHeaders("return=minimal"),
-      body: JSON.stringify({ finished_at: new Date().toISOString(), status, fetched_count: collected.size, inserted_count: saved.length, queued_count: rankedImportantBills.length, metadata: { days, analysisLimit, openaiConfigured, autoPublish, analyzed, mediaChecked, mediaDrafts, warnings, analysisErrors, mediaErrors, startedAt } }),
+      body: JSON.stringify({ finished_at: new Date().toISOString(), status, fetched_count: collected.size, inserted_count: saved.length, queued_count: selectedBills.length, metadata: { days, analysisLimit, openaiConfigured, autoPublish, analyzed, mediaChecked, mediaDrafts, warnings, analysisErrors, mediaErrors, startedAt } }),
     });
     return json({ ok: true, status, fetched: collected.size, saved: saved.length, openaiConfigured, analyzed, mediaChecked, mediaDrafts, warnings, analysisErrors, mediaErrors });
   } catch (error) {
