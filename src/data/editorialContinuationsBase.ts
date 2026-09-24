@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "briefing:north-korean-pows-south-korea-zelensky-un": {
+    ko: {
+      href: "/seed-language/unification-freedom-responsibility",
+      title: "통일은 자유와 책임을 함께 묻는 일이다",
+      relationship: "북한 주민의 선택과 자유",
+      reason: "두 포로의 자유의사를 살펴본 뒤, 통일이라는 말 속에서 북한 주민을 스스로 결정하는 사람으로 대하는 기준을 이어서 읽습니다.",
+      listHref: "/briefings",
+      listLabel: "브리핑 전체 보기",
+    },
+    en: {
+      href: "/seed-language/unification-freedom-responsibility",
+      title: "Unification Must Bring Freedom and Responsibility Together",
+      relationship: "CHOICE AND FREEDOM FOR NORTH KOREANS",
+      reason: "After examining the prisoners' own wishes, consider what it means to treat North Koreans as people with choices in discussions of unification.",
+      listHref: "/briefings",
+      listLabel: "All briefings",
+    },
+  },
   "column:real-estate-supervisor-citizens-accounts": {
     ko: {
       href: "/columns/farmland-ownership-without-an-exit",

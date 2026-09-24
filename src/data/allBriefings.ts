@@ -14,8 +14,9 @@ import { activistFundingPressureBriefing } from "./activistFundingPressureBriefi
 import { hospitalInheritanceTaxBriefing } from "./hospitalInheritanceTaxBriefing";
 import { skHynixAiHackathonBriefing } from "./skHynixAiHackathonBriefing";
 import { seojinSchoolNeighborsBriefing } from "./seojinSchoolNeighborsBriefing";
+import { northKoreanPowsSouthKoreaBriefing } from "./northKoreanPowsSouthKoreaBriefing";
 
-const allBriefings: Briefing[] = [seojinSchoolNeighborsBriefing, skHynixAiHackathonBriefing, hospitalInheritanceTaxBriefing, activistFundingPressureBriefing, socialSolidarityEconomyLawBriefing, futureResponseFundBriefing, partyDissolutionBriefing, yeosuIslandExpoBriefing, hearingAccountabilityBriefing, socialEconomyFairnessBriefing, socialEconomyBriefing, publicInterestTravelBriefing, publicBroadcastingBriefing, nationalBudgetBriefing, gyeonggiBriefingDisplay, ...briefings];
+const allBriefings: Briefing[] = [northKoreanPowsSouthKoreaBriefing, seojinSchoolNeighborsBriefing, skHynixAiHackathonBriefing, hospitalInheritanceTaxBriefing, activistFundingPressureBriefing, socialSolidarityEconomyLawBriefing, futureResponseFundBriefing, partyDissolutionBriefing, yeosuIslandExpoBriefing, hearingAccountabilityBriefing, socialEconomyFairnessBriefing, socialEconomyBriefing, publicInterestTravelBriefing, publicBroadcastingBriefing, nationalBudgetBriefing, gyeonggiBriefingDisplay, ...briefings];
 
 export const getAllBriefingsNewestFirst = () => [...allBriefings].sort((a, b) => {
   const dateOrder = b.date.localeCompare(a.date);

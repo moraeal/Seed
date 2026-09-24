@@ -10,8 +10,10 @@ import { activistFundingPressureTranslation } from "./briefing14";
 import { hospitalInheritanceTaxTranslation } from "./briefingHospitalInheritanceTax";
 import { skHynixAiHackathonTranslation } from "./briefingSkHynixAiHackathon";
 import { seojinSchoolNeighborsTranslation } from "./briefingSeojinSchoolNeighbors";
+import { northKoreanPowsTranslation } from "./briefingNorthKoreanPows";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "north-korean-pows-south-korea-zelensky-un": northKoreanPowsTranslation,
   "seojin-school-neighbors-civic-solidarity": seojinSchoolNeighborsTranslation,
   "sk-hynix-ai-hackathon-skills-first-hiring": skHynixAiHackathonTranslation,
   "hospital-inheritance-tax-maternity-care": hospitalInheritanceTaxTranslation,
