@@ -1,0 +1,191 @@
+import type { PublicInterestWatchCase } from "./publicInterestWatch";
+
+export const supremeCourtRenominationTracker: PublicInterestWatchCase = {
+  slug: "supreme-court-renomination-tracker-2026",
+  organization: { ko: "청와대·대법원·국회·헌법재판소", en: "Presidential office · Supreme Court · National Assembly · Constitutional Court" },
+  eyebrow: { ko: "대법관 인선·사법 독립", en: "Supreme Court appointment · Judicial independence" },
+  title: {
+    ko: "대법관 제청을 되돌릴 수 있나, 멈춰 선 임명 절차",
+    en: "Can a Supreme Court nomination be sent back? An appointment at a standstill",
+  },
+  summary: {
+    ko: "청와대는 손봉기 후보자의 임명동의안을 국회에 보내지 않았고, 조희대 대법원장은 다른 후보를 다시 제청하라는 요청을 거부했습니다. 한 자리는 비어 있습니다. 이 기록은 제청·동의·임명의 각 단계에서 누가 실제로 결정권을 행사하고, 공석을 해소할 책임은 누가 지는지 날짜별로 추적합니다.",
+    en: "The presidential office has withheld the motion seeking parliamentary consent for nominee Son Bong-gi; Chief Justice Cho Hee-dae has refused to nominate someone else. One seat remains vacant. This record follows who controls each constitutional stage of nomination, consent and appointment, and who takes responsibility for resolving the vacancy.",
+  },
+  status: { ko: "재제청 거부·임명동의안 미제출", en: "Renomination refused · Consent motion withheld" },
+  openedAt: "2026-08-18",
+  publishedAt: "2026-09-24",
+  updatedAt: "2026-09-24",
+  continuationEligible: false,
+  sourceBasis: {
+    ko: "헌법 제104조의 임명 절차를 기준으로 대법원장 제청, 청와대의 재제청 요청과 후속 공지, 야당의 권한쟁의심판 청구에 관한 언론 보도를 날짜별로 대조했습니다. 청와대와 대법원장의 주장은 각자의 입장으로 표시하고, 재판 결과나 위헌 판단으로 취급하지 않았습니다. 2026년 9월 24일 오전 확인 기준입니다.",
+    en: "This tracker uses Article 104 of the Constitution as its baseline and cross-checks dated reports of Cho's nomination, the presidential office's request and later statements, and the opposition's competence-dispute petition. Each institution's legal interpretation is attributed rather than presented as a court ruling. Checked on the morning of September 24, 2026, Korea time.",
+  },
+  caution: {
+    ko: "국민의힘 의원들이 권한쟁의심판을 청구한 것은 사실이지만, 심판의 적법성·본안 판단이나 위헌 결정이 내려진 것은 아닙니다. 청와대와 대법원도 9월 23일 현재 스스로 권한쟁의를 청구하지 않았다고 밝혔습니다. 대법관 증원은 별도 입법 사안이며, 이번 제청 갈등만으로 법원이 정권의 지시를 받는다는 사실이 입증된 것은 아닙니다.",
+    en: "Opposition lawmakers have filed a competence-dispute petition, but the Constitutional Court has not ruled on its admissibility or merits. As of September 23, neither the presidential office nor the Supreme Court said it had filed its own petition. Expanding the court is a separate legislative issue; this appointment standoff alone does not establish that judges take instructions from the administration.",
+  },
+  heroImage: {
+    src: "/images/monitoring/supreme-court-renomination-tracker-2026.webp",
+    alt: {
+      ko: "빈 의자와 닫힌 서류철이 놓인 법원 복도를 표현한 상징 이미지",
+      en: "Symbolic courthouse corridor with an empty chair and a closed document folder",
+    },
+    caption: {
+      ko: "제청과 임명이 멈춘 사이 대법관 자리는 비어 있습니다. 실제 대법원 현장 사진은 아닙니다.",
+      en: "The seat remains vacant while nomination and appointment are stalled. This is not a photograph of the Supreme Court.",
+    },
+    credit: { ko: "씨앗의 소리 AI 제작 상징 이미지", en: "AI-generated symbolic image by SEED VOICE" },
+  },
+  displayMode: "layered",
+  snapshot: {
+    conclusion: {
+      ko: "손봉기 후보자의 제청은 유지되고 있지만 국회 임명동의안은 제출되지 않았습니다. 청와대의 재제청 요구와 대법원장의 거부가 맞서면서 헌법이 나눈 권한을 어느 기관이 실질적으로 행사할지가 쟁점이 됐습니다.",
+      en: "Son's nomination remains in place, but no parliamentary consent motion has been filed. The presidential request and Cho's refusal have put the effective control of constitutionally divided appointment powers in dispute.",
+    },
+    keyFacts: [
+      { ko: "8월 18일 조희대 대법원장이 손봉기 부장판사를 제청했습니다.", en: "On August 18, Chief Justice Cho nominated judge Son Bong-gi." },
+      { ko: "8월 28일 청와대는 국회에 임명동의안을 보내지 않고 다른 후보를 다시 제청해 달라고 요청했습니다.", en: "On August 28, the presidential office withheld the parliamentary consent motion and requested a different nominee." },
+      { ko: "9월 21일 국민의힘 의원들이 권한쟁의심판을 청구했고, 22일 대법원장은 재제청 거부를 공식 발표했습니다.", en: "Opposition lawmakers filed a competence-dispute petition on September 21; Cho publicly refused renomination on September 22." },
+    ],
+    tracking: [
+      { ko: "청와대가 손 후보자 임명동의안을 제출하거나 재제청 요구의 구체적 근거를 새 문서로 밝히는가", en: "Whether the presidential office files Son's consent motion or gives specific grounds for its request in a new document" },
+      { ko: "대법원장이 제청을 유지하는지, 인선 과정에 관한 절차 자료를 공개하는가", en: "Whether Cho maintains the nomination and releases records about his selection process" },
+      { ko: "헌법재판소가 야당 의원들의 권한쟁의 청구를 어떻게 처리하고, 공석이 얼마나 이어지는가", en: "How the Constitutional Court handles the opposition lawmakers' petition and how long the seat remains empty" },
+    ],
+  },
+  keyChanges: [
+    { date: "2026-09-23", text: { ko: "조 대법원장은 재제청 요청 공문에 사유가 명확하지 않다고 재차 밝혔고, 청와대는 임명동의안을 제출하지 않겠다는 공문 자체가 거부 의사를 밝힌 것이라고 다시 반박했습니다.", en: "Cho reiterated that the request did not clearly state its grounds; the presidential office replied that withholding the consent motion already made its refusal clear." } },
+    { date: "2026-09-23", text: { ko: "청와대는 자체 권한쟁의심판 청구를 검토하지 않는다고 밝혔습니다. 이는 9월 21일 국민의힘 의원들이 제출한 별도 청구와 구분해야 합니다.", en: "The presidential office said it was not considering its own competence-dispute petition. That is distinct from the petition opposition lawmakers filed on September 21." } },
+    { date: "2026-09-23", text: { ko: "국회 법제사법위원회 소속 여당 의원들이 대법원을 항의 방문했습니다. 정치적 압박은 높아졌지만 임명동의안 제출이나 새 제청이라는 절차적 변화는 확인되지 않았습니다.", en: "Governing-party members of the National Assembly's judiciary committee visited the Supreme Court in protest. Political pressure rose, but no filing of a consent motion or new nomination was reported." } },
+  ],
+  issues: [
+    {
+      title: { ko: "대통령이 후보를 다시 고르라고 할 수 있나", en: "Can the president require a different nominee?" },
+      claim: { ko: "청와대는 대통령에게 임명권이 있으며 사전 협의 없는 서면 제청과 인선 절차의 공정성에 문제가 있다고 주장합니다.", en: "The presidential office asserts the president's appointment authority and questions the lack of prior consultation and fairness of the selection process." },
+      response: { ko: "조 대법원장은 제청권이 헌법에 규정돼 있고 재제청 요청 공문에 구체적인 근거와 사유가 없으며 절차상 흠결 주장도 받아들이기 어렵다고 밝혔습니다.", en: "Cho invokes his constitutional nomination power, says the request lacks specific grounds, and rejects the assertion of procedural defects." },
+      assessment: { ko: "헌법은 제청·국회 동의·대통령 임명을 분리합니다. 재제청을 요구하는 명시적 절차와 정당화 기준은 이번 공방에서 다툼의 대상입니다. 씨앗은 임명권 행사라는 말만으로 제청자의 독립적 판단을 사실상 교체할 수 있는지 따져봅니다.", en: "The Constitution divides nomination, parliamentary consent and appointment. The legal basis and limits of a demand to nominate someone else are contested. SEED examines whether appointment authority can effectively replace the nominator's independent judgment." },
+      status: "contested",
+    },
+    {
+      title: { ko: "인선 절차와 대법관 공석의 책임", en: "Selection procedure and responsibility for the vacancy" },
+      claim: { ko: "청와대는 사전 조율 없는 제청과 다른 추천 후보자 접촉을 문제 삼고, 공석 장기화가 시민의 재판받을 권리에 영향을 준다고 말합니다.", en: "The presidential office criticizes the lack of consultation and contacts with other shortlisted judges, and says the prolonged vacancy affects citizens' access to timely justice." },
+      response: { ko: "대법원장은 자신의 제청 과정에 위법한 절차상 흠결이 있다는 주장을 부인합니다. 3월 퇴임 뒤 제청까지 걸린 기간에 대한 설명도 함께 살펴볼 필요가 있습니다.", en: "Cho denies any legally relevant procedural defect in his nomination. The time from the March retirement to his August nomination also calls for scrutiny." },
+      assessment: { ko: "청와대의 설명과 대법원의 인선 기록을 같은 기준으로 확인해야 합니다. 한쪽이 후보를 되돌리고 다른 쪽이 이유 설명을 미루는 동안 지연의 비용은 재판을 기다리는 시민에게 돌아갑니다.", en: "The office's reasons and the court's selection record deserve the same scrutiny. Delay carries a cost for people waiting for judgments, whoever is responsible for each stage." },
+      status: "contested",
+    },
+    {
+      title: { ko: "국회의 동의권은 언제 행사되는가", en: "When can parliament exercise its consent power?" },
+      claim: { ko: "국민의힘 의원들은 임명동의안 미제출이 국회의 동의권과 의원들의 심의·표결권을 침해한다며 헌재에 권한쟁의심판을 청구했습니다.", en: "Opposition lawmakers petitioned the Constitutional Court, alleging that withholding the consent motion impairs parliamentary consent and their right to deliberate and vote." },
+      response: { ko: "청와대는 손 후보자를 임명할 의사가 없다고 밝히며 별도 권한쟁의 청구도 검토하지 않는다고 했습니다. 헌재의 판단은 아직 없습니다.", en: "The presidential office says it does not intend to appoint Son and is not considering its own petition. The Constitutional Court has not ruled." },
+      assessment: { ko: "국회로 서류가 가지 않으면 동의 여부를 판단할 기회도 생기지 않습니다. 청구가 적법한지와 대통령의 미제출이 위헌인지에 관한 헌재 판단을 구분해 지켜봅니다.", en: "Without a motion, parliament cannot decide whether to consent. The petition's admissibility and the constitutional merits of withholding the motion are separate questions to track." },
+      status: "pending",
+    },
+  ],
+  timeline: [
+    {
+      date: "2026-09-23",
+      title: { ko: "청와대와 대법원장, 공문 내용 놓고 다시 충돌", en: "Presidential office and chief justice clash again over the written request" },
+      description: { ko: "조 대법원장은 공문에 재제청 사유와 근거가 명확히 적혀야 한다고 밝혔습니다. 청와대는 손 후보자 임명동의안을 제출하지 않겠다고 적은 공문이 이미 거부 의사를 밝힌 것이라고 재반박했습니다. 같은 날 민주당 소속 법사위원들이 대법원을 항의 방문했습니다. 서로의 해석은 좁혀지지 않았고 임명동의안도 제출되지 않았습니다.", en: "Cho said the request needed to state its grounds clearly. The presidential office countered that its notice that it would not submit Son's consent motion already expressed a refusal. Governing-party judiciary-committee lawmakers visited the court in protest. No consent motion was filed." },
+      change: { ko: "입장문 재공방·동의안은 미제출", en: "Further exchanges; no consent motion" },
+      status: "new",
+      sources: [
+        { publisher: { ko: "연합뉴스", en: "Yonhap" }, title: { ko: "조희대 입장 재표명에 靑 재반박…여야 가세 속 이틀째 충돌", en: "Cho reiterates position as presidential office counters and lawmakers enter dispute" }, url: "https://www.yna.co.kr/view/AKR20260923187700001", publishedAt: "2026-09-23", kind: "article" },
+        { publisher: { ko: "동아일보", en: "The Dong-A Ilbo" }, title: { ko: "靑 반박에 조희대 재반박…재제청 갈등", en: "Presidential office and Cho exchange rebuttals" }, url: "https://www.donga.com/news/Society/article/all/20260923/134730138/2", publishedAt: "2026-09-23", kind: "article" },
+      ],
+    },
+    {
+      date: "2026-09-23",
+      title: { ko: "청와대, 자체 권한쟁의심판 청구 검토 부인", en: "Presidential office denies considering its own court petition" },
+      description: { ko: "청와대는 대법원장과의 충돌과 관련해 헌법재판소에 권한쟁의심판을 청구할 계획을 검토하지 않는다고 밝혔습니다. 이미 국민의힘 의원들이 낸 청구가 취소됐다는 뜻은 아닙니다.", en: "The presidential office said it was not considering a competence-dispute petition over the clash. This did not withdraw the opposition lawmakers' existing petition." },
+      change: { ko: "여야·기관별 심판 청구를 구분", en: "Distinguish the separate actors and petitions" },
+      status: "response",
+      sources: [{ publisher: { ko: "동아일보", en: "The Dong-A Ilbo" }, title: { ko: "靑, 조희대 재제청 거부에 권한쟁의심판 청구 검토 안 해", en: "Presidential office says it is not considering a competence-dispute petition" }, url: "https://www.donga.com/news/Politics/article/all/20260923/134724679/1", publishedAt: "2026-09-23", kind: "article" }],
+    },
+    {
+      date: "2026-09-22",
+      title: { ko: "조희대 대법원장, 재제청 요청 거부 발표", en: "Cho publicly refuses to nominate another candidate" },
+      description: { ko: "조 대법원장은 8월 28일자 요청 문서에 재제청을 정당화할 구체적인 헌법적 근거와 사유가 없다고 밝히며 재제청 요구에 응하지 않겠다고 했습니다. 청와대는 제청권이 임명권보다 우위에 있다는 해석이라며 반박했습니다.", en: "Cho said the August 28 written request lacked specific constitutional grounds and reasons, and refused to nominate someone else. The presidential office rejected what it described as treating nomination power as superior to appointment power." },
+      change: { ko: "재제청 거부 공식화", en: "Refusal made official" },
+      status: "confirmed",
+      sources: [{ publisher: { ko: "연합뉴스", en: "Yonhap" }, title: { ko: "조희대 대법원장 재제청 거부", en: "Chief justice refuses renomination request" }, url: "https://www.yna.co.kr/view/AKR20260922098553004", publishedAt: "2026-09-22", kind: "article" }],
+    },
+    {
+      date: "2026-09-21",
+      title: { ko: "국민의힘 의원들, 헌재에 권한쟁의심판 청구", en: "Opposition lawmakers petition the Constitutional Court" },
+      description: { ko: "국민의힘 의원들은 대통령이 손 후보자의 임명동의안을 국회에 제출하지 않은 행위가 국회의 동의권과 국회의원들의 심의·표결권을 침해했다며 헌법재판소에 청구서를 제출했습니다. 심판이 청구된 것이며, 헌재의 위헌 판단이 나온 것은 아닙니다.", en: "Opposition lawmakers filed a petition arguing that the president's failure to submit Son's consent motion infringed parliament's consent power and members' deliberation and voting rights. Filing the petition is not a constitutional ruling." },
+      change: { ko: "정치 공방에서 헌재 절차로", en: "A petition enters constitutional procedure" },
+      status: "confirmed",
+      sources: [{ publisher: { ko: "연합뉴스", en: "Yonhap" }, title: { ko: "국힘, 헌재에 이 대통령 대법관 재제청 권한쟁의 청구", en: "Opposition lawmakers file competence-dispute petition" }, url: "https://www.yna.co.kr/view/AKR20260921092000001", publishedAt: "2026-09-21", kind: "article" }],
+    },
+    {
+      date: "2026-08-28",
+      title: { ko: "청와대, 손봉기 임명동의안 제출 보류·재제청 요청", en: "Presidential office withholds Son's consent motion and requests a new nominee" },
+      description: { ko: "청와대는 손 후보자에 대한 국회 임명동의안을 제출하지 않고 다른 후보를 다시 제청해 달라고 요청했습니다. 제청권 행사 방식과 사전 협의 문제를 이유로 들었습니다. 이 시점부터 국회는 손 후보자에 대한 동의 여부를 심의할 수 없게 됐습니다.", en: "The presidential office withheld the motion seeking parliamentary consent for Son and requested a different nominee, citing the nomination process and prior consultation. Parliament could not deliberate on Son without a motion." },
+      change: { ko: "국회 동의 절차 중단", en: "Parliamentary consent stage stalled" },
+      status: "confirmed",
+      sources: [{ publisher: { ko: "동아일보", en: "The Dong-A Ilbo" }, title: { ko: "조희대, 청와대 주장 재반박", en: "Cho rebuts presidential office's objections" }, url: "https://www.donga.com/news/Politics/article/all/20260923/134726204/1", publishedAt: "2026-09-23", thumbnailSrc: "https://dimg.donga.com/wps/NEWS/IMAGE/2026/09/23/134726149.1.jpg", kind: "article" }],
+    },
+    {
+      date: "2026-08-18",
+      title: { ko: "대법원장, 손봉기 부장판사 임명 제청", en: "Chief justice nominates judge Son Bong-gi" },
+      description: { ko: "조 대법원장은 3월 퇴임한 노태악 전 대법관의 후임으로 손봉기 부장판사를 대통령에게 임명 제청했습니다. 약 다섯 달간 이어진 공석을 채우기 위한 인선이었지만 사전 협의를 둘러싼 이견이 곧 표면화했습니다.", en: "Cho nominated Son to replace Justice Noh Tae-ak, who had retired in March. The nomination sought to fill a seat already vacant for about five months, but a dispute over prior consultation soon emerged." },
+      change: { ko: "후임 제청", en: "Nomination submitted" },
+      status: "confirmed",
+      sources: [{ publisher: { ko: "연합뉴스", en: "Yonhap" }, title: { ko: "조희대, 대법관 후보 손봉기·김성수 임명 제청", en: "Cho nominates Son and Kim for the Supreme Court" }, url: "https://www.yna.co.kr/view/AKR20260818139652004", publishedAt: "2026-08-18", kind: "article" }],
+    },
+    {
+      date: "2026-03-03",
+      title: { ko: "노태악 대법관 퇴임, 후임 자리 공석", en: "Justice Noh retires, leaving a vacancy" },
+      description: { ko: "노태악 대법관이 퇴임했습니다. 후임자를 제청하고 국회 동의를 거쳐 대통령이 임명해야 하는 한 자리가 비기 시작했습니다.", en: "Justice Noh retired, leaving a seat to be filled through chief-justice nomination, parliamentary consent and presidential appointment." },
+      change: { ko: "공석 시작", en: "Vacancy begins" },
+      status: "confirmed",
+      sources: [{ publisher: { ko: "동아일보", en: "The Dong-A Ilbo" }, title: { ko: "노태악 후임 대법관 인선 갈등", en: "Dispute over replacing Justice Noh" }, url: "https://www.donga.com/news/Politics/article/all/20260923/134726204/1", publishedAt: "2026-09-23", kind: "article" }],
+    },
+  ],
+  confirmedFacts: [
+    { ko: "헌법 제104조 제2항에 따라 대법관은 대법원장의 제청으로 국회의 동의를 얻어 대통령이 임명합니다.", en: "Article 104(2) of the Constitution provides for chief-justice nomination, National Assembly consent and presidential appointment of Supreme Court justices." },
+    { ko: "손 후보자 제청 이후에도 청와대는 임명동의안을 국회에 제출하지 않았고, 조 대법원장은 재제청을 거부했습니다.", en: "After Son's nomination, the presidential office did not file a consent motion and Cho refused to nominate someone else." },
+    { ko: "국민의힘 의원들의 권한쟁의 청구는 접수됐으나, 9월 24일 오전까지 헌재가 재제청 요구의 위헌 여부를 결정했다는 보도는 확인되지 않았습니다.", en: "Opposition lawmakers filed a petition, but as of the morning of September 24 no Constitutional Court decision on the constitutional merits had been reported." },
+  ],
+  currentControversies: [
+    { title: { ko: "대통령의 거부권과 제청권의 경계", en: "The boundary of appointment and nomination powers" }, description: { ko: "대통령이 원치 않는 후보를 임명하지 않을 재량과 대법원장에게 다른 후보를 고르라고 요구할 권한은 같은 말이 아닙니다. 양 기관의 권한과 그 한계를 법원이 아직 확정하지 않았습니다.", en: "Discretion not to appoint a nominee and authority to compel a different nomination are distinct questions. Their legal limits remain unsettled." } },
+    { title: { ko: "인선의 공정성과 정치적 압박", en: "Fair selection and political pressure" }, description: { ko: "제청 과정에 어떤 문제가 있었는지 청와대는 구체적으로 설명해야 하고, 대법원도 후보 선발 기록과 장기 공석의 경위를 설명해야 합니다. 동시에 여당의 대법원장 탄핵론이 실제 절차로 옮겨지는지 구분해서 보겠습니다.", en: "The presidential office should specify alleged defects, and the court should explain its selection record and the earlier delay. Calls within the governing party to impeach Cho must be distinguished from a formal impeachment proceeding." } },
+    { title: { ko: "증원 입법과 다음 인선", en: "Court expansion and future appointments" }, description: { ko: "여당 주도로 대법관 정원을 14명에서 26명으로 늘리는 법이 통과됐고 증원은 2028년부터 단계적으로 시작될 예정입니다. 이번 충돌이 향후 추가 의석의 후보 선정 기준과 결합하면 사법부 구성권의 무게도 달라집니다. 각각의 임명 과정을 공개 자료로 확인하겠습니다.", en: "Legislation led by the governing party would expand the court from 14 to 26 members, with phased additions scheduled from 2028. If today's dispute sets a precedent for selecting future nominees, it could reshape who controls the court's composition. Each appointment will be checked against public records." } },
+  ],
+  questions: [
+    { ko: "청와대의 공문과 후속 설명은 재제청을 요구할 구체적 법적 근거와 인선 절차의 문제점을 밝혔습니까?", en: "Do the office's request and later statements specify the legal grounds and alleged procedural defects?" },
+    { ko: "대법원은 손 후보자를 고른 기준, 다른 추천 후보자와의 접촉, 3월부터 8월까지 공석을 방치한 경위를 설명했습니까?", en: "Has the court explained Son's selection, contacts with other shortlisted judges and the March-to-August delay?" },
+    { ko: "대통령은 임명동의안을 국회에 보내 국회의 동의권을 행사하게 할 것입니까?", en: "Will the president submit a consent motion so parliament can exercise its constitutional role?" },
+  ],
+  proposals: [
+    { ko: "제청·재제청 요청에 관한 공문과 법적 검토 자료를 가능한 범위에서 공개하고, 다음 결정의 근거를 날짜별로 남깁니다.", en: "Disclose the nomination and renomination records and legal reasoning where possible, with a dated account of each subsequent decision." },
+    { ko: "대법관 공석의 기간과 전원합의체 구성·사건 처리에 미치는 영향을 수치와 함께 공개합니다.", en: "Publish the vacancy duration and measurable effects on full-bench hearings and case handling." },
+    { ko: "대법관 증원에 따른 새 의석마다 추천·제청·국회 동의·임명 과정을 따로 기록해 정권 편향 여부를 검증합니다.", en: "Track the recommendation, nomination, parliamentary consent and appointment stages for each additional seat to examine possible political concentration." },
+  ],
+  followUpChecks: [
+    { ko: "청와대의 새 공문·임명동의안 국회 제출 여부와 제출 날짜", en: "Any new presidential-office document or consent motion, and its filing date" },
+    { ko: "대법원의 제청 유지·변경과 인선 절차 자료 공개 여부", en: "Whether the court maintains or changes its nomination and releases selection records" },
+    { ko: "헌재의 권한쟁의심판 적법성 판단·본안 결정과 국회 후속 조치", en: "The Constitutional Court's admissibility and merits decisions and parliamentary follow-up" },
+    { ko: "대법관 공석 기간, 사건 처리 영향, 증원법의 시행 일정과 추가 인선", en: "Vacancy duration, effects on adjudication, expansion-law timetable and later nominations" },
+  ],
+  nextCheck: {
+    ko: "청와대 공문 원문과 추가 법적 근거가 공개되는지, 대법원의 후보 추천·제청 경위가 자료로 설명되는지, 국회 임명동의안 제출 여부와 헌재 권한쟁의 사건의 접수·적법성·본안 단계가 어떻게 바뀌는지 확인합니다. 여당의 탄핵 발언은 실제 발의·의결과 구분합니다.",
+    en: "Check whether the request and any further legal grounds are disclosed, whether the court documents its selection process, whether a consent motion is filed, and how the petition advances through the Constitutional Court. Distinguish impeachment rhetoric from a formally introduced or adopted motion.",
+  },
+  relatedContents: [{
+    href: "/news/supreme-court-renomination-standoff-2026",
+    label: { ko: "오늘의 뉴스", en: "Today's news" },
+    title: { ko: "대법관 후보를 다시 고르라? 청와대와 대법원의 충돌", en: "Can the Presidential Office Send a Supreme Court Nominee Back?" },
+    summary: { ko: "재제청 거부의 출발점과 씨앗의 사법 독립 관점을 먼저 읽습니다.", en: "Read the original report and SEED's argument on judicial independence." },
+    date: "2026-09-24",
+  }],
+  sources: [
+    { label: { ko: "대한민국헌법 제104조 제2항", en: "Constitution of Korea, Article 104(2)" }, url: "https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0104&lsiSeq=61603&urlMode=lsScJoRltInfoR" },
+    { label: { ko: "연합뉴스 — 국민의힘 의원들 권한쟁의심판 청구 (9월 21일)", en: "Yonhap — Opposition lawmakers file a competence-dispute petition (September 21)" }, url: "https://www.yna.co.kr/view/AKR20260921092000001" },
+    { label: { ko: "연합뉴스 — 조희대 대법원장 재제청 거부 (9월 22일)", en: "Yonhap — Cho refuses the renomination request (September 22)" }, url: "https://www.yna.co.kr/view/AKR20260922098553004" },
+    { label: { ko: "동아일보 — 청와대 권한쟁의심판 청구 검토 부인 (9월 23일)", en: "The Dong-A Ilbo — Presidential office denies considering its own petition (September 23)" }, url: "https://www.donga.com/news/Politics/article/all/20260923/134724679/1" },
+    { label: { ko: "연합뉴스 — 대법원장·청와대 재공방과 국회 법사위원 항의 방문 (9월 23일)", en: "Yonhap — Further dispute and judiciary-committee visit (September 23)" }, url: "https://www.yna.co.kr/view/AKR20260923187700001" },
+    { label: { ko: "동아일보 — 대법관 정원 14명에서 26명으로 증원 (2월 28일)", en: "The Dong-A Ilbo — Supreme Court expansion from 14 to 26 (February 28)" }, url: "https://www.donga.com/news/Politics/article/all/20260228/133440880/2" },
+  ],
+};

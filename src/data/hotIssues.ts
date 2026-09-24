@@ -2,6 +2,7 @@ import type { Language } from "../i18n";
 import { getHotIssueColumnsNewestFirst } from "./columns";
 import { localizeColumn, localizeNewsArticle } from "./localizedContent";
 import { getNewsNewestFirst } from "./news";
+import { supremeCourtRenominationTracker } from "./supremeCourtRenominationTracker";
 
 export type HotIssueListItem = {
   key: string;
@@ -54,7 +55,18 @@ export function getHotIssuesNewestFirst(language: Language): HotIssueListItem[] 
     };
   });
 
-  return [...news, ...commentary].sort((a, b) => {
+  const supremeCourtTracker: HotIssueListItem = {
+    key: `watch-${supremeCourtRenominationTracker.slug}`,
+    to: `/monitoring/${supremeCourtRenominationTracker.slug}`,
+    title: supremeCourtRenominationTracker.title[language],
+    summary: supremeCourtRenominationTracker.summary[language],
+    date: supremeCourtRenominationTracker.updatedAt,
+    imageSrc: supremeCourtRenominationTracker.heroImage?.src ?? "/images/brand/editorial-image-fallback.svg",
+    imageAlt: supremeCourtRenominationTracker.heroImage?.alt[language] ?? supremeCourtRenominationTracker.title[language],
+    kindLabel: ko ? "뉴스트래커" : "News tracker",
+  };
+
+  return [...news, supremeCourtTracker, ...commentary].sort((a, b) => {
     const dateOrder = b.date.localeCompare(a.date);
     if (dateOrder !== 0) return dateOrder;
     return a.title.localeCompare(b.title);
