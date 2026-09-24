@@ -23,7 +23,7 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     en: "Follow-up measures announced · Field review under way",
   },
   openedAt: "2026-02-24",
-  updatedAt: "2026-09-23",
+  updatedAt: "2026-09-24",
   nextCheck: {
     ko: "11월 15일까지의 임대차 특별정비 결과, 심층조사 후 실제 위법 확정 면적, 연내 의결을 목표로 한 처분 유예·사후 전용 추인 특별조치법의 발의·심사, 농지은행 위탁·매입 실적",
     en: "Results of the lease regularization period through November 15; area confirmed in violation after field review; introduction and review of the special-act bill on deferrals and retroactive conversion approval, which the government aims to pass by year-end; and Farmland Bank trust and purchase results",
@@ -44,8 +44,8 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     },
   },
   sourceBasis: {
-    ko: "농림축산식품부의 조사계획·법 개정 보도자료·예산안과 2026년 9월 21일 당정 후속조치, 9월 22일 청와대 설명, 국가법령정보센터의 현행 농지법과 헌법재판소 결정례, 7월 말 기본조사 결과를 날짜별로 대조했습니다. 27%를 위법 확정 비율로 쓰지 않았고, 처분 유예와 사후 전용 추인은 아직 특별조치법 제정이 필요한 정책 방향으로 구분했습니다.",
-    en: "This record cross-checks the Agriculture Ministry's census plan, legislative releases and budget proposal, the government-party follow-up measures announced on September 21, the presidential office's September 22 briefing, the current Farmland Act, Constitutional Court decisions and the late-July screening results. It does not treat 27 percent as a confirmed violation rate, and distinguishes disposal deferrals and retroactive conversion approval as policy proposals that still require special legislation.",
+    ko: "농림축산식품부의 조사계획·법 개정 보도자료·예산안과 2026년 9월 17일 농지은행 임대위탁 실적, 9월 21일 당정 후속조치, 9월 22일 청와대 설명, 국가법령정보센터의 현행 농지법과 헌법재판소 결정례, 7월 말 기본조사 결과를 날짜별로 대조했습니다. 27%를 위법 확정 비율로 쓰지 않았고, 처분 유예와 사후 전용 추인은 아직 특별조치법 제정이 필요한 정책 방향으로 구분했습니다.",
+    en: "This record cross-checks the Agriculture Ministry's census plan, legislative releases and budget proposal, Farmland Bank lease-entrustment results released on September 17, the government-party follow-up measures announced on September 21, the presidential office's September 22 briefing, the current Farmland Act, Constitutional Court decisions and the late-July screening results. It does not treat 27 percent as a confirmed violation rate, and distinguishes disposal deferrals and retroactive conversion approval as policy proposals that still require special legislation.",
   },
   caution: {
     ko: "27%는 행정정보 기본조사에서 추출된 위반 의심 비율입니다. 실제 위법과 처분 대상 규모는 심층조사와 소명 절차 뒤 달라질 수 있습니다. ‘4년이면 100%’는 첫 부과 뒤 평가액이 변하지 않고 매년 25%씩 네 번 부과된다는 단순 계산입니다.",
@@ -64,6 +64,13 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
       text: {
         ko: "당정은 투기성·중대한 위반은 법대로 조치하되 관행적 임대차는 농지은행 위탁 시 처분을 유예하고, 경미한 불법 전용은 사후 추인하는 특별조치법의 국회 의결을 연내 마무리하겠다고 밝혔습니다.",
         en: "The government and ruling party said speculative and serious violations would face enforcement, while customary leases could receive disposal deferrals through the Farmland Bank and minor unauthorized conversions could be regularized under special legislation they aim to pass by year-end.",
+      },
+    },
+    {
+      date: "2026-09-17",
+      text: {
+        ko: "5월 18일부터 9월 14일까지 농지은행 임대위탁은 3만3,168건·1만909㏊로 집계돼 전년 동기보다 건수는 78.3%, 면적은 84.9% 증가했습니다.",
+        en: "From May 18 through September 14, Farmland Bank lease entrustments reached 33,168 contracts covering 10,909 hectares, up 78.3 percent in contracts and 84.9 percent in area year on year.",
       },
     },
     {
@@ -252,14 +259,42 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-17",
+      title: {
+        ko: "농지은행 임대위탁 1만909㏊…전년보다 84.9% 증가",
+        en: "Farmland Bank lease entrustments rise 84.9 percent to 10,909 hectares",
+      },
+      description: {
+        ko: "농식품부는 5월 18일부터 9월 14일까지 농지은행 임대위탁 계약이 3만3,168건·1만909㏊로 집계됐다고 밝혔습니다. 전년 동기 1만8,603건·5,899㏊보다 건수는 78.3%, 면적은 84.9% 늘었습니다. 이는 음성적 임대차를 농지은행 계약으로 전환한 실적이며, 청년농·자경농에게 최종 이전된 면적을 뜻하지는 않습니다.",
+        en: "The Agriculture Ministry reported 33,168 Farmland Bank lease-entrustment contracts covering 10,909 hectares from May 18 through September 14. That was 78.3 percent more contracts and 84.9 percent more area than the 18,603 contracts and 5,899 hectares recorded a year earlier. The figures measure leases formalized through the Farmland Bank, not final transfers to young or working farmers.",
+      },
+      change: {
+        ko: "전수조사 이후 임대차 정상화가 실제 계약 실적으로 나타나기 시작했습니다.",
+        en: "Lease regularization after the census began to appear in actual contract data.",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "농림축산식품부", en: "Ministry of Agriculture, Food and Rural Affairs" },
+          title: {
+            ko: "“투기와 농촌의 일반적 위반은 구분한다” 농지 전수조사 원칙은 항상 분명했습니다.",
+            en: "Ministry briefing distinguishes speculation from customary rural violations",
+          },
+          url: "https://www.mafra.go.kr/bbs/home/793/579216/artclView.do",
+          publishedAt: "2026-09-17",
+          kind: "document",
+        },
+      ],
+    },
+    {
       date: "2026-09-21",
       title: {
         ko: "관행적 임대차 처분 유예·불법 전용 양성화 방침 발표",
         en: "Government announces deferrals for customary leases and a path to regularize minor conversions",
       },
       description: {
-        ko: "당정은 투기 목적의 농지 보유와 농업진흥지역의 중대한 불법 전용은 현행법에 따라 조치하되, 투기와 무관한 관행적 임대차는 농지은행에 위탁하면 처분을 유예하기로 했습니다. 임대차 특별정비 기간은 11월 15일까지 연장합니다. 소유한 지 3년이 지난 농지를 조사기간 안에 농지은행에 위탁 임대하면 보완조사에서 제외하고 임대차 위반으로 보지 않는 방안도 추진합니다. 경미한 불법 전용은 요건 심사와 농지보전부담금 부과 뒤 사후 추인하며, 정부는 이를 위한 특별조치법의 국회 의결을 연내 마치겠다고 밝혔습니다. 법률이 아직 제정된 것은 아니며 심층조사 결과도 확정되지 않았습니다.",
-        en: "The government and ruling party said speculative holdings and serious unauthorized conversion in agricultural promotion zones would remain subject to enforcement. Customary leases unrelated to speculation could receive a disposal deferral if entrusted to the Farmland Bank, and the lease regularization period was extended through November 15. They also proposed excluding land held for more than three years from supplementary review—and not treating it as an unlawful lease—when it is entrusted to the Farmland Bank during the review period. Minor unauthorized conversions could receive retroactive approval after eligibility review and payment of farmland-preservation charges. The government aims to complete National Assembly passage of the special legislation by year-end, but the law has not yet been enacted and field-review results are not final.",
+        ko: "당정은 투기 목적의 농지 보유와 농업진흥지역의 중대한 불법 전용은 현행법에 따라 조치하되, 투기와 무관한 관행적 임대차는 농지은행에 위탁하면 처분을 유예하기로 했습니다. 임대차 특별정비 기간은 11월 15일까지 연장합니다. 소유한 지 3년이 지난 농지를 조사기간 안에 농지은행에 위탁 임대하면 보완조사에서 제외하고 임대차 위반으로 보지 않는 방안도 추진합니다. 경미한 불법 전용은 요건 심사와 농지보전부담금 부과 뒤 사후 추인하며, 정부는 이를 위한 특별조치법의 국회 의결을 연내 마치겠다고 밝혔습니다. 법률이 아직 제정된 것은 아니며, 실제 위법 확정과 처분의무 통지 등 사후 절차는 심층조사를 거쳐 2027년 이후 본격 진행될 예정입니다.",
+        en: "The government and ruling party said speculative holdings and serious unauthorized conversion in agricultural promotion zones would remain subject to enforcement. Customary leases unrelated to speculation could receive a disposal deferral if entrusted to the Farmland Bank, and the lease regularization period was extended through November 15. They also proposed excluding land held for more than three years from supplementary review—and not treating it as an unlawful lease—when it is entrusted to the Farmland Bank during the review period. Minor unauthorized conversions could receive retroactive approval after eligibility review and payment of farmland-preservation charges. The government aims to complete National Assembly passage of the special legislation by year-end, but the law has not yet been enacted. Final violation findings and disposal-duty notices are expected to proceed in earnest only after field review, from 2027 onward.",
       },
       change: {
         ko: "일률적 처분 우려에서 위반 유형별 처분·유예·정상화 체계로 정책 방향 구체화",
@@ -267,6 +302,17 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
       },
       status: "confirmed",
       sources: [
+        {
+          publisher: { ko: "매일경제", en: "Maeil Business Newspaper" },
+          title: {
+            ko: "농지 27% 위법 의심 … 정부 \"처분절차는 내년부터\" 일단 진화",
+            en: "Government says farmland disposal procedures will begin from 2027",
+          },
+          url: "https://www.mk.co.kr/news/economy/12158491",
+          publishedAt: "2026-09-21",
+          thumbnailSrc: "/images/monitoring/farmland-census-news/2026-09-21-mk-disposal-2027.jpg",
+          kind: "article",
+        },
         {
           publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
           title: {
@@ -320,20 +366,12 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
         },
       ],
     },
-    {
-      date: "2026-10-01",
-      title: {
-        ko: "심층조사 중간 결과와 처분 규모 확인",
-        en: "Check interim field-review and disposal totals",
-      },
-      description: {
-        ko: "위법 확정 면적, 정당한 사유가 인정된 면적, 처분의무 통지와 처분명령 건수를 구분해 확인합니다. 정부가 집계 일정을 발표하면 날짜를 수정합니다.",
-        en: "SEED will separate the area confirmed in violation, the area excused for legitimate reasons, disposal-duty notices and formal disposal orders. The date will be revised when the government publishes a reporting schedule.",
-      },
-      status: "pending",
-    },
   ],
   confirmedFacts: [
+    {
+      ko: "5월 18일부터 9월 14일까지 농지은행 임대위탁은 3만3,168건·1만909㏊였습니다. 전년 동기보다 건수는 78.3%, 면적은 84.9% 늘었지만, 이는 청년농·자경농에게 소유권이 최종 이전된 면적이 아닙니다.",
+      en: "From May 18 through September 14, Farmland Bank lease entrustments totaled 33,168 contracts and 10,909 hectares, up 78.3 percent and 84.9 percent year on year. This is not the area whose ownership was ultimately transferred to young or working farmers.",
+    },
     {
       ko: "청와대는 9월 22일까지 2026년 농지 전수조사에서 처분 관련 통지가 한 건도 발송되지 않았다고 확인했습니다. 이는 별도로 매년 실시하는 농지 이용실태조사의 통지 건수까지 0이라는 뜻은 아닙니다.",
       en: "The presidential office confirmed that no disposal-related notice had been issued from the 2026 census as of September 22. This does not mean that the separate annual farmland-use survey issued no notices.",
@@ -464,6 +502,16 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
   },
   continuationEligible: true,
   sources: [
+    {
+      label: { ko: "매일경제 — 실제 처분절차는 2027년 이후", en: "Maeil Business Newspaper — Disposal procedures expected from 2027" },
+      url: "https://www.mk.co.kr/news/economy/12158491",
+      note: { ko: "심층조사 이후 위법 확정·처분의무 통지 일정", en: "Timing for final violation findings and disposal-duty notices after field review" },
+    },
+    {
+      label: { ko: "농림축산식품부 — 농지은행 임대위탁 실적", en: "Agriculture Ministry — Farmland Bank lease-entrustment results" },
+      url: "https://www.mafra.go.kr/bbs/home/793/579216/artclView.do",
+      note: { ko: "2026년 5월 18일~9월 14일 3만3,168건·1만909㏊", en: "33,168 contracts and 10,909 hectares from May 18 through September 14, 2026" },
+    },
     {
       label: { ko: "연합뉴스 — 상속·고령농지와 관행 임대차 후속조치", en: "Yonhap — Follow-up measures for inherited, elderly-owned and customarily leased farmland" },
       url: "https://www.yna.co.kr/view/AKR20260921008700030",
