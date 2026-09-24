@@ -13,12 +13,17 @@ export const supremeCourtRenominationStandoffTranslation: NewsTranslation = {
     summary: [
       "Cho says the formal request does not clearly explain why he should nominate a different candidate.",
       "He also rejects the presidential office's claim that his original nomination process was procedurally flawed."
-    ]
+    ],
+    thumbnailUrl: "https://dimg.donga.com/wps/NEWS/IMAGE/2026/09/23/134726149.1.jpg",
+    thumbnailAlt: "Chief Justice Cho Hee-dae arriving at the Supreme Court in Seoul on September 23, 2026",
+    thumbnailCaption: "Chief Justice Cho arriving at the Supreme Court. Photo: News1, as published by The Dong-A Ilbo.",
+    thumbnailPlacement: "after-summary",
+    thumbnailFallbackUrl: "/images/news/supreme-court-renomination-standoff-v2.webp"
   },
   heroImage: {
-    alt: "Illustration of separate presidential and Supreme Court buildings with a constitution between them",
-    caption: "The president's appointment power and the chief justice's nomination power are distinct constitutional responsibilities.",
-    credit: "Symbolic illustration by SEED VOICE"
+    alt: "Symbolic image of a document folder on stone steps beneath courthouse columns at dusk",
+    caption: "The president's appointment power and the chief justice's nomination power are distinct constitutional responsibilities. This is a symbolic image, not a photograph of the Supreme Court.",
+    credit: "Symbolic image created by SEED VOICE"
   },
   inlineImage: {
     src: "/images/news/supreme-court-appointment-process-en.svg",
@@ -37,7 +42,8 @@ export const supremeCourtRenominationStandoffTranslation: NewsTranslation = {
     {
       title: "How the coverage differs",
       paragraphs: [
-        "Yonhap focuses on the clash between the nomination and appointment powers and the prolonged vacancy. The Chosun Ilbo emphasizes concern within the judiciary that accepting the request would weaken the chief justice's constitutional role. The Dong-A Ilbo presents both the procedural objections and Cho's response. Their emphases differ; no conclusive constitutional ruling has settled this dispute."
+        "Yonhap focuses on the clash between presidential appointment and judicial nomination powers, alongside the prolonged vacancy. The Chosun Ilbo foregrounds concern within the judiciary that accepting the request could weaken the chief justice's nomination power. The Dong-A Ilbo sets out the presidential office's procedural objections and Cho's rebuttal.",
+        "From another perspective, a Hankyoreh editorial stresses the president's appointment authority and the practice of prior consultation, and criticizes Cho's refusal. MBC Newsdesk focuses on how he announced that refusal and on the public cost of a prolonged vacancy, presenting the argument that nomination power also carries a responsibility to help constitute the court. These are differences in editorial emphasis and opinion; no definitive judicial ruling has resolved the competing constitutional claims."
       ]
     },
     {

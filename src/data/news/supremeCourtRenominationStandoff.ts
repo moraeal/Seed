@@ -19,12 +19,17 @@ export const supremeCourtRenominationStandoffArticle: NewsArticle = {
     summary: [
       "조 대법원장은 청와대의 재제청 요청 공문에 구체적인 사유가 명확하지 않다고 재차 밝혔습니다.",
       "청와대가 제기한 제청 과정의 절차상 문제도 헌법과 법률에 비춰 받아들이기 어렵다는 입장입니다."
-    ]
+    ],
+    thumbnailUrl: "https://dimg.donga.com/wps/NEWS/IMAGE/2026/09/23/134726149.1.jpg",
+    thumbnailAlt: "2026년 9월 23일 서울 서초구 대법원 청사로 출근하는 조희대 대법원장",
+    thumbnailCaption: "조희대 대법원장의 대법원 출근 모습. 사진: 뉴스1 · 동아일보 원문 기사",
+    thumbnailPlacement: "after-summary",
+    thumbnailFallbackUrl: "/images/news/supreme-court-renomination-standoff-v2.webp"
   },
   heroImage: {
-    src: "/images/news/supreme-court-renomination-standoff.png",
-    alt: "서로 떨어진 청와대와 대법원 건물 사이에 헌법책이 놓인 상징 그림",
-    caption: "대법관 인선에서 대통령의 임명권과 대법원장의 제청권은 각각 헌법이 정한 권한입니다.",
+    src: "/images/news/supreme-court-renomination-standoff-v2.webp",
+    alt: "해질녘 법원 건물의 돌기둥과 계단 앞에 놓인 서류 봉투를 표현한 상징 이미지",
+    caption: "대법관 인선에서 대통령의 임명권과 대법원장의 제청권은 각각 헌법이 정한 권한입니다. 실제 대법원 현장 사진은 아닙니다.",
     credit: "씨앗의 소리 제작 상징 이미지"
   },
   inlineImage: {
@@ -44,7 +49,8 @@ export const supremeCourtRenominationStandoffArticle: NewsArticle = {
     {
       title: "보도는 무엇을 달리 비추었습니까",
       paragraphs: [
-        "연합뉴스는 제청권과 임명권의 충돌, 길어진 대법관 공석을 중심으로 사건을 전했습니다. 조선일보는 대통령의 재제청 요구를 받아들일 경우 대법원장의 제청권이 약해질 수 있다는 법원 측 우려에 주목했습니다. 동아일보는 청와대가 제기한 절차 문제와 대법원장의 재반박을 함께 소개했습니다. 보도마다 초점이 다르지만, 재제청 요구가 정당한지에 관한 최종적인 헌법 판단이 나온 것은 아닙니다."
+        "연합뉴스는 대통령의 임명권과 대법원장의 제청권이 충돌하며 공석이 길어지는 상황에 초점을 맞춥니다. 조선일보는 재제청 요구를 수용하면 대법원장의 제청권이 약해질 수 있다는 법원 측 우려를 전면에 둡니다. 동아일보는 청와대의 절차상 문제 제기와 대법원장의 반박을 나란히 전합니다.",
+        "다른 쪽에서 한겨레의 관련 사설은 대통령의 임명권과 사전 협의 관행을 강조하며 조 대법원장의 거부를 비판합니다. MBC 뉴스데스크 보도는 거부 발표 과정과 장기 공석에 따른 피해를 부각하고, 제청권에는 헌법기관을 구성할 책임도 따른다는 비판을 소개합니다. 이는 각 매체가 고른 쟁점과 논평의 차이입니다. 어느 쪽의 헌법 해석이 옳은지 확정한 사법적 판단은 아직 없습니다."
       ]
     },
     {
