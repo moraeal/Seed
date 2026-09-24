@@ -8,6 +8,7 @@ import type { LocalizedText } from "../data/publicInterestWatch";
 import { getPublicInterestWatchCase } from "../data/newsTrackerRegistry";
 import { useLanguage } from "../i18n";
 import LivingWatchDetail from "./LivingWatchDetail";
+import CommunityChestWatchArticle from "./CommunityChestWatchArticle";
 
 export default function PublicInterestWatchDetail() {
   const { slug = "" } = useParams();
@@ -29,6 +30,10 @@ export default function PublicInterestWatchDetail() {
 
   if (item.timeline?.length) {
     return <LivingWatchDetail item={item} language={language} continuation={continuation} />;
+  }
+
+  if (item.slug === "community-chest-of-korea") {
+    return <CommunityChestWatchArticle language={language} />;
   }
 
   const sections = [
