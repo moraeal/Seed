@@ -232,15 +232,22 @@ export const publicInterestWatchCases: PublicInterestWatchCase[] = [
     organization: { ko: "사랑의열매 사회복지공동모금회", en: "Community Chest of Korea" },
     eyebrow: { ko: "법정모금기관·배분 구조", en: "Statutory fundraiser · Allocation system" },
     title: {
-      ko: "큰 모금의 힘은 더 큰 설명 책임으로 이어져야 합니다",
-      en: "The power of large-scale fundraising requires greater accountability",
+      ko: "10년 사이 모금액 72% 증가…사랑의열매가 바꾼 삶은 얼마나 보이는가",
+      en: "Donations rose 72% in ten years. What changed for people?",
     },
     summary: {
-      ko: "2021~2025년 공식 공시를 다시 확인해 모금·배분·차기이월 순자산과 지정기탁 구조를 점검했습니다. 과거 논란은 기관의 답변과 구분해 기록하고, 작은 시민조직의 접근성을 묻습니다.",
-      en: "We rechecked 2021–2025 disclosures on fundraising, distributions, carried-over net assets and donor-restricted allocations, separating historical controversies from institutional responses and current questions.",
+      ko: "2016~2025년 모금·배분의 흐름과 지정기탁의 비중을 한눈에 짚습니다. 돈이 얼마나 쓰였는지에 더해 지원받은 사람의 삶에 어떤 변화가 남았는지 계속 확인합니다.",
+      en: "Ten years of donations and allocations in one view, with a continuing test of how funding changed recipients’ lives.",
     },
     status: { ko: "집중 질의", en: "Priority inquiry" },
-    updatedAt: "2026-09-10",
+    updatedAt: "2026-09-24",
+    publishedAt: "2026-09-10",
+    heroImage: {
+      src: "/images/monitoring/community-chest-watch-ledger.webp",
+      alt: { ko: "사랑의열매 상징이 놓인 탁자에서 기부금 자료를 살피는 장면", en: "A reader examines donation records beside a card with the Community Chest symbol" },
+      caption: { ko: "씨앗의 소리 AI 제작 이미지. 실제 회계문서 또는 현장 사진이 아닙니다.", en: "AI editorial image by Seed Voice; not an actual document or field photograph." },
+      credit: { ko: "씨앗의 소리", en: "Seed Voice" },
+    },
     sourceBasis: {
       ko: "씨드가 보관한 기존 분석 PDF를 출발점으로 삼되, 2026년 9월 10일 사랑의열매 중앙회 경영공시·현행 법령·이사회 공개자료와 관련 보도를 다시 대조했습니다. 법정 기준, 공식 수치, 과거 사건, 씨앗의 해석을 구분했습니다.",
       en: "Starting from SEED's archived PDF, this record was rebuilt on September 10, 2026 against the Chest's disclosures, current law, governance records and relevant reporting. Statutory tests, official figures, historical incidents and SEED's analysis are separated.",
