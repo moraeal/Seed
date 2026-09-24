@@ -9,6 +9,7 @@ import { getPublicInterestWatchCase } from "../data/newsTrackerRegistry";
 import { useLanguage } from "../i18n";
 import LivingWatchDetail from "./LivingWatchDetail";
 import CommunityChestWatchArticle from "./CommunityChestWatchArticle";
+import InstitutionWatchArticle from "./InstitutionWatchArticle";
 
 export default function PublicInterestWatchDetail() {
   const { slug = "" } = useParams();
@@ -34,6 +35,10 @@ export default function PublicInterestWatchDetail() {
 
   if (item.slug === "community-chest-of-korea") {
     return <CommunityChestWatchArticle language={language} />;
+  }
+
+  if (["beautiful-store", "korea-football-association", "korea-foundation-for-suicide-prevention"].includes(item.slug)) {
+    return <InstitutionWatchArticle item={item} language={language} />;
   }
 
   const sections = [
