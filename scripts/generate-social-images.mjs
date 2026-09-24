@@ -58,7 +58,9 @@ const jobs = [
     };
   }),
   ...columnModule.columns.map((item) => ({ section: "columns", slug: item.slug, src: item.heroImage.src, fallbackSrc: item.heroImage.socialSrc })),
-  ...hotIssueClusterModule.getHotIssueClusters("ko").map((item) => ({ section: "hot-issues", slug: item.id, src: item.imageSrc })),
+  ...hotIssueClusterModule.getHotIssueClusters("ko").map((item) => ({
+    section: "hot-issues", slug: item.id, src: item.imageSrc, fallbackSrc: item.items[0]?.imageSrc,
+  })),
   ...seedLanguageEnvironmentModule.seedLanguageEnvironmentArticlesKo.map((item) => ({ section: "seed-language", slug: item.slug, src: environmentHero })),
   ...seedLanguageModule.seedLanguageArticlesKo.map((item) => ({ section: "seed-language", slug: item.slug, src: item.heroImage.src })),
   ...publicInterestWatchModule.publicInterestWatchCases

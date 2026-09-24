@@ -32,6 +32,11 @@ export default function HotIssueClusterDetail() {
         <div className="overflow-hidden bg-ivory">
           <SafeImage src={cluster.imageSrc} alt={cluster.imageAlt} loading="eager" fetchPriority="high" referrerPolicy="no-referrer" className="aspect-[16/7.2] w-full object-cover" />
         </div>
+        {cluster.imageCredit && cluster.imageSourceUrl && (
+          <p className="mt-2 text-right text-xs text-charcoal/55">
+            <a href={cluster.imageSourceUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">{cluster.imageCredit}</a>
+          </p>
+        )}
 
         <div className="grid gap-5 border-b border-green-deep/15 bg-white px-5 py-5 sm:grid-cols-[.85fr_1.15fr] sm:px-7 sm:py-6">
           <div>
