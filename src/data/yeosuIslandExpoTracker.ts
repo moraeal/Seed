@@ -23,10 +23,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     en: "Fair under way · Criminal complaint filed · Outcomes tracked",
   },
   openedAt: "2018-09-05",
-  updatedAt: "2026-09-22",
+  updatedAt: "2026-09-24",
   nextCheck: {
-    ko: "9월 21일 고발사건의 광주지검 접수·배당과 실제 수사 착수 여부, 피고발인과 조직위의 구체적 입장, 누적 입장객을 유료·무료·단체·초청·공무출장으로 나눈 집계, 수의계약을 포함한 계약 원문과 집행액, 콘텐츠 보완 추경 7억 원의 의결·집행, 사업수익 120억 원의 달성 여부와 폐막 뒤 최종 정산",
-    en: "Receipt and assignment of the September 21 complaint at the Gwangju District Prosecutors' Office and whether a formal investigation begins; specific responses from those named and the organizing committee; cumulative attendance split into paid, free, group, invited and publicly funded staff visits; contract documents and spending including negotiated contracts; approval and use of the KRW 700 million content supplement; progress toward the KRW 12 billion revenue target; and final settlement after closing",
+    ko: "9월 21일 고발사건의 광주지검 접수·배당과 실제 수사 착수 여부, 피고발인과 조직위의 구체적 입장, 누적 입장객을 유료·무료·단체·초청·공무출장으로 나눈 집계, 추석 무료입장 규모와 수익 영향, 개도·금오도 셔틀의 실제 이용실적, 수의계약을 포함한 계약 원문과 집행액, 콘텐츠 보완 추경 7억 원의 의결·집행, 사업수익 120억 원의 달성 여부와 폐막 뒤 최종 정산",
+    en: "Receipt and assignment of the September 21 complaint at the Gwangju District Prosecutors' Office and whether a formal investigation begins; specific responses from those named and the organizing committee; cumulative attendance split into paid, free, group, invited and publicly funded staff visits; the scale and revenue effect of holiday free admission; actual use of Gaedo and Geumodo shuttles; contract documents and spending including negotiated contracts; approval and use of the KRW 700 million content supplement; progress toward the KRW 12 billion revenue target; and final settlement after closing",
   },
   heroImage: {
     src: "images/monitoring/yeosu-island-expo-tracker-hero.webp",
@@ -102,6 +102,13 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       text: {
         ko: "자유통일당이 예산 편성·집행과 계약 전반을 문제 삼아 조직위·전현직 지방정부 책임자 등을 광주지검에 형사고발했습니다. 혐의는 고발인의 주장으로, 수사기관 판단은 아직 나오지 않았습니다.",
         en: "The Liberty Unification Party filed a criminal complaint with Gwangju prosecutors against organizing-committee and current and former local-government officials over budgeting, spending and contracts. The alleged offenses remain the complainant's claims; prosecutors have not reached any findings.",
+      },
+    },
+    {
+      date: "2026-09-23",
+      text: {
+        ko: "조직위가 개도·금오도 부행사장까지의 환승 경로와 섬 안 셔틀·마을버스, 여객선 운항횟수를 한 문서에 공개하고 추석 연휴 무료입장 대상도 확대했습니다.",
+        en: "Organizers published a single guide to transfers, island buses and ferry frequency for the Gaedo and Geumodo satellite venues, while expanding free admission over the holiday.",
       },
     },
   ],
@@ -611,8 +618,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
         en: "Five daily direct shuttles added between Shingi Port and the main venue",
       },
       description: {
-        ko: "조직위는 9월 16일부터 신기항과 주행사장을 바로 잇는 대형버스 1대를 하루 5회 운행하기 시작했습니다. 첫차는 주행사장에서 오전 8시 10분, 막차는 신기항에서 오후 7시 40분에 출발합니다. 금오도 무료셔틀 중단 뒤 육지 쪽 환승 연결을 보완한 조치이지만, 금오도 안에서 중단된 이동수단을 대신하는 노선은 아닙니다. 수요를 감당할 수 있는지는 이용실적으로 확인해야 합니다.",
-        en: "On September 16, organizers began running one large bus on five direct daily trips between Shingi Port and the main venue. The first trip leaves the main venue at 8:10 a.m. and the last leaves Shingi Port at 7:40 p.m. The route improves the mainland connection after Geumodo's free shuttle stopped, but it does not replace transport lost within the island. Ridership will show whether the capacity is sufficient.",
+        ko: "조직위는 9월 16일부터 신기항과 주행사장을 바로 잇는 대형버스 1대를 하루 5회 운행하기 시작했습니다. 운행 시작 당시 공지는 주행사장 오전 8시 10분 첫차와 신기항 오후 7시 40분 막차를 안내했습니다. 금오도 무료셔틀 중단 뒤 육지 쪽 환승 연결을 보완한 조치이지만, 금오도 안에서 중단된 이동수단을 대신하는 노선은 아닙니다. 수요를 감당할 수 있는지는 이용실적으로 확인해야 합니다.",
+        en: "On September 16, organizers began running one large bus on five direct daily trips between Shingi Port and the main venue. The launch notice listed an 8:10 a.m. first departure from the venue and a 7:40 p.m. last departure from Shingi Port. The route improves the mainland connection after Geumodo's free shuttle stopped, but it does not replace transport lost within the island. Ridership will show whether the capacity is sufficient.",
       },
       change: {
         ko: "금오도 무료셔틀 중단 뒤 육지 쪽 환승 연결 보완",
@@ -719,14 +726,71 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-23",
+      title: {
+        ko: "개도·금오도 부행사장 이동경로 한 문서에 공개",
+        en: "Organizers publish a single guide to the Gaedo and Geumodo satellite venues",
+      },
+      description: {
+        ko: "조직위는 주행사장에서 개도로 갈 때 여수시청행 셔틀에서 백야항행 셔틀로 갈아타도록 안내했습니다. 시청–백야항 노선은 하루 4회, 금·토요일에는 1회가 추가되며 개도 안에서는 셔틀버스가 운행 중이라고 밝혔습니다. 금오도는 주행사장–신기항 셔틀 하루 5회, 신기항–여천항 여객선 하루 9항차와 섬 안 마을버스를 연결했습니다. 9월 23일 안내의 신기항 노선 시간은 운행 시작 때 공지와 달라 방문 전 최신 시간표 확인이 필요합니다. 좌석 수와 대기시간, 실제 이용인원은 공개하지 않았습니다.",
+        en: "The organizing committee advised visitors to Gaedo to take the main-venue shuttle to Yeosu City Hall and transfer to a Baekya Port shuttle. The City Hall–Baekya Port service runs four times a day, with an extra trip on Fridays and Saturdays, and an internal shuttle operates on Gaedo. For Geumodo, the guide links five daily main-venue–Shingi Port shuttles, nine daily ferry sailings to Yeocheon Port and the island's village bus. The Shingi timetable in the September 23 guide differs from the launch notice, so visitors should check the latest schedule before travelling. Seat capacity, waiting times and actual ridership were not disclosed.",
+      },
+      change: {
+        ko: "두 부행사장의 육지 환승·여객선·섬 안 이동수단을 연결한 공식 안내가 공개",
+        en: "An official guide now connects mainland transfers, ferries and on-island transport for both satellite venues",
+      },
+      status: "response",
+      sources: [
+        {
+          publisher: { ko: "2026여수세계섬박람회 조직위원회", en: "2026 Yeosu World Island Fair Organizing Committee" },
+          title: {
+            ko: "주행사장에서 부행사장으로 가는 셔틀버스 안내",
+            en: "Shuttle guide from the main venue to the satellite venues",
+          },
+          url: "https://yeosu2026.or.kr/6_2/60",
+          publishedAt: "2026-09-23",
+          kind: "document",
+        },
+      ],
+    },
+    {
+      date: "2026-09-23",
+      title: {
+        ko: "추석 연휴 나흘간 무료입장 대상 확대",
+        en: "Free admission expands for four holiday days",
+      },
+      description: {
+        ko: "조직위는 9월 24일부터 27일까지 조부모·부모·자녀가 함께 온 3대 가족과 한복 착용 관람객에게 무료입장을 적용하고, 12세 미만 어린이와 동반하면 보호자 2명까지 무료로 입장할 수 있게 했습니다. 연휴 관람 문턱을 낮춘 조치이지만, 무료입장 예상 인원과 120억 원 사업수익 계획에 미칠 영향은 공개하지 않았습니다. 연휴 뒤 총관람객만 제시할 경우 유료 성과와 무료 유입을 구분할 수 없습니다.",
+        en: "From September 24 through 27, organizers are offering free admission to three-generation families arriving together and to visitors in hanbok; a child under 12 may also be accompanied by up to two adults free of charge. The measure lowers the cost of a holiday visit, but organizers did not publish an expected free-admission count or its effect on the KRW 12 billion revenue plan. A post-holiday headline total alone would not distinguish paid performance from free attendance.",
+      },
+      change: {
+        ko: "연휴 관람객 유치가 프로그램 보강에서 입장료 면제 확대로 이동",
+        en: "Holiday attendance promotion expands from programming to admission waivers",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "동아일보", en: "The Dong-A Ilbo" },
+          title: {
+            ko: "2026여수세계섬박람회, 추석 연휴 맞이 공연·이벤트 운영",
+            en: "Yeosu World Island Fair announces holiday performances and events",
+          },
+          url: "https://www.donga.com/news/Society/article/all/20260923/134728028/1",
+          publishedAt: "2026-09-23",
+          kind: "article",
+          thumbnailSrc: "https://dimg.donga.com/wps/NEWS/IMAGE/2026/09/23/134728473.1.jpg",
+        },
+      ],
+    },
+    {
       date: "다음",
       title: {
         ko: "관람객·수익·교통 보완과 폐막 뒤 정산 확인",
         en: "Track attendance, revenue, transport fixes and final settlement",
       },
       description: {
-        ko: "9월 21일 고발사건의 접수·배당과 실제 수사 착수 여부, 피고발인과 조직위의 구체적 답변부터 확인합니다. 이어 유료·무료·단체·초청·공무출장을 구분한 입장객, 수의계약을 포함한 계약 원문과 집행액, 식음시설 수익의 지역 환원, 섬 교통, 120억 원 사업수익의 실제 달성액을 추적합니다. 11월 4일 폐막 뒤에는 직접사업과 연계사업 정산, 계약 변경, 철거·존치 시설과 유지비를 기록합니다.",
-        en: "The next checks are receipt and assignment of the September 21 complaint, whether a formal investigation begins, and specific responses from those named and the organizers. The tracker will then follow attendance split by paid, free, group, invited and publicly funded staff visits; contract documents and spending including negotiated contracts; local return from food service; island transport; and actual revenue against the KRW 12 billion plan. After November 4, it will track direct and linked project settlement, contract changes, retained and removed facilities, and maintenance costs.",
+        ko: "9월 21일 고발사건의 접수·배당과 실제 수사 착수 여부, 피고발인과 조직위의 구체적 답변부터 확인합니다. 이어 유료·무료·단체·초청·공무출장을 구분한 입장객과 추석 무료입장 규모, 수의계약을 포함한 계약 원문과 집행액, 식음시설 수익의 지역 환원, 개도·금오도 교통수단의 이용실적, 120억 원 사업수익의 실제 달성액을 추적합니다. 11월 4일 폐막 뒤에는 직접사업과 연계사업 정산, 계약 변경, 철거·존치 시설과 유지비를 기록합니다.",
+        en: "The next checks are receipt and assignment of the September 21 complaint, whether a formal investigation begins, and specific responses from those named and the organizers. The tracker will then follow attendance split by paid, free, group, invited and publicly funded staff visits, including the holiday free-admission count; contract documents and spending including negotiated contracts; local return from food service; actual use of Gaedo and Geumodo transport; and revenue against the KRW 12 billion plan. After November 4, it will track direct and linked project settlement, contract changes, retained and removed facilities, and maintenance costs.",
       },
       status: "pending",
     },
@@ -773,8 +837,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       en: "Ten days after opening, the South Jeolla–Gwangju authority placed KRW 700 million for fair content in a supplementary budget reviewed by a council committee on September 15. Final approval and spending have not yet been confirmed.",
     },
     {
-      ko: "조직위는 9월 16일부터 신기항과 주행사장을 잇는 대형버스 1대를 하루 5회 운행하기 시작했습니다. 첫차는 주행사장에서 오전 8시 10분, 막차는 신기항에서 오후 7시 40분에 출발합니다.",
-      en: "On September 16, organizers began operating one large bus on five daily trips between Shingi Port and the main venue, from an 8:10 a.m. departure at the venue to a 7:40 p.m. departure at Shingi Port.",
+      ko: "조직위는 9월 16일부터 신기항과 주행사장을 잇는 대형버스 1대를 하루 5회 운행하기 시작했습니다. 운행 시작 공지는 주행사장 오전 8시 10분 첫차와 신기항 오후 7시 40분 막차를 안내했으며, 9월 23일 공개된 시간표는 출발시각이 달라졌습니다.",
+      en: "On September 16, organizers began operating one large bus on five daily trips between Shingi Port and the main venue. The launch notice listed an 8:10 a.m. first departure from the venue and a 7:40 p.m. last departure from Shingi; the timetable published on September 23 shows different departure times.",
     },
     {
       ko: "조직위는 식당의 밥·반찬 운영을 고치고 만족도 조사를 하며 ‘거문도 뱃노래’의 연출 수준을 보완하겠다고 9월 17일 밝혔습니다. 원재료·가격과 공연 예산에 관한 내용은 조직위의 설명입니다.",
@@ -787,6 +851,14 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     {
       ko: "자유통일당은 9월 21일 박람회 예산·계약과 운영을 문제 삼아 조직위와 전현직 지방정부 책임자 등을 광주지방검찰청에 형사고발했다고 밝혔습니다. 고발 제기와 혐의 입증은 별개의 절차입니다.",
       en: "On September 21, the Liberty Unification Party said it filed a criminal complaint with the Gwangju District Prosecutors' Office against organizing-committee and current and former local-government officials over the fair's budgets, contracts and operations. Filing a complaint is not proof of the alleged offenses.",
+    },
+    {
+      ko: "조직위는 개도에 시청–백야항 셔틀과 섬 안 셔틀, 금오도에 주행사장–신기항 셔틀·하루 9항차 여객선·섬 안 마을버스를 연결한 이동경로를 9월 23일 공개했습니다.",
+      en: "On September 23, organizers published routes linking Gaedo to a City Hall–Baekya Port shuttle and an internal shuttle, and Geumodo to the main-venue–Shingi Port shuttle, nine daily ferry sailings and an island village bus.",
+    },
+    {
+      ko: "9월 24~27일에는 3대 가족과 한복 착용자, 12세 미만 어린이와 동반한 보호자 2명까지 무료로 입장할 수 있습니다. 무료입장 예상 인원은 공개되지 않았습니다.",
+      en: "From September 24 to 27, three-generation families, visitors in hanbok and up to two adults accompanying a child under 12 can enter free. No projected count for these free admissions was disclosed.",
     },
   ],
   currentControversies: [
@@ -826,8 +898,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
         en: "Will the 3 million target translate into paid visits and revenue?",
       },
       description: {
-        ko: "개막 13일 누적 입장객은 목표의 4.3%였습니다. 추석 연휴와 단체관람이 남아 있어 최종 흥행을 단정할 단계는 아닙니다. 다만 공무출장 관람까지 허용된 만큼 유료·무료·초청·단체·공무출장·중복 방문을 나누지 않은 총인원만으로는 120억 원 수익계획의 성과를 판단할 수 없습니다.",
-        en: "Thirteen-day attendance was 4.3 percent of the target. Holiday and group traffic remain, so a final verdict is premature. With public employees now allowed to attend on official travel, an undifferentiated total—without paid, free, invited, group, publicly funded staff and repeat visits—cannot establish progress toward KRW 12 billion in revenue.",
+        ko: "개막 13일 누적 입장객은 목표의 4.3%였습니다. 9월 24~27일에는 3대 가족·한복 착용자와 12세 미만 어린이 동반 보호자까지 무료입장 대상이 확대됩니다. 공무출장 관람과 연휴 무료입장까지 더해지는 만큼 유료·무료·초청·단체·공무출장·중복 방문을 나누지 않은 총인원만으로는 120억 원 수익계획의 성과를 판단할 수 없습니다.",
+        en: "Thirteen-day attendance was 4.3 percent of the target. From September 24 to 27, free admission expands to three-generation families, visitors in hanbok and adults accompanying children under 12. With publicly funded staff visits and holiday waivers both entering the count, an undifferentiated total—without paid, free, invited, group, staff and repeat visits—cannot establish progress toward KRW 12 billion in revenue.",
       },
     },
     {
@@ -846,8 +918,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
         en: "Does transport support the promise that the islands are the venue?",
       },
       description: {
-        ko: "개도와 금오도는 박람회의 차별화된 부행사장입니다. 개막 직후 금오도 무료셔틀이 중단된 뒤 9월 16일부터 주행사장–신기항 직행 대형버스 1대가 하루 5회 운행되기 시작했습니다. 이 노선은 육지 쪽 접근을 보완하지만 금오도 안에서 중단된 이동수단을 그대로 대신하지는 않습니다. 수송력이 수요에 맞는지와 섬 주민의 생업·관광객 이동권을 어떻게 함께 보장할지가 남아 있습니다.",
-        en: "Gaedo and Geumodo are central to the fair's distinctive claim. After Geumodo's free shuttle stopped days after opening, one large bus began five daily direct trips between the main venue and Shingi Port on September 16. That improves mainland access but does not replace the lost service within Geumodo. Whether capacity meets demand and how island livelihoods can coexist with visitor mobility remain unresolved.",
+        ko: "개도와 금오도는 박람회의 차별화된 부행사장입니다. 조직위는 개도에 시청–백야항 셔틀과 섬 안 셔틀, 금오도에 주행사장–신기항 셔틀·하루 9항차 여객선·섬 안 마을버스를 연결한 경로를 공개했습니다. 이동경로는 구체화됐지만 좌석 수, 환승 대기시간, 실제 이용인원은 아직 보이지 않습니다. 수송력이 수요에 맞는지와 섬 주민의 생업·관광객 이동권을 어떻게 함께 보장할지가 남아 있습니다.",
+        en: "Gaedo and Geumodo are central to the fair's distinctive claim. Organizers have now published a route linking Gaedo to the City Hall–Baekya Port shuttle and an internal shuttle, and Geumodo to the main-venue–Shingi Port shuttle, nine daily ferry sailings and an island village bus. The path is clearer, but seat capacity, transfer waits and actual ridership remain undisclosed. Whether capacity meets demand and how island livelihoods can coexist with visitor mobility are still unresolved.",
       },
     },
     {
@@ -864,8 +936,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
   questions: [],
   proposals: [],
   caution: {
-    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 콘텐츠 보완비 7억 원은 현재 추경안 편성·상임위 심사 단계이므로 확정 지출로 보거나 713억 원에 곧바로 더해서도 안 됩니다. 13일간 입장객 12만8,217명은 유료 입장객만을 뜻하지 않으며 출장 처리된 공무원 관람이 포함될 수 있습니다. 9월 21일 고발에서 제기된 배임·법 위반·허위공문서와 계약대금 부풀리기·관람객 통계 조작 의도는 고발인의 주장으로, 수사기관이 확인한 사실이나 처분 결과가 아닙니다.",
-    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The proposed KRW 700 million content supplement is still at the budget-review stage, so it should not be treated as final spending or automatically added to the KRW 71.3 billion. The 13-day attendance figure of 128,217 is not a paid-admission count and may include public employees attending on official travel. Allegations in the September 21 complaint—including breach of trust, legal violations, false official documents, inflated contract prices and an intent to manipulate attendance—are the complainant's claims, not facts established or disposed of by investigators.",
+    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 콘텐츠 보완비 7억 원은 현재 추경안 편성·상임위 심사 단계이므로 확정 지출로 보거나 713억 원에 곧바로 더해서도 안 됩니다. 13일간 입장객 12만8,217명은 유료 입장객만을 뜻하지 않으며 출장 처리된 공무원 관람이 포함될 수 있습니다. 9월 24~27일 무료입장 확대 뒤의 총관람객도 유료·무료를 나눠 확인해야 합니다. 9월 21일 고발에서 제기된 배임·법 위반·허위공문서와 계약대금 부풀리기·관람객 통계 조작 의도는 고발인의 주장으로, 수사기관이 확인한 사실이나 처분 결과가 아닙니다.",
+    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The proposed KRW 700 million content supplement is still at the budget-review stage, so it should not be treated as final spending or automatically added to the KRW 71.3 billion. The 13-day attendance figure of 128,217 is not a paid-admission count and may include public employees attending on official travel. Headline attendance after the September 24–27 free-admission expansion must also be split into paid and free entry. Allegations in the September 21 complaint—including breach of trust, legal violations, false official documents, inflated contract prices and an intent to manipulate attendance—are the complainant's claims, not facts established or disposed of by investigators.",
   },
   sources: [
     {
@@ -944,6 +1016,14 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     {
       label: { ko: "연합뉴스 — 예산·계약 관련 책임자 형사고발", en: "Yonhap — Criminal complaint over budgeting and contracts" },
       url: "https://www.yna.co.kr/view/AKR20260921093100001",
+    },
+    {
+      label: { ko: "박람회 조직위원회 — 주행사장과 개도·금오도 부행사장 이동 안내", en: "Organizing committee — Transport guide from the main venue to Gaedo and Geumodo" },
+      url: "https://yeosu2026.or.kr/6_2/60",
+    },
+    {
+      label: { ko: "동아일보 — 추석 연휴 무료입장 확대", en: "The Dong-A Ilbo — Expanded free admission over the holiday" },
+      url: "https://www.donga.com/news/Society/article/all/20260923/134728028/1",
     },
     {
       label: { ko: "박람회 조직위원회 — 행사 개요와 일정", en: "Organizing committee — Event overview and schedule" },
