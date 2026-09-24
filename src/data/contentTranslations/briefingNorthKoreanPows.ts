@@ -8,7 +8,7 @@ export const northKoreanPowsTranslation: BriefingTranslation = {
   author: "The Seed Voice",
   images: [
     { alt: "AI reconstruction of two wounded soldiers resting in a sparse treatment room", caption: "An AI reconstruction informed by the setting of photographs published in 2025. It does not depict the actual prisoners or their arrival in South Korea.", credit: "The Seed Voice · AI reconstruction" },
-    { alt: "President Volodymyr Zelensky addressing the UN General Assembly on September 23, 2026", caption: "President Zelensky publicly announced the transfer in his September 23 address. Image from the UN's official speech page.", credit: "UN Photo · 81st General Debate" },
+    { alt: "AI composite of Zelensky speaking on a UN assembly screen beside the UN emblem", caption: "AI composite illustrating Zelensky's September 23, 2026 UN address. This is not an original press photograph of the speech.", credit: "The Seed Voice · AI composite" },
   ],
   sourceArticle: {
     title: "Zelensky says two North Korean POWs were sent to South Korea; Seoul all but confirms arrival",
@@ -139,7 +139,7 @@ export const northKoreanPowsTranslation: BriefingTranslation = {
     "Whether the military reports the explosive-device findings and the field operation's safety measures.",
     "Whether promised treatment, rehabilitation and compensation reach the injured soldiers."
   ],
-  sourceNote: "Based on public reporting available September 24, 2026. JoongAng reports the mid-September arrival; Seoul has not released the route or precise date. Concern about a future forced return is The Seed Voice’s judgment, not a reported government plan. The opening image is an AI reconstruction; the linked report box shows a January 2025 Zelensky Telegram image.",
+  sourceNote: "Based on public reporting available September 24, 2026. JoongAng reports the mid-September arrival; Seoul has not released the route or precise date. Concern about a future forced return is The Seed Voice’s judgment, not a reported government plan. The opening image is an AI reconstruction, the UN speech image is an AI composite, and the linked report box shows a January 2025 Zelensky Telegram image.",
   sourceLabels: [
     "JoongAng Ilbo · Zelensky says two North Korean POWs were sent to South Korea (Sept. 24, 2026)",
     "Reuters · Ukraine sent two captured North Korean soldiers to South Korea (Sept. 23, 2026)",

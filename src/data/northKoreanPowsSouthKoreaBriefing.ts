@@ -25,11 +25,11 @@ export const northKoreanPowsSouthKoreaBriefing: Briefing = {
       sourceUrl: "https://seedvoice.kr/briefings/north-korean-pows-south-korea-zelensky-un/",
     },
     {
-      src: "images/briefings/zelensky-un-2026.webp",
-      alt: "2026년 9월 23일 유엔총회 연단에서 연설하는 볼로디미르 젤렌스키 우크라이나 대통령",
-      caption: "젤렌스키 대통령은 9월 23일 유엔총회 연설에서 두 포로의 한국행을 공개했다. 유엔 공식 연설 페이지에 게재된 사진.",
-      credit: "UN Photo · 제81차 유엔총회 일반토의",
-      sourceUrl: "https://gadebate.un.org/en/81/ukraine",
+      src: "images/briefings/zelensky-un-editorial-composite.webp",
+      alt: "젤렌스키 대통령의 유엔 연설 화면과 유엔 엠블럼을 한 장면으로 구성한 AI 합성 이미지",
+      caption: "젤렌스키 대통령의 2026년 9월 23일 유엔총회 연설을 바탕으로 재구성한 AI 합성 이미지. 실제 연설 보도사진은 아니다.",
+      credit: "씨앗의 소리 제작 · AI 합성 이미지",
+      sourceUrl: reuters,
       contain: true,
     },
   ],
@@ -177,5 +177,5 @@ export const northKoreanPowsSouthKoreaBriefing: Briefing = {
     { label: "연합뉴스 · 유엔 북한인권특별보고관의 2019년 강제 북송 우려", url: "https://en.yna.co.kr/view/AEN20220902007700325" },
     { label: "한국일보 · DMZ 폭발 두 차례, 폭발물 감정 진행 (2026.9.23)", url: "https://www.hankookilbo.com/news/article/A2026092317460005437" },
   ],
-  sourceNote: "2026년 9월 24일 공개 자료 기준. 중앙일보의 9월 중순 입국은 해당 매체의 취재 결과다. 외교부는 개별 이송 시기·경로를 공개하지 않았다. 북송 우려는 씨앗의 판단이며 정부의 북송 계획이 확인된 사실은 아니다. 첫 이미지는 AI 재현 이미지, 원보도 박스 사진은 2025년 젤렌스키 텔레그램 공개 사진이다.",
+  sourceNote: "2026년 9월 24일 공개 자료 기준. 중앙일보의 9월 중순 입국은 해당 매체의 취재 결과다. 외교부는 개별 이송 시기·경로를 공개하지 않았다. 북송 우려는 씨앗의 판단이며 정부의 북송 계획이 확인된 사실은 아니다. 첫 이미지는 AI 재현 이미지, 유엔 연설 장면은 AI 합성 이미지, 원보도 박스 사진은 2025년 젤렌스키 텔레그램 공개 사진이다.",
 };
