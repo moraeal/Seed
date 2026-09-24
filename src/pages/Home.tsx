@@ -13,7 +13,7 @@ import { civicWatchCases } from "../data/publicInterestWatch";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
 import { taxPolicies } from "../data/taxWatch";
-import { getLegislativeCommentaryEdition, legislativeCommentaries } from "../data/legislativeCommentaries";
+import { getLegislativeCommentaryEdition, legislativeCommentaries, linkedLegislativeColumnCommentaries } from "../data/legislativeCommentaries";
 import { getTaxCommentaryEdition, taxCommentaries } from "../data/taxCommentaries";
 import { getFeaturedContentCandidates } from "../data/featuredContent";
 import { topicTaxonomy } from "../data/topicTaxonomy";
@@ -218,6 +218,20 @@ export default function Home() {
   // Commentary is deliberately separate from the factual monitoring records above.
   // New commentary added to either data source appears here without a homepage edit.
   const commentaryCandidates: HomeWatchCommentary[] = [
+    ...linkedLegislativeColumnCommentaries.map((article) => {
+      const edition = article.editions[ko ? "ko" : "en"];
+      return {
+        slug: article.slug,
+        category: "legislation" as const,
+        date: article.date,
+        readMinutes: article.readMinutes,
+        to: article.href,
+        title: edition.title,
+        summary: edition.summary,
+        imageSrc: article.heroSrc,
+        imageAlt: edition.heroAlt,
+      };
+    }),
     ...legislativeCommentaries.map((article) => {
       const edition = getLegislativeCommentaryEdition(article, ko ? "ko" : "en");
       return {
