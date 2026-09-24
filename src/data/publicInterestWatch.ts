@@ -127,16 +127,16 @@ export const publicInterestWatchCases: PublicInterestWatchCase[] = [
     slug: "beautiful-store",
     organization: { ko: "아름다운가게", en: "Beautiful Store" },
     eyebrow: { ko: "자원순환·나눔 경제", en: "Resource circulation · Giving economy" },
-    title: {
-      ko: "기부한 물건과 시민의 참여는 얼마나 공익으로 돌아오는가",
-      en: "How much donated value returns to citizens as public benefit?",
-    },
-    summary: {
-      ko: "아름다운가게는 시민이 기부한 물품을 판매해 자원순환과 나눔을 연결하는 대규모 공익조직입니다. 씨드는 회계의 적정성을 인정하면서도 물품의 흐름, 축적된 자산, 공익지원과 지역 참여가 시민에게 충분히 설명되는지 묻습니다.",
-      en: "Beautiful Store turns donated goods into resource circulation and public benefit at significant scale. SEED recognizes its clean audit opinion while asking whether goods flows, accumulated assets, grants and local participation are explained clearly enough.",
-    },
+    title: { ko: "기부한 물건은 어디로 갔나…아름다운가게 395억 원의 다음 장부", en: "Where do donated goods go? The next ledger behind Beautiful Store's revenue" },
+    summary: { ko: "2025년 감사 수치에서 물품의 행방, 지원 이후의 변화, 축적 자산의 사용계획을 묻는다. 10년 자료는 확인된 연도부터 채운다.", en: "Following donated goods, the outcomes of civic support and accumulated assets from audited 2025 figures; building a verified ten-year ledger." },
     status: { ko: "재정·시민참여 점검", en: "Finance and participation review" },
-    updatedAt: "2026-09-01",
+    updatedAt: "2026-09-24",
+    heroImage: {
+      src: "/images/monitoring/beautiful-store-ledger.webp",
+      alt: { ko: "재사용 물품과 회계 자료를 함께 놓은 상징 이미지", en: "Conceptual image of reused goods and accounting papers" },
+      caption: { ko: "씨앗의 소리 AI 제작 상징 이미지", en: "AI editorial illustration by Seed Voice" },
+      credit: { ko: "씨앗의 소리", en: "Seed Voice" },
+    },
     sourceBasis: {
       ko: "씨드가 보관한 「2025 아름다운가게 감사보고서」의 재무제표와 주석을 중심으로, 아름다운가게의 투명경영 공시·연차보고서·임원 및 위원회 자료를 함께 검토했습니다. 다른 기관의 자료는 포함하지 않았습니다.",
       en: "This record is based on SEED's archived 2025 Beautiful Store audit report, cross-checked with the organization's transparency, annual-report and governance pages. It does not use Beautiful Foundation or ChildFund Korea materials.",
@@ -343,16 +343,16 @@ export const publicInterestWatchCases: PublicInterestWatchCase[] = [
     slug: "korea-football-association",
     organization: { ko: "대한축구협회", en: "Korea Football Association" },
     eyebrow: { ko: "스포츠행정·팬 시민 권리", en: "Sports governance · Fan-citizen rights" },
-    title: {
-      ko: "국민적 영향력만큼, 선임과 재정의 절차도 투명해야 합니다",
-      en: "Selection and finance must match football's public influence",
-    },
-    summary: {
-      ko: "대표팀은 국민적 자산이지만 협회 운영은 팬의 열정만으로 정당화되지 않습니다. 감독 선임, 대규모 시설사업, 지도자 자격과 임원 보수에서 규정이 실제로 작동하는지 묻습니다.",
-      en: "The national team is a public asset, but fan passion cannot excuse weak governance. We ask whether rules truly govern coaching appointments, major facilities, licensing and executive compensation.",
-    },
+    title: { ko: "축구협회 예산 1,387억 원…구장 건립비를 걷어내면 무엇이 보이나", en: "KFA's KRW 138.7bn budget: what remains after separating the stadium project?" },
+    summary: { ko: "2026년 일반예산과 코리아풋볼파크 건립비를 분리하고 2024년 감사 27건의 후속조치를 추적한다.", en: "Separating general spending from the Football Park project and following up 27 ministry audit findings." },
     status: { ko: "감사 후속 추적", en: "Tracking audit follow-up" },
-    updatedAt: "2026-09-01",
+    updatedAt: "2026-09-24",
+    heroImage: {
+      src: "/images/monitoring/kfa-budget-watch.webp",
+      alt: { ko: "축구공과 예산 서류가 놓인 경기장 상징 이미지", en: "Conceptual image of a football and budget folder by a pitch" },
+      caption: { ko: "씨앗의 소리 AI 제작 상징 이미지", en: "AI editorial illustration by Seed Voice" },
+      credit: { ko: "씨앗의 소리", en: "Seed Voice" },
+    },
     sourceBasis: {
       ko: "대한축구협회 공개자료와 2024년 문화체육관광부 특정감사 결과, 협회의 공식 반론, 이후 행정소송 경과를 구분해 검토했습니다. 감사 지적은 정부의 공식 판단이며 협회가 다투는 부분은 확정된 사법판단과 분리해 표시합니다.",
       en: "This record separates KFA disclosures, the Ministry of Culture's 2024 special audit, KFA's official reply and later litigation. Audit findings are the government's formal conclusions; disputed points are not presented as final judicial findings.",
@@ -451,16 +451,16 @@ export const publicInterestWatchCases: PublicInterestWatchCase[] = [
     slug: "korea-foundation-for-suicide-prevention",
     organization: { ko: "한국생명존중희망재단", en: "Korea Foundation for Suicide Prevention" },
     eyebrow: { ko: "공공기관·자살예방 예산", en: "Public institution · Suicide-prevention budget" },
-    title: {
-      ko: "708억 원의 자살예방 예산, 시민사회와 삶의 조건에는 얼마나 닿는가",
-      en: "How much of Korea's KRW 70.8 billion prevention budget reaches civil society and the conditions of life?",
-    },
-    summary: {
-      ko: "2026년 정부의 자살예방 분야 전체 예산은 708억 원이고, 한국생명존중희망재단 자체 예산은 370억 4,200만 원입니다. 씨드는 두 예산을 구분하면서 운영비, 관료 출신 수뇌부, 보건의료 중심 전달체계, 시민사회 협력의 작은 몫과 자살사망 추이를 함께 묻습니다.",
-      en: "The government's 2026 suicide-prevention budget is KRW 70.8 billion; the foundation's own budget is KRW 37.042 billion. SEED separates the two while examining operating costs, bureaucratic leadership, the health-sector delivery model, limited civic partnership and suicide trends.",
-    },
+    title: { ko: "자살예방 708억 원, 재단 몫 370억 원…삶의 조건에는 얼마가 닿나", en: "KRW 70.8bn for prevention, KRW 37.0bn at the foundation: what reaches daily life?" },
+    summary: { ko: "정부 전체와 재단 예산의 범위를 구분하고 상담·민관협력 사업의 실제 효과를 추적한다.", en: "Separating ministry and foundation budgets and tracking the outcomes of counseling and civic partnerships." },
     status: { ko: "예산·거버넌스 집중점검", en: "Budget and governance review" },
-    updatedAt: "2026-09-01",
+    updatedAt: "2026-09-24",
+    heroImage: {
+      src: "/images/monitoring/kfsp-community-care.webp",
+      alt: { ko: "의자 두 개와 전화기가 놓인 돌봄 공간의 상징 이미지", en: "Conceptual image of a supportive room with two chairs and a telephone" },
+      caption: { ko: "씨앗의 소리 AI 제작 상징 이미지", en: "AI editorial illustration by Seed Voice" },
+      credit: { ko: "씨앗의 소리", en: "Seed Voice" },
+    },
     sourceBasis: {
       ko: "알리오의 2026년 수입·지출, 주요사업, 최신 임원 공시와 보건복지부·국가데이터처 자료를 교차 검토했습니다.",
       en: "This record cross-checks ALIO's 2026 income, expenditure, major-program and executive disclosures with ministry and national statistics.",
