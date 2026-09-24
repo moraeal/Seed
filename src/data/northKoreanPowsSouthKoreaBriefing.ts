@@ -18,11 +18,11 @@ export const northKoreanPowsSouthKoreaBriefing: Briefing = {
   homeBriefingLeadEligible: true,
   images: [
     {
-      src: "images/briefings/north-korean-pows-2025-telegram.jpg",
-      alt: "2025년 1월 우크라이나군에 생포된 북한군 포로 두 명의 모습. 젤렌스키 대통령 텔레그램 공개 사진",
-      caption: "2025년 1월 생포 당시 젤렌스키 대통령이 텔레그램에 공개한 사진을 중앙일보가 인용했습니다. 2026년 9월 한국 입국 장면이 아닙니다. 사진을 누르면 중앙일보 원보도로 이동합니다.",
-      credit: "젤렌스키 텔레그램 공개 사진 · 중앙일보 기사 인용",
-      sourceUrl: joongang,
+      src: "images/briefings/north-korean-pows-editorial-reconstruction.webp",
+      alt: "치료실 침대에 앉은 부상 병사와 뒤편 침대의 병사를 묘사한 AI 재현 이미지",
+      caption: "2025년 공개된 포로 사진의 상황을 참고한 AI 재현 이미지입니다. 실제 두 포로의 사진이나 2026년 한국 입국 장면이 아닙니다.",
+      credit: "씨앗의 소리 제작 · AI 재현 이미지",
+      sourceUrl: "https://seedvoice.kr/briefings/north-korean-pows-south-korea-zelensky-un/",
     },
     {
       src: "images/briefings/zelensky-un-2026.webp",
@@ -112,5 +112,5 @@ export const northKoreanPowsSouthKoreaBriefing: Briefing = {
     { label: "연합뉴스 · 한·우크라 외교장관 협의 (2026.6.30)", url: "https://en.yna.co.kr/view/AEN20260630006551315" },
     { label: "유엔 · 젤렌스키 대통령 제81차 총회 연설 (2026.9.23)", url: "https://gadebate.un.org/en/81/ukraine" },
   ],
-  sourceNote: "2026년 9월 24일 확인한 공개 보도를 기준으로 작성했습니다. 중앙일보의 ‘9월 중순 입국’은 해당 매체의 취재 결과이며, 외교부가 날짜·경로를 공식 확인한 내용은 아닙니다. 대표 이미지와 원보도 박스의 사진은 중앙일보에 실린 2025년 1월 젤렌스키 텔레그램 공개 사진이며, 사진을 누르면 해당 기사로 이동합니다.",
+  sourceNote: "2026년 9월 24일 확인한 공개 보도를 기준으로 작성했습니다. 중앙일보의 ‘9월 중순 입국’은 해당 매체의 취재 결과이며, 외교부가 날짜·경로를 공식 확인한 내용은 아닙니다. 상단 AI 재현 이미지는 당시 보도사진의 상황을 참고해 별도로 제작한 것이며 실제 포로의 사진이 아닙니다. 원보도 박스에는 중앙일보가 인용한 2025년 1월 젤렌스키 텔레그램 사진이 남아 있고, 사진을 누르면 해당 기사로 이동합니다.",
 };

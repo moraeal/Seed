@@ -7,7 +7,7 @@ export const northKoreanPowsTranslation: BriefingTranslation = {
   summary: "At the UN, President Zelensky said Ukraine had recently sent two captured North Korean soldiers to South Korea. Seoul described its consultations but withheld individual transfer details for the safety of the men and their families. Reuters, DW, rights groups and JoongAng help reconstruct what preceded the announcement.",
   author: "The Seed Voice",
   images: [
-    { alt: "Two North Korean soldiers in a photograph released by President Zelensky in January 2025 and cited by JoongAng", caption: "A January 2025 image released on President Zelensky's Telegram and cited by JoongAng. It does not depict their arrival in South Korea in September 2026. Click to read the source report.", credit: "Zelensky Telegram image · cited in the linked JoongAng report" },
+    { alt: "AI reconstruction of two wounded soldiers resting in a sparse treatment room", caption: "An AI reconstruction informed by the setting of photographs published in 2025. It does not depict the actual prisoners or their arrival in South Korea.", credit: "The Seed Voice · AI reconstruction" },
     { alt: "President Volodymyr Zelensky addressing the UN General Assembly on September 23, 2026", caption: "President Zelensky publicly announced the transfer in his September 23 address. Image from the UN's official speech page.", credit: "UN Photo · 81st General Debate" },
   ],
   sourceArticle: {
@@ -77,7 +77,7 @@ export const northKoreanPowsTranslation: BriefingTranslation = {
     "Whether the government can explain the principles behind the process without revealing sensitive personal details.",
     "Whether verifiable evidence emerges about personnel, training and technology transfers in Russia–North Korea military cooperation.",
   ],
-  sourceNote: "Based on public reporting available on September 24, 2026. The mid-September arrival date is JoongAng's reported finding; Seoul has not officially confirmed an individual date or route. The lead image and linked source box display the January 2025 photograph cited by JoongAng from Zelensky's Telegram post; they do not show the transfer to South Korea.",
+  sourceNote: "Based on public reporting available on September 24, 2026. The mid-September arrival date is JoongAng's reported finding; Seoul has not officially confirmed an individual date or route. The opening image is an AI reconstruction informed by the setting of 2025 reporting; it does not show the actual prisoners. The linked source box displays the January 2025 photograph cited by JoongAng from Zelensky's Telegram post. Neither image shows the transfer to South Korea.",
   sourceLabels: [
     "JoongAng Ilbo · Zelensky says two North Korean POWs were sent to South Korea (Sept. 24, 2026)",
     "Reuters · Ukraine sent two captured North Korean soldiers to South Korea (Sept. 23, 2026)",
