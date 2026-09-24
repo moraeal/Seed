@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:real-estate-supervisor-citizens-accounts": {
+    ko: {
+      href: "/columns/farmland-ownership-without-an-exit",
+      title: "소유권은 남았지만 소유할 수 없다",
+      relationship: "재산권과 국가의 조사 권한",
+      reason: "부동산 거래를 조사하는 국가 권한에 이어, 농지 처분명령과 이행강제금이 시민의 재산권에 남기는 부담을 살펴봅니다.",
+      listHref: "/columns",
+      listLabel: "칼럼 전체 보기",
+    },
+    en: {
+      href: "/columns/farmland-ownership-without-an-exit",
+      title: "Ownership on Paper, but No Practical Right to Keep It",
+      relationship: "PROPERTY RIGHTS AND STATE POWER",
+      reason: "Continue from oversight of property transactions to the burden that farmland disposal orders and recurring penalties can place on citizens' property rights.",
+      listHref: "/columns",
+      listLabel: "All columns",
+    },
+  },
   "news:supreme-court-renomination-standoff-2026": {
     ko: {
       href: "/columns/control-power-before-ten-percent-penalty-2026",

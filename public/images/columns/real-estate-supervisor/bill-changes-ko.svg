@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+<title id="title">부동산감독원법 수정안, 바뀐 조항과 남은 권한</title><desc id="desc">2월 안의 신용정보 요구 근거는 9월 안에서 삭제됐다. 자료 요구 대상은 조사대상자로 좁아졌지만 직권 조사와 행정조사 단계의 영장 없는 금융거래정보 요구는 남았다.</desc>
+<rect width="1200" height="680" fill="#f6f7f7"/>
+<text x="58" y="75" font-family="Noto Sans KR, sans-serif" font-size="36" font-weight="700" fill="#142b2b">부동산감독원법, 무엇이 바뀌었나</text>
+<text x="58" y="111" font-family="Noto Sans KR, sans-serif" font-size="21" fill="#46605e">2월 발의안과 9월 23일 재발의안의 쟁점 비교</text>
+<rect x="55" y="154" width="520" height="415" rx="12" fill="white" stroke="#cbd6d3" stroke-width="2"/>
+<rect x="625" y="154" width="520" height="415" rx="12" fill="white" stroke="#cbd6d3" stroke-width="2"/>
+<rect x="55" y="154" width="520" height="67" rx="12" fill="#314e49"/><rect x="55" y="203" width="520" height="18" fill="#314e49"/>
+<rect x="625" y="154" width="520" height="67" rx="12" fill="#234d56"/><rect x="625" y="203" width="520" height="18" fill="#234d56"/>
+<g font-family="Noto Sans KR, sans-serif" fill="white" font-size="28" font-weight="700"><text x="83" y="198">2월 발의안</text><text x="653" y="198">9월 재발의안</text></g>
+<g font-family="Noto Sans KR, sans-serif" font-size="23" fill="#1c3435">
+<text x="83" y="274">• 신용정보 요구 근거</text><text x="653" y="274">• 신용정보 요구 근거 삭제</text>
+<text x="83" y="341">• 자료 요구 대상 범위 논란</text><text x="653" y="341">• 조사대상자로 한정, 참고인 제외</text>
+<text x="83" y="408">• 조사와 수사 자료 연결 우려</text><text x="653" y="408">• 조사·수사 정보 시스템 분리</text>
+</g>
+<line x1="83" y1="445" x2="547" y2="445" stroke="#d7dfdd" stroke-width="2"/><line x1="653" y1="445" x2="1117" y2="445" stroke="#d7dfdd" stroke-width="2"/>
+<g font-family="Noto Sans KR, sans-serif" font-size="24" font-weight="700" fill="#9f3c2c"><text x="83" y="495">남았던 핵심 쟁점</text><text x="653" y="495">여전히 남은 쟁점</text></g>
+<g font-family="Noto Sans KR, sans-serif" font-size="21" fill="#314044"><text x="83" y="535">직권 조사·금융거래정보 요구</text><text x="653" y="535">직권 조사·영장 없는 정보 요구</text></g>
+<text x="58" y="617" font-family="Noto Sans KR, sans-serif" font-size="19" fill="#43595a">9월 안의 세부 내용은 9월 23일 아이뉴스24 보도 기준이며, 신규 의안 원문은 별도 대조가 필요합니다.</text>
+<text x="58" y="649" font-family="Noto Sans KR, sans-serif" font-size="17" fill="#607172">자료: 법제처 국민참여입법센터(2월 안), 아이뉴스24(9월 23일) · 씨앗의 소리 구성</text>
+</svg>
