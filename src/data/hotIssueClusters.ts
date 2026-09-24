@@ -32,6 +32,8 @@ export type HotIssueCluster = {
   focus: string;
   imageSrc: string;
   imageAlt: string;
+  imageCredit?: string;
+  imageSourceUrl?: string;
   items: HotIssueClusterItem[];
   updatedAt: string;
 };
@@ -45,6 +47,7 @@ const clusterDefinitions: Array<{
   latestChange: Record<Language, string>;
   focus: Record<Language, string>;
   references: HotIssueReference[];
+  image?: { src: string; alt: Record<Language, string>; credit: Record<Language, string>; sourceUrl: string };
 }> = [
   {
     id: "yeosu-island-expo",
@@ -63,6 +66,18 @@ const clusterDefinitions: Array<{
     focus: {
       ko: "지금 볼 질문 · 713억 원의 예산과 412건의 계약은 어디로 흘렀나",
       en: "Question now · Where did the KRW 71.3 billion budget and 412 contract records go?",
+    },
+    image: {
+      src: "https://www.jeonnam.go.kr/upload/bbs/IELDSKETCH/7325_1.jpg",
+      alt: {
+        ko: "2026년 4월 21일 여수 진모지구 세계섬박람회 주행사장 조성 현장을 둘러보는 관계자들",
+        en: "Officials inspecting construction at the Yeosu World Island Expo's Jinmo main venue on April 21, 2026",
+      },
+      credit: {
+        ko: "2026년 4월 21일 진모지구 주행사장 현장. 사진: 전라남도(공공누리 제1유형).",
+        en: "The Jinmo main venue on April 21, 2026. Photo: Jeollanam-do (KOGL Type 1).",
+      },
+      sourceUrl: "https://www.jeonnam.go.kr/FIELDSKETCH/boardList.do?menuId=cyber0201000000&seq=7325",
     },
     references: [
       { kind: "column", slug: "yeosu-island-expo-procurement-ledger" },
@@ -246,8 +261,10 @@ export function getHotIssueClusters(language: Language): HotIssueCluster[] {
       summary: cluster.summary[language],
       latestChange: cluster.latestChange[language],
       focus: cluster.focus[language],
-      imageSrc: items[0]?.imageSrc ?? fallbackImage,
-      imageAlt: items[0]?.imageAlt ?? cluster.title[language],
+      imageSrc: cluster.image?.src ?? items[0]?.imageSrc ?? fallbackImage,
+      imageAlt: cluster.image?.alt[language] ?? items[0]?.imageAlt ?? cluster.title[language],
+      imageCredit: cluster.image?.credit[language],
+      imageSourceUrl: cluster.image?.sourceUrl,
       items,
       updatedAt: items[0]?.date ?? "",
     };
