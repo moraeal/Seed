@@ -26,7 +26,7 @@ export const supremeCourtRenominationTracker: PublicInterestWatchCase = {
     en: "Opposition lawmakers have filed a competence-dispute petition, but the Constitutional Court has not ruled on its admissibility or merits. As of September 23, neither the presidential office nor the Supreme Court said it had filed its own petition. Expanding the court is a separate legislative issue; this appointment standoff alone does not establish that judges take instructions from the administration.",
   },
   heroImage: {
-    src: "/images/monitoring/supreme-court-renomination-tracker-2026.webp",
+    src: "/images/monitoring/supreme-court-renomination-tracker-2026-v2.webp",
     alt: {
       ko: "빈 의자와 닫힌 서류철이 놓인 법원 복도를 표현한 상징 이미지",
       en: "Symbolic courthouse corridor with an empty chair and a closed document folder",
