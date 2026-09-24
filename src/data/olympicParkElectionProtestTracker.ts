@@ -24,7 +24,7 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
   },
   openedAt: "2026-06-03",
   publishedAt: "2026-09-18",
-  updatedAt: "2026-09-18",
+  updatedAt: "2026-09-24",
   sourceBasis: {
     ko: "선거관리위원회 조사 결과를 인용한 보도, 선거소송 심리와 결정, 선관위 특검법과 압수수색 보도, 올림픽공원 현장 보도를 교차 확인했다. 사실·수사 중인 의혹·확인되지 않은 주장을 같은 층위에 놓지 않았다.",
     en: "This record cross-checks reporting on the election commission's findings, election-litigation proceedings, the special-prosecutor law and searches, and coverage from the Olympic Park site. Confirmed facts, allegations under investigation and unverified claims are kept distinct.",
@@ -309,6 +309,64 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-08-12",
+      title: {
+        ko: "선관위, 선거무효·당선무효 소청 261건 모두 기각·각하",
+        en: "Election commission rejects or dismisses all 261 annulment appeals",
+      },
+      description: {
+        ko: "중앙선관위는 지방선거와 관련해 접수된 선거무효·당선무효 소청 261건을 모두 기각하거나 각하했다. 투표용지 부족 등 관리 문제만으로 선거 또는 당선 결과를 무효로 할 법적 요건이 충족됐다고 보지 않았다.",
+        en: "The National Election Commission rejected or dismissed all 261 administrative appeals seeking to void elections or elected results. It found that ballot shortages and other management failures did not, by themselves, satisfy the legal requirements for annulment.",
+      },
+      change: {
+        ko: "전국 단위 행정심판에서도 재선거 요구가 받아들여지지 않았다.",
+        en: "The nationwide administrative-review process did not accept demands for new elections.",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "YTN", en: "YTN" },
+          title: {
+            ko: "선관위, '재선거 요구' 거부…소청 261건 기각·각하",
+            en: "Election commission rejects re-election demands in 261 appeals",
+          },
+          url: "https://www.ytn.co.kr/_ln/0101_202608122302212951",
+          publishedAt: "2026-08-12",
+          thumbnailSrc: "/images/monitoring/olympic-park/20260812-ytn-appeals.jpg",
+          kind: "article",
+        },
+      ],
+    },
+    {
+      date: "2026-09-01",
+      title: {
+        ko: "헌재, 투표용지 부족 관련 헌법소원 4건 모두 각하",
+        en: "Constitutional Court dismisses all four ballot-shortage petitions",
+      },
+      description: {
+        ko: "헌법재판소는 투표용지 부족으로 참정권이 침해됐다는 헌법소원 4건을 모두 각하했다. 9월 1일 종결된 마지막 사건에서는 청구인 대다수가 자신의 투표권 행사에 지장이 있었다는 주장·자료를 내지 못해 자기관련성을 갖추지 못했고, 지연 뒤 투표를 마친 청구인도 선거권 제한이 인정되지 않았다.",
+        en: "The Constitutional Court dismissed all four constitutional petitions alleging voting-rights violations from the ballot shortage. In the final case, closed on September 1, most petitioners did not show that their own voting rights had been impeded, while those who voted after a delay were not found to have suffered a restriction of the franchise.",
+      },
+      change: {
+        ko: "헌재는 선거관리 실패의 실체를 본안 판단하지 않고 절차 요건 부족으로 사건을 종결했다.",
+        en: "The court closed the cases on procedural grounds without deciding the merits of the management failures.",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "동아일보", en: "The Dong-A Ilbo" },
+          title: {
+            ko: "헌재, '6·3 지선 투표용지 부족' 헌법소원 각하…4건 모두 종결",
+            en: "Constitutional Court dismisses petitions over local-election ballot shortages",
+          },
+          url: "https://www.donga.com/news/Society/article/all/20260902/134594491/1",
+          publishedAt: "2026-09-02",
+          thumbnailSrc: "/images/monitoring/olympic-park/20260902-donga-constitutional-court.jpg",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "2026-09-07",
       title: {
         ko: "선관위 특검 수사 개시",
@@ -435,6 +493,10 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
       en: "The Seoul mayoral election petition was dismissed because the court found no proven causal link between management violations and the election result.",
     },
     {
+      ko: "중앙선관위는 선거무효·당선무효 소청 261건을 모두 기각·각하했고, 헌법재판소는 투표용지 부족 관련 헌법소원 4건을 절차 요건 부족으로 모두 각하했다.",
+      en: "The election commission rejected or dismissed all 261 election and result-annulment appeals, and the Constitutional Court dismissed all four ballot-shortage petitions for procedural deficiencies.",
+    },
+    {
       ko: "특검은 12개 의혹을 수사 중이며 9월 17일 중앙선관위 등 10곳을 압수수색했다.",
       en: "The special prosecutor is investigating twelve categories of allegations and searched ten election-commission sites on September 17.",
     },
@@ -543,6 +605,14 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     {
       label: { ko: "연합뉴스TV — 서울시장 선거무효소송 기각", en: "Yonhap News TV — Seoul mayoral petition dismissed" },
       url: "https://www.yonhapnewstv.co.kr/news/MYH202608120026536A2",
+    },
+    {
+      label: { ko: "YTN — 선거무효·당선무효 소청 261건 기각·각하", en: "YTN — 261 election-annulment appeals rejected or dismissed" },
+      url: "https://www.ytn.co.kr/_ln/0101_202608122302212951",
+    },
+    {
+      label: { ko: "동아일보 — 투표용지 부족 헌법소원 4건 각하", en: "The Dong-A Ilbo — Four ballot-shortage petitions dismissed" },
+      url: "https://www.donga.com/news/Society/article/all/20260902/134594491/1",
     },
     {
       label: { ko: "국회입법예고 — 선관위 특검 법률안", en: "National Assembly — special-prosecutor legislation" },
