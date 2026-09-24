@@ -69,6 +69,9 @@ export function getHotIssuesNewestFirst(language: Language): HotIssueListItem[] 
   return [...news, supremeCourtTracker, ...commentary].sort((a, b) => {
     const dateOrder = b.date.localeCompare(a.date);
     if (dateOrder !== 0) return dateOrder;
+    // When a news briefing and its tracker share a date, show the briefing first.
+    if (a.key.startsWith("news-") && b.key.startsWith("watch-")) return -1;
+    if (a.key.startsWith("watch-") && b.key.startsWith("news-")) return 1;
     return a.title.localeCompare(b.title);
   });
 }
