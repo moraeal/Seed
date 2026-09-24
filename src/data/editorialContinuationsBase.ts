@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "news:supreme-court-renomination-standoff-2026": {
+    ko: {
+      href: "/columns/control-power-before-ten-percent-penalty-2026",
+      title: "10%의 책임을 묻기 전에, 10%의 권력을 통제하라",
+      relationship: "권력을 견제하는 법",
+      reason: "대법관 인선의 권한 충돌에 이어, 국가가 가진 강한 권력을 누가 어떻게 통제할지 살펴봅니다.",
+      listHref: "/news",
+      listLabel: "핫이슈 전체 보기",
+    },
+    en: {
+      href: "/columns/control-power-before-ten-percent-penalty-2026",
+      title: "Control the Power Before Imposing a 10% Penalty",
+      relationship: "CHECKS ON STATE POWER",
+      reason: "Continue from the appointment dispute to the broader question of who controls strong state powers and how.",
+      listHref: "/news",
+      listLabel: "All Hot Issues",
+    },
+  },
   "briefing:seojin-school-neighbors-civic-solidarity": {
     ko: {
       href: "/seed-language/citizen-as-seed",

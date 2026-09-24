@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="410" viewBox="0 0 1200 410">
+  <rect width="1200" height="410" fill="#f6f4ed"/>
+  <text x="52" y="70" fill="#183b39" font-size="29" font-weight="700" font-family="sans-serif">Supreme Court appointments: three constitutional roles</text>
+  <g font-family="sans-serif" text-anchor="middle"><rect x="50" y="137" width="300" height="178" rx="8" fill="#214c46"/><rect x="450" y="137" width="300" height="178" rx="8" fill="#28445f"/><rect x="850" y="137" width="300" height="178" rx="8" fill="#655232"/>
+  <text x="200" y="204" fill="#fff" font-size="27" font-weight="700">Chief justice</text><text x="200" y="261" fill="#f5db8b" font-size="27">Nominates</text>
+  <text x="600" y="190" fill="#fff" font-size="26" font-weight="700">National</text><text x="600" y="221" fill="#fff" font-size="26" font-weight="700">Assembly</text><text x="600" y="271" fill="#f5db8b" font-size="27">Consents</text>
+  <text x="1000" y="204" fill="#fff" font-size="27" font-weight="700">President</text><text x="1000" y="261" fill="#f5db8b" font-size="27">Appoints</text></g>
+  <path d="M369 226h56m-20-17 20 17-20 17M769 226h56m-20-17 20 17-20 17" fill="none" stroke="#94783f" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="52" y="371" fill="#53625f" font-size="22" font-family="sans-serif">Source: Constitution of the Republic of Korea, Article 104(2)</text>
+</svg>

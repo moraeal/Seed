@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="410" viewBox="0 0 1200 410">
+  <rect width="1200" height="410" fill="#f6f4ed"/>
+  <text x="52" y="70" fill="#183b39" font-size="31" font-weight="700" font-family="sans-serif">대법관 임명: 헌법이 나눈 세 가지 권한</text>
+  <g font-family="sans-serif" text-anchor="middle"><rect x="50" y="137" width="300" height="178" rx="8" fill="#214c46"/><rect x="450" y="137" width="300" height="178" rx="8" fill="#28445f"/><rect x="850" y="137" width="300" height="178" rx="8" fill="#655232"/>
+  <text x="200" y="204" fill="#fff" font-size="34" font-weight="700">대법원장</text><text x="200" y="261" fill="#f5db8b" font-size="30">후보 제청</text>
+  <text x="600" y="204" fill="#fff" font-size="34" font-weight="700">국회</text><text x="600" y="261" fill="#f5db8b" font-size="30">임명 동의</text>
+  <text x="1000" y="204" fill="#fff" font-size="34" font-weight="700">대통령</text><text x="1000" y="261" fill="#f5db8b" font-size="30">임명</text></g>
+  <path d="M369 226h56m-20-17 20 17-20 17M769 226h56m-20-17 20 17-20 17" fill="none" stroke="#94783f" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="52" y="371" fill="#53625f" font-size="23" font-family="sans-serif">근거: 대한민국헌법 제104조 제2항 · 재제청 요구의 적법성은 별도의 쟁점</text>
+</svg>

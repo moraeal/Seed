@@ -2,8 +2,10 @@ import type { NewsTranslation } from "./types";
 import { fuelPriceCapTaxBillTranslation } from "./news/fuelPriceCapTaxBill";
 import { publicEnterpriseRestructureTranslation } from "./news/publicEnterpriseRestructure";
 import { dmzSecurityCommandFailureTranslation } from "./news/dmzSecurityCommandFailure";
+import { supremeCourtRenominationStandoffTranslation } from "./news/supremeCourtRenominationStandoff";
 
 export const newsTranslations: Record<string, NewsTranslation> = {
+  "supreme-court-renomination-standoff-2026": supremeCourtRenominationStandoffTranslation,
   "dmz-security-command-failure": dmzSecurityCommandFailureTranslation,
   "lh-debt-split-power-five-merge": publicEnterpriseRestructureTranslation,
   "fuel-price-cap-tax-bill": fuelPriceCapTaxBillTranslation,
