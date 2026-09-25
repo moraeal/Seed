@@ -1,5 +1,6 @@
 import { taxExpenditureCapCommentary } from "./taxExpenditureCapCommentary";
 import { taxBreakBudgetConversionCommentary } from "./taxBreakBudgetConversionCommentary";
+import { virtualAssetTaxCommentary } from "./virtualAssetTaxCommentary";
 
 export type TaxCommentaryLanguage = "ko" | "en";
 
@@ -49,6 +50,7 @@ export type TaxCommentary = {
 };
 
 export const taxCommentaries: TaxCommentary[] = [
+virtualAssetTaxCommentary,
 taxBreakBudgetConversionCommentary,
 taxExpenditureCapCommentary,
 {

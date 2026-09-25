@@ -1,3 +1,5 @@
+import { virtualAssetTaxPolicy } from "./virtualAssetTaxPolicy";
+
 export type LocalizedText = { ko: string; en: string };
 
 export type TaxPolicy = {
@@ -41,6 +43,7 @@ const taxExpenditureBasicPlan = "https://eiec.kdi.re.kr/policy/materialView.do?n
 const naboTaxExpenditureReview = "https://www.nabo.go.kr/ko/periodical/focusView.do?idx=9236&key=2507040015";
 
 export const taxPolicies: TaxPolicy[] = [
+  virtualAssetTaxPolicy,
   {
     slug: "tax-break-to-budget-conversion-bill",
     importance: 82,
