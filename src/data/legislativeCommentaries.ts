@@ -27,10 +27,11 @@ type CommentaryEdition = {
 export type LegislativeCommentary = {
   slug: string;
   billNo: string;
-  relatedBillSlug: string;
+  relatedBillSlug?: string;
   date: string;
   readMinutes: number;
   heroSrc: string;
+  inlineImage?: { src: string; afterSection: number; alt: LocalizedText; caption: LocalizedText };
   sources: { label: LocalizedText; url: string }[];
   editions: Record<LegislativeCommentaryLanguage, CommentaryEdition>;
 };
@@ -59,6 +60,153 @@ export const linkedLegislativeColumnCommentaries = [{
 }];
 
 export const legislativeCommentaries: LegislativeCommentary[] = [
+  {
+    slug: "sme-market-access-and-real-profit",
+    billNo: "2221550",
+    date: "2026-09-25",
+    readMinutes: 7,
+    heroSrc: "images/legislation/sme-marketplace-margin-hero.webp",
+    inlineImage: {
+      src: "images/legislation/sme-marketplace-popup-shop.webp",
+      afterSection: 2,
+      alt: { ko: "작은 판매 공간에서 중소기업 제품을 진열하는 사람의 손을 묘사한 합성 이미지", en: "Illustration of a small maker arranging products in a retail pop-up" },
+      caption: { ko: "입점 뒤에도 판매가 이어지고 비용을 제하고 수익이 남는지 확인해야 한다. AI 합성 이미지.", en: "The test is whether sales continue and leave a profit after costs. AI-generated composite image." },
+    },
+    sources: [
+      { label: { ko: "국민참여입법센터 — 중소기업제품 구매촉진 및 판로지원에 관한 법률 전부개정법률안, 의안 제2221550호", en: "Ministry of Government Legislation — Full revision of the SME Product Procurement and Market Access Act, Bill No. 2221550" }, url: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221550/detailRP" },
+      { label: { ko: "중소벤처기업부 — 2026년 중소기업 마케팅지원사업 통합공고", en: "Ministry of SMEs and Startups — 2026 consolidated marketing support announcement" }, url: "https://www.mss.go.kr/site/smba/ex/bbs/View.do?bcIdx=1065089&cbIdx=86" },
+      { label: { ko: "중소벤처기업부 — 소관 공공기관 기능개혁 추진", en: "Ministry of SMEs and Startups — restructuring of agencies under its supervision" }, url: "https://www.mss.go.kr/site/chungbuk/ex/bbs/View.do?bcIdx=1071053&cbIdx=180" },
+      { label: { ko: "연합뉴스 — 한유원·공영홈쇼핑 통합 계획 보도", en: "Yonhap News — plan to combine Korea SMEs and Startups Agency for Distribution and Public Home Shopping" }, url: "https://www.yna.co.kr/view/AKR20260908029300030" },
+    ],
+    editions: {
+      ko: {
+        title: "판로를 넓힌다는 법, 중소기업에 남는 돈도 늘어나는가",
+        subtitle: "중소기업제품 구매촉진 및 판로지원에 관한 법률 전부개정법률안 논평 · 김원이 의원 등 11인 발의",
+        summary: "판로지원법 전부개정안은 공공구매를 넘어 온라인·민간 거래를 지원하고 두 기관을 통합한 마케팅진흥공사를 세우려 한다. 입점 업체 수보다 판매비용을 뺀 기업의 수익과 통합의 실제 절감액을 성과로 확인해야 한다.",
+        keyPoints: [
+          "의안 제2221550호는 9월 22일 발의돼 23일 소관 상임위에 회부됐다. 법률로 확정된 상태는 아니다.",
+          "정부의 2026년 중소기업 마케팅지원 규모는 141억 7천만 원이다. 입점 수수료와 마케팅 비용 지원도 포함된다.",
+          "진흥공사는 한국중소벤처기업유통원과 공영홈쇼핑의 통합 구상이다. 통합 뒤 기업에 남는 수익을 따져야 한다.",
+        ],
+        heroAlt: "작은 제품 포장 작업장에서 판매내역과 비용을 살펴보는 중소기업 운영자를 묘사한 합성 이미지",
+        heroCaption: "판매가 늘어도 비용을 제하면 남는 돈이 적을 수 있다. 판로지원의 성과를 기업의 장부에서 확인해야 한다. AI 합성 이미지.",
+        sections: [
+          {
+            title: "사업은 이미 시작됐고, 법이 뒤따르고 있다",
+            paragraphs: [
+              "정부는 올해 중소기업 마케팅 지원에 141억 7천만 원을 배정했다. 온라인 플랫폼과 홈쇼핑 입점 비용, 오프라인 기획전, 전용판매장, 홍보 역량 강화까지 지원한다. 그런데 9월 22일 발의된 판로지원법 전부개정안은 현행법에 민간 소비시장과 기업 간 거래 지원 근거가 부족하다고 설명한다. 사업은 이미 하고 있는데 법의 중심은 여전히 공공구매에 있는 셈이다.",
+              "김원이 의원 등 11인이 발의한 의안 제2221550호는 9월 23일 국회 산업통상자원중소벤처기업위원회에 회부됐다. 시장조사, 브랜드 개발, 온라인 판매, 물류와 판매 데이터 활용을 지원할 근거를 넓힌다. 지방자치단체 출자·출연기관도 공공구매 적용 대상에 포함하고 5년 단위 계획과 실태조사 근거를 둔다. 제품을 잘 만들어도 소비자에게 알릴 힘이 부족한 기업에는 필요한 방향이다.",
+            ],
+          },
+          {
+            title: "입점은 판매의 시작, 손익은 그다음이다",
+            paragraphs: [
+              "작은 식품업체가 온라인몰에 들어가 첫 매출을 올렸다고 하자. 수수료와 광고비, 할인행사 분담금, 배송비와 반품비를 치른 뒤 얼마가 남는가. 이는 실제 업체의 확인된 정산 사례가 아니라 지원 효과를 판단하기 위한 손익 계산의 예다. 올해 정부 사업에도 입점 수수료와 마케팅 비용 지원이 포함돼 있다. 지원 기간이 끝난 뒤 업체가 자력으로 판매를 이어갈 수 있는지는 별도로 확인해야 한다.",
+              "정부 지원이 플랫폼의 판매 공간을 잠시 빌리는 비용으로만 쓰인다면 판매 기록은 남아도 기업의 고객과 협상력은 남지 않는다. 참여 기업이 여러 채널을 비교하고 자기 고객을 다시 만날 수 있어야 판로가 자산이 된다.",
+            ],
+            quote: "누가 팔아주었는가보다, 팔고 나서 기업에 무엇이 남았는가.",
+          },
+          {
+            title: "두 기관을 합친다는데, 현장의 수고도 줄어들까",
+            paragraphs: [
+              "개정안의 또 다른 축은 중소기업마케팅진흥공사 설립이다. 정부가 발표한 구상은 한국중소벤처기업유통원과 공영홈쇼핑을 통합해 제품 발굴부터 판매까지 잇겠다는 것이다. 정부 스스로 두 기관의 제품 발굴·상품화 기능이 겹치고, 판매 지원은 채널마다 흩어졌다고 밝혔다. 업체가 기관마다 신청서를 다시 쓰고 다음 지원 단계를 찾아다니는 수고가 줄어든다면 통합은 의미가 있다.",
+              "정부의 진단을 실적으로 검증하려면 사무실과 전산망, 임원 조직, 인사·계약 체계를 어떻게 정리할지부터 보여줘야 한다. 겹치는 사업에서 얼마를 아끼고 그 돈을 몇 개 기업의 판매에 돌릴 수 있는가. 공공기관 수가 줄었다는 숫자와 현장에서 쓰는 비용이 줄었다는 결과는 다르다.",
+            ],
+          },
+          {
+            title: "판매 조건을 비교할 힘까지 지원해야 한다",
+            paragraphs: [
+              "씨앗은 판로지원 확대를 지지한다. 지원사업에 참여하는 기업이 플랫폼별 수수료, 광고·판촉 부담, 정산 기간, 반품 비용을 한눈에 비교할 수 있게 만드는 일도 필요하다. 공공 지원을 받는 유통업체의 계약 변경 조건을 투명하게 공개하고, 판매 데이터를 기업이 어느 범위까지 활용할 수 있는지도 계약에서 분명히 할 수 있다. 이는 개정안에 이미 이런 의무가 있다는 설명이 아니라 국회 심사와 사업 설계에 반영하자는 씨앗의 제안이다.",
+              "대기업과 플랫폼은 판매망을 제공하고 작은 업체는 상품과 도전으로 시장을 채운다. 정부가 지원금을 쓸 때는 양쪽의 거래가 지원 종료 뒤에도 이어질 조건을 살펴야 한다. 한 업체에 묶이지 않고 판로를 넓힌 기업이 몇 곳인지도 함께 세어야 한다.",
+            ],
+          },
+          {
+            title: "새 공사의 성적표는 기업의 장부에 있다",
+            paragraphs: [
+              "국회는 공사 설립을 심사하면서 두 기존 기관의 조직·예산·사업 목록과 통합 비용 추계를 공개 자료로 맞춰봐야 한다. 새 공사의 성과도 입점 업체 수나 행사 매출 한 줄로 끝낼 수 없다. 지원 종료 뒤 판매 지속률, 수수료·광고비 등을 제하고 남은 수익의 변화, 새 민간 거래처를 확보한 기업의 비율을 확인해야 한다.",
+              "법안은 중소기업이 더 넓은 시장으로 나갈 근거를 마련한다. 정부가 열어준 문이 닫힌 뒤에도 기업이 시장에 남아 있어야 성공이다. 씨앗은 기관 통합의 실제 절감액과 참여기업의 비용·수익 변화를 계속 확인하겠다.",
+            ],
+          },
+        ],
+        chart: {
+          title: "판로지원의 성과를 확인할 세 가지 장부",
+          description: "사업의 투입과 기업에 남는 결과를 나누어 살펴보는 검증표",
+          headers: ["확인 대상", "보통 발표하는 수치", "추가로 확인할 결과"],
+          rows: [
+            ["플랫폼 입점", "입점 기업 수·지원액", "지원 종료 뒤 판매 지속률과 기업 순수익"],
+            ["판매 확대", "행사 매출·판매 건수", "수수료·광고·반품 비용과 새 거래처"],
+            ["기관 통합", "통합한 기관 수", "전환 비용·절감액·기업의 신청 부담"],
+          ],
+          note: "이 표의 오른쪽 항목은 씨앗이 제안하는 사후 검증 지표다. 정부가 해당 수치를 이미 발표했다는 뜻은 아니다.",
+          afterSection: 2,
+        },
+        sourceNote: "2026년 9월 25일 공개된 의안 제2221550호의 제안 이유·주요 내용, 중기부의 2026년 지원사업 공고와 9월 8일 통합 발표를 대조했다. 법안은 상임위에 회부된 상태다. 본문의 식품업체 장부는 가상의 설명 사례이며, 공사의 비용·성과 검증 지표는 씨앗의 제안이다.",
+      },
+      en: {
+        title: "A bill promises wider markets for small firms. What will they keep from each sale?",
+        subtitle: "Commentary on Bill No. 2221550, a proposed full revision of Korea's SME procurement and market access law",
+        summary: "The bill would extend support beyond public procurement and create a marketing agency by combining two existing bodies. Its success should be judged by what firms earn after selling costs and by the merger's actual savings.",
+        keyPoints: [
+          "Introduced on September 22, Bill No. 2221550 was referred to the relevant Assembly committee on September 23; it has not become law.",
+          "The government's 2026 SME marketing programme has a budget of KRW 14.17 billion, including support for platform entry fees and marketing costs.",
+          "The proposed agency follows a government plan to combine the existing distribution agency and public home-shopping company. Savings and business outcomes need measurement.",
+        ],
+        heroAlt: "AI composite showing an SME owner reviewing costs and sales records in a small packing workshop",
+        heroCaption: "More sales can still leave little profit after costs. The test of market access is found in a firm's accounts. AI-generated composite image.",
+        sections: [
+          {
+            title: "A programme already exists; the law is catching up",
+            paragraphs: [
+              "The government allocated KRW 14.17 billion to SME marketing support in 2026. The programme covers entry into online platforms and home-shopping channels, offline promotions, dedicated shops and marketing skills. Yet the full-revision bill introduced on September 22 says the current statute lacks a sufficient basis for supporting consumer and business-to-business markets. Public procurement remains its legislative centre of gravity.",
+              "Sponsored by lawmaker Kim Won-i and ten colleagues, Bill No. 2221550 was referred to the National Assembly's relevant committee on September 23. It would provide a broader basis for market research, brand development, online sales, logistics and the use of sales data. It would also extend public-procurement coverage to local-government-funded bodies and establish five-year planning and surveys. These measures address a real problem for firms that can make a product but struggle to reach customers.",
+            ],
+          },
+          {
+            title: "Listing a product is only the beginning",
+            paragraphs: [
+              "Imagine a small food producer making its first online sale. What remains after commissions, advertising, promotional discounts, delivery and returns? This is an illustrative calculation, not a verified seller's statement. The 2026 programme itself helps pay entry fees and marketing costs. Whether a firm can continue selling after that support ends is a separate question.",
+              "If public money merely rents temporary shelf space on a platform, the programme may produce sales figures without leaving the firm with customers or stronger bargaining power. A durable route to market gives the seller ways to compare channels and reach customers again.",
+            ],
+            quote: "The question is what a business keeps after the sale, not simply who helped it make one.",
+          },
+          {
+            title: "Will combining two agencies save firms time?",
+            paragraphs: [
+              "The bill also provides a basis for the Korea SME Marketing Promotion Corporation. The government's stated plan is to combine the Korea SMEs and Startups Agency for Distribution with Public Home Shopping, bringing product discovery and sales support together. The ministry says product discovery and merchandising functions overlap while sales support is dispersed across channels. A simpler route through those services could spare firms repeated applications and searches for the next programme.",
+              "That claim needs a measurable test. How will offices, IT systems, management, staffing and contracts be combined? How much spending on overlapping programmes will be saved, and how much of the saving will reach sellers? A reduction in the agency count is not the same as a reduction in the cost of doing business.",
+            ],
+          },
+          {
+            title: "Help firms compare the terms of sale",
+            paragraphs: [
+              "SEED VOICE supports extending market access assistance. Participating firms should also be able to compare commissions, advertising and promotion charges, settlement periods and return costs across platforms. Terms under publicly supported distribution partnerships should be transparent, including changes to contracts and the extent to which sellers can use their sales data. These are recommendations for parliamentary scrutiny and programme design, not claims that the bill already imposes those duties.",
+              "Large retailers and platforms supply distribution; small producers bring products and take commercial risks. Public support should make the relationship viable after a subsidy ends. It should also record how many firms develop more than one sales channel.",
+            ],
+          },
+          {
+            title: "The new agency's scorecard belongs in firms' accounts",
+            paragraphs: [
+              "Before approving the new corporation, lawmakers should compare both existing agencies' staffing, budgets and programmes with the expected costs of merger. The scorecard should extend beyond listings and campaign sales: track continued sales after support ends, profit after commissions and advertising, and access to new private buyers.",
+              "The bill offers a basis for reaching larger markets. Success comes when firms remain there after the publicly funded opening closes. SEED VOICE will watch the merger's actual savings and the changes in participating firms' costs and earnings.",
+            ],
+          },
+        ],
+        chart: {
+          title: "Three ledgers for testing market-access support",
+          description: "Separate programme activity from what remains with the participating firm.",
+          headers: ["Area", "Commonly reported", "Outcome to examine"],
+          rows: [
+            ["Platform entry", "Number of firms and support paid", "Sales continuity and net earnings after support"],
+            ["Sales growth", "Campaign sales and transactions", "Commissions, ads, returns and new buyers"],
+            ["Agency merger", "Number of agencies combined", "Transition cost, savings and application burden"],
+          ],
+          note: "The outcome column contains SEED VOICE's proposed evaluation measures; it does not imply that the government has published those figures.",
+          afterSection: 2,
+        },
+        sourceNote: "Based on the public summary of Bill No. 2221550 and the ministry's 2026 programme notice and September 8 merger announcement, as available on September 25, 2026. The bill is under committee review. The food producer is an illustrative example; the proposed cost and outcome measures are SEED VOICE's analysis.",
+      },
+    },
+  },
   {
     slug: "criminal-investigation-power-and-accountability",
     billNo: "2220724",
