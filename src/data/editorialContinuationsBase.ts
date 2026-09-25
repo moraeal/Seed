@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "briefing:platform-advertising-cost-small-merchants": {
+    ko: {
+      href: "/columns/corporations-are-citizens-too",
+      title: "기업도 시민이다",
+      relationship: "기업과 시민의 거래",
+      reason: "플랫폼과 가게의 거래조건에서 출발해 기업의 시민적 책임을 본업 안에서 생각합니다.",
+      listHref: "/briefings",
+      listLabel: "브리핑 전체 보기",
+    },
+    en: {
+      href: "/columns/corporations-are-citizens-too",
+      title: "Corporations Are Citizens Too",
+      relationship: "BUSINESS AND CIVIC RESPONSIBILITY",
+      reason: "Continue from platform trading terms to corporate responsibility in a company's everyday business.",
+      listHref: "/briefings",
+      listLabel: "All briefings",
+    },
+  },
   "briefing:north-korean-pows-south-korea-zelensky-un": {
     ko: {
       href: "/seed-language/unification-freedom-responsibility",
