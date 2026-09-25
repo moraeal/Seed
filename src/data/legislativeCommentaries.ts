@@ -70,7 +70,7 @@ export const legislativeCommentaries: LegislativeCommentary[] = [
       src: "images/legislation/sme-marketplace-popup-shop.webp",
       afterSection: 2,
       alt: { ko: "작은 판매 공간에서 중소기업 제품을 진열하는 사람의 손을 묘사한 합성 이미지", en: "Illustration of a small maker arranging products in a retail pop-up" },
-      caption: { ko: "입점 뒤에도 판매가 이어지고 비용을 제하고 수익이 남는지 확인해야 한다. AI 합성 이미지.", en: "The test is whether sales continue and leave a profit after costs. AI-generated composite image." },
+      caption: { ko: "입점 뒤에도 판매가 이어지고 비용을 제하고 수익이 남는지 확인해야 한다.", en: "The test is whether sales continue and leave a profit after costs." },
     },
     sources: [
       { label: { ko: "국민참여입법센터 — 중소기업제품 구매촉진 및 판로지원에 관한 법률 전부개정법률안, 의안 제2221550호", en: "Ministry of Government Legislation — Full revision of the SME Product Procurement and Market Access Act, Bill No. 2221550" }, url: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221550/detailRP" },
@@ -89,7 +89,7 @@ export const legislativeCommentaries: LegislativeCommentary[] = [
           "진흥공사는 한국중소벤처기업유통원과 공영홈쇼핑의 통합 구상이다. 통합 뒤 기업에 남는 수익을 따져야 한다.",
         ],
         heroAlt: "작은 제품 포장 작업장에서 판매내역과 비용을 살펴보는 중소기업 운영자를 묘사한 합성 이미지",
-        heroCaption: "판매가 늘어도 비용을 제하면 남는 돈이 적을 수 있다. 판로지원의 성과를 기업의 장부에서 확인해야 한다. AI 합성 이미지.",
+        heroCaption: "판매가 늘어도 비용을 제하면 남는 돈이 적을 수 있다. 판로지원의 성과를 기업의 장부에서 확인해야 한다.",
         sections: [
           {
             title: "사업은 이미 시작됐고, 법이 뒤따르고 있다",
@@ -116,7 +116,7 @@ export const legislativeCommentaries: LegislativeCommentary[] = [
           {
             title: "판매 조건을 비교할 힘까지 지원해야 한다",
             paragraphs: [
-              "씨앗은 판로지원 확대를 지지한다. 지원사업에 참여하는 기업이 플랫폼별 수수료, 광고·판촉 부담, 정산 기간, 반품 비용을 한눈에 비교할 수 있게 만드는 일도 필요하다. 공공 지원을 받는 유통업체의 계약 변경 조건을 투명하게 공개하고, 판매 데이터를 기업이 어느 범위까지 활용할 수 있는지도 계약에서 분명히 할 수 있다. 이는 개정안에 이미 이런 의무가 있다는 설명이 아니라 국회 심사와 사업 설계에 반영하자는 씨앗의 제안이다.",
+              "씨앗은 판로지원 확대를 지지한다. 지원사업에 참여하는 기업이 플랫폼별 수수료, 광고·판촉 부담, 정산 기간, 반품 비용을 한눈에 비교할 수 있게 만드는 일도 필요하다. 공공 지원을 받는 유통업체의 계약 변경 조건을 투명하게 공개하고, 판매 데이터를 기업이 어느 범위까지 활용할 수 있는지도 계약에서 분명히 할 수 있다. 국회 심사와 사업 설계에서 이런 거래 조건을 다룰 것을 제안한다.",
               "대기업과 플랫폼은 판매망을 제공하고 작은 업체는 상품과 도전으로 시장을 채운다. 정부가 지원금을 쓸 때는 양쪽의 거래가 지원 종료 뒤에도 이어질 조건을 살펴야 한다. 한 업체에 묶이지 않고 판로를 넓힌 기업이 몇 곳인지도 함께 세어야 한다.",
             ],
           },
@@ -152,7 +152,7 @@ export const legislativeCommentaries: LegislativeCommentary[] = [
           "The proposed agency follows a government plan to combine the existing distribution agency and public home-shopping company. Savings and business outcomes need measurement.",
         ],
         heroAlt: "AI composite showing an SME owner reviewing costs and sales records in a small packing workshop",
-        heroCaption: "More sales can still leave little profit after costs. The test of market access is found in a firm's accounts. AI-generated composite image.",
+        heroCaption: "More sales can still leave little profit after costs. The test of market access is found in a firm's accounts.",
         sections: [
           {
             title: "A programme already exists; the law is catching up",
