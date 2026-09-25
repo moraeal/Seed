@@ -5,7 +5,7 @@ export const virtualAssetTaxCommentary: TaxCommentary = {
   relatedPolicySlug: "virtual-asset-tax-2027-readiness",
   date: "2026-09-25",
   readMinutes: 6,
-  heroSrc: "images/tax/virtual-asset-tax-ledger.png",
+  heroSrc: "images/tax/virtual-asset-tax-gain-records-20260925.jpg",
   sources: [
     { label: { ko: "국세청 — 거주자의 가상자산소득 과세 개요", en: "National Tax Service — guide to virtual-asset taxation" }, url: "https://nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=238935&mi=40370" },
     { label: { ko: "금융위원회 — 토큰증권 정책방향", en: "Financial Services Commission — token-securities policy" }, url: "https://www.fsc.go.kr/po010106/87650" },
