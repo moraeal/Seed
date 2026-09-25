@@ -18,8 +18,8 @@ export const virtualAssetTaxPolicy: TaxPolicy = {
   heroImage: {
     ko: "images/monitoring/virtual-asset-tax-policy.png",
     en: "images/monitoring/virtual-asset-tax-policy.png",
-    alt: { ko: "거래 내역, 취득원가, 세금계산서가 한 장부로 연결되는 가상자산 과세 도해", en: "Illustration linking a transaction ledger, acquisition cost and tax calculation" },
-    caption: { ko: "가상자산 과세는 거래 금액 전체가 아니라 비용과 연간 공제를 반영한 소득을 기준으로 합니다. 그림: 씨앗의 소리", en: "The proposed calculation taxes income after costs and the annual allowance, rather than the full transaction amount. Illustration: Seed Voice." },
+    alt: { ko: "2027년 달력 옆에서 휴대전화 거래 내역과 계산서를 대조하는 시민의 AI 합성 이미지", en: "AI-generated image of a citizen comparing digital-asset transactions with a worksheet beside a 2027 calendar" },
+    caption: { ko: "2027년 시행을 앞두고 거래 내역과 취득가액, 비용을 확인하는 모습. AI 합성 이미지", en: "Checking transaction records, acquisition costs and expenses before the scheduled 2027 start. AI-generated image." },
   },
   processNote: {
     ko: "2026년 9월 25일 기준 국세청 안내에 따른 예정 규칙입니다. 토큰증권 제도 시행은 가상자산 과세의 시행일과 별개입니다. 실제 신고는 2027년 발생 소득을 대상으로 2028년 5월 예정이며, 시행 전 법령 변경 여부를 계속 확인해야 합니다.",

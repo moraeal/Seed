@@ -21,8 +21,8 @@ export const virtualAssetTaxCommentary: TaxCommentary = {
         "토큰증권과 가상자산은 기록 기술이 같아도 권리가 다를 수 있습니다. 경제적 실질이 비슷한 상품의 과세 차이는 설명돼야 합니다.",
         "취득가액, 거래소 간 이동, 해외 거래 자료와 오류 정정 절차를 확인해야 납세자가 계산 결과에 이의를 제기할 수 있습니다.",
       ],
-      heroAlt: "여러 거래 장부와 개인 지갑의 기록을 대조해 실제 이익을 계산하는 모습을 형상화한 이미지",
-      heroCaption: "세금은 거래액이 아니라 이익에 매깁니다. 매입가와 비용을 잇는 장부가 어긋나면 시민의 세금도 달라집니다. 그림: 씨앗의 소리",
+      heroAlt: "밤에 거래 내역과 영수증을 대조하며 가상자산의 실제 이익을 계산하는 시민의 AI 합성 이미지",
+      heroCaption: "매입가와 비용을 확인할 기록이 이어져야 실제 이익을 계산할 수 있습니다. AI 합성 이미지",
       sections: [
         {
           title: "250만 원을 넘는 이익에 세금, 계산할 자료는 연결되는가",
@@ -83,8 +83,8 @@ export const virtualAssetTaxCommentary: TaxCommentary = {
         "A token security and a cryptoasset may use the same ledger technology but embody different legal rights. Materially similar returns still need a clear explanation of different tax treatment.",
         "Acquisition costs, transfers, overseas records and correction procedures determine whether taxpayers can challenge the calculated gain.",
       ],
-      heroAlt: "An illustration of reconciling multiple exchange ledgers and private-wallet records to calculate actual gains",
-      heroCaption: "Tax applies to gains, not gross transaction value. If the records of purchase price and costs do not connect, a citizen's tax bill can change. Illustration: Seed Voice.",
+      heroAlt: "AI-generated image of a citizen comparing digital-asset transaction records and receipts at night",
+      heroCaption: "Records of purchase prices and expenses need to connect before actual gains can be calculated. AI-generated image.",
       sections: [
         { title: "A gain above KRW 2.5 million: can the records be connected?", paragraphs: [
           "According to National Tax Service guidance, income from transferring or lending virtual assets after January 1, 2027 is scheduled to be taxable. Acquisition costs and expenses are deducted from annual proceeds, followed by a KRW 2.5 million allowance. The remainder faces 20% national income tax, generally 22% including local income tax. Annual gains and losses are reported the following May.",
