@@ -23,10 +23,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     en: "Fair under way · Criminal complaint filed · Outcomes tracked",
   },
   openedAt: "2018-09-05",
-  updatedAt: "2026-09-24",
+  updatedAt: "2026-09-25",
   nextCheck: {
-    ko: "9월 21일 고발사건의 광주지검 접수·배당과 실제 수사 착수 여부, 피고발인과 조직위의 구체적 입장, 누적 입장객을 유료·무료·단체·초청·공무출장으로 나눈 집계, 추석 무료입장 규모와 수익 영향, 개도·금오도 셔틀의 실제 이용실적, 수의계약을 포함한 계약 원문과 집행액, 콘텐츠 보완 추경 7억 원의 의결·집행, 사업수익 120억 원의 달성 여부와 폐막 뒤 최종 정산",
-    en: "Receipt and assignment of the September 21 complaint at the Gwangju District Prosecutors' Office and whether a formal investigation begins; specific responses from those named and the organizing committee; cumulative attendance split into paid, free, group, invited and publicly funded staff visits; the scale and revenue effect of holiday free admission; actual use of Gaedo and Geumodo shuttles; contract documents and spending including negotiated contracts; approval and use of the KRW 700 million content supplement; progress toward the KRW 12 billion revenue target; and final settlement after closing",
+    ko: "9월 21일 고발사건의 광주지검 접수·배당과 실제 수사 착수 여부, 피고발인과 조직위의 구체적 입장, 누적 입장객을 유료·무료·단체·초청·공무출장·전국 섬 주민 무료입장으로 나눈 집계, 각 무료입장 정책의 규모와 수익 영향, 개도·금오도 셔틀의 실제 이용실적, 수의계약을 포함한 계약 원문과 집행액, 콘텐츠 보완 추경 7억 원의 의결·집행, 사업수익 120억 원의 달성 여부와 폐막 뒤 최종 정산",
+    en: "Receipt and assignment of the September 21 complaint at the Gwangju District Prosecutors' Office and whether a formal investigation begins; specific responses from those named and the organizing committee; cumulative attendance split into paid, free, group, invited, publicly funded staff and nationwide island-resident admissions; the scale and revenue effect of each free-admission policy; actual use of Gaedo and Geumodo shuttles; contract documents and spending including negotiated contracts; approval and use of the KRW 700 million content supplement; progress toward the KRW 12 billion revenue target; and final settlement after closing",
   },
   heroImage: {
     src: "images/monitoring/yeosu-island-expo-tracker-hero.webp",
@@ -109,6 +109,13 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       text: {
         ko: "조직위가 개도·금오도 부행사장까지의 환승 경로와 섬 안 셔틀·마을버스, 여객선 운항횟수를 한 문서에 공개하고 추석 연휴 무료입장 대상도 확대했습니다.",
         en: "Organizers published a single guide to transfers, island buses and ferry frequency for the Gaedo and Geumodo satellite venues, while expanding free admission over the holiday.",
+      },
+    },
+    {
+      date: "2026-09-24",
+      text: {
+        ko: "금오도 마을버스는 2대·하루 14회에서 20회로 늘어나 폐막일까지 무료 운행하고, 전국 484개 유인섬 주민도 남은 행사기간 무료로 입장할 수 있게 됐습니다.",
+        en: "Geumodo's two village buses expanded from 14 to 20 daily circuits and will remain free through closing, while residents of all 484 inhabited islands nationwide gained free admission for the rest of the fair.",
       },
     },
   ],
@@ -614,19 +621,30 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     {
       date: "2026-09-16",
       title: {
-        ko: "신기항–주행사장 직행 셔틀 하루 5회 신설",
-        en: "Five daily direct shuttles added between Shingi Port and the main venue",
+        ko: "신기항 셔틀 5회·금오도 마을버스 20회로 교통 보완",
+        en: "Transport response adds five Shingi shuttles and 20 Geumodo bus circuits",
       },
       description: {
-        ko: "조직위는 9월 16일부터 신기항과 주행사장을 바로 잇는 대형버스 1대를 하루 5회 운행하기 시작했습니다. 운행 시작 당시 공지는 주행사장 오전 8시 10분 첫차와 신기항 오후 7시 40분 막차를 안내했습니다. 금오도 무료셔틀 중단 뒤 육지 쪽 환승 연결을 보완한 조치이지만, 금오도 안에서 중단된 이동수단을 대신하는 노선은 아닙니다. 수요를 감당할 수 있는지는 이용실적으로 확인해야 합니다.",
-        en: "On September 16, organizers began running one large bus on five direct daily trips between Shingi Port and the main venue. The launch notice listed an 8:10 a.m. first departure from the venue and a 7:40 p.m. last departure from Shingi Port. The route improves the mainland connection after Geumodo's free shuttle stopped, but it does not replace transport lost within the island. Ridership will show whether the capacity is sufficient.",
+        ko: "조직위는 9월 16일부터 신기항과 주행사장을 바로 잇는 대형버스 1대를 하루 5회 운행하기 시작했습니다. 금오도 안에서는 여수시가 기존 마을버스 2대의 운행을 하루 14회에서 20회로 늘려 11월 4일까지 무료로 운행하기로 했고, 조직위는 9월 24일 시간표를 게시했습니다. KBS는 당시 금오도·개도 방문객을 하루 평균 약 700명, 전체 관람객의 약 7%로 보도했습니다. 육지 환승과 섬 안 이동을 각각 보완했지만 실제 수송인원과 대기시간은 공개되지 않았습니다.",
+        en: "On September 16, organizers began running one large bus on five daily trips between Shingi Port and the main venue. Within Geumodo, Yeosu decided to increase the two existing village buses from 14 to 20 daily circuits and make them free through November 4; organizers posted the timetable on September 24. KBS reported that Gaedo and Geumodo together were drawing about 700 visitors a day, roughly 7 percent of total attendance at the time. The measures address both mainland transfers and on-island travel, but actual passenger loads and waiting times remain undisclosed.",
       },
       change: {
-        ko: "금오도 무료셔틀 중단 뒤 육지 쪽 환승 연결 보완",
-        en: "A mainland transfer link is added after the Geumodo shuttle suspension",
+        ko: "금오도 무료셔틀 중단 뒤 육지 환승과 섬 안 이동을 함께 보완",
+        en: "The response to the Geumodo shuttle suspension now covers both mainland transfers and on-island travel",
       },
       status: "response",
       sources: [
+        {
+          publisher: { ko: "KBS광주", en: "KBS Gwangju" },
+          title: {
+            ko: "‘천혜의 비경’ 여수 금오도…‘주 행사장보다 낫다’",
+            en: "Visitors praise Geumodo as transport services expand",
+          },
+          url: "https://v.daum.net/v/8yb7qPKpvM?f=p",
+          publishedAt: "2026-09-16",
+          kind: "article",
+          thumbnailSrc: "https://img1.daumcdn.net/thumb/S1200x630/?fname=https://t1.daumcdn.net/news/202609/16/kbs/20260916200717195kvvv.jpg",
+        },
         {
           publisher: { ko: "2026여수세계섬박람회 조직위원회", en: "2026 Yeosu World Island Fair Organizing Committee" },
           title: {
@@ -783,14 +801,43 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-24",
+      title: {
+        ko: "전국 유인섬 주민으로 무료입장 확대",
+        en: "Free admission expands to residents of every inhabited island",
+      },
+      description: {
+        ko: "조직위는 9월 24일부터 전국 484개 유인섬의 주민 약 82만 명을 무료입장 대상에 포함했습니다. 이전에는 여수시 섬 주민 중에서도 육지와 교량으로 연결된 지 10년이 지난 섬 등을 제외했습니다. 방문 당일 생일인 관람객도 동반 1명까지 무료입니다. 섬 주민을 박람회의 주체로 넓힌 결정이지만 예상 이용인원과 120억 원 사업수익에 미칠 영향은 공개하지 않았습니다. 이후 관람객 집계에서는 연휴 한시 무료입장과 상시 섬 주민 무료입장을 따로 확인해야 합니다.",
+        en: "From September 24, organizers extended free admission to roughly 820,000 residents of all 484 inhabited islands in Korea. Eligibility had previously been limited to some Yeosu island residents, excluding islands that had been linked to the mainland by bridge for more than ten years. Visitors attending on their birthday may also bring one companion free. The decision broadens island residents' participation, but organizers did not publish expected uptake or the effect on the KRW 12 billion revenue plan. Future attendance reports should separate the temporary holiday waivers from the continuing island-resident policy.",
+      },
+      change: {
+        ko: "무료입장이 추석 한시 행사에서 전국 섬 주민 대상의 상시 정책으로 확대",
+        en: "Free admission expands beyond a holiday promotion to a nationwide island-resident policy",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "베타뉴스", en: "BetaNews" },
+          title: {
+            ko: "여수세계섬박람회, 24일부터 전국 섬 주민 무료입장",
+            en: "Yeosu fair grants nationwide island residents free admission from September 24",
+          },
+          url: "https://betanews.net/article/view/beta202609240001",
+          publishedAt: "2026-09-24",
+          kind: "article",
+          thumbnailSrc: "https://betanews.net/data/beta/image/2026/09/24/beta20260924000001.800x.0.png",
+        },
+      ],
+    },
+    {
       date: "다음",
       title: {
         ko: "관람객·수익·교통 보완과 폐막 뒤 정산 확인",
         en: "Track attendance, revenue, transport fixes and final settlement",
       },
       description: {
-        ko: "9월 21일 고발사건의 접수·배당과 실제 수사 착수 여부, 피고발인과 조직위의 구체적 답변부터 확인합니다. 이어 유료·무료·단체·초청·공무출장을 구분한 입장객과 추석 무료입장 규모, 수의계약을 포함한 계약 원문과 집행액, 식음시설 수익의 지역 환원, 개도·금오도 교통수단의 이용실적, 120억 원 사업수익의 실제 달성액을 추적합니다. 11월 4일 폐막 뒤에는 직접사업과 연계사업 정산, 계약 변경, 철거·존치 시설과 유지비를 기록합니다.",
-        en: "The next checks are receipt and assignment of the September 21 complaint, whether a formal investigation begins, and specific responses from those named and the organizers. The tracker will then follow attendance split by paid, free, group, invited and publicly funded staff visits, including the holiday free-admission count; contract documents and spending including negotiated contracts; local return from food service; actual use of Gaedo and Geumodo transport; and revenue against the KRW 12 billion plan. After November 4, it will track direct and linked project settlement, contract changes, retained and removed facilities, and maintenance costs.",
+        ko: "9월 21일 고발사건의 접수·배당과 실제 수사 착수 여부, 피고발인과 조직위의 구체적 답변부터 확인합니다. 이어 유료·무료·단체·초청·공무출장을 구분한 입장객과 추석 한시·전국 섬 주민 상시 무료입장 규모, 수의계약을 포함한 계약 원문과 집행액, 식음시설 수익의 지역 환원, 개도·금오도 교통수단의 이용실적, 120억 원 사업수익의 실제 달성액을 추적합니다. 11월 4일 폐막 뒤에는 직접사업과 연계사업 정산, 계약 변경, 철거·존치 시설과 유지비를 기록합니다.",
+        en: "The next checks are receipt and assignment of the September 21 complaint, whether a formal investigation begins, and specific responses from those named and the organizers. The tracker will then follow attendance split by paid, free, group, invited and publicly funded staff visits, separating temporary holiday waivers from the continuing nationwide island-resident policy; contract documents and spending including negotiated contracts; local return from food service; actual use of Gaedo and Geumodo transport; and revenue against the KRW 12 billion plan. After November 4, it will track direct and linked project settlement, contract changes, retained and removed facilities, and maintenance costs.",
       },
       status: "pending",
     },
@@ -860,6 +907,14 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       ko: "9월 24~27일에는 3대 가족과 한복 착용자, 12세 미만 어린이와 동반한 보호자 2명까지 무료로 입장할 수 있습니다. 무료입장 예상 인원은 공개되지 않았습니다.",
       en: "From September 24 to 27, three-generation families, visitors in hanbok and up to two adults accompanying a child under 12 can enter free. No projected count for these free admissions was disclosed.",
     },
+    {
+      ko: "금오도 마을버스 2대는 하루 14회에서 20회로 증편돼 폐막일인 11월 4일까지 무료 운행합니다. KBS가 9월 16일 보도한 금오도·개도 방문객은 하루 평균 약 700명으로 당시 전체 관람객의 약 7%였습니다.",
+      en: "Geumodo's two village buses have increased from 14 to 20 daily circuits and will run free through the November 4 closing. KBS reported on September 16 that Gaedo and Geumodo together received about 700 visitors a day, roughly 7 percent of total attendance at the time.",
+    },
+    {
+      ko: "9월 24일부터 전국 484개 유인섬 주민 약 82만 명이 무료입장 대상이 됐고, 생일 당일 관람객은 동반 1명까지 무료입니다. 실제 무료입장 인원은 공개되지 않았습니다.",
+      en: "From September 24, roughly 820,000 residents of Korea's 484 inhabited islands became eligible for free admission; visitors attending on their birthday may bring one companion free. Actual use of these waivers has not been disclosed.",
+    },
   ],
   currentControversies: [
     {
@@ -898,8 +953,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
         en: "Will the 3 million target translate into paid visits and revenue?",
       },
       description: {
-        ko: "개막 13일 누적 입장객은 목표의 4.3%였습니다. 9월 24~27일에는 3대 가족·한복 착용자와 12세 미만 어린이 동반 보호자까지 무료입장 대상이 확대됩니다. 공무출장 관람과 연휴 무료입장까지 더해지는 만큼 유료·무료·초청·단체·공무출장·중복 방문을 나누지 않은 총인원만으로는 120억 원 수익계획의 성과를 판단할 수 없습니다.",
-        en: "Thirteen-day attendance was 4.3 percent of the target. From September 24 to 27, free admission expands to three-generation families, visitors in hanbok and adults accompanying children under 12. With publicly funded staff visits and holiday waivers both entering the count, an undifferentiated total—without paid, free, invited, group, staff and repeat visits—cannot establish progress toward KRW 12 billion in revenue.",
+        ko: "개막 13일 누적 입장객은 목표의 4.3%였습니다. 9월 24~27일 한시 무료입장에 더해 전국 유인섬 주민 약 82만 명과 생일 당일 관람객·동반 1명도 무료입장 대상이 됐습니다. 공무출장 관람까지 더해지는 만큼 유료·무료·초청·단체·공무출장·중복 방문을 나누지 않은 총인원만으로는 120억 원 수익계획의 성과를 판단할 수 없습니다.",
+        en: "Thirteen-day attendance was 4.3 percent of the target. In addition to the September 24–27 holiday waivers, roughly 820,000 residents of inhabited islands nationwide and visitors attending on their birthday with one companion are now eligible for free entry. Together with publicly funded staff visits, these policies make an undifferentiated total—without paid, free, invited, group, staff and repeat visits—insufficient to judge progress toward KRW 12 billion in revenue.",
       },
     },
     {
@@ -918,8 +973,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
         en: "Does transport support the promise that the islands are the venue?",
       },
       description: {
-        ko: "개도와 금오도는 박람회의 차별화된 부행사장입니다. 조직위는 개도에 시청–백야항 셔틀과 섬 안 셔틀, 금오도에 주행사장–신기항 셔틀·하루 9항차 여객선·섬 안 마을버스를 연결한 경로를 공개했습니다. 이동경로는 구체화됐지만 좌석 수, 환승 대기시간, 실제 이용인원은 아직 보이지 않습니다. 수송력이 수요에 맞는지와 섬 주민의 생업·관광객 이동권을 어떻게 함께 보장할지가 남아 있습니다.",
-        en: "Gaedo and Geumodo are central to the fair's distinctive claim. Organizers have now published a route linking Gaedo to the City Hall–Baekya Port shuttle and an internal shuttle, and Geumodo to the main-venue–Shingi Port shuttle, nine daily ferry sailings and an island village bus. The path is clearer, but seat capacity, transfer waits and actual ridership remain undisclosed. Whether capacity meets demand and how island livelihoods can coexist with visitor mobility are still unresolved.",
+        ko: "개도와 금오도는 박람회의 차별화된 부행사장입니다. 금오도 마을버스는 기존 2대·하루 14회에서 20회로 늘어 폐막일까지 무료 운행하고, 주행사장–신기항 셔틀과 하루 9항차 여객선이 이를 잇습니다. KBS가 보도한 두 부행사장 방문객은 하루 평균 약 700명이었지만 좌석 수, 환승 대기시간, 노선별 실제 이용인원은 아직 보이지 않습니다. 늘어난 수송력이 수요에 맞는지와 섬 주민의 생업·관광객 이동권을 함께 보장하는지가 남아 있습니다.",
+        en: "Gaedo and Geumodo are central to the fair's distinctive claim. Geumodo's two village buses have increased from 14 to 20 daily circuits and will run free through closing, connected to the main-venue–Shingi shuttle and nine daily ferry sailings. KBS reported about 700 daily visitors across the two satellite venues, but seat capacity, transfer waits and route-level passenger counts remain undisclosed. The remaining test is whether the added capacity meets demand while protecting both island livelihoods and visitor mobility.",
       },
     },
     {
@@ -936,8 +991,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
   questions: [],
   proposals: [],
   caution: {
-    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 콘텐츠 보완비 7억 원은 현재 추경안 편성·상임위 심사 단계이므로 확정 지출로 보거나 713억 원에 곧바로 더해서도 안 됩니다. 13일간 입장객 12만8,217명은 유료 입장객만을 뜻하지 않으며 출장 처리된 공무원 관람이 포함될 수 있습니다. 9월 24~27일 무료입장 확대 뒤의 총관람객도 유료·무료를 나눠 확인해야 합니다. 9월 21일 고발에서 제기된 배임·법 위반·허위공문서와 계약대금 부풀리기·관람객 통계 조작 의도는 고발인의 주장으로, 수사기관이 확인한 사실이나 처분 결과가 아닙니다.",
-    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The proposed KRW 700 million content supplement is still at the budget-review stage, so it should not be treated as final spending or automatically added to the KRW 71.3 billion. The 13-day attendance figure of 128,217 is not a paid-admission count and may include public employees attending on official travel. Headline attendance after the September 24–27 free-admission expansion must also be split into paid and free entry. Allegations in the September 21 complaint—including breach of trust, legal violations, false official documents, inflated contract prices and an intent to manipulate attendance—are the complainant's claims, not facts established or disposed of by investigators.",
+    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 콘텐츠 보완비 7억 원은 현재 추경안 편성·상임위 심사 단계이므로 확정 지출로 보거나 713억 원에 곧바로 더해서도 안 됩니다. 13일간 입장객 12만8,217명은 유료 입장객만을 뜻하지 않으며 출장 처리된 공무원 관람이 포함될 수 있습니다. 9월 24~27일 한시 무료입장과 전국 섬 주민·생일 관람객 무료입장 뒤의 총관람객도 각각 유료·무료를 나눠 확인해야 합니다. 9월 21일 고발에서 제기된 배임·법 위반·허위공문서와 계약대금 부풀리기·관람객 통계 조작 의도는 고발인의 주장으로, 수사기관이 확인한 사실이나 처분 결과가 아닙니다.",
+    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The proposed KRW 700 million content supplement is still at the budget-review stage, so it should not be treated as final spending or automatically added to the KRW 71.3 billion. The 13-day attendance figure of 128,217 is not a paid-admission count and may include public employees attending on official travel. Headline attendance after the September 24–27 holiday waivers and the continuing island-resident and birthday policies must be split into paid and free entry. Allegations in the September 21 complaint—including breach of trust, legal violations, false official documents, inflated contract prices and an intent to manipulate attendance—are the complainant's claims, not facts established or disposed of by investigators.",
   },
   sources: [
     {
@@ -1024,6 +1079,22 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     {
       label: { ko: "동아일보 — 추석 연휴 무료입장 확대", en: "The Dong-A Ilbo — Expanded free admission over the holiday" },
       url: "https://www.donga.com/news/Society/article/all/20260923/134728028/1",
+    },
+    {
+      label: { ko: "KBS광주 — 금오도 마을버스 증편과 부행사장 방문객", en: "KBS Gwangju — Expanded Geumodo bus service and satellite-venue attendance" },
+      url: "https://v.daum.net/v/8yb7qPKpvM?f=p",
+    },
+    {
+      label: { ko: "박람회 조직위원회 — 금오도 마을버스 시간표", en: "Organizing committee — Geumodo village-bus timetable" },
+      url: "https://island.yeosu2026.or.kr/6_2/65",
+    },
+    {
+      label: { ko: "베타뉴스 — 전국 유인섬 주민 무료입장 확대", en: "BetaNews — Free admission extended to residents of all inhabited islands" },
+      url: "https://betanews.net/article/view/beta202609240001",
+    },
+    {
+      label: { ko: "박람회 조직위원회 — 전국 섬 주민 무료입장 안내", en: "Organizing committee — Nationwide island-resident free-admission notice" },
+      url: "https://island.yeosu2026.or.kr/6_2/64",
     },
     {
       label: { ko: "박람회 조직위원회 — 행사 개요와 일정", en: "Organizing committee — Event overview and schedule" },
