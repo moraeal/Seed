@@ -19,11 +19,11 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     en: "On October 2, 2026, South Korea's Prosecution Service will be abolished and replaced by a Prosecution Agency and a Serious Crimes Investigation Agency. This record follows where the powers to investigate, indict, seek warrants and review non-referral decisions actually move—and whether staffing, budgets and case transfers are ready.",
   },
   status: {
-    ko: "출범 8일 전·공소청 전환 지휘부 보강·중수청 최종 임용 대기",
-    en: "8 days to launch · Transition leadership installed · Final investigation-agency appointments pending",
+    ko: "출범 7일 전·중수청장 후보자 추가 해명·최종 임용 대기",
+    en: "7 days to launch · Nominee issues further response · Final appointments pending",
   },
   openedAt: "2025-09-05",
-  updatedAt: "2026-09-24",
+  updatedAt: "2026-09-25",
   continuationEligible: true,
   nextCheck: {
     ko: "사회적 약자 대상 7대 범죄의 보완·재수사 근거를 담은 중수청법 개정안의 공포일·법률번호와 최종 조문, 2차 특례임용 201명의 최종 선발 인원과 5급 이상 임용 예정자 212명의 확정·발령 결과, 공소청 직제·검사정원법 시행령의 공포문과 출범일 실제 검사 약 1,900명·형사법무직 938명 배치 결과, 김지용 중수청장 후보자의 인사청문요청서 제출·청문 일정, 이정현 검찰총장 직무대행이 밝힌 중수청·경찰과의 업무협약과 협력 절차, 경찰 현장지원 체계와 10월 2일 사건 이관·KICS 필수 기능 가동 여부",
@@ -138,6 +138,13 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       text: {
         ko: "이정현 수원고검장이 대검 차장검사로 부임해 검찰총장 직무를 대행하고 공소청 전환을 지휘하게 됐습니다. 그는 중수청·경찰과 업무협약을 포함한 협력관계를 강화하겠다고 밝혔지만 구체적인 절차는 아직 공개되지 않았습니다.",
         en: "Lee Jeong-hyeon took office as deputy prosecutor general, becoming acting prosecutor general and taking charge of the transition. He called for stronger cooperation with the new investigation agency and police, including memoranda of understanding, but no detailed procedures have yet been released.",
+      },
+    },
+    {
+      date: "2026-09-23",
+      text: {
+        ko: "김지용 중수청장 후보자 준비단은 한동훈 의원 휴대전화 포렌식에 관여하지 않았고, 윤석열 전 총장 친인척 사건에서는 재수사 명령과 한 차례 불기소 불승인을 거쳐 공소시효 10여 일을 남기고 불기소 의견을 수용했다고 해명했습니다. 날짜와 절차는 제시했지만 이를 뒷받침할 내부 기록은 공개하지 않았습니다.",
+        en: "Kim Ji-yong's confirmation team said he had no role in the forensic examination of Han Dong-hoon's phone and accepted a non-indictment recommendation in a case involving former president Yoon's relatives only after ordering renewed investigation and rejecting one earlier recommendation, with roughly ten days left before the limitation period expired. The team supplied dates and procedural detail but did not release the underlying records.",
       },
     },
   ],
@@ -739,6 +746,34 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-23",
+      title: {
+        ko: "김지용 후보자 측, 포렌식·친인척 사건 처리 의혹에 날짜 제시해 반박",
+        en: "Nominee Kim's team answers forensic and case-handling allegations with a dated account",
+      },
+      description: {
+        ko: "김지용 중수청장 후보자 인사청문회 준비단은 한동훈 의원 휴대전화 포렌식이 서울중앙지검 수사팀과 대검 과학수사부 소관이어서 당시 대검 형사부장이던 김 후보자가 관여하지 않았다고 밝혔습니다. 윤석열 전 검찰총장 친인척 사건에는 2021년 7월 1일 재기수사를 명령하고, 10월 28일 서울중앙지검의 불기소 의견을 한 차례 불승인했으며, 추가 조사 뒤 11월 3일 다시 올라온 불기소 의견을 공소시효가 10여 일 남은 상황에서 수용했다고 해명했습니다. 이는 후보자 측이 제시한 구체적 절차와 날짜이지 독립적으로 확인된 결론은 아닙니다. 재기수사 명령서, 불승인 기록, 포렌식 업무 분장과 결재 기록은 공개되지 않았습니다.",
+        en: "Kim Ji-yong's confirmation team said the forensic examination of Han Dong-hoon's phone was handled by the Seoul Central District Prosecutors' Office investigation team and the Supreme Prosecutors' Office forensic division, and therefore did not involve Kim, then head of the SPO criminal division. In the case involving relatives of former president Yoon, the team said Kim ordered renewed investigation on July 1, 2021, rejected a non-indictment recommendation from the Seoul office on October 28, and accepted the same recommendation when it returned after further interviews on November 3, with about ten days left before the statute of limitations expired. These are specific dates and procedures offered by the nominee's team, not an independently verified conclusion. The renewed-investigation order, rejection record, and forensic work-allocation and approval records have not been released.",
+      },
+      change: {
+        ko: "후보자 측이 기존 해명보다 구체적인 사건 처리 경위를 공개했지만 검증할 내부 기록은 여전히 비공개",
+        en: "The nominee supplies a more specific procedural account, while the internal records needed to test it remain undisclosed",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "머니투데이", en: "MoneyToday" },
+          title: {
+            ko: "준비단 ‘김지용 중수청장 후보자, 한동훈 휴대폰 포렌식 거부 안했다’",
+            en: "Confirmation team says nominee Kim did not block forensic examination of Han Dong-hoon's phone",
+          },
+          url: "https://www.mt.co.kr/society/2026/09/23/2026092310404069535",
+          publishedAt: "2026-09-23",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "2026-10-02",
       title: {
         ko: "검찰청 폐지·공소청과 중수청 출범 예정",
@@ -876,8 +911,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     {
       title: { ko: "추가 검증은 무엇으로 끝났는가", en: "What evidence closed the additional vetting?" },
       description: {
-        ko: "행안부는 김지용 후보자에 대한 추가 검증에서 주요 의혹이 사실이 아닌 것으로 확인됐다고 밝혔습니다. 반면 임은정 서울동부지검장은 후보자가 과거 기소에 반대했다면 이의제기서나 전산 기록이 남아야 한다고 반박했습니다. 정부의 해명과 반론은 모두 공개됐지만 검증에 사용한 기록은 아직 공개되지 않았습니다. 국회가 어떤 자료를 제출받고 청문하는지가 남았습니다.",
-        en: "The Interior Ministry says additional vetting did not substantiate the main allegations against Kim Ji-yong. Seoul Eastern District Prosecutor Lim Eun-jung counters that any past objection to indictment should have left a written or electronic record. The government's account and the challenge are now public, but the records used in the review are not. The next test is what evidence Parliament receives and examines.",
+        ko: "행안부는 김지용 후보자에 대한 추가 검증에서 주요 의혹이 사실이 아닌 것으로 확인됐다고 밝혔습니다. 후보자 측은 9월 23일 포렌식 소관과 윤석열 전 총장 친인척 사건의 재기수사 명령·불기소 불승인 날짜까지 추가로 제시했습니다. 반면 임은정 서울동부지검장은 후보자가 과거 기소에 반대했다면 이의제기서나 전산 기록이 남아야 한다고 반박했습니다. 해명은 구체해졌지만 재기수사 명령서와 불승인 기록, 업무 분장·결재 기록은 아직 공개되지 않았습니다. 국회가 어떤 자료를 제출받고 청문하는지가 남았습니다.",
+        en: "The Interior Ministry says additional vetting did not substantiate the main allegations against Kim Ji-yong. On September 23, the nominee's team added dates for the renewed-investigation order and rejection of a non-indictment recommendation in the case involving former president Yoon's relatives, along with its account of which offices controlled the phone-forensics process. Seoul Eastern District Prosecutor Lim Eun-jung counters that any past objection to indictment should have left a written or electronic record. The response is now more specific, but the renewed-investigation order, rejection record, and work-allocation and approval records remain undisclosed. The next test is what evidence Parliament receives and examines.",
       },
     },
     {
@@ -915,8 +950,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       en: "Launch-day failures in essential KICS services and completion of the full system by December",
     },
     {
-      ko: "김지용 후보자의 인사청문요청서 제출일·청문 일정과 추가 검증에 사용된 이의제기서·전산 기록 등 근거자료",
-      en: "Submission and hearing dates for nominee Kim Ji-yong and the documentary basis for additional vetting, including any written objections or electronic records",
+      ko: "김지용 후보자의 인사청문요청서 제출일·청문 일정과 추가 검증에 사용된 이의제기서·전산 기록, 재기수사 명령서·불기소 불승인 기록·포렌식 업무 분장 및 결재 기록",
+      en: "Submission and hearing dates for nominee Kim Ji-yong and the documentary basis for additional vetting, including written objections, electronic records, the renewed-investigation order, the non-indictment rejection, and forensic work-allocation and approval records",
     },
     {
       ko: "검찰청 잔여 예산의 실제 이체액과 국회가 확정한 2027년도 두 기관 예산",
@@ -1019,6 +1054,11 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       label: { ko: "법무부 — 검찰 고위 간부 인사", en: "Justice Ministry — Senior prosecution personnel appointment" },
       url: "https://www.moj.go.kr/bbs/moj/182/610562/artclView.do",
       note: { ko: "이정현 수원고검장을 9월 23일자로 대검 차장검사에 전보한 공식 인사자료", en: "Official appointment notice transferring Lee Jeong-hyeon to deputy prosecutor general effective September 23" },
+    },
+    {
+      label: { ko: "머니투데이 — 김지용 후보자 측 추가 해명", en: "MoneyToday — Further response from nominee Kim's confirmation team" },
+      url: "https://www.mt.co.kr/society/2026/09/23/2026092310404069535",
+      note: { ko: "한동훈 의원 휴대전화 포렌식 소관과 윤석열 전 총장 친인척 사건의 재기수사 명령·불기소 불승인·최종 수용 날짜를 담은 9월 23일 해명", en: "September 23 response setting out responsibility for the phone-forensics process and dates for renewed investigation, rejection and eventual acceptance of a non-indictment recommendation in the case involving former president Yoon's relatives" },
     },
   ],
 };
