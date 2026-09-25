@@ -2,13 +2,13 @@ import type { BriefingTranslation } from "./types";
 
 export const northKoreanPowsTranslation: BriefingTranslation = {
   category: "Civic Briefing · Deep Read",
-  title: "The North Korean POWs are in South Korea. Do not send them back to the North",
-  subtitle: "The 2019 forced return remains a warning. Will Seoul protect these men’s lives and choices?",
-  summary: "Zelensky announced that two North Korean POWs had been sent to South Korea. The Seed Voice fears that the Lee administration might one day send them back north. The 2019 forced repatriation makes that concern real. Seoul should state plainly that the men’s wishes will be respected and they will not be forcibly returned. The recent DMZ blast also demands candor about the safety of South Korean soldiers.",
+  title: "Two North Korean POWs are in South Korea. What must be protected now?",
+  subtitle: "Their choice, their safety and the limits of secrecy after a 20-month wait",
+  summary: "After direct talks between Seoul and Kyiv, two North Korean POWs have reached South Korea. The next tests are the men’s choices, their families’ safety and their freedom through investigation and settlement. Seoul can keep routes private while explaining its principles of protection.",
   author: "The Seed Voice",
   images: [
-    { alt: "AI reconstruction of two wounded soldiers resting in a sparse treatment room", caption: "An AI reconstruction informed by the setting of photographs published in 2025. It does not depict the actual prisoners or their arrival in South Korea.", credit: "The Seed Voice · AI reconstruction" },
-    { alt: "AI composite of Zelensky speaking on a UN assembly screen beside the UN emblem", caption: "AI composite illustrating Zelensky's September 23, 2026 UN address. This is not an original press photograph of the speech.", credit: "The Seed Voice · AI composite" },
+    { alt: "AI composite depicting two wounded soldiers recovering in a treatment room", caption: "AI composite illustrating recovery and the lives that follow capture and transfer.", credit: "The Seed Voice · AI composite" },
+    { alt: "AI composite of President Zelensky's UN address and the UN emblem", caption: "AI composite illustrating the September 23 announcement at the UN General Assembly.", credit: "The Seed Voice · AI composite" },
   ],
   sourceArticle: {
     title: "Zelensky says two North Korean POWs were sent to South Korea; Seoul all but confirms arrival",
@@ -18,138 +18,130 @@ export const northKoreanPowsTranslation: BriefingTranslation = {
     note: "JoongAng reports that the two men were captured in Kursk in January 2025 and entered South Korea in mid-September 2026. The foreign ministry confirmed consultations with other countries but withheld the timing and route to protect the men and their families.",
   },
   keyHighlights: [
-    "At the UN on September 23, Zelensky said two North Korean POWs had been sent to South Korea. JoongAng reports a mid-September arrival.",
-    "The Seed Voice fears a future forcible return by the Lee administration. Seoul should state that the men's wishes will be respected and they will not be sent north against their will.",
-    "The 2019 forced return shows what happens when the state takes control of a person's fate. The DMZ blast tests whether the government will explain a security failure candidly."
-  ],
+  "After roughly 20 months, the men's stated wishes and direct South Korea–Ukraine talks led to their transfer.",
+  "The governments give different accounts of the limits on disclosure. Their identities and route can remain private while protection principles are explained.",
+  "The next test is whether the men can continue to choose their futures through interviews, treatment and settlement."
+],
   content: [
-    "Two North Korean prisoners of war have reached South Korea. The first public announcement came from President Volodymyr Zelensky at the UN General Assembly on September 23. Seoul said it had consulted relevant countries but withheld the timing and route for the safety of the men and their families. JoongAng Ilbo reports that they arrived in mid-September.",
-    "I fear that the Lee Jae Myung administration might one day send these men back to North Korea. There has been no report of a decision to do so. My concern comes from the forced return of two North Korean fishermen at Panmunjom in 2019. The news that these soldiers have set foot in South Korea cannot, by itself, settle the question of what protection they will receive. The government should state clearly that their wishes will be respected and that they will not be forcibly repatriated."
-  ],
+  "Two North Korean soldiers captured by Ukrainian forces in Russia's Kursk region in January 2025 have reached South Korea after roughly 20 months. President Volodymyr Zelensky announced their transfer at the UN General Assembly on September 23. Seoul has withheld the precise date and route to protect the men and their families. Ukraine's presidential office says the decision followed direct talks with South Korea. The transfer followed the men's stated wish to come here and months of talks between the governments.",
+  "Their lives beyond the battlefield and detention centre now begin. South Korea faces a longer test: how will it treat people North Korea sent to war? Will it continue to respect their choices while protecting them and their families still in the North? Those questions will outlast the argument over the announcement."
+],
   sections: [
-    {
-      "title": "Twenty months of waiting: what return to the North could mean",
-      "paragraphs": [
-        "The two soldiers were captured on the Kursk battlefield in January 2025. Zelensky told the UN that one had tried to kill himself as capture approached. Reuters reported that he had once raised the possibility of exchanging the men for Ukrainians held by Russia. Their names were discussed in the language of a prisoner swap.",
-        "DW reported in February that the men wanted to go to South Korea. It described fears of punishment for being captured and repercussions for family members still in North Korea. Diplomatic talks in June and a presidential meeting in July preceded Zelensky's September announcement. For the men, those twenty months were lived under the threat of an uncertain destination.",
-        "Human Rights Watch warned that return to North Korea could expose them to torture or forced labor. The ICRC explains the protections owed to prisoners facing grave danger if sent away against their will. Reaching South Korea was a choice about survival."
-      ]
-    },
-    {
-      "title": "What happened at Panmunjom in 2019",
-      "paragraphs": [
-        "In 2019, the Moon Jae-in administration returned two North Korean fishermen by force at Panmunjom. Seoul said they were suspected of killing 16 fellow crew members. Such serious allegations should have been investigated and tested in court. The government handed the men to the North first. A UN special rapporteur on North Korean human rights expressed concern.",
-        "The two soldiers now in South Korea were captured in war and have reportedly asked to come here. The memory of Panmunjom weighs on any government that holds the power to decide whether people are sent north. We saw what happens when their expressed wishes and the danger awaiting them are pushed aside. We must not see that scene repeated."
-      ]
-    },
-    {
-      "title": "A warning to the Lee administration: do not send them north",
-      "paragraphs": [
-        "Even after their arrival, I worry about a forcible return. I fear that a government eager for dialogue with Pyongyang could one day treat these men as bargaining material. The Seed Voice raises that concern directly. North Korea sent them to a war they did not choose. They must be allowed to choose where and how they live.",
-        "At its July meeting with Ukraine, the South Korean government spoke of the men's free will and humanitarian principles. That commitment must hold after their arrival. Seoul should state that it will not forcibly return them, trade away custody under outside pressure, or expose their families in North Korea as it verifies their wishes and helps them settle safely.",
-        "The forced return in 2019 is the reason for this warning. A clear commitment now would also quiet needless suspicion. No diplomatic opening gives a government the right to place these men's freedom and lives on a negotiating table."
-      ]
-    },
-    {
-      "title": "South Korean soldiers were injured in the DMZ. What will Seoul explain?",
-      "paragraphs": [
-        "An apparent mine blast injured three South Korean soldiers in the DMZ near Paju on September 21. Their accounts describe two explosions. A battalion commander suffered a devastating ankle injury as he moved to help a fellow soldier. Investigators are examining whether the explosive was placed by North Korea or belonged to South Korea, and how the operation unfolded.",
-        "The analysis must establish the device and its origin. While it continues, the military owes soldiers' families and the public an account of the precautions taken and a timetable for findings. Repeating only that an investigation is underway feeds suspicion that the incident is being buried. Visiting the wounded and establishing what happened are both obligations.",
-        "I worry that the Lee administration's pursuit of dialogue could blur its response to danger at the border. Appeals to Pyongyang cannot substitute for public confidence in the troops' protection. If the evidence points to a North Korean device, the government must respond on that evidence. Vigilance cannot be performed with words alone."
-      ]
-    },
-    {
-      "title": "The Seed Voice's judgment",
-      "paragraphs": [
-        "Protecting these prisoners and protecting South Korean soldiers begin with the same duty. A state must never use a life to manage the political atmosphere. The prisoners have the right to decide their future; soldiers sent into the DMZ have a right to competent protection and an honest account of the risks.",
-        "The Lee administration should state its protection and non-repatriation principles for the men. The defense ministry should explain the explosive-device findings and any failures in field safety that can be disclosed. We will follow what the state does next: who verifies the men's wishes, what legal protection and resettlement support follows, and whether the promised treatment and compensation reach the injured soldiers."
-      ]
-    }
-  ],
-  watchTitle: "What we will keep checking",
+  {
+    "title": "Twenty months of waiting: where were the men's wishes?",
+    "paragraphs": [
+      "The soldiers said in interviews and letters that they wanted to go to South Korea. Human Rights Watch warned in February that return to North Korea could expose them to disappearance, torture, forced labour or execution. It also cited the ICRC's interpretation that repatriation has an exception when a prisoner faces a real risk of fundamental rights violations at home.",
+      "Seoul maintained that it would receive the men and held repeated talks with Kyiv. The two presidents reportedly agreed in July to respect the men's free will and humanitarian principles. That work deserves recognition. Concern that the Lee Jae Myung administration might send the men north cannot be the centre of this account now. The government's documented action is to negotiate their transfer to South Korea and receive them.",
+      "Interviews and letters provide evidence of what the men wanted, but they are not a complete independent process for confirming consent. Their preferences about protection and daily life may change after arrival. They should be treated as people deciding their future, rather than permanent witnesses to somebody else's war."
+    ]
+  },
+  {
+    "title": "The people missing from the disclosure dispute",
+    "paragraphs": [
+      "On September 25, attention moved from the transfer to its announcement. President Lee said Ukraine had broken an agreement to keep it confidential. A senior presidential official said Kyiv had signalled that Zelensky might mention the men, without clearly describing how, and that Seoul had opposed disclosure. Ukraine's presidential office said secretly sending captured soldiers abroad would be strange and that it had disclosed only the fact of the transfer. The sides describe the agreed limits differently.",
+      "Keeping the men's names, location and route private makes sense, especially with family members still in North Korea. The principle under which the state receives and protects them need not be secret. Seoul can safeguard their whereabouts while explaining how it will respect their choices, protect them over time and support their settlement.",
+      "The governing party stresses safety, psychological care and avoiding further identification. The opposition asks why South Koreans learned of the transfer from a foreign president. Both questions merit scrutiny. An unsupported claim that secrecy must mean deference to Pyongyang, or a demand to reveal where the men live, does little to protect them. Criticism of the government must not turn the men into exhibits."
+    ]
+  },
+  {
+    "title": "A person's choice before the arithmetic of prisoner exchange",
+    "paragraphs": [
+      "Negotiations were complicated by the wider question of Ukrainian and Russian prisoners of war. Commentators had considered whether these men could figure in an exchange involving Russia. But Ukraine's presidential office said on September 24 that claims of repeated Russian requests for their transfer were false and that Russia had shown no interest in them. There is currently no basis to say what, if anything, was exchanged for their transfer or that Seoul rejected a Russian handover demand.",
+      "The established facts are weighty enough. North Korea sent its soldiers to Russia's war. These two said they wanted to go to South Korea. Kyiv and Seoul opened a route for them. Men once discussed in the language of prisoner exchange gained an opportunity to choose their own future. That is what The Seed Voice values in this outcome."
+    ]
+  },
+  {
+    "title": "Freedom does not arrive automatically with a flight",
+    "paragraphs": [
+      "Medical care, recovery, interviews, legal procedures and settlement still lie ahead. Their combat experience and families in the North may call for protection beyond ordinary resettlement arrangements. Seoul has not disclosed what arrangements it will use or what the men now want. Reports about possible handling should not be presented as a final decision.",
+      "Protection must not become indefinite control of everyday life. Necessary interviews need a clear purpose and duration, and the men need access to medical, psychological and legal help. Whether to speak publicly, show their faces or live quietly must ultimately be their choice. Neither governments nor parties nor news outlets own them as trophies of war or proof of political virtue.",
+      "The forced return of two North Korean fishermen in 2019 remains a warning about state power, expressed wishes and due process. The legal and factual circumstances differ here. Seoul negotiated to receive these soldiers, and they came. The earlier episode warrants continued vigilance about forced returns, but it should not obscure the government's documented actions in this case.",
+      "Citizens gain nothing by uncovering an arrival date or address. They can instead watch whether the men's preferences are respected in protective procedures, whether identities and families remain safe, whether investigation turns into prolonged isolation, and whether medical, psychological, legal and settlement support is available. The government can explain institutional responsibility without exposing private information.",
+      "Getting these men to South Korea took 20 months. Their lives ahead will be much longer. Arrival is the start of choosing a life beyond state orders and memories of war. Our society's task is to protect that choice."
+    ]
+  }
+],
   paragraphLinks: [
-    {
-      "sectionIndex": 0,
-      "paragraphIndex": 0,
-      "links": [
-        {
-          "label": "Reuters report",
-          "url": "https://www.reuters.com/business/aerospace-defense/ukraine-sent-two-captured-north-korean-soldiers-south-korea-zelenskiy-says-2026-09-23/"
-        }
-      ]
-    },
-    {
-      "sectionIndex": 0,
-      "paragraphIndex": 1,
-      "links": [
-        {
-          "label": "DW report",
-          "url": "https://amp.dw.com/en/north-korean-pows-stuck-in-ukraine-as-seoul-hesitates/a-76020092"
-        }
-      ]
-    },
-    {
-      "sectionIndex": 0,
-      "paragraphIndex": 2,
-      "links": [
-        {
-          "label": "Human Rights Watch",
-          "url": "https://www.hrw.org/news/2026/02/26/a-year-on-two-north-korean-pows-in-ukraine-fear-forced-return"
-        },
-        {
-          "label": "ICRC explainer",
-          "url": "https://www.icrc.org/en/document/prisoners-war-what-you-need-know"
-        }
-      ]
-    },
-    {
-      "sectionIndex": 1,
-      "paragraphIndex": 0,
-      "links": [
-        {
-          "label": "UN rapporteur's concern",
-          "url": "https://en.yna.co.kr/view/AEN20220902007700325"
-        }
-      ]
-    },
-    {
-      "sectionIndex": 2,
-      "paragraphIndex": 1,
-      "links": [
-        {
-          "label": "July leaders' discussion",
-          "url": "https://www.yna.co.kr/amp/view/AKR20260708170651001"
-        }
-      ]
-    },
-    {
-      "sectionIndex": 3,
-      "paragraphIndex": 0,
-      "links": [
-        {
-          "label": "DMZ investigation report",
-          "url": "https://www.hankookilbo.com/news/article/A2026092317460005437"
-        }
-      ]
-    }
-  ],
+  {
+    "sectionIndex": 0,
+    "paragraphIndex": 0,
+    "links": [
+      {
+        "label": "Human Rights Watch",
+        "url": "https://www.hrw.org/news/2026/02/26/a-year-on-two-north-korean-pows-in-ukraine-fear-forced-return"
+      }
+    ]
+  },
+  {
+    "sectionIndex": 0,
+    "paragraphIndex": 1,
+    "links": [
+      {
+        "label": "Yonhap on the transfer talks",
+        "url": "https://www.yna.co.kr/amp/view/AKR20260924024751504"
+      }
+    ]
+  },
+  {
+    "sectionIndex": 1,
+    "paragraphIndex": 0,
+    "links": [
+      {
+        "label": "Yonhap on the disclosure dispute",
+        "url": "https://www.yna.co.kr/view/AKR20260925021100504"
+      },
+      {
+        "label": "RFA on Seoul’s account",
+        "url": "https://www.rfa.org/korean/in-focus/2026/09/25/ukraine-north-korean-pows/"
+      }
+    ]
+  },
+  {
+    "sectionIndex": 1,
+    "paragraphIndex": 2,
+    "links": [
+      {
+        "label": "Newsis on party responses",
+        "url": "https://www.newsis.com/view/NISX20260925_0003803531"
+      }
+    ]
+  },
+  {
+    "sectionIndex": 2,
+    "paragraphIndex": 0,
+    "links": [
+      {
+        "label": "Yonhap on Ukraine’s account",
+        "url": "https://www.yna.co.kr/amp/view/AKR20260924053700109"
+      }
+    ]
+  },
+  {
+    "sectionIndex": 3,
+    "paragraphIndex": 0,
+    "links": [
+      {
+        "label": "Yonhap on possible protection",
+        "url": "https://www.yna.co.kr/amp/view/AKR20260924024751504"
+      }
+    ]
+  }
+],
+  watchTitle: "What we will keep checking",
   watchPoints: [
-    "Whether Seoul publicly states that the prisoners' wishes will be respected and that they will not be forcibly repatriated.",
-    "Whether legal protection and resettlement support safeguard the men and their families still in North Korea.",
-    "Whether the military reports the explosive-device findings and the field operation's safety measures.",
-    "Whether promised treatment, rehabilitation and compensation reach the injured soldiers."
-  ],
-  sourceNote: "Based on public reporting available September 24, 2026. JoongAng reports the mid-September arrival; Seoul has not released the route or precise date. Concern about a future forced return is The Seed Voice’s judgment, not a reported government plan. The opening image is an AI reconstruction, the UN speech image is an AI composite, and the linked report box shows a January 2025 Zelensky Telegram image.",
+  "Whether the men's wishes remain central to independent protective procedures.",
+  "Whether their identities and the safety of family members in North Korea are protected.",
+  "Whether the purpose and duration of interviews are explained and medical, psychological and legal help is available.",
+  "Whether they can choose to speak publicly or live quietly and have meaningful settlement options."
+],
+  sourceNote: "Based on reporting available by the evening of September 25, 2026. Seoul has not disclosed the precise transfer date, route or protection process. There is no reported government plan to send the men north. The two editorial images are AI composites; the linked source-report box contains an image reproduced by that publisher.",
   sourceLabels: [
-    "JoongAng Ilbo · Zelensky says two North Korean POWs were sent to South Korea (Sept. 24, 2026)",
-    "Reuters · Ukraine sent two captured North Korean soldiers to South Korea (Sept. 23, 2026)",
-    "DW · North Korean POWs stuck in Ukraine as Seoul hesitates (Feb. 18, 2026)",
-    "Human Rights Watch · A year on, two North Korean POWs in Ukraine fear forced return (Feb. 26, 2026)",
-    "ICRC · Prisoners of war: what you need to know",
-    "Yonhap · South Korea–Ukraine foreign ministers' talks (June 30, 2026)",
-    "Yonhap · Lee–Zelensky summit and the prisoners' free will (July 8, 2026)",
-    "United Nations · President Zelensky's 81st General Debate address (Sept. 23, 2026)",
-    "Yonhap · UN rapporteur expresses concern over the 2019 forced return",
-    "Hankook Ilbo · Two DMZ blasts and the ongoing explosives analysis (Sept. 23, 2026)",
-  ],
+  "Yonhap · Transfer and South Korea–Ukraine consultations (Sept. 24, 2026)",
+  "Yonhap · Ukrainian presidential office on the decision (Sept. 24, 2026)",
+  "Yonhap · The two governments on disclosure (Sept. 25, 2026)",
+  "Radio Free Asia · Seoul on advance notice (Sept. 25, 2026)",
+  "Newsis · Governing and opposition parties respond (Sept. 25, 2026)",
+  "Human Rights Watch · Risk of forced return for the North Korean POWs (Feb. 26, 2026)",
+  "JoongAng Ilbo · Zelensky announces the transfer (Sept. 24, 2026)"
+],
 };
