@@ -129,9 +129,6 @@ export default function Header() {
 
           <div className="ml-auto hidden shrink-0 items-center gap-1.5 xl:flex">
             {renderSearchControl()}
-            <a href="#newsletter" className="inline-flex min-h-8 items-center rounded-sm bg-green-deep px-3.5 text-[11px] font-extrabold text-white transition hover:bg-green-mid">
-              {ko ? "구독" : "Subscribe"}
-            </a>
             {user ? (
               <>
                 {(user.app_metadata?.seed_role === "author" || user.app_metadata?.seed_role === "owner") && <Link to="/writer" className="inline-flex min-h-8 items-center gap-1.5 px-2 text-[11px] font-extrabold text-green-deep"><PenLine size={13}/>{ko ? "집필실" : "Write"}</Link>}
@@ -165,7 +162,6 @@ export default function Header() {
           <div id="mobile-main-menu" className="border-t border-green-deep/10 bg-paper px-5 py-4 shadow-[0_12px_24px_rgba(17,43,37,.08)] xl:hidden">
             <nav className="container-page grid sm:grid-cols-2 sm:gap-x-5">{nav.map((item) => renderNavItem(item, true))}</nav>
             <div className="container-page mt-4 flex flex-wrap gap-2">
-              <a href="#newsletter" onClick={() => setOpen(false)} className="button-primary">{ko ? "구독" : "Subscribe"}</a>
               {user ? (
                 <>
                   {(user.app_metadata?.seed_role === "author" || user.app_metadata?.seed_role === "owner") && <Link to="/writer" onClick={() => setOpen(false)} className="button-primary"><PenLine size={15}/>{ko ? "필자 집필실" : "Writers' room"}</Link>}

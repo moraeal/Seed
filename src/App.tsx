@@ -1,12 +1,11 @@
 import { lazy, Suspense } from "react";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./auth";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import InlinePageEditor from "./components/InlinePageEditor";
 import RouteMetadata from "./components/RouteMetadata";
 import ScrollToTop from "./components/ScrollToTop";
-import NewsletterSignup from "./components/NewsletterSignup";
 import { LanguageProvider, useLanguage } from "./i18n";
 
 const About = lazy(() => import("./pages/About"));
@@ -53,10 +52,7 @@ const Contributions = lazy(() => import("./pages/Contributions"));
 const EditorialDesk = lazy(() => import("./pages/EditorialDesk"));
 
 function AppShell() {
-  const location = useLocation();
   const { language } = useLanguage();
-  const normalizedPath = location.pathname.replace(/\/+$/, "") || "/";
-  const showNewsletterAtBottom = !["/", "/en", "/account"].includes(normalizedPath) && !normalizedPath.startsWith("/insights") && !normalizedPath.startsWith("/writer");
 
   return (
     <div className="min-h-screen bg-paper text-charcoal">
@@ -124,7 +120,6 @@ function AppShell() {
           </Routes>
         </Suspense>
       </main>
-      {showNewsletterAtBottom && <NewsletterSignup />}
       <Footer />
       <InlinePageEditor />
     </div>
