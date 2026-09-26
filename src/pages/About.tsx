@@ -14,37 +14,36 @@ import { useLanguage } from "../i18n";
 const copy = {
   ko: {
     kicker: "ABOUT SEED VOICE",
-    title: <>세상을 판단하는 힘,<br /><span className="text-[#bd613d]">시민에게.</span></>,
-    lead: "법안 하나가 내 삶을 어떻게 바꾸는지, 공익을 내세운 사업에 세금이 어떻게 쓰였는지, 기업의 도전을 막는 제도는 없는지. 씨앗의 소리는 자료를 확인하고 권력이 움직이는 방향을 끝까지 살핍니다.",
-    identity: "시민과 기업의 자유, 공익을 지키는 독립 시민저널. 사실은 정확하게, 관점은 분명하게 전하겠습니다.",
+    title: <>내 삶에 닿는 뉴스,<br /><span className="text-[#bd613d]">씨앗과 함께 읽어요.</span></>,
+    lead: "세금이 어디에 쓰이는지, 동네 병원의 변화가 진료에 어떤 영향을 줄지, 뉴스 속 숫자가 왜 다르게 보이는지 궁금할 때가 있죠. 씨앗의 소리는 흩어진 자료를 찾아 쉬운 말로 풀고, 그 일이 우리 생활과 어떻게 이어지는지 함께 살핍니다.",
+    identity: "어려운 뉴스를 내 삶의 질문으로 바꾸는 독립 시민저널입니다.",
     readToday: "오늘의 기사 읽기",
-    subscribe: "씨앗레터 구독신청",
-    questionsKicker: "THE QUESTIONS",
-    questionsTitle: "이런 질문에서 씨앗은 시작합니다",
+    questionsKicker: "MY LIFE, MY QUESTIONS",
+    questionsTitle: "이런 궁금증, 그냥 넘기지 마세요",
     questions: [
-      { label: "01 · 숫자", text: "나랏빚이 늘었는데, 정부는 왜 채무비율이 낮아졌다고 할까?" },
-      { label: "02 · 예산", text: "공익을 위한 사업이라는데, 예산과 계약을 시민도 확인할 수 있을까?" },
-      { label: "03 · 자유", text: "편법을 막는다는 제도가 정상적인 기업의 운영까지 어렵게 만들지는 않을까?" },
+      { label: "01 · 세금", text: "내가 낸 세금, 그 공공사업에는 어떻게 쓰였을까?" },
+      { label: "02 · 의료", text: "동네 병원이 어려워지면 우리 가족의 진료는 어떻게 될까?" },
+      { label: "03 · 뉴스", text: "서로 다른 숫자를 내놓는 기사, 무엇을 비교해야 할까?" },
     ],
     experienceKicker: "HOW TO READ SEED VOICE",
-    experienceTitle: "씨앗에서는 이렇게 읽을 수 있습니다",
+    experienceTitle: "씨앗이 궁금증을 풀어드릴게요",
     experiences: [
-      { title: "오늘의 일을 이해합니다", description: "브리핑은 발표와 보도의 핵심을 짚고, 그 일이 시민의 삶에 어떤 영향을 주는지 설명합니다.", link: "브리핑 보러 가기", to: "/briefings" },
-      { title: "권력과 예산의 흐름을 따라갑니다", description: "시민감시는 법안·예산·계약·제도의 변화를 기록합니다. 발표된 숫자와 실제 자료가 어디서 달라지는지도 확인합니다.", link: "시민감시 보러 가기", to: "/monitoring" },
-      { title: "익숙한 말을 다시 생각합니다", description: "시민언어와 칼럼은 ‘공익’, ‘개혁’, ‘자유’ 같은 말이 현실에서 누구의 권한을 넓히고 누구의 선택을 좁히는지 묻습니다.", link: "시민언어 보러 가기", to: "/seed-language" },
+      { title: "바쁜 날에도 핵심부터", description: "브리핑에서 무슨 일이 있었는지 먼저 읽어보세요. 법과 정책 이야기가 내 생활과 만나는 지점도 짚어드립니다.", link: "브리핑 읽기", to: "/briefings" },
+      { title: "내 세금의 쓰임까지", description: "시민감시는 공공사업의 예산과 계약 자료를 따라갑니다. 발표 뒤에 놓인 숫자와 기록을 함께 확인해보세요.", link: "시민감시 읽기", to: "/monitoring" },
+      { title: "낯선 말도 내 말로", description: "‘공익’이나 ‘개혁’이라는 말이 실제로 누구에게 어떤 변화를 만드는지, 시민언어와 칼럼에서 쉽게 생각해봅니다.", link: "시민언어 읽기", to: "/seed-language" },
     ],
     storiesKicker: "START READING",
-    storiesTitle: "처음 읽을 기사",
-    storiesLead: "씨앗이 숫자와 제도, 시민의 언어를 어떻게 살피는지 네 편의 기사로 확인해보세요.",
+    storiesTitle: "이 이야기부터 읽어보세요",
+    storiesLead: "숫자와 제도가 내 일상과 연결되는 순간을, 실제 기사에서 만나보세요.",
     stories: [
-      { label: "숫자를 다시 읽기", title: "나랏빚 106조 늘었는데 채무비율은 하락?", description: "같은 기준의 숫자를 나란히 놓습니다.", to: "/news/national-debt-ratio-gdp-comparison" },
-      { label: "예산을 끝까지 확인하기", title: "여수섬박람회 돈의 흐름을 다시 세다", description: "공고와 계약 자료를 연결합니다.", to: "/columns/yeosu-island-expo-procurement-ledger" },
-      { label: "기업의 자유 살피기", title: "상속세 40억원이 330억원으로", description: "편법 단속과 사업의 계속 운영을 함께 봅니다.", to: "/briefings/hospital-inheritance-tax-maternity-care" },
-      { label: "말의 힘 다시 생각하기", title: "말이 시민을 적으로 만든다", description: "진영의 이름 뒤에 가려진 사람을 봅니다.", to: "/columns/words-turn-citizens-into-enemies" },
+      { label: "뉴스의 숫자가 헷갈릴 때", title: "나랏빚 106조 늘었는데 채무비율은 하락?", description: "서로 다른 기준의 숫자를 어떻게 읽을까요?", to: "/news/national-debt-ratio-gdp-comparison" },
+      { label: "내 세금의 쓰임이 궁금할 때", title: "여수섬박람회 돈의 흐름을 다시 세다", description: "공고와 계약 자료를 따라가 봅니다.", to: "/columns/yeosu-island-expo-procurement-ledger" },
+      { label: "동네 의료가 걱정될 때", title: "상속세 40억원이 330억원으로", description: "병원의 계속 운영과 진료를 함께 생각합니다.", to: "/briefings/hospital-inheritance-tax-maternity-care" },
+      { label: "말 때문에 사람이 가려질 때", title: "말이 시민을 적으로 만든다", description: "진영의 이름보다 사람을 먼저 봅니다.", to: "/columns/words-turn-citizens-into-enemies" },
     ],
     standardKicker: "OUR STANDARD",
     standardTitle: "씨앗의 기준",
-    standardLead: "법의 지배와 권력분립, 표현의 자유, 기업의 도전, 시민사회의 독립을 지킵니다.",
+    standardLead: "내 삶에 닿는 기사일수록 사실과 의견을 분명히 나누고, 누구나 다시 살펴볼 수 있는 근거를 남기겠습니다.",
     standards: [
       "확인된 사실과 씨앗의 판단을 구분합니다.",
       "권한을 가진 곳에는 같은 기준으로 책임을 묻습니다.",
@@ -54,46 +53,44 @@ const copy = {
     statement: "씨앗의 취지문 읽기",
     contributors: "필진 소개",
     joinKicker: "GROW WITH SEED VOICE",
-    joinTitle: "작은 질문을 함께 키워주세요",
-    joinLead: "기사를 읽고, 놓친 자료를 제보하고, 씨앗레터를 받아보세요. 시민이 다시 확인할 수 있는 근거를 쌓아가겠습니다.",
+    joinTitle: "당신의 궁금증에서 시작합니다",
+    joinLead: "읽다가 떠오른 질문이 있나요? 생활 속에서 발견한 자료나 놓치면 안 될 이야기를 알려주세요. 함께 확인하고 더 쉽게 전하겠습니다.",
     read: "기사 읽기",
     tip: "제보하기",
-    characterAlt: "펜을 든 씨야 캐릭터",
-    characterBubble: "함께 확인해요!",
+    citizensAlt: "햇살이 드는 동네에서 밝게 이야기를 나누는 시민들",
   },
   en: {
     kicker: "ABOUT SEED VOICE",
-    title: <>The power to judge the world,<br /><span className="text-[#bd613d]">in citizens' hands.</span></>,
-    lead: "How does a new bill change daily life? Where does the money go when a project claims to serve the public? Does a rule against abuse also obstruct a legitimate business? SEED VOICE checks the records and follows where power moves.",
-    identity: "An independent civic journal defending freedom for citizens and enterprise and the public good. Accurate in fact, clear in viewpoint.",
+    title: <>News that touches your life,<br /><span className="text-[#bd613d]">made clearer together.</span></>,
+    lead: "Wondering where your taxes go, how a neighborhood hospital's future may affect care, or why two news stories give different figures? SEED VOICE finds the records, explains them in plain language, and connects the story to everyday life.",
+    identity: "An independent civic journal turning complicated news into questions you can use.",
     readToday: "Read today's stories",
-    subscribe: "Subscribe to SEED LETTER",
-    questionsKicker: "THE QUESTIONS",
-    questionsTitle: "SEED begins with questions like these",
+    questionsKicker: "MY LIFE, MY QUESTIONS",
+    questionsTitle: "Questions worth asking",
     questions: [
-      { label: "01 · Numbers", text: "If public debt is rising, why does the government say the debt ratio has fallen?" },
-      { label: "02 · Budgets", text: "Can citizens trace the contracts and spending behind a project said to serve the public?" },
-      { label: "03 · Freedom", text: "Could a rule meant to stop abuse also make a legitimate enterprise harder to sustain?" },
+      { label: "01 · Taxes", text: "How was my tax money spent on that public project?" },
+      { label: "02 · Health", text: "If a local hospital struggles, what happens to care for my family?" },
+      { label: "03 · News", text: "When reports use different figures, what should I compare?" },
     ],
     experienceKicker: "HOW TO READ SEED VOICE",
-    experienceTitle: "Three ways to read SEED",
+    experienceTitle: "A clearer way into the story",
     experiences: [
-      { title: "Understand the day's events", description: "Our briefings explain the essential facts in announcements and reports and what they mean for citizens' lives.", link: "Explore briefings", to: "/briefings" },
-      { title: "Follow power and public money", description: "Civic Watch tracks bills, budgets, contracts and institutional change. We compare public claims with the underlying records.", link: "Explore Civic Watch", to: "/monitoring" },
-      { title: "Reconsider familiar words", description: "Our language essays and columns ask whose authority grows, and whose choices shrink, when people invoke the public good, reform or freedom.", link: "Explore civic language", to: "/seed-language" },
+      { title: "Start with the essentials", description: "Our briefings tell you what happened, then explain where laws and policies meet daily life.", link: "Read briefings", to: "/briefings" },
+      { title: "See where your taxes went", description: "Civic Watch traces public budgets and contracts so you can check the records behind an announcement.", link: "Read Civic Watch", to: "/monitoring" },
+      { title: "Make sense of big words", description: "Our essays ask what words like ‘public good’ and ‘reform’ mean for the choices real people have.", link: "Read civic language", to: "/seed-language" },
     ],
     storiesKicker: "START READING",
-    storiesTitle: "Start with these stories",
-    storiesLead: "Four examples show how SEED examines numbers, institutions, business freedom and civic language.",
+    storiesTitle: "Start with a story that speaks to you",
+    storiesLead: "See how public figures and policies connect to everyday choices in these reported stories.",
     stories: [
-      { label: "Read the numbers", title: "Debt rises by 106 trillion won. Why does the ratio fall?", description: "Compare figures calculated on the same basis.", to: "/news/national-debt-ratio-gdp-comparison" },
-      { label: "Follow the budget", title: "Tracing the Yeosu Island Expo's contracts", description: "Connect tender notices with contract records.", to: "/columns/yeosu-island-expo-procurement-ledger" },
-      { label: "Examine enterprise", title: "A maternity hospital faces a steep inheritance tax", description: "Distinguish sham businesses from continuing ones.", to: "/briefings/hospital-inheritance-tax-maternity-care" },
-      { label: "Examine language", title: "When words turn citizens into enemies", description: "Look beyond partisan labels to the people affected.", to: "/columns/words-turn-citizens-into-enemies" },
+      { label: "When figures don't add up", title: "Debt rises by 106 trillion won. Why does the ratio fall?", description: "Learn which figures are being compared.", to: "/news/national-debt-ratio-gdp-comparison" },
+      { label: "When you wonder where taxes went", title: "Tracing the Yeosu Island Expo's contracts", description: "Follow the tenders and contracts.", to: "/columns/yeosu-island-expo-procurement-ledger" },
+      { label: "When local care matters", title: "A maternity hospital faces a steep inheritance tax", description: "Consider what continuity means for staff and patients.", to: "/briefings/hospital-inheritance-tax-maternity-care" },
+      { label: "When labels drown out people", title: "When words turn citizens into enemies", description: "Look at the people behind partisan labels.", to: "/columns/words-turn-citizens-into-enemies" },
     ],
     standardKicker: "OUR STANDARD",
     standardTitle: "What guides SEED",
-    standardLead: "We defend the rule of law, separated powers, freedom of expression, enterprise and an independent civil society.",
+    standardLead: "The closer a story is to your life, the more clearly we must separate facts from opinion and show the records behind our reporting.",
     standards: [
       "We distinguish verified facts from our own judgments.",
       "We hold every center of power to the same standard.",
@@ -103,12 +100,11 @@ const copy = {
     statement: "Read our founding statement",
     contributors: "Meet the contributors",
     joinKicker: "GROW WITH SEED VOICE",
-    joinTitle: "Help a small question grow",
-    joinLead: "Read a story, share a record we missed, or subscribe to SEED LETTER. Together we can build a record citizens can check.",
+    joinTitle: "It begins with your question",
+    joinLead: "Have a question after reading? Share a record or an everyday story that deserves a closer look. We'll check it and explain what we find.",
     read: "Read stories",
     tip: "Send a tip",
-    characterAlt: "Siya, SEED's character, holding a pen",
-    characterBubble: "Let's check together!",
+    citizensAlt: "Neighbors talking together on a sunny day",
   },
 };
 
@@ -131,13 +127,11 @@ export default function About() {
             <p className="mt-5 max-w-2xl font-extrabold leading-7">{content.identity}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/news" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-green-deep px-6 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:shadow-lg">{content.readToday}<ArrowUpRight size={17}/></Link>
-              <Link to="/account?mode=signup" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-green-deep bg-white px-6 py-3 text-sm font-extrabold transition hover:-translate-y-0.5 hover:shadow-lg">{content.subscribe}<ArrowUpRight size={17}/></Link>
             </div>
           </div>
-          <div className="relative order-first mx-auto grid h-72 w-72 place-items-center lg:order-last lg:h-[420px] lg:w-[420px]">
-            <div className="absolute inset-2 rounded-full bg-[#dceba9] shadow-[inset_-18px_-18px_0_rgba(39,89,66,.07),0_20px_44px_rgba(30,65,51,.11)]" />
-            <img src={`${import.meta.env.BASE_URL}images/seed-character/seed-12-writing.png`} alt={content.characterAlt} className="relative z-10 h-[82%] w-[82%] object-contain drop-shadow-[0_18px_12px_rgba(30,70,44,.16)]" />
-            <div className="absolute right-0 top-3 z-20 rotate-6 rounded-2xl border border-green-deep bg-white px-4 py-2 text-xs font-extrabold shadow-[6px_6px_0_#f6a877] sm:text-sm">{content.characterBubble}</div>
+          <div className="relative order-first mx-auto w-full max-w-xl lg:order-last">
+            <div className="absolute -inset-3 rotate-3 rounded-[2.5rem] bg-[#dceba9] sm:-inset-4" aria-hidden="true" />
+            <img src={`${import.meta.env.BASE_URL}images/about-citizens.webp`} alt={content.citizensAlt} className="relative aspect-[4/3] w-full rounded-[2rem] border-4 border-white object-cover shadow-[0_22px_45px_rgba(30,65,51,.16)]" />
           </div>
         </div>
       </header>
@@ -223,7 +217,6 @@ export default function About() {
             <div className="flex flex-wrap gap-3 lg:max-w-80">
               <Link to="/news" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-green-deep bg-white px-5 py-3 text-sm font-extrabold">{content.read}<ArrowUpRight size={16}/></Link>
               <a href="mailto:seedvoicekr@gmail.com" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-green-deep bg-white px-5 py-3 text-sm font-extrabold">{content.tip}<ArrowUpRight size={16}/></a>
-              <Link to="/account?mode=signup" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-green-deep px-5 py-3 text-sm font-extrabold text-white">{content.subscribe}<ArrowUpRight size={16}/></Link>
             </div>
           </div>
         </section>
