@@ -23,9 +23,9 @@ export default function SiyaArticleGuide() {
   const [stage, setStage] = useState<Stage>("hidden");
   const [pose, setPose] = useState(false);
   const [question, setQuestion] = useState("");
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [message, setMessage] = useState<Message | null>(null);
   const [busy, setBusy] = useState(false);
-  const [saving, setSaving] = useState<number | null>(null);
+  const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const end = useRef<HTMLDivElement>(null);
 
@@ -37,7 +37,7 @@ export default function SiyaArticleGuide() {
     const interval = window.setInterval(() => setPose((current) => !current), 3000);
     return () => { window.clearTimeout(entrance); window.clearTimeout(ready); window.clearInterval(interval); };
   }, []);
-  useEffect(() => { if (stage === "open") end.current?.scrollIntoView({ block: "nearest" }); }, [messages, stage]);
+  useEffect(() => { if (stage === "open") end.current?.scrollIntoView({ block: "nearest" }); }, [message, stage]);
   if (stage === "hidden") return null;
 
   const call = async (action: "ask" | "save", text: string) => {
@@ -53,18 +53,17 @@ export default function SiyaArticleGuide() {
 
   const askQuestion = async (text: string) => {
     if (busy || text.length < 2 || text.length > 500) return;
-    setBusy(true); setError("");
+    setBusy(true); setError(""); setMessage(null); setQuestion("");
     try {
       const result = await call("ask", text);
-      setMessages((current) => [...current, {
+      setMessage({
         question: text,
         answer: result.grounded ? result.answer : (text === example && isArticlePage
           ? (ko ? "이 페이지의 기사 내용을 아직 확인하지 못했어요. 다른 질문을 해주세요." : "I couldn't find this article's text yet. Please try another question.")
           : (ko ? "죄송해요. 이 질문에 답할 만한 씨앗 기사를 아직 찾지 못했어요. 조금 더 연구해 볼게요." : "Sorry, I couldn't find a SEED article that answers this yet. We'll look into it.")),
         sources: Array.isArray(result.sources) ? result.sources : [],
         grounded: Boolean(result.grounded),
-      }]);
-      setQuestion("");
+      });
     } catch (caught) { setError(caught instanceof Error ? caught.message : String(caught)); }
     finally { setBusy(false); }
   };
@@ -73,14 +72,14 @@ export default function SiyaArticleGuide() {
     void askQuestion(question.trim());
   };
 
-  const save = async (index: number) => {
-    if (saving !== null) return;
-    setSaving(index); setError("");
+  const save = async (item: Message) => {
+    if (saving) return;
+    setSaving(true); setError("");
     try {
-      await call("save", messages[index].question);
-      setMessages((current) => current.map((item, position) => position === index ? { ...item, saved: true } : item));
+      await call("save", item.question);
+      setMessage((current) => current === item ? { ...current, saved: true } : current);
     } catch (caught) { setError(caught instanceof Error ? caught.message : String(caught)); }
-    finally { setSaving(null); }
+    finally { setSaving(false); }
   };
 
   const image = stage === "walking" ? "seed-09-listening-guide.webp" : pose ? "seed-10-explaining-guide.webp" : "seed-13-reading-guide.webp";
@@ -95,19 +94,20 @@ export default function SiyaArticleGuide() {
         <h2 id="seed-guide-title" className="editorial-title mt-2 text-xl font-bold text-navy">{ko ? "기사에 관해 물어보세요" : "Ask about articles"}</h2>
         <p className="my-2.5 text-xs leading-5 text-charcoal/65">{ko ? "씨앗 기사에 관해 물어보세요. 핵심 내용과 기사 링크를 찾아드릴게요." : "Ask about SEED articles. I'll find the key points and story links."}</p>
         <div className="seed-guide-messages" aria-live="polite">
-          {messages.length === 0 && <p className="seed-guide-tip">{ko ? "예: " : "For example: "}<button type="button" onClick={() => void askQuestion(example)} disabled={busy}>{example}</button></p>}
-          {messages.map((item, index) => <div className="seed-guide-exchange" key={`${index}-${item.question}`}>
-            <p className="seed-guide-question">{item.question}</p>
-            <p className="seed-guide-answer">{item.answer}</p>
-            {item.sources.length > 0 && <div className="seed-guide-related">
+          {!message && !busy && <p className="seed-guide-tip">{ko ? "예: " : "For example: "}<button type="button" onClick={() => void askQuestion(example)} disabled={busy}>{example}</button></p>}
+          {busy && <p className="seed-guide-tip">{ko ? "답변을 찾고 있어요…" : "Finding an answer…"}</p>}
+          {message && <div className="seed-guide-exchange">
+            <p className="seed-guide-question">{message.question}</p>
+            <p className="seed-guide-answer">{message.answer}</p>
+            {message.sources.length > 0 && <div className="seed-guide-related">
               <p className="seed-guide-related-title">{ko ? "추가로 알아볼 내용" : "Read more"}</p>
-              <ul className="seed-guide-sources">{item.sources.map((source) => <li key={source.url}><a href={source.url}>{source.title} <span>↗</span></a></li>)}</ul>
+              <ul className="seed-guide-sources">{message.sources.map((source) => <li key={source.url}><a href={source.url}>{source.title} <span>↗</span></a></li>)}</ul>
             </div>}
-            {!item.grounded && <div className="seed-guide-save">
+            {!message.grounded && <div className="seed-guide-save">
               <p>{ko ? "이 질문을 저장하면 편집부가 다음 기사 주제로 검토합니다." : "Save this question for our editors to consider as a future story."}</p>
-              <button type="button" disabled={item.saved || saving === index} onClick={() => void save(index)}>{item.saved ? (ko ? "질문을 저장했어요" : "Question saved") : (ko ? "질문 저장" : "Save question")}</button>
+              <button type="button" disabled={message.saved || saving} onClick={() => void save(message)}>{message.saved ? (ko ? "질문을 저장했어요" : "Question saved") : (ko ? "질문 저장" : "Save question")}</button>
             </div>}
-          </div>)}
+          </div>}
           <div ref={end} />
         </div>
         {error && <p className="seed-guide-error" role="alert">{error}</p>}
