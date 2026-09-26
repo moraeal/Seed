@@ -38,10 +38,27 @@
 .seed-nudge-close { position: absolute; top: 9px; right: 9px; }
 .seed-nudge-early-close { position: absolute; bottom: 16px; right: 112px; border: 1px solid #cbdccd; }
 .seed-nudge-close:focus-visible, .seed-nudge-early-close:focus-visible { outline: 2px solid #28644d; outline-offset: 2px; }
+.seed-guide-card { width: min(390px, calc(100vw - 32px)); }
+.seed-guide-messages { max-height: min(40dvh, 340px); overflow-y: auto; display: grid; gap: 14px; padding: 3px 2px 12px; }
+.seed-guide-tip { border-radius: 12px; background: #f1f5ec; padding: 12px; color: #466050; font-size: 12px; line-height: 1.6; }
+.seed-guide-exchange { display: grid; gap: 8px; font-size: 13px; line-height: 1.6; }
+.seed-guide-question { justify-self: end; max-width: 90%; border-radius: 12px 12px 3px 12px; background: #e5efdf; padding: 9px 12px; color: #174c3a; word-break: keep-all; }
+.seed-guide-answer { border-radius: 12px 12px 12px 3px; background: #f5f1e7; padding: 10px 12px; color: #243b32; white-space: pre-wrap; word-break: keep-all; }
+.seed-guide-sources { display: grid; gap: 5px; padding: 0 2px; color: #205b45; font-size: 12px; font-weight: 700; }
+.seed-guide-sources a { text-decoration: underline; text-underline-offset: 3px; }
+.seed-guide-save { border-left: 2px solid #bbd5a8; padding-left: 10px; color: #506355; font-size: 12px; }
+.seed-guide-save button { margin-top: 8px; border-radius: 8px; background: #174c3a; padding: 7px 12px; color: white; font-weight: 700; }
+.seed-guide-save button:disabled { background: #a6b3a6; }
+.seed-guide-error { padding: 7px 0; color: #a3342f; font-size: 12px; }
+.seed-guide-form { display: flex; gap: 7px; border-top: 1px solid #d5e1d2; padding-top: 12px; }
+.seed-guide-form input { min-width: 0; flex: 1; border: 1px solid #cbdccd; border-radius: 9px; background: white; padding: 9px 11px; font-size: 13px; }
+.seed-guide-form button { display: grid; width: 40px; flex: none; place-items: center; border-radius: 9px; background: #174c3a; color: white; }
+.seed-guide-form button:disabled { opacity: .5; }
 @media (max-width: 640px) {
   .seed-nudge { right: max(12px, env(safe-area-inset-right)); bottom: max(8px, env(safe-area-inset-bottom)); max-width: calc(100vw - 24px); }
   .seed-nudge-character { width: 104px; height: 104px; }
   .seed-nudge-card { width: min(346px, calc(100vw - 24px)); max-height: calc(100dvh - 124px - env(safe-area-inset-bottom)); padding: 18px; }
+  .seed-guide-card { width: min(390px, calc(100vw - 24px)); }
   .seed-nudge-early-close { right: 88px; }
   .seed-nudge-walking { animation-name: seed-nudge-mobile-steps; }
   @keyframes seed-nudge-mobile-steps {
