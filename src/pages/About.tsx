@@ -143,7 +143,7 @@ export default function About() {
             <h2 className="mt-3 text-3xl font-extrabold tracking-[-.04em] sm:text-5xl">{content.questionsTitle}</h2>
             <div className="mt-9 grid gap-4 md:grid-cols-3">
               {content.questions.map((question, index) => (
-                <article key={question.label} className={`${questionColors[index]} flex min-h-44 flex-col justify-between rounded-3xl border border-green-deep/10 p-6 shadow-[0_16px_34px_rgba(30,65,51,.09)] sm:p-8`}>
+                <article key={question.label} className={`${questionColors[index]} flex min-h-44 flex-col justify-between rounded-3xl border-2 border-green-deep/20 p-6 shadow-[8px_10px_0_rgba(34,79,56,.22),0_22px_38px_rgba(30,65,51,.18)] transition-transform duration-200 hover:-translate-y-1 sm:p-8`}>
                   <p className="text-xs font-extrabold tracking-widest text-green-deep/65">{question.label}</p>
                   <h3 className="mt-6 text-xl font-extrabold leading-snug tracking-[-.035em]">“{question.text}”</h3>
                 </article>
@@ -159,7 +159,7 @@ export default function About() {
             <div className="mt-9 grid gap-5 md:grid-cols-3">
               {content.experiences.map((item, index) => {
                 const Icon = experienceIcons[index];
-                return <article key={item.title} className="flex min-h-80 flex-col rounded-3xl bg-white p-7 shadow-[0_20px_44px_rgba(30,65,51,.1)]">
+                return <article key={item.title} className="flex min-h-80 flex-col rounded-3xl border-2 border-green-deep/10 bg-white p-7 shadow-[8px_10px_0_rgba(34,79,56,.18),0_22px_38px_rgba(30,65,51,.16)] transition-transform duration-200 hover:-translate-y-1">
                   <div className={`${experienceColors[index]} grid size-14 place-items-center rounded-2xl`}><Icon size={27} aria-hidden="true" /></div>
                   <h3 className="mt-6 text-2xl font-extrabold leading-snug tracking-[-.04em]">{item.title}</h3>
                   <p className="mt-4 text-sm leading-7 text-charcoal/70">{item.description}</p>
@@ -176,7 +176,7 @@ export default function About() {
             <h2 className="mt-3 text-3xl font-extrabold tracking-[-.04em] sm:text-5xl">{content.storiesTitle}</h2>
             <p className="mt-4 max-w-2xl leading-7 text-white/75">{content.storiesLead}</p>
             <div className="mt-9 grid gap-4 md:grid-cols-2">
-              {content.stories.map((story) => <Link key={story.to} to={story.to} className="flex min-h-52 flex-col rounded-3xl border border-white/25 bg-white/10 p-7 transition hover:-translate-y-1 hover:bg-white/20">
+              {content.stories.map((story) => <Link key={story.to} to={story.to} className="flex min-h-52 flex-col rounded-3xl border-2 border-white/40 bg-white/10 p-7 shadow-[8px_10px_0_rgba(188,225,170,.3),0_22px_38px_rgba(0,0,0,.22)] transition duration-200 hover:-translate-y-1 hover:bg-white/20">
                 <span className="text-xs font-extrabold text-[#c5ebad]">{story.label}</span>
                 <h3 className="mt-4 text-xl font-extrabold leading-snug tracking-[-.035em] sm:text-2xl">{story.title}</h3>
                 <span className="mt-auto inline-flex items-center gap-1 pt-5 text-sm text-white/75">{story.description}<ArrowUpRight size={15}/></span>
@@ -198,7 +198,7 @@ export default function About() {
               </div>
             </div>
             <ul className="grid content-start gap-3">
-              {content.standards.map((standard, index) => <li key={standard} className="flex items-start gap-4 rounded-2xl border-l-4 border-[#a6c86b] bg-[#f3f6ec] px-5 py-5 font-bold leading-7">
+              {content.standards.map((standard, index) => <li key={standard} className="flex items-start gap-4 rounded-2xl border-l-4 border-[#a6c86b] bg-[#f3f6ec] px-5 py-5 font-bold leading-7 shadow-[5px_6px_0_rgba(34,79,56,.16),0_14px_25px_rgba(30,65,51,.1)]">
                 {index === 0 ? <ShieldCheck className="mt-0.5 shrink-0 text-green-mid" size={23} /> : index === 1 ? <Scale className="mt-0.5 shrink-0 text-green-mid" size={23} /> : <FileSearch className="mt-0.5 shrink-0 text-green-mid" size={23} />}
                 {standard}
               </li>)}
