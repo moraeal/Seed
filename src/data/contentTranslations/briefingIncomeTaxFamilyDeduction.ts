@@ -17,7 +17,7 @@ export const incomeTaxFamilyDeductionTranslation: BriefingTranslation = {
     "Suppose a spouse earns KRW 8 million over a year from part-time work and has no other income. The spouse fails the current wage-only test and would still fail the government's proposed KRW 7.5 million test. Under the lawmakers' KRW 9 million proposal, the spouse could qualify if the bill passes and all other requirements are met.",
     "Rep. Jung Tae-ho and ten other lawmakers introduced Income Tax Act amendment bill 2221581 on September 23. As checked on September 27, it was at the received stage. The rules used for tax filing have not changed while the bill awaits parliamentary consideration, enactment and commencement.",
   ],
-  introTitle: "The bill in one sentence",
+  introTitle: "What the bill proposes and where it stands",
   sections: [
     { title: "Two possible changes for households", paragraphs: [
       "First, a family member with wage income only who was excluded above the KRW 5 million gross-pay limit could qualify under a new limit. A spouse earning KRW 8 million would still fail the government's proposal but could qualify under the lawmaker bill if the other requirements are met.",

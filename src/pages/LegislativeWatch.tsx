@@ -77,7 +77,7 @@ export default function LegislativeWatch() {
       <section id="legislative-commentary-list" className="scroll-mt-24 overflow-hidden rounded-xl border border-charcoal/10 bg-white shadow-[0_12px_32px_rgba(31,51,73,0.055)]" aria-labelledby="legislative-commentary-list-title">
         <div className="flex flex-col gap-3 border-b border-charcoal/10 bg-white px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-6">
           <div><span className="text-[10px] font-extrabold tracking-[.2em] text-gold">LEGISLATIVE COMMENTARY</span><h2 id="legislative-commentary-list-title" className="editorial-title mt-1 text-2xl font-bold text-navy">{ko ? "입법감시 기사 목록" : "Legislative Watch Articles"}</h2></div>
-          <p className="max-w-2xl text-sm leading-6 text-charcoal/60">{ko ? "발의되거나 통과한 법안 가운데 시민의 자유와 권력의 이동을 더 깊이 살펴야 할 사안을 골라 논평합니다. 법안 기록의 사실과 씨앗의 판단을 구분해 읽을 수 있습니다." : "We select proposed and passed bills that require deeper scrutiny of civic freedom and shifts in state power, keeping the legislative record distinct from Seed Voice's editorial judgment."}</p>
+          <p className="max-w-2xl text-sm leading-6 text-charcoal/60">{ko ? "주요 법안의 내용과 시민 영향을 설명하고, 별도 논평에서 쟁점을 따집니다. 법안 기록의 사실과 씨앗의 판단을 구분해 읽을 수 있습니다." : "We explain selected bills and their effects on citizens, and examine contested points in separate opinion pieces. The legislative record remains distinct from Seed Voice's editorial judgment."}</p>
         </div>
         <div className="grid lg:grid-cols-2">
           <Link to={`/briefings/${incomeTaxFamilyDeductionBriefing.slug}`} className="group grid gap-4 border-b border-charcoal/10 p-5 transition hover:bg-[#FBFAF6] sm:grid-cols-[180px_1fr] sm:items-center sm:p-6 lg:odd:border-r">
