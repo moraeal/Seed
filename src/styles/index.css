@@ -243,3 +243,18 @@ button, input, textarea { font: inherit; }
   .hero-slide:not(.hero-art-slide) { min-height: 560px; }
   .hero-art-slide { min-height: 440px; aspect-ratio: auto; }
 }
+
+.home-hot-issue-track {
+  --visible: 1;
+  --stride: calc(100% + 1rem);
+  display: flex;
+  gap: 1rem;
+  transform: translate3d(calc(-1 * var(--step) * var(--stride)), 0, 0);
+}
+
+.home-hot-issue-track.is-moving { transition: transform 450ms ease-in-out; }
+.home-hot-issue-card { flex: 0 0 calc((100% - (var(--visible) - 1) * 1rem) / var(--visible)); }
+
+@media (min-width: 640px) { .home-hot-issue-track { --visible: 2; --stride: calc(50% + .5rem); } }
+@media (min-width: 1280px) { .home-hot-issue-track { --visible: 4; --stride: calc(25% + .25rem); } }
+@media (prefers-reduced-motion: reduce) { .home-hot-issue-track.is-moving { transition: none; } }
