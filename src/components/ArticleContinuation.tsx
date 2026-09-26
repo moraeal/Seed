@@ -30,7 +30,7 @@ export default function ArticleContinuation({ item, items, topic }: { item?: Con
           to={entry.href}
           className={`group flex flex-col border border-green-deep/12 bg-white px-5 py-5 transition hover:border-green-mid/35 hover:shadow-soft sm:px-6 sm:py-6 ${entries.length === 3 && index === 0 ? "md:col-span-2" : ""}`}
         >
-          <span className="text-[11px] font-extrabold tracking-[.12em] text-gold">{entry.relationship}</span>
+          <span className="text-sm font-extrabold tracking-[.04em] text-green-deep">{entry.relationship}</span>
           <h2 className="mt-2 text-lg font-extrabold leading-snug text-navy transition group-hover:text-green-deep sm:text-xl">{entry.title}</h2>
           <p className="mt-3 line-clamp-3 text-sm font-bold leading-6 text-green-deep">{entry.reason}</p>
           <span className="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-extrabold text-green-deep">

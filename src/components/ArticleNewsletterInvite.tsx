@@ -2,17 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useAuth } from "../auth";
 import { useLanguage } from "../i18n";
 import NewsletterSignup from "./NewsletterSignup";
-
-function isReadingPage(pathname: string) {
-  const path = pathname.replace(/\/$/, "");
-  if (/^\/(news|briefings|columns|seed-language)\/[^/]+(?:\/(commentary|b-corp))?$/.test(path)) {
-    return !path.startsWith("/news/issues/") && path !== "/seed-language/why-civic-language";
-  }
-  if (/^\/monitoring\/legislation\/(?:commentary\/)?[^/]+$/.test(path)) return true;
-  if (/^\/monitoring\/tax\/(?:commentary\/)?[^/]+$/.test(path)) return true;
-  return /^\/monitoring\/[^/]+$/.test(path)
-    && !["/monitoring/public-interest", "/monitoring/legislation", "/monitoring/tax"].includes(path);
-}
+import { isReadingPage } from "../lib/readingRoutes";
 
 export default function ArticleNewsletterInvite() {
   const { pathname } = useLocation();

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { useLocation } from "react-router-dom";
 import { useLanguage } from "../i18n";
+import { isReadingPage } from "../lib/readingRoutes";
 import NewsletterSignup from "./NewsletterSignup";
 import { useAuth } from "../auth";
 import SiyaArticleGuide from "./SiyaArticleGuide";
@@ -75,6 +77,8 @@ function NewsletterNudge() {
 
 export default function HomepageNewsletterNudge() {
   const { isVerified, loading } = useAuth();
+  const { pathname } = useLocation();
   if (loading) return null;
-  return isVerified ? <SiyaArticleGuide /> : <NewsletterNudge />;
+  if (isVerified) return <SiyaArticleGuide />;
+  return isReadingPage(pathname) ? null : <NewsletterNudge />;
 }
