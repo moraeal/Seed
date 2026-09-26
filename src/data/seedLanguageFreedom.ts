@@ -19,13 +19,13 @@ export const freedomArticleKo: SeedLanguageArticle = {
     src: "images/seed-language/freedom-as-citizen-agency-hero.jpg",
     alt: "보호와 규제의 관문을 지나 스스로의 선택으로 향하는 시민들을 상징한 장면",
     caption: "자유의 질문은 보호냐 방임이냐가 아니다. 보호가 시민의 선택을 넓히는가, 아니면 선택을 대신하기 시작하는가에 있다.",
-    credit: "씨앗의 소리 AI 제작 이미지 · 상징적 장면",
+    credit: "AI 이미지",
   },
   inlineImage: {
     src: "images/seed-language/freedom-as-citizen-agency-infographic.jpg",
     alt: "간섭받지 않을 자유, 지배받지 않을 자유, 선택할 수 있는 기회, 선택에 대한 책임으로 자유를 설명한 인포그래픽",
     caption: "씨앗의 소리가 말하는 자유는 네 요소가 함께 움직이는 구조다. 간섭과 지배를 벗어날 권리, 실제로 선택할 수 있는 조건, 그리고 선택의 결과에 대한 책임이 시민을 주체로 세운다.",
-    credit: "씨앗의 소리 AI 제작 인포그래픽",
+    credit: "AI 이미지",
   },
   inlineImageAfterSection: 8,
   chart: {

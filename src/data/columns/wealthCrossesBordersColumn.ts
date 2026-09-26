@@ -14,7 +14,7 @@ export const wealthCrossesBordersColumn: SeedColumn = {
     src: "images/columns/law-controls-company-and-state.webp",
     alt: "기업 건물 모형과 정부 문서가 황금색 저울 위에서 균형을 이루는 상징 이미지",
     caption: "상속세 논쟁의 핵심은 납세 의무와 기업의 지속 가능성 사이에 어떤 균형을 세울 것인가에 있습니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   inlineImage: {

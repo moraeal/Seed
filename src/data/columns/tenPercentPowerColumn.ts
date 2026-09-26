@@ -13,14 +13,14 @@ export const tenPercentPowerColumn: SeedColumn = {
     src: "images/columns/ten-percent-power.webp",
     alt: "거대한 10%의 제재권 아래 놓인 기업과 법의 저울",
     caption: "기업에 책임을 묻는 권력이 기업의 생사까지 좌우한다면, 그 권력에는 더 엄격한 절차와 통제가 따라야 한다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   inlineImage: {
     src: "images/columns/law-controls-company-and-state.webp",
     alt: "기업과 국가권력이 법의 저울 위에 함께 놓인 모습",
     caption: "기업의 책임과 국가권력의 통제는 서로 반대되는 가치가 아니다. 법치주의라는 하나의 원칙이다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   additionalImages: [

@@ -23,14 +23,14 @@ export const activistFundingPressureBriefing: Briefing = {
       src: "images/briefings/briefing-14-political-funding-proposal.webp",
       alt: "국회의사당이 보이는 기업 사무실에서 정장 차림의 사람이 서류를 건네지만 상대방은 손을 내밀지 않는 상징 장면",
       caption: "의원실을 거친 후원 제안은 일반적인 사업제안서와 같은 무게로 받아들여지기 어렵습니다. 기업이 불이익을 걱정하지 않고 거절할 수 있어야 자발적인 후원이라 할 수 있습니다.",
-      credit: "AI 생성 이미지 · 씨앗의 소리",
+      credit: "AI 이미지",
       sourceUrl: "",
     },
     {
       src: "images/briefings/briefing-14-activist-health-screening.webp",
       alt: "작은 시민단체 사무실에서 간호사가 지친 활동가의 혈압을 측정하고 다른 활동가들이 검진을 기다리는 현장",
       caption: "활동가의 건강과 생활을 지킬 안전망은 필요합니다. 지원의 필요성을 인정하는 것과 정치권이 기업 후원의 전달자가 되는 문제를 따지는 일은 서로 충돌하지 않습니다.",
-      credit: "AI 생성 이미지 · 씨앗의 소리",
+      credit: "AI 이미지",
       sourceUrl: "",
     },
     {

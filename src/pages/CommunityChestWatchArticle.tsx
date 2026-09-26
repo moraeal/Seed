@@ -41,7 +41,7 @@ export default function CommunityChestWatchArticle({ language }: { language: "ko
     <div className="container-page max-w-4xl pt-8 sm:pt-11">
       <figure>
         <img src={photo} alt={ko ? "사랑의열매 상징이 놓인 탁자에서 기부금 자료를 살피는 장면" : "A reader examines donation records beside a card depicting the Community Chest emblem"} className="aspect-[16/9] w-full object-cover"/>
-        <figcaption className="mt-2 text-xs leading-5 text-charcoal/55">{ko ? "사랑의열매를 상징하는 표식과 자료를 함께 배치한 씨앗의 소리 AI 제작 이미지. 실제 회계 문서나 취재 현장 사진은 아닙니다." : "AI editorial illustration by Seed Voice depicting the Community Chest symbol and a donation ledger. It is not a photograph of actual records or field reporting."}</figcaption>
+        <figcaption className="mt-2 text-xs leading-5 text-charcoal/55">{ko ? "사랑의열매를 상징하는 표식과 자료를 함께 배치한 AI 이미지. 실제 회계 문서나 취재 현장 사진은 아닙니다." : "AI editorial illustration by Seed Voice depicting the Community Chest symbol and a donation ledger. It is not a photograph of actual records or field reporting."}</figcaption>
       </figure>
 
       <div className="mt-8 grid gap-3 sm:grid-cols-3">

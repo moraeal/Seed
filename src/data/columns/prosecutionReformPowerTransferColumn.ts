@@ -13,7 +13,7 @@ export const prosecutionReformPowerTransferColumn: SeedColumn = {
     src: "images/columns/prosecution-power-transfer.webp",
     alt: "철거된 정부청사 자리에서 두 개의 새 기관 건물로 이어지는 하나의 쇠사슬을 시민이 바라보는 상징 이미지",
     caption: "조직의 간판을 바꿔도 국가의 강제력이 저절로 사라지지는 않는다. 개혁의 기준은 권력이 어디로 갔고 어떻게 통제되는가이다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   referenceVideo: {
@@ -28,7 +28,7 @@ export const prosecutionReformPowerTransferColumn: SeedColumn = {
     src: "images/columns/prosecution-power-transfer.webp",
     alt: "검찰 조직 개편 뒤에도 이어지는 국가 강제력을 상징하는 이미지",
     caption: "권력의 이동을 권력의 축소로 착각해서는 안 된다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   additionalImages: [

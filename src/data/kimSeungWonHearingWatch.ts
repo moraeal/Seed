@@ -29,7 +29,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       ko: "증인이 없으면 후보자의 답변을 관계자의 증언과 대조할 교차검증 통로도 사라집니다.",
       en: "Without witnesses, lawmakers lose a central route for testing the nominee's answers against testimony from relevant people.",
     },
-    credit: { ko: "씨앗의 소리 AI 제작 이미지", en: "AI-assisted image by SEED VOICE" },
+    credit: { ko: "AI 이미지", en: "AI-assisted image by SEED VOICE" },
   },
   sourceBasis: {
     ko: "국회 청문회 일정과 의결 기록, 후보자와 여야의 공개 발언, 식품의약품안전처 자료를 인용한 보도를 날짜별로 대조했습니다. 의혹 제기와 후보자의 반박은 확인된 사실과 분리해 기록했습니다.",
@@ -492,7 +492,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       date: "2026-09-19",
       title: { ko: "2011년 자전거 모임 자료 보도와 AI 합성물 대응 예고", en: "2011 cycling record reported; Kim's office warns over AI-generated image" },
       description: {
-        ko: "시사저널은 양모 씨가 운영하던 식당의 네이버 카페에 2011년 5월 30일 게시된 ‘소리산 소풍 라이딩’ 사진 20여 장과 영상 1개에서 김 전 후보자를 확인했다고 보도했습니다. 재판 기록상 김 전 후보자가 양씨 사건의 변호인 선임계를 낸 시점보다 약 7개월 앞선 자료입니다. 다만 게시 경위와 사진 속 여성들의 신원, 양씨가 모임에 실제 동행했는지는 확인되지 않았습니다. 김 전 후보자 측은 15년 전이라 구체적인 참석자를 기억하기 어렵고 양씨와의 관계는 청문회에서 설명했다고 답했습니다. 같은 날 의원실은 김 전 후보자와 양씨의 부적절한 신체 접촉 장면으로 유포되는 이미지는 AI 합성물이라며 최초 제작자·유포자를 추적해 법적 조치를 하겠다고 밝혔습니다. 따라서 카페에 게시된 실제 자전거 모임 사진과 별도로 유포되는 AI 합성 이미지는 구분해야 합니다.",
+        ko: "시사저널은 양모 씨가 운영하던 식당의 네이버 카페에 2011년 5월 30일 게시된 ‘소리산 소풍 라이딩’ 사진 20여 장과 영상 1개에서 김 전 후보자를 확인했다고 보도했습니다. 재판 기록상 김 전 후보자가 양씨 사건의 변호인 선임계를 낸 시점보다 약 7개월 앞선 자료입니다. 다만 게시 경위와 사진 속 여성들의 신원, 양씨가 모임에 실제 동행했는지는 확인되지 않았습니다. 김 전 후보자 측은 15년 전이라 구체적인 참석자를 기억하기 어렵고 양씨와의 관계는 청문회에서 설명했다고 답했습니다. 같은 날 의원실은 김 전 후보자와 양씨의 부적절한 신체 접촉 장면으로 유포되는 이미지는 AI 합성물이라며 최초 제작자·유포자를 추적해 법적 조치를 하겠다고 밝혔습니다. 따라서 카페에 게시된 실제 자전거 모임 사진과 별도로 유포되는 AI 이미지는 구분해야 합니다.",
         en: "Sisa Journal reported identifying Kim in some 20 photographs and one video posted on May 30, 2011 under the title 'Sorisan Picnic Ride' in the Naver cafe of a restaurant operated by the woman linked to the Genencell allegation. The material predates by about seven months the court record showing Kim formally entering her case as counsel. However, it remains unclear why the material was posted, who the women pictured were, and whether she actually joined the ride. Kim's office said it could not recall specific participants after 15 years and had already explained the relationship at the hearing. The office separately said an online image depicting inappropriate physical contact between Kim and the woman was AI-generated and warned that it would trace and take legal action against the original creator and distributors. The genuine cycling-post images and the separately circulating AI-generated image therefore must not be conflated.",
       },
       change: { ko: "관계 시점을 살필 새 자료·후보자 측 허위 이미지 대응, 동행 여부는 미확인", en: "New material bearing on the relationship timeline and a response to fabricated imagery; attendance remains unverified" },

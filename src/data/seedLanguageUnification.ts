@@ -20,13 +20,13 @@ export const unificationArticleKo: SeedLanguageArticle = {
     src: `${imageRoot}/hero.webp`,
     alt: "철책과 닫힌 관문 너머로 도로와 철도가 북쪽 산맥을 향해 이어지는 비무장지대의 새벽",
     caption: "통일은 철책을 성급히 허무는 구호가 아니라, 자유를 지킬 힘 위에서 끊어진 길을 다시 이을 조건을 준비하는 일입니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
   },
   inlineImage: {
     src: `${imageRoot}/separated-family.webp`,
     alt: "오래된 이산가족 사진과 편지를 함께 살펴보는 노년 여성과 젊은 여성",
     caption: "분단은 과거의 사건으로 끝나지 않았습니다. 만나지 못한 가족의 기억을 다음 세대가 어떤 책임으로 이어갈 것인지가 남아 있습니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
   },
   inlineImageAfterSection: 5,
   leadParagraphs: [

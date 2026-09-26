@@ -39,7 +39,7 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
       en: "Administrative data can flag land for review. A final violation finding and disposal order require field verification, explanation and meaningful remedies.",
     },
     credit: {
-      ko: "씨앗의 소리 AI 제작 이미지",
+      ko: "AI 이미지",
       en: "AI-assisted image by SEED VOICE",
     },
   },

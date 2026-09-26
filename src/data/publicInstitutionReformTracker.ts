@@ -307,7 +307,7 @@ export const publicInstitutionReformTracker: PublicInterestWatchCase = {
     src: "images/monitoring/public-institution-reform/public-institution-reform-109-hero.webp",
     alt: { ko: "공공기관 명패를 철거하는 동안 뒤편 사무조직은 그대로 업무를 이어가는 모습", en: "Public-institution nameplates being removed while the office organization behind them continues operating" },
     caption: { ko: "기관 명패가 줄어드는 것과 조직의 비용·기능·권한이 실제로 줄어드는 것은 같은 일이 아닙니다.", en: "Removing institutional nameplates is not the same as reducing the underlying costs, functions and authority." },
-    credit: { ko: "씨앗의 소리 AI 제작 이미지", en: "AI-generated image by SEED VOICE" },
+    credit: { ko: "AI 이미지", en: "AI-generated image by SEED VOICE" },
   },
   confirmedFacts: [
     { ko: "코레일 자회사 5곳은 2026년 9월 23일부터 고객서비스·유통물류·유지관리 3개 전문회사 체제로 운영을 시작했습니다.", en: "Five Korail subsidiaries began operating as three specialist companies for customer service, retail-logistics and maintenance on September 23, 2026." },

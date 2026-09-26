@@ -15,14 +15,14 @@ export const socialEconomyFairnessBriefing: Briefing = {
       src: "images/briefings/briefing-09-state-led-social-economy.jpg",
       alt: "정부의 손에 들어 올려진 한 상점과 문을 닫은 기존 상권을 대비한 상징 이미지",
       caption: "국가가 특정 기업을 선택해 지원하면 같은 시장의 다른 사업자에게도 경쟁조건의 변화가 생깁니다. 사회적경제 지원은 혜택뿐 아니라 기존 시장에 미치는 영향까지 함께 평가해야 합니다.",
-      credit: "씨앗의 소리 AI 제작 이미지",
+      credit: "AI 이미지",
       sourceUrl: "",
     },
     {
       src: "images/briefings/briefing-09-bcorp-market-trust.jpg",
       alt: "시민들이 기업의 사회적 성과와 신뢰 정보를 확인하고 동네 가게를 선택하는 상징 이미지",
       caption: "핵심은 국가가 좋은 기업을 대신 고르는 것이 아니라, 기업의 행동과 성과를 투명하게 공개하고 시민과 투자자가 선택할 수 있게 만드는 것입니다.",
-      credit: "씨앗의 소리 AI 제작 이미지",
+      credit: "AI 이미지",
       sourceUrl: "https://www.bcorporation.net/en-us/certification/",
     },
     {

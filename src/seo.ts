@@ -120,6 +120,9 @@ const briefingRoutes: SeoRoute[] = getAllBriefingsNewestFirst().flatMap((briefin
     src: "images/briefings/briefing-05-budget-ledger.webp",
     alt: "시민들이 국가 재정과 예산 장부를 점검하는 상징 이미지",
   } : undefined);
+  const socialImageVersion = briefing.slug === "inheritance-tax-frozen-allowance-middle-class"
+    ? `${briefing.date}-2`
+    : briefing.date;
   const routes: SeoRoute[] = [{
     path: `/briefings/${briefing.slug}`,
     title: `${briefing.title} | 씨앗의 소리`,
@@ -129,7 +132,7 @@ const briefingRoutes: SeoRoute[] = getAllBriefingsNewestFirst().flatMap((briefin
     lastModified: briefing.date,
     author: briefing.author,
     section: briefing.category,
-    image: previewImage ? socialImageUrl("briefings", briefing.slug, briefing.date) : undefined,
+    image: previewImage ? socialImageUrl("briefings", briefing.slug, socialImageVersion) : undefined,
     imageAlt: previewImage?.alt,
   }];
   if (briefing.commentary) routes.push({
@@ -141,7 +144,7 @@ const briefingRoutes: SeoRoute[] = getAllBriefingsNewestFirst().flatMap((briefin
     lastModified: briefing.date,
     author: briefing.author,
     section: "브리핑 깊게 보기",
-    image: previewImage ? socialImageUrl("briefings", briefing.slug, briefing.date) : undefined,
+    image: previewImage ? socialImageUrl("briefings", briefing.slug, socialImageVersion) : undefined,
     imageAlt: previewImage?.alt,
   });
   return routes;

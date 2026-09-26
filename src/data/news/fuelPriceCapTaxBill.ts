@@ -33,7 +33,7 @@ export const fuelPriceCapTaxBillArticle: PublishableNewsArticle = {
     src: "/images/news/fuel-price-cap-tax-bill-hero.webp",
     alt: "주유기와 정유시설 뒤로 긴 재정 장부가 이어지는 장면",
     caption: "주유소에서 줄어든 부담은 사라진 비용이 아니라 재정이 대신 떠안은 비용일 수 있습니다.",
-    credit: "씨앗의 소리 AI 제작 이미지(자료사진)"
+    credit: "AI 이미지"
   },
   inlineImage: {
     src: "/images/news/fuel-price-cap-flow-ko.webp",
@@ -46,7 +46,7 @@ export const fuelPriceCapTaxBillArticle: PublishableNewsArticle = {
       src: "/images/news/fuel-price-cap-freight-burden.webp",
       alt: "화물차 휴게소에서 영수증과 계산기를 살펴보는 운송 종사자의 손",
       caption: "유류비 상승은 자가용 운전자뿐 아니라 물류비와 대중교통비를 통해 생활물가 전반에 번집니다.",
-      credit: "씨앗의 소리 AI 제작 이미지(자료사진)"
+      credit: "AI 이미지"
     }
   ],
   sections: [

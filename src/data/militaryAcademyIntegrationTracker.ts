@@ -39,7 +39,7 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
       en: "The academy merger is not yet a completed design. This tracker follows who decides, what is disclosed and how educational outcomes and costs are tested.",
     },
     credit: {
-      ko: "씨앗의 소리 AI 제작 이미지",
+      ko: "AI 이미지",
       en: "AI-assisted image by SEED VOICE",
     },
   },

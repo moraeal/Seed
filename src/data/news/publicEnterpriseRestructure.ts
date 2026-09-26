@@ -33,7 +33,7 @@ export const publicEnterpriseRestructureArticle: PublishableNewsArticle = {
     src: "/images/news/lh-power-five-merge-hero.webp",
     alt: "송전 설비와 다섯 발전시설, 주거지역의 분리를 함께 보여주는 상징적 이미지",
     caption: "공기업 개편에서 시민이 볼 것은 통합과 분할의 구호가 아니라 비용과 책임, 권력이 어디로 움직이는가입니다.",
-    credit: "씨앗의 소리 AI 제작 이미지(자료사진)"
+    credit: "AI 이미지"
   },
   inlineImage: {
     src: "/images/news/public-enterprise-restructure-contrast-v2.svg",

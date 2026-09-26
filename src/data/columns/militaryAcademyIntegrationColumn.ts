@@ -14,14 +14,14 @@ export const militaryAcademyIntegrationColumn: SeedColumn = {
     src: "images/columns/military-academy-integration-rotc.webp",
     alt: "육군·해군·공군 사관생도들이 한 건물로 향하는 동안 ROTC 후보생 한 명이 떨어져 서 있는 상징적 장면",
     caption: "신임장교의 약 14%를 배출하는 사관학교 통합은 군 전체의 합동성보다 교육기관의 조직개편에 영향을 미친다. 전력 강화 정책으로 평가하려면 학교 통합이 실제 작전능력을 높이는 과정과 지표가 먼저 제시돼야 한다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   inlineImage: {
     src: "images/monitoring/military-academy-integration-tracker.webp",
     alt: "육군·해군·공군 모자가 놓인 회의 테이블과 비어 있는 의자를 담은 상징적 장면",
     caption: "합동성은 각 군의 전문성을 충분히 익힌 뒤 합동대학과 지휘참모 교육에서 서로의 능력을 연결할 때 형성된다. 현행 경력 단계의 효과를 먼저 평가하는 것이 통합 논의의 출발점이다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   sections: [

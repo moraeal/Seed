@@ -13,14 +13,14 @@ export const citizenizationBeforeAdvancementColumn: SeedColumn = {
     src: "images/columns/citizenization-before-advancement-hero.webp",
     alt: "유리 회의실 안에서 국가발전 설계도를 검토하는 전문가들과 열린 문밖에서 이를 바라보는 다양한 시민들",
     caption: "선진화가 국가와 전문가의 설계도에 머물면 시민은 다시 정책의 대상이 된다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   inlineImage: {
     src: "images/columns/citizenization-civic-agency.webp",
     alt: "다양한 세대와 직업의 시민들이 지역 지도와 예산 자료를 함께 검토하는 모습",
     caption: "시민화는 시민 한 사람이 정보를 이해하고 서로 협력하며 공익을 판단하는 힘을 갖는 과정이다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   sections: [

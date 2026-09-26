@@ -13,14 +13,14 @@ export const stateCannotMonopolizeLifeColumn: SeedColumn = {
     src: "images/columns/suicide-policy-closed-door.webp",
     alt: "공공기관 회의실의 닫힌 유리문 밖에서 시민과 현장 활동가들이 안을 바라보는 상징적 장면",
     caption: "국가가 생명을 책임지는 것과 생명을 살릴 방법까지 독점하는 것은 다르다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   inlineImage: {
     src: "images/columns/suicide-policy-medical-funnel.webp",
     alt: "채무와 돌봄, 학교와 생활의 여러 위기 서류가 하나의 의료 파일로 모이는 상징적 장면",
     caption: "삶이 무너졌는데 마음만 치료해서는 충분하지 않다. 자살은 질병이지만 질병만은 아니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   additionalImages: [

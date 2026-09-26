@@ -23,14 +23,14 @@ export const socialSolidarityEconomyLawBriefing: Briefing = {
       src: "images/briefings/briefing-13-civic-net-stamp-v3.webp",
       alt: "주민들이 생활에 필요한 물품을 받친 녹색 그물을 함께 붙잡고 있고 사회적 경제라고 새겨진 거대한 행정 도장이 그 위로 내려오는 상징 장면",
       caption: "시민이 함께 만든 연대의 그물 위로 정부의 인증과 지원이 내려옵니다. 그 도장이 시민의 협동을 지켜 주는 장치인지, 행정의 선택에 묶는 힘인지가 이 법의 핵심 질문입니다.",
-      credit: "AI 생성 이미지 · 씨앗의 소리",
+      credit: "AI 이미지",
       sourceUrl: "",
     },
     {
       src: "images/briefings/briefing-13-care-delivery-v2.webp",
       alt: "지역 돌봄 활동가가 한국의 오래된 주택가에서 홀로 사는 어르신에게 식사와 식료품을 전달하는 현장",
       caption: "사회연대경제의 가치는 회의실이 아니라 생활 현장에서 드러납니다. 돌봄 활동가가 어르신의 안부를 확인하고 식사를 전하는 이런 관계가 행정사업이 끝난 뒤에도 시민의 신뢰 속에서 이어질 수 있어야 합니다.",
-      credit: "AI 생성 이미지 · 씨앗의 소리",
+      credit: "AI 이미지",
       sourceUrl: "",
     },
     {

@@ -137,7 +137,7 @@ const localSportsSubsidyArticle: NewsArticle = {
     src: "/images/news/local-sports-subsidy-ledger.webp",
     alt: "행사가 끝난 실내체육관 앞 장부와 영수증, 계산기와 투명한 모금함",
     caption: "보조금과 행사 수익이 함께 쓰였다면 두 돈의 흐름이 하나의 장부에서 시민에게 설명돼야 합니다.",
-    credit: "씨앗의 소리 AI 제작 이미지(자료사진)"
+    credit: "AI 이미지"
   },
   inlineImage: {
     src: "/images/news/local-sports-subsidy-facts-ko.svg",

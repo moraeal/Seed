@@ -18,7 +18,7 @@ export const inheritanceTaxFrozenThresholdTranslation: BriefingTranslation = {
       credit: "SEED VOICE · AI composite image",
     },
     {
-      src: "images/briefings/inheritance-frozen-threshold-chart-en.svg",
+      src: "images/briefings/inheritance-frozen-threshold-chart-en-v2.svg",
       alt: "Simplified calculation for a hypothetical KRW 1.2 billion home: a KRW 500 million deduction leaves a tax base of about KRW 700 million",
       caption: "Illustrative case with no surviving spouse, debt, other assets or additional relief. Funeral expenses and the timely-filing credit are excluded from this simplified chart. The actual bill depends on the heirs and applicable deductions.",
       credit: "SEED VOICE infographic · National Tax Service calculation method",

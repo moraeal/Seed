@@ -23,14 +23,14 @@ export const hearingAccountabilityBriefing: Briefing = {
       src: "images/briefings/briefing-10-empty-witness-seats.webp",
       alt: "증인 없이 진행되는 인사청문회를 상징하는 비어 있는 증인석",
       caption: "인사청문회에서 증인이 사라지면 후보자의 답변을 관계자의 증언과 대조할 교차검증 통로도 사라집니다.",
-      credit: "씨앗의 소리 AI 제작 이미지",
+      credit: "AI 이미지",
       sourceUrl: "",
     },
     {
       src: "images/briefings/briefing-10-citizen-behind-glass.webp",
       alt: "유리벽 밖에서 청문회장을 바라보는 시민",
       caption: "국회의 증인 채택과 자료 제출 요구는 정치권만의 권한이 아니라 시민을 대신해 행사하는 검증 절차입니다.",
-      credit: "씨앗의 소리 AI 제작 이미지",
+      credit: "AI 이미지",
       sourceUrl: "",
     },
     {

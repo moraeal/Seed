@@ -35,7 +35,7 @@ export const supremeCourtRenominationTracker: PublicInterestWatchCase = {
       ko: "제청과 임명이 멈춘 사이 대법관 자리는 비어 있습니다. 실제 대법원 현장 사진은 아닙니다.",
       en: "The seat remains vacant while nomination and appointment are stalled. This is not a photograph of the Supreme Court.",
     },
-    credit: { ko: "씨앗의 소리 AI 제작 상징 이미지", en: "AI-generated symbolic image by SEED VOICE" },
+    credit: { ko: "AI 이미지", en: "AI-generated symbolic image by SEED VOICE" },
   },
   displayMode: "layered",
   snapshot: {

@@ -13,7 +13,7 @@ export const civicSocietyStateizationColumn: SeedColumn = {
     src: "images/columns/civic-society-selected-listening.webp",
     alt: "국회가 보이는 회의실에서 시민들이 지켜보는 가운데 마주 앉아 대화하는 대통령과 시민사회 관계자들을 표현한 상징 이미지",
     caption: "경청의 시간만큼 중요한 것은 대화의 문이 서로 다른 시민들에게 얼마나 넓게 열려 있는가이다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   referenceVideo: {
@@ -28,7 +28,7 @@ export const civicSocietyStateizationColumn: SeedColumn = {
     src: "images/columns/civic-society-stateization-roots.webp",
     alt: "시민사회의 나무뿌리 일부가 정부 건물의 배관과 서류함으로 빨려 들어가는 상징적 콜라주",
     caption: "협치는 시민의 의제를 정책으로 옮길 수 있지만, 공공지원과 행정 내부 이동이 시민사회의 감시·자립 기반을 약화시킬 수도 있다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   additionalImages: [

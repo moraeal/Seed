@@ -29,7 +29,7 @@ export const conservatismArticleKo: SeedLanguageArticle = {
     src: "images/seed-language/what-is-true-conservatism-hero.webp",
     alt: "오래된 석조 건축을 보존하고 수리하면서 여러 통로를 현대적인 거리와 작은 일터로 연결한 도시 풍경",
     caption: "보수는 모든 것을 그대로 두는 일이 아니다. 지킬 토대는 보존하고 시민의 자유와 새로운 도전을 막는 벽에는 통로를 내는 일이다.",
-    credit: "씨앗의 소리 AI 제작 이미지 · 상징적 장면",
+    credit: "AI 이미지",
   },
   inlineImage: {
     src: "images/seed-language/conservatism-three-meanings-ko.svg",

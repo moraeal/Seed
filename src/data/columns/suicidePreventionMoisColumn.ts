@@ -16,7 +16,7 @@ export const suicidePreventionMoisColumn: SeedColumn = {
     src: `${imageRoot}/local-network.webp`,
     alt: "지방정부 공무원과 지역 활동가들이 지역 지도를 가운데 두고 생명안전망을 논의하는 모습",
     caption: "자살예방은 병원과 상담센터만의 일이 아니다. 지방정부와 시민사회가 주민의 삶 가까이에서 함께 움직여야 한다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   displayInlineImage: false,
@@ -24,7 +24,7 @@ export const suicidePreventionMoisColumn: SeedColumn = {
     src: `${imageRoot}/local-network.webp`,
     alt: "지역 생명안전망을 논의하는 지방정부와 시민사회 관계자들",
     caption: "지역에서 작동하는 자살예방 체계",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   additionalImages: [

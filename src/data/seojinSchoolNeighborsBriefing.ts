@@ -17,7 +17,7 @@ export const seojinSchoolNeighborsBriefing: Briefing = {
     src: "images/briefings/seojin-neighbors-cleanup-ai.webp",
     alt: "비가 그친 학교 앞 주차장에서 어른들이 빗자루와 밀대로 흙탕물을 함께 치우는 장면을 표현한 이미지",
     caption: "이웃이 비가 그친 학교에 모여 함께 청소하는 장면을 재구성했습니다. 실제 서진학교 현장 사진이 아닌 제작 이미지입니다.",
-    credit: "씨앗의 소리 AI 생성 이미지 · 실제 현장 사진 아님",
+    credit: "AI 이미지",
     sourceUrl: "",
   }, {
     src: "images/briefings/seojin-timeline-ko.svg",

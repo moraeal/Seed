@@ -20,13 +20,13 @@ const publicInterestKo: SeedLanguageArticle = {
     src: "images/seed-language/public-interest-citizens-hero.webp",
     alt: "다양한 시민들이 동네 지도와 작은 프로젝트 카드에 씨앗 모양의 자원을 나누어 놓는 모습",
     caption: "공익의 자원은 한 조직에 쌓일 때보다 더 많은 시민의 작은 실천으로 이어질 때 사회를 넓게 바꿉니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
   },
   inlineImage: {
     src: "images/seed-language/public-interest-citizens-action.webp",
     alt: "여러 세대의 시민들이 동네 지도를 보며 생활 문제의 해결책을 함께 논의하는 모습",
     caption: "강한 시민사회는 조직의 수가 아니라 문제를 발견하고 서로 연결되어 행동하는 시민의 수에서 시작됩니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
   },
   inlineImageAfterSection: 6,
   sections: [

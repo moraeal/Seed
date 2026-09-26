@@ -39,7 +39,7 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
       en: "Reactor construction once cancelled is returning, now justified by regional industrial power demand. The issue is not only nuclear power itself, but how a long-term national commitment is reversed and explained.",
     },
     credit: {
-      ko: "씨앗의 소리 AI 제작 이미지",
+      ko: "AI 이미지",
       en: "AI-assisted image by SEED VOICE",
     },
   },

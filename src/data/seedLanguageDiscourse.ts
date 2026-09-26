@@ -23,13 +23,13 @@ export const discourseArticleKo: SeedLanguageArticle = {
     src: "images/seed-language/discourse-many-words-no-direction-hero.webp",
     alt: "서로 다른 주장을 펼치는 두 무리와 여러 방향을 가리키는 표지판 사이에서 시민들이 판단하는 공론장",
     caption: "말은 양쪽에서 쏟아지지만 사회가 가야 할 길은 저절로 드러나지 않습니다. 방향은 시민 앞에서 근거와 반론이 부딪칠 때 만들어집니다.",
-    credit: "씨앗의 소리 AI 제작 이미지 · 상징적 장면",
+    credit: "AI 이미지",
   },
   inlineImage: {
     src: "images/seed-language/discourse-public-argument.webp",
     alt: "다양한 세대의 시민들이 자료와 지도를 놓고 서로 다른 생각을 검토하는 공론장",
     caption: "좋은 담론은 정답을 내려주는 말이 아니라 서로 다른 생각이 근거와 비용, 결과와 책임을 놓고 검증되는 자리를 엽니다.",
-    credit: "씨앗의 소리 AI 제작 이미지 · 상징적 장면",
+    credit: "AI 이미지",
   },
   inlineImageAfterSection: 2,
   leadParagraphs: [

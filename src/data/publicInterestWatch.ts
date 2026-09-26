@@ -134,7 +134,7 @@ export const publicInterestWatchCases: PublicInterestWatchCase[] = [
     heroImage: {
       src: "/images/monitoring/beautiful-store-ledger.webp",
       alt: { ko: "재사용 물품과 회계 자료를 함께 놓은 상징 이미지", en: "Conceptual image of reused goods and accounting papers" },
-      caption: { ko: "씨앗의 소리 AI 제작 상징 이미지", en: "AI editorial illustration by Seed Voice" },
+      caption: { ko: "AI 이미지", en: "AI editorial illustration by Seed Voice" },
       credit: { ko: "씨앗의 소리", en: "Seed Voice" },
     },
     sourceBasis: {
@@ -245,7 +245,7 @@ export const publicInterestWatchCases: PublicInterestWatchCase[] = [
     heroImage: {
       src: "/images/monitoring/community-chest-watch-ledger.webp",
       alt: { ko: "사랑의열매 상징이 놓인 탁자에서 기부금 자료를 살피는 장면", en: "A reader examines donation records beside a card with the Community Chest symbol" },
-      caption: { ko: "씨앗의 소리 AI 제작 이미지. 실제 회계문서 또는 현장 사진이 아닙니다.", en: "AI editorial image by Seed Voice; not an actual document or field photograph." },
+      caption: { ko: "AI 이미지. 실제 회계문서 또는 현장 사진이 아닙니다.", en: "AI editorial image by Seed Voice; not an actual document or field photograph." },
       credit: { ko: "씨앗의 소리", en: "Seed Voice" },
     },
     sourceBasis: {
@@ -350,7 +350,7 @@ export const publicInterestWatchCases: PublicInterestWatchCase[] = [
     heroImage: {
       src: "/images/monitoring/kfa-budget-watch.webp",
       alt: { ko: "축구공과 예산 서류가 놓인 경기장 상징 이미지", en: "Conceptual image of a football and budget folder by a pitch" },
-      caption: { ko: "씨앗의 소리 AI 제작 상징 이미지", en: "AI editorial illustration by Seed Voice" },
+      caption: { ko: "AI 이미지", en: "AI editorial illustration by Seed Voice" },
       credit: { ko: "씨앗의 소리", en: "Seed Voice" },
     },
     sourceBasis: {
@@ -458,7 +458,7 @@ export const publicInterestWatchCases: PublicInterestWatchCase[] = [
     heroImage: {
       src: "/images/monitoring/kfsp-community-care.webp",
       alt: { ko: "의자 두 개와 전화기가 놓인 돌봄 공간의 상징 이미지", en: "Conceptual image of a supportive room with two chairs and a telephone" },
-      caption: { ko: "씨앗의 소리 AI 제작 상징 이미지", en: "AI editorial illustration by Seed Voice" },
+      caption: { ko: "AI 이미지", en: "AI editorial illustration by Seed Voice" },
       credit: { ko: "씨앗의 소리", en: "Seed Voice" },
     },
     sourceBasis: {

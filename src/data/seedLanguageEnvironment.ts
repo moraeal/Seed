@@ -19,7 +19,7 @@ const environmentKo: SeedLanguageArticle = {
     src: "images/seed-language/environment-shared-condition-hero.webp",
     alt: "강과 녹지, 시민의 일상, 도시와 반도체 공장, 전력망과 에너지 설비가 한 공간에서 공존하는 풍경",
     caption: "환경은 자연만의 문제가 아닙니다. 시민의 삶, 기업의 생산, 물과 전력, 기술과 제도가 함께 만들어가는 생활 조건입니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
   },
   inlineImage: {
     src: "images/seed-language/environment-civic-framework.svg",
@@ -115,7 +115,7 @@ const environmentDeepKo: SeedLanguageArticle = {
     src: "images/seed-language/environment-shared-condition-hero.webp",
     alt: "강과 녹지, 시민의 일상, 도시와 반도체 공장, 전력망과 에너지 설비가 한 공간에서 공존하는 풍경",
     caption: "환경은 자연과 산업 가운데 하나를 고르는 문제가 아니라 서로 다른 삶의 조건을 어떻게 조정하고 책임질 것인가의 문제입니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
   },
   inlineImage: {
     src: "images/seed-language/environment-water-power-map.svg",

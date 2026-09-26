@@ -59,7 +59,7 @@ export default function SeedLanguageDetail() {
     caption: ko
       ? "환경은 자연만 따로 떼어 보호하는 대상이 아니라 시민의 삶, 도시, 산업, 물과 에너지가 함께 만들어가는 생활 조건입니다."
       : "The environment is not nature isolated behind a boundary. It is the lived condition created together by civic life, cities, industry, water and energy.",
-    credit: ko ? "씨앗의 소리 AI 제작 이미지" : "AI image produced by SEED VOICE",
+    credit: ko ? "AI 이미지" : "AI image produced by SEED VOICE",
   } : article.heroImage;
 
   return <article className="bg-paper">

@@ -20,13 +20,13 @@ export const publicArticleKo: SeedLanguageArticle = {
     src: `${imageRoot}/hero.webp`,
     alt: "공공기관과 민간의원이 마주한 보행로를 여러 세대의 시민이 함께 이용하는 모습",
     caption: "공공은 건물의 소유 표지보다 시민이 함께 이용하고 서로의 삶에 영향을 주는 관계에서 시작됩니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
   },
   inlineImage: {
     src: `${imageRoot}/local-bus.webp`,
     alt: "서울 광화문 정류장에서 노인과 직장인, 유아 동반 시민이 143번 시내버스를 이용하는 모습",
     caption: "버스 한 대가 시민의 일상을 잇기 위해서는 행정의 기준, 민간 운영자의 책임, 노동자의 서비스, 시민의 이용이 함께 작동해야 합니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
   },
   inlineImageAfterSection: 2,
   leadParagraphs: [

@@ -210,14 +210,14 @@ export const columns: SeedColumn[] = [
     "src": "/images/columns/nepal-climate-civic-warning.webp",
     "alt": "히말라야 빙하 붕괴를 감시하고 주민 대피를 돕는 네팔 시민들의 모습을 그린 칼럼 만평",
     "caption": "기후위기의 답은 시민을 수동적 피해자로 남겨두는 데 있지 않다. 위험정보를 공유하고 서로를 대피시키며 국가와 기업의 책임을 묻는 시민이 강한 사회를 만든다.",
-    "credit": "씨앗의 소리 AI 제작 만평",
+    "credit": "AI 이미지",
     "sourceUrl": ""
   },
   "inlineImage": {
     "src": "/images/columns/nepal-school-warning-chain.webp",
     "alt": "상류의 전화 경고를 받고 학생들을 안전한 고지대로 대피시키는 네팔 학교 공동체를 그린 칼럼 만평",
     "caption": "네팔의 한 학교에서는 공식 시스템보다 먼저 도착한 주민의 전화와 교직원의 즉각적인 판단이 900여 명을 살렸다. 시민의 연결과 책임은 가장 가까운 곳에서 작동하는 재난안전망이다.",
-    "credit": "씨앗의 소리 AI 제작 만평",
+    "credit": "AI 이미지",
     "sourceUrl": ""
   },
   "sections": [
@@ -323,14 +323,14 @@ export const columns: SeedColumn[] = [
     "src": "/images/columns/yong-hye-in-two-seats-cartoon.webp",
     "alt": "용혜인 후보자가 국회의원석과 장관석을 동시에 붙잡고 있는 모습을 풍자한 정치만평",
     "caption": "평등과 공정을 내걸면서 국회의원직과 장관직을 함께 쥐려는 정치적 모순을 표현한 AI 칼럼 만평이다. 실제 장면이 아니다.",
-    "credit": "씨앗의 소리 AI 제작 만평",
+    "credit": "AI 이미지",
     "sourceUrl": ""
   },
   "inlineImage": {
     "src": "/images/columns/yong-hye-in-equality-editorial.webp",
     "alt": "평등 팻말과 두 개의 공직을 대비한 용혜인 후보자 관련 사설 포토일러스트",
     "caption": "공직은 개인이나 정당의 생존을 위해 확보하는 보험이 아니다. 평등은 자신의 차례가 왔을 때 예외를 요구하지 않는 태도에서 증명된다. AI로 제작한 칼럼 포토일러스트이며 실제 장면이 아니다.",
-    "credit": "씨앗의 소리 AI 제작 이미지",
+    "credit": "AI 이미지",
     "sourceUrl": ""
   },
   "sections": [

@@ -13,7 +13,7 @@ export const nuclearPolicyReversalColumn: SeedColumn = {
     src: "images/columns/democratic-party-nuclear-reversal-column.webp",
     alt: "원전이 보이는 정책 회의실에서 접힌 옛 원전 계획과 새 산업·전력 지도가 한 테이블에 놓인 모습",
     caption: "국가의 장기정책이 바뀔 수는 있습니다. 그러나 무엇이 틀렸고 왜 바뀌었으며 누가 비용을 치렀는지 설명하지 않는다면 다음 약속도 믿기 어렵습니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   inlineImage: {

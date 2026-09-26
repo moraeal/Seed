@@ -115,13 +115,12 @@ export default function Home() {
 
   const leadColumn = allJournalColumns[0];
   const featuredCandidates = getFeaturedContentCandidates(language);
-  // Editorial lead for the September 24 deep read. A later editorial change can
-  // remove this explicit placement and restore the configured featured slot.
-  const editorialLeadPath = "/briefings/north-korean-pows-south-korea-zelensky-un";
+  const newestFeaturedBriefing = allBriefings.find((item) => item.featured && item.homeBriefingLeadEligible !== false);
+  const newestBriefingLead = featuredCandidates.find((item) => item.path === `/briefings/${newestFeaturedBriefing?.slug}`);
+  const configuredLead = featuredCandidates.find((item) => item.path === featuredPath);
   const defaultFeaturedPath = leadColumn ? `/columns/${leadColumn.slug}` : featuredCandidates[0]?.path;
   const featuredLead = featuredReady
-    ? featuredCandidates.find((item) => item.path === editorialLeadPath)
-      ?? featuredCandidates.find((item) => item.path === featuredPath)
+    ? (newestBriefingLead && (!configuredLead || newestBriefingLead.date >= configuredLead.date) ? newestBriefingLead : configuredLead)
       ?? featuredCandidates.find((item) => item.path === defaultFeaturedPath)
       ?? featuredCandidates[0]
     : undefined;
@@ -289,7 +288,7 @@ export default function Home() {
     let active = true;
     void getFeaturedContentPath()
       .then((path) => { if (active) setFeaturedPath(path); })
-      .catch(() => { /* Keep the newest column as the safe fallback. */ })
+      .catch(() => { /* Keep the newest featured briefing as the fallback. */ })
       .finally(() => { if (active) setFeaturedReady(true); });
     return () => { active = false; };
   }, []);

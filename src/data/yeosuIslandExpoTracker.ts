@@ -39,7 +39,7 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       en: "An idea raised in 2018 became an international event eight years later. This record follows not only the bid, but also the larger budget, expanded targets, operating results and costs borne by citizens.",
     },
     credit: {
-      ko: "씨앗의 소리 AI 제작 이미지",
+      ko: "AI 이미지",
       en: "AI-assisted image by SEED VOICE",
     },
   },

@@ -29,7 +29,7 @@ export const politicsArticleKo: SeedLanguageArticle = {
     src: "images/seed-language/politics-citizens-tool-hero.webp",
     alt: "국회의사당을 멀리 두고 광장의 긴 탁자에서 공동의 규칙을 함께 검토하는 여러 세대의 시민들",
     caption: "정치는 시민을 대신해 사회를 소유하는 힘이 아니다. 서로 다른 시민이 함께 살아갈 규칙을 만들기 위해 제한적으로 맡긴 도구다.",
-    credit: "씨앗의 소리 AI 제작 이미지 · 상징적 장면",
+    credit: "AI 이미지",
   },
   inlineImage: {
     src: "images/seed-language/politics-citizen-control-ko.svg",

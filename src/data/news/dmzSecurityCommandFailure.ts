@@ -31,13 +31,13 @@ export const dmzSecurityCommandFailureArticle: NewsArticle = {
     src: "/images/news/dmz-security-command-failure.webp",
     alt: "철책과 감시초소가 보이는 비무장지대 진흙길에 놓인 군화와 지뢰 경고 표지",
     caption: "반복된 월선과 지형 변화 앞에서 현장 장병을 지킬 준비가 되어 있었는지 물어야 합니다.",
-    credit: "씨앗의 소리 AI 제작 이미지(상징 이미지)"
+    credit: "AI 이미지"
   },
   inlineImage: {
     src: "/images/news/dmz-security-command-failure.webp",
     alt: "철책과 감시초소가 보이는 비무장지대 진흙길에 놓인 군화와 지뢰 경고 표지",
     caption: "자유는 철저한 안보 위에서만 지켜집니다.",
-    credit: "씨앗의 소리 AI 제작 이미지(상징 이미지)"
+    credit: "AI 이미지"
   },
   sections: [
     {

@@ -34,7 +34,7 @@ export const progressArticleKo: SeedLanguageArticle = {
     src: "images/seed-language/what-is-true-progress-hero-v2.webp",
     alt: "역사적 건축물과 새로운 일터, 녹지 사이의 여러 길을 오가는 다양한 시민들",
     caption: "진보와 보수는 두 진영이 차지한 길이 아니다. 시민은 지킬 가치와 바꿀 현실을 여러 삶의 자리에서 함께 선택한다.",
-    credit: "씨앗의 소리 AI 제작 이미지 · 상징적 장면",
+    credit: "AI 이미지",
   },
   inlineImage: {
     src: "images/seed-language/progress-reform-two-axes-ko.svg",
@@ -47,7 +47,7 @@ export const progressArticleKo: SeedLanguageArticle = {
     src: "images/seed-language/what-is-true-progress-opening-wall.webp",
     alt: "오래된 석조 공간의 튼튼한 골격은 남기고 막힌 벽을 함께 움직여 새로운 통로를 여는 시민들",
     caption: "개혁은 오래된 것을 모두 부수는 일이 아니다. 지켜야 할 토대는 남기고 시민의 자유와 새로운 도전을 막는 벽을 여는 일이다.",
-    credit: "씨앗의 소리 AI 제작 이미지 · 상징적 장면",
+    credit: "AI 이미지",
   },
   secondaryImageAfterSection: 5,
   sections: [

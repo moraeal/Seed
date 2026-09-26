@@ -61,13 +61,13 @@ const citizenKo: SeedLanguageArticle = {
     src: "images/seed-language/citizen-as-seed-awakening.webp",
     alt: "출근길의 익명적인 군중 속에서 공적 주체로 나서는 다양한 세대의 시민들",
     caption: "시민은 주어진 자리에 머무는 이름이 아니라, 이웃과 공공의 문제를 발견하며 성장하는 존재입니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
   },
   inlineImage: {
     src: "images/seed-language/citizen-as-seed-deliberation.webp",
     alt: "지역의 공공 문제를 자료와 지도로 함께 검토하는 다양한 세대의 시민들",
     caption: "AI는 개인의 능력을 키워주지만 그 능력을 어디에 사용할지는 결정해주지 않습니다. 기술이 커질수록 시민성도 함께 자라야 합니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
   },
   sections: [
     {

@@ -29,7 +29,7 @@ export const partisanLanguageArticleKo: SeedLanguageArticle = {
     src: "images/seed-language/partisan-language-citizen-labels-hero.webp",
     alt: "이대남, 이대녀, 영포티, 극우, 종북, 카르텔이라는 꼬리표를 단 시민들 사이에서 한 여성이 자신의 꼬리표를 떼어내는 장면",
     caption: "집단의 이름이 한 사람의 삶과 판단을 대신하는 순간, 현실을 설명하던 말은 사람을 판결하는 말로 바뀝니다.",
-    credit: "씨앗의 소리 AI 제작 이미지 · 상징적 장면",
+    credit: "AI 이미지",
   },
   inlineImage: {
     src: "images/seed-language/partisan-language-to-civic-language-ko.svg",

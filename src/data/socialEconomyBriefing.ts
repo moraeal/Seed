@@ -15,14 +15,14 @@ export const socialEconomyBriefing: Briefing = {
       src: "images/briefings/briefing-08-youth-mall-empty.webp",
       alt: "문을 닫은 점포가 이어진 한국의 전통시장 통로",
       caption: "정부가 점포와 시설을 만들 수는 있어도 고객과 신뢰까지 만들어줄 수는 없습니다. 청년몰의 빈 점포는 공급자 지원만으로 시장이 만들어지지 않는다는 사실을 보여줍니다.",
-      credit: "씨앗의 소리 AI 제작 이미지",
+      credit: "AI 이미지",
       sourceUrl: "",
     },
     {
       src: "images/briefings/briefing-08-civic-ecosystem.webp",
       alt: "주민과 지역 상인, 돌봄 종사자가 생활서비스를 함께 설계하는 종이 콜라주",
       caption: "사회적경제의 출발점은 정부의 지정이 아니라 시민의 필요와 참여여야 합니다. 주민·기업·지역조직이 자금과 역량을 나누고 시민의 선택으로 성장하는 구조가 필요합니다.",
-      credit: "씨앗의 소리 AI 제작 이미지",
+      credit: "AI 이미지",
       sourceUrl: "",
     },
     {

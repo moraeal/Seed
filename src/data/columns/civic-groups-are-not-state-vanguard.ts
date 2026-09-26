@@ -13,14 +13,14 @@ export const civicGroupsAreNotStateVanguardColumn: SeedColumn = {
     src: "images/columns/civic-group-state-vanguard-farmland.webp",
     alt: "농지 경계에 홀로 선 농민과 한편에 모여 조사하는 공무원·시민단체 관계자들을 상징한 장면",
     caption: "국가의 조사권과 시민단체의 도덕적 권위가 같은 방향으로 움직일 때, 시민의 권리는 누가 지키는가.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   inlineImage: {
     src: "images/columns/farmer-inspection-due-process.webp",
     alt: "농촌 주택에서 농지 조사 서류를 설명받는 고령 농민의 손",
     caption: "선한 목적의 조사도 불분명한 기준과 과도한 입증책임이 결합하면 시민의 생업을 위협할 수 있다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   sourceDocument: {

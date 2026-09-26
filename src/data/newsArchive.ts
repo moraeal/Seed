@@ -269,7 +269,7 @@ export const newsArticles: NewsArticle[] = [
     "src": "/images/news/news-07-revenue-stress-test.webp",
     "alt": "시민과 독립적인 검증자들이 반도체 경기의 상방과 하방 상황을 놓고 재정 지출의 우선순위를 점검하는 상징 이미지",
     "caption": "세수가 예상보다 적을 때 무엇을 지키고 무엇을 조정할지 미리 정하는 것이 책임 있는 재정운용입니다. 실제 검토회의 현장이 아닌 설명용 이미지입니다.",
-    "credit": "자료이미지 · 씨앗의 소리 AI 제작"
+    "credit": "AI 이미지"
   },
   "sections": [
     {
@@ -345,7 +345,7 @@ export const newsArticles: NewsArticle[] = [
     "src": "/images/news/class-action-claims-table.webp",
     "alt": "여러 시민의 영수증과 피해자료가 하나의 법률 사건으로 모이는 모습",
     "caption": "소액 피해는 한 사람에게는 소송비용보다 작을 수 있지만, 같은 피해가 반복됐다면 시장의 책임을 확인해야 할 공적 문제가 됩니다. 설명용 이미지입니다.",
-    "credit": "자료이미지 · 씨앗의 소리 AI 제작"
+    "credit": "AI 이미지"
   },
   "sections": [
     {
@@ -461,7 +461,7 @@ export const newsArticles: NewsArticle[] = [
     "src": "/images/news/gs-retail-security-response.webp",
     "alt": "이상 로그인 탐지부터 차단과 시민 통지, 외부 검증까지 이어지는 보안 대응 절차",
     "caption": "책임 있는 대응은 이상징후 탐지, 공격 차단, 시민 통지와 독립적 검증까지 이어져야 합니다. 실제 GS리테일 보안실이 아닌 설명용 이미지입니다.",
-    "credit": "자료이미지 · 씨앗의 소리 AI 제작",
+    "credit": "AI 이미지",
     "sourceUrl": ""
   },
   "sections": [
@@ -819,13 +819,13 @@ export const newsArticles: NewsArticle[] = [
       src: "images/news/youth-career-fair.jpg",
       alt: "취업박람회에서 채용 담당자와 상담하는 한국 청년 구직자들",
       caption: "오늘의뉴스 제작 자료이미지. 한국의 청년 취업박람회를 일반적으로 재구성한 장면이며, 한국일보 기사 속 실제 인물이나 행사 현장은 아닙니다.",
-      credit: "이미지: 씨앗의 소리 · AI 생성",
+      credit: "AI 이미지",
     },
     inlineImage: {
       src: "images/news/youth-career-planning.jpg",
       alt: "함께 채용정보와 진로 계획을 살펴보는 한국 청년들",
       caption: "오늘의뉴스 제작 자료이미지. 청년들이 채용정보와 경력 계획을 함께 검토하는 모습을 일반적으로 재구성했습니다.",
-      credit: "이미지: 씨앗의 소리 · AI 생성",
+      credit: "AI 이미지",
     },
     sections: [
       {

@@ -14,16 +14,16 @@ export const northKoreanPowsSouthKoreaBriefing: Briefing = {
   images: [
     {
       src: "images/briefings/north-korean-pows-editorial-reconstruction.webp",
-      alt: "치료실 침대에 앉은 부상 병사와 뒤편 침대의 병사를 묘사한 AI 합성 이미지",
-      caption: "포로의 회복과 한국행 이후의 삶을 표현한 AI 합성 이미지.",
-      credit: "씨앗의 소리 제작 · AI 합성 이미지",
+      alt: "치료실 침대에 앉은 부상 병사와 뒤편 침대의 병사를 묘사한 AI 이미지",
+      caption: "포로의 회복과 한국행 이후의 삶을 표현한 AI 이미지.",
+      credit: "AI 이미지",
       sourceUrl: "https://seedvoice.kr/briefings/north-korean-pows-south-korea-zelensky-un/",
     },
     {
       src: "images/briefings/zelensky-un-editorial-composite.webp",
-      alt: "젤렌스키 대통령의 유엔 연설 화면과 유엔 엠블럼을 한 장면으로 구성한 AI 합성 이미지",
-      caption: "젤렌스키 대통령의 9월 23일 유엔총회 발표를 표현한 AI 합성 이미지.",
-      credit: "씨앗의 소리 제작 · AI 합성 이미지",
+      alt: "젤렌스키 대통령의 유엔 연설 화면과 유엔 엠블럼을 한 장면으로 구성한 AI 이미지",
+      caption: "젤렌스키 대통령의 9월 23일 유엔총회 발표를 표현한 AI 이미지.",
+      credit: "AI 이미지",
       sourceUrl: "https://www.yna.co.kr/view/AKR20260925021100504",
       afterSection: 1,
       contain: true,
@@ -186,5 +186,5 @@ export const northKoreanPowsSouthKoreaBriefing: Briefing = {
     "url": "https://www.koreadaily.com/article/20260923170455577"
   }
 ],
-  sourceNote: "2026년 9월 25일 저녁 공개 자료 기준. 정부는 정확한 이송 시기·경로와 보호 절차를 공개하지 않았다. 정부의 향후 북송 계획이 확인됐다는 뜻이 아니다. 제작 이미지는 AI 합성 이미지이며 원보도 박스는 링크된 언론 기사의 인용 이미지다.",
+  sourceNote: "2026년 9월 25일 저녁 공개 자료 기준. 정부는 정확한 이송 시기·경로와 보호 절차를 공개하지 않았다. 정부의 향후 북송 계획이 확인됐다는 뜻이 아니다. 제작 이미지는 AI 이미지이며 원보도 박스는 링크된 언론 기사의 인용 이미지다.",
 };

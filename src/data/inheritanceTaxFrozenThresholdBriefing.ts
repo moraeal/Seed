@@ -13,21 +13,21 @@ export const inheritanceTaxFrozenThresholdBriefing: Briefing = {
   homeBriefingLeadEligible: true,
   images: [
     {
-      src: "images/briefings/inheritance-frozen-threshold-home.webp",
+      src: "images/briefings/inheritance-frozen-threshold-home-v2.webp",
       alt: "서류 더미와 무거운 도장 아래에서 집 지붕을 떠받치는 가족의 상징 장면",
-      caption: "집 한 채를 물려받는 가족 위로 무거운 세금 부담이 내려앉는 상황을 표현했습니다. AI 합성 이미지.",
-      credit: "씨앗의 소리 · AI 합성 이미지",
+      caption: "집 한 채를 물려받는 가족 위로 무거운 세금 부담이 내려앉는 상황을 표현했습니다. AI 이미지.",
+      credit: "AI 이미지",
       sourceUrl: "",
     },
     {
-      src: "images/briefings/inheritance-frozen-threshold-room.webp",
+      src: "images/briefings/inheritance-frozen-threshold-room-v2.webp",
       alt: "창밖 서울 아파트를 배경으로 집 열쇠와 서류, 계산기가 놓인 식탁",
-      caption: "집 한 채가 남았어도 세금을 낼 현금이 함께 생기는 것은 아닙니다. AI 합성 이미지.",
-      credit: "씨앗의 소리 · AI 합성 이미지",
+      caption: "집 한 채가 남았어도 세금을 낼 현금이 함께 생기는 것은 아닙니다. AI 이미지.",
+      credit: "AI 이미지",
       sourceUrl: "",
     },
     {
-      src: "images/briefings/inheritance-frozen-threshold-chart-ko.svg",
+      src: "images/briefings/inheritance-frozen-threshold-chart-ko-v2.svg",
       alt: "12억 원 가상 주택 사례에서 일괄공제 5억 원을 뺀 약 7억 원을 과세표준으로 계산하는 흐름",
       caption: "배우자와 채무·다른 재산이 없고 별도 공제가 없다는 단순 사례입니다. 장례비와 신고세액공제 등은 그림에 반영하지 않았습니다. 실제 세액은 상속인과 공제 요건에 따라 달라집니다.",
       credit: "씨앗의 소리 도표 · 국세청 상속세 계산 구조",

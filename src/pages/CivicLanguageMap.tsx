@@ -78,7 +78,7 @@ export default function CivicLanguageMap() {
             loading="eager"
           />
           <figcaption className="border-t border-green-deep/10 px-4 py-3 text-xs leading-5 text-charcoal/50">
-            {ko ? "진영의 표식에 가려진 말의 뜻을 시민이 함께 다시 잇는 장면입니다. · 씨앗의 소리 AI 제작 이미지" : "Citizens reconnect words obscured by factional labels. · AI-generated editorial image by SEED VOICE"}
+            {ko ? "진영의 표식에 가려진 말의 뜻을 시민이 함께 다시 잇는 장면입니다. · AI 이미지" : "Citizens reconnect words obscured by factional labels. · AI-generated editorial image by SEED VOICE"}
           </figcaption>
         </figure>
         <blockquote className="mt-8 max-w-3xl border-l-4 border-gold pl-5 text-xl font-extrabold leading-8 text-navy sm:text-2xl">{ko ? "말은 어느 진영의 소유물이 아닙니다." : "Words belong to no political camp."}</blockquote>

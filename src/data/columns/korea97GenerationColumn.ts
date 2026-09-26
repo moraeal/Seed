@@ -16,14 +16,14 @@ export const korea97GenerationColumn: SeedColumn = {
     src: `${imageRoot}/hero.webp`,
     alt: "1990년대 대학 집회의 청년들과 이후 촛불광장의 시민들이 한 장면 안에서 이어지는 편집 이미지",
     caption: "운동권과 비운동권으로 갈렸던 90년대 학번은 이후 서로 다른 광장에서 비슷한 노래와 상징, 분노와 애도의 언어를 공유했다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   inlineImage: {
     src: `${imageRoot}/verification-square.webp`,
     alt: "촛불을 든 시민들 사이에서 한 중년 시민이 휴대전화로 여러 자료를 확인하는 편집 이미지",
     caption: "광장의 연대는 민주주의를 움직이지만, 사람이 많이 모였다는 사실이 그곳에서 유통되는 모든 정보의 진실을 보증하지는 않는다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   sections: [

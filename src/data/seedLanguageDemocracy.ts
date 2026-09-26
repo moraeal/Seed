@@ -34,14 +34,14 @@ const democracyFeatureKo: SeedLanguageArticle = {
     src: "images/seed-language/democracy-citizens-photo.webp",
     alt: "어두운 홀에서 빈 권력자의 의자 주위에 서서 정면을 바라보는 시민들",
     caption: "권력의 자리는 시민에게서 나온다. 지도자를 선택한 시민은 그 권력을 감시할 권리도 갖는다.",
-    credit: "씨앗의 소리 AI 제작 이미지 · 사진 형식의 상징적 장면",
+    credit: "AI 이미지",
   },
   inlineImageAfterSection: 4,
   inlineImage: {
     src: "images/seed-language/democracy-not-a-king-hero.webp",
     alt: "빈 권력자의 의자를 뒤로하고 같은 높이의 탁자에 모여 토론하는 다양한 시민들",
     caption: "시민은 지도자를 선택한다. 그러나 선택한 순간에도 질문하고 비판하고 교체할 권리를 내려놓지 않는다.",
-    credit: "씨앗의 소리 AI 제작 이미지 · 상징적 삽화",
+    credit: "AI 이미지",
   },
   relatedArticle: { slug: "democracy-citizens-deep-read", label: "깊게 읽기 · 민주는 권력자의 깃발이 아니라 시민의 권리라는 말이다 · 15분" },
   chart: {
@@ -177,13 +177,13 @@ const democracyDeepKo: SeedLanguageArticle = {
     src: "images/seed-language/democracy-citizens-deep-hero.webp",
     alt: "분산된 탁자에서 토론하는 시민들과 권력분립을 상징하는 열린 건축 구조",
     caption: "민주의 주체는 하나의 목소리로 뭉뚱그려진 집단이 아니라, 서로 다르게 판단하면서 동등한 권리를 갖는 시민 한 사람 한 사람이다.",
-    credit: "씨앗의 소리 AI 제작 이미지 · 상징적 삽화",
+    credit: "AI 이미지",
   },
   inlineImage: {
     src: "images/seed-language/democracy-citizens-meeting.webp",
     alt: "동네 도서관의 공개 모임에서 공직자와 같은 높이로 앉아 자료를 검토하고 질문하는 주민들",
     caption: "시민화는 정해진 정치적 정답을 배우는 일이 아니다. 자신이 선택한 지도자에게도 질문하고 그 답을 검증하는 일상의 습관이다.",
-    credit: "씨앗의 소리 AI 제작 이미지 · 상징적 삽화",
+    credit: "AI 이미지",
   },
   relatedArticle: { slug: "democracy-not-a-king", label: "5분 요약본 보기" },
   chart: {
@@ -616,7 +616,7 @@ const yoonAgainImageKo = {
   src: "images/seed-language/democracy-yoon-again-photo.webp",
   alt: "젖은 광장의 빈 접이식 의자에 기대어 놓인 YOON AGAIN 피켓과 태극기",
   caption: "한 정치인의 복귀와 대한민국의 회복은 같은 일이 아니다. 시민의 판단 기준은 인물에 대한 충성보다 헌정질서와 원칙이어야 한다.",
-  credit: "씨앗의 소리 AI 제작 이미지 · 실제 집회 사진이 아닌 상징적 장면",
+  credit: "AI 이미지",
 };
 const yoonAgainImageEn = {
   ...yoonAgainImageKo,

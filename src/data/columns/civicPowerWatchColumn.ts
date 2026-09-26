@@ -13,14 +13,14 @@ export const civicPowerWatchColumn: SeedColumn = {
     src: "images/columns/civic-power-representation-hall.webp",
     alt: "밝게 조명된 원탁의 조직 대표들과 투명한 경계 밖에 머문 평범한 시민들을 대비한 상징적 시민회의 장면",
     caption: "일부 조직이 시민사회 전체의 이름을 갖는 순간, 초청받지 못한 시민은 공론장의 바깥으로 밀려날 수 있다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   inlineImage: {
     src: "images/columns/civic-power-coordinate-targeting.webp",
     alt: "스마트폰의 익명 신호들이 빈 의자와 마이크를 겨냥하고 뒤편의 제도기관으로 이어지는 상징적 장면",
     caption: "좌표 찍기는 한 사람을 비판하는 데서 끝나지 않는다. 온라인 동원이 직장·기관·행정의 제재로 연결될 때 공론장의 퇴출 장치가 된다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   additionalImages: [

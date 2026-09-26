@@ -47,7 +47,7 @@ export const communityChestResearch: Record<ResearchLanguage, CommunityChestRese
     readMinutes: 12,
     verifiedAt: "2026년 9월 10일",
     heroAlt: "시민 네 명이 기부금 장부와 지역 배분 흐름을 함께 점검하는 모습",
-    heroCaption: "공익자금의 핵심은 규모가 아니라 시민이 흐름과 결과를 확인할 수 있는 설명 책임입니다. 씨앗의 소리 AI 제작 이미지.",
+    heroCaption: "공익자금의 핵심은 규모가 아니라 시민이 흐름과 결과를 확인할 수 있는 설명 책임입니다. AI 이미지.",
     sections: [
       {
         id: "revision",

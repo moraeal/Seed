@@ -16,12 +16,12 @@ export const corporateCitizenshipColumn: SeedColumn = {
     src: `${imageRoot}/workshop-payment.webp`,
     alt: "협력업체 작업장에서 납품 서류를 살피는 사람과 가동 중인 공장",
     caption: "기업의 대금 지급 일정은 협력사가 직원 급여와 자재대금, 다음 주문을 준비하는 시간에 영향을 준다. 특정 업체의 현장 사진이 아닌 씨앗의 소리 제작 이미지다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   displayInlineImage: false,
   inlineImage: {
-    src: `${imageRoot}/workshop-payment.webp`, alt: "협력업체 작업장", caption: "협력사의 자금 흐름", credit: "씨앗의 소리 AI 제작 이미지", sourceUrl: "",
+    src: `${imageRoot}/workshop-payment.webp`, alt: "협력업체 작업장", caption: "협력사의 자금 흐름", credit: "AI 이미지", sourceUrl: "",
   },
   additionalImages: [{
     afterSection: 1,

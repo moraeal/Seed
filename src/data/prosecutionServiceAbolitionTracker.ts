@@ -40,7 +40,7 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       en: "The sign may come down, but the state's coercive power does not disappear. The public test is where that power goes and who controls it.",
     },
     credit: {
-      ko: "씨앗의 소리 AI 제작 이미지",
+      ko: "AI 이미지",
       en: "AI-assisted image by SEED VOICE",
     },
   },

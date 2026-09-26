@@ -13,7 +13,7 @@ export const silenceAndPowerColumn: SeedColumn = {
     src: "images/columns/silence-and-power-classroom.webp",
     alt: "한 자리가 비어 있는 강의실에서 학생들이 고개를 숙인 채 침묵하고 있는 모습",
     caption: "한 사람이 이유 없이 밀려나는 동안 아무도 묻지 않았다. 침묵은 권력이 설명을 생략할 수 있게 만든다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   referenceVideo: {
@@ -29,7 +29,7 @@ export const silenceAndPowerColumn: SeedColumn = {
     src: "images/columns/silence-and-power-classroom.webp",
     alt: "한 자리가 비어 있는 강의실에서 학생들이 침묵하는 모습",
     caption: "남의 자유는 내 자유의 가장 앞쪽에 놓인 방어선이다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   sections: [

@@ -13,14 +13,14 @@ export const farmlandOwnershipPressureColumn: SeedColumn = {
     src: "images/columns/farmland-ownership-pressure.webp",
     alt: "해 질 무렵 작은 농지 앞에서 처분 서류를 든 고령의 농지 소유자",
     caption: "처분명령은 내릴 수 있습니다. 그러나 그 땅을 살 사람과 적정가격의 출구가 없다면 의무는 처벌로 바뀝니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   inlineImage: {
     src: "images/columns/farmer-inspection-due-process.webp",
     alt: "농촌 주택에서 농지 조사 서류를 설명받는 고령 농민의 손",
     caption: "투기성 보유와 상속·고령·질병·관행적 임대차를 구분하는 절차가 전수조사의 신뢰를 결정합니다.",
-    credit: "씨앗의 소리 AI 제작 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   sections: [

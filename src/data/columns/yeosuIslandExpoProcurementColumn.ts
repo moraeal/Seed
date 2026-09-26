@@ -16,7 +16,7 @@ export const yeosuIslandExpoProcurementColumn: SeedColumn = {
     src: `${imageRoot}/procurement-ledger-watchdog.webp`,
     alt: "어두운 바다 위 박람회 구조물 아래로 계약 장부와 여러 갈래의 예산 흐름이 드러나는 상징 이미지",
     caption: "화려한 박람회 구조물 아래에는 수백 건의 계약과 여러 갈래의 예산 흐름이 놓여 있습니다. 시민의 시선은 그 장부가 어디로 이어지는지 묻습니다.",
-    credit: "씨앗의 소리 AI 편집 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   displayInlineImage: false,
@@ -24,7 +24,7 @@ export const yeosuIslandExpoProcurementColumn: SeedColumn = {
     src: `${imageRoot}/procurement-ledger-watchdog.webp`,
     alt: "여수세계섬박람회 계약 장부와 예산 흐름을 표현한 상징 이미지",
     caption: "박람회의 외형보다 먼저 확인해야 할 것은 계약 장부와 예산의 흐름입니다.",
-    credit: "씨앗의 소리 AI 편집 이미지",
+    credit: "AI 이미지",
     sourceUrl: "",
   },
   additionalImages: [
