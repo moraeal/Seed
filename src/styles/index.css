@@ -35,6 +35,9 @@
 .seed-nudge-card { position: relative; width: min(346px, calc(100vw - 32px)); max-height: calc(100dvh - 170px); overflow-y: auto; padding: 22px; margin-bottom: 4px; border: 1px solid #cbdccd; border-radius: 16px; background: #fffefa; box-shadow: 0 16px 42px #173c2835; animation: seed-nudge-reveal .35s ease-out both; }
 @keyframes seed-nudge-reveal { from { opacity: 0; transform: translateY(16px) scale(.98); } to { opacity: 1; transform: none; } }
 .seed-guide-card { width: min(390px, calc(100vw - 32px)); }
+.seed-guide-close { position: absolute; top: 12px; right: 12px; display: grid; width: 36px; height: 36px; place-items: center; border-radius: 9px; color: #466050; cursor: pointer; }
+.seed-guide-close:hover { background: #f1f5ec; color: #174c3a; }
+.seed-guide-close:focus-visible { outline: 2px solid #28644d; outline-offset: 2px; }
 .seed-guide-messages { max-height: min(40dvh, 340px); overflow-y: auto; display: grid; gap: 14px; padding: 3px 2px 12px; }
 .seed-guide-tip { border-radius: 12px; background: #f1f5ec; padding: 12px; color: #466050; font-size: 12px; line-height: 1.6; }
 .seed-guide-exchange { display: grid; gap: 8px; font-size: 13px; line-height: 1.6; }
