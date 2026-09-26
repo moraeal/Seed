@@ -1,6 +1,6 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
-type Article = { title: string; summary: string; date: string; path: string; text: string };
+type Article = { title: string; summary: string; date: string; path: string; text: string; term?: string };
 const SITE = "https://seedvoice.kr";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") ?? "";
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
@@ -60,14 +60,17 @@ function grams(value: string) {
 function candidates(question: string, entries: Article[]) {
   const terms = grams(question);
   if (!terms.length) return [];
+  const words = question.toLowerCase().split(/[^가-힣a-z0-9]+/).filter(Boolean);
   return entries.map((entry) => {
     const title = entry.title.toLowerCase();
     const summary = entry.summary.toLowerCase();
     const body = entry.text.toLowerCase();
     const headlineScore = terms.reduce((total, term) => total + (title.includes(term) ? 5 : 0) + (summary.includes(term) ? 3 : 0), 0);
     const bodyScore = terms.reduce((total, term) => total + (body.includes(term) ? 0.4 : 0), 0);
-    return { entry, score: headlineScore + bodyScore, headlineScore, bodyScore };
-  }).filter((item) => item.score >= 8 && (item.headlineScore >= 5 || item.bodyScore >= 8))
+    const topic = entry.term?.toLowerCase();
+    const topicScore = topic && words.some((word) => word === topic || (word.startsWith(topic) && /^(은|는|이|가|을|를|에|의|도|란|와|과|로|에서|에대해)$/.test(word.slice(topic.length)))) ? 20 : 0;
+    return { entry, score: headlineScore + bodyScore + topicScore, headlineScore, bodyScore, topicScore };
+  }).filter((item) => item.score >= 8 && (item.topicScore > 0 || item.headlineScore >= 5 || item.bodyScore >= 8))
     .sort((a, b) => b.score - a.score || b.entry.date.localeCompare(a.entry.date)).slice(0, 4).map((item) => item.entry);
 }
 
