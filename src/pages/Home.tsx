@@ -156,12 +156,10 @@ export default function Home() {
 
   const leadColumn = allJournalColumns[0];
   const featuredCandidates = getFeaturedContentCandidates(language);
-  const newestFeaturedBriefing = allBriefings.find((item) => item.featured && item.homeBriefingLeadEligible !== false);
-  const newestBriefingLead = featuredCandidates.find((item) => item.path === `/briefings/${newestFeaturedBriefing?.slug}`);
   const configuredLead = featuredCandidates.find((item) => item.path === featuredPath);
   const defaultFeaturedPath = leadColumn ? `/columns/${leadColumn.slug}` : featuredCandidates[0]?.path;
   const featuredLead = featuredReady
-    ? (newestBriefingLead && (!configuredLead || newestBriefingLead.date >= configuredLead.date) ? newestBriefingLead : configuredLead)
+    ? configuredLead
       ?? featuredCandidates.find((item) => item.path === defaultFeaturedPath)
       ?? featuredCandidates[0]
     : undefined;
@@ -200,7 +198,7 @@ export default function Home() {
     let active = true;
     void getFeaturedContentPath()
       .then((path) => { if (active) setFeaturedPath(path); })
-      .catch(() => { /* Keep the newest featured briefing as the fallback. */ })
+      .catch(() => { /* Use the same default story shown in featured-story management. */ })
       .finally(() => { if (active) setFeaturedReady(true); });
     return () => { active = false; };
   }, []);
