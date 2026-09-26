@@ -11,21 +11,34 @@ export default function HomepageNewsletterNudge() {
   const { language } = useLanguage();
   const ko = language === "ko";
   const [stage, setStage] = useState<Stage>("hidden");
+  const [pose, setPose] = useState<"writing" | "checked">("writing");
   const timers = useRef<number[]>([]);
+  const poseInterval = useRef<number | null>(null);
 
   useEffect(() => {
     if (dismissedUntilReload) return;
+    const checkedImage = new Image();
+    checkedImage.src = `${import.meta.env.BASE_URL}images/seed-character/seed-14-checked.webp?v=20260926-three-poses`;
     timers.current = [
       window.setTimeout(() => setStage("walking"), 9000),
-      window.setTimeout(() => setStage("ready"), 10100),
+      window.setTimeout(() => {
+        setStage("ready");
+        poseInterval.current = window.setInterval(() => {
+          setPose((current) => current === "writing" ? "checked" : "writing");
+        }, 3000);
+      }, 10350),
     ];
-    return () => timers.current.forEach(window.clearTimeout);
+    return () => {
+      timers.current.forEach(window.clearTimeout);
+      if (poseInterval.current !== null) window.clearInterval(poseInterval.current);
+    };
   }, []);
 
   if (stage === "hidden") return null;
 
   const dismiss = () => {
     timers.current.forEach(window.clearTimeout);
+    if (poseInterval.current !== null) window.clearInterval(poseInterval.current);
     dismissedUntilReload = true;
     setStage("hidden");
   };
@@ -53,7 +66,7 @@ export default function HomepageNewsletterNudge() {
         {stage === "ready" && <span className="seed-nudge-bubble">{ko ? "이메일 구독!" : "Subscribe by email!"}</span>}
         <img
           className={`seed-nudge-character ${stage === "walking" ? "seed-nudge-walking" : "seed-nudge-writing"}`}
-          src={`${imageBase}${stage === "walking" ? "seed-18-walking.png" : "seed-12-writing.png"}?v=20260926-logo-leaves`}
+          src={`${imageBase}${stage === "walking" ? "seed-18-walking.png" : pose === "writing" ? "seed-12-writing.png" : "seed-14-checked.webp"}?v=20260926-three-poses`}
           alt=""
         />
       </button>
