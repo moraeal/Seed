@@ -40,7 +40,7 @@ try {
     ...legislativeCommentaries.map((item) => entry(item, "/monitoring/legislation/commentary", item.editions.ko)),
     ...taxCommentaries.map((item) => entry(item, "/monitoring/tax/commentary", item.editions.ko)),
   ].filter(Boolean).sort((a, b) => b.date.localeCompare(a.date));
-  await writeFile("public/siya-articles.json", JSON.stringify({ generatedAt: new Date().toISOString(), entries }));
+  await writeFile("public/siya-articles.json", JSON.stringify({ entries }));
   console.log(`Siya article index: ${entries.length} articles`);
 } finally {
   await server.close();
