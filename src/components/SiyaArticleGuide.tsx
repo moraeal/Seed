@@ -3,11 +3,27 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useLocation } from "react-router-dom";
 import { useAuth } from "../auth";
+import { getArticleReadingPath } from "../data/articleReadingPaths";
+import type { EditorialContentKind } from "../data/editorialContinuations";
 import { useLanguage } from "../i18n";
 
 type Stage = "hidden" | "walking" | "ready" | "open";
 type Source = { title: string; date: string; url: string };
 type Message = { question: string; answer: string; sources: Source[]; grounded: boolean; saved?: boolean };
+
+function continuationLinks(sources: Source[], language: "ko" | "en"): Source[] {
+  const links = sources.flatMap((source) => {
+    let pathname: string;
+    try { pathname = new URL(source.url, window.location.origin).pathname; }
+    catch { return []; }
+    const match = pathname.match(/^\/(news|briefings|columns|seed-language|monitoring)\/([^/]+)\/?$/);
+    if (!match) return [];
+    const kind: EditorialContentKind = ({ news: "news", briefings: "briefing", columns: "column", "seed-language": "seed-language", monitoring: "monitoring" } as const)[match[1] as "news" | "briefings" | "columns" | "seed-language" | "monitoring"];
+    return getArticleReadingPath(kind, match[2], language).items.map((entry) => ({ title: entry.title, date: "", url: entry.href }));
+  });
+  const unique = links.filter((link, index) => links.findIndex((item) => item.url === link.url) === index);
+  return unique.length ? unique.slice(0, 3) : sources;
+}
 const supabaseUrl = (import.meta.env.VITE_SUPABASE_URL || "https://wajlmbahjyazkftwaeem.supabase.co").replace(/\/$/, "");
 const publishableKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || import.meta.env.VITE_SUPABASE_ANON_KEY || "sb_publishable_gf96jsxTYvTeAzOL1AsBIA_fs4RlDje";
 
@@ -100,8 +116,8 @@ export default function SiyaArticleGuide() {
             <p className="seed-guide-question">{message.question}</p>
             <p className="seed-guide-answer">{message.answer}</p>
             {message.sources.length > 0 && <div className="seed-guide-related">
-              <p className="seed-guide-related-title">{ko ? "추가로 알아볼 내용" : "Read more"}</p>
-              <ul className="seed-guide-sources">{message.sources.map((source) => <li key={source.url}><a href={source.url}>{source.title} <span>↗</span></a></li>)}</ul>
+              <p className="seed-guide-related-title">{ko ? "이어 읽기" : "Continue reading"}</p>
+              <ul className="seed-guide-sources">{continuationLinks(message.sources, language).map((source) => <li key={source.url}><a href={source.url}>{source.title} <span>↗</span></a></li>)}</ul>
             </div>}
             {!message.grounded && <div className="seed-guide-save">
               <p>{ko ? "이 질문을 저장하면 편집부가 다음 기사 주제로 검토합니다." : "Save this question for our editors to consider as a future story."}</p>
