@@ -10,8 +10,7 @@ export default function Account() {
   const ko = language === "ko";
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
-  const initialMode = searchParams.get("mode") === "signup" ? "signup" : "login";
-  const [mode, setMode] = useState<"login" | "signup">(initialMode);
+  const mode = searchParams.get("mode") === "signup" ? "signup" : "login";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -32,7 +31,6 @@ export default function Account() {
   };
 
   const changeMode = (next: "login" | "signup") => {
-    setMode(next);
     setNotice("");
     if (next === "login") {
       setNewsletterOptIn(false);
@@ -82,7 +80,9 @@ export default function Account() {
           setNotice(ko
             ? "구독 확인 메일을 보냈습니다. 이메일의 인증 링크를 누르면 로그인할 수 있습니다. 메일이 보이지 않으면 아래의 인증메일 다시 보내기를 이용해주세요."
             : "We sent a confirmation email. Follow the link to log in. If the message does not arrive, use the resend button below.");
-          setMode("login");
+          const nextParams = new URLSearchParams(searchParams);
+          nextParams.set("mode", "login");
+          setSearchParams(nextParams, { replace: true });
           setNewsletterOptIn(false);
         } else {
           navigate(returnTo);
