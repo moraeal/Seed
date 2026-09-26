@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 530" role="img" aria-label="Dependent deduction: gross-wage limits">
+<rect width="1100" height="530" rx="28" fill="#f3f7f4"/>
+<text x="60" y="72" font-family="Noto Sans KR, sans-serif" font-size="34" font-weight="700" fill="#173f36">Dependent deduction: gross-wage limits</text>
+<text x="60" y="165" font-family="Noto Sans KR, sans-serif" font-size="25" fill="#254f45">Current law</text>
+<rect x="300" y="130" width="600" height="52" rx="13" fill="#e1eae4"/>
+<rect x="300" y="130" width="333" height="52" rx="13" fill="#879d94"/>
+<text x="925" y="167" font-family="Noto Sans KR, sans-serif" font-size="26" font-weight="700" fill="#173f36">KRW 5m</text>
+<text x="60" y="270" font-family="Noto Sans KR, sans-serif" font-size="25" fill="#254f45">Government proposal</text>
+<rect x="300" y="235" width="600" height="52" rx="13" fill="#e1eae4"/>
+<rect x="300" y="235" width="500" height="52" rx="13" fill="#4b9583"/>
+<text x="925" y="272" font-family="Noto Sans KR, sans-serif" font-size="26" font-weight="700" fill="#173f36">KRW 7.5m</text>
+<text x="60" y="375" font-family="Noto Sans KR, sans-serif" font-size="25" fill="#254f45">Lawmaker bill</text>
+<rect x="300" y="340" width="600" height="52" rx="13" fill="#e1eae4"/>
+<rect x="300" y="340" width="600" height="52" rx="13" fill="#176858"/>
+<text x="925" y="377" font-family="Noto Sans KR, sans-serif" font-size="26" font-weight="700" fill="#173f36">KRW 9m</text>
+<text x="60" y="484" font-family="Noto Sans KR, sans-serif" font-size="22" fill="#517269">Both proposed limits remain unenacted</text>
+</svg>

@@ -13,8 +13,10 @@ import { seojinSchoolNeighborsTranslation } from "./briefingSeojinSchoolNeighbor
 import { northKoreanPowsTranslation } from "./briefingNorthKoreanPows";
 import { platformAdvertisingTranslation } from "./briefingPlatformAdvertising";
 import { inheritanceTaxFrozenThresholdTranslation } from "./briefingInheritanceTaxFrozenThreshold";
+import { incomeTaxFamilyDeductionTranslation } from "./briefingIncomeTaxFamilyDeduction";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "income-tax-family-deduction-2026-proposals": incomeTaxFamilyDeductionTranslation,
   "inheritance-tax-frozen-allowance-middle-class": inheritanceTaxFrozenThresholdTranslation,
   "platform-advertising-cost-small-merchants": platformAdvertisingTranslation,
   "north-korean-pows-south-korea-zelensky-un": northKoreanPowsTranslation,

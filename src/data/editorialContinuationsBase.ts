@@ -9,6 +9,14 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "briefing:income-tax-family-deduction-2026-proposals": {
+    ko: { href: "/columns/family-deduction-work-income-threshold", title: "월 50만 원 일하면 가족이 아니게 되는 세금 기준", relationship: "씨앗의 소리 논평", reason: "세 가지 공제 기준을 확인했다면, 고정된 기준선이 가족의 일과 세금에 남기는 문제를 이어서 읽습니다.", listHref: "/briefings", listLabel: "브리핑 전체 보기" },
+    en: { href: "/columns/family-deduction-work-income-threshold", title: "When a Spouse Earns KRW 500,000 a Month, the Tax Code Drops the Family Deduction", relationship: "SEED VOICE OPINION", reason: "Continue from the three thresholds to what a fixed earnings line means for families and tax policy.", listHref: "/briefings", listLabel: "All briefings" },
+  },
+  "column:family-deduction-work-income-threshold": {
+    ko: { href: "/briefings/income-tax-family-deduction-2026-proposals", title: "배우자 연 800만 원 벌면 가족공제는? 정부안 750만 원, 의원안 900만 원", relationship: "사실과 법안 비교", reason: "논평의 근거가 된 현행법, 정부안, 의원안을 사례와 출처로 다시 확인합니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
+    en: { href: "/briefings/income-tax-family-deduction-2026-proposals", title: "If Your Spouse Earns KRW 8 Million, Do You Lose the Family Deduction?", relationship: "THE FACTS AND PROPOSALS", reason: "Review current law and both proposals, with an example and sources behind the argument.", listHref: "/columns", listLabel: "All columns" },
+  },
   "briefing:inheritance-tax-frozen-allowance-middle-class": {
     ko: {
       href: "/briefings/hospital-inheritance-tax-maternity-care",
