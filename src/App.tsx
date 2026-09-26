@@ -120,8 +120,8 @@ function AppShell() {
           <Route path="/partners" element={<Navigate to="/about" replace />} />
           <Route path="*" element={<Home />} />
           </Routes>
+          <ArticleNewsletterInvite />
         </Suspense>
-        <ArticleNewsletterInvite />
       </main>
       <Footer />
       <HomepageNewsletterNudge />
