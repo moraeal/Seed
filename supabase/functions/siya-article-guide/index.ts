@@ -1,6 +1,12 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
 type Article = { title: string; summary: string; date: string; path: string; text: string; term?: string };
+type PublishedBill = {
+  title: string; slug: string; published_at: string; proposed_date: string | null;
+  plenary_passed_at: string | null; current_stage: string | null;
+  public_summary_ko: string | null; public_summary_en: string | null;
+  analysis: { summary_ko?: string; summary_en?: string; title_en?: string } | null;
+};
 const SITE = "https://seedvoice.kr";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") ?? "";
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
@@ -47,6 +53,32 @@ async function articles(): Promise<Article[]> {
   const entries = payload.entries.filter((item: Article) => item.path?.startsWith("/") && typeof item.text === "string");
   articleCache = { expires: Date.now() + 5 * 60_000, entries };
   return entries;
+}
+
+function asksForLatestLegislation(question: string) {
+  return (/(최신|최근|새로|이번\s*주|오늘|요즘)/.test(question) && /(입법|법안|법률안|국회\s*(?:통과|법안))/.test(question))
+    || (/\b(latest|recent|new)\b/i.test(question) && /\b(bills?|legislation|legislative)\b/i.test(question));
+}
+
+async function latestLegislation(language: "ko" | "en") {
+  const fields = "title,slug,published_at,proposed_date,plenary_passed_at,current_stage,public_summary_ko,public_summary_en,analysis";
+  const response = await rest(`legislative_bills?select=${fields}&review_state=eq.published&published_at=not.is.null&order=published_at.desc,proposed_date.desc&limit=3`);
+  if (!response.ok) throw new Error(`Legislative list HTTP ${response.status}`);
+  const bills = (await response.json() as PublishedBill[]).filter((bill) => /^[a-z0-9-]+$/.test(bill.slug) && bill.title && bill.published_at);
+  if (!bills.length) return { grounded: false, answer: "", sources: [] };
+  const date = (value: string) => new Date(new Date(value).getTime() + 9 * 60 * 60_000).toISOString().slice(0, 10);
+  const latest = date(bills[0].published_at);
+  const lines = bills.map((bill, index) => {
+    const summary = (language === "ko" ? bill.public_summary_ko || bill.analysis?.summary_ko : bill.public_summary_en || bill.analysis?.summary_en)?.trim();
+    const stage = bill.plenary_passed_at ? (language === "ko" ? "본회의 의결" : "passed by the plenary") : (language === "ko" ? "발의 단계" : "proposed");
+    const title = language === "en" ? bill.analysis?.title_en || bill.title : bill.title;
+    return `${index + 1}. ${title} (${stage})${summary ? ` — ${summary.slice(0, 140)}` : ""}`;
+  });
+  return {
+    grounded: true,
+    answer: `${language === "ko" ? `씨앗의 소리가 가장 최근 공개한 입법감시 기록은 ${latest} 기준입니다.` : `SEED VOICE's latest published legislative records are dated ${latest}.`}\n${lines.join("\n")}`,
+    sources: bills.map((bill) => ({ title: language === "en" ? bill.analysis?.title_en || bill.title : bill.title, date: date(bill.published_at), url: `${SITE}/monitoring/legislation/${bill.slug}` })),
+  };
 }
 
 function grams(value: string) {
@@ -121,6 +153,7 @@ Deno.serve(async (req) => {
     const quota = await rest("rpc/siya_allow_request", { method: "POST", body: JSON.stringify({ p_user_id: userId }) });
     if (!quota.ok) throw new Error(`Rate limit HTTP ${quota.status}`);
     if (!(await quota.json())) return json(req, { error: language === "ko" ? "오늘은 여기까지 대화할 수 있어요. 내일 다시 찾아주세요." : "You've reached today's question limit. Please return tomorrow." }, 429);
+    if (asksForLatestLegislation(question)) return json(req, await latestLegislation(language));
     const matches = candidates(question, await articles());
     if (!matches.length) return json(req, { grounded: false, answer: "", sources: [] });
     if (!OPENAI_KEY) throw new Error("AI key missing");
