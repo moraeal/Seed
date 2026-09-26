@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.featured-story-zoom {
+  transform-origin: center;
+  animation: featured-story-zoom 8s cubic-bezier(.4, 0, .2, 1) forwards;
+  will-change: transform;
+}
+@keyframes featured-story-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .featured-story-zoom { animation: none; }
+}
+
 .seed-nudge { position: fixed; right: 20px; bottom: 16px; z-index: 45; }
 .seed-nudge-trigger { display: flex; flex-direction: column; align-items: flex-end; margin-left: auto; cursor: pointer; }
 .seed-nudge-trigger:focus-visible { outline: 2px solid #28644d; outline-offset: 2px; border-radius: 8px; }

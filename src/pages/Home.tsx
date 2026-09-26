@@ -391,7 +391,7 @@ export default function Home() {
                   to={featuredLead.path}
                   imageSrc={resolveImageSrc(featuredLead.image.src)}
                   imageAlt={featuredLead.image.alt}
-                  videoSrc={featuredLead.path === "/briefings/inheritance-tax-frozen-allowance-middle-class" && featuredLead.image.src.endsWith("inheritance-frozen-threshold-home-v2.webp") ? resolveImageSrc("images/briefings/inheritance-frozen-threshold-home-motion.mp4") : undefined}
+                  animate={featuredLead.path === "/briefings/inheritance-tax-frozen-allowance-middle-class" && featuredLead.image.src.endsWith("inheritance-frozen-threshold-home-v2.webp")}
                   ko={ko}
                 />
                 <Link to={featuredLead.path} className="flex flex-col">
