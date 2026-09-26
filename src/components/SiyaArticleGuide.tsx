@@ -99,7 +99,10 @@ export default function SiyaArticleGuide() {
           {messages.map((item, index) => <div className="seed-guide-exchange" key={`${index}-${item.question}`}>
             <p className="seed-guide-question">{item.question}</p>
             <p className="seed-guide-answer">{item.answer}</p>
-            {item.sources.length > 0 && <ul className="seed-guide-sources">{item.sources.map((source) => <li key={source.url}><a href={source.url}>{source.title} <span>↗</span></a></li>)}</ul>}
+            {item.sources.length > 0 && <div className="seed-guide-related">
+              <p className="seed-guide-related-title">{ko ? "추가로 알아볼 내용" : "Read more"}</p>
+              <ul className="seed-guide-sources">{item.sources.map((source) => <li key={source.url}><a href={source.url}>{source.title} <span>↗</span></a></li>)}</ul>
+            </div>}
             {!item.grounded && <div className="seed-guide-save">
               <p>{ko ? "이 질문을 저장하면 편집부가 다음 기사 주제로 검토합니다." : "Save this question for our editors to consider as a future story."}</p>
               <button type="button" disabled={item.saved || saving === index} onClick={() => void save(index)}>{item.saved ? (ko ? "질문을 저장했어요" : "Question saved") : (ko ? "질문 저장" : "Save question")}</button>

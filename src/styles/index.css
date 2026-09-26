@@ -45,7 +45,9 @@
 .seed-guide-exchange { display: grid; gap: 8px; font-size: 13px; line-height: 1.6; }
 .seed-guide-question { justify-self: end; max-width: 90%; border-radius: 12px 12px 3px 12px; background: #e5efdf; padding: 9px 12px; color: #174c3a; word-break: keep-all; }
 .seed-guide-answer { border-radius: 12px 12px 12px 3px; background: #f5f1e7; padding: 10px 12px; color: #243b32; white-space: pre-wrap; word-break: keep-all; }
-.seed-guide-sources { display: grid; gap: 5px; padding: 0 2px; color: #205b45; font-size: 12px; font-weight: 700; }
+.seed-guide-related { display: grid; gap: 6px; padding: 0 2px; }
+.seed-guide-related-title { color: #557164; font-size: 11px; font-weight: 800; letter-spacing: .02em; }
+.seed-guide-sources { display: grid; gap: 5px; color: #205b45; font-size: 12px; font-weight: 700; }
 .seed-guide-sources a { text-decoration: underline; text-underline-offset: 3px; }
 .seed-guide-save { border-left: 2px solid #bbd5a8; padding-left: 10px; color: #506355; font-size: 12px; }
 .seed-guide-save button { margin-top: 8px; border-radius: 8px; background: #174c3a; padding: 7px 12px; color: white; font-weight: 700; }
