@@ -163,7 +163,7 @@ export default function Home() {
           </div>
           <div className="mt-5 grid grid-cols-2 gap-2.5 sm:gap-4">
             {quickReads.map((item) => (
-              <Link key={item.to} to={item.to} className="home-quick-card group min-w-0 overflow-hidden rounded-lg border border-green-deep/15 bg-white transition hover:-translate-y-0.5 hover:border-green-deep/35 hover:shadow-[0_12px_28px_rgba(20,55,45,.10)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-deep/40">
+              <Link key={item.to} to={item.to} className="home-quick-card group min-w-0 overflow-hidden rounded-lg border border-green-deep/15 bg-white shadow-[0_8px_22px_rgba(28,54,66,0.12)] transition duration-300 hover:-translate-y-0.5 hover:border-green-deep/35 hover:shadow-[0_16px_32px_rgba(28,54,66,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-deep/40">
                 <div className="home-quick-thumb overflow-hidden bg-green-pale">
                   {item.imageSrc ? <SafeImage src={resolveImageSrc(item.imageSrc)} alt={item.imageAlt || ""} loading="lazy" referrerPolicy="no-referrer" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]" /> : <span className="flex h-full items-center justify-center text-3xl font-black text-green-deep sm:text-5xl">{item.term}</span>}
                 </div>
@@ -192,7 +192,7 @@ export default function Home() {
               <Link
                 key={item.id}
                 to={`/news/issues/${item.id}`}
-                className="group flex h-full flex-col overflow-hidden border-t-[3px] border-green-deep bg-white shadow-[0_10px_26px_rgba(20,55,45,.055)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(20,55,45,.11)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4"
+                className="group flex h-full flex-col overflow-hidden rounded-lg border-t-[3px] border-green-deep bg-white shadow-[0_10px_26px_rgba(28,54,66,0.14)] ring-1 ring-green-deep/10 transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(28,54,66,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4"
               >
                 <div className="overflow-hidden bg-ivory">
                   <SafeImage
