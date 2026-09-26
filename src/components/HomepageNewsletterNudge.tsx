@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { X } from "lucide-react";
 import { useLanguage } from "../i18n";
 import NewsletterSignup from "./NewsletterSignup";
 import { useAuth } from "../auth";
@@ -40,6 +41,10 @@ function NewsletterNudge() {
     <aside className="seed-nudge" aria-label={ko ? "씨앗레터 구독 안내" : "SEED LETTER subscription"}>
       {stage === "open" && (
         <div id="seed-nudge-card" className="seed-nudge-card" aria-labelledby="seed-nudge-title">
+          <button type="button" className="seed-guide-close" onClick={() => setStage("ready")}
+            aria-label={ko ? "구독신청 창 닫기" : "Close subscription window"} title={ko ? "닫기" : "Close"}>
+            <X size={18} aria-hidden="true" />
+          </button>
           <p className="section-kicker">SEED LETTER</p>
           <h2 id="seed-nudge-title" className="editorial-title mt-2 text-xl font-bold text-navy">{ko ? "새 글을 놓치지 마세요" : "Never miss a new story"}</h2>
           <p className="my-2.5 text-xs leading-5 text-charcoal/65">{ko ? "씨앗의 소리가 새 글을 이메일로 전해드립니다." : "Get new SEED VOICE stories by email."}</p>
