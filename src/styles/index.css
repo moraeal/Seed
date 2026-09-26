@@ -192,20 +192,20 @@ button, input, textarea { font: inherit; }
 /* 메인 첫 화면의 외곽 여백만 줄여 좌우 콘텐츠를 더 단단하게 묶습니다. */
 .home-today-section {
   padding-top: 0.875rem;
-  padding-bottom: 0.625rem;
+  padding-bottom: 1.75rem;
 }
 
 @media (min-width: 640px) {
   .home-today-section {
     padding-top: 1.25rem;
-    padding-bottom: 0.875rem;
+    padding-bottom: 2rem;
   }
 }
 
 @media (min-width: 1024px) {
   .home-today-section {
     padding-top: 1.5rem;
-    padding-bottom: 0.75rem;
+    padding-bottom: 2.25rem;
   }
 }
 

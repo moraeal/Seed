@@ -130,7 +130,7 @@ export default function Home() {
           <p className="section-kicker mb-3 sm:mb-4">EDITOR&apos;S PICK</p>
           {!featuredReady && <div className="min-h-[330px] animate-pulse rounded-xl bg-green-deep/8" aria-hidden="true" />}
           {featuredLead && (
-            <article className="home-feature overflow-hidden rounded-xl bg-[#e9efe4] lg:grid lg:min-h-[360px] lg:grid-cols-[1.05fr_.95fr]">
+            <article className="home-feature overflow-hidden rounded-xl bg-[#e9efe4] shadow-[0_18px_42px_rgba(28,54,66,0.18)] ring-1 ring-[#d5e1d5] lg:grid lg:min-h-[360px] lg:grid-cols-[1.05fr_.95fr]">
               <div className="home-feature-copy flex flex-col justify-center p-5 sm:p-8 lg:p-10">
                 <p className="text-[11px] font-black tracking-[.12em] text-green-deep">{featuredLead.kicker}</p>
                 <Link to={featuredLead.path} className="group mt-3 block">
