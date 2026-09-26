@@ -17,7 +17,7 @@ export default function HomepageNewsletterNudge() {
     if (dismissedUntilReload) return;
     timers.current = [
       window.setTimeout(() => setStage("walking"), 9000),
-      window.setTimeout(() => setStage(window.matchMedia("(max-width: 640px)").matches ? "ready" : "open"), 10100),
+      window.setTimeout(() => setStage("ready"), 10100),
     ];
     return () => timers.current.forEach(window.clearTimeout);
   }, []);
