@@ -65,7 +65,6 @@ const copy = {
     joinKicker: "GROW WITH SEED VOICE",
     joinTitle: "당신의 궁금증에서 시작합니다",
     joinLead: "읽다가 떠오른 질문이 있나요? 생활 속에서 발견한 자료나 놓치면 안 될 이야기를 알려주세요. 함께 확인하고 더 쉽게 전하겠습니다.",
-    read: "기사 읽기",
     tip: "제보하기",
     citizensAlt: "햇살이 드는 동네에서 밝게 이야기를 나누는 시민들",
   },
@@ -117,7 +116,6 @@ const copy = {
     joinKicker: "GROW WITH SEED VOICE",
     joinTitle: "It begins with your question",
     joinLead: "Have a question after reading? Share a record or an everyday story that deserves a closer look. We'll check it and explain what we find.",
-    read: "Read stories",
     tip: "Send a tip",
     citizensAlt: "Neighbors talking together on a sunny day",
   },
@@ -248,17 +246,20 @@ export default function About() {
           </div>
         </section>
 
-        <section className="bg-[#f6a877] py-16 sm:py-20">
-          <div className="container-page grid max-w-6xl gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-            <div>
+        <section className="overflow-hidden bg-[#f6a877] py-12 sm:py-16">
+          <div className="container-page grid max-w-6xl items-center gap-8 md:grid-cols-[minmax(0,.8fr)_minmax(0,1.2fr)] md:gap-12 lg:gap-16">
+            <img
+              src={`${import.meta.env.BASE_URL}images/about-reader-tip.webp`}
+              alt={language === "ko" ? "자료를 함께 살펴보며 이야기를 나누는 시민들" : "Citizens discussing a document together"}
+              loading="lazy"
+              className="mx-auto w-full max-w-[350px] self-end object-contain md:max-w-[440px]"
+            />
+            <div className="pb-4 md:py-6">
               <Sprout size={29} aria-hidden="true" />
               <p className="mt-3 text-xs font-extrabold tracking-[.2em]">{content.joinKicker}</p>
               <h2 className="mt-3 text-3xl font-extrabold tracking-[-.04em] sm:text-5xl">{content.joinTitle}</h2>
               <p className="mt-5 max-w-2xl text-base leading-8">{content.joinLead}</p>
-            </div>
-            <div className="flex flex-wrap gap-3 lg:max-w-80">
-              <Link to="/news" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-green-deep bg-white px-5 py-3 text-sm font-extrabold">{content.read}<ArrowUpRight size={16}/></Link>
-              <button type="button" onClick={() => setTipOpen(true)} className="inline-flex min-h-12 items-center gap-2 rounded-full border border-green-deep bg-white px-5 py-3 text-sm font-extrabold">{content.tip}<ArrowUpRight size={16}/></button>
+              <button type="button" onClick={() => setTipOpen(true)} className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-full border border-green-deep bg-white px-6 py-3 text-sm font-extrabold transition hover:-translate-y-0.5 hover:shadow-lg">{content.tip}<ArrowUpRight size={16}/></button>
             </div>
           </div>
         </section>
