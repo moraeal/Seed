@@ -34,10 +34,6 @@
 }
 .seed-nudge-card { position: relative; width: min(346px, calc(100vw - 32px)); max-height: calc(100dvh - 170px); overflow-y: auto; padding: 22px; margin-bottom: 4px; border: 1px solid #cbdccd; border-radius: 16px; background: #fffefa; box-shadow: 0 16px 42px #173c2835; animation: seed-nudge-reveal .35s ease-out both; }
 @keyframes seed-nudge-reveal { from { opacity: 0; transform: translateY(16px) scale(.98); } to { opacity: 1; transform: none; } }
-.seed-nudge-close, .seed-nudge-early-close { display: grid; place-items: center; width: 32px; height: 32px; color: #506355; background: #fffefa; border-radius: 50%; }
-.seed-nudge-close { position: absolute; top: 9px; right: 9px; }
-.seed-nudge-early-close { position: absolute; bottom: 16px; right: 112px; border: 1px solid #cbdccd; }
-.seed-nudge-close:focus-visible, .seed-nudge-early-close:focus-visible { outline: 2px solid #28644d; outline-offset: 2px; }
 .seed-guide-card { width: min(390px, calc(100vw - 32px)); }
 .seed-guide-messages { max-height: min(40dvh, 340px); overflow-y: auto; display: grid; gap: 14px; padding: 3px 2px 12px; }
 .seed-guide-tip { border-radius: 12px; background: #f1f5ec; padding: 12px; color: #466050; font-size: 12px; line-height: 1.6; }
@@ -59,7 +55,6 @@
   .seed-nudge-character { width: 104px; height: 104px; }
   .seed-nudge-card { width: min(346px, calc(100vw - 24px)); max-height: calc(100dvh - 124px - env(safe-area-inset-bottom)); padding: 18px; }
   .seed-guide-card { width: min(390px, calc(100vw - 24px)); }
-  .seed-nudge-early-close { right: 88px; }
   .seed-nudge-walking { animation-name: seed-nudge-mobile-steps; }
   @keyframes seed-nudge-mobile-steps {
     0% { transform: translateX(12px) translateY(0) rotate(3deg); }

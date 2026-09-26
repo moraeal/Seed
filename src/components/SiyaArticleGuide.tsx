@@ -1,4 +1,4 @@
-import { Send, X } from "lucide-react";
+import { Send } from "lucide-react";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useAuth } from "../auth";
@@ -7,7 +7,6 @@ import { useLanguage } from "../i18n";
 type Stage = "hidden" | "walking" | "ready" | "open";
 type Source = { title: string; date: string; url: string };
 type Message = { question: string; answer: string; sources: Source[]; grounded: boolean; saved?: boolean };
-let dismissedUntilReload = false;
 const supabaseUrl = (import.meta.env.VITE_SUPABASE_URL || "https://wajlmbahjyazkftwaeem.supabase.co").replace(/\/$/, "");
 const publishableKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || import.meta.env.VITE_SUPABASE_ANON_KEY || "sb_publishable_gf96jsxTYvTeAzOL1AsBIA_fs4RlDje";
 
@@ -25,7 +24,6 @@ export default function SiyaArticleGuide() {
   const end = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (dismissedUntilReload) return;
     const preload = new Image();
     preload.src = `${import.meta.env.BASE_URL}images/seed-character/seed-13-reading-guide.webp`;
     const entrance = window.setTimeout(() => setStage("walking"), 9000);
@@ -108,7 +106,6 @@ export default function SiyaArticleGuide() {
         {stage === "ready" && <span className="seed-nudge-bubble">{ko ? "씨야와 대화해요" : "Talk with Siya"}</span>}
         <img className={`seed-nudge-character ${stage === "walking" ? "seed-nudge-walking" : "seed-nudge-writing"}`} src={`${import.meta.env.BASE_URL}images/seed-character/${image}?v=20260926-guide`} alt="" />
       </button>
-      {(stage === "ready" || stage === "open") && <button type="button" className="seed-nudge-early-close" onClick={() => { dismissedUntilReload = true; setStage("hidden"); }} aria-label={ko ? "씨야 안내 닫기" : "Dismiss Siya"}><X size={17} /></button>}
     </aside>, document.body,
   );
 }

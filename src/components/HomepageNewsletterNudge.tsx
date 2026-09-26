@@ -1,4 +1,3 @@
-import { X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useLanguage } from "../i18n";
@@ -7,8 +6,6 @@ import { useAuth } from "../auth";
 import SiyaArticleGuide from "./SiyaArticleGuide";
 
 type Stage = "hidden" | "walking" | "ready" | "open";
-let dismissedUntilReload = false;
-
 function NewsletterNudge() {
   const { language } = useLanguage();
   const ko = language === "ko";
@@ -18,7 +15,6 @@ function NewsletterNudge() {
   const poseInterval = useRef<number | null>(null);
 
   useEffect(() => {
-    if (dismissedUntilReload) return;
     const checkedImage = new Image();
     checkedImage.src = `${import.meta.env.BASE_URL}images/seed-character/seed-14-checked.webp?v=20260926-three-poses`;
     timers.current = [
@@ -38,12 +34,6 @@ function NewsletterNudge() {
 
   if (stage === "hidden") return null;
 
-  const dismiss = () => {
-    timers.current.forEach(window.clearTimeout);
-    if (poseInterval.current !== null) window.clearInterval(poseInterval.current);
-    dismissedUntilReload = true;
-    setStage("hidden");
-  };
   const imageBase = `${import.meta.env.BASE_URL}images/seed-character/`;
 
   return createPortal(
@@ -72,7 +62,6 @@ function NewsletterNudge() {
           alt=""
         />
       </button>
-      {(stage === "ready" || stage === "open") && <button type="button" className="seed-nudge-early-close" onClick={dismiss} aria-label={ko ? "씨야 안내 닫기" : "Dismiss Siya"}><X size={17} /></button>}
     </aside>,
     document.body,
   );
