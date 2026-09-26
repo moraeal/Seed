@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NewsletterSignup from "../components/NewsletterSignup";
 import HomepageNewsletterNudge from "../components/HomepageNewsletterNudge";
+import FeaturedStoryMedia from "../components/FeaturedStoryMedia";
 import SafeImage from "../components/SafeImage";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { getColumnsNewestFirst, hotIssueColumnTrackerSlugs } from "../data/columns";
@@ -385,10 +386,15 @@ export default function Home() {
             )}
             {featuredLead && (
               <article className="group h-full min-w-0">
-                <Link to={featuredLead.path} className="flex h-full flex-col">
-                  <div className="overflow-hidden bg-green-deep">
-                    <SafeImage src={resolveImageSrc(featuredLead.image.src)} alt={featuredLead.image.alt} loading="eager" fetchPriority="high" referrerPolicy="no-referrer" className="aspect-[16/8.55] w-full object-cover transition duration-500 group-hover:scale-[1.01] sm:aspect-[16/7.65]" />
-                  </div>
+                <FeaturedStoryMedia
+                  key={featuredLead.path}
+                  to={featuredLead.path}
+                  imageSrc={resolveImageSrc(featuredLead.image.src)}
+                  imageAlt={featuredLead.image.alt}
+                  videoSrc={featuredLead.path === "/briefings/inheritance-tax-frozen-allowance-middle-class" && featuredLead.image.src.endsWith("inheritance-frozen-threshold-home-v2.webp") ? resolveImageSrc("images/briefings/inheritance-frozen-threshold-home-motion.mp4") : undefined}
+                  ko={ko}
+                />
+                <Link to={featuredLead.path} className="flex flex-col">
                   <p className="mt-3 text-[10px] font-black tracking-[.14em] text-green-deep sm:mt-3.5 sm:text-[11px]">{featuredLead.kicker}</p>
                   <h1 className="editorial-title mt-1.5 max-w-5xl break-keep text-balance text-[1.75rem] font-black leading-[1.12] tracking-[-0.038em] text-navy transition group-hover:text-green-mid sm:text-[clamp(1.9rem,3.5vw,3rem)] sm:leading-[1.09] sm:tracking-[-0.042em]">{featuredLead.title}</h1>
                   <p className="home-lead-summary mt-2 line-clamp-3 max-w-4xl sm:mt-2.5">{featuredLead.summary}</p>

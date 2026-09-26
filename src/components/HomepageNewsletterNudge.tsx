@@ -18,8 +18,8 @@ export default function HomepageNewsletterNudge() {
     } catch { /* The nudge still works when storage is unavailable. */ }
 
     timers.current = [
-      window.setTimeout(() => setStage("walking"), 5000),
-      window.setTimeout(() => setStage("ready"), 6100),
+      window.setTimeout(() => setStage("walking"), 9000),
+      window.setTimeout(() => setStage("ready"), 10100),
     ];
     return () => timers.current.forEach(window.clearTimeout);
   }, []);
