@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+.seed-nudge { position: fixed; right: 20px; bottom: 16px; z-index: 45; }
+.seed-nudge-character { display: block; width: 112px; height: 112px; object-fit: contain; margin-left: auto; pointer-events: none; }
+.seed-nudge-walking { animation: seed-nudge-steps 1.1s cubic-bezier(.28,.1,.36,1) both; }
+@keyframes seed-nudge-steps {
+  0% { transform: translateX(155px) translateY(0) rotate(4deg); }
+  24% { transform: translateX(115px) translateY(-8px) rotate(-5deg); }
+  49% { transform: translateX(76px) translateY(0) rotate(4deg); }
+  73% { transform: translateX(37px) translateY(-8px) rotate(-4deg); }
+  100% { transform: translateX(0) translateY(0); }
+}
+.seed-nudge-card { position: relative; width: min(346px, calc(100vw - 32px)); max-height: calc(100dvh - 150px); overflow-y: auto; padding: 22px; margin-bottom: 4px; border: 1px solid #cbdccd; border-radius: 16px; background: #fffefa; box-shadow: 0 16px 42px #173c2835; animation: seed-nudge-reveal .35s ease-out both; }
+@keyframes seed-nudge-reveal { from { opacity: 0; transform: translateY(16px) scale(.98); } to { opacity: 1; transform: none; } }
+.seed-nudge-close, .seed-nudge-early-close { display: grid; place-items: center; width: 32px; height: 32px; color: #506355; background: #fffefa; border-radius: 50%; }
+.seed-nudge-close { position: absolute; top: 9px; right: 9px; }
+.seed-nudge-early-close { position: absolute; top: 0; right: 0; border: 1px solid #cbdccd; }
+.seed-nudge-close:focus-visible, .seed-nudge-early-close:focus-visible { outline: 2px solid #28644d; outline-offset: 2px; }
+@media (max-width: 640px) {
+  .seed-nudge { right: 12px; bottom: 8px; }
+  .seed-nudge-character { width: 88px; height: 88px; }
+  .seed-nudge-card { max-height: calc(100dvh - 108px); padding: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .seed-nudge-walking, .seed-nudge-card { animation: none; }
+}
+
 :root { font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
 * { box-sizing: border-box; }
 body { margin: 0; background: #fffdf7; color: #252a2e; }

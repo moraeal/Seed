@@ -2,6 +2,7 @@ import { ArrowRight, Clock } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NewsletterSignup from "../components/NewsletterSignup";
+import HomepageNewsletterNudge from "../components/HomepageNewsletterNudge";
 import SafeImage from "../components/SafeImage";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { getColumnsNewestFirst, hotIssueColumnTrackerSlugs } from "../data/columns";
@@ -550,6 +551,7 @@ export default function Home() {
       <section className="border-t border-green-deep/12 py-7 sm:py-12" aria-labelledby="newcomer-title"><div className="container-page"><div><p className="section-kicker">START HERE</p><h2 id="newcomer-title" className="editorial-title mt-1.5 text-[1.55rem] font-bold text-navy sm:mt-2 sm:text-4xl">{ko ? "처음 오셨다면" : "New to SEED VOICE?"}</h2><p className="mt-2 whitespace-nowrap text-[13px] leading-6 text-charcoal/60 sm:mt-2.5 sm:text-base sm:leading-7">{ko ? "씨앗의 소리가 무엇을 보고 어떤 기준으로 판단하는지, 아래 세 글에서 가장 빠르게 확인할 수 있습니다." : "These three pages are the fastest way to understand what SEED VOICE watches and the standards it uses."}</p></div><div className="mt-4 grid gap-3 sm:mt-5 sm:gap-5 md:grid-cols-3">{newcomerLinks.map((item, index) => <Link key={item.to} to={item.to} className="group grid grid-cols-[1.8rem_1fr_auto] items-start gap-2.5 border border-solid border-green-deep/15 bg-white p-4 transition hover:border-green-deep/30 sm:flex sm:min-h-[160px] sm:flex-col sm:p-5 sm:hover:-translate-y-0.5"><span className="pt-0.5 text-[11px] font-black text-charcoal/25 sm:hidden">0{index + 1}</span><div><div className="flex items-center justify-between gap-3"><p className="text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">{item.kicker}</p><span className="hidden text-[11px] font-black text-charcoal/25 sm:inline sm:text-xs">0{index + 1}</span></div><h3 className="editorial-title mt-1.5 break-keep text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:mt-4 sm:text-2xl">{item.title}</h3><p className="hidden sm:mt-2.5 sm:line-clamp-2 sm:block sm:text-sm sm:leading-6 sm:text-charcoal/58">{item.summary}</p></div><ArrowRight size={15} className="mt-1 text-green-deep sm:hidden"/></Link>)}</div></div></section>
 
       <NewsletterSignup />
+      <HomepageNewsletterNudge />
     </div>
   );
 }
