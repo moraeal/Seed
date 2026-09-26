@@ -1,4 +1,4 @@
-import { Send } from "lucide-react";
+import { Send, X } from "lucide-react";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useAuth } from "../auth";
@@ -26,8 +26,8 @@ export default function SiyaArticleGuide() {
   useEffect(() => {
     const preload = new Image();
     preload.src = `${import.meta.env.BASE_URL}images/seed-character/seed-13-reading-guide.webp`;
-    const entrance = window.setTimeout(() => setStage("walking"), 9000);
-    const ready = window.setTimeout(() => setStage("ready"), 10350);
+    const entrance = window.setTimeout(() => setStage("walking"), 2000);
+    const ready = window.setTimeout(() => setStage("ready"), 3350);
     const interval = window.setInterval(() => setPose((current) => !current), 3000);
     return () => { window.clearTimeout(entrance); window.clearTimeout(ready); window.clearInterval(interval); };
   }, []);
@@ -77,11 +77,15 @@ export default function SiyaArticleGuide() {
   return createPortal(
     <aside className="seed-nudge" aria-label={ko ? "씨야 기사 안내" : "Siya article guide"}>
       {stage === "open" && <section id="seed-guide-card" className="seed-nudge-card seed-guide-card" aria-labelledby="seed-guide-title">
+        <button type="button" className="seed-guide-close" onClick={() => setStage("ready")}
+          aria-label={ko ? "씨야 질문창 닫기" : "Close Siya question window"} title={ko ? "닫기" : "Close"}>
+          <X size={18} aria-hidden="true" />
+        </button>
         <p className="section-kicker">SEED ARTICLE GUIDE</p>
         <h2 id="seed-guide-title" className="editorial-title mt-2 text-xl font-bold text-navy">{ko ? "씨야와 대화해요" : "Talk with Siya"}</h2>
         <p className="my-2.5 text-xs leading-5 text-charcoal/65">{ko ? "씨앗 기사에 관해 물어보세요. 핵심 내용과 기사 링크를 찾아드릴게요." : "Ask about SEED articles. I'll find the key points and story links."}</p>
         <div className="seed-guide-messages" aria-live="polite">
-          {messages.length === 0 && <p className="seed-guide-tip">{ko ? "예: 상속세 과세 기준이 왜 문제인가요?" : "For example: Why is the inheritance tax threshold debated?"}</p>}
+          {messages.length === 0 && <p className="seed-guide-tip">{ko ? "예: 오늘의 뉴스를 알려줘" : "For example: Tell me today's news"}</p>}
           {messages.map((item, index) => <div className="seed-guide-exchange" key={`${index}-${item.question}`}>
             <p className="seed-guide-question">{item.question}</p>
             <p className="seed-guide-answer">{item.answer}</p>

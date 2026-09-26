@@ -29,7 +29,7 @@ export default function Account() {
   const [submitting, setSubmitting] = useState(false);
   const [resending, setResending] = useState(false);
 
-  const returnTo = useMemo(() => searchParams.get("returnTo") || "/forum", [searchParams]);
+  const returnTo = useMemo(() => searchParams.get("returnTo") || (language === "en" ? "/en/" : "/"), [searchParams, language]);
 
   const formatPhone = (value: string) => {
     const digits = value.replace(/\D/g, "").slice(0, 11);
