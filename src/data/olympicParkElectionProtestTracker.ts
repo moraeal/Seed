@@ -24,10 +24,10 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
   },
   openedAt: "2026-06-03",
   publishedAt: "2026-09-18",
-  updatedAt: "2026-09-24",
+  updatedAt: "2026-09-26",
   sourceBasis: {
-    ko: "선거관리위원회 조사 결과를 인용한 보도, 선거소송 심리와 결정, 선관위 특검법과 압수수색 보도, 올림픽공원 현장 보도를 교차 확인했다. 사실·수사 중인 의혹·확인되지 않은 주장을 같은 층위에 놓지 않았다.",
-    en: "This record cross-checks reporting on the election commission's findings, election-litigation proceedings, the special-prosecutor law and searches, and coverage from the Olympic Park site. Confirmed facts, allegations under investigation and unverified claims are kept distinct.",
+    ko: "선거관리위원회 조사 결과와 국회의원실 제출자료를 인용한 보도, 선거소송 심리와 결정, 선관위 특검법·압수수색·피의자 조사 보도, 올림픽공원 현장 보도를 교차 확인했다. 사실·수사 중인 의혹·확인되지 않은 주장을 같은 층위에 놓지 않았다.",
+    en: "This record cross-checks reporting on election-commission findings and material submitted to a National Assembly member's office, election-litigation proceedings, the special-prosecutor law, searches and suspect questioning, and coverage from the Olympic Park site. Confirmed facts, allegations under investigation and unverified claims are kept distinct.",
   },
   caution: {
     ko: "투표용지 부족과 투표 중단은 확인된 선거관리 실패다. 그러나 조직적인 개표 조작, 외국 세력 개입, 선거 전체가 조작됐다는 주장은 현재까지 법원이나 수사기관이 확정한 사실이 아니다.",
@@ -54,6 +54,13 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
   },
   keyChanges: [
     {
+      date: "2026-07-22",
+      text: {
+        ko: "선관위 자료를 바탕으로 실제 투표하지 못한 유권자가 최소 80명·최대 91명으로 잠정 집계됐다. 식별 가능한 CCTV가 있는 11개 투표소만 반영한 수치여서 최종 규모는 아니다.",
+        en: "Election-commission material provisionally put the number of voters unable to cast ballots at 80 to 91. The estimate covered only eleven polling stations with usable CCTV footage and is not a final total.",
+      },
+    },
+    {
       date: "2026-08-11",
       text: {
         ko: "서울시장 선거무효소송은 기각됐다. 법원은 위법한 선거관리 행위가 있었더라도 결과에 영향을 미쳤다고 볼 증거는 부족하다고 판단했다.",
@@ -72,6 +79,13 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
       text: {
         ko: "선관위 특검이 중앙선관위 등 10곳을 약 12시간 압수수색했다. 투표용지 부족과 투표율 통계 조작 의혹 등을 포함한 12개 항목을 수사하고 있다.",
         en: "The special prosecutor searched ten election-commission locations for about 12 hours, investigating twelve categories including ballot shortages and alleged turnout-statistics manipulation.",
+      },
+    },
+    {
+      date: "2026-09-20",
+      text: {
+        ko: "특검은 투표함 납품 입찰 담합 의혹과 관련해 전직 선관위 직원이자 업체 대표를 입찰방해 혐의 피의자로 조사했다. 투표용지 부족 책임과는 구분되는 별도 수사 항목이다.",
+        en: "The special prosecutor questioned a former election-commission employee who heads a ballot-box supplier as a suspect in an alleged bid-rigging scheme. This is a separate investigative track from responsibility for the ballot shortage.",
       },
     },
   ],
@@ -246,6 +260,34 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
           url: "https://www.yna.co.kr/view/AKR20260621019200004",
           publishedAt: "2026-06-21",
           thumbnailSrc: "/images/monitoring/olympic-park/20260621-yonhap.jpg",
+          kind: "article",
+        },
+      ],
+    },
+    {
+      date: "2026-07-22",
+      title: {
+        ko: "실제 미투표 유권자 최소 80명·최대 91명 잠정 집계",
+        en: "Provisional count puts disenfranchised voters at 80 to 91",
+      },
+      description: {
+        ko: "선관위가 국회의원실에 제출한 자료를 바탕으로 투표록, CCTV 영상과 투표관리관 진술을 대조한 결과 투표용지 부족으로 투표하지 못한 유권자가 최소 80명·최대 91명으로 잠정 집계됐다. 투표가 중단된 26개 투표소 가운데 식별 가능한 CCTV가 있는 11곳만 반영돼 최종 확정치로 볼 수 없다.",
+        en: "Material submitted by the election commission to a National Assembly member's office cross-checked polling records, CCTV footage and poll-manager statements, producing a provisional estimate of 80 to 91 voters who could not cast ballots because supplies ran out. Only eleven of the twenty-six polling stations where voting stopped had usable footage, so this is not a final count.",
+      },
+      change: {
+        ko: "참정권 침해가 추상적 우려에서 잠정 인원 집계로 구체화됐다.",
+        en: "The loss of voting rights moved from a general concern to a provisional headcount.",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "한국일보", en: "Hankook Ilbo" },
+          title: {
+            ko: "CCTV 보니…투표 못 한 유권자 최대 91명, 두 배 더 늘었다",
+            en: "CCTV review puts voters unable to vote at as many as 91",
+          },
+          url: "https://www.hankookilbo.com/news/article/A2026072209420004249",
+          publishedAt: "2026-07-22",
           kind: "article",
         },
       ],
@@ -463,6 +505,34 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-20",
+      title: {
+        ko: "특검, 투표함 입찰 의혹 업체 대표 피의자 조사",
+        en: "Special prosecutor questions ballot-box supplier head as suspect",
+      },
+      description: {
+        ko: "특검은 전직 선관위 직원이자 중앙선관위 투표함 납품업체 대표를 입찰방해 혐의 피의자 신분으로 소환했다. 특검은 이 대표가 들러리 업체를 내세웠는지, 선관위 담당자와 사전에 공모했는지를 수사하고 있다. 이는 특검의 12개 수사 항목 중 선거물품 입찰 의혹에 관한 조사이며 투표용지 부족 책임이 확인됐다는 뜻은 아니다.",
+        en: "The special prosecutor questioned a former election-commission employee who heads a ballot-box supplier as a suspect in alleged bid obstruction. Investigators are examining whether dummy bidders were used and whether commission officials colluded in advance. This concerns the election-supplies procurement track among the twelve investigative categories and does not establish responsibility for the ballot shortage.",
+      },
+      change: {
+        ko: "특검 수사가 압수물 확보에서 구체적 피의자 조사로 진행됐다.",
+        en: "The investigation advanced from evidence seizure to questioning a named category of suspect.",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "YTN", en: "YTN" },
+          title: {
+            ko: "선관위 특검, '투표함 입찰 비리' 의혹 업체 대표 피의자 조사",
+            en: "Special prosecutor questions supplier head over alleged ballot-box bid rigging",
+          },
+          url: "https://www.ytn.co.kr/_ln/0103_202609211447126750",
+          publishedAt: "2026-09-21",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "다음 확인",
       title: {
         ko: "압수물 분석·소환·기소와 제도개선",
@@ -487,6 +557,10 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     {
       ko: "투표용지 부족 때문에 일부 시민은 정해진 시간에 투표하지 못했고, 선관위 진상조사위는 이를 총체적 선거관리 실패로 판단했다.",
       en: "Some citizens were unable to vote at the scheduled time because ballots ran out, and the commission's inquiry described the episode as a systemic management failure.",
+    },
+    {
+      ko: "선관위가 국회의원실에 제출한 자료를 바탕으로 한 7월 22일 잠정 집계는 실제 미투표 유권자를 최소 80명·최대 91명으로 봤다. 식별 가능한 CCTV가 있는 11개 투표소만 반영한 수치여서 최종 확정 규모는 아니다.",
+      en: "A July 22 provisional count based on election-commission material submitted to a National Assembly member's office put the number of voters unable to cast ballots at 80 to 91. It covered only eleven polling stations with usable CCTV footage and is not a final total.",
     },
     {
       ko: "서울시장 선거무효소송은 기각됐다. 법원은 관리상 위법과 선거 결과에 미친 영향 사이의 인과관계가 입증되지 않았다고 판단했다.",
@@ -553,8 +627,8 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
       en: "Which of the twelve people referred by the commission are summoned, booked or indicted, and on what allegations?",
     },
     {
-      ko: "실제로 투표하지 못한 유권자 수와 사후 구제 절차가 공식적으로 집계되는가",
-      en: "Will authorities officially count voters who were unable to vote and provide a remedy?",
+      ko: "최소 80명·최대 91명이라는 잠정 집계가 전체 26개 투표소 조사 뒤 어떤 최종 수치로 확정되고, 사후 구제 절차가 마련되는가",
+      en: "What final total will replace the provisional estimate of 80 to 91 after all twenty-six polling stations are reviewed, and what remedy will be provided?",
     },
     {
       ko: "투표용지 인쇄·수송·재고관리·비상 발급 절차가 다음 선거 전에 어떻게 바뀌는가",
@@ -615,8 +689,16 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
       url: "https://www.donga.com/news/Society/article/all/20260902/134594491/1",
     },
     {
+      label: { ko: "한국일보 — 미투표 유권자 최소 80명·최대 91명 잠정 집계", en: "Hankook Ilbo — Provisional estimate of 80 to 91 voters unable to vote" },
+      url: "https://www.hankookilbo.com/news/article/A2026072209420004249",
+    },
+    {
       label: { ko: "국회입법예고 — 선관위 특검 법률안", en: "National Assembly — special-prosecutor legislation" },
       url: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2219127/detailRP?yType=I",
+    },
+    {
+      label: { ko: "YTN — 특검의 투표함 입찰 의혹 피의자 조사", en: "YTN — Suspect questioned in ballot-box procurement inquiry" },
+      url: "https://www.ytn.co.kr/_ln/0103_202609211447126750",
     },
     {
       label: { ko: "연합뉴스 — 9월 17일 특검 압수수색", en: "Yonhap — September 17 special-prosecutor searches" },
