@@ -13,8 +13,8 @@ export const incomeTaxFamilyDeductionBriefing: Briefing = {
   readMinutes: 6,
   featured: true,
   images: [
-    { src: "images/family-deduction/shared-threshold-hero.webp", alt: "한 가족의 식탁을 가르는 투명한 기준선 너머로 맞잡은 두 사람의 손", caption: "가족의 생활은 이어지지만 세법의 공제 자격은 소득 기준선에서 달라집니다. 특정 가족의 실제 사진이 아닌 AI 이미지입니다.", credit: "AI 이미지", sourceUrl: "" },
-    { src: "images/family-deduction/household-after-work.webp", alt: "짧은 일을 마친 가족이 식탁에서 생활비 서류와 계산기를 함께 살펴보는 연출 장면", caption: "조금 벌었다고 부양 부담이 사라지지는 않습니다. 특정 가구를 촬영한 사진이 아닌 AI 이미지입니다.", credit: "AI 이미지", sourceUrl: "" },
+    { src: "images/family-deduction/shared-threshold-hero.webp", alt: "한 가족의 식탁을 가르는 투명한 기준선 너머로 맞잡은 두 사람의 손", caption: "가족의 생활은 이어지지만 세법의 공제 자격은 소득 기준선에서 달라집니다.", credit: "AI 이미지", sourceUrl: "" },
+    { src: "images/family-deduction/household-after-work.webp", alt: "짧은 일을 마친 가족이 식탁에서 생활비 서류와 계산기를 함께 살펴보는 장면", caption: "조금 벌었다고 부양 부담이 사라지지는 않습니다.", credit: "AI 이미지", sourceUrl: "" },
     { src: "images/briefings/family-deduction-threshold-ko.svg", alt: "근로소득만 있는 부양가족의 총급여 기준: 현행 500만 원, 정부안 750만 원, 의원안 900만 원", caption: "총급여액 기준 비교. 정부안과 의원안은 제안 단계이며 아직 적용되는 법이 아닙니다.", credit: "씨앗의 소리 도표 · 소득세법 제50조, 2026년 세제개편안, 의안 2221581", sourceUrl: "https://mofe.go.kr/nw/mosfnw/detailInfograpView.do?menuNo=4040500&searchNttId1=MOSF_000000000078819", contain: true, afterSection: 1 },
   ],
   content: [
