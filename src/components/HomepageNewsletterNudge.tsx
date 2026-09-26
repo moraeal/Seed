@@ -1,5 +1,6 @@
 import { X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useLanguage } from "../i18n";
 import NewsletterSignup from "./NewsletterSignup";
 
@@ -16,7 +17,7 @@ export default function HomepageNewsletterNudge() {
     if (dismissedUntilReload) return;
     timers.current = [
       window.setTimeout(() => setStage("walking"), 9000),
-      window.setTimeout(() => setStage("open"), 10100),
+      window.setTimeout(() => setStage(window.matchMedia("(max-width: 640px)").matches ? "ready" : "open"), 10100),
     ];
     return () => timers.current.forEach(window.clearTimeout);
   }, []);
@@ -30,7 +31,7 @@ export default function HomepageNewsletterNudge() {
   };
   const imageBase = `${import.meta.env.BASE_URL}images/seed-character/`;
 
-  return (
+  return createPortal(
     <aside className="seed-nudge" aria-label={ko ? "씨앗레터 구독 안내" : "SEED LETTER subscription"}>
       {stage === "open" && (
         <div id="seed-nudge-card" className="seed-nudge-card" aria-labelledby="seed-nudge-title">
@@ -57,6 +58,7 @@ export default function HomepageNewsletterNudge() {
         />
       </button>
       {(stage === "ready" || stage === "open") && <button type="button" className="seed-nudge-early-close" onClick={dismiss} aria-label={ko ? "씨야 안내 닫기" : "Dismiss Siya"}><X size={17} /></button>}
-    </aside>
+    </aside>,
+    document.body,
   );
 }

@@ -37,18 +37,26 @@
 .seed-nudge-early-close { position: absolute; bottom: 16px; right: 112px; border: 1px solid #cbdccd; }
 .seed-nudge-close:focus-visible, .seed-nudge-early-close:focus-visible { outline: 2px solid #28644d; outline-offset: 2px; }
 @media (max-width: 640px) {
-  .seed-nudge { right: 12px; bottom: 8px; }
+  .seed-nudge { right: max(12px, env(safe-area-inset-right)); bottom: max(8px, env(safe-area-inset-bottom)); max-width: calc(100vw - 24px); }
   .seed-nudge-character { width: 104px; height: 104px; }
-  .seed-nudge-card { max-height: calc(100dvh - 124px); padding: 18px; }
+  .seed-nudge-card { width: min(346px, calc(100vw - 24px)); max-height: calc(100dvh - 124px - env(safe-area-inset-bottom)); padding: 18px; }
   .seed-nudge-early-close { right: 88px; }
+  .seed-nudge-walking { animation-name: seed-nudge-mobile-steps; }
+  @keyframes seed-nudge-mobile-steps {
+    0% { transform: translateX(12px) translateY(0) rotate(3deg); }
+    24% { transform: translateX(9px) translateY(-5px) rotate(-3deg); }
+    49% { transform: translateX(6px) translateY(0) rotate(2deg); }
+    73% { transform: translateX(3px) translateY(-5px) rotate(-2deg); }
+    100% { transform: translateX(0) translateY(0); }
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .seed-nudge-walking, .seed-nudge-card { animation: none; }
 }
 
-:root { font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+:root { font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; overflow-x: clip; }
 * { box-sizing: border-box; }
-body { margin: 0; background: #fffdf7; color: #252a2e; }
+body { margin: 0; background: #fffdf7; color: #252a2e; overflow-x: clip; }
 button, input, textarea { font: inherit; }
 ::selection { background: #d7c08b; color: #174c3a; }
 
