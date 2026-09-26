@@ -9,8 +9,8 @@ export const incomeTaxFamilyDeductionTranslation: BriefingTranslation = {
   sourceDocument: { label: "Read the public summary of bill 2221581", url: "https://untanglelaw.live/bills/PRC_Z2X6Y0G9E1F7D1E4C0D9K1J7K7I8I5", note: "We cross-checked public summaries because the full Assembly bill text could not be opened directly. Current law and government materials appear among the sources below." },
   author: "SEED CIVIC BRIEFING",
   images: [
-    { alt: "Two family members clasp hands across a transparent line dividing their dining table", caption: "Family support continues even as a statutory earnings threshold changes deduction eligibility. AI image illustrating a concept, not an actual household.", credit: "AI image" },
-    { alt: "Two relatives review household papers and a calculator after a short work shift", caption: "A modest income does not erase the family's continuing support. Staged AI image, not a photograph of a particular household.", credit: "AI image" },
+    { alt: "Two family members clasp hands across a transparent line dividing their dining table", caption: "Family support continues even as a statutory earnings threshold changes deduction eligibility.", credit: "AI image" },
+    { alt: "Two relatives review household papers and a calculator after a short work shift", caption: "A modest income does not erase the family's continuing support.", credit: "AI image" },
     { src: "images/briefings/family-deduction-threshold-en.svg", alt: "Annual wage threshold for a dependent with wage income only: KRW 5 million under current law, KRW 7.5 million in the government proposal, and KRW 9 million in the lawmaker bill", caption: "The government and lawmaker figures are proposals, not thresholds currently in force.", credit: "SEED VOICE chart · Income Tax Act, 2026 tax reform proposal, bill 2221581" },
   ],
   content: [
