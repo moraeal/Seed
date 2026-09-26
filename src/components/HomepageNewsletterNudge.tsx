@@ -4,6 +4,7 @@ import { useLanguage } from "../i18n";
 import NewsletterSignup from "./NewsletterSignup";
 
 type Stage = "hidden" | "walking" | "ready" | "open";
+let dismissedUntilReload = false;
 
 export default function HomepageNewsletterNudge() {
   const { language } = useLanguage();
@@ -12,6 +13,7 @@ export default function HomepageNewsletterNudge() {
   const timers = useRef<number[]>([]);
 
   useEffect(() => {
+    if (dismissedUntilReload) return;
     timers.current = [
       window.setTimeout(() => setStage("walking"), 9000),
       window.setTimeout(() => setStage("ready"), 10100),
@@ -23,6 +25,7 @@ export default function HomepageNewsletterNudge() {
 
   const dismiss = () => {
     timers.current.forEach(window.clearTimeout);
+    dismissedUntilReload = true;
     setStage("hidden");
   };
   const imageBase = `${import.meta.env.BASE_URL}images/seed-character/`;
@@ -31,7 +34,7 @@ export default function HomepageNewsletterNudge() {
     <aside className="seed-nudge" aria-label={ko ? "씨앗레터 구독 안내" : "SEED LETTER subscription"}>
       {stage === "open" && (
         <div id="seed-nudge-card" className="seed-nudge-card" aria-labelledby="seed-nudge-title">
-          <button type="button" className="seed-nudge-close" onClick={() => setStage("ready")} aria-label={ko ? "가입창 닫기" : "Close signup form"}><X size={20} /></button>
+          <button type="button" className="seed-nudge-close" onClick={dismiss} aria-label={ko ? "씨야 안내 닫기" : "Dismiss Siya"}><X size={20} /></button>
           <p className="section-kicker">SEED LETTER</p>
           <h2 id="seed-nudge-title" className="editorial-title mt-2 text-xl font-bold text-navy">{ko ? "새 글을 놓치지 마세요" : "Never miss a new story"}</h2>
           <p className="my-2.5 text-xs leading-5 text-charcoal/65">{ko ? "씨앗의 소리가 새 글을 이메일로 전해드립니다." : "Get new SEED VOICE stories by email."}</p>
@@ -49,7 +52,7 @@ export default function HomepageNewsletterNudge() {
       >
         {stage === "ready" && <span className="seed-nudge-bubble">{ko ? "이메일 구독!" : "Subscribe by email!"}</span>}
         <img
-          className={`seed-nudge-character ${stage === "walking" ? "seed-nudge-walking" : ""}`}
+          className={`seed-nudge-character ${stage === "walking" ? "seed-nudge-walking" : "seed-nudge-writing"}`}
           src={`${imageBase}${stage === "walking" ? "seed-18-walking.png" : "seed-12-writing.png"}`}
           alt=""
         />
