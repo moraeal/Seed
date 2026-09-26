@@ -16,7 +16,7 @@ export default function HomepageNewsletterNudge() {
     if (dismissedUntilReload) return;
     timers.current = [
       window.setTimeout(() => setStage("walking"), 9000),
-      window.setTimeout(() => setStage("ready"), 10100),
+      window.setTimeout(() => setStage("open"), 10100),
     ];
     return () => timers.current.forEach(window.clearTimeout);
   }, []);
@@ -34,7 +34,6 @@ export default function HomepageNewsletterNudge() {
     <aside className="seed-nudge" aria-label={ko ? "씨앗레터 구독 안내" : "SEED LETTER subscription"}>
       {stage === "open" && (
         <div id="seed-nudge-card" className="seed-nudge-card" aria-labelledby="seed-nudge-title">
-          <button type="button" className="seed-nudge-close" onClick={dismiss} aria-label={ko ? "씨야 안내 닫기" : "Dismiss Siya"}><X size={20} /></button>
           <p className="section-kicker">SEED LETTER</p>
           <h2 id="seed-nudge-title" className="editorial-title mt-2 text-xl font-bold text-navy">{ko ? "새 글을 놓치지 마세요" : "Never miss a new story"}</h2>
           <p className="my-2.5 text-xs leading-5 text-charcoal/65">{ko ? "씨앗의 소리가 새 글을 이메일로 전해드립니다." : "Get new SEED VOICE stories by email."}</p>
@@ -57,7 +56,7 @@ export default function HomepageNewsletterNudge() {
           alt=""
         />
       </button>
-      {stage === "ready" && <button type="button" className="seed-nudge-early-close" onClick={dismiss} aria-label={ko ? "씨야 안내 닫기" : "Dismiss Siya"}><X size={17} /></button>}
+      {(stage === "ready" || stage === "open") && <button type="button" className="seed-nudge-early-close" onClick={dismiss} aria-label={ko ? "씨야 안내 닫기" : "Dismiss Siya"}><X size={17} /></button>}
     </aside>
   );
 }
