@@ -9,7 +9,9 @@ import {
   Sprout,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useLanguage } from "../i18n";
+import TipDialog from "../components/TipDialog";
 
 const copy = {
   ko: {
@@ -115,6 +117,7 @@ const experienceColors = ["bg-[#dcefa9]", "bg-[#f6ad7e]", "bg-[#d9eff3]"];
 
 export default function About() {
   const { language } = useLanguage();
+  const [tipOpen, setTipOpen] = useState(false);
   const content = copy[language];
 
   return (
@@ -219,11 +222,12 @@ export default function About() {
             </div>
             <div className="flex flex-wrap gap-3 lg:max-w-80">
               <Link to="/news" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-green-deep bg-white px-5 py-3 text-sm font-extrabold">{content.read}<ArrowUpRight size={16}/></Link>
-              <a href="mailto:seedvoicekr@gmail.com" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-green-deep bg-white px-5 py-3 text-sm font-extrabold">{content.tip}<ArrowUpRight size={16}/></a>
+              <button type="button" onClick={() => setTipOpen(true)} className="inline-flex min-h-12 items-center gap-2 rounded-full border border-green-deep bg-white px-5 py-3 text-sm font-extrabold">{content.tip}<ArrowUpRight size={16}/></button>
             </div>
           </div>
         </section>
       </main>
+      <TipDialog open={tipOpen} onClose={() => setTipOpen(false)} language={language} />
     </div>
   );
 }
