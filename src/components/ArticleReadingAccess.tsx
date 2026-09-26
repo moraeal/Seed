@@ -11,14 +11,14 @@ const FREE_ARTICLE_LIMIT = 2;
 function canReadFreeArticle(pathname: string) {
   const article = pathname.replace(/\/$/, "");
   try {
-    const saved = JSON.parse(sessionStorage.getItem(FREE_ARTICLES_KEY) || "null");
+    const saved = JSON.parse(localStorage.getItem(FREE_ARTICLES_KEY) || "null");
     const firstArticle = sessionStorage.getItem(FIRST_ARTICLE_KEY);
     const articles: string[] = Array.isArray(saved)
       ? saved.filter((path): path is string => typeof path === "string")
       : firstArticle ? [firstArticle] : [];
     if (articles.includes(article)) return true;
     if (articles.length >= FREE_ARTICLE_LIMIT) return false;
-    sessionStorage.setItem(FREE_ARTICLES_KEY, JSON.stringify([...articles, article]));
+    localStorage.setItem(FREE_ARTICLES_KEY, JSON.stringify([...articles, article]));
     return true;
   } catch {
     // Reading stays available when browser storage is disabled.
