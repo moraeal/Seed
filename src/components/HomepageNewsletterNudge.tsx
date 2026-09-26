@@ -3,11 +3,13 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useLanguage } from "../i18n";
 import NewsletterSignup from "./NewsletterSignup";
+import { useAuth } from "../auth";
+import SiyaArticleGuide from "./SiyaArticleGuide";
 
 type Stage = "hidden" | "walking" | "ready" | "open";
 let dismissedUntilReload = false;
 
-export default function HomepageNewsletterNudge() {
+function NewsletterNudge() {
   const { language } = useLanguage();
   const ko = language === "ko";
   const [stage, setStage] = useState<Stage>("hidden");
@@ -74,4 +76,10 @@ export default function HomepageNewsletterNudge() {
     </aside>,
     document.body,
   );
+}
+
+export default function HomepageNewsletterNudge() {
+  const { isVerified, loading } = useAuth();
+  if (loading) return null;
+  return isVerified ? <SiyaArticleGuide /> : <NewsletterNudge />;
 }
