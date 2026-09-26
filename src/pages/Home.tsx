@@ -333,6 +333,16 @@ export default function Home() {
     },
   ];
 
+  type QuickRead = { to: string; label: string; title: string; summary: string; imageSrc?: string; imageAlt?: string; term?: string };
+  const quickReads: QuickRead[] = [];
+  if (latestHotIssue) quickReads.push({ to: latestHotIssue.to, label: ko ? "핫이슈" : "Hot Issue", title: latestHotIssue.title, summary: latestHotIssue.summary, imageSrc: latestHotIssue.imageSrc, imageAlt: latestHotIssue.imageAlt });
+  if (latestBriefing) quickReads.push({ to: `/briefings/${latestBriefing.slug}`, label: ko ? "브리핑" : "Briefing", title: latestBriefing.title, summary: latestBriefing.summary, imageSrc: latestBriefing.images?.[0]?.src, imageAlt: latestBriefing.images?.[0]?.alt });
+  if (publicWatchHref && publicWatchTitle && publicWatchSummary) quickReads.push({ to: publicWatchHref, label: ko ? "시민감시" : "Civic Watch", title: publicWatchTitle, summary: publicWatchSummary, imageSrc: publicWatchImage?.src, imageAlt: publicWatchImage?.alt });
+  if (seedLanguageArticle) quickReads.push({ to: `/seed-language/${seedLanguageArticle.slug}`, label: ko ? "시민언어" : "Civic Language", title: seedLanguageArticle.title, summary: seedLanguageArticle.summary, term: ko ? seedLanguageArticle.term : seedLanguageTerm?.english || seedLanguageArticle.term });
+  const trackedIssues = ["public-institution-reform", "prosecution-power-transfer", "yeosu-island-expo"]
+    .map((id) => hotIssueClusters.find((item) => item.id === id))
+    .filter((item): item is (typeof hotIssueClusters)[number] => Boolean(item));
+
   const visibleRecommendedTopics = Array.from({ length: 4 }, (_, index) => (
     topicTaxonomy[(recommendedTopicPage * 4 + index) % topicTaxonomy.length]
   ));
@@ -372,20 +382,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-today-section border-b border-green-deep/15 bg-ivory py-4 sm:py-6 lg:py-7">
+      <section className="home-today-section border-b border-green-deep/15 bg-ivory" aria-labelledby="home-feature-title">
         <div className="container-page">
-          <div className="mb-3 border-b border-green-deep/15 pb-2.5 sm:mb-4">
-            <p className="section-kicker">TODAY&apos;S SEED</p>
-            <p className="mt-1 text-[13px] font-medium text-charcoal/55 sm:text-sm">{ko ? "오늘 씨앗이 주목하는 문제" : "What SEED is watching today"}</p>
-          </div>
-          <div className="grid gap-5 sm:gap-6 xl:grid-cols-[minmax(0,1.62fr)_minmax(390px,.92fr)] xl:items-stretch xl:gap-7">
-            {!featuredReady && (
-              <div className="h-full min-w-0" aria-hidden="true">
-                <div className="aspect-[16/8.55] w-full bg-green-deep/8 sm:aspect-[16/7.65]" />
+          <p className="section-kicker mb-3 sm:mb-4">EDITOR&apos;S PICK</p>
+          {!featuredReady && <div className="min-h-[330px] animate-pulse rounded-xl bg-green-deep/8" aria-hidden="true" />}
+          {featuredLead && (
+            <article className="home-feature overflow-hidden rounded-xl bg-[#e9efe4] lg:grid lg:min-h-[360px] lg:grid-cols-[1.05fr_.95fr]">
+              <div className="home-feature-copy flex flex-col justify-center p-5 sm:p-8 lg:p-10">
+                <p className="text-[11px] font-black tracking-[.12em] text-green-deep">{featuredLead.kicker}</p>
+                <Link to={featuredLead.path} className="group mt-3 block">
+                  <h1 id="home-feature-title" className="editorial-title max-w-[620px] break-keep text-[1.6rem] font-black leading-[1.27] text-navy transition group-hover:text-green-mid sm:text-[2.2rem] lg:text-[clamp(2rem,2.8vw,3rem)]">{featuredLead.title}</h1>
+                  <p className="home-lead-summary mt-3 line-clamp-3 max-w-[570px]">{featuredLead.summary}</p>
+                </Link>
+                <div className="mt-4 flex items-center gap-3 text-xs text-charcoal/55"><time>{featuredLead.date.replace(/-/g, ".")}</time>{featuredLead.readMinutes && <span className="inline-flex items-center gap-1"><Clock size={13}/>{featuredLead.readMinutes}{ko ? "분 읽기" : " min read"}</span>}</div>
+                <Link to={featuredLead.path} className="mt-5 inline-flex w-fit items-center gap-1 border-b-2 border-green-deep pb-1 text-sm font-extrabold text-green-deep">{ko ? "기사 읽기" : "Read article"}<ArrowRight size={15}/></Link>
               </div>
-            )}
-            {featuredLead && (
-              <article className="group h-full min-w-0">
+              <div className="home-feature-media order-first bg-green-deep lg:order-last">
                 <FeaturedStoryMedia
                   key={featuredLead.path}
                   to={featuredLead.path}
@@ -394,67 +406,39 @@ export default function Home() {
                   animate={featuredLead.path === "/briefings/inheritance-tax-frozen-allowance-middle-class" && featuredLead.image.src.endsWith("inheritance-frozen-threshold-home-v2.webp")}
                   ko={ko}
                 />
-                <Link to={featuredLead.path} className="flex flex-col">
-                  <p className="mt-3 text-[10px] font-black tracking-[.14em] text-green-deep sm:mt-3.5 sm:text-[11px]">{featuredLead.kicker}</p>
-                  <h1 className="editorial-title mt-1.5 max-w-5xl break-keep text-balance text-[1.75rem] font-black leading-[1.12] tracking-[-0.038em] text-navy transition group-hover:text-green-mid sm:text-[clamp(1.9rem,3.5vw,3rem)] sm:leading-[1.09] sm:tracking-[-0.042em]">{featuredLead.title}</h1>
-                  <p className="home-lead-summary mt-2 line-clamp-3 max-w-4xl sm:mt-2.5">{featuredLead.summary}</p>
-                  <div className="mt-3 flex items-center gap-3 text-[11px] text-charcoal/45 sm:text-xs"><time>{featuredLead.date.replace(/-/g, ".")}</time>{featuredLead.readMinutes && <span className="inline-flex items-center gap-1"><Clock size={12}/>{featuredLead.readMinutes}{ko ? "분 읽기" : " min read"}</span>}</div>
-                </Link>
-              </article>
-            )}
-            <aside className="divide-y divide-green-deep/15 border-y border-green-deep/20 xl:flex xl:h-full xl:flex-col xl:border-t-0" aria-label={ko ? "오늘의 핵심 콘텐츠" : "Today’s essential stories"}>
-              {latestHotIssue && (
-                <Link to={latestHotIssue.to} className="group grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3 xl:first:pt-0">
-                  <div className="overflow-hidden bg-green-deep"><SafeImage src={resolveImageSrc(latestHotIssue.imageSrc)} alt={latestHotIssue.imageAlt} referrerPolicy="no-referrer" className="aspect-[4/3] h-full max-h-[96px] w-full object-cover transition duration-500 group-hover:scale-[1.02]" /></div>
-                  <div className="min-w-0">
-                    <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">HOT ISSUES</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "핫이슈 보기" : "View"}<ArrowRight size={11}/></span></div>
-                    <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{latestHotIssue.title}</h2>
-                    <p className="home-compact-summary mt-1 line-clamp-3">{latestHotIssue.summary}</p>
-                  </div>
-                </Link>
-              )}
-              {latestBriefing && (
-                <Link to={`/briefings/${latestBriefing.slug}`} className="group grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3">
-                  <div className="overflow-hidden bg-green-deep">{latestBriefing.images?.[0] && <SafeImage src={resolveImageSrc(latestBriefing.images[0].src)} alt={latestBriefing.images[0].alt} referrerPolicy="no-referrer" className="aspect-[4/3] h-full max-h-[96px] w-full object-cover transition duration-500 group-hover:scale-[1.02]" />}</div>
-                  <div className="min-w-0">
-                    <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">BRIEFINGS</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "브리핑 읽기" : "Read"}<ArrowRight size={11}/></span></div>
-                    <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{latestBriefing.title}</h2>
-                    <p className="home-compact-summary mt-1 line-clamp-3">{latestBriefing.summary}</p>
-                  </div>
-                </Link>
-              )}
-              {publicWatchHref && publicWatchTitle && publicWatchSummary && publicWatchImage && (
-                <Link to={publicWatchHref} className="group grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3">
-                  <div className="overflow-hidden bg-green-deep"><SafeImage src={resolveImageSrc(publicWatchImage.src)} alt={publicWatchImage.alt} referrerPolicy="no-referrer" className="aspect-[4/3] h-full max-h-[96px] w-full object-cover transition duration-500 group-hover:scale-[1.02]" /></div>
-                  <div className="min-w-0">
-                    <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">CIVIC WATCH</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "시민감시 보기" : "Read"}<ArrowRight size={11}/></span></div>
-                    <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{publicWatchTitle}</h2>
-                    <p className="home-compact-summary mt-1 line-clamp-3">{publicWatchSummary}</p>
-                  </div>
-                </Link>
-              )}
-              {seedLanguageArticle && (
-                <Link to={`/seed-language/${seedLanguageArticle.slug}`} className="group grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3">
-                  <div className="flex aspect-[4/3] h-full max-h-[96px] w-full flex-col items-center justify-center border border-green-deep/15 bg-white text-center">
-                    <p className="editorial-title text-[1.22rem] font-black leading-none text-navy sm:text-[1.32rem]">{ko ? seedLanguageArticle.term : seedLanguageArticle.term.toUpperCase()}</p>
-                    {ko && seedLanguageTerm && (
-                      <>
-                        <p className="mt-1.5 text-[10px] font-bold leading-none text-charcoal/55">{seedLanguageTerm.hanja}</p>
-                        <p className="mt-1 max-w-full px-1 text-[8px] font-black leading-tight tracking-[.04em] text-green-deep/65 sm:text-[8px]">{seedLanguageTerm.english}</p>
-                      </>
-                    )}
-                  </div>
-                  <div className="min-w-0">
-                    <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">GLOSSARY</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "시민언어 보기" : "Read"}<ArrowRight size={11}/></span></div>
-                    <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{seedLanguageArticle.title}</h2>
-                    <p className="home-compact-summary mt-1 line-clamp-3">{seedLanguageArticle.summary}</p>
-                  </div>
-                </Link>
-              )}
-            </aside>
+              </div>
+            </article>
+          )}
+        </div>
+      </section>
+
+      <section className="bg-paper py-8 sm:py-11" aria-labelledby="quick-reads-title">
+        <div className="container-page">
+          <div className="flex items-end justify-between gap-3">
+            <div><p className="section-kicker">START HERE</p><h2 id="quick-reads-title" className="editorial-title mt-1 text-[1.55rem] font-bold text-navy sm:text-3xl">{ko ? "빠르게 읽을 4가지" : "Four stories to start with"}</h2><p className="mt-1 text-[13px] text-charcoal/60 sm:text-sm">{ko ? "오늘의 쟁점을 살피고, 궁금한 기사로 들어가세요." : "A clear path into the issues worth your attention."}</p></div>
+            <Link to="/search" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체 기사" : "All stories"}<ArrowRight size={14}/></Link>
+          </div>
+          <div className="mt-5 grid grid-cols-2 gap-2.5 sm:gap-4">
+            {quickReads.map((item) => (
+              <Link key={item.to} to={item.to} className="home-quick-card group min-w-0 overflow-hidden rounded-lg border border-green-deep/15 bg-white transition hover:-translate-y-0.5 hover:border-green-deep/35 hover:shadow-[0_12px_28px_rgba(20,55,45,.10)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-deep/40">
+                <div className="home-quick-thumb overflow-hidden bg-green-pale">
+                  {item.imageSrc ? <SafeImage src={resolveImageSrc(item.imageSrc)} alt={item.imageAlt || ""} loading="lazy" referrerPolicy="no-referrer" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]" /> : <span className="flex h-full items-center justify-center text-3xl font-black text-green-deep sm:text-5xl">{item.term}</span>}
+                </div>
+                <div className="home-quick-copy min-w-0 p-3 sm:p-5"><span className="inline-flex rounded-full bg-green-pale px-2 py-0.5 text-[10px] font-extrabold text-green-deep sm:text-xs">{item.label}</span><h3 className="editorial-title mt-2 line-clamp-3 break-keep text-[.94rem] font-bold leading-snug text-navy group-hover:text-green-mid sm:line-clamp-2 sm:text-[1.2rem]">{item.title}</h3><p className="mt-1.5 line-clamp-2 text-[12px] leading-5 text-charcoal/60 sm:text-sm sm:leading-6">{item.summary}</p></div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
+
+      <section className="bg-paper pb-9 sm:pb-14" aria-labelledby="follow-issues-title">
+        <div className="container-page"><div className="rounded-xl bg-green-deep px-5 py-6 text-white sm:px-8 sm:py-8">
+          <p className="text-[11px] font-black tracking-[.14em] text-[#d6e752]">FOLLOW THE ISSUE</p><div className="mt-1 flex items-end justify-between gap-3"><h2 id="follow-issues-title" className="editorial-title text-[1.55rem] font-bold sm:text-3xl">{ko ? "계속 추적할 이슈" : "Issues we keep tracking"}</h2><Link to="/monitoring" className="inline-flex shrink-0 items-center gap-1 text-xs font-bold text-[#dce987] sm:text-sm">{ko ? "시민감시 전체" : "All trackers"}<ArrowRight size={14}/></Link></div>
+          <div className="mt-5 grid gap-2.5 md:grid-cols-3 md:gap-4">{trackedIssues.map((item) => <Link key={item.id} to={`/news/issues/${item.id}`} className="group block rounded-lg border border-white/20 bg-white/10 p-4 transition hover:bg-white/15 sm:p-5"><h3 className="line-clamp-2 break-keep text-[1rem] font-bold leading-snug sm:text-lg">{item.title}</h3><p className="mt-2 line-clamp-2 text-[13px] leading-5 text-white/75 sm:text-sm sm:leading-6">{item.latestChange}</p><span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#dce987]">{ko ? "최근 변화 확인" : "See the latest"}<ArrowRight size={13}/></span></Link>)}</div>
+        </div></div>
+      </section>
+
+      <NewsletterSignup />
 
       <section className="pt-9 pb-6 sm:pt-16 sm:pb-8" aria-labelledby="hot-issues-title">
         <div className="container-page">
@@ -556,7 +540,6 @@ export default function Home() {
 
       <section className="border-t border-green-deep/12 py-7 sm:py-12" aria-labelledby="newcomer-title"><div className="container-page"><div><p className="section-kicker">START HERE</p><h2 id="newcomer-title" className="editorial-title mt-1.5 text-[1.55rem] font-bold text-navy sm:mt-2 sm:text-4xl">{ko ? "처음 오셨다면" : "New to SEED VOICE?"}</h2><p className="mt-2 text-[13px] leading-6 text-charcoal/60 sm:mt-2.5 sm:text-base sm:leading-7">{ko ? "씨앗의 소리가 무엇을 보고 어떤 기준으로 판단하는지, 아래 세 글에서 가장 빠르게 확인할 수 있습니다." : "These three pages are the fastest way to understand what SEED VOICE watches and the standards it uses."}</p></div><div className="mt-4 grid gap-3 sm:mt-5 sm:gap-5 md:grid-cols-3">{newcomerLinks.map((item, index) => <Link key={item.to} to={item.to} className="group grid grid-cols-[1.8rem_1fr_auto] items-start gap-2.5 border border-solid border-green-deep/15 bg-white p-4 transition hover:border-green-deep/30 sm:flex sm:min-h-[160px] sm:flex-col sm:p-5 sm:hover:-translate-y-0.5"><span className="pt-0.5 text-[11px] font-black text-charcoal/25 sm:hidden">0{index + 1}</span><div><div className="flex items-center justify-between gap-3"><p className="text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">{item.kicker}</p><span className="hidden text-[11px] font-black text-charcoal/25 sm:inline sm:text-xs">0{index + 1}</span></div><h3 className="editorial-title mt-1.5 break-keep text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:mt-4 sm:text-2xl">{item.title}</h3><p className="hidden sm:mt-2.5 sm:line-clamp-2 sm:block sm:text-sm sm:leading-6 sm:text-charcoal/58">{item.summary}</p></div><ArrowRight size={15} className="mt-1 text-green-deep sm:hidden"/></Link>)}</div></div></section>
 
-      <NewsletterSignup />
       <HomepageNewsletterNudge />
     </div>
   );

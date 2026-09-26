@@ -143,6 +143,22 @@ button, input, textarea { font: inherit; }
   @apply text-[12px] leading-[1.55] text-charcoal/60 sm:text-[13px] sm:leading-[1.55];
 }
 
+/* The first reading path moves from one lead story into four short entry points. */
+.home-feature { display: flex; flex-direction: column-reverse; }
+.home-feature-media > a { width: 100%; }
+.home-quick-card { display: block; }
+.home-quick-thumb { height: 110px; }
+
+@media (min-width: 640px) {
+  .home-quick-card { display: grid; grid-template-columns: 34% minmax(0, 1fr); min-height: 172px; }
+  .home-quick-thumb { height: 100%; min-height: 172px; }
+}
+
+@media (min-width: 1024px) {
+  .home-feature { display: grid; grid-template-columns: 1.05fr .95fr; }
+  .home-feature-media > a { height: 100%; aspect-ratio: auto; }
+}
+
 @keyframes recommended-topic-group-reveal {
   from { opacity: 0.3; transform: translateY(2px); }
   to { opacity: 1; transform: translateY(0); }
