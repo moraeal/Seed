@@ -116,12 +116,12 @@ export default function Home() {
     return () => { active = false; };
   }, []);
 
-  type QuickRead = { to: string; label: string; title: string; summary: string; imageSrc?: string; imageAlt?: string; term?: string };
+  type QuickRead = { to: string; label: string; title: string; summary: string; imageSrc?: string; imageAlt?: string; term?: string; termHanja?: string; termEnglish?: string };
   const quickReads: QuickRead[] = [];
   if (latestHotIssue) quickReads.push({ to: latestHotIssue.to, label: ko ? "핫이슈" : "Hot Issue", title: latestHotIssue.title, summary: latestHotIssue.summary, imageSrc: latestHotIssue.imageSrc, imageAlt: latestHotIssue.imageAlt });
   if (latestBriefing) quickReads.push({ to: `/briefings/${latestBriefing.slug}`, label: ko ? "브리핑" : "Briefing", title: latestBriefing.title, summary: latestBriefing.summary, imageSrc: latestBriefing.images?.[0]?.src, imageAlt: latestBriefing.images?.[0]?.alt });
   if (publicWatchHref && publicWatchTitle && publicWatchSummary) quickReads.push({ to: publicWatchHref, label: ko ? "시민감시" : "Civic Watch", title: publicWatchTitle, summary: publicWatchSummary, imageSrc: publicWatchImage?.src, imageAlt: publicWatchImage?.alt });
-  if (seedLanguageArticle) quickReads.push({ to: `/seed-language/${seedLanguageArticle.slug}`, label: ko ? "시민언어" : "Civic Language", title: seedLanguageArticle.title, summary: seedLanguageArticle.summary, term: ko ? seedLanguageArticle.term : seedLanguageTerm?.english || seedLanguageArticle.term });
+  if (seedLanguageArticle) quickReads.push({ to: `/seed-language/${seedLanguageArticle.slug}`, label: ko ? "시민언어" : "Civic Language", title: seedLanguageArticle.title, summary: seedLanguageArticle.summary, term: seedLanguageArticle.term, termHanja: seedLanguageTerm?.hanja, termEnglish: seedLanguageTerm?.english });
   return (
     <div className="home-page bg-paper">
       <section className="home-today-section border-b border-green-deep/15 bg-ivory" aria-labelledby="home-feature-title">
@@ -163,8 +163,12 @@ export default function Home() {
           <div className="mt-5 grid grid-cols-2 gap-2.5 sm:gap-4">
             {quickReads.map((item) => (
               <Link key={item.to} to={item.to} className="home-quick-card group min-w-0 overflow-hidden rounded-lg border border-green-deep/15 bg-white shadow-[0_8px_22px_rgba(28,54,66,0.12)] transition duration-300 hover:-translate-y-0.5 hover:border-green-deep/35 hover:shadow-[0_16px_32px_rgba(28,54,66,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-deep/40">
-                <div className="home-quick-thumb overflow-hidden bg-green-pale">
-                  {item.imageSrc ? <SafeImage src={resolveImageSrc(item.imageSrc)} alt={item.imageAlt || ""} loading="lazy" referrerPolicy="no-referrer" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]" /> : <span className="flex h-full items-center justify-center text-3xl font-black text-green-deep sm:text-5xl">{item.term}</span>}
+                <div className={`home-quick-thumb overflow-hidden ${item.term ? "bg-white" : "bg-green-pale"}`}>
+                  {item.imageSrc ? <SafeImage src={resolveImageSrc(item.imageSrc)} alt={item.imageAlt || ""} loading="lazy" referrerPolicy="no-referrer" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]" /> : <div className="flex h-full min-w-0 flex-col items-center justify-center px-2 text-center">
+                    <span className="editorial-title text-2xl font-black leading-tight text-navy sm:text-4xl">{ko ? item.term : item.termEnglish || item.term}</span>
+                    {ko && item.termHanja && <span className="mt-2 text-sm font-bold leading-tight text-charcoal/55 sm:text-lg">{item.termHanja}</span>}
+                    {ko && item.termEnglish && <span className="mt-1 max-w-full break-words text-[10px] font-black leading-tight tracking-[.04em] text-green-deep/70 sm:text-xs">{item.termEnglish}</span>}
+                  </div>}
                 </div>
                 <div className="home-quick-copy min-w-0 p-3 sm:p-5"><span className="inline-flex rounded-full bg-green-pale px-2 py-0.5 text-[10px] font-extrabold text-green-deep sm:text-xs">{item.label}</span><h3 className="editorial-title mt-2 line-clamp-3 break-keep text-[.94rem] font-bold leading-snug text-navy group-hover:text-green-mid sm:line-clamp-2 sm:text-[1.2rem]">{item.title}</h3><p className="mt-1.5 line-clamp-2 text-[12px] leading-5 text-charcoal/60 sm:text-sm sm:leading-6">{item.summary}</p></div>
               </Link>
