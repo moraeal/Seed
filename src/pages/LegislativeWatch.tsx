@@ -15,6 +15,14 @@ const getKoreaDate = (value: string) => new Date(
   new Date(value).getTime() + 9 * 60 * 60 * 1000,
 ).toISOString().slice(0, 10);
 
+function BillExplainerRow({ ko }: { ko: boolean }) {
+  return <Link to={`/briefings/${incomeTaxFamilyDeductionBriefing.slug}`} className="group grid gap-5 border-b border-charcoal/10 px-4 py-7 transition last:border-b-0 hover:bg-[#FBFAF6] sm:px-6 lg:grid-cols-[160px_1fr_auto] lg:items-center">
+    <div><span className="inline-flex rounded-full bg-green-deep/10 px-2.5 py-1 text-[11px] font-black text-green-deep">{ko ? "법안 설명 기사" : "Bill explainer"}</span><p className="mt-3 flex items-center gap-2 text-xs text-charcoal/50"><CalendarDays size={14}/>{dateText(incomeTaxFamilyDeductionBriefing.date)}</p></div>
+    <div><div className="mb-2 flex flex-wrap gap-2 text-xs font-bold text-charcoal/55"><span>{ko ? "소득세법 개정안" : "Income Tax Act amendment"}</span><span className="text-charcoal/35">{ko ? "의안 2221581" : "Bill 2221581"}</span><span className="text-charcoal/35">{ko ? "접수 단계" : "Filed"}</span></div><h3 className="editorial-title text-[1.3rem] font-bold leading-snug text-navy group-hover:text-green-deep sm:text-[1.55rem]">{ko ? incomeTaxFamilyDeductionBriefing.title : incomeTaxFamilyDeductionTranslation.title}</h3><p className="mt-2 line-clamp-2 max-w-3xl text-sm leading-7 text-charcoal/60">{ko ? incomeTaxFamilyDeductionBriefing.summary : incomeTaxFamilyDeductionTranslation.summary}</p></div>
+    <span className="flex items-center gap-2 text-sm font-extrabold text-green-deep">{ko ? "기사 읽기" : "Read article"}<ArrowRight size={15}/></span>
+  </Link>;
+}
+
 function BillRow({ bill, ko, today = false }: { bill: LegislativeBill; ko: boolean; today?: boolean }) {
   const summary = ko ? bill.public_summary_ko || bill.analysis?.summary_ko : bill.public_summary_en || bill.analysis?.summary_en;
   const title = ko ? bill.title : bill.analysis?.title_en || bill.title;
@@ -45,7 +53,8 @@ export default function LegislativeWatch() {
     if (!bill.published_at) return latest;
     const publishedDate = getKoreaDate(bill.published_at);
     return publishedDate > latest ? publishedDate : latest;
-  }, ""), [bills]);
+  }, incomeTaxFamilyDeductionBriefing.date), [bills]);
+  const explainerIsLatest = incomeTaxFamilyDeductionBriefing.date === latestPublishedDate;
   const todayBills = useMemo(() => bills.filter((bill) => (
     bill.published_at ? getKoreaDate(bill.published_at) === latestPublishedDate : false
   )), [bills, latestPublishedDate]);
@@ -57,6 +66,11 @@ export default function LegislativeWatch() {
     const term = query.trim().toLowerCase();
     return !term || [bill.title, bill.analysis?.title_en, bill.proposer, bill.committee, bill.bill_no].some((value) => value?.toLowerCase().includes(term));
   }), [pastBills, level, query]);
+  const showPastExplainer = !explainerIsLatest && level === "all" && (
+    !query.trim() || [incomeTaxFamilyDeductionBriefing.title, incomeTaxFamilyDeductionTranslation.title, "소득세법", "2221581"].some((value) => value.toLowerCase().includes(query.trim().toLowerCase()))
+  );
+  const todayCount = todayBills.length + Number(explainerIsLatest);
+  const pastCount = pastBills.length + Number(!explainerIsLatest);
 
   return <section className="min-h-[70vh] bg-paper pb-16">
     <header className="border-b border-green-deep/15 bg-ivory">
@@ -70,8 +84,8 @@ export default function LegislativeWatch() {
     <div className="container-page py-8 sm:py-10">
       <nav aria-label={ko ? "입법감시 목록 바로가기" : "Legislative watch list shortcuts"} className="mb-7 grid overflow-hidden rounded-xl border border-charcoal/10 bg-white shadow-[0_8px_24px_rgba(31,51,73,0.045)] sm:grid-cols-3">
         <a href="#legislative-commentary-list" className="flex items-center justify-between border-b-2 border-green-deep bg-green-deep px-5 py-4 text-sm font-black text-white transition hover:bg-green-mid sm:text-base">{ko ? "입법감시 기사" : "Watch Articles"}<span className="rounded-full bg-white/12 px-2 py-0.5 text-xs text-gold">{legislativeCommentaries.length + linkedLegislativeColumnCommentaries.length + 1}</span></a>
-        <a href="#today-bills" className="flex items-center justify-between border-b-2 border-gold/40 bg-[#F3F5EC] px-5 py-4 text-sm font-black text-navy transition hover:bg-green-pale sm:text-base">{ko ? "오늘의 법안" : "Today's Bills"}<span className="rounded-full bg-white/80 px-2 py-0.5 text-xs text-charcoal/55">{todayBills.length}</span></a>
-        <a href="#past-bills" className="flex items-center justify-between border-b-2 border-transparent px-5 py-4 text-sm font-black text-navy transition hover:border-charcoal/20 hover:bg-[#FAF9F5] sm:text-base">{ko ? "지난 법안" : "Past Bills"}<span className="rounded-full bg-charcoal/5 px-2 py-0.5 text-xs text-charcoal/55">{pastBills.length}</span></a>
+        <a href="#today-bills" className="flex items-center justify-between border-b-2 border-gold/40 bg-[#F3F5EC] px-5 py-4 text-sm font-black text-navy transition hover:bg-green-pale sm:text-base">{ko ? "오늘의 법안" : "Today's Bills"}<span className="rounded-full bg-white/80 px-2 py-0.5 text-xs text-charcoal/55">{todayCount}</span></a>
+        <a href="#past-bills" className="flex items-center justify-between border-b-2 border-transparent px-5 py-4 text-sm font-black text-navy transition hover:border-charcoal/20 hover:bg-[#FAF9F5] sm:text-base">{ko ? "지난 법안" : "Past Bills"}<span className="rounded-full bg-charcoal/5 px-2 py-0.5 text-xs text-charcoal/55">{pastCount}</span></a>
       </nav>
 
       <section id="legislative-commentary-list" className="scroll-mt-24 overflow-hidden rounded-xl border border-charcoal/10 bg-white shadow-[0_12px_32px_rgba(31,51,73,0.055)]" aria-labelledby="legislative-commentary-list-title">
@@ -103,7 +117,7 @@ export default function LegislativeWatch() {
 
       <section id="today-bills" className="mt-10 scroll-mt-24 overflow-hidden rounded-xl border border-charcoal/10 bg-white shadow-[0_12px_32px_rgba(31,51,73,0.055)]" aria-labelledby="today-bills-title">
         <div className="flex flex-col gap-3 border-b border-charcoal/10 bg-white px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-6">
-          <div><span className="text-[10px] font-extrabold tracking-[.2em] text-gold">TODAY'S BILLS</span><h2 id="today-bills-title" className="editorial-title mt-1 text-2xl font-bold text-navy">{ko ? "오늘의 법안" : "Today's Bills"}<span className="ml-2 rounded-full bg-charcoal/5 px-2 py-0.5 text-xs text-charcoal/50">{todayBills.length}</span></h2></div>
+          <div><span className="text-[10px] font-extrabold tracking-[.2em] text-gold">TODAY'S BILLS</span><h2 id="today-bills-title" className="editorial-title mt-1 text-2xl font-bold text-navy">{ko ? "오늘의 법안" : "Today's Bills"}<span className="ml-2 rounded-full bg-charcoal/5 px-2 py-0.5 text-xs text-charcoal/50">{todayCount}</span></h2></div>
           <p className="max-w-2xl text-sm leading-6 text-charcoal/60">{ko ? "가장 최근에 공개한 법안을 다음 업데이트 전까지 유지합니다. 법안명이나 분석 보기를 누르면 핵심 변화와 시민 영향을 확인할 수 있습니다." : "The most recently published bills remain here until the next update. Open a bill to review its key changes and civic impact."}</p>
         </div>
         <div className="flex flex-col gap-3 border-b border-charcoal/10 bg-[#FAF8F2] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
@@ -112,13 +126,13 @@ export default function LegislativeWatch() {
         </div>
         {loading && <p className="py-16 text-center text-sm text-charcoal/50">{ko ? "입법 기록을 불러오는 중입니다." : "Loading legislative records…"}</p>}
         {error && <p className="py-16 text-center text-sm font-bold text-red-700">{error}</p>}
-        {!loading && !error && todayBills.length === 0 && <div className="py-16 text-center"><Scale className="mx-auto text-gold"/><p className="mt-4 text-sm font-bold text-navy">{ko ? "공개된 법안이 아직 없습니다." : "No bills have been published yet."}</p></div>}
-        <div>{todayBills.map((bill) => <BillRow key={bill.bill_id} bill={bill} ko={ko} today/>)}</div>
+        {!loading && !error && todayCount === 0 && <div className="py-16 text-center"><Scale className="mx-auto text-gold"/><p className="mt-4 text-sm font-bold text-navy">{ko ? "공개된 법안이 아직 없습니다." : "No bills have been published yet."}</p></div>}
+        <div>{explainerIsLatest && <BillExplainerRow ko={ko} />}{todayBills.map((bill) => <BillRow key={bill.bill_id} bill={bill} ko={ko} today/>)}</div>
       </section>
 
       <section id="past-bills" className="mt-10 scroll-mt-24 overflow-hidden rounded-xl border border-charcoal/10 bg-white shadow-[0_12px_32px_rgba(31,51,73,0.055)]" aria-labelledby="past-bills-title">
         <div className="flex flex-col gap-3 border-b border-charcoal/10 bg-white px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-6">
-          <div><span className="text-[10px] font-extrabold tracking-[.2em] text-gold">PAST BILLS</span><h2 id="past-bills-title" className="editorial-title mt-1 text-2xl font-bold text-navy">{ko ? "지난 법안" : "Past Bills"}<span className="ml-2 rounded-full bg-charcoal/5 px-2 py-0.5 text-xs text-charcoal/50">{pastBills.length}</span></h2></div>
+          <div><span className="text-[10px] font-extrabold tracking-[.2em] text-gold">PAST BILLS</span><h2 id="past-bills-title" className="editorial-title mt-1 text-2xl font-bold text-navy">{ko ? "지난 법안" : "Past Bills"}<span className="ml-2 rounded-full bg-charcoal/5 px-2 py-0.5 text-xs text-charcoal/50">{pastCount}</span></h2></div>
           <p className="max-w-2xl text-sm leading-6 text-charcoal/60">{ko ? "이전에 공개된 입법감시 기록입니다. 법안명·발의자·위원회와 시민영향도로 필요한 법안을 찾아볼 수 있습니다." : "Previously published legislative-watch records. Search by bill title, sponsor, committee, or civic-impact level."}</p>
         </div>
         <div className="grid gap-3 border-b border-charcoal/10 bg-[#FAF8F2] p-4 sm:grid-cols-[1fr_auto] sm:items-center">
@@ -129,8 +143,8 @@ export default function LegislativeWatch() {
         </div>
         {loading && <p className="py-16 text-center text-sm text-charcoal/50">{ko ? "입법 기록을 불러오는 중입니다." : "Loading legislative records…"}</p>}
         {error && <p className="py-16 text-center text-sm font-bold text-red-700">{error}</p>}
-        {!loading && !error && filteredPastBills.length === 0 && <div className="py-14 text-center"><FileSearch className="mx-auto text-gold"/><p className="mt-4 text-sm font-bold text-navy">{ko ? "조건에 맞는 지난 법안이 없습니다." : "No past bills match these filters."}</p></div>}
-        {!loading && !error && <div>{filteredPastBills.map((bill) => <BillRow key={bill.bill_id} bill={bill} ko={ko}/>)}</div>}
+        {!loading && !error && filteredPastBills.length === 0 && !showPastExplainer && <div className="py-14 text-center"><FileSearch className="mx-auto text-gold"/><p className="mt-4 text-sm font-bold text-navy">{ko ? "조건에 맞는 지난 법안이 없습니다." : "No past bills match these filters."}</p></div>}
+        {!loading && !error && <div>{showPastExplainer && <BillExplainerRow ko={ko} />}{filteredPastBills.map((bill) => <BillRow key={bill.bill_id} bill={bill} ko={ko}/>)}</div>}
       </section>
     </div>
   </section>;
