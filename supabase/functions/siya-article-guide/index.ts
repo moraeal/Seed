@@ -55,6 +55,42 @@ async function articles(): Promise<Article[]> {
   return entries;
 }
 
+function asksAboutSiya(question: string) {
+  const normalized = question.toLowerCase().replace(/[^가-힣a-z0-9]+/g, "");
+  return /^씨야(?:에대해|에대해서|에관해|에대하여)(?:알려|설명|말해|소개|궁금|$)/.test(normalized)
+    || /^씨야(?:는|가)(?:누구|뭐|무엇|어떤캐릭터|무슨일|할수있는)/.test(normalized)
+    || /^씨야(?:의역할|의기능|소개|란|캐릭터)/.test(normalized)
+    || /^(?:whoissiya|whatissiya|tellmeaboutsiya|introducesiya|whatcansiyado)/.test(normalized);
+}
+
+function introduceSiya(language: "ko" | "en") {
+  return {
+    grounded: true,
+    answer: language === "ko"
+      ? "저는 씨앗의 소리 기사 안내원 씨야예요. 공개된 기사와 시민언어의 핵심을 쉽게 설명하고 관련 글의 링크를 찾아드려요. 아직 답할 자료가 없는 질문은 저장해 주시면 편집부가 다음 기사 주제로 검토합니다."
+      : "I'm Siya, SEED VOICE's article guide. I explain the key points of published stories and glossary articles and link to the original pages. If we haven't covered your question yet, you can save it for our editors to consider as a future story.",
+    sources: [],
+  };
+}
+
+function asksForQuestionIdeas(question: string) {
+  const normalized = question.toLowerCase().replace(/[^가-힣a-z0-9]+/g, "");
+  return /(?:어떤|무슨)질문(?:을|이|은)?(?:해볼까|하면|할까|좋을까|추천)/.test(normalized)
+    || /(?:뭘|무엇을|뭐를|뭐)(?:물어볼까|물어보면|질문할까)/.test(normalized)
+    || /(?:질문|물어볼)(?:추천|예시)/.test(normalized)
+    || /^(?:whatcan(?:i|we)ask|whatshould(?:i|we)ask|suggestquestions)/.test(normalized);
+}
+
+function suggestQuestions(language: "ko" | "en") {
+  return {
+    grounded: true,
+    answer: language === "ko"
+      ? "이런 질문을 해보세요.\n• 시민은 무엇인가요?\n• 민주는 왜 권력을 제한하는 일인가요?\n• 상속세 과세 기준이 왜 문제인가요?\n• 최신 입법뉴스 알려줘\n씨앗의 글과 공개된 입법감시 기록에서 핵심과 원문 링크를 찾아드릴게요."
+      : "Try asking:\n• What does SEED VOICE mean by citizen?\n• Why does democracy require limits on power?\n• Why is the inheritance tax threshold debated?\n• What are the latest published bills?\nI'll find the key points and links in SEED VOICE's published work.",
+    sources: [],
+  };
+}
+
 function asksForLatestLegislation(question: string) {
   return (/(최신|최근|새로|이번\s*주|오늘|요즘)/.test(question) && /(입법|법안|법률안|국회\s*(?:통과|법안))/.test(question))
     || (/\b(latest|recent|new)\b/i.test(question) && /\b(bills?|legislation|legislative)\b/i.test(question));
@@ -150,6 +186,8 @@ Deno.serve(async (req) => {
       return json(req, { saved: true });
     }
     if (payload.action !== "ask") return json(req, { error: "Invalid action" }, 400);
+    if (asksAboutSiya(question)) return json(req, introduceSiya(language));
+    if (asksForQuestionIdeas(question)) return json(req, suggestQuestions(language));
     const quota = await rest("rpc/siya_allow_request", { method: "POST", body: JSON.stringify({ p_user_id: userId }) });
     if (!quota.ok) throw new Error(`Rate limit HTTP ${quota.status}`);
     if (!(await quota.json())) return json(req, { error: language === "ko" ? "오늘은 여기까지 대화할 수 있어요. 내일 다시 찾아주세요." : "You've reached today's question limit. Please return tomorrow." }, 429);
