@@ -10,11 +10,11 @@ export const incomeTaxFamilyThresholdColumn: SeedColumn = {
   topicIds: ["tax-finance", "legislation-rights"],
   readMinutes: 7,
   summary: "연 600만 원을 버는 배우자는 현행 기준에서 공제 대상이 아니지만 정부안과 의원안 모두에서 포함될 수 있다. 진짜 논쟁은 연 750만 원 초과·900만 원 이하 구간까지 넓힐지, 그 혜택과 세수 감소를 어떻게 평가할지에 있다.",
-  heroImage: { src: "images/family-deduction/shared-threshold-hero.webp", alt: "한 가족의 식탁을 가르는 투명한 기준선 너머로 맞잡은 두 사람의 손", caption: "가족의 생활은 이어지지만 세법의 공제 자격은 소득 기준선에서 달라진다. 특정 가족의 실제 사진이 아닌 AI 이미지.", credit: "AI 이미지", sourceUrl: "" },
+  heroImage: { src: "images/family-deduction/shared-threshold-hero.webp", alt: "한 가족의 식탁을 가르는 투명한 기준선 너머로 맞잡은 두 사람의 손", caption: "가족의 생활은 이어지지만 세법의 공제 자격은 소득 기준선에서 달라진다.", credit: "AI 이미지", sourceUrl: "" },
   displayInlineImage: false,
-  inlineImage: { src: "images/family-deduction/household-after-work.webp", alt: "짧은 일을 마친 가족이 식탁에서 생활비 서류와 계산기를 함께 살펴보는 연출 장면", caption: "조금 벌었다고 부양 부담이 사라지지는 않는다. 특정 가구를 촬영한 사진이 아닌 AI 이미지.", credit: "AI 이미지", sourceUrl: "" },
+  inlineImage: { src: "images/family-deduction/household-after-work.webp", alt: "짧은 일을 마친 가족이 식탁에서 생활비 서류와 계산기를 함께 살펴보는 장면", caption: "조금 벌었다고 부양 부담이 사라지지는 않는다.", credit: "AI 이미지", sourceUrl: "" },
   additionalImages: [
-    { afterSection: 0, src: "images/family-deduction/household-after-work.webp", alt: "짧은 일을 마친 가족이 식탁에서 생활비 서류와 계산기를 함께 살펴보는 연출 장면", caption: "조금 벌었다고 부양 부담이 사라지지는 않는다. 특정 가구를 촬영한 사진이 아닌 AI 이미지.", credit: "AI 이미지", sourceUrl: "" },
+    { afterSection: 0, src: "images/family-deduction/household-after-work.webp", alt: "짧은 일을 마친 가족이 식탁에서 생활비 서류와 계산기를 함께 살펴보는 장면", caption: "조금 벌었다고 부양 부담이 사라지지는 않는다.", credit: "AI 이미지", sourceUrl: "" },
     { afterSection: 1, src: "images/briefings/family-deduction-threshold-ko.svg", alt: "현행·정부안·의원안의 근로소득만 있는 가족 기본공제 총급여 기준 비교", caption: "현행 500만 원, 정부안 750만 원, 의원안 900만 원. 뒤의 두 숫자는 아직 제안입니다.", credit: "씨앗의 소리 도표", sourceUrl: "https://mofe.go.kr/nw/mosfnw/detailInfograpView.do?menuNo=4040500&searchNttId1=MOSF_000000000078819", contain: true },
   ],
   sections: [
