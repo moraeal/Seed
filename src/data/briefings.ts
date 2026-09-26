@@ -6,6 +6,7 @@ export type Briefing = {
   summary: string;
   introTitle?: string;
   keyHighlights?: string[];
+  sourceDocument?: { label: string; url: string; note?: string };
   date: string;
   author: string;
   readMinutes: number;
