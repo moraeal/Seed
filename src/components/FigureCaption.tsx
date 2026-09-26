@@ -24,7 +24,7 @@ export default function FigureCaption({ caption, credit, sourceUrl, className, c
   const ko = language === "ko";
   const label = displayCredit(credit, ko, sourceUrl);
   const aiImage = isAiCredit(credit) && !sourceUrl;
-  const captionHasAiLabel = /\\bAI\\b|인공지능/i.test(caption);
+  const captionHasAiLabel = /\bAI\b|인공지능/i.test(caption);
   const captionText = aiImage && !captionHasAiLabel
     ? `${caption.trim()}${caption.trim() ? " · " : ""}${ko ? "AI 이미지" : "AI image"}`
     : caption;
