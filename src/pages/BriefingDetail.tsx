@@ -70,7 +70,7 @@ export default function BriefingDetail() {
 
         {briefing.images?.[0] && renderFigure(briefing.images[0], true)}
 
-        {briefing.sourceDocument && <aside className="reading-column mb-8 rounded-xl bg-white p-5 shadow-[0_12px_34px_rgba(23,76,58,.07)] sm:p-6"><span className="section-kicker">{ko ? "원문 자료" : "SOURCE DOCUMENT"}</span><a href={briefing.sourceDocument.url} target="_blank" rel="noreferrer" className="mt-2 flex items-center gap-2 font-bold leading-7 text-green-deep underline decoration-green-deep/25 underline-offset-4">{briefing.sourceDocument.label}<ExternalLink size={15}/></a>{briefing.sourceDocument.note && <p className="mt-2 text-sm leading-6 text-charcoal/60">{briefing.sourceDocument.note}</p>}</aside>}
+        {briefing.sourceDocument && <aside className="reading-column mb-8 rounded-xl bg-white p-5 shadow-[0_12px_34px_rgba(23,76,58,.07)] sm:p-6"><span className="section-kicker">{ko ? "법안 자료" : "BILL MATERIAL"}</span><a href={briefing.sourceDocument.url} target="_blank" rel="noreferrer" className="mt-2 flex items-center gap-2 font-bold leading-7 text-green-deep underline decoration-green-deep/25 underline-offset-4">{briefing.sourceDocument.label}<ExternalLink size={15}/></a>{briefing.sourceDocument.note && <p className="mt-2 text-sm leading-6 text-charcoal/60">{briefing.sourceDocument.note}</p>}</aside>}
 
         <div className="reading-column">
           {briefing.introTitle && <h2 className="article-section-title mt-0">{briefing.introTitle}</h2>}
