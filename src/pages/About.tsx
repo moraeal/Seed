@@ -1,7 +1,10 @@
 import {
   ArrowRight,
   ArrowUpRight,
+  Bot,
   BookOpenText,
+  Clock3,
+  Database,
   FileSearch,
   MessageSquareText,
   Scale,
@@ -34,15 +37,20 @@ const copy = {
       { title: "내 세금의 쓰임까지", description: "시민감시는 공공사업의 예산과 계약 자료를 따라갑니다. 발표 뒤에 놓인 숫자와 기록을 함께 확인해보세요.", link: "시민감시 읽기", to: "/monitoring" },
       { title: "낯선 말도 내 말로", description: "‘공익’이나 ‘개혁’이라는 말이 실제로 누구에게 어떤 변화를 만드는지, 시민언어와 칼럼에서 쉽게 생각해봅니다.", link: "시민언어 읽기", to: "/seed-language" },
     ],
-    storiesKicker: "START READING",
-    storiesTitle: "이 이야기부터 읽어보세요",
-    storiesLead: "숫자와 제도가 내 일상과 연결되는 순간을, 실제 기사에서 만나보세요.",
-    stories: [
-      { label: "뉴스의 숫자가 헷갈릴 때", title: "나랏빚 106조 늘었는데 채무비율은 하락?", description: "서로 다른 기준의 숫자를 어떻게 읽을까요?", to: "/news/national-debt-ratio-gdp-comparison" },
-      { label: "내 세금의 쓰임이 궁금할 때", title: "여수섬박람회 돈의 흐름을 다시 세다", description: "공고와 계약 자료를 따라가 봅니다.", to: "/columns/yeosu-island-expo-procurement-ledger" },
-      { label: "동네 의료가 걱정될 때", title: "상속세 40억원이 330억원으로", description: "병원의 계속 운영과 진료를 함께 생각합니다.", to: "/briefings/hospital-inheritance-tax-maternity-care" },
-      { label: "말 때문에 사람이 가려질 때", title: "말이 시민을 적으로 만든다", description: "진영의 이름보다 사람을 먼저 봅니다.", to: "/columns/words-turn-citizens-into-enemies" },
-    ],
+    featuresKicker: "WHAT MAKES SEED DIFFERENT",
+    featuresTitle: "새로운 법과 세금, 달라지는 이슈까지 한눈에",
+    featuresLead: "발표 한 번으로 끝나지 않는 이야기. 씨앗은 새 자료를 확인하고 변화 과정을 이어서 보여드립니다.",
+    policyEyebrow: "01 · AI 시민감시",
+    policyTitle: "법과 세금이 바뀌면, 내 삶에는 무슨 일이 생길까요?",
+    policyDescription: "AI를 활용한 감시 시스템이 국회와 정부의 공개 자료에서 새 법안과 세금정책을 정기적으로 확인합니다. 중요한 변화를 골라 시민의 부담과 선택에 어떤 영향을 줄지 쉬운 말로 설명합니다.",
+    policyFlow: ["국회·정부 공개 자료", "자동 확인과 선별", "생활에 미치는 영향"],
+    legislationLink: "입법감시 보기",
+    taxLink: "세금감시 보기",
+    timelineEyebrow: "02 · 핫이슈 추적",
+    timelineTitle: "오늘의 뉴스가 바뀌면, 어제의 이야기에도 이어 붙입니다",
+    timelineDescription: "주목받는 이슈의 첫 보도부터 새로 확인된 사실과 남은 쟁점까지 시간순으로 모읍니다. 지금 어디까지 진행됐는지, 무엇을 더 지켜봐야 하는지 한눈에 볼 수 있습니다.",
+    timelineSteps: ["처음 알려진 사실", "새로 확인된 변화", "지금 남은 쟁점"],
+    issueLink: "핫이슈 타임라인 보기",
     standardKicker: "OUR STANDARD",
     standardTitle: "씨앗의 기준",
     standardLead: "내 삶에 닿는 기사일수록 사실과 의견을 분명히 나누고, 누구나 다시 살펴볼 수 있는 근거를 남기겠습니다.",
@@ -81,15 +89,20 @@ const copy = {
       { title: "See where your taxes went", description: "Civic Watch traces public budgets and contracts so you can check the records behind an announcement.", link: "Read Civic Watch", to: "/monitoring" },
       { title: "Make sense of big words", description: "Our essays ask what words like ‘public good’ and ‘reform’ mean for the choices real people have.", link: "Read civic language", to: "/seed-language" },
     ],
-    storiesKicker: "START READING",
-    storiesTitle: "Start with a story that speaks to you",
-    storiesLead: "See how public figures and policies connect to everyday choices in these reported stories.",
-    stories: [
-      { label: "When figures don't add up", title: "Debt rises by 106 trillion won. Why does the ratio fall?", description: "Learn which figures are being compared.", to: "/news/national-debt-ratio-gdp-comparison" },
-      { label: "When you wonder where taxes went", title: "Tracing the Yeosu Island Expo's contracts", description: "Follow the tenders and contracts.", to: "/columns/yeosu-island-expo-procurement-ledger" },
-      { label: "When local care matters", title: "A maternity hospital faces a steep inheritance tax", description: "Consider what continuity means for staff and patients.", to: "/briefings/hospital-inheritance-tax-maternity-care" },
-      { label: "When labels drown out people", title: "When words turn citizens into enemies", description: "Look at the people behind partisan labels.", to: "/columns/words-turn-citizens-into-enemies" },
-    ],
+    featuresKicker: "WHAT MAKES SEED DIFFERENT",
+    featuresTitle: "New laws, tax policies and evolving issues at a glance",
+    featuresLead: "The story does not end with an announcement. SEED checks new records and follows what changes next.",
+    policyEyebrow: "01 · AI-powered civic watch",
+    policyTitle: "What will a new law or tax policy mean for your life?",
+    policyDescription: "Our AI-assisted watch regularly checks public records from the National Assembly and government for new bills and tax measures. We select consequential changes and explain their effects on people's costs and choices in plain language.",
+    policyFlow: ["Public records", "Automated checks and selection", "Impact on daily life"],
+    legislationLink: "Explore Legislative Watch",
+    taxLink: "Explore Tax Watch",
+    timelineEyebrow: "02 · Issue tracking",
+    timelineTitle: "When the news changes, follow the story forward",
+    timelineDescription: "We put the first report, newly confirmed facts and unresolved questions in chronological order. See where an issue stands now and what still needs checking.",
+    timelineSteps: ["First known facts", "New developments", "Questions still open"],
+    issueLink: "Explore hot issue timelines",
     standardKicker: "OUR STANDARD",
     standardTitle: "What guides SEED",
     standardLead: "The closer a story is to your life, the more clearly we must separate facts from opinion and show the records behind our reporting.",
@@ -126,7 +139,7 @@ export default function About() {
         <div className="container-page grid min-h-[540px] items-center gap-5 py-14 lg:grid-cols-[1.13fr_.87fr] lg:gap-12 lg:py-20">
           <div className="relative z-10">
             <p className="text-xs font-extrabold tracking-[.2em] text-green-mid">{content.kicker}</p>
-            <h1 className="mt-4 text-[clamp(2.8rem,6vw,5.8rem)] font-black leading-[1.13] tracking-[-.065em]">{content.title}</h1>
+            <h1 className="mt-4 text-[clamp(2.15rem,4.4vw,4.25rem)] font-black leading-[1.18] tracking-[-.055em]">{content.title}</h1>
             <p className="mt-7 max-w-2xl text-base leading-8 text-green-deep/85 sm:text-lg">{content.lead}</p>
             <p className="mt-5 max-w-2xl font-extrabold leading-7">{content.identity}</p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -178,15 +191,38 @@ export default function About() {
 
         <section className="bg-green-deep py-16 text-white sm:py-24">
           <div className="container-page max-w-6xl">
-            <p className="text-xs font-extrabold tracking-[.2em] text-[#c5ebad]">{content.storiesKicker}</p>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-[-.04em] sm:text-5xl">{content.storiesTitle}</h2>
-            <p className="mt-4 max-w-2xl leading-7 text-white/75">{content.storiesLead}</p>
-            <div className="mt-9 grid gap-4 md:grid-cols-2">
-              {content.stories.map((story) => <Link key={story.to} to={story.to} className="flex min-h-52 flex-col rounded-3xl border border-white/25 bg-white/10 p-7 transition-colors duration-200 hover:bg-white/15">
-                <span className="text-xs font-extrabold text-[#c5ebad]">{story.label}</span>
-                <h3 className="mt-4 text-xl font-extrabold leading-snug tracking-[-.035em] sm:text-2xl">{story.title}</h3>
-                <span className="mt-auto inline-flex items-center gap-1 pt-5 text-sm text-white/75">{story.description}<ArrowUpRight size={15}/></span>
-              </Link>)}
+            <p className="text-xs font-extrabold tracking-[.2em] text-[#c5ebad]">{content.featuresKicker}</p>
+            <h2 className="mt-3 max-w-4xl text-3xl font-extrabold leading-tight tracking-[-.04em] sm:text-5xl">{content.featuresTitle}</h2>
+            <p className="mt-4 max-w-3xl text-base leading-8 text-white/75">{content.featuresLead}</p>
+            <div className="mt-10 grid gap-6 lg:grid-cols-2">
+              <article className="flex flex-col rounded-[1.75rem] border border-[#c5ebad]/40 bg-[#f7f8e9] p-6 text-green-deep shadow-[9px_12px_0_rgba(0,0,0,.22)] sm:p-9">
+                <div className="flex items-center gap-3"><span className="grid size-12 place-items-center rounded-2xl bg-[#dcefa9]"><Bot size={27} aria-hidden="true" /></span><span className="text-sm font-extrabold text-green-mid">{content.policyEyebrow}</span></div>
+                <h3 className="mt-5 text-2xl font-extrabold leading-snug tracking-[-.035em] sm:text-3xl">{content.policyTitle}</h3>
+                <p className="mt-4 text-base leading-8 text-charcoal/75">{content.policyDescription}</p>
+                <div className="mt-7 rounded-2xl border border-green-deep/15 bg-white p-5" aria-label={content.policyFlow.join(" → ")}>
+                  <div className="grid gap-3 sm:grid-cols-3">
+                    {content.policyFlow.map((step, index) => <div key={step} className="flex items-center gap-3 rounded-xl bg-[#edf4db] px-4 py-4 text-sm font-extrabold leading-6 sm:flex-col sm:items-start">
+                      <span className="grid size-8 shrink-0 place-items-center rounded-full bg-green-deep text-white">{index === 0 ? <Database size={17} aria-hidden="true" /> : index === 1 ? <Bot size={17} aria-hidden="true" /> : <FileSearch size={17} aria-hidden="true" />}</span>{step}
+                    </div>)}
+                  </div>
+                </div>
+                <div className="mt-auto flex flex-wrap gap-x-6 gap-y-3 pt-7">
+                  <Link to="/monitoring/legislation" className="inline-flex items-center gap-1.5 text-sm font-extrabold underline underline-offset-4">{content.legislationLink}<ArrowUpRight size={16}/></Link>
+                  <Link to="/monitoring/tax" className="inline-flex items-center gap-1.5 text-sm font-extrabold underline underline-offset-4">{content.taxLink}<ArrowUpRight size={16}/></Link>
+                </div>
+              </article>
+              <article className="flex flex-col rounded-[1.75rem] border border-[#c5ebad]/40 bg-[#e8f2f4] p-6 text-green-deep shadow-[9px_12px_0_rgba(0,0,0,.22)] sm:p-9">
+                <div className="flex items-center gap-3"><span className="grid size-12 place-items-center rounded-2xl bg-[#c3e3e9]"><Clock3 size={27} aria-hidden="true" /></span><span className="text-sm font-extrabold text-green-mid">{content.timelineEyebrow}</span></div>
+                <h3 className="mt-5 text-2xl font-extrabold leading-snug tracking-[-.035em] sm:text-3xl">{content.timelineTitle}</h3>
+                <p className="mt-4 text-base leading-8 text-charcoal/75">{content.timelineDescription}</p>
+                <ol className="relative mt-7 space-y-0 rounded-2xl border border-green-deep/15 bg-white px-5 py-3">
+                  {content.timelineSteps.map((step, index) => <li key={step} className="relative flex min-h-16 items-center gap-4 border-l-2 border-[#9bc7b0] py-3 pl-5 text-sm font-extrabold leading-6 last:border-transparent">
+                    <span className="absolute -left-[9px] top-1/2 size-4 -translate-y-1/2 rounded-full border-[3px] border-green-deep bg-white" aria-hidden="true" />
+                    <span className="text-green-mid">0{index + 1}</span>{step}
+                  </li>)}
+                </ol>
+                <Link to="/news" className="mt-auto inline-flex items-center gap-1.5 pt-7 text-sm font-extrabold underline underline-offset-4">{content.issueLink}<ArrowUpRight size={16}/></Link>
+              </article>
             </div>
           </div>
         </section>
