@@ -85,7 +85,7 @@ export default function SiyaArticleGuide() {
         <h2 id="seed-guide-title" className="editorial-title mt-2 text-xl font-bold text-navy">{ko ? "씨야와 대화해요" : "Talk with Siya"}</h2>
         <p className="my-2.5 text-xs leading-5 text-charcoal/65">{ko ? "씨앗 기사에 관해 물어보세요. 핵심 내용과 기사 링크를 찾아드릴게요." : "Ask about SEED articles. I'll find the key points and story links."}</p>
         <div className="seed-guide-messages" aria-live="polite">
-          {messages.length === 0 && <p className="seed-guide-tip">{ko ? "예: 상속세 과세 기준이 왜 문제인가요?" : "For example: Why is the inheritance tax threshold debated?"}</p>}
+          {messages.length === 0 && <p className="seed-guide-tip">{ko ? "예: 오늘의 뉴스를 알려줘" : "For example: Tell me today's news"}</p>}
           {messages.map((item, index) => <div className="seed-guide-exchange" key={`${index}-${item.question}`}>
             <p className="seed-guide-question">{item.question}</p>
             <p className="seed-guide-answer">{item.answer}</p>

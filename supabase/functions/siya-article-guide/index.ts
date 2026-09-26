@@ -85,9 +85,32 @@ function suggestQuestions(language: "ko" | "en") {
   return {
     grounded: true,
     answer: language === "ko"
-      ? "이런 질문을 해보세요.\n• 시민은 무엇인가요?\n• 민주는 왜 권력을 제한하는 일인가요?\n• 상속세 과세 기준이 왜 문제인가요?\n• 최신 입법뉴스 알려줘\n씨앗의 글과 공개된 입법감시 기록에서 핵심과 원문 링크를 찾아드릴게요."
-      : "Try asking:\n• What does SEED VOICE mean by citizen?\n• Why does democracy require limits on power?\n• Why is the inheritance tax threshold debated?\n• What are the latest published bills?\nI'll find the key points and links in SEED VOICE's published work.",
+      ? "이런 질문을 해보세요.\n• 오늘의 뉴스를 알려줘\n• 시민은 무엇인가요?\n• 상속세 과세 기준이 왜 문제인가요?\n• 최신 입법뉴스 알려줘\n씨앗의 글과 공개된 입법감시 기록에서 핵심과 원문 링크를 찾아드릴게요."
+      : "Try asking:\n• Tell me today's news\n• What does SEED VOICE mean by citizen?\n• Why is the inheritance tax threshold debated?\n• What are the latest published bills?\nI'll find the key points and links in SEED VOICE's published work.",
     sources: [],
+  };
+}
+
+function asksForTodaysNews(question: string) {
+  const normalized = question.toLowerCase().replace(/[^가-힣a-z0-9]+/g, "");
+  return /^(?:씨야)?(?:오늘(?:의)?(?:뉴스|기사|소식)|금일(?:뉴스|기사))(?:를|은|가|도|에대해)?(?:알려|보여|요약|뭐|무엇|추천|읽|$)/.test(normalized)
+    || /^(?:(?:tell|show)me|summarize)?today(?:s)?(?:news|stories|articles)/.test(normalized);
+}
+
+async function todaysNews(language: "ko" | "en") {
+  const published = (await articles()).filter((entry) => /^\/(?:news|briefings)\//.test(entry.path));
+  if (!published.length) return { grounded: false, answer: "", sources: [] };
+  const today = new Date(Date.now() + 9 * 60 * 60_000).toISOString().slice(0, 10);
+  const current = published.filter((entry) => entry.date === today);
+  const selected = (current.length ? current : published.filter((entry) => entry.date === published[0].date)).slice(0, 3);
+  const date = selected[0].date;
+  const intro = language === "ko"
+    ? (current.length ? `오늘(${date}) 씨앗의 소리에 게시된 글입니다.` : `오늘 새로 게시된 글은 아직 없어요. 가장 최근 게시일은 ${date}입니다.`)
+    : (current.length ? `Published by SEED VOICE today (${date}):` : `No new story is published today. The latest publication date is ${date}:`);
+  return {
+    grounded: true,
+    answer: `${intro}\n${selected.map((entry, index) => `${index + 1}. ${entry.title} — ${entry.summary.slice(0, 170)}`).join("\n")}`,
+    sources: selected.map((entry) => ({ title: entry.title, date: entry.date, url: `${SITE}${entry.path}` })),
   };
 }
 
@@ -191,6 +214,7 @@ Deno.serve(async (req) => {
     const quota = await rest("rpc/siya_allow_request", { method: "POST", body: JSON.stringify({ p_user_id: userId }) });
     if (!quota.ok) throw new Error(`Rate limit HTTP ${quota.status}`);
     if (!(await quota.json())) return json(req, { error: language === "ko" ? "오늘은 여기까지 대화할 수 있어요. 내일 다시 찾아주세요." : "You've reached today's question limit. Please return tomorrow." }, 429);
+    if (asksForTodaysNews(question)) return json(req, await todaysNews(language));
     if (asksForLatestLegislation(question)) return json(req, await latestLegislation(language));
     const matches = candidates(question, await articles());
     if (!matches.length) return json(req, { grounded: false, answer: "", sources: [] });
