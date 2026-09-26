@@ -8,14 +8,14 @@ export const inheritanceTaxFrozenThresholdTranslation: BriefingTranslation = {
   author: "SEED CIVIC BRIEFING",
   images: [
     {
-      alt: "Illustration of a family standing in front of Seoul apartment buildings at dusk",
-      caption: "Inherited property is generally valued at current market prices, while the lump-sum inheritance deduction remains at KRW 500 million. This is an illustration, not a photograph of the reported apartment.",
-      credit: "SEED VOICE illustration",
+      alt: "Symbolic AI composite of a family holding up the roof of its home under a huge stack of tax papers and a looming stamp",
+      caption: "A family is pressed under the weight of tax papers on its only home. AI composite image, not a documentary photograph.",
+      credit: "SEED VOICE · AI composite image",
     },
     {
-      alt: "Illustration of documents and a house key on a table, with apartment buildings outside the window",
-      caption: "Inheriting a valuable home does not also provide the cash required to pay its tax. This illustration does not depict an actual heir.",
-      credit: "SEED VOICE illustration",
+      alt: "House key, documents and calculator on a home dining table overlooking Seoul apartments",
+      caption: "Inheriting a valuable home does not also provide the cash required to pay its tax. AI composite image.",
+      credit: "SEED VOICE · AI composite image",
     },
     {
       src: "images/briefings/inheritance-frozen-threshold-chart-en.svg",

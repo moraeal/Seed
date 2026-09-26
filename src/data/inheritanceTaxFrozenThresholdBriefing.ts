@@ -14,16 +14,16 @@ export const inheritanceTaxFrozenThresholdBriefing: Briefing = {
   images: [
     {
       src: "images/briefings/inheritance-frozen-threshold-home.webp",
-      alt: "해 질 무렵 서울의 아파트들 앞에 선 가족의 실루엣을 그린 삽화",
-      caption: "집의 평가액은 현재의 시가를 따라 움직이지만 상속세 일괄공제는 1997년의 5억 원에 머물러 있습니다. 실제 특정 주택을 촬영한 사진은 아닙니다.",
-      credit: "씨앗의 소리 제작 삽화",
+      alt: "서류 더미와 무거운 도장 아래에서 집 지붕을 떠받치는 가족의 상징 장면",
+      caption: "집 한 채를 물려받는 가족 위로 무거운 세금 부담이 내려앉는 상황을 표현했습니다. AI 합성 이미지.",
+      credit: "씨앗의 소리 · AI 합성 이미지",
       sourceUrl: "",
     },
     {
       src: "images/briefings/inheritance-frozen-threshold-room.webp",
-      alt: "창밖 아파트를 배경으로 집 열쇠와 서류가 놓인 식탁의 삽화",
-      caption: "집 한 채가 남았어도 세금을 낼 현금이 함께 생기는 것은 아닙니다. 특정 상속인의 실제 사정을 재현한 장면은 아닙니다.",
-      credit: "씨앗의 소리 제작 삽화",
+      alt: "창밖 서울 아파트를 배경으로 집 열쇠와 서류, 계산기가 놓인 식탁",
+      caption: "집 한 채가 남았어도 세금을 낼 현금이 함께 생기는 것은 아닙니다. AI 합성 이미지.",
+      credit: "씨앗의 소리 · AI 합성 이미지",
       sourceUrl: "",
     },
     {
