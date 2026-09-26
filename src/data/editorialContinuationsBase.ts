@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "briefing:inheritance-tax-frozen-allowance-middle-class": {
+    ko: {
+      href: "/briefings/hospital-inheritance-tax-maternity-care",
+      title: "상속세 40억원이 330억원으로—정부는 기업을 계속할 자유까지 거둬도 됩니까",
+      relationship: "집 한 채에서 기업 승계로",
+      reason: "가족의 주거를 넘어서, 상속세가 병원과 일자리의 계속 운영에 어떤 부담을 주는지 이어서 살펴봅니다.",
+      listHref: "/briefings",
+      listLabel: "브리핑 전체 보기",
+    },
+    en: {
+      href: "/briefings/hospital-inheritance-tax-maternity-care",
+      title: "From KRW 4 Billion to KRW 33 Billion in Inheritance Tax",
+      relationship: "FROM A HOME TO BUSINESS CONTINUITY",
+      reason: "Continue from an inherited family home to the potential impact of inheritance tax on a hospital, its staff and its patients.",
+      listHref: "/briefings",
+      listLabel: "All briefings",
+    },
+  },
   "briefing:platform-advertising-cost-small-merchants": {
     ko: {
       href: "/columns/corporations-are-citizens-too",

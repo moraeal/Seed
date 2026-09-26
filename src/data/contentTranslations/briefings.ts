@@ -12,8 +12,10 @@ import { skHynixAiHackathonTranslation } from "./briefingSkHynixAiHackathon";
 import { seojinSchoolNeighborsTranslation } from "./briefingSeojinSchoolNeighbors";
 import { northKoreanPowsTranslation } from "./briefingNorthKoreanPows";
 import { platformAdvertisingTranslation } from "./briefingPlatformAdvertising";
+import { inheritanceTaxFrozenThresholdTranslation } from "./briefingInheritanceTaxFrozenThreshold";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "inheritance-tax-frozen-allowance-middle-class": inheritanceTaxFrozenThresholdTranslation,
   "platform-advertising-cost-small-merchants": platformAdvertisingTranslation,
   "north-korean-pows-south-korea-zelensky-un": northKoreanPowsTranslation,
   "seojin-school-neighbors-civic-solidarity": seojinSchoolNeighborsTranslation,
