@@ -8,11 +8,9 @@ type SectionItem = {
 };
 
 const sectionItems: SectionItem[] = [
-  { kicker: "TODAY'S SEED", labelKo: "오늘의 씨앗", labelEn: "Today's Seed" },
+  { kicker: "EDITOR'S PICK", labelKo: "대표 기사", labelEn: "Editor's Pick" },
+  { kicker: "START HERE", labelKo: "빠르게 읽기", labelEn: "Quick Reads" },
   { kicker: "HOT ISSUES", labelKo: "핫이슈", labelEn: "Hot Issues" },
-  { kicker: "CIVIC WATCH", labelKo: "시민감시", labelEn: "Civic Watch" },
-  { kicker: "BRIEFINGS", labelKo: "브리핑", labelEn: "Briefings" },
-  { kicker: "COLUMNS", labelKo: "칼럼", labelEn: "Columns" },
 ];
 
 function findSection(kicker: string) {
