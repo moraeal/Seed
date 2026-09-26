@@ -55,7 +55,13 @@ function NewsletterNudge() {
         aria-controls={stage === "open" ? "seed-nudge-card" : undefined}
         aria-expanded={stage === "open"}
       >
-        {stage === "ready" && <span className="seed-nudge-bubble">{ko ? "이메일 구독!" : "Subscribe by email!"}</span>}
+        {stage === "ready" && (
+          <span className="seed-nudge-bubble">
+            {pose === "writing"
+              ? (ko ? "구독신청 하시면.." : "When you subscribe...")
+              : (ko ? "기사 전체를 무료로 볼 수 있어요" : "You can read every article in full for free")}
+          </span>
+        )}
         <img
           className={`seed-nudge-character ${stage === "walking" ? "seed-nudge-walking" : "seed-nudge-writing"}`}
           src={`${imageBase}${stage === "walking" ? "seed-18-walking.png" : pose === "writing" ? "seed-12-writing.png" : "seed-14-checked.webp"}?v=20260926-three-poses`}
