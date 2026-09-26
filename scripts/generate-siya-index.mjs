@@ -27,7 +27,7 @@ function entry(item, path, edition = item) {
 }
 
 try {
-  const [{ newsArticles }, { getAllBriefingsNewestFirst }, { columns }, { legislativeCommentaries }, { taxCommentaries }, { seedLanguageArticlesKo }, { seedLanguageEnvironmentArticlesKo }] = await Promise.all([
+  const [{ newsArticles }, { getAllBriefingsNewestFirst }, { columns }, { legislativeCommentaries }, { taxCommentaries }, { seedLanguageArticlesKo }, { seedLanguageEnvironmentArticlesKo }, { publicInterestWatchCases }] = await Promise.all([
     server.ssrLoadModule("/src/data/news.ts"),
     server.ssrLoadModule("/src/data/allBriefings.ts"),
     server.ssrLoadModule("/src/data/columns.ts"),
@@ -35,6 +35,7 @@ try {
     server.ssrLoadModule("/src/data/taxCommentaries.ts"),
     server.ssrLoadModule("/src/data/seedLanguage.ts"),
     server.ssrLoadModule("/src/data/seedLanguageEnvironment.ts"),
+    server.ssrLoadModule("/src/data/newsTrackerRegistry.ts"),
   ]);
   const entries = [
     ...newsArticles.map((item) => entry(item, "/news")),
@@ -43,6 +44,18 @@ try {
     ...legislativeCommentaries.map((item) => entry(item, "/monitoring/legislation/commentary", item.editions.ko)),
     ...taxCommentaries.map((item) => entry(item, "/monitoring/tax/commentary", item.editions.ko)),
     ...[...seedLanguageArticlesKo, ...seedLanguageEnvironmentArticlesKo].map((item) => entry(item, "/seed-language")),
+    ...publicInterestWatchCases.map((item) => ({
+      title: item.title.ko,
+      summary: item.summary.ko,
+      date: item.updatedAt,
+      path: `/monitoring/${encodeURIComponent(item.slug)}`,
+      text: [item.sourceBasis.ko, ...(item.snapshot?.keyFacts ?? []).map((value) => value.ko),
+        ...item.confirmedFacts.map((value) => value.ko),
+        ...(item.keyChanges ?? []).map((value) => value.text.ko),
+        ...(item.timeline ?? []).flatMap((value) => [value.title.ko, value.description.ko]),
+        ...item.questions.map((value) => value.ko), ...item.proposals.map((value) => value.ko),
+      ].filter(Boolean).join("\n").slice(0, 14000),
+    })),
   ].filter(Boolean).sort((a, b) => b.date.localeCompare(a.date));
   await writeFile("public/siya-articles.json", JSON.stringify({ entries }));
   console.log(`Siya article index: ${entries.length} articles`);
