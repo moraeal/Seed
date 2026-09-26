@@ -1,8 +1,9 @@
 import { lazy, Suspense } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { AuthProvider } from "./auth";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import HomepageNewsletterNudge from "./components/HomepageNewsletterNudge";
 import InlinePageEditor from "./components/InlinePageEditor";
 import RouteMetadata from "./components/RouteMetadata";
 import ScrollToTop from "./components/ScrollToTop";
@@ -53,6 +54,8 @@ const EditorialDesk = lazy(() => import("./pages/EditorialDesk"));
 
 function AppShell() {
   const { language } = useLanguage();
+  const { pathname } = useLocation();
+  const showSiya = pathname === "/" || pathname === "/en" || /^\/(?:briefings|columns|news|seed-language|monitoring|research)\/[^/]+/.test(pathname);
 
   return (
     <div className="min-h-screen bg-paper text-charcoal">
@@ -121,6 +124,7 @@ function AppShell() {
         </Suspense>
       </main>
       <Footer />
+      {showSiya && <HomepageNewsletterNudge />}
       <InlinePageEditor />
     </div>
   );
