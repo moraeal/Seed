@@ -19,15 +19,15 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     en: "On October 2, 2026, South Korea's Prosecution Service will be abolished and replaced by a Prosecution Agency and a Serious Crimes Investigation Agency. This record follows where the powers to investigate, indict, seek warrants and review non-referral decisions actually move—and whether staffing, budgets and case transfers are ready.",
   },
   status: {
-    ko: "출범 7일 전·중수청장 후보자 추가 해명·최종 임용 대기",
-    en: "7 days to launch · Nominee issues further response · Final appointments pending",
+    ko: "출범 6일 전·디넷 증거 4만8천58건 처리 계획 확인·최종 임용 대기",
+    en: "6 days to launch · Plan confirmed for 48,058 D-Net evidence records · Final appointments pending",
   },
   openedAt: "2025-09-05",
-  updatedAt: "2026-09-25",
+  updatedAt: "2026-09-26",
   continuationEligible: true,
   nextCheck: {
-    ko: "사회적 약자 대상 7대 범죄의 보완·재수사 근거를 담은 중수청법 개정안의 공포일·법률번호와 최종 조문, 2차 특례임용 201명의 최종 선발 인원과 5급 이상 임용 예정자 212명의 확정·발령 결과, 공소청 직제·검사정원법 시행령의 공포문과 출범일 실제 검사 약 1,900명·형사법무직 938명 배치 결과, 김지용 중수청장 후보자의 인사청문요청서 제출·청문 일정, 이정현 검찰총장 직무대행이 밝힌 중수청·경찰과의 업무협약과 협력 절차, 경찰 현장지원 체계와 10월 2일 사건 이관·KICS 필수 기능 가동 여부",
-    en: "Promulgation date, act number and final text of the amendment covering supplementary and renewed investigations in seven vulnerable-victim crime categories; final selections from the 201 second-round applicants and confirmation and appointment of the 212 provisional senior staff; promulgated texts of the Prosecution Agency organization and prosecutor-ceiling decrees and the actual launch deployment of about 1,900 prosecutors and 938 criminal-legal-service staff; submission of the confirmation request and a hearing date for nominee Kim Ji-yong; any memorandum and working procedures with the investigation agency and police announced by acting prosecutor general Lee Jeong-hyeon; police field-support arrangements; and October 2 case transfers and essential KICS functions",
+    ko: "사회적 약자 대상 7대 범죄의 보완·재수사 근거를 담은 중수청법 개정안의 공포일·법률번호와 최종 조문, 2차 특례임용 201명의 최종 선발 인원과 5급 이상 임용 예정자 212명의 확정·발령 결과, 공소청 직제·검사정원법 시행령의 공포문과 출범일 실제 검사 약 1,900명·형사법무직 938명 배치 결과, 디넷에 남은 디지털증거 4만8천58건의 삭제·이관·잔존 건수와 기록 보존 절차, 김지용 중수청장 후보자의 인사청문요청서 제출·청문 일정, 이정현 검찰총장 직무대행이 밝힌 중수청·경찰과의 업무협약과 협력 절차, 경찰 현장지원 체계와 10월 2일 사건 이관·KICS 필수 기능 가동 여부",
+    en: "Promulgation date, act number and final text of the amendment covering supplementary and renewed investigations in seven vulnerable-victim crime categories; final selections from the 201 second-round applicants and confirmation and appointment of the 212 provisional senior staff; promulgated texts of the Prosecution Agency organization and prosecutor-ceiling decrees and the actual launch deployment of about 1,900 prosecutors and 938 criminal-legal-service staff; counts of the 48,058 D-Net digital-evidence records deleted, transferred or retained and the audit trail for those actions; submission of the confirmation request and a hearing date for nominee Kim Ji-yong; any memorandum and working procedures with the investigation agency and police announced by acting prosecutor general Lee Jeong-hyeon; police field-support arrangements; and October 2 case transfers and essential KICS functions",
   },
   heroImage: {
     src: "images/monitoring/prosecution-service-abolition-tracker-hero.webp",
@@ -145,6 +145,13 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       text: {
         ko: "김지용 중수청장 후보자 준비단은 한동훈 의원 휴대전화 포렌식에 관여하지 않았고, 윤석열 전 총장 친인척 사건에서는 재수사 명령과 한 차례 불기소 불승인을 거쳐 공소시효 10여 일을 남기고 불기소 의견을 수용했다고 해명했습니다. 날짜와 절차는 제시했지만 이를 뒷받침할 내부 기록은 공개하지 않았습니다.",
         en: "Kim Ji-yong's confirmation team said he had no role in the forensic examination of Han Dong-hoon's phone and accepted a non-indictment recommendation in a case involving former president Yoon's relatives only after ordering renewed investigation and rejecting one earlier recommendation, with roughly ten days left before the limitation period expired. The team supplied dates and procedural detail but did not release the underlying records.",
+      },
+    },
+    {
+      date: "2026-09-24",
+      text: {
+        ko: "법무부가 국회에 제출한 자료에서 디넷에 남은 디지털증거가 4만8천58건으로 확인됐습니다. 대검은 종결 사건 증거를 삭제하고 수사·기소중지 사건 증거는 관할 수사기관에 넘긴 뒤 폐기할 방침이지만, 실제 이관·삭제 건수와 검증 절차는 공개되지 않았습니다.",
+        en: "Justice Ministry data submitted to Parliament showed 48,058 digital-evidence records still held in D-Net. The Supreme Prosecutors' Office plans to delete records from closed cases and transfer evidence tied to active or suspended cases before removing it from D-Net, but actual transfer and deletion counts and verification procedures have not been published.",
       },
     },
   ],
@@ -774,6 +781,34 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-24",
+      title: {
+        ko: "디넷 디지털증거 4만8천58건, 삭제·이관 방침 확인",
+        en: "Plan confirmed to delete or transfer 48,058 D-Net evidence records",
+      },
+      description: {
+        ko: "김용민 의원이 법무부에서 제출받은 자료에 따르면 2012년 4월부터 2026년 6월까지 디넷에 등록된 디지털증거 19만7천460건 가운데 4만8천58건이 남아 있습니다. 올해 상반기에만 3천899건이 새로 등록됐고 68건만 폐기돼 보관율은 98.2%였습니다. 대검은 10월 2일 공소청 출범에 맞춰 재판 확정 등으로 끝난 사건의 증거를 삭제·폐기하고, 수사 중이거나 기소중지된 사건의 증거는 중수청 등 관할 수사기관에 넘긴 뒤 디넷에서 폐기할 방침이라고 밝혔습니다. 공판 중·미제 사건 정보 일부는 남기고 공소청에 디지털증거 자문위원회를 두는 계획도 제시했습니다. 이는 집행 전 방침입니다. 어떤 자료가 누구에게 넘어갔고 무엇이 삭제됐는지, 적법성 논란이 있는 자료까지 별도 검증했는지는 결과와 기록으로 확인해야 합니다.",
+        en: "Data obtained by lawmaker Kim Yong-min from the Justice Ministry show that 48,058 of the 197,460 digital-evidence records registered in D-Net from April 2012 through June 2026 remain in the system. In the first half of this year alone, 3,899 records were added and only 68 were destroyed, a retention rate of 98.2 percent. The Supreme Prosecutors' Office says that when the Prosecution Agency launches on October 2 it will delete evidence from cases closed by final judgments and transfer evidence tied to active or suspended cases to the Serious Crimes Investigation Agency or another competent investigator before removing it from D-Net. Some material tied to ongoing trials and unsolved cases would remain, and a new Digital Evidence Advisory Committee is planned under the Prosecution Agency. This is a pre-launch plan, not an implementation result. The public record must still show what was transferred to whom, what was deleted, and whether material whose collection may have been unlawful received a separate review.",
+      },
+      change: {
+        ko: "추상적이던 사건 이관 문제가 디지털증거 4만8천58건의 삭제·이관·잔존 기준과 검증 기록 문제로 구체화",
+        en: "The case-transfer problem becomes a concrete test of deletion, transfer and retention rules—and audit records—for 48,058 digital-evidence entries",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: {
+            ko: "수사권 사라지는데…\"검찰, 상반기 디넷 등록 디지털증거 4천건\"",
+            en: "Prosecution added nearly 4,000 digital-evidence records to D-Net in first half despite loss of investigative power",
+          },
+          url: "https://www.yna.co.kr/amp/view/AKR20260923188900004",
+          publishedAt: "2026-09-24",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "2026-10-02",
       title: {
         ko: "검찰청 폐지·공소청과 중수청 출범 예정",
@@ -885,6 +920,10 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       ko: "법무부는 이정현 수원고검장을 9월 23일자로 대검 차장검사에 전보했고, 이 차장이 검찰총장 직무를 대행하며 공소청 출범 준비를 지휘하고 있습니다.",
       en: "The Justice Ministry transferred Lee Jeong-hyeon from chief of the Suwon High Prosecutors' Office to deputy prosecutor general effective September 23; he is acting prosecutor general and directing preparations for the Prosecution Agency launch.",
     },
+    {
+      ko: "법무부가 국회에 제출한 자료에 따르면 2012년 4월부터 2026년 6월까지 디넷에 등록된 디지털증거 19만7천460건 가운데 4만8천58건이 남아 있습니다. 대검은 종결 사건 증거를 삭제하고 수사·기소중지 사건 증거는 관할 수사기관에 넘긴 뒤 디넷에서 폐기할 방침입니다.",
+      en: "Justice Ministry data submitted to Parliament show that 48,058 of the 197,460 digital-evidence records registered in D-Net from April 2012 through June 2026 remain in the system. The Supreme Prosecutors' Office plans to delete records from closed cases and transfer evidence tied to active or suspended cases before removing it from D-Net.",
+    },
   ],
   currentControversies: [
     {
@@ -922,6 +961,13 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
         en: "First-round final applicants covered 61.3 percent of authorized investigation-agency posts, and the second round added only 201 applicants. Of 212 provisional senior appointees, 80 are prosecutors, but final appointment orders remain pending. The Prosecution Agency structure has cleared the Cabinet, yet actual deployment of about 1,900 prosecutors and 938 criminal-legal-service staff—and the implementation of 2,525 general-service cuts without forced transfers—remain to be tested. Full KICS functionality is not expected until December. Whether the legal start date is also the date of normal public-facing operations will depend on actual staffing and case-processing results.",
       },
     },
+    {
+      title: { ko: "4만8천58건을 지우고 넘기는 기준은 기록으로 남는가", en: "Will the rules for deleting and transferring 48,058 records leave an audit trail?" },
+      description: {
+        ko: "종결 사건의 디지털증거를 삭제하고 진행 중인 사건 자료를 관할 수사기관에 넘기는 것은 기관 폐지에 필요한 정리입니다. 그러나 압수 범위를 벗어난 정보가 장기간 보관됐다는 논란까지 이관이나 폐기로 끝낼 수는 없습니다. 자료별 법적 근거, 이관받은 기관, 삭제 시각과 승인자, 이의제기·감사 절차가 남아야 시민이 자신의 정보가 어떻게 처리됐는지 확인할 수 있습니다. 공소청 디지털증거 자문위원회의 구성과 심의 기준도 아직 공개되지 않았습니다.",
+        en: "Deleting digital evidence from closed cases and transferring material tied to active cases are necessary parts of abolishing an agency. But longstanding allegations that information beyond the scope of warrants was retained cannot be resolved by transfer or deletion alone. The legal basis for each category, receiving agency, deletion time and approver, and objection and audit procedures need a public record so citizens can learn how their information was handled. The membership and review standards of the planned Digital Evidence Advisory Committee also remain undisclosed.",
+      },
+    },
   ],
   sectionHeadings: {
     facts: { ko: "검찰청 폐지로 확실히 달라지는 것", en: "What abolition will definitely change" },
@@ -948,6 +994,10 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     {
       ko: "KICS 필수 기능의 출범일 장애 여부와 12월 전체 기능 구축 완료 여부",
       en: "Launch-day failures in essential KICS services and completion of the full system by December",
+    },
+    {
+      ko: "디넷에 남은 4만8천58건 가운데 종결 사건 삭제 건수, 중수청·경찰 등 기관별 이관 건수, 공판 중·미제 사건 잔존 건수와 자료별 승인·감사 기록",
+      en: "Among the 48,058 remaining D-Net records, counts deleted with closed cases, transferred to the investigation agency, police or other bodies, or retained for trials and unsolved cases, together with item-level approval and audit records",
     },
     {
       ko: "김지용 후보자의 인사청문요청서 제출일·청문 일정과 추가 검증에 사용된 이의제기서·전산 기록, 재기수사 명령서·불기소 불승인 기록·포렌식 업무 분장 및 결재 기록",
@@ -1059,6 +1109,11 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       label: { ko: "머니투데이 — 김지용 후보자 측 추가 해명", en: "MoneyToday — Further response from nominee Kim's confirmation team" },
       url: "https://www.mt.co.kr/society/2026/09/23/2026092310404069535",
       note: { ko: "한동훈 의원 휴대전화 포렌식 소관과 윤석열 전 총장 친인척 사건의 재기수사 명령·불기소 불승인·최종 수용 날짜를 담은 9월 23일 해명", en: "September 23 response setting out responsibility for the phone-forensics process and dates for renewed investigation, rejection and eventual acceptance of a non-indictment recommendation in the case involving former president Yoon's relatives" },
+    },
+    {
+      label: { ko: "연합뉴스 — 디넷 디지털증거 보관·이관 계획", en: "Yonhap — D-Net digital-evidence holdings and transfer plan" },
+      url: "https://www.yna.co.kr/amp/view/AKR20260923188900004",
+      note: { ko: "법무부가 국회에 제출한 2026년 상반기 등록·폐기 수치와 누적 4만8천58건, 대검의 공소청 출범일 삭제·이관 방침", en: "Justice Ministry data submitted to Parliament on first-half registrations and deletions, 48,058 cumulative records retained, and the Supreme Prosecutors' Office launch-day deletion and transfer plan" },
     },
   ],
 };
