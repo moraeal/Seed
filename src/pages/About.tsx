@@ -179,7 +179,7 @@ export default function About() {
             <h2 className="mt-3 text-3xl font-extrabold tracking-[-.04em] sm:text-5xl">{content.storiesTitle}</h2>
             <p className="mt-4 max-w-2xl leading-7 text-white/75">{content.storiesLead}</p>
             <div className="mt-9 grid gap-4 md:grid-cols-2">
-              {content.stories.map((story) => <Link key={story.to} to={story.to} className="flex min-h-52 flex-col rounded-3xl border-2 border-white/40 bg-white/10 p-7 shadow-[8px_10px_0_rgba(188,225,170,.3),0_22px_38px_rgba(0,0,0,.22)] transition duration-200 hover:-translate-y-1 hover:bg-white/20">
+              {content.stories.map((story) => <Link key={story.to} to={story.to} className="flex min-h-52 flex-col rounded-3xl border border-white/25 bg-white/10 p-7 transition-colors duration-200 hover:bg-white/15">
                 <span className="text-xs font-extrabold text-[#c5ebad]">{story.label}</span>
                 <h3 className="mt-4 text-xl font-extrabold leading-snug tracking-[-.035em] sm:text-2xl">{story.title}</h3>
                 <span className="mt-auto inline-flex items-center gap-1 pt-5 text-sm text-white/75">{story.description}<ArrowUpRight size={15}/></span>
