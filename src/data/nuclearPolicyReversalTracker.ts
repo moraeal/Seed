@@ -23,10 +23,10 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     en: "Policy reversal · Further reactors under review",
   },
   openedAt: "2017-10-24",
-  updatedAt: "2026-09-17",
+  updatedAt: "2026-09-26",
   nextCheck: {
-    ko: "제12차 전력수급기본계획의 추가 원전 기수와 수요 산정 근거, 서남권 투자계획의 기업별 확정 여부, HMM을 포함한 기업 이전 과정의 동의·거부 절차, 탈원전에서 원전 확대로 바뀌며 발생한 전환비용",
-    en: "The number of additional reactors and demand assumptions in the 12th electricity plan; firm-level commitments in the southwest investment package; consent and refusal rights in corporate relocations including HMM; and the transition costs created by reversing the phase-down policy",
+    ko: "12월 원전 공론화위원회 권고안과 제12차 전력수급기본계획 정부안, 추가 원전 기수·부지·비용, 서남권 투자계획의 기업별 확정 여부, HMM을 포함한 기업 이전 과정의 동의·거부 절차, 탈원전에서 원전 확대로 바뀌며 발생한 전환비용",
+    en: "The nuclear-deliberation committee's December recommendation and the government's 12th electricity-plan draft; the number, sites and costs of additional reactors; firm-level commitments in the southwest investment package; consent and refusal rights in corporate relocations including HMM; and the transition costs created by reversing the phase-down policy",
   },
   heroImage: {
     src: "images/monitoring/nuclear-policy-reversal-tracker-hero.webp",
@@ -71,6 +71,20 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
       text: {
         ko: "서남권 반도체 산단 확대에 필요한 전력수요를 근거로 추가 원전 검토가 공식화됐습니다.",
         en: "Additional reactors entered formal consideration, justified by power demand from expanded regional semiconductor projects.",
+      },
+    },
+    {
+      date: "2026-08-20",
+      text: {
+        ko: "3대 메가프로젝트를 반영한 2040년 목표 최대전력 잠정치가 158.4~165.0GW로 제시됐습니다. 4월 전망보다 26.6~26.8GW 높아졌습니다.",
+        en: "A provisional forecast incorporating the three megaprojects put 2040 target peak demand at 158.4 to 165.0 GW, 26.6 to 26.8 GW above the April estimate.",
+      },
+    },
+    {
+      date: "2026-09-22",
+      text: {
+        ko: "정부가 원전의 역할을 묻는 3개월 공론화에 착수하면서 제12차 전기본 정부안 목표를 10월에서 12월로 늦췄습니다.",
+        en: "The government launched a three-month deliberation on nuclear power's role and moved the target for its 12th electricity-plan draft from October to December.",
       },
     },
   ],
@@ -268,6 +282,34 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-08-20",
+      title: {
+        ko: "2040년 최대전력 수요 전망 26.6~26.8GW 상향",
+        en: "2040 peak-demand forecast rises by 26.6 to 26.8 GW",
+      },
+      description: {
+        ko: "제12차 전기본 수립 총괄위원회는 3대 메가프로젝트와 경제성장률 재전망을 반영해 2040년 목표 최대전력을 기준 시나리오 158.4GW, 상향 시나리오 165.0GW로 제시했습니다. 4월 잠정치 131.8~138.2GW보다 26.6~26.8GW 높은 수치입니다. 첨단산업과 데이터센터 수요는 각각 20.6GW와 7.9GW 늘려 반영됐습니다. 아직 발전원별 설비계획이 아니라 수요 전망 잠정안입니다.",
+        en: "The committee drafting the 12th plan incorporated the three megaprojects and revised growth assumptions, putting 2040 target peak demand at 158.4 GW in the reference scenario and 165.0 GW in the higher scenario. That is 26.6 to 26.8 GW above the April provisional range of 131.8 to 138.2 GW. Advanced-industry and data-center demand were raised by 20.6 GW and 7.9 GW respectively. These are provisional demand assumptions, not a finalized generation-capacity plan.",
+      },
+      change: {
+        ko: "추가 원전 논의의 수요 근거가 구체적인 잠정 수치로 제시됐습니다.",
+        en: "The demand case behind discussion of further reactors was quantified in a provisional forecast.",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: {
+            ko: "'3대 메가' 반영시 2040년 전력수요 27GW↑, '원전 19기 용량'",
+            en: "Three megaprojects lift 2040 power-demand forecast by about 27 GW",
+          },
+          url: "https://www.yna.co.kr/view/AKR20260820110800530",
+          publishedAt: "2026-08-20",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "2026-08-26",
       title: {
         ko: "전기요금으로 기업의 지역 이전과 투자를 유도",
@@ -289,6 +331,44 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
         },
       ],
     },
+    {
+      date: "2026-09-22",
+      title: {
+        ko: "원전 역할 3개월 공론화·12차 전기본 정부안 12월로 연기",
+        en: "Three-month nuclear deliberation pushes government draft to December",
+      },
+      description: {
+        ko: "정부는 국무회의에 원전 공론화 추진계획을 보고하고 11명 이내의 중립적 공론화위원회, 시민참여단 숙의토론, 전문가 공개토론과 온라인 의견수렴을 약 3개월간 진행하기로 했습니다. 공론화위 권고안은 12월을 목표로 하며 제12차 전기본 정부안 목표도 10월에서 12월로 늦춰졌습니다. 공론 결과가 그대로 원전 기수로 확정되는 것은 아니며, 정부는 전력수요·전력계통 등 전문 검토를 함께 반영한다고 밝혔습니다.",
+        en: "The government reported a nuclear-deliberation plan to the Cabinet and will run about three months of citizen-panel deliberation, expert public forums and online input under a neutral committee of up to eleven members. The committee's recommendation and the government draft of the 12th plan are now targeted for December rather than October. The deliberation will not itself fix a reactor count; the government says it will combine the recommendation with technical reviews of demand and the power grid.",
+      },
+      change: {
+        ko: "추가 원전은 검토 발언 단계에서 공식 공론 절차로 넘어갔지만 기수·부지·비용은 아직 정해지지 않았습니다.",
+        en: "Further reactors moved from ministerial discussion into a formal public process, but their number, sites and costs remain undecided.",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: {
+            ko: "전력수요 급증 전망에 '원전 역할' 묻는다…3개월 공론 진행(종합)",
+            en: "Government opens three-month deliberation on nuclear power's role",
+          },
+          url: "https://www.yna.co.kr/view/AKR20260921182751530",
+          publishedAt: "2026-09-22",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "기후에너지환경부", en: "Ministry of Climate, Energy and Environment" },
+          title: {
+            ko: "미래 전력수급에서 원전의 역할, 국민과 함께 논의한다",
+            en: "Discussing nuclear power's role in the future electricity supply with the public",
+          },
+          url: "https://mcee.go.kr/m/mob/board/read.do?boardCategoryId=&boardId=1892720&boardMasterId=939&maxIndexPages=10&maxPageItems=10&menuId=156&orgCd=&pagerOffset=0&searchKey=&searchValue=",
+          publishedAt: "2026-09-22",
+          kind: "document",
+        },
+      ],
+    },
   ],
   confirmedFacts: [
     {
@@ -306,6 +386,14 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     {
       ko: "정부는 전기요금과 기반시설을 활용해 전력 다소비 기업의 비수도권 투자와 이전을 유도하고 있습니다.",
       en: "The government is using electricity pricing and infrastructure policy to steer power-intensive investment and relocation outside the capital region.",
+    },
+    {
+      ko: "3대 메가프로젝트를 반영한 2040년 목표 최대전력 잠정치는 158.4~165.0GW로, 4월 전망보다 26.6~26.8GW 상향됐습니다.",
+      en: "The provisional 2040 target peak-demand forecast incorporating the three megaprojects is 158.4 to 165.0 GW, 26.6 to 26.8 GW above the April estimate.",
+    },
+    {
+      ko: "정부는 9월 22일 약 3개월의 원전 역할 공론화에 착수했고, 공론화위 권고안과 제12차 전기본 정부안 목표를 12월로 잡았습니다. 권고안만으로 원전 기수가 확정되는 구조는 아닙니다.",
+      en: "On September 22, the government launched an approximately three-month deliberation on nuclear power's role and targeted December for both the committee recommendation and the government draft. The recommendation alone will not determine a reactor count.",
     },
   ],
   currentControversies: [
@@ -352,8 +440,8 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
   ],
   followUpChecks: [
     {
-      ko: "제12차 전력수급기본계획이 반도체와 AI 수요를 중복 계산하지 않았는지, 수요가 줄어들 때 설비계획을 조정할 장치가 있는지",
-      en: "Whether the 12th electricity plan double-counts semiconductor and AI demand, and whether capacity can be adjusted if demand falls",
+      ko: "2040년 목표 최대전력 158.4~165.0GW 잠정치가 기업 투자 취소·지연 가능성을 어떻게 반영했는지, 수요가 줄어들 때 설비계획을 조정할 장치가 있는지",
+      en: "How the provisional 2040 target peak-demand range of 158.4 to 165.0 GW accounts for cancelled or delayed corporate investment, and whether capacity can be adjusted if demand falls",
     },
     {
       ko: "추가 원전의 기수와 부지, 건설비, 사용후핵연료 처리비용, 송전망 비용을 함께 공개하는지",
@@ -417,6 +505,18 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     {
       label: { ko: "산업용 지역 전기요금제 설계안", en: "Regional industrial electricity-rate proposal" },
       url: "https://zdnet.co.kr/view/?no=20260826180332",
+    },
+    {
+      label: { ko: "연합뉴스 — 2040년 전력수요 재전망 잠정안", en: "Yonhap — Provisional revision of the 2040 power-demand forecast" },
+      url: "https://www.yna.co.kr/view/AKR20260820110800530",
+    },
+    {
+      label: { ko: "기후에너지환경부 — 원전 공론화 추진계획", en: "Ministry of Climate, Energy and Environment — Nuclear deliberation plan" },
+      url: "https://mcee.go.kr/m/mob/board/read.do?boardCategoryId=&boardId=1892720&boardMasterId=939&maxIndexPages=10&maxPageItems=10&menuId=156&orgCd=&pagerOffset=0&searchKey=&searchValue=",
+    },
+    {
+      label: { ko: "연합뉴스 — 원전 역할 3개월 공론화와 전기본 일정 변경", en: "Yonhap — Three-month nuclear deliberation and revised planning schedule" },
+      url: "https://www.yna.co.kr/view/AKR20260921182751530",
     },
   ],
 };
