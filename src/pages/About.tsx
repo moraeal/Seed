@@ -207,8 +207,8 @@ export default function About() {
                   </div>
                 </div>
                 <div className="mt-auto flex flex-wrap gap-x-6 gap-y-3 pt-7">
-                  <Link to="/monitoring/legislation" className="inline-flex items-center gap-1.5 text-sm font-extrabold underline underline-offset-4">{content.legislationLink}<ArrowUpRight size={16}/></Link>
-                  <Link to="/monitoring/tax" className="inline-flex items-center gap-1.5 text-sm font-extrabold underline underline-offset-4">{content.taxLink}<ArrowUpRight size={16}/></Link>
+                  <Link to="/monitoring/legislation#today-bills" className="inline-flex items-center gap-1.5 text-sm font-extrabold underline underline-offset-4">{content.legislationLink}<ArrowUpRight size={16}/></Link>
+                  <Link to="/monitoring/tax#today-tax-policies" className="inline-flex items-center gap-1.5 text-sm font-extrabold underline underline-offset-4">{content.taxLink}<ArrowUpRight size={16}/></Link>
                 </div>
               </article>
               <article className="flex flex-col rounded-[1.75rem] border border-[#c5ebad]/40 bg-[#e8f2f4] p-6 text-green-deep shadow-[9px_12px_0_rgba(0,0,0,.22)] sm:p-9">
@@ -221,7 +221,7 @@ export default function About() {
                     <span className="text-green-mid">0{index + 1}</span>{step}
                   </li>)}
                 </ol>
-                <Link to="/news" className="mt-auto inline-flex items-center gap-1.5 pt-7 text-sm font-extrabold underline underline-offset-4">{content.issueLink}<ArrowUpRight size={16}/></Link>
+                <Link to="/monitoring/yeosu-world-island-expo-tracker#issue-timeline" className="mt-auto inline-flex items-center gap-1.5 pt-7 text-sm font-extrabold underline underline-offset-4">{content.issueLink}<ArrowUpRight size={16}/></Link>
               </article>
             </div>
           </div>

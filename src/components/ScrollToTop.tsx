@@ -17,11 +17,27 @@ export default function ScrollToTop() {
     }
 
     const anchorId = decodeURIComponent(location.hash.slice(1));
-    window.requestAnimationFrame(() => {
-      document.getElementById(anchorId)?.scrollIntoView({ block: "start" });
+    let frame = 0;
+    const scrollToAnchor = () => {
+      const target = document.getElementById(anchorId);
+      if (!target) return false;
+      frame = window.requestAnimationFrame(() => target.scrollIntoView({ block: "start", behavior: "instant" }));
+      return true;
+    };
+
+    // Route components load lazily. Wait for the destination section to mount.
+    if (scrollToAnchor()) return () => window.cancelAnimationFrame(frame);
+    const observer = new MutationObserver(() => {
+      if (scrollToAnchor()) observer.disconnect();
     });
+    observer.observe(document.getElementById("root") ?? document.body, { childList: true, subtree: true });
+    const timeout = window.setTimeout(() => observer.disconnect(), 8000);
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(timeout);
+      window.cancelAnimationFrame(frame);
+    };
   }, [location.key, location.pathname, location.search, location.hash]);
 
   return null;
 }
-

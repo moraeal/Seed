@@ -197,7 +197,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
         )}
 
         {!!item.timeline?.length && (
-          <section className="mt-14" aria-labelledby="timeline-title">
+          <section id="issue-timeline" className="mt-14 scroll-mt-24" aria-labelledby="timeline-title">
             <details className="group" open={!layered}>
               <summary className="flex cursor-pointer list-none items-end justify-between gap-4 border-b-2 border-navy pb-4">
                 <div>
