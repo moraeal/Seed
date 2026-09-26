@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../i18n";
 import NewsletterSignup from "./NewsletterSignup";
 
-const dismissalKey = "seed-newsletter-nudge-dismissed";
 type Stage = "hidden" | "walking" | "ready" | "open";
 
 export default function HomepageNewsletterNudge() {
@@ -13,10 +12,6 @@ export default function HomepageNewsletterNudge() {
   const timers = useRef<number[]>([]);
 
   useEffect(() => {
-    try {
-      if (sessionStorage.getItem(dismissalKey) === "1") return;
-    } catch { /* The nudge still works when storage is unavailable. */ }
-
     timers.current = [
       window.setTimeout(() => setStage("walking"), 9000),
       window.setTimeout(() => setStage("ready"), 10100),
@@ -29,7 +24,6 @@ export default function HomepageNewsletterNudge() {
   const dismiss = () => {
     timers.current.forEach(window.clearTimeout);
     setStage("hidden");
-    try { sessionStorage.setItem(dismissalKey, "1"); } catch { /* No storage required. */ }
   };
   const imageBase = `${import.meta.env.BASE_URL}images/seed-character/`;
 
