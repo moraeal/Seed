@@ -1,5 +1,7 @@
 # SEED publishing rules
 
+- For AI-generated article images, use the concise disclosure “AI 이미지” in Korean and “AI image” in English. Avoid boilerplate such as “not an actual family/person/photo” in image captions. The shared figure caption derives this label from the image credit, so do not repeat it in caption text.
+
 - Do not use OhmyNews (오마이뉴스) as a source, link, image provider, or source-credit outlet in any new or updated SEED article, tracker, briefing, column, commentary, translation, or metadata. Replace any OhmyNews material encountered during an edit with a suitable source from another outlet.
 
 - Paired 5-minute articles and deep reads must share the same primary image, body images, and charts from common data references. Position shared visuals at the relevant section in each edition; do not duplicate an image within one page. Apply replacements to both articles and both languages together. Deep reads remain excluded from newsletter sends.
