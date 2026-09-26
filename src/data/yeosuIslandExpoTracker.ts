@@ -23,10 +23,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     en: "Fair under way · Criminal complaint filed · Outcomes tracked",
   },
   openedAt: "2018-09-05",
-  updatedAt: "2026-09-25",
+  updatedAt: "2026-09-26",
   nextCheck: {
-    ko: "9월 21일 고발사건의 광주지검 접수·배당과 실제 수사 착수 여부, 피고발인과 조직위의 구체적 입장, 누적 입장객을 유료·무료·단체·초청·공무출장·전국 섬 주민 무료입장으로 나눈 집계, 각 무료입장 정책의 규모와 수익 영향, 개도·금오도 셔틀의 실제 이용실적, 수의계약을 포함한 계약 원문과 집행액, 콘텐츠 보완 추경 7억 원의 의결·집행, 사업수익 120억 원의 달성 여부와 폐막 뒤 최종 정산",
-    en: "Receipt and assignment of the September 21 complaint at the Gwangju District Prosecutors' Office and whether a formal investigation begins; specific responses from those named and the organizing committee; cumulative attendance split into paid, free, group, invited, publicly funded staff and nationwide island-resident admissions; the scale and revenue effect of each free-admission policy; actual use of Gaedo and Geumodo shuttles; contract documents and spending including negotiated contracts; approval and use of the KRW 700 million content supplement; progress toward the KRW 12 billion revenue target; and final settlement after closing",
+    ko: "9월 21일 고발사건의 광주지검 접수·배당과 실제 수사 착수 여부, 피고발인과 조직위의 구체적 입장, 누적 입장객을 유료·무료·단체·초청·공무출장·전국 섬 주민 무료입장으로 나눈 집계, 각 무료입장 정책의 규모와 수익 영향, 개도·금오도 셔틀의 실제 이용실적, 수의계약을 포함한 계약 원문과 집행액, 예결위를 통과한 콘텐츠 보완 추경 7억 원의 본회의 최종 처리·계약·집행, 사업수익 120억 원의 달성 여부와 폐막 뒤 최종 정산",
+    en: "Receipt and assignment of the September 21 complaint at the Gwangju District Prosecutors' Office and whether a formal investigation begins; specific responses from those named and the organizing committee; cumulative attendance split into paid, free, group, invited, publicly funded staff and nationwide island-resident admissions; the scale and revenue effect of each free-admission policy; actual use of Gaedo and Geumodo shuttles; contract documents and spending including negotiated contracts; final council action, contracts and spending for the KRW 700 million content supplement that cleared the budget committee; progress toward the KRW 12 billion revenue target; and final settlement after closing",
   },
   heroImage: {
     src: "images/monitoring/yeosu-island-expo-tracker-hero.webp",
@@ -84,10 +84,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       },
     },
     {
-      date: "2026-09-15",
+      date: "2026-09-17",
       text: {
-        ko: "개막 열흘 뒤 특별시의회 추경 심사에 콘텐츠 보완비 7억 원이 올라왔고, 집행부는 기존 콘텐츠의 부족한 부분을 보완하기 위한 예산이라고 설명했습니다.",
-        en: "Ten days after opening, a KRW 700 million content supplement reached council review; the administration said it was needed to remedy shortcomings in the existing program.",
+        ko: "개막 뒤 편성된 콘텐츠 보완비 7억 원이 특별시의회 예결위를 삭감 없이 통과했습니다. 본회의 의결과 실제 계약·집행은 별도 확인 대상입니다.",
+        en: "A KRW 700 million post-opening content supplement cleared the special-city council's budget committee without a cut. Final plenary action, contracts and spending remain to be verified.",
       },
     },
     {
@@ -590,21 +590,32 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       ],
     },
     {
-      date: "2026-09-15",
+      date: "2026-09-17",
       title: {
-        ko: "개막 뒤 콘텐츠 보완비 7억 원 추경 심사",
-        en: "KRW 700 million content supplement reviewed after opening",
+        ko: "개막 뒤 콘텐츠 보완비 7억 원, 예결위 삭감 없이 통과",
+        en: "KRW 700 million post-opening content supplement clears budget committee intact",
       },
       description: {
-        ko: "전남광주통합특별시의회 농수산위원회는 박람회 개막 열흘 뒤인 9월 15일 제1회 추가경정예산안을 심사하면서 콘텐츠 행사비 7억 원의 편성 시점을 따졌습니다. 류기준 위원장은 이미 행사가 시작된 뒤 예산을 요구한 것은 사전 준비 부족을 드러낸 것 아니냐고 지적했습니다. 집행부는 관람객 유치를 위해 기존 콘텐츠의 부족한 부분을 보완하려는 예산이라고 답했습니다. 현재 확인된 것은 추경안 편성과 상임위 심사이며, 최종 의결액과 실제 계약·집행 내역은 아직 확인되지 않았습니다.",
-        en: "On September 15, ten days after the fair opened, the South Jeolla–Gwangju council's agriculture and fisheries committee questioned why KRW 700 million for fair content had been placed in the first supplementary budget only after opening. Committee chair Ryu Gi-jun asked whether the timing revealed inadequate preparation. The administration said the money was intended to address shortcomings in existing content and attract visitors. What is confirmed so far is the budget proposal and committee review; final approval, contracts and actual spending remain unverified.",
+        ko: "전남광주통합특별시의회 농수산위원회는 박람회 개막 열흘 뒤인 9월 15일 제1회 추가경정예산안을 심사하면서 콘텐츠 행사비 7억 원의 편성 시점을 따졌습니다. 집행부는 기존 콘텐츠의 부족한 부분을 보완하고 관람객을 늘리는 데 필요하다고 설명했습니다. 삭감 검토를 거친 이 예산은 9월 17일 예산결산특별위원회에서 원안대로 유지됐습니다. 예결위 통과는 확인됐지만 본회의 최종 처리 결과와 5억 원 문화행사·2억 원 이동지원의 계약 및 실제 집행은 아직 별도로 확인해야 합니다.",
+        en: "On September 15, ten days after the fair opened, the South Jeolla–Gwangju council's agriculture and fisheries committee questioned why KRW 700 million for fair content had been placed in the first supplementary budget only after opening. The administration said the money was needed to remedy shortcomings and increase attendance. After members considered a cut, the budget committee retained the full amount on September 17. That committee vote is confirmed, but the plenary outcome and the contracts and actual spending for KRW 500 million in cultural programming and KRW 200 million in visitor transport still require separate verification.",
       },
       change: {
-        ko: "개막 뒤 운영 보완이 프로그램 조정을 넘어 추가 재정 투입 심사로 확대",
-        en: "Post-opening fixes expand from program changes to a new request for public funding",
+        ko: "추가 재정 요청이 상임위 심사를 넘어 예결위 의결 단계로 진전",
+        en: "The additional funding request advances from committee scrutiny to a budget-committee vote",
       },
       status: "pending",
       sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: {
+            ko: "전남광주시 첫 추경 예결위 통과…섬박람회 7억 원도 유지",
+            en: "First supplementary budget clears committee with the KRW 700 million fair allocation intact",
+          },
+          url: "https://www.yna.co.kr/view/AKR20260917200400054",
+          publishedAt: "2026-09-17",
+          kind: "article",
+          thumbnailSrc: "https://img9.yna.co.kr/photo/cms/2026/09/16/82/PCM20260916000182990_P4.jpg",
+        },
         {
           publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
           title: {
@@ -614,7 +625,16 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
           url: "https://www.yna.co.kr/view/AKR20260916131800054",
           publishedAt: "2026-09-16",
           kind: "article",
-          thumbnailSrc: "https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202609/16/yonhap/20260916154153897jbsn.jpg",
+        },
+        {
+          publisher: { ko: "매일경제", en: "Maeil Business Newspaper" },
+          title: {
+            ko: "100억 넘는 마케팅비 있는데…여수 섬박람회 또 7억원 추경",
+            en: "Yeosu fair seeks another KRW 700 million despite an existing marketing budget above KRW 10 billion",
+          },
+          url: "https://m.mk.co.kr/news/all/12155737",
+          publishedAt: "2026-09-17",
+          kind: "article",
         },
       ],
     },
@@ -880,8 +900,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       en: "On September 15, organizers and Yeosu said they had expanded performances, activities and shade, added iced-water and umbrella support, and begun 14 daily free shuttle trips to the Namdo K-Garden Festival in response to early feedback.",
     },
     {
-      ko: "전남광주통합특별시는 개막 열흘 뒤 콘텐츠 행사비 7억 원을 추가경정예산안에 편성했고, 9월 15일 특별시의회 상임위원회 심사를 받았습니다. 최종 의결과 집행은 아직 확인되지 않았습니다.",
-      en: "Ten days after opening, the South Jeolla–Gwangju authority placed KRW 700 million for fair content in a supplementary budget reviewed by a council committee on September 15. Final approval and spending have not yet been confirmed.",
+      ko: "전남광주통합특별시는 개막 열흘 뒤 콘텐츠 행사비 7억 원을 추가경정예산안에 편성했습니다. 이 가운데 5억 원은 문화행사, 2억 원은 관람객 이동지원이며 9월 17일 특별시의회 예결위를 삭감 없이 통과했습니다. 본회의 최종 처리와 실제 집행은 아직 확인되지 않았습니다.",
+      en: "Ten days after opening, the South Jeolla–Gwangju authority placed KRW 700 million for fair content in a supplementary budget: KRW 500 million for cultural programming and KRW 200 million for visitor transport. The full amount cleared the council's budget committee on September 17. Final plenary action and actual spending have not yet been confirmed.",
     },
     {
       ko: "조직위는 9월 16일부터 신기항과 주행사장을 잇는 대형버스 1대를 하루 5회 운행하기 시작했습니다. 운행 시작 공지는 주행사장 오전 8시 10분 첫차와 신기항 오후 7시 40분 막차를 안내했으며, 9월 23일 공개된 시간표는 출발시각이 달라졌습니다.",
@@ -933,8 +953,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
         en: "How much of the post-approval expansion was reassessed?",
       },
       description: {
-        ko: "국제행사 승인은 248억 원 기본사업을 대상으로 이뤄졌습니다. 직접사업이 713억 원으로 늘고 개최기간과 관람객 목표까지 달라진 데 이어, 개막 뒤 콘텐츠 보완비 7억 원까지 추경안에 편성됐습니다. 확대된 사업을 어떤 기준으로 다시 검증했고 추가 예산을 어디에 쓸 것인지 공개자료만으로는 충분히 보이지 않습니다.",
-        en: "International-event approval covered a KRW 24.8 billion base. Direct spending later reached KRW 71.3 billion, the duration and attendance targets changed, and a further KRW 700 million content supplement was proposed after opening. Public records do not yet clearly show how the expanded program was reassessed or exactly how the new money would be spent.",
+        ko: "국제행사 승인은 248억 원 기본사업을 대상으로 이뤄졌습니다. 직접사업이 713억 원으로 늘고 개최기간과 관람객 목표까지 달라진 데 이어, 개막 뒤 콘텐츠 보완비 7억 원이 편성돼 예결위까지 통과했습니다. 확대된 사업을 어떤 기준으로 다시 검증했고 문화행사 5억 원과 이동지원 2억 원을 어떤 계약으로 집행할 것인지 공개자료만으로는 충분히 보이지 않습니다.",
+        en: "International-event approval covered a KRW 24.8 billion base. Direct spending later reached KRW 71.3 billion, the duration and attendance targets changed, and a further KRW 700 million post-opening content supplement has now cleared the budget committee. Public records do not yet clearly show how the expanded program was reassessed or how the KRW 500 million for cultural programming and KRW 200 million for visitor transport will be contracted and spent.",
       },
     },
     {
@@ -991,8 +1011,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
   questions: [],
   proposals: [],
   caution: {
-    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 콘텐츠 보완비 7억 원은 현재 추경안 편성·상임위 심사 단계이므로 확정 지출로 보거나 713억 원에 곧바로 더해서도 안 됩니다. 13일간 입장객 12만8,217명은 유료 입장객만을 뜻하지 않으며 출장 처리된 공무원 관람이 포함될 수 있습니다. 9월 24~27일 한시 무료입장과 전국 섬 주민·생일 관람객 무료입장 뒤의 총관람객도 각각 유료·무료를 나눠 확인해야 합니다. 9월 21일 고발에서 제기된 배임·법 위반·허위공문서와 계약대금 부풀리기·관람객 통계 조작 의도는 고발인의 주장으로, 수사기관이 확인한 사실이나 처분 결과가 아닙니다.",
-    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The proposed KRW 700 million content supplement is still at the budget-review stage, so it should not be treated as final spending or automatically added to the KRW 71.3 billion. The 13-day attendance figure of 128,217 is not a paid-admission count and may include public employees attending on official travel. Headline attendance after the September 24–27 holiday waivers and the continuing island-resident and birthday policies must be split into paid and free entry. Allegations in the September 21 complaint—including breach of trust, legal violations, false official documents, inflated contract prices and an intent to manipulate attendance—are the complainant's claims, not facts established or disposed of by investigators.",
+    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 콘텐츠 보완비 7억 원은 9월 17일 예결위를 통과했지만 본회의 최종 처리와 실제 계약·집행이 확인된 것은 아니므로 713억 원에 곧바로 확정 지출로 더해서는 안 됩니다. 13일간 입장객 12만8,217명은 유료 입장객만을 뜻하지 않으며 출장 처리된 공무원 관람이 포함될 수 있습니다. 9월 24~27일 한시 무료입장과 전국 섬 주민·생일 관람객 무료입장 뒤의 총관람객도 각각 유료·무료를 나눠 확인해야 합니다. 9월 21일 고발에서 제기된 배임·법 위반·허위공문서와 계약대금 부풀리기·관람객 통계 조작 의도는 고발인의 주장으로, 수사기관이 확인한 사실이나 처분 결과가 아닙니다.",
+    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The KRW 700 million content supplement cleared the budget committee on September 17, but final plenary action, contracts and actual spending have not been confirmed, so it should not yet be added to KRW 71.3 billion as final expenditure. The 13-day attendance figure of 128,217 is not a paid-admission count and may include public employees attending on official travel. Headline attendance after the September 24–27 holiday waivers and the continuing island-resident and birthday policies must be split into paid and free entry. Allegations in the September 21 complaint—including breach of trust, legal violations, false official documents, inflated contract prices and an intent to manipulate attendance—are the complainant's claims, not facts established or disposed of by investigators.",
   },
   sources: [
     {
@@ -1051,6 +1071,14 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     {
       label: { ko: "연합뉴스 — 개막 뒤 콘텐츠 보완비 7억 원 추경 심사", en: "Yonhap — Council review of a KRW 700 million post-opening content supplement" },
       url: "https://www.yna.co.kr/view/AKR20260916131800054",
+    },
+    {
+      label: { ko: "연합뉴스 — 콘텐츠 보완비 7억 원 예결위 통과", en: "Yonhap — KRW 700 million content supplement clears the budget committee" },
+      url: "https://www.yna.co.kr/view/AKR20260917200400054",
+    },
+    {
+      label: { ko: "매일경제 — 문화행사 5억 원·관람객 이동지원 2억 원 추경", en: "Maeil Business Newspaper — KRW 500 million for cultural programming and KRW 200 million for visitor transport" },
+      url: "https://m.mk.co.kr/news/all/12155737",
     },
     {
       label: { ko: "박람회 조직위원회 — 개막 초기 프로그램·관람환경 보강", en: "Organizing committee — Post-opening programming and visitor-support changes" },
