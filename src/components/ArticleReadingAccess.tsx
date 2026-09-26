@@ -5,6 +5,26 @@ import { useLanguage } from "../i18n";
 import { isReadingPage } from "../lib/readingRoutes";
 
 const FIRST_ARTICLE_KEY = "seed-first-free-article-v1";
+const FREE_ARTICLES_KEY = "seed-free-articles-v2";
+const FREE_ARTICLE_LIMIT = 2;
+
+function canReadFreeArticle(pathname: string) {
+  const article = pathname.replace(/\/$/, "");
+  try {
+    const saved = JSON.parse(sessionStorage.getItem(FREE_ARTICLES_KEY) || "null");
+    const firstArticle = sessionStorage.getItem(FIRST_ARTICLE_KEY);
+    const articles: string[] = Array.isArray(saved)
+      ? saved.filter((path): path is string => typeof path === "string")
+      : firstArticle ? [firstArticle] : [];
+    if (articles.includes(article)) return true;
+    if (articles.length >= FREE_ARTICLE_LIMIT) return false;
+    sessionStorage.setItem(FREE_ARTICLES_KEY, JSON.stringify([...articles, article]));
+    return true;
+  } catch {
+    // Reading stays available when browser storage is disabled.
+    return true;
+  }
+}
 
 export default function ArticleReadingAccess({ children }: { children: ReactNode }) {
   const { pathname } = useLocation();
@@ -12,33 +32,21 @@ export default function ArticleReadingAccess({ children }: { children: ReactNode
   const { language } = useLanguage();
   const reading = isReadingPage(pathname);
   const [preview, setPreview] = useState<{ title: string; description: string } | null>(null);
-  const firstArticle = (() => {
-    if (!reading || loading) return null;
-    try {
-      const stored = sessionStorage.getItem(FIRST_ARTICLE_KEY);
-      if (stored) return stored;
-      const first = pathname.replace(/\/$/, "");
-      sessionStorage.setItem(FIRST_ARTICLE_KEY, first);
-      return first;
-    } catch {
-      // Reading stays available when browser storage is disabled.
-      return pathname.replace(/\/$/, "");
-    }
-  })();
+  const canRead = !reading || loading || isVerified || canReadFreeArticle(pathname);
 
   useEffect(() => {
-    if (!reading || loading || isVerified || firstArticle === pathname.replace(/\/$/, "")) return;
+    if (canRead) return;
     let active = true;
     void import("../seo").then(({ getSeoRoute }) => {
       const route = getSeoRoute(pathname);
       if (active) setPreview(route ? { title: route.title, description: route.description } : null);
     });
     return () => { active = false; };
-  }, [reading, loading, isVerified, firstArticle, pathname]);
+  }, [canRead, pathname]);
 
   if (!reading) return <>{children}</>;
   if (loading) return <div className="container-page min-h-[45vh] py-16" role="status">{language === "ko" ? "구독 상태를 확인하는 중입니다…" : "Checking subscription…"}</div>;
-  if (isVerified || firstArticle === pathname.replace(/\/$/, "")) return <>{children}</>;
+  if (canRead) return <>{children}</>;
 
   const ko = language === "ko";
   const returnTo = encodeURIComponent(pathname);
@@ -53,7 +61,7 @@ export default function ArticleReadingAccess({ children }: { children: ReactNode
       </div>
       <section className="container-page mt-10 max-w-3xl rounded-xl border border-green-deep/15 bg-white px-6 py-8 text-center shadow-[0_16px_40px_rgba(23,76,58,.12)] sm:px-10" aria-label={ko ? "무료 구독 안내" : "Free subscription"}>
         <h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "이어서 읽으려면 무료 구독신청을 해주세요" : "Subscribe for free to keep reading"}</h2>
-        <p className="mt-3 text-base leading-7 text-charcoal/70">{ko ? "첫 기사는 모두 읽을 수 있습니다. 구독 후에는 씨앗의 모든 기사를 끝까지 읽고 새 소식도 이메일로 받아볼 수 있습니다." : "Your first article is free to read. Subscribe to read every story in full and receive new stories by email."}</p>
+        <p className="mt-3 text-base leading-7 text-charcoal/70">{ko ? "구독 없이 기사 2편까지 모두 읽을 수 있습니다. 구독 후에는 씨앗의 모든 기사를 끝까지 읽고 새 소식도 이메일로 받아볼 수 있습니다." : "You can read two articles in full without subscribing. Subscribe to read every story in full and receive new stories by email."}</p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Link to={`/account?mode=signup&returnTo=${returnTo}`} className="button-primary">{ko ? "무료 구독신청" : "Subscribe for free"}</Link>
           <Link to={`/account?mode=login&returnTo=${returnTo}`} className="button-secondary">{ko ? "이미 구독 중이라면 로그인" : "Already subscribed? Log in"}</Link>
