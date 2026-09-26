@@ -8,7 +8,7 @@ import { useAuth } from "../auth";
 import SiyaArticleGuide from "./SiyaArticleGuide";
 
 type Stage = "hidden" | "walking" | "ready" | "open";
-function NewsletterNudge() {
+function NewsletterNudge({ reading }: { reading: boolean }) {
   const { language } = useLanguage();
   const ko = language === "ko";
   const [stage, setStage] = useState<Stage>("hidden");
@@ -39,7 +39,7 @@ function NewsletterNudge() {
   const imageBase = `${import.meta.env.BASE_URL}images/seed-character/`;
 
   return createPortal(
-    <aside className="seed-nudge" aria-label={ko ? "씨앗레터 구독 안내" : "SEED LETTER subscription"}>
+    <aside className={`seed-nudge${reading ? " seed-nudge--reading" : ""}`} aria-label={ko ? "씨앗레터 구독 안내" : "SEED LETTER subscription"}>
       {stage === "open" && (
         <div id="seed-nudge-card" className="seed-nudge-card" aria-labelledby="seed-nudge-title">
           <p className="section-kicker">SEED LETTER</p>
@@ -80,5 +80,5 @@ export default function HomepageNewsletterNudge() {
   const { pathname } = useLocation();
   if (loading) return null;
   if (isVerified) return <SiyaArticleGuide />;
-  return isReadingPage(pathname) ? null : <NewsletterNudge />;
+  return <NewsletterNudge reading={isReadingPage(pathname)} />;
 }
