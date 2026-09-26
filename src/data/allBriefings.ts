@@ -17,8 +17,9 @@ import { seojinSchoolNeighborsBriefing } from "./seojinSchoolNeighborsBriefing";
 import { northKoreanPowsSouthKoreaBriefing } from "./northKoreanPowsSouthKoreaBriefing";
 import { platformAdvertisingBriefing } from "./platformAdvertisingBriefing";
 import { inheritanceTaxFrozenThresholdBriefing } from "./inheritanceTaxFrozenThresholdBriefing";
+import { incomeTaxFamilyDeductionBriefing } from "./incomeTaxFamilyDeductionBriefing";
 
-const allBriefings: Briefing[] = [inheritanceTaxFrozenThresholdBriefing, platformAdvertisingBriefing, northKoreanPowsSouthKoreaBriefing, seojinSchoolNeighborsBriefing, skHynixAiHackathonBriefing, hospitalInheritanceTaxBriefing, activistFundingPressureBriefing, socialSolidarityEconomyLawBriefing, futureResponseFundBriefing, partyDissolutionBriefing, yeosuIslandExpoBriefing, hearingAccountabilityBriefing, socialEconomyFairnessBriefing, socialEconomyBriefing, publicInterestTravelBriefing, publicBroadcastingBriefing, nationalBudgetBriefing, gyeonggiBriefingDisplay, ...briefings];
+const allBriefings: Briefing[] = [incomeTaxFamilyDeductionBriefing, inheritanceTaxFrozenThresholdBriefing, platformAdvertisingBriefing, northKoreanPowsSouthKoreaBriefing, seojinSchoolNeighborsBriefing, skHynixAiHackathonBriefing, hospitalInheritanceTaxBriefing, activistFundingPressureBriefing, socialSolidarityEconomyLawBriefing, futureResponseFundBriefing, partyDissolutionBriefing, yeosuIslandExpoBriefing, hearingAccountabilityBriefing, socialEconomyFairnessBriefing, socialEconomyBriefing, publicInterestTravelBriefing, publicBroadcastingBriefing, nationalBudgetBriefing, gyeonggiBriefingDisplay, ...briefings];
 
 export const getAllBriefingsNewestFirst = () => [...allBriefings].sort((a, b) => {
   const dateOrder = b.date.localeCompare(a.date);
