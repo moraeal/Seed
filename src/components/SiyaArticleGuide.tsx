@@ -1,6 +1,7 @@
 import { Send, X } from "lucide-react";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { useLocation } from "react-router-dom";
 import { useAuth } from "../auth";
 import { useLanguage } from "../i18n";
 
@@ -13,7 +14,12 @@ const publishableKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || import.m
 export default function SiyaArticleGuide() {
   const { language } = useLanguage();
   const { session } = useAuth();
+  const location = useLocation();
   const ko = language === "ko";
+  const isArticlePage = /^\/(?:news|briefings|columns|seed-language)\/[^/]+(?:\/commentary)?\/?$/.test(location.pathname)
+    || /^\/monitoring\/(?:legislation|tax)\/(?:commentary\/)?[^/]+\/?$/.test(location.pathname)
+    || /^\/monitoring\/(?!legislation\/?$|tax\/?$|public-interest\/?$)[^/]+\/?$/.test(location.pathname);
+  const example = isArticlePage ? (ko ? "이 기사를 요약해줘" : "Summarize this article") : (ko ? "오늘의 뉴스를 알려줘" : "Tell me today's news");
   const [stage, setStage] = useState<Stage>("hidden");
   const [pose, setPose] = useState(false);
   const [question, setQuestion] = useState("");
@@ -38,29 +44,33 @@ export default function SiyaArticleGuide() {
     const response = await fetch(`${supabaseUrl}/functions/v1/siya-article-guide`, {
       method: "POST",
       headers: { "Content-Type": "application/json", apikey: publishableKey, Authorization: `Bearer ${session?.access_token}` },
-      body: JSON.stringify({ action, question: text, language }),
+      body: JSON.stringify({ action, question: text, language, articlePath: location.pathname }),
     });
     const data = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(data.error || (ko ? "잠시 연결되지 않았어요. 다시 시도해주세요." : "The guide is temporarily unavailable. Please try again."));
     return data;
   };
 
-  const ask = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const text = question.trim();
+  const askQuestion = async (text: string) => {
     if (busy || text.length < 2 || text.length > 500) return;
     setBusy(true); setError("");
     try {
       const result = await call("ask", text);
       setMessages((current) => [...current, {
         question: text,
-        answer: result.grounded ? result.answer : (ko ? "죄송해요. 이 질문에 답할 만한 씨앗 기사를 아직 찾지 못했어요. 조금 더 연구해 볼게요." : "Sorry, I couldn't find a SEED article that answers this yet. We'll look into it."),
+        answer: result.grounded ? result.answer : (text === example && isArticlePage
+          ? (ko ? "이 페이지의 기사 내용을 아직 확인하지 못했어요. 다른 질문을 해주세요." : "I couldn't find this article's text yet. Please try another question.")
+          : (ko ? "죄송해요. 이 질문에 답할 만한 씨앗 기사를 아직 찾지 못했어요. 조금 더 연구해 볼게요." : "Sorry, I couldn't find a SEED article that answers this yet. We'll look into it.")),
         sources: Array.isArray(result.sources) ? result.sources : [],
         grounded: Boolean(result.grounded),
       }]);
       setQuestion("");
     } catch (caught) { setError(caught instanceof Error ? caught.message : String(caught)); }
     finally { setBusy(false); }
+  };
+  const ask = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    void askQuestion(question.trim());
   };
 
   const save = async (index: number) => {
@@ -85,7 +95,7 @@ export default function SiyaArticleGuide() {
         <h2 id="seed-guide-title" className="editorial-title mt-2 text-xl font-bold text-navy">{ko ? "기사에 관해 물어보세요" : "Ask about articles"}</h2>
         <p className="my-2.5 text-xs leading-5 text-charcoal/65">{ko ? "씨앗 기사에 관해 물어보세요. 핵심 내용과 기사 링크를 찾아드릴게요." : "Ask about SEED articles. I'll find the key points and story links."}</p>
         <div className="seed-guide-messages" aria-live="polite">
-          {messages.length === 0 && <p className="seed-guide-tip">{ko ? "예: 오늘의 뉴스를 알려줘" : "For example: Tell me today's news"}</p>}
+          {messages.length === 0 && <p className="seed-guide-tip">{ko ? "예: " : "For example: "}<button type="button" onClick={() => void askQuestion(example)} disabled={busy}>{example}</button></p>}
           {messages.map((item, index) => <div className="seed-guide-exchange" key={`${index}-${item.question}`}>
             <p className="seed-guide-question">{item.question}</p>
             <p className="seed-guide-answer">{item.answer}</p>

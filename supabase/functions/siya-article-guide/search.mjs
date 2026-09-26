@@ -30,6 +30,18 @@ export function asksForLatestLegislation(question) {
     || (/\b(latest|recent|new)\b/i.test(question) && /\b(bills?|legislation|legislative)\b/i.test(question));
 }
 
+export function asksToSummarizeCurrentArticle(question) {
+  const normalized = question.toLowerCase().replace(/\s+/g, " ").trim();
+  return /(?:이|현재|지금|this|current)\s*(?:기사|글|article|story)/i.test(normalized)
+    && /(?:요약|정리|핵심|summari[sz]e|summary|key points)/i.test(normalized);
+}
+
+export function findCurrentArticle(path, entries) {
+  if (typeof path !== "string" || !path.startsWith("/") || path.length > 300 || path.includes("?") || path.includes("#")) return null;
+  const normalized = path.replace(/\/$/, "");
+  return entries.find((entry) => entry.path === normalized) ?? null;
+}
+
 export function searchArticles(question, entries) {
   const keywords = terms(question);
   if (!keywords.length) return [];

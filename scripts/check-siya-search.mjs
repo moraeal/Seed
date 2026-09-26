@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { asksForLatestLegislation, searchArticles } from "../supabase/functions/siya-article-guide/search.mjs";
+import { asksForLatestLegislation, asksToSummarizeCurrentArticle, findCurrentArticle, searchArticles } from "../supabase/functions/siya-article-guide/search.mjs";
 
 const { entries } = JSON.parse(await readFile(new URL("../public/siya-articles.json", import.meta.url)));
 const cases = [
@@ -30,4 +30,11 @@ for (const question of ["최신 입법뉴스 알려줘", "오늘 나온 법안�
 for (const question of ["고양이 사료는 무엇인가요?", "양자컴퓨터 칩을 추천해줘"]) {
   assert.equal(searchArticles(question, entries).length, 0, `unrelated question matched: ${question}`);
 }
+assert(asksToSummarizeCurrentArticle("이 기사를 요약해줘"));
+assert(asksToSummarizeCurrentArticle("Summarize this article"));
+assert.equal(asksToSummarizeCurrentArticle("오늘의 뉴스를 알려줘"), false);
+const sample = entries.find((entry) => entry.path.startsWith("/briefings/"));
+assert(sample && findCurrentArticle(sample.path, entries)?.title === sample.title, "current article must resolve by its exact URL");
+assert.equal(findCurrentArticle("/", entries), null, "home page must not select an unrelated article");
+assert.equal(findCurrentArticle("https://example.com/briefings/other", entries), null, "external URL must not select an article");
 console.log(`Siya search checks passed: ${cases.length} article questions, 4 live-legislation questions, 2 unrelated questions`);
