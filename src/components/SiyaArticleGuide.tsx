@@ -82,7 +82,7 @@ export default function SiyaArticleGuide() {
           <X size={18} aria-hidden="true" />
         </button>
         <p className="section-kicker">SEED ARTICLE GUIDE</p>
-        <h2 id="seed-guide-title" className="editorial-title mt-2 text-xl font-bold text-navy">{ko ? "씨야와 대화해요" : "Talk with Siya"}</h2>
+        <h2 id="seed-guide-title" className="editorial-title mt-2 text-xl font-bold text-navy">{ko ? "기사에 관해 물어보세요" : "Ask about articles"}</h2>
         <p className="my-2.5 text-xs leading-5 text-charcoal/65">{ko ? "씨앗 기사에 관해 물어보세요. 핵심 내용과 기사 링크를 찾아드릴게요." : "Ask about SEED articles. I'll find the key points and story links."}</p>
         <div className="seed-guide-messages" aria-live="polite">
           {messages.length === 0 && <p className="seed-guide-tip">{ko ? "예: 오늘의 뉴스를 알려줘" : "For example: Tell me today's news"}</p>}
@@ -107,7 +107,7 @@ export default function SiyaArticleGuide() {
       <button type="button" className="seed-nudge-trigger" onClick={() => setStage(stage === "open" ? "ready" : "open")} disabled={stage === "walking"}
         aria-label={stage === "open" ? (ko ? "씨야 대화창 닫기" : "Close Siya window") : (ko ? "씨야 기사 안내 열기" : "Open Siya article guide")}
         aria-controls={stage === "open" ? "seed-guide-card" : undefined} aria-expanded={stage === "open"}>
-        {stage === "ready" && <span className="seed-nudge-bubble">{ko ? "씨야와 대화해요" : "Talk with Siya"}</span>}
+        {stage === "ready" && <span className="seed-nudge-bubble">{ko ? "기사에 관해 물어보세요" : "Ask about articles"}</span>}
         <img className={`seed-nudge-character ${stage === "walking" ? "seed-nudge-walking" : "seed-nudge-writing"}`} src={`${import.meta.env.BASE_URL}images/seed-character/${image}?v=20260926-guide`} alt="" />
       </button>
     </aside>, document.body,
