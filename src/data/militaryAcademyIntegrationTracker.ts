@@ -23,10 +23,10 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     en: "Basic plan announced · Revisions under review",
   },
   openedAt: "2025-06-26",
-  updatedAt: "2026-09-24",
+  updatedAt: "2026-09-26",
   nextCheck: {
-    ko: "10월 세부계획의 통합 선발 시점과 방식, 자운대 이전 일정·총사업비, 각 군 전문교육 시설, ROTC·학사장교 합동교육 확대안, 국군사관학교 설치법과 2028년 예산 편성 전 선행연구 일정",
-    en: "The October detailed plan: admissions timing and model, Jaun-dae schedule and full cost, service-specific facilities, expanded joint education for ROTC and officer candidates, the Armed Forces Academy bill, and studies required before possible 2028 funding",
+    ko: "10월 세부계획의 통합 선발 시점과 방식, 자운대 이전 일정·총사업비, 각 군 전문교육 시설, ROTC·학사장교 합동교육 확대안, 정부·여당의 국군사관학교 설치법 제출 여부와 분리 유지 법안 심사, 2028년 예산 편성 전 선행연구 일정",
+    en: "The October detailed plan: admissions timing and model, Jaun-dae schedule and full cost, service-specific facilities, expanded joint education for ROTC and officer candidates, filing of the governing party's Armed Forces Academy bill, review of the competing separation bill, and studies required before possible 2028 funding",
   },
   heroImage: {
     src: "images/monitoring/military-academy-integration-tracker.webp",
@@ -44,12 +44,12 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     },
   },
   sourceBasis: {
-    ko: "국방부의 2026년 7월 기본계획 발표와 8월 26일 공청회 영상, 국회에 제출된 육군본부 장교 양성기관별 교육 현황을 인용한 보도, 9월 1일 2027년도 정부 예산안, 9월 16일 국방부 장관 후보자 인사청문회 답변을 날짜별로 대조했습니다. 발표 전 보도에 나온 2+2·장성 이전안과 발표된 자운대 4년 통합안을 구분했습니다.",
-    en: "This tracker cross-checks the Defense Ministry's July 2026 basic plan and August 26 hearing video, reporting based on Army commissioning-route data submitted to the National Assembly, the government's September 1 budget proposal for 2027, and the defense minister nominee's September 16 testimony. It distinguishes pre-announcement two-plus-two and Jangseong concepts from the announced four-year Jaun-dae model.",
+    ko: "국방부의 2026년 7월 기본계획 발표와 8월 26일 공청회 영상, 국회에 제출된 육군본부 장교 양성기관별 교육 현황을 인용한 보도, 9월 1일 2027년도 정부 예산안, 9월 10일 발의된 분리 유지 법안, 9월 16일 국방부 장관 후보자 인사청문회 답변을 날짜별로 대조했습니다. 발표 전 보도에 나온 2+2·장성 이전안과 발표된 자운대 4년 통합안을 구분했습니다.",
+    en: "This tracker cross-checks the Defense Ministry's July 2026 basic plan and August 26 hearing video, reporting based on Army commissioning-route data submitted to the National Assembly, the government's September 1 budget proposal for 2027, the September 10 bill to preserve separate academies, and the defense minister nominee's September 16 testimony. It distinguishes pre-announcement two-plus-two and Jangseong concepts from the announced four-year Jaun-dae model.",
   },
   caution: {
-    ko: "국군사관학교의 첫 통합 선발 시점, 이전 완료 시기와 총사업비는 아직 확정되지 않았습니다. 2027년도 정부 예산안에는 창설 사업비가 별도 반영되지 않았고, 2028년 편성은 선행연구 뒤 검토하는 단계입니다. 2028년 출범과 2032~2036년 이전도 확정 일정이 아닙니다. ‘정치적 징벌’은 공식 확인된 목적이 아니라 대통령과 국방부의 역사 단절 발언에서 제기된 해석입니다.",
-    en: "The first integrated class, relocation completion date and total cost remain unsettled. The government's 2027 budget proposal contains no dedicated academy-merger funding; possible 2028 funding remains under review after preliminary studies. A 2028 launch and 2032–36 relocation are also not confirmed schedules. Political punishment is an interpretation prompted by official historical-rupture language, not a confirmed stated purpose.",
+    ko: "국군사관학교의 첫 통합 선발 시점, 이전 완료 시기와 총사업비는 아직 확정되지 않았습니다. 2027년도 정부 예산안에는 창설 사업비가 별도 반영되지 않았고, 2028년 편성은 선행연구 뒤 검토하는 단계입니다. 2028년 출범과 2032~2036년 이전도 확정 일정이 아닙니다. 9월 10일 발의된 법안은 현 사관학교의 분리·소재지 유지를 요구하는 의원안으로, 통합을 중단시킨 확정 법률이 아닙니다. ‘정치적 징벌’은 공식 확인된 목적이 아니라 대통령과 국방부의 역사 단절 발언에서 제기된 해석입니다.",
+    en: "The first integrated class, relocation completion date and total cost remain unsettled. The government's 2027 budget proposal contains no dedicated academy-merger funding; possible 2028 funding remains under review after preliminary studies. A 2028 launch and 2032–36 relocation are also not confirmed schedules. The September 10 member's bill would preserve the separate academies and their current locations; it is not enacted law and has not halted the merger. Political punishment is an interpretation prompted by official historical-rupture language, not a confirmed stated purpose.",
   },
   keyChanges: [
     {
@@ -71,6 +71,13 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
       text: {
         ko: "2027년도 정부 국방예산안에 국군사관학교 창설 사업비가 별도 반영되지 않아, 선행연구와 2028년 이후 재원 확보가 새 관문이 됐습니다.",
         en: "The government's 2027 defense budget proposal contains no dedicated academy-merger funding, making preliminary studies and possible funding from 2028 the next hurdle.",
+      },
+    },
+    {
+      date: "2026-09-10",
+      text: {
+        ko: "윤상현 의원 등 11인이 육·해·공군 사관학교를 현 위치에 분리 유지하도록 하는 법안을 발의했고, 이튿날 국방위원회에 회부됐습니다.",
+        en: "Eleven opposition lawmakers introduced a bill requiring the three service academies to remain separate at their current locations; it was referred to the Defense Committee the next day.",
       },
     },
     {
@@ -249,6 +256,31 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-10",
+      title: {
+        ko: "현행 3군 사관학교 분리 유지 법안 발의",
+        en: "Opposition bill would preserve the three separate academies",
+      },
+      description: {
+        ko: "윤상현 의원 등 11인은 육군사관학교를 서울 태릉, 해군사관학교를 경남 창원, 공군사관학교를 충북 청주에 각각 유지하는 내용을 담은 사관학교 설치법 일부개정안을 발의했습니다. 의안번호는 2221291이며 9월 11일 국방위원회에 회부됐습니다. 정부·여당이 예고한 국군사관학교 설치법과 경쟁하는 의원안이지만, 아직 위원회 심사 단계이므로 통합 중단이나 분리 유지가 법률상 확정된 것은 아닙니다.",
+        en: "Eleven lawmakers led by Yoon Sang-hyun introduced an amendment that would keep the Army, Naval and Air Force academies in Seoul's Taereung area, Changwon and Cheongju respectively. Bill 2221291 was referred to the National Defense Committee on September 11. It competes with the governing side's planned Armed Forces Academy legislation, but remains at committee stage and neither stops the merger nor legally guarantees separation.",
+      },
+      change: {
+        ko: "통합 설치법 예고와 별도로 현행 분리 체제를 법률에 고정하려는 경쟁 법안이 국회 심사에 진입",
+        en: "A competing bill to entrench the existing separate system enters parliamentary review",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "법제처 국민참여입법센터", en: "Ministry of Government Legislation" },
+          title: { ko: "사관학교 설치법 일부개정법률안(의안번호 2221291)", en: "Partial Amendment to the Act on the Establishment of Military Academies (Bill 2221291)" },
+          url: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221291/detailRP?yType=I",
+          publishedAt: "2026-09-10",
+          kind: "document",
+        },
+      ],
+    },
+    {
       date: "2026-09-16",
       title: {
         ko: "장관 후보자 ‘현재 안은 완전하지 않다’",
@@ -311,6 +343,10 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     {
       ko: "2027년도 정부 국방예산안에는 국군사관학교 창설 사업비가 별도 반영되지 않았으며, 2028년 편성은 선행연구 뒤 검토할 사안입니다.",
       en: "The government's 2027 defense budget proposal contains no dedicated Armed Forces Academy funding; possible 2028 funding remains subject to preliminary studies.",
+    },
+    {
+      ko: "현행 세 사관학교의 위치와 분리 운영을 유지하는 의원안은 9월 11일 국방위원회에 회부됐지만 아직 심사·의결되지 않았습니다.",
+      en: "A member's bill preserving the three academies at their current locations was referred to the Defense Committee on September 11 but has not been passed.",
     },
   ],
   questions: [
@@ -377,6 +413,10 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     {
       label: { ko: "동아일보 — 2027년도 정부 국방예산안", en: "The Dong-A Ilbo — Government's 2027 defense budget proposal" },
       url: "https://www.donga.com/news/Politics/article/all/20260901/134583162/1",
+    },
+    {
+      label: { ko: "법제처 — 사관학교 분리 유지 개정안(의안번호 2221291)", en: "Ministry of Government Legislation — Bill 2221291 preserving separate academies" },
+      url: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221291/detailRP?yType=I",
     },
   ],
 };
