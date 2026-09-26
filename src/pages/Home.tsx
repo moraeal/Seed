@@ -1,7 +1,6 @@
 import { ArrowRight, Clock } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import HomepageNewsletterNudge from "../components/HomepageNewsletterNudge";
 import FeaturedStoryMedia from "../components/FeaturedStoryMedia";
 import SafeImage from "../components/SafeImage";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
@@ -218,7 +217,6 @@ export default function Home() {
         </div>
       </section>
 
-      <HomepageNewsletterNudge />
     </div>
   );
 }
