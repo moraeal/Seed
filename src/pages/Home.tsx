@@ -273,7 +273,7 @@ export default function Home() {
               <p className="section-kicker">HOT ISSUES</p>
               <h2 id="hot-issues-title" className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "핫이슈" : "Hot Issues"}</h2>
               <p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">
-                {ko ? "새롭게 업데이트된 핫이슈 8개를 한 장씩 살펴보세요." : "Explore the eight latest hot issues, one card at a time."}
+                {ko ? "새롭게 업데이트된 핫이슈들을 한 장씩 살펴보세요." : "Explore the eight latest hot issues, one card at a time."}
               </p>
             </div>
             <Link to="/news" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link>
