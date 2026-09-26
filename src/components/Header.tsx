@@ -6,7 +6,6 @@ import { getContent } from "../data/siteContent";
 import { useLanguage } from "../i18n";
 import ArticleFindPanel from "./ArticleFindPanel";
 import BrandLockup from "./BrandLockup";
-import HomeSectionNav from "./HomeSectionNav";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -155,8 +154,6 @@ export default function Header() {
         <nav className="hidden border-t border-[#e8dcae] bg-[#eff8f4] xl:block" aria-label={language === "en" ? "Main menu" : "주요 메뉴"}>
           <div className="container-page flex items-center justify-start gap-7">{nav.map((item) => renderNavItem(item))}</div>
         </nav>
-
-        {isHome && <HomeSectionNav />}
 
         {open && (
           <div id="mobile-main-menu" className="border-t border-[#e8dcae] bg-[#eff8f4] px-5 py-4 shadow-[0_12px_24px_rgba(17,43,37,.08)] xl:hidden">
