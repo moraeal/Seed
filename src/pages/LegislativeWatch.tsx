@@ -77,19 +77,17 @@ export default function LegislativeWatch() {
           <div><span className="text-[10px] font-extrabold tracking-[.2em] text-gold">LEGISLATIVE COMMENTARY</span><h2 id="legislative-commentary-list-title" className="editorial-title mt-1 text-2xl font-bold text-navy">{ko ? "입법감시 기사 목록" : "Legislative Watch Articles"}</h2></div>
           <p className="max-w-2xl text-sm leading-6 text-charcoal/60">{ko ? "발의되거나 통과한 법안 가운데 시민의 자유와 권력의 이동을 더 깊이 살펴야 할 사안을 골라 논평합니다. 법안 기록의 사실과 씨앗의 판단을 구분해 읽을 수 있습니다." : "We select proposed and passed bills that require deeper scrutiny of civic freedom and shifts in state power, keeping the legislative record distinct from Seed Voice's editorial judgment."}</p>
         </div>
-        <div className="border-b border-charcoal/10">
+        <div className="grid lg:grid-cols-2">
           {linkedLegislativeColumnCommentaries.map((article) => {
             const edition = article.editions[ko ? "ko" : "en"];
-            return <Link key={article.slug} to={article.href} className="group grid gap-4 p-5 transition hover:bg-[#FBFAF6] sm:grid-cols-[180px_1fr] sm:items-center sm:p-6">
+            return <Link key={article.slug} to={article.href} className="group grid gap-4 border-b border-charcoal/10 p-5 transition hover:bg-[#FBFAF6] sm:grid-cols-[180px_1fr] sm:items-center sm:p-6 lg:odd:border-r">
               <div className="overflow-hidden bg-ivory"><SafeImage src={`${import.meta.env.BASE_URL}${article.heroSrc}`} alt={edition.heroAlt} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.025]" /></div>
               <div className="min-w-0"><div className="flex flex-wrap items-center gap-2 text-[11px] font-extrabold text-charcoal/55"><span>{ko ? "입법 논평" : "COMMENTARY"}</span><span className="text-charcoal/35">{article.billLabel[ko ? "ko" : "en"]}</span></div><h3 className="editorial-title mt-2 line-clamp-2 text-xl font-bold leading-snug text-navy transition group-hover:text-green-deep">{edition.title}</h3><p className="mt-2 line-clamp-2 text-sm leading-6 text-charcoal/60">{edition.summary}</p><div className="mt-3 flex items-center gap-3 border-t border-charcoal/10 pt-3 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={12}/>{article.readMinutes}{ko ? "분" : " min"}</span><span className="ml-auto flex items-center gap-1.5 font-extrabold text-green-deep">{ko ? "논평 읽기" : "Read"}<ArrowRight size={13}/></span></div></div>
             </Link>;
           })}
-        </div>
-        <div className="grid divide-y divide-charcoal/10 lg:grid-cols-2 lg:divide-x lg:divide-y-0">
           {legislativeCommentaries.map((article) => {
             const edition = getLegislativeCommentaryEdition(article, ko ? "ko" : "en");
-            return <Link key={article.slug} to={`/monitoring/legislation/commentary/${article.slug}`} className="group grid gap-4 p-5 transition hover:bg-[#FBFAF6] sm:grid-cols-[180px_1fr] sm:items-center sm:p-6">
+            return <Link key={article.slug} to={`/monitoring/legislation/commentary/${article.slug}`} className="group grid gap-4 border-b border-charcoal/10 p-5 transition hover:bg-[#FBFAF6] sm:grid-cols-[180px_1fr] sm:items-center sm:p-6 lg:odd:border-r">
               <div className="overflow-hidden bg-ivory"><SafeImage src={`${import.meta.env.BASE_URL}${article.heroSrc}`} alt={edition.heroAlt} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.025]" /></div>
               <div className="min-w-0"><div className="flex flex-wrap items-center gap-2 text-[11px] font-extrabold text-charcoal/55"><span>{ko ? "입법 논평" : "COMMENTARY"}</span><span className="text-charcoal/35">{ko ? `의안 ${article.billNo}` : `Bill ${article.billNo}`}</span></div><h3 className="editorial-title mt-2 line-clamp-2 text-xl font-bold leading-snug text-navy transition group-hover:text-green-deep">{edition.title}</h3><p className="mt-2 line-clamp-2 text-sm leading-6 text-charcoal/60">{edition.summary}</p><div className="mt-3 flex items-center gap-3 border-t border-charcoal/10 pt-3 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={12}/>{article.readMinutes}{ko ? "분" : " min"}</span><span className="ml-auto flex items-center gap-1.5 font-extrabold text-green-deep">{ko ? "논평 읽기" : "Read"}<ArrowRight size={13}/></span></div></div>
             </Link>;
