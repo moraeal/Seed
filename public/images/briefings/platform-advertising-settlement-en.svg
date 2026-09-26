@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 670"><rect width="1000" height="670" fill="#f5f3ed"/><rect x="25" y="25" width="950" height="620" rx="24" fill="white" stroke="#dce3d8"/><g font-family="sans-serif"><text x="70" y="95" font-size="24" fill="#627569">SEED VOICE · ASIA ECONOMY</text><text x="70" y="150" font-size="38" font-weight="700" fill="#234a3e">Sales and deposit in one day</text><text x="70" y="220" font-size="29" fill="#234a3e">Sales  KRW 3,000,400</text><rect x="70" y="242" width="810" height="52" rx="9" fill="#234a3e"/><text x="70" y="345" font-size="29" fill="#234a3e">Deposit  KRW 2,165,838</text><rect x="70" y="367" width="585" height="52" rx="9" fill="#c49855"/><text x="70" y="470" font-size="29" fill="#234a3e">Gap  KRW 834,562</text><rect x="70" y="492" width="225" height="52" rx="9" fill="#a26751"/><line x1="70" y1="580" x2="930" y2="580" stroke="#dce3d8"/><text x="70" y="618" font-size="23" fill="#57665c">No ad run · gap includes delivery and discounts</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 610" role="img" aria-labelledby="title desc">
+<title id="title">Daily sales and settlement at a chicken restaurant</title><desc id="desc">Of KRW 3,000,400 in sales, KRW 2,165,838 reached the restaurant and the settlement gap was KRW 834,562. No platform ad ran that day.</desc>
+<rect width="1000" height="610" fill="#f5f3ed"/><rect x="24" y="24" width="952" height="562" rx="24" fill="#fffefa" stroke="#dce3d8" stroke-width="2"/>
+<g font-family="Arial,sans-serif">
+<text x="74" y="90" font-size="24" font-weight="700" fill="#487064">ONE DAY · A SEOUL CHICKEN RESTAURANT</text>
+<text x="74" y="147" font-size="41" font-weight="800" fill="#213f36">What reached the shop after sales?</text>
+<text x="74" y="217" font-size="28" fill="#48594f">Delivery-app sales</text><text x="926" y="217" text-anchor="end" font-size="40" font-weight="800" fill="#213f36">KRW 3,000,400</text>
+<rect x="74" y="242" width="852" height="78" rx="12" fill="#c39554"/><path d="M86 242H689V320H86Q74 320 74 308V254Q74 242 86 242Z" fill="#205443"/>
+<text x="99" y="294" font-size="26" font-weight="700" fill="white">Deposit 72.2%</text><text x="724" y="294" font-size="25" font-weight="700" fill="#213f36">Gap 27.8%</text>
+<text x="74" y="370" font-size="26" fill="#48594f">Deposit to the shop</text><text x="926" y="370" text-anchor="end" font-size="36" font-weight="800" fill="#205443">KRW 2,165,838</text>
+<text x="74" y="421" font-size="26" fill="#48594f">Settlement gap</text><text x="926" y="421" text-anchor="end" font-size="36" font-weight="800" fill="#856032">KRW 834,562</text>
+<line x1="74" y1="449" x2="926" y2="449" stroke="#dce3d8" stroke-width="2"/>
+<text x="74" y="498" font-size="26" font-weight="800" fill="#205443">No platform ad ran that day</text><text x="74" y="541" font-size="23" fill="#48594f">The gap includes fees, delivery and shared discounts.</text>
+</g></svg>

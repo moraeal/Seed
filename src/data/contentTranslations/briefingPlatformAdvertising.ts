@@ -9,9 +9,9 @@ export const platformAdvertisingTranslation: BriefingTranslation = {
   author: "SEED BUSINESS BRIEFING",
   images: [
     {
-      alt: "Illustrated receipt comparing KRW 3,000,400 in daily chicken sales with KRW 2,165,838 deposited to the restaurant",
-      caption: "The Seoul restaurant's settlement reported by Asia Economy. The KRW 834,562 gap includes intermediation, delivery and shared customer discounts. The restaurant did not run a platform ad that day.",
-      credit: "SEED VOICE illustration · figures from Asia Economy",
+      alt: "AI image depicting a chicken-shop owner reviewing settlement papers after work",
+      caption: "Sales, deposits and the shop's profit are different amounts. AI image.",
+      credit: "SEED VOICE · AI image",
     },
     {
       src: "images/briefings/platform-advertising-settlement-en.svg",

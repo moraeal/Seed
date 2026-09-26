@@ -13,12 +13,11 @@ export const platformAdvertisingBriefing: Briefing = {
   homeBriefingLeadEligible: true,
   images: [
     {
-      src: "images/briefings/platform-advertising-settlement.png",
-      alt: "치킨집 하루 매출 300만 400원과 정산 입금액 216만 5,838원을 영수증과 두 막대로 표현한 도해",
-      caption: "아시아경제가 확보한 서울 관악구 치킨집의 하루 정산 사례입니다. 83만 4,562원의 차액에는 중개이용료·배달비·할인 분담액 등이 포함됩니다. 그날 이 가게는 플랫폼 광고를 집행하지 않았습니다.",
-      credit: "씨앗의 소리 도해 · 아시아경제 보도 수치 재구성",
+      src: "images/briefings/platform-advertising-shop-owner.jpg",
+      alt: "치킨집 점주가 영업을 마친 뒤 계산기와 정산 자료를 살펴보는 장면을 재현한 AI 이미지",
+      caption: "배달앱 매출에서 실제 입금액과 가게의 이익까지는 여러 비용을 따로 계산해야 합니다. AI 이미지",
+      credit: "씨앗의 소리 · AI 이미지",
       sourceUrl: "https://view.asiae.co.kr/article/2025093015484947031",
-      contain: true,
     },
     {
       src: "images/briefings/platform-advertising-settlement-ko.svg",
