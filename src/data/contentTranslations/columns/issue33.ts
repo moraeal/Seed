@@ -5,10 +5,10 @@ export const issue33: ColumnTranslation = {
   subtitle: "Who benefits between KRW 7.5 million and KRW 9 million? Household counts, revenue and future reviews are at issue",
   author: "Small Seed",
   summary: "A spouse earning KRW 6 million a year could qualify under either proposal, though not under current law. The dispute is whether to extend the limit to those earning above KRW 7.5 million and up to KRW 9 million, and how to weigh the benefits and revenue cost.",
-  heroImage: { alt: "Two family members clasp hands across a transparent line dividing their dining table", caption: "Family support continues even as a statutory earnings threshold changes deduction eligibility. AI image illustrating a concept, not an actual household.", credit: "AI image" },
-  inlineImage: { alt: "Two relatives review household papers and a calculator after a short work shift", caption: "A modest income does not erase the family's continuing support. Staged AI image, not a photograph of a particular household.", credit: "AI image" },
+  heroImage: { alt: "Two family members clasp hands across a transparent line dividing their dining table", caption: "Family support continues even as a statutory earnings threshold changes deduction eligibility.", credit: "AI image" },
+  inlineImage: { alt: "Two relatives review household papers and a calculator after a short work shift", caption: "A modest income does not erase the family's continuing support.", credit: "AI image" },
   additionalImages: [
-    { alt: "Two relatives review household papers and a calculator after a short work shift", caption: "A modest income does not erase the family's continuing support. Staged AI image, not a photograph of a particular household.", credit: "AI image" },
+    { alt: "Two relatives review household papers and a calculator after a short work shift", caption: "A modest income does not erase the family's continuing support.", credit: "AI image" },
     { src: "images/briefings/family-deduction-threshold-en.svg", alt: "Wage-only dependent deduction limits under current law and two proposals", caption: "Current law: KRW 5 million; government proposal: KRW 7.5 million; lawmaker bill: KRW 9 million. The latter two are not law.", credit: "SEED VOICE chart" },
   ],
   sections: [
