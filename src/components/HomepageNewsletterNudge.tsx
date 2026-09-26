@@ -18,13 +18,13 @@ function NewsletterNudge() {
     const checkedImage = new Image();
     checkedImage.src = `${import.meta.env.BASE_URL}images/seed-character/seed-14-checked.webp?v=20260926-three-poses`;
     timers.current = [
-      window.setTimeout(() => setStage("walking"), 9000),
+      window.setTimeout(() => setStage("walking"), 2000),
       window.setTimeout(() => {
         setStage("ready");
         poseInterval.current = window.setInterval(() => {
           setPose((current) => current === "writing" ? "checked" : "writing");
         }, 3000);
-      }, 10350),
+      }, 3350),
     ];
     return () => {
       timers.current.forEach(window.clearTimeout);
