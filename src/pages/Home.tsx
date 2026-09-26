@@ -218,22 +218,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-green-deep/15 bg-ivory py-8 sm:py-10" aria-label={ko ? "분야별 기사 보기" : "Browse sections"}>
-        <div className="container-page">
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
-            {([
-              ["/briefings", ko ? "브리핑" : "Briefings"],
-              ["/monitoring", ko ? "시민감시" : "Civic Watch"],
-              ["/seed-language", ko ? "시민언어" : "Civic Language"],
-              ["/columns", ko ? "칼럼" : "Columns"],
-            ] as const).map(([to, label]) => (
-              <Link key={to} to={to} className="flex min-h-14 items-center justify-between gap-2 rounded-lg border border-green-deep/15 bg-white px-4 text-sm font-bold text-navy transition hover:border-green-deep/40 hover:text-green-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-deep/40 sm:text-base">
-                {label}<ArrowRight size={16} aria-hidden="true" />
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
       <HomepageNewsletterNudge />
     </div>
   );
