@@ -60,7 +60,7 @@ export default function CorrectionSection({ postSlug }: { postSlug: string }) {
 
     {!authLoading && (!user || !isVerified) ? <div className="mt-5 flex flex-col gap-4 rounded-lg border border-green-deep/10 bg-white p-5 sm:flex-row sm:items-center sm:justify-between">
       <div className="flex items-start gap-3"><LockKeyhole className="mt-0.5 shrink-0 text-green-mid" size={19}/><p className="text-sm leading-6 text-charcoal/65">{ko ? "읽기는 누구나 가능하며, 제보는 이메일 인증회원만 작성할 수 있습니다." : "Anyone may read the record; verified members may submit reports."}</p></div>
-      <div className="flex shrink-0 gap-2"><Link to={loginPath} className="button-secondary text-xs">{ko ? "로그인" : "Log in"}</Link><Link to={signupPath} className="button-primary text-xs">{ko ? "회원가입" : "Sign up"}</Link></div>
+      <div className="flex shrink-0 gap-2"><Link to={loginPath} className="button-secondary text-xs">{ko ? "로그인" : "Log in"}</Link><Link to={signupPath} className="button-primary text-xs">{ko ? "구독신청" : "Subscribe"}</Link></div>
     </div> : <form onSubmit={submit} className="mt-5 rounded-lg border border-green-deep/10 bg-white p-5">
       <div className="flex items-center gap-2 border-b border-green-deep/10 pb-4"><strong className="text-sm text-navy">{nickname}</strong><span className="inline-flex items-center gap-1 rounded-full bg-green-pale px-2.5 py-1 text-[11px] font-extrabold text-green-deep"><CheckCircle2 size={13}/>{ko ? "인증회원" : "Verified"}</span></div>
       <label className="field mt-4"><span>{ko ? "확인이 필요한 문장 또는 부분" : "Passage or section to check"}</span><textarea rows={2} maxLength={500} value={targetExcerpt} onChange={(e) => setTargetExcerpt(e.target.value)} placeholder={ko ? "본문 문장을 붙여넣거나 중간 제목을 적어주세요." : "Paste the passage or name the section."} required/></label>
@@ -82,4 +82,3 @@ export default function CorrectionSection({ postSlug }: { postSlug: string }) {
     </div>
   </section>;
 }
-

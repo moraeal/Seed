@@ -105,10 +105,10 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
             <div className="grid size-10 shrink-0 place-items-center rounded-full bg-green-pale text-green-deep"><LockKeyhole size={20}/></div>
             <div>
               <h3 className="font-extrabold text-navy">{ko ? "인증회원만 댓글을 작성할 수 있습니다." : "Only verified members can post comments."}</h3>
-              <p className="mt-2 text-sm leading-7 text-charcoal/60">{ko ? "이메일과 비밀번호로 간단히 가입한 뒤, 받은 메일의 인증 링크를 누르면 바로 공론장에 참여할 수 있습니다." : "Sign up with an email address and password, then click the confirmation link in your email to join the discussion."}</p>
+              <p className="mt-2 text-sm leading-7 text-charcoal/60">{ko ? "이메일·닉네임·비밀번호로 구독을 신청하고 받은 메일의 인증 링크를 누르면 공론장에 참여할 수 있습니다." : "Subscribe with your email, nickname, and password, then follow the confirmation link to join the discussion."}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 <Link to={loginPath} className="button-secondary text-sm">{ko ? "로그인" : "Log in"}</Link>
-                <Link to={signupPath} className="button-primary text-sm">{ko ? "회원가입" : "Sign up"}</Link>
+                <Link to={signupPath} className="button-primary text-sm">{ko ? "구독신청" : "Subscribe"}</Link>
               </div>
               {user && !isVerified && <p className="mt-4 rounded-md bg-gold/10 px-3 py-2 text-xs font-semibold text-charcoal/65">{ko ? "현재 계정은 이메일 확인이 완료되지 않았습니다. 가입 메일의 인증 링크를 확인해주세요." : "Your email address has not been confirmed yet. Please use the verification link in your sign-up email."}</p>}
             </div>

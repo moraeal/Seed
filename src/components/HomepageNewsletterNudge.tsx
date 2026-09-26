@@ -51,7 +51,7 @@ function NewsletterNudge() {
         className="seed-nudge-trigger"
         onClick={() => setStage(stage === "open" ? "ready" : "open")}
         disabled={stage === "walking"}
-        aria-label={stage === "open" ? (ko ? "씨야를 눌러 가입창 닫기" : "Close the signup form with Siya") : (ko ? "씨야를 눌러 이메일 가입창 열기" : "Open the email signup form with Siya")}
+        aria-label={stage === "open" ? (ko ? "씨야를 눌러 구독신청 창 닫기" : "Close the subscription form with Siya") : (ko ? "씨야를 눌러 이메일 구독신청 창 열기" : "Open the email subscription form with Siya")}
         aria-controls={stage === "open" ? "seed-nudge-card" : undefined}
         aria-expanded={stage === "open"}
       >

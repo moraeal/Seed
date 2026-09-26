@@ -198,7 +198,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
     }
     if (!response.ok) {
-      const message = await readError(response, "회원가입에 실패했습니다.");
+      const message = await readError(response, "구독신청에 실패했습니다.");
       try {
         if (!(await isNicknameAvailable(normalizedNickname))) throw new Error(duplicateNicknameMessage);
       } catch (error) {
