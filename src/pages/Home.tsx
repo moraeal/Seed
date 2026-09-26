@@ -1,13 +1,13 @@
 import { ArrowRight, Clock } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import FeaturedStoryMedia from "../components/FeaturedStoryMedia";
 import SafeImage from "../components/SafeImage";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { getColumnsNewestFirst, hotIssueColumnTrackerSlugs } from "../data/columns";
-import { getHotIssueClusters } from "../data/hotIssueClusters";
 import { localizeBriefing, localizeColumn } from "../data/localizedContent";
 import { getHotIssuesNewestFirst } from "../data/hotIssues";
+import type { HotIssueListItem } from "../data/hotIssues";
 import { newsTrackerCases } from "../data/newsTrackerRegistry";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
@@ -46,6 +46,95 @@ const claimFirstUnseen = <T,>(
   return item;
 };
 
+function HotIssueCarousel({ items, ko }: { items: HotIssueListItem[]; ko: boolean }) {
+  const [step, setStep] = useState(0);
+  const [moving, setMoving] = useState(true);
+  const [paused, setPaused] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduceMotion(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    if (paused || reduceMotion || items.length < 2) return;
+    const timer = window.setInterval(() => {
+      if (document.visibilityState === "visible") setStep((current) => current < items.length ? current + 1 : current);
+    }, 5000);
+    return () => window.clearInterval(timer);
+  }, [items.length, paused, reduceMotion]);
+
+  if (!items.length) return null;
+
+  const cards = [...items, ...items.slice(0, Math.min(4, items.length))];
+  return (
+    <div
+      className="mt-4"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label={ko ? "최신 핫이슈 8개" : "Eight latest hot issues"}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false); }}
+    >
+      <div className="overflow-hidden pb-2">
+      <div
+        className={`home-hot-issue-track ${moving ? "is-moving" : ""}`}
+        style={{ "--step": step } as CSSProperties}
+        onTransitionEnd={(event) => {
+          if (event.target !== event.currentTarget || step !== items.length) return;
+          setMoving(false);
+          setStep(0);
+          window.requestAnimationFrame(() => window.requestAnimationFrame(() => setMoving(true)));
+        }}
+      >
+        {cards.map((item, index) => {
+          const duplicate = index >= items.length;
+          return (
+            <Link
+              key={`${item.key}-${index}`}
+              to={item.to}
+              aria-hidden={duplicate ? true : undefined}
+              tabIndex={duplicate ? -1 : undefined}
+              onFocus={() => { if (!duplicate) setStep(index); }}
+              className="home-hot-issue-card group flex flex-col overflow-hidden rounded-lg border-t-[3px] border-green-deep bg-white shadow-[0_10px_26px_rgba(28,54,66,0.14)] ring-1 ring-green-deep/10 transition-shadow duration-300 hover:shadow-[0_18px_38px_rgba(28,54,66,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4"
+            >
+              <div className="overflow-hidden bg-ivory">
+                <SafeImage src={resolveImageSrc(item.imageSrc)} alt={item.imageAlt} loading={index < 4 ? "eager" : "lazy"} referrerPolicy="no-referrer" className="aspect-[16/9] w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
+              </div>
+              <div className="flex flex-1 flex-col p-4">
+                <div className="flex items-center justify-between gap-3 text-[10px] font-semibold text-charcoal/50">
+                  <span>{item.kindLabel}</span><time dateTime={item.date}>{item.date.replace(/-/g, ".")}</time>
+                </div>
+                <h3 className="editorial-title mt-2 line-clamp-3 break-keep text-[1.08rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.18rem]">{item.title}</h3>
+                <p className="mt-1.5 line-clamp-2 text-[12px] leading-5 text-charcoal/60 sm:text-[13px]">{item.summary}</p>
+                <span className="mt-auto inline-flex items-center justify-end gap-1.5 pt-3 text-[11px] font-extrabold text-green-deep">{ko ? "이슈 보기" : "View issue"}<ArrowRight size={13} aria-hidden="true" /></span>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+      </div>
+      <div className="mt-3 flex items-center justify-end gap-3 text-xs font-bold text-green-deep">
+        <span aria-hidden="true">{(step % items.length) + 1} / {items.length}</span>
+        <button
+          type="button"
+          aria-label={ko ? "다음 핫이슈" : "Next hot issue"}
+          onClick={() => setStep((current) => reduceMotion ? (current + 1) % items.length : Math.min(current + 1, items.length))}
+          className="inline-flex items-center gap-1 rounded-full border border-green-deep/30 bg-white px-3 py-1.5 hover:bg-green-pale focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+        >
+          {ko ? "다음" : "Next"}<ArrowRight size={14} aria-hidden="true" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const { language } = useLanguage();
   const ko = language === "ko";
@@ -55,7 +144,7 @@ export default function Home() {
   const localizedBriefings = allBriefings.map((item) => localizeBriefing(item, language));
   const allJournalColumns = getColumnsNewestFirst().map((item) => localizeColumn(item, language));
   const hotIssues = getHotIssuesNewestFirst(language);
-  const hotIssueClusters = getHotIssueClusters(language);
+  const latestHotIssueCards = hotIssues.slice(0, 8);
   const seedLanguageCandidates = [
     ...seedLanguageEnvironmentArticlesKo,
     ...seedLanguageArticlesKo,
@@ -184,40 +273,13 @@ export default function Home() {
               <p className="section-kicker">HOT ISSUES</p>
               <h2 id="hot-issues-title" className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "핫이슈" : "Hot Issues"}</h2>
               <p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">
-                {ko ? "지금 시민이 알아야 할 네 가지 흐름을 씨앗의 관점으로 정리합니다." : "Four developing issues citizens need to understand now, organized from SEED VOICE's perspective."}
+                {ko ? "새롭게 업데이트된 핫이슈 8개를 한 장씩 살펴보세요." : "Explore the eight latest hot issues, one card at a time."}
               </p>
             </div>
             <Link to="/news" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link>
           </div>
 
-          <div className="mt-4 grid gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
-            {hotIssueClusters.map((item, index) => (
-              <Link
-                key={item.id}
-                to={`/news/issues/${item.id}`}
-                className="group flex h-full flex-col overflow-hidden rounded-lg border-t-[3px] border-green-deep bg-white shadow-[0_10px_26px_rgba(28,54,66,0.14)] ring-1 ring-green-deep/10 transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(28,54,66,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4"
-              >
-                <div className="overflow-hidden bg-ivory">
-                  <SafeImage
-                    src={resolveImageSrc(item.imageSrc)}
-                    alt={item.imageAlt}
-                    loading={index < 2 ? "eager" : "lazy"}
-                    referrerPolicy="no-referrer"
-                    className="aspect-[16/9] w-full object-cover transition duration-500 group-hover:scale-[1.02]"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-4">
-                  <div className="flex items-center justify-between gap-3 text-[10px] font-semibold text-charcoal/40">
-                    <span>{ko ? "최근 변화" : "LATEST CHANGE"}</span>
-                    <time>{item.updatedAt.replace(/-/g, ".")}</time>
-                  </div>
-                  <h3 className="editorial-title mt-2 line-clamp-3 break-keep text-[1.08rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.18rem]">{item.title}</h3>
-                  <p className="mt-1.5 line-clamp-2 text-[12px] leading-5 text-charcoal/58 sm:text-[13px]">{item.latestChange}</p>
-                  <span className="mt-auto inline-flex items-center justify-end gap-1.5 pt-3 text-[11px] font-extrabold text-green-deep">{ko ? "이슈 보기" : "View issue"}<ArrowRight size={13} className="transition-transform group-hover:translate-x-1" aria-hidden="true"/></span>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <HotIssueCarousel items={latestHotIssueCards} ko={ko} />
         </div>
       </section>
 
