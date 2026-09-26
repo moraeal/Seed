@@ -85,7 +85,7 @@ const staticRoutes: SeoRoute[] = [
   { path: "/seed-language", title: "시민언어 | 씨앗의 소리", description: "특정 진영이 독점한 시민사회의 언어를 해체하고 본래 의미를 되살려 시민의 언어로 다시 구성합니다.", type: "website", lastModified: newest(allSeedLanguageArticlesKo.map((item) => item.date)) },
   { path: "/seed-language/why-civic-language", title: "우리가 다시 뜻을 새겨야 할 말들 | 씨앗의 소리", description: "말이 현실을 어떻게 나누고 무엇을 감추는지 살피며, 자유·권력의 제한·책임·시민의 성장이라는 기준으로 씨앗이 정리할 시민언어 전체 지도입니다.", type: "article", publishedAt: "2026-09-22", lastModified: "2026-09-22", author: "작은씨앗", section: "시민언어", image: socialImageUrl("seed-language", "why-civic-language", "2026-09-22-hero1"), imageAlt: "여러 세대의 시민이 진영의 표식을 걷어내고 흩어진 말의 조각을 다시 잇는 모습" },
   { path: "/seed-language/words-turn-citizens-into-enemies", title: "말이 시민을 적으로 만든다 | 씨앗의 소리", description: "이 글은 칼럼으로 이동했습니다. 기존 주소로 들어온 독자를 새 칼럼 주소로 연결합니다.", type: "article", publishedAt: "2026-09-13", lastModified: "2026-09-22", author: "작은씨앗", section: "칼럼", noindex: true },
-  { path: "/about", title: "씨앗의 소리가 지키려는 것 | 씨앗의 소리", description: "법의 지배와 권력분립을 토대로 시민과 기업의 자유를 지키고, 국가와 시민사회의 권력을 감시하며, 공익을 바로 세우는 독립 시민저널 씨앗의 소리의 선언입니다.", type: "website", lastModified: latestDate },
+  { path: "/about", title: "세상을 판단하는 힘, 시민에게 | 씨앗의 소리", description: "씨앗의 소리는 시민과 기업의 자유, 공익을 지키는 독립 시민저널입니다. 브리핑과 시민감시, 시민언어로 사실을 확인하고 권력과 예산의 흐름을 살핍니다.", type: "website", lastModified: latestDate },
   { path: "/publisher-message", title: "발행인 소개 | 씨앗의 소리", description: "한 사람의 질문과 판단에서 시작된 독립 시민저널 씨앗의 소리의 발행인 소개입니다.", type: "article", publishedAt: latestDate, lastModified: latestDate, author: "작은씨앗", section: "발행인 소개" },
   { path: "/search", title: "통합검색 | 씨앗의 소리", description: "씨앗의 소리의 핫이슈, 브리핑, 칼럼, 시민감시와 시민언어을 한 번에 검색합니다.", type: "website", lastModified: latestDate, noindex: true },
 ];

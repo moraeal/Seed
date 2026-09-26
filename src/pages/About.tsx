@@ -1,13 +1,12 @@
 import {
   ArrowRight,
-  BriefcaseBusiness,
-  Eye,
-  Landmark,
+  ArrowUpRight,
+  BookOpenText,
+  FileSearch,
   MessageSquareText,
   Scale,
   ShieldCheck,
   Sprout,
-  UsersRound,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n";
@@ -15,216 +14,218 @@ import { useLanguage } from "../i18n";
 const copy = {
   ko: {
     kicker: "ABOUT SEED VOICE",
-    title: "씨앗의 소리가\n지키려는 것",
-    lead: "민주주의는 선거의 승리만으로 완성되지 않습니다. 법의 지배와 권력분립, 시민의 자유가 무너진다면 민주라는 이름만 남습니다.",
-    identity: "씨앗의 소리는 시민과 기업의 자유를 지키고, 국가와 시민사회의 권력을 감시하며, 공익을 시민의 관점에서 바로 세우는 독립 시민저널입니다.",
-    publisher: "필진 소개",
-    statement: "상세 취지문 읽기",
-    manifesto: "독재는 반드시 군홧발을 신고 오지 않습니다. 국회의 표결로 올 수도 있고, 개혁이라는 이름을 달고 올 수도 있습니다.",
-    crisisKicker: "WHY NOW",
-    crisisTitle: "민주화를 외치던 세대도 권력이 되면 감시받아야 합니다",
-    crisis: [
-      "과거 민주화운동 세대는 독재 타도를 외치며 자유를 부르짖었습니다. 그러나 과거의 민주화 경력이 오늘의 권력을 정당화하는 면허가 될 수는 없습니다. 권력을 잡은 순간부터 그들 역시 감시와 견제의 대상입니다.",
-      "다수 의석으로 법을 밀어붙이고, 마음에 들지 않는 제도를 개혁의 이름으로 고치며, 사법부와 수사기관·언론의 질서를 한꺼번에 바꾸려 한다면 시민은 물어야 합니다. 무엇을 고치는가만큼 누가 권한을 갖게 되는가를 보아야 합니다.",
-      "정부와 한목소리를 내면서 시민을 대표한다고 말하는 시민단체도 예외가 아닙니다. 시민사회는 국가의 홍위병이나 정권의 이중대가 아닙니다. 공익을 말하며 권한과 예산을 갖는 순간, 그곳 역시 시민의 감시를 받아야 합니다.",
+    title: <>세상을 판단하는 힘,<br /><span className="text-[#bd613d]">시민에게.</span></>,
+    lead: "법안 하나가 내 삶을 어떻게 바꾸는지, 공익을 내세운 사업에 세금이 어떻게 쓰였는지, 기업의 도전을 막는 제도는 없는지. 씨앗의 소리는 자료를 확인하고 권력이 움직이는 방향을 끝까지 살핍니다.",
+    identity: "시민과 기업의 자유, 공익을 지키는 독립 시민저널. 사실은 정확하게, 관점은 분명하게 전하겠습니다.",
+    readToday: "오늘의 기사 읽기",
+    subscribe: "씨앗레터 구독신청",
+    questionsKicker: "THE QUESTIONS",
+    questionsTitle: "이런 질문에서 씨앗은 시작합니다",
+    questions: [
+      { label: "01 · 숫자", text: "나랏빚이 늘었는데, 정부는 왜 채무비율이 낮아졌다고 할까?" },
+      { label: "02 · 예산", text: "공익을 위한 사업이라는데, 예산과 계약을 시민도 확인할 수 있을까?" },
+      { label: "03 · 자유", text: "편법을 막는다는 제도가 정상적인 기업의 운영까지 어렵게 만들지는 않을까?" },
     ],
-    citizenKicker: "THE CIVIC AGE",
-    citizenTitle: "민주의 시대를 넘어 시민의 시대로",
-    citizen: [
-      "민주라는 이름을 가진 정당이 민주주의를 독점할 수는 없습니다. 시민이라는 이름을 붙인 단체가 시민을 대신한다고 스스로 선언할 수도 없습니다.",
-      "민주주의의 주인은 정당도, 정부도, 시민단체도 아닙니다. 시민입니다. 시민은 통치의 대상이 아니라 권력을 묻고, 제도를 판단하고, 잘못된 결정을 되돌리는 주체입니다.",
-      "함석헌은 이름 없는 씨알을 역사의 주체로 보았습니다. 씨앗의 소리는 그 문제의식을 오늘 시민의 자리에서 이어가려 합니다. 이름 없는 한 시민의 질문도 권력의 말보다 가벼울 수 없다는 믿음입니다.",
+    experienceKicker: "HOW TO READ SEED VOICE",
+    experienceTitle: "씨앗에서는 이렇게 읽을 수 있습니다",
+    experiences: [
+      { title: "오늘의 일을 이해합니다", description: "브리핑은 발표와 보도의 핵심을 짚고, 그 일이 시민의 삶에 어떤 영향을 주는지 설명합니다.", link: "브리핑 보러 가기", to: "/briefings" },
+      { title: "권력과 예산의 흐름을 따라갑니다", description: "시민감시는 법안·예산·계약·제도의 변화를 기록합니다. 발표된 숫자와 실제 자료가 어디서 달라지는지도 확인합니다.", link: "시민감시 보러 가기", to: "/monitoring" },
+      { title: "익숙한 말을 다시 생각합니다", description: "시민언어와 칼럼은 ‘공익’, ‘개혁’, ‘자유’ 같은 말이 현실에서 누구의 권한을 넓히고 누구의 선택을 좁히는지 묻습니다.", link: "시민언어 보러 가기", to: "/seed-language" },
     ],
-    valuesTitle: "씨앗이 지키려는 것",
-    valuesLead: "씨앗의 소리는 진영의 구호가 아니라 시민의 자유를 지키는 제도와 기준을 봅니다.",
-    values: [
-      { title: "법의 지배", description: "권력자의 뜻이 아니라 미리 정한 법과 절차가 국가를 움직여야 합니다." },
-      { title: "제한된 정부", description: "국가는 유능해야 하지만 시민의 삶과 선택을 끝없이 지배해서는 안 됩니다." },
-      { title: "권력분립", description: "입법·행정·사법이 서로 견제할 때 시민의 권리가 지켜집니다." },
-      { title: "표현의 자유", description: "권력자가 듣기 싫어하는 말까지 허용될 때 비로소 자유입니다." },
-      { title: "기업의 도전", description: "기업의 자유는 특혜가 아니라 시민의 일자리·선택·도전을 만드는 조건입니다." },
-      { title: "시민사회의 독립", description: "시민단체는 정부의 대변인이 아니라 국가권력을 감시하는 독립된 힘이어야 합니다." },
+    storiesKicker: "START READING",
+    storiesTitle: "처음 읽을 기사",
+    storiesLead: "씨앗이 숫자와 제도, 시민의 언어를 어떻게 살피는지 네 편의 기사로 확인해보세요.",
+    stories: [
+      { label: "숫자를 다시 읽기", title: "나랏빚 106조 늘었는데 채무비율은 하락?", description: "같은 기준의 숫자를 나란히 놓습니다.", to: "/news/national-debt-ratio-gdp-comparison" },
+      { label: "예산을 끝까지 확인하기", title: "여수섬박람회 돈의 흐름을 다시 세다", description: "공고와 계약 자료를 연결합니다.", to: "/columns/yeosu-island-expo-procurement-ledger" },
+      { label: "기업의 자유 살피기", title: "상속세 40억원이 330억원으로", description: "편법 단속과 사업의 계속 운영을 함께 봅니다.", to: "/briefings/hospital-inheritance-tax-maternity-care" },
+      { label: "말의 힘 다시 생각하기", title: "말이 시민을 적으로 만든다", description: "진영의 이름 뒤에 가려진 사람을 봅니다.", to: "/columns/words-turn-citizens-into-enemies" },
     ],
-    watchKicker: "WHAT WE WATCH",
-    watchTitle: "권력이 움직이는 곳을 끝까지 보겠습니다",
-    watchLead: "선한 명분보다 권한이 어디로 이동하는지, 시민이 어떤 비용을 치르는지, 반대할 자유가 남아 있는지를 확인합니다.",
-    watch: [
-      { title: "국가권력", description: "입법과 예산, 인사와 사법제도, 수사권력의 재편을 기록합니다." },
-      { title: "시장과 기업", description: "기업을 줄 세우는 규제와 부담이 시민의 일자리와 선택에 미치는 영향을 따집니다." },
-      { title: "시민사회 권력", description: "공익을 내세운 조직의 예산·성과·대표성과 정부와의 관계를 살핍니다." },
-    ],
-    standardTitle: "사실은 정확하게, 관점은 분명하게",
+    standardKicker: "OUR STANDARD",
+    standardTitle: "씨앗의 기준",
+    standardLead: "법의 지배와 권력분립, 표현의 자유, 기업의 도전, 시민사회의 독립을 지킵니다.",
     standards: [
-      { title: "사실을 먼저 확인합니다", description: "원문과 공개자료를 대조하고 확인된 사실, 해석, 의혹과 판단을 구분합니다." },
-      { title: "관점을 숨기지 않습니다", description: "기계적 중립 뒤에 숨지 않고 자유·자율·법치·책임의 기준으로 판단합니다." },
-      { title: "같은 잣대로 감시합니다", description: "진보와 보수, 국가와 시민사회를 가리지 않고 권한을 가진 주체에게 책임을 묻습니다." },
+      "확인된 사실과 씨앗의 판단을 구분합니다.",
+      "권한을 가진 곳에는 같은 기준으로 책임을 묻습니다.",
+      "시민이 다시 확인할 수 있는 근거를 남깁니다.",
     ],
-    promiseKicker: "OUR PROMISE",
-    promiseTitle: "작은 질문이 시민의 목소리로 자라도록",
-    promise: "씨앗의 소리는 거대한 언론사가 아닙니다. 한 사람의 질문에서 시작해 더 많은 시민의 목소리로 자라려는 독립 시민저널입니다. 오류가 확인되면 근거를 다시 살피고 공개적으로 바로잡겠습니다. 권력이 당연하다고 말하는 것을 다시 묻고, 시민이 스스로 보고 판단할 수 있는 사실과 관점을 전하겠습니다.",
-    final: "씨앗은 작습니다. 그러나 아무리 거대한 권력도 시민 한 사람의 질문에서부터 흔들리기 시작합니다.",
+    values: ["법의 지배", "권력분립", "표현의 자유", "기업의 도전", "시민사회의 독립"],
+    statement: "씨앗의 취지문 읽기",
+    contributors: "필진 소개",
+    joinKicker: "GROW WITH SEED VOICE",
+    joinTitle: "작은 질문을 함께 키워주세요",
+    joinLead: "기사를 읽고, 놓친 자료를 제보하고, 씨앗레터를 받아보세요. 시민이 다시 확인할 수 있는 근거를 쌓아가겠습니다.",
+    read: "기사 읽기",
+    tip: "제보하기",
+    characterAlt: "펜을 든 씨야 캐릭터",
+    characterBubble: "함께 확인해요!",
   },
   en: {
     kicker: "ABOUT SEED VOICE",
-    title: "What SEED VOICE\nStands For",
-    lead: "Democracy is not secured by electoral victory alone. When the rule of law, separation of powers and civic freedom erode, little remains beyond the name.",
-    identity: "SEED VOICE is an independent civic journal that defends freedom for citizens and enterprise, scrutinizes power in the state and civil society, and restores integrity to the public good.",
-    publisher: "Meet the Contributors",
-    statement: "Read the Full Statement",
-    manifesto: "Authoritarianism does not always arrive in military boots. It can come through a parliamentary vote, carrying the banner of reform.",
-    crisisKicker: "WHY NOW",
-    crisisTitle: "A generation that fought for democracy must still be watched when it holds power",
-    crisis: [
-      "A generation of South Koreans once resisted dictatorship in the name of freedom. That history cannot become a permanent license for the exercise of power today. The moment democratic activists enter government, they too become subjects of democratic scrutiny.",
-      "When a parliamentary majority rushes through laws, rewrites institutions under the banner of reform, and seeks to remake the judiciary, prosecution and media order at once, citizens must look beyond what is being changed. They must ask where power is moving and who will hold it next.",
-      "Civic organizations are not exempt. A group that speaks alongside the government cannot claim to represent citizens simply by invoking civil society. Once an organization gains public authority, money or influence in the name of the public good, citizens have the right to scrutinize it.",
+    title: <>The power to judge the world,<br /><span className="text-[#bd613d]">in citizens' hands.</span></>,
+    lead: "How does a new bill change daily life? Where does the money go when a project claims to serve the public? Does a rule against abuse also obstruct a legitimate business? SEED VOICE checks the records and follows where power moves.",
+    identity: "An independent civic journal defending freedom for citizens and enterprise and the public good. Accurate in fact, clear in viewpoint.",
+    readToday: "Read today's stories",
+    subscribe: "Subscribe to SEED LETTER",
+    questionsKicker: "THE QUESTIONS",
+    questionsTitle: "SEED begins with questions like these",
+    questions: [
+      { label: "01 · Numbers", text: "If public debt is rising, why does the government say the debt ratio has fallen?" },
+      { label: "02 · Budgets", text: "Can citizens trace the contracts and spending behind a project said to serve the public?" },
+      { label: "03 · Freedom", text: "Could a rule meant to stop abuse also make a legitimate enterprise harder to sustain?" },
     ],
-    citizenKicker: "THE CIVIC AGE",
-    citizenTitle: "Beyond the age of democratic camps, toward the age of citizens",
-    citizen: [
-      "No party with democracy in its name can monopolize democracy. No organization with citizen in its name can appoint itself the voice of citizens.",
-      "The sovereign of democracy is not a party, a government or a civic organization. It is the citizen: not an object to be governed, but an agent who questions power, judges institutions and reverses decisions that betray freedom.",
-      "Korean thinker Ham Seok-heon saw ordinary, unnamed people—the ssial—as the agents of history. SEED VOICE carries that question into civic life today: one unknown citizen’s question cannot be treated as less important than the words of power.",
+    experienceKicker: "HOW TO READ SEED VOICE",
+    experienceTitle: "Three ways to read SEED",
+    experiences: [
+      { title: "Understand the day's events", description: "Our briefings explain the essential facts in announcements and reports and what they mean for citizens' lives.", link: "Explore briefings", to: "/briefings" },
+      { title: "Follow power and public money", description: "Civic Watch tracks bills, budgets, contracts and institutional change. We compare public claims with the underlying records.", link: "Explore Civic Watch", to: "/monitoring" },
+      { title: "Reconsider familiar words", description: "Our language essays and columns ask whose authority grows, and whose choices shrink, when people invoke the public good, reform or freedom.", link: "Explore civic language", to: "/seed-language" },
     ],
-    valuesTitle: "What SEED defends",
-    valuesLead: "We look beyond partisan slogans to the institutions and principles that protect civic freedom.",
-    values: [
-      { title: "Rule of law", description: "Government must be bound by established law and procedure, not the wishes of those in power." },
-      { title: "Limited government", description: "The state must be capable, but it must not endlessly govern citizens’ lives and choices." },
-      { title: "Separated powers", description: "Civic rights survive when the legislative, executive and judicial branches restrain one another." },
-      { title: "Freedom of expression", description: "Freedom becomes real when it protects speech that those in power do not want to hear." },
-      { title: "Enterprise and initiative", description: "Economic freedom is not a privilege; it sustains citizens’ jobs, choices and capacity to build." },
-      { title: "Independent civil society", description: "Civic groups should watch the state as an independent force, not speak as its auxiliary." },
+    storiesKicker: "START READING",
+    storiesTitle: "Start with these stories",
+    storiesLead: "Four examples show how SEED examines numbers, institutions, business freedom and civic language.",
+    stories: [
+      { label: "Read the numbers", title: "Debt rises by 106 trillion won. Why does the ratio fall?", description: "Compare figures calculated on the same basis.", to: "/news/national-debt-ratio-gdp-comparison" },
+      { label: "Follow the budget", title: "Tracing the Yeosu Island Expo's contracts", description: "Connect tender notices with contract records.", to: "/columns/yeosu-island-expo-procurement-ledger" },
+      { label: "Examine enterprise", title: "A maternity hospital faces a steep inheritance tax", description: "Distinguish sham businesses from continuing ones.", to: "/briefings/hospital-inheritance-tax-maternity-care" },
+      { label: "Examine language", title: "When words turn citizens into enemies", description: "Look beyond partisan labels to the people affected.", to: "/columns/words-turn-citizens-into-enemies" },
     ],
-    watchKicker: "WHAT WE WATCH",
-    watchTitle: "We follow power wherever it moves",
-    watchLead: "We look past benevolent claims to ask where authority moves, what citizens must pay, and whether the freedom to object remains intact.",
-    watch: [
-      { title: "State power", description: "We track legislation, budgets, appointments, judicial change and the reorganization of investigative power." },
-      { title: "Markets and enterprise", description: "We examine how coercive regulation and political pressure affect jobs, choice and economic initiative." },
-      { title: "Civil-society power", description: "We scrutinize the budgets, results, representation and government ties of organizations acting in the public name." },
-    ],
-    standardTitle: "Accurate in fact, clear in viewpoint",
+    standardKicker: "OUR STANDARD",
+    standardTitle: "What guides SEED",
+    standardLead: "We defend the rule of law, separated powers, freedom of expression, enterprise and an independent civil society.",
     standards: [
-      { title: "Facts come first", description: "We compare primary sources and public records, separating verified fact, interpretation, suspicion and judgment." },
-      { title: "Our viewpoint is visible", description: "We do not hide behind mechanical neutrality; we judge through freedom, autonomy, the rule of law and responsibility." },
-      { title: "One standard for every camp", description: "We hold every center of power accountable, whether progressive or conservative, state or civil society." },
+      "We distinguish verified facts from our own judgments.",
+      "We hold every center of power to the same standard.",
+      "We leave evidence that citizens can check for themselves.",
     ],
-    promiseKicker: "OUR PROMISE",
-    promiseTitle: "So a small question can grow into a civic voice",
-    promise: "SEED VOICE is not a large media institution. It is an independent civic journal that began with one person’s questions and seeks to grow through the voices of many. When we are wrong, we will return to the evidence and correct the record openly. We will question what power presents as inevitable and give citizens the facts and arguments they need to see and judge for themselves.",
-    final: "A seed is small. Yet even the greatest power can begin to tremble when one citizen asks a question.",
+    values: ["Rule of law", "Separated powers", "Free expression", "Enterprise", "Independent civil society"],
+    statement: "Read our founding statement",
+    contributors: "Meet the contributors",
+    joinKicker: "GROW WITH SEED VOICE",
+    joinTitle: "Help a small question grow",
+    joinLead: "Read a story, share a record we missed, or subscribe to SEED LETTER. Together we can build a record citizens can check.",
+    read: "Read stories",
+    tip: "Send a tip",
+    characterAlt: "Siya, SEED's character, holding a pen",
+    characterBubble: "Let's check together!",
   },
 };
 
-const valueIcons = [Scale, Landmark, ShieldCheck, MessageSquareText, BriefcaseBusiness, UsersRound];
-const watchIcons = [Landmark, BriefcaseBusiness, Eye];
+const experienceIcons = [BookOpenText, FileSearch, MessageSquareText];
+const questionColors = ["bg-[#fff0e3]", "bg-[#e7f1d5]", "bg-[#e4f1f3]"];
+const experienceColors = ["bg-[#dcefa9]", "bg-[#f6ad7e]", "bg-[#d9eff3]"];
 
 export default function About() {
   const { language } = useLanguage();
   const content = copy[language];
 
   return (
-    <div className="bg-paper">
-      <header className="relative overflow-hidden border-b border-green-deep/15 bg-green-deep py-14 text-white sm:py-20">
-        <img src={`${import.meta.env.BASE_URL}images/brand/seed-sprout-color-leaves-reverse-transparent-hd.png`} alt="" className="pointer-events-none absolute -right-16 -top-20 h-72 w-72 object-contain opacity-15 sm:right-6 sm:h-[26rem] sm:w-[26rem]" />
-        <div className="container-page relative max-w-5xl">
-          <p className="text-xs font-extrabold tracking-[.2em] text-gold-light">{content.kicker}</p>
-          <h1 className="editorial-title mt-4 max-w-4xl whitespace-pre-line text-5xl font-bold leading-[1.08] sm:text-6xl lg:text-7xl">{content.title}</h1>
-          <p className="mt-7 max-w-3xl border-l-2 border-gold pl-6 text-lg leading-8 text-white/80 sm:text-xl">{content.lead}</p>
-          <p className="mt-5 max-w-3xl text-sm font-semibold leading-6 text-white/58 sm:text-base">{content.identity}</p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Link to="/publisher-message" className="button-light">{content.publisher}<ArrowRight size={16}/></Link>
-            <Link to="/founding-statement" className="button-outline-light">{content.statement}</Link>
+    <div className="bg-[#fffaf0] text-green-deep">
+      <header className="overflow-hidden bg-[linear-gradient(135deg,#f7ecc2_0%,#f9f2d9_55%,#e4f0cf_100%)]">
+        <div className="container-page grid min-h-[540px] items-center gap-5 py-14 lg:grid-cols-[1.13fr_.87fr] lg:gap-12 lg:py-20">
+          <div className="relative z-10">
+            <p className="text-xs font-extrabold tracking-[.2em] text-green-mid">{content.kicker}</p>
+            <h1 className="mt-4 text-[clamp(2.8rem,6vw,5.8rem)] font-black leading-[1.13] tracking-[-.065em]">{content.title}</h1>
+            <p className="mt-7 max-w-2xl text-base leading-8 text-green-deep/85 sm:text-lg">{content.lead}</p>
+            <p className="mt-5 max-w-2xl font-extrabold leading-7">{content.identity}</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link to="/news" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-green-deep px-6 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:shadow-lg">{content.readToday}<ArrowUpRight size={17}/></Link>
+              <Link to="/account?mode=signup" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-green-deep bg-white px-6 py-3 text-sm font-extrabold transition hover:-translate-y-0.5 hover:shadow-lg">{content.subscribe}<ArrowUpRight size={17}/></Link>
+            </div>
+          </div>
+          <div className="relative order-first mx-auto grid h-72 w-72 place-items-center lg:order-last lg:h-[420px] lg:w-[420px]">
+            <div className="absolute inset-2 rounded-full bg-[#dceba9] shadow-[inset_-18px_-18px_0_rgba(39,89,66,.07),0_20px_44px_rgba(30,65,51,.11)]" />
+            <img src={`${import.meta.env.BASE_URL}images/seed-character/seed-12-writing.png`} alt={content.characterAlt} className="relative z-10 h-[82%] w-[82%] object-contain drop-shadow-[0_18px_12px_rgba(30,70,44,.16)]" />
+            <div className="absolute right-0 top-3 z-20 rotate-6 rounded-2xl border border-green-deep bg-white px-4 py-2 text-xs font-extrabold shadow-[6px_6px_0_#f6a877] sm:text-sm">{content.characterBubble}</div>
           </div>
         </div>
       </header>
 
-      <main className="container-page max-w-5xl py-10 sm:py-14">
-        <blockquote className="border-y-2 border-gold/75 bg-[#fbf4e5] px-6 py-8 text-center sm:px-12 sm:py-10">
-          <p className="editorial-title mx-auto max-w-4xl text-2xl font-bold leading-relaxed text-green-deep sm:text-3xl">{content.manifesto}</p>
-        </blockquote>
-
-        <section className="grid gap-7 border-b border-green-deep/15 py-11 sm:py-14 lg:grid-cols-[.72fr_1.28fr] lg:gap-14">
-          <div>
-            <p className="section-kicker">{content.crisisKicker}</p>
-            <h2 className="editorial-title mt-3 text-3xl font-bold leading-tight text-navy sm:text-4xl">{content.crisisTitle}</h2>
-          </div>
-          <div className="space-y-5 text-[17px] leading-[1.82] text-charcoal/75 sm:text-lg">
-            {content.crisis.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </div>
-        </section>
-
-        <section className="grid gap-7 border-b border-green-deep/15 py-11 sm:py-14 lg:grid-cols-[.72fr_1.28fr] lg:gap-14">
-          <div>
-            <p className="section-kicker">{content.citizenKicker}</p>
-            <h2 className="editorial-title mt-3 text-3xl font-bold leading-tight text-navy sm:text-4xl">{content.citizenTitle}</h2>
-          </div>
-          <div className="space-y-5 text-[17px] leading-[1.82] text-charcoal/75 sm:text-lg">
-            {content.citizen.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </div>
-        </section>
-
-        <section className="py-11 sm:py-14">
-          <p className="section-kicker">OUR PRINCIPLES</p>
-          <h2 className="editorial-title mt-3 text-3xl font-bold text-navy sm:text-4xl">{content.valuesTitle}</h2>
-          <p className="mt-3 max-w-3xl text-base leading-7 text-charcoal/62">{content.valuesLead}</p>
-          <div className="mt-8 grid gap-px overflow-hidden border border-green-deep/15 bg-green-deep/15 md:grid-cols-2 lg:grid-cols-3">
-            {content.values.map((item, index) => {
-              const Icon = valueIcons[index];
-              return <article key={item.title} className="bg-white p-6 sm:p-7">
-                <Icon size={24} className="text-green-mid" />
-                <h3 className="editorial-title mt-5 text-2xl font-bold text-navy">{item.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-charcoal/65">{item.description}</p>
-              </article>;
-            })}
-          </div>
-        </section>
-
-        <section className="bg-green-deep px-6 py-10 text-white sm:px-10 sm:py-12">
-          <p className="text-xs font-extrabold tracking-[.18em] text-gold-light">{content.watchKicker}</p>
-          <h2 className="editorial-title mt-3 max-w-4xl text-3xl font-bold leading-tight sm:text-4xl">{content.watchTitle}</h2>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-white/70">{content.watchLead}</p>
-          <div className="mt-9 grid gap-7 md:grid-cols-3">
-            {content.watch.map((item, index) => {
-              const Icon = watchIcons[index];
-              return <article key={item.title} className="border-t border-white/20 pt-5">
-                <Icon size={22} className="text-gold-light" />
-                <h3 className="mt-4 text-lg font-extrabold">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-white/65">{item.description}</p>
-              </article>;
-            })}
-          </div>
-        </section>
-
-        <section className="border-b border-green-deep/15 py-11 sm:py-14">
-          <p className="section-kicker">EDITORIAL STANDARD</p>
-          <h2 className="editorial-title mt-3 max-w-4xl text-3xl font-bold leading-tight text-navy sm:text-4xl">{content.standardTitle}</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {content.standards.map((item, index) => (
-              <article key={item.title} className="border-t border-green-deep/20 pt-5">
-                {index === 0 ? <ShieldCheck size={22} className="text-gold" /> : index === 1 ? <MessageSquareText size={22} className="text-gold" /> : <Eye size={22} className="text-gold" />}
-                <h3 className="mt-4 text-lg font-extrabold text-navy">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-charcoal/65">{item.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="grid gap-8 py-11 sm:py-14 lg:grid-cols-[1.15fr_.85fr] lg:items-start lg:gap-12">
-          <article>
-            <Sprout size={28} className="text-green-mid" />
-            <p className="section-kicker mt-5">{content.promiseKicker}</p>
-            <h2 className="editorial-title mt-3 text-3xl font-bold leading-tight text-navy sm:text-4xl">{content.promiseTitle}</h2>
-            <p className="mt-5 text-[17px] leading-[1.82] text-charcoal/72">{content.promise}</p>
-          </article>
-          <aside className="border-y-2 border-gold/70 bg-[#fbf4e5] px-7 py-8 sm:px-9 sm:py-10">
-            <p className="editorial-title text-2xl font-bold leading-relaxed text-green-deep">{content.final}</p>
-            <div className="mt-7 flex flex-col items-start gap-3">
-              <Link to="/publisher-message" className="text-link">{content.publisher}<ArrowRight size={16}/></Link>
-              <Link to="/founding-statement" className="text-link">{content.statement}<ArrowRight size={16}/></Link>
+      <main>
+        <section className="bg-white py-16 sm:py-24">
+          <div className="container-page max-w-6xl">
+            <p className="section-kicker">{content.questionsKicker}</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-[-.04em] sm:text-5xl">{content.questionsTitle}</h2>
+            <div className="mt-9 grid gap-4 md:grid-cols-3">
+              {content.questions.map((question, index) => (
+                <article key={question.label} className={`${questionColors[index]} flex min-h-44 flex-col justify-between rounded-3xl border border-green-deep/10 p-6 shadow-[0_16px_34px_rgba(30,65,51,.09)] sm:p-8`}>
+                  <p className="text-xs font-extrabold tracking-widest text-green-deep/65">{question.label}</p>
+                  <h3 className="mt-6 text-xl font-extrabold leading-snug tracking-[-.035em]">“{question.text}”</h3>
+                </article>
+              ))}
             </div>
-          </aside>
+          </div>
+        </section>
+
+        <section className="bg-[#f3f5ea] py-16 sm:py-24">
+          <div className="container-page max-w-6xl">
+            <p className="section-kicker">{content.experienceKicker}</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-[-.04em] sm:text-5xl">{content.experienceTitle}</h2>
+            <div className="mt-9 grid gap-5 md:grid-cols-3">
+              {content.experiences.map((item, index) => {
+                const Icon = experienceIcons[index];
+                return <article key={item.title} className="flex min-h-80 flex-col rounded-3xl bg-white p-7 shadow-[0_20px_44px_rgba(30,65,51,.1)]">
+                  <div className={`${experienceColors[index]} grid size-14 place-items-center rounded-2xl`}><Icon size={27} aria-hidden="true" /></div>
+                  <h3 className="mt-6 text-2xl font-extrabold leading-snug tracking-[-.04em]">{item.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-charcoal/70">{item.description}</p>
+                  <Link to={item.to} className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-extrabold underline underline-offset-4">{item.link}<ArrowUpRight size={15}/></Link>
+                </article>;
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-green-deep py-16 text-white sm:py-24">
+          <div className="container-page max-w-6xl">
+            <p className="text-xs font-extrabold tracking-[.2em] text-[#c5ebad]">{content.storiesKicker}</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-[-.04em] sm:text-5xl">{content.storiesTitle}</h2>
+            <p className="mt-4 max-w-2xl leading-7 text-white/75">{content.storiesLead}</p>
+            <div className="mt-9 grid gap-4 md:grid-cols-2">
+              {content.stories.map((story) => <Link key={story.to} to={story.to} className="flex min-h-52 flex-col rounded-3xl border border-white/25 bg-white/10 p-7 transition hover:-translate-y-1 hover:bg-white/20">
+                <span className="text-xs font-extrabold text-[#c5ebad]">{story.label}</span>
+                <h3 className="mt-4 text-xl font-extrabold leading-snug tracking-[-.035em] sm:text-2xl">{story.title}</h3>
+                <span className="mt-auto inline-flex items-center gap-1 pt-5 text-sm text-white/75">{story.description}<ArrowUpRight size={15}/></span>
+              </Link>)}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-16 sm:py-24">
+          <div className="container-page grid max-w-6xl gap-10 lg:grid-cols-[.9fr_1.1fr] lg:gap-20">
+            <div>
+              <p className="section-kicker">{content.standardKicker}</p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-[-.04em] sm:text-5xl">{content.standardTitle}</h2>
+              <p className="mt-5 max-w-xl text-lg leading-8 text-charcoal/75">{content.standardLead}</p>
+              <div className="mt-6 flex flex-wrap gap-2">{content.values.map(value => <span key={value} className="rounded-full bg-[#e7f1d5] px-3 py-1.5 text-xs font-bold">{value}</span>)}</div>
+              <div className="mt-8 flex flex-wrap gap-5">
+                <Link to="/founding-statement" className="inline-flex items-center gap-2 text-sm font-extrabold underline underline-offset-4">{content.statement}<ArrowRight size={16}/></Link>
+                <Link to="/publisher-message" className="inline-flex items-center gap-2 text-sm font-extrabold underline underline-offset-4">{content.contributors}<ArrowRight size={16}/></Link>
+              </div>
+            </div>
+            <ul className="grid content-start gap-3">
+              {content.standards.map((standard, index) => <li key={standard} className="flex items-start gap-4 rounded-2xl border-l-4 border-[#a6c86b] bg-[#f3f6ec] px-5 py-5 font-bold leading-7">
+                {index === 0 ? <ShieldCheck className="mt-0.5 shrink-0 text-green-mid" size={23} /> : index === 1 ? <Scale className="mt-0.5 shrink-0 text-green-mid" size={23} /> : <FileSearch className="mt-0.5 shrink-0 text-green-mid" size={23} />}
+                {standard}
+              </li>)}
+            </ul>
+          </div>
+        </section>
+
+        <section className="bg-[#f6a877] py-16 sm:py-20">
+          <div className="container-page grid max-w-6xl gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <Sprout size={29} aria-hidden="true" />
+              <p className="mt-3 text-xs font-extrabold tracking-[.2em]">{content.joinKicker}</p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-[-.04em] sm:text-5xl">{content.joinTitle}</h2>
+              <p className="mt-5 max-w-2xl text-base leading-8">{content.joinLead}</p>
+            </div>
+            <div className="flex flex-wrap gap-3 lg:max-w-80">
+              <Link to="/news" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-green-deep bg-white px-5 py-3 text-sm font-extrabold">{content.read}<ArrowUpRight size={16}/></Link>
+              <a href="mailto:seedvoicekr@gmail.com" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-green-deep bg-white px-5 py-3 text-sm font-extrabold">{content.tip}<ArrowUpRight size={16}/></a>
+              <Link to="/account?mode=signup" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-green-deep px-5 py-3 text-sm font-extrabold text-white">{content.subscribe}<ArrowUpRight size={16}/></Link>
+            </div>
+          </div>
         </section>
       </main>
     </div>
