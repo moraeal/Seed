@@ -19,14 +19,14 @@ import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
 import SafeImage from "../components/SafeImage";
 import ShareButton from "../components/ShareButton";
-import type { EditorialContinuation } from "../data/editorialContinuations";
+import type { getArticleReadingPath } from "../data/articleReadingPaths";
 import type { LocalizedText, PublicInterestWatchCase, WatchTimelineStatus } from "../data/publicInterestWatch";
 import type { Language } from "../i18n";
 
 type Props = {
   item: PublicInterestWatchCase;
   language: Language;
-  continuation?: EditorialContinuation;
+  readingPath: ReturnType<typeof getArticleReadingPath>;
 };
 
 const timelineTone: Record<WatchTimelineStatus, string> = {
@@ -36,7 +36,7 @@ const timelineTone: Record<WatchTimelineStatus, string> = {
   pending: "border-charcoal/25 bg-white text-charcoal/55",
 };
 
-export default function LivingWatchDetail({ item, language, continuation }: Props) {
+export default function LivingWatchDetail({ item, language, readingPath }: Props) {
   const ko = language === "ko";
   const t = (value: LocalizedText) => value[language];
   const layered = item.displayMode === "layered";
@@ -406,7 +406,7 @@ export default function LivingWatchDetail({ item, language, continuation }: Prop
 
         <ContentAccountability postSlug={`monitoring-${item.slug}`} publishedDate={item.updatedAt} />
         <CommentSection postSlug={`monitoring-${item.slug}`} />
-        {continuation && <ArticleContinuation item={continuation} />}
+        <ArticleContinuation {...readingPath} />
       </div>
     </article>
   );

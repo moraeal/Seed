@@ -10,7 +10,7 @@ import ShareButton from "../components/ShareButton";
 import SourceDocumentPanel from "../components/SourceDocumentPanel";
 import { getColumn, isHotIssueColumn } from "../data/columns";
 import { localizeColumn } from "../data/localizedContent";
-import { getEditorialContinuation } from "../data/editorialContinuations";
+import { getArticleReadingPath } from "../data/articleReadingPaths";
 import { useLanguage } from "../i18n";
 
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
@@ -40,7 +40,7 @@ export default function ColumnDetail() {
 
   const isLongRead = column.readMinutes >= 8;
   const hotIssue = isHotIssueColumn(column.slug);
-  const continuation = getEditorialContinuation("column", column.slug, language);
+  const readingPath = getArticleReadingPath("column", column.slug, language);
 
   const seenImages = new Set(column.displayHero === false ? [] : [imageKey(column.heroImage.src)]);
   const bodyImages = [
@@ -87,7 +87,7 @@ export default function ColumnDetail() {
         <aside className="mt-10 border-t-2 border-navy pt-6"><span className="section-kicker">{ko ? "자료 주" : "SOURCE NOTE"}</span><p className="mt-3 text-sm leading-6 text-charcoal/60">{column.sourceNote}</p>{column.sources && <ul className="mt-4 grid gap-1.5 text-sm leading-6 text-charcoal/60">{column.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ul>}</aside>
         <ContentAccountability postSlug={column.slug} publishedDate={column.date} />
         <CommentSection postSlug={column.slug} />
-        {continuation && <ArticleContinuation item={continuation} />}
+        <ArticleContinuation {...readingPath} />
       </div>
     </div>
   </article>;

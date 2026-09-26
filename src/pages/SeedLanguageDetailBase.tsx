@@ -6,7 +6,7 @@ import ContentAccountability from "../components/ContentAccountability";
 import DeepReadBanner from "../components/DeepReadBanner";
 import InteractiveFigure from "../components/InteractiveFigure";
 import ShareButton from "../components/ShareButton";
-import { getEditorialContinuation } from "../data/editorialContinuations";
+import { getArticleReadingPath } from "../data/articleReadingPaths";
 import { getSeedLanguageArticle } from "../data/seedLanguage";
 import { getSeedLanguageEnvironmentArticle } from "../data/seedLanguageEnvironment";
 import { useLanguage } from "../i18n";
@@ -38,7 +38,7 @@ export default function SeedLanguageDetail() {
 
   if (!article) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">{ko ? "시민언어 글을 찾을 수 없습니다." : "Glossary article not found."}</h1><Link to="/seed-language" className="button-primary mt-7">{ko ? "시민언어 목록" : "Glossary"}</Link></div>;
 
-  const continuation = getEditorialContinuation("seed-language", article.slug, language);
+  const readingPath = getArticleReadingPath("seed-language", article.slug, language);
 
   const isLongRead = article.readMinutes >= 8;
   const isProgressArticle = article.slug === "what-is-true-progress";
@@ -110,7 +110,7 @@ export default function SeedLanguageDetail() {
           : article.relatedArticle && <Link to={`/seed-language/${article.relatedArticle.slug}`} className="my-8 flex items-center gap-3 border border-green-deep/20 bg-white px-5 py-4 text-base font-bold leading-7 text-green-deep hover:bg-green-pale"><BookOpenText size={20} className="shrink-0"/>{article.relatedArticle.label}</Link>}
         <ContentAccountability postSlug={`seed-language-${article.slug}`} publishedDate={article.date}/>
         <CommentSection postSlug={`seed-language-${article.slug}`}/>
-        {continuation && continuation.href !== deepReadHref && <ArticleContinuation item={continuation} />}
+        <ArticleContinuation {...readingPath} items={readingPath.items.filter((entry) => entry.href !== deepReadHref)} />
       </div>
     </div>
   </article>;

@@ -8,7 +8,7 @@ import InteractiveFigure from "../components/InteractiveFigure";
 import SafeImage from "../components/SafeImage";
 import ShareButton from "../components/ShareButton";
 import { getAllBriefing } from "../data/allBriefings";
-import { getEditorialContinuation } from "../data/editorialContinuations";
+import { getArticleReadingPath } from "../data/articleReadingPaths";
 import { localizeBriefing } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
 
@@ -29,7 +29,7 @@ export default function BriefingDetail() {
   }
 
   const isLongRead = briefing.readMinutes >= 8;
-  const continuation = getEditorialContinuation("briefing", briefing.slug, language);
+  const readingPath = getArticleReadingPath("briefing", briefing.slug, language);
   const hasBCorpDeepDive = briefing.slug === "social-economy-fair-competition";
 
   const renderFigure = (image: NonNullable<typeof briefing.images>[number], prominent = false) => (
@@ -161,7 +161,7 @@ export default function BriefingDetail() {
         )}
         <ContentAccountability postSlug={briefing.slug} publishedDate={briefing.date} />
         <CommentSection postSlug={briefing.slug} />
-        {continuation && <ArticleContinuation item={continuation} />}
+        <ArticleContinuation {...readingPath} />
       </div>
 
     </article>

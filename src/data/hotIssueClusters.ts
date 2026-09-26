@@ -5,6 +5,7 @@ import { getLegislativeCommentary, getLegislativeCommentaryEdition } from "./leg
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "./localizedContent";
 import { getNewsArticle } from "./news";
 import { getPublicInterestWatchCase } from "./newsTrackerRegistry";
+import { publicInstitutionReformTracker } from "./publicInstitutionReformTracker";
 
 type HotIssueReference =
   | { kind: "briefing" | "column" | "news" | "watch"; slug: string }
@@ -232,7 +233,8 @@ function resolveReference(reference: HotIssueReference, language: Language): Hot
     };
   }
 
-  const item = getPublicInterestWatchCase(reference.slug);
+  const item = getPublicInterestWatchCase(reference.slug)
+    ?? (reference.slug === publicInstitutionReformTracker.slug ? publicInstitutionReformTracker : undefined);
   if (!item) return null;
   return {
     key: `watch-${item.slug}`,
@@ -247,26 +249,33 @@ function resolveReference(reference: HotIssueReference, language: Language): Hot
   };
 }
 
-export function getHotIssueClusters(language: Language): HotIssueCluster[] {
-  return clusterDefinitions.map((cluster, index) => {
-    const items = cluster.references
-      .map((reference) => resolveReference(reference, language))
-      .filter((item): item is HotIssueClusterItem => Boolean(item))
-      .sort((a, b) => b.date.localeCompare(a.date));
+function resolveCluster(cluster: typeof clusterDefinitions[number], index: number, language: Language): HotIssueCluster {
+  const items = cluster.references
+    .map((reference) => resolveReference(reference, language))
+    .filter((item): item is HotIssueClusterItem => Boolean(item))
+    .sort((a, b) => b.date.localeCompare(a.date));
 
-    return {
-      id: cluster.id,
-      number: String(index + 1).padStart(2, "0"),
-      title: cluster.title[language],
-      summary: cluster.summary[language],
-      latestChange: cluster.latestChange[language],
-      focus: cluster.focus[language],
-      imageSrc: cluster.image?.src ?? items[0]?.imageSrc ?? fallbackImage,
-      imageAlt: cluster.image?.alt[language] ?? items[0]?.imageAlt ?? cluster.title[language],
-      imageCredit: cluster.image?.credit[language],
-      imageSourceUrl: cluster.image?.sourceUrl,
-      items,
-      updatedAt: items[0]?.date ?? "",
-    };
-  }).filter((cluster) => cluster.items.length > 0);
+  return {
+    id: cluster.id,
+    number: String(index + 1).padStart(2, "0"),
+    title: cluster.title[language],
+    summary: cluster.summary[language],
+    latestChange: cluster.latestChange[language],
+    focus: cluster.focus[language],
+    imageSrc: cluster.image?.src ?? items[0]?.imageSrc ?? fallbackImage,
+    imageAlt: cluster.image?.alt[language] ?? items[0]?.imageAlt ?? cluster.title[language],
+    imageCredit: cluster.image?.credit[language],
+    imageSourceUrl: cluster.image?.sourceUrl,
+    items,
+    updatedAt: items[0]?.date ?? "",
+  };
+}
+
+export function getHotIssueClusters(language: Language): HotIssueCluster[] {
+  return clusterDefinitions.map((cluster, index) => resolveCluster(cluster, index, language)).filter((cluster) => cluster.items.length > 0);
+}
+
+export function getHotIssueClusterForArticle(kind: string, slug: string, language: Language): HotIssueCluster | undefined {
+  const index = clusterDefinitions.findIndex((cluster) => cluster.references.some((reference) => reference.kind === kind && reference.slug === slug));
+  return index < 0 ? undefined : resolveCluster(clusterDefinitions[index], index, language);
 }

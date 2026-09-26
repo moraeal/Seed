@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import ArticleContinuation from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
-import { getEditorialContinuation } from "../data/editorialContinuations";
+import { getArticleReadingPath } from "../data/articleReadingPaths";
 import type { LocalizedText } from "../data/publicInterestWatch";
 import { getPublicInterestWatchCase } from "../data/newsTrackerRegistry";
 import { useLanguage } from "../i18n";
@@ -27,10 +27,10 @@ export default function PublicInterestWatchDetail() {
     );
   }
 
-  const continuation = item.continuationEligible === false ? undefined : getEditorialContinuation("monitoring", item.slug, language);
+  const readingPath = item.continuationEligible === false ? { items: [] } : getArticleReadingPath("monitoring", item.slug, language);
 
   if (item.timeline?.length) {
-    return <LivingWatchDetail item={item} language={language} continuation={continuation} />;
+    return <LivingWatchDetail item={item} language={language} readingPath={readingPath} />;
   }
 
   if (item.slug === "community-chest-of-korea") {
@@ -129,7 +129,7 @@ export default function PublicInterestWatchDetail() {
 
         <ContentAccountability postSlug={`monitoring-${item.slug}`} publishedDate={item.updatedAt} />
         <CommentSection postSlug={`monitoring-${item.slug}`} />
-        {continuation && <ArticleContinuation item={continuation} />}
+        <ArticleContinuation {...readingPath} />
       </div>
     </article>
   );
