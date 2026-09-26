@@ -17,6 +17,22 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
     ko: { href: "/briefings/income-tax-family-deduction-2026-proposals", title: "배우자 연 800만 원 벌면 가족공제는? 정부안 750만 원, 의원안 900만 원", relationship: "사실과 법안 비교", reason: "논평의 근거가 된 현행법, 정부안, 의원안을 사례와 출처로 다시 확인합니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
     en: { href: "/briefings/income-tax-family-deduction-2026-proposals", title: "If Your Spouse Earns KRW 8 Million, Do You Lose the Family Deduction?", relationship: "THE FACTS AND PROPOSALS", reason: "Review current law and both proposals, with an example and sources behind the argument.", listHref: "/columns", listLabel: "All columns" },
   },
+  "news:major-crimes-agency-investigator-staffing-2026": {
+    ko: {
+      href: "/monitoring/prosecution-service-abolition-tracker",
+      title: "검찰청 폐지 이후, 수사와 기소는 어떻게 바뀌나",
+      relationship: "형사사법 개편 추적",
+      reason: "중수청 출범을 앞둔 인력 문제에 이어 사건 인계와 수사·기소 권한의 변화를 날짜별로 확인합니다.",
+      listHref: "/news", listLabel: "핫이슈 전체 보기",
+    },
+    en: {
+      href: "/monitoring/prosecution-service-abolition-tracker",
+      title: "How Investigation and Prosecution Are Changing",
+      relationship: "CRIMINAL JUSTICE TRACKER",
+      reason: "Follow the case transfers and changing responsibilities after the new agency opens.",
+      listHref: "/news", listLabel: "All Hot Issues",
+    },
+  },
   "briefing:inheritance-tax-frozen-allowance-middle-class": {
     ko: {
       href: "/briefings/hospital-inheritance-tax-maternity-care",
