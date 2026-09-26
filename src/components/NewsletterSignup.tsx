@@ -1,13 +1,14 @@
 import { CheckCircle2, Mail } from "lucide-react";
-import { FormEvent, useState } from "react";
+import { FormEvent, useId, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useLanguage } from "../i18n";
 import { subscribeToNewsletter } from "../lib/engagement";
 
-export default function NewsletterSignup({ compact = false }: { compact?: boolean }) {
+export default function NewsletterSignup({ compact = false, embedded = false }: { compact?: boolean; embedded?: boolean }) {
   const { language } = useLanguage();
   const location = useLocation();
   const ko = language === "ko";
+  const emailId = useId();
   const [email, setEmail] = useState("");
   const [consented, setConsented] = useState(false);
   const [website, setWebsite] = useState("");
@@ -32,8 +33,8 @@ export default function NewsletterSignup({ compact = false }: { compact?: boolea
   ) : (
     <form onSubmit={submit} className="grid gap-2.5" aria-label={ko ? "이메일 구독 신청" : "Email subscription"}>
       <div className={compact ? "flex flex-col gap-2" : "flex flex-col gap-2 sm:flex-row"}>
-        <label className="sr-only" htmlFor={compact ? "newsletter-nudge-email" : "newsletter-email"}>{ko ? "이메일" : "Email"}</label>
-        <input id={compact ? "newsletter-nudge-email" : "newsletter-email"} type="email" value={email} onChange={(event) => setEmail(event.target.value)} className="min-h-12 min-w-0 flex-1 rounded-sm border border-green-deep/20 bg-white px-4 text-sm outline-none focus:border-green-mid focus:ring-2 focus:ring-green-mid/10" placeholder="name@example.com" autoComplete="email" required />
+        <label className="sr-only" htmlFor={emailId}>{ko ? "이메일" : "Email"}</label>
+        <input id={emailId} type="email" value={email} onChange={(event) => setEmail(event.target.value)} className="min-h-12 min-w-0 flex-1 rounded-sm border border-green-deep/20 bg-white px-4 text-sm outline-none focus:border-green-mid focus:ring-2 focus:ring-green-mid/10" placeholder="name@example.com" autoComplete="email" required />
         <button type="submit" className="button-primary min-w-32" disabled={!consented || status === "submitting"}><Mail size={16}/>{status === "submitting" ? (ko ? "등록 중" : "Saving") : (ko ? "구독 신청" : "Subscribe")}</button>
       </div>
       <label className="flex cursor-pointer items-start gap-2 text-xs leading-5 text-charcoal/55"><input type="checkbox" checked={consented} onChange={(event) => setConsented(event.target.checked)} className="mt-1 accent-green-deep" required/><span>{ko ? "수집 항목: 이메일 · 이용 목적: 새 콘텐츠 알림 · 보유 기간: 구독 철회 시까지. 수집·이용에 동의합니다. 철회: seedvoicekr@gmail.com" : "Data: email · Purpose: new-content notices · Retention: until you unsubscribe. I agree. Unsubscribe: seedvoicekr@gmail.com"}</span></label>
@@ -42,7 +43,7 @@ export default function NewsletterSignup({ compact = false }: { compact?: boolea
     </form>
   );
 
-  if (compact) return form;
+  if (compact || embedded) return form;
 
   return (
     <section id="newsletter" className="scroll-mt-32 border-t border-green-deep/15 bg-[#EBF0EB] py-5 sm:py-6" aria-labelledby="newsletter-title">

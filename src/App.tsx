@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./auth";
 import Footer from "./components/Footer";
+import ArticleNewsletterInvite from "./components/ArticleNewsletterInvite";
 import Header from "./components/Header";
 import HomepageNewsletterNudge from "./components/HomepageNewsletterNudge";
 import InlinePageEditor from "./components/InlinePageEditor";
@@ -120,6 +121,7 @@ function AppShell() {
           <Route path="*" element={<Home />} />
           </Routes>
         </Suspense>
+        <ArticleNewsletterInvite />
       </main>
       <Footer />
       <HomepageNewsletterNudge />
