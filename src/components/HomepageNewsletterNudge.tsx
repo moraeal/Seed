@@ -53,7 +53,7 @@ export default function HomepageNewsletterNudge() {
         {stage === "ready" && <span className="seed-nudge-bubble">{ko ? "이메일 구독!" : "Subscribe by email!"}</span>}
         <img
           className={`seed-nudge-character ${stage === "walking" ? "seed-nudge-walking" : "seed-nudge-writing"}`}
-          src={`${imageBase}${stage === "walking" ? "seed-18-walking.png" : "seed-12-writing.png"}`}
+          src={`${imageBase}${stage === "walking" ? "seed-18-walking.png" : "seed-12-writing.png"}?v=20260926-logo-leaves`}
           alt=""
         />
       </button>
