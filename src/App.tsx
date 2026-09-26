@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./auth";
 import Footer from "./components/Footer";
+import ArticleReadingAccess from "./components/ArticleReadingAccess";
 import Header from "./components/Header";
 import HomepageNewsletterNudge from "./components/HomepageNewsletterNudge";
 import InlinePageEditor from "./components/InlinePageEditor";
@@ -61,6 +62,7 @@ function AppShell() {
       <ScrollToTop />
       <Header />
       <main>
+        <ArticleReadingAccess>
         <Suspense fallback={<div className="container-page min-h-[48vh] py-16" role="status"><p className="text-sm font-bold text-green-deep">{language === "en" ? "Loading page…" : "페이지를 불러오는 중입니다…"}</p></div>}>
           <Routes>
           <Route path="/" element={<Home />} />
@@ -120,6 +122,7 @@ function AppShell() {
           <Route path="*" element={<Home />} />
           </Routes>
         </Suspense>
+        </ArticleReadingAccess>
       </main>
       <Footer />
       <HomepageNewsletterNudge />

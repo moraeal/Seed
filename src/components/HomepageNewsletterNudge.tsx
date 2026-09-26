@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "../i18n";
 import { isReadingPage } from "../lib/readingRoutes";
-import NewsletterSignup from "./NewsletterSignup";
 import { useAuth } from "../auth";
 import SiyaArticleGuide from "./SiyaArticleGuide";
 
@@ -39,13 +38,13 @@ function NewsletterNudge({ reading }: { reading: boolean }) {
   const imageBase = `${import.meta.env.BASE_URL}images/seed-character/`;
 
   return createPortal(
-    <aside className={`seed-nudge${reading ? " seed-nudge--reading" : ""}`} aria-label={ko ? "씨앗레터 구독 안내" : "SEED LETTER subscription"}>
+    <aside className={`seed-nudge${reading ? " seed-nudge--reading" : ""}`} aria-label={ko ? "무료 구독 안내" : "Free subscription"}>
       {stage === "open" && (
         <div id="seed-nudge-card" className="seed-nudge-card" aria-labelledby="seed-nudge-title">
           <p className="section-kicker">SEED LETTER</p>
           <h2 id="seed-nudge-title" className="editorial-title mt-2 text-xl font-bold text-navy">{ko ? "새 글을 놓치지 마세요" : "Never miss a new story"}</h2>
-          <p className="my-2.5 text-xs leading-5 text-charcoal/65">{ko ? "씨앗의 소리가 새 글을 이메일로 전해드립니다." : "Get new SEED VOICE stories by email."}</p>
-          <NewsletterSignup compact />
+          <p className="my-2.5 text-sm leading-6 text-charcoal/65">{ko ? "무료 구독신청 후 모든 기사를 읽고 새 글을 이메일로 받아보세요." : "Subscribe for free to read every story and receive new articles by email."}</p>
+          <Link to={`/account?mode=signup&returnTo=${encodeURIComponent(window.location.pathname)}`} onClick={() => setStage("ready")} className="button-primary w-full justify-center">{ko ? "무료 구독신청" : "Subscribe for free"}</Link>
         </div>
       )}
       <button
