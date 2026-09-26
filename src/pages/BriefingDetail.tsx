@@ -33,7 +33,7 @@ export default function BriefingDetail() {
   const hasBCorpDeepDive = briefing.slug === "social-economy-fair-competition";
 
   const renderFigure = (image: NonNullable<typeof briefing.images>[number], prominent = false) => (
-    <InteractiveFigure src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName={`${prominent ? "mb-8 shadow-[0_18px_55px_rgba(23,76,58,.08)]" : "mt-8"} overflow-hidden border border-green-deep/10 bg-white`} imageClassName={image.contain ? "block h-auto w-full" : `${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full object-cover`} />
+    <InteractiveFigure src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName={`${prominent ? "mb-8" : "mt-8"} overflow-hidden bg-white shadow-[0_12px_34px_rgba(23,76,58,.08)]`} imageClassName={image.contain ? "block h-auto w-full" : `${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full object-cover`} />
   );
 
   return (
@@ -60,15 +60,17 @@ export default function BriefingDetail() {
       </header>
 
       <div className="article-content-frame py-8 sm:py-12">
-        {briefing.images?.[0] && renderFigure(briefing.images[0], true)}
-
         {briefing.keyHighlights && (
           <aside className="reading-column mb-8 rounded-xl border border-green-deep/15 bg-green-pale p-5 shadow-[0_10px_30px_rgba(23,76,58,.05)] sm:p-7">
             <span className="section-kicker">KEY SUMMARY</span>
-            <h2 className="mt-2 text-xl font-extrabold text-navy sm:text-2xl">{ko ? "핵심 요약" : "Key points"}</h2>
+            <h2 className="mt-2 text-xl font-extrabold text-navy sm:text-2xl">{ko ? "먼저 이것만" : "Key points first"}</h2>
             <ul className="mt-4 space-y-3">{briefing.keyHighlights.map((point, index) => <li key={`${index}-${point.slice(0, 24)}`} className="flex gap-3 text-[16px] leading-7 text-charcoal/80 sm:text-[17px]"><span className="mt-[11px] size-1.5 shrink-0 rounded-full bg-gold" />{point}</li>)}</ul>
           </aside>
         )}
+
+        {briefing.images?.[0] && renderFigure(briefing.images[0], true)}
+
+        {briefing.sourceDocument && <aside className="reading-column mb-8 rounded-xl bg-white p-5 shadow-[0_12px_34px_rgba(23,76,58,.07)] sm:p-6"><span className="section-kicker">{ko ? "원문 자료" : "SOURCE DOCUMENT"}</span><a href={briefing.sourceDocument.url} target="_blank" rel="noreferrer" className="mt-2 flex items-center gap-2 font-bold leading-7 text-green-deep underline decoration-green-deep/25 underline-offset-4">{briefing.sourceDocument.label}<ExternalLink size={15}/></a>{briefing.sourceDocument.note && <p className="mt-2 text-sm leading-6 text-charcoal/60">{briefing.sourceDocument.note}</p>}</aside>}
 
         <div className="reading-column">
           {briefing.introTitle && <h2 className="article-section-title mt-0">{briefing.introTitle}</h2>}

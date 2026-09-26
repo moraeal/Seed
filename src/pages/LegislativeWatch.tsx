@@ -6,6 +6,8 @@ import { getLegislativeCommentaryEdition, legislativeCommentaries, linkedLegisla
 import { getPublishedLegislativeBills, type LegislativeBill } from "../lib/legislativeMonitoring";
 import MonitoringSubnav from "../components/MonitoringSubnav";
 import SafeImage from "../components/SafeImage";
+import { incomeTaxFamilyDeductionBriefing } from "../data/incomeTaxFamilyDeductionBriefing";
+import { incomeTaxFamilyDeductionTranslation } from "../data/contentTranslations/briefingIncomeTaxFamilyDeduction";
 
 const dateText = (date: string | null) => date ? date.replace(/-/g, ".") : "—";
 
@@ -67,7 +69,7 @@ export default function LegislativeWatch() {
 
     <div className="container-page py-8 sm:py-10">
       <nav aria-label={ko ? "입법감시 목록 바로가기" : "Legislative watch list shortcuts"} className="mb-7 grid overflow-hidden rounded-xl border border-charcoal/10 bg-white shadow-[0_8px_24px_rgba(31,51,73,0.045)] sm:grid-cols-3">
-        <a href="#legislative-commentary-list" className="flex items-center justify-between border-b-2 border-green-deep bg-green-deep px-5 py-4 text-sm font-black text-white transition hover:bg-green-mid sm:text-base">{ko ? "입법감시 기사" : "Watch Articles"}<span className="rounded-full bg-white/12 px-2 py-0.5 text-xs text-gold">{legislativeCommentaries.length + linkedLegislativeColumnCommentaries.length}</span></a>
+        <a href="#legislative-commentary-list" className="flex items-center justify-between border-b-2 border-green-deep bg-green-deep px-5 py-4 text-sm font-black text-white transition hover:bg-green-mid sm:text-base">{ko ? "입법감시 기사" : "Watch Articles"}<span className="rounded-full bg-white/12 px-2 py-0.5 text-xs text-gold">{legislativeCommentaries.length + linkedLegislativeColumnCommentaries.length + 1}</span></a>
         <a href="#today-bills" className="flex items-center justify-between border-b-2 border-gold/40 bg-[#F3F5EC] px-5 py-4 text-sm font-black text-navy transition hover:bg-green-pale sm:text-base">{ko ? "오늘의 법안" : "Today's Bills"}<span className="rounded-full bg-white/80 px-2 py-0.5 text-xs text-charcoal/55">{todayBills.length}</span></a>
         <a href="#past-bills" className="flex items-center justify-between border-b-2 border-transparent px-5 py-4 text-sm font-black text-navy transition hover:border-charcoal/20 hover:bg-[#FAF9F5] sm:text-base">{ko ? "지난 법안" : "Past Bills"}<span className="rounded-full bg-charcoal/5 px-2 py-0.5 text-xs text-charcoal/55">{pastBills.length}</span></a>
       </nav>
@@ -78,6 +80,10 @@ export default function LegislativeWatch() {
           <p className="max-w-2xl text-sm leading-6 text-charcoal/60">{ko ? "발의되거나 통과한 법안 가운데 시민의 자유와 권력의 이동을 더 깊이 살펴야 할 사안을 골라 논평합니다. 법안 기록의 사실과 씨앗의 판단을 구분해 읽을 수 있습니다." : "We select proposed and passed bills that require deeper scrutiny of civic freedom and shifts in state power, keeping the legislative record distinct from Seed Voice's editorial judgment."}</p>
         </div>
         <div className="grid lg:grid-cols-2">
+          <Link to={`/briefings/${incomeTaxFamilyDeductionBriefing.slug}`} className="group grid gap-4 border-b border-charcoal/10 p-5 transition hover:bg-[#FBFAF6] sm:grid-cols-[180px_1fr] sm:items-center sm:p-6 lg:odd:border-r">
+            <div className="overflow-hidden bg-ivory"><SafeImage src={`${import.meta.env.BASE_URL}${incomeTaxFamilyDeductionBriefing.images?.[0]?.src}`} alt={ko ? incomeTaxFamilyDeductionBriefing.images?.[0]?.alt ?? "" : incomeTaxFamilyDeductionTranslation.images?.[0]?.alt ?? ""} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.025]" /></div>
+            <div className="min-w-0"><div className="flex flex-wrap items-center gap-2 text-[11px] font-extrabold text-charcoal/55"><span>{ko ? "법안 설명" : "BILL EXPLAINER"}</span><span className="text-charcoal/35">{ko ? "의안 2221581" : "Bill 2221581"}</span></div><h3 className="editorial-title mt-2 line-clamp-2 text-xl font-bold leading-snug text-navy transition group-hover:text-green-deep">{ko ? incomeTaxFamilyDeductionBriefing.title : incomeTaxFamilyDeductionTranslation.title}</h3><p className="mt-2 line-clamp-2 text-sm leading-6 text-charcoal/60">{ko ? incomeTaxFamilyDeductionBriefing.summary : incomeTaxFamilyDeductionTranslation.summary}</p><div className="mt-3 flex items-center gap-3 border-t border-charcoal/10 pt-3 text-xs text-charcoal/45"><time>{incomeTaxFamilyDeductionBriefing.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={12}/>{incomeTaxFamilyDeductionBriefing.readMinutes}{ko ? "분" : " min"}</span><span className="ml-auto flex items-center gap-1.5 font-extrabold text-green-deep">{ko ? "설명 읽기" : "Read"}<ArrowRight size={13}/></span></div></div>
+          </Link>
           {linkedLegislativeColumnCommentaries.map((article) => {
             const edition = article.editions[ko ? "ko" : "en"];
             return <Link key={article.slug} to={article.href} className="group grid gap-4 border-b border-charcoal/10 p-5 transition hover:bg-[#FBFAF6] sm:grid-cols-[180px_1fr] sm:items-center sm:p-6 lg:odd:border-r">

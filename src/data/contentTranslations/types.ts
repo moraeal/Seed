@@ -43,6 +43,7 @@ export type BriefingTranslation = {
   summary: string;
   introTitle?: string;
   keyHighlights?: string[];
+  sourceDocument?: NonNullable<Briefing["sourceDocument"]>;
   author?: string;
   images?: Array<{ src?: string; alt: string; caption: string; credit?: string }>;
   sourceArticle?: Partial<Pick<NonNullable<Briefing["sourceArticle"]>, "title" | "publisher" | "imageAlt" | "imageCredit" | "note">>;

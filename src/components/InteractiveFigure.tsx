@@ -63,7 +63,7 @@ export default function InteractiveFigure({
   return (
     <>
       <figure className={figureClassName}>
-        <div className="group relative overflow-hidden bg-navy">
+        <div className={`group relative overflow-hidden ${resolvedYouTubeId ? "bg-navy" : "bg-white"}`}>
           {resolvedYouTubeId && videoOpen ? (
             <div className={videoClassName}>
               <iframe src={`https://www.youtube-nocookie.com/embed/${resolvedYouTubeId}?autoplay=1&rel=0`} title={alt} className="h-full w-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />
