@@ -23,7 +23,7 @@ function relatedReadingPaths(path: string, language: "ko" | "en"): Source[] {
 
 export default function SiyaArticleGuide() {
   const { language } = useLanguage();
-  const { session } = useAuth();
+  const { getValidAccessToken } = useAuth();
   const { pathname } = useLocation();
   const ko = language === "ko";
   const isArticlePage = /^\/(?:news|briefings|columns|seed-language)\/[^/]+(?:\/commentary)?\/?$/.test(pathname)
@@ -53,9 +53,11 @@ export default function SiyaArticleGuide() {
     setBusy(true); setError("");
     const requestedPath = pathname;
     try {
+      const accessToken = await getValidAccessToken();
+      if (!accessToken) throw new Error(ko ? "로그인 후 이용할 수 있습니다." : "Please sign in to use the article guide.");
       const response = await fetch(`${supabaseUrl}/functions/v1/siya-article-guide`, {
         method: "POST",
-        headers: { "Content-Type": "application/json", apikey: publishableKey, Authorization: `Bearer ${session?.access_token}` },
+        headers: { "Content-Type": "application/json", apikey: publishableKey, Authorization: `Bearer ${accessToken}` },
         body: JSON.stringify({ action: "summarize", language, articlePath: pathname }),
       });
       const result = await response.json().catch(() => ({}));
