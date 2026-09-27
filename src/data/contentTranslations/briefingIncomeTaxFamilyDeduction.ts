@@ -6,7 +6,7 @@ export const incomeTaxFamilyDeductionTranslation: BriefingTranslation = {
   subtitle: "The government proposes a KRW 7.5 million wage threshold; a September 23 lawmaker bill proposes KRW 9 million",
   summary: "A spouse earning only wages of KRW 8 million would remain outside the deduction under current law and the government's proposal, but could qualify under the lawmaker bill if other conditions are met. We compare the thresholds and the questions before Parliament.",
   keyHighlights: ["Current law sets an income-amount limit of KRW 1 million, or KRW 5 million in gross pay where wages are the only income.", "The government proposes KRW 3 million and KRW 7.5 million; the September 23 lawmaker bill proposes KRW 4 million and KRW 9 million.", "Bill 2221581 was at the received stage as checked on September 27. Neither proposal has changed the law in force."],
-  sourceDocument: { label: "Read the public summary of bill 2221581", url: "https://untanglelaw.live/bills/PRC_Z2X6Y0G9E1F7D1E4C0D9K1J7K7I8I5", note: "We cross-checked public summaries because the full Assembly bill text could not be opened directly. Current law and government materials appear among the sources below." },
+  sourceDocument: { label: "National Assembly bill 2221581: rationale and main provisions", url: "https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=PRC_Z2X6Y0G9E1F7D1E4C0D9K1J7K7I8I5", note: "We checked the National Assembly's official proposal summary directly through its Open Assembly data. The attached bill document is a separate source." },
   author: "SEED CIVIC BRIEFING",
   images: [
     { alt: "Two family members clasp hands across a transparent line dividing their dining table", caption: "Family support continues even as a statutory earnings threshold changes deduction eligibility.", credit: "AI image" },
@@ -28,7 +28,7 @@ export const incomeTaxFamilyDeductionTranslation: BriefingTranslation = {
       "An income amount is not necessarily the total paid into someone's bank account. For a relative with wages only, the separate gross-pay limit matters. Our KRW 8 million example assumes a spouse with no other income. Age, livelihood and other eligibility conditions must be checked separately for parents and children.",
     ] },
     { title: "Why do the sponsors want a higher limit?", paragraphs: [
-      "According to the public bill summary, the sponsors want a long-unadjusted test to reflect changes in prices, wages and part-time work. The aim is to reduce cases in which a relative doing modest paid work ceases to qualify.",
+      "The National Assembly's published rationale says the long-unadjusted test has not kept pace with rising wages and prices or the growth of part-time and casual work. It cites spouses, children and older parents losing eligibility after modest paid work. The bill would amend Article 50(1)(2) and (3), raising the income-amount limit to KRW 4 million and the wage-only gross-pay limit to KRW 9 million.",
       "The materials checked do not establish how many households would newly qualify, the revenue effect or the distribution of benefits across income groups. Those effects remain questions for parliamentary scrutiny.",
     ] },
     { title: "The contested points and questions for Parliament", paragraphs: [
@@ -40,6 +40,6 @@ export const incomeTaxFamilyDeductionTranslation: BriefingTranslation = {
   watchTitle: "Keep watching",
   watchPoints: ["Parliamentary review of bill 2221581 and the final government legislation", "Effective date and transitional rules", "Newly eligible households and the revenue and distributional effects", "Whether thresholds will be reviewed regularly"],
   quote: "The same KRW 8 million income can pass or fail the test depending on the threshold Parliament adopts.",
-  sourceNote: "As of September 27, 2026. Details of bill 2221581 were cross-checked against publicly available bill summaries; the full official Assembly bill text could not be opened directly. Both packages remain proposals. The KRW 8 million scenario assumes no other income and that all other eligibility conditions are satisfied.",
-  sourceLabels: ["Narabaro — bill 2221581 introduction and received status", "Untangle Law — summary of bill 2221581", "Korea Law Information Center — Income Tax Act Article 50", "Ministry of Economy and Finance — 2026 tax reform proposal"],
+  sourceNote: "As of September 27, 2026. The introduction details and official rationale for bill 2221581 were checked directly against the National Assembly's Open Assembly data. The attached bill document was not separately reviewed. Both packages remain proposals. The KRW 8 million scenario assumes no other income and that all other eligibility conditions are satisfied.",
+  sourceLabels: ["National Assembly — bill 2221581 rationale, main provisions and introduction details", "Korea Law Information Center — Income Tax Act Article 50", "Ministry of Economy and Finance — 2026 tax reform proposal"],
 };
