@@ -23,10 +23,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     en: "Fair under way · Criminal complaint filed · Outcomes tracked",
   },
   openedAt: "2018-09-05",
-  updatedAt: "2026-09-26",
+  updatedAt: "2026-09-27",
   nextCheck: {
-    ko: "9월 21일 고발사건의 광주지검 접수·배당과 실제 수사 착수 여부, 피고발인과 조직위의 구체적 입장, 누적 입장객을 유료·무료·단체·초청·공무출장·전국 섬 주민 무료입장으로 나눈 집계, 각 무료입장 정책의 규모와 수익 영향, 개도·금오도 셔틀의 실제 이용실적, 수의계약을 포함한 계약 원문과 집행액, 예결위를 통과한 콘텐츠 보완 추경 7억 원의 본회의 최종 처리·계약·집행, 사업수익 120억 원의 달성 여부와 폐막 뒤 최종 정산",
-    en: "Receipt and assignment of the September 21 complaint at the Gwangju District Prosecutors' Office and whether a formal investigation begins; specific responses from those named and the organizing committee; cumulative attendance split into paid, free, group, invited, publicly funded staff and nationwide island-resident admissions; the scale and revenue effect of each free-admission policy; actual use of Gaedo and Geumodo shuttles; contract documents and spending including negotiated contracts; final council action, contracts and spending for the KRW 700 million content supplement that cleared the budget committee; progress toward the KRW 12 billion revenue target; and final settlement after closing",
+    ko: "9월 21일 고발사건의 광주지검 접수·배당과 실제 수사 착수 여부, 피고발인과 조직위의 구체적 입장, 추석 연휴 뒤 누적 입장객을 유료·무료·단체·초청·공무출장·전국 섬 주민 무료입장으로 나눈 집계, 9월 25~26일 12만7천여 명 가운데 무료입장 규모와 사업수익 영향, 개도·금오도 셔틀의 실제 이용실적, 수의계약을 포함한 계약 원문과 집행액, 예결위를 통과한 콘텐츠 보완 추경 7억 원의 본회의 최종 처리·계약·집행, 사업수익 120억 원의 달성 여부와 폐막 뒤 최종 정산",
+    en: "Receipt and assignment of the September 21 complaint at the Gwangju District Prosecutors' Office and whether a formal investigation begins; specific responses from those named and the organizing committee; post-holiday cumulative attendance split into paid, free, group, invited, publicly funded staff and nationwide island-resident admissions; the free-admission share and revenue effect within the roughly 127,000 visits on September 25–26; actual use of Gaedo and Geumodo shuttles; contract documents and spending including negotiated contracts; final council action, contracts and spending for the KRW 700 million content supplement that cleared the budget committee; progress toward the KRW 12 billion revenue target; and final settlement after closing",
   },
   heroImage: {
     src: "images/monitoring/yeosu-island-expo-tracker-hero.webp",
@@ -116,6 +116,13 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       text: {
         ko: "금오도 마을버스는 2대·하루 14회에서 20회로 늘어나 폐막일까지 무료 운행하고, 전국 484개 유인섬 주민도 남은 행사기간 무료로 입장할 수 있게 됐습니다.",
         en: "Geumodo's two village buses expanded from 14 to 20 daily circuits and will remain free through closing, while residents of all 484 inhabited islands nationwide gained free admission for the rest of the fair.",
+      },
+    },
+    {
+      date: "2026-09-26",
+      text: {
+        ko: "추석 당일인 25일 6만7천 명, 26일 약 6만 명이 방문했습니다. 개막 뒤 일일 최다 기록이지만 무료입장 확대 기간이라 유료·무료별 인원과 수익은 따로 확인해야 합니다.",
+        en: "Attendance reached 67,000 on September 25 and about 60,000 on September 26. The first figure was a new daily record, but the expanded free-admission period means paid and free visits—and revenue—must be reported separately.",
       },
     },
   ],
@@ -850,6 +857,45 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-26",
+      title: {
+        ko: "이틀간 12만7천여 명…무료입장 확대 속 하루 최다",
+        en: "Roughly 127,000 visits in two days as expanded free admission helps set a daily record",
+      },
+      description: {
+        ko: "조직위 집계에 따르면 추석 당일인 9월 25일 6만7천 명이 찾아 개막 뒤 일일 최다를 기록했고, 26일에도 약 6만 명이 방문했습니다. 조직위는 24일부터 AI 도슨트·드론 조종·보물찾기와 야간 체험을 보강한 효과라고 설명했습니다. 그러나 24~27일은 3대 가족·한복 착용자·12세 미만 어린이 동반 보호자 2명까지 무료로 입장할 수 있었고, 전국 유인섬 주민과 생일 관람객 혜택도 적용됐습니다. 이틀 합계는 관람객 반등을 보여주지만 유료·무료·단체·초청·공무출장과 재입장 여부가 공개되지 않아 120억 원 사업수익의 진전으로 바로 계산할 수 없습니다.",
+        en: "According to the organizing committee, 67,000 people attended on September 25, the highest daily count since opening, followed by about 60,000 on September 26. Organizers attributed the rise to additions introduced from September 24, including an AI guide, drone controls, a treasure hunt and evening activities. But September 24–27 also offered free entry to three-generation families, visitors in hanbok and up to two adults accompanying a child under 12, alongside continuing waivers for residents of inhabited islands and birthday visitors. The two-day total shows a rebound in footfall, but it cannot yet be translated into progress toward the KRW 12 billion revenue target because paid, free, group, invited, publicly funded staff and re-entry counts were not disclosed.",
+      },
+      change: {
+        ko: "관람객 흐름이 개막 초기 하루 평균 1만 명 안팎에서 연휴 이틀 연속 6만 명대로 증가",
+        en: "Daily footfall rises from roughly 10,000 in the opening period to around 60,000 on two consecutive holiday days",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "부산일보", en: "Busan Ilbo" },
+          title: {
+            ko: "여수세계섬박람회 추석 연휴 이틀간 12만여 명 찾아…일일 최다 관람 기록도",
+            en: "Yeosu fair draws more than 120,000 over two holiday days and sets a daily record",
+          },
+          url: "https://mobile.busan.com/view/election/view.php?code=2026092712433494840",
+          publishedAt: "2026-09-27",
+          kind: "article",
+          thumbnailSrc: "https://mobile.busan.com/nas/wcms/wcms_data/photos/2026/09/27/2026092712422396478_l.jpg",
+        },
+        {
+          publisher: { ko: "전남CBS 노컷뉴스", en: "Jeonnam CBS NoCut News" },
+          title: {
+            ko: "여수세계섬박람회, 추석 당일 6만7천 명 몰려 ‘하루 최다’",
+            en: "Yeosu fair draws a record 67,000 visitors on the holiday",
+          },
+          url: "https://v.daum.net/v/20260926201504566",
+          publishedAt: "2026-09-26",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "다음",
       title: {
         ko: "관람객·수익·교통 보완과 폐막 뒤 정산 확인",
@@ -886,6 +932,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     {
       ko: "박람회는 2026년 9월 5일 개막했고 9월 17일까지 누적 입장객은 12만8,217명으로 집계됐습니다. 유료·무료·단체·초청·공무출장별 인원은 공개되지 않았습니다.",
       en: "The fair opened on September 5, 2026, and recorded cumulative attendance of 128,217 through September 17. Counts by paid, free, group, invited and publicly funded staff visits were not disclosed.",
+    },
+    {
+      ko: "추석 당일인 9월 25일 6만7천 명이 방문해 개막 뒤 일일 최다를 기록했고, 26일에도 약 6만 명이 찾았습니다. 이 기간의 유료·무료·단체·초청·공무출장·재입장별 인원은 공개되지 않았습니다.",
+      en: "Attendance reached 67,000 on September 25, the highest daily count since opening, and about 60,000 on September 26. Counts by paid, free, group, invited, publicly funded staff and re-entry visits were not disclosed for those days.",
     },
     {
       ko: "전남광주특별시는 9월 10일 업무 연관성과 무관하게 직원의 박람회 관람을 출장으로 인정하고 교통비·일비를 지급할 수 있도록 안내했습니다.",
@@ -973,8 +1023,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
         en: "Will the 3 million target translate into paid visits and revenue?",
       },
       description: {
-        ko: "개막 13일 누적 입장객은 목표의 4.3%였습니다. 9월 24~27일 한시 무료입장에 더해 전국 유인섬 주민 약 82만 명과 생일 당일 관람객·동반 1명도 무료입장 대상이 됐습니다. 공무출장 관람까지 더해지는 만큼 유료·무료·초청·단체·공무출장·중복 방문을 나누지 않은 총인원만으로는 120억 원 수익계획의 성과를 판단할 수 없습니다.",
-        en: "Thirteen-day attendance was 4.3 percent of the target. In addition to the September 24–27 holiday waivers, roughly 820,000 residents of inhabited islands nationwide and visitors attending on their birthday with one companion are now eligible for free entry. Together with publicly funded staff visits, these policies make an undifferentiated total—without paid, free, invited, group, staff and repeat visits—insufficient to judge progress toward KRW 12 billion in revenue.",
+        ko: "개막 13일 누적 입장객은 목표의 4.3%였지만 추석 당일 6만7천 명, 다음 날 약 6만 명으로 관람객 수는 크게 늘었습니다. 다만 9월 24~27일 한시 무료입장에 더해 전국 유인섬 주민 약 82만 명과 생일 당일 관람객·동반 1명도 무료입장 대상입니다. 공무출장 관람과 재입장까지 더해지는 만큼 유료·무료·초청·단체·공무출장·재입장을 나누지 않은 총인원만으로는 120억 원 수익계획의 성과를 판단할 수 없습니다.",
+        en: "Attendance was 4.3 percent of the target after 13 days, but daily footfall then rose sharply to 67,000 on September 25 and about 60,000 the next day. The September 24–27 holiday waivers applied alongside continuing free entry for roughly 820,000 residents of inhabited islands nationwide and birthday visitors with one companion. Together with publicly funded staff visits and re-entry, the headline total remains insufficient to judge progress toward KRW 12 billion in revenue unless paid, free, invited, group, staff and repeat visits are separated.",
       },
     },
     {
@@ -1011,8 +1061,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
   questions: [],
   proposals: [],
   caution: {
-    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 콘텐츠 보완비 7억 원은 9월 17일 예결위를 통과했지만 본회의 최종 처리와 실제 계약·집행이 확인된 것은 아니므로 713억 원에 곧바로 확정 지출로 더해서는 안 됩니다. 13일간 입장객 12만8,217명은 유료 입장객만을 뜻하지 않으며 출장 처리된 공무원 관람이 포함될 수 있습니다. 9월 24~27일 한시 무료입장과 전국 섬 주민·생일 관람객 무료입장 뒤의 총관람객도 각각 유료·무료를 나눠 확인해야 합니다. 9월 21일 고발에서 제기된 배임·법 위반·허위공문서와 계약대금 부풀리기·관람객 통계 조작 의도는 고발인의 주장으로, 수사기관이 확인한 사실이나 처분 결과가 아닙니다.",
-    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The KRW 700 million content supplement cleared the budget committee on September 17, but final plenary action, contracts and actual spending have not been confirmed, so it should not yet be added to KRW 71.3 billion as final expenditure. The 13-day attendance figure of 128,217 is not a paid-admission count and may include public employees attending on official travel. Headline attendance after the September 24–27 holiday waivers and the continuing island-resident and birthday policies must be split into paid and free entry. Allegations in the September 21 complaint—including breach of trust, legal violations, false official documents, inflated contract prices and an intent to manipulate attendance—are the complainant's claims, not facts established or disposed of by investigators.",
+    ko: "248억 원은 2021년 국제행사 승인의 기본사업비, 713억 원은 개막 전 직접사업비, 1,839억 원은 도로·관광·문화 등 연계사업을 포함한 수치입니다. 세 숫자를 같은 범주의 예산처럼 비교하거나 서로 더하면 실제 재정 구조를 왜곡할 수 있습니다. 콘텐츠 보완비 7억 원은 9월 17일 예결위를 통과했지만 본회의 최종 처리와 실제 계약·집행이 확인된 것은 아니므로 713억 원에 곧바로 확정 지출로 더해서는 안 됩니다. 13일간 입장객 12만8,217명과 9월 25일 6만7천 명·26일 약 6만 명은 유료 입장객만을 뜻하지 않습니다. 공무출장·재입장이 포함될 수 있고, 9월 24~27일 한시 무료입장과 전국 섬 주민·생일 관람객 무료입장이 함께 적용됐으므로 유료·무료·단체·초청별 집계를 따로 확인해야 합니다. 9월 21일 고발에서 제기된 배임·법 위반·허위공문서와 계약대금 부풀리기·관람객 통계 조작 의도는 고발인의 주장으로, 수사기관이 확인한 사실이나 처분 결과가 아닙니다.",
+    en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The KRW 700 million content supplement cleared the budget committee on September 17, but final plenary action, contracts and actual spending have not been confirmed, so it should not yet be added to KRW 71.3 billion as final expenditure. Neither the 13-day attendance figure of 128,217 nor the 67,000 visits on September 25 and about 60,000 on September 26 represents paid admissions alone. The totals may include publicly funded staff visits and re-entry, while temporary holiday waivers and continuing island-resident and birthday policies were also in force; paid, free, group and invited admissions therefore require separate reporting. Allegations in the September 21 complaint—including breach of trust, legal violations, false official documents, inflated contract prices and an intent to manipulate attendance—are the complainant's claims, not facts established or disposed of by investigators.",
   },
   sources: [
     {
@@ -1123,6 +1173,14 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     {
       label: { ko: "박람회 조직위원회 — 전국 섬 주민 무료입장 안내", en: "Organizing committee — Nationwide island-resident free-admission notice" },
       url: "https://island.yeosu2026.or.kr/6_2/64",
+    },
+    {
+      label: { ko: "전남CBS 노컷뉴스 — 추석 당일 6만7천 명 일일 최다", en: "Jeonnam CBS NoCut News — Record 67,000 visits on the holiday" },
+      url: "https://v.daum.net/v/20260926201504566",
+    },
+    {
+      label: { ko: "부산일보 — 9월 25~26일 12만7천여 명 방문", en: "Busan Ilbo — Roughly 127,000 visits on September 25–26" },
+      url: "https://mobile.busan.com/view/election/view.php?code=2026092712433494840",
     },
     {
       label: { ko: "박람회 조직위원회 — 행사 개요와 일정", en: "Organizing committee — Event overview and schedule" },
