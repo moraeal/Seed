@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:welfare-exit-risk-work-and-fairness": {
+    ko: { href: "/columns/family-deduction-work-income-threshold", title: "월 50만 원 일하면 가족이 아니게 되는 세금 기준", relationship: "세금의 경계선", reason: "가족의 소득이 조금 늘었을 때 부양가족 공제는 어떻게 달라지는지 이어서 확인합니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
+    en: { href: "/columns/family-deduction-work-income-threshold", title: "When a Spouse Earns KRW 500,000 a Month, the Tax Code Drops the Family Deduction", relationship: "A TAX THRESHOLD", reason: "Read how modest earnings affect the dependent-family tax deduction.", listHref: "/columns", listLabel: "All columns" },
+  },
   "briefing:income-tax-family-deduction-2026-proposals": {
     ko: { href: "/columns/family-deduction-work-income-threshold", title: "월 50만 원 일하면 가족이 아니게 되는 세금 기준", relationship: "씨앗의 소리 논평", reason: "세 가지 공제 기준을 확인했다면, 고정된 기준선이 가족의 일과 세금에 남기는 문제를 이어서 읽습니다.", listHref: "/briefings", listLabel: "브리핑 전체 보기" },
     en: { href: "/columns/family-deduction-work-income-threshold", title: "When a Spouse Earns KRW 500,000 a Month, the Tax Code Drops the Family Deduction", relationship: "SEED VOICE OPINION", reason: "Continue from the three thresholds to what a fixed earnings line means for families and tax policy.", listHref: "/briefings", listLabel: "All briefings" },
