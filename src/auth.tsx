@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, ReactNode, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { getTurnstileToken } from "./lib/turnstile";
 
 export type AuthUser = {
@@ -25,6 +25,7 @@ type AuthContextValue = {
   isVerified: boolean;
   loading: boolean;
   recoveringPassword: boolean;
+  getValidAccessToken: () => Promise<string | null>;
   isNicknameAvailable: (nickname: string) => Promise<boolean>;
   signUp: (email: string, password: string, nickname: string, phone: string, socialPreferences: string[], language: "ko" | "en") => Promise<{ verificationRequired: boolean }>;
   resendVerification: (email: string) => Promise<void>;
@@ -105,6 +106,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<AuthSession | null>(null);
   const [loading, setLoading] = useState(true);
   const [recoveringPassword, setRecoveringPassword] = useState(false);
+  const pendingRefresh = useRef<Promise<AuthSession> | null>(null);
 
   const applySession = (next: AuthSession | null) => {
     setSession(next);
@@ -147,6 +149,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
     void initialize();
   }, []);
+
+  const getValidAccessToken = async (): Promise<string | null> => {
+    if (!session) return null;
+    const now = Math.floor(Date.now() / 1000);
+    if (!session.expires_at || session.expires_at > now + 60) return session.access_token;
+    if (!pendingRefresh.current) {
+      pendingRefresh.current = refreshSession(session.refresh_token)
+        .finally(() => { pendingRefresh.current = null; });
+    }
+    try {
+      const next = await pendingRefresh.current;
+      applySession(next);
+      return next.access_token;
+    } catch {
+      applySession(null);
+      return null;
+    }
+  };
+
+  useEffect(() => {
+    if (!session?.expires_at) return;
+    const delay = Math.max(0, (session.expires_at - Math.floor(Date.now() / 1000) - 60) * 1000);
+    const timer = window.setTimeout(() => { void getValidAccessToken(); }, delay);
+    return () => window.clearTimeout(timer);
+  }, [session?.access_token, session?.expires_at]);
 
   const isNicknameAvailable = async (nickname: string) => {
     const candidate = nickname.replace(/\s+/g, " ").trim();
@@ -297,6 +324,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     isVerified: Boolean(session?.user?.email_confirmed_at),
     loading,
     recoveringPassword,
+    getValidAccessToken,
     isNicknameAvailable,
     signUp,
     resendVerification,
