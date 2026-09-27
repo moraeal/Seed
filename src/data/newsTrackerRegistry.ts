@@ -6,8 +6,10 @@ import {
 import { olympicParkElectionProtestTracker } from "./olympicParkElectionProtestTracker";
 import { publicInstitutionReformTracker } from "./publicInstitutionReformTracker";
 import { supremeCourtRenominationTracker } from "./supremeCourtRenominationTracker";
+import { northKoreanPowsProtectionTracker } from "./northKoreanPowsProtectionTracker";
 
 export const publicInterestWatchCases = [
+  northKoreanPowsProtectionTracker,
   supremeCourtRenominationTracker,
   publicInstitutionReformTracker,
   olympicParkElectionProtestTracker,
@@ -15,6 +17,7 @@ export const publicInterestWatchCases = [
 ];
 
 export const newsTrackerCases = [
+  northKoreanPowsProtectionTracker,
   supremeCourtRenominationTracker,
   publicInstitutionReformTracker,
   olympicParkElectionProtestTracker,
@@ -22,6 +25,9 @@ export const newsTrackerCases = [
 ];
 
 export function getPublicInterestWatchCase(slug: string) {
+  if (slug === northKoreanPowsProtectionTracker.slug) {
+    return northKoreanPowsProtectionTracker;
+  }
   if (slug === supremeCourtRenominationTracker.slug) {
     return supremeCourtRenominationTracker;
   }
