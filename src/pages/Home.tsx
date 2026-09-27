@@ -231,7 +231,6 @@ export default function Home() {
         <div className="container-page">
           <div className="flex items-end justify-between gap-3">
             <div><p className="section-kicker">START HERE</p><h2 id="quick-reads-title" className="editorial-title mt-1 text-[1.55rem] font-bold text-navy sm:text-3xl">{ko ? "빠르게 읽을 4가지" : "Four stories to start with"}</h2><p className="mt-1 text-[13px] text-charcoal/60 sm:text-sm">{ko ? "오늘의 쟁점을 살피고, 궁금한 기사로 들어가세요." : "A clear path into the issues worth your attention."}</p></div>
-            <Link to="/search" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체 기사" : "All stories"}<ArrowRight size={14}/></Link>
           </div>
           <div className="mt-5 grid grid-cols-2 gap-2.5 sm:gap-4">
             {quickReads.map((item) => (
