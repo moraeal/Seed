@@ -267,6 +267,24 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
       listLabel: "All columns",
     },
   },
+  "seed-language:state-citizens-trust": {
+    ko: {
+      href: "/seed-language/politics-is-a-citizens-tool",
+      title: "정치는 권력이 아니라 도구다",
+      relationship: "국가에서 정치로",
+      reason: "시민이 국가에 권한을 맡기는 이유를 살펴봤다면 그 권한을 운용하는 정치를 어떻게 통제할지 이어서 읽습니다.",
+      listHref: "/seed-language",
+      listLabel: "시민언어 전체 보기",
+    },
+    en: {
+      href: "/seed-language/politics-is-a-citizens-tool",
+      title: "Politics Is a Tool, Not Power for Its Own Sake",
+      relationship: "FROM THE STATE TO POLITICS",
+      reason: "After examining why citizens entrust power to the state, explore how they can direct and scrutinize the politics that uses it.",
+      listHref: "/seed-language",
+      listLabel: "All Glossary entries",
+    },
+  },
   "seed-language:politics-is-a-citizens-tool": {
     ko: {
       href: "/seed-language/citizen-as-seed",

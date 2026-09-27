@@ -7,6 +7,7 @@ import { conservatismArticleEn, conservatismArticleKo } from "./seedLanguageCons
 import { politicsArticleEn, politicsArticleKo } from "./seedLanguagePolitics";
 import { publicArticleEn, publicArticleKo } from "./seedLanguagePublic";
 import { unificationArticleEn, unificationArticleKo } from "./seedLanguageUnification";
+import { stateArticleEn, stateArticleKo } from "./seedLanguageState";
 import {
   getSeedLanguageArticle as getBaseSeedLanguageArticle,
   seedLanguageArticlesKo as baseSeedLanguageArticlesKo,
@@ -17,9 +18,10 @@ export type {
   SeedLanguageImage,
 } from "./seedLanguageBase";
 
-export const seedLanguageArticlesKo = [unificationArticleKo, publicArticleKo, politicsArticleKo, conservatismArticleKo, discourseArticleKo, progressArticleKo, freedomArticleKo, ...baseSeedLanguageArticlesKo];
+export const seedLanguageArticlesKo = [stateArticleKo, unificationArticleKo, publicArticleKo, politicsArticleKo, conservatismArticleKo, discourseArticleKo, progressArticleKo, freedomArticleKo, ...baseSeedLanguageArticlesKo];
 
 export function getSeedLanguageArticle(slug: string, language: Language) {
+  if (slug === stateArticleKo.slug) return language === "en" ? stateArticleEn : stateArticleKo;
   if (slug === unificationArticleKo.slug) return language === "en" ? unificationArticleEn : unificationArticleKo;
   if (slug === publicArticleKo.slug) return language === "en" ? publicArticleEn : publicArticleKo;
   if (slug === politicsArticleKo.slug) return language === "en" ? politicsArticleEn : politicsArticleKo;
