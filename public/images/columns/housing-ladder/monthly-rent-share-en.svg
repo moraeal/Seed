@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Monthly-rent share of new lease transactions</title><desc id="desc">Nationwide: 61.8% in January to July 2025 and 68.3% in the same period of 2026. Seoul: 63.8% and 69.7%.</desc>
+  <rect width="1200" height="640" fill="#fbfaf6"/>
+  <text x="72" y="90" fill="#173c30" font-family="sans-serif" font-size="40" font-weight="700">More new leases now include monthly rent</text>
+  <text x="72" y="140" fill="#52665b" font-family="sans-serif" font-size="23">Share of rental transactions · January–July · includes mixed deposit/rent contracts</text>
+  <text x="72" y="225" fill="#173c30" font-family="sans-serif" font-size="30" font-weight="700">Korea</text>
+  <rect x="225" y="183" width="618" height="54" fill="#bacdc2"/><rect x="225" y="252" width="683" height="54" fill="#327756"/>
+  <text x="235" y="220" fill="#173c30" font-family="sans-serif" font-size="24">2025</text><text x="235" y="288" fill="white" font-family="sans-serif" font-size="24">2026</text>
+  <text x="860" y="220" fill="#173c30" font-family="sans-serif" font-size="30" font-weight="700">61.8%</text><text x="925" y="288" fill="#173c30" font-family="sans-serif" font-size="30" font-weight="700">68.3%</text>
+  <text x="72" y="393" fill="#173c30" font-family="sans-serif" font-size="30" font-weight="700">Seoul</text>
+  <rect x="225" y="351" width="638" height="54" fill="#bacdc2"/><rect x="225" y="420" width="697" height="54" fill="#327756"/>
+  <text x="235" y="388" fill="#173c30" font-family="sans-serif" font-size="24">2025</text><text x="235" y="456" fill="white" font-family="sans-serif" font-size="24">2026</text>
+  <text x="880" y="388" fill="#173c30" font-family="sans-serif" font-size="30" font-weight="700">63.8%</text><text x="940" y="456" fill="#173c30" font-family="sans-serif" font-size="30" font-weight="700">69.7%</text>
+  <line x1="72" x2="1128" y1="530" y2="530" stroke="#d8dfd6" stroke-width="2"/>
+  <text x="72" y="578" fill="#52665b" font-family="sans-serif" font-size="21">Source: Ministry of Land, July 2026 housing statistics</text>
+</svg>

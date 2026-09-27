@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:seoul-housing-prices-rent-broken-ladder": {
+    ko: { href: "/columns/real-estate-supervisor-citizens-accounts", title: "집을 사는 시민에게 계좌부터 내놓으라는 법인가", relationship: "부동산 정책 이어 읽기", reason: "집을 구할 기회의 문제에 이어 거래를 조사하는 국가의 권한을 살펴봅니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
+    en: { href: "/columns/real-estate-supervisor-citizens-accounts", title: "Must Homebuyers Open Their Bank Accounts to the State?", relationship: "MORE ON HOUSING POLICY", reason: "Continue from access to homes to the state's powers over property transactions.", listHref: "/columns", listLabel: "All columns" },
+  },
   "column:welfare-exit-risk-work-and-fairness": {
     ko: { href: "/columns/family-deduction-work-income-threshold", title: "월 50만 원 일하면 가족이 아니게 되는 세금 기준", relationship: "세금의 경계선", reason: "가족의 소득이 조금 늘었을 때 부양가족 공제는 어떻게 달라지는지 이어서 확인합니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
     en: { href: "/columns/family-deduction-work-income-threshold", title: "When a Spouse Earns KRW 500,000 a Month, the Tax Code Drops the Family Deduction", relationship: "A TAX THRESHOLD", reason: "Read how modest earnings affect the dependent-family tax deduction.", listHref: "/columns", listLabel: "All columns" },

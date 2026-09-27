@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">전월세 거래 중 월세 비중</title><desc id="desc">전국 2025년 1월에서 7월 61.8%, 2026년 같은 기간 68.3%. 서울 2025년 63.8%, 2026년 69.7%.</desc>
+  <rect width="1200" height="640" fill="#fbfaf6"/>
+  <text x="72" y="90" fill="#173c30" font-family="sans-serif" font-size="44" font-weight="700">새 임대차 계약, 월세가 더 많아졌다</text>
+  <text x="72" y="140" fill="#52665b" font-family="sans-serif" font-size="24">전월세 거래 중 월세 비중 · 1~7월 누계 · 보증부 월세·반전세 포함</text>
+  <text x="72" y="225" fill="#173c30" font-family="sans-serif" font-size="31" font-weight="700">전국</text>
+  <rect x="225" y="183" width="618" height="54" fill="#bacdc2"/><rect x="225" y="252" width="683" height="54" fill="#327756"/>
+  <text x="235" y="220" fill="#173c30" font-family="sans-serif" font-size="24">2025</text><text x="235" y="288" fill="white" font-family="sans-serif" font-size="24">2026</text>
+  <text x="860" y="220" fill="#173c30" font-family="sans-serif" font-size="30" font-weight="700">61.8%</text><text x="925" y="288" fill="#173c30" font-family="sans-serif" font-size="30" font-weight="700">68.3%</text>
+  <text x="72" y="393" fill="#173c30" font-family="sans-serif" font-size="31" font-weight="700">서울</text>
+  <rect x="225" y="351" width="638" height="54" fill="#bacdc2"/><rect x="225" y="420" width="697" height="54" fill="#327756"/>
+  <text x="235" y="388" fill="#173c30" font-family="sans-serif" font-size="24">2025</text><text x="235" y="456" fill="white" font-family="sans-serif" font-size="24">2026</text>
+  <text x="880" y="388" fill="#173c30" font-family="sans-serif" font-size="30" font-weight="700">63.8%</text><text x="940" y="456" fill="#173c30" font-family="sans-serif" font-size="30" font-weight="700">69.7%</text>
+  <line x1="72" x2="1128" y1="530" y2="530" stroke="#d8dfd6" stroke-width="2"/>
+  <text x="72" y="578" fill="#52665b" font-family="sans-serif" font-size="22">출처: 국토교통부 2026년 7월 주택통계</text>
+</svg>
