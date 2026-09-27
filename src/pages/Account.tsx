@@ -5,7 +5,7 @@ import { useAuth } from "../auth";
 import { useLanguage } from "../i18n";
 
 export default function Account() {
-  const { user, nickname, isVerified, loading, signUp, resendVerification, signIn, signOut } = useAuth();
+  const { user, nickname, isVerified, loading, recoveringPassword, signUp, resendVerification, requestPasswordReset, updatePassword, signIn, signOut } = useAuth();
   const { language } = useLanguage();
   const ko = language === "ko";
   const [searchParams, setSearchParams] = useSearchParams();
@@ -20,6 +20,8 @@ export default function Account() {
   const [notice, setNotice] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [resending, setResending] = useState(false);
+  const [resetting, setResetting] = useState(false);
+  const [verificationPending, setVerificationPending] = useState(false);
 
   const returnTo = useMemo(() => searchParams.get("returnTo") || (language === "en" ? "/en/" : "/"), [searchParams, language]);
 
@@ -63,10 +65,40 @@ export default function Account() {
     }
   };
 
+  const requestReset = async () => {
+    if (!email.trim()) return setNotice(ko ? "비밀번호를 재설정할 이메일 주소를 입력해주세요." : "Enter your email address first.");
+    setResetting(true);
+    setNotice("");
+    try {
+      await requestPasswordReset(email);
+      setNotice(ko ? "계정이 있다면 비밀번호 재설정 메일이 발송됩니다. 받은편지함과 스팸함을 확인해주세요." : "If an account exists, a password reset email will arrive. Check your inbox and spam folder.");
+    } catch (error) {
+      setNotice(error instanceof Error ? error.message : (ko ? "메일을 보내지 못했습니다." : "Could not send the email."));
+    } finally {
+      setResetting(false);
+    }
+  };
+
+  const submitNewPassword = async (event: FormEvent) => {
+    event.preventDefault();
+    if (password.length < 8) return setNotice(ko ? "새 비밀번호는 8자 이상으로 설정해주세요." : "Use at least 8 characters.");
+    setSubmitting(true);
+    setNotice("");
+    try {
+      await updatePassword(password);
+      setPassword("");
+      setNotice(ko ? "비밀번호를 변경했습니다. 이제 새 비밀번호로 로그인할 수 있습니다." : "Password updated. You can now log in with the new password.");
+    } catch (error) {
+      setNotice(error instanceof Error ? error.message : (ko ? "비밀번호 변경에 실패했습니다." : "Could not update the password."));
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   const submit = async (event: FormEvent) => {
     event.preventDefault();
     setNotice("");
-    if (password.length < 8) return setNotice(ko ? "비밀번호는 8자 이상으로 설정해주세요." : "Password must be at least 8 characters.");
+    if (mode === "signup" && password.length < 8) return setNotice(ko ? "비밀번호는 8자 이상으로 설정해주세요." : "Password must be at least 8 characters.");
     if (mode === "signup" && name.trim().length < 2) return setNotice(ko ? "닉네임은 두 글자 이상 입력해주세요." : "Nickname must be at least 2 characters.");
     if (mode === "signup" && kakaoOptIn && !/^010-\d{4}-\d{4}$/.test(phone)) return setNotice(ko ? "카카오톡 수신을 위해 휴대전화 번호를 010-0000-0000 형식으로 입력해주세요." : "Enter a valid Korean mobile number for KakaoTalk delivery.");
     if (mode === "signup" && !newsletterOptIn) return setNotice(ko ? "구독신청과 이메일 수신에 동의해주세요." : "Please agree to subscribe and receive email updates.");
@@ -77,6 +109,7 @@ export default function Account() {
         const normalizedEmail = email.trim();
         const result = await signUp(normalizedEmail, password, name.trim(), kakaoOptIn ? phone : "", kakaoOptIn ? ["kakao"] : [], language);
         if (result.verificationRequired) {
+          setVerificationPending(true);
           setNotice(ko
             ? "구독 확인 메일을 보냈습니다. 이메일의 인증 링크를 누르면 로그인할 수 있습니다. 메일이 보이지 않으면 아래의 인증메일 다시 보내기를 이용해주세요."
             : "We sent a confirmation email. Follow the link to log in. If the message does not arrive, use the resend button below.");
@@ -92,6 +125,7 @@ export default function Account() {
         navigate(returnTo);
       }
     } catch (error) {
+      if (mode === "login" && error instanceof Error && /email not confirmed|이메일 인증/i.test(error.message)) setVerificationPending(true);
       setNotice(error instanceof Error ? error.message : (ko ? "처리 중 오류가 발생했습니다." : "An error occurred."));
     } finally {
       setSubmitting(false);
@@ -99,6 +133,17 @@ export default function Account() {
   };
 
   if (loading) return <div className="container-page py-24 text-center text-sm text-charcoal/50">{ko ? "회원 정보를 확인하는 중입니다." : "Checking your account…"}</div>;
+
+  if (recoveringPassword && user) return (
+    <section className="min-h-[65vh] bg-ivory py-14"><div className="container-page max-w-md rounded-xl bg-white p-8 shadow-soft">
+      <h1 className="editorial-title text-3xl font-bold text-navy">{ko ? "새 비밀번호 설정" : "Set a new password"}</h1>
+      <form onSubmit={submitNewPassword} className="mt-7">
+        <label className="field"><span>{ko ? "새 비밀번호" : "New password"}</span><input type="password" value={password} onChange={(event) => setPassword(event.target.value)} minLength={8} autoComplete="new-password" required /></label>
+        <button className="button-primary mt-5 w-full justify-center" type="submit" disabled={submitting}>{ko ? "비밀번호 변경" : "Update password"}</button>
+      </form>
+      {notice && <p className="mt-4 text-sm" role="status">{notice}</p>}
+    </div></section>
+  );
 
   if (user) {
     return (
@@ -142,7 +187,7 @@ export default function Account() {
           <form onSubmit={submit} className="mt-7">
             <label className="field"><span>{ko ? "이메일" : "Email"}</span><input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="name@example.com" autoComplete="email" required /></label>
             {mode === "signup" && <label className="field mt-4"><span>{ko ? "닉네임" : "Nickname"}</span><input value={name} onChange={(event) => setName(event.target.value)} maxLength={30} placeholder={ko ? "씨앗시민" : "SeedCitizen"} autoComplete="nickname" required /></label>}
-            <label className="field mt-4"><span>{ko ? "비밀번호" : "Password"}</span><input type="password" value={password} onChange={(event) => setPassword(event.target.value)} minLength={8} placeholder={ko ? "8자 이상" : "8+ characters"} autoComplete={mode === "signup" ? "new-password" : "current-password"} required /></label>
+            <label className="field mt-4"><span>{ko ? "비밀번호" : "Password"}</span><input type="password" value={password} onChange={(event) => setPassword(event.target.value)} minLength={mode === "signup" ? 8 : undefined} placeholder={mode === "signup" ? (ko ? "8자 이상" : "8+ characters") : undefined} autoComplete={mode === "signup" ? "new-password" : "current-password"} required /></label>
 
             {mode === "signup" && (
               <div className="mt-5">
@@ -171,9 +216,12 @@ export default function Account() {
 
             <button className="button-primary mt-6 w-full justify-center disabled:cursor-not-allowed disabled:opacity-45" type="submit" disabled={submitting || resending || (mode === "signup" && (!newsletterOptIn || (kakaoOptIn && !/^010-\d{4}-\d{4}$/.test(phone))))}>{mode === "signup" ? <UserPlus size={16}/> : <LogIn size={16}/>} {submitting ? (ko ? "처리 중" : "Processing") : mode === "signup" ? (ko ? "구독 신청하기" : "Subscribe") : (ko ? "로그인" : "Log in")}</button>
             {mode === "login" && email.trim() && (
-              <button className="button-secondary mt-3 w-full justify-center disabled:cursor-not-allowed disabled:opacity-45" type="button" onClick={() => void resend()} disabled={submitting || resending}>
-                <MailCheck size={16}/>{resending ? (ko ? "인증메일 보내는 중" : "Sending verification email") : (ko ? "인증메일 다시 보내기" : "Resend verification email")}
-              </button>
+              <div className="mt-3 grid gap-2">
+                <button className="button-secondary w-full justify-center disabled:opacity-45" type="button" onClick={() => void requestReset()} disabled={submitting || resetting || resending}>{resetting ? (ko ? "메일 보내는 중" : "Sending") : (ko ? "비밀번호 재설정 메일 받기" : "Reset password")}</button>
+                {verificationPending && <button className="text-sm font-semibold text-green-deep underline disabled:opacity-45" type="button" onClick={() => void resend()} disabled={submitting || resending || resetting}>
+                  <MailCheck size={16} className="mr-1 inline"/>{resending ? (ko ? "인증메일 보내는 중" : "Sending verification email") : (ko ? "가입 인증메일 다시 보내기" : "Resend signup confirmation")}
+                </button>}
+              </div>
             )}
             {notice && <p className="mt-4 rounded-lg bg-gold/10 px-4 py-3 text-sm font-semibold leading-6 text-charcoal/70" role="status">{notice}</p>}
           </form>

@@ -24,9 +24,12 @@ type AuthContextValue = {
   nickname: string;
   isVerified: boolean;
   loading: boolean;
+  recoveringPassword: boolean;
   isNicknameAvailable: (nickname: string) => Promise<boolean>;
   signUp: (email: string, password: string, nickname: string, phone: string, socialPreferences: string[], language: "ko" | "en") => Promise<{ verificationRequired: boolean }>;
   resendVerification: (email: string) => Promise<void>;
+  requestPasswordReset: (email: string) => Promise<void>;
+  updatePassword: (password: string) => Promise<void>;
   signIn: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
 };
@@ -54,7 +57,7 @@ async function readError(response: Response, fallback: string) {
   }
 }
 
-async function securityToken(action: "signup" | "login" | "resend") {
+async function securityToken(action: "signup" | "login" | "resend" | "recover") {
   try {
     return await getTurnstileToken(action);
   } catch (error) {
@@ -101,6 +104,7 @@ async function refreshSession(refreshToken: string): Promise<AuthSession> {
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<AuthSession | null>(null);
   const [loading, setLoading] = useState(true);
+  const [recoveringPassword, setRecoveringPassword] = useState(false);
 
   const applySession = (next: AuthSession | null) => {
     setSession(next);
@@ -118,6 +122,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           const user = await getUser(hashAccess);
           const expiresIn = Number(hash.get("expires_in") || "3600");
           applySession(normalizeSession({ access_token: hashAccess, refresh_token: hashRefresh, expires_in: expiresIn, token_type: hash.get("token_type") || "bearer", user }));
+          setRecoveringPassword(hash.get("type") === "recovery");
           window.history.replaceState({}, document.title, `${window.location.pathname}${window.location.search}`);
           return;
         }
@@ -233,6 +238,30 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (!response.ok) throw new Error(await readError(response, "인증메일 재발송에 실패했습니다."));
   };
 
+  const requestPasswordReset = async (email: string) => {
+    const normalizedEmail = email.trim();
+    if (!normalizedEmail) throw new Error("이메일 주소를 입력해주세요.");
+    const captchaToken = await securityToken("recover");
+    const redirectTo = `${window.location.origin}${import.meta.env.BASE_URL}account`;
+    const response = await fetch(`${supabaseUrl}/auth/v1/recover?redirect_to=${encodeURIComponent(redirectTo)}`, {
+      method: "POST",
+      headers: authHeaders(),
+      body: JSON.stringify({ email: normalizedEmail, ...(captchaToken ? { gotrue_meta_security: { captcha_token: captchaToken } } : {}) }),
+    });
+    if (!response.ok) throw new Error(await readError(response, "비밀번호 재설정 메일을 보내지 못했습니다."));
+  };
+
+  const updatePassword = async (password: string) => {
+    if (!session?.access_token) throw new Error("재설정 링크가 만료되었습니다. 메일을 다시 요청해주세요.");
+    const response = await fetch(`${supabaseUrl}/auth/v1/user`, {
+      method: "PUT",
+      headers: authHeaders(session.access_token),
+      body: JSON.stringify({ password }),
+    });
+    if (!response.ok) throw new Error(await readError(response, "비밀번호를 변경하지 못했습니다."));
+    setRecoveringPassword(false);
+  };
+
   const signIn = async (email: string, password: string) => {
     const captchaToken = await securityToken("login");
     const response = await fetch(`${supabaseUrl}/auth/v1/token?grant_type=password`, {
@@ -267,9 +296,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     nickname: session?.user?.user_metadata?.nickname?.trim() || session?.user?.email?.split("@")[0] || "인증회원",
     isVerified: Boolean(session?.user?.email_confirmed_at),
     loading,
+    recoveringPassword,
     isNicknameAvailable,
     signUp,
     resendVerification,
+    requestPasswordReset,
+    updatePassword,
     signIn,
     signOut,
   }), [session, loading]);
