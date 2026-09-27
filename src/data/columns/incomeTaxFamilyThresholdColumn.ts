@@ -3,7 +3,7 @@ import type { SeedColumn } from "../columns";
 export const incomeTaxFamilyThresholdColumn: SeedColumn = {
   slug: "family-deduction-work-income-threshold",
   issue: 33,
-  title: "월 50만 원 일하면 가족이 아니게 되는 세금 기준",
+  title: "월 50만 원 일하면 가족이 아니게 되는 이상한 세금 기준",
   subtitle: "누가 750만 원에서 900만 원 사이의 혜택을 받나…가구 수·세수·정기 조정이 쟁점",
   date: "2026-09-27",
   author: "작은씨앗",
