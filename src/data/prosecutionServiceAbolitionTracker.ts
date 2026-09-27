@@ -23,6 +23,7 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     en: "6 days to launch · Plan confirmed for 48,058 D-Net evidence records · Final appointments pending",
   },
   openedAt: "2025-09-05",
+  publishedAt: "2026-09-15",
   updatedAt: "2026-09-26",
   continuationEligible: true,
   nextCheck: {

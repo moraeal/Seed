@@ -23,6 +23,7 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     en: "Policy reversal · Further reactors under review",
   },
   openedAt: "2017-10-24",
+  publishedAt: "2026-09-16",
   updatedAt: "2026-09-26",
   nextCheck: {
     ko: "12월 원전 공론화위원회 권고안과 제12차 전력수급기본계획 정부안, 추가 원전 기수·부지·비용, 서남권 투자계획의 기업별 확정 여부, HMM을 포함한 기업 이전 과정의 동의·거부 절차, 탈원전에서 원전 확대로 바뀌며 발생한 전환비용",

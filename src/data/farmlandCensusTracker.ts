@@ -23,6 +23,7 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     en: "Follow-up measures announced · Field review under way",
   },
   openedAt: "2026-02-24",
+  publishedAt: "2026-09-16",
   updatedAt: "2026-09-24",
   nextCheck: {
     ko: "11월 15일까지의 임대차 특별정비 결과, 심층조사 후 실제 위법 확정 면적, 연내 의결을 목표로 한 처분 유예·사후 전용 추인 특별조치법의 발의·심사, 농지은행 위탁·매입 실적",

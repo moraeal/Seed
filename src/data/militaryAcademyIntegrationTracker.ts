@@ -23,6 +23,7 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     en: "Basic plan announced · Revisions under review",
   },
   openedAt: "2025-06-26",
+  publishedAt: "2026-09-17",
   updatedAt: "2026-09-26",
   nextCheck: {
     ko: "10월 세부계획의 통합 선발 시점과 방식, 자운대 이전 일정·총사업비, 각 군 전문교육 시설, ROTC·학사장교 합동교육 확대안, 정부·여당의 국군사관학교 설치법 제출 여부와 분리 유지 법안 심사, 2028년 예산 편성 전 선행연구 일정",

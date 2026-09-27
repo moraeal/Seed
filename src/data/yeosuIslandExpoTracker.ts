@@ -23,6 +23,7 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     en: "Fair under way · Criminal complaint filed · Outcomes tracked",
   },
   openedAt: "2018-09-05",
+  publishedAt: "2026-09-15",
   updatedAt: "2026-09-27",
   nextCheck: {
     ko: "9월 21일 고발사건의 광주지검 접수·배당과 실제 수사 착수 여부, 피고발인과 조직위의 구체적 입장, 추석 연휴 뒤 누적 입장객을 유료·무료·단체·초청·공무출장·전국 섬 주민 무료입장으로 나눈 집계, 9월 25~26일 12만7천여 명 가운데 무료입장 규모와 사업수익 영향, 개도·금오도 셔틀의 실제 이용실적, 수의계약을 포함한 계약 원문과 집행액, 예결위를 통과한 콘텐츠 보완 추경 7억 원의 본회의 최종 처리·계약·집행, 사업수익 120억 원의 달성 여부와 폐막 뒤 최종 정산",

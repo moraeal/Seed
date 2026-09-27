@@ -5,8 +5,20 @@ import { localizeBriefing } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
 import SafeImage from "../components/SafeImage";
 import ArticleArchive, { RECENT_ARTICLE_COUNT } from "../components/ArticleArchive";
+import { newsTrackerCases } from "../data/newsTrackerRegistry";
+import type { PublicInterestWatchCase } from "../data/publicInterestWatch";
 
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
+const displayDate = (date: string) => date.replace(/-/g, ".");
+
+function latestTrackerChange(item: PublicInterestWatchCase, language: "ko" | "en") {
+  const changes = [
+    ...(item.keyChanges ?? []).map((entry) => ({ date: entry.date, text: entry.text[language], priority: 1 })),
+    ...(item.timeline ?? []).map((entry) => ({ date: entry.date, text: (entry.change ?? entry.description)[language], priority: 0 })),
+  ].sort((a, b) => b.date.localeCompare(a.date) || b.priority - a.priority);
+
+  return changes[0]?.text ?? item.summary[language];
+}
 
 export default function Briefings() {
   const { language } = useLanguage();
@@ -15,6 +27,7 @@ export default function Briefings() {
   const recentBriefings = briefings.filter((briefing) => briefing.listingStyle !== "archive").slice(0, RECENT_ARTICLE_COUNT);
   const recentSlugs = new Set(recentBriefings.map((briefing) => briefing.slug));
   const archiveBriefings = briefings.filter((briefing) => !recentSlugs.has(briefing.slug));
+  const trackers = [...newsTrackerCases].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt) || a.title[language].localeCompare(b.title[language]));
 
   return (
     <section className="bg-paper pb-12 sm:pb-16">
@@ -31,6 +44,36 @@ export default function Briefings() {
       </header>
 
       <div className="container-page py-8 sm:py-10">
+        <section aria-labelledby="briefing-trackers-title" className="mb-12 overflow-hidden border border-green-deep/20 bg-white shadow-[0_9px_28px_rgba(21,55,49,.08)]">
+          <div className="flex flex-wrap items-end justify-between gap-3 border-b-2 border-navy bg-green-pale/45 px-5 py-5 sm:px-7">
+            <div>
+              <span className="section-kicker">NEWS TRACKER</span>
+              <h2 id="briefing-trackers-title" className="mt-1 text-2xl font-extrabold text-navy">{ko ? "추적 중인 이슈" : "Issues we are tracking"}</h2>
+            </div>
+            <Link to="/monitoring" className="inline-flex items-center gap-1.5 text-sm font-bold text-green-deep hover:underline">
+              {ko ? "이슈감시 전체 보기" : "View all issue reports"}<ArrowRight size={15} aria-hidden="true" />
+            </Link>
+          </div>
+          <div className="hidden grid-cols-[minmax(0,1fr)_8.5rem_8.5rem] gap-4 border-b border-green-deep/15 px-7 py-3 text-sm font-bold text-charcoal/65 md:grid">
+            <span>{ko ? "이슈와 최근 변화" : "Issue and latest change"}</span>
+            <span>{ko ? "최종 업데이트" : "Last updated"}</span>
+            <span>{ko ? "최초 게시" : "First published"}</span>
+          </div>
+          <div className="divide-y divide-green-deep/15">
+            {trackers.map((item) => (
+              <Link key={item.slug} to={`/monitoring/${item.slug}`} className="group grid gap-3 px-5 py-4 transition-colors hover:bg-green-pale/65 focus-visible:bg-green-pale/65 md:grid-cols-[minmax(0,1fr)_8.5rem_8.5rem] md:gap-4 md:px-7 md:py-5">
+                <div className="min-w-0">
+                  <h3 className="editorial-title text-lg font-bold leading-snug text-navy transition-colors group-hover:text-green-deep">{item.title[language]}</h3>
+                  <p className="mt-1 line-clamp-2 text-sm leading-6 text-charcoal/65">{latestTrackerChange(item, language)}</p>
+                </div>
+                <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm md:contents">
+                  <span className="text-green-deep md:pt-1"><span className="mr-2 font-bold md:hidden">{ko ? "업데이트" : "Updated"}</span><time dateTime={item.updatedAt}>{displayDate(item.updatedAt)}</time></span>
+                  <span className="text-charcoal/55 md:pt-1"><span className="mr-2 font-bold md:hidden">{ko ? "최초 게시" : "First published"}</span>{item.publishedAt ? <time dateTime={item.publishedAt}>{displayDate(item.publishedAt)}</time> : (ko ? "확인 중" : "Pending")}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
         <div className="mb-4 flex items-end justify-between gap-4 border-b-2 border-navy pb-3">
           <div><span className="section-kicker">LATEST</span><h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "최근 기사" : "Latest articles"}</h2></div>
           <p className="text-xs font-semibold text-charcoal/45">{ko ? "최근 5건" : "Latest five"}</p>
