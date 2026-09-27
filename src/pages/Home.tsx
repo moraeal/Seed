@@ -11,6 +11,7 @@ import type { HotIssueListItem } from "../data/hotIssues";
 import { newsTrackerCases } from "../data/newsTrackerRegistry";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
+import { seedLanguageTerms } from "../data/seedLanguageTerms";
 import { getFeaturedContentCandidates } from "../data/featuredContent";
 import { useLanguage } from "../i18n";
 import { getFeaturedContentPath } from "../lib/featuredContent";
@@ -19,21 +20,6 @@ const resolveImageSrc = (src?: string) => {
   if (!src) return "";
   if (/^https?:\/\//i.test(src)) return src;
   return `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
-};
-
-const seedLanguageTerms: Record<string, { hanja: string; english: string }> = {
-  통일: { hanja: "統一", english: "UNIFICATION" },
-  정치: { hanja: "政治", english: "POLITICS" },
-  진영언어: { hanja: "陣營言語", english: "PARTISAN LANGUAGE" },
-  시민: { hanja: "市民", english: "CITIZEN" },
-  자유: { hanja: "自由", english: "FREEDOM" },
-  진보: { hanja: "進步", english: "PROGRESS · PROGRESSIVISM" },
-  보수: { hanja: "保守", english: "CONSERVATIVE · CONSERVATISM" },
-  민주: { hanja: "民主", english: "DEMOCRACY" },
-  환경: { hanja: "環境", english: "ENVIRONMENT" },
-  공익: { hanja: "公益", english: "PUBLIC INTEREST" },
-  공공: { hanja: "公共", english: "PUBLIC · PUBLICNESS" },
-  담론: { hanja: "談論", english: "DISCOURSE" },
 };
 
 const claimFirstUnseen = <T,>(
@@ -192,7 +178,7 @@ export default function Home() {
     (item) => `/seed-language/${item.slug}`,
     claimedHomePaths,
   );
-  const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[seedLanguageArticle.term] : undefined;
+  const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[ko ? seedLanguageArticle.term : getSeedLanguageEnvironmentArticle(seedLanguageArticle.slug, "ko")?.term ?? getSeedLanguageArticle(seedLanguageArticle.slug, "ko")?.term ?? ""] : undefined;
 
   useEffect(() => {
     let active = true;

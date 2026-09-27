@@ -10,7 +10,7 @@ const server = await createServer({
   optimizeDeps: { noDiscovery: true },
 });
 
-const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguageEnvironmentModule, publicInterestWatchModule, taxWatchModule, editorialContinuationModule, newsTranslationModule, briefingTranslationModule, columnTranslationModule, legislativeCommentaryModule] = await Promise.all([
+const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguageEnvironmentModule, publicInterestWatchModule, taxWatchModule, editorialContinuationModule, newsTranslationModule, briefingTranslationModule, columnTranslationModule, legislativeCommentaryModule, seedLanguageTermsModule] = await Promise.all([
   server.ssrLoadModule("/src/data/news.ts"),
   server.ssrLoadModule("/src/data/allBriefings.ts"),
   server.ssrLoadModule("/src/data/columns.ts"),
@@ -23,10 +23,18 @@ const [newsModule, briefingModule, columnModule, seedLanguageModule, seedLanguag
   server.ssrLoadModule("/src/data/contentTranslations/briefings.ts"),
   server.ssrLoadModule("/src/data/contentTranslations/columns/index.ts"),
   server.ssrLoadModule("/src/data/legislativeCommentaries.ts"),
+  server.ssrLoadModule("/src/data/seedLanguageTerms.ts"),
 ]);
 await server.close();
 
 const errors = [];
+for (const article of [...seedLanguageModule.seedLanguageArticlesKo, ...seedLanguageEnvironmentModule.seedLanguageEnvironmentArticlesKo]) {
+  if (article.listingEligible === false || article.homeHeroEligible === false) continue;
+  const term = seedLanguageTermsModule.seedLanguageTerms[article.term];
+  if (!term?.hanja?.trim() || !term?.english?.trim()) {
+    errors.push(`Missing homepage glossary Hanja/English metadata for ${article.slug} (${article.term})`);
+  }
+}
 const optionalEnglishNewsSlugs = new Set([
   "lh-split-public-agency-experiment",
 ]);
