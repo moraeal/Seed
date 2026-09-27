@@ -14,7 +14,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   },
   status: { ko: "후보자 사퇴·관련 수사 추적", en: "Nominee withdrawn · Related cases tracked" },
   openedAt: "2026-08-31",
-  updatedAt: "2026-09-23",
+  updatedAt: "2026-09-26",
   nextCheck: {
     ko: "식약처가 열람을 제시한 제넨셀 임상시험계획 심사자료의 실제 공개 범위와 국회의 추가 자료 요구 결과, 9월 18일 김 전 후보자와 전직 보좌진의 면담 여부·대화 내용에 대한 당사자의 추가 해명과 객관 자료, 2011년 자전거 모임 원게시물과 참석자 신원에 대한 추가 확인, 후보자 측이 예고한 AI 합성물 유포 관련 법적 조치의 실제 착수 여부, 전직 보좌진이 공개한 텔레그램 전달 정황에 대한 청와대의 공식 확인과 대통령의 실제 문서 열람·보고 여부, 9월 22일 서울경찰청에 접수된 강제추행·직권남용 고발의 사건 배당·정식 수사 착수 여부와 탄원서 원문 확보, 그 밖의 개별 의혹에 관한 추가 고발 또는 수사 단서 확보 여부, 전직 보좌진이 작성한 45쪽 경기도당 회계 의혹 자료의 원문·회계 증빙과 김 전 후보자·민주당 경기도당·청와대의 공식 해명, 경기도선관위의 조사 범위·결과와 수사기관 고발 여부, 청와대가 밝힌 인사검증 절차 보완 검토 결과, 후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 9월 23일 고발인 조사가 시작된 제넨셀 임상 승인 관련 신규 고발 사건, 경찰이 검찰 자료를 검토 중인 기존 제넨셀 민원 의혹 고소 사건과 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
     en: "The actual scope of access to the Genencell clinical-trial application review records that the regulator offered for inspection, and the outcome of parliament's renewed document request; any further response or objective record concerning the reported September 18 meeting between Kim and a former aide and what was discussed; further verification of the original 2011 cycling-post record and the participants' identities; whether Kim's office follows through on threatened legal action over circulating AI-generated images; an official presidential-office response to the Telegram delivery evidence disclosed by a former aide, whether the president actually opened the document or received a briefing, and whether the September 22 forcible-indecency and abuse-of-authority complaint filed with Seoul police is assigned and advances to a formal investigation, whether police obtain the underlying petitions, and whether any further complaint or investigative lead emerges from the other individual allegations; the full document and accounting evidence behind the former aide's 45-page compilation of alleged provincial-party accounting irregularities, official responses from Kim, the Democratic Party's Gyeonggi branch and the presidential office, the scope and outcome of the Gyeonggi election commission's inquiry, and whether the matter is referred to investigators; the outcome of the presidential office's review of improvements to personnel vetting; the nomination and confirmation process for a successor justice minister; the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud; progress after the September 23 complainant questioning in the newly filed Genencell clinical-approval case, the existing Genencell petition complaint for which police are reviewing prosecution records, and the family-cooperative complaint; and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
@@ -63,6 +63,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     ],
   },
   keyChanges: [
+    {
+      date: "2026-09-26",
+      text: {
+        ko: "법무부는 김민전 국민의힘 의원에게 제출한 자료에서 국민의힘에 대한 정당해산심판 청구 요건을 현재까지 별도로 검토한 사실이 없다고 밝혔습니다. 김 전 후보자가 인사청문회 서면답변에서 취임 시 헌법재판소 결정과 관련 사건 경과를 살펴 요건 해당 여부를 검토하겠다고 밝힌 것은 후보자의 향후 계획이었으며, 법무부의 실제 검토 착수 사실은 없었던 것으로 구분됩니다. 법무부는 정당해산 제도가 정당 활동의 자유를 근본적으로 제한하므로 엄격한 요건 아래 적용돼야 한다는 헌재 결정 취지도 함께 설명했습니다.",
+        en: "In material submitted to People Power Party lawmaker Kim Min-jeon, the Ministry of Justice said it had not separately reviewed whether grounds existed to seek dissolution of the People Power Party. Kim's written confirmation-hearing answer—that, if appointed, he would examine Constitutional Court decisions and related proceedings—was therefore a prospective plan, not evidence that the ministry had begun such a review. The ministry also cited Constitutional Court precedent that party dissolution fundamentally restricts political-party freedom and must be applied under strict conditions.",
+      },
+    },
     {
       date: "2026-09-23",
       text: {
@@ -247,6 +254,34 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      date: "2026-09-26",
+      title: {
+        ko: "법무부 “국민의힘 정당해산 요건 별도 검토한 사실 없어”",
+        en: "Justice Ministry says it has not separately reviewed grounds for dissolving the People Power Party",
+      },
+      description: {
+        ko: "문화일보는 법무부가 김민전 국민의힘 의원에게 제출한 자료에서 국민의힘에 대한 정당해산심판 청구 요건을 현재까지 별도로 검토한 사실이 없다고 밝혔다고 9월 26일 보도했습니다. 김 전 후보자는 인사청문회 전 국회 서면질의 답변에서 취임하면 헌법재판소 결정 취지와 관련 사건 경과를 살펴 요건 해당 여부를 검토하겠다고 답했습니다. 이번 자료로 후보자의 답변은 취임 뒤의 검토 계획이었고 법무부의 실제 검토는 시작되지 않았다는 점이 구분됐습니다. 법무부는 헌법 제8조 제4항과 2014년 통합진보당 해산 결정도 제시하며 정당해산 제도는 정당 활동의 자유를 근본적으로 제한하므로 엄격한 요건 아래 적용돼야 한다는 헌재 판단을 설명했습니다.",
+        en: "Munhwa Ilbo reported on September 26 that, in material submitted to People Power Party lawmaker Kim Min-jeon, the Ministry of Justice said it had not separately reviewed whether grounds existed to seek dissolution of the People Power Party. In a written response before his confirmation hearing, Kim said that if appointed he would examine the Constitutional Court's reasoning and related proceedings to assess whether the legal conditions were met. The ministry's submission clarifies that Kim's answer described a possible future review and that no ministry review had actually begun. The ministry also cited Article 8(4) of the Constitution and the Constitutional Court's 2014 Unified Progressive Party decision, explaining that dissolution fundamentally limits political-party freedom and therefore requires strict conditions.",
+      },
+      change: {
+        ko: "후보자의 향후 검토 계획과 법무부의 실제 검토 상태를 구분",
+        en: "Clarifies the difference between the nominee's prospective plan and the ministry's actual review status",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "문화일보", en: "Munhwa Ilbo" },
+          title: {
+            ko: "김승원 ‘국힘 정당해산 요건 검토’ 밝혔지만…법무부 ‘현재까지 별도 검토한 사실 없어’",
+            en: "Justice Ministry says it has not separately reviewed PPP dissolution grounds despite Kim's statement",
+          },
+          url: "https://www.munhwa.com/article/11619517",
+          publishedAt: "2026-09-26",
+          kind: "article",
+        },
+      ],
+    },
     {
       date: "2026-09-23",
       title: { ko: "제넨셀 임상 승인 관련 신규 고발 사건, 고발인 조사 시작", en: "Complainant questioned in newly filed Genencell clinical-approval case" },
@@ -1140,6 +1175,10 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+    {
+      ko: "법무부는 김민전 국민의힘 의원에게 제출한 자료에서 국민의힘에 대한 정당해산심판 청구 요건을 현재까지 별도로 검토한 사실이 없다고 밝혔습니다. 김 전 후보자의 서면답변은 취임 뒤 검토 계획이었으며 법무부의 실제 검토 착수 사실과는 구분됩니다.",
+      en: "In material submitted to People Power Party lawmaker Kim Min-jeon, the Ministry of Justice said it had not separately reviewed grounds for seeking dissolution of the party. Kim's written answer described what he would examine if appointed and is distinct from any actual ministry review.",
+    },
     { ko: "서울 영등포경찰서는 2026년 9월 23일 제넨셀 임상시험 승인 과정과 관련해 강세찬 제넨셀 설립자, 양모 씨, 김승원 의원 등을 고발한 서민민생대책위원회 김순환 사무총장을 고발인 신분으로 조사했습니다. 이는 고발 내용을 확인하는 수사 초기 절차이며, 고발된 사기·살인미수·직권남용 등 혐의가 인정됐거나 피고발인이 입건·소환됐다는 의미는 아닙니다.", en: "On September 23, 2026, Yeongdeungpo Police Station questioned Kim Soon-hwan of the Citizens' Committee for Livelihood Countermeasures as a complainant after his group filed a complaint against Genencell founder Kang Se-chan, a woman identified by surname Yang, lawmaker Kim Seung-won and others over the clinical-trial approval process. This is an initial investigative step to examine the complaint; it does not establish the alleged fraud, attempted murder or abuse of authority, or mean that the accused parties have been booked or summoned." },
     { ko: "시민단체 서민민생대책위원회는 2026년 9월 22일 김승원 의원을 강제추행·직권남용 혐의로 수사해 달라는 고발장을 서울경찰청에 제출했습니다. 경찰은 고발장 검토 뒤 사건 배당과 정식 수사 착수 여부를 판단할 단계이며, 고발 접수만으로 의혹이 확인됐거나 피고발인이 입건됐다는 의미는 아닙니다.", en: "On September 22, 2026, the Citizens' Committee for Livelihood Countermeasures filed a complaint with Seoul police asking for Kim Seung-won to be investigated for alleged forcible indecency and abuse of authority. Police are at the stage of reviewing the filing before deciding assignment and whether to open a formal investigation; receipt alone does not establish the allegation or mean Kim has been booked." },
     { ko: "한국일보는 전직 보좌진이 경기도당 수입·지출부 등 회계 의혹 자료를 중앙선거관리위원회에 제출했고 경기도선관위가 조사에 착수했다고 2026년 9월 22일 보도했습니다. 국민일보는 경기도선관위가 정치자금법 위반 가능성 전반을 확인 중이라고 답했다고 보도했습니다. 이는 조사 절차가 진행 중이라는 뜻이며 개별 의혹의 진위나 위법성이 확인됐다는 의미는 아닙니다.", en: "On September 22, 2026, Hankook Ilbo reported that a former aide submitted provincial-party income and expenditure records and other accounting-allegation material to the National Election Commission and that its Gyeonggi office opened an inquiry. Kookmin Ilbo reported that the Gyeonggi commission said it was examining the full range of possible Political Funds Act violations. This establishes that an inquiry is under way, not that the individual allegations or any illegality have been proven." },
@@ -1222,6 +1261,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    {
+      label: {
+        ko: "문화일보 — 법무부, 국민의힘 정당해산 요건 별도 검토 사실 없다고 국회 제출자료로 설명",
+        en: "Munhwa Ilbo — Justice Ministry says no separate review of PPP dissolution grounds has taken place",
+      },
+      url: "https://www.munhwa.com/article/11619517",
+    },
     {
       label: { ko: "연합뉴스 — 성추행 의혹 관련 강제추행·직권남용 고발장 접수", en: "Yonhap — Police receive complaint over reported sexual-misconduct allegation" },
       url: "https://www.yna.co.kr/view/AKR20260922147500004",
