@@ -27,12 +27,13 @@ function entry(item, path, edition = item) {
 }
 
 try {
-  const [{ newsArticles }, { getAllBriefingsNewestFirst }, { columns }, { legislativeCommentaries }, { taxCommentaries }, { seedLanguageArticlesKo }, { seedLanguageEnvironmentArticlesKo }, { publicInterestWatchCases }] = await Promise.all([
+  const [{ newsArticles }, { getAllBriefingsNewestFirst }, { columns }, { legislativeCommentaries }, { taxCommentaries }, { taxPolicies }, { seedLanguageArticlesKo }, { seedLanguageEnvironmentArticlesKo }, { publicInterestWatchCases }] = await Promise.all([
     server.ssrLoadModule("/src/data/news.ts"),
     server.ssrLoadModule("/src/data/allBriefings.ts"),
     server.ssrLoadModule("/src/data/columns.ts"),
     server.ssrLoadModule("/src/data/legislativeCommentaries.ts"),
     server.ssrLoadModule("/src/data/taxCommentaries.ts"),
+    server.ssrLoadModule("/src/data/taxWatch.ts"),
     server.ssrLoadModule("/src/data/seedLanguage.ts"),
     server.ssrLoadModule("/src/data/seedLanguageEnvironment.ts"),
     server.ssrLoadModule("/src/data/newsTrackerRegistry.ts"),
@@ -43,6 +44,16 @@ try {
     ...columns.map((item) => entry(item, "/columns")),
     ...legislativeCommentaries.map((item) => entry(item, "/monitoring/legislation/commentary", item.editions.ko)),
     ...taxCommentaries.map((item) => entry(item, "/monitoring/tax/commentary", item.editions.ko)),
+    ...taxPolicies.map((item) => ({
+      title: item.title.ko,
+      summary: item.summary.ko,
+      date: item.checkedAt,
+      path: `/monitoring/tax/${encodeURIComponent(item.slug)}`,
+      text: [item.summary.ko, item.oneSentence.ko, item.officialRationale.ko,
+        ...item.keyChanges.map((change) => `${change.title.ko}: ${change.body.ko}`),
+        ...item.risks.map((risk) => risk.ko), ...item.questions.map((question) => question.ko),
+        item.seedView.ko].filter(Boolean).join("\n").slice(0, 14000),
+    })),
     ...[...seedLanguageArticlesKo, ...seedLanguageEnvironmentArticlesKo].map((item) => entry(item, "/seed-language")),
     ...publicInterestWatchCases.map((item) => ({
       title: item.title.ko,

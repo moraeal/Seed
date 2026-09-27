@@ -39,7 +39,23 @@ export default function RouteMetadata() {
       } = await import("../seo");
       if (cancelled) return;
 
-    const route = getSeoRoute(location.pathname);
+    let route = getSeoRoute(location.pathname);
+    const billMatch = location.pathname.match(/^\/monitoring\/legislation\/(bill-\d+)\/?$/);
+    if (!route && billMatch) {
+      try {
+        const { getLegislativeBillBySlug } = await import("../lib/legislativeMonitoring");
+        const bill = await getLegislativeBillBySlug(billMatch[1]);
+        if (cancelled) return;
+        if (bill?.review_state === "published") route = {
+          path: `/monitoring/legislation/${bill.slug}`,
+          title: `${bill.title} | ${SITE_NAME}`,
+          description: bill.public_summary_ko || bill.analysis?.summary_ko || bill.official_summary || `${bill.title}의 입법 내용과 영향을 살펴봅니다.`,
+          type: "article",
+        };
+      } catch {
+        // A transient data failure should not label an existing bill page as a missing page.
+      }
+    }
     const privatePage = location.pathname.startsWith("/insights")
       ? {
           title: `운영자 대시보드 | ${SITE_NAME}`,
@@ -56,9 +72,9 @@ export default function RouteMetadata() {
             description: "씨앗의 소리 회원 계정과 운영 기능을 확인합니다.",
           }
         : null;
-    const title = route?.title ?? privatePage?.title ?? `페이지를 찾을 수 없습니다 | ${SITE_NAME}`;
+    const title = route?.title ?? privatePage?.title ?? (billMatch ? `입법감시 | ${SITE_NAME}` : `페이지를 찾을 수 없습니다 | ${SITE_NAME}`);
     const description = route?.description ?? privatePage?.description ?? "씨앗의 소리 홈페이지입니다.";
-    const url = canonicalUrl(route?.path ?? (privatePage ? location.pathname : "/"));
+    const url = canonicalUrl(route?.path ?? (privatePage || billMatch ? location.pathname : "/"));
     const language = route?.language ?? "ko";
     const siteName = language === "en" ? ENGLISH_SOCIAL_SITE_NAME : SOCIAL_SITE_NAME;
 

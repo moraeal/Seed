@@ -39,6 +39,34 @@ async function articles(): Promise<Article[]> {
   articleCache = { expires: Date.now() + 5 * 60_000, entries };
   return entries;
 }
+async function publishedBill(path: string, language: "ko" | "en"): Promise<Article | null> {
+  const match = path.match(/^\/monitoring\/legislation\/(bill-\d+)\/?$/);
+  if (!match) return null;
+  const response = await fetch(
+    `${SUPABASE_URL}/rest/v1/legislative_bills?slug=eq.${encodeURIComponent(match[1])}&review_state=eq.published&select=slug,title,proposed_date,published_at,public_summary_ko,public_summary_en,official_summary,proposal_reason,main_content,seed_view_ko,seed_view_en,analysis&limit=1`,
+    { headers: { apikey: SERVICE_KEY, Authorization: `Bearer ${SERVICE_KEY}` } },
+  );
+  if (!response.ok) throw new Error(`Published bill HTTP ${response.status}`);
+  const [bill] = await response.json();
+  if (!bill) return null;
+  const analysis = bill.analysis || {};
+  const parts = language === "ko"
+    ? [bill.public_summary_ko, bill.official_summary, bill.proposal_reason, bill.main_content,
+      analysis.summary_ko, ...(analysis.changes_ko || []), ...(analysis.citizen_impact_ko || []),
+      ...(analysis.business_impact_ko || []), ...(analysis.authority_shift_ko || []),
+      ...(analysis.risks_ko || []), ...(analysis.watch_points_ko || []), bill.seed_view_ko]
+    : [bill.public_summary_en, analysis.summary_en, analysis.official_rationale_en,
+      ...(analysis.changes_en || []), ...(analysis.citizen_impact_en || []),
+      ...(analysis.business_impact_en || []), ...(analysis.authority_shift_en || []),
+      ...(analysis.risks_en || []), ...(analysis.watch_points_en || []), bill.seed_view_en];
+  return {
+    title: language === "en" ? analysis.title_en || bill.title : bill.title,
+    summary: language === "en" ? bill.public_summary_en || analysis.summary_en || "" : bill.public_summary_ko || analysis.summary_ko || bill.official_summary || "",
+    date: bill.proposed_date || bill.published_at?.slice(0, 10) || "",
+    path: `/monitoring/legislation/${bill.slug}`,
+    text: parts.filter((part): part is string => typeof part === "string" && Boolean(part.trim())).join("\n").slice(0, 14000),
+  };
+}
 function outputText(result: Record<string, unknown>) {
   const outputs = Array.isArray(result.output) ? result.output : [];
   return outputs.flatMap((item: { content?: { type?: string; text?: string }[] }) => item.content ?? [])
@@ -77,7 +105,7 @@ Deno.serve(async (req) => {
     const language = payload.language === "en" ? "en" : "ko";
     const articlePath = typeof payload.articlePath === "string" ? payload.articlePath : "";
     const published = await articles();
-    const article: Article | null = findCurrentArticle(articlePath, published);
+    const article: Article | null = findCurrentArticle(articlePath, published) || await publishedBill(articlePath, language);
     if (!article) return json(req, { grounded: false, answer: "", sources: [] });
     const quota = await fetch(`${SUPABASE_URL}/rest/v1/rpc/siya_allow_request`, {
       method: "POST",
