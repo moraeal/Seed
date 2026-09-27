@@ -44,6 +44,8 @@
 .seed-guide-tip { border-radius: 12px; background: #f1f5ec; padding: 12px; color: #466050; font-size: 12px; line-height: 1.6; }
 .seed-guide-tip button { color: #245c3b; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
 .seed-guide-tip button:disabled { opacity: .55; cursor: wait; }
+.seed-guide-summary-button { justify-self: start; border-radius: 9px; background: #174c3a; padding: 9px 14px; color: white; font-size: 13px; font-weight: 800; }
+.seed-guide-summary-button:disabled { opacity: .55; cursor: wait; }
 .seed-guide-exchange { display: grid; gap: 8px; font-size: 13px; line-height: 1.6; }
 .seed-guide-question { justify-self: end; max-width: 90%; border-radius: 12px 12px 3px 12px; background: #e5efdf; padding: 9px 12px; color: #174c3a; word-break: keep-all; }
 .seed-guide-answer { border-radius: 12px 12px 12px 3px; background: #f5f1e7; padding: 10px 12px; color: #243b32; white-space: pre-wrap; word-break: keep-all; }
