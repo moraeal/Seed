@@ -46,7 +46,7 @@ export default function SiyaArticleGuide() {
   }, []);
   useEffect(() => { setSummary(null); setError(""); }, [pathname, language]);
   useEffect(() => { if (stage === "open") end.current?.scrollIntoView({ block: "nearest" }); }, [summary, stage]);
-  if (!isArticlePage || stage === "hidden") return null;
+  if (stage === "hidden") return null;
 
   const summarize = async () => {
     if (busy || summary) return;
@@ -80,9 +80,10 @@ export default function SiyaArticleGuide() {
         <p className="section-kicker">SEED ARTICLE GUIDE</p>
         <h2 id="seed-guide-title" className="editorial-title mt-2 text-xl font-bold text-navy">{ko ? "씨야의 기사 안내" : "Siya's article guide"}</h2>
         <div className="seed-guide-messages" aria-live="polite">
-          {!summary && <p className="seed-guide-tip">{ko ? "지금 읽고 있는 기사의 핵심을 짧게 정리하고, 이어 읽을 글을 안내해 드려요." : "Get a short summary of this story and more to read."}</p>}
-          {!summary && <button type="button" className="seed-guide-summary-button" onClick={() => void summarize()} disabled={busy}>{busy ? (ko ? "기사를 요약하고 있어요…" : "Summarizing…") : (ko ? "이 기사 간단히 요약하기" : "Summarize this article")}</button>}
-          {summary && <div className="seed-guide-exchange">
+          {!isArticlePage && <p className="seed-guide-tip">{ko ? "읽고 싶은 기사를 열어 주세요. 그 기사 내용을 간단히 요약하고 관련 글을 안내해 드릴게요." : "Open a story to get a short summary and related reading."}</p>}
+          {isArticlePage && !summary && <p className="seed-guide-tip">{ko ? "지금 읽고 있는 기사의 핵심을 짧게 정리하고, 이어 읽을 글을 안내해 드려요." : "Get a short summary of this story and more to read."}</p>}
+          {isArticlePage && !summary && <button type="button" className="seed-guide-summary-button" onClick={() => void summarize()} disabled={busy}>{busy ? (ko ? "기사를 요약하고 있어요…" : "Summarizing…") : (ko ? "이 기사 간단히 요약하기" : "Summarize this article")}</button>}
+          {isArticlePage && summary && <div className="seed-guide-exchange">
             <p className="seed-guide-answer">{summary.answer}</p>
             {summary.grounded && <div className="seed-guide-related">
               <p className="seed-guide-answer">{ko ? "이어서 읽을 관련 기사도 안내해 드릴게요." : "Here are related stories to read next."}</p>
@@ -97,7 +98,7 @@ export default function SiyaArticleGuide() {
       <button type="button" className="seed-nudge-trigger" onClick={() => setStage(stage === "open" ? "ready" : "open")} disabled={stage === "walking"}
         aria-label={stage === "open" ? (ko ? "씨야 안내창 닫기" : "Close Siya guide") : (ko ? "씨야 기사 요약 열기" : "Open Siya article summary")}
         aria-controls={stage === "open" ? "seed-guide-card" : undefined} aria-expanded={stage === "open"}>
-        {stage === "ready" && <span className="seed-nudge-bubble">{summary?.grounded ? (ko ? "관련 기사도 안내해 드릴게요" : "Explore related stories") : (ko ? "이 기사를 간단히 요약해 드릴까요?" : "Shall I summarize this article?")}</span>}
+        {stage === "ready" && <span className="seed-nudge-bubble">{!isArticlePage ? (ko ? "기사를 열면 요약해 드릴게요" : "Open a story for a summary") : summary?.grounded ? (ko ? "관련 기사도 안내해 드릴게요" : "Explore related stories") : (ko ? "이 기사를 간단히 요약해 드릴까요?" : "Shall I summarize this article?")}</span>}
         <img className={`seed-nudge-character ${stage === "walking" ? "seed-nudge-walking" : "seed-nudge-writing"}`} src={`${import.meta.env.BASE_URL}images/seed-character/${image}?v=20260926-guide`} alt="" />
       </button>
     </aside>, document.body,
