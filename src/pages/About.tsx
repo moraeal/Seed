@@ -138,7 +138,7 @@ export default function About() {
 
   useEffect(() => {
     const imageBase = `${import.meta.env.BASE_URL}images/seed-character/`;
-    ["seed-about-greeting.png", "seed-about-reading.png"].forEach((name) => {
+    ["seed-about-greeting.webp", "seed-about-reading.webp"].forEach((name) => {
       const preload = new Image();
       preload.src = `${imageBase}${name}`;
     });
@@ -299,7 +299,7 @@ export default function About() {
               <p>{siyaPose ? content.siyaInvite : content.siyaWelcome}</p>
             </div>
           )}
-          <img src={`${import.meta.env.BASE_URL}images/seed-character/${siyaPose ? "seed-about-reading.png" : "seed-about-greeting.png"}`} alt="" />
+          <img src={`${import.meta.env.BASE_URL}images/seed-character/${siyaPose ? "seed-about-reading.webp" : "seed-about-greeting.webp"}`} alt="" />
         </aside>
       )}
       <TipDialog open={tipOpen} onClose={() => setTipOpen(false)} language={language} />
