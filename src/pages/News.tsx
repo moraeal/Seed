@@ -17,11 +17,11 @@ export default function News() {
   const issues = [
     ...clusters.map((cluster) => ({
       key: `cluster-${cluster.id}`, to: `/news/issues/${cluster.id}`,
-      title: cluster.title, summary: cluster.latestChange, date: cluster.updatedAt,
+      title: cluster.title, summary: cluster.summary, latestChange: cluster.latestChange, date: cluster.updatedAt,
       imageSrc: cluster.imageSrc, imageAlt: cluster.imageAlt,
       kindLabel: ko ? "현안 모음" : "Issue collection", readMinutes: undefined as number | undefined,
     })),
-    ...standaloneIssues,
+    ...standaloneIssues.map((issue) => ({ ...issue, latestChange: undefined as string | undefined })),
   ].sort((a, b) => b.date.localeCompare(a.date) ||
     Number(b.key.startsWith("cluster-")) - Number(a.key.startsWith("cluster-")));
   const featuredIssues = issues.slice(0, FEATURED_ISSUE_COUNT);
@@ -55,7 +55,8 @@ export default function News() {
               <div>
                 <span className="section-kicker">{issue.kindLabel}</span>
                 <h3 className="editorial-title line-clamp-2 text-balance text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">{issue.title}</h3>
-                <p className="mt-2 line-clamp-2 max-w-3xl text-base leading-7 text-charcoal/60">{issue.summary}</p>
+                <p className="mt-2 line-clamp-3 max-w-3xl text-base leading-7 text-charcoal/60">{issue.summary}</p>
+                {issue.latestChange && <p className="mt-2 max-w-3xl text-sm leading-6 text-charcoal/60"><span className="font-bold text-green-deep">{ko ? "최근 변화" : "Latest development"} · </span>{issue.latestChange}</p>}
                 <div className="mt-4 flex flex-wrap items-center gap-4 border-t border-green-deep/10 pt-3 text-xs text-charcoal/45">
                   <time>{issue.date.replace(/-/g, ".")}</time>
                   {issue.readMinutes && <span className="flex items-center gap-1"><Clock size={13} />{ko ? `${issue.readMinutes}분` : `${issue.readMinutes} min`}</span>}
@@ -65,7 +66,7 @@ export default function News() {
             </Link>
           ))}
         </div>
-        <ArticleArchive ko={ko} items={archiveIssues.map((issue) => ({ key: issue.key, to: issue.to, title: issue.title, summary: issue.summary, date: issue.date }))} />
+        <ArticleArchive ko={ko} items={archiveIssues.map((issue) => ({ key: issue.key, to: issue.to, title: issue.title, summary: issue.latestChange ? `${issue.summary} ${ko ? "최근 변화:" : "Latest development:"} ${issue.latestChange}` : issue.summary, date: issue.date }))} />
       </div>
     </section>
   );
