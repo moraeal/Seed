@@ -12,7 +12,7 @@ import {
   Sprout,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLanguage } from "../i18n";
 import TipDialog from "../components/TipDialog";
 
@@ -133,6 +133,14 @@ const experienceColors = ["bg-[#dcefa9]", "bg-[#f6ad7e]", "bg-[#d9eff3]"];
 export default function About() {
   const { language } = useLanguage();
   const [tipOpen, setTipOpen] = useState(false);
+  const [showSiya, setShowSiya] = useState(false);
+  const [siyaPose, setSiyaPose] = useState(false);
+
+  useEffect(() => {
+    const entrance = window.setTimeout(() => setShowSiya(true), 5000);
+    const movement = window.setInterval(() => setSiyaPose((current) => !current), 2600);
+    return () => { window.clearTimeout(entrance); window.clearInterval(movement); };
+  }, []);
   const content = copy[language];
 
   return (
@@ -148,12 +156,9 @@ export default function About() {
               <Link to="/news" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-green-deep px-6 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:shadow-lg">{content.readToday}<ArrowUpRight size={17}/></Link>
             </div>
           </div>
-          <div className="relative order-first mx-auto flex w-full max-w-xl flex-col items-center justify-end rounded-[2.5rem] bg-[#dceba9]/70 px-5 pt-7 sm:px-8 lg:order-last" aria-label={content.siyaAlt}>
-            <div className="relative z-10 flex w-full flex-col gap-3">
-              <p className="self-start rounded-2xl rounded-bl-sm border-2 border-green-deep/15 bg-white px-5 py-3 text-lg font-extrabold text-green-deep shadow-[0_8px_20px_rgba(30,65,51,.12)]">{content.siyaWelcome}</p>
-              <p className="max-w-[85%] self-end rounded-2xl rounded-br-sm border-2 border-green-deep/15 bg-white px-5 py-4 text-lg font-extrabold leading-snug text-green-deep shadow-[0_8px_20px_rgba(30,65,51,.12)] sm:text-xl">{content.siyaInvite}</p>
-            </div>
-            <img src={`${import.meta.env.BASE_URL}images/seed-character/seed-10-explaining-guide.webp`} alt="" className="relative z-10 mt-2 h-56 w-auto max-w-full object-contain drop-shadow-[0_14px_18px_rgba(30,65,51,.18)] sm:h-72" />
+          <div className="relative order-first mx-auto w-full max-w-xl lg:order-last">
+            <div className="absolute -inset-3 rotate-3 rounded-[2.5rem] bg-[#dceba9] sm:-inset-4" aria-hidden="true" />
+            <img src={`${import.meta.env.BASE_URL}images/about-citizens.webp`} alt={language === "ko" ? "햇살이 드는 동네에서 밝게 이야기를 나누는 시민들" : "Neighbors talking together on a sunny day"} className="relative aspect-[4/3] w-full rounded-[2rem] border-4 border-white object-cover shadow-[0_22px_45px_rgba(30,65,51,.16)]" />
           </div>
         </div>
       </header>
@@ -271,6 +276,15 @@ export default function About() {
           </div>
         </section>
       </main>
+      {showSiya && (
+        <aside className="about-siya" aria-label={content.siyaAlt}>
+          <div className="about-siya-bubbles">
+            <p>{content.siyaWelcome}</p>
+            <p>{content.siyaInvite}</p>
+          </div>
+          <img src={`${import.meta.env.BASE_URL}images/seed-character/${siyaPose ? "seed-14-checked.webp" : "seed-09-listening-guide.webp"}`} alt="" />
+        </aside>
+      )}
       <TipDialog open={tipOpen} onClose={() => setTipOpen(false)} language={language} />
     </div>
   );
