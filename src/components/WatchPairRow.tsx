@@ -2,7 +2,7 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import SafeImage from "./SafeImage";
 
-export type WatchSide = { href: string; label: string; title: string; summary: string; image?: string; alt?: string; date?: string; external?: boolean; detailHref?: string; badge?: string };
+export type WatchSide = { href: string; label: string; title: string; summary: string; image?: string; alt?: string; date?: string; external?: boolean; detailHref?: string; detailLabel?: string; badge?: string };
 
 export default function WatchPairRow({ article, record, ko, emptyRight }: { article?: WatchSide; record?: WatchSide; ko: boolean; emptyRight?: string }) {
   const source = article ?? record!;
@@ -23,7 +23,7 @@ export default function WatchPairRow({ article, record, ko, emptyRight }: { arti
     </div>
     <aside className="min-w-0 border-t border-green-deep/10 bg-[#F7F8F2] p-5 lg:border-l lg:border-t-0 lg:p-7">
       {record ? content(record, "group block min-w-0 rounded-md border border-green-deep/15 bg-white p-5 shadow-[0_6px_18px_rgba(31,51,73,0.055)] transition hover:border-green-deep/40 hover:bg-green-pale/40") : <div className="rounded-md border border-green-deep/15 bg-white p-5 text-sm leading-7 text-charcoal/55 shadow-[0_6px_18px_rgba(31,51,73,0.055)]"><span className="mb-2 block text-[11px] font-extrabold tracking-wide text-green-deep">{ko ? "관련 기사" : "RELATED ARTICLE"}</span>{emptyRight ?? (ko ? "연결된 기사가 아직 없습니다." : "No related article has been linked yet.")}</div>}
-      {record?.detailHref && <Link to={record.detailHref} className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-green-deep hover:underline">{ko ? "씨앗의 분석 기록 보기" : "View Seed Voice analysis"}<ArrowRight size={13}/></Link>}
+      {record?.detailHref && <Link to={record.detailHref} className="mt-3 inline-flex items-center gap-1.5 border border-green-deep/25 bg-white px-4 py-2.5 text-sm font-extrabold text-green-deep transition hover:border-green-deep hover:bg-green-pale">{record.detailLabel ?? (ko ? "씨앗의 분석 기록 보기" : "View Seed Voice analysis")}<ArrowRight size={13}/></Link>}
     </aside>
   </article>;
 }
