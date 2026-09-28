@@ -19,16 +19,16 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     en: "On October 2, 2026, South Korea's Prosecution Service will be abolished and replaced by a Prosecution Agency and a Serious Crimes Investigation Agency. This record follows where the powers to investigate, indict, seek warrants and review non-referral decisions actually move—and whether staffing, budgets and case transfers are ready.",
   },
   status: {
-    ko: "출범 6일 전·디넷 증거 4만8천58건 처리 계획 확인·최종 임용 대기",
-    en: "6 days to launch · Plan confirmed for 48,058 D-Net evidence records · Final appointments pending",
+    ko: "출범 4일 전·기소중지 2,168건 이관 지침·개정 형소법 헌법심판 진행",
+    en: "4 days to launch · Transfer ordered for 2,168 suspended cases · Constitutional challenge pending",
   },
   openedAt: "2025-09-05",
   publishedAt: "2026-09-15",
-  updatedAt: "2026-09-26",
+  updatedAt: "2026-09-28",
   continuationEligible: true,
   nextCheck: {
-    ko: "사회적 약자 대상 7대 범죄의 보완·재수사 근거를 담은 중수청법 개정안의 공포일·법률번호와 최종 조문, 2차 특례임용 201명의 최종 선발 인원과 5급 이상 임용 예정자 212명의 확정·발령 결과, 공소청 직제·검사정원법 시행령의 공포문과 출범일 실제 검사 약 1,900명·형사법무직 938명 배치 결과, 디넷에 남은 디지털증거 4만8천58건의 삭제·이관·잔존 건수와 기록 보존 절차, 김지용 중수청장 후보자의 인사청문요청서 제출·청문 일정, 이정현 검찰총장 직무대행이 밝힌 중수청·경찰과의 업무협약과 협력 절차, 경찰 현장지원 체계와 10월 2일 사건 이관·KICS 필수 기능 가동 여부",
-    en: "Promulgation date, act number and final text of the amendment covering supplementary and renewed investigations in seven vulnerable-victim crime categories; final selections from the 201 second-round applicants and confirmation and appointment of the 212 provisional senior staff; promulgated texts of the Prosecution Agency organization and prosecutor-ceiling decrees and the actual launch deployment of about 1,900 prosecutors and 938 criminal-legal-service staff; counts of the 48,058 D-Net digital-evidence records deleted, transferred or retained and the audit trail for those actions; submission of the confirmation request and a hearing date for nominee Kim Ji-yong; any memorandum and working procedures with the investigation agency and police announced by acting prosecutor general Lee Jeong-hyeon; police field-support arrangements; and October 2 case transfers and essential KICS functions",
+    ko: "사회적 약자 대상 7대 범죄의 보완·재수사 근거를 담은 중수청법 개정안의 공포일·법률번호와 최종 조문, 2차 특례임용 201명의 최종 선발 인원과 5급 이상 임용 예정자 212명의 확정·발령 결과, 공소청 직제·검사정원법 시행령의 공포문과 출범일 실제 검사 약 1,900명·형사법무직 938명 배치 결과, 검찰 직접 지명수배 기소중지 사건 2,168건의 경찰·특사경 이관 완료 건수와 수배 재입력 공백, 디넷에 남은 디지털증거 4만8천58건의 삭제·이관·잔존 건수와 기록 보존 절차, 개정 형사소송법 권한쟁의심판 사건번호와 효력정지 가처분 결정, 김지용 중수청장 후보자의 인사청문요청서 제출·청문 일정, 이정현 검찰총장 직무대행이 밝힌 중수청·경찰과의 업무협약과 협력 절차, 경찰 현장지원 체계와 10월 2일 사건 이관·KICS 필수 기능 가동 여부",
+    en: "Promulgation date, act number and final text of the amendment covering supplementary and renewed investigations in seven vulnerable-victim crime categories; final selections from the 201 second-round applicants and confirmation and appointment of the 212 provisional senior staff; promulgated texts of the Prosecution Agency organization and prosecutor-ceiling decrees and the actual launch deployment of about 1,900 prosecutors and 938 criminal-legal-service staff; completed transfers of the 2,168 suspended fugitive cases from prosecutors to police or special judicial police and any gap while wanted notices are re-entered; counts of the 48,058 D-Net digital-evidence records deleted, transferred or retained and the audit trail for those actions; the Constitutional Court case number and interim-ruling result in the challenge to the revised Criminal Procedure Act; submission of the confirmation request and a hearing date for nominee Kim Ji-yong; any memorandum and working procedures with the investigation agency and police announced by acting prosecutor general Lee Jeong-hyeon; police field-support arrangements; and October 2 case transfers and essential KICS functions",
   },
   heroImage: {
     src: "images/monitoring/prosecution-service-abolition-tracker-hero.webp",
@@ -46,8 +46,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     },
   },
   sourceBasis: {
-    ko: "정부조직법·공소청법·중대범죄수사청법·형사소송법과 시행령·직제 등 공포된 법령을 기준으로 삼았습니다. 9월 22일 국무회의가 의결한 공소청 직제·검사정원법 시행령안은 심사 중이던 9월 21일 수정안과 구분했고, 검사 법정 정원 2,292명과 실제 출범 계획 인원 약 1,900명도 같은 수치로 합치지 않았습니다. 국회 본회의를 통과했지만 공포 전인 중수청법 개정안, 아직 발령 전인 중수청 임용 예정자, 국회 의결 전인 2027년도 예산안은 확정된 제도·인사·예산과 구분했습니다. 언론 보도는 원문 제목·공개일·사진을 대조했고 사용 제외 매체가 직접·간접 출처로 들어오지 않았는지도 확인했습니다.",
-    en: "This record is anchored in promulgated statutes and decrees: the Government Organization Act, the Prosecution Agency Act, the Serious Crimes Investigation Agency Act, the Criminal Procedure Act and their implementing rules. The Prosecution Agency organization and prosecutor-ceiling decrees approved by the Cabinet on September 22 are distinguished from the September 21 drafts then still under review, while the statutory ceiling of 2,292 prosecutors is kept separate from the planned launch staffing of about 1,900. The investigation-agency amendment passed by Parliament but not yet promulgated, provisional staff not yet formally appointed, and the government's still-unapproved 2027 budget proposal remain separate from settled law, appointments and appropriations. Original headlines, publication dates and images were cross-checked, including for excluded direct or indirect sources.",
+    ko: "정부조직법·공소청법·중대범죄수사청법·형사소송법과 시행령·직제 등 공포된 법령을 기준으로 삼았습니다. 9월 22일 국무회의가 의결한 공소청 직제·검사정원법 시행령안은 심사 중이던 9월 21일 수정안과 구분했고, 검사 법정 정원 2,292명과 실제 출범 계획 인원 약 1,900명도 같은 수치로 합치지 않았습니다. 국회 본회의를 통과했지만 공포 전인 중수청법 개정안, 아직 발령 전인 중수청 임용 예정자, 국회 의결 전인 2027년도 예산안은 확정된 제도·인사·예산과 구분했습니다. 기소중지 2,168건은 9월 3일 집계와 9월 9일 이관 지침이지 이관 완료 수치가 아닙니다. 헌법심판 청구와 효력정지 신청도 개정 법률의 효력이 정지됐다는 뜻이 아닙니다. 언론 보도는 원문 제목·공개일·사진을 대조했고 사용 제외 매체가 직접·간접 출처로 들어오지 않았는지도 확인했습니다.",
+    en: "This record is anchored in promulgated statutes and decrees: the Government Organization Act, the Prosecution Agency Act, the Serious Crimes Investigation Agency Act, the Criminal Procedure Act and their implementing rules. The Prosecution Agency organization and prosecutor-ceiling decrees approved by the Cabinet on September 22 are distinguished from the September 21 drafts then still under review, while the statutory ceiling of 2,292 prosecutors is kept separate from the planned launch staffing of about 1,900. The investigation-agency amendment passed by Parliament but not yet promulgated, provisional staff not yet formally appointed, and the government's still-unapproved 2027 budget proposal remain separate from settled law, appointments and appropriations. The 2,168 suspended cases are a September 3 tally covered by a September 9 transfer directive, not a completed-transfer count. Filing a constitutional competence dispute and an interim application likewise does not suspend the amended law. Original headlines, publication dates and images were cross-checked, including for excluded direct or indirect sources.",
   },
   keyChanges: [
     {
@@ -62,6 +62,13 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       text: {
         ko: "법무부가 공소청 전체 정원 8,412명, 검사 정원 2,292명을 제시했지만 대통령과 당정이 재검토에 들어가 최종 직제는 아직 확정되지 않았습니다.",
         en: "The Justice Ministry proposed 8,412 Prosecution Agency staff, including 2,292 prosecutors, but the president and governing bloc ordered revisions. The final structure is not settled.",
+      },
+    },
+    {
+      date: "2026-09-09",
+      text: {
+        ko: "대검은 검찰이 직접 지명수배한 기소중지 사건 2,168건을 경찰·특별사법경찰로 넘기라는 지침을 일선청에 보냈습니다. 수배 해제와 새 체포영장 발부·수배 재입력이 이어지는 절차여서 실제 이관 완료와 신병 확보 공백은 따로 확인해야 합니다.",
+        en: "The Supreme Prosecutors' Office ordered local offices to transfer 2,168 suspended fugitive cases initiated by prosecutors to police or special judicial police. Because the process cancels existing wanted notices before new warrants and notices are issued, completed transfers and any enforcement gap still require verification.",
       },
     },
     {
@@ -132,6 +139,13 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       text: {
         ko: "국무회의가 공소청 직제와 검사정원법 시행령안을 의결했습니다. 검사 법정 정원은 2,292명으로 두되 결원을 채우지 않아 약 1,900명으로 출범하고, 수사관은 2,048명을 줄여 형사법무직 938명만 남기는 계획입니다.",
         en: "The Cabinet approved the Prosecution Agency organization and prosecutor-ceiling decrees. The statutory ceiling remains 2,292, but vacancies will be left unfilled for a launch force of about 1,900 prosecutors, while 2,048 investigator posts will be removed, leaving 938 criminal-legal-service staff.",
+      },
+    },
+    {
+      date: "2026-09-22",
+      text: {
+        ko: "오세현 춘천지검 영월지청 검사는 개정 형사소송법이 검사의 헌법상 권한을 침해했다며 국회를 상대로 권한쟁의심판을 청구하고 효력정지 가처분도 신청했습니다. 헌법재판소가 심리 중이며 결정 전까지 법 시행은 예정대로 남아 있습니다.",
+        en: "Prosecutor Oh Se-hyeon filed a competence dispute against the National Assembly, arguing that the revised Criminal Procedure Act infringes prosecutors' constitutional authority, and also sought interim suspension. The Constitutional Court is reviewing the filings; the law remains scheduled to take effect unless the court rules otherwise.",
       },
     },
     {
@@ -448,6 +462,34 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-09",
+      title: {
+        ko: "기소중지 2,168건, 경찰·특사경 이관 지침",
+        en: "Transfer ordered for 2,168 suspended fugitive cases",
+      },
+      description: {
+        ko: "대검은 전국 고·지검과 지청에 ‘검찰 직접 지명수배 사건 처리·이관 방안’을 보내 사건별 조치 현황을 점검하도록 했습니다. 9월 3일 기준 전국 60개청의 대상 사건은 2,168건입니다. 검찰 직접수사 사건 1,527건, 경찰 송치 사건 610건, 특별사법경찰 송치 사건 31건입니다. 검찰이 사건을 재기하고 기존 체포영장을 반환해 지명수배를 해제하면, 경찰·특사경이 사건을 넘겨받아 새 체포영장을 발부받고 수배를 다시 입력하는 절차입니다. 출국금지·입국 통보의 관리 주체도 함께 바뀝니다. 지침과 대상 수는 확인됐지만 2,168건이 모두 이관됐다는 뜻은 아닙니다. 실제 완료 건수와 기존 수배 해제부터 새 수배 입력까지 신병 확보에 공백이 없었는지를 확인해야 합니다.",
+        en: "The Supreme Prosecutors' Office sent all high and district prosecutors' offices and branches a directive on transferring fugitive cases initiated by prosecutors and ordered case-by-case progress checks. Sixty offices had identified 2,168 cases as of September 3: 1,527 opened directly by prosecutors, 610 referred by police and 31 referred by special judicial police. Prosecutors must reopen each suspended case, return the existing arrest warrant and cancel the wanted notice; police or special judicial police then receive the case, obtain a new warrant and re-enter the notice. Responsibility for travel bans and entry alerts also changes. The directive and case count are confirmed, but they do not show that all 2,168 transfers are complete. Completion totals and any enforcement gap between cancellation and re-entry remain to be verified.",
+      },
+      change: {
+        ko: "추상적이던 사건 이관이 지명수배 기소중지 2,168건과 수배 해제·재입력 절차의 문제로 구체화",
+        en: "Case transfer becomes a concrete test involving 2,168 suspended fugitive files and the cancellation and re-entry of wanted notices",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "뉴시스", en: "Newsis" },
+          title: {
+            ko: "공소청 출범 앞 검찰…'기소중지' 2000여건 경찰·특사경에 이관",
+            en: "Prosecution to transfer more than 2,000 suspended cases to police and special judicial police before agency launch",
+          },
+          url: "https://mobile.newsis.com/view_amp.html?ar_id=NISX20260926_0003803747",
+          publishedAt: "2026-09-26",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "2026-09-13",
       title: {
         ko: "당정, 출범 19일 앞두고 공소청 직제 다시 손질",
@@ -715,6 +757,34 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-22",
+      title: {
+        ko: "현직 검사, 개정 형사소송법 권한쟁의·효력정지 신청",
+        en: "Prosecutor challenges revised procedure law and seeks interim suspension",
+      },
+      description: {
+        ko: "오세현 춘천지검 영월지청 검사는 국회를 상대로 헌법재판소에 권한쟁의심판을 청구하고, 결정 전까지 개정 형사소송법의 효력을 멈춰 달라는 가처분도 신청했습니다. 오 검사는 헌법의 영장청구 조항이 검사의 수사지휘권을 전제로 하므로 직접수사권과 보완수사권을 없앤 개정이 검사의 헌법상 권한을 침해했다고 주장합니다. 이는 청구인의 주장으로, 헌법재판소의 판단은 나오지 않았습니다. 헌재가 심리 중이지만 선고 기일과 사건번호는 아직 공개 보도에서 확인되지 않았고, 가처분 인용 결정도 없어 10월 2일 시행 일정은 그대로입니다.",
+        en: "Oh Se-hyeon, a prosecutor at the Yeongwol Branch of the Chuncheon District Prosecutors' Office, filed a competence dispute against the National Assembly and asked the Constitutional Court to suspend the revised Criminal Procedure Act until judgment. He argues that the Constitution's warrant clause presupposes prosecutorial direction of investigations and that removing direct and supplementary investigative powers infringes a constitutional authority of prosecutors. That is the applicant's claim; the court has not ruled on it. The case is under review, but published reports have not identified a case number or hearing date, and no interim suspension has been granted, so the October 2 effective date remains in place.",
+      },
+      change: {
+        ko: "입법 논란이 헌법재판 절차로 이동했지만 법 시행을 멈춘 결정은 아직 없음",
+        en: "The legislative dispute moves into constitutional litigation, without any ruling that pauses implementation",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: {
+            ko: "현직 검사, 수사권 박탈한 국회 상대로 권한쟁의심판 청구",
+            en: "Prosecutor files competence dispute against National Assembly over loss of investigative power",
+          },
+          url: "https://www.yna.co.kr/view/AKR20260927041400004",
+          publishedAt: "2026-09-27",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "2026-09-23",
       title: {
         ko: "이정현 검찰총장 직무대행, 공소청 전환 지휘",
@@ -922,6 +992,14 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       en: "The Justice Ministry transferred Lee Jeong-hyeon from chief of the Suwon High Prosecutors' Office to deputy prosecutor general effective September 23; he is acting prosecutor general and directing preparations for the Prosecution Agency launch.",
     },
     {
+      ko: "대검은 9월 9일 검찰이 직접 지명수배한 기소중지 사건 2,168건을 경찰·특별사법경찰로 넘기도록 지시했습니다. 2,168건은 9월 3일 기준 대상 사건 수이며 실제 이관 완료 건수는 아직 공개되지 않았습니다.",
+      en: "On September 9, the Supreme Prosecutors' Office ordered the transfer to police or special judicial police of 2,168 suspended fugitive cases initiated by prosecutors. The figure is the number identified as of September 3, not a published count of completed transfers.",
+    },
+    {
+      ko: "오세현 검사는 9월 22일 개정 형사소송법을 상대로 권한쟁의심판과 효력정지 가처분을 신청했습니다. 헌법재판소가 심리 중이지만 법 시행을 정지한 결정은 아직 없습니다.",
+      en: "On September 22, prosecutor Oh Se-hyeon filed a constitutional competence dispute and an application to suspend the revised Criminal Procedure Act. The Constitutional Court is reviewing the filings, but has not issued an order halting the law.",
+    },
+    {
       ko: "법무부가 국회에 제출한 자료에 따르면 2012년 4월부터 2026년 6월까지 디넷에 등록된 디지털증거 19만7천460건 가운데 4만8천58건이 남아 있습니다. 대검은 종결 사건 증거를 삭제하고 수사·기소중지 사건 증거는 관할 수사기관에 넘긴 뒤 디넷에서 폐기할 방침입니다.",
       en: "Justice Ministry data submitted to Parliament show that 48,058 of the 197,460 digital-evidence records registered in D-Net from April 2012 through June 2026 remain in the system. The Supreme Prosecutors' Office plans to delete records from closed cases and transfer evidence tied to active or suspended cases before removing it from D-Net.",
     },
@@ -939,6 +1017,13 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       description: {
         ko: "직접 보완수사를 없애야 수사·기소가 분리된다는 주장이 있습니다. 반면 기록만 보고 기소 여부를 판단하면 사건이 반복해서 오가고 피해자 구제가 늦어질 수 있다는 반론도 강합니다. 국회를 통과한 개정안은 사회적 약자 대상 7대 범죄에 한해 중수청이 보완·재수사를 맡도록 했습니다. 이 제한적 보완책으로 공백이 줄어드는지는 공포 뒤 처리기간과 재수사 요구 이행률로 확인해야 합니다.",
         en: "One side argues that genuine separation requires ending prosecutors' supplementary investigations. The strongest counterargument is that file-only review may send cases back and forth and delay relief for victims. The amendment passed by Parliament would let the new agency conduct follow-up investigations in seven vulnerable-victim crime categories. After promulgation, processing times and compliance rates will show whether this limited safeguard closes the gap.",
+      },
+    },
+    {
+      title: { ko: "헌법심판 청구가 10월 2일 시행을 멈출 수 있는가", en: "Can the constitutional challenge halt the October 2 launch?" },
+      description: {
+        ko: "청구인은 헌법의 영장청구 조항이 검사의 수사지휘권을 보장한다고 주장합니다. 반면 해당 조항이 모든 직접수사권과 보완수사권을 헌법상 권한으로 보장하는지, 개별 검사가 국회를 상대로 권한쟁의를 청구할 자격이 있는지는 헌재가 판단할 문제입니다. 심판과 가처분을 신청했다는 사실만으로 법률의 효력이 멈추지는 않습니다. 사건번호 공개와 가처분 결정, 본안 판단을 구분해 봐야 합니다.",
+        en: "The applicant argues that the Constitution's warrant clause protects prosecutorial direction of investigations. Whether that clause constitutionalizes all direct and supplementary investigative powers—and whether an individual prosecutor has standing to bring a competence dispute against the National Assembly—are questions for the Constitutional Court. Filing the case and interim application does not itself suspend the statute. The published case number, interim ruling and merits judgment must be tracked separately.",
       },
     },
     {
@@ -985,8 +1070,8 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       en: "Final selections from the 201 second-round applicants, confirmation and appointment of the 212 provisional senior staff, actual deployment of about 1,900 Prosecution Agency prosecutors and 938 criminal-legal-service staff, and investigation-agency staffing and vacancy rates",
     },
     {
-      ko: "검찰에서 넘긴 수사사건 수, 예외적으로 공소청이 90일 안에 마무리하는 사건 수와 처리 결과",
-      en: "Cases transferred from prosecutors and exceptional cases completed by the Prosecution Agency within the 90-day transition",
+      ko: "검찰 직접 지명수배 기소중지 사건 2,168건 가운데 경찰·특사경 이관 완료 건수, 수배 해제부터 새 체포영장 발부·수배 재입력까지 걸린 시간, 예외적으로 공소청이 90일 안에 마무리하는 사건 수와 처리 결과",
+      en: "Completed police and special-judicial-police transfers among the 2,168 suspended fugitive cases, time elapsed between cancellation and re-entry of wanted notices, and exceptional cases completed by the Prosecution Agency within the 90-day transition",
     },
     {
       ko: "경찰 불송치 이의신청, 공소청 재수사 요구와 실제 이행률·평균 처리기간",
@@ -1003,6 +1088,10 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     {
       ko: "김지용 후보자의 인사청문요청서 제출일·청문 일정과 추가 검증에 사용된 이의제기서·전산 기록, 재기수사 명령서·불기소 불승인 기록·포렌식 업무 분장 및 결재 기록",
       en: "Submission and hearing dates for nominee Kim Ji-yong and the documentary basis for additional vetting, including written objections, electronic records, the renewed-investigation order, the non-indictment rejection, and forensic work-allocation and approval records",
+    },
+    {
+      ko: "개정 형사소송법 권한쟁의심판의 사건번호, 청구인 적격 판단, 효력정지 가처분 결정과 본안 선고 일정·결과",
+      en: "The case number, standing determination, interim-suspension ruling and merits schedule and outcome in the constitutional challenge to the revised Criminal Procedure Act",
     },
     {
       ko: "검찰청 잔여 예산의 실제 이체액과 국회가 확정한 2027년도 두 기관 예산",
@@ -1115,6 +1204,16 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       label: { ko: "연합뉴스 — 디넷 디지털증거 보관·이관 계획", en: "Yonhap — D-Net digital-evidence holdings and transfer plan" },
       url: "https://www.yna.co.kr/amp/view/AKR20260923188900004",
       note: { ko: "법무부가 국회에 제출한 2026년 상반기 등록·폐기 수치와 누적 4만8천58건, 대검의 공소청 출범일 삭제·이관 방침", en: "Justice Ministry data submitted to Parliament on first-half registrations and deletions, 48,058 cumulative records retained, and the Supreme Prosecutors' Office launch-day deletion and transfer plan" },
+    },
+    {
+      label: { ko: "뉴시스 — 기소중지 2,168건 경찰·특사경 이관 지침", en: "Newsis — Transfer directive for 2,168 suspended fugitive cases" },
+      url: "https://mobile.newsis.com/view_amp.html?ar_id=NISX20260926_0003803747",
+      note: { ko: "9월 3일 기준 대상 사건의 출처별 수치와 9월 9일 대검 지침, 기존 수배 해제 뒤 새 체포영장·수배 재입력 절차", en: "September 3 case breakdown, the Supreme Prosecutors' Office's September 9 directive, and the cancellation, new-warrant and wanted-notice re-entry sequence" },
+    },
+    {
+      label: { ko: "연합뉴스 — 개정 형사소송법 권한쟁의심판 청구", en: "Yonhap — Constitutional challenge to the revised Criminal Procedure Act" },
+      url: "https://www.yna.co.kr/view/AKR20260927041400004",
+      note: { ko: "오세현 검사의 9월 22일 권한쟁의심판·효력정지 가처분 신청과 헌재 심리 사실", en: "Prosecutor Oh Se-hyeon's September 22 competence dispute and interim-suspension application, now under Constitutional Court review" },
     },
   ],
 };
