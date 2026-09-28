@@ -66,8 +66,8 @@ const copy = {
     joinTitle: "당신의 궁금증에서 시작합니다",
     joinLead: "읽다가 떠오른 질문이 있나요? 생활 속에서 발견한 자료나 놓치면 안 될 이야기를 알려주세요. 함께 확인하고 더 쉽게 전하겠습니다.",
     tip: "제보하기",
-    siyaWelcome: "환영합니다!",
-    siyaInvite: "내 삶에 닿는 뉴스, 씨야와 함께 읽어요.",
+    siyaOpening: "내 삶에 닿는 뉴스",
+    siyaInvite: "씨야와 함께 읽어요",
     siyaAlt: "소개 페이지에서 독자를 맞이하는 씨야",
   },
   en: {
@@ -119,8 +119,8 @@ const copy = {
     joinTitle: "It begins with your question",
     joinLead: "Have a question after reading? Share a record or an everyday story that deserves a closer look. We'll check it and explain what we find.",
     tip: "Send a tip",
-    siyaWelcome: "Welcome!",
-    siyaInvite: "Read news that touches your life with Siya.",
+    siyaOpening: "News that touches your life",
+    siyaInvite: "Read it with Siya",
     siyaAlt: "Siya welcoming readers to SEED VOICE",
   },
 };
@@ -138,7 +138,7 @@ export default function About() {
 
   useEffect(() => {
     const imageBase = `${import.meta.env.BASE_URL}images/seed-character/`;
-    ["seed-about-greeting.webp", "seed-about-reading.webp"].forEach((name) => {
+    ["seed-09-listening-guide.webp", "seed-about-reading.webp"].forEach((name) => {
       const preload = new Image();
       preload.src = `${imageBase}${name}`;
     });
@@ -296,10 +296,10 @@ export default function About() {
         <aside className={`about-siya about-siya--${siyaStage}`} aria-label={content.siyaAlt}>
           {siyaStage === "ready" && (
             <div className="about-siya-bubbles" aria-live="polite">
-              <p>{siyaPose ? content.siyaInvite : content.siyaWelcome}</p>
+              <p>{siyaPose ? content.siyaInvite : content.siyaOpening}</p>
             </div>
           )}
-          <img src={`${import.meta.env.BASE_URL}images/seed-character/${siyaPose ? "seed-about-reading.webp" : "seed-about-greeting.webp"}`} alt="" />
+          <img src={`${import.meta.env.BASE_URL}images/seed-character/${siyaPose ? "seed-about-reading.webp" : "seed-09-listening-guide.webp"}`} alt="" />
         </aside>
       )}
       <TipDialog open={tipOpen} onClose={() => setTipOpen(false)} language={language} />
