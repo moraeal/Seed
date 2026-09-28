@@ -7,7 +7,6 @@ import { getHotIssuesNewestFirst } from "../data/hotIssues";
 import { useLanguage } from "../i18n";
 
 const INITIAL_MORE_ISSUES = 9;
-const RISING_ISSUE_KEY = "news-dmz-security-command-failure";
 
 export default function News() {
   const { language } = useLanguage();
@@ -16,8 +15,8 @@ export default function News() {
   const clusters = getHotIssueClusters(language);
   const clusteredPaths = new Set(clusters.flatMap((cluster) => cluster.items.map((item) => item.to)));
   const moreIssues = getHotIssuesNewestFirst(language).filter((item) => !clusteredPaths.has(item.to));
-  const risingIssue = moreIssues.find((item) => item.key === RISING_ISSUE_KEY) ?? moreIssues[0];
-  const remainingIssues = moreIssues.filter((item) => item.key !== risingIssue?.key);
+  const risingIssue = moreIssues[0];
+  const remainingIssues = moreIssues.slice(1);
   const visibleMoreIssues = showAll ? remainingIssues : remainingIssues.slice(0, INITIAL_MORE_ISSUES);
 
   return (
