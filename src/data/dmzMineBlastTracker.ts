@@ -29,7 +29,6 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
   publishedAt: "2026-09-21",
   updatedAt: "2026-09-29",
   continuationEligible: false,
-  displayMode: "layered",
   heroImage: {
     src: "/images/news/dmz-blast-investigation-timeline-2026.webp",
     alt: { ko: "지뢰 위험 표지 뒤로 이어지는 DMZ 진흙길과 철책을 표현한 상징 이미지", en: "Symbolic muddy DMZ path leading past a mine warning sign toward a fence" },
@@ -104,6 +103,20 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
   confirmedFacts: [
     { ko: "21일 수색로 개척 중 두 번의 폭발로 장병 3명이 다쳤습니다.", en: "Two blasts injured three soldiers during the September 21 route-clearing operation." },
     { ko: "28일 합참은 장구류 1차 감정과 현장 정황에 근거해 북한군 지뢰 가능성이 매우 높다고 발표했습니다.", en: "On September 28, the Joint Chiefs assessed a North Korean mine as highly likely based on initial tests and site information." },
+  ],
+  currentControversies: [
+    {
+      title: { ko: "북한군 지뢰인가, 매설 시점은 언제인가", en: "Was it a North Korean mine, and when was it placed?" },
+      description: { ko: "합참은 북한군 지뢰 가능성이 매우 높다고 중간 판단했습니다. 미폭발 지뢰의 실물 확보와 최종 감정, 매설 주체·시점 판단은 남아 있습니다. 북한이 장병을 겨냥해 최근 매설했다는 의도까지 확인된 것은 아닙니다.", en: "The Joint Chiefs' interim assessment says a North Korean mine is highly likely. Recovery of the reported unexploded device, final testing, and attribution of who placed it and when remain pending. Intent to target the soldiers has not been established." },
+    },
+    {
+      title: { ko: "위험을 알고도 장병을 어떻게 보호했나", en: "How were soldiers protected from a known risk?" },
+      description: { ko: "군은 사전에 안전성 평가를 거쳐 탐지 장비와 보호 장구를 사용했다고 설명했습니다. 사고 지점과 지뢰 매설 의심 지역의 관계가 드러난 만큼, 실제 위험평가·작전 명령·중단 기준을 기록으로 확인해야 합니다.", en: "The military says it assessed safety and used detection equipment and protective gear. Given the site's proximity to suspected mining, the actual risk assessment, orders and stop-work criteria need documentary review." },
+    },
+    {
+      title: { ko: "현장조사까지 닷새, 준비와 공백은 무엇이었나", en: "What happened in the five days before site access?" },
+      description: { ko: "합참은 재폭발 위험 때문에 유엔사와 안전조치를 준비했다고 설명했고, 야권은 조사가 늦었다고 비판했습니다. 21일부터 26일까지 날짜별 협의와 결정 기록이 공개돼야 필요한 준비와 피할 수 있었던 지연을 구분할 수 있습니다.", en: "The Joint Chiefs cites safety preparations with the UN Command; opposition politicians criticized the delay. A dated record of consultations and decisions from September 21 to 26 is needed to distinguish necessary precautions from any avoidable delay." },
+    },
   ],
   questions: [
     { ko: "장병을 투입하기 전 어떤 위험평가와 중단 기준이 승인됐습니까?", en: "What risk assessment and stop-work criteria were approved before the soldiers entered?" },
