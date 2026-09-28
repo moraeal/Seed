@@ -1,0 +1,55 @@
+import type { SeedColumn } from "../columns";
+
+export const unpostedDayPoemColumn: SeedColumn = {
+  slug: "the-day-i-did-not-post-a-photo",
+  issue: 38,
+  title: "사진을 올리지 않은 날",
+  subtitle: "생활시 | 남의 환한 순간 앞에서 마음이 작아진 저녁",
+  date: "2026-09-29",
+  author: "작은씨앗",
+  topicIds: ["civil-society"],
+  readMinutes: 2,
+  presentation: "poem",
+  summary: "친구의 여행 사진에 하트를 눌렀다. 기쁜 마음과 부러운 마음이 함께 남은 퇴근길의 이야기.",
+  heroImage: {
+    src: "images/columns/unposted-day-grocery-evening.webp",
+    alt: "저녁 식탁의 장바구니와 깨진 계란, 바다 사진이 켜진 휴대전화",
+    caption: "사진을 올리지 않은 날에도 각자의 하루는 계속된다.",
+    credit: "AI 이미지",
+    sourceUrl: "",
+  },
+  inlineImage: {
+    src: "images/columns/unposted-day-grocery-evening.webp",
+    alt: "장바구니와 깨진 계란이 놓인 저녁 식탁",
+    caption: "",
+    credit: "AI 이미지",
+    sourceUrl: "",
+  },
+  displayInlineImage: false,
+  referenceVideo: {
+    youtubeId: "WZFyLF1kHT8",
+    thumbnailSrc: "https://i.ytimg.com/vi/WZFyLF1kHT8/hqdefault.jpg",
+    thumbnailAlt: "일론 머스크가 SNS에 보이는 모습과 행복에 관해 이야기하는 짧은 영상",
+    title: "함께 볼 영상 | SNS 속 행복과 비교",
+    description: "일론 머스크가 조 로건과의 2018년 대담에서 SNS에 올리는 좋은 순간과 비교의 감정을 이야기한다. 이 영상은 시의 원문이나 화자의 실제 경험을 설명하는 자료가 아니다.",
+    credit: "영상 · YouTube / 원 대담 · The Joe Rogan Experience #1169",
+    vertical: true,
+  },
+  sections: [{
+    title: "",
+    paragraphs: [
+      "퇴근길에 친구의 여행 사진을 보았다.\n바다 앞에서 웃고 있었다.",
+      "하트를 눌렀다.\n웃는 얼굴이 좋아서.\n나도 거기 있고 싶어서.",
+      "내 손에는 저녁거리가 든 봉지가 있었다.\n버스가 멈출 때마다\n봉지 안에서 무언가 부딪혔다.",
+      "집에 도착해서야 알았다.\n계란 하나가 깨져 있었다.",
+      "괜히 서러워\n한동안 봉지를 내려다보았다.\n바다 사진 때문인지,\n깨진 계란 때문인지도 몰랐다.",
+      "친구에게는\n“사진 좋다”라고 보냈다.\n진심이었다.",
+      "깨지지 않은 계란으로 저녁을 만들었다.\n내 하루의 사진은 없었다.\n밥을 먹으며 친구의 답장을 기다렸다.",
+    ],
+  }],
+  sourceNote: "이 글은 생활시입니다. 아래 영상은 같은 주제를 함께 생각해 볼 참고 자료로, 시 속 화자의 경험을 기록한 영상은 아닙니다. 영상의 ‘비교는 기쁨을 훔친다’는 표현은 대담 상대인 조 로건이 꺼냈습니다.",
+  sources: [
+    { label: "SNS와 행복에 관한 짧은 영상", url: "https://www.youtube.com/shorts/WZFyLF1kHT8" },
+    { label: "The Joe Rogan Experience #1169 — 원 대담", url: "https://open.spotify.com/episode/2B07nNz3WIl7ptnCpu3TEy" },
+  ],
+};

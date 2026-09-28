@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:the-day-i-did-not-post-a-photo": {
+    ko: { href: "/seed-language/citizen-as-seed", title: "시민은 주어지는 이름이 아니라 자라나는 존재다", relationship: "일상에서 이어 읽기", reason: "일상의 작은 마음과 목소리가 어떻게 시민의 이야기로 자라는지 이어서 읽습니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
+    en: { href: "/seed-language/citizen-as-seed", title: "A Citizen Is Not a Given Label but a Growing Being", relationship: "CONTINUE READING", reason: "Read how small moments and voices in daily life can grow into a civic story.", listHref: "/columns", listLabel: "All columns" },
+  },
   "column:participatory-democracy-supreme-court-appointments": {
     ko: { href: "/news/supreme-court-renomination-standoff-2026", title: "손봉기 재제청 공방, 대법원과 청와대는 왜 충돌하나", relationship: "인사 갈등 사실 확인", reason: "제청과 재제청 요청의 날짜별 경과와 양측의 입장을 확인합니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
     en: { href: "/news/supreme-court-renomination-standoff-2026", title: "Why the Supreme Court and Presidential Office Clashed over Son Bong-gi", relationship: "THE APPOINTMENT DISPUTE", reason: "Review the chronology and the positions of both institutions.", listHref: "/columns", listLabel: "All columns" },

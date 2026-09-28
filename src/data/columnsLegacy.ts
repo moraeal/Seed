@@ -14,6 +14,7 @@ export type SeedColumn = {
   topicIds?: import("./topicTaxonomy").TopicId[];
   readMinutes: number;
   summary: string;
+  presentation?: "poem";
   displayHero?: boolean;
   displayInlineImage?: boolean;
   heroImage: { src: string; socialSrc?: string; alt: string; caption: string; credit: string; sourceUrl: string };
@@ -25,6 +26,7 @@ export type SeedColumn = {
     description: string;
     credit: string;
     afterSection?: number;
+    vertical?: boolean;
   };
   inlineImage: { src: string; alt: string; caption: string; credit: string; sourceUrl: string };
   additionalImages?: {
