@@ -35,20 +35,15 @@ export default function Monitoring() {
 
   return <section className="bg-paper pb-16">
     <header className="border-b border-green-deep/15 bg-ivory">
-      <div className="container-page grid gap-6 py-9 sm:py-12 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
+      <div className="container-page grid gap-4 py-5 sm:py-7 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
         <div><span className="section-kicker">CIVIC WATCH</span><h1 className="editorial-title mt-2.5 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "시민감시" : "Civic Watch"}</h1></div>
-        <p className="max-w-2xl text-base leading-8 text-charcoal/65">{ko ? "시민감시는 시민의 삶과 기업 활동에 영향을 주는 자유와 규제의 흐름을 살펴봅니다. 주요 사건과 법안, 세금정책, 공익기관의 활동을 분야별로 기록하고 무엇이 어떻게 달라지는지 쉽게 설명합니다. 확인된 사실과 아직 풀리지 않은 질문, 씨앗의 판단을 나누어 독자가 직접 판단할 수 있도록 돕습니다." : "Civic Watch examines how freedom and regulation affect citizens' lives and business activity. We organize major events, legislation, tax policy, and the work of public-interest institutions by subject, explaining in plain language what is changing and how. By separating verified facts, unresolved questions and Seed Voice's judgment, we help readers reach their own conclusions."}</p>
+        <p className="max-w-2xl text-base leading-7 text-charcoal/65">{ko ? "시민감시는 시민의 삶과 기업 활동에 영향을 주는 자유와 규제의 흐름을 살펴봅니다. 주요 사건과 법안, 세금정책, 공익기관의 활동을 분야별로 기록하고 무엇이 어떻게 달라지는지 쉽게 설명합니다. 확인된 사실과 아직 풀리지 않은 질문, 씨앗의 판단을 나누어 독자가 직접 판단할 수 있도록 돕습니다." : "Civic Watch examines how freedom and regulation affect citizens' lives and business activity. We organize major events, legislation, tax policy, and the work of public-interest institutions by subject, explaining in plain language what is changing and how. By separating verified facts, unresolved questions and Seed Voice's judgment, we help readers reach their own conclusions."}</p>
       </div>
     </header>
 
-    <div className="container-page py-10 sm:py-12">
-      <section aria-labelledby="issue-watch-title">
-        <div className="flex flex-col gap-3 border-b-2 border-navy pb-5 sm:flex-row sm:items-end sm:justify-between">
-          <div><span className="section-kicker">ISSUE WATCH</span><h2 id="issue-watch-title" className="mt-2 text-3xl font-extrabold text-navy">{ko ? "이슈감시" : "Issue Watch"}</h2></div>
-          <p className="max-w-lg text-sm leading-7 text-charcoal/55">{ko ? "왼쪽에서 뉴스트래커의 변화를, 오른쪽에서 연결된 씨앗 기사를 읽어보세요." : "Track developments on the left and read related Seed Voice coverage on the right."}</p>
-        </div>
-
-        <label className="mt-6 flex items-center gap-3 border border-green-deep/15 bg-white px-4 py-3"><FileSearch size={18} className="text-charcoal/45"/><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={ko ? "이슈·기사 검색" : "Search issues and articles"} className="w-full bg-transparent text-sm outline-none"/></label>
+    <div className="container-page pt-6 sm:pt-8">
+      <section aria-label={ko ? "이슈감시 기사 검색 및 목록" : "Issue watch articles and search"}>
+        <label className="flex items-center gap-3 border border-green-deep/15 bg-white px-4 py-3"><FileSearch size={18} className="text-charcoal/45"/><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={ko ? "이슈·기사 검색" : "Search issues and articles"} className="w-full bg-transparent text-sm outline-none"/></label>
         <div className="mt-3">{filtered.map((row) => <WatchPairRow key={row.slug} article={row.tracker} record={row.article} ko={ko}/>)}</div>
         {!filtered.length && <p className="py-14 text-center text-sm text-charcoal/55">{ko ? "검색 결과가 없습니다." : "No matching records."}</p>}
       </section>
