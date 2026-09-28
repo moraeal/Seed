@@ -136,7 +136,7 @@ export default function InstitutionWatchArticle({ item, language }: { item: Publ
   const max = Math.max(...story.points.map((p) => p.amount ?? 0), 1);
   return <article className="bg-paper pb-16">
     <header className="border-b border-green-deep/15 bg-ivory"><div className="container-page max-w-5xl py-8 sm:py-12">
-      <Link to="/monitoring" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "공익감시 목록" : "Public-Interest Watch"}</Link>
+      <Link to="/monitoring/public-interest" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "공익감시 목록" : "Public-Interest Watch"}</Link>
       <p className="section-kicker mt-6">PUBLIC-INTEREST WATCH · {t(item.organization)}</p>
       <h1 className="article-detail-title mt-3">{t(story.headline)}</h1>
       <p className="mt-5 max-w-3xl text-base leading-8 text-charcoal/70">{t(story.deck)}</p>
