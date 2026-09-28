@@ -51,6 +51,29 @@ const clusterDefinitions: Array<{
   image?: { src: string; alt: Record<Language, string>; credit: Record<Language, string>; sourceUrl: string };
 }> = [
   {
+    id: "dmz-blast-investigation",
+    title: {
+      ko: "DMZ 지뢰 폭발, 조사 지연과 군의 설명 책임",
+      en: "DMZ blast: the investigation timeline and military accountability",
+    },
+    summary: {
+      ko: "장병 세 명이 다친 폭발 이후 현장 조사까지 닷새가 걸렸습니다. 경계 태세와 조사 결정의 경과를 후속 보도와 함께 살펴봅니다.",
+      en: "Five days passed between the blast that injured three soldiers and access for the investigation. These reports examine the security response and the decisions behind that timeline.",
+    },
+    latestChange: {
+      ko: "폭발 지점에 접근하지 못한 조사 경과와 정치권 공방을 새로 정리했습니다.",
+      en: "The latest report traces the limited site access and the political dispute over the delay.",
+    },
+    focus: {
+      ko: "지금 볼 질문 · 군은 사고 이후의 안전조치와 조사 결정을 날짜별로 설명했는가",
+      en: "Question now · Has the military explained its safety measures and investigation decisions day by day?",
+    },
+    references: [
+      { kind: "news", slug: "dmz-blast-investigation-timeline-2026" },
+      { kind: "news", slug: "dmz-security-command-failure" },
+    ],
+  },
+  {
     id: "yeosu-island-expo",
     title: {
       ko: "여수세계섬박람회, 커진 예산과 늦어진 준비",
@@ -129,6 +152,7 @@ const clusterDefinitions: Array<{
       en: "Question now · Has power shrunk, or merely changed address?",
     },
     references: [
+      { kind: "news", slug: "major-crimes-agency-investigator-staffing-2026" },
       { kind: "watch", slug: "prosecution-service-abolition-tracker" },
       { kind: "legislative-commentary", slug: "criminal-investigation-power-and-accountability" },
       { kind: "column", slug: "prosecution-reform-power-transfer-2026" },

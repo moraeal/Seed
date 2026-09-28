@@ -14,7 +14,19 @@ export default function News() {
   const [showAll, setShowAll] = useState(false);
   const clusters = getHotIssueClusters(language);
   const clusteredPaths = new Set(clusters.flatMap((cluster) => cluster.items.map((item) => item.to)));
-  const moreIssues = getHotIssuesNewestFirst(language).filter((item) => !clusteredPaths.has(item.to));
+  const standaloneIssues = getHotIssuesNewestFirst(language).filter((item) => !clusteredPaths.has(item.to));
+  const candidates = [
+    ...clusters.map((cluster) => ({
+      key: `cluster-${cluster.id}`, to: `/news/issues/${cluster.id}`,
+      title: cluster.title, summary: cluster.latestChange, date: cluster.updatedAt,
+      imageSrc: cluster.imageSrc, imageAlt: cluster.imageAlt,
+      kindLabel: ko ? "현안 모음" : "Issue collection", focus: cluster.focus,
+    })),
+    ...standaloneIssues.map((item) => ({ ...item, focus: ko ? "새로 나온 기사의 핵심 쟁점 살펴보기" : "Explore the key question in this report" })),
+  ].sort((a, b) => b.date.localeCompare(a.date) ||
+    Number(b.key.startsWith("cluster-")) - Number(a.key.startsWith("cluster-")));
+  const featuredIssues = candidates.slice(0, 4);
+  const moreIssues = candidates.slice(4);
   const risingIssue = moreIssues[0];
   const remainingIssues = moreIssues.slice(1);
   const visibleMoreIssues = showAll ? remainingIssues : remainingIssues.slice(0, INITIAL_MORE_ISSUES);
@@ -37,10 +49,10 @@ export default function News() {
 
       <div className="container-page py-7 sm:py-10">
         <div className="grid gap-5 md:grid-cols-2 lg:gap-6">
-          {clusters.map((cluster, index) => (
+          {featuredIssues.map((cluster, index) => (
             <Link
-              to={`/news/issues/${cluster.id}`}
-              key={cluster.id}
+              to={cluster.to}
+              key={cluster.key}
               className="group flex h-full flex-col overflow-hidden border-t-4 border-green-deep bg-white shadow-[0_12px_32px_rgba(20,55,45,.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(20,55,45,.11)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4"
             >
               <div className="overflow-hidden bg-ivory">
@@ -57,12 +69,12 @@ export default function News() {
               <div className="flex flex-1 flex-col p-5 sm:p-6">
                 <div className="flex items-center justify-between gap-4 text-[11px] font-semibold text-charcoal/42">
                   <span>{ko ? "최근 변화" : "LATEST CHANGE"}</span>
-                  <time>{cluster.updatedAt.replace(/-/g, ".")}</time>
+                  <time>{cluster.date.replace(/-/g, ".")}</time>
                 </div>
                 <h2 className="editorial-title mt-2.5 break-keep text-[1.3rem] font-black leading-tight tracking-[-.02em] text-navy transition group-hover:text-green-mid sm:text-[1.5rem]">
                   {cluster.title}
                 </h2>
-                <p className="mt-2.5 line-clamp-2 text-[13px] leading-6 text-charcoal/60 sm:text-sm">{cluster.latestChange}</p>
+                <p className="mt-2.5 line-clamp-2 text-[13px] leading-6 text-charcoal/60 sm:text-sm">{cluster.summary}</p>
                 <div className="mt-auto flex items-end justify-between gap-4 border-t border-green-deep/12 pt-4">
                   <p className="border-l-[3px] border-gold pl-3 text-xs font-bold leading-5 text-navy sm:text-[13px]">{cluster.focus.replace(/^지금 볼 질문 · |^Question now · /, "")}</p>
                   <ArrowRight size={17} className="mb-0.5 shrink-0 text-green-deep transition-transform group-hover:translate-x-1" aria-hidden="true" />
@@ -76,9 +88,9 @@ export default function News() {
           <section className="mt-9 grid gap-8 border-y border-t-[3px] border-green-deep/15 border-t-navy pb-5 pt-5 sm:mt-12 sm:pb-6 sm:pt-6 lg:grid-cols-[1.05fr_.95fr] lg:gap-10" aria-label={ko ? "새롭게 떠오르는 이슈와 더 살펴볼 이슈" : "Rising and further issues"}>
             <div className="flex h-full flex-col">
               <header>
-                <span className="section-kicker">RISING ISSUE</span>
+                <span className="section-kicker">NEXT ISSUE</span>
                 <h2 className="editorial-title mt-1.5 text-2xl font-bold text-navy sm:text-3xl">
-                  {ko ? "지금 막 떠오르는 이슈" : "An issue now emerging"}
+                  {ko ? "이어 살펴볼 이슈" : "Next issue to explore"}
                 </h2>
               </header>
 
@@ -94,7 +106,7 @@ export default function News() {
                 </div>
                 <div className="flex flex-1 flex-col pt-3">
                   <div className="flex items-center justify-between gap-3 text-[11px] font-semibold text-charcoal/42">
-                    <span>{ko ? "새로 주목할 흐름" : "NEWLY EMERGING"}</span>
+                    <span>{ko ? "최근 변화" : "LATEST CHANGE"}</span>
                     <time>{risingIssue.date.replace(/-/g, ".")}</time>
                   </div>
                   <h3 className="editorial-title mt-2 break-keep text-[1.35rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.65rem]">{risingIssue.title}</h3>
