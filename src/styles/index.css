@@ -272,13 +272,11 @@ button, input, textarea { font: inherit; }
   align-items: flex-end;
   width: min(280px, calc(100vw - 24px));
   pointer-events: none;
-  animation: about-siya-enter .65s ease-out both;
 }
 .about-siya-bubbles {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 7px;
   max-width: 100%;
   margin-bottom: -7px;
 }
@@ -294,17 +292,13 @@ button, input, textarea { font: inherit; }
   font-weight: 800;
   line-height: 1.45;
 }
-.about-siya-bubbles p:first-child { align-self: flex-start; }
 .about-siya img {
   width: 152px;
   height: 152px;
   object-fit: contain;
-  animation: about-siya-float 2.6s ease-in-out infinite;
 }
-@keyframes about-siya-enter {
-  from { opacity: 0; transform: translateX(35px); }
-  to { opacity: 1; transform: translateX(0); }
-}
+.about-siya--walking img { animation: seed-nudge-steps 1.35s cubic-bezier(.28,.1,.36,1) both; }
+.about-siya--ready img { animation: about-siya-float 2.6s ease-in-out infinite; }
 @keyframes about-siya-float {
   0%, 100% { transform: translateY(0) rotate(-2deg); }
   50% { transform: translateY(-8px) rotate(2deg); }

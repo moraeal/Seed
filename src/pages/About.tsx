@@ -133,13 +133,29 @@ const experienceColors = ["bg-[#dcefa9]", "bg-[#f6ad7e]", "bg-[#d9eff3]"];
 export default function About() {
   const { language } = useLanguage();
   const [tipOpen, setTipOpen] = useState(false);
-  const [showSiya, setShowSiya] = useState(false);
+  const [siyaStage, setSiyaStage] = useState<"hidden" | "walking" | "ready">("hidden");
   const [siyaPose, setSiyaPose] = useState(false);
 
   useEffect(() => {
-    const entrance = window.setTimeout(() => setShowSiya(true), 5000);
-    const movement = window.setInterval(() => setSiyaPose((current) => !current), 2600);
-    return () => { window.clearTimeout(entrance); window.clearInterval(movement); };
+    const imageBase = `${import.meta.env.BASE_URL}images/seed-character/`;
+    ["seed-about-greeting.png", "seed-about-reading.png"].forEach((name) => {
+      const preload = new Image();
+      preload.src = `${imageBase}${name}`;
+    });
+    let ready: number | undefined;
+    let movement: number | undefined;
+    const entrance = window.setTimeout(() => {
+      setSiyaStage("walking");
+      ready = window.setTimeout(() => {
+        setSiyaStage("ready");
+        movement = window.setInterval(() => setSiyaPose((current) => !current), 3000);
+      }, 1350);
+    }, 5000);
+    return () => {
+      window.clearTimeout(entrance);
+      if (ready !== undefined) window.clearTimeout(ready);
+      if (movement !== undefined) window.clearInterval(movement);
+    };
   }, []);
   const content = copy[language];
 
@@ -276,13 +292,14 @@ export default function About() {
           </div>
         </section>
       </main>
-      {showSiya && (
-        <aside className="about-siya" aria-label={content.siyaAlt}>
-          <div className="about-siya-bubbles">
-            <p>{content.siyaWelcome}</p>
-            <p>{content.siyaInvite}</p>
-          </div>
-          <img src={`${import.meta.env.BASE_URL}images/seed-character/${siyaPose ? "seed-14-checked.webp" : "seed-09-listening-guide.webp"}`} alt="" />
+      {siyaStage !== "hidden" && (
+        <aside className={`about-siya about-siya--${siyaStage}`} aria-label={content.siyaAlt}>
+          {siyaStage === "ready" && (
+            <div className="about-siya-bubbles" aria-live="polite">
+              <p>{siyaPose ? content.siyaInvite : content.siyaWelcome}</p>
+            </div>
+          )}
+          <img src={`${import.meta.env.BASE_URL}images/seed-character/${siyaPose ? "seed-about-reading.png" : "seed-about-greeting.png"}`} alt="" />
         </aside>
       )}
       <TipDialog open={tipOpen} onClose={() => setTipOpen(false)} language={language} />
