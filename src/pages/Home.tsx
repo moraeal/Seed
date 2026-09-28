@@ -235,7 +235,7 @@ export default function Home() {
           <div className="mt-5 grid grid-cols-2 gap-2.5 sm:gap-4">
             {quickReads.map((item) => (
               <Link key={item.to} to={item.to} className="home-quick-card group min-w-0 overflow-hidden rounded-lg border border-green-deep/15 bg-white shadow-[0_8px_22px_rgba(28,54,66,0.12)] transition duration-300 hover:-translate-y-0.5 hover:border-green-deep/35 hover:shadow-[0_16px_32px_rgba(28,54,66,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-deep/40">
-                <div className={`home-quick-thumb overflow-hidden ${item.term ? "bg-white" : "bg-green-pale"}`}>
+                <div className={`home-quick-thumb overflow-hidden ${item.term ? "border-b border-green-deep/20 bg-[#f1f6f0] sm:border-b-0 sm:border-r" : "bg-green-pale"}`}>
                   {item.imageSrc ? <SafeImage src={resolveImageSrc(item.imageSrc)} alt={item.imageAlt || ""} loading="lazy" referrerPolicy="no-referrer" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]" /> : <div className="flex h-full min-w-0 flex-col items-center justify-center px-2 text-center">
                     <span className="editorial-title text-2xl font-black leading-tight text-navy sm:text-4xl">{ko ? item.term : item.termEnglish || item.term}</span>
                     {ko && item.termHanja && <span className="mt-2 text-sm font-bold leading-tight text-charcoal/55 sm:text-lg">{item.termHanja}</span>}
