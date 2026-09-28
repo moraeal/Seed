@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:participatory-democracy-supreme-court-appointments": {
+    ko: { href: "/news/supreme-court-renomination-standoff-2026", title: "손봉기 재제청 공방, 대법원과 청와대는 왜 충돌하나", relationship: "인사 갈등 사실 확인", reason: "제청과 재제청 요청의 날짜별 경과와 양측의 입장을 확인합니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
+    en: { href: "/news/supreme-court-renomination-standoff-2026", title: "Why the Supreme Court and Presidential Office Clashed over Son Bong-gi", relationship: "THE APPOINTMENT DISPUTE", reason: "Review the chronology and the positions of both institutions.", listHref: "/columns", listLabel: "All columns" },
+  },
   "column:seoul-housing-prices-rent-broken-ladder": {
     ko: { href: "/columns/real-estate-supervisor-citizens-accounts", title: "집을 사는 시민에게 계좌부터 내놓으라는 법인가", relationship: "부동산 정책 이어 읽기", reason: "집을 구할 기회의 문제에 이어 거래를 조사하는 국가의 권한을 살펴봅니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
     en: { href: "/columns/real-estate-supervisor-citizens-accounts", title: "Must Homebuyers Open Their Bank Accounts to the State?", relationship: "MORE ON HOUSING POLICY", reason: "Continue from access to homes to the state's powers over property transactions.", listHref: "/columns", listLabel: "All columns" },

@@ -1,3 +1,4 @@
+import { supremeCourtCivicWatchColumn } from "./columns/supremeCourtCivicWatchColumn";
 import { housingLadderColumn } from "./columns/housingLadderColumn";
 import { welfareExitRiskColumn } from "./columns/welfareExitRiskColumn";
 import { incomeTaxFamilyThresholdColumn } from "./columns/incomeTaxFamilyThresholdColumn";
@@ -26,7 +27,7 @@ import type { SeedColumn } from "./columnsLegacy";
 
 export type { SeedColumn } from "./columnsLegacy";
 
-export const columns: SeedColumn[] = [housingLadderColumn, welfareExitRiskColumn, incomeTaxFamilyThresholdColumn, realEstateSupervisorColumn, suicidePreventionMoisColumn, corporateCitizenshipColumn, yeosuIslandExpoProcurementColumn, partisanLanguageColumn, inheritanceTaxBusinessContinuityColumn, publicHealthFunctionNetworkColumn, korea97GenerationColumn, wealthCrossesBordersColumn, fukushimaJourneyColumn, militaryAcademyIntegrationColumn, nuclearPolicyReversalColumn, farmlandOwnershipPressureColumn, silenceAndPowerColumn, citizenizationBeforeAdvancementColumn, stateCannotMonopolizeLifeColumn, civicGroupsAreNotStateVanguardColumn, tenPercentPowerColumn, prosecutionReformPowerTransferColumn, lhReformColumn, ...legacyColumns];
+export const columns: SeedColumn[] = [supremeCourtCivicWatchColumn, housingLadderColumn, welfareExitRiskColumn, incomeTaxFamilyThresholdColumn, realEstateSupervisorColumn, suicidePreventionMoisColumn, corporateCitizenshipColumn, yeosuIslandExpoProcurementColumn, partisanLanguageColumn, inheritanceTaxBusinessContinuityColumn, publicHealthFunctionNetworkColumn, korea97GenerationColumn, wealthCrossesBordersColumn, fukushimaJourneyColumn, militaryAcademyIntegrationColumn, nuclearPolicyReversalColumn, farmlandOwnershipPressureColumn, silenceAndPowerColumn, citizenizationBeforeAdvancementColumn, stateCannotMonopolizeLifeColumn, civicGroupsAreNotStateVanguardColumn, tenPercentPowerColumn, prosecutionReformPowerTransferColumn, lhReformColumn, ...legacyColumns];
 
 export const hotIssueColumnSlugs = new Set([
   "seoul-housing-prices-rent-broken-ladder",

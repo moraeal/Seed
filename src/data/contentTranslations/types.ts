@@ -10,7 +10,7 @@ export type ColumnTranslation = {
   summary: string;
   heroImage?: Partial<Pick<SeedColumn["heroImage"], "alt" | "caption" | "credit">>;
   referenceVideo?: Partial<Pick<NonNullable<SeedColumn["referenceVideo"]>, "thumbnailAlt" | "title" | "description" | "credit">>;
-  inlineImage?: Partial<Pick<SeedColumn["inlineImage"], "alt" | "caption" | "credit">>;
+  inlineImage?: Partial<Pick<SeedColumn["inlineImage"], "src" | "alt" | "caption" | "credit">>;
   additionalImages?: Array<{ src?: string; alt: string; caption: string; credit?: string }>;
   embeddedFigures?: Array<{ caption: string; credit?: string }>;
   sourceDocument?: Partial<Pick<NonNullable<SeedColumn["sourceDocument"]>, "title" | "description">>;
