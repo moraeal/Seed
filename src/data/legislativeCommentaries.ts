@@ -1,5 +1,6 @@
 import { realEstateSupervisorColumn } from "./columns/realEstateSupervisorColumn";
 import { issue32 } from "./contentTranslations/columns/issue32";
+import { pendingLegislativeCommentaries } from "./pendingLegislativeCommentaries";
 
 export type LegislativeCommentaryLanguage = "ko" | "en";
 
@@ -60,6 +61,7 @@ export const linkedLegislativeColumnCommentaries = [{
 }];
 
 export const legislativeCommentaries: LegislativeCommentary[] = [
+  ...pendingLegislativeCommentaries,
   {
     slug: "sme-market-access-and-real-profit",
     billNo: "2221550",
