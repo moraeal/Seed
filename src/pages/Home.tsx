@@ -235,12 +235,12 @@ export default function Home() {
           <div className="mt-5 grid grid-cols-2 gap-2.5 sm:gap-4">
             {quickReads.map((item) => (
               <Link key={item.to} to={item.to} className="home-quick-card group min-w-0 overflow-hidden rounded-lg border border-green-deep/15 bg-white shadow-[0_8px_22px_rgba(28,54,66,0.12)] transition duration-300 hover:-translate-y-0.5 hover:border-green-deep/35 hover:shadow-[0_16px_32px_rgba(28,54,66,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-deep/40">
-                <div className={`home-quick-thumb overflow-hidden ${item.term ? "relative border-b border-green-deep/20 bg-green-deep sm:border-b-0 sm:border-r" : "bg-green-pale"}`}>
+                <div className={`home-quick-thumb overflow-hidden ${item.term ? "relative border-b border-green-deep/20 bg-green-deep sm:border-b-0 sm:border-r" : "bg-green-pale"}`} style={item.term ? { containerType: "inline-size" } : undefined}>
                   {item.term ? <>
                     {item.imageSrc && <SafeImage src={resolveImageSrc(item.imageSrc)} alt="" loading="lazy" referrerPolicy="no-referrer" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]" />}
                     <div className="absolute inset-0 bg-navy/45" aria-hidden="true" />
                     <div className="relative flex h-full min-w-0 flex-col items-center justify-center px-2 text-center text-white" style={{ textShadow: "1px 0 #102b35, -1px 0 #102b35, 0 1px #102b35, 0 -1px #102b35, 1px 1px #102b35, -1px 1px #102b35, 1px -1px #102b35, -1px -1px #102b35, 0 2px 5px #102b35" }}>
-                      <span className="editorial-title break-words text-3xl font-black leading-tight sm:text-5xl">{ko ? item.term : item.termEnglish || item.term}</span>
+                      <span className={`editorial-title font-black leading-tight ${ko && item.term.length <= 6 ? "whitespace-nowrap" : "break-words"}`} style={{ fontSize: "min(2.5rem, 14cqw)" }}>{ko ? item.term : item.termEnglish || item.term}</span>
                       {ko && item.termHanja && <span className="mt-2 text-base font-bold leading-tight sm:text-xl">{item.termHanja}</span>}
                       {ko && item.termEnglish && <span className="mt-1 max-w-full break-words text-xs font-black leading-tight tracking-[.04em] sm:text-sm">{item.termEnglish}</span>}
                     </div>
