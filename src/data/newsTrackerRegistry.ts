@@ -7,8 +7,10 @@ import { olympicParkElectionProtestTracker } from "./olympicParkElectionProtestT
 import { publicInstitutionReformTracker } from "./publicInstitutionReformTracker";
 import { supremeCourtRenominationTracker } from "./supremeCourtRenominationTracker";
 import { northKoreanPowsProtectionTracker } from "./northKoreanPowsProtectionTracker";
+import { dmzMineBlastTracker } from "./dmzMineBlastTracker";
 
 export const publicInterestWatchCases = [
+  dmzMineBlastTracker,
   northKoreanPowsProtectionTracker,
   supremeCourtRenominationTracker,
   publicInstitutionReformTracker,
@@ -17,6 +19,7 @@ export const publicInterestWatchCases = [
 ];
 
 export const newsTrackerCases = [
+  dmzMineBlastTracker,
   northKoreanPowsProtectionTracker,
   supremeCourtRenominationTracker,
   publicInstitutionReformTracker,
@@ -25,6 +28,7 @@ export const newsTrackerCases = [
 ];
 
 export function getPublicInterestWatchCase(slug: string) {
+  if (slug === dmzMineBlastTracker.slug) return dmzMineBlastTracker;
   if (slug === northKoreanPowsProtectionTracker.slug) {
     return northKoreanPowsProtectionTracker;
   }
