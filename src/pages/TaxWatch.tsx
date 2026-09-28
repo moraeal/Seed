@@ -1,81 +1,37 @@
-import { ArrowRight, CalendarDays, Clock, ExternalLink, FileSearch, ReceiptText } from "lucide-react";
+import { FileSearch } from "lucide-react";
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
 import MonitoringSubnav from "../components/MonitoringSubnav";
-import SafeImage from "../components/SafeImage";
-import { getTaxCommentaryEdition, taxCommentaries } from "../data/taxCommentaries";
+import WatchPairRow from "../components/WatchPairRow";
+import { taxCommentaries } from "../data/taxCommentaries";
 import { taxPolicies } from "../data/taxWatch";
 import { incomeTaxFamilyDeductionBriefing } from "../data/incomeTaxFamilyDeductionBriefing";
 import { incomeTaxFamilyDeductionTranslation } from "../data/contentTranslations/briefingIncomeTaxFamilyDeduction";
 import { useLanguage } from "../i18n";
 
-const dateText = (date: string) => date.replace(/-/g, ".");
-
-function TaxExplainerRow({ ko }: { ko: boolean }) {
-  return <Link to={`/briefings/${incomeTaxFamilyDeductionBriefing.slug}`} className="group grid gap-5 border-b border-charcoal/10 px-4 py-7 transition last:border-b-0 hover:bg-[#FBFAF6] sm:px-6 lg:grid-cols-[160px_1fr_auto] lg:items-center">
-    <div><span className="inline-flex rounded-full bg-green-deep/10 px-2.5 py-1 text-[11px] font-black text-green-deep">{ko ? "세금정책 설명 기사" : "Tax policy explainer"}</span><p className="mt-3 flex items-center gap-2 text-xs text-charcoal/50"><CalendarDays size={14}/>{dateText(incomeTaxFamilyDeductionBriefing.date)}</p></div>
-    <div><div className="mb-2 flex flex-wrap gap-2 text-xs font-bold text-charcoal/55"><span>{ko ? "가족 기본공제 소득요건" : "Family deduction income threshold"}</span><span className="text-charcoal/35">{ko ? "정부안·의원안 비교" : "Government and member's proposals"}</span></div><h3 className="editorial-title text-[1.3rem] font-bold leading-snug text-navy group-hover:text-green-deep sm:text-[1.55rem]">{ko ? incomeTaxFamilyDeductionBriefing.title : incomeTaxFamilyDeductionTranslation.title}</h3><p className="mt-2 line-clamp-2 max-w-3xl text-sm leading-7 text-charcoal/60">{ko ? incomeTaxFamilyDeductionBriefing.summary : incomeTaxFamilyDeductionTranslation.summary}</p></div>
-    <span className="flex items-center gap-2 text-sm font-extrabold text-green-deep">{ko ? "기사 읽기" : "Read article"}<ArrowRight size={15}/></span>
-  </Link>;
-}
-
-function PolicyRow({ policy, ko, index, today = false }: { policy: (typeof taxPolicies)[number]; ko: boolean; index: number; today?: boolean }) {
-  return <Link to={`/monitoring/tax/${policy.slug}`} className="group grid gap-5 border-b border-charcoal/10 px-4 py-7 transition last:border-b-0 hover:bg-[#FBFAF6] sm:px-6 lg:grid-cols-[160px_1fr_auto] lg:items-center">
-    <div><span className={`inline-flex rounded-full px-2.5 py-1 text-[11px] font-black ${policy.importance >= 85 ? "bg-red-800 text-white" : "bg-gold text-navy"}`}>{ko ? `중요도 ${policy.importance}` : `Impact ${policy.importance}`}</span><p className="mt-3 flex items-center gap-2 text-xs text-charcoal/50"><CalendarDays size={14}/>{ko ? `확인 ${dateText(policy.checkedAt)}` : `Checked ${policy.checkedAt}`}</p></div>
-    <div><div className="mb-2 flex flex-wrap gap-2 text-xs font-bold text-charcoal/55"><span>{String(index + 1).padStart(2, "0")}</span><span className="text-charcoal/35">{ko ? policy.status.ko : policy.status.en}</span>{policy.deadline && <span className="text-charcoal/35">{ko ? `의견 제출 ${dateText(policy.deadline)}까지` : `Comments due ${policy.deadline}`}</span>}{today && <span className="text-gold">{ko ? "최근 공개" : "Latest release"}</span>}</div><h2 className="editorial-title text-[1.3rem] font-bold leading-snug text-navy group-hover:text-green-deep sm:text-[1.55rem]">{ko ? policy.title.ko : policy.title.en}</h2><p className="mt-2 line-clamp-2 max-w-3xl text-sm leading-7 text-charcoal/60">{ko ? policy.summary.ko : policy.summary.en}</p><p className="mt-3 flex items-center gap-2 text-xs text-charcoal/45"><ReceiptText size={14}/>{ko ? policy.affected.ko : policy.affected.en}</p></div>
-    <span className="flex items-center gap-2 text-sm font-extrabold text-green-deep">{ko ? "분석 보기" : "View analysis"}<ArrowRight size={15}/></span>
-  </Link>;
-}
-
 export default function TaxWatch() {
   const { language } = useLanguage();
   const ko = language === "ko";
   const [query, setQuery] = useState("");
-  const latestCheckedAt = useMemo(() => taxPolicies.reduce(
-    (latest, policy) => policy.checkedAt > latest ? policy.checkedAt : latest,
-    incomeTaxFamilyDeductionBriefing.date,
-  ), []);
-  const explainerIsLatest = incomeTaxFamilyDeductionBriefing.date === latestCheckedAt;
-  const todayPolicies = useMemo(() => taxPolicies.filter((policy) => policy.checkedAt === latestCheckedAt), [latestCheckedAt]);
-  const pastPolicies = useMemo(() => taxPolicies.filter((policy) => policy.checkedAt !== latestCheckedAt), [latestCheckedAt]);
-  const filteredPastPolicies = useMemo(() => pastPolicies.filter((policy) => {
-    const term = query.trim().toLowerCase();
-    return !term || [policy.title.ko, policy.title.en, policy.summary.ko, policy.summary.en, policy.affected.ko, policy.affected.en, policy.status.ko, policy.status.en].some((value) => value.toLowerCase().includes(term));
-  }), [pastPolicies, query]);
-  const showPastExplainer = !explainerIsLatest && (
-    !query.trim() || [incomeTaxFamilyDeductionBriefing.title, incomeTaxFamilyDeductionTranslation.title, "소득세법", "가족공제", "2221581"].some((value) => value.toLowerCase().includes(query.trim().toLowerCase()))
-  );
-  const todayCount = todayPolicies.length + Number(explainerIsLatest);
-  const pastCount = pastPolicies.length + Number(!explainerIsLatest);
+  const rows = useMemo(() => {
+    const commentary = new Map(taxCommentaries.map((item) => [item.relatedPolicySlug, item]));
+    const policies = taxPolicies.map((policy) => {
+      const article = commentary.get(policy.slug);
+      const edition = article?.editions[language];
+      const official = policy.sources.find((source) => /\.go\.kr|assembly\.go\.kr|lawmaking\.go\.kr|law\.go\.kr/.test(new URL(source.url).hostname));
+      return { key: policy.slug, date: policy.checkedAt, article: article && edition ? { href: `/monitoring/tax/commentary/${article.slug}`, label: ko ? "세금 논평" : "TAX COMMENTARY", title: edition.title, summary: edition.summary, image: article.heroSrc, alt: edition.heroAlt, date: article.date } : undefined, record: { href: official?.url || `/monitoring/tax/${policy.slug}`, external: Boolean(official), detailHref: `/monitoring/tax/${policy.slug}`, label: ko ? "세금정책 원문" : "TAX POLICY SOURCE", title: policy.title[language], summary: policy.summary[language], image: policy.heroImage[language], alt: policy.heroImage.alt[language], date: policy.checkedAt } };
+    });
+    const family = { key: "family-deduction", date: incomeTaxFamilyDeductionBriefing.date, article: { href: `/briefings/${incomeTaxFamilyDeductionBriefing.slug}`, label: ko ? "세금정책 설명 기사" : "TAX EXPLAINER", title: ko ? incomeTaxFamilyDeductionBriefing.title : incomeTaxFamilyDeductionTranslation.title, summary: ko ? incomeTaxFamilyDeductionBriefing.summary : incomeTaxFamilyDeductionTranslation.summary, image: incomeTaxFamilyDeductionBriefing.images?.[0]?.src, alt: ko ? incomeTaxFamilyDeductionBriefing.images?.[0]?.alt : incomeTaxFamilyDeductionTranslation.images?.[0]?.alt, date: incomeTaxFamilyDeductionBriefing.date }, record: { href: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221581/detailRP", external: true, label: ko ? "관련 법안 원문 · 의안 2221581" : "RELATED BILL SOURCE · 2221581", title: ko ? "소득세법 일부개정법률안" : "Income Tax Act amendment", summary: ko ? "가족 기본공제 소득요건과 관련된 개정안의 제안 내용을 확인하세요." : "Read the proposed change to the family deduction income threshold.", date: incomeTaxFamilyDeductionBriefing.date } };
+    return [...policies, family].sort((a, b) => b.date.localeCompare(a.date));
+  }, [language, ko]);
+  const filtered = rows.filter((row) => !query.trim() || [row.article?.title, row.record.title, row.article?.summary, row.record.summary].some((value) => value?.toLowerCase().includes(query.trim().toLowerCase())));
 
   return <section className="min-h-[70vh] bg-paper pb-16">
-    <header className="border-b border-green-deep/15 bg-ivory"><div className="container-page grid gap-6 py-10 lg:grid-cols-[.8fr_1.2fr] lg:items-end"><div><span className="section-kicker">TAX & LEVY WATCH</span><h1 className="editorial-title mt-2 text-[2.25rem] font-bold text-navy sm:text-[2.75rem]">{ko ? "세금감시" : "Tax Watch"}</h1></div><p className="max-w-2xl text-base leading-8 text-charcoal/65">{ko ? "정부와 국회가 추진하는 세금정책 가운데 시민의 부담, 기업 활동, 재산권에 큰 영향을 미치는 사안을 골라 보여드립니다. 정책 기록과 씨앗의 논평을 구분해 제공하고, 정부 발표부터 국회 심사와 실제 집행까지 계속 추적합니다." : "We track tax measures that materially affect citizens, enterprise and property rights. Policy records remain distinct from Seed Voice commentary, from government announcement through legislative review and implementation."}</p></div></header>
+    <header className="border-b border-green-deep/15 bg-ivory"><div className="container-page grid gap-6 py-9 sm:py-12 lg:grid-cols-[.8fr_1.2fr] lg:items-end"><div><span className="section-kicker">TAX & LEVY WATCH</span><h1 className="editorial-title mt-2 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "세금감시" : "Tax Watch"}</h1></div><p className="max-w-2xl text-base leading-8 text-charcoal/65">{ko ? "시민의 부담과 기업 활동에 영향을 주는 세금정책을 씨앗의 논평과 나란히 살펴봅니다. 오른쪽에서 정부·국회의 공식 자료로 이어집니다." : "Read Seed Voice's commentary alongside tax policy summaries, with official government and legislative sources on the right."}</p></div></header>
     <MonitoringSubnav />
-    <div className="container-page py-8 sm:py-10">
-      <nav aria-label={ko ? "세금감시 목록 바로가기" : "Tax watch list shortcuts"} className="mb-7 grid overflow-hidden rounded-xl border border-charcoal/10 bg-white shadow-[0_8px_24px_rgba(31,51,73,0.045)] sm:grid-cols-3">
-        <a href="#tax-commentary-list" className="flex items-center justify-between border-b-2 border-green-deep bg-green-deep px-5 py-4 text-sm font-black text-white transition hover:bg-green-mid sm:text-base">{ko ? "세금감시 기사" : "Watch Articles"}<span className="rounded-full bg-white/12 px-2 py-0.5 text-xs text-gold">{taxCommentaries.length}</span></a>
-        <a href="#today-tax-policies" className="flex items-center justify-between border-b-2 border-gold/40 bg-[#F3F5EC] px-5 py-4 text-sm font-black text-navy transition hover:bg-green-pale sm:text-base">{ko ? "오늘의 세금정책" : "Today's Tax Policies"}<span className="rounded-full bg-white/80 px-2 py-0.5 text-xs text-charcoal/55">{todayCount}</span></a>
-        <a href="#past-tax-policies" className="flex items-center justify-between border-b-2 border-transparent px-5 py-4 text-sm font-black text-navy transition hover:border-charcoal/20 hover:bg-[#FAF9F5] sm:text-base">{ko ? "지난 세금정책" : "Past Tax Policies"}<span className="rounded-full bg-charcoal/5 px-2 py-0.5 text-xs text-charcoal/55">{pastCount}</span></a>
-      </nav>
-
-      <section id="tax-commentary-list" className="scroll-mt-24 overflow-hidden rounded-xl border border-charcoal/10 bg-white shadow-[0_12px_32px_rgba(31,51,73,0.055)]" aria-labelledby="tax-commentary-list-title">
-        <div className="flex flex-col gap-3 border-b border-charcoal/10 bg-white px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-6"><div><span className="text-[10px] font-extrabold tracking-[.2em] text-gold">TAX COMMENTARY</span><h2 id="tax-commentary-list-title" className="editorial-title mt-1 text-2xl font-bold text-navy">{ko ? "세금감시 기사 목록" : "Tax Watch Articles"}</h2></div><p className="max-w-2xl text-sm leading-6 text-charcoal/60">{ko ? "시민의 부담과 정부의 재정 책임을 더 깊이 살펴야 할 정책을 골라 논평합니다. 정책 기록의 사실과 씨앗의 판단을 구분해 읽을 수 있습니다." : "We select tax measures requiring deeper scrutiny of citizens' burdens and fiscal accountability, keeping the policy record distinct from Seed Voice's judgment."}</p></div>
-        <div className="grid divide-y divide-charcoal/10 lg:grid-cols-2 lg:divide-x lg:divide-y-0">
-          {taxCommentaries.map((article) => { const edition = getTaxCommentaryEdition(article, ko ? "ko" : "en"); return <Link key={article.slug} to={`/monitoring/tax/commentary/${article.slug}`} className="group grid gap-4 p-5 transition hover:bg-[#FBFAF6] sm:grid-cols-[180px_1fr] sm:items-center sm:p-6"><div className="overflow-hidden bg-ivory"><SafeImage src={`${import.meta.env.BASE_URL}${article.heroSrc}`} alt={edition.heroAlt} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.025]" /></div><div className="min-w-0"><div className="flex flex-wrap items-center gap-2 text-[11px] font-extrabold text-charcoal/55"><span>{ko ? "세금 논평" : "COMMENTARY"}</span></div><h3 className="editorial-title mt-2 line-clamp-2 text-xl font-bold leading-snug text-navy transition group-hover:text-green-deep">{edition.title}</h3><p className="mt-2 line-clamp-2 text-sm leading-6 text-charcoal/60">{edition.summary}</p><div className="mt-3 flex items-center gap-3 border-t border-charcoal/10 pt-3 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={12}/>{article.readMinutes}{ko ? "분" : " min"}</span><span className="ml-auto flex items-center gap-1.5 font-extrabold text-green-deep">{ko ? "논평 읽기" : "Read"}<ArrowRight size={13}/></span></div></div></Link>; })}
-        </div>
-      </section>
-
-      <section id="today-tax-policies" className="mt-10 scroll-mt-24 overflow-hidden rounded-xl border border-charcoal/10 bg-white shadow-[0_12px_32px_rgba(31,51,73,0.055)]" aria-labelledby="today-tax-policies-title">
-        <div className="flex flex-col gap-3 border-b border-charcoal/10 bg-white px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-6"><div><span className="text-[10px] font-extrabold tracking-[.2em] text-gold">TODAY'S TAX POLICIES</span><h2 id="today-tax-policies-title" className="editorial-title mt-1 text-2xl font-bold text-navy">{ko ? "오늘의 세금정책" : "Today's Tax Policies"}<span className="ml-2 rounded-full bg-charcoal/5 px-2 py-0.5 text-xs text-charcoal/50">{todayCount}</span></h2></div><p className="max-w-2xl text-sm leading-6 text-charcoal/60">{ko ? "가장 최근에 공개한 세금정책과 설명 기사를 다음 업데이트 전까지 유지합니다. 항목을 누르면 내용과 시민에게 미칠 영향을 확인할 수 있습니다." : "The latest tax policy records and explainers remain here until the next update. Open an item to review its content and civic impact."}</p></div>
-        <div className="flex flex-col gap-3 border-b border-charcoal/10 bg-[#FAF8F2] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6"><p className="text-sm leading-7 text-charcoal/60"><strong className="text-navy">{dateText(latestCheckedAt)}</strong><br/>{ko ? "정부 발표·입법예고·국회 심사 자료를 확인하고 중요한 정책과 관련 설명 기사를 공개합니다." : "We review government announcements, legislative notices and National Assembly materials, then publish significant measures and related explainers."}</p><a href="https://opinion.lawmaking.go.kr/gcom/ogLmPp" target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center gap-2 text-xs font-extrabold text-green-deep">{ko ? "입법예고 검색·의견 제출" : "Search notices and comment"}<ExternalLink size={13}/></a></div>
-        {todayCount ? <div>{explainerIsLatest && <TaxExplainerRow ko={ko} />}{todayPolicies.map((policy, index) => <PolicyRow key={policy.slug} policy={policy} ko={ko} index={index} today/>)}</div> : <div className="py-16 text-center"><ReceiptText className="mx-auto text-gold"/><p className="mt-4 text-sm font-bold text-navy">{ko ? "공개된 세금정책이 아직 없습니다." : "No tax policies have been published yet."}</p></div>}
-      </section>
-
-      <section id="past-tax-policies" className="mt-10 scroll-mt-24 overflow-hidden rounded-xl border border-charcoal/10 bg-white shadow-[0_12px_32px_rgba(31,51,73,0.055)]" aria-labelledby="past-tax-policies-title">
-        <div className="flex flex-col gap-3 border-b border-charcoal/10 bg-white px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-6"><div><span className="text-[10px] font-extrabold tracking-[.2em] text-gold">PAST TAX POLICIES</span><h2 id="past-tax-policies-title" className="editorial-title mt-1 text-2xl font-bold text-navy">{ko ? "지난 세금정책" : "Past Tax Policies"}<span className="ml-2 rounded-full bg-charcoal/5 px-2 py-0.5 text-xs text-charcoal/50">{pastCount}</span></h2></div><p className="max-w-2xl text-sm leading-6 text-charcoal/60">{ko ? "이전에 공개된 세금감시 기록입니다. 정책명·영향 대상·진행 상태로 필요한 기록을 찾아볼 수 있습니다." : "Previously published tax-watch records. Search by policy, affected group or status."}</p></div>
-        <div className="border-b border-charcoal/10 bg-[#FAF8F2] p-4"><label className="flex items-center gap-3 rounded-lg border border-charcoal/15 bg-white px-4 py-3"><FileSearch size={18} className="text-charcoal/45"/><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={ko ? "정책명·영향 대상·진행 상태 검색" : "Search policy, affected group or status"} className="w-full bg-transparent text-sm outline-none"/></label></div>
-        {filteredPastPolicies.length || showPastExplainer ? <div>{showPastExplainer && <TaxExplainerRow ko={ko} />}{filteredPastPolicies.map((policy, index) => <PolicyRow key={policy.slug} policy={policy} ko={ko} index={index}/>)}</div> : <div className="py-14 text-center"><FileSearch className="mx-auto text-gold"/><p className="mt-4 text-sm font-bold text-navy">{ko ? "조건에 맞는 지난 세금정책이 없습니다." : "No past tax policies match this search."}</p></div>}
-      </section>
+    <div className="container-page py-10 sm:py-12"><div className="flex flex-col gap-3 border-b-2 border-navy pb-5 sm:flex-row sm:items-end sm:justify-between"><div><span className="section-kicker">TAX WATCH</span><h2 className="mt-2 text-3xl font-extrabold text-navy">{ko ? "세금감시 목록" : "Tax Watch"}</h2></div><p className="max-w-lg text-sm leading-7 text-charcoal/55">{ko ? "왼쪽은 씨앗의 기사, 오른쪽은 정책 요약과 공식 원문입니다." : "Seed Voice articles appear beside policy summaries and official sources."}</p></div>
+      <label className="mt-6 flex items-center gap-3 border border-green-deep/15 bg-white px-4 py-3"><FileSearch size={18} className="text-charcoal/45"/><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={ko ? "정책·기사 검색" : "Search policies and articles"} className="w-full bg-transparent text-sm outline-none"/></label>
+      <div className="mt-3">{filtered.map((row) => <WatchPairRow key={row.key} article={row.article} record={row.record} ko={ko}/>)}</div>
+      {!filtered.length && <p className="py-14 text-center text-sm text-charcoal/55">{ko ? "검색 결과가 없습니다." : "No matching records."}</p>}
     </div>
   </section>;
 }
