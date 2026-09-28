@@ -28,7 +28,7 @@ export const unpostedDayPoemColumn: SeedColumn = {
   displayInlineImage: false,
   referenceVideo: {
     youtubeId: "WZFyLF1kHT8",
-    thumbnailSrc: "https://i.ytimg.com/vi/WZFyLF1kHT8/hqdefault.jpg",
+    thumbnailSrc: "images/columns/unposted-day-musk-thumbnail.jpg",
     thumbnailAlt: "일론 머스크가 SNS에 보이는 모습과 행복에 관해 이야기하는 짧은 영상",
     title: "함께 볼 영상 | SNS 속 행복과 비교",
     description: "일론 머스크가 조 로건과의 2018년 대담에서 SNS에 올리는 좋은 순간과 비교의 감정을 이야기한다. 이 영상은 시의 원문이나 화자의 실제 경험을 설명하는 자료가 아니다.",
