@@ -12,6 +12,10 @@ export const issue36: ColumnTranslation = {
     caption: "Twenty-six is the eventual statutory size of the court. The 22-appointment estimate combines 12 new seats and replacements for 10 retiring justices; it is a projection, not 22 additional seats.",
     credit: "SEED VOICE chart, based on the legislation and Yonhap News Agency reporting",
   },
+  sourceDocument: {
+    title: "PSPD's Original Statement on the Renomination Dispute",
+    description: "Open the public document linked from PSPD's original post to compare its claims with this article.",
+  },
   sections: [
     { title: "A nominee was chosen, but his case did not reach parliament", paragraphs: [
       "On August 18, Chief Justice Cho Hee-dae nominated Judges Son Bong-gi and Kim Seong-su to the Supreme Court. The presidential office proceeded with Kim's appointment but declined to send Son's nomination to the National Assembly for consent. It argued that Cho had made a written nomination without substantive prior consultation and asked for another candidate. Cho responded that the request did not clearly state its specific reasons and constitutional basis.",

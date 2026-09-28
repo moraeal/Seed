@@ -1,10 +1,11 @@
 import { Download, ExternalLink, FileText } from "lucide-react";
 import type { SeedColumn } from "../data/columns";
 
-const assetSrc = (src: string) => `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
+const assetSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 
 export default function SourceDocumentPanel({ document, ko }: { document: NonNullable<SeedColumn["sourceDocument"]>; ko: boolean }) {
   const pdfUrl = assetSrc(document.pdfPath);
+  const externalDocument = /^https?:\/\//i.test(document.pdfPath);
 
   return <aside id="source-document" className="mt-8 scroll-mt-24 overflow-hidden border border-green-deep/15 bg-white shadow-[0_16px_45px_rgba(23,76,58,.07)]" aria-labelledby="source-document-title">
     <div className="border-b border-green-deep/10 bg-green-pale/45 px-5 py-5 sm:px-7">
@@ -15,12 +16,12 @@ export default function SourceDocumentPanel({ document, ko }: { document: NonNul
           <p className="mt-2 text-sm leading-6 text-charcoal/65">{document.description}</p>
         </div>
         <div className="flex shrink-0 flex-wrap gap-2">
-          <a href={pdfUrl} target="_blank" rel="noreferrer" className="button-secondary min-h-9 px-3 py-2 text-xs"><ExternalLink size={15}/>{ko ? "새 창에서 보기" : "Open PDF"}</a>
-          <a href={pdfUrl} download className="button-primary min-h-9 px-3 py-2 text-xs"><Download size={15}/>{ko ? "PDF 내려받기" : "Download"}</a>
+          <a href={pdfUrl} target="_blank" rel="noreferrer" className="button-secondary min-h-9 px-3 py-2 text-xs"><ExternalLink size={15}/>{externalDocument ? (ko ? "원문 파일 열기" : "Open original statement") : (ko ? "새 창에서 보기" : "Open PDF")}</a>
+          {!externalDocument && <a href={pdfUrl} download className="button-primary min-h-9 px-3 py-2 text-xs"><Download size={15}/>{ko ? "PDF 내려받기" : "Download"}</a>}
         </div>
       </div>
     </div>
-    <details className="group">
+    {document.pageImages.length > 0 && <details className="group">
       <summary className="cursor-pointer list-none px-5 py-4 text-sm font-bold text-green-deep marker:hidden sm:px-7">
         <span className="group-open:hidden">{ko ? `성명서 원문 ${document.pageImages.length}쪽 펼쳐 보기` : `Show all ${document.pageImages.length} pages`}</span>
         <span className="hidden group-open:inline">{ko ? "성명서 원문 접기" : "Hide source document"}</span>
@@ -31,6 +32,6 @@ export default function SourceDocumentPanel({ document, ko }: { document: NonNul
           <figcaption className="border-t border-charcoal/10 px-4 py-2 text-center text-xs text-charcoal/50">{ko ? `${index + 1}쪽` : `Page ${index + 1}`}</figcaption>
         </figure>)}
       </div>
-    </details>
+    </details>}
   </aside>;
 }

@@ -23,6 +23,12 @@ export const supremeCourtCivicWatchColumn: SeedColumn = {
     credit: "씨앗의 소리 도표 · 국회 통과 법안과 연합뉴스 보도 기준",
     sourceUrl: "https://www.yna.co.kr/view/AKR20260228046251001",
   },
+  sourceDocument: {
+    title: "참여연대 재제청 거부 논평 원문",
+    description: "참여연대 게시글의 ‘원문보기/다운로드’가 연결한 공개 문서입니다. 씨앗의 기사와 참여연대의 실제 주장을 직접 대조해 보세요.",
+    pdfPath: "https://docs.google.com/document/d/1Ev2t-FrM78PqXg4_Z5s3SK5WN-k6vLflvjUhmQsNj6Y/edit?usp=sharing",
+    pageImages: [],
+  },
   sections: [
     {
       title: "이미 제청된 후보, 국회로 가지 못했다",
