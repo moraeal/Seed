@@ -63,7 +63,7 @@ export default function LegislativeWatch() {
     <header className="border-b border-green-deep/15 bg-ivory"><div className="container-page grid gap-4 py-5 sm:py-7 lg:grid-cols-[.8fr_1.2fr] lg:items-center"><div><span className="section-kicker">LEGISLATIVE WATCH</span><h1 className="editorial-title mt-2 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "입법감시" : "Legislative Watch"}</h1></div><p className="max-w-2xl text-base leading-7 text-charcoal/65">{ko ? "새 법안의 내용과 시민 영향을 씨앗 기사와 나란히 살펴봅니다. 오른쪽에서 국회에 공개된 제안 자료와 원문을 확인할 수 있습니다." : "Read Seed Voice's analysis alongside the proposed bill. Open the official legislative record from the right-hand panel."}</p></div></header>
     <div className="container-page pt-6 sm:pt-8">
       {loading && <p className="py-5 text-sm text-charcoal/50">{ko ? "최신 입법 기록을 불러오는 중입니다." : "Loading current bill records…"}</p>}{error && <p className="py-5 text-sm text-red-700">{error}</p>}
-      <div>{rows.map((row) => <WatchPairRow key={row.key} article={row.article} record={row.record} ko={ko}/>)}</div>
+      <div>{rows.map((row) => <WatchPairRow key={row.key} article={row.article} record={row.record} ko={ko} compactRecord/>)}</div>
       {!rows.length && !loading && <p className="py-14 text-center text-sm text-charcoal/55">{ko ? "아직 공개된 기록이 없습니다." : "No published records yet."}</p>}
     </div>
   </section>;
