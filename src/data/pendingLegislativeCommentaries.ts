@@ -178,6 +178,20 @@ const drafts: Draft[] = [
     testEn: "The final text must give offense-based time limits, a cap on extensions, reasons and court review, and transition rules for people already reporting. The precise reduced penalty must be verified from the operative clauses.",
     before: "기한 상한 없는 변동신고 의무", after: "상한·형벌 하향·연장 가능성 제안", question: "연장은 몇 번, 누구의 심사로 가능한가", beforeEn: "Uncapped change-reporting duty", afterEn: "Proposed cap, reduced penalty and extension", questionEn: "How often, and under whose review, may it continue?",
   },
+  {
+    no: "2221573", slug: "real-estate-supervisor-investigation-powers", law: "부동산감독원 설치 및 운영에 관한 법률안", lawEn: "Real Estate Supervisory Agency Bill",
+    url: "https://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_T2T6R0S9Q1Y7Z1X7Y4W3X3V8V6E4C4", hero: "images/columns/real-estate-supervisor/administrative-review.webp",
+    title: "부동산감독원이 조사와 수사까지, 시민의 거래정보는 누가 지키나", titleEn: "A new property watchdog would investigate and police. Who guards the data?",
+    summary: "국무총리 소속 부동산감독원에 조사·수사 조정과 직접 조사 권한을 주는 법안이 발의됐다. 복합 사기 대응은 필요하지만 금융·거래정보 접근과 강제 조사에는 독립적인 통제가 따라야 한다.",
+    summaryEn: "A bill would create a property supervisor under the prime minister with investigative and coordinating powers. Complex fraud warrants a response, but access to transaction and financial records needs independent checks.",
+    fact: "의안 제2221573호는 부동산감독원 신설, 관계기관 업무 조정, 의심거래 직권조사와 출석·자료 제출 요구를 제안한다. 특정 점포의 금융거래정보를 요구하고 물건을 영치할 수 있으며, 조사 거부 등에 3천만 원 이하 과태료를 둘 수 있다. 조사·수사 부서의 정보 분리와 심의위원회도 제안했지만 아직 법률로 확정된 것은 아니다.",
+    factEn: "Bill No. 2221573 proposes a new agency to coordinate authorities and investigate suspected property misconduct. It could demand attendance and records, request financial information from a specified branch, retain objects and seek fines of up to 30 million won for obstruction. The proposal also provides separate investigation and policing data systems and review committees; none of these powers is yet enacted by this bill.",
+    judgment: "여러 기관을 오가는 조직적 부동산 사기를 잡으려면 정보의 단절을 줄여야 한다. 그러나 거래신고와 금융자료를 한 기관에 모으고 그 기관이 조사와 수사까지 맡으면 시민은 자신에 대한 의심이 어떻게 만들어졌는지 알기 어려워진다. 내부 위원회 설치만으로 독립적인 통제가 완성되는 것은 아니다.",
+    judgmentEn: "Organized property fraud can exploit gaps between agencies. Consolidating transaction and financial information, however, lets one body build suspicion and pursue a case. An internal committee alone cannot show a resident how they were selected or give them an independent remedy.",
+    test: "직권조사의 선정 기준, 금융정보 요청의 범위와 보존·삭제 기간, 잘못된 자료의 정정 및 불복 절차를 법률에 명시해야 한다. 별도로 발의된 사법경찰관리법 개정안의 처리 결과에 따라 실제 수사 권한도 달라질 수 있다.",
+    testEn: "The law should specify selection criteria for investigations, limits and retention periods for financial data, correction of erroneous records and an appeal route. The agency's policing powers also depend on a separate bill concerning judicial police authority.",
+    before: "기관별 분산 조사·수사", after: "감독원 신설·직접 조사·정보 통합 제안", question: "정보 접근과 직권조사를 외부에서 누가 통제하는가", beforeEn: "Investigations divided among agencies", afterEn: "Proposed new agency and integrated data access", questionEn: "Who independently reviews data access and inquiries?",
+  },
 ];
 
 export const pendingLegislativeCommentaries: LegislativeCommentary[] = drafts.map((d) => {
