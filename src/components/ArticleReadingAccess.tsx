@@ -37,12 +37,26 @@ export default function ArticleReadingAccess({ children }: { children: ReactNode
   useEffect(() => {
     if (canRead) return;
     let active = true;
-    void import("../seo").then(({ getSeoRoute }) => {
-      const route = getSeoRoute(pathname);
-      if (active) setPreview(route ? { title: route.title, description: route.description, image: route.image, imageAlt: route.imageAlt } : null);
-    });
+    setPreview(null);
+    const billSlug = pathname.match(/^\/monitoring\/legislation\/(bill-[^/]+)\/?$/)?.[1];
+    if (billSlug) {
+      void import("../lib/legislativeMonitoring").then(({ getLegislativeBillBySlug }) => getLegislativeBillBySlug(billSlug))
+        .then((bill) => {
+          if (!active || !bill) return;
+          const ko = language === "ko";
+          setPreview({
+            title: ko ? bill.title : bill.analysis?.title_en || bill.title,
+            description: (ko ? bill.public_summary_ko || bill.analysis?.summary_ko : bill.public_summary_en || bill.analysis?.summary_en) || bill.official_summary || "",
+          });
+        }).catch(() => {});
+    } else {
+      void import("../seo").then(({ getSeoRoute }) => {
+        const route = getSeoRoute(pathname);
+        if (active) setPreview(route ? { title: route.title, description: route.description, image: route.image, imageAlt: route.imageAlt } : null);
+      });
+    }
     return () => { active = false; };
-  }, [canRead, pathname]);
+  }, [canRead, pathname, language]);
 
   if (!reading) return <>{children}</>;
   if (loading) return <div className="container-page min-h-[45vh] py-16" role="status">{language === "ko" ? "구독 상태를 확인하는 중입니다…" : "Checking subscription…"}</div>;
