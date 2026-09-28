@@ -3,16 +3,22 @@ import { Link } from "react-router-dom";
 import SafeImage from "../components/SafeImage";
 import MonitoringSubnav from "../components/MonitoringSubnav";
 import type { LocalizedText } from "../data/publicInterestWatch";
-import { newsTrackerCases } from "../data/newsTrackerRegistry";
+import { publicInterestWatchCases } from "../data/newsTrackerRegistry";
 import { useLanguage } from "../i18n";
 
 const imageSrc = (src: string) => src.startsWith("/") ? src : `/${src}`;
+const recentUpdate = (publishedAt: string | undefined, updatedAt: string) => {
+  if (!publishedAt || updatedAt <= publishedAt) return false;
+  const todayInKorea = new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  const age = Date.parse(`${todayInKorea}T00:00:00Z`) - Date.parse(`${updatedAt}T00:00:00Z`);
+  return age >= 0 && age < 7 * 24 * 60 * 60 * 1000;
+};
 
 export default function Monitoring() {
   const { language } = useLanguage();
   const ko = language === "ko";
   const t = (value: LocalizedText) => value[language];
-  const trackers = [...newsTrackerCases].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+  const cases = [...publicInterestWatchCases].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt) || a.title[language].localeCompare(b.title[language]));
 
   return <section className="bg-paper pb-16">
     <header className="border-b border-green-deep/15 bg-ivory">
@@ -28,12 +34,12 @@ export default function Monitoring() {
       <section aria-labelledby="issue-watch-title">
         <div className="flex flex-col gap-3 border-b-2 border-navy pb-5 sm:flex-row sm:items-end sm:justify-between">
           <div><span className="section-kicker">ISSUE WATCH</span><h2 id="issue-watch-title" className="mt-2 text-3xl font-extrabold text-navy">{ko ? "이슈감시" : "Issue Watch"}</h2></div>
-          <p className="max-w-lg text-sm leading-7 text-charcoal/55">{ko ? "한 번의 보도로 끝내지 않고, 확인된 사실과 새로 달라진 내용을 날짜별로 이어 기록합니다." : "Instead of ending with one report, we keep a dated record of verified facts and every material change."}</p>
+          <p className="max-w-lg text-sm leading-7 text-charcoal/55">{ko ? "뉴스트래커와 감시기록을 한곳에서 보고, 새로 달라진 내용을 날짜별로 확인합니다." : "Browse news trackers and watch records together, with material changes shown by date."}</p>
         </div>
 
-        <div>{trackers.map((item) => <Link key={item.slug} to={`/monitoring/${item.slug}`} className="group grid gap-5 border-b border-green-deep/15 px-5 py-6 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7">
-          <div className="relative overflow-hidden bg-green-deep"><SafeImage src={imageSrc(item.heroImage?.src ?? "/images/brand/editorial-image-fallback.svg")} alt={t(item.heroImage?.alt ?? item.title)} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.025]"/><span className="absolute bottom-2 left-2 rounded-sm bg-black/65 px-2 py-1 text-[10px] font-semibold text-white backdrop-blur-sm">{ko ? "이슈감시" : "Issue watch"}</span></div>
-          <div><div className="mb-3 flex flex-wrap items-center gap-2 text-[11px] font-extrabold"><span className="bg-green-deep px-2.5 py-1 text-white">{t(item.status)}</span><span className="text-green-deep">{t(item.eyebrow)}</span></div><h3 className="editorial-title line-clamp-2 text-balance text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">{t(item.title)}</h3><p className="mt-2 line-clamp-2 max-w-3xl text-base leading-7 text-charcoal/60">{t(item.summary)}</p><div className="mt-4 flex flex-wrap items-center gap-4 border-t border-green-deep/10 pt-3 text-xs text-charcoal/45"><time>{item.updatedAt.replace(/-/g, ".")}</time><span className="ml-auto flex items-center gap-2 font-extrabold text-green-deep">{ko ? "기록 보기" : "View record"}<ArrowRight size={15}/></span></div></div>
+        <div>{cases.map((item) => <Link key={item.slug} to={`/monitoring/${item.slug}`} className="group grid gap-5 border-b border-green-deep/15 px-5 py-6 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7">
+          <div className="relative overflow-hidden bg-green-deep"><SafeImage src={imageSrc(item.heroImage?.src ?? "/images/brand/editorial-image-fallback.svg")} alt={t(item.heroImage?.alt ?? item.title)} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.025]"/><span className="absolute bottom-2 left-2 rounded-sm bg-black/65 px-2 py-1 text-[10px] font-semibold text-white backdrop-blur-sm">{item.timeline?.length ? (ko ? "뉴스트래커" : "News tracker") : (ko ? "이슈감시" : "Issue watch")}</span></div>
+          <div><div className="mb-3 flex flex-wrap items-center gap-2 text-[11px] font-extrabold"><span className="bg-green-deep px-2.5 py-1 text-white">{t(item.status)}</span><span className="text-green-deep">{t(item.eyebrow)}</span>{item.timeline?.length && recentUpdate(item.publishedAt, item.updatedAt) && <span className="rounded-sm bg-red-600 px-2.5 py-1 text-white" aria-label={ko ? `새 내용 업데이트 ${item.updatedAt}` : `New update ${item.updatedAt}`}>{ko ? "업데이트" : "UPDATED"}</span>}</div><h3 className="editorial-title line-clamp-2 text-balance text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">{t(item.title)}</h3><p className="mt-2 line-clamp-2 max-w-3xl text-base leading-7 text-charcoal/60">{t(item.summary)}</p><div className="mt-4 flex flex-wrap items-center gap-4 border-t border-green-deep/10 pt-3 text-xs text-charcoal/45"><time dateTime={item.updatedAt}>{item.updatedAt.replace(/-/g, ".")}</time><span className="ml-auto flex items-center gap-2 font-extrabold text-green-deep">{ko ? "기록 보기" : "View record"}<ArrowRight size={15}/></span></div></div>
         </Link>)}</div>
       </section>
     </div>
