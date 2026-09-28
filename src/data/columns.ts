@@ -37,6 +37,15 @@ export const hotIssueColumnSlugs = new Set([
   "prosecution-reform-power-transfer-2026",
 ]);
 
+export const publicInterestColumnSlugs = new Set([
+  "participatory-democracy-supreme-court-appointments",
+  "civic-groups-are-not-state-vanguard-2026",
+]);
+
+export const getPublicInterestColumnsNewestFirst = () => columns
+  .filter((column) => publicInterestColumnSlugs.has(column.slug))
+  .sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue);
+
 export const hotIssueColumnTrackerSlugs: Record<string, string> = {
   "democratic-party-nuclear-policy-reversal": "democratic-party-nuclear-policy-reversal-tracker",
   "military-academy-integration-rotc-question": "military-academy-integration-tracker",
@@ -49,7 +58,7 @@ export const isHotIssueColumn = (slug: string) => hotIssueColumnSlugs.has(slug);
 export const getColumn = (slug: string) => columns.find((column) => column.slug === slug);
 
 export const getColumnsNewestFirst = () => columns
-  .filter((column) => !isHotIssueColumn(column.slug))
+  .filter((column) => !isHotIssueColumn(column.slug) && !publicInterestColumnSlugs.has(column.slug))
   .sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue);
 
 export const getHotIssueColumnsNewestFirst = () => columns

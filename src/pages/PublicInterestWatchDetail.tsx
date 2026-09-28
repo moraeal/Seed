@@ -51,7 +51,7 @@ export default function PublicInterestWatchDetail() {
     <article className="bg-paper pb-12 sm:pb-16">
       <header className="border-b border-green-deep/15 bg-ivory">
         <div className="container-page max-w-5xl py-4 sm:py-5">
-          <Link to="/monitoring" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "시민감시 목록" : "Civic Watch"}</Link>
+          <Link to="/monitoring/public-interest" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "공익감시 목록" : "Public-Interest Watch"}</Link>
           <div className="mt-3 border-t-2 border-navy pt-3">
             <div className="flex flex-wrap items-center gap-3">
               <span className="section-kicker">{t(item.eyebrow)}</span>

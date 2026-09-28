@@ -3,7 +3,7 @@ import { FormEvent, useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import SafeImage from "../components/SafeImage";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
-import { getColumnsNewestFirst, getHotIssueColumnsNewestFirst } from "../data/columns";
+import { getColumnsNewestFirst, getHotIssueColumnsNewestFirst, getPublicInterestColumnsNewestFirst, publicInterestColumnSlugs } from "../data/columns";
 import { civicLanguageCategories } from "../data/civicLanguageMap";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
 import { getNewsNewestFirst } from "../data/news";
@@ -79,9 +79,9 @@ export default function SearchPage() {
       imageAlt: item.images?.[0]?.alt ?? "",
     })).map((item) => withTopics(item));
 
-    const columns = getColumnsNewestFirst().map((item) => localizeColumn(item, language)).map((item) => ({
+    const columns = [...getColumnsNewestFirst(), ...getPublicInterestColumnsNewestFirst()].map((item) => localizeColumn(item, language)).map((item) => ({
       key: `column-${item.slug}`,
-      category: ko ? "칼럼" : "Columns",
+      category: publicInterestColumnSlugs.has(item.slug) ? (ko ? "공익감시" : "Public-Interest Watch") : (ko ? "칼럼" : "Columns"),
       author: item.author,
       authorBio: item.authorBio,
       title: item.title,

@@ -1,29 +1,63 @@
-import { ArrowRight, BookOpenText, ShieldCheck } from "lucide-react";
+import { ArrowRight, FileSearch, ShieldCheck } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { civicWatchCases, type LocalizedText } from "../data/publicInterestWatch";
+import SafeImage from "../components/SafeImage";
+import { getPublicInterestColumnsNewestFirst } from "../data/columns";
+import { localizeColumn } from "../data/localizedContent";
+import { civicWatchCases } from "../data/publicInterestWatch";
 import { useLanguage } from "../i18n";
+
+const imageSrc = (src: string) => /^https?:\/\//i.test(src) || src.startsWith("/") ? src : `${import.meta.env.BASE_URL}${src}`;
 
 export default function PublicInterestWatch() {
   const { language } = useLanguage();
   const ko = language === "ko";
-  const t = (value: LocalizedText) => value[language];
+  const [query, setQuery] = useState("");
+  const articles = getPublicInterestColumnsNewestFirst().map((item) => localizeColumn(item, language)).map((item) => ({
+    key: `article-${item.slug}`,
+    href: `/columns/${item.slug}`,
+    label: ko ? "공익감시 기사" : "PUBLIC-INTEREST ARTICLE",
+    title: item.title,
+    summary: item.summary,
+    date: item.date,
+    image: item.heroImage.src,
+    alt: item.heroImage.alt,
+    searchText: `${item.title} ${item.summary} ${item.subtitle}`,
+  }));
+  const records = civicWatchCases.map((item) => ({
+    key: `record-${item.slug}`,
+    href: `/monitoring/${item.slug}`,
+    label: `${item.organization[language]} · ${item.status[language]}`,
+    title: item.title[language],
+    summary: item.summary[language],
+    date: item.updatedAt,
+    image: item.heroImage?.src,
+    alt: item.heroImage?.alt[language] ?? item.title[language],
+    searchText: `${item.organization[language]} ${item.title[language]} ${item.summary[language]} ${item.status[language]}`,
+  }));
+  const rows = [...articles, ...records]
+    .sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title))
+    .filter((item) => item.searchText.toLowerCase().includes(query.trim().toLowerCase()));
 
   return <section className="min-h-[70vh] bg-paper pb-16">
     <header className="border-b border-green-deep/15 bg-ivory">
-      <div className="container-page grid gap-6 py-10 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
-        <div><span className="section-kicker">PUBLIC-INTEREST WATCH</span><h1 className="editorial-title mt-2 text-[2.25rem] font-bold text-navy sm:text-[2.75rem]">{ko ? "공익감시" : "Public-Interest Watch"}</h1></div>
+      <div className="container-page grid gap-6 py-9 sm:py-12 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
+        <div><span className="section-kicker">PUBLIC-INTEREST WATCH</span><h1 className="editorial-title mt-2 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "공익감시" : "Public-Interest Watch"}</h1></div>
         <p className="max-w-2xl text-base leading-8 text-charcoal/65">{ko ? "시민의 이름으로 권한과 돈을 쓰는 기관과 사업을 기록합니다. 공공기관·공익기관·시민단체·보조사업의 예산, 의사결정, 설명 책임과 실제 결과를 공개자료로 확인합니다." : "We track institutions and programs that use power and money in the public interest—examining budgets, decisions, accountability and results through public records."}</p>
       </div>
     </header>
 
     <div className="container-page py-10 sm:py-12">
       <div className="flex flex-col gap-3 border-b-2 border-navy pb-5 sm:flex-row sm:items-end sm:justify-between">
-        <div><span className="section-kicker">WATCH RECORDS</span><h2 className="mt-2 text-3xl font-extrabold text-navy">{ko ? "자료로 만든 감시기록" : "Watch records built from evidence"}</h2></div>
-        <p className="max-w-lg text-sm leading-7 text-charcoal/55">{ko ? "공개자료, 확인할 질문, 기관의 답변과 정정 내역을 한 기록에 쌓습니다." : "Public records, open questions, institutional replies and corrections stay together."}</p>
+        <div><span className="section-kicker">PUBLIC-INTEREST WATCH</span><h2 className="mt-2 text-3xl font-extrabold text-navy">{ko ? "공익감시 목록" : "Public-Interest Watch"}</h2></div>
+        <p className="max-w-lg text-sm leading-7 text-charcoal/55">{ko ? "시민단체에 대한 씨앗의 기사와 기관별 감시기록을 함께 살펴보세요." : "Explore Seed Voice reporting on civic groups and our institutional watch records."}</p>
       </div>
-
-      <div className="mt-4 grid gap-4 lg:grid-cols-2">{civicWatchCases.map((item) => <Link key={item.slug} to={`/monitoring/${item.slug}`} className="group flex min-h-[300px] flex-col border border-green-deep/15 bg-white p-5 transition hover:-translate-y-1 hover:shadow-[0_20px_55px_rgba(23,76,58,.10)] sm:p-6"><div className="flex items-center justify-between gap-3"><span className="section-kicker">{t(item.eyebrow)}</span><span className="rounded-full bg-green-pale px-3 py-1 text-[11px] font-extrabold text-green-deep">{t(item.status)}</span></div>{item.heroImage ? <img src={item.heroImage.src} alt={t(item.heroImage.alt)} className="mt-5 aspect-[16/9] w-full object-cover" /> : <BookOpenText className="mt-5 text-gold" size={25}/>}<p className="mt-4 text-sm font-extrabold text-green-deep">{t(item.organization)}</p><h3 className="editorial-title mt-2 text-[1.3rem] font-bold leading-snug text-navy group-hover:text-green-mid sm:text-[1.575rem]">{t(item.title)}</h3><p className="mt-3 text-sm leading-6 text-charcoal/60">{t(item.summary)}</p><span className="mt-auto flex items-center gap-2 pt-5 text-sm font-extrabold text-green-deep">{ko ? "감시 기록과 원문 보기" : "View record and sources"}<ArrowRight size={15}/></span></Link>)}</div>
-
+      <label className="mt-6 flex items-center gap-3 border border-green-deep/15 bg-white px-4 py-3"><FileSearch size={18} className="text-charcoal/45"/><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={ko ? "기관·기사 검색" : "Search organizations and articles"} className="w-full bg-transparent text-sm outline-none"/></label>
+      <div className="mt-3">{rows.map((item) => <Link key={item.key} to={item.href} className="group grid gap-5 border-b border-green-deep/15 px-5 py-6 transition-colors hover:bg-green-pale/65 md:grid-cols-[240px_1fr] md:items-center md:px-7">
+        <div className="overflow-hidden bg-green-deep"><SafeImage src={item.image ? imageSrc(item.image) : "/images/brand/editorial-image-fallback.svg"} alt={item.alt} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.025]"/></div>
+        <div className="min-w-0"><span className="text-[11px] font-extrabold tracking-wide text-green-deep">{item.label}</span><h3 className="editorial-title mt-2 line-clamp-2 text-[1.3rem] font-bold leading-tight text-navy group-hover:text-green-deep sm:text-[1.55rem]">{item.title}</h3><p className="mt-2 line-clamp-3 text-sm leading-7 text-charcoal/65">{item.summary}</p><div className="mt-4 flex items-center justify-between gap-3 border-t border-green-deep/10 pt-3 text-xs text-charcoal/45"><time>{item.date.replace(/-/g, ".")}</time><span className="inline-flex items-center gap-1.5 font-extrabold text-green-deep">{ko ? "내용 보기" : "Read more"}<ArrowRight size={14}/></span></div></div>
+      </Link>)}</div>
+      {!rows.length && <p className="py-14 text-center text-sm text-charcoal/55">{ko ? "검색 결과가 없습니다." : "No matching records."}</p>}
       <aside className="mt-12 grid gap-6 border-t-2 border-navy pt-9 lg:grid-cols-[.7fr_1.3fr] lg:items-start"><div className="flex items-center gap-3 text-navy"><ShieldCheck className="text-gold"/><h2 className="text-2xl font-extrabold">{ko ? "공익감시가 지키는 원칙" : "The public-interest watch standard"}</h2></div><p className="text-sm leading-8 text-charcoal/65">{ko ? "진영이나 명성보다 사실과 시민이 치르는 비용을 봅니다. 확인된 사실, 아직 남은 질문, 씨앗의 판단을 구분하고 충분한 반론권과 정정 절차를 보장합니다. 선한 목적은 검증의 면허가 아닙니다." : "We examine facts and the cost borne by citizens, not reputation or partisan convenience. Confirmed facts, open questions and Seed Voice's judgment are kept separate, with a right of reply and correction. Good intentions are not immunity from scrutiny."}</p></aside>
     </div>
   </section>;
