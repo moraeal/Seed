@@ -368,6 +368,25 @@ const isPublicLanguage = (kind: EditorialContentKind, slug: string) => kind === 
 const isUnificationLanguage = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "unification-freedom-responsibility";
 const isSkHynixHackathon = (kind: EditorialContentKind, slug: string) => kind === "briefing" && slug === "sk-hynix-ai-hackathon-skills-first-hiring";
 const isHospitalInheritanceTax = (kind: EditorialContentKind, slug: string) => kind === "briefing" && slug === "hospital-inheritance-tax-maternity-care";
+const isBusinessSuccessionThreshold = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "business-succession-deduction-threshold-2026";
+
+const businessSuccessionContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/columns/inheritance-tax-capital-and-talent-mobility",
+    title: "상속세가 자본과 인재의 망명을 자극하는 나라",
+    relationship: "관련 칼럼",
+    reason: "가업 승계 문제와 함께 상속세가 기업의 투자와 경영 결정에 미치는 영향을 살펴봅니다.",
+    listHref: "/columns", listLabel: "칼럼 전체 보기",
+  },
+  en: {
+    href: "/columns/inheritance-tax-capital-and-talent-mobility",
+    title: "How Inheritance Tax Can Push Capital and Talent Abroad",
+    relationship: "RELATED COLUMN",
+    reason: "Read more about how inheritance taxation can affect business investment and management decisions.",
+    listHref: "/columns", listLabel: "All columns",
+  },
+};
+
 const isCorporateCitizenColumn = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "corporations-are-citizens-too";
 
 const corporateCitizenContinuation: Record<Language, EditorialContinuation> = {
@@ -388,6 +407,7 @@ const corporateCitizenContinuation: Record<Language, EditorialContinuation> = {
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (isBusinessSuccessionThreshold(kind, slug)) return true;
   if (isCorporateCitizenColumn(kind, slug)) return true;
   if (isUnificationLanguage(kind, slug)) return true;
   if (isSkHynixHackathon(kind, slug)) return true;
@@ -411,6 +431,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (isBusinessSuccessionThreshold(kind, slug)) return businessSuccessionContinuation[language];
   if (isCorporateCitizenColumn(kind, slug)) return corporateCitizenContinuation[language];
   if (isUnificationLanguage(kind, slug)) return unificationLanguageContinuation[language];
   if (isSkHynixHackathon(kind, slug)) return skHynixHackathonContinuation[language];
