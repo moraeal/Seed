@@ -239,10 +239,10 @@ export default function Home() {
                   {item.term ? <>
                     {item.imageSrc && <SafeImage src={resolveImageSrc(item.imageSrc)} alt="" loading="lazy" referrerPolicy="no-referrer" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]" />}
                     <div className="absolute inset-0 bg-navy/45" aria-hidden="true" />
-                    <div className="relative flex h-full min-w-0 flex-col items-center justify-center px-2 text-center text-white" style={{ textShadow: "0 2px 4px #102b35, 0 0 8px #102b35", WebkitTextStroke: "0.35px #102b35" }}>
-                      <span className="editorial-title text-2xl font-black leading-tight sm:text-4xl">{ko ? item.term : item.termEnglish || item.term}</span>
-                      {ko && item.termHanja && <span className="mt-2 text-sm font-bold leading-tight sm:text-lg">{item.termHanja}</span>}
-                      {ko && item.termEnglish && <span className="mt-1 max-w-full break-words text-[10px] font-black leading-tight tracking-[.04em] sm:text-xs">{item.termEnglish}</span>}
+                    <div className="relative flex h-full min-w-0 flex-col items-center justify-center px-2 text-center text-white" style={{ textShadow: "1px 0 #102b35, -1px 0 #102b35, 0 1px #102b35, 0 -1px #102b35, 1px 1px #102b35, -1px 1px #102b35, 1px -1px #102b35, -1px -1px #102b35, 0 2px 5px #102b35" }}>
+                      <span className="editorial-title break-words text-3xl font-black leading-tight sm:text-5xl">{ko ? item.term : item.termEnglish || item.term}</span>
+                      {ko && item.termHanja && <span className="mt-2 text-base font-bold leading-tight sm:text-xl">{item.termHanja}</span>}
+                      {ko && item.termEnglish && <span className="mt-1 max-w-full break-words text-xs font-black leading-tight tracking-[.04em] sm:text-sm">{item.termEnglish}</span>}
                     </div>
                   </> : item.imageSrc ? <SafeImage src={resolveImageSrc(item.imageSrc)} alt={item.imageAlt || ""} loading="lazy" referrerPolicy="no-referrer" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]" /> : null}
                 </div>
