@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">DMZ 폭발 사고 뒤 현장조사 경과</title>
+  <desc id="desc">21일 폭발, 22일 유엔사 부대 방문, 26일 기동로 준비, 27일 사고 지점 근처까지 접근했지만 원점에는 도달하지 못함</desc>
+  <rect width="1200" height="560" fill="#f6f4ee"/>
+  <text x="68" y="76" font-family="Noto Sans KR, sans-serif" font-size="34" font-weight="800" fill="#173a32">폭발 뒤 현장조사까지</text>
+  <text x="68" y="117" font-family="Noto Sans KR, sans-serif" font-size="19" fill="#52635f">2026년 9월 · 공개된 군 설명과 보도 기준</text>
+  <path d="M140 270H1035" stroke="#b3c6bc" stroke-width="8" stroke-linecap="round"/>
+  <g font-family="Noto Sans KR, sans-serif" text-anchor="middle">
+    <circle cx="145" cy="270" r="22" fill="#9b4b38"/>
+    <text x="145" y="220" font-size="25" font-weight="800" fill="#173a32">21일</text>
+    <text x="145" y="325" font-size="20" font-weight="700" fill="#173a32">폭발 사고</text>
+    <text x="145" y="356" font-size="17" fill="#52635f">간부 3명 부상</text>
+    <circle cx="440" cy="270" r="22" fill="#24594d"/>
+    <text x="440" y="220" font-size="25" font-weight="800" fill="#173a32">22일</text>
+    <text x="440" y="325" font-size="20" font-weight="700" fill="#173a32">유엔사 부대 방문</text>
+    <text x="440" y="356" font-size="17" fill="#52635f">사고 내용 확인</text>
+    <circle cx="735" cy="270" r="22" fill="#24594d"/>
+    <text x="735" y="220" font-size="25" font-weight="800" fill="#173a32">26일</text>
+    <text x="735" y="325" font-size="20" font-weight="700" fill="#173a32">DMZ 현장 진입</text>
+    <text x="735" y="356" font-size="17" fill="#52635f">기동로·작전환경 점검</text>
+    <circle cx="1030" cy="270" r="25" fill="#c98434"/>
+    <text x="1030" y="220" font-size="25" font-weight="800" fill="#173a32">27일</text>
+    <text x="1030" y="325" font-size="20" font-weight="700" fill="#173a32">원점 미도달</text>
+    <text x="1030" y="356" font-size="17" fill="#52635f">근접 지역까지 조사</text>
+  </g>
+  <rect x="68" y="420" width="1064" height="83" rx="12" fill="#e2eae3"/>
+  <text x="94" y="458" font-family="Noto Sans KR, sans-serif" font-size="22" font-weight="700" fill="#173a32">남은 기록</text>
+  <text x="94" y="487" font-family="Noto Sans KR, sans-serif" font-size="18" fill="#345b50">21~26일 안전 확보와 조사 결정은 날짜별로 어떻게 진행됐나</text>
+</svg>

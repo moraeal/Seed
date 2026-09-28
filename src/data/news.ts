@@ -5,6 +5,7 @@ import { publicEnterpriseRestructureArticle } from "./news/publicEnterpriseRestr
 import { dmzSecurityCommandFailureArticle } from "./news/dmzSecurityCommandFailure";
 import { supremeCourtRenominationStandoffArticle } from "./news/supremeCourtRenominationStandoff";
 import { majorCrimesAgencyStaffingArticle } from "./news/majorCrimesAgencyStaffing";
+import { dmzInvestigationTimelineArticle } from "./news/dmzInvestigationTimeline";
 
 export type { NewsImage, NewsSection, NewsSource, NewsVideo, SelectedNews } from "./newsArchive";
 export type NewsArticle = ArchiveNewsArticle & { additionalImages?: NewsImage[] };
@@ -393,7 +394,7 @@ const mediaAppealJusticeArticle: NewsArticle = {
   ]
 };
 
-export const newsArticles: NewsArticle[] = [majorCrimesAgencyStaffingArticle, supremeCourtRenominationStandoffArticle, dmzSecurityCommandFailureArticle, publicEnterpriseRestructureArticle, fuelPriceCapTaxBillArticle, nationalDebtRatioGdpComparisonArticle, mediaAppealJusticeArticle, localSportsSubsidyArticle, lhSplitPublicAgencyArticle, ...archivedNewsArticles];
+export const newsArticles: NewsArticle[] = [dmzInvestigationTimelineArticle, majorCrimesAgencyStaffingArticle, supremeCourtRenominationStandoffArticle, dmzSecurityCommandFailureArticle, publicEnterpriseRestructureArticle, fuelPriceCapTaxBillArticle, nationalDebtRatioGdpComparisonArticle, mediaAppealJusticeArticle, localSportsSubsidyArticle, lhSplitPublicAgencyArticle, ...archivedNewsArticles];
 
 export const getNewsNewestFirst = () => [...newsArticles].sort((a, b) => b.date.localeCompare(a.date));
 export const getNewsArticle = (slug: string) => newsArticles.find((article) => article.slug === slug);

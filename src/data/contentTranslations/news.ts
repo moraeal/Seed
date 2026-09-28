@@ -4,8 +4,10 @@ import { publicEnterpriseRestructureTranslation } from "./news/publicEnterpriseR
 import { dmzSecurityCommandFailureTranslation } from "./news/dmzSecurityCommandFailure";
 import { supremeCourtRenominationStandoffTranslation } from "./news/supremeCourtRenominationStandoff";
 import { majorCrimesAgencyStaffingTranslation } from "./news/majorCrimesAgencyStaffing";
+import { dmzInvestigationTimelineTranslation } from "./news/dmzInvestigationTimeline";
 
 export const newsTranslations: Record<string, NewsTranslation> = {
+  "dmz-blast-investigation-timeline-2026": dmzInvestigationTimelineTranslation,
   "major-crimes-agency-investigator-staffing-2026": majorCrimesAgencyStaffingTranslation,
   "supreme-court-renomination-standoff-2026": supremeCourtRenominationStandoffTranslation,
   "dmz-security-command-failure": dmzSecurityCommandFailureTranslation,
