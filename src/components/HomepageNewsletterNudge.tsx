@@ -77,7 +77,7 @@ function NewsletterNudge({ reading }: { reading: boolean }) {
 export default function HomepageNewsletterNudge() {
   const { isVerified, loading } = useAuth();
   const { pathname } = useLocation();
-  if (loading) return null;
+  if (loading || pathname.replace(/\/$/, "") === "/about") return null;
   if (isVerified) return <SiyaArticleGuide />;
   return <NewsletterNudge reading={isReadingPage(pathname)} />;
 }
