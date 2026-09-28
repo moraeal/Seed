@@ -22,7 +22,7 @@ const copy = {
     title: <>내 삶에 닿는 뉴스,<br /><span className="text-[#bd613d]">씨앗과 함께 읽어요.</span></>,
     lead: "세금이 어디에 쓰이는지, 동네 병원의 변화가 진료에 어떤 영향을 줄지, 뉴스 속 숫자가 왜 다르게 보이는지 궁금할 때가 있죠. 씨앗의 소리는 흩어진 자료를 찾아 쉬운 말로 풀고, 그 일이 우리 생활과 어떻게 이어지는지 함께 살핍니다.",
     identity: "어려운 뉴스를 내 삶의 질문으로 바꾸는 독립 시민저널입니다.",
-    readToday: "오늘의 기사 읽기",
+    readToday: "왜 씨앗인가?",
     questionsKicker: "MY LIFE, MY QUESTIONS",
     questionsTitle: "이런 궁금증, 그냥 넘기지 마세요",
     questions: [
@@ -75,7 +75,7 @@ const copy = {
     title: <>News that touches your life,<br /><span className="text-[#bd613d]">made clearer together.</span></>,
     lead: "Wondering where your taxes go, how a neighborhood hospital's future may affect care, or why two news stories give different figures? SEED VOICE finds the records, explains them in plain language, and connects the story to everyday life.",
     identity: "An independent civic journal turning complicated news into questions you can use.",
-    readToday: "Read today's stories",
+    readToday: "Why ‘Seed’?",
     questionsKicker: "MY LIFE, MY QUESTIONS",
     questionsTitle: "Questions worth asking",
     questions: [
@@ -169,7 +169,7 @@ export default function About() {
             <p className="mt-7 max-w-2xl text-base leading-8 text-green-deep/85 sm:text-lg">{content.lead}</p>
             <p className="mt-5 max-w-2xl font-extrabold leading-7">{content.identity}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/news" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-green-deep px-6 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:shadow-lg">{content.readToday}<ArrowUpRight size={17}/></Link>
+              <Link to="/why-seed" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-green-deep px-6 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:shadow-lg">{content.readToday}<ArrowUpRight size={17}/></Link>
             </div>
           </div>
           <div className="relative order-first mx-auto w-full max-w-xl lg:order-last">

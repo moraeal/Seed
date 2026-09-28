@@ -11,6 +11,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import { LanguageProvider, useLanguage } from "./i18n";
 
 const About = lazy(() => import("./pages/About"));
+const WhySeed = lazy(() => import("./pages/WhySeed"));
 const PublisherMessage = lazy(() => import("./pages/PublisherMessage"));
 const Account = lazy(() => import("./pages/Account"));
 const CivicDictionary = lazy(() => import("./pages/CivicDictionary"));
@@ -87,6 +88,7 @@ function AppShell() {
           <Route path="/insights/tax" element={<Insights />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/why-seed" element={<WhySeed />} />
           <Route path="/publisher-message" element={<PublisherMessage />} />
           <Route path="/seed-language" element={<SeedLanguage />} />
           <Route path="/seed-language/why-civic-language" element={<CivicLanguageMap />} />
