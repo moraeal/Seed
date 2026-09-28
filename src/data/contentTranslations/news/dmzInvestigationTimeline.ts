@@ -52,7 +52,7 @@ export const dmzInvestigationTimelineTranslation: NewsTranslation = {
     {
       title: "‘Under investigation’ cannot conceal accountability",
       paragraphs: [
-        "SEED VOICE's earlier article, “A Soldier Lost His Foot. What Was the Defense Ministry Doing?”, examined the altered terrain identified before the incident and the warnings given to personnel. The days after the blast add a second test. If the team had to wait for safety, the military should show what it did every day to make the investigation possible.",
+        "SEED VOICE's earlier article, “[A Soldier Lost His Foot. What Was the Defense Ministry Doing?](/news/dmz-security-command-failure)”, examined the altered terrain identified before the incident and the warnings given to personnel. The days after the blast add a second test. If the team had to wait for safety, the military should show what it did every day to make the investigation possible.",
         "The next public account should include the plan to reach the exact site, the risk assessment before the accident, and the dated military-UNC consultations and decisions since September 21. Citizens can then judge whether the elapsed time was unavoidable or contained preventable gaps."
       ]
     }

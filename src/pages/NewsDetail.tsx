@@ -14,6 +14,19 @@ import { useLanguage } from "../i18n";
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 const imageKey = (src: string) => imageSrc(src).replace(/#.*$/, "").replace(/\?.*$/, "");
 
+function InlineLinkedText({ text }: { text: string }) {
+  return <>{text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part, index) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!match) return part;
+
+    const [, label, href] = match;
+    const className = "font-semibold text-green-deep underline decoration-green-deep/35 underline-offset-4 hover:decoration-green-deep";
+    return href.startsWith("/")
+      ? <Link key={`${href}-${index}`} to={href} className={className}>{label}</Link>
+      : <a key={`${href}-${index}`} href={href} target="_blank" rel="noreferrer" className={className}>{label}</a>;
+  })}</>;
+}
+
 export default function NewsDetail() {
   const { slug = "" } = useParams();
   const { language } = useLanguage();
@@ -71,7 +84,7 @@ export default function NewsDetail() {
 
         {article.sections.map((section, index) => <section key={`${index}-${section.title}`} className={`article-section ${isLongRead ? "article-section-long" : ""}`}>
           <h2 className="article-section-title">{section.title}</h2>
-          {section.paragraphs?.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 32)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>)}
+          {section.paragraphs?.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 32)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}><InlineLinkedText text={paragraph}/></p>)}
           {section.bullets && <ul className="mt-5 grid gap-2.5 text-base leading-7 text-charcoal/75 sm:text-[17px]">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet}`} className="flex gap-3"><span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"/><span>{bullet}</span></li>)}</ul>}
           {isFuelPriceCapArticle && index === 0 && <InteractiveFigure src={detailHeroImage.src} alt={detailHeroImage.alt} caption={detailHeroImage.caption} credit={detailHeroImage.credit} sourceUrl={detailHeroImage.sourceUrl} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_50px_rgba(23,76,58,.08)]" imageClassName="aspect-[16/9] w-full object-cover" />}
           {isLhArticle && index === Math.min(2, article.sections.length - 1) && <InteractiveFigure src={detailHeroImage.src} alt={detailHeroImage.alt} showCaption={false} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white" imageClassName="aspect-[16/9] w-full object-cover" />}
