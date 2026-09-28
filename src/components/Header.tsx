@@ -6,6 +6,7 @@ import { getContent } from "../data/siteContent";
 import { useLanguage } from "../i18n";
 import ArticleFindPanel from "./ArticleFindPanel";
 import BrandLockup from "./BrandLockup";
+import HomeSectionNav from "./HomeSectionNav";
 import MonitoringSubnav from "./MonitoringSubnav";
 
 export default function Header() {
@@ -117,7 +118,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-[#d8e8de] bg-[#fff2c9]/95 backdrop-blur-xl">
+      <header className={`sticky top-0 z-50 backdrop-blur-xl ${isHome ? "bg-ivory/95" : "border-b border-[#d8e8de] bg-[#fff2c9]/95"}`}>
         <div className={`container-page flex min-h-[70px] items-center gap-3 py-2 md:min-h-[74px] md:gap-4 ${isHome ? "" : "border-b border-green-deep/10"}`}>
           <Link to={language === "en" ? "/en/" : "/"} className="flex min-w-0 shrink flex-col items-start gap-0.5" aria-label={language === "en" ? "SEED VOICE home" : "씨앗의 소리 홈"}>
             <BrandLockup tone="header" />
@@ -153,10 +154,11 @@ export default function Header() {
           </div>
         </div>
 
-        <nav className="hidden border-t border-[#e8dcae] bg-[#eff8f4] xl:block" aria-label={language === "en" ? "Main menu" : "주요 메뉴"}>
+        <nav className={`hidden xl:block ${isHome ? "bg-paper" : "border-t border-[#e8dcae] bg-[#eff8f4]"}`} aria-label={language === "en" ? "Main menu" : "주요 메뉴"}>
           <div className="container-page flex items-center justify-start gap-7">{nav.map((item) => renderNavItem(item))}</div>
         </nav>
 
+        {isHome && <HomeSectionNav />}
         {isMonitoringIndex && <MonitoringSubnav />}
 
         {open && (
