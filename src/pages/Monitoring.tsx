@@ -1,5 +1,3 @@
-import { FileSearch } from "lucide-react";
-import { useState } from "react";
 import WatchPairRow from "../components/WatchPairRow";
 import { getEditorialContinuation } from "../data/editorialContinuations";
 import { publicInterestWatchCases } from "../data/newsTrackerRegistry";
@@ -15,7 +13,6 @@ const recentUpdate = (publishedAt: string | undefined, updatedAt: string) => {
 export default function Monitoring() {
   const { language } = useLanguage();
   const ko = language === "ko";
-  const [query, setQuery] = useState("");
   const cases = [...publicInterestWatchCases].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt) || a.title[language].localeCompare(b.title[language]));
   const rows = cases.map((item) => {
     const related = item.relatedContents?.[0];
@@ -31,7 +28,6 @@ export default function Monitoring() {
       badge: item.timeline?.length && recentUpdate(item.publishedAt, item.updatedAt) ? (ko ? "업데이트" : "UPDATED") : undefined,
     }, article };
   });
-  const filtered = rows.filter((row) => !query.trim() || [row.tracker.title, row.tracker.summary, row.article?.title, row.article?.summary].some((value) => value?.toLowerCase().includes(query.trim().toLowerCase())));
 
   return <section className="bg-paper pb-16">
     <header className="border-b border-green-deep/15 bg-ivory">
@@ -42,10 +38,9 @@ export default function Monitoring() {
     </header>
 
     <div className="container-page pt-6 sm:pt-8">
-      <section aria-label={ko ? "이슈감시 기사 검색 및 목록" : "Issue watch articles and search"}>
-        <label className="flex items-center gap-3 border border-green-deep/15 bg-white px-4 py-3"><FileSearch size={18} className="text-charcoal/45"/><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={ko ? "이슈·기사 검색" : "Search issues and articles"} className="w-full bg-transparent text-sm outline-none"/></label>
-        <div className="mt-3">{filtered.map((row) => <WatchPairRow key={row.slug} article={row.tracker} record={row.article} ko={ko}/>)}</div>
-        {!filtered.length && <p className="py-14 text-center text-sm text-charcoal/55">{ko ? "검색 결과가 없습니다." : "No matching records."}</p>}
+      <section aria-label={ko ? "이슈감시 기사 목록" : "Issue watch articles"}>
+        <div>{rows.map((row) => <WatchPairRow key={row.slug} article={row.tracker} record={row.article} ko={ko}/>)}</div>
+        {!rows.length && <p className="py-14 text-center text-sm text-charcoal/55">{ko ? "아직 공개된 기록이 없습니다." : "No published records yet."}</p>}
       </section>
     </div>
   </section>;
