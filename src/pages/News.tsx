@@ -36,7 +36,7 @@ export default function News() {
             <h1 className="editorial-title mt-2.5 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "핫이슈" : "Hot Issues"}</h1>
           </div>
           <p className="max-w-2xl text-base leading-8 text-charcoal/65">
-            {ko ? "지금 시민이 알아야 할 현안의 흐름을 씨앗의 관점으로 정리합니다. 새 기사가 나오면 최근 이슈에 반영됩니다." : "Follow the issues citizens need to understand now. Recent coverage updates this list as stories develop."}
+            {ko ? "한 번의 보도로 끝나지 않는 현안을 따라갑니다. 확인된 사실과 엇갈린 주장, 이후 달라진 내용을 모아 시민의 삶에 어떤 영향을 주는지 살펴봅니다." : "We follow issues beyond a single report. Read the established facts, competing claims, and later developments to understand what they mean for citizens' lives."}
           </p>
         </div>
       </header>
