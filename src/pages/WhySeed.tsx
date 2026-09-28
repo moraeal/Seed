@@ -12,7 +12,7 @@ const copy = {
     originTitle: "한 사람의 생각이 세상을 움직입니다",
     origin: [
       "함석헌 선생은 평범한 사람을 역사의 주체로 보며 ‘씨알’이라는 말을 썼습니다. 남이 시키는 대로만 움직이는 사람이 아니라, 스스로 생각하고 서로 이어지는 사람을 믿었습니다.",
-      "씨앗의 소리는 그 생각에서 배웁니다. 다만 ‘씨앗’은 우리가 오늘의 생활에서 새로 쓰는 이름입니다. 세금 고지서를 보다가 든 의문, 동네에서 본 불편, 기사 한 줄에 대한 질문이 자라 공적인 목소리가 될 수 있다는 뜻입니다.",
+      "씨앗의 소리는 그 생각에서 배웁니다. 다만 ‘씨앗’은 우리가 오늘의 생활에서 시민이라는 용어를 새롭게 표현하는 이름입니다. 세금 고지서를 보다가 든 의문, 동네에서 본 불편, 기사 한 줄에 대한 질문이 씨앗 속에서 자라나 널리 세상을 이롭게 할 수 있는 공동체의 목소리가 될 수 있다는 뜻입니다.",
     ],
     seedLabel: "S · E · E · D",
     seedTitle: "씨앗이 자라는 네 가지 방법",
@@ -48,7 +48,7 @@ const copy = {
     originTitle: "One person's thought can move a society",
     origin: [
       "Korean thinker Ham Seok-heon used ssial, or ‘seed people,’ for ordinary people he saw as agents of history: people who think for themselves and stand together, rather than merely follow orders.",
-      "We learn from that idea, while using ‘seed’ in our own way today. A question about a tax bill, a problem in the neighborhood or a line in a news story can grow into a public voice.",
+      "We learn from that idea. Today, we use ‘seed’ as a new way to express what it means to be a citizen in everyday life. A question prompted by a tax bill, a problem noticed in the neighborhood or a line in a news story can grow within a seed into a shared voice that benefits the wider community.",
     ],
     seedLabel: "S · E · E · D",
     seedTitle: "Four ways a seed grows",
