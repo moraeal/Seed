@@ -1,6 +1,5 @@
 import { FileSearch } from "lucide-react";
 import { useMemo, useState } from "react";
-import MonitoringSubnav from "../components/MonitoringSubnav";
 import WatchPairRow from "../components/WatchPairRow";
 import { taxCommentaries } from "../data/taxCommentaries";
 import { taxPolicies } from "../data/taxWatch";
@@ -27,7 +26,6 @@ export default function TaxWatch() {
 
   return <section className="min-h-[70vh] bg-paper pb-16">
     <header className="border-b border-green-deep/15 bg-ivory"><div className="container-page grid gap-6 py-9 sm:py-12 lg:grid-cols-[.8fr_1.2fr] lg:items-end"><div><span className="section-kicker">TAX & LEVY WATCH</span><h1 className="editorial-title mt-2 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "세금감시" : "Tax Watch"}</h1></div><p className="max-w-2xl text-base leading-8 text-charcoal/65">{ko ? "시민의 부담과 기업 활동에 영향을 주는 세금정책을 씨앗의 논평과 나란히 살펴봅니다. 오른쪽에서 정부·국회의 공식 자료로 이어집니다." : "Read Seed Voice's commentary alongside tax policy summaries, with official government and legislative sources on the right."}</p></div></header>
-    <MonitoringSubnav />
     <div className="container-page py-10 sm:py-12"><div className="flex flex-col gap-3 border-b-2 border-navy pb-5 sm:flex-row sm:items-end sm:justify-between"><div><span className="section-kicker">TAX WATCH</span><h2 className="mt-2 text-3xl font-extrabold text-navy">{ko ? "세금감시 목록" : "Tax Watch"}</h2></div><p className="max-w-lg text-sm leading-7 text-charcoal/55">{ko ? "왼쪽은 씨앗의 기사, 오른쪽은 정책 요약과 공식 원문입니다." : "Seed Voice articles appear beside policy summaries and official sources."}</p></div>
       <label className="mt-6 flex items-center gap-3 border border-green-deep/15 bg-white px-4 py-3"><FileSearch size={18} className="text-charcoal/45"/><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={ko ? "정책·기사 검색" : "Search policies and articles"} className="w-full bg-transparent text-sm outline-none"/></label>
       <div className="mt-3">{filtered.map((row) => <WatchPairRow key={row.key} article={row.article} record={row.record} ko={ko}/>)}</div>

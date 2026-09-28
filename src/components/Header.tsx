@@ -6,6 +6,7 @@ import { getContent } from "../data/siteContent";
 import { useLanguage } from "../i18n";
 import ArticleFindPanel from "./ArticleFindPanel";
 import BrandLockup from "./BrandLockup";
+import MonitoringSubnav from "./MonitoringSubnav";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -18,6 +19,7 @@ export default function Header() {
   const ko = language === "ko";
   const isHome = location.pathname === "/" || location.pathname === "/en/";
   const normalizedPath = location.pathname.replace(/\/+$/, "") || "/";
+  const isMonitoringIndex = ["/monitoring", "/monitoring/legislation", "/monitoring/tax", "/monitoring/public-interest"].includes(normalizedPath);
   const isContentDetail =
     /^\/(?:seed-language|columns|news|monitoring)\/[^/]+/.test(normalizedPath) ||
     /^\/briefings\/[^/]+/.test(normalizedPath) ||
@@ -154,6 +156,8 @@ export default function Header() {
         <nav className="hidden border-t border-[#e8dcae] bg-[#eff8f4] xl:block" aria-label={language === "en" ? "Main menu" : "주요 메뉴"}>
           <div className="container-page flex items-center justify-start gap-7">{nav.map((item) => renderNavItem(item))}</div>
         </nav>
+
+        {isMonitoringIndex && <MonitoringSubnav />}
 
         {open && (
           <div id="mobile-main-menu" className="border-t border-[#e8dcae] bg-[#eff8f4] px-5 py-4 shadow-[0_12px_24px_rgba(17,43,37,.08)] xl:hidden">

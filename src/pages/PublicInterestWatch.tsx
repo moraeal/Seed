@@ -1,6 +1,5 @@
 import { ArrowRight, BookOpenText, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
-import MonitoringSubnav from "../components/MonitoringSubnav";
 import { civicWatchCases, type LocalizedText } from "../data/publicInterestWatch";
 import { useLanguage } from "../i18n";
 
@@ -16,8 +15,6 @@ export default function PublicInterestWatch() {
         <p className="max-w-2xl text-base leading-8 text-charcoal/65">{ko ? "시민의 이름으로 권한과 돈을 쓰는 기관과 사업을 기록합니다. 공공기관·공익기관·시민단체·보조사업의 예산, 의사결정, 설명 책임과 실제 결과를 공개자료로 확인합니다." : "We track institutions and programs that use power and money in the public interest—examining budgets, decisions, accountability and results through public records."}</p>
       </div>
     </header>
-
-    <MonitoringSubnav />
 
     <div className="container-page py-10 sm:py-12">
       <div className="flex flex-col gap-3 border-b-2 border-navy pb-5 sm:flex-row sm:items-end sm:justify-between">
