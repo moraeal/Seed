@@ -260,3 +260,55 @@ button, input, textarea { font: inherit; }
 @media (min-width: 640px) { .home-hot-issue-track { --visible: 2; --stride: calc(50% + .5rem); } }
 @media (min-width: 1280px) { .home-hot-issue-track { --visible: 4; --stride: calc(25% + .25rem); } }
 @media (prefers-reduced-motion: reduce) { .home-hot-issue-track.is-moving { transition: none; } }
+
+/* About-page Siya appears after the welcome photo has settled. */
+.about-siya {
+  position: fixed;
+  right: max(12px, env(safe-area-inset-right));
+  bottom: max(12px, env(safe-area-inset-bottom));
+  z-index: 55;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: min(280px, calc(100vw - 24px));
+  pointer-events: none;
+  animation: about-siya-enter .65s ease-out both;
+}
+.about-siya-bubbles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7px;
+  max-width: 100%;
+  margin-bottom: -7px;
+}
+.about-siya-bubbles p {
+  max-width: 100%;
+  padding: 9px 13px;
+  border: 1px solid #b4cdb9;
+  border-radius: 14px;
+  background: #fffefa;
+  box-shadow: 0 6px 18px #173c2829;
+  color: #174c3a;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+.about-siya-bubbles p:first-child { align-self: flex-start; }
+.about-siya img {
+  width: 152px;
+  height: 152px;
+  object-fit: contain;
+  animation: about-siya-float 2.6s ease-in-out infinite;
+}
+@keyframes about-siya-enter {
+  from { opacity: 0; transform: translateX(35px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes about-siya-float {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-siya, .about-siya img { animation: none; }
+}
