@@ -297,8 +297,8 @@ button, input, textarea { font: inherit; }
   height: 152px;
   object-fit: contain;
 }
-.about-siya--walking img { animation: seed-nudge-steps 1.35s cubic-bezier(.28,.1,.36,1) both; }
-.about-siya--ready img { animation: about-siya-float 2.6s ease-in-out infinite; }
+.about-siya--walking { animation: seed-nudge-steps 1.35s cubic-bezier(.28,.1,.36,1) both; }
+.about-siya--ready { animation: about-siya-float 2.6s ease-in-out infinite; }
 @keyframes about-siya-float {
   0%, 100% { transform: translateY(0) rotate(-2deg); }
   50% { transform: translateY(-8px) rotate(2deg); }
