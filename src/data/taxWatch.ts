@@ -62,16 +62,10 @@ export const taxPolicies: TaxPolicy[] = [
     },
     checkedAt: "2026-09-24",
     heroImage: {
-      ko: "images/monitoring/tax-break-budget-conversion-ko.png",
-      en: "images/monitoring/tax-break-budget-conversion-en.png",
-      alt: {
-        ko: "세금감면을 평가해 직접 예산지출로 전환하는 법안의 흐름과 감시 지점을 설명한 도표",
-        en: "Diagram showing a bill's proposed route from tax preferences through review to direct budget spending",
-      },
-      caption: {
-        ko: "법안은 조세지출을 매년 평가해 필요하면 재정지출로 전환하고, 실적과 계획을 조세지출 결산서·예산서에 싣도록 합니다. 특정 특례나 전환 금액은 아직 정해지지 않았습니다.",
-        en: "The bill would require annual review, allow conversion to direct spending, and report results and plans in tax-expenditure budget and settlement documents. It does not yet identify a specific preference or conversion amount.",
-      },
+      ko: "images/monitoring/tax-break-budget-conversion-photo.webp",
+      en: "images/monitoring/tax-break-budget-conversion-photo.webp",
+      alt: { ko: "시민이 예산 자료를 살펴보는 장면의 AI 이미지", en: "AI image of a citizen reviewing budget documents" },
+      caption: { ko: "정책 주제를 상징하는 장면. AI 이미지.", en: "A scene representing the policy topic. AI image." },
     },
     processNote: {
       ko: "2026년 9월 23일 발의된 의원입법안으로 아직 확정된 법률이 아닙니다. 법안이 통과돼도 개별 사업의 실제 지출은 해마다 예산안 편성과 국회 의결을 거쳐야 합니다.",
@@ -168,16 +162,10 @@ export const taxPolicies: TaxPolicy[] = [
     },
     checkedAt: "2026-09-23",
     heroImage: {
-      ko: "images/monitoring/farm-fishery-tax-breaks-2030-ko.png",
-      en: "images/monitoring/farm-fishery-tax-breaks-2030-en.png",
-      alt: {
-        ko: "2026년과 2028년으로 흩어진 농어업 국세·지방세 특례 일몰을 2030년으로 맞추는 법안의 구조를 설명한 도표",
-        en: "Diagram explaining bills that would align agricultural and fishery national and local tax-break sunsets from 2026 and 2028 to 2030",
-      },
-      caption: {
-        ko: "두 법안은 여러 국세·지방세 특례의 일몰을 2030년 12월 31일로 맞춥니다. 공식 제안 설명에는 특례별 수혜자 수와 국세·지방세를 합친 연간 세수 감소액이 없습니다.",
-        en: "The two bills would align numerous national and local tax preferences to December 31, 2030. The official summaries do not provide recipient counts by preference or a combined annual national-local revenue-loss estimate.",
-      },
+      ko: "images/monitoring/farm-fishery-tax-photo.webp",
+      en: "images/monitoring/farm-fishery-tax-photo.webp",
+      alt: { ko: "농촌에서 농업인이 일하는 장면의 AI 이미지", en: "AI image of a farmer working in the countryside" },
+      caption: { ko: "정책 주제를 상징하는 장면. AI 이미지.", en: "A scene representing the policy topic. AI image." },
     },
     processNote: {
       ko: "2026년 9월 22일 발의된 의원입법안 두 건으로 아직 확정된 법률이 아닙니다. 국회 심사에서 대상 조항·일몰과 시행시점이 달라질 수 있습니다.",
@@ -275,16 +263,10 @@ export const taxPolicies: TaxPolicy[] = [
     },
     checkedAt: "2026-09-22",
     heroImage: {
-      ko: "images/monitoring/tax-expenditure-cap-ratchet-ko.png",
-      en: "images/monitoring/tax-expenditure-cap-ratchet-en.png",
-      alt: {
-        ko: "국세감면율 한도 초과 실적이 다음 한도에 반영되는 현행 구조와 개정안의 차이를 설명한 도표",
-        en: "Diagram comparing the current tax-expenditure cap ratchet with the proposed rule",
-      },
-      caption: {
-        ko: "현행 한도는 직전 3년 실제 국세감면율 평균에 0.5%포인트를 더해 계산합니다. 개정안은 초과한 해의 실제값 대신 한도를 쓰도록 합니다. 2026년 전망 16.1%는 그해 한도 16.5% 이내입니다.",
-        en: "The current cap is the prior three-year average actual tax-expenditure rate plus 0.5 percentage point. The bill would substitute the cap for an over-limit actual rate. The 2026 forecast of 16.1% is within that year's 16.5% cap.",
-      },
+      ko: "images/monitoring/tax-expenditure-cap-photo.webp",
+      en: "images/monitoring/tax-expenditure-cap-photo.webp",
+      alt: { ko: "사업자가 세금 서류와 영수증을 살펴보는 장면의 AI 이미지", en: "AI image of a business owner reviewing tax paperwork" },
+      caption: { ko: "정책 주제를 상징하는 장면. AI 이미지.", en: "A scene representing the policy topic. AI image." },
     },
     processNote: {
       ko: "2026년 9월 21일 발의된 의원입법안으로 아직 확정된 법률이 아닙니다. 국회 심사 과정에서 계산 방식과 시행시점이 달라질 수 있습니다.",
@@ -381,16 +363,10 @@ export const taxPolicies: TaxPolicy[] = [
     },
     checkedAt: "2026-09-19",
     heroImage: {
-      ko: "images/monitoring/content-strategy-support-flow-ko.png",
-      en: "images/monitoring/content-strategy-support-flow-en.png",
-      alt: {
-        ko: "콘텐츠산업 특별회계에서 현금환급, 세제·금융 우대, 펀드, 부담금 경감으로 지원이 흐르는 구조",
-        en: "Flow diagram showing a content-industry special account funding cash rebates, tax and finance preferences, funds, and levy relief",
-      },
-      caption: {
-        ko: "법안이 제시한 네 갈래 지원 구조입니다. 공식 요약에는 특별회계 규모, 환급률, 부담금 경감액이 없습니다.",
-        en: "The bill's four support channels. The official summary does not state the special-account size, rebate rate or value of levy relief.",
-      },
+      ko: "images/monitoring/content-strategy-support-photo.webp",
+      en: "images/monitoring/content-strategy-support-photo.webp",
+      alt: { ko: "콘텐츠 제작 현장의 장비와 작업자의 AI 이미지", en: "AI image of workers and equipment on a content production set" },
+      caption: { ko: "정책 주제를 상징하는 장면. AI 이미지.", en: "A scene representing the policy topic. AI image." },
     },
     processNote: {
       ko: "2026년 9월 18일 발의된 의원입법안으로, 아직 확정된 법률이 아닙니다. 국회 심사 과정에서 지원 대상·재원·환급 기준과 시행시점이 달라질 수 있습니다.",
@@ -479,13 +455,10 @@ export const taxPolicies: TaxPolicy[] = [
     checkedAt: "2026-09-18",
     deadline: "2026-09-23",
     heroImage: {
-      ko: "images/monitoring/fuel-tax-extension-2026-ko.png",
-      en: "images/monitoring/fuel-tax-extension-2026-en.png",
-      alt: { ko: "휘발유·경유·LPG 부탄의 유류세 인하율과 리터당 세액을 비교한 도표", en: "Chart comparing fuel-tax reduction rates and per-liter tax for gasoline, diesel and LPG butane" },
-      caption: {
-        ko: "휘발유는 15%, 경유와 LPG 부탄은 25%의 인하율이 2026년 11월 30일까지 유지됩니다. 리터당 세액은 부가가치세를 포함한 금액입니다.",
-        en: "The 15% gasoline cut and 25% diesel and LPG butane cuts remain through November 30, 2026. Per-liter figures include VAT.",
-      },
+      ko: "images/monitoring/fuel-tax-extension-photo.webp",
+      en: "images/monitoring/fuel-tax-extension-photo.webp",
+      alt: { ko: "주유소에서 차량에 기름을 넣는 장면의 AI 이미지", en: "AI image of a driver fueling a car at a service station" },
+      caption: { ko: "정책 주제를 상징하는 장면. AI 이미지.", en: "A scene representing the policy topic. AI image." },
     },
     processNote: {
       ko: "아직 확정된 시행령이 아닙니다. 2026년 9월 23일까지 의견을 받은 뒤 국무회의 의결을 거쳐 적용될 예정입니다.",
@@ -571,9 +544,10 @@ export const taxPolicies: TaxPolicy[] = [
     checkedAt: "2026-09-17",
     deadline: "2026-09-23",
     heroImage: {
-      ko: "images/monitoring/local-housing-welfare-tax-flow-ko.png",
-      en: "images/monitoring/local-housing-welfare-tax-flow-en.png",
-      alt: { ko: "연 1조5천억 원 규모의 담배분 지방교육세가 지방주거복지세로 전환되는 흐름", en: "Flow showing KRW 1.5 trillion shifting from a tobacco-linked local education tax to a local housing welfare tax" },
+      ko: "images/monitoring/local-housing-welfare-tax-photo.webp",
+      en: "images/monitoring/local-housing-welfare-tax-photo.webp",
+      alt: { ko: "아파트 단지의 일상 풍경의 AI 이미지", en: "AI image of an apartment neighborhood" },
+      caption: { ko: "정책 주제를 상징하는 장면. AI 이미지.", en: "A scene representing the policy topic. AI image." },
     },
     oneSentence: {
       ko: "2026년 말 없어질 예정이던 담배분 지방교육세를 지방주거복지세로 바꿔, 연간 약 1조5천억 원의 세수를 계속 유지하는 정책입니다.",
@@ -652,9 +626,10 @@ export const taxPolicies: TaxPolicy[] = [
     checkedAt: "2026-09-17",
     deadline: "2026-09-23",
     heroImage: {
-      ko: "images/monitoring/social-solidarity-tax-exemption-ko.png",
-      en: "images/monitoring/social-solidarity-tax-exemption-en.png",
-      alt: { ko: "사회연대경제 조직 지방세 감면율이 조건에 따라 최대 100%가 되는 구조", en: "Stacked local tax relief for social-solidarity organizations reaching up to 100 percent" },
+      ko: "images/monitoring/social-solidarity-tax-photo.webp",
+      en: "images/monitoring/social-solidarity-tax-photo.webp",
+      alt: { ko: "지역 협동조합 가게의 일상의 AI 이미지", en: "AI image of everyday work at a local cooperative storefront" },
+      caption: { ko: "정책 주제를 상징하는 장면. AI 이미지.", en: "A scene representing the policy topic. AI image." },
     },
     oneSentence: { ko: "정부가 지정한 사회연대경제 조직은 여러 감면 조건을 합쳐 취득세와 재산세를 최대 100%까지 감면받을 수 있습니다.", en: "Eligible social-solidarity organizations could stack several benefits and receive up to 100% relief from acquisition and property taxes." },
     keyChanges: [
@@ -699,9 +674,10 @@ export const taxPolicies: TaxPolicy[] = [
     checkedAt: "2026-09-17",
     deadline: "2026-09-23",
     heroImage: {
-      ko: "images/monitoring/regional-business-tax-relief-ko.png",
-      en: "images/monitoring/regional-business-tax-relief-en.png",
-      alt: { ko: "수도권은 세금 감면이 줄고 인구감소지역은 10~15%포인트 늘어나는 지역 차등 구조", en: "Regional tax relief structure showing reduced capital-area support and 10 to 15 percentage-point additions in depopulating regions" },
+      ko: "images/monitoring/regional-business-tax-photo.webp",
+      en: "images/monitoring/regional-business-tax-photo.webp",
+      alt: { ko: "지역 산업단지의 중소기업 작업 현장의 AI 이미지", en: "AI image of a small business workspace in a regional industrial park" },
+      caption: { ko: "정책 주제를 상징하는 장면. AI 이미지.", en: "A scene representing the policy topic. AI image." },
     },
     oneSentence: { ko: "특정 벤처·창업 시설의 지방세 감면을 인구감소지역은 확대하고 수도권은 줄여 기업 입지를 세금으로 유도하는 정책입니다.", en: "The policy uses differentiated local tax relief to steer designated venture and startup facilities toward depopulating regions and away from the capital area." },
     keyChanges: [
