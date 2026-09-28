@@ -8,7 +8,7 @@ export const issue37: ColumnTranslation = {
   summary: "A business has endured for ten years, giving people jobs and keeping its promises to customers and suppliers.",
   heroImage: {
     alt: "Symbolic image of a small workshop and its workers facing an immense clock-shaped threshold",
-    caption: "",
+    caption: "A higher succession threshold stands before a workplace built over years.",
     credit: "AI image",
   },
   inlineImage: {

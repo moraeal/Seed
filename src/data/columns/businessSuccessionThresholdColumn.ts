@@ -14,7 +14,7 @@ export const businessSuccessionThresholdColumn: SeedColumn = {
   heroImage: {
     src: "images/columns/business-succession-threshold/succession-gate-symbolic.webp",
     alt: "작은 공장과 일하는 사람들이 거대한 시계 모양의 문턱 앞에 선 상징 이미지",
-    caption: "",
+    caption: "오래 지켜 온 일터 앞에 높아진 승계의 문턱이 놓였다.",
     credit: "AI 이미지",
     sourceUrl: "",
   },
