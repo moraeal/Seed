@@ -170,6 +170,7 @@ export default function About() {
             <p className="mt-5 max-w-2xl font-extrabold leading-7">{content.identity}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/why-seed" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-green-deep px-6 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:shadow-lg">{content.readToday}<ArrowUpRight size={17}/></Link>
+              <Link to="/contributors" className="inline-flex min-h-12 items-center gap-2 rounded-full border-2 border-green-deep bg-white/75 px-6 py-3 text-sm font-extrabold text-green-deep transition hover:-translate-y-0.5 hover:bg-white hover:shadow-lg">{content.contributors}<ArrowUpRight size={17}/></Link>
             </div>
           </div>
           <div className="relative order-first mx-auto w-full max-w-xl lg:order-last">
@@ -262,7 +263,7 @@ export default function About() {
               <div className="mt-6 flex flex-wrap gap-2">{content.values.map(value => <span key={value} className="rounded-full bg-[#e7f1d5] px-3 py-1.5 text-xs font-bold">{value}</span>)}</div>
               <div className="mt-8 flex flex-wrap gap-5">
                 <Link to="/founding-statement" className="inline-flex items-center gap-2 text-sm font-extrabold underline underline-offset-4">{content.statement}<ArrowRight size={16}/></Link>
-                <Link to="/publisher-message" className="inline-flex items-center gap-2 text-sm font-extrabold underline underline-offset-4">{content.contributors}<ArrowRight size={16}/></Link>
+                <Link to="/contributors" className="inline-flex items-center gap-2 text-sm font-extrabold underline underline-offset-4">{content.contributors}<ArrowRight size={16}/></Link>
               </div>
             </div>
             <ul className="grid content-start gap-3">
