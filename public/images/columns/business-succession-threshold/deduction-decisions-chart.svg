@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="chart-title chart-desc">
+  <title id="chart-title">가업상속공제 결정 257건 가운데 20년 미만 경영 기업 91건</title>
+  <desc id="chart-desc">필자 원고에 인용된 지난해 결정 건수 257건 중 20년 미만 경영 기업이 91건, 나머지가 166건이다. 개편 후 탈락 건수를 뜻하지 않는다.</desc>
+  <rect width="1600" height="900" fill="#f6f5ef"/>
+  <rect x="90" y="72" width="1420" height="750" rx="28" fill="#fff" stroke="#d8e2d8" stroke-width="3"/>
+  <text x="160" y="188" fill="#1b473b" font-family="Noto Sans KR, Apple SD Gothic Neo, sans-serif" font-size="34" font-weight="700">가업상속공제 결정 현황</text>
+  <text x="160" y="268" fill="#172f40" font-family="Noto Sans KR, Apple SD Gothic Neo, sans-serif" font-size="59" font-weight="800">257건 중 91건</text>
+  <text x="160" y="327" fill="#56666a" font-family="Noto Sans KR, Apple SD Gothic Neo, sans-serif" font-size="29">20년 미만 경영 기업의 결정 건수</text>
+  <line x1="160" y1="383" x2="1440" y2="383" stroke="#d8e2d8" stroke-width="3"/>
+  <text x="160" y="455" fill="#1b473b" font-family="Noto Sans KR, Apple SD Gothic Neo, sans-serif" font-size="28" font-weight="700">전체 공제 결정</text>
+  <text x="1440" y="455" fill="#172f40" text-anchor="end" font-family="Noto Sans KR, Apple SD Gothic Neo, sans-serif" font-size="32" font-weight="800">257건</text>
+  <rect x="160" y="494" width="1280" height="100" rx="16" fill="#d5e1d8"/>
+  <path d="M176 494h437v100H176q-16 0-16-16v-68q0-16 16-16z" fill="#bd7448"/>
+  <text x="385" y="559" text-anchor="middle" fill="#fff" font-family="Noto Sans KR, Apple SD Gothic Neo, sans-serif" font-size="36" font-weight="800">91건</text>
+  <text x="1026" y="559" text-anchor="middle" fill="#1b473b" font-family="Noto Sans KR, Apple SD Gothic Neo, sans-serif" font-size="36" font-weight="800">166건</text>
+  <circle cx="179" cy="664" r="12" fill="#bd7448"/>
+  <text x="209" y="675" fill="#283d42" font-family="Noto Sans KR, Apple SD Gothic Neo, sans-serif" font-size="29">20년 미만 경영</text>
+  <circle cx="632" cy="664" r="12" fill="#d5e1d8"/>
+  <text x="662" y="675" fill="#283d42" font-family="Noto Sans KR, Apple SD Gothic Neo, sans-serif" font-size="29">그 밖의 결정</text>
+  <text x="160" y="753" fill="#647273" font-family="Noto Sans KR, Apple SD Gothic Neo, sans-serif" font-size="22">자료: 필자 원고에 인용된 공제 결정 건수 · 166건은 257건에서 91건을 뺀 값</text>
+  <text x="160" y="790" fill="#647273" font-family="Noto Sans KR, Apple SD Gothic Neo, sans-serif" font-size="22">이 수치는 개편 이후 공제에서 탈락할 기업 수를 뜻하지 않습니다.</text>
+</svg>
