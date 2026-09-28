@@ -11,7 +11,7 @@ type ShareButtonProps = {
 
 type ShareStatus = "idle" | "copied" | "failed";
 
-export default function ShareButton({ title, text, className = "" }: ShareButtonProps) {
+export default function ShareButton({ className = "" }: ShareButtonProps) {
   const { language } = useLanguage();
   const ko = language === "ko";
   const [status, setStatus] = useState<ShareStatus>("idle");
@@ -47,7 +47,9 @@ export default function ShareButton({ title, text, className = "" }: ShareButton
     }
 
     try {
-      await navigator.share({ title, text, url: window.location.href });
+      // The destination app builds its own article card from the URL's metadata.
+      // Sending the summary as share text duplicates it above that card in KakaoTalk.
+      await navigator.share({ url: window.location.href });
       recordShare();
     } catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") return;
