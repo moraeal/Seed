@@ -1,5 +1,7 @@
 # SEED publishing rules
 
+- On the homepage, show at most one article for each specific event or policy dispute across the editor's pick, four quick reads, and hot-issue carousel. When publishing a follow-up, commentary, briefing, or tracker on the same subject, add its route to the shared group in `src/data/homeTopics.ts`. The earlier placement keeps its article and lower placements choose the next distinct topic. Group by the actual subject, not by a broad desk label such as defense or tax. Related articles remain available on their own listing and detail pages.
+
 - For AI-generated article images, use the concise disclosure “AI 이미지” in Korean and “AI image” in English. Avoid boilerplate such as “not an actual family/person/photo” in image captions. The shared figure caption derives this label from the image credit, so do not repeat it in caption text.
 
 - Do not use OhmyNews (오마이뉴스) as a source, link, image provider, or source-credit outlet in any new or updated SEED article, tracker, briefing, column, commentary, translation, or metadata. Replace any OhmyNews material encountered during an edit with a suitable source from another outlet.

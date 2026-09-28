@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import FeaturedStoryMedia from "../components/FeaturedStoryMedia";
 import SafeImage from "../components/SafeImage";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
-import { getColumnsNewestFirst, hotIssueColumnTrackerSlugs } from "../data/columns";
+import { getColumnsNewestFirst } from "../data/columns";
 import { localizeBriefing, localizeColumn } from "../data/localizedContent";
 import { getHotIssuesNewestFirst } from "../data/hotIssues";
 import type { HotIssueListItem } from "../data/hotIssues";
@@ -15,21 +15,12 @@ import { seedLanguageTerms } from "../data/seedLanguageTerms";
 import { getFeaturedContentCandidates } from "../data/featuredContent";
 import { useLanguage } from "../i18n";
 import { getFeaturedContentPath } from "../lib/featuredContent";
+import { claimHomeStory, getHomeTopic } from "../data/homeTopics";
 
 const resolveImageSrc = (src?: string) => {
   if (!src) return "";
   if (/^https?:\/\//i.test(src)) return src;
   return `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
-};
-
-const claimFirstUnseen = <T,>(
-  items: T[],
-  pathOf: (item: T) => string,
-  claimedPaths: Set<string>,
-) => {
-  const item = items.find((candidate) => !claimedPaths.has(pathOf(candidate)));
-  if (item) claimedPaths.add(pathOf(item));
-  return item;
 };
 
 function HotIssueCarousel({ items, ko }: { items: HotIssueListItem[]; ko: boolean }) {
@@ -130,7 +121,6 @@ export default function Home() {
   const localizedBriefings = allBriefings.map((item) => localizeBriefing(item, language));
   const allJournalColumns = getColumnsNewestFirst().map((item) => localizeColumn(item, language));
   const hotIssues = getHotIssuesNewestFirst(language);
-  const latestHotIssueCards = hotIssues.slice(0, 8);
   const seedLanguageCandidates = [
     ...seedLanguageEnvironmentArticlesKo,
     ...seedLanguageArticlesKo,
@@ -150,34 +140,38 @@ export default function Home() {
       ?? featuredCandidates[0]
     : undefined;
   const activeFeaturedPath = featuredLead?.path;
-  // A story gets one position on the homepage. Higher placements claim the route first,
-  // and each lower section automatically advances to the next eligible article.
-  const claimedHomePaths = new Set(activeFeaturedPath ? [activeFeaturedPath] : []);
-  const latestHotIssue = claimFirstUnseen(hotIssues, (item) => item.to, claimedHomePaths);
-  const latestBriefing = claimFirstUnseen(
+  // One topic gets one position across the homepage, regardless of article type.
+  // Higher placements claim it first; lower placements advance to another topic.
+  const claimedHomeTopics = new Set(activeFeaturedPath ? [getHomeTopic(activeFeaturedPath)] : []);
+  const latestHotIssue = claimHomeStory(hotIssues, (item) => item.to, claimedHomeTopics);
+  const latestBriefing = claimHomeStory(
     localizedBriefings.filter((item) => item.homeBriefingLeadEligible !== false),
     (item) => `/briefings/${item.slug}`,
-    claimedHomePaths,
+    claimedHomeTopics,
   );
-  const latestHotIssueColumnSlug = latestHotIssue?.key.startsWith("column-") ? latestHotIssue.key.replace(/^column-/, "") : undefined;
-  const pairedTrackerSlug = latestHotIssueColumnSlug ? hotIssueColumnTrackerSlugs[latestHotIssueColumnSlug] : undefined;
-  const publicWatchTracker = [...newsTrackerCases]
-    .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
-    .find((item) => item.slug !== pairedTrackerSlug && !claimedHomePaths.has(`/monitoring/${item.slug}`))
-    ?? newsTrackerCases.find((item) => !claimedHomePaths.has(`/monitoring/${item.slug}`));
+  const publicWatchTracker = claimHomeStory(
+    [...newsTrackerCases].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)),
+    (item) => `/monitoring/${item.slug}`,
+    claimedHomeTopics,
+  );
   const publicWatchHref = publicWatchTracker ? `/monitoring/${publicWatchTracker.slug}` : "";
-  if (publicWatchHref) claimedHomePaths.add(publicWatchHref);
   const publicWatchTitle = publicWatchTracker?.title[language];
   const publicWatchSummary = publicWatchTracker?.summary[language];
   const publicWatchImage = publicWatchTracker?.heroImage ? {
     src: publicWatchTracker.heroImage.src,
     alt: publicWatchTracker.heroImage.alt[language],
   } : undefined;
-  const seedLanguageArticle = claimFirstUnseen(
+  const seedLanguageArticle = claimHomeStory(
     seedLanguageCandidates,
     (item) => `/seed-language/${item.slug}`,
-    claimedHomePaths,
+    claimedHomeTopics,
   );
+  const latestHotIssueCards = hotIssues.filter((item) => {
+    const topic = getHomeTopic(item.to);
+    if (claimedHomeTopics.has(topic)) return false;
+    claimedHomeTopics.add(topic);
+    return true;
+  }).slice(0, 8);
   const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[ko ? seedLanguageArticle.term : getSeedLanguageEnvironmentArticle(seedLanguageArticle.slug, "ko")?.term ?? getSeedLanguageArticle(seedLanguageArticle.slug, "ko")?.term ?? ""] : undefined;
 
   useEffect(() => {
