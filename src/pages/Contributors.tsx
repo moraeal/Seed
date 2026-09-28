@@ -17,7 +17,7 @@ const copy = {
     ],
     closing: "관점은 달라도, 사실을 확인하고 시민의 자리에서 묻는 마음은 같습니다.",
     back: "씨앗의 소리 소개로 돌아가기",
-    imageAlt: "햇살이 드는 동네에서 이야기를 나누는 시민들",
+    imageAlt: "여러 사람이 자료를 살피고 메모하며 함께 글을 준비하는 모습",
   },
   en: {
     eyebrow: "THE PEOPLE BEHIND SEED VOICE",
@@ -33,7 +33,7 @@ const copy = {
     ],
     closing: "Our perspectives differ. Our commitment to checking facts and asking questions as citizens is shared.",
     back: "Back to SEED VOICE",
-    imageAlt: "Neighbors talking together on a sunny day",
+    imageAlt: "Contributors reviewing records and taking notes together",
   },
 };
 
@@ -51,7 +51,7 @@ export default function Contributors() {
             <p className="mt-6 max-w-2xl text-lg leading-9 text-green-deep/85">{content.lead}</p>
           </div>
           <div className="mx-auto w-full max-w-[420px] rounded-[2.5rem] bg-white/70 p-3 shadow-[10px_14px_0_rgba(84,121,57,.16),0_24px_45px_rgba(30,65,51,.12)]">
-            <img src={`${import.meta.env.BASE_URL}images/about-citizens.webp`} alt={content.imageAlt} className="aspect-[4/3] w-full rounded-[2rem] object-cover" width="800" height="600" />
+            <img src={`${import.meta.env.BASE_URL}images/about/contributors-writing.webp`} alt={content.imageAlt} className="aspect-[4/3] w-full rounded-[2rem] object-cover" width="1200" height="800" />
           </div>
         </div>
       </header>
