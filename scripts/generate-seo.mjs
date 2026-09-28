@@ -318,7 +318,7 @@ function render(route) {
     .replace(/\s*<meta\s+(?:property="og:[^"]+"|name="twitter:[^"]+")[\s\S]*?\/>/gi, "")
     .replace(/\s*<script\s+type="application\/ld\+json">[\s\S]*?<\/script>/gi, "")
     .replace("</head>", `${head}\n  </head>`)
-    .replace('<div id="root"></div>', `<div id="root">${fallback}</div>`);
+    .replace('<div id="root"></div>', `<div id="root"><div class="seed-static-loader" role="status" aria-label="${language === "en" ? "Loading page" : "페이지 불러오는 중"}">${language === "en" ? "SEED VOICE" : "씨앗의 소리"}</div>${fallback}</div>`);
 }
 
 for (const route of allRoutes) {

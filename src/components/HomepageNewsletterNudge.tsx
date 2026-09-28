@@ -1,10 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "../i18n";
 import { isReadingPage } from "../lib/readingRoutes";
 import { useAuth } from "../auth";
-import SiyaArticleGuide from "./SiyaArticleGuide";
+
+// Article recommendations pull in the full editorial catalogue. Load them only
+// for signed-in readers, after the public page has become interactive.
+const SiyaArticleGuide = lazy(() => import("./SiyaArticleGuide"));
 
 type Stage = "hidden" | "walking" | "ready" | "open";
 function NewsletterNudge({ reading }: { reading: boolean }) {
@@ -78,6 +81,6 @@ export default function HomepageNewsletterNudge() {
   const { isVerified, loading } = useAuth();
   const { pathname } = useLocation();
   if (loading || pathname.replace(/\/$/, "") === "/about") return null;
-  if (isVerified) return <SiyaArticleGuide />;
+  if (isVerified) return <Suspense fallback={null}><SiyaArticleGuide /></Suspense>;
   return <NewsletterNudge reading={isReadingPage(pathname)} />;
 }

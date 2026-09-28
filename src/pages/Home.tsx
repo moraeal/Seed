@@ -91,7 +91,7 @@ function HotIssueCarousel({ items, ko }: { items: HotIssueListItem[]; ko: boolea
               className="home-hot-issue-card group flex flex-col overflow-hidden rounded-lg border-t-[3px] border-green-deep bg-white shadow-[0_10px_26px_rgba(28,54,66,0.14)] ring-1 ring-green-deep/10 transition-shadow duration-300 hover:shadow-[0_18px_38px_rgba(28,54,66,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4"
             >
               <div className="overflow-hidden bg-ivory">
-                <SafeImage src={resolveImageSrc(item.imageSrc)} alt={item.imageAlt} loading={index < 4 ? "eager" : "lazy"} referrerPolicy="no-referrer" className="aspect-[16/9] w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
+                <SafeImage src={resolveImageSrc(item.imageSrc)} alt={item.imageAlt} loading="lazy" referrerPolicy="no-referrer" className="aspect-[16/9] w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
               </div>
               <div className="flex flex-1 flex-col p-4">
                 <div className="flex items-center justify-between gap-3 text-[10px] font-semibold text-charcoal/50">
