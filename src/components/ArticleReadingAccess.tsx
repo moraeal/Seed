@@ -31,7 +31,7 @@ export default function ArticleReadingAccess({ children }: { children: ReactNode
   const { isVerified, loading } = useAuth();
   const { language } = useLanguage();
   const reading = isReadingPage(pathname);
-  const [preview, setPreview] = useState<{ title: string; description: string } | null>(null);
+  const [preview, setPreview] = useState<{ title: string; description: string; image?: string; imageAlt?: string } | null>(null);
   const canRead = !reading || loading || isVerified || canReadFreeArticle(pathname);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export default function ArticleReadingAccess({ children }: { children: ReactNode
     let active = true;
     void import("../seo").then(({ getSeoRoute }) => {
       const route = getSeoRoute(pathname);
-      if (active) setPreview(route ? { title: route.title, description: route.description } : null);
+      if (active) setPreview(route ? { title: route.title, description: route.description, image: route.image, imageAlt: route.imageAlt } : null);
     });
     return () => { active = false; };
   }, [canRead, pathname]);
@@ -59,6 +59,9 @@ export default function ArticleReadingAccess({ children }: { children: ReactNode
           {preview?.description && <p className="article-summary">{preview.description}</p>}
         </div>
       </div>
+      {preview?.image && <div className="container-page mt-8 max-w-3xl">
+        <img src={preview.image} alt={preview.imageAlt || ""} className="aspect-[16/9] w-full rounded-lg object-cover shadow-[0_12px_34px_rgba(23,76,58,.08)]" loading="eager" decoding="async" />
+      </div>}
       <section className="container-page mt-10 max-w-3xl rounded-xl border border-green-deep/15 bg-white px-6 py-8 text-center shadow-[0_16px_40px_rgba(23,76,58,.12)] sm:px-10" aria-label={ko ? "무료 구독 안내" : "Free subscription"}>
         <h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "이어서 읽으려면 무료 구독신청을 해주세요" : "Subscribe for free to keep reading"}</h2>
         <p className="mt-3 text-base leading-7 text-charcoal/70">{ko ? "구독 없이 기사 3편까지 모두 읽을 수 있습니다. 구독 후에는 씨앗의 모든 기사를 끝까지 읽고 새 소식도 이메일로 받아볼 수 있습니다." : "You can read three articles in full without subscribing. Subscribe to read every story in full and receive new stories by email."}</p>
