@@ -5,8 +5,10 @@ import { dmzSecurityCommandFailureTranslation } from "./news/dmzSecurityCommandF
 import { supremeCourtRenominationStandoffTranslation } from "./news/supremeCourtRenominationStandoff";
 import { majorCrimesAgencyStaffingTranslation } from "./news/majorCrimesAgencyStaffing";
 import { dmzInvestigationTimelineTranslation } from "./news/dmzInvestigationTimeline";
+import { debtReliefFairness2026Translation } from "./news/debtReliefFairness2026";
 
 export const newsTranslations: Record<string, NewsTranslation> = {
+  "debt-relief-repaid-borrowers-fairness-2026": debtReliefFairness2026Translation,
   "dmz-blast-investigation-timeline-2026": dmzInvestigationTimelineTranslation,
   "major-crimes-agency-investigator-staffing-2026": majorCrimesAgencyStaffingTranslation,
   "supreme-court-renomination-standoff-2026": supremeCourtRenominationStandoffTranslation,

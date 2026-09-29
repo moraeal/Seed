@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "news:debt-relief-repaid-borrowers-fairness-2026": {
+    ko: { href: "/news/national-debt-ratio-gdp-comparison", title: "나랏빚 106조 늘었는데 채무비율은 하락?", relationship: "정부 재정 숫자 읽기", reason: "채무조정의 액면과 실제 비용을 구별했다면, 국가채무 통계의 비교 기준도 함께 살펴봅니다.", listHref: "/news", listLabel: "핫이슈 전체 보기" },
+    en: { href: "/news/national-debt-ratio-gdp-comparison", title: "Debt Rises by KRW 106 Trillion—So Why Does the Ratio Fall?", relationship: "READING PUBLIC FINANCE", reason: "After separating the face value and actual cost of debt relief, examine the basis for a government debt-ratio comparison.", listHref: "/news", listLabel: "All Hot Issues" },
+  },
   "column:the-day-i-did-not-post-a-photo": {
     ko: { href: "/seed-language/citizen-as-seed", title: "시민은 주어지는 이름이 아니라 자라나는 존재다", relationship: "일상에서 이어 읽기", reason: "일상의 작은 마음과 목소리가 어떻게 시민의 이야기로 자라는지 이어서 읽습니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
     en: { href: "/seed-language/citizen-as-seed", title: "A Citizen Is Not a Given Label but a Growing Being", relationship: "CONTINUE READING", reason: "Read how small moments and voices in daily life can grow into a civic story.", listHref: "/columns", listLabel: "All columns" },
