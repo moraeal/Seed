@@ -1,6 +1,7 @@
 import { realEstateSupervisorColumn } from "./columns/realEstateSupervisorColumn";
 import { issue32 } from "./contentTranslations/columns/issue32";
 import { pendingLegislativeCommentaries } from "./pendingLegislativeCommentaries";
+import { nuclearSubmarineWatch } from "./nuclearSubmarineWatch";
 
 export type LegislativeCommentaryLanguage = "ko" | "en";
 
@@ -62,6 +63,7 @@ export const linkedLegislativeColumnCommentaries = [{
 }];
 
 export const legislativeCommentaries: LegislativeCommentary[] = [
+  nuclearSubmarineWatch,
   ...pendingLegislativeCommentaries,
   {
     slug: "sme-market-access-and-real-profit",
