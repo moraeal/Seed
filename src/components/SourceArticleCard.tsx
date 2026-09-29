@@ -7,6 +7,7 @@ type SourceArticleCardProps = {
   news: SelectedNews;
   compact?: boolean;
   ko: boolean;
+  imageBesideSummary?: boolean;
 };
 
 const resolveImageSrc = (src?: string) => {
@@ -15,7 +16,7 @@ const resolveImageSrc = (src?: string) => {
   return `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 };
 
-export default function SourceArticleCard({ news, compact = false, ko }: SourceArticleCardProps) {
+export default function SourceArticleCard({ news, compact = false, ko, imageBesideSummary = false }: SourceArticleCardProps) {
   const thumbnail = resolveImageSrc(news.thumbnailUrl);
   const publisherOwnedThumbnail = /^https?:\/\//i.test(news.thumbnailUrl ?? "");
   const thumbnailAfterSummary = news.thumbnailPlacement === "after-summary";
@@ -58,6 +59,22 @@ export default function SourceArticleCard({ news, compact = false, ko }: SourceA
         {thumbnail && <SafeImage src={thumbnail} alt={news.thumbnailAlt ?? ""} loading="lazy" referrerPolicy="no-referrer" className="h-full min-h-[92px] w-full object-cover"/>}
       </a>
     );
+  }
+
+  if (imageBesideSummary && thumbnail) {
+    return <section className="mb-10 overflow-hidden border border-green-deep/15 bg-white shadow-[0_16px_45px_rgba(23,76,58,.08)]">
+      <div className="p-6 sm:p-9">
+        <div className="flex flex-wrap items-center gap-3 text-xs font-bold text-charcoal/50"><span className="section-kicker">{ko ? "핫이슈 선정 기사" : "HOT ISSUE SOURCE"}</span><span>{news.outlet}</span><time>{news.publishedAt}</time></div>
+        <h2 className="editorial-title mt-5 text-2xl font-bold leading-snug text-navy sm:text-3xl">{news.headline}</h2>
+        <div className="mt-6 grid gap-6 border-t border-green-deep/10 pt-6 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-start md:gap-8">
+          <a href={news.url} target="_blank" rel="noreferrer" className="group/image block overflow-hidden bg-ivory">
+            <SafeImage src={thumbnail} alt={news.thumbnailAlt ?? ""} referrerPolicy="no-referrer" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover/image:scale-[1.015]"/>
+            {news.thumbnailCaption && <span className="block border border-t-0 border-green-deep/10 bg-ivory px-4 py-3 text-xs leading-5 text-charcoal/60">{news.thumbnailCaption}</span>}
+          </a>
+          <div><span className="text-xs font-extrabold tracking-[.16em] text-green-deep">{ko ? "기사 핵심 요약" : "KEY POINTS"}</span><ul className="mt-4 grid gap-3 text-sm leading-7 text-charcoal/70 sm:text-base">{news.summary.map((item, index) => <li key={`${index}-${item}`} className="flex gap-3"><span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"/><span>{item}</span></li>)}</ul><a href={news.url} target="_blank" rel="noreferrer" className="button-secondary mt-7 inline-flex text-sm">{news.linkLabel}<ArrowUpRight size={15}/></a></div>
+        </div>
+      </div>
+    </section>;
   }
 
   return (

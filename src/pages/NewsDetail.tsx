@@ -42,6 +42,7 @@ export default function NewsDetail() {
   const isLhArticle = article.slug === "lh-split-public-agency-experiment";
   const isFuelPriceCapArticle = article.slug === "fuel-price-cap-tax-bill";
   const usesSourceVideoAsBodyImage = article.slug === "media-appeal-justice-press-play";
+  const isDebtReliefArticle = article.slug === "debt-relief-repaid-borrowers-fairness-2026";
   const detailHeroImage = isLhArticle
     ? {
         ...article.heroImage,
@@ -55,7 +56,7 @@ export default function NewsDetail() {
   const heroImageKey = imageKey(detailHeroImage.src);
   const inlineImageKey = imageKey(article.inlineImage.src);
   const inlineImageIsSvg = /\.svg(?:$|[?#])/i.test(article.inlineImage.src);
-  const selectedNews = !usesSourceVideoAsBodyImage && article.selectedNews.thumbnailUrl && [heroImageKey, inlineImageKey].includes(imageKey(article.selectedNews.thumbnailUrl))
+  const selectedNews = !isDebtReliefArticle && !usesSourceVideoAsBodyImage && article.selectedNews.thumbnailUrl && [heroImageKey, inlineImageKey].includes(imageKey(article.selectedNews.thumbnailUrl))
     ? { ...article.selectedNews, thumbnailUrl: undefined }
     : article.selectedNews;
   const showInlineImage = !usesSourceVideoAsBodyImage && inlineImageKey !== heroImageKey;
@@ -73,11 +74,11 @@ export default function NewsDetail() {
         <p className="border-t border-green-deep/10 bg-ivory px-5 py-4 text-xs leading-6 text-charcoal/50 sm:px-7">※ {article.video.disclaimer}</p>
       </section>}
       <div className={article.slug === "supreme-court-renomination-standoff-2026" ? "reading-column" : undefined}>
-        <SourceArticleCard news={selectedNews} ko={ko}/>
+        <SourceArticleCard news={selectedNews} ko={ko} imageBesideSummary={isDebtReliefArticle}/>
       </div>
       {article.slug === "supreme-court-renomination-standoff-2026" && <Link to="/monitoring/supreme-court-renomination-tracker-2026" className="mb-10 flex items-center justify-between gap-4 border-l-4 border-gold bg-navy px-5 py-5 text-white transition hover:bg-green-deep sm:px-7"><span><span className="text-[10px] font-black tracking-[.14em] text-gold">NEWS TRACKER</span><strong className="mt-1 block text-base leading-7">{ko ? "대법관 제청을 되돌릴 수 있나 — 날짜별 진행 기록 보기" : "Can the nomination be sent back? Follow the dated case record"}</strong></span><ArrowRight className="shrink-0" size={19}/></Link>}
       {article.slug === "lh-debt-split-power-five-merge" && <Link to="/monitoring/public-institution-reform-109" className="mb-10 flex items-center justify-between gap-4 border-l-4 border-gold bg-navy px-5 py-5 text-white transition hover:bg-green-deep sm:px-7"><span><span className="text-[10px] font-black tracking-[.14em] text-gold">{ko ? "연결된 시민감시" : "CONNECTED CIVIC WATCH"}</span><strong className="mt-1 block text-base leading-7">{ko ? "공공기관 109, 정말 줄어드나 — 전체 진행상황 보기" : "Will the 109-entity reduction really happen? View the full tracker"}</strong></span><ArrowRight className="shrink-0" size={19}/></Link>}
-      {!isLhArticle && !isFuelPriceCapArticle && !usesSourceVideoAsBodyImage && <InteractiveFigure src={detailHeroImage.src} alt={detailHeroImage.alt} caption={detailHeroImage.caption} credit={detailHeroImage.credit} sourceUrl={detailHeroImage.sourceUrl} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]" imageClassName="aspect-[16/9] w-full object-cover" />}
+      {!isDebtReliefArticle && !isLhArticle && !isFuelPriceCapArticle && !usesSourceVideoAsBodyImage && <InteractiveFigure src={detailHeroImage.src} alt={detailHeroImage.alt} caption={detailHeroImage.caption} credit={detailHeroImage.credit} sourceUrl={detailHeroImage.sourceUrl} figureClassName="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]" imageClassName="aspect-[16/9] w-full object-cover" />}
 
       <div className="reading-column mt-8">
         <aside className="border-l-4 border-gold bg-green-pale px-6 py-7 sm:px-8"><span className="section-kicker">{ko ? "오늘의 한 문장" : "ONE SENTENCE"}</span><p className="mt-3 text-xl font-extrabold leading-8 text-green-deep sm:text-2xl sm:leading-9">{article.keySentence}</p></aside>
@@ -88,8 +89,8 @@ export default function NewsDetail() {
           {section.bullets && <ul className="mt-5 grid gap-2.5 text-base leading-7 text-charcoal/75 sm:text-[17px]">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet}`} className="flex gap-3"><span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"/><span>{bullet}</span></li>)}</ul>}
           {isFuelPriceCapArticle && index === 0 && <InteractiveFigure src={detailHeroImage.src} alt={detailHeroImage.alt} caption={detailHeroImage.caption} credit={detailHeroImage.credit} sourceUrl={detailHeroImage.sourceUrl} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_50px_rgba(23,76,58,.08)]" imageClassName="aspect-[16/9] w-full object-cover" />}
           {isLhArticle && index === Math.min(2, article.sections.length - 1) && <InteractiveFigure src={detailHeroImage.src} alt={detailHeroImage.alt} showCaption={false} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white" imageClassName="aspect-[16/9] w-full object-cover" />}
-          {showInlineImage && index === Math.min(2, article.sections.length - 1) && <InteractiveFigure src={article.inlineImage.src} alt={article.inlineImage.alt} caption={article.inlineImage.caption} credit={article.inlineImage.credit} sourceUrl={article.inlineImage.sourceUrl} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white" imageClassName={isFuelPriceCapArticle || inlineImageIsSvg ? "block h-auto w-full bg-ivory object-contain" : "aspect-[16/10] w-full object-cover"} />}
-          {index === (article.slug === "debt-relief-repaid-borrowers-fairness-2026" ? 0 : Math.min(4, article.sections.length - 1)) && additionalImages.map((image, imageIndex) => <InteractiveFigure key={`${imageIndex}-${image.src}`} src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white" imageClassName="aspect-[16/10] w-full object-cover" />)}
+          {showInlineImage && index === Math.min(isDebtReliefArticle ? 1 : 2, article.sections.length - 1) && <InteractiveFigure src={article.inlineImage.src} alt={article.inlineImage.alt} caption={article.inlineImage.caption} credit={article.inlineImage.credit} sourceUrl={article.inlineImage.sourceUrl} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white" imageClassName={isFuelPriceCapArticle || inlineImageIsSvg ? "block h-auto w-full bg-ivory object-contain" : "aspect-[16/10] w-full object-cover"} />}
+          {index === Math.min(isDebtReliefArticle ? 2 : 4, article.sections.length - 1) && additionalImages.map((image, imageIndex) => <InteractiveFigure key={`${imageIndex}-${image.src}`} src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white" imageClassName="aspect-[16/10] w-full object-cover" />)}
         </section>)}
 
         <section className="mt-10 border-t-2 border-navy pt-7"><span className="section-kicker">{ko ? "앞으로 확인할 지점" : "WHAT TO WATCH"}</span><ol className="mt-4 grid gap-3 sm:grid-cols-2">{article.watchPoints.map((point, index) => <li key={`${index}-${point}`} className="border border-green-deep/15 bg-white p-4"><p className="text-sm font-semibold leading-6 text-navy">{point}</p></li>)}</ol></section>
