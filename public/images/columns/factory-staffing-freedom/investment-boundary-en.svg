@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 490" role="img" aria-labelledby="title desc">
+<title id="title">The boundary between investment and changes to working conditions</title><desc id="desc">The ministry excludes the factory decision itself from mandatory bargaining, while concrete effects on working conditions arising from layoffs or restructuring may be subject to bargaining.</desc>
+<rect width="1200" height="490" fill="#f8f9f6"/>
+<text x="70" y="75" fill="#15322b" font-size="35" font-family="sans-serif" font-weight="700">Building a factory and its effects on workers</text>
+<text x="70" y="119" fill="#596964" font-size="21" font-family="sans-serif">Ministry of Employment and Labor guidance, September 2026</text>
+<rect x="70" y="158" width="510" height="214" rx="20" fill="#e2efe9"/>
+<rect x="620" y="158" width="510" height="214" rx="20" fill="#f2eadb"/>
+<text x="104" y="212" fill="#164a3c" font-size="27" font-family="sans-serif" font-weight="700">Investment decision</text>
+<text x="104" y="255" fill="#213b33" font-size="21" font-family="sans-serif">New factory · site · scale · timing</text>
+<text x="104" y="329" fill="#164a3c" font-size="22" font-family="sans-serif" font-weight="700">Not mandatory bargaining itself</text>
+<text x="654" y="212" fill="#684620" font-size="27" font-family="sans-serif" font-weight="700">Effects on working conditions</text>
+<text x="654" y="255" fill="#3d3d36" font-size="20" font-family="sans-serif">Layoffs · restructuring-related transfers</text>
+<text x="654" y="329" fill="#684620" font-size="22" font-family="sans-serif" font-weight="700">Bargaining may apply if foreseeable</text>
+<text x="70" y="430" fill="#4b5854" font-size="20" font-family="sans-serif">The contested boundary: staffing a new line versus restructuring existing jobs.</text>
+</svg>

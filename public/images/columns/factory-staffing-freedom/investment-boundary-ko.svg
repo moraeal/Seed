@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 490" role="img" aria-labelledby="title desc">
+<title id="title">공장 투자와 근로조건 변화의 경계</title><desc id="desc">고용노동부 지침에 따르면 공장 신설 결정 자체는 의무 교섭 대상이 아니며, 정리해고와 구조조정에 따른 배치전환 등 객관적으로 예상되는 근로조건 변화는 교섭 대상이 될 수 있다.</desc>
+<rect width="1200" height="490" fill="#f8f9f6"/>
+<text x="70" y="75" fill="#15322b" font-size="38" font-family="sans-serif" font-weight="700">공장을 짓는 결정과 사람에게 미치는 영향</text>
+<text x="70" y="119" fill="#596964" font-size="21" font-family="sans-serif">고용노동부 2026년 9월 시행지침의 구분</text>
+<rect x="70" y="158" width="510" height="214" rx="20" fill="#e2efe9"/>
+<rect x="620" y="158" width="510" height="214" rx="20" fill="#f2eadb"/>
+<text x="104" y="212" fill="#164a3c" font-size="27" font-family="sans-serif" font-weight="700">기업의 투자 결정</text>
+<text x="104" y="255" fill="#213b33" font-size="22" font-family="sans-serif">공장 신설 · 부지 · 규모 · 시기</text>
+<text x="104" y="329" fill="#164a3c" font-size="23" font-family="sans-serif" font-weight="700">그 자체는 의무 교섭 대상 아님</text>
+<text x="654" y="212" fill="#684620" font-size="27" font-family="sans-serif" font-weight="700">실행 과정의 근로조건 변화</text>
+<text x="654" y="255" fill="#3d3d36" font-size="22" font-family="sans-serif">정리해고 · 구조조정에 따른 배치전환 등</text>
+<text x="654" y="329" fill="#684620" font-size="23" font-family="sans-serif" font-weight="700">객관적으로 예상되면 교섭 가능</text>
+<text x="70" y="430" fill="#4b5854" font-size="21" font-family="sans-serif">쟁점: 새 공장 가동을 위한 인력 배치와 구조조정에 따른 변화의 경계는 어디인가?</text>
+</svg>
