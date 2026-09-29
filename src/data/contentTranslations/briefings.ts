@@ -14,8 +14,12 @@ import { northKoreanPowsTranslation } from "./briefingNorthKoreanPows";
 import { platformAdvertisingTranslation } from "./briefingPlatformAdvertising";
 import { inheritanceTaxFrozenThresholdTranslation } from "./briefingInheritanceTaxFrozenThreshold";
 import { incomeTaxFamilyDeductionTranslation } from "./briefingIncomeTaxFamilyDeduction";
+import { realEstateSupervisorExplainerTranslation } from "./briefingRealEstateSupervisor";
+import { monthlyRentCreditExplainerTranslation } from "./briefingMonthlyRentCredit";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "real-estate-supervisor-bill-2221573-explained": realEstateSupervisorExplainerTranslation,
+  "monthly-rent-tax-credit-2026-bills-explained": monthlyRentCreditExplainerTranslation,
   "income-tax-family-deduction-2026-proposals": incomeTaxFamilyDeductionTranslation,
   "inheritance-tax-frozen-allowance-middle-class": inheritanceTaxFrozenThresholdTranslation,
   "platform-advertising-cost-small-merchants": platformAdvertisingTranslation,

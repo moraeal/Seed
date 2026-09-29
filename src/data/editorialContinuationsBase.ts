@@ -9,6 +9,14 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "briefing:real-estate-supervisor-bill-2221573-explained": {
+    ko: { href: "/monitoring/legislation/commentary/real-estate-supervisor-september-bill", title: "감독원에 계좌를 볼 권한까지 맡길 것인가", relationship: "관련 입법 논평", reason: "조사권의 필요성과 시민이 다툴 수 있는 통제 절차를 살펴봅니다.", listHref: "/briefings", listLabel: "브리핑 전체 보기" },
+    en: { href: "/monitoring/legislation/commentary/real-estate-supervisor-september-bill", title: "Should a New Property Supervisor See Buyers' Bank Records?", relationship: "RELATED OPINION", reason: "Examine the powers and remedies that should accompany an inquiry.", listHref: "/briefings", listLabel: "All briefings" },
+  },
+  "briefing:monthly-rent-tax-credit-2026-bills-explained": {
+    ko: { href: "/monitoring/tax/commentary/monthly-rent-credit-benefit-gap", title: "월세는 똑같이 내는데 공제는 세금 많은 사람에게 먼저 간다", relationship: "관련 세금 논평", reason: "한도 확대와 이월이 실제 세금 감소로 이어지는지 따집니다.", listHref: "/briefings", listLabel: "브리핑 전체 보기" },
+    en: { href: "/monitoring/tax/commentary/monthly-rent-credit-benefit-gap", title: "Same Rent, but the Credit First Helps Those With Tax to Pay", relationship: "RELATED OPINION", reason: "Examine who can actually use an expanded cap or carryforward.", listHref: "/briefings", listLabel: "All briefings" },
+  },
   "column:factory-investment-staffing-freedom-2026": {
     ko: { href: "/columns/government-electricity-prepayment-pressure", title: "기업을 정부의 현금인출기로 보지 마라", relationship: "기업의 자유 이어 읽기", reason: "인력 운용의 불확실성에 이어 전력망과 전기료가 기업의 투자 선택에 미치는 압박을 살펴봅니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
     en: { href: "/columns/government-electricity-prepayment-pressure", title: "Do Not Treat Companies as the Government's Cash Machine", relationship: "ENTERPRISE FREEDOM", reason: "Continue from staffing uncertainty to the pressure that electricity supply and prepayment proposals can place on investment choices.", listHref: "/columns", listLabel: "All columns" },

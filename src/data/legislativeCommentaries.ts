@@ -1,3 +1,4 @@
+import { realEstateSupervisorCommentary } from "./realEstateSupervisorCommentary";
 import { realEstateSupervisorColumn } from "./columns/realEstateSupervisorColumn";
 import { issue32 } from "./contentTranslations/columns/issue32";
 import { pendingLegislativeCommentaries } from "./pendingLegislativeCommentaries";
@@ -29,6 +30,7 @@ export type LegislativeCommentary = {
   slug: string;
   billNo: string;
   relatedBillSlug?: string;
+  relatedExplainer?: { href: string; title: LocalizedText };
   date: string;
   readMinutes: number;
   heroSrc: string;
@@ -61,6 +63,7 @@ export const linkedLegislativeColumnCommentaries = [{
 }];
 
 export const legislativeCommentaries: LegislativeCommentary[] = [
+  realEstateSupervisorCommentary,
   ...pendingLegislativeCommentaries,
   {
     slug: "sme-market-access-and-real-profit",

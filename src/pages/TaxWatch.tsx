@@ -2,6 +2,8 @@ import { useMemo } from "react";
 import WatchPairRow from "../components/WatchPairRow";
 import { taxCommentaries } from "../data/taxCommentaries";
 import { taxPolicies } from "../data/taxWatch";
+import { monthlyRentCreditExplainer } from "../data/monthlyRentCreditExplainer";
+import { monthlyRentCreditExplainerTranslation } from "../data/contentTranslations/briefingMonthlyRentCredit";
 import { incomeTaxFamilyDeductionBriefing } from "../data/incomeTaxFamilyDeductionBriefing";
 import { incomeTaxFamilyDeductionTranslation } from "../data/contentTranslations/briefingIncomeTaxFamilyDeduction";
 import { useLanguage } from "../i18n";
@@ -17,8 +19,9 @@ export default function TaxWatch() {
       const official = policy.sources.find((source) => /\.go\.kr|assembly\.go\.kr|lawmaking\.go\.kr|law\.go\.kr/.test(new URL(source.url).hostname));
       return { key: policy.slug, date: policy.checkedAt, article: article && edition ? { href: `/monitoring/tax/commentary/${article.slug}`, label: ko ? "세금 논평" : "TAX COMMENTARY", title: edition.title, summary: edition.summary, image: article.heroSrc, alt: edition.heroAlt, date: article.date } : undefined, record: { href: official?.url || `/monitoring/tax/${policy.slug}`, external: Boolean(official), detailHref: `/monitoring/tax/${policy.slug}`, detailLabel: ko ? "세금정책 쉽게 읽기" : "Read policy explainer", label: ko ? "세금정책 원문" : "TAX POLICY SOURCE", title: policy.title[language], summary: policy.summary[language], image: policy.heroImage[language], alt: policy.heroImage.alt[language], date: policy.checkedAt } };
     });
+    const rentExplainer = { key: "rent-explainer", date: monthlyRentCreditExplainer.date, article: { href: `/briefings/${monthlyRentCreditExplainer.slug}`, label: ko ? "세금정책 설명 기사" : "TAX EXPLAINER", title: ko ? monthlyRentCreditExplainer.title : monthlyRentCreditExplainerTranslation.title, summary: ko ? monthlyRentCreditExplainer.summary : monthlyRentCreditExplainerTranslation.summary, image: monthlyRentCreditExplainer.images?.[0]?.src, alt: ko ? monthlyRentCreditExplainer.images?.[0]?.alt : monthlyRentCreditExplainerTranslation.images?.[0]?.alt, date: monthlyRentCreditExplainer.date }, record: { href: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221532/detailRP?yType=I", external: true, label: ko ? "관련 법안 원문 · 의안 2221532" : "BILL SOURCE · 2221532", title: ko ? "월세 공제 대상·한도 확대안" : "Rent credit cap proposal", summary: ko ? "별도 이월안은 의안 2221529호입니다." : "The separate carryforward proposal is Bill 2221529.", date: monthlyRentCreditExplainer.date } };
     const family = { key: "family-deduction", date: incomeTaxFamilyDeductionBriefing.date, article: { href: `/briefings/${incomeTaxFamilyDeductionBriefing.slug}`, label: ko ? "세금정책 설명 기사" : "TAX EXPLAINER", title: ko ? incomeTaxFamilyDeductionBriefing.title : incomeTaxFamilyDeductionTranslation.title, summary: ko ? incomeTaxFamilyDeductionBriefing.summary : incomeTaxFamilyDeductionTranslation.summary, image: incomeTaxFamilyDeductionBriefing.images?.[0]?.src, alt: ko ? incomeTaxFamilyDeductionBriefing.images?.[0]?.alt : incomeTaxFamilyDeductionTranslation.images?.[0]?.alt, date: incomeTaxFamilyDeductionBriefing.date }, record: { href: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221581/detailRP", external: true, label: ko ? "관련 법안 원문 · 의안 2221581" : "RELATED BILL SOURCE · 2221581", title: ko ? "소득세법 일부개정법률안" : "Income Tax Act amendment", summary: ko ? "가족 기본공제 소득요건과 관련된 개정안의 제안 내용을 확인하세요." : "Read the proposed change to the family deduction income threshold.", date: incomeTaxFamilyDeductionBriefing.date } };
-    return [...policies, family].sort((a, b) => b.date.localeCompare(a.date));
+    return [...policies, rentExplainer, family].sort((a, b) => b.date.localeCompare(a.date));
   }, [language, ko]);
 
   return <section className="min-h-[70vh] bg-paper pb-16">

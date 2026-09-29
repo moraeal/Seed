@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import WatchPairRow, { type WatchSide } from "../components/WatchPairRow";
 import { legislativeCommentaries } from "../data/legislativeCommentaries";
+import { realEstateSupervisorExplainer } from "../data/realEstateSupervisorExplainer";
+import { realEstateSupervisorExplainerTranslation } from "../data/contentTranslations/briefingRealEstateSupervisor";
 import { incomeTaxFamilyDeductionBriefing } from "../data/incomeTaxFamilyDeductionBriefing";
 import { incomeTaxFamilyDeductionTranslation } from "../data/contentTranslations/briefingIncomeTaxFamilyDeduction";
 import { useLanguage } from "../i18n";
@@ -34,6 +36,7 @@ export default function LegislativeWatch() {
         href: sourceUrl(bill) || `/monitoring/legislation/${bill.slug}`, external: Boolean(sourceUrl(bill)), detailHref: `/monitoring/legislation/${bill.slug}`, detailLabel: ko ? "법안 쉽게 읽기" : "Read bill explainer", label: ko ? `법안 원문 · 의안 ${bill.bill_no || ""}` : `BILL SOURCE · ${bill.bill_no || ""}`, title: ko ? bill.title : bill.analysis?.title_en || bill.title, summary: ko ? bill.public_summary_ko || bill.analysis?.summary_ko || bill.official_summary || "공식 제안 자료를 확인하세요." : bill.analysis?.official_rationale_en || bill.public_summary_en || bill.analysis?.summary_en || "Open the official bill record.", date: bill.proposed_date || undefined,
       } : { href: official?.url || `/monitoring/legislation/commentary/${article.slug}`, external: Boolean(official), label: ko ? `법안 원문 · 의안 ${article.billNo}` : `BILL SOURCE · ${article.billNo}`, title: ko ? article.editions.ko.subtitle : article.editions.en.subtitle, summary: ko ? "국회에 공개된 제안 이유와 주요 내용을 원문에서 확인하세요." : "Read the proposal's stated purpose and provisions in the official record.", date: article.date } };
     });
+    const supervisor = { key: "supervisor-explainer", date: realEstateSupervisorExplainer.date, article: { href: `/briefings/${realEstateSupervisorExplainer.slug}`, label: ko ? "법안 설명 기사" : "BILL EXPLAINER", title: ko ? realEstateSupervisorExplainer.title : realEstateSupervisorExplainerTranslation.title, summary: ko ? realEstateSupervisorExplainer.summary : realEstateSupervisorExplainerTranslation.summary, image: realEstateSupervisorExplainer.images?.[0]?.src, alt: ko ? realEstateSupervisorExplainer.images?.[0]?.alt : realEstateSupervisorExplainerTranslation.images?.[0]?.alt, date: realEstateSupervisorExplainer.date }, record: { href: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221573/detailRP", external: true, label: ko ? "관련 법안 원문 · 의안 2221573" : "BILL SOURCE · 2221573", title: ko ? "부동산감독원 설치 및 운영에 관한 법률안" : "Real Estate Supervisor Bill", summary: ko ? "공개된 제안 이유와 주요 내용을 확인하세요." : "Read the published proposal summary.", date: realEstateSupervisorExplainer.date } };
     const explainerBill = bills.find((item) => item.bill_no === "2221581");
     if (explainerBill) used.add(explainerBill.bill_id);
     const explainer = { key: "family-deduction", date: incomeTaxFamilyDeductionBriefing.date, article: { href: `/briefings/${incomeTaxFamilyDeductionBriefing.slug}`, label: ko ? "법안 설명 기사" : "BILL EXPLAINER", title: ko ? incomeTaxFamilyDeductionBriefing.title : incomeTaxFamilyDeductionTranslation.title, summary: ko ? incomeTaxFamilyDeductionBriefing.summary : incomeTaxFamilyDeductionTranslation.summary, image: incomeTaxFamilyDeductionBriefing.images?.[0]?.src, alt: ko ? incomeTaxFamilyDeductionBriefing.images?.[0]?.alt : incomeTaxFamilyDeductionTranslation.images?.[0]?.alt, date: incomeTaxFamilyDeductionBriefing.date }, record: explainerBill ? { href: sourceUrl(explainerBill) || `/monitoring/legislation/${explainerBill.slug}`, external: Boolean(sourceUrl(explainerBill)), detailHref: `/monitoring/legislation/${explainerBill.slug}`, detailLabel: ko ? "법안 쉽게 읽기" : "Read bill explainer", label: ko ? "법안 원문 · 의안 2221581" : "BILL SOURCE · 2221581", title: ko ? explainerBill.title : explainerBill.analysis?.title_en || explainerBill.title, summary: ko ? explainerBill.public_summary_ko || explainerBill.analysis?.summary_ko || explainerBill.official_summary || "국회 원문에서 개정안 내용을 확인하세요." : explainerBill.analysis?.official_rationale_en || explainerBill.public_summary_en || "Read the official proposal.", date: explainerBill.proposed_date || undefined } : { href: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221581/detailRP", external: true, label: ko ? "법안 원문 · 의안 2221581" : "BILL SOURCE · 2221581", title: ko ? "소득세법 일부개정법률안" : "Income Tax Act amendment", summary: ko ? "가족 기본공제 소득요건에 관한 제안 내용을 국회 공개 자료에서 확인하세요." : "Read the proposal on the family deduction income threshold.", date: incomeTaxFamilyDeductionBriefing.date } };
@@ -56,7 +59,7 @@ export default function LegislativeWatch() {
         date: bill.proposed_date || undefined,
       },
     }));
-    return [...paired, explainer, ...remaining].sort((a, b) => b.date.localeCompare(a.date));
+    return [...paired, supervisor, explainer, ...remaining].sort((a, b) => b.date.localeCompare(a.date));
   }, [bills, language, ko]);
 
   return <section className="min-h-[70vh] bg-paper pb-16">
