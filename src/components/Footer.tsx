@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n";
 import { SITE_DESCRIPTION } from "../siteMeta";
 import BrandLockup from "./BrandLockup";
@@ -7,10 +7,9 @@ import BrandLockup from "./BrandLockup";
 export default function Footer() {
   const { language } = useLanguage();
   const ko = language === "ko";
-  const isHome = ["/", "/en/", "/en"].includes(useLocation().pathname);
   const email = "seedvoicekr@gmail.com";
 
-  return <footer className={`py-8 text-white ${isHome ? "border-t border-white/10 bg-[#112B25]" : "border-t-4 border-[#eed474] bg-[#19445b]"}`}>
+  return <footer className="border-t-4 border-[#eed474] bg-[#19445b] py-8 text-white">
     <div className="container-page">
       <div className="grid gap-7 lg:grid-cols-[1.25fr_.75fr]">
         <div>
