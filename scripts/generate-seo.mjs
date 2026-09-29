@@ -338,6 +338,15 @@ const accountShell = template
 await mkdir(path.join(dist, "account"), { recursive: true });
 await writeFile(path.join(dist, "account", "index.html"), accountShell);
 
+// Keep both former article URLs accessible after their arguments were merged
+// into the single explainer and opinion page.
+const supervisorCanonicalUrl = canonicalUrl("/briefings/real-estate-supervisor-bill-2221573-explained");
+for (const formerPath of ["columns/real-estate-supervisor-citizens-accounts", "monitoring/legislation/commentary/real-estate-supervisor-september-bill"]) {
+  const output = path.join(dist, formerPath, "index.html");
+  await mkdir(path.dirname(output), { recursive: true });
+  await writeFile(output, `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="robots" content="noindex"><link rel="canonical" href="${supervisorCanonicalUrl}"><meta http-equiv="refresh" content="0; url=${supervisorCanonicalUrl}"><title>통합 기사로 이동 | 씨앗의 소리</title></head><body><p><a href="${supervisorCanonicalUrl}">통합 기사 읽기</a></p></body></html>`);
+}
+
 // Private application routes also need a physical entry file on GitHub Pages
 // so refreshes and post-login redirects do not fall through to a 404 page.
 const privateShellRoutes = [
