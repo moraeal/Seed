@@ -3,9 +3,9 @@ import type { NewsTranslation } from "../types";
 export const debtReliefFairness2026Translation: NewsTranslation = {
   category: "Household Finance and Public Accountability",
   title: "After 220,000 Repaid or Refinanced, Another Debt Relief Plan?",
-  subtitle: "Pandemic-era loan balances fell by KRW 56 trillion. Who accounts for the costs borne by those who kept paying?",
-  summary: "Maeil Business reports that about 220,000 borrowers fully repaid or refinanced pandemic-era loans, reducing the outstanding balance by about KRW 56 trillion. That figure is not all cash repayment: refinancing transfers a debt. Yet the government must explain what it offers people who kept paying or accepted new terms while it prepares to adjust about KRW 4.2 trillion in long-overdue small-business claims.",
-  keySentence: "Why does the government count the people it rescues but leave out the costs borne by people who struggled to repay?",
+  subtitle: "The government proposes another principal reduction. What does it owe borrowers who repaid or refinanced through the same crisis?",
+  summary: "The Lee Jae-myung government is considering the purchase and adjustment of approximately KRW 4.2 trillion in long-overdue claims involving some 197,000 pandemic-hit small-business borrowers. About 220,000 borrowers under pandemic-era loan extensions repaid in full or refinanced, and the outstanding balance fell by about KRW 56 trillion. That decline includes refinancing; it is not all cash repayment. Why must people who struggled to pay bear the cost of the same crisis alone?",
+  keySentence: "Why should those who paid interest, repaid debt and refinanced through the same crisis bear that cost alone?",
   selectedNews: {
     outlet: "Maeil Business Newspaper",
     headline: "Another debt write-off raises fairness concerns for 220,000 borrowers who repaid or refinanced",
@@ -15,15 +15,15 @@ export const debtReliefFairness2026Translation: NewsTranslation = {
       "The roughly KRW 56 trillion decline and 220,000-borrower difference include both full repayments and refinancing, not KRW 56 trillion paid entirely in cash.",
       "The Financial Services Commission estimates a further debt-adjustment pool of about KRW 4.2 trillion in long-overdue claims involving 197,000 pandemic-hit small-business borrowers."
     ],
-    thumbnailUrl: "/images/news/debt-relief-fairness-hero.webp",
-    thumbnailAlt: "Symbolic illustration contrasting a repayment ledger with debt relief documents",
-    thumbnailCaption: "SEED VOICE illustration based on the reported figures and government plan.",
+    thumbnailUrl: "/images/news/debt-relief-fairness-hero-v2.webp",
+    thumbnailAlt: "A small-business owner looking at repayment receipts after closing time in a symbolic image",
+    thumbnailCaption: "SEED VOICE image about the effort of repayment, not a photograph from the source report.",
     thumbnailPlacement: "after-summary"
   },
   heroImage: {
-    alt: "A repayment ledger and debt relief papers divided across a desk in a symbolic illustration",
-    caption: "The same crisis also imposed costs on people who kept paying or refinanced their loans.",
-    credit: "SEED VOICE illustration"
+    alt: "Symbolic image of a small-business owner examining repayment receipts after closing time",
+    caption: "The work of repayment continued after the shop closed for the day.",
+    credit: "AI image · SEED VOICE"
   },
   inlineImage: {
     src: "/images/news/debt-relief-fairness-en.svg",
@@ -31,24 +31,26 @@ export const debtReliefFairness2026Translation: NewsTranslation = {
     caption: "KRW 56 trillion is a fall in outstanding balances that includes repayment and refinancing. KRW 4.2 trillion is a separate estimate of long-overdue claims.",
     credit: "SEED VOICE graphic · Source: Maeil Business report citing FSC figures"
   },
+  additionalImages: [{
+    src: "/images/news/debt-relief-fairness-context.webp",
+    alt: "Symbolic image of a shop owner sorting receipts and an account book at a counter",
+    caption: "For people who repaid or refinanced, the costs of the crisis did not disappear.",
+    credit: "AI image · SEED VOICE"
+  }],
   sections: [
-    { title: "The 220,000 who repaid or refinanced", paragraphs: [
-      "The figures reported by Maeil Business on September 28 are stark. Loans covered by pandemic-era maturity extensions and payment deferrals stood at about KRW 100 trillion across 430,000 borrowers in September 2022. By September 2025, the balance was about KRW 44 trillion across 210,000. About 220,000 borrowers had fully repaid or refinanced, and outstanding balances had fallen by about KRW 56 trillion.",
-      "The full KRW 56 trillion was not paid out of borrowers' pockets. Refinancing replaces one debt with another. That distinction sharpens the question: where do people who reduced principal under pressure, or found another loan to keep their obligations, stand in government policy?",
-      "The Financial Services Commission estimates a new adjustment covering approximately 197,000 borrowers and KRW 4.2 trillion in claims on small-business loans below KRW 100 million that have been delinquent since before June 2023. The government cites losses from compulsory business restrictions during the pandemic. That hardship deserves attention. So do the sacrifices of people who cut back on their businesses and living costs to keep paying through the same crisis."
+    { title: "The 220,000 who kept going", paragraphs: [
+      "Refinancing does not mean freedom from debt. It may mean finding better terms at another bank, or taking on a new loan because the old one could not be paid immediately. About 220,000 borrowers repaid in full or refinanced to keep going."
     ] },
-    { title: "The cost of repeated relief", paragraphs: [
-      "The government already operates the New Leap Fund. According to Maeil Business, it had extinguished KRW 2.2583 trillion in old claims for 269,000 debtors by the end of August. Another program is now proposed for pandemic-hit small businesses. Explaining the rationale for each scheme separately does not answer what signal repeated relief sends together.",
-      "People who have truly lost the capacity to repay need a route back to work. Yet a system perceived as offering a better deal only after prolonged delinquency can weaken the incentive to pay. Those who did pay have incurred interest, forgone investment, or accepted the terms of a replacement loan. Ignoring those costs while touting the number of write-offs makes resentment a predictable result of policy design.",
-      "The KRW 4.2 trillion estimate is the face value of claims, not necessarily a cash outlay or the amount of principal that will be forgiven. The government should disclose the purchase price, actual relief per borrower and the respective costs to public funds and financial institutions."
+    { title: "Another debt-relief card", paragraphs: [
+      "Yet the government has reached for debt relief again. The New Start Fund began under the previous administration; the Lee government launched the New Leap Fund. Now it proposes a separate program for long-overdue loans to pandemic-hit small businesses. Names and eligibility differ, but principal reductions return with each new account of the crisis."
     ] },
-    { title: "An audit has already put numbers on the risk", paragraphs: [
-      "The National Assembly Budget Office summarizes a 2025 audit of the earlier New Start Fund: 1,994 borrowers assessed as able to repay in full nevertheless received KRW 84 billion in principal reductions. Gaps in the rules prevented checks of some cryptoassets, gifts and unlisted shares. This is evidence about the earlier fund, not a finding that the proposed new program has already made the same error. It shows what inadequate screening can do.",
-      "The Budget Office warns that bulk purchases of bad debts can make the cause of delinquency and capacity to pay difficult to assess. It calls for follow-up checks of income, assets and false declarations. A promise to screen carefully is insufficient without a public account of how the previous flaws were fixed and what data the new program will use."
+    { title: "The same harm, different support", paragraphs: [
+      "People who have genuinely lost the capacity to pay need help. The state cannot ignore the harm caused by pandemic-era business restrictions. Then answer this: why should those who faced the same harm, paid interest month after month, repaid debt or refinanced bear that loss on their own? If prolonged delinquency counts more than years spent trying to repay, who can call the result fair?",
+      "This anger is not envy. An audit of the earlier New Start Fund found that 1,994 borrowers assessed as able to repay nevertheless received KRW 84 billion in principal reductions. Inspectors also identified gaps in checking cryptoassets and unlisted shares. Before another large purchase of claims, the government should show the public precisely how the screening rules have changed.",
+      "The government says it will offer preferential interest rates and loans to borrowers who kept paying. How can a reduction in principal and a slightly cheaper or larger loan be weighed on the same scale? Until it shows how many people actually receive how much, a promise to support reliable borrowers is not enough."
     ] },
     { title: "SEED's view", paragraphs: [
-      "When President Lee Jae-myung's government reaches for another debt-relief scheme, should people who paid their debts regret their choice? Even citizens who support restructuring for people in genuine distress can ask that question. The state has a duty to help people who cannot repay return to economic life. It must not build that duty entirely on the unrecognized sacrifices of those who kept paying.",
-      "We will compare purchase prices and actual reductions with screening, recovery of improper relief, and the scale and eligibility of help for reliable borrowers. A government that announces only the number rescued still owes an account of fairness to those who paid."
+      "Each time the Lee Jae-myung government reaches for debt write-offs as a ready remedy, it must see the lives of those who fought to pay as clearly as the hardship of those who no longer can. If the state seeks to remedy losses caused by its own business restrictions, it should examine the harm itself. When the length of delinquency becomes the decisive difference in support and the government cannot justify that difference, the policy is unfair before it can claim to be a policy of recovery."
     ] }
   ],
   watchPoints: [
@@ -58,8 +60,8 @@ export const debtReliefFairness2026Translation: NewsTranslation = {
     "Legal grounds and privacy safeguards for identifying repeat relief and renewed delinquency"
   ],
   seedPerspective: [
-    "A route back for people unable to repay and recognition of the sacrifices made by people who paid are both public responsibilities. When the government celebrates only the first group, it shifts the perceived cost of unfairness onto the second.",
-    "KRW 56 trillion is a fall in outstanding balances due to both repayment and refinancing, not an all-cash repayment total. Correcting the figure leaves the central question intact: how will this government treat people who struggled to honor their debts?"
+    "If the state seeks to remedy losses caused by its own business restrictions, it should examine the harm itself.",
+    "When the length of delinquency becomes the decisive difference in support and the government cannot justify it, the policy is unfair before it can claim to be a policy of recovery."
   ],
   sourceLabels: [
     "Maeil Business Newspaper — Another debt write-off and the 220,000 who repaid or refinanced (September 28, 2026)",
