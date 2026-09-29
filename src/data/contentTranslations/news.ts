@@ -6,8 +6,10 @@ import { supremeCourtRenominationStandoffTranslation } from "./news/supremeCourt
 import { majorCrimesAgencyStaffingTranslation } from "./news/majorCrimesAgencyStaffing";
 import { dmzInvestigationTimelineTranslation } from "./news/dmzInvestigationTimeline";
 import { debtReliefFairness2026Translation } from "./news/debtReliefFairness2026";
+import { olympicParkProtest115DaysTranslation } from "./news/olympicParkProtest115Days";
 
 export const newsTranslations: Record<string, NewsTranslation> = {
+  "olympic-park-protest-115-days": olympicParkProtest115DaysTranslation,
   "debt-relief-repaid-borrowers-fairness-2026": debtReliefFairness2026Translation,
   "dmz-blast-investigation-timeline-2026": dmzInvestigationTimelineTranslation,
   "major-crimes-agency-investigator-staffing-2026": majorCrimesAgencyStaffingTranslation,

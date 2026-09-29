@@ -9,6 +9,22 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "news:olympic-park-protest-115-days": {
+    ko: {
+      href: "/monitoring/olympic-park-election-protest-tracker",
+      title: "올공 100일, 투표지는 모자랐고 불신은 남았다",
+      relationship: "날짜별 사실 추적",
+      reason: "투표용지 부족부터 특검 수사까지 확인된 사실과 남은 의혹을 날짜별로 살펴봅니다.",
+      listHref: "/news", listLabel: "핫이슈 전체 보기",
+    },
+    en: {
+      href: "/monitoring/olympic-park-election-protest-tracker",
+      title: "100 Days at Olympic Park: Ballots Ran Short, Distrust Remained",
+      relationship: "FOLLOW THE RECORD",
+      reason: "Review the dated record of confirmed ballot shortages, the special investigation and unresolved claims.",
+      listHref: "/news", listLabel: "All Hot Issues",
+    },
+  },
   "news:debt-relief-repaid-borrowers-fairness-2026": {
     ko: { href: "/news/national-debt-ratio-gdp-comparison", title: "나랏빚 106조 늘었는데 채무비율은 하락?", relationship: "정부 재정 숫자 읽기", reason: "채무조정의 액면과 실제 비용을 구별했다면, 국가채무 통계의 비교 기준도 함께 살펴봅니다.", listHref: "/news", listLabel: "핫이슈 전체 보기" },
     en: { href: "/news/national-debt-ratio-gdp-comparison", title: "Debt Rises by KRW 106 Trillion—So Why Does the Ratio Fall?", relationship: "READING PUBLIC FINANCE", reason: "After separating the face value and actual cost of debt relief, examine the basis for a government debt-ratio comparison.", listHref: "/news", listLabel: "All Hot Issues" },
