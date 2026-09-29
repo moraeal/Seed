@@ -11,10 +11,10 @@ export const civicAuditOfAuditColumn: SeedColumn = {
   readMinutes: 5,
   summary: "인천경실련이 지역 의원 14명의 국감 활동을 평가해 공개하겠다고 했다. 시민단체가 주체적으로 국회를 감시하는 일은 반갑다. 평가 기준과 근거를 사전에 공개한다면 그 활동은 유권자에게 더 신뢰받을 수 있다.",
   heroImage: {
-    src: "images/columns/civic-audit-scorecard-hero.png",
-    alt: "국회 건물 앞에 공개된 평가표와 이를 살펴보는 시민을 그린 삽화",
-    caption: "의원을 평가하는 기준까지 공개되면 시민은 평가 결과를 스스로 판단할 수 있다.",
-    credit: "씨앗의 소리 삽화", sourceUrl: "",
+    src: "images/columns/civic-audit-rubric-review.webp",
+    alt: "시민이 국감 자료 위에 투명한 평가표를 들어 올려 기준을 살펴보는 상징 이미지",
+    caption: "시민은 의원의 활동뿐 아니라 그 활동을 평가하는 기준도 살펴볼 수 있어야 한다.",
+    credit: "AI 생성 이미지", sourceUrl: "",
   },
   inlineImage: {
     src: "images/columns/civic-audit-criteria-ko.svg",
@@ -22,6 +22,13 @@ export const civicAuditOfAuditColumn: SeedColumn = {
     caption: "평가 결과와 함께 기준·증거·반론 절차를 확인할 수 있어야 한다.",
     credit: "씨앗의 소리 도표", sourceUrl: "",
   },
+  displayInlineImage: false,
+  additionalImages: [{
+    src: "images/columns/civic-audit-criteria-ko.svg",
+    alt: "평가 범위, 의제 선정, 증거와 점수, 설명과 이의 절차를 사전에 공개하는 네 가지 기준",
+    caption: "평가 결과와 함께 기준·증거·반론 절차를 확인할 수 있어야 한다.",
+    credit: "씨앗의 소리 도표", sourceUrl: "", afterSection: 1, contain: true,
+  }],
   sections: [
     { title: "유권자는 선거 때만 의원을 평가하지 않는다", paragraphs: [
       "인천경실련이 인천 지역 국회의원 14명의 국정감사 활동을 평가해 유권자에게 공개하겠다고 밝혔다. 국회의원은 정부를 감사하고, 시민단체는 그 의원이 제 역할을 하는지 살핀다. 시민단체가 주체적으로 의원의 활동을 평가하겠다는 것은 반가운 일이다.",

@@ -6,9 +6,9 @@ export const issue41: ColumnTranslation = {
   author: "Little Seed",
   summary: "A civic group in Incheon plans to assess 14 local lawmakers during the National Assembly's annual audit. Independent scrutiny is welcome. Publishing the criteria and evidence in advance would make its verdict more trustworthy.",
   heroImage: {
-    alt: "Illustration of a public scorecard before the National Assembly, with a citizen examining it",
-    caption: "When the scoring rules are public, voters can assess the evaluation for themselves.",
-    credit: "SEED VOICE illustration",
+    alt: "A citizen holds a transparent evaluation rubric over parliamentary audit records to inspect the standards",
+    caption: "Citizens should be able to examine the rules used to evaluate lawmakers as well as the lawmakers' work.",
+    credit: "AI-generated image",
   },
   inlineImage: {
     src: "images/columns/civic-audit-criteria-en.svg",
@@ -16,6 +16,12 @@ export const issue41: ColumnTranslation = {
     caption: "The results should be accompanied by the criteria, evidence and a process for reply.",
     credit: "SEED VOICE graphic",
   },
+  additionalImages: [{
+    src: "images/columns/civic-audit-criteria-en.svg",
+    alt: "Four standards to publish in advance: scope, agenda, evidence and scoring, and a right of reply",
+    caption: "The results should be accompanied by the criteria, evidence and a process for reply.",
+    credit: "SEED VOICE graphic",
+  }],
   sections: [
     { title: "Voters judge lawmakers between elections, too", paragraphs: [
       "Incheon Citizens' Coalition for Economic Justice plans to assess the National Assembly audit work of 14 lawmakers representing the city and publish the results for voters. Legislators question the government; civic groups can examine how well legislators perform that task. An independent group taking the initiative is welcome.",
