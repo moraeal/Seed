@@ -108,9 +108,12 @@ function AppShell() {
           <Route path="/news/:slug" element={<HotIssueDetail />} />
           <Route path="/monitoring" element={<Monitoring />} />
           <Route path="/monitoring/legislation" element={<LegislativeWatch />} />
+          <Route path="/monitoring/legislation/commentary/real-estate-supervisor-september-bill" element={<Navigate to="/briefings/real-estate-supervisor-bill-2221573-explained" replace />} />
           <Route path="/monitoring/legislation/commentary/:slug" element={<LegislativeCommentaryDetail />} />
           <Route path="/monitoring/legislation/:slug" element={<LegislativeBillDetail />} />
           <Route path="/monitoring/tax" element={<TaxWatch />} />
+          <Route path="/monitoring/tax/commentary/monthly-rent-credit-benefit-gap" element={<Navigate to="/briefings/monthly-rent-tax-credit-2026-bills-explained" replace />} />
+          <Route path="/monitoring/tax/monthly-rent-credit-2026-bills" element={<Navigate to="/briefings/monthly-rent-tax-credit-2026-bills-explained" replace />} />
           <Route path="/monitoring/tax/commentary/:slug" element={<TaxCommentaryDetail />} />
           <Route path="/monitoring/tax/:slug" element={<TaxPolicyDetail />} />
           <Route path="/monitoring/public-interest" element={<PublicInterestWatch />} />

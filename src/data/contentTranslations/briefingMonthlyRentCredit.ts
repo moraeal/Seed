@@ -1,10 +1,10 @@
 import type { BriefingTranslation } from "./types";
 
 export const monthlyRentCreditExplainerTranslation: BriefingTranslation = {
-  category: "TAX WATCH · BILL EXPLAINER",
+  category: "TAX WATCH · EXPLAINER AND OPINION",
   title: "Would a Larger Rent Tax Credit Help Tenants With Little Tax to Pay?",
   subtitle: "Separate the government's KRW 12 million cap, lawmakers' KRW 15 million cap and proposed ten-year carryforward",
-  summary: "Two proposals would raise the eligible rent cap or carry unused credits forward. A higher amount eligible for calculation is different from an immediate cash refund.",
+  summary: "Proposals would raise the eligible-rent cap and carry unused credits forward for ten years. This article explains both changes and examines why tenants with little income tax may still struggle to use the promised relief.",
   keyHighlights: [
     "The current annual rent cap used to calculate the credit is KRW 10 million. The 2026 government reform proposes KRW 12 million; a September 22 lawmaker bill proposes KRW 15 million.",
     "A separate Income Tax Act bill would carry forward a credit that cannot be used against the year's income tax for up to ten years.",
@@ -33,13 +33,17 @@ export const monthlyRentCreditExplainerTranslation: BriefingTranslation = {
     ] },
     { title: "Who benefits from paying the same rent?", paragraphs: [
       "A higher cap immediately helps eligible tenants who have enough tax liability to use the larger credit. A wage earner with very little tax may not benefit fully. The carryforward addresses that gap, but offers limited value if the tenant has no usable tax over the next ten years.",
-      "The number of newly eligible households, tax savings by income group, unused credits and revenue effects are not established by the published proposal summaries. Our related opinion asks Parliament to show these numbers.",
+      "The number of newly eligible households, tax savings by income group, unused credits and revenue effects are not established by the published proposal summaries. The statutory cap and the tenant's actual ledger must be assessed separately.",
     ] },
     { title: "Questions for committee review", paragraphs: [
       "The final effective year, the definition of a young tenant, the order of applying carried credits and their interaction with other relief need to be checked in the adopted text. A rising rent can also offset the relief a credit provides.",
     ] },
+    { title: "SEED VOICE opinion: Same rent, different relief", paragraphs: [
+      "Raising the cap to KRW 15 million first helps tenants with enough tax liability to use the credit. Expanding income eligibility also needs to be measured by tax actually reduced. For someone paying very little tax, a larger cap can promise more on paper than appears in their account.",
+      "Carryforward may give a young worker with irregular earnings or a person returning to work a later opportunity. But the credit can expire if they lack usable tax over ten years. It should not be described as an immediate cash payment.",
+      "Parliament should put newly eligible tenants, credits actually used by income group, carried amounts used or expired, and revenue costs into one table. If rent rises, tenants may still be worse off despite a larger credit. The outcome belongs in actual leases and tax assessments. This is our assessment of the proposals, not an enacted benefit.",
+    ] },
   ],
-  paragraphLinks: [{ sectionIndex: 2, paragraphIndex: 1, links: [{ label: "Related tax opinion: Equal rent, unequal ability to use the credit", url: "/monitoring/tax/commentary/monthly-rent-credit-benefit-gap" }] }],
   watchTitle: "What to watch", watchPoints: ["Final caps and effective year", "New beneficiaries and actual tax savings by income", "Credits used versus expired after ten years", "Rents and housing supply beyond the credit"],
   quote: "Count both rent paid and how much of the credit a tenant can actually use.",
   sourceLabels: ["Official summary for Bill 2221532", "Official summary for Bill 2221529", "Ministry of Economy and Finance: 2026 tax reform proposal"],

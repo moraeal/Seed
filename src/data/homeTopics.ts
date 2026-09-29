@@ -18,8 +18,8 @@ const homeTopicGroups: Record<string, string[]> = {
     "/monitoring/supreme-court-renomination-tracker-2026",
     "/columns/participatory-democracy-supreme-court-appointments",
   ],
-  "real-estate-supervisor-2026": ["/briefings/real-estate-supervisor-bill-2221573-explained", "/monitoring/legislation/commentary/real-estate-supervisor-september-bill", "/columns/real-estate-supervisor-citizens-accounts"],
-  "monthly-rent-credit-2026": ["/briefings/monthly-rent-tax-credit-2026-bills-explained", "/monitoring/tax/commentary/monthly-rent-credit-benefit-gap", "/monitoring/tax/monthly-rent-credit-2026-bills"],
+  "real-estate-supervisor-2026": ["/briefings/real-estate-supervisor-bill-2221573-explained", "/columns/real-estate-supervisor-citizens-accounts"],
+  "monthly-rent-credit-2026": ["/briefings/monthly-rent-tax-credit-2026-bills-explained"],
   "income-tax-family-deduction-2026": [
     "/briefings/income-tax-family-deduction-2026-proposals",
     "/columns/family-deduction-work-income-threshold",

@@ -1,4 +1,3 @@
-import { realEstateSupervisorCommentary } from "./realEstateSupervisorCommentary";
 import { realEstateSupervisorColumn } from "./columns/realEstateSupervisorColumn";
 import { issue32 } from "./contentTranslations/columns/issue32";
 import { pendingLegislativeCommentaries } from "./pendingLegislativeCommentaries";
@@ -63,7 +62,6 @@ export const linkedLegislativeColumnCommentaries = [{
 }];
 
 export const legislativeCommentaries: LegislativeCommentary[] = [
-  realEstateSupervisorCommentary,
   ...pendingLegislativeCommentaries,
   {
     slug: "sme-market-access-and-real-profit",

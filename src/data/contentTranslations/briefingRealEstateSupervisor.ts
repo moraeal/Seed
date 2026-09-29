@@ -1,10 +1,10 @@
 import type { BriefingTranslation } from "./types";
 
 export const realEstateSupervisorExplainerTranslation: BriefingTranslation = {
-  category: "LEGISLATIVE WATCH · BILL EXPLAINER",
+  category: "LEGISLATIVE WATCH · EXPLAINER AND OPINION",
   title: "Who Would Investigate a Home Purchase Under the Real Estate Supervisor Bill?",
-  subtitle: "The powers and safeguards in the September 23 proposal",
-  summary: "A bill would establish an agency under the prime minister to coordinate investigations and investigate property transactions directly. We examine its case-opening powers, access to financial information and protections for lawful buyers.",
+  subtitle: "What the September proposal would allow, and where buyers' rights need a firm boundary",
+  summary: "A bill would create a supervisor under the prime minister with direct inquiry and investigation powers. This article explains the proposal and examines the limits needed for self-initiated inquiries, financial requests and the rights of lawful buyers.",
   keyHighlights: [
     "Rep. Kim Hyun-jung and 17 others introduced Bill 2221573 on September 23, 2026. It was referred to the National Policy Committee on September 28 and is not law.",
     "The agency could open inquiries on its own initiative, request documents and appearances, and seek financial transaction records from a specified branch of a financial institution.",
@@ -32,15 +32,20 @@ export const realEstateSupervisorExplainerTranslation: BriefingTranslation = {
       "It would allow requests for financial transaction information from a specified branch and access to transaction-report verification results before an inquiry opens. The full bill and committee review must show whose accounts can be requested, for what period, when notice is given and how a person can challenge a demand. The summary does not establish automatic access to every buyer's accounts.",
     ] },
     { title: "Safeguards depend on their operating rules", paragraphs: [
-      "The bill proposes a single three-year term for the director, limits on removal, separation of inquiry and criminal-investigation information, distinct information systems and a review committee for transitions between functions. It also prohibits abuse of inquiry powers and disclosure of secrets. The related opinion considers what these safeguards still need to specify.",
+      "The bill proposes a single three-year term for the director, limits on removal, separation of inquiry and criminal-investigation information, distinct information systems and a review committee for transitions between functions. It also prohibits abuse of inquiry powers and disclosure of secrets. Internal barriers alone do not give citizens notice of a data request or a right to contest it.",
       "A person under inquiry has not been found guilty. Where a mistaken report or analytic flag starts a case, time lost, document costs, the scope of data accessed and a route to correct the record all matter.",
     ] },
     { title: "What Parliament must verify", paragraphs: [
       "Ask which cases existing agencies could not resolve, what objective threshold permits an own-initiative inquiry, and how financial information requests are limited, notified and challenged. Closures without wrongdoing, data deletion and audits of misuse should be measurable.",
       "This is a proposal to detect illicit transactions. It is not a housing supply program or a direct rent reduction. We will compare actual clauses and operating rules if the bill advances.",
     ] },
+    { title: "SEED VOICE opinion: Write the threshold for bank records into law", paragraphs: [
+      "Illegal trades must be investigated. Yet following a reported lead is different from allowing a new body to open a case on its own. Parliament should first show how many cases existing agencies and data sharing could not resolve, and why an additional institution needs direct criminal-investigation powers.",
+      "Records held at a specified financial branch may reveal a family's finances and private spending beyond a property deal. The required degree of suspicion, accounts covered, time period and types of record should be set in law. The public goal of finding wrongdoing cannot alone define the scope of a demand.",
+      "Suppose a couple documents a parental loan and is cleared. Who tells them what was accessed, deletes a mistaken flag and lets them challenge an excessive request? An internal review committee and secrecy duty do not themselves secure those rights. This is our assessment of the public proposal summary; the complete clauses need separate scrutiny during parliamentary review.",
+    ] },
   ],
-  paragraphLinks: [{ sectionIndex: 2, paragraphIndex: 0, links: [{ label: "Related opinion: Should the supervisor see buyers' accounts?", url: "/monitoring/legislation/commentary/real-estate-supervisor-september-bill" }] }, { sectionIndex: 2, paragraphIndex: 1, links: [{ label: "Earlier SEED VOICE column on the revised proposal", url: "/columns/real-estate-supervisor-citizens-accounts" }] }],
+  paragraphLinks: [{ sectionIndex: 2, paragraphIndex: 1, links: [{ label: "Earlier SEED VOICE column on the revised proposal", url: "/columns/real-estate-supervisor-citizens-accounts" }] }],
   watchTitle: "What to watch", watchPoints: ["Threshold for self-initiated inquiries and scope of financial requests", "Notice, challenges and remedies for cleared buyers", "Overlap with existing agencies and establishment cost", "Committee amendments and commencement"],
   quote: "Give a power to find illicit transactions a matching legal duty to protect lawful buyers.",
   sourceLabels: ["Official proposal summary for Bill 2221573", "Earlier SEED VOICE column on the September proposal"],

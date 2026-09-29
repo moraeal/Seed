@@ -1,4 +1,3 @@
-import { monthlyRentCreditCommentary } from "./monthlyRentCreditCommentary";
 import { taxExpenditureCapCommentary } from "./taxExpenditureCapCommentary";
 import { taxBreakBudgetConversionCommentary } from "./taxBreakBudgetConversionCommentary";
 import { virtualAssetTaxCommentary } from "./virtualAssetTaxCommentary";
@@ -51,7 +50,6 @@ export type TaxCommentary = {
 };
 
 export const taxCommentaries: TaxCommentary[] = [
-monthlyRentCreditCommentary,
 virtualAssetTaxCommentary,
 taxBreakBudgetConversionCommentary,
 taxExpenditureCapCommentary,
