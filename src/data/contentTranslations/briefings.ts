@@ -16,8 +16,10 @@ import { inheritanceTaxFrozenThresholdTranslation } from "./briefingInheritanceT
 import { incomeTaxFamilyDeductionTranslation } from "./briefingIncomeTaxFamilyDeduction";
 import { realEstateSupervisorExplainerTranslation } from "./briefingRealEstateSupervisor";
 import { monthlyRentCreditExplainerTranslation } from "./briefingMonthlyRentCredit";
+import { farmlandRetirementTranslation } from "./briefingFarmlandRetirement";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "farmland-census-elderly-farmers-retirement": farmlandRetirementTranslation,
   "real-estate-supervisor-bill-2221573-explained": realEstateSupervisorExplainerTranslation,
   "monthly-rent-tax-credit-2026-bills-explained": monthlyRentCreditExplainerTranslation,
   "income-tax-family-deduction-2026-proposals": incomeTaxFamilyDeductionTranslation,

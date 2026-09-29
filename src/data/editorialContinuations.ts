@@ -122,6 +122,25 @@ const farmlandTrackerContinuation: Record<Language, EditorialContinuation> = {
   },
 };
 
+const farmlandRetirementContinuation: Record<Language, EditorialContinuation> = {
+  ko: {
+    href: "/monitoring/farmland-census-disposal-orders-tracker",
+    title: "농지 27%는 누가 사나",
+    relationship: "농지조사 사실과 절차",
+    reason: "고령농의 은퇴 통로를 살펴봤다면, 전수조사의 의심 필지와 처분 절차, 정부의 후속 조치를 날짜별 자료로 확인합니다.",
+    listHref: "/briefings",
+    listLabel: "브리핑 전체 보기",
+  },
+  en: {
+    href: "/monitoring/farmland-census-disposal-orders-tracker",
+    title: "Who Will Buy the 27% of Farmland Flagged?",
+    relationship: "FARMLAND CENSUS FACTS",
+    reason: "After examining retirement options, check the census figures, disposal process and government response in the source-backed tracker.",
+    listHref: "/briefings",
+    listLabel: "All briefings",
+  },
+};
+
 const nuclearPolicyColumnContinuation: Record<Language, EditorialContinuation> = {
   ko: {
     href: "/monitoring/democratic-party-nuclear-policy-reversal-tracker",
@@ -356,6 +375,7 @@ const isConservatism = (kind: EditorialContentKind, slug: string) => kind === "s
 const isDiscourse = (kind: EditorialContentKind, slug: string) => kind === "seed-language" && slug === "discourse-many-words-no-direction";
 const isFarmlandOwnership = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "farmland-ownership-without-an-exit";
 const isFarmlandTracker = (kind: EditorialContentKind, slug: string) => kind === "monitoring" && slug === "farmland-census-disposal-orders-tracker";
+const isFarmlandRetirement = (kind: EditorialContentKind, slug: string) => kind === "briefing" && slug === "farmland-census-elderly-farmers-retirement";
 const isNuclearPolicyColumn = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "democratic-party-nuclear-policy-reversal";
 const isNuclearPolicyTracker = (kind: EditorialContentKind, slug: string) => kind === "monitoring" && slug === "democratic-party-nuclear-policy-reversal-tracker";
 const isProsecutionReformColumn = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "prosecution-reform-power-transfer-2026";
@@ -423,6 +443,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
   if (isMilitaryAcademyTracker(kind, slug)) return true;
   if (isMilitaryAcademyColumn(kind, slug)) return true;
   if (isFarmlandTracker(kind, slug)) return true;
+  if (isFarmlandRetirement(kind, slug)) return true;
   if (isFarmlandOwnership(kind, slug)) return true;
   if (isDiscourse(kind, slug)) return true;
   if (isProgress(kind, slug)) return true;
@@ -447,6 +468,7 @@ export function getEditorialContinuation(kind: EditorialContentKind, slug: strin
   if (isProsecutionReformColumn(kind, slug)) return prosecutionReformColumnContinuation[language];
   if (isConservatism(kind, slug)) return conservatismContinuation[language];
   if (isFarmlandTracker(kind, slug)) return farmlandTrackerContinuation[language];
+  if (isFarmlandRetirement(kind, slug)) return farmlandRetirementContinuation[language];
   if (isFarmlandOwnership(kind, slug)) return farmlandOwnershipContinuation[language];
   if (isDiscourse(kind, slug)) return discourseContinuation[language];
   if (isProgress(kind, slug)) return progressContinuation[language];

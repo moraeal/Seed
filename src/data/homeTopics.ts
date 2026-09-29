@@ -30,6 +30,8 @@ for (const [columnSlug, trackerSlug] of Object.entries(hotIssueColumnTrackerSlug
   homeTopicGroups[trackerSlug] = [`/columns/${columnSlug}`, `/monitoring/${trackerSlug}`];
 }
 
+homeTopicGroups["farmland-census-disposal-orders-tracker"]?.push("/briefings/farmland-census-elderly-farmers-retirement");
+
 const topicByPath = new Map(
   Object.entries(homeTopicGroups).flatMap(([topic, paths]) => paths.map((path) => [path, topic] as const)),
 );
