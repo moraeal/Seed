@@ -141,12 +141,40 @@ export default function Home() {
     claimedHomePaths,
   );
   const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[ko ? seedLanguageArticle.term : getSeedLanguageEnvironmentArticle(seedLanguageArticle.slug, "ko")?.term ?? getSeedLanguageArticle(seedLanguageArticle.slug, "ko")?.term ?? ""] : undefined;
-  const visibleHotIssueClusters = hotIssueClusters.filter((cluster) => {
-    const topics = cluster.items.map((item) => getHomeTopic(item.to));
+  const clusteredHotIssuePaths = new Set(hotIssueClusters.flatMap((cluster) => cluster.items.map((item) => item.to)));
+  const hotIssueCards = [
+    ...hotIssueClusters.map((cluster) => ({
+      id: cluster.id,
+      to: `/news/issues/${cluster.id}`,
+      title: cluster.title,
+      latestChange: cluster.latestChange,
+      updatedAt: cluster.updatedAt,
+      imageSrc: cluster.imageSrc,
+      imageAlt: cluster.imageAlt,
+      paths: cluster.items.map((item) => item.to),
+    })),
+    ...hotIssues.filter((item) => item.key.startsWith("news-") && !clusteredHotIssuePaths.has(item.to)).map((item) => ({
+      id: item.key,
+      to: item.to,
+      title: item.title,
+      latestChange: item.summary,
+      updatedAt: item.date,
+      imageSrc: item.imageSrc,
+      imageAlt: item.imageAlt,
+      paths: [item.to],
+    })),
+  ].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+  let visibleHotIssueCardsCount = 0;
+  const visibleHotIssueCards = hotIssueCards.filter((card) => {
+    // Claim only the four cards we actually render; hidden candidates must stay
+    // eligible for the monitoring, briefing, and column sections below.
+    if (visibleHotIssueCardsCount >= 4) return false;
+    const topics = card.paths.map((path) => getHomeTopic(path));
     if (topics.some((topic) => claimedHomePaths.has(topic))) return false;
     topics.forEach((topic) => claimedHomePaths.add(topic));
+    visibleHotIssueCardsCount += 1;
     return true;
-  }).slice(0, 4);
+  });
 
   const civicWatchCandidates: HomeCivicWatchItem[] = [
     ...newsTrackerCases.map((item) => ({
@@ -460,10 +488,10 @@ export default function Home() {
           </div>
 
           <div className="mt-4 grid gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
-            {visibleHotIssueClusters.map((item, index) => (
+            {visibleHotIssueCards.map((item, index) => (
               <Link
                 key={item.id}
-                to={`/news/issues/${item.id}`}
+                to={item.to}
                 className="group flex h-full flex-col overflow-hidden border-t-[3px] border-green-deep bg-white shadow-[0_10px_26px_rgba(20,55,45,.055)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(20,55,45,.11)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4"
               >
                 <div className="overflow-hidden bg-ivory">
