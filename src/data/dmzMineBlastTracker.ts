@@ -1,19 +1,19 @@
 import type { PublicInterestWatchCase, WatchTimelineSource } from "./publicInterestWatch";
 
-const source = (publisher: string, enPublisher: string, title: string, enTitle: string, url: string, publishedAt: string): WatchTimelineSource => ({
-  publisher: { ko: publisher, en: enPublisher }, title: { ko: title, en: enTitle }, url, publishedAt, kind: "article",
+const source = (publisher: string, enPublisher: string, title: string, enTitle: string, url: string, publishedAt: string, thumbnailSrc: string): WatchTimelineSource => ({
+  publisher: { ko: publisher, en: enPublisher }, title: { ko: title, en: enTitle }, url, publishedAt, thumbnailSrc, kind: "article",
 });
 
-const initial = source("연합뉴스", "Yonhap", "DMZ 수색 중 폭발로 장병 3명 부상", "Three soldiers injured in DMZ blasts", "https://www.yna.co.kr/view/AKR20260921095652504", "2026-09-21");
-const mission = source("연합뉴스", "Yonhap", "북한 지뢰 의심지대 확인을 위한 수색로 개척 중 사고", "Blasts occurred during route-clearing mission", "https://www.yna.co.kr/view/AKR20260922096100504", "2026-09-22");
-const account23 = source("뉴스핌", "NewsPim", "합참, 18명 투입·두 차례 폭발 경위 설명", "Joint Chiefs detail 18-person mission and two blasts", "https://ir.newspim.com/news/view/20260923001071", "2026-09-23");
-const dispute24 = source("중앙일보", "JoongAng Ilbo", "현장조사 지연 논란에 합참 안전 준비 설명", "Joint Chiefs explain safety preparations amid delay dispute", "https://www.joongang.co.kr/article/25464699", "2026-09-24");
-const preparation = source("연합뉴스", "Yonhap", "합참의장 현장조사 준비 점검·유엔사 협의 설명", "Joint Chiefs describe investigation preparations", "https://www.yna.co.kr/view/AKR20260925034700504", "2026-09-25");
-const approach = source("연합뉴스", "Yonhap", "군·유엔사 조사팀 폭발 원점 미도달", "Military and UN Command team could not reach blast sites", "https://www.yna.co.kr/view/AKR20260927050700504", "2026-09-27");
-const interim = source("연합뉴스", "Yonhap", "합참, 북한군 지뢰 가능성 매우 높다는 중간 조사 발표", "Joint Chiefs say North Korean mine highly likely in interim assessment", "https://www.yna.co.kr/view/AKR20260928162751504", "2026-09-28");
-const route = source("연합뉴스", "Yonhap", "MDL 남쪽 10여m 위험지역에서 사고", "Blasts occurred roughly 10 meters south of the MDL", "https://www.yna.co.kr/view/AKR20260928168000504", "2026-09-28");
-const hearing = source("연합뉴스", "Yonhap", "국방위 29일 현안질의 예고", "Defense committee schedules September 29 hearing", "https://www.yna.co.kr/view/AKR20260928102100001", "2026-09-28");
-const hearing29 = source("YTN", "YTN", "국방위 29일 긴급 현안질의 예정", "Defense committee to question officials on September 29", "https://www.ytn.co.kr/_ln/0101_202609290046222514", "2026-09-29");
+const initial = source("연합뉴스", "Yonhap", "DMZ 수색 중 폭발로 장병 3명 부상", "Three soldiers injured in DMZ blasts", "https://www.yna.co.kr/view/AKR20260921095652504", "2026-09-21", "https://img6.yna.co.kr/photo/yna/YH/2026/09/08/PYH2026090816640006000_P4.jpg");
+const mission = source("연합뉴스", "Yonhap", "북한 지뢰 의심지대 확인을 위한 수색로 개척 중 사고", "Blasts occurred during route-clearing mission", "https://www.yna.co.kr/view/AKR20260922096100504", "2026-09-22", "https://img5.yna.co.kr/photo/yna/YH/2026/09/08/PYH2026090816500006000_P4.jpg");
+const account23 = source("뉴스핌", "NewsPim", "합참, 18명 투입·두 차례 폭발 경위 설명", "Joint Chiefs detail 18-person mission and two blasts", "https://ir.newspim.com/news/view/20260923001071", "2026-09-23", "https://img.newspim.com/news/2026/09/23/2609231804054730_t1.jpg");
+const dispute24 = source("중앙일보", "JoongAng Ilbo", "현장조사 지연 논란에 합참 안전 준비 설명", "Joint Chiefs explain safety preparations amid delay dispute", "https://www.joongang.co.kr/article/25464699", "2026-09-24", "https://pds.joongang.co.kr/news/FbMetaImage/202609/8b71c87e-7f9f-44a6-817a-f3f26969c40d.jpg");
+const preparation = source("연합뉴스", "Yonhap", "합참의장 현장조사 준비 점검·유엔사 협의 설명", "Joint Chiefs describe investigation preparations", "https://www.yna.co.kr/view/AKR20260925034700504", "2026-09-25", "https://img4.yna.co.kr/photo/yna/YH/2026/08/12/PYH2026081210540006500_P4.jpg");
+const approach = source("연합뉴스", "Yonhap", "군·유엔사 조사팀 폭발 원점 미도달", "Military and UN Command team could not reach blast sites", "https://www.yna.co.kr/view/AKR20260927050700504", "2026-09-27", "https://img2.yna.co.kr/photo/yna/YH/2026/09/26/PYH2026092609310001300_P4.jpg");
+const interim = source("연합뉴스", "Yonhap", "합참, 북한군 지뢰 가능성 매우 높다는 중간 조사 발표", "Joint Chiefs say North Korean mine highly likely in interim assessment", "https://www.yna.co.kr/view/AKR20260928162751504", "2026-09-28", "https://img0.yna.co.kr/photo/yna/YH/2026/09/28/PYH2026092825010001301_P4.jpg");
+const route = source("연합뉴스", "Yonhap", "MDL 남쪽 10여m 위험지역에서 사고", "Blasts occurred roughly 10 meters south of the MDL", "https://www.yna.co.kr/view/AKR20260928168000504", "2026-09-28", "https://img1.yna.co.kr/photo/yna/YH/2026/09/28/PYH2026092826350001300_P4.jpg");
+const hearing = source("연합뉴스", "Yonhap", "국방위 29일 현안질의 예고", "Defense committee schedules September 29 hearing", "https://www.yna.co.kr/view/AKR20260928102100001", "2026-09-28", "https://img2.yna.co.kr/photo/yna/YH/2026/09/26/PYH2026092609310001300_P4.jpg");
+const hearing29 = source("뉴스1", "News1", "국방위 29일 긴급 현안질의 예정", "Defense committee to question officials on September 29", "https://v.daum.net/v/20260929050205900", "2026-09-29", "https://t1.daumcdn.net/news/202609/29/NEWS1/20260929050205420zhun.jpg");
 
 export const dmzMineBlastTracker: PublicInterestWatchCase = {
   slug: "dmz-mine-blast-2026",
@@ -150,7 +150,7 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
     { label: { ko: "연합뉴스 · 28일 합참 중간 조사 발표", en: "Yonhap · September 28 interim assessment" }, url: interim.url },
     { label: { ko: "연합뉴스 · 28일 사고 지점과 작전 경로", en: "Yonhap · September 28 location and mission route" }, url: route.url },
     { label: { ko: "연합뉴스 · 29일 국방위 현안질의 예고", en: "Yonhap · September 29 hearing scheduled" }, url: hearing.url },
-    { label: { ko: "YTN · 29일 국방위 긴급 현안질의 예정", en: "YTN · September 29 committee hearing scheduled" }, url: hearing29.url },
+    { label: { ko: "뉴스1 · 29일 국방위 긴급 현안질의 예정", en: "News1 · September 29 committee hearing scheduled" }, url: hearing29.url },
     { label: { ko: "씨앗의 소리 · 사고 전 보호와 지휘 책임", en: "SEED VOICE · Pre-mission protection and command" }, url: "https://seedvoice.kr/news/dmz-security-command-failure" },
     { label: { ko: "씨앗의 소리 · 사고 뒤 현장조사 경과", en: "SEED VOICE · Investigation timeline" }, url: "https://seedvoice.kr/news/dmz-blast-investigation-timeline-2026" },
   ],
