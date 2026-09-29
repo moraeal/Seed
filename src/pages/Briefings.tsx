@@ -19,12 +19,12 @@ export default function Briefings() {
   return (
     <section className="bg-paper pb-12 sm:pb-16">
       <header className="border-b border-green-deep/15 bg-ivory">
-        <div className="container-page grid gap-6 py-9 sm:py-12 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
+        <div className="container-page grid gap-3 py-5 sm:py-6 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
           <div>
             <span className="section-kicker">BRIEFINGS</span>
-            <h1 className="editorial-title mt-2.5 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "브리핑" : "Briefings"}</h1>
+            <h1 className="editorial-title mt-1.5 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "브리핑" : "Briefings"}</h1>
           </div>
-          <p className="max-w-2xl text-base leading-8 text-charcoal/65">
+          <p className="max-w-2xl text-base leading-7 text-charcoal/65">
             {ko ? "가짜뉴스와 왜곡된 정보가 넘치는 시대, 확인된 사실과 맥락을 시민의 언어로 설명합니다. 복잡한 현안을 쉽게 풀어 시민이 스스로 판단할 수 있도록 돕습니다." : "In an age of misinformation and partisan distortion, SEED Civic Briefings explain verified facts and context in accessible language so citizens can form their own judgments."}
           </p>
         </div>

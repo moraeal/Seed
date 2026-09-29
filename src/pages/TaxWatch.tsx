@@ -22,7 +22,7 @@ export default function TaxWatch() {
   }, [language, ko]);
 
   return <section className="min-h-[70vh] bg-paper pb-16">
-    <header className="border-b border-green-deep/15 bg-ivory"><div className="container-page grid gap-4 py-5 sm:py-7 lg:grid-cols-[.8fr_1.2fr] lg:items-center"><div><span className="section-kicker">TAX & LEVY WATCH</span><h1 className="editorial-title mt-2 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "세금감시" : "Tax Watch"}</h1></div><p className="max-w-2xl text-base leading-7 text-charcoal/65">{ko ? "시민의 부담과 기업 활동에 영향을 주는 세금정책을 씨앗의 논평과 나란히 살펴봅니다. 오른쪽에서 정부·국회의 공식 자료로 이어집니다." : "Read Seed Voice's commentary alongside tax policy summaries, with official government and legislative sources on the right."}</p></div></header>
+    <header className="border-b border-green-deep/15 bg-ivory"><div className="container-page grid gap-3 py-5 sm:py-6 lg:grid-cols-[.8fr_1.2fr] lg:items-center"><div><span className="section-kicker">TAX & LEVY WATCH</span><h1 className="editorial-title mt-1.5 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "세금감시" : "Tax Watch"}</h1></div><p className="max-w-2xl text-base leading-7 text-charcoal/65">{ko ? "시민의 부담과 기업 활동에 영향을 주는 세금정책을 씨앗의 논평과 나란히 살펴봅니다. 오른쪽에서 정부·국회의 공식 자료로 이어집니다." : "Read Seed Voice's commentary alongside tax policy summaries, with official government and legislative sources on the right."}</p></div></header>
     <div className="container-page pt-6 sm:pt-8">
       <div>{rows.map((row) => <WatchPairRow key={row.key} article={row.article} record={row.record} ko={ko} compactRecord/>)}</div>
       {!rows.length && <p className="py-14 text-center text-sm text-charcoal/55">{ko ? "아직 공개된 기록이 없습니다." : "No published records yet."}</p>}

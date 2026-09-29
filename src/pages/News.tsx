@@ -30,12 +30,12 @@ export default function News() {
   return (
     <section className="bg-paper pb-12 sm:pb-16">
       <header className="border-b border-green-deep/15 bg-ivory">
-        <div className="container-page grid gap-6 py-9 sm:py-12 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
+        <div className="container-page grid gap-3 py-5 sm:py-6 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
           <div>
             <span className="section-kicker">HOT ISSUES</span>
-            <h1 className="editorial-title mt-2.5 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "핫이슈" : "Hot Issues"}</h1>
+            <h1 className="editorial-title mt-1.5 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "핫이슈" : "Hot Issues"}</h1>
           </div>
-          <p className="max-w-2xl text-base leading-8 text-charcoal/65">
+          <p className="max-w-2xl text-base leading-7 text-charcoal/65">
             {ko ? "하루의 뉴스로 끝나지 않는 문제를 계속 따라갑니다. 처음 확인된 사실부터 새로 드러난 내용과 엇갈린 주장까지 함께 살피고, 그 변화가 시민의 자유와 일상에 무엇을 남기는지 묻습니다." : "Some stories do not end with a day's news. We follow the facts, new developments, and competing claims to ask what each change means for citizens' freedom and daily lives."}
           </p>
         </div>

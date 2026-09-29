@@ -23,14 +23,14 @@ export default function SeedLanguage() {
 
   return (
     <div className="min-h-[68vh] bg-paper">
-      <header className="border-b border-green-deep/15 bg-ivory py-8 sm:py-11">
+      <header className="border-b border-green-deep/15 bg-ivory py-5 sm:py-6">
         <div className="container-page max-w-5xl">
           <p className="section-kicker">GLOSSARY</p>
-          <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-stretch sm:justify-between">
+          <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-stretch sm:justify-between">
             <h1 className="editorial-title flex items-center text-[2.1rem] font-bold leading-tight text-navy sm:text-[2.625rem]">{ko ? "시민언어" : "Glossary"}</h1>
             <Link
               to="/seed-language/why-civic-language"
-              className="group flex items-center gap-4 bg-green-deep px-5 py-4 text-white transition-colors hover:bg-green-mid sm:min-w-72 sm:px-6"
+              className="group flex items-center gap-4 bg-green-deep px-5 py-3 text-white transition-colors hover:bg-green-mid sm:min-w-72 sm:px-6"
               aria-label={ko ? "시민언어가 필요한 이유 읽기" : "Read why the glossary matters"}
             >
               <BookOpenText size={28} className="shrink-0 text-gold-light" />
@@ -43,7 +43,7 @@ export default function SeedLanguage() {
               </div>
             </Link>
           </div>
-          <div className="mt-5 max-w-5xl border-l-2 border-gold pl-6 text-base leading-7 text-charcoal/70 sm:text-lg sm:leading-8">
+          <div className="mt-3 max-w-5xl border-l-2 border-gold pl-6 text-base leading-7 text-charcoal/70 sm:text-lg sm:leading-8">
             {ko ? (
               <>
                 <p>진영과 온라인의 언어는 시민을 이해하기보다 편으로 나누고, 좋은 가치마저 질문하기 어려운 구호로 만듭니다.</p>

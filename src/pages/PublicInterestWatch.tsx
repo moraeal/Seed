@@ -36,8 +36,8 @@ export default function PublicInterestWatch() {
 
   return <section className="min-h-[70vh] bg-paper pb-16">
     <header className="border-b border-green-deep/15 bg-ivory">
-      <div className="container-page grid gap-4 py-5 sm:py-7 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
-        <div><span className="section-kicker">PUBLIC-INTEREST WATCH</span><h1 className="editorial-title mt-2 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "공익감시" : "Public-Interest Watch"}</h1></div>
+      <div className="container-page grid gap-3 py-5 sm:py-6 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
+        <div><span className="section-kicker">PUBLIC-INTEREST WATCH</span><h1 className="editorial-title mt-1.5 text-[2.1rem] font-bold text-navy sm:text-[2.625rem]">{ko ? "공익감시" : "Public-Interest Watch"}</h1></div>
         <p className="max-w-2xl text-base leading-7 text-charcoal/65">{ko ? "공공기관·공익기관·시민단체의 예산뿐 아니라 추진하는 사업과 활동, 발표하는 성명서까지 살핍니다. 공개자료와 실제 결과를 대조하고, 공익을 내세운 주장에도 근거와 시민에게 미치는 영향을 묻습니다." : "We examine the budgets, programs and activities of public institutions and civic groups, along with the statements they issue. We compare their claims with public records and real outcomes, and ask how their work affects citizens."}</p>
       </div>
     </header>
