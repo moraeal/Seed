@@ -43,11 +43,10 @@ export const realEstateSupervisorExplainer: Briefing = {
   ],
   paragraphLinks: [
     { sectionIndex: 2, paragraphIndex: 0, links: [{ label: "관련 입법 논평: 감독원에 계좌를 볼 권한까지 맡길 것인가", url: "/monitoring/legislation/commentary/real-estate-supervisor-september-bill" }] },
-    { sectionIndex: 2, paragraphIndex: 1, links: [{ label: "앞선 씨앗 칼럼: 집을 사는 시민에게 계좌부터 내놓으라는 법인가", url: "/columns/real-estate-supervisor-citizens-accounts" }] },
   ],
   watchTitle: "계속 지켜볼 것",
   watchPoints: ["직권조사 착수 기준과 금융정보 요구의 대상·기간", "자료 요청의 통지·이의신청과 무혐의 거래자의 구제", "기존 기관과 중복되는 권한 및 신설 비용", "정무위원회의 수정안과 실제 시행 여부"],
   quote: "불법거래를 찾는 권한을 세울 때 정상 거래자의 권리도 조문으로 세워야 합니다.",
-  sources: [{ label: "법제처 국민참여입법센터, 의안 제2221573호 제안이유·주요내용", url: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221573/detailRP" }, { label: "씨앗의 소리, 9월 재발의안에 관한 앞선 칼럼", url: "/columns/real-estate-supervisor-citizens-accounts" }],
+  sources: [{ label: "법제처 국민참여입법센터, 의안 제2221573호 제안이유·주요내용", url: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221573/detailRP" }],
   sourceNote: "2026년 9월 29일 공개 제안 요지 기준입니다. 의안 전문 조항은 별도로 검토하지 않았습니다. 조문별 제한과 2월 안과의 세부 비교는 공개 보도 및 향후 국회 전문을 대조해야 합니다. 첫 집을 사는 부부는 제도를 설명하기 위한 가상 사례입니다.",
 };

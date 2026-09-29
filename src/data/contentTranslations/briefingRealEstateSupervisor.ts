@@ -40,9 +40,9 @@ export const realEstateSupervisorExplainerTranslation: BriefingTranslation = {
       "This is a proposal to detect illicit transactions. It is not a housing supply program or a direct rent reduction. We will compare actual clauses and operating rules if the bill advances.",
     ] },
   ],
-  paragraphLinks: [{ sectionIndex: 2, paragraphIndex: 0, links: [{ label: "Related opinion: Should the supervisor see buyers' accounts?", url: "/monitoring/legislation/commentary/real-estate-supervisor-september-bill" }] }, { sectionIndex: 2, paragraphIndex: 1, links: [{ label: "Earlier SEED VOICE column on the revised proposal", url: "/columns/real-estate-supervisor-citizens-accounts" }] }],
+  paragraphLinks: [{ sectionIndex: 2, paragraphIndex: 0, links: [{ label: "Related opinion: Should the supervisor see buyers' accounts?", url: "/monitoring/legislation/commentary/real-estate-supervisor-september-bill" }] }],
   watchTitle: "What to watch", watchPoints: ["Threshold for self-initiated inquiries and scope of financial requests", "Notice, challenges and remedies for cleared buyers", "Overlap with existing agencies and establishment cost", "Committee amendments and commencement"],
   quote: "Give a power to find illicit transactions a matching legal duty to protect lawful buyers.",
-  sourceLabels: ["Official proposal summary for Bill 2221573", "Earlier SEED VOICE column on the September proposal"],
+  sourceLabels: ["Official proposal summary for Bill 2221573"],
   sourceNote: "Based on the public summary as checked September 29, 2026; the attached full bill was not separately reviewed. Clause-level limits require the complete text. The first-home buyers are a hypothetical example.",
 };

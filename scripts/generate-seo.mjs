@@ -338,6 +338,14 @@ const accountShell = template
 await mkdir(path.join(dist, "account"), { recursive: true });
 await writeFile(path.join(dist, "account", "index.html"), accountShell);
 
+// Preserve the old column URL after its argument was consolidated into one
+// legislative commentary. A physical redirect lets direct GitHub Pages visits
+// reach the canonical article instead of a missing static route.
+const mergedCommentaryUrl = canonicalUrl("/monitoring/legislation/commentary/real-estate-supervisor-september-bill");
+const formerColumnPath = path.join(dist, "columns", "real-estate-supervisor-citizens-accounts", "index.html");
+await mkdir(path.dirname(formerColumnPath), { recursive: true });
+await writeFile(formerColumnPath, `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="robots" content="noindex"><link rel="canonical" href="${mergedCommentaryUrl}"><meta http-equiv="refresh" content="0; url=${mergedCommentaryUrl}"><title>통합 입법논평으로 이동 | 씨앗의 소리</title></head><body><p><a href="${mergedCommentaryUrl}">통합 입법논평 읽기</a></p></body></html>`);
+
 // Private application routes also need a physical entry file on GitHub Pages
 // so refreshes and post-login redirects do not fall through to a 404 page.
 const privateShellRoutes = [

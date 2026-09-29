@@ -102,6 +102,7 @@ function AppShell() {
           <Route path="/briefings/:slug/commentary" element={<BriefingCommentary />} />
           <Route path="/briefings/:slug" element={<BriefingDetail />} />
           <Route path="/columns" element={<Columns />} />
+          <Route path="/columns/real-estate-supervisor-citizens-accounts" element={<Navigate to="/monitoring/legislation/commentary/real-estate-supervisor-september-bill" replace />} />
           <Route path="/columns/:slug" element={<ColumnDetail />} />
           <Route path="/news" element={<News />} />
           <Route path="/news/issues/:id" element={<HotIssueClusterDetail />} />

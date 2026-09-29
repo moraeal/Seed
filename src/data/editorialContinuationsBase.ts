@@ -54,8 +54,8 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
     en: { href: "/news/supreme-court-renomination-standoff-2026", title: "Why the Supreme Court and Presidential Office Clashed over Son Bong-gi", relationship: "THE APPOINTMENT DISPUTE", reason: "Review the chronology and the positions of both institutions.", listHref: "/columns", listLabel: "All columns" },
   },
   "column:seoul-housing-prices-rent-broken-ladder": {
-    ko: { href: "/columns/real-estate-supervisor-citizens-accounts", title: "집을 사는 시민에게 계좌부터 내놓으라는 법인가", relationship: "부동산 정책 이어 읽기", reason: "집을 구할 기회의 문제에 이어 거래를 조사하는 국가의 권한을 살펴봅니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
-    en: { href: "/columns/real-estate-supervisor-citizens-accounts", title: "Must Homebuyers Open Their Bank Accounts to the State?", relationship: "MORE ON HOUSING POLICY", reason: "Continue from access to homes to the state's powers over property transactions.", listHref: "/columns", listLabel: "All columns" },
+    ko: { href: "/monitoring/legislation/commentary/real-estate-supervisor-september-bill", title: "감독원에 계좌를 볼 권한까지 맡길 것인가", relationship: "부동산 정책 이어 읽기", reason: "집을 구할 기회의 문제에 이어 거래를 조사하는 국가의 권한을 살펴봅니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
+    en: { href: "/monitoring/legislation/commentary/real-estate-supervisor-september-bill", title: "Should a New Property Supervisor See Buyers' Bank Records?", relationship: "MORE ON HOUSING POLICY", reason: "Continue from access to homes to the state's powers over property transactions.", listHref: "/columns", listLabel: "All columns" },
   },
   "column:welfare-exit-risk-work-and-fairness": {
     ko: { href: "/columns/family-deduction-work-income-threshold", title: "월 50만 원 일하면 가족이 아니게 되는 세금 기준", relationship: "세금의 경계선", reason: "가족의 소득이 조금 늘었을 때 부양가족 공제는 어떻게 달라지는지 이어서 확인합니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
@@ -137,24 +137,6 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
       reason: "After examining the prisoners' own wishes, consider what it means to treat North Koreans as people with choices in discussions of unification.",
       listHref: "/briefings",
       listLabel: "All briefings",
-    },
-  },
-  "column:real-estate-supervisor-citizens-accounts": {
-    ko: {
-      href: "/columns/farmland-ownership-without-an-exit",
-      title: "소유권은 남았지만 소유할 수 없다",
-      relationship: "재산권과 국가의 조사 권한",
-      reason: "부동산 거래를 조사하는 국가 권한에 이어, 농지 처분명령과 이행강제금이 시민의 재산권에 남기는 부담을 살펴봅니다.",
-      listHref: "/columns",
-      listLabel: "칼럼 전체 보기",
-    },
-    en: {
-      href: "/columns/farmland-ownership-without-an-exit",
-      title: "Ownership on Paper, but No Practical Right to Keep It",
-      relationship: "PROPERTY RIGHTS AND STATE POWER",
-      reason: "Continue from oversight of property transactions to the burden that farmland disposal orders and recurring penalties can place on citizens' property rights.",
-      listHref: "/columns",
-      listLabel: "All columns",
     },
   },
   "news:supreme-court-renomination-standoff-2026": {

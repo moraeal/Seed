@@ -1,6 +1,4 @@
 import { realEstateSupervisorCommentary } from "./realEstateSupervisorCommentary";
-import { realEstateSupervisorColumn } from "./columns/realEstateSupervisorColumn";
-import { issue32 } from "./contentTranslations/columns/issue32";
 import { pendingLegislativeCommentaries } from "./pendingLegislativeCommentaries";
 
 export type LegislativeCommentaryLanguage = "ko" | "en";
@@ -38,29 +36,6 @@ export type LegislativeCommentary = {
   sources: { label: LocalizedText; url: string }[];
   editions: Record<LegislativeCommentaryLanguage, CommentaryEdition>;
 };
-
-// A column can also be selected for Legislative Watch without copying its article
-// into another detail route. Both listings lead to the same canonical page.
-export const linkedLegislativeColumnCommentaries = [{
-  slug: realEstateSupervisorColumn.slug,
-  href: `/columns/${realEstateSupervisorColumn.slug}`,
-  date: realEstateSupervisorColumn.date,
-  readMinutes: realEstateSupervisorColumn.readMinutes,
-  heroSrc: realEstateSupervisorColumn.heroImage.src,
-  billLabel: { ko: "부동산감독원 설치법안", en: "Real estate supervisory agency bill" },
-  editions: {
-    ko: {
-      title: realEstateSupervisorColumn.title,
-      summary: realEstateSupervisorColumn.summary,
-      heroAlt: realEstateSupervisorColumn.heroImage.alt,
-    },
-    en: {
-      title: issue32.title,
-      summary: issue32.summary,
-      heroAlt: issue32.heroImage?.alt ?? realEstateSupervisorColumn.heroImage.alt,
-    },
-  },
-}];
 
 export const legislativeCommentaries: LegislativeCommentary[] = [
   realEstateSupervisorCommentary,
