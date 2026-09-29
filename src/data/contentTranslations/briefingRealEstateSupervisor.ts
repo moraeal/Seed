@@ -4,7 +4,7 @@ export const realEstateSupervisorExplainerTranslation: BriefingTranslation = {
   category: "LEGISLATIVE WATCH · EXPLAINER AND OPINION",
   title: "Who Would Investigate a Home Purchase Under the Real Estate Supervisor Bill?",
   subtitle: "What the September proposal would allow, and where buyers' rights need a firm boundary",
-  summary: "A bill would create a supervisor under the prime minister with direct inquiry and investigation powers. This article explains the proposal and examines the limits needed for self-initiated inquiries, financial requests and the rights of lawful buyers.",
+  summary: "The September replacement narrows some data powers but would give a new supervisor own-initiative inquiry powers and access to financial records. We explain what changed from February, test the need and cost of a new agency, and examine the rights of lawful buyers.",
   keyHighlights: [
     "Rep. Kim Hyun-jung and 17 others introduced Bill 2221573 on September 23, 2026. It was referred to the National Policy Committee on September 28 and is not law.",
     "The agency could open inquiries on its own initiative, request documents and appearances, and seek financial transaction records from a specified branch of a financial institution.",
@@ -41,13 +41,16 @@ export const realEstateSupervisorExplainerTranslation: BriefingTranslation = {
     ] },
     { title: "SEED VOICE opinion: Write the threshold for bank records into law", paragraphs: [
       "Illegal trades must be investigated. Yet following a reported lead is different from allowing a new body to open a case on its own. Parliament should first show how many cases existing agencies and data sharing could not resolve, and why an additional institution needs direct criminal-investigation powers.",
+      "Reporting on the September replacement says it removed an express power to request credit information, narrowed whose records could be sought and restricted retention and transfers between administrative and criminal inquiry units. Those are meaningful changes from the February bill. But the power to initiate an inquiry and seek financial transaction records during an administrative investigation remains. These reported changes have not been checked clause by clause against the attached full bill.",
       "Records held at a specified financial branch may reveal a family's finances and private spending beyond a property deal. The required degree of suspicion, accounts covered, time period and types of record should be set in law. The public goal of finding wrongdoing cannot alone define the scope of a demand.",
       "Suppose a couple documents a parental loan and is cleared. Who tells them what was accessed, deletes a mistaken flag and lets them challenge an excessive request? An internal review committee and secrecy duty do not themselves secure those rights. This is our assessment of the public proposal summary; the complete clauses need separate scrutiny during parliamentary review.",
+      "The proposed supervisor would detect illicit trades, not build homes or directly lower rents. OECD research describes price pressure in Korea when land-use rules prevent supply from meeting rising demand. An enforcement tally cannot stand in for a housing-supply result. A September report also cited a roughly KRW 18 billion annual cost estimate based on 122 staff, not an approved budget. Parliament should disclose the cases existing agencies missed and compare the additional results with the new agency's cost.",
+      "Before granting access to accounts, the law should set objective grounds for opening a case, require approval and a record of each data request, and give the person notice and a route to challenge it. Deletion after a case is closed and outside audits should be verifiable. Publish cases closed without wrongdoing and objections alongside offenses detected. The state has a duty to pursue wrongdoing; a right to suspect ordinary life does not follow.",
     ] },
   ],
-  paragraphLinks: [{ sectionIndex: 2, paragraphIndex: 1, links: [{ label: "Earlier SEED VOICE column on the revised proposal", url: "/columns/real-estate-supervisor-citizens-accounts" }] }],
+  paragraphLinks: [],
   watchTitle: "What to watch", watchPoints: ["Threshold for self-initiated inquiries and scope of financial requests", "Notice, challenges and remedies for cleared buyers", "Overlap with existing agencies and establishment cost", "Committee amendments and commencement"],
   quote: "Give a power to find illicit transactions a matching legal duty to protect lawful buyers.",
-  sourceLabels: ["Official proposal summary for Bill 2221573", "Earlier SEED VOICE column on the September proposal"],
-  sourceNote: "Based on the public summary as checked September 29, 2026; the attached full bill was not separately reviewed. Clause-level limits require the complete text. The first-home buyers are a hypothetical example.",
+  sourceLabels: ["Official summary, September Bill 2221573", "Official record, February Bill 2216699", "iNews24, reported revisions", "KRIHS, property transaction transparency", "OECD, Housing Dynamics in Korea", "SBS Biz, staffing cost estimate"],
+  sourceNote: "The official summary and status of Bill 2221573 were checked September 29, 2026. Reported changes from February rely on September 23 coverage; the complete clauses were not separately compared. KRW 18 billion is an illustrative annual estimate for 122 staff, not an approved budget. The buyers are hypothetical.",
 };
