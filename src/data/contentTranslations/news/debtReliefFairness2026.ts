@@ -21,8 +21,8 @@ export const debtReliefFairness2026Translation: NewsTranslation = {
     thumbnailPlacement: "after-summary"
   },
   heroImage: {
-    alt: "Symbolic image of a small-business owner examining repayment receipts after closing time",
-    caption: "The work of repayment continued after the shop closed for the day.",
+    alt: "Symbolic close-up of a shop owner's hands sorting repayment receipts and a ledger",
+    caption: "Receipts still fill the hands of people who repaid or refinanced through the crisis.",
     credit: "AI image · SEED VOICE"
   },
   inlineImage: {
@@ -32,9 +32,9 @@ export const debtReliefFairness2026Translation: NewsTranslation = {
     credit: "SEED VOICE graphic · Source: Maeil Business report citing FSC figures"
   },
   additionalImages: [{
-    src: "/images/news/debt-relief-fairness-context.webp",
-    alt: "Symbolic image of a shop owner sorting receipts and an account book at a counter",
-    caption: "For people who repaid or refinanced, the costs of the crisis did not disappear.",
+    src: "/images/news/debt-relief-fairness-hero-v2.webp",
+    alt: "Symbolic image of a small-business owner examining repayment receipts after closing time",
+    caption: "The work of repayment continued after the shop closed for the day.",
     credit: "AI image · SEED VOICE"
   }],
   sections: [

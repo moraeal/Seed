@@ -27,9 +27,9 @@ export const debtReliefFairness2026Article: NewsArticle = {
     thumbnailPlacement: "after-summary"
   },
   heroImage: {
-    src: "/images/news/debt-relief-fairness-hero-v2.webp",
-    alt: "영업을 마친 작은 가게에서 자영업자가 상환 영수증을 살펴보는 상징 이미지",
-    caption: "영업을 마친 뒤에도 상환의 시간은 끝나지 않았습니다.",
+    src: "/images/news/debt-relief-fairness-context.webp",
+    alt: "가게 안에서 자영업자의 손이 쌓인 영수증과 장부를 정리하는 상징 이미지",
+    caption: "갚거나 대환하며 버틴 사람의 손에는 여전히 영수증이 남아 있습니다.",
     credit: "AI 이미지 · 씨앗의 소리"
   },
   inlineImage: {
@@ -39,9 +39,9 @@ export const debtReliefFairness2026Article: NewsArticle = {
     credit: "씨앗의 소리 정리 · 자료: 매일경제, 금융위원회 제출 자료 보도"
   },
   additionalImages: [{
-    src: "/images/news/debt-relief-fairness-context.webp",
-    alt: "가게 안에서 자영업자가 쌓인 영수증과 장부를 정리하는 모습을 표현한 이미지",
-    caption: "갚거나 대환하며 버틴 사람에게도 위기의 비용은 남았습니다.",
+    src: "/images/news/debt-relief-fairness-hero-v2.webp",
+    alt: "영업을 마친 가게에서 자영업자가 상환 영수증을 살펴보는 상징 이미지",
+    caption: "영업을 마친 뒤에도 상환의 시간은 끝나지 않았습니다.",
     credit: "AI 이미지 · 씨앗의 소리"
   }],
   sections: [

@@ -101,7 +101,7 @@ const newsRoutes: SeoRoute[] = newsArticles.map((article) => ({
   lastModified: article.date,
   author: SITE_NAME,
   section: article.category,
-  image: socialImageUrl("news", article.slug, article.slug === "debt-relief-repaid-borrowers-fairness-2026" ? `${article.date}-2` : article.date),
+  image: socialImageUrl("news", article.slug, article.slug === "debt-relief-repaid-borrowers-fairness-2026" ? `${article.date}-3` : article.date),
   imageAlt: article.heroImage.alt,
 }));
 
