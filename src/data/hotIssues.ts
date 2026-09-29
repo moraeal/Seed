@@ -21,7 +21,7 @@ export function getHotIssuesNewestFirst(language: Language): HotIssueListItem[] 
   const ko = language === "ko";
   const news = getNewsNewestFirst().map((item) => {
     const localized = localizeNewsArticle(item, language);
-    const listingImage = item.slug === "dmz-security-command-failure"
+    const listingImage = item.slug === "dmz-security-command-failure" || item.slug === "debt-relief-repaid-borrowers-fairness-2026"
       ? localized.heroImage
       : {
           src: localized.selectedNews.thumbnailUrl ?? localized.heroImage.src,
