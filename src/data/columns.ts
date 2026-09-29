@@ -1,3 +1,4 @@
+import { civicAuditOfAuditColumn } from "./columns/civicAuditOfAuditColumn";
 import { dmzMineResponseAccountabilityColumn } from "./columns/dmzMineResponseAccountabilityColumn";
 import { factoryStaffingFreedomColumn } from "./columns/factoryStaffingFreedomColumn";
 import { supremeCourtCivicWatchColumn } from "./columns/supremeCourtCivicWatchColumn";
@@ -31,7 +32,7 @@ import type { SeedColumn } from "./columnsLegacy";
 
 export type { SeedColumn } from "./columnsLegacy";
 
-export const columns: SeedColumn[] = [dmzMineResponseAccountabilityColumn, factoryStaffingFreedomColumn, unpostedDayPoemColumn, businessSuccessionThresholdColumn, supremeCourtCivicWatchColumn, housingLadderColumn, welfareExitRiskColumn, incomeTaxFamilyThresholdColumn, realEstateSupervisorColumn, suicidePreventionMoisColumn, corporateCitizenshipColumn, yeosuIslandExpoProcurementColumn, partisanLanguageColumn, inheritanceTaxBusinessContinuityColumn, publicHealthFunctionNetworkColumn, korea97GenerationColumn, wealthCrossesBordersColumn, fukushimaJourneyColumn, militaryAcademyIntegrationColumn, nuclearPolicyReversalColumn, farmlandOwnershipPressureColumn, silenceAndPowerColumn, citizenizationBeforeAdvancementColumn, stateCannotMonopolizeLifeColumn, civicGroupsAreNotStateVanguardColumn, tenPercentPowerColumn, prosecutionReformPowerTransferColumn, lhReformColumn, ...legacyColumns];
+export const columns: SeedColumn[] = [civicAuditOfAuditColumn, dmzMineResponseAccountabilityColumn, factoryStaffingFreedomColumn, unpostedDayPoemColumn, businessSuccessionThresholdColumn, supremeCourtCivicWatchColumn, housingLadderColumn, welfareExitRiskColumn, incomeTaxFamilyThresholdColumn, realEstateSupervisorColumn, suicidePreventionMoisColumn, corporateCitizenshipColumn, yeosuIslandExpoProcurementColumn, partisanLanguageColumn, inheritanceTaxBusinessContinuityColumn, publicHealthFunctionNetworkColumn, korea97GenerationColumn, wealthCrossesBordersColumn, fukushimaJourneyColumn, militaryAcademyIntegrationColumn, nuclearPolicyReversalColumn, farmlandOwnershipPressureColumn, silenceAndPowerColumn, citizenizationBeforeAdvancementColumn, stateCannotMonopolizeLifeColumn, civicGroupsAreNotStateVanguardColumn, tenPercentPowerColumn, prosecutionReformPowerTransferColumn, lhReformColumn, ...legacyColumns];
 
 export const hotIssueColumnSlugs = new Set([
   "seoul-housing-prices-rent-broken-ladder",

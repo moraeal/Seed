@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:civic-groups-audit-lawmakers-evaluation-criteria-2026": {
+    ko: { href: "/columns/civic-groups-are-not-state-vanguard-2026", title: "시민단체는 정부의 돌격대가 아니다", relationship: "시민운동의 독립성", reason: "정부를 향한 시민단체의 감시 기준도 함께 살펴봅니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
+    en: { href: "/columns/civic-groups-are-not-state-vanguard-2026", title: "Civic Groups Are Not the Government's Vanguard", relationship: "CIVIC INDEPENDENCE", reason: "Read how a civic group's scrutiny of government can retain its independence.", listHref: "/columns", listLabel: "All columns" },
+  },
   "column:dmz-mine-response-accountability-2026": {
     ko: { href: "/monitoring/dmz-mine-blast-2026", title: "DMZ 지뢰폭발, 장병 3명이 다친 9월 21일부터 무엇이 밝혀졌나", relationship: "날짜별 사실 추적", reason: "사고 전 경고부터 현장조사와 북한군 지뢰 판단까지 확인된 사실을 날짜별로 살펴봅니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
     en: { href: "/monitoring/dmz-mine-blast-2026", title: "Three Soldiers Injured in DMZ Blasts: What Has Emerged Since September 21?", relationship: "FOLLOW THE RECORD", reason: "Review the dated record of earlier warnings, the field inquiry and the military's interim findings.", listHref: "/columns", listLabel: "All columns" },
