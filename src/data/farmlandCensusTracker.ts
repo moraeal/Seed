@@ -24,10 +24,10 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
   },
   openedAt: "2026-02-24",
   publishedAt: "2026-09-16",
-  updatedAt: "2026-09-24",
+  updatedAt: "2026-09-29",
   nextCheck: {
-    ko: "11월 15일까지의 임대차 특별정비 결과, 심층조사 후 실제 위법 확정 면적, 연내 의결을 목표로 한 처분 유예·사후 전용 추인 특별조치법의 발의·심사, 농지은행 위탁·매입 실적",
-    en: "Results of the lease regularization period through November 15; area confirmed in violation after field review; introduction and review of the special-act bill on deferrals and retroactive conversion approval, which the government aims to pass by year-end; and Farmland Bank trust and purchase results",
+    ko: "11월 15일까지의 임대차 특별정비 결과, 심층조사 후 실제 위법 확정 면적, 연내 의결을 목표로 한 처분 유예·사후 전용 추인 특별조치법의 발의·심사, 농지은행 위탁·매입과 청년농·자경농 공급 실적",
+    en: "Results of the lease regularization period through November 15; area confirmed in violation after field review; introduction and review of the special-act bill on deferrals and retroactive conversion approval, which the government aims to pass by year-end; and Farmland Bank trust, purchase and onward-supply results for young and working farmers",
   },
   heroImage: {
     src: "images/monitoring/farmland-census-tracker-hero.webp",
@@ -45,14 +45,21 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     },
   },
   sourceBasis: {
-    ko: "농림축산식품부의 조사계획·법 개정 보도자료·예산안과 2026년 9월 17일 농지은행 임대위탁 실적, 9월 21일 당정 후속조치, 9월 22일 청와대 설명, 국가법령정보센터의 현행 농지법과 헌법재판소 결정례, 7월 말 기본조사 결과를 날짜별로 대조했습니다. 27%를 위법 확정 비율로 쓰지 않았고, 처분 유예와 사후 전용 추인은 아직 특별조치법 제정이 필요한 정책 방향으로 구분했습니다.",
-    en: "This record cross-checks the Agriculture Ministry's census plan, legislative releases and budget proposal, Farmland Bank lease-entrustment results released on September 17, the government-party follow-up measures announced on September 21, the presidential office's September 22 briefing, the current Farmland Act, Constitutional Court decisions and the late-July screening results. It does not treat 27 percent as a confirmed violation rate, and distinguishes disposal deferrals and retroactive conversion approval as policy proposals that still require special legislation.",
+    ko: "농림축산식품부의 조사계획·법 개정 보도자료·예산안과 2026년 9월 17일 농지은행 임대위탁 실적, 9월 21일 당정 후속조치, 9월 22일 청와대 설명, 9월 28일 고령농 농지 매입 실적, 국가법령정보센터의 현행 농지법과 헌법재판소 결정례, 7월 말 기본조사 결과를 날짜별로 대조했습니다. 27%를 위법 확정 비율로 쓰지 않았고, 처분 유예와 사후 전용 추인은 아직 특별조치법 제정이 필요한 정책 방향으로 구분했습니다.",
+    en: "This record cross-checks the Agriculture Ministry's census plan, legislative releases and budget proposal, Farmland Bank lease-entrustment results released on September 17, the government-party follow-up measures announced on September 21, the presidential office's September 22 briefing, purchases of elderly farmers' land disclosed on September 28, the current Farmland Act, Constitutional Court decisions and the late-July screening results. It does not treat 27 percent as a confirmed violation rate, and distinguishes disposal deferrals and retroactive conversion approval as policy proposals that still require special legislation.",
   },
   caution: {
     ko: "27%는 행정정보 기본조사에서 추출된 위반 의심 비율입니다. 실제 위법과 처분 대상 규모는 심층조사와 소명 절차 뒤 달라질 수 있습니다. ‘4년이면 100%’는 첫 부과 뒤 평가액이 변하지 않고 매년 25%씩 네 번 부과된다는 단순 계산입니다.",
     en: "The 27 percent figure is an administrative-screening result, not a confirmed violation rate. The final area in violation or subject to disposal may change after field review. The four-year, 100 percent illustration assumes an unchanged valuation and four annual charges after the first assessment.",
   },
   keyChanges: [
+    {
+      date: "2026-09-28",
+      text: {
+        ko: "농지은행이 65세 이상 고령농에게서 매입한 농지는 2024년 1,709㏊, 2025년 1,719㏊, 2026년 상반기 1,433㏊로 집계됐습니다. 매입량은 확인됐지만 청년농·자경농에게 실제 공급된 면적은 아직 공개되지 않았습니다.",
+        en: "Farmland Bank purchases from farmers aged 65 or older totaled 1,709 hectares in 2024, 1,719 hectares in 2025 and 1,433 hectares in the first half of 2026. The purchase volume is known, but the area subsequently supplied to young or working farmers has not been disclosed.",
+      },
+    },
     {
       date: "2026-09-22",
       text: {
@@ -367,8 +374,51 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
         },
       ],
     },
+    {
+      date: "2026-09-28",
+      title: {
+        ko: "고령농 농지 매입 실적·확대 예산 공개",
+        en: "Purchases from elderly farmers and expanded budgets disclosed",
+      },
+      description: {
+        ko: "농식품부는 농지은행이 65세 이상 고령농에게서 매입한 농지가 2024년 1,709㏊, 2025년 1,719㏊, 2026년 상반기 1,433㏊라고 밝혔습니다. 전체 농지 매매면적에서 차지한 비율은 각각 4.5%, 4.8%, 7.3%입니다. 공공임대용 농지매입 규모는 2025년 2,500㏊·9,625억원에서 2026년 4,200㏊·1조6,170억원으로 확대됐고, 2027년 맞춤형 농지지원 정부예산안은 2조2,617억원으로 전년보다 25.1% 늘었습니다. 다만 이 수치는 농지은행의 매입·지원 규모이며, 청년농·자경농에게 실제 공급되거나 소유권이 이전된 면적은 아닙니다.",
+        en: "The Agriculture Ministry said the Farmland Bank bought 1,709 hectares from farmers aged 65 or older in 2024, 1,719 hectares in 2025 and 1,433 hectares in the first half of 2026, equal to 4.5, 4.8 and 7.3 percent of nationwide farmland sales in those periods. The public-lease purchase program expanded from 2,500 hectares and KRW 962.5 billion in 2025 to 4,200 hectares and KRW 1.617 trillion in 2026. The government's 2027 tailored farmland-support budget proposal is KRW 2.2617 trillion, up 25.1 percent. These figures measure purchases and program capacity, not land actually supplied or transferred to young or working farmers.",
+      },
+      change: {
+        ko: "농지은행의 고령농 매입 실적과 매입 여력을 수치로 확인",
+        en: "Quantifies Farmland Bank purchases from elderly farmers and its purchase capacity",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "매일경제", en: "Maeil Business Newspaper" },
+          title: {
+            ko: "[단독] \"월 10만원 받으려 농지 팔아야하나\"…농사일 못 놓는 팔순농부",
+            en: "Elderly farmers struggle to retire as farmland-transfer support falls short",
+          },
+          url: "https://www.mk.co.kr/news/economy/12162032",
+          publishedAt: "2026-09-27",
+          thumbnailSrc: "https://pimg.mk.co.kr/news/cms/202609/28/20260928_01160105000002_L00.jpg",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "농림축산식품부", en: "Ministry of Agriculture, Food and Rural Affairs" },
+          title: {
+            ko: "농지이양 은퇴직불제와 역대 최대 규모의 농지연금·농지매입 예산으로 고령농의 안정적인 은퇴를 뒷받침하겠습니다",
+            en: "Ministry details retirement payments and record farmland-purchase budgets for elderly farmers",
+          },
+          url: "https://www.mafra.go.kr/bbs/home/793/579294/artclView.do",
+          publishedAt: "2026-09-28",
+          kind: "document",
+        },
+      ],
+    },
   ],
   confirmedFacts: [
+    {
+      ko: "농지은행의 65세 이상 고령농 농지 매입은 2024년 1,709㏊, 2025년 1,719㏊, 2026년 상반기 1,433㏊였습니다. 이는 청년농·자경농에게 최종 공급되거나 소유권이 이전된 면적과는 다른 지표입니다.",
+      en: "Farmland Bank purchases from farmers aged 65 or older totaled 1,709 hectares in 2024, 1,719 hectares in 2025 and 1,433 hectares in the first half of 2026. These figures are distinct from the area ultimately supplied or transferred to young or working farmers.",
+    },
     {
       ko: "5월 18일부터 9월 14일까지 농지은행 임대위탁은 3만3,168건·1만909㏊였습니다. 전년 동기보다 건수는 78.3%, 면적은 84.9% 늘었지만, 이는 청년농·자경농에게 소유권이 최종 이전된 면적이 아닙니다.",
       en: "From May 18 through September 14, Farmland Bank lease entrustments totaled 33,168 contracts and 10,909 hectares, up 78.3 percent and 84.9 percent year on year. This is not the area whose ownership was ultimately transferred to young or working farmers.",
