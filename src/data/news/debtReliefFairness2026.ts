@@ -21,9 +21,9 @@ export const debtReliefFairness2026Article: NewsArticle = {
       "잔액 감소분 약 56조 원과 차주 약 22만 명에는 전액 상환과 다른 대출로의 대환이 함께 포함됩니다. 모두 현금으로 갚았다는 뜻은 아닙니다.",
       "금융위는 코로나 피해 소상공인 장기 연체 채권 약 4조 2천억 원, 약 19만 7천 명을 새 채무조정 대상으로 추산했습니다."
     ],
-    thumbnailUrl: "/images/news/debt-relief-fairness-hero-v2.webp",
-    thumbnailAlt: "영업을 마친 가게에서 상환 영수증을 살펴보는 자영업자를 표현한 이미지",
-    thumbnailCaption: "원기사의 사진이 아닌, 빚을 갚으며 버틴 시간을 표현한 씨앗의 소리 제작 이미지입니다.",
+    thumbnailUrl: "https://t1.daumcdn.net/news/202609/28/mk/20260928191524456rhhk.jpg",
+    thumbnailAlt: "매일경제 기사에 실린 정부 채무조정 프로그램과 정책서민금융 추가 대출 현황 그래픽",
+    thumbnailCaption: "매일경제 기사 이미지 · 자료: 서민금융진흥원, 박홍배 의원실",
     thumbnailPlacement: "after-summary"
   },
   heroImage: {

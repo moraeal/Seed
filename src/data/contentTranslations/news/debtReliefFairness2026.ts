@@ -15,9 +15,9 @@ export const debtReliefFairness2026Translation: NewsTranslation = {
       "The roughly KRW 56 trillion decline and 220,000-borrower difference include both full repayments and refinancing, not KRW 56 trillion paid entirely in cash.",
       "The Financial Services Commission estimates a further debt-adjustment pool of about KRW 4.2 trillion in long-overdue claims involving 197,000 pandemic-hit small-business borrowers."
     ],
-    thumbnailUrl: "/images/news/debt-relief-fairness-hero-v2.webp",
-    thumbnailAlt: "A small-business owner looking at repayment receipts after closing time in a symbolic image",
-    thumbnailCaption: "SEED VOICE image about the effort of repayment, not a photograph from the source report.",
+    thumbnailUrl: "https://t1.daumcdn.net/news/202609/28/mk/20260928191524456rhhk.jpg",
+    thumbnailAlt: "Maeil Business graphic on government debt-adjustment programs and additional policy loans",
+    thumbnailCaption: "Image from Maeil Business · Data: Korea Inclusive Finance Agency and Rep. Park Hong-bae's office",
     thumbnailPlacement: "after-summary"
   },
   heroImage: {
