@@ -12,6 +12,7 @@ const homeTopicGroups: Record<string, string[]> = {
     "/news/dmz-blast-investigation-timeline-2026",
     "/news/dmz-security-command-failure",
     "/monitoring/dmz-mine-blast-2026",
+    "/columns/dmz-mine-response-accountability-2026",
   ],
   "supreme-court-renomination-2026": [
     "/news/supreme-court-renomination-standoff-2026",

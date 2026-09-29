@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:dmz-mine-response-accountability-2026": {
+    ko: { href: "/monitoring/dmz-mine-blast-2026", title: "DMZ 지뢰폭발, 장병 3명이 다친 9월 21일부터 무엇이 밝혀졌나", relationship: "날짜별 사실 추적", reason: "사고 전 경고부터 현장조사와 북한군 지뢰 판단까지 확인된 사실을 날짜별로 살펴봅니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
+    en: { href: "/monitoring/dmz-mine-blast-2026", title: "Three Soldiers Injured in DMZ Blasts: What Has Emerged Since September 21?", relationship: "FOLLOW THE RECORD", reason: "Review the dated record of earlier warnings, the field inquiry and the military's interim findings.", listHref: "/columns", listLabel: "All columns" },
+  },
   "briefing:real-estate-supervisor-bill-2221573-explained": {
     ko: { href: "/columns/seoul-housing-prices-rent-broken-ladder", title: "서울 집값 85주째 상승, 전세에서 내 집으로 가는 길은 좁아졌다", relationship: "주거 문제 이어 읽기", reason: "거래를 조사하는 권한에 이어 집을 구할 기회와 공급 문제를 살펴봅니다.", listHref: "/briefings", listLabel: "브리핑 전체 보기" },
     en: { href: "/columns/seoul-housing-prices-rent-broken-ladder", title: "Seoul Home Prices Keep Rising as the Path from Renting to Ownership Narrows", relationship: "MORE ON HOUSING", reason: "Continue from transaction oversight to access to homes and housing supply.", listHref: "/briefings", listLabel: "All briefings" },
