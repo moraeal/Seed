@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "seed-language:fairness-rules-trust": {
+    ko: { href: "/news/debt-relief-repaid-borrowers-fairness-2026", title: "빚 갚고 갈아탄 22만 명 앞에서, 이재명 정부는 또 탕감인가", relationship: "공정의 정책 사례", reason: "상환과 대환으로 버틴 사람과 새 채무조정 대상자의 기준을 확인합니다.", listHref: "/seed-language", listLabel: "시민언어 전체 보기" },
+    en: { href: "/news/debt-relief-repaid-borrowers-fairness-2026", title: "For 220,000 Who Repaid or Refinanced, Is the Government Offering Yet More Debt Relief?", relationship: "FAIRNESS IN POLICY", reason: "Examine the criteria for borrowers who repaid or refinanced and for those offered new relief.", listHref: "/seed-language", listLabel: "All civic language entries" },
+  },
   "news:olympic-park-protest-115-days": {
     ko: {
       href: "/monitoring/olympic-park-election-protest-tracker",
