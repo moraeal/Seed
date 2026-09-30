@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:worker-owned-country-union-subsidies-2026": {
+    ko: { href: "/columns/factory-investment-staffing-freedom-2026", title: "공장은 기업이 짓는데, 사람을 보낼 때는 허락을 받아야 하나", relationship: "기업의 자유 이어 읽기", reason: "노동의 경영 참여와 기업의 투자 실행 사이에서 인력 배치의 쟁점을 더 살펴봅니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
+    en: { href: "/columns/factory-investment-staffing-freedom-2026", title: "A Company Can Build a Factory. Must It Seek Permission to Staff It?", relationship: "ENTERPRISE FREEDOM", reason: "Examine the staffing dispute at the point where an investment becomes a working factory.", listHref: "/columns", listLabel: "All columns" },
+  },
   "column:civic-groups-audit-lawmakers-evaluation-criteria-2026": {
     ko: { href: "/columns/civic-groups-are-not-state-vanguard-2026", title: "시민단체는 정부의 돌격대가 아니다", relationship: "시민운동의 독립성", reason: "정부를 향한 시민단체의 감시 기준도 함께 살펴봅니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
     en: { href: "/columns/civic-groups-are-not-state-vanguard-2026", title: "Civic Groups Are Not the Government's Vanguard", relationship: "CIVIC INDEPENDENCE", reason: "Read how a civic group's scrutiny of government can retain its independence.", listHref: "/columns", listLabel: "All columns" },
