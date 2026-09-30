@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../auth";
 import { useLanguage } from "../i18n";
 import { isReadingPage } from "../lib/readingRoutes";
+import ReadingTools from "./ReadingTools";
 
 const FIRST_ARTICLE_KEY = "seed-first-free-article-v1";
 const FREE_ARTICLES_KEY = "seed-free-articles-v2";
@@ -60,7 +61,7 @@ export default function ArticleReadingAccess({ children }: { children: ReactNode
 
   if (!reading) return <>{children}</>;
   if (loading) return <div className="container-page min-h-[45vh] py-16" role="status">{language === "ko" ? "구독 상태를 확인하는 중입니다…" : "Checking subscription…"}</div>;
-  if (canRead) return <>{children}</>;
+  if (canRead) return <ReadingTools>{children}</ReadingTools>;
 
   const ko = language === "ko";
   const returnTo = encodeURIComponent(pathname);

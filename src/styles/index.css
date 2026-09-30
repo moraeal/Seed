@@ -138,7 +138,7 @@ button, input, textarea { font: inherit; }
   .article-section { @apply mt-9 sm:mt-10; }
   .article-section-long { @apply mt-10 sm:mt-12; }
   .article-section-title { @apply text-[1.4rem] font-extrabold leading-[1.35] tracking-[-.025em] text-navy sm:text-2xl; }
-  .article-copy { @apply mt-3 text-[17px] leading-[1.78] tracking-[-.012em] text-charcoal/85 sm:text-lg sm:leading-[1.78]; }
+  .article-copy { @apply mt-3 text-[18px] leading-[1.78] tracking-normal text-charcoal sm:text-lg sm:leading-[1.78]; }
   .article-copy-long { @apply mt-3.5 leading-[1.82] sm:leading-[1.82]; }
 }
 
@@ -305,4 +305,35 @@ button, input, textarea { font: inherit; }
 }
 @media (prefers-reduced-motion: reduce) {
   .about-siya, .about-siya img { animation: none; }
+}
+
+/* Reader preference uses rem so system/browser text enlargement still works. */
+.reading-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: .5rem; padding-top: .75rem; padding-bottom: .75rem; font-size: .875rem; color: #174c3a; }
+.reading-tools button { min-height: 44px; padding: .5rem .75rem; border: 1px solid #b4cdb9; border-radius: 6px; background: white; }
+.reading-tools button[aria-pressed="true"] { background: #174c3a; color: white; font-weight: 700; }
+.reading-surface .article-copy,
+.reading-surface article p:not(.section-kicker):not([class*="text-xs"]):not([class*="text-[10px]"]):not([class*="text-[11px]"]):not([class*="text-[12px]"]):not([class*="text-[13px]"]) {
+  font-size: var(--reading-font-size, 1.125rem);
+  line-height: 1.78;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 639px) {
+  .article-detail-title, .article-detail-title-dark { line-height: 1.35; letter-spacing: -.015em; }
+  .article-summary, .article-detail-subtitle { font-size: 1.0625rem; line-height: 1.7; }
+  .article-section-title { font-size: 1.375rem; line-height: 1.45; }
+  .home-lead-summary, .home-compact-summary { font-size: 1rem; line-height: 1.7; color: #454a4e; }
+  .home-today-section aside h2 { font-size: 1.25rem; line-height: 1.45; white-space: normal; overflow: visible; text-overflow: clip; }
+  .home-page a h3 { font-size: 1.25rem; line-height: 1.45; }
+  .home-page section > .container-page p:not(.section-kicker):not([class*="font-black"]):not([class*="font-extrabold"]) { font-size: 1rem; line-height: 1.7; }
+  main :is(.text-xs, [class*="text-[9px]"], [class*="text-[10px]"], [class*="text-[11px]"], [class*="text-[12px]"], [class*="text-[13px]"]) { font-size: .875rem; line-height: 1.65; }
+  .home-page time, .home-page .text-link, .section-kicker { font-size: .875rem; letter-spacing: .04em; }
+  .reading-surface article :is(.text-xs, [class*="text-[10px]"], [class*="text-[11px]"], [class*="text-[12px]"], [class*="text-[13px]"]) { font-size: .875rem; line-height: 1.65; }
+  .reading-surface figcaption, .reading-surface figcaption span, .reading-surface figcaption a { font-size: .875rem; line-height: 1.65; overflow-wrap: anywhere; }
+  .reading-surface article :is(.reading-column, .article-section) :is(p, li):not(.section-kicker):not(.text-xs):not([class*="text-[10px]"]):not([class*="text-[11px]"]):not([class*="text-[12px]"]) { font-size: var(--reading-font-size, 1.125rem); line-height: 1.78; }
+  .reading-surface .reading-column:is(section, aside) { padding-left: 1rem; padding-right: 1rem; }
+  /* Reserve bottom space for the always-visible character. */
+  .reading-surface { padding-bottom: 10rem; }
+  .seed-nudge--reading .seed-nudge-bubble { font-size: .875rem; max-width: 190px; }
+  .seed-guide-tip, .seed-guide-exchange, .seed-guide-sources, .seed-guide-save { font-size: 1rem; }
+  .seed-guide-form input { font-size: 1rem; }
 }
