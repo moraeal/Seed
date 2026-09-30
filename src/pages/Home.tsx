@@ -348,7 +348,7 @@ export default function Home() {
                 className="group flex min-w-0 flex-col justify-center rounded-sm px-2.5 py-2 transition-colors hover:bg-white/45 focus-visible:bg-white/45 focus-visible:outline-none sm:px-3.5"
               >
                 <span className="truncate text-[11px] font-extrabold text-navy transition-colors group-hover:text-green-mid sm:text-[13px]">{topic.label[language]}</span>
-                <span className="hidden mt-0.5 line-clamp-1 text-[9px] leading-4 text-charcoal/48 sm:mt-1 sm:block sm:text-[11px]">{topic.description[language]}</span>
+                <span className="hidden mt-0.5 text-[9px] leading-4 text-charcoal/48 sm:mt-1 sm:line-clamp-1 sm:text-[11px]">{topic.description[language]}</span>
               </Link>
             ))}
           </div>
