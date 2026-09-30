@@ -426,7 +426,27 @@ const corporateCitizenContinuation: Record<Language, EditorialContinuation> = {
   },
 };
 
+const securityPrideContinuation: Record<Language, EditorialContinuation> = {
+  "ko": {
+    "href": "/columns/dmz-mine-response-accountability-2026",
+    "title": "지뢰를 밟고서야 움직인 군, 이게 나라를 지키는 태도인가",
+    "relationship": "경계 실패와 결정 기록",
+    "reason": "안보 자신감의 문제에 이어, 사고 전 위험 징후와 사고 뒤 조사 일정에 관해 군과 정부가 밝혀야 할 기록을 살펴봅니다.",
+    "listHref": "/columns",
+    "listLabel": "칼럼 전체 보기"
+  },
+  "en": {
+    "href": "/columns/dmz-mine-response-accountability-2026",
+    "title": "Only After Soldiers Stepped on Mines Did the Military Move",
+    "relationship": "VIGILANCE AND THE DECISION RECORD",
+    "reason": "Continue with the records the military and government must disclose about the risks before the accident and the investigation that followed.",
+    "listHref": "/columns",
+    "listLabel": "All columns"
+  }
+};
+
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "column" && slug === "security-pride-vigilance-armed-forces-day-2026") return true;
   if (isBusinessSuccessionThreshold(kind, slug)) return true;
   if (isCorporateCitizenColumn(kind, slug)) return true;
   if (isUnificationLanguage(kind, slug)) return true;
@@ -452,6 +472,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "security-pride-vigilance-armed-forces-day-2026") return securityPrideContinuation[language];
   if (isBusinessSuccessionThreshold(kind, slug)) return businessSuccessionContinuation[language];
   if (isCorporateCitizenColumn(kind, slug)) return corporateCitizenContinuation[language];
   if (isUnificationLanguage(kind, slug)) return unificationLanguageContinuation[language];
