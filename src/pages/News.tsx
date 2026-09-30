@@ -1,9 +1,10 @@
 import { ArrowRight, Clock } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ArticleArchive from "../components/ArticleArchive";
 import SafeImage from "../components/SafeImage";
-import { getHotIssueClusters } from "../data/hotIssueClusters";
-import { getHotIssuesNewestFirst } from "../data/hotIssues";
+import { getHotIssueCards } from "../data/hotIssueSelection";
+import { getPublishedLegislativeBills, type LegislativeBill } from "../lib/legislativeMonitoring";
 import { useLanguage } from "../i18n";
 
 const FEATURED_ISSUE_COUNT = 4;
@@ -11,19 +12,23 @@ const FEATURED_ISSUE_COUNT = 4;
 export default function News() {
   const { language } = useLanguage();
   const ko = language === "ko";
-  const clusters = getHotIssueClusters(language);
-  const clusteredPaths = new Set(clusters.flatMap((cluster) => cluster.items.map((item) => item.to)));
-  const standaloneIssues = getHotIssuesNewestFirst(language).filter((item) => !clusteredPaths.has(item.to));
-  const issues = [
-    ...clusters.map((cluster) => ({
-      key: `cluster-${cluster.id}`, to: `/news/issues/${cluster.id}`,
-      title: cluster.title, summary: cluster.summary, latestChange: cluster.latestChange, date: cluster.updatedAt,
-      imageSrc: cluster.imageSrc, imageAlt: cluster.imageAlt,
-      kindLabel: ko ? "현안 모음" : "Issue collection", readMinutes: undefined as number | undefined,
-    })),
-    ...standaloneIssues.map((issue) => ({ ...issue, latestChange: undefined as string | undefined })),
-  ].sort((a, b) => b.date.localeCompare(a.date) ||
-    Number(b.key.startsWith("cluster-")) - Number(a.key.startsWith("cluster-")));
+  const [legislativeBills, setLegislativeBills] = useState<LegislativeBill[]>([]);
+  useEffect(() => {
+    let active = true;
+    void getPublishedLegislativeBills(1000).then((bills) => {
+      if (active) setLegislativeBills(bills);
+    }).catch(() => { /* Static published content stays available. */ });
+    return () => { active = false; };
+  }, []);
+  const issues = getHotIssueCards(language, legislativeBills).map((card) => ({
+    ...card,
+    key: card.id,
+    date: card.updatedAt,
+    summary: card.latestChange,
+    latestChange: undefined as string | undefined,
+    kindLabel: card.paths.length > 1 ? (ko ? "현안 모음" : "Issue collection") : (ko ? "현안 기사" : "Current-issue article"),
+    readMinutes: undefined as number | undefined,
+  }));
   const featuredIssues = issues.slice(0, FEATURED_ISSUE_COUNT);
   const archiveIssues = issues.slice(FEATURED_ISSUE_COUNT);
 

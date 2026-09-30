@@ -6,7 +6,7 @@ import FeaturedStoryMedia from "../components/FeaturedStoryMedia";
 import SafeImage from "../components/SafeImage";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { getColumnsNewestFirst, hotIssueColumnTrackerSlugs } from "../data/columns";
-import { getHotIssueClusters } from "../data/hotIssueClusters";
+import { getHotIssueCards, selectHotIssueCards } from "../data/hotIssueSelection";
 import { localizeBriefing, localizeColumn } from "../data/localizedContent";
 import { getHotIssuesNewestFirst } from "../data/hotIssues";
 import { newsTrackerCases } from "../data/newsTrackerRegistry";
@@ -92,7 +92,6 @@ export default function Home() {
   const localizedBriefings = allBriefings.map((item) => localizeBriefing(item, language));
   const allJournalColumns = getColumnsNewestFirst().map((item) => localizeColumn(item, language));
   const hotIssues = getHotIssuesNewestFirst(language);
-  const hotIssueClusters = getHotIssueClusters(language);
   const seedLanguageCandidates = [
     ...seedLanguageEnvironmentArticlesKo,
     ...seedLanguageArticlesKo,
@@ -141,40 +140,10 @@ export default function Home() {
     claimedHomePaths,
   );
   const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[ko ? seedLanguageArticle.term : getSeedLanguageEnvironmentArticle(seedLanguageArticle.slug, "ko")?.term ?? getSeedLanguageArticle(seedLanguageArticle.slug, "ko")?.term ?? ""] : undefined;
-  const clusteredHotIssuePaths = new Set(hotIssueClusters.flatMap((cluster) => cluster.items.map((item) => item.to)));
-  const hotIssueCards = [
-    ...hotIssueClusters.map((cluster) => ({
-      id: cluster.id,
-      to: `/news/issues/${cluster.id}`,
-      title: cluster.title,
-      latestChange: cluster.latestChange,
-      updatedAt: cluster.updatedAt,
-      imageSrc: cluster.imageSrc,
-      imageAlt: cluster.imageAlt,
-      paths: cluster.items.map((item) => item.to),
-    })),
-    ...hotIssues.filter((item) => item.key.startsWith("news-") && !clusteredHotIssuePaths.has(item.to)).map((item) => ({
-      id: item.key,
-      to: item.to,
-      title: item.title,
-      latestChange: item.summary,
-      updatedAt: item.date,
-      imageSrc: item.imageSrc,
-      imageAlt: item.imageAlt,
-      paths: [item.to],
-    })),
-  ].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
-  let visibleHotIssueCardsCount = 0;
-  const visibleHotIssueCards = hotIssueCards.filter((card) => {
-    // Claim only the four cards we actually render; hidden candidates must stay
-    // eligible for the monitoring, briefing, and column sections below.
-    if (visibleHotIssueCardsCount >= 4) return false;
-    const topics = card.paths.map((path) => getHomeTopic(path));
-    if (topics.some((topic) => claimedHomePaths.has(topic))) return false;
-    topics.forEach((topic) => claimedHomePaths.add(topic));
-    visibleHotIssueCardsCount += 1;
-    return true;
-  });
+  const visibleHotIssueCards = selectHotIssueCards(
+    getHotIssueCards(language, legislativeBills),
+    claimedHomePaths,
+  );
 
   const civicWatchCandidates: HomeCivicWatchItem[] = [
     ...newsTrackerCases.map((item) => ({
@@ -475,7 +444,7 @@ export default function Home() {
               <p className="section-kicker">HOT ISSUES</p>
               <h2 id="hot-issues-title" className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "핫이슈" : "Hot Issues"}</h2>
               <p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">
-                {ko ? "지금 시민이 알아야 할 네 가지 흐름을 씨앗의 관점으로 정리합니다." : "Four developing issues citizens need to understand now, organized from SEED VOICE's perspective."}
+                {ko ? "시민과 기업의 자유, 공익에 닿는 현안을 새 기사와 확인된 변화 중심으로 골라 읽습니다." : "Current issues affecting freedom and the public interest, refreshed with new reporting and verified developments."}
               </p>
             </div>
             <Link to="/news" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link>

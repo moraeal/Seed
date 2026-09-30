@@ -6,6 +6,8 @@ import { localizeBriefing, localizeColumn, localizeNewsArticle } from "./localiz
 import { getNewsArticle } from "./news";
 import { getPublicInterestWatchCase } from "./newsTrackerRegistry";
 import { publicInstitutionReformTracker } from "./publicInstitutionReformTracker";
+import { getFeaturedContentCandidates, type FeaturedContent } from "./featuredContent";
+import { getHomeTopic } from "./homeTopics";
 
 type HotIssueReference =
   | { kind: "briefing" | "column" | "news" | "watch"; slug: string }
@@ -45,7 +47,6 @@ const clusterDefinitions: Array<{
   id: string;
   title: Record<Language, string>;
   summary: Record<Language, string>;
-  latestChange: Record<Language, string>;
   focus: Record<Language, string>;
   references: HotIssueReference[];
   image?: { src: string; alt: Record<Language, string>; credit: Record<Language, string>; sourceUrl: string };
@@ -59,10 +60,6 @@ const clusterDefinitions: Array<{
     summary: {
       ko: "장병 세 명이 다친 폭발 이후 현장 조사까지 닷새가 걸렸습니다. 경계 태세와 조사 결정의 경과를 후속 보도와 함께 살펴봅니다.",
       en: "Five days passed between the blast that injured three soldiers and access for the investigation. These reports examine the security response and the decisions behind that timeline.",
-    },
-    latestChange: {
-      ko: "폭발 지점에 접근하지 못한 조사 경과와 정치권 공방을 새로 정리했습니다.",
-      en: "The latest report traces the limited site access and the political dispute over the delay.",
     },
     focus: {
       ko: "지금 볼 질문 · 군은 사고 이후의 안전조치와 조사 결정을 날짜별로 설명했는가",
@@ -82,10 +79,6 @@ const clusterDefinitions: Array<{
     summary: {
       ko: "248억 원으로 승인된 행사는 직접사업비 713억 원으로 커졌습니다. 개막 뒤에도 현장 혼선과 계약 논란이 이어지는 가운데, 씨앗은 예산·입찰·계약 자료를 한 흐름으로 묶어 추적합니다.",
       en: "An event approved at KRW 24.8 billion grew to KRW 71.3 billion in direct project spending. SEED VOICE connects the budget, tenders, contracts and post-opening problems in one continuing record.",
-    },
-    latestChange: {
-      ko: "412건의 계약 자료를 다시 연결해 예산의 실제 흐름을 확인했습니다.",
-      en: "We reconnected 412 contract records to trace where the budget actually went.",
     },
     focus: {
       ko: "지금 볼 질문 · 713억 원의 예산과 412건의 계약은 어디로 흘렀나",
@@ -119,10 +112,6 @@ const clusterDefinitions: Array<{
       ko: "상속은 개인 재산의 이전만이 아닙니다. 기업의 주식과 고용, 투자와 서비스가 다음 세대로 이어질 수 있는지를 함께 결정합니다. 씨앗은 고율 과세가 기업과 인재의 이동에 미치는 영향을 살펴봅니다.",
       en: "Inheritance is not only a transfer of private wealth. It can determine whether ownership, jobs, investment and services survive into the next generation. These stories examine how high rates affect business continuity and mobility.",
     },
-    latestChange: {
-      ko: "분만병원 사례와 해외 연구를 통해 고율 상속세가 계속사업에 미치는 영향을 살펴봅니다.",
-      en: "A maternity-hospital case and overseas research show how high inheritance taxes affect business continuity.",
-    },
     focus: {
       ko: "지금 볼 질문 · 편법을 막는 세금이 정상적인 기업승계까지 막고 있지 않은가",
       en: "Question now · Is a tax meant to deter avoidance also obstructing legitimate succession?",
@@ -142,10 +131,6 @@ const clusterDefinitions: Array<{
     summary: {
       ko: "검찰청 간판이 사라져도 국가의 강제력은 사라지지 않습니다. 공소청·중수청 출범과 보완수사권 폐지 논쟁을 시민의 방어권, 피해자 구제, 책임의 연결이라는 기준으로 계속 확인합니다.",
       en: "Removing the prosecution service does not remove the state's coercive power. SEED VOICE follows the new agencies, the loss of supplementary-investigation powers, remedies for victims and lines of accountability.",
-    },
-    latestChange: {
-      ko: "형사사법체계 전환을 앞두고 수사 공백과 시민의 방어권 문제를 다시 확인했습니다.",
-      en: "Ahead of the criminal-justice transition, we revisited investigative gaps and citizens' right to defend themselves.",
     },
     focus: {
       ko: "지금 볼 질문 · 권력은 줄었나, 아니면 주소만 바뀌었나",
@@ -168,10 +153,6 @@ const clusterDefinitions: Array<{
     summary: {
       ko: "정부는 발전 공기업을 합치고 LH는 나누며 공공기관 109개를 줄이겠다고 밝혔습니다. 조직도보다 중요한 것은 부채와 비용, 권력과 책임이 시민에게 더 잘 보이게 되는가입니다.",
       en: "The government plans to merge power generators, split LH and reduce the public-sector count by 109. The real test is whether debt, cost, power and responsibility become more visible to citizens.",
-    },
-    latestChange: {
-      ko: "LH 분할과 발전 5사 통합안이 부채·비용·권력의 책임선을 어떻게 바꾸는지 추적합니다.",
-      en: "We track how the LH split and power-company merger would reshape responsibility for debt, cost and power.",
     },
     focus: {
       ko: "지금 볼 질문 · 한쪽에서는 빚을 나누고 다른 쪽에서는 권력을 합치는 기준은 무엇인가",
@@ -273,18 +254,34 @@ function resolveReference(reference: HotIssueReference, language: Language): Hot
   };
 }
 
-function resolveCluster(cluster: typeof clusterDefinitions[number], index: number, language: Language): HotIssueCluster {
-  const items = cluster.references
+function resolveCluster(cluster: typeof clusterDefinitions[number], index: number, language: Language, candidates: FeaturedContent[]): HotIssueCluster {
+  const referenceItems = cluster.references
     .map((reference) => resolveReference(reference, language))
-    .filter((item): item is HotIssueClusterItem => Boolean(item))
-    .sort((a, b) => b.date.localeCompare(a.date));
+    .filter((item): item is HotIssueClusterItem => Boolean(item));
+  const topics = new Set(referenceItems.map((item) => getHomeTopic(item.to)));
+  const relatedItems: HotIssueClusterItem[] = candidates
+    .filter((item) => topics.has(getHomeTopic(item.path)))
+    .map((item) => ({
+      key: `${item.path.startsWith("/columns/") ? "column" : item.path.startsWith("/briefings/") ? "briefing" : item.path.startsWith("/news/") ? "news" : "watch"}-${item.path.split("/").pop()}`,
+      to: item.path,
+      title: item.title,
+      summary: item.summary,
+      date: item.date,
+      imageSrc: item.image.src,
+      imageAlt: item.image.alt,
+      kindLabel: item.categoryLabel,
+      readMinutes: item.readMinutes,
+    }));
+  const itemsByPath = new Map(referenceItems.map((item) => [item.to, item]));
+  for (const item of relatedItems) itemsByPath.set(item.to, item);
+  const items = [...itemsByPath.values()].sort((a, b) => b.date.localeCompare(a.date) || a.to.localeCompare(b.to));
 
   return {
     id: cluster.id,
     number: String(index + 1).padStart(2, "0"),
     title: cluster.title[language],
     summary: cluster.summary[language],
-    latestChange: cluster.latestChange[language],
+    latestChange: items[0]?.summary ?? cluster.summary[language],
     focus: cluster.focus[language],
     imageSrc: cluster.image?.src ?? items[0]?.imageSrc ?? fallbackImage,
     imageAlt: cluster.image?.alt[language] ?? items[0]?.imageAlt ?? cluster.title[language],
@@ -295,11 +292,12 @@ function resolveCluster(cluster: typeof clusterDefinitions[number], index: numbe
   };
 }
 
-export function getHotIssueClusters(language: Language): HotIssueCluster[] {
-  return clusterDefinitions.map((cluster, index) => resolveCluster(cluster, index, language)).filter((cluster) => cluster.items.length > 0);
+export function getHotIssueClusters(language: Language, candidates = getFeaturedContentCandidates(language)): HotIssueCluster[] {
+  return clusterDefinitions.map((cluster, index) => resolveCluster(cluster, index, language, candidates)).filter((cluster) => cluster.items.length > 0);
 }
 
 export function getHotIssueClusterForArticle(kind: string, slug: string, language: Language): HotIssueCluster | undefined {
-  const index = clusterDefinitions.findIndex((cluster) => cluster.references.some((reference) => reference.kind === kind && reference.slug === slug));
-  return index < 0 ? undefined : resolveCluster(clusterDefinitions[index], index, language);
+  const routeKind = kind === "watch" ? "monitoring" : kind === "briefing" ? "briefings" : kind === "column" ? "columns" : kind;
+  const path = kind === "legislative-commentary" ? `/monitoring/legislation/commentary/${slug}` : `/${routeKind}/${slug}`;
+  return getHotIssueClusters(language).find((cluster) => cluster.items.some((item) => item.to === path));
 }

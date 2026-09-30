@@ -19,16 +19,41 @@ const homeTopicGroups: Record<string, string[]> = {
     "/monitoring/supreme-court-renomination-tracker-2026",
     "/columns/participatory-democracy-supreme-court-appointments",
   ],
-  "real-estate-supervisor-2026": ["/briefings/real-estate-supervisor-bill-2221573-explained", "/columns/real-estate-supervisor-citizens-accounts"],
+  "real-estate-supervisor-2026": ["/briefings/real-estate-supervisor-bill-2221573-explained", "/columns/real-estate-supervisor-citizens-accounts", "/monitoring/legislation/bill-2221573"],
   "monthly-rent-credit-2026": ["/briefings/monthly-rent-tax-credit-2026-bills-explained"],
   "income-tax-family-deduction-2026": [
     "/briefings/income-tax-family-deduction-2026-proposals",
     "/columns/family-deduction-work-income-threshold",
   ],
+  "yeosu-world-island-expo": [
+    "/columns/yeosu-island-expo-procurement-ledger",
+    "/monitoring/yeosu-world-island-expo-tracker",
+    "/briefings/yeosu-world-island-expo",
+  ],
+  "inheritance-tax-business-continuity": [
+    "/briefings/hospital-inheritance-tax-maternity-care",
+    "/columns/inheritance-tax-capital-and-talent-mobility",
+    "/columns/wealth-crosses-borders-inheritance-tax",
+  ],
+  "prosecution-service-abolition-tracker": [
+    "/news/major-crimes-agency-investigator-staffing-2026",
+    "/monitoring/legislation/commentary/criminal-investigation-power-and-accountability",
+    "/briefings/prosecution-service-abolition",
+  ],
+  "public-institution-reform-2026": [
+    "/news/lh-debt-split-power-five-merge",
+    "/monitoring/public-institution-reform-109",
+    "/news/lh-split-public-agency-experiment",
+    "/columns/lh-reform-politics-2026",
+  ],
 };
 
 for (const [columnSlug, trackerSlug] of Object.entries(hotIssueColumnTrackerSlugs)) {
-  homeTopicGroups[trackerSlug] = [`/columns/${columnSlug}`, `/monitoring/${trackerSlug}`];
+  homeTopicGroups[trackerSlug] = [
+    ...(homeTopicGroups[trackerSlug] ?? []),
+    `/columns/${columnSlug}`,
+    `/monitoring/${trackerSlug}`,
+  ];
 }
 
 homeTopicGroups["farmland-census-disposal-orders-tracker"]?.push("/briefings/farmland-census-elderly-farmers-retirement");
