@@ -105,7 +105,7 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
             <div className="grid size-10 shrink-0 place-items-center rounded-full bg-green-pale text-green-deep"><LockKeyhole size={20}/></div>
             <div>
               <h3 className="font-extrabold text-navy">{ko ? "인증회원만 댓글을 작성할 수 있습니다." : "Only verified members can post comments."}</h3>
-              <p className="mt-2 text-sm leading-7 text-charcoal/60">{ko ? "이메일·닉네임·비밀번호로 구독을 신청하고 받은 메일의 인증 링크를 누르면 공론장에 참여할 수 있습니다." : "Subscribe with your email, nickname, and password, then follow the confirmation link to join the discussion."}</p>
+              <p className="mt-2 text-sm leading-7 text-charcoal/60">{ko ? "구독신청 화면에서 이용 가능한 가입 방법을 선택하세요. 이메일로 가입하면 메일의 인증 링크를 눌러주세요." : "Choose an available sign-up option. If you sign up by email, follow the confirmation link to join the discussion."}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 <Link to={loginPath} className="button-secondary text-sm">{ko ? "로그인" : "Log in"}</Link>
                 <Link to={signupPath} className="button-primary text-sm">{ko ? "구독신청" : "Subscribe"}</Link>

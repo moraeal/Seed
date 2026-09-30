@@ -1,11 +1,11 @@
 import { BarChart3, CheckCircle2, ClipboardList, LogIn, LogOut, MailCheck, MessageCircle, PenLine, UserPlus } from "lucide-react";
 import { FormEvent, useMemo, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import { useAuth } from "../auth";
+import { SocialProvider, useAuth } from "../auth";
 import { useLanguage } from "../i18n";
 
 export default function Account() {
-  const { user, nickname, isVerified, loading, recoveringPassword, signUp, resendVerification, requestPasswordReset, updatePassword, signIn, signOut } = useAuth();
+  const { user, nickname, isVerified, loading, recoveringPassword, signUp, resendVerification, requestPasswordReset, updatePassword, signIn, signOut, socialProviders, socialLoading, authNotice, startSocialLogin } = useAuth();
   const { language } = useLanguage();
   const ko = language === "ko";
   const [searchParams, setSearchParams] = useSearchParams();
@@ -22,6 +22,33 @@ export default function Account() {
   const [resending, setResending] = useState(false);
   const [resetting, setResetting] = useState(false);
   const [verificationPending, setVerificationPending] = useState(false);
+
+  const [socialBusy, setSocialBusy] = useState<SocialProvider | null>(null);
+  const hasSocialLogin = socialProviders.kakao || socialProviders.google;
+
+  const socialLogin = async (provider: SocialProvider, link = false) => {
+    setNotice("");
+    setSocialBusy(provider);
+    try { await startSocialLogin(provider, link); }
+    catch (error) { setNotice(error instanceof Error ? error.message : (ko ? "간편로그인에 실패했습니다." : "Sign-in failed.")); }
+    finally { setSocialBusy(null); }
+  };
+
+  const socialButtons = (link = false) => (
+    <div className="grid gap-3">
+      {(["kakao", "google"] as SocialProvider[]).map(provider => {
+        const connected = link && user?.identities?.some(identity => identity.provider === provider);
+        const label = provider === "kakao" ? (ko ? "카카오" : "Kakao") : (ko ? "구글" : "Google");
+        return <button key={provider} type="button" onClick={() => void socialLogin(provider, link)}
+          disabled={socialLoading || !socialProviders[provider] || Boolean(socialBusy) || Boolean(connected) || submitting}
+          className={`flex min-h-12 w-full items-center justify-center gap-2 rounded-lg border px-4 py-3 text-base font-bold transition disabled:cursor-not-allowed disabled:opacity-55 ${provider === "kakao" ? "border-[#FEE500] bg-[#FEE500] text-[#191919]" : "border-charcoal/20 bg-white text-charcoal hover:bg-ivory"}`}>
+          {provider === "kakao" && <MessageCircle size={20} aria-hidden="true"/>}
+          {socialBusy === provider ? (ko ? "연결 중…" : "Connecting…") : connected ? `${label} ${ko ? "연결됨" : "connected"}` : `${label}${ko ? (link ? " 계정 연결" : "로 시작하기") : (link ? " — connect account" : " — continue")}`}
+          {!connected && !socialProviders[provider] && <span className="text-sm font-normal">{socialLoading ? (ko ? "확인 중" : "Checking") : (ko ? "준비 중" : "Coming soon")}</span>}
+        </button>;
+      })}
+    </div>
+  );
 
   const returnTo = useMemo(() => searchParams.get("returnTo") || (language === "en" ? "/en/" : "/"), [searchParams, language]);
 
@@ -157,7 +184,13 @@ export default function Account() {
               {isVerified && <span className="inline-flex items-center gap-1 rounded-full bg-green-pale px-3 py-1 text-xs font-extrabold text-green-deep"><CheckCircle2 size={14}/>{ko ? "이메일 인증회원" : "Email verified"}</span>}
             </div>
             <p className="mt-3 text-sm text-charcoal/55">{user.email}</p>
-            <p className="mt-6 text-sm leading-7 text-charcoal/65">{ko ? "인증회원은 씨드의 뉴스·브리핑·칼럼·감시·제안·실험·아카데미에 댓글을 남기고 공론장 토론에 참여할 수 있습니다. 화면에는 실명 대신 가입 때 정한 닉네임이 표시됩니다." : "Verified members can comment on SEED news, briefings, columns, civic watch, proposals, experiments and academy content and take part in the public forum. Your chosen nickname, not your legal name, is shown publicly."}</p>
+            <p className="mt-6 text-sm leading-7 text-charcoal/65">{ko ? "인증회원은 씨드의 뉴스·브리핑·칼럼·감시·제안·실험·아카데미에 댓글을 남기고 공론장 토론에 참여할 수 있습니다. 화면에는 실명 대신 씨앗용 닉네임이 표시됩니다." : "Verified members can comment on SEED news, briefings, columns, civic watch, proposals, experiments and academy content and take part in the public forum. Your chosen nickname, not your legal name, is shown publicly."}</p>
+            <div className="mt-7 border-t border-green-deep/10 pt-6">
+              <h3 className="text-lg font-bold text-navy">{ko ? "간편로그인 연결" : "Connect a sign-in account"}</h3>
+              <p className="mb-4 mt-2 text-sm leading-7 text-charcoal/65">{ko ? "기존 회원정보를 유지하면서 구글·카카오 계정을 연결할 수 있습니다. 다음부터는 연결한 계정으로 로그인하세요." : "Connect Google or Kakao while keeping your existing membership. Use that account to sign in next time."}</p>
+              {socialButtons(true)}
+              {(notice || authNotice) && <p className="mt-4 text-sm leading-6" role="status">{notice || authNotice}</p>}
+            </div>
             <button type="button" onClick={() => void signOut()} className="button-secondary mt-7"><LogOut size={16}/>{ko ? "로그아웃" : "Log out"}</button>
             {(user.app_metadata?.seed_role === "author" || user.app_metadata?.seed_role === "owner") && <Link to="/writer" className="button-primary ml-3 mt-7"><PenLine size={16}/>{ko ? "필자 집필실" : "Writers' room"}</Link>}
             {user.app_metadata?.seed_role === "owner" && <Link to="/insights" className="button-primary ml-3 mt-7"><BarChart3 size={16}/>{ko ? "구독·콘텐츠 통계" : "Subscriptions & content"}</Link>}
@@ -174,8 +207,8 @@ export default function Account() {
         <div className="pt-5">
           <span className="section-kicker">SEED MEMBER</span>
           <h1 className="editorial-title mt-4 text-4xl font-bold leading-tight text-navy sm:text-5xl">{ko ? "씨앗의 소리를 구독하세요" : "Subscribe to SEED VOICE"}</h1>
-          <p className="mt-6 text-base leading-8 text-charcoal/65">{ko ? "이메일·닉네임·비밀번호를 입력하면 구독을 신청할 수 있습니다. 카카오톡으로도 소식을 받고 싶다면 아래에서 선택해 주세요." : "Subscribe with your email, nickname, and password. Choose KakaoTalk below only if you want updates there too."}</p>
-          <div className="mt-7 flex items-start gap-3 rounded-lg border border-green-deep/10 bg-green-pale/55 p-4 text-sm leading-7 text-charcoal/65"><MailCheck className="mt-1 shrink-0 text-green-mid" size={20}/>{ko ? "신청 후 이메일로 확인 링크가 발송됩니다. 링크를 누르면 로그인과 댓글 작성이 가능합니다." : "After you apply, we'll email a confirmation link. Follow it to log in and comment."}</div>
+          <p className="mt-6 text-base leading-8 text-charcoal/65">{ko ? "익숙한 계정으로 간편하게 시작하세요. 기존 회원은 이메일과 비밀번호로도 로그인할 수 있습니다." : "Start with an account you already use. Existing members can still sign in with email and password."}</p>
+          <div className="mt-7 flex items-start gap-3 rounded-lg border border-green-deep/10 bg-green-pale/55 p-4 text-sm leading-7 text-charcoal/65"><MailCheck className="mt-1 shrink-0 text-green-mid" size={20}/>{ko ? "기존 회원이라면 이메일로 먼저 로그인한 뒤 내 계정에서 간편로그인을 연결하세요. 구글·카카오 이메일이 달라도 기존 회원정보를 유지할 수 있습니다." : "Already a member? Sign in by email, then connect Google or Kakao in My Account to keep your existing membership, even if the email addresses differ."}</div>
         </div>
 
         <div className="rounded-xl border border-green-deep/15 bg-white p-6 shadow-soft sm:p-8">
@@ -184,7 +217,13 @@ export default function Account() {
             <button type="button" onClick={() => changeMode("signup")} className={`rounded-md px-4 py-3 text-sm font-extrabold ${mode === "signup" ? "bg-white text-green-deep shadow-sm" : "text-charcoal/50"}`}>{ko ? "구독신청" : "Subscribe"}</button>
           </div>
 
-          <form onSubmit={submit} className="mt-7">
+          <div className="mt-6">{socialButtons()}</div>
+          {hasSocialLogin && <p className="mt-3 text-sm leading-6 text-charcoal/60">{ko ? "처음 이용하면 계정이 만들어집니다. 별도 비밀번호 없이 가입·로그인할 수 있습니다." : "Your first sign-in creates an account. No separate password is needed."}</p>}
+          {!hasSocialLogin && !socialLoading && <p className="mt-3 text-sm leading-6 text-charcoal/60">{ko ? "간편로그인은 준비 중입니다. 이메일 가입·로그인을 이용해주세요." : "Social sign-in is coming soon. Please use email for now."}</p>}
+          {authNotice && <p className="mt-4 rounded-lg bg-gold/10 p-4 text-sm leading-6" role="status">{authNotice}</p>}
+          <details key={`${mode}-${hasSocialLogin}`} open={!hasSocialLogin} className="mt-6 border-t border-green-deep/10 pt-5">
+            <summary className="cursor-pointer text-base font-bold text-green-deep">{ko ? (mode === "signup" ? "이메일로 가입하기" : "이메일로 로그인하기") : (mode === "signup" ? "Sign up with email" : "Sign in with email")}</summary>
+          <form onSubmit={submit} className="mt-5">
             <label className="field"><span>{ko ? "이메일" : "Email"}</span><input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="name@example.com" autoComplete="email" required /></label>
             {mode === "signup" && <label className="field mt-4"><span>{ko ? "닉네임" : "Nickname"}</span><input value={name} onChange={(event) => setName(event.target.value)} maxLength={30} placeholder={ko ? "씨앗시민" : "SeedCitizen"} autoComplete="nickname" required /></label>}
             <label className="field mt-4"><span>{ko ? "비밀번호" : "Password"}</span><input type="password" value={password} onChange={(event) => setPassword(event.target.value)} minLength={mode === "signup" ? 8 : undefined} placeholder={mode === "signup" ? (ko ? "8자 이상" : "8+ characters") : undefined} autoComplete={mode === "signup" ? "new-password" : "current-password"} required /></label>
@@ -223,8 +262,10 @@ export default function Account() {
                 </button>}
               </div>
             )}
-            {notice && <p className="mt-4 rounded-lg bg-gold/10 px-4 py-3 text-sm font-semibold leading-6 text-charcoal/70" role="status">{notice}</p>}
+
           </form>
+          </details>
+            {notice && <p className="mt-4 rounded-lg bg-gold/10 px-4 py-3 text-sm font-semibold leading-6 text-charcoal/70" role="status">{notice}</p>}
         </div>
       </div>
     </section>
