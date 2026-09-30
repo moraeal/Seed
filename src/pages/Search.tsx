@@ -7,7 +7,7 @@ import { getColumnsNewestFirst, getHotIssueColumnsNewestFirst, getPublicInterest
 import { civicLanguageCategories } from "../data/civicLanguageMap";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "../data/localizedContent";
 import { getNewsNewestFirst } from "../data/news";
-import { newsTrackerCases } from "../data/newsTrackerRegistry";
+import { publicInterestWatchCases } from "../data/newsTrackerRegistry";
 import { getLegislativeCommentaryEdition, legislativeCommentaries } from "../data/legislativeCommentaries";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
@@ -93,7 +93,13 @@ export default function SearchPage() {
       imageSrc: item.heroImage.src,
       imageAlt: item.heroImage.alt,
       topicIds: item.topicIds,
-    })).map(({ topicIds, ...item }) => withTopics(item, undefined, topicIds));
+    })).map(({ topicIds, ...item }) => {
+      const isPublicInterest = publicInterestColumnSlugs.has(item.key.replace(/^column-/, ""));
+      const topics = topicIds ?? classifyArticleTopics(item);
+      return withTopics(item, undefined, isPublicInterest
+        ? [...new Set<TopicId>(["public-interest-watch", ...topics])]
+        : topics);
+    });
 
     const hotIssueColumns = getHotIssueColumnsNewestFirst().map((item) => localizeColumn(item, language)).map((item) => ({
       key: `hot-issue-column-${item.slug}`,
@@ -126,12 +132,12 @@ export default function SearchPage() {
         imageAlt: item.heroImage.alt,
       })).map((item) => withTopics(item, ["politics-language"]));
 
-    const trackers = newsTrackerCases.map((item) => withTopics({
+    const watchRecords = publicInterestWatchCases.map((item) => withTopics({
       key: `tracker-${item.slug}`,
-      category: ko ? "시민감시" : "Civic Watch",
+      category: item.timeline?.length ? (ko ? "시민감시" : "Civic Watch") : (ko ? "공익감시" : "Public-Interest Watch"),
       title: item.title[language],
       summary: item.summary[language],
-      body: [item.sourceBasis[language], ...(item.keyChanges ?? []).map((change) => change.text[language]), ...(item.timeline ?? []).flatMap((entry) => [entry.title[language], entry.description[language]])].join(" "),
+      body: [item.organization[language], item.sourceBasis[language], ...item.confirmedFacts.map((fact) => fact[language]), ...item.questions.map((question) => question[language]), ...item.proposals.map((proposal) => proposal[language]), ...(item.keyChanges ?? []).map((change) => change.text[language]), ...(item.timeline ?? []).flatMap((entry) => [entry.title[language], entry.description[language]])].join(" "),
       date: item.updatedAt,
       href: `/monitoring/${item.slug}`,
       imageSrc: item.heroImage?.src ?? "",
@@ -182,7 +188,7 @@ export default function SearchPage() {
       imageAlt: ko ? "시민언어 전체 지도" : "Civic language map",
     }, ["politics-language"]);
 
-    return [...news, ...hotIssueColumns, ...trackers, ...briefings, ...columns, civicLanguageMap, ...seedLanguage, ...legislative, ...tax];
+    return [...news, ...hotIssueColumns, ...watchRecords, ...briefings, ...columns, civicLanguageMap, ...seedLanguage, ...legislative, ...tax];
   }, [ko, language]);
 
   const results = useMemo(() => {
