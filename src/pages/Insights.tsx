@@ -9,6 +9,7 @@ import { isHotIssueColumn } from "../data/columns";
 import { getFeaturedContentPath, setFeaturedContentPath } from "../lib/featuredContent";
 import LegislativeAdminPanel from "../components/LegislativeAdminPanel";
 import TaxWatchAdminPanel from "../components/TaxWatchAdminPanel";
+import { getPublishedLegislativeBills, type LegislativeBill } from "../lib/legislativeMonitoring";
 
 type Section = "dashboard" | "content" | "traffic" | "subscribers" | "members" | "featured" | "legislation" | "tax";
 
@@ -66,6 +67,7 @@ export default function Insights() {
   const [savingFeaturedPath, setSavingFeaturedPath] = useState<string | null>(null);
   const [featuredNotice, setFeaturedNotice] = useState("");
   const [featuredPage, setFeaturedPage] = useState(1);
+  const [legislativeBills, setLegislativeBills] = useState<LegislativeBill[]>([]);
   const [roleSavingUserId, setRoleSavingUserId] = useState<string | null>(null);
   const [roleNotice, setRoleNotice] = useState("");
   const authorized = user?.app_metadata?.seed_role === "owner";
@@ -103,6 +105,11 @@ export default function Insights() {
     void getFeaturedContentPath()
       .then(setFeaturedPath)
       .catch(() => setFeaturedNotice(ko ? "현재 메인기사를 불러오지 못했습니다." : "Could not load the current featured story."));
+    let active = true;
+    void getPublishedLegislativeBills(1000)
+      .then((bills) => { if (active) setLegislativeBills(bills); })
+      .catch(() => { if (active) setFeaturedNotice(ko ? "입법감시 기록을 불러오지 못했습니다. 화면을 새로고침해주세요." : "Could not load legislative records. Please refresh the page."); });
+    return () => { active = false; };
   }, [section, authorized, ko]);
 
   const totals = useMemo(() => Object.fromEntries(summary.map((item) => [item.metric, Number(item.value)])), [summary]);
@@ -111,7 +118,7 @@ export default function Insights() {
   const maxDailyViews = useMemo(() => Math.max(1, ...dailyViews.map((item) => Number(item.views))), [dailyViews]);
   const filteredViews = useMemo(() => contentCategory === "all" ? views : views.filter((item) => categoryLabel(item.page_path, true) === contentCategory), [views, contentCategory]);
   const topViews = views.slice(0, 5);
-  const featuredCandidates = useMemo(() => getFeaturedContentCandidates(language), [language]);
+  const featuredCandidates = useMemo(() => getFeaturedContentCandidates(language, legislativeBills), [language, legislativeBills]);
   const featuredPageCount = Math.max(1, Math.ceil(featuredCandidates.length / FEATURED_ITEMS_PER_PAGE));
   const paginatedFeaturedCandidates = useMemo(() => {
     const start = (featuredPage - 1) * FEATURED_ITEMS_PER_PAGE;

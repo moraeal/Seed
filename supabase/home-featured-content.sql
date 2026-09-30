@@ -1,6 +1,6 @@
 create table if not exists public.homepage_featured_content (
   slot text primary key default 'primary' check (slot = 'primary'),
-  content_path text not null check (content_path ~ '^/(columns|news|briefings|seed-language)/[a-z0-9][a-z0-9-]*$'),
+  content_path text not null check (content_path ~ '^/((columns|news|briefings|seed-language)|monitoring(/(legislation|tax)(/commentary)?)?)/[a-z0-9][a-z0-9-]*$'),
   updated_at timestamptz not null default now()
 );
 

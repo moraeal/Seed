@@ -1,9 +1,13 @@
 import type { Language } from "../i18n";
 import { getAllBriefingsNewestFirst } from "./allBriefings";
-import { getColumnsNewestFirst } from "./columns";
+import { getColumnsNewestFirst, getPublicInterestColumnsNewestFirst } from "./columns";
 import { getHotIssuesNewestFirst } from "./hotIssues";
 import { localizeBriefing, localizeColumn } from "./localizedContent";
-import { newsTrackerCases } from "./newsTrackerRegistry";
+import { publicInterestWatchCases } from "./newsTrackerRegistry";
+import { legislativeCommentaries } from "./legislativeCommentaries";
+import { taxCommentaries } from "./taxCommentaries";
+import { taxPolicies } from "./taxWatch";
+import type { LegislativeBill } from "../lib/legislativeMonitoring";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "./seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "./seedLanguageEnvironment";
 
@@ -19,7 +23,7 @@ export type FeaturedContent = {
   image: { src: string; alt: string };
 };
 
-export function getFeaturedContentCandidates(language: Language): FeaturedContent[] {
+export function getFeaturedContentCandidates(language: Language, legislativeBills: LegislativeBill[] = []): FeaturedContent[] {
   const ko = language === "ko";
   const columnItems: FeaturedContent[] = getColumnsNewestFirst().map((item) => {
     const localized = localizeColumn(item, language);
@@ -66,7 +70,22 @@ export function getFeaturedContentCandidates(language: Language): FeaturedConten
     };
   });
 
-  const trackerItems: FeaturedContent[] = newsTrackerCases.map((item) => ({
+  const publicInterestColumnItems: FeaturedContent[] = getPublicInterestColumnsNewestFirst().map((item) => {
+    const localized = localizeColumn(item, language);
+    return {
+      path: `/columns/${item.slug}`,
+      category: "watch",
+      categoryLabel: ko ? "공익감시" : "Public-interest Watch",
+      kicker: "CIVIC WATCH",
+      title: localized.title,
+      summary: localized.summary,
+      date: item.date,
+      readMinutes: item.readMinutes,
+      image: localized.heroImage,
+    };
+  });
+
+  const trackerItems: FeaturedContent[] = publicInterestWatchCases.map((item) => ({
     path: `/monitoring/${item.slug}`,
     category: "watch",
     categoryLabel: ko ? "시민감시" : "Civic Watch",
@@ -79,6 +98,65 @@ export function getFeaturedContentCandidates(language: Language): FeaturedConten
       alt: item.heroImage?.alt[language] ?? item.title[language],
     },
   }));
+
+  const legislativeItems: FeaturedContent[] = legislativeCommentaries.map((item) => {
+    const edition = item.editions[language];
+    return {
+      path: `/monitoring/legislation/commentary/${item.slug}`,
+      category: "watch",
+      categoryLabel: ko ? "입법감시" : "Legislative Watch",
+      kicker: "CIVIC WATCH · LEGISLATION",
+      title: edition.title,
+      summary: edition.summary,
+      date: item.date,
+      readMinutes: item.readMinutes,
+      image: { src: item.heroSrc, alt: edition.heroAlt },
+    };
+  });
+
+  const legislativeBillItems: FeaturedContent[] = legislativeBills
+    .filter((item) => item.review_state === "published")
+    .map((item) => {
+      const title = ko ? item.title : item.analysis?.title_en || item.title;
+      return {
+        path: `/monitoring/legislation/${item.slug}`,
+        category: "watch",
+        categoryLabel: ko ? "입법감시" : "Legislative Watch",
+        kicker: "CIVIC WATCH · LEGISLATION",
+        title,
+        summary: ko
+          ? item.public_summary_ko || item.analysis?.summary_ko || item.official_summary || ""
+          : item.public_summary_en || item.analysis?.summary_en || "",
+        date: (item.editorial_updated_at || item.published_at || item.updated_at || item.proposed_date || "").slice(0, 10),
+        image: { src: "/images/brand/editorial-image-fallback.svg", alt: title },
+      };
+    });
+
+  const taxItems: FeaturedContent[] = taxPolicies.map((item) => ({
+    path: `/monitoring/tax/${item.slug}`,
+    category: "watch",
+    categoryLabel: ko ? "세금감시" : "Tax Watch",
+    kicker: "CIVIC WATCH · TAX",
+    title: item.title[language],
+    summary: item.summary[language],
+    date: item.checkedAt,
+    image: { src: item.heroImage[language], alt: item.heroImage.alt[language] },
+  }));
+
+  const taxCommentaryItems: FeaturedContent[] = taxCommentaries.map((item) => {
+    const edition = item.editions[language];
+    return {
+      path: `/monitoring/tax/commentary/${item.slug}`,
+      category: "watch",
+      categoryLabel: ko ? "세금감시" : "Tax Watch",
+      kicker: "CIVIC WATCH · TAX",
+      title: edition.title,
+      summary: edition.summary,
+      date: item.date,
+      readMinutes: item.readMinutes,
+      image: { src: item.heroSrc, alt: edition.heroAlt },
+    };
+  });
 
   const languageSources = [
     ...seedLanguageEnvironmentArticlesKo,
@@ -103,7 +181,7 @@ export function getFeaturedContentCandidates(language: Language): FeaturedConten
     }];
   });
 
-  const candidates = [...columnItems, ...newsItems, ...trackerItems, ...briefingItems, ...languageItems]
+  const candidates = [...columnItems, ...newsItems, ...publicInterestColumnItems, ...trackerItems, ...legislativeItems, ...legislativeBillItems, ...taxItems, ...taxCommentaryItems, ...briefingItems, ...languageItems]
     .sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
   const seenPaths = new Set<string>();
   return candidates.filter((item) => {

@@ -103,7 +103,7 @@ export default function Home() {
     .sort((a, b) => b.date.localeCompare(a.date));
 
   const leadColumn = allJournalColumns[0];
-  const featuredCandidates = getFeaturedContentCandidates(language);
+  const featuredCandidates = getFeaturedContentCandidates(language, legislativeBills);
   const configuredLead = featuredCandidates.find((item) => item.path === featuredPath);
   const defaultFeaturedPath = leadColumn ? `/columns/${leadColumn.slug}` : featuredCandidates[0]?.path;
   const featuredLead = featuredReady
@@ -307,18 +307,13 @@ export default function Home() {
 
   useEffect(() => {
     let active = true;
-    void getFeaturedContentPath()
-      .then((path) => { if (active) setFeaturedPath(path); })
-      .catch(() => { /* Keep the newest featured briefing as the fallback. */ })
-      .finally(() => { if (active) setFeaturedReady(true); });
-    return () => { active = false; };
-  }, []);
-
-  useEffect(() => {
-    let active = true;
-    void getPublishedLegislativeBills(20)
-      .then((bills) => { if (active) setLegislativeBills(bills); })
-      .catch(() => { /* Static civic-watch records remain available as the safe fallback. */ });
+    void Promise.allSettled([getFeaturedContentPath(), getPublishedLegislativeBills(1000)])
+      .then(([featuredResult, billsResult]) => {
+        if (!active) return;
+        if (featuredResult.status === "fulfilled") setFeaturedPath(featuredResult.value);
+        if (billsResult.status === "fulfilled") setLegislativeBills(billsResult.value);
+        setFeaturedReady(true);
+      });
     return () => { active = false; };
   }, []);
 
