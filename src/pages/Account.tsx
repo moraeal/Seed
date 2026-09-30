@@ -42,7 +42,13 @@ export default function Account() {
         return <button key={provider} type="button" onClick={() => void socialLogin(provider, link)}
           disabled={socialLoading || !socialProviders[provider] || Boolean(socialBusy) || Boolean(connected) || submitting}
           className={`flex min-h-12 w-full items-center justify-center gap-2 rounded-lg border px-4 py-3 text-base font-bold transition disabled:cursor-not-allowed disabled:opacity-55 ${provider === "kakao" ? "border-[#FEE500] bg-[#FEE500] text-[#191919]" : "border-charcoal/20 bg-white text-charcoal hover:bg-ivory"}`}>
-          {provider === "kakao" && <MessageCircle size={20} aria-hidden="true"/>}
+          {provider === "google" ? (
+            <img src={`${import.meta.env.BASE_URL}images/auth/google-logo.png`} width={20} height={20} className="h-5 w-5 shrink-0 object-contain" alt="" aria-hidden="true" />
+          ) : (
+            <svg viewBox="0 0 24 24" width={20} height={20} className="h-5 w-5 shrink-0" aria-hidden="true" focusable="false">
+              <path fill="#000000" d="M12 3C5.924 3 1 6.825 1 11.544c0 3.07 2.078 5.763 5.197 7.27-.17.636-1.094 4.088-1.13 4.36 0 0-.022.18.095.248.116.068.253.015.253.015.335-.047 3.883-2.539 4.497-2.972.678.094 1.376.143 2.088.143 6.076 0 11-3.825 11-8.544C23 6.825 18.076 3 12 3Z" />
+            </svg>
+          )}
           {socialBusy === provider ? (ko ? "연결 중…" : "Connecting…") : connected ? `${label} ${ko ? "연결됨" : "connected"}` : `${label}${ko ? (link ? " 계정 연결" : "로 시작하기") : (link ? " — connect account" : " — continue")}`}
           {!connected && !socialProviders[provider] && <span className="text-sm font-normal">{socialLoading ? (ko ? "확인 중" : "Checking") : (ko ? "준비 중" : "Coming soon")}</span>}
         </button>;
