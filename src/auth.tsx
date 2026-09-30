@@ -239,6 +239,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const url = new URL(`${supabaseUrl}/auth/v1/${link ? "user/identities/authorize" : "authorize"}`);
     url.search = new URLSearchParams({ provider, redirect_to: `${window.location.origin}${import.meta.env.BASE_URL}account`, code_challenge: challenge, code_challenge_method: "s256", skip_http_redirect: "true" }).toString();
     try {
+      if (!link) {
+        // Sign-in is a browser redirect. Fetching it follows the provider
+        // redirect across origins and fails CORS before consent can open.
+        url.searchParams.delete("skip_http_redirect");
+        window.location.assign(url.href);
+        return;
+      }
       const response = await fetch(url, { headers: authHeaders(token || undefined) });
       if (!response.ok) throw new Error(await readError(response, "간편로그인을 시작하지 못했습니다. / Could not start sign-in."));
       const data = await response.json();
