@@ -43,6 +43,7 @@ export const hotIssueColumnSlugs = new Set([
 ]);
 
 export const publicInterestColumnSlugs = new Set([
+  "civic-groups-audit-lawmakers-evaluation-criteria-2026",
   "participatory-democracy-supreme-court-appointments",
   "civic-groups-are-not-state-vanguard-2026",
 ]);
