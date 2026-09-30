@@ -1,11 +1,11 @@
 import { BarChart3, CheckCircle2, ClipboardList, LogIn, LogOut, MailCheck, MessageCircle, PenLine, UserPlus } from "lucide-react";
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { SocialProvider, useAuth } from "../auth";
 import { useLanguage } from "../i18n";
 
 export default function Account() {
-  const { user, nickname, isVerified, loading, recoveringPassword, signUp, resendVerification, requestPasswordReset, updatePassword, signIn, signOut, socialProviders, socialLoading, authNotice, startSocialLogin } = useAuth();
+  const { user, nickname, isVerified, loading, recoveringPassword, signUp, resendVerification, requestPasswordReset, updatePassword, updateNickname, signIn, signOut, socialProviders, socialLoading, authNotice, startSocialLogin } = useAuth();
   const { language } = useLanguage();
   const ko = language === "ko";
   const [searchParams, setSearchParams] = useSearchParams();
@@ -24,6 +24,21 @@ export default function Account() {
   const [verificationPending, setVerificationPending] = useState(false);
 
   const [socialBusy, setSocialBusy] = useState<SocialProvider | null>(null);
+  const [nicknameDraft, setNicknameDraft] = useState(nickname);
+  const [nicknameSaving, setNicknameSaving] = useState(false);
+  const [nicknameNotice, setNicknameNotice] = useState("");
+  useEffect(() => { setNicknameDraft(nickname); }, [nickname, user?.id]);
+  const saveNickname = async (event: FormEvent) => {
+    event.preventDefault();
+    setNicknameSaving(true);
+    setNicknameNotice("");
+    try {
+      await updateNickname(nicknameDraft);
+      setNicknameNotice(ko ? "닉네임을 저장했습니다." : "Nickname saved.");
+    } catch (error) {
+      setNicknameNotice(error instanceof Error ? error.message : (ko ? "저장하지 못했습니다." : "Could not save."));
+    } finally { setNicknameSaving(false); }
+  };
   const hasSocialLogin = socialProviders.kakao || socialProviders.google;
 
   const socialLogin = async (provider: SocialProvider, link = false) => {
@@ -190,6 +205,15 @@ export default function Account() {
               {isVerified && <span className="inline-flex items-center gap-1 rounded-full bg-green-pale px-3 py-1 text-xs font-extrabold text-green-deep"><CheckCircle2 size={14}/>{ko ? "이메일 인증회원" : "Email verified"}</span>}
             </div>
             <p className="mt-3 text-sm text-charcoal/55">{user.email}</p>
+            <form onSubmit={saveNickname} className="mt-6 rounded-lg bg-green-pale/40 p-4">
+              <label htmlFor="member-nickname" className="block text-sm font-bold text-navy">{ko ? "닉네임 변경" : "Change nickname"}</label>
+              <div className="mt-2 flex flex-col gap-3 sm:flex-row">
+                <input id="member-nickname" value={nicknameDraft} onChange={event => { setNicknameDraft(event.target.value); setNicknameNotice(""); }} disabled={nicknameSaving} required className="min-w-0 flex-1 rounded-lg border border-charcoal/20 bg-white px-3 py-3 text-base text-charcoal" aria-describedby="nickname-help" autoComplete="nickname" />
+                <button type="submit" disabled={nicknameSaving || !nicknameDraft.trim() || nicknameDraft.trim() === nickname} className="button-primary justify-center disabled:cursor-not-allowed disabled:opacity-55">{nicknameSaving ? (ko ? "저장 중…" : "Saving…") : (ko ? "닉네임 저장" : "Save nickname")}</button>
+              </div>
+              <p id="nickname-help" className="mt-2 text-sm leading-6 text-charcoal/60">{ko ? "2~30자로 입력하세요. 다른 회원이 사용하는 닉네임은 선택할 수 없습니다." : "Use 2–30 characters. Choose a nickname that is not already in use."}</p>
+              {nicknameNotice && <p role="status" className="mt-2 text-sm leading-6 text-green-deep">{nicknameNotice}</p>}
+            </form>
             <p className="mt-6 text-sm leading-7 text-charcoal/65">{ko ? "인증회원은 씨드의 뉴스·브리핑·칼럼·감시·제안·실험·아카데미에 댓글을 남기고 공론장 토론에 참여할 수 있습니다. 화면에는 실명 대신 씨앗용 닉네임이 표시됩니다." : "Verified members can comment on SEED news, briefings, columns, civic watch, proposals, experiments and academy content and take part in the public forum. Your chosen nickname, not your legal name, is shown publicly."}</p>
             <div className="mt-7 border-t border-green-deep/10 pt-6">
               <h3 className="text-lg font-bold text-navy">{ko ? "간편로그인 연결" : "Connect a sign-in account"}</h3>

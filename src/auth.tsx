@@ -30,6 +30,7 @@ type AuthContextValue = {
   recoveringPassword: boolean;
   getValidAccessToken: () => Promise<string | null>;
   isNicknameAvailable: (nickname: string) => Promise<boolean>;
+  updateNickname: (nickname: string) => Promise<void>;
   signUp: (email: string, password: string, nickname: string, phone: string, socialPreferences: string[], language: "ko" | "en") => Promise<{ verificationRequired: boolean }>;
   resendVerification: (email: string) => Promise<void>;
   requestPasswordReset: (email: string) => Promise<void>;
@@ -368,6 +369,29 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (!response.ok) throw new Error(await readError(response, "비밀번호 재설정 메일을 보내지 못했습니다."));
   };
 
+  const updateNickname = async (nickname: string) => {
+    const english = document.documentElement.lang.toLowerCase().startsWith("en");
+    const candidate = nickname.replace(/\s+/g, " ").trim();
+    if (Array.from(candidate).length < 2 || Array.from(candidate).length > 30) throw new Error(english ? "Use 2–30 characters." : "닉네임은 2~30자로 입력해주세요.");
+    const token = await getValidAccessToken();
+    if (!token) throw new Error(english ? "Please sign in again." : "다시 로그인해주세요.");
+    const current = await getUser(token);
+    if (candidate === current.user_metadata?.nickname) return;
+    const available = await isNicknameAvailable(candidate);
+    if (!available && candidate.toLowerCase() !== current.user_metadata?.nickname?.toLowerCase()) throw new Error(english ? "That nickname is already in use." : "이미 사용 중인 닉네임입니다. 다른 이름을 입력해주세요.");
+    const response = await fetch(`${supabaseUrl}/auth/v1/user`, {
+      method: "PUT", headers: authHeaders(token), body: JSON.stringify({ data: { nickname: candidate } }),
+    });
+    if (!response.ok) throw new Error(english ? "Could not save the nickname. It may already be in use. Please try again." : "닉네임을 저장하지 못했습니다. 중복 여부를 확인하고 다시 시도해주세요.");
+    const updated: AuthUser = await response.json();
+    setSession(previous => {
+      if (!previous || previous.user.id !== updated.id) return previous;
+      const next = { ...previous, user: updated };
+      saveSession(next);
+      return next;
+    });
+  };
+
   const updatePassword = async (password: string) => {
     if (!session?.access_token) throw new Error("재설정 링크가 만료되었습니다. 메일을 다시 요청해주세요.");
     const response = await fetch(`${supabaseUrl}/auth/v1/user`, {
@@ -416,6 +440,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     recoveringPassword,
     getValidAccessToken,
     isNicknameAvailable,
+    updateNickname,
     signUp,
     resendVerification,
     requestPasswordReset,
