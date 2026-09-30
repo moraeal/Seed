@@ -1,4 +1,6 @@
 import type { LocalizedText, PublicInterestWatchCase } from "./publicInterestWatch";
+import { lhReformColumn } from "./columns/lhReformColumn";
+import { issue13 as lhReformEnglish } from "./contentTranslations/columns/issue13";
 
 export type ReformLens = "tax" | "tariff" | "housing" | "region-jobs";
 export type ReformStage = "announced" | "follow-up" | "legislation" | "implementation" | "verified";
@@ -353,4 +355,13 @@ export const publicInstitutionReformTracker: PublicInterestWatchCase = {
     },
   ],
   continuationEligible: false,
+  relatedContents: [
+    {
+      href: `/columns/${lhReformColumn.slug}`,
+      label: { ko: "관련 기사", en: "RELATED ARTICLE" },
+      title: { ko: lhReformColumn.title, en: lhReformEnglish.title },
+      summary: { ko: lhReformColumn.summary, en: lhReformEnglish.summary },
+      date: lhReformColumn.date,
+    },
+  ],
 };
