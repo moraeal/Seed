@@ -19,15 +19,15 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     en: "This tracker records the shift from cancelling six planned reactors in 2017 to proceeding with two large reactors and considering more in 2026. It also follows how power demand from southwest semiconductor projects and AI data centers, regional electricity pricing and corporate-relocation policy became linked to the nuclear debate.",
   },
   status: {
-    ko: "정책 전환·추가 원전 검토",
-    en: "Policy reversal · Further reactors under review",
+    ko: "신규 2기 부지선정·추가 원전 공론화",
+    en: "Two-reactor site selected · Further reactors under deliberation",
   },
   openedAt: "2017-10-24",
   publishedAt: "2026-09-16",
-  updatedAt: "2026-09-26",
+  updatedAt: "2026-10-01",
   nextCheck: {
-    ko: "12월 원전 공론화위원회 권고안과 제12차 전력수급기본계획 정부안, 추가 원전 기수·부지·비용, 서남권 투자계획의 기업별 확정 여부, HMM을 포함한 기업 이전 과정의 동의·거부 절차, 탈원전에서 원전 확대로 바뀌며 발생한 전환비용",
-    en: "The nuclear-deliberation committee's December recommendation and the government's 12th electricity-plan draft; the number, sites and costs of additional reactors; firm-level commitments in the southwest investment package; consent and refusal rights in corporate relocations including HMM; and the transition costs created by reversing the phase-down policy",
+    ko: "영덕 신규 원전 예정구역 고시와 인허가 일정, 확정 총사업비·송전망·사용후핵연료 비용, 12월 원전 공론화위원회 권고안과 제12차 전력수급기본계획 정부안, 추가 원전 기수·부지·비용, 서남권 투자계획의 기업별 확정 여부, HMM을 포함한 기업 이전 과정의 동의·거부 절차",
+    en: "The planned-area designation and permitting schedule for the Yeongdeok reactors; finalized project, grid and spent-fuel costs; the nuclear-deliberation committee's December recommendation and the government's 12th electricity-plan draft; the number, sites and costs of any further reactors; firm-level commitments in the southwest investment package; and consent and refusal rights in corporate relocations including HMM",
   },
   heroImage: {
     src: "images/monitoring/nuclear-policy-reversal-tracker-hero.webp",
@@ -65,6 +65,13 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
       text: {
         ko: "재검토하던 신규 대형원전 2기를 계획대로 추진하기로 확정했습니다.",
         en: "The government decided to proceed with the two large reactors as planned.",
+      },
+    },
+    {
+      date: "2026-06-17",
+      text: {
+        ko: "제11차 전기본의 신규 대형원전 2기 후보부지로 경북 영덕이 선정됐습니다. 경북도는 건설비를 약 12조 원으로 추산했지만 최종 총사업비는 아직 확정·공개되지 않았습니다.",
+        en: "Yeongdeok in North Gyeongsang Province was selected as the candidate site for the two large reactors in the 11th plan. The province estimated construction cost at about KRW 12 trillion, but a final all-in project cost has not been published.",
       },
     },
     {
@@ -235,6 +242,45 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-06-17",
+      title: {
+        ko: "신규 대형원전 2기 후보부지로 영덕 선정",
+        en: "Yeongdeok selected for the two planned large reactors",
+      },
+      description: {
+        ko: "한국수력원자력 부지선정평가위원회는 제11차 전기본에 반영된 APR1400급 대형원전 2기(총 2.8GW)의 후보부지로 경북 영덕군을 선정했습니다. 목표 상업운전 시점은 2037~2038년입니다. 경북도는 건설비를 약 12조 원으로 추산했지만 이는 지방정부가 밝힌 건설비 추산치이며, 송전망과 사용후핵연료 처리 등을 포함한 한수원의 최종 총사업비 확정치는 아닙니다.",
+        en: "KHNP's site-selection committee chose Yeongdeok for the two APR1400-class reactors in the 11th electricity plan, with a combined capacity of 2.8 GW and targeted commercial operation in 2037 and 2038. North Gyeongsang Province estimated construction cost at about KRW 12 trillion. That is a provincial construction estimate, not a finalized KHNP all-in cost including transmission and spent-fuel obligations.",
+      },
+      change: {
+        ko: "정부의 추진 결정이 후보부지 선정 단계로 집행됐습니다. 다만 예정구역 고시·인허가와 최종 총사업비 확정은 남아 있습니다.",
+        en: "The policy decision moved into site-level implementation, while planned-area designation, licensing and a final all-in cost remain outstanding.",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: {
+            ko: "신규 대형원전·SMR 후보지 선정…전력수요 급증 전망에 '속도'",
+            en: "Sites selected for two large reactors and an SMR",
+          },
+          url: "https://www.yna.co.kr/view/AKR20260617164500530",
+          publishedAt: "2026-06-17",
+          thumbnailSrc: "https://img4.yna.co.kr/photo/yna/YH/2026/04/22/PYH2026042212220005100_P4.jpg",
+          kind: "article",
+        },
+        {
+          publisher: { ko: "한국수력원자력", en: "Korea Hydro & Nuclear Power" },
+          title: {
+            ko: "신규원전 후보부지 선정결과 발표",
+            en: "Announcement of candidate sites for new reactors",
+          },
+          url: "https://www.khnp.co.kr/main/contents.do?key=63",
+          publishedAt: "2026-06-17",
+          kind: "document",
+        },
+      ],
+    },
+    {
       date: "2026-06-29",
       title: {
         ko: "서남권 반도체 800조원 투자 구상 발표",
@@ -279,6 +325,34 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
           publishedAt: "2026-07-03",
           thumbnailSrc: "/images/monitoring/nuclear-policy/additional-reactors-2026.webp",
           kind: "article",
+        },
+      ],
+    },
+    {
+      date: "2026-07-29",
+      title: {
+        ko: "영덕군·한수원, 인허가·일자리 상생협력 협약",
+        en: "Yeongdeok and KHNP sign implementation and local-benefit pact",
+      },
+      description: {
+        ko: "영덕군과 한수원은 신규 원전 건설과 유치지역 발전을 위한 협약을 맺고 지역기업 참여, 일자리 창출, 인재 육성, 행정지원과 인허가 협력, 주민 소통체계를 추진하기로 했습니다. 이는 후보부지 선정 뒤 집행 준비가 시작됐다는 뜻이지만 법적 예정구역 고시나 건설허가 완료를 의미하지는 않습니다.",
+        en: "Yeongdeok and KHNP agreed to cooperate on local-company participation, job creation, training, administrative and licensing support, and continued community engagement. This marks implementation preparation after site selection, but it is not a statutory site designation or construction licence.",
+      },
+      change: {
+        ko: "후보부지 발표가 행정·인허가 협력 단계로 이어졌습니다.",
+        en: "The site decision moved into administrative and licensing coordination.",
+      },
+      status: "confirmed",
+      sources: [
+        {
+          publisher: { ko: "영덕군", en: "Yeongdeok County" },
+          title: {
+            ko: "영덕군·한수원, 신규 원전 성공 추진 상생협력 협약 체결",
+            en: "Yeongdeok and KHNP sign cooperation agreement for new reactors",
+          },
+          url: "https://www.yd.go.kr/?mod=document&page_id=8844&pageid=4&uid=371651",
+          publishedAt: "2026-08-04",
+          kind: "document",
         },
       ],
     },
@@ -385,6 +459,10 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
       en: "The government is incorporating power demand from the southwest semiconductor complex and AI data centers into the 12th electricity plan while reviewing further nuclear capacity.",
     },
     {
+      ko: "제11차 전기본의 신규 대형원전 2기 후보부지는 영덕으로 선정됐고 영덕군·한수원은 후속 협력 협약을 체결했습니다. 약 12조 원은 경북도의 건설비 추산치이며 최종 총사업비 확정치는 아닙니다.",
+      en: "Yeongdeok was selected as the candidate site for the two large reactors in the 11th plan, and the county and KHNP signed a follow-up cooperation pact. The roughly KRW 12 trillion figure is a provincial construction estimate, not a finalized all-in project cost.",
+    },
+    {
       ko: "정부는 전기요금과 기반시설을 활용해 전력 다소비 기업의 비수도권 투자와 이전을 유도하고 있습니다.",
       en: "The government is using electricity pricing and infrastructure policy to steer power-intensive investment and relocation outside the capital region.",
     },
@@ -445,8 +523,8 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
       en: "How the provisional 2040 target peak-demand range of 158.4 to 165.0 GW accounts for cancelled or delayed corporate investment, and whether capacity can be adjusted if demand falls",
     },
     {
-      ko: "추가 원전의 기수와 부지, 건설비, 사용후핵연료 처리비용, 송전망 비용을 함께 공개하는지",
-      en: "Whether the number, sites, construction costs, spent-fuel costs and transmission costs of additional reactors are disclosed together",
+      ko: "영덕 신규 원전의 예정구역 고시·인허가 일정과 최종 총사업비를 공개하고, 약 12조 원 추산에 송전망·사용후핵연료 처리비용이 포함되는지 구분하는지",
+      en: "Whether the planned-area designation, licensing schedule and final all-in cost for Yeongdeok are disclosed, and whether the roughly KRW 12 trillion estimate is clearly separated from grid and spent-fuel costs",
     },
     {
       ko: "기업 이전과 지역투자 과정에서 정부 지원과 불이익, 기업의 자율적 의사결정 절차를 구분해 공개하는지",
@@ -498,6 +576,22 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     {
       label: { ko: "제11차 전기본 신규 원전 계획대로 추진", en: "Decision to proceed with reactors in the 11th plan" },
       url: "https://www.korea.kr/briefing/policyBriefingView.do?newsId=156741515",
+    },
+    {
+      label: { ko: "한국수력원자력 — 신규원전 후보부지 선정결과", en: "KHNP — New-reactor candidate-site results" },
+      url: "https://www.khnp.co.kr/main/contents.do?key=63",
+    },
+    {
+      label: { ko: "연합뉴스 — 영덕 대형원전 후보부지 선정", en: "Yonhap — Yeongdeok selected for two large reactors" },
+      url: "https://www.yna.co.kr/view/AKR20260617164500530",
+    },
+    {
+      label: { ko: "연합뉴스 — 경북도 추산 건설비 약 12조 원", en: "Yonhap — Provincial construction-cost estimate of about KRW 12 trillion" },
+      url: "https://www.yna.co.kr/view/AKR20260618068800053",
+    },
+    {
+      label: { ko: "영덕군 — 신규 원전 상생협력 협약", en: "Yeongdeok County — New-reactor cooperation agreement" },
+      url: "https://www.yd.go.kr/?mod=document&page_id=8844&pageid=4&uid=371651",
     },
     {
       label: { ko: "3대 메가프로젝트와 추가 원전 검토", en: "Three megaprojects and review of additional reactors" },
