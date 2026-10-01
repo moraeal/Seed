@@ -19,12 +19,12 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     en: "After ballot shortages disrupted Korea's ninth nationwide local elections, citizens established a protest camp at Olympic Park demanding a new election, same-day voting and hand counting. This tracker separates confirmed election-management failures, matters under special investigation and fraud claims that remain unproven.",
   },
   status: {
-    ko: "특검 수사 진행·현장 시위 계속",
-    en: "Special investigation active · Protest continuing",
+    ko: "특검 수사·투표지 검증 연기·현장 시위 계속",
+    en: "Investigation active · Ballot inspection postponed · Protest continuing",
   },
   openedAt: "2026-06-03",
   publishedAt: "2026-09-18",
-  updatedAt: "2026-09-26",
+  updatedAt: "2026-10-01",
   sourceBasis: {
     ko: "선거관리위원회 조사 결과와 국회의원실 제출자료를 인용한 보도, 선거소송 심리와 결정, 선관위 특검법·압수수색·피의자 조사 보도, 올림픽공원 현장 보도를 교차 확인했다. 사실·수사 중인 의혹·확인되지 않은 주장을 같은 층위에 놓지 않았다.",
     en: "This record cross-checks reporting on election-commission findings and material submitted to a National Assembly member's office, election-litigation proceedings, the special-prosecutor law, searches and suspect questioning, and coverage from the Olympic Park site. Confirmed facts, allegations under investigation and unverified claims are kept distinct.",
@@ -34,8 +34,8 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     en: "Ballot shortages and voting suspensions are confirmed election-management failures. Claims of organized count manipulation, foreign intervention or a wholly rigged election have not been established by a court or investigative authority.",
   },
   nextCheck: {
-    ko: "특검의 서버·문서 분석 결과와 피의자 소환·기소 여부, 투표용지 인쇄 기준 변경의 책임선, 실제 투표권 침해 규모, 다음 선거 제도개선안을 확인한다.",
-    en: "Next checks: forensic findings from servers and documents, summonses or indictments, responsibility for changing ballot-printing thresholds, the true scale of disenfranchisement and reforms before the next election.",
+    ko: "특검의 서버·문서 분석 결과와 노태악 전 위원장 등 피의자 소환·기소 여부, 연기된 올림픽공원 투표지 검증의 새 일정과 방식, 실제 투표권 침해 규모와 다음 선거 제도개선안을 확인한다.",
+    en: "Next checks: forensic findings from servers and documents, possible summonses or indictments including former chair Roh Tae-ak, a new date and method for the postponed Olympic Park ballot inspection, the true scale of disenfranchisement and reforms before the next election.",
   },
   heroImage: {
     src: "/images/monitoring/olympic-park-election-protest-20260614.jpg",
@@ -86,6 +86,20 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
       text: {
         ko: "특검은 투표함 납품 입찰 담합 의혹과 관련해 전직 선관위 직원이자 업체 대표를 입찰방해 혐의 피의자로 조사했다. 투표용지 부족 책임과는 구분되는 별도 수사 항목이다.",
         en: "The special prosecutor questioned a former election-commission employee who heads a ballot-box supplier as a suspect in an alleged bid-rigging scheme. This is a separate investigative track from responsibility for the ballot shortage.",
+      },
+    },
+    {
+      date: "2026-09-28",
+      text: {
+        ko: "특검 요청으로 법무부가 공직선거법 위반·직무유기 혐의 피의자인 노태악 전 중앙선관위원장의 출국금지 기간을 연장했다. 예방적 수사조치이며 혐의가 입증됐다는 뜻은 아니다.",
+        en: "At the special prosecutor's request, the Justice Ministry extended the travel ban on former election-commission chair Roh Tae-ak, a suspect in alleged election-law violations and dereliction of duty. The preventive measure does not establish guilt.",
+      },
+    },
+    {
+      date: "2026-09-30",
+      text: {
+        ko: "청와대는 경찰청 치안보고를 설명하면서 특검의 올림픽공원 보관 투표지 검증이 연기됐다고 밝혔다. 새 일정과 검증 방식은 공개되지 않았고 농성은 계속되고 있다.",
+        en: "Explaining a police public-order report, the presidential office said the special prosecutor had postponed inspection of ballots stored at Olympic Park. No new date or inspection method was disclosed, and the protest continues.",
       },
     },
   ],
@@ -533,6 +547,62 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
       ],
     },
     {
+      date: "2026-09-28",
+      title: {
+        ko: "특검, 노태악 전 선관위원장 출국금지 연장",
+        en: "Special prosecutor extends travel ban on former election chief Roh Tae-ak",
+      },
+      description: {
+        ko: "특검 요청에 따라 법무부가 노태악 전 중앙선관위원장의 출국금지 기간을 연장했다. 노 전 위원장은 투표용지 부족 사태와 관련한 공직선거법 위반·직무유기 혐의 피의자이며, 재임 중 배우자 동반 해외출장 의혹도 별도 수사 대상이다.",
+        en: "At the special prosecutor's request, the Justice Ministry extended the travel ban on former National Election Commission chair Roh Tae-ak. He is a suspect in alleged election-law violations and dereliction of duty arising from the ballot shortage, while separate allegations concern overseas trips taken with his spouse while in office.",
+      },
+      change: {
+        ko: "특검이 전직 위원장에 대한 예방적 신병확보 조치를 이어갔다. 출국금지는 소환·기소나 유죄 판단이 아니다.",
+        en: "Investigators continued a preventive measure aimed at keeping the former chair available. A travel ban is not a summons, indictment or finding of guilt.",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: {
+            ko: "선관위특검, 노태악 전 선관위원장 출국금지 연장조치",
+            en: "Special prosecutor extends travel ban on former election chief Roh Tae-ak",
+          },
+          url: "https://www.yna.co.kr/view/AKR20260928107400004",
+          publishedAt: "2026-09-28",
+          kind: "article",
+        },
+      ],
+    },
+    {
+      date: "2026-09-30",
+      title: {
+        ko: "올림픽공원 보관 투표지 검증 연기 확인",
+        en: "Olympic Park ballot inspection confirmed postponed",
+      },
+      description: {
+        ko: "청와대는 대통령에게 보고된 경찰청 치안상황 자료를 설명하면서 특검이 올림픽공원 핸드볼경기장에 보관된 투표지 검증을 연기해 집회 참가자들과의 마찰 우려가 해소됐다고 밝혔다. 특검은 해당 청와대 문건의 기재 내용과 경위를 알지 못한다며 독립 수사 원칙을 재확인했다. 검증의 새 일정과 방식은 공개되지 않았다.",
+        en: "Explaining a police public-order report delivered to the president, the presidential office said the special prosecutor had postponed inspection of ballots stored at Olympic Park's handball arena, removing an immediate risk of clashes with protesters. The special prosecutor said it did not know how the wording entered the presidential document and reaffirmed its investigative independence. No new inspection date or method was released.",
+      },
+      change: {
+        ko: "예고됐던 현장 검증이 미뤄져 투표지 검증 결과는 아직 존재하지 않는다. 대통령실·특검의 내통 또는 사찰 주장은 확인된 사실이 아니다.",
+        en: "The planned on-site inspection was deferred, so there is still no ballot-inspection result. Allegations of collusion or surveillance between the presidential office and the special prosecutor remain unsubstantiated.",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "연합뉴스", en: "Yonhap News Agency" },
+          title: {
+            ko: "靑, '李대통령 선관위 특검 보고' 野공세에 \"사실아냐, 유감\"",
+            en: "Presidential office calls opposition claim that Lee received special-prosecutor reports untrue",
+          },
+          url: "https://www.yna.co.kr/view/AKR20260930139000001",
+          publishedAt: "2026-09-30",
+          kind: "article",
+        },
+      ],
+    },
+    {
       date: "다음 확인",
       title: {
         ko: "압수물 분석·소환·기소와 제도개선",
@@ -573,6 +643,14 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     {
       ko: "특검은 12개 의혹을 수사 중이며 9월 17일 중앙선관위 등 10곳을 압수수색했다.",
       en: "The special prosecutor is investigating twelve categories of allegations and searched ten election-commission sites on September 17.",
+    },
+    {
+      ko: "노태악 전 중앙선관위원장은 투표용지 부족 사태와 관련한 공직선거법 위반·직무유기 혐의 피의자로 입건됐고, 9월 28일 특검 요청에 따라 출국금지가 연장됐다. 출국금지는 유죄 판단이 아니다.",
+      en: "Former election-commission chair Roh Tae-ak was booked as a suspect in alleged election-law violations and dereliction of duty over the ballot shortage, and his travel ban was extended at the special prosecutor's request on September 28. The travel ban is not a finding of guilt.",
+    },
+    {
+      ko: "청와대는 9월 30일 특검의 올림픽공원 보관 투표지 검증이 연기됐다고 설명했다. 새 일정·방식과 검증 결과는 아직 공개되지 않았다.",
+      en: "On September 30, the presidential office said the special prosecutor's inspection of ballots stored at Olympic Park had been postponed. No new schedule, method or inspection findings have been released.",
     },
   ],
   currentControversies: [
@@ -639,8 +717,8 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
       en: "Will raw turnout data, change logs and independently checkable findings be released regarding alleged statistical manipulation?",
     },
     {
-      ko: "올림픽공원 농성이 특검 결과 뒤에도 이어지는지, 요구가 구체적 제도개선안으로 발전하는가",
-      en: "Will the Olympic Park protest continue after the special prosecutor reports, and will its demands develop into concrete reform proposals?",
+      ko: "연기된 올림픽공원 투표지 검증이 언제 어떤 참관·보전 절차로 재개되고, 농성이 특검 결과 뒤에도 이어지는가",
+      en: "When and under what observation and evidence-preservation procedures will the postponed Olympic Park ballot inspection resume, and will the protest continue after the special prosecutor reports?",
     },
   ],
   sectionHeadings: {
@@ -703,6 +781,14 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     {
       label: { ko: "연합뉴스 — 9월 17일 특검 압수수색", en: "Yonhap — September 17 special-prosecutor searches" },
       url: "https://www.yna.co.kr/view/AKR20260917047655004",
+    },
+    {
+      label: { ko: "연합뉴스 — 노태악 전 선관위원장 출국금지 연장", en: "Yonhap — Travel ban on former election chief Roh Tae-ak extended" },
+      url: "https://www.yna.co.kr/view/AKR20260928107400004",
+    },
+    {
+      label: { ko: "연합뉴스 — 올림픽공원 투표지 검증 연기 확인", en: "Yonhap — Olympic Park ballot inspection postponed" },
+      url: "https://www.yna.co.kr/view/AKR20260930139000001",
     },
     {
       label: { ko: "현장 영상 — 올림픽공원 농성 100일", en: "On-site video — 100 days at Olympic Park" },
