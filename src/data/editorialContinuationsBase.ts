@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "news:business-growth-regulatory-thresholds-2026": {
+  "ko": {
+    "href": "/columns/factory-investment-staffing-freedom-2026",
+    "title": "공장은 기업이 짓는데, 사람을 보낼 때는 허락을 받아야 하나",
+    "relationship": "기업의 자유 이어 읽기",
+    "reason": "기업이 성장할 때의 제도 부담에 이어 투자 실행과 인력 배치의 자유를 살펴봅니다.",
+    "listHref": "/news",
+    "listLabel": "오늘의 뉴스 전체 보기"
+  },
+  "en": {
+    "href": "/columns/factory-investment-staffing-freedom-2026",
+    "title": "Companies Build Factories—Must They Seek Permission to Staff Them?",
+    "relationship": "ENTERPRISE FREEDOM",
+    "reason": "Continue from size-related burdens to freedom to execute investment and staffing decisions.",
+    "listHref": "/news",
+    "listLabel": "All Today’s News"
+  }
+},
   "column:worker-owned-country-union-subsidies-2026": {
     ko: { href: "/columns/factory-investment-staffing-freedom-2026", title: "공장은 기업이 짓는데, 사람을 보낼 때는 허락을 받아야 하나", relationship: "기업의 자유 이어 읽기", reason: "노동의 경영 참여와 기업의 투자 실행 사이에서 인력 배치의 쟁점을 더 살펴봅니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
     en: { href: "/columns/factory-investment-staffing-freedom-2026", title: "A Company Can Build a Factory. Must It Seek Permission to Staff It?", relationship: "ENTERPRISE FREEDOM", reason: "Examine the staffing dispute at the point where an investment becomes a working factory.", listHref: "/columns", listLabel: "All columns" },

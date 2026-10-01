@@ -1,3 +1,4 @@
+import { businessGrowthThresholdsArticle } from "./news/businessGrowthThresholds";
 import { newsArticles as archivedNewsArticles } from "./newsArchive";
 import type { NewsArticle as ArchiveNewsArticle, NewsImage } from "./newsArchive";
 import { fuelPriceCapTaxBillArticle } from "./news/fuelPriceCapTaxBill";
@@ -396,7 +397,7 @@ const mediaAppealJusticeArticle: NewsArticle = {
   ]
 };
 
-export const newsArticles: NewsArticle[] = [olympicParkProtest115DaysArticle, debtReliefFairness2026Article, dmzInvestigationTimelineArticle, majorCrimesAgencyStaffingArticle, supremeCourtRenominationStandoffArticle, dmzSecurityCommandFailureArticle, publicEnterpriseRestructureArticle, fuelPriceCapTaxBillArticle, nationalDebtRatioGdpComparisonArticle, mediaAppealJusticeArticle, localSportsSubsidyArticle, lhSplitPublicAgencyArticle, ...archivedNewsArticles];
+export const newsArticles: NewsArticle[] = [businessGrowthThresholdsArticle, olympicParkProtest115DaysArticle, debtReliefFairness2026Article, dmzInvestigationTimelineArticle, majorCrimesAgencyStaffingArticle, supremeCourtRenominationStandoffArticle, dmzSecurityCommandFailureArticle, publicEnterpriseRestructureArticle, fuelPriceCapTaxBillArticle, nationalDebtRatioGdpComparisonArticle, mediaAppealJusticeArticle, localSportsSubsidyArticle, lhSplitPublicAgencyArticle, ...archivedNewsArticles];
 
 export const getNewsNewestFirst = () => [...newsArticles].sort((a, b) => b.date.localeCompare(a.date));
 export const getNewsArticle = (slug: string) => newsArticles.find((article) => article.slug === slug);
