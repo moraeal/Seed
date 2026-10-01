@@ -19,15 +19,15 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     en: "The government has proposed merging the Army, Navy and Air Force academies into a four-year Armed Forces Academy at Jaun-dae in Daejeon. SEED tracks the shift from an early two-plus-two model to full co-location, gaps in ROTC and officer-candidate education, hearings and legislation, cost and campus reuse, and any revisions under the new defense minister.",
   },
   status: {
-    ko: "기본계획 발표·보완 검토",
-    en: "Basic plan announced · Revisions under review",
+    ko: "창설 추진 재확인·세부계획 대기",
+    en: "Creation reaffirmed · Detailed plan pending",
   },
   openedAt: "2025-06-26",
   publishedAt: "2026-09-17",
-  updatedAt: "2026-09-26",
+  updatedAt: "2026-10-01",
   nextCheck: {
-    ko: "10월 세부계획의 통합 선발 시점과 방식, 자운대 이전 일정·총사업비, 각 군 전문교육 시설, ROTC·학사장교 합동교육 확대안, 정부·여당의 국군사관학교 설치법 제출 여부와 분리 유지 법안 심사, 2028년 예산 편성 전 선행연구 일정",
-    en: "The October detailed plan: admissions timing and model, Jaun-dae schedule and full cost, service-specific facilities, expanded joint education for ROTC and officer candidates, filing of the governing party's Armed Forces Academy bill, review of the competing separation bill, and studies required before possible 2028 funding",
+    ko: "대통령의 10월 1일 신속 추진 지시 뒤 세부계획의 통합 선발 시점과 방식, 자운대 이전 일정·총사업비, 각 군 전문교육 시설, ROTC·학사장교 합동교육 확대안, 정부·여당의 국군사관학교 설치법 제출 여부와 분리 유지 법안 심사, 2028년 예산 편성 전 선행연구 일정",
+    en: "Following the president's October 1 call for faster action: the detailed plan's admissions timing and model, Jaun-dae schedule and full cost, service-specific facilities, expanded joint education for ROTC and officer candidates, filing of the governing party's Armed Forces Academy bill, review of the competing separation bill, and studies required before possible 2028 funding",
   },
   heroImage: {
     src: "images/monitoring/military-academy-integration-tracker.webp",
@@ -86,6 +86,13 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
       text: {
         ko: "강신철 국방부 장관 후보자가 통합교육 필요성에는 동의하면서도 현재 안은 불완전하고 보완이 필요하다고 밝혔습니다.",
         en: "Defense minister nominee Kang Shin-chul supported integrated education but called the current plan incomplete and in need of revision.",
+      },
+    },
+    {
+      date: "2026-10-01",
+      text: {
+        ko: "이재명 대통령이 국군의 날 기념사에서 국군사관학교 창설 추진에 신속·과감하게 매진하라고 공개 지시해 정부의 창설 추진 방향을 재확인했습니다.",
+        en: "In his Armed Forces Day address, President Lee Jae-myung publicly called for swift and decisive action on creating the Armed Forces Academy, reaffirming the government's direction of travel.",
       },
     },
   ],
@@ -310,6 +317,45 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     {
       date: "2026-10-01",
       title: {
+        ko: "대통령, 국군사관학교 창설 신속 추진 공개 지시",
+        en: "President publicly calls for faster action on the Armed Forces Academy",
+      },
+      description: {
+        ko: "이재명 대통령은 제78주년 국군의 날 기념사에서 미래전에 대비해 통합 작전 능력을 갖춘 장교를 길러낼 국군사관학교를 창설해야 한다며, 여러 의견을 듣고 군심을 모아 신속하고 과감하게 추진하라고 지시했습니다. 강신철 국방부 장관이 기존 기본안의 보완 필요성을 밝힌 뒤에도 정부 차원의 창설 추진 방침은 유지된다는 점이 공식 재확인됐습니다.",
+        en: "In his 78th Armed Forces Day address, President Lee Jae-myung said Korea should create an Armed Forces Academy to train officers for integrated operations in future warfare. He instructed officials to listen to competing views, build consensus within the military and move swiftly and decisively. The address officially confirms that the government continues to pursue creation of the academy even after Defense Minister Kang Shin-chul said the existing basic plan needed revision.",
+      },
+      change: {
+        ko: "장관의 보완 검토가 통합 추진 중단을 뜻하지 않는다는 점은 분명해졌습니다. 다만 기념사는 자운대 4년 통합안의 수정 범위, 첫 선발 연도, 이전 일정, 총사업비와 입법안을 새로 확정하지 않았습니다.",
+        en: "The minister's review no longer suggests a pause in the broader creation effort. However, the address did not settle revisions to the four-year Jaun-dae model, the first admissions year, relocation schedule, total cost or enabling legislation.",
+      },
+      status: "new",
+      sources: [
+        {
+          publisher: { ko: "뉴시스", en: "Newsis" },
+          title: {
+            ko: "이 대통령, 국군사관학교 신속·과감하게 매진",
+            en: "President Lee calls for swift and decisive action on the Armed Forces Academy",
+          },
+          url: "https://www.newsis.com/view/NISX20261001_0003810264",
+          publishedAt: "2026-10-01",
+          kind: "article",
+          thumbnailSrc: "images/monitoring/military-academy-news/2026-10-01-newsis.jpg",
+        },
+        {
+          publisher: { ko: "KTV 국민방송", en: "KTV" },
+          title: {
+            ko: "제78주년 국군의 날 이재명 대통령 기념사",
+            en: "President Lee Jae-myung's address for the 78th Armed Forces Day",
+          },
+          url: "https://www.ktv.go.kr/program/home/PG2260015D/content/761813",
+          publishedAt: "2026-10-01",
+          kind: "video",
+        },
+      ],
+    },
+    {
+      date: "2026-10-01",
+      title: {
         ko: "세부계획과 설치법안 확인",
         en: "Review the detailed plan and enabling legislation",
       },
@@ -348,6 +394,10 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     {
       ko: "현행 세 사관학교의 위치와 분리 운영을 유지하는 의원안은 9월 11일 국방위원회에 회부됐지만 아직 심사·의결되지 않았습니다.",
       en: "A member's bill preserving the three academies at their current locations was referred to the Defense Committee on September 11 but has not been passed.",
+    },
+    {
+      ko: "이재명 대통령은 10월 1일 국군의 날 기념사에서 국군사관학교 창설을 신속·과감하게 추진하라고 지시했습니다. 그러나 첫 통합 선발 시점, 이전 일정, 총사업비와 설치법은 이날 확정하지 않았습니다.",
+      en: "On October 1, President Lee Jae-myung instructed officials to move swiftly and decisively on creating the Armed Forces Academy. The address did not settle the first integrated admissions year, relocation schedule, total cost or enabling legislation.",
     },
   ],
   questions: [
@@ -418,6 +468,14 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     {
       label: { ko: "법제처 — 사관학교 분리 유지 개정안(의안번호 2221291)", en: "Ministry of Government Legislation — Bill 2221291 preserving separate academies" },
       url: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221291/detailRP?yType=I",
+    },
+    {
+      label: { ko: "뉴시스 — 대통령의 국군사관학교 신속 추진 지시", en: "Newsis — President's call for faster action on the Armed Forces Academy" },
+      url: "https://www.newsis.com/view/NISX20261001_0003810264",
+    },
+    {
+      label: { ko: "KTV — 제78주년 국군의 날 대통령 기념사", en: "KTV — President's 78th Armed Forces Day address" },
+      url: "https://www.ktv.go.kr/program/home/PG2260015D/content/761813",
     },
   ],
 };
