@@ -445,7 +445,27 @@ const securityPrideContinuation: Record<Language, EditorialContinuation> = {
   }
 };
 
+const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuation> = {
+  "ko": {
+    "href": "/briefings/real-estate-supervisor-bill-2221573-explained",
+    "title": "부동산감독원법, 집 거래를 누가 어떻게 조사하게 되나",
+    "relationship": "법안의 권한과 절차",
+    "reason": "생활 사례에서 본 부담을 법안의 조사 착수 경로, 금융정보 요구와 보호장치에 연결해 확인합니다.",
+    "listHref": "/briefings",
+    "listLabel": "브리핑 전체 보기"
+  },
+  "en": {
+    "href": "/briefings/real-estate-supervisor-bill-2221573-explained",
+    "title": "Who Would Investigate a Home Purchase Under the Real Estate Supervisor Bill?",
+    "relationship": "POWERS AND PROCEDURES",
+    "reason": "Connect the everyday examples to the bill's inquiry thresholds, financial-record requests and safeguards.",
+    "listHref": "/briefings",
+    "listLabel": "All briefings"
+  }
+};
+
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "briefing" && slug === "real-estate-supervisor-citizen-freedom-property-rights") return true;
   if (kind === "column" && slug === "security-pride-vigilance-armed-forces-day-2026") return true;
   if (isBusinessSuccessionThreshold(kind, slug)) return true;
   if (isCorporateCitizenColumn(kind, slug)) return true;
@@ -472,6 +492,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "briefing" && slug === "real-estate-supervisor-citizen-freedom-property-rights") return realEstateCitizenFreedomContinuation[language];
   if (kind === "column" && slug === "security-pride-vigilance-armed-forces-day-2026") return securityPrideContinuation[language];
   if (isBusinessSuccessionThreshold(kind, slug)) return businessSuccessionContinuation[language];
   if (isCorporateCitizenColumn(kind, slug)) return corporateCitizenContinuation[language];
