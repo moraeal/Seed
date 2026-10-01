@@ -63,8 +63,8 @@ const copy = {
     statement: "씨앗의 취지문 읽기",
     contributors: "필진 소개",
     joinKicker: "GROW WITH SEED VOICE",
-    joinTitle: "당신의 궁금증에서 시작합니다",
-    joinLead: "읽다가 떠오른 질문이 있나요? 생활 속에서 발견한 자료나 놓치면 안 될 이야기를 알려주세요. 함께 확인하고 더 쉽게 전하겠습니다.",
+    joinTitle: <>시민의 성장을 가로막는 일,<br />씨앗에 알려주세요</>,
+    joinLead: "시민과 기업의 자유를 침해하는 일, 불공정한 대우, 공익을 내세워 시민의 이익을 해치는 정책을 제보해주세요.",
     tip: "제보하기",
     siyaOpening: "내 삶에 닿는 뉴스",
     siyaInvite: "씨야와 함께 읽어요",
@@ -116,8 +116,8 @@ const copy = {
     statement: "Read our founding statement",
     contributors: "Meet the contributors",
     joinKicker: "GROW WITH SEED VOICE",
-    joinTitle: "It begins with your question",
-    joinLead: "Have a question after reading? Share a record or an everyday story that deserves a closer look. We'll check it and explain what we find.",
+    joinTitle: <>What holds citizens back?<br />Tell SEED.</>,
+    joinLead: "Tell us about restrictions on civic or business freedom, unfair treatment, or policies that harm citizens in the name of the public good.",
     tip: "Send a tip",
     siyaOpening: "News that touches your life",
     siyaInvite: "Read it with Siya",
@@ -286,7 +286,7 @@ export default function About() {
             <div className="pb-4 md:py-6">
               <Sprout size={29} aria-hidden="true" />
               <p className="mt-3 text-xs font-extrabold tracking-[.2em]">{content.joinKicker}</p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-[-.04em] sm:text-5xl">{content.joinTitle}</h2>
+              <h2 className="mt-3 break-keep text-3xl font-extrabold leading-tight tracking-[-.04em] sm:text-5xl">{content.joinTitle}</h2>
               <p className="mt-5 max-w-2xl text-base leading-8">{content.joinLead}</p>
               <button type="button" onClick={() => setTipOpen(true)} className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-full border border-green-deep bg-white px-6 py-3 text-sm font-extrabold transition hover:-translate-y-0.5 hover:shadow-lg">{content.tip}<ArrowUpRight size={16}/></button>
             </div>
