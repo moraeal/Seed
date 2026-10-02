@@ -4,17 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      .seed-static-loader { display: none; }
-      html.seed-js #root > article[aria-label] { display: none; }
-      html.seed-js .seed-static-loader { display: flex; min-height: 55vh; align-items: center; justify-content: center; background: #f7f8f2; color: #123b30; font: 700 1.2rem system-ui, sans-serif; }
+      /* Keep the SEO fallback out of the first paint, even before scripts run. */
+      #root > article[aria-label] { display: none; }
+      .seed-static-loader { display: flex; min-height: 55vh; align-items: center; justify-content: center; background: #f7f8f2; color: #123b30; font: 700 1.2rem system-ui, sans-serif; }
     </style>
+    <noscript>
+      <style>
+        #root > article[aria-label] { display: block; }
+        .seed-static-loader { display: none; }
+      </style>
+    </noscript>
     <script>
       (function () {
-        document.documentElement.classList.add("seed-js");
-        // If startup fails, reveal the server-rendered article text as a fallback.
-        window.setTimeout(function () {
-          if (document.querySelector("#root > article[aria-label]")) document.documentElement.classList.remove("seed-js");
-        }, 12000);
+        // Slow startup must never switch readers to the SEO article listing.
+        // No-script readers use the fallback above; asset errors recover below.
         var recoveryStarted = false;
         var retryKey = "seed-reload";
 
