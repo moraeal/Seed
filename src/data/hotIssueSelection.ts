@@ -2,6 +2,7 @@ import type { Language } from "../i18n";
 import type { LegislativeBill } from "../lib/legislativeMonitoring";
 import { getFeaturedContentCandidates } from "./featuredContent";
 import type { FeaturedHistoryEntry } from "./featuredHistory";
+import { getHomeTopic } from "./homeTopics";
 
 export type HotIssueCard = {
   id: string;
@@ -39,8 +40,8 @@ export function getHotIssueCards(language: Language, legislativeBills: Legislati
     });
 }
 
-// This is the operator's ordered feature archive, including the current pick.
-// Other homepage placements must not remove records or change their order.
-export function selectHotIssueCards(cards: HotIssueCard[], limit = 4): HotIssueCard[] {
-  return cards.slice(0, limit);
+// Filter current homepage placements before limiting, without changing the
+// operator's stored history or the complete /news archive.
+export function selectHotIssueCards(cards: HotIssueCard[], claimedTopics: ReadonlySet<string>, limit = 4): HotIssueCard[] {
+  return cards.filter((card) => !claimedTopics.has(getHomeTopic(card.to))).slice(0, limit);
 }

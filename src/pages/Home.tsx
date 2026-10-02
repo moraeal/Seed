@@ -141,9 +141,11 @@ export default function Home() {
     claimedHomePaths,
   );
   const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[ko ? seedLanguageArticle.term : getSeedLanguageEnvironmentArticle(seedLanguageArticle.slug, "ko")?.term ?? getSeedLanguageArticle(seedLanguageArticle.slug, "ko")?.term ?? ""] : undefined;
-  const visibleHotIssueCards = selectHotIssueCards(
+  const visibleHotIssueCards = featuredReady && billsReady ? selectHotIssueCards(
     getHotIssueCards(language, legislativeBills, featuredHistory),
-  );
+    claimedHomePaths,
+  ) : [];
+  for (const card of visibleHotIssueCards) claimedHomePaths.add(getHomeTopic(card.to));
 
   const civicWatchCandidates: HomeCivicWatchItem[] = [
     ...newsTrackerCases.map((item) => ({
@@ -449,7 +451,7 @@ export default function Home() {
             <Link to="/news" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link>
           </div>
 
-          {visibleHotIssueCards.length === 0 && <p className="mt-4 text-sm text-charcoal/55" role="status">{!featuredReady ? (ko ? "불러오는 중입니다." : "Loading stories.") : historyError ? (ko ? "소개한 글을 불러오지 못했습니다. 잠시 후 다시 확인해주세요." : "Could not load featured stories. Please try again shortly.") : (ko ? "메인에서 소개한 지난 글이 이곳에 차례로 쌓입니다." : "Previously featured stories will appear here in order.")}</p>}
+          {visibleHotIssueCards.length === 0 && <p className="mt-4 text-sm text-charcoal/55" role="status">{!featuredReady || !billsReady ? (ko ? "불러오는 중입니다." : "Loading stories.") : historyError ? (ko ? "소개한 글을 불러오지 못했습니다. 잠시 후 다시 확인해주세요." : "Could not load featured stories. Please try again shortly.") : (ko ? "메인에서 소개한 지난 글이 이곳에 차례로 쌓입니다." : "Previously featured stories will appear here in order.")}</p>}
           <div className="mt-4 grid gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
             {visibleHotIssueCards.map((item, index) => (
               <Link
