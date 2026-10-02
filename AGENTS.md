@@ -8,6 +8,8 @@
 
 - Hot Issues use only articles explicitly selected through the operator's homepage article management. Both the homepage and `/news` use `src/data/hotIssueSelection.ts` with `homepage_featured_history`, newest selection first. Preserve the selection timestamps; publication dates and routine edits never change the order. Each route appears once, using its latest selection time. Exclude current homepage placements only from the homepage's visible Hot Issues cards, without deleting history or filling slots with unselected articles. Show up to four eligible archive cards on the homepage and all selections on `/news`.
 
+- Homepage Civic Watch consumes the shared `src/data/civicWatchFeed.ts` list used by Issue Watch, plus published legislative records, tax policies and public-interest articles. Show the three newest eligible records without reserved category slots; exclude exact articles already shown above while allowing distinct new analyses on a related topic. Use Korea dates for timestamped publications, retain verified-image requirements, and refresh live legislative records every minute and when the page regains focus or visibility.
+
 - For AI-generated article images, use the concise disclosure “AI 이미지” in Korean and “AI image” in English. Avoid boilerplate such as “not an actual family/person/photo” in image captions. The shared figure caption derives this label from the image credit, so do not repeat it in caption text.
 
 - Do not use OhmyNews (오마이뉴스) as a source, link, image provider, or source-credit outlet in any new or updated SEED article, tracker, briefing, column, commentary, translation, or metadata. Replace any OhmyNews material encountered during an edit with a suitable source from another outlet.

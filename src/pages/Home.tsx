@@ -10,10 +10,9 @@ import { getHotIssueCards, selectHotIssueCards } from "../data/hotIssueSelection
 import { localizeBriefing, localizeColumn } from "../data/localizedContent";
 import { getHotIssuesNewestFirst } from "../data/hotIssues";
 import { newsTrackerCases } from "../data/newsTrackerRegistry";
-import { civicWatchCases } from "../data/publicInterestWatch";
+import { getCivicWatchFeed, selectLatestCivicWatchItems, type CivicWatchItem } from "../data/civicWatchFeed";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
-import { taxPolicies } from "../data/taxWatch";
 import { getLegislativeCommentaryEdition, legislativeCommentaries, linkedLegislativeColumnCommentaries } from "../data/legislativeCommentaries";
 import { getTaxCommentaryEdition, taxCommentaries } from "../data/taxCommentaries";
 import { getFeaturedContentCandidates } from "../data/featuredContent";
@@ -29,16 +28,6 @@ const resolveImageSrc = (src?: string) => {
   if (!src) return "";
   if (/^https?:\/\//i.test(src)) return src;
   return `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
-};
-
-type HomeCivicWatchItem = {
-  key: string;
-  category: "issue" | "legislation" | "tax" | "public-interest";
-  date: string;
-  to: string;
-  title: string;
-  summary: string;
-  status: string;
 };
 
 type HomeWatchCommentary = {
@@ -147,70 +136,27 @@ export default function Home() {
   ) : [];
   for (const card of visibleHotIssueCards) claimedHomePaths.add(getHomeTopic(card.to));
 
-  const civicWatchCandidates: HomeCivicWatchItem[] = [
-    ...newsTrackerCases.map((item) => ({
-      key: `issue-${item.slug}`,
-      category: "issue" as const,
-      date: item.updatedAt,
-      to: `/monitoring/${item.slug}`,
-      title: item.title[language],
-      summary: item.summary[language],
-      status: item.status[language],
-    })),
-    ...legislativeBills
-      .filter((bill) => bill.review_state === "published")
-      .map((bill) => ({
-        key: `legislation-${bill.bill_id}`,
-        category: "legislation" as const,
-        date: (bill.editorial_updated_at || bill.published_at || bill.updated_at || bill.proposed_date || "").slice(0, 10),
-        to: `/monitoring/legislation/${bill.slug}`,
-        title: ko ? bill.title : bill.analysis?.title_en || bill.title,
-        summary: ko
-          ? bill.public_summary_ko || bill.analysis?.summary_ko || bill.official_summary || "공식 자료와 조문을 검토한 입법감시 기록입니다."
-          : bill.public_summary_en || bill.analysis?.summary_en || "A legislative watch record based on official documents and bill text.",
-        status: ko ? `중요도 ${bill.importance_score}` : `Impact ${bill.importance_score}`,
-      })),
-    ...taxPolicies.map((item) => ({
-      key: `tax-${item.slug}`,
-      category: "tax" as const,
-      date: item.checkedAt,
-      to: `/monitoring/tax/${item.slug}`,
-      title: item.title[language],
-      summary: item.summary[language],
-      status: item.status[language],
-    })),
-    ...civicWatchCases.map((item) => ({
-      key: `public-interest-${item.slug}`,
-      category: "public-interest" as const,
-      date: item.updatedAt,
-      to: `/monitoring/${item.slug}`,
-      title: item.title[language],
-      summary: item.summary[language],
-      status: item.status[language],
-    })),
-  ]
-    .filter((item) => !claimedHomePaths.has(getHomeTopic(item.to)))
-    .sort((a, b) => b.date.localeCompare(a.date));
+  const upperArticlePaths = new Set([
+    activeFeaturedPath,
+    latestHotIssue?.to,
+    latestBriefing ? `/briefings/${latestBriefing.slug}` : undefined,
+    publicWatchHref,
+    seedLanguageArticle ? `/seed-language/${seedLanguageArticle.slug}` : undefined,
+    ...visibleHotIssueCards.map((card) => card.to),
+  ].filter((path): path is string => Boolean(path)));
+  const recentCivicWatchItems = selectLatestCivicWatchItems(
+    getCivicWatchFeed(language, legislativeBills), upperArticlePaths,
+  );
+  for (const item of recentCivicWatchItems) claimedHomePaths.add(getHomeTopic(item.to));
 
-  const recentCivicWatchItems = civicWatchCandidates.reduce<HomeCivicWatchItem[]>((selected, item) => {
-    if (
-      selected.length >= 3
-      || claimedHomePaths.has(getHomeTopic(item.to))
-      || selected.some((candidate) => candidate.category === item.category)
-    ) return selected;
-    claimedHomePaths.add(getHomeTopic(item.to));
-    selected.push(item);
-    return selected;
-  }, []);
-
-  const civicWatchCategoryLabels: Record<HomeCivicWatchItem["category"], string> = {
+  const civicWatchCategoryLabels: Record<CivicWatchItem["category"], string> = {
     issue: ko ? "이슈감시" : "Issue Watch",
     legislation: ko ? "입법감시" : "Legislative Watch",
     tax: ko ? "세금감시" : "Tax Watch",
     "public-interest": ko ? "공익감시" : "Public-interest Watch",
   };
 
-  // Commentary is deliberately separate from the factual monitoring records above.
+  // Additional legislative and tax commentary appears beneath the latest records.
   // New commentary added to either data source appears here without a homepage edit.
   const commentaryCandidates: HomeWatchCommentary[] = [
     ...linkedLegislativeColumnCommentaries.map((article) => {
@@ -278,12 +224,29 @@ export default function Home() {
 
   useEffect(() => {
     let active = true;
-    void getPublishedLegislativeBills(1000).then((bills) => {
-      if (active) setLegislativeBills(bills);
-    }).catch(() => { /* Static published articles remain available. */ }).finally(() => {
-      if (active) setBillsReady(true);
-    });
-    return () => { active = false; };
+    let pending = false;
+    const refresh = async () => {
+      if (pending || document.visibilityState !== "visible") return;
+      pending = true;
+      try {
+        const bills = await getPublishedLegislativeBills(1000);
+        if (active) setLegislativeBills(bills);
+      } catch { /* Preserve the last successful public snapshot on a temporary failure. */ }
+      finally {
+        pending = false;
+        if (active) setBillsReady(true);
+      }
+    };
+    void refresh();
+    const timer = window.setInterval(refresh, 60_000);
+    window.addEventListener("focus", refresh);
+    document.addEventListener("visibilitychange", refresh);
+    return () => {
+      active = false;
+      window.clearInterval(timer);
+      window.removeEventListener("focus", refresh);
+      document.removeEventListener("visibilitychange", refresh);
+    };
   }, []);
 
   useEffect(() => {
@@ -499,7 +462,7 @@ export default function Home() {
                 <Link key={item.key} to={item.to} className="group flex h-full flex-col border border-green-deep/15 bg-white p-4 transition-all duration-200 hover:-translate-y-1 hover:border-green-deep/35 hover:bg-green-pale/35 hover:shadow-[0_12px_28px_rgba(20,55,45,0.10)] focus-visible:-translate-y-1 focus-visible:border-green-deep/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-deep/20 sm:p-5">
                   <div className="flex items-center justify-between gap-3">
                     <span className="text-[10px] font-black tracking-[.12em] text-green-deep">{civicWatchCategoryLabels[item.category]}</span>
-                    <time className="shrink-0 text-[11px] text-charcoal/40">{item.date.replace(/-/g, ".")}</time>
+                    <time className="shrink-0 text-[11px] text-charcoal/40">{item.date.slice(0, 10).replace(/-/g, ".")}</time>
                   </div>
                   <h3 className="editorial-title mt-2 line-clamp-2 break-keep text-[1.08rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.2rem]">{item.title}</h3>
                   <p className="mt-1.5 line-clamp-2 text-[13px] leading-5.5 text-charcoal/58 sm:text-sm sm:leading-6">{item.summary}</p>
