@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import FeaturedStoryMedia from "../components/FeaturedStoryMedia";
 import SafeImage from "../components/SafeImage";
+import NewsTrackingCard from "../components/NewsTrackingCard";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { getColumnsNewestFirst, hotIssueColumnTrackerSlugs } from "../data/columns";
 import { getHotIssueCards, selectHotIssueCards } from "../data/hotIssueSelection";
 import { localizeBriefing, localizeColumn } from "../data/localizedContent";
 import { getHotIssuesNewestFirst } from "../data/hotIssues";
 import { newsTrackerCases } from "../data/newsTrackerRegistry";
+import { getNewsTrackingCards, selectNewsTrackingCards } from "../data/newsTracking";
 import { getCivicWatchFeed, selectLatestCivicWatchItems, type CivicWatchItem } from "../data/civicWatchFeed";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
@@ -135,6 +137,11 @@ export default function Home() {
   ) : [];
   for (const card of visibleHotIssueCards) claimedHomePaths.add(getHomeTopic(card.to));
 
+  const newsTrackingCards = featuredReady && billsReady
+    ? selectNewsTrackingCards(getNewsTrackingCards(language), claimedHomePaths)
+    : [];
+  for (const card of newsTrackingCards) claimedHomePaths.add(getHomeTopic(card.to));
+
   const upperArticlePaths = new Set([
     activeFeaturedPath,
     latestHotIssue?.to,
@@ -142,6 +149,7 @@ export default function Home() {
     publicWatchHref,
     seedLanguageArticle ? `/seed-language/${seedLanguageArticle.slug}` : undefined,
     ...visibleHotIssueCards.map((card) => card.to),
+    ...newsTrackingCards.map((card) => card.to),
   ].filter((path): path is string => Boolean(path)));
   const recentCivicWatchItems = selectLatestCivicWatchItems(
     getCivicWatchFeed(language, legislativeBills), upperArticlePaths,
@@ -442,6 +450,26 @@ export default function Home() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="news-tracking" className="bg-green-pale/25 pt-8 pb-6 sm:pt-12 sm:pb-8" aria-labelledby="news-tracking-title">
+        <div className="container-page">
+          <div className="flex items-end justify-between gap-3 border-b-[3px] border-navy pb-3 sm:gap-4">
+            <div>
+              <p className="section-kicker">NEWS TRACKING</p>
+              <h2 id="news-tracking-title" className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "뉴스트래킹" : "News Tracking"}</h2>
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-charcoal/65">{ko ? "한 번 보도하고 끝내지 않습니다. 사건의 변화와 남은 쟁점을 계속 확인합니다." : "We keep following the story, recording new developments and the questions that remain."}</p>
+            </div>
+            <Link to="/monitoring?view=trackers" className="shrink-0 text-sm font-bold text-green-deep hover:underline">{ko ? "전체보기" : "View all"}</Link>
+          </div>
+          {newsTrackingCards.length > 0 ? (
+            <div className="mt-4 grid gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
+              {newsTrackingCards.map((card) => <NewsTrackingCard key={card.to} card={card} />)}
+            </div>
+          ) : (
+            <p className="mt-4 text-sm leading-6 text-charcoal/55" role="status">{!featuredReady || !billsReady ? (ko ? "불러오는 중입니다." : "Loading stories.") : (ko ? "메인에 소개된 추적 기사 외의 기록은 전체보기에서 확인할 수 있습니다." : "View all to find every tracker, including stories featured elsewhere on this page.")}</p>
+          )}
         </div>
       </section>
 
