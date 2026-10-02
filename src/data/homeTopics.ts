@@ -4,6 +4,14 @@ import { hotIssueColumnTrackerSlugs } from "./columns";
 // articles and tracker routes here when publishing them. Unlisted routes
 // remain their own topics, so broad categories do not hide unrelated work.
 const homeTopicGroups: Record<string, string[]> = {
+  "north-korean-pows-protection": [
+    "/monitoring/north-korean-pows-protection-tracker",
+    "/briefings/north-korean-pows-south-korea-zelensky-un",
+  ],
+  "kim-seung-won-confirmation-hearing": [
+    "/monitoring/kim-seung-won-confirmation-hearing",
+    "/briefings/confirmation-hearings-zero-witnesses",
+  ],
   "mfds-sauce-portioning-civic-freedom-2026": [
     "/columns/citizenization-kimchi-jar-freedom-2026",
     "/columns/mfds-sauce-portioning-autonomy-2026",
