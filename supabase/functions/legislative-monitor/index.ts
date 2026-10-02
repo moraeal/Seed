@@ -743,7 +743,11 @@ async function repairBillImages(limit: number) {
   const response = await rest("legislative_bills?review_state=in.(published,review,error)&select=*&order=published_at.desc.nullslast&limit=200");
   if (!response.ok) throw new Error("Image repair lookup failed");
   const bills = (await response.json() as NormalizedBill[]).filter((bill) =>
-    !readyImage(bill.editorial_image) && hasCompleteSummaryPage(bill.analysis || {})
+    !readyImage(bill.editorial_image) && (hasCompleteSummaryPage(bill.analysis || {})
+      // Earlier published analyses predate the expanded analysis schema. Repair
+      // their artwork from existing bilingual summaries without changing content.
+      || (bill.review_state === "published" && clean(bill.analysis?.title_en)
+        && clean(bill.analysis?.summary_ko) && clean(bill.analysis?.summary_en)))
     && (bill.editorial_image?.attempts || 0) < 3
     && !(bill.editorial_image?.status === "pending" && Date.now() - new Date(bill.editorial_image.started_at || "").valueOf() < 300000)
   ).slice(0, limit);
