@@ -39,6 +39,7 @@ type NormalizedBill = {
   review_state: "collected" | "queued" | "error" | "review" | "published" | "held" | "excluded";
   analysis?: Json;
   editorial_image?: EditorialImage;
+  auto_published?: boolean;
   published_at: string | null;
   current_stage: string;
   source_checked_at: string;
@@ -743,19 +744,19 @@ async function repairBillImages(limit: number) {
   const response = await rest("legislative_bills?review_state=in.(published,review,error)&select=*&order=published_at.desc.nullslast&limit=200");
   if (!response.ok) throw new Error("Image repair lookup failed");
   const bills = (await response.json() as NormalizedBill[]).filter((bill) =>
-    !readyImage(bill.editorial_image) && (hasCompleteSummaryPage(bill.analysis || {})
+    (!readyImage(bill.editorial_image) || (bill.review_state !== "published" && bill.auto_published)) && (hasCompleteSummaryPage(bill.analysis || {})
       // Earlier published analyses predate the expanded analysis schema. Repair
       // their artwork from existing bilingual summaries without changing content.
       || (bill.review_state === "published" && clean(bill.analysis?.title_en)
         && clean(bill.analysis?.summary_ko) && clean(bill.analysis?.summary_en)))
-    && (bill.editorial_image?.attempts || 0) < 3
+    && (readyImage(bill.editorial_image) || (bill.editorial_image?.attempts || 0) < 3)
     && !(bill.editorial_image?.status === "pending" && Date.now() - new Date(bill.editorial_image.started_at || "").valueOf() < 300000)
   ).slice(0, limit);
   const results = await Promise.all(bills.map(async (bill) => {
     try {
       await ensureBillImage(bill, bill.analysis || {});
       // Retry only already authorized automatic publication; do not publish proposal drafts.
-      if (bill.review_state !== "published" && (bill as NormalizedBill & { auto_published?: boolean }).auto_published) {
+      if (bill.review_state !== "published" && bill.auto_published) {
         const saved = await rest(`legislative_bills?bill_id=eq.${encodeURIComponent(bill.bill_id)}`, {
           method: "PATCH", headers: adminHeaders("return=minimal"),
           body: JSON.stringify({ review_state: "published", published_at: bill.published_at || new Date().toISOString(), analysis_error: null }),

@@ -32,4 +32,35 @@ mode = "upload-failure";
 await assert.rejects(createEditorialImage(bill, analysis, {}), /storage returned HTTP 500/);
 mode = "html";
 await assert.rejects(createEditorialImage(bill, analysis, {}), /not publicly readable/);
-console.log("Editorial image failure and verification checks passed.");
+// Recover a failed publication after the image was already verified, without
+// spending another generation attempt or publishing an unauthorized draft.
+const analysisFixture = { title_en: "Bill", official_rationale_en: "Purpose", summary_ko: "요약", summary_en: "Summary", direction_classification: "mixed", confidence: "medium" };
+for (const field of ["changes", "positive_effects", "risks", "citizen_impact", "business_impact", "authority_shift", "direction_rationale", "watch_points", "evidence_gaps"]) {
+  for (const language of ["ko", "en"]) analysisFixture[`${field}_${language}`] = [];
+}
+const completedImage = { ...image, attempts: 3 };
+const rows = [
+  { bill_id: "retry", slug: "bill-retry", review_state: "error", auto_published: true, analysis: analysisFixture, editorial_image: completedImage },
+  { bill_id: "draft", slug: "bill-draft", review_state: "review", auto_published: false, analysis: analysisFixture, editorial_image: completedImage },
+];
+const writes = [];
+globalThis.Deno.serve = () => {};
+globalThis.fetch = async (url, init) => {
+  assert(!url.includes("api.openai.com"), "Ready artwork must never be generated again");
+  if (init?.method === "PATCH") {
+    writes.push({ url, body: JSON.parse(init.body) });
+    return new Response(null, { status: 204 });
+  }
+  return new Response(JSON.stringify(url.includes("bill_id=eq.") ? [{ editorial_image: completedImage }] : rows));
+};
+const helperUrl = `data:text/javascript;base64,${Buffer.from(js).toString("base64")}`;
+const monitorSource = (await readFile("supabase/functions/legislative-monitor/index.ts", "utf8"))
+  .replace('import "jsr:@supabase/functions-js/edge-runtime.d.ts";', "")
+  .replace('from "./editorial-images.ts"', `from "${helperUrl}"`) + "\nexport { repairBillImages };";
+const monitorJs = ts.transpileModule(monitorSource, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
+const { repairBillImages } = await import(`data:text/javascript;base64,${Buffer.from(monitorJs).toString("base64")}`);
+await repairBillImages(2);
+assert.equal(writes.length, 1, "Only an authorized automatic publication can resume");
+assert.match(writes[0].url, /bill_id=eq.retry/);
+assert.equal(writes[0].body.review_state, "published");
+console.log("Editorial image verification and publication recovery checks passed.");
