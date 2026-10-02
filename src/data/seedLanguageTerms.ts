@@ -1,5 +1,6 @@
 /** Display metadata shared by the homepage glossary card and glossary archive. */
 export const seedLanguageTerms: Record<string, { hanja: string; english: string }> = {
+  민원: { hanja: "民願", english: "CIVIL PETITION · COMPLAINT" },
   공정: { hanja: "公正", english: "FAIRNESS" },
   국가: { hanja: "國家", english: "STATE" },
   통일: { hanja: "統一", english: "UNIFICATION" },

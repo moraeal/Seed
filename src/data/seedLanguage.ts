@@ -1,3 +1,4 @@
+import { petitionArticleKo, petitionArticleEn } from "./seedLanguagePetition";
 import type { Language } from "../i18n";
 import { freedomArticleKo } from "./seedLanguageFreedom";
 import { freedomArticleEn } from "./seedLanguageFreedomEn";
@@ -19,9 +20,10 @@ export type {
   SeedLanguageImage,
 } from "./seedLanguageBase";
 
-export const seedLanguageArticlesKo = [fairnessArticleKo, stateArticleKo, unificationArticleKo, publicArticleKo, politicsArticleKo, conservatismArticleKo, discourseArticleKo, progressArticleKo, freedomArticleKo, ...baseSeedLanguageArticlesKo];
+export const seedLanguageArticlesKo = [petitionArticleKo, fairnessArticleKo, stateArticleKo, unificationArticleKo, publicArticleKo, politicsArticleKo, conservatismArticleKo, discourseArticleKo, progressArticleKo, freedomArticleKo, ...baseSeedLanguageArticlesKo];
 
 export function getSeedLanguageArticle(slug: string, language: Language) {
+  if (slug === petitionArticleKo.slug) return language === "en" ? petitionArticleEn : petitionArticleKo;
   if (slug === fairnessArticleKo.slug) return language === "en" ? fairnessArticleEn : fairnessArticleKo;
   if (slug === stateArticleKo.slug) return language === "en" ? stateArticleEn : stateArticleKo;
   if (slug === unificationArticleKo.slug) return language === "en" ? unificationArticleEn : unificationArticleKo;
