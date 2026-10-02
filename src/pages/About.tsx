@@ -62,6 +62,8 @@ const copy = {
     values: ["법의 지배", "권력분립", "표현의 자유", "기업의 도전", "시민사회의 독립"],
     statement: "씨앗의 취지문 읽기",
     contributors: "필진 소개",
+    relatedArticle: "관련 기사 읽기",
+    relatedArticleTitle: "김치항아리 속 젓가락 하나가 모두의 자유를 줄인다",
     joinKicker: "GROW WITH SEED VOICE",
     joinTitle: <>시민의 성장을 가로막는 일,<br />씨앗에 알려주세요</>,
     joinLead: "시민과 기업의 자유를 침해하는 일, 불공정한 대우, 공익을 내세워 시민의 이익을 해치는 정책을 제보해주세요.",
@@ -115,6 +117,8 @@ const copy = {
     values: ["Rule of law", "Separated powers", "Free expression", "Enterprise", "Independent civil society"],
     statement: "Read our founding statement",
     contributors: "Meet the contributors",
+    relatedArticle: "Read the related article",
+    relatedArticleTitle: "One Pair of Chopsticks in a Kimchi Jar Can Shrink Everyone’s Freedom",
     joinKicker: "GROW WITH SEED VOICE",
     joinTitle: <>What holds citizens back?<br />Tell SEED.</>,
     joinLead: "Tell us about restrictions on civic or business freedom, unfair treatment, or policies that harm citizens in the name of the public good.",
@@ -171,6 +175,7 @@ export default function About() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/why-seed" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-green-deep px-6 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:shadow-lg">{content.readToday}<ArrowUpRight size={17}/></Link>
               <Link to="/contributors" className="inline-flex min-h-12 items-center gap-2 rounded-full border-2 border-green-deep bg-white/75 px-6 py-3 text-sm font-extrabold text-green-deep transition hover:-translate-y-0.5 hover:bg-white hover:shadow-lg">{content.contributors}<ArrowUpRight size={17}/></Link>
+              <Link to="/columns/citizenization-kimchi-jar-freedom-2026" title={content.relatedArticleTitle} className="inline-flex min-h-12 items-center gap-2 rounded-full border-2 border-green-deep bg-white/75 px-6 py-3 text-sm font-extrabold text-green-deep transition hover:-translate-y-0.5 hover:bg-white hover:shadow-lg"><BookOpenText size={17} aria-hidden="true" />{content.relatedArticle}</Link>
             </div>
           </div>
           <div className="relative order-first mx-auto w-full max-w-xl lg:order-last">
