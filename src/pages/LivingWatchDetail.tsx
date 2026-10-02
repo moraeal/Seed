@@ -44,6 +44,17 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
   const controversies = item.currentControversies ?? [];
   const openQuestions = controversies.length ? [] : item.questions;
   const hasRemainingItems = controversies.length > 0 || openQuestions.length > 0;
+  // Sort at render time so new records appear in date order wherever editors
+  // insert them. Undated follow-up reminders stay after the dated history.
+  const timelineDate = (date: string) => {
+    const timestamp = /^\d{4}-\d{2}-\d{2}(?:T.*)?$/.test(date) ? Date.parse(date) : NaN;
+    return Number.isFinite(timestamp) ? timestamp : -Infinity;
+  };
+  const timeline = [...(item.timeline ?? [])].sort((a, b) => {
+    const aDate = timelineDate(a.date);
+    const bDate = timelineDate(b.date);
+    return aDate === bDate ? 0 : aDate > bDate ? -1 : 1;
+  });
   const timelineLabels: Record<WatchTimelineStatus, string> = {
     confirmed: ko ? "확인" : "VERIFIED",
     response: ko ? "해명" : "RESPONSE",
@@ -206,13 +217,13 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
                 <div>
                   <span className="section-kicker">ISSUE TIMELINE</span>
                   <h2 id="timeline-title" className="mt-1.5 text-3xl font-extrabold text-navy">{ko ? "전체 진행 기록" : "Full case timeline"}</h2>
-                  <p className="mt-2 text-sm leading-7 text-charcoal/55">{layered ? (ko ? "날짜별 설명과 기사 원문은 여기서 펼쳐볼 수 있습니다." : "Expand the dated record for explanations and original sources.") : (ko ? "새로운 사실이 확인될 때마다 같은 기록에 이어 붙입니다." : "Each verified development is added to the same living record.")}</p>
+                  <p className="mt-2 text-sm leading-7 text-charcoal/55">{ko ? "최신 기록부터 보여드립니다. 새 내용은 날짜에 따라 자동 정렬되며, 아래로 내려갈수록 과거의 기록으로 이어집니다." : "Latest records appear first. New entries are automatically sorted by date; scroll down to follow earlier developments."}</p>
                 </div>
                 <span className="mb-1 inline-flex shrink-0 items-center gap-2 text-sm font-extrabold text-green-deep">{layered ? (ko ? "펼쳐보기" : "Open") : (ko ? "접기" : "Close")}<ChevronDown size={19} className="transition group-open:rotate-180"/></span>
               </summary>
 
             <ol className="relative mt-7 before:absolute before:bottom-3 before:left-[1.35rem] before:top-3 before:w-px before:bg-green-deep/20 sm:before:left-[8.1rem]">
-              {item.timeline.map((entry, index) => (
+              {timeline.map((entry, index) => (
                 <li key={`${entry.date}-${index}`} className="relative grid gap-3 pb-8 pl-[3.5rem] sm:grid-cols-[6.7rem_1fr] sm:gap-8 sm:pl-0">
                   <div className="sm:text-right">
                     <time className="text-xs font-extrabold text-charcoal/48">{entry.date.replace(/-/g, ".")}</time>
