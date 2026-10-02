@@ -36,6 +36,16 @@ const rasterBriefingImages = (item) => item.images
   .filter((image) => !/^https?:\/\//i.test(image.src) && /\.(?:jpe?g|png|webp)$/i.test(image.src))
   .map((image) => image.src);
 
+const supabaseUrl = (process.env.VITE_SUPABASE_URL || "https://wajlmbahjyazkftwaeem.supabase.co").replace(/\/$/, "");
+const supabaseKey = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.VITE_SUPABASE_ANON_KEY || "sb_publishable_gf96jsxTYvTeAzOL1AsBIA_fs4RlDje";
+const billsResponse = await fetch(`${supabaseUrl}/rest/v1/legislative_bills?review_state=eq.published&select=slug,title,analysis,editorial_image,public_summary_ko,seed_view_ko,detail_url,proposed_date,published_at&order=published_at.desc&limit=1000`, { headers: { apikey: supabaseKey }, signal: AbortSignal.timeout(20000) });
+if (!billsResponse.ok) throw new Error(`Cannot load bill images: HTTP ${billsResponse.status}`);
+const billImages = await billsResponse.json();
+if (!Array.isArray(billImages) || billImages.length >= 1000) throw new Error("Invalid or truncated bill image list");
+// SEO uses this same public snapshot so a mid-build publication cannot create
+// metadata for an image that was not included in the image generation phase.
+await mkdir(path.join(root, ".seed-build"), { recursive: true });
+await writeFile(path.join(root, ".seed-build", "published-bills.json"), JSON.stringify(billImages));
 const jobs = [
   { section: "site", slug: "home", src: "images/brand/seedvoice-independent-watchdog.webp" },
   { section: "site", slug: "founding-statement", src: "images/columns/checks-and-balances.png" },
@@ -69,6 +79,8 @@ const jobs = [
   ...taxWatchModule.taxPolicies.map((item) => ({ section: "tax", slug: item.slug, src: item.heroImage.ko })),
   ...taxCommentaryModule.taxCommentaries.map((item) => ({ section: "tax-commentary", slug: item.slug, src: item.heroSrc })),
   ...legislativeCommentaryModule.legislativeCommentaries.map((item) => ({ section: "legislation", slug: item.slug, src: item.heroSrc })),
+  ...billImages.filter((bill) => bill.editorial_image?.status === "ready" && bill.editorial_image.src && bill.editorial_image.verified_at)
+    .map((bill) => ({ section: "legislation", slug: bill.slug, src: bill.editorial_image.src, strict: true, forceRefresh: true })),
   { section: "research", slug: "community-chest-of-korea", src: "images/monitoring/community-chest-deep-hero.png" },
 ];
 
@@ -100,7 +112,7 @@ for (const job of jobs) {
 
   if (/^https?:\/\//i.test(job.src)) {
     const existingPreviewIsAvailable = await access(target).then(() => true).catch(() => false);
-    if (existingPreviewIsAvailable && !job.fallbackSrc) {
+    if (existingPreviewIsAvailable && !job.fallbackSrc && !job.forceRefresh) {
       await convertToSocialImage(target, target);
       console.warn(`Keeping existing social image for remote source: ${job.slug}`);
       continue;
@@ -112,6 +124,7 @@ for (const job of jobs) {
       await writeFile(temporarySource, Buffer.from(await response.arrayBuffer()));
       source = temporarySource;
     } catch (error) {
+      if (job.strict) throw new Error(`Required bill image unavailable: ${job.slug}: ${error.message}`);
       if (job.fallbackSrc) {
         source = path.join(publicRoot, job.fallbackSrc.replace(/^\/+/, ""));
         console.warn(`Using fallback social image for ${job.slug}: ${error.message}`);
@@ -128,6 +141,7 @@ for (const job of jobs) {
   try {
     await convertToSocialImage(source, target);
   } catch (error) {
+    if (job.strict) throw new Error(`Required bill social image failed: ${job.slug}: ${error.message}`);
     if (job.fallbackSrc) {
       try {
         const fallbackSource = path.join(publicRoot, job.fallbackSrc.replace(/^\/+/, ""));

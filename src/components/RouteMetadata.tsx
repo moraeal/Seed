@@ -51,6 +51,8 @@ export default function RouteMetadata() {
           title: `${bill.title} | ${SITE_NAME}`,
           description: bill.public_summary_ko || bill.analysis?.summary_ko || bill.official_summary || `${bill.title}의 입법 내용과 영향을 살펴봅니다.`,
           type: "article",
+          image: bill.editorial_image?.status === "ready" ? `https://seedvoice.kr/images/social/legislation/${bill.slug}.jpg` : undefined,
+          imageAlt: bill.editorial_image?.alt_ko || bill.title,
         };
       } catch {
         // A transient data failure should not label an existing bill page as a missing page.

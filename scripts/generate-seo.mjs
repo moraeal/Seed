@@ -48,16 +48,7 @@ const koreaDateTime = (date) => date ? `${date}T00:00:00+09:00` : undefined;
 
 // GitHub Pages needs a physical file for each database-backed bill detail URL.
 // Read only public, published records so previews never enter the sitemap.
-const supabaseUrl = (process.env.VITE_SUPABASE_URL || "https://wajlmbahjyazkftwaeem.supabase.co").replace(/\/$/, "");
-const supabaseKey = process.env.VITE_SUPABASE_PUBLISHABLE_KEY
-  || process.env.VITE_SUPABASE_ANON_KEY
-  || "sb_publishable_gf96jsxTYvTeAzOL1AsBIA_fs4RlDje";
-const billsResponse = await fetch(
-  `${supabaseUrl}/rest/v1/legislative_bills?select=slug,title,public_summary_ko,seed_view_ko,detail_url,proposed_date,published_at&review_state=eq.published&order=published_at.desc&limit=1000`,
-  { headers: { apikey: supabaseKey }, signal: AbortSignal.timeout(20000) },
-);
-if (!billsResponse.ok) throw new Error(`Cannot load published bills for static pages: HTTP ${billsResponse.status}`);
-const publishedBills = await billsResponse.json();
+const publishedBills = JSON.parse(await readFile(path.join(process.cwd(), ".seed-build", "published-bills.json"), "utf8"));
 if (!Array.isArray(publishedBills) || publishedBills.length >= 1000) {
   throw new Error("Published bill list is invalid or exceeds the current page limit");
 }
@@ -69,6 +60,8 @@ const allRoutes = [
     title: `${bill.title} | 씨앗의 소리`,
     description: bill.public_summary_ko || `${bill.title}의 발의 내용과 입법 진행 상황을 살펴봅니다.`,
     type: "article",
+    image: bill.editorial_image?.status === "ready" ? `${SITE_URL}/images/social/legislation/${bill.slug}.jpg` : undefined,
+    imageAlt: bill.editorial_image?.alt_ko || bill.title,
     publishedAt: bill.published_at?.slice(0, 10),
     lastModified: bill.published_at?.slice(0, 10),
     author: SITE_NAME,

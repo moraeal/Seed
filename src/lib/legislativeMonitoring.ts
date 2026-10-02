@@ -60,6 +60,7 @@ export type LegislativeBill = {
   direction_risk_score: number;
   direction_risk_flags: string[];
   review_state: LegislativeReviewState;
+  editorial_image?: { status: "pending" | "ready" | "error"; src?: string; alt_ko?: string; alt_en?: string; verified_at?: string };
   analysis: LegislativeAnalysis;
   analysis_model: string | null;
   analysis_generated_at: string | null;
@@ -159,7 +160,7 @@ async function readResponse<T>(response: Response): Promise<T> {
 }
 
 export async function getPublishedLegislativeBills(limit = 100) {
-  const fields = "bill_id,bill_no,assembly_age,slug,title,proposer,representative_proposer,co_proposers,proposer_kind,proposed_date,plenary_passed_at,committee,bill_kind,source_status,processing_result,official_summary,proposal_reason,main_content,detail_url,full_text_url,importance_score,importance_level,direction_risk_score,direction_risk_flags,review_state,analysis,analysis_model,analysis_generated_at,analysis_error,published_at,current_stage,is_featured,featured_order,featured_reason_ko,featured_reason_en,observation_keywords,public_summary_ko,public_summary_en,seed_view_ko,seed_view_en,related_content,media_coverage,media_checked_at,media_impact_score,auto_published,allow_bookmark,notification_status,important_change_status,important_change_note_ko,important_change_note_en,editorial_updated_at,source_checked_at,last_source_update,created_at,updated_at";
+  const fields = "bill_id,bill_no,assembly_age,slug,title,proposer,representative_proposer,co_proposers,proposer_kind,proposed_date,plenary_passed_at,committee,bill_kind,source_status,processing_result,official_summary,proposal_reason,main_content,detail_url,full_text_url,importance_score,importance_level,direction_risk_score,direction_risk_flags,review_state,editorial_image,analysis,analysis_model,analysis_generated_at,analysis_error,published_at,current_stage,is_featured,featured_order,featured_reason_ko,featured_reason_en,observation_keywords,public_summary_ko,public_summary_en,seed_view_ko,seed_view_en,related_content,media_coverage,media_checked_at,media_impact_score,auto_published,allow_bookmark,notification_status,important_change_status,important_change_note_ko,important_change_note_en,editorial_updated_at,source_checked_at,last_source_update,created_at,updated_at";
   const response = await fetch(`${supabaseUrl}/rest/v1/legislative_bills?select=${fields}&order=plenary_passed_at.desc.nullslast,published_at.desc&limit=${limit}`, { headers: headers() });
   return readResponse<LegislativeBill[]>(response);
 }

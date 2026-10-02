@@ -100,7 +100,8 @@ export default function InlinePageEditor() {
     overrides.current.forEach((record) => {
       const element = resolveElement(root, record.element_path);
       const node = element ? directTextNodes(element)[record.text_node_index] : null;
-      if (node && node.data !== record.published_text) node.data = record.published_text;
+      // A moving card must never inherit another article's saved headline.
+      if (node && node.data.trim() === record.original_text.trim()) node.data = record.published_text;
     });
   }, []);
 

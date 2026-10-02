@@ -3,7 +3,7 @@ import type { SeedColumn } from "../columns";
 export const civicAuditOfAuditColumn: SeedColumn = {
   slug: "civic-groups-audit-lawmakers-evaluation-criteria-2026",
   issue: 41,
-  title: "국회의원을 평가하겠다는 시민단체, 기준부터 공개하자",
+  title: "국회의원을 평가하겠다는 시민단체, 평가기준이 중요하다",
   subtitle: "인천경실련의 국감 감시가 좋은 시민운동의 선례가 되려면",
   date: "2026-09-30",
   author: "작은씨앗",

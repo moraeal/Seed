@@ -1,4 +1,5 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+import { createEditorialImage, readyImage, type EditorialImage } from "./editorial-images.ts";
 
 const ASSEMBLY_BASE = "https://open.assembly.go.kr/portal/openapi";
 const ALL_BILLS_ENDPOINT = "TVBPMBILL11";
@@ -35,7 +36,9 @@ type NormalizedBill = {
   importance_level: "low" | "medium" | "high" | "critical";
   direction_risk_score: number;
   direction_risk_flags: string[];
-  review_state: "collected" | "queued";
+  review_state: "collected" | "queued" | "error" | "review" | "published" | "held" | "excluded";
+  analysis?: Json;
+  editorial_image?: EditorialImage;
   published_at: string | null;
   current_stage: string;
   source_checked_at: string;
@@ -550,19 +553,20 @@ async function upsertBills(bills: NormalizedBill[]) {
   return await response.json() as NormalizedBill[];
 }
 
-Deno.serve(async (req: Request) => {
+async function handleRequest(req: Request): Promise<Response> {
   if (req.method !== "POST") return json({ error: "method_not_allowed" }, 405);
   if (!(await verifyCronToken(req.headers.get("x-seed-cron-token")))) return json({ error: "unauthorized" }, 401);
 
-  let body: { days?: number; startOffset?: number; analyze?: boolean; analysisLimit?: number; media?: boolean; autoPublish?: boolean; mode?: "proposed" | "plenary-passed" } = {};
+  let body: { imagesOnly?: boolean; imageLimit?: number; days?: number; startOffset?: number; analyze?: boolean; analysisLimit?: number; media?: boolean; autoPublish?: boolean; mode?: "proposed" | "plenary-passed" } = {};
   try { body = await req.json(); } catch { /* Empty body uses safe defaults. */ }
+  if (body.imagesOnly) return json(await repairBillImages(Math.max(1, Math.min(2, Number(body.imageLimit || 2)))));
   const days = Math.max(1, Math.min(14, Number(body.days || 3)));
   const startOffset = Math.max(0, Math.min(30, Number(body.startOffset || 0)));
   const shouldAnalyze = body.analyze !== false;
   const shouldCheckMedia = body.media !== false;
   const proposalMode = body.mode === "proposed";
   const autoPublish = !proposalMode && body.autoPublish !== false;
-  const analysisLimit = Math.max(1, Math.min(12, Number(body.analysisLimit || 6)));
+  const analysisLimit = Math.max(1, Math.min(2, Number(body.analysisLimit || 2)));
   const startedAt = new Date().toISOString();
   let runId = "";
 
@@ -614,7 +618,7 @@ Deno.serve(async (req: Request) => {
     // Every bill remains in the internal collection. Only newly selected bills
     // advance to analysis and can receive a public list entry + summary page.
     const selectedBills = saved
-      .filter((item) => ["collected", "queued", "error"].includes(item.review_state))
+      .filter((item) => ["collected", "queued", "error"].includes(item.review_state) && !hasCompleteSummaryPage(item.analysis || {}))
       .map((item) => ({ bill: item, mediaScore: mediaScores.get(item.bill_id) || 0 }))
       .filter(({ bill, mediaScore }) => bill.importance_score >= ANALYSIS_THRESHOLD || bill.direction_risk_score >= 60 || mediaScore >= 25)
       .sort((a, b) => (b.bill.importance_score + b.mediaScore) - (a.bill.importance_score + a.mediaScore)
@@ -625,13 +629,21 @@ Deno.serve(async (req: Request) => {
     let analyzed = 0;
     const analysisErrors: string[] = [];
     const analysisBills = shouldAnalyze ? selectedBills : [];
-    await Promise.all(analysisBills.map(async (bill) => {
+    for (let offset = 0; offset < analysisBills.length; offset += 2) {
+    await Promise.all(analysisBills.slice(offset, offset + 2).map(async (bill) => {
       try {
         const analysis = await analyzeBill(bill);
         if (!analysis) return;
         if (!hasCompleteSummaryPage(analysis)) {
           throw new Error("Selected bill analysis is incomplete; public list and summary page were not created");
         }
+        const staged = await rest(`legislative_bills?bill_id=eq.${encodeURIComponent(bill.bill_id)}`, {
+          method: "PATCH", headers: adminHeaders("return=minimal"),
+          body: JSON.stringify({ analysis, analysis_model: ANALYSIS_MODEL, analysis_generated_at: new Date().toISOString(), review_state: "review", auto_published: autoPublish, analysis_error: null }),
+        });
+        if (!staged.ok) throw new Error(`Analysis staging returned HTTP ${staged.status}`);
+        const editorialImage = await ensureBillImage(bill, analysis);
+        if (!readyImage(editorialImage)) throw new Error("Image is not ready; publication held");
         const candidates = mediaCandidates.get(bill.bill_id) || [];
         const mediaCoverage = shouldCheckMedia ? await summarizeMediaCoverage(bill, candidates) : [];
         const now = new Date().toISOString();
@@ -640,6 +652,7 @@ Deno.serve(async (req: Request) => {
           headers: adminHeaders("return=minimal"),
           body: JSON.stringify({
             analysis,
+            editorial_image: editorialImage,
             analysis_model: ANALYSIS_MODEL,
             analysis_generated_at: now,
             review_state: autoPublish ? "published" : "review",
@@ -667,6 +680,8 @@ Deno.serve(async (req: Request) => {
       }
     }));
 
+    }
+
     const mediaChecked = mediaCandidates.size;
     const mediaDrafts = [...mediaCandidates.values()].filter((items) => items.length > 0).length;
     const mediaErrors: string[] = [];
@@ -687,4 +702,74 @@ Deno.serve(async (req: Request) => {
     });
     return json({ ok: false, error: message }, 500);
   }
+}
+
+async function ensureBillImage(bill: NormalizedBill, analysis: Json) {
+  const lookup = await rest(`legislative_bills?bill_id=eq.${encodeURIComponent(bill.bill_id)}&select=editorial_image`);
+  if (!lookup.ok) throw new Error("Cannot load current editorial image");
+  const current: EditorialImage | null = (await lookup.json())?.[0]?.editorial_image;
+  if (readyImage(current)) return current!;
+  const attempts = (current?.attempts || 0) + 1;
+  if (attempts > 3) throw new Error("Editorial image failed three times; editor review required");
+  const startedAt = new Date().toISOString();
+  // Compare-and-set provides a lease across cron, repair and manual sync runs.
+  const filter = current ? `editorial_image->>started_at=eq.${encodeURIComponent(current.started_at || "")}` : "editorial_image=is.null";
+  if (current?.status === "pending" && Date.now() - new Date(current.started_at || "").valueOf() < 300000) {
+    throw new Error("Editorial image is already being generated");
+  }
+  const claim = await rest(`legislative_bills?bill_id=eq.${encodeURIComponent(bill.bill_id)}&${filter}`, {
+    method: "PATCH", headers: adminHeaders("return=representation"),
+    body: JSON.stringify({ editorial_image: { status: "pending", attempts, started_at: startedAt } }),
+  });
+  if (!claim.ok || !(await claim.json()).length) throw new Error("Editorial image lease unavailable");
+  try {
+    const image = { ...await createEditorialImage(bill, analysis, adminHeaders()), attempts, started_at: startedAt };
+    const saved = await rest(`legislative_bills?bill_id=eq.${encodeURIComponent(bill.bill_id)}&editorial_image->>started_at=eq.${encodeURIComponent(startedAt)}`, {
+      method: "PATCH", headers: adminHeaders("return=representation"), body: JSON.stringify({ editorial_image: image }),
+    });
+    if (!saved.ok || !(await saved.json()).length) throw new Error("Verified editorial image could not be attached to bill");
+    return image;
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    await rest(`legislative_bills?bill_id=eq.${encodeURIComponent(bill.bill_id)}&editorial_image->>started_at=eq.${encodeURIComponent(startedAt)}`, {
+      method: "PATCH", headers: adminHeaders("return=minimal"),
+      body: JSON.stringify({ editorial_image: { status: "error", attempts, started_at: startedAt, error: message } }),
+    });
+    throw error;
+  }
+}
+
+async function repairBillImages(limit: number) {
+  const response = await rest("legislative_bills?review_state=in.(published,review,error)&select=*&order=published_at.desc.nullslast&limit=200");
+  if (!response.ok) throw new Error("Image repair lookup failed");
+  const bills = (await response.json() as NormalizedBill[]).filter((bill) =>
+    !readyImage(bill.editorial_image) && hasCompleteSummaryPage(bill.analysis || {})
+    && (bill.editorial_image?.attempts || 0) < 3
+    && !(bill.editorial_image?.status === "pending" && Date.now() - new Date(bill.editorial_image.started_at || "").valueOf() < 300000)
+  ).slice(0, limit);
+  const results = await Promise.all(bills.map(async (bill) => {
+    try {
+      await ensureBillImage(bill, bill.analysis || {});
+      // Retry only already authorized automatic publication; do not publish proposal drafts.
+      if (bill.review_state !== "published" && (bill as NormalizedBill & { auto_published?: boolean }).auto_published) {
+        const saved = await rest(`legislative_bills?bill_id=eq.${encodeURIComponent(bill.bill_id)}`, {
+          method: "PATCH", headers: adminHeaders("return=minimal"),
+          body: JSON.stringify({ review_state: "published", published_at: bill.published_at || new Date().toISOString(), analysis_error: null }),
+        });
+        if (!saved.ok) throw new Error("Repaired automatic article could not be published");
+      }
+      return { slug: bill.slug, status: "ready" };
+    } catch (error) { return { slug: bill.slug, status: "error", error: String(error) }; }
+  }));
+  console.log("Editorial image repair", JSON.stringify(results));
+  return { ok: results.every((item) => item.status === "ready"), results };
+}
+
+Deno.serve(async (req: Request) => {
+  if (req.method !== "POST") return json({ error: "method_not_allowed" }, 405);
+  if (!(await verifyCronToken(req.headers.get("x-seed-cron-token")))) return json({ error: "unauthorized" }, 401);
+  const bufferedRequest = new Request(req.url, { method: req.method, headers: req.headers, body: await req.text() });
+  const task = handleRequest(bufferedRequest).then(async (response) => console.log("Legislative monitor completed", await response.text())).catch((error) => console.error("Legislative monitor failed", String(error)));
+  EdgeRuntime.waitUntil(task);
+  return json({ ok: true, accepted: true }, 202);
 });

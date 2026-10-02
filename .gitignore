@@ -5,3 +5,5 @@ public/images/social/
 supabase/.temp/
 *.log
 .DS_Store
+
+.seed-build/

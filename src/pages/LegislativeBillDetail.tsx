@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowRight, CalendarDays, ExternalLink, Newspaper, Scale, St
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useAuth } from "../auth";
+import InteractiveFigure from "../components/InteractiveFigure";
 import ContentAccountability from "../components/ContentAccountability";
 import { useLanguage } from "../i18n";
 import { getLegislativeBillBySlug, getLegislativeBillEvents, type LegislativeBill, type LegislativeBillEvent } from "../lib/legislativeMonitoring";
@@ -69,6 +70,8 @@ export default function LegislativeBillDetail() {
     <header className="border-b border-green-deep/15 bg-ivory py-9 sm:py-12"><div className="container-page max-w-5xl"><Link to="/monitoring/legislation" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "입법감시 목록" : "Legislative Watch"}</Link><div className="mt-4 border-t-2 border-navy pt-4"><div className="flex flex-wrap gap-2 text-xs font-extrabold text-green-deep"><span>{bill.committee || (ko ? "소관위 미정" : "Committee pending")}</span>{bill.bill_no && <span className="text-charcoal/45">{bill.bill_no}</span>}<span className="border border-green-deep/20 px-2 py-0.5">{bill.processing_result || bill.current_stage || (ko ? "발의" : "Proposed")}</span>{bill.is_featured && <span className="inline-flex items-center gap-1 text-gold"><Star size={13} fill="currentColor"/>{ko ? "씨앗이 주목하는 법안" : "Seed Voice selection"}</span>}</div><h1 className="article-detail-title mt-3">{title}</h1><p className="article-summary">{summary || (ko ? bill.official_summary : undefined) || (ko ? "법안이 시민과 기업에 미칠 변화를 검토합니다." : "This record examines the proposal and its potential effects.")}</p><div className="mt-4 flex flex-wrap items-center gap-4 border-t border-green-deep/10 pt-3 text-xs text-charcoal/50"><span className="flex items-center gap-1.5"><CalendarDays size={14}/>{bill.plenary_passed_at ? (ko ? "본회의 의결 " : "Plenary vote ") : (ko ? "발의 " : "Proposed ")}{(bill.plenary_passed_at || bill.proposed_date)?.replace(/-/g, ".") || "—"}</span><span>{bill.proposer || bill.representative_proposer}</span><span className="ml-auto flex items-center gap-1.5 font-bold text-green-deep"><Scale size={14}/>{ko ? `시민영향도 ${bill.importance_score}` : `Civic impact ${bill.importance_score}`}</span></div></div></div></header>
 
     <div className="article-content-frame py-9 sm:py-12">
+      {bill.editorial_image?.status === "ready" && bill.editorial_image.src && <InteractiveFigure src={bill.editorial_image.src} alt={(ko ? bill.editorial_image.alt_ko : bill.editorial_image.alt_en) || title} credit={ko ? "AI 이미지" : "AI image"} figureClassName="mb-10 overflow-hidden bg-white shadow-[0_16px_45px_rgba(23,76,58,.12)]" />}
+
       <section className="reading-column border-l-4 border-gold bg-green-pale px-6 py-6 sm:px-8"><span className="section-kicker">01 · {ko ? "이 법안, 한 문장으로" : "IN ONE SENTENCE"}</span><p className="mt-3 text-base font-semibold leading-8 text-navy">{summary || (ko ? "이 페이지는 국회 공개자료를 바탕으로, 시민의 삶에 바뀔 수 있는 부분과 남은 쟁점을 정리합니다." : "This page explains the likely changes for citizens and the questions that remain, based on public legislative records.")}</p></section>
 
       <NumberedSection number="02" title={ko ? "시민의 삶에서 달라질 수 있는 두 가지" : "Two possible practical changes"}>

@@ -115,7 +115,7 @@ export function getFeaturedContentCandidates(language: Language, legislativeBill
   });
 
   const legislativeBillItems: FeaturedContent[] = legislativeBills
-    .filter((item) => item.review_state === "published")
+    .filter((item) => item.review_state === "published" && item.editorial_image?.status === "ready" && item.editorial_image.src && item.editorial_image.verified_at)
     .map((item) => {
       const title = ko ? item.title : item.analysis?.title_en || item.title;
       return {
@@ -128,7 +128,7 @@ export function getFeaturedContentCandidates(language: Language, legislativeBill
           ? item.public_summary_ko || item.analysis?.summary_ko || item.official_summary || ""
           : item.public_summary_en || item.analysis?.summary_en || "",
         date: (item.editorial_updated_at || item.published_at || item.updated_at || item.proposed_date || "").slice(0, 10),
-        image: { src: "/images/brand/editorial-image-fallback.svg", alt: title },
+        image: { src: item.editorial_image!.src!, alt: (ko ? item.editorial_image!.alt_ko : item.editorial_image!.alt_en) || title },
       };
     });
 

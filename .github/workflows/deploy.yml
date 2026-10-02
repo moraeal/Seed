@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # Refresh database-backed article routes and 1200x630 previews after unattended publishing.
+  schedule:
+    - cron: "25 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -34,7 +37,7 @@ jobs:
       - name: Ensure social-image converter is available
         run: command -v convert || (sudo apt-get update && sudo apt-get install -y imagemagick)
       - name: Build
-        run: pnpm run build
+        run: node scripts/check-editorial-images.mjs && node scripts/validate-hot-issues.mjs && pnpm run build
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}

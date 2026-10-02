@@ -30,9 +30,11 @@ try {
   const english = getHotIssueCards("en");
   assert.deepEqual(english.map((card) => card.id), cards.map((card) => card.id), "Both languages must select identical issues");
   assert.notEqual(english.find((card) => card.id === dmz.id).latestChange, dmz.latestChange);
-  const bill = { slug: "selection-check", title: "Verified published bill", review_state: "published", editorial_updated_at: nextDate, analysis: {}, public_summary_ko: "A substantive legislative update" };
+  const bill = { slug: "selection-check", title: "Verified published bill", review_state: "published", editorial_updated_at: nextDate, analysis: {}, editorial_image: { status: "ready", src: "https://example.org/verified.jpg", alt_ko: "Law illustration", alt_en: "Law illustration", verified_at: new Date().toISOString() }, public_summary_ko: "A substantive legislative update" };
   assert.equal(getHotIssueCards("ko", [bill])[0].to, "/monitoring/legislation/selection-check", "A new legislative issue must enter without a homepage edit");
   assert(!getHotIssueCards("ko", [{ ...bill, review_state: "review" }]).some((card) => card.to.includes("selection-check")), "Unpublished bills must never enter the pool");
+  assert(!getHotIssueCards("ko", [{ ...bill, editorial_image: undefined }]).some((card) => card.to.includes("selection-check")), "Bills without verified artwork must not be promoted");
+  assert(!getHotIssueCards("ko", [{ ...bill, editorial_image: { status: "error" } }]).some((card) => card.to.includes("selection-check")), "Image failures must not become logo cards");
   console.log("Hot-issue selection checks passed. Homepage candidates:");
   console.table(selected.map((card) => ({ date: card.updatedAt, title: card.title, path: card.to })));
 } finally {
