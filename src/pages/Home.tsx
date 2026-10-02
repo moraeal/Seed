@@ -1,5 +1,5 @@
-import { ArrowRight, Clock } from "lucide-react";
-import { useEffect, useState } from "react";
+import { ArrowRight, Clock, Pause, Play } from "lucide-react";
+import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import FeaturedStoryMedia from "../components/FeaturedStoryMedia";
 import SafeImage from "../components/SafeImage";
@@ -30,6 +30,88 @@ const resolveImageSrc = (src?: string) => {
   if (/^https?:\/\//i.test(src)) return src;
   return `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 };
+
+function HotIssueCarousel({ children, count, ko }: { children: (index: number, visible: boolean) => ReactNode; count: number; ko: boolean }) {
+  const [position, setPosition] = useState(0);
+  const [slots, setSlots] = useState(4);
+  const [resetting, setResetting] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const [interacting, setInteracting] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const visibleCount = Math.min(slots, count);
+
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1280px)");
+    const tablet = window.matchMedia("(min-width: 640px)");
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => {
+      setSlots(desktop.matches ? 4 : tablet.matches ? 2 : 1);
+      setReducedMotion(motion.matches);
+    };
+    update();
+    for (const query of [desktop, tablet, motion]) query.addEventListener("change", update);
+    return () => { for (const query of [desktop, tablet, motion]) query.removeEventListener("change", update); };
+  }, []);
+
+  useEffect(() => {
+    setPosition(0);
+    setResetting(false);
+  }, [count]);
+
+  useEffect(() => {
+    if (count < 2 || paused || interacting) return;
+    const timer = window.setInterval(() => {
+      if (document.hidden) return;
+      setPosition((current) => reducedMotion ? (current + 1) % count : Math.min(current + 1, count));
+    }, 5000);
+    return () => window.clearInterval(timer);
+  }, [count, paused, interacting, reducedMotion]);
+
+  useEffect(() => {
+    if (!resetting) return;
+    let nextFrame = 0;
+    const frame = window.requestAnimationFrame(() => {
+      nextFrame = window.requestAnimationFrame(() => setResetting(false));
+    });
+    return () => { window.cancelAnimationFrame(frame); window.cancelAnimationFrame(nextFrame); };
+  }, [resetting]);
+
+  if (!count) return null;
+  return (
+    <div className="mt-4" role="region" aria-roledescription={ko ? "슬라이드 목록" : "carousel"} aria-label={ko ? "핫이슈 기사 목록" : "Hot issue stories"}>
+      <div
+        className="overflow-hidden p-1 -m-1"
+        onMouseEnter={() => setInteracting(true)}
+        onMouseLeave={(event) => setInteracting(event.currentTarget.contains(document.activeElement))}
+        onFocusCapture={() => setInteracting(true)}
+        onBlurCapture={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setInteracting(false);
+        }}
+      >
+        <div
+          className="flex items-stretch gap-4 sm:gap-5 [--hot-gap:1rem] sm:[--hot-gap:1.25rem]"
+          style={{
+            "--hot-slots": visibleCount,
+            transform: `translateX(calc(-${position} * (100% + var(--hot-gap)) / var(--hot-slots)))`,
+            transition: resetting || reducedMotion ? "none" : "transform 500ms ease-in-out",
+          } as CSSProperties}
+          onTransitionEnd={(event) => {
+            if (event.target === event.currentTarget && event.propertyName === "transform" && position === count) {
+              setResetting(true);
+              setPosition(0);
+            }
+          }}
+        >
+          {Array.from({ length: count + (count > 1 ? visibleCount : 0) }, (_, index) => {
+            const visible = index >= position && index < position + visibleCount;
+            return <div key={index} className="min-w-0 shrink-0" style={{ flexBasis: "calc((100% - (var(--hot-slots) - 1) * var(--hot-gap)) / var(--hot-slots))" }} aria-hidden={!visible}>{children(index % count, visible)}</div>;
+          })}
+        </div>
+      </div>
+      {count > 1 && <div className="mt-3 flex justify-end"><button type="button" onClick={() => setPaused((value) => !value)} aria-pressed={paused} className="inline-flex items-center gap-1.5 rounded px-2 py-1 text-xs font-semibold text-charcoal/60 hover:text-green-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">{paused ? <Play size={13} aria-hidden="true"/> : <Pause size={13} aria-hidden="true"/>}{paused ? (ko ? "자동 넘김 재생" : "Resume rotation") : (ko ? "자동 넘김 멈춤" : "Pause rotation")}</button></div>}
+    </div>
+  );
+}
 
 type HomeWatchCommentary = {
   slug: string;
@@ -134,6 +216,7 @@ export default function Home() {
   const visibleHotIssueCards = featuredReady && billsReady ? selectHotIssueCards(
     getHotIssueCards(language, legislativeBills, featuredHistory),
     claimedHomePaths,
+    8,
   ) : [];
   for (const card of visibleHotIssueCards) claimedHomePaths.add(getHomeTopic(card.to));
 
@@ -422,18 +505,21 @@ export default function Home() {
           </div>
 
           {visibleHotIssueCards.length === 0 && <p className="mt-4 text-sm text-charcoal/55" role="status">{!featuredReady || !billsReady ? (ko ? "불러오는 중입니다." : "Loading stories.") : historyError ? (ko ? "소개한 글을 불러오지 못했습니다. 잠시 후 다시 확인해주세요." : "Could not load featured stories. Please try again shortly.") : (ko ? "메인에서 소개한 지난 글이 이곳에 차례로 쌓입니다." : "Previously featured stories will appear here in order.")}</p>}
-          <div className="mt-4 grid gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
-            {visibleHotIssueCards.map((item, index) => (
+          <HotIssueCarousel key={visibleHotIssueCards.map((card) => card.id).join("|")} count={visibleHotIssueCards.length} ko={ko}>
+            {(index, visible) => {
+              const item = visibleHotIssueCards[index];
+              return (
               <Link
                 key={item.id}
                 to={item.to}
+                tabIndex={visible ? 0 : -1}
                 className="group flex h-full flex-col overflow-hidden border-t-[3px] border-green-deep bg-white shadow-[0_10px_26px_rgba(20,55,45,.055)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(20,55,45,.11)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4"
               >
                 <div className="overflow-hidden bg-ivory">
                   <SafeImage
                     src={resolveImageSrc(item.imageSrc)}
                     alt={item.imageAlt}
-                    loading={index < 2 ? "eager" : "lazy"}
+                    loading="eager"
                     referrerPolicy="no-referrer"
                     className="aspect-[16/9] w-full object-cover transition duration-500 group-hover:scale-[1.02]"
                   />
@@ -448,8 +534,9 @@ export default function Home() {
                   <span className="mt-auto inline-flex items-center justify-end gap-1.5 pt-3 text-[11px] font-extrabold text-green-deep">{ko ? "이슈 보기" : "View issue"}<ArrowRight size={13} className="transition-transform group-hover:translate-x-1" aria-hidden="true"/></span>
                 </div>
               </Link>
-            ))}
-          </div>
+              );
+            }}
+          </HotIssueCarousel>
         </div>
       </section>
 
