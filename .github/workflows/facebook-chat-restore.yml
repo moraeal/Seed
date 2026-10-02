@@ -1,0 +1,20 @@
+name: Create Facebook chat restore tag
+on:
+  push:
+    branches: [maintenance/facebook-chat-restore-20261002]
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Tag verified main before Facebook chat integration
+        run: |
+          test "$(git rev-parse origin/main)" = "59999a588b27df41f9bb71fcd8d105c0d6cb4383"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a restore/20261002-1910-facebook-chat 59999a588b27df41f9bb71fcd8d105c0d6cb4383 -m "Before isolated Facebook chat command bridge; verified Pages build 36973937256"
+          git push origin refs/tags/restore/20261002-1910-facebook-chat
