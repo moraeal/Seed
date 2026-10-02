@@ -4,7 +4,7 @@ on:
     branches: [recovery/featured-history-20261002]
     paths: [.github/workflows/recover-featured-history.yml]
 permissions:
-  contents: read
+  contents: write
   actions: read
 jobs:
   recover:
@@ -68,3 +68,21 @@ jobs:
                           records[path] = {'content_path': path, 'featured_at': timestamp}
           print('FEATURED_HISTORY_RECORDS=' + json.dumps(sorted(records.values(), key=lambda r: r['featured_at'], reverse=True), ensure_ascii=True))
           print('BACKUPS_CHECKED=' + str(sum(not a['expired'] and a['name'].startswith('seedvoice-supabase-') for a in artifacts)))
+      - name: Create restore tag before archive repair
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: python
+        run: |
+          import json, os, urllib.request
+          root = 'https://api.github.com/repos/' + os.environ['GH_REPO']
+          def request(path, data=None):
+              body = None if data is None else json.dumps(data).encode()
+              req = urllib.request.Request(root + path, data=body, headers={'Authorization': 'Bearer ' + os.environ['GH_TOKEN'], 'Accept': 'application/vnd.github+json'})
+              with urllib.request.urlopen(req, timeout=30) as response:
+                  return json.load(response)
+          head = request('/git/ref/heads/main')['object']['sha']
+          name = 'restore/20261002-0313-hot-issue-list'
+          tag = request('/git/tags', {'tag': name, 'message': 'Before recovering operator-selected homepage history and restoring Hot Issues', 'object': head, 'type': 'commit'})
+          request('/git/refs', {'ref': 'refs/tags/' + name, 'sha': tag['sha']})
+          print('Restore tag saved at main commit ' + head)
