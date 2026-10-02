@@ -143,7 +143,6 @@ export default function Home() {
   const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[ko ? seedLanguageArticle.term : getSeedLanguageEnvironmentArticle(seedLanguageArticle.slug, "ko")?.term ?? getSeedLanguageArticle(seedLanguageArticle.slug, "ko")?.term ?? ""] : undefined;
   const visibleHotIssueCards = selectHotIssueCards(
     getHotIssueCards(language, legislativeBills, featuredHistory),
-    claimedHomePaths,
   );
 
   const civicWatchCandidates: HomeCivicWatchItem[] = [

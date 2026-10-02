@@ -28,10 +28,12 @@ try {
   assert.equal(reselected[0].to, picks[0].path);
   assert.equal(reselected.length, cards.length, "A repeated selection moves a route instead of duplicating it");
   assert.equal(getHotIssueCards("ko", [], [...history, { content_path: "/columns/missing", featured_at: "2026-10-03T03:00:00Z" }, { content_path: picks[0].path, featured_at: "invalid" }]).length, cards.length, "Unavailable records must be skipped without substituting unrelated articles");
-  const claimed = new Set([getHomeTopic(picks[5].path)]);
-  const selected = selectHotIssueCards(reselected, claimed);
+  const selected = selectHotIssueCards(reselected);
   assert.equal(selected.length, 4);
-  assert(!selected.some((card) => getHomeTopic(card.to) === getHomeTopic(picks[5].path)), "Higher homepage positions prevent duplicate topics");
+  assert.deepEqual(selected, reselected.slice(0, 4), "The homepage preserves operator selection order, including records also shown above");
+  const onlyCurrent = getHotIssueCards("ko", [], [{ content_path: picks[0].path, featured_at: "2026-10-02T00:55:00Z" }]);
+  assert.equal(selectHotIssueCards(onlyCurrent).length, 1, "A sole current selection must not disappear from Hot Issues");
+  assert.equal(selected.filter((card) => getHomeTopic(card.to) === getHomeTopic(picks[5].path)).length, 2, "Independently selected articles on one topic keep their archive positions");
   const english = getHotIssueCards("en", [], history);
   assert.deepEqual(english.map((card) => card.id), cards.map((card) => card.id));
   assert.notEqual(english[0].title, cards[0].title, "The same selections must have translated titles");

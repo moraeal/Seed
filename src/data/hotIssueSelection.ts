@@ -2,7 +2,6 @@ import type { Language } from "../i18n";
 import type { LegislativeBill } from "../lib/legislativeMonitoring";
 import { getFeaturedContentCandidates } from "./featuredContent";
 import type { FeaturedHistoryEntry } from "./featuredHistory";
-import { getHomeTopic } from "./homeTopics";
 
 export type HotIssueCard = {
   id: string;
@@ -40,14 +39,8 @@ export function getHotIssueCards(language: Language, legislativeBills: Legislati
     });
 }
 
-export function selectHotIssueCards(cards: HotIssueCard[], claimedTopics: Set<string>, limit = 4): HotIssueCard[] {
-  const selected: HotIssueCard[] = [];
-  for (const card of cards) {
-    if (selected.length >= limit) break;
-    const topics = card.paths.map(getHomeTopic);
-    if (topics.some((topic) => claimedTopics.has(topic))) continue;
-    topics.forEach((topic) => claimedTopics.add(topic));
-    selected.push(card);
-  }
-  return selected;
+// This is the operator's ordered feature archive, including the current pick.
+// Other homepage placements must not remove records or change their order.
+export function selectHotIssueCards(cards: HotIssueCard[], limit = 4): HotIssueCard[] {
+  return cards.slice(0, limit);
 }
