@@ -138,7 +138,7 @@ export default function Insights() {
     try {
       const savedPath = await setFeaturedContentPath(session, path);
       setFeaturedPath(savedPath);
-      setFeaturedNotice(ko ? "메인기사를 변경했습니다. 메인페이지에 바로 반영됩니다." : "The featured story has been updated." );
+      setFeaturedNotice(ko ? "메인기사를 변경했습니다. 메인 소개 이력과 핫이슈에도 반영됩니다." : "The featured story and Hot Issues history have been updated." );
     } catch {
       setFeaturedNotice(ko ? "메인기사를 변경하지 못했습니다. 잠시 후 다시 시도해주세요." : "Could not update the featured story." );
     } finally {

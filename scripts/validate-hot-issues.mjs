@@ -5,38 +5,45 @@ const server = await createServer({ configFile: false, appType: "custom", server
 try {
   const { getHotIssueCards, selectHotIssueCards } = await server.ssrLoadModule("/src/data/hotIssueSelection.ts");
   const { getHomeTopic } = await server.ssrLoadModule("/src/data/homeTopics.ts");
-  const { getHotIssueClusters, getHotIssueClusterForArticle } = await server.ssrLoadModule("/src/data/hotIssueClusters.ts");
   const { getFeaturedContentCandidates } = await server.ssrLoadModule("/src/data/featuredContent.ts");
-  const cards = getHotIssueCards("ko");
-  assert(cards.some((card) => card.to === "/columns/civic-groups-audit-lawmakers-evaluation-criteria-2026"), "New public-interest columns must enter the pool");
-  assert(cards.some((card) => card.to === "/columns/factory-investment-staffing-freedom-2026"), "Ordinary current-issue columns must enter the pool");
-  assert(cards.some((card) => card.to.startsWith("/briefings/")), "Briefings must enter the pool");
-  assert(cards.some((card) => card.to.startsWith("/monitoring/tax/")), "Tax watch must enter the pool");
-  assert(!cards.some((card) => card.to.includes("the-day-i-did-not-post-a-photo") || card.to.startsWith("/seed-language/")), "Poems and glossary entries belong in their own sections");
-  const dmz = cards.find((card) => card.id === "dmz-blast-investigation");
-  assert(dmz.updatedAt >= "2026-09-30", "The September 30 follow-up must refresh the old September 28 collection");
-  assert(dmz.paths.includes("/monitoring/dmz-mine-blast-2026") && dmz.paths.includes("/columns/dmz-mine-response-accountability-2026"), "Tracker and commentary must join the same collection");
-  assert.equal(getHotIssueClusterForArticle("column", "dmz-mine-response-accountability-2026", "ko")?.id, dmz.id, "New follow-ups must link back to their collection");
+  const { formatFeaturedDate } = await server.ssrLoadModule("/src/data/featuredHistory.ts");
   const candidates = getFeaturedContentCandidates("ko");
-  const nextDate = new Date(Date.parse(`${cards[0].updatedAt.slice(0, 10)}T00:00:00Z`) + 86400000).toISOString().slice(0, 10);
-  const futureDmz = { ...candidates.find((item) => item.path === "/columns/dmz-mine-response-accountability-2026"), date: nextDate, summary: "A verified new development" };
-  const refreshedDmz = getHotIssueClusters("ko", [futureDmz]).find((cluster) => cluster.id === dmz.id);
-  assert.equal(refreshedDmz.updatedAt, nextDate);
-  assert.equal(refreshedDmz.latestChange, "A verified new development", "Follow-up refresh must not need a collection edit");
-  const claimed = new Set([getHomeTopic("/monitoring/legislation/commentary/nuclear-submarine-special-act-oversight"), getHomeTopic("/news/debt-relief-repaid-borrowers-fairness-2026"), getHomeTopic("/briefings/farmland-census-elderly-farmers-retirement"), getHomeTopic("/monitoring/public-institution-reform-109")]);
-  const selected = selectHotIssueCards(cards, claimed);
+  const picks = [
+    candidates.find((item) => item.path === "/columns/citizenization-kimchi-jar-freedom-2026"),
+    candidates.find((item) => item.category === "briefing"),
+    candidates.find((item) => item.category === "language"),
+    candidates.find((item) => item.path.startsWith("/monitoring/tax/")),
+    candidates.find((item) => item.path === "/columns/dmz-mine-response-accountability-2026"),
+    candidates.find((item) => item.path === "/monitoring/dmz-mine-blast-2026"),
+  ];
+  assert(picks.every(Boolean), "Fixtures must be real published articles");
+  const history = picks.map((item, index) => ({ content_path: item.path, featured_at: `2026-09-${String(20 + index).padStart(2, "0")}T03:00:00Z` }));
+  const cards = getHotIssueCards("ko", [], history);
+  assert.equal(getHotIssueCards("ko").length, 0, "Unrecorded articles must never fill the list");
+  assert.deepEqual(cards.map((card) => card.to), picks.map((item) => item.path).reverse(), "Homepage selection date, not publication date, determines order");
+  assert(cards.every((card) => card.id === card.to && card.paths.length === 1), "Link directly to the selected article, never an expanded collection");
+  assert(cards.some((card) => card.to.startsWith("/seed-language/")), "Selected glossary articles must qualify");
+  assert.equal(cards.filter((card) => getHomeTopic(card.to) === getHomeTopic(picks[4].path)).length, 2, "Distinct selected articles on one topic remain in the archive");
+  const reselected = getHotIssueCards("ko", [], [...history, { content_path: picks[0].path, featured_at: "2026-10-02T03:00:00Z" }]);
+  assert.equal(reselected[0].to, picks[0].path);
+  assert.equal(reselected.length, cards.length, "A repeated selection moves a route instead of duplicating it");
+  assert.equal(getHotIssueCards("ko", [], [...history, { content_path: "/columns/missing", featured_at: "2026-10-03T03:00:00Z" }, { content_path: picks[0].path, featured_at: "invalid" }]).length, cards.length, "Unavailable records must be skipped without substituting unrelated articles");
+  const claimed = new Set([getHomeTopic(picks[5].path)]);
+  const selected = selectHotIssueCards(reselected, claimed);
   assert.equal(selected.length, 4);
-  assert(!selected.some((card) => card.id === "public-institution-reform"), "Higher placements must still prevent subject duplicates");
-  const english = getHotIssueCards("en");
-  assert.deepEqual(english.map((card) => card.id), cards.map((card) => card.id), "Both languages must select identical issues");
-  assert.notEqual(english.find((card) => card.id === dmz.id).latestChange, dmz.latestChange);
-  const bill = { slug: "selection-check", title: "Verified published bill", review_state: "published", editorial_updated_at: nextDate, analysis: {}, editorial_image: { status: "ready", src: "https://example.org/verified.jpg", alt_ko: "Law illustration", alt_en: "Law illustration", verified_at: new Date().toISOString() }, public_summary_ko: "A substantive legislative update" };
-  assert.equal(getHotIssueCards("ko", [bill])[0].to, "/monitoring/legislation/selection-check", "A new legislative issue must enter without a homepage edit");
-  assert(!getHotIssueCards("ko", [{ ...bill, review_state: "review" }]).some((card) => card.to.includes("selection-check")), "Unpublished bills must never enter the pool");
-  assert(!getHotIssueCards("ko", [{ ...bill, editorial_image: undefined }]).some((card) => card.to.includes("selection-check")), "Bills without verified artwork must not be promoted");
-  assert(!getHotIssueCards("ko", [{ ...bill, editorial_image: { status: "error" } }]).some((card) => card.to.includes("selection-check")), "Image failures must not become logo cards");
-  console.log("Hot-issue selection checks passed. Homepage candidates:");
-  console.table(selected.map((card) => ({ date: card.updatedAt, title: card.title, path: card.to })));
+  assert(!selected.some((card) => getHomeTopic(card.to) === getHomeTopic(picks[5].path)), "Higher homepage positions prevent duplicate topics");
+  const english = getHotIssueCards("en", [], history);
+  assert.deepEqual(english.map((card) => card.id), cards.map((card) => card.id));
+  assert.notEqual(english[0].title, cards[0].title, "The same selections must have translated titles");
+  assert.equal(formatFeaturedDate("2026-10-01T16:00:00Z"), "2026.10.02", "Feature labels use the journal's Korea calendar");
+  const bill = { slug: "selection-check", title: "Verified published bill", review_state: "published", editorial_updated_at: "2026-10-05", analysis: {}, editorial_image: { status: "ready", src: "https://example.org/verified.jpg", alt_ko: "Law illustration", alt_en: "Law illustration", verified_at: "2026-10-02T00:00:00Z" }, public_summary_ko: "A substantive legislative update" };
+  assert(!getHotIssueCards("ko", [bill], history).some((card) => card.to.includes("selection-check")), "A fresh unselected bill must stay out");
+  const billHistory = [{ content_path: "/monitoring/legislation/selection-check", featured_at: "2026-10-02T00:00:00Z" }];
+  assert.equal(getHotIssueCards("ko", [bill], billHistory).length, 1);
+  for (const unavailable of [{ ...bill, review_state: "review" }, { ...bill, editorial_image: undefined }, { ...bill, editorial_image: { status: "error" } }]) {
+    assert.equal(getHotIssueCards("ko", [unavailable], billHistory).length, 0, "Unpublished or unverified bills must not be promoted");
+  }
+  console.log("Homepage-history selection checks passed.");
 } finally {
   await server.close();
 }

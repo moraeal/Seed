@@ -21,7 +21,8 @@ import { getHomeTopic } from "../data/homeTopics";
 import { seedLanguageTerms } from "../data/seedLanguageTerms";
 import { topicTaxonomy } from "../data/topicTaxonomy";
 import { useLanguage } from "../i18n";
-import { getFeaturedContentPath } from "../lib/featuredContent";
+import { useFeaturedContent } from "../hooks/useFeaturedContent";
+import { formatFeaturedDate } from "../data/featuredHistory";
 import { getPublishedLegislativeBills, type LegislativeBill } from "../lib/legislativeMonitoring";
 
 const resolveImageSrc = (src?: string) => {
@@ -83,9 +84,9 @@ const claimUnseen = <T,>(
 export default function Home() {
   const { language } = useLanguage();
   const ko = language === "ko";
-  const [featuredPath, setFeaturedPath] = useState<string | null>(null);
-  const [featuredReady, setFeaturedReady] = useState(false);
+  const { featuredPath, history: featuredHistory, ready: featuredReady, historyError } = useFeaturedContent();
   const [legislativeBills, setLegislativeBills] = useState<LegislativeBill[]>([]);
+  const [billsReady, setBillsReady] = useState(false);
   const [recommendedTopicPage, setRecommendedTopicPage] = useState(0);
   const [recommendedTopicsPaused, setRecommendedTopicsPaused] = useState(false);
   const allBriefings = getAllBriefingsNewestFirst();
@@ -105,7 +106,7 @@ export default function Home() {
   const featuredCandidates = getFeaturedContentCandidates(language, legislativeBills);
   const configuredLead = featuredCandidates.find((item) => item.path === featuredPath);
   const defaultFeaturedPath = leadColumn ? `/columns/${leadColumn.slug}` : featuredCandidates[0]?.path;
-  const featuredLead = featuredReady
+  const featuredLead = featuredReady && billsReady
     ? configuredLead
       ?? featuredCandidates.find((item) => item.path === defaultFeaturedPath)
       ?? featuredCandidates[0]
@@ -141,7 +142,7 @@ export default function Home() {
   );
   const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[ko ? seedLanguageArticle.term : getSeedLanguageEnvironmentArticle(seedLanguageArticle.slug, "ko")?.term ?? getSeedLanguageArticle(seedLanguageArticle.slug, "ko")?.term ?? ""] : undefined;
   const visibleHotIssueCards = selectHotIssueCards(
-    getHotIssueCards(language, legislativeBills),
+    getHotIssueCards(language, legislativeBills, featuredHistory),
     claimedHomePaths,
   );
 
@@ -276,13 +277,11 @@ export default function Home() {
 
   useEffect(() => {
     let active = true;
-    void Promise.allSettled([getFeaturedContentPath(), getPublishedLegislativeBills(1000)])
-      .then(([featuredResult, billsResult]) => {
-        if (!active) return;
-        if (featuredResult.status === "fulfilled") setFeaturedPath(featuredResult.value);
-        if (billsResult.status === "fulfilled") setLegislativeBills(billsResult.value);
-        setFeaturedReady(true);
-      });
+    void getPublishedLegislativeBills(1000).then((bills) => {
+      if (active) setLegislativeBills(bills);
+    }).catch(() => { /* Static published articles remain available. */ }).finally(() => {
+      if (active) setBillsReady(true);
+    });
     return () => { active = false; };
   }, []);
 
@@ -390,7 +389,7 @@ export default function Home() {
                 <Link to={latestHotIssue.to} className="group grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3 xl:first:pt-0">
                   <div className="overflow-hidden bg-green-deep"><SafeImage src={resolveImageSrc(latestHotIssue.imageSrc)} alt={latestHotIssue.imageAlt} referrerPolicy="no-referrer" className="aspect-[4/3] h-full max-h-[96px] w-full object-cover transition duration-500 group-hover:scale-[1.02]" /></div>
                   <div className="min-w-0">
-                    <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">HOT ISSUES</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "핫이슈 보기" : "View"}<ArrowRight size={11}/></span></div>
+                    <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">LATEST STORIES</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "기사 읽기" : "Read"}<ArrowRight size={11}/></span></div>
                     <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{latestHotIssue.title}</h2>
                     <p className="home-compact-summary mt-1 line-clamp-3">{latestHotIssue.summary}</p>
                   </div>
@@ -445,12 +444,13 @@ export default function Home() {
               <p className="section-kicker">HOT ISSUES</p>
               <h2 id="hot-issues-title" className="editorial-title mt-1 text-[1.45rem] font-bold text-navy sm:mt-1.5 sm:text-3xl">{ko ? "핫이슈" : "Hot Issues"}</h2>
               <p className="mt-1.5 text-[12px] font-medium leading-5 text-charcoal/55 sm:text-sm sm:leading-6">
-                {ko ? "시민과 기업의 자유, 공익에 닿는 현안을 새 기사와 확인된 변화 중심으로 골라 읽습니다." : "Current issues affecting freedom and the public interest, refreshed with new reporting and verified developments."}
+                {ko ? "메인에서 소개한 글을 최근에 올린 순서대로 다시 읽습니다." : "Revisit stories featured on our homepage, with the most recently featured first."}
               </p>
             </div>
             <Link to="/news" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link>
           </div>
 
+          {visibleHotIssueCards.length === 0 && <p className="mt-4 text-sm text-charcoal/55" role="status">{!featuredReady ? (ko ? "불러오는 중입니다." : "Loading stories.") : historyError ? (ko ? "소개한 글을 불러오지 못했습니다. 잠시 후 다시 확인해주세요." : "Could not load featured stories. Please try again shortly.") : (ko ? "메인에서 소개한 지난 글이 이곳에 차례로 쌓입니다." : "Previously featured stories will appear here in order.")}</p>}
           <div className="mt-4 grid gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
             {visibleHotIssueCards.map((item, index) => (
               <Link
@@ -469,8 +469,8 @@ export default function Home() {
                 </div>
                 <div className="flex flex-1 flex-col p-4">
                   <div className="flex items-center justify-between gap-3 text-[10px] font-semibold text-charcoal/40">
-                    <span>{ko ? "최근 변화" : "LATEST CHANGE"}</span>
-                    <time>{item.updatedAt.replace(/-/g, ".")}</time>
+                    <span>{ko ? "메인 소개일" : "FEATURED ON"}</span>
+                    <time>{formatFeaturedDate(item.updatedAt)}</time>
                   </div>
                   <h3 className="editorial-title mt-2 line-clamp-3 break-keep text-[1.08rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.18rem]">{item.title}</h3>
                   <p className="mt-1.5 line-clamp-2 text-[12px] leading-5 text-charcoal/58 sm:text-[13px]">{item.latestChange}</p>

@@ -1,4 +1,5 @@
 import type { AuthSession } from "../auth";
+import type { FeaturedHistoryEntry } from "../data/featuredHistory";
 
 const supabaseUrl = (import.meta.env.VITE_SUPABASE_URL || "https://wajlmbahjyazkftwaeem.supabase.co").replace(/\/$/, "");
 const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
@@ -19,6 +20,18 @@ export async function getFeaturedContentPath(): Promise<string | null> {
   if (!response.ok) throw new Error(`Could not load featured content (${response.status})`);
   const rows = await response.json() as { content_path?: string }[];
   return rows[0]?.content_path?.trim() || null;
+}
+
+export async function getFeaturedContentHistory(): Promise<FeaturedHistoryEntry[]> {
+  const history: FeaturedHistoryEntry[] = [];
+  const pageSize = 1000;
+  for (let offset = 0; ; offset += pageSize) {
+    const response = await fetch(`${supabaseUrl}/rest/v1/homepage_featured_history?select=content_path,featured_at&order=featured_at.desc,content_path.asc&limit=${pageSize}&offset=${offset}`, { headers: headers() });
+    if (!response.ok) throw new Error(`Could not load feature history (${response.status})`);
+    const rows = await response.json() as FeaturedHistoryEntry[];
+    history.push(...rows);
+    if (rows.length < pageSize) return history;
+  }
 }
 
 export async function setFeaturedContentPath(session: AuthSession, path: string): Promise<string> {
