@@ -14,9 +14,9 @@ export const mfdsSaucePortioningColumn: SeedColumn = {
   "readMinutes": 5,
   "summary": "10월 1일부터 시행된 식약처의 소스류 위생적 소분 기준은 손님끼리 음식을 나누는 행위 자체를 금지한다는 뜻이 아니다. 오염 방지의 효과와 영업자의 부담을 함께 확인하고, 이용자의 책임과 비례적인 집행으로 식탁의 자율을 지켜야 한다.",
   "heroImage": {
-    "src": "images/columns/mfds-civic-freedom-2026/hero.webp",
-    "alt": "김치항아리에 개인 젓가락을 넣는 손과 옆에 놓인 공용 집게, 빈 접시를 든 다른 손님의 손",
-    "caption": "한 사람의 편의가 공용 음식의 위생과 옆 사람의 선택을 해칠 수 있다.",
+    "src": "images/columns/mfds-sauce-portioning-2026/hero.webp",
+    "alt": "식당 조리대에서 국자로 소스를 작은 흰색 그릇에 덜어 담는 손과 나란히 놓인 소스 그릇들",
+    "caption": "소스를 나누어 담는 현장에서 위생의 효과와 영업자의 부담을 함께 살펴야 한다.",
     "credit": "AI 이미지",
     "sourceUrl": ""
   },

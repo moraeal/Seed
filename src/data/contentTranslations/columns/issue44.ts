@@ -6,8 +6,8 @@ export const issue44: ColumnTranslation = {
   "author": "Little Seed",
   "summary": "South Korea’s hygienic sauce portioning requirement took effect on October 1. It does not mean that diners are forbidden to share food. Its effectiveness and costs must be assessed together, with responsible users and proportionate enforcement protecting everyday autonomy.",
   "heroImage": {
-    "alt": "A hand puts personal chopsticks into a kimchi jar while unused serving tongs lie beside it and another diner waits with an empty plate",
-    "caption": "One person’s convenience can compromise shared food and the next diner’s choices.",
+    "alt": "Hands ladle sauce into small white bowls arranged on a restaurant preparation counter",
+    "caption": "Sauce portioning should be assessed for both its hygiene benefits and the burden it places on restaurant operators.",
     "credit": "AI image"
   },
   "inlineImage": {
