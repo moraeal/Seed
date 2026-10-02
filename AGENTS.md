@@ -36,3 +36,9 @@
 - Before any large change, create and push an annotated restore tag from the current verified `main` state. Large changes include multi-file layout refactors, authentication or database work, deployment configuration, publishing automation, and changes that can affect many articles or routes. Name the tag `restore/YYYYMMDD-HHMM-<short-label>`.
 - After the change, run the relevant checks and the full production build, deploy, and verify the operating site before declaring success. If a regression appears, prefer a new `git revert` commit back to the last verified state instead of rewriting shared history.
 - Keep the encrypted Supabase database backup and encrypted full Git repository backup workflows enabled. Their Google Drive copies are disaster-recovery backups; Git history and restore tags remain the first choice for routine rollback.
+
+## Facebook operations from chat
+
+- The connected administrative Supabase tool can execute authorized Facebook commands through `seed_facebook_chat.submit`. Read `docs/facebook-chat-operations.md` before using it. The Page API ID is `1438854115971733`; use a unique request key per intended command and reuse it when checking an existing command.
+- Preview public test wording before posting. Submit create/update/delete only when the user has authorized that operation and its copy. Read the recorded job result before claiming success. Do not automatically retry pending, processing or uncertain writes.
+- Facebook tokens remain in Edge Function Secrets; dispatch credentials remain in Vault. Never retrieve or print tokens, service keys, Vault contents or request headers. No recurring Facebook publication schedule is enabled by the chat bridge.
