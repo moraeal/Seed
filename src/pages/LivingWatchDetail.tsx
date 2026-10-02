@@ -41,6 +41,9 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
   const t = (value: LocalizedText) => value[language];
   const layered = item.displayMode === "layered";
   const articleWidthHeader = item.slug === "supreme-court-renomination-tracker-2026";
+  const controversies = item.currentControversies ?? [];
+  const openQuestions = controversies.length ? [] : item.questions;
+  const hasRemainingItems = controversies.length > 0 || openQuestions.length > 0;
   const timelineLabels: Record<WatchTimelineStatus, string> = {
     confirmed: ko ? "확인" : "VERIFIED",
     response: ko ? "해명" : "RESPONSE",
@@ -317,7 +320,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
           </section>
         )}
 
-        <section className={`${layered ? "mt-10" : "mt-12"} grid gap-8 lg:grid-cols-2`} aria-label={ko ? "사실과 남은 논란" : "Facts and unresolved controversies"}>
+        <section className={`${layered ? "mt-10" : "mt-12"} grid gap-8 ${hasRemainingItems ? "lg:grid-cols-2" : ""}`} aria-label={ko ? "확인된 사실과 남은 쟁점" : "Established facts and open issues"}>
           <div>
             <div className="border-b-2 border-green-deep pb-4">
               <span className="section-kicker">FACTS SO FAR</span>
@@ -333,17 +336,22 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
             </ul>
           </div>
 
-          {!!item.currentControversies?.length && (
+          {hasRemainingItems && (
             <div>
               <div className="border-b-2 border-gold pb-4">
-                <span className="section-kicker">STILL IN DISPUTE</span>
-                <h2 className="mt-1.5 text-2xl font-extrabold text-navy">{item.sectionHeadings?.controversies ? t(item.sectionHeadings.controversies) : (ko ? "아직 논란 중인 부분" : "What remains disputed")}</h2>
+                <span className="section-kicker">{controversies.length ? "STILL IN DISPUTE" : "OPEN QUESTIONS"}</span>
+                <h2 className="mt-1.5 text-2xl font-extrabold text-navy">{controversies.length ? (item.sectionHeadings?.controversies ? t(item.sectionHeadings.controversies) : (ko ? "아직 논란 중인 부분" : "What remains disputed")) : (ko ? "아직 답이 필요한 질문" : "Questions still awaiting answers")}</h2>
               </div>
               <div className="mt-4 space-y-3">
-                {item.currentControversies.map((issue, index) => (
+                {controversies.map((issue, index) => (
                   <article key={index} className="border-l-4 border-gold bg-white p-5">
                     <h3 className="text-base font-extrabold leading-6 text-navy">{t(issue.title)}</h3>
                     <p className="mt-2 text-sm leading-7 text-charcoal/68">{t(issue.description)}</p>
+                  </article>
+                ))}
+                {openQuestions.map((question, index) => (
+                  <article key={`question-${index}`} className="border-l-4 border-gold bg-white p-5">
+                    <p className="text-sm leading-7 text-charcoal/68">{t(question)}</p>
                   </article>
                 ))}
               </div>
