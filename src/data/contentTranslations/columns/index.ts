@@ -1,3 +1,5 @@
+import { issue44 } from "./issue44";
+import { issue45 } from "./issue45";
 import { issue01 } from "./issue01";
 import { issue02 } from "./issue02";
 import { issue03 } from "./issue03";
@@ -87,4 +89,6 @@ export const columnTranslations: Record<number, ColumnTranslation> = {
   41: issue41,
   42: issue42,
   43: issue43,
+  44: issue44,
+  45: issue45,
 };

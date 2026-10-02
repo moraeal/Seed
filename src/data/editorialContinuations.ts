@@ -465,6 +465,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "column" && ["citizenization-kimchi-jar-freedom-2026", "mfds-sauce-portioning-autonomy-2026"].includes(slug)) return true;
   if (kind === "briefing" && slug === "real-estate-supervisor-citizen-freedom-property-rights") return true;
   if (kind === "column" && slug === "security-pride-vigilance-armed-forces-day-2026") return true;
   if (isBusinessSuccessionThreshold(kind, slug)) return true;
@@ -492,6 +493,8 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "citizenization-kimchi-jar-freedom-2026") return language === "ko" ? {"href": "/columns/mfds-sauce-portioning-autonomy-2026", "title": "소스 소분 고시, 위생과 자율을 함께 지킬 수는 없나", "relationship": "관련 논평", "reason": "위생 기준의 적용 범위와 영업자의 부담을 함께 살펴봅니다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"} : {"href": "/columns/mfds-sauce-portioning-autonomy-2026", "title": "Sauce Portioning Rules: Can We Protect Hygiene and Autonomy Together?", "relationship": "RELATED COMMENTARY", "reason": "Examine the scope of the hygiene standard alongside the burden on operators.", "listHref": "/columns", "listLabel": "All Columns"};
+  if (kind === "column" && slug === "mfds-sauce-portioning-autonomy-2026") return language === "ko" ? {"href": "/columns/citizenization-kimchi-jar-freedom-2026", "title": "김치항아리 속 젓가락 하나가 모두의 자유를 줄인다", "relationship": "시민화 칼럼", "reason": "식탁에서 시작되는 시민의 책임과 생활의 자유를 이어서 읽습니다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"} : {"href": "/columns/citizenization-kimchi-jar-freedom-2026", "title": "One Pair of Chopsticks in a Kimchi Jar Can Shrink Everyone’s Freedom", "relationship": "CITIZENIZATION COLUMN", "reason": "Continue with civic responsibility and everyday freedom, beginning at the restaurant table.", "listHref": "/columns", "listLabel": "All Columns"};
   if (kind === "briefing" && slug === "real-estate-supervisor-citizen-freedom-property-rights") return realEstateCitizenFreedomContinuation[language];
   if (kind === "column" && slug === "security-pride-vigilance-armed-forces-day-2026") return securityPrideContinuation[language];
   if (isBusinessSuccessionThreshold(kind, slug)) return businessSuccessionContinuation[language];

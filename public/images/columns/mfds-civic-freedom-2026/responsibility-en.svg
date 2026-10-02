@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+<rect width="1200" height="620" fill="#fffdf7"/>
+<g font-family="Noto Sans KR,Arial,sans-serif" fill="#153d32">
+<text x="65" y="80" font-size="34" font-weight="700">Three responsibilities that sustain everyday freedom</text>
+<rect x="65" y="135" width="340" height="225" fill="#eaf2eb"/>
+<text x="89" y="186" font-size="25" font-weight="700">DINERS</text>
+<text x="89" y="245" font-size="20">Use serving utensils</text>
+<text x="89" y="287" font-size="19">Report contamination</text>
+<path d="M 235 375 V 412" stroke="#b39343" stroke-width="4"/><path d="M 224 401 L 235 414 L 246 401" fill="none" stroke="#b39343" stroke-width="4"/>
+<rect x="430" y="135" width="340" height="225" fill="#eaf2eb"/>
+<text x="454" y="186" font-size="25" font-weight="700">OPERATORS</text>
+<text x="454" y="245" font-size="20">Clean containers and tools</text>
+<text x="454" y="287" font-size="19">Store, replace and wash properly</text>
+<path d="M 600 375 V 412" stroke="#b39343" stroke-width="4"/><path d="M 589 401 L 600 414 L 611 401" fill="none" stroke="#b39343" stroke-width="4"/>
+<rect x="795" y="135" width="340" height="225" fill="#eaf2eb"/>
+<text x="819" y="186" font-size="25" font-weight="700">ADMINISTRATION</text>
+<text x="819" y="245" font-size="20">Clear hygiene standards</text>
+<text x="819" y="287" font-size="19">Enforcement proportionate to risk</text>
+<path d="M 965 375 V 412" stroke="#b39343" stroke-width="4"/><path d="M 954 401 L 965 414 L 976 401" fill="none" stroke="#b39343" stroke-width="4"/>
+<rect x="65" y="430" width="1070" height="95" fill="#153d32"/>
+<text x="600" y="489" text-anchor="middle" font-size="29" fill="#ffffff" font-weight="700">Everyday freedom that protects everyone’s choices</text>
+<text x="65" y="581" font-size="21" fill="#65726a">A conceptual map of responsibilities · not a statistical estimate</text>
+</g></svg>

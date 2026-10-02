@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+<rect width="1200" height="620" fill="#fffdf7"/>
+<g font-family="Noto Sans KR,Arial,sans-serif" fill="#153d32">
+<text x="65" y="80" font-size="34" font-weight="700">식탁의 자유를 지탱하는 세 가지 책임</text>
+<rect x="65" y="135" width="340" height="225" fill="#eaf2eb"/>
+<text x="89" y="186" font-size="25" font-weight="700">손님</text>
+<text x="89" y="245" font-size="25">공용 집게 사용</text>
+<text x="89" y="287" font-size="25">오염 발견 시 알림</text>
+<path d="M 235 375 V 412" stroke="#b39343" stroke-width="4"/><path d="M 224 401 L 235 414 L 246 401" fill="none" stroke="#b39343" stroke-width="4"/>
+<rect x="430" y="135" width="340" height="225" fill="#eaf2eb"/>
+<text x="454" y="186" font-size="25" font-weight="700">영업자</text>
+<text x="454" y="245" font-size="25">청결한 용기·도구</text>
+<text x="454" y="287" font-size="25">보관·교체·세척 관리</text>
+<path d="M 600 375 V 412" stroke="#b39343" stroke-width="4"/><path d="M 589 401 L 600 414 L 611 401" fill="none" stroke="#b39343" stroke-width="4"/>
+<rect x="795" y="135" width="340" height="225" fill="#eaf2eb"/>
+<text x="819" y="186" font-size="25" font-weight="700">행정</text>
+<text x="819" y="245" font-size="25">명확한 위생 기준</text>
+<text x="819" y="287" font-size="25">위험에 비례하는 집행</text>
+<path d="M 965 375 V 412" stroke="#b39343" stroke-width="4"/><path d="M 954 401 L 965 414 L 976 401" fill="none" stroke="#b39343" stroke-width="4"/>
+<rect x="65" y="430" width="1070" height="95" fill="#153d32"/>
+<text x="600" y="489" text-anchor="middle" font-size="33" fill="#ffffff" font-weight="700">서로의 선택을 지키는 생활의 자유</text>
+<text x="65" y="581" font-size="21" fill="#65726a">책임 관계를 정리한 개념도 · 통계 추정이 아님</text>
+</g></svg>
