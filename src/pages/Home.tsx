@@ -377,6 +377,19 @@ export default function Home() {
     (current) => (current + 1) % Math.ceil(topicTaxonomy.length / 4),
   );
 
+  // Do not paint the topic/navigation lists before the lead story is ready.
+  // Keep the footer below the viewport throughout both stages of startup.
+  if (!featuredReady || !billsReady) {
+    return (
+      <div className="container-page min-h-screen py-10" role="status" aria-label={ko ? "메인페이지 불러오는 중" : "Loading homepage"}>
+        <div className="min-h-[320px] animate-pulse overflow-hidden rounded-xl bg-[#e9efe4] lg:grid lg:grid-cols-2" aria-hidden="true">
+          <div className="space-y-5 p-8 lg:p-10"><div className="h-3 w-24 rounded bg-green-deep/15"/><div className="h-8 w-4/5 rounded bg-green-deep/15"/><div className="h-4 w-2/3 rounded bg-green-deep/10"/></div>
+          <div className="min-h-[180px] bg-green-deep/10" />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="home-page bg-paper">
       <section className="bg-[#E2E9E1]" aria-labelledby="recommended-series-title">
@@ -415,11 +428,6 @@ export default function Home() {
             <p className="mt-1 text-[13px] font-medium text-charcoal/55 sm:text-sm">{ko ? "오늘 씨앗이 주목하는 문제" : "What SEED is watching today"}</p>
           </div>
           <div className="grid gap-5 sm:gap-6 xl:grid-cols-[minmax(0,1.62fr)_minmax(390px,.92fr)] xl:items-stretch xl:gap-7">
-            {!featuredReady && (
-              <div className="h-full min-w-0" aria-hidden="true">
-                <div className="aspect-[16/8.55] w-full bg-green-deep/8 sm:aspect-[16/7.65]" />
-              </div>
-            )}
             {featuredLead && (
               <article className="group h-full min-w-0">
                 <FeaturedStoryMedia

@@ -65,7 +65,7 @@ function AppShell() {
       <Header />
       <main>
         <ArticleReadingAccess>
-        <Suspense fallback={<div className="container-page min-h-[48vh] py-10" role="status" aria-label={language === "en" ? "Loading page" : "페이지 불러오는 중"}>
+        <Suspense fallback={<div className="container-page min-h-screen py-10" role="status" aria-label={language === "en" ? "Loading page" : "페이지 불러오는 중"}>
           <div className="min-h-[320px] animate-pulse overflow-hidden rounded-xl bg-[#e9efe4] lg:grid lg:grid-cols-2" aria-hidden="true">
             <div className="space-y-5 p-8 lg:p-10"><div className="h-3 w-24 rounded bg-green-deep/15"/><div className="h-8 w-4/5 rounded bg-green-deep/15"/><div className="h-4 w-2/3 rounded bg-green-deep/10"/></div>
             <div className="min-h-[180px] bg-green-deep/10" />
