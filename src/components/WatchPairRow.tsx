@@ -16,7 +16,7 @@ export default function WatchPairRow({ article, record, ko, emptyRight, compactR
   return <article className="grid border-b border-green-deep/15 last:border-b-0 lg:grid-cols-[minmax(0,1.65fr)_minmax(280px,1fr)]">
     <div className="grid min-w-0 gap-5 px-5 py-6 md:grid-cols-[240px_1fr] md:items-center md:px-7">
       <Link to={source.href} className="group relative block overflow-hidden bg-green-deep">
-        <SafeImage src={source.image ? (source.image.startsWith("/") ? source.image : `${import.meta.env.BASE_URL}${source.image}`) : "/images/brand/editorial-image-fallback.svg"} alt={source.alt ?? source.title} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.025]"/>
+        <SafeImage src={source.image} alt={source.alt ?? source.title} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.025]"/>
         <span className="absolute bottom-2 left-2 bg-black/65 px-2 py-1 text-[10px] font-semibold text-white">{source.label}</span>
       </Link>
       {article ? content(article, "group block min-w-0") : <div className="min-w-0"><span className="text-xs font-bold text-charcoal/50">{ko ? "씨앗 논평 준비 중" : "Commentary pending"}</span>{content(record!, "group mt-2 block")}</div>}

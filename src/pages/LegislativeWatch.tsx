@@ -42,7 +42,7 @@ export default function LegislativeWatch() {
     const explainerBill = bills.find((item) => item.bill_no === "2221581");
     if (explainerBill) used.add(explainerBill.bill_id);
     const explainer = { key: "family-deduction", date: incomeTaxFamilyDeductionBriefing.date, article: { href: `/briefings/${incomeTaxFamilyDeductionBriefing.slug}`, label: ko ? "법안 설명 기사" : "BILL EXPLAINER", title: ko ? incomeTaxFamilyDeductionBriefing.title : incomeTaxFamilyDeductionTranslation.title, summary: ko ? incomeTaxFamilyDeductionBriefing.summary : incomeTaxFamilyDeductionTranslation.summary, image: incomeTaxFamilyDeductionBriefing.images?.[0]?.src, alt: ko ? incomeTaxFamilyDeductionBriefing.images?.[0]?.alt : incomeTaxFamilyDeductionTranslation.images?.[0]?.alt, date: incomeTaxFamilyDeductionBriefing.date }, record: explainerBill ? { href: sourceUrl(explainerBill) || `/monitoring/legislation/${explainerBill.slug}`, external: Boolean(sourceUrl(explainerBill)), detailHref: `/monitoring/legislation/${explainerBill.slug}`, detailLabel: ko ? "법안 쉽게 읽기" : "Read bill explainer", label: ko ? "법안 원문 · 의안 2221581" : "BILL SOURCE · 2221581", title: ko ? explainerBill.title : explainerBill.analysis?.title_en || explainerBill.title, summary: ko ? explainerBill.public_summary_ko || explainerBill.analysis?.summary_ko || explainerBill.official_summary || "국회 원문에서 개정안 내용을 확인하세요." : explainerBill.analysis?.official_rationale_en || explainerBill.public_summary_en || "Read the official proposal.", date: explainerBill.proposed_date || undefined } : { href: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221581/detailRP", external: true, label: ko ? "법안 원문 · 의안 2221581" : "BILL SOURCE · 2221581", title: ko ? "소득세법 일부개정법률안" : "Income Tax Act amendment", summary: ko ? "가족 기본공제 소득요건에 관한 제안 내용을 국회 공개 자료에서 확인하세요." : "Read the proposal on the family deduction income threshold.", date: incomeTaxFamilyDeductionBriefing.date } };
-    const remaining: Array<{ key: string; date: string; article?: WatchSide; record: WatchSide }> = bills.filter((bill) => !used.has(bill.bill_id)).map((bill) => ({
+    const remaining: Array<{ key: string; date: string; article?: WatchSide; record: WatchSide }> = bills.filter((bill) => !used.has(bill.bill_id) && bill.editorial_image?.status === "ready" && bill.editorial_image.src && bill.editorial_image.verified_at).map((bill) => ({
       key: bill.bill_id,
       date: bill.published_at || bill.proposed_date || "",
       article: {
@@ -50,7 +50,9 @@ export default function LegislativeWatch() {
         label: ko ? "쉽게 읽는 법안" : "BILL EXPLAINER",
         title: ko ? bill.title : bill.analysis?.title_en || bill.title,
         summary: ko ? bill.public_summary_ko || bill.analysis?.summary_ko || bill.official_summary || "제안 내용과 시민에게 생길 변화를 살펴봅니다." : bill.public_summary_en || bill.analysis?.summary_en || "Explore the proposal and its possible effects.",
-        date: bill.proposed_date || undefined,
+        image: bill.editorial_image!.src,
+        alt: (ko ? bill.editorial_image!.alt_ko : bill.editorial_image!.alt_en) || bill.title,
+        date: bill.published_at?.split("T")[0] || bill.proposed_date || undefined,
       },
       record: {
         href: sourceUrl(bill) || `/monitoring/legislation/${bill.slug}`,
