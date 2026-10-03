@@ -2,6 +2,7 @@ import { realEstateSupervisorColumn } from "./columns/realEstateSupervisorColumn
 import { issue32 } from "./contentTranslations/columns/issue32";
 import { pendingLegislativeCommentaries } from "./pendingLegislativeCommentaries";
 import { nuclearSubmarineWatch } from "./nuclearSubmarineWatch";
+import { childbirthPensionCreditWatch } from "./childbirthPensionCreditWatch";
 
 export type LegislativeCommentaryLanguage = "ko" | "en";
 
@@ -63,6 +64,7 @@ export const linkedLegislativeColumnCommentaries = [{
 }];
 
 export const legislativeCommentaries: LegislativeCommentary[] = [
+  childbirthPensionCreditWatch,
   nuclearSubmarineWatch,
   ...pendingLegislativeCommentaries,
   {
