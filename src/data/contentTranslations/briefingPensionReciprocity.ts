@@ -11,6 +11,13 @@ export const pensionReciprocityTranslation: BriefingTranslation = {
     "Legislation passed on October 1 extends reciprocity to back payments and dependent-family supplements. Those provisions take effect upon promulgation.",
     "Contributory rights should be protected, while additional public support and local voting rights need clear residence, contribution and reciprocity standards."
   ],
+  "sourceArticle": {
+    "title": "Exclusive: Overseas births expose a gap in Korea’s pension childbirth credits",
+    "publisher": "Asia Economy",
+    "imageAlt": "A National Pension consultation counter, pictured in the original Asia Economy report",
+    "imageCredit": "Photo: Yonhap News Agency · original Asia Economy report",
+    "note": "Asia Economy reported that foreign National Pension subscribers can receive childbirth credits for children born and raised abroad. With no separate requirement for the child to be born in or reside in South Korea, the report questions the link between eligibility and the policy’s domestic low-birthrate goals. It also cites a pension official’s concern that costs could increase as beneficiaries grow in number from the late 2030s."
+  },
   "content": [
     "Parents raising children in South Korea shoulder living and housing costs and career interruptions. If births to foreign subscribers whose children live abroad also generate additional Korean pension credit, whom is that support designed to help?"
   ],
