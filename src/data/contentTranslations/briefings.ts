@@ -1,3 +1,4 @@
+import { farmlandGovernmentExplanationTranslation } from "./briefingFarmlandGovernmentExplanation";
 import { realEstateSupervisorCitizenFreedomTranslation } from "./briefingRealEstateSupervisorCitizenFreedom";
 import type { BriefingTranslation } from "./types";
 import { briefingTranslations as legacyBriefingTranslations } from "./briefingsLegacy";
@@ -20,6 +21,7 @@ import { monthlyRentCreditExplainerTranslation } from "./briefingMonthlyRentCred
 import { farmlandRetirementTranslation } from "./briefingFarmlandRetirement";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "farmland-census-government-explanation": farmlandGovernmentExplanationTranslation,
   "real-estate-supervisor-citizen-freedom-property-rights": realEstateSupervisorCitizenFreedomTranslation,
   "farmland-census-elderly-farmers-retirement": farmlandRetirementTranslation,
   "real-estate-supervisor-bill-2221573-explained": realEstateSupervisorExplainerTranslation,
