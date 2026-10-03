@@ -30,7 +30,7 @@ const resolveImageSrc = (src?: string) => {
   return `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 };
 
-function HotIssueCarousel({ children, count, ko }: { children: (index: number, visible: boolean) => ReactNode; count: number; ko: boolean }) {
+function StoryCarousel({ children, count, ko, label }: { children: (index: number, visible: boolean) => ReactNode; count: number; ko: boolean; label: string }) {
   const [position, setPosition] = useState(0);
   const [slots, setSlots] = useState(4);
   const [resetting, setResetting] = useState(false);
@@ -77,7 +77,7 @@ function HotIssueCarousel({ children, count, ko }: { children: (index: number, v
 
   if (!count) return null;
   return (
-    <div className="mt-4" role="region" aria-roledescription={ko ? "슬라이드 목록" : "carousel"} aria-label={ko ? "핫이슈 기사 목록" : "Hot issue stories"}>
+    <div className="mt-4" role="region" aria-roledescription={ko ? "슬라이드 목록" : "carousel"} aria-label={label}>
       <div
         className="overflow-hidden p-1 -m-1"
         onMouseEnter={() => setInteracting(true)}
@@ -103,7 +103,7 @@ function HotIssueCarousel({ children, count, ko }: { children: (index: number, v
         >
           {Array.from({ length: count + (count > 1 ? visibleCount : 0) }, (_, index) => {
             const visible = index >= position && index < position + visibleCount;
-            return <div key={index} className="min-w-0 shrink-0" style={{ flexBasis: "calc((100% - (var(--hot-slots) - 1) * var(--hot-gap)) / var(--hot-slots))" }} aria-hidden={!visible}>{children(index % count, visible)}</div>;
+            return <div key={index} className="min-w-0 shrink-0" style={{ flexBasis: "calc((100% - (var(--hot-slots) - 1) * var(--hot-gap)) / var(--hot-slots))" }} aria-hidden={!visible} inert={!visible}>{children(index % count, visible)}</div>;
           })}
         </div>
       </div>
@@ -204,7 +204,7 @@ export default function Home() {
   for (const card of visibleHotIssueCards) claimedHomePaths.add(getHomeTopic(card.to));
 
   const newsTrackingCards = featuredReady && billsReady
-    ? selectNewsTrackingCards(getNewsTrackingCards(language), claimedHomePaths)
+    ? selectNewsTrackingCards(getNewsTrackingCards(language), claimedHomePaths, 8)
     : [];
   for (const card of newsTrackingCards) claimedHomePaths.add(getHomeTopic(card.to));
 
@@ -480,7 +480,7 @@ export default function Home() {
           </div>
 
           {visibleHotIssueCards.length === 0 && <p className="mt-4 text-sm text-charcoal/55" role="status">{!featuredReady || !billsReady ? (ko ? "불러오는 중입니다." : "Loading stories.") : historyError ? (ko ? "소개한 글을 불러오지 못했습니다. 잠시 후 다시 확인해주세요." : "Could not load featured stories. Please try again shortly.") : (ko ? "메인에서 소개한 지난 글이 이곳에 차례로 쌓입니다." : "Previously featured stories will appear here in order.")}</p>}
-          <HotIssueCarousel key={visibleHotIssueCards.map((card) => card.id).join("|")} count={visibleHotIssueCards.length} ko={ko}>
+          <StoryCarousel key={visibleHotIssueCards.map((card) => card.id).join("|")} count={visibleHotIssueCards.length} ko={ko} label={ko ? "핫이슈 기사 목록" : "Hot issue stories"}>
             {(index, visible) => {
               const item = visibleHotIssueCards[index];
               return (
@@ -511,7 +511,7 @@ export default function Home() {
               </Link>
               );
             }}
-          </HotIssueCarousel>
+          </StoryCarousel>
         </div>
       </section>
 
@@ -526,9 +526,9 @@ export default function Home() {
             <Link to="/monitoring?view=trackers" className="shrink-0 text-sm font-bold text-green-deep hover:underline">{ko ? "전체보기" : "View all"}</Link>
           </div>
           {newsTrackingCards.length > 0 ? (
-            <div className="mt-4 grid gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
-              {newsTrackingCards.map((card) => <NewsTrackingCard key={card.to} card={card} />)}
-            </div>
+            <StoryCarousel key={newsTrackingCards.map((card) => card.to).join("|")} count={newsTrackingCards.length} ko={ko} label={ko ? "뉴스트래킹 기사 목록" : "News tracking stories"}>
+              {(index) => <NewsTrackingCard card={newsTrackingCards[index]} />}
+            </StoryCarousel>
           ) : (
             <p className="mt-4 text-sm leading-6 text-charcoal/55" role="status">{!featuredReady || !billsReady ? (ko ? "불러오는 중입니다." : "Loading stories.") : (ko ? "메인에 소개된 추적 기사 외의 기록은 전체보기에서 확인할 수 있습니다." : "View all to find every tracker, including stories featured elsewhere on this page.")}</p>
           )}
