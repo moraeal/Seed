@@ -9,6 +9,22 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "seed-language:corporate-citizenship-company-and-people": {
+    ko: {
+      href: "/seed-language/citizen-as-seed",
+      title: "시민은 주어지는 이름이 아니라 자라나는 존재라는 말이다",
+      relationship: "기업시민과 시민의 성장",
+      reason: "기업 구성원 개인의 시민적 역량이 어떻게 공공의 실천으로 자라는지 이어서 살펴봅니다.",
+      listHref: "/seed-language", listLabel: "시민언어 전체 보기",
+    },
+    en: {
+      href: "/seed-language/citizen-as-seed",
+      title: "A Citizen Is Not a Given Label but a Growing Being",
+      relationship: "CORPORATE CITIZENSHIP AND CIVIC GROWTH",
+      reason: "Continue with how employees' individual civic capabilities can grow into public action.",
+      listHref: "/seed-language", listLabel: "All civic language entries",
+    },
+  },
   "column:robak-contract-freedom-third-party-rights-2026": {
   "ko": {
     "href": "/contributors",
