@@ -16,7 +16,7 @@ export const taxWatchCase: Briefing = {
   homeBriefingLeadEligible: false,
   keyHighlights: ["시민이 영수증과 지출 내역을 요구하는 일이 세금감시의 출발점입니다.", "문재인·윤석열 정부를 상대로 한 활동에서 같은 기준을 적용하는 감시 방법을 배울 수 있습니다.", "운동의 성과는 공개된 자료, 고쳐진 지출, 회수된 돈과 후속 조치로 나눠 확인해야 합니다."],
   images: [
-    { src: "images/civic/tax-watch-case-01.webp", alt: "시민의 손이 돋보기로 지출 영수증과 장부를 확인하는 모습", caption: "시민이 낸 돈의 쓰임을 확인하려면 지출 기록에 접근할 수 있어야 합니다.", credit: "AI 이미지", sourceUrl: "" },
+    { src: "images/civic/tax-watch-case-vault-v2.webp", alt: "닫힌 금고에서 나온 긴 영수증을 시민들이 함께 확인하는 모습", caption: "시민이 낸 돈의 쓰임을 확인하려면 지출 기록에 접근할 수 있어야 합니다.", credit: "AI 이미지", sourceUrl: "" },
     { src: "images/civic/tax-watch-method-ko.svg", alt: "정보공개 청구, 거부 사유 확인, 불복과 소송, 지출 검증, 시정 결과 확인으로 이어지는 세금감시 방법", caption: "정보공개는 감시의 첫 단계입니다. 씨앗은 지출 검증과 시정 결과까지 이어가는 방법을 제안합니다.", credit: "씨앗의 소리 · 활동 보도와 자체 분석", sourceUrl: "", afterSection: 2, contain: true },
   ],
   placeBodyImagesBySection: true,
@@ -77,7 +77,7 @@ export const civicHubTranslations: Record<string, BriefingTranslation> = {
     author: "SEED VOICE",
     keyHighlights: ["Citizens' requests for receipts and spending records are a starting point for tax scrutiny.", "Requests directed at both administrations show how a common standard can be applied across governments.", "Assess records released, spending corrected, money recovered, and follow-up action separately."],
     images: [
-      { alt: "A citizen's hands examine spending receipts and a ledger through a magnifying glass", caption: "Scrutiny of taxpayers' money depends on access to spending records.", credit: "AI image" },
+      { alt: "Citizens examine a long spending receipt emerging from a closed vault", caption: "Scrutiny of taxpayers' money depends on access to spending records.", credit: "AI image" },
       { src: "images/civic/tax-watch-method-en.svg", alt: "A method moving from a disclosure request to checking refusal grounds, appeals, spending review and verified corrective action", caption: "Disclosure starts the process. SEED proposes following the records through spending review and verified corrective action.", credit: "SEED VOICE · reporting and editorial analysis" },
     ],
     content: ["Governments collect citizens' taxes. Citizens should be able to ask how that money was spent. Tax notices specify deadlines and obligations. Why should a citizen need years of litigation to inspect government receipts?", "Our first tax-watch case study examines the Korean Taxpayers Association's requests and litigation concerning presidential spending. It illustrates how citizens can specify the records they need and respond when access is refused."],
