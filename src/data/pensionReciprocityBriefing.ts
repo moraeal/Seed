@@ -16,6 +16,7 @@ export const pensionReciprocityBriefing: Briefing = {
     "10월 1일 통과한 개정안은 추납·부양가족연금에 상호주의를 확대합니다. 해당 조항은 법 공포 후 즉시 시행하도록 정했습니다.",
     "보험료로 쌓은 권리를 지키면서, 추가 공적 지원과 지방선거권에는 거주·기여·상호 호혜의 기준을 분명히 해야 합니다."
   ],
+  "placeBodyImagesBySection": true,
   "images": [
     {
       "src": "images/briefings/pension-reciprocity-2026/hero.webp",
@@ -29,7 +30,8 @@ export const pensionReciprocityBriefing: Briefing = {
       "alt": "아이의 가방 옆에서 생활비 청구서와 계산기를 살펴보는 손",
       "caption": "국내에서 아이를 키우는 가정은 생활비와 주거비, 경력 단절의 부담을 감당합니다.",
       "credit": "AI 이미지",
-      "sourceUrl": ""
+      "sourceUrl": "",
+      "afterSection": 2
     },
     {
       "src": "images/briefings/pension-reciprocity-2026/eligibility-ko.svg",
@@ -55,7 +57,9 @@ export const pensionReciprocityBriefing: Briefing = {
     "publisher": "아시아경제",
     "publishedAt": "2026-10-01",
     "url": "https://n.news.naver.com/article/277/0005823351",
-    "imageSrc": "https://cphoto.asiae.co.kr/listimglink/1/2024091208254027335_1726097141.jpg",
+    "imageSrc": "images/briefings/pension-reciprocity-2026/asiae-source.jpg",
+    "imageFit": "natural",
+    "afterSection": 0,
     "imageAlt": "아시아경제 원기사에 실린 국민연금 상담창구 사진",
     "imageCredit": "사진: 연합뉴스 · 아시아경제 원기사",
     "note": "외국인 국민연금 가입자는 해외에서 태어나 해외에서 자라는 자녀에 대해서도 출산크레딧을 적용받을 수 있다고 보도했습니다. 자녀의 국내 출생이나 거주를 확인하는 별도 요건이 없어, 국내 저출생 대책의 목적과 지원 대상 사이에 빈틈이 있다는 지적입니다. 2030년대 후반 수혜자가 늘어날 경우 재정 부담이 커질 수 있다는 국민연금 관계자의 우려도 전했습니다."

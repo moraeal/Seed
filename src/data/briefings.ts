@@ -29,6 +29,7 @@ export type Briefing = {
     afterSection?: number;
     contain?: boolean;
   }[];
+  placeBodyImagesBySection?: boolean;
   sourceArticle?: {
     title: string;
     publisher: string;
@@ -37,6 +38,8 @@ export type Briefing = {
     imageSrc: string;
     imageAlt: string;
     imageCredit: string;
+    imageFit?: "natural";
+    afterSection?: number;
     note?: string;
   };
   content: string[];

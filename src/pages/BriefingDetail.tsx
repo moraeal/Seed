@@ -36,6 +36,24 @@ export default function BriefingDetail() {
     <InteractiveFigure src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName={`${prominent ? "mb-8" : "mt-8"} overflow-hidden bg-white shadow-[0_12px_34px_rgba(23,76,58,.08)]`} imageClassName={image.contain ? "block h-auto w-full" : `${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full object-cover`} />
   );
 
+  const renderSourceArticle = () => briefing.sourceArticle && (
+    <aside className="reading-column my-8 overflow-hidden rounded-xl border border-green-deep/15 bg-white shadow-[0_12px_34px_rgba(23,76,58,.07)]" aria-label={ko ? "이 브리핑이 검토한 원보도" : "Original report reviewed by this briefing"}>
+      <div className="grid md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
+        <a href={briefing.sourceArticle.url} target="_blank" rel="noreferrer" className={briefing.sourceArticle.imageFit === "natural" ? "group block self-start overflow-hidden bg-ivory" : "group block overflow-hidden bg-navy"} aria-label={ko ? "원보도 새 창에서 읽기" : "Read the original report in a new tab"}>
+          <SafeImage src={briefing.sourceArticle.imageSrc} alt={briefing.sourceArticle.imageAlt} className={briefing.sourceArticle.imageFit === "natural" ? "block h-auto w-full object-contain" : "aspect-video h-full w-full object-cover transition duration-300 group-hover:scale-[1.015]"} />
+        </a>
+        <div className="flex flex-col justify-center p-5 sm:p-6">
+          <span className="text-[11px] font-extrabold tracking-[0.16em] text-green-deep">{ko ? "이 브리핑이 검토한 원보도" : "ORIGINAL REPORT REVIEWED"}</span>
+          <p className="mt-2 text-xs font-bold text-charcoal/50">{briefing.sourceArticle.publisher} · {briefing.sourceArticle.publishedAt.replace(/-/g, ".")}</p>
+          <h2 className="mt-2 text-xl font-extrabold leading-8 text-navy sm:text-2xl">{briefing.sourceArticle.title}</h2>
+          {briefing.sourceArticle.note && <p className="mt-3 text-sm leading-6 text-charcoal/65">{briefing.sourceArticle.note}</p>}
+          <a href={briefing.sourceArticle.url} target="_blank" rel="noreferrer" className="mt-4 inline-flex w-fit items-center gap-1.5 font-bold text-green-deep underline decoration-green-deep/25 underline-offset-4 hover:text-green-mid">{ko ? "기사 읽기" : "Read the original report"}<ExternalLink size={14}/></a>
+          <p className="mt-3 text-[11px] leading-5 text-charcoal/45">{briefing.sourceArticle.imageCredit}</p>
+        </div>
+      </div>
+    </aside>
+  );
+
   return (
     <article className="bg-paper">
       <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
@@ -79,25 +97,9 @@ export default function BriefingDetail() {
           ))}
         </div>
 
-        {briefing.sourceArticle && (
-          <aside className="reading-column my-8 overflow-hidden rounded-xl border border-green-deep/15 bg-white shadow-[0_12px_34px_rgba(23,76,58,.07)]" aria-label={ko ? "이 브리핑이 검토한 원보도" : "Original report reviewed by this briefing"}>
-            <div className="grid md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
-              <a href={briefing.sourceArticle.url} target="_blank" rel="noreferrer" className="group block overflow-hidden bg-navy" aria-label={ko ? "원보도 새 창에서 읽기" : "Read the original report in a new tab"}>
-                <SafeImage src={briefing.sourceArticle.imageSrc} alt={briefing.sourceArticle.imageAlt} className="aspect-video h-full w-full object-cover transition duration-300 group-hover:scale-[1.015]" />
-              </a>
-              <div className="flex flex-col justify-center p-5 sm:p-6">
-                <span className="text-[11px] font-extrabold tracking-[0.16em] text-green-deep">{ko ? "이 브리핑이 검토한 원보도" : "ORIGINAL REPORT REVIEWED"}</span>
-                <p className="mt-2 text-xs font-bold text-charcoal/50">{briefing.sourceArticle.publisher} · {briefing.sourceArticle.publishedAt.replace(/-/g, ".")}</p>
-                <h2 className="mt-2 text-xl font-extrabold leading-8 text-navy sm:text-2xl">{briefing.sourceArticle.title}</h2>
-                {briefing.sourceArticle.note && <p className="mt-3 text-sm leading-6 text-charcoal/65">{briefing.sourceArticle.note}</p>}
-                <a href={briefing.sourceArticle.url} target="_blank" rel="noreferrer" className="mt-4 inline-flex w-fit items-center gap-1.5 font-bold text-green-deep underline decoration-green-deep/25 underline-offset-4 hover:text-green-mid">{ko ? "기사 읽기" : "Read the original report"}<ExternalLink size={14}/></a>
-                <p className="mt-3 text-[11px] leading-5 text-charcoal/45">{briefing.sourceArticle.imageCredit}</p>
-              </div>
-            </div>
-          </aside>
-        )}
+        {briefing.sourceArticle?.afterSection === undefined && renderSourceArticle()}
 
-        {briefing.images?.[1] && renderFigure(briefing.images[1])}
+        {briefing.images?.[1] && (!briefing.placeBodyImagesBySection || briefing.images[1].afterSection === undefined) && renderFigure(briefing.images[1])}
 
         {briefing.sections?.map((section, index) => (
           <div key={`${index}-${section.title}`}>
@@ -109,7 +111,8 @@ export default function BriefingDetail() {
               })}</div>}
               {section.bullets && <ul className="mt-5 space-y-3">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet.slice(0, 24)}`} className="flex gap-3 text-[17px] leading-[1.78] text-charcoal/80 sm:text-lg"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold" />{bullet}</li>)}</ul>}
             </section>
-            {briefing.images?.slice(2).filter((image) => image.afterSection === index).map((image) => (
+            {briefing.sourceArticle?.afterSection === index && renderSourceArticle()}
+            {briefing.images?.slice(briefing.placeBodyImagesBySection ? 1 : 2).filter((image) => image.afterSection === index).map((image) => (
               <div key={image.src}>{renderFigure(image)}</div>
             ))}
           </div>
