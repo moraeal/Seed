@@ -38,7 +38,7 @@ const rasterBriefingImages = (item) => item.images
 
 const supabaseUrl = (process.env.VITE_SUPABASE_URL || "https://wajlmbahjyazkftwaeem.supabase.co").replace(/\/$/, "");
 const supabaseKey = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.VITE_SUPABASE_ANON_KEY || "sb_publishable_gf96jsxTYvTeAzOL1AsBIA_fs4RlDje";
-const billsResponse = await fetch(`${supabaseUrl}/rest/v1/legislative_bills?review_state=eq.published&select=slug,title,analysis,editorial_image,public_summary_ko,seed_view_ko,detail_url,proposed_date,published_at&order=published_at.desc&limit=1000`, { headers: { apikey: supabaseKey }, signal: AbortSignal.timeout(20000) });
+const billsResponse = await fetch(`${supabaseUrl}/rest/v1/legislative_bills?review_state=eq.published&select=bill_id,slug,title,analysis,editorial_image,public_summary_ko,public_summary_en,seed_view_ko,detail_url,proposed_date,published_at,review_state,importance_score,editorial_updated_at,updated_at,official_summary&order=published_at.desc&limit=1000`, { headers: { apikey: supabaseKey }, signal: AbortSignal.timeout(20000) });
 if (!billsResponse.ok) throw new Error(`Cannot load bill images: HTTP ${billsResponse.status}`);
 const billImages = await billsResponse.json();
 if (!Array.isArray(billImages) || billImages.length >= 1000) throw new Error("Invalid or truncated bill image list");

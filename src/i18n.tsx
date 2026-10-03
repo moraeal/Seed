@@ -29,7 +29,7 @@ const saveLanguage = (language: Language) => {
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const [language, setLanguageState] = useState<Language>(() => {
-    if (/^\/en(?:\/|$)/.test(window.location.pathname)) return "en";
+    if (/^\/en(?:\/|$)/.test(location.pathname)) return "en";
     const saved = readSavedLanguage();
     return saved === "en" ? "en" : "ko";
   });

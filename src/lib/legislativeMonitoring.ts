@@ -165,6 +165,14 @@ export async function getPublishedLegislativeBills(limit = 100) {
   return readResponse<LegislativeBill[]>(response);
 }
 
+// Homepage cards need publication metadata, not full bill text or analysis arrays.
+export async function getHomepageLegislativeBills() {
+  const fields = "bill_id,slug,title,analysis->title_en,analysis->summary_ko,analysis->summary_en,editorial_image,public_summary_ko,public_summary_en,proposed_date,published_at,review_state,importance_score,editorial_updated_at,updated_at,official_summary";
+  const response = await fetch(`${supabaseUrl}/rest/v1/legislative_bills?review_state=eq.published&select=${fields}&order=published_at.desc&limit=1000`, { headers: headers(), signal: AbortSignal.timeout(10000) });
+  const rows = await readResponse<(LegislativeBill & { title_en?: string; summary_ko?: string; summary_en?: string })[]>(response);
+  return rows.map(({ title_en, summary_ko, summary_en, ...bill }) => ({ ...bill, analysis: { title_en, summary_ko, summary_en } }));
+}
+
 export async function getLegislativeBillBySlug(slug: string, session?: AuthSession | null) {
   const response = await fetch(`${supabaseUrl}/rest/v1/legislative_bills?slug=eq.${encodeURIComponent(slug)}&select=*&limit=1`, { headers: headers(session) });
   const rows = await readResponse<LegislativeBill[]>(response);

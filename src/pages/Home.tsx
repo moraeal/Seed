@@ -1,3 +1,4 @@
+import snapshot from "../data/homeSnapshot.json";
 import { campaignPending, civicSections, getCivicSectionArticles } from "../data/civicSections";
 import { ArrowRight, Clock, Pause, Play, Megaphone } from "lucide-react";
 import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
@@ -22,7 +23,7 @@ import { topicTaxonomy } from "../data/topicTaxonomy";
 import { useLanguage } from "../i18n";
 import { useFeaturedContent } from "../hooks/useFeaturedContent";
 import { formatFeaturedDate } from "../data/featuredHistory";
-import { getPublishedLegislativeBills, type LegislativeBill } from "../lib/legislativeMonitoring";
+import { getHomepageLegislativeBills, type LegislativeBill } from "../lib/legislativeMonitoring";
 
 const resolveImageSrc = (src?: string) => {
   if (!src) return "";
@@ -156,8 +157,7 @@ export default function Home() {
   const { language } = useLanguage();
   const ko = language === "ko";
   const { featuredPath, history: featuredHistory, ready: featuredReady, historyError } = useFeaturedContent();
-  const [legislativeBills, setLegislativeBills] = useState<LegislativeBill[]>([]);
-  const [billsReady, setBillsReady] = useState(false);
+  const [legislativeBills, setLegislativeBills] = useState<LegislativeBill[]>(snapshot.bills as unknown as LegislativeBill[]);
   const [recommendedTopicPage, setRecommendedTopicPage] = useState(0);
   const [recommendedTopicsPaused, setRecommendedTopicsPaused] = useState(false);
   const allBriefings = getAllBriefingsNewestFirst();
@@ -176,7 +176,7 @@ export default function Home() {
   const featuredCandidates = getFeaturedContentCandidates(language, legislativeBills);
   const configuredLead = featuredCandidates.find((item) => item.path === featuredPath);
   const defaultFeaturedPath = leadColumn ? `/columns/${leadColumn.slug}` : featuredCandidates[0]?.path;
-  const featuredLead = featuredReady && billsReady
+  const featuredLead = featuredReady
     ? configuredLead
       ?? featuredCandidates.find((item) => item.path === defaultFeaturedPath)
       ?? featuredCandidates[0]
@@ -196,14 +196,14 @@ export default function Home() {
     claimedHomePaths,
   );
   const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[ko ? seedLanguageArticle.term : getSeedLanguageEnvironmentArticle(seedLanguageArticle.slug, "ko")?.term ?? getSeedLanguageArticle(seedLanguageArticle.slug, "ko")?.term ?? ""] : undefined;
-  const visibleHotIssueCards = featuredReady && billsReady ? selectHotIssueCards(
+  const visibleHotIssueCards = featuredReady ? selectHotIssueCards(
     getHotIssueCards(language, legislativeBills, featuredHistory),
     claimedHomePaths,
     8,
   ) : [];
   for (const card of visibleHotIssueCards) claimedHomePaths.add(getHomeTopic(card.to));
 
-  const newsTrackingCards = featuredReady && billsReady
+  const newsTrackingCards = featuredReady
     ? selectNewsTrackingCards(getNewsTrackingCards(language), claimedHomePaths, 8)
     : [];
   for (const card of newsTrackingCards) claimedHomePaths.add(getHomeTopic(card.to));
@@ -300,12 +300,11 @@ export default function Home() {
       if (pending || document.visibilityState !== "visible") return;
       pending = true;
       try {
-        const bills = await getPublishedLegislativeBills(1000);
+        const bills = await getHomepageLegislativeBills();
         if (active) setLegislativeBills(bills);
       } catch { /* Preserve the last successful public snapshot on a temporary failure. */ }
       finally {
         pending = false;
-        if (active) setBillsReady(true);
       }
     };
     void refresh();
@@ -357,19 +356,6 @@ export default function Home() {
   const showMoreTopics = () => setRecommendedTopicPage(
     (current) => (current + 1) % Math.ceil(topicTaxonomy.length / 4),
   );
-
-  // Do not paint the topic/navigation lists before the lead story is ready.
-  // Keep the footer below the viewport throughout both stages of startup.
-  if (!featuredReady || !billsReady) {
-    return (
-      <div className="container-page min-h-screen py-10" role="status" aria-label={ko ? "메인페이지 불러오는 중" : "Loading homepage"}>
-        <div className="min-h-[320px] animate-pulse overflow-hidden rounded-xl bg-[#e9efe4] lg:grid lg:grid-cols-2" aria-hidden="true">
-          <div className="space-y-5 p-8 lg:p-10"><div className="h-3 w-24 rounded bg-green-deep/15"/><div className="h-8 w-4/5 rounded bg-green-deep/15"/><div className="h-4 w-2/3 rounded bg-green-deep/10"/></div>
-          <div className="min-h-[180px] bg-green-deep/10" />
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="home-page bg-paper">
@@ -479,7 +465,7 @@ export default function Home() {
             <Link to="/news" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link>
           </div>
 
-          {visibleHotIssueCards.length === 0 && <p className="mt-4 text-sm text-charcoal/55" role="status">{!featuredReady || !billsReady ? (ko ? "불러오는 중입니다." : "Loading stories.") : historyError ? (ko ? "소개한 글을 불러오지 못했습니다. 잠시 후 다시 확인해주세요." : "Could not load featured stories. Please try again shortly.") : (ko ? "메인에서 소개한 지난 글이 이곳에 차례로 쌓입니다." : "Previously featured stories will appear here in order.")}</p>}
+          {visibleHotIssueCards.length === 0 && <p className="mt-4 text-sm text-charcoal/55" role="status">{!featuredReady ? (ko ? "불러오는 중입니다." : "Loading stories.") : historyError ? (ko ? "소개한 글을 불러오지 못했습니다. 잠시 후 다시 확인해주세요." : "Could not load featured stories. Please try again shortly.") : (ko ? "메인에서 소개한 지난 글이 이곳에 차례로 쌓입니다." : "Previously featured stories will appear here in order.")}</p>}
           <StoryCarousel key={visibleHotIssueCards.map((card) => card.id).join("|")} count={visibleHotIssueCards.length} ko={ko} label={ko ? "핫이슈 기사 목록" : "Hot issue stories"}>
             {(index, visible) => {
               const item = visibleHotIssueCards[index];
@@ -530,7 +516,7 @@ export default function Home() {
               {(index) => <NewsTrackingCard card={newsTrackingCards[index]} />}
             </StoryCarousel>
           ) : (
-            <p className="mt-4 text-sm leading-6 text-charcoal/55" role="status">{!featuredReady || !billsReady ? (ko ? "불러오는 중입니다." : "Loading stories.") : (ko ? "메인에 소개된 추적 기사 외의 기록은 전체보기에서 확인할 수 있습니다." : "View all to find every tracker, including stories featured elsewhere on this page.")}</p>
+            <p className="mt-4 text-sm leading-6 text-charcoal/55" role="status">{!featuredReady ? (ko ? "불러오는 중입니다." : "Loading stories.") : (ko ? "메인에 소개된 추적 기사 외의 기록은 전체보기에서 확인할 수 있습니다." : "View all to find every tracker, including stories featured elsewhere on this page.")}</p>
           )}
         </div>
       </section>

@@ -1,11 +1,12 @@
+import snapshot from "../data/homeSnapshot.json";
 import { useEffect, useState } from "react";
 import type { FeaturedHistoryEntry } from "../data/featuredHistory";
 import { getFeaturedContentHistory, getFeaturedContentPath } from "../lib/featuredContent";
 
 export function useFeaturedContent() {
-  const [featuredPath, setFeaturedPath] = useState<string | null>(null);
-  const [history, setHistory] = useState<FeaturedHistoryEntry[]>([]);
-  const [ready, setReady] = useState(false);
+  const [featuredPath, setFeaturedPath] = useState<string | null>(snapshot.featuredPath);
+  const [history, setHistory] = useState<FeaturedHistoryEntry[]>(snapshot.history);
+  const [ready, setReady] = useState(true);
   const [historyError, setHistoryError] = useState(false);
   useEffect(() => {
     let active = true;

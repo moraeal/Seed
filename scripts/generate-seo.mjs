@@ -9,6 +9,7 @@ const template = await readFile(path.join(dist, "index.html"), "utf8");
 
 const server = await createServer({
   configFile: false,
+  ssr: { resolve: { externalConditions: ["node", "module-sync"] } },
   root,
   appType: "custom",
   server: { middlewareMode: true },
@@ -28,6 +29,8 @@ const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME,
   server.ssrLoadModule("/src/data/communityChestResearch.ts"),
   server.ssrLoadModule("/src/data/legislativeCommentaries.ts"),
 ]);
+const { prerenderHome } = await server.ssrLoadModule("/src/prerenderHome.tsx");
+const homeHtml = new Map([["/", prerenderHome("/")], ["/en", prerenderHome("/en/")]]);
 await server.close();
 
 const news = newsModule.newsArticles;
@@ -315,7 +318,7 @@ function render(route) {
     .replace(/\s*<meta\s+(?:property="og:[^"]+"|name="twitter:[^"]+")[\s\S]*?\/>/gi, "")
     .replace(/\s*<script\s+type="application\/ld\+json">[\s\S]*?<\/script>/gi, "")
     .replace("</head>", `${head}\n  </head>`)
-    .replace('<div id="root"></div>', `<div id="root"><div class="seed-static-loader" role="status" aria-label="${language === "en" ? "Loading page" : "페이지 불러오는 중"}">${language === "en" ? "SEED VOICE" : "씨앗의 소리"}</div>${fallback}</div>`);
+    .replace('<div id="root"></div>', `<div id="root">${homeHtml.get(route.path) ?? `<div class="seed-static-loader" role="status" aria-label="${language === "en" ? "Loading page" : "페이지 불러오는 중"}">${language === "en" ? "SEED VOICE" : "씨앗의 소리"}</div>${fallback}`}</div>`);
 }
 
 for (const route of allRoutes) {

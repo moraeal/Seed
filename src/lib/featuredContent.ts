@@ -15,7 +15,7 @@ const headers = (token?: string) => ({
 
 export async function getFeaturedContentPath(): Promise<string | null> {
   const response = await fetch(`${supabaseUrl}/rest/v1/homepage_featured_content?slot=eq.${SLOT}&select=content_path&limit=1`, {
-    headers: headers(),
+    headers: headers(), signal: AbortSignal.timeout(10000),
   });
   if (!response.ok) throw new Error(`Could not load featured content (${response.status})`);
   const rows = await response.json() as { content_path?: string }[];
@@ -26,7 +26,7 @@ export async function getFeaturedContentHistory(): Promise<FeaturedHistoryEntry[
   const history: FeaturedHistoryEntry[] = [];
   const pageSize = 1000;
   for (let offset = 0; ; offset += pageSize) {
-    const response = await fetch(`${supabaseUrl}/rest/v1/homepage_featured_history?select=content_path,featured_at&order=featured_at.desc,content_path.asc&limit=${pageSize}&offset=${offset}`, { headers: headers() });
+    const response = await fetch(`${supabaseUrl}/rest/v1/homepage_featured_history?select=content_path,featured_at&order=featured_at.desc,content_path.asc&limit=${pageSize}&offset=${offset}`, { headers: headers(), signal: AbortSignal.timeout(10000) });
     if (!response.ok) throw new Error(`Could not load feature history (${response.status})`);
     const rows = await response.json() as FeaturedHistoryEntry[];
     history.push(...rows);

@@ -19,7 +19,7 @@ const CivicDictionary = lazy(() => import("./pages/CivicDictionary"));
 const Forum = lazy(() => import("./pages/Forum"));
 const CivicLife = lazy(() => import("./pages/CivicLife"));
 const CivicCollection = lazy(() => import("./pages/CivicCollection"));
-const Home = lazy(() => import("./pages/Home"));
+import Home from "./pages/Home";
 const ProposalLab = lazy(() => import("./pages/ProposalLab"));
 const Proposals = lazy(() => import("./pages/Proposals"));
 const Monitoring = lazy(() => import("./pages/Monitoring"));
