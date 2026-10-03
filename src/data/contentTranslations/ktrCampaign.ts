@@ -3,12 +3,12 @@ export const ktrCampaignTranslation: BriefingTranslation = {
   "category": "Civic Campaigns · Proposal",
   "title": "A Proposal for a Korean Civic Tax Watch Movement",
   "subtitle": "Start KTR at SEED: scrutinize the case for tax increases and pursue responsibility for wasted public money",
-  "summary": "SEED proposes a Korean civic tax-watch movement, provisionally called KTR. It would scrutinize both the grounds for collecting taxes and the results of spending them, and pursue responsibility for established unlawful expenditure and losses.",
+  "summary": "SEED proposes a Korean civic tax-watch movement, provisionally called KTR (Korean Tax Reform). It would scrutinize both the grounds for collecting taxes and the results of spending them, and pursue responsibility for established unlawful expenditure and losses.",
   "author": "Little Seed",
   "content": [
     "When government asks citizens to pay more tax, citizens must be able to ask questions in return. Is the money already collected being used well? What waste can be reduced before more is collected? Who has been held responsible for a failed project?",
     "Operational controversies at the Yeosu World Island Expo and the collapse of the Saemangeum World Scout Jamboree bring these questions back. Citizens fund public events and then fund the response when preparations fail. Afterwards, it can be difficult to establish who did what wrong and how much money was recovered. Government's duty to explain and accept responsibility should match citizens' duty to pay.",
-    "SEED proposes a Korean civic tax-watch movement, provisionally called KTR. It would scrutinize both the grounds for collecting taxes and the results of spending them, and pursue responsibility for established unlawful expenditure and losses."
+    "SEED proposes a Korean civic tax-watch movement, provisionally called KTR (Korean Tax Reform). It would scrutinize both the grounds for collecting taxes and the results of spending them, and pursue responsibility for established unlawful expenditure and losses."
   ],
   "sections": [
     {

@@ -115,7 +115,6 @@ export default function BriefingDetail() {
                   <div key={`${paragraphIndex}-${paragraph.slice(0, 24)}`}>
                     <p className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>
                     {links && links.length > 0 && <aside aria-label={ko ? "관련 씨앗 기사" : "Related SEED articles"} className="mb-7 mt-3 border-l-2 border-green-deep/15 pl-4">
-                      <p className="mb-2 text-sm font-medium text-charcoal/55">{ko ? "함께 읽기" : "Related reading"}</p>
                       <ul className="space-y-2">{links.map((link) => <li key={link.url}><a href={link.url} target="_blank" rel="noreferrer" className="block text-sm font-normal leading-6 text-green-deep underline decoration-green-deep/20 underline-offset-4 hover:text-green-mid sm:text-base">{link.label}</a></li>)}</ul>
                     </aside>}
                   </div>
