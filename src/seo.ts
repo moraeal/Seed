@@ -56,7 +56,7 @@ const newest = (dates: string[]) => [...dates].sort()[dates.length - 1];
 const latestDate = newest([...newsArticles.map((item) => item.date), ...publicInterestWatchCases.map((item) => item.updatedAt), ...columns.map((item) => item.date), ...getAllBriefingsNewestFirst().map((item) => item.date), ...allSeedLanguageArticlesKo.map((item) => item.date), ...legislativeCommentaries.map((item) => item.date)]);
 
 const staticRoutes: SeoRoute[] = [
-  { path: "/civic-life", title: "시민생활 | 씨앗의 소리", description: "시민캠페인, 세금감시운동 사례연구, 시민운동 공지사항을 분야별로 찾아보세요.", type: "website", lastModified: "2026-10-03" },
+  { path: "/civic-life", title: "시민생활 | 씨앗의 소리", description: "일상, 이웃, 일자리, 주거와 건강 등 시민의 생활에 닿는 기사를 모아 읽어보세요.", type: "website", lastModified: "2026-10-03" },
   ...civicSections.map((section) => ({ path: section.path, title: `${section.title.ko} | 씨앗의 소리`, description: section.description.ko, type: "website" as const, lastModified: "2026-10-03" })),
   {
     path: "/",

@@ -35,3 +35,25 @@ export function getCivicSectionArticles(key: CivicSectionKey, language: Language
 export function getCivicSectionForArticle(path: string) {
   return civicSections.find((section) => civicArticlePaths[section.key].includes(path));
 }
+
+// Editorial selection of published everyday-life and community stories.
+// Keep canonical routes so the original articles and their editions stay intact.
+export const civicLifeArticlePaths = [
+  "/columns/robak-contract-freedom-third-party-rights-2026",
+  "/columns/citizenization-kimchi-jar-freedom-2026",
+  "/columns/mfds-sauce-portioning-autonomy-2026",
+  "/columns/the-day-i-did-not-post-a-photo",
+  "/briefings/seojin-school-neighbors-civic-solidarity",
+  "/briefings/sk-hynix-ai-hackathon-skills-first-hiring",
+  "/briefings/monthly-rent-tax-credit-2026-bills-explained",
+  "/columns/welfare-exit-risk-work-and-fairness",
+  "/columns/suicide-prevention-mois-local-community",
+  "/columns/corporations-are-citizens-too",
+  "/columns/public-health-proved-by-function",
+  "/columns/fukushima-journey-original",
+] as const;
+
+export function getCivicLifeArticles(language: Language): FeaturedContent[] {
+  const paths = new Set<string>(civicLifeArticlePaths);
+  return getFeaturedContentCandidates(language).filter((article) => paths.has(article.path));
+}
