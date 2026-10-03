@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:farmland-solar-cartel-professional-farming-2026": {
+  "ko": {
+    "href": "/briefings/farmland-census-elderly-farmers-retirement",
+    "title": "농지를 내놓으라면서, 은퇴할 길은 어디 있나",
+    "relationship": "고령 농민의 선택권",
+    "reason": "태양광과 전문 영농의 선택을 살펴봤다면, 고령 농민에게 실제로 열려 있는 은퇴 지원과 농지 처분의 출구를 이어서 확인합니다.",
+    "listHref": "/columns",
+    "listLabel": "칼럼 전체 보기"
+  },
+  "en": {
+    "href": "/briefings/farmland-census-elderly-farmers-retirement",
+    "title": "Asked to Give Up Farmland, but Where Is the Route to Retirement?",
+    "relationship": "CHOICES FOR AGING FARMERS",
+    "reason": "Continue with retirement support and workable options for older owners facing farmland-disposal requirements.",
+    "listHref": "/columns",
+    "listLabel": "All columns"
+  }
+},
   "seed-language:corporate-citizenship-company-and-people": {
     ko: {
       href: "/seed-language/citizen-as-seed",
