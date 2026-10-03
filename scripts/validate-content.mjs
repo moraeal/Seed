@@ -111,6 +111,16 @@ for (const article of seedLanguageEnvironmentModule.seedLanguageEnvironmentArtic
 for (const item of publicInterestWatchModule.publicInterestWatchCases) {
   if (item.continuationEligible !== false && (!editorialContinuationModule.getEditorialContinuation("monitoring", item.slug, "ko") || !editorialContinuationModule.getEditorialContinuation("monitoring", item.slug, "en"))) errors.push(`Editorial continuation is missing or incomplete for public-interest watch: ${item.slug}`);
   if (item.heroImage?.src) await requireSocialImage("monitoring", item.slug);
+  const sourceImages = JSON.parse(await readFile("src/data/trackerSourceImages.json", "utf8"));
+  for (const entry of item.timeline ?? []) for (const source of entry.sources ?? []) {
+    if (source.kind === "document") continue;
+    const image = sourceImages[source.url]?.src || source.thumbnailSrc;
+    if (!image) errors.push(`Missing tracker article image: ${item.slug} / ${entry.date} / ${source.url}`);
+    else if (!/^https?:/.test(image)) {
+      try { await access(path.join("public", image.replace(/^\//, ""))); }
+      catch { errors.push(`Missing tracker image file: ${image}`); }
+    }
+  }
 }
 for (const item of taxWatchModule.taxPolicies) {
   if (!item.title?.ko || !item.title?.en || !item.summary?.ko || !item.summary?.en) errors.push(`Missing Korean or English tax policy edition: ${item.slug}`);
