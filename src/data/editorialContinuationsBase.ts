@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:robak-sejong-taxpayer-rights-2026": {
+  "ko": {
+    "href": "/briefings/korean-civic-tax-watch-movement-ktr",
+    "title": "한국형 세금감시 운동을 제안한다",
+    "relationship": "세금과 예산의 시민감시",
+    "reason": "과세의 기준과 함께 예산 지출의 책임을 시민이 어떻게 감시할 수 있는지 이어서 살펴봅니다.",
+    "listHref": "/columns",
+    "listLabel": "칼럼 전체 보기"
+  },
+  "en": {
+    "href": "/briefings/korean-civic-tax-watch-movement-ktr",
+    "title": "A Proposal for a Korean Civic Tax Watch Movement",
+    "relationship": "CITIZEN SCRUTINY OF TAX AND SPENDING",
+    "reason": "Continue with how citizens can scrutinize public spending alongside the rules for taxation.",
+    "listHref": "/columns",
+    "listLabel": "All columns"
+  }
+},
   "column:farmland-solar-cartel-professional-farming-2026": {
   "ko": {
     "href": "/briefings/farmland-census-elderly-farmers-retirement",
