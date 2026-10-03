@@ -37,7 +37,7 @@ export default function BriefingDetail() {
   const hasSeparateRelatedReading = briefing.slug === "korean-civic-tax-watch-movement-ktr";
 
   const renderFigure = (image: NonNullable<typeof briefing.images>[number], prominent = false) => (
-    <InteractiveFigure src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName={`${prominent ? "mb-8" : "mt-8"} overflow-hidden bg-white shadow-[0_12px_34px_rgba(23,76,58,.08)]`} imageClassName={image.contain ? "block h-auto w-full" : `${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full object-cover`} />
+    <InteractiveFigure src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName={`${hasSeparateRelatedReading && /(?:budget_comparison|corporate_tax_rates)\.png$/.test(image.src) ? "reading-column " : ""}${prominent ? "mb-8" : "mt-8"} overflow-hidden bg-white shadow-[0_12px_34px_rgba(23,76,58,.08)]`} imageClassName={image.contain ? "block h-auto w-full" : `${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full object-cover`} />
   );
 
   const renderSourceArticle = () => briefing.sourceArticle && (
