@@ -322,7 +322,18 @@ button, input, textarea { font: inherit; }
   .article-summary, .article-detail-subtitle { font-size: 1.0625rem; line-height: 1.7; }
   .article-section-title { font-size: 1.375rem; line-height: 1.45; }
   .home-lead-summary, .home-compact-summary { font-size: 1rem; line-height: 1.7; color: #454a4e; }
-  .home-today-section aside h2 { font-size: 1.25rem; line-height: 1.45; white-space: normal; overflow: visible; text-overflow: clip; }
+  /* Keep the two-line box and painted text aligned at mobile font sizes. */
+  .home-today-section aside h2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 1.25rem;
+    line-height: 1.45;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .home-today-section aside h2 + .home-compact-summary { margin-top: .5rem; }
   .home-page a h3 { font-size: 1.25rem; line-height: 1.45; }
   .home-page section > .container-page p:not(.section-kicker):not([class*="font-black"]):not([class*="font-extrabold"]) { font-size: 1rem; line-height: 1.7; }
   main :is(.text-xs, [class*="text-[9px]"], [class*="text-[10px]"], [class*="text-[11px]"], [class*="text-[12px]"], [class*="text-[13px]"]) { font-size: .875rem; line-height: 1.65; }
