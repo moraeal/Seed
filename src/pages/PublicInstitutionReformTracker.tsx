@@ -29,18 +29,15 @@ export default function PublicInstitutionReformTrackerPage() {
   const ko = language === "ko";
   const t = <T extends { ko: string; en: string }>(value: T) => value[language];
   const [activeLens, setActiveLens] = useState<ReformLens | "all">("all");
-  const filteredTasks = useMemo(
-    () => activeLens === "all" ? publicInstitutionReformTasks : publicInstitutionReformTasks.filter((task) => task.lenses.includes(activeLens)),
-    [activeLens],
-  );
-  const recentChanges = useMemo(
-    () => [...publicInstitutionReformTasks].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)).slice(0, 3),
-    [],
-  );
   const reformTimeline = useMemo(
     () => [...publicInstitutionReformTasks].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt) || b.media.publishedAt.localeCompare(a.media.publishedAt)),
     [],
   );
+  const filteredTasks = useMemo(
+    () => activeLens === "all" ? reformTimeline : reformTimeline.filter((task) => task.lenses.includes(activeLens)),
+    [activeLens, reformTimeline],
+  );
+  const recentChanges = reformTimeline.slice(0, 3);
 
   return <article className="bg-paper pb-14 sm:pb-20">
     <header className="border-b border-green-deep/15 bg-ivory">
@@ -63,19 +60,6 @@ export default function PublicInstitutionReformTrackerPage() {
     </header>
 
     <div className="container-page max-w-6xl py-9 sm:py-12">
-      <section aria-labelledby="summary-title">
-        <div className="border-b-2 border-navy pb-4"><span className="section-kicker">30-SECOND BRIEF</span><h2 id="summary-title" className="mt-1.5 text-3xl font-extrabold text-navy">{ko ? "30초로 보는 개혁의 현재" : "The reform in 30 seconds"}</h2></div>
-        <div className="mt-4 grid gap-px overflow-hidden bg-green-deep/12 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            ["109", ko ? "정부가 제시한 순감축 목표" : "Government's net reduction target"],
-            ["15", ko ? "전략적 구조개혁" : "Strategic restructuring"],
-            ["11", ko ? "유사·중복기능 일원화" : "Overlapping-function consolidation"],
-            ["83", ko ? "자회사·소규모기관 통합" : "Subsidiaries and small bodies"],
-          ].map(([value, label]) => <div key={label} className="bg-white p-5 sm:p-6"><strong className="editorial-title text-4xl font-bold text-red-700">{value}</strong><p className="mt-2 text-sm font-extrabold leading-6 text-navy">{label}</p></div>)}
-        </div>
-        <aside className="mt-4 flex gap-3 border-l-4 border-gold bg-gold/10 p-5"><CircleAlert className="mt-0.5 shrink-0 text-gold" size={21}/><p className="text-sm leading-7 text-charcoal/70">{ko ? "109는 개편 대상기관의 단순 명단 수가 아니라 통합·청산 뒤 줄이겠다는 목표입니다. LH 분리처럼 기관 수가 늘 수 있는 조치와 공항 통합 재검토도 같은 계획에 포함돼 있습니다." : "The figure 109 is a net reduction target after mergers and liquidation, not a simple list of affected bodies. The same plan also includes an LH split that may add an entity and an airport merger that remains under review."}</p></aside>
-      </section>
-
       <section className="mt-12" aria-labelledby="recent-change-title">
         <div className="flex items-center gap-3 border-b-2 border-navy pb-4"><Sparkles className="text-red-700" size={23}/><div><span className="section-kicker">WHAT CHANGED</span><h2 id="recent-change-title" className="mt-1 text-3xl font-extrabold text-navy">{ko ? "최근 확인된 변화 3가지" : "Three latest verified changes"}</h2></div></div>
         <div className="mt-4 grid gap-4 lg:grid-cols-3">
@@ -89,7 +73,7 @@ export default function PublicInstitutionReformTrackerPage() {
       </section>
 
       <section className="mt-12" aria-labelledby="timeline-title">
-        <div className="flex flex-col gap-3 border-b-2 border-navy pb-4 sm:flex-row sm:items-end sm:justify-between"><div><span className="section-kicker">REFORM TIMELINE</span><h2 id="timeline-title" className="mt-1.5 text-3xl font-extrabold text-navy">{ko ? "주요 흐름을 한눈에 보기" : "The reform timeline at a glance"}</h2></div><p className="max-w-xl text-sm leading-7 text-charcoal/55">{ko ? "새 자료가 추가되면 날짜순으로 자동 재정렬됩니다." : "New records are automatically reordered by date."}</p></div>
+        <div className="flex flex-col gap-3 border-b-2 border-navy pb-4 sm:flex-row sm:items-end sm:justify-between"><div><span className="section-kicker">REFORM TIMELINE</span><h2 id="timeline-title" className="mt-1.5 text-3xl font-extrabold text-navy">{ko ? "주요 흐름을 한눈에 보기" : "The reform timeline at a glance"}</h2></div><p className="max-w-xl text-sm leading-7 text-charcoal/55">{ko ? "최신 업데이트부터 보여드립니다. 아래로 내려갈수록 과거의 기록으로 이어집니다." : "Latest updates appear first; scroll down to follow earlier developments."}</p></div>
         <div className="mt-5 overflow-hidden border-y border-green-deep/12 bg-white">
           {reformTimeline.map((task, index) => <article key={task.id} className="grid grid-cols-[5.5rem_1fr] gap-4 border-b border-green-deep/10 p-3 last:border-b-0 sm:grid-cols-[7rem_7rem_1fr_auto] sm:items-center sm:p-4">
             <a href={task.media.url} target="_blank" rel="noreferrer" className="group relative row-span-2 block aspect-[4/3] overflow-hidden bg-navy sm:row-span-1"><SafeImage src={imageSrc(task.media.thumbnailSrc)} alt={t(task.media.thumbnailAlt)} className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]"/></a>
@@ -98,6 +82,19 @@ export default function PublicInstitutionReformTrackerPage() {
             <a href={`#${task.id}`} className="col-start-2 inline-flex items-center gap-1.5 text-xs font-extrabold text-green-deep sm:col-start-auto">{ko ? "현재 판단" : "Current assessment"}<ArrowRight size={13}/></a>
           </article>)}
         </div>
+      </section>
+
+      <section className="mt-12" aria-labelledby="summary-title">
+        <div className="border-b-2 border-navy pb-4"><span className="section-kicker">30-SECOND BRIEF</span><h2 id="summary-title" className="mt-1.5 text-3xl font-extrabold text-navy">{ko ? "30초로 보는 개혁의 현재" : "The reform in 30 seconds"}</h2></div>
+        <div className="mt-4 grid gap-px overflow-hidden bg-green-deep/12 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            ["109", ko ? "정부가 제시한 순감축 목표" : "Government's net reduction target"],
+            ["15", ko ? "전략적 구조개혁" : "Strategic restructuring"],
+            ["11", ko ? "유사·중복기능 일원화" : "Overlapping-function consolidation"],
+            ["83", ko ? "자회사·소규모기관 통합" : "Subsidiaries and small bodies"],
+          ].map(([value, label]) => <div key={label} className="bg-white p-5 sm:p-6"><strong className="editorial-title text-4xl font-bold text-red-700">{value}</strong><p className="mt-2 text-sm font-extrabold leading-6 text-navy">{label}</p></div>)}
+        </div>
+        <aside className="mt-4 flex gap-3 border-l-4 border-gold bg-gold/10 p-5"><CircleAlert className="mt-0.5 shrink-0 text-gold" size={21}/><p className="text-sm leading-7 text-charcoal/70">{ko ? "109는 개편 대상기관의 단순 명단 수가 아니라 통합·청산 뒤 줄이겠다는 목표입니다. LH 분리처럼 기관 수가 늘 수 있는 조치와 공항 통합 재검토도 같은 계획에 포함돼 있습니다." : "The figure 109 is a net reduction target after mergers and liquidation, not a simple list of affected bodies. The same plan also includes an LH split that may add an entity and an airport merger that remains under review."}</p></aside>
       </section>
 
       <section className="mt-12" aria-labelledby="lens-title">
@@ -116,7 +113,7 @@ export default function PublicInstitutionReformTrackerPage() {
                 <div className="flex flex-1 flex-col p-5"><div className="flex items-center justify-between gap-3 text-[11px] font-black text-green-deep"><span>{t(task.media.outlet)}</span><ExternalLink size={14}/></div><strong className="mt-2 text-base leading-6 text-navy group-hover:text-green-deep">{t(task.media.title)}</strong><time className="mt-auto pt-4 text-xs text-charcoal/40">{task.media.publishedAt.replace(/-/g, ".")}</time></div>
               </a>
               <div className="p-5 sm:p-7">
-                <div className="flex flex-wrap items-center gap-2"><span className="text-xs font-black text-gold">{String(publicInstitutionReformTasks.findIndex((item) => item.id === task.id) + 1).padStart(2, "0")}</span><span className="rounded-full bg-green-pale px-3 py-1 text-[11px] font-extrabold text-green-deep">{t(reformStageLabels[task.stage])}</span><span className="text-xs font-extrabold text-charcoal/45">{t(task.reformType)}</span></div>
+                <div className="flex flex-wrap items-center gap-2"><span className="text-xs font-black text-gold">{String(reformTimeline.findIndex((item) => item.id === task.id) + 1).padStart(2, "0")}</span><span className="rounded-full bg-green-pale px-3 py-1 text-[11px] font-extrabold text-green-deep">{t(reformStageLabels[task.stage])}</span><span className="text-xs font-extrabold text-charcoal/45">{t(task.reformType)}</span></div>
                 <h3 className="editorial-title mt-3 text-2xl font-bold leading-tight text-navy sm:text-[1.8rem]">{t(task.title)}</h3>
                 <p className="mt-3 text-sm font-semibold leading-7 text-green-deep">{t(task.institutions)}</p>
                 <dl className="mt-5 grid gap-4 sm:grid-cols-2">

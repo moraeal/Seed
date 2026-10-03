@@ -57,6 +57,11 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
     const bDate = timelineDate(b.date);
     return aDate === bDate ? 0 : aDate > bDate ? -1 : 1;
   });
+  const keyChanges = [...(item.keyChanges ?? [])].sort((a, b) => {
+    const aDate = timelineDate(a.date);
+    const bDate = timelineDate(b.date);
+    return aDate === bDate ? 0 : aDate > bDate ? -1 : 1;
+  });
   const timelineLabels: Record<WatchTimelineStatus, string> = {
     confirmed: ko ? "확인" : "VERIFIED",
     response: ko ? "해명" : "RESPONSE",
@@ -112,47 +117,6 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
       </header>
 
       <div className={`container-page py-8 sm:py-12 ${articleWidthHeader ? "max-w-[50rem]" : "max-w-5xl"}`}>
-        {layered && item.snapshot && (
-          <section aria-labelledby="snapshot-title" className="border border-green-deep/15 bg-white shadow-soft">
-            <div className="border-b border-green-deep/12 bg-navy px-5 py-5 text-white sm:px-7">
-              <span className="text-[10px] font-black tracking-[.16em] text-gold">CURRENT STATUS</span>
-              <h2 id="snapshot-title" className="mt-1.5 text-2xl font-extrabold">{ko ? "30초로 보는 현재 상황" : "The situation in 30 seconds"}</h2>
-              <p className="mt-3 max-w-4xl text-sm font-semibold leading-7 text-white/82 sm:text-base">{t(item.snapshot.conclusion)}</p>
-            </div>
-            <div className="grid gap-px bg-green-deep/12 lg:grid-cols-[1.15fr_.85fr]">
-              <div className="bg-white p-5 sm:p-7">
-                <h3 className="text-sm font-black text-green-deep">{ko ? "확인된 핵심" : "KEY FACTS"}</h3>
-                <ol className="mt-4 space-y-3">
-                  {item.snapshot.keyFacts.map((fact, index) => (
-                    <li key={index} className="grid grid-cols-[2rem_1fr] gap-3">
-                      <span className="grid size-7 place-items-center rounded-full bg-green-pale text-xs font-black text-green-deep">{index + 1}</span>
-                      <p className="text-sm font-semibold leading-6 text-charcoal/72">{t(fact)}</p>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-              <div className="bg-ivory p-5 sm:p-7">
-                <h3 className="text-sm font-black text-red-700">{ko ? "계속 확인할 사안" : "STILL BEING TRACKED"}</h3>
-                <ul className="mt-4 space-y-3">
-                  {item.snapshot.tracking.map((entry, index) => (
-                    <li key={index} className="flex gap-3 text-sm leading-6 text-charcoal/68"><Clock3 className="mt-1 shrink-0 text-red-700" size={14}/><span>{t(entry)}</span></li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {item.nextCheck && !layered && (
-          <aside className="grid gap-4 border-l-4 border-gold bg-navy p-5 text-white shadow-soft sm:grid-cols-[auto_1fr] sm:p-6">
-            <CalendarClock className="text-gold" size={25}/>
-            <div>
-              <span className="text-[10px] font-black tracking-[.16em] text-gold">{ko ? "다음 확인" : "NEXT CHECK"}</span>
-              <p className="mt-2 text-sm font-semibold leading-7 text-white/85 sm:text-base">{t(item.nextCheck)}</p>
-            </div>
-          </aside>
-        )}
-
         {!!item.keyChanges?.length && (
           <section className="mt-10" aria-labelledby="changes-title">
             <div className="flex items-center gap-3 border-b-2 border-navy pb-4">
@@ -163,7 +127,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
               </div>
             </div>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              {(layered ? item.keyChanges.slice(0, 3) : item.keyChanges).map((entry, index) => (
+              {(layered ? keyChanges.slice(0, 3) : keyChanges).map((entry, index) => (
                 <div key={index} className="grid grid-cols-[2.25rem_1fr] gap-3 border border-red-700/15 bg-white p-4 sm:p-5">
                   <span className="grid size-9 place-items-center rounded-full bg-red-700 text-sm font-black text-white">{index + 1}</span>
                   <div>
@@ -176,52 +140,16 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
           </section>
         )}
 
-        {layered && !!item.issues?.length && (
-          <section className="mt-12" aria-labelledby="issues-dashboard-title">
-            <div className="border-b-2 border-navy pb-4">
-              <span className="section-kicker">ISSUE DASHBOARD</span>
-              <h2 id="issues-dashboard-title" className="mt-1.5 text-3xl font-extrabold text-navy">{ko ? "쟁점별로 보는 현재 판단" : "Current assessment by issue"}</h2>
-              <p className="mt-2 text-sm leading-7 text-charcoal/55">{ko ? "확인된 판단을 먼저 읽고, 주장과 해명은 필요할 때 펼쳐볼 수 있습니다." : "Read the current assessment first, then expand the competing claims when needed."}</p>
-            </div>
-            <div className="mt-5 grid gap-4 sm:grid-cols-2">
-              {item.issues.map((issue, index) => (
-                <article key={index} className="border border-green-deep/12 bg-white p-5 shadow-[4px_4px_0_0_rgba(24,83,66,0.06)] sm:p-6">
-                  <div className="flex items-start justify-between gap-3">
-                    <h3 className="text-lg font-extrabold leading-7 text-navy">{t(issue.title)}</h3>
-                    <span className={`shrink-0 rounded-full px-2.5 py-1 text-[10px] font-black ${issue.status === "confirmed" ? "bg-green-pale text-green-deep" : issue.status === "contested" ? "bg-gold/20 text-amber-800" : "bg-charcoal/8 text-charcoal/55"}`}>
-                      {issue.status === "confirmed" ? (ko ? "확인" : "VERIFIED") : issue.status === "contested" ? (ko ? "논쟁 중" : "CONTESTED") : (ko ? "확인 중" : "PENDING")}
-                    </span>
-                  </div>
-                  <div className="mt-4 border-l-4 border-green-deep bg-green-pale/45 p-4">
-                    <span className="text-[10px] font-black tracking-[.12em] text-green-deep">{ko ? "현재 판단" : "CURRENT ASSESSMENT"}</span>
-                    <p className="mt-1.5 text-sm leading-7 text-charcoal/72">{t(issue.assessment)}</p>
-                  </div>
-                  <details className="group mt-4 border-t border-green-deep/10 pt-3">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-extrabold text-green-deep">
-                      <span>{ko ? "주장과 해명 자세히 보기" : "Open claims and response"}</span>
-                      <ChevronDown size={17} className="transition group-open:rotate-180"/>
-                    </summary>
-                    <div className="mt-4 space-y-4 text-sm leading-7 text-charcoal/68">
-                      <div><strong className="block text-xs text-red-700">{ko ? "제기된 주장" : "CLAIM"}</strong><p className="mt-1">{t(issue.claim)}</p></div>
-                      <div><strong className="block text-xs text-amber-800">{ko ? "당사자 해명" : "RESPONSE"}</strong><p className="mt-1">{t(issue.response)}</p></div>
-                    </div>
-                  </details>
-                </article>
-              ))}
-            </div>
-          </section>
-        )}
-
         {!!item.timeline?.length && (
           <section id="issue-timeline" className="mt-14 scroll-mt-24" aria-labelledby="timeline-title">
-            <details className="group" open={!layered}>
+            <details className="group" open>
               <summary className="flex cursor-pointer list-none items-end justify-between gap-4 border-b-2 border-navy pb-4">
                 <div>
                   <span className="section-kicker">ISSUE TIMELINE</span>
                   <h2 id="timeline-title" className="mt-1.5 text-3xl font-extrabold text-navy">{ko ? "전체 진행 기록" : "Full case timeline"}</h2>
                   <p className="mt-2 text-sm leading-7 text-charcoal/55">{ko ? "최신 기록부터 보여드립니다. 새 내용은 날짜에 따라 자동 정렬되며, 아래로 내려갈수록 과거의 기록으로 이어집니다." : "Latest records appear first. New entries are automatically sorted by date; scroll down to follow earlier developments."}</p>
                 </div>
-                <span className="mb-1 inline-flex shrink-0 items-center gap-2 text-sm font-extrabold text-green-deep">{layered ? (ko ? "펼쳐보기" : "Open") : (ko ? "접기" : "Close")}<ChevronDown size={19} className="transition group-open:rotate-180"/></span>
+                <span className="mb-1 inline-flex shrink-0 items-center gap-2 text-sm font-extrabold text-green-deep">{ko ? "펼치기 / 접기" : "Expand / collapse"}<ChevronDown size={19} className="transition group-open:rotate-180"/></span>
               </summary>
 
             <ol className="relative mt-7 before:absolute before:bottom-3 before:left-[1.35rem] before:top-3 before:w-px before:bg-green-deep/20 sm:before:left-[8.1rem]">
@@ -293,6 +221,83 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
               ))}
             </ol>
             </details>
+          </section>
+        )}
+
+        {layered && item.snapshot && (
+          <section aria-labelledby="snapshot-title" className="border border-green-deep/15 bg-white shadow-soft">
+            <div className="border-b border-green-deep/12 bg-navy px-5 py-5 text-white sm:px-7">
+              <span className="text-[10px] font-black tracking-[.16em] text-gold">CURRENT STATUS</span>
+              <h2 id="snapshot-title" className="mt-1.5 text-2xl font-extrabold">{ko ? "30초로 보는 현재 상황" : "The situation in 30 seconds"}</h2>
+              <p className="mt-3 max-w-4xl text-sm font-semibold leading-7 text-white/82 sm:text-base">{t(item.snapshot.conclusion)}</p>
+            </div>
+            <div className="grid gap-px bg-green-deep/12 lg:grid-cols-[1.15fr_.85fr]">
+              <div className="bg-white p-5 sm:p-7">
+                <h3 className="text-sm font-black text-green-deep">{ko ? "확인된 핵심" : "KEY FACTS"}</h3>
+                <ol className="mt-4 space-y-3">
+                  {item.snapshot.keyFacts.map((fact, index) => (
+                    <li key={index} className="grid grid-cols-[2rem_1fr] gap-3">
+                      <span className="grid size-7 place-items-center rounded-full bg-green-pale text-xs font-black text-green-deep">{index + 1}</span>
+                      <p className="text-sm font-semibold leading-6 text-charcoal/72">{t(fact)}</p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <div className="bg-ivory p-5 sm:p-7">
+                <h3 className="text-sm font-black text-red-700">{ko ? "계속 확인할 사안" : "STILL BEING TRACKED"}</h3>
+                <ul className="mt-4 space-y-3">
+                  {item.snapshot.tracking.map((entry, index) => (
+                    <li key={index} className="flex gap-3 text-sm leading-6 text-charcoal/68"><Clock3 className="mt-1 shrink-0 text-red-700" size={14}/><span>{t(entry)}</span></li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {item.nextCheck && !layered && (
+          <aside className="grid gap-4 border-l-4 border-gold bg-navy p-5 text-white shadow-soft sm:grid-cols-[auto_1fr] sm:p-6">
+            <CalendarClock className="text-gold" size={25}/>
+            <div>
+              <span className="text-[10px] font-black tracking-[.16em] text-gold">{ko ? "다음 확인" : "NEXT CHECK"}</span>
+              <p className="mt-2 text-sm font-semibold leading-7 text-white/85 sm:text-base">{t(item.nextCheck)}</p>
+            </div>
+          </aside>
+        )}
+
+        {layered && !!item.issues?.length && (
+          <section className="mt-12" aria-labelledby="issues-dashboard-title">
+            <div className="border-b-2 border-navy pb-4">
+              <span className="section-kicker">ISSUE DASHBOARD</span>
+              <h2 id="issues-dashboard-title" className="mt-1.5 text-3xl font-extrabold text-navy">{ko ? "쟁점별로 보는 현재 판단" : "Current assessment by issue"}</h2>
+              <p className="mt-2 text-sm leading-7 text-charcoal/55">{ko ? "확인된 판단을 먼저 읽고, 주장과 해명은 필요할 때 펼쳐볼 수 있습니다." : "Read the current assessment first, then expand the competing claims when needed."}</p>
+            </div>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              {item.issues.map((issue, index) => (
+                <article key={index} className="border border-green-deep/12 bg-white p-5 shadow-[4px_4px_0_0_rgba(24,83,66,0.06)] sm:p-6">
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="text-lg font-extrabold leading-7 text-navy">{t(issue.title)}</h3>
+                    <span className={`shrink-0 rounded-full px-2.5 py-1 text-[10px] font-black ${issue.status === "confirmed" ? "bg-green-pale text-green-deep" : issue.status === "contested" ? "bg-gold/20 text-amber-800" : "bg-charcoal/8 text-charcoal/55"}`}>
+                      {issue.status === "confirmed" ? (ko ? "확인" : "VERIFIED") : issue.status === "contested" ? (ko ? "논쟁 중" : "CONTESTED") : (ko ? "확인 중" : "PENDING")}
+                    </span>
+                  </div>
+                  <div className="mt-4 border-l-4 border-green-deep bg-green-pale/45 p-4">
+                    <span className="text-[10px] font-black tracking-[.12em] text-green-deep">{ko ? "현재 판단" : "CURRENT ASSESSMENT"}</span>
+                    <p className="mt-1.5 text-sm leading-7 text-charcoal/72">{t(issue.assessment)}</p>
+                  </div>
+                  <details className="group mt-4 border-t border-green-deep/10 pt-3">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-extrabold text-green-deep">
+                      <span>{ko ? "주장과 해명 자세히 보기" : "Open claims and response"}</span>
+                      <ChevronDown size={17} className="transition group-open:rotate-180"/>
+                    </summary>
+                    <div className="mt-4 space-y-4 text-sm leading-7 text-charcoal/68">
+                      <div><strong className="block text-xs text-red-700">{ko ? "제기된 주장" : "CLAIM"}</strong><p className="mt-1">{t(issue.claim)}</p></div>
+                      <div><strong className="block text-xs text-amber-800">{ko ? "당사자 해명" : "RESPONSE"}</strong><p className="mt-1">{t(issue.response)}</p></div>
+                    </div>
+                  </details>
+                </article>
+              ))}
+            </div>
           </section>
         )}
 
