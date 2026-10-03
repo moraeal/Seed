@@ -432,20 +432,20 @@ export default function Home() {
                 const campaignPreparing = section.key === "campaign" && !getCivicSectionArticles("campaign", language, featuredCandidates).length;
                 const title = article?.title ?? (campaignPreparing ? campaignPending.title[language] : section.title[language]);
                 const summary = article?.summary ?? (campaignPreparing ? campaignPending.summary[language] : section.description[language]);
-                return <div key={section.key} className="grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3 xl:first:pt-0">
-                  <Link to={article?.path ?? section.path} className="flex items-center justify-center overflow-hidden bg-green-deep text-white" aria-label={title}>
+                return <Link key={section.key} to={article?.path ?? section.path} className="group cursor-pointer transition-colors duration-200 hover:bg-green-deep/5 focus-visible:bg-green-deep/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-deep grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3 xl:first:pt-0">
+                  <div className="flex items-center justify-center overflow-hidden bg-green-deep text-white">
                     {article ? <SafeImage src={resolveImageSrc(article.image.src)} alt={article.image.alt} className="aspect-[4/3] h-full max-h-[110px] w-full object-cover" /> : <Megaphone size={34} aria-hidden="true" className="my-6" />}
-                  </Link>
+                  </div>
                   <div className="min-w-0">
-                    <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1"><Link to={section.path} className="text-sm font-black text-green-deep hover:underline">{section.title[language]}</Link><Link to={section.path} className="shrink-0 text-xs font-bold text-green-deep/70">{ko ? "전체보기" : "View all"}</Link></div>
-                    <Link to={article?.path ?? section.path}><h2 className="editorial-title mt-1 line-clamp-2 break-keep text-[1.02rem] font-bold leading-snug text-navy hover:text-green-mid sm:text-[1.08rem]">{title}</h2></Link>
+                    <p className="text-sm font-black text-green-deep">{section.title[language]}</p>
+                    <h2 className="editorial-title mt-1 line-clamp-2 break-keep text-[1.02rem] font-bold leading-snug text-navy transition-colors group-hover:text-green-mid group-focus-visible:text-green-mid sm:text-[1.08rem]">{title}</h2>
                     <p className="home-compact-summary mt-1 line-clamp-2">{summary}</p>
                     {campaignPreparing && <p className="mt-1 text-xs font-semibold text-charcoal/50">{ko ? "준비 중" : "In preparation"}</p>}
                   </div>
-                </div>;
+                </Link>;
               })}
               {seedLanguageArticle && (
-                <Link to={`/seed-language/${seedLanguageArticle.slug}`} className="group grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3">
+                <Link to={`/seed-language/${seedLanguageArticle.slug}`} className="group cursor-pointer transition-colors duration-200 hover:bg-green-deep/5 focus-visible:bg-green-deep/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-deep grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3">
                   <div className="relative flex aspect-[4/3] h-full max-h-[96px] w-full flex-col items-center justify-center overflow-hidden border border-green-deep/20 bg-green-deep text-center" style={{ containerType: "inline-size" }}>
                     <SafeImage src={resolveImageSrc(seedLanguageArticle.heroImage.src)} alt="" loading="lazy" referrerPolicy="no-referrer" className="absolute inset-0 h-full w-full object-cover" />
                     <div className="absolute inset-0 bg-navy/45" aria-hidden="true" />
@@ -455,7 +455,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="min-w-0">
-                    <div className="flex items-center justify-between gap-2"><p className="text-sm font-black text-green-deep">{ko ? "시민언어" : "Civic Language"}</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "시민언어 보기" : "Read"}<ArrowRight size={11}/></span></div>
+                    <p className="text-sm font-black text-green-deep">{ko ? "시민언어" : "Civic Language"}</p>
                     <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{seedLanguageArticle.title}</h2>
                     <p className="home-compact-summary mt-1 line-clamp-3">{seedLanguageArticle.summary}</p>
                   </div>
