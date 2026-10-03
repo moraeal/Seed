@@ -1,5 +1,7 @@
 # SEED publishing rules
 
+- Assess every newly created article for Civic Life suitability using `CONTENT_PUBLISHING_RULES.md` §14. In the same publishing update, add suitable articles' canonical routes to `civicLifeArticlePaths` in `src/data/civicSections.ts`, regardless of their original category. Preserve their original listings, author, body and Korean/English editions; verify Civic Life inclusion before declaring publication complete.
+
 - Database-backed automatic legislative articles must generate an article-specific raster image, upload it to the permanent `editorial-images` bucket and verify the public JPEG before publication. Persist `editorial_image` with bilingual alt text and `verified_at`; do not promote missing, pending or failed artwork as a logo card. Keep failed generation retryable without rerunning a complete editorial analysis, and preserve publication dates during image repair.
 - Main cards, legislative listing rows and legislative detail pages use the same verified image. Pass image URLs unchanged to SafeImage, which handles both permanent HTTPS images and local assets. Social previews and static bill routes use one public database snapshot per production build; scheduled deployments keep these in sync after unattended publishing.
 - Inline text overrides must match the saved original text before applying. A positional override must never replace the headline of a different article after automatic card reordering.

@@ -38,7 +38,10 @@ export function getCivicSectionForArticle(path: string) {
 
 // Editorial selection of published everyday-life and community stories.
 // Keep canonical routes so the original articles and their editions stay intact.
+// Assess every new article under CONTENT_PUBLISHING_RULES.md §14 and add
+// suitable stories here in the same publishing update, regardless of category.
 export const civicLifeArticlePaths = [
+  "/columns/robak-sejong-taxpayer-rights-2026",
   "/columns/robak-contract-freedom-third-party-rights-2026",
   "/columns/citizenization-kimchi-jar-freedom-2026",
   "/columns/mfds-sauce-portioning-autonomy-2026",
