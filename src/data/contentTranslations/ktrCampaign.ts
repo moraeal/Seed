@@ -100,9 +100,9 @@ export const ktrCampaignTranslation: BriefingTranslation = {
       "src": "images/civic/ktr/corporate_tax_rates-en.png"
     },
     {
-      "alt": "ATR founder Grover Norquist speaking at a Goldwater Institute event in 2017",
-      "caption": "Goldwater Institute event, October 19, 2017. Resized with aspect ratio preserved. CC BY-SA 2.0 (https://creativecommons.org/licenses/by-sa/2.0/).",
-      "credit": "Gage Skidmore / Wikimedia Commons · CC BY-SA 2.0"
+      "alt": "US Representative Mike Ezell signing ATR’s Taxpayer Protection Pledge",
+      "caption": "Representative Mike Ezell signs ATR’s Taxpayer Protection Pledge. Recording a politician’s commitment in writing is the starting point for monitoring it. Published February 6, 2023.",
+      "credit": "Adam L. Radman / Americans for Tax Reform · Photo published by the congressional office"
     }
   ],
   "watchTitle": "What KTR should keep checking",
@@ -111,7 +111,7 @@ export const ktrCampaignTranslation: BriefingTranslation = {
     "Actual discipline, investigations, recovery and compensation after waste is established",
     "The watchdog’s own funding, expenditure, interests and corrections"
   ],
-  "sourceNote": "As of October 3, 2026. KTR is the proposed movement’s provisional name. Signature and refund counts are organizations’ own figures. Fiscal effects of the US tax law are estimates made at the time. Liability and actual recovery are distinct. Photograph license: https://creativecommons.org/licenses/by-sa/2.0/.",
+  "sourceNote": "As of October 3, 2026. KTR is the proposed movement’s provisional name. Signature and refund counts are organizations’ own figures. Fiscal effects of the US tax law are estimates made at the time. Liability and actual recovery are distinct.",
   "sourceLabels": [
     "Yonhap · Allocation of the proposed 2027 budget",
     "National Tax Service · Corporate income tax rates",

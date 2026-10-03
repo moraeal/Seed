@@ -36,11 +36,11 @@ export const ktrCampaign: Briefing = {
       "contain": true
     },
     {
-      "src": "images/civic/ktr/atr_norquist.jpg",
-      "alt": "2017년 골드워터연구소 행사에서 연설하는 ATR 설립자 그로버 노퀴스트",
-      "caption": "2017년 10월 19일 골드워터연구소 행사. 비율 유지 축소. CC BY-SA 2.0 (https://creativecommons.org/licenses/by-sa/2.0/).",
-      "credit": "Gage Skidmore / Wikimedia Commons · CC BY-SA 2.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grover_Norquist_(37775765762).jpg",
+      "src": "images/civic/ktr/atr_ezell_pledge.jpg",
+      "alt": "ATR 납세자 보호 서약에 서명하는 미국 하원의원 마이크 에젤",
+      "caption": "ATR의 납세자 보호 서약에 서명하는 마이크 에젤 하원의원. 정치인의 약속을 문서로 남기는 것이 감시의 출발점이다. 2023년 2월 6일 공개.",
+      "credit": "Adam L. Radman / Americans for Tax Reform · 미국 하원의원실 공개 사진",
+      "sourceUrl": "https://www.atr.org/rep-mike-ezell-signs-the-taxpayer-protection-pledge-promising-to-oppose-higher-taxes/",
       "afterSection": 2,
       "contain": true
     }
@@ -218,7 +218,7 @@ export const ktrCampaign: Briefing = {
       "url": "https://www.dbpia.co.kr/journal/detail?nodeId=T16945345"
     }
   ],
-  "sourceNote": "2026년 10월 3일 기준. KTR은 이 글에서 제안하는 운동의 가칭이다. 단체의 서명·환급 규모는 자체 집계, 감세법 재정효과는 당시 추계다. 배상책임 인정과 실제 회수는 구분한다. 사진 이용조건: https://creativecommons.org/licenses/by-sa/2.0/.",
+  "sourceNote": "2026년 10월 3일 기준. KTR은 이 글에서 제안하는 운동의 가칭이다. 단체의 서명·환급 규모는 자체 집계, 감세법 재정효과는 당시 추계다. 배상책임 인정과 실제 회수는 구분한다.",
   "paragraphLinks": [
     {
       "sectionIndex": 0,
