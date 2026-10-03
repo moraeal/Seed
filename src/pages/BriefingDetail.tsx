@@ -82,6 +82,25 @@ export default function BriefingDetail() {
       </header>
 
       <div className="article-content-frame py-8 sm:py-12">
+        {hasSeparateRelatedReading && (
+          <figure className="mb-8">
+            <div className="aspect-video overflow-hidden rounded-lg bg-black shadow-[0_12px_34px_rgba(23,76,58,.08)]">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/04pqeucvHLw?rel=0"
+                title={ko ? "한국형 세금감시 운동을 제안한다 — 씨앗의 소리" : "A Proposal for a Korean Civic Tax Watch Movement — SEED Voice (Korean narration)"}
+                className="h-full w-full border-0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            <figcaption className="mt-3 text-right text-sm">
+              <a href="https://www.youtube.com/watch?v=04pqeucvHLw" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-green-deep underline decoration-green-deep/25 underline-offset-4 hover:text-green-mid">
+                {ko ? "유튜브에서 보기" : "Watch on YouTube · Korean narration"}<ExternalLink size={13} />
+              </a>
+            </figcaption>
+          </figure>
+        )}
         {briefing.keyHighlights && (
           <aside className="reading-column mb-8 rounded-xl border border-green-deep/15 bg-green-pale p-5 shadow-[0_10px_30px_rgba(23,76,58,.05)] sm:p-7">
             <span className="section-kicker">KEY SUMMARY</span>
