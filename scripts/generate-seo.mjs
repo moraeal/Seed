@@ -200,6 +200,7 @@ function articleBody(route) {
 
   const civicSection = civicSectionsModule.civicSections.find((section) => section.path === route.path);
   const listing = civicSection ? civicSectionsModule.getCivicSectionArticles(civicSection.key, "ko").map((item) => ({ path: item.path, title: item.title, summary: item.summary }))
+    : route.path === "/civic-life" ? civicSectionsModule.civicSections.map((section) => ({ path: section.path, title: section.title.ko, summary: section.description.ko }))
     : route.path === "/news" ? [
       ...news.map((item) => ({ path: `/news/${item.slug}`, title: item.title, summary: item.summary })),
       ...hotIssueColumns.map((item) => ({ path: `/columns/${item.slug}`, title: item.title, summary: item.summary })),

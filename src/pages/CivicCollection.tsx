@@ -14,7 +14,7 @@ export default function CivicCollection({ sectionKey }: { sectionKey: CivicSecti
     <header className="border-b-2 border-navy pb-6">
       <h1 className="editorial-title text-3xl font-black text-navy sm:text-4xl">{section.title[language]}</h1>
       <p className="mt-3 max-w-3xl text-base leading-7 text-charcoal/70">{section.description[language]}</p>
-      <nav className="mt-5 flex flex-wrap gap-3" aria-label={ko ? "시민운동 코너" : "Civic sections"}>{civicSections.map((item) => <Link key={item.key} to={item.path} aria-current={item.key === sectionKey ? "page" : undefined} className={`rounded border px-3 py-2 text-sm font-bold ${item.key === sectionKey ? "border-green-deep bg-green-deep text-white" : "border-green-deep/20 text-green-deep"}`}>{item.title[language]}</Link>)}</nav>
+      <Link to="/civic-life" className="mt-4 inline-block text-sm font-bold text-green-deep hover:underline">{ko ? "← 시민생활 전체" : "← All Civic Life"}</Link>
     </header>
     <div className="mt-6 space-y-6">
       {articles.map((article) => <article key={article.path} className="grid gap-4 border-b border-green-deep/15 pb-6 sm:grid-cols-[220px_minmax(0,1fr)]">

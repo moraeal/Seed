@@ -7,6 +7,7 @@ import { useLanguage } from "../i18n";
 import ArticleFindPanel from "./ArticleFindPanel";
 import BrandLockup from "./BrandLockup";
 import HomeSectionNav from "./HomeSectionNav";
+import CivicLifeSubnav from "./CivicLifeSubnav";
 import MonitoringSubnav from "./MonitoringSubnav";
 
 export default function Header() {
@@ -21,6 +22,7 @@ export default function Header() {
   const isHome = location.pathname === "/" || location.pathname === "/en/";
   const normalizedPath = location.pathname.replace(/\/+$/, "") || "/";
   const isMonitoringIndex = ["/monitoring", "/monitoring/legislation", "/monitoring/tax", "/monitoring/public-interest"].includes(normalizedPath);
+  const isCivicLifeIndex = ["/civic-life", "/civic-campaign", "/tax-watch-cases", "/civic-notices"].includes(normalizedPath);
   const isContentDetail =
     /^\/(?:seed-language|columns|news|monitoring)\/[^/]+/.test(normalizedPath) ||
     /^\/briefings\/[^/]+/.test(normalizedPath) ||
@@ -31,6 +33,7 @@ export default function Header() {
         ["Hot Issues", "/news"],
         ["Briefings", "/briefings"],
         ["Civic Watch", "/monitoring"],
+        ["Civic Life", "/civic-life"],
         ["Glossary", "/seed-language"],
         ["Columns", "/columns"],
         ["About", "/about"],
@@ -39,6 +42,7 @@ export default function Header() {
         ["핫이슈", "/news"],
         ["브리핑", "/briefings"],
         ["시민감시", "/monitoring"],
+        ["시민생활", "/civic-life"],
         ["시민언어", "/seed-language"],
         ["칼럼", "/columns"],
         ["소개", "/about"],
@@ -77,11 +81,14 @@ export default function Header() {
         key={label}
         to={path}
         onClick={close}
-        className={({ isActive }) => mobile
+        className={({ isActive: routeActive }) => {
+          const isActive = routeActive || (path === "/civic-life" && isCivicLifeIndex);
+          return mobile
           ? `${mobileLinkClass} ${isActive ? "bg-green-pale text-green-deep" : "text-charcoal/75 hover:bg-green-pale/70 hover:text-green-deep"}`
-          : `${navLinkClass} ${isActive ? "border-green-deep text-green-deep" : "border-transparent text-charcoal/72 hover:border-green-deep hover:text-green-deep"}`}
+          : `${navLinkClass} ${isActive ? "border-green-deep text-green-deep" : "border-transparent text-charcoal/72 hover:border-green-deep hover:text-green-deep"}`;
+        }}
       >
-        {({ isActive }) => <><span>{label}</span>{mobile && isActive && <span className="ml-auto text-xs font-extrabold text-green-mid">{language === "en" ? "Current" : "현재"}</span>}</>}
+        {({ isActive }) => <><span>{label}</span>{mobile && (isActive || (path === "/civic-life" && isCivicLifeIndex)) && <span className="ml-auto text-xs font-extrabold text-green-mid">{language === "en" ? "Current" : "현재"}</span>}</>}
       </NavLink>
     );
   };
@@ -160,6 +167,7 @@ export default function Header() {
 
         {isHome && <HomeSectionNav />}
         {isMonitoringIndex && <MonitoringSubnav />}
+        {isCivicLifeIndex && <CivicLifeSubnav />}
 
         {open && (
           <div id="mobile-main-menu" className="border-t border-[#e8dcae] bg-[#eff8f4] px-5 py-4 shadow-[0_12px_24px_rgba(17,43,37,.08)] xl:hidden">
