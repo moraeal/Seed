@@ -1,3 +1,4 @@
+import { ktrCampaignTranslation } from "./ktrCampaign";
 import { civicHubTranslations } from "../civicHubArticles";
 import { pensionReciprocityTranslation } from "./briefingPensionReciprocity";
 import { realEstateSupervisorCitizenFreedomTranslation } from "./briefingRealEstateSupervisorCitizenFreedom";
@@ -22,6 +23,7 @@ import { monthlyRentCreditExplainerTranslation } from "./briefingMonthlyRentCred
 import { farmlandRetirementTranslation } from "./briefingFarmlandRetirement";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "korean-civic-tax-watch-movement-ktr": ktrCampaignTranslation,
   ...civicHubTranslations,
   "foreign-pension-birth-credit-reciprocity-fairness-2026": pensionReciprocityTranslation,
   "real-estate-supervisor-citizen-freedom-property-rights": realEstateSupervisorCitizenFreedomTranslation,

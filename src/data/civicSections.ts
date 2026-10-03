@@ -12,7 +12,7 @@ export type CivicSectionKey = typeof civicSections[number]["key"];
 // Add new case studies and notices here in publication order. The same list drives
 // the homepage and collection pages; it never pulls unrelated latest news.
 export const civicArticlePaths: Record<CivicSectionKey, string[]> = {
-  campaign: [],
+  campaign: ["/briefings/korean-civic-tax-watch-movement-ktr"],
   cases: [`/briefings/${taxWatchCaseSlug}`],
   notices: [`/briefings/${civicNoticeSlug}`],
 };

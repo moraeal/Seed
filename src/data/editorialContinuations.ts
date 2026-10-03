@@ -466,6 +466,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "briefing" && slug === "korean-civic-tax-watch-movement-ktr") return true;
   if (kind === "briefing" && [taxWatchCaseSlug, civicNoticeSlug].includes(slug)) return true;
   if (kind === "briefing" && slug === "foreign-pension-birth-credit-reciprocity-fairness-2026") return true;
   if (kind === "column" && slug === "assassins-film-history-memory-war-2026") return true;
@@ -499,6 +500,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "briefing" && slug === "korean-civic-tax-watch-movement-ktr") return language === "ko" ? { href: `/briefings/${taxWatchCaseSlug}`, title: "정권이 바뀌어도 영수증을 묻는다 — 한국납세자연맹", relationship: "세금감시의 실제 방법", reason: "정보공개와 소송의 실제 사례에서 운동의 방법과 한계를 살펴봅니다.", listHref: "/civic-campaign", listLabel: "시민캠페인 전체 보기" } : { href: `/briefings/${taxWatchCaseSlug}`, title: "Ask for Receipts, Whoever Governs: The Korean Taxpayers Association", relationship: "TAX SCRUTINY IN PRACTICE", reason: "Examine disclosure and litigation to understand methods and limits.", listHref: "/civic-campaign", listLabel: "All Civic Campaigns" };
   if (kind === "briefing" && [taxWatchCaseSlug, civicNoticeSlug].includes(slug)) return language === "ko" ? { href: "/monitoring/tax", title: "세금감시", relationship: "세금과 시민의 책임", reason: "운동의 방법과 참여 통로를 살펴봤다면, 새 세금정책의 근거와 시민 부담도 함께 확인합니다.", listHref: slug === taxWatchCaseSlug ? "/tax-watch-cases" : "/civic-notices", listLabel: slug === taxWatchCaseSlug ? "세금감시운동 사례연구 전체 보기" : "시민운동 공지사항 전체 보기" } : { href: "/monitoring/tax", title: "Tax Watch", relationship: "TAXES AND PUBLIC RESPONSIBILITY", reason: "Continue with the evidence for tax policies and their effects on citizens.", listHref: slug === taxWatchCaseSlug ? "/tax-watch-cases" : "/civic-notices", listLabel: slug === taxWatchCaseSlug ? "All Tax Watch Case Studies" : "All Civic Notices" };
 
   if (kind === "briefing" && slug === "foreign-pension-birth-credit-reciprocity-fairness-2026") return language === "ko" ? {"href": "/seed-language/fairness-rules-trust", "title": "공정은 같은 결과가 아니라, 노력의 길을 지키는 약속이다", "relationship": "공정의 기준", "reason": "공적 지원과 책임의 기준을 살펴봤다면, 노력과 약속을 지키는 공정의 의미를 이어서 읽습니다.", "listHref": "/briefings", "listLabel": "브리핑 전체 보기"} : {"href": "/seed-language/fairness-rules-trust", "title": "Fairness is not equal outcomes but a promise to keep the path of effort open", "relationship": "STANDARDS OF FAIRNESS", "reason": "Continue with fairness as a commitment to consistent rules and responsibility.", "listHref": "/briefings", "listLabel": "All briefings"};
