@@ -566,8 +566,8 @@ export default function Home() {
               <div className="mt-5 grid gap-3 border-t border-green-deep/15 pt-5 sm:gap-5 md:grid-cols-3">
                 {commentaryItems.map((article) => (
                   <Link key={`${article.category}-${article.slug}`} to={article.to} className="group grid grid-cols-[94px_minmax(0,1fr)] gap-3 py-1 sm:grid-cols-[108px_minmax(0,1fr)] md:grid-cols-[96px_minmax(0,1fr)] lg:grid-cols-[112px_minmax(0,1fr)]">
-                    <div className="overflow-hidden bg-green-deep">
-                      <SafeImage src={resolveImageSrc(article.imageSrc)} alt={article.imageAlt} referrerPolicy="no-referrer" className="aspect-[4/3] h-full max-h-[88px] w-full object-cover transition duration-500 group-hover:scale-[1.025]" />
+                    <div className="relative min-h-[88px] overflow-hidden bg-transparent">
+                      <SafeImage src={resolveImageSrc(article.imageSrc)} alt={article.imageAlt} referrerPolicy="no-referrer" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]" />
                     </div>
                     <div className="min-w-0">
                       <div className="flex items-center gap-2 text-[9px] font-black tracking-[.08em] text-green-deep sm:text-[10px]">
