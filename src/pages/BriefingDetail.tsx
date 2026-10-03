@@ -34,6 +34,15 @@ export default function BriefingDetail() {
   const readingPath = getArticleReadingPath("briefing", briefing.slug, language);
   const hasBCorpDeepDive = briefing.slug === "social-economy-fair-competition";
 
+  const renderParagraph = (text: string) => {
+    if (briefing.slug !== "korean-civic-tax-watch-movement-ktr") return text;
+    return text.split(/(\[\d+\])/g).map((part, index) =>
+      /^\[\d+\]$/.test(part)
+        ? <sup key={index} className="ml-[0.12em] text-[0.65em] font-normal leading-none text-charcoal/55">{part}</sup>
+        : part,
+    );
+  };
+
   const renderFigure = (image: NonNullable<typeof briefing.images>[number], prominent = false) => (
     <InteractiveFigure src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName={`${prominent ? "mb-8" : "mt-8"} overflow-hidden bg-white shadow-[0_12px_34px_rgba(23,76,58,.08)]`} imageClassName={image.contain ? "block h-auto w-full" : `${prominent ? "aspect-[16/9] sm:aspect-[2/1]" : "aspect-[16/9]"} w-full object-cover`} />
   );
@@ -95,7 +104,7 @@ export default function BriefingDetail() {
         <div className="reading-column">
           {briefing.introTitle && <h2 className="article-section-title mt-0">{briefing.introTitle}</h2>}
           {briefing.content.map((paragraph, index) => (
-            <p key={`${index}-${paragraph.slice(0, 20)}`} className={`${index === 0 ? "mt-0" : ""} article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>
+            <p key={`${index}-${paragraph.slice(0, 20)}`} className={`${index === 0 ? "mt-0" : ""} article-copy ${isLongRead ? "article-copy-long" : ""}`}>{renderParagraph(paragraph)}</p>
           ))}
         </div>
 
@@ -109,7 +118,7 @@ export default function BriefingDetail() {
               <h2 className="article-section-title">{section.title}</h2>
               {section.paragraphs && <div>{section.paragraphs.map((paragraph, paragraphIndex) => {
                 const links = briefing.paragraphLinks?.find((entry) => entry.sectionIndex === index && entry.paragraphIndex === paragraphIndex)?.links;
-                return <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}{links?.map((link) => <a key={link.url} href={link.url} target="_blank" rel="noreferrer" className="ml-2 inline-flex items-center gap-1 font-bold text-green-deep underline decoration-green-deep/25 underline-offset-4 hover:text-green-mid">{link.label}<ExternalLink size={13}/></a>)}</p>;
+                return <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{renderParagraph(paragraph)}{links?.map((link) => <a key={link.url} href={link.url} target="_blank" rel="noreferrer" className="ml-2 inline-flex items-center gap-1 font-bold text-green-deep underline decoration-green-deep/25 underline-offset-4 hover:text-green-mid">{link.label}<ExternalLink size={13}/></a>)}</p>;
               })}</div>}
               {section.bullets && <ul className="mt-5 space-y-3">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet.slice(0, 24)}`} className="flex gap-3 text-[17px] leading-[1.78] text-charcoal/80 sm:text-lg"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold" />{bullet}</li>)}</ul>}
             </section>
@@ -145,7 +154,7 @@ export default function BriefingDetail() {
           <ul className="mt-4 space-y-2">{briefing.watchPoints.map((point, index) => <li key={`${index}-${point}`} className="flex gap-3 text-sm leading-6 text-charcoal/75"><span className="font-serif text-gold">●</span>{point}</li>)}</ul>
         </aside>
 
-        {briefing.closing && <div className="reading-column mt-9">{briefing.closing.map((paragraph, index) => <p key={`${index}-${paragraph.slice(0, 24)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>)}</div>}
+        {briefing.closing && <div className="reading-column mt-9">{briefing.closing.map((paragraph, index) => <p key={`${index}-${paragraph.slice(0, 24)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{renderParagraph(paragraph)}</p>)}</div>}
         {briefing.quote && <blockquote className="mt-9 rounded-xl bg-green-deep p-6 text-lg font-bold leading-8 text-white sm:p-7 sm:text-xl">“{briefing.quote}”</blockquote>}
         {briefing.sourceNote && <p className="mt-6 rounded-lg border border-green-deep/10 bg-white p-4 text-sm leading-6 text-charcoal/60">{briefing.sourceNote}</p>}
 
