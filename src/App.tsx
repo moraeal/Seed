@@ -17,6 +17,7 @@ const PublisherMessage = lazy(() => import("./pages/PublisherMessage"));
 const Account = lazy(() => import("./pages/Account"));
 const CivicDictionary = lazy(() => import("./pages/CivicDictionary"));
 const Forum = lazy(() => import("./pages/Forum"));
+const CivicCollection = lazy(() => import("./pages/CivicCollection"));
 const Home = lazy(() => import("./pages/Home"));
 const ProposalLab = lazy(() => import("./pages/ProposalLab"));
 const Proposals = lazy(() => import("./pages/Proposals"));
@@ -74,6 +75,9 @@ function AppShell() {
           <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/en" element={<Home />} />
+          <Route path="/civic-campaign" element={<CivicCollection sectionKey="campaign" />} />
+          <Route path="/tax-watch-cases" element={<CivicCollection sectionKey="cases" />} />
+          <Route path="/civic-notices" element={<CivicCollection sectionKey="notices" />} />
           <Route path="/account" element={<Account />} />
           <Route path="/writer" element={<WriterRoom />} />
           <Route path="/writer/preview" element={<DraftArticlePreview />} />

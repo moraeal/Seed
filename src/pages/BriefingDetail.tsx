@@ -1,3 +1,4 @@
+import { getCivicSectionForArticle } from "../data/civicSections";
 import { ArrowLeft, Clock, Download, ExternalLink } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import ArticleContinuation from "../components/ArticleContinuation";
@@ -28,6 +29,7 @@ export default function BriefingDetail() {
     );
   }
 
+  const civicSection = getCivicSectionForArticle(`/briefings/${briefing.slug}`);
   const isLongRead = briefing.readMinutes >= 8;
   const readingPath = getArticleReadingPath("briefing", briefing.slug, language);
   const hasBCorpDeepDive = briefing.slug === "social-economy-fair-competition";
@@ -58,7 +60,7 @@ export default function BriefingDetail() {
     <article className="bg-paper">
       <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
         <div className="container-page max-w-5xl">
-          <Link to="/briefings" className="text-link text-xs"><ArrowLeft size={14} />{ko ? "브리핑 목록" : "Briefings"}</Link>
+          <Link to={civicSection?.path ?? "/briefings"} className="text-link text-xs"><ArrowLeft size={14} />{civicSection ? civicSection.title[language] : ko ? "브리핑 목록" : "Briefings"}</Link>
           <div className="mt-3 border-t-2 border-navy pt-3">
             <span className="section-kicker">{briefing.category}</span>
             <h1 className="article-detail-title mt-2">{briefing.title}</h1>

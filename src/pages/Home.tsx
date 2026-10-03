@@ -1,15 +1,14 @@
-import { ArrowRight, Clock, Pause, Play } from "lucide-react";
+import { campaignPending, civicSections, getCivicSectionArticles } from "../data/civicSections";
+import { ArrowRight, Clock, Pause, Play, Megaphone } from "lucide-react";
 import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import FeaturedStoryMedia from "../components/FeaturedStoryMedia";
 import SafeImage from "../components/SafeImage";
 import NewsTrackingCard from "../components/NewsTrackingCard";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
-import { getColumnsNewestFirst, hotIssueColumnTrackerSlugs } from "../data/columns";
+import { getColumnsNewestFirst } from "../data/columns";
 import { getHotIssueCards, selectHotIssueCards } from "../data/hotIssueSelection";
 import { localizeBriefing, localizeColumn } from "../data/localizedContent";
-import { getHotIssuesNewestFirst } from "../data/hotIssues";
-import { newsTrackerCases } from "../data/newsTrackerRegistry";
 import { getNewsTrackingCards, selectNewsTrackingCards } from "../data/newsTracking";
 import { getCivicWatchFeed, selectLatestCivicWatchItems, type CivicWatchItem } from "../data/civicWatchFeed";
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
@@ -164,7 +163,6 @@ export default function Home() {
   const allBriefings = getAllBriefingsNewestFirst();
   const localizedBriefings = allBriefings.map((item) => localizeBriefing(item, language));
   const allJournalColumns = getColumnsNewestFirst().map((item) => localizeColumn(item, language));
-  const hotIssues = getHotIssuesNewestFirst(language);
   const seedLanguageCandidates = [
     ...seedLanguageEnvironmentArticlesKo,
     ...seedLanguageArticlesKo,
@@ -187,26 +185,11 @@ export default function Home() {
   // A story gets one position on the homepage. Higher placements claim the route first,
   // and each lower section automatically advances to the next eligible article.
   const claimedHomePaths = new Set(activeFeaturedPath ? [getHomeTopic(activeFeaturedPath)] : []);
-  const latestHotIssue = claimFirstUnseen(hotIssues, (item) => item.to, claimedHomePaths);
-  const latestBriefing = claimFirstUnseen(
-    localizedBriefings.filter((item) => item.homeBriefingLeadEligible !== false),
-    (item) => `/briefings/${item.slug}`,
-    claimedHomePaths,
-  );
-  const latestHotIssueColumnSlug = latestHotIssue?.key.startsWith("column-") ? latestHotIssue.key.replace(/^column-/, "") : undefined;
-  const pairedTrackerSlug = latestHotIssueColumnSlug ? hotIssueColumnTrackerSlugs[latestHotIssueColumnSlug] : undefined;
-  const publicWatchTracker = [...newsTrackerCases]
-    .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
-    .find((item) => item.slug !== pairedTrackerSlug && !claimedHomePaths.has(getHomeTopic(`/monitoring/${item.slug}`)))
-    ?? newsTrackerCases.find((item) => !claimedHomePaths.has(getHomeTopic(`/monitoring/${item.slug}`)));
-  const publicWatchHref = publicWatchTracker ? `/monitoring/${publicWatchTracker.slug}` : "";
-  if (publicWatchHref) claimedHomePaths.add(getHomeTopic(publicWatchHref));
-  const publicWatchTitle = publicWatchTracker?.title[language];
-  const publicWatchSummary = publicWatchTracker?.summary[language];
-  const publicWatchImage = publicWatchTracker?.heroImage ? {
-    src: publicWatchTracker.heroImage.src,
-    alt: publicWatchTracker.heroImage.alt[language],
-  } : undefined;
+  const civicSidebarItems = civicSections.map((section) => {
+    const article = getCivicSectionArticles(section.key, language, featuredCandidates).find((item) => !claimedHomePaths.has(getHomeTopic(item.path)));
+    if (article) claimedHomePaths.add(getHomeTopic(article.path));
+    return { section, article };
+  });
   const seedLanguageArticle = claimFirstUnseen(
     seedLanguageCandidates,
     (item) => `/seed-language/${item.slug}`,
@@ -227,9 +210,7 @@ export default function Home() {
 
   const upperArticlePaths = new Set([
     activeFeaturedPath,
-    latestHotIssue?.to,
-    latestBriefing ? `/briefings/${latestBriefing.slug}` : undefined,
-    publicWatchHref,
+    ...civicSidebarItems.map((item) => item.article?.path),
     seedLanguageArticle ? `/seed-language/${seedLanguageArticle.slug}` : undefined,
     ...visibleHotIssueCards.map((card) => card.to),
     ...newsTrackingCards.map((card) => card.to),
@@ -446,37 +427,23 @@ export default function Home() {
                 </Link>
               </article>
             )}
-            <aside className="divide-y divide-green-deep/15 border-y border-green-deep/20 xl:flex xl:h-full xl:flex-col xl:border-t-0" aria-label={ko ? "오늘의 핵심 콘텐츠" : "Today’s essential stories"}>
-              {latestHotIssue && (
-                <Link to={latestHotIssue.to} className="group grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3 xl:first:pt-0">
-                  <div className="overflow-hidden bg-green-deep"><SafeImage src={resolveImageSrc(latestHotIssue.imageSrc)} alt={latestHotIssue.imageAlt} referrerPolicy="no-referrer" className="aspect-[4/3] h-full max-h-[96px] w-full object-cover transition duration-500 group-hover:scale-[1.02]" /></div>
+            <aside className="divide-y divide-green-deep/15 border-y border-green-deep/20 xl:flex xl:h-full xl:flex-col xl:border-t-0" aria-label={ko ? "시민운동과 시민언어" : "Civic action and language"}>
+              {civicSidebarItems.map(({ section, article }) => {
+                const campaignPreparing = section.key === "campaign" && !getCivicSectionArticles("campaign", language, featuredCandidates).length;
+                const title = article?.title ?? (campaignPreparing ? campaignPending.title[language] : section.title[language]);
+                const summary = article?.summary ?? (campaignPreparing ? campaignPending.summary[language] : section.description[language]);
+                return <div key={section.key} className="grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3 xl:first:pt-0">
+                  <Link to={article?.path ?? section.path} className="flex items-center justify-center overflow-hidden bg-green-deep text-white" aria-label={title}>
+                    {article ? <SafeImage src={resolveImageSrc(article.image.src)} alt={article.image.alt} className="aspect-[4/3] h-full max-h-[110px] w-full object-cover" /> : <Megaphone size={34} aria-hidden="true" className="my-6" />}
+                  </Link>
                   <div className="min-w-0">
-                    <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">LATEST STORIES</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "기사 읽기" : "Read"}<ArrowRight size={11}/></span></div>
-                    <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{latestHotIssue.title}</h2>
-                    <p className="home-compact-summary mt-1 line-clamp-3">{latestHotIssue.summary}</p>
+                    <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1"><Link to={section.path} className="text-sm font-black text-green-deep hover:underline">{section.title[language]}</Link><Link to={section.path} className="shrink-0 text-xs font-bold text-green-deep/70">{ko ? "전체보기" : "View all"}</Link></div>
+                    <Link to={article?.path ?? section.path}><h2 className="editorial-title mt-1 line-clamp-2 break-keep text-[1.02rem] font-bold leading-snug text-navy hover:text-green-mid sm:text-[1.08rem]">{title}</h2></Link>
+                    <p className="home-compact-summary mt-1 line-clamp-2">{summary}</p>
+                    {campaignPreparing && <p className="mt-1 text-xs font-semibold text-charcoal/50">{ko ? "준비 중" : "In preparation"}</p>}
                   </div>
-                </Link>
-              )}
-              {latestBriefing && (
-                <Link to={`/briefings/${latestBriefing.slug}`} className="group grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3">
-                  <div className="overflow-hidden bg-green-deep">{latestBriefing.images?.[0] && <SafeImage src={resolveImageSrc(latestBriefing.images[0].src)} alt={latestBriefing.images[0].alt} referrerPolicy="no-referrer" className="aspect-[4/3] h-full max-h-[96px] w-full object-cover transition duration-500 group-hover:scale-[1.02]" />}</div>
-                  <div className="min-w-0">
-                    <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">BRIEFINGS</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "브리핑 읽기" : "Read"}<ArrowRight size={11}/></span></div>
-                    <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{latestBriefing.title}</h2>
-                    <p className="home-compact-summary mt-1 line-clamp-3">{latestBriefing.summary}</p>
-                  </div>
-                </Link>
-              )}
-              {publicWatchHref && publicWatchTitle && publicWatchSummary && publicWatchImage && (
-                <Link to={publicWatchHref} className="group grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3">
-                  <div className="overflow-hidden bg-green-deep"><SafeImage src={resolveImageSrc(publicWatchImage.src)} alt={publicWatchImage.alt} referrerPolicy="no-referrer" className="aspect-[4/3] h-full max-h-[96px] w-full object-cover transition duration-500 group-hover:scale-[1.02]" /></div>
-                  <div className="min-w-0">
-                    <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">CIVIC WATCH</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "시민감시 보기" : "Read"}<ArrowRight size={11}/></span></div>
-                    <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{publicWatchTitle}</h2>
-                    <p className="home-compact-summary mt-1 line-clamp-3">{publicWatchSummary}</p>
-                  </div>
-                </Link>
-              )}
+                </div>;
+              })}
               {seedLanguageArticle && (
                 <Link to={`/seed-language/${seedLanguageArticle.slug}`} className="group grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3">
                   <div className="relative flex aspect-[4/3] h-full max-h-[96px] w-full flex-col items-center justify-center overflow-hidden border border-green-deep/20 bg-green-deep text-center" style={{ containerType: "inline-size" }}>
@@ -488,7 +455,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="min-w-0">
-                    <div className="flex items-center justify-between gap-2"><p className="truncate text-[9px] font-black tracking-[.14em] text-green-deep sm:text-[10px]">GLOSSARY</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "시민언어 보기" : "Read"}<ArrowRight size={11}/></span></div>
+                    <div className="flex items-center justify-between gap-2"><p className="text-sm font-black text-green-deep">{ko ? "시민언어" : "Civic Language"}</p><span className="inline-flex shrink-0 items-center gap-1 text-[10px] font-extrabold text-green-deep/70">{ko ? "시민언어 보기" : "Read"}<ArrowRight size={11}/></span></div>
                     <h2 className="editorial-title mt-1 truncate text-[1.02rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.08rem]">{seedLanguageArticle.title}</h2>
                     <p className="home-compact-summary mt-1 line-clamp-3">{seedLanguageArticle.summary}</p>
                   </div>

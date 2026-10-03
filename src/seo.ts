@@ -1,3 +1,4 @@
+import { civicSections } from "./data/civicSections";
 import { getAllBriefingsNewestFirst } from "./data/allBriefings";
 import { columns, getColumnsNewestFirst, getHotIssueColumnsNewestFirst, getPublicInterestColumnsNewestFirst, isHotIssueColumn, publicInterestColumnSlugs } from "./data/columns";
 import { newsArticles } from "./data/news";
@@ -55,6 +56,7 @@ const newest = (dates: string[]) => [...dates].sort()[dates.length - 1];
 const latestDate = newest([...newsArticles.map((item) => item.date), ...publicInterestWatchCases.map((item) => item.updatedAt), ...columns.map((item) => item.date), ...getAllBriefingsNewestFirst().map((item) => item.date), ...allSeedLanguageArticlesKo.map((item) => item.date), ...legislativeCommentaries.map((item) => item.date)]);
 
 const staticRoutes: SeoRoute[] = [
+  ...civicSections.map((section) => ({ path: section.path, title: `${section.title.ko} | 씨앗의 소리`, description: section.description.ko, type: "website" as const, lastModified: "2026-10-03" })),
   {
     path: "/",
     title: SITE_TITLE,

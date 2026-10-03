@@ -14,6 +14,7 @@ const server = await createServer({
   server: { middlewareMode: true },
   optimizeDeps: { noDiscovery: true },
 });
+const civicSectionsModule = await server.ssrLoadModule("/src/data/civicSections.ts");
 const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, seedWatchModule, siteContentModule, seedLanguageModule, seedLanguageEnvironmentModule, communityChestModule, legislativeCommentaryModule] = await Promise.all([
   server.ssrLoadModule("/src/seo.ts"),
   server.ssrLoadModule("/src/data/news.ts"),
@@ -197,7 +198,9 @@ function articleBody(route) {
     `<section><h2>확인 자료</h2><ul>${communityChestResearch.sources.map((source) => `<li><a href="${escapeHtml(source.url)}">${escapeHtml(source.label)}</a></li>`).join("")}</ul></section>`,
   ].join("\n");
 
-  const listing = route.path === "/news" ? [
+  const civicSection = civicSectionsModule.civicSections.find((section) => section.path === route.path);
+  const listing = civicSection ? civicSectionsModule.getCivicSectionArticles(civicSection.key, "ko").map((item) => ({ path: item.path, title: item.title, summary: item.summary }))
+    : route.path === "/news" ? [
       ...news.map((item) => ({ path: `/news/${item.slug}`, title: item.title, summary: item.summary })),
       ...hotIssueColumns.map((item) => ({ path: `/columns/${item.slug}`, title: item.title, summary: item.summary })),
     ]

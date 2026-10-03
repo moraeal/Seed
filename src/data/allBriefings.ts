@@ -1,3 +1,4 @@
+import { taxWatchCase, civicNotice } from "./civicHubArticles";
 import { pensionReciprocityBriefing } from "./pensionReciprocityBriefing";
 import { realEstateSupervisorCitizenFreedomBriefing } from "./realEstateSupervisorCitizenFreedomBriefing";
 import { briefings, type Briefing } from "./briefings";
@@ -24,7 +25,7 @@ import { realEstateSupervisorExplainer } from "./realEstateSupervisorExplainer";
 import { monthlyRentCreditExplainer } from "./monthlyRentCreditExplainer";
 import { farmlandRetirementBriefing } from "./farmlandRetirementBriefing";
 
-const allBriefings: Briefing[] = [pensionReciprocityBriefing, realEstateSupervisorCitizenFreedomBriefing, farmlandRetirementBriefing, realEstateSupervisorExplainer, monthlyRentCreditExplainer, incomeTaxFamilyDeductionBriefing, inheritanceTaxFrozenThresholdBriefing, platformAdvertisingBriefing, northKoreanPowsSouthKoreaBriefing, seojinSchoolNeighborsBriefing, skHynixAiHackathonBriefing, hospitalInheritanceTaxBriefing, activistFundingPressureBriefing, socialSolidarityEconomyLawBriefing, futureResponseFundBriefing, partyDissolutionBriefing, yeosuIslandExpoBriefing, hearingAccountabilityBriefing, socialEconomyFairnessBriefing, socialEconomyBriefing, publicInterestTravelBriefing, publicBroadcastingBriefing, nationalBudgetBriefing, gyeonggiBriefingDisplay, ...briefings];
+const allBriefings: Briefing[] = [taxWatchCase, civicNotice, pensionReciprocityBriefing, realEstateSupervisorCitizenFreedomBriefing, farmlandRetirementBriefing, realEstateSupervisorExplainer, monthlyRentCreditExplainer, incomeTaxFamilyDeductionBriefing, inheritanceTaxFrozenThresholdBriefing, platformAdvertisingBriefing, northKoreanPowsSouthKoreaBriefing, seojinSchoolNeighborsBriefing, skHynixAiHackathonBriefing, hospitalInheritanceTaxBriefing, activistFundingPressureBriefing, socialSolidarityEconomyLawBriefing, futureResponseFundBriefing, partyDissolutionBriefing, yeosuIslandExpoBriefing, hearingAccountabilityBriefing, socialEconomyFairnessBriefing, socialEconomyBriefing, publicInterestTravelBriefing, publicBroadcastingBriefing, nationalBudgetBriefing, gyeonggiBriefingDisplay, ...briefings];
 
 export const getAllBriefingsNewestFirst = () => [...allBriefings].sort((a, b) => {
   const dateOrder = b.date.localeCompare(a.date);
