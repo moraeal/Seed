@@ -4,7 +4,7 @@ export const childbirthPensionCreditWatch: LegislativeCommentary = {
   "slug": "childbirth-pension-credit-second-child-2026",
   "billNo": "2221112",
   "date": "2026-10-03",
-  "readMinutes": 7,
+  "readMinutes": 8,
   "heroSrc": "images/legislation/childbirth-pension-credit-2026/hero.webp",
   "inlineImage": {
     "src": "images/legislation/childbirth-pension-credit-2026/caregiver.webp",
@@ -53,17 +53,24 @@ export const childbirthPensionCreditWatch: LegislativeCommentary = {
         "en": "National Pension Act amendment · Bill No. 2213352"
       },
       "url": "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2213352/detailRP"
+    },
+    {
+      "label": {
+        "ko": "아시아경제 — 외국인 해외 출산·양육의 출산크레딧 적용 보도 (2026.10.1.)",
+        "en": "Asia Economy — childbirth credits for foreign participants’ children raised overseas (October 1, 2026)"
+      },
+      "url": "https://n.news.naver.com/article/277/0005823351"
     }
   ],
   "editions": {
     "ko": {
-      "title": "둘째 낳으면 연금 3개월 더…양육자의 노후도 나아질까",
-      "subtitle": "2027년 이후 둘째 자녀부터 출산크레딧 15개월 인정…실제 수혜자와 재원 부담 함께 살펴야",
-      "summary": "둘째 자녀의 국민연금 출산크레딧을 12개월에서 15개월로 늘리는 내용이 10월 1일 국회 본회의를 통과했다. 양육으로 생긴 연금 공백을 보완하는 취지와 함께 실제 양육자의 노후보장, 적용 시점의 차이, 장기 재원 부담을 살펴본다.",
+      "title": "둘째 연금 3개월 더…해외 출산 지원의 빈틈도 메워야",
+      "subtitle": "출산크레딧 15개월 확대…국내 양육과의 연결, 상호주의, 국민 부담을 함께 검증해야 합니다",
+      "summary": "둘째 자녀의 출산크레딧을 늘리는 법안이 국회를 통과했습니다. 같은 날 외국인 가입자의 해외 출산·양육에도 지원하는 제도의 허점이 보도됐습니다. 씨앗은 양육자의 연금 공백 보완을 지지하며, 지원 목적에 맞는 거주·양육·기여 기준과 상호 호혜, 재정 검증을 함께 요구합니다.",
       "keyPoints": [
         "서영석 의원 등 10인이 9월 4일 발의한 국민연금법 개정안(의안번호 2221112)의 둘째 자녀 인정기간 확대 내용이 위원회 대안에 반영됐습니다.",
         "10월 1일 본회의를 통과한 개정안은 2027년 이후 얻는 둘째 자녀부터 15개월을 인정할 예정입니다. 본회의 통과와 공포·시행은 별도 절차입니다.",
-        "씨앗은 실제 양육자의 수급권 확보, 적용 시점에 따른 가구 간 차이, 확대에 필요한 장기 재원을 계속 확인합니다."
+        "혜택 확대에는 대상 검증이 따라야 합니다. 씨앗은 국내 양육과의 연결 요건, 상호주의 검토, 해외 양육 수혜 규모와 비용 공개를 요구합니다."
       ],
       "heroAlt": "아기 신발과 지팡이를 잇는 나무 블록 다리의 빈틈을 메우는 구리빛 블록",
       "heroCaption": "양육으로 생긴 연금 가입기간의 빈틈은 노후까지 이어집니다. 출산크레딧은 그 공백을 보완하는 제도입니다.",
@@ -72,7 +79,7 @@ export const childbirthPensionCreditWatch: LegislativeCommentary = {
           "title": "둘째 자녀의 연금 가입기간, 3개월 더 인정합니다",
           "paragraphs": [
             "둘째 자녀를 얻은 부모에게 인정하는 국민연금 가입기간이 12개월에서 15개월로 늘어납니다. 이 내용을 담은 국민연금법 개정안이 지난 10월 1일 국회 본회의를 통과했습니다. 확대된 혜택은 2027년 이후 출산하거나 입양해 얻는 둘째 자녀부터 적용될 예정입니다.",
-            "아이를 기르느라 일을 쉬면 당장의 소득뿐 아니라 노후에 받을 연금도 줄어들 수 있습니다. 출산크레딧은 이러한 연금 공백을 보완하는 제도입니다. 이번 확대는 다자녀 가구의 노후보장을 강화한다는 의미가 있습니다. 실제 양육자의 연금이 얼마나 나아지는지, 늘어난 비용은 누가 부담하는지도 함께 확인해야 합니다.",
+            "양육으로 생긴 연금 공백을 보완하는 취지는 타당합니다. 같은 날 아시아경제는 외국인 가입자의 해외 출산·양육에도 출산크레딧이 적용되는 허점을 보도했습니다. 국회가 인정기간을 늘리는 동안 지원 대상의 기준은 얼마나 검증했습니까. 국내에서 아이를 키우는 시민에게 혜택을 설명하려면, 국내 양육과 연결되지 않는 지원을 어떤 근거로 유지하는지도 답해야 합니다.",
             "서영석 의원 등 10인이 2026년 9월 4일 발의한 국민연금법 일부개정법률안의 의안번호는 2221112이며, 소관위원회는 보건복지위원회입니다. 처리 결과는 대안반영폐기입니다. 여러 법안을 위원회 대안으로 묶어 처리하면서 개별 법안을 폐기하는 절차로, 둘째 자녀 인정기간 확대 내용은 이번 통과안에 반영됐습니다."
           ]
         },
@@ -101,6 +108,29 @@ export const childbirthPensionCreditWatch: LegislativeCommentary = {
           ]
         },
         {
+          "title": "해외에서 키우는 자녀까지 지원하는 기준은 무엇입니까",
+          "paragraphs": [
+            "아시아경제 보도에 따르면 외국인 국민연금 가입자는 자녀가 해외에서 태어나 해외에서 자라더라도 출생 증빙으로 출산크레딧을 적용받을 수 있습니다. 자녀의 국내 출생·거주를 요구하는 별도 요건이 없다는 지적입니다. 국민연금 가입자라는 사실만으로 추가 지원의 목적까지 충족했다고 볼 수 있는지 따져야 합니다.",
+            "씨앗은 오늘자 시민브리핑에서 이 허점을 지적했습니다. 보험료를 내고 쌓은 연금 권리는 그 기여에 맞게 보장해야 합니다. 세금과 기금으로 가입기간을 더해주는 출산크레딧에는 지원 목적에 맞는 별도의 기준이 필요합니다. 출산에 따른 연금 공백 보완과 국내 저출생 완화를 내세운다면, 지원이 한국의 고용·양육 생활과 어떻게 연결되는지 설명해야 합니다.",
+            "국내에서 자녀를 키우는 외국인 가정, 해외에서 출산한 뒤 국내로 돌아와 아이를 기르는 가정, 국내 고용관계를 유지하며 해외에서 양육하는 가정 등은 실제 생활과 기여를 기준으로 심사할 수 있습니다. 출생지 한 항목으로 공정을 재단하기보다 부모의 실거주·가입 이력과 자녀의 양육 장소를 확인하는 요건을 마련해야 합니다."
+          ],
+          "paragraphLinks": [
+            {
+              "paragraphIndex": 1,
+              "label": "저출생 대책이 해외 출산까지 지원해야 합니까",
+              "href": "/briefings/foreign-pension-birth-credit-reciprocity-fairness-2026"
+            }
+          ]
+        },
+        {
+          "title": "상호주의를 도입한 국회, 출산크레딧에도 답해야 합니다",
+          "paragraphs": [
+            "10월 1일 정부 발표는 외국인 추납·부양가족연금에 상호주의를 확대한다고 밝혔습니다. 상대국이 우리 국민에게 상응하는 혜택을 허용하는지 살피고, 국내 장기 거주와 근로·납세 등의 기여를 고려한 예외는 대통령령으로 정하는 내용입니다.",
+            "발표에는 해외 출산·양육에 대한 출산크레딧 요건을 어떻게 정비했는지 설명이 없습니다. 추납·부양가족연금에 적용한 상호주의의 취지를 출산크레딧의 추가 공적 지원에도 검토해야 합니다. 상대국의 동등한 지원 여부와 사회보장협정, 국내 거주·기여에 근거한 예외를 공개해 국민이 납득할 기준을 세워야 합니다.",
+            "혜택 확대를 의결한 국회에는 대상과 비용을 검증할 책임이 있습니다. 해외 양육 수혜자 수와 예상 지급액을 공개하고, 거주·양육 확인 절차와 예외의 범위를 정비하는 후속 입법을 추진해야 합니다. 기준을 세우지 않은 채 인정기간만 늘리면 기존의 허점에도 더 큰 혜택이 얹힐 수 있습니다."
+          ]
+        },
+        {
           "title": "연금기금과 국고, 부담도 함께 공개해야",
           "paragraphs": [
             "출산크레딧 확대에는 미래의 연금 지급비용이 따릅니다. 관련 입법에서는 이 비용을 누가 부담할 것인지도 쟁점이 됐습니다.",
@@ -109,12 +139,13 @@ export const childbirthPensionCreditWatch: LegislativeCommentary = {
           ]
         },
         {
-          "title": "씨앗의 관점: 양육의 손실을 보완하고, 비용은 투명하게",
+          "title": "씨앗의 판단: 혜택을 늘리는 국회는 빈틈을 메울 책임도 있습니다",
           "paragraphs": [
-            "아이를 기르는 시민의 연금 공백을 보완하는 방향은 타당합니다. 양육 때문에 줄어든 소득과 가입기간이 노후의 불안으로 이어지는 현실을 개선해야 합니다.",
-            "정책의 성과는 실제 양육자의 노후보장이 얼마나 나아졌는지로 평가하겠습니다. 출산 장려 효과도 별도의 자료로 검증해야 합니다.",
-            "씨앗이 계속 확인할 것은 양육자의 수급권 확보, 적용 시점에 따른 가구 간 차이, 확대에 필요한 장기 재원입니다. 혜택을 발표하는 정부는 그 혜택을 받는 시민과 비용을 부담하는 시민 모두에게 설명할 책임이 있습니다."
-          ]
+            "씨앗은 양육 때문에 생긴 연금 공백을 보완하는 방향을 지지합니다. 그 지지는 지원 목적과 대상을 엄격히 검증하라는 요구와 함께 갑니다. 국내에서 아이를 기르는 시민이 노후까지 손실을 떠안는 현실을 개선하고, 공적 지원이 실제 양육자의 연금으로 이어지게 해야 합니다.",
+            "정부와 국회는 출산크레딧의 거주·양육·기여 기준을 구체화하고 상호 호혜 원칙을 검토해야 합니다. 국내 양육과 연결되지 않는 해외 출산에 추가 지원을 유지하려면 그 정책적 근거와 국민에게 돌아오는 이익을 설명해야 합니다. 같은 가입자라는 이유만으로 세금과 기금의 추가 지원까지 당연하게 처리하는 관행은 바꿔야 합니다.",
+            "씨앗은 후속 법안과 시행령에 국내 양육과의 연결 요건이 들어가는지, 상호주의와 예외가 어떻게 설계되는지, 해외 양육 수혜 규모와 장기 비용이 공개되는지 확인하겠습니다. 성별 수급 현황과 양육자의 개인 연금 확보도 함께 추적하겠습니다. 지원받는 사람의 권리와 비용을 감당하는 국민의 권리를 함께 지켜야 공정한 연금입니다."
+          ],
+          "quote": "국민의 연금과 세금은 정부가 인심을 쓰라고 맡긴 돈이 아닙니다. 혜택을 늘리는 국회는 지원의 빈틈을 메울 책임도 있습니다."
         }
       ],
       "chart": {
@@ -155,16 +186,16 @@ export const childbirthPensionCreditWatch: LegislativeCommentary = {
         "note": "국민연금공단 안내, 국민참여입법센터 공개 제안이유, 보건복지부 10월 1일 보도자료 기준. 이전 출산 이력이 있는 가구에는 경과규정이 적용됩니다. 이번 기사에서는 의안 전문·부칙과 최종 대안 전문의 조문별 대조까지는 하지 않았습니다.",
         "afterSection": 1
       },
-      "sourceNote": "2026년 10월 3일 확인. 의안 2221112 및 2213352의 공식 공개 제안이유·진행정보, 보건복지부 본회의 통과 보도자료, 국민연금공단 안내를 대조했습니다. 의안 전문 및 최종 대안 전문은 직접 조문별 대조하지 않았습니다. 성별 수급자 수치는 중앙일보가 공단 자료를 인용한 보도에 따릅니다. 30%·70% 재원 비율은 2025년 발의안의 설명이며 이번 통과안의 최종 부담비율로 확정해 제시하지 않았습니다. 공포 여부, 최종 재원 규정, 비용추계는 계속 확인할 항목입니다."
+      "sourceNote": "2026년 10월 3일 확인. 의안 2221112 및 2213352의 공식 공개 제안이유·진행정보, 보건복지부 본회의 통과 보도자료, 국민연금공단 안내를 대조했습니다. 의안 전문 및 최종 대안 전문은 직접 조문별 대조하지 않았습니다. 성별 수급자 수치는 중앙일보가 공단 자료를 인용한 보도에 따릅니다. 30%·70% 재원 비율은 2025년 발의안의 설명이며 이번 통과안의 최종 부담비율로 확정해 제시하지 않았습니다. 공포 여부, 최종 재원 규정, 비용추계는 계속 확인할 항목입니다. 10월 3일 수정: 오늘자 외국인 크레딧 시민브리핑의 공정·상호 호혜 논지를 반영해 해외 출산·양육의 적용 요건과 후속 입법 책임을 추가했습니다. 해외 양육 적용 현황은 아시아경제 보도에 근거합니다. 10월 1일 정부 발표가 상호주의 적용 대상으로 명시한 것은 추납·부양가족연금이며, 출산크레딧 해외 양육 요건의 보완 여부는 최종 조문·하위 규정에서 추가 확인할 사항입니다. 거주·양육·기여 기준의 구체화와 상호주의 검토는 씨앗의 정책 제안입니다."
     },
     "en": {
-      "title": "Three extra pension months for a second child. Will caregivers gain a stronger retirement?",
-      "subtitle": "A National Assembly amendment would raise second-child credits to 15 months from 2027; beneficiaries and long-term costs need scrutiny",
-      "summary": "South Korea's National Assembly passed an amendment on October 1 to raise the pension credit for a second child from 12 to 15 months. SEED VOICE examines whose retirement it strengthens, the eligibility cutoff and the long-term funding burden.",
+      "title": "More pension credit for a second child: close the overseas eligibility gap too",
+      "subtitle": "A 15-month credit needs scrutiny of its links to caregiving in Korea, reciprocity and the burden on contributors",
+      "summary": "Parliament has passed a larger second-child pension credit. Reporting on the same day exposed eligibility for foreign participants’ children raised abroad. SEED VOICE supports repairing caregivers’ pension gaps and calls for purpose-based residence, care and contribution criteria, reciprocity review and fiscal accountability.",
       "keyPoints": [
         "Bill No. 2221112, introduced by Seo Young-seok and nine colleagues on September 4, proposed the second-child credit increase. The provision was incorporated into a committee substitute.",
         "The amendment passed on October 1 is scheduled to cover second children born or adopted from 2027. Parliamentary passage, promulgation and commencement are separate stages.",
-        "Our monitoring criteria are caregivers' pension eligibility, differences across the cutoff date and the long-term cost of the expansion."
+        "Expanded support requires eligibility scrutiny. We call for criteria linking support to caregiving in Korea, a reciprocity review, and disclosure of overseas-care recipient numbers and costs."
       ],
       "heroAlt": "A copper-coloured block fills a gap in a wooden bridge connecting baby shoes with a walking cane",
       "heroCaption": "A gap in pension contributions during childcare can follow a parent into retirement. Childbirth credits help bridge it.",
@@ -173,7 +204,7 @@ export const childbirthPensionCreditWatch: LegislativeCommentary = {
           "title": "A second child would bring three more credited pension months",
           "paragraphs": [
             "South Korea's National Assembly passed a National Pension Act amendment on October 1 to increase the credited contribution period for a second child from 12 to 15 months. The expanded provision is scheduled to cover second children born or adopted from 2027.",
-            "Taking time away from paid work to raise a child can reduce current income and future pension benefits. Childbirth credits help compensate for that gap. The expansion could improve retirement security for families with more than one child. Its effects on individual caregivers and its additional costs also need to be measured.",
+            "Repairing pension gaps caused by childcare is a sound aim. On the same day, Asia Economy reported an eligibility gap concerning foreign participants’ children born and raised abroad. What scrutiny did Parliament give eligibility as it increased the credit? Families raising children in Korea deserve an explanation of why additional support also covers care without a connection to domestic family life.",
             "Seo Young-seok and nine other lawmakers introduced Bill No. 2221112 on September 4, 2026. It was assigned to the Health and Welfare Committee and recorded as superseded by a committee substitute. That is a procedural outcome when proposals are combined; its second-child increase was included in the amendment passed by the Assembly."
           ]
         },
@@ -202,6 +233,29 @@ export const childbirthPensionCreditWatch: LegislativeCommentary = {
           ]
         },
         {
+          "title": "What justifies support for children raised abroad?",
+          "paragraphs": [
+            "Asia Economy reported that foreign National Pension participants can receive childbirth credits for children born and raised abroad, without a separate requirement for the child to be born or resident in Korea. Membership alone needs to be tested against the purpose of this additional support.",
+            "Our civic briefing published today examined this gap. Pension entitlements earned through contributions should be honoured. Childbirth credits add qualifying months using public funds and need their own purpose-based eligibility criteria. A policy intended to offset childbirth-related pension gaps and address Korea’s low birth rate should explain its connection to employment and caregiving in Korea.",
+            "Assessment can account for foreign families raising children in Korea, families returning after an overseas birth, and caregivers abroad who retain employment ties to Korea. Place of birth alone is a poor test. Parents’ actual residence and contribution history, together with where care takes place, provide more relevant criteria."
+          ],
+          "paragraphLinks": [
+            {
+              "paragraphIndex": 1,
+              "label": "Should Korea’s birth policy subsidise children raised overseas?",
+              "href": "/briefings/foreign-pension-birth-credit-reciprocity-fairness-2026"
+            }
+          ]
+        },
+        {
+          "title": "Parliament must explain reciprocity for childbirth credits too",
+          "paragraphs": [
+            "The October 1 announcement extends reciprocity to foreign participants’ retrospective contributions and dependent-family supplements. It provides for exceptions based on long residence, work and tax contributions, with details to be set by presidential decree.",
+            "The announcement does not explain any repair of overseas-care eligibility for childbirth credits. SEED VOICE calls for reviewing reciprocity in this additional public support too. Equivalent treatment abroad, social security agreements and justified exceptions for domestic residence and contribution should be disclosed.",
+            "Parliament approved the expansion and bears responsibility for examining its recipients and costs. It should require overseas-care recipient and expenditure estimates, and pursue follow-up legislation on residence checks, care verification and exceptions. Raising credits without addressing eligibility can enlarge support through an existing gap."
+          ]
+        },
+        {
           "title": "The Treasury and pension fund: disclose the burden",
           "paragraphs": [
             "Expanding pension credits creates future benefit obligations. Related proposals have raised the question of who should finance them.",
@@ -210,12 +264,13 @@ export const childbirthPensionCreditWatch: LegislativeCommentary = {
           ]
         },
         {
-          "title": "SEED VOICE: compensate for caring, account for the cost",
+          "title": "SEED VOICE: expanding benefits brings a duty to close eligibility gaps",
           "paragraphs": [
-            "Helping citizens repair pension gaps caused by raising children is a sound direction. Reduced income and contribution periods during care should not leave people facing avoidable insecurity in old age.",
-            "The policy should be assessed by how much it improves actual caregivers' retirement security. Claims that it encourages childbirth require separate evidence.",
-            "Our continuing scrutiny will focus on caregivers gaining pension entitlement, the treatment of families on either side of the cutoff and long-term funding. The government owes an explanation both to citizens receiving the benefit and to those financing it."
-          ]
+            "We support compensating for pension gaps caused by raising children. That support comes with a demand for rigorous scrutiny of purpose and eligibility. Families providing care in Korea should gain retirement security, and credits should improve the actual caregiver’s own pension.",
+            "The government and Parliament should define residence, caregiving and contribution criteria and review reciprocity. Continuing additional support for overseas births without a domestic-care connection requires an explanation of its policy rationale and benefit to the Korean public. Membership alone should not make publicly financed additions automatic.",
+            "We will track whether follow-up legislation and decrees establish domestic-care links, how reciprocity and exceptions are designed, and whether overseas-care recipient numbers and long-term costs are disclosed. We will also monitor recipients by sex and caregivers’ individual pension gains. Fairness requires protecting recipients and the citizens financing their support."
+          ],
+          "quote": "Citizens’ pension contributions and taxes are entrusted funds. Parliament must close eligibility gaps as it expands benefits."
         }
       ],
       "chart": {
@@ -256,7 +311,7 @@ export const childbirthPensionCreditWatch: LegislativeCommentary = {
         "note": "Based on National Pension Service guidance, the official public proposal summary and the ministry's October 1 release. Transitional rules apply to earlier birth histories. This article has not compared the complete bill, supplementary provisions and final substitute clause by clause.",
         "afterSection": 1
       },
-      "sourceNote": "Checked October 3, 2026. Sources include official public summaries and procedural records for Bills 2221112 and 2213352, the ministry's passage announcement and National Pension Service guidance. The complete original and substitute texts have not been compared clause by clause. Recipient figures are from JoongAng Ilbo reporting citing the pension service. The 30%/70% funding split is stated in the 2025 proposal, not presented here as the final split under the latest amendment. Promulgation, final funding provisions and cost estimates remain monitoring items."
+      "sourceNote": "Checked October 3, 2026. Sources include official public summaries and procedural records for Bills 2221112 and 2213352, the ministry's passage announcement and National Pension Service guidance. The complete original and substitute texts have not been compared clause by clause. Recipient figures are from JoongAng Ilbo reporting citing the pension service. The 30%/70% funding split is stated in the 2025 proposal, not presented here as the final split under the latest amendment. Promulgation, final funding provisions and cost estimates remain monitoring items. Revised October 3 to incorporate today’s civic briefing on fairness and reciprocity, adding overseas-care eligibility and responsibility for follow-up legislation. Overseas eligibility is based on Asia Economy reporting. The October 1 announcement explicitly extends reciprocity to retrospective contributions and dependent-family supplements; any repair of overseas-care rules for childbirth credits still requires comparison with final provisions and regulations. More specific residence, care and contribution tests and a reciprocity review are SEED VOICE’s policy proposals."
     }
   }
 };
