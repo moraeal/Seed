@@ -114,5 +114,29 @@ export const ktrCampaignTranslation: BriefingTranslation = {
     "Actual discipline, investigations, recovery and compensation after waste is established",
     "The watchdog’s own funding, expenditure, interests and corrections"
   ],
-  "sourceNote": "As of October 3, 2026. KTR is the proposed movement’s provisional name; activities are future plans. Signature and refund counts are organizations’ own figures. Fiscal effects of the US tax law are estimates made at the time. Liability and actual recovery are distinct. Photograph license: https://creativecommons.org/licenses/by-sa/2.0/."
+  "sourceNote": "As of October 3, 2026. KTR is the proposed movement’s provisional name; activities are future plans. Signature and refund counts are organizations’ own figures. Fiscal effects of the US tax law are estimates made at the time. Liability and actual recovery are distinct. Photograph license: https://creativecommons.org/licenses/by-sa/2.0/.",
+  "sourceLabels": [
+    "[1] ATR · About Americans for Tax Reform",
+    "[2] ATR · About the Pledge",
+    "[3] ATR · Federal Taxpayer Protection Pledge Q&A",
+    "[4] ATR · 2018 Tax Reform Priorities",
+    "[5] CBO · Conference Agreement on H.R. 1, 2017 cost estimate",
+    "[6] ATR · 2018 Ballot Guide",
+    "[7] Korean Taxpayers Association · 2000–2001 tax correction campaign, August 30, 2002",
+    "[8] Korean Taxpayers Association · Proposed tax correction litigation, 2001",
+    "[9] Korean Taxpayers Association · Year-end tax campaign record",
+    "[10] Citizens’ Action · Bottomless Jar Award record",
+    "[11] Seoul Shinmun · Yongin light-rail residents’ lawsuit, July 16, 2025",
+    "[12] Yonhap · Yongin seeks KRW 25.7 billion in damages, August 11, 2025",
+    "[14] Easy Law · Eligibility and prerequisites for residents’ litigation",
+    "[15] National Law Information Center · Unlawful spending oversight and budget-waste reporting guidelines",
+    "[16] Han-sol Kang · Legal issues and improvements in residents’ litigation, 2024 thesis",
+    "[19] Yonhap · Allocation of the proposed 2027 budget",
+    "[21] National Tax Service · Corporate income tax rates",
+    "[22] National Assembly Budget Office · Public Finance of Korea 2026",
+    "[23] Yonhap · Property-tax reform in 2009",
+    "[26] Yonhap · Yeosu Expo at its halfway point, October 3, 2026",
+    "[27] Yonhap · Yeosu Expo problems and parliamentary scrutiny, September 27, 2026",
+    "[28] Yonhap · Audit of the failed Saemangeum Jamboree, April 10, 2025"
+  ]
 };

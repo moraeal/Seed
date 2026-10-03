@@ -136,91 +136,91 @@ export const ktrCampaign: Briefing = {
   ],
   "sources": [
     {
-      "label": "ATR, About Americans for Tax Reform",
+      "label": "[1] ATR, About Americans for Tax Reform",
       "url": "https://atr.org/about/"
     },
     {
-      "label": "ATR, About the Pledge",
+      "label": "[2] ATR, About the Pledge",
       "url": "https://atr.org/about-the-pledge/"
     },
     {
-      "label": "ATR, Federal Taxpayer Protection Pledge Questions and Answers",
+      "label": "[3] ATR, Federal Taxpayer Protection Pledge Questions and Answers",
       "url": "https://atr.org/federal-taxpayer-protection-questions-answers-a6204/"
     },
     {
-      "label": "ATR, ATR 2018 Tax Reform Priorities",
+      "label": "[4] ATR, ATR 2018 Tax Reform Priorities",
       "url": "https://atr.org/atr-2018-tax-reform-priorities/"
     },
     {
-      "label": "CBO, Cost Estimate for the Conference Agreement on H.R. 1, 2017",
+      "label": "[5] CBO, Cost Estimate for the Conference Agreement on H.R. 1, 2017",
       "url": "https://www.cbo.gov/publication/53415"
     },
     {
-      "label": "ATR, Americans for Tax Reform 2018 Ballot Guide",
+      "label": "[6] ATR, Americans for Tax Reform 2018 Ballot Guide",
       "url": "https://atr.org/2018ballotguide/"
     },
     {
-      "label": "한국납세자연맹, 2000~2001 잘못한 연말정산 다시하기 운동, 2002.8.30",
+      "label": "[7] 한국납세자연맹, 2000~2001 잘못한 연말정산 다시하기 운동, 2002.8.30",
       "url": "https://www.koreatax.org/tax/group/group07.php3?code=8&keyw=&keyword=&mode=view&myuid=112&page=22"
     },
     {
-      "label": "한국납세자연맹, ‘근로소득세 경정청구 인정하라’ 소송 제기 예정, 2001",
+      "label": "[8] 한국납세자연맹, ‘근로소득세 경정청구 인정하라’ 소송 제기 예정, 2001",
       "url": "https://www.koreatax.org/tax/reformation/pay/pay_bodo.php?code=8&mode=view&mycnt=15&myuid=98&page=53"
     },
     {
-      "label": "한국납세자연맹, 연말정산 운동일지",
+      "label": "[9] 한국납세자연맹, 연말정산 운동일지",
       "url": "https://www.koreatax.org/tax/taxpayers/work/ilsi.html"
     },
     {
-      "label": "함께하는 시민행동, 밑빠진 독상 기록",
+      "label": "[10] 함께하는 시민행동, 밑빠진 독상 기록",
       "url": "https://action.or.kr/74"
     },
     {
-      "label": "서울신문, 12년 끈 용인경전철 주민소송…, 2025.7.16",
+      "label": "[11] 서울신문, 12년 끈 용인경전철 주민소송…, 2025.7.16",
       "url": "https://m.seoul.co.kr/news/society/2025/07/16/20250716500248"
     },
     {
-      "label": "연합뉴스, 용인시, 경전철 관련 전 시장·교통연구원에 257억 손배 청구, 2025.8.11",
+      "label": "[12] 연합뉴스, 용인시, 경전철 관련 전 시장·교통연구원에 257억 손배 청구, 2025.8.11",
       "url": "https://www.yna.co.kr/view/AKR20250811134500061"
     },
     {
-      "label": "법제처 생활법령정보, 주민소송 제기권자 및 청구요건",
+      "label": "[14] 법제처 생활법령정보, 주민소송 제기권자 및 청구요건",
       "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=4&cciNo=2&cnpClsNo=2&csmSeq=898"
     },
     {
-      "label": "국가법령정보센터, 예산·기금의 불법지출에 대한 국민감시 및 예산낭비신고센터의 설치·운영에 관한 지침",
+      "label": "[15] 국가법령정보센터, 예산·기금의 불법지출에 대한 국민감시 및 예산낭비신고센터의 설치·운영에 관한 지침",
       "url": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000284586&chrClsCd=010201"
     },
     {
-      "label": "강한솔, 주민소송제도의 법적 쟁점과 개선방향에 대한 연구, 한국외국어대학교 학위논문, 2024",
+      "label": "[16] 강한솔, 주민소송제도의 법적 쟁점과 개선방향에 대한 연구, 한국외국어대학교 학위논문, 2024",
       "url": "https://www.dbpia.co.kr/journal/detail?nodeId=T16945345"
     },
     {
-      "label": "연합뉴스, 2027예산 재원 배분",
+      "label": "[19] 연합뉴스, 2027예산 재원 배분",
       "url": "https://www.yna.co.kr/view/AKR20260830068000002"
     },
     {
-      "label": "국세청, 법인세 세율",
+      "label": "[21] 국세청, 법인세 세율",
       "url": "https://d.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7746&mi=2372"
     },
     {
-      "label": "국회예산정책처, 2026 대한민국 재정",
+      "label": "[22] 국회예산정책처, 2026 대한민국 재정",
       "url": "https://www.nabo.go.kr/board/file/bulkDown.do?bid=19&idx=9183"
     },
     {
-      "label": "연합뉴스, 2009 재산세 개편",
+      "label": "[23] 연합뉴스, 2009 재산세 개편",
       "url": "https://www.yna.co.kr/view/AKR20090414159900004"
     },
     {
-      "label": "연합뉴스, 혹평 쏟아진 여수 섬박람회 반환점…남은 한달 만회의 시간, 2026.10.3",
+      "label": "[26] 연합뉴스, 혹평 쏟아진 여수 섬박람회 반환점…남은 한달 만회의 시간, 2026.10.3",
       "url": "https://www.yna.co.kr/view/AKR20261002123400054"
     },
     {
-      "label": "연합뉴스, 여수 세계섬박람회 부실, 국정감사 쟁점 부상 전망, 2026.9.27",
+      "label": "[27] 연합뉴스, 여수 세계섬박람회 부실, 국정감사 쟁점 부상 전망, 2026.9.27",
       "url": "https://www.yna.co.kr/view/AKR20260922149600054"
     },
     {
-      "label": "연합뉴스, 감사원 새만금 잼버리 업무 처리 총체적 부실로 실패, 2025.4.10",
+      "label": "[28] 연합뉴스, 감사원 새만금 잼버리 업무 처리 총체적 부실로 실패, 2025.4.10",
       "url": "https://www.yna.co.kr/view/AKR20250410105300001"
     }
   ],
