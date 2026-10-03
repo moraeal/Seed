@@ -15,6 +15,7 @@ const copy = {
     penNameResponsibility: "필명으로 쓴 글의 사실과 주장에 대한 책임은 씨앗의 소리가 지겠습니다.",
     intro: "이런 사람들이 씨앗에 글을 씁니다",
     writers: [
+      { name: "노박", focus: "건축사 · 건축 민원 · 시민의 권리", description: "건축사. 건축 관련 민원과 제도 속에서 시민의 권리를 지키는 방법을 칼럼으로 설명하며, 블로그 ‘노박의 브런치’를 운영한다.", blogUrl: "https://brunch.co.kr/@robaksa", blogLabel: "노박의 브런치", columnUrl: "/columns/robak-contract-freedom-third-party-rights-2026", columnLabel: "칼럼 읽기" },
       { name: "작은씨앗", focus: "시민사회 · 공익 · 권력감시", description: "시민사회와 공공영역, 기업 현장을 두루 경험했습니다. 제도와 권력이 시민의 일상에 어떤 영향을 주는지 묻습니다." },
       { name: "경계의 시민", focus: "국방 · 안보 · 북한", description: "군 현장을 경험하고 북한과 국제관계를 연구합니다. 안보를 이야기할 때도 시민의 자유와 권리를 함께 살핍니다." },
       { name: "생각 너머", focus: "과학 · 에너지 · 환경", description: "오래 믿었던 생각도 새 자료 앞에서 다시 확인합니다. 에너지와 환경 문제를 측정과 근거를 따라 읽습니다." },
@@ -38,6 +39,7 @@ const copy = {
     penNameResponsibility: "SEED VOICE takes responsibility for the facts and arguments in articles published under pen names.",
     intro: "Meet the contributors",
     writers: [
+      { name: "Robak", focus: "Architect · Construction complaints · Civic rights", description: "An architect who explains how citizens can protect their rights in construction-related complaints and regulations. Robak runs the blog Robak’s Brunch.", blogUrl: "https://brunch.co.kr/@robaksa", blogLabel: "Robak’s Brunch", columnUrl: "/columns/robak-contract-freedom-third-party-rights-2026", columnLabel: "Read the column" },
       { name: "Small Seed", focus: "Civil society · Public interest · Accountability", description: "With experience in civil society, public institutions and business, Small Seed asks how power and policy affect everyday life." },
       { name: "Citizen at the Boundary", focus: "Defense · Security · North Korea", description: "Drawing on military service and research into North Korea and international affairs, this contributor considers security alongside civic freedom and rights." },
       { name: "Beyond Thought", focus: "Science · Energy · Environment", description: "Willing to revisit old convictions when evidence changes, this contributor follows measurements and research on energy and the environment." },
@@ -92,6 +94,7 @@ export default function Contributors() {
                 </div>
               </div>
               <p className="mt-5 text-base leading-8 text-charcoal/80">{writer.description}</p>
+              {writer.blogUrl && writer.columnUrl && <div className="mt-5 flex flex-wrap gap-5 text-sm font-bold text-green-mid"><a href={writer.blogUrl} target="_blank" rel="noreferrer" className="underline underline-offset-4">{writer.blogLabel}</a><Link to={writer.columnUrl} className="underline underline-offset-4">{writer.columnLabel}</Link></div>}
             </article>
           ))}
         </div>

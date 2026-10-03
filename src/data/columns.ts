@@ -1,3 +1,4 @@
+import { robakContractRightsColumn } from "./columns/robakContractRightsColumn";
 import { assassinsMemoryColumn } from "./columns/assassinsMemoryColumn";
 import { presidentCivicLanguageColumn } from "./columns/presidentCivicLanguageColumn";
 import { kimchiJarFreedomColumn } from "./columns/kimchiJarFreedomColumn";
@@ -38,7 +39,7 @@ import type { SeedColumn } from "./columnsLegacy";
 
 export type { SeedColumn } from "./columnsLegacy";
 
-export const columns: SeedColumn[] = [assassinsMemoryColumn, presidentCivicLanguageColumn, kimchiJarFreedomColumn, mfdsSaucePortioningColumn, securityPrideVigilanceColumn, workerOwnedCountryColumn, civicAuditOfAuditColumn, dmzMineResponseAccountabilityColumn, factoryStaffingFreedomColumn, unpostedDayPoemColumn, businessSuccessionThresholdColumn, supremeCourtCivicWatchColumn, housingLadderColumn, welfareExitRiskColumn, incomeTaxFamilyThresholdColumn, realEstateSupervisorColumn, suicidePreventionMoisColumn, corporateCitizenshipColumn, yeosuIslandExpoProcurementColumn, partisanLanguageColumn, inheritanceTaxBusinessContinuityColumn, publicHealthFunctionNetworkColumn, korea97GenerationColumn, wealthCrossesBordersColumn, fukushimaJourneyColumn, militaryAcademyIntegrationColumn, nuclearPolicyReversalColumn, farmlandOwnershipPressureColumn, silenceAndPowerColumn, citizenizationBeforeAdvancementColumn, stateCannotMonopolizeLifeColumn, civicGroupsAreNotStateVanguardColumn, tenPercentPowerColumn, prosecutionReformPowerTransferColumn, lhReformColumn, ...legacyColumns];
+export const columns: SeedColumn[] = [robakContractRightsColumn, assassinsMemoryColumn, presidentCivicLanguageColumn, kimchiJarFreedomColumn, mfdsSaucePortioningColumn, securityPrideVigilanceColumn, workerOwnedCountryColumn, civicAuditOfAuditColumn, dmzMineResponseAccountabilityColumn, factoryStaffingFreedomColumn, unpostedDayPoemColumn, businessSuccessionThresholdColumn, supremeCourtCivicWatchColumn, housingLadderColumn, welfareExitRiskColumn, incomeTaxFamilyThresholdColumn, realEstateSupervisorColumn, suicidePreventionMoisColumn, corporateCitizenshipColumn, yeosuIslandExpoProcurementColumn, partisanLanguageColumn, inheritanceTaxBusinessContinuityColumn, publicHealthFunctionNetworkColumn, korea97GenerationColumn, wealthCrossesBordersColumn, fukushimaJourneyColumn, militaryAcademyIntegrationColumn, nuclearPolicyReversalColumn, farmlandOwnershipPressureColumn, silenceAndPowerColumn, citizenizationBeforeAdvancementColumn, stateCannotMonopolizeLifeColumn, civicGroupsAreNotStateVanguardColumn, tenPercentPowerColumn, prosecutionReformPowerTransferColumn, lhReformColumn, ...legacyColumns];
 
 export const hotIssueColumnSlugs = new Set([
   "seoul-housing-prices-rent-broken-ladder",

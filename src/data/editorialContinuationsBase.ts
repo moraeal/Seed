@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:robak-contract-freedom-third-party-rights-2026": {
+  "ko": {
+    "href": "/contributors",
+    "title": "노박과 씨앗의 필진",
+    "relationship": "필자 소개",
+    "reason": "건축 민원과 시민의 권리를 설명하는 노박과 씨앗의 소리 필진을 만나보세요.",
+    "listHref": "/columns",
+    "listLabel": "칼럼 전체 보기"
+  },
+  "en": {
+    "href": "/contributors",
+    "title": "Robak and the SEED VOICE contributors",
+    "relationship": "ABOUT THE AUTHOR",
+    "reason": "Meet Robak, who writes about construction complaints and civic rights, and the other SEED VOICE contributors.",
+    "listHref": "/columns",
+    "listLabel": "All columns"
+  }
+},
   "news:business-growth-regulatory-thresholds-2026": {
   "ko": {
     "href": "/columns/factory-investment-staffing-freedom-2026",
