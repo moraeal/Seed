@@ -41,7 +41,7 @@ export const pensionReciprocityTranslation: BriefingTranslation = {
     {
       "title": "Research reveals a deeper gap between purpose and outcome",
       "paragraphs": [
-        "Childbirth credits also show a gap between purpose and outcome within South Korea. Reporting on the National Pension Research Institute’s study, Review of Options for Expanding Childbirth Credits, JoongAng Ilbo said that 5,815 of the 5,947 recipients in June 2024 were men and 132 were women: a male share of 97.8%. The report also described the study’s concerns about insufficient empirical evidence of a fertility effect and unclear policy objectives.",
+        "Childbirth credits also show a gap between purpose and outcome within South Korea. JoongAng Ilbo, citing National Pension Service data, reported that at year-end 2025 the 9,999 recipients comprised 9,727 men and 272 women: 97.3% and 2.7%, respectively. Its coverage of the National Pension Research Institute’s Review of Options for Expanding Childbirth Credits also described concerns about insufficient empirical evidence of a fertility effect and unclear policy objectives.",
         "We should first establish whether support reaches people whose pension records were interrupted by giving birth and caring for children. Larger credited-month figures are easy to promote. Establishing how much caregivers’ retirement security actually improves is harder. That is the government’s responsibility.",
         "The same scrutiny should apply to overseas births. The number of beneficiaries, their residence and child-rearing circumstances, and the cost should be published. The reporting reviewed for this article does not provide a quantified long-term fiscal estimate for foreign childbirth credits. Beneficiary data and cost projections would allow citizens to judge the scale of the eligibility gap."
       ]
@@ -58,6 +58,7 @@ export const pensionReciprocityTranslation: BriefingTranslation = {
       "title": "Local voting rights raise the same question of fairness",
       "paragraphs": [
         "Foreign nationals aged 18 or older who have held permanent-resident status for at least three years and appear on the local government’s foreign-resident register can vote in local elections. This entitlement does not extend to presidential or National Assembly elections. The current local-voting requirements contain no reciprocity condition testing whether the other country grants comparable local voting rights to Koreans.",
+        "The Ministry of the Interior and Safety confirmed 151,532 foreign electors for the 2026 local elections, about 0.34% of all 44,649,908 electors. Compared with the 127,623 recorded in 2022 and reported by Edaily, this was an increase of 23,909, or 18.7%. These figures count eligible people on the electoral roll. Assessing effects on outcomes requires district-level turnout and winning-margin evidence.",
         "There is a valid rationale for giving a voice to residents who have settled in a community and pay taxes there. The rights Koreans receive abroad and substantive residence here should also be considered. When South Korea grants rights that the other country withholds from Koreans, the government and legislature are responsible for explaining and correcting that imbalance.",
         "A 2024 paper by Yang Hye-won and Yoo Keun-hwan criticized the absence of reciprocity in foreign residents’ local voting rights and argued for exclusion. A 2023 Maeil Business Newspaper editorial likewise criticized cross-border imbalances in voting rights and health-insurance benefits. Building on that concern, SEED favors reform incorporating reciprocity and meaningful residence requirements. Countries’ rules and relevant agreements should be disclosed so citizens can see which rights Koreans actually receive abroad."
       ]
@@ -82,16 +83,16 @@ export const pensionReciprocityTranslation: BriefingTranslation = {
       "credit": "AI image"
     },
     {
-      "src": "images/briefings/pension-reciprocity-2026/eligibility-en.svg",
-      "alt": "Diagram distinguishing contribution-based rights from tests for additional publicly funded support",
-      "caption": "The criteria for additional support are SEED’s proposals, distinct from current eligibility rules.",
-      "credit": "SEED VOICE chart"
+      "src": "images/briefings/pension-reciprocity-2026/recipients-en.webp",
+      "alt": "Bar chart comparing 9,727 men and 272 women among all 9,999 childbirth-credit recipients at year-end 2025",
+      "caption": "All childbirth-credit recipients at year-end 2025. The distribution warrants scrutiny of how the policy addresses women’s pension gaps. Overseas-birth benefits for foreign subscribers require separate beneficiary data.",
+      "credit": "SEED VOICE statistical chart · NPS figures reported by JoongAng Ilbo"
     },
     {
-      "src": "images/briefings/pension-reciprocity-2026/status-en.svg",
-      "alt": "Policy status and remaining questions for childbirth credits, back payments, family supplements and local voting rights",
-      "caption": "Sources checked as of October 3, 2026. Parliamentary passage and entry into force are distinguished.",
-      "credit": "SEED VOICE chart · legal guidance and Ministry of Health and Welfare materials"
+      "src": "images/briefings/pension-reciprocity-2026/electorate-en.webp",
+      "alt": "Line chart showing registered foreign local-election electors rising from 6,726 in 2006 to 151,532 in 2026",
+      "caption": "Registered foreign electors. In 2026 they represented about 0.34% of all 44,649,908 electors. Effects on election outcomes require separate evidence of actual voting by district.",
+      "credit": "SEED VOICE statistical chart · 2026 MOIS release; earlier years via Edaily"
     }
   ],
   "watchTitle": "Four things to verify next",
@@ -104,7 +105,7 @@ export const pensionReciprocityTranslation: BriefingTranslation = {
   "closing": [
     "Citizens’ pensions and taxes are not money entrusted to the government to dispense goodwill. Every additional payment needs a clear purpose and responsibility. Fairness must apply both to foreign beneficiaries and to citizens who shoulder the cost."
   ],
-  "sourceNote": "Sources checked as of October 3, 2026. The childbirth-credit study’s recipient figures and policy-effect assessment are cited indirectly through JoongAng Ilbo’s reporting; the official study listing and the KCI paper’s abstract are linked. The 2023 editorial is used for its reciprocity argument, not as a source of current health-insurance statistics. The proposed residence and contribution criteria and local-voting reform are SEED’s judgments.",
+  "sourceNote": "Sources checked as of October 3, 2026. Year-end 2025 childbirth-credit figures cover all recipients and are cited indirectly through JoongAng Ilbo’s reporting of NPS data. The study’s policy-effect assessment is likewise cited through reporting; the official study listing and KCI abstract are linked. The 2026 foreign electorate is from the confirmed MOIS release; earlier years are cited through Edaily. The share of all electors and change since 2022 are calculated from these figures. The 2023 editorial supplies a reciprocity argument, not current health-insurance statistics. Proposed residence and contribution criteria and local-voting reform are SEED’s judgments.",
   "sourceLabels": [
     "Asia Economy — foreign childbirth credits for overseas births (October 1, 2026)",
     "Easy Law — childbirth credits and transitional rules",
@@ -115,7 +116,10 @@ export const pensionReciprocityTranslation: BriefingTranslation = {
     "Asia Economy — follow-up on the foreign back-payment review (September 2, 2026)",
     "Legislative Participation Center — current rules and proposal in Bill 2209519",
     "Yang Hye-won and Yoo Keun-hwan — 2024 local voting-rights paper, KCI abstract",
-    "Maeil Business Newspaper editorial — reciprocity in voting rights and health insurance (June 21, 2023)"
+    "Maeil Business Newspaper editorial — reciprocity in voting rights and health insurance (June 21, 2023)",
+    "JoongAng Ilbo — NPS year-end 2025 childbirth-credit recipients by gender",
+    "Ministry of the Interior and Safety — confirmed 2026 local-election electorate (May 23, 2026)",
+    "Edaily — foreign local-election electorate, 2006–2026 (May 27, 2026)"
   ],
   "paragraphLinks": [
     {
@@ -153,8 +157,8 @@ export const pensionReciprocityTranslation: BriefingTranslation = {
       "paragraphIndex": 0,
       "links": [
         {
-          "label": "Reporting on the study",
-          "url": "https://www.joongang.co.kr/article/25453898"
+          "label": "Year-end 2025 recipients and study coverage",
+          "url": "https://www.joongang.co.kr/article/25453988"
         },
         {
           "label": "Official study listing",
@@ -194,7 +198,7 @@ export const pensionReciprocityTranslation: BriefingTranslation = {
     },
     {
       "sectionIndex": 4,
-      "paragraphIndex": 2,
+      "paragraphIndex": 3,
       "links": [
         {
           "label": "Paper abstract",
@@ -203,6 +207,20 @@ export const pensionReciprocityTranslation: BriefingTranslation = {
         {
           "label": "Reciprocity editorial",
           "url": "https://www.mk.co.kr/news/editorial/10765825"
+        }
+      ]
+    },
+    {
+      "sectionIndex": 4,
+      "paragraphIndex": 1,
+      "links": [
+        {
+          "label": "MOIS confirmed electoral roll",
+          "url": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=126381"
+        },
+        {
+          "label": "Historical foreign electorate figures",
+          "url": "https://www4.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=06271366645453184"
         }
       ]
     }

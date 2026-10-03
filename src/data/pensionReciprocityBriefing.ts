@@ -31,23 +31,23 @@ export const pensionReciprocityBriefing: Briefing = {
       "caption": "국내에서 아이를 키우는 가정은 생활비와 주거비, 경력 단절의 부담을 감당합니다.",
       "credit": "AI 이미지",
       "sourceUrl": "",
-      "afterSection": 2
-    },
-    {
-      "src": "images/briefings/pension-reciprocity-2026/eligibility-ko.svg",
-      "alt": "보험료로 쌓은 권리와 추가 공적 지원의 검토 기준을 구분한 도표",
-      "caption": "추가 지원의 기준은 씨앗의 제안입니다. 현재 시행 중인 자격 요건과 구별해 읽어야 합니다.",
-      "credit": "씨앗의 소리 도표",
-      "sourceUrl": "",
-      "contain": true,
       "afterSection": 1
     },
     {
-      "src": "images/briefings/pension-reciprocity-2026/status-ko.svg",
-      "alt": "출산크레딧, 추납·부양가족연금, 지방선거권의 제도 상태와 확인 과제",
-      "caption": "2026년 10월 3일 자료 기준. 본회의 통과와 실제 시행은 구분했습니다.",
-      "credit": "씨앗의 소리 도표 · 법령 안내 및 보건복지부 자료",
-      "sourceUrl": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156784000",
+      "src": "images/briefings/pension-reciprocity-2026/recipients-ko.webp",
+      "alt": "2025년 말 출산크레딧 전체 수급자 9,999명 중 남성 9,727명, 여성 272명을 비교한 막대그래프",
+      "caption": "2025년 말 전체 출산크레딧 수급자 현황입니다. 여성의 연금 공백을 보완한다는 목적이 실제 수급 결과에 얼마나 반영되는지 점검할 자료입니다. 외국인 해외 출산 수혜 규모는 별도 공개가 필요합니다.",
+      "credit": "씨앗의 소리 통계 그래프 · 국민연금공단 자료, 중앙일보 간접 인용",
+      "sourceUrl": "https://www.joongang.co.kr/article/25453988",
+      "contain": true,
+      "afterSection": 2
+    },
+    {
+      "src": "images/briefings/pension-reciprocity-2026/electorate-ko.webp",
+      "alt": "외국인 지방선거인 수가 2006년 6,726명에서 2026년 151,532명으로 증가한 추이를 보여주는 선그래프",
+      "caption": "선거인명부에 등재된 외국인 수입니다. 2026년 전체 선거인 44,649,908명 중 비중은 약 0.34%입니다. 선거 결과에 미친 영향은 지역별 실제 투표 자료로 따로 확인해야 합니다.",
+      "credit": "씨앗의 소리 통계 그래프 · 2026년 행정안전부, 과거 연도 이데일리 인용",
+      "sourceUrl": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=126381",
       "contain": true,
       "afterSection": 4
     }
@@ -87,7 +87,7 @@ export const pensionReciprocityBriefing: Briefing = {
     {
       "title": "연구가 보여준 더 근본적인 허점",
       "paragraphs": [
-        "출산크레딧은 국내에서도 목적과 결과 사이에 틈이 있습니다. 중앙일보가 소개한 국민연금연구원의 『출산크레딧 확대 방안 검토』에 따르면 2024년 6월 수급자 5,947명 가운데 남성은 5,815명, 여성은 132명이었습니다. 남성 비율이 97.8%입니다. 이 보도는 출산율을 높이는 효과의 실증적 근거와 제도 목표의 명확성에도 연구가 의문을 제기했다고 전했습니다.",
+        "출산크레딧은 국내에서도 목적과 결과 사이에 틈이 있습니다. 중앙일보가 국민연금공단 자료를 인용한 보도에 따르면 2025년 말 수급자 9,999명 가운데 남성은 9,727명, 여성은 272명이었습니다. 남성 97.3%, 여성 2.7%입니다. 이 보도가 소개한 국민연금연구원의 『출산크레딧 확대 방안 검토』는 출산율을 높이는 효과의 실증적 근거와 제도 목표의 명확성에도 의문을 제기했습니다.",
         "아이를 낳고 돌보느라 연금 가입에 공백이 생긴 사람이 지원을 충분히 받는지부터 확인해야 합니다. 인정기간을 늘리는 숫자는 홍보하기 쉽습니다. 실제 양육자의 노후가 얼마나 나아졌는지 확인하는 일은 더 어렵습니다. 정부가 해야 할 일은 그 어려운 확인입니다.",
         "해외 출산 지원에도 같은 기준을 적용해야 합니다. 몇 명이 어떤 거주·양육 조건으로 지원받는지, 그 비용이 얼마인지 공개해야 합니다. 현재 확인한 보도에는 외국인 출산크레딧의 장기 재정비용을 계산한 수치가 제시돼 있지 않습니다. 수혜 규모와 비용 추계를 공개하면 국민은 제도의 빈틈이 얼마나 큰지 판단할 수 있습니다."
       ]
@@ -104,6 +104,7 @@ export const pensionReciprocityBriefing: Briefing = {
       "title": "지방선거권에도 같은 공정의 질문이 있습니다",
       "paragraphs": [
         "외국인 지방선거권은 영주자격 취득 후 3년이 지나고 해당 지방자치단체의 외국인등록대장에 올라 있는 18세 이상 외국인에게 인정됩니다. 대통령·국회의원 선거권과는 범위가 다릅니다. 현행 지방선거권 요건에는 상대국이 한국인에게 동등한 지방선거권을 주는지 따지는 상호주의 조건이 없습니다.",
+        "행정안전부가 확정한 2026년 지방선거 외국인 선거인은 151,532명입니다. 전체 선거인 44,649,908명 중 약 0.34%입니다. 이데일리가 전한 2022년 127,623명과 비교하면 23,909명, 18.7% 늘었습니다. 이 숫자는 투표할 자격이 있어 선거인명부에 등재된 인원입니다. 실제 선거 결과에 미친 영향은 지역별 투표 참여와 득표 차이까지 확인해야 판단할 수 있습니다.",
         "지역에 정착해 세금을 내고 생활하는 주민의 참여를 인정하자는 취지는 이해할 수 있습니다. 여기에 우리 국민이 상대국에서 받는 권리와 실제 국내 정주 여부를 함께 검토해야 합니다. 한국은 권리를 열어주고 상대국은 한국인에게 같은 권리를 인정하지 않는 관계라면, 정부와 국회는 그 불균형을 설명하고 바로잡을 책임이 있습니다.",
         "양혜원·유근환의 2024년 논문은 외국인 지방선거권의 상호주의 결여를 문제 삼고 선거권 배제를 주장했습니다. 매일경제의 2023년 사설도 투표권과 건강보험 혜택의 국가 간 불균형을 지적했습니다. 씨앗은 이 문제의식을 바탕으로 지방선거권에 상호주의와 실질적인 정주 요건을 반영하는 제도 개편이 필요하다고 봅니다. 상대국의 제도와 협정 내용을 공개하고, 우리 국민이 그 나라에서 어떤 권리를 받는지 누구나 확인할 수 있게 해야 합니다."
       ]
@@ -166,9 +167,21 @@ export const pensionReciprocityBriefing: Briefing = {
     {
       "label": "매일경제 사설 · 투표권·건강보험의 상호주의 (2023.6.21)",
       "url": "https://www.mk.co.kr/news/editorial/10765825"
+    },
+    {
+      "label": "중앙일보 · 국민연금공단의 2025년 말 출산크레딧 성별 수급 현황",
+      "url": "https://www.joongang.co.kr/article/25453988"
+    },
+    {
+      "label": "행정안전부 · 제9회 지방선거 확정 선거인수 (2026.5.23)",
+      "url": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=126381"
+    },
+    {
+      "label": "이데일리 · 2006–2026년 외국인 지방선거인 추이 (2026.5.27)",
+      "url": "https://www4.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=06271366645453184"
     }
   ],
-  "sourceNote": "자료 확인 기준일은 2026년 10월 3일입니다. 출산크레딧 연구의 성별 수급 현황과 정책효과 평가는 중앙일보의 연구 소개 보도를 통한 간접 인용입니다. 연구의 공식 게시물과 KCI 논문의 초록을 함께 연결했습니다. 2023년 사설은 상호주의 논리를 참고했으며 당시 건강보험 수치를 현재 통계로 사용하지 않았습니다. 거주·기여 요건의 설계와 지방선거권 개편은 씨앗의 판단입니다.",
+  "sourceNote": "자료 확인 기준일은 2026년 10월 3일입니다. 2025년 말 출산크레딧 성별 수급 현황은 국민연금공단 자료를 인용한 중앙일보 보도를 통한 간접 인용이며 전체 수급자 통계입니다. 연구의 정책효과 평가는 중앙일보의 연구 소개 보도를 참고했고 공식 연구 게시물과 KCI 논문의 초록을 연결했습니다. 2026년 외국인 지방선거인수는 행정안전부 확정 자료, 과거 연도 추이는 이데일리 보도를 인용했습니다. 전체 선거인 중 비중과 2022년 대비 증감은 해당 수치로 계산했습니다. 2023년 사설은 상호주의 논리를 참고했으며 당시 건강보험 수치를 현재 통계로 사용하지 않았습니다. 거주·기여 요건의 설계와 지방선거권 개편은 씨앗의 판단입니다.",
   "paragraphLinks": [
     {
       "sectionIndex": 0,
@@ -205,8 +218,8 @@ export const pensionReciprocityBriefing: Briefing = {
       "paragraphIndex": 0,
       "links": [
         {
-          "label": "연구 소개 보도",
-          "url": "https://www.joongang.co.kr/article/25453898"
+          "label": "2025년 말 수급 현황·연구 소개",
+          "url": "https://www.joongang.co.kr/article/25453988"
         },
         {
           "label": "연구 공식 게시물",
@@ -246,7 +259,7 @@ export const pensionReciprocityBriefing: Briefing = {
     },
     {
       "sectionIndex": 4,
-      "paragraphIndex": 2,
+      "paragraphIndex": 3,
       "links": [
         {
           "label": "논문 초록",
@@ -255,6 +268,20 @@ export const pensionReciprocityBriefing: Briefing = {
         {
           "label": "상호주의 사설",
           "url": "https://www.mk.co.kr/news/editorial/10765825"
+        }
+      ]
+    },
+    {
+      "sectionIndex": 4,
+      "paragraphIndex": 1,
+      "links": [
+        {
+          "label": "행정안전부 확정 선거인수",
+          "url": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=126381"
+        },
+        {
+          "label": "역대 외국인 선거인 추이",
+          "url": "https://www4.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=06271366645453184"
         }
       ]
     }
