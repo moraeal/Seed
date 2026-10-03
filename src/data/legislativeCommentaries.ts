@@ -15,7 +15,7 @@ type CommentaryEdition = {
   keyPoints: string[];
   heroAlt: string;
   heroCaption: string;
-  sections: { title: string; paragraphs: string[]; quote?: string }[];
+  sections: { title: string; paragraphs: string[]; paragraphLinks?: { paragraphIndex: number; label: string; href: string }[]; quote?: string }[];
   chart: {
     title: string;
     description: string;
