@@ -1,6 +1,6 @@
 import { ArrowLeft, Clock, FileText } from "lucide-react";
-import { Fragment } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Fragment, useEffect, useState } from "react";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import ArticleContinuation from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
@@ -34,7 +34,36 @@ function InlineLinkedText({ text, subtleFootnotes = false, sourceLabel = "출처
 
 export default function ColumnDetail() {
   const { slug = "" } = useParams();
+  const [searchParams] = useSearchParams();
   const { language } = useLanguage();
+  const fontPreview = slug === "robak-sejong-taxpayer-rights-2026" && searchParams.get("font") === "chosun" && language === "ko";
+  const [newspaperFont, setNewspaperFont] = useState(true);
+  const [fontStatus, setFontStatus] = useState<"loading" | "ready" | "error">("loading");
+
+  useEffect(() => {
+    if (!fontPreview) return;
+    let active = true;
+    let font: FontFace | undefined;
+    const controller = new AbortController();
+    setFontStatus("loading");
+    (async () => {
+      const parts = await Promise.all([0, 1, 2].map(async (part) => {
+        const response = await fetch(`${import.meta.env.BASE_URL}fonts/chosun-preview/ChosunIlboMyeongjo.part${part}`, { signal: controller.signal });
+        if (!response.ok) throw new Error("Font download failed");
+        return new Uint8Array(await response.arrayBuffer());
+      }));
+      if (!active) return;
+      const bytes = new Uint8Array(parts.reduce((length, part) => length + part.length, 0));
+      let offset = 0;
+      for (const part of parts) { bytes.set(part, offset); offset += part.length; }
+      font = new FontFace("SeedChosunPreview", bytes.buffer, { style: "normal", weight: "400", display: "swap" });
+      const loaded = await font.load();
+      if (!active) return;
+      document.fonts.add(loaded);
+      setFontStatus("ready");
+    })().catch(() => { if (active) setFontStatus("error"); });
+    return () => { active = false; controller.abort(); if (font) document.fonts.delete(font); };
+  }, [fontPreview]);
   const ko = language === "ko";
   const originalColumn = getColumn(slug);
   const column = originalColumn ? localizeColumn(originalColumn, language) : undefined;
@@ -65,6 +94,7 @@ export default function ColumnDetail() {
   </section>;
 
   return <article className="bg-paper">
+    {fontPreview && <style>{`.chosun-font-preview .article-copy { font-family: "SeedChosunPreview", serif; font-weight: 400; }`}</style>}
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
       <div className="container-page max-w-5xl">{hotIssue && <Link to="/news" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "핫이슈 목록" : "Hot Issues"}</Link>}{publicInterest && <Link to="/monitoring/public-interest" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "공익감시 목록" : "Public-Interest Watch"}</Link>}<div className="pt-3"><h1 className="article-detail-title">{column.title}</h1>{column.slug === "real-estate-supervisor-citizens-accounts" && <p className="mt-4 text-sm leading-7 text-charcoal/80 sm:text-base">
         {ko ? "이 글은 김현정 의원이 2026년 9월 23일 재발의한 「부동산감독원 설치 및 운영에 관한 법률안」(의안번호 2221573)에 대한 논평입니다. " : "This commentary examines Rep. Kim Hyun-jung's revised Real Estate Supervisory Agency Bill, introduced on September 23, 2026 (bill no. 2221573). "}
@@ -79,7 +109,13 @@ export default function ColumnDetail() {
 
       {column.sourceDocument && <SourceDocumentPanel document={column.sourceDocument} ko={ko} />}
 
-      <div className="reading-column mt-10">
+      <div className={`reading-column mt-10 ${fontPreview && newspaperFont && fontStatus === "ready" ? "chosun-font-preview" : ""}`}>
+        {fontPreview && <div className="mb-8 flex flex-wrap items-center gap-3 border-y border-green-deep/20 py-4">
+          <span className="text-sm font-bold">본문 글꼴 비교</span>
+          <button type="button" aria-pressed={!newspaperFont} onClick={() => setNewspaperFont(false)} className={`rounded border px-4 py-2 text-sm ${!newspaperFont ? "border-green-deep bg-green-deep text-white" : "border-green-deep/25 bg-white"}`}>기존 글꼴</button>
+          <button type="button" aria-pressed={newspaperFont} onClick={() => setNewspaperFont(true)} className={`rounded border px-4 py-2 text-sm ${newspaperFont ? "border-green-deep bg-green-deep text-white" : "border-green-deep/25 bg-white"}`}>조선일보 명조체</button>
+          <span role="status" className="w-full text-sm text-charcoal/70">{fontStatus === "loading" ? "신문 글꼴을 불러오고 있습니다. 처음에는 잠시 걸릴 수 있습니다." : fontStatus === "error" ? "신문 글꼴을 불러오지 못했습니다. 새로고침해 주세요." : newspaperFont ? "조선일보 명조체로 읽고 있습니다." : "기존 글꼴로 읽고 있습니다."}</span>
+        </div>}
         {column.sections.map((section, index) => <Fragment key={`${index}-${section.title}`}><section className={index === 0 ? "" : `article-section ${isLongRead ? "article-section-long" : ""}`}>
           {section.title && <h2 className="article-section-title">{section.title}</h2>}
           {section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 28)}`} className={column.presentation === "poem" ? "mt-6 whitespace-pre-line font-serif text-[17px] leading-[2] text-charcoal/85 sm:text-xl sm:leading-[2]" : `article-copy ${isLongRead ? "article-copy-long" : ""}`}><InlineLinkedText text={paragraph} subtleFootnotes={column.slug === "farmland-solar-cartel-professional-farming-2026"} sourceLabel={ko ? "출처" : "Source"}/></p>)}
