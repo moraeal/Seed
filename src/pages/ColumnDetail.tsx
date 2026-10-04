@@ -48,7 +48,7 @@ export default function ColumnDetail() {
     setFontStatus("loading");
     (async () => {
       const parts = await Promise.all([0, 1, 2].map(async (part) => {
-        const response = await fetch(`${import.meta.env.BASE_URL}fonts/chosun-preview/ChosunIlboMyeongjo.part${part}`, { signal: controller.signal });
+        const response = await fetch(`${import.meta.env.BASE_URL}fonts/chosun-preview/ChosunIlboMyeongjo2020.part${part}`, { signal: controller.signal });
         if (!response.ok) throw new Error("Font download failed");
         return new Uint8Array(await response.arrayBuffer());
       }));

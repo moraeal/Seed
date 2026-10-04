@@ -1,7 +1,7 @@
 조선일보 명조체 / Chosun Ilbo Myeongjo
 Copyright: (주)조선일보사
 Official original TTF bytes, unchanged. Split into three transport parts and reassembled byte-for-byte before loading; no conversion or subsetting.
-Source: https://about.chosun.com/files/Joseonilbomyeongjo.zip
+Source: https://fontdown.chosun.com/100/ChosunNm.zip
 Font information: https://about.chosun.com/mobile/pages/intro_ci.php
 License: https://event.chosun.com/100/100font.html
 
