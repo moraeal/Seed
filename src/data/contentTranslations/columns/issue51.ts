@@ -11,15 +11,15 @@ export const issue51: ColumnTranslation = {
     "credit": "AI image"
   },
   "inlineImage": {
-    "alt": "Ha Jung-woo as Prosecutor Choi in a related scene from 1987",
-    "caption": "Ha Jung-woo as Prosecutor Choi in 1987. A related reference image accompanying the discussion of his refusal to approve cremation.",
-    "credit": "Film image from 1987 · published by Good Morning Chungcheong"
+    "alt": "Kim Yoon-seok as Director Park and Ha Jung-woo as Prosecutor Choi facing each other in 1987",
+    "caption": "An official publicity still from 1987: Director Park (Kim Yoon-seok, left) faces Prosecutor Choi (Ha Jung-woo, right). Their confrontation illustrates the conflict between concealing the death and insisting on an autopsy.",
+    "credit": "© CJ Entertainment · official publicity still · Korean Film Archive / KMDb collection"
   },
   "additionalImages": [
     {
-      "alt": "Ha Jung-woo as Prosecutor Choi in a related scene from 1987",
-      "caption": "Ha Jung-woo as Prosecutor Choi in 1987. A related reference image accompanying the discussion of his refusal to approve cremation.",
-      "credit": "Film image from 1987 · published by Good Morning Chungcheong"
+      "alt": "Kim Yoon-seok as Director Park and Ha Jung-woo as Prosecutor Choi facing each other in 1987",
+      "caption": "An official publicity still from 1987: Director Park (Kim Yoon-seok, left) faces Prosecutor Choi (Ha Jung-woo, right). Their confrontation illustrates the conflict between concealing the death and insisting on an autopsy.",
+      "credit": "© CJ Entertainment · official publicity still · Korean Film Archive / KMDb collection"
     },
     {
       "src": "images/columns/who-watches-power-2026/checks-en.png",
@@ -99,6 +99,6 @@ export const issue51: ColumnTranslation = {
     "Newsis: December 4, 2019 Blue House search",
     "Yonhap: Review of 1987",
     "Yonhap: Choi Hwan visits Park Jong-chul’s grave",
-    "Good Morning Chungcheong: 1987 images and interview"
+    "Korean Film Archive / KMDb: Official publicity still from 1987 (DSKT293343)"
   ]
 };

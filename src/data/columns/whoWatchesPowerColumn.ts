@@ -20,20 +20,20 @@ export const whoWatchesPowerColumn: SeedColumn = {
     "sourceUrl": ""
   },
   "inlineImage": {
-    "src": "images/columns/who-watches-power-2026/1987-choi.jpg",
-    "alt": "영화 1987에서 최 검사 역을 맡은 하정우의 관련 장면",
-    "caption": "영화 《1987》의 최 검사 역 하정우. 날인 거부 대목을 설명하는 관련 참고 이미지다.",
-    "credit": "영화 《1987》 이미지 · 굿모닝충청 게재",
-    "sourceUrl": "https://www.goodmorningcc.com/news/articleView.html?idxno=80509"
+    "src": "images/columns/who-watches-power-2026/1987-choi-park-official.jpg",
+    "alt": "영화 1987에서 마주 선 박처장 역 김윤석과 최검사 역 하정우",
+    "caption": "영화 《1987》에서 마주 선 대공수사처 박처장(김윤석·왼쪽)과 최검사(하정우·오른쪽). 사건 은폐를 지시하는 권력과 부검을 밀어붙이는 검사의 대립을 보여주는 공식 홍보 스틸이다.",
+    "credit": "© CJ엔터테인먼트 · 공식 홍보 스틸 · 한국영상자료원 KMDb 소장",
+    "sourceUrl": "https://www.kmdb.or.kr/db/kor/detail/movie/K/16659/own/image"
   },
   "displayInlineImage": false,
   "additionalImages": [
     {
-      "src": "images/columns/who-watches-power-2026/1987-choi.jpg",
-      "alt": "영화 1987에서 최 검사 역을 맡은 하정우의 관련 장면",
-      "caption": "영화 《1987》의 최 검사 역 하정우. 날인 거부 대목을 설명하는 관련 참고 이미지다.",
-      "credit": "영화 《1987》 이미지 · 굿모닝충청 게재",
-      "sourceUrl": "https://www.goodmorningcc.com/news/articleView.html?idxno=80509",
+      "src": "images/columns/who-watches-power-2026/1987-choi-park-official.jpg",
+      "alt": "영화 1987에서 마주 선 박처장 역 김윤석과 최검사 역 하정우",
+      "caption": "영화 《1987》에서 마주 선 대공수사처 박처장(김윤석·왼쪽)과 최검사(하정우·오른쪽). 사건 은폐를 지시하는 권력과 부검을 밀어붙이는 검사의 대립을 보여주는 공식 홍보 스틸이다.",
+      "credit": "© CJ엔터테인먼트 · 공식 홍보 스틸 · 한국영상자료원 KMDb 소장",
+      "sourceUrl": "https://www.kmdb.or.kr/db/kor/detail/movie/K/16659/own/image",
       "afterSection": 0,
       "contain": true
     },
@@ -137,8 +137,8 @@ export const whoWatchesPowerColumn: SeedColumn = {
       "url": "https://www.yna.co.kr/view/AKR20180729015800051"
     },
     {
-      "label": "굿모닝충청 · 영화 《1987》 관련 사진과 인터뷰",
-      "url": "https://www.goodmorningcc.com/news/articleView.html?idxno=80509"
+      "label": "한국영상자료원 KMDb · 영화 《1987》 공식 홍보 스틸 (DSKT293343)",
+      "url": "https://www.kmdb.or.kr/db/kor/detail/movie/K/16659/own/image"
     }
   ]
 };
