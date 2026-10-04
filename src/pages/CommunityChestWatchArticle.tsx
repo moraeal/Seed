@@ -38,7 +38,7 @@ export default function CommunityChestWatchArticle({ language }: { language: "ko
       </div>
     </header>
 
-    <div className="container-page max-w-4xl pt-8 sm:pt-11">
+    <div className="article-content-frame pt-8 sm:pt-11">
       <figure>
         <img src={photo} alt={ko ? "사랑의열매 상징이 놓인 탁자에서 기부금 자료를 살피는 장면" : "A reader examines donation records beside a card depicting the Community Chest emblem"} className="aspect-[16/9] w-full object-cover"/>
         <figcaption className="mt-2 text-xs leading-5 text-charcoal/55">{ko ? "사랑의열매를 상징하는 표식과 자료를 함께 배치한 AI 이미지. 실제 회계 문서나 취재 현장 사진은 아닙니다." : "AI editorial illustration by Seed Voice depicting the Community Chest symbol and a donation ledger. It is not a photograph of actual records or field reporting."}</figcaption>
@@ -56,7 +56,7 @@ export default function CommunityChestWatchArticle({ language }: { language: "ko
         ]).map(([label, value, note]) => <div key={label} className="border-t-4 border-green-deep bg-white p-5"><p className="text-xs font-bold text-charcoal/60">{label}</p><p className="mt-2 text-2xl font-extrabold text-navy">{value}</p><p className="mt-2 text-xs leading-5 text-charcoal/55">{note}</p></div>)}
       </div>
 
-      <div className="mx-auto mt-11 max-w-[720px] space-y-5 text-[16px] leading-8 text-charcoal/85 sm:text-[17px]">
+      <div className="reading-column mt-11 space-y-5 text-[16px] leading-8 text-charcoal/85 sm:text-[17px]">
         <p>{ko ? "2016년 사랑의열매에 모인 돈은 5,742억 원이었다. 2025년에는 9,864억 원이다. 10년 사이 약 72% 늘었다. 큰돈을 모아 위기의 이웃에게 보내는 힘은 소중하다. 그런데 지원받은 사람의 생활이 얼마나 나아졌는지를 알려면 모금액과 배분액만으로는 답이 나오지 않는다. 씨앗이 따라갈 것은 바로 그 빈칸이다." : "Community Chest of Korea raised KRW 574.2 billion in 2016 and KRW 986.4 billion in 2025, an increase of about 72%. Its ability to mobilize help matters. But the amount raised and allocated does not tell us whether recipients' lives improved. That is the gap this watch will follow."}</p>
       </div>
 
@@ -75,7 +75,7 @@ export default function CommunityChestWatchArticle({ language }: { language: "ko
         <p className="mt-3 text-xs leading-6 text-charcoal/55">{ko ? "자료: 사랑의열매 사업성과. 원자료 단위 백만 원을 억 원으로 반올림. 중앙회·지회 합계. 2021년부터 복권기금사업 실적이 배분액에 포함돼 이전 연도와 정의가 다르다. 한 해 모금과 배분의 차이는 미집행액이 아니다." : "Source: Community Chest annual performance data, national office plus branches, rounded from KRW million. Lottery-fund projects enter the allocation series in 2021, so earlier years are not strictly comparable. Annual donations minus allocations do not equal unspent cash."} <a className="underline" href={performance} target="_blank" rel="noreferrer">{ko ? "원자료" : "Original data"}</a></p>
       </section>
 
-      <section className="mx-auto mt-12 max-w-[720px] space-y-5 text-[16px] leading-8 text-charcoal/85 sm:text-[17px]">
+      <section className="reading-column mt-12 space-y-5 text-[16px] leading-8 text-charcoal/85 sm:text-[17px]">
         <h2 className="text-2xl font-extrabold text-navy">{ko ? "9,860억 원은 누구의 선택을 따라갔나" : "Who directed the KRW 986 billion?"}</h2>
         <p>{ko ? "2025년 배분 중 지정기탁은 7,430억 원이다. 기부자의 뜻이 분명한 돈이 모이고 쓰인다는 점은 강점이다. 그러나 기부자가 잘 알지 못하는 지역의 작은 문제는 누가 발견할까. 같은 공시에서 공개 신청사업은 301억 원, 전체 배분의 3.1%다." : "Donor-directed giving accounted for KRW 743.0 billion in 2025. Honoring donor intent is a strength. Yet who finds local needs donors do not already know? Open application programs accounted for KRW 30.1 billion, 3.1% of allocations."}</p>
         <p>{ko ? "3.1%만으로 작은 단체가 배제됐다고 판정할 수는 없다. 기획사업이나 지정기탁에서도 지원받을 수 있다. 필요한 것은 신청 단체의 규모와 선정률, 처음 지원받은 단체의 비율, 반복 지원 비율, 지역별 편차다. 이 자료가 있어야 익숙한 기관뿐 아니라 새 시민 활동에도 기회가 열리는지 판단할 수 있다." : "That 3.1% does not prove smaller groups were excluded; planned or donor-directed programs may also support them. We need application and selection rates by organization size, first-time grants, repeat grants and region before judging access."}</p>
@@ -85,7 +85,7 @@ export default function CommunityChestWatchArticle({ language }: { language: "ko
 
       <aside className="mt-8 border-l-4 border-gold bg-white p-6"><h3 className="font-extrabold text-navy">{ko ? "사업감시의 세 칸" : "Three measures of a program"}</h3><p className="mt-3 text-sm leading-7 text-charcoal/75">{ko ? "투입: 얼마를 썼나 → 도달: 누구에게 닿았나 → 변화: 그 뒤 무엇이 달라졌나. 공개된 합계는 첫째와 일부 둘째를 보여준다. 셋째는 개별 사업 평가서, 조사 방식, 중단·실패한 사업까지 대조해야 한다. 현재 확인한 자료만으로 전체 사업의 사회적 효과를 수치화하지 않는다." : "Input: money spent → Reach: people served → Change: outcomes sustained. Published aggregates show the first and part of the second. Individual evaluations, survey methods and failed or discontinued projects are needed for the third. These records alone cannot establish overall social impact."}</p></aside>
 
-      <section className="mx-auto mt-12 max-w-[720px] space-y-5 text-[16px] leading-8 text-charcoal/85 sm:text-[17px]">
+      <section className="reading-column mt-12 space-y-5 text-[16px] leading-8 text-charcoal/85 sm:text-[17px]">
         <h2 className="text-2xl font-extrabold text-navy">{ko ? "커지는 이월 재원은 무슨 계획을 품고 있나" : "What is the plan for carried-forward resources?"}</h2>
         <p>{ko ? "공식 수입지출현황의 ‘차기이월 순자산’은 2021년 약 8,181억 원에서 2025년 약 1조 962억 원으로 늘었다. 이 수치는 재무상태표의 자본총계와도 다르며, 전액 곧바로 쓸 수 있는 현금도 아니다. 씨앗이 요구할 설명은 언제 모였고, 어떤 지정조건이 붙었고, 언제 누구에게 쓰일 돈인지를 시민이 따라갈 수 있는 표다." : "The disclosed carried-forward net-assets figure increased from roughly KRW 818.1 billion in 2021 to KRW 1.0962 trillion in 2025. It differs from balance-sheet equity and is not all immediately available cash. Citizens need a ledger showing when funds arrived, their restrictions and planned spending dates."}</p>
         <p>{ko ? "사랑의열매는 큰 기부를 모아 위기의 현장으로 보낼 역량을 갖고 있다. 바로 그 규모 때문에 설명의 책임도 크다. 시민이 궁금한 것은 소박하다. 내가 낸 돈으로 누가 숨을 돌렸고, 그 변화가 얼마나 오래 갔는가. 다음에는 누가 기회를 얻는가." : "The Chest can mobilize major donations for people in crisis. Its scale makes explanation more necessary. Who found relief, how long did the improvement last, and who gets a chance next?"}</p>

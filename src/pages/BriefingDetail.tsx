@@ -42,7 +42,7 @@ export default function BriefingDetail() {
 
   const renderSourceArticle = () => briefing.sourceArticle && (
     <aside className="reading-column my-8 overflow-hidden rounded-xl border border-green-deep/15 bg-white shadow-[0_12px_34px_rgba(23,76,58,.07)]" aria-label={ko ? "이 브리핑이 검토한 원보도" : "Original report reviewed by this briefing"}>
-      <div className="grid md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
+      <div className="grid">
         <a href={briefing.sourceArticle.url} target="_blank" rel="noreferrer" className={briefing.sourceArticle.imageFit === "natural" ? "group block self-start overflow-hidden bg-ivory" : "group block overflow-hidden bg-navy"} aria-label={ko ? "원보도 새 창에서 읽기" : "Read the original report in a new tab"}>
           <SafeImage src={briefing.sourceArticle.imageSrc} alt={briefing.sourceArticle.imageAlt} className={briefing.sourceArticle.imageFit === "natural" ? "block h-auto w-full object-contain" : "aspect-video h-full w-full object-cover transition duration-300 group-hover:scale-[1.015]"} />
         </a>

@@ -42,7 +42,6 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
   const ko = language === "ko";
   const t = (value: LocalizedText) => value[language];
   const layered = item.displayMode === "layered";
-  const articleWidthHeader = item.slug === "supreme-court-renomination-tracker-2026";
   const controversies = item.currentControversies ?? [];
   const openQuestions = controversies.length ? [] : item.questions;
   const hasRemainingItems = controversies.length > 0 || openQuestions.length > 0;
@@ -72,13 +71,13 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
   return (
     <article className="bg-paper pb-12 sm:pb-16">
       <header className="border-b border-green-deep/15 bg-ivory">
-        <div className={`container-page py-5 sm:py-7 ${articleWidthHeader ? "max-w-[50rem]" : "max-w-6xl"}`}>
+        <div className="article-content-frame py-5 sm:py-7">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <Link to="/monitoring" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "시민감시" : "Civic Watch"}</Link>
             <ShareButton title={t(item.title)} text={t(item.summary)} />
           </div>
 
-          <div className={`mt-4 grid gap-7 border-t-2 border-navy pt-5 ${articleWidthHeader ? "" : "lg:grid-cols-[1.08fr_.92fr] lg:items-center"}`}>
+          <div className="mt-4 grid gap-7 border-t-2 border-navy pt-5">
             <div>
               <div className="flex flex-wrap items-center gap-2.5">
                 <span className="section-kicker">CIVIC WATCH · NEWS TRACKER</span>
@@ -106,7 +105,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
 
             {item.heroImage && (
               <figure className="overflow-hidden border border-green-deep/12 bg-white shadow-soft">
-                <SafeImage src={item.heroImage.src} alt={t(item.heroImage.alt)} className={`${articleWidthHeader ? "aspect-video" : "aspect-[4/3]"} w-full object-cover`} loading="eager" />
+                <SafeImage src={item.heroImage.src} alt={t(item.heroImage.alt)} className="aspect-video w-full object-cover" loading="eager" />
                 <figcaption className="border-t border-green-deep/10 px-4 py-3 text-xs leading-5 text-charcoal/55">
                   {t(item.heroImage.caption)} <span className="text-charcoal/35">· {t(item.heroImage.credit)}</span>
                 </figcaption>
@@ -116,7 +115,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
         </div>
       </header>
 
-      <div className={`container-page py-8 sm:py-12 ${articleWidthHeader ? "max-w-[50rem]" : "max-w-5xl"}`}>
+      <div className="article-content-frame py-8 sm:py-12">
         {!!item.keyChanges?.length && (
           <section className="mt-10" aria-labelledby="changes-title">
             <div className="flex items-center gap-3 border-b-2 border-navy pb-4">

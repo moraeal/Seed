@@ -41,12 +41,12 @@ export default function PublicInstitutionReformTrackerPage() {
 
   return <article className="bg-paper pb-14 sm:pb-20">
     <header className="border-b border-green-deep/15 bg-ivory">
-      <div className="container-page max-w-6xl py-5 sm:py-8">
+      <div className="article-content-frame py-5 sm:py-8">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <Link to="/monitoring" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "시민감시" : "Civic Watch"}</Link>
           <ShareButton title={t(publicInstitutionReformTracker.title)} text={t(publicInstitutionReformTracker.summary)} />
         </div>
-        <div className="mt-4 grid gap-7 border-t-2 border-navy pt-5 lg:grid-cols-[1.08fr_.92fr] lg:items-center">
+        <div className="mt-4 grid gap-7 border-t-2 border-navy pt-5">
           <div>
             <div className="flex flex-wrap items-center gap-2.5"><span className="section-kicker">SPECIAL WATCH · PUBLIC INSTITUTIONS</span><span className="rounded-full bg-red-700 px-3 py-1 text-[11px] font-extrabold text-white">{t(publicInstitutionReformTracker.status)}</span></div>
             <h1 className="editorial-title mt-4 text-[2.25rem] font-bold leading-[1.12] text-navy sm:text-[3.2rem]">{ko ? <><span className="block">공공기관 109,</span><span className="block">정말 줄어드나</span></> : t(publicInstitutionReformTracker.title)}</h1>
@@ -54,12 +54,12 @@ export default function PublicInstitutionReformTrackerPage() {
             <p className="mt-5 border-l-4 border-gold pl-4 text-lg font-extrabold leading-8 text-green-deep">{ko ? "기관은 줄고, 국민 부담과 정부 권한도 줄어드는가?" : "Will institutions, public cost and government power all shrink together?"}</p>
             <div className="mt-5 flex flex-wrap items-center gap-4 text-xs text-charcoal/45"><time>{ko ? "최초 공개 2026.09.21" : "First published Sep. 21, 2026"}</time><span>{ko ? "새 사실이 확인될 때만 갱신" : "Updated only when material facts change"}</span></div>
           </div>
-          {publicInstitutionReformTracker.heroImage && <figure className="overflow-hidden border border-green-deep/12 bg-white shadow-soft"><SafeImage src={publicInstitutionReformTracker.heroImage.src} alt={t(publicInstitutionReformTracker.heroImage.alt)} className="aspect-[4/3] w-full object-cover" loading="eager"/><figcaption className="border-t border-green-deep/10 px-4 py-3 text-xs leading-5 text-charcoal/55">{t(publicInstitutionReformTracker.heroImage.caption)} <span className="text-charcoal/35">· {t(publicInstitutionReformTracker.heroImage.credit)}</span></figcaption></figure>}
+          {publicInstitutionReformTracker.heroImage && <figure className="overflow-hidden border border-green-deep/12 bg-white shadow-soft"><SafeImage src={publicInstitutionReformTracker.heroImage.src} alt={t(publicInstitutionReformTracker.heroImage.alt)} className="aspect-video w-full object-cover" loading="eager"/><figcaption className="border-t border-green-deep/10 px-4 py-3 text-xs leading-5 text-charcoal/55">{t(publicInstitutionReformTracker.heroImage.caption)} <span className="text-charcoal/35">· {t(publicInstitutionReformTracker.heroImage.credit)}</span></figcaption></figure>}
         </div>
       </div>
     </header>
 
-    <div className="container-page max-w-6xl py-9 sm:py-12">
+    <div className="article-content-frame py-9 sm:py-12">
       <section className="mt-12" aria-labelledby="recent-change-title">
         <div className="flex items-center gap-3 border-b-2 border-navy pb-4"><Sparkles className="text-red-700" size={23}/><div><span className="section-kicker">WHAT CHANGED</span><h2 id="recent-change-title" className="mt-1 text-3xl font-extrabold text-navy">{ko ? "최근 확인된 변화 3가지" : "Three latest verified changes"}</h2></div></div>
         <div className="mt-4 grid gap-4 lg:grid-cols-3">

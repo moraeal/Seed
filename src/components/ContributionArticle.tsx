@@ -13,7 +13,7 @@ const typeLabel: Record<ArticleDraftType, string> = {
 
 function ArticleBody({ body }: { body: string }) {
   const blocks = body.replace(/\r\n/g, "\n").split(/\n{2,}/).map((block) => block.trim()).filter(Boolean);
-  return <div className="mx-auto max-w-[760px] text-[1.05rem] leading-[2] text-charcoal/85">
+  return <div className="reading-column text-[1.05rem] leading-[2] text-charcoal/85">
     {blocks.map((block, index) => {
       if (/^#{1,3}\s+/.test(block)) return <h2 key={index} className="editorial-title mb-4 mt-12 text-2xl font-bold leading-snug text-navy">{block.replace(/^#{1,3}\s+/, "")}</h2>;
       const lines = block.split("\n");
@@ -51,9 +51,9 @@ export default function ContributionArticle({ title, subtitle, summary, byline, 
         <div className="mt-7 flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-green-deep/10 pt-5 text-xs text-charcoal/50"><span className="font-bold text-green-deep">{byline || "필자"}</span><time>{date}</time><span className="inline-flex items-center gap-1"><Clock3 size={13}/>{minutes}분 읽기</span></div>
       </div>
     </header>
-    <div className="container-page max-w-6xl py-8 sm:py-12">
-      <SafeImage src={image} alt={`${title || "기사"} 대표 이미지`} className="mx-auto aspect-[16/8] w-full max-w-5xl bg-green-pale object-cover" referrerPolicy="no-referrer"/>
-      {summary && <p className="editorial-title mx-auto mt-10 max-w-[760px] border-y border-green-deep/15 py-6 text-xl font-semibold leading-9 text-navy">{summary}</p>}
+    <div className="article-content-frame py-8 sm:py-12">
+      <SafeImage src={image} alt={`${title || "기사"} 대표 이미지`} className="aspect-[16/8] w-full bg-green-pale object-cover" referrerPolicy="no-referrer"/>
+      {summary && <p className="editorial-title reading-column mt-10 border-y border-green-deep/15 py-6 text-xl font-semibold leading-9 text-navy">{summary}</p>}
       <ArticleBody body={body || "아직 작성된 본문이 없습니다."}/>
     </div>
   </article>;

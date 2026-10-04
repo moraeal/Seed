@@ -59,13 +59,13 @@ export default function CommunityChestResearch() {
         </div>
       </header>
 
-      <div className="container-page max-w-6xl py-8 sm:py-12">
+      <div className="article-content-frame py-8 sm:py-12">
         <figure className="overflow-hidden border border-green-deep/10 bg-white shadow-[0_22px_65px_rgba(23,76,58,.1)]">
           <img src={`${import.meta.env.BASE_URL}images/monitoring/community-chest-deep-hero.png?v=20260910-2`} alt={article.heroAlt} className="aspect-[16/9] w-full object-cover" />
           <figcaption className="border-t border-green-deep/10 px-5 py-3 text-xs leading-6 text-charcoal/50 sm:px-7">{article.heroCaption}</figcaption>
         </figure>
 
-        <div className="mt-8 grid gap-10 lg:grid-cols-[15rem_minmax(0,46rem)] lg:justify-center lg:gap-14">
+        <div className="mt-8 grid gap-10 ">
           <aside id="research-contents" className="scroll-mt-40 lg:sticky lg:top-[158px] lg:self-start">
             <div className="border-y-2 border-green-deep bg-white p-5">
               <div className="flex items-center gap-2 text-navy"><BookOpenText size={18}/><h2 className="font-extrabold">{ko ? "차례" : "Contents"}</h2></div>
