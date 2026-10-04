@@ -43,26 +43,14 @@ export default function ColumnDetail() {
   useEffect(() => {
     if (!fontPreview) return;
     let active = true;
-    let font: FontFace | undefined;
-    const controller = new AbortController();
+    const font = new FontFace("SeedChosunPreview", `url("${import.meta.env.BASE_URL}fonts/chosun-preview/ChosunIlboMyeongjo.woff") format("woff")`, { style: "normal", weight: "400", display: "swap" });
     setFontStatus("loading");
-    (async () => {
-      const parts = await Promise.all([0, 1, 2].map(async (part) => {
-        const response = await fetch(`${import.meta.env.BASE_URL}fonts/chosun-preview/ChosunIlboMyeongjo2020.part${part}`, { signal: controller.signal });
-        if (!response.ok) throw new Error("Font download failed");
-        return new Uint8Array(await response.arrayBuffer());
-      }));
-      if (!active) return;
-      const bytes = new Uint8Array(parts.reduce((length, part) => length + part.length, 0));
-      let offset = 0;
-      for (const part of parts) { bytes.set(part, offset); offset += part.length; }
-      font = new FontFace("SeedChosunPreview", bytes.buffer, { style: "normal", weight: "400", display: "swap" });
-      const loaded = await font.load();
+    font.load().then((loaded) => {
       if (!active) return;
       document.fonts.add(loaded);
       setFontStatus("ready");
-    })().catch((error) => { if (active) { console.warn("Chosun preview font could not load:", error); setFontStatus("error"); } });
-    return () => { active = false; controller.abort(); if (font) document.fonts.delete(font); };
+    }).catch((error) => { if (active) { console.warn("Chosun preview font could not load:", error); setFontStatus("error"); } });
+    return () => { active = false; document.fonts.delete(font); };
   }, [fontPreview]);
   const ko = language === "ko";
   const originalColumn = getColumn(slug);
