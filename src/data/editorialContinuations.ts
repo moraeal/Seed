@@ -379,7 +379,7 @@ const isFarmlandTracker = (kind: EditorialContentKind, slug: string) => kind ===
 const isFarmlandRetirement = (kind: EditorialContentKind, slug: string) => kind === "briefing" && slug === "farmland-census-elderly-farmers-retirement";
 const isNuclearPolicyColumn = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "democratic-party-nuclear-policy-reversal";
 const isNuclearPolicyTracker = (kind: EditorialContentKind, slug: string) => kind === "monitoring" && slug === "democratic-party-nuclear-policy-reversal-tracker";
-const isProsecutionReformColumn = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "prosecution-reform-power-transfer-2026";
+const isProsecutionReformColumn = (kind: EditorialContentKind, slug: string) => kind === "column" && ["prosecution-reform-power-transfer-2026", "who-watches-power-now-2026"].includes(slug);
 const isMilitaryAcademyColumn = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "military-academy-integration-rotc-question";
 const isMilitaryAcademyTracker = (kind: EditorialContentKind, slug: string) => kind === "monitoring" && slug === "military-academy-integration-tracker";
 const isFukushimaJourney = (kind: EditorialContentKind, slug: string) => kind === "column" && slug === "fukushima-journey-original";

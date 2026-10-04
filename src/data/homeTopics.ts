@@ -49,6 +49,7 @@ const homeTopicGroups: Record<string, string[]> = {
     "/columns/wealth-crosses-borders-inheritance-tax",
   ],
   "prosecution-service-abolition-tracker": [
+    "/columns/who-watches-power-now-2026",
     "/news/major-crimes-agency-investigator-staffing-2026",
     "/monitoring/legislation/commentary/criminal-investigation-power-and-accountability",
     "/briefings/prosecution-service-abolition",
