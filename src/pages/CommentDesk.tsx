@@ -20,6 +20,7 @@ export default function CommentDesk(){
   const act=async(action:"save"|"publish"|"retry"|"skip")=>{if(!session || !current || busy)return;setBusy(true);setNotice("");try{
     if(action==="save")await saveReplyJob(session,current.comment_id,{edited_body:body});
     else await replyAction(session,current.comment_id,action,body);
+    if(action==="retry")setBody("");
     setNotice(action==="publish"?"씨야 답글이 게시되었습니다.":action==="save"?"수정한 초안을 저장했습니다.":action==="retry"?"초안을 다시 생성합니다. 약 1분 후 확인해주세요.":"답글을 보류했습니다.");
     await refresh();
   }catch(e){setNotice(e instanceof Error?e.message:"처리 실패");}finally{setBusy(false);}};

@@ -101,7 +101,7 @@ Deno.serve(async(req)=>{
       return json(req,{replyId});
     }
     if(payload.action==="retry" || payload.action==="skip") {
-      const update=payload.action==="retry"?{status:"pending",attempts:0,error:"",claim_id:null}:{status:"skipped",seen_at:new Date().toISOString(),claim_id:null};
+      const update=payload.action==="retry"?{status:"pending",attempts:0,error:"",draft_body:"",edited_body:"",core_concern:"",claim_id:null}:{status:"skipped",seen_at:new Date().toISOString(),claim_id:null};
       await db(`comment_reply_queue?comment_id=eq.${payload.commentId}&status=neq.posted`,{method:"PATCH",body:JSON.stringify({...update,updated_at:new Date().toISOString()})});
       return json(req,{ok:true});
     }
