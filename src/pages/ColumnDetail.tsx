@@ -91,7 +91,7 @@ export default function ColumnDetail() {
   </section>;
 
   return <article className={`bg-paper ${fontPreview && gothicTitle && titleFontStatus === "ready" ? "chosun-gothic-preview" : ""}`}>
-    {fontPreview && <style>{`.chosun-font-preview .article-copy { font-family: "SeedChosunPreview", serif; font-weight: 400; color: #000000; } .chosun-gothic-preview :is(.article-detail-title, .article-section-title) { font-family: "SeedChosunGothicPreview", sans-serif; font-weight: 400; color: #000000; }`}</style>}
+    {fontPreview && <style>{`.chosun-font-preview .article-copy { font-family: "SeedChosunPreview", serif; font-weight: 400; color: #000000; } .chosun-gothic-preview :is(.article-detail-title, .article-section-title) { font-family: "SeedChosunGothicPreview", sans-serif; font-weight: 400; }`}</style>}
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
       <div className="container-page max-w-5xl">{hotIssue && <Link to="/news" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "핫이슈 목록" : "Hot Issues"}</Link>}{publicInterest && <Link to="/monitoring/public-interest" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "공익감시 목록" : "Public-Interest Watch"}</Link>}<div className="pt-3">{fontPreview && <div className="mb-5 flex flex-wrap items-center gap-3 border-b border-green-deep/20 pb-4">
         <span className="text-sm font-bold">제목 글꼴 비교</span>
