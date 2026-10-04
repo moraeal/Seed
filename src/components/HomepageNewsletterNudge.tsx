@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "../i18n";
 import { isReadingPage } from "../lib/readingRoutes";
 import { useAuth } from "../auth";
+import SiyaDismissButton, { useSiyaDismissed } from "./SiyaDismissButton";
 
 // Article recommendations pull in the full editorial catalogue. Load them only
 // for signed-in readers, after the public page has become interactive.
@@ -50,6 +51,7 @@ function NewsletterNudge({ reading }: { reading: boolean }) {
           <Link to={`/account?mode=signup&returnTo=${encodeURIComponent(window.location.pathname)}`} onClick={() => setStage("ready")} className="button-primary w-full justify-center">{ko ? "무료 구독신청" : "Subscribe for free"}</Link>
         </div>
       )}
+      <SiyaDismissButton />
       <button
         type="button"
         className="seed-nudge-trigger"
@@ -79,8 +81,9 @@ function NewsletterNudge({ reading }: { reading: boolean }) {
 
 export default function HomepageNewsletterNudge() {
   const { isVerified, loading } = useAuth();
+  const dismissed = useSiyaDismissed();
   const { pathname } = useLocation();
-  if (loading || pathname.replace(/\/$/, "") === "/about") return null;
+  if (dismissed || loading || pathname.replace(/\/$/, "") === "/about") return null;
   if (isVerified) return <Suspense fallback={null}><SiyaArticleGuide /></Suspense>;
   return <NewsletterNudge reading={isReadingPage(pathname)} />;
 }

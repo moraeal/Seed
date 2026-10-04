@@ -1,4 +1,3 @@
-import { X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useLocation } from "react-router-dom";
@@ -6,6 +5,7 @@ import { useAuth } from "../auth";
 import { getArticleReadingPath } from "../data/articleReadingPaths";
 import type { EditorialContentKind } from "../data/editorialContinuations";
 import { useLanguage } from "../i18n";
+import SiyaDismissButton from "./SiyaDismissButton";
 
 type Stage = "hidden" | "walking" | "ready" | "open";
 type Source = { title: string; date: string; url: string };
@@ -77,8 +77,8 @@ export default function SiyaArticleGuide() {
   const image = stage === "walking" ? "seed-09-listening-guide.webp" : pose ? "seed-10-explaining-guide.webp" : "seed-13-reading-guide.webp";
   return createPortal(
     <aside className="seed-nudge" aria-label={ko ? "씨야 기사 안내" : "Siya article guide"}>
+      <SiyaDismissButton />
       {stage === "open" && <section id="seed-guide-card" className="seed-nudge-card seed-guide-card" aria-labelledby="seed-guide-title">
-        <button type="button" className="seed-guide-close" onClick={() => setStage("ready")} aria-label={ko ? "씨야 안내창 닫기" : "Close Siya guide"} title={ko ? "닫기" : "Close"}><X size={18} aria-hidden="true" /></button>
         <p className="section-kicker">SEED ARTICLE GUIDE</p>
         <h2 id="seed-guide-title" className="editorial-title mt-2 text-xl font-bold text-navy">{ko ? "씨야의 기사 안내" : "Siya's article guide"}</h2>
         <div className="seed-guide-messages" aria-live="polite">

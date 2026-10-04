@@ -16,6 +16,9 @@
 }
 
 .seed-nudge { position: fixed; right: 20px; bottom: 16px; z-index: 60; }
+.seed-siya-dismiss { position: absolute; top: -44px; right: 0; z-index: 2; display: grid; width: 40px; height: 40px; place-items: center; border: 1px solid #b4cdb9; border-radius: 50%; background: #fffefa; box-shadow: 0 3px 10px #173c2829; color: #174c3a; cursor: pointer; pointer-events: auto; }
+.seed-siya-dismiss:hover { background: #edf4ee; }
+.seed-siya-dismiss:focus-visible { outline: 2px solid #28644d; outline-offset: 2px; }
 .seed-nudge-trigger { display: flex; flex-direction: column; align-items: flex-end; margin-left: auto; cursor: pointer; }
 .seed-nudge-trigger:focus-visible { outline: 2px solid #28644d; outline-offset: 2px; border-radius: 8px; }
 .seed-nudge-character { display: block; width: 170px; height: 170px; object-fit: contain; pointer-events: none; }

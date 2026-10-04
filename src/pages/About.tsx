@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useLanguage } from "../i18n";
 import TipDialog from "../components/TipDialog";
+import SiyaDismissButton, { useSiyaDismissed } from "../components/SiyaDismissButton";
 
 const copy = {
   ko: {
@@ -137,10 +138,12 @@ const experienceColors = ["bg-[#dcefa9]", "bg-[#f6ad7e]", "bg-[#d9eff3]"];
 export default function About() {
   const { language } = useLanguage();
   const [tipOpen, setTipOpen] = useState(false);
+  const siyaDismissed = useSiyaDismissed();
   const [siyaStage, setSiyaStage] = useState<"hidden" | "walking" | "ready">("hidden");
   const [siyaPose, setSiyaPose] = useState(false);
 
   useEffect(() => {
+    if (siyaDismissed) return;
     const imageBase = `${import.meta.env.BASE_URL}images/seed-character/`;
     ["seed-09-listening-guide.webp", "seed-about-reading.webp"].forEach((name) => {
       const preload = new Image();
@@ -160,7 +163,7 @@ export default function About() {
       if (ready !== undefined) window.clearTimeout(ready);
       if (movement !== undefined) window.clearInterval(movement);
     };
-  }, []);
+  }, [siyaDismissed]);
   const content = copy[language];
 
   return (
@@ -298,8 +301,9 @@ export default function About() {
           </div>
         </section>
       </main>
-      {siyaStage !== "hidden" && (
+      {!siyaDismissed && siyaStage !== "hidden" && (
         <aside className={`about-siya about-siya--${siyaStage}`} aria-label={content.siyaAlt}>
+          <SiyaDismissButton />
           {siyaStage === "ready" && (
             <div className="about-siya-bubbles" aria-live="polite">
               <p>{siyaPose ? content.siyaInvite : content.siyaOpening}</p>
