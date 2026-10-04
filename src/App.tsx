@@ -8,6 +8,7 @@ import HomepageNewsletterNudge from "./components/HomepageNewsletterNudge";
 import InlinePageEditor from "./components/InlinePageEditor";
 import RouteMetadata from "./components/RouteMetadata";
 import ScrollToTop from "./components/ScrollToTop";
+import OperatorMenu from "./components/OperatorMenu";
 import { LanguageProvider, useLanguage } from "./i18n";
 
 const About = lazy(() => import("./pages/About"));
@@ -57,6 +58,7 @@ const DraftArticlePreview = lazy(() => import("./pages/DraftArticlePreview"));
 const Contributions = lazy(() => import("./pages/Contributions"));
 const ImageArchive = lazy(() => import("./pages/ImageArchive"));
 const EditorialDesk = lazy(() => import("./pages/EditorialDesk"));
+const CommentDesk = lazy(() => import("./pages/CommentDesk"));
 
 function AppShell() {
   const { language } = useLanguage();
@@ -67,6 +69,7 @@ function AppShell() {
       <ScrollToTop />
       <Header />
       <main>
+        <OperatorMenu />
         <ArticleReadingAccess>
         <Suspense fallback={<div className="container-page min-h-screen py-10" role="status" aria-label={language === "en" ? "Loading page" : "페이지 불러오는 중"}>
           <div className="min-h-[320px] animate-pulse overflow-hidden rounded-xl bg-[#e9efe4] lg:grid lg:grid-cols-2" aria-hidden="true">
@@ -92,6 +95,7 @@ function AppShell() {
           <Route path="/insights/members" element={<Insights />} />
           <Route path="/insights/images" element={<ImageArchive />} />
           <Route path="/insights/editorial" element={<EditorialDesk />} />
+          <Route path="/insights/comments" element={<CommentDesk />} />
           <Route path="/insights/featured" element={<Insights />} />
           <Route path="/insights/legislation" element={<Insights />} />
           <Route path="/insights/tax" element={<Insights />} />

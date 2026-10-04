@@ -10,6 +10,7 @@ import {
   createComment,
   loadComments,
   parseCommentBody,
+  threadComments,
 } from "../lib/comments";
 import { useLanguage } from "../i18n";
 
@@ -34,7 +35,7 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
   }, [postSlug]);
 
   useEffect(() => {
-    if (location.hash === "#comments" || location.hash === "#comments-form") setPanelOpen(true);
+    if (location.hash === "#comments" || location.hash === "#comments-form" || location.hash.startsWith("#comment-")) setPanelOpen(true);
   }, [location.hash]);
 
   useEffect(() => {
@@ -143,11 +144,12 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
       )}
 
       <div className="mt-7 divide-y divide-green-deep/10">
-        {comments.map((comment) => {
+        {threadComments(comments).map((comment) => {
           const parsed = parseCommentBody(comment.body);
           return (
-            <article id={`comment-${comment.id}`} key={comment.id} className="scroll-mt-28 py-5">
-              <div className="flex items-center justify-between gap-4"><strong className="text-sm text-navy">{comment.nickname}</strong><time className="text-xs text-charcoal/40">{new Date(comment.created_at).toLocaleDateString(ko ? "ko-KR" : "en-US")}</time></div>
+            <article id={`comment-${comment.id}`} key={comment.id} className={`scroll-mt-28 py-5 ${comment.parent_id ? "ml-4 border-l-2 border-green-mid/30 pl-4 sm:ml-8" : ""}`}>
+              <div className="flex items-center justify-between gap-4"><strong className="text-sm text-navy">{comment.nickname}{comment.is_siya && <span className="ml-2 rounded-full bg-green-pale px-2 py-1 text-[10px] text-green-deep">{ko ? "AI · 운영자 승인 답글" : "AI · owner-approved reply"}</span>}</strong><time className="text-xs text-charcoal/40">{new Date(comment.created_at).toLocaleDateString(ko ? "ko-KR" : "en-US")}</time></div>
+              {comment.parent_id && <a href={`#comment-${comment.parent_id}`} className="mt-2 block text-xs font-bold text-green-mid">{ko ? "↳ 원댓글에 대한 답글" : "↳ Reply to original comment"}</a>}
               {parsed.continuation && (
                 <a href={`#comment-${parsed.continuation.commentId}`} className="mt-3 inline-flex items-center gap-2 rounded-full bg-green-pale px-3 py-1.5 text-[11px] font-extrabold text-green-deep hover:bg-green-pale/70">
                   <CornerUpRight size={13}/>{ko ? `${parsed.continuation.nickname}님의 의견에서 이어짐 · 이전 의견 보기` : `Continued from ${parsed.continuation.nickname} · View previous comment`}

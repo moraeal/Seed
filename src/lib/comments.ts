@@ -6,6 +6,8 @@ export type CommentRecord = {
   nickname: string;
   body: string;
   created_at: string;
+  parent_id?: string | null;
+  is_siya?: boolean;
 };
 
 export type CommentContinuation = {
@@ -28,12 +30,19 @@ const publicHeaders: Record<string, string> = {
 
 if (key?.startsWith("eyJ")) publicHeaders.Authorization = `Bearer ${key}`;
 
-const selectFields = "id,post_slug,nickname,body,created_at";
+const selectFields = "id,post_slug,nickname,body,created_at,parent_id,is_siya";
 const continuationPattern = /^\[\[continue:([^|]+)\|([^|]*)\|([^\]]*)\]\]\n?/;
 
 const newestFirst = (comments: CommentRecord[]) => [...comments].sort(
   (a, b) => b.created_at.localeCompare(a.created_at),
 );
+
+export function threadComments(comments: CommentRecord[]) {
+  const ids = new Set(comments.map(c => c.id));
+  return comments.filter(c => !c.parent_id || !ids.has(c.parent_id)).flatMap(c => [
+    c, ...comments.filter(reply => reply.parent_id === c.id).sort((a,b) => a.created_at.localeCompare(b.created_at)),
+  ]);
+}
 
 const safelyDecode = (value: string) => {
   try {

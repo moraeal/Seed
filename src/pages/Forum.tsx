@@ -115,6 +115,7 @@ export default function Forum() {
                 <div className="border-l-0 border-green-deep/10 md:border-l md:pl-5">
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                     <strong className="text-xs text-navy">{comment.nickname}</strong>
+                    {comment.is_siya && <span className="text-[10px] font-bold text-green-mid">AI · 운영자 승인 답글</span>}
                     <time className="text-[10px] text-charcoal/40">{new Date(comment.created_at).toLocaleString(ko ? "ko-KR" : "en-US")}</time>
                   </div>
 
@@ -123,6 +124,7 @@ export default function Forum() {
                       <CornerUpRight size={11}/>{ko ? `${parsed.continuation.nickname}님의 의견에서 이어짐` : `Continued from ${parsed.continuation.nickname}`}
                     </Link>
                   )}
+                  {comment.parent_id && <Link to={`${source.path}#comment-${comment.parent_id}`} className="mt-2 block text-xs font-bold text-green-mid">↳ 원댓글 보기</Link>}
 
                   <p className="mt-1.5 line-clamp-2 whitespace-pre-wrap text-xs leading-5 text-charcoal/75">{parsed.text}</p>
 

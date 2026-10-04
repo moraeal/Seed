@@ -350,6 +350,7 @@ const privateShellRoutes = [
   ["insights/members", "회원·필자 관리 | 씨앗의 소리"],
   ["insights/images", "이미지 보관함 | 씨앗의 소리"],
   ["insights/editorial", "편집부 원고함 | 씨앗의 소리"],
+  ["insights/comments", "댓글·씨야 답글 관리 | 씨앗의 소리"],
   ["insights/featured", "메인기사 관리 | 씨앗의 소리"],
   ["insights/legislation", "입법감시 관리 | 씨앗의 소리"],
 ];

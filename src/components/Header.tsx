@@ -9,6 +9,7 @@ import BrandLockup from "./BrandLockup";
 import HomeSectionNav from "./HomeSectionNav";
 import CivicLifeSubnav from "./CivicLifeSubnav";
 import MonitoringSubnav from "./MonitoringSubnav";
+import { CommentInboxBadge } from "./OperatorMenu";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -141,7 +142,8 @@ export default function Header() {
             {user ? (
               <>
                 {(user.app_metadata?.seed_role === "author" || user.app_metadata?.seed_role === "owner") && <Link to="/writer" className="inline-flex min-h-8 items-center gap-1.5 px-2 text-[11px] font-extrabold text-green-deep"><PenLine size={13}/>{ko ? "집필실" : "Write"}</Link>}
-                {user.app_metadata?.seed_role === "owner" && <Link to="/insights/editorial" className="inline-flex min-h-8 items-center gap-1.5 px-2 text-[11px] font-extrabold text-green-deep"><ClipboardList size={13}/>{ko ? "편집부" : "Editorial"}</Link>}
+                {user.app_metadata?.seed_role === "owner" && <CommentInboxBadge/>}
+                {user.app_metadata?.seed_role === "owner" && <Link to="/insights" className="inline-flex min-h-8 items-center gap-1.5 px-2 text-[11px] font-extrabold text-green-deep"><ClipboardList size={13}/>{ko ? "운영자" : "Operator"}</Link>}
                 <Link to="/account" className="inline-flex min-h-8 items-center gap-1.5 rounded-md border border-green-deep/12 bg-white px-2.5 text-[11px] font-extrabold text-green-deep">
                   <UserRound size={13}/><span className="max-w-20 truncate">{nickname}</span>{isVerified && <span className="text-[9px] text-green-mid">●</span>}
                 </Link>
@@ -176,7 +178,7 @@ export default function Header() {
               {user ? (
                 <>
                   {(user.app_metadata?.seed_role === "author" || user.app_metadata?.seed_role === "owner") && <Link to="/writer" onClick={() => setOpen(false)} className="button-primary"><PenLine size={15}/>{ko ? "필자 집필실" : "Writers' room"}</Link>}
-                  {user.app_metadata?.seed_role === "owner" && <Link to="/insights/editorial" onClick={() => setOpen(false)} className="button-primary"><ClipboardList size={15}/>{ko ? "편집부 원고함" : "Editorial desk"}</Link>}
+                  {user.app_metadata?.seed_role === "owner" && <Link to="/insights" onClick={() => setOpen(false)} className="button-primary"><ClipboardList size={15}/>{ko ? "운영자 메뉴" : "Operator menu"}</Link>}
                   <Link to="/account" onClick={() => setOpen(false)} className="button-secondary"><UserRound size={15}/>{nickname}</Link>
                   <button onClick={() => { setOpen(false); void signOut(); }} className="button-secondary" type="button"><LogOut size={15}/>{language === "en" ? "Sign out" : "로그아웃"}</button>
                 </>
