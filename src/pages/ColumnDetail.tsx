@@ -105,7 +105,7 @@ export default function ColumnDetail() {
       .chosun-online-preview .article-detail-title { font-size: 2.375rem; line-height: 1.4; letter-spacing: -.5px; }
       .chosun-online-preview .article-content-frame { max-width: 712px; }
       .chosun-online-preview .article-section-title { font-size: 1.5rem; line-height: 1.4; letter-spacing: -.5px; }
-      .reading-surface .chosun-online-preview .article-copy { font-size: var(--reading-font-size, 1.125rem); line-height: 1.74; letter-spacing: -.5px; margin-top: 0; margin-bottom: 24px; word-break: break-all; }
+      .reading-surface .chosun-online-preview .article-copy { font-size: var(--reading-font-size, 1.125rem); line-height: 1.74 !important; letter-spacing: -.5px; margin-top: 0; margin-bottom: 24px; word-break: break-all; }
       .chosun-online-preview .chosun-font-preview .article-copy { color: #222; -webkit-text-stroke: .2px #222; }
       .chosun-online-preview .chosun-font-preview .article-copy :is(a, strong, b) { -webkit-text-stroke: 0; }
       @media (max-width: 689px) { .chosun-online-preview .article-detail-title { font-size: 1.5rem; line-height: 1.42; } .chosun-online-preview .article-section-title { font-size: 1.25rem; line-height: 1.45; } }
