@@ -82,7 +82,7 @@ export default function ColumnDetail() {
   </section>;
 
   return <article className="bg-paper">
-    {fontPreview && <style>{`.chosun-font-preview .article-copy { font-family: "SeedChosunPreview", serif; font-weight: 400; }`}</style>}
+    {fontPreview && <style>{`.chosun-font-preview .article-copy { font-family: "SeedChosunPreview", serif; font-weight: 400; color: #000000; }`}</style>}
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
       <div className="container-page max-w-5xl">{hotIssue && <Link to="/news" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "핫이슈 목록" : "Hot Issues"}</Link>}{publicInterest && <Link to="/monitoring/public-interest" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "공익감시 목록" : "Public-Interest Watch"}</Link>}<div className="pt-3"><h1 className="article-detail-title">{column.title}</h1>{column.slug === "real-estate-supervisor-citizens-accounts" && <p className="mt-4 text-sm leading-7 text-charcoal/80 sm:text-base">
         {ko ? "이 글은 김현정 의원이 2026년 9월 23일 재발의한 「부동산감독원 설치 및 운영에 관한 법률안」(의안번호 2221573)에 대한 논평입니다. " : "This commentary examines Rep. Kim Hyun-jung's revised Real Estate Supervisory Agency Bill, introduced on September 23, 2026 (bill no. 2221573). "}
