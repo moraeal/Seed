@@ -38,19 +38,28 @@ export default function ColumnDetail() {
   const { language } = useLanguage();
   const fontPreview = slug === "robak-sejong-taxpayer-rights-2026" && searchParams.get("font") === "chosun" && language === "ko";
   const [newspaperFont, setNewspaperFont] = useState(true);
+  const [gothicTitle, setGothicTitle] = useState(true);
+  const [titleFontStatus, setTitleFontStatus] = useState<"loading" | "ready" | "error">("loading");
   const [fontStatus, setFontStatus] = useState<"loading" | "ready" | "error">("loading");
 
   useEffect(() => {
     if (!fontPreview) return;
     let active = true;
     const font = new FontFace("SeedChosunPreview", `url("${import.meta.env.BASE_URL}fonts/chosun-preview/ChosunIlboMyeongjo.woff") format("woff")`, { style: "normal", weight: "400", display: "swap" });
+    const titleFont = new FontFace("SeedChosunGothicPreview", 'url("https://cdn.jsdelivr.net/gh/fontbee/font@main/CHOSUN/ChosunKg.woff") format("woff")', { style: "normal", weight: "400", display: "swap" });
+    setTitleFontStatus("loading");
+    titleFont.load().then((loaded) => {
+      if (!active) return;
+      document.fonts.add(loaded);
+      setTitleFontStatus("ready");
+    }).catch(() => { if (active) setTitleFontStatus("error"); });
     setFontStatus("loading");
     font.load().then((loaded) => {
       if (!active) return;
       document.fonts.add(loaded);
       setFontStatus("ready");
     }).catch((error) => { if (active) { console.warn("Chosun preview font could not load:", error); setFontStatus("error"); } });
-    return () => { active = false; document.fonts.delete(font); };
+    return () => { active = false; document.fonts.delete(font); document.fonts.delete(titleFont); };
   }, [fontPreview]);
   const ko = language === "ko";
   const originalColumn = getColumn(slug);
@@ -81,10 +90,15 @@ export default function ColumnDetail() {
     <InteractiveFigure src={column.referenceVideo.thumbnailSrc} alt={column.referenceVideo.thumbnailAlt} caption={column.referenceVideo.vertical ? "" : column.referenceVideo.description} credit={column.referenceVideo.credit} sourceUrl={`https://www.youtube.com/${column.referenceVideo.vertical ? "shorts/" : "watch?v="}${column.referenceVideo.youtubeId}`} youtubeId={column.referenceVideo.youtubeId} figureClassName={`mt-5 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)] ${column.referenceVideo.vertical ? "mx-auto max-w-[24rem]" : ""}`} imageClassName={column.referenceVideo.vertical ? "aspect-[9/16] w-full object-cover" : "aspect-video w-full object-cover"} videoClassName={column.referenceVideo.vertical ? "aspect-[9/16]" : "aspect-video"} captionClassName={column.referenceVideo.vertical ? "flex flex-col border-t border-green-deep/10 px-4 py-3 text-xs leading-5" : undefined} captionCreditClassName={column.referenceVideo.vertical ? "text-left text-xs font-semibold text-green-deep/75" : undefined} />
   </section>;
 
-  return <article className="bg-paper">
-    {fontPreview && <style>{`.chosun-font-preview .article-copy { font-family: "SeedChosunPreview", serif; font-weight: 400; color: #000000; }`}</style>}
+  return <article className={`bg-paper ${fontPreview && gothicTitle && titleFontStatus === "ready" ? "chosun-gothic-preview" : ""}`}>
+    {fontPreview && <style>{`.chosun-font-preview .article-copy { font-family: "SeedChosunPreview", serif; font-weight: 400; color: #000000; } .chosun-gothic-preview :is(.article-detail-title, .article-section-title) { font-family: "SeedChosunGothicPreview", sans-serif; font-weight: 400; color: #000000; }`}</style>}
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
-      <div className="container-page max-w-5xl">{hotIssue && <Link to="/news" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "핫이슈 목록" : "Hot Issues"}</Link>}{publicInterest && <Link to="/monitoring/public-interest" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "공익감시 목록" : "Public-Interest Watch"}</Link>}<div className="pt-3"><h1 className="article-detail-title">{column.title}</h1>{column.slug === "real-estate-supervisor-citizens-accounts" && <p className="mt-4 text-sm leading-7 text-charcoal/80 sm:text-base">
+      <div className="container-page max-w-5xl">{hotIssue && <Link to="/news" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "핫이슈 목록" : "Hot Issues"}</Link>}{publicInterest && <Link to="/monitoring/public-interest" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "공익감시 목록" : "Public-Interest Watch"}</Link>}<div className="pt-3">{fontPreview && <div className="mb-5 flex flex-wrap items-center gap-3 border-b border-green-deep/20 pb-4">
+        <span className="text-sm font-bold">제목 글꼴 비교</span>
+        <button type="button" aria-pressed={!gothicTitle} onClick={() => setGothicTitle(false)} className={`rounded border px-4 py-2 text-sm ${!gothicTitle ? "border-green-deep bg-green-deep text-white" : "border-green-deep/25 bg-white"}`}>기존 제목</button>
+        <button type="button" aria-pressed={gothicTitle} onClick={() => setGothicTitle(true)} className={`rounded border px-4 py-2 text-sm ${gothicTitle ? "border-green-deep bg-green-deep text-white" : "border-green-deep/25 bg-white"}`}>조선굵은고딕 제목</button>
+        <span role="status" className="w-full text-sm text-charcoal/70">{titleFontStatus === "loading" ? "제목 글꼴을 불러오고 있습니다." : titleFontStatus === "error" ? "제목 글꼴을 불러오지 못했습니다. 기존 제목으로 표시합니다." : gothicTitle ? "제목·중간제목: 조선굵은고딕. 본문 글꼴은 아래에서 별도로 비교할 수 있습니다." : "기존 제목으로 보고 있습니다. 본문 글꼴은 아래에서 별도로 비교할 수 있습니다."}</span>
+      </div>}<h1 className="article-detail-title">{column.title}</h1>{column.slug === "real-estate-supervisor-citizens-accounts" && <p className="mt-4 text-sm leading-7 text-charcoal/80 sm:text-base">
         {ko ? "이 글은 김현정 의원이 2026년 9월 23일 재발의한 「부동산감독원 설치 및 운영에 관한 법률안」(의안번호 2221573)에 대한 논평입니다. " : "This commentary examines Rep. Kim Hyun-jung's revised Real Estate Supervisory Agency Bill, introduced on September 23, 2026 (bill no. 2221573). "}
         <Link to="/monitoring/legislation/bill-2221573/" className="font-semibold text-green-deep underline underline-offset-4">{ko ? "법안과 쟁점 보기" : "Bill and key issues"}</Link>
         <span className="mx-2 text-charcoal/35" aria-hidden="true">·</span>
