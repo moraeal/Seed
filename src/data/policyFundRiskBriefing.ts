@@ -22,6 +22,7 @@ export const policyFundRiskBriefing: Briefing = {
   ],
   images: [
     { src: `${imageRoot}/public-risk-support.webp`, alt: "유리로 만든 작은 공장 아래를 받치는 거대한 손과 그 무게를 지탱하는 시민의 동전", caption: "정부의 손실 완충에는 공공자금이 들어갑니다. 투자자 보호와 함께 국민이 맡는 위험도 설명돼야 합니다.", credit: "AI 이미지", sourceUrl: "", contain: true },
+    { src: `${imageRoot}/fund-subscription-crowd-ai.webp`, alt: "펀드 가입 창구에 신청서와 번호표를 들고 줄을 선 시민들", caption: "펀드 가입에 시민들이 몰려드는 모습을 표현했습니다. 완판 소식과 정부 지원에 대한 기대가 높아질수록 투자 위험과 손실 보호 한도도 함께 확인해야 합니다.", credit: "AI 이미지", sourceUrl: "", contain: true, afterSection: 4 },
     { src: `${imageRoot}/loss-cost-ko.png`, alt: "손실 자펀드 합산 손실액 205억8800만원과 그중 재정 부담 139억3000만원을 비교한 그래프", caption: "손실이 난 자펀드들의 합산 손실액 중 약 67.7%가 재정 부담으로 집계됐습니다. 두 막대는 전체와 그 일부이며 더하는 값이 아닙니다. 사업 전체의 최종 재정 순손실이나 일반 투자자의 실제 손실률을 나타내지 않습니다.", credit: "씨앗의 소리 통계 그래프 · 산업은행 제출자료에 관한 연합뉴스 보도", sourceUrl: reportUrl, contain: true, afterSection: 0 },
     { src: `${imageRoot}/first-loss-example-ko.png`, alt: "정부 20억원이 먼저 손실을 부담하는 가상 펀드에서 전체 손실 10억원·20억원·30억원에 따른 정부와 민간의 손실 비교", caption: "가상 사례: 민간 80억원·정부 20억원 출자, 정부 출자금이 먼저 손실을 부담하고 추가 보전이 없는 조건입니다. 실제 뉴딜펀드의 수익률이나 손실 배분 통계가 아닙니다.", credit: "씨앗의 소리 설명 그래프 · 가상 조건에 따른 계산", sourceUrl: "", contain: true, afterSection: 1 }
   ],
@@ -143,6 +144,7 @@ export const policyFundRiskTranslation: BriefingTranslation = {
   ],
   images: [
     { alt: "A large hand supporting a miniature glass factory, with citizens’ coins carrying the weight beneath it", caption: "Government loss protection uses public money. Investors should understand the protection, and taxpayers the risks they assume.", credit: "AI image" },
+    { alt: "Citizens holding application forms and queue tickets at a crowded fund subscription counter", caption: "A crowded fund subscription scene illustrates public enthusiasm. Strong demand and expectations of government support make understanding investment risks and protection limits essential.", credit: "AI image" },
     { src: `${imageRoot}/loss-cost-en.png`, alt: "Chart comparing KRW 20.588 billion in aggregate losses of loss-making subfunds with the KRW 13.93 billion fiscal portion", caption: "The fiscal portion was approximately 67.7% of the aggregate losses in loss-making subfunds. The bars show a total and a part of that total; they must not be added. They do not show the programme’s final net fiscal loss or retail investors’ realised loss rate.", credit: "SEED VOICE statistical chart · Yonhap reporting on KDB data" },
     { src: `${imageRoot}/first-loss-example-en.png`, alt: "Illustrative allocation of KRW 1 billion, 2 billion and 3 billion in fund losses when government capital absorbs the first KRW 2 billion", caption: "Illustration: KRW 8 billion private capital and KRW 2 billion public capital, with public capital taking first losses and no additional bailout. These are hypothetical calculations, not New Deal Fund results.", credit: "SEED VOICE explanatory chart · hypothetical calculation" }
   ],
