@@ -61,7 +61,7 @@ export default function ColumnDetail() {
       if (!active) return;
       document.fonts.add(loaded);
       setFontStatus("ready");
-    })().catch(() => { if (active) setFontStatus("error"); });
+    })().catch((error) => { if (active) { console.warn("Chosun preview font could not load:", error); setFontStatus("error"); } });
     return () => { active = false; controller.abort(); if (font) document.fonts.delete(font); };
   }, [fontPreview]);
   const ko = language === "ko";
