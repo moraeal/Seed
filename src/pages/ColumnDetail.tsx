@@ -39,6 +39,8 @@ export default function ColumnDetail() {
   const fontPreview = slug === "robak-sejong-taxpayer-rights-2026" && searchParams.get("font") === "chosun" && language === "ko";
   const [newspaperFont, setNewspaperFont] = useState(true);
   const [gothicTitle, setGothicTitle] = useState(true);
+  const [onlineStyle, setOnlineStyle] = useState(true);
+  const [onlineFontStatus, setOnlineFontStatus] = useState<"loading" | "ready" | "error">("loading");
   const [titleFontStatus, setTitleFontStatus] = useState<"loading" | "ready" | "error">("loading");
   const [fontStatus, setFontStatus] = useState<"loading" | "ready" | "error">("loading");
 
@@ -47,6 +49,13 @@ export default function ColumnDetail() {
     let active = true;
     const font = new FontFace("SeedChosunPreview", `url("${import.meta.env.BASE_URL}fonts/chosun-preview/ChosunIlboMyeongjo.woff") format("woff")`, { style: "normal", weight: "400", display: "swap" });
     const titleFont = new FontFace("SeedChosunGothicPreview", 'url("https://cdn.jsdelivr.net/gh/fontbee/font@main/CHOSUN/ChosunKg.woff") format("woff")', { style: "normal", weight: "400", display: "swap" });
+    const onlineFont = new FontFace("SeedChosunOnlineTitle", 'url("https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-kr@5.2.8/files/noto-sans-kr-korean-700-normal.woff2") format("woff2")', { style: "normal", weight: "700", display: "swap" });
+    setOnlineFontStatus("loading");
+    onlineFont.load().then((loaded) => {
+      if (!active) return;
+      document.fonts.add(loaded);
+      setOnlineFontStatus("ready");
+    }).catch(() => { if (active) setOnlineFontStatus("error"); });
     setTitleFontStatus("loading");
     titleFont.load().then((loaded) => {
       if (!active) return;
@@ -59,7 +68,7 @@ export default function ColumnDetail() {
       document.fonts.add(loaded);
       setFontStatus("ready");
     }).catch((error) => { if (active) { console.warn("Chosun preview font could not load:", error); setFontStatus("error"); } });
-    return () => { active = false; document.fonts.delete(font); document.fonts.delete(titleFont); };
+    return () => { active = false; document.fonts.delete(font); document.fonts.delete(titleFont); document.fonts.delete(onlineFont); };
   }, [fontPreview]);
   const ko = language === "ko";
   const originalColumn = getColumn(slug);
@@ -90,14 +99,24 @@ export default function ColumnDetail() {
     <InteractiveFigure src={column.referenceVideo.thumbnailSrc} alt={column.referenceVideo.thumbnailAlt} caption={column.referenceVideo.vertical ? "" : column.referenceVideo.description} credit={column.referenceVideo.credit} sourceUrl={`https://www.youtube.com/${column.referenceVideo.vertical ? "shorts/" : "watch?v="}${column.referenceVideo.youtubeId}`} youtubeId={column.referenceVideo.youtubeId} figureClassName={`mt-5 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_55px_rgba(23,76,58,.08)] ${column.referenceVideo.vertical ? "mx-auto max-w-[24rem]" : ""}`} imageClassName={column.referenceVideo.vertical ? "aspect-[9/16] w-full object-cover" : "aspect-video w-full object-cover"} videoClassName={column.referenceVideo.vertical ? "aspect-[9/16]" : "aspect-video"} captionClassName={column.referenceVideo.vertical ? "flex flex-col border-t border-green-deep/10 px-4 py-3 text-xs leading-5" : undefined} captionCreditClassName={column.referenceVideo.vertical ? "text-left text-xs font-semibold text-green-deep/75" : undefined} />
   </section>;
 
-  return <article className={`bg-paper ${fontPreview && gothicTitle && titleFontStatus === "ready" ? "chosun-gothic-preview" : ""}`}>
-    {fontPreview && <style>{`.chosun-font-preview .article-copy { font-family: "SeedChosunPreview", serif; font-weight: 400; color: #000000; } .chosun-gothic-preview :is(.article-detail-title, .article-section-title) { font-family: "SeedChosunGothicPreview", sans-serif; font-weight: 400; }`}</style>}
+  return <article className={`bg-paper ${fontPreview && !onlineStyle && gothicTitle && titleFontStatus === "ready" ? "chosun-gothic-preview" : ""} ${fontPreview && onlineStyle ? "chosun-online-preview" : ""} ${fontPreview && onlineStyle && onlineFontStatus === "ready" ? "chosun-online-title" : ""}`}>
+    {fontPreview && <style>{`.chosun-font-preview .article-copy { font-family: "SeedChosunPreview", serif; font-weight: 400; color: #000000; } .chosun-gothic-preview :is(.article-detail-title, .article-section-title) { font-family: "SeedChosunGothicPreview", sans-serif; font-weight: 400; }
+      .chosun-online-title :is(.article-detail-title, .article-section-title) { font-family: "SeedChosunOnlineTitle", "Noto Sans KR", sans-serif; font-weight: 700; }
+      .chosun-online-preview .article-detail-title { font-size: 2.375rem; line-height: 1.4; letter-spacing: -.5px; }
+      .chosun-online-preview .article-content-frame { max-width: 712px; }
+      .chosun-online-preview .article-section-title { font-size: 1.5rem; line-height: 1.4; letter-spacing: -.5px; }
+      .reading-surface .chosun-online-preview .article-copy { font-size: var(--reading-font-size, 1.125rem); line-height: 1.74; letter-spacing: -.5px; margin-top: 0; margin-bottom: 24px; word-break: break-all; }
+      .chosun-online-preview .chosun-font-preview .article-copy { color: #222; -webkit-text-stroke: .2px #222; }
+      .chosun-online-preview .chosun-font-preview .article-copy :is(a, strong, b) { -webkit-text-stroke: 0; }
+      @media (max-width: 689px) { .chosun-online-preview .article-detail-title { font-size: 1.5rem; line-height: 1.42; } .chosun-online-preview .article-section-title { font-size: 1.25rem; line-height: 1.45; } }
+    `}</style>}
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
       <div className="container-page max-w-5xl">{hotIssue && <Link to="/news" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "핫이슈 목록" : "Hot Issues"}</Link>}{publicInterest && <Link to="/monitoring/public-interest" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "공익감시 목록" : "Public-Interest Watch"}</Link>}<div className="pt-3">{fontPreview && <div className="mb-5 flex flex-wrap items-center gap-3 border-b border-green-deep/20 pb-4">
-        <span className="text-sm font-bold">제목 글꼴 비교</span>
-        <button type="button" aria-pressed={!gothicTitle} onClick={() => setGothicTitle(false)} className={`rounded border px-4 py-2 text-sm ${!gothicTitle ? "border-green-deep bg-green-deep text-white" : "border-green-deep/25 bg-white"}`}>기존 제목</button>
-        <button type="button" aria-pressed={gothicTitle} onClick={() => setGothicTitle(true)} className={`rounded border px-4 py-2 text-sm ${gothicTitle ? "border-green-deep bg-green-deep text-white" : "border-green-deep/25 bg-white"}`}>조선굵은고딕 제목</button>
-        <span role="status" className="w-full text-sm text-charcoal/70">{titleFontStatus === "loading" ? "제목 글꼴을 불러오고 있습니다." : titleFontStatus === "error" ? "제목 글꼴을 불러오지 못했습니다. 기존 제목으로 표시합니다." : gothicTitle ? "제목·중간제목: 조선굵은고딕. 본문 글꼴은 아래에서 별도로 비교할 수 있습니다." : "기존 제목으로 보고 있습니다. 본문 글꼴은 아래에서 별도로 비교할 수 있습니다."}</span>
+        <span className="text-sm font-bold">기사 글꼴·간격 비교</span>
+        <button type="button" aria-pressed={!gothicTitle && !onlineStyle} onClick={() => { setGothicTitle(false); setOnlineStyle(false); setNewspaperFont(false); }} className={`rounded border px-4 py-2 text-sm ${!gothicTitle && !onlineStyle ? "border-green-deep bg-green-deep text-white" : "border-green-deep/25 bg-white"}`}>씨앗 기본 스타일</button>
+        <button type="button" aria-pressed={gothicTitle && !onlineStyle} onClick={() => { setGothicTitle(true); setOnlineStyle(false); setNewspaperFont(true); }} className={`rounded border px-4 py-2 text-sm ${gothicTitle && !onlineStyle ? "border-green-deep bg-green-deep text-white" : "border-green-deep/25 bg-white"}`}>앞선 시험 스타일</button>
+        <button type="button" aria-pressed={onlineStyle} onClick={() => { setOnlineStyle(true); setNewspaperFont(true); }} className={`rounded border px-4 py-2 text-sm ${onlineStyle ? "border-green-deep bg-green-deep text-white" : "border-green-deep/25 bg-white"}`}>조선일보 온라인 스타일</button>
+        <span role="status" className="w-full text-sm text-charcoal/70">{onlineStyle ? (onlineFontStatus === "loading" ? "온라인판 제목 글꼴을 불러오고 있습니다." : onlineFontStatus === "error" ? "온라인판 제목 글꼴을 불러오지 못했습니다. 기존 글꼴로 표시합니다." : "제목: Noto Sans KR 굵은체 · 본문: 명조 18px, 줄 간격 1.74, 자간 −0.5px, 획 보정 0.2px. 제목은 씨앗의 남색을 유지합니다.") : titleFontStatus === "loading" ? "제목 글꼴을 불러오고 있습니다." : titleFontStatus === "error" ? "제목 글꼴을 불러오지 못했습니다. 기존 제목으로 표시합니다." : gothicTitle ? "제목·중간제목: 조선굵은고딕. 본문 글꼴은 아래에서 별도로 비교할 수 있습니다." : "기존 제목으로 보고 있습니다. 본문 글꼴은 아래에서 별도로 비교할 수 있습니다."}</span>
       </div>}<h1 className="article-detail-title">{column.title}</h1>{column.slug === "real-estate-supervisor-citizens-accounts" && <p className="mt-4 text-sm leading-7 text-charcoal/80 sm:text-base">
         {ko ? "이 글은 김현정 의원이 2026년 9월 23일 재발의한 「부동산감독원 설치 및 운영에 관한 법률안」(의안번호 2221573)에 대한 논평입니다. " : "This commentary examines Rep. Kim Hyun-jung's revised Real Estate Supervisory Agency Bill, introduced on September 23, 2026 (bill no. 2221573). "}
         <Link to="/monitoring/legislation/bill-2221573/" className="font-semibold text-green-deep underline underline-offset-4">{ko ? "법안과 쟁점 보기" : "Bill and key issues"}</Link>
@@ -116,7 +135,7 @@ export default function ColumnDetail() {
           <span className="text-sm font-bold">본문 글꼴 비교</span>
           <button type="button" aria-pressed={!newspaperFont} onClick={() => setNewspaperFont(false)} className={`rounded border px-4 py-2 text-sm ${!newspaperFont ? "border-green-deep bg-green-deep text-white" : "border-green-deep/25 bg-white"}`}>기존 글꼴</button>
           <button type="button" aria-pressed={newspaperFont} onClick={() => setNewspaperFont(true)} className={`rounded border px-4 py-2 text-sm ${newspaperFont ? "border-green-deep bg-green-deep text-white" : "border-green-deep/25 bg-white"}`}>조선일보 명조체</button>
-          <span role="status" className="w-full text-sm text-charcoal/70">{fontStatus === "loading" ? "신문 글꼴을 불러오고 있습니다. 처음에는 잠시 걸릴 수 있습니다." : fontStatus === "error" ? "신문 글꼴을 불러오지 못했습니다. 새로고침해 주세요." : newspaperFont ? "조선일보 명조체로 읽고 있습니다." : "기존 글꼴로 읽고 있습니다."}</span>
+          <span role="status" className="w-full text-sm text-charcoal/70">{fontStatus === "loading" ? "신문 글꼴을 불러오고 있습니다. 처음에는 잠시 걸릴 수 있습니다." : fontStatus === "error" ? "신문 글꼴을 불러오지 못했습니다. 새로고침해 주세요." : newspaperFont ? (onlineStyle ? "온라인판 설정의 조선일보 명조체로 읽고 있습니다. 본문 색상 #222와 획 보정을 함께 적용했습니다." : "조선일보 명조체로 읽고 있습니다.") : "기존 글꼴로 읽고 있습니다."}</span>
         </div>}
         {column.sections.map((section, index) => <Fragment key={`${index}-${section.title}`}><section className={index === 0 ? "" : `article-section ${isLongRead ? "article-section-long" : ""}`}>
           {section.title && <h2 className="article-section-title">{section.title}</h2>}
