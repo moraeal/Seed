@@ -55,6 +55,7 @@ const PublicInterestWatch = lazy(() => import("./pages/PublicInterestWatch"));
 const WriterRoom = lazy(() => import("./pages/WriterRoom"));
 const DraftArticlePreview = lazy(() => import("./pages/DraftArticlePreview"));
 const Contributions = lazy(() => import("./pages/Contributions"));
+const ImageArchive = lazy(() => import("./pages/ImageArchive"));
 const EditorialDesk = lazy(() => import("./pages/EditorialDesk"));
 
 function AppShell() {
@@ -89,6 +90,7 @@ function AppShell() {
           <Route path="/insights/traffic" element={<Insights />} />
           <Route path="/insights/subscribers" element={<Insights />} />
           <Route path="/insights/members" element={<Insights />} />
+          <Route path="/insights/images" element={<ImageArchive />} />
           <Route path="/insights/editorial" element={<EditorialDesk />} />
           <Route path="/insights/featured" element={<Insights />} />
           <Route path="/insights/legislation" element={<Insights />} />
