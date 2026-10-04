@@ -9,6 +9,23 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "briefing:government-policy-funds-risk-and-taxpayer-cost-2026": {
+    ko: {
+      href: "/briefings/korean-civic-tax-watch-movement-ktr",
+      title: "한국형 세금감시 운동을 제안한다",
+      relationship: "공공자금과 시민의 감시",
+      reason: "정책펀드의 위험 부담을 살펴봤다면, 시민이 예산 지출의 근거와 성과를 어떻게 감시할 수 있는지 이어서 읽습니다.",
+      listHref: "/briefings", listLabel: "브리핑 전체 보기",
+    },
+    en: {
+      href: "/briefings/korean-civic-tax-watch-movement-ktr",
+      title: "A Proposal for a Korean Civic Tax Watch Movement",
+      relationship: "PUBLIC MONEY AND CIVIC SCRUTINY",
+      reason: "Continue with how citizens can scrutinise the justification and outcomes of public spending.",
+      listHref: "/briefings", listLabel: "All briefings",
+    },
+  },
+
   "column:robak-sejong-taxpayer-rights-2026": {
   "ko": {
     "href": "/briefings/korean-civic-tax-watch-movement-ktr",

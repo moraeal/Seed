@@ -1,3 +1,4 @@
+import { policyFundRiskTranslation } from "../policyFundRiskBriefing";
 import { ktrCampaignTranslation } from "./ktrCampaign";
 import { civicHubTranslations } from "../civicHubArticles";
 import { pensionReciprocityTranslation } from "./briefingPensionReciprocity";
@@ -23,6 +24,7 @@ import { monthlyRentCreditExplainerTranslation } from "./briefingMonthlyRentCred
 import { farmlandRetirementTranslation } from "./briefingFarmlandRetirement";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "government-policy-funds-risk-and-taxpayer-cost-2026": policyFundRiskTranslation,
   "korean-civic-tax-watch-movement-ktr": ktrCampaignTranslation,
   ...civicHubTranslations,
   "foreign-pension-birth-credit-reciprocity-fairness-2026": pensionReciprocityTranslation,
