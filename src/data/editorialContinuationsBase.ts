@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:film-imagination-history-distortion-ryoma-2026": {
+  "ko": {
+    "href": "/columns/assassins-film-history-memory-war-2026",
+    "title": "탱크데이는 단죄하고, 영화의 음모론은 상상력인가",
+    "relationship": "영화와 역사적 기억",
+    "reason": "같은 영화 논란에서 출발해, 역사적 상처와 음모론을 평가하는 기준이 일관적인지 이어서 살펴봅니다.",
+    "listHref": "/columns",
+    "listLabel": "칼럼 전체 보기"
+  },
+  "en": {
+    "href": "/columns/assassins-film-history-memory-war-2026",
+    "title": "Tank Day Is Condemned. Are Film Conspiracies Just Imagination?",
+    "relationship": "FILM AND HISTORICAL MEMORY",
+    "reason": "Continue with the same controversy and the need for consistent standards when judging historical hurt and conspiracy narratives.",
+    "listHref": "/columns",
+    "listLabel": "All columns"
+  }
+},
   "briefing:government-policy-funds-risk-and-taxpayer-cost-2026": {
     ko: {
       href: "/briefings/korean-civic-tax-watch-movement-ktr",
