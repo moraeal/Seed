@@ -42,11 +42,11 @@ export const issue52: ColumnTranslation = {
     {
       "title": "The historical Ryoma and the Ryoma of fiction",
       "paragraphs": [
-        "Sakamoto Ryoma was a samurai from the Tosa domain, now Kochi Prefecture, active in the final years of Japan’s Edo shogunate. He helped broker the 1866 alliance between the Satsuma and Choshu domains and founded the organization that later became Kaientai. He was assassinated in Kyoto in 1867, shortly before the Meiji Restoration.[6](https://www.ndl.go.jp/portrait/e/datas/89)",
+        "Sakamoto Ryoma is one of Japan’s most widely admired historical figures, held up as a model of initiative and bold action.[6](https://news.mynavi.jp/article/20250117-3107577/)[7](https://prtimes.jp/main/html/rd/p/000000066.000118875.html) In the popular imagination, he is remembered as a leading figure behind the Meiji Restoration—a hero who opened Japan to the world and helped set it on the path to modernization. A samurai from the Tosa domain, now Kochi Prefecture, he helped broker the 1866 alliance between the Satsuma and Choshu domains and founded the organization that later became Kaientai. He was assassinated in Kyoto in 1867, shortly before the Meiji Restoration.[8](https://www.ndl.go.jp/portrait/e/datas/89) The heroic image that has outlived his short life combines his actual deeds with portrayals created by novels and television dramas.",
         "Japan’s Sakamoto Ryoma shows how deeply fiction can enter public understandings of history. Ryoma was a real person. Yet the figure people imagine today also carries the image created by Shiba Ryotaro’s novel Ryoma ga Yuku and subsequent television dramas.",
-        "In Shinsetsu Sakamoto Ryoma, historian Machida Akihiro argues that Ryoma’s fame spread through biographical fiction and that legends removed from his actual life became accepted accounts. His point is not to erase all of Ryoma’s achievements. Reading historical sources reveals both overestimated and underestimated aspects of his career. It is a demand to seek the basis for admiration in what he actually did.[7](https://www.shueisha.co.jp/books/items/contents.html?jdcn=79768045901110000000)",
-        "Kim Wook’s 2023 study identifies a particularly revealing issue. Shiba acknowledged that the Ryoma in his novel was his own creation, but later NHK dramas adopted and reinforced that portrayal. The distinction made by the novelist did not necessarily survive in public memory. As the fictional figure repeatedly came to life on screen, it could harden into an understanding of the historical person.[8](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002937112)",
-        "Kim describes the influence of novels and screen productions on historical understanding as follows (translated from Korean):[8](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002937112)"
+        "In Shinsetsu Sakamoto Ryoma, historian Machida Akihiro argues that Ryoma’s fame spread through biographical fiction and that legends removed from his actual life became accepted accounts. His point is not to erase all of Ryoma’s achievements. Reading historical sources reveals both overestimated and underestimated aspects of his career. It is a demand to seek the basis for admiration in what he actually did.[9](https://www.shueisha.co.jp/books/items/contents.html?jdcn=79768045901110000000)",
+        "Kim Wook’s 2023 study identifies a particularly revealing issue. Shiba acknowledged that the Ryoma in his novel was his own creation, but later NHK dramas adopted and reinforced that portrayal. The distinction made by the novelist did not necessarily survive in public memory. As the fictional figure repeatedly came to life on screen, it could harden into an understanding of the historical person.[10](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002937112)",
+        "Kim describes the influence of novels and screen productions on historical understanding as follows (translated from Korean):[10](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002937112)"
       ],
       "quote": [
         "Although Ryomaden’s distancing from Ryoma ga Yuku may be attributed to their differing contemporary concerns, the process by which Shiba’s fictional image of Ryoma (竜馬) is reconstructed, through NHK’s historical dramas, into a perception of Ryoma (龍馬) as a real person points to something we should bear in mind when discussing creative works based on history. Novels and audiovisual works that take history as their subject inevitably entail a synchronization of identity that cannot be reduced to mere entertainment."
@@ -55,7 +55,7 @@ export const issue52: ColumnTranslation = {
     {
       "title": "What rankings of admiration can and cannot tell us",
       "paragraphs": [
-        "Ryoma’s popularity is also visible in surveys. In an online ranking of historical figures published in 2025, with 6,086 participants, he placed second behind Oda Nobunaga. In a 2024 survey of 502 adults interested in business, he ranked first among historical figures who had influenced respondents at work. Neither result can be expanded into a national ranking of whom all Japanese people most respect. Both nevertheless show that Ryoma is an object of admiration.[9](https://news.mynavi.jp/article/20250117-3107577/)[10](https://prtimes.jp/main/html/rd/p/000000066.000118875.html)",
+        "Ryoma’s popularity is also visible in surveys. In an online ranking of historical figures published in 2025, with 6,086 participants, he placed second behind Oda Nobunaga. In a 2024 survey of 502 adults interested in business, he ranked first among historical figures who had influenced respondents at work. Neither result can be expanded into a national ranking of whom all Japanese people most respect. Both nevertheless show that Ryoma is an object of admiration.[6](https://news.mynavi.jp/article/20250117-3107577/)[7](https://prtimes.jp/main/html/rd/p/000000066.000118875.html)",
         "A 2010 Bandai survey offers a more specific view of popular culture’s influence. Asked which historical figure their children liked, 600 parents of elementary-school pupils put Ryoma first, at 28.7 percent. The survey publisher identified that year’s NHK historical drama as a factor in his popularity. Some parents said their children had come to like Ryoma through television, advertising and merchandise before studying history at school.[11](https://www.bandai.co.jp/kodomo/pdf/question181.pdf)",
         "The survey did not measure children’s historical misconceptions. It does, however, show that affection for a historical figure can develop on screen before children encounter historical sources. Set alongside research on dramas reinforcing a fictional portrayal, it helps us understand how invention can become a foundation for historical judgment."
       ]
@@ -79,11 +79,11 @@ export const issue52: ColumnTranslation = {
     "[3] Maeil Shinmun · January 21, 2005 · No official state compensation",
     "[4] Munhwa Ilbo · September 30, 2026 · Comparing the film with historical records",
     "[5] Korea e-Journal · September 2026 · Reporting the filmmakers’ position",
-    "[6] National Diet Library, Japan · Biography of Sakamoto Ryoma",
-    "[7] Machida Akihiro, Shinsetsu Sakamoto Ryoma · Shueisha publisher introduction and foreword excerpt",
-    "[8] Kim Wook · 2023 · NHK’s Ryomaden and Japanese perceptions of Sakamoto Ryoma · KCI abstract",
-    "[9] Mynavi News · January 17, 2025 · Ranking of popular historical figures",
-    "[10] Dream Planning · September 13, 2024 · Results of a July 2024 survey",
+    "[6] Mynavi News · January 17, 2025 · Ranking of popular historical figures",
+    "[7] Dream Planning · September 13, 2024 · Results of a July 2024 survey",
+    "[8] National Diet Library, Japan · Biography of Sakamoto Ryoma",
+    "[9] Machida Akihiro, Shinsetsu Sakamoto Ryoma · Shueisha publisher introduction and foreword excerpt",
+    "[10] Kim Wook · 2023 · NHK’s Ryomaden and Japanese perceptions of Sakamoto Ryoma · KCI abstract",
     "[11] Bandai · September 2010 · Children’s survey report no. 181"
   ]
 };
