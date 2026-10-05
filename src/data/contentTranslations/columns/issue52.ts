@@ -6,25 +6,20 @@ export const issue52: ColumnTranslation = {
   "author": "Little Seed",
   "summary": "The number of gunshots alone cannot establish a hidden mastermind. The Assassins’ bullet controversy and fiction’s influence on perceptions of Sakamoto Ryoma raise a question: what responsibility does cinematic imagination carry when it changes public understandings of history?",
   "heroImage": {
-    "alt": "A surviving black-and-white portrait showing Sakamoto Ryoma’s face and upper body in a kimono",
-    "caption": "A portrait taken during Sakamoto Ryoma’s lifetime. The historical person should be distinguished from the image later novels and dramas added to him.",
-    "credit": "Unknown photographer · National Diet Library, Japan · Wikimedia Commons · public domain"
+    "alt": "A film strip links a gunman in a theatre with Ryoma at a harbor, their shadows falling over historical records",
+    "caption": "A symbolic montage of The Assassins and the Ryoma story. Characters and scenes created for the screen cast shadows over the historical record.",
+    "credit": "AI image"
   },
   "inlineImage": {
-    "alt": "A side view of the Sakamoto Ryoma statue at Katsurahama, Kochi, with the sea and pine trees behind it",
-    "caption": "The Sakamoto Ryoma statue at Katsurahama, Kochi, photographed on October 29, 2006. Later commemoration and popular admiration also deserve comparison with actions documented in historical sources.",
-    "credit": "Chehikone · Wikimedia Commons · CC0 1.0"
+    "alt": "A 16:9 crop centered on Sakamoto Ryoma’s face in his surviving black-and-white portrait",
+    "caption": "A portrait taken during Sakamoto Ryoma’s lifetime, cropped to 16:9. The historical person should be distinguished from the image later novels and dramas added to him.",
+    "credit": "Unknown photographer · National Diet Library, Japan · Wikimedia Commons · public domain"
   },
   "additionalImages": [
     {
-      "alt": "A surviving black-and-white portrait showing Sakamoto Ryoma’s face and upper body in a kimono",
-      "caption": "A portrait taken during Sakamoto Ryoma’s lifetime. The historical person should be distinguished from the image later novels and dramas added to him.",
+      "alt": "A 16:9 crop centered on Sakamoto Ryoma’s face in his surviving black-and-white portrait",
+      "caption": "A portrait taken during Sakamoto Ryoma’s lifetime, cropped to 16:9. The historical person should be distinguished from the image later novels and dramas added to him.",
       "credit": "Unknown photographer · National Diet Library, Japan · Wikimedia Commons · public domain"
-    },
-    {
-      "alt": "A side view of the Sakamoto Ryoma statue at Katsurahama, Kochi, with the sea and pine trees behind it",
-      "caption": "The Sakamoto Ryoma statue at Katsurahama, Kochi, photographed on October 29, 2006. Later commemoration and popular admiration also deserve comparison with actions documented in historical sources.",
-      "credit": "Chehikone · Wikimedia Commons · CC0 1.0"
     }
   ],
   "sections": [

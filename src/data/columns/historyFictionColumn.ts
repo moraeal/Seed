@@ -12,39 +12,30 @@ export const historyFictionColumn: SeedColumn = {
   ],
   "readMinutes": 9,
   "summary": "총성의 숫자만으로 숨겨진 배후가 입증되지는 않는다. 《암살자(들)》의 탄환 논란과 사카모토 료마를 둘러싼 소설·드라마의 영향을 통해, 영화적 상상력이 대중의 역사 인식을 바꿀 때 어떤 책임을 져야 하는지 묻는다.",
-  "displayHero": false,
+  "displayHero": true,
   "displayInlineImage": false,
   "heroImage": {
-    "src": "images/columns/history-fiction-2026/ryoma-portrait-wide.jpg",
-    "alt": "기모노를 입은 사카모토 료마의 얼굴과 상반신을 담은 생전 흑백 사진",
-    "caption": "사카모토 료마의 생전 사진. 실존 인물의 모습과 후대 소설·드라마가 덧붙인 인물상은 구분해 읽어야 한다.",
+    "src": "images/columns/history-fiction-2026/history-cinema-hero.webp",
+    "alt": "총을 든 남자가 서 있는 극장과 항구의 료마를 영화 필름으로 엮고, 두 인물의 그림자가 역사 기록 위에 드리운 상징 이미지",
+    "caption": "《암살자(들)》과 료마의 이야기를 상징적으로 엮었다. 영화가 만든 인물과 장면이 역사 기록 위에 그림자를 드리운다.",
+    "credit": "AI 이미지",
+    "sourceUrl": ""
+  },
+  "inlineImage": {
+    "src": "images/columns/history-fiction-2026/ryoma-portrait-16x9.jpg",
+    "alt": "사카모토 료마의 생전 흑백 사진에서 얼굴을 중심으로 16:9 비율로 잘라낸 부분",
+    "caption": "사카모토 료마의 생전 사진을 16:9 비율로 잘라 실었다. 실존 인물의 모습과 후대 소설·드라마가 덧붙인 인물상은 구분해 읽어야 한다.",
     "credit": "촬영자 미상 · 일본 국립국회도서관 자료 · Wikimedia Commons · 퍼블릭 도메인",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sakamoto_Ryoma.jpg"
   },
-  "inlineImage": {
-    "src": "images/columns/history-fiction-2026/ryoma-statue.jpg",
-    "alt": "바다와 소나무를 배경으로 옆에서 촬영한 일본 고치현 가쓰라하마의 사카모토 료마 동상",
-    "caption": "고치현 가쓰라하마의 사카모토 료마 동상. 2006년 10월 29일 촬영. 후대의 기념과 대중의 존경도 사료로 확인되는 행적과 대조할 필요가 있다.",
-    "credit": "Chehikone · Wikimedia Commons · CC0 1.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Statue_of_Ryoma_Sakamoto.jpg"
-  },
   "additionalImages": [
     {
-      "src": "images/columns/history-fiction-2026/ryoma-portrait.jpg",
-      "alt": "기모노를 입은 사카모토 료마의 얼굴과 상반신을 담은 생전 흑백 사진",
-      "caption": "사카모토 료마의 생전 사진. 실존 인물의 모습과 후대 소설·드라마가 덧붙인 인물상은 구분해 읽어야 한다.",
+      "src": "images/columns/history-fiction-2026/ryoma-portrait-16x9.jpg",
+      "alt": "사카모토 료마의 생전 흑백 사진에서 얼굴을 중심으로 16:9 비율로 잘라낸 부분",
+      "caption": "사카모토 료마의 생전 사진을 16:9 비율로 잘라 실었다. 실존 인물의 모습과 후대 소설·드라마가 덧붙인 인물상은 구분해 읽어야 한다.",
       "credit": "촬영자 미상 · 일본 국립국회도서관 자료 · Wikimedia Commons · 퍼블릭 도메인",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sakamoto_Ryoma.jpg",
       "afterSection": 2,
-      "contain": true
-    },
-    {
-      "src": "images/columns/history-fiction-2026/ryoma-statue.jpg",
-      "alt": "바다와 소나무를 배경으로 옆에서 촬영한 일본 고치현 가쓰라하마의 사카모토 료마 동상",
-      "caption": "고치현 가쓰라하마의 사카모토 료마 동상. 2006년 10월 29일 촬영. 후대의 기념과 대중의 존경도 사료로 확인되는 행적과 대조할 필요가 있다.",
-      "credit": "Chehikone · Wikimedia Commons · CC0 1.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Statue_of_Ryoma_Sakamoto.jpg",
-      "afterSection": 3,
       "contain": true
     }
   ],
