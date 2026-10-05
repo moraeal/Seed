@@ -23,6 +23,7 @@ function InlineLinkedText({ text }: { text: string }) {
     if (!match) return part;
 
     const [, label, href] = match;
+    if (/^\d+$/.test(label)) return <a key={`source-${label}-${index}`} href={href} target="_blank" rel="noreferrer" className="ml-0.5 align-super text-[0.65em] font-normal text-charcoal/45 no-underline hover:text-green-deep" aria-label={`Source ${label}`}>{label}</a>;
     const className = "font-semibold text-green-deep underline decoration-green-deep/35 underline-offset-4 hover:decoration-green-deep";
     return href.startsWith("/")
       ? <Link key={`${href}-${index}`} to={href} className={className}>{label}</Link>

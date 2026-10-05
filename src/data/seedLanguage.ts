@@ -1,4 +1,5 @@
 import { corporateCitizenshipArticleKo, corporateCitizenshipArticleEn } from "./seedLanguageCorporateCitizenship";
+import { historyArticleKo, historyArticleEn } from "./seedLanguageHistory";
 import { petitionArticleKo, petitionArticleEn } from "./seedLanguagePetition";
 import type { Language } from "../i18n";
 import { freedomArticleKo } from "./seedLanguageFreedom";
@@ -21,9 +22,10 @@ export type {
   SeedLanguageImage,
 } from "./seedLanguageBase";
 
-export const seedLanguageArticlesKo = [corporateCitizenshipArticleKo, petitionArticleKo, fairnessArticleKo, stateArticleKo, unificationArticleKo, publicArticleKo, politicsArticleKo, conservatismArticleKo, discourseArticleKo, progressArticleKo, freedomArticleKo, ...baseSeedLanguageArticlesKo];
+export const seedLanguageArticlesKo = [historyArticleKo, corporateCitizenshipArticleKo, petitionArticleKo, fairnessArticleKo, stateArticleKo, unificationArticleKo, publicArticleKo, politicsArticleKo, conservatismArticleKo, discourseArticleKo, progressArticleKo, freedomArticleKo, ...baseSeedLanguageArticlesKo];
 
 export function getSeedLanguageArticle(slug: string, language: Language) {
+  if (slug === historyArticleKo.slug) return language === "en" ? historyArticleEn : historyArticleKo;
   if (slug === corporateCitizenshipArticleKo.slug) return language === "en" ? corporateCitizenshipArticleEn : corporateCitizenshipArticleKo;
   if (slug === petitionArticleKo.slug) return language === "en" ? petitionArticleEn : petitionArticleKo;
   if (slug === fairnessArticleKo.slug) return language === "en" ? fairnessArticleEn : fairnessArticleKo;

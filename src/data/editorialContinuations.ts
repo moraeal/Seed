@@ -466,6 +466,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "seed-language" && slug === "history-facts-memory-civic-judgment") return true;
   if (kind === "briefing" && slug === "korean-civic-tax-watch-movement-ktr") return true;
   if (kind === "briefing" && [taxWatchCaseSlug, civicNoticeSlug].includes(slug)) return true;
   if (kind === "briefing" && slug === "foreign-pension-birth-credit-reciprocity-fairness-2026") return true;
@@ -500,6 +501,9 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "seed-language" && slug === "history-facts-memory-civic-judgment") return language === "ko"
+    ? { href: "/columns/film-imagination-history-distortion-ryoma-2026", title: "영화적 상상력은 역사 왜곡의 면죄부인가", relationship: "역사와 영화의 경계", reason: "료마의 신화와 역사물의 각색을 구체적인 사례에서 이어 살펴봅니다.", listHref: "/seed-language", listLabel: "시민언어 전체 보기" }
+    : { href: "/columns/film-imagination-history-distortion-ryoma-2026", title: "Is Cinematic Imagination a License to Distort History?", relationship: "HISTORY AND CINEMA", reason: "Continue with the Ryoma myth and dramatization through concrete examples.", listHref: "/seed-language", listLabel: "All Glossary entries" };
   if (kind === "briefing" && slug === "korean-civic-tax-watch-movement-ktr") return language === "ko" ? { href: `/briefings/${taxWatchCaseSlug}`, title: "정권이 바뀌어도 영수증을 묻는다 — 한국납세자연맹", relationship: "세금감시의 실제 방법", reason: "정보공개와 소송의 실제 사례에서 운동의 방법과 한계를 살펴봅니다.", listHref: "/civic-campaign", listLabel: "시민캠페인 전체 보기" } : { href: `/briefings/${taxWatchCaseSlug}`, title: "Ask for Receipts, Whoever Governs: The Korean Taxpayers Association", relationship: "TAX SCRUTINY IN PRACTICE", reason: "Examine disclosure and litigation to understand methods and limits.", listHref: "/civic-campaign", listLabel: "All Civic Campaigns" };
   if (kind === "briefing" && [taxWatchCaseSlug, civicNoticeSlug].includes(slug)) return language === "ko" ? { href: "/monitoring/tax", title: "세금감시", relationship: "세금과 시민의 책임", reason: "운동의 방법과 참여 통로를 살펴봤다면, 새 세금정책의 근거와 시민 부담도 함께 확인합니다.", listHref: slug === taxWatchCaseSlug ? "/tax-watch-cases" : "/civic-notices", listLabel: slug === taxWatchCaseSlug ? "세금감시운동 사례연구 전체 보기" : "시민운동 공지사항 전체 보기" } : { href: "/monitoring/tax", title: "Tax Watch", relationship: "TAXES AND PUBLIC RESPONSIBILITY", reason: "Continue with the evidence for tax policies and their effects on citizens.", listHref: slug === taxWatchCaseSlug ? "/tax-watch-cases" : "/civic-notices", listLabel: slug === taxWatchCaseSlug ? "All Tax Watch Case Studies" : "All Civic Notices" };
 
