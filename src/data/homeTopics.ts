@@ -4,6 +4,10 @@ import { hotIssueColumnTrackerSlugs } from "./columns";
 // articles and tracker routes here when publishing them. Unlisted routes
 // remain their own topics, so broad categories do not hide unrelated work.
 const homeTopicGroups: Record<string, string[]> = {
+  "future-response-fund": [
+    "/briefings/future-response-fund-public-money",
+    "/monitoring/legislation/commentary/future-response-fund-parliamentary-control-2026",
+  ],
   "assassins-historical-memory-2026": [
     "/columns/film-imagination-history-distortion-ryoma-2026",
     "/columns/assassins-film-history-memory-war-2026",
