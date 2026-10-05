@@ -6,23 +6,23 @@ export const issue52: ColumnTranslation = {
   "author": "Little Seed",
   "summary": "The number of gunshots alone cannot establish a hidden mastermind. The Assassins’ bullet controversy and fiction’s influence on perceptions of Sakamoto Ryoma raise a question: what responsibility does cinematic imagination carry when it changes public understandings of history?",
   "heroImage": {
-    "alt": "A surviving black-and-white portrait of Sakamoto Ryoma standing in a kimono with his left hand resting on a support",
+    "alt": "A surviving black-and-white portrait showing Sakamoto Ryoma’s face and upper body in a kimono",
     "caption": "A portrait taken during Sakamoto Ryoma’s lifetime. The historical person should be distinguished from the image later novels and dramas added to him.",
     "credit": "Unknown photographer · National Diet Library, Japan · Wikimedia Commons · public domain"
   },
   "inlineImage": {
-    "alt": "The statue of Sakamoto Ryoma on a tall pedestal at Katsurahama in Kochi, Japan",
+    "alt": "A side view of the Sakamoto Ryoma statue at Katsurahama, Kochi, with the sea and pine trees behind it",
     "caption": "The Sakamoto Ryoma statue at Katsurahama, Kochi, photographed on October 29, 2006. Later commemoration and popular admiration also deserve comparison with actions documented in historical sources.",
     "credit": "Chehikone · Wikimedia Commons · CC0 1.0"
   },
   "additionalImages": [
     {
-      "alt": "A surviving black-and-white portrait of Sakamoto Ryoma standing in a kimono with his left hand resting on a support",
+      "alt": "A surviving black-and-white portrait showing Sakamoto Ryoma’s face and upper body in a kimono",
       "caption": "A portrait taken during Sakamoto Ryoma’s lifetime. The historical person should be distinguished from the image later novels and dramas added to him.",
       "credit": "Unknown photographer · National Diet Library, Japan · Wikimedia Commons · public domain"
     },
     {
-      "alt": "The statue of Sakamoto Ryoma on a tall pedestal at Katsurahama in Kochi, Japan",
+      "alt": "A side view of the Sakamoto Ryoma statue at Katsurahama, Kochi, with the sea and pine trees behind it",
       "caption": "The Sakamoto Ryoma statue at Katsurahama, Kochi, photographed on October 29, 2006. Later commemoration and popular admiration also deserve comparison with actions documented in historical sources.",
       "credit": "Chehikone · Wikimedia Commons · CC0 1.0"
     }

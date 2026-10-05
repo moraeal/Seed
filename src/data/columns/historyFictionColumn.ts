@@ -16,14 +16,14 @@ export const historyFictionColumn: SeedColumn = {
   "displayInlineImage": false,
   "heroImage": {
     "src": "images/columns/history-fiction-2026/ryoma-portrait-wide.jpg",
-    "alt": "기모노를 입고 서서 왼손을 받침대에 올린 사카모토 료마의 생전 흑백 사진",
+    "alt": "기모노를 입은 사카모토 료마의 얼굴과 상반신을 담은 생전 흑백 사진",
     "caption": "사카모토 료마의 생전 사진. 실존 인물의 모습과 후대 소설·드라마가 덧붙인 인물상은 구분해 읽어야 한다.",
     "credit": "촬영자 미상 · 일본 국립국회도서관 자료 · Wikimedia Commons · 퍼블릭 도메인",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sakamoto_Ryoma.jpg"
   },
   "inlineImage": {
     "src": "images/columns/history-fiction-2026/ryoma-statue.jpg",
-    "alt": "일본 고치현 가쓰라하마의 높은 받침대 위 사카모토 료마 동상",
+    "alt": "바다와 소나무를 배경으로 옆에서 촬영한 일본 고치현 가쓰라하마의 사카모토 료마 동상",
     "caption": "고치현 가쓰라하마의 사카모토 료마 동상. 2006년 10월 29일 촬영. 후대의 기념과 대중의 존경도 사료로 확인되는 행적과 대조할 필요가 있다.",
     "credit": "Chehikone · Wikimedia Commons · CC0 1.0",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Statue_of_Ryoma_Sakamoto.jpg"
@@ -31,7 +31,7 @@ export const historyFictionColumn: SeedColumn = {
   "additionalImages": [
     {
       "src": "images/columns/history-fiction-2026/ryoma-portrait.jpg",
-      "alt": "기모노를 입고 서서 왼손을 받침대에 올린 사카모토 료마의 생전 흑백 사진",
+      "alt": "기모노를 입은 사카모토 료마의 얼굴과 상반신을 담은 생전 흑백 사진",
       "caption": "사카모토 료마의 생전 사진. 실존 인물의 모습과 후대 소설·드라마가 덧붙인 인물상은 구분해 읽어야 한다.",
       "credit": "촬영자 미상 · 일본 국립국회도서관 자료 · Wikimedia Commons · 퍼블릭 도메인",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sakamoto_Ryoma.jpg",
@@ -40,7 +40,7 @@ export const historyFictionColumn: SeedColumn = {
     },
     {
       "src": "images/columns/history-fiction-2026/ryoma-statue.jpg",
-      "alt": "일본 고치현 가쓰라하마의 높은 받침대 위 사카모토 료마 동상",
+      "alt": "바다와 소나무를 배경으로 옆에서 촬영한 일본 고치현 가쓰라하마의 사카모토 료마 동상",
       "caption": "고치현 가쓰라하마의 사카모토 료마 동상. 2006년 10월 29일 촬영. 후대의 기념과 대중의 존경도 사료로 확인되는 행적과 대조할 필요가 있다.",
       "credit": "Chehikone · Wikimedia Commons · CC0 1.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Statue_of_Ryoma_Sakamoto.jpg",
