@@ -436,8 +436,8 @@ export default function Home() {
                     <SafeImage src={resolveImageSrc(seedLanguageArticle.heroImage.src)} alt="" loading="lazy" referrerPolicy="no-referrer" className="absolute inset-0 h-full w-full object-cover" />
                     <div className="absolute inset-0 bg-navy/45" aria-hidden="true" />
                     <div className="relative flex min-w-0 flex-col items-center justify-center px-1 text-white" style={{ textShadow: "1px 0 #102b35, -1px 0 #102b35, 0 1px #102b35, 0 -1px #102b35, 1px 1px #102b35, -1px 1px #102b35, 1px -1px #102b35, -1px -1px #102b35, 0 2px 5px #102b35" }}>
-                      <p className={`editorial-title font-black leading-tight ${ko && seedLanguageArticle.term.length <= 6 ? "whitespace-nowrap" : "break-words"}`} style={{ fontSize: "min(2.5rem, 14cqw)" }}>{ko ? seedLanguageArticle.term : seedLanguageTerm?.english || seedLanguageArticle.term}</p>
-                      {ko && seedLanguageTerm && <><p className="mt-1 text-[10px] font-bold leading-none">{seedLanguageTerm.hanja}</p><p className="mt-1 max-w-full px-1 text-[8px] font-black leading-tight tracking-[.04em]">{seedLanguageTerm.english}</p></>}
+                      <p className={`editorial-title font-black leading-tight ${ko && seedLanguageArticle.term.length <= 6 ? "whitespace-nowrap" : "break-words"}`} style={{ fontSize: ko ? `min(1.5rem, ${88 / Math.max(4, seedLanguageArticle.term.length)}cqw)` : "min(1.5rem, 14cqw)" }}>{ko ? seedLanguageArticle.term : seedLanguageTerm?.english || seedLanguageArticle.term}</p>
+                      {ko && seedLanguageTerm && <><p className="mt-1 font-bold" style={{ fontSize: "0.625rem", lineHeight: 1.2 }}>{seedLanguageTerm.hanja}</p><p className="mt-1 max-w-full px-1 font-bold tracking-[.04em]" style={{ fontSize: "0.625rem", lineHeight: 1.2 }}>{seedLanguageTerm.english}</p></>}
                     </div>
                   </div>
                   <div className="min-w-0">

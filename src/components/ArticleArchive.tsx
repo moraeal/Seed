@@ -69,8 +69,8 @@ export default function ArticleArchive({ items, ko }: ArticleArchiveProps) {
                 >
                   <div className="flex aspect-[4/3] h-full max-h-[96px] w-full flex-col items-center justify-center border border-green-deep/15 bg-white text-center">
                     <p className="editorial-title text-[1.15rem] font-black leading-none text-navy sm:text-[1.28rem]">{item.term}</p>
-                    {ko && item.termHanja && <p className="mt-1.5 text-[10px] font-bold leading-none text-charcoal/55">{item.termHanja}</p>}
-                    {ko && item.termEnglish && <p className="mt-1 max-w-full px-1 text-[8px] font-black leading-tight tracking-[.04em] text-green-deep/65">{item.termEnglish}</p>}
+                    {ko && item.termHanja && <p className="mt-1.5 font-bold text-charcoal/55" style={{ fontSize: "0.625rem", lineHeight: 1.2 }}>{item.termHanja}</p>}
+                    {ko && item.termEnglish && <p className="mt-1 max-w-full px-1 font-bold tracking-[.04em] text-green-deep/65" style={{ fontSize: "0.625rem", lineHeight: 1.2 }}>{item.termEnglish}</p>}
                   </div>
                   <div className="min-w-0">
                     <div className="flex items-center justify-between gap-2">
