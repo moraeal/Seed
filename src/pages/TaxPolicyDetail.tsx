@@ -1,3 +1,4 @@
+import TaxPolicyArticle from "../components/TaxPolicyArticle";
 import { ArrowLeft, ArrowRight, CalendarDays, ExternalLink, ReceiptText, Star } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import ContentAccountability from "../components/ContentAccountability";
@@ -16,6 +17,8 @@ export default function TaxPolicyDetail() {
   const policy = getTaxPolicy(slug);
 
   if (!policy) return <div className="container-page min-h-[55vh] py-24 text-center"><h1 className="editorial-title text-3xl font-bold text-navy">{ko ? "공개된 세금정책 기록을 찾을 수 없습니다." : "This published tax policy record could not be found."}</h1><Link to="/monitoring/tax" className="button-primary mt-7">{ko ? "세금감시 목록" : "Tax Watch"}</Link></div>;
+
+  if (policy.article) return <TaxPolicyArticle policy={policy}/>;
 
   const relatedCommentary = getTaxCommentaryForPolicy(policy.slug);
   const commentaryEdition = relatedCommentary ? getTaxCommentaryEdition(relatedCommentary, ko ? "ko" : "en") : undefined;

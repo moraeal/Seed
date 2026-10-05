@@ -1,3 +1,4 @@
+import { cardSalesCreditCommentary } from "./cardSalesCredit2026";
 import { taxExpenditureCapCommentary } from "./taxExpenditureCapCommentary";
 import { taxBreakBudgetConversionCommentary } from "./taxBreakBudgetConversionCommentary";
 import { virtualAssetTaxCommentary } from "./virtualAssetTaxCommentary";
@@ -15,6 +16,7 @@ type CommentaryEdition = {
   heroCaption: string;
   sections: { title: string; paragraphs: string[]; quote?: string }[];
   chart: {
+    imageSrc?: string;
     title: string;
     description: string;
     headers: string[];
@@ -50,6 +52,7 @@ export type TaxCommentary = {
 };
 
 export const taxCommentaries: TaxCommentary[] = [
+cardSalesCreditCommentary,
 virtualAssetTaxCommentary,
 taxBreakBudgetConversionCommentary,
 taxExpenditureCapCommentary,
