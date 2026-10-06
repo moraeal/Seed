@@ -41,6 +41,7 @@ export function getCivicSectionForArticle(path: string) {
 // Assess every new article under CONTENT_PUBLISHING_RULES.md §14 and add
 // suitable stories here in the same publishing update, regardless of category.
 export const civicLifeArticlePaths = [
+  "/columns/citizens-dilemma-01-cafe-customer-choice",
   "/monitoring/tax/commentary/card-sales-credit-normalization-burden-2026",
   "/monitoring/tax/card-sales-vat-credit-government-bill-2026",
   "/seed-language/history-facts-memory-civic-judgment",

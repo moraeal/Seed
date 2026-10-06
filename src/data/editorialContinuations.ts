@@ -466,6 +466,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "column" && slug === "citizens-dilemma-01-cafe-customer-choice") return true;
   if (kind === "column" && slug === "pspd-prosecution-reform-state-power-watch-2026") return true;
   if (kind === "seed-language" && slug === "history-facts-memory-civic-judgment") return true;
   if (kind === "briefing" && slug === "korean-civic-tax-watch-movement-ktr") return true;
@@ -502,6 +503,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "citizens-dilemma-01-cafe-customer-choice") return language === "ko" ? {"href": "/columns/robak-contract-freedom-third-party-rights-2026", "title": "약속을 바꿀 자유, 남의 권리까지 지울 수는 없다", "relationship": "생활 속 자유와 책임", "reason": "카페 문 앞의 딜레마에 이어 계약의 자유와 다른 사람의 권리가 만나는 생활 속 사례를 읽습니다.", "listHref": "/civic-life", "listLabel": "시민생활 전체 보기"} : {"href": "/columns/robak-contract-freedom-third-party-rights-2026", "title": "The Freedom to Change a Promise Cannot Erase Someone Else’s Rights", "relationship": "FREEDOM AND RESPONSIBILITY", "reason": "Continue with another everyday encounter between individual freedom and other people’s rights.", "listHref": "/civic-life", "listLabel": "All Civic Life articles"};
   if (kind === "seed-language" && slug === "history-facts-memory-civic-judgment") return language === "ko"
     ? { href: "/columns/film-imagination-history-distortion-ryoma-2026", title: "영화적 상상력은 역사 왜곡의 면죄부인가", relationship: "역사와 영화의 경계", reason: "료마의 신화와 역사물의 각색을 구체적인 사례에서 이어 살펴봅니다.", listHref: "/seed-language", listLabel: "시민언어 전체 보기" }
     : { href: "/columns/film-imagination-history-distortion-ryoma-2026", title: "Is Cinematic Imagination a License to Distort History?", relationship: "HISTORY AND CINEMA", reason: "Continue with the Ryoma myth and dramatization through concrete examples.", listHref: "/seed-language", listLabel: "All Glossary entries" };
