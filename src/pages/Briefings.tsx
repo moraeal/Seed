@@ -1,7 +1,6 @@
 import { ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
-import { getAllBriefingsNewestFirst } from "../data/allBriefings";
-import { localizeBriefing } from "../data/localizedContent";
+import { getBriefingListing } from "../data/briefingListing";
 import { useLanguage } from "../i18n";
 import SafeImage from "../components/SafeImage";
 import ArticleArchive, { RECENT_ARTICLE_COUNT } from "../components/ArticleArchive";
@@ -11,7 +10,7 @@ const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.me
 export default function Briefings() {
   const { language } = useLanguage();
   const ko = language === "ko";
-  const briefings = getAllBriefingsNewestFirst().map((briefing) => localizeBriefing(briefing, language));
+  const briefings = getBriefingListing(language);
   const recentBriefings = briefings.filter((briefing) => briefing.listingStyle !== "archive").slice(0, RECENT_ARTICLE_COUNT);
   const recentSlugs = new Set(recentBriefings.map((briefing) => briefing.slug));
   const archiveBriefings = briefings.filter((briefing) => !recentSlugs.has(briefing.slug));
@@ -42,7 +41,7 @@ export default function Briefings() {
             return (
               <Link
                 key={briefing.slug}
-                to={`/briefings/${briefing.slug}`}
+                to={briefing.path}
                 className="group grid gap-5 border-b border-green-deep/15 px-5 py-6 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7"
               >
                 <div className="overflow-hidden bg-green-deep">
@@ -82,7 +81,7 @@ export default function Briefings() {
             );
           })}
         </div>
-        <ArticleArchive ko={ko} items={archiveBriefings.map((briefing) => ({ key: briefing.slug, to: `/briefings/${briefing.slug}`, title: briefing.title, summary: briefing.summary, date: briefing.date }))} />
+        <ArticleArchive ko={ko} items={archiveBriefings.map((briefing) => ({ key: briefing.slug, to: briefing.path, title: briefing.title, summary: briefing.summary, date: briefing.date }))} />
       </div>
     </section>
   );
