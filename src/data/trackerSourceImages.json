@@ -546,5 +546,48 @@
     "src": "/images/monitoring/source-articles/b610948c851931b3847d.jpg",
     "originalImageUrl": "https://img1.daumcdn.net/thumb/S1200x630/?fname=https://t1.daumcdn.net/news/202610/05/yonhap/20261005183001081yolr.jpg",
     "verifiedAt": "2026-10-06T02:40:40.305Z"
+  },
+  "https://www.rfa.org/korean/in-focus/2026/10/06/north-korea-border-mines-multiple-sites-found/": {
+    "src": "/images/monitoring/source-articles/ab71dba7df9fe094bc66.jpg",
+    "originalImageUrl": "https://www.rfa.org/resizer/v2/NG2WF4YLB5FBPN5JRXM4WUMFVE.jpg?smart=true&auth=d28633cf64644e2ec2817f04831527a163208d3f9fa074df6a9de8d946b7c8ec&width=1200&height=630",
+    "verifiedAt": "2026-10-06T12:15:31.686Z"
+  },
+  "https://www.yna.co.kr/amp/view/AKR20261006187551504": {
+    "src": "/images/monitoring/source-articles/993a1bff47b53c9e76b1.jpg",
+    "originalImageUrl": "https://img6.yna.co.kr/photo/yna/YH/2026/10/05/PYH2026100509440001300_P4.jpg",
+    "verifiedAt": "2026-10-06T12:15:44.147Z"
+  },
+  "https://v.daum.net/v/20261002100029264": {
+    "src": "/images/monitoring/source-articles/935d7d75fac13ad2cd13.jpg",
+    "originalImageUrl": "https://img1.daumcdn.net/thumb/S1200x630/?fname=https://t1.daumcdn.net/news/202610/02/552779-26fvic8/20261002100030946vkvt.png",
+    "verifiedAt": "2026-10-06T12:15:58.946Z"
+  },
+  "https://www.fnnews.com/news/202610021031073056": {
+    "src": "/images/monitoring/source-articles/6c041edb1cdb9d1f3a71.jpg",
+    "originalImageUrl": "https://image.fnnews.com/resource/media/image/2026/10/02/202610021030570094_e.jpg",
+    "verifiedAt": "2026-10-06T12:16:00.712Z"
+  },
+  "https://nwww.newsis.com/view/NISX20261002_0003812766": {
+    "src": "/images/monitoring/source-articles/152c7b2fc11c880d26fa.jpg",
+    "originalImageUrl": "https://img1.newsis.com/2026/10/02/NISI20261002_0021472099_web.jpg",
+    "verifiedAt": "2026-10-06T12:16:02.515Z"
+  },
+  "https://news.nate.com/view/20261001n43129?mid=n1101": {
+    "src": "/images/monitoring/source-articles/1c081e74d34b726e4479.jpg",
+    "originalImageUrl": "https://thumbnews.nateimg.co.kr/view610///news.nateimg.co.kr/orgImg/do/2026/10/01/134772387.1.jpg",
+    "verifiedAt": "2026-10-06T12:16:23.529Z"
+  },
+  "https://yeosu2026.or.kr/6_4/281": {
+    "src": "/images/monitoring/yeosu-island-expo-tracker-hero.webp",
+    "kind": "context",
+    "alt": {
+      "ko": "여수의 섬과 항로, 해안 행사장을 표현한 관련 상징 이미지",
+      "en": "Related symbolic image of Yeosu islands, ferry routes and the waterfront venue"
+    },
+    "credit": {
+      "ko": "AI 이미지",
+      "en": "AI image"
+    },
+    "verifiedAt": "2026-10-06T12:20:00Z"
   }
 }

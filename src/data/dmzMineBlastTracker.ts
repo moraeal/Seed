@@ -15,13 +15,13 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
     "en": "Three soldiers injured in DMZ blasts: What has emerged since September 21?"
   },
   "summary": {
-    "ko": "9월 21일 장병 3명이 다친 DMZ 폭발은 북한군이 MDL 이남에 매설한 지뢰에 의한 것이라고 합참이 10월 5일 최종 판단했습니다. 군은 같은 날 지뢰 제거 작전을 실시했습니다. 북한의 매설 책임과 별도로 작전 전 위험평가, 장병 보호조치와 재발 방지 이행을 계속 확인합니다.",
-    "en": "On October 5, South Korea’s Joint Chiefs concluded that North Korean mines planted south of the Military Demarcation Line caused the September 21 blasts that injured three soldiers. Mine clearance began that day. SEED continues to examine pre-mission risk decisions, protection of soldiers and measures to prevent another incident."
-  },
+  "ko": "합참은 10월 5일 북한군이 MDL 이남에 매설한 지뢰가 장병 3명의 부상을 일으켰다고 최종 판단했고 제거 작전을 실시했습니다. 북한은 6일 책임을 부인하며 대응을 위협했습니다. 추가 지뢰지대와 장병 보호, 제거 전후 안전조치를 계속 확인합니다.",
+  "en": "On October 5, the Joint Chiefs attributed the blasts that injured three soldiers to North Korean mines planted south of the MDL and carried out clearance. North Korea rejected responsibility and threatened a response on October 6. This tracker follows further suspected minefields, soldier protection and safety before and after clearance."
+},
   "status": {
-    "ko": "북한군 매설 지뢰 최종 판단·제거 작전 실시",
-    "en": "Final attribution to planted North Korean mines · Clearance underway"
-  },
+  "ko": "북한 6일 조사결과 부인·추가 지뢰지대와 제거 작전 추적",
+  "en": "North rejects findings on October 6 · Further minefields and clearance tracked"
+},
   "openedAt": "2026-09-21",
   "publishedAt": "2026-09-21",
   "updatedAt": "2026-10-06",
@@ -43,23 +43,23 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
   },
   "snapshot": {
     "conclusion": {
-      "ko": "‘북한군 지뢰 가능성이 매우 높다’는 9월 28일 중간 판단이 10월 5일 최종 판단으로 바뀌었습니다. 현장 지뢰 실물과 부상자 파편 감정이 근거로 제시됐습니다. 북한의 정전협정 위반 책임을 묻는 일과 우리 군의 장병 보호 책임을 점검하는 일은 함께 진행돼야 합니다.",
-      "en": "The September 28 interim assessment became a final attribution on October 5, supported by a mine found at the site and forensic comparison of injury fragments. Accountability for North Korea’s armistice violation must accompany scrutiny of South Korea’s duty to protect its soldiers."
-    },
+  "ko": "북한 외무성은 10월 6일 우리 군의 최종 조사결과를 자작극이라고 주장하며 매설 책임을 부인했습니다. 지뢰 제거 과정에서 자신들의 영토를 침범하면 강력히 대응하겠다고 위협했습니다. 이는 북한의 주장으로, 현장 지뢰와 파편 감정을 근거로 한 합참의 5일 최종 판단과 구분해 기록합니다.",
+  "en": "On October 6, North Korea’s Foreign Ministry rejected South Korea’s final findings as fabricated and threatened a strong response if clearance entered territory it claims. This is North Korea’s position, recorded separately from the Joint Chiefs’ October 5 attribution based on physical mines and forensic evidence."
+},
     "keyFacts": [
-      {
-        "ko": "9월 29일 합동 현장조사에서 북한군 수지 반보병지뢰가 추가로 발견됐고 폭발·발견 지점은 MDL 이남 10여m로 확인됐습니다.",
-        "en": "A joint site investigation found another North Korean plastic-bodied antipersonnel mine on September 29; the blast and discovery sites were about 10 meters south of the MDL."
-      },
-      {
-        "ko": "합참은 10월 2일 접수한 국과수 감정과 유엔사 공동조사에 근거해 5일 북한군 매설 지뢰라는 최종 결론을 발표했습니다.",
-        "en": "The October 5 final conclusion drew on joint fieldwork with UN Command and forensic results received on October 2."
-      },
-      {
-        "ko": "군은 10월 5일 낮 12시 51분께 해당 지뢰지대 제거 작전을 실시하고 북한의 사과와 지뢰 제거를 촉구했습니다.",
-        "en": "At about 12:51 p.m. on October 5, the military carried out clearance of the affected minefield and called for an apology and removal of the mines."
-      }
-    ],
+  {
+    "ko": "북한 외무성은 10월 6일 우리 군의 최종 조사결과를 자작극이라고 주장하며 매설 책임을 부인했습니다. 지뢰 제거 과정에서 자신들의 영토를 침범하면 강력히 대응하겠다고 위협했습니다. 이는 북한의 주장으로, 현장 지뢰와 파편 감정을 근거로 한 합참의 5일 최종 판단과 구분해 기록합니다.",
+    "en": "On October 6, North Korea’s Foreign Ministry rejected South Korea’s final findings as fabricated and threatened a strong response if clearance entered territory it claims. This is North Korea’s position, recorded separately from the Joint Chiefs’ October 5 attribution based on physical mines and forensic evidence."
+  },
+  {
+    "ko": "합참은 5일 최종 조사결과 발표에서 북한군이 MDL 이남에 지뢰를 매설한 것으로 추정되는 지역이 여러 곳이며, 침범 구간은 지역별로 다르고 평균 20여m라고 설명했습니다. 자유아시아방송이 6일 이 설명을 보도했습니다. 이번 사고 지점의 10여m와 전체 추정 구간의 평균 20여m는 서로 다른 지표입니다. 추가 지역의 확인과 제거 전후 안전조치를 계속 점검합니다.",
+    "en": "At its October 5 briefing, the Joint Chiefs said several areas were suspected of containing North Korean mines south of the MDL, with incursions varying by location and averaging about 20 meters. RFA reported the account on October 6. The roughly 10-meter distance at the accident site and the average across suspected incursions are different measures. Further verification and safety measures before and after clearance remain under scrutiny."
+  },
+  {
+    "ko": "9월 29일 합동 현장조사에서 북한군 수지 반보병지뢰가 추가로 발견됐고 폭발·발견 지점은 MDL 이남 10여m로 확인됐습니다.",
+    "en": "A joint site investigation found another North Korean plastic-bodied antipersonnel mine on September 29; the blast and discovery sites were about 10 meters south of the MDL."
+  }
+],
     "tracking": [
       {
         "ko": "추가 지뢰 제거 범위와 작전 전후 안전 확인, 유엔사 공조는 어떻게 이뤄지는가",
@@ -76,6 +76,20 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
     ]
   },
   "keyChanges": [
+{
+  "date": "2026-10-06",
+  "text": {
+  "ko": "북한, 최종 조사결과 부인하고 제거 작전 대응 위협",
+  "en": "North Korea rejects final findings and threatens a response to clearance"
+}
+},
+{
+  "date": "2026-10-05",
+  "text": {
+  "ko": "사고 지역 외에도 MDL 이남 지뢰 매설 추정 지역 확인",
+  "en": "Other suspected minefields identified south of the MDL"
+}
+},
     {
       "date": "2026-10-05",
       "text": {
@@ -186,6 +200,68 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
     }
   ],
   "timeline": [
+{
+  "date": "2026-10-06",
+  "title": {
+    "ko": "북한, 최종 조사결과 부인하고 제거 작전 대응 위협",
+    "en": "North Korea rejects final findings and threatens a response to clearance"
+  },
+  "description": {
+    "ko": "북한 외무성은 10월 6일 우리 군의 최종 조사결과를 자작극이라고 주장하며 매설 책임을 부인했습니다. 지뢰 제거 과정에서 자신들의 영토를 침범하면 강력히 대응하겠다고 위협했습니다. 이는 북한의 주장으로, 현장 지뢰와 파편 감정을 근거로 한 합참의 5일 최종 판단과 구분해 기록합니다.",
+    "en": "On October 6, North Korea’s Foreign Ministry rejected South Korea’s final findings as fabricated and threatened a strong response if clearance entered territory it claims. This is North Korea’s position, recorded separately from the Joint Chiefs’ October 5 attribution based on physical mines and forensic evidence."
+  },
+  "change": {
+    "ko": "북한 외무성은 10월 6일 우리 군의 최종 조사결과를 자작극이라고 주장하며 매설 책임을 부인했습니다. 지뢰 제거 과정에서 자신들의 영토를 침범하면 강력히 대응하겠다고 위협했습니다. 이는 북한의 주장으로, 현장 지뢰와 파편 감정을 근거로 한 합참의 5일 최종 판단과 구분해 기록합니다.",
+    "en": "On October 6, North Korea’s Foreign Ministry rejected South Korea’s final findings as fabricated and threatened a strong response if clearance entered territory it claims. This is North Korea’s position, recorded separately from the Joint Chiefs’ October 5 attribution based on physical mines and forensic evidence."
+  },
+  "status": "response",
+  "sources": [
+    {
+      "publisher": {
+        "ko": "연합뉴스",
+        "en": "Yonhap"
+      },
+      "title": {
+        "ko": "北 “韓, 자작극으로 지뢰폭발 책임전가…영토침범시 즉각 대응”",
+        "en": "North Korea rejects mine-blast findings and threatens a response to territorial intrusion"
+      },
+      "url": "https://www.yna.co.kr/amp/view/AKR20261006187551504",
+      "publishedAt": "2026-10-06",
+      "kind": "article"
+    }
+  ]
+},
+{
+  "date": "2026-10-05",
+  "title": {
+    "ko": "사고 지역 외에도 MDL 이남 지뢰 매설 추정 지역 확인",
+    "en": "Other suspected minefields identified south of the MDL"
+  },
+  "description": {
+    "ko": "합참은 5일 최종 조사결과 발표에서 북한군이 MDL 이남에 지뢰를 매설한 것으로 추정되는 지역이 여러 곳이며, 침범 구간은 지역별로 다르고 평균 20여m라고 설명했습니다. 자유아시아방송이 6일 이 설명을 보도했습니다. 이번 사고 지점의 10여m와 전체 추정 구간의 평균 20여m는 서로 다른 지표입니다. 추가 지역의 확인과 제거 전후 안전조치를 계속 점검합니다.",
+    "en": "At its October 5 briefing, the Joint Chiefs said several areas were suspected of containing North Korean mines south of the MDL, with incursions varying by location and averaging about 20 meters. RFA reported the account on October 6. The roughly 10-meter distance at the accident site and the average across suspected incursions are different measures. Further verification and safety measures before and after clearance remain under scrutiny."
+  },
+  "change": {
+    "ko": "합참은 5일 최종 조사결과 발표에서 북한군이 MDL 이남에 지뢰를 매설한 것으로 추정되는 지역이 여러 곳이며, 침범 구간은 지역별로 다르고 평균 20여m라고 설명했습니다. 자유아시아방송이 6일 이 설명을 보도했습니다. 이번 사고 지점의 10여m와 전체 추정 구간의 평균 20여m는 서로 다른 지표입니다. 추가 지역의 확인과 제거 전후 안전조치를 계속 점검합니다.",
+    "en": "At its October 5 briefing, the Joint Chiefs said several areas were suspected of containing North Korean mines south of the MDL, with incursions varying by location and averaging about 20 meters. RFA reported the account on October 6. The roughly 10-meter distance at the accident site and the average across suspected incursions are different measures. Further verification and safety measures before and after clearance remain under scrutiny."
+  },
+  "status": "confirmed",
+  "sources": [
+    {
+      "publisher": {
+        "ko": "자유아시아방송",
+        "en": "Radio Free Asia"
+      },
+      "title": {
+        "ko": "MDL 이남 지뢰 매설 지역 수곳…2년 안에 철책·지뢰지대 구축 마무리 예상",
+        "en": "Several suspected North Korean minefields identified south of the MDL"
+      },
+      "url": "https://www.rfa.org/korean/in-focus/2026/10/06/north-korea-border-mines-multiple-sites-found/",
+      "publishedAt": "2026-10-06",
+      "kind": "article"
+    }
+  ]
+},
     {
       "date": "2026-10-05",
       "title": {
@@ -734,6 +810,14 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
     "en": "The final finding attributes deliberate placement to North Korea. “More than 12 months earlier” is the UN Command assessment reported by the Joint Chiefs, not an exact planting date. Intent specifically to target this patrol and the scope of command responsibility require separate evidence."
   },
   "confirmedFacts": [
+{
+  "ko": "북한 외무성은 10월 6일 우리 군의 최종 조사결과를 자작극이라고 주장하며 매설 책임을 부인했습니다. 지뢰 제거 과정에서 자신들의 영토를 침범하면 강력히 대응하겠다고 위협했습니다. 이는 북한의 주장으로, 현장 지뢰와 파편 감정을 근거로 한 합참의 5일 최종 판단과 구분해 기록합니다.",
+  "en": "On October 6, North Korea’s Foreign Ministry rejected South Korea’s final findings as fabricated and threatened a strong response if clearance entered territory it claims. This is North Korea’s position, recorded separately from the Joint Chiefs’ October 5 attribution based on physical mines and forensic evidence."
+},
+{
+  "ko": "합참은 5일 최종 조사결과 발표에서 북한군이 MDL 이남에 지뢰를 매설한 것으로 추정되는 지역이 여러 곳이며, 침범 구간은 지역별로 다르고 평균 20여m라고 설명했습니다. 자유아시아방송이 6일 이 설명을 보도했습니다. 이번 사고 지점의 10여m와 전체 추정 구간의 평균 20여m는 서로 다른 지표입니다. 추가 지역의 확인과 제거 전후 안전조치를 계속 점검합니다.",
+  "en": "At its October 5 briefing, the Joint Chiefs said several areas were suspected of containing North Korean mines south of the MDL, with incursions varying by location and averaging about 20 meters. RFA reported the account on October 6. The roughly 10-meter distance at the accident site and the average across suspected incursions are different measures. Further verification and safety measures before and after clearance remain under scrutiny."
+},
     {
       "ko": "21일 수색로 개척 중 두 번의 폭발로 장병 3명이 다쳤습니다.",
       "en": "Two blasts injured three soldiers during the September 21 route-clearing operation."
@@ -830,9 +914,9 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
     }
   ],
   "nextCheck": {
-    "ko": "추가 제거 작전과 북한의 반응, 유엔사 공조 및 제거 후 안전 확인을 계속 살핍니다. 국방위 제출 자료와 작전 전 위험평가, 부상 장병 치료·재활 지원에서 새로 공개되는 내용을 확인해 갱신합니다.",
-    "en": "Track further clearance, North Korea’s response, UN Command coordination and post-clearance safety checks. Update with new parliamentary documents, pre-mission assessments and treatment and rehabilitation support."
-  },
+  "ko": "10월 6일 북한의 대응 위협 뒤 추가 제거 작전과 유엔사 협의, 사고 지역 외 매설 추정 지역의 실물 확인·안전 확보, 부상 장병의 치료·재활 지원과 사전 위험평가 공개 여부",
+  "en": "Further clearance and UN Command coordination after North Korea’s October 6 threat; physical verification and safety at other suspected minefields; treatment and rehabilitation, and disclosure of pre-mission risk assessments"
+},
   "relatedContents": [
     {
       "href": "/news/dmz-security-command-failure",
@@ -868,6 +952,20 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
     }
   ],
   "sources": [
+{
+  "label": {
+    "ko": "연합뉴스 · 北 “韓, 자작극으로 지뢰폭발 책임전가…영토침범시 즉각 대응”",
+    "en": "Yonhap · North Korea rejects mine-blast findings and threatens a response to territorial intrusion"
+  },
+  "url": "https://www.yna.co.kr/amp/view/AKR20261006187551504"
+},
+{
+  "label": {
+    "ko": "자유아시아방송 · MDL 이남 지뢰 매설 지역 수곳…2년 안에 철책·지뢰지대 구축 마무리 예상",
+    "en": "Radio Free Asia · Several suspected North Korean minefields identified south of the MDL"
+  },
+  "url": "https://www.rfa.org/korean/in-focus/2026/10/06/north-korea-border-mines-multiple-sites-found/"
+},
     {
       "label": {
         "ko": "뉴스핌 · 합참 최종 조사결과·현장 지뢰 발견과 감정",

@@ -19,16 +19,16 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     en: "This record follows the idea first made public in 2018 through its 2021 government approval at KRW 24.8 billion, its expansion to KRW 71.3 billion in direct spending and KRW 183.9 billion including linked projects. It tracks attendance, revenue, transport and operations after opening, and—following a September 21 criminal complaint over budgeting and contracts—will follow any prosecutorial action and the final settlement.",
   },
   status: {
-    ko: "박람회 운영 중·형사고발 접수·성과 확인",
-    en: "Fair under way · Criminal complaint filed · Outcomes tracked",
-  },
+  "ko": "10월 무료입장 확대·관람객과 수익 분리 검증",
+  "en": "October admission waivers expanded · Attendance and revenue assessed separately"
+},
   openedAt: "2018-09-05",
   publishedAt: "2026-09-15",
-  updatedAt: "2026-09-27",
+  updatedAt: "2026-10-06",
   nextCheck: {
-    ko: "9월 21일 고발사건의 광주지검 접수·배당과 실제 수사 착수 여부, 피고발인과 조직위의 구체적 입장, 추석 연휴 뒤 누적 입장객을 유료·무료·단체·초청·공무출장·전국 섬 주민 무료입장으로 나눈 집계, 9월 25~26일 12만7천여 명 가운데 무료입장 규모와 사업수익 영향, 개도·금오도 셔틀의 실제 이용실적, 수의계약을 포함한 계약 원문과 집행액, 예결위를 통과한 콘텐츠 보완 추경 7억 원의 본회의 최종 처리·계약·집행, 사업수익 120억 원의 달성 여부와 폐막 뒤 최종 정산",
-    en: "Receipt and assignment of the September 21 complaint at the Gwangju District Prosecutors' Office and whether a formal investigation begins; specific responses from those named and the organizing committee; post-holiday cumulative attendance split into paid, free, group, invited, publicly funded staff and nationwide island-resident admissions; the free-admission share and revenue effect within the roughly 127,000 visits on September 25–26; actual use of Gaedo and Geumodo shuttles; contract documents and spending including negotiated contracts; final council action, contracts and spending for the KRW 700 million content supplement that cleared the budget committee; progress toward the KRW 12 billion revenue target; and final settlement after closing",
-  },
+  "ko": "10월 무료입장 확대 이후 유료·무료·재입장별 관람객과 실제 입장료 수입, 추가 공연·체험 비용과 집행액, 10월 6일 시설·장비 점검의 완료·결과, 사업수익 120억 원 달성 여부, 고발사건의 실제 수사 진행과 폐막 뒤 정산",
+  "en": "Attendance split by paid, free and repeat entry after October waivers; actual ticket revenue; extra programming costs and spending; completion and results of the planned October 6 checks; progress toward the KRW 12 billion revenue target; actual progress of the complaint and post-closing settlement"
+},
   heroImage: {
     src: "images/monitoring/yeosu-island-expo-tracker-hero.webp",
     alt: {
@@ -49,6 +49,13 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     en: "The timeline cross-checks Ministry of the Interior and Safety, Yeosu City and organizing-committee records with original reporting on approval, planning, budget changes and post-opening operations. Direct and linked spending are kept distinct, as are verified operating failures and inaccurate claims circulated online.",
   },
   keyChanges: [
+{
+  "date": "2026-10-02",
+  "text": {
+  "ko": "10월 무료입장 확대와 운영 보강 계획 발표",
+  "en": "October admission waivers and operating improvements announced"
+}
+},
     {
       date: "2018-09-05",
       text: {
@@ -128,6 +135,37 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+{
+  "date": "2026-10-02",
+  "title": {
+    "ko": "10월 무료입장 확대와 운영 보강 계획 발표",
+    "en": "October admission waivers and operating improvements announced"
+  },
+  "description": {
+    "ko": "조직위는 10월 2일 배포 자료에서 31일까지 12세 미만 어린이와 동반 관람객 2명의 무료입장을 운영하고, 1~11일에는 어르신 무료입장 기준을 75세에서 65세로 낮춘다고 밝혔습니다. 공연·체험도 보강하고 6일 시설·장비 점검과 운영인력 재정비를 할 계획입니다. 점검 완료와 효과는 아직 확인되지 않았습니다. 무료입장 확대 이후에는 유료·무료 관람객, 실제 입장료 수입, 추가 프로그램 비용을 나눠 확인합니다.",
+    "en": "In material distributed on October 2, organizers announced free entry through October 31 for children under 12 and two accompanying visitors, and lowered the older-person waiver threshold from 75 to 65 for October 1–11. They also announced additional performances and activities and planned facility, equipment and staffing checks on October 6. Completion and results of those checks remain unverified. Attendance by payment category, ticket income and extra programming costs must be assessed separately."
+  },
+  "change": {
+    "ko": "조직위는 10월 2일 배포 자료에서 31일까지 12세 미만 어린이와 동반 관람객 2명의 무료입장을 운영하고, 1~11일에는 어르신 무료입장 기준을 75세에서 65세로 낮춘다고 밝혔습니다. 공연·체험도 보강하고 6일 시설·장비 점검과 운영인력 재정비를 할 계획입니다. 점검 완료와 효과는 아직 확인되지 않았습니다. 무료입장 확대 이후에는 유료·무료 관람객, 실제 입장료 수입, 추가 프로그램 비용을 나눠 확인합니다.",
+    "en": "In material distributed on October 2, organizers announced free entry through October 31 for children under 12 and two accompanying visitors, and lowered the older-person waiver threshold from 75 to 65 for October 1–11. They also announced additional performances and activities and planned facility, equipment and staffing checks on October 6. Completion and results of those checks remain unverified. Attendance by payment category, ticket income and extra programming costs must be assessed separately."
+  },
+  "status": "confirmed",
+  "sources": [
+    {
+      "publisher": {
+        "ko": "여수세계섬박람회 조직위원회",
+        "en": "Yeosu World Island Fair organizing committee"
+      },
+      "title": {
+        "ko": "여수세계섬박람회, 10월 문턱 낮추고 품 넓힌다",
+        "en": "Island fair expands free admission and October programming"
+      },
+      "url": "https://yeosu2026.or.kr/6_4/281",
+      "publishedAt": "2026-10-02",
+      "kind": "article"
+    }
+  ]
+},
     {
       date: "2018-09-05",
       title: {
@@ -910,6 +948,10 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+{
+  "ko": "조직위는 10월 2일 배포 자료에서 31일까지 12세 미만 어린이와 동반 관람객 2명의 무료입장을 운영하고, 1~11일에는 어르신 무료입장 기준을 75세에서 65세로 낮춘다고 밝혔습니다. 공연·체험도 보강하고 6일 시설·장비 점검과 운영인력 재정비를 할 계획입니다. 점검 완료와 효과는 아직 확인되지 않았습니다. 무료입장 확대 이후에는 유료·무료 관람객, 실제 입장료 수입, 추가 프로그램 비용을 나눠 확인합니다.",
+  "en": "In material distributed on October 2, organizers announced free entry through October 31 for children under 12 and two accompanying visitors, and lowered the older-person waiver threshold from 75 to 65 for October 1–11. They also announced additional performances and activities and planned facility, equipment and staffing checks on October 6. Completion and results of those checks remain unverified. Attendance by payment category, ticket income and extra programming costs must be assessed separately."
+},
     {
       ko: "세계 섬 박람회 구상은 2018년 9월 국제 섬 관광 여수포럼에서 공개됐고, 2019년 5월 기본계획 연구용역이 시작됐습니다.",
       en: "The world island fair idea was publicly raised at a September 2018 forum, and the initial planning study began in May 2019.",
@@ -1066,6 +1108,13 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     en: "KRW 24.8 billion is the 2021 approved base, KRW 71.3 billion is the pre-opening direct budget, and KRW 183.9 billion includes linked road, tourism and cultural projects. Treating them as identical categories—or adding them together—would distort the fiscal picture. The KRW 700 million content supplement cleared the budget committee on September 17, but final plenary action, contracts and actual spending have not been confirmed, so it should not yet be added to KRW 71.3 billion as final expenditure. Neither the 13-day attendance figure of 128,217 nor the 67,000 visits on September 25 and about 60,000 on September 26 represents paid admissions alone. The totals may include publicly funded staff visits and re-entry, while temporary holiday waivers and continuing island-resident and birthday policies were also in force; paid, free, group and invited admissions therefore require separate reporting. Allegations in the September 21 complaint—including breach of trust, legal violations, false official documents, inflated contract prices and an intent to manipulate attendance—are the complainant's claims, not facts established or disposed of by investigators.",
   },
   sources: [
+{
+  "label": {
+    "ko": "여수세계섬박람회 조직위원회 · 여수세계섬박람회, 10월 문턱 낮추고 품 넓힌다",
+    "en": "Yeosu World Island Fair organizing committee · Island fair expands free admission and October programming"
+  },
+  "url": "https://yeosu2026.or.kr/6_4/281"
+},
     {
       label: { ko: "뉴시스 — 2018년 세계 섬 박람회 구상 공개", en: "Newsis — World island fair idea made public in 2018" },
       url: "https://www.newsis.com/view/NISX20180906_0000411211",

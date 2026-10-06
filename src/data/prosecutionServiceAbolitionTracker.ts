@@ -15,21 +15,21 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     en: "The Prosecution Service Is Disappearing. Where Will the State's Investigative Power Go?",
   },
   summary: {
-    ko: "2026년 10월 2일 검찰청이 폐지되고 공소청과 중대범죄수사청이 출범합니다. 이 기록은 검찰개혁이라는 이름보다 직접수사·기소·영장·불송치 통제 권한이 어느 기관으로 이동하는지, 인력과 예산·사건 이관이 실제로 준비됐는지를 따라갑니다.",
-    en: "On October 2, 2026, South Korea's Prosecution Service will be abolished and replaced by a Prosecution Agency and a Serious Crimes Investigation Agency. This record follows where the powers to investigate, indict, seek warrants and review non-referral decisions actually move—and whether staffing, budgets and case transfers are ready.",
-  },
+  "ko": "2026년 10월 2일 검찰청이 폐지되고 공소청과 중대범죄수사청이 출범했습니다. 중수청은 정원 2,874명 중 1,900명으로 문을 열었고 첫날 전산·민원 접수 혼선이 보도됐습니다. 이 기록은 수사·기소·영장·불송치 통제 권한의 이동과 사건 이관, 시민의 구제 통로가 실제로 작동하는지를 따라갑니다.",
+  "en": "South Korea’s Prosecution Service was abolished on October 2, 2026, when the Prosecution Agency and Serious Crimes Investigation Agency opened. The investigation agency began with 1,900 of 2,874 authorized staff, amid reported IT and service-desk disruption. This tracker follows the transfer of investigative, charging, warrant and non-referral review powers, case handovers and access to remedies."
+},
   status: {
-    ko: "출범 4일 전·기소중지 2,168건 이관 지침·개정 형소법 헌법심판 진행",
-    en: "4 days to launch · Transfer ordered for 2,168 suspended cases · Constitutional challenge pending",
-  },
+  "ko": "공소청·중수청 출범·인력 부족과 사건 이관 추적",
+  "en": "Agencies launched · Staffing shortfall and case transfers tracked"
+},
   openedAt: "2025-09-05",
   publishedAt: "2026-09-15",
-  updatedAt: "2026-09-28",
+  updatedAt: "2026-10-06",
   continuationEligible: true,
   nextCheck: {
-    ko: "사회적 약자 대상 7대 범죄의 보완·재수사 근거를 담은 중수청법 개정안의 공포일·법률번호와 최종 조문, 2차 특례임용 201명의 최종 선발 인원과 5급 이상 임용 예정자 212명의 확정·발령 결과, 공소청 직제·검사정원법 시행령의 공포문과 출범일 실제 검사 약 1,900명·형사법무직 938명 배치 결과, 검찰 직접 지명수배 기소중지 사건 2,168건의 경찰·특사경 이관 완료 건수와 수배 재입력 공백, 디넷에 남은 디지털증거 4만8천58건의 삭제·이관·잔존 건수와 기록 보존 절차, 개정 형사소송법 권한쟁의심판 사건번호와 효력정지 가처분 결정, 김지용 중수청장 후보자의 인사청문요청서 제출·청문 일정, 이정현 검찰총장 직무대행이 밝힌 중수청·경찰과의 업무협약과 협력 절차, 경찰 현장지원 체계와 10월 2일 사건 이관·KICS 필수 기능 가동 여부",
-    en: "Promulgation date, act number and final text of the amendment covering supplementary and renewed investigations in seven vulnerable-victim crime categories; final selections from the 201 second-round applicants and confirmation and appointment of the 212 provisional senior staff; promulgated texts of the Prosecution Agency organization and prosecutor-ceiling decrees and the actual launch deployment of about 1,900 prosecutors and 938 criminal-legal-service staff; completed transfers of the 2,168 suspended fugitive cases from prosecutors to police or special judicial police and any gap while wanted notices are re-entered; counts of the 48,058 D-Net digital-evidence records deleted, transferred or retained and the audit trail for those actions; the Constitutional Court case number and interim-ruling result in the challenge to the revised Criminal Procedure Act; submission of the confirmation request and a hearing date for nominee Kim Ji-yong; any memorandum and working procedures with the investigation agency and police announced by acting prosecutor general Lee Jeong-hyeon; police field-support arrangements; and October 2 case transfers and essential KICS functions",
-  },
+  "ko": "출범 첫날 전산·민원 혼선의 해소 시점, 정원과 실제 근무 인원, 경찰·중수청 사건 이관 완료 건수와 기록·증거 보존, 90일 유예기간의 시효 임박 사건 처리 결과, 불송치·부실수사에 대한 시민의 이의제기 통로",
+  "en": "Resolution of launch-day IT and service-desk disruption; authorized versus actual staff; completed case transfers and preservation of records and evidence; handling of cases nearing limitation deadlines during the 90-day transition; and citizens’ remedies for deficient investigations and non-referral decisions"
+},
   heroImage: {
     src: "images/monitoring/prosecution-service-abolition-tracker-hero.webp",
     alt: {
@@ -46,10 +46,24 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     },
   },
   sourceBasis: {
-    ko: "정부조직법·공소청법·중대범죄수사청법·형사소송법과 시행령·직제 등 공포된 법령을 기준으로 삼았습니다. 9월 22일 국무회의가 의결한 공소청 직제·검사정원법 시행령안은 심사 중이던 9월 21일 수정안과 구분했고, 검사 법정 정원 2,292명과 실제 출범 계획 인원 약 1,900명도 같은 수치로 합치지 않았습니다. 국회 본회의를 통과했지만 공포 전인 중수청법 개정안, 아직 발령 전인 중수청 임용 예정자, 국회 의결 전인 2027년도 예산안은 확정된 제도·인사·예산과 구분했습니다. 기소중지 2,168건은 9월 3일 집계와 9월 9일 이관 지침이지 이관 완료 수치가 아닙니다. 헌법심판 청구와 효력정지 신청도 개정 법률의 효력이 정지됐다는 뜻이 아닙니다. 언론 보도는 원문 제목·공개일·사진을 대조했고 사용 제외 매체가 직접·간접 출처로 들어오지 않았는지도 확인했습니다.",
-    en: "This record is anchored in promulgated statutes and decrees: the Government Organization Act, the Prosecution Agency Act, the Serious Crimes Investigation Agency Act, the Criminal Procedure Act and their implementing rules. The Prosecution Agency organization and prosecutor-ceiling decrees approved by the Cabinet on September 22 are distinguished from the September 21 drafts then still under review, while the statutory ceiling of 2,292 prosecutors is kept separate from the planned launch staffing of about 1,900. The investigation-agency amendment passed by Parliament but not yet promulgated, provisional staff not yet formally appointed, and the government's still-unapproved 2027 budget proposal remain separate from settled law, appointments and appropriations. The 2,168 suspended cases are a September 3 tally covered by a September 9 transfer directive, not a completed-transfer count. Filing a constitutional competence dispute and an interim application likewise does not suspend the amended law. Original headlines, publication dates and images were cross-checked, including for excluded direct or indirect sources.",
-  },
+  "ko": "10월 2일 실제 출범과 정원·현원, 민원 접수·전산 운영은 뉴시스 보도와 공소청 발표를 인용한 보도로 갱신했습니다. 기존 준비 과정은 당시 확인 날짜를 유지합니다. 정원과 실제 근무 인원, 이관 지침과 완료 건수, 고발 접수와 수사 결과를 구분합니다.",
+  "en": "The October 2 launch, authorized and actual staffing, and service-desk and IT operations are updated from Newsis reporting and its account of the Prosecution Agency announcement. Earlier preparations retain their original check dates. Authorized staffing, actual personnel, transfer instructions, completed transfers, complaints and investigative findings remain separate."
+},
   keyChanges: [
+{
+  "date": "2026-10-02",
+  "text": {
+  "ko": "공소청·중수청 공식 출범, 민원 접수와 전산 혼선",
+  "en": "New agencies open amid service-desk and IT disruption"
+}
+},
+{
+  "date": "2026-10-02",
+  "text": {
+  "ko": "공소청 총정원 8,182명, 시효 임박 사건에는 90일 유예 대응",
+  "en": "Prosecution Agency staffing ceiling and 90-day transition arrangements"
+}
+},
     {
       date: "2026-09-01",
       text: {
@@ -171,6 +185,68 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+{
+  "date": "2026-10-02",
+  "title": {
+    "ko": "공소청·중수청 공식 출범, 민원 접수와 전산 혼선",
+    "en": "New agencies open amid service-desk and IT disruption"
+  },
+  "description": {
+    "ko": "검찰청이 폐지되고 공소청과 중수청이 공식 출범했습니다. 뉴시스에 따르면 중수청은 정원 2,874명의 66.1%인 1,900명으로 시작했고, 청사 업무망과 장비 준비가 미비하다는 현장 설명이 나왔습니다. 서울중앙지방공소청 민원 시스템은 오전 접수가 지연됐다가 점심 이후 정상화됐습니다. 출범 당일 확인된 혼선이며 이후에도 같은 장애가 계속됐는지는 따로 확인해야 합니다.",
+    "en": "The Prosecution Service closed and the two successor agencies opened. Newsis reported that the investigation agency began with 1,900 staff, 66.1 percent of its 2,874 authorized posts, with staff describing incomplete network and equipment provision. The Seoul Central Prosecution Agency’s service system delayed morning applications and resumed after lunchtime. These are launch-day disruptions; their subsequent duration remains to be verified."
+  },
+  "change": {
+    "ko": "검찰청이 폐지되고 공소청과 중수청이 공식 출범했습니다. 뉴시스에 따르면 중수청은 정원 2,874명의 66.1%인 1,900명으로 시작했고, 청사 업무망과 장비 준비가 미비하다는 현장 설명이 나왔습니다. 서울중앙지방공소청 민원 시스템은 오전 접수가 지연됐다가 점심 이후 정상화됐습니다. 출범 당일 확인된 혼선이며 이후에도 같은 장애가 계속됐는지는 따로 확인해야 합니다.",
+    "en": "The Prosecution Service closed and the two successor agencies opened. Newsis reported that the investigation agency began with 1,900 staff, 66.1 percent of its 2,874 authorized posts, with staff describing incomplete network and equipment provision. The Seoul Central Prosecution Agency’s service system delayed morning applications and resumed after lunchtime. These are launch-day disruptions; their subsequent duration remains to be verified."
+  },
+  "status": "confirmed",
+  "sources": [
+    {
+      "publisher": {
+        "ko": "뉴시스",
+        "en": "Newsis"
+      },
+      "title": {
+        "ko": "중수청·공소청 출범 첫날…민원실도 법정도 곳곳 혼선·우려",
+        "en": "Confusion at service desks and courts on the agencies’ first day"
+      },
+      "url": "https://nwww.newsis.com/view/NISX20261002_0003812766",
+      "publishedAt": "2026-10-02",
+      "kind": "article"
+    }
+  ]
+},
+{
+  "date": "2026-10-02",
+  "title": {
+    "ko": "공소청 총정원 8,182명, 시효 임박 사건에는 90일 유예 대응",
+    "en": "Prosecution Agency staffing ceiling and 90-day transition arrangements"
+  },
+  "description": {
+    "ko": "공소청이 발표한 총정원은 8,182명, 검사 정원은 2,292명입니다. 검사 현원은 정원의 80~85% 수준으로 출범했다고 보도됐습니다. 직접수사 조직은 폐지·전환됐고, 기존 미제 사건은 경찰·중수청 등에 이관하되 시효가 임박한 사건은 출범일부터 90일 유예기간에 최대한 처리할 방침입니다. 정원과 실제 근무 인원, 이관 계획과 완료 건수는 각각 확인합니다.",
+    "en": "The Prosecution Agency announced an overall ceiling of 8,182 posts, including 2,292 prosecutors; actual prosecutor staffing was reported at 80–85 percent of that ceiling. Direct-investigation units were removed or converted. Pending cases are to move to police and the investigation agency, while cases nearing limitation deadlines are to be addressed during a 90-day transitional period. Authorized posts, actual staffing and completed transfers are separate measures."
+  },
+  "change": {
+    "ko": "공소청이 발표한 총정원은 8,182명, 검사 정원은 2,292명입니다. 검사 현원은 정원의 80~85% 수준으로 출범했다고 보도됐습니다. 직접수사 조직은 폐지·전환됐고, 기존 미제 사건은 경찰·중수청 등에 이관하되 시효가 임박한 사건은 출범일부터 90일 유예기간에 최대한 처리할 방침입니다. 정원과 실제 근무 인원, 이관 계획과 완료 건수는 각각 확인합니다.",
+    "en": "The Prosecution Agency announced an overall ceiling of 8,182 posts, including 2,292 prosecutors; actual prosecutor staffing was reported at 80–85 percent of that ceiling. Direct-investigation units were removed or converted. Pending cases are to move to police and the investigation agency, while cases nearing limitation deadlines are to be addressed during a 90-day transitional period. Authorized posts, actual staffing and completed transfers are separate measures."
+  },
+  "status": "confirmed",
+  "sources": [
+    {
+      "publisher": {
+        "ko": "뉴시스·파이낸셜뉴스",
+        "en": "Newsis / Financial News"
+      },
+      "title": {
+        "ko": "공소청, 검사 2292명으로 출발…구속영장·기소 전 피의자 면담",
+        "en": "Prosecution Agency launches with a 2,292-prosecutor ceiling and pre-decision interviews"
+      },
+      "url": "https://www.fnnews.com/news/202610021031073056",
+      "publishedAt": "2026-10-02",
+      "kind": "article"
+    }
+  ]
+},
     {
       date: "2025-09-05",
       title: {
@@ -955,6 +1031,14 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+{
+  "ko": "검찰청이 폐지되고 공소청과 중수청이 공식 출범했습니다. 뉴시스에 따르면 중수청은 정원 2,874명의 66.1%인 1,900명으로 시작했고, 청사 업무망과 장비 준비가 미비하다는 현장 설명이 나왔습니다. 서울중앙지방공소청 민원 시스템은 오전 접수가 지연됐다가 점심 이후 정상화됐습니다. 출범 당일 확인된 혼선이며 이후에도 같은 장애가 계속됐는지는 따로 확인해야 합니다.",
+  "en": "The Prosecution Service closed and the two successor agencies opened. Newsis reported that the investigation agency began with 1,900 staff, 66.1 percent of its 2,874 authorized posts, with staff describing incomplete network and equipment provision. The Seoul Central Prosecution Agency’s service system delayed morning applications and resumed after lunchtime. These are launch-day disruptions; their subsequent duration remains to be verified."
+},
+{
+  "ko": "공소청이 발표한 총정원은 8,182명, 검사 정원은 2,292명입니다. 검사 현원은 정원의 80~85% 수준으로 출범했다고 보도됐습니다. 직접수사 조직은 폐지·전환됐고, 기존 미제 사건은 경찰·중수청 등에 이관하되 시효가 임박한 사건은 출범일부터 90일 유예기간에 최대한 처리할 방침입니다. 정원과 실제 근무 인원, 이관 계획과 완료 건수는 각각 확인합니다.",
+  "en": "The Prosecution Agency announced an overall ceiling of 8,182 posts, including 2,292 prosecutors; actual prosecutor staffing was reported at 80–85 percent of that ceiling. Direct-investigation units were removed or converted. Pending cases are to move to police and the investigation agency, while cases nearing limitation deadlines are to be addressed during a 90-day transitional period. Authorized posts, actual staffing and completed transfers are separate measures."
+},
     {
       ko: "검찰청법은 2026년 10월 2일 폐지되고 공소청법과 중수청법이 같은 날 시행됩니다.",
       en: "The Prosecution Office Act will be repealed on October 2, 2026, when the two successor-agency acts take effect.",
@@ -968,36 +1052,36 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       en: "The Serious Crimes Investigation Agency sits under the Interior Ministry and is authorized for headquarters, six regional offices and 2,874 staff.",
     },
     {
-      ko: "2027년도 정부 예산안은 중수청 4,724억 원, 공소청 1조854억 원을 편성했지만 아직 국회가 확정한 예산은 아닙니다.",
-      en: "The government's 2027 proposal allocates KRW 472.4 billion to the investigation agency and KRW 1.0854 trillion to the prosecution agency, but Parliament has not enacted those amounts.",
+      ko: "9월 28일 확인 기록: 2027년도 정부 예산안은 중수청 4,724억 원, 공소청 1조854억 원을 편성했지만 아직 국회가 확정한 예산은 아닙니다.",
+      en: "Record checked on September 28: The government's 2027 proposal allocates KRW 472.4 billion to the investigation agency and KRW 1.0854 trillion to the prosecution agency, but Parliament has not enacted those amounts.",
     },
     {
-      ko: "국무회의는 9월 22일 공소청 직제와 검사정원법 시행령안을 의결했습니다. 검사 법정 정원은 2,292명으로 유지하지만 결원을 채우지 않아 약 1,900명으로 출범하고, 수사관은 2,048명을 줄여 형사법무직 938명만 남기는 계획입니다.",
-      en: "On September 22, the Cabinet approved the Prosecution Agency organization and prosecutor-ceiling decrees. The statutory ceiling remains 2,292, but the agency plans to launch with about 1,900 prosecutors by leaving vacancies unfilled; 2,048 investigator posts will be removed, leaving 938 criminal-legal-service staff.",
+      ko: "9월 28일 확인 기록: 국무회의는 9월 22일 공소청 직제와 검사정원법 시행령안을 의결했습니다. 검사 법정 정원은 2,292명으로 유지하지만 결원을 채우지 않아 약 1,900명으로 출범하고, 수사관은 2,048명을 줄여 형사법무직 938명만 남기는 계획입니다.",
+      en: "Record checked on September 28: On September 22, the Cabinet approved the Prosecution Agency organization and prosecutor-ceiling decrees. The statutory ceiling remains 2,292, but the agency plans to launch with about 1,900 prosecutors by leaving vacancies unfilled; 2,048 investigator posts will be removed, leaving 938 criminal-legal-service staff.",
     },
     {
-      ko: "사회적 약자 대상 7대 범죄의 보완·재수사를 중수청이 맡을 수 있도록 하는 개정안은 9월 17일 국회 본회의를 통과하고 18일 정부로 이송됐습니다. 아직 공포된 법률은 아닙니다.",
-      en: "An amendment allowing the new agency to conduct supplementary or renewed investigations in seven vulnerable-victim crime categories passed the National Assembly on September 17 and was transmitted to the government on September 18. It has not yet been promulgated as law.",
+      ko: "9월 28일 확인 기록: 사회적 약자 대상 7대 범죄의 보완·재수사를 중수청이 맡을 수 있도록 하는 개정안은 9월 17일 국회 본회의를 통과하고 18일 정부로 이송됐습니다. 아직 공포된 법률은 아닙니다.",
+      en: "Record checked on September 28: An amendment allowing the new agency to conduct supplementary or renewed investigations in seven vulnerable-victim crime categories passed the National Assembly on September 17 and was transmitted to the government on September 18. It has not yet been promulgated as law.",
     },
     {
-      ko: "경찰청은 9월 18일 개정 형사소송법 전국 의무교육을 시작했고, 이달 말부터 경찰서·시도경찰청·국가수사본부에 단계별 현장 상담·지원 조직을 운영할 계획입니다.",
-      en: "The National Police Agency began mandatory nationwide training on the revised Criminal Procedure Act on September 18 and plans tiered consultation and support teams at police stations, provincial agencies and the National Office of Investigation by month-end.",
+      ko: "9월 28일 확인 기록: 경찰청은 9월 18일 개정 형사소송법 전국 의무교육을 시작했고, 이달 말부터 경찰서·시도경찰청·국가수사본부에 단계별 현장 상담·지원 조직을 운영할 계획입니다.",
+      en: "Record checked on September 28: The National Police Agency began mandatory nationwide training on the revised Criminal Procedure Act on September 18 and plans tiered consultation and support teams at police stations, provincial agencies and the National Office of Investigation by month-end.",
     },
     {
-      ko: "중수청 2차 특례임용 추가 지원자는 201명으로 보도됐습니다. 1차 지원자 가운데 5급 이상 임용 예정자는 212명이며 검사 80명이 포함됐지만, 명단은 아직 최종 확정·발령 전입니다.",
-      en: "The second special-transfer round drew a reported 201 additional applicants. The first-round pool produced 212 provisional appointees at Grade 5 or above, including 80 prosecutors, but the list has not yet been finalized or formally appointed.",
+      ko: "9월 28일 확인 기록: 중수청 2차 특례임용 추가 지원자는 201명으로 보도됐습니다. 1차 지원자 가운데 5급 이상 임용 예정자는 212명이며 검사 80명이 포함됐지만, 명단은 아직 최종 확정·발령 전입니다.",
+      en: "Record checked on September 28: The second special-transfer round drew a reported 201 additional applicants. The first-round pool produced 212 provisional appointees at Grade 5 or above, including 80 prosecutors, but the list has not yet been finalized or formally appointed.",
     },
     {
-      ko: "법무부는 이정현 수원고검장을 9월 23일자로 대검 차장검사에 전보했고, 이 차장이 검찰총장 직무를 대행하며 공소청 출범 준비를 지휘하고 있습니다.",
-      en: "The Justice Ministry transferred Lee Jeong-hyeon from chief of the Suwon High Prosecutors' Office to deputy prosecutor general effective September 23; he is acting prosecutor general and directing preparations for the Prosecution Agency launch.",
+      ko: "9월 28일 확인 기록: 법무부는 이정현 수원고검장을 9월 23일자로 대검 차장검사에 전보했고, 이 차장이 검찰총장 직무를 대행하며 공소청 출범 준비를 지휘하고 있습니다.",
+      en: "Record checked on September 28: The Justice Ministry transferred Lee Jeong-hyeon from chief of the Suwon High Prosecutors' Office to deputy prosecutor general effective September 23; he is acting prosecutor general and directing preparations for the Prosecution Agency launch.",
     },
     {
-      ko: "대검은 9월 9일 검찰이 직접 지명수배한 기소중지 사건 2,168건을 경찰·특별사법경찰로 넘기도록 지시했습니다. 2,168건은 9월 3일 기준 대상 사건 수이며 실제 이관 완료 건수는 아직 공개되지 않았습니다.",
-      en: "On September 9, the Supreme Prosecutors' Office ordered the transfer to police or special judicial police of 2,168 suspended fugitive cases initiated by prosecutors. The figure is the number identified as of September 3, not a published count of completed transfers.",
+      ko: "9월 28일 확인 기록: 대검은 9월 9일 검찰이 직접 지명수배한 기소중지 사건 2,168건을 경찰·특별사법경찰로 넘기도록 지시했습니다. 2,168건은 9월 3일 기준 대상 사건 수이며 실제 이관 완료 건수는 아직 공개되지 않았습니다.",
+      en: "Record checked on September 28: On September 9, the Supreme Prosecutors' Office ordered the transfer to police or special judicial police of 2,168 suspended fugitive cases initiated by prosecutors. The figure is the number identified as of September 3, not a published count of completed transfers.",
     },
     {
-      ko: "오세현 검사는 9월 22일 개정 형사소송법을 상대로 권한쟁의심판과 효력정지 가처분을 신청했습니다. 헌법재판소가 심리 중이지만 법 시행을 정지한 결정은 아직 없습니다.",
-      en: "On September 22, prosecutor Oh Se-hyeon filed a constitutional competence dispute and an application to suspend the revised Criminal Procedure Act. The Constitutional Court is reviewing the filings, but has not issued an order halting the law.",
+      ko: "9월 28일 확인 기록: 오세현 검사는 9월 22일 개정 형사소송법을 상대로 권한쟁의심판과 효력정지 가처분을 신청했습니다. 헌법재판소가 심리 중이지만 법 시행을 정지한 결정은 아직 없습니다.",
+      en: "Record checked on September 28: On September 22, prosecutor Oh Se-hyeon filed a constitutional competence dispute and an application to suspend the revised Criminal Procedure Act. The Constitutional Court is reviewing the filings, but has not issued an order halting the law.",
     },
     {
       ko: "법무부가 국회에 제출한 자료에 따르면 2012년 4월부터 2026년 6월까지 디넷에 등록된 디지털증거 19만7천460건 가운데 4만8천58건이 남아 있습니다. 대검은 종결 사건 증거를 삭제하고 수사·기소중지 사건 증거는 관할 수사기관에 넘긴 뒤 디넷에서 폐기할 방침입니다.",
@@ -1115,6 +1199,20 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     },
   ],
   sources: [
+{
+  "label": {
+    "ko": "뉴시스 · 중수청·공소청 출범 첫날…민원실도 법정도 곳곳 혼선·우려",
+    "en": "Newsis · Confusion at service desks and courts on the agencies’ first day"
+  },
+  "url": "https://nwww.newsis.com/view/NISX20261002_0003812766"
+},
+{
+  "label": {
+    "ko": "뉴시스·파이낸셜뉴스 · 공소청, 검사 2292명으로 출발…구속영장·기소 전 피의자 면담",
+    "en": "Newsis / Financial News · Prosecution Agency launches with a 2,292-prosecutor ceiling and pre-decision interviews"
+  },
+  "url": "https://www.fnnews.com/news/202610021031073056"
+},
     {
       label: { ko: "정부조직법 개정이유·법률 제21065호", en: "Government Organization Act amendment, Act No. 21065" },
       url: "https://www.law.go.kr/LSW/lsRvsRsnListP.do?chrClsCd=010102&lsId=001720&lsRvsGubun=all",

@@ -9,17 +9,20 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The appointment ended in withdrawal. Where do the remaining inquiries stand?",
   },
   summary: {
-    ko: "김승원 전 법무부 장관 후보자의 사퇴로 인사 절차는 끝났습니다. 이 페이지는 제넨셀 민원, 가족 협동조합, 전직 보좌진 탄원서와 경기도당 회계 의혹 가운데 확인된 사실과 당사자 주장, 아직 남은 수사·검증 과제를 구분해 기록합니다.",
-    en: "Kim Seung-won's withdrawal ended the appointment process. This page separates established facts, interested parties' claims and unresolved investigative questions involving the Genencell petition, the family cooperative, former aides' petitions and provincial-party accounting allegations.",
-  },
-  status: { ko: "후보자 사퇴·관련 수사 추적", en: "Nominee withdrawn · Related cases tracked" },
+  "ko": "김승원 전 법무부 장관 후보자의 사퇴 이후, 제넨셀 창업자의 항소심 판결에서 승인 청탁 경위가 다뤄졌고 도당 회계 의혹 고발장이 중수청에 접수됐습니다. 이 기록은 관련 피고인의 판결과 김 의원 본인의 형사책임, 고발 접수와 수사 결과를 나눠 추적합니다.",
+  "en": "After Kim Seung-won’s withdrawal as justice minister nominee, the Genencell founder’s appeal judgment addressed the approval request, and a party-accounting complaint was filed with the new investigation agency. This record separately tracks the related defendant’s judgment, Kim’s own criminal liability, receipt of complaints and investigative findings."
+},
+  status: {
+  "ko": "제넨셀 창업자 항소심 판단·도당 회계 의혹 신규 고발 추적",
+  "en": "Genencell founder’s appeal ruling · New party-accounting complaint tracked"
+},
   openedAt: "2026-08-31",
   publishedAt: "2026-09-14",
-  updatedAt: "2026-09-26",
+  updatedAt: "2026-10-06",
   nextCheck: {
-    ko: "식약처가 열람을 제시한 제넨셀 임상시험계획 심사자료의 실제 공개 범위와 국회의 추가 자료 요구 결과, 9월 18일 김 전 후보자와 전직 보좌진의 면담 여부·대화 내용에 대한 당사자의 추가 해명과 객관 자료, 2011년 자전거 모임 원게시물과 참석자 신원에 대한 추가 확인, 후보자 측이 예고한 AI 합성물 유포 관련 법적 조치의 실제 착수 여부, 전직 보좌진이 공개한 텔레그램 전달 정황에 대한 청와대의 공식 확인과 대통령의 실제 문서 열람·보고 여부, 9월 22일 서울경찰청에 접수된 강제추행·직권남용 고발의 사건 배당·정식 수사 착수 여부와 탄원서 원문 확보, 그 밖의 개별 의혹에 관한 추가 고발 또는 수사 단서 확보 여부, 전직 보좌진이 작성한 45쪽 경기도당 회계 의혹 자료의 원문·회계 증빙과 김 전 후보자·민주당 경기도당·청와대의 공식 해명, 경기도선관위의 조사 범위·결과와 수사기관 고발 여부, 청와대가 밝힌 인사검증 절차 보완 검토 결과, 후임 법무부 장관 후보자 지명과 인사청문 절차, 9월 22일 제넨셀 창립자 강세찬 씨의 112억 원 투자 사기 혐의 보완수사 소환, 9월 23일 고발인 조사가 시작된 제넨셀 임상 승인 관련 신규 고발 사건, 경찰이 검찰 자료를 검토 중인 기존 제넨셀 민원 의혹 고소 사건과 가족 협동조합 고발 사건의 진행, 11월 12일 오후 4시 관련 브로커·제넨셀 설립자 결심공판",
-    en: "The actual scope of access to the Genencell clinical-trial application review records that the regulator offered for inspection, and the outcome of parliament's renewed document request; any further response or objective record concerning the reported September 18 meeting between Kim and a former aide and what was discussed; further verification of the original 2011 cycling-post record and the participants' identities; whether Kim's office follows through on threatened legal action over circulating AI-generated images; an official presidential-office response to the Telegram delivery evidence disclosed by a former aide, whether the president actually opened the document or received a briefing, and whether the September 22 forcible-indecency and abuse-of-authority complaint filed with Seoul police is assigned and advances to a formal investigation, whether police obtain the underlying petitions, and whether any further complaint or investigative lead emerges from the other individual allegations; the full document and accounting evidence behind the former aide's 45-page compilation of alleged provincial-party accounting irregularities, official responses from Kim, the Democratic Party's Gyeonggi branch and the presidential office, the scope and outcome of the Gyeonggi election commission's inquiry, and whether the matter is referred to investigators; the outcome of the presidential office's review of improvements to personnel vetting; the nomination and confirmation process for a successor justice minister; the September 22 supplementary-investigation questioning of Genencell founder Kang Se-chan over an alleged KRW 11.2 billion investment fraud; progress after the September 23 complainant questioning in the newly filed Genencell clinical-approval case, the existing Genencell petition complaint for which police are reviewing prosecution records, and the family-cooperative complaint; and the November 12, 4 p.m. closing hearing for the alleged broker and Genencell founder",
-  },
+  "ko": "제넨셀 창업자 항소심 판결 원문과 상고·확정 여부, 김 의원 관련 별도 수사 결과와 당사자 반박, 10월 2일 수원지방중수청에 접수된 도당 회계 의혹 고발의 배당·수사 착수, 기존 선관위·경찰 조사와의 관계",
+  "en": "The founder’s full appeal judgment and any further appeal or finality; findings in separate inquiries involving Kim and responses from the parties; assignment and investigation of the October 2 Suwon complaint; and its relationship to election-commission and police inquiries"
+},
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
     alt: {
@@ -39,23 +42,23 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   displayMode: "layered",
   snapshot: {
     conclusion: {
-      ko: "후보자 임명 절차는 종료됐지만, 제넨셀 민원·가족 협동조합·전직 보좌진이 제기한 의혹에 관한 경찰 수사와 사실 확인은 끝나지 않았습니다.",
-      en: "The appointment process has ended, but police inquiries and fact-checking concerning the Genencell petition, the family cooperative and former aides' allegations remain unresolved.",
-    },
+  "ko": "뉴시스는 중수청 출범 첫날 김승원 의원의 경기도당위원장 시절 회계부정 의혹 고발장이 수원지방중수청에 접수됐다고 보도했습니다. 고발 접수라는 새 절차를 기록하며, 기존 선관위 조사·경찰 사건과의 관계, 배당과 실제 수사 착수는 계속 확인합니다.",
+  "en": "Newsis reported that a complaint alleging accounting irregularities during Kim’s tenure as Gyeonggi provincial-party chair was filed with the Suwon investigation agency on its opening day. The new procedural fact is receipt of the complaint. Its relationship to election-commission and police inquiries, assignment and any formal investigation remain to be established."
+},
     keyFacts: [
-      {
-        ko: "김승원 후보자는 9월 19일 자진 사퇴했고 청와대는 결정을 존중한다고 밝혔습니다.",
-        en: "Kim withdrew on September 19, and the presidential office said it respected his decision.",
-      },
-      {
-        ko: "김 전 후보자 관련 피고발 사건 4건은 영등포경찰서가 수사 중입니다.",
-        en: "Yeongdeungpo Police Station is investigating four complaints involving Kim.",
-      },
-      {
-        ko: "전직 보좌진의 탄원서와 45쪽 회계 의혹 자료는 존재가 확인됐지만 개별 내용의 진위와 위법성은 확정되지 않았습니다.",
-        en: "The former aides' petitions and 45-page accounting-allegation file have been reported and obtained, but the truth and legality of the individual claims remain unestablished.",
-      },
-    ],
+  {
+    "ko": "뉴시스는 중수청 출범 첫날 김승원 의원의 경기도당위원장 시절 회계부정 의혹 고발장이 수원지방중수청에 접수됐다고 보도했습니다. 고발 접수라는 새 절차를 기록하며, 기존 선관위 조사·경찰 사건과의 관계, 배당과 실제 수사 착수는 계속 확인합니다.",
+    "en": "Newsis reported that a complaint alleging accounting irregularities during Kim’s tenure as Gyeonggi provincial-party chair was filed with the Suwon investigation agency on its opening day. The new procedural fact is receipt of the complaint. Its relationship to election-commission and police inquiries, assignment and any formal investigation remain to be established."
+  },
+  {
+    "ko": "동아일보는 1일 서울고법 형사7부가 제넨셀 창업자 강씨의 항소심에서 양씨에게 건넨 6억 원을 임상시험 승인 알선 대가로 인정해 관련 무죄 판단을 뒤집고 징역 4년과 벌금 4천만 원을 선고·법정구속했다고 보도했습니다. 판결문에는 김 의원을 통한 청탁 경위와 신약 개발의 금전적 이득을 알면서 협조했다는 판단이 담겼습니다. 이 판결의 피고인은 강씨입니다. 김 의원 본인의 형사책임과 관련 사건의 최종 확정 여부는 별도로 추적합니다.",
+    "en": "Dong-A Ilbo reported on October 1 that the Seoul High Court’s Criminal Division 7 recognized a KRW 600 million payment to Yang as consideration for intercession in clinical-trial approval, reversing the related acquittal. It reported a four-year prison term, a KRW 40 million fine and detention in court for Genencell founder Kang. The judgment describes a request through Kim and his cooperation while aware of the potential financial gains from drug development. Kang was the defendant in this ruling. Kim’s own criminal liability and the final status of related proceedings require separate tracking."
+  },
+  {
+    "ko": "김승원 후보자는 9월 19일 자진 사퇴했고 청와대는 결정을 존중한다고 밝혔습니다.",
+    "en": "Kim withdrew on September 19, and the presidential office said it respected his decision."
+  }
+],
     tracking: [
       { ko: "경찰의 제넨셀 민원 의혹 자료 검토와 신규 고발 사건의 후속 조사", en: "Police review of the Genencell records and follow-up in the newly filed complaint" },
       { ko: "식약처의 제넨셀 심사자료 열람 범위와 국회의 추가 제출 요구", en: "Scope of access to the regulator's Genencell review records and parliament's renewed request" },
@@ -64,6 +67,20 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     ],
   },
   keyChanges: [
+{
+  "date": "2026-10-02",
+  "text": {
+  "ko": "도당 회계 의혹 고발장, 수원지방중수청 접수",
+  "en": "Party-accounting complaint filed with Suwon investigation agency"
+}
+},
+{
+  "date": "2026-10-01",
+  "text": {
+  "ko": "제넨셀 창업자 항소심, 알선 대가 인정·실형 보도",
+  "en": "Founder’s appeal ruling recognizes payment for intercession"
+}
+},
     {
       date: "2026-09-26",
       text: {
@@ -255,6 +272,68 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+{
+  "date": "2026-10-02",
+  "title": {
+    "ko": "도당 회계 의혹 고발장, 수원지방중수청 접수",
+    "en": "Party-accounting complaint filed with Suwon investigation agency"
+  },
+  "description": {
+    "ko": "뉴시스는 중수청 출범 첫날 김승원 의원의 경기도당위원장 시절 회계부정 의혹 고발장이 수원지방중수청에 접수됐다고 보도했습니다. 고발 접수라는 새 절차를 기록하며, 기존 선관위 조사·경찰 사건과의 관계, 배당과 실제 수사 착수는 계속 확인합니다.",
+    "en": "Newsis reported that a complaint alleging accounting irregularities during Kim’s tenure as Gyeonggi provincial-party chair was filed with the Suwon investigation agency on its opening day. The new procedural fact is receipt of the complaint. Its relationship to election-commission and police inquiries, assignment and any formal investigation remain to be established."
+  },
+  "change": {
+    "ko": "뉴시스는 중수청 출범 첫날 김승원 의원의 경기도당위원장 시절 회계부정 의혹 고발장이 수원지방중수청에 접수됐다고 보도했습니다. 고발 접수라는 새 절차를 기록하며, 기존 선관위 조사·경찰 사건과의 관계, 배당과 실제 수사 착수는 계속 확인합니다.",
+    "en": "Newsis reported that a complaint alleging accounting irregularities during Kim’s tenure as Gyeonggi provincial-party chair was filed with the Suwon investigation agency on its opening day. The new procedural fact is receipt of the complaint. Its relationship to election-commission and police inquiries, assignment and any formal investigation remain to be established."
+  },
+  "status": "confirmed",
+  "sources": [
+    {
+      "publisher": {
+        "ko": "뉴시스",
+        "en": "Newsis"
+      },
+      "title": {
+        "ko": "중수청·공소청 출범 첫날…민원실도 법정도 곳곳 혼선·우려",
+        "en": "Confusion at service desks and courts on the agencies’ first day"
+      },
+      "url": "https://nwww.newsis.com/view/NISX20261002_0003812766",
+      "publishedAt": "2026-10-02",
+      "kind": "article"
+    }
+  ]
+},
+{
+  "date": "2026-10-01",
+  "title": {
+    "ko": "제넨셀 창업자 항소심, 알선 대가 인정·실형 보도",
+    "en": "Founder’s appeal ruling recognizes payment for intercession"
+  },
+  "description": {
+    "ko": "동아일보는 1일 서울고법 형사7부가 제넨셀 창업자 강씨의 항소심에서 양씨에게 건넨 6억 원을 임상시험 승인 알선 대가로 인정해 관련 무죄 판단을 뒤집고 징역 4년과 벌금 4천만 원을 선고·법정구속했다고 보도했습니다. 판결문에는 김 의원을 통한 청탁 경위와 신약 개발의 금전적 이득을 알면서 협조했다는 판단이 담겼습니다. 이 판결의 피고인은 강씨입니다. 김 의원 본인의 형사책임과 관련 사건의 최종 확정 여부는 별도로 추적합니다.",
+    "en": "Dong-A Ilbo reported on October 1 that the Seoul High Court’s Criminal Division 7 recognized a KRW 600 million payment to Yang as consideration for intercession in clinical-trial approval, reversing the related acquittal. It reported a four-year prison term, a KRW 40 million fine and detention in court for Genencell founder Kang. The judgment describes a request through Kim and his cooperation while aware of the potential financial gains from drug development. Kang was the defendant in this ruling. Kim’s own criminal liability and the final status of related proceedings require separate tracking."
+  },
+  "change": {
+    "ko": "동아일보는 1일 서울고법 형사7부가 제넨셀 창업자 강씨의 항소심에서 양씨에게 건넨 6억 원을 임상시험 승인 알선 대가로 인정해 관련 무죄 판단을 뒤집고 징역 4년과 벌금 4천만 원을 선고·법정구속했다고 보도했습니다. 판결문에는 김 의원을 통한 청탁 경위와 신약 개발의 금전적 이득을 알면서 협조했다는 판단이 담겼습니다. 이 판결의 피고인은 강씨입니다. 김 의원 본인의 형사책임과 관련 사건의 최종 확정 여부는 별도로 추적합니다.",
+    "en": "Dong-A Ilbo reported on October 1 that the Seoul High Court’s Criminal Division 7 recognized a KRW 600 million payment to Yang as consideration for intercession in clinical-trial approval, reversing the related acquittal. It reported a four-year prison term, a KRW 40 million fine and detention in court for Genencell founder Kang. The judgment describes a request through Kim and his cooperation while aware of the potential financial gains from drug development. Kang was the defendant in this ruling. Kim’s own criminal liability and the final status of related proceedings require separate tracking."
+  },
+  "status": "confirmed",
+  "sources": [
+    {
+      "publisher": {
+        "ko": "동아일보",
+        "en": "Dong-A Ilbo"
+      },
+      "title": {
+        "ko": "법원 “김승원, 신약 금전적 이득 알면서 협조” 제넨셀 판결문에 명시",
+        "en": "Appeal judgment describes Kim’s cooperation in Genencell approval request"
+      },
+      "url": "https://news.nate.com/view/20261001n43129?mid=n1101",
+      "publishedAt": "2026-10-01",
+      "kind": "article"
+    }
+  ]
+},
     {
       date: "2026-09-26",
       title: {
@@ -1176,6 +1255,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+{
+  "ko": "뉴시스는 중수청 출범 첫날 김승원 의원의 경기도당위원장 시절 회계부정 의혹 고발장이 수원지방중수청에 접수됐다고 보도했습니다. 고발 접수라는 새 절차를 기록하며, 기존 선관위 조사·경찰 사건과의 관계, 배당과 실제 수사 착수는 계속 확인합니다.",
+  "en": "Newsis reported that a complaint alleging accounting irregularities during Kim’s tenure as Gyeonggi provincial-party chair was filed with the Suwon investigation agency on its opening day. The new procedural fact is receipt of the complaint. Its relationship to election-commission and police inquiries, assignment and any formal investigation remain to be established."
+},
+{
+  "ko": "동아일보는 1일 서울고법 형사7부가 제넨셀 창업자 강씨의 항소심에서 양씨에게 건넨 6억 원을 임상시험 승인 알선 대가로 인정해 관련 무죄 판단을 뒤집고 징역 4년과 벌금 4천만 원을 선고·법정구속했다고 보도했습니다. 판결문에는 김 의원을 통한 청탁 경위와 신약 개발의 금전적 이득을 알면서 협조했다는 판단이 담겼습니다. 이 판결의 피고인은 강씨입니다. 김 의원 본인의 형사책임과 관련 사건의 최종 확정 여부는 별도로 추적합니다.",
+  "en": "Dong-A Ilbo reported on October 1 that the Seoul High Court’s Criminal Division 7 recognized a KRW 600 million payment to Yang as consideration for intercession in clinical-trial approval, reversing the related acquittal. It reported a four-year prison term, a KRW 40 million fine and detention in court for Genencell founder Kang. The judgment describes a request through Kim and his cooperation while aware of the potential financial gains from drug development. Kang was the defendant in this ruling. Kim’s own criminal liability and the final status of related proceedings require separate tracking."
+},
     {
       ko: "법무부는 김민전 국민의힘 의원에게 제출한 자료에서 국민의힘에 대한 정당해산심판 청구 요건을 현재까지 별도로 검토한 사실이 없다고 밝혔습니다. 김 전 후보자의 서면답변은 취임 뒤 검토 계획이었으며 법무부의 실제 검토 착수 사실과는 구분됩니다.",
       en: "In material submitted to People Power Party lawmaker Kim Min-jeon, the Ministry of Justice said it had not separately reviewed grounds for seeking dissolution of the party. Kim's written answer described what he would examine if appointed and is distinct from any actual ministry review.",
@@ -1262,6 +1349,20 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+{
+  "label": {
+    "ko": "뉴시스 · 중수청·공소청 출범 첫날…민원실도 법정도 곳곳 혼선·우려",
+    "en": "Newsis · Confusion at service desks and courts on the agencies’ first day"
+  },
+  "url": "https://nwww.newsis.com/view/NISX20261002_0003812766"
+},
+{
+  "label": {
+    "ko": "동아일보 · 법원 “김승원, 신약 금전적 이득 알면서 협조” 제넨셀 판결문에 명시",
+    "en": "Dong-A Ilbo · Appeal judgment describes Kim’s cooperation in Genencell approval request"
+  },
+  "url": "https://news.nate.com/view/20261001n43129?mid=n1101"
+},
     {
       label: {
         ko: "문화일보 — 법무부, 국민의힘 정당해산 요건 별도 검토 사실 없다고 국회 제출자료로 설명",

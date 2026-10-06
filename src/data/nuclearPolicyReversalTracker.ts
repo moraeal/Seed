@@ -19,16 +19,16 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     en: "This tracker records the shift from cancelling six planned reactors in 2017 to proceeding with two large reactors and considering more in 2026. It also follows how power demand from southwest semiconductor projects and AI data centers, regional electricity pricing and corporate-relocation policy became linked to the nuclear debate.",
   },
   status: {
-    ko: "신규 2기 부지선정·추가 원전 공론화",
-    en: "Two-reactor site selected · Further reactors under deliberation",
-  },
+  "ko": "10월 2일 원전 공론화위원회 출범·권고안과 전기본 추적",
+  "en": "Nuclear deliberation committee launched October 2 · Recommendation and plan tracked"
+},
   openedAt: "2017-10-24",
   publishedAt: "2026-09-16",
-  updatedAt: "2026-10-01",
+  updatedAt: "2026-10-06",
   nextCheck: {
-    ko: "영덕 신규 원전 예정구역 고시와 인허가 일정, 확정 총사업비·송전망·사용후핵연료 비용, 12월 원전 공론화위원회 권고안과 제12차 전력수급기본계획 정부안, 추가 원전 기수·부지·비용, 서남권 투자계획의 기업별 확정 여부, HMM을 포함한 기업 이전 과정의 동의·거부 절차",
-    en: "The planned-area designation and permitting schedule for the Yeongdeok reactors; finalized project, grid and spent-fuel costs; the nuclear-deliberation committee's December recommendation and the government's 12th electricity-plan draft; the number, sites and costs of any further reactors; firm-level commitments in the southwest investment package; and consent and refusal rights in corporate relocations including HMM",
-  },
+  "ko": "10월 2일 출범한 공론화위원회의 위원 구성·절차·자료 공개, 시민참여단 모집과 전문가 정보 제공, 12월 권고안 및 제12차 전기본 정부안, 추가 원전의 기수·부지·비용 결정 과정, 영덕 신규 2기의 인허가·총사업비",
+  "en": "Membership, procedures and disclosure of the committee launched October 2; citizen-panel recruitment and expert information; the December recommendation and electricity-plan draft; decisions on additional reactor numbers, sites and costs; and permitting and total costs for Yeongdeok’s two planned reactors"
+},
   heroImage: {
     src: "images/monitoring/nuclear-policy-reversal-tracker-hero.webp",
     alt: {
@@ -53,6 +53,13 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     en: "The previous administration finalized the two large reactors in the 11th electricity plan. The current administration's reversal lies in retaining that plan after review and then moving toward possible additional reactors on the basis of industrial demand. Semiconductor investment plans were negotiated with companies, while the HMM case drew allegations of forced relocation after the government announced the destination first.",
   },
   keyChanges: [
+{
+  "date": "2026-10-02",
+  "text": {
+  "ko": "원전 공론화위원회 공식 출범",
+  "en": "Nuclear public-deliberation committee formally launched"
+}
+},
     {
       date: "2025-09-13",
       text: {
@@ -97,6 +104,37 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+{
+  "date": "2026-10-02",
+  "title": {
+    "ko": "원전 공론화위원회 공식 출범",
+    "en": "Nuclear public-deliberation committee formally launched"
+  },
+  "description": {
+    "ko": "기후에너지환경부는 10월 2일 한강홍수통제소에서 원전 공론화위원회 위촉식을 열었습니다. 위원장은 은재호 한국외대 겸임교수이며, 위원회는 공론화 방향과 절차를 마련하고 국민 의견을 수렴해 정부에 권고합니다. 9월 22일 추진계획 발표에서 실제 위원회 출범 단계로 넘어갔습니다. 위원회 출범으로 추가 원전 기수와 부지가 확정된 것은 아니며, 권고안과 제12차 전기본 정부안의 연결 과정을 계속 확인합니다.",
+    "en": "The Ministry of Climate, Energy and Environment held the committee’s appointment ceremony on October 2 at the Han River Flood Control Office. Chaired by Hankuk University of Foreign Studies adjunct professor Eun Jae-ho, the committee will establish deliberation procedures, gather public views and recommend findings to the government. This advances the September 22 plan to an operating committee. Its launch does not settle the number or location of additional reactors; the link between its recommendations and the 12th electricity-plan draft remains under scrutiny."
+  },
+  "change": {
+    "ko": "기후에너지환경부는 10월 2일 한강홍수통제소에서 원전 공론화위원회 위촉식을 열었습니다. 위원장은 은재호 한국외대 겸임교수이며, 위원회는 공론화 방향과 절차를 마련하고 국민 의견을 수렴해 정부에 권고합니다. 9월 22일 추진계획 발표에서 실제 위원회 출범 단계로 넘어갔습니다. 위원회 출범으로 추가 원전 기수와 부지가 확정된 것은 아니며, 권고안과 제12차 전기본 정부안의 연결 과정을 계속 확인합니다.",
+    "en": "The Ministry of Climate, Energy and Environment held the committee’s appointment ceremony on October 2 at the Han River Flood Control Office. Chaired by Hankuk University of Foreign Studies adjunct professor Eun Jae-ho, the committee will establish deliberation procedures, gather public views and recommend findings to the government. This advances the September 22 plan to an operating committee. Its launch does not settle the number or location of additional reactors; the link between its recommendations and the 12th electricity-plan draft remains under scrutiny."
+  },
+  "status": "confirmed",
+  "sources": [
+    {
+      "publisher": {
+        "ko": "뉴시스",
+        "en": "Newsis"
+      },
+      "title": {
+        "ko": "AI 전력수요에 원전 얼마나 더 지을까…12차 전기본 원전 공론화 시동",
+        "en": "Nuclear deliberation committee launches for the 12th electricity plan"
+      },
+      "url": "https://v.daum.net/v/20261002100029264",
+      "publishedAt": "2026-10-02",
+      "kind": "article"
+    }
+  ]
+},
     {
       date: "2017-10-24",
       title: {
@@ -446,6 +484,10 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+{
+  "ko": "기후에너지환경부는 10월 2일 한강홍수통제소에서 원전 공론화위원회 위촉식을 열었습니다. 위원장은 은재호 한국외대 겸임교수이며, 위원회는 공론화 방향과 절차를 마련하고 국민 의견을 수렴해 정부에 권고합니다. 9월 22일 추진계획 발표에서 실제 위원회 출범 단계로 넘어갔습니다. 위원회 출범으로 추가 원전 기수와 부지가 확정된 것은 아니며, 권고안과 제12차 전기본 정부안의 연결 과정을 계속 확인합니다.",
+  "en": "The Ministry of Climate, Energy and Environment held the committee’s appointment ceremony on October 2 at the Han River Flood Control Office. Chaired by Hankuk University of Foreign Studies adjunct professor Eun Jae-ho, the committee will establish deliberation procedures, gather public views and recommend findings to the government. This advances the September 22 plan to an operating committee. Its launch does not settle the number or location of additional reactors; the link between its recommendations and the 12th electricity-plan draft remains under scrutiny."
+},
     {
       ko: "2017년 에너지전환 로드맵은 신규 원전 6기 백지화와 원전의 단계적 감축을 명시했습니다.",
       en: "The 2017 Energy Transition Roadmap explicitly cancelled six planned reactors and set a gradual nuclear phase-down.",
@@ -557,6 +599,13 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
   questions: [],
   proposals: [],
   sources: [
+{
+  "label": {
+    "ko": "뉴시스 · AI 전력수요에 원전 얼마나 더 지을까…12차 전기본 원전 공론화 시동",
+    "en": "Newsis · Nuclear deliberation committee launches for the 12th electricity plan"
+  },
+  "url": "https://v.daum.net/v/20261002100029264"
+},
     {
       label: { ko: "2017년 에너지전환 로드맵", en: "2017 Energy Transition Roadmap" },
       url: "https://www.kaif.or.kr/upload/nuclear1/20171031103352_6cc4cade.pdf",
