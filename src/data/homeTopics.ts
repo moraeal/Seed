@@ -4,6 +4,7 @@ import { hotIssueColumnTrackerSlugs } from "./columns";
 // articles and tracker routes here when publishing them. Unlisted routes
 // remain their own topics, so broad categories do not hide unrelated work.
 const homeTopicGroups: Record<string, string[]> = {
+  "inheritance-tax-frozen-allowances": ["/monitoring/tax/commentary/inheritance-tax-automatic-increase-2026", "/briefings/inheritance-tax-frozen-allowance-middle-class"],
   "card-sales-vat-credit-2026": ["/monitoring/tax/commentary/card-sales-credit-normalization-burden-2026", "/monitoring/tax/card-sales-vat-credit-government-bill-2026"],
   "future-response-fund": [
     "/briefings/future-response-fund-public-money",
