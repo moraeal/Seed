@@ -14,7 +14,7 @@ export type CivicSectionKey = typeof civicSections[number]["key"];
 // Policy explainers retain their separate Tax Watch listing.
 export const civicArticlePaths: Record<CivicSectionKey, string[]> = {
   campaign: ["/briefings/korean-civic-tax-watch-movement-ktr"],
-  cases: [`/briefings/${taxWatchCaseSlug}`, "/briefings/korean-civic-tax-watch-movement-ktr", ...taxCommentaries.map((article) => `/monitoring/tax/commentary/${article.slug}`)],
+  cases: ["/columns/atr-taxpayer-movement-01-california", `/briefings/${taxWatchCaseSlug}`, "/briefings/korean-civic-tax-watch-movement-ktr", ...taxCommentaries.map((article) => `/monitoring/tax/commentary/${article.slug}`)],
   notices: [`/briefings/${civicNoticeSlug}`],
 };
 export const campaignPending = {
@@ -42,6 +42,7 @@ export function getCivicSectionForArticle(path: string) {
 // Assess every new article under CONTENT_PUBLISHING_RULES.md §14 and add
 // suitable stories here in the same publishing update, regardless of category.
 export const civicLifeArticlePaths = [
+  "/columns/atr-taxpayer-movement-01-california",
   "/monitoring/tax/commentary/inheritance-tax-automatic-increase-2026",
   "/columns/citizens-dilemma-01-cafe-customer-choice",
   "/monitoring/tax/commentary/card-sales-credit-normalization-burden-2026",
