@@ -1,9 +1,10 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import { createServer } from "vite";
 
 const server = await createServer({ configFile: false, appType: "custom", server: { middlewareMode: true, hmr: false }, optimizeDeps: { noDiscovery: true } });
 try {
-  const { getHotIssueCards, selectHotIssueCards } = await server.ssrLoadModule("/src/data/hotIssueSelection.ts");
+  const { getHotIssueCards, getHomepageArchiveCards, selectHotIssueCards } = await server.ssrLoadModule("/src/data/hotIssueSelection.ts");
   const { getHomeTopic } = await server.ssrLoadModule("/src/data/homeTopics.ts");
   const { getFeaturedContentCandidates } = await server.ssrLoadModule("/src/data/featuredContent.ts");
   const { formatFeaturedDate } = await server.ssrLoadModule("/src/data/featuredHistory.ts");
@@ -53,6 +54,18 @@ try {
   for (const unavailable of [{ ...bill, review_state: "review" }, { ...bill, editorial_image: undefined }, { ...bill, editorial_image: { status: "error" } }]) {
     assert.equal(getHotIssueCards("ko", [unavailable], billHistory).length, 0, "Unpublished or unverified bills must not be promoted");
   }
+  const recovered = JSON.parse(await readFile("src/data/recoveredHomepageHistory.json", "utf8"));
+  assert(recovered.length > 12, "Recovery must extend the twelve lead-story selections");
+  assert.equal(new Set(recovered.map((entry) => entry.content_path)).size, recovered.length);
+  assert(recovered.every((entry) => /^[a-f0-9]{40}$/.test(entry.commit) && Number.isFinite(Date.parse(entry.featured_at))), "Every reconstructed introduction needs a valid source commit and date");
+  const archive = getHomepageArchiveCards("ko", [], history);
+  const expectedPaths = new Set([...recovered, ...history].map((entry) => entry.content_path).filter((path) => candidates.some((item) => item.path === path)));
+  assert.equal(archive.length, expectedPaths.size, "The complete archive must include every available recovered and selected route without a page-size cap");
+  assert(archive.every((card, index) => index === 0 || Date.parse(archive[index - 1].updatedAt) >= Date.parse(card.updatedAt)), "The entire archive stays in chronological order");
+  assert.deepEqual(getHomepageArchiveCards("en", [], history).map((card) => card.to), archive.map((card) => card.to), "Both editions preserve the complete archive");
+  assert(!archive.some((card) => card.to === "/monitoring/tax/card-sales-vat-credit-government-bill-2026"), "The withdrawn explainer must remain unpublished");
+  const actualSelection = { content_path: recovered.find((entry) => candidates.some((item) => item.path === entry.content_path)).content_path, featured_at: "2026-08-01T03:00:00Z" };
+  assert.equal(getHomepageArchiveCards("ko", [], [actualSelection]).find((card) => card.to === actualSelection.content_path).updatedAt, actualSelection.featured_at, "An actual selection timestamp takes precedence over a reconstructed date");
   console.log("Homepage-history selection checks passed.");
 } finally {
   await server.close();

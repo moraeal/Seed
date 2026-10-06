@@ -30,6 +30,9 @@ const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME,
   server.ssrLoadModule("/src/data/legislativeCommentaries.ts"),
 ]);
 const { prerenderHome } = await server.ssrLoadModule("/src/prerenderHome.tsx");
+const { getHomepageArchiveCards } = await server.ssrLoadModule("/src/data/hotIssueSelection.ts");
+const homeSnapshot = JSON.parse(await readFile(path.join(root, "src/data/homeSnapshot.json"), "utf8"));
+const homepageArchive = getHomepageArchiveCards("ko", homeSnapshot.bills, homeSnapshot.history);
 const homeHtml = new Map([["/", prerenderHome("/")], ["/en", prerenderHome("/en/")]]);
 await server.close();
 
@@ -37,7 +40,6 @@ const news = newsModule.newsArticles;
 const briefings = briefingModule.getAllBriefingsNewestFirst();
 const columns = columnModule.columns;
 const editorialColumns = columnModule.getColumnsNewestFirst();
-const hotIssueColumns = columnModule.getHotIssueColumnsNewestFirst();
 const watchCases = watchModule.publicInterestWatchCases;
 const seedWatchReferences = seedWatchModule.seedWatchReferences;
 const englishContent = siteContentModule.getContent("en");
@@ -204,10 +206,7 @@ function articleBody(route) {
   const civicSection = civicSectionsModule.civicSections.find((section) => section.path === route.path);
   const listing = civicSection ? civicSectionsModule.getCivicSectionArticles(civicSection.key, "ko").map((item) => ({ path: item.path, title: item.title, summary: item.summary }))
     : route.path === "/civic-life" ? civicSectionsModule.getCivicLifeArticles("ko").map((item) => ({ path: item.path, title: item.title, summary: item.summary }))
-    : route.path === "/news" ? [
-      ...news.map((item) => ({ path: `/news/${item.slug}`, title: item.title, summary: item.summary })),
-      ...hotIssueColumns.map((item) => ({ path: `/columns/${item.slug}`, title: item.title, summary: item.summary })),
-    ]
+    : route.path === "/news" ? homepageArchive.map((item) => ({ path: item.to, title: item.title, summary: item.latestChange }))
     : route.path === "/briefings" ? briefings.map((item) => ({ path: `/briefings/${item.slug}`, title: item.title, summary: item.summary }))
     : route.path === "/columns" ? editorialColumns.map((item) => ({ path: `/columns/${item.slug}`, title: item.title, summary: item.summary }))
     : route.path === "/monitoring" ? [

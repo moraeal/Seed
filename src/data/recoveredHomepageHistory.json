@@ -1,0 +1,787 @@
+[
+  {
+    "content_path": "/columns/who-watches-power-now-2026",
+    "featured_at": "2026-10-06T02:06:21-07:00",
+    "commit": "671b2772dec141a6c39b4c5278a11e8e8eb5306d"
+  },
+  {
+    "content_path": "/monitoring/tax/commentary/inheritance-tax-automatic-increase-2026",
+    "featured_at": "2026-10-06T02:06:21-07:00",
+    "commit": "671b2772dec141a6c39b4c5278a11e8e8eb5306d"
+  },
+  {
+    "content_path": "/monitoring/tax/commentary/card-sales-credit-normalization-burden-2026",
+    "featured_at": "2026-10-05T19:14:52-07:00",
+    "commit": "abed1de73be55f3254a8db6c0ffe6a14822513cd"
+  },
+  {
+    "content_path": "/columns/citizens-dilemma-01-cafe-customer-choice",
+    "featured_at": "2026-10-05T19:02:16-07:00",
+    "commit": "9170658f71945141bce3bb709f1498da8e6ee287"
+  },
+  {
+    "content_path": "/columns/pspd-prosecution-reform-state-power-watch-2026",
+    "featured_at": "2026-10-05T18:46:09-07:00",
+    "commit": "b2e0d30ae0601ec0cc9c2cc63f58423cf79fae1d"
+  },
+  {
+    "content_path": "/monitoring/legislation/commentary/future-response-fund-parliamentary-control-2026",
+    "featured_at": "2026-10-04T19:49:13-07:00",
+    "commit": "8370e0d2c3c428bf65cb952dd3c13afb1d6f657d"
+  },
+  {
+    "content_path": "/seed-language/history-facts-memory-civic-judgment",
+    "featured_at": "2026-10-04T19:21:34-07:00",
+    "commit": "c22fecb85d2ef942b3904d769dc3d5be247274c8"
+  },
+  {
+    "content_path": "/columns/film-imagination-history-distortion-ryoma-2026",
+    "featured_at": "2026-10-04T17:28:53-07:00",
+    "commit": "d7f82acfe59f15bcb1b6ebe5bebb47d8ad98906c"
+  },
+  {
+    "content_path": "/briefings/government-policy-funds-risk-and-taxpayer-cost-2026",
+    "featured_at": "2026-10-04T01:50:45-07:00",
+    "commit": "9cfee95b44b8c195ebcefb696fe6dc9393d16046"
+  },
+  {
+    "content_path": "/columns/farmland-solar-cartel-professional-farming-2026",
+    "featured_at": "2026-10-03T16:56:15-07:00",
+    "commit": "4adf3e335213ecb507443b2388fad52172eb5bd8"
+  },
+  {
+    "content_path": "/briefings/korean-civic-tax-watch-movement-ktr",
+    "featured_at": "2026-10-03T16:56:15-07:00",
+    "commit": "4adf3e335213ecb507443b2388fad52172eb5bd8"
+  },
+  {
+    "content_path": "/briefings/korean-taxpayers-association-spending-disclosure-case-01",
+    "featured_at": "2026-10-03T16:56:15-07:00",
+    "commit": "4adf3e335213ecb507443b2388fad52172eb5bd8"
+  },
+  {
+    "content_path": "/briefings/mois-public-interest-selection-committee-13-recommendation-2026",
+    "featured_at": "2026-10-03T16:56:15-07:00",
+    "commit": "4adf3e335213ecb507443b2388fad52172eb5bd8"
+  },
+  {
+    "content_path": "/seed-language/corporate-citizenship-company-and-people",
+    "featured_at": "2026-10-03T16:56:15-07:00",
+    "commit": "4adf3e335213ecb507443b2388fad52172eb5bd8"
+  },
+  {
+    "content_path": "/columns/presidential-language-civic-language-2026",
+    "featured_at": "2026-10-03T16:56:15-07:00",
+    "commit": "4adf3e335213ecb507443b2388fad52172eb5bd8"
+  },
+  {
+    "content_path": "/monitoring/legislation/bill-2216964",
+    "featured_at": "2026-10-03T16:56:15-07:00",
+    "commit": "4adf3e335213ecb507443b2388fad52172eb5bd8"
+  },
+  {
+    "content_path": "/monitoring/legislation/bill-2217726",
+    "featured_at": "2026-10-03T16:56:15-07:00",
+    "commit": "4adf3e335213ecb507443b2388fad52172eb5bd8"
+  },
+  {
+    "content_path": "/monitoring/legislation/commentary/childbirth-pension-credit-second-child-2026",
+    "featured_at": "2026-10-03T16:56:15-07:00",
+    "commit": "4adf3e335213ecb507443b2388fad52172eb5bd8"
+  },
+  {
+    "content_path": "/briefings/foreign-pension-birth-credit-reciprocity-fairness-2026",
+    "featured_at": "2026-10-03T16:56:15-07:00",
+    "commit": "4adf3e335213ecb507443b2388fad52172eb5bd8"
+  },
+  {
+    "content_path": "/columns/robak-contract-freedom-third-party-rights-2026",
+    "featured_at": "2026-10-03T16:56:15-07:00",
+    "commit": "4adf3e335213ecb507443b2388fad52172eb5bd8"
+  },
+  {
+    "content_path": "/columns/assassins-film-history-memory-war-2026",
+    "featured_at": "2026-10-03T16:56:15-07:00",
+    "commit": "4adf3e335213ecb507443b2388fad52172eb5bd8"
+  },
+  {
+    "content_path": "/columns/robak-sejong-taxpayer-rights-2026",
+    "featured_at": "2026-10-03T16:56:15-07:00",
+    "commit": "4adf3e335213ecb507443b2388fad52172eb5bd8"
+  },
+  {
+    "content_path": "/columns/mfds-sauce-portioning-autonomy-2026",
+    "featured_at": "2026-10-01T20:41:59-07:00",
+    "commit": "251410fad99c4cec752b65499ecd8bcaa1406231"
+  },
+  {
+    "content_path": "/columns/security-pride-vigilance-armed-forces-day-2026",
+    "featured_at": "2026-10-01T18:59:12-07:00",
+    "commit": "06053f0ffe2d981120ed09c6c2545c91f4bd9631"
+  },
+  {
+    "content_path": "/seed-language/petition-and-shared-freedom",
+    "featured_at": "2026-10-01T18:43:09-07:00",
+    "commit": "2d56cf60009a745d2643789ff90903bbb95f8341"
+  },
+  {
+    "content_path": "/columns/citizenization-kimchi-jar-freedom-2026",
+    "featured_at": "2026-10-01T17:39:48-07:00",
+    "commit": "de505a465643f79b5a81149ce611e82e92fd1a87"
+  },
+  {
+    "content_path": "/news/business-growth-regulatory-thresholds-2026",
+    "featured_at": "2026-10-01T00:35:28-07:00",
+    "commit": "08b6dfb6d7f5c7a4e339d1f85b4a175029958bfd"
+  },
+  {
+    "content_path": "/briefings/real-estate-supervisor-citizen-freedom-property-rights",
+    "featured_at": "2026-09-30T23:58:21-07:00",
+    "commit": "6274c07c8acc2839d34420eab88b478d9837f692"
+  },
+  {
+    "content_path": "/columns/worker-owned-country-union-subsidies-2026",
+    "featured_at": "2026-09-30T03:29:46-07:00",
+    "commit": "8dd83894fa7aba751b54eeb43535c1ced2d45f18"
+  },
+  {
+    "content_path": "/columns/civic-groups-audit-lawmakers-evaluation-criteria-2026",
+    "featured_at": "2026-09-29T16:28:34-07:00",
+    "commit": "c5ae7607a5625673fd2c07a1143a8646de303c17"
+  },
+  {
+    "content_path": "/monitoring/legislation/commentary/nuclear-submarine-special-act-oversight",
+    "featured_at": "2026-09-29T15:53:50-07:00",
+    "commit": "e9688cddb437b3beef39fd0dd11a5728c204d18b"
+  },
+  {
+    "content_path": "/briefings/monthly-rent-tax-credit-2026-bills-explained",
+    "featured_at": "2026-09-28T21:45:59-07:00",
+    "commit": "30814f3f8ca6ef75acf6aa537f729b276863c2ca"
+  },
+  {
+    "content_path": "/briefings/farmland-census-elderly-farmers-retirement",
+    "featured_at": "2026-09-28T21:41:21-07:00",
+    "commit": "48459fbec9af208be1ae9f02ff418f0fca10e18a"
+  },
+  {
+    "content_path": "/briefings/real-estate-supervisor-bill-2221573-explained",
+    "featured_at": "2026-09-28T21:27:55-07:00",
+    "commit": "809d8381ac480b46facc9e0d1366c9529caf9b3f"
+  },
+  {
+    "content_path": "/columns/factory-investment-staffing-freedom-2026",
+    "featured_at": "2026-09-28T20:14:21-07:00",
+    "commit": "5f435c2e5c8ed8456a57eedbc94cd84104a861e8"
+  },
+  {
+    "content_path": "/seed-language/fairness-rules-trust",
+    "featured_at": "2026-09-28T19:20:29-07:00",
+    "commit": "197adf02adfbe41cf53dc49be71167da86264ca5"
+  },
+  {
+    "content_path": "/news/olympic-park-protest-115-days",
+    "featured_at": "2026-09-28T17:49:39-07:00",
+    "commit": "582ac305c1dcd771ce0265e35e1c1be7cffa1c1c"
+  },
+  {
+    "content_path": "/news/debt-relief-repaid-borrowers-fairness-2026",
+    "featured_at": "2026-09-28T17:23:43-07:00",
+    "commit": "b82c26cec132a99b409234fe51d477a4418c8068"
+  },
+  {
+    "content_path": "/monitoring/legislation/commentary/presidential-security-law-investigation-handoff",
+    "featured_at": "2026-09-28T16:51:13-07:00",
+    "commit": "740574fd8709a348b1c2ce239959f4e5386c7ff9"
+  },
+  {
+    "content_path": "/monitoring/legislation/commentary/conflict-of-interest-fines-rights-commission",
+    "featured_at": "2026-09-28T16:51:13-07:00",
+    "commit": "740574fd8709a348b1c2ce239959f4e5386c7ff9"
+  },
+  {
+    "content_path": "/monitoring/legislation/commentary/military-secrets-unlawful-detention-review",
+    "featured_at": "2026-09-28T16:51:13-07:00",
+    "commit": "740574fd8709a348b1c2ce239959f4e5386c7ff9"
+  },
+  {
+    "content_path": "/columns/business-succession-deduction-threshold-2026",
+    "featured_at": "2026-09-28T16:51:13-07:00",
+    "commit": "740574fd8709a348b1c2ce239959f4e5386c7ff9"
+  },
+  {
+    "content_path": "/columns/welfare-exit-risk-work-and-fairness",
+    "featured_at": "2026-09-28T16:51:13-07:00",
+    "commit": "740574fd8709a348b1c2ce239959f4e5386c7ff9"
+  },
+  {
+    "content_path": "/columns/the-day-i-did-not-post-a-photo",
+    "featured_at": "2026-09-28T16:51:13-07:00",
+    "commit": "740574fd8709a348b1c2ce239959f4e5386c7ff9"
+  },
+  {
+    "content_path": "/monitoring/dmz-mine-blast-2026",
+    "featured_at": "2026-09-28T15:53:57-07:00",
+    "commit": "7fc30da56053fdb66015da1fbe388abf576873f3"
+  },
+  {
+    "content_path": "/news/dmz-blast-investigation-timeline-2026",
+    "featured_at": "2026-09-27T19:12:17-07:00",
+    "commit": "f203d01d58d1391f557cbccf5b9f5e7ec9e89fdb"
+  },
+  {
+    "content_path": "/monitoring/north-korean-pows-protection-tracker",
+    "featured_at": "2026-09-27T15:30:43-07:00",
+    "commit": "dbac9f50a852c60bed0e7b52e2f77888259bd81d"
+  },
+  {
+    "content_path": "/columns/seoul-housing-prices-rent-broken-ladder",
+    "featured_at": "2026-09-27T00:11:42-07:00",
+    "commit": "b2fd58d9e6f7f52bcdd88052d3650896802f43b3"
+  },
+  {
+    "content_path": "/seed-language/state-citizens-trust",
+    "featured_at": "2026-09-26T17:00:34-07:00",
+    "commit": "7a3faeccfe872a5253b24e1f750d2a5bc62044c5"
+  },
+  {
+    "content_path": "/news/major-crimes-agency-investigator-staffing-2026",
+    "featured_at": "2026-09-26T12:37:23-07:00",
+    "commit": "22977cb4869eccced8ae355a6042c6b466297e62"
+  },
+  {
+    "content_path": "/briefings/income-tax-family-deduction-2026-proposals",
+    "featured_at": "2026-09-26T12:30:35-07:00",
+    "commit": "ae325e960145addc436e7feb51974ece4084fe36"
+  },
+  {
+    "content_path": "/briefings/inheritance-tax-frozen-allowance-middle-class",
+    "featured_at": "2026-09-25T17:54:04-07:00",
+    "commit": "900aee0368820001ad5cb4eb84f4a3fc9fb13777"
+  },
+  {
+    "content_path": "/briefings/platform-advertising-cost-small-merchants",
+    "featured_at": "2026-09-25T07:09:32-07:00",
+    "commit": "6c5e056a520417d173d8d5fd67c818d339e4afab"
+  },
+  {
+    "content_path": "/monitoring/legislation/commentary/sme-market-access-and-real-profit",
+    "featured_at": "2026-09-25T07:01:17-07:00",
+    "commit": "a00d7359ae9bdcd8b2719ae3e7e84b25c89c5b35"
+  },
+  {
+    "content_path": "/monitoring/tax/virtual-asset-tax-2027-readiness",
+    "featured_at": "2026-09-25T04:39:31-07:00",
+    "commit": "de19f22c59050bfa0c02c314cbdb2c5213417918"
+  },
+  {
+    "content_path": "/monitoring/tax/commentary/virtual-asset-tax-prove-the-gain",
+    "featured_at": "2026-09-25T04:39:31-07:00",
+    "commit": "de19f22c59050bfa0c02c314cbdb2c5213417918"
+  },
+  {
+    "content_path": "/briefings/north-korean-pows-south-korea-zelensky-un",
+    "featured_at": "2026-09-23T19:53:23-07:00",
+    "commit": "356dd0f49760e57e1162925daf89e7020e441c27"
+  },
+  {
+    "content_path": "/monitoring/supreme-court-renomination-tracker-2026",
+    "featured_at": "2026-09-23T18:35:06-07:00",
+    "commit": "b99a8ef8ec9db02140168032d1eb785eb5d1d923"
+  },
+  {
+    "content_path": "/columns/real-estate-supervisor-citizens-accounts",
+    "featured_at": "2026-09-23T18:30:40-07:00",
+    "commit": "c5b17585daf2377b9b43fb485377236872e0ef4f"
+  },
+  {
+    "content_path": "/news/supreme-court-renomination-standoff-2026",
+    "featured_at": "2026-09-23T17:59:29-07:00",
+    "commit": "0677ff070ffba949b1e0ae45ccbbaad6a5625f54"
+  },
+  {
+    "content_path": "/monitoring/tax/commentary/when-tax-breaks-return-as-budget-spending",
+    "featured_at": "2026-09-23T17:35:50-07:00",
+    "commit": "2842f30ee9df84add2be1fcf3ee3a790f32b9038"
+  },
+  {
+    "content_path": "/monitoring/tax/tax-break-to-budget-conversion-bill",
+    "featured_at": "2026-09-23T16:35:27-07:00",
+    "commit": "19124a8b8270d0b4572f323bd0d86ccba9eaad80"
+  },
+  {
+    "content_path": "/briefings/seojin-school-neighbors-civic-solidarity",
+    "featured_at": "2026-09-22T19:23:16-07:00",
+    "commit": "b025c9f128687d4e8987714073fd2bd4fb3dc5db"
+  },
+  {
+    "content_path": "/columns/suicide-prevention-mois-local-community",
+    "featured_at": "2026-09-22T18:31:44-07:00",
+    "commit": "1c28331cbd6b54dfdc60803eacc21f7e42b1c556"
+  },
+  {
+    "content_path": "/columns/corporations-are-citizens-too",
+    "featured_at": "2026-09-22T16:59:23-07:00",
+    "commit": "27a356dc28216a93030e35fac9e04b8529c17a4e"
+  },
+  {
+    "content_path": "/monitoring/tax/farm-fishery-tax-breaks-2030-bill",
+    "featured_at": "2026-09-22T16:31:55-07:00",
+    "commit": "ecfb14f4c8b7520999942c05e15cc8e78c1898fc"
+  },
+  {
+    "content_path": "/seed-language/unification-freedom-responsibility",
+    "featured_at": "2026-09-22T16:03:11-07:00",
+    "commit": "01786f124c3eab081cf4afb734395a2b0af562ce"
+  },
+  {
+    "content_path": "/news/dmz-security-command-failure",
+    "featured_at": "2026-09-22T02:27:28-07:00",
+    "commit": "30428bbf41cebc5798713b00e189d38302067487"
+  },
+  {
+    "content_path": "/columns/yeosu-island-expo-procurement-ledger",
+    "featured_at": "2026-09-22T02:04:54-07:00",
+    "commit": "a17361f80eda6d2b95c6116610be5ef394610d00"
+  },
+  {
+    "content_path": "/columns/inheritance-tax-capital-and-talent-mobility",
+    "featured_at": "2026-09-22T01:48:07-07:00",
+    "commit": "e0a7f3f709a6556883c8983f48f5a584605eb89b"
+  },
+  {
+    "content_path": "/briefings/sk-hynix-ai-hackathon-skills-first-hiring",
+    "featured_at": "2026-09-22T01:01:05-07:00",
+    "commit": "8c3149151e0ec36b3f5942f63e20e23ff0c66658"
+  },
+  {
+    "content_path": "/briefings/hospital-inheritance-tax-maternity-care",
+    "featured_at": "2026-09-22T00:17:13-07:00",
+    "commit": "5adbd000b5b69ba29307eed11cf6fc0e6171d90f"
+  },
+  {
+    "content_path": "/seed-language/public-beyond-state-ownership",
+    "featured_at": "2026-09-21T18:13:57-07:00",
+    "commit": "8519fb9af24862b82ad01763ff219679522302a1"
+  },
+  {
+    "content_path": "/monitoring/tax/commentary/who-fills-the-tax-break-gap",
+    "featured_at": "2026-09-21T17:54:48-07:00",
+    "commit": "b7384d2802894807a1f9e313a0172d88925bf3e9"
+  },
+  {
+    "content_path": "/briefings/activist-support-political-pressure",
+    "featured_at": "2026-09-21T17:50:42-07:00",
+    "commit": "7c95ee07dac81a229d950d16bc3df3bf1d2b1359"
+  },
+  {
+    "content_path": "/monitoring/tax/tax-expenditure-cap-ratchet-bill",
+    "featured_at": "2026-09-21T16:29:58-07:00",
+    "commit": "fd82335245ed77e83ae8aab14da77aebc3bf2d93"
+  },
+  {
+    "content_path": "/monitoring/public-institution-reform-109",
+    "featured_at": "2026-09-21T03:41:22-07:00",
+    "commit": "2e5eb3c4a5de352f131178ab923eef93ef8fa07d"
+  },
+  {
+    "content_path": "/monitoring/farmland-census-disposal-orders-tracker",
+    "featured_at": "2026-09-21T00:54:02-07:00",
+    "commit": "7edcf1651564e7ddc94cab6bfe521a4518ae96aa"
+  },
+  {
+    "content_path": "/briefings/social-solidarity-economy-law-conservative-silence",
+    "featured_at": "2026-09-20T19:17:35-07:00",
+    "commit": "de065ed88a792cc41f166709c0f08862dc627354"
+  },
+  {
+    "content_path": "/news/lh-debt-split-power-five-merge",
+    "featured_at": "2026-09-20T17:23:48-07:00",
+    "commit": "00f46b317f7055179971e1dec591b5eb1dec6776"
+  },
+  {
+    "content_path": "/columns/public-health-proved-by-function",
+    "featured_at": "2026-09-20T16:34:12-07:00",
+    "commit": "37f9947ea38db89107a5d7e105d385c73ad3013f"
+  },
+  {
+    "content_path": "/columns/korea-97-generation-political-emotion",
+    "featured_at": "2026-09-18T23:11:10-07:00",
+    "commit": "c2b0b00ae79250c18b44810bb475d9d761a5e24a"
+  },
+  {
+    "content_path": "/columns/wealth-crosses-borders-inheritance-tax",
+    "featured_at": "2026-09-18T20:49:24-07:00",
+    "commit": "6a9306d801e0191c189e96841c1f805940dcd1ee"
+  },
+  {
+    "content_path": "/monitoring/legislation/commentary/criminal-investigation-power-and-accountability",
+    "featured_at": "2026-09-18T17:42:33-07:00",
+    "commit": "a8f6e50a01221f2a85e08d2d048361d2801d196a"
+  },
+  {
+    "content_path": "/monitoring/legislation/commentary/driving-fitness-family-request-and-due-process",
+    "featured_at": "2026-09-18T17:42:33-07:00",
+    "commit": "a8f6e50a01221f2a85e08d2d048361d2801d196a"
+  },
+  {
+    "content_path": "/monitoring/tax/commentary/content-support-one-ledger",
+    "featured_at": "2026-09-18T17:42:33-07:00",
+    "commit": "a8f6e50a01221f2a85e08d2d048361d2801d196a"
+  },
+  {
+    "content_path": "/monitoring/tax/commentary/fuel-tax-relief-needs-an-exit-rule",
+    "featured_at": "2026-09-18T17:42:33-07:00",
+    "commit": "a8f6e50a01221f2a85e08d2d048361d2801d196a"
+  },
+  {
+    "content_path": "/monitoring/tax/content-strategy-special-account-rebate-bill",
+    "featured_at": "2026-09-18T16:54:40-07:00",
+    "commit": "4b5f4d6a42b44002734bf18aeb86a463857fb61f"
+  },
+  {
+    "content_path": "/monitoring/tax/fuel-tax-cut-extended-november-2026",
+    "featured_at": "2026-09-18T07:00:02-07:00",
+    "commit": "19517f3708c0ec38089632e75033fec434a74417"
+  },
+  {
+    "content_path": "/seed-language/politics-is-a-citizens-tool",
+    "featured_at": "2026-09-18T06:08:25-07:00",
+    "commit": "01d352bbce00bbaacc3c0cd32ceddc956083d7e5"
+  },
+  {
+    "content_path": "/monitoring/olympic-park-election-protest-tracker",
+    "featured_at": "2026-09-17T23:01:22-07:00",
+    "commit": "cd7b3ca2a37575eafc76c2e839ea1b01725bbe28"
+  },
+  {
+    "content_path": "/briefings/future-response-fund-public-money",
+    "featured_at": "2026-09-17T18:39:09-07:00",
+    "commit": "9d7ad06b1f96a5a516df27c643f490ae060850c3"
+  },
+  {
+    "content_path": "/columns/fukushima-journey-original",
+    "featured_at": "2026-09-17T16:23:57-07:00",
+    "commit": "6210a2c4a20fd09c37d7a25af9a33473338e3928"
+  },
+  {
+    "content_path": "/columns/military-academy-integration-rotc-question",
+    "featured_at": "2026-09-17T14:49:32-07:00",
+    "commit": "355f976b6cab551b990243fd739a5d5152cee24a"
+  },
+  {
+    "content_path": "/monitoring/military-academy-integration-tracker",
+    "featured_at": "2026-09-17T14:49:32-07:00",
+    "commit": "355f976b6cab551b990243fd739a5d5152cee24a"
+  },
+  {
+    "content_path": "/monitoring/tax/local-housing-welfare-tax",
+    "featured_at": "2026-09-17T06:29:14-07:00",
+    "commit": "8e9ce35d2baea75a0a1cd007bf83bd0c9e5b0461"
+  },
+  {
+    "content_path": "/monitoring/democratic-party-nuclear-policy-reversal-tracker",
+    "featured_at": "2026-09-17T01:19:36-07:00",
+    "commit": "076f3e800fbdc27ea98724a0b7e3280cd98f6cdb"
+  },
+  {
+    "content_path": "/monitoring/kim-seung-won-confirmation-hearing",
+    "featured_at": "2026-09-17T01:19:36-07:00",
+    "commit": "076f3e800fbdc27ea98724a0b7e3280cd98f6cdb"
+  },
+  {
+    "content_path": "/columns/democratic-party-nuclear-policy-reversal",
+    "featured_at": "2026-09-16T23:51:06-07:00",
+    "commit": "bd735ab921fe07b758cbdadd3d2ed976ce7c0f7f"
+  },
+  {
+    "content_path": "/seed-language/what-is-true-conservatism",
+    "featured_at": "2026-09-16T21:35:08-07:00",
+    "commit": "bc08ce012939ff684539de2a365b76a89b9995a1"
+  },
+  {
+    "content_path": "/briefings/can-half-the-nation-be-dissolved",
+    "featured_at": "2026-09-16T20:03:24-07:00",
+    "commit": "f6060370100b546383d4bce1c371b48cd4181567"
+  },
+  {
+    "content_path": "/columns/farmland-ownership-without-an-exit",
+    "featured_at": "2026-09-16T06:03:27-07:00",
+    "commit": "bf2866686d96796c55379c853ee7ddb67ba95001"
+  },
+  {
+    "content_path": "/columns/no-one-stopped-it-silence-and-power",
+    "featured_at": "2026-09-16T03:06:00-07:00",
+    "commit": "3b4daf5ac69e3d0433b0cbf879ee9b768fe1ea69"
+  },
+  {
+    "content_path": "/monitoring/yeosu-world-island-expo-tracker",
+    "featured_at": "2026-09-15T04:27:48-07:00",
+    "commit": "975e41dac0009a5d17d9695a06a60aa08d1439bb"
+  },
+  {
+    "content_path": "/monitoring/prosecution-service-abolition-tracker",
+    "featured_at": "2026-09-15T04:27:48-07:00",
+    "commit": "975e41dac0009a5d17d9695a06a60aa08d1439bb"
+  },
+  {
+    "content_path": "/news/fuel-price-cap-tax-bill",
+    "featured_at": "2026-09-14T17:26:46-07:00",
+    "commit": "95fa57f6c209f36bc3e9fe33671200d4c3313373"
+  },
+  {
+    "content_path": "/seed-language/discourse-many-words-no-direction",
+    "featured_at": "2026-09-14T16:32:34-07:00",
+    "commit": "094cab22d8004d2b38986b2f51ff1ec5871763ee"
+  },
+  {
+    "content_path": "/seed-language/what-is-true-progress",
+    "featured_at": "2026-09-14T03:13:51-07:00",
+    "commit": "5f0453191ec80e599791f019ff7b15e93161b8a2"
+  },
+  {
+    "content_path": "/columns/citizenization-before-advancement-2026",
+    "featured_at": "2026-09-13T18:07:29-07:00",
+    "commit": "25ddc37f5bc04cb63cf2b1c681238f977e186d1b"
+  },
+  {
+    "content_path": "/briefings/yeosu-world-island-expo",
+    "featured_at": "2026-09-13T05:16:19-07:00",
+    "commit": "75320842526e254b915c021e41b3951b1cb43f60"
+  },
+  {
+    "content_path": "/briefings/confirmation-hearings-zero-witnesses",
+    "featured_at": "2026-09-13T00:02:40-07:00",
+    "commit": "2e074c8e18c52bfec709b7dfffdff84d9279cee8"
+  },
+  {
+    "content_path": "/news/national-debt-ratio-gdp-comparison",
+    "featured_at": "2026-09-12T19:15:22-07:00",
+    "commit": "6c9913182efd238544950cc2cf5b9b31677ea6e7"
+  },
+  {
+    "content_path": "/seed-language/freedom-as-citizen-agency",
+    "featured_at": "2026-09-11T22:39:25-07:00",
+    "commit": "42447c65aeeb57f4c36676bc7fb5b97b2a8ade75"
+  },
+  {
+    "content_path": "/columns/state-cannot-monopolize-life-2026",
+    "featured_at": "2026-09-11T19:59:08-07:00",
+    "commit": "21ef891b52736b27cad332f1aaf6849eabb5a099"
+  },
+  {
+    "content_path": "/news/media-appeal-justice-press-play",
+    "featured_at": "2026-09-11T17:32:28-07:00",
+    "commit": "b65a156de627d4d13a3f3d31043467add87f26a9"
+  },
+  {
+    "content_path": "/columns/civic-groups-are-not-state-vanguard-2026",
+    "featured_at": "2026-09-11T00:20:08-07:00",
+    "commit": "8a1723f47eb3cc4b7b1f86833f98133a93fe2dbe"
+  },
+  {
+    "content_path": "/columns/control-power-before-ten-percent-penalty-2026",
+    "featured_at": "2026-09-10T22:20:16-07:00",
+    "commit": "8855c3de82566cf3fb690b042a1794a49b5e1513"
+  },
+  {
+    "content_path": "/briefings/social-economy-fair-competition",
+    "featured_at": "2026-09-10T17:10:27-07:00",
+    "commit": "cc83edb15259b7305b9813fb61bd08ebfe61c201"
+  },
+  {
+    "content_path": "/news/local-sports-subsidy-accountability",
+    "featured_at": "2026-09-10T02:31:05-07:00",
+    "commit": "bbd0da152e395c4a1c97995f87cffaa4c161b1ab"
+  },
+  {
+    "content_path": "/columns/prosecution-reform-power-transfer-2026",
+    "featured_at": "2026-09-09T19:49:17-07:00",
+    "commit": "f0cdb5cef59c099f83bc2a766e775f1dccc2f3be"
+  },
+  {
+    "content_path": "/seed-language/democracy-not-a-king",
+    "featured_at": "2026-09-08T17:51:52-07:00",
+    "commit": "d2f2ddffe8c7ebf58131704da98eca9388212306"
+  },
+  {
+    "content_path": "/seed-language/environment-shared-condition",
+    "featured_at": "2026-09-08T00:13:51-07:00",
+    "commit": "4a05a5295e799ca8d9aa264de3110d1a1aa7f7eb"
+  },
+  {
+    "content_path": "/briefings/social-solidarity-economy-youth-mall-lessons",
+    "featured_at": "2026-09-07T16:29:50-07:00",
+    "commit": "89755eae85e148ee91689f4d949e8a8a3a1ed360"
+  },
+  {
+    "content_path": "/columns/lh-reform-politics-2026",
+    "featured_at": "2026-09-07T07:23:57-07:00",
+    "commit": "d2f4f2104959392809d1957f2e86e4cb837c8fb2"
+  },
+  {
+    "content_path": "/news/lh-split-public-agency-experiment",
+    "featured_at": "2026-09-06T19:00:41-07:00",
+    "commit": "a6fdb201c235dc022dbd3db2a956a665c1374687"
+  },
+  {
+    "content_path": "/briefings/park-jinyoung-public-trip-civic-oversight",
+    "featured_at": "2026-09-05T21:57:55-07:00",
+    "commit": "e2a0c478158a34bd383c07809212adabfd70669f"
+  },
+  {
+    "content_path": "/news/president-civic-society-dialogue-representation",
+    "featured_at": "2026-09-05T20:44:30-07:00",
+    "commit": "affc0d0646951a509d08273b98437b0357a74175"
+  },
+  {
+    "content_path": "/columns/when-civic-power-rules-citizens",
+    "featured_at": "2026-09-05T20:20:24-07:00",
+    "commit": "f70ea8781965decbe2e7f3f6536f343388d4a6cc"
+  },
+  {
+    "content_path": "/columns/do-they-represent-korean-civil-society",
+    "featured_at": "2026-09-05T08:16:23+09:00",
+    "commit": "11e6c0266f4764f5a3a776ec483756c477ba6c4d"
+  },
+  {
+    "content_path": "/seed-language/citizen-as-seed",
+    "featured_at": "2026-09-04T23:56:19+09:00",
+    "commit": "a2b0011170d2e986e3beb27372504129b235b959"
+  },
+  {
+    "content_path": "/news/prosecution-abolition-police-case-backlog",
+    "featured_at": "2026-09-04T07:57:51+09:00",
+    "commit": "b5259293380bed590cd1cd90b927f5dca5221407"
+  },
+  {
+    "content_path": "/columns/government-electricity-prepayment-pressure",
+    "featured_at": "2026-09-03T21:22:53+09:00",
+    "commit": "685b0d1acf6ffc24365cf57d9fe4ff978c74cb82"
+  },
+  {
+    "content_path": "/briefings/broadcasting-three-laws-public-governance",
+    "featured_at": "2026-09-03T20:13:20+09:00",
+    "commit": "9919f3fc9d5d415185960608a77d22f1c49132e5"
+  },
+  {
+    "content_path": "/columns/beyond-polanyi-market-society-state",
+    "featured_at": "2026-09-03T18:08:28+09:00",
+    "commit": "adf2eda1bb0a87e2299bdb2d2ce7d1f6a7bfa5e2"
+  },
+  {
+    "content_path": "/news/2030-trillion-won-fiscal-plan-revenue-assumptions",
+    "featured_at": "2026-09-03T17:03:37+09:00",
+    "commit": "e59bf862e4b45338e1695dbcad0604d843c553d8"
+  },
+  {
+    "content_path": "/news/class-action-law-consumer-rights-market-responsibility",
+    "featured_at": "2026-09-02T11:45:56+09:00",
+    "commit": "a34a102eebccfdb419fbf08efb4d1d96f9ff6ac9"
+  },
+  {
+    "content_path": "/briefings/2027-national-budget-revenue-debt",
+    "featured_at": "2026-09-02T10:00:43+09:00",
+    "commit": "82ab6570223e5a4739a3d1959566332de3bbaaec"
+  },
+  {
+    "content_path": "/columns/citizenship-managed-by-the-state",
+    "featured_at": "2026-09-02T09:32:43+09:00",
+    "commit": "1120b5822af336728eaa345fc6790489942f1daf"
+  },
+  {
+    "content_path": "/monitoring/beautiful-store",
+    "featured_at": "2026-09-01T20:32:51+09:00",
+    "commit": "96ce6ede2ede2ca5e963bf0ade7c4f3f2e629889"
+  },
+  {
+    "content_path": "/monitoring/community-chest-of-korea",
+    "featured_at": "2026-09-01T20:32:51+09:00",
+    "commit": "96ce6ede2ede2ca5e963bf0ade7c4f3f2e629889"
+  },
+  {
+    "content_path": "/monitoring/korea-football-association",
+    "featured_at": "2026-09-01T20:32:51+09:00",
+    "commit": "96ce6ede2ede2ca5e963bf0ade7c4f3f2e629889"
+  },
+  {
+    "content_path": "/monitoring/korea-foundation-for-suicide-prevention",
+    "featured_at": "2026-09-01T20:32:51+09:00",
+    "commit": "96ce6ede2ede2ca5e963bf0ade7c4f3f2e629889"
+  },
+  {
+    "content_path": "/columns/nepal-climate-crisis-conservative-seed-response",
+    "featured_at": "2026-09-01T18:30:36+09:00",
+    "commit": "15dfd317aaff87a5ac462c6c5b692f31f0e899af"
+  },
+  {
+    "content_path": "/news/gs-retail-data-leak-corporate-accountability",
+    "featured_at": "2026-09-01T10:29:30+09:00",
+    "commit": "46c741aa5881476ef29973193ccdb4e01ab2cdf4"
+  },
+  {
+    "content_path": "/columns/equality-rhetoric-and-two-seats-yong-hye-in",
+    "featured_at": "2026-09-01T09:40:32+09:00",
+    "commit": "87f7fa4c6954c90a62bf9780bf3d7881e768744a"
+  },
+  {
+    "content_path": "/news/youth-jobs-need-opportunity-not-another-platform",
+    "featured_at": "2026-09-01T09:36:38+09:00",
+    "commit": "9208a1bf7c2bf404924f06007862dcb56b1e2afa"
+  },
+  {
+    "content_path": "/news/basic-pension-reform-fairness-and-trust",
+    "featured_at": "2026-09-01T08:57:10+09:00",
+    "commit": "478b85a3a76b87db92471d50c34ff24f88a1bd0f"
+  },
+  {
+    "content_path": "/briefings/gyeonggi-fiscal-emergency",
+    "featured_at": "2026-09-01T08:51:13+09:00",
+    "commit": "c55b241b36493ebbcee5aaba0b9e95fd73a9533d"
+  },
+  {
+    "content_path": "/news/supreme-court-nomination-returned-in-unprecedented-clash",
+    "featured_at": "2026-09-01T07:06:42+09:00",
+    "commit": "3041f430dd9a2014a1f155804167105872b99db0"
+  },
+  {
+    "content_path": "/columns/majority-power-must-not-command-the-judiciary",
+    "featured_at": "2026-09-01T06:55:10+09:00",
+    "commit": "17bda72162b55ab0419a4dbbef8bf9bf1dec073a"
+  },
+  {
+    "content_path": "/briefings/president-criminal-trials-article-84",
+    "featured_at": "2026-09-01T00:48:17+09:00",
+    "commit": "eaa1a4c663147525651e6eed7b2e6db60e182c27"
+  },
+  {
+    "content_path": "/columns/random-selection-alone-does-not-make-a-public-forum",
+    "featured_at": "2026-09-01T00:14:19+09:00",
+    "commit": "abf809b8ddb86b9e8a74fbf6691bcc4883d23bac"
+  },
+  {
+    "content_path": "/columns/conservatives-and-the-language-of-citizens",
+    "featured_at": "2026-08-31T21:47:30+09:00",
+    "commit": "781c8c5f3ce4d1c4610c0371207a0c5e687cf6e0"
+  },
+  {
+    "content_path": "/columns/venezuela-state-failure-and-strong-society",
+    "featured_at": "2026-08-31T20:56:34+09:00",
+    "commit": "66ffaf4ef6f7d8c6a96e3b978121ab292f8ec014"
+  },
+  {
+    "content_path": "/columns/ham-seok-heon-and-citizenization",
+    "featured_at": "2026-08-31T20:39:38+09:00",
+    "commit": "7f52c9921fe4dfe7b3242828cc87fe3be6b03ae6"
+  },
+  {
+    "content_path": "/briefings/housing-supply-numbers",
+    "featured_at": "2026-08-31T19:43:00+09:00",
+    "commit": "574216af50f38417f99239368df3737223d90d89"
+  },
+  {
+    "content_path": "/briefings/prosecution-service-abolition",
+    "featured_at": "2026-08-31T19:30:54+09:00",
+    "commit": "cd214407c2645ce3190d06ad52b9c1756f7b1d12"
+  }
+]

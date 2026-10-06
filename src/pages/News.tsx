@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ArticleArchive from "../components/ArticleArchive";
 import SafeImage from "../components/SafeImage";
-import { getHotIssueCards } from "../data/hotIssueSelection";
+import { getHomepageArchiveCards } from "../data/hotIssueSelection";
+import snapshot from "../data/homeSnapshot.json";
 import { getPublishedLegislativeBills, type LegislativeBill } from "../lib/legislativeMonitoring";
 import { useLanguage } from "../i18n";
 import { useFeaturedContent } from "../hooks/useFeaturedContent";
@@ -15,7 +16,7 @@ export default function News() {
   const { language } = useLanguage();
   const ko = language === "ko";
   const { history, ready, historyError } = useFeaturedContent();
-  const [legislativeBills, setLegislativeBills] = useState<LegislativeBill[]>([]);
+  const [legislativeBills, setLegislativeBills] = useState<LegislativeBill[]>(snapshot.bills as unknown as LegislativeBill[]);
   useEffect(() => {
     let active = true;
     void getPublishedLegislativeBills(1000).then((bills) => {
@@ -23,7 +24,7 @@ export default function News() {
     }).catch(() => { /* Static published content stays available. */ });
     return () => { active = false; };
   }, []);
-  const issues = getHotIssueCards(language, legislativeBills, history).map((card) => ({
+  const issues = getHomepageArchiveCards(language, legislativeBills, history).map((card) => ({
     ...card,
     key: card.id,
     date: formatFeaturedDate(card.updatedAt),
@@ -52,7 +53,7 @@ export default function News() {
       <div className="container-page py-8 sm:py-10">
         <div className="mb-4 flex items-end justify-between gap-4 border-b-2 border-navy pb-3">
           <div><span className="section-kicker">LATEST</span><h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "메인에서 소개한 글" : "Stories from our homepage"}</h2></div>
-          <p className="text-xs font-semibold text-charcoal/45">{ko ? "최근 소개한 글" : "Recently featured"}</p>
+          <p className="text-sm font-semibold text-charcoal/55">{ko ? `전체 ${issues.length}건 · 최신순` : `${issues.length} stories · Newest first`}</p>
         </div>
         {issues.length === 0 && <p className="py-8 text-sm text-charcoal/55" role="status">{!ready ? (ko ? "불러오는 중입니다." : "Loading stories.") : historyError ? (ko ? "소개한 글을 불러오지 못했습니다. 잠시 후 다시 확인해주세요." : "Could not load featured stories. Please try again shortly.") : (ko ? "메인에서 소개한 글이 이곳에 차례로 쌓입니다." : "Featured stories will appear here in order.")}</p>}
         <div>

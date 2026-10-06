@@ -3,6 +3,7 @@ import type { LegislativeBill } from "../lib/legislativeMonitoring";
 import { getFeaturedContentCandidates } from "./featuredContent";
 import type { FeaturedHistoryEntry } from "./featuredHistory";
 import { getHomeTopic } from "./homeTopics";
+import recoveredHomepageHistory from "./recoveredHomepageHistory.json";
 
 export type HotIssueCard = {
   id: string;
@@ -38,6 +39,15 @@ export function getHotIssueCards(language: Language, legislativeBills: Legislati
         paths: [item.path],
       }];
     });
+}
+
+// The archive covers every homepage desk, not only the operator's lead story.
+// Recovery dates come from the first historical homepage containing each link.
+// Actual operator selections take precedence over reconstructed introduction dates.
+export function getHomepageArchiveCards(language: Language, legislativeBills: LegislativeBill[] = [], history: FeaturedHistoryEntry[] = []): HotIssueCard[] {
+  const selectedPaths = new Set(history.filter((entry) => Number.isFinite(Date.parse(entry.featured_at))).map((entry) => entry.content_path));
+  const recovered = recoveredHomepageHistory.filter((entry) => !selectedPaths.has(entry.content_path));
+  return getHotIssueCards(language, legislativeBills, [...recovered, ...history]);
 }
 
 // Filter current homepage placements before limiting, without changing the

@@ -8,7 +8,7 @@ import SafeImage from "../components/SafeImage";
 import NewsTrackingCard from "../components/NewsTrackingCard";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { getColumnsNewestFirst } from "../data/columns";
-import { getHotIssueCards, selectHotIssueCards } from "../data/hotIssueSelection";
+import { getHomepageArchiveCards, selectHotIssueCards } from "../data/hotIssueSelection";
 import { localizeBriefing, localizeColumn } from "../data/localizedContent";
 import { getNewsTrackingCards, selectNewsTrackingCards } from "../data/newsTracking";
 import { getCivicWatchFeed, selectLatestCivicWatchItems, type CivicWatchItem } from "../data/civicWatchFeed";
@@ -197,7 +197,7 @@ export default function Home() {
   );
   const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[ko ? seedLanguageArticle.term : getSeedLanguageEnvironmentArticle(seedLanguageArticle.slug, "ko")?.term ?? getSeedLanguageArticle(seedLanguageArticle.slug, "ko")?.term ?? ""] : undefined;
   const visibleHotIssueCards = featuredReady ? selectHotIssueCards(
-    getHotIssueCards(language, legislativeBills, featuredHistory),
+    getHomepageArchiveCards(language, legislativeBills, featuredHistory),
     claimedHomePaths,
     8,
   ) : [];
