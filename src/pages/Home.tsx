@@ -1,5 +1,5 @@
 import snapshot from "../data/homeSnapshot.json";
-import { campaignPending, civicSections, getCivicSectionArticles } from "../data/civicSections";
+import { civicSections, getCivicSectionArticles } from "../data/civicSections";
 import { ArrowRight, Clock, Pause, Play, Megaphone } from "lucide-react";
 import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import { Link } from "react-router-dom";
@@ -186,6 +186,11 @@ export default function Home() {
   // and each lower section automatically advances to the next eligible article.
   const claimedHomePaths = new Set(activeFeaturedPath ? [getHomeTopic(activeFeaturedPath)] : []);
   const civicSidebarItems = civicSections.map((section) => {
+    if (section.key === "campaign") {
+      const path = "/briefings/korean-civic-tax-watch-movement-ktr";
+      claimedHomePaths.add(getHomeTopic(path));
+      return { section, article: featuredCandidates.find((item) => item.path === path) };
+    }
     const article = getCivicSectionArticles(section.key, language, featuredCandidates).find((item) => !claimedHomePaths.has(getHomeTopic(item.path)));
     if (article) claimedHomePaths.add(getHomeTopic(article.path));
     return { section, article };
@@ -415,9 +420,22 @@ export default function Home() {
             )}
             <aside className="divide-y divide-green-deep/15 border-y border-green-deep/20 xl:flex xl:h-full xl:flex-col xl:border-t-0" aria-label={ko ? "시민운동과 시민언어" : "Civic action and language"}>
               {civicSidebarItems.map(({ section, article }) => {
-                const campaignPreparing = section.key === "campaign" && !getCivicSectionArticles("campaign", language, featuredCandidates).length;
-                const title = article?.title ?? (campaignPreparing ? campaignPending.title[language] : section.title[language]);
-                const summary = article?.summary ?? (campaignPreparing ? campaignPending.summary[language] : section.description[language]);
+                if (section.key === "campaign") return (
+                  <Link key={section.key} to="/briefings/korean-civic-tax-watch-movement-ktr" aria-label={ko ? "시민캠페인: 한국형 세금감시운동을 제안한다" : "Civic campaign: A proposal for a Korean tax-watch movement"} className="group my-3 block border-l-4 border-gold bg-green-deep px-5 py-5 text-white transition-colors hover:bg-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green-deep sm:px-6 xl:mb-3 xl:mt-0">
+                    <div className="flex items-center justify-between gap-4">
+                      <p className="text-sm font-bold tracking-[.12em] text-white/85">{ko ? "시민캠페인" : "CIVIC CAMPAIGN"}</p>
+                      <span className="text-sm font-black tracking-[.14em] text-[#E8CB91]" aria-hidden="true">KTR</span>
+                    </div>
+                    <p className="mt-4 break-keep text-[1.65rem] font-black leading-[1.28] tracking-[-.035em] sm:text-[1.85rem]">{ko ? <>한국형 세금감시운동을<br />제안한다</> : <>A Korean tax-watch<br />movement starts here</>}</p>
+                    <p className="mt-3 break-keep text-sm font-medium leading-relaxed text-white/85">{ko ? "내가 낸 세금, 시민이 지켜봅니다." : "Our taxes. Our right to scrutinize."}</p>
+                    <div className="mt-4 flex items-center justify-between gap-3 border-t border-white/25 pt-3">
+                      <span className="text-sm font-medium text-white/85">{ko ? "증세의 근거 · 예산 낭비 · 책임" : "Tax rises · Waste · Accountability"}</span>
+                      <span className="shrink-0 border border-white/60 px-2.5 py-1.5 text-sm font-bold transition-colors group-hover:bg-white group-hover:text-green-deep">{ko ? "제안 읽기" : "Read proposal"}</span>
+                    </div>
+                  </Link>
+                );
+                const title = article?.title ?? section.title[language];
+                const summary = article?.summary ?? section.description[language];
                 return <Link key={section.key} to={section.key === "cases" ? section.path : article?.path ?? section.path} className="group cursor-pointer transition-colors duration-200 hover:bg-green-deep/5 focus-visible:bg-green-deep/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-deep grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3 xl:first:pt-0">
                   <div className="flex items-center justify-center overflow-hidden bg-green-deep text-white">
                     {article ? <SafeImage src={resolveImageSrc(article.image.src)} alt={article.image.alt} className="aspect-[4/3] h-full max-h-[110px] w-full object-cover" /> : <Megaphone size={34} aria-hidden="true" className="my-6" />}
@@ -426,7 +444,6 @@ export default function Home() {
                     <p className="text-sm font-black text-green-deep">{section.title[language]}</p>
                     <h2 className="editorial-title mt-1 line-clamp-2 break-keep text-[1.02rem] font-bold leading-snug text-navy transition-colors group-hover:text-green-mid group-focus-visible:text-green-mid sm:text-[1.08rem]">{title}</h2>
                     <p className="home-compact-summary mt-1 line-clamp-2">{summary}</p>
-                    {campaignPreparing && <p className="mt-1 text-xs font-semibold text-charcoal/50">{ko ? "준비 중" : "In preparation"}</p>}
                   </div>
                 </Link>;
               })}
