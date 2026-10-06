@@ -548,24 +548,6 @@ export const cardSalesCreditCommentary: TaxCommentary = {
       "url": "https://mofe.go.kr/com/cmm/fms/FileDown.do?atchFileId=ATCH_000000000032335&fileSn=6"
     }
   ],
-  "relatedReading": {
-    "ko": {
-      "href": "/monitoring/tax/card-sales-vat-credit-government-bill-2026",
-      "title": "소상공인 카드매출 세액공제 축소 정부안 설명",
-      "relationship": "정부안 설명",
-      "reason": "대상과 공제율, 한도, 매출별 계산과 국회 진행 상황을 확인합니다.",
-      "listHref": "/monitoring/tax",
-      "listLabel": "세금감시 전체 보기"
-    },
-    "en": {
-      "href": "/monitoring/tax/card-sales-vat-credit-government-bill-2026",
-      "title": "Small-business card-sales VAT credit: the government bill explained",
-      "relationship": "GOVERNMENT BILL EXPLAINED",
-      "reason": "Check eligibility, rates, ceilings, illustrative calculations and parliamentary status.",
-      "listHref": "/monitoring/tax",
-      "listLabel": "All Tax Watch articles"
-    }
-  },
   "editions": {
     "ko": {
       "title": "카드매출 공제 축소를 정상화로만 설명할 수 없다",
