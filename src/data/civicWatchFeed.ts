@@ -8,6 +8,7 @@ import { getEditorialContinuation } from "./editorialContinuations";
 import { localizeColumn } from "./localizedContent";
 import { publicInterestWatchCases } from "./newsTrackerRegistry";
 import { taxPolicies } from "./taxWatch";
+import { taxCommentaries } from "./taxCommentaries";
 
 export type CivicWatchItem = {
   key: string;
@@ -113,6 +114,11 @@ export function getCivicWatchFeed(language: Language, bills: LegislativeBill[] =
       summary: ko ? bill.public_summary_ko || bill.analysis?.summary_ko || bill.official_summary || "공식 자료와 조문을 검토한 입법감시 기록입니다."
         : bill.public_summary_en || bill.analysis?.summary_en || "A legislative watch record based on official documents and bill text.",
       status: ko ? `중요도 ${bill.importance_score}` : `Impact ${bill.importance_score}`,
+    })),
+    ...taxCommentaries.filter((article) => !taxPolicies.some((policy) => policy.slug === article.relatedPolicySlug)).map((article) => ({
+      key: `tax-commentary-${article.slug}`, category: "tax" as const, date: article.date,
+      to: `/monitoring/tax/commentary/${article.slug}`, title: article.editions[language].title,
+      summary: article.editions[language].summary, status: ko ? "세금 논평" : "Tax commentary",
     })),
     ...taxPolicies.map((item) => ({
       key: `tax-${item.slug}`, category: "tax" as const, date: item.checkedAt,
