@@ -43,7 +43,6 @@ export function getCivicSectionForArticle(path: string) {
 export const civicLifeArticlePaths = [
   "/columns/citizens-dilemma-01-cafe-customer-choice",
   "/monitoring/tax/commentary/card-sales-credit-normalization-burden-2026",
-  "/monitoring/tax/card-sales-vat-credit-government-bill-2026",
   "/seed-language/history-facts-memory-civic-judgment",
   "/columns/film-imagination-history-distortion-ryoma-2026",
   "/briefings/government-policy-funds-risk-and-taxpayer-cost-2026",
