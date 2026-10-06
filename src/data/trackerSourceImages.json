@@ -526,5 +526,25 @@
       "en": "AI image"
     },
     "verifiedAt": "2026-10-03T23:20:33.106Z"
+  },
+  "https://mobile.newsis.com/view_amp.html?ar_id=NISX20261005_0003814618": {
+    "src": "/images/monitoring/source-articles/bb0a75752622fea2b052.jpg",
+    "originalImageUrl": "https://img1.newsis.com/2026/10/05/NISI20261005_0021476687_web.jpg",
+    "verifiedAt": "2026-10-06T02:40:37.146Z"
+  },
+  "https://www.newspim.com/news/view/20261005000099": {
+    "src": "/images/monitoring/source-articles/67b212055a18f26c1131.jpg",
+    "originalImageUrl": "https://img.newspim.com/news/2026/10/05/2610051651143460_629_tc.jpg",
+    "verifiedAt": "2026-10-06T02:40:37.483Z"
+  },
+  "https://www.yna.co.kr/view/AKR20261005048151504": {
+    "src": "/images/monitoring/source-articles/8515c3017ed1805d739a.jpg",
+    "originalImageUrl": "https://img2.yna.co.kr/photo/yna/YH/2026/10/05/PYH2026100507550001300_P4.jpg",
+    "verifiedAt": "2026-10-06T02:40:37.782Z"
+  },
+  "https://v.daum.net/v/BGgIypEo5P?f=p": {
+    "src": "/images/monitoring/source-articles/b610948c851931b3847d.jpg",
+    "originalImageUrl": "https://img1.daumcdn.net/thumb/S1200x630/?fname=https://t1.daumcdn.net/news/202610/05/yonhap/20261005183001081yolr.jpg",
+    "verifiedAt": "2026-10-06T02:40:40.305Z"
   }
 }
