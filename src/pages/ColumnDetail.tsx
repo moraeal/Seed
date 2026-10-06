@@ -8,6 +8,7 @@ import ColumnEmbeddedFigure from "../components/ColumnEmbeddedFigure";
 import InteractiveFigure from "../components/InteractiveFigure";
 import ShareButton from "../components/ShareButton";
 import SourceDocumentPanel from "../components/SourceDocumentPanel";
+import PspdReformComparison from "../components/PspdReformComparison";
 import { getColumn, isHotIssueColumn, publicInterestColumnSlugs } from "../data/columns";
 import { localizeColumn } from "../data/localizedContent";
 import { getArticleReadingPath } from "../data/articleReadingPaths";
@@ -137,6 +138,7 @@ export default function ColumnDetail() {
       {column.displayHero !== false && <InteractiveFigure src={column.heroImage.src} alt={column.heroImage.alt} caption={column.heroImage.caption} credit={column.heroImage.credit} sourceUrl={column.heroImage.sourceUrl} figureClassName="overflow-hidden bg-white shadow-[0_12px_34px_rgba(23,76,58,.08)]" imageClassName="aspect-[16/9] w-full object-cover" />}
 
       {column.sourceDocument && <SourceDocumentPanel document={column.sourceDocument} ko={ko} />}
+      {column.slug === "pspd-prosecution-reform-state-power-watch-2026" && <PspdReformComparison ko={ko} />}
 
       <div className={`reading-column mt-10 ${fontPreview && newspaperFont && fontStatus === "ready" ? "chosun-font-preview" : ""}`}>
         {fontPreview && <div className="mb-8 flex flex-wrap items-center gap-3 border-y border-green-deep/20 py-4">
@@ -147,7 +149,7 @@ export default function ColumnDetail() {
         </div>}
         {column.sections.map((section, index) => <Fragment key={`${index}-${section.title}`}><section className={index === 0 ? "" : `article-section ${isLongRead ? "article-section-long" : ""}`}>
           {section.title && <h2 className="article-section-title">{section.title}</h2>}
-          {section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 28)}`} className={column.presentation === "poem" ? "mt-6 whitespace-pre-line font-serif text-[17px] leading-[2] text-charcoal/85 sm:text-xl sm:leading-[2]" : `article-copy ${isLongRead ? "article-copy-long" : ""}`}><InlineLinkedText text={paragraph} subtleFootnotes={column.slug === "assassins-film-history-memory-war-2026" || column.slug === "film-imagination-history-distortion-ryoma-2026" || column.slug === "farmland-solar-cartel-professional-farming-2026" || column.slug === "who-watches-power-now-2026"} sourceLabel={ko ? "출처" : "Source"}/></p>)}
+          {section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 28)}`} className={column.presentation === "poem" ? "mt-6 whitespace-pre-line font-serif text-[17px] leading-[2] text-charcoal/85 sm:text-xl sm:leading-[2]" : `article-copy ${isLongRead ? "article-copy-long" : ""}`}><InlineLinkedText text={paragraph} subtleFootnotes={column.slug === "assassins-film-history-memory-war-2026" || column.slug === "film-imagination-history-distortion-ryoma-2026" || column.slug === "farmland-solar-cartel-professional-farming-2026" || column.slug === "who-watches-power-now-2026" || column.slug === "pspd-prosecution-reform-state-power-watch-2026"} sourceLabel={ko ? "출처" : "Source"}/></p>)}
           {section.quote && <blockquote className="my-7 border-l-4 border-gold bg-green-pale px-5 py-5 text-lg font-bold leading-8 text-green-deep sm:px-6 sm:text-xl">{section.quote.map((line, lineIndex) => <span key={`${lineIndex}-${line}`} className="block">{line}</span>)}</blockquote>}
           {bodyImages.filter((image) => image.afterSection === index).map((image) => <InteractiveFigure key={imageKey(image.src)} src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName="my-12 overflow-hidden bg-white shadow-[0_12px_34px_rgba(23,76,58,.08)]" imageClassName={"contain" in image && image.contain ? "block h-auto w-full" : "aspect-[16/10] w-full object-cover"} />)}
           {column.embeddedFigures?.filter((figure) => figure.afterSection === index).map((figure) => <ColumnEmbeddedFigure key={`${figure.kind}-${index}`} figure={figure} ko={ko} />)}
@@ -161,3 +163,4 @@ export default function ColumnDetail() {
     </div>
   </article>;
 }
+

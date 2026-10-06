@@ -58,6 +58,7 @@ const homeTopicGroups: Record<string, string[]> = {
     "/columns/wealth-crosses-borders-inheritance-tax",
   ],
   "prosecution-service-abolition-tracker": [
+    "/columns/pspd-prosecution-reform-state-power-watch-2026",
     "/columns/who-watches-power-now-2026",
     "/news/major-crimes-agency-investigator-staffing-2026",
     "/monitoring/legislation/commentary/criminal-investigation-power-and-accountability",
@@ -96,3 +97,4 @@ export function claimHomeStory<T>(
   if (item) claimedTopics.add(getHomeTopic(pathOf(item)));
   return item;
 }
+

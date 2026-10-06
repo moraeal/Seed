@@ -466,6 +466,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "column" && slug === "pspd-prosecution-reform-state-power-watch-2026") return true;
   if (kind === "seed-language" && slug === "history-facts-memory-civic-judgment") return true;
   if (kind === "briefing" && slug === "korean-civic-tax-watch-movement-ktr") return true;
   if (kind === "briefing" && [taxWatchCaseSlug, civicNoticeSlug].includes(slug)) return true;
@@ -536,5 +537,7 @@ export function getEditorialContinuation(kind: EditorialContentKind, slug: strin
   if (isDiscourse(kind, slug)) return discourseContinuation[language];
   if (isProgress(kind, slug)) return progressContinuation[language];
   if (isFreedom(kind, slug)) return freedomContinuation[language];
+  if (kind === "column" && slug === "pspd-prosecution-reform-state-power-watch-2026") return language === "ko" ? {"href": "/columns/prosecution-reform-power-transfer-2026", "title": "검찰개혁은 권력을 옮겨 심는 일이 아니다", "relationship": "권력 이동과 시민의 자유", "reason": "권한의 이동과 권력의 제한을 구분한 씨앗의 앞선 분석을 이어서 읽습니다.", "listHref": "/monitoring/public-interest", "listLabel": "공익감시 전체 보기"} : {"href": "/columns/prosecution-reform-power-transfer-2026", "title": "Prosecution Reform Is Not the Transplanting of Power", "relationship": "POWER TRANSFERS AND CIVIC FREEDOM", "reason": "Continue with SEED\u2019s earlier analysis of authority transfers and effective limits on power.", "listHref": "/monitoring/public-interest", "listLabel": "All Public-Interest Watch articles"};
   return getBaseEditorialContinuation(kind, slug, language);
 }
+

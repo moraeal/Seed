@@ -1,3 +1,4 @@
+import { pspdProsecutionReformWatchColumn } from "./columns/pspdProsecutionReformWatchColumn";
 import { historyFictionColumn } from "./columns/historyFictionColumn";
 import { whoWatchesPowerColumn } from "./columns/whoWatchesPowerColumn";
 import { sejongTaxpayerRightsColumn } from "./columns/sejongTaxpayerRightsColumn";
@@ -43,7 +44,7 @@ import type { SeedColumn } from "./columnsLegacy";
 
 export type { SeedColumn } from "./columnsLegacy";
 
-export const columns: SeedColumn[] = [historyFictionColumn, whoWatchesPowerColumn, sejongTaxpayerRightsColumn, farmlandSolarColumn, robakContractRightsColumn, assassinsMemoryColumn, presidentCivicLanguageColumn, kimchiJarFreedomColumn, mfdsSaucePortioningColumn, securityPrideVigilanceColumn, workerOwnedCountryColumn, civicAuditOfAuditColumn, dmzMineResponseAccountabilityColumn, factoryStaffingFreedomColumn, unpostedDayPoemColumn, businessSuccessionThresholdColumn, supremeCourtCivicWatchColumn, housingLadderColumn, welfareExitRiskColumn, incomeTaxFamilyThresholdColumn, realEstateSupervisorColumn, suicidePreventionMoisColumn, corporateCitizenshipColumn, yeosuIslandExpoProcurementColumn, partisanLanguageColumn, inheritanceTaxBusinessContinuityColumn, publicHealthFunctionNetworkColumn, korea97GenerationColumn, wealthCrossesBordersColumn, fukushimaJourneyColumn, militaryAcademyIntegrationColumn, nuclearPolicyReversalColumn, farmlandOwnershipPressureColumn, silenceAndPowerColumn, citizenizationBeforeAdvancementColumn, stateCannotMonopolizeLifeColumn, civicGroupsAreNotStateVanguardColumn, tenPercentPowerColumn, prosecutionReformPowerTransferColumn, lhReformColumn, ...legacyColumns];
+export const columns: SeedColumn[] = [pspdProsecutionReformWatchColumn, historyFictionColumn, whoWatchesPowerColumn, sejongTaxpayerRightsColumn, farmlandSolarColumn, robakContractRightsColumn, assassinsMemoryColumn, presidentCivicLanguageColumn, kimchiJarFreedomColumn, mfdsSaucePortioningColumn, securityPrideVigilanceColumn, workerOwnedCountryColumn, civicAuditOfAuditColumn, dmzMineResponseAccountabilityColumn, factoryStaffingFreedomColumn, unpostedDayPoemColumn, businessSuccessionThresholdColumn, supremeCourtCivicWatchColumn, housingLadderColumn, welfareExitRiskColumn, incomeTaxFamilyThresholdColumn, realEstateSupervisorColumn, suicidePreventionMoisColumn, corporateCitizenshipColumn, yeosuIslandExpoProcurementColumn, partisanLanguageColumn, inheritanceTaxBusinessContinuityColumn, publicHealthFunctionNetworkColumn, korea97GenerationColumn, wealthCrossesBordersColumn, fukushimaJourneyColumn, militaryAcademyIntegrationColumn, nuclearPolicyReversalColumn, farmlandOwnershipPressureColumn, silenceAndPowerColumn, citizenizationBeforeAdvancementColumn, stateCannotMonopolizeLifeColumn, civicGroupsAreNotStateVanguardColumn, tenPercentPowerColumn, prosecutionReformPowerTransferColumn, lhReformColumn, ...legacyColumns];
 
 export const hotIssueColumnSlugs = new Set([
   "seoul-housing-prices-rent-broken-ladder",
@@ -54,6 +55,7 @@ export const hotIssueColumnSlugs = new Set([
 ]);
 
 export const publicInterestColumnSlugs = new Set([
+  "pspd-prosecution-reform-state-power-watch-2026",
   "worker-owned-country-union-subsidies-2026",
   "civic-groups-audit-lawmakers-evaluation-criteria-2026",
   "participatory-democracy-supreme-court-appointments",
@@ -84,3 +86,4 @@ export const getHotIssueColumnsNewestFirst = () => columns
   .sort((a, b) => b.date.localeCompare(a.date) || b.issue - a.issue);
 
 export const getLatestColumn = () => getColumnsNewestFirst()[0];
+
