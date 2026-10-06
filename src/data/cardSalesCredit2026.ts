@@ -22,15 +22,15 @@ export const cardSalesCreditPolicy: TaxPolicy = {
   },
   "checkedAt": "2026-10-06",
   "heroImage": {
-    "ko": "images/tax/card-credit-ceiling-2026.webp",
-    "en": "images/tax/card-credit-ceiling-2026.webp",
+    "ko": "images/tax/card-credit-shop-owner-2026.webp",
+    "en": "images/tax/card-credit-shop-owner-2026.webp",
     "alt": {
-      "ko": "계산대 위에서 공제 혜택을 상징하는 초록색 종이가 반으로 잘리는 모습",
-      "en": "A green voucher symbolizing tax relief being cut in half over a checkout"
+      "ko": "영업을 마친 가게에서 카드 단말기와 계산기를 앞에 두고 영수증을 살펴보는 점주",
+      "en": "A shop owner reviewing receipts beside a card terminal and calculator after closing"
     },
     "caption": {
-      "ko": "공제 혜택 축소를 표현한 상징 이미지. AI 이미지",
-      "en": "A symbolic depiction of reduced tax relief. AI image"
+      "ko": "카드 매출과 세금 부담을 살펴보는 가게 점주. AI 이미지",
+      "en": "A shop owner reviewing card sales and the tax burden. AI image"
     }
   },
   "processNote": {
@@ -491,7 +491,7 @@ export const cardSalesCreditCommentary: TaxCommentary = {
   "relatedPolicySlug": "card-sales-vat-credit-government-bill-2026",
   "date": "2026-10-06",
   "readMinutes": 8,
-  "heroSrc": "images/tax/card-credit-ceiling-2026.webp",
+  "heroSrc": "images/tax/card-credit-shop-owner-2026.webp",
   "bodyImage": {
     "src": "images/tax/card-credit-shop-ledger-2026.webp",
     "afterSection": 3,
@@ -558,7 +558,7 @@ export const cardSalesCreditCommentary: TaxCommentary = {
         "공제 대상 결제금액 6억원인 가게는 조건에 따라 연간 공제가 280만원 줄어들 수 있다.",
         "씨앗은 현행 유지와 단계적 조정을 우선 검토하고, 업종별 부담 분석 없이 한도를 일괄 축소하는 방안에 비판적이다."
       ],
-      "heroAlt": "가게 계산대 위에서 초록색 공제권이 반으로 잘리는 상징 이미지",
+      "heroAlt": "영업을 마친 가게에서 카드 단말기와 계산기를 앞에 두고 영수증을 살펴보는 점주",
       "heroCaption": "공제 한도가 낮아지면 같은 매출을 올려도 가게에 남는 돈은 줄어들 수 있다.",
       "sections": [
         {
@@ -668,7 +668,7 @@ export const cardSalesCreditCommentary: TaxCommentary = {
         "A shop with KRW 600 million in qualifying payments could lose KRW 2.8 million in annual credit, subject to the stated assumptions.",
         "Seed Voice favors examining continued relief and phased adjustment and opposes a uniform ceiling cut without sector-level burden analysis."
       ],
-      "heroAlt": "A green tax-credit voucher cut in half over a shop checkout",
+      "heroAlt": "A shop owner reviewing receipts beside a card terminal and calculator after closing",
       "heroCaption": "A lower credit ceiling can leave a shop with less money even at unchanged sales.",
       "sections": [
         {
