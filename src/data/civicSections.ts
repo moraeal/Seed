@@ -1,19 +1,20 @@
 import type { Language } from "../i18n";
 import { getFeaturedContentCandidates, type FeaturedContent } from "./featuredContent";
+import { taxCommentaries } from "./taxCommentaries";
 import { taxWatchCaseSlug, civicNoticeSlug } from "./civicHubArticles";
 
 export const civicSections = [
   { key: "campaign", path: "/civic-campaign", title: { ko: "시민캠페인", en: "Civic Campaigns" }, description: { ko: "시민이 제안하고 함께 실천할 운동을 소개합니다.", en: "Ideas for civic action and participation." } },
-  { key: "cases", path: "/tax-watch-cases", title: { ko: "세금감시운동 사례연구", en: "Tax Watch Case Studies" }, description: { ko: "한국과 외국의 세금감시운동을 살펴보고, 받아들일 점과 비판할 점을 분석합니다.", en: "Examine tax-watch efforts in Korea and abroad, their lessons and limitations." } },
+  { key: "cases", path: "/tax-watch-movement", title: { ko: "세금감시운동", en: "Tax Watch Movement" }, description: { ko: "세금을 거두는 근거와 쓰는 결과를 묻습니다. 세금감시 논평과 시민운동의 제안·사례를 함께 읽어보세요.", en: "Scrutinize why taxes are collected and how public money is spent. Read SEED’s tax commentaries, civic proposals and case studies." } },
   { key: "notices", path: "/civic-notices", title: { ko: "시민운동 공지사항", en: "Civic Notices" }, description: { ko: "시민운동의 참여·모집·행사 정보를 원문과 함께 안내합니다.", en: "Participation opportunities, calls and events with original notices." } },
 ] as const;
 export type CivicSectionKey = typeof civicSections[number]["key"];
 
-// Add new case studies and notices here in publication order. The same list drives
-// the homepage and collection pages; it never pulls unrelated latest news.
+// Movement articles and all published tax commentaries share one collection.
+// Policy explainers retain their separate Tax Watch listing.
 export const civicArticlePaths: Record<CivicSectionKey, string[]> = {
   campaign: ["/briefings/korean-civic-tax-watch-movement-ktr"],
-  cases: [`/briefings/${taxWatchCaseSlug}`],
+  cases: [`/briefings/${taxWatchCaseSlug}`, "/briefings/korean-civic-tax-watch-movement-ktr", ...taxCommentaries.map((article) => `/monitoring/tax/commentary/${article.slug}`)],
   notices: [`/briefings/${civicNoticeSlug}`],
 };
 export const campaignPending = {
@@ -65,4 +66,12 @@ export const civicLifeArticlePaths = [
 export function getCivicLifeArticles(language: Language): FeaturedContent[] {
   const paths = new Set<string>(civicLifeArticlePaths);
   return getFeaturedContentCandidates(language).filter((article) => paths.has(article.path));
+}
+
+// Only civic movement coverage can lead the collection; newer policy commentaries
+// join the list without displacing the latest movement article.
+export function getTaxWatchMovementArticles(language: Language, candidates = getFeaturedContentCandidates(language)): FeaturedContent[] {
+  return getCivicSectionArticles("cases", language, candidates)
+    .filter((article) => !article.path.startsWith("/monitoring/tax/commentary/"))
+    .sort((a, b) => b.date.localeCompare(a.date) || civicArticlePaths.cases.indexOf(a.path) - civicArticlePaths.cases.indexOf(b.path));
 }

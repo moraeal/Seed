@@ -82,7 +82,8 @@ function AppShell() {
           <Route path="/en" element={<Home />} />
           <Route path="/civic-life" element={<CivicLife />} />
           <Route path="/civic-campaign" element={<CivicCollection sectionKey="campaign" />} />
-          <Route path="/tax-watch-cases" element={<CivicCollection sectionKey="cases" />} />
+          <Route path="/tax-watch-movement" element={<CivicCollection sectionKey="cases" />} />
+          <Route path="/tax-watch-cases" element={<Navigate to="/tax-watch-movement" replace />} />
           <Route path="/civic-notices" element={<CivicCollection sectionKey="notices" />} />
           <Route path="/account" element={<Account />} />
           <Route path="/writer" element={<WriterRoom />} />

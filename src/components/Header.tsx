@@ -23,7 +23,7 @@ export default function Header() {
   const isHome = location.pathname === "/" || location.pathname === "/en/";
   const normalizedPath = location.pathname.replace(/\/+$/, "") || "/";
   const isMonitoringIndex = ["/monitoring", "/monitoring/legislation", "/monitoring/tax", "/monitoring/public-interest"].includes(normalizedPath);
-  const isCivicLifeIndex = ["/civic-life", "/civic-campaign", "/tax-watch-cases", "/civic-notices"].includes(normalizedPath);
+  const isCivicLifeIndex = ["/civic-life", "/civic-campaign", "/tax-watch-movement", "/tax-watch-cases", "/civic-notices"].includes(normalizedPath);
   const isContentDetail =
     /^\/(?:seed-language|columns|news|monitoring)\/[^/]+/.test(normalizedPath) ||
     /^\/briefings\/[^/]+/.test(normalizedPath) ||
