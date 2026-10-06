@@ -74,6 +74,13 @@ export default function ArticleReadingAccess({ children }: { children: ReactNode
           {preview?.description && <p className="article-summary">{preview.description}</p>}
         </div>
       </div>
+      {pathname.replace(/\/$/, "") === "/monitoring/tax/commentary/inheritance-tax-automatic-increase-2026" && <section className="container-page mt-8 max-w-3xl" aria-labelledby="inheritance-tax-short-title">
+        <h2 id="inheritance-tax-short-title" className="mb-4 text-xl font-extrabold text-navy sm:text-2xl">{ko ? "상속세의 조용한 증세 — 쇼츠로 보기" : "Inheritance Tax's Quiet Increase — Watch the Short"}</h2>
+        <div className="mx-auto aspect-[9/16] w-full max-w-[24rem] overflow-hidden bg-black shadow-[0_12px_34px_rgba(23,76,58,.08)]">
+          <iframe src="https://www.youtube-nocookie.com/embed/AAR1Gi1vKH4?rel=0" title={ko ? "세율은 그대로, 납세자는 늘었다… 상속세의 조용한 증세 — 씨앗의 소리 쇼츠" : "Unchanged Rates, More Taxpayers: Inheritance Tax's Quiet Increase — SEED VOICE Short in Korean"} className="h-full w-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />
+        </div>
+        <p className="mt-3 text-center text-sm"><a href="https://youtube.com/shorts/AAR1Gi1vKH4" target="_blank" rel="noreferrer" className="font-semibold text-green-deep underline decoration-green-deep/30 underline-offset-4">{ko ? "유튜브에서 보기" : "Watch on YouTube"}</a></p>
+      </section>}
       {preview?.image && <div className="container-page mt-8 max-w-3xl">
         <img src={preview.image} alt={preview.imageAlt || ""} className="aspect-[16/9] w-full rounded-lg object-cover shadow-[0_12px_34px_rgba(23,76,58,.08)]" loading="eager" decoding="async" />
       </div>}
