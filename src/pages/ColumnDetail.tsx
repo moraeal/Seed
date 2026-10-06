@@ -126,6 +126,14 @@ export default function ColumnDetail() {
     </header>
 
     <div className="article-content-frame py-8 sm:py-12">
+      {column.slug === "film-imagination-history-distortion-ryoma-2026" && <section className="mb-10" aria-labelledby="hero-history-short-title">
+        <h2 id="hero-history-short-title" className="mb-4 text-xl font-extrabold text-navy sm:text-2xl">{ko ? "영웅 만들기와 죽이기" : "Making and Unmaking Heroes"}</h2>
+        <div className="mx-auto aspect-[9/16] w-full max-w-[24rem] overflow-hidden bg-black shadow-[0_12px_34px_rgba(23,76,58,.08)]">
+          <iframe src="https://www.youtube-nocookie.com/embed/LSkd1bO9DM8?rel=0" title={ko ? "일본은 영웅을 만들고, 우리는 두 번 죽이나? — 씨앗의 소리 쇼츠" : "Japan Makes Heroes. Do We Kill Ours Twice? — SEED VOICE Short in Korean"} className="h-full w-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />
+        </div>
+        <p className="mt-3 text-center text-sm"><a href="https://youtube.com/shorts/LSkd1bO9DM8" target="_blank" rel="noreferrer" className="font-semibold text-green-deep underline decoration-green-deep/30 underline-offset-4">{ko ? "유튜브에서 보기" : "Watch on YouTube"}</a></p>
+      </section>}
+
       {column.displayHero !== false && <InteractiveFigure src={column.heroImage.src} alt={column.heroImage.alt} caption={column.heroImage.caption} credit={column.heroImage.credit} sourceUrl={column.heroImage.sourceUrl} figureClassName="overflow-hidden bg-white shadow-[0_12px_34px_rgba(23,76,58,.08)]" imageClassName="aspect-[16/9] w-full object-cover" />}
 
       {column.sourceDocument && <SourceDocumentPanel document={column.sourceDocument} ko={ko} />}
