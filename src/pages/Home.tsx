@@ -421,17 +421,15 @@ export default function Home() {
             <aside className="divide-y divide-green-deep/15 border-y border-green-deep/20 xl:flex xl:h-full xl:flex-col xl:border-t-0" aria-label={ko ? "시민운동과 시민언어" : "Civic action and language"}>
               {civicSidebarItems.map(({ section, article }) => {
                 if (section.key === "campaign") return (
-                  <Link key={section.key} to="/briefings/korean-civic-tax-watch-movement-ktr" aria-label={ko ? "시민캠페인: 한국형 세금감시운동을 제안한다" : "Civic campaign: A proposal for a Korean tax-watch movement"} className="group my-3 block border-l-4 border-gold bg-green-deep px-5 py-5 text-white transition-colors hover:bg-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green-deep sm:px-6 xl:mb-3 xl:mt-0">
-                    <div className="flex items-center justify-between gap-4">
-                      <p className="text-sm font-bold tracking-[.12em] text-white/85">{ko ? "시민캠페인" : "CIVIC CAMPAIGN"}</p>
-                      <span className="text-sm font-black tracking-[.14em] text-[#E8CB91]" aria-hidden="true">KTR</span>
-                    </div>
-                    <p className="mt-4 break-keep text-[1.65rem] font-black leading-[1.28] tracking-[-.035em] sm:text-[1.85rem]">{ko ? <>한국형 세금감시운동을<br />제안한다</> : <>A Korean tax-watch<br />movement starts here</>}</p>
-                    <p className="mt-3 break-keep text-sm font-medium leading-relaxed text-white/85">{ko ? "내가 낸 세금, 시민이 지켜봅니다." : "Our taxes. Our right to scrutinize."}</p>
-                    <div className="mt-4 flex items-center justify-between gap-3 border-t border-white/25 pt-3">
-                      <span className="text-sm font-medium text-white/85">{ko ? "증세의 근거 · 예산 낭비 · 책임" : "Tax rises · Waste · Accountability"}</span>
-                      <span className="shrink-0 border border-white/60 px-2.5 py-1.5 text-sm font-bold transition-colors group-hover:bg-white group-hover:text-green-deep">{ko ? "제안 읽기" : "Read proposal"}</span>
-                    </div>
+                  <Link key={section.key} to="/briefings/korean-civic-tax-watch-movement-ktr" aria-label={ko ? "시민캠페인: 증세, 더이상은 안돼! — 한국형 세금감시운동 제안 읽기" : "Civic campaign: No More Tax — Read the Korean tax-watch proposal"} className="group my-3 block overflow-hidden bg-navy transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green-deep xl:mb-3 xl:mt-0">
+                    <SafeImage
+                      src={resolveImageSrc("/images/civic/no-more-tax-fiscal-balloon-banner.webp")}
+                      alt={ko ? "증세, 더이상은 안돼! No More Tax. 2027년 예산안, 한 해 93조 증가 문구를 담은, 국회의사당 위에서 터지는 붉은 풍선의 캠페인 이미지" : "No More Tax campaign banner: a red balloon bursting above the National Assembly, with Korean text opposing tax increases and describing a 93 trillion won spending increase in the 2027 budget proposal"}
+                      width={1670}
+                      height={941}
+                      loading="eager"
+                      className="block h-auto w-full"
+                    />
                   </Link>
                 );
                 const title = article?.title ?? section.title[language];
