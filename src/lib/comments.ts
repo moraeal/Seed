@@ -121,10 +121,31 @@ export async function createComment(postSlug: string, nickname: string, body: st
     try {
       const data = await response.json();
       if (response.status === 401 || response.status === 403) message = "로그인 세션을 다시 확인해주세요.";
+      else if (data?.message?.includes("CAMPAIGN_SIGNATURE_LIMIT")) message = "CAMPAIGN_SIGNATURE_LIMIT";
       else if (data?.message) message = data.message;
     } catch {
       // 기본 안내문을 사용합니다.
     }
     throw new Error(message);
   }
+}
+
+
+export async function loadOwnCampaignSignatures(postSlug: string, accessToken: string, userId: string): Promise<CommentRecord[]> {
+  const response = await fetch(`${url}/rest/v1/comments?post_slug=eq.${encodeURIComponent(postSlug)}&user_id=eq.${encodeURIComponent(userId)}&select=${selectFields}&order=created_at.desc`, {
+    headers: { ...publicHeaders, Authorization: `Bearer ${accessToken}` },
+  });
+  if (!response.ok) throw new Error("SIGNATURE_LOAD_FAILED");
+  return response.json();
+}
+
+export async function manageCampaignSignature(id: string, accessToken: string, userId: string, body?: string): Promise<void> {
+  const response = await fetch(`${url}/rest/v1/comments?id=eq.${encodeURIComponent(id)}&user_id=eq.${encodeURIComponent(userId)}&post_slug=eq.campaign-no-more-tax-signatures&select=id`, {
+    method: body === undefined ? "DELETE" : "PATCH",
+    headers: { ...publicHeaders, Authorization: `Bearer ${accessToken}`, Prefer: "return=representation" },
+    ...(body === undefined ? {} : { body: JSON.stringify({ body }) }),
+  });
+  if (!response.ok) throw new Error("SIGNATURE_WRITE_FAILED");
+  const changed = await response.json();
+  if (changed.length !== 1) throw new Error("SIGNATURE_NOT_FOUND");
 }
