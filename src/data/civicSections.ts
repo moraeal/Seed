@@ -14,7 +14,7 @@ export type CivicSectionKey = typeof civicSections[number]["key"];
 // Policy explainers retain their separate Tax Watch listing.
 export const civicArticlePaths: Record<CivicSectionKey, string[]> = {
   campaign: ["/briefings/korean-civic-tax-watch-movement-ktr"],
-  cases: ["/columns/atr-taxpayer-movement-01-california", `/briefings/${taxWatchCaseSlug}`, "/briefings/korean-civic-tax-watch-movement-ktr", ...taxCommentaries.map((article) => `/monitoring/tax/commentary/${article.slug}`)],
+  cases: ["/columns/no-more-tax-increases-civic-declaration-2026", "/columns/atr-taxpayer-movement-01-california", `/briefings/${taxWatchCaseSlug}`, "/briefings/korean-civic-tax-watch-movement-ktr", ...taxCommentaries.map((article) => `/monitoring/tax/commentary/${article.slug}`)],
   notices: [`/briefings/${civicNoticeSlug}`],
 };
 export const campaignPending = {
