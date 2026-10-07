@@ -156,7 +156,7 @@ const claimUnseen = <T,>(
 export default function Home() {
   const { language } = useLanguage();
   const ko = language === "ko";
-  const { featuredPath, history: featuredHistory, ready: featuredReady, historyError } = useFeaturedContent();
+  const { featuredPath, history: featuredHistory, ready: featuredReady, historyError } = useFeaturedContent({ waitForSelection: true });
   const [legislativeBills, setLegislativeBills] = useState<LegislativeBill[]>(snapshot.bills as unknown as LegislativeBill[]);
   const [recommendedTopicPage, setRecommendedTopicPage] = useState(0);
   const [recommendedTopicsPaused, setRecommendedTopicsPaused] = useState(false);
@@ -400,7 +400,7 @@ export default function Home() {
             <p className="mt-1 text-[13px] font-medium text-charcoal/55 sm:text-sm">{ko ? "오늘 씨앗이 주목하는 문제" : "What SEED is watching today"}</p>
           </div>
           <div className="grid gap-5 sm:gap-6 xl:grid-cols-[minmax(0,1.62fr)_minmax(390px,.92fr)] xl:items-stretch xl:gap-7">
-            {featuredLead && (
+            {featuredLead ? (
               <article className="group h-full min-w-0">
                 <FeaturedStoryMedia
                   key={featuredLead.path}
@@ -417,6 +417,11 @@ export default function Home() {
                   <div className="mt-3 flex items-center gap-3 text-[11px] text-charcoal/45 sm:text-xs"><time>{featuredLead.date.replace(/-/g, ".")}</time>{featuredLead.readMinutes && <span className="inline-flex items-center gap-1"><Clock size={12}/>{featuredLead.readMinutes}{ko ? "분 읽기" : " min read"}</span>}</div>
                 </Link>
               </article>
+            ) : (
+              <div className="min-w-0" role="status" aria-label={ko ? "오늘의 기사 불러오는 중" : "Loading today’s story"}>
+                <div className="aspect-[16/8.55] w-full bg-green-deep/5 sm:aspect-[16/7.65]" />
+                <p className="mt-3 text-sm text-charcoal/55">{ko ? "오늘의 기사를 불러오고 있습니다." : "Loading today’s story."}</p>
+              </div>
             )}
             <aside className="divide-y divide-green-deep/15 border-y border-green-deep/20 xl:flex xl:h-full xl:flex-col xl:border-t-0" aria-label={ko ? "시민운동과 시민언어" : "Civic action and language"}>
               {civicSidebarItems.map(({ section, article }) => {

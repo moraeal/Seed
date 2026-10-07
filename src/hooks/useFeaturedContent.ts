@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import type { FeaturedHistoryEntry } from "../data/featuredHistory";
 import { getFeaturedContentHistory, getFeaturedContentPath } from "../lib/featuredContent";
 
-export function useFeaturedContent() {
+export function useFeaturedContent({ waitForSelection = false } = {}) {
   const [featuredPath, setFeaturedPath] = useState<string | null>(snapshot.featuredPath);
   const [history, setHistory] = useState<FeaturedHistoryEntry[]>(snapshot.history);
-  const [ready, setReady] = useState(true);
+  // A deployed snapshot may predate an operator change. Resolve the live
+  // selection before showing a homepage lead; archive pages can use the snapshot.
+  const [ready, setReady] = useState(!waitForSelection);
   const [historyError, setHistoryError] = useState(false);
   useEffect(() => {
     let active = true;
@@ -14,7 +16,17 @@ export function useFeaturedContent() {
     const refresh = async () => {
       if (pending) return;
       pending = true;
-      const [pathResult, historyResult] = await Promise.allSettled([getFeaturedContentPath(), getFeaturedContentHistory()]);
+      const [pathResult, historyResult] = await Promise.allSettled([
+        getFeaturedContentPath().then((path) => {
+          if (active) { setFeaturedPath(path); setReady(true); }
+          return path;
+        }, (error) => {
+          // Use the saved selection only when the live request has failed.
+          if (active) setReady(true);
+          throw error;
+        }),
+        getFeaturedContentHistory(),
+      ]);
       pending = false;
       if (!active) return;
       if (pathResult.status === "fulfilled") setFeaturedPath(pathResult.value);
