@@ -431,7 +431,7 @@ export default function Home() {
               {civicSidebarItems.map(({ section, article }) => {
                 if (section.key === "campaign") return (
                   <div key={section.key} className="relative my-3 xl:mb-3 xl:mt-0">
-                  <Link to="/briefings/korean-civic-tax-watch-movement-ktr" aria-label={ko ? "시민캠페인: 증세, 더이상은 안돼! — 한국형 세금감시운동 제안 읽기" : "Civic campaign: No More Tax — Read the Korean tax-watch proposal"} className="group block overflow-hidden bg-navy transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green-deep">
+                  <Link to="/columns/no-more-tax-increases-civic-declaration-2026" aria-label={ko ? "시민캠페인: 증세, 더 이상은 안 된다 — 칼럼 읽기" : "Civic campaign: No More Tax — Read the column"} className="group block overflow-hidden bg-navy transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green-deep">
                     <SafeImage
                       src={resolveImageSrc("/images/civic/no-more-tax-fiscal-balloon-banner.webp")}
                       alt={ko ? "증세, 더이상은 안돼! No More Tax. 2027년 예산안, 한 해 93조 증가 문구를 담은, 국회의사당 위에서 터지는 붉은 풍선의 캠페인 이미지" : "No More Tax campaign banner: a red balloon bursting above the National Assembly, with Korean text opposing tax increases and describing a 93 trillion won spending increase in the 2027 budget proposal"}

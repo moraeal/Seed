@@ -20,7 +20,7 @@ export default function CivicCollection({ sectionKey }: { sectionKey: CivicSecti
       <Link to="/civic-life" className="mt-4 inline-block text-sm font-bold text-green-deep hover:underline">{ko ? "← 시민생활" : "← Civic Life"}</Link>
     </header>
     {sectionKey === "campaign" && <div className="mt-6"><CampaignSignature /></div>}
-    {lead && <div className="mt-6 grid gap-6 border-b-2 border-navy pb-8 xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] xl:gap-8">
+    {lead && <div className="mt-6 border-b-2 border-navy pb-8">
     <article className="grid min-w-0 gap-5 lg:grid-cols-2 lg:gap-6">
       <Link to={lead.path}><SafeImage src={lead.image.src} alt={lead.image.alt} className="aspect-[16/9] w-full object-cover" /></Link>
       <div className="self-center">
@@ -31,17 +31,6 @@ export default function CivicCollection({ sectionKey }: { sectionKey: CivicSecti
         <Link to={lead.path} className="mt-4 inline-block text-base font-bold text-green-deep underline underline-offset-4">{ko ? "자세히 읽기" : "Read more"}</Link>
       </div>
     </article>
-    <aside aria-label={ko ? "한국형 세금감시운동 제안" : "Korean civic tax-watch proposal"}>
-      <Link to="/briefings/korean-civic-tax-watch-movement-ktr" className="group block overflow-hidden bg-navy text-white transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green-deep">
-        <div className="relative">
-          <SafeImage src="/images/civic/no-more-tax-fiscal-balloon-banner.webp" alt={ko ? "국회의사당 위에서 터지는 붉은 풍선과 증세 반대 문구" : "A red balloon bursting above the National Assembly with a message opposing tax increases"} width={1670} height={941} loading="eager" className="block aspect-[1670/941] w-full object-cover" />
-          <h2 className="absolute left-[4%] top-[6%] max-w-[47%] bg-navy/80 px-2 py-1.5 text-[clamp(1rem,2vw,1.5rem)] font-black leading-[1.1] text-white sm:text-[clamp(1.25rem,2.5vw,2rem)] xl:text-[clamp(1rem,1.3vw,1.25rem)]">
-            {ko ? <>한국형<br />세금감시운동을<br />제안한다</> : <>A Korean<br />Civic Tax Watch<br />Movement</>}
-          </h2>
-        </div>
-        <p className="px-4 py-3 text-base font-bold underline underline-offset-4">{ko ? "제안 기사 읽기" : "Read the proposal"}</p>
-      </Link>
-    </aside>
     </div>}
     <div className="mt-6 space-y-6">
       {sectionKey === "cases" && <h2 className="text-2xl font-bold text-navy">{ko ? "세금감시 논평과 운동 사례" : "Tax Commentaries and Movement Case Studies"}</h2>}
