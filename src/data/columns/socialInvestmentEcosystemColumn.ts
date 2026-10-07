@@ -22,8 +22,8 @@ export const socialInvestmentEcosystemColumn: SeedColumn = {
     "sourceUrl": ""
   },
   "inlineImage": {
-    "src": "images/columns/social-investment-ecosystem-2026/learning-workshop.webp",
-    "alt": "동네 작업실에서 수리 기술과 기록 방법을 함께 배우는 사람들을 그린 삽화",
+    "src": "images/columns/social-investment-ecosystem-2026/korea-enterprise-field.webp",
+    "alt": "한국의 소규모 봉제 작업장에서 작업자가 실무를 배우고 현장 자문자가 운영 기록을 점검하는 모습",
     "caption": "역량은 헌신만으로 채워지지 않는다. 실무 훈련과 자문, 조기 점검이 부실을 예방하는 기반이다.",
     "credit": "AI 이미지",
     "sourceUrl": ""

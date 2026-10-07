@@ -10,7 +10,7 @@ export const issue57: ColumnTranslation = {
     "credit": "AI image"
   },
   "inlineImage": {
-    "alt": "An illustration of neighbours learning repair skills and record keeping in a community workshop",
+    "alt": "Workers learning practical skills while a field adviser reviews operating records in a small Korean sewing workshop",
     "caption": "Commitment needs practical skills. Training, advice and early monitoring provide the foundations for preventing failure.",
     "credit": "AI image"
   },
