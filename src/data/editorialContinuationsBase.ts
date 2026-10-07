@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+"column:seoul-social-investment-fund-public-interest-ecosystem-2026": {
+  "ko": {
+    "href": "/columns/civic-groups-are-not-state-vanguard-2026",
+    "title": "시민단체는 정부의 돌격대가 아니다",
+    "relationship": "공익의 기준과 시민사회의 자율성",
+    "reason": "공익기관이 누구의 이익에 복무해야 하는지, 시민사회의 자율성과 책임을 함께 살펴본 칼럼으로 이어갑니다.",
+    "listHref": "/monitoring/public-interest",
+    "listLabel": "공익감시 전체 보기"
+  },
+  "en": {
+    "href": "/columns/civic-groups-are-not-state-vanguard-2026",
+    "title": "Civic Groups Are Not the Government's Advance Guard",
+    "relationship": "PUBLIC INTEREST AND CIVIC AUTONOMY",
+    "reason": "Continue with the autonomy and accountability of civic organisations, and whose interests they should serve.",
+    "listHref": "/monitoring/public-interest",
+    "listLabel": "All Public-interest Watch articles"
+  }
+},
   "column:film-imagination-history-distortion-ryoma-2026": {
   "ko": {
     "href": "/columns/assassins-film-history-memory-war-2026",
