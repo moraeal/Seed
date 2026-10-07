@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import CampaignSignature from "../components/CampaignSignature";
 import SafeImage from "../components/SafeImage";
 import { useLanguage } from "../i18n";
 import { campaignPending, civicSections, getCivicSectionArticles, getTaxWatchMovementArticles, type CivicSectionKey } from "../data/civicSections";
@@ -18,6 +19,7 @@ export default function CivicCollection({ sectionKey }: { sectionKey: CivicSecti
       <p className="mt-3 max-w-3xl text-base leading-7 text-charcoal/70">{section.description[language]}</p>
       <Link to="/civic-life" className="mt-4 inline-block text-sm font-bold text-green-deep hover:underline">{ko ? "← 시민생활" : "← Civic Life"}</Link>
     </header>
+    {sectionKey === "campaign" && <div className="mt-6"><CampaignSignature /></div>}
     {lead && <article className="mt-6 grid gap-5 border-b-2 border-navy pb-8 lg:grid-cols-2 lg:gap-8">
       <Link to={lead.path}><SafeImage src={lead.image.src} alt={lead.image.alt} className="aspect-[16/9] w-full object-cover" /></Link>
       <div className="self-center">

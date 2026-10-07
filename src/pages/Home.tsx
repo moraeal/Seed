@@ -421,7 +421,8 @@ export default function Home() {
             <aside className="divide-y divide-green-deep/15 border-y border-green-deep/20 xl:flex xl:h-full xl:flex-col xl:border-t-0" aria-label={ko ? "시민운동과 시민언어" : "Civic action and language"}>
               {civicSidebarItems.map(({ section, article }) => {
                 if (section.key === "campaign") return (
-                  <Link key={section.key} to="/briefings/korean-civic-tax-watch-movement-ktr" aria-label={ko ? "시민캠페인: 증세, 더이상은 안돼! — 한국형 세금감시운동 제안 읽기" : "Civic campaign: No More Tax — Read the Korean tax-watch proposal"} className="group my-3 block overflow-hidden bg-navy transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green-deep xl:mb-3 xl:mt-0">
+                  <div key={section.key} className="relative my-3 xl:mb-3 xl:mt-0">
+                  <Link to="/briefings/korean-civic-tax-watch-movement-ktr" aria-label={ko ? "시민캠페인: 증세, 더이상은 안돼! — 한국형 세금감시운동 제안 읽기" : "Civic campaign: No More Tax — Read the Korean tax-watch proposal"} className="group block overflow-hidden bg-navy transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green-deep">
                     <SafeImage
                       src={resolveImageSrc("/images/civic/no-more-tax-fiscal-balloon-banner.webp")}
                       alt={ko ? "증세, 더이상은 안돼! No More Tax. 2027년 예산안, 한 해 93조 증가 문구를 담은, 국회의사당 위에서 터지는 붉은 풍선의 캠페인 이미지" : "No More Tax campaign banner: a red balloon bursting above the National Assembly, with Korean text opposing tax increases and describing a 93 trillion won spending increase in the 2027 budget proposal"}
@@ -431,6 +432,8 @@ export default function Home() {
                       className="block h-auto w-full"
                     />
                   </Link>
+                  <Link to="/civic-campaign#campaign-signature" className="absolute bottom-3 right-3 inline-flex min-h-11 items-center justify-center border-2 border-white bg-green-deep px-5 py-2 text-base font-black text-white shadow-lg transition hover:bg-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">{ko ? "서명 참여하기" : "Sign the campaign"}</Link>
+                  </div>
                 );
                 const title = article?.title ?? section.title[language];
                 const summary = article?.summary ?? section.description[language];
