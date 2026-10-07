@@ -48,14 +48,33 @@ export const issue55: ColumnTranslation = {
  "The major tax reform enacted in 1986 brought the top individual income-tax rate down from 50 to 28 percent. ATR supported the reform. The president, Congress and several organizations all contributed to the legislation.[8](https://apps.irs.gov/app/understandingTaxes/teacher/whys_thm02_les06.jsp)[6](https://atr.org/about/)",
  "Taxation became an important subject of civic organizing in America. People asking how much they should pay, how much government could collect and whether politicians had kept their word built organizations and influenced politics."
  ]},
- {title:"At Our Own Kitchen Tables",paragraphs:[
- "The story is familiar from Korea. A house’s market price is different from a bank balance. A shop’s sales are different from the money its owner takes home. Those gaps reveal how heavily a tax can weigh on daily life.",
- "American citizens explained their burdens together, collected signatures, changed rules and left organizations to defend those rules. That process suggests a starting point for a Korean civic tax-watch movement.",
- "Start with a tax bill a citizen sends in, the money a shop actually earns or the cost of staying in a longtime home. Explain which rules increase the burden and identify rules that can be changed. Ask those responsible to answer. Keep a record of their answers and their actions.",
- "People who pay taxes have a voice with which to explain their lives. When scattered voices come together, they can become standards government must observe.",
- "In the next installment, we will unfold the pledge ATR asked politicians to sign. Where did the power to hold them to their campaign promises come from?"
- ]}
+ {
+  "title": "A Home Bought with Debt, Taxes Paid in Cash",
+  "paragraphs": [
+    "In Korea, a bank is almost always part of the story of buying a home. People count their savings, ask their parents for help and work out the most they can borrow. They hesitate over a home that their current income can barely support. If they let this one go, the next may feel even further out of reach.",
+    "One expectation holds that calculation together: if house prices rise faster than the interest bill, stretching to buy may seem worthwhile. If prices climb faster than savings over the next few years, even diligent saving may not bring a home within reach. The more prices rise, the more debt people become willing to take on beyond what they can comfortably afford.",
+    "They worry about a bubble and still try to catch what feels like the last train. The price is frighteningly high; the thought that it could go higher is frightening, too. Buying a home changes from a plan for a stable life into a desperate pursuit of keeping up.",
+    "A home bought that way contains a great deal of the bank’s money. Even on the day the owner hears that its value has risen, the loan remains. The higher price becomes cash only when the house is sold. Principal and interest must still be paid this month.",
+    "Tighter lending conditions narrow the funding available to buy a home. Rising interest on a variable-rate loan reduces the money a family already in its home has left to live on. Policy figures for interest rates and lending restrictions become grocery bills, school expenses and medical costs. In a home bought with borrowed money, financial policy becomes a household matter.",
+    "Then the tax bill arrives. Property tax and comprehensive real estate holding tax do not deduct the mortgage used to buy the home from its tax base. Korea’s comprehensive real estate holding tax offers a basic deduction and credits for qualifying older or longtime owners, but no deduction for the outstanding mortgage balance.[9](https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7735)",
+    "On paper, the owner has an expensive home. Each month, the household lives on what remains after sending principal and interest to the bank. Judged by the house price, the owner has grown wealthier. Judged by the bank account, the same person is struggling to get through the month.",
+    "Even on a house supported by debt, the tax demand arrives in cash.",
+    "Cash can remain a problem when a family inherits a parent’s home. Verified debts owed by the deceased parent are deducted when inheritance tax is calculated. If tax remains due after those deductions and most of the remaining estate is tied up in the house, the family must find the money to pay it. A child’s own mortgage is not a debt deductible from the parent’s estate.[10](https://i.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7956&mi=6528)",
+    "Some families may have to find the tax on a parent’s home in the same bank account that pays the mortgage on their own. Interest takes the first share of their living money; taxes draw down what remains. The figure called middle-class wealth contains families in very different circumstances.",
+    "The anxiety Californians felt in the 1970s returns at Korean kitchen tables. The house is worth more, but there is too little money to keep living in it. For a household holding on while repaying a loan, those words carry even greater urgency."
+  ]
+},
+ {
+  "title": "Put the Tax Bill Beside the Loan Repayment Schedule",
+  "paragraphs": [
+    "American citizens explained their burdens together, collected signatures, changed rules and left organizations to defend those rules. Following that process reveals a place for a Korean civic tax-watch movement to begin.",
+    "Put a citizen’s tax bill beside the loan repayment schedule. Set the home’s value, the debt still owed, monthly income and the money left after interest and taxes alongside one another. Only then does the household’s situation come into view.",
+    "When government explains why it wants to collect more tax, bring that household budget into the discussion. Ask whose burden will rise, what money they can use to pay and which spending government has cut before asking for more. Obtain answers from those responsible, and keep a record of their answers and their actions.",
+    "People who pay taxes have a voice with which to explain their lives. When scattered voices come together, they can become standards government must observe.",
+    "In the next installment, we will unfold the pledge ATR asked politicians to sign. Where did the power to hold them to their campaign promises come from?"
+  ]
+}
  ],
  sourceNote:"The opening household explanation and kitchen-table scene are illustrations, rather than a reconstruction of any individual’s testimony. ATR’s and HJTA’s accounts of their origins are identified as their own organizational histories. The historical photograph is licensed under CC BY 4.0; the license is linked below.",
- sourceLabels:["[1] California State Board of Equalization · Background to the 1978 tax revolt","[2] Capital Public Radio / KPCC · Residents’ memories and the signature campaign","[3] UC Law San Francisco · Proposition 13 voting record","[4] U.S. Supreme Court · Nordlinger v. Hahn (1992)","[5] Howard Jarvis Taxpayers Association · Organizational history","[6] ATR · Founding and activities (organizational account)","[7] ATR · The Taxpayer Protection Pledge","[8] IRS · The 1986 tax reform","Photo license · Creative Commons Attribution 4.0"]
+ sourceLabels:["[1] California State Board of Equalization · Background to the 1978 tax revolt","[2] Capital Public Radio / KPCC · Residents’ memories and the signature campaign","[3] UC Law San Francisco · Proposition 13 voting record","[4] U.S. Supreme Court · Nordlinger v. Hahn (1992)","[5] Howard Jarvis Taxpayers Association · Organizational history","[6] ATR · Founding and activities (organizational account)","[7] ATR · The Taxpayer Protection Pledge","[8] IRS · The 1986 tax reform","[9] Korea National Tax Service · Comprehensive real estate holding tax calculation","[10] Korea National Tax Service · Inheritance tax deductions","Photo license · Creative Commons Attribution 4.0"]
 };
