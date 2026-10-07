@@ -191,7 +191,11 @@ export default function Home() {
       claimedHomePaths.add(getHomeTopic(path));
       return { section, article: featuredCandidates.find((item) => item.path === path) };
     }
-    const article = getCivicSectionArticles(section.key, language, featuredCandidates).find((item) => !claimedHomePaths.has(getHomeTopic(item.path)));
+    const sectionArticles = getCivicSectionArticles(section.key, language, featuredCandidates);
+    const pinnedArticle = section.key === "cases"
+      ? sectionArticles.find((item) => item.path === "/columns/atr-taxpayer-movement-01-california" && !claimedHomePaths.has(getHomeTopic(item.path)))
+      : undefined;
+    const article = pinnedArticle ?? sectionArticles.find((item) => !claimedHomePaths.has(getHomeTopic(item.path)));
     if (article) claimedHomePaths.add(getHomeTopic(article.path));
     return { section, article };
   });
@@ -442,7 +446,7 @@ export default function Home() {
                 );
                 const title = article?.title ?? section.title[language];
                 const summary = article?.summary ?? section.description[language];
-                return <Link key={section.key} to={section.key === "cases" ? section.path : article?.path ?? section.path} className="group cursor-pointer transition-colors duration-200 hover:bg-green-deep/5 focus-visible:bg-green-deep/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-deep grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3 xl:first:pt-0">
+                return <Link key={section.key} to={article?.path ?? section.path} className="group cursor-pointer transition-colors duration-200 hover:bg-green-deep/5 focus-visible:bg-green-deep/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-deep grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3 xl:first:pt-0">
                   <div className="flex items-center justify-center overflow-hidden bg-green-deep text-white">
                     {article ? <SafeImage src={resolveImageSrc(article.image.src)} alt={article.image.alt} className="aspect-[4/3] h-full max-h-[110px] w-full object-cover" /> : <Megaphone size={34} aria-hidden="true" className="my-6" />}
                   </div>
