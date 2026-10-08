@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:farmland-farming-freedom-smart-agriculture-2026": {
+  "ko": {
+    "href": "/columns/robak-solar-smart-farming-farmland-2026",
+    "title": "태양광은 되고 스마트농업은 왜 어려운가",
+    "relationship": "노박의 건설읽기 · 관련 칼럼",
+    "reason": "장기 임대차와 경작권의 제안에 이어, 재배부터 출하까지 하나의 생산과정으로 심사하자는 노박의 시설규제 개선안을 읽습니다.",
+    "listHref": "/columns",
+    "listLabel": "칼럼 전체 보기"
+  },
+  "en": {
+    "href": "/columns/robak-solar-smart-farming-farmland-2026",
+    "title": "Why Is Solar Allowed While Smart Farming Is Difficult?",
+    "relationship": "ROBAK’S READING CONSTRUCTION · RELATED COLUMN",
+    "reason": "Continue from secure leases and cultivation rights to Robak’s proposal for assessing the full production process from growing to shipment.",
+    "listHref": "/columns",
+    "listLabel": "All columns"
+  }
+},
   "briefing:leveraged-etfs-government-signals-citizen-losses-2026": {
     ko: { href: "/briefings/government-policy-funds-risk-and-taxpayer-cost-2026", title: "정부가 밀어주는 펀드, 위험은 누가 떠안나요?", relationship: "정책의 신뢰와 손실의 부담", reason: "뉴딜펀드의 실제 손실 완충과 납세자의 부담을 함께 살펴봅니다.", listHref: "/briefings", listLabel: "브리핑 전체 보기" },
     en: { href: "/briefings/government-policy-funds-risk-and-taxpayer-cost-2026", title: "When the Government Backs a Fund, Who Bears the Risk?", relationship: "POLICY TRUST AND LOSS ALLOCATION", reason: "Continue with the New Deal Fund’s actual first-loss protection and taxpayers’ costs.", listHref: "/briefings", listLabel: "All briefings" }

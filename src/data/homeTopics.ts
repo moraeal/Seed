@@ -82,7 +82,7 @@ for (const [columnSlug, trackerSlug] of Object.entries(hotIssueColumnTrackerSlug
   ];
 }
 
-homeTopicGroups["farmland-census-disposal-orders-tracker"]?.push("/briefings/farmland-census-elderly-farmers-retirement", "/columns/farmland-solar-cartel-professional-farming-2026");
+homeTopicGroups["farmland-census-disposal-orders-tracker"]?.push("/briefings/farmland-census-elderly-farmers-retirement", "/columns/farmland-solar-cartel-professional-farming-2026", "/columns/farmland-farming-freedom-smart-agriculture-2026");
 
 const topicByPath = new Map(
   Object.entries(homeTopicGroups).flatMap(([topic, paths]) => paths.map((path) => [path, topic] as const)),
