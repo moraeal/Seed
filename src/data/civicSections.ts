@@ -1,3 +1,4 @@
+import { procurementTaxWatchNoticeSlug } from "./procurementTaxWatchNotice";
 import type { Language } from "../i18n";
 import { getFeaturedContentCandidates, type FeaturedContent } from "./featuredContent";
 import { taxCommentaries } from "./taxCommentaries";
@@ -15,7 +16,7 @@ export type CivicSectionKey = typeof civicSections[number]["key"];
 export const civicArticlePaths: Record<CivicSectionKey, string[]> = {
   campaign: ["/briefings/korean-civic-tax-watch-movement-ktr"],
   cases: ["/columns/atr-taxpayer-movement-02-protection-pledge", "/columns/no-more-tax-increases-civic-declaration-2026", "/columns/atr-taxpayer-movement-01-california", `/briefings/${taxWatchCaseSlug}`, "/briefings/korean-civic-tax-watch-movement-ktr", ...taxCommentaries.map((article) => `/monitoring/tax/commentary/${article.slug}`)],
-  notices: [`/briefings/${civicNoticeSlug}`],
+  notices: [`/briefings/${procurementTaxWatchNoticeSlug}`, `/briefings/${civicNoticeSlug}`],
 };
 export const campaignPending = {
   title: { ko: "한국형 세금감시 운동을 제안한다", en: "A Proposal for a Korean Civic Tax Watch Movement" },
@@ -42,6 +43,7 @@ export function getCivicSectionForArticle(path: string) {
 // Assess every new article under CONTENT_PUBLISHING_RULES.md §14 and add
 // suitable stories here in the same publishing update, regardless of category.
 export const civicLifeArticlePaths = [
+  `/briefings/${procurementTaxWatchNoticeSlug}`,
   "/columns/atr-taxpayer-movement-02-protection-pledge",
   "/columns/robak-solar-smart-farming-farmland-2026",
   "/columns/citizens-dilemma-02-neighbor-noise",

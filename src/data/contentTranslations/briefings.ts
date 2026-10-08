@@ -1,3 +1,4 @@
+import { procurementTaxWatchNoticeTranslation, procurementTaxWatchNoticeSlug } from "../procurementTaxWatchNotice";
 import { policyFundRiskTranslation } from "../policyFundRiskBriefing";
 import { ktrCampaignTranslation } from "./ktrCampaign";
 import { civicHubTranslations } from "../civicHubArticles";
@@ -24,6 +25,7 @@ import { monthlyRentCreditExplainerTranslation } from "./briefingMonthlyRentCred
 import { farmlandRetirementTranslation } from "./briefingFarmlandRetirement";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  [procurementTaxWatchNoticeSlug]: procurementTaxWatchNoticeTranslation,
   "government-policy-funds-risk-and-taxpayer-cost-2026": policyFundRiskTranslation,
   "korean-civic-tax-watch-movement-ktr": ktrCampaignTranslation,
   ...civicHubTranslations,
