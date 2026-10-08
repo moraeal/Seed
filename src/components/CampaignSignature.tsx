@@ -10,6 +10,7 @@ const returnTo = "/civic-campaign#campaign-signature";
 export default function CampaignSignature() {
   const { language } = useLanguage();
   const ko = language === "ko";
+  const defaultSignature = ko ? "동의합니다" : "I agree.";
   const { user, session, nickname, isVerified, loading } = useAuth();
   const [body, setBody] = useState("");
   const [consent, setConsent] = useState(false);
@@ -62,7 +63,7 @@ export default function CampaignSignature() {
     if (submitting || busyId || mineLoading || mineError) return;
     if (atLimit) { setNotice(limitMessage); return; }
     if (!user || !session || !isVerified || !consent) return;
-    const text = body.replace(/\s+/g, " ").trim();
+    const text = body.replace(/\s+/g, " ").trim() || defaultSignature;
     if (text.length < 2 || text.length > 120) {
       setNotice(ko ? "서명글은 2~120자로 입력해주세요." : "Please enter 2–120 characters.");
       return;
@@ -92,7 +93,8 @@ export default function CampaignSignature() {
       {atLimit && <p className="mb-3 text-sm font-bold text-green-deep">{limitMessage}</p>}
       {mineError && <p role="alert" className="mb-3 text-sm">{ko ? "내 서명글을 불러오지 못했습니다. 페이지를 새로고침해주세요." : "Unable to load your signatures. Refresh this page."}</p>}
       <p className="text-sm font-bold text-navy">{ko ? "서명 닉네임" : "Signing as"}: {nickname}</p>
-      <label className="field mt-4"><span>{ko ? "한 줄 서명글" : "Your one-line signature"}</span><input value={body} onChange={event => setBody(event.target.value)} minLength={2} maxLength={120} required placeholder={ko ? "집값이 올랐다고 제 현금까지 늘어난 것은 아닙니다." : "Tell us why you are joining."} /></label>
+      <label className="field mt-4"><span>{ko ? "한 줄 서명글 (선택)" : "Your one-line signature (optional)"}</span><input value={body} onChange={event => setBody(event.target.value)} minLength={2} maxLength={120} placeholder={defaultSignature} aria-describedby="campaign-signature-hint" /></label>
+      <p id="campaign-signature-hint" className="mt-2 text-sm leading-6 text-charcoal/70">{ko ? "원하는 글을 직접 쓰거나, 비워두고 등록하면 ‘동의합니다’로 서명됩니다." : "Write your own message, or leave this blank to sign with ‘I agree.’"}</p>
       <label className="mt-4 flex items-start gap-3 text-sm leading-6"><input type="checkbox" checked={consent} onChange={event => setConsent(event.target.checked)} required className="mt-1 size-4 shrink-0" /><span>{ko ? "증세 반대 캠페인에 참여하며, 내 닉네임과 서명글 공개에 동의합니다." : "I join this campaign and agree to publish my nickname and signature."}</span></label>
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3"><span className="text-sm text-charcoal/55">{body.length}/120</span><button type="submit" className="button-primary" disabled={submitting || !consent || atLimit || mineLoading || mineError || Boolean(busyId)}>{submitting ? (ko ? "등록 중" : "Registering") : (ko ? "서명 등록하기" : "Register signature")}</button></div>
     </form> : <div className="mt-5">
