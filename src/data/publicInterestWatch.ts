@@ -73,6 +73,12 @@ export type WatchSource = {
 
 export type PublicInterestWatchCase = {
   slug: string;
+  bodyImages?: {
+    src: string | LocalizedText;
+    alt: LocalizedText;
+    caption: LocalizedText;
+    credit: LocalizedText;
+  }[];
   organization: LocalizedText;
   eyebrow: LocalizedText;
   title: LocalizedText;

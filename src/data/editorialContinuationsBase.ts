@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+"news:privacy-leaks-ai-security-accountability-2026": {
+  "ko": {
+    "href": "/monitoring/banking-privacy-ai-hacking-tracker-2026",
+    "title": "은행에 맡긴 내 정보가 새었다…AI 해킹 조사와 보상 기록",
+    "relationship": "같은 이슈의 뉴스트래커",
+    "reason": "논평에 이어 조사 결과와 금융권 점검, 실제 보상 진행을 날짜별로 확인한다.",
+    "listHref": "/news",
+    "listLabel": "뉴스 전체 보기"
+  },
+  "en": {
+    "href": "/monitoring/banking-privacy-ai-hacking-tracker-2026",
+    "title": "My bank-held information leaked: Tracking the AI hacking inquiry and compensation",
+    "relationship": "TRACKING THE SAME ISSUE",
+    "reason": "Follow investigation findings, financial-sector checks and actual compensation by date.",
+    "listHref": "/news",
+    "listLabel": "All news"
+  }
+},
 "column:seoul-social-investment-fund-public-interest-ecosystem-2026": {
   "ko": {
     "href": "/columns/civic-groups-are-not-state-vanguard-2026",

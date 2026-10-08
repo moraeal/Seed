@@ -18,6 +18,7 @@ import ArticleContinuation from "../components/ArticleContinuation";
 import CommentSection from "../components/CommentSection";
 import ContentAccountability from "../components/ContentAccountability";
 import SafeImage from "../components/SafeImage";
+import InteractiveFigure from "../components/InteractiveFigure";
 import trackerSourceImages from "../data/trackerSourceImages.json";
 const sourceImages: Record<string, { src: string; kind?: string; alt?: LocalizedText; credit?: LocalizedText }> = trackerSourceImages;
 import ShareButton from "../components/ShareButton";
@@ -86,6 +87,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
               <p className="mt-4 text-sm font-extrabold text-green-deep">{t(item.organization)}</p>
               <h1 className="editorial-title mt-2 text-balance text-[2rem] font-bold leading-[1.18] text-navy sm:text-[2.75rem]">{t(item.title)}</h1>
               <p className="mt-4 max-w-3xl text-[15px] leading-7 text-charcoal/68 sm:text-base sm:leading-8">{t(item.summary)}</p>
+              {!!item.bodyImages?.length && item.relatedContents?.[0] && <p className="mt-3 text-sm leading-7 text-charcoal/60">{t(item.relatedContents[0].label)} · <Link className="text-link" to={item.relatedContents[0].href}>{t(item.relatedContents[0].title)}</Link></p>}
 
               <dl className="mt-6 grid gap-px overflow-hidden border border-green-deep/12 bg-green-deep/12 sm:grid-cols-3">
                 <div className="bg-white p-4">
@@ -339,6 +341,8 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
             </div>
           </section>
         )}
+
+        {item.bodyImages?.map((image, index) => <InteractiveFigure key={index} src={typeof image.src === "string" ? image.src : t(image.src)} alt={t(image.alt)} caption={t(image.caption)} credit={t(image.credit)} figureClassName="my-10 overflow-hidden bg-white shadow-[0_12px_34px_rgba(23,76,58,.08)]" imageClassName="block h-auto w-full" />)}
 
         <section className={`${layered ? "mt-10" : "mt-12"} grid gap-8 ${hasRemainingItems ? "lg:grid-cols-2" : ""}`} aria-label={ko ? "확인된 사실과 남은 쟁점" : "Established facts and open issues"}>
           <div>

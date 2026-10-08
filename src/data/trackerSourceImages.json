@@ -589,5 +589,25 @@
       "en": "AI image"
     },
     "verifiedAt": "2026-10-06T12:20:00Z"
+  },
+  "https://ir.newspim.com/news/view/20261008000854": {
+    "src": "/images/monitoring/source-articles/6e7edb795a7710eeafe0.jpg",
+    "originalImageUrl": "https://img.newspim.com/news/2026/10/08/261008115104686_469_tc.jpg",
+    "verifiedAt": "2026-10-08T09:21:19.892Z"
+  },
+  "https://www.newspim.com/news/view/20261006001443": {
+    "src": "/images/monitoring/source-articles/327c8d03593cc81c6271.jpg",
+    "originalImageUrl": "https://img.newspim.com/news/2023/04/28/2304281405515240_t1.jpg",
+    "verifiedAt": "2026-10-08T09:21:19.960Z"
+  },
+  "https://web3.newspim.com/news/view/20261007001127": {
+    "src": "/images/monitoring/source-articles/56d3945c9de8e948c154.jpg",
+    "originalImageUrl": "https://img.newspim.com/news/2026/10/07/2610071508369990_283_tc.jpg",
+    "verifiedAt": "2026-10-08T09:21:20.206Z"
+  },
+  "https://www.newspim.com/news/view/20261001000665": {
+    "src": "/images/monitoring/source-articles/53d5ca995ab59fb1fd69.jpg",
+    "originalImageUrl": "https://img.newspim.com/news/2024/12/10/2412101336014920_t1.jpg",
+    "verifiedAt": "2026-10-08T09:21:20.236Z"
   }
 }

@@ -1,3 +1,4 @@
+import { bankingPrivacyTracker } from "./bankingPrivacyTracker";
 import {
   getPublicInterestWatchCase as getBasePublicInterestWatchCase,
   newsTrackerCases as baseNewsTrackerCases,
@@ -10,6 +11,7 @@ import { northKoreanPowsProtectionTracker } from "./northKoreanPowsProtectionTra
 import { dmzMineBlastTracker } from "./dmzMineBlastTracker";
 
 export const publicInterestWatchCases = [
+  bankingPrivacyTracker,
   dmzMineBlastTracker,
   northKoreanPowsProtectionTracker,
   supremeCourtRenominationTracker,
@@ -19,6 +21,7 @@ export const publicInterestWatchCases = [
 ];
 
 export const newsTrackerCases = [
+  bankingPrivacyTracker,
   dmzMineBlastTracker,
   northKoreanPowsProtectionTracker,
   supremeCourtRenominationTracker,
@@ -28,6 +31,7 @@ export const newsTrackerCases = [
 ];
 
 export function getPublicInterestWatchCase(slug: string) {
+  if (slug === bankingPrivacyTracker.slug) return bankingPrivacyTracker;
   if (slug === dmzMineBlastTracker.slug) return dmzMineBlastTracker;
   if (slug === northKoreanPowsProtectionTracker.slug) {
     return northKoreanPowsProtectionTracker;

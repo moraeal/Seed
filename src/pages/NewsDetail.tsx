@@ -20,6 +20,9 @@ function InlineLinkedText({ text }: { text: string }) {
     if (!match) return part;
 
     const [, label, href] = match;
+    if (/^\d+$/.test(label) && /^https?:\/\//i.test(href)) {
+      return <sup key={`${href}-${index}`} className="ml-0.5 text-[0.65em] font-normal leading-none text-charcoal/50"><a href={href} target="_blank" rel="noreferrer" aria-label={`Source ${label}`} className="no-underline transition-colors hover:text-green-deep">[{label}]</a></sup>;
+    }
     const className = "font-semibold text-green-deep underline decoration-green-deep/35 underline-offset-4 hover:decoration-green-deep";
     return href.startsWith("/")
       ? <Link key={`${href}-${index}`} to={href} className={className}>{label}</Link>
@@ -96,7 +99,7 @@ export default function NewsDetail() {
 
         <section className="mt-10 border-t-2 border-navy pt-7"><span className="section-kicker">{ko ? "앞으로 확인할 지점" : "WHAT TO WATCH"}</span><ol className="mt-4 grid gap-3 sm:grid-cols-2">{article.watchPoints.map((point, index) => <li key={`${index}-${point}`} className="border border-green-deep/15 bg-white p-4"><p className="text-sm font-semibold leading-6 text-navy">{point}</p></li>)}</ol></section>
 
-        <aside className="mt-12 bg-green-deep px-6 py-7 text-white sm:px-8"><span className="text-xs font-bold tracking-[.22em] text-gold">SEED PERSPECTIVE</span><h2 className="mt-2 text-2xl font-extrabold">{ko ? "씨드의 관점" : "SEED's View"}</h2>{article.seedPerspective.map((paragraph, index) => <p key={`${index}-${paragraph.slice(0, 32)}`} className={`article-copy text-white/85 ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>)}</aside>
+        <aside className="mt-12 bg-green-deep px-6 py-7 text-white sm:px-8 [&_a]:text-white [&_a]:decoration-white/40"><span className="text-xs font-bold tracking-[.22em] text-gold">SEED PERSPECTIVE</span><h2 className="mt-2 text-2xl font-extrabold">{ko ? "씨드의 관점" : "SEED's View"}</h2>{article.seedPerspective.map((paragraph, index) => <p key={`${index}-${paragraph.slice(0, 32)}`} className={`article-copy text-white/85 ${isLongRead ? "article-copy-long" : ""}`}><InlineLinkedText text={paragraph}/></p>)}</aside>
 
         <section className="mt-10 border-t border-green-deep/15 pt-6"><span className="section-kicker">{ko ? "확인한 자료" : "SOURCES"}</span><p className="mt-2 text-xs leading-6 text-charcoal/45">{ko ? "기사 작성일 기준 공개된 공식자료와 보도를 교차 확인했습니다. 이후 정책 내용은 변경될 수 있습니다." : "Sources reflect public materials available at the time of writing. Later official decisions or policy changes may update the picture."}</p><ul className="mt-4 grid gap-2 text-sm leading-6 text-charcoal/65">{article.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ul></section>
         <ContentAccountability postSlug={article.slug} publishedDate={article.date} />
