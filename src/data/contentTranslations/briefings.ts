@@ -1,3 +1,4 @@
+import { leverageEtfTranslation } from "../leverageEtfBriefing";
 import { procurementTaxWatchNoticeTranslation, procurementTaxWatchNoticeSlug } from "../procurementTaxWatchNotice";
 import { policyFundRiskTranslation } from "../policyFundRiskBriefing";
 import { ktrCampaignTranslation } from "./ktrCampaign";
@@ -26,6 +27,7 @@ import { farmlandRetirementTranslation } from "./briefingFarmlandRetirement";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
   [procurementTaxWatchNoticeSlug]: procurementTaxWatchNoticeTranslation,
+  "leveraged-etfs-government-signals-citizen-losses-2026": leverageEtfTranslation,
   "government-policy-funds-risk-and-taxpayer-cost-2026": policyFundRiskTranslation,
   "korean-civic-tax-watch-movement-ktr": ktrCampaignTranslation,
   ...civicHubTranslations,

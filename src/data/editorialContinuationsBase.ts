@@ -9,6 +9,11 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "briefing:leveraged-etfs-government-signals-citizen-losses-2026": {
+    ko: { href: "/briefings/government-policy-funds-risk-and-taxpayer-cost-2026", title: "정부가 밀어주는 펀드, 위험은 누가 떠안나요?", relationship: "정책의 신뢰와 손실의 부담", reason: "뉴딜펀드의 실제 손실 완충과 납세자의 부담을 함께 살펴봅니다.", listHref: "/briefings", listLabel: "브리핑 전체 보기" },
+    en: { href: "/briefings/government-policy-funds-risk-and-taxpayer-cost-2026", title: "When the Government Backs a Fund, Who Bears the Risk?", relationship: "POLICY TRUST AND LOSS ALLOCATION", reason: "Continue with the New Deal Fund’s actual first-loss protection and taxpayers’ costs.", listHref: "/briefings", listLabel: "All briefings" }
+  },
+
 "news:privacy-leaks-ai-security-accountability-2026": {
   "ko": {
     "href": "/monitoring/banking-privacy-ai-hacking-tracker-2026",

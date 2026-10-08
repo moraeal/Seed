@@ -43,6 +43,7 @@ export function getCivicSectionForArticle(path: string) {
 // Assess every new article under CONTENT_PUBLISHING_RULES.md §14 and add
 // suitable stories here in the same publishing update, regardless of category.
 export const civicLifeArticlePaths = [
+  "/briefings/leveraged-etfs-government-signals-citizen-losses-2026",
   "/news/privacy-leaks-ai-security-accountability-2026",
   "/monitoring/banking-privacy-ai-hacking-tracker-2026",
   `/briefings/${procurementTaxWatchNoticeSlug}`,
