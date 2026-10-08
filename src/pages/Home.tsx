@@ -182,8 +182,8 @@ export default function Home() {
       ?? featuredCandidates[0]
     : undefined;
   const activeFeaturedPath = featuredLead?.path;
-  // A story gets one position on the homepage. Higher placements claim the route first,
-  // and each lower section automatically advances to the next eligible article.
+  // Each story gets one homepage position. The latest briefing desk takes
+  // priority over the historical carousel; other desks claim remaining topics.
   const claimedHomePaths = new Set(activeFeaturedPath ? [getHomeTopic(activeFeaturedPath)] : []);
   const civicSidebarItems = civicSections.map((section) => {
     if (section.key === "campaign") {
@@ -205,6 +205,15 @@ export default function Home() {
     claimedHomePaths,
   );
   const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[ko ? seedLanguageArticle.term : getSeedLanguageEnvironmentArticle(seedLanguageArticle.slug, "ko")?.term ?? getSeedLanguageArticle(seedLanguageArticle.slug, "ko")?.term ?? ""] : undefined;
+  // Reserve the newest briefings before the historical carousel can claim them.
+  const briefings = claimUnseen(
+    localizedBriefings.filter((item) => item.homeBriefingLeadEligible !== false),
+    (item) => `/briefings/${item.slug}`,
+    claimedHomePaths,
+    5,
+  );
+  const briefingLead = briefings[0];
+  const briefingList = briefings.slice(1);
   const visibleHotIssueCards = featuredReady ? selectHotIssueCards(
     getHomepageArchiveCards(language, legislativeBills, featuredHistory),
     claimedHomePaths,
@@ -223,6 +232,7 @@ export default function Home() {
     seedLanguageArticle ? `/seed-language/${seedLanguageArticle.slug}` : undefined,
     ...visibleHotIssueCards.map((card) => card.to),
     ...newsTrackingCards.map((card) => card.to),
+    ...briefings.map((briefing) => `/briefings/${briefing.slug}`),
   ].filter((path): path is string => Boolean(path)));
   const recentCivicWatchItems = selectLatestCivicWatchItems(
     getCivicWatchFeed(language, legislativeBills), upperArticlePaths,
@@ -285,14 +295,6 @@ export default function Home() {
     .sort((a, b) => b.date.localeCompare(a.date));
 
   const commentaryItems = claimUnseen(commentaryCandidates, (item) => item.to, claimedHomePaths, 3);
-  const briefings = claimUnseen(
-    localizedBriefings.filter((item) => item.homeBriefingLeadEligible !== false),
-    (item) => `/briefings/${item.slug}`,
-    claimedHomePaths,
-    5,
-  );
-  const briefingLead = briefings[0];
-  const briefingList = briefings.slice(1);
   const journalColumns = claimUnseen(
     allJournalColumns,
     (item) => `/columns/${item.slug}`,
