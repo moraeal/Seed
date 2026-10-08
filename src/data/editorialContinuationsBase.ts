@@ -9,6 +9,7 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:fuel-shipments-russia-diplomatic-accountability-2026": {"ko": {"href": "/monitoring/north-korean-pows-protection-tracker", "title": "북한군 포로 보호와 한국 이송 쟁점", "relationship": "관련 뉴스트래커", "reason": "포로 이송과 양국 설명의 경위를 타임라인으로 확인합니다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"}, "en": {"href": "/monitoring/north-korean-pows-protection-tracker", "title": "North Korean POWs: Protection and Transfer", "relationship": "RELATED NEWS TRACKER", "reason": "Follow the transfer issue and the two governments’ accounts in the timeline.", "listHref": "/columns", "listLabel": "All columns"}},
   "column:farmland-farming-freedom-smart-agriculture-2026": {
   "ko": {
     "href": "/columns/robak-solar-smart-farming-farmland-2026",

@@ -16,6 +16,7 @@ const homeTopicGroups: Record<string, string[]> = {
     "/columns/assassins-film-history-memory-war-2026",
   ],
   "north-korean-pows-protection": [
+    "/columns/fuel-shipments-russia-diplomatic-accountability-2026",
     "/monitoring/north-korean-pows-protection-tracker",
     "/briefings/north-korean-pows-south-korea-zelensky-un",
   ],

@@ -1,3 +1,4 @@
+import { issue63 } from "./issue63";
 import { issue62 } from "./issue62";
 import { issue61 } from "./issue61";
 import { issue60 } from "./issue60";
@@ -63,6 +64,7 @@ import { issue43 } from "./issue43";
 import type { ColumnTranslation } from "../types";
 
 export const columnTranslations: Record<number, ColumnTranslation> = {
+  63: issue63,
   62: issue62,
   61: issue61,
   60: issue60,
