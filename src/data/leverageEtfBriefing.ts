@@ -15,8 +15,8 @@ export const leverageEtfBriefing: Briefing = {
   images: [
     {src: `${root}/state-signal.webp`, alt: "거대한 국가의 확성기가 밝힌 상승 화살표 길 아래 무너지는 다리와 시민의 저축", caption: "국가의 자신감이 개인의 투자 안전을 보장하지는 않습니다. 정책의 신뢰가 상품의 신뢰로 옮겨갈 때 정부의 책임도 무거워집니다.", credit: "AI 이미지", sourceUrl: "", contain: true},
     {src: `${root}/household-savings.webp`, alt: "어두운 식탁 위 깨진 저축 유리병과 결혼반지, 집 열쇠, 생활비 봉투", caption: "계좌의 손실은 결혼 준비, 주거, 노후의 계획에 남습니다. 정책은 거래량과 자금 유입만으로 평가할 수 없습니다.", credit: "AI 이미지", sourceUrl: "", contain: true, afterSection: 3},
-    {src: `${root}/daily-reset-ko.png`, alt: "주식은 100만원에서 110만원을 거쳐 100만원으로 돌아오지만 일일 두 배 상품은 약 98만1818원이 되는 계산", caption: "설명용 계산입니다. 첫날 +10%, 다음 날 −9.09%일 때 일일 두 배 상품은 약 1.82% 손실입니다. 보수·거래비용을 제외했습니다.", credit: "씨앗의 소리 설명 도표", sourceUrl: "", contain: true, afterSection: 0},
-    {src: `${root}/loss-scope-ko.png`, alt: "개인 확정 매매손실 2조3242억원의 집계기간과 증권사 범위 및 전체 순손익과의 차이", caption: "2026년 5월 27일~8월 14일, 주요 증권사 10곳의 개인 확정 매매손실 집계입니다. 미실현 평가손실과 전체 순손익을 뜻하지 않습니다.", credit: "씨앗의 소리 통계 도표 · 금융감독원 집계에 관한 연합뉴스 보도", sourceUrl: "https://www.yna.co.kr/view/AKR20261008092451002", contain: true, afterSection: 4}
+    {src: `${root}/daily-reset-ko-v2.png`, alt: "주식은 100만원에서 110만원을 거쳐 100만원으로 돌아오지만 일일 두 배 상품은 약 98만1818원이 되는 계산", caption: "설명용 계산입니다. 첫날 +10%, 다음 날 −9.09%일 때 일일 두 배 상품은 약 1.82% 손실입니다. 보수·거래비용을 제외했습니다.", credit: "씨앗의 소리 설명 도표", sourceUrl: "", contain: true, afterSection: 0},
+    {src: `${root}/loss-scope-ko-v2.png`, alt: "개인 확정 매매손실 2조3242억원의 집계기간과 증권사 범위 및 전체 순손익과의 차이", caption: "2026년 5월 27일~8월 14일, 주요 증권사 10곳의 개인 확정 매매손실 집계입니다. 미실현 평가손실과 전체 순손익을 뜻하지 않습니다.", credit: "씨앗의 소리 통계 도표 · 금융감독원 집계에 관한 연합뉴스 보도", sourceUrl: "https://www.yna.co.kr/view/AKR20261008092451002", contain: true, afterSection: 4}
   ],
   content: [
     "2조3,242억원.",
@@ -128,8 +128,8 @@ export const leverageEtfTranslation: BriefingTranslation = {
   images: [
     {alt: "An enormous institutional megaphone illuminates an upward investment path above a collapsing bridge and household savings", caption: "Government confidence cannot guarantee the safety of personal investments. Officials carry greater responsibility when trust in policy becomes trust in a product.", credit: "AI image"},
     {alt: "A broken glass savings jar, wedding rings, a house key and household envelopes on a dark dining table", caption: "Investment losses can unsettle marriage, housing and retirement plans. Trading volumes and capital inflows cannot measure a policy’s full effects.", credit: "AI image"},
-    {src: `${root}/daily-reset-en.png`, alt: "A stock returns from KRW 1 million to its starting value while a daily two-times product falls to about KRW 981818", caption: "Illustration: a 10% rise followed by a 9.09% fall leaves the daily two-times product down about 1.82%. Fees and trading costs are excluded.", credit: "SEED VOICE explanatory chart"},
-    {src: `${root}/loss-scope-en.png`, alt: "The coverage and limitations of the KRW 2.3242 trillion realised retail trading-loss figure", caption: "Realised retail trading losses at ten major brokerages, May 27–August 14, 2026. This is neither unrealised losses nor aggregate net profit and loss.", credit: "SEED VOICE statistical graphic · Yonhap reporting on FSS figures"}
+    {src: `${root}/daily-reset-en-v2.png`, alt: "A stock returns from KRW 1 million to its starting value while a daily two-times product falls to about KRW 981818", caption: "Illustration: a 10% rise followed by a 9.09% fall leaves the daily two-times product down about 1.82%. Fees and trading costs are excluded.", credit: "SEED VOICE explanatory chart"},
+    {src: `${root}/loss-scope-en-v2.png`, alt: "The coverage and limitations of the KRW 2.3242 trillion realised retail trading-loss figure", caption: "Realised retail trading losses at ten major brokerages, May 27–August 14, 2026. This is neither unrealised losses nor aggregate net profit and loss.", credit: "SEED VOICE statistical graphic · Yonhap reporting on FSS figures"}
   ],
   content: [
     "KRW 2.3242 trillion.",
