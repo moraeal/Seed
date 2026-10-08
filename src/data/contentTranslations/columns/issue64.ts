@@ -35,7 +35,8 @@ export const issue64: ColumnTranslation = {
       "paragraphs": [
         "“Where do you live?”",
         "It is a short question about home. It can begin a conversation about directions or the neighborhood. It can also become a way of estimating someone’s circumstances from the apartment complex they name. The question is the same; the attitude behind it is not.",
-        "This year marks 100 years since Gagya Day, the original celebration of what is now Hangeul Day, was first observed in 1926. On Hangeul Day, Korea’s celebration of its alphabet, this question deserves a moment’s thought. The preface to the Hunminjeongeum, the text introducing Hangeul, speaks of language and writing that did not correspond. People had things to say but struggled to put them into written form. King Sejong placed an accessible system of writing in that gap.",
+        "This year marks 100 years since Gagya Day, the original celebration of what is now Hangeul Day, was first observed in 1926. The name Gagya comes from the first two syllables of “ga, gya, geo, gyeo…”—a sequence used when learning to read Korean. The observance was renamed Hangeul Day in 1928. This centenary marks the establishment of a day celebrating the alphabet, rather than the alphabet’s creation.",
+        "On Hangeul Day, Korea’s celebration of its alphabet, this question deserves a moment’s thought. The preface to the Hunminjeongeum, the text introducing Hangeul, speaks of language and writing that did not correspond. People had things to say but struggled to put them into written form. King Sejong placed an accessible system of writing in that gap.",
         "Communication requires more than hearing a sound. We must be able to understand what another person means and express our own thoughts. Today we read and write the same Korean alphabet. How well do we communicate with the people next door?",
         "Central, Palace, Forêt, First: foreign-derived words are familiar in Korean apartment names. They evoke a central location, a palace, a forest or a place ahead of the rest. They can describe a home’s location and surroundings; they can also suggest that this home is special.",
         "It is natural for builders to signal quality through a name and for buyers to take that name into account. Using a foreign word does not make a name wrong. What matters is the meaning it conveys, and to whom.",
@@ -67,6 +68,7 @@ export const issue64: ColumnTranslation = {
   "sourceNote": "Adapted by SEED VOICE from Noh Jin-gwan’s “A City That Does Not Communicate” (Hongik Korea, October 8, 2026), with one additional case from SBS’s October 30, 2014 report on playground access restrictions.",
   "sourceLabels": [
     "Noh Jin-gwan — A City That Does Not Communicate | Hongik Korea, October 8, 2026",
-    "SBS — Discrimination in Rental-Housing Playground Access Also Affects Senior Facilities | October 30, 2014"
+    "SBS — Discrimination in Rental-Housing Playground Access Also Affects Senior Facilities | October 30, 2014",
+    "National Hangeul Museum — The name Gagya Day and its renaming as Hangeul Day in 1928"
   ]
 };
