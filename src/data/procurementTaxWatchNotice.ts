@@ -9,13 +9,13 @@ export const procurementTaxWatchNotice: Briefing = {
   category: "시민운동 공지사항 · 세금감시 참여",
   title: "증세 전에 새는 세금부터…시민도 공공계약을 들여다볼 수 있다",
   subtitle: "이준석 의원실, AI 분석으로 5628억 원 규모 낭비 의심 정황 발표…10월 12~25일 국민 참여 행사",
-  summary: "의원 한 명과 보좌진 한 명이 공개된 공공계약 자료로 세금 낭비 의심 정황을 찾아냈습니다. 거둔 세금을 제대로 쓰게 하는 시민감시의 가능성과 나라장터 해커톤 참여 방법을 소개합니다. 씨앗은 특정 정당과 독립된 시민의 입장에서 그 취지에 공감합니다.",
+  summary: "의원 한 명과 보좌진 한 명이 공개된 공공계약 자료로 세금 낭비 의심 정황을 찾아냈습니다. 거둔 세금을 제대로 쓰게 하는 시민감시의 가능성과 나라장터 해커톤 참여 방법을 소개합니다.",
   date: "2026-10-08", author: "씨앗의 소리", readMinutes: 6,
   homeBriefingLeadEligible: false,
-  keyHighlights: ["거둔 세금을 제대로 쓰도록 감시하는 일도 시민의 세금 부담을 지키는 운동입니다.", "나라장터 해커톤은 10월 12~25일 열릴 예정이며 일반 국민도 참여할 수 있습니다.", "씨앗은 특정 정당과 독립된 입장에서 시민의 세금감시 취지에 공감합니다."],
+  keyHighlights: ["거둔 세금을 제대로 쓰도록 감시하는 일도 시민의 세금 부담을 지키는 운동입니다.", "나라장터 해커톤은 10월 12~25일 열릴 예정이며 일반 국민도 참여할 수 있습니다.", "같은 제품이라도 설치·보증 조건과 납품 당시 가격을 맞춰 비교해야 합니다."],
   images: [
     { src: "images/civic/procurement-tax-watch-hero.webp", alt: "세금이 새는 금속관의 틈을 돋보기와 태블릿으로 살펴보는 시민의 손", caption: "시민이 낸 세금의 쓰임을 직접 확인하는 감시의 가능성을 표현했습니다.", credit: "AI 이미지", sourceUrl: "" },
-    { src: "images/civic/procurement-tax-watch-citizens.webp", alt: "제품과 구매 영수증, 노트북 자료를 함께 비교하는 두 시민", caption: "생활 속 가격 지식과 공개된 계약 자료가 만나면 시민도 지출을 살펴볼 수 있습니다.", credit: "AI 이미지", sourceUrl: "", afterSection: 2 },
+    { src: "images/civic/procurement-tax-watch-citizens-v2.webp", alt: "제품과 구매 영수증, 노트북 자료를 함께 비교하는 두 시민", caption: "생활 속 가격 지식과 공개된 계약 자료가 만나면 시민도 지출을 살펴볼 수 있습니다.", credit: "AI 이미지", sourceUrl: "", afterSection: 2 },
     { src: "images/civic/procurement-hackathon-guide-ko.svg", alt: "나라장터 해커톤의 주최, 기간, 대상, 홈페이지와 제출 방식을 정리한 참여 안내표", caption: "참여 기간과 방식은 10월 8일 공개 안내 기준입니다. 접수 전에는 행사 홈페이지의 최신 공지와 지정 양식을 확인하세요.", credit: "씨앗의 소리 · 공식 홈페이지와 연합뉴스 보도", sourceUrl: eventUrl, afterSection: 3, contain: true },
   ],
   placeBodyImagesBySection: true,
@@ -46,9 +46,9 @@ export const procurementTaxWatchNotice: Briefing = {
       "참여자는 행사 홈페이지에서 제공하는 공공계약 원본 데이터와 분석 도구 등을 활용해 시중가보다 과도하게 비싼 계약을 찾고, 근거를 정리해 지정 양식으로 제출하게 됩니다. 주최 측은 AI와 실무진 검수를 거쳐 유효하다고 판단한 사례의 금액 비율에 따라 총 1000만 원의 상금을 배분할 계획입니다. 우수 사례는 이 의원의 국정감사 질의에도 활용될 예정입니다.",
       "관심 있는 시민은 홈페이지에서 공개된 사례와 분석 방법을 먼저 살펴볼 수 있습니다. 제출 전에는 행사 공지에서 접수 양식과 심사 기준을 확인하면 됩니다. 가격을 비교할 때 제품 모델명, 구매 시점, 수량, 설치비와 보증 조건을 함께 기록하면 의심 사례를 검증하는 데 도움이 됩니다.",
     ], bullets: ["행사: 세금 50조 찾기 프로젝트: 나라장터 해커톤", "주최: 개혁신당·이준석 의원", "기간: 2026년 10월 12~25일", "대상: 개발자·대학생·일반 국민", "홈페이지: savetax.now", "참여 방식: 공개 자료로 의심 계약을 찾고, 비교 근거를 지정 양식에 정리해 제출"] },
-    { title: "씨앗은 시민의 자리에서 공감합니다", paragraphs: [
-      "씨앗의 소리는 특정 정당과 연결되지 않은 독립 시민저널입니다. 이번 행사 소개는 개혁신당의 정당 활동에 대한 지지나 참여 선언을 뜻하지 않습니다. 거둔 세금을 제대로 쓰게 하고, 시민이 잘못된 집행을 찾아낼 수 있도록 하자는 취지에 공감해 참여 정보를 전합니다.",
-      "이런 활동이 정당의 행사에서 더 나아가, 시민사회의 자율적이고 지속적인 감시로 자리 잡기를 바랍니다. 어느 정당이 집권하든 같은 기준으로 계약과 예산을 살피고, 발견한 문제를 공개하며, 실제로 고쳐졌는지 끝까지 확인하는 활동입니다.",
+    { title: "시민의 감시로 이어가겠습니다", paragraphs: [
+      "씨앗의 소리는 특정 정당과 연결되지 않은 독립 시민저널입니다. 개혁신당의 정당 활동과는 거리를 두되, 시민이 세금 낭비를 찾아내고 바로잡자는 취지에 공감해 이번 참여 정보를 전합니다.",
+      "이번 시도가 시민사회의 자율적이고 지속적인 감시로 이어지기를 바랍니다. 계약과 예산을 살피고, 발견한 문제를 공개하며, 실제로 고쳐졌는지 끝까지 확인하는 활동입니다.",
       "시민은 세금을 내는 사람입니다. 그 돈이 어디에 쓰였는지 확인하는 사람도 될 수 있습니다. 씨앗은 시민의 부담을 늘리는 세금 조항과 함께, 이미 거둔 돈이 낭비되는 지출도 살피겠습니다.",
     ] },
   ],
@@ -56,16 +56,16 @@ export const procurementTaxWatchNotice: Briefing = {
   watchTitle: "참여 전 확인할 것",
   watchPoints: ["행사 홈페이지에서 최신 접수 일정·지정 양식·심사 기준 확인", "제품 모델과 납품 시점, 설치·보증 조건을 맞춘 가격 비교", "의심 금액과 검증된 낭비, 실제 환수·절감 결과를 구분해 확인"],
   sources: [{ label: "파이버랜드 · 솔텍 SFP-SX 판매가·배송 조건 (2026.10.8 확인)", url: "https://fiberland.co.kr/product/soltech-%EC%86%94%ED%85%8D-%EB%A9%80%ED%8B%B0%EB%AA%A8%EB%93%9C-sfp-%EB%AA%A8%EB%93%88-lc%ED%83%80%EC%9E%85-sfp-sx/3679/" }, { label: "나라장터 해커톤 · 솔텍 SFP-SX 광송수신모듈 사례와 계약 조건", url: "https://savetax.now/8" }, { label: "나라장터 해커톤 · 공식 홈페이지와 분석 방법", url: eventUrl }, { label: "연합뉴스 · 이준석 ‘나라장터 5628억 원 세금 누수 정황’ 발표 및 참여 안내 (2026.10.8)", url: "https://www.yna.co.kr/view/AKR20261007178300001" }, { label: "서울신문 · 이준석 의원실 공공계약 분석과 해커톤 개최 보도 (2026.10.8)", url: "https://www.seoul.co.kr/news/politics/2026/10/08/20261008500058" }],
-  sourceNote: "자료 확인일: 2026년 10월 8일. 서울경제 노해철 기자의 10월 8일 보도와 공식 홈페이지, 연합뉴스·서울신문 보도를 바탕으로 정리했습니다. 5628억 원은 주최 측의 기준가 차액 추정치이며 확정된 부정 계약·환수액이 아닙니다. 참여 정보는 주최 측의 최신 공지를 우선합니다. 씨앗의 소리는 특정 정당과 독립된 입장에서 시민의 세금감시 취지를 소개합니다.",
+  sourceNote: "자료 확인일: 2026년 10월 8일. 서울경제 노해철 기자의 10월 8일 보도와 공식 홈페이지, 연합뉴스·서울신문 보도를 바탕으로 정리했습니다. 5628억 원은 주최 측의 기준가 차액 추정치이며 확정된 부정 계약·환수액이 아닙니다. 참여 정보는 주최 측의 최신 공지를 우선합니다.",
 };
 
 export const procurementTaxWatchNoticeTranslation: BriefingTranslation = {
   category: "Civic Notices · Citizen Tax Watch",
   title: "Before Raising Taxes, Find the Leaks: Citizens Can Scrutinize Public Contracts",
   subtitle: "Lee Jun-seok's office reports suspected procurement waste estimated at KRW 562.8 billion; public participation event planned for October 12–25",
-  summary: "One lawmaker and one aide used public procurement records to identify suspected waste. We explain the possibilities for citizen scrutiny and how to join the Nara Marketplace hackathon. SEED supports the civic purpose while remaining independent of political parties.",
+  summary: "One lawmaker and one aide used public procurement records to identify suspected waste. We explain the possibilities for citizen scrutiny and how to join the Nara Marketplace hackathon.",
   author: "SEED VOICE",
-  keyHighlights: ["Scrutinizing how collected taxes are spent is part of protecting citizens from additional tax burdens.", "The Nara Marketplace hackathon is planned for October 12–25 and is open to the general public.", "SEED supports citizen oversight from a position independent of political parties."],
+  keyHighlights: ["Scrutinizing how collected taxes are spent is part of protecting citizens from additional tax burdens.", "The Nara Marketplace hackathon is planned for October 12–25 and is open to the general public.", "Compare matching models, installation and warranty terms, and market prices at the time of delivery."],
   images: [
     { alt: "Citizens' hands use a magnifying glass and tablet to inspect a leaking treasury pipe", caption: "A symbolic illustration of citizens examining how their taxes are spent.", credit: "AI image" },
     { alt: "Two citizens compare a product, a purchase receipt and records on a laptop", caption: "Everyday knowledge of prices can help citizens examine public purchasing records.", credit: "AI image" },
@@ -82,11 +82,11 @@ export const procurementTaxWatchNoticeTranslation: BriefingTranslation = {
       "Citizens can begin with a concrete task: compare the contract and cost breakdown to understand why prices for the same model differ so much. If an excessive difference remains after installation and warranty costs are included, seek explanations from the purchasing bodies and supplier, then check whether later prices and terms were corrected. Publishing the model, contract conditions and price evidence lets others follow that verification."] },
     { title: "Protecting taxpayers also means scrutinizing spending", paragraphs: ["SEED's call for no further tax increases is about protecting household finances. It means examining how higher rates, reduced allowances and a wider tax base take more money from citizens' accounts.", "Scrutiny of money already collected belongs alongside that work. When the government cites a budget shortage and asks citizens to pay more, unnecessary spending and excessive purchase prices should be examined first. Citizens have a right to inspect how their money was used and identify problems.", "This initiative shows how public records can support direct scrutiny of expenditure. AI and data analysis may broaden citizens' reach. People familiar with consumer prices, public procurement or data analysis can contribute their own knowledge."] },
     { title: "How citizens can take part", paragraphs: ["The Reform Party and Lee's office plan to run the ‘Find KRW 50 Trillion in Taxes: Nara Marketplace Hackathon’ from October 12 to 25. Developers, students and members of the general public are invited. Here, a hackathon is a collaborative event using data and tools to identify problems.", "Participants can use procurement data and analysis tools supplied through the event website to identify contracts priced excessively above market levels, document their evidence and submit the designated form. The organizers plan to review entries using AI and staff checks, then distribute a total prize pool of KRW 10 million in proportion to the amounts associated with cases judged valid. Strong cases may inform Lee's parliamentary audit questions.", "Interested citizens can start by reading published examples and methods on the website. Before submitting, check the current form and judging criteria. Record the exact product model, purchase date, quantity, installation charges and warranty terms to make the comparison verifiable."], bullets: ["Event: Find KRW 50 Trillion in Taxes: Nara Marketplace Hackathon", "Organizers: Reform Party and Lee Jun-seok", "Dates: October 12–25, 2026", "Participants: developers, students and the general public", "Website: savetax.now", "Method: identify suspicious contracts using public records and submit comparison evidence in the designated form"] },
-    { title: "SEED supports the civic purpose independently", paragraphs: ["SEED VOICE is an independent civic journal with no affiliation to a political party. Introducing this event does not constitute support for, or a declaration of participation in, the Reform Party's political activities. We share the civic purpose of ensuring taxes are spent properly and enabling citizens to identify questionable expenditure.", "We hope such work grows into autonomous, sustained scrutiny by civil society. The same standards should apply whichever party governs: examine contracts and budgets, publish findings and follow through to see whether problems were corrected.", "Citizens pay taxes. They can also examine where that money goes. SEED will scrutinize both provisions that increase citizens' tax burdens and waste in money already collected."] },
+    { title: "Turning findings into sustained citizen oversight", paragraphs: ["SEED VOICE is an independent civic journal with no party affiliation. We remain separate from the Reform Party's political activities and share this participation information because we support citizens identifying and correcting wasteful spending.", "We hope this initiative leads to autonomous, sustained scrutiny by civil society: examine contracts and budgets, publish findings and follow through to see whether problems were corrected.", "Citizens pay taxes. They can also examine where that money goes. SEED will scrutinize both provisions that increase citizens' tax burdens and waste in money already collected."] },
   ],
   paragraphLinks: [{ sectionIndex: 1, paragraphIndex: 4, links: [{ label: "Soltech SFP-SX · contract records and price comparison", url: "https://savetax.now/8" }] }, { sectionIndex: 3, paragraphIndex: 2, links: [{ label: "Nara Marketplace hackathon · check participation details", url: eventUrl }] }],
   watchTitle: "Check before participating",
   watchPoints: ["Confirm the latest dates, submission form and judging criteria on the event website.", "Compare prices for matching models, delivery dates, installation and warranty terms.", "Distinguish suspected amounts, verified waste and actual recoveries or savings."],
   sourceLabels: ["Fiberland · Soltech SFP-SX price and shipping terms (checked October 8, 2026)", "Nara Marketplace hackathon · Soltech SFP-SX case and contract conditions", "Nara Marketplace hackathon · official website and analysis methods", "Yonhap · procurement findings and public participation announcement (October 8, 2026)", "Seoul Shinmun · Lee's procurement analysis and hackathon announcement (October 8, 2026)"],
-  sourceNote: "Checked October 8, 2026, against the Seoul Economic Daily report by Noh Hae-cheol supplied for this article, the official website, and Yonhap and Seoul Shinmun reporting. KRW 562.8 billion is the organizers' estimated benchmark-price difference, not a confirmed total of fraud or recovered funds. Follow the organizers' latest notice for participation details. SEED presents the civic oversight purpose independently of political parties.",
+  sourceNote: "Checked October 8, 2026, against the Seoul Economic Daily report by Noh Hae-cheol supplied for this article, the official website, and Yonhap and Seoul Shinmun reporting. KRW 562.8 billion is the organizers' estimated benchmark-price difference, not a confirmed total of fraud or recovered funds. Follow the organizers' latest notice for participation details.",
 };
