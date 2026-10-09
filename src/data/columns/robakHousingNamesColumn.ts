@@ -80,7 +80,6 @@ export const robakHousingNamesColumn: SeedColumn = {
       ]
     }
   ],
-  "sourceNote": "노진관의 「서로 사맛디 아니한 도시」(홍익코리아, 2026.10.8)를 바탕으로 씨앗의 소리가 재구성하고, SBS의 2014년 놀이터 이용 제한 보도 사례를 보완했습니다.",
   "sources": [
     {
       "label": "노진관 — 서로 사맛디 아니한 도시 | 홍익코리아, 2026.10.8",
