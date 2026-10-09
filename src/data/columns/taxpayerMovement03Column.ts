@@ -34,7 +34,8 @@ export const taxpayerMovement03Column: SeedColumn = {
       "alt": "제3자 결제업체의 1099-K 의무 보고 기준: 대금 2만 달러 초과와 거래 200건 초과를 모두 충족. 소득세 면제 기준은 아님",
       "caption": "IRS의 연방 보고 기준. 직접 카드 결제에는 이 기준을 적용하지 않는다. 기준 이하에서도 서식이 발급될 수 있다.",
       "credit": "씨앗의 소리 · IRS 자료",
-      "sourceUrl": "https://www.irs.gov/businesses/understanding-your-form-1099-k"
+      "sourceUrl": "https://www.irs.gov/businesses/understanding-your-form-1099-k",
+      "contain": true
     },
     {
       "src": "images/columns/real-estate-supervisor/family-home-papers.webp",
