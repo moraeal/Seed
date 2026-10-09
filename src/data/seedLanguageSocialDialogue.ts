@@ -299,18 +299,18 @@ export const dialogueArticleKo: SeedLanguageArticle = {
     }
   ],
   "heroImage": {
-    "src": "images/seed-language/social-dialogue/beutelsbach-landgut-burg-2023-1600.jpg",
-    "alt": "독일 보이텔스바흐 합의의 계기가 된 회의가 열린 란트구트 부르크의 전경",
-    "caption": "1976년 보이텔스바흐 합의의 계기가 된 회의가 열린 독일 란트구트 부르크의 전경. 2023년 12월 촬영.",
-    "credit": "Laserlicht · Wikimedia Commons · CC BY-SA 4.0 · 크기 조정 · 화면 비율에 따른 표시 크롭"
-  },
-  "inlineImage": {
     "src": "images/seed-language/social-dialogue/dialogue-symbol.webp",
     "alt": "붉은 빛과 푸른 빛 사이의 균열을 가로지르는 식탁에서 서로의 말을 듣는 시민들",
     "caption": "이견이 남아 있어도 상대의 걱정을 이해하는 폭은 넓어질 수 있다.",
     "credit": "AI 이미지"
   },
-  "inlineImageAfterSection": 6,
+  "inlineImage": {
+    "src": "images/seed-language/social-dialogue/beutelsbach-landgut-burg-2023-1600.jpg",
+    "alt": "독일 보이텔스바흐 합의의 계기가 된 회의가 열린 란트구트 부르크의 전경",
+    "caption": "1976년 보이텔스바흐 합의의 계기가 된 회의가 열린 독일 란트구트 부르크의 전경. 2023년 12월 촬영.",
+    "credit": "Laserlicht · Wikimedia Commons · CC BY-SA 4.0 · 크기 조정 · 화면 비율에 따른 표시 크롭"
+  },
+  "inlineImageAfterSection": 2,
   "secondaryImage": {
     "src": "images/seed-language/social-dialogue/dialogue-community.webp",
     "alt": "작은 지역 모임에서 진행자와 함께 경험과 자료를 살피는 시민들",
@@ -670,18 +670,18 @@ export const dialogueArticleEn: SeedLanguageArticle = {
     }
   ],
   "heroImage": {
-    "src": "images/seed-language/social-dialogue/beutelsbach-landgut-burg-2023-1600.jpg",
-    "alt": "Landgut Burg in Beutelsbach, Germany, the venue complex of the meeting that led to the Beutelsbach Consensus",
-    "caption": "Landgut Burg in Germany, where the 1976 meeting that led to the Beutelsbach Consensus took place. Photographed in December 2023.",
-    "credit": "Laserlicht · Wikimedia Commons · CC BY-SA 4.0 · Resized · Display crop for page aspect ratio"
-  },
-  "inlineImage": {
     "src": "images/seed-language/social-dialogue/dialogue-symbol.webp",
     "alt": "Citizens listening across a table bridging a fissure between red and blue light",
     "caption": "Disagreement can remain while understanding of another person’s concerns grows.",
     "credit": "AI image"
   },
-  "inlineImageAfterSection": 6,
+  "inlineImage": {
+    "src": "images/seed-language/social-dialogue/beutelsbach-landgut-burg-2023-1600.jpg",
+    "alt": "Landgut Burg in Beutelsbach, Germany, the venue complex of the meeting that led to the Beutelsbach Consensus",
+    "caption": "Landgut Burg in Germany, where the 1976 meeting that led to the Beutelsbach Consensus took place. Photographed in December 2023.",
+    "credit": "Laserlicht · Wikimedia Commons · CC BY-SA 4.0 · Resized · Display crop for page aspect ratio"
+  },
+  "inlineImageAfterSection": 2,
   "secondaryImage": {
     "src": "images/seed-language/social-dialogue/dialogue-community.webp",
     "alt": "Citizens reviewing experience and evidence with a facilitator in a small local group",
