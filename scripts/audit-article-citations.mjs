@@ -26,11 +26,16 @@ for (const language of ['ko','en']) {
  const body = renderToStaticMarkup(createElement(MemoryRouter, null, createElement(components.ArticleText, {
   text:'내용[2] · [보고서](https://example.org/b?year=2026#table)를 검토했다. [관련 씨앗 기사](/columns/related). [7](https://example.org/c)', citations:registry,
  })));
- assert.match(body, /href="#article-source-1"/);
+ assert.match(body, /href="https:\/\/example.org\/a"[^>]*target="_blank"[^>]*rel="noreferrer"/);
  assert.match(body, /보고서<sup/);
  assert.match(body, /href="\/columns\/related"/);
- assert.match(body, /href="#article-source-3"/);
- assert.doesNotMatch(body, /href="https:\/\/example/);
+ assert.match(body, /href="https:\/\/example.org\/c"/);
+ assert.doesNotMatch(body, /href="#article-source-/);
+ assert.match(body, /href="https:\/\/example.org\/b\?year=2026#table"/);
+ const internalRegistry = cit.createArticleCitations([{url:'/columns/original',label:'SEED original'}], [], language);
+ const internalReference = renderToStaticMarkup(createElement(components.CitationReference, {number:1,citations:internalRegistry}));
+ assert.match(internalReference, /href="\/columns\/original"/);
+ assert.doesNotMatch(internalReference, /target=|href="#article-source-/);
  const namedEnding = renderToStaticMarkup(createElement(MemoryRouter, null, createElement(components.ArticleText, {
   text:'자세한 내용은 [공식 보고서](https://example.org/a).', citations:registry,
  })));

@@ -5,7 +5,7 @@ import { citationLinkPattern, citationTokenPattern, isExternalCitationUrl, resol
 export function CitationReference({ number, citations }: { number: number; citations: ArticleCitations }) {
   const source = citations.sources[number - 1];
   if (!source) return null;
-  return <sup className="article-citation"><a href={`#article-source-${number}`} aria-label={`${citations.language === "ko" ? "출처" : "Source"} ${number}: ${source.label}`} title={source.label} role="doc-noteref">[{number}]</a></sup>;
+  return <sup className="article-citation"><a href={source.url} {...(isExternalCitationUrl(source.url) ? { target: "_blank", rel: "noreferrer" } : {})} aria-label={`${citations.language === "ko" ? "출처" : "Source"} ${number}: ${source.label}`} title={source.label} role="doc-noteref">[{number}]</a></sup>;
 }
 
 export function ArticleText({ text, citations }: { text: string; citations: ArticleCitations }) {
