@@ -1,13 +1,13 @@
 import type { ColumnTranslation } from "../types";
 
 export const issue65: ColumnTranslation = {
-  "title": "Government Says It Needs More Tax Revenue. Where Did the Money Go?",
-  "subtitle": "When Taxpaying Citizens Change Politics, Part 3 — How ATR Turns a Pledge into Sustained Scrutiny and Political Influence",
+  "title": "The Tax Rate Stayed the Same. The Paperwork Grew.",
+  "subtitle": "When Taxpaying Citizens Change Politics, Part 3 — Two ATR Campaigns Against Burdens Beyond Tax Rates",
   "author": "Little Seed",
-  "summary": "ATR’s work extends beyond collecting signatures: coalition meetings, positions before legislative votes and comparisons of state spending support its anti-tax agenda. Florida’s commercial-rent tax repeal and the fiscal costs of a tax package offer concrete tests. Britain’s spending scrutiny provides a complementary example.",
+  "summary": "ATR has challenged more than tax rates. Its campaigns addressed payment-reporting thresholds and beneficial ownership disclosures. Comparing its demands with IRS and FinCEN rules reveals what changed, what did not, and how to assess the benefits and costs of reducing paperwork.",
   "heroImage": {
     "alt": "A citizen’s magnifying glass illuminates a closed government ledger and the path of tax money",
-    "caption": "Before collecting more, account for where the money already collected has gone.",
+    "caption": "Citizens bear costs beyond the tax bill. Changes to reporting obligations deserve scrutiny too.",
     "credit": "AI image"
   },
   "inlineImage": {
@@ -17,125 +17,100 @@ export const issue65: ColumnTranslation = {
   },
   "additionalImages": [
     {
-      "alt": "U.S. Representative Mike Ezell signs the Taxpayer Protection Pledge",
-      "caption": "The signature is a starting point. ATR follows it with public signer records, legislative positions and coalition work.",
-      "credit": "Adam L. Radman / Americans for Tax Reform"
+      "afterSection": 2,
+      "src": "images/columns/tax-series-03/reporting-scope-en.svg",
+      "alt": "Federal TPSO 1099-K reporting requires both payments over $20,000 and more than 200 transactions; this is not an income-tax exemption",
+      "caption": "IRS federal threshold for third-party settlement organizations. Direct card payments follow different rules; forms may be issued below the threshold.",
+      "credit": "SEED Voice · IRS"
     },
     {
-      "src": "images/columns/tax-series-03/remuneration-en.png",
-      "alt": "Local-government employees with total remuneration of at least £100,000: 3,906 in 2023–24 and 4,733 in 2024–25",
-      "caption": "TPA figures. Total remuneration includes employer pension contributions and termination-related costs. High remuneration alone does not prove waste.",
-      "credit": "SEED VOICE · TPA 2026 report"
-    },
-    {
-      "alt": "A couple reviews household documents at a kitchen table",
-      "caption": "Citizens calculate their own budgets. They should be able to examine government’s spending records too.",
+      "afterSection": 4,
+      "src": "images/columns/real-estate-supervisor/family-home-papers.webp",
+      "alt": "A couple reviews documents and household costs at a table",
+      "caption": "Reading forms and gathering information takes time that belongs to citizens too.",
       "credit": "AI image"
     }
   ],
   "sections": [
     {
-      "title": "When Taxpaying Citizens Change Politics, Part 3",
+      "title": "When Taxpaying Citizens Change Politics ③",
       "paragraphs": [
-        "Taxes leave a worker’s paycheck before the money reaches their account. A shop owner calculates sales and expenses before paying tax. Citizens constantly account for the money they earn and spend. Following that money becomes much harder once government takes it.",
-        "Budget documents are thick and program names unfamiliar. An announcement may say that billions of won were spent without showing how everyday life improved. Another year passes, and the call for more revenue returns.",
-        "Before explaining why it needs to collect more, government should account for what it has already collected. That is the order a taxpayer watchdog should insist on.",
-        "[Part 1](/columns/atr-taxpayer-movement-01-california) traced California’s property-tax revolt and the later emergence of Americans for Tax Reform. [Part 2](/columns/atr-taxpayer-movement-02-protection-pledge) examined ATR’s pledge, including its opposition to tax increases through reductions in deductions and credits.",
-        "A signature does not make a politician keep a promise. Someone must read the legislation, explain what changes and keep people working on the issue connected. This installment examines how ATR sustains that work."
+        "A U.S. reporting rule estimated that preparing and submitting a business’s initial report would cost between $85.14 and $2,614.87, depending on its ownership structure. This was not a tax payment. It was the cost of assembling information the government required.[7](https://www.federalregister.gov/documents/2022/09/30/2022-21020/beneficial-ownership-information-reporting-requirements)",
+        "That expense does not appear in a tax-rate table. Neither does the time spent reading instructions after closing a shop, gathering documents or consulting an adviser. Yet households and businesses still bear those costs.",
+        "[Part 1, “The House Was Worth More. There Was No Cash to Pay the Tax,”](/columns/atr-taxpayer-movement-01-california) explored the origins of taxpayer activism. [Part 2, “A Single Pledge Bound Politicians to Their Promise,”](/columns/atr-taxpayer-movement-02-protection-pledge) examined the anti-tax pledge. This installment turns to two specific ATR campaigns over reporting obligations.",
+        "What provision did ATR want changed? What did the government actually change? And was the relief a lower tax bill or less work complying with a rule?"
       ]
     },
     {
-      "title": "Collect the promise, publish the name, compare the action",
+      "title": "An Online Sale Generates a Tax Information Form",
       "paragraphs": [
-        "Founded by Grover Norquist in 1985, ATR advocates lower, simpler, more visible taxes and limited government. Its organizational description distinguishes ATR’s advocacy work from the research and education of a separate foundation.[1](https://atr.org/about/)",
-        "ATR describes the Taxpayer Protection Pledge, introduced in 1986, as a commitment to constituents rather than to the organization. It promotes and monitors the pledge and maintains a public database of signers.[2](https://atr.org/about-the-pledge/)",
-        "The pledge is a political accountability device rather than a court-enforced contract. Its pressure comes from making the difference between a campaign promise and a subsequent decision visible to voters.",
-        "Most citizens cannot read every tax provision. An organization that follows legislation and explains additional burdens helps them connect what a candidate promised with what that politician actually does. Collecting signatures and sustaining scrutiny belong together."
+        "Form 1099-K is a U.S. information return through which payment organizations report payments for goods and services to the IRS and the recipient. The organization’s reporting duty is distinct from the individual’s duty to file an income-tax return.[3](https://www.irs.gov/businesses/understanding-your-form-1099-k)",
+        "The American Rescue Plan Act of 2021 lowered the third-party settlement organization reporting threshold to more than $600 annually. The previous test required both more than $20,000 and more than 200 transactions. Implementation delays and transitional thresholds followed; legislation in 2025 retroactively restored the earlier test.[2](https://www.irs.gov/newsroom/irs-issues-faqs-on-form-1099-k-threshold-under-the-one-big-beautiful-bill-dollar-limit-reverts-to-20000)",
+        "ATR treated this as a paperwork issue. At its April 18, 2023 Tax Day press conference, Representative Carol Miller discussed legislation to restore the previous thresholds. ATR expressly endorsed the bill. It connected a proposed legislative change to a public event, specifying both the dollar amount and transaction count.[1](https://atr.org/congresswoman-carol-miller-leads-charge-to-repeal-1099-k-irs-paperwork-debacle/)",
+        "The useful feature is the precision. Complaints about excessive regulation are easy to make. A demand to change a particular form’s thresholds can be compared with legislation and implementation."
       ]
     },
     {
-      "title": "A weekly network makes separate efforts easier to connect",
+      "title": "A Higher Reporting Threshold Does Not Eliminate Income Tax",
       "paragraphs": [
-        "ATR’s Washington coalition meeting began in 1993. Known as the Wednesday Meeting, it is invitation-only. ATR says participants from the center-right community—including advocacy organizations, think tanks and congressional staff—share current issues and updates on their projects.[3](https://atr.org/about/coalition-meetings/)",
-        "Different organizations do not need to agree on everything to cooperate. Knowing who is following a particular bill creates a point of contact between research, campaigning and legislative work.",
-        "SEED’s reading of this structure is that it supplies an ongoing communication network: participants can learn what others plan to do next. A press release followed by dispersal rarely creates that capacity.",
-        "This is a coalition with a clear political direction, not a forum representing all citizens. Korea can learn from the sustained connection between people who investigate taxes and those who experience their burdens, without copying the composition of the American conservative movement."
+        "In guidance dated October 23, 2025, the IRS confirmed that the federal third-party settlement organization reporting obligation requires both payments exceeding $20,000 and more than 200 transactions. Crossing only one threshold does not satisfy that test.[2](https://www.irs.gov/newsroom/irs-issues-faqs-on-form-1099-k-threshold-under-the-one-big-beautiful-bill-dollar-limit-reverts-to-20000)",
+        "The distinction between payment channels matters. Direct payment-card transactions can generate a 1099-K regardless of amount or transaction count. Apps and marketplaces may also issue forms below the mandatory threshold.[3](https://www.irs.gov/businesses/understanding-your-form-1099-k)",
+        "Taxable income must still be reported even without a 1099-K. Conversely, the gross amount on a form is not automatically taxable income.",
+        "The IRS distinguishes selling personal property at a loss from selling it at a gain. As a hypothetical example, selling a personal item bought for $1,000 for $600 does not turn the $600 receipt into profit. Personal-use losses generally are not deductible; gains may be taxable.[4](https://www.irs.gov/newsroom/form-1099-k-faqs-what-to-do-if-you-receive-a-form-1099-k)",
+        "ATR’s July 8, 2025 article described the change as repeal of a “Venmo Tax.” That is campaign language. The verified change restored an information-reporting threshold; it did not abolish a separate tax imposed simply for using a payment app.[5](https://atr.org/big-beautiful-bill-repeals-irs-1099-k-venmo-tax/)",
+        "Reporting on taxpayer advocacy must preserve that distinction. An accurate account of the achievement helps citizens understand their own obligations."
       ]
     },
     {
-      "title": "State a position before the vote, then verify the tax that disappeared",
+      "title": "ATR Also Challenged Reporting Outside the Tax Return",
       "paragraphs": [
-        "ATR publishes Key Vote Alerts before legislative decisions. On June 28, 2025, it urged senators to support the substitute amendment to H.R. 1, emphasizing permanent extension of the 2017 tax cuts and prevention of increases when temporary provisions expired.[4](https://atr.org/key-vote-alert-atr-urges-senate-to-vote-yes-on-trumps-one-big-beautiful-bill/)",
-        "The position is on the record before the law passes. That gives citizens something to compare with lawmakers’ subsequent decisions. Influence requires more than keeping signed pledges in a filing cabinet.",
-        "Its state-level agenda can be equally specific. In an April 14, 2025 letter to Florida legislators, ATR supported eliminating the tax on commercial property rentals and freezing or reducing overall spending.[5](https://atr.org/letter/keep-florida-taxpayers-free-in-2025/)",
-        "Florida’s Department of Revenue confirms the resulting policy: commercial rental periods beginning October 1, 2025 are exempt from the relevant state sales tax and associated local surtax. Office, retail and warehouse space are included; separate taxes on short-term accommodation and parking remain.[6](https://floridarevenue.com/taxes/tips/Documents/TIP_25A01-04.pdf)",
-        "Here, a demand ATR supported can be compared with an implemented change. The governor, legislature and other organizations also participated, so the repeal cannot be attributed to ATR alone. Assessing a movement’s results means distinguishing its demand, the enacted provision and the implementation date."
+        "The second case concerns beneficial ownership information, or BOI, reporting under the Corporate Transparency Act (CTA). This was a disclosure to the Financial Crimes Enforcement Network, FinCEN, rather than a tax return.",
+        "FinCEN’s explanation of its 2022 rule set out the purpose: expose ownership behind anonymous companies used to launder money or conceal illicit funds, and give investigators useful information. The rule had a substantive law-enforcement objective.[6](https://www.fincen.gov/beneficial-ownership-information-reporting-rule-fact-sheet)",
+        "The original regime required covered businesses to report identifying details about beneficial owners, including names, birth dates, addresses and identification-document information and images. Legitimate businesses also had to determine whether they were covered and assemble the information.[6](https://www.fincen.gov/beneficial-ownership-information-reporting-rule-fact-sheet)",
+        "Both sides of this arrangement deserve scrutiny: the value of uncovering criminal activity and the burden on ordinary businesses required to explain their ownership and identity."
       ]
     },
     {
-      "title": "Resisting higher taxes also means examining spending growth",
+      "title": "The Government Had Already Estimated the Cost",
       "paragraphs": [
-        "ATR launched its Sustainable Budget Project in 2023. It compares state spending growth with population growth plus inflation, presenting that benchmark as a measure of taxpayers’ capacity to support government.[7](https://atr.org/budgetproject/)",
-        "Its methodology uses a prior three-year average of state population growth plus U.S. chained-CPI inflation. It distinguishes state funds from budgets including federal funds and uses expenditure data from the National Association of State Budget Officers, or NASBO.[8](https://atr.org/responsible-state-budget-project-methodology/)",
-        "Consider a hypothetical population increase of 1 percent and inflation of 3 percent. Against a simple 4 percent benchmark, a 10 percent spending increase would prompt examination of the programs behind the difference. These figures illustrate the approach; they are not findings for a particular state.",
-        "The entire excess is not automatically waste. Disasters or infrastructure repairs can require exceptional spending, and the coverage of the underlying dataset matters. A comparison provides a starting point for investigation, not an audit finding that particular programs are defective.",
-        "Growing expenditure can strengthen pressure for higher taxes. The pledge addresses revenue decisions; budget comparisons examine expenditure. This is how the different parts of ATR’s work connect."
+        "FinCEN’s 2022 regulatory analysis estimated approximately 32.6 million reporting companies in the first year. That was a projection used in designing the rule, not a count of completed filings.[7](https://www.federalregister.gov/documents/2022/09/30/2022-21020/beneficial-ownership-information-reporting-requirements)",
+        "Estimated initial reporting costs ranged from $85.14 for a simple ownership structure to $2,614.87 for a complex one. The estimates reflected work to understand, gather and submit information, including professional help where relevant. They were neither government filing fees nor observed spending by every business.[7](https://www.federalregister.gov/documents/2022/09/30/2022-21020/beneficial-ownership-information-reporting-requirements)",
+        "A small business does not necessarily have a simple ownership structure. Multiple owners or control arrangements can change the work involved. Calling it a single form does not erase that work.",
+        "Assessing a new obligation requires looking beyond the administering agency’s budget. Citizens’ and businesses’ time belongs in the calculation too."
       ]
     },
     {
-      "title": "Tax relief and fiscal costs require separate tests",
+      "title": "Compare ATR’s Demand with the Rule That Changed",
       "paragraphs": [
-        "An account of ATR should not imply that every tax cut automatically resolves fiscal problems. Citizens need to see the costs as well.",
-        "On July 1, 2025, CBO and the Joint Committee on Taxation issued a preliminary estimate for the Senate-passed version of H.R. 1. Against CBO’s January 2025 projections, cumulative deficits in 2025–2034 would rise by $3.4 trillion. Against the Senate budget-enforcement baseline, deficits would fall by $0.4 trillion. The comparison baseline changes the result.[9](https://www.cbo.gov/publication/61537)",
-        "This was a projection for the bill at that stage, not a loss already incurred. Reducing citizens’ current taxes and stabilizing long-term public finances are separate outcomes to examine.",
-        "Did lawmakers keep their tax promises? Did unnecessary expenditure fall? What happened to borrowing and interest costs? ATR’s organizing capacity can be instructive while the benefits and costs of its preferred policies remain subject to independent scrutiny.",
-        "Korea’s taxpayer-watch movement needs the same discipline: protect money leaving citizens’ accounts today and record who bears obligations deferred into the future."
+        "On March 3, 2025, ATR published business owners’ concerns about compliance and personal information, while supporting full repeal legislation sponsored by Senator Tommy Tuberville and Representative Warren Davidson. It connected individual objections with a legislative demand.[8](https://atr.org/trump-understands-the-unconstitutional-corporate-transparency-act-is-an-invasive-burden-on-small-businesses-and-farms/)",
+        "FinCEN’s interim final rule, published March 26, 2025, exempted U.S.-formed entities from BOI reporting. Obligations remained for certain foreign-formed entities.[9](https://www.federalregister.gov/documents/2025/03/26/2025-05199/beneficial-ownership-information-reporting-requirement-revision-and-deadline-extension)",
+        "A further change followed in 2026. Treasury’s August 11 announcement said the final rule would take effect August 14, confirming exemptions for U.S. companies and U.S. persons. It also announced plans to delete previously reported information about U.S. persons. An announcement of deletion is different from confirmation that deletion is complete.[10](https://home.treasury.gov/news/press-releases/sb0603)",
+        "ATR sought repeal of the entire statute. The verified change narrowed reporting through a rule and exemptions. Keeping those outcomes distinct identifies the authority used and the scope of relief.",
+        "This was not an achievement attributable to ATR alone. Legislators, executive agencies, business organizations and litigation all formed part of the process. ATR’s publications establish its advocacy; government documents establish the obligations actually changed."
       ]
     },
     {
-      "title": "Britain’s account-based scrutiny is a complementary example",
+      "title": "Relief Still Leaves Results to Measure",
       "paragraphs": [
-        "Britain’s TaxPayers’ Alliance is a separate organization from ATR. Its 2026 Town Hall Rich List identified at least 4,733 council employees with total remuneration of £100,000 or more in 2024–25, up by 827 from 3,906 in the preceding year.[10](https://taxpayersalliance.com/town-hall-rich-list-2026/)",
-        "Total remuneration includes employer pension contributions and termination-related payments as well as salary. TPA explains that it uses published council accounts and distinguishes the status of records, including whether they have been audited.[11](https://taxpayersalliance.com/thrl-faqs-2026/)",
-        "High remuneration alone does not establish waste. Responsibilities, performance, inflation and coverage matter. The transferable method is assembling disclosed accounts and comparing equivalent entries.",
-        "ATR connects pledges, coalition work, legislative advocacy and spending benchmarks. This British example shows how scattered expenditure records can become evidence residents can read. The two approaches can be understood together without conflating the organizations."
+        "Lower compliance costs and less compelled disclosure matter to citizens. But collecting less information also raises a remaining question: what happens to investigations and efforts to trace illicit funds?",
+        "The 2025 rule itself discussed benefits associated with the original reporting system and how narrowing it could change those benefits. Counting paperwork savings while omitting the effect of losing information leaves the evaluation unfinished.[9](https://www.federalregister.gov/documents/2025/03/26/2025-05199/beneficial-ownership-information-reporting-requirement-revision-and-deadline-extension)",
+        "The same principle applies to 1099-K. Did fewer unnecessary corrections and consultations result? How did reporting of taxable income change? The documents reviewed here do not establish every downstream effect.",
+        "ATR is an advocacy organization with a clear policy position. Its campaigns can reveal costs citizens experience. Independent assessment must still test its claims about the results."
       ]
     },
     {
-      "title": "In Korea, scrutiny can begin with one contract",
+      "title": "Korean Taxpayer Scrutiny Can Include Time Spent on Forms",
       "paragraphs": [
-        "A Korean taxpayer-watch movement need not begin by analyzing the entire national budget. It can start with one purchase whose price and purpose citizens understand.",
-        "Consider a public agency’s laptop purchase. This is an illustration of a method, not an allegation about a particular contract.",
-        "First establish the exact model, specifications, quantity and contract date. Then check whether the price includes installation, maintenance or additional equipment. Match the treatment of value-added tax. Only then compare prices for equivalent terms at the same time.",
-        "Calling the entire contract wasteful simply because an online listing is cheaper undermines the investigation. If a price difference remains after additional services and costs are accounted for, there is a sound basis for asking the agency to explain it.",
-        "A local event can be examined similarly. Break down the number of event days, actual attendance, venue rental and publicity costs instead of listing only the total budget. For commissioned research, examine the deliverable, its use in policy and repeated commissions on similar subjects alongside the price.",
-        "The question is what citizens received for their money. Spending the entire allocation does not establish that a project succeeded."
-      ]
-    },
-    {
-      "title": "What happens after a discrepancy is found matters more",
-      "paragraphs": [
-        "Taxpayer scrutiny does not end with one story about an expensive contract.",
-        "Preserve the original records and publish the comparison conditions. Seek the agency’s explanation and distinguish verified differences from those still unexplained. Correct a mistaken comparison. If spending was unnecessary, follow the next contract and budget to see what changed.",
-        "Repeated scrutiny creates a record. Citizens can distinguish agencies that repeatedly overpay, commission unused research or improve their purchasing after criticism.",
-        "Political promises can be tested against that record as well. Alongside a promise not to raise taxes, citizens can examine the decisions a politician actually made to reduce unnecessary spending.",
-        "The calculation must not change with the governing party. Taxpayers need accurate spending records and accountable explanations."
-      ]
-    },
-    {
-      "title": "Follow the money after it leaves the household account",
-      "paragraphs": [
-        "Increasing citizens’ burdens whenever government says it lacks revenue is easy. Reviewing existing spending and ending unnecessary programs is harder. Organizations receiving the funds and running the programs may resist.",
-        "Citizens should not have to pay for skipping that difficult work.",
-        "What ATR offers is more than a template for a pledge: publish promises, follow legislation, connect people working on the same issues and revisit spending growth and implemented changes.",
-        "SEED’s proposed Korean taxpayer-watch movement, KTR, can begin with the provisions and budget records it examines daily: a reduction in credits that increases a shop’s tax, a frozen threshold as housing prices rise, or a purchase priced above comparable contracts. Explain each through its effect on everyday finances.",
-        "An accumulated record also makes political scrutiny specific. Check which provision a lawmaker supported, whether a burden-increasing decision was changed and whether challenged spending remains in the next budget.",
-        "Citizens retain a stake in public money after paying tax. Follow both what will leave their accounts and what has already left, comparing government explanations with decisions. A lasting commitment against further tax increases grows from that record.",
-        "Earlier in this series: [The House Was Worth More. There Was No More Money for Taxes — Part 1](/columns/atr-taxpayer-movement-01-california) · [One Written Promise—“I Will Not Raise Taxes”—Held Politicians to Account — Part 2](/columns/atr-taxpayer-movement-02-protection-pledge)."
+        "For SEED’s proposed Korean taxpayer movement, KTR, these cases suggest an additional task: record the process of complying, alongside tax rates and deductions.",
+        "A shop owner’s experience can lead to specific questions. Which form goes to which agency? Is the same information submitted twice? Must a citizen obtain a document an agency already holds? How long does correcting an error take? These are proposed research questions, not assertions that a particular Korean regime matches the U.S. examples.",
+        "Start with an actual form, time spent and fees paid for assistance. If work is reduced, identify the change that reduced it. If a disclosure disappears, trace how the function it served is replaced. Retention of personal information also belongs in this assessment.",
+        "Government spending has a budget. Work the government requires of citizens needs an account too.",
+        "Studying ATR in depth means examining how a practical complaint becomes a demand to change a provision, and comparing the demand with the decision and implementation. Taxpayer advocacy grows more useful when it explains burdens absent from the tax bill.",
+        "Earlier installments: [“The House Was Worth More. There Was No Cash to Pay the Tax” — ①](/columns/atr-taxpayer-movement-01-california) · [“A Single Pledge Bound Politicians to Their Promise” — ②](/columns/atr-taxpayer-movement-02-protection-pledge)."
       ]
     }
   ],
-  "sourceNote": "Updated October 9, 2026. ATR’s organizational, coalition, pledge, legislative and budget-methodology documents were checked against Florida’s implementation notice and CBO’s July 1, 2025 preliminary estimate for the Senate-passed bill. ATR’s policy positions, independently documented implementation and SEED’s interpretation are distinguished. British figures are TPA’s own compilation. Korean examples and illustrative spending rates are hypothetical.",
+  "sourceNote": "Rewritten October 9, 2026. This installment examines ATR’s advocacy over 1099-K thresholds and BOI reporting rather than repeating Parts 1–2. Changes were checked against IRS, FinCEN, Treasury and Federal Register documents. The 2022 compliance costs are projections, not measured savings. The personal-property calculation is hypothetical; the Korean application is a proposed research approach.",
   "sourceLabels": [
     "[1] ATR — Organization and foundation",
     "[2] ATR — Taxpayer Protection Pledge",
@@ -148,5 +123,47 @@ export const issue65: ColumnTranslation = {
     "[9] CBO — July 1, 2025 preliminary estimate for Senate-passed H.R. 1",
     "[10] TPA — Town Hall Rich List 2026",
     "[11] TPA — Methodology and total remuneration"
+  ],
+  "sources": [
+    {
+      "label": "[1] ATR — Support for Miller’s 1099-K threshold bill and Tax Day press conference, April 21, 2023",
+      "url": "https://atr.org/congresswoman-carol-miller-leads-charge-to-repeal-1099-k-irs-paperwork-debacle/"
+    },
+    {
+      "label": "[2] IRS — Restored 1099-K reporting threshold, October 23, 2025",
+      "url": "https://www.irs.gov/newsroom/irs-issues-faqs-on-form-1099-k-threshold-under-the-one-big-beautiful-bill-dollar-limit-reverts-to-20000"
+    },
+    {
+      "label": "[3] IRS — Understanding Form 1099-K and payment-channel distinctions",
+      "url": "https://www.irs.gov/businesses/understanding-your-form-1099-k"
+    },
+    {
+      "label": "[4] IRS — Handling Form 1099-K, including personal-property sales",
+      "url": "https://www.irs.gov/newsroom/form-1099-k-faqs-what-to-do-if-you-receive-a-form-1099-k"
+    },
+    {
+      "label": "[5] ATR — Assessment of the 1099-K change, July 8, 2025",
+      "url": "https://atr.org/big-beautiful-bill-repeals-irs-1099-k-venmo-tax/"
+    },
+    {
+      "label": "[6] FinCEN — 2022 BOI reporting rule fact sheet (historical regime)",
+      "url": "https://www.fincen.gov/beneficial-ownership-information-reporting-rule-fact-sheet"
+    },
+    {
+      "label": "[7] Federal Register / FinCEN — 2022 final rule and regulatory analysis, September 30, 2022",
+      "url": "https://www.federalregister.gov/documents/2022/09/30/2022-21020/beneficial-ownership-information-reporting-requirements"
+    },
+    {
+      "label": "[8] ATR — CTA compliance concerns and support for repeal, March 3, 2025",
+      "url": "https://atr.org/trump-understands-the-unconstitutional-corporate-transparency-act-is-an-invasive-burden-on-small-businesses-and-farms/"
+    },
+    {
+      "label": "[9] Federal Register / FinCEN — Interim final rule narrowing reporting, March 26, 2025",
+      "url": "https://www.federalregister.gov/documents/2025/03/26/2025-05199/beneficial-ownership-information-reporting-requirement-revision-and-deadline-extension"
+    },
+    {
+      "label": "[10] U.S. Treasury — Final-rule announcement on U.S. company and person exemptions, August 11, 2026",
+      "url": "https://home.treasury.gov/news/press-releases/sb0603"
+    }
   ]
 };
