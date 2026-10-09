@@ -579,7 +579,26 @@ export default function Home() {
               </div>
               <Link to="/monitoring" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "View all"}<ArrowRight size={14}/></Link>
             </div>
-            <div className="mt-4 grid gap-3 sm:mt-5 sm:gap-5 md:grid-cols-3">
+            {commentaryItems.length > 0 && (
+              <div className="mt-4 grid gap-5 sm:mt-5 sm:gap-6 md:grid-cols-3">
+                {commentaryItems.map((article) => (
+                  <Link key={`${article.category}-${article.slug}`} to={article.to} className="group grid grid-cols-[124px_minmax(0,1fr)] items-start gap-4 py-1 sm:grid-cols-[156px_minmax(0,1fr)] md:grid-cols-1 lg:grid-cols-[160px_minmax(0,1fr)]">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-transparent md:aspect-[16/9] lg:aspect-[4/3]">
+                      <SafeImage src={resolveImageSrc(article.imageSrc)} alt={article.imageAlt} referrerPolicy="no-referrer" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap text-[11px] font-black tracking-[.08em] text-green-deep sm:text-xs">
+                        <span>{article.category === "legislation" ? (ko ? "입법 논평" : "LEGISLATIVE") : (ko ? "세금 논평" : "TAX")}</span>
+                        <time className="font-medium tracking-normal text-charcoal/38">{article.date.replace(/-/g, ".")}</time>
+                      </div>
+                      <h3 className="editorial-title mt-2 line-clamp-3 break-keep text-[1.08rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.2rem]">{article.title}</h3>
+                      <p className="mt-2 line-clamp-3 text-[13px] leading-6 text-charcoal/60 sm:text-sm">{article.summary}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
+            <div className="mt-5 grid gap-3 border-t border-green-deep/15 pt-5 sm:gap-5 md:grid-cols-3">
               {recentCivicWatchItems.map((item) => (
                 <Link key={item.key} to={item.to} className="group flex h-full flex-col border border-green-deep/15 bg-white p-4 transition-all duration-200 hover:-translate-y-1 hover:border-green-deep/35 hover:bg-green-pale/35 hover:shadow-[0_12px_28px_rgba(20,55,45,0.10)] focus-visible:-translate-y-1 focus-visible:border-green-deep/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-deep/20 sm:p-5">
                   <div className="flex items-center justify-between gap-3">
@@ -595,25 +614,6 @@ export default function Home() {
                 </Link>
               ))}
             </div>
-            {commentaryItems.length > 0 && (
-              <div className="mt-5 grid gap-3 border-t border-green-deep/15 pt-5 sm:gap-5 md:grid-cols-3">
-                {commentaryItems.map((article) => (
-                  <Link key={`${article.category}-${article.slug}`} to={article.to} className="group grid grid-cols-[94px_minmax(0,1fr)] gap-3 py-1 sm:grid-cols-[108px_minmax(0,1fr)] md:grid-cols-[96px_minmax(0,1fr)] lg:grid-cols-[112px_minmax(0,1fr)]">
-                    <div className="relative min-h-[88px] overflow-hidden bg-transparent">
-                      <SafeImage src={resolveImageSrc(article.imageSrc)} alt={article.imageAlt} referrerPolicy="no-referrer" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]" />
-                    </div>
-                    <div className="min-w-0">
-                      <div className="flex items-center gap-2 text-[9px] font-black tracking-[.08em] text-green-deep sm:text-[10px]">
-                        <span>{article.category === "legislation" ? (ko ? "입법 논평" : "LEGISLATIVE") : (ko ? "세금 논평" : "TAX")}</span>
-                        <time className="font-medium tracking-normal text-charcoal/38">{article.date.replace(/-/g, ".")}</time>
-                      </div>
-                      <h3 className="editorial-title mt-1 line-clamp-2 break-keep text-[.94rem] font-bold leading-snug text-navy transition group-hover:text-green-mid sm:text-[1.02rem]">{article.title}</h3>
-                      <p className="mt-1 line-clamp-2 text-[11px] leading-[1.55] text-charcoal/55 sm:text-xs">{article.summary}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            )}
           </div>
         </section>
       )}
