@@ -6,7 +6,7 @@ export const issue67: ColumnTranslation = {
   "author": "Little Seed",
   "summary": "Standing on one side to leave a path for hurried passengers expresses consideration. The same escalator also carries people who need stability. Making room and being willing to wait belong to the same civic habit.",
   "heroImage": {
-    "alt": "Passengers stand only on the right half of one wide escalator, leaving the left half empty",
+    "alt": "Passengers stand on consecutive steps on the right side of a standard-width subway escalator, leaving the left side clear",
     "caption": "Leaving one side clear can express consideration for a stranger’s circumstances.",
     "credit": "AI image"
   },

@@ -13,8 +13,8 @@ export const citizensDilemmaEscalatorColumn: SeedColumn = {
   "readMinutes": 6,
   "summary": "급한 사람에게 길을 내주는 한 줄 서기에는 시민의 배려가 담겨 있다. 같은 에스컬레이터에서 안전하게 서 있는 사람의 사정까지 살피면, 비켜주는 마음과 기다리는 마음이 함께 필요해진다.",
   "heroImage": {
-    "src": "images/columns/citizens-dilemma-03/hero.webp",
-    "alt": "두 사람이 나란히 설 수 있는 넓은 에스컬레이터에서 오른쪽에만 서 있고 왼쪽을 비워둔 승객들",
+    "src": "images/columns/citizens-dilemma-03/hero-v2.webp",
+    "alt": "일반적인 폭의 지하철 에스컬레이터에서 오른쪽 각 칸에 연이어 서 있고 왼쪽을 비워둔 승객들",
     "caption": "한쪽을 비워두는 습관에는 모르는 사람의 사정을 헤아리는 배려가 담겨 있다.",
     "credit": "AI 이미지",
     "sourceUrl": ""
