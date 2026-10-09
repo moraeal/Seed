@@ -1,6 +1,6 @@
 import snapshot from "../data/homeSnapshot.json";
 import { civicSections, getCivicSectionArticles } from "../data/civicSections";
-import { ArrowRight, Clock, Pause, Play, Megaphone } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Clock, Pause, Play, Megaphone } from "lucide-react";
 import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import FeaturedStoryMedia from "../components/FeaturedStoryMedia";
@@ -65,7 +65,7 @@ function StoryCarousel({ children, count, ko, label }: { children: (index: numbe
       setPosition((current) => reducedMotion ? (current + 1) % count : Math.min(current + 1, count));
     }, 5000);
     return () => window.clearInterval(timer);
-  }, [count, paused, interacting, reducedMotion]);
+  }, [count, paused, interacting, reducedMotion, position]);
 
   useEffect(() => {
     if (!resetting) return;
@@ -75,6 +75,15 @@ function StoryCarousel({ children, count, ko, label }: { children: (index: numbe
     });
     return () => { window.cancelAnimationFrame(frame); window.cancelAnimationFrame(nextFrame); };
   }, [resetting]);
+
+  const moveStory = (direction: -1 | 1) => {
+    const current = position % count;
+    const next = (current + direction + count) % count;
+    // Skip the long sweep across the strip when wrapping to the other end.
+    setResetting(position === count || Math.abs(next - position) > 1);
+    setPosition(next);
+  };
+  const controlClassName = "inline-flex min-h-10 items-center justify-center gap-1.5 rounded border border-green-deep/20 bg-white px-2.5 py-2 text-sm font-semibold text-green-deep transition hover:bg-green-deep/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold disabled:cursor-default disabled:opacity-40";
 
   if (!count) return null;
   return (
@@ -108,7 +117,17 @@ function StoryCarousel({ children, count, ko, label }: { children: (index: numbe
           })}
         </div>
       </div>
-      {count > 1 && <div className="mt-3 flex justify-end"><button type="button" onClick={() => setPaused((value) => !value)} aria-pressed={paused} className="inline-flex items-center gap-1.5 rounded px-2 py-1 text-xs font-semibold text-charcoal/60 hover:text-green-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">{paused ? <Play size={13} aria-hidden="true"/> : <Pause size={13} aria-hidden="true"/>}{paused ? (ko ? "자동 넘김 재생" : "Resume rotation") : (ko ? "자동 넘김 멈춤" : "Pause rotation")}</button></div>}
+      <div className="mt-3 flex flex-wrap justify-end gap-2" role="group" aria-label={ko ? `${label} 기사 넘김` : `${label} controls`}>
+        <button type="button" onClick={() => moveStory(-1)} disabled={count < 2} className={controlClassName}>
+          <ChevronLeft size={16} aria-hidden="true"/>{ko ? "앞 기사 보기" : "Previous article"}
+        </button>
+        <button type="button" onClick={() => setPaused((value) => !value)} disabled={count < 2} aria-pressed={paused} aria-label={ko ? (paused ? "자동 넘김 재생" : "자동 넘김 멈추기") : (paused ? "Resume rotation" : "Pause rotation")} className={controlClassName}>
+          {paused ? <Play size={16} aria-hidden="true"/> : <Pause size={16} aria-hidden="true"/>}{paused ? (ko ? "재생" : "Play") : (ko ? "멈추기" : "Pause")}
+        </button>
+        <button type="button" onClick={() => moveStory(1)} disabled={count < 2} className={controlClassName}>
+          {ko ? "뒷 기사 보기" : "Next article"}<ChevronRight size={16} aria-hidden="true"/>
+        </button>
+      </div>
     </div>
   );
 }
