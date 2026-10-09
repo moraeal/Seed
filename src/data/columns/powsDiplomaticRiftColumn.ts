@@ -36,6 +36,14 @@ export const powsDiplomaticRiftColumn: SeedColumn = {
       "sourceUrl": "",
       "afterSection": 2,
       "contain": true
+    },
+    {
+      "src": "images/columns/pows-diplomatic-rift-2026/freedom-gate.webp",
+      "afterSection": 6,
+      "alt": "밝은 도시로 이어지는 문 앞에서 기다리는 병사와 비어 있는 두 의자, 외교 문서철을 상징한 그림",
+      "caption": "외교적 갈등의 비용이 다음 포로의 자유를 찾는 길에 전가되어서는 안 된다.",
+      "credit": "AI 이미지",
+      "sourceUrl": ""
     }
   ],
   "sections": [

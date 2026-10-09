@@ -22,6 +22,12 @@ export const issue68: ColumnTranslation = {
       "alt": "Timeline of capture, the change of government, transfer and diplomatic dispute",
       "caption": "Roughly 20 months passed between capture and arrival. The initial acceptance principle and final transfer negotiations spanned two administrations.",
       "credit": "SEED VOICE · Based on the sources cited in the article"
+    },
+    {
+      "src": "images/columns/pows-diplomatic-rift-2026/freedom-gate.webp",
+      "alt": "An anonymous soldier waits before a gate opening toward a peaceful city, with two empty chairs and a diplomatic folder nearby",
+      "caption": "The cost of a diplomatic dispute must not fall on the next prisoner seeking freedom.",
+      "credit": "AI image"
     }
   ],
   "sections": [
