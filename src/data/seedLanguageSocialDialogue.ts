@@ -288,13 +288,21 @@ export const dialogueArticleKo: SeedLanguageArticle = {
     {
       "label": "더퍼블릭 · 사회적 대화 예산 관련 10월 7일 보도",
       "url": "https://www.thepublic.kr/news/articleView.html?idxno=321447"
+    },
+    {
+      "label": "사진 원본 · Laserlicht / Wikimedia Commons · 란트구트 부르크 (2023)",
+      "url": "https://commons.wikimedia.org/wiki/File:Landgut_Burg.jpg"
+    },
+    {
+      "label": "사진 이용허락 · CC BY-SA 4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/"
     }
   ],
   "heroImage": {
-    "src": "images/seed-language/social-dialogue/beutelsbach-town-hall.jpg",
-    "alt": "독일 보이텔스바흐의 옛 시청인 뷔르템베르크 하우스",
-    "caption": "보이텔스바흐 합의의 이름이 된 지역의 옛 시청. 2016년 촬영한 지역 풍경으로, 1976년 회의 현장이나 회의 장소를 보여주는 사진은 아니다.",
-    "credit": "Silesia711 · Wikimedia Commons · CC BY-SA 4.0 · 크기 조정 · 화면 비율에 따른 표시 크롭"
+    "src": "images/seed-language/social-dialogue/beutelsbach-landgut-burg-2023.jpg",
+    "alt": "독일 보이텔스바흐 합의의 계기가 된 회의가 열린 란트구트 부르크의 전경",
+    "caption": "1976년 보이텔스바흐 합의의 계기가 된 회의가 열린 독일 란트구트 부르크의 전경. 2023년 12월 촬영.",
+    "credit": "Laserlicht · Wikimedia Commons · CC BY-SA 4.0 · 크기 조정 · 화면 비율에 따른 표시 크롭"
   },
   "inlineImage": {
     "src": "images/seed-language/social-dialogue/dialogue-symbol.webp",
@@ -651,13 +659,21 @@ export const dialogueArticleEn: SeedLanguageArticle = {
     {
       "label": "The Public: October 7 reporting on dialogue spending",
       "url": "https://www.thepublic.kr/news/articleView.html?idxno=321447"
+    },
+    {
+      "label": "Original photograph · Laserlicht / Wikimedia Commons · Landgut Burg (2023)",
+      "url": "https://commons.wikimedia.org/wiki/File:Landgut_Burg.jpg"
+    },
+    {
+      "label": "Photograph license · CC BY-SA 4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/"
     }
   ],
   "heroImage": {
-    "src": "images/seed-language/social-dialogue/beutelsbach-town-hall.jpg",
-    "alt": "The old town hall, now Württemberg-Haus, in Beutelsbach, Germany",
-    "caption": "The old town hall in the locality that gave the consensus its name. This 2016 photograph depicts the town, not the 1976 meeting or its venue.",
-    "credit": "Silesia711 · Wikimedia Commons · CC BY-SA 4.0 · Resized · Display crop for page aspect ratio"
+    "src": "images/seed-language/social-dialogue/beutelsbach-landgut-burg-2023.jpg",
+    "alt": "Landgut Burg in Beutelsbach, Germany, the venue complex of the meeting that led to the Beutelsbach Consensus",
+    "caption": "Landgut Burg in Germany, where the 1976 meeting that led to the Beutelsbach Consensus took place. Photographed in December 2023.",
+    "credit": "Laserlicht · Wikimedia Commons · CC BY-SA 4.0 · Resized · Display crop for page aspect ratio"
   },
   "inlineImage": {
     "src": "images/seed-language/social-dialogue/dialogue-symbol.webp",
