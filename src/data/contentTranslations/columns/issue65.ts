@@ -17,14 +17,12 @@ export const issue65: ColumnTranslation = {
   },
   "additionalImages": [
     {
-      "afterSection": 2,
       "src": "images/columns/tax-series-03/reporting-scope-en.svg",
       "alt": "Federal TPSO 1099-K reporting requires both payments over $20,000 and more than 200 transactions; this is not an income-tax exemption",
       "caption": "IRS federal threshold for third-party settlement organizations. Direct card payments follow different rules; forms may be issued below the threshold.",
       "credit": "SEED Voice · IRS"
     },
     {
-      "afterSection": 4,
       "src": "images/columns/real-estate-supervisor/family-home-papers.webp",
       "alt": "A couple reviews documents and household costs at a table",
       "caption": "Reading forms and gathering information takes time that belongs to citizens too.",
