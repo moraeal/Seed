@@ -93,7 +93,7 @@ export const issue68: ColumnTranslation = {
   ],
   "sourceNote": "Analysis and commentary based on publicly available material checked through October 9, 2026. Transfer refers to arrival in South Korea by the prisoners’ free choice. Expectations of support and possible changes in political priorities are interpretations and hypotheses, not confirmed bargains or internal policy decisions. A nationwide decline in warmth toward Ukraine has not been established through a comparable polling series.",
   "sourceLabels": [
-    "Foreign Ministry · Recall of the South Korean ambassador to Ukraine; Donga Ilbo · Ukraine offers dialogue (October 8–9, 2026)",
+    "Foreign Ministry · Recall of the South Korean ambassador to Ukraine (October 8, 2026)",
     "Donga Ilbo · Ukraine offers to resume dialogue (October 9, 2026)",
     "Donga Ilbo · Donations to Ukraine reach 2.3 billion won (March 4, 2022)",
     "Yonhap · North Korean deployment to Russia (October 18, 2024)",
