@@ -204,6 +204,11 @@ export default function Home() {
   // Each story gets one homepage position. The latest briefing desk takes
   // priority over the historical carousel; other desks claim remaining topics.
   const claimedHomePaths = new Set(activeFeaturedPath ? [getHomeTopic(activeFeaturedPath)] : []);
+  const columnImageLead = allJournalColumns.find((column) =>
+    column.slug === "robak-housing-names-hangeul-communication-2026"
+    && !claimedHomePaths.has(getHomeTopic(`/columns/${column.slug}`)),
+  );
+  if (columnImageLead) claimedHomePaths.add(getHomeTopic(`/columns/${columnImageLead.slug}`));
   const civicSidebarItems = civicSections.map((section) => {
     if (section.key === "campaign") {
       const path = "/briefings/korean-civic-tax-watch-movement-ktr";
@@ -313,12 +318,15 @@ export default function Home() {
     .sort((a, b) => b.date.localeCompare(a.date));
 
   const commentaryItems = claimUnseen(commentaryCandidates, (item) => item.to, claimedHomePaths, 3);
-  const journalColumns = claimUnseen(
-    allJournalColumns,
-    (item) => `/columns/${item.slug}`,
-    claimedHomePaths,
-    5,
-  );
+  const journalColumns = [
+    ...(columnImageLead ? [columnImageLead] : []),
+    ...claimUnseen(
+      allJournalColumns,
+      (item) => `/columns/${item.slug}`,
+      claimedHomePaths,
+      columnImageLead ? 4 : 5,
+    ),
+  ];
   const voiceLeadColumn = journalColumns[0];
   const voiceListColumns = journalColumns.slice(1);
 
