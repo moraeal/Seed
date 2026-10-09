@@ -361,7 +361,7 @@ button, input, textarea { font: inherit; }
 
 /* Fixed editorial citation convention; override reading tools and mobile font sizes. */
 .reading-surface article .article-citation,
-article .article-citation { margin-left: .12em; font-family: "Pretendard", "Noto Sans KR", sans-serif; font-size: .68em; font-weight: 400; line-height: 0; vertical-align: super; color: #70777a; white-space: nowrap; }
+article .article-citation { margin-left: .3em; position: static; top: auto; font-family: "Pretendard", "Noto Sans KR", sans-serif; font-size: .68em; font-weight: 400; line-height: inherit; vertical-align: baseline; color: #70777a; white-space: nowrap; }
 article .article-citation a { color: inherit; font-size: inherit; font-weight: 400; text-decoration: none; }
 article .article-citation a:hover { color: #174c3a; text-decoration: underline; }
 article .article-citation a:focus-visible { outline: 2px solid #174c3a; outline-offset: 3px; }
