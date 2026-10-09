@@ -299,7 +299,7 @@ export const dialogueArticleKo: SeedLanguageArticle = {
     }
   ],
   "heroImage": {
-    "src": "images/seed-language/social-dialogue/beutelsbach-landgut-burg-2023.jpg",
+    "src": "images/seed-language/social-dialogue/beutelsbach-landgut-burg-2023-1600.jpg",
     "alt": "독일 보이텔스바흐 합의의 계기가 된 회의가 열린 란트구트 부르크의 전경",
     "caption": "1976년 보이텔스바흐 합의의 계기가 된 회의가 열린 독일 란트구트 부르크의 전경. 2023년 12월 촬영.",
     "credit": "Laserlicht · Wikimedia Commons · CC BY-SA 4.0 · 크기 조정 · 화면 비율에 따른 표시 크롭"
@@ -670,7 +670,7 @@ export const dialogueArticleEn: SeedLanguageArticle = {
     }
   ],
   "heroImage": {
-    "src": "images/seed-language/social-dialogue/beutelsbach-landgut-burg-2023.jpg",
+    "src": "images/seed-language/social-dialogue/beutelsbach-landgut-burg-2023-1600.jpg",
     "alt": "Landgut Burg in Beutelsbach, Germany, the venue complex of the meeting that led to the Beutelsbach Consensus",
     "caption": "Landgut Burg in Germany, where the 1976 meeting that led to the Beutelsbach Consensus took place. Photographed in December 2023.",
     "credit": "Laserlicht · Wikimedia Commons · CC BY-SA 4.0 · Resized · Display crop for page aspect ratio"
