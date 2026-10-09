@@ -1,5 +1,5 @@
 import snapshot from "../data/homeSnapshot.json";
-import { civicSections, getCivicSectionArticles } from "../data/civicSections";
+import { civicSections, getCivicSectionArticles, getTaxWatchMovementArticles } from "../data/civicSections";
 import { ArrowRight, ChevronLeft, ChevronRight, Clock, Pause, Play, Megaphone } from "lucide-react";
 import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import { Link } from "react-router-dom";
@@ -210,11 +210,10 @@ export default function Home() {
       claimedHomePaths.add(getHomeTopic(path));
       return { section, article: featuredCandidates.find((item) => item.path === path) };
     }
-    const sectionArticles = getCivicSectionArticles(section.key, language, featuredCandidates);
-    const pinnedArticle = section.key === "cases"
-      ? sectionArticles.find((item) => item.path === "/columns/atr-taxpayer-movement-01-california" && !claimedHomePaths.has(getHomeTopic(item.path)))
-      : undefined;
-    const article = pinnedArticle ?? sectionArticles.find((item) => !claimedHomePaths.has(getHomeTopic(item.path)));
+    const sectionArticles = section.key === "cases"
+      ? getTaxWatchMovementArticles(language, featuredCandidates)
+      : getCivicSectionArticles(section.key, language, featuredCandidates);
+    const article = sectionArticles.find((item) => !claimedHomePaths.has(getHomeTopic(item.path)));
     if (article) claimedHomePaths.add(getHomeTopic(article.path));
     return { section, article };
   });
@@ -471,7 +470,7 @@ export default function Home() {
                     {article ? <SafeImage src={resolveImageSrc(article.image.src)} alt={article.image.alt} className="aspect-[4/3] h-full max-h-[110px] w-full object-cover" /> : <Megaphone size={34} aria-hidden="true" className="my-6" />}
                   </div>
                   <div className="min-w-0">
-                    <p className="text-sm font-black text-green-deep">{section.title[language]}</p>
+                    <p className="text-sm font-black text-green-deep">{section.title[language]}{section.key === "cases" && article?.path.match(/taxpayer-movement-(\d{2})-/) && <span className="ml-1.5" aria-label={ko ? `연재 ${Number(article.path.match(/taxpayer-movement-(\d{2})-/)![1])}편` : `Part ${Number(article.path.match(/taxpayer-movement-(\d{2})-/)![1])}`}>{String.fromCodePoint(0x245f + Number(article.path.match(/taxpayer-movement-(\d{2})-/)![1]))}</span>}</p>
                     <h2 className="editorial-title mt-1 line-clamp-2 break-keep text-[1.02rem] font-bold leading-snug text-navy transition-colors group-hover:text-green-mid group-focus-visible:text-green-mid sm:text-[1.08rem]">{title}</h2>
                     <p className="home-compact-summary mt-1 line-clamp-2">{summary}</p>
                   </div>
