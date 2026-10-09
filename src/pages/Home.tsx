@@ -462,7 +462,6 @@ export default function Home() {
                       className="block h-auto w-full"
                     />
                   </Link>
-                  <Link to="/civic-campaign#campaign-signature" className="absolute bottom-3 right-3 inline-flex min-h-11 items-center justify-center border-2 border-white bg-green-deep px-5 py-2 text-base font-black text-white shadow-lg transition hover:bg-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">{ko ? "서명 참여하기" : "Sign the campaign"}</Link>
                   </div>
                 );
                 const title = article?.title ?? section.title[language];
