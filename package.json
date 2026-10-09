@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --configLoader native",
     "normalize:titles": "node scripts/normalize-seed-language-titles.mjs",
-    "build": "node scripts/prepare-tracker-images.mjs && node scripts/generate-social-images.mjs && node scripts/prepare-home-snapshot.mjs && node scripts/validate-content.mjs && node scripts/generate-siya-index.mjs && tsc -b && vite build --configLoader native && node scripts/generate-seo.mjs",
+    "build": "node scripts/prepare-tracker-images.mjs && node scripts/generate-social-images.mjs && node scripts/prepare-home-snapshot.mjs && node scripts/validate-content.mjs && node scripts/audit-article-citations.mjs && node scripts/generate-siya-index.mjs && tsc -b && vite build --configLoader native && node scripts/generate-seo.mjs",
     "preview": "vite preview --configLoader native"
   },
   "dependencies": {

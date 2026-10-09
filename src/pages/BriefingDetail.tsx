@@ -1,3 +1,5 @@
+import { ArticleText, ArticleSources, CitationReference } from "../components/ArticleCitations";
+import { createArticleCitations } from "../lib/articleCitations";
 import { getCivicSectionForArticle } from "../data/civicSections";
 import { ArrowLeft, Clock, Download, ExternalLink } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
@@ -30,6 +32,7 @@ export default function BriefingDetail() {
   }
 
   const civicSection = getCivicSectionForArticle(`/briefings/${briefing.slug}`);
+  const citations = createArticleCitations(briefing.sources, briefing, language, briefing.paragraphLinks?.flatMap(entry => entry.links.filter(link => /^https?:\/\//.test(link.url))));
   const isLongRead = briefing.readMinutes >= 8;
   const readingPath = getArticleReadingPath("briefing", briefing.slug, language);
   const hasBCorpDeepDive = briefing.slug === "social-economy-fair-competition";
@@ -67,7 +70,7 @@ export default function BriefingDetail() {
             <span className="section-kicker">{briefing.category}</span>
             <h1 className="article-detail-title mt-2">{briefing.title}</h1>
             {briefing.subtitle && <p className="mx-auto mt-2 max-w-3xl text-base font-bold leading-7 text-green-deep sm:text-lg">{briefing.subtitle}</p>}
-            <p className="article-summary">{briefing.summary}</p>
+            <p className="article-summary"><ArticleText text={briefing.summary} citations={citations}/></p>
           </div>
           <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45">
             <span>{briefing.author}</span>
@@ -105,7 +108,7 @@ export default function BriefingDetail() {
           <aside className="reading-column mb-8 rounded-xl border border-green-deep/15 bg-green-pale p-5 shadow-[0_10px_30px_rgba(23,76,58,.05)] sm:p-7">
             <span className="section-kicker">KEY SUMMARY</span>
             <h2 className="mt-2 text-xl font-extrabold text-navy sm:text-2xl">{ko ? "먼저 이것만" : "Key points first"}</h2>
-            <ul className="mt-4 space-y-3">{briefing.keyHighlights.map((point, index) => <li key={`${index}-${point.slice(0, 24)}`} className="flex gap-3 text-[16px] leading-7 text-charcoal/80 sm:text-[17px]"><span className="mt-[11px] size-1.5 shrink-0 rounded-full bg-gold" />{point}</li>)}</ul>
+            <ul className="mt-4 space-y-3">{briefing.keyHighlights.map((point, index) => <li key={`${index}-${point.slice(0, 24)}`} className="flex gap-3 text-[16px] leading-7 text-charcoal/80 sm:text-[17px]"><span className="mt-[11px] size-1.5 shrink-0 rounded-full bg-gold" /><ArticleText text={point} citations={citations}/></li>)}</ul>
           </aside>
         )}
 
@@ -116,7 +119,7 @@ export default function BriefingDetail() {
         <div className="reading-column">
           {briefing.introTitle && <h2 className="article-section-title mt-0">{briefing.introTitle}</h2>}
           {briefing.content.map((paragraph, index) => (
-            <p key={`${index}-${paragraph.slice(0, 20)}`} className={`${index === 0 ? "mt-0" : ""} article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>
+            <p key={`${index}-${paragraph.slice(0, 20)}`} className={`${index === 0 ? "mt-0" : ""} article-copy ${isLongRead ? "article-copy-long" : ""}`}><ArticleText text={paragraph} citations={citations}/></p>
           ))}
         </div>
 
@@ -132,15 +135,15 @@ export default function BriefingDetail() {
                 const links = briefing.paragraphLinks?.find((entry) => entry.sectionIndex === index && entry.paragraphIndex === paragraphIndex)?.links;
                 if (hasSeparateRelatedReading) return (
                   <div key={`${paragraphIndex}-${paragraph.slice(0, 24)}`}>
-                    <p className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>
-                    {links && links.length > 0 && <aside aria-label={ko ? "관련 씨앗 기사" : "Related SEED articles"} className="mb-7 mt-3 border-l-2 border-green-deep/15 pl-4">
-                      <ul className="space-y-2">{links.map((link) => <li key={link.url}><a href={link.url} target="_blank" rel="noreferrer" className="block text-sm font-normal leading-6 text-green-deep underline decoration-green-deep/20 underline-offset-4 hover:text-green-mid sm:text-base">{link.label}</a></li>)}</ul>
+                    <p className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}><ArticleText text={paragraph} citations={citations}/>{links?.filter(link => /^https?:\/\//.test(link.url)).map(link => <CitationReference key={link.url} number={citations.byUrl.get(link.url)!.number} citations={citations}/>)}</p>
+                    {links?.some(link => !/^https?:\/\//.test(link.url)) && <aside aria-label={ko ? "관련 씨앗 기사" : "Related SEED articles"} className="mb-7 mt-3 border-l-2 border-green-deep/15 pl-4">
+                      <ul className="space-y-2">{links.filter(link => !/^https?:\/\//.test(link.url)).map((link) => <li key={link.url}><a href={link.url} target="_blank" rel="noreferrer" className="block text-sm font-normal leading-6 text-green-deep underline decoration-green-deep/20 underline-offset-4 hover:text-green-mid sm:text-base">{link.label}</a></li>)}</ul>
                     </aside>}
                   </div>
                 );
-                return <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}{links?.map((link) => <a key={link.url} href={link.url} target="_blank" rel="noreferrer" className="ml-2 inline-flex items-center gap-1 font-bold text-green-deep underline decoration-green-deep/25 underline-offset-4 hover:text-green-mid">{link.label}<ExternalLink size={13}/></a>)}</p>;
+                return <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}><ArticleText text={paragraph} citations={citations}/>{links?.map((link) => /^https?:\/\//.test(link.url) ? <CitationReference key={link.url} number={citations.byUrl.get(link.url)!.number} citations={citations}/> : <Link key={link.url} to={link.url} className="ml-2 font-semibold text-green-deep underline underline-offset-4">{link.label}</Link>)}</p>;
               })}</div>}
-              {section.bullets && <ul className="mt-5 space-y-3">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet.slice(0, 24)}`} className="flex gap-3 text-[17px] leading-[1.78] text-charcoal/80 sm:text-lg"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold" />{bullet}</li>)}</ul>}
+              {section.bullets && <ul className="mt-5 space-y-3">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet.slice(0, 24)}`} className="flex gap-3 text-[17px] leading-[1.78] text-charcoal/80 sm:text-lg"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold" /><ArticleText text={bullet} citations={citations}/></li>)}</ul>}
             </section>
             {briefing.sourceArticle?.afterSection === index && renderSourceArticle()}
             {briefing.images?.slice(briefing.placeBodyImagesBySection ? 1 : 2).filter((image) => image.afterSection === index).map((image) => (
@@ -171,20 +174,12 @@ export default function BriefingDetail() {
         <aside className="mt-9 rounded-lg border-l-4 border-gold bg-green-pale p-5 sm:p-6">
           <h2 className="text-xl font-extrabold text-green-deep">{briefing.watchTitle ?? (ko ? "지속해서 관찰할 지점" : "What to keep watching")}</h2>
           {briefing.watchIntro && <p className="mt-2 text-sm leading-6 text-charcoal/70">{briefing.watchIntro}</p>}
-          <ul className="mt-4 space-y-2">{briefing.watchPoints.map((point, index) => <li key={`${index}-${point}`} className="flex gap-3 text-sm leading-6 text-charcoal/75"><span className="font-serif text-gold">●</span>{point}</li>)}</ul>
+          <ul className="mt-4 space-y-2">{briefing.watchPoints.map((point, index) => <li key={`${index}-${point}`} className="flex gap-3 text-sm leading-6 text-charcoal/75"><span className="font-serif text-gold">●</span><ArticleText text={point} citations={citations}/></li>)}</ul>
         </aside>
 
-        {briefing.closing && <div className="reading-column mt-9">{briefing.closing.map((paragraph, index) => <p key={`${index}-${paragraph.slice(0, 24)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}>{paragraph}</p>)}</div>}
+        {briefing.closing && <div className="reading-column mt-9">{briefing.closing.map((paragraph, index) => <p key={`${index}-${paragraph.slice(0, 24)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}><ArticleText text={paragraph} citations={citations}/></p>)}</div>}
         {briefing.quote && <blockquote className="mt-9 rounded-xl bg-green-deep p-6 text-lg font-bold leading-8 text-white sm:p-7 sm:text-xl">“{briefing.quote}”</blockquote>}
-        {briefing.sourceNote && <p className="mt-6 rounded-lg border border-green-deep/10 bg-white p-4 text-sm leading-6 text-charcoal/60">{briefing.sourceNote}</p>}
-
-        {briefing.sources && (
-          <section className="mt-9 border-t border-green-deep/10 pt-6">
-            <h2 className="text-xl font-extrabold text-navy">{ko ? "자료 출처 및 확인 기준" : "Sources and verification basis"}</h2>
-            <ol className="mt-4 space-y-2">{briefing.sources.map((source, index) => <li key={source.url} className="flex gap-3 text-sm leading-6">{!hasSeparateRelatedReading && <span className="font-serif text-gold">{index + 1}.</span>}<a href={source.url} target="_blank" rel="noreferrer" className="text-charcoal/65 underline decoration-green-deep/20 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ol>
-            <p className="mt-4 text-xs leading-6 text-charcoal/45">{ko ? "확인 기준: 각 브리핑의 기준일 현재 공개자료입니다. 이후 판결·법령·공식 발표가 나오면 판단은 업데이트될 수 있습니다." : "Verification basis: public materials available as of each briefing's reference date. Later court decisions, laws or official announcements may require updates."}</p>
-          </section>
-        )}
+        <ArticleSources citations={citations} note={briefing.sourceNote}/>
 
         {briefing.commentary && <DeepReadBanner href={`/briefings/${briefing.slug}/commentary`} />}
         {hasBCorpDeepDive && (

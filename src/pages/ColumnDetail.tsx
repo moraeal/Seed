@@ -1,3 +1,5 @@
+import { ArticleText, ArticleSources } from "../components/ArticleCitations";
+import { createArticleCitations } from "../lib/articleCitations";
 import { ArrowLeft, Clock, FileText } from "lucide-react";
 import { Fragment, useEffect, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
@@ -16,22 +18,6 @@ import { useLanguage } from "../i18n";
 
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 const imageKey = (src: string) => imageSrc(src).replace(/#.*$/, "").replace(/\?.*$/, "");
-
-function InlineLinkedText({ text, subtleFootnotes = false, sourceLabel = "출처" }: { text: string; subtleFootnotes?: boolean; sourceLabel?: string }) {
-  return <>{text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part, index) => {
-    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-    if (!match) return part;
-
-    const [, label, href] = match;
-    if (subtleFootnotes && /^\d+$/.test(label) && /^https?:\/\//i.test(href)) {
-      return <sup key={`${href}-${index}`} className="ml-0.5 text-[0.65em] font-normal leading-none text-charcoal/50"><a href={href} target="_blank" rel="noreferrer" aria-label={`${sourceLabel} ${label}`} className="no-underline transition-colors hover:text-green-deep focus-visible:text-green-deep">[{label}]</a></sup>;
-    }
-    const className = "font-semibold text-green-deep underline decoration-green-deep/35 underline-offset-4 hover:decoration-green-deep";
-    return href.startsWith("/")
-      ? <Link key={`${href}-${index}`} to={href} className={className}>{label}</Link>
-      : <a key={`${href}-${index}`} href={href} target="_blank" rel="noreferrer" className={className}>{label}</a>;
-  })}</>;
-}
 
 export default function ColumnDetail() {
   const { slug = "" } = useParams();
@@ -77,6 +63,7 @@ export default function ColumnDetail() {
 
   if (!column) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">{ko ? "글을 찾을 수 없습니다." : "Article not found."}</h1><Link to="/columns" className="button-primary mt-7">{ko ? "칼럼 목록" : "Columns"}</Link></div>;
 
+  const citations = createArticleCitations(column.sources, column, language);
   const isLongRead = column.readMinutes >= 8;
   const hotIssue = isHotIssueColumn(column.slug);
   const publicInterest = publicInterestColumnSlugs.has(column.slug);
@@ -123,7 +110,7 @@ export default function ColumnDetail() {
         <Link to="/monitoring/legislation/bill-2221573/" className="font-semibold text-green-deep underline underline-offset-4">{ko ? "법안과 쟁점 보기" : "Bill and key issues"}</Link>
         <span className="mx-2 text-charcoal/35" aria-hidden="true">·</span>
         <a href="https://v.daum.net/v/20260923210127048" target="_blank" rel="noreferrer" className="font-semibold text-green-deep underline underline-offset-4">{ko ? "9월 23일 관련 보도 보기(아이뉴스24)" : "September 23 report (iNews24)"}</a>
-      </p>}{column.summary && <p className="article-summary">{column.summary}</p>}</div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45">{hotIssue && <span className="font-extrabold text-green-deep">{ko ? "핫이슈 · 쟁점 칼럼" : "HOT ISSUE · COMMENTARY"}</span>}<div className="group relative"><button type="button" aria-describedby={column.authorBio ? "column-author-bio" : undefined} className="font-extrabold text-green-deep underline decoration-green-deep/25 underline-offset-4 outline-none transition hover:text-navy focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2">{column.author}</button>{column.authorBio && <div id="column-author-bio" role="tooltip" className="invisible absolute left-0 top-full z-30 mt-2 w-[min(22rem,calc(100vw-2rem))] translate-y-1 border border-green-deep/15 bg-white p-4 text-left text-sm font-normal leading-6 text-charcoal/70 opacity-0 shadow-[0_16px_45px_rgba(15,36,56,.18)] transition duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100"><strong className="block text-sm font-extrabold text-navy">{column.author}</strong><span className="mt-1.5 block">{column.authorBio}</span></div>}</div><time>{column.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${column.readMinutes}분` : `${column.readMinutes} min read`}</span>{column.sourceDocument && <a href="#source-document" className="flex items-center gap-1 font-bold text-green-deep hover:underline"><FileText size={14}/>{ko ? "성명서 원문 대조" : "Compare source"}</a>}<ShareButton title={`${column.title} - ${column.subtitle}`} text={column.summary} className="ml-auto" /></div></div>
+      </p>}{column.summary && <p className="article-summary"><ArticleText text={column.summary} citations={citations}/></p>}</div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45">{hotIssue && <span className="font-extrabold text-green-deep">{ko ? "핫이슈 · 쟁점 칼럼" : "HOT ISSUE · COMMENTARY"}</span>}<div className="group relative"><button type="button" aria-describedby={column.authorBio ? "column-author-bio" : undefined} className="font-extrabold text-green-deep underline decoration-green-deep/25 underline-offset-4 outline-none transition hover:text-navy focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2">{column.author}</button>{column.authorBio && <div id="column-author-bio" role="tooltip" className="invisible absolute left-0 top-full z-30 mt-2 w-[min(22rem,calc(100vw-2rem))] translate-y-1 border border-green-deep/15 bg-white p-4 text-left text-sm font-normal leading-6 text-charcoal/70 opacity-0 shadow-[0_16px_45px_rgba(15,36,56,.18)] transition duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100"><strong className="block text-sm font-extrabold text-navy">{column.author}</strong><span className="mt-1.5 block">{column.authorBio}</span></div>}</div><time>{column.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${column.readMinutes}분` : `${column.readMinutes} min read`}</span>{column.sourceDocument && <a href="#source-document" className="flex items-center gap-1 font-bold text-green-deep hover:underline"><FileText size={14}/>{ko ? "성명서 원문 대조" : "Compare source"}</a>}<ShareButton title={`${column.title} - ${column.subtitle}`} text={column.summary} className="ml-auto" /></div></div>
     </header>
 
     <div className="article-content-frame py-8 sm:py-12">
@@ -149,13 +136,13 @@ export default function ColumnDetail() {
         </div>}
         {column.sections.map((section, index) => <Fragment key={`${index}-${section.title}`}><section className={index === 0 ? "" : `article-section ${isLongRead ? "article-section-long" : ""}`}>
           {section.title && <h2 className="article-section-title">{section.title}</h2>}
-          {section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 28)}`} className={column.presentation === "poem" ? "mt-6 whitespace-pre-line font-serif text-[17px] leading-[2] text-charcoal/85 sm:text-xl sm:leading-[2]" : `article-copy ${isLongRead ? "article-copy-long" : ""}`}><InlineLinkedText text={paragraph} subtleFootnotes={column.slug === "fuel-shipments-russia-diplomatic-accountability-2026" || column.slug === "farmland-farming-freedom-smart-agriculture-2026" || column.slug === "stop-the-politics-of-dismantling-2026" || column.slug === "seoul-social-investment-fund-public-interest-ecosystem-2026" || column.slug === "no-more-tax-increases-civic-declaration-2026" || column.slug === "atr-taxpayer-movement-01-california" || column.slug === "atr-taxpayer-movement-02-protection-pledge" || column.slug === "taxpayer-movement-03-britain-spending-watch" || column.slug === "citizens-dilemma-01-cafe-customer-choice" || column.slug === "assassins-film-history-memory-war-2026" || column.slug === "film-imagination-history-distortion-ryoma-2026" || column.slug === "farmland-solar-cartel-professional-farming-2026" || column.slug === "who-watches-power-now-2026" || column.slug === "pspd-prosecution-reform-state-power-watch-2026"} sourceLabel={ko ? "출처" : "Source"}/></p>)}
-          {section.quote && <blockquote className="my-7 border-l-4 border-gold bg-green-pale px-5 py-5 text-lg font-bold leading-8 text-green-deep sm:px-6 sm:text-xl">{section.quote.map((line, lineIndex) => <span key={`${lineIndex}-${line}`} className="block">{line}</span>)}</blockquote>}
+          {section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 28)}`} className={column.presentation === "poem" ? "mt-6 whitespace-pre-line font-serif text-[17px] leading-[2] text-charcoal/85 sm:text-xl sm:leading-[2]" : `article-copy ${isLongRead ? "article-copy-long" : ""}`}><ArticleText text={paragraph} citations={citations}/></p>)}
+          {section.quote && <blockquote className="my-7 border-l-4 border-gold bg-green-pale px-5 py-5 text-lg font-bold leading-8 text-green-deep sm:px-6 sm:text-xl">{section.quote.map((line, lineIndex) => <span key={`${lineIndex}-${line}`} className="block"><ArticleText text={line} citations={citations}/></span>)}</blockquote>}
           {bodyImages.filter((image) => image.afterSection === index).map((image) => <InteractiveFigure key={imageKey(image.src)} src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName="my-12 overflow-hidden bg-white shadow-[0_12px_34px_rgba(23,76,58,.08)]" imageClassName={"contain" in image && image.contain ? "block h-auto w-full" : "aspect-[16/10] w-full object-cover"} />)}
           {column.embeddedFigures?.filter((figure) => figure.afterSection === index).map((figure) => <ColumnEmbeddedFigure key={`${figure.kind}-${index}`} figure={figure} ko={ko} />)}
         </section>{column.referenceVideo?.afterSection === index && referenceVideoSection}</Fragment>)}
         {column.referenceVideo && column.referenceVideo.afterSection === undefined && referenceVideoSection}
-        {(column.sourceNote || column.sources?.length) && <aside className="mt-10 border-t-2 border-navy pt-6"><span className="section-kicker">{ko ? "자료 주" : "SOURCE NOTE"}</span><p className="mt-3 text-sm leading-6 text-charcoal/60">{column.sourceNote}</p>{column.sources && <ul className="mt-4 grid gap-1.5 text-sm leading-6 text-charcoal/60">{column.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ul>}</aside>}
+        <ArticleSources citations={citations} note={column.sourceNote}/>
         <ContentAccountability postSlug={column.slug} publishedDate={column.date} />
         <CommentSection postSlug={column.slug} />
         <ArticleContinuation {...readingPath} />

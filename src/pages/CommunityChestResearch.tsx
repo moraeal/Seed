@@ -1,4 +1,6 @@
-import { ArrowLeft, BookOpenText, Check, ExternalLink, Minus, Plus } from "lucide-react";
+import { ArticleSources, ArticleText } from "../components/ArticleCitations";
+import { createArticleCitations } from "../lib/articleCitations";
+import { ArrowLeft, BookOpenText, Check, Minus, Plus } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
@@ -13,6 +15,7 @@ export default function CommunityChestResearch() {
   const { language } = useLanguage();
   const ko = language === "ko";
   const article = communityChestResearch[language];
+  const citations = createArticleCitations(article.sources.map(source => ({...source, note: source.kind})), article, language);
   const [progress, setProgress] = useState(0);
   const [fontScale, setFontScale] = useState(1);
 
@@ -89,7 +92,7 @@ export default function CommunityChestResearch() {
           <main className="min-w-0">
             <aside className="border-l-4 border-gold bg-green-pale/60 px-6 py-6 sm:px-8">
               <span className="section-kicker">{ko ? "핵심 요약" : "EXECUTIVE SUMMARY"}</span>
-              {article.summary.map((paragraph) => <p key={paragraph.slice(0, 36)} className={`mt-3 leading-[1.8] text-charcoal/80 ${copyClass}`}>{paragraph}</p>)}
+              {article.summary.map((paragraph) => <p key={paragraph.slice(0, 36)} className={`mt-3 leading-[1.8] text-charcoal/80 ${copyClass}`}><ArticleText text={paragraph} citations={citations}/></p>)}
             </aside>
 
             {article.sections.map((section, index) => (
@@ -97,7 +100,7 @@ export default function CommunityChestResearch() {
                 <span className="text-xs font-extrabold text-gold">CHAPTER {String(index + 1).padStart(2, "0")}</span>
                 <h2 className="article-section-title mt-2">{section.title}</h2>
                 <p className="mt-2 text-sm font-bold leading-7 text-green-deep/75 sm:text-base">{section.deck}</p>
-                {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 36)} className={`mt-4 leading-[1.82] tracking-[-.012em] text-charcoal/85 ${copyClass}`}>{paragraph}</p>)}
+                {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 36)} className={`mt-4 leading-[1.82] tracking-[-.012em] text-charcoal/85 ${copyClass}`}><ArticleText text={paragraph} citations={citations}/></p>)}
 
                 {section.id === "five-years" && <TrendChart ko={ko} />}
                 {section.id === "restricted" && <AllocationChart ko={ko} />}
@@ -110,7 +113,7 @@ export default function CommunityChestResearch() {
             <section className="mt-12 bg-green-deep px-6 py-8 text-white sm:px-8 sm:py-10">
               <span className="text-xs font-extrabold tracking-[.2em] text-gold-light">SEED CONCLUSION</span>
               <h2 className="mt-2 text-2xl font-extrabold sm:text-3xl">{ko ? "공익의 주인은 시민입니다" : "Citizens Are the Owners of Public Interest"}</h2>
-              {article.conclusion.map((paragraph) => <p key={paragraph.slice(0, 36)} className={`mt-4 leading-[1.82] text-white/85 ${copyClass}`}>{paragraph}</p>)}
+              {article.conclusion.map((paragraph) => <p key={paragraph.slice(0, 36)} className={`mt-4 leading-[1.82] text-white/85 ${copyClass}`}><ArticleText text={paragraph} citations={citations}/></p>)}
             </section>
 
             <section className="mt-10 border-t-2 border-navy pt-7">
@@ -119,12 +122,7 @@ export default function CommunityChestResearch() {
               <p className="mt-4 text-sm leading-7 text-charcoal/65 sm:text-base">{ko ? "2021~2025년 모금·배분·재무 수치는 사랑의열매 중앙회 경영공시를 기준으로 확인했습니다. 과거 사건은 공개 보도와 당시 기관 답변이 함께 확인되는 범위에서만 서술했습니다. 이월재원의 상세 구성·대기기간, 위원 선임의 실제 영향력과 소액 시민지원의 접근성은 추가 원자료가 필요한 과제로 남겨두었습니다." : "Figures for 2021–2025 were checked against the Chest's national-office disclosures. Historical incidents are described only where public reporting and the institution's response could both be identified. The detailed age and restrictions of carryovers, the practical influence of member selection, and access for micro-grant applicants remain questions requiring further primary records."}</p>
             </section>
 
-            <section className="mt-10 border-t border-green-deep/15 pt-7">
-              <h2 className="text-2xl font-extrabold text-navy">{ko ? "확인 자료" : "Sources"}</h2>
-              <ol className="mt-4 divide-y divide-green-deep/10 border-y border-green-deep/10">
-                {article.sources.map((source, index) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="group flex items-start gap-4 py-4 text-charcoal/70 hover:text-green-deep"><span className="font-extrabold text-gold">{String(index + 1).padStart(2, "0")}</span><span className="flex-1"><strong className="block text-sm font-extrabold text-navy group-hover:text-green-deep">{source.label}</strong><span className="mt-1 block text-xs text-charcoal/45">{source.kind}</span></span><ExternalLink className="mt-0.5 shrink-0" size={16}/></a></li>)}
-              </ol>
-            </section>
+            <ArticleSources citations={citations}/>
 
             <div className="mt-9 flex flex-wrap items-center justify-between gap-4 border-y border-green-deep/15 bg-white px-5 py-5">
               <p className="text-sm font-bold text-navy">{ko ? "핵심 쟁점만 간결하게 다시 보시겠습니까?" : "Prefer the concise watch record?"}</p>

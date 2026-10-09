@@ -164,7 +164,7 @@ const publicInterestEn: SeedLanguageArticle = {
       "Organizations are created to support public causes. Staff, offices and budgets are then needed to run them. Repeated over time, the relationship can reverse: the organization no longer exists for the cause; the cause becomes necessary to preserve the organization.",
       "SEED's organizational review of the Community Chest of Korea raises structural questions about bureaucratization under an exclusive statutory position, reliance on designated giving and distance from grassroots civil society. It argues that operating costs should be disclosed not only against total fundraising but also against unrestricted general donations.",
       "This does not reject the statutory formula or allege a legal violation. It proposes transparent parallel measures that help citizens see how much genuinely flexible public-interest funding supports institutional maintenance.",
-    ], sourceIndices: [2, 3]},
+    ], sourceIndices: [2]},
     { title: "Inside a political camp, public interest becomes power", paragraphs: [
       "Civil society should watch state and market power. But when government funds civic groups, their alumni enter public committees and the same network implements government projects in a closed loop, the boundary between state and civil society can blur.",
       "Once one political worldview is institutionalized as ‘the public interest,’ its preferred policy becomes public virtue and dissenting citizens can be treated as enemies of the public. No camp can represent all citizens or monopolize the public good.",

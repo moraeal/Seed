@@ -1,3 +1,5 @@
+import { ArticleSources } from "../components/ArticleCitations";
+import { createArticleCitations } from "../lib/articleCitations";
 import { AlertTriangle, ArrowLeft, BookOpenText, CheckCircle2, ExternalLink, FileQuestion, Lightbulb, Scale } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import ArticleContinuation from "../components/ArticleContinuation";
@@ -27,6 +29,7 @@ export default function PublicInterestWatchDetail() {
     );
   }
 
+  const citations = createArticleCitations(item.sources, item, language);
   const readingPath = item.continuationEligible === false ? { items: [] } : getArticleReadingPath("monitoring", item.slug, language);
 
   if (item.timeline?.length) {
@@ -107,19 +110,7 @@ export default function PublicInterestWatchDetail() {
           </aside>
         )}
 
-        <section className="mt-9 border-t border-green-deep/12 pt-6">
-          <h2 className="text-2xl font-extrabold text-navy">{ko ? "원문과 확인 자료" : "Primary records and sources"}</h2>
-          <p className="mt-3 text-sm leading-7 text-charcoal/55">{ko ? "판단보다 원문 확인이 먼저입니다. 아래 자료를 직접 열어 교차 확인할 수 있습니다." : "Primary records come before conclusions. Open the materials below to verify the record yourself."}</p>
-          <div className="mt-4 divide-y divide-green-deep/10 border-y border-green-deep/10">
-            {item.sources.map((source, index) => (
-              <a key={source.url} href={source.url} target="_blank" rel="noreferrer" className="group flex items-start gap-4 py-3.5 text-charcoal/70 hover:text-green-deep">
-                <span className="text-sm font-extrabold text-gold">{String(index + 1).padStart(2, "0")}</span>
-                <span className="flex-1"><strong className="block text-sm font-extrabold text-navy group-hover:text-green-deep">{t(source.label)}</strong>{source.note && <span className="mt-1 block text-xs leading-6 text-charcoal/45">{t(source.note)}</span>}</span>
-                <ExternalLink className="mt-0.5 shrink-0" size={16}/>
-              </a>
-            ))}
-          </div>
-        </section>
+        <ArticleSources citations={citations} note={ko ? "판단보다 원문 확인이 먼저입니다. 아래 자료를 직접 열어 교차 확인할 수 있습니다." : "Primary records come before conclusions. Open the materials below to verify the record yourself."}/>
 
         <aside className="mt-9 rounded-xl bg-green-deep p-6 text-white sm:p-7">
           <h2 className="text-xl font-extrabold">{ko ? "반론권과 정정 원칙" : "Right of reply and correction"}</h2>

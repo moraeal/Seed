@@ -1,3 +1,5 @@
+import { ArticleSources } from "../components/ArticleCitations";
+import { createArticleCitations } from "../lib/articleCitations";
 import {
   ArrowLeft,
   ArrowRight,
@@ -42,6 +44,7 @@ const timelineTone: Record<WatchTimelineStatus, string> = {
 export default function LivingWatchDetail({ item, language, readingPath }: Props) {
   const ko = language === "ko";
   const t = (value: LocalizedText) => value[language];
+  const citations = createArticleCitations(item.sources, item, language);
   const layered = item.displayMode === "layered";
   const controversies = item.currentControversies ?? [];
   const openQuestions = controversies.length ? [] : item.questions;
@@ -417,19 +420,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
           </section>
         )}
 
-        <section className="mt-12 border-t-2 border-navy pt-6">
-          <div className="flex items-center gap-3"><Scale className="text-gold"/><h2 className="text-2xl font-extrabold text-navy">{ko ? "작성 기준과 확인 자료" : "Method and source record"}</h2></div>
-          <p className="mt-4 border-l-4 border-gold bg-white p-5 text-sm leading-7 text-charcoal/65">{t(item.sourceBasis)}</p>
-          <div className="mt-5 divide-y divide-green-deep/10 border-y border-green-deep/10">
-            {item.sources.map((source, index) => (
-              <a key={source.url} href={source.url} target="_blank" rel="noreferrer" className="group flex items-start gap-4 py-3.5 text-charcoal/70 hover:text-green-deep">
-                <span className="text-sm font-extrabold text-gold">{String(index + 1).padStart(2, "0")}</span>
-                <span className="flex-1"><strong className="block text-sm font-extrabold text-navy group-hover:text-green-deep">{t(source.label)}</strong>{source.note && <span className="mt-1 block text-xs leading-6 text-charcoal/45">{t(source.note)}</span>}</span>
-                <ExternalLink className="mt-0.5 shrink-0" size={16}/>
-              </a>
-            ))}
-          </div>
-        </section>
+        <ArticleSources citations={citations} note={t(item.sourceBasis)}/>
 
         <aside className="mt-9 rounded-xl bg-green-deep p-6 text-white sm:p-7">
           <div className="flex items-center gap-3"><History className="text-gold"/><h2 className="text-xl font-extrabold">{ko ? "이 기록은 사건이 끝날 때까지 이어집니다" : "This record continues until the case is resolved"}</h2></div>

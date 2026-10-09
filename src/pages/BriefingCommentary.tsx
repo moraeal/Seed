@@ -1,3 +1,5 @@
+import { ArticleText, ArticleSources } from "../components/ArticleCitations";
+import { createArticleCitations } from "../lib/articleCitations";
 import { ArrowLeft, Clock, Download } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
@@ -18,6 +20,7 @@ export default function BriefingCommentary() {
     return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">{ko ? "논평을 찾을 수 없습니다." : "Commentary not found."}</h1><Link to="/briefings" className="button-primary mt-7">{ko ? "목록으로" : "Briefings"}</Link></div>;
   }
 
+  const citations = createArticleCitations(briefing.sources, briefing.commentary, language);
   const renderFigure = (image: NonNullable<typeof briefing.images>[number]) => (
     <InteractiveFigure src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName="my-8 overflow-hidden border border-green-deep/10 bg-white" imageClassName={image.contain ? "block h-auto w-full" : "aspect-[16/9] w-full object-cover"} />
   );
@@ -36,11 +39,11 @@ export default function BriefingCommentary() {
 
     <div className="article-content-frame py-8 sm:py-11">
       {briefing.images?.[0] && renderFigure(briefing.images[0])}
-      <div className="reading-column">{briefing.commentary.paragraphs.map((paragraph, index) => <p key={`${index}-${paragraph.slice(0, 24)}`} className={`article-copy article-copy-long ${index === 0 ? "mt-0" : ""}`}>{paragraph}</p>)}</div>
+      <div className="reading-column">{briefing.commentary.paragraphs.map((paragraph, index) => <p key={`${index}-${paragraph.slice(0, 24)}`} className={`article-copy article-copy-long ${index === 0 ? "mt-0" : ""}`}><ArticleText text={paragraph} citations={citations}/></p>)}</div>
       {briefing.commentary.sections?.map((section, index) => <div key={`${index}-${section.title}`}>
         <section className="article-section article-section-long reading-column">
           <h2 className="article-section-title">{section.title}</h2>
-          <div>{section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className="article-copy article-copy-long">{paragraph}</p>)}</div>
+          <div>{section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} className="article-copy article-copy-long"><ArticleText text={paragraph} citations={citations}/></p>)}</div>
         </section>
         {index === 4 && briefing.images?.[2] && renderFigure(briefing.images[2])}
         {index === 6 && briefing.images?.[1] && renderFigure(briefing.images[1])}
@@ -48,6 +51,7 @@ export default function BriefingCommentary() {
       {briefing.quote && <blockquote className="reading-column mt-8 rounded-xl bg-green-pale p-6 text-lg font-bold leading-8 text-green-deep sm:p-7 sm:text-xl">“{briefing.quote}”</blockquote>}
       <div className="reading-column mt-7 flex flex-wrap gap-3"><Link to={`/briefings/${briefing.slug}`} className="button-secondary"><ArrowLeft size={16} />{ko ? "대표보기로 돌아가기" : "Back to the briefing"}</Link>{briefing.pdfPath && <a href={`${import.meta.env.BASE_URL}${briefing.pdfPath}`} download className="button-primary"><Download size={16} />{ko ? "PDF 원문 내려받기" : "Download PDF"}</a>}</div>
       <div className="reading-column">
+        <ArticleSources citations={citations} note={briefing.sourceNote}/>
         <ContentAccountability postSlug={`${briefing.slug}-commentary`} publishedDate={briefing.date} />
         <CommentSection postSlug={`${briefing.slug}-commentary`} />
       </div>

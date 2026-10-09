@@ -1,3 +1,5 @@
+import { ArticleSources, CitationReference } from "../components/ArticleCitations";
+import { createArticleCitations } from "../lib/articleCitations";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
@@ -22,6 +24,7 @@ const photo = "/images/monitoring/community-chest-watch-ledger.webp";
 
 export default function CommunityChestWatchArticle({ language }: { language: "ko" | "en" }) {
   const ko = language === "ko";
+  const citations = createArticleCitations([{url: performance, label: {ko: "2016~2025 사업성과", en: "2016–2025 performance"}}, {url: disclosure, label: {ko: "배분·재무 경영공시", en: "Allocation and financial disclosures"}}], [], language);
   const title = ko
     ? "10년 사이 모금액 72% 증가…사랑의열매가 바꾼 삶은 얼마나 보이는가"
     : "Donations rose 72% in ten years. What changed for people?";
@@ -72,7 +75,7 @@ export default function CommunityChestWatchArticle({ language }: { language: "ko
         <div className="mt-5 overflow-x-auto border border-green-deep/15 bg-white">
           <table className="w-full min-w-[520px] text-sm"><thead className="bg-green-deep text-white"><tr><th className="p-3 text-left">{ko ? "연도" : "Year"}</th><th className="p-3 text-right">{ko ? "모금" : "Raised"}</th><th className="p-3 text-right">{ko ? "배분" : "Allocated"}</th><th className="p-3 text-left">{ko ? "읽을 지점" : "Note"}</th></tr></thead><tbody>{rows.map((r) => <tr key={r.year} className="border-t border-green-deep/10"><td className="p-3 font-bold">{r.year}</td><td className="p-3 text-right tabular-nums">{r.raised.toLocaleString()}</td><td className="p-3 text-right tabular-nums">{r.distributed.toLocaleString()}</td><td className="p-3 text-xs text-charcoal/65">{r.year === 2021 ? (ko ? "배분 실적에 복권기금사업 포함 시작" : "Lottery-fund programs added to allocations") : r.year === 2018 ? (ko ? "배분 급증 원인 확인 중" : "Allocation spike under review") : r.year === 2020 ? (ko ? "모금 급증 원인 확인 중" : "Donation increase under review") : ""}</td></tr>)}</tbody></table>
         </div>
-        <p className="mt-3 text-xs leading-6 text-charcoal/55">{ko ? "자료: 사랑의열매 사업성과. 원자료 단위 백만 원을 억 원으로 반올림. 중앙회·지회 합계. 2021년부터 복권기금사업 실적이 배분액에 포함돼 이전 연도와 정의가 다르다. 한 해 모금과 배분의 차이는 미집행액이 아니다." : "Source: Community Chest annual performance data, national office plus branches, rounded from KRW million. Lottery-fund projects enter the allocation series in 2021, so earlier years are not strictly comparable. Annual donations minus allocations do not equal unspent cash."} <a className="underline" href={performance} target="_blank" rel="noreferrer">{ko ? "원자료" : "Original data"}</a></p>
+        <p className="mt-3 text-xs leading-6 text-charcoal/55">{ko ? "자료: 사랑의열매 사업성과. 원자료 단위 백만 원을 억 원으로 반올림. 중앙회·지회 합계. 2021년부터 복권기금사업 실적이 배분액에 포함돼 이전 연도와 정의가 다르다. 한 해 모금과 배분의 차이는 미집행액이 아니다." : "Source: Community Chest annual performance data, national office plus branches, rounded from KRW million. Lottery-fund projects enter the allocation series in 2021, so earlier years are not strictly comparable. Annual donations minus allocations do not equal unspent cash."} <CitationReference number={1} citations={citations}/></p>
       </section>
 
       <section className="reading-column mt-12 space-y-5 text-[16px] leading-8 text-charcoal/85 sm:text-[17px]">
@@ -93,7 +96,7 @@ export default function CommunityChestWatchArticle({ language }: { language: "ko
 
       <section className="mt-12 border-t-2 border-navy pt-7"><h2 className="text-2xl font-extrabold text-navy">{ko ? "계속 확인할 네 가지" : "What we will check next"}</h2><ol className="mt-5 grid gap-3 sm:grid-cols-2">{(ko ? ["매년 결산 뒤 10년 표를 갱신하고 기준 변경과 이례적인 해의 사업별 원인을 적는다.", "지정기탁·신청·기획·긴급지원 비중과 신규·소규모 단체의 선정률을 비교한다.", "사업 종료 6~12개월 뒤 생활 안정·자립 유지·재위기 비율과 조사 누락을 확인한다.", "이월 재원의 발생연도·지정조건·집행예정일을 대조하고 기관 답변을 날짜와 함께 반영한다."] : ["Update the ten-year series after each annual close, noting definition changes and unusual years.", "Track allocation categories and first-time or small-group grant selection rates.", "Check sustained outcomes and missing follow-up data six to twelve months after programs end.", "Trace carryovers by origin, restriction and schedule, with dated institutional replies."]).map((s,i)=><li key={s} className="bg-white p-5 text-sm leading-7"><strong className="mr-3 text-gold">{String(i+1).padStart(2,"0")}</strong>{s}</li>)}</ol></section>
 
-      <section className="mt-10 border-t border-green-deep/15 pt-6"><h2 className="text-xl font-extrabold text-navy">{ko ? "원문과 자료의 한계" : "Primary sources and limits"}</h2><p className="mt-3 text-sm leading-7 text-charcoal/65">{ko ? "2026년 9월 24일 공식 공시를 확인했다. 비율은 공시 금액에서 씨앗이 계산했다. 개별 사업의 실제 효과와 이례적인 연도의 원인은 추가 검증 대상이다. 기관의 설명과 자료가 나오면 날짜를 붙여 보완한다." : "Official disclosures checked on 24 September 2026. Seed Voice calculated percentages from published amounts. Program impact and causes of unusual annual movements remain to be verified. Dated responses and new evidence will be added."}</p><div className="mt-4 flex flex-wrap gap-5 text-sm"><a href={performance} target="_blank" rel="noreferrer" className="text-link">{ko ? "2016~2025 사업성과" : "2016–2025 performance"}<ExternalLink size={14}/></a><a href={disclosure} target="_blank" rel="noreferrer" className="text-link">{ko ? "배분·재무 경영공시" : "Allocation and financial disclosures"}<ExternalLink size={14}/></a></div></section>
+      <ArticleSources citations={citations} note={ko ? "2026년 9월 24일 공식 공시를 확인했다. 비율은 공시 금액에서 씨앗이 계산했다. 개별 사업의 실제 효과와 이례적인 연도의 원인은 추가 검증 대상이다. 기관의 설명과 자료가 나오면 날짜를 붙여 보완한다." : "Official disclosures checked on 24 September 2026. Seed Voice calculated percentages from published amounts. Program impact and causes of unusual annual movements remain to be verified. Dated responses and new evidence will be added."}/>
       <ContentAccountability postSlug="monitoring-community-chest-of-korea" publishedDate="2026-09-24" />
       <CommentSection postSlug="monitoring-community-chest-of-korea" />
     </div>

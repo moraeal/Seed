@@ -358,3 +358,26 @@ button, input, textarea { font: inherit; }
   .seed-guide-tip, .seed-guide-exchange, .seed-guide-sources, .seed-guide-save { font-size: 1rem; }
   .seed-guide-form input { font-size: 1rem; }
 }
+
+/* Fixed editorial citation convention; override reading tools and mobile font sizes. */
+.reading-surface article .article-citation,
+article .article-citation { margin-left: .12em; font-family: "Pretendard", "Noto Sans KR", sans-serif; font-size: .68em; font-weight: 400; line-height: 0; vertical-align: super; color: #70777a; white-space: nowrap; }
+article .article-citation a { color: inherit; font-size: inherit; font-weight: 400; text-decoration: none; }
+article .article-citation a:hover { color: #174c3a; text-decoration: underline; }
+article .article-citation a:focus-visible { outline: 2px solid #174c3a; outline-offset: 3px; }
+article .article-sources { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid #d0d8d2; }
+article .article-sources h2 { font-family: "Pretendard", "Noto Sans KR", sans-serif; font-size: .9375rem; font-weight: 600; color: #626b6d; }
+article .article-sources ol { display: grid; gap: .55rem; margin-top: 1rem; list-style: none; padding: 0; }
+.reading-surface article .article-sources :is(p, li, a, span),
+article .article-sources :is(p, li, a, span) { font-size: .875rem !important; font-weight: 400; line-height: 1.65; color: #6d7577; overflow-wrap: anywhere; }
+article .article-sources li { display: flex; gap: .7rem; scroll-margin-top: 7rem; }
+article .article-sources li:target { background: #eef3ef; }
+article .article-sources .article-source-number { flex: 0 0 2.2em; }
+article .article-sources .article-source-note { margin-top: .65rem; }
+article .article-sources a { text-decoration: underline; text-decoration-color: #c0ccc5; text-underline-offset: 3px; }
+article .article-sources a:hover { color: #174c3a; }
+article .article-sources p { margin: .2rem 0 0; }
+article .article-copy .article-citation a { color: #70777a; }
+article .bg-green-deep .article-citation a { color: #bac6c0; }
+
+article .article-sources li > div { min-width: 0; }

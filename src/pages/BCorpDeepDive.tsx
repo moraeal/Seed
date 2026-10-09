@@ -1,5 +1,7 @@
+import { ArticleSources } from "../components/ArticleCitations";
+import { createArticleCitations } from "../lib/articleCitations";
 import { useEffect } from "react";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const sources = [
@@ -19,6 +21,7 @@ const pageDescription = "B Corp는 정부가 사회적기업을 지정하고 보
 const heroImagePath = "images/briefings/briefing-09-bcorp-market-trust-data.svg";
 
 export default function BCorpDeepDive() {
+  const citations = createArticleCitations(sources);
   useEffect(() => {
     document.title = pageTitle;
     const ensureMeta = (selector: string, attr: "name" | "property", key: string, value: string) => {
@@ -116,11 +119,7 @@ export default function BCorpDeepDive() {
 
         <blockquote className="mt-9 rounded-xl bg-green-deep p-6 text-lg font-bold leading-8 text-white sm:p-7 sm:text-xl">“국가가 좋은 기업을 골라주는 사회보다 시민이 좋은 기업을 골라낼 수 있는 사회가 더 건강합니다.”</blockquote>
 
-        <section className="mt-9 border-t border-green-deep/10 pt-6">
-          <h2 className="text-xl font-extrabold text-navy">자료 출처 및 확인 기준</h2>
-          <ol className="mt-4 space-y-2">{sources.map((source, index) => <li key={source.url} className="flex gap-3 text-sm leading-6"><span className="font-serif text-gold">{index + 1}.</span><a href={source.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-charcoal/65 underline decoration-green-deep/20 underline-offset-4 hover:text-green-deep">{source.label}<ExternalLink size={12} /></a></li>)}</ol>
-          <p className="mt-4 text-xs leading-6 text-charcoal/45">확인 기준: 2026년 9월 11일 현재 공개된 B Lab 공식자료와 관련 보도를 대조했습니다. B Corp는 정부가 부여하는 법적 기업형태가 아니라 민간 비영리기관 B Lab의 인증이며, 국가별 법제와 공공조달 제도는 별도로 작동합니다.</p>
-        </section>
+        <ArticleSources citations={citations} note="확인 기준: 2026년 9월 11일 현재 공개된 B Lab 공식자료와 관련 보도를 대조했습니다. B Corp는 정부가 부여하는 법적 기업형태가 아니라 민간 비영리기관 B Lab의 인증이며, 국가별 법제와 공공조달 제도는 별도로 작동합니다."/>
 
         <div className="mt-8"><Link to={briefingPath} className="button-secondary"><ArrowLeft size={16} /> 5분 요약본 보기</Link></div>
       </div>

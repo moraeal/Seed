@@ -1,3 +1,5 @@
+import { ArticleSources } from "../components/ArticleCitations";
+import { createArticleCitations } from "../lib/articleCitations";
 import { useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight, Building2, CircleAlert, ExternalLink, FileCheck2, Landmark, ReceiptText, Scale, Sparkles, WalletCards } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -27,6 +29,7 @@ const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.me
 export default function PublicInstitutionReformTrackerPage() {
   const { language } = useLanguage();
   const ko = language === "ko";
+  const citations = createArticleCitations(publicInstitutionReformTracker.sources, publicInstitutionReformTracker, language);
   const t = <T extends { ko: string; en: string }>(value: T) => value[language];
   const [activeLens, setActiveLens] = useState<ReformLens | "all">("all");
   const reformTimeline = useMemo(
@@ -136,15 +139,7 @@ export default function PublicInstitutionReformTrackerPage() {
         <aside className="bg-navy p-6 text-white sm:p-7"><FileCheck2 className="text-gold" size={25}/><span className="mt-5 block text-[10px] font-black tracking-[.14em] text-gold">NEXT CHECK</span><h2 className="mt-2 text-xl font-extrabold">{ko ? "다음에 확인할 변화" : "The next changes to verify"}</h2><p className="mt-4 text-sm leading-7 text-white/78">{t(publicInstitutionReformTracker.nextCheck!)}</p><Link to="/news/lh-debt-split-power-five-merge" className="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-white underline decoration-white/35 underline-offset-4">{ko ? "연결된 쟁점기사 읽기" : "Read the connected analysis"}<ArrowRight size={15}/></Link></aside>
       </section>
 
-      <section className="mt-10">
-        <details className="group border-y border-green-deep/15 bg-white">
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-1 py-4 text-sm font-extrabold text-navy marker:hidden">
-            <span>{ko ? "출처·확인자료 보기" : "View sources and verification records"}</span>
-            <span aria-hidden="true" className="text-xl font-light text-green-deep transition group-open:rotate-45">+</span>
-          </summary>
-          <div className="divide-y divide-green-deep/10 border-t border-green-deep/10 px-1 pb-1">{publicInstitutionReformTracker.sources.map((source, index) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer" className="group/source flex items-start gap-4 py-4"><span className="text-sm font-black text-gold">{String(index + 1).padStart(2, "0")}</span><strong className="flex-1 text-sm leading-6 text-navy group-hover/source:text-green-deep">{t(source.label)}</strong><ExternalLink className="mt-1 shrink-0 text-charcoal/35" size={15}/></a>)}</div>
-        </details>
-      </section>
+      <ArticleSources citations={citations} note={t(publicInstitutionReformTracker.sourceBasis)}/>
       <ContentAccountability postSlug={`monitoring-${publicInstitutionReformTracker.slug}`} publishedDate={publicInstitutionReformTracker.updatedAt}/>
       <CommentSection postSlug={`monitoring-${publicInstitutionReformTracker.slug}`}/>
     </div>

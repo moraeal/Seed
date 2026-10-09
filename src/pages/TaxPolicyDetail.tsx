@@ -1,5 +1,7 @@
+import { ArticleSources } from "../components/ArticleCitations";
+import { createArticleCitations } from "../lib/articleCitations";
 import TaxPolicyArticle from "../components/TaxPolicyArticle";
-import { ArrowLeft, ArrowRight, CalendarDays, ExternalLink, ReceiptText, Star } from "lucide-react";
+import { ArrowLeft, ArrowRight, CalendarDays, ReceiptText, Star } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import ContentAccountability from "../components/ContentAccountability";
 import SafeImage from "../components/SafeImage";
@@ -20,6 +22,7 @@ export default function TaxPolicyDetail() {
 
   if (policy.article) return <TaxPolicyArticle policy={policy}/>;
 
+  const citations = createArticleCitations(policy.sources, policy, language);
   const relatedCommentary = getTaxCommentaryForPolicy(policy.slug);
   const commentaryEdition = relatedCommentary ? getTaxCommentaryEdition(relatedCommentary, ko ? "ko" : "en") : undefined;
 
@@ -65,7 +68,7 @@ export default function TaxPolicyDetail() {
         <ol className="space-y-5 border-l-2 border-green-deep/20 pl-6">{policy.timeline.map((event) => <li key={`${event.date}-${event.title.ko}`}><time className="text-xs font-black text-green-deep">{event.date.length === 7 ? event.date.replace("-", ".") : dateText(event.date)}</time><h3 className="mt-1 font-bold text-navy">{localized(event.title, ko)}</h3>{event.date === policy.checkedAt && <span className="mt-1 inline-flex bg-green-pale px-2 py-1 text-[10px] font-bold text-green-deep">{ko ? "현재 확인 단계" : "Current verified stage"}</span>}</li>)}</ol>
       </NumberedSection>
 
-      <section className="article-section article-section-long reading-column"><p className="section-kicker">08 · {ko ? "원문 및 시민 참여" : "SOURCES AND PARTICIPATION"}</p><h2 className="article-section-title mt-2">{policy.deadline ? (ko ? "원문을 확인하고 의견을 제출할 수 있습니다" : "Read the source and submit comments") : (ko ? "공식 원문과 국회 진행 상황을 확인할 수 있습니다" : "Read the official text and track its progress in Parliament")}</h2><p className="mt-3 text-sm leading-7 text-charcoal/60">{ko ? `공식 원문 · 마지막 확인 ${dateText(policy.checkedAt)} · 현재 단계 ${policy.status.ko}` : `Official source · Last checked ${policy.checkedAt} · Current stage: ${policy.status.en}`}</p><div className="mt-4 flex flex-wrap gap-3">{policy.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer" className="button-secondary">{localized(source.label, ko)}<ExternalLink size={14}/></a>)}</div></section>
+      <section className="article-section article-section-long reading-column"><p className="section-kicker">08 · {ko ? "원문 및 시민 참여" : "SOURCES AND PARTICIPATION"}</p><h2 className="article-section-title mt-2">{policy.deadline ? (ko ? "원문을 확인하고 의견을 제출할 수 있습니다" : "Read the source and submit comments") : (ko ? "공식 원문과 국회 진행 상황을 확인할 수 있습니다" : "Read the official text and track its progress in Parliament")}</h2><p className="mt-3 text-sm leading-7 text-charcoal/60">{ko ? `공식 원문 · 마지막 확인 ${dateText(policy.checkedAt)} · 현재 단계 ${policy.status.ko}` : `Official source · Last checked ${policy.checkedAt} · Current stage: ${policy.status.en}`}</p><ArticleSources citations={citations}/></section>
 
       <ContentAccountability postSlug={`tax-${policy.slug}`} publishedDate={policy.checkedAt}/>
     </div>

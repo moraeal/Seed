@@ -1,3 +1,5 @@
+import { ArticleText, ArticleSources } from "../components/ArticleCitations";
+import { createArticleCitations } from "../lib/articleCitations";
 import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import ArticleContinuation from "../components/ArticleContinuation";
@@ -14,22 +16,6 @@ import { useLanguage } from "../i18n";
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 const imageKey = (src: string) => imageSrc(src).replace(/#.*$/, "").replace(/\?.*$/, "");
 
-function InlineLinkedText({ text }: { text: string }) {
-  return <>{text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part, index) => {
-    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-    if (!match) return part;
-
-    const [, label, href] = match;
-    if (/^\d+$/.test(label) && /^https?:\/\//i.test(href)) {
-      return <sup key={`${href}-${index}`} className="ml-0.5 text-[0.65em] font-normal leading-none text-charcoal/50"><a href={href} target="_blank" rel="noreferrer" aria-label={`Source ${label}`} className="no-underline transition-colors hover:text-green-deep">[{label}]</a></sup>;
-    }
-    const className = "font-semibold text-green-deep underline decoration-green-deep/35 underline-offset-4 hover:decoration-green-deep";
-    return href.startsWith("/")
-      ? <Link key={`${href}-${index}`} to={href} className={className}>{label}</Link>
-      : <a key={`${href}-${index}`} href={href} target="_blank" rel="noreferrer" className={className}>{label}</a>;
-  })}</>;
-}
-
 export default function NewsDetail() {
   const { slug = "" } = useParams();
   const { language } = useLanguage();
@@ -39,6 +25,7 @@ export default function NewsDetail() {
 
   if (!article) return <div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold text-navy">{ko ? "핫이슈를 찾을 수 없습니다." : "Hot issue not found."}</h1><Link to="/news" className="button-primary mt-7">{ko ? "핫이슈 목록" : "Hot Issues"}</Link></div>;
 
+  const citations = createArticleCitations(article.sources, article, language);
   const isLongRead = article.readMinutes >= 8;
   const readingPath = getArticleReadingPath("news", article.slug, language);
 
@@ -67,7 +54,7 @@ export default function NewsDetail() {
 
   return <article className="bg-paper">
     <header className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
-      <div className="container-page max-w-5xl"><Link to="/news" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "핫이슈 목록" : "Hot Issues"}</Link><div className="mt-3 border-t-2 border-navy pt-3"><h1 className="article-detail-title">{article.title}</h1><p className="article-summary">{article.summary}</p></div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${article.readMinutes}분` : `${article.readMinutes} min read`}</span><ShareButton title={article.title} text={article.keySentence} className="ml-auto" /></div></div>
+      <div className="container-page max-w-5xl"><Link to="/news" className="text-link text-xs"><ArrowLeft size={14}/>{ko ? "핫이슈 목록" : "Hot Issues"}</Link><div className="mt-3 border-t-2 border-navy pt-3"><h1 className="article-detail-title">{article.title}</h1><p className="article-summary"><ArticleText text={article.summary} citations={citations}/></p></div><div className="mt-3 flex flex-wrap items-center gap-3 border-t border-green-deep/10 pt-2 text-xs text-charcoal/45"><time>{article.date.replace(/-/g, ".")}</time><span className="flex items-center gap-1"><Clock size={14}/>{ko ? `읽는 시간 ${article.readMinutes}분` : `${article.readMinutes} min read`}</span><ShareButton title={article.title} text={article.keySentence} className="ml-auto" /></div></div>
     </header>
 
     <div className="article-content-frame py-8 sm:py-12">
@@ -88,8 +75,8 @@ export default function NewsDetail() {
 
         {article.sections.map((section, index) => <section key={`${index}-${section.title}`} className={`article-section ${isLongRead ? "article-section-long" : ""}`}>
           <h2 className="article-section-title">{section.title}</h2>
-          {section.paragraphs?.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 32)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}><InlineLinkedText text={paragraph}/></p>)}
-          {section.bullets && <ul className="mt-5 grid gap-2.5 text-base leading-7 text-charcoal/75 sm:text-[17px]">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet}`} className="flex gap-3"><span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"/><span>{bullet}</span></li>)}</ul>}
+          {section.paragraphs?.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 32)}`} className={`article-copy ${isLongRead ? "article-copy-long" : ""}`}><ArticleText text={paragraph} citations={citations}/></p>)}
+          {section.bullets && <ul className="mt-5 grid gap-2.5 text-base leading-7 text-charcoal/75 sm:text-[17px]">{section.bullets.map((bullet, bulletIndex) => <li key={`${bulletIndex}-${bullet}`} className="flex gap-3"><span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"/><span><ArticleText text={bullet} citations={citations}/></span></li>)}</ul>}
           {isDebtReliefArticle && index === 0 && <InteractiveFigure src={detailHeroImage.src} alt={detailHeroImage.alt} caption={detailHeroImage.caption} credit={detailHeroImage.credit} sourceUrl={detailHeroImage.sourceUrl} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_50px_rgba(23,76,58,.08)]" imageClassName="aspect-[16/9] w-full object-cover" />}
           {isFuelPriceCapArticle && index === 0 && <InteractiveFigure src={detailHeroImage.src} alt={detailHeroImage.alt} caption={detailHeroImage.caption} credit={detailHeroImage.credit} sourceUrl={detailHeroImage.sourceUrl} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white shadow-[0_18px_50px_rgba(23,76,58,.08)]" imageClassName="aspect-[16/9] w-full object-cover" />}
           {isLhArticle && index === Math.min(2, article.sections.length - 1) && <InteractiveFigure src={detailHeroImage.src} alt={detailHeroImage.alt} showCaption={false} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white" imageClassName="aspect-[16/9] w-full object-cover" />}
@@ -97,11 +84,11 @@ export default function NewsDetail() {
           {index === Math.min(isDebtReliefArticle ? 2 : 4, article.sections.length - 1) && additionalImages.map((image, imageIndex) => <InteractiveFigure key={`${imageIndex}-${image.src}`} src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName="my-10 overflow-hidden border border-green-deep/10 bg-white" imageClassName="aspect-[16/10] w-full object-cover" />)}
         </section>)}
 
-        <section className="mt-10 border-t-2 border-navy pt-7"><span className="section-kicker">{ko ? "앞으로 확인할 지점" : "WHAT TO WATCH"}</span><ol className="mt-4 grid gap-3 sm:grid-cols-2">{article.watchPoints.map((point, index) => <li key={`${index}-${point}`} className="border border-green-deep/15 bg-white p-4"><p className="text-sm font-semibold leading-6 text-navy">{point}</p></li>)}</ol></section>
+        <section className="mt-10 border-t-2 border-navy pt-7"><span className="section-kicker">{ko ? "앞으로 확인할 지점" : "WHAT TO WATCH"}</span><ol className="mt-4 grid gap-3 sm:grid-cols-2">{article.watchPoints.map((point, index) => <li key={`${index}-${point}`} className="border border-green-deep/15 bg-white p-4"><p className="text-sm font-semibold leading-6 text-navy"><ArticleText text={point} citations={citations}/></p></li>)}</ol></section>
 
-        <aside className="mt-12 bg-green-deep px-6 py-7 text-white sm:px-8 [&_a]:text-white [&_a]:decoration-white/40"><span className="text-xs font-bold tracking-[.22em] text-gold">SEED PERSPECTIVE</span><h2 className="mt-2 text-2xl font-extrabold">{ko ? "씨드의 관점" : "SEED's View"}</h2>{article.seedPerspective.map((paragraph, index) => <p key={`${index}-${paragraph.slice(0, 32)}`} className={`article-copy text-white/85 ${isLongRead ? "article-copy-long" : ""}`}><InlineLinkedText text={paragraph}/></p>)}</aside>
+        <aside className="mt-12 bg-green-deep px-6 py-7 text-white sm:px-8 [&_a]:text-white [&_a]:decoration-white/40"><span className="text-xs font-bold tracking-[.22em] text-gold">SEED PERSPECTIVE</span><h2 className="mt-2 text-2xl font-extrabold">{ko ? "씨드의 관점" : "SEED's View"}</h2>{article.seedPerspective.map((paragraph, index) => <p key={`${index}-${paragraph.slice(0, 32)}`} className={`article-copy text-white/85 ${isLongRead ? "article-copy-long" : ""}`}><ArticleText text={paragraph} citations={citations}/></p>)}</aside>
 
-        <section className="mt-10 border-t border-green-deep/15 pt-6"><span className="section-kicker">{ko ? "확인한 자료" : "SOURCES"}</span><p className="mt-2 text-xs leading-6 text-charcoal/45">{ko ? "기사 작성일 기준 공개된 공식자료와 보도를 교차 확인했습니다. 이후 정책 내용은 변경될 수 있습니다." : "Sources reflect public materials available at the time of writing. Later official decisions or policy changes may update the picture."}</p><ul className="mt-4 grid gap-2 text-sm leading-6 text-charcoal/65">{article.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-green-deep/25 underline-offset-4 hover:text-green-deep">{source.label}</a></li>)}</ul></section>
+        <ArticleSources citations={citations} note={ko ? "기사 작성일 기준 공개된 공식자료와 보도를 교차 확인했습니다. 이후 정책 내용은 변경될 수 있습니다." : "Sources reflect public materials available at the time of writing. Later official decisions or policy changes may update the picture."}/>
         <ContentAccountability postSlug={article.slug} publishedDate={article.date} />
         <CommentSection postSlug={article.slug} />
         <ArticleContinuation {...readingPath} />
