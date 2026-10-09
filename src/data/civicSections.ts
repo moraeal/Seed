@@ -43,6 +43,8 @@ export function getCivicSectionForArticle(path: string) {
 // Assess every new article under CONTENT_PUBLISHING_RULES.md §14 and add
 // suitable stories here in the same publishing update, regardless of category.
 export const civicLifeArticlePaths = [
+  "/monitoring/tax/lh-unsold-housing-purchase-commitment-2026",
+  "/monitoring/tax/commentary/lh-unsold-housing-public-cost-2026",
   "/seed-language/social-dialogue-understanding-beyond-camps-2026",
   "/columns/robak-housing-names-hangeul-communication-2026",
   "/columns/farmland-farming-freedom-smart-agriculture-2026",

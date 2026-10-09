@@ -17,7 +17,7 @@ export default function TaxWatch() {
     const policies = taxPolicies.map((policy) => {
       const article = commentary.get(policy.slug);
       const edition = article?.editions[language];
-      const official = policy.sources.find((source) => /\.go\.kr|assembly\.go\.kr|lawmaking\.go\.kr|law\.go\.kr/.test(new URL(source.url).hostname));
+      const official = policy.sources.find((source) => /\.go\.kr|assembly\.go\.kr|lawmaking\.go\.kr|law\.go\.kr|^www\.lh\.or\.kr$/.test(new URL(source.url).hostname));
       return { key: policy.slug, date: policy.checkedAt, article: article && edition ? { href: `/monitoring/tax/commentary/${article.slug}`, label: ko ? "세금 논평" : "TAX COMMENTARY", title: edition.title, summary: edition.summary, image: article.heroSrc, alt: edition.heroAlt, date: article.date } : undefined, record: { href: official?.url || `/monitoring/tax/${policy.slug}`, external: Boolean(official), detailHref: `/monitoring/tax/${policy.slug}`, detailLabel: ko ? "세금정책 쉽게 읽기" : "Read policy explainer", label: ko ? "세금정책 원문" : "TAX POLICY SOURCE", title: policy.title[language], summary: policy.summary[language], image: policy.heroImage[language], alt: policy.heroImage.alt[language], date: policy.checkedAt } };
     });
     const standaloneCommentaries = taxCommentaries.filter((article) => !taxPolicies.some((policy) => policy.slug === article.relatedPolicySlug)).map((article) => {

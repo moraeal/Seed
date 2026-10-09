@@ -18,7 +18,7 @@ export default function TaxPolicyArticle({ policy }: { policy: TaxPolicy }) {
   return <article className="bg-paper pb-16">
     <header className="border-b border-green-deep/15 bg-ivory py-9"><div className="container-page max-w-5xl">
       <Link to="/monitoring/tax" className="text-link text-xs">← {ko ? "세금감시" : "Tax Watch"}</Link>
-      <p className="section-kicker mt-4">{ko ? "정부안 설명 · 국회 심사 중" : "GOVERNMENT BILL EXPLAINER · UNDER REVIEW"}</p>
+      <p className="section-kicker mt-4">{policy.status[lang]}</p>
       <h1 className="article-detail-title mt-3">{policy.title[lang]}</h1><p className="article-summary">{policy.summary[lang]}</p>
       <div className="mt-4 flex flex-wrap items-center gap-4 border-t border-green-deep/10 pt-3 text-xs text-charcoal/50"><time>{policy.checkedAt.replace(/-/g, ".")}</time><span>{ko ? `읽는 시간 ${article.readMinutes}분` : `${article.readMinutes} min read`}</span><ShareButton title={policy.title[lang]} text={policy.summary[lang]} className="ml-auto"/></div>
     </div></header>

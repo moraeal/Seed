@@ -1,3 +1,4 @@
+import { lhUnsoldHousingCommentary } from "./lhUnsoldHousing2026";
 import { inheritanceTaxAutomaticIncreaseCommentary } from "./inheritanceTaxAutomaticIncrease2026";
 import { cardSalesCreditCommentary } from "./cardSalesCredit2026";
 import { taxExpenditureCapCommentary } from "./taxExpenditureCapCommentary";
@@ -53,6 +54,7 @@ export type TaxCommentary = {
 };
 
 export const taxCommentaries: TaxCommentary[] = [
+  lhUnsoldHousingCommentary,
 inheritanceTaxAutomaticIncreaseCommentary,
 cardSalesCreditCommentary,
 virtualAssetTaxCommentary,
