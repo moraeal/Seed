@@ -80,6 +80,7 @@ export const robakHousingNamesColumn: SeedColumn = {
       ]
     }
   ],
+  "sourceNote": "",
   "sources": [
     {
       "label": "노진관 — 서로 사맛디 아니한 도시 | 홍익코리아, 2026.10.8",
