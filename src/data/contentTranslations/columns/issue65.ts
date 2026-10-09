@@ -110,58 +110,15 @@ export const issue65: ColumnTranslation = {
   ],
   "sourceNote": "Rewritten October 9, 2026. This installment examines ATR’s advocacy over 1099-K thresholds and BOI reporting rather than repeating Parts 1–2. Changes were checked against IRS, FinCEN, Treasury and Federal Register documents. The 2022 compliance costs are projections, not measured savings. The personal-property calculation is hypothetical; the Korean application is a proposed research approach.",
   "sourceLabels": [
-    "[1] ATR — Organization and foundation",
-    "[2] ATR — Taxpayer Protection Pledge",
-    "[3] ATR — Coalition meetings",
-    "[4] ATR — June 28, 2025 Senate Key Vote Alert",
-    "[5] ATR — April 14, 2025 Florida legislative letter",
-    "[6] Florida Department of Revenue — Commercial-rent tax repeal",
-    "[7] ATR — Sustainable Budget Project",
-    "[8] ATR — Budget Project methodology",
-    "[9] CBO — July 1, 2025 preliminary estimate for Senate-passed H.R. 1",
-    "[10] TPA — Town Hall Rich List 2026",
-    "[11] TPA — Methodology and total remuneration"
-  ],
-  "sources": [
-    {
-      "label": "[1] ATR — Support for Miller’s 1099-K threshold bill and Tax Day press conference, April 21, 2023",
-      "url": "https://atr.org/congresswoman-carol-miller-leads-charge-to-repeal-1099-k-irs-paperwork-debacle/"
-    },
-    {
-      "label": "[2] IRS — Restored 1099-K reporting threshold, October 23, 2025",
-      "url": "https://www.irs.gov/newsroom/irs-issues-faqs-on-form-1099-k-threshold-under-the-one-big-beautiful-bill-dollar-limit-reverts-to-20000"
-    },
-    {
-      "label": "[3] IRS — Understanding Form 1099-K and payment-channel distinctions",
-      "url": "https://www.irs.gov/businesses/understanding-your-form-1099-k"
-    },
-    {
-      "label": "[4] IRS — Handling Form 1099-K, including personal-property sales",
-      "url": "https://www.irs.gov/newsroom/form-1099-k-faqs-what-to-do-if-you-receive-a-form-1099-k"
-    },
-    {
-      "label": "[5] ATR — Assessment of the 1099-K change, July 8, 2025",
-      "url": "https://atr.org/big-beautiful-bill-repeals-irs-1099-k-venmo-tax/"
-    },
-    {
-      "label": "[6] FinCEN — 2022 BOI reporting rule fact sheet (historical regime)",
-      "url": "https://www.fincen.gov/beneficial-ownership-information-reporting-rule-fact-sheet"
-    },
-    {
-      "label": "[7] Federal Register / FinCEN — 2022 final rule and regulatory analysis, September 30, 2022",
-      "url": "https://www.federalregister.gov/documents/2022/09/30/2022-21020/beneficial-ownership-information-reporting-requirements"
-    },
-    {
-      "label": "[8] ATR — CTA compliance concerns and support for repeal, March 3, 2025",
-      "url": "https://atr.org/trump-understands-the-unconstitutional-corporate-transparency-act-is-an-invasive-burden-on-small-businesses-and-farms/"
-    },
-    {
-      "label": "[9] Federal Register / FinCEN — Interim final rule narrowing reporting, March 26, 2025",
-      "url": "https://www.federalregister.gov/documents/2025/03/26/2025-05199/beneficial-ownership-information-reporting-requirement-revision-and-deadline-extension"
-    },
-    {
-      "label": "[10] U.S. Treasury — Final-rule announcement on U.S. company and person exemptions, August 11, 2026",
-      "url": "https://home.treasury.gov/news/press-releases/sb0603"
-    }
+    "[1] ATR — Support for Miller’s 1099-K threshold bill and Tax Day press conference, April 21, 2023",
+    "[2] IRS — Restored 1099-K reporting threshold, October 23, 2025",
+    "[3] IRS — Understanding Form 1099-K and payment-channel distinctions",
+    "[4] IRS — Handling Form 1099-K, including personal-property sales",
+    "[5] ATR — Assessment of the 1099-K change, July 8, 2025",
+    "[6] FinCEN — 2022 BOI reporting rule fact sheet (historical regime)",
+    "[7] Federal Register / FinCEN — 2022 final rule and regulatory analysis, September 30, 2022",
+    "[8] ATR — CTA compliance concerns and support for repeal, March 3, 2025",
+    "[9] Federal Register / FinCEN — Interim final rule narrowing reporting, March 26, 2025",
+    "[10] U.S. Treasury — Final-rule announcement on U.S. company and person exemptions, August 11, 2026"
   ]
 };
