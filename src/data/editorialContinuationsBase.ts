@@ -9,6 +9,7 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:north-korean-pows-ukraine-diplomatic-rift-2026": {"ko": {"href": "/monitoring/north-korean-pows-protection-tracker", "title": "북한군 포로 보호와 한국 이송 쟁점", "relationship": "같은 이슈의 뉴스트래커", "reason": "한국행 협의와 비공개 합의, 양국 대응의 후속 기록을 날짜별로 확인합니다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"}, "en": {"href": "/monitoring/north-korean-pows-protection-tracker", "title": "North Korean POWs: Protection and Transfer", "relationship": "RELATED NEWS TRACKER", "reason": "Follow the transfer negotiations, confidentiality dispute and the two governments’ subsequent responses.", "listHref": "/columns", "listLabel": "All columns"}},
   "column:fuel-shipments-russia-diplomatic-accountability-2026": {"ko": {"href": "/monitoring/north-korean-pows-protection-tracker", "title": "북한군 포로 보호와 한국 이송 쟁점", "relationship": "관련 뉴스트래커", "reason": "포로 이송과 양국 설명의 경위를 타임라인으로 확인합니다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"}, "en": {"href": "/monitoring/north-korean-pows-protection-tracker", "title": "North Korean POWs: Protection and Transfer", "relationship": "RELATED NEWS TRACKER", "reason": "Follow the transfer issue and the two governments’ accounts in the timeline.", "listHref": "/columns", "listLabel": "All columns"}},
   "column:farmland-farming-freedom-smart-agriculture-2026": {
   "ko": {
