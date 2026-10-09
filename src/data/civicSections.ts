@@ -43,6 +43,7 @@ export function getCivicSectionForArticle(path: string) {
 // Assess every new article under CONTENT_PUBLISHING_RULES.md §14 and add
 // suitable stories here in the same publishing update, regardless of category.
 export const civicLifeArticlePaths = [
+  "/briefings/wise-civic-life-hotel-platform-reservation-disputes-2026",
   "/columns/citizens-dilemma-03-escalator-etiquette",
   "/columns/taegeukgi-upside-down-mistake-or-intent-2026",
   "/columns/taxpayer-movement-03-britain-spending-watch",
@@ -82,7 +83,8 @@ export const civicLifeArticlePaths = [
 
 export function getCivicLifeArticles(language: Language): FeaturedContent[] {
   const paths = new Set<string>(civicLifeArticlePaths);
-  return getFeaturedContentCandidates(language).filter((article) => paths.has(article.path));
+  return getFeaturedContentCandidates(language).filter((article) => paths.has(article.path))
+    .sort((a, b) => b.date.localeCompare(a.date) || civicLifeArticlePaths.findIndex((path) => path === a.path) - civicLifeArticlePaths.findIndex((path) => path === b.path));
 }
 
 // Only civic movement coverage can lead the collection; newer policy commentaries

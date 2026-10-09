@@ -60,7 +60,7 @@ export function getFeaturedContentCandidates(language: Language, legislativeBill
     return {
       path: `/briefings/${item.slug}`,
       category: watch ? "watch" : "briefing",
-      categoryLabel: watch ? (ko ? "시민감시" : "Civic Watch") : (ko ? "브리핑" : "Briefings"),
+      categoryLabel: item.category.startsWith("슬기로운 시민생활") ? (ko ? "슬기로운 시민생활" : "Wise Civic Life") : watch ? (ko ? "시민감시" : "Civic Watch") : (ko ? "브리핑" : "Briefings"),
       kicker: watch ? "CIVIC WATCH" : "BRIEFINGS",
       title: localized.title,
       summary: localized.summary,

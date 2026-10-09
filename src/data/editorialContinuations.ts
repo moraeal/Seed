@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "briefing" && slug === "wise-civic-life-hotel-platform-reservation-disputes-2026") return true;
   if (kind === "column" && slug === "citizens-dilemma-03-escalator-etiquette") return true;
   if (kind === "column" && slug === "taegeukgi-upside-down-mistake-or-intent-2026") return true;
   if (kind === "column" && slug === "taxpayer-movement-03-britain-spending-watch") return true;
@@ -511,6 +512,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "briefing" && slug === "wise-civic-life-hotel-platform-reservation-disputes-2026") return language === "ko" ? { href: "/briefings/platform-advertising-cost-small-merchants", title: "팔수록 적자? 플랫폼 광고비는 적절한가", relationship: "플랫폼과 생활의 책임", reason: "숙박 예약의 책임에서 플랫폼과 작은 가게의 거래 조건으로 시선을 넓혀봅니다.", listHref: "/civic-life", listLabel: "시민생활 전체 보기" } : { href: "/briefings/platform-advertising-cost-small-merchants", title: "More Sales, Less Profit? The Cost of Advertising on Delivery Platforms", relationship: "PLATFORMS AND DAILY LIFE", reason: "Continue from accommodation-booking responsibility to the terms platforms offer small merchants.", listHref: "/civic-life", listLabel: "All Civic Life articles" };
   if (kind === "column" && slug === "citizens-dilemma-03-escalator-etiquette") return language === "ko" ? { href: "/columns/citizens-dilemma-02-neighbor-noise", title: "윗집에 항의하면, 나만 까다로운 사람이 될까?", relationship: "시민의 딜레마 ②", reason: "이웃을 배려하는 마음과 내 생활을 지킬 권리가 만나는 앞선 선택을 읽습니다.", listHref: "/civic-life", listLabel: "시민생활 전체 보기" } : { href: "/columns/citizens-dilemma-02-neighbor-noise", title: "If I Complain About the Upstairs Noise, Will I Be the Difficult Neighbor?", relationship: "A CITIZEN’S DILEMMA, NO. 2", reason: "Read the previous essay on consideration for neighbors and the right to protect daily life.", listHref: "/civic-life", listLabel: "All Civic Life articles" };
 
   if (kind === "column" && slug === "taegeukgi-upside-down-mistake-or-intent-2026") return language === "ko" ? {"href": "/seed-language/social-dialogue-understanding-beyond-camps-2026", "title": "사회적 대화 — 정부와 다른 답도 나올 수 있는가", "relationship": "진영을 넘는 시민의 언어", "reason": "서로 다른 의견을 함께 나누려면 상대의 의도를 판단하기 전에 사실과 맥락을 읽는 일이 필요하다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"} : {"href": "/seed-language/social-dialogue-understanding-beyond-camps-2026", "title": "Social Dialogue—Can Citizens Reach a Different Answer from Government?", "relationship": "CIVIC LANGUAGE ACROSS POLITICAL CAMPS", "reason": "Continue with understanding another position before attributing motives.", "listHref": "/columns", "listLabel": "All columns"};

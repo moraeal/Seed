@@ -1,3 +1,4 @@
+import { hotelPlatformTranslation } from "../hotelPlatformBriefing";
 import { leverageEtfTranslation } from "../leverageEtfBriefing";
 import { procurementTaxWatchNoticeTranslation, procurementTaxWatchNoticeSlug } from "../procurementTaxWatchNotice";
 import { policyFundRiskTranslation } from "../policyFundRiskBriefing";
@@ -26,6 +27,7 @@ import { monthlyRentCreditExplainerTranslation } from "./briefingMonthlyRentCred
 import { farmlandRetirementTranslation } from "./briefingFarmlandRetirement";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "wise-civic-life-hotel-platform-reservation-disputes-2026": hotelPlatformTranslation,
   [procurementTaxWatchNoticeSlug]: procurementTaxWatchNoticeTranslation,
   "leveraged-etfs-government-signals-citizen-losses-2026": leverageEtfTranslation,
   "government-policy-funds-risk-and-taxpayer-cost-2026": policyFundRiskTranslation,
