@@ -1,6 +1,6 @@
 import snapshot from "../data/homeSnapshot.json";
 import { civicSections, getCivicSectionArticles, getTaxWatchMovementArticles } from "../data/civicSections";
-import { ArrowRight, ChevronLeft, ChevronRight, Clock, Pause, Play, Megaphone } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Clock, Megaphone } from "lucide-react";
 import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import FeaturedStoryMedia from "../components/FeaturedStoryMedia";
@@ -35,8 +35,9 @@ function StoryCarousel({ children, count, ko, label }: { children: (index: numbe
   const [position, setPosition] = useState(0);
   const [slots, setSlots] = useState(4);
   const [resetting, setResetting] = useState(false);
-  const [paused, setPaused] = useState(false);
-  const [interacting, setInteracting] = useState(false);
+  const [hovering, setHovering] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const interacting = hovering || focused;
   const [reducedMotion, setReducedMotion] = useState(false);
   const visibleCount = Math.min(slots, count);
 
@@ -59,13 +60,13 @@ function StoryCarousel({ children, count, ko, label }: { children: (index: numbe
   }, [count]);
 
   useEffect(() => {
-    if (count < 2 || paused || interacting) return;
+    if (count < 2 || interacting || reducedMotion) return;
     const timer = window.setInterval(() => {
       if (document.hidden) return;
       setPosition((current) => reducedMotion ? (current + 1) % count : Math.min(current + 1, count));
     }, 5000);
     return () => window.clearInterval(timer);
-  }, [count, paused, interacting, reducedMotion, position]);
+  }, [count, interacting, reducedMotion, position]);
 
   useEffect(() => {
     if (!resetting) return;
@@ -83,20 +84,24 @@ function StoryCarousel({ children, count, ko, label }: { children: (index: numbe
     setResetting(position === count || Math.abs(next - position) > 1);
     setPosition(next);
   };
-  const controlClassName = "inline-flex min-h-10 items-center justify-center gap-1.5 rounded border border-green-deep/20 bg-white px-2.5 py-2 text-sm font-semibold text-green-deep transition hover:bg-green-deep/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold disabled:cursor-default disabled:opacity-40";
+  const controlClassName = "group absolute inset-y-0 z-10 flex w-11 items-center justify-center focus-visible:outline-none";
+  const arrowClassName = "flex h-11 w-9 items-center justify-center rounded bg-white/95 text-green-deep shadow-sm ring-1 ring-green-deep/15 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 group-focus-visible:ring-2 group-focus-visible:ring-gold [@media(hover:none)]:opacity-100";
 
   if (!count) return null;
   return (
-    <div className="mt-4" role="region" aria-roledescription={ko ? "슬라이드 목록" : "carousel"} aria-label={label}>
-      <div
-        className="overflow-hidden p-1 -m-1"
-        onMouseEnter={() => setInteracting(true)}
-        onMouseLeave={(event) => setInteracting(event.currentTarget.contains(document.activeElement))}
-        onFocusCapture={() => setInteracting(true)}
-        onBlurCapture={(event) => {
-          if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setInteracting(false);
-        }}
-      >
+    <div
+      className="relative mt-4"
+      role="region"
+      aria-roledescription={ko ? "슬라이드 목록" : "carousel"}
+      aria-label={label}
+      onMouseEnter={() => setHovering(true)}
+      onMouseLeave={() => setHovering(false)}
+      onFocusCapture={() => setFocused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocused(false);
+      }}
+    >
+      <div className="overflow-hidden p-1 -m-1">
         <div
           className="flex items-stretch gap-4 sm:gap-5 [--hot-gap:1rem] sm:[--hot-gap:1.25rem]"
           style={{
@@ -117,17 +122,16 @@ function StoryCarousel({ children, count, ko, label }: { children: (index: numbe
           })}
         </div>
       </div>
-      <div className="mt-3 flex flex-wrap justify-end gap-2" role="group" aria-label={ko ? `${label} 기사 넘김` : `${label} controls`}>
-        <button type="button" onClick={() => moveStory(-1)} disabled={count < 2} className={controlClassName}>
-          <ChevronLeft size={16} aria-hidden="true"/>{ko ? "앞 기사 보기" : "Previous article"}
-        </button>
-        <button type="button" onClick={() => setPaused((value) => !value)} disabled={count < 2} aria-pressed={paused} aria-label={ko ? (paused ? "자동 넘김 재생" : "자동 넘김 멈추기") : (paused ? "Resume rotation" : "Pause rotation")} className={controlClassName}>
-          {paused ? <Play size={16} aria-hidden="true"/> : <Pause size={16} aria-hidden="true"/>}{paused ? (ko ? "재생" : "Play") : (ko ? "멈추기" : "Pause")}
-        </button>
-        <button type="button" onClick={() => moveStory(1)} disabled={count < 2} className={controlClassName}>
-          {ko ? "뒷 기사 보기" : "Next article"}<ChevronRight size={16} aria-hidden="true"/>
-        </button>
-      </div>
+      {count > 1 && (
+        <>
+          <button type="button" onMouseDown={(event) => event.preventDefault()} onClick={() => moveStory(-1)} aria-label={ko ? "이전 기사 보기" : "Previous article"} className={`${controlClassName} left-0`}>
+            <span className={arrowClassName}><ChevronLeft size={26} aria-hidden="true"/></span>
+          </button>
+          <button type="button" onMouseDown={(event) => event.preventDefault()} onClick={() => moveStory(1)} aria-label={ko ? "이후 기사 보기" : "Next article"} className={`${controlClassName} right-0`}>
+            <span className={arrowClassName}><ChevronRight size={26} aria-hidden="true"/></span>
+          </button>
+        </>
+      )}
     </div>
   );
 }
