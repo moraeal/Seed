@@ -1,5 +1,47 @@
 export const topicTaxonomy = [
   {
+    id: "diplomacy-unification",
+    label: {"ko": "외교·통일", "en": "Diplomacy and Unification"},
+    description: {"ko": "외교의 신뢰와 통일정책이 시민에게 미치는 영향을 봅니다", "en": "Diplomatic trust and the civic consequences of unification policy"},
+    keywords: ["외교", "통일", "정동영", "통일부", "우크라", "포로", "북한", "대북", "diplomacy", "diplomatic", "unification", "chung dong", "ukraine", "prisoner of war", "prisoners of war", "north korea"],
+  },
+  {
+    id: "taxpayer-movement",
+    label: {"ko": "세금감시운동", "en": "Taxpayer Movements"},
+    description: {"ko": "ATR 연재와 한국형 세금감시운동을 함께 읽습니다", "en": "The ATR series and citizen-led tax oversight in Korea"},
+    keywords: ["세금감시운동", "세금감시 운동", "납세자운동", "납세자 운동", "증세 반대", "증세반대", "미국 ATR", "ATR은", "KTR", "taxpayer movement", "taxpayers movement", "americans for tax reform", "tax watchdog", "tax pledge"],
+  },
+  {
+    id: "housing-city",
+    label: {"ko": "주거·도시", "en": "Housing and Cities"},
+    description: {"ko": "전세·집값·아파트 이름과 도시의 삶을 살핍니다", "en": "Rental rights, housing costs and life in the city"},
+    keywords: ["주거", "전세", "집값", "아파트", "부동산", "주택", "도시", "집의 이름", "housing", "jeonse", "apartment", "real estate", "urban", "city"],
+  },
+  {
+    id: "everyday-consumer",
+    label: {"ko": "생활·소비자 권리", "en": "Everyday Life and Consumer Rights"},
+    description: {"ko": "숙박 예약부터 층간소음·생활 규칙까지 해결의 길을 찾습니다", "en": "Practical paths through bookings, disputes and everyday rules"},
+    keywords: ["시민의 딜레마", "윗집", "내 가게", "citizens’ dilemma", "citizens dilemma", "숙박", "예약", "객실", "소비자", "환불", "층간소음", "에스컬레이터", "카페", "김치항아리", "소스 소분", "hotel", "booking", "refund", "consumer", "escalator", "neighbor noise", "café", "cafe", "kimchi jar", "sauce portion"],
+  },
+  {
+    id: "education-dialogue",
+    label: {"ko": "교육·사회적 대화", "en": "Education and Social Dialogue"},
+    description: {"ko": "학교와 공론장에서 서로 이해하고 판단하는 법을 묻습니다", "en": "Learning to understand and judge in schools and public debate"},
+    keywords: ["교육", "학교", "교사", "교권", "전교조", "사회적 대화", "보이텔스바흐", "education", "school", "teacher", "social dialogue", "beutelsbach"],
+  },
+  {
+    id: "history-expression",
+    label: {"ko": "역사·표현의 자유", "en": "History and Freedom of Expression"},
+    description: {"ko": "역사 해석·영화·상징을 둘러싼 자유와 책임을 읽습니다", "en": "Freedom and responsibility in history, film and public symbols"},
+    keywords: ["역사", "표현의 자유", "역사왜곡", "집단기억", "암살자", "료마", "태극기", "history", "historical", "freedom of expression", "free expression", "collective memory", "assassins", "ryoma", "taegeukgi"],
+  },
+  {
+    id: "agriculture-land",
+    label: {"ko": "농지·농업", "en": "Farmland and Agriculture"},
+    description: {"ko": "농지조사·태양광·농민의 선택과 은퇴를 함께 봅니다", "en": "Farmland surveys, solar development and farmers’ choices"},
+    keywords: ["농지", "농업", "농민", "농사", "고령농", "영농", "스마트팜", "farmland", "agriculture", "agricultural", "farmer", "farming", "smart farm"],
+  },
+  {
     id: "justice",
     label: { ko: "검찰개혁과 사법", en: "Justice and Prosecution Reform" },
     description: { ko: "수사권·기소권과 사법독립을 함께 봅니다", en: "Investigative power, prosecution and judicial independence" },
@@ -108,3 +150,13 @@ export function classifyArticleTopics(article: ClassifiableArticle, fallbacks: T
 }
 
 export const getTopic = (id: TopicId) => topicTaxonomy.find((topic) => topic.id === id)!;
+
+// Curated topic assignments remain authoritative; also include newly added reading groups.
+const recentReadingTopicIds = new Set<TopicId>(["diplomacy-unification", "taxpayer-movement", "housing-city", "everyday-consumer", "education-dialogue", "history-expression", "agriculture-land"]);
+
+export function includeRecentReadingTopics(article: ClassifiableArticle, explicitTopics?: TopicId[], fallbacks?: TopicId[]) {
+  const classified = classifyArticleTopics(article, fallbacks);
+  return explicitTopics
+    ? [...new Set([...explicitTopics, ...classified.filter((id) => recentReadingTopicIds.has(id))])]
+    : classified;
+}

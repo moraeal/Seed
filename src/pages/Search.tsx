@@ -12,7 +12,7 @@ import { getLegislativeCommentaryEdition, legislativeCommentaries } from "../dat
 import { getSeedLanguageArticle, seedLanguageArticlesKo } from "../data/seedLanguage";
 import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } from "../data/seedLanguageEnvironment";
 import { getTaxCommentaryEdition, taxCommentaries } from "../data/taxCommentaries";
-import { classifyArticleTopics, getTopic, isTopicId, topicTaxonomy, type TopicId } from "../data/topicTaxonomy";
+import { classifyArticleTopics, includeRecentReadingTopics, getTopic, isTopicId, topicTaxonomy, type TopicId } from "../data/topicTaxonomy";
 import { useLanguage } from "../i18n";
 
 type SearchItem = {
@@ -49,7 +49,7 @@ export default function SearchPage() {
   const items = useMemo<SearchItem[]>(() => {
     const withTopics = (item: Omit<SearchItem, "topics">, fallbacks?: TopicId[], explicitTopics?: TopicId[]): SearchItem => ({
       ...item,
-      topics: explicitTopics ?? classifyArticleTopics(item, fallbacks),
+      topics: includeRecentReadingTopics(item, explicitTopics, fallbacks),
     });
 
     const news = getNewsNewestFirst().map((item) => localizeNewsArticle(item, language)).map((item) => ({
