@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import CampaignSignature from "../components/CampaignSignature";
 import SafeImage from "../components/SafeImage";
 import { useLanguage } from "../i18n";
-import { campaignPending, civicSections, getCivicSectionArticles, getTaxWatchMovementArticles, type CivicSectionKey } from "../data/civicSections";
+import { civicSections, getCivicSectionArticles, getTaxWatchMovementArticles, type CivicSectionKey } from "../data/civicSections";
 import { civicNoticeDeadline, civicNoticeSlug } from "../data/civicHubArticles";
 
 export default function CivicCollection({ sectionKey }: { sectionKey: CivicSectionKey }) {
@@ -32,13 +32,12 @@ export default function CivicCollection({ sectionKey }: { sectionKey: CivicSecti
       </div>
     </article>
     </div>}
-    <div className="mt-6 space-y-6">
+    {sectionKey !== "campaign" && <div className="mt-6 space-y-6">
       {sectionKey === "cases" && <h2 className="text-2xl font-bold text-navy">{ko ? "세금감시 논평과 운동 사례" : "Tax Commentaries and Movement Case Studies"}</h2>}
       {listing.map((article) => <article key={article.path} className="grid gap-4 border-b border-green-deep/15 pb-6 sm:grid-cols-[220px_minmax(0,1fr)]">
         <Link to={article.path}><SafeImage src={article.image.src} alt={article.image.alt} className="aspect-[16/9] w-full object-cover shadow-sm" /></Link>
         <div><p className="text-sm text-charcoal/55">{article.date.replace(/-/g, ".")}{article.path.endsWith(civicNoticeSlug) && <span className="ml-3 font-bold text-green-deep">{today > civicNoticeDeadline ? (ko ? "접수 마감" : "Closed") : (ko ? "10월 21일 마감" : "Deadline: October 21")}</span>}</p><Link to={article.path}><h2 className="mt-2 text-xl font-bold leading-8 text-navy hover:text-green-mid">{article.title}</h2></Link><p className="mt-2 text-base leading-7 text-charcoal/75">{article.summary}</p><Link to={article.path} className="mt-3 inline-block text-sm font-bold text-green-deep underline underline-offset-4">{ko ? "자세히 읽기" : "Read more"}</Link></div>
       </article>)}
-      {sectionKey === "campaign" && !articles.length && <article className="bg-ivory p-6 shadow-sm"><p className="text-sm font-bold text-green-deep">{ko ? "준비 중" : "In preparation"}</p><h2 className="mt-2 text-2xl font-bold text-navy">{campaignPending.title[language]}</h2><p className="mt-3 text-base leading-7 text-charcoal/75">{campaignPending.summary[language]}</p><p className="mt-3 text-sm text-charcoal/55">{ko ? "원고를 마무리한 뒤 이곳에서 공개합니다." : "The article will appear here when publication is complete."}</p></article>}
-    </div>
+    </div>}
   </div>;
 }
