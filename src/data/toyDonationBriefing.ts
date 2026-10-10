@@ -91,7 +91,7 @@ export const toyDonationBriefing: Briefing = {
       ]
     }
   ],
-  "watchPoints": [],
+  "watchPoints": ["직원의 참여 선택과 자율성이 존중됐는지", "장난감의 실제 전달 수량과 아이들의 사용 결과", "일회성 행사를 넘어 다음 나눔으로 이어지는지"],
   "sources": [
     {
       "label": "EBN · 코웨이 임직원, 자원순환의 날 기념 장난감 업사이클링 봉사활동 (2026.9.23)",
@@ -181,7 +181,7 @@ export const toyDonationTranslation: BriefingTranslation = {
       ]
     }
   ],
-  "watchPoints": [],
+  "watchPoints": ["Whether employees’ choices and autonomy were respected", "How many toys reached children and how they were used", "Whether the connection leads to further sharing"],
   "sourceLabels": [
     "EBN · Coway employees’ toy-upcycling volunteer activity (September 23, 2026)",
     "Elephant Factory · Toy circulation and donation guidance (accessed October 10, 2026)"
