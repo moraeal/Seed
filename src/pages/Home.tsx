@@ -196,8 +196,8 @@ export default function Home() {
     .sort((a, b) => b.date.localeCompare(a.date));
 
   const leadColumn = allJournalColumns.find((column) => column.slug !== "north-korean-pows-ukraine-diplomatic-rift-2026");
-  const featuredCandidates = getFeaturedContentCandidates(language, legislativeBills)
-    .filter((item) => item.path !== "/columns/north-korean-pows-ukraine-diplomatic-rift-2026");
+  // Automatic placement exclusions must not override an explicit operator selection.
+  const featuredCandidates = getFeaturedContentCandidates(language, legislativeBills);
   const configuredLead = featuredCandidates.find((item) => item.path === featuredPath);
   const defaultFeaturedPath = leadColumn ? `/columns/${leadColumn.slug}` : featuredCandidates[0]?.path;
   const featuredLead = featuredReady
