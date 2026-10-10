@@ -10,7 +10,7 @@ const returnTo = "/civic-campaign#campaign-signature";
 const campaignDemands = [
   {
     title: { ko: "월급쟁이 유리지갑, 더 이상 털지 마라!", en: "Let workers keep more of what they earn" },
-    fact: { ko: "근로소득세 최고세율은 지방소득세를 포함해 49.5%입니다. 공제 후 과세표준 10억 원을 넘는 부분에 적용되는 한계세율로, 월급 전체의 절반을 세금으로 낸다는 뜻은 아닙니다. 물가가 오르는데 과세구간이 그대로라면 실질소득이 늘지 않아도 세 부담이 커질 수 있습니다.", en: "The top marginal rate on earned income is 49.5%, including local income tax. It applies to the portion of taxable income above KRW 1 billion after deductions, rather than the whole salary. When tax thresholds remain frozen as prices rise, tax burdens can grow without an increase in real income." },
+    fact: { ko: "근로소득세 최고 한계세율은 지방소득세 표준세율을 포함해 49.5%입니다. 공제 후 과세표준 10억 원을 넘는 부분에 적용되는 한계세율로, 월급 전체의 절반을 세금으로 낸다는 뜻은 아닙니다. 물가가 오르는데 과세구간이 그대로라면 실질소득이 늘지 않아도 세 부담이 커질 수 있습니다.", en: "The top marginal rate on earned income is 49.5%, including the standard local income-tax rate. It applies to the portion of taxable income above KRW 1 billion after deductions, rather than the whole salary. When tax thresholds remain frozen as prices rise, tax burdens can grow without an increase in real income." },
     demand: { ko: "근로소득세 최고세율을 낮추고 과세구간을 물가와 소득 변화에 맞게 현실화하십시오. 노력의 대가가 개인에게 더 많이 돌아가야 합니다.", en: "Lower the top rate and update income-tax thresholds to reflect changes in prices and incomes. Let people keep more of the rewards of their work." },
     source: "https://g.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7873&mi=6594",
     sourceLabel: { ko: "국세청 · 근로소득 세율", en: "National Tax Service · Earned-income tax rates" },
@@ -24,14 +24,14 @@ const campaignDemands = [
   },
   {
     title: { ko: "기업에 더 걷기보다 투자와 일자리를 늘려라!", en: "Leave more room for investment and jobs" },
-    fact: { ko: "2026년부터 일반 법인의 법인세 최고세율은 25%로 올랐습니다. 법인지방소득세를 포함한 최고 한계세율은 27.5%입니다. 최고세율은 과세표준 3,000억 원 초과분에 적용됩니다. 기업의 세 부담은 투자와 고용에 쓸 자금에도 영향을 줍니다.", en: "For tax years beginning in 2026, the top corporate income-tax rate rose to 25%, or 27.5% including local corporate income tax. The top marginal rate applies to taxable profits above KRW 300 billion. Tax burdens affect the funds available for investment and hiring." },
+    fact: { ko: "2026년 1월 1일 이후 시작하는 사업연도부터 일반 법인의 법인세 최고세율은 25%로 올랐습니다. 법인지방소득세 표준세율을 포함한 최고 한계세율은 27.5%입니다. 최고세율은 과세표준 3,000억 원 초과분에 적용됩니다. 기업의 세 부담은 투자와 고용에 쓸 자금에도 영향을 줍니다.", en: "For tax years beginning in 2026, the top corporate income-tax rate rose to 25%, or 27.5% including the standard local corporate income-tax rate. The top marginal rate applies to taxable profits above KRW 300 billion. Tax burdens affect the funds available for investment and hiring." },
     demand: { ko: "법인세율을 낮추고 누진구조를 단순화하십시오. 기업이 투자와 일자리 창출에 더 많은 자금을 활용할 수 있어야 합니다.", en: "Lower corporate tax rates and simplify the progressive structure so businesses have more funds for investment and job creation." },
     source: "https://d.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7746&mi=2372",
     sourceLabel: { ko: "국세청 · 2026년 이후 법인세율", en: "National Tax Service · Corporate tax rates from 2026" },
   },
   {
     title: { ko: "평생 일군 재산, 물려주는 것까지 벌주지 마라!", en: "Protect the right to pass on a lifetime's work" },
-    fact: { ko: "한국의 상속세 최고세율은 과세표준 30억 원 초과분에 적용되는 50%입니다. 미국의 2026년 연방 상속·증여세 기본공제는 1인당 1,500만 달러입니다. 생전 증여가 공제 한도에 영향을 주며, 주별 세금은 별도입니다. 재산 승계의 부담은 세율과 공제액을 함께 살펴야 합니다.", en: "South Korea's top inheritance-tax rate is 50% on the portion of the taxable estate above KRW 3 billion. The United States' 2026 federal estate and gift tax basic exclusion is USD 15 million per person; lifetime gifts affect the available exclusion, and state taxes may apply separately. Both rates and allowances determine the burden of passing on assets." },
+    fact: { ko: "한국의 상속세 최고세율은 과세표준 30억 원 초과분에 적용되는 50%입니다. 미국의 2026년 연방 상속·증여세 기본공제는 미국 시민권자와 상속세법상 거주자(주소지 기준)에 대해 1인당 1,500만 달러입니다. 생전 증여가 공제 한도에 영향을 주며, 주별 세금은 별도입니다. 재산 승계의 부담은 세율과 공제액을 함께 살펴야 합니다.", en: "South Korea's top inheritance-tax rate is 50% on the portion of the taxable estate above KRW 3 billion. For US citizens and residents under estate-tax domicile rules, the United States' 2026 federal estate and gift tax basic exclusion is USD 15 million per person; lifetime gifts affect the available exclusion, and state taxes may apply separately. Both rates and allowances determine the burden of passing on assets." },
     demand: { ko: "상속세율을 대폭 낮추고 공제액을 현실화하십시오. 가족의 정당한 재산 승계가 과도한 세금으로 가로막혀서는 안 됩니다.", en: "Substantially reduce inheritance-tax rates and update allowances. Excessive taxation should not obstruct legitimate transfers of family assets." },
     source: "https://ems.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7957&mi=6529",
     sourceLabel: { ko: "국세청 · 상속세 계산", en: "National Tax Service · Inheritance tax calculation" },
@@ -133,14 +133,12 @@ export default function CampaignSignature() {
       <p className="mt-5 text-xl font-bold leading-8 text-navy">{ko ? "국민이 번 돈은 국민의 것입니다." : "The money people earn belongs to them."}</p>
       <p className="mt-2 text-base leading-7">{ko ? "국가가 더 가져가는 것이 아니라, 국민이 더 많이 지킬 수 있어야 합니다. 세금은 국가 운영을 위한 수단이지, 국민의 성취를 빼앗는 수단이 되어서는 안 됩니다." : "People should be able to keep more of their earnings. Taxes fund the state; they should not strip people of the rewards of their work."}</p>
       <p className="mt-3 text-base leading-7">{ko ? "세금과 사회보험료 부담에 이제 국민이 직접 제동을 걸어야 합니다. 씨앗의 소리는 다음 다섯 가지 개혁을 요구합니다." : "Citizens must have a say in rising taxes and social insurance contributions. SEED Voice calls for five reforms."}</p>
-      <a href="#campaign-signature-form" className="button-primary mt-5 inline-flex">{ko ? "증세 반대 서명하기 ↓" : "Sign against tax increases ↓"}</a>
     </header>
     <div className="divide-y divide-green-deep/20">
       {campaignDemands.map((item, index) => <article key={item.source} className="py-6 sm:py-7">
         <h3 className="text-xl font-black leading-8 text-navy"><span className="mr-2 text-green-deep">{index + 1}.</span>{item.title[language]}</h3>
         <p className="mt-3 text-base leading-7 text-charcoal/80">{item.fact[language]}</p>
         <p className="mt-3 border-l-4 border-green-deep pl-4 text-base font-bold leading-7 text-green-deep">{item.demand[language]}</p>
-        <p className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm leading-6 text-charcoal/60"><a href={item.source} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{item.sourceLabel[language]} ↗</a>{item.extraSource && <a href={item.extraSource} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{item.extraLabel[language]} ↗</a>}</p>
       </article>)}
     </div>
     <div className="bg-ivory p-5 sm:p-6">
