@@ -126,7 +126,8 @@ export default function CampaignSignature() {
   }
 
   return <section id="campaign-signature" className="reading-column mb-8 scroll-mt-52 border-2 border-green-deep bg-white p-5 sm:p-7" aria-labelledby="campaign-signature-title">
-    <header className="border-b-2 border-green-deep pb-7">
+    <header className="relative isolate -mx-5 -mt-5 overflow-hidden border-b-2 border-green-deep px-5 pb-7 pt-5 sm:-mx-7 sm:-mt-7 sm:px-7 sm:pt-7">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-cover bg-center opacity-[0.18]" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/civic/no-more-tax-textless-background.webp)` }} />
       <p className="text-sm font-bold tracking-widest text-green-deep">{ko ? "씨앗의 소리 · 국민 재산권 보호 서명운동" : "SEED VOICE · A CAMPAIGN TO PROTECT PROPERTY RIGHTS"}</p>
       <p className="mt-4 text-4xl font-black tracking-tight text-navy sm:text-6xl">NO MORE TAX!</p>
       <h2 id="campaign-signature-title" className="mt-4 text-2xl font-black leading-snug text-green-deep sm:text-3xl">{ko ? "증세는 그만! 국민의 재산권을 지켜라!" : "Stop tax increases. Protect people's property rights."}</h2>
