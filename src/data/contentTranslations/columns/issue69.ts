@@ -6,7 +6,7 @@ export const issue69: ColumnTranslation = {
   "author": "Small Seed",
   "summary": "Remarks about the DMZ mine blasts were used in North Korea’s rebuttal, while statements about nuclear facilities and enemy terminology exposed divisions in Seoul. This commentary separates documented consequences from policy concerns and asks whether accountability changes with the governing party.",
   "heroImage": {
-    "alt": "An editorial portrait of Chung Dong-young speaking into a microphone, with paper fragments obstructing a bridge between the two Koreas",
+    "alt": "A symbolic editorial composite of Chung Dong-young speaking into a microphone and a landmine explosion on an empty DMZ patrol path",
     "caption": "When words intended to open dialogue undermine a government’s account and become material for the other side, citizens bear the cost.",
     "credit": "AI image"
   },

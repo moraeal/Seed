@@ -13,11 +13,11 @@ export const chungWordsColumn: SeedColumn = {
   "readMinutes": 10,
   "summary": "지뢰 사건 발언은 북한의 책임 회피에 쓰였고, 핵시설과 주적 발언은 정부 설명의 혼선을 드러냈다. 정동영 장관의 말을 확인된 파장과 정책적 우려로 나누어 되짚고, 정권에 따라 달라지지 않는 책임의 기준을 묻는다.",
   "heroImage": {
-    "src": "images/columns/chung-words-2026/hero.webp",
-    "alt": "정동영 장관의 얼굴과 마이크에서 나온 종이 조각이 남북 사이 다리를 가로막는 상징적 그림",
+    "src": "images/columns/chung-words-2026/hero-dmz.webp",
+    "alt": "정동영 장관의 얼굴과 비무장지대 순찰로의 지뢰 폭발을 결합한 상징적 합성 이미지",
     "caption": "대화를 열겠다는 말이 정부의 설명을 흔들고 상대의 반박에 쓰일 때, 그 비용은 국민에게 돌아온다.",
     "credit": "AI 이미지",
-    "sourceUrl": ""
+    "sourceUrl": "https://www.newsis.com/view/NISI20261007_0021479439"
   },
   "inlineImage": {
     "src": "images/columns/chung-words-2026/timeline-ko.png",
