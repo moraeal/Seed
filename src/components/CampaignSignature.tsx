@@ -10,29 +10,29 @@ const returnTo = "/civic-campaign#campaign-signature";
 const campaignDemands = [
   {
     title: { ko: "월급쟁이 유리지갑, 더 이상 털지 마라!", en: "Let workers keep more of what they earn" },
-    fact: { ko: "근로소득세 최고 한계세율은 지방소득세 표준세율을 포함해 49.5%입니다. 공제 후 과세표준 10억 원을 넘는 부분에 적용되는 한계세율로, 월급 전체의 절반을 세금으로 낸다는 뜻은 아닙니다. 물가가 오르는데 과세구간이 그대로라면 실질소득이 늘지 않아도 세 부담이 커질 수 있습니다.", en: "The top marginal rate on earned income is 49.5%, including the standard local income-tax rate. It applies to the portion of taxable income above KRW 1 billion after deductions, rather than the whole salary. When tax thresholds remain frozen as prices rise, tax burdens can grow without an increase in real income." },
-    demand: { ko: "근로소득세 최고세율을 낮추고 과세구간을 물가와 소득 변화에 맞게 현실화하십시오. 노력의 대가가 개인에게 더 많이 돌아가야 합니다.", en: "Lower the top rate and update income-tax thresholds to reflect changes in prices and incomes. Let people keep more of the rewards of their work." },
+    fact: { ko: "한국의 근로소득세 최고세율은 지방소득세를 포함해 49.5%입니다. 최고 과세구간에서는 추가로 번 소득의 절반 가까이를 세금으로 내야 합니다.", en: "South Korea's top marginal income-tax rate is 49.5%, including local income tax. In the highest bracket, nearly half of each additional unit of taxable income goes to tax." },
+    demand: { ko: "근로소득세 최고세율을 낮추고 과세구간을 현실화해, 노력의 대가가 개인에게 더 많이 돌아가도록 해야 합니다.", en: "Lower the top income-tax rate and update tax brackets so individuals retain more of the rewards of their work." },
     source: "https://g.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7873&mi=6594",
     sourceLabel: { ko: "국세청 · 근로소득 세율", en: "National Tax Service · Earned-income tax rates" },
   },
   {
-    title: { ko: "집 한 채 지키는 데도 세금 걱정? 보유세를 바꾸자!", en: "Owning a home should not mean an unpredictable tax bill" },
-    fact: { ko: "집값이 올라도 당장 쓸 돈이 생기지는 않습니다. 공시가격과 세제에 따라 달라지는 보유세는 소득이 줄어든 은퇴자와 장기 실거주자에게 부담이 될 수 있습니다. 살던 집을 지키기 위해 세금 낼 돈부터 걱정해야 하는 현실을 바꿔야 합니다.", en: "A rise in a home's value does not put cash in its owner's pocket. Property holding taxes tied to assessed values and changing tax rules can burden retirees with lower incomes and long-term residents." },
-    demand: { ko: "취득가액을 중심으로 보유세 기준을 개편하고, 실제 매각으로 실현된 이익에 과세하는 방향으로 바꾸십시오. 장기 실거주자의 부담을 줄이고 세금의 예측 가능성을 높여야 합니다.", en: "Reform holding-tax assessments around acquisition value and shift the focus toward gains realized on sale. Reduce the burden on long-term residents and make taxes more predictable." },
+    title: { ko: "집 한 채 지키는 데도 세금 걱정? 부동산 보유세를 바꾸자!", en: "Owning a home should not mean an unpredictable tax bill" },
+    fact: { ko: "집값이 올라도 당장 현금이 생기는 것은 아닙니다. 그런데 공시가격 상승과 세제 변경으로 보유세 부담은 늘어날 수 있습니다. 특히 은퇴자와 장기 실거주자에게는 큰 부담입니다.", en: "A higher home value does not put cash in the owner's pocket. Yet rising assessed values and changes to tax rules can increase property holding taxes, putting particular pressure on retirees and long-term residents." },
+    demand: { ko: "보유세는 취득가액을 중심으로 개편하고, 실제 매각으로 발생한 이익에 과세해 세금의 예측 가능성을 높여야 합니다.", en: "Reform holding taxes around acquisition value and taxation of gains realized on sale to make the tax burden more predictable." },
     source: "https://ems.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7739&mi=40401",
     sourceLabel: { ko: "국세청 · 종합부동산세 안내", en: "National Tax Service · Comprehensive real estate holding tax" },
   },
   {
-    title: { ko: "기업에 더 걷기보다 투자와 일자리를 늘려라!", en: "Leave more room for investment and jobs" },
-    fact: { ko: "2026년 1월 1일 이후 시작하는 사업연도부터 일반 법인의 법인세 최고세율은 25%로 올랐습니다. 법인지방소득세 표준세율을 포함한 최고 한계세율은 27.5%입니다. 최고세율은 과세표준 3,000억 원 초과분에 적용됩니다. 기업의 세 부담은 투자와 고용에 쓸 자금에도 영향을 줍니다.", en: "For tax years beginning in 2026, the top corporate income-tax rate rose to 25%, or 27.5% including the standard local corporate income-tax rate. The top marginal rate applies to taxable profits above KRW 300 billion. Tax burdens affect the funds available for investment and hiring." },
-    demand: { ko: "법인세율을 낮추고 누진구조를 단순화하십시오. 기업이 투자와 일자리 창출에 더 많은 자금을 활용할 수 있어야 합니다.", en: "Lower corporate tax rates and simplify the progressive structure so businesses have more funds for investment and job creation." },
+    title: { ko: "기업에 세금 더 걷기보다 투자와 일자리를 늘려라!", en: "Leave more room for investment and jobs" },
+    fact: { ko: "한국의 법인세 최고세율은 2026년 25%로 인상돼 지방소득세를 포함하면 27.5%에 달합니다. 기업의 투자와 고용을 촉진해야 할 시기에 세금 부담부터 늘려서는 안 됩니다.", en: "South Korea's top corporate income-tax rate rose to 25% in 2026, reaching 27.5% with local income tax. At a time when investment and hiring need encouragement, businesses should not first face higher taxes." },
+    demand: { ko: "법인세율을 낮추고 누진구조를 단순화해, 기업이 투자와 일자리 창출에 더 많은 자금을 활용하도록 해야 합니다.", en: "Lower corporate tax rates and simplify the progressive structure so businesses can put more funds toward investment and job creation." },
     source: "https://d.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7746&mi=2372",
     sourceLabel: { ko: "국세청 · 2026년 이후 법인세율", en: "National Tax Service · Corporate tax rates from 2026" },
   },
   {
-    title: { ko: "평생 일군 재산, 물려주는 것까지 벌주지 마라!", en: "Protect the right to pass on a lifetime's work" },
-    fact: { ko: "한국의 상속세 최고세율은 과세표준 30억 원 초과분에 적용되는 50%입니다. 미국의 2026년 연방 상속·증여세 기본공제는 미국 시민권자와 상속세법상 거주자(주소지 기준)에 대해 1인당 1,500만 달러입니다. 생전 증여가 공제 한도에 영향을 주며, 주별 세금은 별도입니다. 재산 승계의 부담은 세율과 공제액을 함께 살펴야 합니다.", en: "South Korea's top inheritance-tax rate is 50% on the portion of the taxable estate above KRW 3 billion. For US citizens and residents under estate-tax domicile rules, the United States' 2026 federal estate and gift tax basic exclusion is USD 15 million per person; lifetime gifts affect the available exclusion, and state taxes may apply separately. Both rates and allowances determine the burden of passing on assets." },
-    demand: { ko: "상속세율을 대폭 낮추고 공제액을 현실화하십시오. 가족의 정당한 재산 승계가 과도한 세금으로 가로막혀서는 안 됩니다.", en: "Substantially reduce inheritance-tax rates and update allowances. Excessive taxation should not obstruct legitimate transfers of family assets." },
+    title: { ko: "평생 일군 재산, 자녀에게 물려주는 것까지 벌주지 마라!", en: "Protect the right to pass on a lifetime's work" },
+    fact: { ko: "한국의 상속세 최고세율은 50%입니다. 반면 스웨덴은 상속세를 폐지했고, 중국 본토에는 일반적인 상속세가 없으며, 대만은 최고세율이 20%입니다. 미국은 2026년 기준 1인당 1,500만 달러(약 200억 원)의 연방 상속세 기본공제를 적용합니다.", en: "South Korea's top inheritance-tax rate is 50%. Sweden abolished inheritance tax, mainland China has no general inheritance tax, and Taiwan's top rate is 20%. The United States applies a federal estate-tax basic exclusion of USD 15 million per person in 2026, roughly KRW 20 billion." },
+    demand: { ko: "상속세율을 대폭 낮추고 공제액을 현실화해, 가족의 정당한 재산 승계가 과도한 세금으로 가로막히지 않도록 해야 합니다.", en: "Substantially lower inheritance-tax rates and update allowances so excessive taxation does not obstruct legitimate transfers of family assets." },
     source: "https://ems.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7957&mi=6529",
     sourceLabel: { ko: "국세청 · 상속세 계산", en: "National Tax Service · Inheritance tax calculation" },
     extraSource: "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
@@ -40,8 +40,8 @@ const campaignDemands = [
   },
   {
     title: { ko: "국민연금·건강보험료, 올리는 것만이 개혁인가!", en: "Reform social insurance beyond raising contributions" },
-    fact: { ko: "국민연금 보험료율은 2026년 9.5%에서 매년 0.5%포인트씩 올라 2033년 13%가 됩니다. 기준소득월액이 300만 원으로 유지되는 지역가입자는 지원·감면 전 월 보험료가 28만 5천 원에서 39만 원으로, 10만 5천 원 늘어납니다. 직장가입자는 사용자와 나누어 부담하며, 건강보험료는 별도입니다.", en: "The National Pension contribution rate rises from 9.5% in 2026 by 0.5 percentage points a year to 13% in 2033. For an individually insured person whose assessed monthly income stays at KRW 3 million, the monthly contribution before subsidies or reductions rises from KRW 285,000 to KRW 390,000. Employees share contributions with employers; health insurance is a separate payment." },
-    demand: { ko: "보험료 인상에 의존하는 개혁을 멈추고 기금 운용과 지출구조를 개혁하십시오. 연금·건강보험의 지속 가능성을 높이면서 자영업자와 미래세대의 부담을 줄여야 합니다.", en: "Reform fund management and spending rather than relying on higher contributions. Improve the sustainability of pensions and health insurance while easing burdens on the self-employed and future generations." },
+    fact: { ko: "국민연금 보험료율은 2033년까지 소득의 13%로 인상됩니다. 기준소득월액이 300만 원인 지역가입 자영업자의 보험료는 2026년 월 28만 5천 원에서 2033년 39만 원으로 늘어납니다. 건강보험료까지 더하면 부담은 더욱 큽니다.", en: "The National Pension contribution rate will rise to 13% by 2033. A self-employed person insured individually with assessed monthly income of KRW 3 million pays KRW 285,000 a month in 2026 and KRW 390,000 in 2033. Health insurance adds a separate burden." },
+    demand: { ko: "보험료 인상에 의존하기보다 기금 운용과 지출구조를 개혁해, 자영업자와 미래세대의 부담을 줄여야 합니다.", en: "Reform fund management and spending rather than relying on contribution increases, easing the burden on the self-employed and future generations." },
     source: "https://www.nps.or.kr/pnsinfo/ntpsklg/getOHAF0104M0.do",
     sourceLabel: { ko: "국민연금공단 · 연금개혁 FAQ", en: "National Pension Service · Pension reform FAQ" },
   },
@@ -132,7 +132,7 @@ export default function CampaignSignature() {
       <h2 id="campaign-signature-title" className="mt-4 text-2xl font-black leading-snug text-green-deep sm:text-3xl">{ko ? "증세는 그만! 국민의 재산권을 지켜라!" : "Stop tax increases. Protect people's property rights."}</h2>
       <p className="mt-5 text-xl font-bold leading-8 text-navy">{ko ? "국민이 번 돈은 국민의 것입니다." : "The money people earn belongs to them."}</p>
       <p className="mt-2 text-base leading-7">{ko ? "국가가 더 가져가는 것이 아니라, 국민이 더 많이 지킬 수 있어야 합니다. 세금은 국가 운영을 위한 수단이지, 국민의 성취를 빼앗는 수단이 되어서는 안 됩니다." : "People should be able to keep more of their earnings. Taxes fund the state; they should not strip people of the rewards of their work."}</p>
-      <p className="mt-3 text-base leading-7">{ko ? "세금과 사회보험료 부담에 이제 국민이 직접 제동을 걸어야 합니다. 씨앗의 소리는 다음 다섯 가지 개혁을 요구합니다." : "Citizens must have a say in rising taxes and social insurance contributions. SEED Voice calls for five reforms."}</p>
+      <p className="mt-3 text-base leading-7">{ko ? "끝없이 늘어나는 세금과 사회보험료, 이제는 국민이 직접 제동을 걸어야 합니다." : "Citizens must put a brake on rising taxes and social insurance contributions."}</p>
     </header>
     <div className="divide-y divide-green-deep/20">
       {campaignDemands.map((item, index) => <article key={item.source} className="py-6 sm:py-7">
@@ -144,9 +144,8 @@ export default function CampaignSignature() {
     <div className="bg-ivory p-5 sm:p-6">
       <p className="text-lg font-bold leading-8 text-navy">{ko ? "국가의 재정을 위해 국민이 존재하는 것이 아닙니다. 국가가 국민의 삶을 위해 존재해야 합니다." : "People do not exist to serve the state's finances. The state exists to serve people's lives."}</p>
       <p className="mt-4 text-lg font-black leading-8 text-green-deep">{ko ? "증세보다 지출개혁! 과세보다 경제성장! 국가보다 국민의 재산권!" : "Spending reform before tax hikes. Growth before heavier taxation. Put people's property rights first."}</p>
-      <p className="mt-3 text-base leading-7">{ko ? "더 걷기 전에 낭비부터 줄이십시오. 정부와 국회는 증세의 근거, 지출의 성과, 국민이 부담할 비용을 공개해야 합니다." : "Cut waste before collecting more. The government and legislature must disclose the case for tax increases, spending outcomes and the costs citizens will bear."}</p>
     </div>
-    <p className="mt-4 text-sm leading-6 text-charcoal/60">{ko ? "수치 기준: 2026년 10월 확인. 각 항목의 굵은 문장은 이 서명운동의 정책 요구입니다. 사회보험료는 세금과 구별되는 부담입니다." : "Figures checked in October 2026. Bold statements express the campaign's policy demands. Social insurance contributions are distinct from taxes."}</p>
+    <p className="mt-4 text-sm leading-6 text-charcoal/60">{ko ? "수치 기준: 2026년 10월. 최고세율은 전체 소득·재산이 아닌 해당 과세구간 초과분에 적용되며, 지방소득세는 표준세율 기준입니다. 법인세 인상은 2026년 시작 사업연도부터 적용됩니다. 미국 공제는 시민권자·상속세법상 거주자 기준이며 생전 증여와 주별 세금은 별도 고려합니다. 약 200억 원은 환율에 따른 근삿값입니다. 연금 예시는 동일 소득 유지, 지원·감면 전 기준입니다." : "Figures checked in October 2026. Top rates apply to the portion above the relevant taxable threshold, not all income or assets; local tax uses standard rates. The corporate increase applies to tax years beginning in 2026. The US exclusion is for citizens and residents under estate-tax domicile rules; lifetime gifts and state taxes must also be considered. The KRW conversion is approximate. The pension example assumes unchanged assessed income before subsidies or reductions."}</p>
     <div id="campaign-signature-form" className="mt-8 scroll-mt-52 border-t-2 border-green-deep pt-6">
       <h3 className="text-2xl font-black text-green-deep">{ko ? "NO MORE TAX! 지금 서명으로 뜻을 모아주세요." : "NO MORE TAX! Add your signature."}</h3>
       <p className="mt-3 text-base leading-7 text-charcoal/75">{ko ? "위 다섯 가지 개혁 요구에 동의하시면 서명해주세요. 한 줄 의견도 함께 남길 수 있습니다." : "Sign to support these five reform demands. You can also leave a short message."}</p>
