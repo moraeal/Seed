@@ -13,13 +13,13 @@ export default function CivicCollection({ sectionKey }: { sectionKey: CivicSecti
   const lead = sectionKey === "cases" ? getTaxWatchMovementArticles(language)[0] : undefined;
   const listing = articles.filter((article) => article.path !== lead?.path);
   const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Seoul", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
-  return <div className="container-page py-8 sm:py-12">
-    <header className="border-b-2 border-navy pb-6">
+  return <div className={sectionKey === "campaign" ? "container-page pb-8 pt-3 sm:pb-12 sm:pt-4" : "container-page py-8 sm:py-12"}>
+    {sectionKey !== "campaign" && <header className="border-b-2 border-navy pb-6">
       <h1 className="editorial-title text-3xl font-black text-navy sm:text-4xl">{section.title[language]}</h1>
       <p className="mt-3 max-w-3xl text-base leading-7 text-charcoal/70">{section.description[language]}</p>
       <Link to="/civic-life" className="mt-4 inline-block text-sm font-bold text-green-deep hover:underline">{ko ? "← 시민생활" : "← Civic Life"}</Link>
-    </header>
-    {sectionKey === "campaign" && <div className="mt-6"><CampaignSignature /></div>}
+    </header>}
+    {sectionKey === "campaign" && <CampaignSignature />}
     {lead && <div className="mt-6 border-b-2 border-navy pb-8">
     <article className="grid min-w-0 gap-5 lg:grid-cols-2 lg:gap-6">
       <Link to={lead.path}><SafeImage src={lead.image.src} alt={lead.image.alt} className="aspect-[16/9] w-full object-cover" /></Link>
