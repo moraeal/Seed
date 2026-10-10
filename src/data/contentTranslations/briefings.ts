@@ -1,3 +1,4 @@
+import { toyDonationTranslation } from "../toyDonationBriefing";
 import { hotelPlatformTranslation } from "../hotelPlatformBriefing";
 import { leverageEtfTranslation } from "../leverageEtfBriefing";
 import { procurementTaxWatchNoticeTranslation, procurementTaxWatchNoticeSlug } from "../procurementTaxWatchNotice";
@@ -27,6 +28,7 @@ import { monthlyRentCreditExplainerTranslation } from "./briefingMonthlyRentCred
 import { farmlandRetirementTranslation } from "./briefingFarmlandRetirement";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "toy-donation-corporate-citizenship-2026": toyDonationTranslation,
   "wise-civic-life-hotel-platform-reservation-disputes-2026": hotelPlatformTranslation,
   [procurementTaxWatchNoticeSlug]: procurementTaxWatchNoticeTranslation,
   "leveraged-etfs-government-signals-citizen-losses-2026": leverageEtfTranslation,

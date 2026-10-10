@@ -1,3 +1,4 @@
+import { toyDonationBriefing } from "./toyDonationBriefing";
 import { hotelPlatformBriefing } from "./hotelPlatformBriefing";
 import { leverageEtfBriefing } from "./leverageEtfBriefing";
 import { procurementTaxWatchNotice } from "./procurementTaxWatchNotice";
@@ -30,7 +31,7 @@ import { realEstateSupervisorExplainer } from "./realEstateSupervisorExplainer";
 import { monthlyRentCreditExplainer } from "./monthlyRentCreditExplainer";
 import { farmlandRetirementBriefing } from "./farmlandRetirementBriefing";
 
-const allBriefings: Briefing[] = [hotelPlatformBriefing, leverageEtfBriefing, procurementTaxWatchNotice, policyFundRiskBriefing, ktrCampaign, taxWatchCase, civicNotice, pensionReciprocityBriefing, realEstateSupervisorCitizenFreedomBriefing, farmlandRetirementBriefing, realEstateSupervisorExplainer, monthlyRentCreditExplainer, incomeTaxFamilyDeductionBriefing, inheritanceTaxFrozenThresholdBriefing, platformAdvertisingBriefing, northKoreanPowsSouthKoreaBriefing, seojinSchoolNeighborsBriefing, skHynixAiHackathonBriefing, hospitalInheritanceTaxBriefing, activistFundingPressureBriefing, socialSolidarityEconomyLawBriefing, futureResponseFundBriefing, partyDissolutionBriefing, yeosuIslandExpoBriefing, hearingAccountabilityBriefing, socialEconomyFairnessBriefing, socialEconomyBriefing, publicInterestTravelBriefing, publicBroadcastingBriefing, nationalBudgetBriefing, gyeonggiBriefingDisplay, ...briefings];
+const allBriefings: Briefing[] = [toyDonationBriefing, hotelPlatformBriefing, leverageEtfBriefing, procurementTaxWatchNotice, policyFundRiskBriefing, ktrCampaign, taxWatchCase, civicNotice, pensionReciprocityBriefing, realEstateSupervisorCitizenFreedomBriefing, farmlandRetirementBriefing, realEstateSupervisorExplainer, monthlyRentCreditExplainer, incomeTaxFamilyDeductionBriefing, inheritanceTaxFrozenThresholdBriefing, platformAdvertisingBriefing, northKoreanPowsSouthKoreaBriefing, seojinSchoolNeighborsBriefing, skHynixAiHackathonBriefing, hospitalInheritanceTaxBriefing, activistFundingPressureBriefing, socialSolidarityEconomyLawBriefing, futureResponseFundBriefing, partyDissolutionBriefing, yeosuIslandExpoBriefing, hearingAccountabilityBriefing, socialEconomyFairnessBriefing, socialEconomyBriefing, publicInterestTravelBriefing, publicBroadcastingBriefing, nationalBudgetBriefing, gyeonggiBriefingDisplay, ...briefings];
 
 export const getAllBriefingsNewestFirst = () => [...allBriefings].sort((a, b) => {
   const dateOrder = b.date.localeCompare(a.date);
