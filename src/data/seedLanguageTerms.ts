@@ -1,5 +1,6 @@
 /** Display metadata shared by the homepage glossary card and glossary archive. */
 export const seedLanguageTerms: Record<string, { hanja: string; english: string }> = {
+  "증강된 개인": { hanja: "增強된 個人", english: "AUGMENTED INDIVIDUAL" },
   "사회적 대화": { hanja: "社會的 對話", english: "SOCIAL DIALOGUE" },
   역사: { hanja: "歷史", english: "HISTORY" },
   기업시민: { hanja: "企業市民", english: "CORPORATE CITIZENSHIP" },
