@@ -35,6 +35,7 @@ const homeTopicGroups: Record<string, string[]> = {
     "/monitoring/olympic-park-election-protest-tracker",
   ],
   "dmz-mine-blast-2026": [
+    "/columns/chung-dong-young-words-unification-obstacle-2026",
     "/columns/security-pride-vigilance-armed-forces-day-2026",
     "/news/dmz-blast-investigation-timeline-2026",
     "/news/dmz-security-command-failure",
