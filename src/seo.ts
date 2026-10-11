@@ -58,7 +58,21 @@ const latestDate = newest([...newsArticles.map((item) => item.date), ...publicIn
 const staticRoutes: SeoRoute[] = [
   { path: "/tax-watch-cases", title: "세금감시운동 | 씨앗의 소리", description: "세금감시운동의 제안, 사례와 논평을 읽어보세요.", type: "website", lastModified: "2026-10-07" },
   { path: "/civic-life", title: "시민생활 | 씨앗의 소리", description: "일상, 이웃, 일자리, 주거와 건강 등 시민의 생활에 닿는 기사를 모아 읽어보세요.", type: "website", lastModified: "2026-10-03" },
-  ...civicSections.map((section) => ({ path: section.path, title: `${section.title.ko} | 씨앗의 소리`, description: section.description.ko, type: "website" as const, lastModified: section.key === "cases" ? "2026-10-07" : "2026-10-03" })),
+  ...civicSections.map((section): SeoRoute => section.key === "campaign" ? {
+    path: section.path,
+    title: "NO MORE TAX! 증세는 그만! 국민의 재산권을 지켜라! | 씨앗의 소리",
+    description: "국민이 번 돈은 국민의 것입니다. 증세보다 지출개혁! 과세보다 경제성장! 근로소득세·보유세·법인세·상속세·사회보험료 부담을 줄이는 서명운동에 함께해주세요.",
+    type: "website",
+    lastModified: "2026-10-11",
+    image: socialImageUrl("columns", "no-more-tax-increases-civic-declaration-2026", "2026-10-11"),
+    imageAlt: "증세, 더 이상은 안 돼! NO MORE TAX! 캠페인 배너",
+  } : {
+    path: section.path,
+    title: `${section.title.ko} | 씨앗의 소리`,
+    description: section.description.ko,
+    type: "website",
+    lastModified: section.key === "cases" ? "2026-10-07" : "2026-10-03",
+  }),
   {
     path: "/",
     title: SITE_TITLE,
