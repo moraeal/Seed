@@ -1,4 +1,4 @@
-import { type FormEvent, useEffect, useState } from "react";
+import { type FormEvent, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../auth";
 import { useLanguage } from "../i18n";
@@ -6,7 +6,7 @@ import { createComment, loadComments, loadOwnCampaignSignatures, manageCampaignS
 
 import { campaignShortsThumbnail } from "../data/campaignShortsThumbnail";
 
-const campaignShortsUrl = "https://youtube.com/shorts/prPJ9gHpdNI";
+const campaignShortsEmbedUrl = "https://www.youtube-nocookie.com/embed/prPJ9gHpdNI?autoplay=1&playsinline=1";
 
 const signatureSlug = "campaign-no-more-tax-signatures";
 const returnTo = "/civic-campaign#campaign-signature";
@@ -54,6 +54,14 @@ const campaignDemands = [
 export default function CampaignSignature() {
   const { language } = useLanguage();
   const ko = language === "ko";
+  const [shortsPlaying, setShortsPlaying] = useState(false);
+  const [shortsExpanded, setShortsExpanded] = useState(false);
+  const shortsDialog = useRef<HTMLDialogElement>(null);
+  function expandShorts() {
+    setShortsPlaying(true);
+    setShortsExpanded(true);
+    shortsDialog.current?.showModal();
+  }
   const defaultSignature = ko ? "동의합니다" : "I agree.";
   const { user, session, nickname, isVerified, loading } = useAuth();
   const [body, setBody] = useState("");
@@ -141,12 +149,22 @@ export default function CampaignSignature() {
       <p className="mt-2 text-base leading-7">{ko ? "국가가 더 가져가는 것이 아니라, 국민이 더 많이 지킬 수 있어야 합니다. 세금은 국가 운영을 위한 수단이지, 국민의 성취를 빼앗는 수단이 되어서는 안 됩니다." : "People should be able to keep more of their earnings. Taxes fund the state; they should not strip people of the rewards of their work."}</p>
       <p className="mt-3 text-base leading-7">{ko ? "끝없이 늘어나는 세금과 사회보험료, 이제는 국민이 직접 제동을 걸어야 합니다." : "Citizens must put a brake on rising taxes and social insurance contributions."}</p>
         </div>
-        <a href={campaignShortsUrl} target="_blank" rel="noopener noreferrer" className="group mx-auto block w-full max-w-[220px] border-2 border-green-deep bg-navy text-white focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-green-deep" aria-label={ko ? "추가 증세, 아니오! 유튜브 쇼츠 보기 (새 창)" : "Watch the NO MORE TAX YouTube Short (opens in a new tab)"}>
+        <div className="mx-auto w-full max-w-[220px] border-2 border-green-deep bg-navy text-white">
           <div className="relative aspect-[9/16] overflow-hidden">
-            <img src={campaignShortsThumbnail} alt={ko ? "추가 증세, 아니오! 지갑을 지키는 시민의 손" : "No more tax: a citizen protects their wallet"} width="540" height="960" className="h-full w-full object-cover transition-transform duration-200 motion-reduce:transition-none group-hover:scale-[1.03]" />
-            <span aria-hidden="true" className="absolute inset-x-0 bottom-0 flex items-center justify-center gap-2 bg-black/80 px-3 py-3 text-sm font-bold"><svg viewBox="0 0 24 24" className="h-6 w-6 fill-current"><path d="M8 5v14l11-7z" /></svg>{ko ? "쇼츠 영상 보기" : "Watch the Short"}</span>
+            {shortsPlaying && !shortsExpanded ? <iframe src={campaignShortsEmbedUrl} title={ko ? "노모어택스 쇼츠 영상" : "NO MORE TAX campaign Short"} className="h-full w-full border-0" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" /> : <button type="button" onClick={() => setShortsPlaying(true)} className="group block h-full w-full focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-[-4px] focus-visible:outline-white" aria-label={ko ? "페이지 안에서 쇼츠 재생" : "Play the Short on this page"}>
+              <img src={campaignShortsThumbnail} alt={ko ? "추가 증세, 아니오! 지갑을 지키는 시민의 손" : "No more tax: a citizen protects their wallet"} width="540" height="960" className="h-full w-full object-cover transition-transform duration-200 motion-reduce:transition-none group-hover:scale-[1.03]" />
+              <span aria-hidden="true" className="absolute inset-x-0 bottom-0 flex items-center justify-center gap-2 bg-black/80 px-3 py-3 text-sm font-bold"><svg viewBox="0 0 24 24" className="h-6 w-6 fill-current"><path d="M8 5v14l11-7z" /></svg>{ko ? "쇼츠 영상 재생" : "Play the Short"}</span>
+            </button>}
           </div>
-        </a>
+          <button type="button" onClick={expandShorts} className="flex w-full items-center justify-center gap-2 border-t border-white/25 px-3 py-2 text-sm font-bold hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-white" aria-haspopup="dialog"><svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4 fill-none stroke-current" strokeWidth="2"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5" /></svg>{ko ? "확대해서 보기" : "Enlarge video"}</button>
+        </div>
+        <dialog ref={shortsDialog} onClose={() => setShortsExpanded(false)} onClick={event => { if (event.target === event.currentTarget) shortsDialog.current?.close(); }} className="m-auto max-h-[95dvh] w-[min(95vw,520px)] max-w-none overflow-hidden border-0 bg-navy p-0 text-white shadow-2xl backdrop:bg-black/80" aria-labelledby="campaign-shorts-dialog-title">
+          <div className="flex items-center justify-between gap-3 px-4 py-3">
+            <h3 id="campaign-shorts-dialog-title" className="text-sm font-bold">{ko ? "노모어택스 쇼츠" : "NO MORE TAX Short"}</h3>
+            <button type="button" autoFocus onClick={() => shortsDialog.current?.close()} className="border border-white/40 px-3 py-1 text-sm font-bold hover:bg-white/15">{ko ? "닫기" : "Close"}</button>
+          </div>
+          {shortsExpanded && <iframe src={campaignShortsEmbedUrl} title={ko ? "확대된 노모어택스 쇼츠 영상" : "Enlarged NO MORE TAX campaign Short"} className="mx-auto block aspect-[9/16] max-h-[calc(95dvh-60px)] w-full border-0" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" />}
+        </dialog>
       </div>
     </header>
     <div className="divide-y divide-green-deep/20">
