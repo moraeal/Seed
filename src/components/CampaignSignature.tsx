@@ -4,6 +4,10 @@ import { useAuth } from "../auth";
 import { useLanguage } from "../i18n";
 import { createComment, loadComments, loadOwnCampaignSignatures, manageCampaignSignature, type CommentRecord } from "../lib/comments";
 
+import { campaignShortsThumbnail } from "../data/campaignShortsThumbnail";
+
+const campaignShortsUrl = "https://youtube.com/shorts/prPJ9gHpdNI";
+
 const signatureSlug = "campaign-no-more-tax-signatures";
 const returnTo = "/civic-campaign#campaign-signature";
 
@@ -128,12 +132,22 @@ export default function CampaignSignature() {
   return <section id="campaign-signature" className="reading-column mb-8 scroll-mt-52 border-2 border-green-deep bg-white p-5 sm:p-7" aria-labelledby="campaign-signature-title">
     <header className="relative isolate -mx-5 -mt-5 overflow-hidden border-b-2 border-green-deep px-5 pb-7 pt-5 sm:-mx-7 sm:-mt-7 sm:px-7 sm:pt-7">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-cover bg-center opacity-[0.18]" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/civic/no-more-tax-textless-background.webp)` }} />
+      <div className="grid items-center gap-6 md:grid-cols-[minmax(0,1fr)_200px] lg:grid-cols-[minmax(0,1fr)_220px]">
+        <div className="min-w-0">
       <p className="text-sm font-bold tracking-widest text-green-deep">{ko ? "씨앗의 소리 · 국민 재산권 보호 서명운동" : "SEED VOICE · A CAMPAIGN TO PROTECT PROPERTY RIGHTS"}</p>
       <p className="mt-4 text-4xl font-black tracking-tight text-navy sm:text-6xl">NO MORE TAX!</p>
       <h2 id="campaign-signature-title" className="mt-4 text-2xl font-black leading-snug text-green-deep sm:text-3xl">{ko ? "증세는 그만! 국민의 재산권을 지켜라!" : "Stop tax increases. Protect people's property rights."}</h2>
       <p className="mt-5 text-xl font-bold leading-8 text-navy">{ko ? "국민이 번 돈은 국민의 것입니다." : "The money people earn belongs to them."}</p>
       <p className="mt-2 text-base leading-7">{ko ? "국가가 더 가져가는 것이 아니라, 국민이 더 많이 지킬 수 있어야 합니다. 세금은 국가 운영을 위한 수단이지, 국민의 성취를 빼앗는 수단이 되어서는 안 됩니다." : "People should be able to keep more of their earnings. Taxes fund the state; they should not strip people of the rewards of their work."}</p>
       <p className="mt-3 text-base leading-7">{ko ? "끝없이 늘어나는 세금과 사회보험료, 이제는 국민이 직접 제동을 걸어야 합니다." : "Citizens must put a brake on rising taxes and social insurance contributions."}</p>
+        </div>
+        <a href={campaignShortsUrl} target="_blank" rel="noopener noreferrer" className="group mx-auto block w-full max-w-[220px] border-2 border-green-deep bg-navy text-white focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-green-deep" aria-label={ko ? "추가 증세, 아니오! 유튜브 쇼츠 보기 (새 창)" : "Watch the NO MORE TAX YouTube Short (opens in a new tab)"}>
+          <div className="relative aspect-[9/16] overflow-hidden">
+            <img src={campaignShortsThumbnail} alt={ko ? "추가 증세, 아니오! 지갑을 지키는 시민의 손" : "No more tax: a citizen protects their wallet"} width="540" height="960" className="h-full w-full object-cover transition-transform duration-200 motion-reduce:transition-none group-hover:scale-[1.03]" />
+            <span aria-hidden="true" className="absolute inset-x-0 bottom-0 flex items-center justify-center gap-2 bg-black/80 px-3 py-3 text-sm font-bold"><svg viewBox="0 0 24 24" className="h-6 w-6 fill-current"><path d="M8 5v14l11-7z" /></svg>{ko ? "쇼츠 영상 보기" : "Watch the Short"}</span>
+          </div>
+        </a>
+      </div>
     </header>
     <div className="divide-y divide-green-deep/20">
       {campaignDemands.map((item, index) => <article key={item.source} className="py-6 sm:py-7">
