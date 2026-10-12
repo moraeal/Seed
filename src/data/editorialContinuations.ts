@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "column" && slug === "politics-cruel-to-devoted-public-servants-2026") return true;
   if (kind === "briefing" && slug === "toy-donation-corporate-citizenship-2026") return true;
   if (kind === "seed-language" && slug === "augmented-individual-seed-citizenization-2026") return true;
   if (kind === "briefing" && slug === "wise-civic-life-hotel-platform-reservation-disputes-2026") return true;
@@ -514,6 +515,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "politics-cruel-to-devoted-public-servants-2026") return {"ko": {"href": "/columns/prosecution-reform-power-transfer-2026", "title": "검찰개혁은 권력을 옮겨 심는 일이 아니다", "relationship": "수사권과 권력 감시", "reason": "수사기관 재편이 권력을 어떻게 옮기고 시민의 감시를 바꾸는지 이어서 살펴봅니다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"}, "en": {"href": "/columns/prosecution-reform-power-transfer-2026", "title": "Prosecution Reform Is Not About Moving Power Elsewhere", "relationship": "INVESTIGATIVE POWER AND OVERSIGHT", "reason": "Continue with how institutional restructuring moves power and changes civic oversight.", "listHref": "/columns", "listLabel": "All columns"}}[language];
   if (kind === "briefing" && slug === "toy-donation-corporate-citizenship-2026") return language === "ko" ? {"href": "/seed-language/corporate-citizenship-company-and-people", "title": "기업시민 — 회사도 시민이고, 직원도 시민이다", "relationship": "기업시민과 생활 속 실천", "reason": "기업의 책임과 구성원의 자율적인 시민활동이 만나는 씨앗의 관점을 더 살펴봅니다.", "listHref": "/civic-life", "listLabel": "시민생활 전체 보기"} : {"href": "/seed-language/corporate-citizenship-company-and-people", "title": "Corporate Citizenship \u2014 Companies and Employees Both Have Civic Roles", "relationship": "CORPORATE CITIZENSHIP IN EVERYDAY LIFE", "reason": "Explore SEED\u2019s view of corporate responsibility and employees\u2019 autonomous civic action.", "listHref": "/civic-life", "listLabel": "All Civic Life articles"};
   if (kind === "seed-language" && slug === "augmented-individual-seed-citizenization-2026") return freedomContinuation[language];
   if (kind === "briefing" && slug === "wise-civic-life-hotel-platform-reservation-disputes-2026") return language === "ko" ? { href: "/briefings/platform-advertising-cost-small-merchants", title: "팔수록 적자? 플랫폼 광고비는 적절한가", relationship: "플랫폼과 생활의 책임", reason: "숙박 예약의 책임에서 플랫폼과 작은 가게의 거래 조건으로 시선을 넓혀봅니다.", listHref: "/civic-life", listLabel: "시민생활 전체 보기" } : { href: "/briefings/platform-advertising-cost-small-merchants", title: "More Sales, Less Profit? The Cost of Advertising on Delivery Platforms", relationship: "PLATFORMS AND DAILY LIFE", reason: "Continue from accommodation-booking responsibility to the terms platforms offer small merchants.", listHref: "/civic-life", listLabel: "All Civic Life articles" };
