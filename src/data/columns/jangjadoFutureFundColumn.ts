@@ -28,6 +28,15 @@ export const jangjadoFutureFundColumn: SeedColumn = {
     "sourceUrl": "https://www.joongang.co.kr/article/25261144"
   },
   "displayInlineImage": false,
+  "referenceVideo": {
+  "youtubeId": "SqBca3SFoPs",
+  "thumbnailSrc": "images/columns/jangjado-future-fund-2026/tax-waste.webp",
+  "thumbnailAlt": "씨앗의 소리 세금 낭비 해설 영상 재생",
+  "title": "영상으로 보는 세금 낭비와 노모어택스",
+  "description": "장자도 낚시공원과 세금 사용의 문제를 영상으로 함께 살펴봅니다. 재생 버튼을 누르면 기사 안에서 볼 수 있습니다.",
+  "credit": "씨앗의 소리 · YouTube",
+  "afterSection": -1
+},
   "additionalImages": [
     {
       "src": "images/columns/jangjado-future-fund-2026/jangjado-field.webp",

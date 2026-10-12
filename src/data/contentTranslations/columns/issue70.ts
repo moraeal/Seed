@@ -24,6 +24,12 @@ export const issue70: ColumnTranslation = {
       "credit": "AI image"
     }
   ],
+  "referenceVideo": {
+  "thumbnailAlt": "Play SEED VOICE’s video explaining public spending and tax waste",
+  "title": "Tax Waste and No More Tax: Watch the Video",
+  "description": "Watch SEED VOICE’s Korean-language video on Jangjado and the use of taxpayers’ money. Press play to watch within this article.",
+  "credit": "SEED VOICE · YouTube"
+},
   "sections": [
     {
       "title": "",
