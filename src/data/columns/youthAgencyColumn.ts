@@ -120,5 +120,25 @@ export const youthAgencyColumn: SeedColumn = {
       "label": "연합뉴스 · 2022.4.5 · 부산대 조민 의전원 입학 취소 결정과 근거",
       "url": "https://www.yna.co.kr/view/AKR20220405145552051"
     }
+  ],
+  "additionalImages": [
+    {
+      "src": "images/columns/youth-cultural-budget-ko.png",
+      "alt": "청년문화예술패스 예산을 비교한 막대그래프. 2026년 361억 원, 2027년 정부 예산안 7925억 원으로 약 22배 증가.",
+      "caption": "청년문화예술패스 예산 비교. 2027년 수치는 정부 예산안이며 확정·집행액과 구분한다.",
+      "credit": "씨앗의 소리 그래픽 · 동아일보 2026.10.8 보도 기준",
+      "sourceUrl": "https://www.donga.com/news/Politics/article/all/20261008/134805771/2",
+      "afterSection": 0,
+      "contain": true
+    },
+    {
+      "src": "images/columns/youth-study-life-2026.webp",
+      "alt": "도서관에서 책과 노트북으로 공부하고 취업 서류를 살펴보는 청년들",
+      "caption": "청년의 시간은 공부와 실력, 일할 기회를 준비하는 데 쓰인다.",
+      "credit": "AI 이미지",
+      "sourceUrl": "",
+      "afterSection": 3,
+      "contain": true
+    }
   ]
 };

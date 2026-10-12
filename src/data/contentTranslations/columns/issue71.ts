@@ -85,5 +85,19 @@ export const issue71: ColumnTranslation = {
     "DailyMedi · Rationale for graduate-entry medicine and return to undergraduate medical schools",
     "National Assembly Budget Office · FY2011 departmental accounts analysis · Medical program choices and reversion plans",
     "Yonhap · April 5, 2022 · Pusan National University cancels Cho Min’s medical-school admission and explains its grounds"
+  ],
+  "additionalImages": [
+    {
+      "src": "images/columns/youth-cultural-budget-en.png",
+      "alt": "Bar chart comparing the youth cultural pass budget: KRW 36.1 billion in 2026 and a proposed KRW 792.5 billion in 2027, approximately a 22-fold increase.",
+      "caption": "Youth cultural pass budget comparison. The 2027 figure is a government proposal, not an approved or disbursed amount.",
+      "credit": "SEED VOICE graphic · Dong-A Ilbo reporting, October 8, 2026"
+    },
+    {
+      "src": "images/columns/youth-study-life-2026.webp",
+      "alt": "Young adults study with books and laptops and review job application papers in a library",
+      "caption": "Young people invest their time in learning, developing skills and preparing for work.",
+      "credit": "AI image"
+    }
   ]
 };
