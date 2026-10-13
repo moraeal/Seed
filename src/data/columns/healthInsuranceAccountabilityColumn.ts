@@ -14,17 +14,17 @@ export const healthInsuranceAccountabilityColumn: SeedColumn = {
   "readMinutes": 6,
   "summary": "중국인 지역가입자의 반복 적자, 수백억 원의 통계 오류, 외국인·재외국민 보험료 477억 원 결손처분. 관리의 허점을 줄이지 못한 채 지출을 확대할 때 비용은 누구에게 돌아가는가.",
   "heroImage": {
-    "src": "images/columns/health-insurance-accountability-2026.png",
-    "alt": "재정 장부의 붉은 결손 구간 아래로 동전이 빠져나가는 모습을 표현한 그래픽",
+    "src": "images/columns/health-insurance-accountability-2026-v2.webp",
+    "alt": "병원 대기공간을 배경으로 찢어진 재정 장부 사이로 동전이 빠져나가는 상징적 장면",
     "caption": "반복 적자, 통계 오류, 미징수 보험료는 각각 다른 문제다. 재정 관리의 책임은 구체적인 숫자로 확인된다.",
-    "credit": "씨앗의 소리 그래픽",
+    "credit": "AI 이미지",
     "sourceUrl": ""
   },
   "inlineImage": {
-    "src": "images/columns/health-insurance-accountability-2026.png",
-    "alt": "재정 장부의 붉은 결손 구간 아래로 동전이 빠져나가는 모습을 표현한 그래픽",
+    "src": "images/columns/health-insurance-accountability-2026-v2.webp",
+    "alt": "병원 대기공간을 배경으로 찢어진 재정 장부 사이로 동전이 빠져나가는 상징적 장면",
     "caption": "반복 적자, 통계 오류, 미징수 보험료는 각각 다른 문제다. 재정 관리의 책임은 구체적인 숫자로 확인된다.",
-    "credit": "씨앗의 소리 그래픽",
+    "credit": "AI 이미지",
     "sourceUrl": ""
   },
   "displayInlineImage": false,

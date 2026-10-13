@@ -6,14 +6,14 @@ export const issue73: ColumnTranslation = {
   "author": "Small Seed",
   "summary": "Recurring deficits among Chinese regional subscribers, major statistical corrections and KRW 47.7 billion in premiums written off for foreign and overseas Korean nationals raise a question: who pays when spending expands before management failures are reduced?",
   "heroImage": {
-    "alt": "Editorial graphic of coins slipping through a red gap in a public-finance ledger",
+    "alt": "Symbolic scene of coins slipping through a torn financial ledger with a hospital waiting area in the background",
     "caption": "Recurring deficits, statistical errors and uncollected premiums are distinct problems. Accountability is tested against specific figures.",
-    "credit": "SEED VOICE graphic"
+    "credit": "AI image"
   },
   "inlineImage": {
-    "alt": "Editorial graphic of coins slipping through a red gap in a public-finance ledger",
+    "alt": "Symbolic scene of coins slipping through a torn financial ledger with a hospital waiting area in the background",
     "caption": "Recurring deficits, statistical errors and uncollected premiums are distinct problems. Accountability is tested against specific figures.",
-    "credit": "SEED VOICE graphic"
+    "credit": "AI image"
   },
   "additionalImages": [
   {
