@@ -1,5 +1,6 @@
 /** Display metadata shared by the homepage glossary card and glossary archive. */
 export const seedLanguageTerms: Record<string, { hanja: string; english: string }> = {
+  "기본소득": { hanja: "基本所得", english: "BASIC INCOME" },
   "증강된 개인": { hanja: "增強된 個人", english: "AUGMENTED INDIVIDUAL" },
   "사회적 대화": { hanja: "社會的 對話", english: "SOCIAL DIALOGUE" },
   역사: { hanja: "歷史", english: "HISTORY" },
