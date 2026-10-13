@@ -330,8 +330,11 @@ button, input, textarea { font: inherit; }
   overflow-wrap: anywhere;
 }
 @media (max-width: 639px) {
-  .article-detail-title, .article-detail-title-dark { line-height: 1.35; letter-spacing: -.015em; }
-  .article-summary, .article-detail-subtitle { font-size: 1.0625rem; line-height: 1.7; }
+  /* Mobile defaults: 16px body, with the existing larger choices at 18px/20px. */
+  .reading-surface .article-copy,
+  .reading-surface article p:not(.section-kicker):not([class*="text-xs"]):not([class*="text-[10px]"]):not([class*="text-[11px]"]):not([class*="text-[12px]"]):not([class*="text-[13px]"]) { font-size: calc(var(--reading-font-size, 1.125rem) - .125rem); }
+  .article-detail-title, .article-detail-title-dark { font-size: 1.5rem; line-height: 1.35; letter-spacing: -.015em; }
+  .article-summary, .article-detail-subtitle { font-size: 1rem; line-height: 1.7; }
   .article-section-title { font-size: 1.375rem; line-height: 1.45; }
   .home-lead-summary, .home-compact-summary { font-size: 1rem; line-height: 1.7; color: #454a4e; }
   /* Keep the two-line box and painted text aligned at mobile font sizes. */
@@ -352,7 +355,7 @@ button, input, textarea { font: inherit; }
   .home-page time, .home-page .text-link, .section-kicker { font-size: .875rem; letter-spacing: .04em; }
   .reading-surface article :is(.text-xs, [class*="text-[10px]"], [class*="text-[11px]"], [class*="text-[12px]"], [class*="text-[13px]"]) { font-size: .875rem; line-height: 1.65; }
   .reading-surface figcaption, .reading-surface figcaption span, .reading-surface figcaption a { font-size: .875rem; line-height: 1.65; overflow-wrap: anywhere; }
-  .reading-surface article :is(.reading-column, .article-section) :is(p, li):not(.section-kicker):not(.text-xs):not([class*="text-[10px]"]):not([class*="text-[11px]"]):not([class*="text-[12px]"]) { font-size: var(--reading-font-size, 1.125rem); line-height: 1.78; }
+  .reading-surface article :is(.reading-column, .article-section) :is(p, li):not(.section-kicker):not(.text-xs):not([class*="text-[10px]"]):not([class*="text-[11px]"]):not([class*="text-[12px]"]) { font-size: calc(var(--reading-font-size, 1.125rem) - .125rem); line-height: 1.78; }
   .reading-surface .reading-column:is(section, aside) { padding-left: 1rem; padding-right: 1rem; }
   /* Reserve bottom space for the always-visible character. */
   .reading-surface { padding-bottom: 10rem; }
