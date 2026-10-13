@@ -165,6 +165,21 @@ button, input, textarea { font: inherit; }
 
 .editorial-title { font-family: Georgia, "Noto Serif KR", "Nanum Myeongjo", serif; letter-spacing: -0.035em; }
 
+/* Mobile headline rule: wrap at word spaces or after punctuation, never
+ * between Korean syllables. Keep commas/closing quotes on the preceding line.
+ * Only a single token wider than the whole container may use emergency wrapping.
+ * Shared by homepage cards, category listings and article detail headings. */
+@media (max-width: 767px) {
+  main :is(h1, h2, h3, h4, h5, h6),
+  main :is(h1, h2, h3, h4, h5, h6) :is(a, span),
+  main :is(.editorial-title, .article-detail-title, .article-detail-title-dark) {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    line-break: strict;
+    hyphens: none;
+  }
+}
+
 /* 메인페이지는 제목을 고딕으로 통일하고, 카드 밀도에 따라 두 단계의 소개문 규칙만 사용합니다. */
 .home-page .editorial-title {
   font-family: Pretendard, "Noto Sans KR", ui-sans-serif, system-ui, sans-serif;
