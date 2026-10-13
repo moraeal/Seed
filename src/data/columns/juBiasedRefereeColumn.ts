@@ -30,6 +30,14 @@ export const juBiasedRefereeColumn: SeedColumn = {
   "displayInlineImage": false,
   "additionalImages": [
     {
+      "afterSection": 2,
+      "src": "images/columns/ju-business-workshop-documentary-2026.webp",
+      "alt": "한국 제조업 작업장에서 생산직 직원과 품질 담당자, 협력업체 관계자가 가공 부품과 납품을 함께 확인하는 모습",
+      "caption": "기업의 투자와 협력업체의 주문, 현장의 일자리는 서로 연결돼 있다.",
+      "credit": "AI 이미지",
+      "sourceUrl": ""
+    },
+    {
       "afterSection": 1,
       "src": "images/columns/ju-regulation-logic-2026-ko.png",
       "alt": "기업이 성장하면 규제 덕분, 규제 효과가 부족하면 규제 강화로 이어지는 논리에 대한 씨앗의 비판을 정리한 도해",

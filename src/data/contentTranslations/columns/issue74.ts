@@ -17,6 +17,12 @@ export const issue74: ColumnTranslation = {
   },
   "additionalImages": [
     {
+      "src": "images/columns/ju-business-workshop-documentary-2026.webp",
+      "alt": "A production worker, quality engineer and supplier representative examine machined parts and a shipment in a Korean manufacturing workshop",
+      "caption": "Business investment, supplier orders and jobs on the factory floor are connected.",
+      "credit": "AI image"
+    },
+    {
       "src": "images/columns/ju-regulation-logic-2026-en.png",
       "alt": "Diagram of SEED VOICE’s critique: business growth is credited to regulation, while weak regulatory results are used to call for stronger rules",
       "caption": "Growth under regulation does not establish that regulation caused it. Regulatory costs and the case for reducing rules also need evaluation.",
