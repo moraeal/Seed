@@ -1,3 +1,6 @@
+import { teenAiProtectionCommentary } from "./teenAiProtectionCommentary";
+import { teenAiUseExplainer } from "./teenAiUseExplainer";
+import { teenAiUseExplainerTranslation } from "./contentTranslations/teenAiUseExplainer";
 import { futureFundControlArticle } from "./futureFundControlArticle";
 import type { Language } from "../i18n";
 import type { WatchSide } from "../components/WatchPairRow";
@@ -85,6 +88,8 @@ export function getIssueWatchRows(language: Language) {
 export function getCivicWatchFeed(language: Language, bills: LegislativeBill[] = []): CivicWatchItem[] {
   const ko = language === "ko";
   const items: CivicWatchItem[] = [
+    { key: `legislation-${teenAiUseExplainer.slug}`, category: "legislation", date: teenAiUseExplainer.date, to: `/briefings/${teenAiUseExplainer.slug}`, title: ko ? teenAiUseExplainer.title : teenAiUseExplainerTranslation.title, summary: ko ? teenAiUseExplainer.summary : teenAiUseExplainerTranslation.summary, status: ko ? "입법안 해설" : "Bill explainer" },
+    { key: `legislation-${teenAiProtectionCommentary.slug}`, category: "legislation", date: teenAiProtectionCommentary.date, to: `/monitoring/legislation/commentary/${teenAiProtectionCommentary.slug}`, title: teenAiProtectionCommentary.editions[language].title, summary: teenAiProtectionCommentary.editions[language].summary, status: ko ? "입법감시 논평" : "Legislative commentary" },
     { key: `legislation-${futureFundControlArticle.slug}`, category: "legislation", date: futureFundControlArticle.date, to: `/monitoring/legislation/commentary/${futureFundControlArticle.slug}`, title: futureFundControlArticle.editions[language].title, summary: futureFundControlArticle.editions[language].summary, status: ko ? "입법·세금감시 기사" : "Legislative & tax watch" },
     ...getIssueWatchRows(language).map((row) => {
       const record = publicInterestWatchCases.find((item) => item.slug === row.slug);

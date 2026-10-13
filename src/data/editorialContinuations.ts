@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "briefing" && slug === "teen-ai-use-bill-2221842-explained") return true;
   if (kind === "column" && slug === "politics-cruel-to-devoted-public-servants-2026") return true;
   if (kind === "briefing" && slug === "toy-donation-corporate-citizenship-2026") return true;
   if (kind === "seed-language" && slug === "augmented-individual-seed-citizenization-2026") return true;
@@ -515,6 +516,19 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "briefing" && slug === "teen-ai-use-bill-2221842-explained") return language === "ko" ? {
+    href: "/monitoring/legislation/commentary/teen-ai-protection-choice-not-control-2026",
+    title: "AI 이용시간 표시, 청소년 보호는 선택권을 넓히는가",
+    relationship: "같은 법안의 씨앗 논평",
+    reason: "법안의 제안을 확인했다면, 개인정보·학습 기회·기업 부담을 평가하는 논평으로 이어집니다.",
+    listHref: "/monitoring/legislation", listLabel: "입법감시 전체 보기",
+  } : {
+    href: "/monitoring/legislation/commentary/teen-ai-protection-choice-not-control-2026",
+    title: "AI Usage Notices: Does Teen Protection Expand Choice?",
+    relationship: "COMPANION COMMENTARY",
+    reason: "Continue with the implications for privacy, learning opportunities and business costs.",
+    listHref: "/monitoring/legislation", listLabel: "All Legislative Watch articles",
+  };
   if (kind === "column" && slug === "politics-cruel-to-devoted-public-servants-2026") return {"ko": {"href": "/columns/prosecution-reform-power-transfer-2026", "title": "검찰개혁은 권력을 옮겨 심는 일이 아니다", "relationship": "수사권과 권력 감시", "reason": "수사기관 재편이 권력을 어떻게 옮기고 시민의 감시를 바꾸는지 이어서 살펴봅니다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"}, "en": {"href": "/columns/prosecution-reform-power-transfer-2026", "title": "Prosecution Reform Is Not About Moving Power Elsewhere", "relationship": "INVESTIGATIVE POWER AND OVERSIGHT", "reason": "Continue with how institutional restructuring moves power and changes civic oversight.", "listHref": "/columns", "listLabel": "All columns"}}[language];
   if (kind === "briefing" && slug === "toy-donation-corporate-citizenship-2026") return language === "ko" ? {"href": "/seed-language/corporate-citizenship-company-and-people", "title": "기업시민 — 회사도 시민이고, 직원도 시민이다", "relationship": "기업시민과 생활 속 실천", "reason": "기업의 책임과 구성원의 자율적인 시민활동이 만나는 씨앗의 관점을 더 살펴봅니다.", "listHref": "/civic-life", "listLabel": "시민생활 전체 보기"} : {"href": "/seed-language/corporate-citizenship-company-and-people", "title": "Corporate Citizenship \u2014 Companies and Employees Both Have Civic Roles", "relationship": "CORPORATE CITIZENSHIP IN EVERYDAY LIFE", "reason": "Explore SEED\u2019s view of corporate responsibility and employees\u2019 autonomous civic action.", "listHref": "/civic-life", "listLabel": "All Civic Life articles"};
   if (kind === "seed-language" && slug === "augmented-individual-seed-citizenization-2026") return freedomContinuation[language];

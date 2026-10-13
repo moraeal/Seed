@@ -4,6 +4,7 @@ import { hotIssueColumnTrackerSlugs } from "./columns";
 // articles and tracker routes here when publishing them. Unlisted routes
 // remain their own topics, so broad categories do not hide unrelated work.
 const homeTopicGroups: Record<string, string[]> = {
+  "teen-ai-use-2026": ["/briefings/teen-ai-use-bill-2221842-explained", "/monitoring/legislation/commentary/teen-ai-protection-choice-not-control-2026", "/monitoring/legislation/bill-2221842"],
   "imported-eggs-procurement-2026": ["/monitoring/tax/commentary/imported-eggs-hidden-taxpayer-cost-2026", "/monitoring/tax/imported-eggs-procurement-budget-data-2026"],
   "lh-unsold-housing-2026": ["/monitoring/tax/lh-unsold-housing-purchase-commitment-2026", "/monitoring/tax/commentary/lh-unsold-housing-public-cost-2026"],
   "banking-privacy-ai-hacking-2026": ["/news/privacy-leaks-ai-security-accountability-2026", "/monitoring/banking-privacy-ai-hacking-tracker-2026"],

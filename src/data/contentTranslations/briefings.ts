@@ -1,3 +1,4 @@
+import { teenAiUseExplainerTranslation } from "./teenAiUseExplainer";
 import { toyDonationTranslation } from "../toyDonationBriefing";
 import { hotelPlatformTranslation } from "../hotelPlatformBriefing";
 import { leverageEtfTranslation } from "../leverageEtfBriefing";
@@ -28,6 +29,7 @@ import { monthlyRentCreditExplainerTranslation } from "./briefingMonthlyRentCred
 import { farmlandRetirementTranslation } from "./briefingFarmlandRetirement";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "teen-ai-use-bill-2221842-explained": teenAiUseExplainerTranslation,
   "toy-donation-corporate-citizenship-2026": toyDonationTranslation,
   "wise-civic-life-hotel-platform-reservation-disputes-2026": hotelPlatformTranslation,
   [procurementTaxWatchNoticeSlug]: procurementTaxWatchNoticeTranslation,
