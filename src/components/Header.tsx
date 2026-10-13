@@ -95,7 +95,9 @@ export default function Header() {
   };
 
   const renderSearchControl = (mobile = false) => {
-    if (isContentDetail) {
+    // The mobile magnifier always searches the site, including from an article.
+    // Article-only find remains explicitly named in the mobile menu below.
+    if (isContentDetail && !mobile) {
       return (
         <button
           type="button"
@@ -117,7 +119,7 @@ export default function Header() {
         className={mobile
           ? "grid size-9 place-items-center rounded-md text-green-deep transition hover:bg-green-pale"
           : "inline-flex min-h-8 items-center gap-1.5 px-2 text-[11px] font-extrabold text-charcoal/62 transition hover:text-green-deep"}
-        aria-label={ko ? "콘텐츠 검색" : "Search content"}
+        aria-label={ko ? "통합검색" : "Search all articles"}
       >
         <Search size={mobile ? 18 : 15}/>{!mobile && <span>{ko ? "검색" : "Search"}</span>}
       </Link>
@@ -175,6 +177,8 @@ export default function Header() {
           <div id="mobile-main-menu" className="border-t border-[#e8dcae] bg-[#eff8f4] px-5 py-4 shadow-[0_12px_24px_rgba(17,43,37,.08)] xl:hidden">
             <nav className="container-page grid sm:grid-cols-2 sm:gap-x-5">{nav.map((item) => renderNavItem(item, true))}</nav>
             <div className="container-page mt-4 flex flex-wrap gap-2">
+              <Link to="/search" onClick={() => setOpen(false)} className="button-secondary"><Search size={15}/>{ko ? "전체 기사 검색" : "Search all articles"}</Link>
+              {isContentDetail && <button type="button" onClick={() => { setOpen(false); setFindOpen(true); }} className="button-secondary"><Search size={15}/>{ko ? "이 글에서 찾기" : "Find in this article"}</button>}
               {user ? (
                 <>
                   {(user.app_metadata?.seed_role === "author" || user.app_metadata?.seed_role === "owner") && <Link to="/writer" onClick={() => setOpen(false)} className="button-primary"><PenLine size={15}/>{ko ? "필자 집필실" : "Writers' room"}</Link>}
