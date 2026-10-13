@@ -44,6 +44,9 @@ export function getCivicSectionForArticle(path: string) {
 // suitable stories here in the same publishing update, regardless of category.
 export const civicLifeArticlePaths = [
   "/seed-language/basic-income-universal-payments-public-cost-2026",
+  "/monitoring/tax/commentary/imported-eggs-hidden-taxpayer-cost-2026",
+  "/monitoring/tax/imported-eggs-procurement-budget-data-2026",
+
   "/columns/politics-cruel-to-devoted-public-servants-2026",
   "/briefings/toy-donation-corporate-citizenship-2026",
   "/seed-language/augmented-individual-seed-citizenization-2026",

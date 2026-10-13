@@ -1,3 +1,4 @@
+import { importedEggsPolicy } from "./importedEggsTax2026";
 import { lhUnsoldHousingPolicy } from "./lhUnsoldHousing2026";
 import { virtualAssetTaxPolicy } from "./virtualAssetTaxPolicy";
 
@@ -51,6 +52,7 @@ const taxExpenditureBasicPlan = "https://eiec.kdi.re.kr/policy/materialView.do?n
 const naboTaxExpenditureReview = "https://www.nabo.go.kr/ko/periodical/focusView.do?idx=9236&key=2507040015";
 
 export const taxPolicies: TaxPolicy[] = [
+  importedEggsPolicy,
   lhUnsoldHousingPolicy,
   virtualAssetTaxPolicy,
   {
