@@ -66,8 +66,9 @@ export default function ArticleReadingAccess({ children }: { children: ReactNode
   const ko = language === "ko";
   const returnTo = encodeURIComponent(pathname);
   return (
+    <ReadingTools>
     <article className="bg-paper pb-20">
-      <div className="border-b border-green-deep/15 bg-ivory py-10 sm:py-14">
+      <div className="border-b border-green-deep/15 bg-ivory py-4 sm:py-5">
         <div className="container-page max-w-5xl">
           <p className="section-kicker">{ko ? "기사 미리보기" : "ARTICLE PREVIEW"}</p>
           <h1 className="article-detail-title mt-3">{preview?.title.replace(/ \| .*$/, "") ?? (ko ? "기사 미리보기" : "Article preview")}</h1>
@@ -93,5 +94,6 @@ export default function ArticleReadingAccess({ children }: { children: ReactNode
         </div>
       </section>
     </article>
+    </ReadingTools>
   );
 }

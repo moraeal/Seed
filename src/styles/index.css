@@ -85,7 +85,9 @@
   .seed-nudge-walking, .seed-nudge-card { animation: none; }
 }
 
-:root { font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; overflow-x: clip; }
+/* Keep SNS in-app browsers from inflating text independently of the mobile layout.
+ * Pinch zoom and the article\'s explicit text-size controls remain available. */
+:root { -webkit-text-size-adjust: none; text-size-adjust: none; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; overflow-x: clip; }
 * { box-sizing: border-box; }
 body { margin: 0; background: #fffdf7; color: #252a2e; overflow-x: clip; }
 button, input, textarea { font: inherit; }
