@@ -20,7 +20,6 @@ export const basicIncomeArticleKo: SeedLanguageArticle = {
   date: "2026-10-13",
   readMinutes: 10,
   newsletterEligible: false,
-  homeHeroEligible: false,
   title: "기본소득, ‘모두에게’라는 말이 가리는 것",
   subtitle: "생계의 안전판과 전 국민에게 돈을 나눠주는 정책은 다르다",
   summary: "씨앗은 기본소득을 시민 전체의 부담으로 유지되는 재정 약속으로 본다. 진보 내부에서도 일괄 지급이 가장 어려운 사람의 보호를 약화할 수 있다는 비판이 나왔다. 지급의 확대보다 비용·효과와 중단 가능한 실험을 먼저 살핀다.",
