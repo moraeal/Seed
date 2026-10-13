@@ -318,9 +318,19 @@ export default function Home() {
     .sort((a, b) => b.date.localeCompare(a.date));
 
   const commentaryItems = claimUnseen(commentaryCandidates, (item) => item.to, claimedHomePaths, 3);
-  // The column desk always leads with its newest published column.
-  // Top-page selections and other desks must not replace this editorial order.
-  const journalColumns = allJournalColumns.slice(0, 5)
+  // Fill the column desk in publication order with articles not already shown.
+  // Filter before limiting so occupied slots are replaced by the next columns.
+  const columnExcludedPaths = new Set([
+    ...upperArticlePaths,
+    ...recentCivicWatchItems.map((item) => item.to),
+    ...commentaryItems.map((item) => item.to),
+  ]);
+  const journalColumns = allJournalColumns.filter((column) => {
+    const path = `/columns/${column.slug}`;
+    if (columnExcludedPaths.has(path)) return false;
+    columnExcludedPaths.add(path);
+    return true;
+  }).slice(0, 5)
     .map((column) => ({ ...column, to: `/columns/${column.slug}` }));
   const voiceLeadColumn = journalColumns[0];
   const voiceListColumns = journalColumns.slice(1);
