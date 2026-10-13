@@ -1,4 +1,4 @@
-import { ArticleSources } from "../components/ArticleCitations";
+import { ArticleSources, ArticleText } from "../components/ArticleCitations";
 import { createArticleCitations } from "../lib/articleCitations";
 import {
   ArrowLeft,
@@ -179,9 +179,9 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
                               <span>{ko ? "통합 설명과 근거 보기" : "Open explanation and evidence"}</span>
                               <ChevronDown size={17} className="transition group-open:rotate-180"/>
                             </summary>
-                            <p className="mt-3 text-sm leading-7 text-charcoal/68 sm:text-[15px]">{t(entry.description)}</p>
+                            <p className="mt-3 text-sm leading-7 text-charcoal/68 sm:text-[15px]"><ArticleText text={t(entry.description)} citations={citations}/></p>
                           </details>
-                        ) : <p className="mt-2 text-sm leading-7 text-charcoal/68 sm:text-[15px]">{t(entry.description)}</p>}
+                        ) : <p className="mt-2 text-sm leading-7 text-charcoal/68 sm:text-[15px]"><ArticleText text={t(entry.description)} citations={citations}/></p>}
                       </div>
 
                       {!!entry.sources?.length && (() => {
@@ -233,7 +233,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
             <div className="border-b border-green-deep/12 bg-navy px-5 py-5 text-white sm:px-7">
               <span className="text-[10px] font-black tracking-[.16em] text-gold">CURRENT STATUS</span>
               <h2 id="snapshot-title" className="mt-1.5 text-2xl font-extrabold">{ko ? "30초로 보는 현재 상황" : "The situation in 30 seconds"}</h2>
-              <p className="mt-3 max-w-4xl text-sm font-semibold leading-7 text-white/82 sm:text-base">{t(item.snapshot.conclusion)}</p>
+              <p className="mt-3 max-w-4xl text-sm font-semibold leading-7 text-white/82 sm:text-base"><ArticleText text={t(item.snapshot.conclusion)} citations={citations}/></p>
             </div>
             <div className="grid gap-px bg-green-deep/12 lg:grid-cols-[1.15fr_.85fr]">
               <div className="bg-white p-5 sm:p-7">
@@ -242,7 +242,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
                   {item.snapshot.keyFacts.map((fact, index) => (
                     <li key={index} className="grid grid-cols-[2rem_1fr] gap-3">
                       <span className="grid size-7 place-items-center rounded-full bg-green-pale text-xs font-black text-green-deep">{index + 1}</span>
-                      <p className="text-sm font-semibold leading-6 text-charcoal/72">{t(fact)}</p>
+                      <p className="text-sm font-semibold leading-6 text-charcoal/72"><ArticleText text={t(fact)} citations={citations}/></p>
                     </li>
                   ))}
                 </ol>
@@ -251,7 +251,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
                 <h3 className="text-sm font-black text-red-700">{ko ? "계속 확인할 사안" : "STILL BEING TRACKED"}</h3>
                 <ul className="mt-4 space-y-3">
                   {item.snapshot.tracking.map((entry, index) => (
-                    <li key={index} className="flex gap-3 text-sm leading-6 text-charcoal/68"><Clock3 className="mt-1 shrink-0 text-red-700" size={14}/><span>{t(entry)}</span></li>
+                    <li key={index} className="flex gap-3 text-sm leading-6 text-charcoal/68"><Clock3 className="mt-1 shrink-0 text-red-700" size={14}/><span><ArticleText text={t(entry)} citations={citations}/></span></li>
                   ))}
                 </ul>
               </div>
@@ -264,7 +264,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
             <CalendarClock className="text-gold" size={25}/>
             <div>
               <span className="text-[10px] font-black tracking-[.16em] text-gold">{ko ? "다음 확인" : "NEXT CHECK"}</span>
-              <p className="mt-2 text-sm font-semibold leading-7 text-white/85 sm:text-base">{t(item.nextCheck)}</p>
+              <p className="mt-2 text-sm font-semibold leading-7 text-white/85 sm:text-base"><ArticleText text={t(item.nextCheck)} citations={citations}/></p>
             </div>
           </aside>
         )}
@@ -287,7 +287,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
                   </div>
                   <div className="mt-4 border-l-4 border-green-deep bg-green-pale/45 p-4">
                     <span className="text-[10px] font-black tracking-[.12em] text-green-deep">{ko ? "현재 판단" : "CURRENT ASSESSMENT"}</span>
-                    <p className="mt-1.5 text-sm leading-7 text-charcoal/72">{t(issue.assessment)}</p>
+                    <p className="mt-1.5 text-sm leading-7 text-charcoal/72"><ArticleText text={t(issue.assessment)} citations={citations}/></p>
                   </div>
                   <details className="group mt-4 border-t border-green-deep/10 pt-3">
                     <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-extrabold text-green-deep">
@@ -295,8 +295,8 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
                       <ChevronDown size={17} className="transition group-open:rotate-180"/>
                     </summary>
                     <div className="mt-4 space-y-4 text-sm leading-7 text-charcoal/68">
-                      <div><strong className="block text-xs text-red-700">{ko ? "제기된 주장" : "CLAIM"}</strong><p className="mt-1">{t(issue.claim)}</p></div>
-                      <div><strong className="block text-xs text-amber-800">{ko ? "당사자 해명" : "RESPONSE"}</strong><p className="mt-1">{t(issue.response)}</p></div>
+                      <div><strong className="block text-xs text-red-700">{ko ? "제기된 주장" : "CLAIM"}</strong><p className="mt-1"><ArticleText text={t(issue.claim)} citations={citations}/></p></div>
+                      <div><strong className="block text-xs text-amber-800">{ko ? "당사자 해명" : "RESPONSE"}</strong><p className="mt-1"><ArticleText text={t(issue.response)} citations={citations}/></p></div>
                     </div>
                   </details>
                 </article>
@@ -311,7 +311,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
               <span className="flex items-center gap-3"><CalendarClock className="text-gold" size={23}/><span><span className="block text-[10px] font-black tracking-[.16em] text-gold">NEXT CHECK</span><strong className="mt-1 block text-lg">{ko ? "앞으로 확인할 세부 항목" : "Detailed follow-up checklist"}</strong></span></span>
               <ChevronDown size={20} className="shrink-0 transition group-open:rotate-180"/>
             </summary>
-            <div className="border-t border-white/15 px-5 py-5 sm:px-6"><p className="text-sm font-semibold leading-7 text-white/82">{t(item.nextCheck)}</p></div>
+            <div className="border-t border-white/15 px-5 py-5 sm:px-6"><p className="text-sm font-semibold leading-7 text-white/82"><ArticleText text={t(item.nextCheck)} citations={citations}/></p></div>
           </details>
         )}
 
@@ -357,7 +357,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
               {item.confirmedFacts.map((fact, index) => (
                 <li key={index} className="grid grid-cols-[1.5rem_1fr] gap-3 py-4">
                   <CircleDot className="mt-1 text-green-deep" size={15}/>
-                  <p className="text-sm leading-7 text-charcoal/70">{t(fact)}</p>
+                  <p className="text-sm leading-7 text-charcoal/70"><ArticleText text={t(fact)} citations={citations}/></p>
                 </li>
               ))}
             </ul>
@@ -373,12 +373,12 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
                 {controversies.map((issue, index) => (
                   <article key={index} className="border-l-4 border-gold bg-white p-5">
                     <h3 className="text-base font-extrabold leading-6 text-navy">{t(issue.title)}</h3>
-                    <p className="mt-2 text-sm leading-7 text-charcoal/68">{t(issue.description)}</p>
+                    <p className="mt-2 text-sm leading-7 text-charcoal/68"><ArticleText text={t(issue.description)} citations={citations}/></p>
                   </article>
                 ))}
                 {openQuestions.map((question, index) => (
                   <article key={`question-${index}`} className="border-l-4 border-gold bg-white p-5">
-                    <p className="text-sm leading-7 text-charcoal/68">{t(question)}</p>
+                    <p className="text-sm leading-7 text-charcoal/68"><ArticleText text={t(question)} citations={citations}/></p>
                   </article>
                 ))}
               </div>
@@ -396,7 +396,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
               {item.followUpChecks.map((entry, index) => (
                 <li key={index} className="grid grid-cols-[2rem_1fr] gap-3 border border-red-700/15 bg-white p-5">
                   <span className="text-sm font-black text-red-700">{String(index + 1).padStart(2, "0")}</span>
-                  <p className="text-sm leading-7 text-charcoal/70">{t(entry)}</p>
+                  <p className="text-sm leading-7 text-charcoal/70"><ArticleText text={t(entry)} citations={citations}/></p>
                 </li>
               ))}
             </ul>

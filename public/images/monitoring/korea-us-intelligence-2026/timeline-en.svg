@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="840" viewBox="0 0 1400 840">
+<rect width="1400" height="840" fill="#fffdf7"/>
+<style>text{font-family:Pretendard,Noto Sans KR,Arial,sans-serif;fill:#102e38}.title{font-size:44px;font-weight:700}.label{font-size:30px;font-weight:600}.note{font-size:24px;fill:#56666a}.date{font-size:24px;font-weight:600;fill:#176346}</style>
+<text x="65" y="88" class="title">From the remarks to restoration: the remaining gap</text>
+<line x1="232" y1="164" x2="232" y2="691" stroke="#176346" stroke-width="4"/>
+<circle cx="232" cy="190" r="12" fill="#176346"/>
+<text x="58" y="198" class="date">MAR 06</text>
+<text x="280" y="195" class="label">Minister publicly names Kusong</text>
+<text x="280" y="236" class="note">Remark date, distinct from restrictions</text>
+<circle cx="232" cy="302" r="12" fill="#176346"/>
+<text x="58" y="310" class="date">EARLY APR</text>
+<text x="280" y="307" class="label">Partial restrictions reportedly begin</text>
+<text x="280" y="348" class="note">As reported on April 21</text>
+<circle cx="232" cy="414" r="12" fill="#176346"/>
+<text x="58" y="422" class="date">LATE JUN</text>
+<text x="280" y="419" class="label">Reported NIS exclusion from cyber meeting</text>
+<text x="280" y="460" class="note">Event timing; reported October 8</text>
+<circle cx="232" cy="526" r="12" fill="#176346"/>
+<text x="58" y="534" class="date">OCT 08</text>
+<text x="280" y="531" class="label">Some restrictions acknowledged</text>
+<text x="280" y="572" class="note">Joint Chiefs; NIS says no misunderstanding</text>
+<circle cx="232" cy="638" r="12" fill="#176346"/>
+<text x="58" y="646" class="date">OCT 13</text>
+<text x="280" y="643" class="label">Progress, but US concerns remain</text>
+<text x="280" y="684" class="note">Ambassador hearing; Korean report date</text>
+<text x="65" y="780" class="note">Public test: restored access · meeting participation · concerns resolved</text></svg>

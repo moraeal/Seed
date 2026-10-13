@@ -609,5 +609,63 @@
     "src": "/images/monitoring/source-articles/53d5ca995ab59fb1fd69.jpg",
     "originalImageUrl": "https://img.newspim.com/news/2024/12/10/2412101336014920_t1.jpg",
     "verifiedAt": "2026-10-08T09:21:20.236Z"
+  },
+  "https://www.newsis.com/view/NISX20261010_0003820389": {
+    "src": "/images/monitoring/source-articles/0542cc95dd739ca4c7c1.jpg",
+    "originalImageUrl": "https://img1.newsis.com/2026/09/19/NISI20260919_0021444544_web.jpg",
+    "verifiedAt": "2026-10-13T00:56:07.652Z"
+  },
+  "https://v.daum.net/v/20260424092646921": {
+    "src": "/images/monitoring/source-articles/c7df3c9ef474c86ba056.jpg",
+    "originalImageUrl": "https://img1.daumcdn.net/thumb/S1200x630/?fname=https://t1.daumcdn.net/news/202604/24/segye/20260424092647230cjih.jpg",
+    "verifiedAt": "2026-10-13T00:56:07.679Z"
+  },
+  "https://www.hankookilbo.com/news/article/A2026101214570000724": {
+    "src": "/images/monitoring/source-articles/9c92d8467c2609206c06.jpg",
+    "originalImageUrl": "https://newsimg.hankookilbo.com/2026/10/12/a97d6290-e7d9-4335-a466-0505b4e5b5a5.jpg",
+    "verifiedAt": "2026-10-13T00:56:07.703Z"
+  },
+  "https://www.ytn.co.kr/_ln/0545_202610080911065135": {
+    "src": "/images/monitoring/source-articles/746028ffefcf2d2e316b.jpg",
+    "originalImageUrl": "https://image.ytn.co.kr/special/jpg/0545/2026/202610080911065135_h.jpg",
+    "verifiedAt": "2026-10-13T00:56:08.155Z"
+  },
+  "https://www.ajunews.com/view/20261011143133622": {
+    "src": "/images/monitoring/source-articles/53ab422dab784e0623ef.jpg",
+    "originalImageUrl": "https://image.ajunews.com/content/image/2026/10/11/20261011143311852562.jpg",
+    "verifiedAt": "2026-10-13T00:56:08.164Z"
+  },
+  "https://www.yna.co.kr/view/AKR20261013002152071": {
+    "src": "/images/monitoring/source-articles/6e852ae500735c8d0ee6.jpg",
+    "originalImageUrl": "https://img3.yna.co.kr/photo/yna/YH/2026/10/13/PYH2026101300120007101_P4.jpg",
+    "verifiedAt": "2026-10-13T00:56:08.371Z"
+  },
+  "https://www.ytn.co.kr/_ln/0101_202604202250249986": {
+    "src": "/images/monitoring/source-articles/349e2677346fbb086c20.jpg",
+    "originalImageUrl": "https://image.ytn.co.kr/general/jpg/2026/0420/202604202250249986_t.jpg",
+    "verifiedAt": "2026-10-13T00:56:12.747Z"
+  },
+  "https://www.hankookilbo.com/news/article/A2026030617590004420": {
+    "src": "/images/monitoring/source-articles/c167e06978591bbf7311.jpg",
+    "originalImageUrl": "https://newsimg.hankookilbo.com/2026/03/06/a6497fa2-71b9-4356-a945-67a96ccafa83.jpg",
+    "verifiedAt": "2026-10-13T00:56:16.811Z"
+  },
+  "https://www.news1.kr/nk/politics-diplomacy/6141398": {
+    "src": "/images/monitoring/source-articles/123e78ab30b9e581c11a.jpg",
+    "originalImageUrl": "https://i3n.news1.kr/system/photos/2026/4/15/7856605/high.jpg",
+    "verifiedAt": "2026-10-13T00:56:25.461Z"
+  },
+  "https://news.tvchosun.com/site/data/html_dir/2026/04/21/2026042190171.html": {
+    "src": "/images/monitoring/korea-us-intelligence-2026/hero.webp",
+    "kind": "context",
+    "alt": {
+      "ko": "한미 정보공유의 일부 제한을 표현한 관련 상징 이미지",
+      "en": "Related symbolic illustration of partial restrictions on intelligence sharing"
+    },
+    "credit": {
+      "ko": "AI 이미지",
+      "en": "AI image"
+    },
+    "verifiedAt": "2026-10-13T00:57:03.125054+00:00"
   }
 }

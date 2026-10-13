@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="840" viewBox="0 0 1400 840">
+<rect width="1400" height="840" fill="#fffdf7"/>
+<style>text{font-family:Pretendard,Noto Sans KR,Arial,sans-serif;fill:#102e38}.title{font-size:44px;font-weight:700}.label{font-size:30px;font-weight:600}.note{font-size:24px;fill:#56666a}.date{font-size:24px;font-weight:600;fill:#176346}</style>
+<text x="65" y="88" class="title">발언에서 협력 복원까지, 남은 공백</text>
+<line x1="232" y1="164" x2="232" y2="691" stroke="#176346" stroke-width="4"/>
+<circle cx="232" cy="190" r="12" fill="#176346"/>
+<text x="58" y="198" class="date">03.06</text>
+<text x="280" y="195" class="label">구성 핵시설 공개 언급</text>
+<text x="280" y="236" class="note">장관 발언 · 제한 시작일과 구분</text>
+<circle cx="232" cy="302" r="12" fill="#176346"/>
+<text x="58" y="310" class="date">04월 초</text>
+<text x="280" y="307" class="label">일부 공유 제한 시작 보도</text>
+<text x="280" y="348" class="note">4월 21일 당시 보도 기준</text>
+<circle cx="232" cy="414" r="12" fill="#176346"/>
+<text x="58" y="422" class="date">06월 말</text>
+<text x="280" y="419" class="label">사이버 회의 국정원 배제 보도</text>
+<text x="280" y="460" class="note">사건 시점 · 10월 8일 보도</text>
+<circle cx="232" cy="526" r="12" fill="#176346"/>
+<text x="58" y="534" class="date">10.08</text>
+<text x="280" y="531" class="label">일부 제한 남아 있음을 인정</text>
+<text x="280" y="572" class="note">합참 설명 · 국정원은 오해 해소 설명</text>
+<circle cx="232" cy="638" r="12" fill="#176346"/>
+<text x="58" y="646" class="date">10.13</text>
+<text x="280" y="643" class="label">진전 있지만 미국 우려 미해결</text>
+<text x="280" y="684" class="note">주미대사 국감 · 한국 보도일</text>
+<text x="65" y="780" class="note">판단 기준: 제한 분야 복원 · 후속 회의 참여 · 양측의 우려 해소 확인</text></svg>
