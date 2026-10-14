@@ -21,6 +21,12 @@ export const issue75: ColumnTranslation = {
       "alt": "Cumulative Seoul apartment price increases, October 20, 2025–October 5, 2026: Seongbuk 16.52%, Seodaemun 14.40%, Seoul average 10.42%, Seocho 3.35%, Gangnam 1.40%",
       "caption": "These cumulative increases cover a different period from recent weekly declines in Gangnam. Demand displacement is a reported analysis; the chart alone does not establish regulatory causation.",
       "credit": "SEED VOICE chart · Korea Real Estate Board figures reported by Yonhap"
+    },
+    {
+      "src": "images/columns/housing-tax-family-budget-2026.webp",
+      "alt": "A young Korean couple reviews mortgage paperwork and a calculator at their dining table while planning a home purchase",
+      "caption": "Changing mortgage and tax rules unsettle a homeownership plan built over years.",
+      "credit": "AI image"
     }
   ],
   "sections": [

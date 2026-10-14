@@ -37,6 +37,14 @@ export const housingTaxPromiseColumn: SeedColumn = {
       "credit": "씨앗의 소리 도표 · 한국부동산원 통계를 인용한 연합뉴스 보도",
       "sourceUrl": "https://www.yna.co.kr/amp/view/AKR20261010045100003",
       "contain": true
+    },
+    {
+      "afterSection": 3,
+      "src": "images/columns/housing-tax-family-budget-2026.webp",
+      "alt": "한국의 젊은 부부가 집 식탁에서 대출 서류와 계산기를 놓고 내 집 마련 예산을 검토하는 모습",
+      "caption": "바뀌는 대출과 세금 기준은 가족이 수년간 준비한 내 집 마련 계획을 흔든다.",
+      "credit": "AI 이미지",
+      "sourceUrl": ""
     }
   ],
   "sections": [
