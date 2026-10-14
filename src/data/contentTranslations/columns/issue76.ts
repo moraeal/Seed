@@ -4,7 +4,7 @@ export const issue76: ColumnTranslation = {
   "title": "Learning from America’s ATR Tax Resistance Movement — The Power of the Wednesday Meeting",
   "subtitle": "Taxpaying Citizens Change Politics · Part 4",
   "author": "Small Seed",
-  "summary": "Launched in 1993, ATR’s Wednesday Meeting became a network where independent groups briefly shared their activities and cooperated where interests met. Its expansion across U.S. states and abroad offers Korea’s No More Tax initiative a way to bring citizens’ experience and expertise together.",
+  "summary": "Taxpaying Citizens Change Politics · Part 4 — Launched in 1993, ATR’s Wednesday Meeting became a network where independent groups briefly shared their activities and cooperated where interests met. Its expansion across U.S. states and abroad offers Korea’s No More Tax initiative a way to bring citizens’ experience and expertise together.",
   "heroImage": {
     "alt": "Rick Perry and Grover Norquist in conversation at a Wednesday Meeting in Cleveland in 2016",
     "caption": "Rick Perry (left) and Grover Norquist talk at a Wednesday Meeting during the 2016 Republican National Convention in Cleveland. This is a convention-week gathering, rather than the regular Washington meeting.",

@@ -12,7 +12,7 @@ export const atrTaxpayerMovement04Column: SeedColumn = {
     "tax-finance"
   ],
   "readMinutes": 8,
-  "summary": "1993년 시작된 ATR의 수요모임은 서로 다른 단체가 짧게 활동을 알리고 필요한 일에 협력하는 연결망으로 이어졌다. 워싱턴에서 미국 각 주와 해외로 넓어진 이 방식에서, 노모어택스가 시민의 경험과 전문성을 만나게 할 방향을 찾는다.",
+  "summary": "세금 내는 시민이 정치를 바꾸다 ④ — 1993년 시작된 ATR의 수요모임은 서로 다른 단체가 짧게 활동을 알리고 필요한 일에 협력하는 연결망으로 이어졌다. 워싱턴에서 미국 각 주와 해외로 넓어진 이 방식에서, 노모어택스가 시민의 경험과 전문성을 만나게 할 방향을 찾는다.",
   "heroImage": {
     "src": "images/columns/atr-series-04/wednesday-meeting-2016.jpg",
     "alt": "2016년 클리블랜드 수요모임에서 대화하는 릭 페리와 그로버 노퀴스트",
