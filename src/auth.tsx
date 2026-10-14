@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { getTurnstileToken } from "./lib/turnstile";
 
-export type SocialProvider = "google" | "kakao";
+export type SocialProvider = "google" | "kakao" | "custom:naver";
 
 export type AuthUser = {
   id: string;
@@ -114,7 +114,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<AuthSession | null>(null);
   const [loading, setLoading] = useState(true);
   const [recoveringPassword, setRecoveringPassword] = useState(false);
-  const [socialProviders, setSocialProviders] = useState<Record<SocialProvider, boolean>>({ google: false, kakao: false });
+  const [socialProviders, setSocialProviders] = useState<Record<SocialProvider, boolean>>({ google: false, kakao: false, "custom:naver": false });
   const [socialLoading, setSocialLoading] = useState(true);
   const [authNotice, setAuthNotice] = useState("");
   const initializing = useRef(false);
@@ -201,7 +201,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       .then(async response => {
         if (!response.ok) throw new Error("settings unavailable");
         const data = await response.json();
-        if (active) setSocialProviders({ google: data.external?.google === true, kakao: data.external?.kakao === true });
+        if (active) setSocialProviders({ google: data.external?.google === true, kakao: data.external?.kakao === true, "custom:naver": import.meta.env.VITE_NAVER_AUTH_ENABLED === "true" });
       })
       .catch(() => { /* Email login remains available when provider settings cannot be loaded. */ })
       .finally(() => { if (active) setSocialLoading(false); });
