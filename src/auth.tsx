@@ -201,7 +201,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       .then(async response => {
         if (!response.ok) throw new Error("settings unavailable");
         const data = await response.json();
-        if (active) setSocialProviders({ google: data.external?.google === true, kakao: data.external?.kakao === true, "custom:naver": true });
+        if (active) setSocialProviders({ google: data.external?.google === true, kakao: data.external?.kakao === true, "custom:naver": import.meta.env.VITE_NAVER_AUTH_ENABLED === "true" });
       })
       .catch(() => { /* Email login remains available when provider settings cannot be loaded. */ })
       .finally(() => { if (active) setSocialLoading(false); });
