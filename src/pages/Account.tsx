@@ -39,7 +39,7 @@ export default function Account() {
       setNicknameNotice(error instanceof Error ? error.message : (ko ? "저장하지 못했습니다." : "Could not save."));
     } finally { setNicknameSaving(false); }
   };
-  const hasSocialLogin = socialProviders.kakao || socialProviders.google;
+  const hasSocialLogin = socialProviders.kakao || socialProviders.google || socialProviders["custom:naver"];
 
   const socialLogin = async (provider: SocialProvider, link = false) => {
     setNotice("");
@@ -51,13 +51,13 @@ export default function Account() {
 
   const socialButtons = (link = false) => (
     <div className="grid gap-3">
-      {(["kakao", "google"] as SocialProvider[]).map(provider => {
+      {(["custom:naver", "kakao", "google"] as SocialProvider[]).map(provider => {
         const connected = link && user?.identities?.some(identity => identity.provider === provider);
-        const label = provider === "kakao" ? (ko ? "카카오" : "Kakao") : (ko ? "구글" : "Google");
+        const label = provider === "custom:naver" ? (ko ? "네이버" : "Naver") : provider === "kakao" ? (ko ? "카카오" : "Kakao") : (ko ? "구글" : "Google");
         return <button key={provider} type="button" onClick={() => void socialLogin(provider, link)}
           disabled={socialLoading || !socialProviders[provider] || Boolean(socialBusy) || Boolean(connected) || submitting}
-          className={`flex min-h-12 w-full items-center justify-center gap-2 rounded-lg border px-4 py-3 text-base font-bold transition disabled:cursor-not-allowed disabled:opacity-55 ${provider === "kakao" ? "border-[#FEE500] bg-[#FEE500] text-[#191919]" : "border-charcoal/20 bg-white text-charcoal hover:bg-ivory"}`}>
-          {provider === "google" ? (
+          className={`flex min-h-12 w-full items-center justify-center gap-2 rounded-lg border px-4 py-3 text-base font-bold transition disabled:cursor-not-allowed disabled:opacity-55 ${provider === "custom:naver" ? "border-[#03C75A] bg-[#03C75A] text-white" : provider === "kakao" ? "border-[#FEE500] bg-[#FEE500] text-[#191919]" : "border-charcoal/20 bg-white text-charcoal hover:bg-ivory"}`}>
+          {provider === "custom:naver" ? (<span className="font-black" aria-hidden="true">N</span>) : provider === "google" ? (
             <img src={`${import.meta.env.BASE_URL}images/auth/google-logo.png`} width={20} height={20} className="h-5 w-5 shrink-0 object-contain" alt="" aria-hidden="true" />
           ) : (
             <svg viewBox="0 0 24 24" width={20} height={20} className="h-5 w-5 shrink-0" aria-hidden="true" focusable="false">
@@ -217,7 +217,7 @@ export default function Account() {
             <p className="mt-6 text-sm leading-7 text-charcoal/65">{ko ? "인증회원은 씨드의 뉴스·브리핑·칼럼·감시·제안·실험·아카데미에 댓글을 남기고 공론장 토론에 참여할 수 있습니다. 화면에는 실명 대신 씨앗용 닉네임이 표시됩니다." : "Verified members can comment on SEED news, briefings, columns, civic watch, proposals, experiments and academy content and take part in the public forum. Your chosen nickname, not your legal name, is shown publicly."}</p>
             <div className="mt-7 border-t border-green-deep/10 pt-6">
               <h3 className="text-lg font-bold text-navy">{ko ? "간편로그인 연결" : "Connect a sign-in account"}</h3>
-              <p className="mb-4 mt-2 text-sm leading-7 text-charcoal/65">{ko ? "기존 회원정보를 유지하면서 구글·카카오 계정을 연결할 수 있습니다. 다음부터는 연결한 계정으로 로그인하세요." : "Connect Google or Kakao while keeping your existing membership. Use that account to sign in next time."}</p>
+              <p className="mb-4 mt-2 text-sm leading-7 text-charcoal/65">{ko ? "기존 회원정보를 유지하면서 네이버·카카오·구글 계정을 연결할 수 있습니다. 다음부터는 연결한 계정으로 로그인하세요." : "Connect Naver, Kakao, or Google while keeping your existing membership. Use that account to sign in next time."}</p>
               {socialButtons(true)}
               {(notice || authNotice) && <p className="mt-4 text-sm leading-6" role="status">{notice || authNotice}</p>}
             </div>
@@ -237,7 +237,7 @@ export default function Account() {
           <span className="section-kicker">SEED MEMBER</span>
           <h1 className="editorial-title mt-4 text-4xl font-bold leading-tight text-navy sm:text-5xl">{ko ? "씨앗의 소리를 구독하세요" : "Subscribe to SEED VOICE"}</h1>
           <p className="mt-6 text-base leading-8 text-charcoal/65">{ko ? "익숙한 계정으로 간편하게 시작하세요. 기존 회원은 이메일과 비밀번호로도 로그인할 수 있습니다." : "Start with an account you already use. Existing members can still sign in with email and password."}</p>
-          <div className="mt-7 flex items-start gap-3 rounded-lg border border-green-deep/10 bg-green-pale/55 p-4 text-sm leading-7 text-charcoal/65"><MailCheck className="mt-1 shrink-0 text-green-mid" size={20}/>{ko ? "기존 회원이라면 이메일로 먼저 로그인한 뒤 내 계정에서 간편로그인을 연결하세요. 구글·카카오 이메일이 달라도 기존 회원정보를 유지할 수 있습니다." : "Already a member? Sign in by email, then connect Google or Kakao in My Account to keep your existing membership, even if the email addresses differ."}</div>
+          <div className="mt-7 flex items-start gap-3 rounded-lg border border-green-deep/10 bg-green-pale/55 p-4 text-sm leading-7 text-charcoal/65"><MailCheck className="mt-1 shrink-0 text-green-mid" size={20}/>{ko ? "기존 회원이라면 이메일로 먼저 로그인한 뒤 내 계정에서 간편로그인을 연결하세요. 네이버·카카오·구글 이메일이 달라도 기존 회원정보를 유지할 수 있습니다." : "Already a member? Sign in by email, then connect Google or Kakao in My Account to keep your existing membership, even if the email addresses differ."}</div>
         </div>
 
         <div className="rounded-xl border border-green-deep/15 bg-white p-6 shadow-soft sm:p-8">
