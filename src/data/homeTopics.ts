@@ -4,6 +4,7 @@ import { hotIssueColumnTrackerSlugs } from "./columns";
 // articles and tracker routes here when publishing them. Unlisted routes
 // remain their own topics, so broad categories do not hide unrelated work.
 const homeTopicGroups: Record<string, string[]> = {
+  "atr-wednesday-meeting": ["/columns/atr-taxpayer-movement-04-wednesday-meeting"],
   "housing-tax-promise-2026": ["/columns/housing-tax-promise-policy-uncertainty-2026"],
   "ju-competition-regulator-business-freedom-2026": ["/columns/ju-byung-ki-biased-referee-business-freedom-2026"],
   "korea-us-intelligence-sharing-2026": ["/monitoring/korea-us-intelligence-sharing-tracker-2026"],

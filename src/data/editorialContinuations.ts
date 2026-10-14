@@ -474,6 +474,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
   if (kind === "briefing" && slug === "wise-civic-life-hotel-platform-reservation-disputes-2026") return true;
   if (kind === "column" && slug === "citizens-dilemma-03-escalator-etiquette") return true;
   if (kind === "column" && slug === "taegeukgi-upside-down-mistake-or-intent-2026") return true;
+  if (kind === "column" && slug === "atr-taxpayer-movement-04-wednesday-meeting") return true;
   if (kind === "column" && slug === "taxpayer-movement-03-britain-spending-watch") return true;
   if (kind === "column" && slug === "atr-taxpayer-movement-02-protection-pledge") return true;
   if (kind === "column" && slug === "robak-solar-smart-farming-farmland-2026") return true;
@@ -516,6 +517,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "atr-taxpayer-movement-04-wednesday-meeting") return language === "ko" ? { href: "/columns/taxpayer-movement-03-britain-spending-watch", title: "세금은 그대로인데, 신고할 일이 늘었다", relationship: "세금감시운동 연재 ③", reason: "시민의 신고 시간과 비용을 줄이기 위해 ATR과 여러 단체가 협력한 사례를 앞선 편에서 읽습니다.", listHref: "/tax-watch-movement", listLabel: "세금감시운동 전체 보기" } : { href: "/columns/taxpayer-movement-03-britain-spending-watch", title: "The Tax Rate Stayed the Same. The Paperwork Grew.", relationship: "TAXPAYER MOVEMENTS, PART 3", reason: "Read the preceding article on ATR and other groups working together to reduce citizens’ reporting time and costs.", listHref: "/tax-watch-movement", listLabel: "All Tax Watch Movement articles" };
   if (kind === "briefing" && slug === "teen-ai-use-bill-2221842-explained") return language === "ko" ? {
     href: "/monitoring/legislation/commentary/teen-ai-protection-choice-not-control-2026",
     title: "AI 이용시간 표시, 청소년 보호는 선택권을 넓히는가",
