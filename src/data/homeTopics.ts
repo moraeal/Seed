@@ -15,6 +15,7 @@ const homeTopicGroups: Record<string, string[]> = {
   "inheritance-tax-frozen-allowances": ["/monitoring/tax/commentary/inheritance-tax-automatic-increase-2026", "/briefings/inheritance-tax-frozen-allowance-middle-class"],
   "card-sales-vat-credit-2026": ["/monitoring/tax/commentary/card-sales-credit-normalization-burden-2026", "/monitoring/tax/card-sales-vat-credit-government-bill-2026"],
   "future-response-fund": [
+    "/columns/flattening-housing-government-debt-citizen-burden-2026",
     "/columns/youth-agency-not-policy-targets-2026",
     "/columns/jangjado-future-response-fund-no-more-tax-2026",
     "/briefings/future-response-fund-public-money",
