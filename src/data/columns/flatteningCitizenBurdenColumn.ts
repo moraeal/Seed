@@ -37,6 +37,14 @@ export const flatteningCitizenBurdenColumn: SeedColumn = {
       "credit": "씨앗의 소리 도표 · 가정 계산",
       "sourceUrl": "",
       "contain": true
+    },
+    {
+      "afterSection": 4,
+      "src": "images/columns/flattening-household-bills-2026.webp",
+      "alt": "밤에 집 식탁에서 계산기와 서류를 놓고 주거비와 가계 지출을 검토하는 시민",
+      "caption": "주거비와 미래의 재정 부담은 결국 시민의 가계 지출과 선택에 영향을 준다.",
+      "credit": "AI 이미지",
+      "sourceUrl": ""
     }
   ],
   "sections": [

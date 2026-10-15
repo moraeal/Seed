@@ -1,5 +1,7 @@
 # SEED publishing rules
 
+- New articles use two distinct editorial photographs or illustrations PLUS one chart/infographic: three purposeful visuals in total. A chart does not count toward the two images. Use the same assets and placement in Korean and English editions, translate chart labels and captions, and never repeat an asset within one page. Follow an explicit user instruction if a different count is requested.
+
 - Assess every newly created article for Civic Life suitability using `CONTENT_PUBLISHING_RULES.md` §14. In the same publishing update, add suitable articles' canonical routes to `civicLifeArticlePaths` in `src/data/civicSections.ts`, regardless of their original category. Preserve their original listings, author, body and Korean/English editions; verify Civic Life inclusion before declaring publication complete.
 
 - Database-backed automatic legislative articles must generate an article-specific raster image, upload it to the permanent `editorial-images` bucket and verify the public JPEG before publication. Persist `editorial_image` with bilingual alt text and `verified_at`; do not promote missing, pending or failed artwork as a logo card. Keep failed generation retryable without rerunning a complete editorial analysis, and preserve publication dates during image repair.

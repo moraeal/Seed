@@ -21,6 +21,11 @@ export const issue77: ColumnTranslation = {
       "alt": "Illustration: a high-priced home falls from KRW 3 billion to 2.8 billion while an outer-area home rises from KRW 800 million to 1 billion. The gap narrows but the outer-area buyer needs KRW 200 million more.",
       "caption": "Hypothetical illustration, not observed prices or a forecast. With income unchanged, a narrower price gap can still increase the cost of buying a home.",
       "credit": "SEED VOICE chart · illustrative calculation"
+    },
+    {
+      "alt": "A Korean citizen reviewing household bills and housing costs at a dining table in an apartment at night",
+      "caption": "Housing costs and the future cost of public borrowing ultimately affect household budgets.",
+      "credit": "AI image"
     }
   ],
   "sections": [
