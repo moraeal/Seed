@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:death-rushing-society-how-to-care-2026": {
+    ko: {
+      href: "/columns/suicide-prevention-beyond-mental-illness-2026",
+      title: "자살을 정신병으로 보는 정부",
+      relationship: "생명사랑 · 지역과 삶의 안전망",
+      reason: "사람을 다시 삶으로 연결하려면 의료와 상담을 넘어 지역사회와 시민의 관계를 어떻게 회복할지 이어서 읽습니다.",
+      listHref: "/columns",
+      listLabel: "칼럼 전체 보기"
+    },
+    en: {
+      href: "/columns/suicide-prevention-beyond-mental-illness-2026",
+      title: "A Government That Sees Suicide Through Mental Illness",
+      relationship: "LIFE, COMMUNITY AND CARE",
+      reason: "Continue with how suicide prevention can connect healthcare to lasting local relationships and practical support.",
+      listHref: "/columns",
+      listLabel: "All columns"
+    }
+  },
   "column:flattening-housing-government-debt-citizen-burden-2026": {"ko": {"href": "/columns/housing-tax-promise-policy-uncertainty-2026", "title": "세금으로 집값 안 잡겠다더니, 시민의 집을 구할 길부터 태웠다", "relationship": "주거 정책과 시민의 부담", "reason": "세금과 대출 규제, 정책의 예측 가능성이 내 집 마련에 미치는 영향을 이어서 읽는다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"}, "en": {"href": "/columns/housing-tax-promise-policy-uncertainty-2026", "title": "He Promised Not to Tax House Prices Down. Citizens’ Route to a Home Is Burning", "relationship": "HOUSING POLICY AND CITIZENS’ COSTS", "reason": "Continue with how taxes, lending restrictions and policy predictability affect the path to homeownership.", "listHref": "/columns", "listLabel": "All columns"}},
   "column:housing-tax-promise-policy-uncertainty-2026": {"ko": {"href": "/columns/seoul-housing-prices-rent-broken-ladder", "title": "서울 집값 85주째 상승, 전세에서 내 집으로 가는 길은 좁아졌다", "relationship": "주거 사다리와 시민의 선택", "reason": "전세에서 월세로 바뀌는 시장과 내 집 마련의 어려움을 공급·시민의 선택이라는 관점에서 이어서 읽는다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"}, "en": {"href": "/columns/seoul-housing-prices-rent-broken-ladder", "title": "Seoul Home Prices Rise for 85 Weeks as the Ladder from Renting to Ownership Narrows", "relationship": "HOUSING AND CIVIC CHOICE", "reason": "Continue with the shift toward monthly rents and the obstacles to homeownership through supply and civic choice.", "listHref": "/columns", "listLabel": "All columns"}},
   "column:ju-byung-ki-biased-referee-business-freedom-2026": {"ko": {"href": "/columns/corporations-are-citizens-too", "title": "기업도 시민이다, 함께 성장하는 기업이 자유를 넓힌다", "relationship": "기업과 시민의 자유", "reason": "기업의 거래와 투자, 시민의 일자리와 선택이 어떻게 연결되는지 이어서 읽는다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"}, "en": {"href": "/columns/corporations-are-citizens-too", "title": "Corporations Are Citizens Too: Growing Together Expands Freedom", "relationship": "BUSINESS AND CIVIC FREEDOM", "reason": "Continue with how business transactions and investment connect to citizens’ jobs and choices.", "listHref": "/columns", "listLabel": "All columns"}},
