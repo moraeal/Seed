@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" role="img" aria-labelledby="t d">
+<title id="t">사람을 다시 삶으로 연결하는 지역 생명안전망</title>
+<desc id="d">위기 신호 발견, 경청과 보호, 생활 지원, 관계 회복, 지속적 안부로 이어지는 다섯 단계의 지역 공동체 지원 과정</desc>
+<rect width="1100" height="620" rx="24" fill="#fffaf1"/>
+<text x="550" y="83" font-family="Noto Sans KR,Apple SD Gothic Neo,sans-serif" text-anchor="middle" font-size="34" font-weight="750" fill="#173d35">죽음의 문턱에서, 다시 삶으로</text>
+<text x="550" y="123" font-family="Noto Sans KR,Apple SD Gothic Neo,sans-serif" text-anchor="middle" font-size="20" fill="#5b6b63">상담과 처벌만으로 끝나지 않는 연결의 과정</text>
+<path d="M140 315 H972" stroke="#bdd8c4" stroke-width="10" stroke-linecap="round"/>
+<g font-family="Noto Sans KR,Apple SD Gothic Neo,sans-serif" text-anchor="middle">
+<g transform="translate(120 315)"><circle r="56" fill="#f3d1a3" stroke="#f4a86d" stroke-width="3"/><text y="-9" font-size="19" font-weight="750" fill="#594129">위기 신호</text><text y="20" font-size="19" font-weight="750" fill="#594129">발견</text></g>
+<g transform="translate(335 315)"><circle r="56" fill="#f7dfba" stroke="#deb983" stroke-width="3"/><text y="-9" font-size="19" font-weight="750" fill="#594129">경청과</text><text y="20" font-size="19" font-weight="750" fill="#594129">안전 확보</text></g>
+<g transform="translate(550 315)"><circle r="56" fill="#d4e5c8" stroke="#99bc86" stroke-width="3"/><text y="-9" font-size="19" font-weight="750" fill="#26513a">생활 지원</text><text y="20" font-size="17" fill="#26513a">주거·일·채무</text></g>
+<g transform="translate(765 315)"><circle r="56" fill="#c8dcd6" stroke="#8cafaa" stroke-width="3"/><text y="-9" font-size="19" font-weight="750" fill="#26513a">관계 회복</text><text y="20" font-size="17" fill="#26513a">모임·이웃</text></g>
+<g transform="translate(980 315)"><circle r="56" fill="#cde4a8" stroke="#98b86f" stroke-width="3"/><text y="-9" font-size="19" font-weight="750" fill="#26513a">지속적</text><text y="20" font-size="19" font-weight="750" fill="#26513a">안부</text></g>
+</g>
+<g font-family="Noto Sans KR,Apple SD Gothic Neo,sans-serif" font-size="16" text-anchor="middle" fill="#59695e">
+<text x="120" y="408">학교·이웃·직장</text><text x="335" y="408">위험 대응·전문 상담</text><text x="550" y="408">지방정부·복지기관</text><text x="765" y="408">시민단체·지역모임</text><text x="980" y="408">재접촉·돌봄 지속</text>
+</g>
+<path d="M135 470 Q550 565 965 470" fill="none" stroke="#dd9d66" stroke-width="3" stroke-dasharray="8 9"/>
+<path d="M134 468 l11 -8 l-1 15 z" fill="#dd9d66"/>
+<text x="550" y="528" font-family="Noto Sans KR,Apple SD Gothic Neo,sans-serif" text-anchor="middle" font-size="23" font-weight="700" fill="#5b6b63">관심에서 관계로, 위기 대응에서 일상의 회복으로</text>
+<text x="550" y="578" font-family="Noto Sans KR,Apple SD Gothic Neo,sans-serif" text-anchor="middle" font-size="14" fill="#8a8a76">씨앗의 소리 · 필자의 제안 (효과가 검증된 단일 프로그램을 뜻하지 않음)</text>
+</svg>
