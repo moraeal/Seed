@@ -6,12 +6,12 @@ export const issue77: ColumnTranslation = {
   "author": "Small Seed",
   "summary": "Falling prices in Gangnam and rising prices on Seoul’s outskirts do not necessarily make a home easier to buy. Nor does smoother bond issuance remove the cost of debt. SEED examines the president’s housing remarks and the Future Response Fund through housing affordability and taxpayers’ burdens.",
   "heroImage": {
-    "alt": "A young Korean couple holding housing papers look across apartment blocks in Seoul",
-    "caption": "A narrower price gap between districts is different from a lighter housing burden for citizens.",
+    "alt": "Symbolic scene of Korean apartments on a level plateau above a towering concrete wall, with citizens looking up from below",
+    "caption": "Even as housing-price gaps narrow, the barrier to homeownership can remain out of reach.",
     "credit": "AI image"
   },
   "inlineImage": {
-    "alt": "A young Korean couple looking across Seoul apartment blocks",
+    "alt": "Citizens face a towering wall beneath a level plateau of Korean apartments",
     "caption": "Price convergence does not by itself improve affordability.",
     "credit": "AI image"
   },

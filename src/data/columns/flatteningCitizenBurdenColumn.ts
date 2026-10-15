@@ -14,16 +14,16 @@ export const flatteningCitizenBurdenColumn: SeedColumn = {
   "readMinutes": 8,
   "summary": "강남 집값이 내리고 외곽 집값이 오른다고 내 집 마련이 쉬워지는 것은 아니다. 국채 발행을 고르게 유지해도 빚의 비용은 남는다. 대통령의 부동산 평탄화 발언과 미래대응기금 논쟁을 시민의 주거비와 납세 부담이라는 기준으로 살펴본다.",
   "heroImage": {
-    "src": "images/columns/flattening-citizen-burden-2026.webp",
-    "alt": "서울의 아파트 단지를 바라보며 주택 서류를 든 젊은 부부",
-    "caption": "가격 격차가 줄어드는 현상과 시민의 주거 부담이 줄어드는 결과는 다르다.",
+    "src": "images/columns/flattening-housing-wall-2026-v2.webp",
+    "alt": "수평선 위에 늘어선 아파트와 거대한 콘크리트 벽 아래에서 집을 올려다보는 시민을 대비한 상징 이미지",
+    "caption": "집값의 격차가 줄어도, 시민이 넘을 내 집 마련의 문턱은 여전히 높을 수 있다.",
     "credit": "AI 이미지",
     "sourceUrl": ""
   },
   "inlineImage": {
-    "src": "images/columns/flattening-citizen-burden-2026.webp",
-    "alt": "서울의 아파트 단지를 바라보며 주택 서류를 든 젊은 부부",
-    "caption": "가격 격차가 줄어드는 현상과 시민의 주거 부담이 줄어드는 결과는 다르다.",
+    "src": "images/columns/flattening-housing-wall-2026-v2.webp",
+    "alt": "수평선 위에 늘어선 아파트와 거대한 콘크리트 벽 아래에서 집을 올려다보는 시민을 대비한 상징 이미지",
+    "caption": "집값의 격차가 줄어도, 시민이 넘을 내 집 마련의 문턱은 여전히 높을 수 있다.",
     "credit": "AI 이미지",
     "sourceUrl": ""
   },
