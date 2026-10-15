@@ -5,7 +5,7 @@ export const issue80: ColumnTranslation = {
   "subtitle": "When did we become so indifferent and cruel to one another?",
   "author": "Love for Life",
   "authorBio": "A civic activist working to foster respect for life. Concerned by an increasingly harsh society and declining attentiveness to others, Love for Life advocates improvements in public policy and community care.",
-  "summary": "In a country where almost 39 people die by suicide each day, the question is not only how to prevent death but how to reconnect isolated people with the relationships and chances that make life possible.",
+  "summary": "The indiscriminate stabbing at an Incheon shopping complex raises difficult questions about warning signs, public protection and a society that notices suffering too late. Preventing death is not enough if people are left without reasons or opportunities to live.",
   "heroImage": {
     "alt": "Neighbours sit together in a warm Korean community room, listening over tea",
     "caption": "Saving lives also means listening, staying close and rebuilding relationships.",
@@ -33,11 +33,18 @@ export const issue80: ColumnTranslation = {
     {
       "title": "",
       "paragraphs": [
-        "An innocent pedestrian is stabbed on an ordinary street. A student returning from school loses her life to an attack by a stranger. Elsewhere, someone who lived alone is discovered long after death.",
-        "We encounter these stories far too often.",
-        "When someone attacks strangers with a knife, we talk about the attacker's brutality. When someone dies by suicide, we talk about depression and financial hardship. When an isolated person dies alone, we talk about single-person households and gaps in welfare services.",
-        "After each tragedy, experts appear and government announces another response. With time, public attention fades. Then another person dies.",
-        "What has gone wrong? Why are we losing so many lives?"
+        "On October 13, an ordinary lunchtime turned into a scene of terror at a shopping complex in Guwol-dong, Incheon. A man attacked visitors he did not know. According to the police investigation, ten people were targeted and eight were injured. One of them, a 19-year-old woman, was taken to hospital in cardiac arrest. Her heartbeat returned after emergency surgery, but as of October 15 she had not regained consciousness.[1]",
+        "For some of those present, this was simply a place to have lunch. For others it was their workplace or a place they were passing through. Not one of them had done anything to deserve such an attack.",
+        "What is particularly disturbing is that warning signs had already appeared. The suspect wore an electronic monitoring device because of an earlier attempted-murder conviction. The previous month, he had been booked over possession of a knife. He was questioned by police a week before the attack and met a probation officer on the very morning of the incident.[2]",
+        "It cannot be said that the authorities had no information at all. What that information signified, and precisely what intervention was legally and practically possible, requires careful review. Yet citizens were attacked despite those earlier contacts with the justice system.",
+        "The suspect reportedly told investigators that he wanted to draw public attention to grievances about medical treatment and the subsequent police investigation. His full motive remains a matter for investigation.[1] No grievance can justify an attack on innocent people.",
+        "Bystanders reportedly used chairs to confront and restrain the suspect.[3] While ordinary citizens stepped in to protect one another, how had the institutions meant to recognise danger and protect the public been functioning?",
+        "Elsewhere, someone dies by suicide after enduring despair alone. Another person living alone is found long after death. Murderous violence against others and the tragedy of suicide are not equivalent. But both prompt questions about how late society notices danger or suffering, and how easily signals can fall through the gaps.",
+        "After a stabbing, we discuss the police. After a suicide, we discuss depression, counselling and treatment. After an isolated death, we discuss single-person households and gaps in welfare. Dividing events among responsible agencies can obscure the slow collapse of a person's life and relationships.",
+        "With every tragedy, experts appear and the government announces another response. As time passes, the public forgets.",
+        "Then someone else dies.",
+        "What has gone wrong?",
+        "Why are we losing so many lives?"
       ]
     },
     {
@@ -139,8 +146,11 @@ export const issue80: ColumnTranslation = {
       ]
     }
   ],
-  "sourceNote": "Opinion column by Love for Life. The links between isolation, suicide risk and aggression describe research-based associations, not inevitable causal paths or proof about individual perpetrators. The diagram is the author's proposal for an integrated local support network.",
+  "sourceNote": "Opinion column by Love for Life. The links between isolation, suicide risk and aggression describe research-based associations, not inevitable causal paths or proof about individual perpetrators. The diagram is the author's proposal for an integrated local support network. The incident-specific details reflect reporting and the police investigation available on October 15, 2026. Social isolation or any particular psychological cause is not attributed to the suspect without evidence; his stated grievances are reported as claims, not established motives.",
   "sourceLabels": [
+    "Yonhap News Agency — Incheon stabbing suspect interviewed before detention review; ten attacked, eight injured, 19-year-old victim unconscious; police account of suspect's statements, October 15, 2026",
+    "Yonhap News Agency — Incheon stabbing suspect's attempted-murder convictions, electronic monitoring and previous knife-possession investigation, October 13, 2026",
+    "Yonhap News Agency — Police seek detention of Incheon stabbing suspect; CCTV records civilians restraining attacker, October 14, 2026",
     "Statistics Korea, 2025 Causes of Death Statistics, published September 22, 2026",
     "Yonhap News Agency, Korean study of emotional isolation and suicide-related thoughts among withdrawn youth, August 17, 2026",
     "David Brooks, 'How America Got Mean,' The Atlantic, August 14, 2023",
