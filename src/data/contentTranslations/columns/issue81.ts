@@ -108,6 +108,5 @@ export const issue81: ColumnTranslation = {
     "Yonhap News Agency, South Korea and United States differ on assessments of agreed transfer conditions, October 15, 2026",
     "News1, Removal of North Korean mines in the DMZ, October 5, 2026",
     "Chosun Ilbo, Defense Ministry audit finds guard-post ammunition compliance issues, October 5, 2026"
-  ],
-  "readMinutes": 14
+  ]
 };
