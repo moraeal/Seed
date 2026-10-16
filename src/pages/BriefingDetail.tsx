@@ -104,6 +104,12 @@ export default function BriefingDetail() {
             </figcaption>
           </figure>
         )}
+        {briefing.slug === "incheon-stabbing-warning-signals-civic-briefing-2026" && (
+          <Link to="/monitoring/incheon-public-stabbing-prevention-tracker-2026#issue-timeline" className="mb-8 flex flex-wrap items-center justify-between gap-4 border border-green-deep/20 bg-white px-5 py-5 text-green-deep shadow-soft transition hover:border-green-deep/50 hover:bg-green-pale/35 sm:px-6">
+            <span><strong className="block text-lg font-extrabold">{ko ? "인천 사건 전체 흐름 · 사진과 원문으로 보기" : "Incheon timeline · Dated news and photos"}</strong><span className="mt-1 block text-sm text-charcoal/65">{ko ? "사전 신고부터 경찰 조사·범행·구속심사까지 날짜별 기사 카드 9개" : "Nine dated cards from early warnings through detention proceedings"}</span></span>
+            <span className="inline-flex items-center gap-2 font-extrabold">{ko ? "뉴스트래커 열기" : "Open tracker"}<ExternalLink size={17}/></span>
+          </Link>
+        )}
         {briefing.keyHighlights && (
           <aside className="reading-column mb-8 rounded-xl border border-green-deep/15 bg-green-pale p-5 shadow-[0_10px_30px_rgba(23,76,58,.05)] sm:p-7">
             <span className="section-kicker">KEY SUMMARY</span>
