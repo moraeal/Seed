@@ -85,6 +85,23 @@ export async function loadComments(postSlug: string): Promise<CommentRecord[]> {
   }
 }
 
+/** Public campaign signatures: report API failures instead of silently hiding existing rows. */
+export async function loadCampaignSignatures(postSlug: string): Promise<CommentRecord[]> {
+  if (!commentsReady) throw new Error("SIGNATURE_STORE_UNAVAILABLE");
+  const params = new URLSearchParams({
+    post_slug: `eq.${postSlug}`,
+    is_visible: "eq.true",
+    select: selectFields,
+    order: "created_at.desc",
+  });
+  const response = await fetch(`${url}/rest/v1/comments?${params.toString()}`, {
+    headers: publicHeaders,
+    cache: "no-store",
+  });
+  if (!response.ok) throw new Error(`SIGNATURE_READ_FAILED_${response.status}`);
+  return response.json() as Promise<CommentRecord[]>;
+}
+
 export async function loadAllComments(limit = 300): Promise<CommentRecord[]> {
   const safeLimit = Math.min(Math.max(limit, 1), 500);
   let submittedComments: CommentRecord[] = [];
