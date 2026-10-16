@@ -7,9 +7,9 @@ import path from "node:path";
 // by external previews, social scrapers and embedded mobile browsers.
 const root = path.resolve("public/images/columns/security-slogans-alliance-2026");
 const jobs = [
-  { input: "hero.svg", output: "hero.webp", width: 1440, height: 810, format: "webp" },
-  { input: "frontline.svg", output: "frontline.webp", width: 1440, height: 810, format: "webp" },
-  { input: "surveillance-ko.svg", output: "surveillance-ko.png", width: 1400, height: 780, format: "png" },
+  { input: "hero-new.svg", output: "hero-new.webp", width: 1440, height: 810, format: "webp" },
+  { input: "frontline-new.svg", output: "frontline-new.webp", width: 1440, height: 810, format: "webp" },
+  { input: "surveillance-simple.svg", output: "surveillance-simple.png", width: 1440, height: 800, format: "png" },
 ];
 
 mkdirSync(root, { recursive: true });
