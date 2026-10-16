@@ -129,12 +129,12 @@ export const securitySlogansAllianceColumn: SeedColumn = {
       "url": "https://www.yna.co.kr/view/AKR20240327034300504"
     },
     {
-      "label": "합동참모본부 | 25사단 DMZ 북한 지뢰 폭발 최종 조사결과와 지뢰 제거 발표 (2026.10.5)",
-      "url": "https://www.korea.kr/briefing/policyBriefingView.do?newsId=156784294"
+      "label": "연합뉴스 | 합참의 DMZ 북한 지뢰 폭발 최종 조사결과와 지뢰 제거 발표 (2026.10.5)",
+      "url": "https://www.yna.co.kr/view/AKR20261005044800504"
     },
     {
-      "label": "YTN | 전방 모든 군단에서 실탄 삽입 지침을 어긴 경계 사례 확인 (2026.10.5)",
-      "url": "https://m.ytn.co.kr/news_view.php?key=202610051450566423&s_mcd="
+      "label": "언론보도 | 전방 군단의 실탄 삽입 지침 위반과 국방부 감사 (2026.10.5)",
+      "url": "https://v.daum.net/v/20261005182630626"
     },
     {
       "label": "연합뉴스 | 강신철 국방장관의 전작권 전환 조건에 관한 '과학'·'예술' 발언 (2026.10.14)",
@@ -145,8 +145,8 @@ export const securitySlogansAllianceColumn: SeedColumn = {
       "url": "https://www.yna.co.kr/view/AKR20261015004200071"
     },
     {
-      "label": "YTN | 브런슨 사령관의 전작권 발언에 대한 여야 공방과 국방부 장관 답변 (2026.10.15)",
-      "url": "https://www.ytn.co.kr/_ln/0101_202610152141074760"
+      "label": "연합뉴스 | 브런슨 사령관의 전작권 발언에 대한 정치권 반응과 국방부 장관 답변 (2026.10.15)",
+      "url": "https://www.yna.co.kr/view/AKR20261015157900504"
     },
     {
       "label": "연합뉴스 | 브런슨 사령관, 한국의 인도태평양 전략적 위치와 동맹의 가치 강조 (2026.5.27)",
@@ -157,8 +157,8 @@ export const securitySlogansAllianceColumn: SeedColumn = {
       "url": "https://www.yna.co.kr/view/AKR20261015081200504"
     },
     {
-      "label": "뉴스1 | 우리 군, 북한 지뢰지대를 10월 5일 실제 제거 (2026.10.5)",
-      "url": "https://www.news1.kr/diplomacy/defense-diplomacy/6310583"
+      "label": "연합뉴스 | 우리 군, 북한 지뢰지대를 10월 5일 실제 제거 (2026.10.5)",
+      "url": "https://www.yna.co.kr/amp/view/AKR20261005048100504"
     },
     {
       "label": "조선일보 | GP·GOP 경계에서 실탄 미삽입 사례에 대한 국방부 감사 (2026.10.5)",
