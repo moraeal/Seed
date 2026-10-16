@@ -1,4 +1,3 @@
-import { incheonStabbingTracker } from "./incheonStabbingTracker";
 import { koreaUsIntelligenceTracker } from "./koreaUsIntelligenceTracker";
 import { bankingPrivacyTracker } from "./bankingPrivacyTracker";
 import {
@@ -13,7 +12,6 @@ import { northKoreanPowsProtectionTracker } from "./northKoreanPowsProtectionTra
 import { dmzMineBlastTracker } from "./dmzMineBlastTracker";
 
 export const publicInterestWatchCases = [
-  incheonStabbingTracker,
   koreaUsIntelligenceTracker,
   bankingPrivacyTracker,
   dmzMineBlastTracker,
@@ -25,7 +23,6 @@ export const publicInterestWatchCases = [
 ];
 
 export const newsTrackerCases = [
-  incheonStabbingTracker,
   koreaUsIntelligenceTracker,
   bankingPrivacyTracker,
   dmzMineBlastTracker,
@@ -37,7 +34,6 @@ export const newsTrackerCases = [
 ];
 
 export function getPublicInterestWatchCase(slug: string) {
-  if (slug === incheonStabbingTracker.slug) return incheonStabbingTracker;
   if (slug === koreaUsIntelligenceTracker.slug) return koreaUsIntelligenceTracker;
   if (slug === bankingPrivacyTracker.slug) return bankingPrivacyTracker;
   if (slug === dmzMineBlastTracker.slug) return dmzMineBlastTracker;
