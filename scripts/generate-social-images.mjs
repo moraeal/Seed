@@ -60,6 +60,7 @@ const jobs = [
   })),
   ...briefingModule.getAllBriefingsNewestFirst().map((item) => {
     const images = rasterBriefingImages(item);
+    if (item.slug === "incheon-stabbing-warning-signals-civic-briefing-2026") return { section: "briefings", slug: item.slug, src: item.images?.[0]?.src || defaultBriefingHero, fallbackSrc: defaultBriefingHero };
     return {
       section: "briefings",
       slug: item.slug,
