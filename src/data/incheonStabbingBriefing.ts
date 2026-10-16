@@ -22,14 +22,14 @@ export const incheonStabbingBriefing: Briefing = {
   ],
   "images": [
     {
-      "src": "images/monitoring/incheon-stabbing-2026/1013-scene.svg",
+      "src": "images/monitoring/incheon-stabbing-2026/1013-scene.jpg",
       "alt": "2026년 10월 13일 인천 구월동 상업시설 흉기난동 사건을 단계별로 표시한 그래픽",
       "caption": "2026년 10월 13일 인천 구월동 상업시설에서 무고한 시민들이 공격받았다. 이 이미지는 보도를 바탕으로 만든 도해이며 실제 현장 사진은 아니다.",
       "credit": "씨앗의 소리 제작 도해",
       "sourceUrl": "https://www.news1.kr/photos/8156726"
     },
     {
-      "src": "images/monitoring/incheon-stabbing-2026/1013-counsel.svg",
+      "src": "images/monitoring/incheon-stabbing-2026/1013-counsel.jpg",
       "alt": "사건 당일 오전 상담과 보호관찰관 면담을 나타낸 사실관계 설명 그림",
       "caption": "범행 전 상담과 보호관찰관의 대면 접촉이 있었던 것으로 확인됐다. 실제 면담 사진이 아닌 사건 흐름 설명 이미지.",
       "credit": "씨앗의 소리 제작 도해",
@@ -37,7 +37,7 @@ export const incheonStabbingBriefing: Briefing = {
       "afterSection": 1
     },
     {
-      "src": "images/monitoring/incheon-stabbing-2026/incident-stats-ko.svg",
+      "src": "images/monitoring/incheon-stabbing-2026/incident-stats-ko.jpg",
       "alt": "경찰청 이상동기 범죄 발생 건수 2023년 46건, 2024년 42건 비교 막대그래프",
       "caption": "법무부가 공개한 경찰청 이상동기 범죄 건수. 매년 반복되고 있지만 이 수치만으로 계속 증가한다고 단정할 수는 없다.",
       "credit": "법무부 2025.9.15. 발표·씨앗의 소리 도표",
