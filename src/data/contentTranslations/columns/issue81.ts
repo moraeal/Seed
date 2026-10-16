@@ -6,26 +6,26 @@ export const issue81: ColumnTranslation = {
   "author": "Small Seed",
   "summary": "A military reconnaissance satellite is reportedly out of service, three soldiers were hurt by mines across the demarcation line, and frontline guard failures have been documented. National security is not a political slogan; it is the capacity to detect and defeat threats.",
   "heroImage": {
-    "alt": "Illustration of a reconnaissance satellite over a tense Korean frontier, with a surveillance grid fading into the horizon",
+    "alt": "Symbolic illustration of a soldier on watch at the Korean frontier, a distant launch streak, and a reconnaissance satellite",
     "caption": "Advanced weaponry offers little reassurance if warning and command systems cannot detect threats in time.",
-    "credit": "SEED VOICE illustration"
+    "credit": "AI image"
   },
   "inlineImage": {
-    "alt": "Illustration of a South Korean service member watching a dawn frontier from behind a line of barbed wire",
+    "alt": "Symbolic illustration of an abandoned helmet by a frontline fence and service members patrolling in the distance",
     "caption": "Protecting the soldier who stands watch is the first test of readiness.",
-    "credit": "SEED VOICE illustration"
+    "credit": "AI image"
   },
   "additionalImages": [
     {
       "src": "images/columns/security-slogans-alliance-2026/surveillance-en.svg",
       "alt": "Chart showing five Korean reconnaissance satellites, reported suspension of satellite No. 4, a two-hour design revisit interval and a 2030 goal of under 30 minutes",
       "caption": "These figures describe target-revisit intervals, not continuous real-time video.",
-      "credit": "SEED VOICE chart"
+      "credit": "SEED VOICE chart based on reported defense plans"
     },
     {
-      "alt": "Illustration of a soldier watching the early-morning DMZ frontier",
+      "alt": "Symbolic scene of a helmet near the DMZ fence with soldiers guarding the distant frontier",
       "caption": "Specific standing orders may differ by post, but commanders remain responsible for preparedness.",
-      "credit": "SEED VOICE illustration"
+      "credit": "AI image"
     }
   ],
   "sections": [
@@ -56,7 +56,7 @@ export const issue81: ColumnTranslation = {
     {
       "title": "Mines and frontline guard failures",
       "paragraphs": [
-        "On September 21, eighteen South Korean personnel were involved in a DMZ operation, and three were injured by landmine blasts: two seriously and one slightly.[3]",
+        "On September 21, 18 South Korean soldiers participated in a DMZ operation. Three were wounded by mines: two seriously and one with minor injuries, according to the final Joint Chiefs of Staff investigation.[3]",
         "A joint inquiry concluded that North Korean anti-personnel mines had been laid about ten meters south of the Military Demarcation Line, violating the armistice. South Korean forces removed the minefield on October 5.[3][10]",
         "A separate Defense Ministry audit exposed cases in all four forward army corps of guards operating contrary to ammunition-loading rules. Those cases do not mean that all sentries stood guard without weapons; they do call training, command compliance and accountability into question.[4][11]",
         "Commanders do not earn public trust through rank badges or speeches. They earn it through preparedness that actually protects soldiers and civilians."
@@ -97,15 +97,15 @@ export const issue81: ColumnTranslation = {
   ],
   "sourceNote": "Opinion column based on information public by October 16, 2026. Satellite No. 4's outage was reported on October 12; the military said other satellites maintained their surveillance missions. A conditions-based transfer of wartime operational control is distinct from a U.S. troop-withdrawal demand, and statements by individual politicians are not treated as the governing party's official policy. Judgments about political rhetoric are the author's analysis.",
   "sourceLabels": [
-    "Yonhap News Agency, South Korea completes the five-satellite Project 425 constellation, November 2, 2025",
-    "Yonhap News Agency, Plan to add small reconnaissance satellites and shorten revisit intervals by 2030, March 27, 2024",
+    "YTN, completion of Project 425 and reconnaissance revisit intervals, May 3, 2026",
+    "KBS, component failures on military reconnaissance satellites, April 29, 2026",
     "Republic of Korea Joint Chiefs of Staff, Final investigation and removal of North Korean mines in the DMZ, October 5, 2026",
-    "YTN, Defense Ministry audit of ammunition-loading procedures at forward guard posts, October 5, 2026",
+    "Chosun Ilbo, audit of ammunition loading at forward army corps, October 5, 2026",
     "Yonhap News Agency, Defense Minister Kang Shin-chul on scientific and political assessment of command transfer, October 14, 2026",
     "Yonhap News Agency, General Brunson stresses conditions for wartime operational-control transfer, October 15, 2026",
-    "YTN, Political reactions to General Brunson's remarks, October 15, 2026",
+    "Yonhap News Agency, defense minister responds to Brunson comments, October 15, 2026",
     "Yonhap News Agency, General Brunson describes Korea's strategic value to Indo-Pacific deterrence, May 27, 2026",
-    "Yonhap News Agency, South Korea and United States differ on assessments of agreed transfer conditions, October 15, 2026",
+    "Yonhap News Agency, warning about potential consequences of USFK reductions, April 10, 2025",
     "News1, Removal of North Korean mines in the DMZ, October 5, 2026",
     "Chosun Ilbo, Defense Ministry audit finds guard-post ammunition compliance issues, October 5, 2026"
   ]
