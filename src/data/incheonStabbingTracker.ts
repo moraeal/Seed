@@ -157,7 +157,8 @@ export const incheonStabbingTracker: PublicInterestWatchCase = {
           },
           "url": "https://weekly.chosun.com/news/articleView.html?idxno=56122",
           "publishedAt": "2026-10-13",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/incheon-stabbing-2026/0915-warning.svg"
         }
       ]
     },
@@ -198,7 +199,8 @@ export const incheonStabbingTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.news1.kr/local/incheon/6321355",
           "publishedAt": "2026-10-15",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/incheon-stabbing-2026/1006-police.svg"
         }
       ]
     },
@@ -243,7 +245,8 @@ export const incheonStabbingTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.yna.co.kr/view/AKR20261013166700065",
           "publishedAt": "2026-10-13",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/incheon-stabbing-2026/1013-counsel.svg"
         }
       ]
     },
@@ -288,7 +291,8 @@ export const incheonStabbingTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.yna.co.kr/view/AKR20261014187200065",
           "publishedAt": "2026-10-14",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/incheon-stabbing-2026/1013-scene.svg"
         },
         {
           "publisher": {
@@ -301,7 +305,8 @@ export const incheonStabbingTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.news1.kr/photos/8156729",
           "publishedAt": "2026-10-13",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/incheon-stabbing-2026/1013-scene.svg"
         }
       ]
     },
@@ -342,7 +347,8 @@ export const incheonStabbingTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.news1.kr/society/incident-accident/6321634",
           "publishedAt": "2026-10-15",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/incheon-stabbing-2026/1013-citizens.svg"
         }
       ]
     },
@@ -383,7 +389,8 @@ export const incheonStabbingTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.news1.kr/photos/8157141",
           "publishedAt": "2026-10-13",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/incheon-stabbing-2026/1013-response.svg"
         }
       ]
     },
@@ -428,7 +435,8 @@ export const incheonStabbingTracker: PublicInterestWatchCase = {
           },
           "url": "https://nwww.newsis.com/view/NISX20261014_0003826273",
           "publishedAt": "2026-10-14",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/incheon-stabbing-2026/1014-investigation.svg"
         }
       ]
     },
@@ -473,7 +481,8 @@ export const incheonStabbingTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.news1.kr/local/incheon/6321355",
           "publishedAt": "2026-10-15",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/incheon-stabbing-2026/1015-warrant.svg"
         },
         {
           "publisher": {
@@ -486,7 +495,8 @@ export const incheonStabbingTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.news1.kr/photos/8160176",
           "publishedAt": "2026-10-15",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/incheon-stabbing-2026/1015-warrant.svg"
         }
       ]
     },
@@ -527,7 +537,8 @@ export const incheonStabbingTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.yna.co.kr/view/AKR20261015038751065",
           "publishedAt": "2026-10-15",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/incheon-stabbing-2026/1016-review.svg"
         }
       ]
     }
