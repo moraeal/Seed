@@ -13,15 +13,15 @@ export const securitySlogansAllianceColumn: SeedColumn = {
   "readMinutes": 14,
   "summary": "북한의 핵·미사일 위협은 고도화되는데 군사정찰위성 운용 공백, DMZ 지뢰 사고, 전방의 실탄 미장착 경계 사례가 잇달아 드러났다. 정치적 구호보다 국민의 생명을 지키는 실제 군사능력이 먼저다.",
   "heroImage": {
-    "src": "images/columns/security-slogans-alliance-2026/hero-new.svg",
-    "alt": "어두운 산악 철책에서 경계하는 한국 군인과 멀리 붉게 솟는 미사일 발사 섬광, 궤도 위 정찰위성을 대비한 상징 이미지",
+    "src": "images/columns/security-slogans-alliance-2026/hero-20261016-photographic.webp",
+    "alt": "야간 비무장지대 감시초소에서 경계하는 한국 장병과 멀리 보이는 미사일 발사 불빛, 상공의 정찰위성을 구성한 AI 재현 장면",
     "caption": "자주국방은 정치적 훈장이 아니다. 적의 공격을 먼저 발견하고 국민을 지킬 준비가 되어 있는가.",
     "credit": "AI 이미지",
     "sourceUrl": ""
   },
   "inlineImage": {
-    "src": "images/columns/security-slogans-alliance-2026/frontline-new.svg",
-    "alt": "비무장지대 철책 앞의 철모와 멀리 전방을 살피는 장병들을 표현한 상징 이미지",
+    "src": "images/columns/security-slogans-alliance-2026/frontline-20261016-photographic.webp",
+    "alt": "해질녘 비무장지대 경계초소에서 철책 너머를 쌍안경으로 관찰하는 장병 두 명과 전경의 군용 철모를 담은 AI 재현 장면",
     "caption": "최전방의 생명과 안전을 책임지는 실전 준비가 안보의 출발점이다.",
     "credit": "AI 이미지",
     "sourceUrl": ""
@@ -30,7 +30,7 @@ export const securitySlogansAllianceColumn: SeedColumn = {
   "additionalImages": [
     {
       "afterSection": 1,
-      "src": "images/columns/security-slogans-alliance-2026/surveillance-ko.svg",
+      "src": "images/columns/security-slogans-alliance-2026/surveillance-20261016-clear-ko.webp",
       "alt": "군사정찰위성 5기 중 한 기 운용 중단 보도, 정상 5기 기준 약 2시간 감시 간격과 2030년 목표 30분 이내를 대비한 도표",
       "caption": "위성 5기 정상 운용 시 주요 표적 재방문 간격 약 2시간, 2030년 목표 30분 이내. 어느 수치도 상시 실시간 감시가 완성됐다는 뜻은 아니다.",
       "credit": "씨앗의 소리 도표 · 공개된 군 계획 및 관련 보도",
@@ -39,8 +39,8 @@ export const securitySlogansAllianceColumn: SeedColumn = {
     },
     {
       "afterSection": 3,
-      "src": "images/columns/security-slogans-alliance-2026/frontline-new.svg",
-      "alt": "철책 뒤 전방을 순찰하는 장병들과 빈 철모를 표현한 상징 이미지",
+      "src": "images/columns/security-slogans-alliance-2026/frontline-20261016-photographic.webp",
+      "alt": "해 질 무렵 전방 초소의 한국 장병 두 명이 경계 근무를 수행하는 모습을 보도사진 분위기로 재현한 AI 이미지",
       "caption": "지뢰의 위험과 장병의 생명을 가장 먼저 헤아릴 사람은 정치인이 아니라 지휘 책임자다.",
       "credit": "AI 이미지",
       "sourceUrl": ""

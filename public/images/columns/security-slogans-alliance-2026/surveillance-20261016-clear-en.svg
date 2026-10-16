@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810" role="img" aria-label="Reconnaissance satellites and target revisit intervals">
+<rect width="1440" height="810" fill="#FFFFFF"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="68" y="97" font-size="54" font-weight="800" fill="#102B4C">The Surveillance Gap: Two Key Numbers</text>
+<text x="69" y="150" font-size="27" fill="#475569">Project 425 reconnaissance satellites · reported operating status (October 2026)</text>
+<rect x="64" y="196" width="1312" height="202" rx="16" fill="#F1F5F9"/>
+<text x="95" y="246" font-size="30" fill="#475569">Satellites launched</text>
+<text x="95" y="341" font-size="92" font-weight="800" fill="#163B65">5</text>
+<path d="M420 220V372" stroke="#CBD5E1" stroke-width="3"/>
+<text x="472" y="246" font-size="30" fill="#475569">Reported operating</text>
+<text x="472" y="341" font-size="92" font-weight="800" fill="#0F766E">4</text>
+<path d="M904 220V372" stroke="#CBD5E1" stroke-width="3"/>
+<text x="948" y="246" font-size="30" fill="#475569">Satellite No. 4</text>
+<text x="948" y="322" font-size="38" font-weight="800" fill="#B4533D">Outage reported</text>
+<text x="67" y="467" font-size="43" font-weight="800" fill="#102B4C">Interval between repeat observations of a target</text>
+<rect x="64" y="507" width="578" height="178" rx="16" fill="#E8F0F8"/>
+<text x="95" y="552" font-size="28" fill="#475569">Design baseline: all 5 working</text>
+<text x="95" y="647" font-size="71" font-weight="800" fill="#174A70">~120 min</text>
+<path d="M662 595H756M736 570L762 595L736 620" stroke="#78909C" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<rect x="789" y="507" width="587" height="178" rx="16" fill="#FAEDE7"/>
+<text x="821" y="552" font-size="28" fill="#7C5C50">Target after expansion by 2030</text>
+<text x="821" y="647" font-size="68" font-weight="800" fill="#B84C36">Under 30 min</text>
+<text x="67" y="738" font-size="25" fill="#475569">* Revisit intervals do not equal uninterrupted real-time surveillance.</text>
+<text x="67" y="778" font-size="22" fill="#64748B">Sources: public defense plans and reporting; SEED VOICE editorial graphic.</text>
+</g></svg>

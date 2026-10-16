@@ -6,24 +6,24 @@ export const issue81: ColumnTranslation = {
   "author": "Small Seed",
   "summary": "A military reconnaissance satellite is reportedly out of service, three soldiers were hurt by mines across the demarcation line, and frontline guard failures have been documented. National security is not a political slogan; it is the capacity to detect and defeat threats.",
   "heroImage": {
-    "alt": "Symbolic illustration of a soldier on watch at the Korean frontier, a distant launch streak, and a reconnaissance satellite",
+    "alt": "Photorealistic AI reconstruction of a sentry by a nighttime frontier observation post, a distant missile-like launch streak and a reconnaissance satellite",
     "caption": "Advanced weaponry offers little reassurance if warning and command systems cannot detect threats in time.",
     "credit": "AI image"
   },
   "inlineImage": {
-    "alt": "Symbolic illustration of an abandoned helmet by a frontline fence and service members patrolling in the distance",
+    "alt": "Photorealistic AI reconstruction of two South Korean soldiers watching a frontline valley at sunset, with a helmet in the foreground",
     "caption": "Protecting the soldier who stands watch is the first test of readiness.",
     "credit": "AI image"
   },
   "additionalImages": [
     {
-      "src": "images/columns/security-slogans-alliance-2026/surveillance-en.svg",
+      "src": "images/columns/security-slogans-alliance-2026/surveillance-20261016-clear-en.svg",
       "alt": "Chart showing five Korean reconnaissance satellites, reported suspension of satellite No. 4, a two-hour design revisit interval and a 2030 goal of under 30 minutes",
       "caption": "These figures describe target-revisit intervals, not continuous real-time video.",
       "credit": "SEED VOICE chart based on reported defense plans"
     },
     {
-      "alt": "Symbolic scene of a helmet near the DMZ fence with soldiers guarding the distant frontier",
+      "alt": "Photorealistic AI reconstruction of South Korean sentries at an observation post overlooking the DMZ",
       "caption": "Specific standing orders may differ by post, but commanders remain responsible for preparedness.",
       "credit": "AI image"
     }
