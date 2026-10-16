@@ -9,6 +9,7 @@ import { campaignShortsThumbnail } from "../data/campaignShortsThumbnail";
 const campaignShortsEmbedUrl = "https://www.youtube-nocookie.com/embed/prPJ9gHpdNI?autoplay=1&playsinline=1";
 
 const signatureSlug = "campaign-no-more-tax-signatures";
+const signaturesPerPage = 50;
 const returnTo = "/civic-campaign#campaign-signature";
 
 const campaignDemands = [
@@ -69,6 +70,10 @@ export default function CampaignSignature() {
   const [submitting, setSubmitting] = useState(false);
   const [notice, setNotice] = useState("");
   const [signatures, setSignatures] = useState<CommentRecord[]>([]);
+  const [signaturePage, setSignaturePage] = useState(1);
+  const totalSignaturePages = Math.max(1, Math.ceil(signatures.length / signaturesPerPage));
+  const currentSignaturePage = Math.min(signaturePage, totalSignaturePages);
+  const visibleSignatures = signatures.slice((currentSignaturePage - 1) * signaturesPerPage, currentSignaturePage * signaturesPerPage);
   const [mine, setMine] = useState<CommentRecord[]>([]);
   const [mineLoading, setMineLoading] = useState(true);
   const [mineError, setMineError] = useState(false);
@@ -129,6 +134,7 @@ export default function CampaignSignature() {
       setNotice(ko ? "서명글이 등록되었습니다. 함께해주셔서 감사합니다." : "Your signature was registered. Thank you for joining.");
       setMine(await loadOwnCampaignSignatures(signatureSlug, session.access_token, user.id));
       setSignatures(await loadComments(signatureSlug));
+      setSignaturePage(1);
     } catch (error) {
       if (error instanceof Error && error.message === "CAMPAIGN_SIGNATURE_LIMIT") {
         setNotice(limitMessage);
@@ -210,6 +216,17 @@ export default function CampaignSignature() {
       </li>)}</ul>
     </div>}
     {notice && <p className="mt-4 text-sm font-bold text-green-deep" role="status">{notice}</p>}
-    {signatures.length > 0 && <div className="mt-6 border-t border-green-deep/15 pt-4"><h3 className="text-base font-bold text-navy">{ko ? "최근 서명글" : "Recent signatures"}</h3><ul className="mt-3 space-y-3">{signatures.slice(0, 10).map(signature => <li key={signature.id} className="text-sm leading-6"><strong className="mr-3 text-green-deep">{signature.nickname}</strong>{signature.body}</li>)}</ul></div>}
+    {signatures.length > 0 && <div className="mt-6 border-t border-green-deep/15 pt-4">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <h3 className="text-base font-bold text-navy">{ko ? "증세반대 서명글" : "Campaign signatures"} ({signatures.length})</h3>
+        <span className="text-sm text-charcoal/60">{ko ? `페이지 ${currentSignaturePage} / ${totalSignaturePages} · 페이지당 50개` : `Page ${currentSignaturePage} of ${totalSignaturePages} · 50 per page`}</span>
+      </div>
+      <ul className="mt-3 space-y-3">{visibleSignatures.map(signature => <li key={signature.id} className="break-words text-sm leading-6"><strong className="mr-3 text-green-deep">{signature.nickname}</strong>{signature.body}</li>)}</ul>
+      {totalSignaturePages > 1 && <nav aria-label={ko ? "서명글 페이지 이동" : "Signature pagination"} className="mt-6 flex flex-wrap items-center justify-center gap-3 border-t border-green-deep/15 pt-4">
+        <button type="button" className="button-secondary disabled:cursor-not-allowed disabled:opacity-40" disabled={currentSignaturePage === 1} onClick={() => setSignaturePage(currentSignaturePage - 1)}>{ko ? "← 이전" : "← Previous"}</button>
+        <span className="text-sm font-bold text-navy" aria-live="polite">{currentSignaturePage} / {totalSignaturePages}</span>
+        <button type="button" className="button-secondary disabled:cursor-not-allowed disabled:opacity-40" disabled={currentSignaturePage === totalSignaturePages} onClick={() => setSignaturePage(currentSignaturePage + 1)}>{ko ? "다음 →" : "Next →"}</button>
+      </nav>}
+    </div>}
   </section>;
 }
