@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+<defs><linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f9faf7"/><stop offset="1" stop-color="#a9bacf"/></linearGradient></defs>
+<rect width="960" height="540" fill="url(#a)"/>
+<path d="M-20 485 C280 360 570 610 980 420" fill="none" stroke="#364e72" stroke-opacity=".12" stroke-width="46"/>
+<path d="M-20 61 C240 -35 575 125 970 12" fill="none" stroke="#364e72" stroke-opacity=".1" stroke-width="39"/>
+<circle cx="480" cy="184" r="123" fill="white" fill-opacity=".8" stroke="#364e72" stroke-opacity=".18" stroke-width="3"/>
+<path d="M480 119 V240 M437 240 H520 M421 154 H538 M437 154 L409 202 H465 Z M526 154 L498 202 H554 Z" stroke="#364e72" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="50" y="70" font-size="28" font-family="Noto Sans KR,Arial,sans-serif" font-weight="700" fill="#364e72">SEED VOICE · INCIDENT TRACKER</text>
+<text x="480" y="365" text-anchor="middle" font-size="49" font-family="Noto Sans KR,Arial,sans-serif" font-weight="900" fill="#364e72">구속영장 청구</text>
+<text x="480" y="412" text-anchor="middle" font-size="28" font-family="Noto Sans KR,Arial,sans-serif" fill="#364e72">공소청 면담·청구</text>
+<rect x="370" y="445" width="220" height="52" rx="26" fill="#364e72"/>
+<text x="480" y="480" text-anchor="middle" font-size="26" font-family="Noto Sans KR,Arial,sans-serif" font-weight="750" fill="#fff">10.15</text>
+<text x="915" y="514" text-anchor="end" font-size="17" font-family="Noto Sans KR,Arial,sans-serif" fill="#364e72" fill-opacity=".8">보도 근거 시각화 · 실제 현장 사진 아님</text>
+</svg>
