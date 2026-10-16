@@ -13,24 +13,24 @@ export const securitySlogansAllianceColumn: SeedColumn = {
   "readMinutes": 14,
   "summary": "북한의 핵·미사일 위협은 고도화되는데 군사정찰위성 운용 공백, DMZ 지뢰 사고, 전방의 실탄 미장착 경계 사례가 잇달아 드러났다. 정치적 구호보다 국민의 생명을 지키는 실제 군사능력이 먼저다.",
   "heroImage": {
-    "src": "images/columns/security-slogans-alliance-2026/hero-new.webp",
+    "src": "images/columns/security-slogans-alliance-2026/hero-new.svg",
     "alt": "어두운 산악 철책에서 경계하는 한국 군인과 멀리 붉게 솟는 미사일 발사 섬광, 궤도 위 정찰위성을 대비한 상징 이미지",
     "caption": "자주국방은 정치적 훈장이 아니다. 적의 공격을 먼저 발견하고 국민을 지킬 준비가 되어 있는가.",
-    "credit": "씨앗의 소리 제작 AI 상징 이미지 · 실제 사건 사진 아님",
+    "credit": "AI 이미지",
     "sourceUrl": ""
   },
   "inlineImage": {
-    "src": "images/columns/security-slogans-alliance-2026/frontline-new.webp",
-    "alt": "비무장지대 전방 경계초소에서 국경 방향을 관측하는 장병들을 표현한 이미지",
+    "src": "images/columns/security-slogans-alliance-2026/frontline-new.svg",
+    "alt": "비무장지대 철책 앞의 철모와 멀리 전방을 살피는 장병들을 표현한 상징 이미지",
     "caption": "최전방의 생명과 안전을 책임지는 실전 준비가 안보의 출발점이다.",
-    "credit": "씨앗의 소리 제작 AI 이미지 · 실제 사건의 보도사진 아님",
+    "credit": "AI 이미지",
     "sourceUrl": ""
   },
   "displayInlineImage": false,
   "additionalImages": [
     {
       "afterSection": 1,
-      "src": "images/columns/security-slogans-alliance-2026/surveillance-simple.png",
+      "src": "images/columns/security-slogans-alliance-2026/surveillance-ko.svg",
       "alt": "군사정찰위성 5기 중 한 기 운용 중단 보도, 정상 5기 기준 약 2시간 감시 간격과 2030년 목표 30분 이내를 대비한 도표",
       "caption": "위성 5기 정상 운용 시 주요 표적 재방문 간격 약 2시간, 2030년 목표 30분 이내. 어느 수치도 상시 실시간 감시가 완성됐다는 뜻은 아니다.",
       "credit": "씨앗의 소리 도표 · 공개된 군 계획 및 관련 보도",
@@ -39,10 +39,10 @@ export const securitySlogansAllianceColumn: SeedColumn = {
     },
     {
       "afterSection": 3,
-      "src": "images/columns/security-slogans-alliance-2026/frontline-new.webp",
-      "alt": "경계초소에서 전방을 바라보는 우리 장병 두 명을 표현한 보도사진풍 재현 이미지",
+      "src": "images/columns/security-slogans-alliance-2026/frontline-new.svg",
+      "alt": "철책 뒤 전방을 순찰하는 장병들과 빈 철모를 표현한 상징 이미지",
       "caption": "지뢰의 위험과 장병의 생명을 가장 먼저 헤아릴 사람은 정치인이 아니라 지휘 책임자다.",
-      "credit": "AI 제작 재현 이미지 · 실제 사고 현장 또는 보도사진 아님",
+      "credit": "AI 이미지",
       "sourceUrl": ""
     }
   ],
@@ -86,7 +86,7 @@ export const securitySlogansAllianceColumn: SeedColumn = {
     {
       "title": "지뢰에 당하고, 빈총으로 경계 서는 최전방",
       "paragraphs": [
-        "지난 9월 21일 육군 25사단 지역 비무장지대에서 지뢰 폭발 사고가 발생했다. 작전에 참여한 장병은 18명이었고, 이 가운데 3명이 다쳤다. 중상자 2명과 경상자 1명이다.[3]",
+        "지난 9월 21일 육군 25사단 지역 비무장지대에서 지뢰 폭발 사고가 발생했다. 작전에 투입된 18명 중 3명이 다쳤다. 2명은 중상, 1명은 경상이다. 합참의 최종 발표로 확인된 부상 규모다.[3]",
         "합참과 유엔군사령부가 공동조사한 결과, 군사분계선 남쪽 10여m에 매설된 북한군 수지반보병지뢰가 원인으로 최종 판단됐다. 정전협정 위반이다.[3]",
         "우리 군은 10월 5일 사고 원인이 된 북한군 지뢰지대를 제거했다.[10] 그러나 북한군의 매설로 발생한 위험이 우리 장병의 부상으로 이어질 때까지 경계와 감시가 충분했는지에 대한 질문은 남는다.",
         "더 기막힌 것은 최전방 경계의 실상이다.",
