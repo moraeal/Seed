@@ -1,10 +1,10 @@
 import type { ColumnTranslation } from "../types";
 
 export const issue81: ColumnTranslation = {
-  "title": "When 'Self-Reliance' Becomes a Slogan at the Expense of Security",
-  "subtitle": "A broken satellite, a mine blast and failures of frontline readiness expose the difference between defense capabilities and political confidence.",
+  "title": "South Korea's Security Is Fraying — Self-Reliant Defense for Whom?",
+  "subtitle": "North Korea advances its nuclear and missile forces while South Korea debates empty weapons and calls military readiness an 'art.'",
   "author": "Small Seed",
-  "summary": "South Korea's independent surveillance network remains incomplete. Reports of a sidelined reconnaissance satellite, injuries from North Korean mines and breaches of guard protocols sharpen the debate over wartime command transfer and the value of U.S.–ROK cooperation.",
+  "summary": "A military reconnaissance satellite is reportedly out of service, three soldiers were hurt by mines across the demarcation line, and frontline guard failures have been documented. National security is not a political slogan; it is the capacity to detect and defeat threats.",
   "heroImage": {
     "alt": "Illustration of a reconnaissance satellite over a tense Korean frontier, with a surveillance grid fading into the horizon",
     "caption": "Advanced weaponry offers little reassurance if warning and command systems cannot detect threats in time.",
@@ -32,70 +32,66 @@ export const issue81: ColumnTranslation = {
     {
       "title": "",
       "paragraphs": [
-        "Three South Korean service members were injured by a landmine south of the Military Demarcation Line. An audit exposed frontline posts where weapons were not loaded in accordance with standing orders. And a new report said one of Seoul's five military reconnaissance satellites had been out of service for months.",
-        "Yet the loudest political exchanges concern 'self-reliance,' the timetable for transferring wartime operational control and objections to a U.S. commander's warnings about the conditions that must be met. The contrast is alarming.",
-        "South Korea can rightly take pride in its advanced weapons and its conventional military strength. But neither export figures nor global rankings answer the central questions: Can North Korea's missile preparations be detected promptly? Can command, interception and retaliation systems perform reliably under nuclear coercion?",
-        "The risk is not simply that capabilities are incomplete. It is that politics may become unwilling to admit the gap."
+        "South Korea builds cutting-edge aircraft, missiles and weapons for export. But can it independently detect preparations for a North Korean nuclear attack fast enough to respond? Can the people at the front line trust the command decisions that put them in danger?",
+        "Military rankings and arms exhibitions cannot answer those questions. The gap between confident political language and actual readiness is frightening."
       ]
     },
     {
-      "title": "Five satellites do not mean continuous surveillance",
+      "title": "The eyes in the sky are not yet complete",
       "paragraphs": [
-        "South Korea completed launches under its roughly 1.3 trillion-won Project 425 with a fifth reconnaissance satellite in November 2025. It was a milestone in developing independent observation of North Korean facilities and missile activity.[1]",
-        "A report on October 12, 2026, said that satellite No. 4 had been inoperative for roughly five months because of a failed attitude-control component. The military said the remaining satellites were operating and that target surveillance had not been disrupted. The full operational picture is not public.",
-        "Even with all five satellites operating, the publicly reported design objective was a revisit of key targets about every two hours. Seoul plans additional small satellites by 2030 to reduce the revisit interval to under 30 minutes. That is a more capable network, not uninterrupted live coverage.[1][2]",
-        "Radar, aircraft and other intelligence sources also matter. So does the alliance: U.S. early-warning and reconnaissance capabilities and established information-sharing arrangements help bridge vulnerabilities that South Korea cannot immediately eliminate on its own.",
-        "Self-reliant defense is an achievable long-term undertaking. It becomes dangerous rhetoric when leaders confuse the beginning of a capability with its completion."
+        "Seoul has launched five military reconnaissance satellites at a reported cost of roughly 1.3 trillion won. In October 2026 a report said satellite No. 4 had been out of service since May because of an attitude-control failure. The military said the remaining satellites were monitoring targets normally.[1][2]",
+        "Even with five operational satellites, the published plan was to revisit key North Korean targets about every two hours. Additional microsatellites planned by 2030 aim to shorten that interval to under thirty minutes. Neither figure means continuous, real-time visibility.[1]",
+        "U.S. satellite intelligence, early-warning capabilities and decades of analytic experience cannot be replaced instantly. In wartime, detecting an attack, judging the threat correctly and communicating orders matter more than boasts about equipment.",
+        "Wartime operational-control transfer is not simply a change in the commanding general's nationality. It affects the combined forces' ability to protect lives under nuclear threat. The transfer must be based on demonstrated military capability, not a political deadline."
       ]
     },
     {
-      "title": "Injured soldiers and failures in frontline readiness",
+      "title": "The defense minister's remark about 'science' and 'art'",
       "paragraphs": [
-        "On September 21, three officers and noncommissioned officers were injured during a mission in the western Demilitarized Zone. A South Korean and United Nations Command investigation concluded that a North Korean anti-personnel mine had been emplaced about ten metres south of the Military Demarcation Line, violating the armistice.[3]",
-        "South Korean forces removed the minefield on October 5. It would therefore be inaccurate to say the military did nothing. But the operation occurred after the injuries, leaving questions about when the danger had been identified and how that intelligence had informed patrol planning.[3][10]",
-        "A separate Defense Ministry audit found cases across forward army corps in which guard posts had operated without ammunition loaded as required by applicable instructions. This does not mean every soldier stood every watch with an unloaded weapon. It does raise serious questions about compliance and accountability.[4][11]",
-        "Controversy over a baton instruction for some sentries concerned a different kind of post. The incidents should not be merged into one operation, but both make the public ask whether guards were properly equipped for the threats associated with their actual duties.",
-        "A soldier's safety should never be reduced to a public-relations problem for senior commanders."
+        "Defense Minister Kang Shin-chul said that what is 'science' could become 'art' when explaining differences between South Korean and U.S. assessments of wartime operational-control transfer conditions.[5]",
+        "What does that mean for flight times, sensor coverage and readiness to command combined forces? Political negotiation can resolve disagreements, but it cannot conjure capabilities that have not yet been demonstrated.",
+        "The two governments agreed on a conditions-based transfer. Those tests of military capability, responses to North Korean nuclear and missile threats, and the security environment remain central. War does not allow policymakers the luxury of treating an untested assumption as a completed task."
       ]
     },
     {
-      "title": "Operational readiness is a test, not a metaphor",
+      "title": "Mines and frontline guard failures",
       "paragraphs": [
-        "Defense Minister Kang Shin-chul suggested that a disagreement over wartime operational-control transfer conditions could move from the realm of 'science' to that of 'art.' The remark was understood as allowing space for political consultation as well as quantitative military assessments.[5]",
-        "But combat effectiveness is not created by language. Missile detection, reliable command links, nuclear-threat response and sustained combined operations are missions that require evidence and testing.",
-        "The bilateral conditions-based transfer plan agreed in 2015 assesses South Korean military capabilities, the alliance's response to North Korean nuclear and missile threats, and the wider security environment. Seoul's official position is still that transfer depends on satisfying agreed conditions.[9]",
-        "An assessment that the conditions have been met is not the same thing as a political desire to make them easier to meet. Governments owe the public a credible account of what is ready, what is not and why evaluations differ."
+        "On September 21, eighteen South Korean personnel were involved in a DMZ operation, and three were injured by landmine blasts: two seriously and one slightly.[3]",
+        "A joint inquiry concluded that North Korean anti-personnel mines had been laid about ten meters south of the Military Demarcation Line, violating the armistice. South Korean forces removed the minefield on October 5.[3][10]",
+        "A separate Defense Ministry audit exposed cases in all four forward army corps of guards operating contrary to ammunition-loading rules. Those cases do not mean that all sentries stood guard without weapons; they do call training, command compliance and accountability into question.[4][11]",
+        "Commanders do not earn public trust through rank badges or speeches. They earn it through preparedness that actually protects soldiers and civilians."
       ]
     },
     {
-      "title": "A commander who defended Korea's strategic value",
+      "title": "A general's rank and a commander's duty",
       "paragraphs": [
-        "General Xavier Brunson, commander of U.S. Forces Korea and the Combined Forces Command, has publicly described the peninsula as strategically significant to the United States and its Indo-Pacific alliances. He has argued that U.S. forces in Korea serve regional deterrence as well as the defense of the South.[8]",
-        "At an October 14 event in Washington, Brunson said he supported transferring wartime operational control. His warning was narrower: the conditions established by the allies must be met, particularly as North Korea's capabilities and the security environment change. Transfer, he argued, cannot be treated as a date-driven exercise.[6]",
-        "Some politicians in South Korea criticized his public remarks as excessive and called for them to be curtailed. The defense minister also indicated that concern had been conveyed to the U.S. side.[7]",
-        "Allied commanders are not beyond criticism. Washington's regional priorities and Seoul's national interests will not always align perfectly. But operational concerns deserve an operational answer: evidence that the tasks can be performed and that contingency plans work.",
-        "When political indignation is more visible than a demonstration of military preparedness, it is reasonable for citizens to worry."
+        "Reports of instructions to use batons at some guard posts have prompted questions about command responsibility and how senior promotions reflect operational readiness.",
+        "Political leadership has authority over military appointments, but professional judgment and accountability must matter more than political confidence. Soldiers deserve commanders who act on military evidence rather than anticipated political reactions."
       ]
     },
     {
-      "title": "The difference between sovereignty and slogans",
+      "title": "The U.S. commander who argued for Korea's strategic value",
       "paragraphs": [
-        "There is nothing objectionable about South Korea wanting to defend itself and determine its own future. But asserting sovereignty does not repair a faulty satellite, create nuclear deterrence or make a command system fully ready overnight.",
-        "A conditions-based transfer of wartime operational control and a demand for U.S. troop withdrawal are not the same policy. Nor is there evidence that South Korea's entire governing party has adopted dismantling the alliance as an official program. Those distinctions matter when criticizing political rhetoric.",
-        "Nevertheless, calls to weaken the alliance or remove American forces invite a fundamental strategic question: who benefits, and who bears the risk?",
-        "North Korea still possesses nuclear weapons. China's and Russia's military activities shape the regional balance. Any change to deterrence, intelligence sharing or combined readiness would affect soldiers standing guard and the civilians behind them, not just the politicians debating sovereignty.",
-        "The alliance is not an American favor for which South Korea must be grateful. It is a reciprocal arrangement that serves South Korean defense and U.S. strategic interests. Seoul's task is to make use of that cooperation while strengthening its independent capabilities.",
-        "There is also a domestic question. If personnel decisions or political expectations discourage officers from reporting uncomfortable military assessments, that would undermine security from within. Evidence is required to determine whether and where such pressures exist."
+        "General Xavier Brunson has repeatedly explained to U.S. audiences why forces in Korea contribute to regional deterrence and American security interests. He has not rejected wartime operational-control transfer outright; he has emphasized that agreed conditions should be met.[6][8]",
+        "South Korean politicians publicly criticized his warnings, and the defense minister said he had conveyed concern to the U.S. side.[7]",
+        "Allied commanders are open to criticism, but the answer to a military warning must be evidence about capability. Dismissing a warning as a political inconvenience weakens the quality of an alliance."
       ]
     },
     {
-      "title": "Citizens cannot be the subjects of a security experiment",
+      "title": "If U.S. troops leave, what fills the gap?",
       "paragraphs": [
-        "The nuclear threat from the North is frightening. So is a decision-making culture in which political image is allowed to outrun military verification. The country needs more reconnaissance capacity, more resilient early-warning systems and an honest account of readiness within the U.S.–ROK command structure.",
-        "Failure in national defense cannot simply be corrected at the next election. Its costs are borne in service members' bodies, civilians' lives and potentially the existence of the state.",
-        "Governments come and go. Political careers end. Where can citizens go if a state fails to protect them?",
-        "Sovereignty is not the repetition of a proud word. It is the proven ability to protect the people for whom the state exists.",
-        "Citizens' lives are not the proper subject of a political experiment."
+        "Citizens are entitled to advocate the withdrawal of foreign forces. But that slogan still has to answer how North Korea's nuclear forces would be deterred, where equivalent early-warning intelligence would come from and who would provide credible escalation control.",
+        "Neither Korea nor the United States acts from charity alone. The alliance is built on overlapping national interests and should be managed with South Korean security first in mind.",
+        "Operational-control transfer and withdrawal of U.S. Forces Korea are separate policy questions. Both nonetheless demand serious assessment of any gaps they might create."
+      ]
+    },
+    {
+      "title": "Defense is capability, not a slogan",
+      "paragraphs": [
+        "Service members already watch the border, develop weapons and analyze threats under demanding conditions. It is those people, and the families who depend on them, who bear the consequences of political mistakes.",
+        "National security cannot always be restored by the next election. Broken satellites must be repaired, inadequate guard arrangements corrected and military conditions rigorously assessed before major command changes.",
+        "Citizens do not need another declaration that self-reliant defense has been accomplished. They need to know what is ready, what is not and what will be done about the gap.",
+        "The most dangerous leader is not the one who knows that the enemy is strong. It is the one who refuses to admit the limits of his own preparedness. The cost of that illusion is paid by ordinary people."
       ]
     }
   ],
@@ -112,5 +108,6 @@ export const issue81: ColumnTranslation = {
     "Yonhap News Agency, South Korea and United States differ on assessments of agreed transfer conditions, October 15, 2026",
     "News1, Removal of North Korean mines in the DMZ, October 5, 2026",
     "Chosun Ilbo, Defense Ministry audit finds guard-post ammunition compliance issues, October 5, 2026"
-  ]
+  ],
+  "readMinutes": 14
 };
