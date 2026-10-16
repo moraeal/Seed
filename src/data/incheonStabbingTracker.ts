@@ -134,6 +134,20 @@ export const incheonStabbingTracker: PublicInterestWatchCase = {
       "sources": [
         {
           "publisher": {
+            "ko": "이데일리",
+            "en": "Edaily"
+          },
+          "title": {
+            "ko": "지난달 15일 병원 앞 1인 시위 사진·흉기 소지 신고",
+            "en": "September 15 hospital protest photo and earlier weapon report"
+          },
+          "url": "https://coinlab.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=04067206645612592",
+          "publishedAt": "2026-10-13",
+          "thumbnailSrc": "/images/monitoring/incheon-stabbing-2026/0915-warning.jpg",
+          "kind": "article"
+        },
+        {
+          "publisher": {
             "ko": "뉴시스",
             "en": "뉴시스"
           },
@@ -266,6 +280,20 @@ export const incheonStabbingTracker: PublicInterestWatchCase = {
       },
       "status": "confirmed",
       "sources": [
+        {
+          "publisher": {
+            "ko": "연합뉴스",
+            "en": "Yonhap News Agency"
+          },
+          "title": {
+            "ko": "구월동 상업시설의 흉기난동 및 현장 감식 보도사진",
+            "en": "Photographs of Incheon commercial complex and crime-scene investigation"
+          },
+          "url": "https://www.yna.co.kr/view/AKR20261013170600065",
+          "publishedAt": "2026-10-13",
+          "thumbnailSrc": "/images/monitoring/incheon-stabbing-2026/1013-scene.jpg",
+          "kind": "article"
+        },
         {
           "publisher": {
             "ko": "뉴스1 사진",
