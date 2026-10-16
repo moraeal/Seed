@@ -14,19 +14,19 @@ export const incheonStabbingTranslation: BriefingTranslation = {
   "author": "SEED Civic Briefing",
   "images": [
     {
-      "src": "images/monitoring/incheon-stabbing-2026/1013-scene.svg",
+      "src": "images/monitoring/incheon-stabbing-2026/1013-scene.jpg",
       "alt": "Graphic showing the date and subject of the attack at an Incheon commercial building",
       "caption": "A factual editorial diagram of the October 13 incident, not an actual scene photograph.",
       "credit": "SEED VOICE diagram"
     },
     {
-      "src": "images/monitoring/incheon-stabbing-2026/1013-counsel.svg",
+      "src": "images/monitoring/incheon-stabbing-2026/1013-counsel.jpg",
       "alt": "Illustration of the consultation and probation contact before the incident",
       "caption": "Officials reported contact with the suspect earlier that day. This is an explanatory illustration, not a photograph of the meeting.",
       "credit": "SEED VOICE diagram"
     },
     {
-      "src": "images/monitoring/incheon-stabbing-2026/incident-stats-ko.svg",
+      "src": "images/monitoring/incheon-stabbing-2026/incident-stats-ko.jpg",
       "alt": "Korean chart comparing 46 unusual-motive offences in 2023 and 42 in 2024",
       "caption": "The Justice Ministry's figures for 2023 and 2024. Two years do not prove a long-term increase.",
       "credit": "Ministry of Justice · SEED VOICE chart"
