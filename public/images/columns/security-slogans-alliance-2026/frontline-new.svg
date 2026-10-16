@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810" aria-label="비무장지대 철조망과 진흙에 놓인 빈 철모, 멀리 순찰 중인 장병을 표현한 상징 일러스트">
+<defs>
+<linearGradient id="dusk" x1=".1" y1="0" x2=".7" y2="1"><stop stop-color="#536671"/><stop offset=".36" stop-color="#92908a"/><stop offset=".58" stop-color="#e6a16e"/><stop offset=".8" stop-color="#58646a"/><stop offset="1" stop-color="#223039"/></linearGradient>
+<linearGradient id="mud" x2="0" y2="1"><stop stop-color="#4b4b45"/><stop offset="1" stop-color="#101515"/></linearGradient>
+<linearGradient id="helmet" x2="1" y2="1"><stop stop-color="#58615b"/><stop offset=".4" stop-color="#303f3c"/><stop offset="1" stop-color="#141d1d"/></linearGradient>
+<radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop stop-color="#ffdda0" stop-opacity=".87"/><stop offset=".32" stop-color="#ecc497" stop-opacity=".23"/><stop offset="1" stop-color="#e69c78" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1440" height="810" fill="url(#dusk)"/><ellipse cx="1050" cy="380" rx="310" ry="250" fill="url(#sun)"/>
+<path d="M0 451Q190 406 345 437T610 422T960 411T1440 440V810H0" fill="#75817d" opacity=".65"/>
+<path d="M0 488Q175 425 340 469T650 466T1000 443T1440 453V810H0" fill="#5a6564" opacity=".7"/>
+<path d="M0 568Q300 468 585 519T1050 501T1440 519V810H0" fill="#3c4c4c"/>
+<path d="M0 602Q331 527 670 581T1440 552V810H0" fill="#283739"/>
+<path d="M0 674Q500 590 840 626T1440 604V810H0" fill="url(#mud)"/>
+<path d="M0 757Q270 704 410 746T730 733T1050 719T1440 741V810H0" fill="#12191b"/>
+<path d="M0 785Q200 734 329 767T680 751T1017 772T1440 739" fill="none" stroke="#848d83" stroke-width="8" opacity=".19"/>
+<g stroke="#273639" stroke-width="9"><path d="M20 400V810M206 386V810M389 383V810M571 376V810M771 368V810M982 356V810M1203 345V810M1386 341V810"/></g>
+<g stroke="#a9b2ac" stroke-width="3.5" opacity=".67" fill="none"><path d="M0 433L1440 355M0 488L1440 406M0 552L1440 457M0 614L1440 514"/><path d="M-50 432Q20 381 90 432T230 432T370 432T510 432T650 432T790 432T930 432T1070 432T1210 432T1350 432T1490 432"/><path d="M-50 490Q20 439 90 490T230 490T370 490T510 490T650 490T790 490T930 490T1070 490T1210 490T1350 490T1490 490"/></g>
+<g fill="#263435" opacity=".9" transform="translate(1005 340)"><circle cx="10" cy="30" r="27"/><path d="M-25 56q-28 44-26 131l99 1q6-85-23-132Z"/><path d="M-38 176l-8 120h31l28-117zm55 0 21 118h31l-7-117Z"/></g>
+<g fill="#1f2b2d" opacity=".85" transform="translate(1188 337)"><circle cx="10" cy="30" r="30"/><path d="M-25 56q-28 44-26 131l99 1q6-85-23-132Z"/><path d="M-38 176l-8 120h31l28-117zm55 0 21 118h31l-7-117Z"/></g>
+<g transform="translate(345 577) rotate(-12)">
+<ellipse cx="13" cy="161" rx="255" ry="65" fill="#02080a" opacity=".55"/>
+<path d="M-213 115Q-212-60 5-99Q208-60 220 113L230 158Q25 192-235 157Z" fill="url(#helmet)" stroke="#0a1213" stroke-width="12"/>
+<path d="M-211 119Q7 68 217 115" fill="none" stroke="#79817a" stroke-opacity=".5" stroke-width="13"/>
+<path d="M-142 56q138-124 283 0" fill="none" stroke="#829188" opacity=".2" stroke-width="15"/>
+<path d="M-189 149Q0 175 210 148" stroke="#171f20" stroke-width="14" fill="none"/>
+<path d="M-143-4l-32 63 26 25 33-48m170-72 34 68 37-22-38-68" fill="none" stroke="#202c2b" stroke-width="17"/>
+<rect x="-56" y="-74" width="112" height="45" rx="7" fill="#263431" stroke="#0f1d1a" stroke-width="9"/>
+</g>
+<g fill="#0e1919"><path d="M0 751l75-44 34 26 95-35 39 31 88-34 73 37 99-25 91 40 115-32 80 37 86-29 147 40 101-36 169 24V810H0Z"/></g>
+<rect width="1440" height="810" fill="none" stroke="#10191e" stroke-width="10" opacity=".21"/>
+</svg>
