@@ -182,6 +182,21 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
                             <p className="mt-3 text-sm leading-7 text-charcoal/68 sm:text-[15px]"><ArticleText text={t(entry.description)} citations={citations}/></p>
                           </details>
                         ) : <p className="mt-2 text-sm leading-7 text-charcoal/68 sm:text-[15px]"><ArticleText text={t(entry.description)} citations={citations}/></p>}
+                        {!!entry.sources?.length && entry.sources.length > 1 && (
+                          <div className="mt-4 border-t border-green-deep/10 pt-3">
+                            <p className="mb-2 text-[11px] font-extrabold tracking-wide text-charcoal/50">{ko ? "함께 확인할 원문·사진" : "Additional articles and photos"}</p>
+                            <ul className="space-y-2">
+                              {entry.sources.slice(1).map((source, i) => (
+                                <li key={`${entry.date}-extra-source-${i}`}>
+                                  <a href={source.url} target="_blank" rel="noreferrer" className="inline-flex items-start gap-2 text-xs font-semibold leading-5 text-green-deep hover:underline sm:text-sm">
+                                    <ExternalLink className="mt-0.5 shrink-0" size={13}/>
+                                    <span>{t(source.publisher)} · {t(source.title)}</span>
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
                       </div>
 
                       {!!entry.sources?.length && (() => {
