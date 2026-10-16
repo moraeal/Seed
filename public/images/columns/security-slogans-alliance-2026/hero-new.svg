@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810" aria-label="황혼의 전방 철책과 장병, 산 너머 미사일 발사 장면을 표현한 상징 일러스트">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2=".15" y2="1"><stop stop-color="#06111f"/><stop offset=".46" stop-color="#142638"/><stop offset=".72" stop-color="#7d4a45"/><stop offset=".86" stop-color="#d28666"/><stop offset="1" stop-color="#253b45"/></linearGradient>
+<radialGradient id="glow" cx=".70" cy=".55" r=".46"><stop stop-color="#ffa166" stop-opacity=".65"/><stop offset=".44" stop-color="#b94d3d" stop-opacity=".25"/><stop offset="1" stop-color="#862c35" stop-opacity="0"/></radialGradient>
+<linearGradient id="ground" x2="0" y2="1"><stop stop-color="#1f3038"/><stop offset="1" stop-color="#020912"/></linearGradient>
+<linearGradient id="rocket" x2="0" y2="1"><stop stop-color="#fff7d4"/><stop offset=".2" stop-color="#ffc88e"/><stop offset=".65" stop-color="#f9784f"/><stop offset="1" stop-color="#b34739" stop-opacity=".02"/></linearGradient>
+<pattern id="noise" width="86" height="81" patternUnits="userSpaceOnUse"><circle cx="10" cy="18" r="2" fill="#e9f1f3" opacity=".09"/><circle cx="65" cy="45" r="1" fill="#e9f1f3" opacity=".14"/><circle cx="38" cy="76" r="1" fill="#e9f1f3" opacity=".08"/></pattern>
+</defs>
+<rect width="1440" height="810" fill="url(#sky)"/><rect width="1440" height="810" fill="url(#glow)"/><rect width="1440" height="810" fill="url(#noise)"/>
+<path d="M0 490C160 456 254 426 390 459C532 478 633 428 733 443C905 380 991 440 1117 415C1280 387 1350 426 1440 408V810H0" fill="#213140" opacity=".65"/>
+<path d="M0 539C125 481 285 521 430 475C579 502 692 454 820 491C991 440 1133 465 1234 446C1360 452 1390 444 1440 451V810H0" fill="#273b45"/>
+<path d="M0 592C207 509 354 572 494 525C618 554 716 528 863 544C1038 491 1196 547 1440 506V810H0" fill="#162931"/>
+<ellipse cx="957" cy="560" rx="480" ry="56" fill="#b5c7c8" opacity=".085"/>
+<path d="M0 664C175 604 250 638 396 618C541 588 674 629 824 599C1113 567 1257 612 1440 579V810H0" fill="url(#ground)"/>
+<path d="M0 732Q362 627 740 704T1440 689V810H0" fill="#101c24"/>
+<g stroke="#788b90" stroke-width="3" opacity=".5" fill="none"><path d="M0 636L1440 573M0 670L1440 622M0 709L1440 672"/><path d="M0 650Q60 606 120 650T240 650T360 650T480 650T600 650T720 650T840 650T960 650T1080 650T1200 650T1320 650T1440 650"/><path d="M0 679Q70 632 140 679T280 679T420 679T560 679T700 679T840 679T980 679T1120 679T1260 679T1400 679"/></g>
+<g stroke="#293d43" stroke-width="10"><path d="M45 617V810M263 602V810M481 590V810M703 587V810M932 573V810M1152 572V810M1374 563V810"/></g>
+<g fill="#121e28" stroke="#121e28" stroke-width="4"><path d="M37 465L52 435 69 465Z"/><path d="M50 467V640M108 466V630" stroke-width="10"/><path d="M10 475H146V486H10Z"/><path d="M26 478V540M128 478V540"/><rect x="41" y="486" width="78" height="55" fill="#4d626b" stroke-width="5"/></g>
+<g transform="translate(338 270)" fill="#070e16" stroke="#101923" stroke-width="6"><path d="M58 119q-20-52 2-78Q93 12 141 36q26 33 19 77z"/><path d="M45 111q13-103 112-97l7 31q-61-14-109 66Z" fill="#1c2830"/><path d="M58 122q-38 31-54 100L-24 416h228l-19-199q-9-61-54-95Z"/><path d="M16 210L-12 340l26 19 48-112zm165-2 54 119-25 22-57-111Z"/><path d="M27 412l-29 160h68l38-158zm111 0 13 160h68l-34-161Z"/><path d="M85 133h42v60H85Z" fill="#1c2b32"/><path d="M65 198h98v118H65Z" fill="#1a2b31"/><path d="M65 217h98M79 198v118M141 198v118" stroke="#3a4850" stroke-width="5"/></g>
+<g transform="translate(1170 110) rotate(14)" stroke="#aac3ce" stroke-width="4"><rect x="-43" y="-17" width="86" height="34" rx="5" fill="#b6cbd4"/><rect x="-153" y="-44" width="105" height="88" fill="#244f70"/><rect x="48" y="-44" width="105" height="88" fill="#244f70"/><path d="M-153 0h105m-35-44v88m-35-88v88M48 0h105m-35-44v88m-35-88v88" stroke="#7298af" stroke-width="3"/><path d="M0 15v62" stroke-width="7"/></g>
+<g transform="translate(1202 410)"><path d="M-32 228Q-40 135-11 32L0 -74L11 32Q39 136 31 228" fill="url(#rocket)" opacity=".93"/><path d="M-11 19L0 -93L11 19Z" fill="#e4e8e2"/><path d="M-34 215Q-76 150-124 226M32 215Q73 140 124 226" fill="none" stroke="#e5b4a1" stroke-width="23" opacity=".17"/></g>
+<rect width="1440" height="810" fill="none" stroke="#111b29" stroke-width="15" opacity=".34"/>
+</svg>
