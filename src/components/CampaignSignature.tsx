@@ -2,7 +2,7 @@ import { type FormEvent, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../auth";
 import { useLanguage } from "../i18n";
-import { createComment, loadComments, loadOwnCampaignSignatures, manageCampaignSignature, type CommentRecord } from "../lib/comments";
+import { createComment, loadCampaignSignatures, loadOwnCampaignSignatures, manageCampaignSignature, type CommentRecord } from "../lib/comments";
 
 import { campaignShortsThumbnail } from "../data/campaignShortsThumbnail";
 
@@ -71,6 +71,8 @@ export default function CampaignSignature() {
   const [notice, setNotice] = useState("");
   const [signatures, setSignatures] = useState<CommentRecord[]>([]);
   const [signaturePage, setSignaturePage] = useState(1);
+  const [signatureLoading, setSignatureLoading] = useState(true);
+  const [signatureError, setSignatureError] = useState(false);
   const totalSignaturePages = Math.max(1, Math.ceil(signatures.length / signaturesPerPage));
   const currentSignaturePage = Math.min(signaturePage, totalSignaturePages);
   const visibleSignatures = signatures.slice((currentSignaturePage - 1) * signaturesPerPage, currentSignaturePage * signaturesPerPage);
@@ -81,6 +83,17 @@ export default function CampaignSignature() {
   const [editBody, setEditBody] = useState("");
   const [deleting, setDeleting] = useState<string | null>(null);
   const [busyId, setBusyId] = useState<string | null>(null);
+  async function refreshSignatures() {
+    setSignatureLoading(true);
+    setSignatureError(false);
+    try {
+      setSignatures(await loadCampaignSignatures(signatureSlug));
+    } catch {
+      setSignatureError(true);
+    } finally {
+      setSignatureLoading(false);
+    }
+  }
   const atLimit = mine.length >= 2;
   const limitMessage = ko ? "서명글은 한 계정당 최대 2개까지 등록할 수 있습니다. 기존 글을 수정하거나 삭제해주세요." : "You can register up to two signatures per account. Edit or delete an existing signature.";
   useEffect(() => {
@@ -107,13 +120,13 @@ export default function CampaignSignature() {
       const change = (rows: CommentRecord[]) => remove ? rows.filter(row => row.id !== id) : rows.map(row => row.id === id ? { ...row, body: text } : row);
       setMine(change); setSignatures(change); setEditing(null); setDeleting(null);
       setNotice(remove ? (ko ? "서명글이 삭제되었습니다." : "Your signature was deleted.") : (ko ? "서명글이 수정되었습니다." : "Your signature was updated."));
-      void loadComments(signatureSlug).then(setSignatures);
+      void refreshSignatures();
     } catch {
       setNotice(ko ? "처리하지 못했습니다. 로그인 상태를 확인한 뒤 다시 시도해주세요." : "The change failed. Check your login and try again.");
     } finally { setBusyId(null); }
   }
 
-  useEffect(() => { void loadComments(signatureSlug).then(setSignatures); }, []);
+  useEffect(() => { void refreshSignatures(); }, []);
 
   async function submit(event: FormEvent) {
     event.preventDefault();
@@ -133,7 +146,7 @@ export default function CampaignSignature() {
       setConsent(false);
       setNotice(ko ? "서명글이 등록되었습니다. 함께해주셔서 감사합니다." : "Your signature was registered. Thank you for joining.");
       setMine(await loadOwnCampaignSignatures(signatureSlug, session.access_token, user.id));
-      setSignatures(await loadComments(signatureSlug));
+      await refreshSignatures();
       setSignaturePage(1);
     } catch (error) {
       if (error instanceof Error && error.message === "CAMPAIGN_SIGNATURE_LIMIT") {
@@ -216,7 +229,11 @@ export default function CampaignSignature() {
       </li>)}</ul>
     </div>}
     {notice && <p className="mt-4 text-sm font-bold text-green-deep" role="status">{notice}</p>}
-    {signatures.length > 0 && <div className="mt-6 border-t border-green-deep/15 pt-4">
+    <div className="mt-6 border-t border-green-deep/15 pt-4">
+      {signatureLoading && <p role="status" className="text-sm text-charcoal/70">{ko ? "기존 서명글을 불러오는 중입니다." : "Loading signatures…"}</p>}
+      {signatureError && <div role="alert" className="flex flex-wrap items-center gap-3"><p className="text-sm text-red-700">{ko ? "서명글을 불러오지 못했습니다. 저장된 서명은 삭제되지 않았습니다." : "Unable to load signatures. Existing signatures have not been deleted."}</p><button type="button" className="button-secondary" onClick={() => void refreshSignatures()}>{ko ? "다시 불러오기" : "Retry"}</button></div>}
+      {!signatureLoading && !signatureError && signatures.length === 0 && <p className="text-sm text-charcoal/65">{ko ? "표시할 서명글이 없습니다." : "No signatures to display."}</p>}
+      {signatures.length > 0 && <>
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h3 className="text-base font-bold text-navy">{ko ? "증세반대 서명글" : "Campaign signatures"} ({signatures.length})</h3>
         <span className="text-sm text-charcoal/60">{ko ? `페이지 ${currentSignaturePage} / ${totalSignaturePages} · 페이지당 50개` : `Page ${currentSignaturePage} of ${totalSignaturePages} · 50 per page`}</span>
@@ -227,6 +244,7 @@ export default function CampaignSignature() {
         <span className="text-sm font-bold text-navy" aria-live="polite">{currentSignaturePage} / {totalSignaturePages}</span>
         <button type="button" className="button-secondary disabled:cursor-not-allowed disabled:opacity-40" disabled={currentSignaturePage === totalSignaturePages} onClick={() => setSignaturePage(currentSignaturePage + 1)}>{ko ? "다음 →" : "Next →"}</button>
       </nav>}
-    </div>}
+      </>}
+    </div>
   </section>;
 }
