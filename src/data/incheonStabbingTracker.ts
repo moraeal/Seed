@@ -664,6 +664,22 @@ export const incheonStabbingTracker: PublicInterestWatchCase = {
   },
   "relatedContents": [
     {
+      "href": "/briefings/incheon-stabbing-warning-signals-civic-briefing-2026",
+      "label": {
+        "ko": "씨앗 시민브리핑 · 공익감시",
+        "en": "Civic briefing · Public safety"
+      },
+      "title": {
+        "ko": "인천 흉기난동, 위험 신호는 왜 시민을 지키지 못했나",
+        "en": "Incheon stabbing: Why did the warnings fail?"
+      },
+      "summary": {
+        "ko": "범행 전에 드러난 신호, 경찰·보호관찰의 대응, 피해자 지원 예산의 공백을 논평과 함께 설명한다.",
+        "en": "Civic briefing examining earlier warnings, supervision, victims’ support and state accountability."
+      },
+      "date": "2026-10-16"
+    },
+    {
       "href": "/columns/death-rushing-society-how-to-care-2026",
       "label": {
         "ko": "생명사랑 칼럼",
