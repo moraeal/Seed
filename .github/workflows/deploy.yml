@@ -34,8 +34,12 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Ensure social-image converter is available
-        run: command -v convert || (sudo apt-get update && sudo apt-get install -y imagemagick)
+      - name: Ensure image converters and Korean fonts are available
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick librsvg2-bin fonts-noto-cjk
+          command -v convert
+          command -v rsvg-convert
       - name: Build
         run: node scripts/check-editorial-images.mjs && node scripts/validate-hot-issues.mjs && pnpm run build
         env:
