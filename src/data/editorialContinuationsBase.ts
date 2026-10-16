@@ -9,6 +9,22 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "briefing:incheon-stabbing-warning-signals-civic-briefing-2026": {
+    ko: {
+      href: "/monitoring/incheon-public-stabbing-prevention-tracker-2026",
+      title: "인천 흉기난동, 위험 신호는 언제부터 있었나",
+      relationship: "날짜별 뉴스트래커",
+      reason: "사건 이전의 신고와 경찰 조사부터 구속영장 청구·피해자 지원까지 모든 근거 기사를 이미지 카드로 이어서 확인합니다.",
+      listHref: "/briefings", listLabel: "시민브리핑 전체 보기"
+    },
+    en: {
+      href: "/monitoring/incheon-public-stabbing-prevention-tracker-2026",
+      title: "Incheon stabbing: When did warning signs first appear?",
+      relationship: "DATED NEWS TRACKER",
+      reason: "Follow every verified step with linked original news reports and images.",
+      listHref: "/briefings", listLabel: "All Civic Briefings"
+    }
+  },
   "column:death-rushing-society-how-to-care-2026": {
     ko: {
       href: "/columns/suicide-prevention-beyond-mental-illness-2026",
