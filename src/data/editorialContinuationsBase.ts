@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:security-slogans-alliance-2026": {
+    ko: { href: "/columns/security-pride-vigilance-armed-forces-day-2026", title: "국뽕으로 생긴 안보 자신감, 안보의식은 어디로?", relationship: "같은 안보 문제의식", reason: "군사력 순위와 장병의 안전 사이의 거리를 국군의 날 칼럼에서 이어 읽습니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
+    en: { href: "/columns/security-pride-vigilance-armed-forces-day-2026", title: "Military Pride Is Not Battlefield Readiness", relationship: "DEFENSE READINESS", reason: "Read how national military strength can coexist with risks to soldiers on the front line.", listHref: "/columns", listLabel: "All columns" },
+  },
   "briefing:incheon-stabbing-warning-signals-civic-briefing-2026": {
     ko: {
       href: "/monitoring/incheon-public-stabbing-prevention-tracker-2026",
