@@ -11,11 +11,13 @@ const server = await createServer({ configFile: false, appType: 'custom', server
 const { newsTrackerCases } = await server.ssrLoadModule('/src/data/newsTrackerRegistry.ts');
 await server.close();
 const sources = new Map();
-for (const tracker of newsTrackerCases) for (const entry of tracker.timeline ?? []) for (const source of entry.sources ?? []) {
+for (const tracker of newsTrackerCases) for (const entry of tracker.timeline ?? []) for (const [i, source] of (entry.sources ?? []).entries()) {
   if (source.kind === 'document') continue;
   if (source.thumbnailSrc) {
-    if (!/^https?:/.test(source.thumbnailSrc)) await access(`public/${source.thumbnailSrc.replace(/^\//, '')}`);
-    continue;
+    if (!/^https?:/.test(source.thumbnailSrc)) await access(`public/${source.thumbnailSrc.replace(/^\\//, '')}`);
+    // For the Incheon tracker, use the first linked news photo rather than the prior
+    // icon-only timeline thumbnail, retaining the local JPEG as a guaranteed fallback.
+    if (!(tracker.slug === "incheon-public-stabbing-prevention-tracker-2026" && i === 0)) continue;
   }
   sources.set(source.url, source);
 }
@@ -62,7 +64,13 @@ async function prepare([url, source]) {
       manifest[url] = { src, originalImageUrl: imageUrl, verifiedAt: new Date().toISOString() };
       console.log(`Saved ${source.publisher.ko}: ${source.title.ko}`);
     } finally { await unlink(temporary).catch(() => {}); }
-  } catch (error) { errors.push(`${url}: ${error.message}`); }
+  } catch (error) {
+    if (source.thumbnailSrc && source.thumbnailSrc.includes("/incheon-stabbing-2026/")) {
+      console.warn(`News photo unavailable, keeping local JPEG fallback: ${url}: ${error.message}`);
+    } else {
+      errors.push(`${url}: ${error.message}`);
+    }
+  }
 }
 const entries = [...sources];
 for (let index = 0; index < entries.length; index += 6) await Promise.all(entries.slice(index, index + 6).map(prepare));
