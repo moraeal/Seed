@@ -1,13 +1,13 @@
 import type { ColumnTranslation } from "../types";
 
 export const issue81: ColumnTranslation = {
-  "title": "South Korea's Security Is Fraying — Self-Reliant Defense for Whom?",
+  "title": "South Korea's Security Is Fraying — Sovereignty for Whom?",
   "subtitle": "North Korea advances its nuclear and missile forces while South Korea debates empty weapons and calls military readiness an 'art.'",
   "author": "Small Seed",
   "summary": "A military reconnaissance satellite is reportedly out of service, three soldiers were hurt by mines across the demarcation line, and frontline guard failures have been documented. National security is not a political slogan; it is the capacity to detect and defeat threats.",
   "heroImage": {
     "alt": "Photorealistic AI reconstruction of a sentry by a nighttime frontier observation post, a distant missile-like launch streak and a reconnaissance satellite",
-    "caption": "Advanced weaponry offers little reassurance if warning and command systems cannot detect threats in time.",
+    "caption": "Invoking sovereignty cannot replace the ability to detect threats and protect citizens in time.",
     "credit": "AI image"
   },
   "inlineImage": {
@@ -32,7 +32,7 @@ export const issue81: ColumnTranslation = {
     {
       "title": "",
       "paragraphs": [
-        "South Korea builds cutting-edge aircraft, missiles and weapons for export. But can it independently detect preparations for a North Korean nuclear attack fast enough to respond? Can the people at the front line trust the command decisions that put them in danger?",
+        "South Korea builds cutting-edge aircraft, missiles and weapons for export, and its leaders invoke 'sovereignty' as a badge of achievement. Yet whose security does that slogan serve? Can South Korea independently detect preparations for a North Korean nuclear attack fast enough to respond? Can frontline soldiers trust the command decisions that put them in danger?",
         "Military rankings and arms exhibitions cannot answer those questions. The gap between confident political language and actual readiness is frightening."
       ]
     },
@@ -42,7 +42,7 @@ export const issue81: ColumnTranslation = {
         "Seoul has launched five military reconnaissance satellites at a reported cost of roughly 1.3 trillion won. In October 2026 a report said satellite No. 4 had been out of service since May because of an attitude-control failure. The military said the remaining satellites were monitoring targets normally.[1][2]",
         "Even with five operational satellites, the published plan was to revisit key North Korean targets about every two hours. Additional microsatellites planned by 2030 aim to shorten that interval to under thirty minutes. Neither figure means continuous, real-time visibility.[1]",
         "U.S. satellite intelligence, early-warning capabilities and decades of analytic experience cannot be replaced instantly. In wartime, detecting an attack, judging the threat correctly and communicating orders matter more than boasts about equipment.",
-        "Wartime operational-control transfer is not simply a change in the commanding general's nationality. It affects the combined forces' ability to protect lives under nuclear threat. The transfer must be based on demonstrated military capability, not a political deadline."
+        "Wartime operational-control transfer is not simply a change in the commanding general's nationality. It affects the combined forces' ability to protect lives under nuclear threat. Sovereignty that leaves the country less capable of defending itself is a slogan, not an achievement. The transfer must rest on demonstrated military capability, not a political deadline."
       ]
     },
     {
@@ -81,7 +81,7 @@ export const issue81: ColumnTranslation = {
       "title": "If U.S. troops leave, what fills the gap?",
       "paragraphs": [
         "Citizens are entitled to advocate the withdrawal of foreign forces. But that slogan still has to answer how North Korea's nuclear forces would be deterred, where equivalent early-warning intelligence would come from and who would provide credible escalation control.",
-        "Neither Korea nor the United States acts from charity alone. The alliance is built on overlapping national interests and should be managed with South Korean security first in mind.",
+        "Neither Korea nor the United States acts from charity alone. The alliance rests on overlapping national interests. True autonomy means making responsible choices for South Korean security, strengthening domestic capabilities while using the alliance rather than weakening it for the sake of a slogan.",
         "Operational-control transfer and withdrawal of U.S. Forces Korea are separate policy questions. Both nonetheless demand serious assessment of any gaps they might create."
       ]
     },
@@ -90,7 +90,7 @@ export const issue81: ColumnTranslation = {
       "paragraphs": [
         "Service members already watch the border, develop weapons and analyze threats under demanding conditions. It is those people, and the families who depend on them, who bear the consequences of political mistakes.",
         "National security cannot always be restored by the next election. Broken satellites must be repaired, inadequate guard arrangements corrected and military conditions rigorously assessed before major command changes.",
-        "Citizens do not need another declaration that self-reliant defense has been accomplished. They need to know what is ready, what is not and what will be done about the gap.",
+        "Citizens do not need another declaration that 'sovereignty' has been achieved. Sovereignty is not a political trophy. If it does not protect the lives of those it claims to serve, for whom is it being invoked? Citizens need to know what is ready, what is not and what will be done about the gap.",
         "The most dangerous leader is not the one who knows that the enemy is strong. It is the one who refuses to admit the limits of his own preparedness. The cost of that illusion is paid by ordinary people."
       ]
     }
