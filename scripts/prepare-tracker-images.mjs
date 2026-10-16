@@ -14,7 +14,7 @@ const sources = new Map();
 for (const tracker of newsTrackerCases) for (const entry of tracker.timeline ?? []) for (const [i, source] of (entry.sources ?? []).entries()) {
   if (source.kind === 'document') continue;
   if (source.thumbnailSrc) {
-    if (!/^https?:/.test(source.thumbnailSrc)) await access(`public/${source.thumbnailSrc.replace(/^\\//, '')}`);
+    if (!/^https?:/.test(source.thumbnailSrc)) await access(`public/${source.thumbnailSrc.startsWith('/') ? source.thumbnailSrc.slice(1) : source.thumbnailSrc}`);
     // For the Incheon tracker, use the first linked news photo rather than the prior
     // icon-only timeline thumbnail, retaining the local JPEG as a guaranteed fallback.
     if (!(tracker.slug === "incheon-public-stabbing-prevention-tracker-2026" && i === 0)) continue;
