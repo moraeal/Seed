@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810">
+<defs><linearGradient id="dawn" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#465f6a"/><stop offset=".51" stop-color="#b18d77"/><stop offset="1" stop-color="#263e47"/></linearGradient><linearGradient id="ground" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#3f5350"/><stop offset="1" stop-color="#14242b"/></linearGradient></defs>
+<rect width="1440" height="810" fill="url(#dawn)"/><circle cx="1080" cy="275" r="94" fill="#f1d2b1" opacity=".53"/>
+<path d="M0 480L108 420 258 469 362 407 496 450 642 393 792 462 963 401 1132 461 1260 423 1440 486V810H0Z" fill="#627372" opacity=".73"/>
+<path d="M0 550L187 505 296 527 475 479 604 533 762 477 944 542 1104 481 1273 540 1440 504V810H0Z" fill="#43585a"/><path d="M0 626Q520 550 1440 630V810H0Z" fill="url(#ground)"/>
+<g stroke="#abb3ad" stroke-width="5" opacity=".65"><path d="M0 565L1440 475M0 690L1440 598"/><path d="M0 555L1440 677"/><path d="M0 676L1440 538"/></g>
+<g fill="none" stroke="#abb3ad" stroke-width="3" opacity=".68"><path d="M-50 572Q0 535 50 575T150 575T250 575T350 575T450 575T550 575T650 575T750 575T850 575T950 575T1050 575T1150 575T1250 575T1350 575T1450 575"/><path d="M-50 618Q0 581 50 621T150 621T250 621T350 621T450 621T550 621T650 621T750 621T850 621T950 621T1050 621T1150 621T1250 621T1350 621T1450 621"/></g>
+<g fill="#13242b" transform="translate(425 197)"><ellipse cx="0" cy="215" rx="100" ry="125"/><path d="M-102 215Q-184 293 -187 522H178Q170 300 103 218Z"/><path d="M-117 198Q-140 90 -36 46Q80 27 115 112L116 200Z"/><path d="M-125 108Q-90 -6 23 2Q124 17 133 111Z"/><path d="M68 296L128 250L191 548L130 564Z"/><path d="M-138 310L-191 360L-173 553L-120 535Z"/><rect x="100" y="237" width="22" height="280" rx="5" transform="rotate(-18 100 237)"/></g>
+<g fill="#192931" opacity=".82"><path d="M1080 545h17V402h-17zM1310 520h16V386h-16z"/><path d="M1048 414h88l-44-44zM1274 397h86l-42-44z"/><path d="M1002 547h190M1237 524h167" stroke="#192931" stroke-width="7"/></g>
+<path d="M0 760H1440" stroke="#bcc1bb" stroke-opacity=".25" stroke-width="4"/>
+</svg>
