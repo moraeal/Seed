@@ -1,0 +1,35 @@
+name: Pansori video clip transfer
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/pansori-clip-transfer.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  collect:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'video-assets/pansori-20261017'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download seven generated OpenArt Seedance videos
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p clips
+          curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 --silent --show-error 'https://cdn.openart.ai/openart-ai/production/2026-10/create-video/hIGDvZZnoi7gWTcetueg/02179220311913000000000000000000000ffffc0a86ffe5d944a_1792203311735_9d93934c.mp4' -o clips/dance1.mp4
+          curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 --silent --show-error 'https://cdn.openart.ai/openart-ai/production/2026-10/create-video/hIGDvZZnoi7gWTcetueg/02179220351032300000000000000000000ffffc0a8bb66c41b28_1792203815438_0ba35b8d.mp4' -o clips/dance2.mp4
+          curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 --silent --show-error 'https://cdn.openart.ai/openart-ai/production/2026-10/create-video/hIGDvZZnoi7gWTcetueg/02179220351552500000000000000000000ffffc0a8b3ea92040c_1792203731633_9f77bc4b.mp4' -o clips/dance3.mp4
+          curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 --silent --show-error 'https://cdn.openart.ai/openart-ai/production/2026-10/create-video/hIGDvZZnoi7gWTcetueg/02179220352619700000000000000000000ffffc0a85d85a12f43_1792203746056_4d2defd8.mp4' -o clips/drum1.mp4
+          curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 --silent --show-error 'https://cdn.openart.ai/openart-ai/production/2026-10/create-video/hIGDvZZnoi7gWTcetueg/02179220353213300000000000000000000ffffc0a860d85e2d73_1792203720977_e53c8ccd.mp4' -o clips/drum2.mp4
+          curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 --silent --show-error 'https://cdn.openart.ai/openart-ai/production/2026-10/create-video/hIGDvZZnoi7gWTcetueg/02179220459569400000000000000000000ffffc0a878326c03b3_1792204775471_c0fca068.mp4' -o clips/crowd1.mp4
+          curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 --silent --show-error 'https://cdn.openart.ai/openart-ai/production/2026-10/create-video/hIGDvZZnoi7gWTcetueg/02179220462726500000000000000000000ffffc0a8413ca44861_1792204819467_40b1c34c.mp4' -o clips/crowd2.mp4
+          ls -lh clips/
+          test "$(ls clips/*.mp4 | wc -l)" -eq 7
+      - name: Package MP4 video files
+        uses: actions/upload-artifact@v4
+        with:
+          name: pansori-seedance-7-clips
+          path: clips/*.mp4
+          if-no-files-found: error
+          retention-days: 3
