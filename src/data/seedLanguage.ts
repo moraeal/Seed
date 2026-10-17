@@ -1,3 +1,4 @@
+import { limitedStateArticleKo, limitedStateArticleEn } from "./seedLanguageLimitedState";
 import { basicIncomeArticleKo, basicIncomeArticleEn } from "./seedLanguageBasicIncome";
 import { augmentedIndividualArticleKo, augmentedIndividualArticleEn } from "./seedLanguageAugmentedIndividual";
 import { dialogueArticleKo, dialogueArticleEn } from "./seedLanguageSocialDialogue";
@@ -25,9 +26,10 @@ export type {
   SeedLanguageImage,
 } from "./seedLanguageBase";
 
-export const seedLanguageArticlesKo = [basicIncomeArticleKo, augmentedIndividualArticleKo, dialogueArticleKo, historyArticleKo, corporateCitizenshipArticleKo, petitionArticleKo, fairnessArticleKo, stateArticleKo, unificationArticleKo, publicArticleKo, politicsArticleKo, conservatismArticleKo, discourseArticleKo, progressArticleKo, freedomArticleKo, ...baseSeedLanguageArticlesKo];
+export const seedLanguageArticlesKo = [limitedStateArticleKo, basicIncomeArticleKo, augmentedIndividualArticleKo, dialogueArticleKo, historyArticleKo, corporateCitizenshipArticleKo, petitionArticleKo, fairnessArticleKo, stateArticleKo, unificationArticleKo, publicArticleKo, politicsArticleKo, conservatismArticleKo, discourseArticleKo, progressArticleKo, freedomArticleKo, ...baseSeedLanguageArticlesKo];
 
 export function getSeedLanguageArticle(slug: string, language: Language) {
+  if (slug === limitedStateArticleKo.slug) return language === "en" ? limitedStateArticleEn : limitedStateArticleKo;
   if (slug === basicIncomeArticleKo.slug) return language === "en" ? basicIncomeArticleEn : basicIncomeArticleKo;
   if (slug === augmentedIndividualArticleKo.slug) return language === "en" ? augmentedIndividualArticleEn : augmentedIndividualArticleKo;
   if (slug === dialogueArticleKo.slug) return language === "en" ? dialogueArticleEn : dialogueArticleKo;

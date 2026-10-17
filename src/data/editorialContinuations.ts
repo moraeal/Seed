@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "seed-language" && slug === "limited-state-citizen-power-boundaries-2026") return true;
   if (kind === "briefing" && slug === "health-insurance-state-support-144-percent-citizen-cost-2026") return true;
   if (kind === "column" && slug === "suicide-prevention-beyond-mental-illness-2026") return true;
   if (kind === "column" && slug === "robak-vitruvius-reconstruction-everyone-2026") return true;
@@ -520,6 +521,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "seed-language" && slug === "limited-state-citizen-power-boundaries-2026") return language === "ko" ? {"href": "/seed-language/state-citizens-trust", "title": "국가는 시민의 주인이 아니라 시민이 권한을 맡긴 제도라는 말이다", "relationship": "국가론 함께 읽기", "reason": "제한된 국가의 바탕이 되는 유능함·권력의 한계·시민의 경험으로 고치는 국가를 함께 살펴봅니다.", "listHref": "/seed-language", "listLabel": "시민언어 전체 보기"} : {"href": "/seed-language/state-citizens-trust", "title": "The State Is Not the Citizen’s Master but an Institution Entrusted with Power", "relationship": "READ THE EARLIER STATE ENTRY", "reason": "Explore the framework of a capable, limited and responsive state that underpins this article.", "listHref": "/seed-language", "listLabel": "All Glossary entries"};
   if (kind === "briefing" && slug === "health-insurance-state-support-144-percent-citizen-cost-2026") return language === "ko" ? {
     href: "/columns/health-insurance-statistics-errors-fiscal-accountability-2026",
     title: "통계는 틀리고, 돈은 새고, 부담은 국민에게",
