@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "briefing" && slug === "health-insurance-state-support-144-percent-citizen-cost-2026") return true;
   if (kind === "column" && slug === "suicide-prevention-beyond-mental-illness-2026") return true;
   if (kind === "column" && slug === "robak-vitruvius-reconstruction-everyone-2026") return true;
   if (kind === "briefing" && slug === "teen-ai-use-bill-2221842-explained") return true;
@@ -519,6 +520,19 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "briefing" && slug === "health-insurance-state-support-144-percent-citizen-cost-2026") return language === "ko" ? {
+    href: "/columns/health-insurance-statistics-errors-fiscal-accountability-2026",
+    title: "통계는 틀리고, 돈은 새고, 부담은 국민에게",
+    relationship: "건보 재정의 다른 관리 문제",
+    reason: "정부지원의 빈칸에 이어 보험료 징수와 통계 오류의 책임도 함께 살펴봅니다.",
+    listHref: "/briefings", listLabel: "브리핑 전체 보기",
+  } : {
+    href: "/columns/health-insurance-statistics-errors-fiscal-accountability-2026",
+    title: "Wrong Statistics, Lost Revenue, and the Public's Burden",
+    relationship: "OTHER FISCAL ACCOUNTABILITY QUESTIONS",
+    reason: "Continue from state support to collection losses and statistical errors in health insurance.",
+    listHref: "/briefings", listLabel: "All briefings",
+  };
   if (kind === "column" && slug === "suicide-prevention-beyond-mental-illness-2026") return language === "ko" ? { href: "/columns/suicide-prevention-mois-local-community", title: "자살예방, 행안부가 나서라", relationship: "지역 생명안전망", reason: "지방정부와 시민사회가 함께 움직일 조직과 재원의 문제를 이어 읽습니다.", listHref: "/civic-life", listLabel: "시민생활 전체 보기" } : { href: "/columns/suicide-prevention-mois-local-community", title: "Suicide Prevention: The Interior Ministry Must Step Forward", relationship: "COMMUNITY SUPPORT", reason: "Read further on staffing, funding and cooperation between local government and civil society.", listHref: "/civic-life", listLabel: "All Civic Life articles" };
   if (kind === "column" && slug === "robak-vitruvius-reconstruction-everyone-2026") return language === "ko" ? {"href": "/columns/robak-housing-names-hangeul-communication-2026", "title": "집의 이름은 누구에게 말을 거는가", "relationship": "노박의 건설읽기", "reason": "집의 이름과 문, 이웃 사이에 생기는 경계를 살핀 노박의 다른 글을 읽습니다.", "listHref": "/civic-life", "listLabel": "시민생활 전체 보기"} : {"href": "/columns/robak-housing-names-hangeul-communication-2026", "title": "Who Is a Home’s Name Speaking To?", "relationship": "ROBAK READS CONSTRUCTION", "reason": "Read Robak on apartment names, entrances and the boundaries between neighbours.", "listHref": "/civic-life", "listLabel": "All Civic Life articles"};
   if (kind === "column" && slug === "atr-taxpayer-movement-04-wednesday-meeting") return language === "ko" ? { href: "/columns/taxpayer-movement-03-britain-spending-watch", title: "세금은 그대로인데, 신고할 일이 늘었다", relationship: "세금감시운동 연재 ③", reason: "시민의 신고 시간과 비용을 줄이기 위해 ATR과 여러 단체가 협력한 사례를 앞선 편에서 읽습니다.", listHref: "/tax-watch-movement", listLabel: "세금감시운동 전체 보기" } : { href: "/columns/taxpayer-movement-03-britain-spending-watch", title: "The Tax Rate Stayed the Same. The Paperwork Grew.", relationship: "TAXPAYER MOVEMENTS, PART 3", reason: "Read the preceding article on ATR and other groups working together to reduce citizens’ reporting time and costs.", listHref: "/tax-watch-movement", listLabel: "All Tax Watch Movement articles" };

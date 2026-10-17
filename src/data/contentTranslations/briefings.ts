@@ -1,3 +1,4 @@
+import { healthInsuranceFundingTranslation } from "./briefingHealthInsuranceFunding";
 import { incheonStabbingTranslation } from "./incheonStabbingBriefing";
 import { teenAiUseExplainerTranslation } from "./teenAiUseExplainer";
 import { toyDonationTranslation } from "../toyDonationBriefing";
@@ -30,6 +31,7 @@ import { monthlyRentCreditExplainerTranslation } from "./briefingMonthlyRentCred
 import { farmlandRetirementTranslation } from "./briefingFarmlandRetirement";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "health-insurance-state-support-144-percent-citizen-cost-2026": healthInsuranceFundingTranslation,
   "incheon-stabbing-warning-signals-civic-briefing-2026": incheonStabbingTranslation,
   "teen-ai-use-bill-2221842-explained": teenAiUseExplainerTranslation,
   "toy-donation-corporate-citizenship-2026": toyDonationTranslation,

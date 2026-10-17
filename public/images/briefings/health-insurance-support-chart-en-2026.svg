@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-label="State support for national health insurance">
+ <rect width="1200" height="680" fill="#f8f7f2"/>
+ <g font-family="Noto Sans KR, Pretendard, Apple SD Gothic Neo, sans-serif" fill="#173544">
+ <text x="80" y="98" font-size="43" font-weight="800">State support for national health insurance</text>
+ <text x="80" y="147" font-size="25" fill="#53636b">2027 government proposal · share of projected premium revenue</text>
+ <text x="80" y="244" font-size="29" font-weight="700">Statutory benchmark</text>
+ <rect x="80" y="268" width="1000" height="76" rx="4" fill="#d8e8df"/>
+ <rect x="80" y="268" width="700" height="76" rx="4" fill="#176b59"/>
+ <rect x="780" y="268" width="300" height="76" fill="#407e68"/>
+ <text x="1050" y="324" text-anchor="end" font-size="46" fill="#fff" font-weight="800">20%</text>
+ <text x="80" y="380" font-size="24" fill="#53636b">General budget 14% + Health Promotion Fund 6%</text>
+ <text x="80" y="455" font-size="29" font-weight="700">Government proposal</text>
+ <rect x="80" y="478" width="1000" height="76" rx="4" fill="#e4e8e5"/>
+ <rect x="80" y="478" width="720" height="76" rx="4" fill="#c97f3b"/>
+ <text x="765" y="534" text-anchor="end" font-size="46" fill="#fff" font-weight="800">14.4%</text>
+ <text x="80" y="590" font-size="24" fill="#53636b">KRW 13.8 trillion proposed · awaiting Parliament</text>
+ <text x="1080" y="398" text-anchor="end" font-size="28" font-weight="800" fill="#a4502d">Gap: 5.6 percentage points</text>
+ <text x="80" y="644" font-size="19" fill="#66777b">The statutes include budget and fund-resource conditions.</text>
+ </g>
+</svg>
