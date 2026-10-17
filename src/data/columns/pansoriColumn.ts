@@ -12,6 +12,16 @@ export const pansoriCourtColumn: SeedColumn = {
   ],
   "readMinutes": 10,
   "summary": "조희대 대법원장을 둘러싼 업무추진비 의혹과 고발. 마당의 말뚝이가 묻는다. 누구의 지출인가, 누구의 책임인가, 법관들은 무엇을 지키고 있는가. 고발장을 판결문으로 바꾸려는 정치의 장단을 비꼬는 시사 풍자 판소리.",
+  "referenceVideo": {
+    "youtubeId": "0guAzZREXXg",
+    "thumbnailSrc": "https://img.youtube.com/vi/0guAzZREXXg/hqdefault.jpg",
+    "thumbnailAlt": "얼씨구, 법인카드야! 판소리 풍자 영상 썸네일",
+    "title": "영상으로 보는 〈얼씨구, 법인카드야!〉",
+    "description": "시사 풍자 판소리 영상. 기사 안에서 바로 재생할 수 있습니다.",
+    "credit": "씨앗의 소리 · YouTube",
+    "afterSection": -1,
+    "vertical": true
+  },
   "presentation": "poem",
   "displayInlineImage": false,
   "heroImage": {
