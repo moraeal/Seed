@@ -24,7 +24,7 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
   },
   "openedAt": "2026-09-30",
   "publishedAt": "2026-10-08",
-  "updatedAt": "2026-10-08",
+  "updatedAt": "2026-10-19",
   "continuationEligible": false,
   "displayMode": "layered",
   "heroImage": {
@@ -78,6 +78,13 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
   },
   "keyChanges": [
     {
+      "date": "2026-10-19",
+      "text": {
+        "ko": "국회 제출 은행별 자료에 따르면 KB국민은행은 이상 징후 인지부터 은행장 보고까지 81시간 41분 걸린 것으로 집계됐습니다. 이는 신한은행 피해 범위 조사와 별개인 금융권 전반의 내부보고 체계 문제입니다.",
+        "en": "Parliamentary submissions show KB Kookmin Bank took 81 hours and 41 minutes from detecting an anomaly to reporting it to its chief executive. This is a sector-level governance issue, distinct from the Shinhan breach investigation."
+      }
+    },
+    {
       "date": "2026-10-08",
       "text": {
         "ko": "금융위원장, 기본 대응 미흡 인정",
@@ -100,6 +107,31 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
     }
   ],
   "timeline": [
+    {
+      "date": "2026-10-19",
+      "title": {
+        "ko": "은행 5곳 해킹 이상징후 보고 시간 공개…국민은행 81시간 41분",
+        "en": "Bank incident escalation times disclosed; KB Kookmin took 81 hours 41 minutes"
+      },
+      "description": {
+        "ko": "이양수 의원이 5대 은행에서 제출받아 공개한 자료에 따르면, KB국민은행은 해킹 이상 징후 인지 후 은행장에게 보고하는 데 81시간 41분이 걸렸습니다. 은행별 경영진 보고 지연은 신한은행 유출 사고의 조사 결과와 구별되는 금융권 공통 점검 과제입니다. 이 수치만으로 그 은행의 침해 발생 시점이나 구체적인 피해 규모를 뜻하지는 않습니다.",
+        "en": "According to figures obtained from five banks and disclosed by lawmaker Lee Yang-soo, KB Kookmin took 81 hours and 41 minutes to escalate a detected hacking anomaly to its chief executive. Bank-wide escalation procedures warrant scrutiny separately from the investigation of the Shinhan customer-data leak. This metric does not establish the time of breach or the number of victims."
+      },
+      "change": {
+        "ko": "금융권 내부통제 쟁점을 해킹 탐지부터 최고경영진 보고까지의 실제 시간으로 구체화",
+        "en": "New disclosure puts measurable delay on bank incident escalation"
+      },
+      "status": "new",
+      "sources": [
+        {
+          "publisher": { "ko": "뉴스핌", "en": "Newspim" },
+          "title": { "ko": "이양수 의원 공개자료: 국민은행 해킹 사고 경영진 보고에 81시간 넘게 걸려", "en": "Parliamentary data show 81-hour delay in KB bank incident escalation" },
+          "url": "https://m.newspim.com/news/view/20261019001070",
+          "publishedAt": "2026-10-19",
+          "kind": "article"
+        }
+      ]
+    },
     {
       "date": "2026-10-08",
       "title": {
