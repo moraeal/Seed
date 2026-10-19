@@ -52,7 +52,7 @@ export const issue85: ColumnTranslation = {
         "In the video above, Lee describes increasing public debt as bringing forward resources that the state would otherwise use in the future. Borrow from your future self, spend in your twenties, and repay later: the choice is presented as more efficient.[3]",
         "The analogy deserves scrutiny precisely because it makes government borrowing so easy to accept.",
         "Someone with little income in their twenties may urgently need 10 million won. They might use it to study, acquire skills and raise their earnings. Borrowing to invest earlier can certainly be rational.",
-        "But one decisive condition has already been settled in the president’s explanation: **twenty years from now, I have succeeded.**",
+        "But one decisive condition has already been settled in the president’s explanation: twenty years from now, I have succeeded.",
         "Assume a successful future and today’s debt looks lighter. Repaying later seems natural because you expect to be better off. What if income fails to rise? What if the investment fails, interest costs exceed expectations, or the borrowed money leaves no productive foundation? The calculation changes completely.",
         "An urgent need for money today does not establish that borrowing it is efficient. There is an assessment to make between those two propositions. The president’s analogy moves past it too quickly."
       ]
@@ -62,7 +62,7 @@ export const issue85: ColumnTranslation = {
       "paragraphs": [
         "The larger problem is the comparison between public debt and an individual borrowing against their own future.",
         "For an individual, the person borrowing today and repaying later is usually the same. With government, the decision-maker, the beneficiary and the future taxpayer may be different people. Today’s young people will become taxpayers, but citizens who did not benefit from a programme—and generations not yet born—may share its cost too.",
-        "**Bringing forward the state’s future resources also means deciding today how part of tomorrow’s citizens’ resources will be used.**",
+        "Bringing forward the state’s future resources also means deciding today how part of tomorrow’s citizens’ resources will be used.",
         "The money does not come from the president’s personal future bank account. It comes from income that citizens and businesses will earn. It may also constrain the next government’s capacity to respond to a crisis and the next generation’s freedom to choose its budget priorities."
       ]
     },
@@ -82,7 +82,7 @@ export const issue85: ColumnTranslation = {
         "There is no reason to fear every instance of public borrowing. There is equally no reason for citizens to feel reassured simply because those in power describe it lightly. The authority to spend carries a heavy responsibility to make the costs concrete.",
         "That is why SEED VOICE’s No More Tax campaign includes scrutiny of expenditure. Today’s spending promises can become tomorrow’s taxes and interest bills. An admirable programme name or a claim to be investing in the future creates no exemption from examination.",
         "Politicians leave office. The debt remains.",
-        "Citizens are left to examine more than optimistic analogies: rising annual interest budgets, recurring deficits and the actual results of projects sold as investments in the future. **The confidence of politicians who take public debt lightly cannot substitute for citizens’ ability to repay it.**"
+        "Citizens are left to examine more than optimistic analogies: rising annual interest budgets, recurring deficits and the actual results of projects sold as investments in the future. The confidence of politicians who take public debt lightly cannot substitute for citizens’ ability to repay it."
       ]
     }
   ],
