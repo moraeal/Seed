@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n";
 import { SITE_DESCRIPTION } from "../siteMeta";
 import BrandLockup from "./BrandLockup";
+import { officialSocialProfiles } from "../data/officialSocialProfiles";
 
 export default function Footer() {
   const { language } = useLanguage();
@@ -15,6 +16,10 @@ export default function Footer() {
         <div>
           <BrandLockup tone="footer" />
           <p className="mt-3 max-w-2xl text-sm leading-6 text-white/75">{ko ? SITE_DESCRIPTION : "SEED VOICE defends freedom for citizens and enterprise, scrutinizes power, and restores integrity to the public good."}</p><a href={`mailto:${email}`} className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-[#ffe48a]">Contact: {email}<ArrowUpRight size={14}/></a>
+          <nav aria-label={ko ? "씨앗의 소리 공식 SNS 및 시민운동" : "SEED VOICE official social profiles and campaign"} className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-bold text-white/85">
+            <Link to="/civic-campaign" className="text-[#ffe48a] underline underline-offset-4 hover:text-white">{ko ? "No More Tax 증세반대 서명" : "No More Tax petition"}</Link>
+            {officialSocialProfiles.map((profile) => <a key={profile.id} href={profile.url} target="_blank" rel="me noopener noreferrer" className="underline underline-offset-4 hover:text-white">{profile.name}</a>)}
+          </nav>
         </div>
         <div className="grid grid-cols-2 gap-6 border-t border-white/20 pt-5 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0"><div><p className="text-[10px] font-extrabold tracking-[.18em] text-[#ffe48a]">READ</p><nav className="mt-3 grid gap-2 text-sm text-white/80"><Link to="/news">{ko ? "핫이슈" : "Hot Issues"}</Link><Link to="/briefings">{ko ? "브리핑" : "Briefings"}</Link><Link to="/monitoring">{ko ? "시민감시" : "Civic Watch"}</Link><Link to="/civic-life">{ko ? "시민생활" : "Civic Life"}</Link><Link to="/seed-language">{ko ? "시민언어" : "Glossary"}</Link><Link to="/columns">{ko ? "칼럼" : "Columns"}</Link></nav></div><div><p className="text-[10px] font-extrabold tracking-[.18em] text-[#ffe48a]">ABOUT</p><nav className="mt-3 grid gap-2 text-sm text-white/80"><Link to="/about">{ko ? "소개" : "About"}</Link><Link to="/publisher-message">{ko ? "발행인 소개" : "About the Publisher"}</Link></nav>
         <Link

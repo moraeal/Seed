@@ -18,6 +18,7 @@ const server = await createServer({
 const civicSectionsModule = await server.ssrLoadModule("/src/data/civicSections.ts");
 const campaignDiscoveryModule = await server.ssrLoadModule("/src/data/campaignDiscovery.ts");
 const noMoreTaxLandingModule = await server.ssrLoadModule("/src/data/noMoreTaxLanding.ts");
+const socialProfilesModule = await server.ssrLoadModule("/src/data/officialSocialProfiles.ts");
 const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, seedWatchModule, siteContentModule, seedLanguageModule, seedLanguageEnvironmentModule, communityChestModule, legislativeCommentaryModule] = await Promise.all([
   server.ssrLoadModule("/src/seo.ts"),
   server.ssrLoadModule("/src/data/news.ts"),
@@ -52,6 +53,7 @@ const seedLanguageArticles = [
 const communityChestResearch = communityChestModule.communityChestResearch.ko;
 const legislativeCommentaries = legislativeCommentaryModule.legislativeCommentaries;
 const publisherLogo = `${SITE_URL}/images/brand/seed-civic-partners-logo.svg`;
+const officialSocialUrls = socialProfilesModule.officialSocialProfiles.map((profile) => profile.url);
 const koreaDateTime = (date) => date ? `${date}T00:00:00+09:00` : undefined;
 
 // GitHub Pages needs a physical file for each database-backed bill detail URL.
@@ -366,7 +368,7 @@ function structuredData(route) {
         url: SITE_URL,
         logo: { "@type": "ImageObject", url: publisherLogo },
         description: route.description,
-        sameAs: ["https://x.com/SeedVoice_KR"],
+        sameAs: officialSocialUrls,
       },
       {
         "@type": "WebSite",
@@ -387,7 +389,7 @@ function structuredData(route) {
     dateModified: koreaDateTime(route.lastModified ?? route.publishedAt),
     mainEntityOfPage: canonicalUrl(route.path),
     author: { "@type": route.author && route.author !== SITE_NAME ? "Person" : "Organization", name: route.author || SITE_NAME },
-    publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL, logo: { "@type": "ImageObject", url: publisherLogo }, sameAs: ["https://x.com/SeedVoice_KR"] },
+    publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL, logo: { "@type": "ImageObject", url: publisherLogo }, sameAs: officialSocialUrls },
     articleSection: route.section,
     inLanguage: language,
     ...(route.image ? { image: route.image } : {}),
