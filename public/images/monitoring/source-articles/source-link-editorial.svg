@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Related press article link: editorial illustration, not a photo">
+<rect width="960" height="540" fill="#f7f7f2"/><rect x="30" y="30" width="900" height="480" rx="15" fill="white" stroke="#bdd0c5" stroke-width="3"/>
+<rect x="75" y="83" width="810" height="8" fill="#315b54"/><rect x="75" y="112" width="535" height="8" fill="#b9c9c0"/>
+<circle cx="130" cy="234" r="60" fill="#e6d39e"/><path d="M130 197v72 M93 233h74" stroke="#365349" stroke-width="14" stroke-linecap="round"/>
+<text x="225" y="230" font-size="46" font-weight="700" fill="#163a37" font-family="Arial, Noto Sans KR, sans-serif">원문 기사 보기</text>
+<text x="225" y="287" font-size="36" font-weight="600" fill="#536f67" font-family="Arial, Noto Sans KR, sans-serif">OPEN ORIGINAL REPORT</text>
+<path d="M75 358h810" stroke="#e7e7dc" stroke-width="3"/>
+<text x="75" y="414" font-size="23" fill="#6c8279" font-family="Arial, Noto Sans KR, sans-serif">씨앗의 소리 편집용 안내 그래픽 · 현장 사진 아님</text>
+<text x="75" y="459" font-size="18" fill="#607b73" font-family="Arial,sans-serif">SEED VOICE · Editorial link illustration · Not a news photograph</text>
+</svg>
