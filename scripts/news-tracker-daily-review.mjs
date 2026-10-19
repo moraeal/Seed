@@ -4,6 +4,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import assert from "node:assert/strict";
 
 const TRACKERS = [
+  ["france-protests-fiscal-crisis-2026", "프랑스 시위·재정위기", "franceProtestsTracker.ts", "프랑스 시위 파리 집회 긴축 예산 재정"],
   ["korea-us-intelligence-sharing-tracker-2026", "한미 정보공유 제한", "koreaUsIntelligenceTracker.ts", "한미 정보 공유 제한 정동영 강경화 합참"],
   ["banking-privacy-ai-hacking-tracker-2026", "은행 개인정보 유출", "bankingPrivacyTracker.ts", "신한은행 개인정보 유출 해킹 금감원 피해 보상"],
   ["dmz-mine-blast-2026", "DMZ 지뢰폭발", "dmzMineBlastTracker.ts", "DMZ 북한 지뢰 폭발 제거 국방부"],
@@ -22,6 +23,7 @@ const TRACKERS = [
 // Each case must match at least one event-specific term in the *headline*.
 // This deliberately favors precision over recall; editor can still search manually.
 const TOPIC = new Map([
+  ["france-protests-fiscal-crisis-2026", /프랑스.{0,18}(시위|파업|집회|예산|긴축|재정|부채)|파리.{0,12}(시위|집회)|프랑스.{0,8}통행금지|프랑스.{0,8}국민의회/i],
   ["korea-us-intelligence-sharing-tracker-2026", /한미.{0,12}정보|정보.{0,8}공유|정동영|강경화|한미동맹/i],
   ["banking-privacy-ai-hacking-tracker-2026", /신한은행|국민은행|하나은행|은행장|은행.{0,10}해킹|고객정보|개인정보.{0,8}유출|금융권.{0,8}해킹/i],
   ["dmz-mine-blast-2026", /DMZ|지뢰|비무장지대|25사단/i],
@@ -88,7 +90,7 @@ async function main() {
     const xml = '<rss><item><title><![CDATA[제목 & 확인]]></title><link>https://news.google.com/rss/articles/a</link><pubDate>Mon, 19 Oct 2026 02:00:00 GMT</pubDate><source>연합뉴스</source></item></rss>';
     assert.equal(parseRss(xml)[0]?.title, "제목 & 확인");
     assert.equal(ageDays("2026-10-19", "2026-10-20"), 1);
-    assert.equal(TRACKERS.length, 13);
+    assert.equal(TRACKERS.length, 14);
     assert.equal(TOPIC.size, TRACKERS.length);
     assert.equal(TOPIC.get("dmz-mine-blast-2026").test("DMZ 지뢰 추가 제거"), true);
     assert.equal(TOPIC.get("dmz-mine-blast-2026").test("로또 광고"), false);
