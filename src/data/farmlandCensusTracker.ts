@@ -15,16 +15,16 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     en: "Who Will Buy the 27 Percent of Farmland Flagged for Review?",
   },
   summary: {
-    ko: "전국 농지 기본조사에서 약 30만㏊가 법 위반 의심 대상으로 분류됐습니다. 아직 위법이 확정된 농지가 아닙니다. 씨앗은 심층조사 결과부터 처분명령, 매년 25%의 이행강제금, 농지은행의 수용 능력과 실제 농민에게 이전된 면적까지 한 기록에서 추적합니다.",
-    en: "Administrative screening flagged roughly 300,000 hectares—about 27 percent of the area reviewed—for possible violations. These are not confirmed violations. SEED tracks the field-review results, disposal orders, annual 25 percent enforcement charges, the Farmland Bank's capacity and the area that ultimately reaches working farmers.",
+    ko: "전국 농지 기본조사에서 약 30만㏊가 법 위반 의심 대상으로 분류됐지만 위법 확정 수치는 아닙니다. 정부는 10월 8일 상속·고령농·관행적 임대차 등 비투기성 농지를 처분 대상에서 제외하는 특별조치법 추진을 발표했고, 19일에는 상담센터에 하루 100~150건의 문의가 온다고 밝혔습니다. 법안은 아직 추진 단계입니다. 씨앗은 실제 법 제정과 심층조사 결과, 처분명령, 농지은행 공급 실적을 계속 추적합니다.",
+    en: "Administrative screening flagged some 300,000 hectares for possible violations, not confirmed wrongdoing. On October 8 the government proposed special legislation to exempt non-speculative inherited, elderly-held and customary-lease farmland from disposal; on October 19 the minister reported 100–150 daily calls to a new advice center. The bill has not yet passed. SEED continues tracking legislation, verified violations, disposal orders and actual transfers to working farmers.",
   },
   status: {
-    ko: "당정 후속조치 발표·심층조사 진행",
-    en: "Follow-up measures announced · Field review under way",
+    ko: "비투기 농지 처분 제외 특별법 추진·상담센터 운영",
+    en: "Special bill to exempt non-speculative cases proposed · Helpline active",
   },
   openedAt: "2026-02-24",
   publishedAt: "2026-09-16",
-  updatedAt: "2026-09-29",
+  updatedAt: "2026-10-19",
   nextCheck: {
     ko: "11월 15일까지의 임대차 특별정비 결과, 심층조사 후 실제 위법 확정 면적, 연내 의결을 목표로 한 처분 유예·사후 전용 추인 특별조치법의 발의·심사, 농지은행 위탁·매입과 청년농·자경농 공급 실적",
     en: "Results of the lease regularization period through November 15; area confirmed in violation after field review; introduction and review of the special-act bill on deferrals and retroactive conversion approval, which the government aims to pass by year-end; and Farmland Bank trust, purchase and onward-supply results for young and working farmers",
@@ -53,6 +53,8 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     en: "The 27 percent figure is an administrative-screening result, not a confirmed violation rate. The final area in violation or subject to disposal may change after field review. The four-year, 100 percent illustration assumes an unchanged valuation and four annual charges after the first assessment.",
   },
   keyChanges: [
+    { date: "2026-10-19", text: { ko: "송미령 농식품부 장관은 농지 전수조사 상담센터에 하루 100~150건의 문의가 들어온다고 밝혔습니다. 정부는 비투기성 농지 처분을 막는 특별조치법을 연내 마련하고 내년 농지법 개정을 추진하겠다고 재확인했습니다. 법안이 통과된 것은 아닙니다.", en: "The agriculture minister reported 100–150 calls daily to the farmland-census advice center and reaffirmed plans for special legislation this year and Farmland Act revision next year. The special bill has not yet passed." } },
+    { date: "2026-10-08", text: { ko: "정부는 상속농지·고령농의 관행적 임대차 등 비투기성 위반에 처분·이행강제금을 부과하지 않도록 특별조치법을 추진하겠다고 발표했습니다. 법률의 실제 효력은 국회 입법을 거쳐야 합니다.", en: "The government announced proposed special legislation to prevent disposal orders and enforcement charges for non-speculative cases, including inherited land and customary leases by elderly farmers. Legal effect still depends on enactment." } },
     {
       date: "2026-09-28",
       text: {
@@ -413,6 +415,38 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
         },
       ],
     },
+    {
+      date: "2026-10-08",
+      title: { ko: "정부, 비투기성 농지 처분 제외 특별조치법 추진 발표", en: "Government proposes exemptions for non-speculative farmland" },
+      description: { ko: "농식품부는 상속·고령농·관행적 임대차 등 일반적인 위반 유형에 대해 조사 결과만으로 처분과 이행강제금을 부과하지 않도록 특별조치법을 추진하겠다고 발표했습니다. 투기 목적 취득과 중대한 불법 전용은 별도 처분 대상으로 남는다는 설명입니다. 법안은 아직 통과되지 않았습니다.", en: "The Agriculture Ministry proposed a special bill to exempt inherited land, customary leases and other non-speculative cases from disposal and charges based solely on the census. Speculative acquisition and serious illegal conversion remain separate concerns. The proposal was not enacted as of this record." },
+      change: { ko: "일률적 처분 우려에서 투기·비투기 구분 및 특례 입법으로 정책 방향 구체화", en: "Policy shifts toward differentiating speculation from customary farming arrangements" },
+      status: "confirmed",
+      sources: [{ publisher: { ko: "연합뉴스", en: "Yonhap News Agency" }, title: { ko: "정부, 상속·고령농·임대차 농지 등은 전수조사 처분서 제외", en: "Government proposes to exclude inherited and customarily leased farmland from disposal" }, url: "https://www.yna.co.kr/view/AKR20261008073400030", publishedAt: "2026-10-08", kind: "article" }],
+    },
+    {
+      date: "2026-10-12",
+      title: { ko: "농지 전수조사 상담센터 운영 시작", en: "Farmland census helpline begins taking calls" },
+      description: { ko: "농식품부와 한국농어촌공사가 상담센터(1811-8852)를 열어 처분 대상이 될 수 있는 투기 유형, 불법 전용 판단, 농지은행 지원사업을 안내하기 시작했습니다. 이는 정보 제공 창구이며 처분 면제가 법률로 확정된 것은 아닙니다.", en: "The ministry and Korea Rural Community Corporation opened a helpline (1811-8852) on types of speculative acquisition, unlawful conversion and Farmland Bank programs. Opening the helpline did not enact the proposed exemptions." },
+      change: { ko: "농업인 민원과 불확실성에 대응하는 공식 상담 창구 신설", en: "A dedicated channel for farmers' questions opens" },
+      status: "confirmed",
+      sources: [{ publisher: { ko: "연합뉴스", en: "Yonhap News Agency" }, title: { ko: "농식품부·농어촌공사 농지 전수조사 상담센터 12일부터 운영", en: "Farmland census helpline to open October 12" }, url: "https://www.yna.co.kr/view/AKR20261009026000030", publishedAt: "2026-10-11", kind: "article" }],
+    },
+    {
+      date: "2026-10-14",
+      title: { ko: "관행적 임대차 적법화 특례·농지은행 매입 확대 검토", en: "Temporary legalization pathway and Farmland Bank expansion discussed" },
+      description: { ko: "송미령 장관은 현장 간담회에서 관행적 농지 임대차와 무허가 농업시설의 적법화를 위한 한시적 특례 마련, 농지은행 매입 대상 확대 검토 및 내년 농지법 개정 추진 방침을 설명했습니다. 정책 검토·입법 계획으로서 시행 확정과 구분합니다.", en: "At a local meeting, the minister described a proposed temporary route for customary leases and unpermitted farm facilities, possible expansion of Farmland Bank purchases, and plans to amend the Farmland Act next year. These remain proposals, not enacted changes." },
+      change: { ko: "특별조치법 후속 제도개편과 농지은행 확대 방향 제시", en: "Further proposed legal changes and Farmland Bank expansion outlined" },
+      status: "confirmed",
+      sources: [{ publisher: { ko: "연합뉴스", en: "Yonhap News Agency" }, title: { ko: "송미령 장관, 농지 임대차 적법화 특례·농지은행 매입 확대 검토", en: "Minister outlines temporary lease legalization and bank purchases" }, url: "https://www.yna.co.kr/view/AKR20261014072651030", publishedAt: "2026-10-14", kind: "article" }],
+    },
+    {
+      date: "2026-10-19",
+      title: { ko: "상담센터 하루 100~150건 문의…특별조치법은 아직 입법 추진", en: "100–150 daily helpline inquiries; special legislation remains proposed" },
+      description: { ko: "농식품부 장관은 10월 12일 개설한 농지 전수조사 상담센터에 하루 100~150건의 문의가 접수되고, 투기 유형·농지은행 지원사업 질문이 많다고 밝혔습니다. 연내 특별조치법 마련과 2027년 농지법 개정 추진을 재확인했습니다. 농지 조사 결과에 따른 최종 위법 확정 규모나 특례법 통과는 발표하지 않았습니다.", en: "The agriculture minister said the advice center, opened October 12, now receives 100–150 calls daily, mainly concerning speculative classifications and Farmland Bank support. He reiterated plans for a special bill this year and Farmland Act revision in 2027, without reporting enacted exemptions or a final count of violations." },
+      change: { ko: "상담 민원 규모 첫 공개·연내 입법과 내년 법 개정 계획 재확인", en: "First reported volume of inquiries and a renewed legislative timetable" },
+      status: "new",
+      sources: [{ publisher: { ko: "연합뉴스", en: "Yonhap News Agency" }, title: { ko: "송미령 장관, 농지 전수조사 상담센터에 하루 100∼150건 문의", en: "Minister reports 100–150 daily farmland census helpline inquiries" }, url: "https://www.yna.co.kr/view/AKR20261019077600030", publishedAt: "2026-10-19", kind: "article" }],
+    },
   ],
   confirmedFacts: [
     {
@@ -553,6 +587,8 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
   },
   continuationEligible: true,
   sources: [
+    { label: { ko: "연합뉴스 — 10월 19일 상담센터 운영 및 입법계획", en: "Yonhap — October 19 helpline operation and planned legislation" }, url: "https://www.yna.co.kr/view/AKR20261019077600030" },
+    { label: { ko: "연합뉴스 — 10월 8일 비투기성 농지 처분 제외 특별조치법 추진", en: "Yonhap — October 8 proposal to exempt non-speculative farmland" }, url: "https://www.yna.co.kr/view/AKR20261008073400030" },
     {
       label: { ko: "매일경제 — 실제 처분절차는 2027년 이후", en: "Maeil Business Newspaper — Disposal procedures expected from 2027" },
       url: "https://www.mk.co.kr/news/economy/12158491",
