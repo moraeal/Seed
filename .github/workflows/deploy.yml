@@ -65,3 +65,24 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # IndexNow is a notification channel, not an indexing guarantee.
+  # Only run after successful production deployment, not hourly refreshes.
+  notify-indexnow:
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: github.event_name == 'push'
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout public key and submitter
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify live search files and submit to IndexNow
+        # Failure must be visible in logs but must not mark an already
+        # successful site deployment as failed.
+        continue-on-error: true
+        run: node scripts/submit-indexnow.mjs
