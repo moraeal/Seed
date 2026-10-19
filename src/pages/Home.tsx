@@ -419,7 +419,7 @@ export default function Home() {
             {visibleRecommendedTopics.map((topic, index) => (
               <Link
                 key={`${recommendedTopicPage}-${topic.id}-${index}`}
-                to={`/search?topic=${topic.id}`}
+                to={topic.id === "taxpayer-movement" ? "/tax-watch-movement" : `/search?topic=${topic.id}`}
                 className="group flex min-w-0 flex-col justify-center rounded-sm px-2.5 py-2 transition-colors hover:bg-white/45 focus-visible:bg-white/45 focus-visible:outline-none sm:px-3.5"
               >
                 <span className="truncate text-[11px] font-extrabold text-navy transition-colors group-hover:text-green-mid sm:text-[13px]">{topic.label[language]}</span>
@@ -474,6 +474,14 @@ export default function Home() {
                       className="block h-auto w-full"
                     />
                   </Link>
+                  <nav aria-label={ko ? "증세반대운동 바로가기" : "No More Tax quick links"} className="flex flex-wrap items-center gap-x-4 gap-y-2 border border-green-deep/15 bg-white px-3 py-2.5 text-xs font-extrabold text-green-deep sm:text-sm">
+                    <Link to="/civic-campaign" className="inline-flex items-center gap-1 underline underline-offset-4 hover:text-green-mid">
+                      {ko ? "No More Tax 운동 소개·서명" : "No More Tax campaign and petition"}<ArrowRight size={14} aria-hidden="true" />
+                    </Link>
+                    <Link to="/tax-watch-movement" className="inline-flex items-center gap-1 underline underline-offset-4 hover:text-green-mid">
+                      {ko ? "세금감시운동 활동 기록" : "Tax watch movement reports"}<ArrowRight size={14} aria-hidden="true" />
+                    </Link>
+                  </nav>
                   </div>
                 );
                 const title = article?.title ?? section.title[language];

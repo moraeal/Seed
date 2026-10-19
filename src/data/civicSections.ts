@@ -6,7 +6,7 @@ import { taxWatchCaseSlug, civicNoticeSlug } from "./civicHubArticles";
 
 export const civicSections = [
   { key: "campaign", path: "/civic-campaign", title: { ko: "시민캠페인", en: "Civic Campaigns" }, description: { ko: "시민이 제안하고 함께 실천할 운동을 소개합니다.", en: "Ideas for civic action and participation." } },
-  { key: "cases", path: "/tax-watch-movement", title: { ko: "세금감시운동", en: "Tax Watch Movement" }, description: { ko: "세금을 거두는 근거와 쓰는 결과를 묻습니다. 세금감시 논평과 시민운동의 제안·사례를 함께 읽어보세요.", en: "Scrutinize why taxes are collected and how public money is spent. Read SEED’s tax commentaries, civic proposals and case studies." } },
+  { key: "cases", path: "/tax-watch-movement", title: { ko: "세금감시운동", en: "Tax Watch Movement" }, description: { ko: "씨앗의 소리의 No More Tax 증세반대운동과 세금감시 활동 기록입니다. 세금을 거두는 근거와 재정지출의 성과를 묻고, ATR 사례·관련 논평·시민운동 제안을 함께 살펴봅니다.", en: "SEED VOICE’s No More Tax campaign coverage and tax-watch activity archive. Explore the case for tax increases, the results of public spending, ATR examples and civic proposals." } },
   { key: "notices", path: "/civic-notices", title: { ko: "시민운동 공지사항", en: "Civic Notices" }, description: { ko: "시민운동의 참여·모집·행사 정보를 원문과 함께 안내합니다.", en: "Participation opportunities, calls and events with original notices." } },
 ] as const;
 export type CivicSectionKey = typeof civicSections[number]["key"];
