@@ -15,8 +15,8 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
     "en": "Three soldiers injured in DMZ blasts: What has emerged since September 21?"
   },
   "summary": {
-  "ko": "합참은 10월 5일 북한군이 MDL 이남에 매설한 지뢰가 장병 3명의 부상을 일으켰다고 최종 판단했고 제거 작전을 실시했습니다. 북한은 6일 책임을 부인하며 대응을 위협했습니다. 추가 지뢰지대와 장병 보호, 제거 전후 안전조치를 계속 확인합니다.",
-  "en": "On October 5, the Joint Chiefs attributed the blasts that injured three soldiers to North Korean mines planted south of the MDL and carried out clearance. North Korea rejected responsibility and threatened a response on October 6. This tracker follows further suspected minefields, soldier protection and safety before and after clearance."
+  "ko": "합참은 10월 5일 북한군이 MDL 이남에 매설한 지뢰가 장병 3명의 부상을 일으켰다고 최종 판단했고, 북한은 6일 책임을 부인했습니다. 이후 사고 현장에 지뢰 제거 로봇을 사용하지 않은 이유와 수색로 개척 장병들의 별도 위험근무수당 지급 제외가 새 쟁점이 됐습니다. 지뢰 제거·보호장비·사전 위험평가·실질적 보상을 함께 추적합니다.",
+  "en": "The Joint Chiefs attributed the blasts that injured three soldiers to North Korean mines on October 5; the North rejected the findings on October 6. Later reporting raised questions about why mine-clearance robots were not deployed and why path-opening troops are excluded from a separate hazardous-duty allowance. This tracker follows further clearance, equipment, risk assessment and compensation."
 },
   "status": {
   "ko": "10월 19일 위험근무수당 사각지대 보도·장병 보호 추적",
@@ -47,6 +47,8 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
   "en": "On October 6, North Korea’s Foreign Ministry rejected South Korea’s final findings as fabricated and threatened a strong response if clearance entered territory it claims. This is North Korea’s position, recorded separately from the Joint Chiefs’ October 5 attribution based on physical mines and forensic evidence."
 },
     "keyFacts": [
+      { "ko": "10월 19일 보도에 따르면 수색대대원과 공병 EHCT는 특수지 근무수당을 받지만 별도의 위험근무수당 지급 대상이 아닙니다. 지뢰 제거 EOD와 제도 적용이 다르며, 전체 수당이 0원이라는 뜻은 아닙니다.", "en": "October 19 reporting says reconnaissance and engineer EHCT troops receive special-area pay but lack a separate hazardous-duty allowance granted to EOD personnel. This does not mean all of their allowances are zero." },
+      { "ko": "10월 11일 보도에서 사고 부대의 지뢰탐지·제거 로봇 2대가 사고 현장에 투입되지 않았다는 사실과, 수풀·추가 지뢰위험을 이유로 든 군의 설명이 확인됐습니다. 장비 투입 가능성과 사고 예방 효과는 별도 검증이 필요합니다.", "en": "An October 11 report said the unit did not deploy its two mine-detection robots at the blast site. The military cited vegetation and additional mine hazards. Practical deployability and any preventive effect remain unproven." },
   {
     "ko": "북한 외무성은 10월 6일 우리 군의 최종 조사결과를 자작극이라고 주장하며 매설 책임을 부인했습니다. 지뢰 제거 과정에서 자신들의 영토를 침범하면 강력히 대응하겠다고 위협했습니다. 이는 북한의 주장으로, 현장 지뢰와 파편 감정을 근거로 한 합참의 5일 최종 판단과 구분해 기록합니다.",
     "en": "On October 6, North Korea’s Foreign Ministry rejected South Korea’s final findings as fabricated and threatened a strong response if clearance entered territory it claims. This is North Korea’s position, recorded separately from the Joint Chiefs’ October 5 attribution based on physical mines and forensic evidence."
@@ -61,6 +63,8 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
   }
 ],
     "tracking": [
+      { "ko": "수색대대·공병 EHCT에 위험근무수당을 추가 지급하도록 국방부·육군이 규정을 검토하는가", "en": "Whether the Defense Ministry and Army change hazardous-duty pay eligibility for reconnaissance and EHCT personnel" },
+      { "ko": "KR1 로봇을 실제 DMZ 수풀·급경사지에서 활용할 수 있는지 현장 검증 결과가 공개되는가", "en": "Whether tests disclose KR1 robot usability in actual DMZ vegetation and terrain" },
       {
         "ko": "추가 지뢰 제거 범위와 작전 전후 안전 확인, 유엔사 공조는 어떻게 이뤄지는가",
         "en": "How further clearance, safety checks and UN Command coordination are carried out"
@@ -838,8 +842,8 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
     }
   ],
   "sourceBasis": {
-    "ko": "9월 21일 최초 사고 보도부터 10월 5일 최종 조사 발표와 지뢰 제거까지를 기록했습니다. 10월 6일 갱신했으며, 29일 현장 발견 등 뒤늦게 공개된 사실은 사건 날짜와 발표 날짜를 구분했습니다. 기존 중간 조사 기록은 당시 판단의 변화가 보이도록 남겼습니다.",
-    "en": "Updated on October 6, this record follows the September 21 blasts through the October 5 final findings and clearance. Retrospectively reported events distinguish the event date from the disclosure date. Earlier assessments remain visible as historical entries."
+    "ko": "9월 21일 사고 보도부터 10월 5일 합참의 최종 조사 발표 및 제거 작전, 10월 6일 북한 반박, 10월 11일 로봇 미투입 보도, 10월 19일 장병 위험근무수당 보도까지 날짜별로 기록했습니다. 국방부 설명·국회 자료 인용 언론 보도·확정 조사를 구분하고, 기존 중간 조사 기록을 보존했습니다.",
+    "en": "Updated through October 19, this record follows the September 21 blast, October 5 final findings and clearance, October 6 North Korean response, October 11 reporting on robotics and October 19 reporting on hazard-pay eligibility. Media accounts citing parliamentary materials remain distinguished from official determinations and verified operational outcomes."
   },
   "caution": {
     "ko": "군은 북한군의 인위적 매설로 최종 판단했습니다. 설치 시기 ‘12개월 이전’은 합참이 전한 유엔사의 평가이며 정확한 매설일은 공개되지 않았습니다. 이번 수색대를 겨냥한 최근 설치 의도와 지휘 책임의 구체적 범위는 별도로 확인할 사안입니다.",
