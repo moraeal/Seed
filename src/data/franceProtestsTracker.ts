@@ -670,5 +670,40 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
       },
       "url": "https://commons.wikimedia.org/wiki/File:Paris_riots,_17_October_2026_-_Crowd_and_tear_gas_at_Place_de_la_R%C3%A9publique_-_JJxFile_0006.jpg"
     }
+  ],
+  "bodyImages": [
+    {
+      "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Manifestation_lyc%C3%A9enne_et_%C3%A9tudiante_du_6_octobre_2026_%C3%A0_Paris_046.jpg?width=960",
+      "alt": {
+        "ko": "2026년 10월 6일 파리에서 행진하는 고교생·대학생들의 실제 집회 사진",
+        "en": "Documentary photograph of high school and university protesters in Paris on October 6, 2026"
+      },
+      "caption": {
+        "ko": "10월 6일 파리 학생 시위 실제 현장. 사진은 위키미디어 공용즈 원문에서 확인할 수 있다. CC BY-SA 4.0, 표시·동일조건변경허락.",
+        "en": "Documentary image from the October 6 student protest in Paris. Wikimedia Commons, CC BY-SA 4.0."
+      },
+      "credit": {
+        "ko": "Jules* / Wikimedia Commons · CC BY-SA 4.0",
+        "en": "Jules* / Wikimedia Commons · CC BY-SA 4.0"
+      }
+    },
+    {
+      "src": {
+        "ko": "/images/monitoring/france-protests-fiscal-crisis-2026/deficit-comparison-ko.svg",
+        "en": "/images/monitoring/france-protests-fiscal-crisis-2026/deficit-comparison-en.svg"
+      },
+      "alt": {
+        "ko": "2026년 프랑스 정부 예상 재정적자율 GDP 대비 5.4%와 2027년 정부 예산안 목표 5.0% 비교",
+        "en": "French deficit as percent of GDP: 2026 estimated 5.4% versus 2027 draft target 5.0%"
+      },
+      "caption": {
+        "ko": "2026년은 정부 예상치, 2027년은 확정되지 않은 정부 예산안 목표다. 2026년 10월 14일 로이터와 프랑스 국채청 자료 기준.",
+        "en": "The 2026 figure is an estimate, and 2027 is an unenacted government budget target. Based on Reuters October 14 and Agence France Trésor."
+      },
+      "credit": {
+        "ko": "씨앗의 소리 자체 제작 도표 · Reuters / Agence France Trésor",
+        "en": "SEED VOICE original graphic · Reuters / Agence France Trésor"
+      }
+    }
   ]
 };
