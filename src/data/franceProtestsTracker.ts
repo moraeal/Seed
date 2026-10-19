@@ -435,14 +435,14 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
       "sources": [
         {
           "publisher": {
-            "ko": "Reuters",
-            "en": "Reuters"
+            "ko": "AP",
+            "en": "Associated Press"
           },
           "title": {
-            "ko": "10월 18일 마크롱 대응·피해 집계",
-            "en": "10월 18일 마크롱 대응·피해 집계"
+            "ko": "10월 18일 마크롱 대통령의 대응과 폭력 사태 피해",
+            "en": "October 18: Macron responds to violence and damage"
           },
-          "url": "https://www.reuters.com/world/europe/france-faces-aftermath-worst-unrest-years-2026-10-18/",
+          "url": "https://apnews.com/article/f5ce07c2ef46ad0c02c6ff7018532a59",
           "publishedAt": "2026-10-18",
           "kind": "article",
           "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/aftermath-ko.svg"
