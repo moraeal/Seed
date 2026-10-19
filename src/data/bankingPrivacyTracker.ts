@@ -48,6 +48,7 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
       "en": "The Shinhan inquiry and financial-sector checks are ongoing. Evidence of AI-tool involvement has emerged, while exact intrusion paths and responsibility remain for individual investigations."
     },
     "keyFacts": [
+      { "ko": "10월 19일 국감에서 신한은행 유출 대상 고객의 직접 조회율이 약 22%로 지적됐습니다. 피해가 확인되면 전액 보상한다는 은행의 약속과 실제 지급 실적은 다릅니다.", "en": "At the October 19 hearing, a lawmaker cited approximately 22% self-lookup among Shinhan's affected customers. A pledge to compensate resulting losses does not establish paid claims." },
       {
         "ko": "신한은행이 발표한 대상은 대출 신청 고객 약 2만5천 명이다.",
         "en": "Shinhan’s disclosed affected group is about 25,000 loan applicants."
@@ -62,6 +63,7 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
       }
     ],
     "tracking": [
+      { "ko": "유출 대상 고객 전원에게 도달한 통지의 근거, 미조회자 안내와 실제 보상 인정 기준·지급 실적", "en": "Evidence that notices reached all exposed customers, outreach to non-checkers, compensation criteria and amounts actually paid" },
       {
         "ko": "조사로 확정된 유출 항목·침입 경로·책임",
         "en": "Exposure categories, intrusion paths and responsibility established by the inquiry"
@@ -77,6 +79,13 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
     ]
   },
   "keyChanges": [
+    {
+      "date": "2026-10-19",
+      "text": {
+        "ko": "국회 정무위 국정감사에서 5대 시중은행장이 해킹·정보유출 사태에 사과하고 보안 투자 확대를 약속했습니다. 김재섭 의원은 신한은행 유출 대상 고객 가운데 약 22%만 직접 유출 여부를 조회했다고 지적했습니다. 피해 발생 시 전액 보상 방침은 알려졌지만, 지급 실적과 고객 입증 부담은 별도로 검증해야 합니다.",
+        "en": "At the October 19 parliamentary audit, five bank chiefs apologized and pledged stronger security. A lawmaker said only about 22% of Shinhan's affected customers had checked their exposure. Banks pledged compensation for proven loss, but payment outcomes and evidentiary burdens remain to be verified."
+      }
+    },
     {
       "date": "2026-10-19",
       "text": {
@@ -107,6 +116,20 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
     }
   ],
   "timeline": [
+    {
+      "date": "2026-10-19",
+      "title": { "ko": "5대 은행장 국감 사과…신한 유출 고객 조회 약 22%·실제 보상 문제", "en": "Five bank chiefs apologize; Shinhan breach lookup and compensation questioned" },
+      "description": {
+        "ko": "10월 19일 국회 정무위원회 금융감독원 국정감사에서 5대 은행장들이 해킹·정보유출에 사과하고 보안예산·인력과 AI 보안체계 보강을 약속했습니다. 김재섭 의원은 신한은행의 약 2만5천 명 유출 대상 고객 중 유출 여부를 직접 조회한 비율이 약 22%라고 지적했습니다. 신한은행은 10월 1일 피해 발생 시 전액 보상을 약속했으나, 이는 피해자 전원 일괄 배상이 아니며 실제 피해와 유출의 인과관계 인정 기준, 지급 건수·금액이 확인됐다는 뜻은 아닙니다.",
+        "en": "At the October 19 Financial Supervisory Service audit, leaders of five major banks apologized over attacks and pledged investment in staff and AI-assisted security. Lawmaker Kim Jae-seop said only around 22% of Shinhan customers identified as exposed had checked their breach status. Shinhan had pledged full compensation for consequential losses on October 1, but this is not automatic payment to everyone affected; causal criteria and actual compensation awards remain unverified."
+      },
+      "change": { "ko": "보안 대응 책임에서 고객 통지·피해 입증 부담과 보상 실효성으로 쟁점 확대", "en": "Oversight extends to customer notification, proof of harm and actual redress" },
+      "status": "confirmed",
+      "sources": [
+        { "publisher": { "ko": "쿠키뉴스", "en": "Kukinews" }, "title": { "ko": "해킹 대응부터 점포 축소까지…고개 숙인 5대 은행장", "en": "Five bank chiefs apologize at security audit" }, "url": "https://m.kukinews.com/article/view/kuk202610190203", "publishedAt": "2026-10-19", "kind": "article" },
+        { "publisher": { "ko": "녹색경제신문", "en": "Green Economic Daily" }, "title": { "ko": "정보유출 전액 보상 약속했지만 기준과 절차는 미정", "en": "Compensation pledges lack finalized criteria" }, "url": "https://www.greened.kr/news/articleView.html?idxno=351843", "publishedAt": "2026-10-12", "kind": "article" }
+      ]
+    },
     {
       "date": "2026-10-19",
       "title": {
@@ -384,8 +407,8 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
     }
   },
   "sourceBasis": {
-    "ko": "2026년 10월 8일까지 공개된 공식 설명자료·안랩 분석·언론 보도와 국회 제출 자료 인용 보도를 기준으로 작성했다.",
-    "en": "Prepared from official explanations, AhnLab analysis, public reporting and reports citing parliamentary submissions available through October 8, 2026."
+    "ko": "2026년 10월 19일까지 공개된 공식 설명자료·안랩 분석·국정감사 보도·국회 제출 자료를 대조했습니다. 은행장 보안 개선 약속과 실제 개선 조치, 피해 발생 시 보상 약속과 실제 지급 실적은 구분했습니다.",
+    "en": "Updated through October 19 from public statements, AhnLab analysis, parliamentary submissions and reporting. Security pledges are separate from completed fixes, and commitments to compensate actual harm are not evidence of payments."
   },
   "caution": {
     "ko": "AI가 모든 공격을 스스로 수행했다거나 특정 정부의 정책이 신고 증가의 원인이라는 사실은 확인되지 않았다. 제도 연구에서 제기된 구조적 배경과 이번 사건의 직접 원인은 구분한다.",
