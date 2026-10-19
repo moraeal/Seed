@@ -86,6 +86,21 @@ for (const [index, item] of archiveList.itemListElement.entries()) {
   assert.ok(movement.includes('href="' + item.item.url + '"'), 'indexed entry must be present in crawler-visible HTML: ' + item.item.url);
 }
 assert.equal(archiveBreadcrumb.itemListElement.at(-1).item, movementUrl);
+const homepageGraph = parseGraph(homepage, 'homepage');
+const publisherOrg = homepageGraph.find((node) => node['@type'] === 'Organization');
+assert.ok(publisherOrg, 'homepage must identify the SEED VOICE publisher');
+assert.equal(publisherOrg['@id'], orgId);
+for (const profile of [
+  'https://www.facebook.com/1438854115971733/',
+  'https://x.com/SeedVoice_KR',
+  'https://www.instagram.com/seedvoicekr/',
+]) {
+  assert.ok(publisherOrg.sameAs.includes(profile), 'publisher missing official social URL: ' + profile);
+  assert.ok(homepage.includes('href="' + profile + '"'), 'official social link not visible on homepage: ' + profile);
+}
+assert.ok(homepage.includes('href="/civic-campaign"'), 'homepage footer must link to the campaign');
+console.log('Official profile audit passed: Facebook, X, Instagram and campaign links match organization metadata.');
+
 console.log('Campaign structured data audit passed: publisher, campaign, links, breadcrumbs and visible article listing.');
 
 // The main search entry points must link to the actual campaign in static,
