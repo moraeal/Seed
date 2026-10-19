@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="France's deficit: How much does the 2027 proposal cut?">
+<rect width="1200" height="630" fill="#fbfaf5"/>
+<text x="70" y="83" font-family="Arial, Noto Sans KR, sans-serif" fill="#143535" font-size="37" font-weight="700">France's deficit: How much does the 2027 proposal cut?</text>
+<text x="70" y="122" font-family="Arial, Noto Sans KR, sans-serif" fill="#56696a" font-size="21">Share of GDP · 2026 estimate vs 2027 government target</text>
+<line x1="70" y1="174" x2="1130" y2="174" stroke="#bec8c0" stroke-width="2"/>
+<text x="70" y="232" font-family="Arial, Noto Sans KR, sans-serif" fill="#172e35" font-size="27" font-weight="700">2026 estimate</text>
+<rect x="70" y="252" width="810" height="76" rx="4" fill="#234f5c"/>
+<text x="899" y="310" font-family="Arial, Noto Sans KR, sans-serif" fill="#234f5c" font-size="57" font-weight="700">5.4%</text>
+<text x="70" y="405" font-family="Arial, Noto Sans KR, sans-serif" fill="#172e35" font-size="27" font-weight="700">2027 draft target</text>
+<rect x="70" y="425" width="750" height="76" rx="4" fill="#d8943d"/>
+<text x="839" y="484" font-family="Arial, Noto Sans KR, sans-serif" fill="#a76314" font-size="57" font-weight="700">5.0%</text>
+<text x="70" y="564" font-family="Arial, Noto Sans KR, sans-serif" fill="#38514f" font-size="20">Note: 2026 estimate and proposed 2027 target, not final outcomes</text>
+<text x="70" y="596" font-family="Arial, Noto Sans KR, sans-serif" fill="#607070" font-size="17">Sources: Reuters (Oct. 14, 2026), Agence France Trésor</text>
+<text x="1128" y="597" text-anchor="end" font-family="Arial, sans-serif" fill="#38514f" font-size="16">SEED VOICE</text>
+</svg>
