@@ -12,14 +12,14 @@ export const supremeCourtRenominationTracker: PublicInterestWatchCase = {
     ko: "청와대는 손봉기 후보자의 임명동의안을 국회에 보내지 않았고, 조희대 대법원장은 다른 후보를 다시 제청하라는 요청을 거부했습니다. 한 자리는 비어 있습니다. 이 기록은 제청·동의·임명의 각 단계에서 누가 실제로 결정권을 행사하고, 공석을 해소할 책임은 누가 지는지 날짜별로 추적합니다.",
     en: "The presidential office has withheld the motion seeking parliamentary consent for nominee Son Bong-gi; Chief Justice Cho Hee-dae has refused to nominate someone else. One seat remains vacant. This record follows who controls each constitutional stage of nomination, consent and appointment, and who takes responsibility for resolving the vacancy.",
   },
-  status: { ko: "재제청 거부·임명동의안 미제출", en: "Renomination refused · Consent motion withheld" },
+  status: { ko: "재제청 거부 유지·법제처 국감서 헌법 해석 충돌", en: "Renomination refused · Competing constitutional interpretations at audit" },
   openedAt: "2026-08-18",
   publishedAt: "2026-09-24",
-  updatedAt: "2026-09-24",
+  updatedAt: "2026-10-15",
   continuationEligible: false,
   sourceBasis: {
-    ko: "헌법 제104조의 임명 절차를 기준으로 대법원장 제청, 청와대의 재제청 요청과 후속 공지, 야당의 권한쟁의심판 청구에 관한 언론 보도를 날짜별로 대조했습니다. 청와대와 대법원장의 주장은 각자의 입장으로 표시하고, 재판 결과나 위헌 판단으로 취급하지 않았습니다. 2026년 9월 24일 오전 확인 기준입니다.",
-    en: "This tracker uses Article 104 of the Constitution as its baseline and cross-checks dated reports of Cho's nomination, the presidential office's request and later statements, and the opposition's competence-dispute petition. Each institution's legal interpretation is attributed rather than presented as a court ruling. Checked on the morning of September 24, 2026, Korea time.",
+    ko: "헌법 제104조의 임명 절차를 기준으로 대법원장 제청, 청와대의 재제청 요청과 후속 공지, 야당의 권한쟁의심판 청구에 관한 언론 보도를 날짜별로 대조했습니다. 청와대와 대법원장의 주장은 각자의 입장으로 표시하고, 재판 결과나 위헌 판단으로 취급하지 않았습니다. 2026년 10월 15일 법제처 국정감사까지 확인했으며 공식 발언과 확정 판결을 구분했습니다.",
+    en: "This tracker uses Article 104 of the Constitution as its baseline and cross-checks dated reports of Cho's nomination, the presidential office's request and later statements, and the opposition's competence-dispute petition. Each institution's legal interpretation is attributed rather than presented as a court ruling. Checked through the October 15, 2026 parliamentary audit; constitutional interpretations are not court rulings.",
   },
   caution: {
     ko: "국민의힘 의원들이 권한쟁의심판을 청구한 것은 사실이지만, 심판의 적법성·본안 판단이나 위헌 결정이 내려진 것은 아닙니다. 청와대와 대법원도 9월 23일 현재 스스로 권한쟁의를 청구하지 않았다고 밝혔습니다. 대법관 증원은 별도 입법 사안이며, 이번 제청 갈등만으로 법원이 정권의 지시를 받는다는 사실이 입증된 것은 아닙니다.",
@@ -55,6 +55,8 @@ export const supremeCourtRenominationTracker: PublicInterestWatchCase = {
     ],
   },
   keyChanges: [
+    { date: "2026-10-15", text: { ko: "법제처 국정감사에서 조원철 법제처장은 대통령이 최초 대법관 제청에 반드시 따를 의무가 없으며 재제청 요청이 헌법에 반하지 않는다고 해석했습니다. 여당 의원은 재제청이 헌법상 책무라고 주장했고 야당은 요구의 법적 근거가 불분명하다고 반박했습니다. 판결이나 확정된 헌법 해석과는 구별됩니다.", en: "Legislation Minister Cho Won-cheol told a parliamentary audit the president was not obliged to appoint the first nominee and a renewed nomination request was constitutionally permissible. Governing-party lawmakers characterized renomination as a duty, while opposition members challenged the legal basis. No court has settled this dispute." } },
+    { date: "2026-10-06", text: { ko: "조희대 대법원장은 국정감사에서 제청 절차에 국회와 대통령이 관여할 수 없다는 입장을 재확인하고 장기 공석에 송구하다고 밝혔습니다. 재제청 일정은 제시하지 않았습니다.", en: "Chief Justice Cho argued that the president and parliament could not intervene in his nomination process, apologized for the continuing vacancy and did not announce a renomination timetable." } },
     { date: "2026-09-23", text: { ko: "조 대법원장은 재제청 요청 공문에 사유가 명확하지 않다고 재차 밝혔고, 청와대는 임명동의안을 제출하지 않겠다는 공문 자체가 거부 의사를 밝힌 것이라고 다시 반박했습니다.", en: "Cho reiterated that the request did not clearly state its grounds; the presidential office replied that withholding the consent motion already made its refusal clear." } },
     { date: "2026-09-23", text: { ko: "청와대는 자체 권한쟁의심판 청구를 검토하지 않는다고 밝혔습니다. 이는 9월 21일 국민의힘 의원들이 제출한 별도 청구와 구분해야 합니다.", en: "The presidential office said it was not considering its own competence-dispute petition. That is distinct from the petition opposition lawmakers filed on September 21." } },
     { date: "2026-09-23", text: { ko: "국회 법제사법위원회 소속 여당 의원들이 대법원을 항의 방문했습니다. 정치적 압박은 높아졌지만 임명동의안 제출이나 새 제청이라는 절차적 변화는 확인되지 않았습니다.", en: "Governing-party members of the National Assembly's judiciary committee visited the Supreme Court in protest. Political pressure rose, but no filing of a consent motion or new nomination was reported." } },
@@ -83,6 +85,28 @@ export const supremeCourtRenominationTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      date: "2026-10-06",
+      title: { ko: "조희대 대법원장, 국감에서 제청권 독립 강조·공석 장기화 유감", en: "Chief justice defends nomination autonomy and regrets extended vacancy" },
+      description: { ko: "10월 6일 대법원 국정감사에서 조희대 대법원장은 대통령·국회가 대법원장의 제청 절차에 관여할 수 없다는 헌법 해석을 밝혔습니다. 대법관 공석이 길어진 데 대해 송구하다고 했지만 손봉기 후보자 재제청 요구를 해결할 구체적 일정을 제시하지는 않았습니다. 이는 대법원장 견해이며 헌법재판소 판단이 아닙니다.", en: "At the October 6 parliamentary audit, Chief Justice Cho asserted that the president and legislature could not interfere in the chief justice's nomination. He expressed regret about the long vacancy but announced no new timetable for the Son Bong-gi candidacy. This is his interpretation, not an adjudication." },
+      change: { ko: "국감에서 제청권 독립 견해 재확인·공석 해소 책임 공개 언급", en: "Nomination autonomy reaffirmed; long vacancy acknowledged" },
+      status: "response",
+      sources: [
+        { publisher: { ko: "이데일리", en: "Edaily" }, title: { ko: "국감 첫날 마친 조희대, 대법원 온전한 구성 위해 노력", en: "Chief justice pledges effort to restore court membership" }, url: "https://m.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=07009366645610296", publishedAt: "2026-10-06", kind: "article" },
+        { publisher: { ko: "비즈니스포스트", en: "Business Post" }, title: { ko: "대법원장 조희대, 재제청 공문 근거 명확하지 않다고 재확인", en: "Chief justice disputes request's legal grounds" }, url: "https://char.businesspost.co.kr/BP?command=article_view&num=448685", publishedAt: "2026-10-06", kind: "article" }
+      ]
+    },
+    {
+      date: "2026-10-15",
+      title: { ko: "법제처장, 대통령 재제청 요청은 합헌 견해…여야 법적 근거 공방", en: "Legislation minister defends renomination request; lawmakers dispute legality" },
+      description: { ko: "10월 15일 법제처 국정감사에서 조원철 법제처장은 대법원장의 대법관 제청권을 추천·제안 성격으로 해석하고 대통령이 후보자를 반드시 임명할 의무는 없으며 재제청을 요구하는 것이 헌법에 위배되지 않는다고 설명했습니다. 여당 의원은 대법원장에게 재제청 의무가 있다고 주장했고 야당은 명시적 법적 근거를 요구했습니다. 이는 각 기관·정당의 상충된 해석이며 위헌 여부가 판결로 확정된 것은 아닙니다. 새 제청이나 임명동의안 제출 여부는 별도로 확인합니다.", en: "At the October 15 audit, Legislation Minister Cho Won-cheol described the nomination as a recommendation rather than a binding appointment obligation and considered a request for a new nominee constitutionally permissible. Governing-party lawmakers argued the chief justice had a duty to renominate; opposition members demanded an explicit legal basis. These are competing interpretations, not a constitutional ruling or evidence a new nomination was filed." },
+      change: { ko: "법제처 공식 국정감사에서 재제청 권한을 둘러싼 헌법 해석 충돌 표면화", en: "Constitutional dispute aired at government legislation audit" },
+      status: "new",
+      sources: [
+        { publisher: { ko: "아이뉴스24", en: "iNews24" }, title: { ko: "법제처장, 대법원장 제청권은 추천·제안 의미", en: "Legislation minister calls nomination a recommendation" }, url: "https://m2.inews24.com/v/2015312", publishedAt: "2026-10-15", kind: "article" },
+        { publisher: { ko: "아주경제", en: "Aju News" }, title: { ko: "2026 국감, 대법관 재제청 여야 공방", en: "Lawmakers dispute the legal basis at October 15 audit" }, url: "https://www5.ajunews.com/view/20261015135603142", publishedAt: "2026-10-15", kind: "article" }
+      ]
+    },
     {
       date: "2026-09-23",
       title: { ko: "청와대와 대법원장, 공문 내용 놓고 다시 충돌", en: "Presidential office and chief justice clash again over the written request" },
@@ -170,7 +194,7 @@ export const supremeCourtRenominationTracker: PublicInterestWatchCase = {
     { ko: "대법관 공석 기간, 사건 처리 영향, 증원법의 시행 일정과 추가 인선", en: "Vacancy duration, effects on adjudication, expansion-law timetable and later nominations" },
   ],
   nextCheck: {
-    ko: "청와대 공문 원문과 추가 법적 근거가 공개되는지, 대법원의 후보 추천·제청 경위가 자료로 설명되는지, 국회 임명동의안 제출 여부와 헌재 권한쟁의 사건의 접수·적법성·본안 단계가 어떻게 바뀌는지 확인합니다. 여당의 탄핵 발언은 실제 발의·의결과 구분합니다.",
+    ko: "10월 6일 대법원·15일 법제처 국정감사에서 나온 상충된 헌법 해석과 별개로 청와대 공문 원문·추가 법적 근거가 공개되는지, 새 제청·국회 임명동의안 제출 여부, 헌재 권한쟁의 사건의 접수·적법성·본안 절차를 확인합니다. 탄핵 관련 발언은 실제 발의·의결과 구분합니다.",
     en: "Check whether the request and any further legal grounds are disclosed, whether the court documents its selection process, whether a consent motion is filed, and how the petition advances through the Constitutional Court. Distinguish impeachment rhetoric from a formally introduced or adopted motion.",
   },
   relatedContents: [{
