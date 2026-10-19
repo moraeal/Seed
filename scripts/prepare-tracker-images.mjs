@@ -67,9 +67,9 @@ async function prepare([url, source]) {
   } catch (error) {
     // Publisher bot restrictions are not broken source links. Preserve the
     // original article URL and show an explicitly labelled editorial link tile.
-    if (/HTTP (401|403)\\b/.test(String(error.message)) && !source.thumbnailSrc) {
+    if (["HTTP 401", "HTTP 403"].some((status) => String(error.message).includes(status)) && !source.thumbnailSrc) {
       const src = "/images/monitoring/source-articles/source-link-editorial.svg";
-      await access(`public/${src.replace(/^\\//, "")}`);
+      await access(`public/${src.slice(1)}`);
       manifest[url] = {
         src,
         kind: "context",
