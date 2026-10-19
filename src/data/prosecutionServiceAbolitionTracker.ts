@@ -50,6 +50,7 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
   "en": "The October 2 launch, authorized and actual staffing, and service-desk and IT operations are updated from Newsis reporting and its account of the Prosecution Agency announcement. Earlier preparations retain their original check dates. Authorized staffing, actual personnel, transfer instructions, completed transfers, complaints and investigative findings remain separate."
 },
   keyChanges: [
+    { date: "2026-10-19", text: { ko: "공소청은 9월 말 미제사건 18만6,307건 전부를 일괄 이관하지 않으며, 보완수사요구와 직접수사 사건 이관을 순차 처리한다고 설명했습니다. 검사 지명수배·체포영장 사건 약 1,980건은 경찰 이관을 완료했고, 직접 인지사건 약 300건은 우선 이관 대상으로 분류됐습니다.", en: "The Prosecution Agency said it would not transfer all 186,307 pending cases en masse. Approximately 1,980 wanted-person/arrest-warrant cases have already been transferred to police, while roughly 300 formerly prosecutor-initiated cases were selected for phased transfer." } },
     {
       date: "2026-10-19",
       text: {
@@ -199,6 +200,7 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    { date: "2026-10-19", title: { ko: "공소청, 미제 18만6,307건 일괄 이관 부인·단계별 이송 설명", en: "Agency clarifies staggered handling of 186,307 pending cases" }, description: { ko: "공소청은 9월 말 기준 미제사건이 18만6,307건이지만 전부를 경찰 등으로 한 번에 이송하거나 보완수사요구하는 것은 아니라고 공식 설명했습니다. 10월 2~8일 경찰에 보완수사를 요구한 사건은 1,654건이고, 검사 지명수배·체포영장 사건 약 1,980건은 경찰로 이관을 마쳤습니다. 검사 직접수사 사건 약 300건은 우선 이관 대상으로 선별돼 90일 유예기간에 맞춰 순차 처리·이관 중이라고 밝혔습니다. 이 수치들은 서로 다른 범주의 지표이므로 더해 전체 이관 건수로 계산하지 않습니다.", en: "The agency said its 186,307 pending cases as of late September would not all be transferred or returned for supplementary investigation in one batch. It reported 1,654 supplementary-investigation requests to police from October 2–8, about 1,980 fugitive/arrest-warrant cases transferred to police, and roughly 300 prosecutor-initiated cases prioritized for staggered transfer within the 90-day transition. These are separate categories, not an additive total." }, change: { ko: "사건 적체 논란에 실제 미제 규모와 이송·보완수사 단계별 수치 공개", en: "New agency-level data distinguish pending cases, transfer and supplemental requests" }, status: "confirmed", sources: [{ publisher: { ko: "시사저널", en: "Sisa Journal" }, title: { ko: "공소청, 18만 미제 일괄 이관 없다…1,980건 이송·300건 순차 처리", en: "Agency denies en masse transfer of 186,307 cases" }, url: "https://www.sisajournal.com/news/articleView.html?idxno=390795", publishedAt: "2026-10-19", kind: "article" }] },
     {
       date: "2026-10-19",
       title: { ko: "김지용 초대 중수청장, 수사 정치화 청산 약속·임명장 수여", en: "First investigation chief vows to end politicization and receives appointment certificate" },
