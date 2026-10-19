@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useLanguage } from "../i18n";
 import TipDialog from "../components/TipDialog";
+import { campaignDiscovery } from "../data/campaignDiscovery";
 import SiyaDismissButton, { useSiyaDismissed } from "../components/SiyaDismissButton";
 
 const copy = {
@@ -221,6 +222,16 @@ export default function About() {
                 </article>;
               })}
             </div>
+            <aside aria-label={campaignDiscovery[language].aboutTitle} className="mt-8 flex flex-col gap-4 border-l-4 border-green-deep bg-white/90 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+              <div className="max-w-2xl">
+                <h3 className="text-lg font-extrabold text-navy">{campaignDiscovery[language].aboutTitle}</h3>
+                <p className="mt-1 text-sm leading-7 text-charcoal/75">{campaignDiscovery[language].aboutDescription}</p>
+              </div>
+              <nav aria-label={language === "ko" ? "증세반대운동 공식 안내" : "No More Tax campaign links"} className="flex shrink-0 flex-col items-start gap-2 text-sm font-extrabold text-green-deep">
+                <Link to="/civic-campaign" className="inline-flex items-center gap-1.5 underline underline-offset-4 hover:text-green-mid">{campaignDiscovery[language].campaignCta}<ArrowUpRight size={15} aria-hidden="true" /></Link>
+                <Link to="/tax-watch-movement" className="inline-flex items-center gap-1.5 underline underline-offset-4 hover:text-green-mid">{campaignDiscovery[language].archiveCta}<ArrowUpRight size={15} aria-hidden="true" /></Link>
+              </nav>
+            </aside>
           </div>
         </section>
 
