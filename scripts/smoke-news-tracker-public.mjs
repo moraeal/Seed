@@ -26,6 +26,9 @@ const check = (ok, note) => {
 
 async function checkPage(browser, name, viewport) {
   const page = await browser.newPage({ viewport, locale: "ko-KR", timezoneId: "Asia/Seoul" });
+  const pageErrors = [];
+  page.on("pageerror", (error) => pageErrors.push(String(error?.stack || error)));
+  page.on("console", (message) => { if (message.type() === "error") pageErrors.push("console: " + message.text()); });
   page.setDefaultTimeout(22000);
   try {
     const response = await page.goto(BASE + "/monitoring?view=trackers", { waitUntil: "domcontentloaded", timeout: 30000 });
@@ -71,6 +74,17 @@ async function checkPage(browser, name, viewport) {
       await page.locator('article a[href^="http"]').first()
         .waitFor({ state: "attached", timeout: 16000 }).catch(() => {});
       const external = await page.locator('article a[href^="http"]').count();
+      if (!external) {
+        const diagnostic = await page.evaluate(() => ({
+          title: document.title,
+          articleHtml: (document.querySelector("article")?.outerHTML || "").slice(0, 1800),
+          bodyText: document.body.innerText.slice(-1600),
+          scripts: document.querySelectorAll("script[type=module]").length,
+          links: Array.from(document.querySelectorAll("a[href]")).slice(0, 10).map(x => x.href),
+        }));
+        console.log("DIAGNOSTIC " + name + " " + slug + ": " + JSON.stringify({ diagnostic, errors: pageErrors.slice(-15) }));
+        await page.screenshot({path: OUT + "/missing-source-" + name + "-" + slug + ".png", fullPage: true});
+      }
       check(external > 0, name + ": hydrated article source/external link(s) " + slug);
       const mainImage = page.locator("article figure img").first();
       if (await mainImage.count()) {
