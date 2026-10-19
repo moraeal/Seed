@@ -19,12 +19,12 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     en: "The government has proposed merging the Army, Navy and Air Force academies into a four-year Armed Forces Academy at Jaun-dae in Daejeon. SEED tracks the shift from an early two-plus-two model to full co-location, gaps in ROTC and officer-candidate education, hearings and legislation, cost and campus reuse, and any revisions under the new defense minister.",
   },
   status: {
-    ko: "창설 추진 재확인·세부계획 대기",
-    en: "Creation reaffirmed · Detailed plan pending",
+    ko: "국정감사서 각 군 공식 의견수렴 부족 지적·세부계획 대기",
+    en: "Formal service-wide consultation questioned at audit · Details pending",
   },
   openedAt: "2025-06-26",
   publishedAt: "2026-09-17",
-  updatedAt: "2026-10-01",
+  updatedAt: "2026-10-19",
   nextCheck: {
     ko: "대통령의 10월 1일 신속 추진 지시 뒤 세부계획의 통합 선발 시점과 방식, 자운대 이전 일정·총사업비, 각 군 전문교육 시설, ROTC·학사장교 합동교육 확대안, 정부·여당의 국군사관학교 설치법 제출 여부와 분리 유지 법안 심사, 2028년 예산 편성 전 선행연구 일정",
     en: "Following the president's October 1 call for faster action: the detailed plan's admissions timing and model, Jaun-dae schedule and full cost, service-specific facilities, expanded joint education for ROTC and officer candidates, filing of the governing party's Armed Forces Academy bill, review of the competing separation bill, and studies required before possible 2028 funding",
@@ -53,6 +53,13 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     en: "The first integrated class, relocation completion date and total cost remain unsettled. The government's 2027 budget proposal contains no dedicated academy-merger funding; possible 2028 funding remains under review after preliminary studies. A 2028 launch and 2032–36 relocation are also not confirmed schedules. The September 10 member's bill would preserve the separate academies and their current locations; it is not enacted law and has not halted the merger. Political punishment is an interpretation prompted by official historical-rupture language, not a confirmed stated purpose.",
   },
   keyChanges: [
+    {
+      date: "2026-10-19",
+      text: {
+        ko: "국회 국방위원회 국정감사에서 육·해·공군이 국군사관학교 창설·통폐합에 관한 공식 공문 의견을 제출하지 않았다는 각 군 자료가 공개됐습니다. 육군참모총장은 공식 의견 수렴 절차 보완 필요성을 인정했습니다. 다만 각 군 지휘부가 국방부와 비공식 접견에서 의견을 전한 사실도 확인됐습니다.",
+        en: "At a National Assembly defense audit, service submissions indicated the Army, Navy and Air Force had not formally filed written feedback on the proposed academy integration. The Army chief acknowledged a need to improve consultation procedures; senior officers had nonetheless expressed views during meetings with the ministry.",
+      },
+    },
     {
       date: "2026-07-16",
       text: {
@@ -97,6 +104,17 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      date: "2026-10-19",
+      title: { ko: "육·해·공 공식 의견서 없었다…사관학교 통합 절차 국감 쟁점", en: "Defense audit questions formal consultation over service academy merger" },
+      description: {
+        ko: "임종득 의원실이 각 군 본부에서 제출받아 공개한 자료에서 육군·해군·공군 모두 사관학교 통합과 관련해 국방부에 공식 의견을 공문으로 제출한 기록이 없다고 답했습니다. 19일 육군본부 국정감사에서 김규하 육군참모총장은 공식 회의·공문 형태의 의견 수렴이 충분하지 않았다는 취지로 답했습니다. 그러나 육·해·공 참모총장 등이 국방부 인사와 접견 과정에서 통합의 필요성 및 전문성·공론화 보완 의견을 전달한 기록도 함께 보도됐습니다. 공식 절차 미비와 비공식 협의의 존재를 구분합니다.",
+        en: "Materials released by lawmaker Lim Jong-deuk indicated none of the three armed services had formally submitted written opinions to the Defense Ministry on merging service academies. At an October 19 defense audit, Army chief Kim Gyu-ha acknowledged the need to improve formal consultation. The same reporting also records informal meetings where senior service officers raised the need for professional training and consultation. Lack of formal submissions does not mean no consultation occurred at all.",
+      },
+      change: { ko: "통합안의 내용뿐 아니라 의견수렴 절차의 적절성이 공식 검증 대상이 됨", en: "Scrutiny expands to whether the merger's formal consultation process was adequate" },
+      status: "new",
+      sources: [{ publisher: { ko: "월간조선", en: "Monthly Chosun" }, title: { ko: "국방부, 각 군 의견 수렴 없이 사관학교 폐교 추진 — 국회 제출 자료·국감 문답", en: "Defense Ministry pursued academy closure without written service feedback — parliamentary materials" }, url: "https://monthly.chosun.com/news/articleView.html?idxno=71709", publishedAt: "2026-10-19", kind: "article" }],
+    },
     {
       date: "2025-06-26",
       title: {
