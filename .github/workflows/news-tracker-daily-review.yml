@@ -40,8 +40,10 @@ jobs:
           set -euo pipefail
           DAY="$(TZ=Asia/Seoul date +%F)"
           TITLE="[뉴스트래커 점검] $DAY"
-          if gh issue list --state all --limit 200 --json title --jq '.[].title' | grep -Fxq "$TITLE"; then
-            echo "Review issue exists; avoiding duplicate."
-            exit 0
+          EXISTING="$(gh issue list --state all --limit 200 --json number,title | jq -r --arg title "$TITLE" '.[] | select(.title == $title) | .number' | head -n 1)"
+          if [ -n "$EXISTING" ]; then
+            gh issue edit "$EXISTING" --body-file /tmp/news-tracker-daily-review.md
+            echo "Updated existing daily issue #$EXISTING"
+          else
+            gh issue create --title "$TITLE" --body-file /tmp/news-tracker-daily-review.md
           fi
-          gh issue create --title "$TITLE" --body-file /tmp/news-tracker-daily-review.md
