@@ -205,6 +205,18 @@ export default function CampaignSignature() {
         <p className="mt-3 border-l-4 border-green-deep pl-4 text-base font-bold leading-7 text-green-deep">{item.demand[language]}</p>
       </article>)}
     </div>
+    <section aria-labelledby="no-more-tax-faq-title" className="mt-6 border-t border-green-deep/20 pt-6">
+      <h2 id="no-more-tax-faq-title" className="text-xl font-black text-navy">{ko ? "증세반대운동 참여 안내 · 자주 묻는 질문" : "No More Tax · Frequently Asked Questions"}</h2>
+      <div className="mt-3 divide-y divide-green-deep/15">
+        {noMoreTaxLanding[language].faq.map((item) => <article key={item.question} className="py-4">
+          <h3 className="text-base font-bold leading-7 text-navy">{item.question}</h3>
+          <p className="mt-1.5 text-sm leading-7 text-charcoal/80">{item.answer}</p>
+          {item.href.startsWith("#") ? <a href={item.href} className="mt-2 inline-block text-sm font-bold text-green-deep underline underline-offset-4">{item.linkLabel}</a> :
+            item.href.startsWith("/civic-campaign#") ? <a href={item.href.slice("/civic-campaign".length)} className="mt-2 inline-block text-sm font-bold text-green-deep underline underline-offset-4">{item.linkLabel}</a> :
+            <Link to={item.href} className="mt-2 inline-block text-sm font-bold text-green-deep underline underline-offset-4">{item.linkLabel}</Link>}
+        </article>)}
+      </div>
+    </section>
     <div className="bg-ivory p-5 sm:p-6">
       <p className="text-lg font-bold leading-8 text-navy">{ko ? "국가의 재정을 위해 국민이 존재하는 것이 아닙니다. 국가가 국민의 삶을 위해 존재해야 합니다." : "People do not exist to serve the state's finances. The state exists to serve people's lives."}</p>
       <p className="mt-4 text-lg font-black leading-8 text-green-deep">{ko ? "증세보다 지출개혁! 과세보다 경제성장! 국가보다 국민의 재산권!" : "Spending reform before tax hikes. Growth before heavier taxation. Put people's property rights first."}</p>
