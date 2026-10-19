@@ -216,6 +216,14 @@ function articleBody(route) {
     `<section><h2>확인 자료</h2><ul>${communityChestResearch.sources.map((source) => `<li><a href="${escapeHtml(source.url)}">${escapeHtml(source.label)}</a></li>`).join("")}</ul></section>`,
   ].join("\n");
 
+  if (route.path === "/tax-watch-movement") {
+    const activities = civicSectionsModule.getCivicSectionArticles("cases", "ko");
+    return [
+      `<section><h2>씨앗의 소리의 증세반대운동과 세금감시</h2><p>씨앗의 소리(Seed Voice)는 2026년 10월부터 No More Tax 증세반대운동을 전개하고 있습니다. 증세반대 서명과 활동 소개는 공식 시민캠페인 페이지에서 확인할 수 있습니다.</p><p><a href="${canonicalUrl("/civic-campaign")}">No More Tax 증세반대운동 공식 소개와 서명 참여</a></p></section>`,
+      `<section><h2>세금감시운동 기사 및 활동 기록</h2><ul>${activities.map((item) => `<li><a href="${canonicalUrl(item.path)}"><strong>${escapeHtml(item.title)}</strong></a><p>${escapeHtml(item.summary)}</p></li>`).join("\n")}</ul></section>`,
+    ].join("\n");
+  }
+
   const civicSection = civicSectionsModule.civicSections.find((section) => section.path === route.path);
   const listing = civicSection ? civicSectionsModule.getCivicSectionArticles(civicSection.key, "ko").map((item) => ({ path: item.path, title: item.title, summary: item.summary }))
     : route.path === "/civic-life" ? civicSectionsModule.getCivicLifeArticles("ko").map((item) => ({ path: item.path, title: item.title, summary: item.summary }))
@@ -433,4 +441,4 @@ ${feedRoutes.map((route) => `    <item>
 </rss>
 `;
 await writeFile(path.join(dist, "rss.xml"), rss);
-await writeFile(path.join(dist, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/news-sitemap.xml\n`);
+await writeFile(path.join(dist, "robots.txt"), `# Main search crawlers, including ChatGPT Search, are permitted.\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: Googlebot\nAllow: /\n\nUser-agent: bingbot\nAllow: /\n\nUser-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/news-sitemap.xml\n`);
