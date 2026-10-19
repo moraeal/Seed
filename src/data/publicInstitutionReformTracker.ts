@@ -301,6 +301,48 @@ export const publicInstitutionReformTracker: PublicInterestWatchCase = {
   status: { ko: "한국발전 로드맵·자회사 통합 후속 추적", en: "Power-merger roadmap · Subsidiary follow-up under watch" },
   publishedAt: "2026-09-21",
   updatedAt: "2026-09-30",
+  keyChanges: [
+    {
+      date: "2026-09-23",
+      text: {
+        ko: "코레일 자회사 5곳이 고객서비스·유통물류·유지관리의 3개 전문회사로 통합 운영을 시작했습니다. 정부가 내건 전체 109개 순감축 목표가 달성된 것은 아니며, 비용·서비스 개선 성과는 후속 검증이 필요합니다.",
+        en: "Five Korail subsidiaries began operating as three specialist firms in customer services, retail-logistics and maintenance. This does not mean the full 109-entity net-reduction target has been achieved; costs and service outcomes remain to be assessed.",
+      },
+    },
+    {
+      date: "2026-09-04",
+      text: {
+        ko: "정부는 발전공기업 5사 통합 로드맵을 제시하면서 새 법인의 2027년 10월 출범을 목표로 했습니다. 통합 시행이나 비용 절감이 완료된 것은 아닙니다.",
+        en: "The government outlined a roadmap to merge five power generation firms, targeting an October 2027 launch. Neither merger completion nor cost savings have been verified.",
+      },
+    },
+  ],
+  timeline: [
+    {
+      date: "2026-09-03",
+      title: { ko: "정부, 공공기관 109개 순감축 방침 발표", en: "Government announces a target to reduce public entities by 109" },
+      description: { ko: "제11차 공공기관운영위원회에서 기능개혁 추진방안을 의결했습니다. 전략적 구조개혁 15개, 유사·중복기능 통합 11개, 자회사·소규모기관 통합 83개를 합쳐 109개 순감축을 목표로 제시했습니다. 발표한 목표와 실제 감축을 구분합니다.", en: "The Public Institution Management Committee approved a restructuring plan targeting 109 net entity reductions: 15 through strategic reform, 11 through consolidation of overlapping functions and 83 through subsidiary and small-entity consolidation. This was a target, not a completed result." },
+      change: { ko: "109개 순감축 목표의 구조와 대상 공개", en: "Details of the 109-entity reduction target announced" },
+      status: "confirmed",
+      sources: [{ publisher: { ko: "대한민국 정책브리핑", en: "Government policy portal" }, title: { ko: "공공기관 기능개혁 추진방안", en: "Public institution functional restructuring plan" }, url: "https://www.korea.kr/news/policyNewsView.do?newsId=148971154", publishedAt: "2026-09-03", kind: "document" }],
+    },
+    {
+      date: "2026-09-04",
+      title: { ko: "발전공기업 5사 통합 로드맵 공개", en: "Roadmap for merging five power producers released" },
+      description: { ko: "정부는 발전공기업 5개사를 한전의 자회사인 새 통합법인으로 묶고 2027년 10월 1일 출범을 목표로 하는 로드맵을 발표했습니다. 법률·자산·부채·인력 승계와 비용·요금 영향은 향후 확인할 과제입니다.", en: "The government published a roadmap for a single KEPCO subsidiary to combine five public power producers, targeting an October 1, 2027 launch. Legislation, debt and asset transfers, staffing, costs and tariff effects remain open questions." },
+      change: { ko: "발전 5사 통합 구상에 출범 목표와 지배구조 제시", en: "Target launch and ownership structure outlined for power merger" },
+      status: "confirmed",
+      sources: [{ publisher: { ko: "대한민국 정책브리핑", en: "Government policy portal" }, title: { ko: "발전공기업 5사 통합 로드맵", en: "Roadmap for merging five public power generators" }, url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156780268", publishedAt: "2026-09-04", kind: "document" }],
+    },
+    {
+      date: "2026-09-23",
+      title: { ko: "코레일 자회사 5곳, 3개 전문회사로 통합 운영", en: "Five Korail subsidiaries begin operating as three specialist firms" },
+      description: { ko: "정부는 코레일 자회사 5곳의 3개 전문회사 통합 운영 개시를 발표했습니다. 고객서비스·유통물류·유지관리로 기능을 재편한 사실은 확인됐지만 실제 통합비용과 절감액, 서비스 개선 효과까지 확정된 것은 아닙니다.", en: "The government said five Korail subsidiaries began operating as three specialist companies covering customer services, retail-logistics and maintenance. Their reorganization is confirmed, but verified cost savings and service improvements are not yet established." },
+      change: { ko: "전체 개혁안 중 철도 자회사 통합 단계 일부 시행", en: "A rail-subsidiary component moves from planning to operation" },
+      status: "confirmed",
+      sources: [{ publisher: { ko: "대한민국 정책브리핑", en: "Government policy portal" }, title: { ko: "코레일 자회사 통합 완료 보도자료", en: "Korail subsidiary consolidation completed" }, url: "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156783024", publishedAt: "2026-09-23", kind: "document" }],
+    },
+  ],
   sourceBasis: {
     ko: "2026년 9월 3일 제11차 공공기관운영위원회에서 의결된 정부 합동 기능개혁 방안, 9월 4일 발전공기업 통합 로드맵과 각 부처 후속 발표를 기준으로 언론 원문에서 시민 생활에 미칠 쟁점을 교차 확인했습니다. 109는 단순 대상기관 수가 아니라 정부가 제시한 순감축 목표입니다.",
     en: "This tracker starts from the government-wide reform plan approved by the 11th Public Institution Management Committee on September 3, 2026, the power-generator merger roadmap released on September 4, and subsequent ministry announcements, then cross-checks original media reporting. The figure 109 is a net reduction target, not a simple count of affected institutions.",
