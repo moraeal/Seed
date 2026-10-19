@@ -1,3 +1,4 @@
+import { europeProtestsBriefingTranslation2026 } from "./europeProtestsBriefing2026";
 import { healthInsuranceFundingTranslation } from "./briefingHealthInsuranceFunding";
 import { incheonStabbingTranslation } from "./incheonStabbingBriefing";
 import { teenAiUseExplainerTranslation } from "./teenAiUseExplainer";
@@ -31,6 +32,7 @@ import { monthlyRentCreditExplainerTranslation } from "./briefingMonthlyRentCred
 import { farmlandRetirementTranslation } from "./briefingFarmlandRetirement";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "why-protests-spread-across-europe-october-2026": europeProtestsBriefingTranslation2026,
   "health-insurance-state-support-144-percent-citizen-cost-2026": healthInsuranceFundingTranslation,
   "incheon-stabbing-warning-signals-civic-briefing-2026": incheonStabbingTranslation,
   "teen-ai-use-bill-2221842-explained": teenAiUseExplainerTranslation,
