@@ -126,7 +126,7 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
       "change": { "ko": "보안 대응 책임에서 고객 통지·피해 입증 부담과 보상 실효성으로 쟁점 확대", "en": "Oversight extends to customer notification, proof of harm and actual redress" },
       "status": "confirmed",
       "sources": [
-        { "publisher": { "ko": "쿠키뉴스", "en": "Kukinews" }, "title": { "ko": "해킹 대응부터 점포 축소까지…고개 숙인 5대 은행장", "en": "Five bank chiefs apologize at security audit" }, "url": "https://m.kukinews.com/article/view/kuk202610190203", "publishedAt": "2026-10-19", "kind": "article" },
+        { "publisher": { "ko": "쿠키뉴스", "en": "Kukinews" }, "title": { "ko": "해킹 대응부터 점포 축소까지…고개 숙인 5대 은행장", "en": "Five bank chiefs apologize at security audit" }, "url": "https://m.kukinews.com/article/view/kuk202610190203", "thumbnailSrc": "/images/monitoring/source-articles/source-link-editorial.svg", "publishedAt": "2026-10-19", "kind": "article" },
         { "publisher": { "ko": "녹색경제신문", "en": "Green Economic Daily" }, "title": { "ko": "정보유출 전액 보상 약속했지만 기준과 절차는 미정", "en": "Compensation pledges lack finalized criteria" }, "url": "https://www.greened.kr/news/articleView.html?idxno=351843", "publishedAt": "2026-10-12", "kind": "article" }
       ]
     },
