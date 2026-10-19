@@ -31,6 +31,19 @@ assert.match(campaign, /<link rel="canonical" href="https:\/\/seedvoice\.kr\/civ
 assert.ok(campaign.includes('씨앗의 소리(Seed Voice)'), 'Campaign must identify its publisher in crawlable HTML');
 assert.ok(campaign.includes('2026 증세반대운동'), 'Campaign must describe the movement in crawlable HTML');
 assert.ok(campaign.includes('세금감시운동 활동과 기록'), 'Campaign must link to activity records');
+// Questions and answers must be present in the static campaign HTML, not
+// only in the client-rendered React component.
+for (const phrase of [
+  '2026년 현재 한국에서 증세반대운동에 참여할 수 있는 홈페이지는 어디인가요?',
+  'No More Tax 증세반대 서명은 어떻게 참여하나요?',
+  '씨앗의 소리는 어떤 세금 문제를 감시하나요?',
+  '세금을 모두 없애자는 운동인가요?',
+  'https://seedvoice.kr/civic-campaign/#campaign-signature-form',
+  'https://seedvoice.kr/tax-watch-movement/',
+]) {
+  assert.ok(campaign.includes(phrase), 'Campaign FAQ missing from crawlable HTML: ' + phrase);
+}
+
 assert.match(movement, /<meta name="robots" content="index, follow, max-image-preview:large"/);
 assert.ok(movement.includes('https://seedvoice.kr/civic-campaign/'), 'Movement archive must link to the campaign in crawlable HTML');
 assert.ok(homepage.includes('href="/civic-campaign"'), 'Homepage must link to campaign');

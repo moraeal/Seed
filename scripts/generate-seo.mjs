@@ -119,6 +119,11 @@ function articleBody(route) {
     return [
       `<section><h2>증세반대운동 No More Tax 소개</h2>${paragraphList([campaign.introduction, campaign.activities])}</section>`,
       `<section><h2>시민 참여 방법</h2>${paragraphList([campaign.participation])}<p><a href="${canonicalUrl("/civic-campaign")}#campaign-signature-form">No More Tax 서명 참여</a></p></section>`,
+      `<section><h2>증세반대운동 참여 안내 · 자주 묻는 질문</h2>${campaign.faq.map((item) => {
+        const [pathPart, fragment] = item.href.split("#");
+        const href = canonicalUrl(pathPart) + (fragment ? "#" + fragment : "");
+        return `<article><h3>${escapeHtml(item.question)}</h3><p>${escapeHtml(item.answer)}</p><p><a href="${escapeHtml(href)}">${escapeHtml(item.linkLabel)}</a></p></article>`;
+      }).join("\n")}</section>`,
       `<section><h2>관련 활동 및 자료</h2><ul>
         <li><a href="${canonicalUrl("/tax-watch-movement")}">세금감시운동 활동과 기록</a></li>
         <li><a href="${canonicalUrl("/columns/no-more-tax-increases-civic-declaration-2026")}">증세반대 시민선언</a></li>
