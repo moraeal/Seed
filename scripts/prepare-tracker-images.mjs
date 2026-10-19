@@ -65,6 +65,21 @@ async function prepare([url, source]) {
       console.log(`Saved ${source.publisher.ko}: ${source.title.ko}`);
     } finally { await unlink(temporary).catch(() => {}); }
   } catch (error) {
+    // Publisher bot restrictions are not broken source links. Preserve the
+    // original article URL and show an explicitly labelled editorial link tile.
+    if (/HTTP (401|403)\\b/.test(String(error.message)) && !source.thumbnailSrc) {
+      const src = "/images/monitoring/source-articles/source-link-editorial.svg";
+      await access(`public/${src.replace(/^\\//, "")}`);
+      manifest[url] = {
+        src,
+        kind: "context",
+        alt: { ko: "원문 기사 연결 안내 그래픽 — 현장 사진 아님", en: "Editorial article-link tile — not a documentary photograph" },
+        credit: { ko: "씨앗의 소리 설명 그래픽", en: "SEED VOICE editorial graphic" },
+        verifiedAt: new Date().toISOString(),
+      };
+      console.warn(`Publisher blocks thumbnail access; retained original link with labelled fallback: ${url}`);
+      return;
+    }
     if (source.thumbnailSrc && source.thumbnailSrc.includes("/incheon-stabbing-2026/")) {
       console.warn(`News photo unavailable, keeping local JPEG fallback: ${url}: ${error.message}`);
     } else {
