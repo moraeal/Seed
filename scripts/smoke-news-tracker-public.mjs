@@ -66,8 +66,12 @@ async function checkPage(browser, name, viewport) {
       await page.locator("article h1").first().waitFor({ state:"visible", timeout: 20000 });
       const heading = await page.locator("article h1").first().innerText();
       check(heading.trim().length >= 10, name + ": readable article title " + slug);
+      // Some SEO-prerendered detail pages show a heading before React hydrates
+      // the citations and timeline. Wait for the live source links before judging.
+      await page.locator('article a[href^="http"]').first()
+        .waitFor({ state: "attached", timeout: 16000 }).catch(() => {});
       const external = await page.locator('article a[href^="http"]').count();
-      check(external > 0, name + ": article source/external link(s) " + slug);
+      check(external > 0, name + ": hydrated article source/external link(s) " + slug);
       const mainImage = page.locator("article figure img").first();
       if (await mainImage.count()) {
         await mainImage.scrollIntoViewIfNeeded();
