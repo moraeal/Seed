@@ -16,6 +16,7 @@ const server = await createServer({
   optimizeDeps: { noDiscovery: true },
 });
 const civicSectionsModule = await server.ssrLoadModule("/src/data/civicSections.ts");
+const campaignDiscoveryModule = await server.ssrLoadModule("/src/data/campaignDiscovery.ts");
 const noMoreTaxLandingModule = await server.ssrLoadModule("/src/data/noMoreTaxLanding.ts");
 const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, seedWatchModule, siteContentModule, seedLanguageModule, seedLanguageEnvironmentModule, communityChestModule, legislativeCommentaryModule] = await Promise.all([
   server.ssrLoadModule("/src/seo.ts"),
@@ -102,7 +103,15 @@ const rfc822 = (date) => new Date(`${date}T00:00:00+09:00`).toUTCString();
 const paragraphList = (items = []) => items.filter(Boolean).map((item) => `<p>${escapeHtml(item)}</p>`).join("\n");
 const bulletList = (items = []) => items.length ? `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : "";
 
+function campaignDiscoveryHtml(section) {
+  const content = campaignDiscoveryModule.campaignDiscovery.ko;
+  const title = section === "about" ? content.aboutTitle : content.columnsTitle;
+  const description = section === "about" ? content.aboutDescription : content.columnsDescription;
+  return `<section><h2>${escapeHtml(title)}</h2><p>${escapeHtml(description)}</p><nav aria-label="No More Tax 관련 페이지"><a href="${canonicalUrl("/civic-campaign")}">${escapeHtml(content.campaignCta)}</a> · <a href="${canonicalUrl("/tax-watch-movement")}">${escapeHtml(content.archiveCta)}</a></nav></section>`;
+}
+
 function articleBody(route) {
+  if (route.path === "/about") return campaignDiscoveryHtml("about");
   if (route.path === "/civic-campaign") {
     const campaign = noMoreTaxLandingModule.noMoreTaxLanding.ko;
     return [
@@ -237,7 +246,7 @@ function articleBody(route) {
     : route.path === "/monitoring/legislation" ? legislativeCommentaries.map((item) => ({ path: `/monitoring/legislation/commentary/${item.slug}`, title: item.editions.ko.title, summary: item.editions.ko.summary }))
     : [];
 
-  if (listing.length) return `<ul>${listing.map((item) => `<li><a href="${canonicalUrl(item.path)}"><strong>${escapeHtml(item.title)}</strong></a><p>${escapeHtml(item.summary)}</p></li>`).join("\n")}</ul>`;
+  if (listing.length) return `${route.path === "/columns" ? campaignDiscoveryHtml("columns") : ""}<ul>${listing.map((item) => `<li><a href="${canonicalUrl(item.path)}"><strong>${escapeHtml(item.title)}</strong></a><p>${escapeHtml(item.summary)}</p></li>`).join("\n")}</ul>`;
   return `<p>${escapeHtml(route.description)}</p>`;
 }
 
