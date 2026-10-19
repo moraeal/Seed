@@ -23,11 +23,14 @@ export function getNewsTrackingCards(language: Language, records: PublicInterest
     const timeline = [...(record.timeline ?? [])]
       .filter((entry) => entry.status !== "pending" && validDate(entry.date))
       .sort((a, b) => b.date.localeCompare(a.date))[0];
+    // A newer dated timeline entry must supersede an older keyChanges entry.
+    // If both share a date, prefer the editor's curated key-change summary.
+    const useKeyChange = Boolean(latest && (!timeline || latest.date >= timeline.date));
     return {
       to: `/monitoring/${record.slug}`,
       title: record.title[language],
-      latestChange: latest?.text[language] || timeline?.change?.[language] || timeline?.description[language] || record.summary[language],
-      changeDate: latest?.date || timeline?.date || record.publishedAt || record.updatedAt,
+      latestChange: (useKeyChange ? latest?.text[language] : timeline?.change?.[language] || timeline?.description[language]) || record.summary[language],
+      changeDate: (useKeyChange ? latest?.date : timeline?.date) || record.publishedAt || record.updatedAt,
       imageSrc: record.heroImage?.src,
       imageAlt: record.heroImage?.alt[language] || record.title[language],
     };
