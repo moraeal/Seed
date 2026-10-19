@@ -93,7 +93,7 @@ export const supremeCourtRenominationTracker: PublicInterestWatchCase = {
       status: "response",
       sources: [
         { publisher: { ko: "이데일리", en: "Edaily" }, title: { ko: "국감 첫날 마친 조희대, 대법원 온전한 구성 위해 노력", en: "Chief justice pledges effort to restore court membership" }, url: "https://m.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=07009366645610296", publishedAt: "2026-10-06", kind: "article" },
-        { publisher: { ko: "비즈니스포스트", en: "Business Post" }, title: { ko: "대법원장 조희대, 재제청 공문 근거 명확하지 않다고 재확인", en: "Chief justice disputes request's legal grounds" }, url: "https://char.businesspost.co.kr/BP?command=article_view&num=448685", publishedAt: "2026-10-06", kind: "article" }
+        { publisher: { ko: "비즈니스포스트", en: "Business Post" }, title: { ko: "대법원장 조희대, 재제청 공문 근거 명확하지 않다고 재확인", en: "Chief justice disputes request's legal grounds" }, url: "https://char.businesspost.co.kr/BP?command=article_view&num=448685", thumbnailSrc: "/images/monitoring/source-articles/source-link-editorial.svg", publishedAt: "2026-10-06", kind: "article" }
       ]
     },
     {
