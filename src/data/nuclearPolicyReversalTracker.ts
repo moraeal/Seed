@@ -19,15 +19,15 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     en: "This tracker records the shift from cancelling six planned reactors in 2017 to proceeding with two large reactors and considering more in 2026. It also follows how power demand from southwest semiconductor projects and AI data centers, regional electricity pricing and corporate-relocation policy became linked to the nuclear debate.",
   },
   status: {
-  "ko": "10월 2일 원전 공론화위원회 출범·권고안과 전기본 추적",
-  "en": "Nuclear deliberation committee launched October 2 · Recommendation and plan tracked"
+  "ko": "10월 7일 공론화위 1차 회의·시민참여단 300명 계획",
+  "en": "October 7 deliberation meeting · A 300-person citizen panel proposed"
 },
   openedAt: "2017-10-24",
   publishedAt: "2026-09-16",
-  updatedAt: "2026-10-06",
+  updatedAt: "2026-10-08",
   nextCheck: {
-  "ko": "10월 2일 출범한 공론화위원회의 위원 구성·절차·자료 공개, 시민참여단 모집과 전문가 정보 제공, 12월 권고안 및 제12차 전기본 정부안, 추가 원전의 기수·부지·비용 결정 과정, 영덕 신규 2기의 인허가·총사업비",
-  "en": "Membership, procedures and disclosure of the committee launched October 2; citizen-panel recruitment and expert information; the December recommendation and electricity-plan draft; decisions on additional reactor numbers, sites and costs; and permitting and total costs for Yeongdeok’s two planned reactors"
+  "ko": "10월 7일 제시된 약 300명 시민참여단의 실제 표본추출·모집·참여율, 2박 3일 숙의 진행과 전문가 자료의 검증·공개, 위원회 2차 회의 운영규정 의결 및 회의록 공개, 12월 권고안·제12차 전기본 정부안, 신규 원전 기수·부지·비용 결정과 영덕 계획의 인허가·총사업비",
+  "en": "Actual selection, response rate and participation of the proposed 300-person citizen panel; the three-day deliberation, expert materials and published records; the second committee meeting and adopted rules; December recommendation and electricity-plan draft; subsequent reactor count, site, cost, and Yeongdeok permitting decisions"
 },
   heroImage: {
     src: "images/monitoring/nuclear-policy-reversal-tracker-hero.webp",
@@ -53,6 +53,13 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     en: "The previous administration finalized the two large reactors in the 11th electricity plan. The current administration's reversal lies in retaining that plan after review and then moving toward possible additional reactors on the basis of industrial demand. Semiconductor investment plans were negotiated with companies, while the HMM case drew allegations of forced relocation after the government announced the destination first.",
   },
   keyChanges: [
+    {
+      date: "2026-10-08",
+      text: {
+        ko: "공론화위원회는 7일 첫 회의를 열고 시민참여단 약 300명을 지역·성별·연령을 고려해 층화 무작위 추출하고, 사전 학습 후 2박 3일 숙의토론을 진행하기로 했습니다. 다수결만으로 결론을 내리지 않고 판단 근거·공통 의견·남은 쟁점을 정리하며 회의록을 공개하는 것을 원칙으로 했습니다. 이는 운영 계획이며 참여단 선발·권고안 완료가 아닙니다.",
+        en: "At its first meeting on October 7, the committee proposed selecting around 300 citizens through stratified random sampling, followed by preliminary learning and a three-day deliberation. It agreed not to use a simple majority vote as its sole result and to publish approved minutes. These are plans, not completed recruitment or recommendations."
+      }
+    },
 {
   "date": "2026-10-02",
   "text": {
@@ -104,6 +111,17 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      date: "2026-10-07",
+      title: { ko: "원전 공론화위원회 첫 회의, 시민참여단 약 300명과 숙의 방식 계획", en: "Deliberation committee proposes a 300-person citizen panel and process" },
+      description: { ko: "원전 공론화위원회는 10월 7일 첫 회의에서 운영규정과 시민참여형 조사용역 계획을 논의했습니다. 시민참여단 약 300명은 지역·성별·연령별 층화 무작위 추출로 선정할 계획이며, 온라인 사전 학습 뒤 2박 3일 숙의토론을 실시하기로 했습니다. 단순 찬반 다수결로 결론을 정하지 않고 의견의 근거·공통점·잔여 쟁점을 종합하며 회의록은 확인 후 공개하는 것을 원칙으로 제시했습니다. 10월 8일 발표된 내용으로 실제 모집 완료나 신규 원전 추가 규모의 확정은 아닙니다.", en: "The committee met on October 7 and discussed its operational rules and public survey procurement plan. It proposed a stratified random sample of around 300 participants by region, gender and age, followed by online preparation and a three-day residential deliberation. Members proposed synthesizing reasons, common ground and unresolved issues rather than simply holding a majority vote, and releasing confirmed meeting minutes. Reported October 8; the panel has not been selected and no reactor construction decision was made." },
+      change: { ko: "공론화 진행 방식·시민참여단 규모·기록 공개 원칙 구체화", en: "Citizen-panel size, deliberation method and minutes policy specified" },
+      status: "new",
+      sources: [
+        { publisher: { ko: "연합뉴스", en: "Yonhap News Agency" }, title: { ko: "원전 공론화위 다수결 대신 숙의…시민 300명 2박 3일 토론", en: "Nuclear deliberation committee proposes 300-person residential panel" }, url: "https://www.yna.co.kr/view/AKR20261008072100530", publishedAt: "2026-10-08", kind: "article" },
+        { publisher: { ko: "뉴스핌", en: "Newspim" }, title: { ko: "기후부 원전 공론화 속도…시민 300명 숙의토론", en: "Ministry outlines 300-person deliberation process" }, url: "https://www.newspim.com/news/view/20261008000508", publishedAt: "2026-10-08", kind: "article" }
+      ]
+    },
 {
   "date": "2026-10-02",
   "title": {
