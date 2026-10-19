@@ -11,6 +11,8 @@ const urlList = [
   origin + '/',
   origin + '/civic-campaign/',
   origin + '/tax-watch-movement/',
+  origin + '/about/',
+  origin + '/columns/',
   origin + '/columns/no-more-tax-increases-civic-declaration-2026/',
   origin + '/briefings/korean-civic-tax-watch-movement-ktr/',
 ];
@@ -49,6 +51,8 @@ try {
   await assertPublished(origin + '/robots.txt', (body) => body.includes('Sitemap: ' + origin + '/sitemap.xml'));
   await assertPublished(origin + '/sitemap.xml', (body) => body.includes(origin + '/civic-campaign/') && body.includes(origin + '/tax-watch-movement/'));
   await assertPublished(origin + '/civic-campaign/', (body) => body.includes('증세반대운동') && body.includes('씨앗의 소리'));
+  await assertPublished(origin + '/about/', (body) => body.includes('href="https://seedvoice.kr/civic-campaign/"'));
+  await assertPublished(origin + '/columns/', (body) => body.includes('href="https://seedvoice.kr/civic-campaign/"'));
 } catch (error) {
   console.error('::warning::IndexNow submission skipped because the site could not be verified: ' + error.message);
   process.exitCode = 1;
