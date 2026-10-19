@@ -19,12 +19,12 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
   "en": "On October 5, the Joint Chiefs attributed the blasts that injured three soldiers to North Korean mines planted south of the MDL and carried out clearance. North Korea rejected responsibility and threatened a response on October 6. This tracker follows further suspected minefields, soldier protection and safety before and after clearance."
 },
   "status": {
-  "ko": "북한 6일 조사결과 부인·추가 지뢰지대와 제거 작전 추적",
-  "en": "North rejects findings on October 6 · Further minefields and clearance tracked"
+  "ko": "10월 19일 위험근무수당 사각지대 보도·장병 보호 추적",
+  "en": "October 19 reporting on hazard-pay gaps · Soldier protection under scrutiny"
 },
   "openedAt": "2026-09-21",
   "publishedAt": "2026-09-21",
-  "updatedAt": "2026-10-06",
+  "updatedAt": "2026-10-19",
   "continuationEligible": false,
   "heroImage": {
     "src": "/images/news/dmz-blast-investigation-timeline-2026.webp",
@@ -76,6 +76,20 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
     ]
   },
   "keyChanges": [
+    {
+      "date": "2026-10-19",
+      "text": {
+        "ko": "국회 유용원 의원실 자료를 인용한 보도에 따르면 DMZ 신규 수색로 개척 수색대대원·공병 EHCT는 특수지 근무수당은 받지만 별도의 위험근무수당 지급 대상은 아닙니다. 지뢰 제거 EOD와 개척·탐지 병력 간 보상체계 차이가 드러났습니다.",
+        "en": "Reporting based on lawmaker Yoo Yong-won's materials says DMZ path-opening reconnaissance troops and engineer EHCT teams receive special-area allowances but are not eligible for a separate hazardous-duty allowance, unlike mine-disposal EOD personnel."
+      }
+    },
+    {
+      "date": "2026-10-11",
+      "text": {
+        "ko": "조선일보 보도는 사고 부대가 지뢰 탐지·제거 로봇 2대를 보유했지만 9월 21일 사고 현장에서는 수풀과 지뢰 위험 등의 이유로 사용하지 못했다고 전했습니다. 장비의 현장 운용 한계와 작전 판단을 구분해 확인할 과제입니다.",
+        "en": "A report said the unit had two mine-detection robots but did not use them at the September 21 blast site because of dense vegetation and suspected mines, raising questions about practical operating limits and mission risk assessment."
+      }
+    },
 {
   "date": "2026-10-06",
   "text": {
@@ -200,6 +214,28 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
     }
   ],
   "timeline": [
+    {
+      "date": "2026-10-11",
+      "title": { "ko": "지뢰탐지·제거 로봇 보유했지만 사고 현장 미투입 보도", "en": "Mine-clearance robots reportedly not used at the blast site" },
+      "description": {
+        "ko": "조선일보가 사고 부대의 KR1 지뢰탐지·제거 로봇 2대 보유 사실과 사고 당시 미투입 사유를 보도했습니다. 군은 사고 인근의 높은 수풀과 추가 지뢰 위험 때문에 사람이 접근로를 확보해야 하는 상황이었다고 설명했습니다. 로봇을 투입했더라면 사고를 막았을 것이라는 결론이 확인된 것은 아닙니다. 실제 작전 조건에서의 장비 운용 가능성과 사전 위험평가가 후속 검증 과제입니다.",
+        "en": "Reporting said the unit possessed two KR1 mine-detection/clearance robots but did not use them at the site. The military cited tall vegetation and further mine hazards that required opening an access route. Whether robots could have prevented the incident has not been established; their field limitations and the operation's prior risk assessment warrant review."
+      },
+      "change": { "ko": "도입된 무인 지뢰제거 장비의 현장 활용 여부가 안전 쟁점으로 부상", "en": "Field usability of procured unmanned mine-clearance equipment comes under scrutiny" },
+      "status": "new",
+      "sources": [{ "publisher": { "ko": "주간조선·조선일보", "en": "Weekly Chosun / Chosun Ilbo" }, "title": { "ko": "2700억 들인 지뢰제거 로봇, 정작 DMZ 사고 현장선 못 썼다는데", "en": "Mine-clearance robots not deployed at the DMZ blast site" }, "url": "https://www.chosun.com/politics/2026/10/11/3JIMW37CNVBPHL4TAILAHJ2O2A/", "publishedAt": "2026-10-11", "kind": "article" }]
+    },
+    {
+      "date": "2026-10-19",
+      "title": { "ko": "지뢰 탐지·수색로 개척 장병, 별도 위험근무수당 지급 대상 제외", "en": "Separate hazardous-duty allowance excludes some DMZ path-opening troops" },
+      "description": {
+        "ko": "유용원 의원실 자료를 인용한 10월 19일 보도에 따르면 DMZ 신규 수색로 개척 수색대대원과 공병 위험성 폭발물 개척팀(EHCT)은 간부 월 9만원·병사 월 4만5천원 수준의 특수지 근무수당을 받지만 별도 위험근무수당 대상은 아닙니다. 지뢰를 직접 처리하는 폭발물처리반(EOD)은 위험근무수당 대상입니다. 따라서 '전체 수당 0원'이 아니라 '별도 위험근무수당 미지급'으로 구분해야 합니다. 육군은 수색대대 지급 확대를 건의했으나 보도 시점에 공병 EHCT는 건의 대상에서 빠져 있었다고 전해졌습니다.",
+        "en": "According to October 19 reporting citing lawmaker Yoo Yong-won, reconnaissance troops and engineer EHCT personnel opening new DMZ paths receive monthly special-area allowances of KRW 90,000 for officers/NCOs and KRW 45,000 for enlisted troops, but are not covered by the additional hazardous-duty allowance available to EOD mine-disposal personnel. This is not zero total compensation; the gap concerns a distinct hazard-pay category. The Army reportedly sought eligibility for reconnaissance personnel, but not yet EHCT."
+      },
+      "change": { "ko": "지뢰 사고 대응 쟁점이 부상 장병 치료에서 현장 위험수당·보호제도의 사각지대로 확대", "en": "Scrutiny widens from treatment to hazard-pay eligibility and protective duties" },
+      "status": "new",
+      "sources": [{ "publisher": { "ko": "조선일보", "en": "Chosun Ilbo" }, "title": { "ko": "목숨 걸렸지만…지뢰밭 통로 개척 위험수당은 0원", "en": "DMZ path-opening troops excluded from distinct hazardous-duty pay" }, "url": "https://www.chosun.com/politics/diplomacy-defense/2026/10/19/7T3RJNFEOFF3JOLPFMDMKEBMTY/", "publishedAt": "2026-10-19", "kind": "article" }]
+    },
 {
   "date": "2026-10-06",
   "title": {
@@ -914,8 +950,8 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
     }
   ],
   "nextCheck": {
-  "ko": "10월 6일 북한의 대응 위협 뒤 추가 제거 작전과 유엔사 협의, 사고 지역 외 매설 추정 지역의 실물 확인·안전 확보, 부상 장병의 치료·재활 지원과 사전 위험평가 공개 여부",
-  "en": "Further clearance and UN Command coordination after North Korea’s October 6 threat; physical verification and safety at other suspected minefields; treatment and rehabilitation, and disclosure of pre-mission risk assessments"
+  "ko": "북한의 10월 6일 대응 위협 뒤 추가 제거 작전과 유엔사 협의, 다른 매설 추정 지역의 안전 확보, 부상 장병 재활 지원, KR1 로봇 현장 활용 가능성과 사전 위험평가, 수색대대·EHCT 위험근무수당 지급대상 보완 여부",
+  "en": "Further clearance and UN Command coordination; safety at suspected minefields; injured troops’ rehabilitation; KR1 robot field-use criteria and pre-mission risk assessment; and whether hazardous-duty pay is extended to reconnaissance and EHCT personnel"
 },
   "relatedContents": [
     {
