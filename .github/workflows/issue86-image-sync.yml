@@ -1,0 +1,40 @@
+name: One-time issue 86 editorial image sync
+on:
+  push:
+    branches:
+      - publish/populism-generation-conflict-20261019
+    paths:
+      - .github/workflows/issue86-image-sync.yml
+permissions:
+  contents: write
+jobs:
+  save-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install image converter
+        run: |
+          python3 -m pip install --quiet Pillow pillow-avif-plugin
+      - name: Download trusted generated originals and store permanent AVIF files
+        run: |
+          mkdir -p public/images/columns/populism-generation-2026/
+          curl --fail --retry 3 --location --silent --show-error 'https://post-bridge-media.14090c935c4546008df28ad1da52238b.r2.cloudflarestorage.com/post_media/1b66f8a5-620e-4be6-9a2e-8e1db1e9d86c/IMG_52d6cfa83a9f38406e201a72?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=a96bcaa354d3a6b00a03c907a03334a9%2F20261019%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261019T221613Z&X-Amz-Expires=86400&X-Amz-Signature=9eeb4c13f3d4fc644d0a3475eb55ca0d84856da6b7b3ee3a90630c0292846efd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject' -o 'public/images/columns/populism-generation-2026/europe-youth-vs-korea-tickets.avif.png'
+          python3 -c 'from PIL import Image; im=Image.open("public/images/columns/populism-generation-2026/europe-youth-vs-korea-tickets.avif.png"); im.save("public/images/columns/populism-generation-2026/europe-youth-vs-korea-tickets.avif", format="AVIF", quality=55)' 
+          rm 'public/images/columns/populism-generation-2026/europe-youth-vs-korea-tickets.avif.png'
+          curl --fail --retry 3 --location --silent --show-error 'https://post-bridge-media.14090c935c4546008df28ad1da52238b.r2.cloudflarestorage.com/post_media/1b66f8a5-620e-4be6-9a2e-8e1db1e9d86c/IMG_c605c8ca62bd104010e40298?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=a96bcaa354d3a6b00a03c907a03334a9%2F20261019%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261019T221613Z&X-Amz-Expires=86400&X-Amz-Signature=a44e011bf927d8c651ac768f9bc469ed997b86f9f89c3ac4aec5d71b8c4d5742&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject' -o 'public/images/columns/populism-generation-2026/tax-spending-symbol.avif.png'
+          python3 -c 'from PIL import Image; im=Image.open("public/images/columns/populism-generation-2026/tax-spending-symbol.avif.png"); im.save("public/images/columns/populism-generation-2026/tax-spending-symbol.avif", format="AVIF", quality=55)' 
+          rm 'public/images/columns/populism-generation-2026/tax-spending-symbol.avif.png'
+          curl --fail --retry 3 --location --silent --show-error 'https://post-bridge-media.14090c935c4546008df28ad1da52238b.r2.cloudflarestorage.com/post_media/1b66f8a5-620e-4be6-9a2e-8e1db1e9d86c/IMG_f30867ae2c654ab5f8d44231?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=a96bcaa354d3a6b00a03c907a03334a9%2F20261019%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261019T221613Z&X-Amz-Expires=86400&X-Amz-Signature=308de093f418ed5705f1b68fe13e042060e2f49b9f9460265e4ff624f3471fac&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject' -o 'public/images/columns/populism-generation-2026/korean-jobseekers.avif.png'
+          python3 -c 'from PIL import Image; im=Image.open("public/images/columns/populism-generation-2026/korean-jobseekers.avif.png"); im.save("public/images/columns/populism-generation-2026/korean-jobseekers.avif", format="AVIF", quality=55)' 
+          rm 'public/images/columns/populism-generation-2026/korean-jobseekers.avif.png'
+          curl --fail --retry 3 --location --silent --show-error 'https://post-bridge-media.14090c935c4546008df28ad1da52238b.r2.cloudflarestorage.com/post_media/1b66f8a5-620e-4be6-9a2e-8e1db1e9d86c/IMG_59e669a7f0f66607d59f928e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=a96bcaa354d3a6b00a03c907a03334a9%2F20261019%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261019T221613Z&X-Amz-Expires=86400&X-Amz-Signature=6bce38b9327ddd86e0fb2d99a8efb7d4c3715c665b743fea953516124f9fced2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject' -o 'public/images/columns/populism-generation-2026/fiscal-numbers-chart.avif.png'
+          python3 -c 'from PIL import Image; im=Image.open("public/images/columns/populism-generation-2026/fiscal-numbers-chart.avif.png"); im.save("public/images/columns/populism-generation-2026/fiscal-numbers-chart.avif", format="AVIF", quality=55)' 
+          rm 'public/images/columns/populism-generation-2026/fiscal-numbers-chart.avif.png'
+          file public/images/columns/populism-generation-2026/*.avif
+      - name: Commit editorial images only
+        run: |
+          git config user.name "seedvoice-image-sync[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/images/columns/populism-generation-2026/
+          git diff --cached --quiet || git commit -m "Add four issue 86 editorial images"
+          git push origin HEAD:publish/populism-generation-conflict-20261019
