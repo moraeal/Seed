@@ -1,0 +1,42 @@
+name: News tracker daily editorial review
+
+on:
+  schedule:
+    # 07:15 KST every day (22:15 UTC previous day); GitHub schedules may start late.
+    - cron: "15 22 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: news-tracker-daily-review
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Test RSS and tracker date parsing
+        run: node scripts/news-tracker-daily-review.mjs --self-test
+      - name: Collect unverified news leads
+        run: node scripts/news-tracker-daily-review.mjs /tmp/news-tracker-daily-review.md
+      - name: Create one editorial review issue per Korean date
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          DAY="$(TZ=Asia/Seoul date +%F)"
+          TITLE="[뉴스트래커 점검] $DAY"
+          if gh issue list --state all --limit 200 --json title --jq '.[].title' | grep -Fxq "$TITLE"; then
+            echo "Review issue exists; avoiding duplicate."
+            exit 0
+          fi
+          gh issue create --title "$TITLE" --body-file /tmp/news-tracker-daily-review.md
