@@ -16,6 +16,7 @@ const server = await createServer({
   optimizeDeps: { noDiscovery: true },
 });
 const civicSectionsModule = await server.ssrLoadModule("/src/data/civicSections.ts");
+const noMoreTaxLandingModule = await server.ssrLoadModule("/src/data/noMoreTaxLanding.ts");
 const [{ seoRoutes, canonicalUrl, SITE_NAME, SITE_DESCRIPTION, SOCIAL_SITE_NAME, ENGLISH_SOCIAL_SITE_NAME, SITE_URL }, newsModule, briefingModule, columnModule, watchModule, seedWatchModule, siteContentModule, seedLanguageModule, seedLanguageEnvironmentModule, communityChestModule, legislativeCommentaryModule] = await Promise.all([
   server.ssrLoadModule("/src/seo.ts"),
   server.ssrLoadModule("/src/data/news.ts"),
@@ -102,6 +103,18 @@ const paragraphList = (items = []) => items.filter(Boolean).map((item) => `<p>${
 const bulletList = (items = []) => items.length ? `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : "";
 
 function articleBody(route) {
+  if (route.path === "/civic-campaign") {
+    const campaign = noMoreTaxLandingModule.noMoreTaxLanding.ko;
+    return [
+      `<section><h2>증세반대운동 No More Tax 소개</h2>${paragraphList([campaign.introduction, campaign.activities])}</section>`,
+      `<section><h2>시민 참여 방법</h2>${paragraphList([campaign.participation])}<p><a href="${canonicalUrl("/civic-campaign")}#campaign-signature-form">No More Tax 서명 참여</a></p></section>`,
+      `<section><h2>관련 활동 및 자료</h2><ul>
+        <li><a href="${canonicalUrl("/tax-watch-movement")}">세금감시운동 활동과 기록</a></li>
+        <li><a href="${canonicalUrl("/columns/no-more-tax-increases-civic-declaration-2026")}">증세반대 시민선언</a></li>
+        <li><a href="${canonicalUrl("/briefings/korean-civic-tax-watch-movement-ktr")}">한국형 시민 세금감시운동 제안</a></li>
+      </ul></section>`,
+    ].join("\n");
+  }
   const billMatch = route.path.match(/^\/monitoring\/legislation\/(bill-\d+)$/);
   if (billMatch) {
     const bill = publishedBillBySlug.get(billMatch[1]);

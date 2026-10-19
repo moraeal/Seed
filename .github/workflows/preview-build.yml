@@ -33,8 +33,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Ensure social-image converter is available
-        run: command -v convert || (sudo apt-get update && sudo apt-get install -y imagemagick)
+      - name: Ensure image converters are available
+        run: |
+          command -v convert || (sudo apt-get update && sudo apt-get install -y imagemagick)
+          command -v rsvg-convert || (sudo apt-get update && sudo apt-get install -y librsvg2-bin)
 
       - name: Build preview
         run: pnpm run build

@@ -5,6 +5,7 @@ import { useLanguage } from "../i18n";
 import { createComment, loadCampaignSignatures, loadOwnCampaignSignatures, manageCampaignSignature, type CommentRecord } from "../lib/comments";
 
 import { campaignShortsThumbnail } from "../data/campaignShortsThumbnail";
+import { noMoreTaxLanding } from "../data/noMoreTaxLanding";
 
 const campaignShortsEmbedUrl = "https://www.youtube-nocookie.com/embed/prPJ9gHpdNI?autoplay=1&playsinline=1";
 
@@ -163,10 +164,21 @@ export default function CampaignSignature() {
         <div className="min-w-0">
       <p className="text-sm font-bold tracking-widest text-green-deep">{ko ? "씨앗의 소리 · 국민 재산권 보호 서명운동" : "SEED VOICE · A CAMPAIGN TO PROTECT PROPERTY RIGHTS"}</p>
       <p className="mt-4 text-4xl font-black tracking-tight text-navy sm:text-6xl">NO MORE TAX!</p>
-      <h2 id="campaign-signature-title" className="mt-4 text-2xl font-black leading-snug text-green-deep sm:text-3xl">{ko ? "증세는 그만! 국민의 재산권을 지켜라!" : "Stop tax increases. Protect people's property rights."}</h2>
+      <h1 id="campaign-signature-title" className="mt-4 text-2xl font-black leading-snug text-green-deep sm:text-3xl">{noMoreTaxLanding[language].heading}</h1>
       <p className="mt-5 text-xl font-bold leading-8 text-navy">{ko ? "국민이 번 돈은 국민의 것입니다." : "The money people earn belongs to them."}</p>
       <p className="mt-2 text-base leading-7">{ko ? "국가가 더 가져가는 것이 아니라, 국민이 더 많이 지킬 수 있어야 합니다. 세금은 국가 운영을 위한 수단이지, 국민의 성취를 빼앗는 수단이 되어서는 안 됩니다." : "People should be able to keep more of their earnings. Taxes fund the state; they should not strip people of the rewards of their work."}</p>
       <p className="mt-3 text-base leading-7">{ko ? "끝없이 늘어나는 세금과 사회보험료, 이제는 국민이 직접 제동을 걸어야 합니다." : "Citizens must put a brake on rising taxes and social insurance contributions."}</p>
+      <div className="mt-5 border-l-4 border-green-deep bg-white/75 px-4 py-4">
+        <h2 className="text-lg font-black text-navy">{ko ? "어디서 증세반대운동에 참여할 수 있나요?" : "Where can I find this campaign?"}</h2>
+        <p className="mt-2 text-base leading-7 text-charcoal/85">{noMoreTaxLanding[language].introduction}</p>
+        <p className="mt-2 text-sm leading-7 text-charcoal/80">{noMoreTaxLanding[language].activities}</p>
+        <p className="mt-2 text-sm leading-7 text-charcoal/80">{noMoreTaxLanding[language].participation}</p>
+        <nav aria-label={ko ? "증세반대운동 관련 페이지" : "Related tax campaign pages"} className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm font-bold text-green-deep">
+          <a href="#campaign-signature-form" className="underline underline-offset-4">{ko ? "서명 참여하기" : "Join the petition"}</a>
+          <Link to="/tax-watch-movement" className="underline underline-offset-4">{ko ? "세금감시운동 활동 기록" : "Tax watch activity"}</Link>
+          <Link to="/columns/no-more-tax-increases-civic-declaration-2026" className="underline underline-offset-4">{ko ? "증세반대 시민선언 읽기" : "Read the campaign declaration"}</Link>
+        </nav>
+      </div>
         </div>
         <div className="mx-auto w-full max-w-[220px] border-2 border-green-deep bg-navy text-white">
           <div className="relative aspect-[9/16] overflow-hidden">
