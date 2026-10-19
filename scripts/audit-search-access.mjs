@@ -88,4 +88,19 @@ for (const [index, item] of archiveList.itemListElement.entries()) {
 assert.equal(archiveBreadcrumb.itemListElement.at(-1).item, movementUrl);
 console.log('Campaign structured data audit passed: publisher, campaign, links, breadcrumbs and visible article listing.');
 
+// The main search entry points must link to the actual campaign in static,
+// indexable HTML rather than relying on client-side JavaScript for discovery.
+const [aboutHtml, columnsHtml] = await Promise.all([
+  readOutput('about/index.html'),
+  readOutput('columns/index.html'),
+]);
+for (const [route, html] of [['about', aboutHtml], ['columns', columnsHtml]]) {
+  assert.ok(html.includes('<link rel="canonical" href="https://seedvoice.kr/' + route + '/"'), route + ': canonical mismatch');
+  assert.ok(html.includes('<meta name="robots" content="index, follow, max-image-preview:large"'), route + ': page not indexable');
+  assert.ok(html.includes('href="https://seedvoice.kr/civic-campaign/"'), route + ': missing static campaign link');
+  assert.ok(html.includes('href="https://seedvoice.kr/tax-watch-movement/"'), route + ': missing static movement link');
+  assert.ok(html.includes('No More Tax'), route + ': campaign context missing from static HTML');
+}
+console.log('Campaign discovery audit passed: About and Columns contain crawlable official campaign and activity links.');
+
 console.log('Search access audit passed: crawl permissions, sitemap, canonical, HTML content, links, and duplicate aliases.');
