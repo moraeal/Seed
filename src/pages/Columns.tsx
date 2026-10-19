@@ -4,6 +4,7 @@ import { getColumnsNewestFirst } from "../data/columns";
 import { localizeColumn } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
 import SafeImage from "../components/SafeImage";
+import { campaignDiscovery } from "../data/campaignDiscovery";
 import ArticleArchive, { RECENT_ARTICLE_COUNT } from "../components/ArticleArchive";
 
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
@@ -23,6 +24,18 @@ export default function Columns() {
         <p className="max-w-2xl text-base leading-7 text-charcoal/65">{ko ? "시민과 사회, 자유와 책임을 씨앗의 소리 관점으로 깊이 생각합니다. 사실을 설명하는 브리핑에서 한 걸음 더 나아가 오늘의 사건이 시민사회에 던지는 의미와 방향을 논합니다." : "Voice of the Seed examines citizens and society, freedom and responsibility, and the institutions of civil society. It moves beyond explanation to offer clear arguments for civic life."}</p>
       </div>
     </header>
+    <aside className="container-page pt-5" aria-label={campaignDiscovery[language].columnsTitle}>
+      <div className="flex flex-col gap-3 border-l-4 border-green-deep bg-ivory px-4 py-3.5 sm:flex-row sm:items-center sm:justify-between sm:px-5">
+        <div className="max-w-2xl">
+          <h2 className="text-base font-extrabold text-navy">{campaignDiscovery[language].columnsTitle}</h2>
+          <p className="mt-1 text-sm leading-6 text-charcoal/65">{campaignDiscovery[language].columnsDescription}</p>
+        </div>
+        <nav className="flex shrink-0 flex-col items-start gap-2 text-xs font-extrabold text-green-deep sm:text-sm" aria-label={ko ? "시민운동 링크" : "Campaign links"}>
+          <Link to="/civic-campaign" className="inline-flex items-center gap-1 underline underline-offset-4 hover:text-green-mid">{campaignDiscovery[language].campaignCta}<ArrowRight size={14} aria-hidden="true" /></Link>
+          <Link to="/tax-watch-movement" className="inline-flex items-center gap-1 underline underline-offset-4 hover:text-green-mid">{campaignDiscovery[language].archiveCta}<ArrowRight size={14} aria-hidden="true" /></Link>
+        </nav>
+      </div>
+    </aside>
     <div className="container-page py-8 sm:py-10">
       <div className="mb-4 flex items-end justify-between gap-4 border-b-2 border-navy pb-3">
         <div><span className="section-kicker">LATEST</span><h2 className="mt-1.5 text-2xl font-extrabold text-navy">{ko ? "최근 기사" : "Latest articles"}</h2></div>
