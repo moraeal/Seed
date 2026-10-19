@@ -44,8 +44,8 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
     }
   },
   "sourceBasis": {
-    "ko": "2026년 10월 20일 오전(한국시간)까지 확인된 AP, Reuters, 르몽드, Euronews, RTL의 날짜별 보도를 기준으로 재구성했다. ‘사건 발생일’과 ‘기사 보도일’을 분리했고 집회 참가 규모는 프랑스 내무부와 주최 측 집계 차이를 표시했다. 재정위기는 시위의 단일 원인으로 단정하지 않았다.",
-    "en": "Reconstructed from dated AP, Reuters, Le Monde, Euronews and RTL reporting available by the morning of October 20, 2026, Korean time. Event dates and publication dates are distinguished; official turnout and organizers' estimates are separately attributed. Fiscal strain is not asserted to be the sole cause."
+    "ko": "2026년 10월 20일 오전(한국시간)까지 확인된 AP, Reuters, 르몽드, Euronews, RTL의 날짜별 보도를 기준으로 재구성했다. ‘사건 발생일’과 ‘기사 보도일’을 분리했고 집회 참가 규모는 프랑스 내무부와 주최 측 집계 차이를 표시했다. 재정위기는 시위의 단일 원인으로 단정하지 않았다. 타임라인의 일부 썸네일은 당일 현장 사진이 아니라 명시적으로 표시한 씨앗의 설명 도식이다. 10월 6일·17일은 실제 현장 보도사진을 별도 표기했다.",
+    "en": "Reconstructed from dated AP, Reuters, Le Monde, Euronews and RTL reporting available by the morning of October 20, 2026, Korean time. Event dates and publication dates are distinguished; official turnout and organizers' estimates are separately attributed. Fiscal strain is not asserted to be the sole cause. Some timeline thumbnails are labelled editorial diagrams rather than contemporaneous photographs. October 6 and 17 show specifically dated documentary images."
   },
   "caution": {
     "ko": "현재 시위의 직접적 발단은 학교 시설·교원 부족·대입 제도에 대한 불만이며, 물가·임금·공공서비스와 2027년 재정 조정 논란이 뒤엉켰다. 모든 참가자를 폭력 가담자로 보거나 시위 전체를 ‘복지 삭감 반대’로 환원할 수 없다. 2027년 예산은 정부안으로, 의회 확정안이 아니다.",
@@ -194,7 +194,8 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.lemonde.fr/en/france/article/2026/09/29/high-school-protests-spread-across-france-pitting-radical-left-against-government_6758067_7.html",
           "publishedAt": "2026-09-29",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/education-ko.svg"
         }
       ]
     },
@@ -225,7 +226,8 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.aljazeera.com/news/2026/9/30/french-public-workers-strike-over-pay-as-student-protests-turn-violent",
           "publishedAt": "2026-09-30",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/labor-ko.svg"
         }
       ]
     },
@@ -252,7 +254,8 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.reuters.com/business/what-is-frances-2027-budget-2026-10-01/",
           "publishedAt": "2026-10-01",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/deficit-comparison-ko.svg"
         },
         {
           "publisher": {
@@ -265,7 +268,8 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.aft.gouv.fr/en/state-budget",
           "publishedAt": "2026-10-01",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/deficit-comparison-ko.svg"
         }
       ]
     },
@@ -338,7 +342,8 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           },
           "url": "https://fr.euronews.com/2026/10/07/lheure-de-verite-pour-sebastien-lecornu-peut-il-repondre-a-toutes-les-attentes",
           "publishedAt": "2026-10-07",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/policy-ko.svg"
         }
       ]
     },
@@ -365,7 +370,8 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.rtl.fr/actu/debats-societe/en-direct-mobilisation-des-lyceens-reprise-ou-essoufflement-des-appels-a-manifester-a-travers-la-france-pour-l-acte-5-ce-mardi-13-octobre-7900684380",
           "publishedAt": "2026-10-13",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/mobilization-ko.svg"
         }
       ]
     },
@@ -438,7 +444,8 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.reuters.com/world/europe/france-faces-aftermath-worst-unrest-years-2026-10-18/",
           "publishedAt": "2026-10-18",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/aftermath-ko.svg"
         }
       ]
     },
@@ -469,7 +476,8 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           },
           "url": "https://apnews.com/article/75825aafc5412ae389c6d41443b4082e",
           "publishedAt": "2026-10-19",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/aftermath-ko.svg"
         },
         {
           "publisher": {
@@ -482,7 +490,8 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.reuters.com/business/finance/french-markets-tumble-riots-add-political-crisis-2026-10-19/",
           "publishedAt": "2026-10-19",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/aftermath-ko.svg"
         }
       ]
     }
