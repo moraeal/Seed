@@ -244,6 +244,109 @@ function articleBody(route) {
 function structuredData(route) {
   const language = route.language === "en" ? "en" : "ko-KR";
   const siteName = route.language === "en" ? ENGLISH_SOCIAL_SITE_NAME : SOCIAL_SITE_NAME;
+  const organizationId = `${SITE_URL}/#organization`;
+  const websiteId = `${SITE_URL}/#website`;
+  const campaignUrl = canonicalUrl("/civic-campaign");
+  const movementUrl = canonicalUrl("/tax-watch-movement");
+
+  // No More Tax is an initiative of the publisher, not a separate legal entity.
+  if (route.path === "/civic-campaign") {
+    const campaign = noMoreTaxLandingModule.noMoreTaxLanding.ko;
+    const webPageId = `${campaignUrl}#webpage`;
+    const campaignId = `${campaignUrl}#campaign`;
+    const breadcrumbId = `${campaignUrl}#breadcrumb`;
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": webPageId,
+          url: campaignUrl,
+          name: campaign.heading,
+          description: campaign.seoDescription,
+          inLanguage: language,
+          isPartOf: { "@id": websiteId },
+          publisher: { "@id": organizationId },
+          mainEntity: { "@id": campaignId },
+          dateModified: route.lastModified,
+          relatedLink: [
+            movementUrl,
+            canonicalUrl("/columns/no-more-tax-increases-civic-declaration-2026"),
+          ],
+          breadcrumb: { "@id": breadcrumbId },
+        },
+        {
+          "@type": "Thing",
+          "@id": campaignId,
+          name: "No More Tax 증세반대운동",
+          alternateName: ["NO MORE TAX!", "2026 증세반대운동"],
+          description: `${campaign.introduction} ${campaign.activities}`,
+          url: campaignUrl,
+          mainEntityOfPage: { "@id": webPageId },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": breadcrumbId,
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: SITE_NAME, item: canonicalUrl("/") },
+            { "@type": "ListItem", position: 2, name: "시민생활", item: canonicalUrl("/civic-life") },
+            { "@type": "ListItem", position: 3, name: "No More Tax 증세반대운동", item: campaignUrl },
+          ],
+        },
+      ],
+    };
+  }
+  if (route.path === "/tax-watch-movement") {
+    const webPageId = `${movementUrl}#webpage`;
+    const archiveId = `${movementUrl}#article-list`;
+    const breadcrumbId = `${movementUrl}#breadcrumb`;
+    // Use precisely the published article list rendered on the public page.
+    const activities = civicSectionsModule.getCivicSectionArticles("cases", "ko");
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": webPageId,
+          url: movementUrl,
+          name: "세금감시운동",
+          description: route.description,
+          inLanguage: language,
+          isPartOf: { "@id": websiteId },
+          publisher: { "@id": organizationId },
+          about: { "@id": `${campaignUrl}#campaign` },
+          mainEntity: { "@id": archiveId },
+          relatedLink: [campaignUrl],
+          dateModified: route.lastModified,
+          breadcrumb: { "@id": breadcrumbId },
+        },
+        {
+          "@type": "ItemList",
+          "@id": archiveId,
+          name: "씨앗의 소리 세금감시운동 활동과 기사",
+          numberOfItems: activities.length,
+          itemListElement: activities.map((article, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            item: {
+              "@type": "WebPage",
+              name: article.title,
+              url: canonicalUrl(article.path),
+            },
+          })),
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": breadcrumbId,
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: SITE_NAME, item: canonicalUrl("/") },
+            { "@type": "ListItem", position: 2, name: "시민생활", item: canonicalUrl("/civic-life") },
+            { "@type": "ListItem", position: 3, name: "세금감시운동", item: movementUrl },
+          ],
+        },
+      ],
+    };
+  }
   if (route.path === "/" || route.path === "/en") return {
     "@context": "https://schema.org",
     "@graph": [
