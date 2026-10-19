@@ -19,6 +19,24 @@ const TRACKERS = [
   ["kim-seung-won-confirmation-hearing", "김승원 후보자 후속", "kimSeungWonHearingWatch.ts", "김승원 제넨셀 도당 회계 수사 법무부 장관 후보"],
 ];
 
+// Each case must match at least one event-specific term in the *headline*.
+// This deliberately favors precision over recall; editor can still search manually.
+const TOPIC = new Map([
+  ["korea-us-intelligence-sharing-tracker-2026", /한미.{0,12}정보|정보.{0,8}공유|정동영|강경화|한미동맹/i],
+  ["banking-privacy-ai-hacking-tracker-2026", /신한은행|국민은행|하나은행|은행장|은행.{0,10}해킹|고객정보|개인정보.{0,8}유출|금융권.{0,8}해킹/i],
+  ["dmz-mine-blast-2026", /DMZ|지뢰|비무장지대|25사단/i],
+  ["north-korean-pows-protection-tracker", /북한군.{0,8}포로|포로.{0,10}한국|쿠르스크.{0,10}포로/i],
+  ["supreme-court-renomination-tracker-2026", /손봉기|대법관.{0,10}제청|재제청|조희대.{0,15}(제청|후보|임명)/i],
+  ["public-institution-reform-109", /공공기관.{0,10}(109|감축|개편|통합)|발전공기업.{0,8}통합|코레일.{0,8}자회사|LH.{0,8}(분리|개편)/i],
+  ["olympic-park-election-protest-tracker", /올림픽공원.{0,12}(시위|농성|선거)|선관위.{0,10}특검|투표지.{0,8}(부족|검증)|재선거.{0,8}요구/i],
+  ["military-academy-integration-tracker", /사관학교.{0,12}(통합|폐교|국감|국군)|국군사관학교|육해공.{0,10}사관학교/i],
+  ["democratic-party-nuclear-policy-reversal-tracker", /원전|원자력.{0,10}(발전|정책)|전력수급기본계획|공론화.{0,8}(위원|원전)/i],
+  ["farmland-census-disposal-orders-tracker", /농지.{0,10}(전수조사|처분|은행|조사)|농지은행|농지법.{0,8}개정/i],
+  ["prosecution-service-abolition-tracker", /검찰청.{0,8}폐지|공소청|중수청|중대범죄수사청|보완수사/i],
+  ["yeosu-world-island-expo-tracker", /여수.{0,10}섬박람회|여수세계섬박람회|섬박람회.{0,8}(관람|예산|행사|실적|정산)/i],
+  ["kim-seung-won-confirmation-hearing", /김승원|제넨셀.{0,12}(수사|재판|항소)|도당.{0,10}회계.{0,8}의혹/i],
+]);
+
 function decodeXml(value) {
   return String(value || "").replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
     .replace(/<[^>]*>/g, "")
@@ -51,9 +69,9 @@ async function metadataFor(slug, file) {
   if (!date) throw Error("Missing updatedAt: " + slug);
   return date[1];
 }
-const IGNORED = /(한겨레|오마이뉴스|문화방송|(^|\s|-)MBC(\s|$)|ohmynews|hani\.co\.kr)/i;
+const IGNORED = /(한겨레|오마이뉴스|문화방송|(^|\s|-)MBC(\s|$)|ohmynews|hani\.co\.kr|Calgary Roughnecks|바카라|토토|카지노|룰렛|슬롯머신|도박|스포츠베팅)/i;
 const safe = (s) => String(s).replace(/\|/g, "\\|").replace(/[\r\n]/g, " ").replace(/\]/g, "\\]").slice(0, 160);
-async function rssLeads(query) {
+async function rssLeads(query, slug) {
   const url = "https://news.google.com/rss/search?q=" + encodeURIComponent(query + " when:3d") + "&hl=ko&gl=KR&ceid=KR:ko";
   const res = await fetch(url, { headers: { "User-Agent": "SeedVoiceTrackerReview/1.0 (+https://seedvoice.kr)" }, signal: AbortSignal.timeout(15000) });
   if (!res.ok) throw Error("HTTP " + res.status);
@@ -62,7 +80,7 @@ async function rssLeads(query) {
   const now = Date.now();
   return parseRss(xml).filter((x) => {
     const d = x.published.getTime();
-    return d > now - 3 * 86400000 && d <= now + 3600000 && !IGNORED.test(x.source) && !IGNORED.test(x.title);
+    return d > now - 3 * 86400000 && d <= now + 3600000 && !IGNORED.test(x.source) && !IGNORED.test(x.title) && TOPIC.get(slug)?.test(x.title);
   }).sort((a, b) => b.published - a.published).slice(0, 4);
 }
 async function main() {
@@ -71,6 +89,10 @@ async function main() {
     assert.equal(parseRss(xml)[0]?.title, "제목 & 확인");
     assert.equal(ageDays("2026-10-19", "2026-10-20"), 1);
     assert.equal(TRACKERS.length, 13);
+    assert.equal(TOPIC.size, TRACKERS.length);
+    assert.equal(TOPIC.get("dmz-mine-blast-2026").test("DMZ 지뢰 추가 제거"), true);
+    assert.equal(TOPIC.get("dmz-mine-blast-2026").test("로또 광고"), false);
+    assert.equal(IGNORED.test("Calgary Roughnecks"), true);
     console.log("News tracker self-test passed");
     return;
   }
@@ -80,7 +102,7 @@ async function main() {
     const batch = await Promise.all(TRACKERS.slice(i, i + 3).map(async ([slug, label, file, query]) => {
       let date = "불명", leads = [], errors = [];
       try { date = await metadataFor(slug, file); } catch (e) { errors.push("파일: " + e.message); }
-      try { leads = await rssLeads(query); } catch (e) { errors.push("RSS: " + e.message); }
+      try { leads = await rssLeads(query, slug); } catch (e) { errors.push("RSS: " + e.message); }
       return { slug, label, date, leads, errors };
     }));
     results.push(...batch);
