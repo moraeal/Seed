@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "column" && slug === "politicians-who-take-public-debt-lightly-2026") return true;
   if (kind === "column" && slug === "atr-taxpayer-movement-05-sustainable-budgets") return true;
   if (kind === "column" && slug === "france-fiscal-crisis-korea-spending-no-more-tax-2026") return true;
   if (kind === "seed-language" && slug === "limited-state-citizen-power-boundaries-2026") return true;
@@ -523,6 +524,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "politicians-who-take-public-debt-lightly-2026") return language === "ko" ? { href: "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026", title: "프랑스가 남의 집 이야기로 보이는가", relationship: "프랑스 재정 위기 함께 읽기", reason: "한번 늘린 지출을 줄이기 어려워지는 프랑스와 한국의 사례를 이어 읽습니다.", listHref: "/tax-watch-movement", listLabel: "세금감시운동 전체 보기" } : { href: "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026", title: "Does France Still Look Like Someone Else’s Problem?", relationship: "FRANCE’S FISCAL WARNING", reason: "Read the related analysis of spending commitments that prove difficult to reverse in France and Korea.", listHref: "/tax-watch-movement", listLabel: "All Tax Watch Movement articles" };
   if (kind === "column" && slug === "france-fiscal-crisis-korea-spending-no-more-tax-2026") return language === "ko" ? { href: "/columns/no-more-tax-increases-civic-declaration-2026", title: "증세, 더 이상은 안돼!", relationship: "노모어택스 운동", reason: "지출의 경직성과 미래 부담에 대한 경고를 증세반대 시민운동의 선언으로 이어 읽습니다.", listHref: "/tax-watch-movement", listLabel: "세금감시운동 전체 보기" } : { href: "/columns/no-more-tax-increases-civic-declaration-2026", title: "No More Tax Increases", relationship: "THE NO MORE TAX CAMPAIGN", reason: "Continue from spending rigidity and future burdens to SEED’s civic declaration against tax increases.", listHref: "/tax-watch-movement", listLabel: "All Tax Watch Movement articles" };
   if (kind === "seed-language" && slug === "limited-state-citizen-power-boundaries-2026") return language === "ko" ? {"href": "/seed-language/state-citizens-trust", "title": "국가는 시민의 주인이 아니라 시민이 권한을 맡긴 제도라는 말이다", "relationship": "국가론 함께 읽기", "reason": "제한된 국가의 바탕이 되는 유능함·권력의 한계·시민의 경험으로 고치는 국가를 함께 살펴봅니다.", "listHref": "/seed-language", "listLabel": "시민언어 전체 보기"} : {"href": "/seed-language/state-citizens-trust", "title": "The State Is Not the Citizen’s Master but an Institution Entrusted with Power", "relationship": "READ THE EARLIER STATE ENTRY", "reason": "Explore the framework of a capable, limited and responsive state that underpins this article.", "listHref": "/seed-language", "listLabel": "All Glossary entries"};
   if (kind === "briefing" && slug === "health-insurance-state-support-144-percent-citizen-cost-2026") return language === "ko" ? {

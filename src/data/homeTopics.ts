@@ -5,7 +5,7 @@ import { hotIssueColumnTrackerSlugs } from "./columns";
 // remain their own topics, so broad categories do not hide unrelated work.
 const homeTopicGroups: Record<string, string[]> = {
   "atr-sustainable-budgets": ["/columns/atr-taxpayer-movement-05-sustainable-budgets"],
-  "france-fiscal-warning-2026": ["/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026"],
+  "france-fiscal-warning-2026": ["/columns/politicians-who-take-public-debt-lightly-2026", "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026"],
   "suicide-prevention-community": ["/columns/suicide-prevention-beyond-mental-illness-2026", "/columns/state-cannot-monopolize-life-2026", "/columns/suicide-prevention-mois-local-community", "/monitoring/korea-foundation-for-suicide-prevention"],
   "atr-wednesday-meeting": ["/columns/atr-taxpayer-movement-04-wednesday-meeting"],
   "housing-tax-promise-2026": ["/columns/housing-tax-promise-policy-uncertainty-2026"],
