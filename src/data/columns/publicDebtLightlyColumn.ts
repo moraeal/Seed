@@ -3,7 +3,7 @@ import type { SeedColumn } from "../columns";
 export const publicDebtLightlyColumn: SeedColumn = {
   "slug": "politicians-who-take-public-debt-lightly-2026",
   "issue": 85,
-  "title": "국가 빚을 가볍게 보는 정치인들",
+  "title": "국가 빚, 너무 가볍게 보는 건 아닌가",
   "subtitle": "불태워 없애자는 프랑스 대선주자, 미래의 나에게 빌리는 돈이라는 한국 대통령",
   "date": "2026-10-19",
   "author": "작은씨앗",

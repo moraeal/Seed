@@ -1,7 +1,7 @@
 import type { ColumnTranslation } from "../types";
 
 export const issue85: ColumnTranslation = {
-  "title": "Politicians Who Take Public Debt Lightly",
+  "title": "Are We Taking Public Debt Too Lightly?",
   "subtitle": "A French contender would cancel bonds; South Korea’s president describes borrowing from a future self",
   "author": "Small Seed",
   "summary": "Mélenchon proposes cancelling central-bank bond holdings. Lee Jae-myung describes borrowing from a future self as efficient. These are different arguments, but both invite scrutiny of the interest costs, failure risks and citizens who ultimately carry the burden.",
