@@ -57,7 +57,7 @@ const newest = (dates: string[]) => [...dates].sort()[dates.length - 1];
 const latestDate = newest([...newsArticles.map((item) => item.date), ...publicInterestWatchCases.map((item) => item.updatedAt), ...columns.map((item) => item.date), ...getAllBriefingsNewestFirst().map((item) => item.date), ...allSeedLanguageArticlesKo.map((item) => item.date), ...legislativeCommentaries.map((item) => item.date)]);
 
 const staticRoutes: SeoRoute[] = [
-  { path: "/tax-watch-cases", title: "세금감시운동 | 씨앗의 소리", description: "세금감시운동의 제안, 사례와 논평을 읽어보세요.", type: "website", lastModified: "2026-10-07" },
+  { path: "/tax-watch-cases", title: "세금감시운동 | 씨앗의 소리", description: "세금감시운동은 /tax-watch-movement 주소에서 확인할 수 있습니다.", type: "website", lastModified: "2026-10-19", noindex: true },
   { path: "/civic-life", title: "시민생활 | 씨앗의 소리", description: "일상, 이웃, 일자리, 주거와 건강 등 시민의 생활에 닿는 기사를 모아 읽어보세요.", type: "website", lastModified: "2026-10-03" },
   ...civicSections.map((section): SeoRoute => section.key === "campaign" ? {
     path: section.path,
