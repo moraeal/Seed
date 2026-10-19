@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:populism-collapse-generational-conflict-2026": {
+    ko: {
+      href: "/columns/politicians-who-take-public-debt-lightly-2026",
+      title: "국가 빚, 너무 가볍게 보는 건 아닌가",
+      relationship: "미래세대와 국가채무",
+      reason: "미래의 국가 재원을 당겨 쓰겠다는 발언과 그 재정적 부담을 더 깊이 살펴봅니다.",
+      listHref: "/columns",
+      listLabel: "칼럼 전체 보기"
+    },
+    en: {
+      href: "/columns/politicians-who-take-public-debt-lightly-2026",
+      title: "Are We Taking Public Debt Too Lightly?",
+      relationship: "PUBLIC DEBT AND FUTURE GENERATIONS",
+      reason: "Continue with the analysis of borrowing against future public resources and the obligations it creates for citizens.",
+      listHref: "/columns",
+      listLabel: "All columns"
+    }
+  },
   "column:security-slogans-alliance-2026": {
     ko: { href: "/columns/security-pride-vigilance-armed-forces-day-2026", title: "국뽕으로 생긴 안보 자신감, 안보의식은 어디로?", relationship: "같은 안보 문제의식", reason: "군사력 순위와 장병의 안전 사이의 거리를 국군의 날 칼럼에서 이어 읽습니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
     en: { href: "/columns/security-pride-vigilance-armed-forces-day-2026", title: "Military Pride Is Not Battlefield Readiness", relationship: "DEFENSE READINESS", reason: "Read how national military strength can coexist with risks to soldiers on the front line.", listHref: "/columns", listLabel: "All columns" },
