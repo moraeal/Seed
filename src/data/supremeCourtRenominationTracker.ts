@@ -104,7 +104,7 @@ export const supremeCourtRenominationTracker: PublicInterestWatchCase = {
       status: "new",
       sources: [
         { publisher: { ko: "아이뉴스24", en: "iNews24" }, title: { ko: "법제처장, 대법원장 제청권은 추천·제안 의미", en: "Legislation minister calls nomination a recommendation" }, url: "https://m2.inews24.com/v/2015312", publishedAt: "2026-10-15", kind: "article" },
-        { publisher: { ko: "아주경제", en: "Aju News" }, title: { ko: "2026 국감, 대법관 재제청 여야 공방", en: "Lawmakers dispute the legal basis at October 15 audit" }, url: "https://www5.ajunews.com/view/20261015135603142", publishedAt: "2026-10-15", kind: "article" }
+        { publisher: { ko: "아주경제", en: "Aju News" }, title: { ko: "2026 국감, 대법관 재제청 여야 공방", en: "Lawmakers dispute the legal basis at October 15 audit" }, url: "https://www5.ajunews.com/view/20261015135603142", thumbnailSrc: "/images/monitoring/source-articles/source-link-editorial.svg", publishedAt: "2026-10-15", kind: "article" }
       ]
     },
     {
