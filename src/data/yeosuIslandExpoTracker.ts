@@ -15,8 +15,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     en: "How Yeosu's Island Fair grew from a KRW 24.8 billion approval to a KRW 71.3 billion event",
   },
   summary: {
-    ko: "2018년 처음 공개된 세계 섬 박람회 구상이 2021년 248억 원 규모의 정부 승인 국제행사를 거쳐 713억 원의 직접사업과 1,839억 원의 연계사업으로 확대된 과정을 기록합니다. 개막 뒤 관람객·수익·교통·현장 운영을 확인하고, 9월 21일 예산·계약 관련 형사고발이 접수된 뒤에는 수사기관의 판단과 행사 뒤 정산까지 이어서 추적합니다.",
-    en: "This record follows the idea first made public in 2018 through its 2021 government approval at KRW 24.8 billion, its expansion to KRW 71.3 billion in direct spending and KRW 183.9 billion including linked projects. It tracks attendance, revenue, transport and operations after opening, and—following a September 21 criminal complaint over budgeting and contracts—will follow any prosecutorial action and the final settlement.",
+    ko: "2018년 시작된 여수세계섬박람회 구상이 2021년 248억 원 승인에서 직접사업비 수백억 원·연계사업을 합한 총 1,800억 원대 규모로 확대된 경위를 추적합니다. 10월 15일까지 관람객 131만7,221명이 집계됐지만 11일 기준 무료입장 비율은 84%였습니다. 14일에는 6,732명이 참여한 국민감사 청구서가 제출됐습니다. 직접사업비 보도 수치 713억 원과 723억 원의 차이, 실제 유료수입과 결산, 감사·수사 결과를 확인합니다.",
+    en: "This record follows the fair from its 2018 proposal and KRW 24.8 billion international-event approval in 2021 through subsequent multibillion-won direct and linked projects. Attendance reached 1,317,221 by October 15, while 84% of entries were free as of October 11. A 6,732-signature citizen-audit petition was submitted on October 14. We track differences between reported direct-spending figures of KRW 71.3 and 72.3 billion, actual paid revenue, audit and investigation outcomes and final accounts.",
   },
   status: {
   "ko": "무료 관람 84%·국민감사 청구·실제 수익 검증",
@@ -45,8 +45,8 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     },
   },
   sourceBasis: {
-    ko: "행정안전부·여수시·박람회 조직위원회의 공식 자료, 국제행사 승인 보도, 기본계획과 예산 변경을 다룬 원문, 개막 뒤 현장 보도를 날짜별로 대조했습니다. 직접사업비와 연계사업비는 합쳐서 같은 예산인 것처럼 쓰지 않았고, 현장에서 확인된 운영 문제와 온라인에서 퍼진 사실과 다른 주장도 구분했습니다.",
-    en: "The timeline cross-checks Ministry of the Interior and Safety, Yeosu City and organizing-committee records with original reporting on approval, planning, budget changes and post-opening operations. Direct and linked spending are kept distinct, as are verified operating failures and inaccurate claims circulated online.",
+    ko: "행정안전부·여수시·조직위원회 공식 발표, 국회 및 감사원 관련 보도, 10월 18일 연합뉴스·서울신문의 관람객·무료입장 자료를 날짜별로 대조했습니다. 누적 131만7,221명은 10월 15일까지, 무료입장 84%는 10월 11일 기준입니다. 최근 보도의 직접사업비 723억원은 기존 기사에서 인용한 713억원과 기준 시점·사업 범위 차이 검증이 남아 있습니다. 10월 14일 감사 청구는 감사 착수나 위법 확정과 구분했습니다. 연계사업비를 직접사업비와 중복 합산하지 않습니다.",
+    en: "This record compares government and organizer announcements with parliamentary/audit reporting and October 18 Yonhap and Seoul Shinmun coverage of visitor figures. Attendance of 1,317,221 is through October 15; the 84% free-entry ratio is as of October 11. Differences between KRW 71.3 and 72.3 billion direct-spending reports still need reconciliation. The October 14 audit petition is not an audit finding. Direct and linked expenditures are never double-counted.",
   },
   keyChanges: [
     {
