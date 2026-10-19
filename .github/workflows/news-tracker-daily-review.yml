@@ -1,6 +1,11 @@
 name: News tracker daily editorial review
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/news-tracker-daily-review.mjs"
+      - ".github/workflows/news-tracker-daily-review.yml"
   schedule:
     # 07:15 KST every day (22:15 UTC previous day); GitHub schedules may start late.
     - cron: "15 22 * * *"
