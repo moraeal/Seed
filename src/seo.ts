@@ -72,7 +72,7 @@ const staticRoutes: SeoRoute[] = [
     title: `${section.title.ko} | 씨앗의 소리`,
     description: section.description.ko,
     type: "website",
-    lastModified: section.key === "cases" ? "2026-10-07" : "2026-10-03",
+    lastModified: section.key === "cases" ? "2026-10-19" : "2026-10-03",
   }),
   {
     path: "/",
