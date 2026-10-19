@@ -62,39 +62,50 @@ async function checkPage(browser, name, viewport) {
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     check(overflow <= 8, name + ": horizontal overflow <=8px (measured " + overflow + "px)");
     await page.screenshot({ path: OUT + "/tracker-index-" + name + ".png", fullPage: true });
-    // Public detail pages: do not fetch external newspaper sites, just check cards and their article views.
+    // Test each detail as a separate new visitor: a single guest is allowed
+    // three free articles before the intentional subscription gate appears.
     for (const slug of TRACKERS.slice(0, name === "mobile" ? 3 : 5)) {
-      const p = await page.goto(BASE + "/monitoring/" + slug, { waitUntil: "domcontentloaded", timeout: 30000 });
-      check((p?.status() ?? 500) < 400, name + ": detail HTTP " + slug);
-      await page.locator("article h1").first().waitFor({ state:"visible", timeout: 20000 });
-      const heading = await page.locator("article h1").first().innerText();
-      check(heading.trim().length >= 10, name + ": readable article title " + slug);
-      // Some SEO-prerendered detail pages show a heading before React hydrates
-      // the citations and timeline. Wait for the live source links before judging.
-      await page.locator('article a[href^="http"]').first()
-        .waitFor({ state: "attached", timeout: 16000 }).catch(() => {});
-      const external = await page.locator('article a[href^="http"]').count();
-      if (!external) {
-        const diagnostic = await page.evaluate(() => ({
-          title: document.title,
-          articleHtml: (document.querySelector("article")?.outerHTML || "").slice(0, 1800),
-          bodyText: document.body.innerText.slice(-1600),
-          scripts: document.querySelectorAll("script[type=module]").length,
-          links: Array.from(document.querySelectorAll("a[href]")).slice(0, 10).map(x => x.href),
-        }));
-        console.log("DIAGNOSTIC " + name + " " + slug + ": " + JSON.stringify({ diagnostic, errors: pageErrors.slice(-15) }));
-        await page.screenshot({path: OUT + "/missing-source-" + name + "-" + slug + ".png", fullPage: true});
+      const detail = await browser.newPage({
+        viewport: { width: viewport.width, height: viewport.height },
+        locale: "ko-KR", timezoneId: "Asia/Seoul",
+      });
+      try {
+        const p = await detail.goto(BASE + "/monitoring/" + slug, { waitUntil: "domcontentloaded", timeout: 30000 });
+        check((p?.status() ?? 500) < 400, name + ": detail HTTP " + slug);
+        await detail.locator("article h1").first().waitFor({ state: "visible", timeout: 20000 });
+        check((await detail.locator("article h1").first().innerText()).trim().length >= 10,
+          name + ": readable article title " + slug);
+        await detail.locator('article a[href^="http"]').first().waitFor({ state: "attached", timeout: 15000 }).catch(() => {});
+        const external = await detail.locator('article a[href^="http"]').count();
+        check(external > 0, name + ": source links visible to new visitor " + slug);
+        if (!external) {
+          const summary = await detail.locator("article").first().innerText();
+          console.log("ARTICLE DIAGNOSTIC " + slug + ": " + summary.slice(0, 900));
+          await detail.screenshot({path: OUT + "/detail-failure-" + name + "-" + slug + ".png",fullPage:true});
+        }
+        const mainImage = detail.locator("article figure img").first();
+        if (await mainImage.count()) {
+          await mainImage.scrollIntoViewIfNeeded();
+          await detail.waitForTimeout(500);
+          check(await mainImage.evaluate(i => i.complete && i.naturalWidth > 0), name + ": detail hero loaded " + slug);
+        }
+        const wide = await detail.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+        check(wide <= 8, name + ": article no horizontal overflow " + slug + " (" + wide + "px)");
+      } finally {
+        await detail.close();
       }
-      check(external > 0, name + ": hydrated article source/external link(s) " + slug);
-      const mainImage = page.locator("article figure img").first();
-      if (await mainImage.count()) {
-        await mainImage.scrollIntoViewIfNeeded();
-        await page.waitForTimeout(450);
-        const loaded = await mainImage.evaluate(i => i.complete && i.naturalWidth > 0);
-        check(loaded, name + ": detail hero image loads " + slug);
+    }
+    // Independently check guest reading limits instead of mistaking a paywall
+    // preview for a missing source link on a fourth article.
+    if (name === "desktop") {
+      for (const slug of TRACKERS.slice(0, 4)) {
+        await page.goto(BASE + "/monitoring/" + slug, {waitUntil:"domcontentloaded", timeout:30000});
+        await page.locator("article h1").first().waitFor({state:"visible"});
       }
-      const wide = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
-      check(wide <= 8, name + ": article no horizontal overflow " + slug + " (" + wide + "px)");
+      await page.getByText("이어서 읽으려면 무료 구독신청을 해주세요").first()
+        .waitFor({ state:"visible", timeout: 12000 }).catch(() => {});
+      const gated = await page.getByText("이어서 읽으려면 무료 구독신청을 해주세요").count();
+      check(gated > 0, "guest: fourth article shows expected subscription preview");
     }
   } finally {
     await page.close();
