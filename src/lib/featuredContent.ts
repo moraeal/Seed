@@ -15,7 +15,7 @@ const headers = (token?: string) => ({
 
 export async function getFeaturedContentPath(): Promise<string | null> {
   const response = await fetch(`${supabaseUrl}/rest/v1/homepage_featured_content?slot=eq.${SLOT}&select=content_path&limit=1`, {
-    headers: headers(), signal: AbortSignal.timeout(10000),
+    headers: headers(), signal: AbortSignal.timeout(10000), cache: "no-store",
   });
   if (!response.ok) throw new Error(`Could not load featured content (${response.status})`);
   const rows = await response.json() as { content_path?: string }[];

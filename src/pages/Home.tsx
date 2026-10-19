@@ -179,7 +179,11 @@ const claimUnseen = <T,>(
 export default function Home() {
   const { language } = useLanguage();
   const ko = language === "ko";
-  const { featuredPath, history: featuredHistory, ready: featuredReady, historyError } = useFeaturedContent();
+  const { featuredPath, history: featuredHistory, ready: featuredReady, historyError } = useFeaturedContent({ waitForSelection: true });
+  // Reveal the real lead only after the live editor selection resolves.
+  useEffect(() => {
+    if (featuredReady) document.documentElement.classList.remove("seed-home-pending");
+  }, [featuredReady]);
   const [legislativeBills, setLegislativeBills] = useState<LegislativeBill[]>(snapshot.bills as unknown as LegislativeBill[]);
   const [recommendedTopicPage, setRecommendedTopicPage] = useState(0);
   const [recommendedTopicsPaused, setRecommendedTopicsPaused] = useState(false);

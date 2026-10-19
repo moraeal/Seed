@@ -7,6 +7,9 @@
       /* Keep the SEO fallback out of the first paint, even before scripts run. */
       #root > article[aria-label] { display: none; }
       .seed-static-loader { display: flex; min-height: 55vh; align-items: center; justify-content: center; background: #f7f8f2; color: #123b30; font: 700 1.2rem system-ui, sans-serif; }
+      /* Hide a potentially stale prerendered lead before the browser starts React. */
+      html.seed-home-pending .home-today-section > .container-page > .grid > article:first-child { position: relative; visibility: hidden; }
+      html.seed-home-pending .home-today-section > .container-page > .grid > article:first-child::before { content: ""; position: absolute; inset: 0; background: #f0f3ec; visibility: visible; }
     </style>
     <noscript>
       <style>
@@ -15,6 +18,11 @@
       </style>
     </noscript>
     <script>
+      // Static homepage HTML is for crawlers and no-script readers. Prevent a stale
+      // lead from flashing for JS visitors while the live editor choice loads.
+      if (/^\/(?:en\/?)?$/.test(window.location.pathname)) {
+        document.documentElement.classList.add("seed-home-pending");
+      }
       (function () {
         // Slow startup must never switch readers to the SEO article listing.
         // No-script readers use the fallback above; asset errors recover below.

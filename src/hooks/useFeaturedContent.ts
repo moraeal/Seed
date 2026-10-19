@@ -8,7 +8,8 @@ export function useFeaturedContent({ waitForSelection = false } = {}) {
   const [history, setHistory] = useState<FeaturedHistoryEntry[]>(snapshot.history);
   // A deployed snapshot may predate an operator change. Resolve the live
   // selection before showing a homepage lead; archive pages can use the snapshot.
-  const [ready, setReady] = useState(!waitForSelection);
+  // Prerender remains indexable; browser readers wait for the live selection.
+  const [ready, setReady] = useState(!waitForSelection || typeof window === "undefined");
   const [historyError, setHistoryError] = useState(false);
   useEffect(() => {
     let active = true;
