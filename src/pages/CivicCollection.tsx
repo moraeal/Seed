@@ -19,6 +19,14 @@ export default function CivicCollection({ sectionKey }: { sectionKey: CivicSecti
       <p className="mt-3 max-w-3xl text-base leading-7 text-charcoal/70">{section.description[language]}</p>
       <Link to="/civic-life" className="mt-4 inline-block text-sm font-bold text-green-deep hover:underline">{ko ? "← 시민생활" : "← Civic Life"}</Link>
     </header>}
+    {sectionKey === "cases" && <aside aria-label={ko ? "No More Tax 증세반대운동 참여 안내" : "No More Tax campaign participation"} className="mt-6 flex flex-col gap-4 border border-green-deep/20 bg-ivory p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+      <div className="max-w-2xl">
+        <p className="text-xs font-black tracking-wider text-green-deep">NO MORE TAX · SEED VOICE</p>
+        <h2 className="mt-2 text-xl font-black text-navy">{ko ? "지금 진행 중인 증세반대 시민 서명운동" : "Join the ongoing campaign against tax increases"}</h2>
+        <p className="mt-2 text-sm leading-7 text-charcoal/75">{ko ? "씨앗의 소리는 No More Tax 운동을 통해 세금 인상의 근거를 검증하고 국가재정의 지출과 책임을 감시합니다. 공식 운동 소개와 서명 참여는 시민캠페인 페이지에서 확인할 수 있습니다." : "SEED VOICE's No More Tax campaign examines the case for tax increases and scrutinizes public spending and accountability. Read about the campaign and sign the petition on its official page."}</p>
+      </div>
+      <Link to="/civic-campaign" className="inline-flex shrink-0 items-center justify-center bg-green-deep px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-deep">{ko ? "운동 소개·서명 참여" : "Read and sign"}</Link>
+    </aside>}
     {sectionKey === "campaign" && <CampaignSignature />}
     {lead && <div className="mt-6 border-b-2 border-navy pb-8">
     <article className="grid min-w-0 gap-5 lg:grid-cols-2 lg:gap-6">
