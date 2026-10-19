@@ -19,12 +19,12 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
   "en": "South Korea’s Prosecution Service was abolished on October 2, 2026, when the Prosecution Agency and Serious Crimes Investigation Agency opened. The investigation agency began with 1,900 of 2,874 authorized staff, amid reported IT and service-desk disruption. This tracker follows the transfer of investigative, charging, warrant and non-referral review powers, case handovers and access to remedies."
 },
   status: {
-  "ko": "공소청·중수청 출범·인력 부족과 사건 이관 추적",
-  "en": "Agencies launched · Staffing shortfall and case transfers tracked"
+  "ko": "중수청 초대 청장 임명·국회서 공소청 권한 논쟁 지속",
+  "en": "First investigation chief appointed · Prosecutorial powers debated"
 },
   openedAt: "2025-09-05",
   publishedAt: "2026-09-15",
-  updatedAt: "2026-10-06",
+  updatedAt: "2026-10-19",
   continuationEligible: true,
   nextCheck: {
   "ko": "출범 첫날 전산·민원 혼선의 해소 시점, 정원과 실제 근무 인원, 경찰·중수청 사건 이관 완료 건수와 기록·증거 보존, 90일 유예기간의 시효 임박 사건 처리 결과, 불송치·부실수사에 대한 시민의 이의제기 통로",
@@ -50,6 +50,20 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
   "en": "The October 2 launch, authorized and actual staffing, and service-desk and IT operations are updated from Newsis reporting and its account of the Prosecution Agency announcement. Earlier preparations retain their original check dates. Authorized staffing, actual personnel, transfer instructions, completed transfers, complaints and investigative findings remain separate."
 },
   keyChanges: [
+    {
+      date: "2026-10-19",
+      text: {
+        ko: "김지용 초대 중대범죄수사청장이 출근 첫 공개 발언에서 수사의 정치화 청산과 공정성·중립성을 강조했고, 같은 날 대통령에게 임명장을 받았습니다. 원칙적 다짐과 실제 사건처리 성과는 구분해 추적합니다.",
+        en: "Kim Ji-yong, the first head of the Serious Crimes Investigation Agency, pledged to end politicized investigations at his first press doorstep and received his appointment certificate later the same day. The pledge is not evidence of operational results.",
+      },
+    },
+    {
+      date: "2026-10-19",
+      text: {
+        ko: "국회에서 박철우 서울공소청장이 공소청의 보완수사 폐지에 우려를 표시했습니다. 이는 관계자의 평가로서 중수청의 수사 역량이 실제로 실패했다는 검증 결과와는 다릅니다.",
+        en: "At a parliamentary session, Seoul Prosecution Agency head Park Cheol-woo raised concerns about the removal of supplementary investigative powers. This was his assessment, not a verified finding of operational failure.",
+      },
+    },
 {
   "date": "2026-10-02",
   "text": {
@@ -185,6 +199,27 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      date: "2026-10-19",
+      title: { ko: "김지용 초대 중수청장, 수사 정치화 청산 약속·임명장 수여", en: "First investigation chief vows to end politicization and receives appointment certificate" },
+      description: { ko: "김지용 초대 중대범죄수사청장은 출근길 취재진에게 수사의 정치화를 청산하고 공정성·중립성·절차적 정의를 지키겠다는 취지로 밝혔습니다. 국무회의 참석 여부는 관계기관 협의 등을 거쳐 결정하겠다고 했습니다. 이재명 대통령은 같은 날 김 청장에게 임명장을 수여하고 진영을 가리지 않는 원칙적 사건 처리를 당부했습니다. 기관장 발언과 향후 실적은 구별합니다.", en: "At his first public doorstep as chief of the Serious Crimes Investigation Agency, Kim Ji-yong pledged to address politicized investigations, uphold neutrality and procedural fairness, and decide participation in Cabinet meetings after consultations. President Lee presented his appointment certificate later that day and urged impartial case handling. These are statements of intent rather than verified outcomes." },
+      change: { ko: "초대 중수청장의 공식 업무 방향 제시와 임명장 수여", en: "First agency chief sets out priorities and formally receives appointment certificate" },
+      status: "confirmed",
+      sources: [
+        { publisher: { ko: "연합뉴스", en: "Yonhap News Agency" }, title: { ko: "김지용 중수청장, 수사 정치화 청산·국무회의 참석 협의", en: "Kim vows to end politicized investigations; Cabinet role under review" }, url: "https://www.yna.co.kr/amp/view/AKR20261019039700004", publishedAt: "2026-10-19", kind: "article" },
+        { publisher: { ko: "연합뉴스", en: "Yonhap News Agency" }, title: { ko: "이 대통령, 김지용 중수청장에 임명장 수여", en: "President presents appointment certificate to investigation chief" }, url: "https://www.yna.co.kr/amp/view/AKR20261019145800001", publishedAt: "2026-10-19", kind: "article" },
+      ],
+    },
+    {
+      date: "2026-10-19",
+      title: { ko: "서울공소청장, 국회에서 보완수사권 폐지에 우려 표명", en: "Seoul prosecution chief questions abolition of supplementary inquiries" },
+      description: { ko: "박철우 서울공소청장은 국회에서 검찰 명칭과 공소청 보완수사권 폐지에 대한 우려를 밝혔습니다. 다만 중수청으로 국가 수사 기능이 이전됐다는 취지로 답변을 정정·설명했습니다. 발언은 기관장 견해이며, 수사·기소 분리로 인한 실제 사건처리 지연이나 피해자 구제 실패가 확인됐다는 뜻은 아닙니다.", en: "At a parliamentary session, Seoul Prosecution Agency chief Park Cheol-woo expressed concern over the removal of the prosecution name and supplementary investigative powers, while clarifying that national investigation functions had not disappeared because the new agency now handles them. This is an official's assessment, not evidence of proven delays or failures to protect victims." },
+      change: { ko: "제도개편 이후 공소청의 역할을 둘러싼 국회 논쟁 지속", en: "Parliamentary debate continues over the new prosecution agency's remit" },
+      status: "response",
+      sources: [
+        { publisher: { ko: "연합뉴스", en: "Yonhap News Agency" }, title: { ko: "박철우 서울공소청장, 검찰 명칭·보완수사 폐지 우려", en: "Seoul chief expresses concern over prosecution restructuring" }, url: "https://www.yna.co.kr/view/AKR20261019077500004", publishedAt: "2026-10-19", kind: "article" },
+      ],
+    },
 {
   "date": "2026-10-02",
   "title": {
