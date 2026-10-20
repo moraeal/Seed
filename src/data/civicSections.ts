@@ -44,7 +44,6 @@ export function getCivicSectionForArticle(path: string) {
 // suitable stories here in the same publishing update, regardless of category.
 export const civicLifeArticlePaths = [
   "/seed-language/founding-nation-sovereignty-republic-1948-2026",
-  "/columns/america-street-essay-2026",
   "/briefings/why-protests-spread-across-europe-october-2026",
   "/columns/atr-taxpayer-movement-05-sustainable-budgets",
   "/briefings/health-insurance-state-support-144-percent-citizen-cost-2026",
