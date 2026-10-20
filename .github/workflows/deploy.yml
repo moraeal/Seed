@@ -13,9 +13,11 @@ permissions:
   pages: write
   id-token: write
 
+# Keep a running deployment alive when newer content commits arrive.
+# GitHub may still replace an older pending run with the newest pending run.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
