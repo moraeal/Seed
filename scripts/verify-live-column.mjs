@@ -19,7 +19,7 @@ const check = async (target, type) => {
       if (response.ok) return response;
       if (response.status < 500 || attempt === 3) throw new Error(type + " HTTP " + response.status + ": " + target);
     } catch (error) {
-      if (attempt === 3 || / HTTP 4\\d\\d:/.test(String(error.message))) throw error;
+      if (attempt === 3 || / HTTP 4\d\d:/.test(String(error.message))) throw error;
       attempts.push({ type, attempt, error: String(error.message || error) });
     }
     await pause(1500 * attempt);
@@ -46,6 +46,6 @@ const report = { url, passed: errors.length === 0, attempts, errors, limitation:
 console.log(JSON.stringify(report, null, 2));
 if (process.env.GITHUB_STEP_SUMMARY) {
   const { appendFileSync } = await import("node:fs");
-  appendFileSync(process.env.GITHUB_STEP_SUMMARY, `### Public article verification: ${slug}\\n\\nResult: ${report.passed ? "PASS" : "FAIL"}\\n\\nAttempts: ${attempts.length}\\n\\nErrors: ${errors.join("; ") || "None"}\\n`);
+  appendFileSync(process.env.GITHUB_STEP_SUMMARY, `### Public article verification: ${slug}\n\nResult: ${report.passed ? "PASS" : "FAIL"}\n\nAttempts: ${attempts.length}\n\nErrors: ${errors.join("; ") || "None"}\n`);
 }
 if (errors.length) process.exitCode = 1;
