@@ -67,7 +67,14 @@ async function prepare([url, source]) {
   } catch (error) {
     // Publisher bot restrictions are not broken source links. Preserve the
     // original article URL and show an explicitly labelled editorial link tile.
-    if (["HTTP 401", "HTTP 403"].some((status) => String(error.message).includes(status)) && !source.thumbnailSrc) {
+    // External image discovery is non-critical to editorial publication.
+    // A denied or temporarily unavailable publisher must not block site deploy:
+    // keep the article URL and use a visibly non-photographic labelled link tile.
+    const message = String(error?.message || error);
+    const externalUnavailable =
+      /HTTP (?:401|403|408|429|500|502|503|504)\b/.test(message) ||
+      /fetch failed|network|timeout|timed out|aborterror|socket hang up|ECONNRESET|ENOTFOUND|EAI_AGAIN/i.test(message);
+    if (externalUnavailable && !source.thumbnailSrc) {
       const src = "/images/monitoring/source-articles/source-link-editorial.svg";
       await access(`public/${src.slice(1)}`);
       manifest[url] = {
