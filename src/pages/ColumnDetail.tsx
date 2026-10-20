@@ -37,7 +37,7 @@ const seoRelatedLinks: Record<string, { path: string; label: string }[]> = {
   ],
 };
 
-function ColumnDetail() {
+export default function ColumnDetail() {
   const { slug = "" } = useParams();
   const [searchParams] = useSearchParams();
   const { language } = useLanguage();
