@@ -9,7 +9,8 @@
     "build": "node scripts/prepare-incheon-image-fallbacks.mjs && node scripts/prepare-tracker-images.mjs && node scripts/render-security-column-images.mjs && node scripts/generate-social-images.mjs && node scripts/prepare-home-snapshot.mjs && node scripts/validate-content.mjs && node scripts/audit-article-citations.mjs && node scripts/generate-siya-index.mjs && tsc -b && vite build --configLoader native && node scripts/generate-seo.mjs && node scripts/audit-search-access.mjs",
     "preview": "vite preview --configLoader native",
     "preflight:column": "node scripts/preflight-column.mjs",
-    "verify:column": "node scripts/verify-column-publication.mjs"
+    "verify:column": "node scripts/verify-column-publication.mjs",
+    "verify:live-column": "node scripts/verify-live-column.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.7.0",
