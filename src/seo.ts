@@ -262,6 +262,27 @@ const seedLanguageRoutes: SeoRoute[] = allSeedLanguageArticlesKo.map((article) =
   imageAlt: article.heroImage.alt,
 }));
 
+// Editorial SEO overrides: preserve on-page headlines and canonical article paths.
+// Only use query language grounded in the published article itself.
+const prioritySearchMetadata: Record<string, { title: string; description: string }> = {
+  "/columns/politicians-who-take-public-debt-lightly-2026": {
+    title: "한국 국가부채, 누가 갚나? 국가 빚과 미래세대의 부담 | 씨앗의 소리",
+    description: "국가부채가 늘면 국민 세금과 미래세대의 부담은 어떻게 달라질까? 이재명 대통령의 국가채무 설명과 프랑스 멜랑숑의 국채 탕감 주장을 비교합니다.",
+  },
+  "/columns/atr-taxpayer-movement-05-sustainable-budgets": {
+    title: "정부 예산 낭비와 쪽지예산 | 국민 세금은 어디에 쓰이나? | 씨앗의 소리",
+    description: "국회의원은 지역 예산 확보를 성과로 내세우지만 비용은 국민이 부담합니다. 쪽지예산과 지역사업 경쟁 구조, 시민의 예산감시 방법을 살펴봅니다.",
+  },
+  "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026": {
+    title: "프랑스 재정위기와 한국의 세금 인상 논쟁 | 씨앗의 소리",
+    description: "프랑스의 재정 조정 갈등은 한국에 무엇을 경고할까? 복지·보조금 확대와 재정 적자, 향후 증세 가능성의 연결 구조를 살펴봅니다.",
+  },
+  "/columns/youth-agency-not-policy-targets-2026": {
+    title: "청년문화예술패스 2027 예산안 7925억 원 | 청년 지원정책 논란 | 씨앗의 소리",
+    description: "청년문화예술패스 2027년 정부 예산안 7925억 원은 아직 확정·집행액이 아닙니다. 지원 확대의 목적과 청년 취업·주거·자립에 미치는 효과를 따져봅니다.",
+  },
+};
+
 export const seoRoutes: SeoRoute[] = [
   ...staticRoutes,
   ...newsRoutes,
@@ -274,7 +295,10 @@ export const seoRoutes: SeoRoute[] = [
   ...taxCommentaryRoutes,
   ...researchRoutes,
   ...seedLanguageRoutes,
-];
+].map((route) => {
+  const override = prioritySearchMetadata[route.path];
+  return override ? { ...route, ...override } : route;
+});
 
 export const normalizeSeoPath = (pathname: string) => {
   const withoutLegacyBase = pathname.replace(/^\/Seed(?=\/|$)/, "");
