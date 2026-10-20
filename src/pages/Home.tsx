@@ -478,7 +478,7 @@ export default function Home() {
                     <>
                       <div className="mb-2 flex items-center justify-between gap-3">
                         <p className="text-[11px] font-black tracking-[.08em] text-green-deep">{ko ? "이 문제, 더 깊이 읽기" : "READ MORE ON THIS ISSUE"}</p>
-                        <Link className="text-[11px] font-semibold text-green-deep hover:underline" to="/hot-issues">{ko ? "더 많은 기사" : "More stories"} <span aria-hidden="true">→</span></Link>
+                        <Link className="text-[11px] font-semibold text-green-deep hover:underline" to="/news">{ko ? "더 많은 기사" : "More stories"} <span aria-hidden="true">→</span></Link>
                       </div>
                       <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
                         {relatedStories.map((story) => (
