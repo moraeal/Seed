@@ -28,6 +28,16 @@ export default function SeedLanguageDetail() {
   const citations = createArticleCitations(article.sources, article, language);
   const readingPath = getArticleReadingPath("seed-language", article.slug, language);
 
+  const foundingArticle = article.slug === "founding-nation-sovereignty-republic-1948-2026";
+  const renderBodyText = (paragraph: string) => {
+    if (!foundingArticle || !paragraph.includes("**")) return <ArticleText text={paragraph} citations={citations}/>;
+    return paragraph.split(/(\*\*[^*]+\*\*)/g).map((part, index) =>
+      part.startsWith("**") && part.endsWith("**")
+        ? <strong key={index} className="font-bold"><ArticleText text={part.slice(2, -2)} citations={citations}/></strong>
+        : <ArticleText key={index} text={part} citations={citations}/>
+    );
+  };
+
   const isLongRead = article.readMinutes >= 8;
   const isProgressArticle = article.slug === "what-is-true-progress";
   const usesDarkBodyCopy = isProgressArticle || article.slug === "what-is-true-conservatism" || article.slug === "discourse-many-words-no-direction" || article.slug === "politics-is-a-citizens-tool";
@@ -76,12 +86,12 @@ export default function SeedLanguageDetail() {
       <div className="reading-column mt-10">
         <aside className="border-l-4 border-gold bg-green-pale px-6 py-6 sm:px-8"><span className="section-kicker">{ko ? "핵심 요약" : "KEY POINTS"}</span><ul className="mt-4 space-y-3">{article.keyPoints.map((point) => <li key={point} className="flex gap-3 text-sm font-semibold leading-7 text-navy"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-gold"/><span><ArticleText text={point} citations={citations}/></span></li>)}</ul></aside>
 
-        {article.leadParagraphs && <div className={`article-section ${isLongRead ? "article-section-long" : ""}`}>{article.leadParagraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className={`article-copy ${isLongRead ? "article-copy-long" : ""} ${usesDarkBodyCopy ? "!text-charcoal" : ""}`}><ArticleText text={paragraph} citations={citations}/></p>)}</div>}
+        {article.leadParagraphs && <div className={`article-section ${isLongRead ? "article-section-long" : ""}`}>{article.leadParagraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className={`article-copy ${isLongRead ? "article-copy-long" : ""} ${usesDarkBodyCopy ? "!text-charcoal" : ""}`}>{renderBodyText(paragraph)}</p>)}</div>}
 
 
         {article.sections.map((section, index) => <section id={`article-section-${index + 1}`} key={section.title} className={`article-section scroll-mt-28 ${isLongRead ? "article-section-long" : ""}`}>
           <h2 className="article-section-title">{section.title}</h2>
-          {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className={`article-copy ${isLongRead ? "article-copy-long" : ""} ${usesDarkBodyCopy ? "!text-charcoal" : ""}`}><ArticleText text={paragraph} citations={citations}/></p>)}
+          {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 42)} className={`article-copy ${isLongRead ? "article-copy-long" : ""} ${usesDarkBodyCopy ? "!text-charcoal" : ""}`}>{renderBodyText(paragraph)}</p>)}
           {section.sourceIndices && <p className="article-section-citations">{section.sourceIndices.map((sourceIndex) => {
             const source = resolveCitationToken(`[${sourceIndex + 1}]`, citations);
             return source && <CitationReference key={sourceIndex} number={source.number} citations={citations}/>;
