@@ -1,6 +1,8 @@
 import type { SeedLanguageArticle } from "./seedLanguageBase";
 const root="images/seed-language/founding-state-1948-2026/";
 const sources=[
+{label:"Wikimedia Commons / 미 육군 통신대 — 1948년 8월 15일 서울 도심 정부 수립 축하 기록사진",url:"https://commons.wikimedia.org/wiki/File:1948_downtown_Seoul,_Republic_of_Korea_(now_Sejong-daero)_on_15_August_with_crowds_celebrating_inauguration_of_new_Korean_government.jpg"},
+{label:"Wikimedia Commons — 1948년 대한민국 정부 수립 국민축하식 컬러 보정 기록사진",url:"https://commons.wikimedia.org/wiki/File:Ceremony_inaugurating_the_government_of_the_Republic_of_Korea_(colored).jpg"},
 {label:"국가법령정보센터 — 대한민국 제헌헌법 (1948.7.17.)",url:"https://www.law.go.kr/lsInfoP.do?lsiSeq=53081"},
 {label:"국사편찬위원회 — 유엔총회 결의 제195(III)호 (1948.12.12.)",url:"https://contents.history.go.kr/front/hm/view.do?levelId=hm_145_0130"},
 {label:"국사편찬위원회 — 유엔 소총회 남한 선거 결의 (1948.2.26.)",url:"https://contents.history.go.kr/front/hm/print.do?levelId=hm_145_0030"},
@@ -13,8 +15,8 @@ title:"건국은 오래된 왕조를 이어받는 것이 아니라 국민의 나
 subtitle:"쿠르드족의 현실에서 1919년 임시정부, 1948년 대한민국 정부 수립까지",
 summary:"민족의 존재와 국가의 성립은 다릅니다. 대한민국은 독립운동의 정통성을 계승하면서 1948년 실효적 국가제도를 마련했습니다. 조선왕조와 구별되는 국민주권의 의미를 묻습니다.",
 keyPoints:["민족의 역사, 독립 선언, 실제 국가의 성립과 국제적 승인은 구별됩니다.","1919년 임시정부의 공화주의적 이상과 1948년 실효적 국가 수립은 함께 설명할 수 있습니다.","건국의 의미는 특정 지도자에 대한 찬반보다 국가의 주인이 누구인가에서 드러납니다."],
-heroImage:{src:root+"hero.png",alt:"왕조의 궁궐과 시민의 의회가 대비되는 창작 상징 그림",caption:"왕의 통치에서 국민주권으로. 서로 다른 국가질서의 성립을 상징적으로 표현했습니다.",credit:"씨앗의 소리 편집 일러스트"},
-inlineImage:{src:root+"declaration.png",alt:"1919년의 독립 선언과 1948년의 통치기구 수립을 대조한 창작 그림",caption:"독립국가의 이상을 선언하는 것과 실제 통치기구를 수립하는 것은 서로 다른 차원의 일입니다.",credit:"씨앗의 소리 편집 일러스트"},inlineImageAfterSection:3,
+heroImage:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/1948%20downtown%20Seoul%2C%20Republic%20of%20Korea%20(now%20Sejong-daero)%20on%2015%20August%20with%20crowds%20celebrating%20inauguration%20of%20new%20Korean%20government.jpg?width=1400",alt:"1948년 8월 15일 서울 세종대로에서 대한민국 정부 수립을 축하하는 인파의 실제 기록사진",caption:"1948년 8월 15일, 대한민국 정부 수립 기념행사에 모인 서울 시민들.",credit:"미 육군 통신대 촬영 · 국사편찬위원회 소장 · Wikimedia Commons · 미국 연방정부 저작물"},
+inlineImage:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/Ceremony%20inaugurating%20the%20government%20of%20the%20Republic%20of%20Korea%20(colored).jpg?width=1200",alt:"1948년 8월 15일 대한민국 정부 수립 국민축하식의 기록사진",caption:"1948년 대한민국 정부 수립 국민축하식. 독립운동의 역사적 이상과 국가기관의 현실적 출범은 서로 구별되는 사건입니다.",credit:"대한민국 정부 수립 국민축하식 기록사진 · Wikimedia Commons"},inlineImageAfterSection:3,
 additionalImages:[{src:root+"timeline-ko.png",alt:"1910년 국권 상실, 1919년 임시정부, 1948년 헌법과 정부 및 유엔 결의를 순서대로 표현한 연표",caption:"국권 상실, 공화국의 선언, 헌정정부의 수립과 국제적 지위의 형성은 각각 구분해 읽을 사건입니다.",credit:"씨앗의 소리 편집 그래픽",afterSection:2}],
 leadParagraphs:[
 "수천만 명의 사람이 같은 언어와 문화를 나누고 살아도 자기 이름으로 된 독립국가가 없을 수 있습니다. 쿠르드족 이야기입니다. 그렇다면 수천 년의 역사를 지닌 민족은 그 역사만으로 이미 나라를 가진 것일까요.",
@@ -59,8 +61,8 @@ sources
 };
 export const foundingArticleEn:SeedLanguageArticle={
 ...foundingArticleKo,term:"Founding a State",title:"Founding a State Means Establishing Popular Sovereignty, Not Restoring a Dynasty",subtitle:"From the Kurdish experience to Korea’s 1919 provisional government and the 1948 republic",summary:"A nation’s identity is not the same as an operational sovereign state. The Republic of Korea inherited the ideals of independence while establishing functioning constitutional institutions in 1948.",keyPoints:["National identity, independence declarations, statehood and diplomatic recognition are distinct concepts.","The 1919 provisional government’s republican ideals and the 1948 government’s effective jurisdiction can both matter.","The central civic question is not personal allegiance to a founder, but who holds sovereignty."],
-heroImage:{...foundingArticleKo.heroImage,alt:"Original editorial illustration contrasting a royal palace and a civic assembly",caption:"From royal government to popular sovereignty: an artistic representation of different constitutional orders."},
-inlineImage:{...foundingArticleKo.inlineImage!,alt:"Original graphic contrasting a 1919 declaration with the institutions established in 1948",caption:"A declaration of an independent republic and a functioning government are different achievements."},
+heroImage:{...foundingArticleKo.heroImage,alt:"Archival photograph of crowds celebrating the inauguration of the Korean government in Seoul on August 15, 1948",caption:"Citizens gathered in Seoul on August 15, 1948 to celebrate the inauguration of the Republic of Korea government."},
+inlineImage:{...foundingArticleKo.inlineImage!,alt:"Archival photograph of the August 15, 1948 ceremony inaugurating the government of the Republic of Korea",caption:"The 1948 inauguration ceremony. The aspirations of independence and the establishment of functioning institutions mark distinct stages."},
 additionalImages:[{...foundingArticleKo.additionalImages![0],src:root+"timeline-en.png",alt:"Timeline of the loss of Korean sovereignty in 1910, the 1919 provisional government, and the 1948 constitution, government and UN resolution",caption:"Independence, constitutional ideals, functioning institutions and diplomatic status developed through distinct milestones."}],
 leadParagraphs:[
 "Millions of people can share a language and cultural identity and yet lack an independent state. The Kurds are a vivid example. Does a nation’s long history, by itself, amount to statehood?",
