@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'scripts/article-integrity.mjs'
+      - 'scripts/test-manuscript-guard.mjs'
       - 'scripts/check-new-article-approvals.mjs'
       - 'src/data/columns/**'
       - 'editorial/approved/**'
@@ -38,6 +39,7 @@ jobs:
       - name: Validate safeguard JavaScript syntax
         run: |
           node --check scripts/article-integrity.mjs
+          node --check scripts/test-manuscript-guard.mjs
           node --check scripts/check-new-article-approvals.mjs
           node --check scripts/verify-article-assets.mjs
           node --check scripts/verify-changed-columns.mjs
@@ -45,6 +47,8 @@ jobs:
           node --check scripts/check-column-browser.mjs
           node --check scripts/preflight-column.mjs
           node --check scripts/verify-column-publication.mjs
+      - name: Test manuscript protection failure cases
+        run: node --test scripts/test-manuscript-guard.mjs
       - name: Detect in-place public image replacements
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
