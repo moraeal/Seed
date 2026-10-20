@@ -294,8 +294,8 @@ const prioritySearchMetadata: Record<string, { title: string; description: strin
     description: "건강보험 국고지원 예산과 법률상 지원 기준은 어떻게 다를까? 국가 지원의 부족이 향후 건강보험 재정과 시민의 보험료에 미칠 영향을 살펴봅니다.",
   },
   "/monitoring/prosecution-service-abolition-tracker": {
-    title: "검찰개혁 진행 상황 | 공소청·중수청과 수사권 변화 | 씨앗의 소리",
-    description: "검찰제도 개편으로 공소청과 중수청의 역할은 어떻게 달라질까? 수사권과 기소권의 변화, 시민의 권리와 주요 쟁점을 추적합니다.",
+    title: "검찰청 폐지 이후 어떻게 바뀌었나 | 공소청·중수청 수사권 추적 | 씨앗의 소리",
+    description: "2026년 10월 검찰청 폐지 이후 공소청과 중대범죄수사청은 어떻게 운영되고 있을까? 사건 이관, 수사·기소 권한, 시민의 권리와 현장 혼선을 날짜별로 추적합니다.",
   },
   "/seed-language/limited-state-citizen-power-boundaries-2026": {
     title: "사법부 독립과 삼권분립 | 제한된 국가란 무엇인가 | 씨앗의 소리",
