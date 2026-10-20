@@ -8,10 +8,22 @@ if (!slug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
 }
 const url = base + "/columns/" + slug + "/";
 const errors = [];
+const attempts = [];
+const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const check = async (target, type) => {
-  const response = await fetch(target, { signal: AbortSignal.timeout(20000), redirect: "follow", headers: { "User-Agent": "SEED-VOICE-publish-verifier/1.0" } });
-  if (!response.ok) throw new Error(type + " HTTP " + response.status + ": " + target);
-  return response;
+  // Bounded retry for transient network/5xx failures; do not retry 4xx or bad content.
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const response = await fetch(target, { signal: AbortSignal.timeout(20000), redirect: "follow", headers: { "User-Agent": "SEED-VOICE-publish-verifier/1.0" } });
+      attempts.push({ type, attempt, status: response.status });
+      if (response.ok) return response;
+      if (response.status < 500 || attempt === 3) throw new Error(type + " HTTP " + response.status + ": " + target);
+    } catch (error) {
+      if (attempt === 3 || / HTTP 4\\d\\d:/.test(String(error.message))) throw error;
+      attempts.push({ type, attempt, error: String(error.message || error) });
+    }
+    await pause(1500 * attempt);
+  }
 };
 let html = "";
 try {
@@ -30,5 +42,10 @@ try {
     } catch (error) { errors.push(String(error.message || error)); }
   }
 } catch (error) { errors.push(String(error.message || error)); }
-console.log(JSON.stringify({ url, passed: errors.length === 0, errors, limitation: "HTTP metadata check only; manual/browser mobile, body text, and all inline images require separate inspection" }, null, 2));
+const report = { url, passed: errors.length === 0, attempts, errors, limitation: "HTTP metadata check only; manual/browser mobile, body text, and all inline images require separate inspection" };
+console.log(JSON.stringify(report, null, 2));
+if (process.env.GITHUB_STEP_SUMMARY) {
+  const { appendFileSync } = await import("node:fs");
+  appendFileSync(process.env.GITHUB_STEP_SUMMARY, `### Public article verification: ${slug}\\n\\nResult: ${report.passed ? "PASS" : "FAIL"}\\n\\nAttempts: ${attempts.length}\\n\\nErrors: ${errors.join("; ") || "None"}\\n`);
+}
 if (errors.length) process.exitCode = 1;
