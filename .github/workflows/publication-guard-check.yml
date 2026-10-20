@@ -6,6 +6,8 @@ on:
       - 'scripts/article-integrity.mjs'
       - 'scripts/verify-article-assets.mjs'
       - 'scripts/verify-changed-columns.mjs'
+      - 'scripts/check-image-cache-keys.mjs'
+      - 'public/images/**'
       - 'scripts/preflight-column.mjs'
       - 'scripts/verify-column-publication.mjs'
       - '.github/workflows/deploy.yml'
@@ -19,6 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: pnpm/action-setup@v4
         with:
           version: 10
@@ -31,8 +35,13 @@ jobs:
           node --check scripts/article-integrity.mjs
           node --check scripts/verify-article-assets.mjs
           node --check scripts/verify-changed-columns.mjs
+          node --check scripts/check-image-cache-keys.mjs
           node --check scripts/preflight-column.mjs
           node --check scripts/verify-column-publication.mjs
+      - name: Detect in-place public image replacements
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: node scripts/check-image-cache-keys.mjs "$BASE_SHA" HEAD
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Install image converters and Korean fonts
