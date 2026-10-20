@@ -63,7 +63,7 @@ jobs:
           VITE_TURNSTILE_SITE_KEY: ${{ secrets.VITE_TURNSTILE_SITE_KEY }}
       - name: Install Playwright Chromium for visual smoke test
         run: |
-          npm install --no-save --package-lock=false playwright
-          npx playwright install --with-deps chromium
+          npm install --prefix /tmp/seed-browser-tools --no-save --package-lock=false playwright
+          /tmp/seed-browser-tools/node_modules/.bin/playwright install --with-deps chromium
       - name: Test desktop and mobile article display
         run: node scripts/check-column-browser.mjs politicians-who-take-public-debt-lightly-2026
