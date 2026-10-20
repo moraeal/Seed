@@ -1,5 +1,6 @@
 /** Display metadata shared by the homepage glossary card and glossary archive. */
 export const seedLanguageTerms: Record<string, { hanja: string; english: string }> = {
+  건국: { hanja: "建國", english: "FOUNDING A STATE" },
   "제한된 국가": { hanja: "制限된 國家", english: "LIMITED GOVERNMENT" },
   "기본소득": { hanja: "基本所得", english: "BASIC INCOME" },
   "증강된 개인": { hanja: "增強된 個人", english: "AUGMENTED INDIVIDUAL" },
