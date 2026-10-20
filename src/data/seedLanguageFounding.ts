@@ -13,9 +13,9 @@ title:"건국은 오래된 왕조를 이어받는 것이 아니라 국민의 나
 subtitle:"쿠르드족의 현실에서 1919년 임시정부, 1948년 대한민국 정부 수립까지",
 summary:"민족의 존재와 국가의 성립은 다릅니다. 대한민국은 독립운동의 정통성을 계승하면서 1948년 실효적 국가제도를 마련했습니다. 조선왕조와 구별되는 국민주권의 의미를 묻습니다.",
 keyPoints:["민족의 역사, 독립 선언, 실제 국가의 성립과 국제적 승인은 구별됩니다.","1919년 임시정부의 공화주의적 이상과 1948년 실효적 국가 수립은 함께 설명할 수 있습니다.","건국의 의미는 특정 지도자에 대한 찬반보다 국가의 주인이 누구인가에서 드러납니다."],
-heroImage:{src:root+"hero.svg",alt:"왕조의 궁궐과 시민의 의회가 대비되는 창작 상징 그림",caption:"왕의 통치에서 국민주권으로. 서로 다른 국가질서의 성립을 상징적으로 표현했습니다.",credit:"씨앗의 소리 편집 일러스트"},
-inlineImage:{src:root+"declaration.svg",alt:"1919년의 독립 선언과 1948년의 통치기구 수립을 대조한 창작 그림",caption:"독립국가의 이상을 선언하는 것과 실제 통치기구를 수립하는 것은 서로 다른 차원의 일입니다.",credit:"씨앗의 소리 편집 일러스트"},inlineImageAfterSection:3,
-additionalImages:[{src:root+"timeline-ko.svg",alt:"1910년 국권 상실, 1919년 임시정부, 1948년 헌법과 정부 및 유엔 결의를 순서대로 표현한 연표",caption:"국권 상실, 공화국의 선언, 헌정정부의 수립과 국제적 지위의 형성은 각각 구분해 읽을 사건입니다.",credit:"씨앗의 소리 편집 그래픽",afterSection:2}],
+heroImage:{src:root+"hero.png",alt:"왕조의 궁궐과 시민의 의회가 대비되는 창작 상징 그림",caption:"왕의 통치에서 국민주권으로. 서로 다른 국가질서의 성립을 상징적으로 표현했습니다.",credit:"씨앗의 소리 편집 일러스트"},
+inlineImage:{src:root+"declaration.png",alt:"1919년의 독립 선언과 1948년의 통치기구 수립을 대조한 창작 그림",caption:"독립국가의 이상을 선언하는 것과 실제 통치기구를 수립하는 것은 서로 다른 차원의 일입니다.",credit:"씨앗의 소리 편집 일러스트"},inlineImageAfterSection:3,
+additionalImages:[{src:root+"timeline-ko.png",alt:"1910년 국권 상실, 1919년 임시정부, 1948년 헌법과 정부 및 유엔 결의를 순서대로 표현한 연표",caption:"국권 상실, 공화국의 선언, 헌정정부의 수립과 국제적 지위의 형성은 각각 구분해 읽을 사건입니다.",credit:"씨앗의 소리 편집 그래픽",afterSection:2}],
 leadParagraphs:[
 "수천만 명의 사람이 같은 언어와 문화를 나누고 살아도 자기 이름으로 된 독립국가가 없을 수 있습니다. 쿠르드족 이야기입니다. 그렇다면 수천 년의 역사를 지닌 민족은 그 역사만으로 이미 나라를 가진 것일까요.",
 "우리는 대한민국의 건국을 두고 자주 1919년이냐 1948년이냐 다툽니다. 이승만을 건국대통령이라고 부르는 사람과 그 표현을 거부하는 사람이 맞섭니다. 정작 시민에게 가장 중요한 질문은 뒤로 밀립니다. 나라가 세워졌다는 것은 도대체 무엇을 뜻합니까.",
@@ -61,7 +61,7 @@ export const foundingArticleEn:SeedLanguageArticle={
 ...foundingArticleKo,term:"Founding a State",title:"Founding a State Means Establishing Popular Sovereignty, Not Restoring a Dynasty",subtitle:"From the Kurdish experience to Korea’s 1919 provisional government and the 1948 republic",summary:"A nation’s identity is not the same as an operational sovereign state. The Republic of Korea inherited the ideals of independence while establishing functioning constitutional institutions in 1948.",keyPoints:["National identity, independence declarations, statehood and diplomatic recognition are distinct concepts.","The 1919 provisional government’s republican ideals and the 1948 government’s effective jurisdiction can both matter.","The central civic question is not personal allegiance to a founder, but who holds sovereignty."],
 heroImage:{...foundingArticleKo.heroImage,alt:"Original editorial illustration contrasting a royal palace and a civic assembly",caption:"From royal government to popular sovereignty: an artistic representation of different constitutional orders."},
 inlineImage:{...foundingArticleKo.inlineImage!,alt:"Original graphic contrasting a 1919 declaration with the institutions established in 1948",caption:"A declaration of an independent republic and a functioning government are different achievements."},
-additionalImages:[{...foundingArticleKo.additionalImages![0],src:root+"timeline-en.svg",alt:"Timeline of the loss of Korean sovereignty in 1910, the 1919 provisional government, and the 1948 constitution, government and UN resolution",caption:"Independence, constitutional ideals, functioning institutions and diplomatic status developed through distinct milestones."}],
+additionalImages:[{...foundingArticleKo.additionalImages![0],src:root+"timeline-en.png",alt:"Timeline of the loss of Korean sovereignty in 1910, the 1919 provisional government, and the 1948 constitution, government and UN resolution",caption:"Independence, constitutional ideals, functioning institutions and diplomatic status developed through distinct milestones."}],
 leadParagraphs:[
 "Millions of people can share a language and cultural identity and yet lack an independent state. The Kurds are a vivid example. Does a nation’s long history, by itself, amount to statehood?",
 "In South Korea, public arguments often focus on whether the republic began in 1919 or 1948 and whether Syngman Rhee deserves to be called a founder. Before choosing a date, citizens need to ask what it means to found a state.",
