@@ -265,6 +265,54 @@ const seedLanguageRoutes: SeoRoute[] = allSeedLanguageArticlesKo.map((article) =
 // Editorial SEO overrides: preserve on-page headlines and canonical article paths.
 // Only use query language grounded in the published article itself.
 const prioritySearchMetadata: Record<string, { title: string; description: string }> = {
+  "/briefings/why-protests-spread-across-europe-october-2026": {
+    title: "2026 유럽 시위 확산 이유 | 프랑스와 유럽 각국 갈등 | 씨앗의 소리",
+    description: "2026년 유럽 시위는 왜 확산됐을까? 물가와 생활비, 재정 문제를 살펴보고 각국 시위의 서로 다른 배경과 시민에게 미치는 영향을 비교합니다.",
+  },
+  "/columns/populism-collapse-generational-conflict-2026": {
+    title: "한국 재정위기 가능성 | 국가채무와 미래세대 부담 | 씨앗의 소리",
+    description: "국가채무와 복지 지출이 증가할 때 미래세대는 어떤 부담을 지게 될까? 유럽의 재정 갈등과 한국의 지속가능한 재정 문제를 함께 살펴봅니다.",
+  },
+  "/columns/housing-tax-promise-policy-uncertainty-2026": {
+    title: "2026 부동산 대책 | 대출 규제·주택 세금·공급 영향 | 씨앗의 소리",
+    description: "부동산 대출 규제와 세금 정책은 집값과 거래, 실수요자의 내 집 마련에 어떤 영향을 미칠까? 주택 공급과 정책 불확실성 문제를 분석합니다.",
+  },
+  "/monitoring/tax/commentary/inheritance-tax-automatic-increase-2026": {
+    title: "상속세 부담은 왜 늘어나나? 집값 상승과 공제 기준 | 씨앗의 소리",
+    description: "상속세율이 그대로여도 집값과 자산 가격이 오르면 상속세 부담이 달라질 수 있습니다. 상속세 공제 기준과 조용한 증세 논쟁을 살펴봅니다.",
+  },
+  "/columns/jangjado-future-response-fund-no-more-tax-2026": {
+    title: "정부 지원금·보조금 예산 논쟁 | 청년패스와 세금감시 | 씨앗의 소리",
+    description: "청년문화예술패스와 각종 지원사업 예산을 납세자의 시선으로 검토합니다. 재정 지출의 목적과 효과, 정부 예산감시의 기준을 묻습니다.",
+  },
+  "/seed-language/basic-income-universal-payments-public-cost-2026": {
+    title: "기본소득의 장단점과 문제점 | 재원·복지·세금 부담 | 씨앗의 소리",
+    description: "기본소득은 기존 복지와 어떻게 다를까? 모든 국민에게 지급하는 정책의 장단점과 재원 마련, 납세자 부담을 시민의 언어로 설명합니다.",
+  },
+  "/briefings/health-insurance-state-support-144-percent-citizen-cost-2026": {
+    title: "건강보험 국고지원 14.4% 논란 | 보험료 부담은? | 씨앗의 소리",
+    description: "건강보험 국고지원 예산과 법률상 지원 기준은 어떻게 다를까? 국가 지원의 부족이 향후 건강보험 재정과 시민의 보험료에 미칠 영향을 살펴봅니다.",
+  },
+  "/monitoring/prosecution-service-abolition-tracker": {
+    title: "검찰개혁 진행 상황 | 공소청·중수청과 수사권 변화 | 씨앗의 소리",
+    description: "검찰제도 개편으로 공소청과 중수청의 역할은 어떻게 달라질까? 수사권과 기소권의 변화, 시민의 권리와 주요 쟁점을 추적합니다.",
+  },
+  "/seed-language/limited-state-citizen-power-boundaries-2026": {
+    title: "사법부 독립과 삼권분립 | 제한된 국가란 무엇인가 | 씨앗의 소리",
+    description: "제한된 국가는 무엇이고 사법부 독립이 시민의 자유에 중요한 이유는 무엇일까? 국가 권력의 경계와 삼권분립의 의미를 설명합니다.",
+  },
+  "/columns/security-slogans-alliance-2026": {
+    title: "전작권 전환과 한미동맹 | 자주국방 논쟁의 쟁점 | 씨앗의 소리",
+    description: "전시작전통제권 전환과 자주국방, 한미동맹을 둘러싼 논쟁을 분석합니다. 실질적인 군사능력과 안보 위험에 관한 질문을 살펴봅니다.",
+  },
+  "/columns/atr-taxpayer-movement-04-wednesday-meeting": {
+    title: "시민단체 세금감시 운동 | 미국 ATR의 수요모임 | 씨앗의 소리",
+    description: "미국의 납세자운동 단체 ATR은 어떻게 세금감시 네트워크를 만들었을까? 수요모임 운영과 한국 시민 세금감시운동에 대한 시사점을 살펴봅니다.",
+  },
+  "/columns/taxpayer-movement-03-britain-spending-watch": {
+    title: "납세자 권리란 무엇인가 | 세금 신고 부담과 해외 사례 | 씨앗의 소리",
+    description: "납세자의 부담은 세율뿐 아니라 신고에 드는 시간과 비용에서도 발생합니다. 해외 사례를 통해 납세자 권리와 행정 부담 문제를 살펴봅니다.",
+  },
   "/columns/politicians-who-take-public-debt-lightly-2026": {
     title: "한국 국가부채, 누가 갚나? 국가 빚과 미래세대의 부담 | 씨앗의 소리",
     description: "국가부채가 늘면 국민 세금과 미래세대의 부담은 어떻게 달라질까? 이재명 대통령의 국가채무 설명과 프랑스 멜랑숑의 국채 탕감 주장을 비교합니다.",
