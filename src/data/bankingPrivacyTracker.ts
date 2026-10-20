@@ -150,6 +150,8 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
           "publisher": { "ko": "뉴스핌", "en": "Newspim" },
           "title": { "ko": "이양수 의원 공개자료: 국민은행 해킹 사고 경영진 보고에 81시간 넘게 걸려", "en": "Parliamentary data show 81-hour delay in KB bank incident escalation" },
           "url": "https://m.newspim.com/news/view/20261019001070",
+          "thumbnailSrc": "/images/news/privacy-ai-banking-2026/hero.webp",
+          "imageKind": "context",
           "publishedAt": "2026-10-19",
           "kind": "article"
         }
