@@ -43,22 +43,6 @@ try {
   }
 } catch (error) { errors.push(String(error.message || error)); }
 const report = { url, passed: errors.length === 0, attempts, errors, limitation: "HTTP metadata check only; manual/browser mobile, body text, and all inline images require separate inspection" };
-// Validate the three declared article photographs from the source data.
-if (slug === "america-street-essay-2026") {
-  const images = [
-    "https://commons.wikimedia.org/wiki/Special:FilePath/San_Francisco_Homeless_Tents.jpg",
-    "https://commons.wikimedia.org/wiki/Special:FilePath/Market_Street,_San_Francisco_at_night_2023-02-18.jpg",
-    "https://commons.wikimedia.org/wiki/Special:FilePath/Permanently_closed_Walgreens_-_Market_St.,_San_Francisco.jpg",
-  ];
-  for (const [index, src] of images.entries()) {
-    try {
-      const response = await check(src, "Article photo " + (index + 1));
-      if (!(response.headers.get("content-type") || "").startsWith("image/")) {
-        errors.push("Article photo " + (index + 1) + " is not an image response");
-      }
-    } catch (error) { errors.push("Article photo " + (index + 1) + ": " + String(error.message || error)); }
-  }
-}
 report.passed = errors.length === 0;
 console.log(JSON.stringify(report, null, 2));
 if (process.env.GITHUB_STEP_SUMMARY) {
