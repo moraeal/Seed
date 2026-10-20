@@ -43,8 +43,8 @@ for (const slug of policy.slugs) {
     const noindex = /<meta\s+[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(body)
       || /<meta\s+[^>]*content=["'][^"']*noindex[^"']*["'][^>]*name=["']robots/i.test(body)
       || /\bnoindex\b/i.test(response.headers.get("x-robots-tag") || "");
-    if (response.status !== 404 && response.status !== 410 && !(noindex && response.ok)) {
-      failures.push(url + " has public HTTP " + response.status + " without noindex");
+    if (response.status !== 404 && response.status !== 410) {
+      failures.push(url + " remains publicly resolvable (HTTP " + response.status + "); withdrawal requires 404 or 410");
     }
     if (response.ok && /<meta\s+[^>]*property=["']og:type["'][^>]*content=["']article/i.test(body)) {
       failures.push(url + " still renders indexable article metadata");
