@@ -27,7 +27,6 @@ export const issue88: ColumnTranslation = {
     }
   ],
   "sections": [
-    {"title":"Three-Part Series: What Is China to Us? — Part One","paragraphs":["This is part one of SEED VOICE’s three-part series on China, industrial security and Korea’s economic freedom.","Part one examines Merkel’s industrial legacy in Germany. Part two considers technology leakage, talent and research security in Korea. Part three asks what political leaders must do to protect security and enterprise freedom.","The series asks how Korea can retain technological, economic and diplomatic autonomy alongside a powerful neighbour."]},
     {
       "title": "Germany’s Automotive Pride Under Pressure",
       "paragraphs": [
@@ -89,6 +88,13 @@ export const issue88: ColumnTranslation = {
       "paragraphs": [
         "Korea also prospered by supplying China’s factories and consumers. As China becomes a competitor in cars, batteries and advanced manufacturing, Korea must ask what it gains from the relationship and what freedoms or capabilities it may lose.",
         "The analysis distinguishes documented industrial developments from assessments of political responsibility."
+      ]
+    },
+    {
+      "title": "Part 2 Preview",
+      "paragraphs": [
+        "What Is China to Us? — The reality of Korea’s industries obscured by pro-China versus anti-China slogans.",
+        "China remains an important export market for Korea, but it also competes with major Korean industries. How should Korea view China as its industrial and political influence grows?"
       ]
     }
   ],
