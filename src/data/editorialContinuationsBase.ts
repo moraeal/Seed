@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:merkel-china-industrial-dependence-2026": {
+    ko: {href:"/columns/security-slogans-alliance-2026",title:"한국의 안보, 누구를 위한 자주인가",relationship:"산업안보와 외교",reason:"독일의 대중국 산업 의존을 살펴본 뒤 한국의 안보 선택과 동맹의 역할을 함께 읽습니다.",listHref:"/columns",listLabel:"칼럼 전체 보기"},
+    en: {href:"/columns/security-slogans-alliance-2026",title:"Security and Alliance Choices",relationship:"INDUSTRY AND SECURITY",reason:"Continue to the broader relationship between security decisions and industrial autonomy.",listHref:"/columns",listLabel:"All columns"}
+  },
   "column:populism-collapse-generational-conflict-2026": {
     ko: {
       href: "/columns/politicians-who-take-public-debt-lightly-2026",
