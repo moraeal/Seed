@@ -1,6 +1,6 @@
 // Browser rendering gate for a local built article. Requires Playwright Chromium.
 // Usage: node scripts/check-column-browser.mjs <slug>
-import { chromium } from "playwright";
+import { chromium } from "file:///tmp/seed-browser-tools/node_modules/playwright/index.mjs";
 import { spawn } from "node:child_process";
 const slug = process.argv[2];
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
