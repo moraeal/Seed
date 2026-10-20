@@ -524,6 +524,32 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "seed-language" && slug === "founding-nation-sovereignty-republic-1948-2026") return language === "ko" ? {
+    href: "/seed-language/state-citizens-trust",
+    title: "국가는 시민의 주인이 아니라 시민이 권한을 맡긴 제도라는 말이다",
+    relationship: "건국 이후 국가의 권한",
+    reason: "건국이 세운 국민주권의 원리를 바탕으로 국가가 누구를 위해 존재하는지 이어 읽습니다.",
+    listHref: "/seed-language", listLabel: "시민언어 전체 보기",
+  } : {
+    href: "/seed-language/state-citizens-trust",
+    title: "The State Is a Trust Delegated by Citizens",
+    relationship: "CITIZENSHIP AND STATE AUTHORITY",
+    reason: "Continue with the civic principle that state power is delegated, not owned by rulers.",
+    listHref: "/seed-language", listLabel: "All Glossary entries",
+  };
+  if (kind === "column" && slug === "america-street-essay-2026") return language === "ko" ? {
+    href: "/seed-language/limited-state-citizen-power-boundaries-2026",
+    title: "제한된 국가 — 시민이 맡긴 권한에는 경계가 있습니다",
+    relationship: "국가와 시민의 안전",
+    reason: "미국 거리에서 느낀 안전의 문제를 국가의 의무와 권한의 경계라는 질문으로 이어 읽습니다.",
+    listHref: "/columns", listLabel: "칼럼 전체 보기",
+  } : {
+    href: "/seed-language/limited-state-citizen-power-boundaries-2026",
+    title: "Limited Government — Entrusted Power Has Boundaries",
+    relationship: "PUBLIC SAFETY AND CIVIC LIBERTY",
+    reason: "Explore how public safety relates to the duties and limits of the state.",
+    listHref: "/columns", listLabel: "All Columns",
+  };
   if (kind === "briefing" && slug === "why-protests-spread-across-europe-october-2026") return language === "ko" ? {
     href: "/monitoring/france-protests-fiscal-crisis-2026",
     title: "프랑스는 왜 폭발했나 — 복지의 약속, 국가의 빚, 거리의 분노",
