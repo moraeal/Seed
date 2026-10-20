@@ -1,0 +1,48 @@
+name: Publication safeguards CI
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/article-integrity.mjs'
+      - 'scripts/verify-article-assets.mjs'
+      - 'scripts/verify-changed-columns.mjs'
+      - 'scripts/preflight-column.mjs'
+      - 'scripts/verify-column-publication.mjs'
+      - '.github/workflows/deploy.yml'
+      - '.github/workflows/publication-guard-check.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  guard-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Validate safeguard JavaScript syntax
+        run: |
+          node --check scripts/article-integrity.mjs
+          node --check scripts/verify-article-assets.mjs
+          node --check scripts/verify-changed-columns.mjs
+          node --check scripts/preflight-column.mjs
+          node --check scripts/verify-column-publication.mjs
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Install image converters and Korean fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick librsvg2-bin fonts-noto-cjk
+      - name: Build complete site
+        run: pnpm run build
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_TURNSTILE_SITE_KEY: ${{ secrets.VITE_TURNSTILE_SITE_KEY }}
