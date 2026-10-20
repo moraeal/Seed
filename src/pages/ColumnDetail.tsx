@@ -19,7 +19,25 @@ import { useLanguage } from "../i18n";
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 const imageKey = (src: string) => imageSrc(src).replace(/#.*$/, "").replace(/\?.*$/, "");
 
-export default function ColumnDetail() {
+export default const seoRelatedLinks: Record<string, { path: string; label: string }[]> = {
+  "politicians-who-take-public-debt-lightly-2026": [
+    { path: "/columns/atr-taxpayer-movement-05-sustainable-budgets", label: "정부 예산 낭비와 쪽지예산, 누가 감시하나" },
+    { path: "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026", label: "프랑스 재정위기가 한국에 주는 경고" },
+    { path: "/civic-campaign", label: "No More Tax 증세반대 시민운동" },
+  ],
+  "atr-taxpayer-movement-05-sustainable-budgets": [
+    { path: "/columns/politicians-who-take-public-debt-lightly-2026", label: "국가부채와 미래세대의 부담" },
+    { path: "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026", label: "프랑스의 재정위기와 증세 논쟁" },
+    { path: "/civic-campaign", label: "No More Tax 시민 서명·세금감시" },
+  ],
+  "france-fiscal-crisis-korea-spending-no-more-tax-2026": [
+    { path: "/columns/politicians-who-take-public-debt-lightly-2026", label: "국가부채는 누가 갚는가" },
+    { path: "/columns/atr-taxpayer-movement-05-sustainable-budgets", label: "지속가능한 예산운동과 쪽지예산" },
+    { path: "/civic-campaign", label: "No More Tax 시민운동 소개" },
+  ],
+};
+
+function ColumnDetail() {
   const { slug = "" } = useParams();
   const [searchParams] = useSearchParams();
   const { language } = useLanguage();
@@ -147,42 +165,10 @@ export default function ColumnDetail() {
           {column.embeddedFigures?.filter((figure) => figure.afterSection === index).map((figure) => <ColumnEmbeddedFigure key={`${figure.kind}-${index}`} figure={figure} ko={ko} />)}
         </section>{column.referenceVideo?.afterSection === index && referenceVideoSection}</Fragment>)}
         {column.referenceVideo && column.referenceVideo.afterSection === undefined && referenceVideoSection}
-        {({
-          "politicians-who-take-public-debt-lightly-2026": [
-            { path: "/columns/atr-taxpayer-movement-05-sustainable-budgets", label: "정부 예산 낭비와 쪽지예산, 누가 감시하나" },
-            { path: "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026", label: "프랑스 재정위기가 한국에 주는 경고" },
-            { path: "/civic-campaign", label: "No More Tax 증세반대 시민운동" },
-          ],
-          "atr-taxpayer-movement-05-sustainable-budgets": [
-            { path: "/columns/politicians-who-take-public-debt-lightly-2026", label: "국가부채와 미래세대의 부담" },
-            { path: "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026", label: "프랑스의 재정위기와 증세 논쟁" },
-            { path: "/civic-campaign", label: "No More Tax 시민 서명·세금감시" },
-          ],
-          "france-fiscal-crisis-korea-spending-no-more-tax-2026": [
-            { path: "/columns/politicians-who-take-public-debt-lightly-2026", label: "국가부채는 누가 갚는가" },
-            { path: "/columns/atr-taxpayer-movement-05-sustainable-budgets", label: "지속가능한 예산운동과 쪽지예산" },
-            { path: "/civic-campaign", label: "No More Tax 시민운동 소개" },
-          ],
-        } as Record<string, { path: string; label: string }[]>)[column.slug]?.length > 0 && <nav aria-label="관련 기사와 시민운동" className="my-10 border-y border-green-deep/15 py-6">
+        {seoRelatedLinks[column.slug]?.length > 0 && <nav aria-label="관련 기사와 시민운동" className="my-10 border-y border-green-deep/15 py-6">
           <h2 className="mb-3 text-lg font-extrabold text-navy">관련 기사 더 읽기</h2>
           <ul className="space-y-2">
-            {({
-              "politicians-who-take-public-debt-lightly-2026": [
-                { path: "/columns/atr-taxpayer-movement-05-sustainable-budgets", label: "정부 예산 낭비와 쪽지예산, 누가 감시하나" },
-                { path: "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026", label: "프랑스 재정위기가 한국에 주는 경고" },
-                { path: "/civic-campaign", label: "No More Tax 증세반대 시민운동" },
-              ],
-              "atr-taxpayer-movement-05-sustainable-budgets": [
-                { path: "/columns/politicians-who-take-public-debt-lightly-2026", label: "국가부채와 미래세대의 부담" },
-                { path: "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026", label: "프랑스의 재정위기와 증세 논쟁" },
-                { path: "/civic-campaign", label: "No More Tax 시민 서명·세금감시" },
-              ],
-              "france-fiscal-crisis-korea-spending-no-more-tax-2026": [
-                { path: "/columns/politicians-who-take-public-debt-lightly-2026", label: "국가부채는 누가 갚는가" },
-                { path: "/columns/atr-taxpayer-movement-05-sustainable-budgets", label: "지속가능한 예산운동과 쪽지예산" },
-                { path: "/civic-campaign", label: "No More Tax 시민운동 소개" },
-              ],
-            } as Record<string, { path: string; label: string }[]>)[column.slug]?.map((related) => <li key={related.path}><Link to={related.path} className="font-semibold text-green-deep underline underline-offset-4 hover:text-navy">{related.label}</Link></li>)}
+            {seoRelatedLinks[column.slug].map((related) => <li key={related.path}><Link to={related.path} className="font-semibold text-green-deep underline underline-offset-4 hover:text-navy">{related.label}</Link></li>)}
           </ul>
         </nav>}
         <ArticleSources citations={citations} note={column.sourceNote}/>
