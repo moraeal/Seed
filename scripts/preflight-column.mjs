@@ -40,7 +40,7 @@ try {
       if (!img.alt?.trim() || !img.credit?.trim()) errors.push("Image missing alt/credit: " + img.src);
       if (/^https?:/.test(img.src)) warnings.push("External image requires HTTP/render verification: " + img.src);
       else {
-        const local = path.join(process.cwd(), "public", img.src.replace(/^\\//, ""));
+        const local = path.join(process.cwd(), "public", img.src.replace(/^\//, ""));
         try { await access(local); } catch { errors.push("Local image missing: " + img.src); }
       }
     }
