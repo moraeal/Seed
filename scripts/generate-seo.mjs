@@ -187,7 +187,29 @@ function articleBody(route) {
   const columnMatch = route.path.match(/^\/columns\/([^/]+)$/);
   if (columnMatch) {
     const item = columns.find((entry) => entry.slug === columnMatch[1]);
-    if (item) return item.sections.map((section) => `<section><h2>${escapeHtml(section.title)}</h2>${paragraphList(section.paragraphs)}${bulletList(section.quote)}</section>`).join("\n");
+    if (item) {
+      const related = {
+        "politicians-who-take-public-debt-lightly-2026": [
+          ["/columns/atr-taxpayer-movement-05-sustainable-budgets", "정부 예산 낭비와 쪽지예산"],
+          ["/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026", "프랑스 재정위기의 교훈"],
+          ["/civic-campaign", "No More Tax 시민 서명과 세금감시"],
+        ],
+        "atr-taxpayer-movement-05-sustainable-budgets": [
+          ["/columns/politicians-who-take-public-debt-lightly-2026", "국가부채와 미래세대의 부담"],
+          ["/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026", "프랑스 재정위기와 예산"],
+          ["/civic-campaign", "No More Tax 시민운동"],
+        ],
+        "france-fiscal-crisis-korea-spending-no-more-tax-2026": [
+          ["/columns/politicians-who-take-public-debt-lightly-2026", "국가부채 문제 분석"],
+          ["/columns/atr-taxpayer-movement-05-sustainable-budgets", "지속가능한 예산운동"],
+          ["/civic-campaign", "No More Tax 시민운동 소개"],
+        ],
+      }[item.slug] ?? [];
+      return [
+        ...item.sections.map((section) => `<section><h2>${escapeHtml(section.title)}</h2>${paragraphList(section.paragraphs)}${bulletList(section.quote)}</section>`),
+        related.length ? `<nav aria-label="관련 기사 더 읽기"><h2>관련 기사 더 읽기</h2><ul>${related.map(([href, label]) => `<li><a href="${canonicalUrl(href)}">${escapeHtml(label)}</a></li>`).join("")}</ul></nav>` : "",
+      ].join("\n");
+    }
   }
 
   const watchMatch = route.path.match(/^\/monitoring\/([^/]+)$/);
