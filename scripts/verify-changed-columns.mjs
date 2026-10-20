@@ -1,7 +1,7 @@
 // Verify public routes for changed article modules, not a fixed withdrawn essay.
 // Usage: node scripts/verify-changed-columns.mjs <before-sha> <after-sha>
 import { execFileSync, spawnSync } from "node:child_process";
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync } from "node:fs";
 const [before, after = "HEAD"] = process.argv.slice(2);
 if (!before || !/^[0-9a-f]{40}$/.test(before)) {
   console.error("Missing valid push base SHA; cannot determine changed articles.");
@@ -14,7 +14,6 @@ const modules = files.filter((p) => /^src\/data\/columns\/[^/]+\.tsx?$/.test(p))
 const unsupported = files.filter(p =>
   p === "src/data/columnsLegacy.ts" ||
   p === "src/data/columns.ts" ||
-  p.startsWith("src/data/contentTranslations/columns/") ||
   p.startsWith("src/data/civicSections") ||
   p.startsWith("src/data/editorialContinuations")
 );
@@ -23,6 +22,26 @@ if (unsupported.length) {
   process.exitCode = 1;
 }
 const slugs = new Set();
+// Resolve changed issueNN.ts translations to their article slugs.
+const changedIssues = files.filter(p => /^src\/data\/contentTranslations\/columns\/issue\d+\.ts$/.test(p))
+  .map(p => Number(p.match(/issue(\d+)\.ts$/)[1]));
+if (changedIssues.length) {
+  const folder = "src/data/columns";
+  const sources = readdirSync(folder).filter(p => /\.tsx?$/.test(p)).map(p => folder + "/" + p);
+  sources.push("src/data/columnsLegacy.ts");
+  for (const issue of changedIssues) {
+    let found = 0;
+    for (const file of sources) {
+      const source = readFileSync(file, "utf8");
+      const pieces = [...source.matchAll(/(?:["']?issue["']?)\s*:\s*(\d+)/g)];
+      if (!pieces.some(m => Number(m[1]) === issue)) continue;
+      const sl = [...source.matchAll(/(?:["']?slug["']?)\s*:\s*["']([a-z0-9]+(?:-[a-z0-9]+)*)["']/g)];
+      if (sl.length === 1) { slugs.add(sl[0][1]); found++; }
+    }
+    if (found !== 1) { console.error("Cannot uniquely map translation issue", issue, "to a public article"); process.exitCode = 1; }
+  }
+}
+
 for (const path of modules) {
   if (!existsSync(path)) continue; // Removed article is not a published route.
   const source = readFileSync(path, "utf8");
