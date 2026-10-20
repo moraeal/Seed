@@ -163,8 +163,14 @@ async function metadataFor(slug, file, today) {
 }
 const IGNORED = /(한겨레|오마이뉴스|문화방송|(^|\s|-)MBC(\s|$)|ohmynews|hani\.co\.kr|Calgary Roughnecks|바카라|토토|카지노|룰렛|슬롯머신|도박|스포츠베팅)/i;
 const safe = (s) => String(s).replace(/\|/g, "\\|").replace(/[\r\n]/g, " ").replace(/\]/g, "\\]").slice(0, 160);
-async function rssLeads(query, slug) {
-  const url = "https://news.google.com/rss/search?q=" + encodeURIComponent(query + " when:3d") + "&hl=ko&gl=KR&ceid=KR:ko";
+function reviewLookbackDays(lastEvent, today) {
+  // A three-day-only scan can miss an old unresolved case's procedural progress.
+  // Widen the discovery window for stale trackers, capped to avoid noise.
+  if (lastEvent === "불명") return 7;
+  return Math.min(30, Math.max(3, ageDays(lastEvent, today) + 3));
+}
+async function rssLeads(query, slug, lookbackDays) {
+  const url = "https://news.google.com/rss/search?q=" + encodeURIComponent(query + " when:" + lookbackDays + "d") + "&hl=ko&gl=KR&ceid=KR:ko";
   const res = await fetch(url, { headers: { "User-Agent": "SeedVoiceTrackerReview/1.0 (+https://seedvoice.kr)" }, signal: AbortSignal.timeout(15000) });
   if (!res.ok) throw Error("HTTP " + res.status);
   const xml = await res.text();
@@ -172,8 +178,8 @@ async function rssLeads(query, slug) {
   const now = Date.now();
   return parseRss(xml).filter((x) => {
     const d = x.published.getTime();
-    return d > now - 3 * 86400000 && d <= now + 3600000 && !IGNORED.test(x.source) && !IGNORED.test(x.title) && TOPIC.get(slug)?.test(x.title);
-  }).sort((a, b) => b.published - a.published).slice(0, 4);
+    return d > now - lookbackDays * 86400000 && d <= now + 3600000 && !IGNORED.test(x.source) && !IGNORED.test(x.title) && TOPIC.get(slug)?.test(x.title);
+  }).sort((a, b) => b.published - a.published).slice(0, lookbackDays >= 10 ? 8 : 4);
 }
 async function main() {
   if (process.argv.includes("--self-test")) {
@@ -190,6 +196,9 @@ async function main() {
     const france = await metadataFor("france-protests-fiscal-crisis-2026", "franceProtestsTracker.ts", KST_DAY());
     assert.ok(france.lastEvent <= france.modifiedAt);
     assert.equal(new Set(TRACKERS.map(x => x[0])).size, TRACKERS.length);
+    assert.equal(reviewLookbackDays("2026-10-19", "2026-10-20"), 4);
+    assert.equal(reviewLookbackDays("2026-10-02", "2026-10-20"), 21);
+    assert.equal(reviewLookbackDays("2026-09-01", "2026-10-20"), 30);
     assert.equal(activeMilestones("2026-10-20").length, 3);
     assert.equal(activeMilestones("2026-11-27").length, 0);
     assert.equal(MILESTONES.every(m => TRACKERS.some(row => row[0] === m.slug)), true);
@@ -203,20 +212,21 @@ async function main() {
       let modifiedAt = "불명", lastEvent = "불명", leads = [], errors = [];
       try { ({ modifiedAt, lastEvent } = await metadataFor(slug, file, today)); }
       catch (e) { errors.push("파일: " + e.message); }
-      try { leads = await rssLeads(query, slug); } catch (e) { errors.push("RSS: " + e.message); }
-      return { slug, label, modifiedAt, lastEvent, leads, errors };
+      const lookbackDays = reviewLookbackDays(lastEvent, today);
+      try { leads = await rssLeads(query, slug, lookbackDays); } catch (e) { errors.push("RSS: " + e.message); }
+      return { slug, label, modifiedAt, lastEvent, lookbackDays, leads, errors };
     }));
     results.push(...batch);
   }
   const lines = [
     "# 씨앗의 소리 뉴스트래커 일일 점검 — " + today, "",
     "> **이 문서는 자동으로 수집된 뉴스 후보 목록입니다. 제목만으로 사건 발생이나 사실관계를 확정하지 않습니다. 검증과 편집 승인 전에는 기존 기사를 자동 변경하거나 게시하지 않습니다.**", "",
-    "| 사건 | 마지막 사건 변화일 | 기사 수정일 | 변화 후 경과 | 뉴스 후보 | 상태 |", "|---|---|---|---:|---:|---|",
-    ...results.map((r) => "| [" + r.label + "](https://seedvoice.kr/monitoring/" + r.slug + ") | " + r.lastEvent + " | " + r.modifiedAt + " | " + (r.lastEvent === "불명" ? "?" : ageDays(r.lastEvent, today) + "일") + " | " + r.leads.length + " | " + (r.errors.length ? "수집/메타데이터 확인 필요" : ageDays(r.lastEvent, today) >= 14 ? "장기 미갱신·추가 확인" : "수집 완료") + " |"),
+    "| 사건 | 마지막 사건 변화일 | 기사 수정일 | 경과 | 보도 검색 범위 | 후보 | 상태 |", "|---|---|---|---:|---:|---:|---|",
+    ...results.map((r) => "| [" + r.label + "](https://seedvoice.kr/monitoring/" + r.slug + ") | " + r.lastEvent + " | " + r.modifiedAt + " | " + (r.lastEvent === "불명" ? "?" : ageDays(r.lastEvent, today) + "일") + " | 최근 " + r.lookbackDays + "일 | " + r.leads.length + " | " + (r.errors.length ? "수집/메타데이터 확인 필요" : ageDays(r.lastEvent, today) >= 14 ? "장기 미갱신·추가 확인" : "수집 완료") + " |"),
     "", "## 예정된 후속 확인 일정 (자동 게시 금지)", "",
     "아래 일정은 **예정 또는 공지된 검증 시점**이며 결과가 발생했다고 단정하는 기록이 아닙니다. 실제 개최·결과·연기 여부를 별도로 확인합니다.", "",
     ...activeMilestones(today).map(m => "- **" + m.date + "** — [" + m.label + "](https://seedvoice.kr/monitoring/" + m.slug + ") · [일정의 근거](" + m.source + ")"),
-    "", "## 사건별 검토 후보 (최근 3일)", "",
+    "", "## 사건별 검토 후보 (각 사건별 검색 범위 적용)", "",
   ];
   for (const r of results) {
     lines.push("### " + r.label, "");
