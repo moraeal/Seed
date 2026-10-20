@@ -71,8 +71,8 @@ jobs:
         run: |
           node scripts/verify-article-assets.mjs politicians-who-take-public-debt-lightly-2026
           node scripts/preflight-column.mjs politicians-who-take-public-debt-lightly-2026
-      - name: Build complete site
-        run: pnpm run build
+      - name: Build complete site (bounded)
+        run: timeout --signal=TERM --kill-after=30s 18m pnpm run build
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
