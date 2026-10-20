@@ -1,2 +1,83 @@
 import type { ColumnTranslation } from "../types";
-export const issue87: ColumnTranslation = {"title":"A Warning From America's Streets","subtitle":"Who Pays the Price of Well-Intentioned Policy?","author":"Small Seed","summary":"A first-person essay on unsettling encounters during a business trip to San Francisco and the questions they raised about street safety, retail theft, homelessness spending and public accountability.","heroImage":{"alt":"Tents under a freeway in San Francisco, photographed in 2017","caption":"San Francisco encampment in 2017, not a photograph of the author's visit.","credit":"Shannon Badiee · Wikimedia Commons · CC BY-SA 2.0"},"inlineImage":{"alt":"Market Street in San Francisco at night, photographed in 2023","caption":"Market Street at night in 2023, not the scene of the author's encounter.","credit":"The wub · Wikimedia Commons"},"additionalImages":[{"alt":"San Francisco's Market Street after dark","caption":"A separately photographed 2023 night street scene.","credit":"The wub · Wikimedia Commons"},{"alt":"A closed Walgreens storefront in San Francisco","caption":"A separately photographed closed store; not identified as one of the five closures announced in 2021.","credit":"9yz · Wikimedia Commons · CC BY-SA 4.0"}],"sections":[{"title":"A Young Man Mimicked Shooting at Me","paragraphs":["I was in San Francisco on business. About thirty metres away, several young men were gathered at the mouth of an alley. I happened to make eye contact with one of them. He shaped his hand into a gun and pretended to fire at me. Fear struck instantly.","Watching them exchange something, I thought I might be witnessing drug dealing. I could not verify what was being exchanged. Yet the sense of threat in an ordinary city street stayed with me."]},{"title":"The Camera and Tripod Disappeared at the Hotel","paragraphs":["As our group checked out of the hotel, our camera and tripod vanished in a moment despite the number of people around. We never established who took them or how they disappeared.","A street encounter and an unexplained loss in a hotel raised the same personal question: how secure is ordinary life in a celebrated global city?"]},{"title":"Another Face of a Prosperous City","paragraphs":["I also remember tents on sidewalks, the smell of cannabis and people who seemed impaired. I cannot know their individual circumstances.","In October 2026, reports on Marshall Elementary School described discarded syringes and open drug use along routes used by pupils. For a visitor, walking elsewhere is possible. For families living there, the journey repeats daily.[1][2]"]},{"title":"When Tolerance Meets the Right to Safety","paragraphs":["On-the-ground reporting from the Tenderloin documents open drug use and difficult pedestrian conditions.[3] People living with addiction need treatment, just as other residents need safe sidewalks.","California's 2014 Proposition 47 reduced penalties for certain offences but did not legalize shoplifting. Subsequent research identified increases in some property crimes while underscoring the complexities of causation and enforcement.[4]"]},{"title":"When Shops Close, Neighbours Pay","paragraphs":["In 2021 Walgreens cited retail theft when announcing five San Francisco store closures. Other business factors were also raised. Losing a neighbourhood pharmacy can nonetheless make daily life harder.[5]","Public policy must be judged not only by its intentions but by what happens to shopkeepers, workers and residents."]},{"title":"What Did $24 Billion Deliver?","paragraphs":["A 2024 California audit reviewed a period when roughly $24 billion had been allocated to homelessness and housing initiatives. It found significant weaknesses in the availability of consistent cost and outcome data.[6]","That is not evidence that all the money was wasted. It is a reason to demand transparent results before asking taxpayers for more.","Los Angeles County's 2026 homelessness count estimated roughly 73,000 unhoused people.[7] Moving someone out of sight is not the same as helping them reach stable housing and recovery."]},{"title":"Thinking About Korea From an American Street","paragraphs":["The journey left me thinking about my own country. Public programmes may begin with worthy goals, but their costs fall on citizens and businesses whose daily freedoms and security also deserve consideration.","Government is responsible both for helping people in hardship and for protecting life and property. Large budgets and noble slogans are not substitutes for demonstrable results.","I still remember the young man pretending to shoot, and the missing camera equipment. Good intentions do not guarantee good outcomes. A worthy cause does not erase responsibility for failure."]}],"sourceNote":"First-person incidents are the author's recollections. Suspected drug dealing and the cause of the missing equipment have not been independently verified. All three photographs are documentary images taken at other times.","sources":["San Francisco Chronicle, 1 Oct 2026","San Francisco Chronicle, 9 Oct 2026","Beyond Chron, Tenderloin field account","PPIC, Proposition 47 analysis","KQED, Walgreens closures","California State Auditor, 2024","LAHSA, 2026 homeless count"]};
+export const issue87: ColumnTranslation = {
+  "title": "A Warning From America's Streets",
+  "subtitle": "Who Pays the Price of Well-Intentioned Policy?",
+  "author": "Small Seed",
+  "summary": "A first-person essay on unsettling encounters during a business trip to San Francisco and the questions they raised about street safety, retail theft, homelessness spending and public accountability.",
+  "heroImage": {
+    "alt": "Tents under a freeway in San Francisco, photographed in 2017",
+    "caption": "San Francisco encampment in 2017, not a photograph of the author's visit.",
+    "credit": "Shannon Badiee · Wikimedia Commons · CC BY-SA 2.0"
+  },
+  "inlineImage": {
+    "alt": "Market Street in San Francisco at night, photographed in 2023",
+    "caption": "Market Street at night in 2023, not the scene of the author's encounter.",
+    "credit": "The wub · Wikimedia Commons"
+  },
+  "additionalImages": [
+    {
+      "alt": "San Francisco's Market Street after dark",
+      "caption": "A separately photographed 2023 night street scene.",
+      "credit": "The wub · Wikimedia Commons"
+    },
+    {
+      "alt": "A closed Walgreens storefront in San Francisco",
+      "caption": "A separately photographed closed store; not identified as one of the five closures announced in 2021.",
+      "credit": "9yz · Wikimedia Commons · CC BY-SA 4.0"
+    }
+  ],
+  "sections": [
+    {
+      "title": "A Young Man Mimicked Shooting at Me",
+      "paragraphs": [
+        "I was in San Francisco on business. About thirty metres away, several young men were gathered at the mouth of an alley. I happened to make eye contact with one of them. He shaped his hand into a gun and pretended to fire at me. Fear struck instantly.",
+        "Watching them exchange something, I thought I might be witnessing drug dealing. I could not verify what was being exchanged. Yet the sense of threat in an ordinary city street stayed with me."
+      ]
+    },
+    {
+      "title": "The Camera and Tripod Disappeared at the Hotel",
+      "paragraphs": [
+        "As our group checked out of the hotel, our camera and tripod vanished in a moment despite the number of people around. We never established who took them or how they disappeared.",
+        "A street encounter and an unexplained loss in a hotel raised the same personal question: how secure is ordinary life in a celebrated global city?"
+      ]
+    },
+    {
+      "title": "Another Face of a Prosperous City",
+      "paragraphs": [
+        "I also remember tents on sidewalks, the smell of cannabis and people who seemed impaired. I cannot know their individual circumstances.",
+        "In October 2026, reports on Marshall Elementary School described discarded syringes and open drug use along routes used by pupils. For a visitor, walking elsewhere is possible. For families living there, the journey repeats daily.[1][2]"
+      ]
+    },
+    {
+      "title": "When Tolerance Meets the Right to Safety",
+      "paragraphs": [
+        "On-the-ground reporting from the Tenderloin documents open drug use and difficult pedestrian conditions.[3] People living with addiction need treatment, just as other residents need safe sidewalks.",
+        "California's 2014 Proposition 47 reduced penalties for certain offences but did not legalize shoplifting. Subsequent research identified increases in some property crimes while underscoring the complexities of causation and enforcement.[4]"
+      ]
+    },
+    {
+      "title": "When Shops Close, Neighbours Pay",
+      "paragraphs": [
+        "In 2021 Walgreens cited retail theft when announcing five San Francisco store closures. Other business factors were also raised. Losing a neighbourhood pharmacy can nonetheless make daily life harder.[5]",
+        "Public policy must be judged not only by its intentions but by what happens to shopkeepers, workers and residents."
+      ]
+    },
+    {
+      "title": "What Did $24 Billion Deliver?",
+      "paragraphs": [
+        "A 2024 California audit reviewed a period when roughly $24 billion had been allocated to homelessness and housing initiatives. It found significant weaknesses in the availability of consistent cost and outcome data.[6]",
+        "That is not evidence that all the money was wasted. It is a reason to demand transparent results before asking taxpayers for more.",
+        "Los Angeles County's 2026 homelessness count estimated roughly 73,000 unhoused people.[7] Moving someone out of sight is not the same as helping them reach stable housing and recovery."
+      ]
+    },
+    {
+      "title": "Thinking About Korea From an American Street",
+      "paragraphs": [
+        "The journey left me thinking about my own country. Public programmes may begin with worthy goals, but their costs fall on citizens and businesses whose daily freedoms and security also deserve consideration.",
+        "Government is responsible both for helping people in hardship and for protecting life and property. Large budgets and noble slogans are not substitutes for demonstrable results.",
+        "I still remember the young man pretending to shoot, and the missing camera equipment. Good intentions do not guarantee good outcomes. A worthy cause does not erase responsibility for failure."
+      ]
+    }
+  ],
+  "sourceNote": "First-person incidents are the author's recollections. Suspected drug dealing and the cause of the missing equipment have not been independently verified. All three photographs are documentary images taken at other times."
+};
