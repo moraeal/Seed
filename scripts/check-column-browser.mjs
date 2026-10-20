@@ -3,6 +3,7 @@
 import { chromium } from "file:///tmp/seed-browser-tools/node_modules/playwright/index.mjs";
 import { spawn } from "node:child_process";
 const slug = process.argv[2];
+const isHome = slug === "home";
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
 const server = spawn("pnpm", ["exec","vite","preview","--host","127.0.0.1","--port","4179","--strictPort"], { stdio:"pipe" });
 const base = "http://127.0.0.1:4179";
@@ -17,7 +18,7 @@ try {
     const page=await browser.newPage({viewport,deviceScaleFactor:1});
     const failures=[];
     page.on("pageerror",e=>failures.push("JS: "+e.message));
-    await page.goto(base+"/columns/"+slug+"/",{waitUntil:"networkidle",timeout:45000});
+    await page.goto(base+(isHome ? "/" : "/columns/"+slug+"/"),{waitUntil:"networkidle",timeout:45000});
     await page.locator("body").waitFor();
     await page.evaluate(async()=>{for(const img of document.images){img.loading="eager";}await Promise.all(Array.from(document.images).map(img=>img.decode().catch(()=>{})));});
     const info=await page.evaluate(()=>({
@@ -25,6 +26,8 @@ try {
       overflow:document.documentElement.scrollWidth>innerWidth+2,
       text:document.body.innerText
     }));
+    if(isHome && info.text.trim().length<100) failures.push("Homepage content not rendered");
+    if(!isHome && info.text.trim().length<500) failures.push("Article body not rendered");
     if(!info.text.includes("국가 빚") && slug==="politicians-who-take-public-debt-lightly-2026") failures.push("Missing article title");
     if(info.images.some(i=>!i.ok)) failures.push("Broken images: "+info.images.filter(i=>!i.ok).map(i=>i.src).join(", "));
     if(info.images.length<2)failures.push("Too few visible images");
