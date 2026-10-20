@@ -91,6 +91,18 @@ jobs:
           AFTER_SHA: ${{ github.sha }}
         run: node scripts/verify-changed-columns.mjs "$BEFORE_SHA" "$AFTER_SHA"
 
+  # Independent live-site check after every deployment, including hourly refreshes.
+  verify-withdrawn:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify withdrawn articles are not live or indexed
+        run: node scripts/verify-live-withdrawn.mjs
+
   # IndexNow is a notification channel, not an indexing guarantee.
   # Only run after successful production deployment, not hourly refreshes.
   notify-indexnow:
