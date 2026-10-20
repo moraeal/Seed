@@ -82,7 +82,7 @@ jobs:
         with:
           node-version: 22
       - name: Check public column route and social image
-        run: node scripts/verify-live-column.mjs america-street-essay-2026
+        run: node scripts/verify-latest-column.mjs
 
   # IndexNow is a notification channel, not an indexing guarantee.
   # Only run after successful production deployment, not hourly refreshes.
