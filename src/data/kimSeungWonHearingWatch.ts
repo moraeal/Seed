@@ -9,19 +9,19 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The appointment ended in withdrawal. Where do the remaining inquiries stand?",
   },
   summary: {
-  "ko": "김승원 전 법무부 장관 후보자의 사퇴 이후, 제넨셀 창업자의 항소심 판결에서 승인 청탁 경위가 다뤄졌고 도당 회계 의혹 고발장이 중수청에 접수됐습니다. 이 기록은 관련 피고인의 판결과 김 의원 본인의 형사책임, 고발 접수와 수사 결과를 나눠 추적합니다.",
-  "en": "After Kim Seung-won’s withdrawal as justice minister nominee, the Genencell founder’s appeal judgment addressed the approval request, and a party-accounting complaint was filed with the new investigation agency. This record separately tracks the related defendant’s judgment, Kim’s own criminal liability, receipt of complaints and investigative findings."
+  "ko": "김승원 전 법무부 장관 후보자의 사퇴 이후 제넨셀 창업자에 대한 항소심 판단과 경기도당 회계 의혹 고발이 이어졌습니다. 10월 12일 시민단체가 김 의원 등 7명을 추가 고발했고 수원중수청은 사건을 반부패수사1과에 배당해 고발 내용을 검토하기 시작했습니다. 배당과 수사 결과·기소·유죄 확정은 서로 다른 단계입니다.",
+  "en": "After Kim Seung-won withdrew as justice minister nominee, an appeal ruling addressed a Genencell founder’s request for clinical-approval assistance and complaints alleged party-accounting irregularities. On October 12 a civic group filed an additional complaint against Kim and six other party officials, and Suwon investigators assigned the complaint to their First Anti-Corruption Division for review. Assignment is not a finding, indictment or conviction."
 },
   status: {
-  "ko": "제넨셀 창업자 항소심 판단·도당 회계 의혹 신규 고발 추적",
-  "en": "Genencell founder’s appeal ruling · New party-accounting complaint tracked"
+  "ko": "10월 12일 회계 의혹 추가 고발·반부패수사1과 배당 확인",
+  "en": "October 12 additional complaint · Case assigned to anticorruption unit"
 },
   openedAt: "2026-08-31",
   publishedAt: "2026-09-14",
-  updatedAt: "2026-10-06",
+  updatedAt: "2026-10-12",
   nextCheck: {
-  "ko": "제넨셀 창업자 항소심 판결 원문과 상고·확정 여부, 김 의원 관련 별도 수사 결과와 당사자 반박, 10월 2일 수원지방중수청에 접수된 도당 회계 의혹 고발의 배당·수사 착수, 기존 선관위·경찰 조사와의 관계",
-  "en": "The founder’s full appeal judgment and any further appeal or finality; findings in separate inquiries involving Kim and responses from the parties; assignment and investigation of the October 2 Suwon complaint; and its relationship to election-commission and police inquiries"
+  "ko": "제넨셀 창업자 항소심 판결 원문·상고·확정 여부와 11월 12일 예정 공판의 실제 진행, 10월 2일 최초 고발과 12일 사세행 추가 고발의 병합·배당 관계, 수원중수청 반부패수사1과의 고발장 검토 이후 소환·압수수색·송치·기소 여부, 김 의원 측 반론 및 기존 선관위·경찰 조사와의 관계",
+  "en": "The founder’s full appeal ruling and whether it became final; the scheduled November 12 hearing; whether the October 2 and 12 complaints were consolidated; any evidence-gathering, summons or charging decisions after assignment to the First Anti-Corruption Division; the accused parties’ responses; and links to election-commission and police inquiries"
 },
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
@@ -36,14 +36,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     credit: { ko: "AI 이미지", en: "AI-assisted image by SEED VOICE" },
   },
   sourceBasis: {
-    ko: "국회 청문회 일정과 의결 기록, 후보자와 여야의 공개 발언, 식품의약품안전처 자료를 인용한 보도를 날짜별로 대조했습니다. 의혹 제기와 후보자의 반박은 확인된 사실과 분리해 기록했습니다.",
-    en: "This timeline cross-checks National Assembly schedules and decisions, public statements from the nominee and both parties, and reporting based on Ministry of Food and Drug Safety records. Allegations and the nominee's rebuttals are kept separate from verified facts.",
+    ko: "국회 청문회·법원 판결 보도·후보자와 여야의 공개 발언·식약처 관련 자료와 10월 12일 연합뉴스·뉴시스·뉴스타파 후속 보도를 날짜별로 대조했습니다. 최초 고발과 추가 고발, 수사부서 배당과 혐의 입증·기소·확정판결을 별개로 취급합니다. 의혹을 사실로 단정하지 않습니다.",
+    en: "The timeline compares parliamentary records, statements, reported court findings and regulatory documents with October 12 Yonhap, Newsis and Newstapa reports. The first complaint, additional filing and unit assignment are distinguished from proof of misconduct, indictment or conviction. Allegations are not presented as established facts.",
   },
   displayMode: "layered",
   snapshot: {
     conclusion: {
-  "ko": "뉴시스는 중수청 출범 첫날 김승원 의원의 경기도당위원장 시절 회계부정 의혹 고발장이 수원지방중수청에 접수됐다고 보도했습니다. 고발 접수라는 새 절차를 기록하며, 기존 선관위 조사·경찰 사건과의 관계, 배당과 실제 수사 착수는 계속 확인합니다.",
-  "en": "Newsis reported that a complaint alleging accounting irregularities during Kim’s tenure as Gyeonggi provincial-party chair was filed with the Suwon investigation agency on its opening day. The new procedural fact is receipt of the complaint. Its relationship to election-commission and police inquiries, assignment and any formal investigation remain to be established."
+  "ko": "10월 2일 시민 고발에 이어 12일 시민단체 사세행이 김승원 의원 등 경기도당 관계자 7명을 추가 고발했습니다. 수원중수청은 사건을 반부패수사1과에 배당해 내용을 검토하기 시작했습니다. 고발인의 회계부정 주장은 아직 검증된 위법 사실이 아니며, 압수수색·기소·재판 결과는 별도 확인 대상입니다.",
+  "en": "Following an October 2 citizen complaint, civic group Sasaehaeng filed a further complaint on October 12 against Kim Seung-won and six other provincial-party figures. Suwon investigators assigned the matter to the First Anti-Corruption Division for review. The allegations are not established wrongdoing; coercive investigation, indictment and any court outcome remain separate questions."
 },
     keyFacts: [
   {
@@ -67,6 +67,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     ],
   },
   keyChanges: [
+    {
+      date: "2026-10-12",
+      text: {
+        ko: "사법정의 바로세우기 시민행동(사세행)이 김승원 의원 등 경기도당 관계자 7명을 정치자금법 위반·배임·횡령 등 혐의로 추가 고발했습니다. 수원중수청은 사건을 반부패수사1과에 배당해 고발 내용을 검토하기 시작했습니다. 배당은 기소 또는 유죄 판단이 아닙니다.",
+        en: "Sasaehaeng filed an additional complaint against Kim Seung-won and six other party figures, alleging political-funds and financial offenses. Suwon investigators assigned the matter to the First Anti-Corruption Division for review, not indictment or a finding of guilt.",
+      },
+    },
 {
   "date": "2026-10-02",
   "text": {
@@ -272,6 +279,21 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      date: "2026-10-12",
+      title: { ko: "김승원 등 7명 회계 의혹 추가 고발…수원중수청 반부패수사1과 배당", en: "Additional party-accounting complaint assigned to Suwon anticorruption investigators" },
+      description: {
+        ko: "사법정의 바로세우기 시민행동(사세행)은 10월 12일 김승원 의원 등 민주당 경기도당 관련자 7명을 정치자금법 위반, 업무상 배임·횡령, 사기 등의 혐의로 수원중수청에 고발했습니다. 고발 내용은 2024~2025년 급여 페이백 및 허위 비용 정산 의혹에 관한 고발인의 주장입니다. 뉴시스가 같은 날 수사당국 설명을 인용해 수원중수청이 이 사건을 반부패수사1과에 배당하고 내용을 검토하기 시작했다고 보도했습니다. 10월 2일의 최초 시민 고발과 12일 시민단체의 추가 고발은 별건의 접수 경위로 구분합니다. 사건 배당은 수사 결과·기소·형사책임 확정을 의미하지 않습니다.",
+        en: "On October 12, civic group Sasaehaeng filed a complaint with Suwon's Serious Crimes Investigation Agency alleging political-funds violations, breach of duty, embezzlement and fraud by Kim Seung-won and six other provincial-party figures. Claims about salary clawbacks and false expenses in 2024–25 are allegations by the complainant. Newsis reported that the complaint was assigned to the First Anti-Corruption Division for review. The October 2 individual citizen filing and the October 12 civic-group filing are separate procedural events. Assignment does not establish criminal liability.",
+      },
+      change: { ko: "최초 고발 이후 추가 시민단체 고발 접수 및 담당 수사부서 배당 확인", en: "Complaint process advances to an additional filing and assignment for review" },
+      status: "confirmed",
+      sources: [
+        { publisher: { ko: "뉴시스", en: "Newsis" }, title: { ko: "수원중수청, '회계부정 의혹' 김승원 고발 사건 배당", en: "Suwon investigation agency assigns Kim accounting complaint to anticorruption division" }, url: "https://www.newsis.com/view/NISX20261012_0003822774", publishedAt: "2026-10-12", kind: "article", thumbnailSrc: "/images/monitoring/source-articles/source-link-editorial.svg" },
+        { publisher: { ko: "연합뉴스", en: "Yonhap" }, title: { ko: "사세행, '회계 부정' 의혹 김승원 등 수원중수청 고발", en: "Civic group files complaint concerning Kim and party officials" }, url: "https://www.yna.co.kr/view/AKR20261012074900061", publishedAt: "2026-10-12", kind: "article", thumbnailSrc: "/images/monitoring/source-articles/source-link-editorial.svg" },
+        { publisher: { ko: "뉴스타파", en: "Newstapa" }, title: { ko: "민주당 회계부정 의혹…김승원 의원과 회계담당자 수원중수청 고발", en: "Newstapa reports the October 12 party-accounting complaint" }, url: "https://newstapa.org/article/Hm_5j", publishedAt: "2026-10-12", kind: "article", thumbnailSrc: "/images/monitoring/source-articles/source-link-editorial.svg" },
+      ],
+    },
 {
   "date": "2026-10-02",
   "title": {
@@ -1255,6 +1277,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+    { ko: "10월 12일 사세행의 고발은 김 의원 등을 포함한 경기도당 관계자 7명을 대상으로 제출됐으며, 수원중수청은 반부패수사1과에 사건을 배당해 고발장 검토에 들어갔다고 보도됐습니다. 이는 혐의 사실 인정이나 기소와 다릅니다.", en: "A civic-group complaint naming Kim and six other provincial-party figures was filed October 12 and the Suwon investigation agency assigned it to an anticorruption unit for review. This is not proof of the allegations or an indictment." },
 {
   "ko": "뉴시스는 중수청 출범 첫날 김승원 의원의 경기도당위원장 시절 회계부정 의혹 고발장이 수원지방중수청에 접수됐다고 보도했습니다. 고발 접수라는 새 절차를 기록하며, 기존 선관위 조사·경찰 사건과의 관계, 배당과 실제 수사 착수는 계속 확인합니다.",
   "en": "Newsis reported that a complaint alleging accounting irregularities during Kim’s tenure as Gyeonggi provincial-party chair was filed with the Suwon investigation agency on its opening day. The new procedural fact is receipt of the complaint. Its relationship to election-commission and police inquiries, assignment and any formal investigation remain to be established."
@@ -1349,6 +1372,9 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The 93 figure covers all participants receiving either the candidate or placebo, and must be read alongside the regulator's statement that no serious adverse drug reactions were reported. It is not a victim count or proof of the nominee's responsibility. The family-cooperative recording likewise does not by itself establish preferential treatment or illegality.",
   },
   sources: [
+    { label: { ko: "뉴시스 — 10월 12일 반부패수사1과 사건 배당", en: "Newsis — October 12 case assignment" }, url: "https://www.newsis.com/view/NISX20261012_0003822774" },
+    { label: { ko: "연합뉴스 — 10월 12일 사세행 추가 고발", en: "Yonhap — October 12 additional civic-group complaint" }, url: "https://www.yna.co.kr/view/AKR20261012074900061" },
+    { label: { ko: "뉴스타파 — 고발장 제출 경위 및 관련 자료", en: "Newstapa — Details of filing and underlying allegations" }, url: "https://newstapa.org/article/Hm_5j" },
 {
   "label": {
     "ko": "뉴시스 · 중수청·공소청 출범 첫날…민원실도 법정도 곳곳 혼선·우려",
