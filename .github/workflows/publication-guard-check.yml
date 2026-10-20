@@ -39,6 +39,10 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y imagemagick librsvg2-bin fonts-noto-cjk
+      - name: Test published article image integrity and manuscript preflight
+        run: |
+          node scripts/verify-article-assets.mjs politicians-who-take-public-debt-lightly-2026
+          node scripts/preflight-column.mjs politicians-who-take-public-debt-lightly-2026
       - name: Build complete site
         run: pnpm run build
         env:
