@@ -8,6 +8,7 @@ on:
       - 'scripts/test-article-integrity-integration.mjs'
       - 'scripts/check-new-article-approvals.mjs'
       - 'scripts/check-withdrawn-publication.mjs'
+      - 'scripts/verify-live-withdrawn.mjs'
       - 'editorial/withdrawn-slugs.json'
       - 'src/data/contentTranslations/columns/**'
       - 'src/seo.ts'
@@ -49,6 +50,7 @@ jobs:
           node --check scripts/test-article-integrity-integration.mjs
           node --check scripts/check-new-article-approvals.mjs
           node --check scripts/check-withdrawn-publication.mjs
+          node --check scripts/verify-live-withdrawn.mjs
           node --check scripts/verify-article-assets.mjs
           node --check scripts/verify-changed-columns.mjs
           node --check scripts/check-image-cache-keys.mjs
