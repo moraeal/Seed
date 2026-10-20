@@ -19,7 +19,7 @@ import { useLanguage } from "../i18n";
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
 const imageKey = (src: string) => imageSrc(src).replace(/#.*$/, "").replace(/\?.*$/, "");
 
-export default const seoRelatedLinks: Record<string, { path: string; label: string }[]> = {
+const seoRelatedLinks: Record<string, { path: string; label: string }[]> = {
   "politicians-who-take-public-debt-lightly-2026": [
     { path: "/columns/atr-taxpayer-movement-05-sustainable-budgets", label: "정부 예산 낭비와 쪽지예산, 누가 감시하나" },
     { path: "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026", label: "프랑스 재정위기가 한국에 주는 경고" },
