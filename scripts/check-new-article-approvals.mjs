@@ -28,9 +28,9 @@ for(const row of changes){
 }
 // Existing approval records are write-once: a changed or deleted approved
 // snapshot cannot silently redefine what the editor previously approved.
-const lockChanges=execFileSync("git",["diff","--no-renames","--name-status",base,head,"--","editorial/approved/"],{encoding:"utf8"}).trim().split("\\n").filter(Boolean);
+const lockChanges=execFileSync("git",["diff","--no-renames","--name-status",base,head,"--","editorial/approved/"],{encoding:"utf8"}).trim().split("\n").filter(Boolean);
 for(const row of lockChanges){
-  const [status,file]=row.split("\\t");
+  const [status,file]=row.split("\t");
   if(status!=="A"){
     console.error("Approved manuscript snapshot cannot be edited or deleted without a versioned editorial process:",status,file);
     failed=true;
@@ -39,7 +39,7 @@ for(const row of lockChanges){
 // Check every committed approval against the actual article, not only
 // modules newly added in this PR. This also detects edits to locked articles.
 if(existsSync("editorial/approved")){
-  for(const filename of readdirSync("editorial/approved").filter(n=>/^[a-z0-9]+(?:-[a-z0-9]+)*\\.json$/.test(n))){
+  for(const filename of readdirSync("editorial/approved").filter(n=>/^[a-z0-9]+(?:-[a-z0-9]+)*\.json$/.test(n))){
     const slug=filename.slice(0,-5);
     const verified=spawnSync(process.execPath,["scripts/article-integrity.mjs","verify",slug],{stdio:"inherit"});
     if(verified.status!==0 || verified.error){
