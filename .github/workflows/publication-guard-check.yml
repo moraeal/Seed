@@ -7,6 +7,11 @@ on:
       - 'scripts/test-manuscript-guard.mjs'
       - 'scripts/test-article-integrity-integration.mjs'
       - 'scripts/check-new-article-approvals.mjs'
+      - 'scripts/check-withdrawn-publication.mjs'
+      - 'editorial/withdrawn-slugs.json'
+      - 'src/data/contentTranslations/columns/**'
+      - 'src/seo.ts'
+      - 'scripts/generate-seo.mjs'
       - 'src/data/columns/**'
       - 'editorial/approved/**'
       - 'scripts/verify-article-assets.mjs'
@@ -43,6 +48,7 @@ jobs:
           node --check scripts/test-manuscript-guard.mjs
           node --check scripts/test-article-integrity-integration.mjs
           node --check scripts/check-new-article-approvals.mjs
+          node --check scripts/check-withdrawn-publication.mjs
           node --check scripts/verify-article-assets.mjs
           node --check scripts/verify-changed-columns.mjs
           node --check scripts/check-image-cache-keys.mjs
@@ -78,6 +84,8 @@ jobs:
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           VITE_TURNSTILE_SITE_KEY: ${{ secrets.VITE_TURNSTILE_SITE_KEY }}
+      - name: Fail if withdrawn articles remain in generated public pages
+        run: node scripts/check-withdrawn-publication.mjs
       - name: Install Playwright Chromium for visual smoke test
         run: |
           npm install --prefix /tmp/seed-browser-tools --no-save --package-lock=false playwright
