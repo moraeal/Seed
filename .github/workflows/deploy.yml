@@ -85,8 +85,8 @@ jobs:
           node-version: 22
       - name: Check changed public columns and social images
         env:
-          BEFORE_SHA: \${{ github.event.before }}
-          AFTER_SHA: \${{ github.sha }}
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
         run: node scripts/verify-changed-columns.mjs "$BEFORE_SHA" "$AFTER_SHA"
 
   # IndexNow is a notification channel, not an indexing guarantee.
