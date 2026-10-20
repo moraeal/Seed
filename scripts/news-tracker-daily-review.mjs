@@ -62,14 +62,74 @@ function parseRss(xml) {
 }
 const KST_DAY = () => new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Seoul", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
 const ageDays = (date, today) => Math.round((Date.parse(today + "T00:00:00Z") - Date.parse(date + "T00:00:00Z")) / 86400000);
-async function metadataFor(slug, file) {
-  const c = await readFile("src/data/" + file, "utf8");
-  let i = c.indexOf('slug: "' + slug + '"');
-  if (i < 0) i = c.indexOf('"slug": "' + slug + '"');
+// Only verified event dates count as a change: ignore citation dates and pending steps.
+function arraySection(content, key) {
+  const marker = new RegExp("(?:^|[\\n \\t,])(?:[\"']?" + key + "[\"']?)\\s*:\\s*\\[", "m");
+  const found = marker.exec(content);
+  if (!found) return null;
+  const start = found.index + found[0].lastIndexOf("[");
+  let depth = 0, quote = null, escaped = false;
+  for (let i = start; i < content.length; i++) {
+    const c = content[i];
+    if (quote) {
+      if (escaped) escaped = false;
+      else if (c === "\\") escaped = true;
+      else if (c === quote) quote = null;
+      continue;
+    }
+    if (c === "'" || c === '"' || c.charCodeAt(0) === 96) { quote = c; continue; }
+    if (c === "[") depth++;
+    if (c === "]") {
+      depth--;
+      if (depth === 0) return content.slice(start + 1, i);
+    }
+  }
+  throw Error("Unclosed date array: " + key);
+}
+function topLevelObjects(content) {
+  if (!content) return [];
+  const found = [];
+  let depth = 0, quote = null, escaped = false, start = -1;
+  for (let i = 0; i < content.length; i++) {
+    const c = content[i];
+    if (quote) {
+      if (escaped) escaped = false;
+      else if (c === "\\") escaped = true;
+      else if (c === quote) quote = null;
+      continue;
+    }
+    if (c === "'" || c === '"' || c.charCodeAt(0) === 96) { quote = c; continue; }
+    if (c === "{") { if (!depth) start = i; depth++; }
+    else if (c === "}") {
+      depth--;
+      if (depth === 0 && start !== -1) {
+        found.push(content.slice(start, i + 1));
+        start = -1;
+      }
+    }
+  }
+  return found;
+}
+function latestEventDate(source, today) {
+  const events = topLevelObjects(arraySection(source, "timeline"))
+    .filter(entry => !/["']?status["']?\s*:\s*["']pending["']/.test(entry));
+  const changes = topLevelObjects(arraySection(source, "keyChanges"));
+  const dates = [...events, ...changes]
+    .map(entry => entry.match(/["']?date["']?\s*:\s*["'](\d{4}-\d\d-\d\d)["']/)?.[1])
+    .filter(date => date && date <= today && !Number.isNaN(Date.parse(date)));
+  return dates.sort().at(-1) ?? null;
+}
+async function metadataFor(slug, file, today) {
+  const content = await readFile("src/data/" + file, "utf8");
+  let i = content.indexOf('slug: "' + slug + '"');
+  if (i < 0) i = content.indexOf('"slug": "' + slug + '"');
   if (i < 0) throw Error("Slug not found: " + slug);
-  const date = c.slice(i).match(/["']?updatedAt["']?\s*:\s*["'](\d{4}-\d\d-\d\d)["']/);
-  if (!date) throw Error("Missing updatedAt: " + slug);
-  return date[1];
+  const record = content.slice(i);
+  const modifiedAt = record.match(/["']?updatedAt["']?\s*:\s*["'](\d{4}-\d\d-\d\d)["']/)?.[1];
+  if (!modifiedAt) throw Error("Missing updatedAt: " + slug);
+  const lastEvent = latestEventDate(record, today);
+  if (!lastEvent) throw Error("Missing verified dated event: " + slug);
+  return { modifiedAt, lastEvent };
 }
 const IGNORED = /(한겨레|오마이뉴스|문화방송|(^|\s|-)MBC(\s|$)|ohmynews|hani\.co\.kr|Calgary Roughnecks|바카라|토토|카지노|룰렛|슬롯머신|도박|스포츠베팅)/i;
 const safe = (s) => String(s).replace(/\|/g, "\\|").replace(/[\r\n]/g, " ").replace(/\]/g, "\\]").slice(0, 160);
@@ -95,6 +155,11 @@ async function main() {
     assert.equal(TOPIC.get("dmz-mine-blast-2026").test("DMZ 지뢰 추가 제거"), true);
     assert.equal(TOPIC.get("dmz-mine-blast-2026").test("로또 광고"), false);
     assert.equal(IGNORED.test("Calgary Roughnecks"), true);
+    const pows = await metadataFor("north-korean-pows-protection-tracker", "northKoreanPowsProtectionTracker.ts", KST_DAY());
+    assert.ok(pows.lastEvent <= pows.modifiedAt);
+    const france = await metadataFor("france-protests-fiscal-crisis-2026", "franceProtestsTracker.ts", KST_DAY());
+    assert.ok(france.lastEvent <= france.modifiedAt);
+    assert.equal(new Set(TRACKERS.map(x => x[0])).size, TRACKERS.length);
     console.log("News tracker self-test passed");
     return;
   }
@@ -102,18 +167,19 @@ async function main() {
   // A small batch size makes provider failures visible without burst traffic.
   for (let i = 0; i < TRACKERS.length; i += 3) {
     const batch = await Promise.all(TRACKERS.slice(i, i + 3).map(async ([slug, label, file, query]) => {
-      let date = "불명", leads = [], errors = [];
-      try { date = await metadataFor(slug, file); } catch (e) { errors.push("파일: " + e.message); }
+      let modifiedAt = "불명", lastEvent = "불명", leads = [], errors = [];
+      try { ({ modifiedAt, lastEvent } = await metadataFor(slug, file, today)); }
+      catch (e) { errors.push("파일: " + e.message); }
       try { leads = await rssLeads(query, slug); } catch (e) { errors.push("RSS: " + e.message); }
-      return { slug, label, date, leads, errors };
+      return { slug, label, modifiedAt, lastEvent, leads, errors };
     }));
     results.push(...batch);
   }
   const lines = [
     "# 씨앗의 소리 뉴스트래커 일일 점검 — " + today, "",
     "> **이 문서는 자동으로 수집된 뉴스 후보 목록입니다. 제목만으로 사건 발생이나 사실관계를 확정하지 않습니다. 검증과 편집 승인 전에는 기존 기사를 자동 변경하거나 게시하지 않습니다.**", "",
-    "| 사건 | 기사 수정일 | 경과 | 후보 | 상태 |", "|---|---|---:|---:|---|",
-    ...results.map((r) => "| [" + r.label + "](https://seedvoice.kr/monitoring/" + r.slug + ") | " + r.date + " | " + (r.date === "불명" ? "?" : ageDays(r.date, today) + "일") + " | " + r.leads.length + " | " + (r.errors.length ? "확인 필요" : "수집 완료") + " |"),
+    "| 사건 | 마지막 사건 변화일 | 기사 수정일 | 변화 후 경과 | 뉴스 후보 | 상태 |", "|---|---|---|---:|---:|---|",
+    ...results.map((r) => "| [" + r.label + "](https://seedvoice.kr/monitoring/" + r.slug + ") | " + r.lastEvent + " | " + r.modifiedAt + " | " + (r.lastEvent === "불명" ? "?" : ageDays(r.lastEvent, today) + "일") + " | " + r.leads.length + " | " + (r.errors.length ? "수집/메타데이터 확인 필요" : ageDays(r.lastEvent, today) >= 14 ? "장기 미갱신·추가 확인" : "수집 완료") + " |"),
     "", "## 사건별 검토 후보 (최근 3일)", "",
   ];
   for (const r of results) {
