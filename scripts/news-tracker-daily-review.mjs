@@ -20,6 +20,36 @@ const TRACKERS = [
   ["kim-seung-won-confirmation-hearing", "김승원 후보자 후속", "kimSeungWonHearingWatch.ts", "김승원 제넨셀 도당 회계 수사 법무부 장관 후보"],
 ];
 
+// Future editorial checkpoints are reminders, never confirmed event outcomes.
+// Their status must not change the dated timeline or published story automatically.
+const MILESTONES = [
+  {
+    date: "2026-10-22",
+    label: "여수세계섬박람회: 지역 국정감사 예정 — 개최·답변·증거 공개 여부 확인",
+    slug: "yeosu-world-island-expo-tracker",
+    source: "https://www.yna.co.kr/view/AKR20261015094400054",
+  },
+  {
+    date: "2026-11-04",
+    label: "여수세계섬박람회: 예정된 폐막 — 유료수입·무료입장·지출 결산은 추후 확인",
+    slug: "yeosu-world-island-expo-tracker",
+    source: "https://www.yeosu2026.or.kr/",
+  },
+  {
+    date: "2026-11-12",
+    label: "김승원 후보자 관련 제넨셀 사건: 16시 공판 — 실제 변론종결·기일변경 확인",
+    slug: "kim-seung-won-confirmation-hearing",
+    source: "https://www.newspim.com/news/view/20260915001246",
+  },
+];
+const asUtcDays = (value) => Date.parse(value + "T00:00:00Z") / 86400000;
+function activeMilestones(today) {
+  return MILESTONES.filter(m => {
+    const days = asUtcDays(m.date) - asUtcDays(today);
+    return days >= -14 && days <= 30;
+  }).sort((a, b) => a.date.localeCompare(b.date));
+}
+
 // Each case must match at least one event-specific term in the *headline*.
 // This deliberately favors precision over recall; editor can still search manually.
 const TOPIC = new Map([
@@ -160,6 +190,9 @@ async function main() {
     const france = await metadataFor("france-protests-fiscal-crisis-2026", "franceProtestsTracker.ts", KST_DAY());
     assert.ok(france.lastEvent <= france.modifiedAt);
     assert.equal(new Set(TRACKERS.map(x => x[0])).size, TRACKERS.length);
+    assert.equal(activeMilestones("2026-10-20").length, 3);
+    assert.equal(activeMilestones("2026-11-27").length, 0);
+    assert.equal(MILESTONES.every(m => TRACKERS.some(row => row[0] === m.slug)), true);
     console.log("News tracker self-test passed");
     return;
   }
@@ -180,6 +213,9 @@ async function main() {
     "> **이 문서는 자동으로 수집된 뉴스 후보 목록입니다. 제목만으로 사건 발생이나 사실관계를 확정하지 않습니다. 검증과 편집 승인 전에는 기존 기사를 자동 변경하거나 게시하지 않습니다.**", "",
     "| 사건 | 마지막 사건 변화일 | 기사 수정일 | 변화 후 경과 | 뉴스 후보 | 상태 |", "|---|---|---|---:|---:|---|",
     ...results.map((r) => "| [" + r.label + "](https://seedvoice.kr/monitoring/" + r.slug + ") | " + r.lastEvent + " | " + r.modifiedAt + " | " + (r.lastEvent === "불명" ? "?" : ageDays(r.lastEvent, today) + "일") + " | " + r.leads.length + " | " + (r.errors.length ? "수집/메타데이터 확인 필요" : ageDays(r.lastEvent, today) >= 14 ? "장기 미갱신·추가 확인" : "수집 완료") + " |"),
+    "", "## 예정된 후속 확인 일정 (자동 게시 금지)", "",
+    "아래 일정은 **예정 또는 공지된 검증 시점**이며 결과가 발생했다고 단정하는 기록이 아닙니다. 실제 개최·결과·연기 여부를 별도로 확인합니다.", "",
+    ...activeMilestones(today).map(m => "- **" + m.date + "** — [" + m.label + "](https://seedvoice.kr/monitoring/" + m.slug + ") · [일정의 근거](" + m.source + ")"),
     "", "## 사건별 검토 후보 (최근 3일)", "",
   ];
   for (const r of results) {
