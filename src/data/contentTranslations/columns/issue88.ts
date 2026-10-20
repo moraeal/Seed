@@ -1,7 +1,7 @@
 import type { ColumnTranslation } from "../types";
 export const issue88: ColumnTranslation = {
   "title": "Germany Sold Cars. China Built an Industry That Could Rival Germany.",
-  "subtitle": "Series 1: What Is China to Us? — The industrial legacy of Merkel’s sixteen years",
+  "subtitle": "Three-Part Series: What Is China to Us? — Part 1, Merkel’s industrial legacy",
   "author": "Small Seed",
   "summary": "An examination of how Germany’s lucrative China business brought profits but also exposure to a powerful new industrial rival, from Volkswagen and Mercedes to KUKA and the 2025 merchandise deficit.",
   "heroImage": {
@@ -27,6 +27,7 @@ export const issue88: ColumnTranslation = {
     }
   ],
   "sections": [
+    {"title":"Three-Part Series: What Is China to Us? — Part One","paragraphs":["This is part one of SEED VOICE’s three-part series on China, industrial security and Korea’s economic freedom.","Part one examines Merkel’s industrial legacy in Germany. Part two considers technology leakage, talent and research security in Korea. Part three asks what political leaders must do to protect security and enterprise freedom.","The series asks how Korea can retain technological, economic and diplomatic autonomy alongside a powerful neighbour."]},
     {
       "title": "Germany’s Automotive Pride Under Pressure",
       "paragraphs": [
