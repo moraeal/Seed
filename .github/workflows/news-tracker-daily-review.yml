@@ -32,7 +32,9 @@ jobs:
         run: node scripts/news-tracker-daily-review.mjs --self-test
       - name: Collect unverified news leads
         run: node scripts/news-tracker-daily-review.mjs /tmp/news-tracker-daily-review.md
-      - name: Create one editorial review issue per Korean date
+      - name: Verify issue-report merge protection
+        run: node scripts/merge-news-tracker-report.mjs --self-test
+      - name: Create or safely refresh the daily editorial issue
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
@@ -41,9 +43,14 @@ jobs:
           DAY="$(TZ=Asia/Seoul date +%F)"
           TITLE="[뉴스트래커 점검] $DAY"
           EXISTING="$(gh issue list --state all --limit 200 --json number,title | jq -r --arg title "$TITLE" '.[] | select(.title == $title) | .number' | head -n 1)"
+          touch /tmp/news-tracker-previous.md
           if [ -n "$EXISTING" ]; then
-            gh issue edit "$EXISTING" --body-file /tmp/news-tracker-daily-review.md
-            echo "Updated existing daily issue #$EXISTING"
+            gh issue view "$EXISTING" --json body --jq '.body' > /tmp/news-tracker-previous.md
+          fi
+          node scripts/merge-news-tracker-report.mjs /tmp/news-tracker-previous.md /tmp/news-tracker-daily-review.md /tmp/news-tracker-merged.md
+          if [ -n "$EXISTING" ]; then
+            gh issue edit "$EXISTING" --body-file /tmp/news-tracker-merged.md
+            echo "Updated existing daily issue #$EXISTING without replacing editor notes"
           else
-            gh issue create --title "$TITLE" --body-file /tmp/news-tracker-daily-review.md
+            gh issue create --title "$TITLE" --body-file /tmp/news-tracker-merged.md
           fi
