@@ -1,9 +1,9 @@
 import type { ColumnTranslation } from "../types";
 export const issue87: ColumnTranslation = {
-  "title": "A Warning From America's Streets",
-  "subtitle": "Who Pays the Price of Well-Intentioned Policy?",
+  "title": "A Mock Gunshot, a Missing Camera: Questions From America's Streets",
+  "subtitle": "Who pays the price of well-intentioned policy? A business traveller's account of San Francisco",
   "author": "Small Seed",
-  "summary": "A first-person essay on unsettling encounters during a business trip to San Francisco and the questions they raised about street safety, retail theft, homelessness spending and public accountability.",
+  "summary": "On a business visit to San Francisco, a young man mimed shooting at me from an alley. Later, a camera and tripod vanished as our group checked out of a hotel. These memories led me to examine street safety, theft enforcement, homelessness spending, and what public officials owe citizens.",
   "heroImage": {
     "alt": "Tents under a freeway in San Francisco, photographed in 2017",
     "caption": "San Francisco encampment in 2017, not a photograph of the author's visit.",
@@ -28,54 +28,84 @@ export const issue87: ColumnTranslation = {
   ],
   "sections": [
     {
-      "title": "A Young Man Mimicked Shooting at Me",
+      "title": "The Young Man Who Pretended to Shoot",
       "paragraphs": [
-        "I was in San Francisco on business. About thirty metres away, several young men were gathered at the mouth of an alley. I happened to make eye contact with one of them. He shaped his hand into a gun and pretended to fire at me. Fear struck instantly.",
-        "Watching them exchange something, I thought I might be witnessing drug dealing. I could not verify what was being exchanged. Yet the sense of threat in an ordinary city street stayed with me."
+        "I was visiting San Francisco on business. Around thirty metres away, a group of young men were gathered near an alley. I happened to catch one man's eye.",
+        "Suddenly he shaped his hand like a gun and pretended to shoot at me. Fear struck me instantly. Was he joking, or warning me to stay away?",
+        "Looking again, I saw the group apparently exchanging something. It seemed to me like a drug transaction, but I could not confirm what was being traded. This was not a deserted place; it happened on an ordinary city street.",
+        "In one of the richest cities in the world, a stranger's gesture left me feeling physically threatened. The incident has remained vivid in my memory."
       ]
     },
     {
-      "title": "The Camera and Tripod Disappeared at the Hotel",
+      "title": "A Camera and Tripod Vanish at Checkout",
       "paragraphs": [
-        "As our group checked out of the hotel, our camera and tripod vanished in a moment despite the number of people around. We never established who took them or how they disappeared.",
-        "A street encounter and an unexplained loss in a hotel raised the same personal question: how secure is ordinary life in a celebrated global city?"
+        "A second incident took place when our group checked out of its hotel. Several of us stood in the lobby with our luggage, talking and preparing to depart.",
+        "Despite the number of people present, our camera and tripod suddenly went missing. We could not determine who took them or precisely what happened.",
+        "Hotels are places where travellers expect a measure of safety. I could not stop thinking about how easily things could disappear even when there were people all around.",
+        "The fear I had felt on the street returned. How could a traveller feel secure even while standing with companions inside a hotel?"
       ]
     },
     {
-      "title": "Another Face of a Prosperous City",
+      "title": "The Shadow Behind a Prosperous City",
       "paragraphs": [
-        "I also remember tents on sidewalks, the smell of cannabis and people who seemed impaired. I cannot know their individual circumstances.",
-        "In October 2026, reports on Marshall Elementary School described discarded syringes and open drug use along routes used by pupils. For a visitor, walking elsewhere is possible. For families living there, the journey repeats daily.[1][2]"
+        "San Francisco and Los Angeles are centres of enterprise, culture and technological innovation, yet the streets I saw sometimes told a different story: tents on sidewalks, the smell of cannabis, and people who appeared impaired.",
+        "I do not know the circumstances of the individuals I saw. Some may have lost jobs, struggled with housing costs or endured illness and addiction.",
+        "Still, those sights raised a question that stayed with me: who safeguards the right of ordinary residents to walk through their own city without fear?"
       ]
     },
     {
-      "title": "When Tolerance Meets the Right to Safety",
+      "title": "When Even the School Route Feels Unsafe",
       "paragraphs": [
-        "On-the-ground reporting from the Tenderloin documents open drug use and difficult pedestrian conditions.[3] People living with addiction need treatment, just as other residents need safe sidewalks.",
-        "California's 2014 Proposition 47 reduced penalties for certain offences but did not legalize shoplifting. Subsequent research identified increases in some property crimes while underscoring the complexities of causation and enforcement.[4]"
+        "After returning home, I looked for contemporary reporting that might help me understand what I had witnessed.",
+        "In October 2026, the San Francisco Chronicle reported that parents and staff at Marshall Elementary in the Mission District were alarmed by discarded syringes, human waste and open drug use along school routes. A pupil reportedly picked up a bloodied syringe.[1][2]",
+        "I was a visitor who could simply leave. Families living there must face the same streets every day.",
+        "Helping people who are homeless or addicted matters. Yet a policy cannot be assessed solely by the compassion of its stated goal if children cannot safely reach school."
       ]
     },
     {
-      "title": "When Shops Close, Neighbours Pay",
+      "title": "Tolerance and Everyday Public Order",
       "paragraphs": [
-        "In 2021 Walgreens cited retail theft when announcing five San Francisco store closures. Other business factors were also raised. Losing a neighbourhood pharmacy can nonetheless make daily life harder.[5]",
-        "Public policy must be judged not only by its intentions but by what happens to shopkeepers, workers and residents."
+        "Reporting from the Tenderloin documented open drug use and sidewalks difficult for residents to navigate.[3]",
+        "People experiencing homelessness and addiction have rights to assistance and treatment. Workers, shopkeepers and schoolchildren also have a right to safe passage.",
+        "Tolerance should not mean asking one group of citizens to accept insecurity as the unavoidable price of helping another. Public policy must take both obligations seriously."
       ]
     },
     {
-      "title": "What Did $24 Billion Deliver?",
+      "title": "What Happens When Theft Is Treated Less Severely?",
       "paragraphs": [
-        "A 2024 California audit reviewed a period when roughly $24 billion had been allocated to homelessness and housing initiatives. It found significant weaknesses in the availability of consistent cost and outcome data.[6]",
-        "That is not evidence that all the money was wasted. It is a reason to demand transparent results before asking taxpayers for more.",
-        "Los Angeles County's 2026 homelessness count estimated roughly 73,000 unhoused people.[7] Moving someone out of sight is not the same as helping them reach stable housing and recovery."
+        "California's 2014 Proposition 47 reclassified certain nonviolent offences, including ordinary shoplifting below $950, as misdemeanours. It did not legalise theft.",
+        "A Public Policy Institute of California analysis associated the reform with increases in some property offences, while cautioning against assigning every change in crime to a single law.[4]",
+        "Reading those findings brought back the moment when our camera and tripod vanished at the hotel. I could not establish that a crime occurred, but the sense of insecurity was real.",
+        "In 2021 Walgreens announced the closure of five San Francisco stores and cited organised retail theft. Other business factors were also discussed. Closures nonetheless leave residents with longer journeys for medicine and other necessities.[5]",
+        "In 2024 California voters approved reforms that increased penalties for certain repeat theft and drug offences. The change illustrated how public judgement can shift when policy results are questioned."
       ]
     },
     {
-      "title": "Thinking About Korea From an American Street",
+      "title": "What Did $24 Billion Actually Achieve?",
       "paragraphs": [
-        "The journey left me thinking about my own country. Public programmes may begin with worthy goals, but their costs fall on citizens and businesses whose daily freedoms and security also deserve consideration.",
-        "Government is responsible both for helping people in hardship and for protecting life and property. Large budgets and noble slogans are not substitutes for demonstrable results.",
-        "I still remember the young man pretending to shoot, and the missing camera equipment. Good intentions do not guarantee good outcomes. A worthy cause does not erase responsibility for failure."
+        "California's state auditor reported in 2024 that about $24 billion had been allocated over five fiscal years to homelessness and housing initiatives, but that consistent cost and outcome information was missing for key programmes.[6]",
+        "That does not prove the entire sum was wasted. It does raise an urgent question: what improvements did taxpayers receive for such an immense investment?",
+        "The 2026 Los Angeles homelessness count estimated roughly 73,000 people countywide, and unsheltered homelessness in the city increased.[7] Removing people from public view is not the same as providing stable housing and a pathway to recovery.",
+        "Spending more is not proof that government is more capable. Public officials should be able to explain what they promised, what they spent, and what changed."
+      ]
+    },
+    {
+      "title": "Thinking About Korea on American Streets",
+      "paragraphs": [
+        "I remember these American experiences partly because I wonder whether similar failures could emerge in South Korea.",
+        "Politicians promise new benefits, subsidies and support programmes. Their purposes may be commendable, but taxpayers and businesses fund them. Costs, side effects and results deserve as much attention as good intentions.",
+        "A government's responsibility to assist those in need exists alongside its responsibility to protect life and property. Protecting business activity and economic freedom also affects workers and their opportunities.",
+        "Are people safer? Can local businesses operate without fear? Can taxpayers see evidence that their money has produced results? These are meaningful tests of policy."
+      ]
+    },
+    {
+      "title": "Not Just Good Intentions, but Accountability",
+      "paragraphs": [
+        "I do not believe San Francisco or Los Angeles can be reduced to stories of failure. They are still centres of innovation, and efforts to address their challenges continue.",
+        "Yet I cannot forget the man who mimed firing at me from an alley, the camera equipment that vanished at checkout, or the sights and smells of the street.",
+        "What makes a city truly successful? Is it its skyscrapers, famous firms and growing budgets? Or is it whether children get to school safely, residents can walk without fear, vulnerable people can receive treatment, and taxpayers can examine actual outcomes?",
+        "The lesson I took from the United States is not to mock another country. It is to consider how easily my own country could repeat mistakes if promises are celebrated but responsibility is neglected.",
+        "Good intentions do not guarantee good results. A noble slogan cannot replace accountability for failure. Before asking citizens to contribute more, a government should explain how well it has safeguarded their everyday security and freedom."
       ]
     }
   ],
