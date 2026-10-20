@@ -92,6 +92,8 @@ jobs:
           VITE_TURNSTILE_SITE_KEY: ${{ secrets.VITE_TURNSTILE_SITE_KEY }}
       - name: Fail if withdrawn articles remain in generated public pages
         run: node scripts/check-withdrawn-publication.mjs
+      - name: Verify withdrawn content is not served by the current live site
+        run: node scripts/verify-live-withdrawn.mjs
       - name: Install Playwright Chromium for visual smoke test
         run: |
           npm install --prefix /tmp/seed-browser-tools --no-save --package-lock=false playwright
