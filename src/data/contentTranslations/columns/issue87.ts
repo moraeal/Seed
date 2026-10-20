@@ -5,25 +5,25 @@ export const issue87: ColumnTranslation = {
   "author": "Small Seed",
   "summary": "On a business visit to San Francisco, a young man mimed shooting at me from an alley. Later, a camera and tripod vanished as our group checked out of a hotel. These memories led me to examine street safety, theft enforcement, homelessness spending, and what public officials owe citizens.",
   "heroImage": {
-    "alt": "Tents under a freeway in San Francisco, photographed in 2017",
-    "caption": "San Francisco encampment in 2017, not a photograph of the author's visit.",
-    "credit": "Shannon Badiee · Wikimedia Commons · CC BY-SA 2.0"
+    "alt": "Editorial illustration of a business traveller feeling threatened by a man in a San Francisco alley",
+    "caption": "An interpretive illustration of the author's recollection, not a documentary photograph.",
+    "credit": "SEED VOICE editorial illustration"
   },
   "inlineImage": {
-    "alt": "Market Street in San Francisco at night, photographed in 2023",
-    "caption": "Market Street at night in 2023, not the scene of the author's encounter.",
-    "credit": "The wub · Wikimedia Commons"
+    "alt": "A hotel lobby with travellers and missing camera equipment, shown symbolically",
+    "caption": "An illustration evoking the sudden disappearance of a camera and tripod at hotel checkout.",
+    "credit": "SEED VOICE editorial illustration"
   },
   "additionalImages": [
     {
-      "alt": "San Francisco's Market Street after dark",
-      "caption": "A separately photographed 2023 night street scene.",
-      "credit": "The wub · Wikimedia Commons"
+      "alt": "A hotel lobby with travellers and missing camera equipment, shown symbolically",
+      "caption": "An illustration evoking the sudden disappearance of a camera and tripod at hotel checkout.",
+      "credit": "SEED VOICE editorial illustration"
     },
     {
-      "alt": "A closed Walgreens storefront in San Francisco",
-      "caption": "A separately photographed closed store; not identified as one of the five closures announced in 2021.",
-      "credit": "9yz · Wikimedia Commons · CC BY-SA 4.0"
+      "alt": "An urban scene contrasting an affluent city with citizens' ordinary security and public spending responsibilities",
+      "caption": "Illustration asking whether public budgets deliver safety and accountability for residents.",
+      "credit": "SEED VOICE editorial illustration"
     }
   ],
   "sections": [
@@ -109,5 +109,5 @@ export const issue87: ColumnTranslation = {
       ]
     }
   ],
-  "sourceNote": "First-person incidents are the author's recollections. Suspected drug dealing and the cause of the missing equipment have not been independently verified. All three photographs are documentary images taken at other times."
+  "sourceNote": "A first-person essay based on the author's account. Suspected drug dealing and the cause of missing equipment have not been independently verified. The three images are newly authored editorial illustrations, not actual event photos."
 };
