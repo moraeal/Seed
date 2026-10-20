@@ -49,12 +49,12 @@ jobs:
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: node scripts/check-image-cache-keys.mjs "$BASE_SHA" HEAD
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       - name: Require editor-approved snapshots for new articles
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: node scripts/check-new-article-approvals.mjs "$BASE_SHA" HEAD
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
       - name: Install image converters and Korean fonts
         run: |
           sudo apt-get update
