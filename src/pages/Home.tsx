@@ -231,22 +231,6 @@ export default function Home() {
     (item) => `/seed-language/${item.slug}`,
     claimedHomePaths,
   );
-  // Keep these compact links independent of the live hero request; a lead change
-  // updates the recommendations without a second network request.
-  const relatedTerms = (featuredLead?.title ?? "").toLocaleLowerCase().match(/[가-힣]{2,}|[a-z]{4,}/g) ?? [];
-  const relatedStories = featuredLead
-    ? featuredCandidates
-      .filter((item) => item.path !== activeFeaturedPath && !claimedHomePaths.has(getHomeTopic(item.path)))
-      .map((item) => {
-        const searchable = `${item.title} ${item.summary}`.toLocaleLowerCase();
-        const relevance = relatedTerms.filter((term) => term.length >= 3 && searchable.includes(term)).length;
-        return { item, relevance };
-      })
-      .sort((a, b) => b.relevance - a.relevance)
-      .slice(0, 2)
-      .map(({ item }) => item)
-    : [];
-
   const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[ko ? seedLanguageArticle.term : getSeedLanguageEnvironmentArticle(seedLanguageArticle.slug, "ko")?.term ?? getSeedLanguageArticle(seedLanguageArticle.slug, "ko")?.term ?? ""] : undefined;
   // Reserve the newest briefings before the historical carousel can claim them.
   const briefings = claimUnseen(
@@ -473,34 +457,7 @@ export default function Home() {
                   <p className="home-lead-summary mt-2 line-clamp-3 max-w-4xl sm:mt-2.5">{featuredLead.summary}</p>
                   <div className="mt-3 flex items-center gap-3 text-[11px] text-charcoal/45 sm:text-xs"><time>{featuredLead.date.replace(/-/g, ".")}</time>{featuredLead.readMinutes && <span className="inline-flex items-center gap-1"><Clock size={12}/>{featuredLead.readMinutes}{ko ? "분 읽기" : " min read"}</span>}</div>
                 </Link>
-                <div className="mt-5 border-t border-green-deep/15 pt-3 sm:mt-6 sm:pt-4" aria-label={ko ? "대표기사 관련 읽을거리와 시민참여" : "Related reading and civic action"}>
-                  {relatedStories.length > 0 && (
-                    <>
-                      <div className="mb-2 flex items-center justify-between gap-3">
-                        <p className="text-[11px] font-black tracking-[.08em] text-green-deep">{ko ? "이 문제, 더 깊이 읽기" : "READ MORE ON THIS ISSUE"}</p>
-                        <Link className="text-[11px] font-semibold text-green-deep hover:underline" to="/news">{ko ? "더 많은 기사" : "More stories"} <span aria-hidden="true">→</span></Link>
-                      </div>
-                      <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
-                        {relatedStories.map((story) => (
-                          <Link key={story.path} to={story.path} className="flex min-w-0 items-start gap-2 rounded border border-green-deep/10 bg-white/65 p-2 transition hover:border-green-deep/30 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-deep">
-                            <SafeImage src={resolveImageSrc(story.image.src)} alt="" loading="lazy" className="h-[58px] w-[66px] shrink-0 rounded-sm object-cover sm:h-[66px] sm:w-[88px]" />
-                            <span className="min-w-0">
-                              <span className="block text-[10px] font-bold text-green-deep">{story.kicker}</span>
-                              <span className="mt-1 line-clamp-3 break-keep text-xs font-bold leading-[1.35] text-navy sm:text-[13px]">{story.title}</span>
-                            </span>
-                          </Link>
-                        ))}
-                      </div>
-                    </>
-                  )}
-                  <Link to="/civic-campaign#campaign-signature" className="mt-3 flex items-center justify-between gap-3 rounded bg-green-deep/7 px-3 py-2.5 text-green-deep transition hover:bg-green-deep/12 focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-deep">
-                    <span className="min-w-0">
-                      <span className="block text-[10px] font-black tracking-wide">NO MORE TAX!</span>
-                      <span className="block text-xs font-semibold sm:text-[13px]">{ko ? "세금 내는 시민이 정치를 바꾸다 · 시민운동 참여" : "Make your voice heard · Join the civic campaign"}</span>
-                    </span>
-                    <ArrowRight size={18} className="shrink-0" aria-hidden="true" />
-                  </Link>
-                </div>
+
               </article>
             ) : (
               <div className="min-w-0" role="status" aria-label={ko ? "오늘의 기사 불러오는 중" : "Loading today’s story"}>
