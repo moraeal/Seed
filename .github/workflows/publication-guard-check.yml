@@ -5,6 +5,7 @@ on:
     paths:
       - 'scripts/article-integrity.mjs'
       - 'scripts/test-manuscript-guard.mjs'
+      - 'scripts/test-article-integrity-integration.mjs'
       - 'scripts/check-new-article-approvals.mjs'
       - 'src/data/columns/**'
       - 'editorial/approved/**'
@@ -40,6 +41,7 @@ jobs:
         run: |
           node --check scripts/article-integrity.mjs
           node --check scripts/test-manuscript-guard.mjs
+          node --check scripts/test-article-integrity-integration.mjs
           node --check scripts/check-new-article-approvals.mjs
           node --check scripts/verify-article-assets.mjs
           node --check scripts/verify-changed-columns.mjs
@@ -55,6 +57,8 @@ jobs:
         run: node scripts/check-image-cache-keys.mjs "$BASE_SHA" HEAD
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+      - name: Test actual manuscript approval and rejection flow
+        run: node scripts/test-article-integrity-integration.mjs
       - name: Require editor-approved snapshots for new articles
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
