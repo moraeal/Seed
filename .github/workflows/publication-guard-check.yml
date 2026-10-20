@@ -7,6 +7,7 @@ on:
       - 'scripts/verify-article-assets.mjs'
       - 'scripts/verify-changed-columns.mjs'
       - 'scripts/check-image-cache-keys.mjs'
+      - 'scripts/check-column-browser.mjs'
       - 'public/images/**'
       - 'scripts/preflight-column.mjs'
       - 'scripts/verify-column-publication.mjs'
@@ -36,6 +37,7 @@ jobs:
           node --check scripts/verify-article-assets.mjs
           node --check scripts/verify-changed-columns.mjs
           node --check scripts/check-image-cache-keys.mjs
+          node --check scripts/check-column-browser.mjs
           node --check scripts/preflight-column.mjs
           node --check scripts/verify-column-publication.mjs
       - name: Detect in-place public image replacements
@@ -59,3 +61,9 @@ jobs:
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           VITE_TURNSTILE_SITE_KEY: ${{ secrets.VITE_TURNSTILE_SITE_KEY }}
+      - name: Install Playwright Chromium for visual smoke test
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium
+      - name: Test desktop and mobile article display
+        run: node scripts/check-column-browser.mjs politicians-who-take-public-debt-lightly-2026
