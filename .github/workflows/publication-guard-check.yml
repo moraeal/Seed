@@ -66,4 +66,7 @@ jobs:
           npm install --prefix /tmp/seed-browser-tools --no-save --package-lock=false playwright
           /tmp/seed-browser-tools/node_modules/.bin/playwright install --with-deps chromium
       - name: Test desktop and mobile article display
-        run: node scripts/check-column-browser.mjs politicians-who-take-public-debt-lightly-2026
+        run: |
+          node scripts/check-column-browser.mjs politicians-who-take-public-debt-lightly-2026
+          node scripts/check-column-browser.mjs populism-collapse-generational-conflict-2026
+          node scripts/check-column-browser.mjs home
