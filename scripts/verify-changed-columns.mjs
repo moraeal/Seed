@@ -10,6 +10,18 @@ if (!before || !/^[0-9a-f]{40}$/.test(before)) {
 const files = execFileSync("git", ["diff", "--name-only", before, after], { encoding: "utf8" })
   .trim().split("\n").filter(Boolean);
 const modules = files.filter((p) => /^src\/data\/columns\/[^/]+\.tsx?$/.test(p));
+// Fail closed for editorial routes not covered by this module-level detector.
+const unsupported = files.filter(p =>
+  p === "src/data/columnsLegacy.ts" ||
+  p === "src/data/columns.ts" ||
+  p.startsWith("src/data/contentTranslations/columns/") ||
+  p.startsWith("src/data/civicSections") ||
+  p.startsWith("src/data/editorialContinuations")
+);
+if (unsupported.length) {
+  console.error("Manual live/browser verification required for uncovered editorial changes:", unsupported);
+  process.exitCode = 1;
+}
 const slugs = new Set();
 for (const path of modules) {
   if (!existsSync(path)) continue; // Removed article is not a published route.
@@ -21,7 +33,7 @@ for (const path of modules) {
     process.exitCode = 1;
   }
 }
-if (process.exitCode) process.exit();
+if (process.exitCode) process.exit(1);
 console.log("Changed article modules:", modules.length, "public article slugs:", [...slugs]);
 if (modules.length === 0) {
   console.log("No individual article modules changed; route verification not applicable to this push.");
