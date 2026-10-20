@@ -9,36 +9,36 @@ export const americaStreetWarningColumn: SeedColumn = {
   "readMinutes": 13,
   "summary": "샌프란시스코 출장 중 골목에서 총을 쏘는 시늉을 하는 청년을 마주했고, 호텔 체크아웃 때는 카메라와 삼각대가 사라졌다. 미국의 도시에서 느낀 두려움을 출발점으로 거리의 안전, 절도 대응, 240억 달러 노숙 예산의 성과와 시민의 권리를 묻는다.",
   "heroImage": {
-    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/San_Francisco_Homeless_Tents.jpg",
-    "alt": "샌프란시스코 고가도로 아래 노숙 텐트",
-    "caption": "2017년 샌프란시스코 현장 사진. 필자가 촬영한 사진은 아니다.",
-    "credit": "Shannon Badiee · Wikimedia Commons · CC BY-SA 2.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:San_Francisco_Homeless_Tents.jpg"
+    "src": "images/columns/america-street-essay-2026/sf-street-warning.svg",
+    "alt": "샌프란시스코의 거리에서 위협을 느끼는 출장자와 골목에 모인 사람들의 모습을 그린 상징 일러스트",
+    "caption": "낯선 도시에서 마주한 위협의 순간. 필자의 실제 경험을 토대로 한 상징적 재구성.",
+    "credit": "씨앗의 소리 · 편집 일러스트",
+    "sourceUrl": ""
   },
   "inlineImage": {
-    "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Market_Street,_San_Francisco_at_night_2023-02-18.jpg",
-    "alt": "샌프란시스코 마켓 스트리트의 야경",
-    "caption": "2023년 촬영된 도시 야경. 회고 속 사건 현장과는 무관하다.",
-    "credit": "The wub · Wikimedia Commons",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Market_Street,_San_Francisco_at_night_2023-02-18.jpg"
+    "src": "images/columns/america-street-essay-2026/hotel-camera-loss.svg",
+    "alt": "호텔 체크아웃 중 카메라 장비 분실을 상징하는 호텔 로비와 여행자",
+    "caption": "호텔에서 카메라와 삼각대가 사라졌던 당시의 당혹감을 표현한 일러스트.",
+    "credit": "씨앗의 소리 · 편집 일러스트",
+    "sourceUrl": ""
   },
   "displayInlineImage": false,
   "additionalImages": [
     {
-      "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Market_Street,_San_Francisco_at_night_2023-02-18.jpg",
-      "alt": "샌프란시스코 거리 야경",
-      "caption": "2023년 촬영된 거리의 야경.",
-      "credit": "The wub · Wikimedia Commons",
-      "afterSection": 1,
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Market_Street,_San_Francisco_at_night_2023-02-18.jpg"
+      "src": "images/columns/america-street-essay-2026/hotel-camera-loss.svg",
+      "alt": "호텔 체크아웃 중 카메라 장비 분실을 상징하는 호텔 로비와 여행자",
+      "caption": "호텔에서 카메라와 삼각대가 사라졌던 당시의 당혹감을 표현한 일러스트.",
+      "credit": "씨앗의 소리 · 편집 일러스트",
+      "sourceUrl": "",
+      "afterSection": 1
     },
     {
-      "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Permanently_closed_Walgreens_-_Market_St.,_San_Francisco.jpg",
-      "alt": "샌프란시스코의 폐점 약국",
-      "caption": "2025년에 촬영된 다른 약국의 폐점 모습. 2021년 발표한 다섯 매장과 동일하다는 뜻은 아니다.",
-      "credit": "9yz · Wikimedia Commons · CC BY-SA 4.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Permanently_closed_Walgreens_-_Market_St.,_San_Francisco.jpg",
-      "afterSection": 4
+      "src": "images/columns/america-street-essay-2026/public-cost-city.svg",
+      "alt": "고층건물 아래 시민의 일상과 납세자의 부담을 표현한 도시 풍경 일러스트",
+      "caption": "화려한 도시의 모습 뒤에서 시민의 안전과 세금의 성과를 묻는다.",
+      "credit": "씨앗의 소리 · 편집 일러스트",
+      "sourceUrl": "",
+      "afterSection": 6
     }
   ],
   "sections": [
@@ -147,7 +147,7 @@ export const americaStreetWarningColumn: SeedColumn = {
       ]
     }
   ],
-  "sourceNote": "현장 경험은 필자가 제공한 회고이다. 마약 거래 여부와 장비 분실 원인은 확인되지 않았다. 사진은 과거 다른 시점에 촬영된 실사 자료다.",
+  "sourceNote": "필자의 샌프란시스코 출장 회고를 바탕으로 한 에세이. 거리의 마약 거래 의심과 호텔 물품 분실 경위는 독립적으로 확인되지 않았다. 삽입된 세 이미지는 실제 현장 사진이 아니라 경험과 정책적 질문을 해석한 편집 일러스트다.",
   "sources": [
     {
       "label": "San Francisco Chronicle, 2026.10.1",
