@@ -9,7 +9,7 @@ export function CitationReference({ number, citations }: { number: number; citat
 }
 
 // Render existing editorial **strong** markup without exposing raw asterisks.
-const renderEditorialEmphasis = (value: string) => value.split(/(\\*\\*[^*]+\\*\\*)/g).map((chunk, i) => chunk.startsWith("**") && chunk.endsWith("**") ? <strong key={i}>{chunk.slice(2, -2)}</strong> : chunk);
+const renderEditorialEmphasis = (value: string) => value.split(/(\*\*[^*]+\*\*)/g).map((chunk, i) => chunk.startsWith("**") && chunk.endsWith("**") ? <strong key={i}>{chunk.slice(2, -2)}</strong> : chunk);
 
 export function ArticleText({ text, citations }: { text: string; citations: ArticleCitations }) {
   const tokens = Array.from(text.matchAll(citationTokenPattern));
