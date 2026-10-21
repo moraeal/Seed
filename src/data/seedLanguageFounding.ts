@@ -24,10 +24,10 @@ export const foundingArticleKo:SeedLanguageArticle={
     "1948년의 선거·제헌헌법·정부 수립은 국민주권의 이상을 실제 국가기관과 통치체제로 구현한 건국의 역사다."
   ],
   "heroImage": {
-    "src": "images/seed-language/founding-state-1948-2026/republic-born-hero.svg",
+    "src": "images/seed-language/founding-state-1948-2026/republic-born-hero.png",
     "alt": "부서지는 왕관과 식민지의 쇠사슬, 시민들이 높이 든 태극기와 떠오르는 햇빛으로 새 민주공화국의 건국을 상징한 그림",
     "caption": "왕의 나라와 식민지의 시대를 넘어 국민이 주인이 된 나라. 대한민국의 건국은 정치권력의 주인이 바뀐 역사였다.",
-    "credit": "씨앗의 소리 제작 · 역사적 전환을 표현한 상징 그래픽"
+    "credit": "씨앗의 소리 제작 · AI 상징 이미지"
   },
   "inlineImage": {
     "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Ceremony%20inaugurating%20the%20government%20of%20the%20Republic%20of%20Korea%20(colored).jpg?width=1200",
