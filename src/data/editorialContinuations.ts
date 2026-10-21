@@ -524,6 +524,19 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "mega-zone-land-rights-public-cost-2026") return language === "ko" ? {
+    href: "/columns/factory-investment-staffing-freedom-2026",
+    title: "공장은 기업이 짓는데, 사람을 보낼 때는 허락을 받아야 하나",
+    relationship: "지역 투자와 기업의 자유",
+    reason: "특구의 공공 지원을 살펴봤다면, 기업이 새 공장을 실제로 가동할 때 마주하는 인력 배치의 문제도 이어서 읽습니다.",
+    listHref: "/columns", listLabel: "칼럼 전체 보기",
+  } : {
+    href: "/columns/factory-investment-staffing-freedom-2026",
+    title: "Can a Company Build a Factory but Need Permission to Staff It?",
+    relationship: "REGIONAL INVESTMENT AND BUSINESS FREEDOM",
+    reason: "Continue from public support for regional investment to the staffing decisions companies face when opening a new plant.",
+    listHref: "/columns", listLabel: "All columns",
+  };
   if (kind === "seed-language" && slug === "founding-nation-sovereignty-republic-1948-2026") return language === "ko" ? {
     href: "/seed-language/state-citizens-trust",
     title: "국가는 시민의 주인이 아니라 시민이 권한을 맡긴 제도라는 말이다",

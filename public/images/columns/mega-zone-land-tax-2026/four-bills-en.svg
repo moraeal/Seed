@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Four bills behind the proposed strategic industry megazones</title>
+  <desc id="desc">The proposals cover zone designation, compulsory land acquisition, land-use regulation and state-property concessions.</desc>
+  <rect width="1200" height="760" fill="#f8f7f2"/>
+  <rect x="44" y="40" width="1112" height="680" rx="24" fill="#fff" stroke="#d9e0dc" stroke-width="2"/>
+  <text x="80" y="103" font-size="38" font-weight="750" fill="#163b32" font-family="Arial,sans-serif">One megazone proposal, four linked bills</text>
+  <text x="80" y="146" font-size="23" fill="#566860" font-family="Arial,sans-serif">Filed October 20, 2026 · none enacted</text>
+  <g font-family="Arial,sans-serif">
+    <rect x="78" y="192" width="510" height="190" rx="18" fill="#eaf2ee"/>
+    <text x="108" y="235" font-size="24" font-weight="700" fill="#1d5344">2221973 · Megazone bill</text>
+    <text x="108" y="284" font-size="29" font-weight="700" fill="#19392f">Regulatory and fiscal support</text>
+    <text x="108" y="335" font-size="21" fill="#4b6157">Which firms, and how much?</text>
+    <rect x="612" y="192" width="510" height="190" rx="18" fill="#f5eee8"/>
+    <text x="642" y="235" font-size="24" font-weight="700" fill="#865139">2221974 · Land compensation</text>
+    <text x="642" y="284" font-size="29" font-weight="700" fill="#673c2d">Acquisition powers</text>
+    <text x="642" y="335" font-size="21" fill="#715c50">Whose land could be affected?</text>
+    <rect x="78" y="400" width="510" height="190" rx="18" fill="#edf0f7"/>
+    <text x="108" y="443" font-size="24" font-weight="700" fill="#4c5f8b">2221975 · Land-use regulation</text>
+    <text x="108" y="492" font-size="29" font-weight="700" fill="#35496c">Renewable-energy districts</text>
+    <text x="108" y="543" font-size="21" fill="#596580">How will local use rules change?</text>
+    <rect x="612" y="400" width="510" height="190" rx="18" fill="#f6f1e7"/>
+    <text x="642" y="443" font-size="24" font-weight="700" fill="#8e6a2a">2221976 · State property</text>
+    <text x="642" y="492" font-size="29" font-weight="700" fill="#654d24">Discounts and longer use</text>
+    <text x="642" y="543" font-size="21" fill="#756649">On what public terms?</text>
+    <line x1="80" y1="626" x2="1120" y2="626" stroke="#d9e0dc" stroke-width="2"/>
+    <text x="80" y="672" font-size="22" fill="#3d544a">Watch: zone maps · public cost · resident input · results and clawbacks</text>
+  </g>
+</svg>
