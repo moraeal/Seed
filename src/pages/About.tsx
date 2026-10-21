@@ -190,6 +190,35 @@ export default function About() {
       </header>
 
       <main>
+        <section className="bg-[#f0f4e9] py-9 sm:py-14" aria-labelledby="editorial-principles-heading">
+          <div className="container-page max-w-6xl">
+            <Link
+              to="/columns/seed-voice-editorial-principles-citizenization-2026"
+              className="group relative block min-h-[310px] overflow-hidden rounded-[1.75rem] border border-green-deep/10 bg-[#e9f0db] shadow-[0_20px_50px_rgba(24,65,47,.13)] transition hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(24,65,47,.21)] focus-visible:outline focus-visible:outline-4 focus-visible:outline-green-mid sm:min-h-[355px]"
+              aria-label={language === "ko" ? "씨앗의 소리 공식 편집 원칙 전문 읽기" : "Read the SEED VOICE editorial principles"}
+            >
+              <img
+                src={`${import.meta.env.BASE_URL}images/editorial-principles-banner.svg`}
+                alt={language === "ko" ? "도시의 풍경 앞에 새싹이 자라는 씨앗의 편집 원칙 상징 이미지" : "A seedling growing against a city skyline, symbolizing citizen agency"}
+                className="absolute inset-0 h-full w-full object-cover object-center"
+                width="1440" height="560" loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#fffaf0]/95 via-[#fffaf0]/80 to-[#fffaf0]/10" aria-hidden="true" />
+              <div className="relative flex min-h-[310px] max-w-3xl flex-col items-start justify-center px-7 py-10 sm:min-h-[355px] sm:px-12">
+                <p className="text-xs font-extrabold tracking-[.22em] text-green-mid">{language === "ko" ? "SEED VOICE · 편집 원칙" : "SEED VOICE · OUR EDITORIAL PRINCIPLES"}</p>
+                <h2 id="editorial-principles-heading" className="mt-4 break-keep text-3xl font-black leading-tight tracking-[-.045em] text-green-deep sm:text-[2.65rem]">
+                  {language === "ko" ? <>산업화를 넘어, 민주화를 넘어,<br/>이제 시민화로</> : <>Beyond industrialization and democratization,<br/>toward citizen agency</>}
+                </h2>
+                <p className="mt-5 max-w-xl text-sm font-semibold leading-7 text-green-deep/80 sm:text-base">
+                  {language === "ko" ? "시민과 기업의 자유, 공익을 지키는 독립 시민저널. 씨앗이 세상을 바라보는 기준을 소개합니다." : "An independent civic journal defending the freedom of citizens and enterprise and the public good. Discover the standards behind our reporting."}
+                </p>
+                <span className="mt-6 inline-flex items-center gap-2 border-b-2 border-green-deep pb-1 text-sm font-extrabold text-green-deep">
+                  {language === "ko" ? "씨앗의 편집 원칙 전문 읽기" : "Read our editorial principles"} <ArrowUpRight size={18} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true"/>
+                </span>
+              </div>
+            </Link>
+          </div>
+        </section>
         <section className="bg-white py-16 sm:py-24">
           <div className="container-page max-w-6xl">
             <p className="section-kicker">{content.questionsKicker}</p>
