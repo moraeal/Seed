@@ -194,25 +194,25 @@ export default function About() {
           <div className="container-page max-w-6xl">
             <Link
               to="/columns/seed-voice-editorial-principles-citizenization-2026"
-              className="group relative block min-h-[310px] overflow-hidden rounded-[1.75rem] border border-green-deep/10 bg-[#e9f0db] shadow-[0_20px_50px_rgba(24,65,47,.13)] transition hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(24,65,47,.21)] focus-visible:outline focus-visible:outline-4 focus-visible:outline-green-mid sm:min-h-[355px]"
+              className="group relative flex flex-col overflow-hidden rounded-[1.75rem] border border-green-deep/10 bg-[#fffaf0] shadow-[0_20px_50px_rgba(24,65,47,.13)] transition hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(24,65,47,.21)] focus-visible:outline focus-visible:outline-4 focus-visible:outline-green-mid sm:block sm:min-h-[355px]"
               aria-label={language === "ko" ? "씨앗의 소리 공식 편집 원칙 전문 읽기" : "Read the SEED VOICE editorial principles"}
             >
               <img
-                src={`${import.meta.env.BASE_URL}images/editorial-principles-banner.svg`}
-                alt={language === "ko" ? "도시의 풍경 앞에 새싹이 자라는 씨앗의 편집 원칙 상징 이미지" : "A seedling growing against a city skyline, symbolizing citizen agency"}
-                className="absolute inset-0 h-full w-full object-cover object-center"
-                width="1440" height="560" loading="lazy"
+                src={`${import.meta.env.BASE_URL}images/editorial-principles-banner-2026.webp`}
+                alt={language === "ko" ? "강과 도시를 배경으로 아침 햇빛을 받으며 자라는 푸른 새싹" : "A green seedling growing in morning light with a river and city skyline behind it"}
+                className="h-52 w-full object-cover object-[78%_center] sm:absolute sm:inset-0 sm:h-full sm:object-center"
+                width="740" height="274" loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#fffaf0]/95 via-[#fffaf0]/80 to-[#fffaf0]/10" aria-hidden="true" />
-              <div className="relative flex min-h-[310px] max-w-3xl flex-col items-start justify-center px-7 py-10 sm:min-h-[355px] sm:px-12">
-                <p className="text-xs font-extrabold tracking-[.22em] text-green-mid">{language === "ko" ? "SEED VOICE · 편집 원칙" : "SEED VOICE · OUR EDITORIAL PRINCIPLES"}</p>
-                <h2 id="editorial-principles-heading" className="mt-4 break-keep text-3xl font-black leading-tight tracking-[-.045em] text-green-deep sm:text-[2.65rem]">
-                  {language === "ko" ? <>산업화를 넘어, 민주화를 넘어,<br/>이제 시민화로</> : <>Beyond industrialization and democratization,<br/>toward citizen agency</>}
+              <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-[#fffaf0]/95 via-[#fffaf0]/83 to-transparent sm:block" aria-hidden="true" />
+              <div className="relative flex max-w-3xl flex-col items-start justify-center px-6 py-7 sm:min-h-[355px] sm:px-12 sm:py-10">
+                <p className="text-[11px] font-extrabold tracking-[.17em] text-green-mid sm:text-xs sm:tracking-[.22em]">{language === "ko" ? "SEED VOICE · 편집 원칙" : "SEED VOICE · OUR EDITORIAL PRINCIPLES"}</p>
+                <h2 id="editorial-principles-heading" className="mt-3 break-keep text-[clamp(1.55rem,5vw,2.65rem)] font-black leading-[1.25] tracking-[-.045em] text-green-deep sm:mt-4">
+                  {language === "ko" ? <>산업화를 넘어, 민주화를 넘어,<br className="hidden sm:block"/> 이제 시민화로</> : <>Beyond industrialization and democratization,<br className="hidden sm:block"/> toward citizen agency</>}
                 </h2>
-                <p className="mt-5 max-w-xl text-sm font-semibold leading-7 text-green-deep/80 sm:text-base">
+                <p className="mt-3 max-w-xl text-sm font-semibold leading-6 text-green-deep/80 sm:mt-5 sm:text-base sm:leading-7">
                   {language === "ko" ? "시민과 기업의 자유, 공익을 지키는 독립 시민저널. 씨앗이 세상을 바라보는 기준을 소개합니다." : "An independent civic journal defending the freedom of citizens and enterprise and the public good. Discover the standards behind our reporting."}
                 </p>
-                <span className="mt-6 inline-flex items-center gap-2 border-b-2 border-green-deep pb-1 text-sm font-extrabold text-green-deep">
+                <span className="mt-4 inline-flex items-center gap-2 border-b-2 border-green-deep pb-1 text-sm font-extrabold text-green-deep sm:mt-6">
                   {language === "ko" ? "씨앗의 편집 원칙 전문 읽기" : "Read our editorial principles"} <ArrowUpRight size={18} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true"/>
                 </span>
               </div>
