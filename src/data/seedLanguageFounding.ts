@@ -156,7 +156,8 @@ export const foundingArticleKo:SeedLanguageArticle={
         "**건국(建國)은 국민과 영토, 실제로 작동하는 독립적인 통치체제를 갖춘 나라를 세우는 일이다. 대한민국은 1919년에 민주공화국의 정통을 세웠고, 1948년 국민주권의 헌법과 정부를 수립해 근대적 국가로 건국됐다.**"
       ]
     }
-  ]
+  ],
+  sources
 };
 export const foundingArticleEn:SeedLanguageArticle={
 ...foundingArticleKo,term:"Founding a State",title:"Founding a State Means Establishing Popular Sovereignty, Not Restoring a Dynasty",subtitle:"From the Kurdish experience to Korea’s 1919 provisional government and the 1948 republic",summary:"A nation’s identity is not the same as an operational sovereign state. The Republic of Korea inherited the ideals of independence while establishing functioning constitutional institutions in 1948.",keyPoints:["National identity, independence declarations, statehood and diplomatic recognition are distinct concepts.","The 1919 provisional government’s republican ideals and the 1948 government’s effective jurisdiction can both matter.","The central civic question is not personal allegiance to a founder, but who holds sovereignty."],
