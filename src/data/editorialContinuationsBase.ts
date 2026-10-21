@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:seed-voice-editorial-principles-citizenization-2026": {
+    ko: {
+      href: "/columns/citizenization-before-advancement-2026",
+      title: "선진화를 위해서는 시민화가 우선이다",
+      relationship: "씨앗의 편집철학과 시민화",
+      reason: "편집 원칙의 중심에 놓인 시민화가 시민의 일상과 공공의 문제에서 어떤 의미를 갖는지 더 깊이 살펴봅니다.",
+      listHref: "/columns",
+      listLabel: "칼럼 전체 보기"
+    },
+    en: {
+      href: "/columns/citizenization-before-advancement-2026",
+      title: "Citizen Agency Before National Advancement",
+      relationship: "EDITORIAL PRINCIPLES AND CIVIC AGENCY",
+      reason: "Explore why citizens' practical agency must develop alongside institutions and national prosperity.",
+      listHref: "/columns",
+      listLabel: "All columns"
+    }
+  },
   "seed-language:citizenship-beyond-democratic-label-2026": {
     ko: {
       href: "/seed-language/citizen-as-seed",
