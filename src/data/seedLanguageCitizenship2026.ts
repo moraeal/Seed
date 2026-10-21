@@ -16,21 +16,21 @@ export const citizenshipArticleKo: SeedLanguageArticle = {
     "민주화 다음 과제인 시민화는 시민이 경제와 공공권력을 스스로 이해하고 일상에서 실질적 주권을 행사하는 과정이다."
   ],
   "heroImage": {
-    "src": "images/seed-language/citizenship-beyond-democratic-label-2026/hero.svg",
-    "alt": "엄숙한 국가기관 건물 앞에 다양한 세대의 시민들이 함께 서 있는 상징적 일러스트",
-    "caption": "국가의 주인은 정해진 이름표를 받은 사람이 아니라 스스로 판단하는 시민이다.",
-    "credit": "씨앗의 소리 편집 일러스트"
+    "src": "images/columns/citizenization-before-advancement-hero.webp",
+    "alt": "거대한 유리 회의실에서 정책 설계도를 검토하는 전문가들과 열린 출입구 밖의 시민들이 대비되는 실사형 상징 이미지",
+    "caption": "좋은 시민의 기준을 국가와 전문가가 정할 것인가, 시민이 스스로 자기 길을 만들 것인가.",
+    "credit": "AI 이미지"
   },
   "inlineImage": {
-    "src": "images/seed-language/citizenship-beyond-democratic-label-2026/citizen-forum.svg",
-    "alt": "다양한 세대의 주민들이 동네 회의 공간에서 자료와 지도를 함께 검토하는 상징 그림",
-    "caption": "시민은 강의실에서만 성장하지 않는다. 일상의 결정과 책임을 경험하며 자란다.",
-    "credit": "씨앗의 소리 편집 일러스트"
+    "src": "images/columns/citizenization-civic-agency.webp",
+    "alt": "다양한 세대와 직업의 시민들이 탁자에서 지역 지도와 예산 자료를 함께 검토하는 실사형 이미지",
+    "caption": "시민화는 교육을 이수하는 일이 아니라 정보를 확인하고 서로 협력해 직접 판단하는 일이다.",
+    "credit": "AI 이미지"
   },
   "inlineImageAfterSection": 7,
   "additionalImages": [
     {
-      "src": "images/seed-language/citizenship-beyond-democratic-label-2026/model-ko.svg",
+      "src": "images/seed-language/citizenship-beyond-democratic-label-2026/model-portrait-ko.svg",
       "alt": "민중운동·시민운동·시민화에서 시민의 역할이 저항, 참여 감시, 자율적 판단으로 확장되는 개념 비교 도표",
       "caption": "민주화와 시민운동의 성과를 이어 시민이 국가를 일상에서 감시하고 통제하는 시민화의 단계로.",
       "credit": "씨앗의 소리 편집 그래픽",
@@ -221,21 +221,21 @@ export const citizenshipArticleEn: SeedLanguageArticle = {
     "Beyond democratization, citizenization enables ordinary people to exercise practical sovereignty in everyday life."
   ],
   "heroImage": {
-    "src": "images/seed-language/citizenship-beyond-democratic-label-2026/hero.svg",
-    "alt": "Editorial illustration of diverse Korean citizens standing together before a monumental public institution",
-    "caption": "The republic belongs to citizens who judge for themselves, not to people awarded an approved political label.",
-    "credit": "SEED VOICE editorial illustration"
+    "src": "images/columns/citizenization-before-advancement-hero.webp",
+    "alt": "Photorealistic symbolic image contrasting policy experts behind glass and ordinary citizens outside an open entrance",
+    "caption": "Who defines the ideal citizen: institutions and experts, or citizens capable of judging for themselves?",
+    "credit": "AI image"
   },
   "inlineImage": {
-    "src": "images/seed-language/citizenship-beyond-democratic-label-2026/citizen-forum.svg",
-    "alt": "Editorial illustration of neighbors of different generations reviewing maps and documents in a community meeting",
-    "caption": "Citizenship grows through consequential decisions, debate and responsibility in daily life.",
-    "credit": "SEED VOICE editorial illustration"
+    "src": "images/columns/citizenization-civic-agency.webp",
+    "alt": "Photorealistic scene of citizens from different generations discussing local maps and public budget documents",
+    "caption": "Civic agency grows when people independently assess evidence, work together and make decisions.",
+    "credit": "AI image"
   },
   "inlineImageAfterSection": 7,
   "additionalImages": [
     {
-      "src": "images/seed-language/citizenship-beyond-democratic-label-2026/model-en.svg",
+      "src": "images/seed-language/citizenship-beyond-democratic-label-2026/model-portrait-en.svg",
       "alt": "Concept diagram contrasting collective resistance, organized civic oversight and everyday independent citizenship",
       "caption": "Civic growth builds on democratization by making citizens' oversight of public power an everyday reality.",
       "credit": "SEED VOICE editorial graphic",
