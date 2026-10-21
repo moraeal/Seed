@@ -16,9 +16,9 @@ export const citizenshipArticleKo: SeedLanguageArticle = {
     "민주화 다음 과제인 시민화는 시민이 경제와 공공권력을 스스로 이해하고 일상에서 실질적 주권을 행사하는 과정이다."
   ],
   "heroImage": {
-    "src": "images/columns/citizenization-before-advancement-hero.webp",
-    "alt": "거대한 유리 회의실에서 정책 설계도를 검토하는 전문가들과 열린 출입구 밖의 시민들이 대비되는 실사형 상징 이미지",
-    "caption": "좋은 시민의 기준을 국가와 전문가가 정할 것인가, 시민이 스스로 자기 길을 만들 것인가.",
+    "src": "https://cdn.openart.ai/openart-uploads/production/attachment-transfers/daff37edc8f552b3457196cfeb998298d097230f24e03b96510325a9142c3cbb.png",
+    "alt": "흑백의 과거 민중 시위 장면에서 따뜻한 현재 시민 토론 광장으로 이어지는 시대의 전환을 묘사한 실사형 합성 이미지",
+    "caption": "민중의 시대에서 시민의 시대로. 저항의 역사를 넘어 시민이 스스로 판단하고 함께 만들어가는 사회.",
     "credit": "AI 이미지"
   },
   "inlineImage": {
@@ -221,9 +221,9 @@ export const citizenshipArticleEn: SeedLanguageArticle = {
     "Beyond democratization, citizenization enables ordinary people to exercise practical sovereignty in everyday life."
   ],
   "heroImage": {
-    "src": "images/columns/citizenization-before-advancement-hero.webp",
-    "alt": "Photorealistic symbolic image contrasting policy experts behind glass and ordinary citizens outside an open entrance",
-    "caption": "Who defines the ideal citizen: institutions and experts, or citizens capable of judging for themselves?",
+    "src": "https://cdn.openart.ai/openart-uploads/production/attachment-transfers/daff37edc8f552b3457196cfeb998298d097230f24e03b96510325a9142c3cbb.png",
+    "alt": "Photorealistic montage contrasting black-and-white scenes of mass resistance with people discussing their community in a sunlit modern civic square",
+    "caption": "From collective resistance to independent civic agency: citizens make decisions in their own lives.",
     "credit": "AI image"
   },
   "inlineImage": {
