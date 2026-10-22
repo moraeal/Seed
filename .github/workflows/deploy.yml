@@ -17,7 +17,7 @@ permissions:
 # GitHub may still replace an older pending run with the newest pending run.
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -43,7 +43,7 @@ jobs:
         run: |
           set -euo pipefail
           # Skip network/package installation if the necessary tools already exist.
-          if command -v convert >/dev/null 2>&1 && command -v rsvg-convert >/dev/null 2>&1 && fc-list | grep -qi 'Noto Sans CJK'; then
+          if command -v convert >/dev/null 2>&1 && command -v rsvg-convert >/dev/null 2>&1 && fc-list | grep -i 'Noto Sans CJK' >/dev/null; then
             echo "Image converters and Korean fonts already available."
           else
             sudo apt-get -o Acquire::Retries=1 -o Acquire::http::Timeout=20 update
@@ -51,7 +51,7 @@ jobs:
           fi
           command -v convert
           command -v rsvg-convert
-          fc-list | grep -i 'Noto Sans CJK' | head -1
+          fc-list | grep -i 'Noto Sans CJK' | sed -n '1p'
 
       - name: Build
         run: node scripts/check-editorial-images.mjs && node scripts/validate-hot-issues.mjs && pnpm run build
