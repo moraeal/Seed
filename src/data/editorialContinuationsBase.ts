@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:forced-repatriation-seven-years-human-rights-2026": {
+  "ko": {
+    "href": "/columns/film-imagination-history-distortion-ryoma-2026",
+    "title": "영화의 상상력과 역사적 사실 사이",
+    "relationship": "표현의 자유와 사실 검증",
+    "reason": "자유를 지키면서 역사적 주장과 증거를 구별하는 관점을 함께 읽습니다.",
+    "listHref": "/columns",
+    "listLabel": "칼럼 전체 보기"
+  },
+  "en": {
+    "href": "/columns/film-imagination-history-distortion-ryoma-2026",
+    "title": "Film, Imagination and Historical Evidence",
+    "relationship": "FREEDOM AND EVIDENCE",
+    "reason": "Explore the difference between protecting expression and verifying historical claims.",
+    "listHref": "/columns",
+    "listLabel": "All columns"
+  }
+},
   "column:seed-voice-editorial-principles-citizenization-2026": {
     ko: {
       href: "/columns/citizenization-before-advancement-2026",
