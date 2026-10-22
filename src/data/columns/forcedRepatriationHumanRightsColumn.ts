@@ -4,7 +4,7 @@ export const forcedRepatriationHumanRightsColumn: SeedColumn = {
   "slug": "forced-repatriation-seven-years-human-rights-2026",
   "issue": 91,
   "title": "강제북송 7년 만에 유죄 판결, 진짜 인권의 의미",
-  "subtitle": "누구의 인권은 소중하고 누구의 인권은 외면해도 되는가 — 강제북송 판결과 한 인권변호사의 글이 던진 질문",
+  "subtitle": "누구의 인권은 소중하고 누구의 인권은 외면해도 되는가 — 강제북송 판결과 소위 인권연대 소속 한 변호사의 글이 던진 질문",
   "date": "2026-10-22",
   "author": "작은씨앗",
   "topicIds": [
@@ -13,13 +13,13 @@ export const forcedRepatriationHumanRightsColumn: SeedColumn = {
     "civil-society"
   ],
   "readMinutes": 12,
-  "summary": "2019년 강제북송과 2026년 항소심의 유죄 판결. 북한 주민의 자유를 언급하지 않은 한 변호사의 글을 함께 살피며 인권의 기준은 진영을 가리지 않는다는 원칙을 묻는다.",
+  "summary": "2019년 강제북송과 2026년 항소심의 유죄 판결. 소위 인권연대 소속 한 변호사의 글을 함께 살피며 인권의 기준은 진영을 가리지 않는다는 원칙을 묻는다.",
   "heroImage": {
-    "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Joint_Security_Area_%283069693747%29.jpg",
-    "alt": "판문점 공동경비구역의 군사분계선을 따라 늘어선 푸른 회담실 건물과 북측 건물의 실제 모습",
-    "caption": "남과 북이 마주 선 판문점 공동경비구역. 2008년 촬영한 자료사진이며, 2019년 강제북송 현장 사진은 아니다.",
-    "credit": "Joop Dorresteijn / Wikimedia Commons · CC BY 2.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joint_Security_Area_(3069693747).jpg"
+    "src": "images/columns/forced-repatriation-rights-2026/hero-no-text-20261022.jpg",
+    "alt": "철조망이 설치된 분단의 경계 앞에서 한 남성이 송환을 거부하고 양옆의 남성들이 붙잡는 장면과 법봉·정의의 저울을 결합한 실사형 상징 이미지",
+    "caption": "강제북송과 국가권력, 인간의 존엄을 상징적으로 재구성했다. 2019년 실제 북송 장면이나 인물의 사진은 아니다.",
+    "credit": "AI 이미지",
+    "sourceUrl": ""
   },
   "inlineImage": {
     "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Close-up_of_Lady_Justice_statue_holding_scales%2C_symbolizing_justice_and_fairness.jpg",
