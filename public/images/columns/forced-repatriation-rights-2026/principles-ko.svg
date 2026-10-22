@@ -1,1 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760"><rect width="1200" height="760" fill="#fff"/><text x="69" y="99" font-family="Noto Sans KR,Arial,sans-serif" font-weight="800" font-size="44" fill="#203e4b">인권의 기준은 하나다</text><text x="70" y="145" font-family="Noto Sans KR,Arial,sans-serif" font-size="24" fill="#5f7478">국경과 정치적 진영을 넘어 적용되는 세 가지 원칙</text><path d="M70 169h1060" stroke="#d7e0e0" stroke-width="2"/><rect x="68" y="205" width="1064" height="130" fill="#f4f8f8" rx="12"/><rect x="68" y="205" width="8" height="130" fill="#35606a"/><text x="100" y="284" font-family="Noto Sans KR,Arial,sans-serif" font-weight="700" font-size="42" fill="#ac8553">01</text><text x="215" y="257" font-family="Noto Sans KR,Arial,sans-serif" font-weight="700" font-size="32" fill="#233f48">표현의 자유</text><text x="215" y="303" font-family="Noto Sans KR,Arial,sans-serif" font-size="24" fill="#516a70">어느 나라의 권력이든 비판할 권리</text><rect x="68" y="358" width="1064" height="130" fill="#f8f9f8" rx="12"/><rect x="68" y="358" width="8" height="130" fill="#35606a"/><text x="100" y="437" font-family="Noto Sans KR,Arial,sans-serif" font-weight="700" font-size="42" fill="#ac8553">02</text><text x="215" y="410" font-family="Noto Sans KR,Arial,sans-serif" font-weight="700" font-size="32" fill="#233f48">적법절차</text><text x="215" y="456" font-family="Noto Sans KR,Arial,sans-serif" font-size="24" fill="#516a70">수사·변호·독립적인 재판받을 권리</text><rect x="68" y="511" width="1064" height="130" fill="#f4f8f8" rx="12"/><rect x="68" y="511" width="8" height="130" fill="#35606a"/><text x="100" y="590" font-family="Noto Sans KR,Arial,sans-serif" font-weight="700" font-size="42" fill="#ac8553">03</text><text x="215" y="563" font-family="Noto Sans KR,Arial,sans-serif" font-weight="700" font-size="32" fill="#233f48">고문 위험으로부터의 보호</text><text x="215" y="609" font-family="Noto Sans KR,Arial,sans-serif" font-size="24" fill="#516a70">고문 위험이 큰 곳으로 강제송환하지 않을 원칙</text><path d="M70 705h1060" stroke="#d7e0e0" stroke-width="2"/><text x="70" y="737" font-family="Noto Sans KR,Arial,sans-serif" font-size="20" fill="#698087">씨앗의 소리 · 보편적 인권 원칙을 설명하는 개념도</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+<rect width="1200" height="720" fill="#ffffff"/>
+<rect x="72" y="50" width="62" height="5" fill="#b88a4d"/>
+<text x="72" y="90" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="18" font-weight="700" fill="#667b81">보편적 인권의 세 가지 기준</text>
+<text x="72" y="152" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="47" font-weight="800" fill="#142f3c">인권은 누구의 편도 아니다</text>
+<path d="M72 174H1128" stroke="#d0d9db" stroke-width="2"/>
+<rect x="72" y="206" width="1056" height="129" rx="6" fill="#f3f6f5"/>
+<rect x="72" y="206" width="5" height="129" fill="#1c6065"/>
+<text x="105" y="261" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="29" font-weight="800" fill="#977041">01</text>
+<text x="193" y="260" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="32" font-weight="750" fill="#173945">표현의 자유</text>
+<text x="193" y="302" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="23" font-weight="450" fill="#3f525b">어느 국가의 권력이든 비판할 자유</text>
+<text x="1090" text-anchor="end" y="286" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="20" font-weight="600" fill="#556c70">남과 북에 동일하게</text>
+<rect x="72" y="356" width="1056" height="129" rx="6" fill="#f8f9f8"/>
+<rect x="72" y="356" width="5" height="129" fill="#1c6065"/>
+<text x="105" y="411" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="29" font-weight="800" fill="#977041">02</text>
+<text x="193" y="410" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="32" font-weight="750" fill="#173945">적법절차</text>
+<text x="193" y="452" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="23" font-weight="450" fill="#3f525b">증거·변호·독립적인 법원의 판단</text>
+<text x="1090" text-anchor="end" y="436" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="20" font-weight="600" fill="#556c70">피의자에게도 동일하게</text>
+<rect x="72" y="506" width="1056" height="129" rx="6" fill="#f3f6f5"/>
+<rect x="72" y="506" width="5" height="129" fill="#1c6065"/>
+<text x="105" y="561" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="29" font-weight="800" fill="#977041">03</text>
+<text x="193" y="560" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="32" font-weight="750" fill="#173945">강제송환 금지 원칙</text>
+<text x="193" y="602" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="23" font-weight="450" fill="#3f525b">고문 위험이 있는 곳으로 돌려보내지 않을 권리</text>
+<text x="1090" text-anchor="end" y="586" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="20" font-weight="600" fill="#556c70">국경을 넘어도 동일하게</text>
+
+<path d="M72 677H1128" stroke="#d0d9db" stroke-width="2"/>
+<text x="72" y="705" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="23" font-weight="500" fill="#4e6870">국가의 이름도, 사람의 정치적 입장도 기준을 바꾸지 않는다.</text>
+</svg>

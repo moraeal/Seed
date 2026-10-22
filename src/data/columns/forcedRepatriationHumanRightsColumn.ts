@@ -15,37 +15,37 @@ export const forcedRepatriationHumanRightsColumn: SeedColumn = {
   "readMinutes": 12,
   "summary": "2019년 강제북송과 2026년 항소심의 유죄 판결. 북한 주민의 자유를 언급하지 않은 한 변호사의 글을 함께 살피며 인권의 기준은 진영을 가리지 않는다는 원칙을 묻는다.",
   "heroImage": {
-    "src": "images/columns/forced-repatriation-rights-2026/border-gate.svg",
-    "alt": "군사분계선 철문 앞의 두 사람을 상징적으로 그린 장면",
-    "caption": "국가권력 앞에 선 개인의 권리를 표현한 상징 이미지다. 실제 사건 사진은 아니다.",
-    "credit": "AI 이미지",
-    "sourceUrl": ""
+    "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Joint_Security_Area_%283069693747%29.jpg",
+    "alt": "판문점 공동경비구역의 군사분계선을 따라 늘어선 푸른 회담실 건물과 북측 건물의 실제 모습",
+    "caption": "남과 북이 마주 선 판문점 공동경비구역. 2008년 촬영한 자료사진이며, 2019년 강제북송 현장 사진은 아니다.",
+    "credit": "Joop Dorresteijn / Wikimedia Commons · CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joint_Security_Area_(3069693747).jpg"
   },
   "inlineImage": {
-    "src": "images/columns/forced-repatriation-rights-2026/justice-scale.svg",
-    "alt": "법률 문서 위에 놓인 정의의 저울을 그린 상징 이미지",
-    "caption": "범죄 혐의가 중대할수록 적법절차와 독립적인 재판의 중요성이 커진다.",
-    "credit": "AI 이미지",
-    "sourceUrl": ""
+    "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Close-up_of_Lady_Justice_statue_holding_scales%2C_symbolizing_justice_and_fairness.jpg",
+    "alt": "균형저울을 들고 있는 실제 정의의 여신상 모습, 공정한 재판을 상징하는 사진",
+    "caption": "누구에게나 같은 법과 적법절차가 적용되어야 한다는 원칙을 보여주는 정의의 여신상. 호주 멜버른 법원에서 촬영한 자료사진.",
+    "credit": "DP Singh Bhullar / Wikimedia Commons · CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Close-up_of_Lady_Justice_statue_holding_scales,_symbolizing_justice_and_fairness.jpg"
   },
   "displayInlineImage": false,
   "additionalImages": [
     {
       "afterSection": 3,
       "src": "images/columns/forced-repatriation-rights-2026/principles-ko.svg",
-      "alt": "표현의 자유, 적법절차, 고문 위험으로부터의 보호를 정리한 도표",
-      "caption": "인권은 국경과 정치적 진영에 따라 달라지지 않는 원칙이다.",
+      "alt": "모든 사람에게 적용되는 인권의 세 원칙: 표현의 자유, 적법절차, 고문 위험으로부터의 보호",
+      "caption": "누구의 편인가보다 어떤 국가권력이 어떤 권리를 침해했는지를 판단하는 것이 인권의 보편성이다.",
       "credit": "씨앗의 소리 도표",
       "sourceUrl": "",
       "contain": true
     },
     {
       "afterSection": 5,
-      "src": "images/columns/forced-repatriation-rights-2026/justice-scale.svg",
-      "alt": "법률 문서 위에 놓인 정의의 저울을 표현한 상징 이미지",
-      "caption": "죄의 유무와 책임은 국가의 일방적 판단이 아니라 법에 따른 절차로 가려진다.",
-      "credit": "AI 이미지",
-      "sourceUrl": ""
+      "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Close-up_of_Lady_Justice_statue_holding_scales%2C_symbolizing_justice_and_fairness.jpg",
+      "alt": "균형저울을 들고 있는 실제 정의의 여신상 모습, 공정한 재판을 상징하는 사진",
+      "caption": "중대한 범죄 혐의를 받는 사람에게도 증거와 재판을 통한 판단 기회가 보장되어야 한다. 멜버른 법원 자료사진.",
+      "credit": "DP Singh Bhullar / Wikimedia Commons · CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Close-up_of_Lady_Justice_statue_holding_scales,_symbolizing_justice_and_fairness.jpg"
     }
   ],
   "sections": [
