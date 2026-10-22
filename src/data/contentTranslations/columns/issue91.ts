@@ -6,27 +6,27 @@ export const issue91: ColumnTranslation = {
   "author": "Little Seed",
   "summary": "After suspended prison sentences for the 2019 forced return of two North Korean fishermen, the wider question is whether human rights can be protected consistently on both sides of the Korean border.",
   "heroImage": {
-    "alt": "Symbolic illustration of two people in front of a guarded border gate",
-    "caption": "The confrontation between state power and individual rights, depicted symbolically rather than as a documentary photograph.",
-    "credit": "AI image"
+    "alt": "Actual photograph of the Joint Security Area in Panmunjom, blue conference buildings beside the Military Demarcation Line",
+    "caption": "The Joint Security Area at Panmunjom, photographed in 2008. This is contextual photography, not a photograph of the 2019 forced repatriation.",
+    "credit": "Joop Dorresteijn / Wikimedia Commons · CC BY 2.0"
   },
   "inlineImage": {
-    "alt": "Scales of justice standing above legal documents",
-    "caption": "Serious accusations heighten the importance of due process.",
-    "credit": "AI image"
+    "alt": "An actual photograph of Lady Justice holding scales at a courthouse in Melbourne",
+    "caption": "A symbol of equal justice and due process at a courthouse in Melbourne, Australia.",
+    "credit": "DP Singh Bhullar / Wikimedia Commons · CC BY-SA 4.0"
   },
   "additionalImages": [
     {
       "src": "images/columns/forced-repatriation-rights-2026/principles-en.svg",
-      "alt": "Three principles of universal human rights: expression, due process and protection from torture",
-      "caption": "The same standards limit state power on either side of a border.",
-      "credit": "SEED VOICE chart"
+      "alt": "Three standards of universal human rights: freedom of expression, due process, and protection from torture",
+      "caption": "Human rights are tested by state conduct, not the political identity of the person affected.",
+      "credit": "SEED VOICE editorial chart"
     },
     {
-      "src": "images/columns/forced-repatriation-rights-2026/justice-scale.svg",
-      "alt": "Illustration of the scales of justice balanced above legal papers",
-      "caption": "Criminal culpability is properly assessed through lawful, impartial proceedings.",
-      "credit": "AI image"
+      "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Close-up_of_Lady_Justice_statue_holding_scales%2C_symbolizing_justice_and_fairness.jpg",
+      "alt": "An actual photograph of Lady Justice holding scales at a courthouse in Melbourne",
+      "caption": "Independent adjudication matters even when the accusations are grave. Archival photograph from Melbourne.",
+      "credit": "DP Singh Bhullar / Wikimedia Commons · CC BY-SA 4.0"
     }
   ],
   "sections": [
