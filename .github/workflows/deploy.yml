@@ -43,15 +43,15 @@ jobs:
         run: |
           set -euo pipefail
           # Skip network/package installation if the necessary tools already exist.
-          if command -v convert >/dev/null 2>&1 && command -v rsvg-convert >/dev/null 2>&1 && fc-list | grep -i 'Noto Sans CJK' >/dev/null; then
+          if command -v convert >/dev/null 2>&1 && command -v rsvg-convert >/dev/null 2>&1 && fc-list | grep -i 'Nanum' >/dev/null; then
             echo "Image converters and Korean fonts already available."
           else
             sudo apt-get -o Acquire::Retries=1 -o Acquire::http::Timeout=20 update
-            sudo DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::Retries=1 -o Acquire::http::Timeout=20 install -y --no-install-recommends imagemagick librsvg2-bin fonts-noto-cjk
+            sudo DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::Retries=1 -o Acquire::http::Timeout=20 install -y --no-install-recommends imagemagick librsvg2-bin fonts-nanum
           fi
           command -v convert
           command -v rsvg-convert
-          fc-list | grep -i 'Noto Sans CJK' | sed -n '1p'
+          fc-list | grep -i 'Nanum' | sed -n '1p'
 
       - name: Build
         run: node scripts/check-editorial-images.mjs && node scripts/validate-hot-issues.mjs && pnpm run build
