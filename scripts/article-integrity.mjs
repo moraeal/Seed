@@ -3,7 +3,7 @@
 //        node scripts/article-integrity.mjs snapshot <slug> (requires SEED_EDITOR_APPROVED=1)
 import { createServer } from "vite";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
-import { createHash } from "node:crypto";
+import { fingerprint, verifyApproved } from "./manuscript-integrity-core.mjs";
 import path from "node:path";
 
 const [action, slug] = process.argv.slice(2);
@@ -27,7 +27,7 @@ const canonical = {
   summary: article.summary || "",
   sections: (article.sections || []).map(s=>({title:s.title||"",paragraphs:s.paragraphs||[]})),
 };
-const digest = createHash("sha256").update(JSON.stringify(canonical)).digest("hex");
+const digest = fingerprint(canonical);
 const lockFile = path.join("editorial","approved",slug+".json");
 if (action === "snapshot") {
   if (process.env.SEED_EDITOR_APPROVED !== "1") throw Error("Editor approval required: SEED_EDITOR_APPROVED=1");
@@ -36,11 +36,11 @@ if (action === "snapshot") {
   console.log("Created immutable candidate editorial snapshot:",lockFile,digest);
 } else {
   const approved = JSON.parse(await readFile(lockFile,"utf8"));
-  if (approved.schemaVersion !== 1 || approved.slug !== slug) throw Error("Invalid approval snapshot");
-  const expected = createHash("sha256").update(JSON.stringify(approved.canonical)).digest("hex");
-  if (expected !== approved.sha256) throw Error("Approval snapshot integrity check failed");
-  if (digest !== expected) {
-    console.error("APPROVED TEXT MISMATCH:",slug,"expected",expected,"actual",digest);
+  try {
+    const expected = verifyApproved(canonical, approved, slug);
+    console.log("PASS approved-text match:", slug, expected);
+  } catch (error) {
+    console.error("APPROVED TEXT VERIFICATION FAILED:", slug, error.message);
     process.exitCode = 1;
-  } else console.log("PASS approved-text match:",slug,digest);
+  }
 }

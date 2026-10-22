@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'scripts/article-integrity.mjs'
+      - 'scripts/manuscript-integrity-core.mjs'
       - 'scripts/test-manuscript-guard.mjs'
       - 'scripts/test-article-integrity-integration.mjs'
       - 'scripts/check-new-article-approvals.mjs'
@@ -15,6 +16,8 @@ on:
       - 'scripts/generate-seo.mjs'
       - 'src/data/columns/**'
       - 'src/data/columns.ts'
+      - 'src/data/seedLanguage*.ts'
+      - 'src/data/seedLanguage*.tsx'
       - 'src/data/columnsLegacy.ts'
       - 'src/data/editorialContinuations.ts'
       - 'src/data/civicSections.ts'
@@ -50,6 +53,7 @@ jobs:
       - name: Validate safeguard JavaScript syntax
         run: |
           node --check scripts/article-integrity.mjs
+          node --check scripts/manuscript-integrity-core.mjs
           node --check scripts/test-manuscript-guard.mjs
           node --check scripts/test-article-integrity-integration.mjs
           node --check scripts/check-new-article-approvals.mjs

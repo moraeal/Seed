@@ -1,18 +1,11 @@
-// Unit tests for manuscript fingerprints: valid, altered, and missing approval.
-// No production articles are modified.
+// Tests the same pure verifier used in production, with in-memory fixtures only.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { createHash } from "node:crypto";
-const digest = v => createHash("sha256").update(JSON.stringify(v)).digest("hex");
-const approved={slug:"fixture",title:"승인 원고",subtitle:"",summary:"요약",sections:[{title:"첫 문단",paragraphs:["삭제되면 안 되는 본문입니다."]}]};
-const lock={schemaVersion:1,slug:"fixture",sha256:digest(approved),canonical:approved};
-function verify(article,snapshot){
-  if(!snapshot) return false;
-  return snapshot.schemaVersion===1 && snapshot.slug===article.slug &&
-    digest(snapshot.canonical)===snapshot.sha256 && digest(article)===snapshot.sha256;
-}
-test("unchanged manuscript passes",()=>assert.equal(verify(structuredClone(approved),lock),true));
-test("deleted paragraph fails",()=>{const changed=structuredClone(approved);changed.sections[0].paragraphs=[];assert.equal(verify(changed,lock),false)});
-test("changed title fails",()=>{const changed={...approved,title:"승인되지 않은 제목"};assert.equal(verify(changed,lock),false)});
-test("tampered approval file fails",()=>{const changed={...lock,canonical:{...approved,title:"변조"}};assert.equal(verify(approved,changed),false)});
-test("missing approval fails",()=>assert.equal(verify(approved,null),false));
+import { fingerprint, verifyApproved } from "./manuscript-integrity-core.mjs";
+const canonical={slug:"fixture",title:"승인 원고",subtitle:"",summary:"요약",sections:[{title:"첫 문단",paragraphs:["삭제되면 안 되는 본문입니다."]}]};
+const approved={schemaVersion:1,slug:"fixture",canonical,sha256:fingerprint(canonical)};
+test("unchanged manuscript passes",()=>assert.equal(verifyApproved(structuredClone(canonical),approved),approved.sha256));
+test("deleted paragraph fails",()=>{const changed=structuredClone(canonical);changed.sections[0].paragraphs=[];assert.throws(()=>verifyApproved(changed,approved),/MISMATCH/)});
+test("changed title fails",()=>assert.throws(()=>verifyApproved({...canonical,title:"승인되지 않은 제목"},approved),/MISMATCH/));
+test("tampered approval fails",()=>assert.throws(()=>verifyApproved(canonical,{...approved,canonical:{...canonical,title:"변조"}}),/integrity/));
+test("missing approval fails",()=>assert.throws(()=>verifyApproved(canonical,null),/Invalid approval/));

@@ -9,6 +9,15 @@ const [base,head="HEAD"]=process.argv.slice(2);
 if(!base)process.exit(2);
 const changes=execFileSync("git",["diff","--no-renames","--name-status",base,head,"--","src/data/columns/"],{encoding:"utf8"}).trim().split("\n").filter(Boolean);
 let failed=false;
+// Fail closed for independently registered civic-language articles until editors'
+ // authenticated approval and browser/image checks support their module format.
+const dataFiles=execFileSync("git",["diff","--name-only",base,head,"--","src/data/"],{encoding:"utf8"}).trim().split("\n").filter(Boolean);
+for(const file of dataFiles){
+  if(file.startsWith("src/data/seedLanguage") && (file.endsWith(".ts") || file.endsWith(".tsx"))){
+    console.error("Unsupported civic-language source requires editorial approval and visual QA:",file);
+    failed=true;
+  }
+}
 for(const row of changes){
   const [status,file]=row.split("\t");
   if(status!=="A" || !/^src\/data\/columns\/[^/]+\.tsx?$/.test(file||""))continue;
