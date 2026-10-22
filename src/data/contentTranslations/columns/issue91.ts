@@ -2,13 +2,13 @@ import type { ColumnTranslation } from "../types";
 
 export const issue91: ColumnTranslation = {
   "title": "Seven Years After Forced Repatriation: What Human Rights Really Mean",
-  "subtitle": "A court ruling and an essay by a human rights lawyer test whether the same rights extend to everyone",
+  "subtitle": "A court ruling and an essay by an attorney affiliated with the so-called Human Rights Coalition test universal rights",
   "author": "Little Seed",
-  "summary": "After suspended prison sentences for the 2019 forced return of two North Korean fishermen, the wider question is whether human rights can be protected consistently on both sides of the Korean border.",
+  "summary": "The 2019 forced repatriation case, a 2026 appellate ruling, and an essay by an attorney affiliated with the so-called Human Rights Coalition raise a question: do human rights apply across political lines?",
   "heroImage": {
-    "alt": "Actual photograph of the Joint Security Area in Panmunjom, blue conference buildings beside the Military Demarcation Line",
-    "caption": "The Joint Security Area at Panmunjom, photographed in 2008. This is contextual photography, not a photograph of the 2019 forced repatriation.",
-    "credit": "Joop Dorresteijn / Wikimedia Commons · CC BY 2.0"
+    "alt": "Photorealistic symbolic scene of a man resisting forced return between two escorts at a fortified border, with a gavel and scales of justice",
+    "caption": "AI-created symbolic composite about forced repatriation and state power; it is not documentary footage of the 2019 incident or the actual people involved.",
+    "credit": "AI image"
   },
   "inlineImage": {
     "alt": "An actual photograph of Lady Justice holding scales at a courthouse in Melbourne",

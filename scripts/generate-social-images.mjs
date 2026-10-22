@@ -88,6 +88,17 @@ const jobs = [
 // Rasterized from the site's existing seed symbol for portable, font-free builds.
 const badgePng = path.join(publicRoot, "images/brand/seed-social-badge.png");
 
+// Reuse the last published, article-specific JPEG when a third-party host rate-limits
+// the image during a clean CI build. Never substitute a generic or unrelated card.
+const restorePublishedSocialImage = async (job, target) => {
+  const imageUrl = `https://seedvoice.kr/images/social/${encodeURIComponent(job.section)}/${encodeURIComponent(job.slug)}.jpg`;
+  const response = await fetch(imageUrl, { signal: AbortSignal.timeout(15_000) });
+  if (!response.ok) throw new Error(`published preview HTTP ${response.status}`);
+  const bytes = Buffer.from(await response.arrayBuffer());
+  if (bytes.length < 4096 || bytes[0] !== 0xff || bytes[1] !== 0xd8) throw new Error("published preview is not a valid JPEG");
+  await writeFile(target, bytes);
+};
+
 const convertToSocialImage = async (source, target) => run("convert", [
   source,
   "-auto-orient",
@@ -131,7 +142,15 @@ for (const job of jobs) {
         console.warn(`Using fallback social image for ${job.slug}: ${error.message}`);
       } else {
         const existingPreviewIsAvailable = await access(target).then(() => true).catch(() => false);
-        if (!existingPreviewIsAvailable) throw new Error(`Could not fetch social image for ${job.slug}: ${error.message}`);
+        if (!existingPreviewIsAvailable) {
+          try {
+            await restorePublishedSocialImage(job, target);
+            console.warn(`Restored published article-specific social image for ${job.slug}: ${error.message}`);
+            continue;
+          } catch (recoveryError) {
+            throw new Error(`Could not fetch social image for ${job.slug}: ${error.message}; recovery: ${recoveryError.message}`);
+          }
+        }
         await convertToSocialImage(target, target);
         console.warn(`Keeping existing social image for ${job.slug}: ${error.message}`);
         continue;
