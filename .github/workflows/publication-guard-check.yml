@@ -1,6 +1,9 @@
 name: Publication safeguards CI
 
 on:
+  push:
+    branches:
+      - 'fix/publication-verification-20261020'
   pull_request:
     paths:
       - 'scripts/article-integrity.mjs'
@@ -43,6 +46,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Resolve merge-base for both PR and isolated branch CI
+        id: comparison
+        run: echo "sha=$(git merge-base HEAD origin/main)" >> "$GITHUB_OUTPUT"
       - uses: pnpm/action-setup@v4
         with:
           version: 10
@@ -69,7 +75,7 @@ jobs:
         run: node --test scripts/test-manuscript-guard.mjs
       - name: Detect in-place public image replacements
         env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BASE_SHA: ${{ steps.comparison.outputs.sha }}
         run: node scripts/check-image-cache-keys.mjs "$BASE_SHA" HEAD
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -77,7 +83,7 @@ jobs:
         run: node scripts/test-article-integrity-integration.mjs
       - name: Require editor-approved snapshots for new articles
         env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BASE_SHA: ${{ steps.comparison.outputs.sha }}
         run: node scripts/check-new-article-approvals.mjs "$BASE_SHA" HEAD
       - name: Install image converters and Korean fonts
         run: |
@@ -107,3 +113,11 @@ jobs:
           node scripts/check-column-browser.mjs politicians-who-take-public-debt-lightly-2026
           node scripts/check-column-browser.mjs populism-collapse-generational-conflict-2026
           node scripts/check-column-browser.mjs home
+      - name: Block stale branch until changes are tested with latest main
+        if: github.event_name == 'push'
+        run: |
+          behind=$(git rev-list --count HEAD..origin/main)
+          if [ "$behind" -gt 0 ]; then
+            echo "::error::PR branch is $behind commits behind main. Integrate main and rerun CI before considering review."
+            exit 1
+          fi
