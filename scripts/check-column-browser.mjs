@@ -5,7 +5,7 @@ import { spawn } from "node:child_process";
 const slug = process.argv[2];
 const isHome = slug === "home";
 const expectedArticleHeadings = {
-  "politicians-who-take-public-debt-lightly-2026": "한국 국가부채",
+  "politicians-who-take-public-debt-lightly-2026": "국가 빚, 너무 가볍게 보는 건 아닌가",
   "populism-collapse-generational-conflict-2026": "포퓰리즘의 몰락",
   "forced-repatriation-seven-years-human-rights-2026": "강제북송 7년 만에 유죄 판결",
   "merkel-china-industrial-dependence-2026": "독일은 자동차를 팔았고",
