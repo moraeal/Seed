@@ -43,6 +43,22 @@ try {
   }
 } catch (error) { errors.push(String(error.message || error)); }
 const report = { url, passed: errors.length === 0, attempts, errors, limitation: "HTTP metadata check only; manual/browser mobile, body text, and all inline images require separate inspection" };
+// For the forced-repatriation replacement, confirm the *new* hero bytes are live.
+// A 200 article shell or an old social card is not enough to certify an image swap.
+if (slug === "forced-repatriation-seven-years-human-rights-2026") {
+  const heroPath = "images/columns/forced-repatriation-rights-2026/hero-no-text-20261022.jpg";
+  try {
+    const { readFile } = await import("node:fs/promises");
+    const localBytes = await readFile("public/" + heroPath);
+    const imageResponse = await check(base + "/" + heroPath, "Replacement article hero");
+    if (!(imageResponse.headers.get("content-type") || "").startsWith("image/")) {
+      errors.push("Replacement hero response is not an image");
+    } else {
+      const liveBytes = Buffer.from(await imageResponse.arrayBuffer());
+      if (!localBytes.equals(liveBytes)) errors.push("Replacement hero bytes differ from deployed image");
+    }
+  } catch (error) { errors.push("Replacement hero: " + String(error.message || error)); }
+}
 report.passed = errors.length === 0;
 console.log(JSON.stringify(report, null, 2));
 if (process.env.GITHUB_STEP_SUMMARY) {

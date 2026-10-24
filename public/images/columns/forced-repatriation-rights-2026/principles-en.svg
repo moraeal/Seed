@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+<rect width="1200" height="720" fill="#ffffff"/>
+<rect x="72" y="50" width="62" height="5" fill="#b88a4d"/>
+<text x="72" y="90" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="18" font-weight="700" fill="#667b81">THREE UNIVERSAL PROTECTIONS</text>
+<text x="72" y="152" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="45" font-weight="800" fill="#142f3c">Human rights are not partisan</text>
+<path d="M72 174H1128" stroke="#d0d9db" stroke-width="2"/>
+<rect x="72" y="206" width="1056" height="129" rx="6" fill="#f3f6f5"/>
+<rect x="72" y="206" width="5" height="129" fill="#1c6065"/>
+<text x="105" y="261" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="29" font-weight="800" fill="#977041">01</text>
+<text x="193" y="260" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="32" font-weight="750" fill="#173945">FREEDOM OF EXPRESSION</text>
+<text x="193" y="302" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="23" font-weight="450" fill="#3f525b">Challenge power without fear</text>
+<text x="1090" text-anchor="end" y="286" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="20" font-weight="600" fill="#556c70">South and North</text>
+<rect x="72" y="356" width="1056" height="129" rx="6" fill="#f8f9f8"/>
+<rect x="72" y="356" width="5" height="129" fill="#1c6065"/>
+<text x="105" y="411" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="29" font-weight="800" fill="#977041">02</text>
+<text x="193" y="410" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="32" font-weight="750" fill="#173945">DUE PROCESS</text>
+<text x="193" y="452" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="23" font-weight="450" fill="#3f525b">Evidence, counsel and an impartial court</text>
+<text x="1090" text-anchor="end" y="436" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="20" font-weight="600" fill="#556c70">Even for criminal suspects</text>
+<rect x="72" y="506" width="1056" height="129" rx="6" fill="#f3f6f5"/>
+<rect x="72" y="506" width="5" height="129" fill="#1c6065"/>
+<text x="105" y="561" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="29" font-weight="800" fill="#977041">03</text>
+<text x="193" y="560" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="32" font-weight="750" fill="#173945">NO RETURN TO TORTURE</text>
+<text x="193" y="602" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="23" font-weight="450" fill="#3f525b">Do not transfer people into foreseeable torture</text>
+<text x="1090" text-anchor="end" y="586" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="20" font-weight="600" fill="#556c70">Across any border</text>
+
+<path d="M72 677H1128" stroke="#d0d9db" stroke-width="2"/>
+<text x="72" y="705" font-family="Noto Sans KR, Pretendard, Arial, sans-serif" font-size="22" font-weight="500" fill="#4e6870">The standard applies to every person and every state.</text>
+</svg>

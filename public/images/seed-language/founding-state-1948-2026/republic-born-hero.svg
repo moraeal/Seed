@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="낡은 왕조의 왕관과 식민지의 쇠사슬이 부서지고 새로운 공화국을 세운 시민들의 태극기가 밝은 빛 속에 휘날리는 상징 이미지">
+<defs>
+<linearGradient id="sky" x2="1" y2="0"><stop stop-color="#13151c"/><stop offset=".39" stop-color="#45423a"/><stop offset=".53" stop-color="#986c45"/><stop offset=".75" stop-color="#ffc67c"/><stop offset="1" stop-color="#e9f5ff"/></linearGradient>
+<radialGradient id="sun"><stop stop-color="#fffaf0"/><stop offset=".18" stop-color="#fff1c9"/><stop offset=".5" stop-color="#ffce7d" stop-opacity=".74"/><stop offset="1" stop-color="#ffd99d" stop-opacity="0"/></radialGradient>
+<linearGradient id="ground" x2="0" y2="1"><stop stop-color="#2e3543"/><stop offset="1" stop-color="#040912"/></linearGradient>
+<linearGradient id="iron"><stop stop-color="#070d18"/><stop offset=".42" stop-color="#686e7b"/><stop offset=".62" stop-color="#12141a"/><stop offset="1" stop-color="#07090e"/></linearGradient>
+<linearGradient id="flag" x2=".2" y2="0" x1=".7" y1="1"><stop stop-color="#fffefa"/><stop offset=".52" stop-color="#faf8f2"/><stop offset="1" stop-color="#b1b4ba"/></linearGradient>
+<filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".008" numOctaves="3" seed="6"/><feDisplacementMap in="SourceGraphic" scale="9"/></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".45" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".13"/></feComponentTransfer></filter>
+<filter id="glow"><feGaussianBlur stdDeviation="25"/></filter>
+<g id="crowd"><path d="M0 30 Q15 -9 30 30 V80 H0Z" /><circle cx="15" cy="0" r="16"/></g>
+<g id="link"><ellipse cx="0" cy="0" rx="71" ry="30" stroke="url(#iron)" stroke-width="24" fill="none" transform="rotate(-23)"/><ellipse cx="0" cy="0" rx="71" ry="30" stroke="#979ca4" stroke-opacity=".4" stroke-width="4" fill="none" transform="rotate(-23)"/></g>
+</defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<circle cx="1230" cy="345" r="560" fill="url(#sun)"/>
+<g opacity=".26" stroke="#fff3dc" stroke-width="5"><path d="M1170 320 340 0M1180 325 760 0M1220 345 1450 0M1210 335 1600 130M1170 370 600 870M1240 370 1590 800"/></g>
+<path fill="#111921" opacity=".8" d="M0 570v-105l58-15 6-112 90-30 13-190 20 196 78 24 43-64 51 49 31-151 22 148 101 39 56-67 55 78 65 28 32 185Z"/>
+<path d="M0 588V448l95-16v-52h418v45l110 30v130Z" fill="#171619"/>
+<path d="M0 438 178 369l158-4 192 73z" fill="#080b0e"/><path d="M45 359 175 327 350 324 490 359l-70-7-245-17z" fill="#211c1d"/>
+<g fill="#33302c"><path d="M20 460h65v120H20zM112 445h65v140h-65zM210 448h65v134h-65zM305 448h65v134h-65zM402 448h66v134h-66z"/></g>
+<path d="M0 566 Q290 520 600 625V900H0Z" fill="#131316" opacity=".9"/>
+<g transform="translate(170 730) rotate(-20)"><path d="M-135 10-165-130l63 40 69-87 63 87 68-40-15 140Z" fill="#82714d" stroke="#e4b977" stroke-width="9"/><path d="M-136 23H105V77H-136Z" fill="#392a2a" stroke="#bd9558" stroke-width="7"/><circle r="27" cx="-28" cy="-45" fill="#b08a4b"/><path d="m-55-44 27-43 27 43" fill="#ecd6a4"/></g>
+<g transform="translate(420 478) rotate(-35) scale(1.07)"><use href="#link" x="-155"/><use href="#link" x="-58"/><use href="#link" x="38"/></g>
+<g transform="translate(820 290) rotate(-36)"><use href="#link" x="-80"/><path d="m30-55 50-55 M30 55 48 115" stroke="url(#iron)" stroke-width="29"/><path d="m-19-28 75-23-22 43 52 17-72 23" fill="#292c31"/></g>
+<g fill="#f9d998" opacity=".95"><path d="m750 240 16-64 23 42zM818 305l45-70 12 47zM730 363l-19-69 58 40zM885 219l34-20-1 41zM799 394l51-15-16 41zM709 264l-44-28 53-10z"/></g>
+<path d="M610 720Q730 650 865 670q108-72 245-65Q1310 566 1600 607v293H610Z" fill="#384756" opacity=".43"/>
+<path d="M980 670v-63h52v-45h74v-80l28-55 28 55v80h75v45h53v63z" fill="#4b6070" opacity=".8"/>
+<path d="M980 670h310v34H980z" fill="#3d4d5c" opacity=".85"/>
+<path d="M1098 559h70v112h-70z" fill="#a7afaa" opacity=".8"/>
+<path d="M0 820Q320 690 630 785q180-120 480-76 240-95 490-12v203H0Z" fill="url(#ground)"/>
+<g fill="#101825"><use href="#crowd" transform="translate(580 763) scale(1.7)"/><use href="#crowd" transform="translate(690 744) scale(1.45)"/><use href="#crowd" transform="translate(765 710) scale(1.7)"/><use href="#crowd" transform="translate(854 763) scale(1.95)"/><use href="#crowd" transform="translate(960 725) scale(1.3)"/><use href="#crowd" transform="translate(1030 724) scale(1.6)"/><use href="#crowd" transform="translate(1120 760) scale(1.9)"/><use href="#crowd" transform="translate(1250 735) scale(1.7)"/><use href="#crowd" transform="translate(1380 750) scale(1.6)"/><use href="#crowd" transform="translate(1510 737) scale(1.6)"/></g>
+<g transform="translate(1110 385)">
+<path d="M-1 366v-530" stroke="#34271d" stroke-width="19"/>
+<path d="M14-155 Q180-220 425-133 Q376-40 201-48 Q94-86 14-74Z" fill="url(#flag)" stroke="#dfdeda" stroke-width="4"/>
+<g transform="translate(216 -119) rotate(-9)"><path d="M-57 0A57 57 0 0 1 57 0Q0-5-57 0Z" fill="#ca2439"/><path d="M-57 0A57 57 0 0 0 57 0Q0 5-57 0Z" fill="#213e87"/><circle cx="0" cy="-28.5" r="28.5" fill="#ca2439"/><circle cx="0" cy="28.5" r="28.5" fill="#213e87"/>
+<g stroke="#18222e" stroke-width="10"><path d="M-117-92v43m16-43v43m16-43v43M85-92v43m16-43v43m16-43v43M-117 48v43m16-43v43m16-43v43M85 48v43m16-43v43m16-43v43"/></g></g></g>
+<path d="M1100 750Q1060 615 1071 521l28-32 30 12-14 45 34-16 29 30-51 49-16 141Z" fill="#121e27" stroke="#1a1c25" stroke-width="9"/>
+<path d="M0 0h1600v900H0Z" filter="url(#grain)" opacity=".24"/>
+</svg>

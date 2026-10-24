@@ -9,6 +9,64 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:forced-repatriation-seven-years-human-rights-2026": {
+  "ko": {
+    "href": "/columns/film-imagination-history-distortion-ryoma-2026",
+    "title": "영화의 상상력과 역사적 사실 사이",
+    "relationship": "표현의 자유와 사실 검증",
+    "reason": "자유를 지키면서 역사적 주장과 증거를 구별하는 관점을 함께 읽습니다.",
+    "listHref": "/columns",
+    "listLabel": "칼럼 전체 보기"
+  },
+  "en": {
+    "href": "/columns/film-imagination-history-distortion-ryoma-2026",
+    "title": "Film, Imagination and Historical Evidence",
+    "relationship": "FREEDOM AND EVIDENCE",
+    "reason": "Explore the difference between protecting expression and verifying historical claims.",
+    "listHref": "/columns",
+    "listLabel": "All columns"
+  }
+},
+  "column:seed-voice-editorial-principles-citizenization-2026": {
+    ko: {
+      href: "/columns/citizenization-before-advancement-2026",
+      title: "선진화를 위해서는 시민화가 우선이다",
+      relationship: "씨앗의 편집철학과 시민화",
+      reason: "편집 원칙의 중심에 놓인 시민화가 시민의 일상과 공공의 문제에서 어떤 의미를 갖는지 더 깊이 살펴봅니다.",
+      listHref: "/columns",
+      listLabel: "칼럼 전체 보기"
+    },
+    en: {
+      href: "/columns/citizenization-before-advancement-2026",
+      title: "Citizen Agency Before National Advancement",
+      relationship: "EDITORIAL PRINCIPLES AND CIVIC AGENCY",
+      reason: "Explore why citizens' practical agency must develop alongside institutions and national prosperity.",
+      listHref: "/columns",
+      listLabel: "All columns"
+    }
+  },
+  "seed-language:citizenship-beyond-democratic-label-2026": {
+    ko: {
+      href: "/seed-language/citizen-as-seed",
+      title: "시민은 주어지는 이름이 아니라 자라나는 존재라는 말이다",
+      relationship: "시민의 자각과 시민화",
+      reason: "민주시민이라는 이름을 넘어서 시민이 어떻게 삶의 주체로 자라는지 이전 시민언어와 이어서 읽습니다.",
+      listHref: "/seed-language",
+      listLabel: "시민언어 전체 보기"
+    },
+    en: {
+      href: "/seed-language/citizen-as-seed",
+      title: "Citizenship Is a Capacity That Grows",
+      relationship: "CIVIC AWARENESS AND GROWTH",
+      reason: "Continue with how people grow into independent agents of public life beyond prescribed political labels.",
+      listHref: "/seed-language",
+      listLabel: "All civic language entries"
+    }
+  },
+  "column:merkel-china-industrial-dependence-2026": {
+    ko: {href:"/columns/security-slogans-alliance-2026",title:"한국의 안보, 누구를 위한 자주인가",relationship:"산업안보와 외교",reason:"독일의 대중국 산업 의존을 살펴본 뒤 한국의 안보 선택과 동맹의 역할을 함께 읽습니다.",listHref:"/columns",listLabel:"칼럼 전체 보기"},
+    en: {href:"/columns/security-slogans-alliance-2026",title:"Security and Alliance Choices",relationship:"INDUSTRY AND SECURITY",reason:"Continue to the broader relationship between security decisions and industrial autonomy.",listHref:"/columns",listLabel:"All columns"}
+  },
   "column:populism-collapse-generational-conflict-2026": {
     ko: {
       href: "/columns/politicians-who-take-public-debt-lightly-2026",

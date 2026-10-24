@@ -8,13 +8,16 @@ export function CitationReference({ number, citations }: { number: number; citat
   return <sup className="article-citation"><a href={source.url} {...(isExternalCitationUrl(source.url) ? { target: "_blank", rel: "noreferrer" } : {})} aria-label={`${citations.language === "ko" ? "출처" : "Source"} ${number}: ${source.label}`} title={source.label} role="doc-noteref">[{number}]</a></sup>;
 }
 
+// Render existing editorial **strong** markup without exposing raw asterisks.
+const renderEditorialEmphasis = (value: string) => value.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g).map((chunk, i) => chunk.startsWith("**") && chunk.endsWith("**") ? <strong key={i}>{chunk.slice(2, -2)}</strong> : chunk.startsWith("*") && chunk.endsWith("*") ? <em key={i}>{chunk.slice(1, -1)}</em> : chunk);
+
 export function ArticleText({ text, citations }: { text: string; citations: ArticleCitations }) {
   const tokens = Array.from(text.matchAll(citationTokenPattern));
   let cursor = 0;
   const output = [];
   for (const match of tokens) {
     const index = match.index!;
-    output.push(text.slice(cursor, index));
+    output.push(...renderEditorialEmphasis(text.slice(cursor, index)));
     const token = match[0];
     const link = token.match(citationLinkPattern);
     const source = resolveCitationToken(token, citations);
@@ -29,7 +32,7 @@ export function ArticleText({ text, citations }: { text: string; citations: Arti
     } else output.push(token);
     cursor = index + token.length;
   }
-  output.push(text.slice(cursor));
+  output.push(...renderEditorialEmphasis(text.slice(cursor)));
   return <>{output}</>;
 }
 

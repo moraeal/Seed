@@ -17,11 +17,13 @@ permissions:
 # GitHub may still replace an older pending run with the newest pending run.
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # Stable runner avoids intermittent apt stalls seen on the latest runner image.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -37,11 +39,20 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Ensure image converters and Korean fonts are available
+        timeout-minutes: 5
         run: |
-          sudo apt-get update
-          sudo apt-get install -y imagemagick librsvg2-bin fonts-noto-cjk
+          set -euo pipefail
+          # Skip network/package installation if the necessary tools already exist.
+          if command -v convert >/dev/null 2>&1 && command -v rsvg-convert >/dev/null 2>&1 && fc-list | grep -i 'Nanum' >/dev/null; then
+            echo "Image converters and Korean fonts already available."
+          else
+            sudo apt-get -o Acquire::Retries=1 -o Acquire::http::Timeout=20 update
+            sudo DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::Retries=1 -o Acquire::http::Timeout=20 install -y --no-install-recommends imagemagick librsvg2-bin fonts-nanum
+          fi
           command -v convert
           command -v rsvg-convert
+          fc-list | grep -i 'Nanum' | sed -n '1p'
+
       - name: Build
         run: node scripts/check-editorial-images.mjs && node scripts/validate-hot-issues.mjs && pnpm run build
         env:
@@ -70,8 +81,8 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-  # Check changed public article routes after Pages confirms deployment.
-  # HTTP smoke checks do not substitute for body-image and mobile browser review.
+  # Inspect the published essay after Pages confirms deployment.
+  # This HTTP smoke check does not substitute for mobile/browser review.
   verify-public-column:
     runs-on: ubuntu-latest
     needs: deploy
