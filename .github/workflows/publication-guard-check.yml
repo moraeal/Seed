@@ -112,6 +112,8 @@ jobs:
         run: |
           node scripts/check-column-browser.mjs politicians-who-take-public-debt-lightly-2026
           node scripts/check-column-browser.mjs populism-collapse-generational-conflict-2026
+          node scripts/check-column-browser.mjs forced-repatriation-seven-years-human-rights-2026
+          node scripts/check-column-browser.mjs merkel-china-industrial-dependence-2026
           node scripts/check-column-browser.mjs home
       - name: Block stale branch until changes are tested with latest main
         if: github.event_name == 'push'

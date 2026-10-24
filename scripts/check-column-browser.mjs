@@ -4,6 +4,12 @@ import { chromium } from "file:///tmp/seed-browser-tools/node_modules/playwright
 import { spawn } from "node:child_process";
 const slug = process.argv[2];
 const isHome = slug === "home";
+const expectedArticleHeadings = {
+  "politicians-who-take-public-debt-lightly-2026": "한국 국가부채",
+  "populism-collapse-generational-conflict-2026": "포퓰리즘의 몰락",
+  "forced-repatriation-seven-years-human-rights-2026": "강제북송 7년 만에 유죄 판결",
+  "merkel-china-industrial-dependence-2026": "독일은 자동차를 팔았고",
+};
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
 const server = spawn("pnpm", ["exec","vite","preview","--host","127.0.0.1","--port","4179","--strictPort"], { stdio:"pipe" });
 const base = "http://127.0.0.1:4179";
@@ -24,11 +30,14 @@ try {
     const info=await page.evaluate(()=>({
       images:Array.from(document.images).filter(i=>i.getClientRects().length).map(i=>({src:i.currentSrc||i.src,ok:i.complete&&i.naturalWidth>0})),
       overflow:document.documentElement.scrollWidth>innerWidth+2,
-      text:document.body.innerText
+      text:document.body.innerText,
+      h1:document.querySelector("main h1")?.innerText?.trim() || document.querySelector("h1")?.innerText?.trim() || "",
+      ogImage:document.querySelector('meta[property="og:image"]')?.content || "",
     }));
     if(isHome && info.text.trim().length<100) failures.push("Homepage content not rendered");
     if(!isHome && info.text.trim().length<500) failures.push("Article body not rendered");
-    if(!info.text.includes("국가 빚") && slug==="politicians-who-take-public-debt-lightly-2026") failures.push("Missing article title");
+    if(!isHome && !info.h1.includes(expectedArticleHeadings[slug] || slug)) failures.push("Missing or wrong article H1: "+info.h1);
+    if(!isHome && !info.ogImage) failures.push("Missing article og:image metadata");
     if(info.images.some(i=>!i.ok)) failures.push("Broken images: "+info.images.filter(i=>!i.ok).map(i=>i.src).join(", "));
     if(info.images.length<2)failures.push("Too few visible images");
     if(info.overflow)failures.push("Horizontal overflow");
