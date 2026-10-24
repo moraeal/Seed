@@ -1,0 +1,125 @@
+name: Publication safeguards CI
+
+on:
+  push:
+    branches:
+      - 'fix/publication-verification-20261020'
+  pull_request:
+    paths:
+      - 'scripts/article-integrity.mjs'
+      - 'scripts/manuscript-integrity-core.mjs'
+      - 'scripts/test-manuscript-guard.mjs'
+      - 'scripts/test-article-integrity-integration.mjs'
+      - 'scripts/check-new-article-approvals.mjs'
+      - 'scripts/check-withdrawn-publication.mjs'
+      - 'scripts/verify-live-withdrawn.mjs'
+      - 'editorial/withdrawn-slugs.json'
+      - 'src/data/contentTranslations/columns/**'
+      - 'src/seo.ts'
+      - 'scripts/generate-seo.mjs'
+      - 'src/data/columns/**'
+      - 'src/data/columns.ts'
+      - 'src/data/seedLanguage*.ts'
+      - 'src/data/seedLanguage*.tsx'
+      - 'src/data/columnsLegacy.ts'
+      - 'src/data/editorialContinuations.ts'
+      - 'src/data/civicSections.ts'
+      - 'editorial/approved/**'
+      - 'scripts/verify-article-assets.mjs'
+      - 'scripts/verify-changed-columns.mjs'
+      - 'scripts/check-image-cache-keys.mjs'
+      - 'scripts/check-column-browser.mjs'
+      - 'public/images/**'
+      - 'scripts/preflight-column.mjs'
+      - 'scripts/verify-column-publication.mjs'
+      - '.github/workflows/deploy.yml'
+      - '.github/workflows/publication-guard-check.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  guard-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Resolve merge-base for both PR and isolated branch CI
+        id: comparison
+        run: echo "sha=$(git merge-base HEAD origin/main)" >> "$GITHUB_OUTPUT"
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Validate safeguard JavaScript syntax
+        run: |
+          node --check scripts/article-integrity.mjs
+          node --check scripts/manuscript-integrity-core.mjs
+          node --check scripts/test-manuscript-guard.mjs
+          node --check scripts/test-article-integrity-integration.mjs
+          node --check scripts/check-new-article-approvals.mjs
+          node --check scripts/check-withdrawn-publication.mjs
+          node --check scripts/verify-live-withdrawn.mjs
+          node --check scripts/verify-article-assets.mjs
+          node --check scripts/verify-changed-columns.mjs
+          node --check scripts/check-image-cache-keys.mjs
+          node --check scripts/check-column-browser.mjs
+          node --check scripts/preflight-column.mjs
+          node --check scripts/verify-column-publication.mjs
+      - name: Test manuscript protection failure cases
+        run: node --test scripts/test-manuscript-guard.mjs
+      - name: Detect in-place public image replacements
+        env:
+          BASE_SHA: ${{ steps.comparison.outputs.sha }}
+        run: node scripts/check-image-cache-keys.mjs "$BASE_SHA" HEAD
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Test actual manuscript approval and rejection flow
+        run: node scripts/test-article-integrity-integration.mjs
+      - name: Require editor-approved snapshots for new articles
+        env:
+          BASE_SHA: ${{ steps.comparison.outputs.sha }}
+        run: node scripts/check-new-article-approvals.mjs "$BASE_SHA" HEAD
+      - name: Install image converters and Korean fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick librsvg2-bin fonts-noto-cjk
+      - name: Test published article image integrity and manuscript preflight
+        run: |
+          node scripts/verify-article-assets.mjs politicians-who-take-public-debt-lightly-2026
+          node scripts/preflight-column.mjs politicians-who-take-public-debt-lightly-2026
+      - name: Build complete site (bounded)
+        run: timeout --signal=TERM --kill-after=30s 18m pnpm run build
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_TURNSTILE_SITE_KEY: ${{ secrets.VITE_TURNSTILE_SITE_KEY }}
+      - name: Fail if withdrawn articles remain in generated public pages
+        run: node scripts/check-withdrawn-publication.mjs
+      - name: Verify withdrawn content is not served by the current live site
+        run: node scripts/verify-live-withdrawn.mjs
+      - name: Install Playwright Chromium for visual smoke test
+        run: |
+          npm install --prefix /tmp/seed-browser-tools --no-save --package-lock=false playwright
+          /tmp/seed-browser-tools/node_modules/.bin/playwright install --with-deps chromium
+      - name: Test desktop and mobile article display
+        run: |
+          node scripts/check-column-browser.mjs politicians-who-take-public-debt-lightly-2026
+          node scripts/check-column-browser.mjs populism-collapse-generational-conflict-2026
+          node scripts/check-column-browser.mjs forced-repatriation-seven-years-human-rights-2026
+          node scripts/check-column-browser.mjs merkel-china-industrial-dependence-2026
+          node scripts/check-column-browser.mjs home
+      - name: Block stale branch until changes are tested with latest main
+        if: github.event_name == 'push'
+        run: |
+          behind=$(git rev-list --count HEAD..origin/main)
+          if [ "$behind" -gt 0 ]; then
+            echo "::error::PR branch is $behind commits behind main. Integrate main and rerun CI before considering review."
+            exit 1
+          fi

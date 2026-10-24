@@ -61,6 +61,8 @@ jobs:
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           # Public Turnstile site key is injected at build time; rebuild after key updates.
           VITE_TURNSTILE_SITE_KEY: ${{ secrets.VITE_TURNSTILE_SITE_KEY }}
+      - name: Block withdrawn articles before production deploy
+        run: node scripts/check-withdrawn-publication.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
@@ -88,12 +90,29 @@ jobs:
     steps:
       - name: Checkout publication verifier
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Check public column route and social image
-        run: node scripts/verify-latest-column.mjs
+      - name: Check changed public columns and social images
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: node scripts/verify-changed-columns.mjs "$BEFORE_SHA" "$AFTER_SHA"
+
+  # Independent live-site check after every deployment, including hourly refreshes.
+  verify-withdrawn:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify withdrawn articles are not live or indexed
+        run: node scripts/verify-live-withdrawn.mjs
 
   # IndexNow is a notification channel, not an indexing guarantee.
   # Only run after successful production deployment, not hourly refreshes.
