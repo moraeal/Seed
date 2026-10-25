@@ -681,5 +681,20 @@ export function getEditorialContinuation(kind: EditorialContentKind, slug: strin
     listHref: "/columns",
     listLabel: "All columns",
   };
+  if (kind === "column" && slug === "europe-promises-fiscal-choice-citizens-2026") return language === "ko" ? {
+    href: "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026",
+    title: "프랑스가 남의 집 이야기로 보이는가",
+    relationship: "함께 읽는 프랑스 재정 분석",
+    reason: "이번 유럽 시위 후속분석에 이어, 복지와 지출 약속이 줄이기 어려운 재정 의무로 굳어지는 과정을 살펴봅니다.",
+    listHref: "/tax-watch-movement",
+    listLabel: "세금감시운동 전체 보기",
+  } : {
+    href: "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026",
+    title: "Does France Still Look Like Someone Else's Problem?",
+    relationship: "RELATED FRANCE FISCAL ANALYSIS",
+    reason: "Continue with the earlier investigation into how welfare and spending commitments become difficult to reverse.",
+    listHref: "/tax-watch-movement",
+    listLabel: "All Tax Watch Movement articles",
+  };
   return getBaseEditorialContinuation(kind, slug, language);
 }
