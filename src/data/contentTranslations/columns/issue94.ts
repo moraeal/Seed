@@ -3,7 +3,7 @@ export const issue94: ColumnTranslation = {
   "title": "Building South Korea's Economy on Debt",
   "subtitle": "KRW 2,000 trillion in household credit, KRW 1,400 trillion in government debt — who will pay the price of housing support and expansionary spending?",
   "author": "Small Seed",
-  "summary": "Korean household credit has passed KRW 2,000 trillion as central-government debt is projected to exceed KRW 1,400 trillion. What France and Japan reveal about low rates, property booms, fiscal commitments and the freedoms that future debt payments may erode.",
+  "summary": "Korea's household credit exceeds KRW 2,000 trillion, while government debt is projected above KRW 1,400 trillion. France's refinancing shock and Japan's property-bubble collapse show how debt-funded prosperity can burden citizens later.",
   "heroImage": {
     "alt": "An illustrative image of a citizen dwarfed by an apartment wall, symbolizing Korea's soaring housing costs and debt",
     "caption": "Higher asset prices and heavier financial obligations can grow side by side.",
@@ -64,11 +64,37 @@ export const issue94: ColumnTranslation = {
       ]
     },
     {
-      "title": "Warnings from France and Japan",
+      "title": "France: The Fiscal Bill Left by the Negative-Rate Era",
       "paragraphs": [
-        "France enjoyed a long era of cheap borrowing and expanding public commitments. When yields climbed, the budgetary cost rose. Public debt stood near 119% of GDP in 2026, while attempts to contain spending encountered intense political resistance.[5]",
-        "Japan's late-1980s experience provides another warning. Low rates and abundant lending helped inflate property and stock-market bubbles. When prices collapsed, impaired loans, corporate deleveraging and delayed financial repairs weighed on growth for years.",
-        "Korea is not identical to either country. But ignoring the buildup of household and public liabilities while focusing on short-term growth and asset prices risks repeating costly elements of their experience."
+        "France now faces a problem more difficult than the sheer size of its public debt. Past commitments and accumulated borrowing require fiscal adjustment, but attempts to alter spending obligations confront powerful political resistance.",
+        "For years, borrowing was extraordinarily cheap. The European Central Bank introduced a negative deposit facility rate in 2014 and reduced it to -0.5% in 2019. That was a rate paid on banks' deposits with the central bank—not the yield on French government bonds—but it helped transmit exceptionally easy financing conditions throughout the euro area.[8]",
+        "The French debt agency's own figures capture that environment. In 2021 France issued €285.1 billion in gross medium- and long-term sovereign securities, with an average yield of **-0.05%** for non-index-linked issuance. In effect, the government could raise substantial funding at close to no interest cost.[9]",
+        "Low rates were not inherently a policy error. Monetary easing helped stabilize the economy during crises, including the pandemic. But cheap credit also reduced the immediate pressure on governments to make uncomfortable decisions about structural deficits and spending priorities.",
+        "Tax measures, pensions and social spending, pandemic support and energy-crisis relief all contributed in different ways to France's fiscal commitments. When growth and revenue disappointed, many recurring obligations and previously issued bonds remained.",
+        "As inflation rose and monetary conditions tightened, refinancing became more expensive. By September 2026, the weighted average yield on newly issued French medium- and long-term securities had climbed to **3.55%**. On 21 October, the benchmark 10-year market yield briefly crossed **5%**.[10][11]",
+        "That does not mean every outstanding French bond suddenly carries a 5% coupon. The pressure builds as older bonds mature, are refinanced at higher rates, and new borrowing finances current deficits. The invoice from the low-rate years arrives gradually rather than all at once.",
+        "At the end of the second quarter of 2026, French general-government debt stood at approximately **€3.596 trillion**, or **119.0% of GDP**.[5] Agence France Trésor projected **€62.6 billion** in central-state debt service for 2026 and **€72.9 billion** for 2027—an increase of around **€10.3 billion**. Those figures refer to the central state's debt charges, not aggregate interest expenditure across every public entity.[10]",
+        "France also plans around **€340 billion** in medium- and long-term bond issuance, net of buybacks, for 2027. Much of its financing requirement reflects maturing debt; the full issuance figure should not be mistaken for an identical increase in the debt stock.[10]",
+        "Attempts to adjust pensions, welfare and other spending provoke protests and parliamentary resistance. People built lives around these commitments, and many reasonably object to abrupt reversals. Yet the politicians who expanded the obligations are often gone by the time their financing becomes painful.",
+        "France is not on the verge of an inevitable sovereign default. It does illustrate how more costly financing and inflexible commitments can squeeze the room for new public priorities even while the state retains access to markets.",
+        "The central lesson is not that one central bank alone caused France's fiscal troubles. **It is that governments which fail to use periods of cheap borrowing to restore fiscal resilience leave ordinary citizens to face much harder choices when interest rates rise.**"
+      ]
+    },
+    {
+      "title": "Japan: Cheap Credit, the Asset Bubble and Years of Lost Growth",
+      "paragraphs": [
+        "Japan's crisis followed a different route. Rather than primarily a buildup of sovereign welfare commitments, its late-1980s bubble was driven by businesses, banks and other private borrowers whose expanding balance sheets propelled stock and land prices higher.",
+        "After the 1985 Plaza Accord, the yen appreciated sharply, raising fears for export competitiveness and economic activity. The Bank of Japan cut its official discount rate five times in 1986–87, from **5% to 2.5%**, and held it there until May 1989—roughly two years and three months.[12]",
+        "Low rates lowered financing costs. Banks extended property-backed credit, which financed purchases of land and shares; higher land prices in turn inflated collateral valuations and facilitated yet more borrowing. The cycle appeared self-reinforcing while prices kept rising.[13]",
+        "The Nikkei 225 reached **38,915** at the end of 1989, almost triple its level at the end of 1985. Japan's companies were genuinely competitive, but soaring stock and land valuations could not be explained by underlying productive capacity and earnings alone.[13]",
+        "Consumer-price inflation offered little warning. Japan's CPI inflation was only about **0.7% in 1988**. When policy focuses narrowly on goods and services inflation, financial imbalances can accumulate in property and equity markets. Policymakers were also concerned about renewed yen appreciation and disturbances in international financial markets.[12]",
+        "The BOJ began raising rates in May 1989 and increased its discount rate to **6%** by August 1990. Authorities also introduced restrictions on property-related lending in 1990. Share prices plunged around this period, followed by sustained declines in land values.[12][13]",
+        "By roughly September 1990, the stock market had lost about half its end-1989 peak value. But the real damage was not confined to investors' paper losses. Banks were left with property-backed loans whose collateral had fallen in value, while companies concentrated on repairing debt-laden balance sheets instead of undertaking fresh investment.[12][13]",
+        "Delayed recognition and resolution of nonperforming loans then impaired bank lending. Weak spending and investment reinforced slow growth. Japan's long stagnation cannot be attributed to the initial bubble alone: weaknesses in subsequent financial supervision, loan resolution and policy responses mattered too.[14]",
+        "It would be inaccurate to blame the entire bust on the central banker who finally raised rates. Prolonged easy money, excessive real-estate credit, expectations of endless price appreciation and delayed financial cleanup all contributed.",
+        "Politically, however, leaders presiding over an asset boom are often hailed as successful, while attempts to restrain borrowing or deal with the aftermath are unpopular. The rewards arrive today; the consequences may emerge under a different government.",
+        "As households borrow heavily to purchase property and financial assets, Japan's experience becomes relevant to Korea. **A boom fed by credit and rising collateral values can damage not only household wealth but also investment, jobs and earnings when it reverses.**",
+        "France's most conspicuous vulnerability today is public finance; Japan's historical asset bubble was driven mainly by private credit. Korea combines high household indebtedness with a rising sovereign debt stock. The warning is not that identical crises are inevitable, but that **financial and political incentives can allow benefits to be enjoyed now while risks are passed to tomorrow's citizens.**"
       ]
     },
     {
@@ -111,7 +137,7 @@ export const issue94: ColumnTranslation = {
       ]
     }
   ],
-  "sourceNote": "Prepared from statistics available as of 26 October 2026. The 2027 budget and government-debt figures are projections. Mortgage payments are illustrative. Criticism of the Lee administration's property policy and fiscal populism represents the author's policy assessment, not an assertion that any particular relaxation of lending rules has already been implemented. The images are existing verified site assets.",
+  "sourceNote": "Prepared from statistics available as of 26 October 2026. The 2027 budget and government-debt figures are projections. Mortgage payments are illustrative. Criticism of the Lee administration's property policy and fiscal populism represents the author's policy assessment, not an assertion that any particular relaxation of lending rules has already been implemented. The images are existing verified site assets. French yields refer to average new medium- and long-term issuance in different periods; €72.9bn is projected central-state debt service rather than a consolidated all-government figure. Japan's chronology and causal channels draw on the BOJ, IMF and NBER.",
   "sourceLabels": [
     "NewsPim · 19 August 2026 · Bank of Korea, household credit in Q2 2026",
     "National Assembly Budget Office · Analysis of the 2026 first supplementary budget",
@@ -119,6 +145,13 @@ export const issue94: ColumnTranslation = {
     "Newsis · 30 September 2026 · Bank of Korea August mortgage lending rates",
     "INSEE · Public debt in France, Q2 2026",
     "Bank of Korea · Base rate history",
-    "Park Jong-hoon's Knowledge Clinic · Reference video on debt-driven crises"
+    "Park Jong-hoon's Knowledge Clinic · Reference video on debt-driven crises",
+    "ECB · Official interest rates: negative deposit rates introduced in 2014 and deepened in 2019",
+    "Agence France Trésor · 12 August 2022 · 2021 annual report, average borrowing yield -0.05%",
+    "Agence France Trésor · 29 September 2026 · 2026 refinancing rates and 2027 funding and debt service outlook",
+    "Reuters · 21 October 2026 · French 10-year yields rise above 5%",
+    "Bank of Japan · Kazuo Ueda, 18 May 2000 · Retrospective on the asset-price bubble and monetary policy",
+    "NBER · Ito and Iwaisako, 1995 · Explaining asset bubbles in Japan",
+    "IMF · 1993 · Japanese banks and the asset-price bubble"
   ]
 };
