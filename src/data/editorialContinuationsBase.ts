@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:debt-built-korean-economy-2026": {
+    ko: {
+      href: "/columns/europe-promises-fiscal-choice-citizens-2026",
+      title: "약속은 쌓이고, 국가의 선택은 줄어든다",
+      relationship: "함께 읽는 프랑스 재정과 국가채무",
+      reason: "한국의 가계와 국가가 감당할 부채를 살펴봤다면, 유럽의 재정지출 약속과 이자 부담이 시민의 선택을 어떻게 제약하는지 이어서 읽습니다.",
+      listHref: "/columns",
+      listLabel: "칼럼 전체 보기",
+    },
+    en: {
+      href: "/columns/europe-promises-fiscal-choice-citizens-2026",
+      title: "Promises Accumulate, and Governments Have Fewer Choices",
+      relationship: "RELATED ANALYSIS: FRANCE AND PUBLIC DEBT",
+      reason: "Continue with how long-term fiscal commitments and rising interest costs constrain governments and citizens across Europe.",
+      listHref: "/columns",
+      listLabel: "All columns",
+    },
+  },
   "column:forced-repatriation-seven-years-human-rights-2026": {
   "ko": {
     "href": "/columns/film-imagination-history-distortion-ryoma-2026",
