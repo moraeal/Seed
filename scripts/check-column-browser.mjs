@@ -9,6 +9,7 @@ const expectedArticleHeadings = {
   "populism-collapse-generational-conflict-2026": "포퓰리즘의 몰락",
   "forced-repatriation-seven-years-human-rights-2026": "강제북송 7년 만에 유죄 판결",
   "merkel-china-industrial-dependence-2026": "독일은 자동차를 팔았고",
+  "china-korea-industry-beyond-pro-anti-slogans-2026": "우리에게 중국은 무엇인가",
 };
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
 const server = spawn("pnpm", ["exec","vite","preview","--host","127.0.0.1","--port","4179","--strictPort"], { stdio:"pipe" });
