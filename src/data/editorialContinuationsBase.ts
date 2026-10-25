@@ -64,8 +64,12 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
     }
   },
   "column:merkel-china-industrial-dependence-2026": {
-    ko: {href:"/columns/security-slogans-alliance-2026",title:"한국의 안보, 누구를 위한 자주인가",relationship:"산업안보와 외교",reason:"독일의 대중국 산업 의존을 살펴본 뒤 한국의 안보 선택과 동맹의 역할을 함께 읽습니다.",listHref:"/columns",listLabel:"칼럼 전체 보기"},
-    en: {href:"/columns/security-slogans-alliance-2026",title:"Security and Alliance Choices",relationship:"INDUSTRY AND SECURITY",reason:"Continue to the broader relationship between security decisions and industrial autonomy.",listHref:"/columns",listLabel:"All columns"}
+    ko: {href:"/columns/china-korea-industry-beyond-pro-anti-slogans-2026",title:"우리에게 중국은 무엇인가",relationship:"기획연재 ② 이어읽기",reason:"메르켈 시대 독일의 중국 의존을 살펴봤다면, 한국 산업의 시장과 경쟁, 기술과 자유 문제를 이어서 읽습니다.",listHref:"/columns",listLabel:"칼럼 전체 보기"},
+    en: {href:"/columns/china-korea-industry-beyond-pro-anti-slogans-2026",title:"What Is China to Korea?",relationship:"CONTINUE THE SERIES · PART 2",reason:"After examining Germany's industrial dependence on China, explore Korea's trade, technology, competitive choices and economic freedom.",listHref:"/columns",listLabel:"All columns"}
+  },
+  "column:china-korea-industry-beyond-pro-anti-slogans-2026": {
+    ko: {href:"/columns/merkel-china-industrial-dependence-2026",title:"독일은 자동차를 팔았고, 중국은 독일의 산업을 가져갔다",relationship:"기획연재 ① 먼저 읽기",reason:"중국의 시장과 경쟁, 산업안보 문제를 독일 메르켈 시대의 사례에서 먼저 살펴봅니다. ③편은 이어서 발행합니다.",listHref:"/columns",listLabel:"칼럼 전체 보기"},
+    en: {href:"/columns/merkel-china-industrial-dependence-2026",title:"Germany Sold Cars. China Built a Rival Industry.",relationship:"SERIES · READ PART 1",reason:"Return to the Merkel-era German experience that frames this examination of Korea's economic choices. Part 3 is forthcoming.",listHref:"/columns",listLabel:"All columns"}
   },
   "column:populism-collapse-generational-conflict-2026": {
     ko: {

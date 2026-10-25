@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-label="중국 상품무역 핵심 지표">
+<rect width="1200" height="660" fill="#f7f9fc"/>
+<rect width="1200" height="12" fill="#1e3a5f"/>
+<text x="70" y="88" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="38" font-weight="800" fill="#152638">중국 제조업의 규모를 보여주는 세 숫자</text>
+<text x="70" y="132" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="21" fill="#53667c">상품무역 흑자 및 수출 증가율 · 달러 기준</text>
+<rect x="70" y="170" width="500" height="315" rx="12" fill="#ffffff" stroke="#dce3ec"/>
+<text x="105" y="225" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="24" fill="#506176">2025년 연간 상품무역 흑자</text>
+<text x="105" y="305" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="35" font-weight="800" fill="#173e68">약 1조 2,000억 달러</text>
+<path d="M 105 357 L 525 357" stroke="#e1e7ee" stroke-width="2"/>
+<text x="105" y="410" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="24" fill="#506176">2026년 1~9월 누적 흑자</text>
+<text x="105" y="460" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="34" font-weight="800" fill="#173e68">약 9,381억 달러</text>
+<rect x="600" y="170" width="530" height="315" rx="12" fill="#ffffff" stroke="#dce3ec"/>
+<text x="635" y="225" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="24" fill="#506176">2026년 9월 수출 증가율</text>
+<text x="635" y="335" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="97" font-weight="800" fill="#bc5c25">+36.3%</text>
+<text x="635" y="408" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="25" fill="#5a697b">전년 같은 달과 비교</text>
+<rect x="70" y="520" width="1060" height="82" fill="#e9eef5" rx="8"/>
+<text x="92" y="555" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="20" fill="#344961">주의: 2025년 연간과 2026년 9개월 누계는 비교 기간이 다르다.</text>
+<text x="92" y="582" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="17" fill="#64748b">자료: 중국 해관총서 통계 인용 AP·로이터 보도 (2026.10) · 씨앗의 소리 구성</text>
+</svg>

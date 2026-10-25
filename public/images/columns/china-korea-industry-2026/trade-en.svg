@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-label="China's merchandise trade indicators">
+<rect width="1200" height="660" fill="#f7f9fc"/>
+<rect width="1200" height="12" fill="#1e3a5f"/>
+<text x="70" y="88" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="38" font-weight="800" fill="#152638">Three figures behind China's industrial reach</text>
+<text x="70" y="132" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="21" fill="#53667c">Goods trade surplus and export growth · USD</text>
+<rect x="70" y="170" width="500" height="315" rx="12" fill="#ffffff" stroke="#dce3ec"/>
+<text x="105" y="225" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="24" fill="#506176">2025 full-year goods surplus</text>
+<text x="105" y="305" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="58" font-weight="800" fill="#173e68">Approx. $1.2 trillion</text>
+<path d="M 105 357 L 525 357" stroke="#e1e7ee" stroke-width="2"/>
+<text x="105" y="410" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="24" fill="#506176">Jan–Sep 2026 surplus</text>
+<text x="105" y="460" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="40" font-weight="800" fill="#173e68">Approx. $938.1 billion</text>
+<rect x="600" y="170" width="530" height="315" rx="12" fill="#ffffff" stroke="#dce3ec"/>
+<text x="635" y="225" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="24" fill="#506176">September 2026 exports, YoY</text>
+<text x="635" y="335" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="97" font-weight="800" fill="#bc5c25">+36.3%</text>
+<text x="635" y="408" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="25" fill="#5a697b">Compared with September 2025</text>
+<rect x="70" y="520" width="1060" height="82" fill="#e9eef5" rx="8"/>
+<text x="92" y="555" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="20" fill="#344961">Note: full-year 2025 and Jan–Sep 2026 cover different periods.</text>
+<text x="92" y="582" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-size="17" fill="#64748b">Sources: China customs data via AP and Reuters (Oct 2026) · SEED VOICE</text>
+</svg>
