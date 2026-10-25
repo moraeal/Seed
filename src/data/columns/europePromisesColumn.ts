@@ -20,20 +20,20 @@ export const europePromisesColumn: SeedColumn = {
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paris_riots,_17_October_2026_-_Crowd_and_tear_gas_at_Place_de_la_R%C3%A9publique_-_JJxFile_0006.jpg"
   },
   "inlineImage": {
-    "src": "images/columns/europe-promises-2026/citizen-life.svg",
-    "alt": "낡은 학교와 주택을 배경으로 국가 지출의 계산서와 시민의 삶을 대비한 일러스트",
-    "caption": "예산서의 숫자와 시민이 실제로 경험하는 학교·주거 환경이 일치하는지는 별도의 검증이 필요하다.",
-    "credit": "씨앗의 소리 제작 일러스트",
+    "src": "images/columns/france-fiscal-warning-2026/citizen-cost-ai.webp",
+    "alt": "2026년 유럽 시위로 피해를 입은 상점 앞에서 가게를 바라보는 상인과 멀리 서 있는 경찰을 표현한 실사형 상징 이미지",
+    "caption": "시위와 소요로 발생한 피해는 일상으로 돌아가야 하는 영세 상인과 주민에게도 남는다.",
+    "credit": "AI 이미지",
     "sourceUrl": ""
   },
   "displayInlineImage": false,
   "additionalImages": [
     {
       "afterSection": 4,
-      "src": "images/columns/europe-promises-2026/citizen-life.svg",
-      "alt": "교실·주택·생활비 문제와 정부의 재정 계산서를 대비한 상징적 그림",
-      "caption": "재정의 총량보다 시민생활에서 드러나는 실제 성과를 살펴야 한다.",
-      "credit": "씨앗의 소리 제작 일러스트",
+      "src": "images/columns/france-fiscal-warning-2026/citizen-cost-ai.webp",
+      "alt": "2026년 유럽 시위로 피해를 입은 상점 앞에서 가게를 바라보는 상인과 멀리 서 있는 경찰을 표현한 실사형 상징 이미지",
+      "caption": "시위와 소요로 발생한 피해는 일상으로 돌아가야 하는 영세 상인과 주민에게도 남는다.",
+      "credit": "AI 이미지",
       "sourceUrl": ""
     },
     {

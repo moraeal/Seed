@@ -10,15 +10,15 @@ export const issue93: ColumnTranslation = {
     "credit": "Jorge Jaramillo / JJxFile.com · Wikimedia Commons · CC BY-SA 4.0"
   },
   "inlineImage": {
-    "alt": "Illustration contrasting government expenditure with the realities of classrooms and homes",
-    "caption": "Government budgets do not automatically translate into adequate schools and affordable housing.",
-    "credit": "SEED VOICE illustration"
+    "alt": "Photo-realistic illustrative scene of a shopkeeper facing a damaged storefront following unrest on a European street",
+    "caption": "The costs of unrest extend to shopkeepers and residents who must return to everyday life.",
+    "credit": "AI image"
   },
   "additionalImages": [
     {
-      "alt": "Illustration of classrooms, housing costs and fiscal accounts",
-      "caption": "The public's everyday outcomes should be assessed separately from headline expenditure.",
-      "credit": "SEED VOICE illustration"
+      "alt": "Photo-realistic illustrative scene of a shopkeeper facing a damaged storefront following unrest on a European street",
+      "caption": "The costs of unrest extend to shopkeepers and residents who must return to everyday life.",
+      "credit": "AI image"
     },
     {
       "src": "images/columns/europe-promises-2026/debt-interest-en.svg",
