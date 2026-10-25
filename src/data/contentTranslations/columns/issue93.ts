@@ -5,19 +5,19 @@ export const issue93: ColumnTranslation = {
   "author": "Small Seed",
   "summary": "France's renewed protests, Portugal's housing demonstrations and the cost of French sovereign borrowing illuminate a hard question: how do governments meet past commitments while preserving opportunity and functioning services for citizens today?",
   "heroImage": {
-    "alt": "Protesters at Place de la République in Paris amid smoke on October 17, 2026",
-    "caption": "Archival photograph from the Paris demonstration of October 17, not the renewed march of October 24.",
-    "credit": "Jorge Jaramillo / JJxFile.com · Wikimedia Commons · CC BY-SA 4.0"
+    "alt": "A reflective citizen faces three symbolic panels representing housing, jobs and welfare promises, with Korea's National Assembly in the background",
+    "caption": "An illustrative scene of the promises governments make and the citizens who depend on them.",
+    "credit": "AI image"
   },
   "inlineImage": {
-    "alt": "Photo-realistic illustrative scene of a shopkeeper facing a damaged storefront following unrest on a European street",
-    "caption": "The costs of unrest extend to shopkeepers and residents who must return to everyday life.",
+    "alt": "An illustrative scene showing household bills and a calculator beside official policy papers, with a parliament building in the background",
+    "caption": "Government commitments appear in policy documents, but their costs also reach citizens' household budgets.",
     "credit": "AI image"
   },
   "additionalImages": [
     {
-      "alt": "Photo-realistic illustrative scene of a shopkeeper facing a damaged storefront following unrest on a European street",
-      "caption": "The costs of unrest extend to shopkeepers and residents who must return to everyday life.",
+      "alt": "An illustrative scene showing household bills and a calculator beside official policy papers, with a parliament building in the background",
+      "caption": "Government commitments appear in policy documents, but their costs also reach citizens' household budgets.",
       "credit": "AI image"
     },
     {

@@ -13,16 +13,16 @@ export const europePromisesColumn: SeedColumn = {
   "readMinutes": 20,
   "summary": "프랑스 10월 24일 재시위와 포르투갈의 주거 시위, 프랑스 국채금리·이자비용을 통해 지출의 경직성, 과거 약속과 미래세대의 충돌을 살핀다. 국가가 약속한 혜택과 실제 시민의 삶 사이에는 무엇이 빠졌는가.",
   "heroImage": {
-    "src": "images/columns/france-fiscal-warning-2026/paris-protest-20261017.jpg",
-    "alt": "2026년 10월 17일 파리 레퓌블리크 광장에 모인 시위 참가자들, 연무 속의 군중",
-    "caption": "10월 17일 프랑스 파리의 시위 현장. 24일 재시위의 사진이 아닌 앞선 시위의 자료사진이다.",
-    "credit": "Jorge Jaramillo / JJxFile.com · Wikimedia Commons · CC BY-SA 4.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paris_riots,_17_October_2026_-_Crowd_and_tear_gas_at_Place_de_la_R%C3%A9publique_-_JJxFile_0006.jpg"
+    "src": "images/columns/europe-promises-2026/promise-citizen-hero-20261026.jpg",
+    "alt": "국회 앞에서 주거·일자리·복지의 약속을 상징하는 세 장면을 바라보며 생각에 잠긴 시민",
+    "caption": "국가가 쌓아온 약속과 그 약속을 바라보는 시민을 표현한 상징 이미지.",
+    "credit": "AI 이미지",
+    "sourceUrl": ""
   },
   "inlineImage": {
-    "src": "images/columns/france-fiscal-warning-2026/citizen-cost-ai.webp",
-    "alt": "2026년 유럽 시위로 피해를 입은 상점 앞에서 가게를 바라보는 상인과 멀리 서 있는 경찰을 표현한 실사형 상징 이미지",
-    "caption": "시위와 소요로 발생한 피해는 일상으로 돌아가야 하는 영세 상인과 주민에게도 남는다.",
+    "src": "images/columns/europe-promises-2026/promise-cost-bills-20261026.jpg",
+    "alt": "정부의 정책 문서와 생활비 영수증을 마주 놓고 계산하는 시민의 손, 뒤편으로 국회 건물이 보이는 장면",
+    "caption": "국가의 지출 약속은 정책 문서에 기록되지만 그 비용은 시민의 생활과도 연결된다.",
     "credit": "AI 이미지",
     "sourceUrl": ""
   },
@@ -30,9 +30,9 @@ export const europePromisesColumn: SeedColumn = {
   "additionalImages": [
     {
       "afterSection": 4,
-      "src": "images/columns/france-fiscal-warning-2026/citizen-cost-ai.webp",
-      "alt": "2026년 유럽 시위로 피해를 입은 상점 앞에서 가게를 바라보는 상인과 멀리 서 있는 경찰을 표현한 실사형 상징 이미지",
-      "caption": "시위와 소요로 발생한 피해는 일상으로 돌아가야 하는 영세 상인과 주민에게도 남는다.",
+      "src": "images/columns/europe-promises-2026/promise-cost-bills-20261026.jpg",
+      "alt": "정부의 정책 문서와 생활비 영수증을 마주 놓고 계산하는 시민의 손, 뒤편으로 국회 건물이 보이는 장면",
+      "caption": "국가의 지출 약속은 정책 문서에 기록되지만 그 비용은 시민의 생활과도 연결된다.",
       "credit": "AI 이미지",
       "sourceUrl": ""
     },
