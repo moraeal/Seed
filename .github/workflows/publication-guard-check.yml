@@ -99,6 +99,8 @@ jobs:
           node scripts/preflight-column.mjs europe-promises-fiscal-choice-citizens-2026
           node scripts/verify-article-assets.mjs debt-built-korean-economy-2026
           node scripts/preflight-column.mjs debt-built-korean-economy-2026
+          node scripts/verify-article-assets.mjs lee-mitterrand-populism-pension-korea-2026
+          node scripts/preflight-column.mjs lee-mitterrand-populism-pension-korea-2026
       - name: Build complete site (bounded)
         run: timeout --signal=TERM --kill-after=30s 18m pnpm run build
         env:
@@ -123,6 +125,7 @@ jobs:
           node scripts/check-column-browser.mjs china-korea-industry-beyond-pro-anti-slogans-2026
           node scripts/check-column-browser.mjs europe-promises-fiscal-choice-citizens-2026
           node scripts/check-column-browser.mjs debt-built-korean-economy-2026
+          node scripts/check-column-browser.mjs lee-mitterrand-populism-pension-korea-2026
           node scripts/check-column-browser.mjs home
       - name: Block stale branch until changes are tested with latest main
         if: github.event_name == 'push'

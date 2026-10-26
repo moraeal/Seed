@@ -12,6 +12,7 @@ const expectedArticleHeadings = {
   "china-korea-industry-beyond-pro-anti-slogans-2026": "우리에게 중국은 무엇인가",
   "europe-promises-fiscal-choice-citizens-2026": "약속은 쌓이고, 국가의 선택은 줄어든다",
   "debt-built-korean-economy-2026": "빚으로 쌓아 올리는 한국경제",
+  "lee-mitterrand-populism-pension-korea-2026": "이재명 정부, 미테랑 정부를 따르려 하나?",
 };
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
 const server = spawn("pnpm", ["exec","vite","preview","--host","127.0.0.1","--port","4179","--strictPort"], { stdio:"pipe" });
