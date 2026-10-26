@@ -13,6 +13,7 @@ const expectedArticleHeadings = {
   "europe-promises-fiscal-choice-citizens-2026": "약속은 쌓이고, 국가의 선택은 줄어든다",
   "debt-built-korean-economy-2026": "빚으로 쌓아 올리는 한국경제",
   "lee-mitterrand-populism-pension-korea-2026": "이재명 정부, 미테랑 정부를 따르려 하나?",
+  "crypto-tax-fourth-deferral-2026": "코인세, 네 번째로 미루나",
 };
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
 const server = spawn("pnpm", ["exec","vite","preview","--host","127.0.0.1","--port","4179","--strictPort"], { stdio:"pipe" });
@@ -28,7 +29,8 @@ try {
     const page=await browser.newPage({viewport,deviceScaleFactor:1});
     const failures=[];
     page.on("pageerror",e=>failures.push("JS: "+e.message));
-    await page.goto(base+(isHome ? "/" : "/columns/"+slug+"/"),{waitUntil:"networkidle",timeout:45000});
+    const path = isHome ? "/" : (slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : "/columns/") + slug + "/";
+    await page.goto(base+path,{waitUntil:"networkidle",timeout:45000});
     await page.locator("body").waitFor();
     await page.evaluate(async()=>{for(const img of document.images){img.loading="eager";}await Promise.all(Array.from(document.images).map(img=>img.decode().catch(()=>{})));});
     const info=await page.evaluate(()=>({
