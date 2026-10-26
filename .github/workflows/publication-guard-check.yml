@@ -40,7 +40,7 @@ permissions:
 
 jobs:
   guard-build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
@@ -86,9 +86,21 @@ jobs:
           BASE_SHA: ${{ steps.comparison.outputs.sha }}
         run: node scripts/check-new-article-approvals.mjs "$BASE_SHA" HEAD
       - name: Install image converters and Korean fonts
+        timeout-minutes: 12
         run: |
-          sudo apt-get update
-          sudo apt-get install -y imagemagick librsvg2-bin fonts-noto-cjk
+          set -euo pipefail
+          if command -v convert >/dev/null 2>&1 && command -v rsvg-convert >/dev/null 2>&1 && fc-list | grep -Eqi 'Nanum|Noto Sans CJK'; then
+            echo "Image converters and Korean fonts already available."
+          else
+            if [ -f /etc/apt/sources.list.d/ubuntu.sources ]; then
+              sudo sed -i -e 's|mirror+file:/etc/apt/apt-mirrors.txt|http://archive.ubuntu.com/ubuntu|g' -e 's|http://azure.archive.ubuntu.com/ubuntu|http://archive.ubuntu.com/ubuntu|g' /etc/apt/sources.list.d/ubuntu.sources
+            fi
+            sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 update
+            sudo DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 install -y --no-install-recommends imagemagick librsvg2-bin fonts-noto-cjk fonts-nanum
+          fi
+          command -v convert
+          command -v rsvg-convert
+          fc-list | grep -Ei 'Nanum|Noto Sans CJK' | sed -n '1p'
       - name: Test published article image integrity and manuscript preflight
         run: |
           node scripts/verify-article-assets.mjs politicians-who-take-public-debt-lightly-2026
