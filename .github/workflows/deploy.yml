@@ -39,15 +39,19 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Ensure image converters and Korean fonts are available
-        timeout-minutes: 5
+        timeout-minutes: 12
         run: |
           set -euo pipefail
-          # Skip network/package installation if the necessary tools already exist.
-          if command -v convert >/dev/null 2>&1 && command -v rsvg-convert >/dev/null 2>&1 && fc-list | grep -i 'Nanum' >/dev/null; then
+          # The GitHub-hosted Azure Ubuntu mirror intermittently stalls while
+          # fetching Nanum fonts. Use the primary Ubuntu archive for this job.
+          if command -v convert >/dev/null 2>&1 && command -v rsvg-convert >/dev/null 2>&1 && fc-list | grep -qi 'Nanum'; then
             echo "Image converters and Korean fonts already available."
           else
-            sudo apt-get -o Acquire::Retries=1 -o Acquire::http::Timeout=20 update
-            sudo DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::Retries=1 -o Acquire::http::Timeout=20 install -y --no-install-recommends imagemagick librsvg2-bin fonts-nanum
+            if [ -f /etc/apt/sources.list.d/ubuntu.sources ]; then
+              sudo sed -i -e 's|mirror+file:/etc/apt/apt-mirrors.txt|http://archive.ubuntu.com/ubuntu|g' -e 's|http://azure.archive.ubuntu.com/ubuntu|http://archive.ubuntu.com/ubuntu|g' /etc/apt/sources.list.d/ubuntu.sources
+            fi
+            sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 update
+            sudo DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 install -y --no-install-recommends imagemagick librsvg2-bin fonts-nanum
           fi
           command -v convert
           command -v rsvg-convert
