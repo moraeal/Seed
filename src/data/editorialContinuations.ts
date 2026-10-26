@@ -681,6 +681,21 @@ export function getEditorialContinuation(kind: EditorialContentKind, slug: strin
     listHref: "/columns",
     listLabel: "All columns",
   };
+  if (kind === "column" && slug === "lee-mitterrand-populism-pension-korea-2026") return language === "ko" ? {
+    href: "/columns/europe-promises-fiscal-choice-citizens-2026",
+    title: "약속은 쌓이고, 국가의 선택은 줄어든다",
+    relationship: "함께 읽는 프랑스 재정위기",
+    reason: "1982년 미테랑의 연금개혁을 살펴봤다면, 최근 유럽 시위와 재정·복지 약속의 장기 부담에 관한 후속 분석으로 이어집니다.",
+    listHref: "/columns",
+    listLabel: "칼럼 전체 보기",
+  } : {
+    href: "/columns/europe-promises-fiscal-choice-citizens-2026",
+    title: "Promises Accumulate While a Nation's Choices Narrow",
+    relationship: "RELATED FRENCH FISCAL ANALYSIS",
+    reason: "After examining Mitterrand's pension reform, read how social commitments and public debt have shaped more recent European fiscal conflicts.",
+    listHref: "/columns",
+    listLabel: "All columns",
+  };
   if (kind === "column" && slug === "europe-promises-fiscal-choice-citizens-2026") return language === "ko" ? {
     href: "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026",
     title: "프랑스가 남의 집 이야기로 보이는가",
