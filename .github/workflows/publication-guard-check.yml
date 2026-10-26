@@ -138,6 +138,7 @@ jobs:
           node scripts/check-column-browser.mjs europe-promises-fiscal-choice-citizens-2026
           node scripts/check-column-browser.mjs debt-built-korean-economy-2026
           node scripts/check-column-browser.mjs lee-mitterrand-populism-pension-korea-2026
+          node scripts/check-column-browser.mjs crypto-tax-fourth-deferral-2026
           node scripts/check-column-browser.mjs home
       - name: Block stale branch until changes are tested with latest main
         if: github.event_name == 'push'
