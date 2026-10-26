@@ -10,6 +10,7 @@ import { majorCrimesAgencyStaffingArticle } from "./news/majorCrimesAgencyStaffi
 import { dmzInvestigationTimelineArticle } from "./news/dmzInvestigationTimeline";
 import { debtReliefFairness2026Article } from "./news/debtReliefFairness2026";
 import { olympicParkProtest115DaysArticle } from "./news/olympicParkProtest115Days";
+import { cryptoTaxDeferral2026Article } from "./news/cryptoTaxDeferral2026";
 
 export type { NewsImage, NewsSection, NewsSource, NewsVideo, SelectedNews } from "./newsArchive";
 export type NewsArticle = ArchiveNewsArticle & { additionalImages?: NewsImage[] };
@@ -398,7 +399,7 @@ const mediaAppealJusticeArticle: NewsArticle = {
   ]
 };
 
-export const newsArticles: NewsArticle[] = [privacySecurityCommentaryArticle, businessGrowthThresholdsArticle, olympicParkProtest115DaysArticle, debtReliefFairness2026Article, dmzInvestigationTimelineArticle, majorCrimesAgencyStaffingArticle, supremeCourtRenominationStandoffArticle, dmzSecurityCommandFailureArticle, publicEnterpriseRestructureArticle, fuelPriceCapTaxBillArticle, nationalDebtRatioGdpComparisonArticle, mediaAppealJusticeArticle, localSportsSubsidyArticle, lhSplitPublicAgencyArticle, ...archivedNewsArticles];
+export const newsArticles: NewsArticle[] = [cryptoTaxDeferral2026Article, privacySecurityCommentaryArticle, businessGrowthThresholdsArticle, olympicParkProtest115DaysArticle, debtReliefFairness2026Article, dmzInvestigationTimelineArticle, majorCrimesAgencyStaffingArticle, supremeCourtRenominationStandoffArticle, dmzSecurityCommandFailureArticle, publicEnterpriseRestructureArticle, fuelPriceCapTaxBillArticle, nationalDebtRatioGdpComparisonArticle, mediaAppealJusticeArticle, localSportsSubsidyArticle, lhSplitPublicAgencyArticle, ...archivedNewsArticles];
 
 export const getNewsNewestFirst = () => [...newsArticles].sort((a, b) => b.date.localeCompare(a.date));
 export const getNewsArticle = (slug: string) => newsArticles.find((article) => article.slug === slug);

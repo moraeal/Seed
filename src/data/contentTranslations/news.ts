@@ -9,8 +9,10 @@ import { majorCrimesAgencyStaffingTranslation } from "./news/majorCrimesAgencySt
 import { dmzInvestigationTimelineTranslation } from "./news/dmzInvestigationTimeline";
 import { debtReliefFairness2026Translation } from "./news/debtReliefFairness2026";
 import { olympicParkProtest115DaysTranslation } from "./news/olympicParkProtest115Days";
+import { cryptoTaxDeferral2026Translation } from "./news/cryptoTaxDeferral2026";
 
 export const newsTranslations: Record<string, NewsTranslation> = {
+  "crypto-tax-fourth-deferral-2026": cryptoTaxDeferral2026Translation,
   "privacy-leaks-ai-security-accountability-2026": privacySecurityCommentaryTranslation,
   "business-growth-regulatory-thresholds-2026": businessGrowthThresholdsTranslation,
   "olympic-park-protest-115-days": olympicParkProtest115DaysTranslation,

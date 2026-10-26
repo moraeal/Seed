@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "news" && slug === "crypto-tax-fourth-deferral-2026") return true;
   if (kind === "column" && slug === "politicians-who-take-public-debt-lightly-2026") return true;
   if (kind === "column" && slug === "atr-taxpayer-movement-05-sustainable-budgets") return true;
   if (kind === "column" && slug === "france-fiscal-crisis-korea-spending-no-more-tax-2026") return true;
@@ -524,6 +525,19 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "news" && slug === "crypto-tax-fourth-deferral-2026") return language === "ko" ? {
+    href: "/monitoring/tax/virtual-asset-tax-2027-readiness",
+    title: "가상자산 과세, 2027년부터 무엇에 세금을 매기나",
+    relationship: "현행 규칙 자세히 읽기",
+    reason: "유예가 결정되기 전 적용될 예정인 세금 계산과 신고 기준을 국세청 안내에 따라 확인합니다.",
+    listHref: "/news", listLabel: "핫이슈 전체 보기",
+  } : {
+    href: "/monitoring/tax/virtual-asset-tax-2027-readiness",
+    title: "What will Korea tax on virtual assets from 2027?",
+    relationship: "READ THE CURRENT RULES",
+    reason: "Review the scheduled calculation and filing rules based on National Tax Service guidance before any change is enacted.",
+    listHref: "/news", listLabel: "All Hot Issues",
+  };
   if (kind === "column" && slug === "mega-zone-land-rights-public-cost-2026") return language === "ko" ? {
     href: "/columns/factory-investment-staffing-freedom-2026",
     title: "공장은 기업이 짓는데, 사람을 보낼 때는 허락을 받아야 하나",
