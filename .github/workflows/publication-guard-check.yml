@@ -89,7 +89,7 @@ jobs:
         timeout-minutes: 12
         run: |
           set -euo pipefail
-          if command -v convert >/dev/null 2>&1 && command -v rsvg-convert >/dev/null 2>&1 && fc-list | grep -Eqi 'Nanum|Noto Sans CJK'; then
+          if command -v convert >/dev/null 2>&1 && command -v rsvg-convert >/dev/null 2>&1 && fc-list | grep -Ei 'Nanum|Noto Sans CJK' >/dev/null; then
             echo "Image converters and Korean fonts already available."
           else
             if [ -f /etc/apt/sources.list.d/ubuntu.sources ]; then
