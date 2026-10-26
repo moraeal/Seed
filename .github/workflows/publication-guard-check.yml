@@ -33,6 +33,7 @@ on:
       - 'scripts/preflight-column.mjs'
       - 'scripts/verify-column-publication.mjs'
       - '.github/workflows/deploy.yml'
+      - '.github/workflows/preview-build.yml'
       - '.github/workflows/publication-guard-check.yml'
 
 permissions:
