@@ -403,3 +403,8 @@ export const newsArticles: NewsArticle[] = [cryptoTaxDeferral2026Article, privac
 
 export const getNewsNewestFirst = () => [...newsArticles].sort((a, b) => b.date.localeCompare(a.date));
 export const getNewsArticle = (slug: string) => newsArticles.find((article) => article.slug === slug);
+
+// A news article explicitly filed as tax watch belongs in that desk as well.
+export const getTaxWatchNewsArticles = () => newsArticles.filter((article) =>
+  article.category.split("·").includes("세금감시")
+);

@@ -12,6 +12,8 @@ import { localizeColumn } from "./localizedContent";
 import { publicInterestWatchCases } from "./newsTrackerRegistry";
 import { taxPolicies } from "./taxWatch";
 import { taxCommentaries } from "./taxCommentaries";
+import { getTaxWatchNewsArticles } from "./news";
+import { localizeNewsArticle } from "./localizedContent";
 
 export type CivicWatchItem = {
   key: string;
@@ -125,6 +127,12 @@ export function getCivicWatchFeed(language: Language, bills: LegislativeBill[] =
       to: `/monitoring/tax/commentary/${article.slug}`, title: article.editions[language].title,
       summary: article.editions[language].summary, status: ko ? "세금 논평" : "Tax commentary",
     })),
+    ...getTaxWatchNewsArticles().map((original) => {
+      const article = localizeNewsArticle(original, language);
+      return { key: `tax-news-${article.slug}`, category: "tax" as const, date: article.date,
+        to: `/news/${article.slug}`, title: article.title, summary: article.summary,
+        status: ko ? "세금감시 기사" : "Tax watch article" };
+    }),
     ...taxPolicies.map((item) => ({
       key: `tax-${item.slug}`, category: "tax" as const, date: item.checkedAt,
       to: `/monitoring/tax/${item.slug}`, title: item.title[language], summary: item.summary[language], status: item.status[language],
