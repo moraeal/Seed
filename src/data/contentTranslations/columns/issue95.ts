@@ -1,9 +1,9 @@
 import type { ColumnTranslation } from "../types";
 export const issue95: ColumnTranslation = {
   "title": "Is the Lee Jae-myung Administration Following Mitterrand's Path?",
-  "subtitle": "The Risks of Populist Promises: What France's Pension History May Mean for South Korea",
+  "subtitle": "The bill for Mitterrand’s 1982 retirement-at-60 promise — and its warning for Korea’s fiscal politics",
   "author": "Small Seed",
-  "summary": "The 1982 retirement-at-60 reform in France offers a case study in long-term pension costs. A commentary examines the financial implications of current Korean spending commitments and the obligations passed to future generations.",
+  "summary": "Why does Mitterrand’s 1982 retirement-at-60 decision still challenge France four decades later? This commentary examines the hidden costs of public promises and the implications for Korea’s fiscal choices.",
   "heroImage": {
     "alt": "Editorial AI composite of François Mitterrand and Lee Jae-myung against symbolic French and Korean flags, retirement obligations and public debt",
     "caption": "An imaginary editorial montage contrasting French pension history and Korean fiscal-policy debates; not a documentary photograph of actual protests.",
@@ -29,176 +29,98 @@ export const issue95: ColumnTranslation = {
   ],
   "sections": [
     {
-      "title": "Political Promises Win Applause, but Citizens Receive the Bill",
+      "title": "Politicians Receive the Applause, Citizens Receive the Bill",
       "paragraphs": [
-        "Politics is partly about offering people hope: a better life, more opportunities, stronger social protection and a fairer society. Trouble begins when such promises ignore the realities of public finance, the economy and demographics.",
-        "Politicians may receive applause during an election, but the cost of a policy lasts well beyond a term in office. Cash transfers, subsidies, earlier retirement and larger pensions provide immediate benefits. Someone must still pay: taxpayers, employers, workers and future generations who inherit more debt and higher social-insurance contributions.",
-        "When politicians repeat attractive pledges without adequately explaining their costs and consequences, social policy risks becoming populism.",
-        "Populism is not confined to a particular party or ideology. Left or right, progressive or conservative, a political promise that exceeds the country's capacity and postpones the bill raises the same problem.",
-        "The administration of François Mitterrand in France offers an important historical case. After taking power in 1981, his Socialist government expanded paid leave and social protection, reduced working hours and nationalized major businesses. Its most emblematic measure was the 1982 reform that made full retirement possible at 60 for qualifying workers.",
-        "The decision was celebrated as social progress at the time. More than four decades later, France is struggling with demographic aging, slower growth, extensive social expenditure, sovereign debt and bitter arguments over how to revise earlier commitments.",
-        "Korea must now ask a question of its own.",
-        "**Is the Lee Jae-myung administration following the path of Mitterrand's government?**"
+        "Taxes and social-insurance contributions disappear from each paycheck. Groceries cost more and retirement feels less secure. Yet politicians keep offering new cash payments and larger benefits.",
+        "Those who receive help may welcome it. The crucial questions are how much the program costs, who pays for it, and how many years it will continue. A politician can take credit today while the obligation remains long after a term ends.",
+        "Expanding social protection is not inherently wrong. But promises made without a credible financing plan, with the bill deferred to future taxpayers, deserve scrutiny as potential populism.",
+        "France offers an instructive case. In 1982 the left-wing government of François Mitterrand moved the age at which qualifying workers could receive a full pension from 65 to 60. Celebrated at the time, that decision became part of a decades-long battle over pension reform.",
+        "France's present difficulties cannot be blamed on Mitterrand alone. His decision nevertheless illustrates how an immediate benefit can bind public finances and politics long after it is introduced.",
+        "**What future will the Lee Jae-myung administration's fiscal expansion and cash-support programs leave behind? France's experience makes this a question for Korean politics today.**"
       ]
     },
     {
-      "title": "Why Did Mitterrand's Retirement-at-60 Reform Become a Problem?",
+      "title": "Why Mitterrand Promised Retirement at 60 in 1982",
       "paragraphs": [
-        "Mitterrand won the presidency in 1981 with the support of a left-wing coalition of Socialists and Communists. His government emphasized better living standards for workers and the reduction of inequality.",
-        "An ordinance dated March 26, 1982 enabled workers meeting the required contribution conditions to obtain a full pension from age 60 rather than 65. The measure came into effect under specific eligibility rules; it was not an unconditional pension for everyone.[1]",
-        "The government hoped for two benefits: more years of retirement for older workers and new jobs for young people when older employees withdrew from the labor market.",
-        "But labor markets are not a fixed number of positions to be divided among age groups. When one older worker retires, an employer does not automatically hire one younger worker. Hiring depends on demand, productivity and the skills needed.",
-        "Pension obligations, by contrast, can increase when payment starts earlier. If recipients live longer and retirement eligibility moves forward by five years, benefits may be paid for a substantially longer period.",
-        "The political gains were immediate. Workers welcomed the measure and the government claimed credit for reform. The resulting financial commitments unfolded over decades.",
-        "A politician can enjoy applause today while a successor must either finance the promise or explain why it needs changing. Maintaining it may require higher taxes or contributions; changing it can produce fierce opposition.",
-        "That mismatch in timing is among the most serious problems associated with unfunded political promises.",
-        "**Benefits are distributed immediately, but costs accumulate slowly. By the time the bill becomes visible, reversing course may be extraordinarily difficult.**"
+        "After winning office in 1981 with backing from Socialists and Communists, Mitterrand pursued shorter working hours, more paid leave, nationalizations and a stronger welfare state. Improving the lives of working people was central to his mandate.",
+        "An ordinance of March 26, 1982 gave workers with the required contribution record access to a full pension from age 60. This was not an unconditional benefit for everyone, but it moved an important eligibility threshold forward by five years.[1]",
+        "The government anticipated two benefits: more years of retirement for workers and more opportunities for young people when older employees left their jobs.",
+        "But employment is not a fixed collection of vacancies to be redistributed. Firms hire according to demand, skills and productivity. The retirement of one older employee does not guarantee a job for a younger person.",
+        "Pension payment periods, on the other hand, can expand. Moving eligibility forward as life expectancy rises changes the benefit commitments and the obligations shared between generations.",
+        "Here the political clock and the fiscal clock diverge. Public gratitude can be immediate, while financial obligations survive for decades, often beyond the careers of the leaders who introduced them.",
+        "**The central question is not whether retirees gained something in 1982. It is whether the long-term cost and responsibility for preserving that gain were adequately understood.**"
       ]
     },
     {
-      "title": "Rights Once Granted Are Hard to Reduce",
+      "title": "Benefits Expanded Quickly; Reform Took Four Decades",
       "paragraphs": [
-        "The French pension system relies mainly on pay-as-you-go financing: current workers and employers finance the pensions of today's retirees. The model has advantages as a form of solidarity between generations.",
-        "It nevertheless depends on a sustainable balance between contributors and beneficiaries, sufficient employment and adequate economic growth.",
-        "France's population structure has been changing. OECD projections indicate that its working-age population per person aged 65 or over could decline from roughly 2.5 in 2024 to approximately 1.9 by 2050. Fewer potential contributors will support more retirees.[5]",
-        "France also provides comparatively substantial pension benefits. The OECD put the net replacement rate for an illustrative worker at roughly 72 percent in 2022, compared with about 55 percent in Germany. Pension spending was estimated at approximately 14.1 percent of GDP in 2025.[5]",
-        "High employment, steady growth and adequate contributions are needed to sustain such commitments. Aging, low fertility and weak growth make inherited promises increasingly expensive.",
-        "Successive governments therefore sought to reform the system. Nicolas Sarkozy's government legislated a rise in the legal retirement age from 60 to 62 in 2010. Emmanuel Macron's government enacted a phased increase toward 64 in 2023.[1]",
-        "The response was fierce. Raising retirement age is not merely a numerical adjustment when people have planned their lives around the rules previously promised to them.",
-        "In 1982 the government could bring pension eligibility forward by five years through a political decision. Forty years later, an increase of even two years faces major social conflict.",
-        "The example illustrates a lasting risk of welfare commitments made without sufficient attention to future conditions: expanding entitlements is politically easier than revising them."
+        "France's pension system largely operates on a pay-as-you-go basis. Today's workers and employers finance the pensions of today's retirees. It depends on employment, wages, contributions and economic growth.",
+        "Demographics have changed. OECD projections suggest France will have about 1.9 working-age people per person aged 65 or older by 2050, compared with around 2.5 in 2024.[5]",
+        "With more retirees relative to contributors, inherited commitments become harder to finance. French pension spending was about 14.1% of GDP in 2025. An OECD comparison of illustrative net replacement rates for 2022 put France at roughly 72%, compared with about 55% for Germany.[5]",
+        "Subsequent governments sought reforms. Nicolas Sarkozy's government legislated a rise to 62 in 2010; Emmanuel Macron's government enacted a phased increase toward 64 in 2023. Some further increases were postponed in 2026.[1][7]",
+        "Why is reform so difficult? People have paid contributions and planned their retirement according to the rules laid down by the state. Being told to change those plans can feel like a breach of trust.",
+        "That anger should not simply be dismissed as selfishness. Policymakers who establish rights without sufficiently explaining future risks bear responsibility for the expectations they create.",
+        "One government expands a benefit, while its successors face enormous political costs in trying to adjust it. France shows how **creating an entitlement can be easier than making it sustainable when conditions change.**"
       ]
     },
     {
-      "title": "France's Crisis Is Not About Pensions Alone",
+      "title": "Public Debt Rises While Workers and Employers Bear the Costs",
       "paragraphs": [
-        "France's fiscal difficulties cannot be attributed solely to Mitterrand's 1982 reform. Globalization, industrial restructuring, energy prices, slower growth, an aging population and the decisions of subsequent governments have all played a role.",
-        "Nevertheless, the retirement-at-60 decision illustrates what happens when politicians expand long-term entitlements without sufficiently explaining the associated obligations.",
-        "Government expenditure in France reached about 57.2 percent of GDP in 2025. That represents an exceptionally large public-sector share of national economic activity, while both further tax increases and spending restraint face political resistance.[5]",
-        "French employers and workers already shoulder heavy mandatory charges. According to the OECD, employer social-security contributions amounted to 26.7 percent of labor costs for a single average-wage worker in 2025, the highest share among OECD countries. The overall tax wedge, including income tax and employee and employer contributions, reached 47.2 percent.[6]",
-        "The resources supporting social protection ultimately come from economic activity. Very high labor-related costs can discourage some hiring and investment, particularly where companies face intense international competition.",
-        "When firms lose competitiveness, employment and the number of contributors can fall. That in turn erodes the financial foundation on which pensions and social services depend.",
-        "A system intended to preserve welfare can end up weakening some of the economic activity that pays for it if rising costs are not managed responsibly.",
-        "Government can redistribute money, but sustainable wealth depends on the productive activity, investment and innovation of businesses and workers. A policy that undermines this foundation eventually reduces the resources available for redistribution."
+        "Pensions alone did not cause France's fiscal difficulties. Slower growth, changes in industry, aging, crisis-related spending and the choices of successive governments also contributed.",
+        "By the second quarter of 2026, French public debt stood at about 119% of GDP.[3] Spending cuts face resistance, while already substantial tax burdens leave governments with difficult options.",
+        "Government expenditure was about 57.2% of GDP in 2025. That reflects a large public role, but also the political difficulty of reducing established benefits and services.[5]",
+        "Welfare financing does not materialize from nowhere. According to the OECD, in 2025 employer social-security contributions for a single average-wage worker amounted to 26.7% of total labor costs, and the overall tax wedge reached 47.2%.[6]",
+        "Labor costs do not explain every weakness of French manufacturing. Still, high charges can affect hiring, investment and competition. Weaker employment and wages may also erode the contribution base supporting social protection.",
+        "Social programs rely on productive businesses and workers. If sustaining today's benefits undermines tomorrow's employment and tax base, a policy can weaken its own foundations.",
+        "France's warning is not a single debt figure. It is a **structure in which spending commitments harden, new revenues become harder to find, and trust between citizens and the state erodes.**"
       ]
     },
     {
-      "title": "Where the Lee and Mitterrand Administrations May Resemble Each Other",
+      "title": "What Should the Lee Administration Learn From Mitterrand?",
       "paragraphs": [
-        "Now consider South Korea.",
-        "The Lee Jae-myung administration and Mitterrand's government are not identical. They operate in different eras and economic systems, and their demographic circumstances are distinct.",
-        "Nevertheless, the comparison raises several questions about policy design and political incentives.",
-        "First, both invite scrutiny of policies whose benefits are immediately visible to recipients.",
-        "Cash assistance, consumption vouchers, local-currency programs and public subsidies can provide quick relief. But without a clear explanation of their funding, duration and longer-term economic effects, they risk turning into unsustainable political promises.",
-        "Mitterrand offered workers an unmistakable benefit by enabling earlier retirement. The criticism of contemporary cash-support policies is not that all assistance is illegitimate, but that new entitlements can outlast the financial conditions that made them possible.",
-        "Second, there is concern about expanding the role of the state in economic decision-making.",
-        "Mitterrand used nationalizations and public-sector expansion as central instruments of his economic agenda. Critics of the Lee administration similarly question whether growing intervention and spending might substitute for market activity and private initiative.",
-        "Government intervention can be justified when markets fail. The relevant question is whether each intervention complements private activity and demonstrably improves outcomes, or progressively displaces business investment and individual choice.",
-        "Third, beneficiaries are clearly identified while the ultimate cost bearers may be less obvious.",
-        "Recipients see a subsidy at once, but the burden differs depending on whether it is financed through taxation, government borrowing, higher insurance premiums or mandates placed on employers.",
-        "Citizens cannot evaluate the real price of a program unless both the benefits and the costs are explained.",
-        "Fourth, there is a risk that political rewards today will be exchanged for financial obligations imposed on future generations.",
-        "Korea's rapidly aging population and declining working-age cohort will place increasing pressure on pension, healthcare and social-service spending. Expanding permanent commitments in this setting requires particular caution.",
-        "France continues to grapple with the implications of an entitlement expanded in 1982. The policy decisions Korea makes now will likewise affect the public finances facing its young people in twenty or thirty years."
+        "Korea in 2026 is not France in the 1980s. Mitterrand's pension reform created an enduring entitlement, whereas Korean consumption vouchers or certain cash transfers may be temporary responses to economic stress. It would be inaccurate to describe them as the same institution.",
+        "The comparison is nonetheless worth examining. Benefits are immediately visible to recipients, while costs may appear later through taxation, borrowing, insurance contributions or costs imposed on firms.",
+        "Lee administration programs involving cash support, local currencies, subsidies and expanded fiscal spending therefore warrant more than a tally of payments delivered. Citizens need to know whether measures are temporary, whether they may become recurring and what would bring them to an end.",
+        "Some programs may stimulate consumption or protect vulnerable people in a downturn. Their actual effects should be assessed with evidence. But assistance repeated without a credible financing plan can create expectations that endure beyond its original purpose.",
+        "Mitterrand expanded the state's economic role through nationalizations and public-sector growth. Korean policymakers also face the question whether state intervention strengthens private investment and civic autonomy or unnecessarily substitutes for them.",
+        "More government spending does not necessarily mean more opportunities to work, invest or make independent choices. The lasting measure is what remains in productivity, jobs and fiscal capacity after the money has been distributed.",
+        "**The point of comparing these administrations is not an ideological label but a common standard: how clearly are the costs and responsibilities of today's promises explained to future citizens?**"
       ]
     },
     {
-      "title": "Could Korea Face Even Greater Risks Than France?",
+      "title": "Korea Has Less Debt Than France, but Is Aging Faster",
       "paragraphs": [
-        "Korea's current government debt burden is substantially lower than France's. A National Assembly Budget Office assessment of the finalized 2026 budget projected Korean government debt around KRW 1,413.8 trillion, or 51.6 percent of GDP.[8]",
-        "That comparison is useful, but looking only at today's debt ratio can conceal structural differences.",
-        "Korea is aging faster than France. Fertility remains exceptionally low, the working-age population is falling, and growth is no longer as rapid as in previous decades. The number of people paying taxes and social-insurance contributions will be under pressure precisely as demand for pensions, healthcare and care services rises.",
-        "France developed its extensive welfare state over a long period. Korea faces a steep demographic transition while many of its social-protection commitments are still maturing.",
-        "This combination may give Korea less time for gradual fiscal and institutional adjustment. The claim is a warning about future risks, not a prediction that Korea will necessarily experience France's exact trajectory.",
-        "Pension reform is already under way. Changes legislated in 2025 are set to raise the contribution rate from 9 percent toward 13 percent by 2033 and to set the income replacement rate at 43 percent from 2026.[9]",
-        "These changes are intended to strengthen pension finances while supporting retirement income. They do not settle every question about contribution levels, retirement ages, benefits and the fair division of obligations between generations.",
-        "Avoiding uncomfortable conversations about such trade-offs will only transfer the burden of adjustment into the future."
+        "Korean public debt is currently far below France's as a share of GDP. An assessment of the 2026 budget by the National Assembly Budget Office projected around KRW 1,413.8 trillion, or 51.6% of GDP.[8]",
+        "But a lower debt ratio today does not guarantee safety tomorrow. Korea's fertility rate is exceptionally low and its working-age population is shrinking rapidly. Demand for pensions, healthcare and care services will grow even as the contributor base faces pressure.",
+        "A rapid demographic transition may leave less time for gradual reform. Once an entitlement is established for decades, future tax and contribution costs can rise faster than expected.",
+        "Korea has already made pension changes. Under legislation revised in 2025, the contribution rate is scheduled to rise from 9% to 13% by 2033, while the income replacement rate is set at 43% from 2026.[9]",
+        "The reform seeks to improve sustainability and retirement income, but it does not resolve every question about contribution rates, retirement eligibility and fairness between generations.",
+        "People not yet born cannot vote on today's benefits and borrowing. Their interests must nevertheless count when politicians make commitments that will reach far into the future.",
+        "**Korea's danger is not the simplistic prediction of imminent French-style collapse. It is delaying reforms until measures that are still possible today become politically impossible tomorrow.**"
       ]
     },
     {
-      "title": "If the Lee Administration Chooses Mitterrand's Path",
+      "title": "The Least Responsible Politics Conceals the Costs",
       "paragraphs": [
-        "Concern that Korea might follow Mitterrand's path does not rest on any single policy. It is a concern about whether the government expands permanent commitments and its economic role while deferring an adequate explanation of their long-term costs.",
-        "Mitterrand's stated objective of improving workers' lives was not itself the problem. The central question is whether the policies accompanying that objective had a sufficiently durable economic and financial foundation.",
-        "Societies need social protection, assistance for vulnerable people and credible retirement security. These commitments, however, must be financed in ways that can survive demographic and economic change.",
-        "When a government proposes a new long-term benefit, citizens are entitled to ask concrete questions.",
-        "How much will it cost?",
-        "Who will pay?",
-        "How many years can it be sustained?",
-        "Will it remain affordable if growth slows?",
-        "What happens when there are fewer workers and more pensioners?",
-        "How much of the burden will be transferred to generations that have no voice in today's decisions?",
-        "A declaration that “the state will take responsibility” is not an answer without a financing plan.",
-        "Ultimately, state spending is financed by taxpayers, borrowing shifts repayment obligations across time, and employer mandates affect the cost of employment and production. Those trade-offs deserve public scrutiny."
+        "The name of the government is visible when citizens receive a subsidy. Less visible are the taxes, interest payments and business costs that finance it.",
+        "That asymmetry can make a promise look cheaper than it is. Political rewards arrive today; years later, when finances deteriorate, citizens are asked to share the burden.",
+        "French pension protests are understandable in that light. People paid into a system and planned their lives around the state's promises. They are now asked to revise retirement plans because the financial conditions behind those promises have changed.",
+        "Responsible policymaking requires more than describing the benefits. It requires specifying the total cost, the payer, the duration, the expected outcome and what will happen if a program fails.",
+        "Whether financing comes from taxation, public borrowing or added employer obligations, real people ultimately bear the burden: taxpayers, businesses, employees and future generations.",
+        "Citizens are not passive recipients of government generosity. They are decision-makers entitled to clear information about costs and outcomes. When politics conceals those costs, it constrains informed choice.",
+        "The central question is not which political camp is for or against welfare. It is whether funding can last, costs are disclosed and results can be verified."
       ]
     },
     {
-      "title": "Populism Can Shrink a Nation's Freedom to Choose",
+      "title": "The Question Mitterrand's Retirement Policy Leaves Korea",
       "paragraphs": [
-        "One concern with unsustainable political commitments is not simply that they consume large sums. They can also narrow the choices available to future citizens and governments.",
-        "When public debt rises, fiscal room to respond to recessions or disasters can shrink. When mandatory spending becomes inflexible, fewer resources remain for new priorities. If labor and business costs grow, investment and employment may be constrained.",
-        "A government may promise more benefits now while leaving future citizens with less room to decide how they want their society to develop.",
-        "Politicians say that the state will do more. Tomorrow's taxpayers may instead ask why higher taxes and insurance contributions are necessary to preserve decisions they never approved.",
-        "A young person might receive financial support today but face heavier future taxes, later retirement, weaker benefits or higher living costs.",
-        "Future generations cannot vote on commitments made before they are born. That is why intergenerational fairness belongs at the center of fiscal policy.",
-        "The ultimate concern is a structural unfairness: benefits are claimed in the present while obligations are passed to people who have little or no representation when the choices are made."
-      ]
-    },
-    {
-      "title": "Citizens' Anger Also Deserves to Be Understood",
-      "paragraphs": [
-        "French protesters cannot simply be dismissed as selfish defenders of benefits.",
-        "Many have paid taxes and social-insurance contributions throughout their working lives. They planned retirement and household finances according to commitments their government made.",
-        "When those rules are changed because public finances have deteriorated, affected citizens may believe they are being asked to pay for mistakes made elsewhere.",
-        "That is a problem of trust.",
-        "When governments create entitlements that people reasonably rely on, later reform requires transparent explanations, transitional measures and a clear account of political responsibility.",
-        "Much of the conflict over French pension reform reflects that loss of trust. Some citizens see the changes as the unilateral withdrawal of rights on which they depended.",
-        "Korea faces the same challenge of explaining the full lifetime cost of new benefits, rather than presenting only the initial payment or subsidy.",
-        "Responsible public debate requires an honest account of trade-offs. If greater provision means higher contributions, that needs to be said. If employer costs affect wages or hiring, those effects deserve examination.",
-        "Citizens are capable of understanding difficult choices. They do not benefit when politics treats them merely as recipients of agreeable promises."
-      ]
-    },
-    {
-      "title": "The Questions SEED VOICE Asks",
-      "paragraphs": [
-        "SEED VOICE is concerned not only with today's applause but with the conditions that future generations will inherit.",
-        "Public policy resembles a seed. A decision that seems small when announced may grow into an enduring institution shaping the lives of citizens decades later.",
-        "Public spending can produce worthwhile protection and opportunity. It can also generate debt, taxes and constraints on economic growth when financing and results are neglected.",
-        "What kinds of seeds are policymakers planting?",
-        "Are they creating future liabilities for immediate political approval? Or are they establishing conditions in which businesses can grow, people can support themselves and social protection can endure?",
-        "Mitterrand's government planted the idea of retirement at 60. Many citizens understandably saw it as a gain in freedom and rights. Over time, the same institution became part of a difficult debate about fiscal pressure, reform and intergenerational responsibility.",
-        "What consequences will the policies advanced by the Lee administration produce?",
-        "Whether a cash transfer remains temporary or becomes a permanent entitlement matters. Whether an intervention corrects a market failure or replaces private initiative matters.",
-        "A policy does not end when it is announced. Its expenses begin, expectations form and political incentives develop that may make later change difficult."
-      ]
-    },
-    {
-      "title": "Korea Faces a Critical Period",
-      "paragraphs": [
-        "Korea is entering a period of significant structural challenges.",
-        "The population is aging while the working-age cohort shrinks. Demand for pensions, medical care and social services is growing, economic growth has moderated, and businesses face difficult domestic and international competition.",
-        "In such an environment, promises of ever-greater benefits financed by more public debt or additional burdens on productive activity create long-term risks.",
-        "France accumulated its welfare-state obligations over many decades. Korea's faster demographic transition may leave less room to correct mistakes gradually.",
-        "Deferring reform can increase the cost of later changes. Neglecting fiscal priorities can leave many public services competing for scarce funds at the same time.",
-        "It is easy to promise more benefits. It is harder to explain the taxes, conditions and risks that accompany them.",
-        "Yet explaining those difficult choices is an essential part of responsible government."
-      ]
-    },
-    {
-      "title": "Conclusion: Avoiding the Path of Unfunded Promises",
-      "paragraphs": [
-        "The 1982 French retirement reform delivered a real benefit to qualifying workers. At the same time, its financial obligations became harder to sustain in an aging society, and later governments faced the social cost of altering those commitments.",
-        "The lesson for Korea is not that social protection should disappear or that workers and pensioners alone should bear every adjustment.",
-        "It is that durable welfare policy must be distinguished from promises made without a credible, long-term plan to pay for them.",
-        "Pensions require intergenerational fairness. Social assistance needs sustainable funding. Government intervention should support rather than needlessly displace productive activity, private initiative and civic autonomy.",
-        "The concern raised by a potential parallel between Lee and Mitterrand is a conditional one: if government expands entitlements and interventions while postponing the costs, future Koreans may face harder fiscal and social choices.",
-        "Politics is not merely about applause today. It is also about preserving the ability of the next generation to build a viable society.",
-        "The most important question is not simply what a government can distribute now, but what freedom and opportunity its choices leave to tomorrow's citizens.",
-        "**The deepest cost of unsustainable populism is not only a shortage of money. It is the risk of limiting the freedom of future generations to shape their own lives and the direction of their country.**",
-        "SEED VOICE asks what kind of future we are planting.",
-        "Are today's policies planting tomorrow's bills? Or are they planting the conditions for freedom, growth, responsibility and lasting social protection?",
-        "Korea still has choices. The historical experience of France can inform those choices without becoming a simplistic prediction of identical outcomes.",
-        "There is value in confronting these questions before adjustment becomes more painful."
+        "Mitterrand's 1982 reform provided a tangible benefit to qualifying workers. It also left questions about longer pension payments and intergenerational costs, which later French governments struggled to address amid deep social conflict.",
+        "This is not a story of a nation driven into crisis by one politician alone. It is a warning to governments that make long-term financial commitments for short-term political credit and seek to renegotiate the costs much later.",
+        "Korean politics also offers promises of support and a larger state role. Citizens deserve not only a list of benefits, but an account of the financing, the effects on growth and employment, and the share future generations may be asked to pay.",
+        "The Lee administration's policies deserve examination under these standards: not only immediate consumption or popularity, but long-term fiscal cost, private-sector vitality, citizens' independence and the freedom of future generations to choose.",
+        "**Politicians receive today's applause. Tomorrow's citizens receive the bill.**",
+        "France sends a clear warning: an attractive promise made once can turn into a difficult-to-revise obligation decades later.",
+        "What Korea should leave to the next generation is not a longer stack of bills but the freedom to work, take risks and shape its future. That is the responsibility Korea's government can learn from Mitterrand's history."
       ]
     }
   ],
