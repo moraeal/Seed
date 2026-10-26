@@ -7,6 +7,8 @@ import { monthlyRentCreditExplainer } from "../data/monthlyRentCreditExplainer";
 import { monthlyRentCreditExplainerTranslation } from "../data/contentTranslations/briefingMonthlyRentCredit";
 import { incomeTaxFamilyDeductionBriefing } from "../data/incomeTaxFamilyDeductionBriefing";
 import { incomeTaxFamilyDeductionTranslation } from "../data/contentTranslations/briefingIncomeTaxFamilyDeduction";
+import { getTaxWatchNewsArticles } from "../data/news";
+import { localizeNewsArticle } from "../data/localizedContent";
 import { useLanguage } from "../i18n";
 
 export default function TaxWatch() {
@@ -29,7 +31,12 @@ export default function TaxWatch() {
     const family = { key: "family-deduction", date: incomeTaxFamilyDeductionBriefing.date, article: { href: `/briefings/${incomeTaxFamilyDeductionBriefing.slug}`, label: ko ? "세금정책 설명 기사" : "TAX EXPLAINER", title: ko ? incomeTaxFamilyDeductionBriefing.title : incomeTaxFamilyDeductionTranslation.title, summary: ko ? incomeTaxFamilyDeductionBriefing.summary : incomeTaxFamilyDeductionTranslation.summary, image: incomeTaxFamilyDeductionBriefing.images?.[0]?.src, alt: ko ? incomeTaxFamilyDeductionBriefing.images?.[0]?.alt : incomeTaxFamilyDeductionTranslation.images?.[0]?.alt, date: incomeTaxFamilyDeductionBriefing.date }, record: { href: "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2221581/detailRP", external: true, label: ko ? "관련 법안 원문 · 의안 2221581" : "RELATED BILL SOURCE · 2221581", title: ko ? "소득세법 일부개정법률안" : "Income Tax Act amendment", summary: ko ? "가족 기본공제 소득요건과 관련된 개정안의 제안 내용을 확인하세요." : "Read the proposed change to the family deduction income threshold.", date: incomeTaxFamilyDeductionBriefing.date } };
     const fundEdition = futureFundControlArticle.editions[language];
     const fund = { key: futureFundControlArticle.slug, date: futureFundControlArticle.date, article: { href: `/monitoring/legislation/commentary/${futureFundControlArticle.slug}`, label: ko ? "입법·세금감시 기사" : "LEGISLATIVE & TAX WATCH", title: fundEdition.title, summary: fundEdition.summary, image: futureFundControlArticle.heroSrc, alt: fundEdition.heroAlt, date: futureFundControlArticle.date }, record: { href: futureFundControlArticle.sources[0].url, external: true, label: ko ? "법안 원문 · 의안 2221056" : "BILL SOURCE · 2221056", title: ko ? "국가재정법 일부개정법률안" : "National Finance Act amendment", summary: ko ? "미래대응기금 변경·전출 특례에 관한 정부 제출안입니다." : "Government proposal on fund adjustments and transfers.", date: "2026-09-03" } };
-    return [...policies, ...standaloneCommentaries, rentExplainer, family, fund].sort((a, b) => b.date.localeCompare(a.date));
+    const taxNews = getTaxWatchNewsArticles().map((original) => {
+      const article = localizeNewsArticle(original, language);
+      const official = article.sources.find((source) => /\.go\.kr$|assembly\.go\.kr$|law\.go\.kr$/.test(new URL(source.url).hostname));
+      return { key: `news-${article.slug}`, date: article.date, article: { href: `/news/${article.slug}`, label: ko ? "세금감시 기사" : "TAX WATCH ARTICLE", title: article.title, summary: article.summary, image: article.heroImage.src, alt: article.heroImage.alt, date: article.date }, record: official ? { href: official.url, external: true, label: ko ? "공식 원문 자료" : "OFFICIAL SOURCE", title: official.label, summary: "", date: article.date } : undefined };
+    });
+    return [...policies, ...standaloneCommentaries, ...taxNews, rentExplainer, family, fund].sort((a, b) => b.date.localeCompare(a.date));
   }, [language, ko]);
 
   return <section className="min-h-[70vh] bg-paper pb-16">
