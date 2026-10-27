@@ -227,7 +227,7 @@ export default function Home() {
   seedLanguageCandidates.sort((a, b) => newestInSection({ path: `/seed-language/${a.slug}`, date: a.date }, { path: `/seed-language/${b.slug}`, date: b.date }));
   // Reserve the lead and existing desks before the historical carousel.
   const claimedHomePaths = new Set(activeFeaturedPath ? [getHomeTopic(activeFeaturedPath)] : []);
-  const civicSidebarItems = civicSections.map((section) => {
+  const civicSidebarItems = civicSections.filter((section) => section.key !== "notices").map((section) => {
     if (section.key === "campaign") {
       const path = "/briefings/korean-civic-tax-watch-movement-ktr";
       claimedHomePaths.add(getHomeTopic(path));
