@@ -80,6 +80,8 @@ jobs:
         run: node scripts/check-image-cache-keys.mjs "$BASE_SHA" HEAD
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+      - name: Test newest-first homepage feed and bilingual ordering
+        run: node scripts/test-latest-articles.mjs
       - name: Test actual manuscript approval and rejection flow
         run: node scripts/test-article-integrity-integration.mjs
       - name: Require editor-approved snapshots for new articles
