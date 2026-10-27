@@ -1,5 +1,5 @@
 import snapshot from "../data/homeSnapshot.json";
-import { civicSections, getCivicSectionArticles, getTaxWatchMovementArticles } from "../data/civicSections";
+import { civicSections, getTaxWatchMovementArticles } from "../data/civicSections";
 import { ArrowRight, ChevronLeft, ChevronRight, Clock, Megaphone } from "lucide-react";
 import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import { Link } from "react-router-dom";
@@ -233,9 +233,7 @@ export default function Home() {
       claimedHomePaths.add(getHomeTopic(path));
       return { section, article: featuredCandidates.find((item) => item.path === path) };
     }
-    const sectionArticles = section.key === "cases"
-      ? getTaxWatchMovementArticles(language, featuredCandidates)
-      : getCivicSectionArticles(section.key, language, featuredCandidates);
+    const sectionArticles = getTaxWatchMovementArticles(language, featuredCandidates);
     const article = [...sectionArticles].sort(newestInSection).find((item) => !claimedHomePaths.has(getHomeTopic(item.path)));
     if (article) claimedHomePaths.add(getHomeTopic(article.path));
     return { section, article };
