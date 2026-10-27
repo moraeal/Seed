@@ -15,6 +15,8 @@ const expectedArticleHeadings = {
   "lee-mitterrand-populism-pension-korea-2026": "이재명 정부, 미테랑 정부를 따르려 하나?",
   "crypto-tax-fourth-deferral-2026": "코인세, 네 번째로 미루나",
   "youth-rent-tax-credit-20-percent-bill-2222071": "청년 월세 20퍼센트 공제안 실제로 얼마나 줄어드나",
+  "china-business-freedom-industrial-security-limited-state-2026": "기업의 자유는 어디까지인가",
+  "moon-chung-in-dangerous-alliance-security-view-2026": "여당 고문 문정인의 위험한 안보관",
 };
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
 const server = spawn("pnpm", ["exec","vite","preview","--host","127.0.0.1","--port","4179","--strictPort"], { stdio:"pipe" });
