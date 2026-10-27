@@ -14,9 +14,9 @@ export const chinaBusinessFreedomColumn: SeedColumn = {
   "readMinutes": 20,
   "summary": "기술유출을 막는 국가의 책임은 어디까지인가. 중국과 경쟁하면서도 기업의 선택권을 지키려면, 산업안보를 내세우는 정부의 권한과 세금 사용부터 검증해야 한다.",
   "heroImage": {
-    "src": "images/columns/china-business-freedom-2026/technology-open-gateway.webp",
-    "alt": "반도체 웨이퍼를 보호하는 열린 유리 건축물과 여러 시장으로 이어지는 항로를 표현한 일러스트",
-    "caption": "기술을 보호하는 장치는 필요하지만, 기업이 여러 시장으로 나아갈 문은 열려 있어야 한다.",
+    "src": "images/columns/china-business-freedom-2026/technology-theft-china-20261028.webp",
+    "alt": "한국 반도체 연구시설의 깨진 보안벽을 통해 중국 산업시설로 회로정보가 빠져나가는 상징 장면",
+    "caption": "불법적인 기술유출은 정상적인 교역·이직과 구별된다. 기술을 보호할 국가의 책임과 기업의 자유를 함께 묻는다.",
     "credit": "AI 이미지",
     "sourceUrl": ""
   },

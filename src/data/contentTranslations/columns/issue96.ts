@@ -6,8 +6,8 @@ export const issue96: ColumnTranslation = {
   "author": "Small Seed",
   "summary": "How far should government go to prevent technology theft? Competing with China while preserving corporate choice requires scrutiny of state powers, public spending and the boundaries of industrial security.",
   "heroImage": {
-    "alt": "An open glass pavilion protecting a semiconductor wafer, with trading routes leading toward multiple markets",
-    "caption": "Technology needs protection, while businesses need open routes to different markets.",
+    "alt": "A symbolic breach in a Korean semiconductor laboratory’s security barrier, with circuit information flowing toward a Chinese industrial complex",
+    "caption": "Illegal technology transfers must be distinguished from legitimate trade and employment mobility. The state’s protective duties and corporate freedom must both be examined.",
     "credit": "AI image"
   },
   "inlineImage": {
