@@ -82,6 +82,8 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Test newest-first homepage feed and bilingual ordering
         run: node scripts/test-latest-articles.mjs
+      - name: Test refreshed homepage sections in both languages
+        run: node scripts/test-home-section-updates.mjs
       - name: Test actual manuscript approval and rejection flow
         run: node scripts/test-article-integrity-integration.mjs
       - name: Require editor-approved snapshots for new articles

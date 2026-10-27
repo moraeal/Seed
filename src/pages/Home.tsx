@@ -1,5 +1,5 @@
 import snapshot from "../data/homeSnapshot.json";
-import { civicSections, getCivicSectionArticles, getTaxWatchMovementArticles } from "../data/civicSections";
+import { civicSections, getTaxWatchMovementArticles } from "../data/civicSections";
 import { ArrowRight, ChevronLeft, ChevronRight, Clock, Megaphone } from "lucide-react";
 import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import { Link } from "react-router-dom";
@@ -211,23 +211,30 @@ export default function Home() {
       ?? featuredCandidates[0]
     : undefined;
   const activeFeaturedPath = featuredLead?.path;
-  const latestArticles = getLatestArticles(language, legislativeBills, new Set(activeFeaturedPath ? [activeFeaturedPath] : []));
-  // Each story gets one homepage position. The latest briefing desk takes
-  // priority over the historical carousel; other desks claim remaining topics.
-  const claimedHomePaths = new Set([
-    ...(activeFeaturedPath ? [getHomeTopic(activeFeaturedPath)] : []),
-    ...latestArticles.map((item) => getHomeTopic(item.path)),
-  ]);
-  const civicSidebarItems = civicSections.map((section) => {
+  // Use publication/revision dates inside the existing desks. This ordering
+  // must never claim slots or remove stories from their own section.
+  const freshness = new Map(getLatestArticles(language, legislativeBills, new Set(), featuredCandidates.length)
+    .map((item) => [item.path, item.latestDate]));
+  const sectionDate = (path: string, date: string) => freshness.get(path) || date;
+  const sectionTimestamp = (path: string, date: string) => {
+    const value = sectionDate(path, date);
+    return Date.parse(value.length === 10 ? `${value}T00:00:00+09:00` : value) || 0;
+  };
+  const newestInSection = (a: { path: string; date: string }, b: { path: string; date: string }) =>
+    sectionTimestamp(b.path, b.date) - sectionTimestamp(a.path, a.date) || a.path.localeCompare(b.path);
+  localizedBriefings.sort((a, b) => newestInSection({ path: `/briefings/${a.slug}`, date: a.date }, { path: `/briefings/${b.slug}`, date: b.date }));
+  allJournalColumns.sort((a, b) => newestInSection({ path: `/columns/${a.slug}`, date: a.date }, { path: `/columns/${b.slug}`, date: b.date }));
+  seedLanguageCandidates.sort((a, b) => newestInSection({ path: `/seed-language/${a.slug}`, date: a.date }, { path: `/seed-language/${b.slug}`, date: b.date }));
+  // Reserve the lead and existing desks before the historical carousel.
+  const claimedHomePaths = new Set(activeFeaturedPath ? [getHomeTopic(activeFeaturedPath)] : []);
+  const civicSidebarItems = civicSections.filter((section) => section.key !== "notices").map((section) => {
     if (section.key === "campaign") {
       const path = "/briefings/korean-civic-tax-watch-movement-ktr";
       claimedHomePaths.add(getHomeTopic(path));
       return { section, article: featuredCandidates.find((item) => item.path === path) };
     }
-    const sectionArticles = section.key === "cases"
-      ? getTaxWatchMovementArticles(language, featuredCandidates)
-      : getCivicSectionArticles(section.key, language, featuredCandidates);
-    const article = sectionArticles.find((item) => !claimedHomePaths.has(getHomeTopic(item.path)));
+    const sectionArticles = getTaxWatchMovementArticles(language, featuredCandidates);
+    const article = [...sectionArticles].sort(newestInSection).find((item) => !claimedHomePaths.has(getHomeTopic(item.path)));
     if (article) claimedHomePaths.add(getHomeTopic(article.path));
     return { section, article };
   });
@@ -260,7 +267,6 @@ export default function Home() {
 
   const upperArticlePaths = new Set([
     activeFeaturedPath,
-    ...latestArticles.map((item) => item.path),
     ...civicSidebarItems.map((item) => item.article?.path),
     seedLanguageArticle ? `/seed-language/${seedLanguageArticle.slug}` : undefined,
     ...visibleHotIssueCards.map((card) => card.to),
@@ -268,7 +274,10 @@ export default function Home() {
     ...briefings.map((briefing) => `/briefings/${briefing.slug}`),
   ].filter((path): path is string => Boolean(path)));
   const recentCivicWatchItems = selectLatestCivicWatchItems(
-    getCivicWatchFeed(language, legislativeBills), upperArticlePaths,
+    getCivicWatchFeed(language, legislativeBills).map((item) => ({
+      ...item,
+      updatedAt: new Date(Math.max(sectionTimestamp(item.to, item.date), sectionTimestamp("", item.updatedAt || item.date))).toISOString(),
+    })), upperArticlePaths,
   );
   for (const item of recentCivicWatchItems) claimedHomePaths.add(getHomeTopic(item.to));
 
@@ -325,7 +334,7 @@ export default function Home() {
       };
     }),
   ]
-    .sort((a, b) => b.date.localeCompare(a.date));
+    .sort((a, b) => newestInSection({ path: a.to, date: a.date }, { path: b.to, date: b.date }));
 
   const commentaryItems = claimUnseen(commentaryCandidates, (item) => item.to, claimedHomePaths, 3);
   // Fill the column desk in publication order with articles not already shown.
@@ -526,26 +535,6 @@ export default function Home() {
                 </Link>
               )}
             </aside>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-paper py-6 sm:py-8" aria-labelledby="latest-articles-title">
-        <div className="container-page">
-          <div className="border-b-2 border-navy pb-3">
-            <span className="section-kicker">LATEST ARTICLES</span>
-            <h2 id="latest-articles-title" className="editorial-title mt-1 text-2xl font-bold text-navy sm:text-3xl">{ko ? "최신 기사·업데이트" : "Latest articles and updates"}</h2>
-            <p className="mt-2 text-sm text-charcoal/60">{ko ? "전체 분야의 새 글과 공개 수정기록을 최신순으로 모았습니다." : "New publications and recorded editorial updates across all sections, newest first."}</p>
-          </div>
-          <div className="grid gap-x-8 md:grid-cols-2">
-            {latestArticles.map((item) => <Link key={item.path} to={item.path} className="group flex min-w-0 items-start gap-4 border-b border-green-deep/15 py-4 hover:bg-green-pale/35">
-              <SafeImage src={resolveImageSrc(item.image.src)} alt={item.image.alt} className="aspect-[4/3] w-24 shrink-0 object-cover sm:w-28" />
-              <div className="min-w-0">
-                <p className="text-xs text-charcoal/50">{item.categoryLabel} · {item.isUpdated ? (ko ? "수정 " : "Updated ") : ""}<time dateTime={item.latestDate}>{formatFeaturedDate(item.latestDate.length === 10 ? `${item.latestDate}T00:00:00+09:00` : item.latestDate)}</time></p>
-                <h3 className="mt-1 line-clamp-2 text-base font-bold leading-6 text-navy group-hover:text-green-mid">{item.title}</h3>
-                <p className="mt-1 line-clamp-2 text-sm leading-6 text-charcoal/60">{item.summary}</p>
-              </div>
-            </Link>)}
           </div>
         </div>
       </section>
