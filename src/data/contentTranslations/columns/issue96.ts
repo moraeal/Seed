@@ -2,208 +2,128 @@ import type { ColumnTranslation } from "../types";
 
 export const issue96: ColumnTranslation = {
   "title": "Where Are the Limits of Corporate Freedom?",
-  "subtitle": "What Is China to Us? Part ③ — Industrial Security and the Dilemma of Limited Government",
+  "subtitle": "What Is China to Us? Part ③ — Protect Industrial Security to Protect Corporate Freedom",
   "author": "Small Seed",
-  "summary": "How far should government go to prevent technology theft? Competing with China while preserving corporate choice requires scrutiny of state powers, public spending and the boundaries of industrial security.",
+  "summary": "Industrial security underpins corporate freedom. A government expanding cooperation with China must demonstrate how it will protect sensitive technology, assess risks and stop unsafe projects. Political credit must not come at the expense of companies’ rights and choices.",
   "heroImage": {
     "alt": "A symbolic breach in a Korean semiconductor laboratory’s security barrier, with circuit information flowing toward a Chinese industrial complex",
-    "caption": "Illegal technology transfers must be distinguished from legitimate trade and employment mobility. The state’s protective duties and corporate freedom must both be examined.",
+    "caption": "Expanding cooperation must not lower safeguards for technology. Industrial security is a public responsibility that protects enterprise and economic choice.",
     "credit": "AI image"
   },
   "inlineImage": {
     "alt": "Engineers examining a wafer and laboratory equipment in an imagined semiconductor research facility",
-    "caption": "Companies and researchers develop technology. Security responsibilities must coexist with legitimate research and employment mobility.",
+    "caption": "Protecting the technology developed by companies and researchers sustains innovation and legitimate international exchange.",
     "credit": "AI image"
   },
   "additionalImages": [
     {
-      "alt": "Engineers reviewing semiconductor technology in a laboratory",
-      "caption": "Protect confidential knowledge while preserving legitimate research and career choices.",
+      "alt": "Engineers examining a wafer and laboratory equipment in an imagined semiconductor research facility",
+      "caption": "Protecting the technology developed by companies and researchers sustains innovation and legitimate international exchange.",
       "credit": "AI image"
     },
     {
-      "src": "images/columns/china-business-freedom-2026/state-role-en.png",
-      "alt": "Four tests for industrial-security intervention: specific risk, narrow means, legal safeguards and evaluation of costs and results",
-      "caption": "A framework for assessing state responsibilities and limits. This summarizes the article’s policy argument, rather than statistics or the full scope of current law.",
+      "src": "images/columns/china-business-freedom-2026/protection-freedom-en-v2.png",
+      "alt": "Corporate freedoms, risks from theft and coercion, and government responsibilities for review, safeguards and accountability",
+      "caption": "Industrial-security standards designed to protect corporate freedom. Expanded cooperation must come with demonstrable protection and clear responsibilities.",
       "credit": "SEED VOICE explanatory graphic"
     }
   ],
   "sections": [
     {
-      "title": "When the State Fails to Protect Technology, Must Firms Defend It Alone?",
+      "title": "Who Protects a Company's Technology?",
       "paragraphs": [
-        "Cases involving the alleged transfer to China of semiconductor technology developed by Korean firms over decades have reached the courts. Specialists handling nationally designated core technologies moved to Chinese companies offering substantial compensation; some were indicted for allegedly taking confidential technical information. Working abroad and illegally transferring technology are different acts, and individual criminal liability is for the courts to determine.[1]",
-        "Korean carmakers, battery producers, display manufacturers and steelmakers face intense competition from Chinese firms. China, now central to global manufacturing, is challenging industries in which Korea long enjoyed a technological advantage.",
-        "Can government leave companies to bear every responsibility in these circumstances?",
-        "Companies plainly have a duty to protect their technology. Whether an individual firm can manage every industrial-security risk posed by an economy in which the state intervenes extensively in industry, finance and technological development is a different question.",
-        "When technology is acquired illegally, or a country uses economic influence for political pressure, the issue extends beyond ordinary market competition and raises questions about the state's responsibilities.",
-        "Yet another danger lies within this argument.",
-        "What happens when protecting industrial security becomes a justification for controlling overseas investment and technology partnerships, or for distributing enormous subsidies to favored industries?",
-        "Does responding to China's state-directed industrial policy lead Korea toward an economy in which government manages industry itself?",
-        "This dilemma cannot be avoided."
+        "Former Korean employees have faced prosecution for allegedly transferring semiconductor technology to a Chinese company. In a case announced in December 2025, prosecutors alleged that accumulated process knowledge and specialist personnel had been used to obtain technology for a Chinese firm. Individual criminal liability remains a matter for the courts.[1]",
+        "But government need not wait for a verdict before answering a broader question: what is it doing to ensure that businesses can operate without having technology stolen or yielding to foreign pressure?",
+        "Corporate freedom cannot be separated from the state's duty to protect corporate property. Telling firms to improve their own security after their technology has been unlawfully taken shifts a public responsibility onto the victim.",
+        "The question becomes sharper when government itself promotes closer ties and technology cooperation with China. As it opens channels for cooperation, is it taking responsibility for what may enter and what may leave through them?",
+        "**Industrial security and corporate freedom must be protected together. A policy that exposes companies to technology theft or economic coercion does not expand their freedom.**"
       ]
     },
     {
-      "title": "What Did Germany Miss While Respecting Corporate Freedom?",
+      "title": "Germany's Lesson Is About the State's Protective Responsibilities",
       "paragraphs": [
-        "As discussed in [Part One, “Germany Sold Cars. China Built an Industry That Could Rival Germany.”](/columns/merkel-china-industrial-dependence-2026), Angela Merkel's Germany regarded China as a vast growth market. German carmakers earned substantial profits there, while machinery and chemical companies participated in China's industrialization.",
-        "But China did not remain merely Germany's customer. It used foreign investment and technology partnerships to develop domestic manufacturing, while industrial policy and research helped Chinese firms become competitors to German businesses.",
-        "KUKA, a major German industrial-robot producer, was acquired by Chinese capital. Volkswagen has turned to cooperation with a Chinese electric-vehicle technology company to strengthen its competitiveness.[2][3]",
-        "As Germany sold cars to China, Chinese firms accumulated the technology and production capabilities needed to compete with German vehicles.",
-        "There is no guarantee that Germany would be a stronger industrial economy today had it avoided trade with China. Chinese technological progress reflects domestic innovation, investment and state policy, while German carmakers also bear responsibility for responding late to technological change.",
-        "Nevertheless, it is fair to ask whether Germany's government adequately managed long-term industrial risks as economic cooperation expanded.",
-        "That concern also helps explain Germany's subsequent commitment to reducing excessive dependence on China. Its 2023 China strategy endorsed de-risking in critical areas.[4]",
-        "But are we too quick to conclude that Germany's experience proves the state should have exercised tighter control over business?",
-        "Criticizing Merkel for insufficient attention to China's industrial rise is different from arguing that government should manage firms' economic activities.",
-        "We need to distinguish a supposed failure of state control from a failure to identify and respond to industrial-security risks."
+        "[Part One, “Germany Sold Cars. China Built an Industry That Could Rival Germany.”](/columns/merkel-china-industrial-dependence-2026) examined the gains and long-term industrial risks of Germany's China business during the Merkel era. [Part Two, “What Is China to Korea? Beyond Pro-China and Anti-China Slogans”](/columns/china-korea-industry-beyond-pro-anti-slogans-2026) brought those questions to Korean industry and economic choice.",
+        "China did not remain merely a German customer. Trade, investment, domestic research and industrial policy helped it build the technology and productive capacity to compete with German companies.",
+        "KUKA's acquisition by Chinese capital and Volkswagen's collaboration with a Chinese EV company illustrate the changing relationship. Lawful acquisitions and technology partnerships are not themselves technology theft. But immediate commercial gains and long-term industrial options do not necessarily move together.[2][3]",
+        "Germany's experience is not primarily an instruction to impose more controls on companies. It raises a question about how realistically policymakers assessed dependence and changing technological competition while emphasizing the benefits of a vast market.",
+        "Germany's 2023 China strategy endorsed de-risking in critical areas: maintaining relations without surrendering economic options to dependence on them.[4]",
+        "Korea must not invert that lesson. Lowering industrial-security safeguards in the name of respecting corporate freedom does not defend a free-market economy."
       ]
     },
     {
-      "title": "Korea Cannot Simply Copy China's State-Directed Economy",
+      "title": "A Government Expanding Cooperation Must Explain What It Will Protect",
       "paragraphs": [
-        "In China, government is deeply involved in setting industry's direction. It selects strategic sectors, commits large sums and connects finance, research and production expansion to national industrial goals.",
-        "Industrial policy has played an important role in cars, batteries, semiconductors, artificial intelligence and robotics.[4]",
-        "Combining a vast domestic market with state mobilization can accelerate the development of particular industries. It can also generate excessive investment, expanding capacity and distorted markets.",
-        "Competition with China does not mean Korea should respond in precisely the same way.",
-        "Korea grew through enterprise and international trade. Businesses and entrepreneurs developed new technologies and markets; firms that fell behind exited or changed course, helping transform the industrial structure.",
-        "If government increasingly chooses investments and guarantees the survival of particular firms, business freedom and responsibility can weaken.",
-        "Recipients become dependent on political decisions, while subsidies and regulatory powers give government greater influence over management.",
-        "A further concern is who pays.",
-        "Large subsidies justified by industrial competitiveness ultimately draw on taxpayers' resources. Citizens can end up financing the consequences of corporate failure.",
-        "Industrial security must not become a means of expanding public expenditure while blurring firms' responsibility for their own decisions.",
-        "The reason to scrutinize China's state-led policies is not simply that China is a competitor.",
-        "Excessive state control over economic resources and corporate decisions can reduce market freedom and citizens' choices.",
-        "If beating China requires running our economy the same way, what becomes of the free-market economy we claim to defend?"
+        "The Lee Jae-myung administration has pursued greater scientific and digital cooperation with China. A government explanation published on January 8, 2026 described memoranda signed during the president's state visit, including plans for joint research, researcher exchanges and digital cooperation.[8]",
+        "That announcement does not establish that national core-technology protections were repealed or that unlawful transfers were authorized. What it establishes is an intention to expand cooperation. The published explanation does not provide enough detail to assess project-specific exclusions for sensitive technologies, information access or ownership of results.",
+        "That is precisely where government must answer for its policy. If expanded cooperation counts as an achievement, it must also explain what will and will not be shared, who evaluates partner risks and who can stop a project when problems arise.",
+        "An announcement alone does not make corporate technology secure. Treating a security review as an obstacle to diplomacy, or rushing it to meet a diplomatic timetable, would deserve criticism. These are boundaries cooperation policy must respect, not claims that such conduct has already been established.",
+        "In September, the industry ministry and intellectual-property authority also announced cooperation on technology protection and responses to infringement and disputes. Those commitments must become operational standards in cooperation with China as well.[9]",
+        "**Government cannot apply one standard to domestic promises of protection and another to overseas cooperation targets. Both cooperation and the preservation of technology must be measured.**"
       ]
     },
     {
-      "title": "Freedom Cannot Include a Right to Steal Technology",
+      "title": "Corporate Freedom Includes the Right Not to Have Technology Taken",
       "paragraphs": [
-        "Corporate freedom does not rule out state action against illegal technology transfers.",
-        "Technology developed by a company is legitimate property. Trade secrets created through decades of research and investment are legally protected assets; acquiring them unlawfully infringes others' rights.",
-        "If someone breaks into a factory and steals equipment, the state protects property and prosecutes the crime. The unlawful taking of trade secrets and industrial technology raises the same basic principle.",
-        "This is not about government choosing winners and losers in the market.",
-        "It concerns property rights and contractual order, basic conditions for a free economy to function.",
-        "Korea's Industrial Technology Protection Act prohibits the improper acquisition and disclosure of industrial technology. Certain foreign acquisitions, mergers and joint investments involving holders of designated national core technologies require approval or notification.[5]",
-        "A targeted industrial-security review system therefore already exists.",
-        "The question is how far it should reach.",
-        "Selling cars to China and illegally transferring critical military technology cannot be judged by the same standard. Using published academic findings is also different from secretly taking confidential technical documents.",
-        "That is why we must distinguish what the state should protect from decisions businesses should make freely.",
-        "If industrial security justifies state management of all technology and permission requirements for every international research partnership, governmental authority can expand without a clear limit.",
-        "Preventing technology theft and controlling legitimate technology transactions are distinct tasks."
+        "Defining corporate freedom only through permission to invest and trade abroad misses half the issue. Firms must be able to own their technology legitimately, receive contractual compensation and reject improper demands.",
+        "The freedom to trade with Chinese companies matters. So do the freedoms to refuse technology demands, leave unfavorable ventures and choose alternative markets and suppliers.",
+        "If access to a market becomes contingent on transferring technology, while exit carries prohibitive losses, meaningful choice can narrow. A transaction's formally voluntary character does not eliminate every pressure surrounding it.",
+        "Government assesses industrial-security risks to preserve corporate choice, rather than make commercial decisions in a company's place.",
+        "Risks requiring criminal investigation, trade diplomacy or international coordination cannot be left solely to a company's security team. Private safeguards and public protection must work together; neither substitutes for the other.",
+        "**Corporate freedom cannot stand securely on unprotected property rights. Industrial security is one of its foundations.**"
       ]
     },
     {
-      "title": "When National Security Becomes a Reason to Control Business",
+      "title": "Limited Government Does Not Mean Abandoning Protection",
       "paragraphs": [
-        "Industrial security offers a powerful justification for economic intervention.",
-        "Governments might restrict overseas investment because semiconductors matter, require domestic battery production or impose high tariffs to protect the car industry.",
-        "Rules initially covering a small group of technologies directly connected to national security can gradually expand across entire industries.",
-        "Adding subsidies makes the problem more complicated.",
-        "Companies may devote as much attention to obtaining government assistance as to improving products and technology. Government acquires the power to decide which firms receive support and which industries receive protection.",
-        "If political influence shapes those choices, industrial policy risks rewarding relationships with power rather than economic competitiveness.",
-        "The costs of protection do not disappear from the market.",
-        "Tariffs can raise prices for consumers. Subsidies impose costs on taxpayers, and domestic-production mandates can raise firms' operating costs.",
-        "These are also questions of taxation and public finance that SEED VOICE has repeatedly examined.",
-        "When government spends citizens' money in the name of industrial security, the expenditure must be assessed by its concrete effects and costs. Vague claims of national importance cannot justify every industrial subsidy.",
-        "A greater Chinese threat does not give the Korean government unlimited authority over the economy.",
-        "We must also scrutinize the possibility that protecting industry becomes a channel for restricting citizens' and firms' freedom while expanding political influence over economic life."
+        "State power must have limits. But treating limited government as government that does nothing strips liberalism of institutions it needs to survive.",
+        "Protecting property and contracts, investigating crime and responding to external coercion are basic public duties. Preventing technology theft cannot simply be dismissed as improper interference in business.",
+        "Korea's Industrial Technology Protection Act prohibits the improper acquisition and disclosure of industrial technology. It also provides approval or notification procedures for exports of national core technologies and certain foreign acquisitions and mergers. The law already distinguishes ordinary transactions from technology requiring special protection.[5]",
+        "Government's task is not to apply those safeguards loosely because the diplomatic atmosphere is friendly or investment is welcome. It is to develop expertise and apply legal standards consistently to actual transactions and research partnerships.",
+        "Reducing unnecessary administrative burdens must be distinguished from lowering protection. Paperwork can be simplified without removing substantive review or accountability.",
+        "The state need not develop technology in a firm's place or guarantee commercial success. It nevertheless has a responsibility to prevent unlawful appropriation of technology firms have developed."
       ]
     },
     {
-      "title": "Protecting a Market Is Different From Managing It",
+      "title": "Protecting Both Corporate Property and National Industrial Security",
       "paragraphs": [
-        "What, then, can the state do?",
-        "Two roles need to be distinguished.",
-        "In one, government sets industry's direction and promotes selected firms. It decides who receives support, which technologies should be developed and where companies should invest.",
-        "In the other, government preserves the basic order within which firms compete freely.",
-        "It enforces contracts, protects property and responds to illegal technology acquisition and economic coercion. Technologies directly connected to national security can be subject to targeted review under law.",
-        "These roles may appear similar, but they create very different relationships between government and business.",
-        "Under the first approach, government becomes the driving force behind firms' economic activities. Political intervention in success and failure can expand.",
-        "Under the second, firms remain the principal economic actors. Government protects the conditions of competition and responds to specific risks.",
-        "Protecting that basic order does not conflict with a free-market economy.",
-        "A market without secure private property or freedom of contract can hardly be described as free.",
-        "This provides a starting point for addressing technology-transfer risks involving China while maintaining the principle of limited government.",
-        "The state protects the conditions in which firms develop technology and invest for themselves, rather than running industry on their behalf."
+        "Not every transaction involving privately developed technology has the same implications. Ordinary product sales, lawful licensing and transfers of technology with national-security consequences need to be distinguished.",
+        "A deal profitable to one company can create risks for other firms and supply chains if control of important technology passes elsewhere. This helps explain statutory review of national core technologies.",
+        "Conversely, government has no reason to control all ordinary knowledge and published research. The more accurately dangerous transfers are identified, the more predictably legitimate business and research can proceed.",
+        "Protection must not rest on suspicion of an individual simply for being Chinese or a blanket ban on Chinese companies. Assessment should examine the technology, actual access rights, counterpart ownership and control, intended use and the possibility of onward transfer.",
+        "Security safeguards must operate where needed. Blocking every transaction under an industrial-security label is wrong; opening necessary safeguards merely to expand cooperation is also wrong.",
+        "This article's primary question concerns the latter responsibility: **when government opens cooperation channels, who protects the technology and choices that companies and the country could lose?**"
       ]
     },
     {
-      "title": "Governments Invoking Industrial Security Must Also Be Accountable",
+      "title": "Does Government Take the Credit While Companies Bear the Loss?",
       "paragraphs": [
-        "What matters is less what government declares it will protect than the powers it actually exercises.",
-        "If all advanced technology is treated as a national-security issue, scarcely any industry will remain outside potential intervention. Cars, semiconductors, telecommunications, AI, energy and biotechnology can all be called nationally important.",
-        "A government seeking to restrict business freedom on industrial-security grounds therefore bears a demanding burden of justification.",
-        "It must identify the actual security risk and explain why normal competition or companies' own safeguards cannot adequately address it.",
-        "Intervention should also be proportionate. If restricting the transfer of a particular technology addresses the risk, government should choose that narrower measure rather than block a company's entire business relationship.",
-        "Foreign-acquisition reviews likewise need to assess concrete security risks, rather than prohibit a deal simply because the buyer is foreign.",
-        "Such decisions cannot be left to arbitrary political judgment.",
-        "They require clear statutory criteria, reasons disclosed where possible, opportunities to challenge decisions and judicial oversight. When security is invoked to restrict property rights, necessity and legality must be open to scrutiny.",
-        "The European Union is also examining these issues.",
-        "In 2026, the EU adopted a regulation strengthening foreign-investment screening. Its full application begins in January 2028; adoption and operational application must be distinguished.[6]",
-        "Separately, a 2025 European Commission recommendation asked member states to assess risks from outbound investment in semiconductors, AI and quantum technologies.[7]",
-        "This approach examines risks associated with particular technology transfers rather than banning all overseas investment.",
-        "Yet these arrangements can become either useful safeguards or excessive regulation, depending on implementation.",
-        "A legitimate national-security objective does not make every possible instrument legitimate."
+        "Summits and signed agreements make visible political achievements. Photographs and agreement counts can be announced immediately, while technology transfers and their competitive consequences may take much longer to become apparent.",
+        "A government that encourages cooperation but leaves companies to bear every risk reverses the proper allocation of responsibility. Political credit may go to officials while firms and workers carry the costs of lost technology and dependence.",
+        "Weaker technological competitiveness affects more than shareholders. Domestic investment, suppliers' orders, research jobs and opportunities for the next generation can also suffer.",
+        "If government then offers subsidies to repair the damage, taxpayers face another bill. The point is not to support every firm that loses a competitive contest. It is to examine whether government fulfilled its protective duties before promising compensation afterward.",
+        "Government must respect legitimate overseas business. It must also respect a company's right to refuse participation or sensitive-technology commitments in government-promoted cooperation.",
+        "Cooperation without the freedom to decline does not expand corporate autonomy. Diplomatic objectives must not turn firms' technology and independent judgment into instruments of state policy."
       ]
     },
     {
-      "title": "What Government Should—and Should Not—Do",
+      "title": "Europe Is Examining Openness and Security Together",
       "paragraphs": [
-        "Government cannot solve every problem in industrial competition with China.",
-        "Which cars succeed internationally, which firms develop new semiconductor technologies and which batteries perform better depend substantially on business innovation and competition.",
-        "If the state starts making these choices for companies, market dynamism can weaken.",
-        "Other responsibilities clearly belong to government.",
-        "They include investigating and prosecuting illegal industrial-technology transfers, reviewing security risks from the overseas transfer of national core technologies under law, and responding to unfair foreign trade practices and economic pressure.",
-        "Preserving trade rules so Korean firms do not face unjustified discrimination abroad is also a public responsibility.",
-        "Universities and research institutions need systems for handling confidential technical material and conflicts of interest while preserving legitimate international research.",
-        "These policies do not require ending every exchange with Chinese companies.",
-        "They require maintaining normal business and research relationships while distinguishing and responding to unlawful acquisition and specific security risks.",
-        "The state's industrial-security role can be assessed against this standard.",
-        "Policies that distort markets to shield particular firms should not be confused with law enforcement protecting legitimate property.",
-        "The state does not compete in place of businesses. It preserves the basic order in which they can compete freely and securely.",
-        "Lose sight of that distinction and industrial security can become another justification for expanding state power."
+        "In 2026, the EU adopted legislation strengthening foreign-investment screening. Full application begins in January 2028; it would be inaccurate to say that every investment is already being assessed under the new rules.[6]",
+        "Separately, a 2025 European Commission recommendation asked member states to examine risks associated with outbound investment in semiconductors, AI and quantum technologies.[7]",
+        "The approach does not presume that receiving foreign capital or investing abroad is inherently dangerous. It examines whether sensitive technology and security risks move alongside capital and cooperation.",
+        "Korea need not copy another jurisdiction's rules. But a government expanding cooperation with China should first identify sensitive technologies and projects, and give firms predictable criteria.",
+        "A country protecting industrial security does not necessarily respect enterprise less. Clear distinctions between dangerous and legitimate transactions can give firms more freedom to operate securely."
       ]
     },
     {
-      "title": "Must We Become Like China to Compete With It?",
+      "title": "Cooperation With China Requires Protecting What Matters First",
       "paragraphs": [
-        "China has an economic system in which the state strategically cultivates industry. It mobilizes substantial resources for advanced technology and uses a vast domestic market to support corporate growth.",
-        "China has consequently become a major manufacturing power.",
-        "Korea cannot ignore this reality. State-led industrial policies, unfair competitive practices and technology-transfer risks require concrete responses.",
-        "But China's extensive use of state power for economic development does not automatically mean Korea should follow the same path.",
-        "Korea's economy developed through enterprise and market competition. Government also played an important role in industrialization, but innovation, investment, technology and markets ultimately sustain today's internationally competitive firms.",
-        "The proposition that confronting China's powerful state requires the Korean government to acquire ever greater economic powers deserves careful scrutiny.",
-        "Protecting industrial security can otherwise cost firms their investment freedom, while efforts to promote technology can leave innovation dependent on subsidies.",
-        "If protection keeps uncompetitive firms on permanent public support, citizens pay through taxes.",
-        "Does that preserve industry, or postpone necessary industrial change?",
-        "Competition with China cannot be avoided.",
-        "But we must be clear about what we intend to preserve through that competition.",
-        "If the purpose is citizens' and firms' freedom, our response must preserve that freedom as well."
-      ]
-    },
-    {
-      "title": "Korea Must Preserve the Freedom to Choose",
-      "paragraphs": [
-        "Consider again the issues examined across this series. The dual role of market and competitor discussed in [Part Two, “What Is China to Korea? Beyond Pro-China and Anti-China Slogans”](/columns/china-korea-industry-beyond-pro-anti-slogans-2026) is the starting point for this debate.",
-        "Germany grew by selling cars to China, while China built industrial capabilities and now competes internationally with German carmakers.",
-        "Korea also benefited substantially from China's industrial development. But as Chinese firms grew, competition intensified; in some sectors, illegal technology-transfer cases also emerged.",
-        "China is a vast market, a formidable industrial competitor and a power requiring attention to political and security risks.",
-        "That does not mean economic ties should be severed.",
-        "Korean firms must be able to pursue growth through trade with China. Legitimate technology cooperation and investment should also remain matters for independent commercial judgment.",
-        "But dependence that makes survival contingent on investment in China, or pressure that deprives firms of meaningful choices, presents a different problem.",
-        "If the freedom to trade with China matters, so does the freedom not to trade with it.",
-        "Reducing excessive reliance on one country and securing diverse markets and supply chains expands the economic choices available to firms and the country.",
-        "Government's responsibility is to protect the institutional and security foundations of free economic activity, rather than make those choices on companies' behalf.",
-        "China's industrial challenge cannot be treated lightly. Neither should that challenge become a reason to sacrifice citizens' and firms' freedom.",
-        "The lesson from Merkel's Germany goes beyond a claim that government should have controlled industry more tightly.",
-        "It points to political responsibility for considering both immediate gains in a large market and the country's long-term economic security.",
-        "Korea requires particularly careful judgment.",
-        "A smaller country living beside a manufacturing giant needs technological competitiveness and economic options if it is to cooperate and compete successfully.",
-        "But the state is not the only holder of those options. Citizens and firms must retain the freedom to judge and choose for themselves.",
-        "Neither taking corporate freedom away to protect industry nor abandoning the state's basic protective duties in the name of that freedom provides an answer.",
-        "Government must fulfill its responsibilities while keeping its authority within necessary bounds.",
-        "That is the question limited government poses for a Korea that must live alongside China.",
-        "It is also where SEED VOICE's commitment to citizens' and firms' freedom begins."
+        "This series should not end by deciding whether to like or dislike China. It should establish how Korea can cooperate and compete while protecting technology, industry and the choices available to citizens and companies.",
+        "The freedom to trade with China requires options that prevent dependence from becoming subordination. Opening opportunities abroad and maintaining safeguards for corporate technology must proceed together.",
+        "A government expanding cooperation owes citizens verifiable answers. Which technologies are protected and excluded? How are access rights and ownership of results determined? Who assesses counterpart risks and onward transfers?",
+        "There must also be procedures to stop a project and assign responsibility when problems emerge. Operational secrets can remain protected while parliament and lawful oversight bodies verify whether review and supervision actually occurred.",
+        "Agreement counts are not an adequate measure of policy. Evaluation must also examine whether firms can decline without penalty, whether warning signs were detected and whether losses were limited and rights restored.",
+        "**A state that protects enterprise does not casually lower industrial-security safeguards in its dealings with China. Government should open opportunities for business while protecting its technology and citizens' future.**"
       ]
     },
     {
@@ -215,7 +135,7 @@ export const issue96: ColumnTranslation = {
       ]
     }
   ],
-  "sourceNote": "The publisher’s argument and structure are preserved. Editorial verification clarifies criminal allegations and the adoption and application dates of EU measures. Judgments about intervention and subsidies are commentary. Facts checked as of October 28, 2026.",
+  "sourceNote": "Rewritten on October 28, 2026 at the editor’s request to focus on industrial security as a public duty protecting corporate freedom. Cooperation plans are based on the government’s published explanation, not a review of the full memoranda or every project’s security assessment. The cooperation announcement is not treated as a repeal of core-technology safeguards. Policy judgments are commentary.",
   "sourceLabels": [
     "Yonhap, December 23, 2025: indictments over alleged transfers of Korean semiconductor technology to China; report of prosecutors’ findings",
     "KUKA Annual Report 2016: acquisition by Midea",
@@ -223,6 +143,8 @@ export const issue96: ColumnTranslation = {
     "German Federal Government, July 2023: Strategy on China and de-risking",
     "Korea, Industrial Technology Protection Act, Articles 11, 11-2 and 14",
     "EU Regulation 2026/1386, June 17, 2026: screening of foreign investments",
-    "European Commission Recommendation 2025/63, January 15, 2025: review of outbound investment"
+    "European Commission Recommendation 2025/63, January 15, 2025: review of outbound investment",
+    "Ministry of Science and ICT / Korea Policy Briefing, January 8, 2026: published explanation of expanded scientific and digital cooperation with China",
+    "Ministry of Trade, Industry and Resources, September 1, 2026: cooperation with the intellectual-property authority on technology protection and infringement responses"
   ]
 };
