@@ -17,6 +17,7 @@ import { getSeedLanguageEnvironmentArticle, seedLanguageEnvironmentArticlesKo } 
 import { getLegislativeCommentaryEdition, legislativeCommentaries, linkedLegislativeColumnCommentaries } from "../data/legislativeCommentaries";
 import { getTaxCommentaryEdition, taxCommentaries } from "../data/taxCommentaries";
 import { getFeaturedContentCandidates } from "../data/featuredContent";
+import { getLatestArticles } from "../data/latestArticles";
 import { getHomeTopic } from "../data/homeTopics";
 import { seedLanguageTerms } from "../data/seedLanguageTerms";
 import { topicTaxonomy } from "../data/topicTaxonomy";
@@ -210,9 +211,13 @@ export default function Home() {
       ?? featuredCandidates[0]
     : undefined;
   const activeFeaturedPath = featuredLead?.path;
+  const latestArticles = getLatestArticles(language, legislativeBills, new Set(activeFeaturedPath ? [activeFeaturedPath] : []));
   // Each story gets one homepage position. The latest briefing desk takes
   // priority over the historical carousel; other desks claim remaining topics.
-  const claimedHomePaths = new Set(activeFeaturedPath ? [getHomeTopic(activeFeaturedPath)] : []);
+  const claimedHomePaths = new Set([
+    ...(activeFeaturedPath ? [getHomeTopic(activeFeaturedPath)] : []),
+    ...latestArticles.map((item) => getHomeTopic(item.path)),
+  ]);
   const civicSidebarItems = civicSections.map((section) => {
     if (section.key === "campaign") {
       const path = "/briefings/korean-civic-tax-watch-movement-ktr";
@@ -255,6 +260,7 @@ export default function Home() {
 
   const upperArticlePaths = new Set([
     activeFeaturedPath,
+    ...latestArticles.map((item) => item.path),
     ...civicSidebarItems.map((item) => item.article?.path),
     seedLanguageArticle ? `/seed-language/${seedLanguageArticle.slug}` : undefined,
     ...visibleHotIssueCards.map((card) => card.to),
@@ -520,6 +526,26 @@ export default function Home() {
                 </Link>
               )}
             </aside>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-paper py-6 sm:py-8" aria-labelledby="latest-articles-title">
+        <div className="container-page">
+          <div className="border-b-2 border-navy pb-3">
+            <span className="section-kicker">LATEST ARTICLES</span>
+            <h2 id="latest-articles-title" className="editorial-title mt-1 text-2xl font-bold text-navy sm:text-3xl">{ko ? "최신 기사·업데이트" : "Latest articles and updates"}</h2>
+            <p className="mt-2 text-sm text-charcoal/60">{ko ? "전체 분야의 새 글과 공개 수정기록을 최신순으로 모았습니다." : "New publications and recorded editorial updates across all sections, newest first."}</p>
+          </div>
+          <div className="grid gap-x-8 md:grid-cols-2">
+            {latestArticles.map((item) => <Link key={item.path} to={item.path} className="group flex min-w-0 items-start gap-4 border-b border-green-deep/15 py-4 hover:bg-green-pale/35">
+              <SafeImage src={resolveImageSrc(item.image.src)} alt={item.image.alt} className="aspect-[4/3] w-24 shrink-0 object-cover sm:w-28" />
+              <div className="min-w-0">
+                <p className="text-xs text-charcoal/50">{item.categoryLabel} · {item.isUpdated ? (ko ? "수정 " : "Updated ") : ""}<time dateTime={item.latestDate}>{formatFeaturedDate(item.latestDate.length === 10 ? `${item.latestDate}T00:00:00+09:00` : item.latestDate)}</time></p>
+                <h3 className="mt-1 line-clamp-2 text-base font-bold leading-6 text-navy group-hover:text-green-mid">{item.title}</h3>
+                <p className="mt-1 line-clamp-2 text-sm leading-6 text-charcoal/60">{item.summary}</p>
+              </div>
+            </Link>)}
           </div>
         </div>
       </section>
