@@ -62,7 +62,7 @@ const homeTopicGroups: Record<string, string[]> = {
     "/columns/participatory-democracy-supreme-court-appointments",
   ],
   "real-estate-supervisor-2026": ["/briefings/real-estate-supervisor-citizen-freedom-property-rights", "/briefings/real-estate-supervisor-bill-2221573-explained", "/columns/real-estate-supervisor-citizens-accounts", "/monitoring/legislation/bill-2221573"],
-  "monthly-rent-credit-2026": ["/briefings/monthly-rent-tax-credit-2026-bills-explained"],
+  "monthly-rent-credit-2026": ["/briefings/monthly-rent-tax-credit-2026-bills-explained", "/briefings/youth-rent-tax-credit-20-percent-bill-2222071"],
   "income-tax-family-deduction-2026": [
     "/briefings/income-tax-family-deduction-2026-proposals",
     "/columns/family-deduction-work-income-threshold",
