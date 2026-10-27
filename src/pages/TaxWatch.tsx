@@ -4,6 +4,8 @@ import WatchPairRow from "../components/WatchPairRow";
 import { taxCommentaries } from "../data/taxCommentaries";
 import { taxPolicies } from "../data/taxWatch";
 import { monthlyRentCreditExplainer } from "../data/monthlyRentCreditExplainer";
+import { youthRentCredit2026 } from "../data/youthRentCredit2026";
+import { youthRentCredit2026Translation } from "../data/contentTranslations/youthRentCredit2026";
 import { monthlyRentCreditExplainerTranslation } from "../data/contentTranslations/briefingMonthlyRentCredit";
 import { incomeTaxFamilyDeductionBriefing } from "../data/incomeTaxFamilyDeductionBriefing";
 import { incomeTaxFamilyDeductionTranslation } from "../data/contentTranslations/briefingIncomeTaxFamilyDeduction";
@@ -36,7 +38,8 @@ export default function TaxWatch() {
       const official = article.sources.find((source) => /\.go\.kr$|assembly\.go\.kr$|law\.go\.kr$/.test(new URL(source.url).hostname));
       return { key: `news-${article.slug}`, date: article.date, article: { href: `/news/${article.slug}`, label: ko ? "세금감시 기사" : "TAX WATCH ARTICLE", title: article.title, summary: article.summary, image: article.heroImage.src, alt: article.heroImage.alt, date: article.date }, record: official ? { href: official.url, external: true, label: ko ? "공식 원문 자료" : "OFFICIAL SOURCE", title: official.label, summary: "", date: article.date } : undefined };
     });
-    return [...policies, ...standaloneCommentaries, ...taxNews, rentExplainer, family, fund].sort((a, b) => b.date.localeCompare(a.date));
+    const youthRent = { key: youthRentCredit2026.slug, date: youthRentCredit2026.date, article: { href: `/briefings/${youthRentCredit2026.slug}`, label: ko ? "세금 해설과 논평" : "TAX EXPLAINER AND OPINION", title: ko ? youthRentCredit2026.title : youthRentCredit2026Translation.title, summary: ko ? youthRentCredit2026.summary : youthRentCredit2026Translation.summary, image: youthRentCredit2026.images?.[0]?.src, alt: ko ? youthRentCredit2026.images?.[0]?.alt : youthRentCredit2026Translation.images?.[0]?.alt, date: youthRentCredit2026.date }, record: { href: youthRentCredit2026.sourceDocument!.url, external: true, label: ko ? "국회 의안 · 공개 제안요지 기준" : "BILL · OFFICIAL SUMMARY REVIEWED", title: ko ? "조세특례제한법 개정안 2222071" : "Tax incentives amendment · Bill 2222071", summary: ko ? "2026.10.26 발의. 전문·부칙 미확인, 확정된 법이 아닙니다." : "Introduced Oct 26, 2026. Full clauses not reviewed; not enacted.", date: "2026-10-26" } };
+    return [...policies, ...standaloneCommentaries, ...taxNews, youthRent, rentExplainer, family, fund].sort((a, b) => b.date.localeCompare(a.date));
   }, [language, ko]);
 
   return <section className="min-h-[70vh] bg-paper pb-16">

@@ -29,6 +29,7 @@ import { inheritanceTaxFrozenThresholdTranslation } from "./briefingInheritanceT
 import { incomeTaxFamilyDeductionTranslation } from "./briefingIncomeTaxFamilyDeduction";
 import { realEstateSupervisorExplainerTranslation } from "./briefingRealEstateSupervisor";
 import { monthlyRentCreditExplainerTranslation } from "./briefingMonthlyRentCredit";
+import { youthRentCredit2026Translation } from "./youthRentCredit2026";
 import { farmlandRetirementTranslation } from "./briefingFarmlandRetirement";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
@@ -48,6 +49,7 @@ export const briefingTranslations: Record<string, BriefingTranslation> = {
   "farmland-census-elderly-farmers-retirement": farmlandRetirementTranslation,
   "real-estate-supervisor-bill-2221573-explained": realEstateSupervisorExplainerTranslation,
   "monthly-rent-tax-credit-2026-bills-explained": monthlyRentCreditExplainerTranslation,
+  "youth-rent-tax-credit-20-percent-bill-2222071": youthRentCredit2026Translation,
   "income-tax-family-deduction-2026-proposals": incomeTaxFamilyDeductionTranslation,
   "inheritance-tax-frozen-allowance-middle-class": inheritanceTaxFrozenThresholdTranslation,
   "platform-advertising-cost-small-merchants": platformAdvertisingTranslation,
