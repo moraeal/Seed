@@ -185,7 +185,8 @@ export const merkelChinaIndustrialDependenceColumn: SeedColumn = {
       "title": "기획연재 ② 예고",
       "paragraphs": [
         "*우리에게 중국은 무엇인가 — 친중과 반중의 구호가 가리고 있는 한국 산업의 현실*",
-        "중국은 한국의 중요한 수출시장이면서 동시에 한국의 주요 산업과 경쟁하는 국가다. 중국의 산업적 성장과 경제적 영향력이 확대되는 지금, 한국은 중국을 어떤 기준으로 바라봐야 하는가."
+        "중국은 한국의 중요한 수출시장이면서 동시에 한국의 주요 산업과 경쟁하는 국가다. 중국의 산업적 성장과 경제적 영향력이 확대되는 지금, 한국은 중국을 어떤 기준으로 바라봐야 하는가.",
+        "[기획연재 ③ 기업의 자유는 어디까지인가](/columns/china-business-freedom-industrial-security-limited-state-2026)"
       ]
     }
   ],

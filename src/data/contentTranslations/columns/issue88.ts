@@ -94,7 +94,8 @@ export const issue88: ColumnTranslation = {
       "title": "Part 2 Preview",
       "paragraphs": [
         "What Is China to Us? — The reality of Korea’s industries obscured by pro-China versus anti-China slogans.",
-        "China remains an important export market for Korea, but it also competes with major Korean industries. How should Korea view China as its industrial and political influence grows?"
+        "China remains an important export market for Korea, but it also competes with major Korean industries. How should Korea view China as its industrial and political influence grows?",
+        "[Read Part ③: Where Are the Limits of Corporate Freedom?](/columns/china-business-freedom-industrial-security-limited-state-2026)"
       ]
     }
   ],

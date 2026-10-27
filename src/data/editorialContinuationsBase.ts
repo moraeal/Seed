@@ -9,6 +9,7 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:moon-chung-in-dangerous-alliance-security-view-2026": {"ko": {"href": "/columns/security-slogans-alliance-2026", "title": "한국의 안보가 무너지고 있다 — 누구를 위한 자주인가", "relationship": "안보와 시민의 안전", "reason": "안보 구호와 시민이 감당할 위험의 간극을 이어서 살펴봅니다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"}, "en": {"href": "/columns/security-slogans-alliance-2026", "title": "South Korea's Security Is Fraying — Sovereignty for Whom?", "relationship": "SECURITY AND PUBLIC SAFETY", "reason": "Continue with the gap between security slogans and risks borne by citizens.", "listHref": "/columns", "listLabel": "All columns"}},
   "briefing:youth-rent-tax-credit-20-percent-bill-2222071": {
     ko: { href: "/briefings/monthly-rent-tax-credit-2026-bills-explained", title: "월세 세액공제 확대안, 세금이 적은 세입자도 받을 수 있나", relationship: "별도 월세 공제안 이어 읽기", reason: "이번 20% 공제율 제안과 구별해, 한도 확대와 미사용액 10년 이월을 제안한 선행 법안을 살펴봅니다.", listHref: "/monitoring/tax", listLabel: "세금감시 목록" },
     en: { href: "/briefings/monthly-rent-tax-credit-2026-bills-explained", title: "Would a Larger Rent Tax Credit Help Tenants With Little Tax to Pay?", relationship: "RELATED RENT-CREDIT PROPOSALS", reason: "Distinguish this proposed 20% rate from the earlier eligible-rent cap and separate ten-year carryforward bills.", listHref: "/monitoring/tax", listLabel: "Tax Watch" },
@@ -90,9 +91,41 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
     en: {href:"/columns/china-korea-industry-beyond-pro-anti-slogans-2026",title:"What Is China to Korea?",relationship:"CONTINUE THE SERIES · PART 2",reason:"After examining Germany's industrial dependence on China, explore Korea's trade, technology, competitive choices and economic freedom.",listHref:"/columns",listLabel:"All columns"}
   },
   "column:china-korea-industry-beyond-pro-anti-slogans-2026": {
-    ko: {href:"/columns/merkel-china-industrial-dependence-2026",title:"독일은 자동차를 팔았고, 중국은 독일의 산업을 가져갔다",relationship:"기획연재 ① 먼저 읽기",reason:"중국의 시장과 경쟁, 산업안보 문제를 독일 메르켈 시대의 사례에서 먼저 살펴봅니다. ③편은 이어서 발행합니다.",listHref:"/columns",listLabel:"칼럼 전체 보기"},
-    en: {href:"/columns/merkel-china-industrial-dependence-2026",title:"Germany Sold Cars. China Built a Rival Industry.",relationship:"SERIES · READ PART 1",reason:"Return to the Merkel-era German experience that frames this examination of Korea's economic choices. Part 3 is forthcoming.",listHref:"/columns",listLabel:"All columns"}
+  "ko": {
+    "href": "/columns/china-business-freedom-industrial-security-limited-state-2026",
+    "title": "기업의 자유는 어디까지인가",
+    "relationship": "기획연재 ③ 완결편",
+    "reason": "중국을 시장이자 경쟁자로 바라본 데 이어, 산업안보를 지키는 국가의 책임과 기업의 자유를 제한하는 권한의 한계를 살펴봅니다.",
+    "listHref": "/columns",
+    "listLabel": "칼럼 전체 보기"
   },
+  "en": {
+    "href": "/columns/china-business-freedom-industrial-security-limited-state-2026",
+    "title": "Where Are the Limits of Corporate Freedom?",
+    "relationship": "SERIES · PART 3",
+    "reason": "Continue with industrial security, state responsibilities and the limits of intervention in corporate choices.",
+    "listHref": "/columns",
+    "listLabel": "All columns"
+  }
+},
+  "column:china-business-freedom-industrial-security-limited-state-2026": {
+  "ko": {
+    "href": "/columns/china-korea-industry-beyond-pro-anti-slogans-2026",
+    "title": "우리에게 중국은 무엇인가",
+    "relationship": "기획연재 ② 함께 읽기",
+    "reason": "이번 완결편의 출발점인 중국의 시장·경쟁자·전략적 이웃이라는 세 얼굴을 앞선 글에서 확인합니다.",
+    "listHref": "/columns",
+    "listLabel": "칼럼 전체 보기"
+  },
+  "en": {
+    "href": "/columns/china-korea-industry-beyond-pro-anti-slogans-2026",
+    "title": "What Is China to Korea? Beyond Pro-China and Anti-China Slogans",
+    "relationship": "SERIES · READ PART 2",
+    "reason": "Return to the preceding analysis of China as a market, industrial competitor and strategic neighbor.",
+    "listHref": "/columns",
+    "listLabel": "All columns"
+  }
+},
   "column:populism-collapse-generational-conflict-2026": {
     ko: {
       href: "/columns/politicians-who-take-public-debt-lightly-2026",

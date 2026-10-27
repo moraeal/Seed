@@ -171,7 +171,8 @@ export const issue92: ColumnTranslation = {
       "title": "Part 3 Preview",
       "paragraphs": [
         "How Far Does Business Freedom Extend? — Industrial Security and the Dilemma of the Limited State in an Era of Competition with China.",
-        "China has developed an economic system in which the state strategically promotes industries. How can Korea, which seeks to uphold a free-market economy, reconcile corporate freedom with national industrial security while competing against it?"
+        "China has developed an economic system in which the state strategically promotes industries. How can Korea, which seeks to uphold a free-market economy, reconcile corporate freedom with national industrial security while competing against it?",
+        "[Read Part ③: Where Are the Limits of Corporate Freedom?](/columns/china-business-freedom-industrial-security-limited-state-2026)"
       ]
     }
   ],
