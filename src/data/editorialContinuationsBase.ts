@@ -9,6 +9,7 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:moon-chung-in-dangerous-alliance-security-view-2026": {"ko": {"href": "/columns/security-slogans-alliance-2026", "title": "한국의 안보가 무너지고 있다 — 누구를 위한 자주인가", "relationship": "안보와 시민의 안전", "reason": "안보 구호와 시민이 감당할 위험의 간극을 이어서 살펴봅니다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"}, "en": {"href": "/columns/security-slogans-alliance-2026", "title": "South Korea's Security Is Fraying — Sovereignty for Whom?", "relationship": "SECURITY AND PUBLIC SAFETY", "reason": "Continue with the gap between security slogans and risks borne by citizens.", "listHref": "/columns", "listLabel": "All columns"}},
   "briefing:youth-rent-tax-credit-20-percent-bill-2222071": {
     ko: { href: "/briefings/monthly-rent-tax-credit-2026-bills-explained", title: "월세 세액공제 확대안, 세금이 적은 세입자도 받을 수 있나", relationship: "별도 월세 공제안 이어 읽기", reason: "이번 20% 공제율 제안과 구별해, 한도 확대와 미사용액 10년 이월을 제안한 선행 법안을 살펴봅니다.", listHref: "/monitoring/tax", listLabel: "세금감시 목록" },
     en: { href: "/briefings/monthly-rent-tax-credit-2026-bills-explained", title: "Would a Larger Rent Tax Credit Help Tenants With Little Tax to Pay?", relationship: "RELATED RENT-CREDIT PROPOSALS", reason: "Distinguish this proposed 20% rate from the earlier eligible-rent cap and separate ten-year carryforward bills.", listHref: "/monitoring/tax", listLabel: "Tax Watch" },

@@ -4,6 +4,7 @@ import { hotIssueColumnTrackerSlugs } from "./columns";
 // articles and tracker routes here when publishing them. Unlisted routes
 // remain their own topics, so broad categories do not hide unrelated work.
 const homeTopicGroups: Record<string, string[]> = {
+  "moon-alliance-curse-2026": ["/columns/moon-chung-in-dangerous-alliance-security-view-2026"],
   "china-industry-series-2026": ["/columns/merkel-china-industrial-dependence-2026", "/columns/china-korea-industry-beyond-pro-anti-slogans-2026", "/columns/china-business-freedom-industrial-security-limited-state-2026"],
   "virtual-asset-tax-2026": ["/news/crypto-tax-fourth-deferral-2026", "/monitoring/tax/virtual-asset-tax-2027-readiness", "/monitoring/tax/commentary/virtual-asset-tax-prove-the-gain"],
   "atr-sustainable-budgets": ["/columns/atr-taxpayer-movement-05-sustainable-budgets"],
