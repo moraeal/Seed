@@ -191,7 +191,8 @@ export const chinaKoreaIndustryPartTwoColumn: SeedColumn = {
       "title": "기획연재 ③ 예고",
       "paragraphs": [
         "기업의 자유는 어디까지인가 — 중국과 경쟁하는 시대, 산업안보와 제한된 국가의 딜레마",
-        "중국은 국가가 산업을 전략적으로 육성하는 경제체제를 발전시켜 왔다. 자유시장경제를 지향하는 한국은 이러한 중국과 경쟁하면서 기업의 자유와 국가의 산업안보를 어떻게 조화시킬 것인가."
+        "중국은 국가가 산업을 전략적으로 육성하는 경제체제를 발전시켜 왔다. 자유시장경제를 지향하는 한국은 이러한 중국과 경쟁하면서 기업의 자유와 국가의 산업안보를 어떻게 조화시킬 것인가.",
+        "[기획연재 ③ 기업의 자유는 어디까지인가](/columns/china-business-freedom-industrial-security-limited-state-2026)"
       ]
     }
   ],
