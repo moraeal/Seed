@@ -33,7 +33,7 @@ export default function EditorialSeriesPage() {
           <div className="mt-5 flex items-center gap-2 text-xs font-bold text-green-deep"><BookOpen size={16}/>{ko ? "공개된 기사 " + selected.chapters.length + "편" : selected.chapters.length + " published chapters"}</div>
         </div>
       </header>
-      <main className="container-page py-8 sm:py-12">
+      <section className="container-page py-8 sm:py-12">
         <h2 className="editorial-title mb-5 text-2xl font-bold text-navy">{ko ? "연재 목차" : "Series chapters"}</h2>
         <ol className="divide-y divide-green-deep/15 border-y border-green-deep/15">
           {selected.chapters.map((chapter) => (
@@ -53,7 +53,7 @@ export default function EditorialSeriesPage() {
           ))}
         </ol>
         <Link to="/" className="mt-8 inline-flex items-center gap-2 font-bold text-green-deep hover:underline"><ArrowLeft size={16}/>{ko ? "메인으로" : "Back to home"}</Link>
-      </main>
+      </section>
     </div>
   );
 
@@ -66,7 +66,7 @@ export default function EditorialSeriesPage() {
           <p className="mt-4 max-w-3xl text-sm leading-7 text-charcoal/70 sm:text-lg">{ko ? "하나의 문제를 여러 편의 기사로 깊이 살펴봅니다. 공개된 회차를 첫 편부터 차례대로 읽을 수 있습니다." : "Explore major questions through connected chapters, from the beginning."}</p>
         </div>
       </header>
-      <main className="container-page py-8 sm:py-12">
+      <section className="container-page py-8 sm:py-12">
         <div className="grid gap-5 sm:grid-cols-2 xl:gap-7">
           {series.map((item) => (
             <Link key={item.slug} to={"/series/" + item.slug} className="group flex flex-col overflow-hidden border border-green-deep/15 bg-white transition-colors hover:border-green-deep/35">
@@ -86,7 +86,7 @@ export default function EditorialSeriesPage() {
             </Link>
           ))}
         </div>
-      </main>
+      </section>
     </div>
   );
 }
