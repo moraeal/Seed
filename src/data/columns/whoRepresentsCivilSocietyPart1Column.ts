@@ -20,9 +20,9 @@ export const whoRepresentsCivilSocietyPart1Column: SeedColumn = {
     "sourceUrl": ""
   },
   "inlineImage": {
-    "src": "images/columns/civic-representation-series-2026/citizen-forum.svg",
-    "alt": "국가기관의 건물 사이에서 시민들이 원탁에 둘러앉아 토론하고 있고 중앙에 제도적 영향력을 나타내는 상징이 있는 일러스트레이션",
-    "caption": "숙의의 진정한 권한은 시민의 발언 기회뿐 아니라 의제·자료·결과를 누가 결정하는지에 달려 있다.",
+    "src": "images/columns/civic-representation-series-2026/civic-voices-red-strings-photo.jpg",
+    "alt": "국회의사당을 배경으로 국가권력을 상징하는 거대한 인물의 붉은 줄에 연결된 다양한 시민사회 활동가들을 실제 사진처럼 표현한 이미지",
+    "caption": "국가가 마련한 참여의 통로에서 시민사회의 독립성이 어떻게 지켜지는지 묻는 상징적 실사형 이미지.",
     "credit": "AI 이미지",
     "sourceUrl": ""
   },
@@ -39,12 +39,12 @@ export const whoRepresentsCivilSocietyPart1Column: SeedColumn = {
     },
     {
       "afterSection": 5,
-      "src": "images/columns/civic-representation-series-2026/citizen-forum.svg",
-      "alt": "시민들이 국가의 건물 사이에서 서로 토론하는 상징 일러스트레이션",
-      "caption": "시민참여의 핵심은 정부가 인정한 조직 밖의 시민도 자유롭게 제안하고 비판할 수 있는가에 있다.",
+      "src": "images/columns/civic-representation-series-2026/civic-voices-red-strings-photo.jpg",
+      "alt": "국회의사당 앞에서 붉은 줄로 연결된 시민사회 활동가들의 뒷모습을 묘사한 사진풍 이미지",
+      "caption": "국가가 지원하는 제도 속에서도 시민사회가 권력을 자유롭게 비판할 수 있는가. 이 이미지는 실제 사건의 기록이 아닌 상징적 AI 이미지다.",
       "credit": "AI 이미지",
       "sourceUrl": "",
-      "contain": true
+      "contain": false
     }
   ],
   "sections": [
