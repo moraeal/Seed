@@ -11,6 +11,7 @@ import InteractiveFigure from "../components/InteractiveFigure";
 import ShareButton from "../components/ShareButton";
 import SourceDocumentPanel from "../components/SourceDocumentPanel";
 import PspdReformComparison from "../components/PspdReformComparison";
+import CivicSocietyVideoCareerTable from "../components/CivicSocietyVideoCareerTable";
 import { getColumn, isHotIssueColumn, publicInterestColumnSlugs } from "../data/columns";
 import { localizeColumn } from "../data/localizedContent";
 import { getArticleReadingPath } from "../data/articleReadingPaths";
@@ -165,6 +166,7 @@ export default function ColumnDetail() {
           {column.embeddedFigures?.filter((figure) => figure.afterSection === index).map((figure) => <ColumnEmbeddedFigure key={`${figure.kind}-${index}`} figure={figure} ko={ko} />)}
         </section>{column.referenceVideo?.afterSection === index && referenceVideoSection}</Fragment>)}
         {column.referenceVideo && column.referenceVideo.afterSection === undefined && referenceVideoSection}
+        {column.slug === "pamyo-civic-groups-politics-revolving-door-2026" && <CivicSocietyVideoCareerTable ko={ko} />}
         {seoRelatedLinks[column.slug]?.length > 0 && <nav aria-label="관련 기사와 시민운동" className="my-10 border-y border-green-deep/15 py-6">
           <h2 className="mb-3 text-lg font-extrabold text-navy">관련 기사 더 읽기</h2>
           <ul className="space-y-2">
