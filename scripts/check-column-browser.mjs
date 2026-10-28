@@ -17,6 +17,7 @@ const expectedArticleHeadings = {
   "youth-rent-tax-credit-20-percent-bill-2222071": "청년 월세 20퍼센트 공제안 실제로 얼마나 줄어드나",
   "china-business-freedom-industrial-security-limited-state-2026": "기업의 자유는 어디까지인가",
   "moon-chung-in-dangerous-alliance-security-view-2026": "여당 고문 문정인의 위험한 안보관",
+  "opcon-transition-citizens-first-artillery-2026": "전작권 환수, 대통령의 임기보다 국민의 생명이 먼저다",
 };
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
 const server = spawn("pnpm", ["exec","vite","preview","--host","127.0.0.1","--port","4179","--strictPort"], { stdio:"pipe" });
