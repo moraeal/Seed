@@ -46,6 +46,7 @@ const homeTopicGroups: Record<string, string[]> = {
     "/columns/mfds-sauce-portioning-autonomy-2026",
   ],
   "olympic-park-election-protest-2026": [
+    "/briefings/olympic-park-ballot-inspection-civic-briefing",
     "/news/olympic-park-protest-115-days",
     "/monitoring/olympic-park-election-protest-tracker",
   ],
