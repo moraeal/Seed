@@ -246,16 +246,16 @@ export const olympicInspectionTranslation: BriefingTranslation = {
   ],
   "sourceNote": "Based on reporting and SEED VOICE’s tracker available through the morning of October 29, 2026. The scenes are reconstructed from published reporting, not firsthand reporting.",
   "sourceLabels": [
-    "선관위, 용지 추가 송부 140곳·투표 중단 26곳 — 연합뉴스 (2026.06.08.)",
-    "올공 현장검증과 선관위 검표 보조 — 연합뉴스 (2026.10.26.)",
-    "특검 투표지 검증과 촬영 제한 — 연합뉴스 (2026.10.28.)",
-    "올공 현장검증, 참관인과 특검의 충돌 — 경향신문 (2026.10.28.)",
-    "투표함 개봉과 선관위 직원의 검증 — 한국경제TV (2026.10.28.)",
-    "특검 현장검증 종료와 정밀 감정 예정 — YTN (2026.10.29.)",
-    "투표지 13개 상자 별도 이송 — 연합뉴스 (2026.10.29.)",
-    "현장 현수막과 시민들의 요구 — 쿠키뉴스 (2026.10.28.)",
+    "Commission reports extra ballots sent to 140 polling stations and voting suspensions at 26 — Yonhap News (June 8, 2026)",
+    "Election staff asked to assist inspection — Yonhap News (October 26, 2026)",
+    "Inspection and filming restrictions — Yonhap News (October 28, 2026)",
+    "Observers and prosecutor clash over filming — Kyunghyang Shinmun (October 28, 2026)",
+    "Opening the boxes and examining the ballots — Korea Economic TV (October 28, 2026)",
+    "Inspection ends and forensic examination planned — YTN (October 29, 2026)",
+    "Thirteen boxes transferred for additional examination — Yonhap News (October 29, 2026)",
+    "Protest banners and citizens’ demands — Kuki News (October 28, 2026)",
     "Dispute over filming at the inspection — Kyunghyang Shinmun (October 28, 2026)",
     "Opposition sit-in over ballot transfer — YTN (October 29, 2026)",
     "Special investigation and trust in elections — Kyunghyang Shinmun editorial (October 28, 2026)"
-  ]
+]
 };
