@@ -742,5 +742,20 @@ export function getEditorialContinuation(kind: EditorialContentKind, slug: strin
     listHref: "/tax-watch-movement",
     listLabel: "All Tax Watch Movement articles",
   };
+  if (kind === "column" && slug === "who-represents-civil-society-citizen-freedom-part1-2026") return language === "ko" ? {
+    href: "/columns/citizenship-managed-by-the-state",
+    title: "국가가 관리하는 시민",
+    relationship: "시민참여 제도의 독립성",
+    reason: "시민참여기본법의 구조적 문제를 살펴봤다면 국가 참여 플랫폼과 숙의 제도가 어떻게 연결되는지도 함께 읽습니다.",
+    listHref: "/public-interest-watch",
+    listLabel: "공익감시 전체 보기",
+  } : {
+    href: "/columns/citizenship-managed-by-the-state",
+    title: "Citizens Managed by the State",
+    relationship: "INDEPENDENCE OF CIVIC PARTICIPATION",
+    reason: "Continue with an earlier analysis of how state-managed participation platforms and deliberative institutions may shape civic autonomy.",
+    listHref: "/public-interest-watch",
+    listLabel: "All Public Interest Watch articles",
+  };
   return getBaseEditorialContinuation(kind, slug, language);
 }
