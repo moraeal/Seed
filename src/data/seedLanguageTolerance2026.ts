@@ -18,7 +18,7 @@ export const toleranceArticleKo: SeedLanguageArticle = {
   ],
   "heroImage": {
     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Manifestation_contre_la_loi_immigration%2C_Lyon_%2821_janvier_2024%29_02.jpg/1280px-Manifestation_contre_la_loi_immigration%2C_Lyon_%2821_janvier_2024%29_02.jpg",
-    "alt": "2024년 1월 21일 프랑스 리옹 벨쿠르 광장에서 이민법 반대 집회 참가자들이 구호판과 국경없는의사회가 아닌 세계의사회 활동 조끼를 입고 모인 실제 사진",
+    "alt": "2024년 1월 21일 프랑스 리옹 벨쿠르 광장의 이민법 반대 시위에서 손팻말을 들고 모인 참가자들의 현장사진",
     "caption": "2024년 1월 21일 프랑스 리옹 벨쿠르 광장에서 열린 이민법 반대 시위 현장. 원본 실사 사진(가로 4,096×3,072)을 웹용 1,280px로 표시.",
     "credit": "Pemberlaid / Wikimedia Commons · CC BY-SA 4.0"
   },
