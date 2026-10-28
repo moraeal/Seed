@@ -4,6 +4,7 @@ import { chromium } from "file:///tmp/seed-browser-tools/node_modules/playwright
 import { spawn } from "node:child_process";
 const slug = process.argv[2];
 const isHome = slug === "home";
+const isCivicLanguage = slug === "tolerance-social-cohesion-common-rules-2026";
 const expectedArticleHeadings = {
   "politicians-who-take-public-debt-lightly-2026": "국가 빚, 너무 가볍게 보는 건 아닌가",
   "populism-collapse-generational-conflict-2026": "포퓰리즘의 몰락",
@@ -20,6 +21,7 @@ const expectedArticleHeadings = {
   "opcon-transition-citizens-first-artillery-2026": "전작권 환수, 대통령의 임기보다 국민의 생명이 먼저다",
   "pamyo-civic-groups-politics-revolving-door-2026": "시민단체에서 국회와 정부로 — 영상 ‘파묘’가 추적한 권력의 세 문",
   "who-represents-civil-society-citizen-freedom-part1-2026": "시민사회를 지원한다는 국가, 시민의 자유는 누가 지키는가",
+  "tolerance-social-cohesion-common-rules-2026": "관용은 무조건 받아들이는 미덕이 아니라 공동의 질서를 지키는 책임이라는 말이다",
 };
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
 const server = spawn("pnpm", ["exec","vite","preview","--host","127.0.0.1","--port","4179","--strictPort"], { stdio:"pipe" });
@@ -35,7 +37,7 @@ try {
     const page=await browser.newPage({viewport,deviceScaleFactor:1});
     const failures=[];
     page.on("pageerror",e=>failures.push("JS: "+e.message));
-    const path = isHome ? "/" : (slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : slug === "youth-rent-tax-credit-20-percent-bill-2222071" ? "/briefings/" : "/columns/") + slug + "/";
+    const path = isHome ? "/" : (isCivicLanguage ? "/seed-language/" : slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : slug === "youth-rent-tax-credit-20-percent-bill-2222071" ? "/briefings/" : "/columns/") + slug + "/";
     await page.goto(base+path,{waitUntil:"networkidle",timeout:45000});
     await page.locator("body").waitFor();
     await page.evaluate(async()=>{for(const img of document.images){img.loading="eager";}await Promise.all(Array.from(document.images).map(img=>img.decode().catch(()=>{})));});
