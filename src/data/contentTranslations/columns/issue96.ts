@@ -4,7 +4,7 @@ export const issue96: ColumnTranslation = {
   "title": "Where Are the Limits of Corporate Freedom?",
   "subtitle": "What Is China to Us? Part ③ — Protect Industrial Security to Protect Corporate Freedom",
   "author": "Small Seed",
-  "summary": "Industrial security underpins corporate freedom. A government expanding cooperation with China must demonstrate how it will protect sensitive technology, assess risks and stop unsafe projects. Political credit must not come at the expense of companies’ rights and choices.",
+  "summary": "Government must safeguard sensitive technology and companies' freedom to choose when expanding cooperation with China. This industrial question opens into a wider 14-part examination of China in Korea's history, security, politics and daily life.",
   "heroImage": {
     "alt": "A symbolic breach in a Korean semiconductor laboratory’s security barrier, with circuit information flowing toward a Chinese industrial complex",
     "caption": "Expanding cooperation must not lower safeguards for technology. Industrial security is a public responsibility that protects enterprise and economic choice.",
@@ -118,20 +118,22 @@ export const issue96: ColumnTranslation = {
     {
       "title": "Cooperation With China Requires Protecting What Matters First",
       "paragraphs": [
-        "This series should not end by deciding whether to like or dislike China. It should establish how Korea can cooperate and compete while protecting technology, industry and the choices available to citizens and companies.",
+        "The first three installments establish a starting principle: Korea must be able to cooperate and compete with China while defending its technology, industry and the choices available to businesses and citizens. The question is not whether to like or dislike China.",
         "The freedom to trade with China requires options that prevent dependence from becoming subordination. Opening opportunities abroad and maintaining safeguards for corporate technology must proceed together.",
         "A government expanding cooperation owes citizens verifiable answers. Which technologies are protected and excluded? How are access rights and ownership of results determined? Who assesses counterpart risks and onward transfers?",
         "There must also be procedures to stop a project and assign responsibility when problems emerge. Operational secrets can remain protected while parliament and lawful oversight bodies verify whether review and supervision actually occurred.",
         "Agreement counts are not an adequate measure of policy. Evaluation must also examine whether firms can decline without penalty, whether warning signs were detected and whether losses were limited and rights restored.",
-        "**A state that protects enterprise does not casually lower industrial-security safeguards in its dealings with China. Government should open opportunities for business while protecting its technology and citizens' future.**"
+        "**A state that protects enterprise does not casually lower industrial-security safeguards in its dealings with China. Government should open opportunities for business while protecting its technology and citizens' future.**",
+        "The inquiry does not stop with industry. It must also consider the Chinese intervention in the Korean War, Beijing's relationship with North Korea, tensions in the Yellow Sea and the Taiwan Strait, the differences between political systems and China's effects on citizens' daily lives. Korea needs a broad perspective to protect its sovereignty and freedom."
       ]
     },
     {
-      "title": "Conclusion of the Series: What Is China to Us?",
+      "title": "The Series Continues — Next: History and Security",
       "paragraphs": [
         "[① Germany Sold Cars. China Built an Industry That Could Rival Germany.](/columns/merkel-china-industrial-dependence-2026)",
         "[② What Is China to Korea? Beyond Pro-China and Anti-China Slogans](/columns/china-korea-industry-beyond-pro-anti-slogans-2026)",
-        "③ Where Are the Limits of Corporate Freedom?"
+        "[③ Where Are the Limits of Corporate Freedom?](/columns/china-business-freedom-industrial-security-limited-state-2026)",
+        "Part ④ will examine the long history between China and the Korean peninsula. The remaining installments will cover the Korean War, North Korea, diplomacy, security, industry and civic life. See the [series index](/series/china) for published chapters in this 14-part series."
       ]
     }
   ],

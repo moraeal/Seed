@@ -4,7 +4,7 @@ export const issue92: ColumnTranslation = {
   "title": "What Is China to Korea? Beyond Pro-China and Anti-China Slogans",
   "subtitle": "Series ②: Korea’s industrial reality obscured by the politics of being pro-China or anti-China",
   "author": "Small Seed",
-  "summary": "China is at once a vital export market, a formidable industrial competitor and a major strategic power. Korea needs a clear standard for protecting technology, supply chains and the freedom of businesses and citizens.",
+  "summary": "China is a major export market, a formidable industrial competitor and a neighboring power that demands strategic caution. Moving beyond pro- and anti-China slogans requires Korea to consider economic opportunity alongside the Korean War, peninsula security, political differences and civic freedom.",
   "heroImage": {
     "alt": "Container terminals and port infrastructure at Yangshan Port near Shanghai, China",
     "caption": "Yangshan Port illustrates the enormous scale of Chinese manufacturing and global trade.",
@@ -37,7 +37,8 @@ export const issue92: ColumnTranslation = {
         "Compared with China, Korea is a small country. Its population, domestic market and economic scale are different orders of magnitude. Geography cannot be changed, nor can the rise of a powerful China be reversed.",
         "If Korean politics remains locked in an argument over ideological labels in the face of this reality, who will ask the questions that matter to the country's future?",
         "How much of Korea's technological lead has China closed? What can Korean companies still sell to China in the years ahead? How far has China's industrial influence expanded? These questions deserve far closer attention.",
-        "The overriding question is not whether Koreans like or dislike China. It is how the Republic of Korea can protect its industrial capabilities and the freedom to make its own economic choices."
+        "The overriding question is not whether Koreans like or dislike China. It is how the Republic of Korea can protect its industrial capabilities and the freedom to make its own economic choices.",
+        "Industry is only the starting point. China entered the Korean War and continues to maintain close ties with North Korea. Its political system, military strategy and influence on everyday life also belong in Korea's assessment."
       ]
     },
     {
@@ -164,6 +165,7 @@ export const issue92: ColumnTranslation = {
         "Must Korea respond to China's state-directed industrial policy by moving toward a system in which its own government manages industrial development?",
         "If it does, what becomes of the free-market principles it set out to defend?",
         "Ultimately, the debate over China leads back to a question about the proper limits of state intervention.",
+        "Part 3 examines corporate freedom and industrial security. The following chapters will turn to the Korean War, China–North Korea ties, maritime security, political institutions and Korean daily life. The subject of this 14-part series is Korea's relationship with China as a whole.",
         "In the next installment, we examine the collision among business freedom, industrial security and the principle of a limited state."
       ]
     },

@@ -1,9 +1,9 @@
 import type { ColumnTranslation } from "../types";
 export const issue88: ColumnTranslation = {
   "title": "Germany Sold Cars. China Built an Industry That Could Rival Germany.",
-  "subtitle": "Three-Part Series: What Is China to Us? — Part 1, Merkel’s industrial legacy",
+  "subtitle": "14-Part Series: What Does China Mean to Korea? — Part 1, Merkel's industrial legacy",
   "author": "Small Seed",
-  "summary": "An examination of how Germany’s lucrative China business brought profits but also exposure to a powerful new industrial rival, from Volkswagen and Mercedes to KUKA and the 2025 merchandise deficit.",
+  "summary": "Germany prospered by selling cars and technology into China, but dependence and China's industrial rise created long-term vulnerabilities. Merkel's legacy raises a larger question for Korea: how to trade with a powerful neighbor without surrendering strategic choices.",
   "heroImage": {
     "alt": "2019년 뮌헨안보회의에서 연설하는 앙겔라 메르켈 당시 독일 총리",
     "caption": "Angela Merkel in 2019. Her China policy is being reassessed through the lens of German industrial dependence.",
@@ -31,7 +31,8 @@ export const issue88: ColumnTranslation = {
       "title": "Germany’s Automotive Pride Under Pressure",
       "paragraphs": [
         "Volkswagen and Mercedes-Benz symbolized German engineering. Today Chinese electric vehicles challenge them both at home and abroad. This is not simply a change in labels of origin: a former growth market has become an industrial rival.",
-        "The analysis distinguishes documented industrial developments from assessments of political responsibility."
+        "The analysis distinguishes documented industrial developments from assessments of political responsibility.",
+        "For Korea, China's significance goes further than factories and markets: the memory of the Korean War, the security of the peninsula, political differences and everyday freedoms must also be considered."
       ]
     },
     {
@@ -87,6 +88,7 @@ export const issue88: ColumnTranslation = {
       "title": "Germany’s Experience Is a Warning for Korea",
       "paragraphs": [
         "Korea also prospered by supplying China’s factories and consumers. As China becomes a competitor in cars, batteries and advanced manufacturing, Korea must ask what it gains from the relationship and what freedoms or capabilities it may lose.",
+        "This 14-part series begins with Germany's experience and Korea's industrial choices, then turns to history, security, diplomacy, China's political system and the lives of Korean citizens.",
         "The analysis distinguishes documented industrial developments from assessments of political responsibility."
       ]
     },
