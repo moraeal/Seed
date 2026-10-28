@@ -75,7 +75,7 @@ export default function SeedLanguage() {
               : article.heroImage.alt;
 
             return <Link key={article.slug} to={`/seed-language/${article.slug}`} className="group grid gap-5 border-b border-green-deep/15 px-5 py-6 transition-colors hover:bg-green-pale/65 md:grid-cols-[280px_1fr] md:items-center md:px-7">
-              <div className="overflow-hidden bg-green-deep"><SafeImage src={`${import.meta.env.BASE_URL}${heroSrc}`} alt={heroAlt} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.025]"/></div>
+              <div className="overflow-hidden bg-green-deep"><SafeImage src={heroSrc} alt={heroAlt} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.025]"/></div>
               <div>
                 <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-charcoal/45"><span className="rounded-full bg-green-pale px-2.5 py-1 font-extrabold text-green-deep">{article.term}</span></div>
                 <h3 className="editorial-title line-clamp-2 text-balance text-[1.3rem] font-bold leading-tight text-navy transition group-hover:text-green-mid sm:text-[1.575rem]">{article.title}</h3>
