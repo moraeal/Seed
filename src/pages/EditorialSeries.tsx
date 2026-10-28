@@ -4,10 +4,6 @@ import SafeImage from "../components/SafeImage";
 import { getEditorialSeries } from "../data/editorialSeries";
 import { useLanguage } from "../i18n";
 
-const resolveImageSrc = (src: string) => /^https?:\/\//i.test(src)
-  ? src
-  : import.meta.env.BASE_URL + src.replace(/^\//, "");
-
 export default function EditorialSeriesPage() {
   const { slug } = useParams();
   const { language } = useLanguage();
@@ -46,7 +42,7 @@ export default function EditorialSeriesPage() {
                   <div className="mt-3 flex items-center gap-3 text-xs text-charcoal/50"><time dateTime={chapter.date}>{chapter.date.replace(/-/g, ".")}</time><span className="inline-flex items-center gap-1"><Clock size={13}/>{chapter.readMinutes}{ko ? "분 읽기" : " min"}</span></div>
                 </div>
                 <div className="overflow-hidden bg-green-pale">
-                  <SafeImage src={resolveImageSrc(chapter.image.src)} alt={chapter.image.alt} loading="lazy" className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" />
+                  <SafeImage src={chapter.image.src} alt={chapter.image.alt} loading="lazy" className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" />
                 </div>
               </Link>
             </li>
@@ -71,7 +67,7 @@ export default function EditorialSeriesPage() {
           {series.map((item) => (
             <Link key={item.slug} to={"/series/" + item.slug} className="group flex flex-col overflow-hidden border border-green-deep/15 bg-white transition-colors hover:border-green-deep/35">
               <div className="overflow-hidden bg-green-pale">
-                <SafeImage src={resolveImageSrc(item.latest.image.src)} alt={item.latest.image.alt} loading="lazy" className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" />
+                <SafeImage src={item.latest.image.src} alt={item.latest.image.alt} loading="lazy" className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" />
               </div>
               <div className="flex flex-1 flex-col p-5 sm:p-6">
                 <p className="section-kicker">SPECIAL SERIES · {ko ? item.chapters.length + "편 공개" : item.chapters.length + " chapters"}</p>
