@@ -12,6 +12,8 @@ export type SeedColumn = {
   author: string;
   authorBio?: string;
   topicIds?: import("./topicTaxonomy").TopicId[];
+  // Set for new serialized stories; older editions remain discoverable via legacy rules.
+  series?: { slug: string; chapter: number };
   readMinutes: number;
   summary: string;
   presentation?: "poem";
