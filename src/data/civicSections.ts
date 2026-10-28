@@ -15,7 +15,7 @@ export type CivicSectionKey = typeof civicSections[number]["key"];
 // Policy explainers retain their separate Tax Watch listing.
 export const civicArticlePaths: Record<CivicSectionKey, string[]> = {
   campaign: ["/briefings/korean-civic-tax-watch-movement-ktr"],
-  cases: ["/columns/lee-mitterrand-populism-pension-korea-2026", "/columns/debt-built-korean-economy-2026", "/columns/europe-promises-fiscal-choice-citizens-2026", "/columns/populism-collapse-generational-conflict-2026", "/columns/politicians-who-take-public-debt-lightly-2026", "/columns/atr-taxpayer-movement-05-sustainable-budgets", "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026", "/columns/atr-taxpayer-movement-04-wednesday-meeting", "/columns/jangjado-future-response-fund-no-more-tax-2026", "/columns/taxpayer-movement-03-britain-spending-watch", "/columns/atr-taxpayer-movement-02-protection-pledge", "/columns/no-more-tax-increases-civic-declaration-2026", "/columns/atr-taxpayer-movement-01-california", `/briefings/${taxWatchCaseSlug}`, "/briefings/korean-civic-tax-watch-movement-ktr", ...taxCommentaries.map((article) => `/monitoring/tax/commentary/${article.slug}`)],
+  cases: ["/columns/atr-taxpayer-movement-06-legislative-vote-accountability", "/columns/lee-mitterrand-populism-pension-korea-2026", "/columns/debt-built-korean-economy-2026", "/columns/europe-promises-fiscal-choice-citizens-2026", "/columns/populism-collapse-generational-conflict-2026", "/columns/politicians-who-take-public-debt-lightly-2026", "/columns/atr-taxpayer-movement-05-sustainable-budgets", "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026", "/columns/atr-taxpayer-movement-04-wednesday-meeting", "/columns/jangjado-future-response-fund-no-more-tax-2026", "/columns/taxpayer-movement-03-britain-spending-watch", "/columns/atr-taxpayer-movement-02-protection-pledge", "/columns/no-more-tax-increases-civic-declaration-2026", "/columns/atr-taxpayer-movement-01-california", `/briefings/${taxWatchCaseSlug}`, "/briefings/korean-civic-tax-watch-movement-ktr", ...taxCommentaries.map((article) => `/monitoring/tax/commentary/${article.slug}`)],
   notices: [`/briefings/${procurementTaxWatchNoticeSlug}`, `/briefings/${civicNoticeSlug}`],
 };
 export const campaignPending = {
@@ -43,6 +43,7 @@ export function getCivicSectionForArticle(path: string) {
 // Assess every new article under CONTENT_PUBLISHING_RULES.md §14 and add
 // suitable stories here in the same publishing update, regardless of category.
 export const civicLifeArticlePaths = [
+  "/columns/atr-taxpayer-movement-06-legislative-vote-accountability",
   "/briefings/youth-rent-tax-credit-20-percent-bill-2222071",
   "/news/crypto-tax-fourth-deferral-2026",
   "/columns/debt-built-korean-economy-2026",
