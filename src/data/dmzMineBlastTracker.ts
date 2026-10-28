@@ -15,16 +15,16 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
     "en": "Three soldiers injured in DMZ blasts: What has emerged since September 21?"
   },
   "summary": {
-  "ko": "합참은 10월 5일 북한군이 MDL 이남에 매설한 지뢰가 장병 3명의 부상을 일으켰다고 최종 판단했고, 북한은 6일 책임을 부인했습니다. 이후 사고 현장에 지뢰 제거 로봇을 사용하지 않은 이유와 수색로 개척 장병들의 별도 위험근무수당 지급 제외가 새 쟁점이 됐습니다. 지뢰 제거·보호장비·사전 위험평가·실질적 보상을 함께 추적합니다.",
-  "en": "The Joint Chiefs attributed the blasts that injured three soldiers to North Korean mines on October 5; the North rejected the findings on October 6. Later reporting raised questions about why mine-clearance robots were not deployed and why path-opening troops are excluded from a separate hazardous-duty allowance. This tracker follows further clearance, equipment, risk assessment and compensation."
+  "ko": "지뢰폭발 이후의 대응이 남북 군사회담 제안과 유엔 안보리 서한 공방으로 이어졌습니다. 국방부는 10월 23일 회담을 제안했고 북한은 25일 맞서한으로 책임을 부인했습니다. 합참의 조사결과와 북한의 주장을 구분하면서 지뢰 제거·보호장비·위험근무수당·부상 장병 지원을 함께 추적합니다.",
+  "en": "The response to the mine blasts now includes proposed military talks and competing letters to the UN Security Council. Seoul proposed talks on October 23; Pyongyang rejected responsibility in an October 25 letter. This tracker distinguishes investigation findings from North Korean claims while following clearance, protective equipment, hazard pay and support for injured troops."
 },
   "status": {
-  "ko": "10월 19일 위험근무수당 사각지대 보도·장병 보호 추적",
-  "en": "October 19 reporting on hazard-pay gaps · Soldier protection under scrutiny"
+  "ko": "10월 25일 안보리 맞서한·군사회담 제안 이후 대응 추적",
+  "en": "October 25 counter-letter · Following the response to proposed military talks"
 },
   "openedAt": "2026-09-21",
   "publishedAt": "2026-09-21",
-  "updatedAt": "2026-10-19",
+  "updatedAt": "2026-10-28",
   "continuationEligible": false,
   "heroImage": {
     "src": "/images/news/dmz-blast-investigation-timeline-2026.webp",
@@ -47,6 +47,10 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
   "en": "On October 6, North Korea’s Foreign Ministry rejected South Korea’s final findings as fabricated and threatened a strong response if clearance entered territory it claims. This is North Korea’s position, recorded separately from the Joint Chiefs’ October 5 attribution based on physical mines and forensic evidence."
 },
     "keyFacts": [
+{
+  "ko": "북한은 10월 25일 안보리 의장에게 서한을 보내 지뢰폭발 책임을 부인했습니다. 한국은 앞서 22일 현지시간 서한으로 조사결과를 설명하고 사과를 촉구했습니다. 북한의 주장은 합참의 현장조사 결과와 구분합니다. [21](https://www.newsis.com/view/NISX20261026_0003840884)",
+  "en": "North Korea sent a letter to the Security Council president on October 25 rejecting responsibility. South Korea had submitted its findings and sought an apology on October 22 local time. Pyongyang’s claims remain distinct from the Joint Chiefs’ field-investigation findings. [21](https://www.newsis.com/view/NISX20261026_0003840884)"
+},
       { "ko": "10월 19일 보도에 따르면 수색대대원과 공병 EHCT는 특수지 근무수당을 받지만 별도의 위험근무수당 지급 대상이 아닙니다. 지뢰 제거 EOD와 제도 적용이 다르며, 전체 수당이 0원이라는 뜻은 아닙니다.", "en": "October 19 reporting says reconnaissance and engineer EHCT troops receive special-area pay but lack a separate hazardous-duty allowance granted to EOD personnel. This does not mean all of their allowances are zero." },
       { "ko": "10월 11일 보도에서 사고 부대의 지뢰탐지·제거 로봇 2대가 사고 현장에 투입되지 않았다는 사실과, 수풀·추가 지뢰위험을 이유로 든 군의 설명이 확인됐습니다. 장비 투입 가능성과 사고 예방 효과는 별도 검증이 필요합니다.", "en": "An October 11 report said the unit did not deploy its two mine-detection robots at the blast site. The military cited vegetation and additional mine hazards. Practical deployability and any preventive effect remain unproven." },
   {
@@ -80,6 +84,20 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
     ]
   },
   "keyChanges": [
+{
+  "date": "2026-10-25",
+  "text": {
+    "ko": "북한, 안보리에 맞서한 보내 지뢰 조사결과 부인",
+    "en": "North Korea rejects mine findings in Security Council letter"
+  }
+},
+{
+  "date": "2026-10-23",
+  "text": {
+    "ko": "국방부, MDL 확인·군통신선 복원 위한 군사회담 제안",
+    "en": "Ministry proposes talks on the MDL and military communications"
+  }
+},
     {
       "date": "2026-10-19",
       "text": {
@@ -218,6 +236,60 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
     }
   ],
   "timeline": [
+{
+  "date": "2026-10-25",
+  "title": {
+    "ko": "북한, 안보리에 맞서한 보내 지뢰 조사결과 부인",
+    "en": "North Korea rejects mine findings in Security Council letter"
+  },
+  "description": {
+    "ko": "북한은 10월 25일 안보리 의장에게 서한을 보내 지뢰폭발 책임을 부인했습니다. 한국은 앞서 22일 현지시간 서한으로 조사결과를 설명하고 사과를 촉구했습니다. 북한의 주장은 합참의 현장조사 결과와 구분합니다. [21](https://www.newsis.com/view/NISX20261026_0003840884)",
+    "en": "North Korea sent a letter to the Security Council president on October 25 rejecting responsibility. South Korea had submitted its findings and sought an apology on October 22 local time. Pyongyang’s claims remain distinct from the Joint Chiefs’ field-investigation findings. [21](https://www.newsis.com/view/NISX20261026_0003840884)"
+  },
+  "status": "response",
+  "sources": [
+    {
+      "publisher": {
+        "ko": "뉴시스",
+        "en": "Newsis"
+      },
+      "title": {
+        "ko": "북한, 유엔 안보리 의장에 맞서한 (2026.10.26)",
+        "en": "North Korea sends counter-letter to Security Council president (Oct. 26, 2026)"
+      },
+      "url": "https://www.newsis.com/view/NISX20261026_0003840884",
+      "publishedAt": "2026-10-26",
+      "kind": "article"
+    }
+  ]
+},
+{
+  "date": "2026-10-23",
+  "title": {
+    "ko": "국방부, MDL 확인·군통신선 복원 위한 군사회담 제안",
+    "en": "Ministry proposes talks on the MDL and military communications"
+  },
+  "description": {
+    "ko": "국방부는 군사분계선 위치를 상호 확인하고 군통신선을 복원하며 우발충돌을 막기 위한 남북 군사당국회담을 제안했습니다. 회담 제안과 실제 개최·북한의 수락 여부는 구분해 추적합니다. [20](https://www.mk.co.kr/news/politics/12184397)",
+    "en": "The ministry proposed inter-Korean military talks to clarify the Military Demarcation Line, restore communications and prevent accidental clashes. The proposal is tracked separately from acceptance or an actual meeting. [20](https://www.mk.co.kr/news/politics/12184397)"
+  },
+  "status": "confirmed",
+  "sources": [
+    {
+      "publisher": {
+        "ko": "매일경제",
+        "en": "Maeil Business Newspaper"
+      },
+      "title": {
+        "ko": "국방부, 남북 군사회담 제안 (2026.10.23)",
+        "en": "Defense Ministry proposes inter-Korean military talks (Oct. 23, 2026)"
+      },
+      "url": "https://www.mk.co.kr/news/politics/12184397",
+      "publishedAt": "2026-10-23",
+      "kind": "article"
+    }
+  ]
+},
     {
       "date": "2026-10-11",
       "title": { "ko": "지뢰탐지·제거 로봇 보유했지만 사고 현장 미투입 보도", "en": "Mine-clearance robots reportedly not used at the blast site" },
@@ -1124,6 +1196,20 @@ export const dmzMineBlastTracker: PublicInterestWatchCase = {
         "en": "SEED VOICE · Investigation timeline"
       },
       "url": "https://seedvoice.kr/news/dmz-blast-investigation-timeline-2026"
-    }
+    },
+{
+  "label": {
+    "ko": "국방부, 남북 군사회담 제안 (2026.10.23)",
+    "en": "Defense Ministry proposes inter-Korean military talks (Oct. 23, 2026)"
+  },
+  "url": "https://www.mk.co.kr/news/politics/12184397"
+},
+{
+  "label": {
+    "ko": "북한, 유엔 안보리 의장에 맞서한 (2026.10.26)",
+    "en": "North Korea sends counter-letter to Security Council president (Oct. 26, 2026)"
+  },
+  "url": "https://www.newsis.com/view/NISX20261026_0003840884"
+}
   ]
 };

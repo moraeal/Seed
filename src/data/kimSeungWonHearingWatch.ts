@@ -9,16 +9,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The appointment ended in withdrawal. Where do the remaining inquiries stand?",
   },
   summary: {
-  "ko": "김승원 전 법무부 장관 후보자의 사퇴 이후 제넨셀 창업자에 대한 항소심 판단과 경기도당 회계 의혹 고발이 이어졌습니다. 10월 12일 시민단체가 김 의원 등 7명을 추가 고발했고 수원중수청은 사건을 반부패수사1과에 배당해 고발 내용을 검토하기 시작했습니다. 배당과 수사 결과·기소·유죄 확정은 서로 다른 단계입니다.",
-  "en": "After Kim Seung-won withdrew as justice minister nominee, an appeal ruling addressed a Genencell founder’s request for clinical-approval assistance and complaints alleged party-accounting irregularities. On October 12 a civic group filed an additional complaint against Kim and six other party officials, and Suwon investigators assigned the complaint to their First Anti-Corruption Division for review. Assignment is not a finding, indictment or conviction."
+  "ko": "김승원 전 법무부 장관 후보자의 사퇴 이후 제넨셀 창업자에 대한 항소심 판단과 경기도당 회계 의혹 고발이 이어졌습니다. 10월 12일 시민단체가 김 의원 등 7명을 추가 고발했고 수원중수청은 사건을 반부패수사1과에 배당해 고발 내용을 검토하기 시작했습니다. 배당과 수사 결과·기소·유죄 확정은 서로 다른 단계입니다. 10월 27일 경찰 브리핑에서는 기존 임상승인 청탁 의혹 등 고발 사건의 19일 서울경찰청 이관이 확인됐습니다.",
+  "en": "After Kim Seung-won withdrew as justice minister nominee, an appeal ruling addressed a Genencell founder’s request for clinical-approval assistance and complaints alleged party-accounting irregularities. On October 12 a civic group filed an additional complaint against Kim and six other party officials, and Suwon investigators assigned the complaint to their First Anti-Corruption Division for review. Assignment is not a finding, indictment or conviction. An October 27 police briefing confirmed that the existing clinical-approval complaint and related cases had been transferred to Seoul police on October 19."
 },
-  status: {
-  "ko": "10월 12일 회계 의혹 추가 고발·반부패수사1과 배당 확인",
-  "en": "October 12 additional complaint · Case assigned to anticorruption unit"
-},
+  status: {"ko": "기존 청탁 의혹 서울청 이관·회계 사건 별도 추적", "en": "Existing approval allegation transferred to Seoul police · Accounting case tracked separately"},
   openedAt: "2026-08-31",
   publishedAt: "2026-09-14",
-  updatedAt: "2026-10-12",
+  updatedAt: "2026-10-28",
   nextCheck: {
   "ko": "제넨셀 창업자 항소심 판결 원문·상고·확정 여부와 11월 12일 예정 공판의 실제 진행, 10월 2일 최초 고발과 12일 사세행 추가 고발의 병합·배당 관계, 수원중수청 반부패수사1과의 고발장 검토 이후 소환·압수수색·송치·기소 여부, 김 의원 측 반론 및 기존 선관위·경찰 조사와의 관계",
   "en": "The founder’s full appeal ruling and whether it became final; the scheduled November 12 hearing; whether the October 2 and 12 complaints were consolidated; any evidence-gathering, summons or charging decisions after assignment to the First Anti-Corruption Division; the accused parties’ responses; and links to election-commission and police inquiries"
@@ -67,6 +64,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     ],
   },
   keyChanges: [
+    {"date": "2026-10-19", "text": {"ko": "경찰은 10월 27일 정례브리핑에서 김승원 의원 관련 고발 사건을 사건의 중대성과 수사 여건 등을 고려해 19일 영등포경찰서에서 서울경찰청으로 이송했다고 밝혔습니다. 뉴시스는 금융범죄수사대 배당을, 파이낸셜뉴스는 기존 신약 임상시험 승인 청탁 의혹 등의 이관을 보도했습니다. 수사 주체의 변경이며 혐의 입증이나 기소를 뜻하지 않고, 수원중수청의 경기도당 회계 의혹 사건과도 구분합니다.", "en": "At its October 27 briefing, police said complaints concerning Kim Seung-won had been transferred from Yeongdeungpo Police Station to Seoul police on October 19, citing the significance of the cases and investigative conditions. Newsis identified the financial-crime unit; Financial News described the transfer as including the existing clinical-trial approval allegation. A change of investigators is not proof or indictment and is distinct from the provincial-party accounting case handled in Suwon."}},
     {
       date: "2026-10-12",
       text: {
@@ -279,6 +277,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {"date": "2026-10-19", "title": {"ko": "기존 임상승인 청탁 의혹 사건, 서울경찰청 이관", "en": "Existing clinical-approval allegation transferred to Seoul police"}, "description": {"ko": "경찰은 10월 27일 정례브리핑에서 김승원 의원 관련 고발 사건을 사건의 중대성과 수사 여건 등을 고려해 19일 영등포경찰서에서 서울경찰청으로 이송했다고 밝혔습니다. 뉴시스는 금융범죄수사대 배당을, 파이낸셜뉴스는 기존 신약 임상시험 승인 청탁 의혹 등의 이관을 보도했습니다. 수사 주체의 변경이며 혐의 입증이나 기소를 뜻하지 않고, 수원중수청의 경기도당 회계 의혹 사건과도 구분합니다.", "en": "At its October 27 briefing, police said complaints concerning Kim Seung-won had been transferred from Yeongdeungpo Police Station to Seoul police on October 19, citing the significance of the cases and investigative conditions. Newsis identified the financial-crime unit; Financial News described the transfer as including the existing clinical-trial approval allegation. A change of investigators is not proof or indictment and is distinct from the provincial-party accounting case handled in Suwon."}, "change": {"ko": "10월 19일 이관을 27일 브리핑에서 확인", "en": "October 19 transfer confirmed at October 27 briefing"}, "status": "new", "sources": [{"publisher": {"ko": "뉴시스", "en": "Newsis"}, "title": {"ko": "국수본 브리핑, 김승원 관련 사건 서울청 이송 설명", "en": "Police briefing confirms transfer of Kim-related complaints"}, "url": "https://files.newsis.com/view/NISX20261027_0003842808", "publishedAt": "2026-10-27", "kind": "article"}, {"publisher": {"ko": "파이낸셜뉴스", "en": "Financial News"}, "title": {"ko": "경찰 정례브리핑, 주요 사건 수사 배당 설명", "en": "Police briefing on investigative assignments"}, "url": "https://www.fnnews.com/news/202610271149115702", "publishedAt": "2026-10-27", "kind": "article"}]},
     {
       date: "2026-10-12",
       title: { ko: "김승원 등 7명 회계 의혹 추가 고발…수원중수청 반부패수사1과 배당", en: "Additional party-accounting complaint assigned to Suwon anticorruption investigators" },
@@ -1641,5 +1640,7 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
       label: { ko: "연합뉴스 — 보좌진 촬영 사실과 후보자 측 해명", en: "Yonhap — Staff photograph and nominee office's response" },
       url: "https://www.yna.co.kr/amp/view/AKR20260915089652001",
     },
+    {"label": {"ko": "뉴시스 — 국수본 브리핑, 김승원 관련 사건 서울청 이송 설명 (2026-10-27)", "en": "Newsis — Police briefing confirms transfer of Kim-related complaints (2026-10-27)"}, "url": "https://files.newsis.com/view/NISX20261027_0003842808"},
+    {"label": {"ko": "파이낸셜뉴스 — 경찰 정례브리핑, 주요 사건 수사 배당 설명 (2026-10-27)", "en": "Financial News — Police briefing on investigative assignments (2026-10-27)"}, "url": "https://www.fnnews.com/news/202610271149115702"},
   ],
 };

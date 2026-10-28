@@ -15,16 +15,13 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     en: "The Prosecution Service Is Disappearing. Where Will the State's Investigative Power Go?",
   },
   summary: {
-  "ko": "2026년 10월 2일 검찰청이 폐지되고 공소청과 중대범죄수사청이 출범했습니다. 중수청은 정원 2,874명 중 1,900명으로 문을 열었고 첫날 전산·민원 접수 혼선이 보도됐습니다. 이 기록은 수사·기소·영장·불송치 통제 권한의 이동과 사건 이관, 시민의 구제 통로가 실제로 작동하는지를 따라갑니다.",
-  "en": "South Korea’s Prosecution Service was abolished on October 2, 2026, when the Prosecution Agency and Serious Crimes Investigation Agency opened. The investigation agency began with 1,900 of 2,874 authorized staff, amid reported IT and service-desk disruption. This tracker follows the transfer of investigative, charging, warrant and non-referral review powers, case handovers and access to remedies."
+  "ko": "2026년 10월 2일 검찰청이 폐지되고 공소청과 중대범죄수사청이 출범했습니다. 중수청은 정원 2,874명 중 1,900명으로 문을 열었고 첫날 전산·민원 접수 혼선이 보도됐습니다. 이 기록은 수사·기소·영장·불송치 통제 권한의 이동과 사건 이관, 시민의 구제 통로가 실제로 작동하는지를 따라갑니다. 10월 22일 국감에서는 연말 미제 처리와 보완수사 요구 체계 정비 방침이 제시됐으며, 실제 처리 성과는 계속 확인합니다.",
+  "en": "South Korea’s Prosecution Service was abolished on October 2, 2026, when the Prosecution Agency and Serious Crimes Investigation Agency opened. The investigation agency began with 1,900 of 2,874 authorized staff, amid reported IT and service-desk disruption. This tracker follows the transfer of investigative, charging, warrant and non-referral review powers, case handovers and access to remedies. The October 22 audit outlined year-end backlog processing and arrangements for requesting further investigation; actual results remain to be checked."
 },
-  status: {
-  "ko": "중수청 초대 청장 임명·국회서 공소청 권한 논쟁 지속",
-  "en": "First investigation chief appointed · Prosecutorial powers debated"
-},
+  status: {"ko": "10월 22일 국감 후 미제 처리·보완수사 체계 검증", "en": "Tracking backlog and further-investigation arrangements after October 22 audit"},
   openedAt: "2025-09-05",
   publishedAt: "2026-09-15",
-  updatedAt: "2026-10-19",
+  updatedAt: "2026-10-28",
   continuationEligible: true,
   nextCheck: {
   "ko": "출범 첫날 전산·민원 혼선의 해소 시점, 정원과 실제 근무 인원, 경찰·중수청 사건 이관 완료 건수와 기록·증거 보존, 90일 유예기간의 시효 임박 사건 처리 결과, 불송치·부실수사에 대한 시민의 이의제기 통로",
@@ -50,6 +47,7 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
   "en": "The October 2 launch, authorized and actual staffing, and service-desk and IT operations are updated from Newsis reporting and its account of the Prosecution Agency announcement. Earlier preparations retain their original check dates. Authorized staffing, actual personnel, transfer instructions, completed transfers, complaints and investigative findings remain separate."
 },
   keyChanges: [
+    {"date": "2026-10-22", "text": {"ko": "10월 22일 공소청 본청 국정감사에서 이정현 직무대행은 연말까지 가능한 범위에서 보완수사와 종국처분을 진행하겠다고 밝혔습니다. 경찰 수사가 미진한 사건의 보완수사 요구 및 기관 간 협력 체계, 불송치 사건 사실확인 지침도 정비하겠다고 설명했습니다. 처리 방침이며 미제 감소나 새 체계의 정상 가동이 확인된 결과는 아닙니다.", "en": "At the October 22 audit of the Prosecution Agency, acting head Lee Jeong-hyeon pledged to complete further investigation and final dispositions where possible by year-end. He also outlined arrangements for requesting further police investigation, inter-agency cooperation and fact-checking guidelines for cases not referred for prosecution. These are plans, not verified reductions in the backlog or proof that the new system is fully operational."}},
     { date: "2026-10-19", text: { ko: "공소청은 9월 말 미제사건 18만6,307건 전부를 일괄 이관하지 않으며, 보완수사요구와 직접수사 사건 이관을 순차 처리한다고 설명했습니다. 검사 지명수배·체포영장 사건 약 1,980건은 경찰 이관을 완료했고, 직접 인지사건 약 300건은 우선 이관 대상으로 분류됐습니다.", en: "The Prosecution Agency said it would not transfer all 186,307 pending cases en masse. Approximately 1,980 wanted-person/arrest-warrant cases have already been transferred to police, while roughly 300 formerly prosecutor-initiated cases were selected for phased transfer." } },
     {
       date: "2026-10-19",
@@ -200,6 +198,7 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {"date": "2026-10-22", "title": {"ko": "공소청 본청 국감, 연말 미제 처리와 보완수사 요구 체계 설명", "en": "Agency audit addresses year-end case backlog and requests for further investigation"}, "description": {"ko": "10월 22일 공소청 본청 국정감사에서 이정현 직무대행은 연말까지 가능한 범위에서 보완수사와 종국처분을 진행하겠다고 밝혔습니다. 경찰 수사가 미진한 사건의 보완수사 요구 및 기관 간 협력 체계, 불송치 사건 사실확인 지침도 정비하겠다고 설명했습니다. 처리 방침이며 미제 감소나 새 체계의 정상 가동이 확인된 결과는 아닙니다.", "en": "At the October 22 audit of the Prosecution Agency, acting head Lee Jeong-hyeon pledged to complete further investigation and final dispositions where possible by year-end. He also outlined arrangements for requesting further police investigation, inter-agency cooperation and fact-checking guidelines for cases not referred for prosecution. These are plans, not verified reductions in the backlog or proof that the new system is fully operational."}, "change": {"ko": "미제 처리·기관 간 보완수사 방침 제시", "en": "Plans for backlog processing and inter-agency follow-up"}, "status": "new", "sources": [{"publisher": {"ko": "뉴스1·파이낸셜뉴스", "en": "News1 / Financial News"}, "title": {"ko": "공소청 미제 적체·중수청 인프라 구축…검찰 폐지 과제 남긴 국감", "en": "Audit highlights backlog and investigation infrastructure"}, "url": "https://www.fnnews.com/news/202610250601081520", "publishedAt": "2026-10-25", "kind": "article"}]},
     { date: "2026-10-19", title: { ko: "공소청, 미제 18만6,307건 일괄 이관 부인·단계별 이송 설명", en: "Agency clarifies staggered handling of 186,307 pending cases" }, description: { ko: "공소청은 9월 말 기준 미제사건이 18만6,307건이지만 전부를 경찰 등으로 한 번에 이송하거나 보완수사요구하는 것은 아니라고 공식 설명했습니다. 10월 2~8일 경찰에 보완수사를 요구한 사건은 1,654건이고, 검사 지명수배·체포영장 사건 약 1,980건은 경찰로 이관을 마쳤습니다. 검사 직접수사 사건 약 300건은 우선 이관 대상으로 선별돼 90일 유예기간에 맞춰 순차 처리·이관 중이라고 밝혔습니다. 이 수치들은 서로 다른 범주의 지표이므로 더해 전체 이관 건수로 계산하지 않습니다.", en: "The agency said its 186,307 pending cases as of late September would not all be transferred or returned for supplementary investigation in one batch. It reported 1,654 supplementary-investigation requests to police from October 2–8, about 1,980 fugitive/arrest-warrant cases transferred to police, and roughly 300 prosecutor-initiated cases prioritized for staggered transfer within the 90-day transition. These are separate categories, not an additive total." }, change: { ko: "사건 적체 논란에 실제 미제 규모와 이송·보완수사 단계별 수치 공개", en: "New agency-level data distinguish pending cases, transfer and supplemental requests" }, status: "confirmed", sources: [{ publisher: { ko: "시사저널", en: "Sisa Journal" }, title: { ko: "공소청, 18만 미제 일괄 이관 없다…1,980건 이송·300건 순차 처리", en: "Agency denies en masse transfer of 186,307 cases" }, url: "https://www.sisajournal.com/news/articleView.html?idxno=390795", publishedAt: "2026-10-19", kind: "article" }] },
     {
       date: "2026-10-19",
@@ -1350,5 +1349,6 @@ export const prosecutionServiceAbolitionTracker: PublicInterestWatchCase = {
       url: "https://www.yna.co.kr/view/AKR20260927041400004",
       note: { ko: "오세현 검사의 9월 22일 권한쟁의심판·효력정지 가처분 신청과 헌재 심리 사실", en: "Prosecutor Oh Se-hyeon's September 22 competence dispute and interim-suspension application, now under Constitutional Court review" },
     },
+    {"label": {"ko": "뉴스1·파이낸셜뉴스 — 공소청 미제 적체·중수청 인프라 구축…검찰 폐지 과제 남긴 국감 (2026-10-25)", "en": "News1 / Financial News — Audit highlights backlog and investigation infrastructure (2026-10-25)"}, "url": "https://www.fnnews.com/news/202610250601081520"},
   ],
 };

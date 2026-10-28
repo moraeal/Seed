@@ -19,12 +19,12 @@ export const koreaUsIntelligenceTracker: PublicInterestWatchCase = {
     "en": "From March remarks about Kusong to October parliamentary hearings, official rebuttals have continued without a clear public account of what restricted cooperation has been restored. This tracker tests reassurance against concrete security outcomes."
   },
   "status": {
-    "ko": "일부 공유 제한 인정·복원 범위 확인 중",
-    "en": "Some restrictions acknowledged · Scope of restoration unverified"
-  },
+  "ko": "10월 14일 국정원 정정신청 발표·공유 복원 범위 미확인",
+  "en": "October 14 correction request announced · Scope of restoration remains unverified"
+},
   "openedAt": "2026-03-06",
   "publishedAt": "2026-10-13",
-  "updatedAt": "2026-10-13",
+  "updatedAt": "2026-10-28",
   "displayMode": "layered",
   "continuationEligible": false,
   "heroImage": {
@@ -48,6 +48,10 @@ export const koreaUsIntelligenceTracker: PublicInterestWatchCase = {
       "en": "After the minister's March 6 remarks about Kusong, partial intelligence restrictions were reported in April. The government disputed the disclosure allegation, yet in October the Joint Chiefs acknowledged remaining restrictions and the ambassador said US concerns were not sufficiently resolved. Cooperation continues; full restoration has not been publicly established. [4](https://news.tvchosun.com/site/data/html_dir/2026/04/21/2026042190171.html) [8](https://www.newsis.com/view/NISX20261010_0003820389) [12](https://www.yna.co.kr/view/AKR20261013002152071)"
     },
     "keyFacts": [
+{
+  "ko": "국정원은 10월 14일 원장의 미국 기관 방문이 거부됐다는 보도에 대해 전날 언론중재위원회에 정정신청했다고 밝혔습니다. 여러 분야의 정보협력은 계속된다고 재차 설명했습니다. 정정신청은 보도의 허위가 확정됐다는 의미가 아니며, 이번 발표로 일부 정보공유 제한의 해제가 확인된 것도 아닙니다. [15](https://www.yna.co.kr/view/AKR20261014084800504)",
+  "en": "On October 14, the NIS said it had filed a correction request the previous day over reporting that a US agency rejected its director’s visit. It reiterated that cooperation continued across several fields. The request is not a final finding that the report was false, nor does the announcement establish that the acknowledged restrictions were lifted. [15](https://www.yna.co.kr/view/AKR20261014084800504)"
+},
       {
         "ko": "문제의 발언은 3월 6일입니다. 4월 당시 보도는 제한 조치가 4월 초 시작됐다고 설명했습니다. 발언 날짜와 조치 시작일을 구분합니다. [1](https://www.hankookilbo.com/news/article/A2026030617590004420) [4](https://news.tvchosun.com/site/data/html_dir/2026/04/21/2026042190171.html)",
         "en": "The remarks were made on March 6. Contemporary April reporting placed the restrictions in early April. The remark date and the start of restrictions are distinct. [1](https://www.hankookilbo.com/news/article/A2026030617590004420) [4](https://news.tvchosun.com/site/data/html_dir/2026/04/21/2026042190171.html)"
@@ -77,6 +81,33 @@ export const koreaUsIntelligenceTracker: PublicInterestWatchCase = {
     ]
   },
   "timeline": [
+{
+  "date": "2026-10-14",
+  "title": {
+    "ko": "국정원, 방미 거부 보도 정정신청 사실 공개",
+    "en": "NIS announces correction request over reported rejection of US visit"
+  },
+  "description": {
+    "ko": "국정원은 10월 14일 원장의 미국 기관 방문이 거부됐다는 보도에 대해 전날 언론중재위원회에 정정신청했다고 밝혔습니다. 여러 분야의 정보협력은 계속된다고 재차 설명했습니다. 정정신청은 보도의 허위가 확정됐다는 의미가 아니며, 이번 발표로 일부 정보공유 제한의 해제가 확인된 것도 아닙니다. [15](https://www.yna.co.kr/view/AKR20261014084800504)",
+    "en": "On October 14, the NIS said it had filed a correction request the previous day over reporting that a US agency rejected its director’s visit. It reiterated that cooperation continued across several fields. The request is not a final finding that the report was false, nor does the announcement establish that the acknowledged restrictions were lifted. [15](https://www.yna.co.kr/view/AKR20261014084800504)"
+  },
+  "status": "response",
+  "sources": [
+    {
+      "publisher": {
+        "ko": "연합뉴스",
+        "en": "Yonhap"
+      },
+      "title": {
+        "ko": "국정원, 방미 거부 보도 정정신청 공개 (2026.10.14)",
+        "en": "NIS announces correction request over reported rejection of US visit (Oct. 14, 2026)"
+      },
+      "url": "https://www.yna.co.kr/view/AKR20261014084800504",
+      "publishedAt": "2026-10-14",
+      "kind": "article"
+    }
+  ]
+},
     {
       "date": "2026-10-13",
       "title": {
@@ -523,6 +554,13 @@ export const koreaUsIntelligenceTracker: PublicInterestWatchCase = {
     "en": "Update the scope of restoration and participation when new hearing records, official statements or cyber-meeting results appear. Do not add unverified normalization or personnel demands as facts."
   },
   "keyChanges": [
+{
+  "date": "2026-10-14",
+  "text": {
+    "ko": "국정원, 방미 거부 보도 정정신청 사실 공개",
+    "en": "NIS announces correction request over reported rejection of US visit"
+  }
+},
     {
       "date": "2026-10-13",
       "text": {
@@ -643,7 +681,14 @@ export const koreaUsIntelligenceTracker: PublicInterestWatchCase = {
         "ko": "뉴시스 · 2026.10.13 · 정보 지휘부 관련 주장과 대사 답변",
         "en": "Newsis · October 13, 2026 · Claims about intelligence leadership and ambassador's response"
       }
-    }
+    },
+{
+  "label": {
+    "ko": "국정원, 방미 거부 보도 정정신청 공개 (2026.10.14)",
+    "en": "NIS announces correction request over reported rejection of US visit (Oct. 14, 2026)"
+  },
+  "url": "https://www.yna.co.kr/view/AKR20261014084800504"
+}
   ],
   "relatedContents": [
     {
