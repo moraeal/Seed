@@ -11,8 +11,8 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     en: "Ballot shortage · Re-election demand · Special investigation",
   },
   title: {
-    ko: "올공 100일, 투표지는 모자랐고 불신은 남았다",
-    en: "100 days at Olympic Park: ballots ran short, distrust remained",
+    ko: "올공, 투표지는 모자랐고 불신은 아직도 남아있다",
+    en: "Olympic Park: ballots ran short, and distrust still remains",
   },
   summary: {
     ko: "제9회 전국동시지방선거에서 발생한 투표용지 부족 사태 뒤 시민들은 올림픽공원에 농성장을 꾸리고 재선거, 당일투표, 수개표를 요구해 왔다. 이 기록은 확인된 선거관리 실패와 특검 수사 대상, 아직 입증되지 않은 부정선거 주장을 구분해 추적한다. 10월 28일 특검의 투표지 공개검증이 시작됐으며 최종 결과는 확인되지 않았다.",
