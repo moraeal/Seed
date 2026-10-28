@@ -30,7 +30,7 @@ const seriesSpecs: SeriesSpec[] = [
       ko: "중국의 경제적 부상과 기술경쟁 속에서 한국의 산업안보와 기업의 자유를 살펴봅니다.",
       en: "Korea's industrial security and business freedom in an era of Chinese competition.",
     },
-    matches: (item) => item.subtitle.includes("우리에게 중국은 무엇인가"),
+    matches: (item) => item.subtitle.includes("우리에게 중국은 무엇인가") || item.title.trim() === "우리에게 중국은 무엇인가",
   },
   {
     slug: "taxpayer-movement",
