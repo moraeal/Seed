@@ -315,7 +315,7 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           "kind": "article",
           "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Assembl%C3%A9e%20Nationale%20Paris%201.jpg?width=720",
           "thumbnailAlt": {"ko":"2016년 촬영한 프랑스 국민의회 자료사진 · 예산발표 현장 아님","en":"Archive: French National Assembly building, 2016; not the budget announcement"},
-          "thumbnailCredit": {"ko":"Wikimedia Commons · 원본 페이지의 촬영자·라이선스 참조 · 2016년 촬영한 프랑스 국민의회 자료사진 · 예산발표 현장 아님","en":"Wikimedia Commons · 원본 페이지의 촬영자·라이선스 참조 · Archive: French National Assembly building, 2016; not the budget announcement"}
+          "thumbnailCredit": {"ko":"Chabe01 · Wikimedia Commons · CC BY-SA 4.0 · 2016년 촬영한 프랑스 국민의회 자료사진 · 예산발표 현장 아님","en":"Wikimedia Commons · 원본 페이지의 촬영자·라이선스 참조 · Archive: French National Assembly building, 2016; not the budget announcement"}
         }
       ]
     },
@@ -783,8 +783,8 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
               "en": "Archive image of the Palais Bourbon, photographed in 2014, not during the 2027 budget announcement. Deficit figures remain in the article text."
           },
           "credit": {
-              "ko": "Philippe Alès / Wikimedia Commons · 원본 사진 라이선스 기준",
-              "en": "Philippe Alès / Wikimedia Commons · See original licensing terms"
+              "ko": "Philippe Alès / Wikimedia Commons · CC BY-SA 3.0",
+              "en": "Philippe Alès / Wikimedia Commons · CC BY-SA 3.0"
           }
       }
   ]};
