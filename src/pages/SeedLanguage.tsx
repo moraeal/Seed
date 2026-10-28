@@ -46,15 +46,15 @@ export default function SeedLanguage() {
           <div className="mt-3 max-w-5xl border-l-2 border-gold pl-6 text-base leading-7 text-charcoal/70 sm:text-lg sm:leading-8">
             {ko ? (
               <>
-                <p>진영과 온라인의 언어는 시민을 이해하기보다 편으로 나누고, 좋은 가치마저 질문하기 어려운 구호로 만듭니다.</p>
-                <p>시민언어는 익숙한 말과 새로 생긴 말에 숨은 전제와 권력을 드러냅니다.</p>
-                <p>사람을 적으로 규정하지 않고 문제를 근거·비용·결과·책임으로 판단하도록 시민에게 언어를 돌려줍니다.</p>
+                <p>자유, 공정, 평등, 공익. 우리가 익숙하게 사용하는 말도 정치와 사회에서 서로 다른 의미로 쓰이고 있습니다.</p>
+                <p>시민언어는 말의 기원과 본래 뜻, 시대에 따라 달라진 의미와 현실에서의 쓰임을 시민의 눈높이에서 살펴봅니다.</p>
+                <p>정치적 진영의 구호에 가려진 말의 참뜻을 되찾고, 시민이 스스로 생각하고 판단할 수 있는 언어를 만들어갑니다.</p>
               </>
             ) : (
               <>
-                <p>Political and online language can divide citizens into camps instead of helping us understand one another, turning even worthy values into slogans that resist questions.</p>
-                <p>The Glossary examines both partisan vocabulary and emerging expressions to reveal the assumptions and power embedded within them.</p>
-                <p>It returns language to citizens so they can judge problems through evidence, cost, outcomes and responsibility rather than treating people as enemies.</p>
+                <p>Freedom, fairness, equality and the public interest: even familiar words take on different meanings in politics and society.</p>
+                <p>Civic Language explores where these words came from, what they originally meant, how their meanings have changed, and how they are used in everyday life.</p>
+                <p>We seek to recover meanings obscured by partisan slogans and help citizens develop the language to think and judge for themselves.</p>
               </>
             )}
           </div>
