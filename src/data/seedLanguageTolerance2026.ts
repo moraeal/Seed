@@ -17,13 +17,13 @@ export const toleranceArticleKo: SeedLanguageArticle = {
     "관용을 정치적 도덕의 독점적 언어로 만들지 말고 공동의 헌법적 질서와 정책의 효과·비용·책임으로 검증해야 한다."
   ],
   "heroImage": {
-    "src": "images/seed-language/tolerance-social-cohesion-2026/hero.svg",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Manifestation_contre_la_loi_immigration%2C_Lyon_%2821_janvier_2024%29_01.jpg/1280px-Manifestation_contre_la_loi_immigration%2C_Lyon_%2821_janvier_2024%29_01.jpg",
     "alt": "파리 공화국 건축물과 다양한 시민들을 잇는 다리, 그 아래 공동체를 분리하는 균열을 표현한 상징 그래픽",
     "caption": "관용이 확대되는 사회에서 무엇을 함께 지킬 것인가. 차이를 인정하는 자유와 모든 시민에게 적용되는 법질서가 함께 필요하다.",
     "credit": "씨앗의 소리 제작 상징 그래픽"
   },
   "inlineImage": {
-    "src": "images/seed-language/tolerance-social-cohesion-2026/civic-hall.svg",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Hemicycle_of_the_French_National_Assembly_at_the_Palais_Bourbon_in_Paris%2C_July_2026_01.jpg/1280px-Hemicycle_of_the_French_National_Assembly_at_the_Palais_Bourbon_in_Paris%2C_July_2026_01.jpg",
     "alt": "프랑스 시민 공청회에서 서로 다른 배경의 시민들이 공통의 법률과 교육, 주거정책 자료를 놓고 토론하는 일러스트",
     "caption": "사회통합의 문제는 특정 집단을 탓하는 구호로 풀 수 없다. 시민의 자유로운 토론과 국가의 실질적인 정책 역량이 필요하다.",
     "credit": "씨앗의 소리 제작 그래픽"
@@ -181,13 +181,13 @@ export const toleranceArticleEn: SeedLanguageArticle = {
     "Equal dignity and common law must accompany open democratic scrutiny of immigration policy."
   ],
   "heroImage": {
-    "src": "images/seed-language/tolerance-social-cohesion-2026/hero.svg",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Manifestation_contre_la_loi_immigration%2C_Lyon_%2821_janvier_2024%29_01.jpg/1280px-Manifestation_contre_la_loi_immigration%2C_Lyon_%2821_janvier_2024%29_01.jpg",
     "alt": "Symbolic illustration of a bridge between French republican institutions and diverse citizens",
     "caption": "The freedom to differ needs a common constitutional order.",
     "credit": "SEED VOICE original illustration"
   },
   "inlineImage": {
-    "src": "images/seed-language/tolerance-social-cohesion-2026/civic-hall.svg",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Hemicycle_of_the_French_National_Assembly_at_the_Palais_Bourbon_in_Paris%2C_July_2026_01.jpg/1280px-Hemicycle_of_the_French_National_Assembly_at_the_Palais_Bourbon_in_Paris%2C_July_2026_01.jpg",
     "alt": "Citizens of different backgrounds in a civic discussion around a common table",
     "caption": "Social cohesion requires public debate and institutions that work.",
     "credit": "SEED VOICE original illustration"
