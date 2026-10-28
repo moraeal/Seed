@@ -160,6 +160,7 @@ jobs:
           node scripts/check-column-browser.mjs opcon-transition-citizens-first-artillery-2026
           node scripts/check-column-browser.mjs pamyo-civic-groups-politics-revolving-door-2026
           node scripts/check-column-browser.mjs who-represents-civil-society-citizen-freedom-part1-2026
+          node scripts/check-column-browser.mjs tolerance-social-cohesion-common-rules-2026
           node scripts/check-column-browser.mjs home
       - name: Block stale branch until changes are tested with latest main
         if: github.event_name == 'push'
