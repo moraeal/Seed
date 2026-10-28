@@ -14,6 +14,7 @@ export const whoRepresentsCivilSocietyPart1Column: SeedColumn = {
   "summary": "시민참여기본법안(2215823)이 제시하는 참여권 보장과 국가시민참여위원회 설치를 살펴보고, 시민단체 밖 시민의 자유와 인사·예산·의제 결정의 독립성을 검증한다.",
   "heroImage": {
     "src": "images/columns/civic-representation-series-2026/hero-original-detail.svg",
+    "socialSrc": "images/columns/civic-representation-series-2026/hero-photo.jpg",
     "alt": "거대한 국가 권력의 손이 붉은 실로 시민들의 행동을 좌우하는 장면을 표현한 상징 이미지",
     "caption": "시민사회를 돕는 제도와 시민사회를 관리하는 권력의 경계를 묻는다.",
     "credit": "AI 이미지",
