@@ -63,7 +63,7 @@ const editorialSeriesRoutes: SeoRoute[] = getEditorialSeries("ko").map((series) 
   description: series.description,
   type: "website",
   lastModified: series.latest.date,
-  image: assetUrl(series.latest.image.src.startsWith("http") ? "images/social/site/home.jpg" : series.latest.image.src),
+  image: series.latest.image.src.startsWith("http") ? undefined : assetUrl(series.latest.image.src),
   imageAlt: series.latest.image.alt,
 }));
 
