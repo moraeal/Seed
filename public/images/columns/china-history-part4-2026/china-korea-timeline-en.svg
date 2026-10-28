@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+ <rect width="1200" height="620" fill="#ffffff"/>
+ <text x="47" y="74" fill="#12324d" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="38" font-weight="700">Six Turning Points in Korea–China Relations</text>
+ <text x="48" y="121" fill="#4c667d" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="22">Cooperation, conflict, diplomatic pressure and disputes over history.</text>
+ <g font-family="Pretendard, Noto Sans KR, sans-serif">
+ <g>
+  <rect x="45" y="170" width="363" height="160" rx="14" fill="#f0f5fb"/>
+  <rect x="45" y="170" width="7" height="160" rx="3" fill="#204c79"/>
+  <text x="69" y="209" fill="#20517c" font-size="26" font-weight="700">670–676</text>
+  <text x="69" y="256" fill="#152e47" font-size="24" font-weight="700">Silla–Tang War</text>
+  <text x="69" y="294" fill="#425c74" font-size="19">Allies turned rivals</text>
+ </g>
+ <g>
+  <rect x="435" y="170" width="363" height="160" rx="14" fill="#f5f7fb"/>
+  <rect x="435" y="170" width="7" height="160" rx="3" fill="#204c79"/>
+  <text x="459" y="209" fill="#20517c" font-size="26" font-weight="700">1592–1598</text>
+  <text x="459" y="256" fill="#152e47" font-size="24" font-weight="700">Japanese invasions</text>
+  <text x="459" y="294" fill="#425c74" font-size="19">Ming intervention</text>
+ </g>
+ <g>
+  <rect x="825" y="170" width="363" height="160" rx="14" fill="#f0f5fb"/>
+  <rect x="825" y="170" width="7" height="160" rx="3" fill="#204c79"/>
+  <text x="849" y="209" fill="#20517c" font-size="26" font-weight="700">1636–1637</text>
+  <text x="849" y="256" fill="#152e47" font-size="24" font-weight="700">Qing invasion</text>
+  <text x="849" y="294" fill="#425c74" font-size="19">Joseon's surrender</text>
+ </g>
+ <g>
+  <rect x="45" y="368" width="363" height="160" rx="14" fill="#f5f7fb"/>
+  <rect x="45" y="368" width="7" height="160" rx="3" fill="#204c79"/>
+  <text x="69" y="407" fill="#20517c" font-size="26" font-weight="700">1882–1884</text>
+  <text x="69" y="454" fill="#152e47" font-size="24" font-weight="700">Imo · Gapsin</text>
+  <text x="69" y="492" fill="#425c74" font-size="19">Qing intervention</text>
+ </g>
+ <g>
+  <rect x="435" y="368" width="363" height="160" rx="14" fill="#f0f5fb"/>
+  <rect x="435" y="368" width="7" height="160" rx="3" fill="#204c79"/>
+  <text x="459" y="407" fill="#20517c" font-size="26" font-weight="700">1894–1895</text>
+  <text x="459" y="454" fill="#152e47" font-size="24" font-weight="700">Sino–Japanese War</text>
+  <text x="459" y="492" fill="#425c74" font-size="19">Korean autonomy in peril</text>
+ </g>
+ <g>
+  <rect x="825" y="368" width="363" height="160" rx="14" fill="#f5f7fb"/>
+  <rect x="825" y="368" width="7" height="160" rx="3" fill="#204c79"/>
+  <text x="849" y="407" fill="#20517c" font-size="26" font-weight="700">2002–2007</text>
+  <text x="849" y="454" fill="#152e47" font-size="24" font-weight="700">Northeast Project</text>
+  <text x="849" y="492" fill="#425c74" font-size="19">Ancient-history dispute</text>
+ </g></g>
+ <path d="M45 568H1157" stroke="#c9d7e2" stroke-width="2"/>
+ <text x="48" y="593" fill="#5d6c7b" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="17">Source: National Institute of Korean History · Historical regimes distinguished</text>
+ </svg>
