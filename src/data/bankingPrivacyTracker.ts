@@ -15,16 +15,16 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
     "en": "My bank-held information leaked: Tracking the AI hacking inquiry and compensation"
   },
   "summary": {
-    "ko": "신한은행은 대출 신청 고객 약 2만5천 명의 정보 유출을 발표했고 금감원은 조사에 착수했다. 10월 8일 금융위원장은 기본 대응의 미흡함을 인정했다. 유출 범위와 AI 관여, 금융권 점검, 실제 보상 진행을 확인된 날짜별로 기록한다.",
-    "en": "Shinhan disclosed exposure affecting about 25,000 loan applicants, and the FSS opened an inquiry. On October 8 the FSC chair acknowledged shortcomings in basic response. This tracker records exposure, AI involvement, sector-wide checks and actual compensation by verified date."
+    "ko": "신한은행 약 2만5천 명 유출 조사에 이어 국민은행은 10월 26일 기존 사고의 유출 대상을 2,210명으로 늘려 발표했습니다. 신한·하나의 보험·우대 지원책과 실제 배상은 구분합니다. 은행별 피해 범위, 통지와 보상 이행을 날짜별로 추적합니다.",
+    "en": "Following Shinhan’s disclosure affecting about 25,000 people, KB revised its separate existing breach total to 2,210 on October 26. This record distinguishes Shinhan and Hana’s insurance and service benefits from compensation actually paid, and tracks each bank’s exposure, notifications and redress."
   },
   "status": {
-    "ko": "조사 진행 · 보상 이행 추적",
-    "en": "Investigation ongoing · Compensation tracked"
+    "ko": "국민은행 유출 규모 재집계 · 보험·보상 이행 추적",
+    "en": "KB revises exposure count · Support and compensation tracked"
   },
   "openedAt": "2026-09-30",
   "publishedAt": "2026-10-08",
-  "updatedAt": "2026-10-19",
+  "updatedAt": "2026-10-28",
   "continuationEligible": false,
   "displayMode": "layered",
   "heroImage": {
@@ -48,6 +48,7 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
       "en": "The Shinhan inquiry and financial-sector checks are ongoing. Evidence of AI-tool involvement has emerged, while exact intrusion paths and responsibility remain for individual investigations."
     },
     "keyFacts": [
+      {"ko": "국민은행은 기존 침해사고 재검증에서 2,091명의 정보 유출을 추가 확인했다고 밝혔습니다. 새로 확인된 대상은 고객 1,631명과 전·현직 임직원 460명이며, 기존 119명을 합친 전체 인원은 2,210명입니다. 새로운 공격의 발생이나 신한은행 유출 인원 증가를 뜻하지 않습니다.", "en": "KB said a review of its existing breach identified 2,091 additional people: 1,631 customers and 460 current or former employees. The total, including 119 previously identified people, is 2,210. This is not a new attack or an increase in Shinhan’s separate breach total."},
       { "ko": "10월 19일 국감에서 신한은행 유출 대상 고객의 직접 조회율이 약 22%로 지적됐습니다. 피해가 확인되면 전액 보상한다는 은행의 약속과 실제 지급 실적은 다릅니다.", "en": "At the October 19 hearing, a lawmaker cited approximately 22% self-lookup among Shinhan's affected customers. A pledge to compensate resulting losses does not establish paid claims." },
       {
         "ko": "신한은행이 발표한 대상은 대출 신청 고객 약 2만5천 명이다.",
@@ -79,6 +80,20 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
     ]
   },
   "keyChanges": [
+    {
+      "date": "2026-10-26",
+      "text": {
+        "ko": "국민은행 기존 사고 유출 대상 2,210명으로 확대",
+        "en": "KB breach total revised to 2,210"
+      }
+    },
+    {
+      "date": "2026-10-20",
+      "text": {
+        "ko": "신한·하나, 보험과 VIP 우대 지원책",
+        "en": "Shinhan and Hana outline insurance and VIP support"
+      }
+    },
     {
       "date": "2026-10-19",
       "text": {
@@ -116,6 +131,60 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
     }
   ],
   "timeline": [
+    {
+      "date": "2026-10-26",
+      "title": {
+        "ko": "국민은행 기존 사고 유출 대상 2,210명으로 확대",
+        "en": "KB breach total revised to 2,210"
+      },
+      "description": {
+        "ko": "국민은행은 기존 침해사고 재검증에서 2,091명의 정보 유출을 추가 확인했다고 밝혔습니다. 새로 확인된 대상은 고객 1,631명과 전·현직 임직원 460명이며, 기존 119명을 합친 전체 인원은 2,210명입니다. 새로운 공격의 발생이나 신한은행 유출 인원 증가를 뜻하지 않습니다.",
+        "en": "KB said a review of its existing breach identified 2,091 additional people: 1,631 customers and 460 current or former employees. The total, including 119 previously identified people, is 2,210. This is not a new attack or an increase in Shinhan’s separate breach total."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "publisher": {
+            "ko": "뉴스핌",
+            "en": "Newspim"
+          },
+          "title": {
+            "ko": "국민은행 정보유출 2,091명 추가 확인",
+            "en": "KB identifies 2,091 additional people affected"
+          },
+          "url": "https://ir.newspim.com/news/view/20261026001216",
+          "publishedAt": "2026-10-26",
+          "kind": "article"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "title": {
+        "ko": "신한·하나, 보험과 VIP 우대 지원책",
+        "en": "Shinhan and Hana outline insurance and VIP support"
+      },
+      "description": {
+        "ko": "10월 21일 보도된 의원실 취합 자료에 따르면 신한은행은 유출 대상 약 2만5천 명에게 은행 부담 보험과 수수료·환율 우대를 제공하기로 했습니다. 하나은행은 89명에게 VIP 등급과 금융명의보호 서비스를 제공할 방침입니다. 지원계획과 현금 배상 지급 실적은 구분해 추적합니다.",
+        "en": "Parliamentary materials reported on October 21 describe bank-funded insurance and fee or exchange-rate benefits for about 25,000 people affected at Shinhan, and VIP and identity-protection services for 89 at Hana. These support plans do not establish cash compensation actually paid."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "publisher": {
+            "ko": "미디어펜",
+            "en": "Media Pen"
+          },
+          "title": {
+            "ko": "신한·하나은행의 유출 고객 지원책",
+            "en": "Support plans for Shinhan and Hana breach victims"
+          },
+          "url": "https://www.mediapen.com/news/view/1131463",
+          "publishedAt": "2026-10-21",
+          "kind": "article"
+        }
+      ]
+    },
     {
       "date": "2026-10-19",
       "title": { "ko": "5대 은행장 국감 사과…신한 유출 고객 조회 약 22%·실제 보상 문제", "en": "Five bank chiefs apologize; Shinhan breach lookup and compensation questioned" },
@@ -415,8 +484,7 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
     "ko": "AI가 모든 공격을 스스로 수행했다거나 특정 정부의 정책이 신고 증가의 원인이라는 사실은 확인되지 않았다. 제도 연구에서 제기된 구조적 배경과 이번 사건의 직접 원인은 구분한다.",
     "en": "Neither fully autonomous AI execution nor a causal link between one administration’s policies and rising notifications has been established. Institutional background raised in studies is kept separate from this incident’s direct causes."
   },
-  "sources": [
-    {
+  "sources": [{
       "label": {
         "ko": "뉴스핌 — 신한은행 대출 신청 고객 약 2만5천 명 정보 유출",
         "en": "Newspim — Shinhan discloses a breach affecting about 25,000 loan applicants"
@@ -499,7 +567,9 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
         "en": "News1 — ARTEX traces and financial-sector attack analysis, October 5"
       },
       "url": "https://www.news1.kr/it-science/security-hacking/6310284"
-    }
+    },
+    {"label": {"ko": "뉴스핌 · 국민은행 정보유출 2,091명 추가 확인", "en": "Newspim · KB identifies 2,091 additional people affected"}, "url": "https://ir.newspim.com/news/view/20261026001216"},
+    {"label": {"ko": "미디어펜 · 신한·하나은행의 유출 고객 지원책", "en": "Media Pen · Support plans for Shinhan and Hana breach victims"}, "url": "https://www.mediapen.com/news/view/1131463"}
   ],
   "relatedContents": [
     {

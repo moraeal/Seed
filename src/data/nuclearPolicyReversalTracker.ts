@@ -14,21 +14,21 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     ko: "탈원전에서 신규 원전 추진까지",
     en: "From a Nuclear Phase-Down to New Reactor Construction",
   },
-  summary: {
-    ko: "2017년 신규 원전 6기 백지화에서 2026년 신규 대형원전 2기 추진과 추가 원전 검토까지, 민주당 정부의 원전정책 변화를 날짜별로 기록합니다. 서남권 반도체 산단과 AI 데이터센터의 전력수요, 지역별 전기요금과 기업 이전 정책이 원전 논의와 어떻게 연결되는지도 함께 추적합니다.",
-    en: "This tracker records the shift from cancelling six planned reactors in 2017 to proceeding with two large reactors and considering more in 2026. It also follows how power demand from southwest semiconductor projects and AI data centers, regional electricity pricing and corporate-relocation policy became linked to the nuclear debate.",
+  "summary": {
+    "ko": "2017년 신규 원전 백지화에서 2026년 신규 원전 추진까지 정책 변화를 기록합니다. 10월 21일 공론화위는 전문위원 9명 구성과 12월 11~13일 시민 숙의토론 일정을 정했습니다. 산업 전력수요, 자료의 균형, 시민 의견이 최종 전력계획에 반영되는 과정을 추적합니다.",
+    "en": "This record follows the policy shift from cancelling reactor plans in 2017 to pursuing new construction in 2026. On October 21, the deliberation committee approved a nine-member expert panel and December 11–13 citizen discussions. It tracks industrial power demand, balanced information and how public input affects the final electricity plan."
   },
-  status: {
-  "ko": "10월 7일 공론화위 1차 회의·시민참여단 300명 계획",
-  "en": "October 7 deliberation meeting · A 300-person citizen panel proposed"
-},
+  "status": {
+    "ko": "10월 21일 전문위 구성 의결 · 12월 시민 숙의 예정",
+    "en": "October 21 expert-panel decision · December citizen deliberation scheduled"
+  },
   openedAt: "2017-10-24",
   publishedAt: "2026-09-16",
-  updatedAt: "2026-10-08",
-  nextCheck: {
-  "ko": "10월 7일 제시된 약 300명 시민참여단의 실제 표본추출·모집·참여율, 2박 3일 숙의 진행과 전문가 자료의 검증·공개, 위원회 2차 회의 운영규정 의결 및 회의록 공개, 12월 권고안·제12차 전기본 정부안, 신규 원전 기수·부지·비용 결정과 영덕 계획의 인허가·총사업비",
-  "en": "Actual selection, response rate and participation of the proposed 300-person citizen panel; the three-day deliberation, expert materials and published records; the second committee meeting and adopted rules; December recommendation and electricity-plan draft; subsequent reactor count, site, cost, and Yeongdeok permitting decisions"
-},
+  updatedAt: "2026-10-28",
+  "nextCheck": {
+    "ko": "10월 27일 전문위 첫 회의 실제 개최·결과, 숙의설문지·자료집 공개와 균형, 시민참여단 구성·참여율, 12월 11~13일 토론 개최 및 권고안의 제12차 전기본 반영",
+    "en": "Verify the October 27 expert meeting and outcomes, publication and balance of deliberation materials, citizen-panel composition and participation, December 11–13 discussions and treatment of recommendations in the 12th electricity plan"
+  },
   heroImage: {
     src: "images/monitoring/nuclear-policy-reversal-tracker-hero.webp",
     alt: {
@@ -53,6 +53,13 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     en: "The previous administration finalized the two large reactors in the 11th electricity plan. The current administration's reversal lies in retaining that plan after review and then moving toward possible additional reactors on the basis of industrial demand. Semiconductor investment plans were negotiated with companies, while the HMM case drew allegations of forced relocation after the government announced the destination first.",
   },
   keyChanges: [
+    {
+      "date": "2026-10-21",
+      "text": {
+        "ko": "원전 전문위 9명 구성·12월 숙의 일정 확정",
+        "en": "Nine-member expert panel and December deliberation scheduled"
+      }
+    },
     {
       date: "2026-10-08",
       text: {
@@ -111,6 +118,33 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      "date": "2026-10-21",
+      "title": {
+        "ko": "원전 전문위 9명 구성·12월 숙의 일정 확정",
+        "en": "Nine-member expert panel and December deliberation scheduled"
+      },
+      "description": {
+        "ko": "공론화위원회는 21일 제3차 회의에서 환경·원자력·중립 각 3명으로 전문위원회를 구성하기로 했습니다. 환경단체가 추천에 응하지 않아 환경 분야는 위원회가 직접 추천했습니다. 22일 발표에 따르면 시민 숙의토론은 12월 11~13일 예정이며, 설문은 단순 찬반 대신 원전 역할과 발전량 비중 범위를 묻습니다. 27일 전문위 첫 회의는 당시 예정으로 공지됐으며 실제 개최 결과는 추가 확인 대상입니다.",
+        "en": "At its October 21 meeting, the committee approved nine experts, three each in environmental, nuclear and neutral categories; it selected environmental nominees itself after groups declined to nominate. Its October 22 release scheduled citizen deliberation for December 11–13, addressing nuclear power’s role and generation-share ranges rather than a yes/no vote. The expert meeting announced for October 27 still requires outcome verification."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "publisher": {
+            "ko": "기후에너지환경부",
+            "en": "Ministry of Climate, Energy and Environment"
+          },
+          "title": {
+            "ko": "원전 공론화위 전문위원회·숙의토론 일정",
+            "en": "Expert committee and citizen-deliberation schedule"
+          },
+          "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156786100",
+          "publishedAt": "2026-10-22",
+          "kind": "document"
+        }
+      ]
+    },
     {
       date: "2026-10-07",
       title: { ko: "원전 공론화위원회 첫 회의, 시민참여단 약 300명과 숙의 방식 계획", en: "Deliberation committee proposes a 300-person citizen panel and process" },
@@ -616,8 +650,7 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
   continuationEligible: true,
   questions: [],
   proposals: [],
-  sources: [
-{
+  sources: [{
   "label": {
     "ko": "뉴시스 · AI 전력수요에 원전 얼마나 더 지을까…12차 전기본 원전 공론화 시동",
     "en": "Newsis · Nuclear deliberation committee launches for the 12th electricity plan"
@@ -680,5 +713,6 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
       label: { ko: "연합뉴스 — 원전 역할 3개월 공론화와 전기본 일정 변경", en: "Yonhap — Three-month nuclear deliberation and revised planning schedule" },
       url: "https://www.yna.co.kr/view/AKR20260921182751530",
     },
+    {"label": {"ko": "기후에너지환경부 · 원전 공론화위 전문위원회·숙의토론 일정", "en": "Ministry of Climate, Energy and Environment · Expert committee and citizen-deliberation schedule"}, "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156786100"},
   ],
 };

@@ -1,6 +1,6 @@
 import type { PublicInterestWatchCase } from "./publicInterestWatch";
 
-// Editorial draft as of 2026-10-20 (KST). Date-labelled evidence must be verified before publication.
+// Evidence updated on 2026-10-28 (KST); event and publication dates are recorded separately.
 export const franceProtestsTracker: PublicInterestWatchCase = {
   "slug": "france-protests-fiscal-crisis-2026",
   "organization": {
@@ -16,16 +16,16 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
     "en": "Why France erupted: Public promises, national debt and anger on the streets"
   },
   "summary": {
-    "ko": "9월 학교 현장에서 시작된 항의가 생활비·임금·공공서비스 불만과 결합해 10월 17일 전국 대규모 시위와 폭력 사태로 번졌다. 현장의 직접 요구와 2027년 예산·국가부채의 구조적 압박을 구분하여 날짜순으로 추적한다.",
-    "en": "Protests that began at schools in September converged with concerns about wages, living costs and public services, culminating in nationwide demonstrations and violence on October 17. This dated record distinguishes immediate demands from fiscal constraints and the 2027 budget."
+    "ko": "학교 현장에서 시작된 항의가 생활비·공공서비스 불만과 결합해 전국 시위로 번졌습니다. 프랑스 정부는 10월 26일 교원·시설·대입 제도 대책을 발표했지만 학생 대표들은 시위를 이어가겠다고 밝혔습니다. 새 약속의 예산과 이행, 거리의 요구 변화를 구분해 추적합니다.",
+    "en": "School protests converged with wider grievances over living costs and public services. France announced measures on teachers, facilities and admissions on October 26, but student representatives said protests would continue. This record tracks the new commitments, funding, implementation and evolving demands."
   },
   "status": {
-    "ko": "10월 19일 파리 일부 지역 야간 통행금지 · 예산심의·추가 집회 추적",
-    "en": "October 19 localized Paris curfew · Budget and further protests under review"
+    "ko": "10월 26일 교육대책 발표 · 예산·이행과 추가 집회 추적",
+    "en": "October 26 education package · Funding, delivery and protests tracked"
   },
   "openedAt": "2026-09-21",
   "publishedAt": "2026-10-20",
-  "updatedAt": "2026-10-20",
+  "updatedAt": "2026-10-28",
   "continuationEligible": false,
   "displayMode": "layered",
   "heroImage": {
@@ -44,8 +44,8 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
     }
   },
   "sourceBasis": {
-    "ko": "2026년 10월 20일 오전(한국시간)까지 확인된 AP, Reuters, 르몽드, Euronews, RTL의 날짜별 보도를 기준으로 재구성했다. ‘사건 발생일’과 ‘기사 보도일’을 분리했고 집회 참가 규모는 프랑스 내무부와 주최 측 집계 차이를 표시했다. 재정위기는 시위의 단일 원인으로 단정하지 않았다. 타임라인의 일부 썸네일은 당일 현장 사진이 아니라 명시적으로 표시한 씨앗의 설명 도식이다. 10월 6일·17일은 실제 현장 보도사진을 별도 표기했다.",
-    "en": "Reconstructed from dated AP, Reuters, Le Monde, Euronews and RTL reporting available by the morning of October 20, 2026, Korean time. Event dates and publication dates are distinguished; official turnout and organizers' estimates are separately attributed. Fiscal strain is not asserted to be the sole cause. Some timeline thumbnails are labelled editorial diagrams rather than contemporaneous photographs. October 6 and 17 show specifically dated documentary images."
+    "ko": "기존 AP, Reuters, 르몽드, Euronews, RTL 기록에 10월 27일 연합뉴스가 보도한 26일 교육대책을 추가로 대조했다. ‘사건 발생일’과 ‘기사 보도일’을 분리했고 집회 참가 규모는 프랑스 내무부와 주최 측 집계 차이를 표시했다. 재정위기는 시위의 단일 원인으로 단정하지 않았다. 타임라인의 일부 썸네일은 당일 현장 사진이 아니라 명시적으로 표시한 씨앗의 설명 도식이다. 10월 6일·17일은 실제 현장 보도사진을 별도 표기했다.",
+    "en": "The earlier AP, Reuters, Le Monde, Euronews and RTL record is supplemented by Yonhap’s October 27 report on the October 26 education package. Event dates and publication dates are distinguished; official turnout and organizers' estimates are separately attributed. Fiscal strain is not asserted to be the sole cause. Some timeline thumbnails are labelled editorial diagrams rather than contemporaneous photographs. October 6 and 17 show specifically dated documentary images."
   },
   "caution": {
     "ko": "현재 시위의 직접적 발단은 학교 시설·교원 부족·대입 제도에 대한 불만이며, 물가·임금·공공서비스와 2027년 재정 조정 논란이 뒤엉켰다. 모든 참가자를 폭력 가담자로 보거나 시위 전체를 ‘복지 삭감 반대’로 환원할 수 없다. 2027년 예산은 정부안으로, 의회 확정안이 아니다.",
@@ -119,6 +119,7 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
       "en": "School and cost-of-living anger converged into nationwide protests, followed by serious violence after October 17. Fiscal pressure limits concessions while unrest complicates passage of the 2027 budget."
     },
     "keyFacts": [
+      {"ko": "프랑스 정부는 26일 현지시간 교원 확충과 대입 플랫폼 개선, 학교시설 지원을 발표했습니다. 시설 지원은 중고교에 대한 저리대출과 대학 예산 투입을 포함한 향후 계획입니다. 학생 대표들은 일부 조치를 환영하면서도 시위 지속 입장을 밝혔습니다. 발표와 예산 확보·현장 이행을 나누어 확인합니다.", "en": "On October 26 local time, France announced more teaching posts, admissions-platform changes and school-facility support. The package includes future loans for secondary-school facilities and university spending. Student representatives welcomed some measures but said protests would continue. Announcements, funding and delivery remain distinct stages."},
       {
         "ko": "직접 발단: 9월 고교생 교육환경·교원 부족 항의",
         "en": "Immediate trigger: September school-condition and teacher-shortage protests"
@@ -149,6 +150,13 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
   },
   "keyChanges": [
     {
+      "date": "2026-10-26",
+      "text": {
+        "ko": "프랑스, 교원·학교시설·대입 개선 대책 발표",
+        "en": "France announces staffing, school and admissions measures"
+      }
+    },
+    {
       "date": "2026-10-19",
       "text": {
         "ko": "파리 중심지 두 곳에 야간 통행금지 시행. 주말 사태 관련 2,400명 이상 체포 보도.",
@@ -171,6 +179,33 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
     }
   ],
   "timeline": [
+    {
+      "date": "2026-10-26",
+      "title": {
+        "ko": "프랑스, 교원·학교시설·대입 개선 대책 발표",
+        "en": "France announces staffing, school and admissions measures"
+      },
+      "description": {
+        "ko": "프랑스 정부는 26일 현지시간 교원 확충과 대입 플랫폼 개선, 학교시설 지원을 발표했습니다. 시설 지원은 중고교에 대한 저리대출과 대학 예산 투입을 포함한 향후 계획입니다. 학생 대표들은 일부 조치를 환영하면서도 시위 지속 입장을 밝혔습니다. 발표와 예산 확보·현장 이행을 나누어 확인합니다.",
+        "en": "On October 26 local time, France announced more teaching posts, admissions-platform changes and school-facility support. The package includes future loans for secondary-school facilities and university spending. Student representatives welcomed some measures but said protests would continue. Announcements, funding and delivery remain distinct stages."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "publisher": {
+            "ko": "연합뉴스",
+            "en": "Yonhap"
+          },
+          "title": {
+            "ko": "불붙은 학생 시위에…프랑스, 교사 늘리고 대입 플랫폼 손본다",
+            "en": "France announces education measures amid student protests"
+          },
+          "url": "https://www.yna.co.kr/amp/view/AKR20261027007400085",
+          "publishedAt": "2026-10-27",
+          "kind": "article"
+        }
+      ]
+    },
     {
       "date": "2026-09-21",
       "title": {
@@ -615,8 +650,7 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
       "date": "2026-10-19"
     }
   ],
-  "sources": [
-    {
+  "sources": [{
       "label": {
         "ko": "Le Monde · 학교 시위 전국 확산(9월 29일)",
         "en": "Le Monde · Student protests spread"
@@ -678,7 +712,8 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
         "en": "Wikimedia Commons · October 17 image, Jorge Jaramillo, CC BY-SA 4.0"
       },
       "url": "https://commons.wikimedia.org/wiki/File:Paris_riots,_17_October_2026_-_Crowd_and_tear_gas_at_Place_de_la_R%C3%A9publique_-_JJxFile_0006.jpg"
-    }
+    },
+    {"label": {"ko": "연합뉴스 · 불붙은 학생 시위에…프랑스, 교사 늘리고 대입 플랫폼 손본다", "en": "Yonhap · France announces education measures amid student protests"}, "url": "https://www.yna.co.kr/amp/view/AKR20261027007400085"},
   ],
   "bodyImages": [
     {

@@ -19,12 +19,12 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     en: "The government has proposed merging the Army, Navy and Air Force academies into a four-year Armed Forces Academy at Jaun-dae in Daejeon. SEED tracks the shift from an early two-plus-two model to full co-location, gaps in ROTC and officer-candidate education, hearings and legislation, cost and campus reuse, and any revisions under the new defense minister.",
   },
   status: {
-    ko: "국정감사서 각 군 공식 의견수렴 부족 지적·세부계획 대기",
-    en: "Formal service-wide consultation questioned at audit · Details pending",
-  },
+  "ko": "10월 세부계획 발표 지연·전문교육과 의견수렴 쟁점",
+  "en": "October plan delayed · Specialist training and consultation remain at issue"
+},
   openedAt: "2025-06-26",
   publishedAt: "2026-09-17",
-  updatedAt: "2026-10-19",
+  updatedAt: "2026-10-28",
   nextCheck: {
     ko: "대통령의 10월 1일 신속 추진 지시 뒤 세부계획의 통합 선발 시점과 방식, 자운대 이전 일정·총사업비, 각 군 전문교육 시설, ROTC·학사장교 합동교육 확대안, 정부·여당의 국군사관학교 설치법 제출 여부와 분리 유지 법안 심사, 2028년 예산 편성 전 선행연구 일정",
     en: "Following the president's October 1 call for faster action: the detailed plan's admissions timing and model, Jaun-dae schedule and full cost, service-specific facilities, expanded joint education for ROTC and officer candidates, filing of the governing party's Armed Forces Academy bill, review of the competing separation bill, and studies required before possible 2028 funding",
@@ -53,6 +53,20 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     en: "The first integrated class, relocation completion date and total cost remain unsettled. The government's 2027 budget proposal contains no dedicated academy-merger funding; possible 2028 funding remains under review after preliminary studies. A 2028 launch and 2032–36 relocation are also not confirmed schedules. The September 10 member's bill would preserve the separate academies and their current locations; it is not enacted law and has not halted the merger. Political punishment is an interpretation prompted by official historical-rupture language, not a confirmed stated purpose.",
   },
   keyChanges: [
+{
+  "date": "2026-10-23",
+  "text": {
+    "ko": "국방부, 세부계획의 10월 발표 어렵다고 설명",
+    "en": "Ministry says detailed plan is unlikely within October"
+  }
+},
+{
+  "date": "2026-10-22",
+  "text": {
+    "ko": "세 사관학교장, 추가 의견수렴과 전문교육 보장 강조",
+    "en": "Academy heads stress consultation and specialist training"
+  }
+},
     {
       date: "2026-10-19",
       text: {
@@ -104,6 +118,60 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+{
+  "date": "2026-10-23",
+  "title": {
+    "ko": "국방부, 세부계획의 10월 발표 어렵다고 설명",
+    "en": "Ministry says detailed plan is unlikely within October"
+  },
+  "description": {
+    "ko": "국방부 관계자는 추가 의견수렴을 진행하고 있어 이달 안에 세부계획을 발표하기 어렵다고 밝혔습니다. 통합교육 방식과 군별 실습시설, 선발 시기와 재원은 후속 검증 대상으로 남았습니다. [11](https://www.seoul.co.kr/news/politics/diplomacy/2026/10/23/20261023500293)",
+    "en": "A ministry official said ongoing consultation made publication of the detailed plan within October unlikely. The educational model, specialist facilities, admissions timetable and funding remain matters for further verification. [11](https://www.seoul.co.kr/news/politics/diplomacy/2026/10/23/20261023500293)"
+  },
+  "status": "confirmed",
+  "sources": [
+    {
+      "publisher": {
+        "ko": "서울신문",
+        "en": "Seoul Shinmun"
+      },
+      "title": {
+        "ko": "통합사관학교 세부계획 발표 지연 (2026.10.23)",
+        "en": "Detailed academy merger plan delayed (Oct. 23, 2026)"
+      },
+      "url": "https://www.seoul.co.kr/news/politics/diplomacy/2026/10/23/20261023500293",
+      "publishedAt": "2026-10-23",
+      "kind": "article"
+    }
+  ]
+},
+{
+  "date": "2026-10-22",
+  "title": {
+    "ko": "세 사관학교장, 추가 의견수렴과 전문교육 보장 강조",
+    "en": "Academy heads stress consultation and specialist training"
+  },
+  "description": {
+    "ko": "육·해·공사 국정감사에서 학교장들은 교육 혁신 필요성에 공감하면서도 추가 의견수렴을 강조했습니다. 해사와 공사는 자운대 이전에 따른 해양·비행훈련의 이동 부담과 교육 효율 저하를 우려했습니다. [10](https://www.newspim.com/news/view/20261022001064)",
+    "en": "At the parliamentary audit, the three academy heads supported educational innovation while calling for more consultation. Naval and air academy leaders raised concerns about travel burdens and training efficiency under relocation to Jaun-dae. [10](https://www.newspim.com/news/view/20261022001064)"
+  },
+  "status": "confirmed",
+  "sources": [
+    {
+      "publisher": {
+        "ko": "뉴스핌",
+        "en": "NewsPim"
+      },
+      "title": {
+        "ko": "세 사관학교장, 추가 의견수렴 요구 (2026.10.22)",
+        "en": "Academy heads seek further consultation (Oct. 22, 2026)"
+      },
+      "url": "https://www.newspim.com/news/view/20261022001064",
+      "publishedAt": "2026-10-22",
+      "kind": "article"
+    }
+  ]
+},
     {
       date: "2026-10-19",
       title: { ko: "육·해·공 공식 의견서 없었다…사관학교 통합 절차 국감 쟁점", en: "Defense audit questions formal consultation over service academy merger" },
@@ -495,5 +563,19 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
       label: { ko: "KTV — 제78주년 국군의 날 대통령 기념사", en: "KTV — President's 78th Armed Forces Day address" },
       url: "https://www.ktv.go.kr/program/home/PG2260015D/content/761813",
     },
+{
+  "label": {
+    "ko": "세 사관학교장, 추가 의견수렴 요구 (2026.10.22)",
+    "en": "Academy heads seek further consultation (Oct. 22, 2026)"
+  },
+  "url": "https://www.newspim.com/news/view/20261022001064"
+},
+{
+  "label": {
+    "ko": "통합사관학교 세부계획 발표 지연 (2026.10.23)",
+    "en": "Detailed academy merger plan delayed (Oct. 23, 2026)"
+  },
+  "url": "https://www.seoul.co.kr/news/politics/diplomacy/2026/10/23/20261023500293"
+}
   ],
 };

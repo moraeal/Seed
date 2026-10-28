@@ -9,13 +9,13 @@ export const supremeCourtRenominationTracker: PublicInterestWatchCase = {
     en: "Can a Supreme Court nomination be sent back? An appointment at a standstill",
   },
   summary: {
-    ko: "청와대는 손봉기 후보자의 임명동의안을 국회에 보내지 않았고, 조희대 대법원장은 다른 후보를 다시 제청하라는 요청을 거부했습니다. 한 자리는 비어 있습니다. 이 기록은 제청·동의·임명의 각 단계에서 누가 실제로 결정권을 행사하고, 공석을 해소할 책임은 누가 지는지 날짜별로 추적합니다.",
-    en: "The presidential office has withheld the motion seeking parliamentary consent for nominee Son Bong-gi; Chief Justice Cho Hee-dae has refused to nominate someone else. One seat remains vacant. This record follows who controls each constitutional stage of nomination, consent and appointment, and who takes responsibility for resolving the vacancy.",
+    ko: "청와대는 손봉기 후보자의 임명동의안을 국회에 보내지 않았고, 조희대 대법원장은 다른 후보를 다시 제청하라는 요청을 거부했습니다. 한 자리는 비어 있습니다. 이 기록은 제청·동의·임명의 각 단계에서 누가 실제로 결정권을 행사하고, 공석을 해소할 책임은 누가 지는지 날짜별로 추적합니다. 10월 20일 법원 국감에서도 국회 동의 절차의 지연이 쟁점이 됐습니다.",
+    en: "The presidential office has withheld the motion seeking parliamentary consent for nominee Son Bong-gi; Chief Justice Cho Hee-dae has refused to nominate someone else. One seat remains vacant. This record follows who controls each constitutional stage of nomination, consent and appointment, and who takes responsibility for resolving the vacancy. The stalled parliamentary consent stage was again discussed at the October 20 court audit.",
   },
-  status: { ko: "재제청 거부 유지·법제처 국감서 헌법 해석 충돌", en: "Renomination refused · Competing constitutional interpretations at audit" },
+  status: {"ko": "10월 20일 법원 국감서 동의 절차 지연 재확인", "en": "October 20 court audit revisits stalled consent"},
   openedAt: "2026-08-18",
   publishedAt: "2026-09-24",
-  updatedAt: "2026-10-15",
+  updatedAt: "2026-10-28",
   continuationEligible: false,
   sourceBasis: {
     ko: "헌법 제104조의 임명 절차를 기준으로 대법원장 제청, 청와대의 재제청 요청과 후속 공지, 야당의 권한쟁의심판 청구에 관한 언론 보도를 날짜별로 대조했습니다. 청와대와 대법원장의 주장은 각자의 입장으로 표시하고, 재판 결과나 위헌 판단으로 취급하지 않았습니다. 2026년 10월 15일 법제처 국정감사까지 확인했으며 공식 발언과 확정 판결을 구분했습니다.",
@@ -55,6 +55,7 @@ export const supremeCourtRenominationTracker: PublicInterestWatchCase = {
     ],
   },
   keyChanges: [
+    {"date": "2026-10-20", "text": {"ko": "10월 20일 대구고법 등 국정감사에서 강동명 대구지법원장은 손봉기 후보자가 국회 동의 절차를 밟지 못하는 상황에 안타까움을 밝혔습니다. 여야는 제청권과 후보 검증 기회를 놓고 공방을 이어갔습니다. 이번 발언은 새 제청·임명동의안 제출이나 헌법재판소의 판단을 뜻하지 않습니다.", "en": "At the October 20 audit of courts in the Daegu region, district court chief Kang Dong-myeong expressed regret that Son Bong-gi had not reached parliamentary consent proceedings. Lawmakers continued to dispute nomination powers and the opportunity to scrutinize candidates. These statements were not a new nomination, a consent motion or a Constitutional Court ruling."}},
     { date: "2026-10-15", text: { ko: "법제처 국정감사에서 조원철 법제처장은 대통령이 최초 대법관 제청에 반드시 따를 의무가 없으며 재제청 요청이 헌법에 반하지 않는다고 해석했습니다. 여당 의원은 재제청이 헌법상 책무라고 주장했고 야당은 요구의 법적 근거가 불분명하다고 반박했습니다. 판결이나 확정된 헌법 해석과는 구별됩니다.", en: "Legislation Minister Cho Won-cheol told a parliamentary audit the president was not obliged to appoint the first nominee and a renewed nomination request was constitutionally permissible. Governing-party lawmakers characterized renomination as a duty, while opposition members challenged the legal basis. No court has settled this dispute." } },
     { date: "2026-10-06", text: { ko: "조희대 대법원장은 국정감사에서 제청 절차에 국회와 대통령이 관여할 수 없다는 입장을 재확인하고 장기 공석에 송구하다고 밝혔습니다. 재제청 일정은 제시하지 않았습니다.", en: "Chief Justice Cho argued that the president and parliament could not intervene in his nomination process, apologized for the continuing vacancy and did not announce a renomination timetable." } },
     { date: "2026-09-23", text: { ko: "조 대법원장은 재제청 요청 공문에 사유가 명확하지 않다고 재차 밝혔고, 청와대는 임명동의안을 제출하지 않겠다는 공문 자체가 거부 의사를 밝힌 것이라고 다시 반박했습니다.", en: "Cho reiterated that the request did not clearly state its grounds; the presidential office replied that withholding the consent motion already made its refusal clear." } },
@@ -85,6 +86,7 @@ export const supremeCourtRenominationTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {"date": "2026-10-20", "title": {"ko": "대구법원 국감에서도 임명동의 절차 지연 공방", "en": "Daegu court audit revisits delayed parliamentary consent"}, "description": {"ko": "10월 20일 대구고법 등 국정감사에서 강동명 대구지법원장은 손봉기 후보자가 국회 동의 절차를 밟지 못하는 상황에 안타까움을 밝혔습니다. 여야는 제청권과 후보 검증 기회를 놓고 공방을 이어갔습니다. 이번 발언은 새 제청·임명동의안 제출이나 헌법재판소의 판단을 뜻하지 않습니다.", "en": "At the October 20 audit of courts in the Daegu region, district court chief Kang Dong-myeong expressed regret that Son Bong-gi had not reached parliamentary consent proceedings. Lawmakers continued to dispute nomination powers and the opportunity to scrutinize candidates. These statements were not a new nomination, a consent motion or a Constitutional Court ruling."}, "change": {"ko": "국회 검증 절차 지연에 대한 법원장 답변", "en": "Court chief addresses the stalled consent process"}, "status": "new", "sources": [{"publisher": {"ko": "뉴시스", "en": "Newsis"}, "title": {"ko": "손봉기 대법관 인선공방", "en": "Lawmakers dispute Son nomination"}, "url": "https://www.newsis.com/view/NISX20261020_0003833171", "publishedAt": "2026-10-20", "kind": "article"}, {"publisher": {"ko": "조선비즈", "en": "ChosunBiz"}, "title": {"ko": "대구지법원장, 국회 동의 절차 지연에 유감", "en": "Daegu court chief regrets delayed consent"}, "url": "https://biz.chosun.com/topics/law_firm/2026/10/20/GAXUXMW72NC6RAAGRT656T5OKY/", "publishedAt": "2026-10-20", "kind": "article"}]},
     {
       date: "2026-10-06",
       title: { ko: "조희대 대법원장, 국감에서 제청권 독립 강조·공석 장기화 유감", en: "Chief justice defends nomination autonomy and regrets extended vacancy" },
@@ -211,5 +213,7 @@ export const supremeCourtRenominationTracker: PublicInterestWatchCase = {
     { label: { ko: "동아일보 — 청와대 권한쟁의심판 청구 검토 부인 (9월 23일)", en: "The Dong-A Ilbo — Presidential office denies considering its own petition (September 23)" }, url: "https://www.donga.com/news/Politics/article/all/20260923/134724679/1" },
     { label: { ko: "연합뉴스 — 대법원장·청와대 재공방과 국회 법사위원 항의 방문 (9월 23일)", en: "Yonhap — Further dispute and judiciary-committee visit (September 23)" }, url: "https://www.yna.co.kr/view/AKR20260923187700001" },
     { label: { ko: "동아일보 — 대법관 정원 14명에서 26명으로 증원 (2월 28일)", en: "The Dong-A Ilbo — Supreme Court expansion from 14 to 26 (February 28)" }, url: "https://www.donga.com/news/Politics/article/all/20260228/133440880/2" },
+    {"label": {"ko": "뉴시스 — 손봉기 대법관 인선공방 (2026-10-20)", "en": "Newsis — Lawmakers dispute Son nomination (2026-10-20)"}, "url": "https://www.newsis.com/view/NISX20261020_0003833171"},
+    {"label": {"ko": "조선비즈 — 대구지법원장, 국회 동의 절차 지연에 유감 (2026-10-20)", "en": "ChosunBiz — Daegu court chief regrets delayed consent (2026-10-20)"}, "url": "https://biz.chosun.com/topics/law_firm/2026/10/20/GAXUXMW72NC6RAAGRT656T5OKY/"},
   ],
 };

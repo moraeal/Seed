@@ -12,9 +12,12 @@ export const northKoreanPowsProtectionTracker: PublicInterestWatchCase = {
     ko: "쿠르스크에서 생포된 두 병사의 한국행이 성사됐습니다. 이송 발표의 공개 범위를 둘러싼 양국의 설명은 엇갈립니다. 씨앗은 신원과 가족을 보호하면서도 당사자의 의사, 보호결정과 정착의 선택권이 어떻게 보장되는지 날짜별로 기록합니다.",
     en: "Two soldiers captured in Russia's Kursk region have reached South Korea. Seoul and Kyiv disagree over whether disclosure breached a confidentiality agreement. This tracker follows how their wishes, family safety, protection decisions and freedom to settle are handled, without exposing their identities.",
   },
-  status: { ko: "한국행 확인·보호 절차 확인 중", en: "Transfer confirmed · Protection under review" },
+  status: {
+  "ko": "10월 22일 공관원 일부 철수 진행·포로 보호 절차 확인 중",
+  "en": "October 22 partial embassy withdrawal under way · POW protection procedures under review"
+},
   publishedAt: "2026-09-28",
-  updatedAt: "2026-09-28",
+  updatedAt: "2026-10-28",
   continuationEligible: false,
   heroImage: {
     src: "/images/monitoring/north-korean-pows-protection-tracker.webp",
@@ -29,6 +32,10 @@ export const northKoreanPowsProtectionTracker: PublicInterestWatchCase = {
       en: "The two POWs have reached South Korea. The question now is which authorities decide their protection, on what grounds, and how the men's wishes shape investigation and settlement.",
     },
     keyFacts: [
+{
+  "ko": "외교부는 10월 22일, 이틀 전 결정한 일부 공관원 철수가 계획에 따라 진행 중이라고 밝혔습니다. 대사대리와 필수 인력은 남아 외교 소통과 재외국민 보호를 이어간다는 설명입니다. 이송 공개를 둘러싼 외교 대응의 변화이며 두 포로의 보호결정이나 정착 절차가 공개됐다는 뜻은 아닙니다. [7](https://www.newsis.com/view/NISX20261022_0003837360)",
+  "en": "On October 22, the ministry said the partial withdrawal announced on October 20 was proceeding, with the chargé d’affaires and essential staff remaining for diplomacy and consular protection. This changes the diplomatic response to disclosure, not the publicly established status of the two men’s protection or settlement procedures. [7](https://www.newsis.com/view/NISX20261022_0003837360)"
+},
       { ko: "두 사람은 2025년 1월 러시아 쿠르스크에서 우크라이나군에 생포됐고 한국행 의사를 밝혔습니다.", en: "Ukrainian forces captured the two men in Russia's Kursk region in January 2025; they later said they wanted to go to South Korea." },
       { ko: "젤렌스키 대통령은 2026년 9월 23일 유엔총회에서 한국 이송을 발표했고, 한국 정부는 우크라이나와 협의해 왔다고 밝혔습니다.", en: "President Volodymyr Zelenskyy announced the transfer at the UN on September 23, 2026; Seoul said it had worked with Kyiv." },
       { ko: "우크라이나 대통령실은 직접 협의를 확인하고 러시아의 반복적 인도 요청 주장은 부인했습니다.", en: "Ukraine's presidential office confirmed direct talks with Seoul and denied claims that Russia had repeatedly sought custody of the men." },
@@ -40,6 +47,13 @@ export const northKoreanPowsProtectionTracker: PublicInterestWatchCase = {
     ],
   },
   keyChanges: [
+{
+  "date": "2026-10-22",
+  "text": {
+    "ko": "외교부, 우크라이나 공관원 일부 철수 진행 설명",
+    "en": "Ministry says partial embassy withdrawal is under way"
+  }
+},
     { date: "2026-09-26", text: { ko: "우크라이나 대통령실 보좌관은 이송 사실을 비공개하기로 한 합의가 없었다고 주장했습니다. 이재명 대통령의 24일 ‘비공개 합의 위반’ 주장과 충돌합니다. 합의 문안은 공개되지 않았습니다.", en: "A Ukrainian presidential aide said there had been no agreement to keep the transfer secret, contradicting President Lee Jae Myung's September 24 account. No agreement text has been released." } },
     { date: "2026-09-24", text: { ko: "우크라이나 대통령실은 한국과 직접 대화해 이송했다고 설명하고, 러시아의 반복적 인도 요청설은 부인했습니다. 러시아와의 포로 교환 대가가 있었다는 공개 근거는 없습니다.", en: "Ukraine's presidential office described direct talks with Seoul and denied repeated Russian requests for the men. There is no public evidence of a prisoner-exchange payment or bargain." } },
     { date: "2026-09-23", text: { ko: "젤렌스키 대통령의 유엔총회 발표로 쟁점이 우크라이나에서의 송환 위험에서 한국 입국 이후의 보호와 선택권으로 옮겨갔습니다.", en: "Zelenskyy's UN announcement shifted the immediate issue from possible repatriation out of Ukraine to protection and personal choice after arrival in South Korea." } },
@@ -61,6 +75,33 @@ export const northKoreanPowsProtectionTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+{
+  "date": "2026-10-22",
+  "title": {
+    "ko": "외교부, 우크라이나 공관원 일부 철수 진행 설명",
+    "en": "Ministry says partial embassy withdrawal is under way"
+  },
+  "description": {
+    "ko": "외교부는 10월 22일, 이틀 전 결정한 일부 공관원 철수가 계획에 따라 진행 중이라고 밝혔습니다. 대사대리와 필수 인력은 남아 외교 소통과 재외국민 보호를 이어간다는 설명입니다. 이송 공개를 둘러싼 외교 대응의 변화이며 두 포로의 보호결정이나 정착 절차가 공개됐다는 뜻은 아닙니다. [7](https://www.newsis.com/view/NISX20261022_0003837360)",
+    "en": "On October 22, the ministry said the partial withdrawal announced on October 20 was proceeding, with the chargé d’affaires and essential staff remaining for diplomacy and consular protection. This changes the diplomatic response to disclosure, not the publicly established status of the two men’s protection or settlement procedures. [7](https://www.newsis.com/view/NISX20261022_0003837360)"
+  },
+  "status": "confirmed",
+  "sources": [
+    {
+      "publisher": {
+        "ko": "뉴시스",
+        "en": "Newsis"
+      },
+      "title": {
+        "ko": "외교부, 우크라 공관원 일부 철수 진행 설명 (2026.10.22)",
+        "en": "Foreign Ministry says partial embassy withdrawal is under way (Oct. 22, 2026)"
+      },
+      "url": "https://www.newsis.com/view/NISX20261022_0003837360",
+      "publishedAt": "2026-10-22",
+      "kind": "article"
+    }
+  ]
+},
     { date: "2026-09-26", title: { ko: "우크라이나 대통령실 보좌관, 비공개 합의 부인", en: "Ukrainian presidential aide denies confidentiality agreement" }, description: { ko: "드미트로 리트빈 보좌관은 이송 사실을 숨기기로 한 합의가 없었다고 밝혔습니다. 한국 대통령의 주장과 다른 설명이며 합의 문서는 공개되지 않았습니다.", en: "Aide Dmytro Lytvyn said there was no agreement to hide the transfer, contradicting the South Korean president's account. The agreement has not been made public." }, change: { ko: "공개 범위의 설명 충돌", en: "Conflicting accounts of disclosure" }, status: "new", sources: [{ publisher: { ko: "동아일보", en: "The Dong-A Ilbo" }, title: { ko: "북한군 포로 송환 비공개 합의 여부 논쟁", en: "Dispute over confidentiality of POW transfer" }, url: "https://www.donga.com/news/Inter/article/all/20260926/134733715/1", publishedAt: "2026-09-26", kind: "article" }] },
     { date: "2026-09-24", title: { ko: "이 대통령, 공개에 유감 표명", en: "President Lee criticizes disclosure" }, description: { ko: "이 대통령은 비공개 합의를 어기고 공개했다며 신변 안전과 한반도 정세를 이유로 들었습니다. 당사자의 개인정보와 이송 경로는 한국 정부가 공개하지 않았습니다.", en: "Lee said the announcement breached a confidentiality agreement and cited personal safety and Korean Peninsula security. Seoul withheld the men's personal details and travel route." }, change: { ko: "공개를 둘러싼 외교 논쟁", en: "Diplomatic disagreement over disclosure" }, status: "response", sources: [{ publisher: { ko: "연합뉴스", en: "Yonhap" }, title: { ko: "이 대통령, 우크라의 비공개 합의 위반 주장", en: "Lee says Ukraine broke a confidentiality agreement" }, url: "https://www.yna.co.kr/view/AKR20260924055000001", publishedAt: "2026-09-24", kind: "article" }] },
     { date: "2026-09-24", title: { ko: "우크라이나 대통령실, 한국과 직접 협의 확인", en: "Kyiv confirms direct talks with Seoul" }, description: { ko: "우크라이나 대통령실은 이송이 한국과의 직접 대화를 통해 진행됐다고 밝혔고 러시아가 두 사람의 인도를 반복 요구했다는 말은 사실이 아니라고 했습니다.", en: "Ukraine's presidential office said the transfer resulted from direct talks with Seoul and denied claims that Russia had repeatedly asked for the men." }, change: { ko: "이송 경위 확인", en: "Transfer process clarified" }, status: "confirmed", sources: [{ publisher: { ko: "연합뉴스", en: "Yonhap" }, title: { ko: "우크라, 북한군 포로 한국행은 한국과 직접 대화", en: "Ukraine says POW transfer followed direct talks with South Korea" }, url: "https://www.yna.co.kr/amp/view/AKR20260924050500109", publishedAt: "2026-09-24", kind: "article" }] },
@@ -69,8 +110,8 @@ export const northKoreanPowsProtectionTracker: PublicInterestWatchCase = {
     { date: "2026-02-26", title: { ko: "휴먼라이츠워치, 강제송환 위험 경고", en: "Human Rights Watch warns against forced return" }, description: { ko: "두 사람이 한국행을 원하며 북한에 돌아가면 중대한 인권침해 위험에 처할 수 있다고 경고했습니다. 국제적십자위원회의 제네바협약 해설도 본국에서 기본권 침해의 실제 위험이 있을 때 송환 의무에 예외를 둡니다.", en: "The group reported that both men wanted to go to South Korea and warned of grave abuse if returned north. It cited the ICRC commentary allowing an exception to repatriation where a POW faces a real risk of fundamental-rights violations at home." }, change: { ko: "당사자 의사와 인권 원칙", en: "Personal wishes and protection principle" }, status: "confirmed", sources: [{ publisher: { ko: "휴먼라이츠워치", en: "Human Rights Watch" }, title: { ko: "북한군 포로 두 명의 강제송환 우려", en: "Two North Korean POWs fear forced return" }, url: "https://www.hrw.org/news/2026/02/26/a-year-on-two-north-korean-pows-in-ukraine-fear-forced-return", publishedAt: "2026-02-26", kind: "article" }] },
   ],
   sourceBasis: {
-    ko: "2026년 9월 28일 오전까지 공개된 연합뉴스·로이터·동아일보 보도와 휴먼라이츠워치의 제네바협약 해설 인용을 대조했습니다. 한국 입국 사실과 보호 방식의 확정 여부를 구분했습니다. 양국의 비공개 합의 문안은 공개되지 않았으며 당사자의 신원·거처·가족 정보는 재현하지 않습니다.",
-    en: "Checked against Yonhap, Reuters, The Dong-A Ilbo and Human Rights Watch material available by the morning of September 28, 2026. Arrival is established; the final protection arrangements are not public. No confidentiality agreement text has been released. Identities, whereabouts and family details are omitted.",
+    ko: "기존 연합뉴스·로이터·동아일보 보도와 휴먼라이츠워치의 제네바협약 해설 인용을 대조했습니다. 10월 22일 외교 대응 변화는 외교부 브리핑을 전한 뉴시스 보도로 보완했습니다. 한국 입국 사실과 보호 방식의 확정 여부를 구분했습니다. 양국의 비공개 합의 문안은 공개되지 않았으며 당사자의 신원·거처·가족 정보는 재현하지 않습니다.",
+    en: "The historical record was checked against Yonhap, Reuters, The Dong-A Ilbo and Human Rights Watch material. The October 22 diplomatic update was checked against Newsis reporting of the Foreign Ministry briefing. Arrival is established; the final protection arrangements are not public. No confidentiality agreement text has been released. Identities, whereabouts and family details are omitted.",
   },
   confirmedFacts: [
     { ko: "두 사람은 한국행을 원한다고 밝혔고 한국·우크라이나의 협의 끝에 한국에 왔습니다.", en: "The men said they wanted to go to South Korea and arrived after consultations between Seoul and Kyiv." },
@@ -108,5 +149,12 @@ export const northKoreanPowsProtectionTracker: PublicInterestWatchCase = {
     { label: { ko: "동아일보 · 우크라이나 측의 상반된 주장 (9.26)", en: "The Dong-A Ilbo · Conflicting Ukrainian account (Sep. 26)" }, url: "https://www.donga.com/news/Inter/article/all/20260926/134733715/1" },
     { label: { ko: "로이터 · 한국 외교부의 수용 입장 (6.23)", en: "Reuters · South Korean Foreign Ministry's reception policy (Jun. 23)" }, url: "https://www.reuters.com/world/asia-pacific/south-korea-accept-all-north-korean-pows-ukraine-if-they-desire-ministry-says-2026-06-23/" },
     { label: { ko: "휴먼라이츠워치 · 강제송환 위험과 제네바협약 해설 (2.26)", en: "Human Rights Watch · Forced-return risk and Geneva Convention commentary (Feb. 26)" }, url: "https://www.hrw.org/news/2026/02/26/a-year-on-two-north-korean-pows-in-ukraine-fear-forced-return" },
+{
+  "label": {
+    "ko": "외교부, 우크라 공관원 일부 철수 진행 설명 (2026.10.22)",
+    "en": "Foreign Ministry says partial embassy withdrawal is under way (Oct. 22, 2026)"
+  },
+  "url": "https://www.newsis.com/view/NISX20261022_0003837360"
+}
   ],
 };

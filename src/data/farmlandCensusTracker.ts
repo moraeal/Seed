@@ -14,17 +14,17 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     ko: "농지 27%는 누가 사나",
     en: "Who Will Buy the 27 Percent of Farmland Flagged for Review?",
   },
-  summary: {
-    ko: "전국 농지 기본조사에서 약 30만㏊가 법 위반 의심 대상으로 분류됐지만 위법 확정 수치는 아닙니다. 정부는 10월 8일 상속·고령농·관행적 임대차 등 비투기성 농지를 처분 대상에서 제외하는 특별조치법 추진을 발표했고, 19일에는 상담센터에 하루 100~150건의 문의가 온다고 밝혔습니다. 법안은 아직 추진 단계입니다. 씨앗은 실제 법 제정과 심층조사 결과, 처분명령, 농지은행 공급 실적을 계속 추적합니다.",
-    en: "Administrative screening flagged some 300,000 hectares for possible violations, not confirmed wrongdoing. On October 8 the government proposed special legislation to exempt non-speculative inherited, elderly-held and customary-lease farmland from disposal; on October 19 the minister reported 100–150 daily calls to a new advice center. The bill has not yet passed. SEED continues tracking legislation, verified violations, disposal orders and actual transfers to working farmers.",
+  "summary": {
+    "ko": "기본조사에서 약 30만㏊가 위반 의심 대상으로 분류됐지만 위법 확정 수치는 아닙니다. 비투기성 농지 처분 제외 특별법 추진에 이어 10월 21일 농지은행 신청 절차가 간소화됐고, 26일 대통령은 매입 예산 확대를 언급했습니다. 법 제정·예산 확정·실제 매입과 임대 성사를 구분해 추적합니다.",
+    "en": "Screening flagged about 300,000 hectares for possible violations, not confirmed wrongdoing. Alongside proposed exemptions for non-speculative cases, Farmland Bank procedures were simplified on October 21 and the president proposed more purchase funding on October 26. Legislation, approved budgets and completed transactions remain separate milestones."
   },
-  status: {
-    ko: "비투기 농지 처분 제외 특별법 추진·상담센터 운영",
-    en: "Special bill to exempt non-speculative cases proposed · Helpline active",
+  "status": {
+    "ko": "농지은행 신청 간소화 · 매입 예산 확대 발언 추적",
+    "en": "Simplified Farmland Bank applications · Purchase-funding proposal tracked"
   },
   openedAt: "2026-02-24",
   publishedAt: "2026-09-16",
-  updatedAt: "2026-10-19",
+  updatedAt: "2026-10-28",
   nextCheck: {
     ko: "11월 15일까지의 임대차 특별정비 결과, 심층조사 후 실제 위법 확정 면적, 연내 의결을 목표로 한 처분 유예·사후 전용 추인 특별조치법의 발의·심사, 농지은행 위탁·매입과 청년농·자경농 공급 실적",
     en: "Results of the lease regularization period through November 15; area confirmed in violation after field review; introduction and review of the special-act bill on deferrals and retroactive conversion approval, which the government aims to pass by year-end; and Farmland Bank trust, purchase and onward-supply results for young and working farmers",
@@ -53,6 +53,20 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     en: "The 27 percent figure is an administrative-screening result, not a confirmed violation rate. The final area in violation or subject to disposal may change after field review. The four-year, 100 percent illustration assumes an unchanged valuation and four annual charges after the first assessment.",
   },
   keyChanges: [
+    {
+      "date": "2026-10-26",
+      "text": {
+        "ko": "대통령, 자발적 농지 매각 위한 매입 예산 확대 언급",
+        "en": "President proposes more funding for voluntary farmland sales"
+      }
+    },
+    {
+      "date": "2026-10-21",
+      "text": {
+        "ko": "농지은행 서류·경영체 변경 신청 간소화",
+        "en": "Farmland Bank simplifies documents and registration changes"
+      }
+    },
     { date: "2026-10-19", text: { ko: "송미령 농식품부 장관은 농지 전수조사 상담센터에 하루 100~150건의 문의가 들어온다고 밝혔습니다. 정부는 비투기성 농지 처분을 막는 특별조치법을 연내 마련하고 내년 농지법 개정을 추진하겠다고 재확인했습니다. 법안이 통과된 것은 아닙니다.", en: "The agriculture minister reported 100–150 calls daily to the farmland-census advice center and reaffirmed plans for special legislation this year and Farmland Act revision next year. The special bill has not yet passed." } },
     { date: "2026-10-08", text: { ko: "정부는 상속농지·고령농의 관행적 임대차 등 비투기성 위반에 처분·이행강제금을 부과하지 않도록 특별조치법을 추진하겠다고 발표했습니다. 법률의 실제 효력은 국회 입법을 거쳐야 합니다.", en: "The government announced proposed special legislation to prevent disposal orders and enforcement charges for non-speculative cases, including inherited land and customary leases by elderly farmers. Legal effect still depends on enactment." } },
     {
@@ -106,6 +120,60 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      "date": "2026-10-26",
+      "title": {
+        "ko": "대통령, 자발적 농지 매각 위한 매입 예산 확대 언급",
+        "en": "President proposes more funding for voluntary farmland sales"
+      },
+      "description": {
+        "ko": "이재명 대통령은 농어민과의 대화에서 전수조사가 농지를 빼앗기 위한 것이 아니라며 매각 희망자를 위한 농지 매입 예산 확대를 언급했습니다. 이는 정책 방향을 밝힌 발언으로, 증액 규모나 예산 의결·매입 집행이 확정됐다는 뜻은 아닙니다.",
+        "en": "At a meeting with farmers and fishers, President Lee said the census was not intended to seize land and proposed more purchase funding for willing sellers. This expresses a policy direction, not an approved budget increase or completed purchases."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "publisher": {
+            "ko": "뉴스핌",
+            "en": "Newspim"
+          },
+          "title": {
+            "ko": "농지 매입 예산 확대 언급",
+            "en": "President proposes expanded farmland-purchase funding"
+          },
+          "url": "https://search.newspim.com/news/view/20261026000915",
+          "publishedAt": "2026-10-26",
+          "kind": "article"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-21",
+      "title": {
+        "ko": "농지은행 서류·경영체 변경 신청 간소화",
+        "en": "Farmland Bank simplifies documents and registration changes"
+      },
+      "description": {
+        "ko": "농식품부는 농지은행 임대수탁의 서류 제출과 농업경영체 등록 변경 신청을 한 곳에서 처리하는 개편을 발표했습니다. 등기부등본은 직원이 열람하고, 신규 농업경영체 등록은 종전처럼 별도 신청합니다. 신청 편의 개선은 처분 제외 특별법 제정이나 실제 임대 성사와는 다른 단계입니다.",
+        "en": "The Agriculture Ministry announced streamlined Farmland Bank lease-trust paperwork and combined applications for changes to farm-business registration. Staff retrieve land-register records; new farm-business registrations remain separate. Easier applications do not establish passage of disposal-exemption legislation or completed leases."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "publisher": {
+            "ko": "농림축산식품부·정책브리핑",
+            "en": "Agriculture Ministry · Policy Briefing"
+          },
+          "title": {
+            "ko": "농지은행 임대수탁 신청 간소화",
+            "en": "Simplified Farmland Bank lease-trust applications"
+          },
+          "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148974017",
+          "publishedAt": "2026-10-21",
+          "kind": "document"
+        }
+      ]
+    },
     {
       date: "2026-02-24",
       title: {
@@ -586,8 +654,7 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     followUp: { ko: "앞으로 확인할 처분과 이전 결과", en: "Disposal and transfer outcomes to track" },
   },
   continuationEligible: true,
-  sources: [
-    { label: { ko: "연합뉴스 — 10월 19일 상담센터 운영 및 입법계획", en: "Yonhap — October 19 helpline operation and planned legislation" }, url: "https://www.yna.co.kr/view/AKR20261019077600030" },
+  sources: [{ label: { ko: "연합뉴스 — 10월 19일 상담센터 운영 및 입법계획", en: "Yonhap — October 19 helpline operation and planned legislation" }, url: "https://www.yna.co.kr/view/AKR20261019077600030" },
     { label: { ko: "연합뉴스 — 10월 8일 비투기성 농지 처분 제외 특별조치법 추진", en: "Yonhap — October 8 proposal to exempt non-speculative farmland" }, url: "https://www.yna.co.kr/view/AKR20261008073400030" },
     {
       label: { ko: "매일경제 — 실제 처분절차는 2027년 이후", en: "Maeil Business Newspaper — Disposal procedures expected from 2027" },
@@ -640,5 +707,7 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
       label: { ko: "경실련 농지전수조사 성명", en: "CCEJ statement on the farmland census" },
       url: "https://ccej.or.kr/posts/kZtq6wb",
     },
+    {"label": {"ko": "뉴스핌 · 농지 매입 예산 확대 언급", "en": "Newspim · President proposes expanded farmland-purchase funding"}, "url": "https://search.newspim.com/news/view/20261026000915"},
+    {"label": {"ko": "농림축산식품부·정책브리핑 · 농지은행 임대수탁 신청 간소화", "en": "Agriculture Ministry · Policy Briefing · Simplified Farmland Bank lease-trust applications"}, "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148974017"},
   ],
 };

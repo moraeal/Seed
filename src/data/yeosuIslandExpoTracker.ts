@@ -15,20 +15,14 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     en: "How Yeosu's Island Fair grew from a KRW 24.8 billion approval to a KRW 71.3 billion event",
   },
   summary: {
-    ko: "2018년 시작된 여수세계섬박람회 구상이 2021년 248억 원 승인에서 직접사업비 수백억 원·연계사업을 합한 총 1,800억 원대 규모로 확대된 경위를 추적합니다. 10월 15일까지 관람객 131만7,221명이 집계됐지만 11일 기준 무료입장 비율은 84%였습니다. 14일에는 6,732명이 참여한 국민감사 청구서가 제출됐습니다. 직접사업비 보도 수치 713억 원과 723억 원의 차이, 실제 유료수입과 결산, 감사·수사 결과를 확인합니다.",
-    en: "This record follows the fair from its 2018 proposal and KRW 24.8 billion international-event approval in 2021 through subsequent multibillion-won direct and linked projects. Attendance reached 1,317,221 by October 15, while 84% of entries were free as of October 11. A 6,732-signature citizen-audit petition was submitted on October 14. We track differences between reported direct-spending figures of KRW 71.3 and 72.3 billion, actual paid revenue, audit and investigation outcomes and final accounts.",
+    ko: "2018년 시작된 여수세계섬박람회 구상이 2021년 248억 원 승인에서 직접사업비 수백억 원·연계사업을 합한 총 1,800억 원대 규모로 확대된 경위를 추적합니다. 10월 15일까지 관람객 131만7,221명이 집계됐지만 11일 기준 무료입장 비율은 84%였습니다. 14일에는 6,732명이 참여한 국민감사 청구서가 제출됐습니다. 직접사업비 보도 수치 713억 원과 723억 원의 차이, 실제 유료수입과 결산, 감사·수사 결과를 확인합니다. 10월 22일 국감에서는 입장권 판매와 실제 사용의 차이, 공공기관 구매 경위가 추가로 다뤄졌습니다.",
+    en: "This record follows the fair from its 2018 proposal and KRW 24.8 billion international-event approval in 2021 through subsequent multibillion-won direct and linked projects. Attendance reached 1,317,221 by October 15, while 84% of entries were free as of October 11. A 6,732-signature citizen-audit petition was submitted on October 14. We track differences between reported direct-spending figures of KRW 71.3 and 72.3 billion, actual paid revenue, audit and investigation outcomes and final accounts. The October 22 audit added scrutiny of the gap between ticket sales and redemption and the circumstances of public-body purchases.",
   },
-  status: {
-  "ko": "무료 관람 84%·국민감사 청구·실제 수익 검증",
-  "en": "84% free admission · Public audit requested · Revenue under scrutiny"
-},
+  status: {"ko": "10월 22일 국감·입장권 사용과 실제 수익 검증", "en": "October 22 audit · Ticket use and actual revenue under review"},
   openedAt: "2018-09-05",
   publishedAt: "2026-09-15",
-  updatedAt: "2026-10-18",
-  nextCheck: {
-  "ko": "10월 11일 무료입장 84%의 후속 변동, 유료·무료·재입장별 집계와 입장권 실제 사용·매출, 713억·723억원 사업비 차이의 집계 기준, 10월 22일 국정감사 결과, 6,732명 국민감사 청구 수리·감사 착수 여부, 추가 공연 집행액, 수익 목표 120억원 및 11월 4일 폐막 후 정산",
-  "en": "Updated free-entry ratios (84% on October 11), paid/free/repeat attendance and redeemed ticket revenue; reconciliation of KRW 71.3 versus 72.3 billion spending figures; outcomes of the planned October 22 audit hearing and 6,732-signature audit petition; extra-program expenditure, progress toward the KRW 12 billion revenue target and final accounts after November 4"
-},
+  updatedAt: "2026-10-28",
+  nextCheck: {"ko": "입장권 구매 기관별 실제 사용·매출, 유료·무료·재입장 집계, 713억·723억원 사업비 차이의 기준, 국민감사 청구의 수리·감사 착수 여부, 11월 4일 폐막 후 결산을 확인합니다. 10월 22일 국감 지적과 답변은 감사 결과나 위법 확정과 구분합니다.", "en": "Check ticket purchases, redemption and revenue by institution; paid, free and repeat admissions; the basis of the KRW 71.3/72.3 billion spending discrepancy; whether the citizen-audit petition is accepted; and accounts after the November 4 closing. Audit-hearing allegations and replies are not findings of illegality."},
   heroImage: {
     src: "images/monitoring/yeosu-island-expo-tracker-hero.webp",
     alt: {
@@ -49,6 +43,7 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     en: "This record compares government and organizer announcements with parliamentary/audit reporting and October 18 Yonhap and Seoul Shinmun coverage of visitor figures. Attendance of 1,317,221 is through October 15; the 84% free-entry ratio is as of October 11. Differences between KRW 71.3 and 72.3 billion direct-spending reports still need reconciliation. The October 14 audit petition is not an audit finding. Direct and linked expenditures are never double-counted.",
   },
   keyChanges: [
+    {"date": "2026-10-22", "text": {"ko": "10월 22일 국정감사에서 서명옥 의원은 9월 말 판매 입장권 39만4천 장 가운데 약 30만 장이 사용되지 않았다고 지적했습니다. 연합뉴스는 전남개발공사가 산 입장권이 22개 시·군 문화 취약계층에 지원됐고 조직위가 정상가 대비 30% 할인했다고 보도했습니다. 강매라는 평가는 의원의 주장이며, 구매·사용 내역과 폐막 후 결산으로 실제 수익을 대조할 필요가 있습니다.", "en": "At the October 22 audit, lawmaker Seo Myeong-ok said about 300,000 of 394,000 tickets sold by the end of September had not been used. Yonhap reported that tickets bought by Jeonnam Development Corporation supported culturally underserved residents in 22 municipalities, at a 30% discount offered by organizers. Coercive sales were the lawmaker’s allegation; purchase and redemption records and post-event accounts remain necessary to establish actual revenue."}},
     {
       date: "2026-10-18",
       text: {
@@ -149,6 +144,7 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {"date": "2026-10-22", "title": {"ko": "국정감사서 입장권 구매·사용 차이와 공공기관 구매 경위 질의", "en": "Audit examines unused tickets and public-body purchases"}, "description": {"ko": "10월 22일 국정감사에서 서명옥 의원은 9월 말 판매 입장권 39만4천 장 가운데 약 30만 장이 사용되지 않았다고 지적했습니다. 연합뉴스는 전남개발공사가 산 입장권이 22개 시·군 문화 취약계층에 지원됐고 조직위가 정상가 대비 30% 할인했다고 보도했습니다. 강매라는 평가는 의원의 주장이며, 구매·사용 내역과 폐막 후 결산으로 실제 수익을 대조할 필요가 있습니다.", "en": "At the October 22 audit, lawmaker Seo Myeong-ok said about 300,000 of 394,000 tickets sold by the end of September had not been used. Yonhap reported that tickets bought by Jeonnam Development Corporation supported culturally underserved residents in 22 municipalities, at a 30% discount offered by organizers. Coercive sales were the lawmaker’s allegation; purchase and redemption records and post-event accounts remain necessary to establish actual revenue."}, "change": {"ko": "예정됐던 국감 개최·입장권 사용 내역 쟁점화", "en": "Scheduled audit held; ticket redemption scrutinized"}, "status": "new", "sources": [{"publisher": {"ko": "연합뉴스·파이낸셜뉴스", "en": "Yonhap / Financial News"}, "title": {"ko": "서명옥, 공공기관 섬박람회 입장권 구매 질의", "en": "Seo questions public-body ticket purchases"}, "url": "https://www.fnnews.com/news/202610221341434730", "publishedAt": "2026-10-22", "kind": "article"}]},
     {
       date: "2026-10-14",
       title: { ko: "6,732명 연명한 섬박람회 국민감사 청구서 제출", en: "Audit petition with 6,732 signatories submitted over island fair" },
@@ -1275,5 +1271,6 @@ export const yeosuIslandExpoTracker: PublicInterestWatchCase = {
       label: { ko: "박람회 조직위원회 — 행사 개요와 일정", en: "Organizing committee — Event overview and schedule" },
       url: "https://yeosu2026.or.kr/expo_schedule",
     },
+    {"label": {"ko": "연합뉴스·파이낸셜뉴스 — 서명옥, 공공기관 섬박람회 입장권 구매 질의 (2026-10-22)", "en": "Yonhap / Financial News — Seo questions public-body ticket purchases (2026-10-22)"}, "url": "https://www.fnnews.com/news/202610221341434730"},
   ],
 };
