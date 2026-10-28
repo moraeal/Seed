@@ -582,4 +582,4 @@ ${feedRoutes.map((route) => `    <item>
 </rss>
 `;
 await writeFile(path.join(dist, "rss.xml"), rss);
-await writeFile(path.join(dist, "robots.txt"), `# Main search crawlers, including ChatGPT Search, are permitted.\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: Googlebot\nAllow: /\n\nUser-agent: bingbot\nAllow: /\n\nUser-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/news-sitemap.xml\n`);
+await writeFile(path.join(dist, "robots.txt"), `# Main search crawlers, including ChatGPT Search, are permitted.\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: Googlebot\nAllow: /\n\nUser-agent: bingbot\nAllow: /\n\nUser-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/news-sitemap.xml\n#DaumWebMasterTool:77f2a0c9e06772a46ee491e84f6c85fa6b878de6c334a176259e3904179a0dcd:7v7Co2KibzUex4fH7zWmNA==\n`);
