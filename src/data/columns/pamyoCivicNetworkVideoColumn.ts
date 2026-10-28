@@ -22,16 +22,16 @@ export const pamyoCivicNetworkVideoColumn: SeedColumn = {
     "afterSection": -1
   },
   "heroImage": {
-    "src": "images/columns/pamyo-video-2026/political-strings-hero.svg",
-    "alt": "거대한 손에서 내려온 실이 국회 앞 확성기를 든 군중과 연결되는 어두운 상징 일러스트",
-    "caption": "시민운동의 목소리와 정치권력 사이의 연결, 그리고 독립적인 감시의 위기를 표현한 상징 이미지.",
+    "src": "images/columns/pamyo-video-2026/revolving-door-parliament-photo.webp",
+    "alt": "시민단체 집회 현장과 국회, 유리 회전문을 지나 정부 기관으로 향하는 인물들을 묘사한 사진풍 상징 이미지",
+    "caption": "시민운동에서 국회와 정부로 이어지는 인적 이동을 상징적으로 표현했다. 이미지의 인물은 실제 특정 인사를 묘사하지 않는다.",
     "credit": "AI 이미지",
     "sourceUrl": ""
   },
   "inlineImage": {
-    "src": "images/columns/pamyo-video-2026/three-doors-symbolic.svg",
-    "alt": "공직으로 통하는 세 개의 문과 서류 더미, 그 앞을 지나는 사람들을 표현한 상징 이미지",
-    "caption": "시민사회와 국가의 협력은 공개성과 견제 장치가 함께 마련돼야 지속될 수 있다.",
+    "src": "images/columns/civic-power-coordinate-targeting.webp",
+    "alt": "국회의사당을 배경으로 감시 대상 권력기관의 회의실과 전자적 연결을 보여주는 사진풍 이미지",
+    "caption": "시민단체와 권력기관 사이의 교류와 의사결정의 투명성을 질문하는 상징 이미지.",
     "credit": "AI 이미지",
     "sourceUrl": ""
   },
@@ -47,12 +47,13 @@ export const pamyoCivicNetworkVideoColumn: SeedColumn = {
       "contain": true
     },
     {
-      "afterSection": 5,
-      "src": "images/columns/pamyo-video-2026/three-doors-symbolic.svg",
-      "alt": "국회와 정부, 공공사업을 상징하는 세 개의 문으로 향하는 사람들의 실루엣",
-      "caption": "국회 진출, 정부 임용, 공공사업으로 이어지는 경로를 상징적으로 표현했다. 각 사례는 별도의 검증이 필요하다.",
+      "afterSection": 2,
+      "src": "images/columns/civic-power-coordinate-targeting.webp",
+      "alt": "권력기관의 회의실 안 의자와 전자적 연결망, 멀리 보이는 국회를 담은 상징 이미지",
+      "caption": "시민단체와 권력기관의 관계를 상징한 이미지다. 개별 인물의 부당한 유착을 증명하는 사진은 아니다.",
       "credit": "AI 이미지",
-      "sourceUrl": ""
+      "sourceUrl": "",
+      "contain": true
     }
   ],
   "sections": [
