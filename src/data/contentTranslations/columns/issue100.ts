@@ -10,8 +10,8 @@ export const issue100: ColumnTranslation = {
     "credit": "AI image"
   },
   "inlineImage": {
-    "alt": "Citizens deliberate at a circular forum between imposing institutional buildings",
-    "caption": "Meaningful deliberation depends on who controls the agenda, evidence and eventual decision.",
+    "alt": "Photo-realistic allegory of civic activists in front of Korea's National Assembly, connected by red strings to a shadowy figure representing state power",
+    "caption": "An allegorical AI-generated image asking how civic independence can be preserved when public institutions organise participation.",
     "credit": "AI image"
   },
   "additionalImages": [
@@ -22,8 +22,8 @@ export const issue100: ColumnTranslation = {
       "credit": "SEED VOICE infographic"
     },
     {
-      "alt": "Conceptual civic forum with participants discussing matters of public interest under governmental influence",
-      "caption": "A public forum should preserve opportunities for independent criticism beyond official membership.",
+      "alt": "Photo-realistic depiction of diverse civic activists connected by red strings to a towering figure above the National Assembly",
+      "caption": "Even state-supported participation must protect the freedom of independent civic criticism. This is a symbolic AI image, not an actual event.",
       "credit": "AI image"
     }
   ],
