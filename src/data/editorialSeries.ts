@@ -73,6 +73,7 @@ export type EditorialSeries = {
 
 const markers = ["①", "②", "③", "④", "⑤", "⑥", "⑦", "⑧", "⑨", "⑩", "⑪", "⑫"];
 const chapterOrder = (item: SeedColumn) => {
+  if (item.series?.chapter && Number.isInteger(item.series.chapter) && item.series.chapter > 0) return item.series.chapter;
   const marker = markers.findIndex((symbol) => item.subtitle.includes(symbol));
   if (marker >= 0) return marker + 1;
   const match = item.slug.match(/-(?:0?([1-9])|1([0-2]))(?:-|$)/);
@@ -82,7 +83,7 @@ const chapterOrder = (item: SeedColumn) => {
 export function getEditorialSeries(language: Language): EditorialSeries[] {
   return seriesSpecs.flatMap((spec) => {
     const matched = columns
-      .filter((column) => spec.matches(column))
+      .filter((column) => column.series ? column.series.slug === spec.slug : spec.matches(column))
       .sort((a, b) => {
         const aIndex = chapterOrder(a);
         const bIndex = chapterOrder(b);
