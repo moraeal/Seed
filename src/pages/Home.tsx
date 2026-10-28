@@ -558,10 +558,12 @@ export default function Home() {
                   <SafeImage src={item.latest.image.src} alt={item.latest.image.alt} loading="lazy" className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" />
                 </div>
                 <div className="p-4">
-                  <p className="text-[10px] font-black tracking-[.12em] text-green-deep">{ko ? item.chapters.length + "편 공개" : item.chapters.length + " chapters published"}</p>
-                  <h3 className="editorial-title mt-1.5 break-keep text-[1.06rem] font-extrabold leading-snug text-navy transition-colors group-hover:text-green-mid sm:text-lg">{item.title}</h3>
+                  <div className="flex items-start gap-2">
+                    <h3 className="editorial-title min-w-0 break-keep text-[1.06rem] font-extrabold leading-snug text-navy transition-colors group-hover:text-green-mid sm:text-lg">{item.title}</h3>
+                    <span aria-label={ko ? `${item.chapters.length}편 연재` : `${item.chapters.length} published chapters`} className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-green-deep text-xs font-extrabold text-white">{item.chapters.length}</span>
+                  </div>
+                  <p className="mt-2 line-clamp-2 break-keep text-[13px] font-bold leading-5 text-navy sm:text-sm">{item.latest.title}</p>
                   <p className="mt-2 line-clamp-2 text-xs leading-5 text-charcoal/60 sm:text-sm">{item.description}</p>
-                  <p className="mt-3 border-t border-green-deep/10 pt-2 text-[11px] font-semibold text-charcoal/60">{ko ? "최근 회차 · " : "Latest · "}<span className="text-navy">{item.latest.title}</span></p>
                 </div>
               </Link>
             ))}
