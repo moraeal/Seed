@@ -1,4 +1,5 @@
 import { civicSections } from "./data/civicSections";
+import { getEditorialSeries } from "./data/editorialSeries";
 import { noMoreTaxLanding } from "./data/noMoreTaxLanding";
 import { getAllBriefingsNewestFirst } from "./data/allBriefings";
 import { columns, getColumnsNewestFirst, getHotIssueColumnsNewestFirst, getPublicInterestColumnsNewestFirst, isHotIssueColumn, publicInterestColumnSlugs } from "./data/columns";
@@ -56,7 +57,19 @@ const allSeedLanguageArticlesKo = [...seedLanguageEnvironmentArticlesKo, ...seed
 const newest = (dates: string[]) => [...dates].sort()[dates.length - 1];
 const latestDate = newest([...newsArticles.map((item) => item.date), ...publicInterestWatchCases.map((item) => item.updatedAt), ...columns.map((item) => item.date), ...getAllBriefingsNewestFirst().map((item) => item.date), ...allSeedLanguageArticlesKo.map((item) => item.date), ...legislativeCommentaries.map((item) => item.date)]);
 
+const editorialSeriesRoutes: SeoRoute[] = getEditorialSeries("ko").map((series) => ({
+  path: "/series/" + series.slug,
+  title: series.title + " | 씨앗의 소리",
+  description: series.description,
+  type: "website",
+  lastModified: series.latest.date,
+  image: assetUrl(series.latest.image.src.startsWith("http") ? "images/social/site/home.jpg" : series.latest.image.src),
+  imageAlt: series.latest.image.alt,
+}));
+
 const staticRoutes: SeoRoute[] = [
+  { path: "/series", title: "기획연재 | 씨앗의 소리", description: "씨앗의 소리의 기획연재를 첫 편부터 차례대로 읽어보세요.", type: "website", lastModified: latestDate },
+  ...editorialSeriesRoutes,
   { path: "/tax-watch-cases", title: "세금감시운동 | 씨앗의 소리", description: "세금감시운동은 /tax-watch-movement 주소에서 확인할 수 있습니다.", type: "website", lastModified: "2026-10-19", noindex: true },
   { path: "/civic-life", title: "시민생활 | 씨앗의 소리", description: "일상, 이웃, 일자리, 주거와 건강 등 시민의 생활에 닿는 기사를 모아 읽어보세요.", type: "website", lastModified: "2026-10-03" },
   ...civicSections.map((section): SeoRoute => section.key === "campaign" ? {
