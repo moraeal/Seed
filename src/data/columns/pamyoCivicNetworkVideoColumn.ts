@@ -22,17 +22,17 @@ export const pamyoCivicNetworkVideoColumn: SeedColumn = {
     "afterSection": -1
   },
   "heroImage": {
-    "src": "images/columns/civic-power-representation-hall.webp",
-    "alt": "시민의 대표성과 권력의 관계를 표현한 상징 이미지",
-    "caption": "시민단체 활동이 정치권 진출의 경로가 될 때 감시의 독립성은 어떻게 보장할 것인가.",
-    "credit": "씨앗의 소리 상징 이미지",
+    "src": "images/columns/pamyo-video-2026/political-strings-hero.svg",
+    "alt": "거대한 손에서 내려온 실이 국회 앞 확성기를 든 군중과 연결되는 어두운 상징 일러스트",
+    "caption": "시민운동의 목소리와 정치권력 사이의 연결, 그리고 독립적인 감시의 위기를 표현한 상징 이미지.",
+    "credit": "AI 이미지",
     "sourceUrl": ""
   },
   "inlineImage": {
-    "src": "images/columns/civic-society-stateization-roots.webp",
-    "alt": "시민사회가 국가 제도와 연결되는 모습을 나타낸 상징 이미지",
+    "src": "images/columns/pamyo-video-2026/three-doors-symbolic.svg",
+    "alt": "공직으로 통하는 세 개의 문과 서류 더미, 그 앞을 지나는 사람들을 표현한 상징 이미지",
     "caption": "시민사회와 국가의 협력은 공개성과 견제 장치가 함께 마련돼야 지속될 수 있다.",
-    "credit": "씨앗의 소리 상징 이미지",
+    "credit": "AI 이미지",
     "sourceUrl": ""
   },
   "displayInlineImage": false,
@@ -48,10 +48,10 @@ export const pamyoCivicNetworkVideoColumn: SeedColumn = {
     },
     {
       "afterSection": 5,
-      "src": "images/columns/civic-society-stateization-roots.webp",
-      "alt": "시민사회와 국가의 관계를 보여주는 상징 이미지",
-      "caption": "협력 관계에서도 시민사회는 정부를 비판할 자유와 재정·인사의 독립성을 지켜야 한다.",
-      "credit": "씨앗의 소리 상징 이미지",
+      "src": "images/columns/pamyo-video-2026/three-doors-symbolic.svg",
+      "alt": "국회와 정부, 공공사업을 상징하는 세 개의 문으로 향하는 사람들의 실루엣",
+      "caption": "국회 진출, 정부 임용, 공공사업으로 이어지는 경로를 상징적으로 표현했다. 각 사례는 별도의 검증이 필요하다.",
+      "credit": "AI 이미지",
       "sourceUrl": ""
     }
   ],

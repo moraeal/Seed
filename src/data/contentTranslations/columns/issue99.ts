@@ -10,14 +10,14 @@ export const issue99: ColumnTranslation = {
     "thumbnailAlt": "Conceptual image about civic representation and political power"
   },
   "heroImage": {
-    "alt": "Conceptual illustration about civic representation and political influence",
-    "caption": "How can civic organizations retain oversight independence when their leaders enter government?",
-    "credit": "SEED VOICE conceptual illustration"
+    "alt": "Oversized hand directing strings above the National Assembly and citizens holding a megaphone, conceptual civic oversight artwork",
+    "caption": "An editorial metaphor for the relationship between political influence and independent civic oversight.",
+    "credit": "AI image"
   },
   "inlineImage": {
-    "alt": "Conceptual image about civil society and public institutions",
+    "alt": "Three illuminated entrances to public institutions, a red carpet, anonymous figures and files",
     "caption": "Public cooperation requires transparent rules and independent oversight.",
-    "credit": "SEED VOICE conceptual illustration"
+    "credit": "AI image"
   },
   "additionalImages": [
     {
@@ -27,9 +27,9 @@ export const issue99: ColumnTranslation = {
       "credit": "SEED VOICE diagram"
     },
     {
-      "alt": "Conceptual illustration of civil society and the state",
-      "caption": "Cooperation must not eliminate the right to scrutinize those in power.",
-      "credit": "SEED VOICE conceptual illustration"
+      "alt": "A corridor of three institutional doors, people and stacks of documents",
+      "caption": "An editorial metaphor for the routes from civic activism to public office, with individual cases requiring independent verification.",
+      "credit": "AI image"
     }
   ],
   "sections": [
