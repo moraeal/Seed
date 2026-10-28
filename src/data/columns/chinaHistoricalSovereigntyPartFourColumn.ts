@@ -24,7 +24,7 @@ export const chinaHistoricalSovereigntyPartFourColumn: SeedColumn = {
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Samjeondo_Monument3.jpg"
   },
   "inlineImage": {
-    "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gwanggaeto_Stele_1.jpg",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Gwanggaeto_Stele_1.jpg/960px-Gwanggaeto_Stele_1.jpg",
     "alt": "중국 지린성 지안에 위치한 고구려 광개토대왕릉비 실물 사진",
     "caption": "고구려의 역사와 주권을 논할 때 중요한 1차 사료인 광개토대왕릉비. 오늘의 국경만으로 고대 국가의 정체성을 재단할 수 없다.",
     "credit": "EditQ / Wikimedia Commons · CC BY-SA 4.0 (2023년 사진)",
@@ -43,7 +43,7 @@ export const chinaHistoricalSovereigntyPartFourColumn: SeedColumn = {
     },
     {
       "afterSection": 6,
-      "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gwanggaeto_Stele_1.jpg",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Gwanggaeto_Stele_1.jpg/960px-Gwanggaeto_Stele_1.jpg",
       "alt": "광개토대왕릉비 실물 사진. 고구려 역사 연구의 주요 사료",
       "caption": "고구려의 역사는 사료로 판단해야 한다. 광개토대왕릉비는 그 역사적 실체를 보여주는 유산이다.",
       "credit": "EditQ / Wikimedia Commons · CC BY-SA 4.0 (2023년 사진)",
