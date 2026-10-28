@@ -21,6 +21,8 @@ const expectedArticleHeadings = {
   "opcon-transition-citizens-first-artillery-2026": "전작권 환수, 대통령의 임기보다 국민의 생명이 먼저다",
   "pamyo-civic-groups-politics-revolving-door-2026": "시민단체에서 국회와 정부로 — 영상 ‘파묘’가 추적한 권력의 세 문",
   "who-represents-civil-society-citizen-freedom-part1-2026": "시민사회를 지원한다는 국가, 시민의 자유는 누가 지키는가",
+  "atr-taxpayer-movement-06-legislative-vote-accountability": "세금을 올린 정치인, 시민은 그 이름을 기억한다",
+  "olympic-park-ballot-inspection-civic-briefing": "올공 147일, 투표함은 열렸지만 국민은 여전히 밖에 있었다",
   "tolerance-social-cohesion-common-rules-2026": "관용은 무조건 받아들이는 미덕이 아니라 공동의 질서를 지키는 책임이라는 말이다",
 };
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
@@ -37,7 +39,7 @@ try {
     const page=await browser.newPage({viewport,deviceScaleFactor:1});
     const failures=[];
     page.on("pageerror",e=>failures.push("JS: "+e.message));
-    const path = isHome ? "/" : (isCivicLanguage ? "/seed-language/" : slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : slug === "youth-rent-tax-credit-20-percent-bill-2222071" ? "/briefings/" : "/columns/") + slug + "/";
+    const path = isHome ? "/" : (isCivicLanguage ? "/seed-language/" : slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : (slug === "youth-rent-tax-credit-20-percent-bill-2222071" || slug === "olympic-park-ballot-inspection-civic-briefing") ? "/briefings/" : "/columns/") + slug + "/";
     await page.goto(base+path,{waitUntil:"networkidle",timeout:45000});
     await page.locator("body").waitFor();
     await page.evaluate(async()=>{for(const img of document.images){img.loading="eager";}await Promise.all(Array.from(document.images).map(img=>img.decode().catch(()=>{})));});
