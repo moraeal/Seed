@@ -122,6 +122,8 @@ jobs:
           node scripts/preflight-column.mjs china-business-freedom-industrial-security-limited-state-2026
           node scripts/verify-article-assets.mjs moon-chung-in-dangerous-alliance-security-view-2026
           node scripts/preflight-column.mjs moon-chung-in-dangerous-alliance-security-view-2026
+          node scripts/verify-article-assets.mjs opcon-transition-citizens-first-artillery-2026
+          node scripts/preflight-column.mjs opcon-transition-citizens-first-artillery-2026
       - name: Build complete site (bounded)
         run: timeout --signal=TERM --kill-after=30s 18m pnpm run build
         env:
@@ -151,6 +153,7 @@ jobs:
           node scripts/check-column-browser.mjs youth-rent-tax-credit-20-percent-bill-2222071
           node scripts/check-column-browser.mjs china-business-freedom-industrial-security-limited-state-2026
           node scripts/check-column-browser.mjs moon-chung-in-dangerous-alliance-security-view-2026
+          node scripts/check-column-browser.mjs opcon-transition-citizens-first-artillery-2026
           node scripts/check-column-browser.mjs home
       - name: Block stale branch until changes are tested with latest main
         if: github.event_name == 'push'
