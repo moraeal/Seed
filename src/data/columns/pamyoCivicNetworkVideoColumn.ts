@@ -29,9 +29,9 @@ export const pamyoCivicNetworkVideoColumn: SeedColumn = {
     "sourceUrl": ""
   },
   "inlineImage": {
-    "src": "images/columns/pamyo-video-2026/political-strings-hero.svg",
-    "alt": "시민운동의 목소리와 정치권력을 연결하는 실을 보여주는 상징 이미지",
-    "caption": "시민사회와 국가의 협력은 공개성과 견제 장치가 함께 마련돼야 지속될 수 있다.",
+    "src": "images/columns/civic-power-coordinate-targeting.webp",
+    "alt": "국회의사당을 배경으로 감시 대상 권력기관의 회의실과 전자적 연결을 보여주는 사진풍 이미지",
+    "caption": "시민단체와 권력기관 사이의 교류와 의사결정의 투명성을 질문하는 상징 이미지.",
     "credit": "AI 이미지",
     "sourceUrl": ""
   },
@@ -47,12 +47,13 @@ export const pamyoCivicNetworkVideoColumn: SeedColumn = {
       "contain": true
     },
     {
-      "afterSection": 5,
-      "src": "images/columns/pamyo-video-2026/political-strings-hero.svg",
-      "alt": "시민들의 확성기와 정치권력을 연결하는 실을 표현한 상징 이미지",
-      "caption": "공직 진출과 정책 협력 과정에서 독립적인 권력 감시가 지속되는지 질문한다. 각 사례는 별도의 검증이 필요하다.",
+      "afterSection": 2,
+      "src": "images/columns/civic-power-coordinate-targeting.webp",
+      "alt": "권력기관의 회의실 안 의자와 전자적 연결망, 멀리 보이는 국회를 담은 상징 이미지",
+      "caption": "시민단체와 권력기관의 관계를 상징한 이미지다. 개별 인물의 부당한 유착을 증명하는 사진은 아니다.",
       "credit": "AI 이미지",
-      "sourceUrl": ""
+      "sourceUrl": "",
+      "contain": true
     }
   ],
   "sections": [
