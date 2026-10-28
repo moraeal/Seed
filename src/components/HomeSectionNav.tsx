@@ -9,6 +9,7 @@ type SectionItem = {
 
 const sectionItems: SectionItem[] = [
   { kicker: "TODAY'S SEED", labelKo: "오늘의 씨앗", labelEn: "Today's Seed" },
+  { kicker: "SPECIAL SERIES", labelKo: "기획연재", labelEn: "Series" },
   { kicker: "HOT ISSUES", labelKo: "핫이슈", labelEn: "Hot Issues" },
   { kicker: "NEWS TRACKING", labelKo: "뉴스트래킹", labelEn: "News Tracking" },
   { kicker: "CIVIC WATCH", labelKo: "시민감시", labelEn: "Civic Watch" },
