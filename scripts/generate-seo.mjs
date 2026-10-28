@@ -118,7 +118,7 @@ function articleBody(route) {
   // Pre-render series navigation for readers without JavaScript and crawlers.
   // Only chapters already registered in the public columns registry appear here.
   if (route.path === "/series") return `<section aria-label="기획연재 전체 목록"><h2>연재별로 읽기</h2><ul>${publishedSeries.map((series) => `<li><a href="${canonicalUrl("/series/" + series.slug)}"><strong>${escapeHtml(series.title)}</strong></a><p>${escapeHtml(series.description)}</p><p>공개된 기사 ${series.chapters.length}편</p></li>`).join("")}</ul></section>`;
-  const seriesMatch = route.path.match(/^\\/series\\/([^/]+)$/);
+  const seriesMatch = route.path.match(/^\/series\/([^/]+)$/);
   if (seriesMatch) {
     const series = publishedSeries.find((item) => item.slug === seriesMatch[1]);
     if (series) return `<section aria-label="${escapeHtml(series.title)} 연재 목차"><h2>연재 목차</h2><ol>${series.chapters.map((chapter) => `<li><a href="${canonicalUrl(chapter.path)}"><strong>${escapeHtml(chapter.title)}</strong></a><p>${escapeHtml(chapter.summary)}</p><time datetime="${escapeHtml(chapter.date)}">${escapeHtml(chapter.date)}</time></li>`).join("")}</ol><p><a href="${canonicalUrl("/series")}">기획연재 전체보기</a></p></section>`;
