@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "column" && slug === "pamyo-civic-groups-politics-revolving-door-2026") return true;
   if (kind === "news" && slug === "crypto-tax-fourth-deferral-2026") return true;
   if (kind === "column" && slug === "politicians-who-take-public-debt-lightly-2026") return true;
   if (kind === "column" && slug === "atr-taxpayer-movement-05-sustainable-budgets") return true;
@@ -525,6 +526,21 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "pamyo-civic-groups-politics-revolving-door-2026") return language === "ko" ? {
+    href: "/columns/pspd-prosecution-reform-state-power-watch-2026",
+    title: "검찰을 해체한 뒤, 국가권력은 누가 감시하나",
+    relationship: "이어 읽는 공익감시",
+    reason: "시민단체와 정치권의 인적 연결을 확인했다면, 실제 정책과 국가권력의 행사에 시민사회가 어떤 감시 기준을 적용해야 하는지 이어서 읽습니다.",
+    listHref: "/monitoring/public-interest",
+    listLabel: "공익감시 전체 보기",
+  } : {
+    href: "/columns/pspd-prosecution-reform-state-power-watch-2026",
+    title: "Who Monitors State Power After Prosecution Reform?",
+    relationship: "RELATED PUBLIC-INTEREST WATCH",
+    reason: "Continue from civic-to-government careers to the standards for independent monitoring of state investigative power.",
+    listHref: "/monitoring/public-interest",
+    listLabel: "All Public-Interest Watch stories",
+  };
   if (kind === "column" && slug === "opcon-transition-citizens-first-artillery-2026") return language === "ko" ? { href: "/columns/security-slogans-alliance-2026", title: "한국의 안보가 무너지고 있다 — 누구를 위한 자주인가", relationship: "관련 안보 논평", reason: "전작권 전환의 군사적 조건에 이어, 정찰위성 운용·지뢰 사고·전방 경계의 문제를 살핀 앞선 논평을 읽습니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" } : { href: "/columns/security-slogans-alliance-2026", title: "South Korea’s Security Is Eroding: Self-Reliance for Whom?", relationship: "RELATED SECURITY EDITORIAL", reason: "Continue to an earlier examination of surveillance satellites, mine casualties, and frontline preparedness.", listHref: "/columns", listLabel: "All columns" };
   if (kind === "news" && slug === "crypto-tax-fourth-deferral-2026") return language === "ko" ? {
     href: "/monitoring/tax/virtual-asset-tax-2027-readiness",
