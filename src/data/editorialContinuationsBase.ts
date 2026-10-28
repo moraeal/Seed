@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:china-history-sovereignty-neighbor-part4-2026": {
+    ko: {
+      href: "/columns/china-business-freedom-industrial-security-limited-state-2026",
+      title: "기업의 자유는 어디까지인가",
+      relationship: "역사에서 산업안보로 이어 읽기",
+      reason: "역사 속 강대국과 국가의 선택권을 살펴봤다면, 오늘날 중국과의 기술 협력에서 기업의 자유와 핵심기술을 지키는 기준을 이어서 읽습니다.",
+      listHref: "/series/china",
+      listLabel: "우리에게 중국은 무엇인가 · 전체 연재",
+    },
+    en: {
+      href: "/columns/china-business-freedom-industrial-security-limited-state-2026",
+      title: "Where Are the Limits of Corporate Freedom?",
+      relationship: "FROM HISTORY TO INDUSTRIAL SECURITY",
+      reason: "After tracing how Korea's choices were constrained by great powers, examine what protecting technology and corporate independence means in present-day China policy.",
+      listHref: "/series/china",
+      listLabel: "What Does China Mean to Korea? — All chapters",
+    },
+  },
   "briefing:olympic-park-ballot-inspection-civic-briefing": {
     ko: { href: "/monitoring/olympic-park-election-protest-tracker", title: "올공, 투표지는 모자랐고 불신은 아직도 남아있다", relationship: "사건의 경과", reason: "투표용지 부족부터 특검 수사까지 날짜별 기록과 원문 보도를 함께 살펴봅니다.", listHref: "/briefings", listLabel: "브리핑 전체 보기" },
     en: { href: "/monitoring/olympic-park-election-protest-tracker", title: "Olympic Park: ballots ran short, and distrust still remains", relationship: "FOLLOW THE TIMELINE", reason: "Explore the dated record and original reporting from the ballot shortage to the special investigation.", listHref: "/briefings", listLabel: "All briefings" },
