@@ -13,14 +13,15 @@ export const whoRepresentsCivilSocietyPart1Column: SeedColumn = {
   "readMinutes": 10,
   "summary": "시민참여기본법안(2215823)이 제시하는 참여권 보장과 국가시민참여위원회 설치를 살펴보고, 시민단체 밖 시민의 자유와 인사·예산·의제 결정의 독립성을 검증한다.",
   "heroImage": {
-    "src": "images/columns/civic-representation-series-2026/hero-photo.jpg",
+    "src": "images/columns/civic-representation-series-2026/hero-original-detail.svg",
+    "socialSrc": "images/columns/civic-representation-series-2026/hero-photo.jpg",
     "alt": "거대한 국가 권력의 손이 붉은 실로 시민들의 행동을 좌우하는 장면을 표현한 상징 이미지",
     "caption": "시민사회를 돕는 제도와 시민사회를 관리하는 권력의 경계를 묻는다.",
     "credit": "AI 이미지",
     "sourceUrl": ""
   },
   "inlineImage": {
-    "src": "images/columns/civic-representation-series-2026/civic-state-alliance-diverse-faces.jpg",
+    "src": "images/columns/civic-representation-series-2026/body-original-detail.svg",
     "alt": "국회의사당 앞에서 서로 다른 얼굴의 남녀 정치인과 시민사회 관계자들이 한 테이블에서 손을 모으는 모습을 묘사한 실사형 상징 이미지",
     "caption": "정부와 시민사회 조직이 하나의 정치적 연합처럼 결합하는 모습을 비유적으로 표현했다. 실제 회의나 인물을 촬영한 사진은 아니다.",
     "credit": "AI 이미지",
@@ -39,7 +40,7 @@ export const whoRepresentsCivilSocietyPart1Column: SeedColumn = {
     },
     {
       "afterSection": 5,
-      "src": "images/columns/civic-representation-series-2026/civic-state-alliance-diverse-faces.jpg",
+      "src": "images/columns/civic-representation-series-2026/body-original-detail.svg",
       "alt": "국회의사당을 배경으로 남녀 정치인과 시민단체 관계자들이 한 테이블에서 손을 포개고 연대하는 모습을 표현한 사진풍 이미지",
       "caption": "국가와 시민단체가 공동의 권력 구조로 결합할 경우 감시의 독립성이 어떻게 달라질 수 있는지 묻는 AI 상징 이미지. 실제 회의 현장은 아니다.",
       "credit": "AI 이미지",

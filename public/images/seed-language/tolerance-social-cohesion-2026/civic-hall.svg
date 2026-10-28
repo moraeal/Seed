@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="다양한 시민이 공청회에서 토론하는 모습"><defs>
+<linearGradient id="sky" x2="0.7" y2="1"><stop stop-color="#071b33"/><stop offset=".49" stop-color="#426c81"/><stop offset="1" stop-color="#ddae79"/></linearGradient>
+<linearGradient id="floor" x2="0" y2="1"><stop stop-color="#243a49"/><stop offset="1" stop-color="#0b1e2b"/></linearGradient>
+<linearGradient id="glass" x2="0" y2="1"><stop stop-color="#f3dcb2" stop-opacity=".75"/><stop offset="1" stop-color="#d9e4eb" stop-opacity=".18"/></linearGradient>
+<filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+</defs>
+<rect width="1600" height="900" fill="#f1e9db"/><rect y="0" width="1600" height="660" fill="#b9c7c8"/>
+<rect x="85" y="90" width="410" height="460" rx="9" fill="#3f6472"/><rect x="108" y="115" width="363" height="409" fill="url(#sky)"/>
+<rect x="1110" y="90" width="403" height="462" rx="9" fill="#3f6472"/><rect x="1133" y="115" width="358" height="411" fill="url(#sky)"/>
+<path d="M294 115v411M1312 115v411" stroke="#d7ddd8" stroke-width="19"/>
+<rect x="542" y="65" width="520" height="500" fill="#e9dfcb"/>
+<path d="M577 95h451M577 157h451M577 219h451M577 281h451" stroke="#d6c7ad" stroke-width="9"/>
+<path d="M685 355v128h232V355z" fill="#748b87"/><path d="M734 339h136l26 16H709Z" fill="#f9f5eb"/>
+<path d="M742 311l65 -54 65 54Z" fill="#18364a"/>
+<rect y="580" width="1600" height="320" fill="#283e47"/>
+<ellipse cx="800" cy="690" rx="680" ry="175" fill="#b48e64"/><ellipse cx="800" cy="660" rx="655" ry="154" fill="#d8b992"/>
+<g opacity=".97"><g transform="translate(245,450) scale(1.08)"><ellipse cx="0" cy="-12" rx="20" ry="24" fill="#d9a582"/><path d="M-28 18Q-27 -2 0 -1Q28 -2 28 18L35 112H-36Z" fill="#7b637d"/><path d="M-17 108v43m35-43v43" stroke="#152638" stroke-width="13" stroke-linecap="round"/><path d="M-25 27L-48 91M25 27L47 94" stroke="#7b637d" stroke-width="15" stroke-linecap="round"/></g><g transform="translate(420,400) scale(1.25)"><ellipse cx="0" cy="-12" rx="20" ry="24" fill="#a47253"/><path d="M-28 18Q-27 -2 0 -1Q28 -2 28 18L35 112H-36Z" fill="#2f5268"/><path d="M-17 108v43m35-43v43" stroke="#152638" stroke-width="13" stroke-linecap="round"/><path d="M-25 27L-48 91M25 27L47 94" stroke="#2f5268" stroke-width="15" stroke-linecap="round"/></g><g transform="translate(592,390) scale(1.18)"><ellipse cx="0" cy="-12" rx="20" ry="24" fill="#ecc9b1"/><path d="M-28 18Q-27 -2 0 -1Q28 -2 28 18L35 112H-36Z" fill="#5d8279"/><path d="M-17 108v43m35-43v43" stroke="#152638" stroke-width="13" stroke-linecap="round"/><path d="M-25 27L-48 91M25 27L47 94" stroke="#5d8279" stroke-width="15" stroke-linecap="round"/></g><g transform="translate(832,394) scale(1.21)"><ellipse cx="0" cy="-12" rx="20" ry="24" fill="#8e634b"/><path d="M-28 18Q-27 -2 0 -1Q28 -2 28 18L35 112H-36Z" fill="#445e78"/><path d="M-17 108v43m35-43v43" stroke="#152638" stroke-width="13" stroke-linecap="round"/><path d="M-25 27L-48 91M25 27L47 94" stroke="#445e78" stroke-width="15" stroke-linecap="round"/></g><g transform="translate(1061,400) scale(1.19)"><ellipse cx="0" cy="-12" rx="20" ry="24" fill="#e5b48b"/><path d="M-28 18Q-27 -2 0 -1Q28 -2 28 18L35 112H-36Z" fill="#a37f62"/><path d="M-17 108v43m35-43v43" stroke="#152638" stroke-width="13" stroke-linecap="round"/><path d="M-25 27L-48 91M25 27L47 94" stroke="#a37f62" stroke-width="15" stroke-linecap="round"/></g><g transform="translate(1262,450) scale(1.07)"><ellipse cx="0" cy="-12" rx="20" ry="24" fill="#aa7857"/><path d="M-28 18Q-27 -2 0 -1Q28 -2 28 18L35 112H-36Z" fill="#6c8792"/><path d="M-17 108v43m35-43v43" stroke="#152638" stroke-width="13" stroke-linecap="round"/><path d="M-25 27L-48 91M25 27L47 94" stroke="#6c8792" stroke-width="15" stroke-linecap="round"/></g></g>
+<ellipse cx="800" cy="780" rx="525" ry="107" fill="#ad8562"/><ellipse cx="800" cy="746" rx="506" ry="85" fill="#e7cfac"/>
+<g transform="rotate(-7 665 715)"><rect x="577" y="668" width="175" height="105" rx="4" fill="#fffdf6"/><path d="M596 688h120m-120 18h100m-100 18h112" stroke="#81989a" stroke-width="5"/></g>
+<g transform="rotate(13 993 730)"><rect x="899" y="668" width="191" height="103" rx="4" fill="#fffdf6"/><path d="M920 688h135m-135 18h115m-115 18h126" stroke="#8b9a9b" stroke-width="5"/></g>
+<rect x="764" y="677" width="81" height="86" fill="#dfedf0" opacity=".8" stroke="#637b85" stroke-width="7"/><path d="M783 706l30 9-23 9Z" fill="#b79978"/>
+</svg>

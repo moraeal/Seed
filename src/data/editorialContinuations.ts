@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "seed-language" && slug === "tolerance-social-cohesion-common-rules-2026") return true;
   if (kind === "column" && slug === "pamyo-civic-groups-politics-revolving-door-2026") return true;
   if (kind === "news" && slug === "crypto-tax-fourth-deferral-2026") return true;
   if (kind === "column" && slug === "politicians-who-take-public-debt-lightly-2026") return true;
@@ -526,6 +527,21 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "seed-language" && slug === "tolerance-social-cohesion-common-rules-2026") return language === "ko" ? {
+    href: "/seed-language/citizenship-beyond-democratic-label-2026",
+    title: "시민이면 충분하다 — 왜 굳이 시민 앞에 ‘민주’를 붙이는가",
+    relationship: "관용과 자유로운 시민",
+    reason: "관용의 정치적 한계를 살펴봤다면, 국가가 바람직한 시민의 사고방식을 결정할 수 있는지도 이어서 질문합니다.",
+    listHref: "/seed-language",
+    listLabel: "시민언어 전체 보기",
+  } : {
+    href: "/seed-language/citizenship-beyond-democratic-label-2026",
+    title: "Why Add ‘Democratic’ When Citizen Is Enough?",
+    relationship: "TOLERANCE AND CIVIC FREEDOM",
+    reason: "Continue with whether the state may define the ideal citizen's political convictions.",
+    listHref: "/seed-language",
+    listLabel: "All Glossary articles",
+  };
   if (kind === "column" && slug === "pamyo-civic-groups-politics-revolving-door-2026") return language === "ko" ? {
     href: "/columns/pspd-prosecution-reform-state-power-watch-2026",
     title: "검찰을 해체한 뒤, 국가권력은 누가 감시하나",
