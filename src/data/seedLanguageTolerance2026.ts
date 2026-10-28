@@ -1,6 +1,6 @@
 import type { SeedLanguageArticle } from "./seedLanguageBase";
 
-/** Approved SEED VOICE 시민언어 article, 2026-10-28; no other manuscripts modified. */
+/** Approved SEED VOICE 시민언어 article, 2026-10-28; article text unchanged. */
 export const toleranceArticleKo: SeedLanguageArticle = {
   "slug": "tolerance-social-cohesion-common-rules-2026",
   "term": "관용",
@@ -18,15 +18,15 @@ export const toleranceArticleKo: SeedLanguageArticle = {
   ],
   "heroImage": {
     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Manifestation_contre_la_loi_immigration%2C_Lyon_%2821_janvier_2024%29_01.jpg/1280px-Manifestation_contre_la_loi_immigration%2C_Lyon_%2821_janvier_2024%29_01.jpg",
-    "alt": "파리 공화국 건축물과 다양한 시민들을 잇는 다리, 그 아래 공동체를 분리하는 균열을 표현한 상징 그래픽",
-    "caption": "관용이 확대되는 사회에서 무엇을 함께 지킬 것인가. 차이를 인정하는 자유와 모든 시민에게 적용되는 법질서가 함께 필요하다.",
-    "credit": "씨앗의 소리 제작 상징 그래픽"
+    "alt": "2024년 1월 21일 리옹 벨쿠르 광장의 이민법 반대 시위를 촬영한 실제 사진",
+    "caption": "2024년 1월 21일 프랑스 리옹 벨쿠르 광장의 이민법 반대 시위. 이민정책이 정치적 쟁점으로 확대된 실제 사례다.",
+    "credit": "Pemberlaid · Wikimedia Commons · CC BY-SA 4.0"
   },
   "inlineImage": {
     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Hemicycle_of_the_French_National_Assembly_at_the_Palais_Bourbon_in_Paris%2C_July_2026_01.jpg/1280px-Hemicycle_of_the_French_National_Assembly_at_the_Palais_Bourbon_in_Paris%2C_July_2026_01.jpg",
-    "alt": "프랑스 시민 공청회에서 서로 다른 배경의 시민들이 공통의 법률과 교육, 주거정책 자료를 놓고 토론하는 일러스트",
-    "caption": "사회통합의 문제는 특정 집단을 탓하는 구호로 풀 수 없다. 시민의 자유로운 토론과 국가의 실질적인 정책 역량이 필요하다.",
-    "credit": "씨앗의 소리 제작 그래픽"
+    "alt": "2026년 7월 프랑스 국민의회 팔레 부르봉 본회의장을 촬영한 실제 사진",
+    "caption": "2026년 7월 프랑스 국민의회 본회의장. 특정 이민법 심의가 아니라 공화국의 입법 공간을 촬영한 기록사진이다.",
+    "credit": "Dev Jadiya · Wikimedia Commons · CC BY-SA 4.0"
   },
   "inlineImageAfterSection": 4,
   "additionalImages": [
@@ -161,6 +161,14 @@ export const toleranceArticleKo: SeedLanguageArticle = {
     {
       "label": "Korean Ministry of Justice, Statistics on Foreign Residents",
       "url": "https://mojhome.moj.go.kr/moj/2412/subview.do"
+    },
+    {
+      "label": "Photo, Lyon immigration-law protest (21 January 2024), Pemberlaid, CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Manifestation_contre_la_loi_immigration,_Lyon_(21_janvier_2024)_01.jpg"
+    },
+    {
+      "label": "Photo, French National Assembly chamber (23 July 2026), Dev Jadiya, CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Hemicycle_of_the_French_National_Assembly_at_the_Palais_Bourbon_in_Paris,_July_2026_01.jpg"
     }
   ]
 };
@@ -182,15 +190,15 @@ export const toleranceArticleEn: SeedLanguageArticle = {
   ],
   "heroImage": {
     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Manifestation_contre_la_loi_immigration%2C_Lyon_%2821_janvier_2024%29_01.jpg/1280px-Manifestation_contre_la_loi_immigration%2C_Lyon_%2821_janvier_2024%29_01.jpg",
-    "alt": "Symbolic illustration of a bridge between French republican institutions and diverse citizens",
-    "caption": "The freedom to differ needs a common constitutional order.",
-    "credit": "SEED VOICE original illustration"
+    "alt": "Photograph of a 21 January 2024 protest against French immigration law in Lyon",
+    "caption": "A demonstration against France's immigration law at Place Bellecour in Lyon on 21 January 2024.",
+    "credit": "Pemberlaid · Wikimedia Commons · CC BY-SA 4.0"
   },
   "inlineImage": {
     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Hemicycle_of_the_French_National_Assembly_at_the_Palais_Bourbon_in_Paris%2C_July_2026_01.jpg/1280px-Hemicycle_of_the_French_National_Assembly_at_the_Palais_Bourbon_in_Paris%2C_July_2026_01.jpg",
-    "alt": "Citizens of different backgrounds in a civic discussion around a common table",
-    "caption": "Social cohesion requires public debate and institutions that work.",
-    "credit": "SEED VOICE original illustration"
+    "alt": "Photograph of the French National Assembly chamber in July 2026",
+    "caption": "The French National Assembly chamber in July 2026, not a particular debate on an immigration bill.",
+    "credit": "Dev Jadiya · Wikimedia Commons · CC BY-SA 4.0"
   },
   "inlineImageAfterSection": 4,
   "additionalImages": [
@@ -316,6 +324,14 @@ export const toleranceArticleEn: SeedLanguageArticle = {
     {
       "label": "Korean Ministry of Justice, Statistics on Foreign Residents",
       "url": "https://mojhome.moj.go.kr/moj/2412/subview.do"
+    },
+    {
+      "label": "Photo, Lyon immigration-law protest (21 January 2024), Pemberlaid, CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Manifestation_contre_la_loi_immigration,_Lyon_(21_janvier_2024)_01.jpg"
+    },
+    {
+      "label": "Photo, French National Assembly chamber (23 July 2026), Dev Jadiya, CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Hemicycle_of_the_French_National_Assembly_at_the_Palais_Bourbon_in_Paris,_July_2026_01.jpg"
     }
   ]
 };
