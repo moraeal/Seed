@@ -27,8 +27,8 @@ const seriesSpecs: SeriesSpec[] = [
     slug: "china",
     title: { ko: "우리에게 중국은 무엇인가", en: "What Does China Mean to Korea?" },
     description: {
-      ko: "중국의 경제적 부상과 기술경쟁 속에서 한국의 산업안보와 기업의 자유를 살펴봅니다.",
-      en: "Korea's industrial security and business freedom in an era of Chinese competition.",
+      ko: "6·25전쟁의 역사에서 오늘의 외교·안보, 산업 경쟁과 시민의 삶까지. 거대한 이웃 중국 앞에서 대한민국의 자유와 주권, 번영을 지킬 길을 묻는 14부작.",
+      en: "A 14-part exploration of China in Korea’s history, security, diplomacy, industry and daily life—and how to defend freedom, sovereignty and prosperity.",
     },
     matches: (item) => item.subtitle.includes("우리에게 중국은 무엇인가") || item.title.trim() === "우리에게 중국은 무엇인가",
   },
@@ -71,7 +71,7 @@ export type EditorialSeries = {
   latest: EditorialSeriesChapter;
 };
 
-const markers = ["①", "②", "③", "④", "⑤", "⑥", "⑦", "⑧", "⑨", "⑩", "⑪", "⑫"];
+const markers = ["①", "②", "③", "④", "⑤", "⑥", "⑦", "⑧", "⑨", "⑩", "⑪", "⑫", "⑬", "⑭"];
 const chapterOrder = (item: SeedColumn) => {
   if (item.series?.chapter && Number.isInteger(item.series.chapter) && item.series.chapter > 0) return item.series.chapter;
   const marker = markers.findIndex((symbol) => item.subtitle.includes(symbol));
