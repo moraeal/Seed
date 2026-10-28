@@ -31,7 +31,6 @@ const separated: Row[] = [
   ["양이원영", "전 더불어민주당 의원", "2026년 한수원 비상임이사 지원 철회 · 한전기술 상임감사 지원은 임용과 구별"],
   ["안경환", "법학자·참여연대 활동", "법무부 장관 후보자 지명 후 취임하지 않음"]
 ];
-const translate = (rows: Row[], en: boolean): Row[] => en ? rows.map(([name, group, office]) => [name, group, office]) : rows;
 export default function CivicSocietyVideoCareerTable({ ko }: { ko: boolean }) {
   const groups = [
     { title: ko ? "국회의원으로 진출한 인사" : "Civic leaders who entered parliament", rows: civic },
@@ -47,7 +46,7 @@ export default function CivicSocietyVideoCareerTable({ ko }: { ko: boolean }) {
       <div className="overflow-x-auto border-y border-green-deep/15">
         <table className="w-full min-w-[610px] border-collapse text-left text-sm leading-6">
           <thead><tr className="bg-ivory text-navy"><th scope="col" className="w-24 px-3 py-3">{ko ? "이름" : "Name"}</th><th scope="col" className="w-[41%] px-3 py-3">{ko ? "시민단체 경력" : "Civil-society background (Korean)"}</th><th scope="col" className="px-3 py-3">{ko ? "이후 직책 / 구분" : "Subsequent role / distinction (Korean)"}</th></tr></thead>
-          <tbody>{translate(group.rows, !ko).map(([name, group, office]) => <tr key={name+"-"+office} className="border-t border-green-deep/10 align-top"><th scope="row" className="px-3 py-3 font-semibold text-navy">{name}</th><td className="px-3 py-3 text-charcoal/85">{group}</td><td className="px-3 py-3 text-charcoal/85">{office}</td></tr>)}</tbody>
+          <tbody>{group.rows.map(([name, group, office]) => <tr key={name+"-"+office} className="border-t border-green-deep/10 align-top"><th scope="row" className="px-3 py-3 font-semibold text-navy">{name}</th><td className="px-3 py-3 text-charcoal/85">{group}</td><td className="px-3 py-3 text-charcoal/85">{office}</td></tr>)}</tbody>
         </table>
       </div>
     </div>)}
