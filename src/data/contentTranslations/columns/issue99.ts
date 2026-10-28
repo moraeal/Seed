@@ -15,8 +15,8 @@ export const issue99: ColumnTranslation = {
     "credit": "AI image"
   },
   "inlineImage": {
-    "alt": "Three illuminated entrances to public institutions, a red carpet, anonymous figures and files",
-    "caption": "Public cooperation requires transparent rules and independent oversight.",
+    "alt": "A government meeting room framed by a civic monitoring network with the National Assembly in the distance",
+    "caption": "A conceptual illustration of the need for transparency in collaboration between civic organizations and public authorities.",
     "credit": "AI image"
   },
   "additionalImages": [
@@ -27,8 +27,8 @@ export const issue99: ColumnTranslation = {
       "credit": "SEED VOICE diagram"
     },
     {
-      "alt": "A corridor of three institutional doors, people and stacks of documents",
-      "caption": "An editorial metaphor for the routes from civic activism to public office, with individual cases requiring independent verification.",
+      "alt": "An empty institutional chair with network lines and the National Assembly visible across the city",
+      "caption": "This conceptual image raises questions about transparent decision-making and oversight. It does not establish improper conduct by any named individual.",
       "credit": "AI image"
     }
   ],
