@@ -18,6 +18,7 @@ import { getLegislativeCommentaryEdition, legislativeCommentaries, linkedLegisla
 import { getTaxCommentaryEdition, taxCommentaries } from "../data/taxCommentaries";
 import { getFeaturedContentCandidates } from "../data/featuredContent";
 import { getLatestArticles } from "../data/latestArticles";
+import { getEditorialSeries } from "../data/editorialSeries";
 import { getHomeTopic } from "../data/homeTopics";
 import { seedLanguageTerms } from "../data/seedLanguageTerms";
 import { topicTaxonomy } from "../data/topicTaxonomy";
@@ -188,6 +189,7 @@ export default function Home() {
   const [legislativeBills, setLegislativeBills] = useState<LegislativeBill[]>(snapshot.bills as unknown as LegislativeBill[]);
   const [recommendedTopicPage, setRecommendedTopicPage] = useState(0);
   const [recommendedTopicsPaused, setRecommendedTopicsPaused] = useState(false);
+  const editorialSeries = getEditorialSeries(language);
   const allBriefings = getAllBriefingsNewestFirst();
   const localizedBriefings = allBriefings.map((item) => localizeBriefing(item, language));
   const allJournalColumns = getColumnsNewestFirst().map((item) => localizeColumn(item, language));
@@ -535,6 +537,34 @@ export default function Home() {
                 </Link>
               )}
             </aside>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-green-deep/15 bg-paper py-7 sm:py-10" aria-labelledby="editorial-series-title">
+        <div className="container-page">
+          <div className="flex items-end justify-between gap-4 border-b-[3px] border-navy pb-3">
+            <div>
+              <p className="section-kicker">SPECIAL SERIES</p>
+              <h2 id="editorial-series-title" className="editorial-title mt-1 text-[1.55rem] font-extrabold text-navy sm:text-3xl">{ko ? "기획연재" : "Editorial Series"}</h2>
+              <p className="mt-1.5 max-w-2xl text-xs leading-5 text-charcoal/60 sm:text-sm">{ko ? "하나의 문제를 여러 편으로 깊이 읽습니다. 첫 편부터 차례대로 살펴보세요." : "Go deeper with connected stories, starting from chapter one."}</p>
+            </div>
+            <Link to="/series" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "All series"}<ArrowRight size={14}/></Link>
+          </div>
+          <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {editorialSeries.map((item) => (
+              <Link key={item.slug} to={"/series/" + item.slug} className="group min-w-0 overflow-hidden border border-green-deep/15 bg-white transition-colors hover:border-green-deep/35">
+                <div className="overflow-hidden bg-green-pale">
+                  <SafeImage src={resolveImageSrc(item.latest.image.src)} alt={item.latest.image.alt} loading="lazy" className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" />
+                </div>
+                <div className="p-4">
+                  <p className="text-[10px] font-black tracking-[.12em] text-green-deep">{ko ? item.chapters.length + "편 공개" : item.chapters.length + " chapters published"}</p>
+                  <h3 className="editorial-title mt-1.5 break-keep text-[1.06rem] font-extrabold leading-snug text-navy transition-colors group-hover:text-green-mid sm:text-lg">{item.title}</h3>
+                  <p className="mt-2 line-clamp-2 text-xs leading-5 text-charcoal/60 sm:text-sm">{item.description}</p>
+                  <p className="mt-3 border-t border-green-deep/10 pt-2 text-[11px] font-semibold text-charcoal/60">{ko ? "최근 회차 · " : "Latest · "}<span className="text-navy">{item.latest.title}</span></p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
