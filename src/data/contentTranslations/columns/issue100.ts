@@ -10,8 +10,8 @@ export const issue100: ColumnTranslation = {
     "credit": "AI image"
   },
   "inlineImage": {
-    "alt": "Photo-realistic allegory of civic activists in front of Korea's National Assembly, connected by red strings to a shadowy figure representing state power",
-    "caption": "An allegorical AI-generated image asking how civic independence can be preserved when public institutions organise participation.",
+    "alt": "Photorealistic allegory of distinct-looking male and female political figures and civic representatives joining hands across a table in front of Korea's National Assembly",
+    "caption": "A symbolic depiction of government and civic organisations joining in political power, prompting questions about independent oversight. AI image; not a record of any actual meeting.",
     "credit": "AI image"
   },
   "additionalImages": [
@@ -22,8 +22,8 @@ export const issue100: ColumnTranslation = {
       "credit": "SEED VOICE infographic"
     },
     {
-      "alt": "Photo-realistic depiction of diverse civic activists connected by red strings to a towering figure above the National Assembly",
-      "caption": "Even state-supported participation must protect the freedom of independent civic criticism. This is a symbolic AI image, not an actual event.",
+      "alt": "Photorealistic image of men and women from politics and civil society stacking their hands across a conference table in front of the National Assembly",
+      "caption": "When state institutions and civic groups act as one political bloc, how is independent scrutiny protected? This AI image depicts no actual meeting or person.",
       "credit": "AI image"
     }
   ],
