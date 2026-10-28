@@ -555,7 +555,7 @@ export default function Home() {
             {editorialSeries.map((item) => (
               <Link key={item.slug} to={"/series/" + item.slug} className="group min-w-0 overflow-hidden border border-green-deep/15 bg-white transition-colors hover:border-green-deep/35">
                 <div className="overflow-hidden bg-green-pale">
-                  <SafeImage src={resolveImageSrc(item.latest.image.src)} alt={item.latest.image.alt} loading="lazy" className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" />
+                  <SafeImage src={item.latest.image.src} alt={item.latest.image.alt} loading="lazy" className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" />
                 </div>
                 <div className="p-4">
                   <p className="text-[10px] font-black tracking-[.12em] text-green-deep">{ko ? item.chapters.length + "편 공개" : item.chapters.length + " chapters published"}</p>
