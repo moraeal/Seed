@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "briefing:olympic-park-ballot-inspection-civic-briefing": {
+    ko: { href: "/monitoring/olympic-park-election-protest-tracker", title: "올공, 투표지는 모자랐고 불신은 아직도 남아있다", relationship: "사건의 경과", reason: "투표용지 부족부터 특검 수사까지 날짜별 기록과 원문 보도를 함께 살펴봅니다.", listHref: "/briefings", listLabel: "브리핑 전체 보기" },
+    en: { href: "/monitoring/olympic-park-election-protest-tracker", title: "Olympic Park: ballots ran short, and distrust still remains", relationship: "FOLLOW THE TIMELINE", reason: "Explore the dated record and original reporting from the ballot shortage to the special investigation.", listHref: "/briefings", listLabel: "All briefings" },
+  },
   "column:moon-chung-in-dangerous-alliance-security-view-2026": {"ko": {"href": "/columns/security-slogans-alliance-2026", "title": "한국의 안보가 무너지고 있다 — 누구를 위한 자주인가", "relationship": "안보와 시민의 안전", "reason": "안보 구호와 시민이 감당할 위험의 간극을 이어서 살펴봅니다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"}, "en": {"href": "/columns/security-slogans-alliance-2026", "title": "South Korea's Security Is Fraying — Sovereignty for Whom?", "relationship": "SECURITY AND PUBLIC SAFETY", "reason": "Continue with the gap between security slogans and risks borne by citizens.", "listHref": "/columns", "listLabel": "All columns"}},
   "briefing:youth-rent-tax-credit-20-percent-bill-2222071": {
     ko: { href: "/briefings/monthly-rent-tax-credit-2026-bills-explained", title: "월세 세액공제 확대안, 세금이 적은 세입자도 받을 수 있나", relationship: "별도 월세 공제안 이어 읽기", reason: "이번 20% 공제율 제안과 구별해, 한도 확대와 미사용액 10년 이월을 제안한 선행 법안을 살펴봅니다.", listHref: "/monitoring/tax", listLabel: "세금감시 목록" },
