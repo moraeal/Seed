@@ -15,6 +15,9 @@ export type WatchTimelineSource = {
   url: string;
   publishedAt?: string;
   thumbnailSrc?: string;
+  /** Documentary image description and visibly dated CC attribution. */
+  thumbnailAlt?: LocalizedText;
+  thumbnailCredit?: LocalizedText;
   kind?: "article" | "video" | "document";
 };
 
