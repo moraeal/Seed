@@ -22,8 +22,8 @@ export const pamyoCivicNetworkVideoColumn: SeedColumn = {
     "afterSection": -1
   },
   "heroImage": {
-    "src": "images/columns/pamyo-video-2026/revolving-door-parliament-editorial.svg",
-    "alt": "시민단체의 집회 현장에서 국회와 정부의 회전문으로 향하는 인물들, 그리고 공적 서류를 표현한 상징 이미지",
+    "src": "images/columns/pamyo-video-2026/revolving-door-parliament-photo.webp",
+    "alt": "시민단체 집회 현장과 국회, 유리 회전문을 지나 정부 기관으로 향하는 인물들을 묘사한 사진풍 상징 이미지",
     "caption": "시민운동에서 국회와 정부로 이어지는 인적 이동을 상징적으로 표현했다. 이미지의 인물은 실제 특정 인사를 묘사하지 않는다.",
     "credit": "AI 이미지",
     "sourceUrl": ""
