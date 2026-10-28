@@ -13,7 +13,7 @@ export const opconTransitionArtilleryColumn: SeedColumn = {
   "readMinutes": 14,
   "summary": "10월 25~27일 김포 애기봉 맞은편에 북한 122㎜ 자주포가 노출 배치됐다. 지뢰 사고와 전방 경계태세 문제, 대북 정보공유 마찰을 짚으며 한미가 합의한 전작권 전환 조건을 검증해야 하는 이유를 묻는다.",
   "heroImage": {
-    "src": "https://cdn.openart.ai/openart-uploads/production/attachment-transfers/0f9a768ee785e8ab429e75ff53b9266b989e2e5217e0bf724d30e09ba7a980d0.jpg",
+    "src": "https://cdn.openart.ai/openart-uploads/production/attachment-transfers/94ced59adb972eb30bdf6335d17c4c01cbaf9158478ef9cfd8b5b044c8cb7b86.jpg",
     "alt": "북한군 포병이 강 건너 남한 도시를 향해 포신을 겨누는 모습을 표현한 어두운 색조의 AI 상징 이미지",
     "caption": "북한의 포병 위협과 접경지역 시민이 마주한 위험을 표현한 상징 장면.",
     "credit": "AI 이미지",
