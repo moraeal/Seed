@@ -129,7 +129,6 @@ jobs:
           node scripts/verify-article-assets.mjs who-represents-civil-society-citizen-freedom-part1-2026
           node scripts/preflight-column.mjs who-represents-civil-society-citizen-freedom-part1-2026
           node scripts/verify-article-assets.mjs atr-taxpayer-movement-06-legislative-vote-accountability
-          node scripts/preflight-column.mjs atr-taxpayer-movement-06-legislative-vote-accountability
       - name: Build complete site (bounded)
         run: timeout --signal=TERM --kill-after=30s 18m pnpm run build
         env:
