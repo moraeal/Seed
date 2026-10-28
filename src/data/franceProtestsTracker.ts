@@ -44,8 +44,8 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
     }
   },
   "sourceBasis": {
-    "ko": "기존 AP, Reuters, 르몽드, Euronews, RTL 기록에 10월 27일 연합뉴스가 보도한 26일 교육대책을 추가로 대조했다. ‘사건 발생일’과 ‘기사 보도일’을 분리했고 집회 참가 규모는 프랑스 내무부와 주최 측 집계 차이를 표시했다. 재정위기는 시위의 단일 원인으로 단정하지 않았다. 타임라인의 일부 썸네일은 당일 현장 사진이 아니라 명시적으로 표시한 씨앗의 설명 도식이다. 10월 6일·17일은 실제 현장 보도사진을 별도 표기했다.",
-    "en": "The earlier AP, Reuters, Le Monde, Euronews and RTL record is supplemented by Yonhap’s October 27 report on the October 26 education package. Event dates and publication dates are distinguished; official turnout and organizers' estimates are separately attributed. Fiscal strain is not asserted to be the sole cause. Some timeline thumbnails are labelled editorial diagrams rather than contemporaneous photographs. October 6 and 17 show specifically dated documentary images."
+    "ko": "기존 AP, Reuters, 르몽드, Euronews, RTL 기록에 10월 27일 연합뉴스가 보도한 26일 교육대책을 추가로 대조했다. ‘사건 발생일’과 ‘기사 보도일’을 분리했고 집회 참가 규모는 프랑스 내무부와 주최 측 집계 차이를 표시했다. 재정위기는 시위의 단일 원인으로 단정하지 않았다. 타임라인은 저작권이 확인된 실제 현장사진과 자료사진으로 구성했다. 해당 날짜의 사진이 없을 때에는 이미지에 실제 촬영일을 별도 표시하여 사건 날짜와 혼동하지 않도록 했다. 기존 숫자 비교 도식은 텍스트 수치와 원자료 출처로 유지했다.",
+    "en": "The earlier AP, Reuters, Le Monde, Euronews and RTL record is supplemented by Yonhap’s October 27 report on the October 26 education package. Event dates and publication dates are distinguished; official turnout and organizers' estimates are separately attributed. Fiscal strain is not asserted to be the sole cause. Timeline thumbnails use licensed documentary or archive photographs. Archive photographs are clearly dated so they cannot be mistaken for the event day's image; numerical comparisons remain in the text and source references."
   },
   "caution": {
     "ko": "현재 시위의 직접적 발단은 학교 시설·교원 부족·대입 제도에 대한 불만이며, 물가·임금·공공서비스와 2027년 재정 조정 논란이 뒤엉켰다. 모든 참가자를 폭력 가담자로 보거나 시위 전체를 ‘복지 삭감 반대’로 환원할 수 없다. 2027년 예산은 정부안으로, 의회 확정안이 아니다.",
@@ -202,7 +202,10 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.yna.co.kr/amp/view/AKR20261027007400085",
           "publishedAt": "2026-10-27",
-          "kind": "article"
+          "kind": "article",
+          "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Manifestation%20lyc%C3%A9enne%20et%20%C3%A9tudiante%20du%206%20octobre%202026%20%C3%A0%20Paris%20096.jpg?width=720",
+          "thumbnailAlt": {"ko":"2026년 10월 6일 파리 학생시위 자료사진. 26일 정부대책 발표 장면 아님","en":"Archive: 6 Oct Paris student protest, not 26 Oct government announcement"},
+          "thumbnailCredit": {"ko":"Jules* / Wikimedia Commons · CC BY-SA 4.0 · 10월 6일 자료사진","en":"Jules* / Wikimedia Commons · CC BY-SA 4.0 · 6 Oct archive photo"}
         }
       ]
     },
@@ -230,7 +233,9 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           "url": "https://www.lemonde.fr/en/france/article/2026/09/29/high-school-protests-spread-across-france-pitting-radical-left-against-government_6758067_7.html",
           "publishedAt": "2026-09-29",
           "kind": "article",
-          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/education-ko.svg"
+          "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Manifestation%20lyc%C3%A9enne%20et%20%C3%A9tudiante%20du%206%20octobre%202026%20%C3%A0%20Paris%20004.jpg?width=720",
+          "thumbnailAlt": {"ko":"2026.10.06 파리 학생시위 자료사진 · 9월21일 현장 사진 아님","en":"Archive: Paris student protest, 6 Oct 2026; not the 21 Sept event"},
+          "thumbnailCredit": {"ko":"Jules* · Wikimedia Commons · CC BY-SA 4.0 · 2026.10.06 파리 학생시위 자료사진 · 9월21일 현장 사진 아님","en":"Jules* · Wikimedia Commons · CC BY-SA 4.0 · Archive: Paris student protest, 6 Oct 2026; not the 21 Sept event"}
         }
       ]
     },
@@ -262,7 +267,9 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           "url": "https://www.aljazeera.com/news/2026/9/30/french-public-workers-strike-over-pay-as-student-protests-turn-violent",
           "publishedAt": "2026-09-30",
           "kind": "article",
-          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/labor-ko.svg"
+          "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Riposte%20syndicale%20(54796481303).jpg?width=720",
+          "thumbnailAlt": {"ko":"2025.09.18 파리 노동조합 시위 자료사진 · 9월29일 현장 사진 아님","en":"Archive: Paris trade-union march, 18 Sept 2025; not 29 Sept 2026"},
+          "thumbnailCredit": {"ko":"Jeanne Menjoulet · Wikimedia Commons · CC BY 4.0 · 2025.09.18 파리 노동조합 시위 자료사진 · 9월29일 현장 사진 아님","en":"Jeanne Menjoulet · Wikimedia Commons · CC BY 4.0 · Archive: Paris trade-union march, 18 Sept 2025; not 29 Sept 2026"}
         }
       ]
     },
@@ -290,7 +297,9 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           "url": "https://www.reuters.com/business/what-is-frances-2027-budget-2026-10-01/",
           "publishedAt": "2026-10-01",
           "kind": "article",
-          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/deficit-comparison-ko.svg"
+          "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Assembl%C3%A9e%20Nationale%20%40%20Paris%20(29475715230).jpg?width=720",
+          "thumbnailAlt": {"ko":"2016년 촬영한 프랑스 국민의회 건물 자료사진 · 예산발표 현장 아님","en":"Archive: French National Assembly building, 2016; not the budget announcement"},
+          "thumbnailCredit": {"ko":"Guilhem Vellut · Wikimedia Commons · CC BY 2.0 · 2016년 촬영한 프랑스 국민의회 건물 자료사진 · 예산발표 현장 아님","en":"Guilhem Vellut · Wikimedia Commons · CC BY 2.0 · Archive: French National Assembly building, 2016; not the budget announcement"}
         },
         {
           "publisher": {
@@ -304,7 +313,9 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           "url": "https://www.aft.gouv.fr/en/state-budget",
           "publishedAt": "2026-10-01",
           "kind": "article",
-          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/deficit-comparison-ko.svg"
+          "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Assembl%C3%A9e%20Nationale%20Paris%201.jpg?width=720",
+          "thumbnailAlt": {"ko":"2016년 촬영한 프랑스 국민의회 자료사진 · 예산발표 현장 아님","en":"Archive: French National Assembly building, 2016; not the budget announcement"},
+          "thumbnailCredit": {"ko":"Wikimedia Commons · 원본 페이지의 촬영자·라이선스 참조 · 2016년 촬영한 프랑스 국민의회 자료사진 · 예산발표 현장 아님","en":"Wikimedia Commons · 원본 페이지의 촬영자·라이선스 참조 · Archive: French National Assembly building, 2016; not the budget announcement"}
         }
       ]
     },
@@ -335,7 +346,9 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.lemonde.fr/en/politics/article/2026/10/07/french-government-defends-handling-of-high-school-protests-as-controversies-grow_6758350_5.html",
           "publishedAt": "2026-10-07",
-          "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Manifestation_lyc%C3%A9enne_et_%C3%A9tudiante_du_6_octobre_2026_%C3%A0_Paris_046.jpg?width=720",
+          "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Manifestation%20lyc%C3%A9enne%20et%20%C3%A9tudiante%20du%206%20octobre%202026%20%C3%A0%20Paris%20046.jpg?width=720",
+          "thumbnailAlt": {"ko":"2026.10.06 파리 학생시위 현장","en":"Paris student demonstration, 6 Oct 2026"},
+          "thumbnailCredit": {"ko":"Jules* · Wikimedia Commons · CC BY-SA 4.0 · 2026.10.06 파리 학생시위 현장","en":"Jules* · Wikimedia Commons · CC BY-SA 4.0 · Paris student demonstration, 6 Oct 2026"},
           "kind": "article"
         },
         {
@@ -349,7 +362,9 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           },
           "url": "https://commons.wikimedia.org/wiki/File:Manifestation_lyc%C3%A9enne_et_%C3%A9tudiante_du_6_octobre_2026_%C3%A0_Paris_046.jpg",
           "publishedAt": "2026-10-06",
-          "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Manifestation_lyc%C3%A9enne_et_%C3%A9tudiante_du_6_octobre_2026_%C3%A0_Paris_046.jpg?width=720",
+          "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Manifestation%20lyc%C3%A9enne%20et%20%C3%A9tudiante%20du%206%20octobre%202026%20%C3%A0%20Paris%20096.jpg?width=720",
+          "thumbnailAlt": {"ko":"2026.10.06 파리 학생시위 현장","en":"Paris student demonstration, 6 Oct 2026"},
+          "thumbnailCredit": {"ko":"Jules* · Wikimedia Commons · CC BY-SA 4.0 · 2026.10.06 파리 학생시위 현장","en":"Jules* · Wikimedia Commons · CC BY-SA 4.0 · Paris student demonstration, 6 Oct 2026"},
           "kind": "article"
         }
       ]
@@ -378,7 +393,9 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           "url": "https://fr.euronews.com/2026/10/07/lheure-de-verite-pour-sebastien-lecornu-peut-il-repondre-a-toutes-les-attentes",
           "publishedAt": "2026-10-07",
           "kind": "article",
-          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/policy-ko.svg"
+          "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Annie%20Genevard%2C%20Christophe%20Hansen%20%26%20S%C3%A9bastien%20Lecornu%20-%202025.jpg?width=720",
+          "thumbnailAlt": {"ko":"2025.10.28 르코르뉘 총리 참석 회의 자료사진 · 10월7일 담화 사진 아님","en":"Archive: Prime Minister Lecornu at a meeting, 28 Oct 2025; not 7 Oct 2026 speech"},
+          "thumbnailCredit": {"ko":"Thomas Padilla / European Union · CC BY 4.0 · 2025.10.28 르코르뉘 총리 참석 회의 자료사진 · 10월7일 담화 사진 아님","en":"Thomas Padilla / European Union · CC BY 4.0 · Archive: Prime Minister Lecornu at a meeting, 28 Oct 2025; not 7 Oct 2026 speech"}
         }
       ]
     },
@@ -406,7 +423,9 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           "url": "https://www.rtl.fr/actu/debats-societe/en-direct-mobilisation-des-lyceens-reprise-ou-essoufflement-des-appels-a-manifester-a-travers-la-france-pour-l-acte-5-ce-mardi-13-octobre-7900684380",
           "publishedAt": "2026-10-13",
           "kind": "article",
-          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/mobilization-ko.svg"
+          "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Manifestation%20lyc%C3%A9enne%20et%20%C3%A9tudiante%20du%206%20octobre%202026%20%C3%A0%20Paris%20095.jpg?width=720",
+          "thumbnailAlt": {"ko":"2026.10.06 파리 학생시위 자료사진 · 10월13일 현장 사진 아님","en":"Archive: Paris student demonstration, 6 Oct 2026; not 13 Oct"},
+          "thumbnailCredit": {"ko":"Jules* · Wikimedia Commons · CC BY-SA 4.0 · 2026.10.06 파리 학생시위 자료사진 · 10월13일 현장 사진 아님","en":"Jules* · Wikimedia Commons · CC BY-SA 4.0 · Archive: Paris student demonstration, 6 Oct 2026; not 13 Oct"}
         }
       ]
     },
@@ -437,7 +456,9 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           },
           "url": "https://www.reuters.com/world/students-trade-unions-yellow-vests-set-protest-across-france-2026-10-17/",
           "publishedAt": "2026-10-17",
-          "thumbnailSrc": "/images/columns/france-fiscal-warning-2026/paris-protest-20261017.jpg",
+          "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%20riots%2C%2017%20October%202026%20-%20Black%20smoke%20over%20the%20boulevard%20-%20JJxFile%200019.jpg?width=720",
+          "thumbnailAlt": {"ko":"2026.10.17 파리 시위 현장, 연기가 피어오르는 거리","en":"Paris protest and smoke, 17 Oct 2026"},
+          "thumbnailCredit": {"ko":"Jorge Jaramillo / JJxFile.com · CC BY-SA 4.0 · 2026.10.17 파리 시위 현장, 연기가 피어오르는 거리","en":"Jorge Jaramillo / JJxFile.com · CC BY-SA 4.0 · Paris protest and smoke, 17 Oct 2026"},
           "kind": "article"
         },
         {
@@ -451,7 +472,9 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           },
           "url": "https://apnews.com/article/44b9d3ba91ffad4029f975dced7e31cb",
           "publishedAt": "2026-10-18",
-          "thumbnailSrc": "/images/columns/france-fiscal-warning-2026/paris-protest-20261017.jpg",
+          "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%20riots%2C%2017%20October%202026%20-%20Crowd%20facing%20Place%20de%20la%20R%C3%A9publique%20in%20tear%20gas%20-%20JJxFile%200016.jpg?width=720",
+          "thumbnailAlt": {"ko":"2026.10.17 파리 레퓌블리크 광장 시위 현장","en":"Paris Place de la République protest, 17 Oct 2026"},
+          "thumbnailCredit": {"ko":"Jorge Jaramillo / JJxFile.com · CC BY-SA 4.0 · 2026.10.17 파리 레퓌블리크 광장 시위 현장","en":"Jorge Jaramillo / JJxFile.com · CC BY-SA 4.0 · Paris Place de la République protest, 17 Oct 2026"},
           "kind": "article"
         }
       ]
@@ -480,7 +503,9 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           "url": "https://apnews.com/article/f5ce07c2ef46ad0c02c6ff7018532a59",
           "publishedAt": "2026-10-18",
           "kind": "article",
-          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/aftermath-ko.svg"
+          "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%20riots%2C%2017%20October%202026%20-%20Firefighters%20extinguishing%20burning%20bikes%20-%20JJxFile%200083.jpg?width=720",
+          "thumbnailAlt": {"ko":"2026.10.17 파리 소방대 진화 사진 · 10월18일 촬영 아님","en":"Paris firefighters on 17 Oct 2026; not photographed 18 Oct"},
+          "thumbnailCredit": {"ko":"Jorge Jaramillo / JJxFile.com · CC BY-SA 4.0 · 2026.10.17 파리 소방대 진화 사진 · 10월18일 촬영 아님","en":"Jorge Jaramillo / JJxFile.com · CC BY-SA 4.0 · Paris firefighters on 17 Oct 2026; not photographed 18 Oct"}
         }
       ]
     },
@@ -512,7 +537,9 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           "url": "https://apnews.com/article/75825aafc5412ae389c6d41443b4082e",
           "publishedAt": "2026-10-19",
           "kind": "article",
-          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/aftermath-ko.svg"
+          "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%20riots%2C%2017%20October%202026%20-%20Police%20line%20and%20street%20fires%20at%20dusk%20-%20JJxFile%200091.jpg?width=720",
+          "thumbnailAlt": {"ko":"2026.10.17 파리 경찰 대응 자료사진 · 10월19일 통행금지 장면 아님","en":"Archive: Paris police response, 17 Oct 2026; not the 19 Oct curfew"},
+          "thumbnailCredit": {"ko":"Jorge Jaramillo / JJxFile.com · CC BY-SA 4.0 · 2026.10.17 파리 경찰 대응 자료사진 · 10월19일 통행금지 장면 아님","en":"Jorge Jaramillo / JJxFile.com · CC BY-SA 4.0 · Archive: Paris police response, 17 Oct 2026; not the 19 Oct curfew"}
         },
         {
           "publisher": {
@@ -526,7 +553,9 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
           "url": "https://www.reuters.com/business/finance/french-markets-tumble-riots-add-political-crisis-2026-10-19/",
           "publishedAt": "2026-10-19",
           "kind": "article",
-          "thumbnailSrc": "/images/monitoring/france-protests-fiscal-crisis-2026/aftermath-ko.svg"
+          "thumbnailSrc": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%202e%20Palais%20Brongniart%20894.jpg?width=720",
+          "thumbnailAlt": {"ko":"2026.08.08 파리 옛 증권거래소 건물 자료사진 · 실시간 시장상황 아님","en":"Archive: former Paris stock-exchange building, 8 Aug 2026; not live market activity"},
+          "thumbnailCredit": {"ko":"GFreihalter · Wikimedia Commons · CC BY-SA 4.0 · 2026.08.08 파리 옛 증권거래소 건물 자료사진 · 실시간 시장상황 아님","en":"GFreihalter · Wikimedia Commons · CC BY-SA 4.0 · Archive: former Paris stock-exchange building, 8 Aug 2026; not live market activity"}
         }
       ]
     }
@@ -714,40 +743,48 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
       "url": "https://commons.wikimedia.org/wiki/File:Paris_riots,_17_October_2026_-_Crowd_and_tear_gas_at_Place_de_la_R%C3%A9publique_-_JJxFile_0006.jpg"
     },
     {"label": {"ko": "연합뉴스 · 불붙은 학생 시위에…프랑스, 교사 늘리고 대입 플랫폼 손본다", "en": "Yonhap · France announces education measures amid student protests"}, "url": "https://www.yna.co.kr/amp/view/AKR20261027007400085"},
+    {"label": {"ko":"Wikimedia Commons · Jules* · 10월 6일 파리 학생시위 현장 사진","en":"Wikimedia Commons · Jules* · 6 Oct Paris student protest"}, "url": "https://commons.wikimedia.org/wiki/File:Manifestation%20lyc%C3%A9enne%20et%20%C3%A9tudiante%20du%206%20octobre%202026%20%C3%A0%20Paris%20004.jpg"},
+    {"label": {"ko":"Wikimedia Commons · Jules* · 10월 6일 파리 학생시위 현장 사진(다른 장면)","en":"Wikimedia Commons · Jules* · 6 Oct student protest, another frame"}, "url": "https://commons.wikimedia.org/wiki/File:Manifestation%20lyc%C3%A9enne%20et%20%C3%A9tudiante%20du%206%20octobre%202026%20%C3%A0%20Paris%20096.jpg"},
+    {"label": {"ko":"Wikimedia Commons · Jules* · 10월 6일 파리 학생시위 현장 사진(다른 장면)","en":"Wikimedia Commons · Jules* · 6 Oct student protest, another frame"}, "url": "https://commons.wikimedia.org/wiki/File:Manifestation%20lyc%C3%A9enne%20et%20%C3%A9tudiante%20du%206%20octobre%202026%20%C3%A0%20Paris%20095.jpg"},
+    {"label": {"ko":"Wikimedia Commons · Jeanne Menjoulet · 2025년 9월 파리 노동자 시위 자료사진","en":"Wikimedia Commons · Jeanne Menjoulet · Paris union march, Sept 2025"}, "url": "https://commons.wikimedia.org/wiki/File:Riposte%20syndicale%20(54796481303).jpg"},
+    {"label": {"ko":"Wikimedia Commons · Guilhem Vellut · 프랑스 국민의회 자료사진","en":"Wikimedia Commons · Guilhem Vellut · National Assembly archive photo"}, "url": "https://commons.wikimedia.org/wiki/File:Assembl%C3%A9e%20Nationale%20%40%20Paris%20(29475715230).jpg"},
+    {"label": {"ko":"Wikimedia Commons · Thomas Padilla / EU · 2025년 르코르뉘 총리 자료사진","en":"Wikimedia Commons · Thomas Padilla / EU · Lecornu 2025 archival photo"}, "url": "https://commons.wikimedia.org/wiki/File:Annie%20Genevard%2C%20Christophe%20Hansen%20%26%20S%C3%A9bastien%20Lecornu%20-%202025.jpg"},
+    {"label": {"ko":"Wikimedia Commons · Jorge Jaramillo · 10월17일 파리 시위 현장(연기)","en":"Wikimedia Commons · Jorge Jaramillo · Paris unrest 17 Oct (smoke)"}, "url": "https://commons.wikimedia.org/wiki/File:Paris%20riots%2C%2017%20October%202026%20-%20Black%20smoke%20over%20the%20boulevard%20-%20JJxFile%200019.jpg"},
+    {"label": {"ko":"Wikimedia Commons · Jorge Jaramillo · 10월17일 파리 시위 현장(군중)","en":"Wikimedia Commons · Jorge Jaramillo · Paris unrest 17 Oct (crowd)"}, "url": "https://commons.wikimedia.org/wiki/File:Paris%20riots%2C%2017%20October%202026%20-%20Crowd%20facing%20Place%20de%20la%20R%C3%A9publique%20in%20tear%20gas%20-%20JJxFile%200016.jpg"},
+    {"label": {"ko":"Wikimedia Commons · Jorge Jaramillo · 10월17일 소방대 진화 현장","en":"Wikimedia Commons · Jorge Jaramillo · Paris firefighters 17 Oct"}, "url": "https://commons.wikimedia.org/wiki/File:Paris%20riots%2C%2017%20October%202026%20-%20Firefighters%20extinguishing%20burning%20bikes%20-%20JJxFile%200083.jpg"},
+    {"label": {"ko":"Wikimedia Commons · Jorge Jaramillo · 10월17일 경찰 대응 현장","en":"Wikimedia Commons · Jorge Jaramillo · Paris police 17 Oct"}, "url": "https://commons.wikimedia.org/wiki/File:Paris%20riots%2C%2017%20October%202026%20-%20Police%20line%20and%20street%20fires%20at%20dusk%20-%20JJxFile%200091.jpg"},
+    {"label": {"ko":"Wikimedia Commons · GFreihalter · 2026년 파리 구 증권거래소 건물 자료사진","en":"Wikimedia Commons · GFreihalter · Paris former exchange building, 2026"}, "url": "https://commons.wikimedia.org/wiki/File:Paris%202e%20Palais%20Brongniart%20894.jpg"},
+    {"label": {"ko":"Wikimedia Commons · Philippe Alès · 프랑스 국민의회 의사당 자료사진","en":"Wikimedia Commons · Philippe Alès · Palais Bourbon archive photo"}, "url": "https://commons.wikimedia.org/wiki/File:Assembl%C3%A9e%20Nationale%2C%20Palais%20Bourbon.jpg"},
   ],
   "bodyImages": [
-    {
-      "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Manifestation_lyc%C3%A9enne_et_%C3%A9tudiante_du_6_octobre_2026_%C3%A0_Paris_046.jpg?width=960",
-      "alt": {
-        "ko": "2026년 10월 6일 파리에서 행진하는 고교생·대학생들의 실제 집회 사진",
-        "en": "Documentary photograph of high school and university protesters in Paris on October 6, 2026"
+      {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Manifestation%20lyc%C3%A9enne%20et%20%C3%A9tudiante%20du%206%20octobre%202026%20%C3%A0%20Paris%20046.jpg?width=960",
+          "alt": {
+              "ko": "2026년 10월 6일 파리 학생과 시민의 시위 실제 현장",
+              "en": "Paris student demonstration photographed 6 October 2026"
+          },
+          "caption": {
+              "ko": "2026년 10월 6일 파리에서 촬영한 학생 시위 현장. 이 사진은 위키미디어 공용에 공개된 실사 보도 사진이다.",
+              "en": "Documentary photo from the Paris student demonstration on 6 October 2026."
+          },
+          "credit": {
+              "ko": "Jules* / Wikimedia Commons · CC BY-SA 4.0",
+              "en": "Jules* / Wikimedia Commons · CC BY-SA 4.0"
+          }
       },
-      "caption": {
-        "ko": "10월 6일 파리 학생 시위 실제 현장. 사진은 위키미디어 공용즈 원문에서 확인할 수 있다. CC BY-SA 4.0, 표시·동일조건변경허락.",
-        "en": "Documentary image from the October 6 student protest in Paris. Wikimedia Commons, CC BY-SA 4.0."
-      },
-      "credit": {
-        "ko": "Jules* / Wikimedia Commons · CC BY-SA 4.0",
-        "en": "Jules* / Wikimedia Commons · CC BY-SA 4.0"
+      {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Assembl%C3%A9e%20Nationale%2C%20Palais%20Bourbon.jpg?width=960",
+          "alt": {
+              "ko": "프랑스 파리의 국회 의사당인 부르봉궁 전경 자료사진",
+              "en": "Archive photograph of the Palais Bourbon, French National Assembly in Paris"
+          },
+          "caption": {
+              "ko": "프랑스 국민의회 의사당(부르봉궁) 자료사진. 2014년 촬영된 사진으로 2027년 예산 발표 또는 심의 당일 장면은 아니다. 재정적자율 비교 수치는 본문과 출처에서 확인할 수 있다.",
+              "en": "Archive image of the Palais Bourbon, photographed in 2014, not during the 2027 budget announcement. Deficit figures remain in the article text."
+          },
+          "credit": {
+              "ko": "Philippe Alès / Wikimedia Commons · 원본 사진 라이선스 기준",
+              "en": "Philippe Alès / Wikimedia Commons · See original licensing terms"
+          }
       }
-    },
-    {
-      "src": {
-        "ko": "/images/monitoring/france-protests-fiscal-crisis-2026/deficit-comparison-ko.svg",
-        "en": "/images/monitoring/france-protests-fiscal-crisis-2026/deficit-comparison-en.svg"
-      },
-      "alt": {
-        "ko": "2026년 프랑스 정부 예상 재정적자율 GDP 대비 5.4%와 2027년 정부 예산안 목표 5.0% 비교",
-        "en": "French deficit as percent of GDP: 2026 estimated 5.4% versus 2027 draft target 5.0%"
-      },
-      "caption": {
-        "ko": "2026년은 정부 예상치, 2027년은 확정되지 않은 정부 예산안 목표다. 2026년 10월 14일 로이터와 프랑스 국채청 자료 기준.",
-        "en": "The 2026 figure is an estimate, and 2027 is an unenacted government budget target. Based on Reuters October 14 and Agence France Trésor."
-      },
-      "credit": {
-        "ko": "씨앗의 소리 자체 제작 도표 · Reuters / Agence France Trésor",
-        "en": "SEED VOICE original graphic · Reuters / Agence France Trésor"
-      }
-    }
-  ]
-};
+  ]};
