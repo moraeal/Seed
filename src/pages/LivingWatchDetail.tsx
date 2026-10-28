@@ -207,7 +207,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
                           <a href={source.url} target="_blank" rel="noreferrer" className="group flex min-w-0 flex-col border-t border-green-deep/10 bg-ivory/75 transition hover:bg-green-pale/55 md:border-l md:border-t-0" aria-label={`${t(source.publisher)}: ${t(source.title)}`}>
                             <div className="relative aspect-video overflow-hidden bg-navy">
                               {thumbnail ? (
-                                <SafeImage src={thumbnail} alt={savedImage?.alt ? t(savedImage.alt) : t(source.title)} className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.025]" />
+                                <SafeImage src={thumbnail} alt={savedImage?.alt ? t(savedImage.alt) : (source.thumbnailAlt ? t(source.thumbnailAlt) : t(source.title))} className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.025]" />
                               ) : (
                                 <div className="grid h-full place-items-center bg-[linear-gradient(135deg,#123f35,#0f2438)] px-5 text-center">
                                   <div>
@@ -216,6 +216,7 @@ export default function LivingWatchDetail({ item, language, readingPath }: Props
                                   </div>
                                 </div>
                               )}
+                              {source.thumbnailCredit && <span className="absolute bottom-0 left-0 right-0 bg-navy/85 px-2 py-1 text-[10px] leading-4 text-white">{t(source.thumbnailCredit)}</span>}
                               {savedImage?.kind === "context" && <span className="absolute bottom-0 left-0 right-0 bg-navy/85 px-2 py-1 text-[10px] text-white">{ko ? "관련 이미지" : "Related image"}{savedImage.credit ? ` · ${t(savedImage.credit).replace(/AI 생성 이미지/g, "AI 이미지")}` : ""}</span>}
                               {source.kind === "video" && <PlayCircle className="absolute bottom-2.5 right-2.5 fill-white/90 text-navy" size={30}/>}
                               {entry.sources.length > 1 && <span className="absolute left-2.5 top-2.5 rounded-full bg-navy/85 px-2.5 py-1 text-[10px] font-black text-white">+{entry.sources.length - 1}</span>}
