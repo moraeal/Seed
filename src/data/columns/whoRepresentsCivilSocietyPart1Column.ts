@@ -20,9 +20,9 @@ export const whoRepresentsCivilSocietyPart1Column: SeedColumn = {
     "sourceUrl": ""
   },
   "inlineImage": {
-    "src": "images/columns/civic-representation-series-2026/civic-voices-red-strings-photo.jpg",
-    "alt": "국회의사당을 배경으로 국가권력을 상징하는 거대한 인물의 붉은 줄에 연결된 다양한 시민사회 활동가들을 실제 사진처럼 표현한 이미지",
-    "caption": "국가가 마련한 참여의 통로에서 시민사회의 독립성이 어떻게 지켜지는지 묻는 상징적 실사형 이미지.",
+    "src": "images/columns/civic-representation-series-2026/civic-state-alliance-diverse-faces.jpg",
+    "alt": "국회의사당 앞에서 서로 다른 얼굴의 남녀 정치인과 시민사회 관계자들이 한 테이블에서 손을 모으는 모습을 묘사한 실사형 상징 이미지",
+    "caption": "정부와 시민사회 조직이 하나의 정치적 연합처럼 결합하는 모습을 비유적으로 표현했다. 실제 회의나 인물을 촬영한 사진은 아니다.",
     "credit": "AI 이미지",
     "sourceUrl": ""
   },
@@ -39,9 +39,9 @@ export const whoRepresentsCivilSocietyPart1Column: SeedColumn = {
     },
     {
       "afterSection": 5,
-      "src": "images/columns/civic-representation-series-2026/civic-voices-red-strings-photo.jpg",
-      "alt": "국회의사당 앞에서 붉은 줄로 연결된 시민사회 활동가들의 뒷모습을 묘사한 사진풍 이미지",
-      "caption": "국가가 지원하는 제도 속에서도 시민사회가 권력을 자유롭게 비판할 수 있는가. 이 이미지는 실제 사건의 기록이 아닌 상징적 AI 이미지다.",
+      "src": "images/columns/civic-representation-series-2026/civic-state-alliance-diverse-faces.jpg",
+      "alt": "국회의사당을 배경으로 남녀 정치인과 시민단체 관계자들이 한 테이블에서 손을 포개고 연대하는 모습을 표현한 사진풍 이미지",
+      "caption": "국가와 시민단체가 공동의 권력 구조로 결합할 경우 감시의 독립성이 어떻게 달라질 수 있는지 묻는 AI 상징 이미지. 실제 회의 현장은 아니다.",
       "credit": "AI 이미지",
       "sourceUrl": "",
       "contain": false
