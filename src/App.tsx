@@ -34,6 +34,7 @@ const BriefingDetail = lazy(() => import("./pages/BriefingDetail"));
 const BriefingCommentary = lazy(() => import("./pages/BriefingCommentary"));
 const BCorpDeepDive = lazy(() => import("./pages/BCorpDeepDive"));
 const Columns = lazy(() => import("./pages/Columns"));
+const EditorialSeriesPage = lazy(() => import("./pages/EditorialSeries"));
 const ColumnDetail = lazy(() => import("./pages/ColumnDetail"));
 const Academy = lazy(() => import("./pages/Academy"));
 const Experiments = lazy(() => import("./pages/Experiments"));
@@ -114,6 +115,8 @@ function AppShell() {
           <Route path="/briefings/social-economy-fair-competition/b-corp" element={<BCorpDeepDive />} />
           <Route path="/briefings/:slug/commentary" element={<BriefingCommentary />} />
           <Route path="/briefings/:slug" element={<BriefingDetail />} />
+          <Route path="/series" element={<EditorialSeriesPage />} />
+          <Route path="/series/:slug" element={<EditorialSeriesPage />} />
           <Route path="/columns" element={<Columns />} />
           <Route path="/columns/:slug" element={<ColumnDetail />} />
           <Route path="/news" element={<News />} />

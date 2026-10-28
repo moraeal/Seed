@@ -32,6 +32,7 @@ export default function Header() {
   const nav = language === "en"
     ? [
         ["Hot Issues", "/news"],
+         ["Series", "/series"],
         ["Briefings", "/briefings"],
         ["Civic Watch", "/monitoring"],
         ["Civic Life", "/civic-life"],
@@ -41,6 +42,7 @@ export default function Header() {
       ]
     : [
         ["핫이슈", "/news"],
+         ["기획연재", "/series"],
         ["브리핑", "/briefings"],
         ["시민감시", "/monitoring"],
         ["시민생활", "/civic-life"],
@@ -166,7 +168,7 @@ export default function Header() {
         </div>
 
         <nav className="hidden border-t border-[#e8dcae] bg-[#eff8f4] xl:block" aria-label={language === "en" ? "Main menu" : "주요 메뉴"}>
-          <div className="container-page flex items-center justify-start gap-7">{nav.map((item) => renderNavItem(item))}</div>
+          <div className="container-page flex items-center justify-start gap-5">{nav.map((item) => renderNavItem(item))}</div>
         </nav>
 
         {isHome && <HomeSectionNav />}
