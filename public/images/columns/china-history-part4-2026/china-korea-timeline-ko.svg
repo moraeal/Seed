@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+ <rect width="1200" height="620" fill="#ffffff"/>
+ <text x="47" y="74" fill="#12324d" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="38" font-weight="700">한반도와 중국 대륙의 관계, 여섯 장면</text>
+ <text x="48" y="121" fill="#4c667d" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="22">협력과 충돌, 외교적 압력과 역사 논쟁의 변화를 함께 살펴봅니다.</text>
+ <g font-family="Pretendard, Noto Sans KR, sans-serif">
+ <g>
+  <rect x="45" y="170" width="363" height="160" rx="14" fill="#f0f5fb"/>
+  <rect x="45" y="170" width="7" height="160" rx="3" fill="#204c79"/>
+  <text x="69" y="209" fill="#20517c" font-size="26" font-weight="700">670–676</text>
+  <text x="69" y="256" fill="#152e47" font-size="27" font-weight="700">신라·당 전쟁</text>
+  <text x="69" y="294" fill="#425c74" font-size="21">동맹 이후 영토 충돌</text>
+ </g>
+ <g>
+  <rect x="435" y="170" width="363" height="160" rx="14" fill="#f5f7fb"/>
+  <rect x="435" y="170" width="7" height="160" rx="3" fill="#204c79"/>
+  <text x="459" y="209" fill="#20517c" font-size="26" font-weight="700">1592–1598</text>
+  <text x="459" y="256" fill="#152e47" font-size="27" font-weight="700">임진왜란</text>
+  <text x="459" y="294" fill="#425c74" font-size="21">명나라의 군사 지원</text>
+ </g>
+ <g>
+  <rect x="825" y="170" width="363" height="160" rx="14" fill="#f0f5fb"/>
+  <rect x="825" y="170" width="7" height="160" rx="3" fill="#204c79"/>
+  <text x="849" y="209" fill="#20517c" font-size="26" font-weight="700">1636–1637</text>
+  <text x="849" y="256" fill="#152e47" font-size="27" font-weight="700">병자호란</text>
+  <text x="849" y="294" fill="#425c74" font-size="21">청의 침략과 조선 항복</text>
+ </g>
+ <g>
+  <rect x="45" y="368" width="363" height="160" rx="14" fill="#f5f7fb"/>
+  <rect x="45" y="368" width="7" height="160" rx="3" fill="#204c79"/>
+  <text x="69" y="407" fill="#20517c" font-size="26" font-weight="700">1882–1884</text>
+  <text x="69" y="454" fill="#152e47" font-size="27" font-weight="700">임오군란·갑신정변</text>
+  <text x="69" y="492" fill="#425c74" font-size="21">청의 정치·군사 개입</text>
+ </g>
+ <g>
+  <rect x="435" y="368" width="363" height="160" rx="14" fill="#f0f5fb"/>
+  <rect x="435" y="368" width="7" height="160" rx="3" fill="#204c79"/>
+  <text x="459" y="407" fill="#20517c" font-size="26" font-weight="700">1894–1895</text>
+  <text x="459" y="454" fill="#152e47" font-size="27" font-weight="700">청일전쟁</text>
+  <text x="459" y="492" fill="#425c74" font-size="21">조선의 자율성 위기</text>
+ </g>
+ <g>
+  <rect x="825" y="368" width="363" height="160" rx="14" fill="#f5f7fb"/>
+  <rect x="825" y="368" width="7" height="160" rx="3" fill="#204c79"/>
+  <text x="849" y="407" fill="#20517c" font-size="26" font-weight="700">2002–2007</text>
+  <text x="849" y="454" fill="#152e47" font-size="27" font-weight="700">동북공정</text>
+  <text x="849" y="492" fill="#425c74" font-size="21">고대사 해석 논쟁</text>
+ </g></g>
+ <path d="M45 568H1157" stroke="#c9d7e2" stroke-width="2"/>
+ <text x="48" y="593" fill="#5d6c7b" font-family="Pretendard, Noto Sans KR, sans-serif" font-size="17">출처: 국사편찬위원회 자료 재구성 · 시대별 국가·왕조 구분</text>
+ </svg>
