@@ -31,16 +31,48 @@ const separated: Row[] = [
   ["양이원영", "전 더불어민주당 의원", "2026년 한수원 비상임이사 지원 철회 · 한전기술 상임감사 지원은 임용과 구별"],
   ["안경환", "법학자·참여연대 활동", "법무부 장관 후보자 지명 후 취임하지 않음"]
 ];
+const civicEn: Row[] = [
+  ["Hong Jong-hak", "Citizens' Coalition for Economic Justice (CCEJ), chaebol reform committee", "19th National Assembly, Democratic United Party list; minister for SMEs and startups"],
+  ["Nam In-soon", "Korea Women's Associations United, former leader", "19th National Assembly, Democratic United Party list; later constituency MP"],
+  ["Kim Kwang-jin", "Suncheon YMCA, finance director", "19th National Assembly, Democratic United Party list"],
+  ["Kim Ki-sik", "People's Solidarity for Participatory Democracy (PSPD), secretary-general", "19th National Assembly, Democratic United Party list; Financial Supervisory Service governor"],
+  ["Yoon Mee-hyang", "Korean Council for Justice and Remembrance, chair", "21st National Assembly, Together Citizens' Party list"],
+  ["Yang Yi Won-young", "Environmental Movement Federation; Energy Transition Forum", "21st National Assembly, Together Citizens' Party list"],
+  ["Kim Je-nam", "Green Korea United, secretary-general", "19th National Assembly, Unified Progressive Party list; later Justice Party; presidential senior secretary; nuclear safety foundation chair"]
+];
+const publicRolesEn: Row[] = [
+  ["Park Won-soon", "PSPD co-founder", "Mayor of Seoul"],
+  ["Cho Hee-yeon", "PSPD founding participant", "Seoul Superintendent of Education"],
+  ["Cho Kuk", "PSPD Judicial Watch Center director", "Presidential senior secretary for civil affairs; justice minister"],
+  ["Jang Ha-sung", "PSPD economic democratization committee", "Presidential chief of policy; ambassador to China"],
+  ["Kim Sang-jo", "PSPD economic reform center", "Fair Trade Commission chair; presidential chief of policy"],
+  ["Chung Hyun-back", "PSPD co-chair", "Minister of gender equality and family"],
+  ["Ahn Kyong-whan", "PSPD Judicial Watch Center", "Nominated for justice minister; did not take office"],
+  ["Ha Seung-chang", "CCEJ policy director; Civic Action", "Presidential senior secretary for social innovation"],
+  ["Kim Hye-ae", "Green Korea United co-chair", "Presidential secretary for climate and environment"],
+  ["Kim Eun-kyung", "Sustainability Center Jiwoo; environmental activism", "Minister of environment"],
+  ["Ahn Byung-ok", "Environmental Movement Federation; Citizens' Institute for Environmental Studies", "Vice minister of environment; Korea Environment Corporation chair"],
+  ["Seo Joo-won", "Environmental Movement Federation, secretary-general", "Sudokwon Landfill Site Management Corporation CEO"],
+  ["Jang Joon-young", "Green Environmental Movement, chair", "Korea Environment Corporation chair"],
+  ["Park Jae-hyeon", "Professor involved in the Four Rivers water-policy debate", "Korea Water Resources Corporation CEO"],
+  ["Kim Je-nam", "Green Korea United, secretary-general", "Presidential climate secretary and senior civic affairs secretary; Korea Foundation of Nuclear Safety chair"],
+  ["Yoo Chang-bok", "Maeul civic association, founder and chair", "Seoul Community Support Center director; Seoul Metropolitan Government cooperation adviser"]
+];
+const separatedEn: Row[] = [
+  ["Kim Min-woong", "Candlelight Action, standing chair", "No appointment to government or parliament identified in the video"],
+  ["Yang Yi Won-young", "Former Democratic Party MP", "Applied for, then withdrew from a KHNP board position in 2026; an application to KEPCO E&C was not an appointment"],
+  ["Ahn Kyong-whan", "Legal scholar and former PSPD participant", "Nominated for justice minister but did not assume office"]
+];
 export default function CivicSocietyVideoCareerTable({ ko }: { ko: boolean }) {
   const groups = [
-    { title: ko ? "국회의원으로 진출한 인사" : "Civic leaders who entered parliament", rows: civic },
-    { title: ko ? "정부 고위직·공공기관장·지자체장" : "Senior government, agency and local positions", rows: publicRoles },
-    { title: ko ? "후보 지명·지원 등 실제 취임과 구분해야 할 사례" : "Nominations and applications, not appointments", rows: separated }
+    { title: ko ? "국회의원으로 진출한 인사" : "Civic leaders who entered parliament", rows: ko ? civic : civicEn },
+    { title: ko ? "정부 고위직·공공기관장·지자체장" : "Senior government, agency and local positions", rows: ko ? publicRoles : publicRolesEn },
+    { title: ko ? "후보 지명·지원 등 실제 취임과 구분해야 할 사례" : "Nominations and applications, not appointments", rows: ko ? separated : separatedEn }
   ];
   return <section className="article-section article-section-long my-12" aria-label={ko ? "시민단체 출신 주요 인사 경력표" : "Civic leadership and public office career table"}>
     <span className="section-kicker">{ko ? "인물·직책 확인표" : "CAREER RECORD"}</span>
     <h2 className="article-section-title">{ko ? "영상에 등장한 인사들의 시민단체 경력과 공직 진출" : "Civic backgrounds and subsequent public roles"}</h2>
-    <p className="article-copy">{ko ? "영상에서 언급된 실명 인사들을 중심으로 당시 이력과 실제 직책을 대조했다. 시민단체 경력 자체는 위법·특혜의 증거가 아니며, 직책은 현직이 아닌 과거 재직 경력을 뜻한다." : "The table records past roles, not necessarily current positions. Participation in civil society is not proof of an unlawful favor or conflict of interest. Korean names and office labels are preserved for traceability."}</p>
+    <p className="article-copy">{ko ? "영상에서 언급된 실명 인사들을 중심으로 당시 이력과 실제 직책을 대조했다. 시민단체 경력 자체는 위법·특혜의 증거가 아니며, 직책은 현직이 아닌 과거 재직 경력을 뜻한다." : "The table records past roles, not necessarily current positions. Participation in civil society is not proof of an unlawful favor or conflict of interest. The information is translated for English readers; name romanizations follow common media usage."}</p>
     {groups.map((group, index) => <div key={index} className="mt-9">
       <h3 className="mb-3 text-lg font-bold text-navy">{group.title}</h3>
       <div className="overflow-x-auto border-y border-green-deep/15">
