@@ -15,6 +15,7 @@ import CivicSocietyVideoCareerTable from "../components/CivicSocietyVideoCareerT
 import { getColumn, isHotIssueColumn, publicInterestColumnSlugs } from "../data/columns";
 import { localizeColumn } from "../data/localizedContent";
 import { getArticleReadingPath } from "../data/articleReadingPaths";
+import { getSeriesForArticle } from "../data/editorialSeries";
 import { useLanguage } from "../i18n";
 
 const imageSrc = (src: string) => /^https?:\/\//i.test(src) ? src : `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
@@ -87,6 +88,9 @@ export default function ColumnDetail() {
   const hotIssue = isHotIssueColumn(column.slug);
   const publicInterest = publicInterestColumnSlugs.has(column.slug);
   const readingPath = getArticleReadingPath("column", column.slug, language);
+  const editorialSeries = getSeriesForArticle(column.slug, language);
+  const previousChapter = editorialSeries?.series.chapters[(editorialSeries?.index ?? 0) - 1];
+  const nextChapter = editorialSeries?.series.chapters[(editorialSeries?.index ?? 0) + 1];
 
   const seenImages = new Set(column.displayHero === false ? [] : [imageKey(column.heroImage.src)]);
   const bodyImages = [
@@ -173,6 +177,29 @@ export default function ColumnDetail() {
             {seoRelatedLinks[column.slug].map((related) => <li key={related.path}><Link to={related.path} className="font-semibold text-green-deep underline underline-offset-4 hover:text-navy">{related.label}</Link></li>)}
           </ul>
         </nav>}
+        {editorialSeries && (
+          <nav aria-label={ko ? "기획연재 이어 읽기" : "Series chapter navigation"} className="my-9 border-y border-green-deep/20 bg-green-pale/35 px-4 py-5 sm:px-6">
+            <p className="section-kicker">SPECIAL SERIES</p>
+            <Link to={"/series/" + editorialSeries.series.slug} className="mt-2 inline-flex items-center gap-2 text-lg font-extrabold text-navy hover:text-green-mid">
+              {editorialSeries.series.title}<ArrowLeft size={15} className="rotate-180"/>
+            </Link>
+            <p className="mt-1 text-xs text-charcoal/55">{ko ? "전체 " + editorialSeries.series.chapters.length + "편 중 " + (editorialSeries.index + 1) + "편" : "Chapter " + (editorialSeries.index + 1) + " of " + editorialSeries.series.chapters.length}</p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {previousChapter ? (
+                <Link to={previousChapter.path} className="group border border-green-deep/15 bg-white p-3 hover:border-green-deep/40">
+                  <span className="flex items-center gap-1 text-xs font-bold text-green-deep"><ArrowLeft size={13}/>{ko ? "이전 편" : "Previous"}</span>
+                  <span className="mt-1 block line-clamp-2 text-sm font-semibold text-navy group-hover:text-green-mid">{previousChapter.title}</span>
+                </Link>
+              ) : <span className="text-xs text-charcoal/50">{ko ? "첫 번째 회차입니다." : "First chapter."}</span>}
+              {nextChapter ? (
+                <Link to={nextChapter.path} className="group border border-green-deep/15 bg-white p-3 hover:border-green-deep/40">
+                  <span className="flex items-center justify-end gap-1 text-xs font-bold text-green-deep">{ko ? "다음 편" : "Next"}<ArrowLeft size={13} className="rotate-180"/></span>
+                  <span className="mt-1 block line-clamp-2 text-right text-sm font-semibold text-navy group-hover:text-green-mid">{nextChapter.title}</span>
+                </Link>
+              ) : <span className="text-right text-xs text-charcoal/50">{ko ? "현재 공개된 마지막 회차입니다." : "Latest published chapter."}</span>}
+            </div>
+          </nav>
+        )}
         <ArticleSources citations={citations} note={column.sourceNote}/>
         <ContentAccountability postSlug={column.slug} publishedDate={column.date} />
         <CommentSection postSlug={column.slug} />
