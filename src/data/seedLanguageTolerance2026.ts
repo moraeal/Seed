@@ -1,6 +1,6 @@
 import type { SeedLanguageArticle } from "./seedLanguageBase";
 
-/** Approved SEED VOICE 시민언어 article; article text preserved. */
+/** Approved SEED VOICE 시민언어 article; narrative unchanged. */
 export const toleranceArticleKo: SeedLanguageArticle = {
   "slug": "tolerance-social-cohesion-common-rules-2026",
   "term": "관용",
@@ -17,10 +17,10 @@ export const toleranceArticleKo: SeedLanguageArticle = {
     "관용을 정치적 도덕의 독점적 언어로 만들지 말고 공동의 헌법적 질서와 정책의 효과·비용·책임으로 검증해야 한다."
   ],
   "heroImage": {
-    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Manifestation_contre_la_loi_immigration%2C_Lyon_%2821_janvier_2024%29_02.jpg/1280px-Manifestation_contre_la_loi_immigration%2C_Lyon_%2821_janvier_2024%29_02.jpg",
-    "alt": "2024년 1월 21일 프랑스 리옹 벨쿠르 광장의 이민법 반대 시위에서 손팻말을 들고 모인 참가자들의 현장사진",
-    "caption": "2024년 1월 21일 프랑스 리옹 벨쿠르 광장에서 열린 이민법 반대 시위 현장. 원본 실사 사진(가로 4,096×3,072)을 웹용 1,280px로 표시.",
-    "credit": "Pemberlaid / Wikimedia Commons · CC BY-SA 4.0"
+    "src": "https://cdn-s-www.leprogres.fr/images/655422E5-1063-4FD4-9AE6-5F8375E4F70B/NW_raw/photo-joel-philippon-1705917895.jpg",
+    "alt": "2024년 1월 21일 프랑스 리옹의 이민법 반대 시위에서 '자유·평등·박애'와 이민법 반대를 쓴 대형 현수막을 들고 행진하는 시민들의 현장사진",
+    "caption": "2024년 1월 21일 프랑스 리옹의 이민법 반대 집회. 참가자들이 '자유·평등·박애를 위해 행진하자', '난민·이민법 반대'라고 적힌 대형 현수막을 들고 있다. 《Le Progrès》 보도사진.",
+    "credit": "사진 © Joël Philippon / Le Progrès (재사용 허락 여부 별도 확인 필요)"
   },
   "inlineImage": {
     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Hemicycle_of_the_French_National_Assembly_at_the_Palais_Bourbon_in_Paris%2C_July_2026_01.jpg/1280px-Hemicycle_of_the_French_National_Assembly_at_the_Palais_Bourbon_in_Paris%2C_July_2026_01.jpg",
@@ -163,8 +163,8 @@ export const toleranceArticleKo: SeedLanguageArticle = {
       "url": "https://mojhome.moj.go.kr/moj/2412/subview.do"
     },
     {
-      "label": "현장사진: 프랑스 리옹 벨쿠르 광장 이민법 반대 시위, Pemberlaid (2024.1.21), CC BY-SA 4.0",
-      "url": "https://commons.wikimedia.org/wiki/File:Manifestation_contre_la_loi_immigration,_Lyon_(21_janvier_2024)_02.jpg"
+      "label": "원본 현장사진: Joël Philippon, 「Contre la loi immigration, 3 500 personnes ont défilé dans les rues de Lyon」, Le Progrès, 2024.1.21 (사진 재사용 허락 별도 확인 필요)",
+      "url": "https://www.leprogres.fr/social/2024/01/21/3-500-personnes-defilent-dans-le-calme-contre-la-loi-immigration"
     },
     {
       "label": "Photo, French National Assembly chamber (23 July 2026), Dev Jadiya, CC BY-SA 4.0",
@@ -189,10 +189,10 @@ export const toleranceArticleEn: SeedLanguageArticle = {
     "Equal dignity and common law must accompany open democratic scrutiny of immigration policy."
   ],
   "heroImage": {
-    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Manifestation_contre_la_loi_immigration%2C_Lyon_%2821_janvier_2024%29_02.jpg/1280px-Manifestation_contre_la_loi_immigration%2C_Lyon_%2821_janvier_2024%29_02.jpg",
-    "alt": "Photograph of demonstrators with signs and aid-organization vests protesting France's immigration law at Place Bellecour in Lyon on 21 January 2024",
-    "caption": "A real photograph of a protest against France’s immigration law in Lyon on 21 January 2024. Cropped to the site's hero frame.",
-    "credit": "Pemberlaid / Wikimedia Commons · CC BY-SA 4.0"
+    "src": "https://cdn-s-www.leprogres.fr/images/655422E5-1063-4FD4-9AE6-5F8375E4F70B/NW_raw/photo-joel-philippon-1705917895.jpg",
+    "alt": "Photo of the 21 January 2024 demonstration in Lyon against France’s immigration law, with a large banner defending liberty, equality and fraternity",
+    "caption": "Demonstrators in Lyon on 21 January 2024 carry a banner opposing the asylum and immigration law. Published by Le Progrès.",
+    "credit": "사진 © Joël Philippon / Le Progrès (재사용 허락 여부 별도 확인 필요)"
   },
   "inlineImage": {
     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Hemicycle_of_the_French_National_Assembly_at_the_Palais_Bourbon_in_Paris%2C_July_2026_01.jpg/1280px-Hemicycle_of_the_French_National_Assembly_at_the_Palais_Bourbon_in_Paris%2C_July_2026_01.jpg",
@@ -326,8 +326,8 @@ export const toleranceArticleEn: SeedLanguageArticle = {
       "url": "https://mojhome.moj.go.kr/moj/2412/subview.do"
     },
     {
-      "label": "Photograph: Lyon immigration-law protest, Pemberlaid (21 January 2024), CC BY-SA 4.0",
-      "url": "https://commons.wikimedia.org/wiki/File:Manifestation_contre_la_loi_immigration,_Lyon_(21_janvier_2024)_02.jpg"
+      "label": "Original press photograph: Joël Philippon, Le Progrès, Lyon immigration-law protest, 21 January 2024 (reuse permission not independently verified)",
+      "url": "https://www.leprogres.fr/social/2024/01/21/3-500-personnes-defilent-dans-le-calme-contre-la-loi-immigration"
     },
     {
       "label": "Photo, French National Assembly chamber (23 July 2026), Dev Jadiya, CC BY-SA 4.0",
