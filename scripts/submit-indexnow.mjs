@@ -14,6 +14,8 @@ const permanentUrls = [
   origin + '/tax-watch-movement/',
   origin + '/about/',
   origin + '/columns/',
+  origin + '/columns/no-more-tax-increases-civic-declaration-2026/',
+  origin + '/briefings/korean-civic-tax-watch-movement-ktr/',
 ];
 
 const localKey = (await readFile(path.join(root, 'public', key + '.txt'), 'utf8')).trim();
