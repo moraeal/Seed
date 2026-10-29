@@ -3,13 +3,12 @@ import { useEffect, useState } from "react";
 import type { FeaturedHistoryEntry } from "../data/featuredHistory";
 import { getFeaturedContentHistory, getFeaturedContentPath } from "../lib/featuredContent";
 
-export function useFeaturedContent({ waitForSelection = false } = {}) {
+export function useFeaturedContent() {
   const [featuredPath, setFeaturedPath] = useState<string | null>(snapshot.featuredPath);
   const [history, setHistory] = useState<FeaturedHistoryEntry[]>(snapshot.history);
-  // A deployed snapshot may predate an operator change. Resolve the live
-  // selection before showing a homepage lead; archive pages can use the snapshot.
-  // Prerender remains indexable; browser readers wait for the live selection.
-  const [ready, setReady] = useState(!waitForSelection || typeof window === "undefined");
+  // Paint the last successful public snapshot immediately, including in SSR HTML.
+  // A live editor change refreshes the selection in the background without a blank lead.
+  const ready = true;
   const [historyError, setHistoryError] = useState(false);
   useEffect(() => {
     let active = true;
@@ -19,11 +18,10 @@ export function useFeaturedContent({ waitForSelection = false } = {}) {
       pending = true;
       const [pathResult, historyResult] = await Promise.allSettled([
         getFeaturedContentPath().then((path) => {
-          if (active) { setFeaturedPath(path); setReady(true); }
+          if (active) setFeaturedPath(path);
           return path;
         }, (error) => {
-          // Use the saved selection only when the live request has failed.
-          if (active) setReady(true);
+          // Keep the last successful snapshot or selection if the network fails.
           throw error;
         }),
         getFeaturedContentHistory(),
@@ -33,7 +31,6 @@ export function useFeaturedContent({ waitForSelection = false } = {}) {
       if (pathResult.status === "fulfilled") setFeaturedPath(pathResult.value);
       if (historyResult.status === "fulfilled") setHistory(historyResult.value);
       setHistoryError(historyResult.status === "rejected");
-      setReady(true);
     };
     void refresh();
     const timer = window.setInterval(() => { if (document.visibilityState === "visible") void refresh(); }, 60_000);
