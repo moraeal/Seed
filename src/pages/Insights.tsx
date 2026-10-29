@@ -195,7 +195,53 @@ export default function Insights() {
               [ko ? "회원" : "Members", totals.member_count || members.length],
             ].map(([label, value]) => <article key={String(label)} className="border border-green-deep/15 bg-white p-5"><p className="text-xs font-bold text-charcoal/45">{label}</p><p className="editorial-title mt-2 text-3xl font-bold text-navy">{typeof value === "number" ? value.toLocaleString() : value}</p></article>)}
           </div>
-          <section className="mt-7 border border-green-deep/15 bg-white p-5 sm:p-7"><div className="flex flex-wrap items-end justify-between gap-2"><div><h2 className="editorial-title text-xl font-bold text-navy">{ko ? "최근 7일 조회 추이" : "Views over the last 7 days"}</h2><p className="mt-1 text-xs text-charcoal/45">{ko ? "한국 시간 기준 · 막대 위 조회수, 아래 순방문자" : "Korea time · views above, visitors below"}</p></div><Link to="/insights/content" className="inline-flex items-center gap-1 text-sm font-bold text-green-deep">{ko ? "콘텐츠별 보기" : "View content"}<ChevronRight size={15}/></Link></div><div className="mt-7 grid h-52 grid-cols-7 items-end gap-2 border-b border-green-deep/20 px-1 sm:gap-4">{dailyViews.map((item) => { const count = Number(item.views); return <div key={item.view_date} className="flex h-full min-w-0 flex-col items-center justify-end"><span className="mb-2 text-xs font-bold text-navy">{count.toLocaleString()}</span><div className="w-full max-w-12 bg-green-mid" style={{ height: `${Math.max(count > 0 ? 8 : 2, (count / maxDailyViews) * 130)}px` }}/><span className="mt-1 text-[10px] font-bold text-green-deep">{Number(item.visitors).toLocaleString()}</span><span className="mt-1 whitespace-nowrap text-[10px] font-semibold text-charcoal/55 sm:text-xs">{formatChartDate(item.view_date)}</span></div>; })}</div></section>
+          <section className="mt-7 border border-green-deep/15 bg-white p-5 sm:p-7">
+            <div className="flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <h2 className="editorial-title text-xl font-bold text-navy">{ko ? "최근 30일 조회 추이" : "Views over the last 30 days"}</h2>
+                <p className="mt-1 text-xs text-charcoal/45">{ko ? "한국 시간 기준 · 그래프의 날짜에 마우스를 올리면 일별 수치를 확인할 수 있습니다." : "Korea time · hover over the chart for daily figures."}</p>
+              </div>
+              <Link to="/insights/content" className="inline-flex items-center gap-1 text-sm font-bold text-green-deep">{ko ? "콘텐츠별 보기" : "View content"}<ChevronRight size={15}/></Link>
+            </div>
+            <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-charcoal/70" aria-hidden="true">
+              <span className="inline-flex items-center gap-2"><span className="h-0.5 w-5 bg-green-deep"/>{ko ? "조회수" : "Page views"}</span>
+              <span className="inline-flex items-center gap-2"><span className="h-0.5 w-5 bg-amber-600"/>{ko ? "순방문자" : "Unique visitors"}</span>
+            </div>
+            <div className="mt-5 grid min-w-0 grid-cols-[auto_minmax(0,1fr)] gap-x-2" role="img" aria-label={ko ? "최근 30일 조회수와 순방문자 선 그래프" : "Line chart of daily page views and unique visitors for the last 30 days"}>
+              <div className="flex h-52 flex-col justify-between py-1 text-right text-[10px] font-semibold text-charcoal/55 sm:text-xs" aria-hidden="true">
+                {[4, 3, 2, 1, 0].map((step) => <span key={step}>{Math.round((maxDailyViews * step) / 4).toLocaleString()}</span>)}
+              </div>
+              <div className="min-w-0">
+                <svg viewBox="0 0 1000 216" preserveAspectRatio="none" className="block h-52 w-full" aria-hidden="true">
+                  {[16, 62, 108, 154, 200].map((y) => <line key={y} x1="0" y1={y} x2="1000" y2={y} stroke="#C9D9CD" strokeWidth="1" vectorEffect="non-scaling-stroke"/>)}
+                  {dailyViews.length > 0 && <>
+                    <polyline
+                      points={dailyViews.map((item, index) => `${16 + (index * 968) / Math.max(1, dailyViews.length - 1)},${200 - (Number(item.views) / maxDailyViews) * 184}`).join(" ")}
+                      fill="none" stroke="#23583E" strokeWidth="3" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke"
+                    />
+                    <polyline
+                      points={dailyViews.map((item, index) => `${16 + (index * 968) / Math.max(1, dailyViews.length - 1)},${200 - (Number(item.visitors) / maxDailyViews) * 184}`).join(" ")}
+                      fill="none" stroke="#B46D25" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke"
+                    />
+                    {dailyViews.map((item, index) => {
+                      const x = 16 + (index * 968) / Math.max(1, dailyViews.length - 1);
+                      return (
+                        <rect key={item.view_date} x={Math.max(0, x - 16)} y="0" width="32" height="216" fill="transparent">
+                          <title>{`${formatChartDate(item.view_date)} · ${ko ? "조회" : "Views"} ${Number(item.views).toLocaleString()} · ${ko ? "순방문자" : "Visitors"} ${Number(item.visitors).toLocaleString()}`}</title>
+                        </rect>
+                      );
+                    })}
+                  </>}
+                </svg>
+                <div className="mt-2 flex justify-between text-[10px] font-semibold text-charcoal/60 sm:text-xs" aria-hidden="true">
+                  {dailyViews.filter((_, index) => index % 6 === 0 || index === dailyViews.length - 1).map((item) => (
+                    <span key={item.view_date}>{item.view_date.slice(5).replace("-", "/")}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            {dailyViews.length === 0 && <p className="mt-4 text-sm text-charcoal/45">{ko ? "조회 기록을 불러오는 중입니다." : "Loading daily view history."}</p>}
+          </section>
           <section className="mt-7 border border-green-deep/15 bg-white p-5 sm:p-6"><div><h2 className="editorial-title text-xl font-bold text-navy">{ko ? "최근 30일 독자 행동" : "Reader actions · 30 days"}</h2><p className="mt-1 text-xs text-charcoal/45">{ko ? "새 계측 시작 이후의 익명 행동만 포함합니다." : "Includes anonymous actions recorded after the new measurement began."}</p></div><div className="mt-5 grid gap-3 sm:grid-cols-3 lg:grid-cols-6">{[["page_view", ko ? "조회" : "Views"], ["engaged_30s", ko ? "30초 읽기" : "30 sec"], ["scroll_50", ko ? "50% 도달" : "50% scroll"], ["scroll_90", ko ? "90% 도달" : "90% scroll"], ["share_click", ko ? "공유" : "Shares"], ["newsletter_signup", ko ? "구독 전환" : "Signups"]].map(([stage, label]) => <div key={stage} className="border-l-2 border-green-mid bg-[#F1F2EC] px-4 py-3"><p className="text-[11px] font-bold text-charcoal/45">{label}</p><p className="mt-1 text-xl font-bold text-navy">{Number(funnelTotals[stage] || 0).toLocaleString()}</p></div>)}</div></section>
           <div className="mt-7 grid gap-6 xl:grid-cols-2"><section className="border border-green-deep/15 bg-white p-5 sm:p-6"><div className="flex items-center justify-between"><h2 className="editorial-title text-xl font-bold text-navy">{ko ? "상위 콘텐츠" : "Top content"}</h2><Link to="/insights/content" className="text-xs font-bold text-green-deep">{ko ? "전체 보기" : "All"}</Link></div><div className="mt-4 divide-y divide-green-deep/10">{topViews.map((item) => <div key={item.page_path} className="flex items-center justify-between gap-4 py-3"><div className="min-w-0"><p className="truncate text-sm font-bold text-navy">{item.page_path}</p><p className="mt-1 text-[11px] text-charcoal/40">{categoryLabel(item.page_path, ko)}</p></div><span className="text-sm font-bold text-green-deep">{Number(item.views).toLocaleString()}</span></div>)}</div></section><section className="border border-green-deep/15 bg-white p-5 sm:p-6"><h2 className="editorial-title text-xl font-bold text-navy">{ko ? "관리 바로가기" : "Management"}</h2><div className="mt-4 grid gap-3 sm:grid-cols-2">{navItems.slice(1).map((item) => <Link key={item.key} to={item.path} className="flex items-center justify-between border border-green-deep/10 p-4 text-sm font-bold text-navy hover:border-green-mid"><span>{ko ? item.ko : item.en}</span><ChevronRight size={16} className="text-green-mid"/></Link>)}</div></section></div>
           <div className="mt-6 border border-green-deep/15 bg-[#E8EFE9] px-5 py-4 text-sm leading-6 text-green-deep"><strong>{ko ? "측정 원칙" : "Measurement principle"}</strong> · {ko ? "대표 계정과 운영 화면은 집계에서 제외합니다. 개인정보·원본 IP·기기 정보는 저장하지 않고, 90일마다 바뀌는 익명 방문 식별자만 사용합니다." : "Owner traffic and private screens are excluded. No personal data, raw IP address or device data is stored; only a rotating 90-day anonymous visitor ID is used."}</div>

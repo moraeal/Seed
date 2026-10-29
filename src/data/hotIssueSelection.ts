@@ -2,7 +2,7 @@ import type { Language } from "../i18n";
 import type { LegislativeBill } from "../lib/legislativeMonitoring";
 import { getFeaturedContentCandidates } from "./featuredContent";
 import type { FeaturedHistoryEntry } from "./featuredHistory";
-import { getHomeTopic } from "./homeTopics";
+import { claimHomeStories } from "./homeTopics";
 import recoveredHomepageHistory from "./recoveredHomepageHistory.json";
 
 export type HotIssueCard = {
@@ -53,5 +53,5 @@ export function getHomepageArchiveCards(language: Language, legislativeBills: Le
 // Filter current homepage placements before limiting, without changing the
 // operator's stored history or the complete /news archive.
 export function selectHotIssueCards(cards: HotIssueCard[], claimedTopics: ReadonlySet<string>, limit = 4): HotIssueCard[] {
-  return cards.filter((card) => !claimedTopics.has(getHomeTopic(card.to))).slice(0, limit);
+  return claimHomeStories(cards, (card) => card.to, new Set(claimedTopics), limit);
 }
