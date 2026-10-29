@@ -111,9 +111,9 @@ try {
       `${route}: regression scenario must contain series chapters in the full columns archive`);
     const columnsSection = sections.find((section) => section[0].includes('>COLUMNS</p>'));
     assert(columnsSection, `${route}: standalone column desk must exist`);
-    const renderedColumns = [...columnsSection[0].matchAll(/<a\\b[^>]*href="([^"]+)"/g)]
+    const renderedColumns = [...columnsSection[0].matchAll(/<a\b[^>]*href="([^"]+)"/g)]
       .map((match) => canonicalHomePath(match[1]))
-      .filter((path) => /^\\/columns\\/[^/]+$/.test(path));
+      .filter((path) => /^\/columns\/[^/]+$/.test(path));
     assert(renderedColumns.length >= 3, `${route}: excluding series must preserve a useful standalone column desk`);
     assert(renderedColumns.every((path) => !serializedPaths.has(path)),
       `${route}: serialized article repeated in standalone columns: ${renderedColumns.filter((path) => serializedPaths.has(path)).join(", ")}`);
