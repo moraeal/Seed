@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:minhoe-new-peoples-committee-civic-society-part2-2026": {
+    ko: {
+      href: "/columns/who-represents-civil-society-citizen-freedom-part1-2026",
+      title: "시민사회를 지원한다는 국가, 시민의 자유는 누가 지키는가",
+      relationship: "누가 시민사회를 대표하는가 · ①편 함께 읽기",
+      reason: "영등포 민회의 참여 절차를 살펴봤다면, 시민참여기본법과 국가시민참여위원회가 제기하는 시민사회 독립성 문제를 첫 편에서 확인합니다.",
+      listHref: "/series/civil-society",
+      listLabel: "누가 시민사회를 대표하는가 · 전체 연재",
+    },
+    en: {
+      href: "/columns/who-represents-civil-society-citizen-freedom-part1-2026",
+      title: "A State That Supports Civil Society: Who Protects Citizens' Freedom?",
+      relationship: "WHO REPRESENTS CIVIL SOCIETY? · READ PART 1",
+      reason: "After examining a municipal citizen forum, return to the proposed national participation framework and the safeguards for civic independence.",
+      listHref: "/series/civil-society",
+      listLabel: "Who Represents Civil Society? — All chapters",
+    },
+  },
   "column:china-history-sovereignty-neighbor-part4-2026": {
     ko: {
       href: "/columns/china-business-freedom-industrial-security-limited-state-2026",
