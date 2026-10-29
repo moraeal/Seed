@@ -2,7 +2,7 @@ import type { SeedColumn } from "../columns";
 export const aiBasicIncomeEditorialColumn: SeedColumn = {
   "slug": "ai-era-basic-income-tax-vote-politics-2026",
   "issue": 103,
-  "title": "AI 시대라는 이름으로 국민 세금으로 표를 사려는가",
+  "title": "AI 기본소득인가, 국민 세금으로 표를 사는 정치인가",
   "subtitle": "AI 생산성 배당과 이재명 정부의 기본소득은 구별돼야 한다",
   "date": "2026-10-29",
   "author": "작은씨앗",
