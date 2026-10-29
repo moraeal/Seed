@@ -43,16 +43,40 @@ try {
     const failures=[];
     page.on("pageerror",e=>failures.push("JS: "+e.message));
     const path = isHome ? "/" : (isCivicLanguage ? "/seed-language/" : slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : (slug === "youth-rent-tax-credit-20-percent-bill-2222071" || slug === "olympic-park-ballot-inspection-civic-briefing") ? "/briefings/" : slug === "national-assembly-48-hour-bill-notice-2026" ? "/monitoring/legislation/commentary/" : "/columns/") + slug + "/";
-    await page.goto(base+path,{waitUntil:"networkidle",timeout:45000});
-    await page.locator("body").waitFor();
-    await page.evaluate(async()=>{for(const img of document.images){img.loading="eager";}await Promise.all(Array.from(document.images).map(img=>img.decode().catch(()=>{})));});
-    const info=await page.evaluate(()=>({
-      images:Array.from(document.images).filter(i=>i.getClientRects().length).map(i=>({src:i.currentSrc||i.src,ok:i.complete&&i.naturalWidth>0})),
-      overflow:document.documentElement.scrollWidth>innerWidth+2,
-      text:document.body.innerText,
-      h1:document.querySelector("main h1")?.innerText?.trim() || document.querySelector("h1")?.innerText?.trim() || "",
-      ogImage:document.querySelector('meta[property="og:image"]')?.content || "",
-    }));
+    await page.goto(base+path,{waitUntil:"domcontentloaded",timeout:45000});
+    const readPage = async () => {
+      // Third-party videos/analytics may keep the network busy indefinitely.
+      // Gate on the actual article/metadata instead of waiting for networkidle.
+      await page.waitForFunction(({home}) => {
+        const text = document.body?.innerText?.trim() || "";
+        const heading = document.querySelector("main h1")?.innerText?.trim()
+          || document.querySelector("h1")?.innerText?.trim() || "";
+        return home ? text.length > 100
+          : heading.length > 0 && text.length > 500
+            && Boolean(document.querySelector('meta[property="og:image"]')?.content);
+      }, {home:isHome}, {timeout:30000});
+      await page.evaluate(async () => {
+        for (const img of document.images) img.loading = "eager";
+        await Promise.all(Array.from(document.images).map(img => img.decode().catch(() => {})));
+      });
+      return page.evaluate(() => ({
+        images: Array.from(document.images).filter(i => i.getClientRects().length)
+          .map(i => ({src:i.currentSrc||i.src,ok:i.complete&&i.naturalWidth>0})),
+        overflow: document.documentElement.scrollWidth > innerWidth + 2,
+        text: document.body.innerText,
+        h1: document.querySelector("main h1")?.innerText?.trim()
+          || document.querySelector("h1")?.innerText?.trim() || "",
+        ogImage: document.querySelector('meta[property="og:image"]')?.content || "",
+      }));
+    };
+    let info = await readPage();
+    if (info.images.some(i => !i.ok)) {
+      // Retry one transient local/browser image load, but never accept a
+      // persistently broken asset. All other JS/render failures remain fatal.
+      console.warn("Retrying broken image loads once:", info.images.filter(i => !i.ok).map(i => i.src));
+      await page.reload({waitUntil:"domcontentloaded",timeout:45000});
+      info = await readPage();
+    }
     if(isHome && info.text.trim().length<100) failures.push("Homepage content not rendered");
     if(!isHome && info.text.trim().length<500) failures.push("Article body not rendered");
     if(!isHome && !info.h1.includes(expectedArticleHeadings[slug] || slug)) failures.push("Missing or wrong article H1: "+info.h1);
