@@ -1,13 +1,14 @@
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { selectRecentArticleUrls } from './indexnow-url-selection.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const host = 'seedvoice.kr';
 const key = '90ca15f2bb28a24058cec5f0340a3cab';
 const origin = 'https://' + host;
 const keyLocation = origin + '/' + key + '.txt';
-const urlList = [
+const permanentUrls = [
   origin + '/',
   origin + '/civic-campaign/',
   origin + '/tax-watch-movement/',
@@ -58,6 +59,27 @@ try {
   process.exitCode = 1;
   process.exit();
 }
+
+// Pull recent article URLs from the *deployed* public feed, not the checkout.
+// This covers new stories published after a successful deployment and avoids
+// indexing preview/draft routes. The 72-hour window is a fallback until
+// per-article modified timestamps are available for all legacy content.
+let recentUrls;
+try {
+  const feedResponse = await fetch(origin + '/rss.xml', {
+    redirect: 'follow',
+    signal: AbortSignal.timeout(12000),
+    headers: { 'User-Agent': 'SeedVoiceIndexNowRegistration/1.0' },
+  });
+  if (!feedResponse.ok) throw new Error('RSS returned HTTP ' + feedResponse.status);
+  recentUrls = selectRecentArticleUrls(await feedResponse.text(), origin);
+} catch (error) {
+  console.error('::warning::IndexNow submission skipped because the public RSS feed cannot be read: ' + error.message);
+  process.exitCode = 1;
+  process.exit();
+}
+const urlList = [...new Set([...permanentUrls, ...recentUrls])];
+console.log('[IndexNow] Recent article URLs found in public RSS=' + recentUrls.length);
 
 const response = await fetch('https://api.indexnow.org/indexnow', {
   method: 'POST',
