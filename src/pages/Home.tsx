@@ -18,6 +18,7 @@ import { getTaxCommentaryEdition, taxCommentaries } from "../data/taxCommentarie
 import { getFeaturedContentCandidates } from "../data/featuredContent";
 import { getLatestArticles } from "../data/latestArticles";
 import { getEditorialSeries } from "../data/editorialSeries";
+import { selectHomeStandaloneColumns } from "../data/homeColumnSelection";
 import { claimHomeStory, claimHomeStories, getHomeTopic } from "../data/homeTopics";
 import { seedLanguageTerms } from "../data/seedLanguageTerms";
 import { topicTaxonomy } from "../data/topicTaxonomy";
@@ -314,11 +315,12 @@ export default function Home() {
     .sort((a, b) => newestInSection({ path: a.to, date: a.date }, { path: b.to, date: b.date }));
 
   const commentaryItems = claimHomeStories(commentaryCandidates, (item) => item.to, claimedHomePaths, 3);
-  // The same shared claim registry powers every homepage article desk.
-  // Only unclaimed articles fill the column slots, with no hardcoded exclusions.
-  const journalColumns = claimHomeStories(
+  // Every published serialized chapter is reserved for the Editorial Series.
+  // Standalone columns fill the remaining desk slots; the full /columns archive
+  // continues to include all approved chapters and unrelated articles.
+  const journalColumns = selectHomeStandaloneColumns(
     allJournalColumns,
-    (column) => `/columns/${column.slug}`,
+    editorialSeries,
     claimedHomePaths,
     5,
   ).map((column) => ({ ...column, to: `/columns/${column.slug}` }));
