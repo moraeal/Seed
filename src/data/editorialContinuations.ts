@@ -775,5 +775,6 @@ export function getEditorialContinuation(kind: EditorialContentKind, slug: strin
     listHref: "/public-interest-watch",
     listLabel: "All Public Interest Watch articles",
   };
+  if (kind === "column" && slug === "ai-era-basic-income-tax-vote-politics-2026") return language === "ko" ? { href: "/columns/lee-mitterrand-populism-pension-korea-2026", title: "이재명 정부, 미테랑 정부를 따르려 하나?", relationship: "복지 약속과 재정책임", reason: "현금지원의 정치적 유인에 이어 프랑스의 장기 복지 약속과 재정 책임을 살펴봅니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" } : { href: "/columns/lee-mitterrand-populism-pension-korea-2026", title: "Is the Lee Administration Following Mitterrand?", relationship: "PUBLIC PROMISES AND FISCAL RESPONSIBILITY", reason: "Continue with how political commitments can create long-term fiscal obligations, using France's pension history.", listHref: "/columns", listLabel: "All columns" };
   return getBaseEditorialContinuation(kind, slug, language);
 }
