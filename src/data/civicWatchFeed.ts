@@ -1,3 +1,4 @@
+import { canonicalHomePath } from "./homeTopics";
 import { teenAiProtectionCommentary } from "./teenAiProtectionCommentary";
 import { youthRentCredit2026 } from "./youthRentCredit2026";
 import { youthRentCredit2026Translation } from "./contentTranslations/youthRentCredit2026";
@@ -147,11 +148,12 @@ export function getCivicWatchFeed(language: Language, bills: LegislativeBill[] =
 // Keep every category eligible: fixed category slots must not bury newer articles.
 // Exclude exact articles, so a new analysis can accompany a related lead story.
 export function selectLatestCivicWatchItems(items: CivicWatchItem[], excludedPaths: ReadonlySet<string>, limit = 3) {
-  const seen = new Set(excludedPaths);
+  const seen = new Set([...excludedPaths].map(canonicalHomePath));
   return [...items].sort(newestFirst)
     .filter((item) => {
-      if (seen.has(item.to)) return false;
-      seen.add(item.to);
+      const key = canonicalHomePath(item.to);
+      if (seen.has(key)) return false;
+      seen.add(key);
       return true;
-    }).slice(0, limit);
+    }).slice(0, Math.max(0, limit));
 }
