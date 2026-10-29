@@ -1,4 +1,5 @@
 import { teenAiProtectionCommentary } from "./teenAiProtectionCommentary";
+import { assembly48HourNoticeCommentary } from "./assembly48HourNoticeCommentary";
 import { futureFundControlArticle } from "./futureFundControlArticle";
 import { realEstateSupervisorColumn } from "./columns/realEstateSupervisorColumn";
 import { issue32 } from "./contentTranslations/columns/issue32";
@@ -66,6 +67,7 @@ export const linkedLegislativeColumnCommentaries = [{
 }];
 
 export const legislativeCommentaries: LegislativeCommentary[] = [
+  assembly48HourNoticeCommentary,
   teenAiProtectionCommentary,
   futureFundControlArticle,
   childbirthPensionCreditWatch,
