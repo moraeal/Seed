@@ -18,7 +18,7 @@ import { getTaxCommentaryEdition, taxCommentaries } from "../data/taxCommentarie
 import { getFeaturedContentCandidates } from "../data/featuredContent";
 import { getLatestArticles } from "../data/latestArticles";
 import { getEditorialSeries } from "../data/editorialSeries";
-import { getHomeTopic } from "../data/homeTopics";
+import { claimHomeStory, claimHomeStories, getHomeTopic } from "../data/homeTopics";
 import { seedLanguageTerms } from "../data/seedLanguageTerms";
 import { topicTaxonomy } from "../data/topicTaxonomy";
 import { useLanguage } from "../i18n";
@@ -149,34 +149,6 @@ type HomeWatchCommentary = {
   imageAlt: string;
 };
 
-const claimFirstUnseen = <T,>(
-  items: T[],
-  pathOf: (item: T) => string,
-  claimedPaths: Set<string>,
-) => {
-  const item = items.find((candidate) => !claimedPaths.has(getHomeTopic(pathOf(candidate))));
-  if (item) claimedPaths.add(getHomeTopic(pathOf(item)));
-  return item;
-};
-
-const claimUnseen = <T,>(
-  items: T[],
-  pathOf: (item: T) => string,
-  claimedPaths: Set<string>,
-  limit: number,
-) => {
-  const selected: T[] = [];
-  for (const item of items) {
-    const path = pathOf(item);
-    const topic = getHomeTopic(path);
-    if (claimedPaths.has(topic)) continue;
-    claimedPaths.add(topic);
-    selected.push(item);
-    if (selected.length >= limit) break;
-  }
-  return selected;
-};
-
 export default function Home() {
   const { language } = useLanguage();
   const ko = language === "ko";
@@ -237,19 +209,20 @@ export default function Home() {
     "/columns/jangjado-future-response-fund-no-more-tax-2026",
     "/briefings/korean-civic-tax-watch-movement-ktr",
   ]);
-  const noMoreTaxSidebarArticles = featuredCandidates
-    .filter((article) => noMoreTaxSidebarPaths.has(article.path) && !claimedHomePaths.has(getHomeTopic(article.path)))
-    .sort(newestInSection)
-    .slice(0, 2);
-  noMoreTaxSidebarArticles.forEach((article) => claimedHomePaths.add(getHomeTopic(article.path)));
-  const seedLanguageArticle = claimFirstUnseen(
+  const noMoreTaxSidebarArticles = claimHomeStories(
+    featuredCandidates.filter((article) => noMoreTaxSidebarPaths.has(article.path)).sort(newestInSection),
+    (article) => article.path,
+    claimedHomePaths,
+    2,
+  );
+  const seedLanguageArticle = claimHomeStory(
     seedLanguageCandidates,
     (item) => `/seed-language/${item.slug}`,
     claimedHomePaths,
   );
   const seedLanguageTerm = seedLanguageArticle ? seedLanguageTerms[ko ? seedLanguageArticle.term : getSeedLanguageEnvironmentArticle(seedLanguageArticle.slug, "ko")?.term ?? getSeedLanguageArticle(seedLanguageArticle.slug, "ko")?.term ?? ""] : undefined;
   // Reserve the newest briefings before the historical carousel can claim them.
-  const briefings = claimUnseen(
+  const briefings = claimHomeStories(
     localizedBriefings.filter((item) => item.homeBriefingLeadEligible !== false),
     (item) => `/briefings/${item.slug}`,
     claimedHomePaths,
@@ -340,21 +313,15 @@ export default function Home() {
   ]
     .sort((a, b) => newestInSection({ path: a.to, date: a.date }, { path: b.to, date: b.date }));
 
-  const commentaryItems = claimUnseen(commentaryCandidates, (item) => item.to, claimedHomePaths, 3);
-  // Fill the column desk in publication order with articles not already shown.
-  // Filter before limiting so occupied slots are replaced by the next columns.
-  const columnExcludedPaths = new Set([
-    ...upperArticlePaths,
-    ...recentCivicWatchItems.map((item) => item.to),
-    ...commentaryItems.map((item) => item.to),
-  ]);
-  const journalColumns = allJournalColumns.filter((column) => {
-    const path = `/columns/${column.slug}`;
-    if (columnExcludedPaths.has(path)) return false;
-    columnExcludedPaths.add(path);
-    return true;
-  }).slice(0, 5)
-    .map((column) => ({ ...column, to: `/columns/${column.slug}` }));
+  const commentaryItems = claimHomeStories(commentaryCandidates, (item) => item.to, claimedHomePaths, 3);
+  // The same shared claim registry powers every homepage article desk.
+  // Only unclaimed articles fill the column slots, with no hardcoded exclusions.
+  const journalColumns = claimHomeStories(
+    allJournalColumns,
+    (column) => `/columns/${column.slug}`,
+    claimedHomePaths,
+    5,
+  ).map((column) => ({ ...column, to: `/columns/${column.slug}` }));
   const voiceLeadColumn = journalColumns[0];
   const voiceListColumns = journalColumns.slice(1);
 
