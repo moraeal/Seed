@@ -16,7 +16,7 @@ export const limitedStateArticleKo: SeedLanguageArticle = {
   ],
   "heroImage": {
     "src": "images/seed-language/limited-state-citizen-power-boundaries-2026/hero.webp",
-    "alt": "거대한 공공건물의 그림자와 시민의 가계부·생활비 사이에 놓인 투명한 경계를 표현한 상징 장면",
+    "alt": "국회의사당을 닮은 공공건물을 배경으로 카페 운영자, 직장인, 가족과 학생이 오가는 열린 시민 광장. 한쪽에는 정의의 저울상이 서 있다.",
     "caption": "시민을 보호하기 위해 맡긴 권한에도 시민의 삶 앞에서 멈추는 경계가 있습니다.",
     "credit": "AI 이미지"
   },
@@ -188,7 +188,7 @@ export const limitedStateArticleEn: SeedLanguageArticle = {
   ],
   "heroImage": {
     "src": "images/seed-language/limited-state-citizen-power-boundaries-2026/hero.webp",
-    "alt": "A transparent boundary separates the shadow of a monumental public building from a household budget notebook and living expenses",
+    "alt": "An open civic plaza with a café owner, an office worker, a parent and child, and a student in front of a parliament-inspired public building and a statue of Justice",
     "caption": "Power entrusted to protect citizens also has boundaries at the threshold of their lives.",
     "credit": "AI image"
   },
