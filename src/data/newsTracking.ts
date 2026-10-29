@@ -1,5 +1,5 @@
 import type { Language } from "../i18n";
-import { getHomeTopic } from "./homeTopics";
+import { claimHomeStories } from "./homeTopics";
 import { newsTrackerCases } from "./newsTrackerRegistry";
 import type { PublicInterestWatchCase } from "./publicInterestWatch";
 
@@ -39,11 +39,5 @@ export function getNewsTrackingCards(language: Language, records: PublicInterest
 }
 
 export function selectNewsTrackingCards(cards: NewsTrackingCard[], claimedTopics: ReadonlySet<string>, limit = 4): NewsTrackingCard[] {
-  const seen = new Set(claimedTopics);
-  return cards.filter((card) => {
-    const topic = getHomeTopic(card.to);
-    if (seen.has(topic)) return false;
-    seen.add(topic);
-    return true;
-  }).slice(0, Math.max(0, limit));
+  return claimHomeStories(cards, (card) => card.to, new Set(claimedTopics), limit);
 }

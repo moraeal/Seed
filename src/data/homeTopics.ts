@@ -106,19 +106,48 @@ for (const [columnSlug, trackerSlug] of Object.entries(hotIssueColumnTrackerSlug
 
 homeTopicGroups["farmland-census-disposal-orders-tracker"]?.push("/briefings/farmland-census-elderly-farmers-retirement", "/columns/farmland-solar-cartel-professional-farming-2026", "/columns/farmland-farming-freedom-smart-agriculture-2026");
 
+// Routes are stable article identities. Locale prefixes, query strings,
+ // fragments and trailing slashes must not turn one article into two entries.
+export const canonicalHomePath = (value: string): string => {
+  const path = value.trim().replace(/^\/en(?=\/|$)/, "").split(/[?#]/, 1)[0];
+  return path.replace(/\/+$/, "") || "/";
+};
+
 const topicByPath = new Map(
-  Object.entries(homeTopicGroups).flatMap(([topic, paths]) => paths.map((path) => [path, topic] as const)),
+  Object.entries(homeTopicGroups).flatMap(([topic, paths]) =>
+    paths.map((path) => [canonicalHomePath(path), topic] as const)),
 );
 
-export const getHomeTopic = (path: string) => topicByPath.get(path) ?? path;
+// Group related editorial coverage when allocating homepage slots; unrelated
+// stories keep separate keys. This key is shared by every homepage desk.
+export const getHomeTopic = (path: string) => {
+  const canonical = canonicalHomePath(path);
+  return topicByPath.get(canonical) ?? canonical;
+};
+
+export function claimHomeStories<T>(
+  items: readonly T[],
+  pathOf: (item: T) => string,
+  claimedTopics: Set<string>,
+  limit: number,
+): T[] {
+  if (limit <= 0) return [];
+  const selected: T[] = [];
+  for (const item of items) {
+    const key = getHomeTopic(pathOf(item));
+    if (claimedTopics.has(key)) continue;
+    claimedTopics.add(key);
+    selected.push(item);
+    if (selected.length >= limit) break;
+  }
+  return selected;
+}
 
 export function claimHomeStory<T>(
-  items: T[],
+  items: readonly T[],
   pathOf: (item: T) => string,
   claimedTopics: Set<string>,
 ): T | undefined {
-  const item = items.find((candidate) => !claimedTopics.has(getHomeTopic(pathOf(candidate))));
-  if (item) claimedTopics.add(getHomeTopic(pathOf(item)));
-  return item;
+  return claimHomeStories(items, pathOf, claimedTopics, 1)[0];
 }
 
