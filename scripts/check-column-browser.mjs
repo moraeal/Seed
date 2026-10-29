@@ -25,6 +25,8 @@ const expectedArticleHeadings = {
   "olympic-park-ballot-inspection-civic-briefing": "올공 147일, 투표함은 열렸지만 국민은 여전히 밖에 있었다",
   "china-history-sovereignty-neighbor-part4-2026": "천 년의 이웃, 우리는 중국을 얼마나 알고 있는가",
   "tolerance-social-cohesion-common-rules-2026": "관용은 무조건 받아들이는 미덕이 아니라 공동의 질서를 지키는 책임이라는 말이다",
+  "ai-era-basic-income-tax-vote-politics-2026": "AI 시대라는 이름으로 국민 세금으로 표를 사려는가",
+  "national-assembly-48-hour-bill-notice-2026": "법안도 제대로 읽지 못하고 표결하는 국회, 48시간이면 충분한가",
 };
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
 const server = spawn("pnpm", ["exec","vite","preview","--host","127.0.0.1","--port","4179","--strictPort"], { stdio:"pipe" });
@@ -40,7 +42,7 @@ try {
     const page=await browser.newPage({viewport,deviceScaleFactor:1});
     const failures=[];
     page.on("pageerror",e=>failures.push("JS: "+e.message));
-    const path = isHome ? "/" : (isCivicLanguage ? "/seed-language/" : slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : (slug === "youth-rent-tax-credit-20-percent-bill-2222071" || slug === "olympic-park-ballot-inspection-civic-briefing") ? "/briefings/" : "/columns/") + slug + "/";
+    const path = isHome ? "/" : (isCivicLanguage ? "/seed-language/" : slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : (slug === "youth-rent-tax-credit-20-percent-bill-2222071" || slug === "olympic-park-ballot-inspection-civic-briefing") ? "/briefings/" : slug === "national-assembly-48-hour-bill-notice-2026" ? "/monitoring/legislation/commentary/" : "/columns/") + slug + "/";
     await page.goto(base+path,{waitUntil:"networkidle",timeout:45000});
     await page.locator("body").waitFor();
     await page.evaluate(async()=>{for(const img of document.images){img.loading="eager";}await Promise.all(Array.from(document.images).map(img=>img.decode().catch(()=>{})));});
