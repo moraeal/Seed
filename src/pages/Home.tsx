@@ -1,6 +1,5 @@
 import snapshot from "../data/homeSnapshot.json";
-import { civicSections, getTaxWatchMovementArticles } from "../data/civicSections";
-import { ArrowRight, ChevronLeft, ChevronRight, Clock, Megaphone } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import FeaturedStoryMedia from "../components/FeaturedStoryMedia";
@@ -229,17 +228,20 @@ export default function Home() {
   seedLanguageCandidates.sort((a, b) => newestInSection({ path: `/seed-language/${a.slug}`, date: a.date }, { path: `/seed-language/${b.slug}`, date: b.date }));
   // Reserve the lead and existing desks before the historical carousel.
   const claimedHomePaths = new Set(activeFeaturedPath ? [getHomeTopic(activeFeaturedPath)] : []);
-  const civicSidebarItems = civicSections.filter((section) => section.key !== "notices").map((section) => {
-    if (section.key === "campaign") {
-      const path = "/briefings/korean-civic-tax-watch-movement-ktr";
-      claimedHomePaths.add(getHomeTopic(path));
-      return { section, article: featuredCandidates.find((item) => item.path === path) };
-    }
-    const sectionArticles = getTaxWatchMovementArticles(language, featuredCandidates);
-    const article = [...sectionArticles].sort(newestInSection).find((item) => !claimedHomePaths.has(getHomeTopic(item.path)));
-    if (article) claimedHomePaths.add(getHomeTopic(article.path));
-    return { section, article };
-  });
+  // Keep the right rail focused on No More Tax commentary; serialized ATR
+  // chapters are already available in the dedicated Editorial Series section.
+  // The shared published-content registry prevents drafts from appearing here.
+  const noMoreTaxSidebarPaths = new Set([
+    "/columns/no-more-tax-increases-civic-declaration-2026",
+    "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026",
+    "/columns/jangjado-future-response-fund-no-more-tax-2026",
+    "/briefings/korean-civic-tax-watch-movement-ktr",
+  ]);
+  const noMoreTaxSidebarArticles = featuredCandidates
+    .filter((article) => noMoreTaxSidebarPaths.has(article.path) && !claimedHomePaths.has(getHomeTopic(article.path)))
+    .sort(newestInSection)
+    .slice(0, 2);
+  noMoreTaxSidebarArticles.forEach((article) => claimedHomePaths.add(getHomeTopic(article.path)));
   const seedLanguageArticle = claimFirstUnseen(
     seedLanguageCandidates,
     (item) => `/seed-language/${item.slug}`,
@@ -269,7 +271,7 @@ export default function Home() {
 
   const upperArticlePaths = new Set([
     activeFeaturedPath,
-    ...civicSidebarItems.map((item) => item.article?.path),
+    ...noMoreTaxSidebarArticles.map((article) => article.path),
     seedLanguageArticle ? `/seed-language/${seedLanguageArticle.slug}` : undefined,
     ...visibleHotIssueCards.map((card) => card.to),
     ...newsTrackingCards.map((card) => card.to),
@@ -482,10 +484,8 @@ export default function Home() {
                 <p className="mt-3 text-sm text-charcoal/55">{ko ? "오늘의 기사를 불러오고 있습니다." : "Loading today’s story."}</p>
               </div>
             )}
-            <aside className="divide-y divide-green-deep/15 border-y border-green-deep/20 xl:flex xl:h-full xl:flex-col xl:border-t-0" aria-label={ko ? "시민운동과 시민언어" : "Civic action and language"}>
-              {civicSidebarItems.map(({ section, article }) => {
-                if (section.key === "campaign") return (
-                  <div key={section.key} className="relative my-3 xl:mb-3 xl:mt-0">
+            <aside className="divide-y divide-green-deep/15 border-y border-green-deep/20 xl:flex xl:h-full xl:flex-col xl:border-t-0" aria-label={ko ? "No More Tax 운동과 시민언어" : "No More Tax campaign and civic language"}>
+                  <div className="relative my-3 xl:mb-3 xl:mt-0">
                   <Link to="/civic-campaign#campaign-signature" aria-label={ko ? "NO MORE TAX! 증세 반대 서명페이지로 이동" : "NO MORE TAX! Go to the petition page"} className="group block overflow-hidden bg-navy transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green-deep">
                     <SafeImage
                       src={resolveImageSrc("/images/civic/no-more-tax-fiscal-balloon-banner.webp")}
@@ -501,24 +501,29 @@ export default function Home() {
                       {ko ? "No More Tax 운동 소개·서명" : "No More Tax campaign and petition"}<ArrowRight size={14} aria-hidden="true" />
                     </Link>
                     <Link to="/tax-watch-movement" className="inline-flex items-center gap-1 underline underline-offset-4 hover:text-green-mid">
-                      {ko ? "세금감시운동 활동 기록" : "Tax watch movement reports"}<ArrowRight size={14} aria-hidden="true" />
+                      {ko ? "운동 관련 기사 전체보기" : "All campaign coverage"}<ArrowRight size={14} aria-hidden="true" />
                     </Link>
                   </nav>
                   </div>
-                );
-                const title = article?.title ?? section.title[language];
-                const summary = article?.summary ?? section.description[language];
-                return <Link key={section.key} to={article?.path ?? section.path} className="group cursor-pointer transition-colors duration-200 hover:bg-green-deep/5 focus-visible:bg-green-deep/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-deep grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3 xl:first:pt-0">
-                  <div className="flex items-center justify-center overflow-hidden bg-green-deep text-white">
-                    {article ? <SafeImage src={resolveImageSrc(article.image.src)} alt={article.image.alt} className="aspect-[4/3] h-full max-h-[110px] w-full object-cover" /> : <Megaphone size={34} aria-hidden="true" className="my-6" />}
+              {noMoreTaxSidebarArticles.length > 0 && (
+                <div className="py-3">
+                  <div className="flex items-center justify-between gap-3 pb-1">
+                    <h2 className="text-xs font-black tracking-[.06em] text-green-deep">{ko ? "NO MORE TAX · 관련 기사" : "NO MORE TAX · CAMPAIGN COVERAGE"}</h2>
+                    <Link to="/tax-watch-movement" className="shrink-0 text-xs font-bold text-green-deep underline underline-offset-4 hover:text-green-mid">{ko ? "더보기" : "More"}</Link>
                   </div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-black text-green-deep">{section.title[language]}{section.key === "cases" && article?.path.match(/taxpayer-movement-(\d{2})-/) && <span className="ml-1.5" aria-label={ko ? `연재 ${Number(article.path.match(/taxpayer-movement-(\d{2})-/)![1])}편` : `Part ${Number(article.path.match(/taxpayer-movement-(\d{2})-/)![1])}`}>{String.fromCodePoint(0x245f + Number(article.path.match(/taxpayer-movement-(\d{2})-/)![1]))}</span>}</p>
-                    <h2 className="editorial-title mt-1 line-clamp-2 break-keep text-[1.02rem] font-bold leading-snug text-navy transition-colors group-hover:text-green-mid group-focus-visible:text-green-mid sm:text-[1.08rem]">{title}</h2>
-                    <p className="home-compact-summary mt-1 line-clamp-2">{summary}</p>
+                  <div className="divide-y divide-green-deep/15">
+                    {noMoreTaxSidebarArticles.map((article) => (
+                      <Link key={article.path} to={article.path} className="group grid min-w-0 grid-cols-[96px_minmax(0,1fr)] gap-3 py-2.5 transition-colors hover:bg-green-deep/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-deep sm:grid-cols-[120px_minmax(0,1fr)] xl:grid-cols-[112px_minmax(0,1fr)]">
+                        <SafeImage src={resolveImageSrc(article.image.src)} alt={article.image.alt} loading="lazy" className="aspect-[4/3] w-full object-cover" />
+                        <div className="min-w-0">
+                          <h3 className="editorial-title line-clamp-2 break-keep text-[1.02rem] font-bold leading-snug text-navy transition-colors group-hover:text-green-mid sm:text-[1.08rem]">{article.title}</h3>
+                          <p className="home-compact-summary mt-1 line-clamp-2">{article.summary}</p>
+                        </div>
+                      </Link>
+                    ))}
                   </div>
-                </Link>;
-              })}
+                </div>
+              )}
               {seedLanguageArticle && (
                 <Link to={`/seed-language/${seedLanguageArticle.slug}`} className="group cursor-pointer transition-colors duration-200 hover:bg-green-deep/5 focus-visible:bg-green-deep/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-deep grid grid-cols-[96px_minmax(0,1fr)] gap-3 py-3.5 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-4 xl:flex-1 xl:grid-cols-[112px_minmax(0,1fr)] xl:content-start xl:py-3">
                   <div className="relative flex aspect-[4/3] h-full max-h-[96px] w-full flex-col items-center justify-center overflow-hidden border border-green-deep/20 bg-green-deep text-center" style={{ containerType: "inline-size" }}>
