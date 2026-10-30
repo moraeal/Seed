@@ -6,9 +6,10 @@ import { getFeaturedContentHistory, getFeaturedContentPath } from "../lib/featur
 export function useFeaturedContent() {
   const [featuredPath, setFeaturedPath] = useState<string | null>(snapshot.featuredPath);
   const [history, setHistory] = useState<FeaturedHistoryEntry[]>(snapshot.history);
-  // Paint the last successful public snapshot immediately, including in SSR HTML.
-  // A live editor change refreshes the selection in the background without a blank lead.
-  const ready = true;
+  // A build snapshot can predate the editor's current selection. Keep the lead
+  // placeholder in both prerendered HTML and the first browser paint until the
+  // live selection settles; otherwise the previous story flashes on every visit.
+  const [ready, setReady] = useState(false);
   const [historyError, setHistoryError] = useState(false);
   useEffect(() => {
     let active = true;
@@ -18,10 +19,14 @@ export function useFeaturedContent() {
       pending = true;
       const [pathResult, historyResult] = await Promise.allSettled([
         getFeaturedContentPath().then((path) => {
-          if (active) setFeaturedPath(path);
+          if (active) {
+            setFeaturedPath(path);
+            setReady(true);
+          }
           return path;
         }, (error) => {
           // Keep the last successful snapshot or selection if the network fails.
+          if (active) setReady(true);
           throw error;
         }),
         getFeaturedContentHistory(),
