@@ -1,3 +1,4 @@
+import { retirementReserveTranslation } from "../retirementReserve2026";
 import { olympicInspectionTranslation } from "../olympicInspectionBriefing";
 import { europeProtestsBriefingTranslation2026 } from "./europeProtestsBriefing2026";
 import { healthInsuranceFundingTranslation } from "./briefingHealthInsuranceFunding";
@@ -34,6 +35,7 @@ import { youthRentCredit2026Translation } from "./youthRentCredit2026";
 import { farmlandRetirementTranslation } from "./briefingFarmlandRetirement";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "retirement-pay-external-reserve-worker-small-business-2026": retirementReserveTranslation,
   "olympic-park-ballot-inspection-civic-briefing": olympicInspectionTranslation,
   "why-protests-spread-across-europe-october-2026": europeProtestsBriefingTranslation2026,
   "health-insurance-state-support-144-percent-citizen-cost-2026": healthInsuranceFundingTranslation,
