@@ -28,6 +28,7 @@ const expectedArticleHeadings = {
   "ai-era-basic-income-tax-vote-politics-2026": "AI 기본소득인가, 국민 세금으로 표를 사는 정치인가",
   "national-assembly-48-hour-bill-notice-2026": "법안도 제대로 읽지 못하고 표결하는 국회, 48시간이면 충분한가",
   "minhoe-new-peoples-committee-civic-society-part2-2026": "민회, 새로운 인민위원회인가?",
+  "politics-abandon-devotion-conviction-2026": "헌신과 소신을 버리라는 정치, 정말 나라 망하게 할 셈인가",
 };
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
 const server = spawn("pnpm", ["exec","vite","preview","--host","127.0.0.1","--port","4179","--strictPort"], { stdio:"pipe" });

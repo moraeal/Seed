@@ -133,6 +133,8 @@ jobs:
           node scripts/preflight-column.mjs china-history-sovereignty-neighbor-part4-2026
           node scripts/verify-article-assets.mjs minhoe-new-peoples-committee-civic-society-part2-2026
           node scripts/preflight-column.mjs minhoe-new-peoples-committee-civic-society-part2-2026
+          node scripts/verify-article-assets.mjs politics-abandon-devotion-conviction-2026
+          node scripts/preflight-column.mjs politics-abandon-devotion-conviction-2026
       - name: Build complete site (bounded)
         run: timeout --signal=TERM --kill-after=30s 18m pnpm run build
         env:
@@ -172,6 +174,7 @@ jobs:
           node scripts/check-column-browser.mjs ai-era-basic-income-tax-vote-politics-2026
           node scripts/check-column-browser.mjs national-assembly-48-hour-bill-notice-2026
           node scripts/check-column-browser.mjs minhoe-new-peoples-committee-civic-society-part2-2026
+          node scripts/check-column-browser.mjs politics-abandon-devotion-conviction-2026
           node scripts/check-column-browser.mjs home
       - name: Block stale branch until changes are tested with latest main
         if: github.event_name == 'push'
