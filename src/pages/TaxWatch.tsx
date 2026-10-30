@@ -1,4 +1,5 @@
 import { futureFundControlArticle } from "../data/futureFundControlArticle";
+import { retirementReserve2026, retirementReserveTranslation } from "../data/retirementReserve2026";
 import { useMemo } from "react";
 import WatchPairRow from "../components/WatchPairRow";
 import { taxCommentaries } from "../data/taxCommentaries";
@@ -39,7 +40,8 @@ export default function TaxWatch() {
       return { key: `news-${article.slug}`, date: article.date, article: { href: `/news/${article.slug}`, label: ko ? "세금감시 기사" : "TAX WATCH ARTICLE", title: article.title, summary: article.summary, image: article.heroImage.src, alt: article.heroImage.alt, date: article.date }, record: official ? { href: official.url, external: true, label: ko ? "공식 원문 자료" : "OFFICIAL SOURCE", title: official.label, summary: "", date: article.date } : undefined };
     });
     const youthRent = { key: youthRentCredit2026.slug, date: youthRentCredit2026.date, article: { href: `/briefings/${youthRentCredit2026.slug}`, label: ko ? "세금 해설과 논평" : "TAX EXPLAINER AND OPINION", title: ko ? youthRentCredit2026.title : youthRentCredit2026Translation.title, summary: ko ? youthRentCredit2026.summary : youthRentCredit2026Translation.summary, image: youthRentCredit2026.images?.[0]?.src, alt: ko ? youthRentCredit2026.images?.[0]?.alt : youthRentCredit2026Translation.images?.[0]?.alt, date: youthRentCredit2026.date }, record: { href: youthRentCredit2026.sourceDocument!.url, external: true, label: ko ? "국회 의안 · 공개 제안요지 기준" : "BILL · OFFICIAL SUMMARY REVIEWED", title: ko ? "조세특례제한법 개정안 2222071" : "Tax incentives amendment · Bill 2222071", summary: ko ? "2026.10.26 발의. 전문·부칙 미확인, 확정된 법이 아닙니다." : "Introduced Oct 26, 2026. Full clauses not reviewed; not enacted.", date: "2026-10-26" } };
-    return [...policies, ...standaloneCommentaries, ...taxNews, youthRent, rentExplainer, family, fund].sort((a, b) => b.date.localeCompare(a.date));
+    const retirement = { key: retirementReserve2026.slug, date: retirementReserve2026.date, article: { href: `/briefings/${retirementReserve2026.slug}`, label: ko ? "입법·재정부담 해설" : "LEGISLATIVE & PUBLIC-COST EXPLAINER", title: ko ? retirementReserve2026.title : retirementReserveTranslation.title, summary: ko ? retirementReserve2026.summary : retirementReserveTranslation.summary, image: retirementReserve2026.images?.[0]?.src, alt: ko ? retirementReserve2026.images?.[0]?.alt : retirementReserveTranslation.images?.[0]?.alt, date: retirementReserve2026.date }, record: { href: retirementReserve2026.sourceDocument!.url, external: true, label: ko ? "정부 추진방안 원문" : "GOVERNMENT POLICY PROPOSAL", title: ko ? "퇴직연금 기능강화 방안" : "Retirement Pension Reform Plan", summary: ko ? "2026.10.29 발표. 법 개정과 지원 예산 확정은 후속 절차입니다." : "Announced October 29, 2026. Legislation and budget approval remain subsequent steps.", date: "2026-10-29" } };
+    return [...policies, ...standaloneCommentaries, ...taxNews, retirement, youthRent, rentExplainer, family, fund].sort((a, b) => b.date.localeCompare(a.date));
   }, [language, ko]);
 
   return <section className="min-h-[70vh] bg-paper pb-16">

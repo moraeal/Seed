@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "briefing:retirement-pay-external-reserve-worker-small-business-2026": {
+    ko: { href: "/columns/debt-built-korean-economy-2026", title: "빚으로 쌓아 올리는 한국경제", relationship: "가계·기업·국가의 부담 이어 읽기", reason: "퇴직급여의 적립 시점을 살펴봤다면, 가계와 기업의 현금 부담, 국가 지원의 재정 여력을 함께 따지는 글로 이어갑니다.", listHref: "/monitoring/tax", listLabel: "세금감시 목록" },
+    en: { href: "/columns/debt-built-korean-economy-2026", title: "Building South Korea's Economy on Debt", relationship: "HOUSEHOLD, BUSINESS AND PUBLIC LIABILITIES", reason: "Continue from retirement-funding cash flow to the pressures of private debt and the fiscal room available for public support.", listHref: "/monitoring/tax", listLabel: "Tax Watch" },
+  },
   "column:minhoe-new-peoples-committee-civic-society-part2-2026": {
     ko: {
       href: "/columns/who-represents-civil-society-citizen-freedom-part1-2026",
