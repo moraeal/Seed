@@ -60,6 +60,14 @@ try {
         for (const img of document.images) img.loading = "eager";
         await Promise.all(Array.from(document.images).map(img => img.decode().catch(() => {})));
       });
+      // React may swap a failed third-party image to its local SVG fallback
+      // *after* the original decode settles. Allow that fallback to load before
+      // taking the snapshot; a timeout still fails the broken-image gate below.
+      await page.waitForFunction(() =>
+        Array.from(document.images).filter(img => img.getClientRects().length)
+          .every(img => img.complete && img.naturalWidth > 0),
+        null, { timeout: 7000 }
+      ).catch(() => {});
       return page.evaluate(() => ({
         images: Array.from(document.images).filter(i => i.getClientRects().length)
           .map(i => ({src:i.currentSrc||i.src,ok:i.complete&&i.naturalWidth>0})),
