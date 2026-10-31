@@ -1,0 +1,101 @@
+// Browser rendering gate for a local built article. Requires Playwright Chromium.
+// Usage: node scripts/check-column-browser.mjs <slug>
+import { chromium } from "file:///tmp/seed-browser-tools/node_modules/playwright/index.mjs";
+import { spawn } from "node:child_process";
+const slug = process.argv[2];
+const isHome = slug === "home";
+const isCivicLanguage = slug === "tolerance-social-cohesion-common-rules-2026";
+const expectedArticleHeadings = {
+  "politicians-who-take-public-debt-lightly-2026": "국가 빚, 너무 가볍게 보는 건 아닌가",
+  "populism-collapse-generational-conflict-2026": "포퓰리즘의 몰락",
+  "forced-repatriation-seven-years-human-rights-2026": "강제북송 7년 만에 유죄 판결",
+  "merkel-china-industrial-dependence-2026": "독일은 자동차를 팔았고",
+  "china-korea-industry-beyond-pro-anti-slogans-2026": "우리에게 중국은 무엇인가",
+  "europe-promises-fiscal-choice-citizens-2026": "약속은 쌓이고, 국가의 선택은 줄어든다",
+  "debt-built-korean-economy-2026": "빚으로 쌓아 올리는 한국경제",
+  "lee-mitterrand-populism-pension-korea-2026": "이재명 정부, 미테랑 정부를 따르려 하나?",
+  "crypto-tax-fourth-deferral-2026": "코인세, 네 번째로 미루나",
+  "youth-rent-tax-credit-20-percent-bill-2222071": "청년 월세 20퍼센트 공제안 실제로 얼마나 줄어드나",
+  "china-business-freedom-industrial-security-limited-state-2026": "기업의 자유는 어디까지인가",
+  "moon-chung-in-dangerous-alliance-security-view-2026": "여당 고문 문정인의 위험한 안보관",
+  "opcon-transition-citizens-first-artillery-2026": "전작권 환수, 대통령의 임기보다 국민의 생명이 먼저다",
+  "pamyo-civic-groups-politics-revolving-door-2026": "시민단체에서 국회와 정부로 — 영상 ‘파묘’가 추적한 권력의 세 문",
+  "who-represents-civil-society-citizen-freedom-part1-2026": "시민사회를 지원한다는 국가, 시민의 자유는 누가 지키는가",
+  "atr-taxpayer-movement-06-legislative-vote-accountability": "세금을 올린 정치인, 시민은 그 이름을 기억한다",
+  "olympic-park-ballot-inspection-civic-briefing": "올공 147일, 투표함은 열렸지만 국민은 여전히 밖에 있었다",
+  "china-history-sovereignty-neighbor-part4-2026": "천 년의 이웃, 우리는 중국을 얼마나 알고 있는가",
+  "tolerance-social-cohesion-common-rules-2026": "관용은 무조건 받아들이는 미덕이 아니라 공동의 질서를 지키는 책임이라는 말이다",
+  "ai-era-basic-income-tax-vote-politics-2026": "AI 기본소득인가, 국민 세금으로 표를 사는 정치인가",
+  "national-assembly-48-hour-bill-notice-2026": "법안도 제대로 읽지 못하고 표결하는 국회, 48시간이면 충분한가",
+  "minhoe-new-peoples-committee-civic-society-part2-2026": "민회, 새로운 인민위원회인가?",
+  "politics-abandon-devotion-conviction-2026": "헌신과 소신을 버리라는 정치, 정말 나라 망하게 할 셈인가",
+};
+if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
+const server = spawn("pnpm", ["exec","vite","preview","--host","127.0.0.1","--port","4179","--strictPort"], { stdio:"pipe" });
+const base = "http://127.0.0.1:4179";
+const wait = ms => new Promise(r=>setTimeout(r,ms));
+let browser;
+try {
+  let ready=false;
+  for(let i=0;i<30;i++){try{const res=await fetch(base);if(res.ok){ready=true;break;}}catch{}await wait(500);}
+  if(!ready)throw Error("Preview server failed to start");
+  browser=await chromium.launch({headless:true});
+  for(const viewport of [{width:1440,height:900},{width:390,height:844}]){
+    const page=await browser.newPage({viewport,deviceScaleFactor:1});
+    const failures=[];
+    page.on("pageerror",e=>failures.push("JS: "+e.message));
+    const path = isHome ? "/" : (isCivicLanguage ? "/seed-language/" : slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : (slug === "youth-rent-tax-credit-20-percent-bill-2222071" || slug === "olympic-park-ballot-inspection-civic-briefing") ? "/briefings/" : slug === "national-assembly-48-hour-bill-notice-2026" ? "/monitoring/legislation/commentary/" : "/columns/") + slug + "/";
+    await page.goto(base+path,{waitUntil:"domcontentloaded",timeout:45000});
+    const readPage = async () => {
+      // Third-party videos/analytics may keep the network busy indefinitely.
+      // Gate on the actual article/metadata instead of waiting for networkidle.
+      await page.waitForFunction(({home}) => {
+        const text = document.body?.innerText?.trim() || "";
+        const heading = document.querySelector("main h1")?.innerText?.trim()
+          || document.querySelector("h1")?.innerText?.trim() || "";
+        return home ? text.length > 100
+          : heading.length > 0 && text.length > 500
+            && Boolean(document.querySelector('meta[property="og:image"]')?.content);
+      }, {home:isHome}, {timeout:30000});
+      await page.evaluate(async () => {
+        for (const img of document.images) img.loading = "eager";
+        await Promise.all(Array.from(document.images).map(img => img.decode().catch(() => {})));
+      });
+      // React may swap a failed third-party image to its local SVG fallback
+      // *after* the original decode settles. Allow that fallback to load before
+      // taking the snapshot; a timeout still fails the broken-image gate below.
+      await page.waitForFunction(() =>
+        Array.from(document.images).filter(img => img.getClientRects().length)
+          .every(img => img.complete && img.naturalWidth > 0),
+        null, { timeout: 7000 }
+      ).catch(() => {});
+      return page.evaluate(() => ({
+        images: Array.from(document.images).filter(i => i.getClientRects().length)
+          .map(i => ({src:i.currentSrc||i.src,ok:i.complete&&i.naturalWidth>0})),
+        overflow: document.documentElement.scrollWidth > innerWidth + 2,
+        text: document.body.innerText,
+        h1: document.querySelector("main h1")?.innerText?.trim()
+          || document.querySelector("h1")?.innerText?.trim() || "",
+        ogImage: document.querySelector('meta[property="og:image"]')?.content || "",
+      }));
+    };
+    let info = await readPage();
+    if (info.images.some(i => !i.ok)) {
+      // Retry one transient local/browser image load, but never accept a
+      // persistently broken asset. All other JS/render failures remain fatal.
+      console.warn("Retrying broken image loads once:", info.images.filter(i => !i.ok).map(i => i.src));
+      await page.reload({waitUntil:"domcontentloaded",timeout:45000});
+      info = await readPage();
+    }
+    if(isHome && info.text.trim().length<100) failures.push("Homepage content not rendered");
+    if(!isHome && info.text.trim().length<500) failures.push("Article body not rendered");
+    if(!isHome && !info.h1.includes(expectedArticleHeadings[slug] || slug)) failures.push("Missing or wrong article H1: "+info.h1);
+    if(!isHome && !info.ogImage) failures.push("Missing article og:image metadata");
+    if(info.images.some(i=>!i.ok)) failures.push("Broken images: "+info.images.filter(i=>!i.ok).map(i=>i.src).join(", "));
+    if(info.images.length<2)failures.push("Too few visible images");
+    if(info.overflow)failures.push("Horizontal overflow");
+    console.log(JSON.stringify({slug,viewport,images:info.images.length,failures}));
+    await page.close();
+    if(failures.length)process.exitCode=1;
+  }
+} catch(e){console.error(e);process.exitCode=1;}finally{await browser?.close();server.kill("SIGTERM");}
