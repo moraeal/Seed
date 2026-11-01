@@ -15,8 +15,8 @@ export const erdoganizationBriefing2026: Briefing = {
   "homeBriefingLeadEligible": true,
   "introTitle": "개혁 뒤에 누가 권력을 견제합니까",
   "keyHighlights": [
-    "‘에르도안화’는 두 나라의 모든 사건을 동일시하는 말이 아니라, 견제기관의 독립성 약화와 권력 집중을 비판하는 씨앗의 해석입니다.",
-    "쿠데타와 계엄의 경위, 법적 판단, 이후의 권력 행사는 구분해 살핍니다. 위기를 극복했다는 명분이 다음 정부에 무제한의 권한을 주지는 않습니다.",
+    "씨앗은 견제기관의 독립성이 약해지고 집권세력의 재량이 커지는 흐름을 ‘이재명의 에르도안화’로 비판합니다.",
+    "튀르키에에서는 쿠데타 실패 뒤 국가와 사회 전반에 통제가 확대됐습니다. 한국에서도 위기 극복의 명분 아래 진행되는 제도 개편을 계속 감시해야 합니다.",
     "사법부와 수사기관의 독립성은 시민이 국가와 다툴 때 기댈 보호 장치입니다.",
     "개혁의 성과는 권력자의 재량보다 시민이 국가의 잘못을 바로잡을 힘이 얼마나 커졌는지로 판단합니다."
   ],
@@ -217,8 +217,8 @@ export const erdoganizationBriefingTranslation2026: BriefingTranslation = {
   "author": "Small Seed",
   "introTitle": "After reform, who can check those in power?",
   "keyHighlights": [
-    "“Erdoğanization” is SEED’s critical interpretation of weakening independent checks and concentrating power; it does not equate every event in the two countries.",
-    "The origins of coups and martial law, their legal assessment and the subsequent exercise of power must be distinguished. Overcoming a crisis does not grant the next government unlimited authority.",
+    "SEED criticises the weakening of independent checks and the expansion of political discretion as a tendency toward “Lee’s Erdoğanization.”",
+    "After Türkiye’s failed coup, state control extended across institutions and society. Korea’s institutional changes also require continuing scrutiny when justified in the name of overcoming a crisis.",
     "Independent courts and investigative institutions protect citizens when they confront the state.",
     "Reform should be judged by citizens’ ability to correct state misconduct, rather than by the ruler’s enlarged discretion."
   ],
