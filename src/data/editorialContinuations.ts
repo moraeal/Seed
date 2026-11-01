@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "column" && slug === "citizens-dilemma-04-merging-fairness-safety") return true;
   if (kind === "column" && slug === "atr-taxpayer-movement-06-legislative-vote-accountability") return true;
   if (kind === "seed-language" && slug === "tolerance-social-cohesion-common-rules-2026") return true;
   if (kind === "column" && slug === "pamyo-civic-groups-politics-revolving-door-2026") return true;
@@ -528,6 +529,20 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "citizens-dilemma-04-merging-fairness-safety") return language === "ko" ? {
+    href: "/columns/citizens-dilemma-03-escalator-etiquette",
+    title: "길을 비워주는 배려, 가만히 서 있는 사람의 안전",
+    relationship: "시민의 딜레마 ③",
+    reason: "앞선 글에서 급한 사람에게 길을 내주는 배려와 안전하게 서 있는 사람의 사정을 함께 살펴봅니다.",
+    listHref: "/series/citizens-dilemma", listLabel: "시민의 딜레마 전체 보기",
+  } : {
+    href: "/columns/citizens-dilemma-03-escalator-etiquette",
+    title: "Making Way for Others—and Keeping Those Who Stand Still Safe",
+    relationship: "EVERYDAY CIVIC DILEMMAS · PART 3",
+    reason: "Read the preceding essay on escalator courtesy and the safety of people who stand still.",
+    listHref: "/series/citizens-dilemma", listLabel: "All Everyday Civic Dilemmas",
+  };
+
   if (kind === "seed-language" && slug === "tolerance-social-cohesion-common-rules-2026") return language === "ko" ? {
     href: "/seed-language/citizenship-beyond-democratic-label-2026",
     title: "시민이면 충분하다 — 왜 굳이 시민 앞에 ‘민주’를 붙이는가",
