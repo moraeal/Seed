@@ -8,7 +8,7 @@ export default defineConfig({
     name: "homepage-publication-version",
     apply: "build",
     generateBundle(_options, bundle) {
-      const entry = Object.values(bundle).find((file) => file.type === "chunk" && file.isEntry && file.facadeModuleId?.endsWith("/src/main.tsx"));
+      const entry = Object.values(bundle).find((file) => file.type === "chunk" && file.isEntry && file.facadeModuleId?.endsWith("/index.html"));
       if (!entry) throw new Error("Missing publication entry bundle");
       this.emitFile({ type: "asset", fileName: "publication-version.json", source: JSON.stringify({ entry: `/${entry.fileName}` }) });
     },
