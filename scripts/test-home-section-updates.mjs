@@ -27,6 +27,7 @@ try {
     assert(!html.includes('latest-articles-title'), 'Separate latest-articles section must be absent');
     const sections = html.split('<section');
     const briefings = sections.find(x => x.includes('>BRIEFINGS<'));
+    const columns = sections.find(x => x.includes('>COLUMNS<'));
     const watch = sections.find(x => x.includes('id="recent-civic-watch-title"'));
     assert(watch,'Existing Civic Watch desk must remain');
     const language=route==='/en'?'en':'ko';
@@ -35,7 +36,7 @@ try {
       assert(feed.some(x=>x.to===path),'Published tax content must remain in complete civic candidates');
     const freshness=new Map(getLatestArticles(language,[],new Set(),Number.MAX_SAFE_INTEGER).map(x=>[x.path,x.latestDate]));
     const before=html.slice(0,html.indexOf('<section'+watch));
-    const excluded=new Set([...links(before),...links(briefings||''),
+    const excluded=new Set([...links(before),...links(briefings||''),...links(columns||''),
       ...legislativeCommentaries.map(x=>`/monitoring/legislation/commentary/${x.slug}`),
       ...linkedLegislativeColumnCommentaries.map(x=>x.href),
     ]);

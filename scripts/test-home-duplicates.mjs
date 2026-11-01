@@ -16,9 +16,11 @@ const server = await createServer({
       if (!id.endsWith("/src/hooks/useFeaturedContent.ts")) return;
       return `import snapshot from "/src/data/homeSnapshot.json";
         let ready = false;
+        let fixtureHistory = null;
         export function setFixtureReady(value) { ready = value; }
+        export function setFixtureHistory(value) { fixtureHistory = value; }
         export function useFeaturedContent() {
-          return { featuredPath: snapshot.featuredPath, history: snapshot.history, ready, historyError: false };
+          return { featuredPath: snapshot.featuredPath, history: fixtureHistory ?? snapshot.history, ready, historyError: false };
         }`;
     },
   }],
@@ -29,7 +31,7 @@ const server = await createServer({
 });
 
 try {
-  const { setFixtureReady } = await server.ssrLoadModule("/src/hooks/useFeaturedContent.ts");
+  const { setFixtureReady, setFixtureHistory } = await server.ssrLoadModule("/src/hooks/useFeaturedContent.ts");
   const { default: Home } = await server.ssrLoadModule("/src/pages/Home.tsx");
   const { LanguageProvider } = await server.ssrLoadModule("/src/i18n.tsx");
   const { canonicalHomePath, getHomeTopic, claimHomeStories } = await server.ssrLoadModule("/src/data/homeTopics.ts");
@@ -39,7 +41,7 @@ try {
   const { selectHomeCommentaries } = await server.ssrLoadModule("/src/data/homeCommentarySelection.ts");
   const { farmlandSpecialActCommentary } = await server.ssrLoadModule("/src/data/farmlandSpecialActCommentary.ts");
   const { getEditorialSeries } = await server.ssrLoadModule("/src/data/editorialSeries.ts");
-  const { getColumnsNewestFirst } = await server.ssrLoadModule("/src/data/columns.ts");
+  const { columns, getColumnsNewestFirst } = await server.ssrLoadModule("/src/data/columns.ts");
   const { selectHomeStandaloneColumns } = await server.ssrLoadModule("/src/data/homeColumnSelection.ts");
 
 
@@ -120,6 +122,24 @@ try {
   const isArticle = (path) =>
     /^\/(?:columns|briefings|news|seed-language)\/[^/]+$/.test(path) ||
     /^\/monitoring\/(?:[^/]+\/)*[^/]+$/.test(path);
+  // A historical selection on the same topic used to swallow a new follow-up
+  // from every desk after the live featured history finished loading.
+  const followUp = columns.find(x => x.slug === "emergency-room-warrant-defensive-medicine-2026");
+  assert(followUp);
+  const publicationDate = followUp.date;
+  try {
+    followUp.date = "2099-01-01";
+    setFixtureReady(true);
+    setFixtureHistory([{ content_path: "/columns/politics-abandon-devotion-conviction-2026", featured_at: "2099-01-02T00:00:00+09:00" }]);
+    for (const route of ["/", "/en"]) {
+      const html = renderToStaticMarkup(React.createElement(MemoryRouter, { initialEntries: [route] },
+        React.createElement(LanguageProvider, null, React.createElement(Home))));
+      const desk = [...html.matchAll(/<section\b[^>]*>[\s\S]*?<\/section>/g)].find(x => x[0].includes('>COLUMNS</p>'))?.[0];
+      assert(desk?.includes(`/columns/${followUp.slug}`), `${route}: an older historical selection must not hide a new follow-up from the column desk`);
+      const hot = [...html.matchAll(/<section\b[^>]*>[\s\S]*?<\/section>/g)].find(x => x[0].includes('id="hot-issues-title"'))?.[0];
+      assert(!hot?.includes('/columns/politics-abandon-devotion-conviction-2026'), `${route}: the historical carousel must yield the claimed topic`);
+    }
+  } finally { followUp.date = publicationDate; setFixtureHistory(null); }
   for (const ready of [false, true]) {
     setFixtureReady(ready);
   for (const route of ["/", "/en"]) {
