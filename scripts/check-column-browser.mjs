@@ -35,6 +35,8 @@ const expectedArticleHeadings = {
   "emergency-room-warrant-defensive-medicine-2026": "응급실에 영장을 들이민 국가, 아이 곁에는 누가 남나",
   "poland-rising-france-stagnating-2026": "폴란드가 뜨고, 프랑스가 가라앉는 이유",
   "farmland-special-act-law-abiding-farmers-2026": "농민을 구제한다는 특별법, 법을 지킨 농민은 무엇이 되나",
+  "citizen-participation-framework-bill-tracker-2026": "시민참여기본법, 누가 만들고 어디까지 왔나",
+  "social-economy-framework-law-tracker": "사회적경제기본법 12년",
 };
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
 const server = spawn("pnpm", ["exec","vite","preview","--host","127.0.0.1","--port","4179","--strictPort"], { stdio:"pipe" });
@@ -50,7 +52,7 @@ try {
     const page=await browser.newPage({viewport,deviceScaleFactor:1});
     const failures=[];
     page.on("pageerror",e=>failures.push("JS: "+e.message));
-    const path = isHome ? "/" : (isCivicLanguage ? "/seed-language/" : slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : (slug === "youth-rent-tax-credit-20-percent-bill-2222071" || slug === "olympic-park-ballot-inspection-civic-briefing") ? "/briefings/" : (slug === "national-assembly-48-hour-bill-notice-2026" || slug === "farmland-special-act-law-abiding-farmers-2026") ? "/monitoring/legislation/commentary/" : "/columns/") + slug + "/";
+    const path = isHome ? "/" : (isCivicLanguage ? "/seed-language/" : slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : (slug === "youth-rent-tax-credit-20-percent-bill-2222071" || slug === "olympic-park-ballot-inspection-civic-briefing") ? "/briefings/" : (slug === "national-assembly-48-hour-bill-notice-2026" || slug === "farmland-special-act-law-abiding-farmers-2026") ? "/monitoring/legislation/commentary/" : ((slug === "citizen-participation-framework-bill-tracker-2026" || slug === "social-economy-framework-law-tracker") ? "/monitoring/" : "/columns/")) + slug + "/";
     await page.goto(base+path,{waitUntil:"domcontentloaded",timeout:45000});
     const readPage = async () => {
       // Third-party videos/analytics may keep the network busy indefinitely.
