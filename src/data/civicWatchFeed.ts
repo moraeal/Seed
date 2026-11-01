@@ -1,3 +1,4 @@
+import { farmlandSpecialActCommentary } from "./farmlandSpecialActCommentary";
 import { canonicalHomePath } from "./homeTopics";
 import { retirementReserve2026, retirementReserveTranslation } from "./retirementReserve2026";
 import { teenAiProtectionCommentary } from "./teenAiProtectionCommentary";
@@ -94,6 +95,7 @@ export function getIssueWatchRows(language: Language) {
 export function getCivicWatchFeed(language: Language, bills: LegislativeBill[] = []): CivicWatchItem[] {
   const ko = language === "ko";
   const items: CivicWatchItem[] = [
+    { key: `legislation-${farmlandSpecialActCommentary.slug}`, category: "legislation", date: farmlandSpecialActCommentary.date, to: `/monitoring/legislation/commentary/${farmlandSpecialActCommentary.slug}`, title: farmlandSpecialActCommentary.editions[language].title, summary: farmlandSpecialActCommentary.editions[language].summary, status: ko ? "입법논평" : "Legislative commentary" },
     { key: `legislation-${retirementReserve2026.slug}`, category: "legislation", date: retirementReserve2026.date, to: `/briefings/${retirementReserve2026.slug}`, title: ko ? retirementReserve2026.title : retirementReserveTranslation.title, summary: ko ? retirementReserve2026.summary : retirementReserveTranslation.summary, status: ko ? "퇴직연금 추진안 해설" : "Retirement policy proposal explained" },
     { key: `tax-${youthRentCredit2026.slug}`, category: "tax", date: youthRentCredit2026.date, to: `/briefings/${youthRentCredit2026.slug}`, title: ko ? youthRentCredit2026.title : youthRentCredit2026Translation.title, summary: ko ? youthRentCredit2026.summary : youthRentCredit2026Translation.summary, status: ko ? "세금 해설과 논평" : "Tax explainer and opinion" },
     { key: `legislation-${teenAiUseExplainer.slug}`, category: "legislation", date: teenAiUseExplainer.date, to: `/briefings/${teenAiUseExplainer.slug}`, title: ko ? teenAiUseExplainer.title : teenAiUseExplainerTranslation.title, summary: ko ? teenAiUseExplainer.summary : teenAiUseExplainerTranslation.summary, status: ko ? "입법안 해설" : "Bill explainer" },
