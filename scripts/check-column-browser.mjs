@@ -6,6 +6,7 @@ const slug = process.argv[2];
 const isHome = slug === "home";
 const isCivicLanguage = slug === "tolerance-social-cohesion-common-rules-2026";
 const expectedArticleHeadings = {
+  "films-as-films-games-expression-double-standard-2026": "영화는 영화로 보라, 게임은?",
   "politicians-who-take-public-debt-lightly-2026": "국가 빚, 너무 가볍게 보는 건 아닌가",
   "populism-collapse-generational-conflict-2026": "포퓰리즘의 몰락",
   "forced-repatriation-seven-years-human-rights-2026": "강제북송 7년 만에 유죄 판결",
