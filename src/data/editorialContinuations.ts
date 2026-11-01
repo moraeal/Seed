@@ -805,5 +805,7 @@ export function getEditorialContinuation(kind: EditorialContentKind, slug: strin
     reason: "Explore the growing citizen at the heart of this series in SEED's civic-language essay.",
     listHref: "/columns", listLabel: "All columns",
   };
+
+  if (kind === "column" && slug === "emergency-room-warrant-defensive-medicine-2026") return language === "ko" ? {"href": "/columns/politics-abandon-devotion-conviction-2026", "title": "헌신과 소신을 버리라는 정치, 정말 나라 망하게 할 셈인가", "relationship": "헌신과 소신을 지키는 제도", "reason": "이번 사태를 책임 회피를 학습시키는 정치와 전문직의 헌신이라는 더 넓은 맥락에서 읽습니다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"} : {"href": "/columns/politics-abandon-devotion-conviction-2026", "title": "Politics That Tells People to Abandon Dedication and Conviction—Does It Mean to Ruin the Country?", "relationship": "PROTECTING PROFESSIONAL JUDGMENT", "reason": "Read the preceding column on political incentives that encourage avoidance of responsibility and undermine public service.", "listHref": "/columns", "listLabel": "All columns"};
   return getBaseEditorialContinuation(kind, slug, language);
 }
