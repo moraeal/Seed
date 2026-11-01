@@ -775,5 +775,58 @@
     "src": "/images/monitoring/source-articles/afce9294c42d4287d54c.jpg",
     "originalImageUrl": "https://img7.yna.co.kr/photo/yna/YH/2026/10/19/PYH2026101902970001300_P4.jpg",
     "verifiedAt": "2026-11-01T02:30:11.766624Z"
+  },
+  "https://www.hani.co.kr/arti/economy/economy_general/1273854.html": {
+    "src": "/images/monitoring/source-articles/467dacf6b28b99bd92bd.jpg",
+    "originalImageUrl": "https://flexible.img.hani.co.kr/flexible/normal/970/525/imgdb/original/2026/0820/20260820503215.webp",
+    "verifiedAt": "2026-11-01T10:59:39.931Z"
+  },
+  "https://v.daum.net/v/20250827112615505": {
+    "src": "/images/monitoring/source-articles/e6491b96b37c6258193d.jpg",
+    "originalImageUrl": "https://img1.daumcdn.net/thumb/S1200x630/?fname=https://t1.daumcdn.net/news/202508/27/akn/20250827112616279sxps.jpg",
+    "verifiedAt": "2026-11-01T10:59:42.079Z"
+  },
+  "https://v.daum.net/v/20241105155609143": {
+    "src": "/images/monitoring/source-articles/076a258eff5c6895341d.jpg",
+    "originalImageUrl": "https://img1.daumcdn.net/thumb/S1200x630/?fname=https://t1.daumcdn.net/news/202411/05/Babynews/20241105155610458ibkl.png",
+    "verifiedAt": "2026-11-01T10:59:40.664Z"
+  },
+  "https://nmn.ff.or.kr/19/?bmode=view&idx=40235759": {
+    "src": "/images/monitoring/source-articles/aa1e36e2931c4a553611.jpg",
+    "originalImageUrl": "https://cdn.imweb.me/thumbnail/20240712/3e881252a440b.jpg",
+    "verifiedAt": "2026-11-01T10:59:42.408Z"
+  },
+  "https://mobile.newsis.com/view/NISX20230515_0002303955": {
+    "src": "/images/monitoring/source-articles/b2d8cdc363da2a46cc30.jpg",
+    "originalImageUrl": "https://img1.newsis.com/2023/05/15/NISI20230515_0019886928_web.jpg",
+    "verifiedAt": "2026-11-01T10:59:39.290Z"
+  },
+  "https://www.donga.com/news/Politics/article/all/20211208/110683441/1": {
+    "src": "/images/monitoring/source-articles/d8a1457d2ab43f52c327.jpg",
+    "originalImageUrl": "https://dimg.donga.com/wps/NEWS/IMAGE/2021/12/08/110683395.2.jpg",
+    "verifiedAt": "2026-11-01T11:06:23.628148+00:00"
+  },
+  "https://www.yna.co.kr/view/AKR20171017199500002": {
+    "src": "/images/monitoring/source-articles/e3bfa9894595a8ce4057.jpg",
+    "originalImageUrl": "https://img2.yna.co.kr/photo/yna/YH/2017/06/28/PYH2017062821860001300_P4.jpg",
+    "verifiedAt": "2026-11-01T10:59:51.692Z"
+  },
+  "https://www.yna.co.kr/view/AKR20151209043551001": {
+    "src": "/images/monitoring/source-articles/644fc225e65e603c9d96.jpg",
+    "originalImageUrl": "https://img4.yna.co.kr/etc/inner/KR/2015/12/09/AKR20151209043551001_02_i_P4.jpg",
+    "verifiedAt": "2026-11-01T10:59:50.843Z"
+  },
+  "https://www.newstomato.com/ReadNews.aspx/ReadNews.aspx?no=552143": {
+    "src": "/images/monitoring/social-economy-law-2026/committee-deliberation-context.jpg",
+    "kind": "context",
+    "alt": {
+      "ko": "법안 심사를 설명하는 빈 국회 위원회 회의실의 관련 이미지",
+      "en": "Contextual illustration of an empty parliamentary committee room for legislative deliberations"
+    },
+    "credit": {
+      "ko": "AI 이미지",
+      "en": "AI image"
+    },
+    "verifiedAt": "2026-11-01T11:06:23.628148+00:00"
   }
 }
