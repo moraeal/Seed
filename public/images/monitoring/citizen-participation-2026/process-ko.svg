@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#f7f5ed"/>
+<g font-family="Noto Sans KR, NanumGothic, sans-serif">
+<text x="70" y="90" font-size="42" font-weight="700" fill="#132d3c">시민참여기본법, 확인된 절차와 다음 관문</text>
+<text x="70" y="137" font-size="24" fill="#5c6d70">확인 기준 2026.11.01 · 계획과 실제 의결을 구분</text>
+<rect x="70" y="185" width="710" height="70" fill="#174c3a"/>
+<text x="95" y="230" font-size="27" font-weight="700" fill="white">확인된 국회 절차</text>
+<rect x="70" y="280" width="710" height="122" fill="white"/>
+<rect x="70" y="280" width="7" height="122" fill="#174c3a"/>
+<text x="98" y="320" font-size="23" font-weight="500" fill="#174c3a">2025.12.31</text>
+<text x="98" y="365" font-size="31" font-weight="700" fill="#132d3c">의원 29명 발의</text>
+<rect x="70" y="425" width="710" height="122" fill="white"/>
+<rect x="70" y="425" width="7" height="122" fill="#174c3a"/>
+<text x="98" y="465" font-size="23" font-weight="500" fill="#174c3a">2026.01.02</text>
+<text x="98" y="510" font-size="31" font-weight="700" fill="#132d3c">행정안전위원회 회부</text>
+<rect x="70" y="570" width="710" height="122" fill="white"/>
+<rect x="70" y="570" width="7" height="122" fill="#174c3a"/>
+<text x="98" y="610" font-size="23" font-weight="500" fill="#174c3a">2026.03.10</text>
+<text x="98" y="655" font-size="31" font-weight="700" fill="#132d3c">상정 · 법안심사소위 회부</text>
+<rect x="820" y="185" width="710" height="70" fill="#8a6a2b"/>
+<text x="845" y="230" font-size="27" font-weight="700" fill="white">다음 확인할 결정</text>
+<rect x="820" y="280" width="710" height="122" fill="white"/>
+<rect x="820" y="280" width="7" height="122" fill="#8a6a2b"/>
+<text x="848" y="320" font-size="23" font-weight="500" fill="#8a6a2b">심사</text>
+<text x="848" y="365" font-size="31" font-weight="700" fill="#132d3c">소위 심사 · 상임위 의결</text>
+<rect x="820" y="425" width="710" height="122" fill="white"/>
+<rect x="820" y="425" width="7" height="122" fill="#8a6a2b"/>
+<text x="848" y="465" font-size="23" font-weight="500" fill="#8a6a2b">의결</text>
+<text x="848" y="510" font-size="31" font-weight="700" fill="#132d3c">체계·자구 심사 · 본회의</text>
+<rect x="820" y="570" width="710" height="122" fill="white"/>
+<rect x="820" y="570" width="7" height="122" fill="#8a6a2b"/>
+<text x="848" y="610" font-size="23" font-weight="500" fill="#8a6a2b">시행</text>
+<text x="848" y="655" font-size="31" font-weight="700" fill="#132d3c">공포 · 시행일 확인</text>
+<text x="70" y="802" font-size="24" fill="#57686b">행안위 심사 단계 · 위원회 통과나 법 시행을 확인한 상태가 아닙니다</text>
+<text x="70" y="851" font-size="19" fill="#748286">출처: 국회 의안 2215823 · 2026.03.10 행안위 회의록 / 씨앗의 소리</text>
+</g></svg>
