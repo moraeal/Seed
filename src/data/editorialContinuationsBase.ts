@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:poland-rising-france-stagnating-2026": {
+  "ko": {
+    "href": "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026",
+    "title": "프랑스가 남의 집 이야기로 보이는가",
+    "relationship": "프랑스 재정의 경고",
+    "reason": "고부담과 지출 경직성이 시민에게 어떤 비용을 남기는지 프랑스 재정을 분석한 칼럼에서 이어서 살펴봅니다.",
+    "listHref": "/columns",
+    "listLabel": "칼럼 전체 보기"
+  },
+  "en": {
+    "href": "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026",
+    "title": "Does France Still Look Like Someone Else’s Problem?",
+    "relationship": "FRANCE’S FISCAL WARNING",
+    "reason": "Continue with the column on how rigid spending commitments and fiscal strain transfer costs to citizens.",
+    "listHref": "/columns",
+    "listLabel": "All columns"
+  }
+},
   "column:china-korean-war-intervention-part5-2026": {
   "ko": {
     "href": "/columns/china-history-sovereignty-neighbor-part4-2026",
