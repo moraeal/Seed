@@ -134,7 +134,7 @@ try {
     for (const route of ["/", "/en"]) {
       const html = renderToStaticMarkup(React.createElement(MemoryRouter, { initialEntries: [route] },
         React.createElement(LanguageProvider, null, React.createElement(Home))));
-      const desk = [...html.matchAll(/<section\b[^>]*>[\s\S]*?<\/section>/g)].find(x => x[0].includes('>COLUMNS</p>'))?.[0];
+      const desk = [...html.matchAll(/<section\b[^>]*>[\s\S]*?<\/section>/g)].find(x => x[0].includes('>COLUMNS</p>') && !x[0].includes('home-today-section'))?.[0];
       assert(desk?.includes(`/columns/${followUp.slug}`), `${route}: an older historical selection must not hide a new follow-up from the column desk`);
       const hot = [...html.matchAll(/<section\b[^>]*>[\s\S]*?<\/section>/g)].find(x => x[0].includes('id="hot-issues-title"'))?.[0];
       assert(!hot?.includes('/columns/politics-abandon-devotion-conviction-2026'), `${route}: the historical carousel must yield the claimed topic`);
@@ -160,7 +160,7 @@ try {
     assert(getColumnsNewestFirst().some((column) =>
       serializedPaths.has(`/columns/${column.slug}`)),
       `${route}: regression scenario must contain series chapters in the full columns archive`);
-    const columnsSection = sections.find((section) => section[0].includes('>COLUMNS</p>'));
+    const columnsSection = sections.find((section) => section[0].includes('>COLUMNS</p>') && !section[0].includes('home-today-section'));
     assert(columnsSection, `${route}: standalone column desk must exist`);
     const renderedColumns = [...columnsSection[0].matchAll(/<a\b[^>]*href="([^"]+)"/g)]
       .map((match) => canonicalHomePath(match[1]))

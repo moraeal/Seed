@@ -27,7 +27,7 @@ try {
     assert(!html.includes('latest-articles-title'), 'Separate latest-articles section must be absent');
     const sections = html.split('<section');
     const briefings = sections.find(x => x.includes('>BRIEFINGS<'));
-    const columns = sections.find(x => x.includes('>COLUMNS<'));
+    const columns = sections.find(x => x.includes('>COLUMNS<') && !x.includes('home-today-section'));
     const watch = sections.find(x => x.includes('id="recent-civic-watch-title"'));
     assert(watch,'Existing Civic Watch desk must remain');
     const language=route==='/en'?'en':'ko';
