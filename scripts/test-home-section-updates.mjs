@@ -10,6 +10,7 @@ try {
   const { LanguageProvider } = await server.ssrLoadModule('/src/i18n.tsx');
   const {getCivicWatchFeed,selectLatestCivicWatchItems}=await server.ssrLoadModule('/src/data/civicWatchFeed.ts');
   const {getLatestArticles}=await server.ssrLoadModule('/src/data/latestArticles.ts');
+  const {legislativeCommentaries, linkedLegislativeColumnCommentaries}=await server.ssrLoadModule('/src/data/legislativeCommentaries.ts');
   const timestamp=date=>Date.parse(date.length===10?`${date}T00:00:00+09:00`:date)||0;
   const canonical=path=>path.replace(/^\/en(?=\/)/,'').replace(/\/$/,'');
   const links=html=>[...html.matchAll(/href="([^"]+)"/g)].map(x=>canonical(x[1]));
@@ -34,7 +35,10 @@ try {
       assert(feed.some(x=>x.to===path),'Published tax content must remain in complete civic candidates');
     const freshness=new Map(getLatestArticles(language,[],new Set(),Number.MAX_SAFE_INTEGER).map(x=>[x.path,x.latestDate]));
     const before=html.slice(0,html.indexOf('<section'+watch));
-    const excluded=new Set([...links(before),...links(briefings||'')]);
+    const excluded=new Set([...links(before),...links(briefings||''),
+      ...legislativeCommentaries.map(x=>`/monitoring/legislation/commentary/${x.slug}`),
+      ...linkedLegislativeColumnCommentaries.map(x=>x.href),
+    ]);
     const seen=new Set();
     const expected=feed.map(x=>({...x,effective:Math.max(timestamp(freshness.get(x.to)||x.date),timestamp(x.updatedAt||x.date))}))
       .sort((a,b)=>b.effective-a.effective||a.to.localeCompare(b.to))
