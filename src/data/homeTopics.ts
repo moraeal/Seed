@@ -5,6 +5,7 @@ import { hotIssueColumnTrackerSlugs } from "./columns";
 // remain their own topics, so broad categories do not hide unrelated work.
 const homeTopicGroups: Record<string, string[]> = {
   "citizen-participation-framework-bill-2026": ["/monitoring/citizen-participation-framework-bill-tracker-2026"],
+  "social-economy-framework-law": ["/monitoring/social-economy-framework-law-tracker", "/briefings/social-solidarity-economy-law-conservative-silence"],
   "public-service-devotion-conviction": ["/columns/emergency-room-warrant-defensive-medicine-2026", "/columns/politics-abandon-devotion-conviction-2026", "/columns/politics-cruel-to-devoted-public-servants-2026"],
   "atr-legislative-accountability": ["/columns/atr-taxpayer-movement-06-legislative-vote-accountability"],
   "moon-alliance-curse-2026": ["/columns/moon-chung-in-dangerous-alliance-security-view-2026"],
