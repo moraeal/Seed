@@ -72,6 +72,10 @@ try {
     await interval();
     assert.equal(reloads.length, 0, "Malformed or foreign manifests cannot trigger navigation");
     responseEntry = "/assets/index-new.js";
+    document.activeElement = { matches: () => true };
+    await interval();
+    assert.equal(reloads.length, 0, "Form input must not be interrupted by a deployment refresh");
+    document.activeElement = null;
     await documentEvents.get("visibilitychange")();
     assert.equal(reloads.length, 1, "A new deployment refreshes an open homepage");
     const target = new URL(reloads[0]);

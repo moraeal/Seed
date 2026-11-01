@@ -21,6 +21,8 @@ export function watchHomePublication() {
       if (!/^\/assets\/[\w.-]+\.js$/.test(version.entry)) return;
       if (new URL(version.entry, window.location.origin).href === entry) return;
       if (document.visibilityState !== "visible") return;
+      // Wait for the next check while a reader is filling the subscribe form.
+      if (document.activeElement?.matches("input, textarea, select, [contenteditable='true']")) return;
       reloading = true;
       const url = new URL(window.location.href);
       // Bypass the ten-minute Pages HTML cache; startup removes this marker.
