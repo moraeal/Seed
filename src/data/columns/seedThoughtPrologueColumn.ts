@@ -2,7 +2,7 @@ import type { SeedColumn } from "../columns";
 
 export const seedThoughtPrologueColumn: SeedColumn = {
   "slug": "seed-thought-00-why-civic-movement-theory",
-  "issue": 107,
+  "issue": 108,
   "title": "씨앗의 소리는 왜 시민운동론에서 출발했나",
   "subtitle": "씨앗을 만든 생각 · 여는 글 — 《S.E.E.D》에서 기사와 설명, 공익감시와 작은 실천으로 이어지는 길",
   "date": "2026-11-01",
