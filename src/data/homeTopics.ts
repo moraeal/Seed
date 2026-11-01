@@ -105,7 +105,7 @@ for (const [columnSlug, trackerSlug] of Object.entries(hotIssueColumnTrackerSlug
   ];
 }
 
-homeTopicGroups["farmland-census-disposal-orders-tracker"]?.push("/briefings/farmland-census-elderly-farmers-retirement", "/columns/farmland-solar-cartel-professional-farming-2026", "/columns/farmland-farming-freedom-smart-agriculture-2026");
+homeTopicGroups["farmland-census-disposal-orders-tracker"]?.push("/briefings/farmland-census-elderly-farmers-retirement", "/columns/farmland-solar-cartel-professional-farming-2026", "/columns/farmland-farming-freedom-smart-agriculture-2026", "/monitoring/legislation/commentary/farmland-special-act-law-abiding-farmers-2026");
 
 // Routes are stable article identities. Locale prefixes, query strings,
  // fragments and trailing slashes must not turn one article into two entries.

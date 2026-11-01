@@ -44,6 +44,7 @@ export function getCivicSectionForArticle(path: string) {
 // suitable stories here in the same publishing update, regardless of category.
 export const civicLifeArticlePaths = [
   "/columns/emergency-room-warrant-defensive-medicine-2026",
+  "/monitoring/legislation/commentary/farmland-special-act-law-abiding-farmers-2026",
   "/columns/seed-thought-00-why-civic-movement-theory",
   "/columns/china-korean-war-intervention-part5-2026",
   "/columns/citizens-dilemma-04-merging-fairness-safety",
