@@ -18,6 +18,7 @@ import { getTaxCommentaryEdition, taxCommentaries } from "../data/taxCommentarie
 import { getFeaturedContentCandidates } from "../data/featuredContent";
 import { getLatestArticles } from "../data/latestArticles";
 import { getEditorialSeries } from "../data/editorialSeries";
+import { selectHomeCommentaries } from "../data/homeCommentarySelection";
 import { selectHomeStandaloneColumns } from "../data/homeColumnSelection";
 import { claimHomeStory, claimHomeStories, getHomeTopic } from "../data/homeTopics";
 import { seedLanguageTerms } from "../data/seedLanguageTerms";
@@ -246,16 +247,17 @@ export default function Home() {
     ...visibleHotIssueCards.map((card) => card.to),
     ...newsTrackingCards.map((card) => card.to),
     ...briefings.map((briefing) => `/briefings/${briefing.slug}`),
-    // Legislative commentaries belong in the illustrated commentary row,
-    // not the legislative monitoring record cards below it.
-    ...legislativeCommentaries.map((article) => `/monitoring/legislation/commentary/${article.slug}`),
-    ...linkedLegislativeColumnCommentaries.map((article) => article.href),
   ].filter((path): path is string => Boolean(path)));
   const recentCivicWatchItems = selectLatestCivicWatchItems(
     getCivicWatchFeed(language, legislativeBills).map((item) => ({
       ...item,
       updatedAt: new Date(Math.max(sectionTimestamp(item.to, item.date), sectionTimestamp("", item.updatedAt || item.date))).toISOString(),
-    })), upperArticlePaths,
+    })), new Set([
+      ...upperArticlePaths,
+      // Reserve legislative commentaries for the illustrated row above.
+      ...legislativeCommentaries.map((article) => `/monitoring/legislation/commentary/${article.slug}`),
+      ...linkedLegislativeColumnCommentaries.map((article) => article.href),
+    ]),
   );
   for (const item of recentCivicWatchItems) claimedHomePaths.add(getHomeTopic(item.to));
 
@@ -314,7 +316,11 @@ export default function Home() {
   ]
     .sort((a, b) => newestInSection({ path: a.to, date: a.date }, { path: b.to, date: b.date }));
 
-  const commentaryItems = claimHomeStories(commentaryCandidates, (item) => item.to, claimedHomePaths, 3);
+  const commentaryItems = selectHomeCommentaries(commentaryCandidates, new Set([
+    ...upperArticlePaths,
+    ...recentCivicWatchItems.map((item) => item.to),
+  ]), 3);
+  for (const article of commentaryItems) claimedHomePaths.add(getHomeTopic(article.to));
   // Every published serialized chapter is reserved for the Editorial Series.
   // Standalone columns fill the remaining desk slots; the full /columns archive
   // continues to include all approved chapters and unrelated articles.
