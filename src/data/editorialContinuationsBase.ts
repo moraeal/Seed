@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "briefing:lee-erdoganization-state-power-civic-briefing-2026": {
+  "ko": {
+    "href": "/briefings/prosecution-service-abolition",
+    "title": "검찰청 폐지 뒤 남는 수사권력",
+    "relationship": "수사권력의 이동과 통제",
+    "reason": "기존 시민브리핑에서 검찰청 폐지 이후 수사권의 배치와 시민의 권리구제 장치를 이어서 살펴봅니다.",
+    "listHref": "/briefings",
+    "listLabel": "시민브리핑 전체 보기"
+  },
+  "en": {
+    "href": "/briefings/prosecution-service-abolition",
+    "title": "Investigative Power After the Abolition of the Prosecution Service",
+    "relationship": "INVESTIGATIVE POWER AND ITS LIMITS",
+    "reason": "Continue with the civic briefing on the redistribution of investigative power and safeguards for citizens.",
+    "listHref": "/briefings",
+    "listLabel": "All civic briefings"
+  }
+},
   "column:philippines-turkiye-turning-away-us-alliance-warning-2026": {
   "ko": {
     "href": "/columns/merkel-china-industrial-dependence-2026",
