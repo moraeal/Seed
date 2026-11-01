@@ -529,6 +529,19 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "monitoring" && slug === "social-economy-framework-law-tracker") return language === "ko" ? {
+    href: "/briefings/social-solidarity-economy-law-conservative-silence",
+    title: "보수가 시작한 사회연대경제법, 보수 야당은 왜 말이 없나",
+    relationship: "같은 법의 시민브리핑",
+    reason: "12년의 입법 기록에 이어 시민의 자율성·공정경쟁·재정책임의 기준을 살펴봅니다.",
+    listHref: "/monitoring?view=trackers", listLabel: "뉴스트래커 전체 보기",
+  } : {
+    href: "/briefings/social-solidarity-economy-law-conservative-silence",
+    title: "Conservatives Started Korea's Social Economy Act. Why Is the Conservative Opposition Silent?",
+    relationship: "RELATED CIVIC BRIEFING",
+    reason: "Continue from the legislative record to civic autonomy, fair competition and fiscal responsibility.",
+    listHref: "/monitoring?view=trackers", listLabel: "All news trackers",
+  };
   if (kind === "column" && slug === "citizens-dilemma-04-merging-fairness-safety") return language === "ko" ? {
     href: "/columns/citizens-dilemma-03-escalator-etiquette",
     title: "길을 비워주는 배려, 가만히 서 있는 사람의 안전",
