@@ -792,5 +792,18 @@ export function getEditorialContinuation(kind: EditorialContentKind, slug: strin
   };
   if (kind === "column" && slug === "ai-era-basic-income-tax-vote-politics-2026") return language === "ko" ? { href: "/columns/lee-mitterrand-populism-pension-korea-2026", title: "이재명 정부, 미테랑 정부를 따르려 하나?", relationship: "복지 약속과 재정책임", reason: "현금지원의 정치적 유인에 이어 프랑스의 장기 복지 약속과 재정 책임을 살펴봅니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" } : { href: "/columns/lee-mitterrand-populism-pension-korea-2026", title: "Is the Lee Administration Following Mitterrand?", relationship: "PUBLIC PROMISES AND FISCAL RESPONSIBILITY", reason: "Continue with how political commitments can create long-term fiscal obligations, using France's pension history.", listHref: "/columns", listLabel: "All columns" };
   if (kind === "column" && slug === "politics-abandon-devotion-conviction-2026") return language === "ko" ? {"href": "/columns/politics-cruel-to-devoted-public-servants-2026", "title": "헌신한 사람들에게, 지금의 정치는 너무 잔인하다", "relationship": "헌신과 소신을 지키는 제도", "reason": "앞선 칼럼에서 수사 현장의 업무 부담과 전문적 판단을 지키는 조건을 함께 살펴봅니다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"} : {"href": "/columns/politics-cruel-to-devoted-public-servants-2026", "title": "Politics Is Too Cruel to Those Who Have Served with Dedication", "relationship": "PROTECTING PUBLIC SERVICE", "reason": "Read the earlier column on investigative workloads and institutional protection for professional judgment.", "listHref": "/columns", "listLabel": "All columns"};
+  if (kind === "column" && slug === "seed-thought-00-why-civic-movement-theory") return language === "ko" ? {
+    href: "/seed-language/citizen-as-seed",
+    title: "시민은 주어지는 이름이 아니라 자라나는 존재다",
+    relationship: "씨앗시민과 주체성",
+    reason: "연재의 출발점에서 만난 씨앗시민의 의미를 시민언어 글에서 이어서 살펴봅니다.",
+    listHref: "/columns", listLabel: "칼럼 전체 보기",
+  } : {
+    href: "/seed-language/citizen-as-seed",
+    title: "Citizenship Is Not a Given Label; It Is Something We Grow Into",
+    relationship: "CITIZENSHIP AND AGENCY",
+    reason: "Explore the growing citizen at the heart of this series in SEED's civic-language essay.",
+    listHref: "/columns", listLabel: "All columns",
+  };
   return getBaseEditorialContinuation(kind, slug, language);
 }
