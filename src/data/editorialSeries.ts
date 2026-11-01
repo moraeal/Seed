@@ -15,6 +15,15 @@ type SeriesSpec = {
 
 const seriesSpecs: SeriesSpec[] = [
   {
+    slug: "seed-thought",
+    title: { ko: "씨앗을 만든 생각", en: "The Ideas Behind SEED VOICE" },
+    description: {
+      ko: "씨앗의 소리의 바탕이 되는 시민사회 운동론 《S.E.E.D》를 풀어 읽습니다. 스스로 판단하는 시민의 성장에서 기사와 설명, 공익감시와 작은 실천으로 이어지는 길을 살펴봅니다.",
+      en: "Explore S.E.E.D, the theory of civic action behind SEED VOICE, and how citizens’ growth informs journalism, public-interest scrutiny and small practical experiments.",
+    },
+    matches: (item) => item.slug.startsWith("seed-thought-"),
+  },
+  {
     slug: "civil-society",
     title: { ko: "누가 시민사회를 대표하는가", en: "Who Represents Civil Society?" },
     description: {
