@@ -1,3 +1,4 @@
+import { erdoganizationBriefing2026 } from "./erdoganizationBriefing2026";
 import { retirementReserve2026 } from "./retirementReserve2026";
 import { olympicInspectionBriefing } from "./olympicInspectionBriefing";
 import { youthRentCredit2026 } from "./youthRentCredit2026";
@@ -37,7 +38,7 @@ import { realEstateSupervisorExplainer } from "./realEstateSupervisorExplainer";
 import { monthlyRentCreditExplainer } from "./monthlyRentCreditExplainer";
 import { farmlandRetirementBriefing } from "./farmlandRetirementBriefing";
 
-const allBriefings: Briefing[] = [europeProtestsBriefing2026, healthInsuranceFundingBriefing, teenAiUseExplainer, toyDonationBriefing, hotelPlatformBriefing, leverageEtfBriefing, procurementTaxWatchNotice, policyFundRiskBriefing, ktrCampaign, taxWatchCase, civicNotice, pensionReciprocityBriefing, realEstateSupervisorCitizenFreedomBriefing, farmlandRetirementBriefing, realEstateSupervisorExplainer, monthlyRentCreditExplainer, incomeTaxFamilyDeductionBriefing, inheritanceTaxFrozenThresholdBriefing, platformAdvertisingBriefing, northKoreanPowsSouthKoreaBriefing, seojinSchoolNeighborsBriefing, skHynixAiHackathonBriefing, hospitalInheritanceTaxBriefing, activistFundingPressureBriefing, socialSolidarityEconomyLawBriefing, futureResponseFundBriefing, partyDissolutionBriefing, yeosuIslandExpoBriefing, hearingAccountabilityBriefing, socialEconomyFairnessBriefing, socialEconomyBriefing, publicInterestTravelBriefing, publicBroadcastingBriefing, nationalBudgetBriefing, gyeonggiBriefingDisplay, ...briefings];
+const allBriefings: Briefing[] = [erdoganizationBriefing2026, europeProtestsBriefing2026, healthInsuranceFundingBriefing, teenAiUseExplainer, toyDonationBriefing, hotelPlatformBriefing, leverageEtfBriefing, procurementTaxWatchNotice, policyFundRiskBriefing, ktrCampaign, taxWatchCase, civicNotice, pensionReciprocityBriefing, realEstateSupervisorCitizenFreedomBriefing, farmlandRetirementBriefing, realEstateSupervisorExplainer, monthlyRentCreditExplainer, incomeTaxFamilyDeductionBriefing, inheritanceTaxFrozenThresholdBriefing, platformAdvertisingBriefing, northKoreanPowsSouthKoreaBriefing, seojinSchoolNeighborsBriefing, skHynixAiHackathonBriefing, hospitalInheritanceTaxBriefing, activistFundingPressureBriefing, socialSolidarityEconomyLawBriefing, futureResponseFundBriefing, partyDissolutionBriefing, yeosuIslandExpoBriefing, hearingAccountabilityBriefing, socialEconomyFairnessBriefing, socialEconomyBriefing, publicInterestTravelBriefing, publicBroadcastingBriefing, nationalBudgetBriefing, gyeonggiBriefingDisplay, ...briefings];
 
 allBriefings.unshift(retirementReserve2026, youthRentCredit2026, olympicInspectionBriefing);
 
