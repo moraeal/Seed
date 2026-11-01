@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:films-as-films-games-expression-double-standard-2026": {
+  "ko": {
+    "href": "/columns/assassins-film-history-memory-war-2026",
+    "title": "탱크데이는 단죄하고, 영화의 음모론은 상상력인가",
+    "relationship": "창작의 자유와 역사적 기억",
+    "reason": "영화 논쟁을 다룬 기존 칼럼에서 허구와 역사적 기억, 유족의 권리를 이어서 살펴봅니다.",
+    "listHref": "/columns",
+    "listLabel": "칼럼 전체 보기"
+  },
+  "en": {
+    "href": "/columns/assassins-film-history-memory-war-2026",
+    "title": "Tank Day Is Condemned. Are Film Conspiracies Just Imagination?",
+    "relationship": "CREATIVE FREEDOM AND MEMORY",
+    "reason": "Continue with the earlier column on fiction, historical memory and bereaved families.",
+    "listHref": "/columns",
+    "listLabel": "All columns"
+  }
+},
   "briefing:lee-erdoganization-state-power-civic-briefing-2026": {
   "ko": {
     "href": "/briefings/prosecution-service-abolition",
