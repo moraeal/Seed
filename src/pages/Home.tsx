@@ -521,9 +521,11 @@ export default function Home() {
             </div>
             <Link to="/series" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "All series"}<ArrowRight size={14}/></Link>
           </div>
-          <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {editorialSeries.map((item) => (
-              <Link key={item.slug} to={"/series/" + item.slug} className="group min-w-0 overflow-hidden border border-green-deep/15 bg-white transition-colors hover:border-green-deep/35">
+          <StoryCarousel key={editorialSeries.map((item) => item.slug).join("|")} count={editorialSeries.length} ko={ko} label={ko ? "기획연재 목록" : "Editorial series"}>
+            {(index, visible) => {
+              const item = editorialSeries[index];
+              return (
+              <Link key={item.slug} to={"/series/" + item.slug} tabIndex={visible ? 0 : -1} className="group flex h-full min-w-0 flex-col overflow-hidden border border-green-deep/15 bg-white transition-colors hover:border-green-deep/35">
                 <div className="overflow-hidden bg-green-pale">
                   <SafeImage src={item.latest.image.src} alt={item.latest.image.alt} loading="lazy" className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" />
                 </div>
@@ -536,8 +538,9 @@ export default function Home() {
                   <p className="mt-2 line-clamp-2 text-xs leading-5 text-charcoal/60 sm:text-sm">{item.description}</p>
                 </div>
               </Link>
-            ))}
-          </div>
+              );
+            }}
+          </StoryCarousel>
         </div>
       </section>
 
