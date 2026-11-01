@@ -9,6 +9,42 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:poland-rising-france-stagnating-2026": {
+  "ko": {
+    "href": "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026",
+    "title": "프랑스가 남의 집 이야기로 보이는가",
+    "relationship": "프랑스 재정의 경고",
+    "reason": "고부담과 지출 경직성이 시민에게 어떤 비용을 남기는지 프랑스 재정을 분석한 칼럼에서 이어서 살펴봅니다.",
+    "listHref": "/columns",
+    "listLabel": "칼럼 전체 보기"
+  },
+  "en": {
+    "href": "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026",
+    "title": "Does France Still Look Like Someone Else’s Problem?",
+    "relationship": "FRANCE’S FISCAL WARNING",
+    "reason": "Continue with the column on how rigid spending commitments and fiscal strain transfer costs to citizens.",
+    "listHref": "/columns",
+    "listLabel": "All columns"
+  }
+},
+  "column:china-korean-war-intervention-part5-2026": {
+  "ko": {
+    "href": "/columns/china-history-sovereignty-neighbor-part4-2026",
+    "title": "천 년의 이웃, 우리는 중국을 얼마나 알고 있는가",
+    "relationship": "우리에게 중국은 무엇인가 · ④편 함께 읽기",
+    "reason": "6·25전쟁의 선택을 살펴봤다면, 중국 대륙의 왕조들과 한반도가 맺어온 관계에서 주권과 시민의 선택권이라는 기준을 이어 읽습니다.",
+    "listHref": "/series/china",
+    "listLabel": "우리에게 중국은 무엇인가 · 전체 연재"
+  },
+  "en": {
+    "href": "/columns/china-history-sovereignty-neighbor-part4-2026",
+    "title": "A Neighbor for a Thousand Years: How Well Does Korea Understand China?",
+    "relationship": "WHAT DOES CHINA MEAN TO KOREA? · READ PART 4",
+    "reason": "Return from the Korean War to the longer history of relations with powers on the Chinese mainland and the defense of Korean sovereignty and freedom of choice.",
+    "listHref": "/series/china",
+    "listLabel": "What Does China Mean to Korea? — All chapters"
+  }
+},
   "briefing:retirement-pay-external-reserve-worker-small-business-2026": {
     ko: { href: "/columns/debt-built-korean-economy-2026", title: "빚으로 쌓아 올리는 한국경제", relationship: "가계·기업·국가의 부담 이어 읽기", reason: "퇴직급여의 적립 시점을 살펴봤다면, 가계와 기업의 현금 부담, 국가 지원의 재정 여력을 함께 따지는 글로 이어갑니다.", listHref: "/monitoring/tax", listLabel: "세금감시 목록" },
     en: { href: "/columns/debt-built-korean-economy-2026", title: "Building South Korea's Economy on Debt", relationship: "HOUSEHOLD, BUSINESS AND PUBLIC LIABILITIES", reason: "Continue from retirement-funding cash flow to the pressures of private debt and the fiscal room available for public support.", listHref: "/monitoring/tax", listLabel: "Tax Watch" },

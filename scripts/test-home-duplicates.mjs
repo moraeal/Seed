@@ -9,6 +9,19 @@ import { MemoryRouter } from "react-router-dom";
 // selectors with duplication/route-alias fixtures.
 const server = await createServer({
   configFile: false,
+  plugins: [{
+    name: "test-featured-content-loading",
+    enforce: "pre",
+    transform(code, id) {
+      if (!id.endsWith("/src/hooks/useFeaturedContent.ts")) return;
+      return `import snapshot from "/src/data/homeSnapshot.json";
+        let ready = false;
+        export function setFixtureReady(value) { ready = value; }
+        export function useFeaturedContent() {
+          return { featuredPath: snapshot.featuredPath, history: snapshot.history, ready, historyError: false };
+        }`;
+    },
+  }],
   ssr: { resolve: { externalConditions: ["node", "module-sync"] } },
   appType: "custom",
   server: { middlewareMode: true },
@@ -16,12 +29,15 @@ const server = await createServer({
 });
 
 try {
+  const { setFixtureReady } = await server.ssrLoadModule("/src/hooks/useFeaturedContent.ts");
   const { default: Home } = await server.ssrLoadModule("/src/pages/Home.tsx");
   const { LanguageProvider } = await server.ssrLoadModule("/src/i18n.tsx");
   const { canonicalHomePath, getHomeTopic, claimHomeStories } = await server.ssrLoadModule("/src/data/homeTopics.ts");
   const { selectHotIssueCards } = await server.ssrLoadModule("/src/data/hotIssueSelection.ts");
   const { selectNewsTrackingCards } = await server.ssrLoadModule("/src/data/newsTracking.ts");
   const { selectLatestCivicWatchItems } = await server.ssrLoadModule("/src/data/civicWatchFeed.ts");
+  const { selectHomeCommentaries } = await server.ssrLoadModule("/src/data/homeCommentarySelection.ts");
+  const { farmlandSpecialActCommentary } = await server.ssrLoadModule("/src/data/farmlandSpecialActCommentary.ts");
   const { getEditorialSeries } = await server.ssrLoadModule("/src/data/editorialSeries.ts");
   const { getColumnsNewestFirst } = await server.ssrLoadModule("/src/data/columns.ts");
   const { selectHomeStandaloneColumns } = await server.ssrLoadModule("/src/data/homeColumnSelection.ts");
@@ -60,6 +76,19 @@ try {
   assert.deepEqual(selectLatestCivicWatchItems(civic, new Set(["/en/news/olympic-park-protest-115-days/"]), 8).map((item) => item.to),
     [fixtures[1].to, fixtures[3].to], "Civic-watch exclusions must canonicalize aliases");
 
+  // Reproduce the fully loaded homepage: a related farmland tracker is
+  // already visible before the newer legislative commentary is selected.
+  const farmlandPath = `/monitoring/legislation/commentary/${farmlandSpecialActCommentary.slug}`;
+  const farmlandTracker = "/monitoring/farmland-census-disposal-orders-tracker";
+  assert.equal(getHomeTopic(farmlandPath), getHomeTopic(farmlandTracker));
+  const commentaryFixtures = [{ to: farmlandPath }, { to: `/en${farmlandPath}/?ref=duplicate` }, { to: "/monitoring/legislation/commentary/another" }];
+  assert.deepEqual(selectHomeCommentaries(commentaryFixtures, new Set([farmlandTracker]), 3).map((item) => item.to),
+    [farmlandPath, commentaryFixtures[2].to],
+    "A related tracker must not hide a distinct commentary after loading; aliases still deduplicate");
+  assert.deepEqual(selectHomeCommentaries(commentaryFixtures, new Set([`/en${farmlandPath}/`]), 3).map((item) => item.to),
+    [commentaryFixtures[2].to], "The same article displayed above must remain excluded");
+  assert.equal(selectHomeCommentaries(commentaryFixtures, new Set(), 0).length, 0);
+
   // A new published chapter automatically leaves the standalone homepage
   // column desk even if it is not the most recently published series chapter.
   const standaloneFixtures = [
@@ -91,6 +120,8 @@ try {
   const isArticle = (path) =>
     /^\/(?:columns|briefings|news|seed-language)\/[^/]+$/.test(path) ||
     /^\/monitoring\/(?:[^/]+\/)*[^/]+$/.test(path);
+  for (const ready of [false, true]) {
+    setFixtureReady(ready);
   for (const route of ["/", "/en"]) {
     const html = renderToStaticMarkup(
       React.createElement(MemoryRouter, { initialEntries: [route] },
@@ -121,6 +152,17 @@ try {
     assert(seriesSection && seriesSection[0].includes('href="/series/'),
       `${route}: editorial series navigation must remain available`);
 
+    const civicSection = sections.find((section) => section[0].includes('id="recent-civic-watch-title"'));
+    assert(civicSection, `${route}: civic-watch desk must exist`);
+    const commentaryLinks = [...civicSection[0].matchAll(/<a\b[^>]*href="[^"]*\/monitoring\/legislation\/commentary\/[^"/]+"[^>]*>[\s\S]*?<\/a>/g)];
+    assert(commentaryLinks.length > 0, `${route}: legislative commentaries must remain visible`);
+    for (const [link] of commentaryLinks) {
+      assert(link.includes('<img') && link.includes(language === "ko" ? "입법 논평" : "LEGISLATIVE"),
+        `${route}: legislative commentary must use the illustrated commentary row`);
+      assert(!link.includes(language === "ko" ? "기록 보기" : "View record"),
+        `${route}: legislative commentary must not appear as a monitoring record`);
+    }
+
     const seen = new Map();
     let checked = 0;
     for (const [sectionIndex, match] of sections.entries()) {
@@ -134,7 +176,8 @@ try {
       }
     }
     assert(checked >= 8, `${route}: homepage inventory unexpectedly sparse (${checked})`);
-    console.log(`${route}: ${checked} distinct article placements across ${sections.length} sections; no repeats`);
+    console.log(`${route} (${ready ? "loaded" : "loading"}): ${checked} distinct article placements across ${sections.length} sections; no repeats`);
+  }
   }
   console.log("Homepage article deduplication regression checks passed.");
 } finally {

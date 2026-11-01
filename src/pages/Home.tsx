@@ -18,6 +18,7 @@ import { getTaxCommentaryEdition, taxCommentaries } from "../data/taxCommentarie
 import { getFeaturedContentCandidates } from "../data/featuredContent";
 import { getLatestArticles } from "../data/latestArticles";
 import { getEditorialSeries } from "../data/editorialSeries";
+import { selectHomeCommentaries } from "../data/homeCommentarySelection";
 import { selectHomeStandaloneColumns } from "../data/homeColumnSelection";
 import { claimHomeStory, claimHomeStories, getHomeTopic } from "../data/homeTopics";
 import { seedLanguageTerms } from "../data/seedLanguageTerms";
@@ -251,7 +252,12 @@ export default function Home() {
     getCivicWatchFeed(language, legislativeBills).map((item) => ({
       ...item,
       updatedAt: new Date(Math.max(sectionTimestamp(item.to, item.date), sectionTimestamp("", item.updatedAt || item.date))).toISOString(),
-    })), upperArticlePaths,
+    })), new Set([
+      ...upperArticlePaths,
+      // Reserve legislative commentaries for the illustrated row above.
+      ...legislativeCommentaries.map((article) => `/monitoring/legislation/commentary/${article.slug}`),
+      ...linkedLegislativeColumnCommentaries.map((article) => article.href),
+    ]),
   );
   for (const item of recentCivicWatchItems) claimedHomePaths.add(getHomeTopic(item.to));
 
@@ -262,7 +268,7 @@ export default function Home() {
     "public-interest": ko ? "공익감시" : "Public-interest Watch",
   };
 
-  // Additional legislative and tax commentary appears beneath the latest records.
+  // Legislative and tax commentary appears above the latest monitoring records.
   // New commentary added to either data source appears here without a homepage edit.
   const commentaryCandidates: HomeWatchCommentary[] = [
     ...linkedLegislativeColumnCommentaries.map((article) => {
@@ -310,7 +316,11 @@ export default function Home() {
   ]
     .sort((a, b) => newestInSection({ path: a.to, date: a.date }, { path: b.to, date: b.date }));
 
-  const commentaryItems = claimHomeStories(commentaryCandidates, (item) => item.to, claimedHomePaths, 3);
+  const commentaryItems = selectHomeCommentaries(commentaryCandidates, new Set([
+    ...upperArticlePaths,
+    ...recentCivicWatchItems.map((item) => item.to),
+  ]), 3);
+  for (const article of commentaryItems) claimedHomePaths.add(getHomeTopic(article.to));
   // Every published serialized chapter is reserved for the Editorial Series.
   // Standalone columns fill the remaining desk slots; the full /columns archive
   // continues to include all approved chapters and unrelated articles.
@@ -521,9 +531,11 @@ export default function Home() {
             </div>
             <Link to="/series" className="text-link shrink-0 text-xs sm:text-sm">{ko ? "전체보기" : "All series"}<ArrowRight size={14}/></Link>
           </div>
-          <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {editorialSeries.map((item) => (
-              <Link key={item.slug} to={"/series/" + item.slug} className="group min-w-0 overflow-hidden border border-green-deep/15 bg-white transition-colors hover:border-green-deep/35">
+          <StoryCarousel key={editorialSeries.map((item) => item.slug).join("|")} count={editorialSeries.length} ko={ko} label={ko ? "기획연재 목록" : "Editorial series"}>
+            {(index, visible) => {
+              const item = editorialSeries[index];
+              return (
+              <Link key={item.slug} to={"/series/" + item.slug} tabIndex={visible ? 0 : -1} className="group flex h-full min-w-0 flex-col overflow-hidden border border-green-deep/15 bg-white transition-colors hover:border-green-deep/35">
                 <div className="overflow-hidden bg-green-pale">
                   <SafeImage src={item.latest.image.src} alt={item.latest.image.alt} loading="lazy" className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" />
                 </div>
@@ -536,8 +548,9 @@ export default function Home() {
                   <p className="mt-2 line-clamp-2 text-xs leading-5 text-charcoal/60 sm:text-sm">{item.description}</p>
                 </div>
               </Link>
-            ))}
-          </div>
+              );
+            }}
+          </StoryCarousel>
         </div>
       </section>
 

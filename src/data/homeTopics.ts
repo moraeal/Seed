@@ -4,7 +4,7 @@ import { hotIssueColumnTrackerSlugs } from "./columns";
 // articles and tracker routes here when publishing them. Unlisted routes
 // remain their own topics, so broad categories do not hide unrelated work.
 const homeTopicGroups: Record<string, string[]> = {
-  "public-service-devotion-conviction": ["/columns/politics-abandon-devotion-conviction-2026", "/columns/politics-cruel-to-devoted-public-servants-2026"],
+  "public-service-devotion-conviction": ["/columns/emergency-room-warrant-defensive-medicine-2026", "/columns/politics-abandon-devotion-conviction-2026", "/columns/politics-cruel-to-devoted-public-servants-2026"],
   "atr-legislative-accountability": ["/columns/atr-taxpayer-movement-06-legislative-vote-accountability"],
   "moon-alliance-curse-2026": ["/columns/moon-chung-in-dangerous-alliance-security-view-2026"],
   "china-industry-series-2026": ["/columns/merkel-china-industrial-dependence-2026", "/columns/china-korea-industry-beyond-pro-anti-slogans-2026", "/columns/china-business-freedom-industrial-security-limited-state-2026"],
@@ -105,7 +105,7 @@ for (const [columnSlug, trackerSlug] of Object.entries(hotIssueColumnTrackerSlug
   ];
 }
 
-homeTopicGroups["farmland-census-disposal-orders-tracker"]?.push("/briefings/farmland-census-elderly-farmers-retirement", "/columns/farmland-solar-cartel-professional-farming-2026", "/columns/farmland-farming-freedom-smart-agriculture-2026");
+homeTopicGroups["farmland-census-disposal-orders-tracker"]?.push("/briefings/farmland-census-elderly-farmers-retirement", "/columns/farmland-solar-cartel-professional-farming-2026", "/columns/farmland-farming-freedom-smart-agriculture-2026", "/monitoring/legislation/commentary/farmland-special-act-law-abiding-farmers-2026");
 
 // Routes are stable article identities. Locale prefixes, query strings,
  // fragments and trailing slashes must not turn one article into two entries.
