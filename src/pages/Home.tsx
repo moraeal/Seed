@@ -246,6 +246,10 @@ export default function Home() {
     ...visibleHotIssueCards.map((card) => card.to),
     ...newsTrackingCards.map((card) => card.to),
     ...briefings.map((briefing) => `/briefings/${briefing.slug}`),
+    // Legislative commentaries belong in the illustrated commentary row,
+    // not the legislative monitoring record cards below it.
+    ...legislativeCommentaries.map((article) => `/monitoring/legislation/commentary/${article.slug}`),
+    ...linkedLegislativeColumnCommentaries.map((article) => article.href),
   ].filter((path): path is string => Boolean(path)));
   const recentCivicWatchItems = selectLatestCivicWatchItems(
     getCivicWatchFeed(language, legislativeBills).map((item) => ({
@@ -262,7 +266,7 @@ export default function Home() {
     "public-interest": ko ? "공익감시" : "Public-interest Watch",
   };
 
-  // Additional legislative and tax commentary appears beneath the latest records.
+  // Legislative and tax commentary appears above the latest monitoring records.
   // New commentary added to either data source appears here without a homepage edit.
   const commentaryCandidates: HomeWatchCommentary[] = [
     ...linkedLegislativeColumnCommentaries.map((article) => {

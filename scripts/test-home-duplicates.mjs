@@ -121,6 +121,17 @@ try {
     assert(seriesSection && seriesSection[0].includes('href="/series/'),
       `${route}: editorial series navigation must remain available`);
 
+    const civicSection = sections.find((section) => section[0].includes('id="recent-civic-watch-title"'));
+    assert(civicSection, `${route}: civic-watch desk must exist`);
+    const commentaryLinks = [...civicSection[0].matchAll(/<a\b[^>]*href="[^"]*\/monitoring\/legislation\/commentary\/[^"/]+"[^>]*>[\s\S]*?<\/a>/g)];
+    assert(commentaryLinks.length > 0, `${route}: legislative commentaries must remain visible`);
+    for (const [link] of commentaryLinks) {
+      assert(link.includes('<img') && link.includes(language === "ko" ? "입법 논평" : "LEGISLATIVE"),
+        `${route}: legislative commentary must use the illustrated commentary row`);
+      assert(!link.includes(language === "ko" ? "기록 보기" : "View record"),
+        `${route}: legislative commentary must not appear as a monitoring record`);
+    }
+
     const seen = new Map();
     let checked = 0;
     for (const [sectionIndex, match] of sections.entries()) {
