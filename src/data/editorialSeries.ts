@@ -118,7 +118,7 @@ export function getEditorialSeries(language: Language): EditorialSeries[] {
       title: spec.title[language],
       description: spec.description[language],
       chapters,
-      latest: [...chapters].sort((a, b) => b.date.localeCompare(a.date))[0],
+      latest: [...chapters].sort((a, b) => b.date.localeCompare(a.date) || b.sequence - a.sequence)[0],
     }];
   });
 }

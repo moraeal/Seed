@@ -27,6 +27,7 @@ import { useLanguage } from "../i18n";
 import { useFeaturedContent } from "../hooks/useFeaturedContent";
 import { formatFeaturedDate } from "../data/featuredHistory";
 import { getHomepageLegislativeBills, type LegislativeBill } from "../lib/legislativeMonitoring";
+import { watchHomePublication } from "../lib/homePublicationRefresh";
 
 const resolveImageSrc = (src?: string) => {
   if (!src) return "";
@@ -191,8 +192,9 @@ export default function Home() {
     const value = sectionDate(path, date);
     return Date.parse(value.length === 10 ? `${value}T00:00:00+09:00` : value) || 0;
   };
+  // Preserve each registry's publication/issue order for same-day articles.
   const newestInSection = (a: { path: string; date: string }, b: { path: string; date: string }) =>
-    sectionTimestamp(b.path, b.date) - sectionTimestamp(a.path, a.date) || a.path.localeCompare(b.path);
+    sectionTimestamp(b.path, b.date) - sectionTimestamp(a.path, a.date);
   localizedBriefings.sort((a, b) => newestInSection({ path: `/briefings/${a.slug}`, date: a.date }, { path: `/briefings/${b.slug}`, date: b.date }));
   allJournalColumns.sort((a, b) => newestInSection({ path: `/columns/${a.slug}`, date: a.date }, { path: `/columns/${b.slug}`, date: b.date }));
   seedLanguageCandidates.sort((a, b) => newestInSection({ path: `/seed-language/${a.slug}`, date: a.date }, { path: `/seed-language/${b.slug}`, date: b.date }));
@@ -228,6 +230,17 @@ export default function Home() {
   );
   const briefingLead = briefings[0];
   const briefingList = briefings.slice(1);
+  // Current desks take priority over historical selections: an older archive
+  // story on the same topic must not hide a newly published follow-up column.
+  const legislativeColumnPaths = new Set(linkedLegislativeColumnCommentaries.map((article) => article.href));
+  const journalColumns = selectHomeStandaloneColumns(
+    allJournalColumns.filter((column) => !legislativeColumnPaths.has(`/columns/${column.slug}`)),
+    editorialSeries,
+    claimedHomePaths,
+    5,
+  ).map((column) => ({ ...column, to: `/columns/${column.slug}` }));
+  const voiceLeadColumn = journalColumns[0];
+  const voiceListColumns = journalColumns.slice(1);
   const visibleHotIssueCards = featuredReady ? selectHotIssueCards(
     getHomepageArchiveCards(language, legislativeBills, featuredHistory),
     claimedHomePaths,
@@ -247,6 +260,7 @@ export default function Home() {
     ...visibleHotIssueCards.map((card) => card.to),
     ...newsTrackingCards.map((card) => card.to),
     ...briefings.map((briefing) => `/briefings/${briefing.slug}`),
+    ...journalColumns.map((column) => column.to),
   ].filter((path): path is string => Boolean(path)));
   const recentCivicWatchItems = selectLatestCivicWatchItems(
     getCivicWatchFeed(language, legislativeBills).map((item) => ({
@@ -321,17 +335,7 @@ export default function Home() {
     ...recentCivicWatchItems.map((item) => item.to),
   ]), 3);
   for (const article of commentaryItems) claimedHomePaths.add(getHomeTopic(article.to));
-  // Every published serialized chapter is reserved for the Editorial Series.
-  // Standalone columns fill the remaining desk slots; the full /columns archive
-  // continues to include all approved chapters and unrelated articles.
-  const journalColumns = selectHomeStandaloneColumns(
-    allJournalColumns,
-    editorialSeries,
-    claimedHomePaths,
-    5,
-  ).map((column) => ({ ...column, to: `/columns/${column.slug}` }));
-  const voiceLeadColumn = journalColumns[0];
-  const voiceListColumns = journalColumns.slice(1);
+  useEffect(() => watchHomePublication(), []);
 
   useEffect(() => {
     let active = true;
