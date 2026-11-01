@@ -191,6 +191,8 @@ jobs:
           node scripts/check-column-browser.mjs emergency-room-warrant-defensive-medicine-2026
           node scripts/check-column-browser.mjs poland-rising-france-stagnating-2026
           node scripts/check-column-browser.mjs farmland-special-act-law-abiding-farmers-2026
+          node scripts/check-column-browser.mjs citizen-participation-framework-bill-tracker-2026
+          node scripts/check-column-browser.mjs social-economy-framework-law-tracker
           node scripts/check-column-browser.mjs home
       - name: Block stale branch until changes are tested with latest main
         if: github.event_name == 'push'
