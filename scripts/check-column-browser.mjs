@@ -37,6 +37,7 @@ const expectedArticleHeadings = {
   "farmland-special-act-law-abiding-farmers-2026": "농민을 구제한다는 특별법, 법을 지킨 농민은 무엇이 되나",
   "citizen-participation-framework-bill-tracker-2026": "시민참여기본법, 누가 만들고 어디까지 왔나",
   "social-economy-framework-law-tracker": "사회적경제기본법 12년",
+  "philippines-turkiye-turning-away-us-alliance-warning-2026": "필리핀과 터키, 미국에 등 돌리다",
 };
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
 const server = spawn("pnpm", ["exec","vite","preview","--host","127.0.0.1","--port","4179","--strictPort"], { stdio:"pipe" });
