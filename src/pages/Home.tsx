@@ -27,6 +27,7 @@ import { useLanguage } from "../i18n";
 import { useFeaturedContent } from "../hooks/useFeaturedContent";
 import { formatFeaturedDate } from "../data/featuredHistory";
 import { getHomepageLegislativeBills, type LegislativeBill } from "../lib/legislativeMonitoring";
+import { watchHomePublication } from "../lib/homePublicationRefresh";
 
 const resolveImageSrc = (src?: string) => {
   if (!src) return "";
@@ -191,8 +192,9 @@ export default function Home() {
     const value = sectionDate(path, date);
     return Date.parse(value.length === 10 ? `${value}T00:00:00+09:00` : value) || 0;
   };
+  // Preserve each registry's publication/issue order for same-day articles.
   const newestInSection = (a: { path: string; date: string }, b: { path: string; date: string }) =>
-    sectionTimestamp(b.path, b.date) - sectionTimestamp(a.path, a.date) || a.path.localeCompare(b.path);
+    sectionTimestamp(b.path, b.date) - sectionTimestamp(a.path, a.date);
   localizedBriefings.sort((a, b) => newestInSection({ path: `/briefings/${a.slug}`, date: a.date }, { path: `/briefings/${b.slug}`, date: b.date }));
   allJournalColumns.sort((a, b) => newestInSection({ path: `/columns/${a.slug}`, date: a.date }, { path: `/columns/${b.slug}`, date: b.date }));
   seedLanguageCandidates.sort((a, b) => newestInSection({ path: `/seed-language/${a.slug}`, date: a.date }, { path: `/seed-language/${b.slug}`, date: b.date }));
@@ -332,6 +334,8 @@ export default function Home() {
   ).map((column) => ({ ...column, to: `/columns/${column.slug}` }));
   const voiceLeadColumn = journalColumns[0];
   const voiceListColumns = journalColumns.slice(1);
+
+  useEffect(() => watchHomePublication(), []);
 
   useEffect(() => {
     let active = true;
