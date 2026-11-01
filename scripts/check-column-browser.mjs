@@ -38,6 +38,7 @@ const expectedArticleHeadings = {
   "citizen-participation-framework-bill-tracker-2026": "시민참여기본법, 누가 만들고 어디까지 왔나",
   "social-economy-framework-law-tracker": "사회적경제기본법 12년",
   "philippines-turkiye-turning-away-us-alliance-warning-2026": "필리핀과 터키, 미국에 등 돌리다",
+  "lee-erdoganization-state-power-civic-briefing-2026": "이재명의 에르도안화, 정치가 국가를 잡아먹는다",
 };
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
 const server = spawn("pnpm", ["exec","vite","preview","--host","127.0.0.1","--port","4179","--strictPort"], { stdio:"pipe" });
@@ -53,7 +54,7 @@ try {
     const page=await browser.newPage({viewport,deviceScaleFactor:1});
     const failures=[];
     page.on("pageerror",e=>failures.push("JS: "+e.message));
-    const path = isHome ? "/" : (isCivicLanguage ? "/seed-language/" : slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : (slug === "youth-rent-tax-credit-20-percent-bill-2222071" || slug === "olympic-park-ballot-inspection-civic-briefing") ? "/briefings/" : (slug === "national-assembly-48-hour-bill-notice-2026" || slug === "farmland-special-act-law-abiding-farmers-2026") ? "/monitoring/legislation/commentary/" : ((slug === "citizen-participation-framework-bill-tracker-2026" || slug === "social-economy-framework-law-tracker") ? "/monitoring/" : "/columns/")) + slug + "/";
+    const path = isHome ? "/" : (isCivicLanguage ? "/seed-language/" : slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : (slug === "lee-erdoganization-state-power-civic-briefing-2026" || slug === "youth-rent-tax-credit-20-percent-bill-2222071" || slug === "olympic-park-ballot-inspection-civic-briefing") ? "/briefings/" : (slug === "national-assembly-48-hour-bill-notice-2026" || slug === "farmland-special-act-law-abiding-farmers-2026") ? "/monitoring/legislation/commentary/" : ((slug === "citizen-participation-framework-bill-tracker-2026" || slug === "social-economy-framework-law-tracker") ? "/monitoring/" : "/columns/")) + slug + "/";
     await page.goto(base+path,{waitUntil:"domcontentloaded",timeout:45000});
     const readPage = async () => {
       // Third-party videos/analytics may keep the network busy indefinitely.
