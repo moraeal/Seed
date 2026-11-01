@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:philippines-turkiye-turning-away-us-alliance-warning-2026": {
+  "ko": {
+    "href": "/columns/merkel-china-industrial-dependence-2026",
+    "title": "독일은 자동차를 팔았고, 중국은 독일의 산업을 가져갔다",
+    "relationship": "산업 경쟁력과 대외 의존",
+    "reason": "독일의 대중 산업 의존을 분석한 칼럼에서 시장 접근과 전략적 위험의 관계를 이어서 살펴봅니다.",
+    "listHref": "/columns",
+    "listLabel": "칼럼 전체 보기"
+  },
+  "en": {
+    "href": "/columns/merkel-china-industrial-dependence-2026",
+    "title": "Germany Sold Cars. China Built an Industry That Could Rival Germany.",
+    "relationship": "INDUSTRIAL STRENGTH AND EXTERNAL DEPENDENCE",
+    "reason": "Continue with the column on German industry’s dependence on China and the relationship between market access and strategic risk.",
+    "listHref": "/columns",
+    "listLabel": "All columns"
+  }
+},
   "column:poland-rising-france-stagnating-2026": {
   "ko": {
     "href": "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026",
