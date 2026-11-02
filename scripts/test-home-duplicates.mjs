@@ -36,7 +36,8 @@ try {
   const { LanguageProvider } = await server.ssrLoadModule("/src/i18n.tsx");
   const { canonicalHomePath, getHomeTopic, claimHomeStories } = await server.ssrLoadModule("/src/data/homeTopics.ts");
   const { selectHotIssueCards } = await server.ssrLoadModule("/src/data/hotIssueSelection.ts");
-  const { selectNewsTrackingCards } = await server.ssrLoadModule("/src/data/newsTracking.ts");
+  const { getNewsTrackingCards, selectNewsTrackingCards } = await server.ssrLoadModule("/src/data/newsTracking.ts");
+  const { citizenParticipationBillTracker } = await server.ssrLoadModule("/src/data/citizenParticipationBillTracker.ts");
   const { selectLatestCivicWatchItems } = await server.ssrLoadModule("/src/data/civicWatchFeed.ts");
   const { selectHomeCommentaries } = await server.ssrLoadModule("/src/data/homeCommentarySelection.ts");
   const { farmlandSpecialActCommentary } = await server.ssrLoadModule("/src/data/farmlandSpecialActCommentary.ts");
@@ -68,6 +69,29 @@ try {
   const selectedTrackers = selectNewsTrackingCards(fixtures, new Set(), 8);
   assert.deepEqual(selectedTrackers.map((item) => item.to), [fixtures[0].to, fixtures[3].to],
     "Tracking carousel must use the same registry");
+
+  // A newly published retrospective must enter the homepage even when its
+  // latest confirmed event predates the eight-card cutoff. Cosmetic edits,
+  // pending events and future publication dates must not promote old records.
+  const today = new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  const trackerFixture = (slug, publishedAt, eventDate) => ({
+    ...citizenParticipationBillTracker, slug, publishedAt, updatedAt: "2099-12-31", keyChanges: [],
+    timeline: [
+      { date: eventDate, title: { ko: slug, en: slug }, description: { ko: slug, en: slug }, status: "confirmed" },
+      { date: "2099-12-31", title: { ko: "예정", en: "Pending" }, description: { ko: "예정", en: "Pending" }, status: "pending" },
+    ],
+  });
+  const publishedTracker = trackerFixture("new-retrospective", today, "2020-01-01");
+  const oldTrackers = Array.from({ length: 9 }, (_, i) => trackerFixture(`old-${i}`, "2019-01-01", `2021-01-${String(i + 1).padStart(2, "0")}`));
+  const futurePublication = trackerFixture("future-publication", "2099-12-31", "2019-01-01");
+  for (const language of ["ko", "en"]) {
+    const cards = getNewsTrackingCards(language, [...oldTrackers, futurePublication, publishedTracker]);
+    assert.equal(cards[0].to, "/monitoring/new-retrospective", "New publication must rank ahead of older event histories");
+    assert.equal(cards[0].changeDate, "2020-01-01", "Publication sorting must preserve the displayed event date");
+    assert.equal(cards.at(-1).to, "/monitoring/future-publication", "Future publication and cosmetic edit dates must not promote a tracker");
+    assert(selectNewsTrackingCards(cards, new Set(), 8).some(card => card.to === "/monitoring/new-retrospective"), "New tracker must survive the homepage eight-card limit");
+    assert(!selectNewsTrackingCards(cards, new Set([getHomeTopic("/monitoring/new-retrospective")]), 8).some(card => card.to === "/monitoring/new-retrospective"), "Already claimed stories must remain excluded");
+  }
   const civic = fixtures.map((item, i) => ({
     ...item, key: String(i), category: "issue",
     updatedAt: item.date, title: item.to, summary: "", status: "",
