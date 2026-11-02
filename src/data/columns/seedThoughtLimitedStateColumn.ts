@@ -17,25 +17,25 @@ export const seedThoughtLimitedStateColumn: SeedColumn = {
   "readMinutes": 11,
   "summary": "시민을 보호하는 국가에는 역량이 필요합니다. 그 역량이 시민의 자유를 압도하지 않도록 권력을 제한하고, 시민의 경험이 정책을 고치는 통로도 열어야 합니다. 씨드가 국가를 평가하는 유능함·제한성·환류의 세 기준을 살펴봅니다.",
   "heroImage": {
-    "src": "images/columns/seed-thought-02/hero.webp",
-    "alt": "시민이 자유롭게 오가는 광장 앞 공공청사 안에 놓인 법전과 권한의 경계를 상징하는 선",
-    "caption": "시민을 지킬 능력과 권력의 경계는 함께 갖춰져야 합니다.",
-    "credit": "AI 이미지",
-    "sourceUrl": ""
-  },
-  "inlineImage": {
     "src": "images/columns/seed-thought-02/drain-observation.webp",
     "alt": "비가 그친 골목에서 배수로 상태를 살피고 스마트폰으로 기록하는 시민",
     "caption": "시민의 경험이 다음 결정을 바꾸고 그 결과를 확인할 수 있어야 합니다.",
     "credit": "AI 이미지",
     "sourceUrl": ""
   },
+  "inlineImage": {
+    "src": "images/columns/seed-thought-02/hero.webp",
+    "alt": "시민이 자유롭게 오가는 광장 앞 공공청사 안에 놓인 법전과 권한의 경계를 상징하는 선",
+    "caption": "시민을 지킬 능력과 권력의 경계는 함께 갖춰져야 합니다.",
+    "credit": "AI 이미지",
+    "sourceUrl": ""
+  },
   "displayInlineImage": false,
   "additionalImages": [
     {
-      "src": "images/columns/seed-thought-02/drain-observation.webp",
-      "alt": "비가 그친 골목에서 배수로 상태를 살피고 스마트폰으로 기록하는 시민",
-      "caption": "시민의 경험이 다음 결정을 바꾸고 그 결과를 확인할 수 있어야 합니다.",
+      "src": "images/columns/seed-thought-02/hero.webp",
+      "alt": "시민이 자유롭게 오가는 광장 앞 공공청사 안에 놓인 법전과 권한의 경계를 상징하는 선",
+      "caption": "시민을 지킬 능력과 권력의 경계는 함께 갖춰져야 합니다.",
       "credit": "AI 이미지",
       "sourceUrl": "",
       "afterSection": 5
