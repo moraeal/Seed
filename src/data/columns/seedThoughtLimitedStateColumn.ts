@@ -24,8 +24,8 @@ export const seedThoughtLimitedStateColumn: SeedColumn = {
     "sourceUrl": ""
   },
   "inlineImage": {
-    "src": "images/columns/seed-thought-02/citizens.webp",
-    "alt": "동네 지도를 함께 보며 배수로 문제를 검토하는 주민들과 담당자",
+    "src": "images/columns/seed-thought-02/drain-observation.webp",
+    "alt": "비가 그친 골목에서 배수로 상태를 살피고 스마트폰으로 기록하는 시민",
     "caption": "시민의 경험이 다음 결정을 바꾸고 그 결과를 확인할 수 있어야 합니다.",
     "credit": "AI 이미지",
     "sourceUrl": ""
@@ -33,8 +33,8 @@ export const seedThoughtLimitedStateColumn: SeedColumn = {
   "displayInlineImage": false,
   "additionalImages": [
     {
-      "src": "images/columns/seed-thought-02/citizens.webp",
-      "alt": "동네 지도를 함께 보며 배수로 문제를 검토하는 주민들과 담당자",
+      "src": "images/columns/seed-thought-02/drain-observation.webp",
+      "alt": "비가 그친 골목에서 배수로 상태를 살피고 스마트폰으로 기록하는 시민",
       "caption": "시민의 경험이 다음 결정을 바꾸고 그 결과를 확인할 수 있어야 합니다.",
       "credit": "AI 이미지",
       "sourceUrl": "",

@@ -11,13 +11,13 @@ export const issue113: ColumnTranslation = {
     "credit": "AI image"
   },
   "inlineImage": {
-    "alt": "Residents and an official examine a neighborhood map together to discuss drainage problems",
+    "alt": "A resident inspects and photographs a roadside drain in a neighborhood alley after rain",
     "caption": "Citizens should be able to see how their experiences change subsequent decisions.",
     "credit": "AI image"
   },
   "additionalImages": [
     {
-      "alt": "Residents and an official examine a neighborhood map together to discuss drainage problems",
+      "alt": "A resident inspects and photographs a roadside drain in a neighborhood alley after rain",
       "caption": "Citizens should be able to see how their experiences change subsequent decisions.",
       "credit": "AI image"
     },
