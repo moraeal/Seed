@@ -12,7 +12,8 @@ export type NewsTrackingCard = {
   imageAlt: string;
 };
 
-// Dated developments determine freshness, not cosmetic edits to updatedAt.
+// New publications and dated developments determine listing order, not
+// cosmetic edits to updatedAt. Keep the actual event date on the card.
 // Future events and questions awaiting confirmation are not new developments.
 export function getNewsTrackingCards(language: Language, records: PublicInterestWatchCase[] = newsTrackerCases): NewsTrackingCard[] {
   const today = new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
@@ -26,15 +27,21 @@ export function getNewsTrackingCards(language: Language, records: PublicInterest
     // A newer dated timeline entry must supersede an older keyChanges entry.
     // If both share a date, prefer the editor's curated key-change summary.
     const useKeyChange = Boolean(latest && (!timeline || latest.date >= timeline.date));
+    const changeDate = (useKeyChange ? latest?.date : timeline?.date) || record.publishedAt || record.updatedAt;
+    const publishedAt = record.publishedAt && validDate(record.publishedAt) ? record.publishedAt : "";
     return {
-      to: `/monitoring/${record.slug}`,
-      title: record.title[language],
-      latestChange: (useKeyChange ? latest?.text[language] : timeline?.change?.[language] || timeline?.description[language]) || record.summary[language],
-      changeDate: (useKeyChange ? latest?.date : timeline?.date) || record.publishedAt || record.updatedAt,
-      imageSrc: record.heroImage?.src,
-      imageAlt: record.heroImage?.alt[language] || record.title[language],
+      listingDate: publishedAt > changeDate ? publishedAt : changeDate,
+      card: {
+        to: `/monitoring/${record.slug}`,
+        title: record.title[language],
+        latestChange: (useKeyChange ? latest?.text[language] : timeline?.change?.[language] || timeline?.description[language]) || record.summary[language],
+        changeDate,
+        imageSrc: record.heroImage?.src,
+        imageAlt: record.heroImage?.alt[language] || record.title[language],
+      },
     };
-  }).sort((a, b) => b.changeDate.localeCompare(a.changeDate) || a.to.localeCompare(b.to));
+  }).sort((a, b) => b.listingDate.localeCompare(a.listingDate) || a.card.to.localeCompare(b.card.to))
+    .map(({ card }) => card);
   return cards.filter((card, index) => cards.findIndex((candidate) => candidate.to === card.to) === index);
 }
 

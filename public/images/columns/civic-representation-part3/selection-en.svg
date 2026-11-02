@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#f5f6f0"/>
+<style>text{font-family:Pretendard,'Noto Sans KR','Noto Sans CJK KR',Arial,sans-serif;fill:#173c38;font-weight:500}.title{font-size:49px;font-weight:700}.sub{font-size:27px;fill:#566e68}.head{font-size:26px;font-weight:700;fill:#fff}.cell{font-size:24px}.method{font-size:26px;font-weight:700}</style>
+<text class="title" x="65" y="98">Representation must be demonstrated</text>
+<text class="sub" x="65" y="148">Roles and checks for three participation methods</text>
+<rect x="60" y="205" width="1480" height="78" fill="#204b43"/>
+<text class="head" x="83" y="255">Method</text>
+<text class="head" x="355" y="255">Strengths</text>
+<text class="head" x="718" y="255">Limits to examine</text>
+<text class="head" x="1120" y="255">Disclosure and checks</text>
+<rect x="60" y="283" width="1480" height="162" fill="#ffffff"/>
+<text class="method" x="83" y="347">Group</text><text class="method" x="83" y="391">nomination</text>
+<text class="cell" x="355" y="347">Practical experience</text>
+<text class="cell" x="355" y="391">Issue expertise</text>
+<text class="cell" x="718" y="347">Cannot speak for everyone</text>
+<text class="cell" x="718" y="391">outside the organization</text>
+<text class="cell" x="1120" y="347">Nomination · internal mandate</text>
+<text class="cell" x="1120" y="391">Conflicts of interest</text>
+<rect x="60" y="445" width="1480" height="162" fill="#e9eee8"/>
+<text class="method" x="83" y="509">Open</text><text class="method" x="83" y="553">recruitment</text>
+<text class="cell" x="355" y="509">Voluntary proposals</text>
+<text class="cell" x="355" y="553">Accessible entry</text>
+<text class="cell" x="718" y="509">Participation may favor</text>
+<text class="cell" x="718" y="553">those with time and resources</text>
+<text class="cell" x="1120" y="509">Outreach · participant profile</text>
+<text class="cell" x="1120" y="553">Practical support</text>
+<rect x="60" y="607" width="1480" height="162" fill="#ffffff"/>
+<text class="method" x="83" y="671">Civic</text><text class="method" x="83" y="715">lottery</text>
+<text class="cell" x="355" y="671">Entry for people</text>
+<text class="cell" x="355" y="715">who seldom participate</text>
+<text class="cell" x="718" y="671">Bias in responses,</text>
+<text class="cell" x="718" y="715">withdrawals and replacements</text>
+<text class="cell" x="1120" y="671">Invitation · selection rules</text>
+<text class="cell" x="1120" y="715">Independent verification</text>
+<text x="65" y="830" font-size="21">Source: OECD participation guidelines (2022) and editorial analysis. Not a ranking of methods.</text></svg>

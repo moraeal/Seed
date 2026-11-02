@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#f5f6f0"/>
+<style>text{font-family:Pretendard,'Noto Sans KR','Noto Sans CJK KR',Arial,sans-serif;fill:#173c38;font-weight:500}.title{font-size:49px;font-weight:700}.sub{font-size:27px;fill:#566e68}.head{font-size:28px;font-weight:700;fill:#fff}.cell{font-size:27px}.method{font-size:32px;font-weight:700}</style>
+<text class="title" x="65" y="98">참여의 방식보다 대표성의 증명이 먼저입니다</text>
+<text class="sub" x="65" y="148">시민참여 방식별 역할과 검증 기준</text>
+<rect x="60" y="205" width="1480" height="78" fill="#204b43"/>
+<text class="head" x="83" y="255">참여 방식</text>
+<text class="head" x="355" y="255">활용할 강점</text>
+<text class="head" x="718" y="255">확인해야 할 한계</text>
+<text class="head" x="1120" y="255">필요한 공개·검증</text>
+<rect x="60" y="283" width="1480" height="162" fill="#ffffff"/>
+<text class="method" x="83" y="369">단체 추천</text>
+<text class="cell" x="355" y="347">현장 경험</text>
+<text class="cell" x="355" y="391">쟁점별 전문성</text>
+<text class="cell" x="718" y="347">조직 밖 시민의 뜻까지</text>
+<text class="cell" x="718" y="391">대표하기 어려움</text>
+<text class="cell" x="1120" y="347">추천 기준 · 내부 위임</text>
+<text class="cell" x="1120" y="391">이해충돌</text>
+<rect x="60" y="445" width="1480" height="162" fill="#e9eee8"/>
+<text class="method" x="83" y="531">공개모집</text>
+<text class="cell" x="355" y="509">자발적인 제안</text>
+<text class="cell" x="355" y="553">열린 참여</text>
+<text class="cell" x="718" y="509">시간 · 정보 · 자원이 있는</text>
+<text class="cell" x="718" y="553">사람에게 참여가 쏠릴 가능성</text>
+<text class="cell" x="1120" y="509">모집 경로 · 구성 통계</text>
+<text class="cell" x="1120" y="553">참여 지원</text>
+<rect x="60" y="607" width="1480" height="162" fill="#ffffff"/>
+<text class="method" x="83" y="693">시민추첨</text>
+<text class="cell" x="355" y="671">평소 참여하지 않던</text>
+<text class="cell" x="355" y="715">시민의 진입</text>
+<text class="cell" x="718" y="671">응답 · 참여 포기 · 교체</text>
+<text class="cell" x="718" y="715">과정에서 생기는 편향</text>
+<text class="cell" x="1120" y="671">초청 · 추출 · 교체 기준</text>
+<text class="cell" x="1120" y="715">독립 검증</text>
+<text x="65" y="830" font-size="21">출처: OECD 시민참여 지침(2022) 및 본문 재구성 · 특정 방식의 우열을 뜻하지 않습니다.</text></svg>

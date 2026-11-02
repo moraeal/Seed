@@ -4,6 +4,7 @@ import { hotIssueColumnTrackerSlugs } from "./columns";
 // articles and tracker routes here when publishing them. Unlisted routes
 // remain their own topics, so broad categories do not hide unrelated work.
 const homeTopicGroups: Record<string, string[]> = {
+  "poland-constitutional-court-crisis-2026": ["/columns/poland-coup-korea-constitutional-checks-2026"],
   "film-game-expression-freedom-2026": ["/columns/films-as-films-games-expression-double-standard-2026"],
   "erdoganization-state-power-2026": ["/briefings/lee-erdoganization-state-power-civic-briefing-2026"],
   "alliance-costs-philippines-turkiye-2026": ["/columns/philippines-turkiye-turning-away-us-alliance-warning-2026"],
