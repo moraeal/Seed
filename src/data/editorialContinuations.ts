@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "column" && slug === "poland-coup-korea-constitutional-checks-2026") return true;
   if (kind === "column" && slug === "citizens-dilemma-04-merging-fairness-safety") return true;
   if (kind === "column" && slug === "atr-taxpayer-movement-06-legislative-vote-accountability") return true;
   if (kind === "seed-language" && slug === "tolerance-social-cohesion-common-rules-2026") return true;
@@ -529,6 +530,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "poland-coup-korea-constitutional-checks-2026") return language === "ko" ? {"href": "/columns/prosecution-reform-power-transfer-2026", "title": "검찰개혁은 권력을 옮겨 심는 일이 아니다", "relationship": "권력 이동과 시민의 자유", "reason": "수사·기소 구조가 바뀐 뒤 시민을 위한 견제가 어디에 남는지 앞선 칼럼에서 이어서 읽습니다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"} : {"href": "/columns/prosecution-reform-power-transfer-2026", "title": "Prosecution Reform Is Not the Transplanting of Power", "relationship": "POWER AND CIVIC FREEDOM", "reason": "Continue with the earlier essay on how reform changes authority and the checks available to citizens.", "listHref": "/columns", "listLabel": "All columns"};
   if (kind === "monitoring" && slug === "social-economy-framework-law-tracker") return language === "ko" ? {
     href: "/briefings/social-solidarity-economy-law-conservative-silence",
     title: "보수가 시작한 사회연대경제법, 보수 야당은 왜 말이 없나",
