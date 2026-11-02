@@ -151,6 +151,10 @@ jobs:
           node scripts/preflight-column.mjs poland-rising-france-stagnating-2026
           node scripts/verify-article-assets.mjs philippines-turkiye-turning-away-us-alliance-warning-2026
           node scripts/preflight-column.mjs philippines-turkiye-turning-away-us-alliance-warning-2026
+          node scripts/verify-article-assets.mjs who-represents-civil-society-citizen-mandate-part3-2026
+          node scripts/preflight-column.mjs who-represents-civil-society-citizen-mandate-part3-2026
+          node scripts/verify-article-assets.mjs poland-coup-korea-constitutional-checks-2026
+          node scripts/preflight-column.mjs poland-coup-korea-constitutional-checks-2026
       - name: Build complete site (bounded)
         run: timeout --signal=TERM --kill-after=30s 18m pnpm run build
         env:
@@ -203,6 +207,8 @@ jobs:
           node scripts/check-column-browser.mjs social-economy-framework-law-tracker
           node scripts/check-column-browser.mjs philippines-turkiye-turning-away-us-alliance-warning-2026
           node scripts/check-column-browser.mjs lee-erdoganization-state-power-civic-briefing-2026
+          node scripts/check-column-browser.mjs who-represents-civil-society-citizen-mandate-part3-2026
+          node scripts/check-column-browser.mjs poland-coup-korea-constitutional-checks-2026
           node scripts/check-column-browser.mjs home
       - name: Block stale branch until changes are tested with latest main
         if: github.event_name == 'push'
