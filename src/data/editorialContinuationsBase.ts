@@ -9,6 +9,24 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:who-represents-civil-society-citizen-mandate-part3-2026": {
+  "ko": {
+    "href": "/columns/minhoe-new-peoples-committee-civic-society-part2-2026",
+    "listHref": "/series/civil-society",
+    "title": "민회, 새로운 인민위원회인가?",
+    "relationship": "누가 시민사회를 대표하는가 · ②편",
+    "reason": "민회의 참여자 선정과 의제 설정, 권한과 예산을 검증한 앞선 글로 이어갑니다.",
+    "listLabel": "연재 전체 보기"
+  },
+  "en": {
+    "href": "/columns/minhoe-new-peoples-committee-civic-society-part2-2026",
+    "listHref": "/series/civil-society",
+    "title": "Minhoe: A New People’s Committee?",
+    "relationship": "WHO REPRESENTS CIVIL SOCIETY? · PART 2",
+    "reason": "Continue with the preceding installment on recruitment, agenda-setting, authority and budgets in local citizens’ assemblies.",
+    "listLabel": "All articles in this series"
+  }
+},
   "column:films-as-films-games-expression-double-standard-2026": {
   "ko": {
     "href": "/columns/assassins-film-history-memory-war-2026",
