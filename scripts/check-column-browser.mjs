@@ -33,6 +33,7 @@ const expectedArticleHeadings = {
   "citizens-dilemma-04-merging-fairness-safety": "끼어드는 차에 양보하면, 나만 손해일까?",
   "china-korean-war-intervention-part5-2026": "6·25전쟁, 중국은 왜 대한민국을 향해 총을 쏘았나",
   "seed-thought-00-why-civic-movement-theory": "씨앗의 소리는 왜 시민운동론에서 출발했나",
+  "seed-thought-02-capable-limited-state": "유능한 국가에도 한계가 필요합니다",
   "emergency-room-warrant-defensive-medicine-2026": "응급실에 영장을 들이민 국가, 아이 곁에는 누가 남나",
   "poland-rising-france-stagnating-2026": "폴란드가 뜨고, 프랑스가 가라앉는 이유",
   "farmland-special-act-law-abiding-farmers-2026": "농민을 구제한다는 특별법, 법을 지킨 농민은 무엇이 되나",
