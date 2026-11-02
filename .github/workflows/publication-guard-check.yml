@@ -143,6 +143,8 @@ jobs:
           node scripts/preflight-column.mjs china-korean-war-intervention-part5-2026
           node scripts/verify-article-assets.mjs seed-thought-00-why-civic-movement-theory
           node scripts/preflight-column.mjs seed-thought-00-why-civic-movement-theory
+          node scripts/verify-article-assets.mjs seed-thought-02-capable-limited-state
+          node scripts/preflight-column.mjs seed-thought-02-capable-limited-state
           node scripts/verify-article-assets.mjs emergency-room-warrant-defensive-medicine-2026
           node scripts/preflight-column.mjs emergency-room-warrant-defensive-medicine-2026
           node scripts/verify-article-assets.mjs poland-rising-france-stagnating-2026
@@ -193,6 +195,7 @@ jobs:
           node scripts/check-column-browser.mjs citizens-dilemma-04-merging-fairness-safety
           node scripts/check-column-browser.mjs china-korean-war-intervention-part5-2026
           node scripts/check-column-browser.mjs seed-thought-00-why-civic-movement-theory
+          node scripts/check-column-browser.mjs seed-thought-02-capable-limited-state
           node scripts/check-column-browser.mjs emergency-room-warrant-defensive-medicine-2026
           node scripts/check-column-browser.mjs poland-rising-france-stagnating-2026
           node scripts/check-column-browser.mjs farmland-special-act-law-abiding-farmers-2026
