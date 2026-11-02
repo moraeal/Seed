@@ -6,19 +6,19 @@ export const issue113: ColumnTranslation = {
   "author": "Small Seed",
   "summary": "A state needs the capacity to protect citizens, limits that prevent that capacity from overwhelming their freedom, and feedback that allows lived experience to improve policy. S.E.E.D proposes three standards: capability, limits and learning.",
   "heroImage": {
-    "alt": "A law book and a boundary line inside a public building overlooking a square where citizens walk freely",
-    "caption": "The capacity to protect citizens must coexist with clear limits on power.",
-    "credit": "AI image"
-  },
-  "inlineImage": {
     "alt": "A resident inspects and photographs a roadside drain in a neighborhood alley after rain",
     "caption": "Citizens should be able to see how their experiences change subsequent decisions.",
     "credit": "AI image"
   },
+  "inlineImage": {
+    "alt": "A law book and a boundary line inside a public building overlooking a square where citizens walk freely",
+    "caption": "The capacity to protect citizens must coexist with clear limits on power.",
+    "credit": "AI image"
+  },
   "additionalImages": [
     {
-      "alt": "A resident inspects and photographs a roadside drain in a neighborhood alley after rain",
-      "caption": "Citizens should be able to see how their experiences change subsequent decisions.",
+      "alt": "A law book and a boundary line inside a public building overlooking a square where citizens walk freely",
+      "caption": "The capacity to protect citizens must coexist with clear limits on power.",
       "credit": "AI image"
     },
     {
