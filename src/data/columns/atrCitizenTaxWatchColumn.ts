@@ -43,7 +43,7 @@ export const atrCitizenTaxWatchColumn: SeedColumn = {
       "afterSection": 4
     },
     {
-      "src": "images/columns/atr-taxpayer-movement-07-citizen-tax-watch/watch-record-ko.png",
+      "src": "images/columns/atr-taxpayer-movement-07-citizen-tax-watch/watch-record-compact-ko.png",
       "alt": "생활 속 부담 발견, 원문 확인, 부담 비교, 결정과 설명 기록, 결과 재확인의 다섯 단계로 구성한 한국형 세금감시 제안 도표",
       "caption": "노모어택스가 시작할 수 있는 시민 감시의 기록 방식입니다. 운영 성과를 집계한 도표가 아닌 이 글의 실천 제안입니다.",
       "credit": "씨앗의 소리 · 시민실천 제안",
