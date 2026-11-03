@@ -25,6 +25,7 @@ const expectedArticleHeadings = {
   "atr-taxpayer-movement-06-legislative-vote-accountability": "세금을 올린 정치인, 시민은 그 이름을 기억한다",
   "atr-taxpayer-movement-07-citizen-tax-watch": "세금을 내는 사람은 왜 늘 설명을 듣는 마지막 사람입니까",
   "endless-morning-ai-fiction-2026": "[AI 가상 단편소설] 종료일 없는 아침",
+  "legislative-omnipotence-prison-rights-2026": "입법 만능시대",
   "olympic-park-ballot-inspection-civic-briefing": "올공 147일, 투표함은 열렸지만 국민은 여전히 밖에 있었다",
   "china-history-sovereignty-neighbor-part4-2026": "천 년의 이웃, 우리는 중국을 얼마나 알고 있는가",
   "tolerance-social-cohesion-common-rules-2026": "관용은 무조건 받아들이는 미덕이 아니라 공동의 질서를 지키는 책임이라는 말이다",
@@ -61,7 +62,7 @@ try {
     const page=await browser.newPage({viewport,deviceScaleFactor:1});
     const failures=[];
     page.on("pageerror",e=>failures.push("JS: "+e.message));
-    const path = isHome ? "/" : (isCivicLanguage ? "/seed-language/" : slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : (slug === "lee-erdoganization-state-power-civic-briefing-2026" || slug === "youth-rent-tax-credit-20-percent-bill-2222071" || slug === "olympic-park-ballot-inspection-civic-briefing") ? "/briefings/" : (slug === "national-assembly-48-hour-bill-notice-2026" || slug === "farmland-special-act-law-abiding-farmers-2026") ? "/monitoring/legislation/commentary/" : ((slug === "citizen-participation-framework-bill-tracker-2026" || slug === "social-economy-framework-law-tracker") ? "/monitoring/" : "/columns/")) + slug + "/";
+    const path = isHome ? "/" : (isCivicLanguage ? "/seed-language/" : slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : (slug === "lee-erdoganization-state-power-civic-briefing-2026" || slug === "youth-rent-tax-credit-20-percent-bill-2222071" || slug === "olympic-park-ballot-inspection-civic-briefing") ? "/briefings/" : (slug === "national-assembly-48-hour-bill-notice-2026" || slug === "farmland-special-act-law-abiding-farmers-2026" || slug === "legislative-omnipotence-prison-rights-2026") ? "/monitoring/legislation/commentary/" : ((slug === "citizen-participation-framework-bill-tracker-2026" || slug === "social-economy-framework-law-tracker") ? "/monitoring/" : "/columns/")) + slug + "/";
     await page.goto(base+path,{waitUntil:"domcontentloaded",timeout:45000});
     const readPage = async () => {
       // Third-party videos/analytics may keep the network busy indefinitely.
