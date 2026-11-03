@@ -22,7 +22,7 @@ export const issue117: ColumnTranslation = {
       "credit": "AI image"
     },
     {
-      "src": "images/columns/atr-taxpayer-movement-07-citizen-tax-watch/watch-record-en.png",
+      "src": "images/columns/atr-taxpayer-movement-07-citizen-tax-watch/watch-record-compact-en.png",
       "alt": "Five proposed steps: identify a burden, check original records, compare costs, record decisions and explanations, then revisit results",
       "caption": "A proposed citizen-watch record for No More Tax. This diagram describes the article’s practical proposal, not measured operational results.",
       "credit": "SEED VOICE · Civic-action proposal"
