@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:endless-morning-ai-fiction-2026": {
+    ko: { href: "/columns/no-one-stopped-it-silence-and-power", title: "아무도 멈추지 않았다", relationship: "침묵과 시민의 자유", reason: "일상에서 사라지는 질문과 권력 앞의 침묵을 다른 이야기로 이어 읽습니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
+    en: { href: "/columns/no-one-stopped-it-silence-and-power", title: "No One Stopped It", relationship: "SILENCE AND CIVIC FREEDOM", reason: "Continue with another story about silence and power in everyday life.", listHref: "/columns", listLabel: "All columns" },
+  },
   "column:who-represents-civil-society-citizen-mandate-part3-2026": {
   "ko": {
     "href": "/columns/minhoe-new-peoples-committee-civic-society-part2-2026",
