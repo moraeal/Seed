@@ -43,6 +43,7 @@ const expectedArticleHeadings = {
   "lee-erdoganization-state-power-civic-briefing-2026": "이재명의 에르도안화, 정치가 국가를 잡아먹는다",
   "who-represents-civil-society-citizen-mandate-part3-2026": "시민단체가 참여하면, 시민이 참여한 것인가",
   "poland-coup-korea-constitutional-checks-2026": "폴란드 쿠데타, 남의 일이 아니다",
+  "seed-thought-03-state-market-society": "국가와 시장 사이에서 사회를 찾습니다",
 };
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) process.exit(2);
 const server = spawn("pnpm", ["exec","vite","preview","--host","127.0.0.1","--port","4179","--strictPort"], { stdio:"pipe" });
