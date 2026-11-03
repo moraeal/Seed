@@ -44,6 +44,7 @@ export function getCivicSectionForArticle(path: string) {
 // suitable stories here in the same publishing update, regardless of category.
 export const civicLifeArticlePaths = [
   "/columns/atr-taxpayer-movement-07-citizen-tax-watch",
+  "/columns/seed-thought-03-state-market-society",
   "/columns/who-represents-civil-society-citizen-mandate-part3-2026",
   "/columns/seed-thought-02-capable-limited-state",
   "/columns/films-as-films-games-expression-double-standard-2026",

@@ -2,7 +2,7 @@ import type { SeedColumn } from "../columns";
 
 export const atrCitizenTaxWatchColumn: SeedColumn = {
   "slug": "atr-taxpayer-movement-07-citizen-tax-watch",
-  "issue": 116,
+  "issue": 117,
   "title": "세금을 내는 사람은 왜 늘 설명을 듣는 마지막 사람입니까",
   "subtitle": "세금 내는 시민이 정치를 바꾸다 ⑦ — 미국 ATR에서 한국형 세금감시운동으로, 노모어택스가 시작할 일",
   "date": "2026-11-03",
