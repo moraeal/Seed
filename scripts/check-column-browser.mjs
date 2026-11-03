@@ -23,6 +23,7 @@ const expectedArticleHeadings = {
   "pamyo-civic-groups-politics-revolving-door-2026": "시민단체에서 국회와 정부로 — 영상 ‘파묘’가 추적한 권력의 세 문",
   "who-represents-civil-society-citizen-freedom-part1-2026": "시민사회를 지원한다는 국가, 시민의 자유는 누가 지키는가",
   "atr-taxpayer-movement-06-legislative-vote-accountability": "세금을 올린 정치인, 시민은 그 이름을 기억한다",
+  "atr-taxpayer-movement-07-citizen-tax-watch": "세금을 내는 사람은 왜 늘 설명을 듣는 마지막 사람입니까",
   "olympic-park-ballot-inspection-civic-briefing": "올공 147일, 투표함은 열렸지만 국민은 여전히 밖에 있었다",
   "china-history-sovereignty-neighbor-part4-2026": "천 년의 이웃, 우리는 중국을 얼마나 알고 있는가",
   "tolerance-social-cohesion-common-rules-2026": "관용은 무조건 받아들이는 미덕이 아니라 공동의 질서를 지키는 책임이라는 말이다",
