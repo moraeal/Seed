@@ -218,6 +218,7 @@ jobs:
           node scripts/check-column-browser.mjs seed-thought-03-state-market-society
           node scripts/check-column-browser.mjs atr-taxpayer-movement-07-citizen-tax-watch
           node scripts/check-column-browser.mjs endless-morning-ai-fiction-2026
+          node scripts/check-column-browser.mjs legislative-omnipotence-prison-rights-2026
           node scripts/check-column-browser.mjs home
       - name: Block stale branch until changes are tested with latest main
         if: github.event_name == 'push'
