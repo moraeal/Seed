@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "column" && slug === "atr-taxpayer-movement-07-citizen-tax-watch") return true;
   if (kind === "column" && slug === "poland-coup-korea-constitutional-checks-2026") return true;
   if (kind === "column" && slug === "citizens-dilemma-04-merging-fairness-safety") return true;
   if (kind === "column" && slug === "atr-taxpayer-movement-06-legislative-vote-accountability") return true;
@@ -530,6 +531,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "atr-taxpayer-movement-07-citizen-tax-watch") return language === "ko" ? {"href": "/columns/atr-taxpayer-movement-06-legislative-vote-accountability", "title": "세금을 올린 정치인, 시민은 그 이름을 기억한다", "relationship": "세금 내는 시민이 정치를 바꾸다 ⑥", "reason": "앞선 편에서 서약과 법안·표결 기록을 연결하는 시민 입법감시를 살펴봅니다.", "listHref": "/series/taxpayer-movement", "listLabel": "한국형 세금감시운동 전체 보기"} : {"href": "/columns/atr-taxpayer-movement-06-legislative-vote-accountability", "title": "The Politician Who Raised Taxes: Citizens Will Remember the Name", "relationship": "WHEN TAXPAYING CITIZENS CHANGE POLITICS, PART 6", "reason": "Read the preceding installment on connecting political pledges to bills and voting records.", "listHref": "/series/taxpayer-movement", "listLabel": "All articles in this series"};
   if (kind === "column" && slug === "seed-thought-03-state-market-society") return language === "ko" ? {"href": "/columns/seed-thought-02-capable-limited-state", "title": "유능한 국가에도 한계가 필요합니다", "relationship": "씨앗을 만든 생각 ②", "reason": "앞선 회차에서 시민을 보호할 국가의 역량과 권력을 제한할 경계, 시민의 경험이 결정을 고치는 통로를 살펴봅니다.", "listHref": "/series/seed-thought", "listLabel": "씨앗을 만든 생각 전체 보기"} : {"href": "/columns/seed-thought-02-capable-limited-state", "title": "Even a Capable State Needs Limits", "relationship": "THE IDEAS BEHIND SEED VOICE · PART 2", "reason": "Read the preceding installment on state capacity, limits on power and feedback from citizens’ experience.", "listHref": "/series/seed-thought", "listLabel": "All articles in this series"};
   if (kind === "column" && slug === "poland-coup-korea-constitutional-checks-2026") return language === "ko" ? {"href": "/columns/prosecution-reform-power-transfer-2026", "title": "검찰개혁은 권력을 옮겨 심는 일이 아니다", "relationship": "권력 이동과 시민의 자유", "reason": "수사·기소 구조가 바뀐 뒤 시민을 위한 견제가 어디에 남는지 앞선 칼럼에서 이어서 읽습니다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"} : {"href": "/columns/prosecution-reform-power-transfer-2026", "title": "Prosecution Reform Is Not the Transplanting of Power", "relationship": "POWER AND CIVIC FREEDOM", "reason": "Continue with the earlier essay on how reform changes authority and the checks available to citizens.", "listHref": "/columns", "listLabel": "All columns"};
   if (kind === "monitoring" && slug === "social-economy-framework-law-tracker") return language === "ko" ? {
