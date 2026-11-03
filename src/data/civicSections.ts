@@ -43,6 +43,7 @@ export function getCivicSectionForArticle(path: string) {
 // Assess every new article under CONTENT_PUBLISHING_RULES.md §14 and add
 // suitable stories here in the same publishing update, regardless of category.
 export const civicLifeArticlePaths = [
+  "/columns/endless-morning-ai-fiction-2026",
   "/columns/atr-taxpayer-movement-07-citizen-tax-watch",
   "/columns/seed-thought-03-state-market-society",
   "/columns/who-represents-civil-society-citizen-mandate-part3-2026",
