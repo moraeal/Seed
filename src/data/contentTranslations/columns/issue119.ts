@@ -18,22 +18,22 @@ export const issue119: ColumnTranslation = {
   "additionalImages": [
     {
       "alt": "Mauna Loa monthly CO₂ concentrations in recent years",
-      "caption": "Figure 1. Mauna Loa monthly CO₂ concentrations in recent years. Reproduced as supplied by the author.",
+      "caption": "Figure 1. Mauna Loa monthly CO₂ concentrations in recent years.",
       "credit": "Author-supplied original · NOAA GML"
     },
     {
       "alt": "Mauna Loa atmospheric CO₂ concentrations over time",
-      "caption": "Figure 2. Mauna Loa atmospheric CO₂ concentrations over time. Reproduced as supplied by the author.",
+      "caption": "Figure 2. Mauna Loa atmospheric CO₂ concentrations over time.",
       "credit": "Author-supplied original · NOAA GML"
     },
     {
       "alt": "Global greenhouse-gas emissions: NDC scenario and observed trend",
-      "caption": "Figure 3. Global greenhouse-gas emissions: NDC scenario and observed trend. Reproduced as supplied by the author.",
+      "caption": "Figure 3. Global greenhouse-gas emissions: NDC scenario and observed trend.",
       "credit": "Author-supplied original · UNEP representative values, as described by the author"
     },
     {
       "alt": "World coal consumption, 2000–2026",
-      "caption": "Figure 4. World coal consumption, 2000–2026. Reproduced as supplied by the author.",
+      "caption": "Figure 4. World coal consumption, 2000–2026.",
       "credit": "Author-supplied original · IEA; source image does not show a legend or units"
     },
     {
@@ -43,35 +43,24 @@ export const issue119: ColumnTranslation = {
     },
     {
       "alt": "Annual average wind speed in selected Korean coastal and mountain locations",
-      "caption": "Figure 5. Annual average wind speed in selected Korean coastal and mountain locations. Reproduced as supplied by the author.",
+      "caption": "Figure 5. Annual average wind speed in selected Korean coastal and mountain locations.",
       "credit": "Author-supplied original · detailed underlying data source not specified"
     }
   ],
   "sections": [
     {
-      "title": "Editor's note",
-      "paragraphs": [],
-      "quote": [
-        "This article reproduces the manuscript supplied by Beomgyu Ko, a researcher at Seoul National University's Nuclear Policy Center. On this site it appears under the contributor name Beyond Thought (생각너머). The charts are reproduced as supplied by the author; the underlying data and detailed methodology for some charts could not be independently verified. The manuscript's reference to ‘last May’ means May 2026, the year in which it was written.",
-        "Data check: the manuscript gives the Mauna Loa monthly CO₂ average for May 2026 as 432.54 ppm; NOAA's dataset dated October 9, 2026 gives 432.34 ppm. The World Meteorological Organization (WMO) reports the 2025 global temperature at about 1.43°C above the pre-industrial average, differing from the manuscript's 1.44°C.[1][2]",
-        "WMO also explains that an individual year above 1.5°C does not by itself establish that the Paris Agreement's long-term temperature goal has failed. The manuscript's statement that it has effectively failed is the author's interpretation. The manuscript does not provide sufficient detail to independently verify its comparison of lifetime output and construction costs for offshore wind and nuclear power, or the observations behind its Korean wind-speed chart.[3]",
-        "Coal figures also differ by reporting date. The manuscript’s 2024 figures for China and the rest of the world add up to 8.77 billion tonnes, while the IEA’s 2025 mid-year update puts 2024 global consumption at approximately 8.79 billion tonnes.[4]",
-        "The 55-day European drought is a model result based on weather data for a defined period and an ideally interconnected grid. Storage equal to about 7% of annual consumption is likewise a result of a separate model under specified grid and power-system assumptions, rather than a figure applicable to every renewable system. We could not establish the exact source for the manuscript’s 2002 global coal consumption figure.[5][6]"
-      ]
-    },
-    {
       "title": "“This year was the coolest of the rest of our lives”",
       "paragraphs": [
         "Last May, the monthly average concentration of carbon dioxide measured at Hawaii’s Mauna Loa Observatory reached 432.54 ppm, the highest since direct measurements began in 1958.",
         "The World Meteorological Organization’s State of the Global Climate reports also found that global mean temperatures in 2024 and 2025 were respectively 1.55°C and 1.44°C above pre-industrial levels. This means that the international community has effectively failed to hold warming to 1.5°C, a threshold often described as a line of defense.",
-        "Moreover, global average temperatures are almost certain to continue rising. The United Nations Environment Programme’s Emissions Gap Report 2025 projects warming of 2.3–2.5°C above pre-industrial levels by the end of the century even if countries implement their nationally determined contribution (NDC) targets.[7]",
+        "Moreover, global average temperatures are almost certain to continue rising. The United Nations Environment Programme’s Emissions Gap Report 2025 projects warming of 2.3–2.5°C above pre-industrial levels by the end of the century even if countries implement their nationally determined contribution (NDC) targets.[1]",
         "Yet recent global greenhouse-gas emission trends suggest that even these NDC targets will be difficult to achieve. We are in a situation where it would hardly be wrong to say each year that “this year will be the coolest of the rest of our lives.”"
       ]
     },
     {
       "title": "The difficulty of confronting the climate crisis while maintaining and strengthening industrial competitiveness",
       "paragraphs": [
-        "The international community has made efforts of its own. Advanced economies that account for a large share of cumulative greenhouse-gas emissions have reduced emissions within their borders through measures such as moving industrial production abroad, restructuring emissions-intensive industries, and using renewable energy. Viewed more soberly, however, the countries primarily producing goods may have changed while global fossil-fuel consumption has actually increased. For example, the world consumed about 4.94 billion tonnes of coal in 2002. In 2024, China alone consumed 4.94 billion tonnes, and all other countries consumed a further 3.83 billion tonnes.[4]",
+        "The international community has made efforts of its own. Advanced economies that account for a large share of cumulative greenhouse-gas emissions have reduced emissions within their borders through measures such as moving industrial production abroad, restructuring emissions-intensive industries, and using renewable energy. Viewed more soberly, however, the countries primarily producing goods may have changed while global fossil-fuel consumption has actually increased. For example, the world consumed about 4.94 billion tonnes of coal in 2002. In 2024, China alone consumed 4.94 billion tonnes, and all other countries consumed a further 3.83 billion tonnes.[2]",
         "This is because our civilization depends on materials and by-products produced directly from fossil fuels in industries such as steel, chemicals, and cement. Semiconductor manufacturing and artificial intelligence are also clearly energy-intensive industries. European countries that moved manufacturing abroad early and celebrated lower emissions and energy consumption have struggled to escape economic difficulties. Their experience shows the hard reality that energy use and economic growth are not easily separated."
       ]
     },
@@ -86,7 +75,7 @@ export const issue119: ColumnTranslation = {
       "title": "“The key is to secure enough carbon-free power that does not depend on the weather”\nPreparing for renewable-energy droughts that recur once in 40 or 100 years",
       "paragraphs": [
         "Over the past 10–15 years, however, discussion of the climate crisis has exaggerated or distorted the role of renewables, presenting a transition to renewable energy as though it were the core of the response rather than debating every available means. In South Korea, the Moon Jae-in, Yoon Suk Yeol and Lee Jae-myung administrations alike have set targets for a considerable and rapid expansion of renewable capacity, while remaining quite cautious about introducing new nuclear capacity.",
-        "Because renewable energy depends on the weather, an excessively high share in the electricity mix can cause an energy-security crisis during a prolonged renewable-energy drought, or Dunkelflaute. For example, a study identified the 1996–97 winter as potentially causing the worst renewable-energy drought in Europe’s meteorological record; the event lasted 55 days.[5] During this period, the combined average capacity factor of solar and wind remained around 11 percent even assuming ideal interconnection of the European grid. In Germany alone, the renewable-energy drought was found to last about 109 days. Countries such as South Korea, which is isolated as an energy island, must therefore forecast the frequency and intensity of these droughts.",
+        "Because renewable energy depends on the weather, an excessively high share in the electricity mix can cause an energy-security crisis during a prolonged renewable-energy drought, or Dunkelflaute. For example, a study identified the 1996–97 winter as potentially causing the worst renewable-energy drought in Europe’s meteorological record; the event lasted 55 days.[3] During this period, the combined average capacity factor of solar and wind remained around 11 percent even assuming ideal interconnection of the European grid. In Germany alone, the renewable-energy drought was found to last about 109 days. Countries such as South Korea, which is isolated as an energy island, must therefore forecast the frequency and intensity of these droughts.",
         "To cope with renewable-energy droughts recurring every few decades across continental Europe under an RE100 scenario, the required energy storage system capacity has been estimated at an astronomical 7.1 percent of annual electricity consumption. No matter how far battery storage prices fall, the cost and land area required would be practically unaffordable."
       ]
     },
@@ -100,14 +89,14 @@ export const issue119: ColumnTranslation = {
       ]
     }
   ],
-  "sourceNote": "The manuscript and charts were supplied by the author. Differences in figures and points that could not be independently verified are identified in the editor’s note above.",
+  "sourceNote": "Editor's note: This article reproduces the manuscript supplied by Beomgyu Ko, a researcher at Seoul National University's Nuclear Policy Center. On this site it appears under the contributor name Beyond Thought (생각너머). The charts are reproduced as supplied by the author; the underlying data and detailed methodology for some charts could not be independently verified. The manuscript's reference to ‘last May’ means May 2026, the year in which it was written.\n\nData check: the manuscript gives the Mauna Loa monthly CO₂ average for May 2026 as 432.54 ppm; NOAA's dataset dated October 9, 2026 gives 432.34 ppm. The World Meteorological Organization (WMO) reports the 2025 global temperature at about 1.43°C above the pre-industrial average, differing from the manuscript's 1.44°C.[4][5]\n\nWMO also explains that an individual year above 1.5°C does not by itself establish that the Paris Agreement's long-term temperature goal has failed. The manuscript's statement that it has effectively failed is the author's interpretation. The manuscript does not provide sufficient detail to independently verify its comparison of lifetime output and construction costs for offshore wind and nuclear power, or the observations behind its Korean wind-speed chart.[6]\n\nCoal figures also differ by reporting date. The manuscript’s 2024 figures for China and the rest of the world add up to 8.77 billion tonnes, while the IEA’s 2025 mid-year update puts 2024 global consumption at approximately 8.79 billion tonnes.[2]\n\nThe 55-day European drought is a model result based on weather data for a defined period and an ideally interconnected grid. Storage equal to about 7% of annual consumption is likewise a result of a separate model under specified grid and power-system assumptions, rather than a figure applicable to every renewable system. We could not establish the exact source for the manuscript’s 2002 global coal consumption figure.[3][7]",
   "sourceLabels": [
+    "UNEP, Emissions Gap Report 2025",
+    "IEA, Coal Mid-Year Update 2025: global coal demand in 2024",
+    "Kittel and Schill, Quantifying the Dunkelflaute, 2024",
     "NOAA Global Monitoring Laboratory, Mauna Loa monthly CO₂ data, file dated October 9, 2026",
     "WMO, State of the Global Climate 2025, March 23, 2026",
     "WMO, 2024 temperature and the long-term 1.5°C goal",
-    "IEA, Coal Mid-Year Update 2025: global coal demand in 2024",
-    "Kittel and Schill, Quantifying the Dunkelflaute, 2024",
-    "Kittel, Roth and Schill, Coping with the Dunkelflaute, 2024",
-    "UNEP, Emissions Gap Report 2025"
+    "Kittel, Roth and Schill, Coping with the Dunkelflaute, 2024"
   ]
 };

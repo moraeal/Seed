@@ -40,7 +40,7 @@ export function ArticleSources({ citations, note }: { citations: ArticleCitation
   if (!citations.sources.length && !note) return null;
   return <aside className="article-sources" aria-labelledby="article-sources-title" role="doc-endnotes">
     <h2 id="article-sources-title">{citations.language === "ko" ? "출처" : "Sources"}</h2>
-    {note && <p className="article-source-note"><ArticleText text={note} citations={citations}/></p>}
+    {note && <p className="article-source-note whitespace-pre-line"><ArticleText text={note} citations={citations}/></p>}
     <ol>{citations.sources.map((source) => <li id={`article-source-${source.number}`} key={source.url} role="doc-endnote">
       <span className="article-source-number">[{source.number}]</span>
       <div><a href={source.url} {...(isExternalCitationUrl(source.url) ? { target: "_blank", rel: "noreferrer" } : {})}>{source.label}</a>{source.note && <p>{source.note}</p>}</div>
