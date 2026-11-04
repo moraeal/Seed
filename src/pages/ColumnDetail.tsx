@@ -164,12 +164,7 @@ export default function ColumnDetail() {
         </div>}
         {column.sections.map((section, index) => <Fragment key={`${index}-${section.title}`}><section className={index === 0 ? "" : `article-section ${isLongRead ? "article-section-long" : ""}`}>
           {section.title && <h2 className="article-section-title">{section.title}</h2>}
-          {section.paragraphs.map((paragraph, paragraphIndex) => {
-            const isFictionEditorNote = column.slug === "endless-morning-ai-fiction-2026" && index === 0 && paragraphIndex === 0 && paragraph.startsWith(ko ? "편집자 주:" : "Editor's note:");
-            return isFictionEditorNote
-              ? <aside key={`${paragraphIndex}-${paragraph.slice(0, 28)}`} aria-label={ko ? "편집자 주" : "Editor's note"} className="my-6 border-l-4 border-green-deep/40 bg-green-pale px-5 py-4 sm:px-6 sm:py-5"><p className="article-copy !mt-0 text-charcoal/85"><ArticleText text={paragraph} citations={citations}/></p></aside>
-              : <p key={`${paragraphIndex}-${paragraph.slice(0, 28)}`} className={column.presentation === "poem" ? "mt-6 whitespace-pre-line font-serif text-[17px] leading-[2] text-charcoal/85 sm:text-xl sm:leading-[2]" : `article-copy ${isLongRead ? "article-copy-long" : ""}`}><ArticleText text={paragraph} citations={citations}/></p>;
-          })}
+          {section.paragraphs.map((paragraph, paragraphIndex) => <p key={`${paragraphIndex}-${paragraph.slice(0, 28)}`} className={column.presentation === "poem" ? "mt-6 whitespace-pre-line font-serif text-[17px] leading-[2] text-charcoal/85 sm:text-xl sm:leading-[2]" : `article-copy ${isLongRead ? "article-copy-long" : ""}`}><ArticleText text={paragraph} citations={citations}/></p>)}
           {section.quote && <blockquote className="my-7 border-l-4 border-gold bg-green-pale px-5 py-5 text-lg font-bold leading-8 text-green-deep sm:px-6 sm:text-xl">{section.quote.map((line, lineIndex) => <span key={`${lineIndex}-${line}`} className="block"><ArticleText text={line} citations={citations}/></span>)}</blockquote>}
           {bodyImages.filter((image) => image.afterSection === index).map((image) => <InteractiveFigure key={imageKey(image.src)} src={image.src} alt={image.alt} caption={image.caption} credit={image.credit} sourceUrl={image.sourceUrl} figureClassName="my-12 overflow-hidden bg-white shadow-[0_12px_34px_rgba(23,76,58,.08)]" imageClassName={"contain" in image && image.contain ? "block h-auto w-full" : "aspect-[16/10] w-full object-cover"} />)}
           {column.embeddedFigures?.filter((figure) => figure.afterSection === index).map((figure) => <ColumnEmbeddedFigure key={`${figure.kind}-${index}`} figure={figure} ko={ko} />)}
