@@ -60,6 +60,13 @@ export const democracyMeritCommentary: LegislativeCommentary = {
         "en": "Newsis · Judiciary committee advances the democratic merit bill (March 30, 2026)"
       },
       "url": "https://www.newsis.com/view/NISX20260330_0003569861"
+    },
+    {
+      "label": {
+        "ko": "법제처 국민참여입법센터 · 민주유공자 예우에 관한 법률안(의안 제2200274호), 제안이유·주요내용 및 처리 경과",
+        "en": "Ministry of Government Legislation · Bill No. 2200274, official proposal summary and legislative history"
+      },
+      "url": "https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2200274/detailRP"
     }
   ],
   "editions": {
@@ -84,14 +91,14 @@ export const democracyMeritCommentary: LegislativeCommentary = {
         {
           "title": "어떤 법안인가",
           "paragraphs": [
-            "더불어민주당이 11월 5일 본회의 처리를 추진한 「민주유공자 예우에 관한 법률안」은 1964년 3월 24일 이후 권위주의 통치에 맞서 자유민주적 기본질서 확립에 기여한 사람을 민주유공자로 등록하고, 본인과 유족 또는 가족을 예우하는 내용이다. 부마민주항쟁과 6월 민주항쟁 등의 관련자가 거론된다. [1] [2] [5] [6]",
+            "더불어민주당이 11월 5일 본회의 처리를 추진한 「민주유공자 예우에 관한 법률안」은 1964년 3월 24일 이후 권위주의 통치에 맞서 자유민주적 기본질서 확립에 기여한 사람을 민주유공자로 등록하고, 본인과 유족 또는 가족을 예우하는 내용이다. 부마민주항쟁과 6월 민주항쟁 등의 관련자가 거론된다. [1] [2] [5] [6] [7]",
             "의료·재활·양로·요양 지원과 기념·추모 사업 등이 포함돼 있다. 뉴데일리가 인용한 비용추계에 따르면 추가 재정 소요는 5년간 101억 7,900만 원이다. 보도에 나온 4,537명은 유공자 본인과 유가족을 합친 예우 대상 추정치다. [2]"
           ]
         },
         {
           "title": "‘공헌이 명백하다’는 말로 누구를 가려낼 수 있나",
           "paragraphs": [
-            "법안은 자유민주적 기본질서 확립에 대한 공헌이 명백하고 사회적 공감대가 형성된 사람을 예우한다는 취지다. 하지만 ‘공헌이 명백하다’는 말만으로는 어떤 행위를 공헌으로 볼지, 어떤 자료를 증거로 삼을지 알기 어렵다. ‘사회적 공감대’는 누가 무엇을 근거로 판단하는가. 같은 사건에 참여한 두 사람 중 한 사람의 이름만 기록에 남아 있다면, 국가는 다른 한 사람의 증언을 어떻게 심사할 것인가. 이런 기준이 법에 분명하지 않을수록 심사하는 사람의 판단이 결과를 좌우한다. [1] [2] [6]",
+            "법안은 자유민주적 기본질서 확립에 대한 공헌이 명백하고 사회적 공감대가 형성된 사람을 예우한다는 취지다. 하지만 ‘공헌이 명백하다’는 말만으로는 어떤 행위를 공헌으로 볼지, 어떤 자료를 증거로 삼을지 알기 어렵다. ‘사회적 공감대’는 누가 무엇을 근거로 판단하는가. 같은 사건에 참여한 두 사람 중 한 사람의 이름만 기록에 남아 있다면, 국가는 다른 한 사람의 증언을 어떻게 심사할 것인가. 이런 기준이 법에 분명하지 않을수록 심사하는 사람의 판단이 결과를 좌우한다. [1] [2] [6] [7]",
             "국가권력에 의해 목숨을 잃거나 다친 사람의 피해를 확인하고 예우하는 일에는 분명한 이유가 있다. 그 책임을 다한다는 명분으로 국가가 민주화의 공로까지 넓게 재단하려면 훨씬 엄격한 기준이 필요하다. 같은 날 같은 거리에서 피를 흘렸어도 한 사람은 기록과 증언을 확보할 수 있고, 다른 사람은 그럴 수 없다. 스스로 공을 내세우지 않은 사람도 있다. 그런 차이가 국가가 인정하는 공로의 차이가 되고, 나아가 자녀가 누릴 기회의 차이까지 된다면, 이름 없이 민주화에 헌신한 시민의 명예를 훼손하는 일이다."
           ]
         },
@@ -138,7 +145,7 @@ export const democracyMeritCommentary: LegislativeCommentary = {
         "note": "대입 특별전형의 실제 적용 범위는 확인되지 않았다.",
         "afterSection": 2
       },
-      "sourceNote": "법사위 의결본 전문은 직접 열람하지 못했다. 법안 설명은 법사위 보도와 검토보고서 인용 보도를 바탕으로 했다."
+      "sourceNote": "법사위 의결본 전문은 직접 열람하지 못했다. 법안 설명은 국민참여입법센터의 제안이유·주요내용과 법사위·검토보고서 보도를 바탕으로 했다."
     },
     "en": {
       "title": "Who Gets Credit for Korea’s Democracy When So Many Sacrificed in Anonymity?",
@@ -161,14 +168,14 @@ export const democracyMeritCommentary: LegislativeCommentary = {
         {
           "title": "What the bill would do",
           "paragraphs": [
-            "The Democratic Party sought a November 5 floor vote on a bill to honor contributors to Korea’s democratization. The proposal would register qualifying people who resisted authoritarian rule after March 24, 1964 and helped establish a free democratic constitutional order. It would extend recognition and support to eligible survivors or family members. Coverage has pointed to the 1979 Busan–Masan protests and the June Democratic Uprising of 1987. [1] [2] [5] [6]",
+            "The Democratic Party sought a November 5 floor vote on a bill to honor contributors to Korea’s democratization. The proposal would register qualifying people who resisted authoritarian rule after March 24, 1964 and helped establish a free democratic constitutional order. It would extend recognition and support to eligible survivors or family members. Coverage has pointed to the 1979 Busan–Masan protests and the June Democratic Uprising of 1987. [1] [2] [5] [6] [7]",
             "The proposal covers medical care, rehabilitation, elder and long-term care, and commemorative programs. According to a legislative estimate cited by New Daily, it would cost an additional 10.179 billion won over five years. The reported estimate of 4,537 covers contributors and surviving family members together. [2]"
           ]
         },
         {
           "title": "Who decides what counts as a clear contribution?",
           "paragraphs": [
-            "The bill seeks to honor people whose contribution is clear and whose recognition commands public consensus. Those phrases leave practical questions unanswered. What acts qualify? What counts as evidence? Who determines that there is public consensus? When only one of two participants in the same protest appears in the surviving records, how should reviewers weigh the other’s testimony? The less the law says, the more the result depends on the people reviewing the application. [1] [2] [6]",
+            "The bill seeks to honor people whose contribution is clear and whose recognition commands public consensus. Those phrases leave practical questions unanswered. What acts qualify? What counts as evidence? Who determines that there is public consensus? When only one of two participants in the same protest appears in the surviving records, how should reviewers weigh the other’s testimony? The less the law says, the more the result depends on the people reviewing the application. [1] [2] [6] [7]",
             "The state has a duty to recognize those killed or injured by state power. A wider effort to judge who deserves credit for democratization requires a more exacting standard. Two people could have shed blood on the same street, yet only one may be able to produce records or witnesses. Others never put their names forward. Turning those differences into official distinctions that could shape their children’s opportunities dishonors the citizens whose service went unrecorded."
           ]
         },
@@ -215,7 +222,7 @@ export const democracyMeritCommentary: LegislativeCommentary = {
         "note": "The actual scope of any admissions eligibility has yet to be verified.",
         "afterSection": 2
       },
-      "sourceNote": "The committee-approved full text could not be reviewed directly. The account draws on committee coverage and reporting that cites the legislative review."
+      "sourceNote": "The committee-approved full text could not be reviewed directly. The account draws on the official proposal summary and reporting on the committee proceedings and legislative review."
     }
   }
 };
