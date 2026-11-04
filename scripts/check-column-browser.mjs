@@ -26,6 +26,7 @@ const expectedArticleHeadings = {
   "atr-taxpayer-movement-07-citizen-tax-watch": "세금을 내는 사람은 왜 늘 설명을 듣는 마지막 사람입니까",
   "endless-morning-ai-fiction-2026": "[AI 가상 단편소설] 종료일 없는 아침",
   "legislative-omnipotence-prison-rights-2026": "입법 만능시대",
+  "climate-power-mix-renewable-drought-2026": "기후 위기 대응을 위한 전력믹스에서",
   "olympic-park-ballot-inspection-civic-briefing": "올공 147일, 투표함은 열렸지만 국민은 여전히 밖에 있었다",
   "china-history-sovereignty-neighbor-part4-2026": "천 년의 이웃, 우리는 중국을 얼마나 알고 있는가",
   "tolerance-social-cohesion-common-rules-2026": "관용은 무조건 받아들이는 미덕이 아니라 공동의 질서를 지키는 책임이라는 말이다",
