@@ -46,6 +46,7 @@ export const civicLifeArticlePaths = [
   "/monitoring/legislation/commentary/democracy-merit-bill-admissions-fairness-2026",
   "/columns/endless-morning-ai-fiction-2026",
   "/columns/atr-taxpayer-movement-07-citizen-tax-watch",
+  "/columns/seed-thought-04-public-interest",
   "/columns/seed-thought-03-state-market-society",
   "/columns/who-represents-civil-society-citizen-mandate-part3-2026",
   "/columns/seed-thought-02-capable-limited-state",
