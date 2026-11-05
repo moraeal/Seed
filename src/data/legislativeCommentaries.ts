@@ -1,3 +1,4 @@
+import { democracyMeritCommentary } from "./democracyMeritCommentary";
 import { legislativeOmnipotenceCommentary } from "./legislativeOmnipotenceCommentary";
 import { farmlandSpecialActCommentary } from "./farmlandSpecialActCommentary";
 import { teenAiProtectionCommentary } from "./teenAiProtectionCommentary";
@@ -69,6 +70,7 @@ export const linkedLegislativeColumnCommentaries = [{
 }];
 
 export const legislativeCommentaries: LegislativeCommentary[] = [
+  democracyMeritCommentary,
   legislativeOmnipotenceCommentary,
   farmlandSpecialActCommentary,
   assembly48HourNoticeCommentary,
