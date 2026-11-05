@@ -17,10 +17,12 @@ const server = await createServer({
       return `import snapshot from "/src/data/homeSnapshot.json";
         let ready = false;
         let fixtureHistory = null;
+        let fixturePath = null;
         export function setFixtureReady(value) { ready = value; }
         export function setFixtureHistory(value) { fixtureHistory = value; }
+        export function setFixturePath(value) { fixturePath = value; }
         export function useFeaturedContent() {
-          return { featuredPath: snapshot.featuredPath, history: fixtureHistory ?? snapshot.history, ready, historyError: false };
+          return { featuredPath: fixturePath ?? snapshot.featuredPath, history: fixtureHistory ?? snapshot.history, ready, historyError: false };
         }`;
     },
   }],
@@ -31,7 +33,7 @@ const server = await createServer({
 });
 
 try {
-  const { setFixtureReady, setFixtureHistory } = await server.ssrLoadModule("/src/hooks/useFeaturedContent.ts");
+  const { setFixtureReady, setFixtureHistory, setFixturePath } = await server.ssrLoadModule("/src/hooks/useFeaturedContent.ts");
   const { default: Home } = await server.ssrLoadModule("/src/pages/Home.tsx");
   const { LanguageProvider } = await server.ssrLoadModule("/src/i18n.tsx");
   const { canonicalHomePath, getHomeTopic, claimHomeStories } = await server.ssrLoadModule("/src/data/homeTopics.ts");
@@ -146,8 +148,8 @@ try {
   const isArticle = (path) =>
     /^\/(?:columns|briefings|news|seed-language)\/[^/]+$/.test(path) ||
     /^\/monitoring\/(?:[^/]+\/)*[^/]+$/.test(path);
-  // A historical selection on the same topic used to swallow a new follow-up
-  // from every desk after the live featured history finished loading.
+  // A former lead must go to Hot Issues before an automatic column desk can
+  // claim it (or another article on its topic).
   const followUp = columns.find(x => x.slug === "emergency-room-warrant-defensive-medicine-2026");
   assert(followUp);
   const publicationDate = followUp.date;
@@ -159,11 +161,37 @@ try {
       const html = renderToStaticMarkup(React.createElement(MemoryRouter, { initialEntries: [route] },
         React.createElement(LanguageProvider, null, React.createElement(Home))));
       const desk = [...html.matchAll(/<section\b[^>]*>[\s\S]*?<\/section>/g)].find(x => x[0].includes('>COLUMNS</p>') && !x[0].includes('home-today-section'))?.[0];
-      assert(desk?.includes(`/columns/${followUp.slug}`), `${route}: an older historical selection must not hide a new follow-up from the column desk`);
       const hot = [...html.matchAll(/<section\b[^>]*>[\s\S]*?<\/section>/g)].find(x => x[0].includes('id="hot-issues-title"'))?.[0];
-      assert(!hot?.includes('/columns/politics-abandon-devotion-conviction-2026'), `${route}: the historical carousel must yield the claimed topic`);
+      assert(hot?.includes('/columns/politics-abandon-devotion-conviction-2026'), `${route}: a previous featured selection must appear in Hot Issues`);
+      assert(!desk?.includes('/columns/politics-abandon-devotion-conviction-2026'), `${route}: the previous lead must not be duplicated in columns`);
+      assert(!desk?.includes(`/columns/${followUp.slug}`), `${route}: the same topic must not be duplicated across homepage desks`);
     }
   } finally { followUp.date = publicationDate; setFixtureHistory(null); }
+  // The live sequence observed on Nov. 5: after the webtoon became the lead,
+  // the previous democracy column must move into Hot Issues automatically.
+  const currentLead = "/columns/animal-farm-justice-benjamin-webtoon-2026";
+  const previousLead = "/columns/nameless-citizens-democracy-2026";
+  const olderLead = "/columns/endless-morning-ai-fiction-2026";
+  setFixturePath(currentLead);
+  setFixtureHistory([
+    { content_path: currentLead, featured_at: "2026-11-05T09:17:02Z" },
+    { content_path: previousLead, featured_at: "2026-11-05T01:08:35Z" },
+    { content_path: olderLead, featured_at: "2026-11-03T03:52:08Z" },
+  ]);
+  try {
+    for (const route of ["/", "/en"]) {
+      const html = renderToStaticMarkup(React.createElement(MemoryRouter, { initialEntries: [route] },
+        React.createElement(LanguageProvider, null, React.createElement(Home))));
+      const sections = [...html.matchAll(/<section\b[^>]*>[\s\S]*?<\/section>/g)];
+      const hot = sections.find(x => x[0].includes('id="hot-issues-title"'))?.[0];
+      const columnsDesk = sections.find(x => x[0].includes('>COLUMNS</p>') && !x[0].includes('home-today-section'))?.[0];
+      assert(hot?.includes(previousLead), `${route}: the previous lead must be in Hot Issues`);
+      assert(hot?.includes(olderLead), `${route}: earlier selections remain in Hot Issues`);
+      assert(hot.indexOf(previousLead) < hot.indexOf(olderLead), `${route}: selection order must be preserved`);
+      assert(!hot.includes(currentLead), `${route}: the active lead must not repeat in Hot Issues`);
+      assert(!columnsDesk?.includes(previousLead), `${route}: the former lead must not be duplicated in columns`);
+    }
+  } finally { setFixturePath(null); setFixtureHistory(null); }
   for (const ready of [false, true]) {
     setFixtureReady(ready);
   for (const route of ["/", "/en"]) {
