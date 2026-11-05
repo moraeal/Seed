@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "column" && slug === "us-midterms-korea-national-interest-2026") return true;
   if (kind === "column" && slug === "animal-farm-justice-benjamin-webtoon-2026") return true;
   if (kind === "column" && slug === "atr-taxpayer-movement-07-citizen-tax-watch") return true;
   if (kind === "column" && slug === "poland-coup-korea-constitutional-checks-2026") return true;
@@ -532,6 +533,8 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "us-midterms-korea-national-interest-2026") return language === "ko" ? { href: "/columns/philippines-turkiye-turning-away-us-alliance-warning-2026", title: "필리핀과 튀르키에, 미국에 등 돌리다", relationship: "한미동맹과 국익", reason: "미국의 동맹 관계와 한국 외교의 선택을 다룬 앞선 칼럼을 읽습니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" } : { href: "/columns/philippines-turkiye-turning-away-us-alliance-warning-2026", title: "The Philippines and Türkiye Turn Away from America", relationship: "ALLIANCES AND NATIONAL INTEREST", reason: "Read an earlier column on American alliances and Korea’s foreign policy choices.", listHref: "/columns", listLabel: "All columns" };
+
   if (kind === "column" && slug === "animal-farm-justice-benjamin-webtoon-2026") return language === "ko" ? { href: "/columns/age-of-legislative-tyranny-2026", title: "입법독재의 시대", relationship: "함께 읽기", reason: "사법 독립과 입법 권력에 관한 논평을 이어서 읽습니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" } : { href: "/columns/age-of-legislative-tyranny-2026", title: "The Age of Legislative Domination", relationship: "RELATED READING", reason: "Read the commentary on judicial independence and legislative power.", listHref: "/columns", listLabel: "All columns" };
   if (kind === "column" && slug === "age-of-legislative-tyranny-2026") return language === "ko" ? { href: "/columns/who-watches-power-now-2026", title: "이제 권력은 누가 감시하나?", relationship: "권력과 시민의 자유", reason: "수사권 이동과 시민의 권리 구제 통로를 살펴봅니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" } : { href: "/columns/who-watches-power-now-2026", title: "Who Watches Power Now?", relationship: "POWER AND CIVIC FREEDOM", reason: "Explore investigative power and citizens’ avenues for redress.", listHref: "/columns", listLabel: "All columns" };
   if (kind === "column" && slug === "climate-power-mix-renewable-drought-2026") return language === "ko" ? { href: "/monitoring/democratic-party-nuclear-policy-reversal-tracker", title: "탈원전에서 신규 원전 추진까지", relationship: "원전정책 흐름", reason: "2017년 이후 한국 원전정책 변화의 자료와 흐름을 살펴봅니다.", listHref: "/news", listLabel: "기사 전체 보기" } : { href: "/monitoring/democratic-party-nuclear-policy-reversal-tracker", title: "From Nuclear Phase-out to New Reactors", relationship: "NUCLEAR POLICY TIMELINE", reason: "Explore the documented changes in South Korea’s nuclear policy since 2017.", listHref: "/news", listLabel: "All articles" };
