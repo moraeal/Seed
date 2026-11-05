@@ -7,7 +7,7 @@ import SafeImage from "../components/SafeImage";
 import NewsTrackingCard from "../components/NewsTrackingCard";
 import { getAllBriefingsNewestFirst } from "../data/allBriefings";
 import { getColumnsNewestFirst } from "../data/columns";
-import { getHomepageArchiveCards, selectHotIssueCards } from "../data/hotIssueSelection";
+import { getHomepageArchiveCards, getHotIssueCards, selectHotIssueCards } from "../data/hotIssueSelection";
 import { localizeBriefing, localizeColumn } from "../data/localizedContent";
 import { getNewsTrackingCards, selectNewsTrackingCards } from "../data/newsTracking";
 import { getCivicWatchFeed, selectLatestCivicWatchItems, type CivicWatchItem } from "../data/civicWatchFeed";
@@ -198,8 +198,15 @@ export default function Home() {
   localizedBriefings.sort((a, b) => newestInSection({ path: `/briefings/${a.slug}`, date: a.date }, { path: `/briefings/${b.slug}`, date: b.date }));
   allJournalColumns.sort((a, b) => newestInSection({ path: `/columns/${a.slug}`, date: a.date }, { path: `/columns/${b.slug}`, date: b.date }));
   seedLanguageCandidates.sort((a, b) => newestInSection({ path: `/seed-language/${a.slug}`, date: a.date }, { path: `/seed-language/${b.slug}`, date: b.date }));
-  // Reserve the lead and existing desks before the historical carousel.
+  // The lead is excluded from Hot Issues, but the editor's previous lead
+  // selections take priority over automatically populated homepage desks.
   const claimedHomePaths = new Set(activeFeaturedPath ? [getHomeTopic(activeFeaturedPath)] : []);
+  const selectedHotIssueCards = featuredReady ? selectHotIssueCards(
+    getHotIssueCards(language, legislativeBills, featuredHistory),
+    claimedHomePaths,
+    8,
+  ) : [];
+  for (const card of selectedHotIssueCards) claimedHomePaths.add(getHomeTopic(card.to));
   // Keep the right rail focused on No More Tax commentary; serialized ATR
   // chapters are already available in the dedicated Editorial Series section.
   // The shared published-content registry prevents drafts from appearing here.
@@ -230,8 +237,7 @@ export default function Home() {
   );
   const briefingLead = briefings[0];
   const briefingList = briefings.slice(1);
-  // Current desks take priority over historical selections: an older archive
-  // story on the same topic must not hide a newly published follow-up column.
+  // Fill the regular desks with stories not already placed in Hot Issues.
   const legislativeColumnPaths = new Set(linkedLegislativeColumnCommentaries.map((article) => article.href));
   const journalColumns = selectHomeStandaloneColumns(
     allJournalColumns.filter((column) => !legislativeColumnPaths.has(`/columns/${column.slug}`)),
@@ -241,12 +247,13 @@ export default function Home() {
   ).map((column) => ({ ...column, to: `/columns/${column.slug}` }));
   const voiceLeadColumn = journalColumns[0];
   const voiceListColumns = journalColumns.slice(1);
-  const visibleHotIssueCards = featuredReady ? selectHotIssueCards(
+  const archiveHotIssueCards = featuredReady ? selectHotIssueCards(
     getHomepageArchiveCards(language, legislativeBills, featuredHistory),
     claimedHomePaths,
-    8,
+    8 - selectedHotIssueCards.length,
   ) : [];
-  for (const card of visibleHotIssueCards) claimedHomePaths.add(getHomeTopic(card.to));
+  const visibleHotIssueCards = [...selectedHotIssueCards, ...archiveHotIssueCards];
+  for (const card of archiveHotIssueCards) claimedHomePaths.add(getHomeTopic(card.to));
 
   const newsTrackingCards = featuredReady
     ? selectNewsTrackingCards(getNewsTrackingCards(language), claimedHomePaths, 8)
