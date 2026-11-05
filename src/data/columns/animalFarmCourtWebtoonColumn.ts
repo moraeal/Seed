@@ -26,6 +26,7 @@ export const animalFarmCourtWebtoonColumn: SeedColumn = {
     "credit": "AI 이미지",
     "sourceUrl": ""
   },
+  "displayHero": false,
   "displayInlineImage": false,
   "additionalImages": [
     {
