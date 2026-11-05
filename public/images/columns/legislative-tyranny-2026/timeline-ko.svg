@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="800" viewBox="0 0 1440 800">
+<rect width="1440" height="800" fill="#f4f2ed"/>
+<text x="100" y="116" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="46" font-weight="700" fill="#20272b">사법제도 변화와 시행 시점</text>
+<line x1="190" y1="210" x2="190" y2="620" stroke="#a75342" stroke-width="5"/>
+<circle cx="190" cy="235" r="13" fill="#a75342"/>
+<text x="245" y="228" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="34" font-weight="700" fill="#963f30">2026.03</text>
+<text x="245" y="278" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="29" font-weight="500" fill="#20272b">법왜곡죄·재판소원 시행</text>
+<circle cx="190" cy="425" r="13" fill="#a75342"/>
+<text x="245" y="418" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="34" font-weight="700" fill="#963f30">2026.10</text>
+<text x="245" y="468" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="29" font-weight="500" fill="#20272b">검찰청 폐지·새 수사·기소 체계</text>
+<circle cx="190" cy="615" r="13" fill="#a75342"/>
+<text x="245" y="608" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="34" font-weight="700" fill="#963f30">2028–2030</text>
+<text x="245" y="658" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="29" font-weight="500" fill="#20272b">대법관 14명에서 26명으로 단계적 증원</text>
+</svg>
