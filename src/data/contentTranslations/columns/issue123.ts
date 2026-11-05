@@ -5,6 +5,12 @@ export const issue123: ColumnTranslation = {
   "subtitle": "Benjamin, seven promises and the independence of justice in 40 panels",
   "author": "SEED VOICE · AI",
   "summary": "A 40-panel satire asks what happens to citizens’ rights when rulers rewrite a farm’s promises and pressure its judges.",
+  "referenceVideo": {
+    "thumbnailAlt": "Thumbnail for Animal Farm: The Law Rewritten on the Wall",
+    "title": "Watch Animal Farm: The Law Rewritten on the Wall",
+    "description": "Watch the narrated video adaptation of this 40-panel satire. Narration is in Korean.",
+    "credit": "SEED VOICE · YouTube"
+  },
   "heroImage": {
     "alt": "Benjamin faces the scales at the farm courthouse",
     "caption": "",
