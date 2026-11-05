@@ -9,6 +9,7 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:nameless-citizens-democracy-2026": {"ko": {"href": "/monitoring/legislation/commentary/democracy-merit-bill-admissions-fairness-2026", "title": "[입법논평] 이름 없이 피 흘린 시민들 앞에서, 국회는 누구를 유공자로 정하는가", "relationship": "민주유공자법과 입시", "reason": "민주유공자 인정 기준과 자녀의 대입 지원 자격을 따진 입법논평을 이어서 읽는다.", "listHref": "/monitoring/legislation", "listLabel": "입법감시 전체 보기"}, "en": {"href": "/monitoring/legislation/commentary/democracy-merit-bill-admissions-fairness-2026", "title": "Who Gets Credit for Korea’s Democracy When So Many Sacrificed in Anonymity?", "relationship": "DEMOCRATIC MERIT AND ADMISSIONS", "reason": "Continue with the legislative commentary on recognition criteria and possible admissions eligibility.", "listHref": "/monitoring/legislation", "listLabel": "Legislative watch"}},
   "column:endless-morning-ai-fiction-2026": {
     ko: { href: "/columns/no-one-stopped-it-silence-and-power", title: "아무도 멈추지 않았다", relationship: "침묵과 시민의 자유", reason: "일상에서 사라지는 질문과 권력 앞의 침묵을 다른 이야기로 이어 읽습니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
     en: { href: "/columns/no-one-stopped-it-silence-and-power", title: "No One Stopped It", relationship: "SILENCE AND CIVIC FREEDOM", reason: "Continue with another story about silence and power in everyday life.", listHref: "/columns", listLabel: "All columns" },
