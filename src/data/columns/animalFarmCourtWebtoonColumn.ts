@@ -12,6 +12,15 @@ export const animalFarmCourtWebtoonColumn: SeedColumn = {
   ],
   "readMinutes": 8,
   "summary": "일곱 약속을 세웠던 농장에 권력의 뜻이 법이 되는 날이 찾아옵니다. 침묵하던 당나귀 벤자민의 눈으로 사법 독립과 시민의 권리를 묻는 40컷 풍자입니다.",
+  "referenceVideo": {
+    "youtubeId": "S8TvDNCgrec",
+    "thumbnailSrc": "https://img.youtube.com/vi/S8TvDNCgrec/hqdefault.jpg",
+    "thumbnailAlt": "동물농장, 벽에 다시 쓰인 법 영상 썸네일",
+    "title": "영상으로 보는 동물농장, 벽에 다시 쓰인 법",
+    "description": "40컷 풍자 웹툰을 내레이션과 함께 영상으로 만나보세요.",
+    "credit": "씨앗의 소리 · YouTube",
+    "afterSection": -1
+  },
   "heroImage": {
     "src": "images/columns/animal-farm-court-parody/cover.webp",
     "alt": "농장 법정에서 기울어진 저울과 마주한 벤자민",
