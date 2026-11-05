@@ -2,7 +2,7 @@ import type { ColumnTranslation } from "../types";
 
 export const issue121: ColumnTranslation = {
   "title": "Who Defines the Public Interest—and Who Answers for It?",
-  "subtitle": "The Ideas Behind SEED VOICE · Part 4 — Even projects begun with good intentions need citizens’ questions and accountability",
+  "subtitle": "The Ideas Behind SEED VOICE · Part 4 — Even projects begun with good intentions need questions. The public interest belongs to the citizens affected, not to the institutions running the project.",
   "author": "Small Seed",
   "summary": "The public interest belongs to the citizens affected. As everyday public concern becomes a public-interest project, we examine who decides, who is left out, and who is accountable.",
   "heroImage": {
