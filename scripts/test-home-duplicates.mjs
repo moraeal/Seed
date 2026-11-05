@@ -191,6 +191,18 @@ try {
       assert(!hot.includes(currentLead), `${route}: the active lead must not repeat in Hot Issues`);
       assert(!columnsDesk?.includes(previousLead), `${route}: the former lead must not be duplicated in columns`);
     }
+    const sameTopicLead = "/columns/emergency-room-warrant-defensive-medicine-2026";
+    const sameTopicPrevious = "/columns/politics-abandon-devotion-conviction-2026";
+    setFixturePath(sameTopicLead);
+    setFixtureHistory([
+      { content_path: sameTopicLead, featured_at: "2026-11-06T00:00:00Z" },
+      { content_path: sameTopicPrevious, featured_at: "2026-11-05T00:00:00Z" },
+    ]);
+    const html = renderToStaticMarkup(React.createElement(MemoryRouter, { initialEntries: ["/"] },
+      React.createElement(LanguageProvider, null, React.createElement(Home))));
+    const hot = [...html.matchAll(/<section\b[^>]*>[\s\S]*?<\/section>/g)].find(x => x[0].includes('id="hot-issues-title"'))?.[0];
+    assert(hot?.includes(sameTopicPrevious), "A related current lead must not suppress the previous selected article");
+    assert(!hot.includes(sameTopicLead), "The current lead must remain excluded");
   } finally { setFixturePath(null); setFixtureHistory(null); }
   for (const ready of [false, true]) {
     setFixtureReady(ready);
