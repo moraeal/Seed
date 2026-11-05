@@ -4,7 +4,7 @@ export const seedThoughtPublicInterestColumn: SeedColumn = {
   "slug": "seed-thought-04-public-interest",
   "issue": 121,
   "title": "공익은 누가 정하고 누가 책임집니까",
-  "subtitle": "씨앗을 만든 생각 ④ · 좋은 뜻으로 시작한 사업에도 시민의 질문과 책임이 필요합니다",
+  "subtitle": "씨앗을 만든 생각 ④ · 좋은 뜻으로 시작한 사업에도 질문이 필요합니다. 공익의 주인은 사업을 운영하는 기관이 아니라 그 영향을 받는 시민입니다.",
   "date": "2026-11-05",
   "author": "작은씨앗",
   "topicIds": [
