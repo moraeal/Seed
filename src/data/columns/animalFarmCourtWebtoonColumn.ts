@@ -35,7 +35,8 @@ export const animalFarmCourtWebtoonColumn: SeedColumn = {
       "caption": "",
       "credit": "AI 이미지",
       "sourceUrl": "",
-      "afterSection": 1
+      "afterSection": 1,
+      "contain": true
     },
     {
       "src": "images/columns/animal-farm-court-parody/page-02.webp",
@@ -43,7 +44,8 @@ export const animalFarmCourtWebtoonColumn: SeedColumn = {
       "caption": "",
       "credit": "AI 이미지",
       "sourceUrl": "",
-      "afterSection": 2
+      "afterSection": 2,
+      "contain": true
     },
     {
       "src": "images/columns/animal-farm-court-parody/page-03.webp",
@@ -51,7 +53,8 @@ export const animalFarmCourtWebtoonColumn: SeedColumn = {
       "caption": "",
       "credit": "AI 이미지",
       "sourceUrl": "",
-      "afterSection": 3
+      "afterSection": 3,
+      "contain": true
     },
     {
       "src": "images/columns/animal-farm-court-parody/page-04.webp",
@@ -59,7 +62,8 @@ export const animalFarmCourtWebtoonColumn: SeedColumn = {
       "caption": "",
       "credit": "AI 이미지",
       "sourceUrl": "",
-      "afterSection": 4
+      "afterSection": 4,
+      "contain": true
     },
     {
       "src": "images/columns/animal-farm-court-parody/page-05.webp",
@@ -67,7 +71,8 @@ export const animalFarmCourtWebtoonColumn: SeedColumn = {
       "caption": "",
       "credit": "AI 이미지",
       "sourceUrl": "",
-      "afterSection": 5
+      "afterSection": 5,
+      "contain": true
     },
     {
       "src": "images/columns/animal-farm-court-parody/page-06.webp",
@@ -75,7 +80,8 @@ export const animalFarmCourtWebtoonColumn: SeedColumn = {
       "caption": "",
       "credit": "AI 이미지",
       "sourceUrl": "",
-      "afterSection": 6
+      "afterSection": 6,
+      "contain": true
     },
     {
       "src": "images/columns/animal-farm-court-parody/page-07.webp",
@@ -83,7 +89,8 @@ export const animalFarmCourtWebtoonColumn: SeedColumn = {
       "caption": "",
       "credit": "AI 이미지",
       "sourceUrl": "",
-      "afterSection": 7
+      "afterSection": 7,
+      "contain": true
     },
     {
       "src": "images/columns/animal-farm-court-parody/page-08.webp",
@@ -91,7 +98,8 @@ export const animalFarmCourtWebtoonColumn: SeedColumn = {
       "caption": "",
       "credit": "AI 이미지",
       "sourceUrl": "",
-      "afterSection": 8
+      "afterSection": 8,
+      "contain": true
     },
     {
       "src": "images/columns/animal-farm-court-parody/page-09.webp",
@@ -99,7 +107,8 @@ export const animalFarmCourtWebtoonColumn: SeedColumn = {
       "caption": "",
       "credit": "AI 이미지",
       "sourceUrl": "",
-      "afterSection": 9
+      "afterSection": 9,
+      "contain": true
     },
     {
       "src": "images/columns/animal-farm-court-parody/page-10.webp",
@@ -107,7 +116,8 @@ export const animalFarmCourtWebtoonColumn: SeedColumn = {
       "caption": "",
       "credit": "AI 이미지",
       "sourceUrl": "",
-      "afterSection": 10
+      "afterSection": 10,
+      "contain": true
     }
   ],
   "sections": [
