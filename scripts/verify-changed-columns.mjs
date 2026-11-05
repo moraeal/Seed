@@ -45,7 +45,7 @@ if (changedIssues.length) {
 for (const path of modules) {
   if (!existsSync(path)) continue; // Removed article is not a published route.
   const source = readFileSync(path, "utf8");
-  const matches = [...source.matchAll(/\bslug\s*:\s*["']([a-z0-9]+(?:-[a-z0-9]+)*)["']/g)];
+  const matches = [...source.matchAll(/(?:["']?slug["']?)\s*:\s*["']([a-z0-9]+(?:-[a-z0-9]+)*)["']/g)];
   for (const match of matches) slugs.add(match[1]);
   if (matches.length === 0) {
     console.error("Changed article module has no literal slug; manual verification required:", path);

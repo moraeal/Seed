@@ -28,6 +28,8 @@ const expectedArticleHeadings = {
   "legislative-omnipotence-prison-rights-2026": "입법 만능시대",
   "democracy-merit-bill-admissions-fairness-2026": "[입법논평] 이름 없이 피 흘린 시민들 앞에서",
   "nameless-citizens-democracy-2026": "나는 민주화유공자가 아니다",
+  "seed-thought-04-public-interest": "공익은 누가 정하고 누가 책임집니까",
+  "age-of-legislative-tyranny-2026": "입법독재의 시대",
   "climate-power-mix-renewable-drought-2026": "기후 위기 대응을 위한 전력믹스에서",
   "olympic-park-ballot-inspection-civic-briefing": "올공 147일, 투표함은 열렸지만 국민은 여전히 밖에 있었다",
   "china-history-sovereignty-neighbor-part4-2026": "천 년의 이웃, 우리는 중국을 얼마나 알고 있는가",

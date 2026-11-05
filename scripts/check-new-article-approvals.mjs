@@ -22,7 +22,7 @@ for(const row of changes){
   const [status,file]=row.split("\t");
   if(status!=="A" || !/^src\/data\/columns\/[^/]+\.tsx?$/.test(file||""))continue;
   const source=readFileSync(file,"utf8");
-  const slugs=[...source.matchAll(/\bslug\s*:\s*["']([a-z0-9]+(?:-[a-z0-9]+)*)["']/g)].map(x=>x[1]);
+  const slugs=[...source.matchAll(/(?:["']?slug["']?)\s*:\s*["']([a-z0-9]+(?:-[a-z0-9]+)*)["']/g)].map(x=>x[1]);
   if(slugs.length!==1){console.error("New article requires exactly one literal slug:",file);failed=true;continue;}
   const slug=slugs[0],lock="editorial/approved/"+slug+".json";
   if(!existsSync(lock)){console.error("Missing editor-approved manuscript snapshot for new article:",slug);failed=true;continue;}

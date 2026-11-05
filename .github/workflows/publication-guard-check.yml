@@ -165,6 +165,10 @@ jobs:
           node scripts/preflight-column.mjs climate-power-mix-renewable-drought-2026
           node scripts/verify-article-assets.mjs nameless-citizens-democracy-2026
           node scripts/preflight-column.mjs nameless-citizens-democracy-2026
+          node scripts/verify-article-assets.mjs seed-thought-04-public-interest
+          node scripts/preflight-column.mjs seed-thought-04-public-interest
+          node scripts/verify-article-assets.mjs age-of-legislative-tyranny-2026
+          node scripts/preflight-column.mjs age-of-legislative-tyranny-2026
       - name: Build complete site (bounded)
         run: timeout --signal=TERM --kill-after=30s 18m pnpm run build
         env:
@@ -226,6 +230,8 @@ jobs:
           node scripts/check-column-browser.mjs climate-power-mix-renewable-drought-2026
           node scripts/check-column-browser.mjs democracy-merit-bill-admissions-fairness-2026
           node scripts/check-column-browser.mjs nameless-citizens-democracy-2026
+          node scripts/check-column-browser.mjs seed-thought-04-public-interest
+          node scripts/check-column-browser.mjs age-of-legislative-tyranny-2026
           node scripts/check-column-browser.mjs home
       - name: Block stale branch until changes are tested with latest main
         if: github.event_name == 'push'
