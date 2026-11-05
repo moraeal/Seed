@@ -202,8 +202,8 @@ export default function Home() {
   // selections take priority over automatically populated homepage desks.
   const claimedHomePaths = new Set(activeFeaturedPath ? [getHomeTopic(activeFeaturedPath)] : []);
   const selectedHotIssueCards = featuredReady ? selectHotIssueCards(
-    getHotIssueCards(language, legislativeBills, featuredHistory),
-    claimedHomePaths,
+    getHotIssueCards(language, legislativeBills, featuredHistory).filter((card) => card.to !== activeFeaturedPath),
+    new Set(),
     8,
   ) : [];
   for (const card of selectedHotIssueCards) claimedHomePaths.add(getHomeTopic(card.to));
