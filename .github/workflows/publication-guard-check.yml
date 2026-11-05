@@ -222,6 +222,7 @@ jobs:
           node scripts/check-column-browser.mjs endless-morning-ai-fiction-2026
           node scripts/check-column-browser.mjs legislative-omnipotence-prison-rights-2026
           node scripts/check-column-browser.mjs climate-power-mix-renewable-drought-2026
+          node scripts/check-column-browser.mjs democracy-merit-bill-admissions-fairness-2026
           node scripts/check-column-browser.mjs home
       - name: Block stale branch until changes are tested with latest main
         if: github.event_name == 'push'
