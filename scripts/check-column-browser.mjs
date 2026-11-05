@@ -6,6 +6,7 @@ const slug = process.argv[2];
 const isHome = slug === "home";
 const isCivicLanguage = slug === "tolerance-social-cohesion-common-rules-2026";
 const expectedArticleHeadings = {
+  "us-midterms-korea-national-interest-2026": "미국 민주당이 이겼다, 한국도 이긴 것인가",
   "films-as-films-games-expression-double-standard-2026": "영화는 영화로 보라, 게임은?",
   "politicians-who-take-public-debt-lightly-2026": "국가 빚, 너무 가볍게 보는 건 아닌가",
   "populism-collapse-generational-conflict-2026": "포퓰리즘의 몰락",
