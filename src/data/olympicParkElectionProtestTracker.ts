@@ -15,13 +15,13 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     en: "Olympic Park: ballots ran short, and distrust still remains",
   },
   summary: {
-    ko: "제9회 전국동시지방선거에서 발생한 투표용지 부족 사태 뒤 시민들은 올림픽공원에 농성장을 꾸리고 재선거, 당일투표, 수개표를 요구해 왔다. 이 기록은 확인된 선거관리 실패와 특검 수사 대상, 아직 입증되지 않은 부정선거 주장을 구분해 추적한다. 10월 28일 특검의 투표지 공개검증이 시작됐으며 최종 결과는 확인되지 않았다.",
-    en: "After ballot shortages disrupted Korea's ninth nationwide local elections, citizens established a protest camp at Olympic Park demanding a new election, same-day voting and hand counting. This tracker separates confirmed election-management failures, matters under special investigation and fraud claims that remain unproven. The special prosecutor began a public ballot inspection on October 28; final findings remain pending.",
+    ko: "제9회 전국동시지방선거에서 발생한 투표용지 부족 사태 뒤 시민들은 올림픽공원에 농성장을 꾸리고 재선거, 당일투표, 수개표를 요구해 왔다. 이 기록은 확인된 선거관리 실패와 특검 수사 대상, 아직 입증되지 않은 부정선거 주장을 구분해 추적한다. 10월 28~29일 공개검증 뒤 이의가 제기된 투표지를 분석하고 정밀감정을 준비 중이라고 11월 1일 보도됐다. 최종 감정 결과는 확인되지 않았다.",
+    en: "After ballot shortages disrupted Korea's ninth nationwide local elections, citizens established a protest camp at Olympic Park demanding a new election, same-day voting and hand counting. This tracker separates confirmed election-management failures, matters under special investigation and fraud claims that remain unproven. After the October 28–29 inspection, reported on November 1, the team was analyzing challenged ballots and preparing further forensic examination. Final findings remain pending.",
   },
-  status: {"ko": "10월 28일 투표지 공개검증 시작·결과 확인 중", "en": "October 28 public ballot inspection begins · Findings pending"},
+  status: {"ko": "이의 제기 투표지 분석·정밀감정 계획", "en": "Challenged ballots under analysis · Forensic examination planned"},
   openedAt: "2026-06-03",
   publishedAt: "2026-09-18",
-  updatedAt: "2026-10-28",
+  updatedAt: "2026-11-06",
   sourceBasis: {
     ko: "선거관리위원회 조사 결과와 국회의원실 제출자료를 인용한 보도, 선거소송 심리와 결정, 선관위 특검법·압수수색·피의자 조사 보도, 올림픽공원 현장 보도를 교차 확인했다. 사실·수사 중인 의혹·확인되지 않은 주장을 같은 층위에 놓지 않았다.",
     en: "This record cross-checks reporting on election-commission findings and material submitted to a National Assembly member's office, election-litigation proceedings, the special-prosecutor law, searches and suspect questioning, and coverage from the Olympic Park site. Confirmed facts, allegations under investigation and unverified claims are kept distinct.",
@@ -47,6 +47,7 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     },
   },
   keyChanges: [
+    {"date": "2026-11-01", "text": {"ko": "11월 1일 연합뉴스는 특검팀이 10월 28~29일 공개검증을 마친 투표지 중 국민의힘 참관인 측이 이의를 제기한 700여 장의 이상 유무를 자체 분석하고 있다고 보도했습니다. 특검은 정밀감정이 필요한 투표지를 선별해 국과수나 공소청 등에 의뢰할 계획이며 관련 장비도 대상입니다. 이의 제기와 분석·감정 계획은 위조나 선거 조작이 확인됐다는 결과가 아닙니다.", "en": "On November 1, Yonhap reported that the special prosecutor’s team was examining approximately 700 ballots challenged by People Power Party observers during the October 28–29 inspection. The team planned to select ballots for forensic testing by the National Forensic Service or the prosecution service, along with relevant equipment. An objection or a plan to examine evidence does not establish forgery or election manipulation."}},
     {"date": "2026-10-28", "text": {"ko": "10월 28일 오전 이태한 특별검사팀이 올림픽공원 핸드볼경기장에 들어가 투표지 공개검증을 시작했습니다. 대상은 송파구 투표지 약 247만 장과 관련 자료이며, 전날 압수수색에서는 내부 CCTV 자료 등을 확보했습니다. 특검은 수사상 임의검증으로 공직선거법상 재검표가 아니라고 설명했습니다. 검증 시작을 확인한 것이며 위조·해킹 여부나 최종 결과는 아직 확인되지 않았습니다.", "en": "On the morning of October 28, special prosecutor Lee Tae-han’s team entered Olympic Park’s handball arena and began a public inspection of ballots. The examination covers about 2.47 million Songpa ballots and related material; the previous day’s search secured internal CCTV records. The team describes this as an investigative inspection, not an election-law recount. The start is confirmed; findings on forgery, hacking or the final outcome are not yet established."}},
     {
       date: "2026-07-22",
@@ -99,6 +100,7 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {"date": "2026-11-01", "title": {"ko": "이의 제기된 투표지 700여 장 분석·정밀감정 계획", "en": "Some 700 challenged ballots analyzed; forensic examination planned"}, "description": {"ko": "11월 1일 연합뉴스는 특검팀이 10월 28~29일 공개검증을 마친 투표지 중 국민의힘 참관인 측이 이의를 제기한 700여 장의 이상 유무를 자체 분석하고 있다고 보도했습니다. 특검은 정밀감정이 필요한 투표지를 선별해 국과수나 공소청 등에 의뢰할 계획이며 관련 장비도 대상입니다. 이의 제기와 분석·감정 계획은 위조나 선거 조작이 확인됐다는 결과가 아닙니다.", "en": "On November 1, Yonhap reported that the special prosecutor’s team was examining approximately 700 ballots challenged by People Power Party observers during the October 28–29 inspection. The team planned to select ballots for forensic testing by the National Forensic Service or the prosecution service, along with relevant equipment. An objection or a plan to examine evidence does not establish forgery or election manipulation."}, "change": {"ko": "공개검증 이후 선별·감정 계획 보도, 결과 미확인", "en": "Post-inspection selection and examination plans reported; findings pending"}, "status": "new", "sources": [{"publisher": {"ko": "연합뉴스", "en": "Yonhap News Agency"}, "title": {"ko": "이의 제기 투표지 정밀감정 계획", "en": "Forensic examination planned for challenged ballots"}, "url": "https://www.yna.co.kr/view/AKR20261101031100004", "publishedAt": "2026-11-01", "kind": "article"}]},
     {"date": "2026-10-28", "title": {"ko": "특검, 올림픽공원 투표지 공개검증 시작", "en": "Special prosecutor begins public ballot inspection at Olympic Park"}, "description": {"ko": "10월 28일 오전 이태한 특별검사팀이 올림픽공원 핸드볼경기장에 들어가 투표지 공개검증을 시작했습니다. 대상은 송파구 투표지 약 247만 장과 관련 자료이며, 전날 압수수색에서는 내부 CCTV 자료 등을 확보했습니다. 특검은 수사상 임의검증으로 공직선거법상 재검표가 아니라고 설명했습니다. 검증 시작을 확인한 것이며 위조·해킹 여부나 최종 결과는 아직 확인되지 않았습니다.", "en": "On the morning of October 28, special prosecutor Lee Tae-han’s team entered Olympic Park’s handball arena and began a public inspection of ballots. The examination covers about 2.47 million Songpa ballots and related material; the previous day’s search secured internal CCTV records. The team describes this as an investigative inspection, not an election-law recount. The start is confirmed; findings on forgery, hacking or the final outcome are not yet established."}, "change": {"ko": "연기된 검증이 실제 개시·결과는 미확정", "en": "Postponed inspection begins; findings remain pending"}, "status": "new", "sources": [{"publisher": {"ko": "머니투데이", "en": "MoneyToday"}, "title": {"ko": "선관위 특검, 올림픽공원 진입…투표지 현장 검증 시작", "en": "Special prosecutor enters Olympic Park and begins ballot inspection"}, "url": "https://www.mt.co.kr/society/2026/10/28/2026102808492779561", "publishedAt": "2026-10-28", "kind": "article"}, {"publisher": {"ko": "뉴스1", "en": "News1"}, "title": {"ko": "여야 의원, 올림픽공원 특검 현장 검증 참관", "en": "Lawmakers attend public ballot inspection"}, "url": "https://www.news1.kr/politics/assembly/6333887", "publishedAt": "2026-10-28", "kind": "article"}]},
     {
       date: "2026-06-03",
@@ -645,8 +647,8 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
       en: "Former election-commission chair Roh Tae-ak was booked as a suspect in alleged election-law violations and dereliction of duty over the ballot shortage, and his travel ban was extended at the special prosecutor's request on September 28. The travel ban is not a finding of guilt.",
     },
     {
-      ko: "청와대는 9월 30일 특검의 올림픽공원 보관 투표지 검증이 연기됐다고 설명했다. 새 일정·방식과 검증 결과는 아직 공개되지 않았다.",
-      en: "On September 30, the presidential office said the special prosecutor's inspection of ballots stored at Olympic Park had been postponed. No new schedule, method or inspection findings have been released.",
+      ko: "청와대는 9월 30일 특검의 올림픽공원 보관 투표지 검증이 연기됐다고 설명했다. 이후 공개검증은 10월 28~29일 진행됐으며 최종 감정 결과는 아직 확인되지 않았다.",
+      en: "On September 30, the presidential office said the special prosecutor's inspection of ballots stored at Olympic Park had been postponed. The inspection later took place on October 28–29; final forensic findings have not been confirmed.",
     },
   ],
   currentControversies: [
