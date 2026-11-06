@@ -35,6 +35,7 @@ const expectedArticleHeadings = {
   "seed-thought-05-citizen-space": "서비스는 늘었는데 시민의 자리는 왜 줄었나",
   "citizens-teaching-state-civic-independence-2026": "시민을 가르치겠다는 국가",
   "special-prosecutor-double-standard-2026": "[사설] 검사 수사권을 없앤 국회, 대통령 사건엔 검사를 부른다",
+  "dying-pines-cannot-read-press-releases-2026": "죽어가는 소나무는 성명서를 읽지 못한다",
   "age-of-legislative-tyranny-2026": "입법독재의 시대",
   "animal-farm-justice-benjamin-webtoon-2026": "[풍자 웹툰] 동물농장, 벽에 다시 쓰인 법",
   "climate-power-mix-renewable-drought-2026": "기후 위기 대응을 위한 전력믹스에서",
