@@ -30,7 +30,7 @@ export const issue125: ColumnTranslation = {
   ],
   "sections": [
     {
-      "title": "Do Not Confine Civil Society to a Government Committee",
+      "title": "Moving participation inside the executive",
       "paragraphs": [
         "To guarantee citizen participation, a bill before South Korea’s National Assembly would place the institutions for public discussion inside the Ministry of the Interior and Safety. Its proposed National Citizen Participation Commission sits at the center of that design.",
         "The commission would establish a comprehensive participation plan and address deliberation, civic education and support for civil society. Its chair would be appointed by the president on the minister’s recommendation, and its other members appointed or commissioned by the minister. It would have no more than 40 members, including the chair, with a majority drawn from outside government.[1][2]",
