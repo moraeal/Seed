@@ -13,7 +13,7 @@ export const dyingPinesColumn: SeedColumn = {
   "title": "죽어가는 소나무는 성명서를 읽지 못한다",
   "subtitle": "개발 반대에는 앞장서면서, 죽어가는 숲 앞에서는 침묵하는 환경단체들",
   "author": "이음",
-  "summary": "대한민국의 소나무 숲이 죽어가고 있다.",
+  "summary": "개발 반대에는 앞장서면서, 죽어가는 숲 앞에서는 침묵하는 환경단체들",
   "heroImage": {
     "src": "images/columns/dying-pines-cannot-read-press-releases-2026/hero.webp",
     "alt": "푸른 소나무 사이로 갈색으로 마른 소나무가 드러난 산비탈",

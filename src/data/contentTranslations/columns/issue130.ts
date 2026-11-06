@@ -4,7 +4,7 @@ export const issue130: ColumnTranslation = {
   "title": "Dying Pines Cannot Read Press Releases",
   "subtitle": "Environmental groups lead campaigns against development. Where is their voice as forests die?",
   "author": "Ieum",
-  "summary": "South Korea’s pine forests are dying.",
+  "summary": "Environmental groups lead campaigns against development. Where is their voice as forests die?",
   "heroImage": {
     "alt": "Brown pine crowns stand out among green trees on a hillside",
     "caption": "",
