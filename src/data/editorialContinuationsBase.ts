@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:who-represents-civil-society-government-committee-independence-2026": {
+    ko: { href: "/columns/who-represents-civil-society-citizen-freedom-part1-2026", title: "시민사회를 지원한다는 국가, 시민의 자유는 누가 지키는가", relationship: "누가 시민사회를 대표하는가 · 첫 편", reason: "시민참여기본법과 시민사회의 독립성을 다룬 첫 글을 함께 읽는다.", listHref: "/series/civil-society", listLabel: "연재 전체 보기" },
+    en: { href: "/columns/who-represents-civil-society-citizen-freedom-part1-2026", title: "A State That Supports Civil Society: Who Protects Citizens’ Freedom?", relationship: "WHO REPRESENTS CIVIL SOCIETY? · PART 1", reason: "Read the first installment on the proposed law and civil society’s independence.", listHref: "/series/civil-society", listLabel: "All articles in this series" },
+  },
   "column:nameless-citizens-democracy-2026": {"ko": {"href": "/monitoring/legislation/commentary/democracy-merit-bill-admissions-fairness-2026", "title": "[입법논평] 이름 없이 피 흘린 시민들 앞에서, 국회는 누구를 유공자로 정하는가", "relationship": "민주유공자법과 입시", "reason": "민주유공자 인정 기준과 자녀의 대입 지원 자격을 따진 입법논평을 이어서 읽는다.", "listHref": "/monitoring/legislation", "listLabel": "입법감시 전체 보기"}, "en": {"href": "/monitoring/legislation/commentary/democracy-merit-bill-admissions-fairness-2026", "title": "Who Gets Credit for Korea’s Democracy When So Many Sacrificed in Anonymity?", "relationship": "DEMOCRATIC MERIT AND ADMISSIONS", "reason": "Continue with the legislative commentary on recognition criteria and possible admissions eligibility.", "listHref": "/monitoring/legislation", "listLabel": "Legislative watch"}},
   "column:endless-morning-ai-fiction-2026": {
     ko: { href: "/columns/no-one-stopped-it-silence-and-power", title: "아무도 멈추지 않았다", relationship: "침묵과 시민의 자유", reason: "일상에서 사라지는 질문과 권력 앞의 침묵을 다른 이야기로 이어 읽습니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
