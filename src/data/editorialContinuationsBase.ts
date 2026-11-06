@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:china-north-korea-behind-part6-2026": {
+    ko: { href: "/columns/china-korean-war-intervention-part5-2026", title: "6·25전쟁, 중국은 왜 대한민국을 향해 총을 쏘았나", relationship: "우리에게 중국은 무엇인가 · ⑤편 함께 읽기", reason: "중국의 참전과 북한 정권의 생존, 한반도 시민이 치른 대가를 앞선 기사에서 살펴봅니다.", listHref: "/series/china", listLabel: "우리에게 중국은 무엇인가 · 전체 연재" },
+    en: { href: "/columns/china-korean-war-intervention-part5-2026", title: "The Korean War: Why Did China Take Up Arms Against South Korea?", relationship: "WHAT DOES CHINA MEAN TO KOREA? · READ PART 5", reason: "Read the preceding chapter on China’s intervention, the survival of North Korea’s regime and the cost borne by Korean civilians.", listHref: "/series/china", listLabel: "What Does China Mean to Korea? — All chapters" },
+  },
   "column:who-represents-civil-society-government-committee-independence-2026": {
     ko: { href: "/columns/who-represents-civil-society-citizen-freedom-part1-2026", title: "시민사회를 지원한다는 국가, 시민의 자유는 누가 지키는가", relationship: "누가 시민사회를 대표하는가 · 첫 편", reason: "시민참여기본법과 시민사회의 독립성을 다룬 첫 글을 함께 읽는다.", listHref: "/series/civil-society", listLabel: "연재 전체 보기" },
     en: { href: "/columns/who-represents-civil-society-citizen-freedom-part1-2026", title: "A State That Supports Civil Society: Who Protects Citizens’ Freedom?", relationship: "WHO REPRESENTS CIVIL SOCIETY? · PART 1", reason: "Read the first installment on the proposed law and civil society’s independence.", listHref: "/series/civil-society", listLabel: "All articles in this series" },
