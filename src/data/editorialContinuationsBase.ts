@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:citizens-teaching-state-civic-independence-2026": {
+    ko: { href: "/columns/who-represents-civil-society-government-committee-independence-2026", title: "시민사회를 행안부 위원회에 가두지 마라", relationship: "시민사회와 독립적 소통", reason: "행안부 소속 위원회의 구조와 시민사회가 정부 밖에서 의제를 만드는 대안을 함께 살펴본다.", listHref: "/monitoring/public-interest", listLabel: "공익감시 전체 보기" },
+    en: { href: "/columns/who-represents-civil-society-government-committee-independence-2026", title: "Do Not Confine Civil Society to a Government Committee", relationship: "CIVIL SOCIETY AND INDEPENDENT DIALOGUE", reason: "Read the related editorial on the ministry committee and an independent civil-society agenda.", listHref: "/monitoring/public-interest", listLabel: "Public-interest watch" },
+  },
   "column:china-north-korea-behind-part6-2026": {
     ko: { href: "/columns/china-korean-war-intervention-part5-2026", title: "6·25전쟁, 중국은 왜 대한민국을 향해 총을 쏘았나", relationship: "우리에게 중국은 무엇인가 · ⑤편 함께 읽기", reason: "중국의 참전과 북한 정권의 생존, 한반도 시민이 치른 대가를 앞선 기사에서 살펴봅니다.", listHref: "/series/china", listLabel: "우리에게 중국은 무엇인가 · 전체 연재" },
     en: { href: "/columns/china-korean-war-intervention-part5-2026", title: "The Korean War: Why Did China Take Up Arms Against South Korea?", relationship: "WHAT DOES CHINA MEAN TO KOREA? · READ PART 5", reason: "Read the preceding chapter on China’s intervention, the survival of North Korea’s regime and the cost borne by Korean civilians.", listHref: "/series/china", listLabel: "What Does China Mean to Korea? — All chapters" },

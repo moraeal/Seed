@@ -15,8 +15,8 @@ export const socialEconomyFrameworkLawTracker: PublicInterestWatchCase = {
     "en": "Twelve years of social economy legislation: From repeated lapses to a framework Act"
   },
   "summary": {
-    "ko": "유승민의 2014년 첫 발의에서 2026년 공포까지, 재발의·폐기·공청회와 관련 보도의 흐름을 한 기록에 모았습니다. 법은 공포됐지만 아직 시행 전입니다. 최신 기록부터 지원 통합, 자생력, 공공구매와 시행령의 쟁점을 확인합니다.",
-    "en": "From Yoo Seung-min's first framework proposal in 2014 to promulgation in 2026, this record brings together successive bills, lapses, hearings and reporting. The Act has been promulgated but is not yet in force. Follow the latest developments in policy coordination, self-reliance, public purchasing and implementing rules."
+    "ko": "유승민의 2014년 첫 발의에서 2026년 공포까지, 재발의·폐기·공청회와 관련 보도의 흐름을 한 기록에 모았습니다. 법은 공포됐지만 아직 시행 전입니다. 11월 2일 경기도의회에서는 시행에 대비한 조례 정비를 논의했습니다. 최신 기록부터 지원 통합, 자생력, 공공구매와 시행령의 쟁점을 확인합니다.",
+    "en": "From Yoo Seung-min's first framework proposal in 2014 to promulgation in 2026, this record brings together successive bills, lapses, hearings and reporting. The Act has been promulgated but is not yet in force. On November 2, Gyeonggi provincial council members and stakeholders discussed preparing local ordinances. Follow the latest developments in policy coordination, self-reliance, public purchasing and implementing rules."
   },
   "status": {
     "ko": "공포 완료 · 2027년 3월 시행 준비",
@@ -24,10 +24,10 @@ export const socialEconomyFrameworkLawTracker: PublicInterestWatchCase = {
   },
   "openedAt": "2014-04-30",
   "publishedAt": "2026-11-01",
-  "updatedAt": "2026-11-01",
+  "updatedAt": "2026-11-06",
   "sourceBasis": {
-    "ko": "2026년 11월 1일 기준. 법제처·정부 입법정보·국회도서관·공개 의안 목록과 당시 보도를 대조했습니다. 첫 발의와 시행일은 공식 기록을 우선했습니다. 일부 22대 세부 심사일은 국회 데이터를 재가공한 공개 목록에 근거합니다. 모든 관련 기사를 전수 수집한 목록은 아닙니다.",
-    "en": "Checked as of November 1, 2026 against official law and legislative information, Assembly Library records, published bill lists and contemporary reporting. Official records take priority for filing and commencement dates. Some detailed 22nd Assembly procedural dates rely on republished Assembly data. This is not an exhaustive index of every news article."
+    "ko": "2026년 11월 1일까지 법제처·정부 입법정보·국회도서관·공개 의안 목록과 당시 보도를 대조했고, 11월 2일 경기도의회 논의는 의회 보도자료를 추가로 확인했습니다. 첫 발의와 시행일은 공식 기록을 우선했습니다. 일부 22대 세부 심사일은 국회 데이터를 재가공한 공개 목록에 근거합니다. 모든 관련 기사를 전수 수집한 목록은 아닙니다.",
+    "en": "Official law and legislative information, Assembly Library records, bill lists and reporting were checked through November 1, 2026; the November 2 Gyeonggi discussion was added from the provincial council's release. Official records take priority for filing and commencement dates. Some detailed 22nd Assembly procedural dates rely on republished Assembly data. This is not an exhaustive index of every news article."
   },
   "caution": {
     "ko": "통합 기본법의 첫 발의는 2014년입니다. 사회적기업·협동조합 등 선행 개별법의 역사는 더 오래됐습니다. 발의안의 기관·기금·구매비율을 최종 법률과 혼동하지 않으며, 성명과 정책 발표의 평가·우려는 발표 주체의 입장으로 구분합니다.",
@@ -84,6 +84,7 @@ export const socialEconomyFrameworkLawTracker: PublicInterestWatchCase = {
     }
   ],
   "keyChanges": [
+    {"date": "2026-11-02", "text": {"ko": "경기도의회에 따르면 11월 2일 이기대 도의원과 사회연대경제 당사자 조직, 경기도사회적경제원 관계자들이 기본법 시행에 대비한 경기도 자치법규 정비 방안을 논의했습니다. 이는 의견을 나눈 단계이며 조례 제정이나 예산 확정을 뜻하지 않습니다. 실제 조례안과 지원 대상·공공구매 기준, 예산 심의 결과를 이어서 확인합니다.", "en": "According to the Gyeonggi Provincial Council, lawmaker Lee Gi-dae, representatives of social and solidarity economy organizations and the provincial social economy agency met on November 2 to discuss local ordinance changes ahead of the Act’s commencement. This was a discussion, not the enactment of an ordinance or approval of a budget. The text of any proposal, eligibility rules, public purchasing criteria and budget deliberations remain to be checked."}},
     {
       "date": "2026-10-30",
       "text": {
@@ -100,6 +101,7 @@ export const socialEconomyFrameworkLawTracker: PublicInterestWatchCase = {
     }
   ],
   "timeline": [
+    {"date": "2026-11-02", "title": {"ko": "경기도의회, 기본법 시행 대비 조례 정비 논의", "en": "Gyeonggi council discusses local ordinance preparation"}, "description": {"ko": "경기도의회에 따르면 11월 2일 이기대 도의원과 사회연대경제 당사자 조직, 경기도사회적경제원 관계자들이 기본법 시행에 대비한 경기도 자치법규 정비 방안을 논의했습니다. 이는 의견을 나눈 단계이며 조례 제정이나 예산 확정을 뜻하지 않습니다. 실제 조례안과 지원 대상·공공구매 기준, 예산 심의 결과를 이어서 확인합니다.", "en": "According to the Gyeonggi Provincial Council, lawmaker Lee Gi-dae, representatives of social and solidarity economy organizations and the provincial social economy agency met on November 2 to discuss local ordinance changes ahead of the Act’s commencement. This was a discussion, not the enactment of an ordinance or approval of a budget. The text of any proposal, eligibility rules, public purchasing criteria and budget deliberations remain to be checked."}, "change": {"ko": "지방 차원 후속 논의 개시·조례 제정은 미확인", "en": "Local follow-up discussion; ordinance not yet enacted"}, "status": "new", "sources": [{"publisher": {"ko": "경기도의회", "en": "Gyeonggi Provincial Council"}, "title": {"ko": "사회연대경제기본법 시행 대비 경기도 조례 정비 정담회", "en": "Discussion of Gyeonggi ordinance preparation for the framework Act"}, "url": "https://www.ggc.go.kr/site/main/xb/lwmkr/lawmakerpressrelease/298846", "publishedAt": "2026-11-03", "kind": "document"}]},
     {
       "date": "2026-10-29",
       "title": {
