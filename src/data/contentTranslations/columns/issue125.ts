@@ -146,6 +146,7 @@ export const issue125: ColumnTranslation = {
     },
     {
       "title": "It is time to prevent the nationalization of civil society",
+      "titleHref": "/columns/citizenship-managed-by-the-state",
       "paragraphs": [
         "The state already holds overwhelming power through law, budgets, organizations and information. If channels for citizens’ proposals, the power to design deliberation, civic education, support for civic groups, and participation committees at national and local levels are all brought into one system, the state can steadily narrow the space for civil society outside it.",
         "The result may not immediately take the form of coercion. It is more likely to arrive with the benevolent face of more opportunities to participate, grants, education, meetings and digital convenience. But if citizens’ voices are recognized in policymaking only through state-created channels, and only state-selected organizations gain representative standing, the nationalization of civil society has already begun.",
