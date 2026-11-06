@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:dying-pines-cannot-read-press-releases-2026": {
+    ko: { href: "/seed-language/environment-shared-condition", title: "환경은 보호의 대상이 아니라 함께 만들어가는 삶의 조건이라는 말이다", relationship: "시민과 환경", reason: "숲을 지키는 실천에 이어 환경을 시민의 삶과 연결해 읽는다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
+    en: { href: "/seed-language/environment-shared-condition", title: "The Environment Is a Shared Condition of Life", relationship: "CITIZENS AND THE ENVIRONMENT", reason: "Continue with how environmental protection connects to everyday civic life.", listHref: "/columns", listLabel: "All columns" },
+  },
   "column:special-prosecutor-double-standard-2026": {
     ko: { href: "/columns/prosecution-reform-power-transfer-2026", title: "검찰개혁은 권력을 옮겨 심는 일이 아니다", relationship: "검찰개혁과 권력 견제", reason: "수사기관 개편에서 권력을 어떻게 견제할지 다룬 사설을 함께 읽는다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
     en: { href: "/columns/prosecution-reform-power-transfer-2026", title: "Prosecution Reform Is About More Than Moving Power", relationship: "PROSECUTION REFORM AND CHECKS ON POWER", reason: "Read the related editorial on checks on power after the restructuring of investigative agencies.", listHref: "/columns", listLabel: "All columns" },
