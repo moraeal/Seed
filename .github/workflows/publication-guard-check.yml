@@ -179,6 +179,8 @@ jobs:
           node scripts/preflight-column.mjs who-represents-civil-society-government-committee-independence-2026
           node scripts/verify-article-assets.mjs china-north-korea-behind-part6-2026
           node scripts/preflight-column.mjs china-north-korea-behind-part6-2026
+          node scripts/verify-article-assets.mjs seed-thought-05-citizen-space
+          node scripts/preflight-column.mjs seed-thought-05-citizen-space
       - name: Build complete site (bounded)
         run: timeout --signal=TERM --kill-after=30s 18m pnpm run build
         env:
@@ -246,6 +248,7 @@ jobs:
           node scripts/check-column-browser.mjs us-midterms-korea-national-interest-2026
           node scripts/check-column-browser.mjs who-represents-civil-society-government-committee-independence-2026
           node scripts/check-column-browser.mjs china-north-korea-behind-part6-2026
+          node scripts/check-column-browser.mjs seed-thought-05-citizen-space
           node scripts/check-column-browser.mjs home
       - name: Block stale branch until changes are tested with latest main
         if: github.event_name == 'push'

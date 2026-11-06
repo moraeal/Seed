@@ -32,6 +32,7 @@ const expectedArticleHeadings = {
   "democracy-merit-bill-admissions-fairness-2026": "[입법논평] 이름 없이 피 흘린 시민들 앞에서",
   "nameless-citizens-democracy-2026": "나는 민주화유공자가 아니다",
   "seed-thought-04-public-interest": "공익은 누가 정하고 누가 책임집니까",
+  "seed-thought-05-citizen-space": "서비스는 늘었는데 시민의 자리는 왜 줄었나",
   "age-of-legislative-tyranny-2026": "입법독재의 시대",
   "animal-farm-justice-benjamin-webtoon-2026": "[풍자 웹툰] 동물농장, 벽에 다시 쓰인 법",
   "climate-power-mix-renewable-drought-2026": "기후 위기 대응을 위한 전력믹스에서",
