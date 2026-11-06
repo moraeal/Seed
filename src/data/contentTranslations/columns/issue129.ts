@@ -6,33 +6,28 @@ export const issue129: ColumnTranslation = {
   "author": "Small Seed",
   "summary": "South Korea’s Assembly stripped prosecutors of direct investigative powers, then carved out an exception for an inquiry touching on the sitting president’s cases. The president chooses the special counsel who would investigate the team that charged him.",
   "heroImage": {
-    "src": "images/columns/special-prosecutor-double-standard-2026/hero.webp",
     "alt": "A gavel and two stacks of papers on a desk in an empty parliamentary chamber",
     "caption": "The scene evokes the Assembly’s decision to make an exception to the separation of investigation and prosecution.",
-    "credit": "AI image",
-    "sourceUrl": ""
+    "credit": "AI image"
   },
   "inlineImage": {
     "src": "images/columns/special-prosecutor-double-standard-2026/body.webp",
     "alt": "Case files on a table in an empty interview room",
     "caption": "A symbolic scene about who investigates the original investigators.",
-    "credit": "AI image",
-    "sourceUrl": ""
+    "credit": "AI image"
   },
   "additionalImages": [
     {
       "src": "images/columns/special-prosecutor-double-standard-2026/comparison-en.svg",
       "alt": "The general rule on prosecutors’ powers and the special counsel exception",
       "caption": "A comparison of the amended Criminal Procedure Act and the bill passed on November 6.",
-      "credit": "SEED Voice",
-      "sourceUrl": ""
+      "credit": "SEED Voice"
     },
     {
       "src": "images/columns/special-prosecutor-double-standard-2026/body.webp",
       "alt": "Case files on a table in an empty interview room",
       "caption": "A symbolic scene about who investigates the original investigators.",
-      "credit": "AI image",
-      "sourceUrl": ""
+      "credit": "AI image"
     }
   ],
   "sections": [
@@ -74,5 +69,6 @@ export const issue129: ColumnTranslation = {
       "label": "Hankyoreh · Direct investigative powers for seconded prosecutors",
       "url": "https://www.hani.co.kr/arti/society/society_general/1285792.html"
     }
-  ]
+  ],
+  "sourceNote": "Sources include reporting on the November 6 vote, the committee revisions and the amendment to the Criminal Procedure Act."
 };

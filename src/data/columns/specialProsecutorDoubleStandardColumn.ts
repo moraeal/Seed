@@ -82,5 +82,6 @@ export const specialProsecutorDoubleStandardColumn: SeedColumn = {
       "label": "한겨레 · 파견검사 직접수사 예외",
       "url": "https://www.hani.co.kr/arti/society/society_general/1285792.html"
     }
-  ]
+  ],
+  "sourceNote": "11월 6일 본회의 통과 보도와 법사위 수정안, 형사소송법 개정 자료를 확인했다."
 };
