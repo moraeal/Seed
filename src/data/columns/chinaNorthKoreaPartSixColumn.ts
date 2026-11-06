@@ -20,13 +20,15 @@ export const chinaNorthKoreaPartSixColumn: SeedColumn = {
     "src": "images/columns/china-north-korea-part6-2026/border-shadow.webp",
     "alt": "국경 강 너머 도시와 커다란 그림자, 강가의 불 켜진 집을 표현한 장면",
     "caption": "국경과 그 너머에 놓인 사람들의 삶을 상징적으로 표현한 장면.",
-    "credit": "AI 이미지"
+    "credit": "AI 이미지",
+    "sourceUrl": ""
   },
   "inlineImage": {
     "src": "images/columns/china-north-korea-part6-2026/border-train.webp",
     "alt": "강 위 철교를 지나는 화물열차와 이를 바라보는 사람을 표현한 장면",
     "caption": "국경 교역과 주민의 삶을 표현한 장면.",
-    "credit": "AI 이미지"
+    "credit": "AI 이미지",
+    "sourceUrl": ""
   },
   "displayInlineImage": false,
   "additionalImages": [
@@ -45,6 +47,7 @@ export const chinaNorthKoreaPartSixColumn: SeedColumn = {
       "alt": "강 위 철교를 지나는 화물열차와 이를 바라보는 사람을 표현한 장면",
       "caption": "국경 교역과 주민의 삶을 표현한 장면.",
       "credit": "AI 이미지",
+    "sourceUrl": "",
       "contain": true
     }
   ],
