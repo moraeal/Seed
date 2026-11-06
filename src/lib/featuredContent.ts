@@ -13,13 +13,33 @@ const headers = (token?: string) => ({
   "Content-Type": "application/json",
 });
 
-export async function getFeaturedContentPath(): Promise<string | null> {
-  const response = await fetch(`${supabaseUrl}/rest/v1/homepage_featured_content?slot=eq.${SLOT}&select=content_path&limit=1`, {
-    headers: headers(), signal: AbortSignal.timeout(10000), cache: "no-store",
-  });
-  if (!response.ok) throw new Error(`Could not load featured content (${response.status})`);
-  const rows = await response.json() as { content_path?: string }[];
-  return rows[0]?.content_path?.trim() || null;
+type EarlyFeaturedResult = { response?: Response; error?: unknown };
+type EarlyFeaturedWindow = Window & { __seedFeaturedRequest?: { url: string; promise: Promise<EarlyFeaturedResult> } };
+let featuredRequest: Promise<string | null> | undefined;
+
+export function getFeaturedContentPath(): Promise<string | null> {
+  // React StrictMode can mount the homepage twice. Both mounts must use the
+  // same early request, rather than triggering a second network round trip.
+  if (featuredRequest) return featuredRequest;
+  const url = `${supabaseUrl}/rest/v1/homepage_featured_content?slot=eq.${SLOT}&select=content_path&limit=1`;
+  const earlyWindow = typeof window === "undefined" ? undefined : window as EarlyFeaturedWindow;
+  const early = earlyWindow?.__seedFeaturedRequest;
+  if (earlyWindow && early) delete earlyWindow.__seedFeaturedRequest;
+  const request = async () => {
+    let response: Response;
+    if (early?.url === url) {
+      const result = await early.promise;
+      if (!result.response) throw result.error || new Error("Could not load featured content");
+      response = result.response;
+    } else {
+      response = await fetch(url, { headers: headers(), signal: AbortSignal.timeout(10000), cache: "no-store" });
+    }
+    if (!response.ok) throw new Error(`Could not load featured content (${response.status})`);
+    const rows = await response.json() as { content_path?: string }[];
+    return rows[0]?.content_path?.trim() || null;
+  };
+  featuredRequest = request().finally(() => { featuredRequest = undefined; });
+  return featuredRequest;
 }
 
 export async function getFeaturedContentHistory(): Promise<FeaturedHistoryEntry[]> {

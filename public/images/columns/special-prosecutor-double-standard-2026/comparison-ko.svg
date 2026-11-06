@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 530" role="img" aria-label="검사 직접수사권, 원칙과 예외">
+ <rect width="1200" height="530" fill="#f5f2ea"/>
+ <g font-family="Noto Sans KR, NanumGothic, sans-serif" fill="#172927">
+ <text x="55" y="93" font-size="49" font-weight="700">검사 직접수사권, 원칙과 예외</text>
+ <rect x="55" y="144" width="530" height="285" rx="13" fill="#fff"/>
+ <rect x="615" y="144" width="530" height="285" rx="13" fill="#fff"/>
+ <path d="M55 169v-12q0-13 13-13h504q13 0 13 13v12z" fill="#286254"/>
+ <path d="M615 169v-12q0-13 13-13h504q13 0 13 13v12z" fill="#a13e2e"/>
+ <g font-size="34" font-weight="700"><text x="85" y="237">형사소송법 개정</text><text x="645" y="237">특검법 본회의 가결</text></g>
+ <g font-size="28"><text x="85" y="315">검사의 직접수사권 폐지</text><text x="85" y="370">검사는 기소와 공소유지 담당</text><text x="645" y="315">파견검사 최대 20명</text><text x="645" y="370">특검에서 직접수사 가능</text></g>
+ <text x="55" y="486" font-size="23" fill="#435854">국가법령정보센터 · 국회 통과 보도</text>
+ </g></svg>

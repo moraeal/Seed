@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:special-prosecutor-double-standard-2026": {
+    ko: { href: "/columns/prosecution-reform-power-transfer-2026", title: "검찰개혁은 권력을 옮겨 심는 일이 아니다", relationship: "검찰개혁과 권력 견제", reason: "수사기관 개편에서 권력을 어떻게 견제할지 다룬 사설을 함께 읽는다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
+    en: { href: "/columns/prosecution-reform-power-transfer-2026", title: "Prosecution Reform Is About More Than Moving Power", relationship: "PROSECUTION REFORM AND CHECKS ON POWER", reason: "Read the related editorial on checks on power after the restructuring of investigative agencies.", listHref: "/columns", listLabel: "All columns" },
+  },
   "column:citizens-teaching-state-civic-independence-2026": {
     ko: { href: "/columns/who-represents-civil-society-government-committee-independence-2026", title: "시민사회를 행안부 위원회에 가두지 마라", relationship: "시민사회와 독립적 소통", reason: "행안부 소속 위원회의 구조와 시민사회가 정부 밖에서 의제를 만드는 대안을 함께 살펴본다.", listHref: "/monitoring/public-interest", listLabel: "공익감시 전체 보기" },
     en: { href: "/columns/who-represents-civil-society-government-committee-independence-2026", title: "Do Not Confine Civil Society to a Government Committee", relationship: "CIVIL SOCIETY AND INDEPENDENT DIALOGUE", reason: "Read the related editorial on the ministry committee and an independent civil-society agenda.", listHref: "/monitoring/public-interest", listLabel: "Public-interest watch" },
