@@ -52,23 +52,11 @@ export const issue129: ColumnTranslation = {
       ]
     }
   ],
-  "sources": [
-    {
-      "label": "Korean Law Information Center · Reasons for amending the Criminal Procedure Act",
-      "url": "https://law.go.kr/lsInfoP.do?ancYnChk=0&chrClsCd=010202&efYd=20261002&lsiSeq=290189&urlMode=lsEfInfoR&viewCls=lsRvsDocInfoR"
-    },
-    {
-      "label": "Edaily · Assembly passage of the special counsel bill",
-      "url": "https://www3.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=06376326645643096"
-    },
-    {
-      "label": "Yonhap · Committee revisions, secondments and special counsel appointment",
-      "url": "https://www.yna.co.kr/view/AKR20261104138651001"
-    },
-    {
-      "label": "Hankyoreh · Direct investigative powers for seconded prosecutors",
-      "url": "https://www.hani.co.kr/arti/society/society_general/1285792.html"
-    }
-  ],
-  "sourceNote": "Sources include reporting on the November 6 vote, the committee revisions and the amendment to the Criminal Procedure Act."
+  "sourceNote": "Sources include reporting on the November 6 vote, the committee revisions and the amendment to the Criminal Procedure Act.",
+  "sourceLabels": [
+    "Korean Law Information Center · Reasons for amending the Criminal Procedure Act",
+    "Edaily · Assembly passage of the special counsel bill",
+    "Yonhap · Committee revisions, secondments and special counsel appointment",
+    "Hankyoreh · Direct investigative powers for seconded prosecutors"
+  ]
 };
