@@ -1,8 +1,8 @@
 import type { ColumnTranslation } from "../types";
 
 export const issue129: ColumnTranslation = {
-  "title": "The Assembly Took Away Prosecutors’ Investigative Powers. Then It Called Them Back for the President’s Cases.",
-  "subtitle": "An editorial on the November 6 special counsel vote",
+  "title": "The Day South Korea’s National Assembly Died",
+  "subtitle": "Parliament stripped prosecutors of investigative powers, then restored them for an inquiry involving the president",
   "author": "Small Seed",
   "summary": "South Korea’s Assembly stripped prosecutors of direct investigative powers, then carved out an exception for an inquiry touching on the sitting president’s cases. The president chooses the special counsel who would investigate the team that charged him.",
   "heroImage": {
@@ -32,23 +32,37 @@ export const issue129: ColumnTranslation = {
   ],
   "sections": [
     {
-      "title": "The Assembly calls prosecutors back",
+      "title": "The investigative powers lawmakers brought back",
       "paragraphs": [
-        "South Korea’s National Assembly abolished the Prosecutors’ Office and ended prosecutors’ power to conduct direct investigations. A month later it moved to give prosecutors that power again. Among those whose conduct would come under scrutiny are the investigators who brought charges against the sitting president. On November 6, the Democratic Party led the Assembly in passing the bill for a special counsel to investigate alleged prosecutorial fabrication. What principle is the Assembly legislating by?[1][2]",
-        "The special counsel would examine how cases involving President Lee Jae-myung were investigated and prosecuted, including the Daejang-dong and Baekhyeon-dong developments, the Ssangbangwool remittances to North Korea, sponsorship of Seongnam FC and the use of a Gyeonggi Province corporate card. Cases involving the Moon Jae-in administration are also covered. Up to 20 prosecutors may be seconded to the special counsel’s team and empowered to investigate directly. The lawmakers who overhauled criminal justice on the grounds that combining investigation and prosecution invited abuse now say they need that power to investigate the prosecutors who charged a president from their own party. What happened to the principle they presented to the public a month ago?[2][3][4]"
+        "South Korea’s National Assembly removed prosecutors’ power to conduct direct investigations, arguing that combining investigation and prosecution could invite abuse. Just over a month later, the Assembly passed a bill giving prosecutors that power again inside a special counsel’s team examining investigations and prosecutions in cases involving the sitting president.[1][2][4]",
+        "Passed on November 6 under the Democratic Party’s leadership, the special counsel bill allows up to 20 prosecutors to be seconded to the team. It creates an exception applying the pre-amendment Criminal Procedure Act to their investigative powers. The principle advanced to justify removing those powers gave way when the inquiry involved the president’s cases.[2][3][4]",
+        "The inquiry covers the handling of cases involving President Lee Jae-myung, including the Daejang-dong, Wirye and Baekhyeon-dong developments, Ssangbangwool’s remittances to North Korea, Seongnam FC sponsorship and use of a Gyeonggi Province corporate card. It also covers cases involving the Moon Jae-in administration. The bill is not confined to the president, but the conduct of the investigators who charged him is among its central subjects.[2][3]",
+        "Lawmakers told ordinary citizens that prosecutors’ investigative powers had to go. When they revisit cases involving the president, they say those powers are needed. Can the criminal justice principle presented to the public change when the powerful are involved?"
       ]
     },
     {
-      "title": "The president chooses who leads the inquiry",
+      "title": "The president chooses who investigates the team that charged him",
       "paragraphs": [
-        "Any prosecutor who fabricated evidence or coerced testimony should face investigation and punishment. That makes the choice of who leads the inquiry all the more important. The governing and opposition parties nominate candidates, and President Lee Jae-myung appoints the special counsel. He gets to choose the person who will examine whether the investigators who brought charges against him broke the law. Does giving the opposition a nomination erase that conflict of interest? What ordinary citizen gets to choose who investigates the prosecutors who charged them?[3]"
+        "Prosecutors who fabricated evidence or coerced testimony should be thoroughly investigated and held accountable. That is precisely why the person leading such an inquiry must be independent of the interests involved.",
+        "The bill provides for the Democratic Party, the People Power Party and the largest non-negotiating parliamentary group each to nominate a candidate; the president appoints one of them. President Lee will therefore choose who leads an inquiry into possible wrongdoing by the team that investigated and charged him. The opposition has a nomination, but the final choice belongs to the president.[3]",
+        "The Assembly should have guarded against this conflict of interest. Its responsibility was to design an independent examination of an investigation touching the president’s cases. Instead, the majority gave a person with a direct stake the final choice. What ordinary citizen gets to choose who investigates the prosecutors who charged them?"
       ]
     },
     {
-      "title": "What survives the removal of the withdrawal provision",
+      "title": "Does removing the withdrawal provision end the concern?",
       "paragraphs": [
-        "The final bill dropped the provision that would have let the special counsel take over cases and decide whether to continue the prosecutions. One question remains. If the special counsel concludes that charges were fabricated, will the governing party use that finding to press for their withdrawal? If the team led by the president’s appointee announces that the original investigation was flawed, the governing party can cite that announcement to justify withdrawing the charges. Lawmakers removed the power to withdraw charges from the bill, yet left open a route for using the inquiry’s findings to push for that outcome. The bill lays the groundwork for dropping the charges. The Assembly has created a separate inquiry touching on evidence that belongs in court, and the president gets to choose who leads it. Must the legislature mobilize to this extent around one president’s criminal cases?[2][3]",
-        "When in South Korea’s constitutional history has the Assembly enabled a sitting president to choose the special counsel who would investigate the conduct of the team that charged him? If the findings of a special counsel chosen by the president are then used to withdraw the charges, the most powerful person in the country will have determined the outcome of his own criminal cases. A president wiping away his own alleged wrongdoing this way would be unprecedented in South Korea’s constitutional history. Lawmakers told citizens that separating investigation from prosecution would curb abuses of power. Once cases involving the most powerful person in the country were at stake, they carved a hole in that principle. This is a shameless abuse of legislative majority power. Today is the day South Korea’s National Assembly died."
+        "During committee review, provisions concerning a decision on whether to maintain prosecutions and a demand to transfer existing cases were removed. The bill as passed does not give the special counsel an automatic power to withdraw charges in existing trials.[2][3]",
+        "Yet if a special counsel appointed by the president announces problems in the original investigations, the governing party or other interested parties could use that finding to argue for withdrawing the charges. Whether that happens will depend on the investigation and subsequent legal procedures. SEED Voice is concerned that political pressure could be mobilized in that direction.",
+        "If the president’s appointee investigates the original team while evidence is contested in court, and those findings are then used to undermine existing proceedings, what is the public to trust? The courts must decide guilt or innocence on the evidence and the law. An inquiry structured around the desired outcome of a particular case puts the independence of that judgment under suspicion."
+      ]
+    },
+    {
+      "title": "The Assembly crossed a line",
+      "paragraphs": [
+        "The legislature’s role is to check the executive so that the same principles apply to presidents and ordinary citizens. If the promise to correct prosecutorial abuse was sincere, cases touching the interests of the powerful should have been subject to especially strict safeguards for independence.",
+        "The Assembly chose the opposite course. It removed prosecutors’ investigative powers in ordinary proceedings but created an exception for the special counsel examining cases involving the president. It let the president choose the person who will investigate the team that charged him. A parliamentary majority has become a channel for the president rather than a barrier of oversight.",
+        "Neither the inquiry nor the existing trials have reached their conclusions. Citizens should watch who is nominated and appointed, what evidence guides the investigation, and how its findings are used in the existing prosecutions.",
+        "When the Assembly opens a path for a powerful person to alter the outcome of his own cases, it abandons its reason for being as the people’s representative institution. November 6, 2026 was the day South Korea’s National Assembly died."
       ]
     }
   ],
