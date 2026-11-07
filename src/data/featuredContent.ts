@@ -1,6 +1,6 @@
 import type { Language } from "../i18n";
 import { getAllBriefingsNewestFirst } from "./allBriefings";
-import { getColumnsNewestFirst, getPublicInterestColumnsNewestFirst } from "./columns";
+import { getColumnsNewestFirst, getHotIssueColumnsNewestFirst, getPublicInterestColumnsNewestFirst } from "./columns";
 import { getHotIssuesNewestFirst } from "./hotIssues";
 import { localizeBriefing, localizeColumn, localizeNewsArticle } from "./localizedContent";
 import { getNewsNewestFirst } from "./news";
@@ -57,7 +57,7 @@ export function getFeaturedContentCandidates(language: Language, legislativeBill
   });
 
   const newsByPath = new Map(getNewsNewestFirst().map((item) => [`/news/${item.slug}`, localizeNewsArticle(item, language)]));
-  const columnsByPath = new Map(getColumnsNewestFirst().map((item) => [`/columns/${item.slug}`, localizeColumn(item, language)]));
+  const columnsByPath = new Map(getHotIssueColumnsNewestFirst().map((item) => [`/columns/${item.slug}`, localizeColumn(item, language)]));
   const trackerByPath = new Map(publicInterestWatchCases.map((item) => [`/monitoring/${item.slug}`, item]));
   const newsItems: FeaturedContent[] = getHotIssuesNewestFirst(language).map((item) => {
     const story = newsByPath.get(item.to) ?? columnsByPath.get(item.to);
