@@ -258,6 +258,7 @@ jobs:
           node scripts/check-column-browser.mjs citizens-teaching-state-civic-independence-2026
           node scripts/check-column-browser.mjs special-prosecutor-double-standard-2026
           node scripts/check-column-browser.mjs dying-pines-cannot-read-press-releases-2026
+          node scripts/check-column-browser.mjs separation-of-powers-civic-liberty-2026
           node scripts/check-column-browser.mjs home
       - name: Block stale branch until changes are tested with latest main
         if: github.event_name == 'push'
