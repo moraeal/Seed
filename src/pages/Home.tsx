@@ -464,6 +464,7 @@ export default function Home() {
                   <p className="mt-3 text-[10px] font-black tracking-[.14em] text-green-deep sm:mt-3.5 sm:text-[11px]">{featuredLead.kicker}</p>
                   <h1 className="editorial-title mt-1.5 max-w-5xl break-keep text-balance text-[1.75rem] font-black leading-[1.12] tracking-[-0.038em] text-navy transition group-hover:text-green-mid sm:text-[clamp(1.9rem,3.5vw,3rem)] sm:leading-[1.09] sm:tracking-[-0.042em]">{featuredLead.title}</h1>
                   <p className="home-lead-summary mt-2 line-clamp-3 max-w-4xl sm:mt-2.5">{featuredLead.summary}</p>
+                  {featuredLead.bodyExcerpt && <p className="mt-3 line-clamp-3 max-w-4xl break-keep text-sm leading-6 text-charcoal/70 sm:text-base sm:leading-7">{featuredLead.bodyExcerpt}</p>}
                   <div className="mt-3 flex items-center gap-3 text-[11px] text-charcoal/45 sm:text-xs"><time>{featuredLead.date.replace(/-/g, ".")}</time>{featuredLead.readMinutes && <span className="inline-flex items-center gap-1"><Clock size={12}/>{featuredLead.readMinutes}{ko ? "분 읽기" : " min read"}</span>}</div>
                 </Link>
 
