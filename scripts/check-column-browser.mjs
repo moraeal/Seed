@@ -34,7 +34,7 @@ const expectedArticleHeadings = {
   "seed-thought-04-public-interest": "공익은 누가 정하고 누가 책임집니까",
   "seed-thought-05-citizen-space": "서비스는 늘었는데 시민의 자리는 왜 줄었나",
   "citizens-teaching-state-civic-independence-2026": "시민을 가르치겠다는 국가",
-  "special-prosecutor-double-standard-2026": "[사설] 검사 수사권을 없앤 국회, 대통령 사건엔 검사를 부른다",
+  "special-prosecutor-double-standard-2026": "대한민국 국회가 사망한 날",
   "dying-pines-cannot-read-press-releases-2026": "죽어가는 소나무는 성명서를 읽지 못한다",
   "age-of-legislative-tyranny-2026": "입법독재의 시대",
   "animal-farm-justice-benjamin-webtoon-2026": "[풍자 웹툰] 동물농장, 벽에 다시 쓰인 법",
