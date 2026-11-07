@@ -201,7 +201,9 @@ export default function Home() {
   // The lead is excluded from Hot Issues, but the editor's previous lead
   // selections take priority over automatically populated homepage desks.
   const claimedHomePaths = new Set(activeFeaturedPath ? [getHomeTopic(activeFeaturedPath)] : []);
-  // Editorial placement: keep the pine forest column in its own desk, while retaining its homepage history.\n  const columnDeskOnlyPath = "/columns/dying-pines-cannot-read-press-releases-2026";\n  const selectedHotIssueCards = featuredReady ? selectHotIssueCards(
+  // Editorial placement: keep the pine forest column in its own desk, while retaining its homepage history.
+  const columnDeskOnlyPath = "/columns/dying-pines-cannot-read-press-releases-2026";
+  const selectedHotIssueCards = featuredReady ? selectHotIssueCards(
     getHotIssueCards(language, legislativeBills, featuredHistory).filter((card) =>
       card.to !== activeFeaturedPath && card.to !== columnDeskOnlyPath
     ),
