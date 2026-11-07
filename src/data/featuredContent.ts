@@ -2,7 +2,8 @@ import type { Language } from "../i18n";
 import { getAllBriefingsNewestFirst } from "./allBriefings";
 import { getColumnsNewestFirst, getPublicInterestColumnsNewestFirst } from "./columns";
 import { getHotIssuesNewestFirst } from "./hotIssues";
-import { localizeBriefing, localizeColumn } from "./localizedContent";
+import { localizeBriefing, localizeColumn, localizeNewsArticle } from "./localizedContent";
+import { getNewsNewestFirst } from "./news";
 import { publicInterestWatchCases } from "./newsTrackerRegistry";
 import { legislativeCommentaries } from "./legislativeCommentaries";
 import { taxCommentaries } from "./taxCommentaries";
@@ -18,10 +19,24 @@ export type FeaturedContent = {
   kicker: string;
   title: string;
   summary: string;
+  bodyExcerpt?: string;
   date: string;
   readMinutes?: number;
   image: { src: string; alt: string };
 };
+
+// The homepage preview is plain text inside a link: retain article wording,
+// while removing citation markup and inline link targets from the short excerpt.
+function bodyExcerpt(paragraphs: (string | null | undefined)[]): string {
+  return paragraphs.filter((paragraph): paragraph is string => Boolean(paragraph?.trim()))
+    .slice(0, 4)
+    .join(" ")
+    .replace(/\[([^\]]+)\]\(https?:\/\/[^)]+\)/g, "$1")
+    .replace(/\[\d+\]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 800);
+}
 
 export function getFeaturedContentCandidates(language: Language, legislativeBills: LegislativeBill[] = []): FeaturedContent[] {
   const ko = language === "ko";
@@ -34,13 +49,19 @@ export function getFeaturedContentCandidates(language: Language, legislativeBill
       kicker: "COLUMNS",
       title: localized.title,
       summary: localized.summary,
+      bodyExcerpt: bodyExcerpt(localized.sections.flatMap((section) => section.paragraphs)),
       date: item.date,
       readMinutes: item.readMinutes,
       image: localized.heroImage,
     };
   });
 
+  const newsByPath = new Map(getNewsNewestFirst().map((item) => [`/news/${item.slug}`, localizeNewsArticle(item, language)]));
+  const columnsByPath = new Map(getColumnsNewestFirst().map((item) => [`/columns/${item.slug}`, localizeColumn(item, language)]));
+  const trackerByPath = new Map(publicInterestWatchCases.map((item) => [`/monitoring/${item.slug}`, item]));
   const newsItems: FeaturedContent[] = getHotIssuesNewestFirst(language).map((item) => {
+    const story = newsByPath.get(item.to) ?? columnsByPath.get(item.to);
+    const tracker = trackerByPath.get(item.to);
     return {
       path: item.to,
       category: "news",
@@ -48,6 +69,9 @@ export function getFeaturedContentCandidates(language: Language, legislativeBill
       kicker: "HOT ISSUES",
       title: item.title,
       summary: item.summary,
+      bodyExcerpt: story
+        ? bodyExcerpt(story.sections.flatMap((section) => section.paragraphs))
+        : bodyExcerpt(tracker?.confirmedFacts.map((fact) => fact[language]) ?? []),
       date: item.date,
       readMinutes: item.readMinutes,
       image: { src: item.imageSrc, alt: item.imageAlt },
@@ -64,6 +88,7 @@ export function getFeaturedContentCandidates(language: Language, legislativeBill
       kicker: watch ? "CIVIC WATCH" : "BRIEFINGS",
       title: localized.title,
       summary: localized.summary,
+      bodyExcerpt: bodyExcerpt([...localized.content, ...(localized.sections?.flatMap((section) => section.paragraphs ?? []) ?? [])]),
       date: item.date,
       readMinutes: item.readMinutes,
       image: localized.images?.[0] ?? { src: "/images/brand/editorial-image-fallback.svg", alt: localized.title },
@@ -79,6 +104,7 @@ export function getFeaturedContentCandidates(language: Language, legislativeBill
       kicker: "CIVIC WATCH",
       title: localized.title,
       summary: localized.summary,
+      bodyExcerpt: bodyExcerpt(localized.sections.flatMap((section) => section.paragraphs)),
       date: item.date,
       readMinutes: item.readMinutes,
       image: localized.heroImage,
@@ -92,6 +118,7 @@ export function getFeaturedContentCandidates(language: Language, legislativeBill
     kicker: "CIVIC WATCH · NEWS TRACKER",
     title: item.title[language],
     summary: item.summary[language],
+    bodyExcerpt: bodyExcerpt(item.confirmedFacts.map((fact) => fact[language])),
     date: item.updatedAt,
     image: {
       src: item.heroImage?.src ?? "/images/brand/editorial-image-fallback.svg",
@@ -108,6 +135,7 @@ export function getFeaturedContentCandidates(language: Language, legislativeBill
       kicker: "CIVIC WATCH · LEGISLATION",
       title: edition.title,
       summary: edition.summary,
+      bodyExcerpt: bodyExcerpt(edition.sections.flatMap((section) => section.paragraphs)),
       date: item.date,
       readMinutes: item.readMinutes,
       image: { src: item.heroSrc, alt: edition.heroAlt },
@@ -127,6 +155,7 @@ export function getFeaturedContentCandidates(language: Language, legislativeBill
         summary: ko
           ? item.public_summary_ko || item.analysis?.summary_ko || item.official_summary || ""
           : item.public_summary_en || item.analysis?.summary_en || "",
+        bodyExcerpt: bodyExcerpt(ko ? item.analysis?.changes_ko ?? [] : item.analysis?.changes_en ?? []),
         date: (item.editorial_updated_at || item.published_at || item.updated_at || item.proposed_date || "").slice(0, 10),
         image: { src: item.editorial_image!.src!, alt: (ko ? item.editorial_image!.alt_ko : item.editorial_image!.alt_en) || title },
       };
@@ -139,6 +168,7 @@ export function getFeaturedContentCandidates(language: Language, legislativeBill
     kicker: "CIVIC WATCH · TAX",
     title: item.title[language],
     summary: item.summary[language],
+    bodyExcerpt: bodyExcerpt([item.oneSentence[language], ...item.keyChanges.map((change) => change.body[language])]),
     date: item.checkedAt,
     image: { src: item.heroImage[language], alt: item.heroImage.alt[language] },
   }));
@@ -152,6 +182,7 @@ export function getFeaturedContentCandidates(language: Language, legislativeBill
       kicker: "CIVIC WATCH · TAX",
       title: edition.title,
       summary: edition.summary,
+      bodyExcerpt: bodyExcerpt(edition.sections.flatMap((section) => section.paragraphs)),
       date: item.date,
       readMinutes: item.readMinutes,
       image: { src: item.heroSrc, alt: edition.heroAlt },
@@ -175,6 +206,7 @@ export function getFeaturedContentCandidates(language: Language, legislativeBill
       kicker: "GLOSSARY",
       title: localized.title,
       summary: localized.summary,
+      bodyExcerpt: bodyExcerpt([...(localized.leadParagraphs ?? []), ...localized.sections.flatMap((section) => section.paragraphs)]),
       date: item.date,
       readMinutes: item.readMinutes,
       image: localized.heroImage,
