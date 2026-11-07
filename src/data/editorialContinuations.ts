@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "seed-language" && slug === "separation-of-powers-civic-liberty-2026") return true;
   if (kind === "column" && slug === "us-midterms-korea-national-interest-2026") return true;
   if (kind === "column" && slug === "animal-farm-justice-benjamin-webtoon-2026") return true;
   if (kind === "column" && slug === "atr-taxpayer-movement-07-citizen-tax-watch") return true;
@@ -533,6 +534,12 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "seed-language" && slug === "separation-of-powers-civic-liberty-2026") return language === "ko" ? {
+    href: "/columns/age-of-legislative-tyranny-2026", title: "입법독재의 시대", relationship: "사법 독립과 입법권", reason: "사법제도 개편과 대법관 제청 갈등을 시민의 자유와 권력 견제의 기준으로 이어서 살펴봅니다.", listHref: "/seed-language", listLabel: "시민언어 전체 보기",
+  } : {
+    href: "/columns/age-of-legislative-tyranny-2026", title: "The Age of Legislative Tyranny", relationship: "JUDICIAL INDEPENDENCE AND LEGISLATIVE POWER", reason: "Continue with judicial reform and the Supreme Court nomination dispute through the lens of civic freedom and checks on power.", listHref: "/seed-language", listLabel: "All civic language articles",
+  };
+
   if (kind === "column" && slug === "us-midterms-korea-national-interest-2026") return language === "ko" ? { href: "/columns/philippines-turkiye-turning-away-us-alliance-warning-2026", title: "필리핀과 튀르키에, 미국에 등 돌리다", relationship: "한미동맹과 국익", reason: "미국의 동맹 관계와 한국 외교의 선택을 다룬 앞선 칼럼을 읽습니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" } : { href: "/columns/philippines-turkiye-turning-away-us-alliance-warning-2026", title: "The Philippines and Türkiye Turn Away from America", relationship: "ALLIANCES AND NATIONAL INTEREST", reason: "Read an earlier column on American alliances and Korea’s foreign policy choices.", listHref: "/columns", listLabel: "All columns" };
 
   if (kind === "column" && slug === "animal-farm-justice-benjamin-webtoon-2026") return language === "ko" ? { href: "/columns/age-of-legislative-tyranny-2026", title: "입법독재의 시대", relationship: "함께 읽기", reason: "사법 독립과 입법 권력에 관한 논평을 이어서 읽습니다.", listHref: "/columns", listLabel: "칼럼 전체 보기" } : { href: "/columns/age-of-legislative-tyranny-2026", title: "The Age of Legislative Domination", relationship: "RELATED READING", reason: "Read the commentary on judicial independence and legislative power.", listHref: "/columns", listLabel: "All columns" };
