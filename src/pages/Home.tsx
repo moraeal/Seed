@@ -202,7 +202,9 @@ export default function Home() {
   // selections take priority over automatically populated homepage desks.
   const claimedHomePaths = new Set(activeFeaturedPath ? [getHomeTopic(activeFeaturedPath)] : []);
   const selectedHotIssueCards = featuredReady ? selectHotIssueCards(
-    getHotIssueCards(language, legislativeBills, featuredHistory).filter((card) => card.to !== activeFeaturedPath),
+    getHotIssueCards(language, legislativeBills, featuredHistory).filter((card) =>
+      card.to !== activeFeaturedPath && card.to !== "/columns/dying-pines-cannot-read-press-releases-2026"
+    ),
     new Set(),
     8,
   ) : [];
