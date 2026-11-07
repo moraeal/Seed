@@ -12,6 +12,7 @@ if (!slug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
 }
 const tasks = [
   ["Article preflight", process.execPath, ["scripts/preflight-column.mjs", slug]],
+  ["Article asset integrity", process.execPath, ["scripts/verify-article-assets.mjs", slug]],
   ["Production build", process.platform === "win32" ? "pnpm.cmd" : "pnpm", ["run", "build"]],
 ];
 for (const [label, command, args] of tasks) {
