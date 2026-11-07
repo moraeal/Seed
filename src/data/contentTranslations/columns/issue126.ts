@@ -135,5 +135,19 @@ export const issue126: ColumnTranslation = {
       ]
     }
   ],
-  "sourceNote": "The 2025 share covers recorded merchandise trade and does not capture all informal or undisclosed transactions or military cooperation. The two photographic-style images are AI-generated concepts, not documentary records."
+  "sourceNote": "The 2025 share covers recorded merchandise trade and does not capture all informal or undisclosed transactions or military cooperation. The two photographic-style images are AI-generated concepts, not documentary records.",
+  "sourceLabels": [
+  "Yonhap News, KOTRA’s 2025 North Korea trade report (July 28, 2026)",
+  "China’s Ministry of Foreign Affairs, status of the China–DPRK treaty (July 7, 2021)",
+  "China’s Ministry of Foreign Affairs, messages marking the treaty’s 65th anniversary (July 11, 2026)",
+  "Korea Development Institute, North Korea–China and North Korea–Russia trade in 2025 (June 19, 2026)",
+  "UN Security Council Resolution 2375 and voting record (September 11, 2017)",
+  "United Nations, Security Council vetoes of proposed DPRK sanctions (May 26, 2022)",
+  "UN Security Council, 9591st meeting and vote (March 28, 2024)",
+  "US Department of State, expert panel and existing sanctions (March 28, 2024)",
+  "Congressional Research Service, Russia–North Korea relations",
+  "Office of the Director of National Intelligence, 2026 Annual Threat Assessment",
+  "UN human rights experts, statement on forced returns of North Koreans (October 17, 2023)",
+  "UN Special Rapporteur on DPRK human rights, report A/77/522, China’s position (2022)"
+]
 };
