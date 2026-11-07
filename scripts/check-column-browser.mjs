@@ -4,7 +4,7 @@ import { chromium } from "file:///tmp/seed-browser-tools/node_modules/playwright
 import { spawn } from "node:child_process";
 const slug = process.argv[2];
 const isHome = slug === "home";
-const isCivicLanguage = slug === "tolerance-social-cohesion-common-rules-2026";
+const isCivicLanguage = slug === "tolerance-social-cohesion-common-rules-2026" || slug === "separation-of-powers-civic-liberty-2026";
 const expectedArticleHeadings = {
   "us-midterms-korea-national-interest-2026": "미국 민주당이 이겼다, 한국도 이긴 것인가",
   "who-represents-civil-society-government-committee-independence-2026": "시민사회를 행안부 위원회에 가두지 마라",
@@ -42,6 +42,7 @@ const expectedArticleHeadings = {
   "olympic-park-ballot-inspection-civic-briefing": "올공 147일, 투표함은 열렸지만 국민은 여전히 밖에 있었다",
   "china-history-sovereignty-neighbor-part4-2026": "천 년의 이웃, 우리는 중국을 얼마나 알고 있는가",
   "tolerance-social-cohesion-common-rules-2026": "관용은 무조건 받아들이는 미덕이 아니라 공동의 질서를 지키는 책임이라는 말이다",
+  "separation-of-powers-civic-liberty-2026": "삼권분립, 권력을 나눈 이유는 시민의 자유를 지키기 위해서다",
   "ai-era-basic-income-tax-vote-politics-2026": "AI 기본소득인가, 국민 세금으로 표를 사는 정치인가",
   "national-assembly-48-hour-bill-notice-2026": "법안도 제대로 읽지 못하고 표결하는 국회, 48시간이면 충분한가",
   "minhoe-new-peoples-committee-civic-society-part2-2026": "민회, 새로운 인민위원회인가?",
@@ -126,6 +127,11 @@ try {
     if(!isHome && !info.h1.includes(expectedArticleHeadings[slug] || slug)) failures.push("Missing or wrong article H1: "+info.h1);
     if(!isHome && !info.ogImage) failures.push("Missing article og:image metadata");
     if(info.images.some(i=>!i.ok)) failures.push("Broken images: "+info.images.filter(i=>!i.ok).map(i=>i.src).join(", "));
+    if (slug === "separation-of-powers-civic-liberty-2026") {
+      for (const required of ["separation-of-powers-2026/hero.jpg", "separation-of-powers-2026/citizen-court.jpg"]) {
+        if (!info.images.some(img => img.ok && img.src.includes(required))) failures.push("Required civic-language article image missing or broken: " + required);
+      }
+    }
     if(info.images.length<2)failures.push("Too few visible images");
     if(info.overflow)failures.push("Horizontal overflow");
     console.log(JSON.stringify({slug,viewport,images:info.images.length,failures}));
