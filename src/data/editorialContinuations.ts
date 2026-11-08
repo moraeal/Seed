@@ -534,6 +534,20 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "citizens-remain-citizens-civic-independence-2026") return language === "ko" ? {
+    href: "/columns/seed-thought-06-civic-organizations",
+    title: "단체는 커졌는데 시민사회는 왜 약해졌나",
+    relationship: "조직의 성장과 시민의 힘",
+    reason: "독립성을 지키는 운영 규칙에 이어 시민의 의제·결정·재정·책임이 어떻게 자라는지 살펴봅니다.",
+    listHref: "/columns", listLabel: "칼럼 전체 보기",
+  } : {
+    href: "/columns/seed-thought-06-civic-organizations",
+    title: "Organizations Have Grown—Why Has Civil Society Weakened?",
+    relationship: "ORGANIZATIONAL GROWTH AND CIVIC CAPACITY",
+    reason: "Continue with how citizens gain a voice in agendas, decisions, finances and accountability.",
+    listHref: "/columns", listLabel: "All columns",
+  };
+
   if (kind === "seed-language" && slug === "separation-of-powers-civic-liberty-2026") return language === "ko" ? {
     href: "/columns/age-of-legislative-tyranny-2026", title: "입법독재의 시대", relationship: "사법 독립과 입법권", reason: "사법제도 개편과 대법관 제청 갈등을 시민의 자유와 권력 견제의 기준으로 이어서 살펴봅니다.", listHref: "/seed-language", listLabel: "시민언어 전체 보기",
   } : {

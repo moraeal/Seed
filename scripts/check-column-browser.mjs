@@ -33,6 +33,7 @@ const expectedArticleHeadings = {
   "nameless-citizens-democracy-2026": "나는 민주화유공자가 아니다",
   "seed-thought-04-public-interest": "공익은 누가 정하고 누가 책임집니까",
   "seed-thought-05-citizen-space": "서비스는 늘었는데 시민의 자리는 왜 줄었나",
+  "citizens-remain-citizens-civic-independence-2026": "시민이 시민다울 수 있는 건…",
   "seed-thought-06-civic-organizations": "단체는 커졌는데 시민사회는 왜 약해졌나",
   "citizens-teaching-state-civic-independence-2026": "시민을 가르치겠다는 국가",
   "special-prosecutor-double-standard-2026": "대한민국 국회가 사망한 날",
