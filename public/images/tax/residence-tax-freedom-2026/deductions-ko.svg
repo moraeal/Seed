@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="790" viewBox="0 0 1200 790" role="img" aria-labelledby="title desc">
+<title id="title">1세대 1주택 종부세 기본공제 비교</title><desc id="desc">현행법 거주·비거주 각 12억 원, 최초안 14억·9억, 국회 제출안 14억·12억, 여당 요구 각 14억 원. 공제액은 세액이 아니며 현행법 외에는 미확정이다.</desc>
+<rect width="1200" height="790" fill="#fffdf7"/>
+<g font-family="Pretendard, Noto Sans KR, NanumGothic, sans-serif" fill="#17382f">
+<text x="54" y="58" font-size="23" font-weight="500" letter-spacing="2">씨앗의 소리 · 세금감시</text>
+<text x="54" y="119" font-size="40" font-weight="700">같은 1주택, 거주 여부에 따른 공제액</text>
+<text x="54" y="164" font-size="25" fill="#59675f">공시가격에서 빼는 금액이다. 납부할 세금이 아니다.</text>
+<rect x="44" y="202" width="1112" height="74" fill="#173f34"/>
+<g fill="#fff" font-size="28" font-weight="700"><text x="70" y="251">구분</text><text x="672" y="251" text-anchor="middle">거주</text><text x="999" y="251" text-anchor="middle">비거주</text></g>
+<rect x="44" y="276" width="1112" height="81" fill="#f0f3eb"/>
+<rect x="44" y="438" width="1112" height="81" fill="#e0eee4"/>
+<g stroke="#d2d9cc"><path d="M44 357H1156M44 438H1156M44 519H1156M44 600H1156"/></g>
+<g font-size="30" font-weight="500"><text x="70" y="328">현행법</text><text x="70" y="409">8월 최초안</text><text x="70" y="490" font-weight="700">국회 제출 정부안</text><text x="70" y="571">11월 8일 여당 요구</text></g>
+<g font-size="34" text-anchor="middle" font-weight="700"><text x="672" y="328">12억 원</text><text x="999" y="328">12억 원</text><text x="672" y="409">14억 원</text><text x="999" y="409">9억 원</text><text x="672" y="490">14억 원</text><text x="999" y="490">12억 원</text><text x="672" y="571">14억 원</text><text x="999" y="571">14억 원</text></g>
+<g font-size="24" fill="#536257"><text x="54" y="645">현행법 외에는 확정된 법이 아니다. 납세의무 기준은 별도다.</text><text x="54" y="687">공동명의·특례 등 개별 요건에 따라 적용이 달라질 수 있다.</text><text x="54" y="747" font-size="21">근거: 현행법 제8조 · 정부안 수정 및 여당 요구 보도 | 확인 2026.11.9</text></g>
+</g></svg>
