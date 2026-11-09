@@ -59,7 +59,7 @@ export const overseasElectronicVotingNoticeCommentary: LegislativeCommentary = {
         "ko": "미국 국립과학·공학·의학한림원 · Securing the Vote (2018)",
         "en": "US National Academies · Securing the Vote (2018)"
       },
-      "url": "https://www.nationalacademies.org/our-work/securing-the-vote-protecting-american-democracy"
+      "url": "https://www.nationalacademies.org/news/securing-the-vote-new-report"
     }
   ],
   "editions": {
