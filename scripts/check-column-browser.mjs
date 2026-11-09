@@ -6,6 +6,7 @@ const slug = process.argv[2];
 const isHome = slug === "home";
 const isCivicLanguage = slug === "tolerance-social-cohesion-common-rules-2026" || slug === "separation-of-powers-civic-liberty-2026";
 const expectedArticleHeadings = {
+  "one-home-residence-tax-freedom-2026": "집 한 채, 사는 곳이 다르다고 세금도 달라야 하나",
   "us-midterms-korea-national-interest-2026": "미국 민주당이 이겼다, 한국도 이긴 것인가",
   "who-represents-civil-society-government-committee-independence-2026": "시민사회를 행안부 위원회에 가두지 마라",
   "china-north-korea-behind-part6-2026": "북한의 뒤에 중국이 있다",
@@ -78,7 +79,7 @@ try {
     const page=await browser.newPage({viewport,deviceScaleFactor:1});
     const failures=[];
     page.on("pageerror",e=>failures.push("JS: "+e.message));
-    const path = isHome ? "/" : (isCivicLanguage ? "/seed-language/" : slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : (slug === "lee-erdoganization-state-power-civic-briefing-2026" || slug === "youth-rent-tax-credit-20-percent-bill-2222071" || slug === "olympic-park-ballot-inspection-civic-briefing") ? "/briefings/" : (slug === "national-assembly-48-hour-bill-notice-2026" || slug === "farmland-special-act-law-abiding-farmers-2026" || slug === "legislative-omnipotence-prison-rights-2026" || slug === "democracy-merit-bill-admissions-fairness-2026") ? "/monitoring/legislation/commentary/" : ((slug === "citizen-participation-framework-bill-tracker-2026" || slug === "social-economy-framework-law-tracker") ? "/monitoring/" : "/columns/")) + slug + "/";
+    const path = isHome ? "/" : (slug === "one-home-residence-tax-freedom-2026" ? "/monitoring/tax/commentary/" : isCivicLanguage ? "/seed-language/" : slug === "crypto-tax-fourth-deferral-2026" ? "/news/" : (slug === "lee-erdoganization-state-power-civic-briefing-2026" || slug === "youth-rent-tax-credit-20-percent-bill-2222071" || slug === "olympic-park-ballot-inspection-civic-briefing") ? "/briefings/" : (slug === "national-assembly-48-hour-bill-notice-2026" || slug === "farmland-special-act-law-abiding-farmers-2026" || slug === "legislative-omnipotence-prison-rights-2026" || slug === "democracy-merit-bill-admissions-fairness-2026") ? "/monitoring/legislation/commentary/" : ((slug === "citizen-participation-framework-bill-tracker-2026" || slug === "social-economy-framework-law-tracker") ? "/monitoring/" : "/columns/")) + slug + "/";
     await page.goto(base+path,{waitUntil:"domcontentloaded",timeout:45000});
     const readPage = async () => {
       // Third-party videos/analytics may keep the network busy indefinitely.
@@ -132,6 +133,11 @@ try {
     if (slug === "separation-of-powers-civic-liberty-2026") {
       for (const required of ["separation-of-powers-2026/hero.jpg", "separation-of-powers-2026/citizen-court.jpg"]) {
         if (!info.images.some(img => img.ok && img.src.includes(required))) failures.push("Required civic-language article image missing or broken: " + required);
+      }
+    }
+    if (slug === "one-home-residence-tax-freedom-2026") {
+      for (const required of ["residence-tax-freedom-2026/hero.webp", "residence-tax-freedom-2026/household.webp", "residence-tax-freedom-2026/deductions-ko.svg"]) {
+        if (!info.images.some(img => img.ok && img.src.includes(required))) failures.push("Required tax-commentary image missing or broken: " + required);
       }
     }
     if(info.images.length<2)failures.push("Too few visible images");
