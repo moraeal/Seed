@@ -24,6 +24,9 @@ on:
       - 'src/data/columnsLegacy.ts'
       - 'src/data/editorialContinuations.ts'
       - 'src/data/civicSections.ts'
+      - 'src/data/taxCommentaries.ts'
+      - 'src/data/residenceTaxFreedomCommentary2026.ts'
+      - 'src/pages/TaxCommentaryDetail.tsx'
       - 'editorial/approved/**'
       - 'scripts/verify-article-assets.mjs'
       - 'scripts/verify-changed-columns.mjs'
@@ -265,6 +268,7 @@ jobs:
           node scripts/check-column-browser.mjs separation-of-powers-civic-liberty-2026
           node scripts/check-column-browser.mjs citizens-remain-citizens-civic-independence-2026
           node scripts/check-column-browser.mjs seed-thought-06-civic-organizations
+          node scripts/check-column-browser.mjs one-home-residence-tax-freedom-2026
           node scripts/check-column-browser.mjs home
       - name: Block stale branch until changes are tested with latest main
         if: github.event_name == 'push'
