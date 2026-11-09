@@ -60,6 +60,7 @@ const Contributions = lazy(() => import("./pages/Contributions"));
 const ImageArchive = lazy(() => import("./pages/ImageArchive"));
 const EditorialDesk = lazy(() => import("./pages/EditorialDesk"));
 const CommentDesk = lazy(() => import("./pages/CommentDesk"));
+const OperatorOffline = lazy(() => import("./pages/OperatorOffline"));
 
 function AppShell() {
   const { language } = useLanguage();
@@ -98,6 +99,7 @@ function AppShell() {
           <Route path="/insights/images" element={<ImageArchive />} />
           <Route path="/insights/editorial" element={<EditorialDesk />} />
           <Route path="/insights/comments" element={<CommentDesk />} />
+          <Route path="/insights/offline" element={<OperatorOffline />} />
           <Route path="/insights/featured" element={<Insights />} />
           <Route path="/insights/legislation" element={<Insights />} />
           <Route path="/insights/tax" element={<Insights />} />

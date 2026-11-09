@@ -17,7 +17,7 @@ const groups=[
   {ko:"댓글·공론장",en:"Discussion",items:[["/insights/comments","댓글 확인·씨야 답글 승인","Comments & replies"],["/forum","공개 공론장","Public forum"]]},
   {ko:"기사·편집",en:"Editorial",items:[["/insights/editorial","편집부 원고함","Editorial desk"],["/writer","필자 집필실","Writers' room"],["/insights/featured","메인기사 관리","Homepage stories"],["/insights/legislation","입법감시 관리","Legislation"],["/insights/tax","세금감시 관리","Tax watch"]]},
   {ko:"회원·구독",en:"Members",items:[["/insights/members","회원 관리","Members"],["/insights/subscribers","이메일 구독자","Subscribers"]]},
-  {ko:"통계·자료",en:"Analytics & assets",items:[["/insights","운영 현황","Dashboard"],["/insights/content","콘텐츠 통계","Content analytics"],["/insights/traffic","유입 분석","Traffic"],["/insights/images","이미지 보관함","Image archive"]]},
+  {ko:"통계·자료",en:"Analytics & assets",items:[["/insights","운영 현황","Dashboard"],["/insights/content","콘텐츠 통계","Content analytics"],["/insights/traffic","유입 분석","Traffic"],["/insights/images","이미지 보관함","Image archive"],["/insights/offline","오프라인 읽기","Offline reading"]]},
 ];
 export default function OperatorMenu(){const {user}=useAuth();const {pathname}=useLocation();const {language}=useLanguage();const ko=language==="ko";
   if(user?.app_metadata?.seed_role!=="owner" || !pathname.startsWith("/insights"))return null;
