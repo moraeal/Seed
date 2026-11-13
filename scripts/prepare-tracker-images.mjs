@@ -73,7 +73,8 @@ async function prepare([url, source]) {
     const message = String(error?.message || error);
     const externalUnavailable =
       /HTTP (?:401|403|408|429|500|502|503|504)\b/.test(message) ||
-      /fetch failed|network|timeout|timed out|aborterror|socket hang up|ECONNRESET|ENOTFOUND|EAI_AGAIN/i.test(message);
+      // Node/undici also reports aborted response bodies as 'terminated'.
+      /fetch failed|network|timeout|timed out|aborterror|terminated|UND_ERR_SOCKET|socket hang up|ECONNRESET|ENOTFOUND|EAI_AGAIN/i.test(message);
     if (externalUnavailable && !source.thumbnailSrc) {
       const src = "/images/monitoring/source-articles/source-link-editorial.svg";
       await access(`public/${src.slice(1)}`);

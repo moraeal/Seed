@@ -14,7 +14,8 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,9 +35,20 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Ensure image converters are available
+        timeout-minutes: 10
         run: |
-          command -v convert || (sudo apt-get update && sudo apt-get install -y imagemagick)
-          command -v rsvg-convert || (sudo apt-get update && sudo apt-get install -y librsvg2-bin)
+          set -euo pipefail
+          if command -v convert >/dev/null 2>&1 && command -v rsvg-convert >/dev/null 2>&1; then
+            echo "Image converters already available."
+          else
+            if [ -f /etc/apt/sources.list.d/ubuntu.sources ]; then
+              sudo sed -i -e 's|mirror+file:/etc/apt/apt-mirrors.txt|http://archive.ubuntu.com/ubuntu|g' -e 's|http://azure.archive.ubuntu.com/ubuntu|http://archive.ubuntu.com/ubuntu|g' /etc/apt/sources.list.d/ubuntu.sources
+            fi
+            sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 update
+            sudo DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 install -y --no-install-recommends imagemagick librsvg2-bin
+          fi
+          command -v convert
+          command -v rsvg-convert
 
       - name: Build preview
         run: pnpm run build

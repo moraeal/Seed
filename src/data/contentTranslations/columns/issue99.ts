@@ -10,8 +10,8 @@ export const issue99: ColumnTranslation = {
     "thumbnailAlt": "Conceptual image about civic representation and political power"
   },
   "heroImage": {
-    "alt": "Oversized hand directing strings above the National Assembly and citizens holding a megaphone, conceptual civic oversight artwork",
-    "caption": "An editorial metaphor for the relationship between political influence and independent civic oversight.",
+    "alt": "Photo-style symbolic scene linking a civic gathering, the National Assembly and government offices through a glass revolving door; the figures do not depict real individuals",
+    "caption": "A symbolic depiction of people moving from civic organizations into parliament and government. No specific person is portrayed.",
     "credit": "AI image"
   },
   "inlineImage": {
