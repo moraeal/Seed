@@ -126,7 +126,7 @@ export const northKoreaPeaceNuclearColumn: SeedColumn = {
     },
     {
       "label": "AP · IAEA, 영변 우라늄 농축시설 확장 감시, 2026.11.19",
-      "url": "https://apnews.com/article/a74218014e9c141712e3abebdd9334ac"
+      "url": "https://apnews.com/article/north-korea-nuclear-uranium-iaea-a74218014e9c141712e3abebdd9334ac"
     },
     {
       "label": "산업통상부 · 한중 FTA 서비스·투자 후속협상 실질 타결, 2026.11.18",
