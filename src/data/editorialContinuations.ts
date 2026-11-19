@@ -858,5 +858,18 @@ export function getEditorialContinuation(kind: EditorialContentKind, slug: strin
 
   if (kind === "column" && slug === "emergency-room-warrant-defensive-medicine-2026") return language === "ko" ? {"href": "/columns/politics-abandon-devotion-conviction-2026", "title": "헌신과 소신을 버리라는 정치, 정말 나라 망하게 할 셈인가", "relationship": "헌신과 소신을 지키는 제도", "reason": "이번 사태를 책임 회피를 학습시키는 정치와 전문직의 헌신이라는 더 넓은 맥락에서 읽습니다.", "listHref": "/columns", "listLabel": "칼럼 전체 보기"} : {"href": "/columns/politics-abandon-devotion-conviction-2026", "title": "Politics That Tells People to Abandon Dedication and Conviction—Does It Mean to Ruin the Country?", "relationship": "PROTECTING PROFESSIONAL JUDGMENT", "reason": "Read the preceding column on political incentives that encourage avoidance of responsibility and undermine public service.", "listHref": "/columns", "listLabel": "All columns"};
   if (kind === "column" && slug === "seed-thought-02-capable-limited-state") return language === "ko" ? {"href": "/columns/seed-thought-00-why-civic-movement-theory", "title": "씨앗의 소리는 왜 시민운동론에서 출발했나", "relationship": "씨앗의 출발점", "reason": "시민의 자율성과 권력의 책임을 살피는 씨앗의 판단 기준을 연재 여는 글에서 함께 읽습니다.", "listHref": "/series/seed-thought", "listLabel": "씨앗을 만든 생각 전체 보기"} : {"href": "/columns/seed-thought-00-why-civic-movement-theory", "title": "Why SEED VOICE Began with a Theory of Civic Action", "relationship": "THE FOUNDATIONS OF SEED", "reason": "Read the prologue explaining the standards behind SEED\u2019s concern for civic autonomy and public accountability.", "listHref": "/series/seed-thought", "listLabel": "All articles in this series"};
+  if (kind === "column" && slug === "peace-talks-north-korea-nuclear-threat-2026") return language === "ko" ? {
+    href: "/columns/us-midterms-korea-national-interest-2026",
+    title: "미국 민주당이 이겼다, 한국도 이긴 것인가",
+    relationship: "한미동맹과 대한민국의 선택",
+    reason: "미국의 국내 정치와 외교가 한국의 국익에 미치는 영향을 살펴봅니다.",
+    listHref: "/columns", listLabel: "칼럼 전체 보기",
+  } : {
+    href: "/columns/us-midterms-korea-national-interest-2026",
+    title: "Democrats Won America’s Midterms. Did Korea Win Too?",
+    relationship: "THE ALLIANCE AND KOREA’S CHOICES",
+    reason: "Read how American domestic politics and diplomacy affect Korean interests.",
+    listHref: "/columns", listLabel: "All columns",
+  };
   return getBaseEditorialContinuation(kind, slug, language);
 }
