@@ -474,6 +474,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
   if (kind === "column" && slug === "animal-farm-justice-benjamin-webtoon-2026") return true;
   if (kind === "column" && slug === "atr-taxpayer-movement-07-citizen-tax-watch") return true;
   if (kind === "column" && slug === "poland-coup-korea-constitutional-checks-2026") return true;
+  if (kind === "column" && slug === "citizens-dilemma-05-recycling-group-chat") return true;
   if (kind === "column" && slug === "citizens-dilemma-04-merging-fairness-safety") return true;
   if (kind === "column" && slug === "atr-taxpayer-movement-06-legislative-vote-accountability") return true;
   if (kind === "seed-language" && slug === "tolerance-social-cohesion-common-rules-2026") return true;
@@ -594,6 +595,19 @@ export function getEditorialContinuation(kind: EditorialContentKind, slug: strin
     relationship: "RELATED CIVIC BRIEFING",
     reason: "Continue from the legislative record to civic autonomy, fair competition and fiscal responsibility.",
     listHref: "/monitoring?view=trackers", listLabel: "All news trackers",
+  };
+  if (kind === "column" && slug === "citizens-dilemma-05-recycling-group-chat") return language === "ko" ? {
+    href: "/columns/citizens-dilemma-02-neighbor-noise",
+    title: "윗집에 항의하면, 나만 까다로운 사람이 될까?",
+    relationship: "이웃과 함께 읽는 시민의 딜레마",
+    reason: "같은 아파트에서 겪는 불편을 어떻게 말하고 조정할 수 있는지 살펴봅니다.",
+    listHref: "/series/citizens-dilemma", listLabel: "시민의 딜레마 전체 보기",
+  } : {
+    href: "/columns/citizens-dilemma-02-neighbor-noise",
+    title: "If I Complain About the Upstairs Noise, Will I Be the Difficult Neighbor?",
+    relationship: "EVERYDAY CIVIC DILEMMAS",
+    reason: "Read how neighbors can raise and resolve a recurring problem in a shared building.",
+    listHref: "/series/citizens-dilemma", listLabel: "All Everyday Civic Dilemmas",
   };
   if (kind === "column" && slug === "citizens-dilemma-04-merging-fairness-safety") return language === "ko" ? {
     href: "/columns/citizens-dilemma-03-escalator-etiquette",
