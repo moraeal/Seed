@@ -215,6 +215,7 @@ export default function Home() {
   // chapters are already available in the dedicated Editorial Series section.
   // The shared published-content registry prevents drafts from appearing here.
   const noMoreTaxSidebarPaths = new Set([
+    "/monitoring/tax/commentary/inheritance-taxpayer-rights-2026",
     "/monitoring/tax/commentary/wages-flat-tax-rises-faster-2026",
     "/columns/no-more-tax-increases-civic-declaration-2026",
     "/columns/france-fiscal-crisis-korea-spending-no-more-tax-2026",
