@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "column" && slug === "cabinet-appointments-rubber-stamps-2026") return true;
   if (kind === "column" && slug === "seed-thought-07-public-interest-programs") return true;
   if (kind === "seed-language" && slug === "peace-security-freedom-citizens-2026") return true;
   if (kind === "seed-language" && slug === "separation-of-powers-civic-liberty-2026") return true;
@@ -537,6 +538,19 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "cabinet-appointments-rubber-stamps-2026") return language === "ko" ? {
+    href: "/columns/politics-cruel-to-devoted-public-servants-2026",
+    title: "헌신한 사람들에게, 지금의 정치는 너무 잔인하다",
+    relationship: "공직의 전문성과 소신",
+    reason: "현장에서 전문성을 쌓은 공직자가 스스로 판단하고 책임질 수 있는 조건을 살펴봅니다.",
+    listHref: "/columns", listLabel: "칼럼 전체 보기",
+  } : {
+    href: "/columns/politics-cruel-to-devoted-public-servants-2026",
+    title: "Politics Is Too Cruel to Those Who Have Served with Dedication",
+    relationship: "PROFESSIONAL JUDGMENT IN PUBLIC SERVICE",
+    reason: "Read about the conditions that let experienced public servants exercise their judgment and take responsibility for their decisions.",
+    listHref: "/columns", listLabel: "All columns",
+  };
   if (kind === "seed-language" && slug === "peace-security-freedom-citizens-2026") return language === "ko" ? { href: "/columns/peace-talks-north-korea-nuclear-threat-2026", title: "평화를 말하는 동안, 북핵은 커지고 있다", relationship: "평화와 북핵", reason: "북핵 협상과 시민의 안전을 다룬 칼럼을 이어서 읽습니다.", listHref: "/seed-language", listLabel: "시민언어 전체 보기" } : { href: "/columns/peace-talks-north-korea-nuclear-threat-2026", title: "As Leaders Talk Peace, North Korea’s Nuclear Program Grows", relationship: "PEACE AND NUCLEAR SECURITY", reason: "Continue with our column on nuclear negotiations and civic safety.", listHref: "/seed-language", listLabel: "All civic language articles" };
   if (kind === "column" && slug === "citizens-remain-citizens-civic-independence-2026") return language === "ko" ? {
     href: "/columns/seed-thought-06-civic-organizations",

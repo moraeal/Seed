@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 421" role="img" aria-labelledby="chart-title">
+  <title id="chart-title">Assessment rankings and appointments</title>
+  <rect width="850" height="421" fill="#fbfaf6"/>
+  <rect x="24" y="93" width="802" height="49" rx="4" fill="#e9eee7"/>
+  <path d="M25 244H825 M25 350H825" stroke="#c8d3ca" stroke-width="2"/>
+  <g fill="#1c3129" font-family="Pretendard, Noto Sans CJK KR, Noto Sans, Arial, sans-serif">
+    <text x="35" y="62" font-size="42" font-weight="700">Assessment rankings and appointments</text>
+    <text x="37" y="126" font-size="23" font-weight="650" >Institution · Appointee</text>
+    <text x="412" y="126" font-size="23" font-weight="650" text-anchor="middle">Application</text>
+    <text x="565" y="126" font-size="23" font-weight="650" text-anchor="middle">Interview</text>
+    <text x="721" y="126" font-size="23" font-weight="650" text-anchor="middle">Decision</text>
+    <text x="37" y="187" font-size="27" font-weight="650">District Heating Corp.</text>
+    <text x="37" y="220" font-size="25">Ha Dong-geun</text>
+    <text x="412" y="203" font-size="31" font-weight="700" text-anchor="middle">8th of 8</text>
+    <text x="565" y="203" font-size="31" font-weight="700" text-anchor="middle">5th of 5</text>
+    <text x="721" y="203" font-size="26" font-weight="650" fill="#185743" text-anchor="middle">Appointed</text>
+    <text x="37" y="290" font-size="27" font-weight="650">Environmental Institute</text>
+    <text x="37" y="324" font-size="25">Nam Kwang-woo</text>
+    <text x="412" y="308" font-size="31" font-weight="700" text-anchor="middle">3rd</text>
+    <text x="565" y="308" font-size="31" font-weight="700" text-anchor="middle">2nd</text>
+    <text x="721" y="308" font-size="26" font-weight="650" fill="#185743" text-anchor="middle">Appointed</text>
+    <text x="36" y="385" font-size="19" fill="#516358">Source  Findings disclosed in the October 2026 National Assembly audit</text>
+  </g>
+</svg>
