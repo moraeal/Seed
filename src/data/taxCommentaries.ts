@@ -1,3 +1,4 @@
+import { researchLabLocalTaxCommentary } from "./researchLabLocalTax2026";
 import { residenceTaxFreedomCommentary } from "./residenceTaxFreedomCommentary2026";
 import { importedEggsCommentary } from "./importedEggsTax2026";
 import { gyeonggiLocalTaxCommentary } from "./gyeonggiLocalTaxCommentary2026";
@@ -57,6 +58,7 @@ export type TaxCommentary = {
 };
 
 export const taxCommentaries: TaxCommentary[] = [
+  researchLabLocalTaxCommentary,
   residenceTaxFreedomCommentary,
   importedEggsCommentary,
   gyeonggiLocalTaxCommentary,
