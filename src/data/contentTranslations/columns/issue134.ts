@@ -113,46 +113,16 @@ export const issue134: ColumnTranslation = {
     }
   ],
   "sourceNote": "The account of the summit is based on official public statements. The implications for US–China relations are SEED’s interpretation; the complete private conversation is not publicly known.",
-  "sources": [
-    {
-      "label": "Chinese Foreign Ministry, Xi–Lee summit statement (Nov. 18, 2026)",
-      "url": "https://www.mfa.gov.cn/wjdt_674879/gjldrhd_674881/202611/t20261118_12061802.shtml"
-    },
-    {
-      "label": "Office of the President of South Korea, written briefing on the summit (Nov. 18, 2026)",
-      "url": "https://www.korea.kr/briefing/presidentView.do?newsId=148975998"
-    },
-    {
-      "label": "Yonhap, Lee returns from ASEAN and APEC trip (Nov. 19, 2026)",
-      "url": "https://www.yna.co.kr/view/AKR20261119091000001"
-    },
-    {
-      "label": "South Korean Foreign Ministry, 1992 joint communiqué establishing diplomatic relations",
-      "url": "https://www.mofa.go.kr/cntntsDown.do?path=www&physic=11369_file_2009+dip60_appendix.pdf&real=11369_file_2009+dip60_appendix.pdf"
-    },
-    {
-      "label": "Chinese Foreign Ministry, statement on THAAD deployment (July 29, 2017)",
-      "url": "https://www.fmprc.gov.cn/mfa_eng/xw/fyrbt/fyrbt/202405/t20240530_11349538.html"
-    },
-    {
-      "label": "Yonhap, Seoul considers WTO action over THAAD retaliation (Mar. 7, 2017)",
-      "url": "https://en.yna.co.kr/view/AEN20170307002951315"
-    },
-    {
-      "label": "South Korean Foreign Ministry, joint statement on future vision (June 27, 2013)",
-      "url": "https://www.mofa.go.kr/www/brd/m_4076/view.do?page=587&seq=346617"
-    },
-    {
-      "label": "Penn & Mike TV, discussion of the Korea–China summit (Nov. 19, 2026; approximately minutes 0–15)",
-      "url": "https://www.youtube.com/watch?v=lvxqnT3_pIE"
-    },
-    {
-      "label": "SBS, report on Lee’s CCTV interview (Jan. 3, 2026)",
-      "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008390931"
-    },
-    {
-      "label": "Yonhap, Foreign Ministry statement on relocation of Yellow Sea platform (Feb. 3, 2026)",
-      "url": "https://www.yna.co.kr/view/AKR20260203085300504"
-    }
+  "sourceLabels": [
+    "Chinese Foreign Ministry, Xi–Lee summit statement (Nov. 18, 2026)",
+    "Office of the President of South Korea, written briefing on the summit (Nov. 18, 2026)",
+    "Yonhap, Lee returns from ASEAN and APEC trip (Nov. 19, 2026)",
+    "South Korean Foreign Ministry, 1992 joint communiqué establishing diplomatic relations",
+    "Chinese Foreign Ministry, statement on THAAD deployment (July 29, 2017)",
+    "Yonhap, Seoul considers WTO action over THAAD retaliation (Mar. 7, 2017)",
+    "South Korean Foreign Ministry, joint statement on future vision (June 27, 2013)",
+    "Penn & Mike TV, discussion of the Korea–China summit (Nov. 19, 2026; approximately minutes 0–15)",
+    "SBS, report on Lee’s CCTV interview (Jan. 3, 2026)",
+    "Yonhap, Foreign Ministry statement on relocation of Yellow Sea platform (Feb. 3, 2026)"
   ]
 };
