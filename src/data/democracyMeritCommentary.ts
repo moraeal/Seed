@@ -3,6 +3,13 @@ import type { LegislativeCommentary } from "./legislativeCommentaries";
 export const democracyMeritCommentary: LegislativeCommentary = {
   "slug": "democracy-merit-bill-admissions-fairness-2026",
   "billNo": "2200274",
+  "relatedExplainer": {
+    "href": "/monitoring/democracy-merit-bill-tracker-2026",
+    "title": {
+      "ko": "민주유공자법, 거부권 2년 반 만에 다시 본회의로",
+      "en": "South Korea’s Democratic Merit Bill Returns to the Floor Two and a Half Years After a Veto"
+    }
+  },
   "date": "2026-11-05",
   "readMinutes": 6,
   "heroSrc": "images/legislation/democracy-merit-2026/hero.webp",
