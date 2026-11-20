@@ -33,6 +33,7 @@ export const issue133: ColumnTranslation = {
       "title": "North Korea disappeared from the declaration as Yongbyon expanded",
       "paragraphs": [
         "The leaders of the United States, China and Russia met and promised dialogue on reducing nuclear risks and preventing proliferation. Their joint declaration did not mention North Korea’s nuclear program.[1]",
+        "For what peace means for civic safety and freedom, read [Can We Speak of Peace While Ignoring North Korea’s Nuclear Threat?](/seed-language/peace-security-freedom-citizens-2026/).",
         "A day earlier, the presidents of South Korea and China spoke of peace and stability on the peninsula. Seoul said it had requested a constructive Chinese role, but its public account contained no reference to denuclearization.[2]",
         "Meanwhile, North Korea’s nuclear facilities are growing. The International Atomic Energy Agency said an extension to the original uranium-enrichment plant at Yongbyon was externally complete by late October. Unable to inspect inside North Korea, the agency monitors developments through satellite imagery and open sources. Construction alone cannot tell us how many weapons North Korea has added, but it shows the program has not stood still.[3][4]",
         "For citizens, the nuclear threat is not diplomatic language. It is a condition of life. As three presidents spoke of peace, was that danger slipping to the back of the negotiating room?"

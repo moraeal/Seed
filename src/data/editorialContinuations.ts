@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "seed-language" && slug === "peace-security-freedom-citizens-2026") return true;
   if (kind === "seed-language" && slug === "separation-of-powers-civic-liberty-2026") return true;
   if (kind === "column" && slug === "us-midterms-korea-national-interest-2026") return true;
   if (kind === "column" && slug === "animal-farm-justice-benjamin-webtoon-2026") return true;
@@ -534,6 +535,7 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "seed-language" && slug === "peace-security-freedom-citizens-2026") return language === "ko" ? { href: "/columns/peace-talks-north-korea-nuclear-threat-2026", title: "평화를 말하는 동안, 북핵은 커지고 있다", relationship: "평화와 북핵", reason: "북핵 협상과 시민의 안전을 다룬 칼럼을 이어서 읽습니다.", listHref: "/seed-language", listLabel: "시민언어 전체 보기" } : { href: "/columns/peace-talks-north-korea-nuclear-threat-2026", title: "As Leaders Talk Peace, North Korea’s Nuclear Program Grows", relationship: "PEACE AND NUCLEAR SECURITY", reason: "Continue with our column on nuclear negotiations and civic safety.", listHref: "/seed-language", listLabel: "All civic language articles" };
   if (kind === "column" && slug === "citizens-remain-citizens-civic-independence-2026") return language === "ko" ? {
     href: "/columns/seed-thought-06-civic-organizations",
     title: "단체는 커졌는데 시민사회는 왜 약해졌나",
