@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:china-strategic-autonomy-sovereignty-2026": {
+    ko: { href: "/columns/china-north-korea-behind-part6-2026", title: "북한의 뒤에 중국이 있다", relationship: "우리에게 중국은 무엇인가 · ⑥편", reason: "중국과 북한의 관계가 한반도 안보에 미치는 영향을 앞선 기사에서 살펴본다.", listHref: "/series/china", listLabel: "우리에게 중국은 무엇인가 · 전체 연재" },
+    en: { href: "/columns/china-north-korea-behind-part6-2026", title: "China Stands Behind North Korea", relationship: "WHAT DOES CHINA MEAN TO KOREA? · PART 6", reason: "Read the preceding chapter on China, North Korea and security on the Korean Peninsula.", listHref: "/series/china", listLabel: "What Does China Mean to Korea? — All chapters" },
+  },
   "column:dying-pines-cannot-read-press-releases-2026": {
     ko: { href: "/seed-language/environment-shared-condition", title: "환경은 보호의 대상이 아니라 함께 만들어가는 삶의 조건이라는 말이다", relationship: "시민과 환경", reason: "숲을 지키는 실천에 이어 환경을 시민의 삶과 연결해 읽는다.", listHref: "/columns", listLabel: "칼럼 전체 보기" },
     en: { href: "/seed-language/environment-shared-condition", title: "The Environment Is a Shared Condition of Life", relationship: "CITIZENS AND THE ENVIRONMENT", reason: "Continue with how environmental protection connects to everyday civic life.", listHref: "/columns", listLabel: "All columns" },
