@@ -1,3 +1,4 @@
+import { inheritanceTaxpayerRights2026 } from "./inheritanceTaxpayerRights2026";
 import { wageInflationTax2026 } from "./wageInflationTax2026";
 import { researchLabLocalTaxCommentary } from "./researchLabLocalTax2026";
 import { residenceTaxFreedomCommentary } from "./residenceTaxFreedomCommentary2026";
@@ -59,6 +60,7 @@ export type TaxCommentary = {
 };
 
 export const taxCommentaries: TaxCommentary[] = [
+  inheritanceTaxpayerRights2026,
   wageInflationTax2026,
   researchLabLocalTaxCommentary,
   residenceTaxFreedomCommentary,
