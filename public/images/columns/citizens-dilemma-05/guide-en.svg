@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="620" viewBox="0 0 1080 620">
+<rect width="1080" height="620" fill="#f4f8f5"/>
+<rect x="0" y="0" width="1080" height="12" fill="#21634a"/>
+<g font-family="Pretendard, Noto Sans KR, Noto Sans CJK KR, sans-serif">
+<text x="52" y="94" fill="#153a2e" font-size="51" font-weight="700">Before Sharing a Recycling Photo</text>
+<rect x="52" y="139" width="976" height="128" rx="10" fill="#fff"/>
+<path d="M53 150v106" stroke="#479473" stroke-width="6"/>
+<text x="81" y="186" fill="#21634a" font-size="33" font-weight="700">What you saw</text>
+<text x="81" y="237" fill="#20342e" font-size="35" font-weight="500">Boxes blocked the way to the newspaper sack.</text>
+<rect x="52" y="288" width="976" height="128" rx="10" fill="#fff"/>
+<path d="M53 299v106" stroke="#479473" stroke-width="6"/>
+<text x="81" y="335" fill="#21634a" font-size="33" font-weight="700">What to verify</text>
+<text x="81" y="386" fill="#20342e" font-size="35" font-weight="500">Who left the boxes there?</text>
+<rect x="52" y="437" width="976" height="128" rx="10" fill="#fff"/>
+<path d="M53 448v106" stroke="#479473" stroke-width="6"/>
+<text x="81" y="484" fill="#21634a" font-size="33" font-weight="700">What to share</text>
+<text x="81" y="535" fill="#20342e" font-size="35" font-weight="500">A photo with the label hidden, the place and the time</text>
+</g>
+</svg>
