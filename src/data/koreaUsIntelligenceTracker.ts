@@ -15,16 +15,16 @@ export const koreaUsIntelligenceTracker: PublicInterestWatchCase = {
     "en": "An alliance said to be sound—why do intelligence restrictions remain?"
   },
   "summary": {
-    "ko": "3월 구성 핵시설 발언에서 10월 국감까지, 정부의 반박은 이어졌지만 제한된 협력이 어디까지 회복됐는지는 분명하지 않습니다. 장관의 해명이 국민의 안보를 대신할 수 없다는 기준으로 날짜별 변화와 쟁점을 추적합니다.",
-    "en": "From March remarks about Kusong to October parliamentary hearings, official rebuttals have continued without a clear public account of what restricted cooperation has been restored. This tracker tests reassurance against concrete security outcomes."
+    "ko": "3월 구성 핵시설 발언 이후의 한미 정보공유 제한을 추적합니다. 10월 29일 국회 정보위 국감에서 국정원장은 일부 정보 제한이 계속된다고 답했다고 여야 간사들이 전했습니다. 제한된 정보의 범위와 완전한 복원 여부는 공개적으로 확인되지 않았습니다.",
+    "en": "This tracker follows restrictions on U.S.–South Korea intelligence sharing after March remarks about the Kusong nuclear facility. Lawmakers said the intelligence chief acknowledged at an October 29 audit that some restrictions remained. The exact scope and full restoration of access have yet to be publicly established."
   },
   "status": {
-  "ko": "10월 14일 국정원 정정신청 발표·공유 복원 범위 미확인",
-  "en": "October 14 correction request announced · Scope of restoration remains unverified"
-},
+    "ko": "10월 29일 국감 · 국정원장, 일부 정보 제한 인정",
+    "en": "October 29 audit · Intelligence chief acknowledges partial restrictions"
+  },
   "openedAt": "2026-03-06",
   "publishedAt": "2026-10-13",
-  "updatedAt": "2026-10-28",
+  "updatedAt": "2026-11-20",
   "displayMode": "layered",
   "continuationEligible": false,
   "heroImage": {
@@ -44,10 +44,14 @@ export const koreaUsIntelligenceTracker: PublicInterestWatchCase = {
   },
   "snapshot": {
     "conclusion": {
-      "ko": "정동영 장관의 3월 6일 구성 핵시설 발언 뒤, 4월 일부 정보 공유 제한이 보도됐습니다. 정부는 공개 정보라는 근거로 반박했지만 10월에도 합참의장은 일부 제한을 인정했고 주미대사는 미국의 우려가 충분히 해소되지 않았다고 설명했습니다. 협력은 이어지고 있으나 완전한 복원은 공개적으로 확인되지 않았습니다. [4](https://news.tvchosun.com/site/data/html_dir/2026/04/21/2026042190171.html) [8](https://www.newsis.com/view/NISX20261010_0003820389) [12](https://www.yna.co.kr/view/AKR20261013002152071)",
-      "en": "After the minister's March 6 remarks about Kusong, partial intelligence restrictions were reported in April. The government disputed the disclosure allegation, yet in October the Joint Chiefs acknowledged remaining restrictions and the ambassador said US concerns were not sufficiently resolved. Cooperation continues; full restoration has not been publicly established. [4](https://news.tvchosun.com/site/data/html_dir/2026/04/21/2026042190171.html) [8](https://www.newsis.com/view/NISX20261010_0003820389) [12](https://www.yna.co.kr/view/AKR20261013002152071)"
+      "ko": "10월 29일 국감 뒤 여야 간사들은 이종석 국정원장이 일부 정보 제한을 인정하고 국정원 자산으로 보완할 수 있다고 설명했다고 전했습니다. 제한된 정보가 언제, 어느 범위까지 복원되는지 계속 확인합니다.",
+      "en": "After the October 29 audit, lawmakers said intelligence chief Lee Jong-seok acknowledged limited restrictions and said South Korea could fill the gap with its own intelligence assets. The timing and scope of any restoration remain open."
     },
     "keyFacts": [
+      {
+        "ko": "국회 정보위원회 여야 간사들의 국감 브리핑에 따르면, 이종석 국정원장은 정동영 통일부 장관의 구성 관련 발언 등을 계기로 한미 정보 협력에 일부 제한이 생겼다고 답했습니다. 국정원장은 제한 범위가 좁고 자체 정찰자산으로 보완할 수 있다고 설명했습니다. 브리핑에서 제한 대상의 전체 목록이나 해제 일정은 공개되지 않았습니다.",
+        "en": "According to the parliamentary intelligence committee’s bipartisan briefing, agency director Lee Jong-seok said some sharing was restricted following remarks by Unification Minister Chung Dong-young about Kusong, among other factors. Lee said the scope was narrow and the agency could compensate with its own reconnaissance assets. Lawmakers did not disclose a full list of restricted categories or a timetable for lifting them."
+      },
 {
   "ko": "국정원은 10월 14일 원장의 미국 기관 방문이 거부됐다는 보도에 대해 전날 언론중재위원회에 정정신청했다고 밝혔습니다. 여러 분야의 정보협력은 계속된다고 재차 설명했습니다. 정정신청은 보도의 허위가 확정됐다는 의미가 아니며, 이번 발표로 일부 정보공유 제한의 해제가 확인된 것도 아닙니다. [15](https://www.yna.co.kr/view/AKR20261014084800504)",
   "en": "On October 14, the NIS said it had filed a correction request the previous day over reporting that a US agency rejected its director’s visit. It reiterated that cooperation continued across several fields. The request is not a final finding that the report was false, nor does the announcement establish that the acknowledged restrictions were lifted. [15](https://www.yna.co.kr/view/AKR20261014084800504)"
@@ -81,6 +85,33 @@ export const koreaUsIntelligenceTracker: PublicInterestWatchCase = {
     ]
   },
   "timeline": [
+    {
+      "date": "2026-10-29",
+      "title": {
+        "ko": "국정원장, 국회 정보위 국감에서 일부 정보 제한 인정",
+        "en": "Intelligence chief acknowledges partial restrictions at parliamentary audit"
+      },
+      "description": {
+        "ko": "국회 정보위원회 여야 간사들의 국감 브리핑에 따르면, 이종석 국정원장은 정동영 통일부 장관의 구성 관련 발언 등을 계기로 한미 정보 협력에 일부 제한이 생겼다고 답했습니다. 국정원장은 제한 범위가 좁고 자체 정찰자산으로 보완할 수 있다고 설명했습니다. 브리핑에서 제한 대상의 전체 목록이나 해제 일정은 공개되지 않았습니다.",
+        "en": "According to the parliamentary intelligence committee’s bipartisan briefing, agency director Lee Jong-seok said some sharing was restricted following remarks by Unification Minister Chung Dong-young about Kusong, among other factors. Lee said the scope was narrow and the agency could compensate with its own reconnaissance assets. Lawmakers did not disclose a full list of restricted categories or a timetable for lifting them."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "kind": "article",
+          "publisher": {
+            "ko": "연합뉴스",
+            "en": "Yonhap News Agency"
+          },
+          "title": {
+            "ko": "정보위 국감에서 확인된 일부 정보 제한",
+            "en": "Partial restrictions acknowledged at intelligence committee audit"
+          },
+          "url": "https://www.yna.co.kr/view/AKR20261029156451001",
+          "publishedAt": "2026-10-29"
+        }
+      ]
+    },
 {
   "date": "2026-10-14",
   "title": {
@@ -554,6 +585,13 @@ export const koreaUsIntelligenceTracker: PublicInterestWatchCase = {
     "en": "Update the scope of restoration and participation when new hearing records, official statements or cyber-meeting results appear. Do not add unverified normalization or personnel demands as facts."
   },
   "keyChanges": [
+    {
+      "date": "2026-10-29",
+      "text": {
+        "ko": "국정원장, 국회 정보위 국감에서 일부 정보 제한 인정",
+        "en": "Intelligence chief acknowledges partial restrictions at parliamentary audit"
+      }
+    },
 {
   "date": "2026-10-14",
   "text": {
@@ -688,7 +726,21 @@ export const koreaUsIntelligenceTracker: PublicInterestWatchCase = {
     "en": "NIS announces correction request over reported rejection of US visit (Oct. 14, 2026)"
   },
   "url": "https://www.yna.co.kr/view/AKR20261014084800504"
-}
+},
+    {
+      "label": {
+        "ko": "연합뉴스 · 정보위 국감에서 확인된 일부 정보 제한",
+        "en": "Yonhap News Agency · Partial restrictions acknowledged at intelligence committee audit"
+      },
+      "url": "https://www.yna.co.kr/view/AKR20261029156451001"
+    },
+    {
+      "label": {
+        "ko": "뉴시스 · 국정원 국정감사 및 여야 간사 브리핑",
+        "en": "Newsis · Intelligence agency audit and bipartisan briefing"
+      },
+      "url": "https://mobile.newsis.com/view/NISX20261029_0003846979"
+    }
   ],
   "relatedContents": [
     {

@@ -15,19 +15,19 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     en: "Will Merging the Service Academies Make the Military Stronger?",
   },
   summary: {
-    ko: "정부는 육·해·공군 사관학교를 대전 자운대의 4년제 국군사관학교로 통합하는 기본계획을 발표했습니다. 씨앗은 초기 2+2 구상에서 4년 통합안으로 바뀐 과정, ROTC·학사장교의 교육 공백, 공청회와 입법, 비용과 부지 활용, 신임 국방부 장관의 수정 여부를 계속 기록합니다.",
-    en: "The government has proposed merging the Army, Navy and Air Force academies into a four-year Armed Forces Academy at Jaun-dae in Daejeon. SEED tracks the shift from an early two-plus-two model to full co-location, gaps in ROTC and officer-candidate education, hearings and legislation, cost and campus reuse, and any revisions under the new defense minister.",
+    "ko": "국방부는 11월 18일 4년 통합교육안을 수정했습니다. 2029학년도 신입생부터 1·4학년은 함께, 2·3학년은 각 군 사관학교에서 교육하고 선발도 각 군이 맡는다는 계획입니다. 충청권 육사 이전 부지, 설치법, 총사업비와 ROTC·학사장교 교육 방안을 추적합니다.",
+    "en": "On November 18, the Defense Ministry revised its plan for four years of joint instruction. Starting with the 2029 intake, cadets would train jointly in years one and four and at their service academies in years two and three. Each service would continue to select its cadets. This tracker follows the Army academy’s new site, legislation, costs and officer training outside the academies."
   },
   status: {
-  "ko": "10월 세부계획 발표 지연·전문교육과 의견수렴 쟁점",
-  "en": "October plan delayed · Specialist training and consultation remain at issue"
-},
+    "ko": "11월 18일 수정안 · 1·4학년 통합, 2·3학년 군별 교육",
+    "en": "November 18 revision · Joint instruction in years one and four"
+  },
   openedAt: "2025-06-26",
   publishedAt: "2026-09-17",
-  updatedAt: "2026-10-28",
+  updatedAt: "2026-11-20",
   nextCheck: {
-    ko: "대통령의 10월 1일 신속 추진 지시 뒤 세부계획의 통합 선발 시점과 방식, 자운대 이전 일정·총사업비, 각 군 전문교육 시설, ROTC·학사장교 합동교육 확대안, 정부·여당의 국군사관학교 설치법 제출 여부와 분리 유지 법안 심사, 2028년 예산 편성 전 선행연구 일정",
-    en: "Following the president's October 1 call for faster action: the detailed plan's admissions timing and model, Jaun-dae schedule and full cost, service-specific facilities, expanded joint education for ROTC and officer candidates, filing of the governing party's Armed Forces Academy bill, review of the competing separation bill, and studies required before possible 2028 funding",
+    "ko": "국군사관학교 설치법 발의·심사, 충청권 육사 이전 부지 선정, 자운대 공동교육 시설과 총사업비, 2029학년도 모집 일정, ROTC·학사장교 합동교육 계획 공개를 확인합니다.",
+    "en": "Follow the academy bill, selection of a new Army academy site in the Chungcheong region, joint-training facilities and costs at Jaun-dae, the 2029 admissions calendar and joint training for ROTC and officer candidates."
   },
   heroImage: {
     src: "images/monitoring/military-academy-integration-tracker.webp",
@@ -49,10 +49,17 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     en: "This tracker cross-checks the Defense Ministry's July 2026 basic plan and August 26 hearing video, reporting based on Army commissioning-route data submitted to the National Assembly, the government's September 1 budget proposal for 2027, the September 10 bill to preserve separate academies, and the defense minister nominee's September 16 testimony. It distinguishes pre-announcement two-plus-two and Jangseong concepts from the announced four-year Jaun-dae model.",
   },
   caution: {
-    ko: "국군사관학교의 첫 통합 선발 시점, 이전 완료 시기와 총사업비는 아직 확정되지 않았습니다. 2027년도 정부 예산안에는 창설 사업비가 별도 반영되지 않았고, 2028년 편성은 선행연구 뒤 검토하는 단계입니다. 2028년 출범과 2032~2036년 이전도 확정 일정이 아닙니다. 9월 10일 발의된 법안은 현 사관학교의 분리·소재지 유지를 요구하는 의원안으로, 통합을 중단시킨 확정 법률이 아닙니다. ‘정치적 징벌’은 공식 확인된 목적이 아니라 대통령과 국방부의 역사 단절 발언에서 제기된 해석입니다.",
-    en: "The first integrated class, relocation completion date and total cost remain unsettled. The government's 2027 budget proposal contains no dedicated academy-merger funding; possible 2028 funding remains under review after preliminary studies. A 2028 launch and 2032–36 relocation are also not confirmed schedules. The September 10 member's bill would preserve the separate academies and their current locations; it is not enacted law and has not halted the merger. Political punishment is an interpretation prompted by official historical-rupture language, not a confirmed stated purpose.",
+    "ko": "국방부는 2029학년도 신입생부터 개편안을 적용할 계획이라고 밝혔습니다. 각 군이 생도를 계속 선발하며, 육사 이전 부지와 총사업비, 시설 확보 일정은 후속 절차에서 확인할 사안입니다. 9월 10일 발의된 분리 유지안은 의원안입니다. ‘정치적 징벌’은 정부의 역사 단절 발언에서 제기된 해석입니다.",
+    "en": "The ministry plans to introduce the model for the 2029 intake. Each service would continue to select its cadets. The new Army academy site, total costs and construction schedule remain to be established. The September 10 bill to keep the academies separate is a member’s proposal. Political punishment is an interpretation of official statements about breaking with the past."
   },
   keyChanges: [
+    {
+      "date": "2026-11-18",
+      "text": {
+        "ko": "국방부, 4년 통합안 수정해 1·2·1 교육체계 발표",
+        "en": "Defense Ministry replaces four-year merger plan with a 1–2–1 model"
+      }
+    },
 {
   "date": "2026-10-23",
   "text": {
@@ -118,6 +125,33 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      "date": "2026-11-18",
+      "title": {
+        "ko": "국방부, 4년 통합안 수정해 1·2·1 교육체계 발표",
+        "en": "Defense Ministry replaces four-year merger plan with a 1–2–1 model"
+      },
+      "description": {
+        "ko": "국방부는 당정협의에서 국군사관학교 창설 기본계획 수정안을 공개했습니다. 2029학년도 신입생부터 1·4학년은 대전 자운대의 통합본교에서, 2·3학년은 각 군 사관학교에서 교육한다는 계획입니다. 선발과 하계 군사훈련은 각 군이 맡습니다. 육사는 충청권 이전을 추진하고 해사와 공사는 기존 부지를 활용합니다. 후속 입법과 부지 선정, 예산 편성은 별도로 확인합니다.",
+        "en": "The ministry unveiled its revised academy blueprint after consultations with the ruling party. Beginning with the 2029 intake, the plan calls for joint first- and fourth-year instruction at Jaun-dae in Daejeon, with years two and three at the service academies. Each service would retain admissions and summer training. The Army academy would move to the Chungcheong region, while the Navy and Air Force academies would use their existing sites. Legislation, site selection and funding remain separate steps."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "kind": "document",
+          "publisher": {
+            "ko": "국방부·정책브리핑",
+            "en": "Defense Ministry · Korea Policy Briefing"
+          },
+          "title": {
+            "ko": "국군사관학교 창설 기본계획 수정안",
+            "en": "Revised blueprint for the Armed Forces Academy"
+          },
+          "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148975989",
+          "publishedAt": "2026-11-18"
+        }
+      ]
+    },
 {
   "date": "2026-10-23",
   "title": {
@@ -454,6 +488,10 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
   ],
   confirmedFacts: [
     {
+      "ko": "국방부는 당정협의에서 국군사관학교 창설 기본계획 수정안을 공개했습니다. 2029학년도 신입생부터 1·4학년은 대전 자운대의 통합본교에서, 2·3학년은 각 군 사관학교에서 교육한다는 계획입니다. 선발과 하계 군사훈련은 각 군이 맡습니다. 육사는 충청권 이전을 추진하고 해사와 공사는 기존 부지를 활용합니다. 후속 입법과 부지 선정, 예산 편성은 별도로 확인합니다.",
+      "en": "The ministry unveiled its revised academy blueprint after consultations with the ruling party. Beginning with the 2029 intake, the plan calls for joint first- and fourth-year instruction at Jaun-dae in Daejeon, with years two and three at the service academies. Each service would retain admissions and summer training. The Army academy would move to the Chungcheong region, while the Navy and Air Force academies would use their existing sites. Legislation, site selection and funding remain separate steps."
+    },
+    {
       ko: "7월 16일 기본계획은 대전 자운대에서 4년간 통합교육하는 국군사관학교를 제시했지만 첫 통합 입학 연도를 확정하지 않았습니다.",
       en: "The July 16 plan proposed four years of integrated education at Jaun-dae but did not set the first integrated admissions year.",
     },
@@ -576,6 +614,20 @@ export const militaryAcademyIntegrationTracker: PublicInterestWatchCase = {
     "en": "Detailed academy merger plan delayed (Oct. 23, 2026)"
   },
   "url": "https://www.seoul.co.kr/news/politics/diplomacy/2026/10/23/20261023500293"
-}
+},
+    {
+      "label": {
+        "ko": "국방부·정책브리핑 · 국군사관학교 창설 기본계획 수정안",
+        "en": "Defense Ministry · Korea Policy Briefing · Revised blueprint for the Armed Forces Academy"
+      },
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148975989"
+    },
+    {
+      "label": {
+        "ko": "연합뉴스 · 육사 충청권 이전, 국군사관학교 1+2+1 학제",
+        "en": "Yonhap News Agency · Army academy move and the 1–2–1 education model"
+      },
+      "url": "https://www.yna.co.kr/view/AKR20261118032254001"
+    }
   ],
 };

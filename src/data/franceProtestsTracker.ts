@@ -16,16 +16,16 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
     "en": "Why France erupted: Public promises, national debt and anger on the streets"
   },
   "summary": {
-    "ko": "학교 현장에서 시작된 항의가 생활비·공공서비스 불만과 결합해 전국 시위로 번졌습니다. 프랑스 정부는 10월 26일 교원·시설·대입 제도 대책을 발표했지만 학생 대표들은 시위를 이어가겠다고 밝혔습니다. 새 약속의 예산과 이행, 거리의 요구 변화를 구분해 추적합니다.",
-    "en": "School protests converged with wider grievances over living costs and public services. France announced measures on teachers, facilities and admissions on October 26, but student representatives said protests would continue. This record tracks the new commitments, funding, implementation and evolving demands."
+    "ko": "학교에서 시작된 항의는 생활비와 공공서비스에 대한 불만과 겹치며 전국으로 퍼졌습니다. 프랑스 법무부는 11월 10일 고교생 시위와 관련해 사법기관에 넘겨진 미성년자 1,504명의 자료를 분석한 보고서를 공개했습니다. 체포·사법 절차와 함께 10월 26일 교육대책의 재원과 집행을 추적합니다.",
+    "en": "School protests spread nationwide as anger over living costs and public services grew. On November 10 France’s Justice Ministry published a study of 1,504 minors referred to judicial authorities in connection with the high-school protests. This tracker follows judicial proceedings and how the October 26 education measures are funded and delivered."
   },
   "status": {
-    "ko": "10월 26일 교육대책 발표 · 예산·이행과 추가 집회 추적",
-    "en": "October 26 education package · Funding, delivery and protests tracked"
+    "ko": "프랑스 법무부, 시위 관련 미성년자 1,504명 분석 공개",
+    "en": "Justice Ministry publishes study of 1,504 minors referred to judicial authorities"
   },
   "openedAt": "2026-09-21",
   "publishedAt": "2026-10-20",
-  "updatedAt": "2026-10-28",
+  "updatedAt": "2026-11-20",
   "continuationEligible": false,
   "displayMode": "layered",
   "heroImage": {
@@ -115,10 +115,14 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
   ],
   "snapshot": {
     "conclusion": {
-      "ko": "학교와 생활비 불만이 합쳐진 전국 시위는 10월 17일 이후 심각한 폭력 사태로 비화했다. 재정적자가 큰 정부는 교육·임금·가격 지원 요구를 수용할 여력이 제한적이고, 정치 불안은 2027년 예산 처리까지 어렵게 하고 있다.",
-      "en": "School and cost-of-living anger converged into nationwide protests, followed by serious violence after October 17. Fiscal pressure limits concessions while unrest complicates passage of the 2027 budget."
+      "ko": "프랑스 법무부가 9월 고교생 시위와 관련해 10월 9일까지 사법기관에 넘겨진 미성년자 1,504명을 분석했습니다. 학생들의 요구에 정부가 내놓은 교원 확충과 시설 개선 대책은 예산과 실제 집행을 따로 확인할 사안입니다.",
+      "en": "The French Justice Ministry studied 1,504 minors referred to judicial authorities by October 9 in connection with the high-school protests that began in September. The government’s proposals on teachers and school facilities still require funding and implementation."
     },
     "keyFacts": [
+      {
+        "ko": "프랑스 법무부는 고교생 시위와 관련해 10월 9일까지 사법기관에 넘겨진 미성년자 1,504명의 사회·교육 자료를 분석해 공개했습니다. 연구 대상의 평균 연령은 16세였고, 다수는 사법 전력이 없었습니다. 보고서가 다루는 범위는 사법기관에 넘겨진 미성년자까지입니다. 전체 시위 참가자 규모나 유죄 확정 인원은 이 연구에서 확인할 수 없습니다.",
+        "en": "France’s Justice Ministry released an analysis of social and educational assessments for 1,504 minors referred to judicial authorities by October 9 in connection with the high-school protests. Their average age was 16, and most had no prior judicial history. The study covers minors referred to the courts. It does not measure overall protest turnout or convictions."
+      },
       {"ko": "프랑스 정부는 26일 현지시간 교원 확충과 대입 플랫폼 개선, 학교시설 지원을 발표했습니다. 시설 지원은 중고교에 대한 저리대출과 대학 예산 투입을 포함한 향후 계획입니다. 학생 대표들은 일부 조치를 환영하면서도 시위 지속 입장을 밝혔습니다. 발표와 예산 확보·현장 이행을 나누어 확인합니다.", "en": "On October 26 local time, France announced more teaching posts, admissions-platform changes and school-facility support. The package includes future loans for secondary-school facilities and university spending. Student representatives welcomed some measures but said protests would continue. Announcements, funding and delivery remain distinct stages."},
       {
         "ko": "직접 발단: 9월 고교생 교육환경·교원 부족 항의",
@@ -150,6 +154,13 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
   },
   "keyChanges": [
     {
+      "date": "2026-11-10",
+      "text": {
+        "ko": "프랑스 법무부, 고교생 시위 관련 미성년자 1,504명 분석",
+        "en": "French Justice Ministry publishes study of 1,504 minors from high-school protests"
+      }
+    },
+    {
       "date": "2026-10-26",
       "text": {
         "ko": "프랑스, 교원·학교시설·대입 개선 대책 발표",
@@ -179,6 +190,33 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
     }
   ],
   "timeline": [
+    {
+      "date": "2026-11-10",
+      "title": {
+        "ko": "프랑스 법무부, 고교생 시위 관련 미성년자 1,504명 분석",
+        "en": "French Justice Ministry publishes study of 1,504 minors from high-school protests"
+      },
+      "description": {
+        "ko": "프랑스 법무부는 고교생 시위와 관련해 10월 9일까지 사법기관에 넘겨진 미성년자 1,504명의 사회·교육 자료를 분석해 공개했습니다. 연구 대상의 평균 연령은 16세였고, 다수는 사법 전력이 없었습니다. 보고서가 다루는 범위는 사법기관에 넘겨진 미성년자까지입니다. 전체 시위 참가자 규모나 유죄 확정 인원은 이 연구에서 확인할 수 없습니다.",
+        "en": "France’s Justice Ministry released an analysis of social and educational assessments for 1,504 minors referred to judicial authorities by October 9 in connection with the high-school protests. Their average age was 16, and most had no prior judicial history. The study covers minors referred to the courts. It does not measure overall protest turnout or convictions."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "publisher": {
+            "ko": "프랑스 법무부",
+            "en": "French Ministry of Justice"
+          },
+          "title": {
+            "ko": "고교생 시위 관련 사법기관에 넘겨진 미성년자 분석",
+            "en": "Study of minors referred to judicial authorities in the high-school protests"
+          },
+          "kind": "document",
+          "url": "https://www.justice.gouv.fr/documentation/ressources/etude-flash-profil-mineurs-deferes-cadre-du-mouvement-lyceen",
+          "publishedAt": "2026-11-10"
+        }
+      ]
+    },
     {
       "date": "2026-10-26",
       "title": {
@@ -642,8 +680,8 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
     }
   ],
   "nextCheck": {
-    "ko": "다음 갱신에서 ① 추가 집회·통행금지의 지속 여부 ② 공식 체포·피해 수치의 수정 ③ 2027 예산안 의회 심의·수정 ④ 프랑스 국채금리와 신용평가 추이 ⑤ 학교 정상화 조치를 확인한다.",
-    "en": "Next update: further demonstrations and curfews; revised official arrest/damage counts; parliament's 2027 budget deliberations; bond spreads and ratings; and concrete steps toward school normalization."
+    "ko": "후속 집회와 사법 처리 결과, 10월 26일 교육대책의 예산·집행, 2027년 예산안의 의회 심의, 국채금리와 신용평가 추이를 확인합니다.",
+    "en": "Follow further protests, judicial outcomes, funding and implementation of the October 26 education measures, parliamentary review of the 2027 budget, and bond yields and credit ratings."
   },
   "relatedContents": [
     {
@@ -755,6 +793,20 @@ export const franceProtestsTracker: PublicInterestWatchCase = {
     {"label": {"ko":"Wikimedia Commons · Jorge Jaramillo · 10월17일 경찰 대응 현장","en":"Wikimedia Commons · Jorge Jaramillo · Paris police 17 Oct"}, "url": "https://commons.wikimedia.org/wiki/File:Paris%20riots%2C%2017%20October%202026%20-%20Police%20line%20and%20street%20fires%20at%20dusk%20-%20JJxFile%200091.jpg"},
     {"label": {"ko":"Wikimedia Commons · GFreihalter · 2026년 파리 구 증권거래소 건물 자료사진","en":"Wikimedia Commons · GFreihalter · Paris former exchange building, 2026"}, "url": "https://commons.wikimedia.org/wiki/File:Paris%202e%20Palais%20Brongniart%20894.jpg"},
     {"label": {"ko":"Wikimedia Commons · Philippe Alès · 프랑스 국민의회 의사당 자료사진","en":"Wikimedia Commons · Philippe Alès · Palais Bourbon archive photo"}, "url": "https://commons.wikimedia.org/wiki/File:Assembl%C3%A9e%20Nationale%2C%20Palais%20Bourbon.jpg"},
+    {
+      "label": {
+        "ko": "프랑스 법무부 · 고교생 시위 관련 사법기관에 넘겨진 미성년자 분석",
+        "en": "French Ministry of Justice · Study of minors referred to judicial authorities in the high-school protests"
+      },
+      "url": "https://www.justice.gouv.fr/documentation/ressources/etude-flash-profil-mineurs-deferes-cadre-du-mouvement-lyceen"
+    },
+    {
+      "label": {
+        "ko": "TF1 Info · 프랑스 법무부 미성년자 분석 보도",
+        "en": "TF1 Info · Coverage of the Justice Ministry study"
+      },
+      "url": "https://www.tf1info.fr/politique/en-direct-colere-sociale-greve-du-10-decembre-journee-de-mobilisation-manifestation-dans-l-education-lyceens-etudiants-enseignantsce-mardi-les-dernieres-actualites-2474914.html"
+    },
   ],
   "bodyImages": [
       {

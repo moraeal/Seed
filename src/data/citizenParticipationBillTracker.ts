@@ -16,16 +16,16 @@ export const citizenParticipationBillTracker: PublicInterestWatchCase = {
     "en": "Citizen Participation Framework Bill: Who Shaped It, and Where Does It Stand?"
   },
   "summary": {
-    "ko": "대선 정책협약에서 발의와 국회 계류까지 추적합니다. 2025년 12월 31일 발의된 법안은 공개 자료상 행정안전위원회 심사 단계입니다. 참여권 보장과 함께 위원 인선, 지원조직의 권한과 예산을 살펴봅니다.",
-    "en": "From a presidential campaign agreement to introduction and committee review, this tracker follows a proposal to institutionalize civic participation in South Korea. Public records place it in standing-committee review; appointments, support bodies and costs remain central questions."
+    "ko": "대선 정책협약에서 국회 상임위원회 심사까지 시민참여기본법의 경과를 추적합니다. 법 제정을 추진하는 시민사회단체는 11월 4일 국회에서 기자회견을 열고 연내 제정과 국가시민참여위원회 설치를 요구했습니다. 국회 심사와 함께 위원 인선, 지원조직의 권한과 예산을 살펴봅니다.",
+    "en": "This tracker follows the Citizen Participation Framework Bill from a campaign agreement to committee review. On November 4, a coalition of civic groups held a press conference at the National Assembly calling for passage by year-end and creation of a national participation commission. SEED follows committee proceedings, appointments, support bodies and public funding."
   },
   "status": {
-    "ko": "행정안전위원회 심사 · 연내 제정 촉구 활동",
-    "en": "Committee review · Campaign for year-end enactment"
+    "ko": "시민사회추진위 국회 기자회견 · 행안위 심사 단계",
+    "en": "Coalition makes its case at parliament · Bill remains in committee"
   },
   "openedAt": "2018-03-08",
   "publishedAt": "2026-11-01",
-  "updatedAt": "2026-11-01",
+  "updatedAt": "2026-11-20",
   "continuationEligible": false,
   "heroImage": {
     "src": "/images/monitoring/citizen-participation-2026/hero.webp",
@@ -86,6 +86,33 @@ export const citizenParticipationBillTracker: PublicInterestWatchCase = {
     "en": "The November 3 meeting and November 4 Assembly visit are scheduled activities. The government’s December enactment target is not a confirmed parliamentary timetable, and the partial cost estimate is not total program spending."
   },
   "timeline": [
+    {
+      "date": "2026-11-04",
+      "title": {
+        "ko": "시민사회추진위, 국회에서 연내 제정 촉구",
+        "en": "Civic coalition urges passage by year-end at National Assembly"
+      },
+      "description": {
+        "ko": "시민사회추진위원회와 공동주최 의원들은 국회 소통관에서 기자회견을 열고 시민참여기본법의 연내 제정과 국가시민참여위원회 설치를 요구했습니다. 추진위는 이날을 국회 집중방문의 날로 정했습니다. 이 기록은 추진단체가 공개한 기자회견을 확인한 것으로, 상임위의 의결 및 개별 의원들의 입장 표명 여부는 따로 확인합니다.",
+        "en": "The civic coalition and co-hosting lawmakers held a press conference at the Assembly press center, calling for passage by year-end and creation of a national civic participation commission. The coalition designated the day for parliamentary outreach. The organizers’ public record confirms the press conference. A committee decision and individual legislators’ positions require separate verification."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "kind": "document",
+          "publisher": {
+            "ko": "시민사회단체연대회의",
+            "en": "Civil Society Organizations Network in Korea"
+          },
+          "title": {
+            "ko": "시민참여기본법 제정 촉구 국회 기자회견 기록",
+            "en": "Organizer’s record of National Assembly press conference"
+          },
+          "url": "https://imweb3100150730.imweb.me/act/?bmode=view&idx=175417968&q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&t=board",
+          "publishedAt": "2026-11-04"
+        }
+      ]
+    },
     {
       "date": "2026-10-19",
       "title": {
@@ -728,18 +755,6 @@ export const citizenParticipationBillTracker: PublicInterestWatchCase = {
       ]
     },
     {
-      "date": "2026-11-04",
-      "title": {
-        "ko": "시민사회추진위 국회 방문 활동 예정",
-        "en": "Coalition’s Assembly visit scheduled"
-      },
-      "description": {
-        "ko": "추진위가 국회의원 면담과 연내 제정 약속 요청을 위해 계획한 활동입니다. 국회 공식 심사 일정이나 법안 의결일이 아닙니다. [5]",
-        "en": "The coalition plans lawmaker meetings and requests for enactment pledges. This is not a formal committee hearing or a confirmed passage date. [5]"
-      },
-      "status": "pending"
-    },
-    {
       "date": "2018-03-08",
       "title": {
         "ko": "진선미 의원, 시민사회 발전 기본법안 발의",
@@ -903,6 +918,10 @@ export const citizenParticipationBillTracker: PublicInterestWatchCase = {
     }
   ],
   "confirmedFacts": [
+    {
+      "ko": "시민사회추진위원회와 공동주최 의원들은 국회 소통관에서 기자회견을 열고 시민참여기본법의 연내 제정과 국가시민참여위원회 설치를 요구했습니다. 추진위는 이날을 국회 집중방문의 날로 정했습니다. 이 기록은 추진단체가 공개한 기자회견을 확인한 것으로, 상임위의 의결 및 개별 의원들의 입장 표명 여부는 따로 확인합니다.",
+      "en": "The civic coalition and co-hosting lawmakers held a press conference at the Assembly press center, calling for passage by year-end and creation of a national civic participation commission. The coalition designated the day for parliamentary outreach. The organizers’ public record confirms the press conference. A committee decision and individual legislators’ positions require separate verification."
+    },
     {
       "ko": "추적 대상은 이해식 의원 등 29명이 2025년 12월 31일 발의한 「시민참여기본법안」(2215823)입니다. 공개 자료상 행정안전위원회 소관위심사 단계입니다. [1] [16]",
       "en": "This tracker concerns Bill 2215823, introduced by Lee Hae-sik and 28 other lawmakers on December 31, 2025. Public records show it at the competent standing-committee review stage. [1] [16]"
@@ -1228,6 +1247,13 @@ export const citizenParticipationBillTracker: PublicInterestWatchCase = {
         "ko": "2025-11-06 안내, 행사일 11월 18일",
         "en": "Notice dated November 6, 2025; event held November 18"
       }
+    },
+    {
+      "label": {
+        "ko": "시민사회단체연대회의 · 시민참여기본법 제정 촉구 국회 기자회견 기록",
+        "en": "Civil Society Organizations Network in Korea · Organizer’s record of National Assembly press conference"
+      },
+      "url": "https://imweb3100150730.imweb.me/act/?bmode=view&idx=175417968&q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&t=board"
     }
   ]
 };
