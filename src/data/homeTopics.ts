@@ -13,6 +13,11 @@ const homeTopicGroups: Record<string, string[]> = {
   "erdoganization-state-power-2026": ["/briefings/lee-erdoganization-state-power-civic-briefing-2026"],
   "alliance-costs-philippines-turkiye-2026": ["/columns/philippines-turkiye-turning-away-us-alliance-warning-2026"],
   "citizen-participation-framework-bill-2026": ["/monitoring/citizen-participation-framework-bill-tracker-2026"],
+  "democracy-merit-bill-2200274": [
+    "/monitoring/democracy-merit-bill-tracker-2026",
+    "/monitoring/legislation/commentary/democracy-merit-bill-admissions-fairness-2026",
+    "/columns/nameless-citizens-democracy-2026",
+  ],
   "social-economy-framework-law": ["/monitoring/social-economy-framework-law-tracker", "/briefings/social-solidarity-economy-law-conservative-silence"],
   "public-service-devotion-conviction": ["/columns/emergency-room-warrant-defensive-medicine-2026", "/columns/politics-abandon-devotion-conviction-2026", "/columns/politics-cruel-to-devoted-public-servants-2026"],
   "atr-legislative-accountability": ["/columns/atr-taxpayer-movement-06-legislative-vote-accountability"],

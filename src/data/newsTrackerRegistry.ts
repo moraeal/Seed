@@ -1,4 +1,5 @@
 import { citizenParticipationBillTracker } from "./citizenParticipationBillTracker";
+import { democracyMeritBillTracker } from "./democracyMeritBillTracker";
 import { socialEconomyFrameworkLawTracker } from "./socialEconomyFrameworkLawTracker";
 import { koreaUsIntelligenceTracker } from "./koreaUsIntelligenceTracker";
 import { bankingPrivacyTracker } from "./bankingPrivacyTracker";
@@ -15,6 +16,7 @@ import { dmzMineBlastTracker } from "./dmzMineBlastTracker";
 import { franceProtestsTracker } from "./franceProtestsTracker";
 
 export const publicInterestWatchCases = [
+  democracyMeritBillTracker,
   citizenParticipationBillTracker,
   socialEconomyFrameworkLawTracker,
   franceProtestsTracker,
@@ -29,6 +31,7 @@ export const publicInterestWatchCases = [
 ];
 
 export const newsTrackerCases = [
+  democracyMeritBillTracker,
   citizenParticipationBillTracker,
   socialEconomyFrameworkLawTracker,
   franceProtestsTracker,
@@ -43,6 +46,7 @@ export const newsTrackerCases = [
 ];
 
 export function getPublicInterestWatchCase(slug: string) {
+  if (slug === democracyMeritBillTracker.slug) return democracyMeritBillTracker;
   if (slug === citizenParticipationBillTracker.slug) return citizenParticipationBillTracker;
   if (slug === socialEconomyFrameworkLawTracker.slug) return socialEconomyFrameworkLawTracker;
   if (slug === franceProtestsTracker.slug) return franceProtestsTracker;
