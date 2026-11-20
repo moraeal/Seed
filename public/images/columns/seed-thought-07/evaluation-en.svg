@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 660" width="780" height="660" role="img" aria-labelledby="title">
+  <title id="title">Evaluating a public program</title>
+  <rect width="780" height="660" fill="#eaf1e8"/>
+  <g font-family="Pretendard, Noto Sans KR, Noto Sans CJK KR, sans-serif">
+    <text x="24" y="65" font-size="45" font-weight="700" fill="#17392f">Evaluating a public program</text>
+    <g transform="translate(24 95)">
+      <rect width="732" height="120" rx="10" fill="#fffdf9"/>
+      <circle cx="44" cy="39" r="21" fill="#235745"/>
+      <text x="44" y="48" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">1</text>
+      <text x="82" y="50" font-size="35" font-weight="700" fill="#235745">Define the problem</text>
+      <text x="82" y="96" font-size="34" font-weight="500" fill="#17392f">Whose experience shaped the plan?</text>
+    </g>
+    <g transform="translate(24 235)">
+      <rect width="732" height="120" rx="10" fill="#fffdf9"/>
+      <circle cx="44" cy="39" r="21" fill="#235745"/>
+      <text x="44" y="48" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">2</text>
+      <text x="82" y="50" font-size="35" font-weight="700" fill="#235745">Commission the work</text>
+      <text x="82" y="96" font-size="34" font-weight="500" fill="#17392f">Can feedback change the plan?</text>
+    </g>
+    <g transform="translate(24 375)">
+      <rect width="732" height="120" rx="10" fill="#fffdf9"/>
+      <circle cx="44" cy="39" r="21" fill="#235745"/>
+      <text x="44" y="48" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">3</text>
+      <text x="82" y="50" font-size="35" font-weight="700" fill="#235745">Evaluate results</text>
+      <text x="82" y="96" font-size="34" font-weight="500" fill="#17392f">Who could not use the program?</text>
+    </g>
+    <g transform="translate(24 515)">
+      <rect width="732" height="120" rx="10" fill="#fffdf9"/>
+      <circle cx="44" cy="39" r="21" fill="#235745"/>
+      <text x="44" y="48" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">4</text>
+      <text x="82" y="50" font-size="35" font-weight="700" fill="#235745">Set next year’s budget</text>
+      <text x="82" y="96" font-size="34" font-weight="500" fill="#17392f">What changed, and where?</text>
+    </g>
+  </g>
+</svg>

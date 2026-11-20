@@ -15,19 +15,19 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     en: "From a Nuclear Phase-Down to New Reactor Construction",
   },
   "summary": {
-    "ko": "2017년 신규 원전 백지화에서 2026년 신규 원전 추진까지 정책 변화를 기록합니다. 10월 21일 공론화위는 전문위원 9명 구성과 12월 11~13일 시민 숙의토론 일정을 정했습니다. 산업 전력수요, 자료의 균형, 시민 의견이 최종 전력계획에 반영되는 과정을 추적합니다.",
-    "en": "This record follows the policy shift from cancelling reactor plans in 2017 to pursuing new construction in 2026. On October 21, the deliberation committee approved a nine-member expert panel and December 11–13 citizen discussions. It tracks industrial power demand, balanced information and how public input affects the final electricity plan."
+    "ko": "2017년 신규 원전 백지화에서 2026년 신규 원전 추진까지 정책 변화를 기록합니다. 원전 공론화위원회는 11월 16일 공식 누리집을 열고 25일 공개토론회 일정을 발표했습니다. 시민 의견과 12월 권고안이 제12차 전력수급기본계획에 어떻게 반영되는지 추적합니다.",
+    "en": "This tracker follows the shift from cancelling reactor plans in 2017 to pursuing new construction in 2026. The nuclear deliberation committee launched its public website on November 16 and scheduled a public forum for November 25. SEED follows how public input and the committee’s December recommendations shape the 12th electricity plan."
   },
   "status": {
-    "ko": "10월 21일 전문위 구성 의결 · 12월 시민 숙의 예정",
-    "en": "October 21 expert-panel decision · December citizen deliberation scheduled"
+    "ko": "원전 공론화 누리집 개설 · 11월 25일 공개토론회 예정",
+    "en": "Deliberation website opens · November 25 public forum scheduled"
   },
   openedAt: "2017-10-24",
   publishedAt: "2026-09-16",
-  updatedAt: "2026-10-28",
+  updatedAt: "2026-11-20",
   "nextCheck": {
-    "ko": "10월 27일 전문위 첫 회의 실제 개최·결과, 숙의설문지·자료집 공개와 균형, 시민참여단 구성·참여율, 12월 11~13일 토론 개최 및 권고안의 제12차 전기본 반영",
-    "en": "Verify the October 27 expert meeting and outcomes, publication and balance of deliberation materials, citizen-panel composition and participation, December 11–13 discussions and treatment of recommendations in the 12th electricity plan"
+    "ko": "11월 25일 공개토론회 개최와 영상·자료 공개, 12월 11~13일 시민 숙의토론, 12월 정부 권고안 제출과 제12차 전력수급기본계획 반영 여부를 확인합니다.",
+    "en": "Verify the November 25 forum and publication of its video and briefing materials, the December 11–13 citizen deliberation, submission of December recommendations and their treatment in the 12th electricity plan."
   },
   heroImage: {
     src: "images/monitoring/nuclear-policy-reversal-tracker-hero.webp",
@@ -53,6 +53,13 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     en: "The previous administration finalized the two large reactors in the 11th electricity plan. The current administration's reversal lies in retaining that plan after review and then moving toward possible additional reactors on the basis of industrial demand. Semiconductor investment plans were negotiated with companies, while the HMM case drew allegations of forced relocation after the government announced the destination first.",
   },
   keyChanges: [
+    {
+      "date": "2026-11-16",
+      "text": {
+        "ko": "원전 공론화 누리집 개설, 25일 공개토론회 예고",
+        "en": "Nuclear deliberation website opens and public forum is scheduled"
+      }
+    },
     {
       "date": "2026-10-21",
       "text": {
@@ -118,6 +125,33 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      "date": "2026-11-16",
+      "title": {
+        "ko": "원전 공론화 누리집 개설, 25일 공개토론회 예고",
+        "en": "Nuclear deliberation website opens and public forum is scheduled"
+      },
+      "description": {
+        "ko": "공론화위원회가 공식 누리집을 열어 회의 결과와 추진 일정을 공개하고 국민 의견 접수를 시작했습니다. 11월 25일 서울에서 열릴 공개토론회는 미래 전력수급과 원전의 역할을 다룹니다. 현장 참석 신청은 17~23일이며, 위원회는 유튜브 생중계와 12월 시민 숙의 뒤 정부 권고안 제출을 예고했습니다.",
+        "en": "The committee launched a website disclosing meeting outcomes and its timetable and began taking public comments. A November 25 forum in Seoul is scheduled to cover future electricity needs and the role of nuclear power. In-person registration runs November 17–23. The committee plans to livestream the forum on YouTube and submit recommendations to the government after December’s citizen deliberation."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "kind": "document",
+          "publisher": {
+            "ko": "기후에너지환경부·정책브리핑",
+            "en": "Ministry of Climate, Energy and Environment · Korea Policy Briefing"
+          },
+          "title": {
+            "ko": "원전 공론화 누리집 개설과 공개토론회 일정",
+            "en": "Deliberation website launch and public forum schedule"
+          },
+          "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156789390",
+          "publishedAt": "2026-11-16"
+        }
+      ]
+    },
     {
       "date": "2026-10-21",
       "title": {
@@ -536,6 +570,10 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     },
   ],
   confirmedFacts: [
+    {
+      "ko": "공론화위원회가 공식 누리집을 열어 회의 결과와 추진 일정을 공개하고 국민 의견 접수를 시작했습니다. 11월 25일 서울에서 열릴 공개토론회는 미래 전력수급과 원전의 역할을 다룹니다. 현장 참석 신청은 17~23일이며, 위원회는 유튜브 생중계와 12월 시민 숙의 뒤 정부 권고안 제출을 예고했습니다.",
+      "en": "The committee launched a website disclosing meeting outcomes and its timetable and began taking public comments. A November 25 forum in Seoul is scheduled to cover future electricity needs and the role of nuclear power. In-person registration runs November 17–23. The committee plans to livestream the forum on YouTube and submit recommendations to the government after December’s citizen deliberation."
+    },
 {
   "ko": "기후에너지환경부는 10월 2일 한강홍수통제소에서 원전 공론화위원회 위촉식을 열었습니다. 위원장은 은재호 한국외대 겸임교수이며, 위원회는 공론화 방향과 절차를 마련하고 국민 의견을 수렴해 정부에 권고합니다. 9월 22일 추진계획 발표에서 실제 위원회 출범 단계로 넘어갔습니다. 위원회 출범으로 추가 원전 기수와 부지가 확정된 것은 아니며, 권고안과 제12차 전기본 정부안의 연결 과정을 계속 확인합니다.",
   "en": "The Ministry of Climate, Energy and Environment held the committee’s appointment ceremony on October 2 at the Han River Flood Control Office. Chaired by Hankuk University of Foreign Studies adjunct professor Eun Jae-ho, the committee will establish deliberation procedures, gather public views and recommend findings to the government. This advances the September 22 plan to an operating committee. Its launch does not settle the number or location of additional reactors; the link between its recommendations and the 12th electricity-plan draft remains under scrutiny."
@@ -714,5 +752,19 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
       url: "https://www.yna.co.kr/view/AKR20260921182751530",
     },
     {"label": {"ko": "기후에너지환경부 · 원전 공론화위 전문위원회·숙의토론 일정", "en": "Ministry of Climate, Energy and Environment · Expert committee and citizen-deliberation schedule"}, "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156786100"},
+    {
+      "label": {
+        "ko": "기후에너지환경부·정책브리핑 · 원전 공론화 누리집 개설과 공개토론회 일정",
+        "en": "Ministry of Climate, Energy and Environment · Korea Policy Briefing · Deliberation website launch and public forum schedule"
+      },
+      "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156789390"
+    },
+    {
+      "label": {
+        "ko": "연합뉴스 · 원전 공론화 첫 공개토론회와 권고 일정",
+        "en": "Yonhap News Agency · First nuclear power forum and timetable for recommendations"
+      },
+      "url": "https://www.yna.co.kr/view/AKR20261116067400530?input=1195m"
+    },
   ],
 };

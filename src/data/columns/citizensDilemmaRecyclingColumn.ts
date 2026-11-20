@@ -2,7 +2,7 @@ import type { SeedColumn } from "../columns";
 
 export const citizensDilemmaRecyclingColumn: SeedColumn = {
   "slug": "citizens-dilemma-05-recycling-group-chat",
-  "issue": 135,
+  "issue": 136,
   "title": "분리수거장에 버린 상자, 송장 사진을 단톡방에 올려도 될까요?",
   "subtitle": "시민의 딜레마 ⑤",
   "date": "2026-11-20",

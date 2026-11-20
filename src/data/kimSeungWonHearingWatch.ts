@@ -9,17 +9,20 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     en: "The appointment ended in withdrawal. Where do the remaining inquiries stand?",
   },
   summary: {
-  "ko": "김승원 전 법무부 장관 후보자의 사퇴 이후 제넨셀 창업자에 대한 항소심 판단과 경기도당 회계 의혹 고발이 이어졌습니다. 10월 12일 시민단체가 김 의원 등 7명을 추가 고발했고 수원중수청은 사건을 반부패수사1과에 배당해 고발 내용을 검토하기 시작했습니다. 배당과 수사 결과·기소·유죄 확정은 서로 다른 단계입니다. 10월 27일 경찰 브리핑에서는 기존 임상승인 청탁 의혹 등 고발 사건의 19일 서울경찰청 이관이 확인됐습니다.",
-  "en": "After Kim Seung-won withdrew as justice minister nominee, an appeal ruling addressed a Genencell founder’s request for clinical-approval assistance and complaints alleged party-accounting irregularities. On October 12 a civic group filed an additional complaint against Kim and six other party officials, and Suwon investigators assigned the complaint to their First Anti-Corruption Division for review. Assignment is not a finding, indictment or conviction. An October 27 police briefing confirmed that the existing clinical-approval complaint and related cases had been transferred to Seoul police on October 19."
-},
-  status: {"ko": "기존 청탁 의혹 서울청 이관·회계 사건 별도 추적", "en": "Existing approval allegation transferred to Seoul police · Accounting case tracked separately"},
+    "ko": "김승원 전 법무부 장관 후보자 사퇴 뒤에도 제넨셀 임상 승인 청탁 의혹과 경기도당 회계 의혹 사건이 이어졌습니다. 11월 12일 공소청은 청탁 관련 별도 1심에서 브로커에게 징역 4년, 제넨셀 설립자에게 징역 6개월을 구형했습니다. 피고인 두 사람의 선고와 김 의원 관련 고발 사건의 경과를 각각 추적합니다.",
+    "en": "The Genencell clinical-trial approval and Gyeonggi party-accounting cases continued after Kim Seung-won withdrew as justice minister nominee. On November 12, prosecutors sought four years for the intermediary and six months for Genencell’s founder in a related trial. SEED follows their verdicts and the separate complaints concerning Kim."
+  },
+  status: {
+    "ko": "제넨셀 관련 1심 결심 · 브로커·설립자 구형",
+    "en": "Genencell case closes arguments · Prosecutors seek prison terms"
+  },
   openedAt: "2026-08-31",
   publishedAt: "2026-09-14",
-  updatedAt: "2026-10-28",
+  updatedAt: "2026-11-20",
   nextCheck: {
-  "ko": "제넨셀 창업자 항소심 판결 원문·상고·확정 여부와 11월 12일 예정 공판의 실제 진행, 10월 2일 최초 고발과 12일 사세행 추가 고발의 병합·배당 관계, 수원중수청 반부패수사1과의 고발장 검토 이후 소환·압수수색·송치·기소 여부, 김 의원 측 반론 및 기존 선관위·경찰 조사와의 관계",
-  "en": "The founder’s full appeal ruling and whether it became final; the scheduled November 12 hearing; whether the October 2 and 12 complaints were consolidated; any evidence-gathering, summons or charging decisions after assignment to the First Anti-Corruption Division; the accused parties’ responses; and links to election-commission and police inquiries"
-},
+    "ko": "2027년 1월 14일 예정된 1심 선고, 제넨셀 설립자의 별도 항소심 판결 확정 여부, 김 의원 관련 경찰 고발 및 수원중수청 회계 의혹 사건의 처분을 확인합니다.",
+    "en": "Follow the first-instance ruling scheduled for January 14, 2027, whether the founder’s separate appeal ruling became final, and how police and Suwon investigators dispose of the complaints concerning Kim."
+  },
   heroImage: {
     src: "images/briefings/briefing-10-empty-witness-seats.webp",
     alt: {
@@ -39,10 +42,14 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
   displayMode: "layered",
   snapshot: {
     conclusion: {
-  "ko": "10월 2일 시민 고발에 이어 12일 시민단체 사세행이 김승원 의원 등 경기도당 관계자 7명을 추가 고발했습니다. 수원중수청은 사건을 반부패수사1과에 배당해 내용을 검토하기 시작했습니다. 고발인의 회계부정 주장은 아직 검증된 위법 사실이 아니며, 압수수색·기소·재판 결과는 별도 확인 대상입니다.",
-  "en": "Following an October 2 citizen complaint, civic group Sasaehaeng filed a further complaint on October 12 against Kim Seung-won and six other provincial-party figures. Suwon investigators assigned the matter to the First Anti-Corruption Division for review. The allegations are not established wrongdoing; coercive investigation, indictment and any court outcome remain separate questions."
-},
+      "ko": "공소청은 11월 12일 서울서부지법의 제넨셀 청탁 관련 결심 공판에서 브로커와 설립자에게 각각 징역 4년과 6개월을 요청했습니다. 두 사람의 선고와 김승원 의원에 관한 별도 고발 사건의 처리 결과를 확인합니다.",
+      "en": "At a November 12 hearing in the Genencell case, prosecutors asked the Seoul Western District Court to impose prison terms of four years and six months on the intermediary and founder, respectively. The defendants’ verdicts and the disposition of separate complaints concerning Kim remain under review."
+    },
     keyFacts: [
+      {
+        "ko": "서울서부지법에서 열린 결심 공판에서 공소청은 브로커 양씨에게 징역 4년과 약 6억110만 원 추징, 제넨셀 설립자 강씨에게 징역 6개월을 요청했습니다. 재판부는 2027년 1월 14일을 선고기일로 잡았습니다. 이 재판의 피고인은 양씨와 강씨이며, 구형은 공소청의 요청입니다.",
+        "en": "At closing arguments in the Seoul Western District Court, prosecutors sought four years in prison and approximately KRW 601.1 million in forfeiture from intermediary Yang, and six months in prison for Genencell founder Kang. The court set January 14, 2027, for its ruling. Yang and Kang are the defendants, and the proposed sentences are the prosecution’s requests."
+      },
   {
     "ko": "뉴시스는 중수청 출범 첫날 김승원 의원의 경기도당위원장 시절 회계부정 의혹 고발장이 수원지방중수청에 접수됐다고 보도했습니다. 고발 접수라는 새 절차를 기록하며, 기존 선관위 조사·경찰 사건과의 관계, 배당과 실제 수사 착수는 계속 확인합니다.",
     "en": "Newsis reported that a complaint alleging accounting irregularities during Kim’s tenure as Gyeonggi provincial-party chair was filed with the Suwon investigation agency on its opening day. The new procedural fact is receipt of the complaint. Its relationship to election-commission and police inquiries, assignment and any formal investigation remain to be established."
@@ -64,6 +71,13 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     ],
   },
   keyChanges: [
+    {
+      "date": "2026-11-12",
+      "text": {
+        "ko": "제넨셀 결심 공판, 브로커 징역 4년·설립자 6개월 구형",
+        "en": "Prosecutors seek four years for intermediary and six months for founder in Genencell case"
+      }
+    },
     {"date": "2026-10-19", "text": {"ko": "경찰은 10월 27일 정례브리핑에서 김승원 의원 관련 고발 사건을 사건의 중대성과 수사 여건 등을 고려해 19일 영등포경찰서에서 서울경찰청으로 이송했다고 밝혔습니다. 뉴시스는 금융범죄수사대 배당을, 파이낸셜뉴스는 기존 신약 임상시험 승인 청탁 의혹 등의 이관을 보도했습니다. 수사 주체의 변경이며 혐의 입증이나 기소를 뜻하지 않고, 수원중수청의 경기도당 회계 의혹 사건과도 구분합니다.", "en": "At its October 27 briefing, police said complaints concerning Kim Seung-won had been transferred from Yeongdeungpo Police Station to Seoul police on October 19, citing the significance of the cases and investigative conditions. Newsis identified the financial-crime unit; Financial News described the transfer as including the existing clinical-trial approval allegation. A change of investigators is not proof or indictment and is distinct from the provincial-party accounting case handled in Suwon."}},
     {
       date: "2026-10-12",
@@ -277,6 +291,33 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      "date": "2026-11-12",
+      "title": {
+        "ko": "제넨셀 결심 공판, 브로커 징역 4년·설립자 6개월 구형",
+        "en": "Prosecutors seek four years for intermediary and six months for founder in Genencell case"
+      },
+      "description": {
+        "ko": "서울서부지법에서 열린 결심 공판에서 공소청은 브로커 양씨에게 징역 4년과 약 6억110만 원 추징, 제넨셀 설립자 강씨에게 징역 6개월을 요청했습니다. 재판부는 2027년 1월 14일을 선고기일로 잡았습니다. 이 재판의 피고인은 양씨와 강씨이며, 구형은 공소청의 요청입니다.",
+        "en": "At closing arguments in the Seoul Western District Court, prosecutors sought four years in prison and approximately KRW 601.1 million in forfeiture from intermediary Yang, and six months in prison for Genencell founder Kang. The court set January 14, 2027, for its ruling. Yang and Kang are the defendants, and the proposed sentences are the prosecution’s requests."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "kind": "article",
+          "publisher": {
+            "ko": "연합뉴스",
+            "en": "Yonhap News Agency"
+          },
+          "title": {
+            "ko": "공소청, 제넨셀 관련 결심 공판에서 징역형 구형",
+            "en": "Prosecutors seek prison terms at closing arguments in Genencell case"
+          },
+          "url": "https://www.yna.co.kr/view/AKR20261112173151004",
+          "publishedAt": "2026-11-12"
+        }
+      ]
+    },
     {"date": "2026-10-19", "title": {"ko": "기존 임상승인 청탁 의혹 사건, 서울경찰청 이관", "en": "Existing clinical-approval allegation transferred to Seoul police"}, "description": {"ko": "경찰은 10월 27일 정례브리핑에서 김승원 의원 관련 고발 사건을 사건의 중대성과 수사 여건 등을 고려해 19일 영등포경찰서에서 서울경찰청으로 이송했다고 밝혔습니다. 뉴시스는 금융범죄수사대 배당을, 파이낸셜뉴스는 기존 신약 임상시험 승인 청탁 의혹 등의 이관을 보도했습니다. 수사 주체의 변경이며 혐의 입증이나 기소를 뜻하지 않고, 수원중수청의 경기도당 회계 의혹 사건과도 구분합니다.", "en": "At its October 27 briefing, police said complaints concerning Kim Seung-won had been transferred from Yeongdeungpo Police Station to Seoul police on October 19, citing the significance of the cases and investigative conditions. Newsis identified the financial-crime unit; Financial News described the transfer as including the existing clinical-trial approval allegation. A change of investigators is not proof or indictment and is distinct from the provincial-party accounting case handled in Suwon."}, "change": {"ko": "10월 19일 이관을 27일 브리핑에서 확인", "en": "October 19 transfer confirmed at October 27 briefing"}, "status": "new", "sources": [{"publisher": {"ko": "뉴시스", "en": "Newsis"}, "title": {"ko": "국수본 브리핑, 김승원 관련 사건 서울청 이송 설명", "en": "Police briefing confirms transfer of Kim-related complaints"}, "url": "https://files.newsis.com/view/NISX20261027_0003842808", "publishedAt": "2026-10-27", "kind": "article"}, {"publisher": {"ko": "파이낸셜뉴스", "en": "Financial News"}, "title": {"ko": "경찰 정례브리핑, 주요 사건 수사 배당 설명", "en": "Police briefing on investigative assignments"}, "url": "https://www.fnnews.com/news/202610271149115702", "publishedAt": "2026-10-27", "kind": "article"}]},
     {
       date: "2026-10-12",
@@ -1642,5 +1683,19 @@ export const kimSeungWonHearingWatch: PublicInterestWatchCase = {
     },
     {"label": {"ko": "뉴시스 — 국수본 브리핑, 김승원 관련 사건 서울청 이송 설명 (2026-10-27)", "en": "Newsis — Police briefing confirms transfer of Kim-related complaints (2026-10-27)"}, "url": "https://files.newsis.com/view/NISX20261027_0003842808"},
     {"label": {"ko": "파이낸셜뉴스 — 경찰 정례브리핑, 주요 사건 수사 배당 설명 (2026-10-27)", "en": "Financial News — Police briefing on investigative assignments (2026-10-27)"}, "url": "https://www.fnnews.com/news/202610271149115702"},
+    {
+      "label": {
+        "ko": "연합뉴스 · 공소청, 제넨셀 관련 결심 공판에서 징역형 구형",
+        "en": "Yonhap News Agency · Prosecutors seek prison terms at closing arguments in Genencell case"
+      },
+      "url": "https://www.yna.co.kr/view/AKR20261112173151004"
+    },
+    {
+      "label": {
+        "ko": "뉴스1 · 제넨셀 결심 공판 구형과 선고 일정",
+        "en": "News1 · Sentencing requests and verdict date in the Genencell case"
+      },
+      "url": "https://www.news1.kr/society/court-prosecution/6352547"
+    },
   ],
 };

@@ -15,16 +15,16 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
     "en": "My bank-held information leaked: Tracking the AI hacking inquiry and compensation"
   },
   "summary": {
-    "ko": "신한은행 약 2만5천 명 유출 조사에 이어 국민은행은 10월 26일 기존 사고의 유출 대상을 2,210명으로 늘려 발표했습니다. 신한·하나의 보험·우대 지원책과 실제 배상은 구분합니다. 은행별 피해 범위, 통지와 보상 이행을 날짜별로 추적합니다.",
-    "en": "Following Shinhan’s disclosure affecting about 25,000 people, KB revised its separate existing breach total to 2,210 on October 26. This record distinguishes Shinhan and Hana’s insurance and service benefits from compensation actually paid, and tracks each bank’s exposure, notifications and redress."
+    "ko": "금융당국은 금융권 개인정보 유출에 따른 보이스피싱 등 2차 피해 특별대응기간을 12월 말까지 연장했습니다. 11월 6일 기준 관련 고객 자금 피해 신고는 없다고 밝혔습니다. 은행별 통지, 피해 접수와 실제 보상 지급 현황을 추적합니다.",
+    "en": "Financial regulators extended their special response to voice phishing and other harms linked to financial-sector data breaches through December. They said no related customer losses had been reported as of November 6. This tracker follows bank notifications, claims and compensation actually paid."
   },
   "status": {
-    "ko": "국민은행 유출 규모 재집계 · 보험·보상 이행 추적",
-    "en": "KB revises exposure count · Support and compensation tracked"
+    "ko": "금융당국, 2차 피해 특별대응 12월 말까지 연장",
+    "en": "Regulators extend special response to secondary harm through December"
   },
   "openedAt": "2026-09-30",
   "publishedAt": "2026-10-08",
-  "updatedAt": "2026-10-28",
+  "updatedAt": "2026-11-20",
   "continuationEligible": false,
   "displayMode": "layered",
   "heroImage": {
@@ -44,10 +44,14 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
   },
   "snapshot": {
     "conclusion": {
-      "ko": "신한은행 유출 조사와 금융권 점검이 진행 중이다. AI 도구의 관여 정황이 제시됐지만 정확한 침입 경로와 책임은 개별 조사 결과로 확인될 부분이다.",
-      "en": "The Shinhan inquiry and financial-sector checks are ongoing. Evidence of AI-tool involvement has emerged, while exact intrusion paths and responsibility remain for individual investigations."
+      "ko": "금융당국은 11월 6일 개인정보 유출 2차 피해 특별대응기간을 12월 말까지 연장한다고 밝혔다. 당국에 보고된 고객 자금 피해는 당시 없었다. 은행별 조사 결과와 실제 피해 구제는 계속 확인한다.",
+      "en": "On November 6, regulators extended their special response to secondary harm from data breaches through December. They had received no reports of resulting customer financial losses as of that date. Bank-specific findings and redress remain under review."
     },
     "keyFacts": [
+      {
+        "ko": "금융당국은 추가 개인정보 유출이 확인됨에 따라 11월 5일까지였던 특별대응기간을 12월 말까지 연장한다고 밝혔습니다. 금융회사는 유출 고객 전담 상담창구와 이상거래 탐지 강화 등 예방조치를 계속합니다. 당국은 11월 6일 현재 최근 유출 사고와 관련해 보이스피싱·스미싱으로 고객 자금이 빠져나갔다고 보고된 사례가 없다고 밝혔습니다.",
+        "en": "Regulators said they were extending the response, originally due to end November 5, through December following further data breaches. Financial firms would continue dedicated customer helplines and enhanced transaction monitoring. As of November 6, regulators said they had received no reports of customers losing funds to voice or text-message phishing linked to the recent breaches."
+      },
       {"ko": "국민은행은 기존 침해사고 재검증에서 2,091명의 정보 유출을 추가 확인했다고 밝혔습니다. 새로 확인된 대상은 고객 1,631명과 전·현직 임직원 460명이며, 기존 119명을 합친 전체 인원은 2,210명입니다. 새로운 공격의 발생이나 신한은행 유출 인원 증가를 뜻하지 않습니다.", "en": "KB said a review of its existing breach identified 2,091 additional people: 1,631 customers and 460 current or former employees. The total, including 119 previously identified people, is 2,210. This is not a new attack or an increase in Shinhan’s separate breach total."},
       { "ko": "10월 19일 국감에서 신한은행 유출 대상 고객의 직접 조회율이 약 22%로 지적됐습니다. 피해가 확인되면 전액 보상한다는 은행의 약속과 실제 지급 실적은 다릅니다.", "en": "At the October 19 hearing, a lawmaker cited approximately 22% self-lookup among Shinhan's affected customers. A pledge to compensate resulting losses does not establish paid claims." },
       {
@@ -80,6 +84,13 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
     ]
   },
   "keyChanges": [
+    {
+      "date": "2026-11-06",
+      "text": {
+        "ko": "금융당국, 개인정보 유출 2차 피해 특별대응기간 연장",
+        "en": "Financial regulators extend special response to fraud after data breaches"
+      }
+    },
     {
       "date": "2026-10-26",
       "text": {
@@ -131,6 +142,33 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
     }
   ],
   "timeline": [
+    {
+      "date": "2026-11-06",
+      "title": {
+        "ko": "금융당국, 개인정보 유출 2차 피해 특별대응기간 연장",
+        "en": "Financial regulators extend special response to fraud after data breaches"
+      },
+      "description": {
+        "ko": "금융당국은 추가 개인정보 유출이 확인됨에 따라 11월 5일까지였던 특별대응기간을 12월 말까지 연장한다고 밝혔습니다. 금융회사는 유출 고객 전담 상담창구와 이상거래 탐지 강화 등 예방조치를 계속합니다. 당국은 11월 6일 현재 최근 유출 사고와 관련해 보이스피싱·스미싱으로 고객 자금이 빠져나갔다고 보고된 사례가 없다고 밝혔습니다.",
+        "en": "Regulators said they were extending the response, originally due to end November 5, through December following further data breaches. Financial firms would continue dedicated customer helplines and enhanced transaction monitoring. As of November 6, regulators said they had received no reports of customers losing funds to voice or text-message phishing linked to the recent breaches."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "kind": "document",
+          "publisher": {
+            "ko": "금융위원회·금융감독원",
+            "en": "Financial Services Commission · Financial Supervisory Service"
+          },
+          "title": {
+            "ko": "금융권 개인정보 유출 2차 피해 예방조치 연장",
+            "en": "Extension of special fraud prevention after data breaches"
+          },
+          "url": "https://www.fsc.go.kr/po010101/88098?srchCtgry=1",
+          "publishedAt": "2026-11-06"
+        }
+      ]
+    },
     {
       "date": "2026-10-26",
       "title": {
@@ -569,7 +607,21 @@ export const bankingPrivacyTracker: PublicInterestWatchCase = {
       "url": "https://www.news1.kr/it-science/security-hacking/6310284"
     },
     {"label": {"ko": "뉴스핌 · 국민은행 정보유출 2,091명 추가 확인", "en": "Newspim · KB identifies 2,091 additional people affected"}, "url": "https://ir.newspim.com/news/view/20261026001216"},
-    {"label": {"ko": "미디어펜 · 신한·하나은행의 유출 고객 지원책", "en": "Media Pen · Support plans for Shinhan and Hana breach victims"}, "url": "https://www.mediapen.com/news/view/1131463"}
+    {"label": {"ko": "미디어펜 · 신한·하나은행의 유출 고객 지원책", "en": "Media Pen · Support plans for Shinhan and Hana breach victims"}, "url": "https://www.mediapen.com/news/view/1131463"},
+    {
+      "label": {
+        "ko": "금융위원회·금융감독원 · 금융권 개인정보 유출 2차 피해 예방조치 연장",
+        "en": "Financial Services Commission · Financial Supervisory Service · Extension of special fraud prevention after data breaches"
+      },
+      "url": "https://www.fsc.go.kr/po010101/88098?srchCtgry=1"
+    },
+    {
+      "label": {
+        "ko": "연합뉴스 · 금융당국, 유출사고 특별대응기간 연장",
+        "en": "Yonhap News Agency · Regulators extend special response to data breaches"
+      },
+      "url": "https://www.yna.co.kr/amp/view/AKR20261106079900002"
+    }
   ],
   "relatedContents": [
     {
