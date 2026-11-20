@@ -15,13 +15,16 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     en: "Olympic Park: ballots ran short, and distrust still remains",
   },
   summary: {
-    ko: "제9회 전국동시지방선거에서 발생한 투표용지 부족 사태 뒤 시민들은 올림픽공원에 농성장을 꾸리고 재선거, 당일투표, 수개표를 요구해 왔다. 이 기록은 확인된 선거관리 실패와 특검 수사 대상, 아직 입증되지 않은 부정선거 주장을 구분해 추적한다. 특검은 11월 9일 선별 투표지와 보관상자의 정밀감정을 공소청과 국과수에 의뢰했다고 밝혔다. 최종 감정 결과는 확인되지 않았다.",
-    en: "After ballot shortages disrupted Korea's ninth nationwide local elections, citizens established a protest camp at Olympic Park demanding a new election, same-day voting and hand counting. This tracker separates confirmed election-management failures, matters under special investigation and fraud claims that remain unproven. On November 9 the special prosecutor said it had requested forensic examinations of selected ballots and storage boxes. Final findings remain pending.",
+    "ko": "제9회 전국동시지방선거의 투표용지 부족 사태와 올림픽공원 농성 이후의 조사·수사를 추적한다. 선관위 특검은 11월 18일 투표율 허위 입력과 투표록 위·변조 혐의 등으로 직원 8명의 구속영장을 청구했다고 밝혔다. 선별 투표지와 보관상자의 감정 결과는 아직 공개 확인되지 않았다.",
+    "en": "This tracker follows the ballot shortage at South Korea’s ninth nationwide local elections, the Olympic Park protest and the ensuing investigations. On November 18, the special prosecutor said it sought arrest warrants for eight election officials over alleged false turnout entries and falsified polling records. The findings from forensic examination of selected ballots and storage boxes have yet to be publicly confirmed."
   },
-  status: {"ko": "선별 투표지·보관상자 정밀감정 의뢰", "en": "Forensic examination requested · Findings pending"},
+  status: {
+    "ko": "선관위 직원 8명 구속영장 청구 · 투표지 감정 결과 미확인",
+    "en": "Arrest warrants sought for eight officials · Ballot findings unconfirmed"
+  },
   openedAt: "2026-06-03",
   publishedAt: "2026-09-18",
-  updatedAt: "2026-11-13",
+  updatedAt: "2026-11-20",
   sourceBasis: {
     ko: "선거관리위원회 조사 결과와 국회의원실 제출자료를 인용한 보도, 선거소송 심리와 결정, 선관위 특검법·압수수색·피의자 조사 보도, 올림픽공원 현장 보도를 교차 확인했다. 사실·수사 중인 의혹·확인되지 않은 주장을 같은 층위에 놓지 않았다.",
     en: "This record cross-checks reporting on election-commission findings and material submitted to a National Assembly member's office, election-litigation proceedings, the special-prosecutor law, searches and suspect questioning, and coverage from the Olympic Park site. Confirmed facts, allegations under investigation and unverified claims are kept distinct.",
@@ -30,7 +33,10 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     ko: "투표용지 부족과 투표 중단은 확인된 선거관리 실패다. 그러나 조직적인 개표 조작, 외국 세력 개입, 선거 전체가 조작됐다는 주장은 현재까지 법원이나 수사기관이 확정한 사실이 아니다.",
     en: "Ballot shortages and voting suspensions are confirmed election-management failures. Claims of organized count manipulation, foreign intervention or a wholly rigged election have not been established by a court or investigative authority.",
   },
-  nextCheck: {"ko": "10월 28일 공개검증의 실제 진행·종료와 투표지 수량·인쇄·기표 상태 및 CCTV 분석 결과를 확인한다. 이상 투표지의 분류와 정밀감정, 특검 공식 발표를 구분하고, 공개검증을 당선인 변경이나 선거 조작 확정으로 취급하지 않는다.", "en": "Check progress and completion of the October 28 inspection, ballot quantities and printing/marking condition, and CCTV findings. Distinguish items set aside for examination from forensic findings and official conclusions; inspection does not itself change elected winners or establish a rigged election."},
+  nextCheck: {
+    "ko": "11월 23일로 잡힌 구속 전 피의자 심문과 법원 결정, 선별 투표지·보관상자의 감정 결과, 수사 결과와 기소 범위를 각각 확인한다.",
+    "en": "Verify the November 23 detention hearings and court decisions, forensic findings on selected ballots and storage boxes, and any charges resulting from the investigations."
+  },
   heroImage: {
     src: "/images/monitoring/olympic-park-election-protest-20260614.jpg",
     alt: {
@@ -47,6 +53,13 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     },
   },
   keyChanges: [
+    {
+      "date": "2026-11-18",
+      "text": {
+        "ko": "선관위 특검, 직원 8명 구속영장 청구",
+        "en": "Special prosecutor seeks arrest warrants for eight election officials"
+      }
+    },
     {"date":"2026-11-09","text":{"ko":"11월 9일 선관위 특검은 공개검증에서 선별한 투표지와 보관상자의 수량 확인과 감정 유형별 분류를 마치고 공소청과 국립과학수사연구원에 정밀감정을 의뢰했다고 밝혔다. 의뢰는 감정 결과나 선거 조작이 확인됐다는 뜻이 아니다.","en":"On November 9, the special prosecutor said it had completed counting and classifying selected ballots and storage boxes and requested forensic examinations from the prosecution service and the National Forensic Service. A request for examination is not a finding of manipulation."}},
     {"date": "2026-11-01", "text": {"ko": "11월 1일 연합뉴스는 특검팀이 10월 28~29일 공개검증을 마친 투표지 중 국민의힘 참관인 측이 이의를 제기한 700여 장의 이상 유무를 자체 분석하고 있다고 보도했습니다. 특검은 정밀감정이 필요한 투표지를 선별해 국과수나 공소청 등에 의뢰할 계획이며 관련 장비도 대상입니다. 이의 제기와 분석·감정 계획은 위조나 선거 조작이 확인됐다는 결과가 아닙니다.", "en": "On November 1, Yonhap reported that the special prosecutor’s team was examining approximately 700 ballots challenged by People Power Party observers during the October 28–29 inspection. The team planned to select ballots for forensic testing by the National Forensic Service or the prosecution service, along with relevant equipment. An objection or a plan to examine evidence does not establish forgery or election manipulation."}},
     {"date": "2026-10-28", "text": {"ko": "10월 28일 오전 이태한 특별검사팀이 올림픽공원 핸드볼경기장에 들어가 투표지 공개검증을 시작했습니다. 대상은 송파구 투표지 약 247만 장과 관련 자료이며, 전날 압수수색에서는 내부 CCTV 자료 등을 확보했습니다. 특검은 수사상 임의검증으로 공직선거법상 재검표가 아니라고 설명했습니다. 검증 시작을 확인한 것이며 위조·해킹 여부나 최종 결과는 아직 확인되지 않았습니다.", "en": "On the morning of October 28, special prosecutor Lee Tae-han’s team entered Olympic Park’s handball arena and began a public inspection of ballots. The examination covers about 2.47 million Songpa ballots and related material; the previous day’s search secured internal CCTV records. The team describes this as an investigative inspection, not an election-law recount. The start is confirmed; findings on forgery, hacking or the final outcome are not yet established."}},
@@ -101,6 +114,33 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      "date": "2026-11-18",
+      "title": {
+        "ko": "선관위 특검, 직원 8명 구속영장 청구",
+        "en": "Special prosecutor seeks arrest warrants for eight election officials"
+      },
+      "description": {
+        "ko": "특검은 중앙선관위 직원 3명과 지역 선관위 직원 5명에 대해 구속영장을 청구했다고 밝혔다. 보도된 혐의에는 투표율 허위 입력과 투표록 위·변조 등이 포함된다. 서울중앙지법은 23일 구속 전 피의자 심문을 열 예정이다. 특검의 영장 청구와 법원의 결정, 별도로 의뢰한 투표지 정밀감정 결과를 각각 확인한다.",
+        "en": "The special prosecutor said it sought detention warrants for three national election officials and five regional officials. Reported allegations include false turnout entries and falsification of polling records. The Seoul Central District Court scheduled detention hearings for November 23. The warrant applications, court decisions and the separate forensic review of ballots are distinct developments."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "kind": "article",
+          "publisher": {
+            "ko": "연합뉴스",
+            "en": "Yonhap News Agency"
+          },
+          "title": {
+            "ko": "선관위 직원 8명 구속영장 청구와 특검 브리핑",
+            "en": "Warrant applications and special prosecutor’s briefing"
+          },
+          "url": "https://www.yna.co.kr/view/AKR20261118120353004",
+          "publishedAt": "2026-11-18"
+        }
+      ]
+    },
     {"date":"2026-11-09","title":{"ko":"특검, 선별 투표지·보관상자 정밀감정 의뢰","en":"Special prosecutor requests forensic examination of selected ballots and boxes"},"description":{"ko":"11월 9일 선관위 특검은 공개검증에서 선별한 투표지와 보관상자의 수량 확인과 감정 유형별 분류를 마치고 공소청과 국립과학수사연구원에 정밀감정을 의뢰했다고 밝혔다. 의뢰는 감정 결과나 선거 조작이 확인됐다는 뜻이 아니다.","en":"On November 9, the special prosecutor said it had completed counting and classifying selected ballots and storage boxes and requested forensic examinations from the prosecution service and the National Forensic Service. A request for examination is not a finding of manipulation."},"change":{"ko":"감정 계획에서 실제 의뢰로 진행","en":"Examination requested; findings pending"},"status":"new","sources":[{"publisher":{"ko":"SBS","en":"SBS"},"title":{"ko":"선관위 특검, 올공 반출 투표지 공소청·국과수에 정밀 감정 의뢰","en":"Special prosecutor requests forensic examination of Olympic Park ballots"},"url":"https://news.sbs.co.kr/news/endPage.do?news_id=N1008837844","publishedAt":"2026-11-09","kind":"article"}]},
     {"date": "2026-11-01", "title": {"ko": "이의 제기된 투표지 700여 장 분석·정밀감정 계획", "en": "Some 700 challenged ballots analyzed; forensic examination planned"}, "description": {"ko": "11월 1일 연합뉴스는 특검팀이 10월 28~29일 공개검증을 마친 투표지 중 국민의힘 참관인 측이 이의를 제기한 700여 장의 이상 유무를 자체 분석하고 있다고 보도했습니다. 특검은 정밀감정이 필요한 투표지를 선별해 국과수나 공소청 등에 의뢰할 계획이며 관련 장비도 대상입니다. 이의 제기와 분석·감정 계획은 위조나 선거 조작이 확인됐다는 결과가 아닙니다.", "en": "On November 1, Yonhap reported that the special prosecutor’s team was examining approximately 700 ballots challenged by People Power Party observers during the October 28–29 inspection. The team planned to select ballots for forensic testing by the National Forensic Service or the prosecution service, along with relevant equipment. An objection or a plan to examine evidence does not establish forgery or election manipulation."}, "change": {"ko": "공개검증 이후 선별·감정 계획 보도, 결과 미확인", "en": "Post-inspection selection and examination plans reported; findings pending"}, "status": "new", "sources": [{"publisher": {"ko": "연합뉴스", "en": "Yonhap News Agency"}, "title": {"ko": "이의 제기 투표지 정밀감정 계획", "en": "Forensic examination planned for challenged ballots"}, "url": "https://www.yna.co.kr/view/AKR20261101031100004", "publishedAt": "2026-11-01", "kind": "article"}]},
     {"date": "2026-10-28", "title": {"ko": "특검, 올림픽공원 투표지 공개검증 시작", "en": "Special prosecutor begins public ballot inspection at Olympic Park"}, "description": {"ko": "10월 28일 오전 이태한 특별검사팀이 올림픽공원 핸드볼경기장에 들어가 투표지 공개검증을 시작했습니다. 대상은 송파구 투표지 약 247만 장과 관련 자료이며, 전날 압수수색에서는 내부 CCTV 자료 등을 확보했습니다. 특검은 수사상 임의검증으로 공직선거법상 재검표가 아니라고 설명했습니다. 검증 시작을 확인한 것이며 위조·해킹 여부나 최종 결과는 아직 확인되지 않았습니다.", "en": "On the morning of October 28, special prosecutor Lee Tae-han’s team entered Olympic Park’s handball arena and began a public inspection of ballots. The examination covers about 2.47 million Songpa ballots and related material; the previous day’s search secured internal CCTV records. The team describes this as an investigative inspection, not an election-law recount. The start is confirmed; findings on forgery, hacking or the final outcome are not yet established."}, "change": {"ko": "연기된 검증이 실제 개시·결과는 미확정", "en": "Postponed inspection begins; findings remain pending"}, "status": "new", "sources": [{"publisher": {"ko": "머니투데이", "en": "MoneyToday"}, "title": {"ko": "선관위 특검, 올림픽공원 진입…투표지 현장 검증 시작", "en": "Special prosecutor enters Olympic Park and begins ballot inspection"}, "url": "https://www.mt.co.kr/society/2026/10/28/2026102808492779561", "publishedAt": "2026-10-28", "kind": "article"}, {"publisher": {"ko": "뉴스1", "en": "News1"}, "title": {"ko": "여야 의원, 올림픽공원 특검 현장 검증 참관", "en": "Lawmakers attend public ballot inspection"}, "url": "https://www.news1.kr/politics/assembly/6333887", "publishedAt": "2026-10-28", "kind": "article"}]},
@@ -617,6 +657,10 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
   ],
   confirmedFacts: [
     {
+      "ko": "특검은 중앙선관위 직원 3명과 지역 선관위 직원 5명에 대해 구속영장을 청구했다고 밝혔다. 보도된 혐의에는 투표율 허위 입력과 투표록 위·변조 등이 포함된다. 서울중앙지법은 23일 구속 전 피의자 심문을 열 예정이다. 특검의 영장 청구와 법원의 결정, 별도로 의뢰한 투표지 정밀감정 결과를 각각 확인한다.",
+      "en": "The special prosecutor said it sought detention warrants for three national election officials and five regional officials. Reported allegations include false turnout entries and falsification of polling records. The Seoul Central District Court scheduled detention hearings for November 23. The warrant applications, court decisions and the separate forensic review of ballots are distinct developments."
+    },
+    {
       ko: "선관위는 투표용지를 추가 송부한 투표소가 140곳이며, 그중 추가 용지를 실제 사용한 곳은 91곳이라고 밝혔다. 26곳에서는 투표가 잠시 중단됐다가 재개됐다.",
       en: "The commission said extra ballots were dispatched to 140 polling stations, used at 91 of them, and voting was temporarily suspended and resumed at 26.",
     },
@@ -796,6 +840,20 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     },
     {"label": {"ko": "머니투데이 — 선관위 특검, 올림픽공원 진입…투표지 현장 검증 시작 (2026-10-28)", "en": "MoneyToday — Special prosecutor enters Olympic Park and begins ballot inspection (2026-10-28)"}, "url": "https://www.mt.co.kr/society/2026/10/28/2026102808492779561"},
     {"label": {"ko": "뉴스1 — 여야 의원, 올림픽공원 특검 현장 검증 참관 (2026-10-28)", "en": "News1 — Lawmakers attend public ballot inspection (2026-10-28)"}, "url": "https://www.news1.kr/politics/assembly/6333887"},
+    {
+      "label": {
+        "ko": "연합뉴스 · 선관위 직원 8명 구속영장 청구와 특검 브리핑",
+        "en": "Yonhap News Agency · Warrant applications and special prosecutor’s briefing"
+      },
+      "url": "https://www.yna.co.kr/view/AKR20261118120353004"
+    },
+    {
+      "label": {
+        "ko": "뉴시스 · 선관위 직원 8명 구속영장 청구, 23일 심사",
+        "en": "Newsis · Court schedules November 23 detention hearings for eight election officials"
+      },
+      "url": "https://www.newsis.com/view/NISX20261118_0003873951"
+    },
   ],
   continuationEligible: false,
 };

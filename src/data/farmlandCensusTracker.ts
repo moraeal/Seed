@@ -15,19 +15,19 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     en: "Who Will Buy the 27 Percent of Farmland Flagged for Review?",
   },
   "summary": {
-    "ko": "기본조사에서 약 30만㏊가 위반 의심 대상으로 분류됐지만 위법 확정 수치는 아닙니다. 비투기성 농지 처분 제외 특별법 추진에 이어 10월 21일 농지은행 신청 절차가 간소화됐고, 26일 대통령은 매입 예산 확대를 언급했습니다. 법 제정·예산 확정·실제 매입과 임대 성사를 구분해 추적합니다.",
-    "en": "Screening flagged about 300,000 hectares for possible violations, not confirmed wrongdoing. Alongside proposed exemptions for non-speculative cases, Farmland Bank procedures were simplified on October 21 and the president proposed more purchase funding on October 26. Legislation, approved budgets and completed transactions remain separate milestones."
+    "ko": "기본조사에서 약 30만㏊가 위반 의심 대상으로 분류됐습니다. 10월 30일 농지 특별조치법안이 발의됐고, 11월 16일 농식품부와 강원도가 횡성에서 지역 설명회를 열었습니다. 현장 의견이 국회 심사에 어떻게 반영되는지, 실제 위반 확정 면적과 농지은행 매입·임대 실적을 추적합니다.",
+    "en": "Initial screening flagged about 300,000 hectares for possible violations. A special farmland bill was introduced on October 30, and the Agriculture Ministry and Gangwon Province held a regional briefing in Hoengseong on November 16. This tracker follows how lawmakers treat feedback, confirmed violations and Farmland Bank purchases and leases."
   },
   "status": {
-    "ko": "농지은행 신청 간소화 · 매입 예산 확대 발언 추적",
-    "en": "Simplified Farmland Bank applications · Purchase-funding proposal tracked"
+    "ko": "농지 특별조치법안 발의 · 11월 16일 강원권 설명회 개최",
+    "en": "Special farmland bill introduced · Gangwon briefing held November 16"
   },
   openedAt: "2026-02-24",
   publishedAt: "2026-09-16",
-  updatedAt: "2026-10-28",
+  updatedAt: "2026-11-20",
   nextCheck: {
-    ko: "11월 15일까지의 임대차 특별정비 결과, 심층조사 후 실제 위법 확정 면적, 연내 의결을 목표로 한 처분 유예·사후 전용 추인 특별조치법의 발의·심사, 농지은행 위탁·매입과 청년농·자경농 공급 실적",
-    en: "Results of the lease regularization period through November 15; area confirmed in violation after field review; introduction and review of the special-act bill on deferrals and retroactive conversion approval, which the government aims to pass by year-end; and Farmland Bank trust, purchase and onward-supply results for young and working farmers",
+    "ko": "지역 설명회에서 나온 의견과 국회 심사 반영 결과, 11월 15일까지의 임대차 특별정비 실적, 현장 확인 뒤 위법 확정 면적과 농지은행 매입·임대 실적을 확인합니다.",
+    "en": "Check feedback from the regional briefings and how lawmakers address it, results from the lease regularization period through November 15, confirmed violations after field review, and Farmland Bank purchases and leases."
   },
   heroImage: {
     src: "images/monitoring/farmland-census-tracker-hero.webp",
@@ -53,6 +53,27 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     en: "The 27 percent figure is an administrative-screening result, not a confirmed violation rate. The final area in violation or subject to disposal may change after field review. The four-year, 100 percent illustration assumes an unchanged valuation and four annual charges after the first assessment.",
   },
   keyChanges: [
+    {
+      "date": "2026-11-16",
+      "text": {
+        "ko": "농지 특별조치법안 강원권 설명회 횡성에서 열려",
+        "en": "Gangwon Province holds farmland bill briefing in Hoengseong"
+      }
+    },
+    {
+      "date": "2026-11-10",
+      "text": {
+        "ko": "농식품부, 농지 특별조치법안 설명회 10회 발표",
+        "en": "Agriculture Ministry announces ten briefings on special farmland bill"
+      }
+    },
+    {
+      "date": "2026-10-30",
+      "text": {
+        "ko": "농지 특별조치법안 발의",
+        "en": "Special farmland bill introduced in the National Assembly"
+      }
+    },
     {
       "date": "2026-10-26",
       "text": {
@@ -120,6 +141,87 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      "date": "2026-11-16",
+      "title": {
+        "ko": "농지 특별조치법안 강원권 설명회 횡성에서 열려",
+        "en": "Gangwon Province holds farmland bill briefing in Hoengseong"
+      },
+      "description": {
+        "ko": "농식품부와 강원특별자치도가 횡성문화예술회관에서 농지 특별조치법안 강원권 설명회를 열었습니다. 연합뉴스와 뉴스1은 농업인과 시·군 농지 업무 담당자 등 250명이 참석했다고 보도했습니다. 강원도는 수렴한 의견을 검토해 농식품부에 제도 개선을 건의할 계획입니다.",
+        "en": "The Agriculture Ministry and Gangwon Province held a regional briefing on the special farmland bill at the Hoengseong Cultural and Arts Center. Yonhap and News1 reported that 250 people attended, including farmers and municipal staff. Gangwon plans to review the feedback and recommend changes to the ministry."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "kind": "document",
+          "publisher": {
+            "ko": "강원특별자치도",
+            "en": "Gangwon State"
+          },
+          "title": {
+            "ko": "농지 특별조치법안 강원권 설명회 개최",
+            "en": "Official notice of the Gangwon briefing on the special farmland bill"
+          },
+          "url": "https://state.gwd.go.kr/portal/briefing/pressRelease?seq=9495",
+          "publishedAt": "2026-11-16"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "title": {
+        "ko": "농식품부, 농지 특별조치법안 설명회 10회 발표",
+        "en": "Agriculture Ministry announces ten briefings on special farmland bill"
+      },
+      "description": {
+        "ko": "농식품부는 11월 11~19일 전국 9개 시·도에서 설명회를 10차례 열겠다고 발표했습니다. 지방정부와 농업인에게 법안을 설명하고 현장 의견을 들어 국회 협의에 반영할 계획입니다. 의견 수렴 결과와 실제 특례 적용 기준은 후속 공개 자료에서 확인합니다.",
+        "en": "The ministry announced ten briefings across nine regions for November 11–19. It plans to explain the bill to local authorities and farmers and bring their feedback into discussions with lawmakers. The feedback and the final eligibility criteria remain to be seen."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "kind": "document",
+          "publisher": {
+            "ko": "농림축산식품부",
+            "en": "Ministry of Agriculture, Food and Rural Affairs"
+          },
+          "title": {
+            "ko": "특정농지 특별조치법안 지역 설명회 보도자료",
+            "en": "Ministry release on regional briefings for the special farmland bill"
+          },
+          "url": "https://www.mafra.go.kr/bbs/home/792/611357/download.do",
+          "publishedAt": "2026-11-10"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "title": {
+        "ko": "농지 특별조치법안 발의",
+        "en": "Special farmland bill introduced in the National Assembly"
+      },
+      "description": {
+        "ko": "10월 30일 발의된 법안은 처분명령 등의 한시적 유예, 임대차와 농지은행 임대위탁 요건 완화, 기존 무단 전용시설에 대한 사후 허가 신청 등을 담고 있습니다. 투기 목적으로 취득한 농지와 농업환경을 중대하게 훼손한 행위는 특례 대상에서 제외하는 내용입니다.",
+        "en": "The bill introduced on October 30 would temporarily defer certain disposal orders, ease lease and Farmland Bank entrustment requirements, and allow applications to regularize certain previously unauthorized facilities. It would exclude land acquired for speculation and conduct that seriously harmed the agricultural environment."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "kind": "document",
+          "publisher": {
+            "ko": "농림축산식품부",
+            "en": "Ministry of Agriculture, Food and Rural Affairs"
+          },
+          "title": {
+            "ko": "특별조치법안 발의일과 주요 내용",
+            "en": "Introduction date and provisions of the special farmland bill"
+          },
+          "url": "https://www.mafra.go.kr/bbs/home/792/611357/download.do",
+          "publishedAt": "2026-11-10"
+        }
+      ]
+    },
     {
       "date": "2026-10-26",
       "title": {
@@ -518,6 +620,10 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
   ],
   confirmedFacts: [
     {
+      "ko": "농식품부와 강원특별자치도가 횡성문화예술회관에서 농지 특별조치법안 강원권 설명회를 열었습니다. 연합뉴스와 뉴스1은 농업인과 시·군 농지 업무 담당자 등 250명이 참석했다고 보도했습니다. 강원도는 수렴한 의견을 검토해 농식품부에 제도 개선을 건의할 계획입니다.",
+      "en": "The Agriculture Ministry and Gangwon Province held a regional briefing on the special farmland bill at the Hoengseong Cultural and Arts Center. Yonhap and News1 reported that 250 people attended, including farmers and municipal staff. Gangwon plans to review the feedback and recommend changes to the ministry."
+    },
+    {
       ko: "농지은행의 65세 이상 고령농 농지 매입은 2024년 1,709㏊, 2025년 1,719㏊, 2026년 상반기 1,433㏊였습니다. 이는 청년농·자경농에게 최종 공급되거나 소유권이 이전된 면적과는 다른 지표입니다.",
       en: "Farmland Bank purchases from farmers aged 65 or older totaled 1,709 hectares in 2024, 1,719 hectares in 2025 and 1,433 hectares in the first half of 2026. These figures are distinct from the area ultimately supplied or transferred to young or working farmers.",
     },
@@ -709,5 +815,33 @@ export const farmlandCensusTracker: PublicInterestWatchCase = {
     },
     {"label": {"ko": "뉴스핌 · 농지 매입 예산 확대 언급", "en": "Newspim · President proposes expanded farmland-purchase funding"}, "url": "https://search.newspim.com/news/view/20261026000915"},
     {"label": {"ko": "농림축산식품부·정책브리핑 · 농지은행 임대수탁 신청 간소화", "en": "Agriculture Ministry · Policy Briefing · Simplified Farmland Bank lease-trust applications"}, "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148974017"},
+    {
+      "label": {
+        "ko": "강원특별자치도 · 농지 특별조치법안 강원권 설명회 개최",
+        "en": "Gangwon State · Official notice of the Gangwon briefing on the special farmland bill"
+      },
+      "url": "https://state.gwd.go.kr/portal/briefing/pressRelease?seq=9495"
+    },
+    {
+      "label": {
+        "ko": "농림축산식품부 · 특별조치법안 발의일과 주요 내용",
+        "en": "Ministry of Agriculture, Food and Rural Affairs · Introduction date and provisions of the special farmland bill"
+      },
+      "url": "https://www.mafra.go.kr/bbs/home/792/611357/download.do"
+    },
+    {
+      "label": {
+        "ko": "연합뉴스 · 농지 특별조치법안 횡성 설명회",
+        "en": "Yonhap News Agency · Hoengseong briefing on the special farmland bill"
+      },
+      "url": "https://www.yna.co.kr/view/AKR20261116138200062?input=1215m"
+    },
+    {
+      "label": {
+        "ko": "연합뉴스 · 농지 특별조치법안 전국 9개 시·도 설명회",
+        "en": "Yonhap News Agency · Regional briefings on the special farmland bill"
+      },
+      "url": "https://www.yna.co.kr/view/AKR20261110073100030"
+    },
   ],
 };
