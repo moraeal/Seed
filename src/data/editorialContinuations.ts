@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "column" && slug === "education-minister-resignation-accountability-2026") return true;
   if (kind === "column" && slug === "cabinet-appointments-rubber-stamps-2026") return true;
   if (kind === "column" && slug === "seed-thought-07-public-interest-programs") return true;
   if (kind === "seed-language" && slug === "peace-security-freedom-citizens-2026") return true;
@@ -538,6 +539,11 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "education-minister-resignation-accountability-2026") return language === "ko" ? {
+    href: "/columns/cabinet-appointments-rubber-stamps-2026", title: "사령관 자리에 왜 거수기를 앉히는가", relationship: "인사와 국정의 책임", reason: "인사 심사와 장관의 전문성에 관한 앞선 논평을 읽습니다.", listHref: "/columns", listLabel: "칼럼 전체 보기",
+  } : {
+    href: "/columns/cabinet-appointments-rubber-stamps-2026", title: "Why Put Rubber Stamps in Command?", relationship: "APPOINTMENTS AND ACCOUNTABILITY", reason: "Read our earlier editorial on appointment reviews and ministerial judgment.", listHref: "/columns", listLabel: "All columns",
+  };
   if (kind === "column" && slug === "cabinet-appointments-rubber-stamps-2026") return language === "ko" ? {
     href: "/columns/politics-cruel-to-devoted-public-servants-2026",
     title: "헌신한 사람들에게, 지금의 정치는 너무 잔인하다",
