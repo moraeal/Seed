@@ -9,6 +9,10 @@ import {
 export type { EditorialContentKind, EditorialContinuation } from "./editorialContinuationsLegacy";
 
 const extraContinuations: Record<string, { ko: EditorialContinuation; en: EditorialContinuation }> = {
+  "column:china-taiwan-invasion-part8-2026": {
+    ko: { href: "/columns/china-strategic-autonomy-sovereignty-2026", title: "중국이 말하는 자주, 대한민국의 자주인가", relationship: "우리에게 중국은 무엇인가 · ⑦편", reason: "중국의 전략적 자주 발언과 대한민국의 외교적 선택권을 살펴본 앞선 글을 읽는다.", listHref: "/series/china", listLabel: "우리에게 중국은 무엇인가 · 전체 연재" },
+    en: { href: "/columns/china-strategic-autonomy-sovereignty-2026", title: "The Autonomy Xi Wants: Who Gets to Decide for South Korea?", relationship: "WHAT DOES CHINA MEAN TO KOREA? · PART 7", reason: "Read the previous chapter on strategic autonomy and South Korea’s diplomatic choices.", listHref: "/series/china", listLabel: "What Does China Mean to Korea? — All chapters" },
+  },
   "column:china-strategic-autonomy-sovereignty-2026": {
     ko: { href: "/columns/china-north-korea-behind-part6-2026", title: "북한의 뒤에 중국이 있다", relationship: "우리에게 중국은 무엇인가 · ⑥편", reason: "중국과 북한의 관계가 한반도 안보에 미치는 영향을 앞선 기사에서 살펴본다.", listHref: "/series/china", listLabel: "우리에게 중국은 무엇인가 · 전체 연재" },
     en: { href: "/columns/china-north-korea-behind-part6-2026", title: "China Stands Behind North Korea", relationship: "WHAT DOES CHINA MEAN TO KOREA? · PART 6", reason: "Read the preceding chapter on China, North Korea and security on the Korean Peninsula.", listHref: "/series/china", listLabel: "What Does China Mean to Korea? — All chapters" },
