@@ -2,9 +2,9 @@ import type { ColumnTranslation } from "../types";
 
 export const issue138: ColumnTranslation = {
   "title": "Could China Invade Taiwan?",
-  "subtitle": "The 130-kilometre strait, a possible blockade and what South Korea must prepare for",
+  "subtitle": "What Does China Mean to Korea? · Part 8 — The 130-kilometre strait, a possible blockade and South Korea’s preparations",
   "author": "Small Seed",
-  "summary": "The Taiwan Strait makes a full-scale landing difficult. We examine how a blockade, limited attack or accident could still lead to war, and what South Korea needs to prepare.",
+  "summary": "Part 8 of What Does China Mean to Korea? The Taiwan Strait makes a full-scale landing difficult. We examine how a blockade, limited attack or accident could still lead to war, and what South Korea needs to prepare.",
   "heroImage": {
     "alt": "A conceptual dawn view over a wide sea toward distant ships from a Taiwanese coast",
     "caption": "An illustrative scene of distance and tension across the Taiwan Strait.",
@@ -36,6 +36,7 @@ export const issue138: ColumnTranslation = {
         "Germany occupied France and prepared an invasion of Britain, but never carried out a large-scale landing on the British mainland. It failed to gain air superiority, and the Royal Navy remained a threat to ships carrying troops and supplies across the Channel.[3]",
         "The question matters when considering Taiwan. China has a powerful military. Attacking Taiwan, however, is different from crossing the sea, occupying the main island and sustaining control.",
         "Does that mean China cannot invade? Can the water itself be relied on to prevent war?",
+        "In [Part 7, The Autonomy Xi Wants: Who Gets to Decide for South Korea?](/columns/china-strategic-autonomy-sovereignty-2026), we examined Beijing’s language of strategic autonomy and Seoul’s freedom to choose. This chapter considers the risk of a military crisis in the Taiwan Strait and its implications for South Korea.",
         "For years, analysts have discussed the possibility of a Chinese invasion in 2027, the centenary of the People’s Liberation Army. The discussion stems from assessments that Xi Jinping instructed the military to be capable of taking Taiwan by force by then.",
         "Having the capability is different from deciding to attack.",
         "The US intelligence community’s 2026 annual threat assessment said Chinese leaders did not currently plan to carry out an invasion in 2027 and had no fixed timeline for unification. It also said Beijing continued to develop military plans and capabilities for using force if directed.[4]",
@@ -93,7 +94,8 @@ export const issue138: ColumnTranslation = {
         "The sea makes a full-scale Chinese landing difficult. It does not remove the other ways in which pressure on Taiwan could lead to war.",
         "South Korea need not cultivate fear that war is inevitable. Nor can it rely only on the hope that China will never accept the economic costs.",
         "Watch whether military exercises become actual restrictions on shipping, whether clashes occur near Taiwan’s offshore islands, and how Washington and Beijing interpret one another’s actions. South Koreans should also be able to assess their government’s preparation for energy, logistics, protection of citizens abroad and defense of the peninsula.",
-        "Seoul cannot decide whether China attacks Taiwan. How many choices South Korean citizens and businesses retain in a crisis depends in part on preparation now."
+        "Seoul cannot decide whether China attacks Taiwan. How many choices South Korean citizens and businesses retain in a crisis depends in part on preparation now.",
+        "The next chapter will examine whether China can influence Taiwan’s choices without a landing, through politics, public opinion, the economy and culture."
       ]
     }
   ],
