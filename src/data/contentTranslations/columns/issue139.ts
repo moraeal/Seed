@@ -108,7 +108,7 @@ export const issue139: ColumnTranslation = {
     "Yonhap, district heating company appointment, Oct. 6, 2026",
     "Yonhap, Ha Dong-geun’s Assembly testimony, Oct. 19, 2026",
     "SBS, Assembly questioning on AI-enabled cheating and Choi’s response, Nov. 17, 2026",
-    "People Power Party, statement by chief spokesperson Choi Bo-yoon, Nov. 22, 2026",
+    "SBS, People Power Party spokesperson Choi Bo-yoon’s call for resignation, Nov. 22, 2026",
     "MBC, Choi and the ministry on blocking radio signals at exam sites, Nov. 16, 2026",
     "Yonhap, controversies over grading, a superintendent election and admissions after Choi took office, Nov. 22, 2026",
     "Yonhap, Choi’s Assembly testimony on the admissions outage, Sept. 14, 2026",
