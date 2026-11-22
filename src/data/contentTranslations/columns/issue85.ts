@@ -76,6 +76,20 @@ export const issue85: ColumnTranslation = {
       ]
     },
     {
+      "title": "Does rising government debt automatically mean higher taxes?",
+      "paragraphs": [
+        "An increase in government debt does not automatically trigger a tax increase. Interest payments and maturing bonds can be financed through government revenue, spending adjustments, refinancing and other measures. But higher interest expenditure can restrict the funds available for education, welfare and public safety, while making future choices about taxation and spending cuts more difficult.",
+        "Citizens need to examine not just the headline debt figure but also interest costs, the repayment structure and the actual results achieved by projects financed through borrowing."
+      ]
+    },
+    {
+      "title": "How is government debt different from a fiscal deficit?",
+      "paragraphs": [
+        "A fiscal deficit is a flow: government expenditure exceeding revenue during a particular period. Government debt is a stock: the accumulated outstanding borrowing and related liabilities at a given point in time. Repeated annual deficits may increase debt, but the two measures are not interchangeable.",
+        "A sound assessment of fiscal policy therefore distinguishes the size of the deficit, the outstanding government debt and the cost of interest payments."
+      ]
+    },
+    {
       "title": "Politicians leave office. The debt remains.",
       "paragraphs": [
         "Citizens need more than an explanation of why a government can spend. They need answers about where the money goes, how much interest it costs, what results remain and who bears responsibility if it fails.",

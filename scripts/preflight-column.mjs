@@ -2,6 +2,7 @@
 import { createServer } from "vite";
 import { access, readFile } from "node:fs/promises";
 import path from "node:path";
+import { createHash } from "node:crypto";
 
 const slug = process.argv[2];
 if (!slug) {
@@ -30,6 +31,24 @@ try {
     if (!en?.title?.trim() || !en?.summary?.trim()) errors.push("English edition missing title/summary");
     if ((en?.sections?.length ?? 0) !== (column.sections?.length ?? 0)) errors.push("Korean/English section counts do not match");
     if (!column.summary?.trim()) errors.push("Korean summary missing");
+    // Opt-in editorial locks are enforced; no lock means NOT yet approved/locked.
+    const lockPath = path.join(process.cwd(), "editorial", "approved", slug + ".json");
+    try {
+      const lock = JSON.parse(await readFile(lockPath, "utf8"));
+      const canonical = {
+        slug: column.slug, title: column.title, subtitle: column.subtitle || "",
+        summary: column.summary || "",
+        sections: (column.sections || []).map(s => ({ title: s.title || "", paragraphs: s.paragraphs || [] })),
+      };
+      const hash = v => createHash("sha256").update(JSON.stringify(v)).digest("hex");
+      if (lock.schemaVersion !== 1 || lock.slug !== slug || hash(lock.canonical) !== lock.sha256)
+        errors.push("Approved editorial lock is invalid or modified");
+      else if (hash(canonical) !== lock.sha256)
+        errors.push("Published article body differs from editor-approved manuscript");
+    } catch (error) {
+      if (error?.code === "ENOENT") warnings.push("No approved editorial manuscript lock (not yet protected): " + slug);
+      else errors.push("Editorial lock check failed: " + (error?.message ?? error));
+    }
     const images = [column.heroImage, ...(column.additionalImages ?? [])].filter(Boolean);
     if (images.length < 3) errors.push("Expected three distinct article photographs or graphics");
     const seen = new Set();
