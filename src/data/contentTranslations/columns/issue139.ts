@@ -82,30 +82,12 @@ export const issue139: ColumnTranslation = {
     }
   ],
   "sourceNote": "",
-  "sources": [
-    {
-      "label": "Yonhap, education minister dismissal, Nov. 22, 2026",
-      "url": "https://www.yna.co.kr/view/AKR20261122024052001"
-    },
-    {
-      "label": "Yonhap, examination disruption and resignation, Nov. 22, 2026",
-      "url": "https://www.yna.co.kr/view/AKR20261122021453530"
-    },
-    {
-      "label": "SBS, Choi’s remarks and resignation, Nov. 22, 2026",
-      "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008857881"
-    },
-    {
-      "label": "Korea Policy Briefing, presidential instructions on exam cheating, Nov. 18, 2026",
-      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148975944"
-    },
-    {
-      "label": "Yonhap, district heating company appointment, Oct. 6, 2026",
-      "url": "https://www.yna.co.kr/view/AKR20261006202100001"
-    },
-    {
-      "label": "Yonhap, Ha Dong-geun’s Assembly testimony, Oct. 19, 2026",
-      "url": "https://www.yna.co.kr/view/AKR20261019151900003"
-    }
+  "sourceLabels": [
+    "Yonhap, education minister dismissal, Nov. 22, 2026",
+    "Yonhap, examination disruption and resignation, Nov. 22, 2026",
+    "SBS, Choi’s remarks and resignation, Nov. 22, 2026",
+    "Korea Policy Briefing, presidential instructions on exam cheating, Nov. 18, 2026",
+    "Yonhap, district heating company appointment, Oct. 6, 2026",
+    "Yonhap, Ha Dong-geun’s Assembly testimony, Oct. 19, 2026"
   ]
 };
