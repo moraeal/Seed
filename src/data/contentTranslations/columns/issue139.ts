@@ -4,7 +4,7 @@ export const issue139: ColumnTranslation = {
   "title": "The Education Minister Has Gone. Who Answers for the Appointment?",
   "subtitle": "Exam confusion exposes a failure of preparation and public accountability",
   "author": "SEED VOICE",
-  "summary": "Last-minute anti-cheating measures disrupted students and teachers preparing for the college entrance exam. After the minister’s resignation, SEED VOICE asks how the government prepared and who answers for the appointment.",
+  "summary": "Last-minute exam rules, a minister’s answers to lawmakers, and earlier questions about admissions and political neutrality put Choi Kyo-jin’s judgment and crisis management under scrutiny. SEED VOICE asks what the president who appointed him owes the public.",
   "heroImage": {
     "alt": "An empty ministerial chair and broken pencil overlook examination papers and students",
     "caption": "The responsibility for disruption to students remains after the officeholder leaves.",
@@ -48,10 +48,28 @@ export const issue139: ColumnTranslation = {
     {
       "title": "Does a minister answer only to the president?",
       "paragraphs": [
-        "Asked in the National Assembly whether he could catch every case of AI-enabled cheating, Choi said he did not think he could, mentioning his age. A promise to catch every case would not itself have been a responsible answer. The public needed to hear what the ministry had prepared, where the gaps remained and how it would address them.",
-        "His remarks after the exam were more troubling. Asked about his position, Choi said in effect that he would resign if the person who appointed him told him to do so. [3]",
-        "The president appoints ministers. Their accountability cannot end with him. The education minister owes an explanation first to the students and parents who relied on his judgment and the teachers who had to carry out changing instructions.",
-        "If a minister appears to wait for presidential orders and leave only when the president wishes, whom can citizens trust to answer for the government’s decisions?"
+        "On November 16, three days before the exam, Park Jeong-hoon of the opposition People Power Party asked Choi at a National Assembly Education Committee hearing whether he was confident he could catch every case of AI-enabled cheating. Choi said he did not think he could and made a remark about his age. He also acknowledged how difficult it would be to keep up with new methods. [7]",
+        "No guarantee of perfect detection was needed. The minister owed the public an explanation of what supervisors could spot, who would step in when a case was unclear and how students wrongly suspected of cheating would be protected. His remark about his age left the committee’s question about the ministry’s ability to supervise the exam unanswered.",
+        "After the exam, Choi told reporters that he would step down if the person who appointed him asked him to, and would do his best while in office. On November 22, People Power Party chief spokesperson Choi Bo-yoon accused him of leaving the decision to the president and called on him to resign of his own accord. [3][8]",
+        "The president appoints ministers. The education minister owes an explanation first to the students and parents who relied on his judgment and the teachers who had to carry out changing instructions. If a minister defers to the president when asked about his own responsibility, whom can citizens ask to answer for the government’s decisions?"
+      ]
+    },
+    {
+      "title": "Mixed signals on exam security and an admissions outage",
+      "paragraphs": [
+        "That same day, Choi told lawmakers he was talking to the science and technology ministry about whether radio signals could be blocked during the exam. His ministry then issued a statement saying it was not considering signal jamming for that exam because of legal and technical constraints. It said the science ministry was considering whether to disable public Wi-Fi. With three days left, the public had to check the ministry’s official position after hearing from the minister himself. [9]",
+        "Admissions messaging had caused confusion early in his tenure, too. In September 2025, Choi voiced support for switching to fixed grading standards for the national exam and high school grades and said he wanted the idea put on the agenda. His ministry said the government had made no decision on whether or when to proceed. Choi later acknowledged he should have spoken more carefully. When a minister raises a major admissions change, families need to know what has been decided and which students could be affected. [10]",
+        "This September, the privately operated Uway Apply platform failed shortly before the early admissions deadline. Choi told lawmakers he had ordered an extension after consulting the Korean Council for University Education. Some universities published application-to-place ratios after the original deadline, raising a question of whether students who applied during the extension had access to information unavailable to earlier applicants. [10][11]",
+        "Extending the deadline was necessary to give students a chance to finish their applications. The authorities also needed to control the release of those figures and prepare a way to help students who still could not apply. A contractor can run the platform. Education authorities are responsible for protecting access and fairness when it fails."
+      ]
+    },
+    {
+      "title": "The hearing had already raised concerns about fairness and neutrality",
+      "paragraphs": [
+        "At Choi’s confirmation hearing on September 2, 2025, People Power Party lawmakers questioned him about his drunk-driving conviction and his decision to share a social media post casting doubt on the North Korean attack that sank the South Korean warship Cheonan. He apologized for the 2003 drunk-driving offense, for which he was fined 2 million won. He said he shared the post to invite discussion, rejected the conspiracy theory and said he trusted the official findings. [13]",
+        "Choi also faced questions about posts criticizing prosecutors investigating admissions fraud involving the children of former Justice Minister Cho Kuk. He acknowledged that he had failed to consider how young people would see the unequal opportunities involved. The first concern of anyone put in charge of admissions should be whether students who follow the rules, regardless of background or connections, have the same opportunity. [13]",
+        "In April, while in office, Choi attended the opening of a campaign office for Lim Jeon-su, a prospective candidate for Sejong superintendent of education. Choi said he had attended privately and expressed regret. He later drew renewed criticism over neutrality when he commented on a post supporting the same candidate. Candidates and voters can read a minister’s appearance and public comments as signals from the education authorities. The office carries that weight whether or not the minister intends it. [12][10]",
+        "The People Power Party opposed adopting the hearing report and boycotted the meeting. The Democratic Party and the Rebuilding Korea Party adopted it on September 11, and President Lee approved the appointment that day. After Choi offered to resign, the Democratic Party called for a successor with expertise and a sense of responsibility. Those are the standards by which it should now revisit the appointment made fourteen months earlier. [14][15]"
       ]
     },
     {
@@ -66,7 +84,7 @@ export const issue139: ColumnTranslation = {
     {
       "title": "Disclose the appointment criteria before changing the person",
       "paragraphs": [
-        "Choi had worked as a teacher and superintendent of education in Sejong. We cannot say this happened because he lacked experience in schools. Experience in education and the ability to manage a nationwide examination and respond to emerging technical risks each need to be assessed. [2]",
+        "Choi was a teacher and served three terms as superintendent of education in Sejong. That experience gave him insight into schools. Running a nationwide exam also requires checking legal limits in advance, coordinating with other ministries and getting uniform instructions to every exam site in time. The government should explain what evidence beyond his experience in Sejong showed he could carry out those responsibilities. [2]",
         "Our earlier editorial examined the appointment of a candidate who had finished last in two assessments to lead Korea District Heating Corporation. The government said it considered multiple factors and denied pressure from the presidential office. The public should be able to see what strengths outweighed the other candidates’ scores. [5][6]",
         "The next education appointment calls for the same scrutiny. Before asking whether a candidate is close to a political camp or understands the president’s wishes, ask whether the person can listen to educators, manage admissions and education administration, and build a team capable of responding to unforeseen risks.",
         "The president must answer too. What abilities led him to appoint Choi? Could the weaknesses exposed by the exam preparations have been identified during vetting? What criteria will govern the next appointment?"
@@ -88,6 +106,15 @@ export const issue139: ColumnTranslation = {
     "SBS, Choi’s remarks and resignation, Nov. 22, 2026",
     "Korea Policy Briefing, presidential instructions on exam cheating, Nov. 18, 2026",
     "Yonhap, district heating company appointment, Oct. 6, 2026",
-    "Yonhap, Ha Dong-geun’s Assembly testimony, Oct. 19, 2026"
+    "Yonhap, Ha Dong-geun’s Assembly testimony, Oct. 19, 2026",
+    "SBS, Assembly questioning on AI-enabled cheating and Choi’s response, Nov. 17, 2026",
+    "People Power Party, statement by chief spokesperson Choi Bo-yoon, Nov. 22, 2026",
+    "MBC, Choi and the ministry on blocking radio signals at exam sites, Nov. 16, 2026",
+    "Yonhap, controversies over grading, a superintendent election and admissions after Choi took office, Nov. 22, 2026",
+    "Yonhap, Choi’s Assembly testimony on the admissions outage, Sept. 14, 2026",
+    "Yonhap, campaign office visit and Choi’s response, April 28, 2026",
+    "Yonhap, nomination hearing questions and Choi’s responses, Sept. 2, 2025",
+    "Yonhap, hearing report adopted and Choi’s appointment approved, Sept. 11, 2025",
+    "Yonhap, Democratic Party briefing on the next education minister, Nov. 22, 2026"
   ]
 };
