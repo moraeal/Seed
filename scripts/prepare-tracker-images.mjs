@@ -71,9 +71,11 @@ async function prepare([url, source]) {
     // A denied or temporarily unavailable publisher must not block site deploy:
     // keep the article URL and use a visibly non-photographic labelled link tile.
     const message = String(error?.message || error);
+    const connectionError = error?.cause?.code;
     const externalUnavailable =
       /HTTP (?:401|403|408|429|500|502|503|504)\b/.test(message) ||
-      /fetch failed|network|timeout|timed out|aborterror|socket hang up|ECONNRESET|ENOTFOUND|EAI_AGAIN/i.test(message);
+      /fetch failed|network|timeout|timed out|aborterror|socket hang up|ECONNRESET|ENOTFOUND|EAI_AGAIN/i.test(message) ||
+      message === 'terminated' || connectionError === 'UND_ERR_SOCKET';
     if (externalUnavailable && !source.thumbnailSrc) {
       const src = "/images/monitoring/source-articles/source-link-editorial.svg";
       await access(`public/${src.slice(1)}`);
