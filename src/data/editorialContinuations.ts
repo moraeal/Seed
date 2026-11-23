@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "column" && slug === "have-you-eaten-01-sapaesan") return true;
   if (kind === "column" && slug === "education-minister-resignation-accountability-2026") return true;
   if (kind === "column" && slug === "cabinet-appointments-rubber-stamps-2026") return true;
   if (kind === "column" && slug === "seed-thought-07-public-interest-programs") return true;
@@ -539,6 +540,14 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "have-you-eaten-01-sapaesan") return {
+    href: "/columns/citizens-dilemma-05-recycling-group-chat",
+    title: language === "ko" ? "분리수거장에 버린 상자, 송장 사진을 단톡방에 올려도 될까요?" : "A Box in the Recycling Area: Should Its Shipping Label Go in the Group Chat?",
+    relationship: language === "ko" ? "함께 읽는 시민의 딜레마" : "Everyday Civic Dilemmas",
+    reason: language === "ko" ? "이웃의 일에 나서는 마음과 사생활의 경계를 살펴봅니다." : "Where is the line between caring about a shared space and intruding on a neighbor?",
+    listHref: "/series/have-you-eaten",
+    listLabel: language === "ko" ? "연재 에세이 전체 보기" : "All essays in this series",
+  };
   if (kind === "column" && slug === "inheritance-tax-korea-discount") return language === "ko" ? {
     href: "/columns/inheritance-tax-capital-and-talent-mobility", title: "상속세가 자본과 인재의 망명을 자극하는 나라", relationship: "상속세와 기업의 이동", reason: "상속세가 기업 승계와 투자에 미치는 영향을 이어서 살펴봅니다.", listHref: "/tax-watch-movement", listLabel: "세금감시운동 전체 보기",
   } : {

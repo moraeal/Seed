@@ -16,7 +16,7 @@ export type SeedColumn = {
   series?: { slug: string; chapter: number };
   readMinutes: number;
   summary: string;
-  presentation?: "poem";
+  presentation?: "poem" | "essay";
   displayHero?: boolean;
   displayInlineImage?: boolean;
   heroImage: { src: string; socialSrc?: string; alt: string; caption: string; credit: string; sourceUrl: string };
