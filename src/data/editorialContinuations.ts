@@ -539,6 +539,11 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "china-ev-subsidy-trade-2026") return language === "ko" ? {
+    href: "/columns/china-korea-industry-beyond-pro-anti-slogans-2026", title: "우리에게 중국은 무엇인가", relationship: "중국과 한국 산업", reason: "중국과 얽힌 한국 산업의 현실을 이어서 살펴봅니다.", listHref: "/columns", listLabel: "칼럼 전체 보기",
+  } : {
+    href: "/columns/china-korea-industry-beyond-pro-anti-slogans-2026", title: "What Does China Mean to Us?", relationship: "CHINA AND KOREAN INDUSTRY", reason: "Continue with Korea’s industrial relationship with China.", listHref: "/columns", listLabel: "All columns",
+  };
   if (kind === "column" && slug === "education-minister-resignation-accountability-2026") return language === "ko" ? {
     href: "/columns/cabinet-appointments-rubber-stamps-2026", title: "사령관 자리에 왜 거수기를 앉히는가", relationship: "인사와 국정의 책임", reason: "인사 심사와 장관의 전문성에 관한 앞선 논평을 읽습니다.", listHref: "/columns", listLabel: "칼럼 전체 보기",
   } : {
