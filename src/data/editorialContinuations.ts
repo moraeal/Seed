@@ -539,6 +539,11 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "inheritance-tax-korea-discount") return language === "ko" ? {
+    href: "/columns/inheritance-tax-capital-and-talent-mobility", title: "상속세가 자본과 인재의 망명을 자극하는 나라", relationship: "상속세와 기업의 이동", reason: "상속세가 기업 승계와 투자에 미치는 영향을 이어서 살펴봅니다.", listHref: "/tax-watch-movement", listLabel: "세금감시운동 전체 보기",
+  } : {
+    href: "/columns/inheritance-tax-capital-and-talent-mobility", title: "A Country Where Inheritance Tax Encourages Capital and Talent to Leave", relationship: "INHERITANCE TAX AND BUSINESS", reason: "Continue with the effects of inheritance tax on succession and investment.", listHref: "/tax-watch-movement", listLabel: "All Tax Watch Movement articles",
+  };
   if (kind === "column" && slug === "china-ev-subsidy-trade-2026") return language === "ko" ? {
     href: "/columns/china-korea-industry-beyond-pro-anti-slogans-2026", title: "우리에게 중국은 무엇인가", relationship: "중국과 한국 산업", reason: "중국과 얽힌 한국 산업의 현실을 이어서 살펴봅니다.", listHref: "/columns", listLabel: "칼럼 전체 보기",
   } : {
