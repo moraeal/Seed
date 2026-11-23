@@ -110,22 +110,10 @@ export const issue141: ColumnTranslation = {
     }
   ],
   "sourceNote": "As of November 23, 2026. The investor’s thesis does not establish a causal effect; the cited study did not directly analyze an actual rate cut.",
-  "sources": [
-    {
-      "label": "Maeil Business Newspaper · September 30, 2026 · Clifton on value traps in Korean shares",
-      "url": "https://m.mk.co.kr/amp/12164933"
-    },
-    {
-      "label": "Korea Law Information Center · Inheritance Tax and Gift Tax Act, Article 63",
-      "url": "https://www.law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1032172671"
-    },
-    {
-      "label": "Korea Law Information Center · Inheritance Tax and Gift Tax Act, Article 26",
-      "url": "https://www.law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1029615621"
-    },
-    {
-      "label": "Kim Woochan and Ra Jinhyuk · Asian Review of Financial Research · May 2025 · Can Estate Tax Cuts Raise Share Prices?",
-      "url": "https://www.earticle.net/Journal/Issues/859/35587"
-    }
+  "sourceLabels": [
+    "Maeil Business Newspaper · September 30, 2026 · Clifton on value traps in Korean shares",
+    "Korea Law Information Center · Inheritance Tax and Gift Tax Act, Article 63",
+    "Korea Law Information Center · Inheritance Tax and Gift Tax Act, Article 26",
+    "Kim Woochan and Ra Jinhyuk · Asian Review of Financial Research · May 2025 · Can Estate Tax Cuts Raise Share Prices?"
   ]
 };
