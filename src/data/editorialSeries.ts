@@ -15,6 +15,12 @@ type SeriesSpec = {
 
 const seriesSpecs: SeriesSpec[] = [
   {
+    slug: "have-you-eaten",
+    title: { ko: "밥은 드셨습니까", en: "Have You Eaten?" },
+    description: { ko: "한국인은 언제 남의 일에 나서는가. 낯선 이의 밥과 안부를 살피는 일에서 시작하는 8부작 에세이.", en: "When do Koreans step in? Eight essays on strangers, shared meals and civic life." },
+    matches: (item) => item.slug.startsWith("have-you-eaten-"),
+  },
+  {
     slug: "seed-thought",
     title: { ko: "씨앗을 만든 생각", en: "The Ideas Behind SEED VOICE" },
     description: {
