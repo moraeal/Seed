@@ -466,7 +466,65 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
   }
 };
 
+const novemberReadingLinks: Record<string, Record<Language, EditorialContinuation>> = {
+  "news:november-exports-semiconductor-share-2026": {
+    "ko": {
+      "href": "/columns/china-ev-subsidy-trade-2026",
+      "title": "중국산 테슬라에 열린 한국 시장, 전기차 보조금은 누구를 위한 것인가",
+      "relationship": "품목별 무역",
+      "reason": "수출 전체에서 승용차 한 품목으로 시선을 옮겨 대중 자동차 교역을 살펴봅니다.",
+      "listHref": "/news",
+      "listLabel": "핫이슈 전체 보기"
+    },
+    "en": {
+      "href": "/columns/china-ev-subsidy-trade-2026",
+      "title": "Chinese-built Teslas in Korea: Who Benefits from EV Subsidies?",
+      "relationship": "Trade by industry",
+      "reason": "Read how the trade balance with China looks for one product group: cars.",
+      "listHref": "/news",
+      "listLabel": "All hot issues"
+    }
+  },
+  "briefing:card-points-cash-local-currency-2026": {
+    "ko": {
+      "href": "/briefings/winter-disaster-insurance-tenants-shops-2026",
+      "title": "눈 오기 전 살펴볼 재해보험, 세입자와 가게도 가입할 수 있습니다",
+      "relationship": "시민생활",
+      "reason": "동네 가게와 가계가 겨울을 앞두고 확인할 보험료 지원 조건을 살펴봅니다.",
+      "listHref": "/briefings",
+      "listLabel": "브리핑 전체 보기"
+    },
+    "en": {
+      "href": "/briefings/winter-disaster-insurance-tenants-shops-2026",
+      "title": "Before the snow comes, check disaster coverage for your rental home or shop",
+      "relationship": "Civic life",
+      "reason": "See how households and local shops can check their disaster insurance premiums.",
+      "listHref": "/briefings",
+      "listLabel": "All briefings"
+    }
+  },
+  "briefing:winter-disaster-insurance-tenants-shops-2026": {
+    "ko": {
+      "href": "/briefings/card-points-cash-local-currency-2026",
+      "title": "카드포인트, 지역화폐로 바꾸기 전에 현금화도 살펴보세요",
+      "relationship": "시민생활",
+      "reason": "가계에 숨어 있는 카드포인트를 찾아 쓸 수 있는 경로도 살펴봅니다.",
+      "listHref": "/briefings",
+      "listLabel": "브리핑 전체 보기"
+    },
+    "en": {
+      "href": "/briefings/card-points-cash-local-currency-2026",
+      "title": "Cash or local currency? Two ways to use Korean card points",
+      "relationship": "Civic life",
+      "reason": "Explore how to find unused card points and check what can be withdrawn.",
+      "listHref": "/briefings",
+      "listLabel": "All briefings"
+    }
+  }
+};
+
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (novemberReadingLinks[`${kind}:${slug}`]) return true;
   if (kind === "column" && slug === "seed-thought-08-independent-civic-judgment") return true;
   if (kind === "column" && slug === "have-you-eaten-01-sapaesan") return true;
   if (kind === "column" && slug === "education-minister-resignation-accountability-2026") return true;
@@ -541,6 +599,8 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  const novemberLink = novemberReadingLinks[`${kind}:${slug}`];
+  if (novemberLink) return novemberLink[language];
   if (kind === "column" && slug === "seed-thought-08-independent-civic-judgment") return language === "ko" ? {
     href: "/columns/seed-thought-07-public-interest-programs",
     title: "공익사업이 시민의 질문을 놓칠 때",
