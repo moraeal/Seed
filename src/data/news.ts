@@ -1,3 +1,4 @@
+import { exportsNovember } from "./news/exportNovember2026";
 import { privacySecurityCommentaryArticle } from "./news/privacySecurityCommentary";
 import { businessGrowthThresholdsArticle } from "./news/businessGrowthThresholds";
 import { newsArticles as archivedNewsArticles } from "./newsArchive";
@@ -399,7 +400,7 @@ const mediaAppealJusticeArticle: NewsArticle = {
   ]
 };
 
-export const newsArticles: NewsArticle[] = [cryptoTaxDeferral2026Article, privacySecurityCommentaryArticle, businessGrowthThresholdsArticle, olympicParkProtest115DaysArticle, debtReliefFairness2026Article, dmzInvestigationTimelineArticle, majorCrimesAgencyStaffingArticle, supremeCourtRenominationStandoffArticle, dmzSecurityCommandFailureArticle, publicEnterpriseRestructureArticle, fuelPriceCapTaxBillArticle, nationalDebtRatioGdpComparisonArticle, mediaAppealJusticeArticle, localSportsSubsidyArticle, lhSplitPublicAgencyArticle, ...archivedNewsArticles];
+export const newsArticles: NewsArticle[] = [exportsNovember, cryptoTaxDeferral2026Article, privacySecurityCommentaryArticle, businessGrowthThresholdsArticle, olympicParkProtest115DaysArticle, debtReliefFairness2026Article, dmzInvestigationTimelineArticle, majorCrimesAgencyStaffingArticle, supremeCourtRenominationStandoffArticle, dmzSecurityCommandFailureArticle, publicEnterpriseRestructureArticle, fuelPriceCapTaxBillArticle, nationalDebtRatioGdpComparisonArticle, mediaAppealJusticeArticle, localSportsSubsidyArticle, lhSplitPublicAgencyArticle, ...archivedNewsArticles];
 
 export const getNewsNewestFirst = () => [...newsArticles].sort((a, b) => b.date.localeCompare(a.date));
 export const getNewsArticle = (slug: string) => newsArticles.find((article) => article.slug === slug);

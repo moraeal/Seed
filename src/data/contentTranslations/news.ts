@@ -1,3 +1,4 @@
+import { exportsNovemberTranslation } from "../news/exportNovember2026";
 import { privacySecurityCommentaryTranslation } from "./news/privacySecurityCommentary";
 import { businessGrowthThresholdsTranslation } from "./news/businessGrowthThresholds";
 import type { NewsTranslation } from "./types";
@@ -12,6 +13,7 @@ import { olympicParkProtest115DaysTranslation } from "./news/olympicParkProtest1
 import { cryptoTaxDeferral2026Translation } from "./news/cryptoTaxDeferral2026";
 
 export const newsTranslations: Record<string, NewsTranslation> = {
+  "november-exports-semiconductor-share-2026": exportsNovemberTranslation,
   "crypto-tax-fourth-deferral-2026": cryptoTaxDeferral2026Translation,
   "privacy-leaks-ai-security-accountability-2026": privacySecurityCommentaryTranslation,
   "business-growth-regulatory-thresholds-2026": businessGrowthThresholdsTranslation,
