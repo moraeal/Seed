@@ -467,6 +467,24 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 const novemberReadingLinks: Record<string, Record<Language, EditorialContinuation>> = {
+  "column:surname-freedom-and-equality": {
+    ko: {
+      href: "/seed-language/freedom-as-citizen-agency",
+      title: "자유는 방임이 아니라, 스스로 설 수 있는 힘이라는 말이다",
+      relationship: "관련 시민언어",
+      reason: "씨앗이 말하는 비지배와 실제로 선택할 수 있는 조건을 살펴봅니다.",
+      listHref: "/columns",
+      listLabel: "칼럼 전체 보기",
+    },
+    en: {
+      href: "/seed-language/freedom-as-citizen-agency",
+      title: "Freedom Is Not Neglect. It Is What Makes Citizens Agents",
+      relationship: "Related Civic Language article",
+      reason: "How freedom from arbitrary power and access to real choices shape civic life.",
+      listHref: "/columns",
+      listLabel: "All columns",
+    },
+  },
   "news:november-exports-semiconductor-share-2026": {
     "ko": {
       "href": "/columns/china-ev-subsidy-trade-2026",

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="580" viewBox="0 0 1200 580" role="img" aria-label="Three questions about a surname">
+<rect width="1200" height="580" fill="#faf6ed"/>
+<g font-family="Noto Sans KR, NanumGothic, sans-serif" fill="#1b3531"><text x="65" y="100" font-size="53" font-weight="700">Three questions about a surname</text>
+<path d="M65 155h1070" stroke="#b5c3b9" stroke-width="2"/><text x="65" y="224" font-weight="600" font-size="29" fill="#356b59">Freedom from domination</text><text x="500" y="224" font-size="29">Who has the power to overrule me?</text>
+<path d="M65 278h1070" stroke="#b5c3b9" stroke-width="2"/><text x="65" y="347" font-weight="600" font-size="29" fill="#356b59">Equal terms of choice</text><text x="500" y="347" font-size="29">Do both options follow the same rules?</text>
+<path d="M65 401h1070" stroke="#b5c3b9" stroke-width="2"/><text x="65" y="470" font-weight="600" font-size="29" fill="#356b59">Equality of outcomes</text><text x="500" y="470" font-size="29">How many people choose each option?</text>
+</g></svg>

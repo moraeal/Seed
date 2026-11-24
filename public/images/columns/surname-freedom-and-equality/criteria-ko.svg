@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="580" viewBox="0 0 1200 580" role="img" aria-label="성씨를 두고 묻는 세 가지 질문">
+<rect width="1200" height="580" fill="#faf6ed"/>
+<g font-family="Noto Sans KR, NanumGothic, sans-serif" fill="#1b3531"><text x="65" y="100" font-size="53" font-weight="700">성씨를 두고 묻는 세 가지 질문</text>
+<path d="M65 155h1070" stroke="#b5c3b9" stroke-width="2"/><text x="65" y="224" font-weight="600" font-size="35" fill="#356b59">비지배의 자유</text><text x="460" y="224" font-size="34">누가 내 뜻을 뒤집을 수 있는가?</text>
+<path d="M65 278h1070" stroke="#b5c3b9" stroke-width="2"/><text x="65" y="347" font-weight="600" font-size="35" fill="#356b59">선택 조건의 평등</text><text x="460" y="347" font-size="34">두 선택에 같은 절차가 적용되는가?</text>
+<path d="M65 401h1070" stroke="#b5c3b9" stroke-width="2"/><text x="65" y="470" font-weight="600" font-size="35" fill="#356b59">결과의 평등</text><text x="460" y="470" font-size="34">각각의 선택이 차지한 비율은 얼마인가?</text>
+</g></svg>
