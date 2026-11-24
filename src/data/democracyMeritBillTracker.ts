@@ -13,13 +13,13 @@ export const democracyMeritBillTracker: PublicInterestWatchCase = {
     en: "South Korea’s Democratic Merit Bill Returns to the Floor Two and a Half Years After a Veto",
   },
   summary: {
-    ko: "2024년 재의요구로 폐기된 민주유공자법이 11월 19일 국회 본회의에 다시 올랐습니다. 20일 오전 기준으로 표결은 오후에 예정돼 있습니다. 보훈부가 예상한 유공자 635명의 범위와 자녀 대입 특별전형 논란도 함께 추적합니다.",
-    en: "The bill returned to South Korea’s National Assembly floor on November 19 after a presidential veto ended its previous run in 2024. As of the morning of November 20, a vote was expected that afternoon. This tracker follows the ministry’s estimate of 635 potential honorees and the debate over their children’s university admissions eligibility.",
+    ko: "2024년 재의요구로 폐기된 민주유공자법이 11월 19일 국회 본회의에 다시 올랐습니다. 20일 오후 국회는 재석 178명 전원 찬성으로 법안을 가결했습니다. 보훈부가 예상한 유공자 635명의 범위와 자녀 대입 특별전형 논란도 함께 추적합니다.",
+    en: "The bill returned to South Korea’s National Assembly floor on November 19 after a presidential veto ended its previous run in 2024. On November 20, all 178 lawmakers present voted to pass the bill. This tracker follows the ministry’s estimate of 635 potential honorees and the debate over their children’s university admissions eligibility.",
   },
-  status: { ko: "본회의 상정 · 표결 예정", en: "On the Assembly floor · Vote pending" },
+  status: { ko: "국회 본회의 가결", en: "Passed by the National Assembly" },
   openedAt: "2000-12-04",
   publishedAt: "2026-11-20",
-  updatedAt: "2026-11-20",
+  updatedAt: "2026-11-24",
   continuationEligible: false,
   heroImage: {
     src: "/images/legislation/democracy-merit-2026/hero.webp",
@@ -60,10 +60,19 @@ export const democracyMeritBillTracker: PublicInterestWatchCase = {
     },
   ],
   sourceBasis: {
-    ko: "2026년 11월 20일 오전 기준. 공개 의안 기록, 보도, 현행 고등교육법 시행령과 대학 모집요강을 대조했습니다. 법사위 의결본 전문은 직접 열람할 수 없어 해당 조문 설명은 국회 심사 자료를 대조한 보도를 참조했습니다.",
-    en: "Checked on the morning of November 20, 2026, against public legislative records, reporting, the current higher education decree and a university admissions guide. The full committee-approved text could not be retrieved directly, so descriptions of those provisions rely on reporting that reviewed the Assembly documents.",
+    ko: "11월 24일, 국가보훈부 발표와 20일 오후 본회의 표결 보도로 갱신했습니다. 기존 기록은 11월 20일 오전 기준입니다. 공개 의안 기록, 보도, 현행 고등교육법 시행령과 대학 모집요강을 대조했습니다. 법사위 의결본 전문은 직접 열람할 수 없어 해당 조문 설명은 국회 심사 자료를 대조한 보도를 참조했습니다.",
+    en: "Updated November 24 with the ministry announcement and reporting on the November 20 vote. The earlier entries were checked against public legislative records, reporting, the current higher education decree and a university admissions guide. The full committee-approved text could not be retrieved directly, so descriptions of those provisions rely on reporting that reviewed the Assembly documents.",
   },
   timeline: [
+    {
+      date: "2026-11-20",
+      title: { ko: "오후 본회의 가결, 재석 178명 전원 찬성", en: "Afternoon floor vote passes with all 178 present in favor" },
+      description: {
+        ko: "국회는 무제한토론을 종결한 뒤 민주유공자 예우에 관한 법률안을 가결했다. 국민의힘은 표결에 불참했다. 정부는 의료·양로·요양 지원과 등록 절차를 주요 내용으로 설명했다. [19][20]",
+        en: "After the filibuster ended, the National Assembly passed the bill. The People Power Party did not participate in the vote. The government highlighted registration, medical support and elder and long-term care. [19][20]",
+      },
+      status: "confirmed",
+    },
     {
       date: "2026-11-20",
       title: { ko: "무제한토론 종결과 법안 표결 추진", en: "Governing party seeks to close debate and hold a vote" },
@@ -203,8 +212,8 @@ export const democracyMeritBillTracker: PublicInterestWatchCase = {
     {
       title: { ko: "자녀가 대입 특별전형에 지원할 수 있나", en: "Could children of honorees apply through a special admissions route?" },
       description: {
-        ko: "현재 본회의에 오른 안에는 교육비나 취업을 직접 지원하는 조항이 없다. 현행 「고등교육법 시행령」 제42조의6은 대학 사회통합전형에 국가보훈대상자를 포함한다. 보훈부는 2024년 국회 검토 과정에서 민주유공자 본인과 자녀가 이 전형의 대상이 될 가능성을 제기했다. 연세대 2027학년도 수시 모집요강은 보훈 관계 법령상 교육지원 대상자에게 지원 자격을 부여하고 보훈관서가 발급한 증명서를 요구한다. 실제 적용은 교육부·보훈부의 해석과 대학 모집요강에서 확인해야 한다. [6] [16] [17] [18]",
-        en: "The bill before the Assembly contains no direct education or employment benefit. Article 42-6 of the Higher Education Act’s enforcement decree includes veterans-affairs beneficiaries in social integration admissions. During legislative review in 2024, the veterans ministry said the route could extend to honorees and their children. Yonsei University’s 2027 early admissions guide requires eligibility for education assistance under veterans law and a certificate from a veterans affairs office. Whether the route applies will depend on official guidance and each university’s rules. [6] [16] [17] [18]",
+        ko: "본회의에 상정됐던 안에는 교육비나 취업을 직접 지원하는 조항이 없다. 현행 「고등교육법 시행령」 제42조의6은 대학 사회통합전형에 국가보훈대상자를 포함한다. 보훈부는 2024년 국회 검토 과정에서 민주유공자 본인과 자녀가 이 전형의 대상이 될 가능성을 제기했다. 연세대 2027학년도 수시 모집요강은 보훈 관계 법령상 교육지원 대상자에게 지원 자격을 부여하고 보훈관서가 발급한 증명서를 요구한다. 실제 적용은 교육부·보훈부의 해석과 대학 모집요강에서 확인해야 한다. [6] [16] [17] [18]",
+        en: "The bill brought to the Assembly floor contains no direct education or employment benefit. Article 42-6 of the Higher Education Act’s enforcement decree includes veterans-affairs beneficiaries in social integration admissions. During legislative review in 2024, the veterans ministry said the route could extend to honorees and their children. Yonsei University’s 2027 early admissions guide requires eligibility for education assistance under veterans law and a certificate from a veterans affairs office. Whether the route applies will depend on official guidance and each university’s rules. [6] [16] [17] [18]",
       },
     },
   ],
@@ -212,8 +221,8 @@ export const democracyMeritBillTracker: PublicInterestWatchCase = {
   proposals: [],
   followUpChecks: [
     {
-      ko: "국회 본회의의 무제한토론 종결 여부, 표결 결과와 최종 의결문을 확인한다.",
-      en: "Check whether the Assembly ends the filibuster, how lawmakers vote and what the final adopted text says.",
+      ko: "공포일과 부칙에 따른 시행일, 후속 시행령을 확인한다.",
+      en: "Check the promulgation date, effective date and implementing decree.",
     },
     {
       ko: "법이 공포될 경우 보훈부가 제시하는 인정 증빙과 심사 기준, 등록·탈락 통계와 이의제기 절차를 확인한다.",
@@ -268,5 +277,7 @@ export const democracyMeritBillTracker: PublicInterestWatchCase = {
     { label: { ko: "국가법령정보센터 · 고등교육법 시행령 제42조의6", en: "Korean Law Information Center · Higher Education Act Enforcement Decree, Article 42-6" }, url: "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B3%A0%EB%93%B1%EA%B5%90%EC%9C%A1%EB%B2%95%EC%8B%9C%ED%96%89%EB%A0%B9/%EC%A0%9C42%EC%A1%B0%EC%9D%986" },
     { label: { ko: "뉴데일리 · 국회 검토보고서와 보훈부 의견 (2026.11.04)", en: "New Daily · Assembly review and veterans ministry’s position (Nov. 4, 2026)" }, url: "https://www.newdaily.co.kr/site/data/html/2026/11/04/2026110400047.html" },
     { label: { ko: "연세대학교 · 2027학년도 수시모집 국가보훈대상자 전형 요강", en: "Yonsei University · 2027 early admissions guide for veterans-affairs applicants" }, url: "https://www2.yonsei.ac.kr/entrance/2027/susi/upload/X_2.pdf" },
+    { label: { ko: "국가보훈부 · 민주유공자법 국회 통과 (2026.11.20)", en: "Ministry of Patriots and Veterans Affairs · Assembly passage (Nov. 20, 2026)" }, url: "https://www.korea.kr/news/policyNewsView.do?newsId=148976190" },
+    { label: { ko: "연합뉴스 · 본회의 표결 결과 (2026.11.20)", en: "Yonhap · Floor vote (Nov. 20, 2026)" }, url: "https://www.yna.co.kr/view/AKR20261120121451001" },
   ],
 };
