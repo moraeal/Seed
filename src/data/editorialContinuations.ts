@@ -467,6 +467,7 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
+  if (kind === "column" && slug === "seed-thought-08-independent-civic-judgment") return true;
   if (kind === "column" && slug === "have-you-eaten-01-sapaesan") return true;
   if (kind === "column" && slug === "education-minister-resignation-accountability-2026") return true;
   if (kind === "column" && slug === "cabinet-appointments-rubber-stamps-2026") return true;
@@ -540,6 +541,19 @@ export function hasEditorialContinuation(kind: EditorialContentKind, slug: strin
 }
 
 export function getEditorialContinuation(kind: EditorialContentKind, slug: string, language: Language): EditorialContinuation | undefined {
+  if (kind === "column" && slug === "seed-thought-08-independent-civic-judgment") return language === "ko" ? {
+    href: "/columns/seed-thought-07-public-interest-programs",
+    title: "공익사업이 시민의 질문을 놓칠 때",
+    relationship: "씨앗을 만든 생각 ⑦",
+    reason: "사업의 계획과 평가 과정에서 시민의 질문이 어디서 빠지는지 살펴봅니다.",
+    listHref: "/series/seed-thought", listLabel: "씨앗을 만든 생각 전체 보기",
+  } : {
+    href: "/columns/seed-thought-07-public-interest-programs",
+    title: "When Public Programs Miss Citizens’ Questions",
+    relationship: "THE IDEAS BEHIND SEED VOICE · PART 7",
+    reason: "Read where citizens’ questions fall out of the planning and evaluation of public programs.",
+    listHref: "/series/seed-thought", listLabel: "All articles in this series",
+  };
   if (kind === "column" && slug === "have-you-eaten-01-sapaesan") return {
     href: "/columns/citizens-dilemma-05-recycling-group-chat",
     title: language === "ko" ? "분리수거장에 버린 상자, 송장 사진을 단톡방에 올려도 될까요?" : "A Box in the Recycling Area: Should Its Shipping Label Go in the Group Chat?",

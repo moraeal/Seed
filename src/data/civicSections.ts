@@ -45,6 +45,7 @@ export function getCivicSectionForArticle(path: string) {
 export const civicLifeArticlePaths = [
   "/briefings/winter-disaster-insurance-tenants-shops-2026",
   "/briefings/card-points-cash-local-currency-2026",
+  "/columns/seed-thought-08-independent-civic-judgment",
   "/columns/have-you-eaten-01-sapaesan",
   "/columns/citizens-dilemma-05-recycling-group-chat",
   "/columns/seed-thought-07-public-interest-programs",
