@@ -467,6 +467,24 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 const novemberReadingLinks: Record<string, Record<Language, EditorialContinuation>> = {
+  "column:state-religious-freedom-dissolution-2026": {
+    ko: {
+      href: "/seed-language/freedom-as-citizen-agency",
+      title: "자유는 방임이 아니라, 스스로 설 수 있는 힘이라는 말이다",
+      relationship: "관련 시민언어",
+      reason: "공권력의 눈치를 보지 않고 신앙과 삶을 선택할 자유를 살펴본다.",
+      listHref: "/columns",
+      listLabel: "칼럼 전체 보기",
+    },
+    en: {
+      href: "/seed-language/freedom-as-citizen-agency",
+      title: "Freedom Is Not Neglect. It Is What Makes Citizens Agents",
+      relationship: "Related Civic Language article",
+      reason: "Examine what freedom from arbitrary power means for a citizen’s choices.",
+      listHref: "/columns",
+      listLabel: "All columns",
+    },
+  },
   "column:surname-freedom-and-equality": {
     ko: {
       href: "/seed-language/freedom-as-citizen-agency",
