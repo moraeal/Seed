@@ -6,7 +6,7 @@ export const haveYouEatenEssay: SeedColumn = {
   "title": "밥은 드셨습니까",
   "subtitle": "연재 에세이 · 한국인은 언제 남의 일에 나서는가 ①",
   "date": "2026-11-24",
-  "author": "박경석",
+  "author": "작은씨앗",
   "topicIds": [
     "citizenship-democracy"
   ],

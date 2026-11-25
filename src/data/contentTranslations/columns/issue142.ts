@@ -3,7 +3,7 @@ import type { ColumnTranslation } from "../types";
 export const issue142: ColumnTranslation = {
   "title": "Have You Eaten?",
   "subtitle": "Essay series · When Do Koreans Step In? · Part 1",
-  "author": "Park Kyung-seuk",
+  "author": "Small Seed",
   "summary": "The strangers who shared their potatoes on Sapaesan, Uijeongbu",
   "heroImage": {
     "alt": "Two hikers look across the ridgeline from the summit of Sapaesan",
