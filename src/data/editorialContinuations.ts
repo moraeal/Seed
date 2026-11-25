@@ -562,7 +562,7 @@ const novemberReadingLinks: Record<string, Record<Language, EditorialContinuatio
 export function hasEditorialContinuation(kind: EditorialContentKind, slug: string) {
   if (novemberReadingLinks[`${kind}:${slug}`]) return true;
   if (kind === "column" && slug === "seed-thought-08-independent-civic-judgment") return true;
-  if (kind === "column" && slug === "have-you-eaten-01-sapaesan") return true;
+  if (kind === "column" && (slug === "have-you-eaten-01-sapaesan" || slug === "have-you-eaten-02-nunchi")) return true;
   if (kind === "column" && slug === "education-minister-resignation-accountability-2026") return true;
   if (kind === "column" && slug === "cabinet-appointments-rubber-stamps-2026") return true;
   if (kind === "column" && slug === "seed-thought-07-public-interest-programs") return true;
@@ -649,6 +649,14 @@ export function getEditorialContinuation(kind: EditorialContentKind, slug: strin
     relationship: "THE IDEAS BEHIND SEED VOICE · PART 7",
     reason: "Read where citizens’ questions fall out of the planning and evaluation of public programs.",
     listHref: "/series/seed-thought", listLabel: "All articles in this series",
+  };
+  if (kind === "column" && slug === "have-you-eaten-02-nunchi") return {
+    href: "/columns/have-you-eaten-01-sapaesan",
+    title: language === "ko" ? "밥은 드셨습니까" : "Have You Eaten?",
+    relationship: language === "ko" ? "연재 에세이 ①" : "Essay series · Part 1",
+    reason: language === "ko" ? "사패산에서 감자를 나눈 사람들의 이야기로 돌아갑니다." : "Return to the hikers who shared their potatoes on Sapaesan.",
+    listHref: "/series/have-you-eaten",
+    listLabel: language === "ko" ? "연재 전체 보기" : "All essays in the series",
   };
   if (kind === "column" && slug === "have-you-eaten-01-sapaesan") return {
     href: "/columns/citizens-dilemma-05-recycling-group-chat",
