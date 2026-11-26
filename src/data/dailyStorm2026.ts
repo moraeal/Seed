@@ -13,14 +13,14 @@ export const stormNovember: Briefing = {
     {
       "title": "‘최대 100%’는 무엇을 지원하나요",
       "paragraphs": [
-        "이 보험은 태풍·홍수·호우뿐 아니라 강풍, 대설, 지진 등으로 인한 피해에 대비하는 정책보험입니다. 정부는 보험료의 55~100%를 지원한다고 밝혔습니다. 다만 최대 지원율이 모든 가입자에게 적용되는 것은 아닙니다. 내 부담금은 가입 대상과 조건을 확인해야 합니다. [1][2]",
+        "태풍·홍수·호우·강풍·대설·지진 등에 대비하는 정책보험입니다. 정부가 보험료의 55~100%를 지원하며, 실제로 얼마를 내는지는 가입 대상과 조건에 따라 달라집니다. [1][2]",
         "주택 세입자도 관할 지방정부를 통해 단체보험 가입을 문의할 수 있습니다. 소상공인은 영업장에 필요한 보장과 가입 조건을 보험사에 확인할 수 있습니다. 연합뉴스에 따르면 7개 손해보험사에서 가입을 취급합니다. [1][2]"
       ]
     },
     {
       "title": "상담 때 챙길 세 가지",
       "paragraphs": [
-        "예를 들어 지난여름 침수 피해를 겪은 통영의 세입자라면, 이번 현장 상담에서 내가 사는 주택과 집 안 물품이 가입 대상인지, 보장금액과 자기부담금은 얼마인지 물어볼 수 있습니다. 이는 실제 피해 지역에 적용해 볼 수 있는 확인 사례이며, 특정 주민의 가입이나 보상 사례는 아닙니다.",
+        "통영의 세입자라면 집과 살림살이의 보장 범위를 나눠 물어보세요. 피해를 보면 얼마까지 받을 수 있는지, 본인이 부담할 금액은 얼마인지도 확인할 수 있습니다.",
         "가게를 운영한다면 건물과 시설·재고 가운데 무엇을 담보에 넣을 수 있는지, 약관상 보상하지 않는 피해는 무엇인지 함께 확인하는 것이 좋습니다. 이미 발생한 피해의 보상 여부나 가입 직후 보장 개시일도 계약 조건에 따라 확인해야 합니다."
       ]
     }
@@ -46,7 +46,7 @@ export const stormNovember: Briefing = {
   ],
   "author": "씨앗의 소리",
   "content": [
-    "지난 8월 집중호우로 경남 통영과 거제에 큰 피해가 발생했습니다. 행정안전부는 이 지역에서 11월 26~27일 풍수해·지진재해보험 현장 상담을 진행할 예정입니다. [1][2]"
+    "세입자는 살고 있는 집과 살림살이 중 어디까지 보장받을 수 있을까요. 가게를 운영한다면 물에 잠긴 재고도 보장 대상인지 상담할 때 물어보세요. [1][2]"
   ],
   "images": [
     {
@@ -115,7 +115,7 @@ export const stormNovemberTranslation: BriefingTranslation = {
   ],
   "author": "SEED Voice",
   "content": [
-    "After heavy rain damaged Tongyeong and Geoje in South Gyeongsang Province in August, the interior ministry scheduled consultations in the area for November 26–27 on Korea’s disaster insurance program. [1][2]"
+    "If you rent, ask which parts of your home and which belongings qualify. If you run a shop, ask whether the policy covers stock damaged by flooding. [1][2]"
   ],
   "images": [
     {

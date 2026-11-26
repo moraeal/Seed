@@ -32,7 +32,7 @@ export const issue141: ColumnTranslation = {
     {
       "title": "",
       "paragraphs": [
-        "When a business grows, its value rises. So does the value of the shares held by its founder. That is a reward for building the business and good news for the people who invested alongside the founder.",
+        "When a company grows in value, both its founder and the people who invested in it can share in the gain.",
         "In South Korea, however, the more valuable a company becomes, the greater the potential inheritance-tax bill for passing it to the next generation. A higher share price does not put cash in an owner's bank account. It reflects the market's valuation of the business.",
         "One international investor has identified this structure as a possible reason Korean companies trade at a discount."
       ]
@@ -103,9 +103,7 @@ export const issue141: ColumnTranslation = {
         "The government should reconsider the top rate and tax brackets. It should replace the uniform valuation premium for largest shareholders with a method that reflects actual control value and business circumstances.",
         "It should also review instalment payments and deferrals so that a business can be continued without a forced share sale. Eligibility, duration and eventual collection must be clear.",
         "Relief should come with accountability. Companies should explain why they hold cash, where they invest it and how shareholders will share the returns. Minority shareholders must also be protected during succession.",
-        "Entrepreneurs need the freedom to grow and continue a business. Citizens who invest need the right to share fairly in its success.",
-        "Government should not view a rising company value only as an opportunity to collect more tax. Its task is to make room for businesses to grow, markets to value them fairly and citizens to share in the results.",
-        "Entrepreneurs and shareholders should both benefit when a company succeeds. It is hard to expect fair valuations in a country where successful companies must first fear the inheritance-tax bill."
+        "Entrepreneurs need the freedom to grow and continue a business. Citizens who invest need the right to share fairly in its success."
       ]
     }
   ],
