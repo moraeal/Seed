@@ -1,10 +1,10 @@
 import type { ColumnTranslation } from "../types";
 
 export const issue145: ColumnTranslation = {
-  "title": "When the State Decides Which Religions Are Good for Its Citizens",
-  "subtitle": "Editorial | Religious abuse, political accountability and the limits of executive power",
+  "title": "Why Did President Lee Raise Religious Dissolution When His Party Owed the Public Answers?",
+  "subtitle": "Editorial | Shincheonji, the Democratic Party leadership election and the recruitment question",
   "author": "SEED VOICE",
-  "summary": "Families asked for somewhere to report abuse and a way back to ordinary life. Who will hold the politicians involved to account as the president again raises the prospect of dissolving religious groups?",
+  "summary": "After the governing party clashed over a comparison of membership lists, President Lee raised the dissolution of religious groups. What do the records show about the leadership contest, and who sought whose support?",
   "heroImage": {
     "alt": "A government building reflected in a church door, with a cross visible inside",
     "caption": "The doors of a government office and a church stand for different responsibilities.",
@@ -23,8 +23,8 @@ export const issue145: ColumnTranslation = {
     },
     {
       "src": "images/columns/state-religious-freedom-dissolution-2026/timeline-en.svg",
-      "alt": "Sequence of the nomination request, police application, presidential remarks and prosecutors’ warrant request",
-      "caption": "Police applied for a warrant one day before the president spoke.",
+      "alt": "November 23 party dispute, November 24 cabinet remarks and renewed demands for answers on November 25",
+      "caption": "Calls for answers inside the party continued after the president spoke.",
       "credit": "SEED VOICE"
     }
   ],
@@ -32,53 +32,41 @@ export const issue145: ColumnTranslation = {
     {
       "title": "",
       "paragraphs": [
-        "In July 2025, a mother stood outside South Korea’s presidential office and described more than twenty years of estrangement after her two daughters joined a religious group. The families gathered that day wanted somewhere close to home to report abuse, counsellors who could work with investigators, and help recovering what they had lost. On November 24, 2026, President Lee Jae Myung asked the culture ministry to report on its review of measures, including dissolution, against organisations that commit crimes in the name of religion. The question that drew attention was which church he might have in mind. A better place to start would be to find out where that mother could turn for help today. [1] [2]",
-        "Walking into a place of worship is no more consent to extortion than trusting a teacher is consent to sexual abuse or exploitation at work. For a young person who trusted a religious leader, the betrayal can make reporting the abuse especially difficult. Society should condemn those acts. The state owes protection to victims, investigators owe them a serious inquiry, and courts should punish crimes once proved. A defence of religious freedom begins with the freedom of the person who needs to leave."
+        "On November 23, Park Sun-won, who led the governing Democratic Party’s membership review, gave his colleagues a figure. Of 105,440 names on a membership list from the Shincheonji religious movement, he said, 14,388 also appeared on the party rolls. Members of the party’s Supreme Council demanded the full findings. Party leader Kim Min-seok gave Park a verbal warning over language he considered excessive. The next day, President Lee Jae Myung asked the culture ministry to report back on its review of measures to dissolve religious groups that commit crimes under cover of faith. On Monday, the public had been waiting for an explanation from party headquarters. On Tuesday, the president wanted an answer from a ministry. [1] [2]"
       ]
     },
     {
-      "title": "Why the timing matters",
+      "title": "What the membership lists can tell us",
       "paragraphs": [
-        "On November 23, the day before he spoke about dissolution, Lee asked three political parties to nominate candidates for a special prosecutor to examine alleged misconduct in investigations and indictments, including those involving him personally. Five criminal trials against Lee had been put on hold after he took office. The final statute omitted a provision that would have allowed the special prosecutor to withdraw charges directly. How the inquiry might affect the prosecution of those cases remained a live question. Meanwhile, allegations that members of the Shincheonji religious movement had joined the governing Democratic Party en masse and intervened in its leadership contest had divided the party. [3] [4] [5] [6]",
-        "Lee had raised the dissolution of religious foundations as early as December 2025. The public record does not establish that he revived the issue to divert attention from his trials. The timing still matters. If outsiders improperly influenced a party election, who recruited the members? Who inside the party knew? Who benefited? When the president leads with the prospect of dissolving a religious group, politicians who owe the public an explanation can take the place of those passing judgment. The name of a church can crowd out the names of party officials who need to answer. [7] [8]",
-        "The distinction matters in the case of Pastor Jeon Kwang-hoon. Lee did not identify Jeon or Sarang Jeil Church as a target on November 24. The police had already applied for an arrest warrant the previous day over allegations that 10.2 billion won in church funds had been illegally provided to the Liberty Unification Party. Prosecutors requested a warrant on November 25. Jeon denied involvement in providing the money. Investigators should follow the accounts, identify who authorised the payments and establish who received them on what terms. The party and the church must answer to the same standard. A worshipper who knew nothing about the transfers owes no one an account of her political views. [2] [9] [10]"
+        "The party brought this predicament on itself. In July, Kim was running for its leadership when he alleged a secret alliance among opponents of President Lee, people sowing division within the party and Shincheonji. Kim won on August 17. On November 3 he apologised to a meeting of party lawmakers: the inquiry had found no evidence of the three-way alliance. As the weekly Hankyoreh21 observed on November 12, substantiating his claim would have required evidence that someone issued instructions to support a particular candidate and that the candidate benefited. Kim’s rivals had to contest the election under suspicion of working with Shincheonji. What can a winner’s apology do for someone who had to campaign under that cloud? [3] [4]",
+        "Kim’s apology still leaves open the question of organised recruitment. On November 23, Park raised the possibility that Shincheonji leaders had instructed followers to join the party. The figure of 43,000 cited in that discussion was an extrapolation from a partial membership list to the estimated size of the movement. Another figure, about 3,300, was the reported number eligible to vote at the August convention. An old membership entry and the right to cast a ballot cannot tell us whether a person still belonged to Shincheonji, whether they voted or whose instructions they followed. At the party’s November 25 meeting, the leadership again faced calls to settle the allegation of a secret alliance. The figures had failed to persuade even its own colleagues. [1] [5] [6]"
       ]
     },
     {
-      "title": "Crimes can be investigated without passing judgment on a creed",
+      "title": "Who asked for votes first?",
       "paragraphs": [
-        "Korean Protestant leaders have themselves drawn the line in different places. Park Seung-ryeol, general secretary of the National Council of Churches in Korea, spoke of young believers losing years of work and opportunities and saw grounds for considering dissolution of a legal entity. Kim Cheol-hoon of the United Christian Churches of Korea favoured enforcing existing law and warned that broader regulation could reach ordinary denominations. The practical question for government is when an institution as a whole bears responsibility for what a leader has done. [11]",
-        "In a 2026 comparative study published in the Korean Journal of Religious Studies, Lee Hye-jeong identifies three features of Japanese dissolution decisions: how far the organisation was involved, how persistent the conduct was and how seriously abusive it was. Did a church protect the first person to report abuse or try to silence them? Did it move a leader to another district despite knowing the danger? Witnesses, minutes and financial records can answer those questions. A civil servant need never rule on a doctrine of salvation. South Korea’s Supreme Court has likewise held that harm to the public interest must make a sanction as grave as winding up the legal entity necessary. [12] [13]",
-        "A president’s words also reach pulpits untouched by an investigation. A denomination is entitled to decide what it considers heresy. If a ministry borrows that judgment to decide which religions harm society, a pastor who has criticised the government may quietly remove the president’s name from next Sunday’s sermon. No official needs to visit. Counting the number of organisations actually dissolved would miss this exercise of power altogether."
+        "A case from the mayoral primary in Goyang, a city northwest of Seoul, shows what investigators ought to look for. According to the joint investigation team, a supporter of a prospective candidate approached a Shincheonji official to recruit party members. Back the candidate, the supporter allegedly offered, and he would help with a local administrative matter concerning the group’s place of worship. In August, investigators announced charges against the two over the recruitment of some 30 followers. They said they had found insufficient evidence of a wider conspiracy. The Goyang charges settle nothing about the national party contest. But they give us reason to ask whether anyone on the political side solicited votes there, too. You can compare two lists of names all day and never learn who placed the first call. [7]",
+        "The day after Lee spoke, the newspaper Kukmin Ilbo argued in an editorial that the party must establish how members were recruited and whether anyone interfered in the election, calling for a formal investigation with compulsory powers if an internal inquiry fell short. Christian Today drew attention to the timing: the president had raised dissolution the day after the governing party’s leaders clashed in public. Lee first raised the subject in December 2025. That history still leaves a question about November 24. Just when his party faced scrutiny over how politicians might have used a religious movement, was the president trying to get it through a crisis by calling for a crackdown? The public record does not establish his private intention. It does record what was said on those two days. [2] [8] [9]"
       ]
     },
     {
-      "title": "What a government once called purification",
+      "title": "What the party owes the public",
       "paragraphs": [
-        "In October 1980, South Korea’s military authorities invoked the need to ‘purify’ Buddhism. Investigators forcibly took Jogye Order monks and others in for questioning while soldiers and police searched temples and hermitages across the country. South Korean law now recognises the October 27 persecution and provides for restoring the honour of those harmed. People the state once rounded up in the name of reform became people to whom it owed redress. The warning is written into Korea’s own statute book. [14]",
-        "Karl Marx called religion the opium of the people. For believers, a government that changes its assessment of a faith to suit its needs presents a more immediate danger than a philosopher’s criticism. Soviet authorities confiscated Orthodox Church property and harassed believers, then turned to the same church to rally patriotic support after Germany invaded. What changed was the regime’s predicament. There is a test for Korea today: would those who call a sermon critical of the president political interference apply the same standard to a religious leader who praises his policies? If the answer depends on which view is expressed, what politics asks of religion is obedience. [15] [16]",
-        "The culture ministry’s next report should say where someone reporting abuse found protection, whether politicians who dealt with a religious organisation faced the same evidentiary standard, and whether believers unconnected to a leader’s crime remain free to worship together. A president seeking to restore public confidence would do more by subjecting allegations that disadvantage him to the same law.",
-        "The mother who stood outside the presidential office had a right to expect that a door would be open if her daughters sought help. The state must also know where to stop when a citizen freely enters a place of worship. It is the state’s duty to establish which acts have harmed people. It is for citizens themselves to decide which beliefs give meaning to their lives."
+        "For a person trying to escape violence or exploitation in a religious group, or recover money they were pressured into giving, the need is urgent. The state owes them protection and must bring offenders to justice. If a politician counted worshippers as votes and offered help with an administrative decision in return, public authority was being put to work for a campaign. That is the danger in making dissolution the issue. While citizens debate which religious group to shut down, the very person who sought its help can join the chorus calling for a crackdown.",
+        "The Democratic Party can give the public answers without publishing the faith of a single member. What information led a leadership candidate to link his rivals to Shincheonji? Did the inquiry identify a politician or campaign intermediary who asked followers to join? Evidence that someone solicited votes and offered a favour in return belongs with investigators. A politician whose crime is proved should face punishment. If Lee wants to dispel the suspicion his remarks have aroused, he should say plainly that members of his own party must face the same scrutiny. A promise to protect citizens from religious abuse will carry weight when they can also find out who tried to put a congregation to work in an election."
       ]
     }
   ],
-  "sourceNote": "Contemporary reporting documents the remarks and legal proceedings. Judicial decisions, research and legislation inform the legal analysis.",
+  "sourceNote": "Sources include party proceedings, the presidential briefing, reporting on the Goyang charges and press commentary.",
   "sourceLabels": [
-    "Kukmin Ilbo, families petition the presidential office (July 1, 2025)",
-    "Yonhap, November 24 cabinet remarks",
-    "Newspim, Lee requests special prosecutor nominees",
-    "Yonhap, five criminal trials stayed after Lee took office",
-    "Hankook Ilbo, inquiry and withdrawal-of-charges debate",
-    "Kyunghyang Shinmun, mass party registration allegations",
-    "Yonhap, cabinet remarks on religious foundations (December 9, 2025)",
-    "Kyunghyang Shinmun, political context of Lee’s remarks",
-    "Channel A, electoral complaint and police application",
-    "Yonhap, warrant request and Jeon’s response (November 25, 2026)",
-    "Kukmin Ilbo, Protestant leaders respond to review",
-    "Lee Hye-jeong, comparative study of religious dissolution, Korean Journal of Religious Studies 86(2)",
-    "Supreme Court of Korea, revocation of permission establishing a legal entity",
-    "National Law Information Center, Act on Restoring the Honour of Victims of the October 27 Buddhist Persecution",
-    "Karl Marx, introduction to A Contribution to the Critique of Hegel’s Philosophy of Right",
-    "Library of Congress, Revelations from the Russian Archives"
+    "Yonhap, dispute at the Democratic Party leadership meeting (November 23)",
+    "Presidential office, cabinet briefing (November 24)",
+    "Media Today, Kim’s campaign allegation and apology",
+    "Hankyoreh21, commentary on the leadership election",
+    "Kukmin Ilbo, reported voting eligibility at the August convention",
+    "Democratic Party, Supreme Council remarks (November 25)",
+    "MBC, Goyang charges and investigators’ statement",
+    "Kukmin Ilbo, editorial (November 25)",
+    "Christian Today, analysis of the timing of Lee’s remarks"
   ]
 };
