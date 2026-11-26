@@ -682,6 +682,11 @@ export function getEditorialContinuation(kind: EditorialContentKind, slug: strin
     listHref: "/series/have-you-eaten",
     listLabel: language === "ko" ? "연재 에세이 전체 보기" : "All essays in this series",
   };
+  if (kind === "column" && slug === "no-more-tax-budget-statement-2026") return language === "ko" ? {
+    href: "/columns/no-more-tax-increases-civic-declaration-2026", title: "증세, 더 이상은 안 된다", relationship: "노모어택스 시민선언", reason: "씨앗이 증세반대운동을 시작하며 밝힌 요구를 읽습니다.", listHref: "/tax-watch-movement", listLabel: "세금감시운동 전체 보기",
+  } : {
+    href: "/columns/no-more-tax-increases-civic-declaration-2026", title: "No More Tax Increases", relationship: "NO MORE TAX", reason: "Read the declaration that launched the campaign.", listHref: "/tax-watch-movement", listLabel: "All Tax Watch Movement articles",
+  };
   if (kind === "column" && slug === "inheritance-tax-korea-discount") return language === "ko" ? {
     href: "/columns/inheritance-tax-capital-and-talent-mobility", title: "상속세가 자본과 인재의 망명을 자극하는 나라", relationship: "상속세와 기업의 이동", reason: "상속세가 기업 승계와 투자에 미치는 영향을 이어서 살펴봅니다.", listHref: "/tax-watch-movement", listLabel: "세금감시운동 전체 보기",
   } : {

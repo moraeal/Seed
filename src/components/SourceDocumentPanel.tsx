@@ -28,7 +28,7 @@ export default function SourceDocumentPanel({ document, ko }: { document: NonNul
       </summary>
       <div className="grid gap-5 border-t border-green-deep/10 bg-charcoal/[.025] p-4 sm:p-6 lg:grid-cols-2">
         {document.pageImages.map((page, index) => <figure key={page} className="overflow-hidden border border-charcoal/10 bg-white shadow-sm">
-          <img src={assetSrc(page)} alt={ko ? `경실련 농지전수조사 성명서 원문 ${index + 1}쪽` : `Page ${index + 1} of CCEJ's farmland survey statement`} className="block h-auto w-full" loading="lazy" />
+          <img src={assetSrc(page)} alt={ko ? `${document.title} 원문 ${index + 1}쪽` : `Page ${index + 1} of ${document.title}`} className="block h-auto w-full" loading="lazy" />
           <figcaption className="border-t border-charcoal/10 px-4 py-2 text-center text-xs text-charcoal/50">{ko ? `${index + 1}쪽` : `Page ${index + 1}`}</figcaption>
         </figure>)}
       </div>
