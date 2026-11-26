@@ -344,10 +344,15 @@ export default function Home() {
   ]
     .sort((a, b) => newestInSection({ path: a.to, date: a.date }, { path: b.to, date: b.date }));
 
-  const commentaryItems = selectHomeCommentaries(commentaryCandidates, new Set([
+  const eligibleCommentaries = selectHomeCommentaries(commentaryCandidates, new Set([
     ...upperArticlePaths,
     ...recentCivicWatchItems.map((item) => item.to),
-  ]), 3);
+  ]), commentaryCandidates.length);
+  const commentaryItems = eligibleCommentaries.slice(0, 3);
+  if (commentaryItems.length === 3 && commentaryItems.every((article) => article.category === "tax")) {
+    const latestLegislative = eligibleCommentaries.find((article) => article.category === "legislation");
+    if (latestLegislative) commentaryItems[2] = latestLegislative;
+  }
   for (const article of commentaryItems) claimedHomePaths.add(getHomeTopic(article.to));
   useEffect(() => watchHomePublication(), []);
 
