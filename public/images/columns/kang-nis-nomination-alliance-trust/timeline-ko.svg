@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 550" role="img" aria-label="강금실 후보자의 중국 관련 경력과 발언">
+  <rect width="980" height="550" fill="#f8f6f0"/>
+  <g font-family="Pretendard, Noto Sans KR, sans-serif" fill="#1b3933">
+    <text x="48" y="74" font-size="39" font-weight="700">강금실 후보자의 중국 관련 경력과 발언</text>
+    <path d="M248 145 V463" stroke="#7a9b88" stroke-width="3"/>
+    <circle cx="248" cy="145" r="8" fill="#42795d"/>
+    <text x="48" y="155" font-size="26" font-weight="600">2013년</text>
+    <text x="279" y="155" font-size="26">치치하얼시 투자유치 특별고문</text>
+    <circle cx="248" cy="223" r="8" fill="#42795d"/>
+    <text x="48" y="233" font-size="26" font-weight="600">2014년</text>
+    <text x="279" y="233" font-size="26">연변주정부 경제특별고문 위촉</text>
+    <circle cx="248" cy="301" r="8" fill="#42795d"/>
+    <text x="48" y="311" font-size="26" font-weight="600">2019년 4월</text>
+    <text x="279" y="311" font-size="26">연변주정부 경제고문 재위촉</text>
+    <circle cx="248" cy="379" r="8" fill="#42795d"/>
+    <text x="48" y="389" font-size="26" font-weight="600">2026년 4월</text>
+    <text x="279" y="389" font-size="26">외신 간담회에서 시진핑의 기후 리더십 평가</text>
+    <circle cx="248" cy="457" r="8" fill="#42795d"/>
+    <text x="48" y="467" font-size="26" font-weight="600">2026년 11월</text>
+    <text x="279" y="467" font-size="26">국가정보원장 후보자 지명</text>
+  </g>
+</svg>

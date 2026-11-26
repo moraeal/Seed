@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 550" role="img" aria-label="Kang’s advisory roles and public remarks">
+  <rect width="980" height="550" fill="#f8f6f0"/>
+  <g font-family="Pretendard, Noto Sans KR, sans-serif" fill="#1b3933">
+    <text x="48" y="74" font-size="39" font-weight="700">Kang’s advisory roles and public remarks</text>
+    <path d="M248 145 V463" stroke="#7a9b88" stroke-width="3"/>
+    <circle cx="248" cy="145" r="8" fill="#42795d"/>
+    <text x="48" y="155" font-size="26" font-weight="600">2013</text>
+    <text x="279" y="155" font-size="26">Investment adviser to the city of Qiqihar</text>
+    <circle cx="248" cy="223" r="8" fill="#42795d"/>
+    <text x="48" y="233" font-size="26" font-weight="600">2014</text>
+    <text x="279" y="233" font-size="26">Appointed economic adviser to Yanbian</text>
+    <circle cx="248" cy="301" r="8" fill="#42795d"/>
+    <text x="48" y="311" font-size="26" font-weight="600">Apr 2019</text>
+    <text x="279" y="311" font-size="26">Reappointed as a Yanbian economic adviser</text>
+    <circle cx="248" cy="379" r="8" fill="#42795d"/>
+    <text x="48" y="389" font-size="26" font-weight="600">Apr 2026</text>
+    <text x="279" y="389" font-size="26">Credits Xi’s leadership on the Paris Agreement</text>
+    <circle cx="248" cy="457" r="8" fill="#42795d"/>
+    <text x="48" y="467" font-size="26" font-weight="600">Nov 2026</text>
+    <text x="279" y="467" font-size="26">Nominated to head South Korea’s NIS</text>
+  </g>
+</svg>
