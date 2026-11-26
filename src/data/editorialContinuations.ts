@@ -483,6 +483,22 @@ const novemberReadingLinks: Record<string, Record<Language, EditorialContinuatio
       listHref: "/columns", listLabel: "All columns",
     },
   },
+  "column:courtroom-silence-church-dissolution-2026": {
+    ko: {
+      href: "/columns/state-religious-freedom-dissolution-2026",
+      title: "민주당이 답할 차례에 대통령은 왜 종교 해산을 꺼냈나",
+      relationship: "관련 사설",
+      reason: "11월 24일 국무회의 전후 민주당 안에서 나온 질문을 짚는다.",
+      listHref: "/columns", listLabel: "칼럼 전체 보기",
+    },
+    en: {
+      href: "/columns/state-religious-freedom-dissolution-2026",
+      title: "Why Did President Lee Raise Religious Dissolution When His Party Owed the Public Answers?",
+      relationship: "Related editorial",
+      reason: "The questions inside the Democratic Party before and after the November 24 cabinet meeting.",
+      listHref: "/columns", listLabel: "All columns",
+    },
+  },
   "column:state-religious-freedom-dissolution-2026": {
     ko: {
       href: "/seed-language/freedom-as-citizen-agency",
