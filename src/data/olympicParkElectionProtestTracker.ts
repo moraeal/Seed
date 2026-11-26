@@ -15,16 +15,16 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     en: "Olympic Park: ballots ran short, and distrust still remains",
   },
   summary: {
-    "ko": "제9회 전국동시지방선거의 투표용지 부족 사태와 올림픽공원 농성 이후의 조사·수사를 추적한다. 선관위 특검은 11월 18일 투표율 허위 입력과 투표록 위·변조 혐의 등으로 직원 8명의 구속영장을 청구했다고 밝혔다. 선별 투표지와 보관상자의 감정 결과는 아직 공개 확인되지 않았다.",
-    "en": "This tracker follows the ballot shortage at South Korea’s ninth nationwide local elections, the Olympic Park protest and the ensuing investigations. On November 18, the special prosecutor said it sought arrest warrants for eight election officials over alleged false turnout entries and falsified polling records. The findings from forensic examination of selected ballots and storage boxes have yet to be publicly confirmed."
+    "ko": "6·3 지방선거 투표용지 부족 이후의 수사와 올림픽공원 현장을 추적한다. 11월 24일 법원은 선관위 직원 8명 가운데 1명의 구속영장을 발부하고 7명의 영장을 기각했다. 같은 날 경기장 관리기관은 시위 관련 점유물 철거 등을 법원에 신청했다. 선별 투표지의 정밀감정 결과는 공개 자료에서 확인되지 않았다.",
+    "en": "This tracker follows the investigation into the June 3 ballot shortage and events at Olympic Park. On November 24 the court granted one of eight detention warrants for election officials. Separately, the arena operator sought an injunction to remove structures near the venue. Public forensic findings on the selected ballots have yet to be verified."
   },
   status: {
-    "ko": "선관위 직원 8명 구속영장 청구 · 투표지 감정 결과 미확인",
-    "en": "Arrest warrants sought for eight officials · Ballot findings unconfirmed"
+    "ko": "선관위 직원 1명 구속·7명 영장 기각 · 경기장 측 가처분 신청",
+    "en": "One official detained, seven warrants denied · Arena operator seeks injunctions"
   },
   openedAt: "2026-06-03",
   publishedAt: "2026-09-18",
-  updatedAt: "2026-11-20",
+  updatedAt: "2026-11-26",
   sourceBasis: {
     ko: "선거관리위원회 조사 결과와 국회의원실 제출자료를 인용한 보도, 선거소송 심리와 결정, 선관위 특검법·압수수색·피의자 조사 보도, 올림픽공원 현장 보도를 교차 확인했다. 사실·수사 중인 의혹·확인되지 않은 주장을 같은 층위에 놓지 않았다.",
     en: "This record cross-checks reporting on election-commission findings and material submitted to a National Assembly member's office, election-litigation proceedings, the special-prosecutor law, searches and suspect questioning, and coverage from the Olympic Park site. Confirmed facts, allegations under investigation and unverified claims are kept distinct.",
@@ -34,8 +34,8 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     en: "Ballot shortages and voting suspensions are confirmed election-management failures. Claims of organized count manipulation, foreign intervention or a wholly rigged election have not been established by a court or investigative authority.",
   },
   nextCheck: {
-    "ko": "11월 23일로 잡힌 구속 전 피의자 심문과 법원 결정, 선별 투표지·보관상자의 감정 결과, 수사 결과와 기소 범위를 각각 확인한다.",
-    "en": "Verify the November 23 detention hearings and court decisions, forensic findings on selected ballots and storage boxes, and any charges resulting from the investigations."
+    "ko": "특검의 영장 재청구·기소 여부와 선별 투표지·보관상자의 감정 결과 공개를 확인한다. 경기장 관련 가처분은 서울동부지법의 결정과 적용 범위를 따로 추적한다.",
+    "en": "Check for renewed warrant applications, charges and published forensic findings on the selected ballots and boxes. Separately, track any injunction ruling by the Seoul Eastern District Court and its scope."
   },
   heroImage: {
     src: "/images/monitoring/olympic-park-election-protest-20260614.jpg",
@@ -53,6 +53,20 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     },
   },
   keyChanges: [
+    {
+      "date": "2026-11-24",
+      "text": {
+        "ko": "선관위 직원 8명 영장 심사 결과, 1명 발부·7명 기각",
+        "en": "Court grants one of eight detention warrants for election officials"
+      }
+    },
+    {
+      "date": "2026-11-24",
+      "text": {
+        "ko": "경기장 관리기관, 업무방해 고소에 이어 철거·출입금지 등 가처분 신청",
+        "en": "Arena operator seeks injunctions after filing a police complaint"
+      }
+    },
     {
       "date": "2026-11-18",
       "text": {
@@ -114,6 +128,66 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      "date": "2026-11-24",
+      "title": {
+        "ko": "선관위 직원 8명 영장 심사 결과, 1명 발부·7명 기각",
+        "en": "Court grants one of eight detention warrants for election officials"
+      },
+      "description": {
+        "ko": "서울중앙지법은 개표상황표 은닉·위조 혐의를 받는 직원 1명에 대해 증거인멸 우려를 들어 구속영장을 발부했다. 다른 직원 7명에 대해서는 구속할 필요성과 상당성을 인정하기 어렵다고 판단했다. 특검은 영장 재청구를 검토하겠다고 밝혔다. 이번 결정은 피의자 구속 여부에 관한 것으로, 혐의에 대한 유무죄 판단과 투표지 정밀감정 결과는 별개다.",
+        "en": "The Seoul Central District Court cited a risk of evidence destruction in ordering the detention of one official accused of concealing and falsifying a count record. It found insufficient grounds for detaining the other seven. The special prosecutor said it would consider seeking warrants again. The decision concerns pretrial detention. Guilt and forensic findings on the ballots are separate questions."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "publisher": {
+            "ko": "연합뉴스",
+            "en": "Yonhap News Agency"
+          },
+          "title": {
+            "ko": "선관위 직원 8명 구속영장 심사 결과",
+            "en": "Court rules on eight election officials’ warrants"
+          },
+          "url": "https://www.yna.co.kr/view/AKR20261124002551004",
+          "publishedAt": "2026-11-24",
+          "thumbnailSrc": "https://img9.yna.co.kr/photo/yna/YH/2026/11/23/PYH2026112304570001300_P4.jpg",
+          "thumbnailAlt": { "ko": "11월 23일 영장 심사를 위해 법원에 출석하는 선관위 직원들", "en": "Election officials arrive at court for the November 23 warrant hearings" },
+          "thumbnailCredit": { "ko": "사진 · 연합뉴스", "en": "Photo · Yonhap News Agency" },
+          "kind": "article"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-24",
+      "title": {
+        "ko": "경기장 관리기관, 업무방해 고소에 이어 철거·출입금지 등 가처분 신청",
+        "en": "Arena operator seeks injunctions after filing a police complaint"
+      },
+      "description": {
+        "ko": "핸드볼경기장을 관리하는 한국체육산업개발은 23일 시위 관련 단체들을 업무방해 혐의로 서울 송파경찰서에 고소했다. 24일에는 서울동부지법에 경기장 주변 점유물 철거, 안전 펜스 안 출입금지, 관계자 통행 방해 금지를 요청하는 가처분을 신청했다고 밝혔다. 법원에 요청한 조치로, 인용 여부는 후속 확인 대상이다.",
+        "en": "The arena operator filed a complaint with Songpa police on November 23 alleging obstruction of business by protest groups. On November 24 it said it had asked the Seoul Eastern District Court to order removal of structures, restrict entry inside the safety fence and protect staff access. A ruling on the application remains to be verified."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "publisher": {
+            "ko": "연합뉴스",
+            "en": "Yonhap News Agency"
+          },
+          "title": {
+            "ko": "경기장 관리기관의 철거·출입금지 가처분 신청",
+            "en": "Operator seeks removal and access injunctions"
+          },
+          "url": "https://www.yna.co.kr/amp/view/AKR20261124154200004",
+          "publishedAt": "2026-11-24",
+          "thumbnailSrc": "https://img6.yna.co.kr/photo/yna/YH/2026/11/20/PYH2026112013050001300_P4.jpg",
+          "thumbnailAlt": { "ko": "11월 20일 올림픽공원 핸드볼경기장 주변에 설치된 펜스", "en": "Fencing around the Olympic Park handball arena on November 20" },
+          "thumbnailCredit": { "ko": "사진 · 연합뉴스", "en": "Photo · Yonhap News Agency" },
+          "kind": "article"
+        }
+      ]
+    },
     {
       "date": "2026-11-18",
       "title": {
@@ -657,8 +731,12 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
   ],
   confirmedFacts: [
     {
-      "ko": "특검은 중앙선관위 직원 3명과 지역 선관위 직원 5명에 대해 구속영장을 청구했다고 밝혔다. 보도된 혐의에는 투표율 허위 입력과 투표록 위·변조 등이 포함된다. 서울중앙지법은 23일 구속 전 피의자 심문을 열 예정이다. 특검의 영장 청구와 법원의 결정, 별도로 의뢰한 투표지 정밀감정 결과를 각각 확인한다.",
-      "en": "The special prosecutor said it sought detention warrants for three national election officials and five regional officials. Reported allegations include false turnout entries and falsification of polling records. The Seoul Central District Court scheduled detention hearings for November 23. The warrant applications, court decisions and the separate forensic review of ballots are distinct developments."
+      "ko": "서울중앙지법은 개표상황표 은닉·위조 혐의를 받는 직원 1명에 대해 증거인멸 우려를 들어 구속영장을 발부했다. 다른 직원 7명에 대해서는 구속할 필요성과 상당성을 인정하기 어렵다고 판단했다. 특검은 영장 재청구를 검토하겠다고 밝혔다. 이번 결정은 피의자 구속 여부에 관한 것으로, 혐의에 대한 유무죄 판단과 투표지 정밀감정 결과는 별개다.",
+      "en": "The Seoul Central District Court cited a risk of evidence destruction in ordering the detention of one official accused of concealing and falsifying a count record. It found insufficient grounds for detaining the other seven. The special prosecutor said it would consider seeking warrants again. The decision concerns pretrial detention. Guilt and forensic findings on the ballots are separate questions."
+    },
+    {
+      "ko": "핸드볼경기장을 관리하는 한국체육산업개발은 23일 시위 관련 단체들을 업무방해 혐의로 서울 송파경찰서에 고소했다. 24일에는 서울동부지법에 경기장 주변 점유물 철거, 안전 펜스 안 출입금지, 관계자 통행 방해 금지를 요청하는 가처분을 신청했다고 밝혔다. 법원에 요청한 조치로, 인용 여부는 후속 확인 대상이다.",
+      "en": "The arena operator filed a complaint with Songpa police on November 23 alleging obstruction of business by protest groups. On November 24 it said it had asked the Seoul Eastern District Court to order removal of structures, restrict entry inside the safety fence and protect staff access. A ruling on the application remains to be verified."
     },
     {
       ko: "선관위는 투표용지를 추가 송부한 투표소가 140곳이며, 그중 추가 용지를 실제 사용한 곳은 91곳이라고 밝혔다. 26곳에서는 투표가 잠시 중단됐다가 재개됐다.",
@@ -853,6 +931,34 @@ export const olympicParkElectionProtestTracker: PublicInterestWatchCase = {
         "en": "Newsis · Court schedules November 23 detention hearings for eight election officials"
       },
       "url": "https://www.newsis.com/view/NISX20261118_0003873951"
+    },
+    {
+      "label": {
+        "ko": "2026-11-24 · 연합뉴스 · 선관위 직원 8명 구속영장 심사 결과",
+        "en": "2026-11-24 · Yonhap News Agency · Court rules on eight election officials’ warrants"
+      },
+      "url": "https://www.yna.co.kr/view/AKR20261124002551004"
+    },
+    {
+      "label": {
+        "ko": "2026-11-24 · 연합뉴스 · 경기장 관리기관의 철거·출입금지 가처분 신청",
+        "en": "2026-11-24 · Yonhap News Agency · Operator seeks removal and access injunctions"
+      },
+      "url": "https://www.yna.co.kr/amp/view/AKR20261124154200004"
+    },
+    {
+      "label": {
+        "ko": "2026-11-24 · MBC · 구속영장 발부·기각 사유와 특검 입장",
+        "en": "2026-11-24 · MBC · Reasons for the warrant decisions and the prosecutor’s response"
+      },
+      "url": "https://imnews.imbc.com/news/2026/society/article/6867972_36919.html"
+    },
+    {
+      "label": {
+        "ko": "2026-11-23 · MBC · 송파경찰서, 경기장 관리기관 고소 접수",
+        "en": "2026-11-23 · MBC · Songpa police receive the operator’s complaint"
+      },
+      "url": "https://imnews.imbc.com/news/2026/society/article/6867951_36919.html"
     },
   ],
   continuationEligible: false,

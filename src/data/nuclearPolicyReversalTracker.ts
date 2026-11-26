@@ -15,19 +15,19 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     en: "From a Nuclear Phase-Down to New Reactor Construction",
   },
   "summary": {
-    "ko": "2017년 신규 원전 백지화에서 2026년 신규 원전 추진까지 정책 변화를 기록합니다. 원전 공론화위원회는 11월 16일 공식 누리집을 열고 25일 공개토론회 일정을 발표했습니다. 시민 의견과 12월 권고안이 제12차 전력수급기본계획에 어떻게 반영되는지 추적합니다.",
-    "en": "This tracker follows the shift from cancelling reactor plans in 2017 to pursuing new construction in 2026. The nuclear deliberation committee launched its public website on November 16 and scheduled a public forum for November 25. SEED follows how public input and the committee’s December recommendations shape the 12th electricity plan."
+    "ko": "2017년 신규 원전 백지화에서 2026년 신규 건설 추진까지 정책이 바뀐 과정을 기록합니다. 11월 25일 공개토론회는 원전 확대 측 전문위원 3명이 불참해 설명회로 열렸습니다. 시민참여단이 어떤 근거를 전달받고 그 판단이 제12차 전력수급기본계획에 어떻게 반영되는지 추적합니다.",
+    "en": "This tracker follows the shift from cancelling reactor plans in 2017 to pursuing new construction in 2026. The November 25 debate became a briefing after three expansion advocates suspended participation. We follow what evidence citizens receive and how their deliberation shapes the 12th electricity plan."
   },
   "status": {
-    "ko": "원전 공론화 누리집 개설 · 11월 25일 공개토론회 예정",
-    "en": "Deliberation website opens · November 25 public forum scheduled"
+    "ko": "11월 25일 공개설명회 개최 · 12월 시민 숙의 예정",
+    "en": "November 25 briefing held · Citizens’ deliberation scheduled for December"
   },
   openedAt: "2017-10-24",
   publishedAt: "2026-09-16",
-  updatedAt: "2026-11-20",
+  updatedAt: "2026-11-26",
   "nextCheck": {
-    "ko": "11월 25일 공개토론회 개최와 영상·자료 공개, 12월 11~13일 시민 숙의토론, 12월 정부 권고안 제출과 제12차 전력수급기본계획 반영 여부를 확인합니다.",
-    "en": "Verify the November 25 forum and publication of its video and briefing materials, the December 11–13 citizen deliberation, submission of December recommendations and their treatment in the 12th electricity plan."
+    "ko": "시민참여단에 전달되는 숙의자료집에서 양측의 주장과 근거를 확인합니다. 12월 11~13일 숙의토론 개최 여부, 권고안 공개와 제12차 전력수급기본계획 반영 여부를 차례로 확인합니다.",
+    "en": "Review the evidence from both sides in the citizens’ briefing book, then check whether the December 11–13 deliberation takes place, the recommendations are published and the 12th electricity plan reflects them."
   },
   heroImage: {
     src: "images/monitoring/nuclear-policy-reversal-tracker-hero.webp",
@@ -53,6 +53,13 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     en: "The previous administration finalized the two large reactors in the 11th electricity plan. The current administration's reversal lies in retaining that plan after review and then moving toward possible additional reactors on the basis of industrial demand. Semiconductor investment plans were negotiated with companies, while the HMM case drew allegations of forced relocation after the government announced the destination first.",
   },
   keyChanges: [
+    {
+      "date": "2026-11-25",
+      "text": {
+        "ko": "원전 확대 측 불참으로 첫 공개토론회가 설명회로 바뀌다",
+        "en": "First public debate becomes a briefing after expansion advocates suspend participation"
+      }
+    },
     {
       "date": "2026-11-16",
       "text": {
@@ -125,6 +132,49 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
     },
   ],
   timeline: [
+    {
+      "date": "2026-11-25",
+      "title": {
+        "ko": "원전 확대 측 불참으로 첫 공개토론회가 설명회로 바뀌다",
+        "en": "First public debate becomes a briefing after expansion advocates suspend participation"
+      },
+      "description": {
+        "ko": "원전 확대 측 전문위원 3명이 참여를 잠정 중단하면서 25일 서울에서 열린 공개설명회에서는 중립 전문위원이 확대·감축 양측의 근거를 소개했습니다. 쟁점 중 하나는 2040년까지의 전력계획을 논의하면서 2050년 원전 비중까지 수치로 제시할지였습니다. 위원회는 23일 양측 의견을 숙의자료집에 싣고 12월 11~13일 시민참여단 토론을 예정대로 진행하겠다고 밝혔습니다.",
+        "en": "Three expert members advocating expansion suspended participation. At the November 25 briefing in Seoul, a neutral panelist presented the arguments for expansion and reduction. One dispute concerned whether a plan running through 2040 should give a numerical target for nuclear power in 2050. On November 23 the committee said both sides’ evidence would go into the citizens’ briefing book and the December 11–13 deliberation remained scheduled."
+      },
+      "status": "confirmed",
+      "sources": [
+        {
+          "publisher": {
+            "ko": "연합뉴스",
+            "en": "Yonhap News Agency"
+          },
+          "title": {
+            "ko": "원전 공론화 첫 공개설명회 현장",
+            "en": "Report from the first public briefing"
+          },
+          "url": "https://www.yna.co.kr/view/AKR20261125041500530",
+          "publishedAt": "2026-11-25",
+          "thumbnailSrc": "https://img0.yna.co.kr/etc/inner/KR/2026/11/25/AKR20261125041500530_01_i_P4.jpg",
+          "thumbnailAlt": { "ko": "11월 25일 서울 공개설명회에서 인사하는 원전 공론화위원장", "en": "The committee chair addresses the November 25 briefing in Seoul" },
+          "thumbnailCredit": { "ko": "사진 · 연합뉴스", "en": "Photo · Yonhap News Agency" },
+          "kind": "article"
+        },
+        {
+          "publisher": {
+            "ko": "기후에너지환경부",
+            "en": "Ministry of Climate, Energy and Environment"
+          },
+          "title": {
+            "ko": "원전 공론화위원회의 토론 운영 방침",
+            "en": "Committee statement on the public forum"
+          },
+          "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156790459",
+          "publishedAt": "2026-11-23",
+          "kind": "document"
+        }
+      ]
+    },
     {
       "date": "2026-11-16",
       "title": {
@@ -571,8 +621,8 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
   ],
   confirmedFacts: [
     {
-      "ko": "공론화위원회가 공식 누리집을 열어 회의 결과와 추진 일정을 공개하고 국민 의견 접수를 시작했습니다. 11월 25일 서울에서 열릴 공개토론회는 미래 전력수급과 원전의 역할을 다룹니다. 현장 참석 신청은 17~23일이며, 위원회는 유튜브 생중계와 12월 시민 숙의 뒤 정부 권고안 제출을 예고했습니다.",
-      "en": "The committee launched a website disclosing meeting outcomes and its timetable and began taking public comments. A November 25 forum in Seoul is scheduled to cover future electricity needs and the role of nuclear power. In-person registration runs November 17–23. The committee plans to livestream the forum on YouTube and submit recommendations to the government after December’s citizen deliberation."
+      "ko": "원전 확대 측 전문위원 3명이 참여를 잠정 중단하면서 25일 서울에서 열린 공개설명회에서는 중립 전문위원이 확대·감축 양측의 근거를 소개했습니다. 쟁점 중 하나는 2040년까지의 전력계획을 논의하면서 2050년 원전 비중까지 수치로 제시할지였습니다. 위원회는 23일 양측 의견을 숙의자료집에 싣고 12월 11~13일 시민참여단 토론을 예정대로 진행하겠다고 밝혔습니다.",
+      "en": "Three expert members advocating expansion suspended participation. At the November 25 briefing in Seoul, a neutral panelist presented the arguments for expansion and reduction. One dispute concerned whether a plan running through 2040 should give a numerical target for nuclear power in 2050. On November 23 the committee said both sides’ evidence would go into the citizens’ briefing book and the December 11–13 deliberation remained scheduled."
     },
 {
   "ko": "기후에너지환경부는 10월 2일 한강홍수통제소에서 원전 공론화위원회 위촉식을 열었습니다. 위원장은 은재호 한국외대 겸임교수이며, 위원회는 공론화 방향과 절차를 마련하고 국민 의견을 수렴해 정부에 권고합니다. 9월 22일 추진계획 발표에서 실제 위원회 출범 단계로 넘어갔습니다. 위원회 출범으로 추가 원전 기수와 부지가 확정된 것은 아니며, 권고안과 제12차 전기본 정부안의 연결 과정을 계속 확인합니다.",
@@ -765,6 +815,20 @@ export const nuclearPolicyReversalTracker: PublicInterestWatchCase = {
         "en": "Yonhap News Agency · First nuclear power forum and timetable for recommendations"
       },
       "url": "https://www.yna.co.kr/view/AKR20261116067400530?input=1195m"
+    },
+    {
+      "label": {
+        "ko": "2026-11-25 · 연합뉴스 · 원전 공론화 첫 공개설명회 현장",
+        "en": "2026-11-25 · Yonhap News Agency · Report from the first public briefing"
+      },
+      "url": "https://www.yna.co.kr/view/AKR20261125041500530"
+    },
+    {
+      "label": {
+        "ko": "2026-11-23 · 기후에너지환경부 · 원전 공론화위원회의 토론 운영 방침",
+        "en": "2026-11-23 · Ministry of Climate, Energy and Environment · Committee statement on the public forum"
+      },
+      "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156790459"
     },
   ],
 };
