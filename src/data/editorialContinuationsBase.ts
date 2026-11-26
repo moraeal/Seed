@@ -150,6 +150,10 @@ const extraContinuations: Record<string, { ko: EditorialContinuation; en: Editor
     "listLabel": "What Does China Mean to Korea? — All chapters"
   }
 },
+  "briefing:pension-fund-politics-rebalancing-2026": {
+    ko: { href: "/briefings/leveraged-etfs-government-signals-citizen-losses-2026", title: "국가는 투자판을 달궜다, 시민은 돈과 믿음을 잃었다", relationship: "대통령의 발언과 투자 판단", reason: "연금 운용에 보낸 정치의 신호가 개인투자자에게는 어떻게 들렸는지 레버리지 ETF 사례를 통해 살펴봅니다.", listHref: "/briefings", listLabel: "브리핑 전체 보기" },
+    en: { href: "/briefings/leveraged-etfs-government-signals-citizen-losses-2026", title: "The State Fuelled the Investment Rush. Citizens Lost Money and Trust", relationship: "Political signals and investment choices", reason: "Read how officials’ comments on stocks reached retail investors buying leveraged ETFs.", listHref: "/briefings", listLabel: "All briefings" },
+  },
   "briefing:retirement-pay-external-reserve-worker-small-business-2026": {
     ko: { href: "/columns/debt-built-korean-economy-2026", title: "빚으로 쌓아 올리는 한국경제", relationship: "가계·기업·국가의 부담 이어 읽기", reason: "퇴직급여의 적립 시점을 살펴봤다면, 가계와 기업의 현금 부담, 국가 지원의 재정 여력을 함께 따지는 글로 이어갑니다.", listHref: "/monitoring/tax", listLabel: "세금감시 목록" },
     en: { href: "/columns/debt-built-korean-economy-2026", title: "Building South Korea's Economy on Debt", relationship: "HOUSEHOLD, BUSINESS AND PUBLIC LIABILITIES", reason: "Continue from retirement-funding cash flow to the pressures of private debt and the fiscal room available for public support.", listHref: "/monitoring/tax", listLabel: "Tax Watch" },
