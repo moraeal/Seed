@@ -20,8 +20,8 @@ export const pointsNovember: Briefing = {
     {
       "title": "지금 계좌로 받으려면",
       "paragraphs": [
-        "여기서 이미 이용할 수 있는 선택지도 있습니다. 금융위원회에 따르면 카드포인트 통합조회·계좌입금 서비스와 어카운트인포 앱에서는 현금화 가능한 카드포인트를 조회해 계좌로 옮길 수 있습니다. [2]",
-        "예를 들어 카드포인트가 남아 있는 시민이라면 먼저 앱이나 카드포인트 통합조회 서비스에서 현금화 가능한 금액을 살펴볼 수 있습니다. 지금 계좌로 받을지, 내년 서비스 개통 후 지역화폐 전환 조건을 비교할지는 본인이 결정하면 됩니다. 포인트 종류와 이용 조건에 따라 조회액과 실제 신청 가능액은 다를 수 있으니 신청 화면을 확인해야 합니다. [2][4]",
+        "금융위원회에 따르면 어카운트인포 앱과 카드포인트 통합조회·계좌입금 서비스에서 현금화할 포인트를 조회하고 계좌로 옮길 수 있습니다. [2]",
+        "포인트 종류에 따라 조회액과 실제 신청 가능액이 다를 수 있습니다. 신청 화면에서 금액을 확인한 뒤 지금 받을지, 지역화폐 전환 조건이 나온 뒤 결정할지 선택하세요. [2][4]",
         "지역화폐 전환 시 적용될 세부 조건과 추가 혜택은 이번 발표만으로 확인되지 않았습니다. KTX 마일리지와 탄소중립포인트 등 다른 포인트의 지역화폐 전환도 관계기관과 협의할 계획으로, 시작일이 확정된 것은 아닙니다. [1]"
       ]
     }
@@ -47,7 +47,7 @@ export const pointsNovember: Briefing = {
   ],
   "author": "씨앗의 소리",
   "content": [
-    "카드에 쌓인 포인트를 내년부터 지역화폐로 바꿀 수 있게 될 전망입니다. 정부는 카드포인트 지역화폐 전환 서비스를 2027년 5월 개통할 계획이라고 11월 13일 발표했습니다. [1][3]"
+    "오늘 쓸 돈이 필요하다면 먼저 카드포인트 중 얼마를 계좌로 받을 수 있는지 확인해 보세요. 현금화할 수 있는 포인트는 지역화폐 서비스 개통을 기다릴 필요가 없습니다. [2][4]"
   ],
   "images": [
     {
@@ -112,7 +112,7 @@ export const pointsNovemberTranslation: BriefingTranslation = {
   ],
   "author": "SEED Voice",
   "content": [
-    "On November 13, the government announced plans to let cardholders convert reward points into local currency from May 2027. These local payment schemes can be used at participating merchants. [1][3]"
+    "If you need the money now, check how many of your card points qualify for a bank deposit. You can withdraw eligible points before the local-currency service opens. [2][4]"
   ],
   "images": [
     {

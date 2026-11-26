@@ -32,9 +32,12 @@ export const issue143: ColumnTranslation = {
     {
       "title": "",
       "paragraphs": [
-        "Imagine a district office in Korea choosing an organization to run an after-school care program. A resident asks to see the selection criteria and the panel’s findings. Last time, a neighbor called for the records to be released because the winning organization was close to the district mayor. This time the same neighbor urges the resident to drop it. “These are the people we backed. Why hand the other side a win?”",
-        "The resident’s question is the same. Why did the district entrust this organization with public money? The people being asked have changed. A question that seemed essential last time has become awkward to ask aloud.",
-        "In [Part 7, “When Public Programs Miss Citizens’ Questions”](https://seedvoice.kr/columns/seed-thought-07-public-interest-programs/), we looked at the points in a public program’s planning and evaluation where citizens’ questions get lost. This time we look at the people asking those questions. It is a problem that S.E.E.D takes up in its chapter on power and political camps. Who gets an easier ride when we stop asking questions because the people in charge are on our side?"
+        "Imagine a district office in Korea choosing an organization to run an after-school care program. A resident asks to see the selection criteria and the panel’s findings. Last time, a neighbor called for the records to be released because the winning organization was close to the district mayor.",
+        "This time the same neighbor urges the resident to drop it. “These are the people we backed. Why hand the other side a win?”",
+        "The resident’s question is the same. Why did the district entrust this organization with public money?",
+        "The people being asked have changed. A question that seemed essential last time has become awkward to ask aloud.",
+        "In [Part 7, “When Public Programs Miss Citizens’ Questions”](https://seedvoice.kr/columns/seed-thought-07-public-interest-programs/), we looked at the points in a public program’s planning and evaluation where citizens’ questions get lost. This time we look at the people asking those questions.",
+        "It is a problem that S.E.E.D takes up in its chapter on power and political camps. Who gets an easier ride when we stop asking questions because the people in charge are on our side?"
       ]
     },
     {
@@ -48,17 +51,24 @@ export const issue143: ColumnTranslation = {
     {
       "title": "When the first question is whose side you’re on",
       "paragraphs": [
-        "“Who benefits if we bring this up now?” Once somebody says that in a meeting, the subject changes. The official who owes an explanation gets a moment’s relief. The resident who asked for the records starts defending their motives. The choice of provider is still unexplained, and everyone is discussing the resident’s politics.",
-        "Some people use questions to spread unfounded suspicions. That is a reason to examine what they asked and what evidence they have. Start with the selection records that can be released. If the evidence does not support a conflict-of-interest allegation, the person who made it should be able to correct it. If the successful provider was best equipped to do the work, the panel can show how it reached that conclusion. A fair review also gives the provider a way to answer claims that it won on connections.",
+        "“Who benefits if we bring this up now?” Once somebody says that in a meeting, the subject changes.",
+        "The official who owes an explanation gets a moment’s relief. The resident who asked for the records starts defending their motives. The choice of provider is still unexplained, and everyone is discussing the resident’s politics.",
+        "Some people use questions to spread unfounded suspicions. That is a reason to examine what they asked and what evidence they have.",
+        "Start with the selection records that can be released. If the evidence does not support a conflict-of-interest allegation, the person who made it should be able to correct it.",
+        "If the successful provider was best equipped to do the work, the panel can show how it reached that conclusion. A fair review also gives the provider a way to answer claims that it won on connections.",
         "This is one reason SEED VOICE pays attention to [the language citizens use](https://seedvoice.kr/seed-language/). Notice which question disappears as soon as someone says “our side.” You can see who is being let off the hook for an explanation."
       ]
     },
     {
       "title": "Would you still ask if the names were different?",
       "paragraphs": [
-        "I can start with my own copy. I can read a draft again with a different name and affiliation in place of the people who won the contract. If I would have asked about the criteria when writing about a group I often criticize, and dropped that question for a group I know, I should put it back. If my dislike of a group led me to suggest more than the records can support, that sentence needs to change.",
-        "The same standard can lead to different conclusions. The available records, the selection process and how the program actually operates can all differ. SEED VOICE will ask the same questions when examining a civic group’s publicly funded work. Who awarded it the money, on what grounds, and did it deliver what it promised? What changed when a problem came to light? When people close to us give a full explanation, we will publish its grounds. When the explanation leaves a gap, we will report what is missing.",
-        "To examine a care program in your own neighborhood, return to the resident’s opening questions. “What criteria did you use to select this organization? Is it still keeping the hours it promised?” When the district elects a new mayor or gives the work to another provider, those are still the questions to ask."
+        "I can start with my own copy. I can read a draft again with a different name and affiliation in place of the people who won the contract.",
+        "If I would have asked about the criteria when writing about a group I often criticize, and dropped that question for a group I know, I should put it back. If my dislike of a group led me to suggest more than the records can support, that sentence needs to change.",
+        "The same standard can lead to different conclusions. The available records, the selection process and how the program actually operates can all differ.",
+        "SEED VOICE will ask the same questions when examining a civic group’s publicly funded work. Who awarded it the money, on what grounds, and did it deliver what it promised? What changed when a problem came to light?",
+        "When people close to us give a full explanation, we will publish its grounds. When the explanation leaves a gap, we will report what is missing.",
+        "To examine a care program in your own neighborhood, return to the resident’s opening questions.",
+        "“What criteria did you use to select this organization? Is it still keeping the hours it promised?” When the district elects a new mayor or gives the work to another provider, those are still the questions to ask."
       ]
     },
     {

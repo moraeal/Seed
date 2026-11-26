@@ -32,7 +32,7 @@ export const issue138: ColumnTranslation = {
     {
       "title": "2027 is not an invasion date",
       "paragraphs": [
-        "At its narrowest, the Taiwan Strait is about 130 kilometres wide. The narrowest part of the English Channel, across which Germany prepared to invade Britain during the Second World War, is about 34 kilometres wide. By that geographic measure, the Taiwan Strait is roughly 3.8 times wider.[1][2]",
+        "At its narrowest, the Taiwan Strait spans about 130 kilometres. That is roughly 3.8 times the minimum width of the English Channel, about 34 kilometres, across which Germany prepared to invade Britain during the Second World War.[1][2]",
         "Germany occupied France and prepared an invasion of Britain, but never carried out a large-scale landing on the British mainland. It failed to gain air superiority, and the Royal Navy remained a threat to ships carrying troops and supplies across the Channel.[3]",
         "The question matters when considering Taiwan. China has a powerful military. Attacking Taiwan, however, is different from crossing the sea, occupying the main island and sustaining control.",
         "Does that mean China cannot invade? Can the water itself be relied on to prevent war?",

@@ -46,7 +46,7 @@ export const exportsNovember: NewsArticle = {
     "linkLabel": "보도 원문",
     "url": "https://www.yna.co.kr/view/AKR20261123030651002",
     "summary": [
-      "11월 1일부터 20일까지 한국의 수출액이 774억 달러를 기록했다. 지난해 같은 기간보다 101.5% 증가한 통관 기준 잠정치다. [1]"
+      "같은 기간 반도체 수출은 1년 전보다 294.4% 늘었고 승용차 수출은 5.6% 줄었다. 전체 수출 증가율만으로는 보이지 않는 차이다. [1][2]"
     ]
   },
   "heroImage": {
@@ -110,7 +110,7 @@ export const exportsNovemberTranslation: NewsTranslation = {
     "headline": "Semiconductor exports reach $38.5 billion in the first 20 days of November",
     "linkLabel": "Read the report",
     "summary": [
-      "Korea exported $77.4 billion in goods from November 1 to 20, up 101.5% from the same period last year, according to preliminary customs figures. [1]"
+      "Over the same period, semiconductor exports rose 294.4% year on year while passenger car exports fell 5.6%. The headline growth rate masks that difference. [1][2]"
     ]
   },
   "heroImage": {

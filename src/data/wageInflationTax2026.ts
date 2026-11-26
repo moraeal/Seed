@@ -99,11 +99,12 @@ export const wageInflationTax2026: TaxCommentary = {
         {
           "title": "",
           "paragraphs": [
-            "월급명세서에 적힌 금액은 조금 올랐습니다. 그런데 생활이 나아졌다는 느낌은 없습니다. 장을 보면 물가가 올랐고, 식당에 가면 한 끼 가격이 부담스럽습니다. 월급이 오른 만큼 지출도 따라 올라갑니다.",
+            "월급명세서에 적힌 금액은 조금 올랐습니다. 그런데 장을 보고 식당에서 한 끼를 먹고 나면 살림이 나아졌다는 느낌은 들지 않습니다.",
             "그 사이 세금은 더 빠르게 늘었습니다. 국세청 연말정산 자료에 따르면 2023년 근로자 1인당 평균 총급여는 약 4,332만 원이었습니다. 2024년에는 약 4,475만 원으로 3.3%가량 증가했습니다.[1]",
             "같은 기간 근로소득세 결정세액은 전체 약 59조 8,000억 원에서 65조 2,000억 원으로 늘었습니다. 연말정산 신고 인원을 감안해 계산하면 1인당 평균 결정세액은 약 287만 원에서 309만 원으로 약 7.9% 증가했습니다.[2]",
-            "월급은 3%대 올랐는데 평균 세액은 그 두 배가 넘는 속도로 늘어난 것입니다. 총급여는 비과세소득을 제외한 연간 급여입니다. 1인당 결정세액은 세금이 없는 사람을 포함한 전체 연말정산 신고 인원으로 결정세액 합계를 나눈 값입니다. 국세인 근로소득세 기준이며 지방소득세와 사회보험료는 포함하지 않았습니다.",
-            "이 숫자가 모든 직장인의 세금이 똑같이 7.9% 늘었다는 뜻은 아닙니다. 근로자의 구성과 고소득자의 비중, 공제와 감면 등이 바뀌면 평균 세액도 달라집니다. 2024년 세금 증가분 전체가 과세구간 미조정 때문에 발생했다는 뜻도 아닙니다. 그러나 임금과 세금이 어떤 속도로 움직이고 있는지는 보여줍니다."
+            "총급여는 비과세소득을 뺀 연간 급여입니다. 평균 세액은 결정세액 합계를 세금을 내지 않은 사람까지 포함한 전체 신고 인원으로 나눴습니다. 지방소득세와 사회보험료는 이 계산에서 뺐습니다.",
+            "이 숫자가 모든 직장인의 세금이 똑같이 7.9% 늘었다는 뜻은 아닙니다. 근로자의 구성과 고소득자의 비중, 공제와 감면 등이 바뀌면 평균 세액도 달라집니다.",
+            "2024년 세금 증가분 전체가 과세구간 미조정 때문에 발생했다는 뜻도 아닙니다. 그러나 임금과 세금이 어떤 속도로 움직이고 있는지는 보여줍니다."
           ]
         },
         {
@@ -112,14 +113,16 @@ export const wageInflationTax2026: TaxCommentary = {
             "월급이 올랐는지를 볼 때는 통장에 찍힌 숫자만 봐서는 안 됩니다. 그 돈으로 작년보다 더 많은 물건과 서비스를 살 수 있는지를 함께 봐야 합니다.",
             "고용노동부 자료를 바탕으로 작성된 국가 지표에 따르면, 물가를 반영한 월평균 실질임금은 2021년 약 359만 9,000원에서 2025년 약 360만 6,000원이 됐습니다. 4년 동안 약 7,000원, 0.2%가량 늘어난 수준입니다. 같은 기준의 실질임금은 2022년과 2023년에 각각 하락했고, 2024년과 2025년에 소폭 반등했습니다.[3]",
             "2026년에도 사정이 고르게 좋아진 것은 아닙니다. 한국은행이 인용한 고용노동부 자료에 따르면 2026년 2분기 명목임금은 전년 동기보다 2.1% 올랐지만, 실질임금은 0.8% 하락했습니다.[4]",
-            "월급봉투의 숫자는 커졌습니다. 그러나 물가까지 감안하면 월급으로 살 수 있는 것은 별로 늘지 않았습니다. 직장인이 “월급은 그대론데 세금만 늘었다”고 느끼는 데는 이유가 있습니다. 이 실질임금은 세금과 사회보험료를 공제하기 전의 임금을 물가로 조정한 지표로, 실제 세후 실수령액과는 다릅니다."
+            "월급봉투의 숫자는 커졌습니다. 그러나 물가까지 감안하면 월급으로 살 수 있는 것은 별로 늘지 않았습니다. 직장인이 “월급은 그대론데 세금만 늘었다”고 느끼는 데는 이유가 있습니다.",
+            "이 실질임금은 세금과 사회보험료를 공제하기 전의 임금을 물가로 조정한 지표로, 실제 세후 실수령액과는 다릅니다."
           ]
         },
         {
           "title": "물가는 움직이는데 세금의 기준은 멈춰 있었다",
           "paragraphs": [
             "우리나라의 소득세는 소득이 커질수록 높은 세율이 적용되는 누진세 구조입니다. 다만 월급 전체에 곧바로 세율을 곱하는 것은 아닙니다. 연간 급여에서 각종 소득공제를 뺀 뒤 남은 과세표준을 기준으로 세금을 계산합니다.",
-            "과세표준 1,400만 원 이하에는 6%, 1,400만 원 초과부터 5,000만 원 이하에는 15%, 5,000만 원 초과부터 8,800만 원 이하에는 24%가 적용됩니다. 각 구간을 넘는 부분에만 다음 세율이 적용됩니다. 과세표준이 5,000만 원을 조금 넘었다고 해서 전체 소득에 24%가 적용되는 것은 아닙니다. 이렇게 계산한 산출세액에서 다시 세액공제와 감면을 적용하면 최종 결정세액이 나옵니다.[5]",
+            "과세표준 1,400만 원 이하에는 6%, 1,400만 원 초과부터 5,000만 원 이하에는 15%, 5,000만 원 초과부터 8,800만 원 이하에는 24%가 적용됩니다. 각 구간을 넘는 부분에만 다음 세율이 적용됩니다.",
+            "과세표준이 5,000만 원을 조금 넘었다고 해서 전체 소득에 24%가 적용되는 것은 아닙니다. 이렇게 계산한 산출세액에서 다시 세액공제와 감면을 적용하면 최종 결정세액이 나옵니다.[5]",
             "이 기준이 오랫동안 제자리에 있었습니다. 국회예산정책처에 따르면 8,800만 원 이하 소득세 과세표준 구간은 2008년 이후 15년 동안 고정돼 있다가 2023년에 일부 조정됐습니다. 1,200만 원 구간은 1,400만 원으로, 4,600만 원 구간은 5,000만 원으로 올라갔습니다.[6]",
             "정부와 국회가 기준을 한 번 조정한 것은 사실입니다. 그러나 물가와 임금은 해마다 움직이는데 과세구간은 개정이 있을 때까지 그대로 남습니다. 다음 조정이 언제 이뤄질지는 납세자가 예측하기 어렵습니다."
           ]
@@ -148,7 +151,8 @@ export const wageInflationTax2026: TaxCommentary = {
         {
           "title": "다른 나라들은 어떻게 하고 있나",
           "paragraphs": [
-            "물가 상승에 따른 세 부담 문제는 우리나라만의 고민이 아닙니다. 유럽연합 집행위원회 자료에 따르면 프랑스는 예상 물가상승률을 기준으로 소득세 구간을 조정하고, 덴마크 등은 임금 변화를 기준으로 삼습니다. 오스트리아는 2023년부터 물가 변화의 상당 부분을 과세구간 조정에 반영하는 장치를 도입했습니다. 나라별로 기준과 적용 방식은 서로 다릅니다.[8]",
+            "물가 상승에 따른 세 부담 문제는 우리나라만의 고민이 아닙니다.",
+            "유럽연합 집행위원회 자료에 따르면 프랑스는 예상 물가상승률을 기준으로 소득세 구간을 조정하고, 덴마크 등은 임금 변화를 기준으로 삼습니다. 오스트리아는 2023년부터 물가 변화의 상당 부분을 과세구간 조정에 반영하는 장치를 도입했습니다. 나라별로 기준과 적용 방식은 서로 다릅니다.[8]",
             "경제협력개발기구 OECD 역시 물가 상승기에 과세구간과 공제 기준이 고정되면 근로자의 세 부담이 커질 수 있다고 설명합니다. 일부 국가는 법에 따라 자동으로 조정하고, 다른 국가는 필요할 때 재량으로 조정합니다.[9]",
             "우리도 선택할 수 있습니다. 물가가 오를 때마다 몇 년씩 기다렸다가 정치권이 과세구간을 손보는 방식이 있고, 납세자가 예측할 수 있도록 법에 기준을 정해 두는 방식이 있습니다."
           ]
@@ -217,11 +221,12 @@ export const wageInflationTax2026: TaxCommentary = {
         {
           "title": "",
           "paragraphs": [
-            "A little more appears on the payslip. Yet grocery bills and a meal out cost more too, and the household may feel no better off. As prices absorb the raise, taxes have been rising faster.",
+            "The payslip shows a modest raise. After groceries and a meal out, the household may feel no better off.",
             "National Tax Service year-end settlement figures put average annual taxable gross pay at approximately KRW 43.32 million in 2023 and KRW 44.75 million in 2024, an increase of around 3.3%.[1]",
             "Over the same period, total assessed wage income tax rose from around KRW 59.8 trillion to KRW 65.2 trillion. Dividing by the number of year-end filers gives an average of approximately KRW 2.87 million and KRW 3.09 million respectively, an increase of about 7.9%.[2]",
             "Average gross pay rose by just over 3%, while average assessed tax increased more than twice as fast. Gross pay excludes non-taxable earnings. The tax average includes all year-end filers, including those with no tax liability, and covers national income tax rather than local income tax or social insurance.",
-            "These figures do not mean that every worker paid 7.9% more. Changes in the workforce, the income distribution, deductions and credits also affect the average. Nor do they establish that the entire increase was caused by frozen thresholds. They do show how pay and tax have moved."
+            "These figures do not mean that every worker paid 7.9% more. Changes in the workforce, the income distribution, deductions and credits also affect the average.",
+            "Nor do they establish that the entire increase was caused by frozen thresholds. They do show how pay and tax have moved."
           ]
         },
         {
@@ -266,7 +271,8 @@ export const wageInflationTax2026: TaxCommentary = {
         {
           "title": "What do other countries do?",
           "paragraphs": [
-            "This is not a problem unique to Korea. The European Commission reports that France adjusts income-tax brackets using forecast inflation, while Denmark and some other countries use wage developments. Austria introduced a mechanism in 2023 to reflect much of the change in prices. The details differ across countries.[8]",
+            "This is not a problem unique to Korea.",
+            "The European Commission reports that France adjusts income-tax brackets using forecast inflation, while Denmark and some other countries use wage developments. Austria introduced a mechanism in 2023 to reflect much of the change in prices. The details differ across countries.[8]",
             "The OECD likewise notes that fixed thresholds and allowances can increase workers’ tax burdens during inflation. Some countries adjust them automatically by law; others use discretionary changes.[9]",
             "Korea has a choice: wait years for politicians to amend thresholds, or establish a rule that taxpayers can anticipate."
           ]
