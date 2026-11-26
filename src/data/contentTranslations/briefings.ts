@@ -1,3 +1,4 @@
+import { pensionRebalancingEnglish } from "../pensionRebalancing";
 import { stormNovemberTranslation } from "../dailyStorm2026";
 import { pointsNovemberTranslation } from "../dailyPoints2026";
 import { erdoganizationBriefingTranslation2026 } from "../erdoganizationBriefing2026";
@@ -38,6 +39,7 @@ import { youthRentCredit2026Translation } from "./youthRentCredit2026";
 import { farmlandRetirementTranslation } from "./briefingFarmlandRetirement";
 
 export const briefingTranslations: Record<string, BriefingTranslation> = {
+  "pension-fund-politics-rebalancing-2026": pensionRebalancingEnglish,
   "card-points-cash-local-currency-2026": pointsNovemberTranslation,
   "winter-disaster-insurance-tenants-shops-2026": stormNovemberTranslation,
   "lee-erdoganization-state-power-civic-briefing-2026": erdoganizationBriefingTranslation2026,

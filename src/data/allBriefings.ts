@@ -1,3 +1,4 @@
+import { pensionRebalancing } from "./pensionRebalancing";
 import { stormNovember } from "./dailyStorm2026";
 import { pointsNovember } from "./dailyPoints2026";
 import { erdoganizationBriefing2026 } from "./erdoganizationBriefing2026";
@@ -42,7 +43,7 @@ import { farmlandRetirementBriefing } from "./farmlandRetirementBriefing";
 
 const allBriefings: Briefing[] = [erdoganizationBriefing2026, europeProtestsBriefing2026, healthInsuranceFundingBriefing, teenAiUseExplainer, toyDonationBriefing, hotelPlatformBriefing, leverageEtfBriefing, procurementTaxWatchNotice, policyFundRiskBriefing, ktrCampaign, taxWatchCase, civicNotice, pensionReciprocityBriefing, realEstateSupervisorCitizenFreedomBriefing, farmlandRetirementBriefing, realEstateSupervisorExplainer, monthlyRentCreditExplainer, incomeTaxFamilyDeductionBriefing, inheritanceTaxFrozenThresholdBriefing, platformAdvertisingBriefing, northKoreanPowsSouthKoreaBriefing, seojinSchoolNeighborsBriefing, skHynixAiHackathonBriefing, hospitalInheritanceTaxBriefing, activistFundingPressureBriefing, socialSolidarityEconomyLawBriefing, futureResponseFundBriefing, partyDissolutionBriefing, yeosuIslandExpoBriefing, hearingAccountabilityBriefing, socialEconomyFairnessBriefing, socialEconomyBriefing, publicInterestTravelBriefing, publicBroadcastingBriefing, nationalBudgetBriefing, gyeonggiBriefingDisplay, ...briefings];
 
-allBriefings.unshift(stormNovember, pointsNovember, retirementReserve2026, youthRentCredit2026, olympicInspectionBriefing);
+allBriefings.unshift(pensionRebalancing, stormNovember, pointsNovember, retirementReserve2026, youthRentCredit2026, olympicInspectionBriefing);
 
 export const getAllBriefingsNewestFirst = () => [...allBriefings].sort((a, b) => {
   const dateOrder = b.date.localeCompare(a.date);
