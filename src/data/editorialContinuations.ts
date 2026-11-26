@@ -467,6 +467,22 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 const novemberReadingLinks: Record<string, Record<Language, EditorialContinuation>> = {
+  "column:kang-nis-nomination-alliance-trust": {
+    ko: {
+      href: "/columns/philippines-turkiye-turning-away-us-alliance-warning-2026",
+      title: "필리핀과 튀르키에, 미국에 등 돌리다",
+      relationship: "관련 칼럼",
+      reason: "필리핀과 튀르키에 사례를 통해 동맹국 사이에 신뢰가 흔들릴 때 치르는 안보 비용을 살핀다.",
+      listHref: "/columns", listLabel: "칼럼 전체 보기",
+    },
+    en: {
+      href: "/columns/philippines-turkiye-turning-away-us-alliance-warning-2026",
+      title: "The Philippines and Türkiye Turned Away from America",
+      relationship: "Related column",
+      reason: "What the Philippines and Türkiye experienced when relations with a treaty ally grew strained.",
+      listHref: "/columns", listLabel: "All columns",
+    },
+  },
   "column:state-religious-freedom-dissolution-2026": {
     ko: {
       href: "/seed-language/freedom-as-citizen-agency",
