@@ -14,6 +14,7 @@ import {
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useLanguage } from "../i18n";
+import { ENGLISH_SITE_DESCRIPTION, SITE_DESCRIPTION } from "../siteMeta";
 import TipDialog from "../components/TipDialog";
 import { campaignDiscovery } from "../data/campaignDiscovery";
 import SiyaDismissButton, { useSiyaDismissed } from "../components/SiyaDismissButton";
@@ -23,7 +24,7 @@ const copy = {
     kicker: "ABOUT SEED VOICE",
     title: <>내 삶에 닿는 뉴스,<br /><span className="text-[#bd613d]">씨앗과 함께 읽어요.</span></>,
     lead: "세금이 어디에 쓰이는지, 동네 병원의 변화가 진료에 어떤 영향을 줄지, 뉴스 속 숫자가 왜 다르게 보이는지 궁금할 때가 있죠. 씨앗의 소리는 흩어진 자료를 찾아 쉬운 말로 풀고, 그 일이 우리 생활과 어떻게 이어지는지 함께 살핍니다.",
-    identity: "어려운 뉴스를 내 삶의 질문으로 바꾸는 독립 시민저널입니다.",
+    identity: SITE_DESCRIPTION,
     readToday: "왜 씨앗인가?",
     questionsKicker: "MY LIFE, MY QUESTIONS",
     questionsTitle: "이런 궁금증, 그냥 넘기지 마세요",
@@ -58,7 +59,7 @@ const copy = {
     standardLead: "내 삶에 닿는 기사일수록 사실과 의견을 분명히 나누고, 누구나 다시 살펴볼 수 있는 근거를 남기겠습니다.",
     standards: [
       "확인된 사실과 씨앗의 판단을 구분합니다.",
-      "권한을 가진 곳에는 같은 기준으로 책임을 묻습니다.",
+      "국가와 시민사회의 권력을 감시하고, 권한을 행사한 곳에는 같은 기준으로 책임을 묻습니다.",
       "시민이 다시 확인할 수 있는 근거를 남깁니다.",
     ],
     values: ["법의 지배", "권력분립", "표현의 자유", "기업의 도전", "시민사회의 독립"],
@@ -78,7 +79,7 @@ const copy = {
     kicker: "ABOUT SEED VOICE",
     title: <>News that touches your life,<br /><span className="text-[#bd613d]">made clearer together.</span></>,
     lead: "Wondering where your taxes go, how a neighborhood hospital's future may affect care, or why two news stories give different figures? SEED VOICE finds the records, explains them in plain language, and connects the story to everyday life.",
-    identity: "An independent civic journal turning complicated news into questions you can use.",
+    identity: ENGLISH_SITE_DESCRIPTION,
     readToday: "Why ‘Seed’?",
     questionsKicker: "MY LIFE, MY QUESTIONS",
     questionsTitle: "Questions worth asking",
@@ -113,7 +114,7 @@ const copy = {
     standardLead: "The closer a story is to your life, the more clearly we must separate facts from opinion and show the records behind our reporting.",
     standards: [
       "We distinguish verified facts from our own judgments.",
-      "We hold every center of power to the same standard.",
+      "We scrutinize those who exercise power in government and civil society and hold them to the same standard.",
       "We leave evidence that citizens can check for themselves.",
     ],
     values: ["Rule of law", "Separated powers", "Free expression", "Enterprise", "Independent civil society"],
@@ -174,8 +175,8 @@ export default function About() {
           <div className="relative z-10">
             <p className="text-xs font-extrabold tracking-[.2em] text-green-mid">{content.kicker}</p>
             <h1 className="mt-4 text-[clamp(2.15rem,4.4vw,4.25rem)] font-black leading-[1.18] tracking-[-.055em]">{content.title}</h1>
-            <p className="mt-7 max-w-2xl text-base leading-8 text-green-deep/85 sm:text-lg">{content.lead}</p>
             <p className="mt-5 max-w-2xl font-extrabold leading-7">{content.identity}</p>
+            <p className="mt-7 max-w-2xl text-base leading-8 text-green-deep/85 sm:text-lg">{content.lead}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/why-seed" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-green-deep px-6 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:shadow-lg">{content.readToday}<ArrowUpRight size={17}/></Link>
               <Link to="/contributors" className="inline-flex min-h-12 items-center gap-2 rounded-full border-2 border-green-deep bg-white/75 px-6 py-3 text-sm font-extrabold text-green-deep transition hover:-translate-y-0.5 hover:bg-white hover:shadow-lg">{content.contributors}<ArrowUpRight size={17}/></Link>
@@ -210,7 +211,7 @@ export default function About() {
                   {language === "ko" ? <>산업화를 넘어, 민주화를 넘어,<br className="hidden sm:block"/> 이제 시민화로</> : <>Beyond industrialization and democratization,<br className="hidden sm:block"/> toward citizen agency</>}
                 </h2>
                 <p className="mt-3 max-w-xl text-sm font-semibold leading-6 text-green-deep/80 sm:mt-5 sm:text-base sm:leading-7">
-                  {language === "ko" ? "시민과 기업의 자유, 공익을 지키는 독립 시민저널. 씨앗이 세상을 바라보는 기준을 소개합니다." : "An independent civic journal defending the freedom of citizens and enterprise and the public good. Discover the standards behind our reporting."}
+                  {language === "ko" ? "씨앗이 세상을 바라보는 기준을 소개합니다." : "Discover the standards behind our reporting."}
                 </p>
                 <span className="mt-4 inline-flex items-center gap-2 border-b-2 border-green-deep pb-1 text-sm font-extrabold text-green-deep sm:mt-6">
                   {language === "ko" ? "씨앗의 편집 원칙 전문 읽기" : "Read our editorial principles"} <ArrowUpRight size={18} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true"/>

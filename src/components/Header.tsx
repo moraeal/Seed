@@ -5,6 +5,7 @@ import { useAuth } from "../auth";
 import { getContent } from "../data/siteContent";
 import { useLanguage } from "../i18n";
 import ArticleFindPanel from "./ArticleFindPanel";
+import { ENGLISH_SITE_SLOGAN, SITE_SLOGAN } from "../siteMeta";
 import BrandLockup from "./BrandLockup";
 import HomeSectionNav from "./HomeSectionNav";
 import CivicLifeSubnav from "./CivicLifeSubnav";
@@ -135,9 +136,7 @@ export default function Header() {
           <Link to={language === "en" ? "/en/" : "/"} className="flex min-w-0 shrink flex-col items-start gap-0.5" aria-label={language === "en" ? "SEED VOICE home" : "씨앗의 소리 홈"}>
             <BrandLockup tone="header" />
             <span className="max-w-[calc(100vw-8.5rem)] text-[10px] font-medium leading-[1.35] tracking-[-.02em] text-charcoal/52 sm:max-w-[42rem] sm:text-[11px] md:max-w-[46rem] lg:max-w-[50rem]">
-              {ko
-                ? "시민과 기업의 자유를 지키고, 공익을 바로 세우는 독립 시민저널"
-                : "Defending freedom for citizens and enterprise, and restoring integrity to the public good."}
+              {ko ? SITE_SLOGAN : ENGLISH_SITE_SLOGAN}
             </span>
           </Link>
 

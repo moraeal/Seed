@@ -1,3 +1,4 @@
+import { ENGLISH_SITE_DESCRIPTION, ENGLISH_SITE_SLOGAN, SITE_DESCRIPTION, SITE_SLOGAN } from "../siteMeta";
 import type { Language } from "../i18n";
 
 export const AUDITION_URL = "https://moraeal.github.io/moraeal/";
@@ -16,16 +17,14 @@ export const content = {
     actions: { proposal: "시민제안 올리기", support: "후원하기", language: "English" },
     footer: {
       title: "SEED VOICE | 씨앗의 소리",
-      description:
-        "씨앗의 소리는 시민과 기업의 자유를 지키고, 국가와 시민사회의 권력을 감시하며, 공익을 시민의 관점에서 바로 세우는 독립 시민저널입니다.",
+      description: SITE_DESCRIPTION,
       contact: "Contact: seedvoicekr@gmail.com",
       location: "Seoul, South Korea",
     },
     home: {
       kicker: "CITIZENSHIP IN ACTION",
-      title: "시민과 기업의 자유를 지키고, 공익을 바로 세우는 독립 시민저널",
-      description:
-        "씨앗의 소리는 시민과 기업의 자유를 지키고, 국가와 시민사회의 권력을 감시하며, 공익을 시민의 관점에서 바로 세우는 독립 시민저널입니다.",
+      title: SITE_SLOGAN,
+      description: SITE_DESCRIPTION,
       primary: "씨앗의 소리 소개 보기",
       secondary: "시민제안 참여하기",
       stats: [
@@ -139,16 +138,14 @@ export const content = {
     actions: { proposal: "Submit a Proposal", support: "Support SEED", language: "한국어" },
     footer: {
       title: "SEED VOICE",
-      description:
-        "An independent civic journal defending freedom for citizens and enterprise and restoring integrity to the public good.",
+      description: ENGLISH_SITE_DESCRIPTION,
       contact: "Contact: seedvoicekr@gmail.com",
       location: "Seoul, South Korea",
     },
     home: {
       kicker: "CITIZEN AGENCY · CIVIC RESPONSIBILITY · OPEN CIVIL SOCIETY",
-      title: "Defending freedom for citizens and enterprise, and restoring integrity to the public good.",
-      description:
-        "SEED VOICE is an independent civic journal that defends freedom for citizens and enterprise, scrutinizes power in the state and civil society, and restores integrity to the public good.",
+      title: ENGLISH_SITE_SLOGAN,
+      description: ENGLISH_SITE_DESCRIPTION,
       primary: "About SEED",
       secondary: "Join Citizen Proposals",
       stats: [

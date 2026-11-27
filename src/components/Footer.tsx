@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n";
-import { SITE_DESCRIPTION } from "../siteMeta";
+import { ENGLISH_SITE_DESCRIPTION, SITE_DESCRIPTION } from "../siteMeta";
 import BrandLockup from "./BrandLockup";
 import { officialSocialProfiles } from "../data/officialSocialProfiles";
 
@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="grid gap-7 lg:grid-cols-[1.25fr_.75fr]">
         <div>
           <BrandLockup tone="footer" />
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-white/75">{ko ? SITE_DESCRIPTION : "SEED VOICE defends freedom for citizens and enterprise, scrutinizes power, and restores integrity to the public good."}</p><a href={`mailto:${email}`} className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-[#ffe48a]">Contact: {email}<ArrowUpRight size={14}/></a>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-white/75">{ko ? SITE_DESCRIPTION : ENGLISH_SITE_DESCRIPTION}</p><a href={`mailto:${email}`} className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-[#ffe48a]">Contact: {email}<ArrowUpRight size={14}/></a>
           <nav aria-label={ko ? "씨앗의 소리 공식 SNS 및 시민운동" : "SEED VOICE official social profiles and campaign"} className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-bold text-white/85">
             <Link to="/civic-campaign" className="text-[#ffe48a] underline underline-offset-4 hover:text-white">{ko ? "No More Tax 증세반대 서명" : "No More Tax petition"}</Link>
             {officialSocialProfiles.map((profile) => <a key={profile.id} href={profile.url} target="_blank" rel="me noopener noreferrer" className="underline underline-offset-4 hover:text-white">{profile.name}</a>)}

@@ -12,7 +12,9 @@ import { getHotIssueClusters } from "./data/hotIssueClusters";
 import { seedLanguageArticlesKo } from "./data/seedLanguage";
 import { seedLanguageEnvironmentArticlesKo } from "./data/seedLanguageEnvironment";
 import {
+  ENGLISH_SITE_DESCRIPTION,
   ENGLISH_SITE_NAME,
+  ENGLISH_SITE_SLOGAN,
   ENGLISH_SOCIAL_SITE_NAME,
   SITE_DESCRIPTION,
   SITE_NAME,
@@ -22,7 +24,9 @@ import {
 } from "./siteMeta";
 
 export {
+  ENGLISH_SITE_DESCRIPTION,
   ENGLISH_SITE_NAME,
+  ENGLISH_SITE_SLOGAN,
   ENGLISH_SOCIAL_SITE_NAME,
   SITE_DESCRIPTION,
   SITE_NAME,
@@ -98,8 +102,8 @@ const staticRoutes: SeoRoute[] = [
   },
   {
     path: "/en",
-    title: "SEED VOICE | Facts, Context, Civic Judgment",
-    description: "SEED VOICE is an independent publication in South Korea offering verified facts, context, and clear civic argument.",
+    title: `${ENGLISH_SITE_NAME} | ${ENGLISH_SITE_SLOGAN}`,
+    description: ENGLISH_SITE_DESCRIPTION,
     type: "website",
     lastModified: latestDate,
     language: "en",
@@ -117,7 +121,7 @@ const staticRoutes: SeoRoute[] = [
   { path: "/seed-language", title: "시민언어 | 씨앗의 소리", description: "특정 진영이 독점한 시민사회의 언어를 해체하고 본래 의미를 되살려 시민의 언어로 다시 구성합니다.", type: "website", lastModified: newest(allSeedLanguageArticlesKo.map((item) => item.date)) },
   { path: "/seed-language/why-civic-language", title: "우리가 다시 뜻을 새겨야 할 말들 | 씨앗의 소리", description: "말이 현실을 어떻게 나누고 무엇을 감추는지 살피며, 자유·권력의 제한·책임·시민의 성장이라는 기준으로 씨앗이 정리할 시민언어 전체 지도입니다.", type: "article", publishedAt: "2026-09-22", lastModified: "2026-09-22", author: "작은씨앗", section: "시민언어", image: socialImageUrl("seed-language", "why-civic-language", "2026-09-22-hero1"), imageAlt: "여러 세대의 시민이 진영의 표식을 걷어내고 흩어진 말의 조각을 다시 잇는 모습" },
   { path: "/seed-language/words-turn-citizens-into-enemies", title: "말이 시민을 적으로 만든다 | 씨앗의 소리", description: "이 글은 칼럼으로 이동했습니다. 기존 주소로 들어온 독자를 새 칼럼 주소로 연결합니다.", type: "article", publishedAt: "2026-09-13", lastModified: "2026-09-22", author: "작은씨앗", section: "칼럼", noindex: true },
-  { path: "/about", title: "내 삶에 닿는 뉴스, 씨앗과 함께 읽어요 | 씨앗의 소리", description: "내 세금은 어디에 쓰였을까? 동네 의료에는 어떤 변화가 생길까? 씨앗의 소리는 뉴스 속 숫자와 제도를 쉬운 말로 풀고, 시민의 일상과 이어서 설명합니다.", type: "website", lastModified: latestDate, image: assetUrl("images/about-citizens-social.jpg"), imageAlt: "햇살이 드는 동네에서 밝게 이야기를 나누는 시민들" },
+  { path: "/about", title: "내 삶에 닿는 뉴스, 씨앗과 함께 읽어요 | 씨앗의 소리", description: SITE_DESCRIPTION, type: "website", lastModified: latestDate, image: assetUrl("images/about-citizens-social.jpg"), imageAlt: "햇살이 드는 동네에서 밝게 이야기를 나누는 시민들" },
   { path: "/why-seed", title: "왜 씨앗인가? | 씨앗의 소리", description: "시민을 씨앗이라 부르는 이유와 SEED의 네 뜻, AI 시대에 함께 자라는 큰 시민, 씨야의 두 잎이 품은 자유와 공정을 소개합니다.", type: "website", lastModified: "2026-09-28", image: assetUrl("images/about/why-seed-social.jpg"), imageAlt: "작은 질문에서 시작해 여러 시민의 삶으로 자라나는 씨앗의 소리" },
   { path: "/contributors", title: "필진 소개 | 씨앗의 소리", description: "작은씨앗, 경계의 시민, 생각 너머, 푸른지평, 이음. 서로 다른 현장에서 질문을 가져오는 씨앗의 소리 필진을 소개합니다.", type: "website", lastModified: "2026-09-28", image: assetUrl("images/about/contributors-writing-social.jpg"), imageAlt: "여러 사람이 자료를 살피고 함께 글을 준비하는 모습" },
   { path: "/publisher-message", title: "발행인 소개 | 씨앗의 소리", description: "한 사람의 질문과 판단에서 시작된 독립 시민저널 씨앗의 소리의 발행인 소개입니다.", type: "article", publishedAt: latestDate, lastModified: latestDate, author: "작은씨앗", section: "발행인 소개" },
