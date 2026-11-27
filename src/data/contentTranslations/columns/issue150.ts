@@ -1,8 +1,8 @@
 import type { ColumnTranslation } from "../types";
 
 export const issue150: ColumnTranslation = {
-  "title": "Teachers Say Neutrality Silences Them. Why Does Their Union Invoke Civic Education?",
-  "subtitle": "Freedom to speak at the front of the room, and freedom to disagree from a desk",
+  "title": "Can Students Challenge the Union’s Idea of ‘True Education’?",
+  "subtitle": "The civic education question missing from the debate over teachers’ political neutrality",
   "author": "SEED VOICE",
   "summary": "A teachers’ union newspaper asks who will let educators speak. A student who must submit an essay to the same teacher has a question about freedom, too.",
   "heroImage": {

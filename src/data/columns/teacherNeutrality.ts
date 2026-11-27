@@ -3,8 +3,8 @@ import type { SeedColumn } from "../columns";
 export const teacherNeutrality: SeedColumn = {
   "slug": "teachers-neutrality-and-student-dissent-2026",
   "issue": 150,
-  "title": "정치적 중립 때문에 교사들이 할 말을 하지 못한다는 교사들, 전교조가 민주시민교육을 이야기하는 이유",
-  "subtitle": "교사가 말할 자유와 학생이 반론할 자유",
+  "title": "전교조의 ‘참교육’, 학생은 반론할 수 있나",
+  "subtitle": "교사의 정치적 중립 논쟁에서 빠진 민주시민교육의 질문",
   "date": "2026-11-27",
   "author": "씨앗의 소리",
   "topicIds": [
