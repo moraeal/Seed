@@ -617,6 +617,29 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="poll-trends" className="pb-5 pt-3 sm:pb-7 sm:pt-4" aria-labelledby="poll-trends-title">
+        <div className="container-page">
+          <a href="/polls/cho-hee-dae/" className="group block border-y border-green-deep/20 bg-white px-3 py-4 transition-colors hover:border-green-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-deep sm:px-5">
+            <div className="flex flex-wrap items-end justify-between gap-x-5 gap-y-1.5">
+              <div>
+                <h2 id="poll-trends-title" className="editorial-title text-xl font-bold text-navy group-hover:text-green-deep sm:text-2xl">
+                  {ko ? "조희대 대법원장 탄핵 반대 여론 추이" : "Opposition to impeaching Chief Justice Cho Hee-dae"}
+                </h2>
+                <p className="mt-1 text-xs text-charcoal/70">{ko ? "기관별 반대 응답 비율 · 2026년 8월 25일~11월 27일 발표" : "Opposition by pollster · Aug 25–Nov 27, 2026"}</p>
+              </div>
+              <span className="inline-flex items-center gap-1 text-xs font-bold text-green-deep">
+                {ko ? "찬반 추이와 해설 보기" : "Full analysis in Korean"}<ArrowRight size={14} aria-hidden="true" />
+              </span>
+            </div>
+            <picture className="mt-2 block">
+              <source media="(max-width: 600px)" srcSet="/polls/cho-hee-dae/opposition-small.svg" />
+              <source media="(max-width: 960px)" srcSet="/polls/cho-hee-dae/opposition-medium.svg" />
+              <img src="/polls/cho-hee-dae/opposition-wide.svg" width="1090" height="238" loading="lazy" className="block h-auto w-full" alt={ko ? "미디어토마토의 반대 응답은 8월 42.4%에서 10월 48.5%로 올랐고, NBS는 10월 45%에서 11월 44%로 움직였습니다." : "Opposition rose from 42.4% in August to 48.5% in October in Media Tomato polls. NBS measured 45% in October and 44% in November."} />
+            </picture>
+          </a>
+        </div>
+      </section>
+
       <section id="news-tracking" className="bg-green-pale/25 pt-5 pb-4 sm:pt-7 sm:pb-5" aria-labelledby="news-tracking-title">
         <div className="container-page">
           <div className="flex items-end justify-between gap-3 border-b-[3px] border-navy pb-3 sm:gap-4">
