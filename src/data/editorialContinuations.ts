@@ -467,6 +467,22 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 const novemberReadingLinks: Record<string, Record<Language, EditorialContinuation>> = {
+  "seed-language:partisanship-and-democratic-citizenship-2026": {
+    ko: {
+      href: "/columns/teachers-neutrality-and-student-dissent-2026",
+      title: "전교조의 ‘참교육’, 학생은 반론할 수 있나",
+      relationship: "관련 칼럼",
+      reason: "전교조 기관지의 현대사 대담을 통해 학생의 반론권을 살핍니다.",
+      listHref: "/seed-language", listLabel: "시민언어 전체 보기",
+    },
+    en: {
+      href: "/columns/teachers-neutrality-and-student-dissent-2026",
+      title: "Can Students Challenge the Union’s Vision of Education?",
+      relationship: "Related column",
+      reason: "A conversation on Korean history raises questions about student dissent.",
+      listHref: "/seed-language", listLabel: "All civic language articles",
+    },
+  },
   "column:kang-nis-nomination-alliance-trust": {
     ko: {
       href: "/columns/philippines-turkiye-turning-away-us-alliance-warning-2026",

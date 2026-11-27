@@ -1,3 +1,4 @@
+import { partisanshipKo, partisanshipEn } from "./seedLanguagePartisanship";
 import { peaceArticleKo, peaceArticleEn } from "./seedLanguagePeace";
 import { separationPowersKo, separationPowersEn } from "./seedLanguageSeparationPowers";
 import { toleranceArticleKo, toleranceArticleEn } from "./seedLanguageTolerance2026";
@@ -31,9 +32,10 @@ export type {
   SeedLanguageImage,
 } from "./seedLanguageBase";
 
-export const seedLanguageArticlesKo = [peaceArticleKo, separationPowersKo, toleranceArticleKo, citizenshipArticleKo, foundingArticleKo, limitedStateArticleKo, basicIncomeArticleKo, augmentedIndividualArticleKo, dialogueArticleKo, historyArticleKo, corporateCitizenshipArticleKo, petitionArticleKo, fairnessArticleKo, stateArticleKo, unificationArticleKo, publicArticleKo, politicsArticleKo, conservatismArticleKo, discourseArticleKo, progressArticleKo, freedomArticleKo, ...baseSeedLanguageArticlesKo];
+export const seedLanguageArticlesKo = [partisanshipKo, peaceArticleKo, separationPowersKo, toleranceArticleKo, citizenshipArticleKo, foundingArticleKo, limitedStateArticleKo, basicIncomeArticleKo, augmentedIndividualArticleKo, dialogueArticleKo, historyArticleKo, corporateCitizenshipArticleKo, petitionArticleKo, fairnessArticleKo, stateArticleKo, unificationArticleKo, publicArticleKo, politicsArticleKo, conservatismArticleKo, discourseArticleKo, progressArticleKo, freedomArticleKo, ...baseSeedLanguageArticlesKo];
 
 export function getSeedLanguageArticle(slug: string, language: Language) {
+  if (slug === partisanshipKo.slug) return language === "en" ? partisanshipEn : partisanshipKo;
   if (slug === peaceArticleKo.slug) return language === "en" ? peaceArticleEn : peaceArticleKo;
   if (slug === separationPowersKo.slug) return language === "en" ? separationPowersEn : separationPowersKo;
   if (slug === toleranceArticleKo.slug) return language === "en" ? toleranceArticleEn : toleranceArticleKo;
