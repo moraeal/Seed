@@ -239,7 +239,9 @@ try {
     const civicSection = sections.find((section) => section[0].includes('id="recent-civic-watch-title"'));
     assert(civicSection, `${route}: civic-watch desk must exist`);
     const commentaryLinks = [...civicSection[0].matchAll(/<a\b[^>]*href="[^"]*\/monitoring\/legislation\/commentary\/[^"/]+"[^>]*>[\s\S]*?<\/a>/g)];
-    assert(commentaryLinks.length > 0, `${route}: legislative commentaries must remain visible`);
+    const commentaryDates = [...civicSection[0].matchAll(/(?:입법 논평|세금 논평|LEGISLATIVE|TAX)[^<]*<[\/]span><time[^>]*>([\d.]+)<[\/]time>/g)].map(match => match[1]);
+    assert.equal(commentaryDates.length, 3, `${route}: expected three dated commentary cards`);
+    assert.deepEqual(commentaryDates, [...commentaryDates].sort().reverse(), `${route}: commentary cards must be newest first`);
     for (const [link] of commentaryLinks) {
       assert(link.includes('<img') && link.includes(language === "ko" ? "입법 논평" : "LEGISLATIVE"),
         `${route}: legislative commentary must use the illustrated commentary row`);

@@ -23,6 +23,8 @@ try {
       const anchors = [...html.matchAll(/<a\b[^>]+>/g)].map(x => x[0]);
       assert(anchors.some(x => x.includes('/columns/zz-newest-published-article"') && x.includes('class="group block border-y')),
         `${route}: a newly published article must become the illustrated column lead without editing Home`);
+      assert(html.indexOf('/columns/zz-newest-published-article"') < html.indexOf('/columns/aa-older-published-article"'),
+        `${route}: the latest illustrated column must precede the older list in reading order`);
       assert(anchors.some(x => x.includes('/columns/aa-older-published-article"') && x.includes('class="group grid')),
         `${route}: the older same-day article must remain in the accompanying list`);
     }
