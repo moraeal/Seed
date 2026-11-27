@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./CampaignSignature.css";
-import { Link, Navigate, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { noMoreTaxLanding } from "../data/noMoreTaxLanding";
 import { useLanguage } from "../i18n";
 
@@ -10,6 +10,7 @@ const declarationPath = "/columns/no-more-tax-increases-civic-declaration-2026";
 export default function CampaignSignature() {
   const { language } = useLanguage();
   const { hash } = useLocation();
+  const navigate = useNavigate();
   const ko = language === "ko";
   const campaign = noMoreTaxLanding[language];
 
@@ -42,6 +43,17 @@ export default function CampaignSignature() {
       <h1 id="campaign-signature-title" className="sr-only">{campaign.heading}</h1>
       <iframe
         ref={frameRef}
+        onLoad={({ currentTarget }) => {
+          // Only Seed Voice documents are readable here. WordPress owns the petition views.
+          const url = currentTarget.contentDocument?.URL;
+          if (!url) return;
+          const { pathname, hash: fragment, origin } = new URL(url);
+          if (origin !== window.location.origin) return;
+          const path = pathname.replace(/\/$/, "");
+          if (path === declarationPath || (path === "/civic-campaign" && fragment === "#campaign-signature")) {
+            navigate(declarationPath);
+          }
+        }}
         id="campaign-signature-form"
         title={ko ? "노모어택스 시민 서명운동" : "No More Tax citizen petition (in Korean)"}
         src={hash === "#campaign-signature-form" ? petitionUrl + "#campaign-sign-form" : petitionUrl}
