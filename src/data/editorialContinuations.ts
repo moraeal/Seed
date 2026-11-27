@@ -483,6 +483,24 @@ const novemberReadingLinks: Record<string, Record<Language, EditorialContinuatio
       listHref: "/columns", listLabel: "All columns",
     },
   },
+  "column:teachers-neutrality-and-student-dissent-2026": {
+  "ko": {
+    "href": "/columns/citizens-teaching-state-civic-independence-2026",
+    "title": "시민을 가르치겠다는 국가",
+    "relationship": "관련 칼럼",
+    "reason": "누가 민주시민교육의 내용과 기준을 정하는지 묻는다.",
+    "listHref": "/columns",
+    "listLabel": "칼럼 전체 보기"
+  },
+  "en": {
+    "href": "/columns/citizens-teaching-state-civic-independence-2026",
+    "title": "The State That Would Teach Its Citizens",
+    "relationship": "Related column",
+    "reason": "Who chooses the curriculum for democratic citizenship?",
+    "listHref": "/columns",
+    "listLabel": "All columns"
+  }
+},
   "column:courtroom-silence-church-dissolution-2026": {
     ko: {
       href: "/columns/state-religious-freedom-dissolution-2026",
