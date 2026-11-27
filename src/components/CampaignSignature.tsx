@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+import "./CampaignSignature.css";
 import { Link, Navigate, useLocation } from "react-router-dom";
 import { noMoreTaxLanding } from "../data/noMoreTaxLanding";
 import { useLanguage } from "../i18n";
@@ -11,19 +13,39 @@ export default function CampaignSignature() {
   const ko = language === "ko";
   const campaign = noMoreTaxLanding[language];
 
+  const frameRef = useRef<HTMLIFrameElement>(null);
+  useEffect(() => {
+    const frame = frameRef.current;
+    if (!frame) return;
+    const origin = new URL(petitionUrl).origin;
+    function onLayout(event: MessageEvent) {
+      if (!frame || event.source !== frame.contentWindow || event.origin !== origin) return;
+      const data = event.data;
+      if (data?.type !== "nmt:layout" || !Number.isFinite(data.height) || data.height < 1 || data.height > 100000) return;
+      frame.style.height = (Math.ceil(data.height) + 2) + "px";
+      if (Number.isFinite(data.scrollTo) && data.scrollTo >= 0 && data.scrollTo <= data.height) {
+        const top = window.scrollY + frame.getBoundingClientRect().top + data.scrollTo;
+        window.scrollTo({ top: top - parseFloat(getComputedStyle(frame).scrollMarginTop || "0") });
+      }
+    }
+    window.addEventListener("message", onLayout);
+    return () => window.removeEventListener("message", onLayout);
+  }, []);
+
   // The petition's “campaign original” link returns to this route inside the frame.
   if (window.self !== window.top && hash === "#campaign-signature") {
     return <Navigate to={declarationPath} replace />;
   }
 
   return (
-    <section id="campaign-signature" className="min-w-0 scroll-mt-52" aria-labelledby="campaign-signature-title">
+    <section id="campaign-signature" className="petition-page min-w-0 scroll-mt-52" aria-labelledby="campaign-signature-title">
       <h1 id="campaign-signature-title" className="sr-only">{campaign.heading}</h1>
       <iframe
+        ref={frameRef}
         id="campaign-signature-form"
         title={ko ? "노모어택스 시민 서명운동" : "No More Tax citizen petition (in Korean)"}
         src={hash === "#campaign-signature-form" ? petitionUrl + "#campaign-sign-form" : petitionUrl}
-        className="block h-[80vh] supports-[height:100svh]:h-[80svh] w-full scroll-mt-52 border border-green-deep/15 bg-white"
+        className="petition-frame block w-full scroll-mt-52 border border-green-deep/15 bg-white"
         sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation"
         allow="fullscreen"
         referrerPolicy="strict-origin-when-cross-origin"

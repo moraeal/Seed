@@ -1,0 +1,21 @@
+.petition-page {
+  container-type: inline-size;
+}
+
+/* Match the hosted petition's three-, two- and one-column poster layouts.
+   Keep native overflow available if WordPress adds content or text is enlarged. */
+.petition-frame {
+  height: 225rem;
+}
+
+@container (max-width: 902px) {
+  .petition-frame {
+    height: 270rem;
+  }
+}
+
+@container (max-width: 612px) {
+  .petition-frame {
+    height: clamp(375rem, calc(313rem + 280cqw), 415rem);
+  }
+}
