@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../auth";
 import { useLanguage } from "../i18n";
 import { ContentViewStat, DailyViewStat, EngagementSummary, FunnelStat, getEngagementData, MemberRegistration, NewsletterSubscriber, setMemberSeedRole, TrafficSourceStat } from "../lib/engagement";
+import { browserExcludesAnalytics, setBrowserExclusion } from "../lib/analyticsExclusion";
 import { getFeaturedContentCandidates } from "../data/featuredContent";
 import { isHotIssueColumn } from "../data/columns";
 import { getFeaturedContentPath, setFeaturedContentPath } from "../lib/featuredContent";
@@ -52,6 +53,8 @@ export default function Insights() {
   const { session, user, loading: authLoading } = useAuth();
   const { language } = useLanguage();
   const ko = language === "ko";
+  const [browserExcluded, setBrowserExcluded] = useState(browserExcludesAnalytics);
+  const [preferenceTemporary, setPreferenceTemporary] = useState(false);
   const [summary, setSummary] = useState<EngagementSummary[]>([]);
   const [dailyViews, setDailyViews] = useState<DailyViewStat[]>([]);
   const [views, setViews] = useState<ContentViewStat[]>([]);
@@ -71,6 +74,13 @@ export default function Insights() {
   const [roleSavingUserId, setRoleSavingUserId] = useState<string | null>(null);
   const [roleNotice, setRoleNotice] = useState("");
   const authorized = user?.app_metadata?.seed_role === "owner";
+
+  useEffect(() => {
+    const sync = () => setBrowserExcluded(browserExcludesAnalytics());
+    sync();
+    window.addEventListener("storage", sync);
+    return () => window.removeEventListener("storage", sync);
+  }, [authorized, authLoading]);
 
   const refresh = async () => {
     if (!session || !authorized) return;
@@ -115,6 +125,8 @@ export default function Insights() {
   const totals = useMemo(() => Object.fromEntries(summary.map((item) => [item.metric, Number(item.value)])), [summary]);
   const funnelTotals = useMemo(() => Object.fromEntries(funnel.map((item) => [item.stage, Number(item.total)])), [funnel]);
   const returnRate = totals.unique_visitors_30d ? Math.round(((totals.returning_visitors_30d || 0) / totals.unique_visitors_30d) * 100) : 0;
+  const today = dailyViews[dailyViews.length - 1];
+  const fullExternalDay = today && today.view_date > "2026-11-28";
   const maxDailyViews = useMemo(() => Math.max(1, ...dailyViews.map((item) => Number(item.views))), [dailyViews]);
   const filteredViews = useMemo(() => contentCategory === "all" ? views : views.filter((item) => categoryLabel(item.page_path, true) === contentCategory), [views, contentCategory]);
   const topViews = views.slice(0, 5);
@@ -187,8 +199,9 @@ export default function Insights() {
         {section === "dashboard" && <>
           <div className="mt-7 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
             {[
-              [ko ? "오늘 조회" : "Today", totals.page_views_today || 0],
-              [ko ? "최근 30일" : "30 days", totals.page_views_30d || 0],
+              [fullExternalDay ? (ko ? "오늘 외부 방문자 (브라우저 기준)" : "External browsers today") : (ko ? "오늘 방문자 (브라우저 기준)" : "Browsers today"), today ? Number(today.visitors) : "—"],
+              [fullExternalDay ? (ko ? "오늘 외부 조회 수" : "External page views today") : (ko ? "오늘 조회 수" : "Page views today"), today ? Number(today.views) : "—"],
+              [ko ? "30일 조회 수" : "30-day page views", totals.page_views_30d || 0],
               [ko ? "30일 순방문자" : "30-day visitors", totals.unique_visitors_30d || 0],
               [ko ? "재방문율" : "Return rate", `${returnRate}%`],
               [ko ? "활성 구독자" : "Subscribers", totals.active_subscribers || 0],
@@ -199,7 +212,7 @@ export default function Insights() {
             <div className="flex flex-wrap items-end justify-between gap-3">
               <div>
                 <h2 className="editorial-title text-xl font-bold text-navy">{ko ? "최근 30일 조회 추이" : "Views over the last 30 days"}</h2>
-                <p className="mt-1 text-xs text-charcoal/45">{ko ? "한국 시간 기준 · 그래프의 날짜에 마우스를 올리면 일별 수치를 확인할 수 있습니다." : "Korea time · hover over the chart for daily figures."}</p>
+                <p className="mt-1 text-xs text-charcoal/45">{ko ? "한국 시간 기준. 2026년 11월 28일 배포 시점부터 운영 브라우저와 식별된 자동 접속을 제외합니다. 11월 28일은 두 기준이 섞인 전환일입니다." : "Korea time. Filtering for operating browsers and recognized automated traffic began during November 28, 2026. That day includes both methods."}</p>
               </div>
               <Link to="/insights/content" className="inline-flex items-center gap-1 text-sm font-bold text-green-deep">{ko ? "콘텐츠별 보기" : "View content"}<ChevronRight size={15}/></Link>
             </div>
@@ -244,7 +257,19 @@ export default function Insights() {
           </section>
           <section className="mt-7 border border-green-deep/15 bg-white p-5 sm:p-6"><div><h2 className="editorial-title text-xl font-bold text-navy">{ko ? "최근 30일 독자 행동" : "Reader actions · 30 days"}</h2><p className="mt-1 text-xs text-charcoal/45">{ko ? "새 계측 시작 이후의 익명 행동만 포함합니다." : "Includes anonymous actions recorded after the new measurement began."}</p></div><div className="mt-5 grid gap-3 sm:grid-cols-3 lg:grid-cols-6">{[["page_view", ko ? "조회" : "Views"], ["engaged_30s", ko ? "30초 읽기" : "30 sec"], ["scroll_50", ko ? "50% 도달" : "50% scroll"], ["scroll_90", ko ? "90% 도달" : "90% scroll"], ["share_click", ko ? "공유" : "Shares"], ["newsletter_signup", ko ? "구독 전환" : "Signups"]].map(([stage, label]) => <div key={stage} className="border-l-2 border-green-mid bg-[#F1F2EC] px-4 py-3"><p className="text-[11px] font-bold text-charcoal/45">{label}</p><p className="mt-1 text-xl font-bold text-navy">{Number(funnelTotals[stage] || 0).toLocaleString()}</p></div>)}</div></section>
           <div className="mt-7 grid gap-6 xl:grid-cols-2"><section className="border border-green-deep/15 bg-white p-5 sm:p-6"><div className="flex items-center justify-between"><h2 className="editorial-title text-xl font-bold text-navy">{ko ? "상위 콘텐츠" : "Top content"}</h2><Link to="/insights/content" className="text-xs font-bold text-green-deep">{ko ? "전체 보기" : "All"}</Link></div><div className="mt-4 divide-y divide-green-deep/10">{topViews.map((item) => <div key={item.page_path} className="flex items-center justify-between gap-4 py-3"><div className="min-w-0"><p className="truncate text-sm font-bold text-navy">{item.page_path}</p><p className="mt-1 text-[11px] text-charcoal/40">{categoryLabel(item.page_path, ko)}</p></div><span className="text-sm font-bold text-green-deep">{Number(item.views).toLocaleString()}</span></div>)}</div></section><section className="border border-green-deep/15 bg-white p-5 sm:p-6"><h2 className="editorial-title text-xl font-bold text-navy">{ko ? "관리 바로가기" : "Management"}</h2><div className="mt-4 grid gap-3 sm:grid-cols-2">{navItems.slice(1).map((item) => <Link key={item.key} to={item.path} className="flex items-center justify-between border border-green-deep/10 p-4 text-sm font-bold text-navy hover:border-green-mid"><span>{ko ? item.ko : item.en}</span><ChevronRight size={16} className="text-green-mid"/></Link>)}</div></section></div>
-          <div className="mt-6 border border-green-deep/15 bg-[#E8EFE9] px-5 py-4 text-sm leading-6 text-green-deep"><strong>{ko ? "측정 원칙" : "Measurement principle"}</strong> · {ko ? "대표 계정과 운영 화면은 집계에서 제외합니다. 개인정보·원본 IP·기기 정보는 저장하지 않고, 90일마다 바뀌는 익명 방문 식별자만 사용합니다." : "Owner traffic and private screens are excluded. No personal data, raw IP address or device data is stored; only a rotating 90-day anonymous visitor ID is used."}</div>
+          <section className="mt-6 border border-green-deep/15 bg-[#E8EFE9] px-5 py-4 text-sm leading-6 text-green-deep">
+            <h2 className="font-bold">{ko ? "운영 브라우저 설정" : "Operating browser settings"}</h2>
+            <label className="mt-2 flex items-center gap-2 font-semibold">
+              <input type="checkbox" checked={browserExcluded} onChange={(event) => {
+                const exclude = event.target.checked;
+                setPreferenceTemporary(!setBrowserExclusion(exclude));
+                setBrowserExcluded(exclude);
+              }} />
+              {ko ? "로그아웃 후에도 이 브라우저를 통계에서 제외" : "Exclude this browser even after signing out"}
+            </label>
+            {preferenceTemporary && <p role="status">{ko ? "저장 공간이 차단되어 이 설정은 현재 화면을 사용하는 동안만 적용됩니다." : "Storage is blocked. This setting lasts for the current document."}</p>}
+            <p className="mt-1">{ko ? "대표 계정으로 접속하면 이 설정이 기본으로 켜집니다. 기기와 브라우저마다 따로 적용됩니다. 방문자 수는 90일마다 갱신하는 익명 브라우저 식별값으로 계산합니다." : "This defaults to on when the owner signs in. Each browser has its own setting. Visitors are counted using anonymous browser IDs that renew after 90 days."}</p>
+          </section>
         </>}
 
         {section === "content" && <section className="mt-7"><div className="flex flex-wrap items-center justify-between gap-3"><div><h2 className="editorial-title text-2xl font-bold text-navy">{ko ? "콘텐츠별 성과" : "Content performance"}</h2><p className="mt-1 text-sm text-charcoal/50">{ko ? "조회수와 새 계측 이후의 순방문·30초 읽기를 함께 비교합니다." : "Compare views with unique visitors and 30-second reads recorded under the new measurement."}</p></div><div className="flex flex-wrap gap-2">{["all", "칼럼", "핫이슈", "브리핑", "시민언어", "시민감시", "기타"].map((cat) => <button key={cat} type="button" onClick={() => setContentCategory(cat)} className={`border px-3 py-2 text-xs font-bold ${contentCategory === cat ? "border-green-deep bg-green-deep text-white" : "border-green-deep/15 bg-white text-green-deep"}`}>{cat === "all" ? (ko ? "전체" : "All") : cat}</button>)}</div></div><div className="mt-5 overflow-x-auto border-t-2 border-navy bg-white"><table className="w-full text-left text-sm"><thead className="bg-[#F1F2EC] text-xs text-charcoal/50"><tr><th className="px-4 py-3">{ko ? "메뉴" : "Section"}</th><th className="px-4 py-3">{ko ? "콘텐츠 경로" : "Content path"}</th><th className="px-4 py-3 text-right">{ko ? "조회" : "Views"}</th><th className="px-4 py-3 text-right">{ko ? "순방문" : "Visitors"}</th><th className="px-4 py-3 text-right">{ko ? "30초 읽기" : "30-sec reads"}</th><th className="px-4 py-3">{ko ? "최근 조회" : "Last viewed"}</th></tr></thead><tbody>{filteredViews.map((item) => <tr key={item.page_path} className="border-t border-green-deep/10"><td className="whitespace-nowrap px-4 py-3 text-xs font-bold text-green-deep">{categoryLabel(item.page_path, ko)}</td><td className="px-4 py-3"><Link to={item.page_path} className="font-semibold text-navy hover:underline">{item.page_path}</Link></td><td className="px-4 py-3 text-right font-bold text-navy">{Number(item.views).toLocaleString()}</td><td className="px-4 py-3 text-right font-bold text-green-deep">{Number(item.unique_visitors).toLocaleString()}</td><td className="px-4 py-3 text-right font-bold text-green-deep">{Number(item.engaged_sessions).toLocaleString()}</td><td className="whitespace-nowrap px-4 py-3 text-xs text-charcoal/55">{formatDate(item.last_viewed_at)}</td></tr>)}</tbody></table>{!loading && filteredViews.length === 0 && <p className="px-4 py-8 text-center text-sm text-charcoal/45">{ko ? "조회 기록이 없습니다." : "No page views yet."}</p>}</div></section>}

@@ -1,4 +1,5 @@
 import type { AuthSession } from "../auth";
+import { excludeAnalytics } from "./analyticsExclusion";
 import { getTurnstileToken } from "./turnstile";
 
 const supabaseUrl = (import.meta.env.VITE_SUPABASE_URL || "https://wajlmbahjyazkftwaeem.supabase.co").replace(/\/$/, "");
@@ -23,12 +24,6 @@ type SessionRecord = Campaign & { id: string; lastSeenAt: number; entryPath: str
 export type AnalyticsEvent = "engaged_30s" | "scroll_50" | "scroll_90" | "share_click" | "newsletter_signup";
 let memoryVisitor: VisitorRecord | null = null;
 let memorySession: SessionRecord | null = null;
-let analyticsExcluded = false;
-
-export function setAnalyticsOwnerExclusion(excluded: boolean) {
-  analyticsExcluded = excluded;
-}
-
 const rpcHeaders = (token?: string) => ({
   apikey: supabaseKey,
   Authorization: `Bearer ${token || supabaseKey}`,
@@ -153,7 +148,7 @@ export async function subscribeToNewsletter(email: string, language: "ko" | "en"
 }
 
 export async function recordContentView(path: string, language: "ko" | "en") {
-  if (analyticsExcluded) return;
+  if (excludeAnalytics(path)) return;
   const { pagePath, visitorId, session } = analyticsContext(path);
   await callRpc<void>("record_content_view_v2", {
     p_path: pagePath,
@@ -170,7 +165,7 @@ export async function recordContentView(path: string, language: "ko" | "en") {
 }
 
 export async function recordAnalyticsEvent(eventType: AnalyticsEvent, path: string, language: "ko" | "en") {
-  if (analyticsExcluded) return;
+  if (excludeAnalytics(path)) return;
   const { pagePath, visitorId, session } = analyticsContext(path);
   await callRpc<void>("record_content_event", {
     p_event_type: eventType,
@@ -182,6 +177,7 @@ export async function recordAnalyticsEvent(eventType: AnalyticsEvent, path: stri
 }
 
 export function beginContentEngagement(path: string, language: "ko" | "en") {
+  if (excludeAnalytics(path)) return;
   const sent = new Set<AnalyticsEvent>();
   let visibleSeconds = 0;
 

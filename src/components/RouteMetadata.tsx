@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useAuth } from "../auth";
-import { beginContentEngagement, recordContentView, setAnalyticsOwnerExclusion } from "../lib/engagement";
+import { beginContentEngagement, recordContentView } from "../lib/engagement";
+import { setAnalyticsIdentity, startOperationsTab } from "../lib/analyticsExclusion";
 
 function setMeta(selector: string, attributes: Record<string, string>) {
   let element = document.head.querySelector<HTMLMetaElement>(selector);
@@ -22,8 +23,9 @@ export default function RouteMetadata() {
   const owner = user?.app_metadata?.seed_role === "owner";
 
   useEffect(() => {
-    setAnalyticsOwnerExclusion(owner);
-  }, [owner]);
+    setAnalyticsIdentity(owner, authLoading);
+    startOperationsTab();
+  }, [owner, authLoading, location.pathname, location.hash]);
 
   useEffect(() => {
     let cancelled = false;

@@ -58,3 +58,7 @@
 - Store references as `[n](https://original-url)` or bare `[n]` tied to the article's ordered `sources` array. Missing numbers must be fixed before publication. Duplicate URLs share one footer number; existing bare numbers keep their original source meaning.
 - Meaningful internal SEED article-title links remain normal inline links. Image credits, primary-source review cards and tracker timeline cards keep their dedicated roles. They do not replace the unified end-of-article source list.
 - Run `node scripts/audit-article-citations.mjs` and the full production build before publishing. The build validates source resolution and protects the shared renderer for every article family. Extend the audit and renderer when adding a new article type.
+
+## Editorial access and audience statistics
+
+- Read public pages as plain HTTP, via the article data, or via `/siya-articles.json` when checking content. For visual checks on seedvoice.kr, open `/insights#operations-tab` first and navigate to the public page in that same tab. Initialize each new tab this way. Automated browser jobs may instead identify themselves with the user-agent token `SeedVoice-Operations`. Share the ordinary article URL with readers.
