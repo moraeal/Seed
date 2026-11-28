@@ -467,6 +467,24 @@ const realEstateCitizenFreedomContinuation: Record<Language, EditorialContinuati
 };
 
 const novemberReadingLinks: Record<string, Record<Language, EditorialContinuation>> = {
+  "column:future-response-fund-debt-reserve-2026": {
+  "ko": {
+    "href": "/columns/no-more-tax-budget-statement-2026",
+    "title": "[노모어택스 논평] 국민에게 더 걷기 전에, 정부가 쓰는 돈부터 따져보자",
+    "relationship": "학계 성명과 노모어택스",
+    "reason": "11월 26일 성명에 담긴 요구와 씨앗의 공개 검증 제안을 함께 읽는다.",
+    "listHref": "/tax-watch-movement",
+    "listLabel": "세금감시운동 기사 전체 보기"
+  },
+  "en": {
+    "href": "/columns/no-more-tax-budget-statement-2026",
+    "title": "No More Tax | Before Asking Taxpayers for More, Account for What the Government Spends",
+    "relationship": "The economists’ statement",
+    "reason": "Read the demands in the November 26 statement and SEED VOICE’s proposal for a public review.",
+    "listHref": "/tax-watch-movement",
+    "listLabel": "All tax-watch coverage"
+  }
+},
   "seed-language:partisanship-and-democratic-citizenship-2026": {
     ko: {
       href: "/columns/teachers-neutrality-and-student-dissent-2026",
