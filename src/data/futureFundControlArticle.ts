@@ -4,11 +4,11 @@ export const futureFundControlArticle: LegislativeCommentary = {
   "slug": "future-response-fund-parliamentary-control-2026",
   "billNo": "2221056",
   "date": "2026-10-05",
-  "readMinutes": 7,
+  "readMinutes": 8,
   "heroSrc": "images/legislation/future-fund-control-2026/hero.webp",
   "inlineImage": {
     "src": "images/briefings/briefing-05-budget-ledger.webp",
-    "afterSection": 3,
+    "afterSection": 4,
     "alt": {
       "ko": "시민의 세금과 공공 예산 장부를 상징하는 이미지",
       "en": "An editorial illustration of taxpayers’ money and a public budget ledger"
@@ -60,21 +60,44 @@ export const futureFundControlArticle: LegislativeCommentary = {
         "en": "Yonhap — Future Response Fund sustainability (October 4, 2026)"
       },
       "url": "https://www.yna.co.kr/amp/view/AKR20261003046900002"
+    },
+    {
+      "label": {
+        "ko": "연합뉴스, 2027년도 세입예산안 부수 법률안 49건 지정, 2026.11.27",
+        "en": "Yonhap, 49 bills designated as accompanying the 2027 revenue budget, Nov. 27, 2026"
+      },
+      "url": "https://www.yna.co.kr/view/AKR20261127113200001"
+    },
+    {
+      "label": {
+        "ko": "국가법령정보센터, 국회법 제85조의3 제1~5항",
+        "en": "National Law Information Center, National Assembly Act, Article 85-3(1)–(5)"
+      },
+      "url": "https://law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1029241309"
     }
   ],
   "editions": {
     "ko": {
       "title": "13조6천억 원까지 자체 변경, 미래기금의 통제는 충분한가",
       "subtitle": "사업비 변경 한도 30% 특례 추진…‘미래 투자’ 명분에 걸맞은 감시 장치 필요",
-      "summary": "미래대응기금 정부안은 주요 항목 지출을 30%까지 국회 재심의 없이 바꿀 수 있도록 합니다. 내년 사업비를 기준으로 한 변경 한도 합계는 약 13조6천억 원입니다. 국회 전문위원 검토보고서가 지적한 사전 통제 약화와 재원 지속성 문제를 살펴봅니다.",
+      "summary": "11월 27일 미래대응기금 설치법이 세입부수법안으로 지정됐습니다. 국회의 심사 기한은 11월 30일입니다. 기금을 만들지 결정하는 절차와 정부가 지출을 30%까지 자체 변경하게 하는 별도 특례를 나눠 짚습니다.",
       "keyPoints": [
-        "정부 제출 의안 2221056호·2221052호는 소위 심사 단계이며 시행 중인 법률이 아닙니다.",
+        "기금 설치법은 11월 27일 세입부수법안으로 지정됐습니다. 본회의 부의와 법안 가결은 서로 다른 단계입니다. [6] [7]",
         "13조6천억 원은 프로그램별 변경 한도 합계입니다. 실제 집행액은 이후 운용에서 결정됩니다.",
         "큰 금액의 변경 절차·공개 의무와 세수 전망 오차에 대한 지출 조정 기준을 확인해야 합니다."
       ],
       "heroAlt": "열린 공공 금고 앞에 분리된 잠금장치와 예산 장부가 놓인 상징 이미지",
       "heroCaption": "정부의 재량이 커질수록 시민이 돈의 사용처와 변경 사유를 확인할 장치도 구체적이어야 합니다.",
       "sections": [
+        {
+          "title": "11월 28일 갱신 | 예산안과 함께 심사받게 된 기금 설치법",
+          "paragraphs": [
+            "11월 27일 조정식 국회의장은 내년도 세입예산안에 딸린 법안 49건을 지정했습니다. 그중에 미래대응기금 설치·운용 법안이 들어갔습니다. 정부가 기금을 만들려는 이유와 별개로, 국회가 그 제안을 심사할 시간이 이제 예산안 처리 일정에 묶였습니다. [2] [6]",
+            "국회법 제85조의3은 위원회의 심사 기한을 11월 30일로 정합니다. 심사를 마치지 못하면 원칙적으로 12월 1일 본회의에 부의된 것으로 봅니다. 국회의장이 각 교섭단체 대표의원과 합의하면 달리할 수 있습니다. ‘부의’는 본회의에서 다룰 수 있게 된다는 뜻입니다. 법을 만들려면 표결을 거쳐야 합니다. [7]",
+            "다음 회계연도에 들어올 돈과 쓸 돈의 근거를 함께 심사할 이유는 있습니다. 그러나 기금 설치를 허용할지와, 설치 후 정부가 국회 의결 없이 지출을 얼마나 바꿀 수 있게 할지는 따로 답해야 할 질문입니다. 이 글에서 짚은 30% 특례는 별도의 국가재정법 개정안에 담겼습니다. 설치법의 지정 소식만으로 그 특례까지 의결됐다고 볼 수 없습니다. [1] [2] [6]",
+            "11월 30일 이후 시민이 확인할 기록은 둘입니다. 본회의에 올라가는 설치법의 문안, 그리고 국가재정법 개정안에 남는 변경 한도와 사전 의결 요건입니다. 정부가 요구한 재량을 국회가 그대로 허용하는지, 줄이거나 조건을 붙이는지 두 문안을 나란히 보아야 합니다."
+          ]
+        },
         {
           "title": "13조6천억 원의 재량, 법안 심사에서 결정됩니다",
           "paragraphs": [
@@ -153,22 +176,31 @@ export const futureFundControlArticle: LegislativeCommentary = {
           ]
         ],
         "note": "자료: 파이낸셜뉴스·연합뉴스 2026.10.4. 국회 전문위원 검토보고서 관련 보도. 반올림한 값입니다. 30%는 프로그램 단위로 적용되며 실제 변경에는 법정 목적과 절차가 적용됩니다.",
-        "afterSection": 2
+        "afterSection": 3
       },
-      "sourceNote": "2026년 10월 5일 확인 기준. 정부가 2026년 9월 3일 제출한 의안 2221056호·2221052호의 제안이유·주요내용 공개 요약과 진행 상황을 확인했습니다. 첨부 의안 원문과 국회 검토보고서 전문은 직접 열람하지 않았으며, 검토보고서 평가는 10월 4일 언론 보도에 귀속해 작성했습니다. 법안은 소위회부 단계로 확인되며 시행 중인 제도가 아닙니다. 13조6천억 원은 자체 변경 가능 한도 합계입니다."
+      "sourceNote": "11월 28일 갱신. 다음은 10월 5일 최초 작성 당시의 확인 범위입니다. 정부가 2026년 9월 3일 제출한 의안 2221056호·2221052호의 제안이유·주요내용 공개 요약과 진행 상황을 확인했습니다. 첨부 의안 원문과 국회 검토보고서 전문은 직접 열람하지 않았으며, 검토보고서 평가는 10월 4일 언론 보도에 귀속해 작성했습니다. 법안은 소위회부 단계로 확인되며 시행 중인 제도가 아닙니다. 13조6천억 원은 자체 변경 가능 한도 합계입니다."
     },
     "en": {
       "title": "Up to KRW 13.6 trillion in adjustments: who scrutinizes the Future Response Fund?",
       "subtitle": "A proposed 30% spending-adjustment exception requires safeguards suited to its scale",
-      "summary": "South Korea’s proposed Future Response Fund would allow major spending items to be adjusted by up to 30% without a revised plan going back to Parliament. On the proposed 2027 program budget, combined adjustment ceilings reach about KRW 13.6 trillion. This article examines parliamentary specialists’ concerns over prior scrutiny and financing sustainability.",
+      "summary": "The Future Response Fund bill was designated on November 27 as accompanying the revenue budget. With committee review due November 30, we examine two decisions: establishing the fund and authorizing the executive to adjust spending by up to 30%.",
       "keyPoints": [
-        "Government Bills 2221056 and 2221052 are at subcommittee review, not enacted law.",
+        "The fund bill was designated on November 27. Referral to the floor and passage are separate stages. [6] [7]",
         "KRW 13.6 trillion is the sum of program-level adjustment ceilings; actual changes will depend on implementation.",
         "Scrutiny should cover large adjustments, disclosure requirements and spending responses to revenue forecast errors."
       ],
       "heroAlt": "A symbolic open public treasury vault with a disconnected lock and a budget ledger",
       "heroCaption": "Broader executive discretion should come with specific ways for citizens to inspect spending and the reasons for changes.",
       "sections": [
+        {
+          "title": "November 28 update | The fund bill joins the budget timetable",
+          "paragraphs": [
+            "On November 27, the Speaker named 49 bills to accompany the 2027 revenue budget, including the bill establishing the Future Response Fund. This places scrutiny of the fund on the budget timetable. [2] [6]",
+            "Under Article 85-3 of the National Assembly Act, committee review is due by November 30. Unless the Speaker and the floor leaders of the negotiating groups agree otherwise, an unfinished bill is deemed referred to the plenary on December 1. Referral makes a bill available for plenary consideration. Enactment still requires a vote. [7]",
+            "It makes sense to examine next year’s revenue alongside the laws that underpin it. Two decisions nevertheless require their own justification. Should the fund exist? Once it exists, how much spending may the executive redirect without a fresh vote? The proposed 30% ceiling comes from a separate National Finance Act amendment. Designation of the fund bill does not enact that provision. [1] [2] [6]",
+            "After November 30, readers can compare the text of the fund bill sent to the floor with the adjustment ceiling and prior-approval requirements retained in the finance amendment. Together they will show how much discretion lawmakers actually granted and on what terms."
+          ]
+        },
         {
           "title": "The bill would expand executive discretion over a large fund",
           "paragraphs": [
@@ -247,9 +279,10 @@ export const futureFundControlArticle: LegislativeCommentary = {
           ]
         ],
         "note": "Sources: Financial News and Yonhap reports dated October 4, 2026 on the parliamentary specialist review. Rounded figures. The limit applies at program level; statutory purposes and procedures still govern actual changes.",
-        "afterSection": 2
+        "afterSection": 3
       },
-      "sourceNote": "Checked October 5, 2026. Based on the published statements of purpose, principal provisions and progress records for government Bills 2221056 and 2221052, submitted September 3. The attached full bill texts and complete parliamentary specialist reports were not directly inspected; specialist findings are attributed to October 4 media reports. The bills are recorded as referred to subcommittee and are not enacted rules. KRW 13.6 trillion is a combined adjustment ceiling."
+      "sourceNote": "Updated November 28. The following describes the sources as checked for the original October 5 article. Based on the published statements of purpose, principal provisions and progress records for government Bills 2221056 and 2221052, submitted September 3. The attached full bill texts and complete parliamentary specialist reports were not directly inspected; specialist findings are attributed to October 4 media reports. The bills are recorded as referred to subcommittee and are not enacted rules. KRW 13.6 trillion is a combined adjustment ceiling."
     }
-  }
+  },
+  "updatedAt": "2026-11-28"
 };

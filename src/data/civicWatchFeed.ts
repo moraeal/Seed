@@ -102,7 +102,7 @@ export function getCivicWatchFeed(language: Language, bills: LegislativeBill[] =
     { key: `tax-${youthRentCredit2026.slug}`, category: "tax", date: youthRentCredit2026.date, to: `/briefings/${youthRentCredit2026.slug}`, title: ko ? youthRentCredit2026.title : youthRentCredit2026Translation.title, summary: ko ? youthRentCredit2026.summary : youthRentCredit2026Translation.summary, status: ko ? "세금 해설과 논평" : "Tax explainer and opinion" },
     { key: `legislation-${teenAiUseExplainer.slug}`, category: "legislation", date: teenAiUseExplainer.date, to: `/briefings/${teenAiUseExplainer.slug}`, title: ko ? teenAiUseExplainer.title : teenAiUseExplainerTranslation.title, summary: ko ? teenAiUseExplainer.summary : teenAiUseExplainerTranslation.summary, status: ko ? "입법안 해설" : "Bill explainer" },
     { key: `legislation-${teenAiProtectionCommentary.slug}`, category: "legislation", date: teenAiProtectionCommentary.date, to: `/monitoring/legislation/commentary/${teenAiProtectionCommentary.slug}`, title: teenAiProtectionCommentary.editions[language].title, summary: teenAiProtectionCommentary.editions[language].summary, status: ko ? "입법감시 논평" : "Legislative commentary" },
-    { key: `legislation-${futureFundControlArticle.slug}`, category: "legislation", date: futureFundControlArticle.date, to: `/monitoring/legislation/commentary/${futureFundControlArticle.slug}`, title: futureFundControlArticle.editions[language].title, summary: futureFundControlArticle.editions[language].summary, status: ko ? "입법·세금감시 기사" : "Legislative & tax watch" },
+    { key: `legislation-${futureFundControlArticle.slug}`, category: "legislation", date: futureFundControlArticle.updatedAt || futureFundControlArticle.date, to: `/monitoring/legislation/commentary/${futureFundControlArticle.slug}`, title: futureFundControlArticle.editions[language].title, summary: futureFundControlArticle.editions[language].summary, status: ko ? "입법·세금감시 기사" : "Legislative & tax watch" },
     ...getIssueWatchRows(language).map((row) => {
       const record = publicInterestWatchCases.find((item) => item.slug === row.slug);
       return {
@@ -132,8 +132,8 @@ export function getCivicWatchFeed(language: Language, bills: LegislativeBill[] =
         : bill.public_summary_en || bill.analysis?.summary_en || "A legislative watch record based on official documents and bill text.",
       status: ko ? `중요도 ${bill.importance_score}` : `Impact ${bill.importance_score}`,
     })),
-    ...taxCommentaries.filter((article) => !taxPolicies.some((policy) => policy.slug === article.relatedPolicySlug)).map((article) => ({
-      key: `tax-commentary-${article.slug}`, category: "tax" as const, date: article.date,
+    ...taxCommentaries.filter((article) => article.updatedAt || !taxPolicies.some((policy) => policy.slug === article.relatedPolicySlug)).map((article) => ({
+      key: `tax-commentary-${article.slug}`, category: "tax" as const, date: article.updatedAt || article.date,
       to: `/monitoring/tax/commentary/${article.slug}`, title: article.editions[language].title,
       summary: article.editions[language].summary, status: ko ? "세금 논평" : "Tax commentary",
     })),

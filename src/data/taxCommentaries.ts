@@ -40,6 +40,7 @@ export type TaxCommentary = {
   slug: string;
   relatedPolicySlug: string;
   date: string;
+  updatedAt?: string;
   readMinutes: number;
   heroSrc: string;
   bodyImage?: {

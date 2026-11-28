@@ -4,11 +4,12 @@ export const residenceTaxFreedomCommentary: TaxCommentary = {
   slug: "one-home-residence-tax-freedom-2026",
   relatedPolicySlug: "one-home-residence-tax-government-bill-2221046",
   date: "2026-11-09",
-  readMinutes: 9,
+  updatedAt: "2026-11-28",
+  readMinutes: 10,
   heroSrc: "images/tax/residence-tax-freedom-2026/hero.webp",
   bodyImage: {
     src: "images/tax/residence-tax-freedom-2026/household.webp",
-    afterSection: 2,
+    afterSection: 3,
     alt: { ko: "이삿짐이 놓인 집 식탁에서 주거 계약서와 가계 지출을 살피는 부부", en: "A couple reviewing housing papers and household expenses at a table beside moving boxes" },
     caption: { ko: "직장과 돌봄 때문에 거처를 바꾸는 시민에게 소유한 집과 생활하는 집은 다를 수 있다.", en: "Work and caregiving can mean that the home a person owns is not the home they live in." },
   },
@@ -20,12 +21,14 @@ export const residenceTaxFreedomCommentary: TaxCommentary = {
     { label: { ko: "법제처 국민참여입법센터 — 종합부동산세법 정부입법현황, 의안 2221046, 2026.9.3 제출. 납세의무 기준과 공제액의 구분; 페이지의 비거주 9억 원 표기는 최초안", en: "Ministry of Government Legislation — Government bill 2221046, submitted September 3, 2026. Distinguishes the taxpayer threshold from deductions; its KRW 900 million non-occupancy figure reflects the initial proposal" }, url: "https://community.lawmaking.go.kr/lmSts/govLm/2000000329538/detailRP" },
     { label: { ko: "국회 의안정보시스템 — 종합부동산세법 일부개정법률안(정부), 제2221046호, 2026.9.3 제출", en: "National Assembly — Government amendment to the Comprehensive Real Estate Holding Tax Act, Bill 2221046, submitted September 3, 2026" }, url: "https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6" },
     { label: { ko: "국가법령정보센터 — 현행 종합부동산세법 제8조, 1세대 1주택 기본공제 12억 원", en: "National Law Information Center — Current Comprehensive Real Estate Holding Tax Act, Article 8: KRW 1.2 billion single-household, single-home deduction" }, url: "https://law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0008&lsiSeq=280417&urlMode=lsScJoRltInfoR" },
+    {"label":{"ko":"재정경제부, 2026년 종합부동산세 고지, 2026.11.26, 1세대 1주택자 고지 통계","en":"Ministry of Finance and Economy, 2026 comprehensive real estate holding tax notices, Nov. 26, single-home household figures"},"url":"https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?menuNo=4010100&searchBbsId1=MOSFBBS_000000000028&searchNttId1=MOSF_000000000080076"},
+    {"label":{"ko":"국세청, 2026년 종합부동산세 납부 안내, 2026.11.26","en":"National Tax Service, 2026 holding tax payment notice and guidance, Nov. 26"},"url":"https://g.nts.go.kr/gangseo/na/ntt/selectNttInfo.do?bbsId=1028&mi=2201&nttSn=1356421"},
   ],
   editions: {
     ko: {
       title: "집 한 채, 사는 곳이 다르다고 세금도 달라야 하나",
       subtitle: "실거주 우대라는 이름으로 시민의 생활까지 심사할 것인가",
-      summary: "정부안은 1세대 1주택 종부세 공제를 거주 14억 원·비거주 12억 원으로 나눈다. 같은 재산에 사는 곳을 이유로 다른 부담을 지우려면 납득할 근거가 있어야 한다. 시민의 생활을 심사하기 전에 과세기준의 타당성부터 설명할 일이다.",
+      summary: "올해 1세대 1주택자 23만1천 명에게 종부세가 고지됐다. 고지 인원과 1인당 부담이 얼마나 늘었는지 짚고, 국회가 거주 여부에 따라 공제를 달리하려면 어떤 근거를 제시해야 하는지 묻는다.",
       keyPoints: [
         "국회 제출 정부안은 거주 14억 원·비거주 12억 원 공제다. 11월 8일 여당은 14억 원 통일을 요구했으나 확정된 법은 아니다.[1][2]",
         "납세의무 기준과 기본공제액은 다르다. 비거주 공제가 12억 원이라는 이유로 그 금액을 넘는 모든 1주택자가 과세되는 것은 아니다.[5]",
@@ -34,6 +37,14 @@ export const residenceTaxFreedomCommentary: TaxCommentary = {
       heroAlt: "같은 모양의 아파트 모형 두 개가 놓인 저울 한쪽을 무거운 관인 모양의 도장이 누르고 있는 장면",
       heroCaption: "같은 가치의 집이라도 거주 여부에 따라 다른 공제를 적용하려면 그 차이를 설명할 근거가 필요하다.",
       sections: [
+        {
+          "title": "11월 28일 갱신 | 1주택자 8만 명이 더 고지서를 받았다",
+          "paragraphs": [
+            "올해 1세대 1주택자 가운데 종합부동산세 고지서를 받은 사람은 23만1천 명이다. 지난해 15만1천 명보다 8만 명 늘었다. 이들에게 고지한 주택분 세금은 1,679억 원에서 3,660억 원으로 118% 늘었다. 한 사람이 낼 세금이 두 배가 됐다는 뜻일까. 고지서를 받은 1인당 평균은 111만4천 원에서 158만6천 원으로 47만2천 원 올랐다. 새로 과세 대상에 들어온 사람까지 포함한 평균이다. [8]",
+            "이번 고지에 적용된 1세대 1주택 기본공제는 12억 원이다. 정부가 제안한 거주 여부별 공제 차등은 이번 고지액 증가의 원인이 될 수 없다. 재정경제부는 수도권을 중심으로 공동주택 공시가격이 오른 점을 주요 배경으로 들었다. 국세청이 발표한 납부기한은 12월 15일이다. 고지 내용이 실제와 다르거나 특례를 뒤늦게 신청하면 최종 결정세액은 달라질 수 있다. [8] [9]",
+            "집값이 오르면 과세 대상이 늘어난다는 설명은 올해의 숫자를 이해하는 데 도움이 된다. 그러나 직장이나 가족 돌봄 때문에 다른 곳에 사는 사람이 같은 값의 집에 직접 사는 이웃보다 세금을 감당할 여력이 큰지는 이 통계로 알 수 없다. 국회가 거주 여부에 따라 공제를 달리하려면 같은 공시가격에서 두 가구의 세액이 얼마씩 달라지는지부터 보여줘야 한다."
+          ]
+        },
         { title: "", paragraphs: [
           "집은 한 채다. 그 집에서 계속 살면 공제를 더 받고, 다른 곳에 살면 덜 받는다. 정부가 국회에 제출한 종합부동산세 개편안의 한 대목이다. 같은 값의 집을 가진 사람인데 사는 곳에 따라 세금 계산이 달라진다.",
           "더불어민주당은 11월 8일, 1세대 1주택자의 종부세 기본공제를 거주 여부와 관계없이 14억 원으로 통일하자고 정부에 요구했다. 국회 제출 정부안은 거주하는 경우 14억 원, 거주하지 않는 경우 12억 원을 공제하도록 하고 있다. 아직 확정된 법은 아니다.[1]",
@@ -77,14 +88,14 @@ export const residenceTaxFreedomCommentary: TaxCommentary = {
         headers: ["구분", "거주", "비거주"],
         rows: [["현행법", "12억 원", "12억 원"], ["8월 최초안", "14억 원", "9억 원"], ["국회 제출 정부안", "14억 원", "12억 원"], ["11월 8일 여당 요구", "14억 원", "14억 원"]],
         note: "공시가격에서 빼는 기본공제액이며 납부세액이 아니다. 현행법 외에는 확정된 법이 아니다. 납세의무 기준은 별도이며 공동명의·특례 등 개별 조건에 따라 달라진다. 2026.11.9 확인.",
-        afterSection: 0,
+        afterSection: 1,
       },
-      sourceNote: "2026년 11월 9일 기준 세금 논평. 정부 제출 종합부동산세법 개정안은 의안 제2221046호(2026.9.3 제출)이며 통과·공포된 법과 구분했다. 국회 의안 원문 파일은 직접 확보하지 못해 공식 공개 주요내용과 수정안 보도를 대조했다. 법제처 공개 페이지의 비거주 9억 원 표기는 최초안이며 이후 12억 원 유지로 수정됐다. 거주 판정·예외의 최종 세부 문언과 적용 시기는 추가 확인이 필요하다. 직장 이전 가정은 설명을 위한 가정이며 실제 인터뷰가 아니다. 8월 피해자 사례는 당시 보도된 문제 제기다. 사진형 시각자료는 AI 이미지다.",
+      sourceNote: "11월 28일 고지 통계 추가. 11월 9일 최초 작성 당시 정부안 검토 범위는 다음과 같다. 정부 제출 종합부동산세법 개정안은 의안 제2221046호(2026.9.3 제출)이며 통과·공포된 법과 구분했다. 국회 의안 원문 파일은 직접 확보하지 못해 공식 공개 주요내용과 수정안 보도를 대조했다. 법제처 공개 페이지의 비거주 9억 원 표기는 최초안이며 이후 12억 원 유지로 수정됐다. 거주 판정·예외의 최종 세부 문언과 적용 시기는 추가 확인이 필요하다. 직장 이전 가정은 설명을 위한 가정이며 실제 인터뷰가 아니다. 8월 피해자 사례는 당시 보도된 문제 제기다. 사진형 시각자료는 AI 이미지다.",
     },
     en: {
       title: "One Home, Different Address: Should the Tax Bill Change?",
       subtitle: "Owner-occupancy relief should not become a test of how citizens live",
-      summary: "South Korea's government bill would allow a KRW 1.4 billion deduction for an owner-occupied single home, but KRW 1.2 billion if its owner lives elsewhere. Different treatment of equally valuable property needs a convincing justification. The tax rule should be examined before citizens' personal lives are.",
+      summary: "This year 231,000 single-home taxpayers received holding tax notices. We examine the increase in recipients and individual bills, and the evidence lawmakers owe households before tying deductions to where an owner lives.",
       keyPoints: [
         "The submitted bill proposes deductions of KRW 1.4 billion for owner occupancy and KRW 1.2 billion otherwise. The ruling party requested a uniform KRW 1.4 billion on November 8; neither proposal is enacted law.[1][2]",
         "The taxpayer threshold is separate from the deduction. A KRW 1.2 billion non-occupancy deduction does not mean every single-home owner above that value would become liable.[5]",
@@ -93,6 +104,14 @@ export const residenceTaxFreedomCommentary: TaxCommentary = {
       heroAlt: "A heavy official-style stamp presses down one pan of a scale holding two identical apartment models",
       heroCaption: "Different deductions for equally valuable homes require a reason that owners can understand.",
       sections: [
+        {
+          "title": "November 28 update | Another 80,000 single-home taxpayers received notices",
+          "paragraphs": [
+            "This year 231,000 taxpayers in single-home households received housing tax notices, up from 151,000 last year. Their combined bills rose 118%, from KRW 167.9 billion to KRW 366 billion. The average notice rose from KRW 1.114 million to KRW 1.586 million, an increase of KRW 472,000. That average includes people who crossed the threshold this year. [8]",
+            "The single-home household deduction used this year was KRW 1.2 billion. The proposed distinction by owner occupancy therefore cannot explain the increase. The finance ministry pointed to higher officially assessed apartment values, particularly in the capital region. Payment is due December 15. Final assessments can differ from these notices if taxpayers correct the facts or claim eligible relief. [8] [9]",
+            "Higher assessments explain why more households crossed the threshold. They tell us little about whether someone living elsewhere for work or family care can better afford the tax than a neighbour occupying a home of equal assessed value. Before legislators differentiate the deductions, they owe both households a comparison of the actual bills under their proposal."
+          ]
+        },
         { title: "", paragraphs: [
           "One home. Live in it and receive a larger deduction; live elsewhere and receive a smaller one. That is one feature of the government's proposed overhaul of South Korea's comprehensive real estate holding tax, a national tax on high-value property. Owners of equally valuable homes would face different calculations depending on where they live.",
           "On November 8, the Democratic Party asked the government to make the deduction KRW 1.4 billion for qualifying single-household, single-home owners regardless of occupancy. The government bill submitted to the National Assembly provides KRW 1.4 billion for those living in their home and KRW 1.2 billion for those living elsewhere. This is not enacted law.[1]",
@@ -136,9 +155,9 @@ export const residenceTaxFreedomCommentary: TaxCommentary = {
         headers: ["Stage", "Owner-occupied", "Owner lives elsewhere"],
         rows: [["Current law", "KRW 1.2bn", "KRW 1.2bn"], ["Initial August proposal", "KRW 1.4bn", "KRW 0.9bn"], ["Submitted government bill", "KRW 1.4bn", "KRW 1.2bn"], ["Party request: November 8", "KRW 1.4bn", "KRW 1.4bn"]],
         note: "These are deductions from assessed value, not tax bills. Only the current-law row is enacted law. The taxpayer threshold is separate; joint ownership and special cases have different conditions. Checked November 9, 2026.",
-        afterSection: 0,
+        afterSection: 1,
       },
-      sourceNote: "Tax commentary checked November 9, 2026. Government Bill 2221046 was submitted September 3, 2026 and is distinguished from enacted law. The full parliamentary bill attachment could not be obtained directly; official public summaries were compared with reporting on revisions. The legislation-status page retains the initial KRW 900 million figure, subsequently revised to retain KRW 1.2 billion. Final occupancy criteria, exceptions and application dates require further verification. The relocating family is a hypothetical illustration, not an interview. The August victim example concerns issues reported at that time. The photographic visuals are AI images.",
+      sourceNote: "Tax notice figures added November 28. The original November 9 review of the proposal follows. Government Bill 2221046 was submitted September 3, 2026 and is distinguished from enacted law. The full parliamentary bill attachment could not be obtained directly; official public summaries were compared with reporting on revisions. The legislation-status page retains the initial KRW 900 million figure, subsequently revised to retain KRW 1.2 billion. Final occupancy criteria, exceptions and application dates require further verification. The relocating family is a hypothetical illustration, not an interview. The August victim example concerns issues reported at that time. The photographic visuals are AI images.",
     },
   },
 };

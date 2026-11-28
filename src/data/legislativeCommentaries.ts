@@ -40,6 +40,7 @@ export type LegislativeCommentary = {
   relatedBillSlug?: string;
   relatedExplainer?: { href: string; title: LocalizedText };
   date: string;
+  updatedAt?: string;
   readMinutes: number;
   heroSrc: string;
   inlineImage?: { src: string; afterSection: number; alt: LocalizedText; caption: LocalizedText };
