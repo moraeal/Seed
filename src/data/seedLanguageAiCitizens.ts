@@ -141,7 +141,7 @@ export const aiCitizensEn: SeedLanguageArticle = {
   ],
   "leadParagraphs": [
     "By Little Seed",
-    "Set 70,000 won beside 21,200 won and the headline practically writes itself. “Three times the price when taxpayers pick up the bill.” Last October, Seed Voice looked at [a small optical transceiver](/en/briefings/procurement-tax-watch-citizen-hackathon-2026). The model number matched. An order on Korea’s public procurement portal listed it at 70,000 won. An online store had it for 21,200. For a publication that follows taxpayers’ money, what could be easier to write? [1]",
+    "Set 70,000 won beside 21,200 won and the headline practically writes itself. “Three times the price when taxpayers pick up the bill.” Last October, Seed Voice looked at [a small optical transceiver](/briefings/procurement-tax-watch-citizen-hackathon-2026). The model number matched. An order on Korea’s public procurement portal listed it at 70,000 won. An online store had it for 21,200. For a publication that follows taxpayers’ money, what could be easier to write? [1]",
     "Then there was that little word in the contract: installation. Somebody had to go to the designated site and fit the part. Faults had to be put right for two years. Ordering a box to your door is a somewhat different proposition. There was no breakdown showing that installation accounted for the extra 48,800 won, either, and the two prices came from different dates. You go looking for a number and the number costs you your headline. I rather like that moment. It means there’s a story worth pursuing. [1]"
   ],
   "sections": [
@@ -150,7 +150,7 @@ export const aiCitizensEn: SeedLanguageArticle = {
       "paragraphs": [
         "Someone who has fitted the part knows what the job involves. Someone who sells it may know why prices for the same model vary. A resident who paid the tax can ask the purchasing officer how much the contract allowed for installation and repairs. Sit those three down with the same figures and we’ll learn more than we would by passing around a headline about waste. If the public buyer really did overpay, we might even find out what to pay next time.",
         "This is why I welcome AI into civic work. The procurement records were public already. But hand a spreadsheet with tens of thousands of rows to someone with an hour to spare after dinner, and tell them it’s open to everyone. They may open it, remember they have work in the morning, and close it again. What if a tool could find the matching parts and point them to the relevant clause before that hour was up? For once they could get to the bottom of something that had been bothering them.",
-        "Seed Voice has called this person the [augmented individual](/en/seed-language/augmented-individual-seed-citizenization-2026). It sounds grand. The person I have in mind knows nobody at city hall and has no organization to speak for them. They just have a question worth asking in their own name. When Douglas Engelbart wrote about augmenting human intellect in 1962, he had a similarly practical test. Could someone now tackle a problem that used to be too complicated even to attempt? That tells me more than the speed of the computer. [2] [3]"
+        "Seed Voice has called this person the [augmented individual](/seed-language/augmented-individual-seed-citizenization-2026). It sounds grand. The person I have in mind knows nobody at city hall and has no organization to speak for them. They just have a question worth asking in their own name. When Douglas Engelbart wrote about augmenting human intellect in 1962, he had a similarly practical test. Could someone now tackle a problem that used to be too complicated even to attempt? That tells me more than the speed of the computer. [2] [3]"
       ]
     },
     {
@@ -169,8 +169,8 @@ export const aiCitizensEn: SeedLanguageArticle = {
         "AI can be better than people at gathering what a room has said. In a British experiment, small groups considered public issues. Participants then read two accounts of common ground, one written by a member assigned to mediate and one by AI. The AI text drew 56 percent of the choices, the human text 44 percent. Anyone who has sat through a meeting where a few loud voices used up the time might find it hard to begrudge the machine its result. [5]",
         "What I’d borrow from that study is the moment participants got a draft back. They read what the system had gathered and wrote down what it had missed. It produced a revision, and they read that too. If the system got your meaning wrong, there was somewhere to say, “When did I say that?” A German study approached the door from the other side. Among 1,850 people presented with the same discussion activity, willingness to join was lower when AI was described as the facilitator. Count only the people already in the room and you’ll never see who turned away. [5] [6]",
         "Back to the bus. Suppose nineteen residents ask for more buses during the morning rush and one asks for a late service. “Residents agreed to concentrate services at busy times” seems a fair enough summary, at first glance. Yet the very reason that twentieth person came has vanished. The budget might not stretch to another evening bus. In that case the minutes can record the proposal, which last service the city checked, and why it can’t make the change for now. Someone wondering how to get home deserves that much of an answer.",
-        "A young job applicant can find themselves in much the same position. Participants in an [SK hynix hackathon](/en/briefings/sk-hynix-ai-hackathon-skills-first-hiring) we covered didn’t have to name the school they attended. I welcomed that. The information available at the time was less clear about how much weight AI carried in the online qualifying rounds, or whom to ask for an explanation. In an applicant’s shoes I’d want to know one thing before hearing a technical lecture: “If I think my work has been misunderstood, who can I take it to?” [8]",
-        "This is what Seed Voice meant when we wrote that [people grow into citizenship](/en/seed-language/citizen-as-seed). Acquiring AI doesn’t give me a mandate to speak for my neighbor. If I circulate a claim about a contract and fresh evidence turns up, I can post the correction where I posted the claim. Hearing about a driver’s journey home might change my proposal for a later bus. There’s no shame in having raised it. We’ve learned something neither side knew before. Perhaps someone who has had that experience a few times will give the next person a little room to change their mind. [7]",
+        "A young job applicant can find themselves in much the same position. Participants in an [SK hynix hackathon](/briefings/sk-hynix-ai-hackathon-skills-first-hiring) we covered didn’t have to name the school they attended. I welcomed that. The information available at the time was less clear about how much weight AI carried in the online qualifying rounds, or whom to ask for an explanation. In an applicant’s shoes I’d want to know one thing before hearing a technical lecture: “If I think my work has been misunderstood, who can I take it to?” [8]",
+        "This is what Seed Voice meant when we wrote that [people grow into citizenship](/seed-language/citizen-as-seed). Acquiring AI doesn’t give me a mandate to speak for my neighbor. If I circulate a claim about a contract and fresh evidence turns up, I can post the correction where I posted the claim. Hearing about a driver’s journey home might change my proposal for a later bus. There’s no shame in having raised it. We’ve learned something neither side knew before. Perhaps someone who has had that experience a few times will give the next person a little room to change their mind. [7]",
         "There’s one practice I’d like us to keep here. Even when we use AI to edit a tip that arrives in rough prose, let’s keep one line just as the writer put it. After writing “Late-night public transportation needs to be expanded,” read the original again: “I finish work at half past eleven.” It changes what we go looking for. When does the bus company finish its run? Who else clocks off at that hour? Would one more stop get them to a connection?",
         "I’d welcome help with that reporting. By all means find the timetable, read the complicated contract, flag the number I missed. Then I’d like to ask the person who missed the bus a question myself. “How did you get home that night?” Until I hear the answer, our story isn’t finished."
       ]
@@ -219,11 +219,11 @@ export const aiCitizensEn: SeedLanguageArticle = {
   "sources": [
     {
       "label": "Public Contracts Citizens Can Scrutinize",
-      "url": "https://seedvoice.kr/en/briefings/procurement-tax-watch-citizen-hackathon-2026/"
+      "url": "https://seedvoice.kr/briefings/procurement-tax-watch-citizen-hackathon-2026/"
     },
     {
       "label": "The Augmented Individual",
-      "url": "https://seedvoice.kr/en/seed-language/augmented-individual-seed-citizenization-2026/"
+      "url": "https://seedvoice.kr/seed-language/augmented-individual-seed-citizenization-2026/"
     },
     {
       "label": "Augmenting Human Intellect: A Conceptual Framework",
@@ -243,11 +243,11 @@ export const aiCitizensEn: SeedLanguageArticle = {
     },
     {
       "label": "Citizenship as Something We Grow Into",
-      "url": "https://seedvoice.kr/en/seed-language/citizen-as-seed/"
+      "url": "https://seedvoice.kr/seed-language/citizen-as-seed/"
     },
     {
       "label": "SK hynix Drops Academic Credentials from Its Hackathon",
-      "url": "https://seedvoice.kr/en/briefings/sk-hynix-ai-hackathon-skills-first-hiring/"
+      "url": "https://seedvoice.kr/briefings/sk-hynix-ai-hackathon-skills-first-hiring/"
     }
   ]
 };
