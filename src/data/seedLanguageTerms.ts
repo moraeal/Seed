@@ -1,5 +1,6 @@
 /** Display metadata shared by the homepage glossary card and glossary archive. */
 export const seedLanguageTerms: Record<string, { hanja: string; english: string }> = {
+  "AI와 시민": { hanja: "人工知能과 市民", english: "AI AND CITIZENS" },
   당파성: { hanja: "黨派性", english: "PARTISANSHIP" },
   평화: { hanja: "平和", english: "PEACE" },
   삼권분립: { hanja: "三權分立", english: "SEPARATION OF POWERS" },

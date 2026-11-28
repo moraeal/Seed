@@ -485,6 +485,18 @@ const novemberReadingLinks: Record<string, Record<Language, EditorialContinuatio
     "listLabel": "All tax-watch coverage"
   }
 },
+  "seed-language:ai-and-citizens-2026": {
+    ko: {
+      href: "/seed-language/augmented-individual-seed-citizenization-2026", title: "증강된 개인",
+      relationship: "함께 읽을 시민언어", reason: "AI로 커진 한 사람의 능력과 그 힘을 쓰는 시민의 책임을 살핍니다.",
+      listHref: "/seed-language", listLabel: "시민언어 전체 보기",
+    },
+    en: {
+      href: "/seed-language/augmented-individual-seed-citizenization-2026", title: "The Augmented Individual",
+      relationship: "Related civic language", reason: "What responsibilities come with the new reach of an individual using AI?",
+      listHref: "/seed-language", listLabel: "All civic language articles",
+    },
+  },
   "seed-language:partisanship-and-democratic-citizenship-2026": {
     ko: {
       href: "/columns/teachers-neutrality-and-student-dissent-2026",
